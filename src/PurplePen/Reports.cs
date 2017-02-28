@@ -39,6 +39,7 @@ using System.Xml;
 using System.IO;
 using System.Drawing;
 using System.Diagnostics;
+using System.Linq;
 
 namespace PurplePen
 {
@@ -520,40 +521,61 @@ namespace PurplePen
         // Create the cross-reference between controls and courses.
         private string[,] CreateXref(EventDB eventDB, Id<ControlPoint>[] controlsToXref, Id<Course>[] coursesToXref)
         {
-            string[,] xref = new string[controlsToXref.Length, coursesToXref.Length];
+            SortedSet<int>[,] xref = new SortedSet<int>[controlsToXref.Length, coursesToXref.Length];
 
-            // Go through each course, and cross-reference.
+            // Go through each course, each variation of the course, and cross-reference.
             for (int col = 0; col < coursesToXref.Length; ++col) {
-                CourseView view = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(coursesToXref[col]));
-                foreach (CourseView.ControlView controlView in view.ControlViews) {
-                    int row = Array.IndexOf(controlsToXref, controlView.controlId);
+                foreach (CourseDesignator courseDesignator in AllDesignatorsForCourse(eventDB, coursesToXref[col])) {
+                    CourseView view = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
 
-                    if (row >= 0) {
-                        string ordinal;
+                    foreach (CourseView.ControlView controlView in view.ControlViews) {
+                        int row = Array.IndexOf(controlsToXref, controlView.controlId);
 
-                        if (controlView.ordinal < 0)
-                            ordinal = "*";           // for score courses.
-                        else
-                            ordinal = controlView.ordinal.ToString();
-
-                        xref[row, col] = CombineString(xref[row, col], ordinal);
+                        if (row >= 0) {
+                            if (xref[row, col] == null)
+                                xref[row, col] = new SortedSet<int>();
+                            xref[row, col].Add(controlView.ordinal);
+                        }
                     }
                 }
             }
 
-            return xref;
+            string[,] xrefString = new string[controlsToXref.Length, coursesToXref.Length];
+
+            for (int col = 0; col < coursesToXref.Length; ++col) {
+                for (int row = 0; row < controlsToXref.Length; ++row) {
+                    xrefString[row, col] = XrefString(xref[row, col]);
+                }
+            }
+
+            return xrefString;
         }
 
-        // Add a string to another.
-        string CombineString(string first, string second)
+        // Convert set of ordinals to command seperated string. negative goes to "*".
+        private string XrefString(SortedSet<int> set)
         {
-            if (string.IsNullOrEmpty(first))
-                return second;
-            else if (string.IsNullOrEmpty(second))
-                return first;
+            if (set == null || set.Count == 0)
+                return "";
             else
-                return first + "," + second;
+                return String.Join(",", set.Select(i => (i < 0) ? "*" : i.ToString()));
         }
+
+        private List<CourseDesignator> AllDesignatorsForCourse(EventDB eventDB, Id<Course> courseId)
+        {
+            List<CourseDesignator> result = new List<CourseDesignator>();
+
+            if (QueryEvent.HasVariations(eventDB, courseId)) {
+                foreach (VariationInfo variationInfo in QueryEvent.GetAllVariations(eventDB, courseId)) {
+                    result.Add(new CourseDesignator(courseId, variationInfo));
+                }
+            }
+            else {
+                result.Add(new CourseDesignator(courseId));
+            }
+
+            return result;
+        }
+
 
         // Get all the control IDs to cross-ref, in the correct order.
         private Id<ControlPoint>[] GetControlIdsToXref(EventDB eventDB)

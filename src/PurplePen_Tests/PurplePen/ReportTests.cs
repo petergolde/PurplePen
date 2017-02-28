@@ -595,6 +595,7 @@ namespace PurplePen.Tests
     <col class=""middlecol rightalign"" />
     <col class=""middlecol rightalign"" />
     <col class=""middlecol rightalign"" />
+    <col class=""middlecol rightalign"" />
     <col class=""rightcol rightalign"" />
     <tr>
       <th>Control</th>
@@ -607,6 +608,7 @@ namespace PurplePen.Tests
       <th>Empty</th>
       <th>Long</th>
       <th>Score</th>
+      <th>Relay</th>
     </tr>
     <tr>
       <td>31</td>
@@ -619,6 +621,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td />
+      <td>4,5</td>
     </tr>
     <tr>
       <td>35</td>
@@ -631,6 +634,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td>1</td>
     </tr>
     <tr>
       <td class=""tablerule"">36</td>
@@ -643,6 +647,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">7</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>37</td>
@@ -655,6 +660,7 @@ namespace PurplePen.Tests
       <td />
       <td>8</td>
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td>38</td>
@@ -664,6 +670,7 @@ namespace PurplePen.Tests
       <td>13</td>
       <td>12</td>
       <td>18</td>
+      <td />
       <td />
       <td />
       <td />
@@ -679,6 +686,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">6</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>40</td>
@@ -691,6 +699,7 @@ namespace PurplePen.Tests
       <td />
       <td>15</td>
       <td>*</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>41</td>
@@ -703,6 +712,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td>7,8,10,11</td>
     </tr>
     <tr>
       <td class=""tablerule"">42</td>
@@ -712,6 +722,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"">1</td>
       <td class=""tablerule"" />
       <td class=""tablerule"">17</td>
+      <td class=""tablerule"" />
       <td class=""tablerule"" />
       <td class=""tablerule"" />
       <td class=""tablerule"" />
@@ -727,6 +738,7 @@ namespace PurplePen.Tests
       <td />
       <td>5</td>
       <td>*</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>44</td>
@@ -739,6 +751,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">45</td>
@@ -751,6 +764,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">10</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>46</td>
@@ -763,6 +777,7 @@ namespace PurplePen.Tests
       <td />
       <td>2</td>
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td>47</td>
@@ -775,6 +790,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">48</td>
@@ -787,6 +803,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">4,11,20</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>49</td>
@@ -799,6 +816,7 @@ namespace PurplePen.Tests
       <td />
       <td>1</td>
       <td>*</td>
+      <td>13,14</td>
     </tr>
     <tr>
       <td>50</td>
@@ -811,6 +829,7 @@ namespace PurplePen.Tests
       <td />
       <td>16</td>
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">51</td>
@@ -823,6 +842,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">12,17</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"">7,8,11,12</td>
     </tr>
     <tr>
       <td>52</td>
@@ -835,6 +855,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td>53</td>
@@ -847,6 +868,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td>8,9,11,12</td>
     </tr>
     <tr>
       <td class=""tablerule"">54</td>
@@ -859,6 +881,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"" />
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>55</td>
@@ -871,6 +894,7 @@ namespace PurplePen.Tests
       <td />
       <td>21</td>
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td>56</td>
@@ -883,6 +907,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">57</td>
@@ -895,6 +920,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"" />
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"">3</td>
     </tr>
     <tr>
       <td>58</td>
@@ -907,6 +933,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td>59</td>
@@ -919,6 +946,7 @@ namespace PurplePen.Tests
       <td />
       <td>18</td>
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">60</td>
@@ -931,6 +959,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">3</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>70</td>
@@ -943,6 +972,7 @@ namespace PurplePen.Tests
       <td />
       <td>19</td>
       <td>*</td>
+      <td>6,7,9,10</td>
     </tr>
     <tr>
       <td>71</td>
@@ -955,6 +985,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">72</td>
@@ -967,10 +998,12 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">14</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"">5,6,8,9,10,12,13</td>
     </tr>
     <tr>
       <td>73</td>
       <td>1</td>
+      <td />
       <td />
       <td />
       <td />
@@ -991,6 +1024,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td class=""tablerule"">75</td>
@@ -1003,6 +1037,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"" />
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"">3</td>
     </tr>
     <tr>
       <td>76</td>
@@ -1015,6 +1050,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td>6,7,10,11</td>
     </tr>
     <tr>
       <td>77</td>
@@ -1027,6 +1063,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td>4</td>
     </tr>
     <tr>
       <td class=""tablerule"">78</td>
@@ -1039,6 +1076,7 @@ namespace PurplePen.Tests
       <td class=""tablerule"" />
       <td class=""tablerule"">9</td>
       <td class=""tablerule"">*</td>
+      <td class=""tablerule"" />
     </tr>
     <tr>
       <td>79</td>
@@ -1051,6 +1089,7 @@ namespace PurplePen.Tests
       <td />
       <td>13</td>
       <td>*</td>
+      <td />
     </tr>
     <tr>
       <td>80</td>
@@ -1063,6 +1102,7 @@ namespace PurplePen.Tests
       <td />
       <td />
       <td>*</td>
+      <td />
     </tr>
   </table>
 
