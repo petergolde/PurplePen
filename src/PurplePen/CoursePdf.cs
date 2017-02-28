@@ -218,17 +218,15 @@ namespace PurplePen
                         pageToDraw = PdfNonScaledPage(page.courseDesignator);
                     }
                     else {
-                        using (XForm xForm = pdfImporter.GetXForm(0)) {
-                            Matrix transform = Geometry.CreateInvertedRectangleTransform(page.printRectangle, page.mapRectangle);
-                            RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, new RectangleF(0, 0, paperSize.Width * 100F, paperSize.Height * 100F));
-                            RectangleF printedPortionInInches = new RectangleF(
-                                Geometry.InchesFromMm(printedPortionInMapCoords.Left),
-                                Geometry.InchesFromMm(mapBounds.Height - printedPortionInMapCoords.Bottom),
-                                Geometry.InchesFromMm(printedPortionInMapCoords.Width),
-                                Geometry.InchesFromMm(printedPortionInMapCoords.Height));
+                        Matrix transform = Geometry.CreateInvertedRectangleTransform(page.printRectangle, page.mapRectangle);
+                        RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, new RectangleF(0, 0, paperSize.Width * 100F, paperSize.Height * 100F));
+                        RectangleF printedPortionInInches = new RectangleF(
+                            Geometry.InchesFromMm(printedPortionInMapCoords.Left),
+                            Geometry.InchesFromMm(mapBounds.Height - printedPortionInMapCoords.Bottom),
+                            Geometry.InchesFromMm(printedPortionInMapCoords.Width),
+                            Geometry.InchesFromMm(printedPortionInMapCoords.Height));
 
-                            grTarget = pdfWriter.BeginCopiedPartialPage(xForm, paperSize, printedPortionInInches);
-                        }
+                        grTarget = pdfWriter.BeginCopiedPartialPage(pdfImporter, 0, paperSize, printedPortionInInches);
                     }
 
                     // Don't draw the map normally.

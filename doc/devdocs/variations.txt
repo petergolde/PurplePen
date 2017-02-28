@@ -6,13 +6,7 @@ Big things to do before first beta:
 
 - tooltips on ordering view don't disappear well, I think.
 
-Variation naming issues:
-    - Now I'm thinking not to do anything special. Use team/participant when printing that way, otherwise code, always after course name.
-
-    Other ideas I'm postponing for now:
-        - UI to change variation naming. I think this is useful. Simple options: Variation code (default) or name+number or team/participant; include course name first.
-        - What to show in course name field in description? Variation code, other code, team/participant number  Affects special text?
-
+- After adding variation, make sure next added control goes into one of the legs.
 
 
 Minor issues to check/add later.
@@ -20,10 +14,6 @@ Minor issues to check/add later.
 - GPX tracks.
 
 - Text lines above/below -- how do these work with variations and with butterfly courses
-
-- Allow insertion allows in different places on the same leg when splitting/joining.
-
-- If fork ends at finish, no way to add controls after the fork. Prohibit such forks? Allow dragging in topology only? 
 
 - Allow variation that doesn't join. How to end it?
 
