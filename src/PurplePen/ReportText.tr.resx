@@ -117,4 +117,169 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Tırmanış</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Kod</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Sütun</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Kontrol</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Kontrol kodları</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Kontroller</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Parkur</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Mesafe</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Öğe</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Ayak</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Boy</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Yükle</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Yer</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value>#Parkurlar</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Sebep</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Aynı sembol mi?</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>{0} için Parkur Özeti</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>{0} için çapraz referans kontrolü</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Kontrolleri Birlikte Kapat</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Aşağıdaki tabloda, birbirlerinin {0} metre içerisindeki tüm kontrol çiftleri gösterilmektedir. Aynı sembol sütunu, iki kontrolün aynı birincil sembolü (D sütunu) olup olmadığını gösterir.</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Eksik Açıklama Kutuları</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Düzenli kurslarda tırmanış miktarını belirtmelisiniz</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Tüm denetimler D sütununda bir ana özelliğe sahip olmalıdır</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>"Arasında", G sütununda olduğunda, D ve E sütunlarında iki özellik gösterilmelidir</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>"Kavşak" veya "geçiş" F sütununda olduğunda, D ve E sütunlarında iki özellik gösterilmelidir</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Düzenli parkurlarda bitiş çemberi olmalıdır</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Derslerde Eksik Öğeler</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Kursun rakip yükünü beklemesi gerekirdi</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Tanımlama kalıbı yok</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Eksik Punch Kalıpları</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Skor dersinin tüm kontroller için puan seti veya kontrolü yok olmalıdır.</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Eksik Puanlar</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Düzenli kurslarda başlangıç üçgeni olmalıdır</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Score courses should have a start triangle</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>hayır</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Hiçbir sorun bulunamadı.</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Etkinlik Denetimi için {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Kullanılmayan Hedefler</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Aşağıdaki denetimler Tüm Denetimler koleksiyonunda bulunur; ancak herhangi bir derste kullanılmaz. Bunları kaldırmak için "Etkinlik" menüsündeki "Kullanılmayan Kontrolleri Kaldır" komutunu kullanın. Bu kontroller, bu raporda daha fazla düşünülmeyecektir.</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Ortalama</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} hedefler, {2}, {3} m tırmanma)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} hedefler, {2})</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>{0} için Ayak Uzunluğu Raporu</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Kontrol Ekle</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Ayak ekle</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Bazı veya tüm derslerin kendileri için belirlenmiş rakip yükleri yoktur. Aşağıda listelenen yükler bu nedenle yanlış veya eksik olabilir. Rakip yükleri ayarlamak için "Course" menüsünden "Competitor Load" ı seçin.</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(Sadece birden fazla ders tarafından kullanılan bacaklar aşağıdaki tabloda görünür)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>{0} için Rakip Yükü Özeti</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>UYARI:</value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Uyarı: Belirtilen bacaklar nedeniyle, {0} denetimindeki çatal eşit şekilde kullanılamaz. {1} bacak dalları {2}, {3} bacakları ise dalları {4} kullanacaktır. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Ayak{0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Henüz hiçbir röle ekibi tanımlanmamıştır. İstenen takım ve bacak sayısını seçip "Varyasyonları Ata" düğmesine basın.</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Ekip {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>{0} için Röle Atanmaları</value>
+  </data>
 </root>

@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Parkur</value>
+  </data>
+  <data name="namePrefixLabel.Text" xml:space="preserve">
+    <value>İsim öneki:</value>
+  </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Yol işaretleri</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>Bir GPX Dosyası kontroller için GPS koordinatları içerir ve kontrollerin doğru yerini doğrulamak için bir GPS veya akıllı telefona yüklenebilir.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GPX dosysı oluştur</value>
+  </data>
 </root>

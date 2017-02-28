@@ -299,7 +299,7 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
     <value>Kaikki rastit ovat käytössä radalla.</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Valmis</value>
+    <value>&amp;Maali</value>
   </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Seuraava &gt;</value>
@@ -424,8 +424,11 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos radan "Kaikki osat" on näkyvissä. Vaihda näkyviin radan osa, jolle haluat lisätä rastinmääritteet ja valitse "Lisää rastinmääritteet" uudelleen.</value>
   </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe ei löytynyt</value>
+  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>Pdfium epäonnistui PDF-tiedoston lukemisessa</value>
+    <value>Pdfium PDF-muunnin epäonnistui PDF-tiedoston lukemisessa</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Ei voitu lukea PDF-muuntamisen tulosta tiedostosta '{0}'</value>
@@ -528,6 +531,27 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Radan "{0}" tulostus on valmis. Aloita radan "{1}" tulostus painamalla OK.</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Kaikki hajonnat</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Soveltuu viesteihin, joissa on {0} osallistujaa joukkueessa.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Keskusrastilla käydään {0} kertaa. Mahdollisia ratavaihtoehtoja on {1}.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>Hajonnan aloittavaa rastia ei voi siirtää uuteen paikkaan radalla.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Radalla on liian monta hajontavariaatiota. Erillisten hajontavariaatioiden määrä on rajoitettu {0}:een.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>

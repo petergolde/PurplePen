@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Yazdır</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Yazıcı Değiştir...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Yazıcı Adı</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Yazıcı:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Önizleme...</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Parkur</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopya Sayısı</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Görünüm</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Parkur Yazdır</value>
   </data>
 </root>

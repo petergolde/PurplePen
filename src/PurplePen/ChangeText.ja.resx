@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>コースパート</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>コースバリエーション</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>コース距離</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>印刷の縮尺</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>リレーチーム</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>リレーレッグ</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>外観</value>

@@ -124,7 +124,7 @@
     <value>Radat</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
-    <value>Tulosta kartanvaihdot samalle kartalle </value>
+    <value>Kaikki osat samalle kartalle </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>Värimalli:</value>

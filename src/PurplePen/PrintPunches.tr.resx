@@ -117,7 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Kağıt boyutu...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Yazıcı Adı</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Yazıcı Değiştir...</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Yazıcı:</value>
+  </data>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
+  <data name="punchCardLayoutButton.Text" xml:space="preserve">
+    <value>Kontrol Kartı Yerleşimi...</value>
+  </data>
+  <data name="mmSuffixLabel.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="punchBoxSizeLabel.Text" xml:space="preserve">
+    <value>Kontrol Kartı Boyutu...</value>
+  </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Görünüm</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Vazgeç</value>
+  </data>
+  <data name="printButton.Text" xml:space="preserve">
+    <value>Yazdır</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Önizleme...</value>
+  </data>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Parkur</value>
+  </data>
+  <data name="descriptionsLabel.Text" xml:space="preserve">
+    <value>Kopya...</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Kopya Sayısı</value>
   </data>
 </root>

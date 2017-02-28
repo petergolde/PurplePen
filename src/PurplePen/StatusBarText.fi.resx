@@ -216,4 +216,7 @@
   <data name="AddingRectangle" xml:space="preserve">
     <value>Paina hiiren vasen painike pohjaan ja vedä luodaksesi kohteen</value>
   </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Vedä rastinumeroa toiseen kohtaan radan uudelleenjärjestämiseksi</value>
+  </data>
 </root>

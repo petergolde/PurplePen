@@ -117,4 +117,58 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Kalem Boyutu</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
+    <value>Düzenli</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
+    <value>Kalın</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelMM1.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Siyah:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Sarı:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Mor:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cam Göbeği:</value>
+  </data>
+  <data name="groupBoxPreview.Text" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
+    <value>Siyah</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items1" xml:space="preserve">
+    <value>Mor</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Renk:</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD Haritası</value>
+  </data>
 </root>

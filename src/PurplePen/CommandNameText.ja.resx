@@ -285,4 +285,16 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>コースを複製</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>{0} ファイルを作成(&amp;F)</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>バリエーションを追加</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>フォーク/ループを削除</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>リレーチームバリエーション</value>
+  </data>
 </root>

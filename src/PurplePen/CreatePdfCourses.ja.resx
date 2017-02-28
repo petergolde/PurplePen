@@ -163,7 +163,7 @@
     <value>フォルダ</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>ファイル名プレフィックス:</value>
+    <value>プレフィックス:</value>
   </data>
   <data name="filesLabel.Text" xml:space="preserve">
     <value>ファイル:</value>

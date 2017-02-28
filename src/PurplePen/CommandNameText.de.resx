@@ -285,4 +285,16 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Bahn duplizieren ...</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>{0} &amp;Dateien erstellen</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Bahnvariante hinzufügen</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Gabelung/Schleife löschen</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Staffelteam Varianten</value>
+  </data>
 </root>

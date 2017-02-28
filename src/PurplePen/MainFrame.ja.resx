@@ -120,6 +120,15 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>全コントロール</value>
   </data>
+  <data name="radioButtonDescriptions.Text" xml:space="preserve">
+    <value>ディスクリプション</value>
+  </data>
+  <data name="radioButtonTopology.Text" xml:space="preserve">
+    <value>オーダリング</value>
+  </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>地図ビューアトポロジー</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen ファイル|*.ppen|すべてのファイル|*.*</value>
   </data>
@@ -151,7 +160,7 @@
     <value>データ交換ファイル(IOF XML)を作成(&amp;I)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>GPXファイルを作成(&amp;G)</value>
+    <value>GPXファイルを作成(&amp;P)...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>ディスクリプションを印刷(&amp;P)...</value>
@@ -268,16 +277,16 @@
     <value>表示(&amp;V)</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
-    <value>スタートを追加(&amp;S)</value>
+    <value>スタート(&amp;S)</value>
   </data>
   <data name="addControlMenu.Text" xml:space="preserve">
-    <value>コントロールを追加(&amp;C)</value>
+    <value>コントロール(&amp;C)</value>
   </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>完了(&amp;F)</value>
+    <value>フィニッシュ(&amp;F)</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>ディスクリプションを配置(&amp;D)</value>
+    <value>ディスクリプション(&amp;D)</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>コントロールの場所で地図交換</value>
@@ -286,10 +295,13 @@
     <value>地図交換所までテープ誘導(&amp;F)</value>
   </data>
   <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>地図交換所を追加(&amp;E)</value>
+    <value>地図交換(&amp;X)</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>バリエーション(&amp;V)...</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>テキスト行を追加(&amp;L)</value>
+    <value>テキストライン(&amp;L)</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>必須の横断地点</value>
@@ -333,6 +345,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>長方形</value>
   </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>追加(&amp;A)</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>地図ファイル(&amp;M)...</value>
   </data>
@@ -375,11 +390,17 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>走行人数(&amp;L)...</value>
   </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>リレーチームバリエーション(&amp;V)...</value>
+  </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>コース(&amp;C)</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>削除(&amp;D)</value>
+  </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>フォーク/ループを削除</value>
   </data>
   <data name="addBendMenu.Text" xml:space="preserve">
     <value>曲げ点を追加(&amp;B)</value>
@@ -557,6 +578,9 @@
   </data>
   <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
     <value>地図交換所を追加</value>
+  </data>
+  <data name="addVariationToolStripButton.Text" xml:space="preserve">
+    <value>バリエーションを追加</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>必須の横断地点</value>

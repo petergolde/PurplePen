@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.0 beta 1\n"
+"Project-Id-Version: Purple Pen 3.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2016-11-18 15:22-08:00\n"
+"POT-Creation-Date: 2017-02-18 14:24-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1067,7 +1067,7 @@ msgid "One per course"
 msgstr ""
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
-msgid "One per course part"
+msgid "One per course part/variation"
 msgstr ""
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
@@ -1485,11 +1485,11 @@ msgstr "&View"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr "Add &Start"
+msgstr ""
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr "&Control"
+msgstr ""
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
@@ -1498,7 +1498,7 @@ msgstr "&Finish"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr "&Descriptions"
+msgstr ""
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1518,7 +1518,7 @@ msgstr ""
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr "Text &Line..."
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -2542,6 +2542,35 @@ msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
 msgstr ""
 
+#: MiscText.resx, CannotAddVariation
+msgid "Cannot add variation."
+msgstr ""
+
+#: MiscText.resx, VariationAlreadyExists
+msgid "A variation already exists at this control."
+msgstr ""
+
+#: MiscText.resx, VariationMustSelectControl
+msgid "A control or leg must be selected to add a variation."
+msgstr ""
+
+#: MiscText.resx, VariationNotFinish
+msgid "A variation cannot be added to a finish control."
+msgstr ""
+
+#: MiscText.resx, VariationNotInAllControls
+msgid "A variation cannot be added to the All Controls view."
+msgstr ""
+
+#: MiscText.resx, VariationNotInScoreCourse
+msgid "A variation cannot be added to a score course."
+msgstr ""
+
+#: MiscText.resx, VariationNotLastControl
+msgid "A variation cannot be added to the last control. Add a "
+"finish control first."
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Don't warn about missing fonts for this event again"
@@ -3214,11 +3243,11 @@ msgstr "Average"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr "{0} ({1} controls, {2}, {3} m climb)"
+msgstr ""
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr "{0} ({1} controls, {2})"
+msgstr ""
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"

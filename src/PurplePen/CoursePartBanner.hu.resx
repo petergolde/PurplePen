@@ -121,6 +121,6 @@
     <value>Tulajdonságok...</value>
   </data>
   <data name="coursePartLabel.Text" xml:space="preserve">
-    <value>Pálya rész:</value>
+    <value>Pálya rész: </value>
   </data>
 </root>

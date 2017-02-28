@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Jede Variante Einzeln</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Jede Staffeletappe Einzeln</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Alle Varianten Kombiniert</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Varianten:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Alle Gabelungen auf einer Karte anzeigen</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Eine Karte für jede mögliche Variante der Bahn.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Eine Karte für jede Etappe des ausgewählten Staffelteams.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Sie müssen zuerst über "Staffelteam Varianten..." im Menü "Bahnen" die Staffelteams festlegen.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Einzelne Varianten Auswählen</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Dieser Bahn wurden {0} Staffelteams zugewiesen. Verwenden sie "Staffelteam Varianten..." im Menü "Bahnen", um die Anzahl der Teams zu ändern.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>bis</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Auswählen, für welche Teams gedruckt/exportiert werden soll:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Varianten auswählen:</value>
+  </data>
 </root>

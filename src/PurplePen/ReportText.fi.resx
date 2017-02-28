@@ -241,7 +241,7 @@
     <value>Keskiarvo</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} rastia, {2}, kokonaisnousu {3} m)</value>
+    <value>{0} ({1} rastia, {2}, {3} m nousua)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
     <value>{0} ({1} rastia, {2})</value>
@@ -266,5 +266,20 @@
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>VAROITUS:</value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Varoitus: määritetystä osuuksien lukumäärästä johtuen rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. Osuuksista {1} käyttää hajontaa {2}, kun taas osuuksista {3} käyttää hajontaa {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Osuus {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Viestijoukkueita ei ole vielä määritelty. Valitse haluamasi määrä joukkueita sekä osuuksia ja paina "Määritä hajonnat" - painiketta.</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Joukkue {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Hajonta-avain radalle {0}</value>
   </data>
 </root>

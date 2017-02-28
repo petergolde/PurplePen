@@ -123,9 +123,6 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Wybierz plik mapy...</value>
   </data>
-  <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Wszystkie pliki map|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Wybierz plik mapy</value>
   </data>

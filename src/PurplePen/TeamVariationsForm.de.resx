@@ -120,10 +120,28 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Schließen</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportieren...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Drucken...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Druckvorschau...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Anzahl der Etappen:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Varianten Zuweisen</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Anzahl der Teams:</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Tabelle (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Staffelteam-Varianten Zuweisen</value>
   </data>
 </root>

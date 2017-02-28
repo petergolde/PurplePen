@@ -117,13 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="copyrightLabel.Text" xml:space="preserve">
+    <value>Telif Hakkı   Peter Golde e aittir</value>
+  </data>
+  <data name="freeLabel.Text" xml:space="preserve">
+    <value>Purple Pen ücretsiz bir yazılımdır kopyalanıp paylaşılabilir</value>
+  </data>
+  <data name="disclaimerLabel.Text" xml:space="preserve">
+    <value>BU YAZILIM, TESCİL HAKKI SAHİPLERİ  VE DİĞER KATKI VERENLER TARAFINDAN "OLDUĞU GİBİ" SAĞLANMAKTA VE HER TÜRLÜ DİREKT/DOLAYLI (HIZLI VE AMACA ÖZEL) GARANTİYİ İÇERMEKTEDİR. 
+ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILABİLİRLİĞİ VE KONDİSYONUNA(YAZILIMIN DURUMUNA) BAĞLI İLGİLİ ÖZEL GARANTİLER REDDEDİLMEKTEDİR</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Tamam</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Hazırlayanlar</value>
+    <value>Destekleyenler</value>
+  </data>
+  <data name="licenseButton.Text" xml:space="preserve">
+    <value>Tüm Lisansı Görüntüle</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Purple Pen Hakkında</value>
+    <value>Pruple Pen Hakkında</value>
   </data>
 </root>

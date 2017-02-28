@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Radan osa</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Hajonta</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Radan pituus</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Tulostusmittakaava</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Joukkue</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Osuus</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Ulkoasu</value>

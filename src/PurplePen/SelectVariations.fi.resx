@@ -117,4 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Jokainen hajonta erikseen</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Jokainen osuus erikseen</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Kaikki hajonnat yhdistettynä</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Hajonnat:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Näytä kaikki hajonnat yhdellä kartalla.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Yksi kartta radan jokaisesta mahdollisesta hajonnasta.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Yksi kartta valitsemiesi joukkueiden jokaiselle osuudelle.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Määritä ensin viestijoukkueet valitsemalla Rata-valikosta Viestin joukkuehajonnat...</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Valitse yksittäiset hajonnat</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Tälle radalle on määritelty {0} viestijoukkuetta. Joukkueiden lukumäärän voit vaihtaa valitsemalla Rata-valikosta Viestin joukkuehajonnat...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Valitse, mitkä joukkueet tulostetaan/viedään:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Valitse hajonnat</value>
+  </data>
 </root>

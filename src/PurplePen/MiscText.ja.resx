@@ -299,7 +299,7 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
     <value>すべてのコントロールがコースで使用されています。</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
-    <value>完了(&amp;F)</value>
+    <value>フィニッシュ(&amp;F)</value>
   </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>次へ(&amp;N) &gt;</value>
@@ -424,8 +424,11 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>[すべてのパート] を表示している場合ディスクリプションを配置できません。ディスクリプションを配置するコースパートに表示を切り換えてから、[ディスクリプションを配置]を選択してください。</value>
   </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe が見つかりません</value>
+  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>Pdfium が PDF の読み込みに失敗しました</value>
+    <value>Pdfium PDF converter がPDFファイルの正常な読み込みに失敗しました</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>ファイル '{0}' からのPDF変換の結果が読み込めませんでした</value>
@@ -528,6 +531,27 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>「{0}」の印刷が終わりました。OKをクリックで「{1}」の印刷を開始します。</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>すべてのバリエーション</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>リレーで1チームあたりのフォークにかかわる人数が {0} 人の場合に適しています。</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>ループの中心コントロールを {0} 回通過します。 {1} 通りのループをまわる順番の組み合わせがあります。</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>フォーク/ループの起点にあるコントロールはドラッグで順番を変更できません。</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>このコースではバリエーションが多すぎます。バリエーション数の上限は {0} です。</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>

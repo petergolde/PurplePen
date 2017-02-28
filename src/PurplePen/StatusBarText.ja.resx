@@ -216,4 +216,7 @@
   <data name="AddingRectangle" xml:space="preserve">
     <value>左マウスボタンを押したままドラッグでオブジェクトを作成します</value>
   </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>コントロール番号をドラッグして並べ替えます。シフトを押しながらドラッグすると複製できます。</value>
+  </data>
 </root>

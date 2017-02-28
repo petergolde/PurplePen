@@ -150,9 +150,6 @@
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Utwórz plik I&amp;OF XML</value>
   </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Utwórz plik &amp;GPX...</value>
-  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Drukuj opisy PK...</value>
   </data>
@@ -264,29 +261,14 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Widok</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;start</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;PK</value>
-  </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
     <value>&amp;Zakończ</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;opisy</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Zmiana &amp;mapy na PK</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>O&amp;taśmowany przebieg do zmiany mapy</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;zmianę mapy</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Dodaj &amp;tekst</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obowiązkowy punkt przebiegu</value>

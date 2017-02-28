@@ -120,9 +120,6 @@
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Izhod</value>
   </data>
-  <data name="layoutGroup.Text" xml:space="preserve">
-    <value>Prikaz</value>
-  </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Simboli</value>
   </data>
@@ -131,6 +128,9 @@
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="layoutGroup.Text" xml:space="preserve">
+    <value>Prikaz</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Prekliči</value>

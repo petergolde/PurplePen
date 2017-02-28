@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textLineLabel.Text" xml:space="preserve">
+    <value>Kontrol açıklamalarının ayrı satırlarına yerleştirilecek metni girin:</value>
+  </data>
+  <data name="coursesLabel.Text" xml:space="preserve">
+    <value>Parkurlar:</value>
+  </data>
+  <data name="positionLabel.Text" xml:space="preserve">
+    <value>Durum:</value>
+  </data>
+  <data name="comboBoxPosition.Items" xml:space="preserve">
+    <value>Yukarda{0}</value>
+  </data>
+  <data name="comboBoxPosition.Items1" xml:space="preserve">
+    <value>Altında{0}</value>
+  </data>
+  <data name="comboBoxCourses.Items" xml:space="preserve">
+    <value>Sadece Bu Parkur</value>
+  </data>
+  <data name="comboBoxCourses.Items1" xml:space="preserve">
+    <value>Bütün Parkurlar {0}</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Metin satırı Ekle</value>
+  </data>
 </root>

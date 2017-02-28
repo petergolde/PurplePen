@@ -123,6 +123,9 @@
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>名詞の性</value>
   </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>格</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>テキスト</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>名詞の性:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>変更される記号の格:</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>格形式を表示</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>カスタマイズされた記号テキスト</value>

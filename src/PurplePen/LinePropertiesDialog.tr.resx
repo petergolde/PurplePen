@@ -117,6 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Renk:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Tek</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Çift</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Kesikli</value>
+  </data>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Genişlik:</value>
+  </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Boşluk Boyutu:</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Çizgi Boyutu:</value>
+  </data>
+  <data name="labelWidthMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelGapSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelDashSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Köşe yarıçapı:</value>
+  </data>
+  <data name="labelRadiusMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Örnek</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Görünüm</value>
   </data>

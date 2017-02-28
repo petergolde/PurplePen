@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Teilstrecke</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Bahnvariante</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Länge der Bahn</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Druckmaßstab</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Staffelteam</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Staffel-Etappe</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Darstellung</value>

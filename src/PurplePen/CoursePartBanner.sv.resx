@@ -120,7 +120,4 @@
   <data name="buttonProperties.Text" xml:space="preserve">
     <value>Egenskaper...</value>
   </data>
-  <data name="coursePartLabel.Text" xml:space="preserve">
-    <value>Del av bana:</value>
-  </data>
 </root>

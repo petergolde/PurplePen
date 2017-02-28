@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>爬高量</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>代码</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>列</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>控制装置</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>控制码</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>控制装置</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>路线</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>距离</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>项目</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>课程</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>长度</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>加载</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value>路线</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>原因</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>相同的符号？</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>{ 0 }为课程总结</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>{ 0 }为控制交叉引用</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>关闭在控制</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>下表显示了所有的控制对，在{ 0 }米对方。相同的符号栏显示是否两个控件具有相同的主符号（D）。</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>描述盒子失踪</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>正规课程应该指出额攀升</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>所有的控件必须在D列的主要特征</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>当“以柱克之间，两特征必须列D和E所示</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>当“结”或“穿越”是在F栏，两特征必须列D和E所示</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>正规课程应该完成的圆</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>课程中的缺项</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>当然应该有竞争对手的负荷</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>没有定义的穿孔模式</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>失踪的穿孔模式</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>评分过程中应该有得分为所有控制或不控制</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>丢失的分数</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>正规课程应该有一个开始的三角形</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>评分的课程应该有一个开始的三角形</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>没有发现问题</value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>{ 0 }为事件审计</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>未使用的控制</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>以下控件中的所有控件的集合而不是用于任何课程。删除它们，使用“删除未使用的控件”命令，在“项目”菜单。这些控件将不会进一步考虑本报告中。</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>平均</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{ 0 }（{ 1 }控制，{ 2 }，{ 3 }我爬）</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{ 0 }（{一} Controls，{二}）</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>{ 0 }为课程的报告</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>负荷控制</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>腿部负荷</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>一些或所有的课程没有竞争对手的荷载为他们设定。下面列出的负载可能不正确或丢失的原因。建立竞争对手的荷载，选择“竞争对手负荷”与“课程”菜单。</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>（只有腿由一个以上的课程出现在下面的表格）</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>为{ 0竞争者负荷总结}</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>警告：</value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>警告：由于腿指定的数量，在控制{ 0 }叉不会用均匀。{ 1 }腿（S）将使用分支（ES）{ 2 }，而{ 3 }腿（S）将使用分支（ES）{ 4 }。 </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>把{ 0 }</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>没有接力的队伍已尚未确定。选择团队和腿所需数量按“分配变化”按钮。</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>{ 0 }队</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>{ 0 }为中继分配</value>
+  </data>
+</root>

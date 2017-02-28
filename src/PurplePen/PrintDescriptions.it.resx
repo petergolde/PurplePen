@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Output</value>
-  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Dimensione carta:</value>
   </data>
   <data name="marginsLabel.Text" xml:space="preserve">
     <value>Margini:</value>
   </data>
-  <data name="layoutGroup.Text" xml:space="preserve">
-    <value>Aspetto</value>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Output</value>
   </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Simboli</value>
@@ -137,6 +134,9 @@
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="layoutGroup.Text" xml:space="preserve">
+    <value>Aspetto</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Annulla</value>

@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>撤消</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>重复</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc键</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>没有符号</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>所有控制</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>无法加载“{ 0 }的原因如下：</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>无法保存“{ 0 }的原因如下：</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>无法加载地图文件“{ 0 }的原因如下：</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>无法读取图像文件“{ 0 }”。</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>无法打印“{ 0 }的原因如下：</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>无法创建“{ 0 }的原因如下：</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>无法创建文件夹“{ 0 }的原因如下：</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>无法读取地图的原因如下：“{ 0 }使用优化/修复产品可以解决的问题。</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>无法为以下原因造成的产品文件：</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>你想保存您所做的更改为“{ 0 }”？</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>文件“{ 0 }”已存在于指定的文件夹。单击“后退”按钮选择一个新的文件夹或一个新的事件标题。</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>控制代码“{ 0 }”已被其他控件使用。</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>一个控制点必须是整数1-999。</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>一个课程上必须是一个数字0-9999，或空白。</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>一个课程的负载必须是一个整数，是999999，还是空白。</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>撤消(&amp;U)</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>撤消</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>重做(&amp;#38;R)</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>重做</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>清楚的选择</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>CA和取消操作</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>取消操作</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>进入新的评分</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>输入新密码</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>输入特征尺寸
+使用/高度的斜坡上
+使用|两特征
+表示一个换行。在翻译的等效位置开始新的一行。</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>进入新的活动名称使用|分隔线（影响所有课程）</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>进入新的次级标题使用|分隔线</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>在米进入新的攀登</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>输入新的符号意义（影响所有课程）</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>输入新的文字使用|分隔线</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>控制{ 0 }不再使用任何课程。你想从控制收藏删除这些控件？</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>控制{ 0 }是没有任何课程的应用。你想从控制收藏删除该控制吗？</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>控制{ 0 }目前由以下课程：{ 1 }。你想删除这个控制呢？</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>控制代码必须是一个，两个，或三个字母或数字。</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>控制代码不能包含空格。</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>控制代码不应该从零</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>控制代码不应该看起来像是另一个数时颠倒。</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>代码“{ 0 }”被多次使用。</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>打印比例必须在100和100000之间的数。</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>课程性质</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>风景</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>竖直</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>页面大小是任何描述被印得太小。</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>版本{0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>版{ 0 }紫色笔是现在可供下载。（您当前正在运行的版本{ 1 }。）要下载并安装最新版本？</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>帮助文件“{ 0 }无法打开。</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>缩放</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>地图文件“{ 0 }”可能不会被发现。最有可能的是，地图文件已被移动或删除，或者紫色的笔文件已被移动（或不同的计算机上）。映射文件必须每次紫色笔事件文件加载存在。如果你把一个紫色的笔事件文件给另一个人，肯定的是，人都有一个副本地图文件也。按下OK，试图找到一个副本的计算机上的映射文件。</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>所有的控件中使用的课程。</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>完成(&amp;F)</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>下一步(&amp;N) &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>控制{ 0 }</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>结束</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>强制性的交叉点</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>交叉道口</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>所有：{ 0 }</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>左：{0}：{1}右上：{ 2 }，{三}：底</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>阿尔法{ 0 }</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>β{ 0 }</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC { 0 }</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>复数</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>单数</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>自定义的文本需要一个“*”表示在对象被修改设置。</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>定向运动课程的设置</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>输入您希望的地方，地图上的文字。按下OK，拖动鼠标将文本置于所需的位置。</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>添加文本</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>输入新的文本</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>更改文字</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>另一个程序改变了地图文件“{ 0 }”。紫色的笔将载入地图。</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>目前事件已控制描述} { 0篇。你想改变控制描述语言{ 1 }？</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>打开“{ 0 }”</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>紫色的笔在装载前必须创建软件包文件关闭。</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>没有课程的选择打印</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*如果存在一个网站在翻译语言包含文档的紫色笔，输入网址（HTTP）作为本项目的翻译。否则你独自离开。</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>地图交换</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>交换</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>一方面{ 0 }</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>所有的零件</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>（除了{ 0 } {一}）</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>联系人电子邮件</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>发生了一个错误。为了帮助我们解决问题，请输入您的电子邮件地址和其他信息，并发送给我们一个错误报告。</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>请告诉我们你在计划做什么，来帮助解决问题</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>发送报告</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>描述可能不如果“零件”是显示添加到一个地图交换过程。切换到要添加描述部分，然后选择“添加描述”了。</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>pdfconverter.exe没有发现</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>PDFium PDF转换器无法读取PDF文件成功</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>无法读取的文件“{ 0 } PDF转换的结果”</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>无法为以下原因创建PDF文件：</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>用户定义</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>从PDF地图大小</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>被用户取消</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>创建{ 0 }…</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>打印页的{ 0 }（的{ 1 }）</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>地图文件“{ 0 }”已被删除。请尝试恢复地图的文件，然后按“确定”。</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>在您的计算机上的。NET框架似乎没有正确安装。请访问http://microsoft.com/net并安装最新版本的。你的Windows操作系统网络框架。</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>黑色</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>选择颜色…</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>自定义颜色</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>深蓝色</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>植物</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>浅蓝色</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>紫色</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>黄色</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>新增行</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>设置该矩形的外观。按下OK，拖动鼠标把矩形在所需的位置。</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>添加矩形</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>改变线条或矩形外观</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>改变线的外观</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>映射文件必须是一个软件包文件使用GPX文件。</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>该软件包的文件必须有一个坐标系统定义的使用GPX文件。</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>该软件包文件必须真实世界坐标定义使用GPX文件。</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>不能重投影点；要么是坐标系统或真实世界坐标系在OCAD地图是错的。</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>该软件包文件使用一个坐标系统，不是用紫色笔支持。</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>一个课程的长度必须是数字0.1 - 99.9，或空白的自动计算长度。</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>重复的课程</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>在进入或离开的空白公里长度，自动计算</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>打印完“{ 0 }”。按OK开始印刷“{ 1 }”。</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>所有的变化</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>适合使用在{ 0 }每个参赛队继电器。</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>在环的中央控制将参观{ 0 }倍。有{ 1 }可能的路径通过循环。</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>控制启动一个叉或回路不能拖过程中一个新的地方。</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>在这个过程中有太多的总变化。不同数目的变化是有限的{ 0 }。</value>
+  </data>
+</root>

@@ -117,4 +117,166 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Sembol Değiştir</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>Kontrol Kod'u Değiştir</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Kontrol Değiştir</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Kontrol Noktası Değiştir</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Başlığı Değiştir</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Tırmanış Mesafesi Değiştir</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>Parkur Adını Değiştir</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Yazı Alanını Değiştir</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Harita Ölçeğini Güncelle</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>Hedef'i Taşı</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Hedef Numarasını Taşı</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>Nesne Taşı</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>Hedef Sil</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>Nesne Sil</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Metin AlanıSil</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>Hedef Ekle</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>Başlangıç Ekle</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>Bitiş Ekle</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Zorunlu Geçiş Noktası Ekle</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>Nesne Ekle</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>Parkur Sil</value>
+  </data>
+  <data name="NewCourse" xml:space="preserve">
+    <value>Yeni Parkur</value>
+  </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Parkur Özelliklerini Değiştir</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Tüm Kontrol Noktalarını Değiştir</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>Yeni Etkinlik Oluştur</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Bayrak Yarışı Ayağını Değiştir</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Kod Değiştir</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Gösterilen Parkurları Değiştir</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Bayrak Yarış Ayağı Bükmesi Taşı</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Bükme Ekle</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Köşe Ekle</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Bükme Sil</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Köşe Sil</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Boşluk Sil</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Boşluğu kaldır</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Boşluğu Taşi</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>Döndür</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>Otomotik Numaralandırma</value>
+  </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Change Punch Patterns</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Delgi Kartı Düzenini Değiştir</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>Baskı Alanı Ayarla</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Yarışmacı Yüklemesi Değiştir</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Açıklama Metinini Özelleştir</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>Parkur Sırasını Değiştir</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Change Map File</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Eksik Fontları Yoksay</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>Metin satırı Ekle</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>Kullanılmayan Kontrolleri Kaldır</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Açıklama Dilini Değiştir</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Metni Değiştir</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Parkurun Görünüşünü Özelleştirme</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Harita Değişimi Ekle</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Harita Değişimi Sil</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Varyanson Ekle</value>
+  </data>
 </root>

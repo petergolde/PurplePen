@@ -424,8 +424,11 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Postenbeschreibungen können zu einer Bahn mit Kartenwechsel nicht hinzugefügt werden, wenn "Alle Teilstrecken" angezeigt werden. Wenn Sie Postenbeschreibungen hinzufügen wollen, wechseln Sie bitte auf die gewünschte Teilstrecke und wählen dann "Postenbeschreibung hinzufügen" nochmals aus.</value>
   </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe nicht gefunden</value>
+  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
-    <value>Pdfium konnte die PDF-Dateien nicht lesen</value>
+    <value>PDF-Konverter "PDFium" konnte die PDF-Datei nicht lesen</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Das Ergebnis der PDF-Konvertierung aus Datei '{0}' konnte nicht gelesen werden</value>
@@ -528,6 +531,27 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Drucken von "{0}" fertig. OK klicken, um Drucken von "{1}" zu starten.</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Alle Varianten</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Geeignet für Staffeln mit {0} Teilnehmern pro Team.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Der zentrale Kontrollposten wird {0} mal angelaufen. Es gibt {1} Möglichkeiten, die Schleifen zu durchlaufen.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>Ein Posten am Beginn einer Gabelung/Schleife kann nicht verschoben werden.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Die Bahn enthält zu viele Varianten. Die Anzahl der Varianten ist auf {0} beschränkt.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>

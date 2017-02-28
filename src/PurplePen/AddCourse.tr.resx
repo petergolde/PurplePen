@@ -120,17 +120,44 @@
   <data name="firstControlLabel.Text" xml:space="preserve">
     <value>İlk kontrol numarası:</value>
   </data>
+  <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
+    <value>Görüntü Açıklaması</value>
+  </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Harita baskı ölçeği:</value>
+    <value>Harita Baskı Ölçeği</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
-    <value>Simgeler</value>
+    <value>Semboller</value>
   </data>
   <data name="descKindCombo.Items1" xml:space="preserve">
     <value>Metin</value>
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
-    <value>Simgeler ve metin</value>
+    <value>Sembol ve Metin</value>
+  </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Kontrol Noktası Etiketi:</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Sıra Numarası (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Kontrol Kodu (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Sıra No ve Kontrol Kodu (3-145)</value>
+  </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Sıra No ve Nokta(3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Kod ve Nokta</value>
+  </data>
+  <data name="scoreColumnLabel.Text" xml:space="preserve">
+    <value>Puanları Göster:</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
     <value>Kolon A</value>
@@ -141,10 +168,43 @@
   <data name="scoreColumnCombo.Items2" xml:space="preserve">
     <value>Kolon H</value>
   </data>
+  <data name="scoreColumnCombo.Items3" xml:space="preserve">
+    <value>(Gösterme)</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Görünüm</value>
   </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Aşağıdaki metin (isteğe bağlı olarak), kontrol açıklama sayfasının ikinci satırında görünür.</value>
+  </data>
+  <data name="secondaryTitleGroup.Text" xml:space="preserve">
+    <value>Sınıf Listesi/ İkinici Başlık</value>
+  </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Uzunluk:</value>
+  </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Tırmanış:</value>
+  </data>
+  <data name="courseTypeLabel.Text" xml:space="preserve">
+    <value>Parkur Tipi:</value>
+  </data>
+  <data name="courseNameLabel.Text" xml:space="preserve">
+    <value>Parkur Adı:</value>
+  </data>
+  <data name="courseKindCombo.Items" xml:space="preserve">
+    <value>Normal Parkur</value>
+  </data>
+  <data name="courseKindCombo.Items1" xml:space="preserve">
+    <value>Parkur Puanı</value>
+  </data>
+  <data name="metersSuffix.Text" xml:space="preserve">
+    <value>metre</value>
+  </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Yeni Parkur</value>
   </data>
 </root>

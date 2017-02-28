@@ -249,20 +249,8 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Vizualizare</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Start</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Post Control</value>
-  </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
     <value>&amp;Finalizare</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Adăugare &amp;Descriere</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Adăugare Text Linie...</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Punct Trecere Obligatoriu</value>

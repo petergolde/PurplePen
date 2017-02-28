@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Vazgeç</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>OCAD dosyaları için bir klasör seçin</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Dosya Seç...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Diğer klasör</value>
+  </data>
 </root>

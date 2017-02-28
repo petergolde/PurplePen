@@ -241,7 +241,7 @@
     <value>Im Durchschnitt</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0} ({1} Posten, {2}, {3} m Steigung)</value>
+    <value>{0} ({1} Posten, {2}, {3} Höhenmeter)</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
     <value>{0} ({1} Posten, {2})</value>
@@ -266,5 +266,20 @@
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>WARNUNG:</value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Warnung: Aufgrund der Anzahl der Etappen wird die Gabelung bei Posten {0} nicht gleichmäßig genutzt. {1} Etappe(n) nutzen Zweig {2}, und {3} Etappe(n) nutzen Zweig {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Etappe {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Bislang wurden keine Staffelteams festgelegt. Wählen sie die Anzahl der Teams und Etappen aus und klicken sie auf "Varianten zuweisen".</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Team {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Staffelzuweisungen for {0}</value>
   </data>
 </root>

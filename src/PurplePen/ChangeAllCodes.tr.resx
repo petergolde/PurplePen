@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="OldCode.HeaderText" xml:space="preserve">
+    <value>Orijinal Kod</value>
+  </data>
+  <data name="NewCode.HeaderText" xml:space="preserve">
+    <value>Yeni Kod</value>
+  </data>
+  <data name="changeControlCodesLabel.Text" xml:space="preserve">
+    <value>Bir veya daha fazla denetimin kodunu değiştirmek için "Yeni Kod" sütununu tıklayın ve yeni kodu girin. </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Kontrol Kodlarını Değiştir</value>
+  </data>
 </root>

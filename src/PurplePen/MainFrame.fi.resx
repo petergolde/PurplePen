@@ -120,6 +120,12 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Kaikki rastit</value>
   </data>
+  <data name="radioButtonDescriptions.Text" xml:space="preserve">
+    <value>Määritteet</value>
+  </data>
+  <data name="radioButtonTopology.Text" xml:space="preserve">
+    <value>Järjestys</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen tiedostot|*.ppen|Kaikki tiedostot|*.*</value>
   </data>
@@ -268,16 +274,16 @@
     <value>&amp;Näytä</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;lähtö</value>
+    <value>&amp;Lähtö</value>
   </data>
   <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;rasti</value>
+    <value>&amp;Rasti</value>
   </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>&amp;Valmis</value>
+    <value>&amp;Maali</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Lisää rasti&amp;nmääritteet</value>
+    <value>Rasti&amp;nmääritteet</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Kartanvaihto &amp;rastilla</value>
@@ -286,10 +292,13 @@
     <value>&amp;Viitoitettu reitti kartanvaihtoon</value>
   </data>
   <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Lisää kartanvai&amp;hto</value>
+    <value>&amp;Kartanvaihto</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>&amp;Hajonta...</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Lisää &amp;tekstirivi...</value>
+    <value>&amp;Tekstirivi...</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
@@ -333,6 +342,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Suorakulmio</value>
   </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Lisää</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Karttatiedosto...</value>
   </data>
@@ -375,11 +387,17 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>&amp;Aseta kuormitus...</value>
   </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>Viestin joukkue&amp;hajonnat...</value>
+  </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Rata</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Poista</value>
+  </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>Poista &amp;hajonta</value>
   </data>
   <data name="addBendMenu.Text" xml:space="preserve">
     <value>Lisää k&amp;ulmapiste</value>
@@ -558,6 +576,9 @@
   <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
     <value>Lisää kartanvaihto</value>
   </data>
+  <data name="addVariationToolStripButton.Text" xml:space="preserve">
+    <value>Lisää hajonta</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
   </data>
@@ -617,6 +638,9 @@
   </data>
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X:-999.99 Y:-999.99</value>
+  </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML versio 2.0.3|*.xml|IOF XML versio 3.0|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Vie XML-tiedostoon</value>

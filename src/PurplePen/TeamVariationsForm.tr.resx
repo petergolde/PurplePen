@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Dışa Aktar...</value>
+  </data>
+  <data name="buttonPrint.Text" xml:space="preserve">
+    <value>Yazdır...</value>
+  </data>
+  <data name="buttonPrintPreview.Text" xml:space="preserve">
+    <value>Baskı Önizleme...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Bacak sayısı:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Varyasyon ata</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Takım sayısı:</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Takım Varyasyonları Ata</value>
+  </data>
 </root>

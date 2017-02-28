@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>バリエーションごと</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>リレーレッグごと</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>すべてのバリエーション</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>バリエーション:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>すべてのフォークを同じ地図に表示します。</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>コースを通じて可能なバリエーションごとに一枚の地図。</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>リレーチームに割り当てたパターンごとに一枚の地図。</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>メニューバー &gt; [コース] から[リレーチームバリエーション...] でリレーチーム数を設定してください。</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>バリエーションを個別に選択する</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>このコースには {0} チームが割り当てられています。チーム数を変更するには、メニューバー &gt; [コース] から「リレーチームバリエーション...」を使用します。</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>印刷/エクスポートするチームを選択してください:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>バリエーションを選択</value>
+  </data>
 </root>

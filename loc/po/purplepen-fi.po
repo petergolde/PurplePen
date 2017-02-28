@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.0 beta 1\n"
+"Project-Id-Version: Purple Pen 3.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2016-11-18 15:25-08:00\n"
+"POT-Creation-Date: 2017-02-18 14:24-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -203,70 +203,71 @@ msgstr "Uusi rata"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr ""
+msgstr "Minkä tyyppisen hajonnan haluat lisätä?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
-msgstr ""
+msgstr "Hajontarastit"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
-msgstr ""
+msgstr "Perhoslenkit"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
-msgstr ""
+msgstr "Haarojen lukumäärä:"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items1
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items2
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items3
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items4
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items5
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items6
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items7
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items8
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #: AddForkDialog.resx, labelNumberLoops.Text
 msgid "Number of loops:"
-msgstr ""
+msgstr "Lenkkien määrä:"
 
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
 "different ways through the loops."
-msgstr ""
+msgstr "Perhoslenkkirastilla käydään 4 kertaa. Mahdollisia "
+"ratavaihtoehtoja on 24."
 
 #: AddForkDialog.resx, $this.Text
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr ""
+msgstr "Lisää hajonta"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
@@ -402,9 +403,10 @@ msgid "All map "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 msgstr "Kaikki "
-"karttatiedostot|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;"
-"*.png;*.gif|OCAD-tiedostot (*.ocd)|*.ocd|Open Orienteering "
-"Mapper Files|*.omap;*.xmap|PDF-tiedostot "
+"karttatiedostot|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tif"
+"f;*.tif;*.bmp;*.png;*.gif|OCAD-tiedostot "
+"(*.ocd)|*.ocd|Open Orienteering Mapper "
+"-tiedostot|*.omap;*.xmap|PDF-tiedostot "
 "(*.pdf)|*.pdf|Kuvatiedostot|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;"
 "*.png;*.gif"
 
@@ -456,7 +458,7 @@ msgstr "Radan osa"
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr ""
+msgstr "Hajonta"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -477,11 +479,11 @@ msgstr "Tulostusmittakaava"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
-msgstr ""
+msgstr "Joukkue"
 
 #: ChangeText.resx, relayLegMenuItem.Text
 msgid "Relay Leg"
-msgstr ""
+msgstr "Osuus"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -764,15 +766,15 @@ msgstr "Kopioi rata"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr ""
+msgstr "&Luo {0} tiedostoja"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"
-msgstr ""
+msgstr "Poista hajonta"
 
 #: CommandNameText.resx, RelayTeamVariations
 msgid "Relay Team Variations"
-msgstr ""
+msgstr "Viestin joukkuehajonnat"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
@@ -884,7 +886,7 @@ msgstr "Kuormitus"
 
 #: CoursePartBanner.resx, variationsLabel.Text
 msgid "Course Variation: "
-msgstr ""
+msgstr "Radan hajonta: "
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -892,7 +894,7 @@ msgstr "Ominaisuudet..."
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part: "
-msgstr "Radan osa:"
+msgstr "Radan osa: "
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -919,7 +921,7 @@ msgstr "Ei mikään"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
-msgstr ""
+msgstr "Valitse hajonnat..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
@@ -1029,7 +1031,7 @@ msgstr "Vie OCAD-tiedostoihin"
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr "Tulosta kartanvaihdot samalle kartalle "
+msgstr "Kaikki osat samalle kartalle "
 
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
@@ -1074,7 +1076,7 @@ msgid "One per course"
 msgstr "Yksi per rata"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
-msgid "One per course part"
+msgid "One per course part/variation"
 msgstr "Yksi per radan osa"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
@@ -1281,11 +1283,11 @@ msgstr "Kaikki rastit"
 
 #: MainFrame.resx, radioButtonDescriptions.Text
 msgid "Descriptions"
-msgstr ""
+msgstr "Määritteet"
 
 #: MainFrame.resx, radioButtonTopology.Text
 msgid "Ordering"
-msgstr ""
+msgstr "Järjestys"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
@@ -1493,20 +1495,20 @@ msgstr "&Näytä"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr "Lisää &lähtö"
+msgstr "&Lähtö"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr "Lisää &rasti"
+msgstr "&Rasti"
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr "&Valmis"
+msgstr "&Maali"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr "Lisää rasti&nmääritteet"
+msgstr "Rasti&nmääritteet"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1518,15 +1520,15 @@ msgstr "&Viitoitettu reitti kartanvaihtoon"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
-msgstr "Lisää kartanvai&hto"
+msgstr "&Kartanvaihto"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
-msgstr ""
+msgstr "&Hajonta..."
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr "Lisää &tekstirivi..."
+msgstr "&Tekstirivi..."
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1605,7 +1607,7 @@ msgstr "Suorakulmio"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
-msgstr ""
+msgstr "&Lisää"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1665,7 +1667,7 @@ msgstr "&Aseta kuormitus..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
-msgstr ""
+msgstr "Viestin joukkue&hajonnat..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1673,7 +1675,7 @@ msgstr "&Rata"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
-msgstr ""
+msgstr "Poista &hajonta"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -1924,7 +1926,7 @@ msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
-msgstr ""
+msgstr "IOF XML versio 2.0.3|*.xml|IOF XML versio 3.0|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
@@ -2389,11 +2391,11 @@ msgstr "Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos "
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe ei löytynyt"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr "Pdfium epäonnistui PDF-tiedoston lukemisessa"
+msgstr "Pdfium PDF-muunnin epäonnistui PDF-tiedoston lukemisessa"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
@@ -2546,33 +2548,65 @@ msgstr "Radan \"{0}\" tulostus on valmis. Aloita radan \"{1}\" "
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "Kaikki hajonnat"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "Soveltuu viesteihin, joissa on {0} osallistujaa joukkueessa."
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "Keskusrastilla käydään {0} kertaa. Mahdollisia "
+"ratavaihtoehtoja on {1}."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "Hajonnan aloittavaa rastia ei voi siirtää uuteen paikkaan "
+"radalla."
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
+msgstr "Radalla on liian monta hajontavariaatiota. Erillisten "
+"hajontavariaatioiden määrä on rajoitettu {0}:een."
+
+#: MiscText.resx, CannotAddVariation
+msgid "Cannot add variation."
+msgstr ""
+
+#: MiscText.resx, VariationAlreadyExists
+msgid "A variation already exists at this control."
+msgstr ""
+
+#: MiscText.resx, VariationMustSelectControl
+msgid "A control or leg must be selected to add a variation."
+msgstr ""
+
+#: MiscText.resx, VariationNotFinish
+msgid "A variation cannot be added to a finish control."
+msgstr ""
+
+#: MiscText.resx, VariationNotInAllControls
+msgid "A variation cannot be added to the All Controls view."
+msgstr ""
+
+#: MiscText.resx, VariationNotInScoreCourse
+msgid "A variation cannot be added to a score course."
+msgstr ""
+
+#: MiscText.resx, VariationNotLastControl
+msgid "A variation cannot be added to the last control. Add a "
+"finish control first."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2685,8 +2719,8 @@ msgstr "Tapahtumatiedoston sijainti"
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
-msgstr "Valitse \"Valmis\" luodaksesi uuden tapahtuman. Tapahtuma "
-"tallennetaan hakemistoon:"
+msgstr "Olet jo loppusuoralla.  Kun klikkaat \"Maali\"-painiketta,  "
+"uusi tapahtuma tallennetaan hakemistoon:"
 
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
@@ -2827,7 +2861,7 @@ msgstr "Vahvista tiedostojen korvaaminen"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr "Pdfium lukee PDF-tiedostoa..."
+msgstr "PDFium PDF-muunnin lukee PDF-tiedostoasi..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
@@ -3256,7 +3290,7 @@ msgstr "Keskiarvo"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr "{0} ({1} rastia, {2}, kokonaisnousu {3} m)"
+msgstr "{0} ({1} rastia, {2}, {3} m nousua)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
@@ -3303,25 +3337,30 @@ msgstr "VAROITUS:"
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "Varoitus: määritetystä osuuksien lukumäärästä johtuen "
+"rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. "
+"Osuuksista {1} käyttää hajontaa {2}, kun taas osuuksista "
+"{3} käyttää hajontaa {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "Osuus {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "Viestijoukkueita ei ole vielä määritelty. Valitse "
+"haluamasi määrä joukkueita sekä osuuksia ja paina \"Määritä "
+"hajonnat\" - painiketta."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "Joukkue {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "Hajonta-avain radalle {0}"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3493,46 +3532,49 @@ msgstr "Mitattu pituus:"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "Jokainen hajonta erikseen"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Jokainen osuus erikseen"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Kaikki hajonnat yhdistettynä"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Hajonnat:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "Näytä kaikki hajonnat yhdellä kartalla."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "Yksi kartta radan jokaisesta mahdollisesta hajonnasta."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "Yksi kartta valitsemiesi joukkueiden jokaiselle osuudelle."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "Määritä ensin viestijoukkueet valitsemalla Rata-valikosta "
+"Viestin joukkuehajonnat..."
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Valitse yksittäiset hajonnat"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "Tälle radalle on määritelty {0} viestijoukkuetta. "
+"Joukkueiden lukumäärän voit vaihtaa valitsemalla "
+"Rata-valikosta Viestin joukkuehajonnat..."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
@@ -3540,11 +3582,11 @@ msgstr ""
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Valitse, mitkä joukkueet tulostetaan/viedään:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Valitse hajonnat"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3754,31 +3796,32 @@ msgstr "Paina hiiren vasen painike pohjaan ja vedä luodaksesi "
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "Vedä rastinumeroa toiseen kohtaan radan "
+"uudelleenjärjestämiseksi"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "Vie..."
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr ""
+msgstr "Osuuksia:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "Määritä hajonnat"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "Joukkueita:"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr ""
+msgstr "IOF XML 3.0|*.xml|Taulukkolaskenta (CSV)|*.csv"
 
 #: TeamVariationsForm.resx, $this.Text
 msgid "Assign Team Variations"
-msgstr ""
+msgstr "Määritä joukkuehajonnat"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

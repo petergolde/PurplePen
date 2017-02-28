@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>改变符号</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>变更控制程序</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>变更控制</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>改变控制点</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>改变标题</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>改变爬高量</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>改变课程名称</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>改变文本行</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>更新地图比例尺</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>移动控制</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>移动控制数</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>移动对象</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>删除控制</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>删除对象</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>删除文本行</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>添加控制</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>添加启动</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>添加完成</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>加上强制性的交叉点</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>添加对象</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>删除课程</value>
+  </data>
+  <data name="NewCourse" xml:space="preserve">
+    <value>新课程</value>
+  </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>课程性质的变化</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>改变控件的属性</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>创建新的事件</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>改变细微课程</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>换码</value>
+  </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>改变显示的课程</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>弯曲路线</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>添加弯曲</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>添加拐角</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>移除弯曲</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>移除拐角</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>添加空白</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>消除差距</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>移动的差距</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>旋转</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>自动编号</value>
+  </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>改变冲击模式</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>穿孔卡片布局变化</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>设置打印区域</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>竞争对手的负荷变化</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>自定义的描述文本</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>改变课程顺序</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>更改地图文件</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>忽略缺少字体</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>添加的文本行</value>
+  </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>删除未使用的控制</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>变化的描述语言</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>更改文字</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>定制课程的出现</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>添加地图交换</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>删除地图交换</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>部分课程性质的变化</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>改变线的外观</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>重复的课程</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>创建{ 0 }和文件</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>添加变化</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>删除叉/环</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>接力队的变化</value>
+  </data>
+</root>

@@ -117,4 +117,106 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Sol fare düğmesi: nesneyi seçin; Sağ fare düğmesi: haritayı taşımak; Kaydırma tekerleği: yakınlaştırma / uzaklaştırma</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Sol fare düğmesi: dikdörtgen / boyut taşı; Sağ fare düğmesi: haritayı taşımak; Kaydırma tekerleği: yakınlaştırma / uzaklaştırma</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve seçilen nesneyi taşımak için sürükleyin</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve taşımak için köşe noktasını sürükleyin</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Nesneyi istediğiniz yere taşıyın ve fare tuşunu bırakın</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Köşeyi istediğiniz konuma taşıyın ve fare tuşunu bırakın</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Yeni kontrolü yerleştirmek için sol fare tuşunu tıklayın.</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Varolan "{0}" kontrolü parkura eklemek için farenizin sol tuşuna tıklayın.</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Yeni başlatmak için sol fare tuşunu tıklayın</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Mevcut başlangıca kursa eklemek için farenizin sol tuşuna tıklayın.</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Yeni bitirmek için sol fare düğmesini tıklayın</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Mevcut bitirmeyi rotaya eklemek için farenizin sol tuşuna tıklayın.</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Zorunlu yeni geçiş noktasını yerleştirmek için sol fare düğmesini tıklayın</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Mevcut zorunlu geçiş noktasını rotaya eklemek için sol fare tuşunu tıklayın.</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Yeni nesne yerleştirmek için sol fare tuşunu tıklayın.</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Viraj yerinde sol fare tuşunu tıklayın</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Yeni bir köşe eklemek için sol fare tuşunu tıklayın.</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>Bir virajı kaldırmak için farenin sol tuşuna tıklayın</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Kaldırmak için bir köşedeki sol fare düğmesini tıklayın</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Küçük bir boşluk eklemek için kontrol çemberindeki sol fare düğmesini tıklayın; Sol fare tuşunu basılı tutun ve büyük bir boşluk oluşturmak için sürükleyin</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Kontrol grubundaki boşluğu kaldırmak için fareyle sol tıklayın</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Küçük boşluk oluşturmak için sol fare tuşunu tıklayın; Sol fare tuşunu basılı tutun ve bacakta geniş bir boşluk oluşturmak için sürükleyin</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Kaldırmak için bacağın bir boşluğunda farenin sol düğmesini tıklayın</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve seçilen nesnenin boyutunu değiştirmek için sürükleyin</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Kenarları istenilen yere taşıyın ve fare düğmesini bırakın</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve kontrol açıklamaları oluşturmak için sürükleyin</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Geçiş noktası doğru açıya döndürüldüğünde farenin sol tuşuna tıklayın</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve bir çizgi parçası eklemek için sürükleyin; Nesneyi eklemeyi bitirmek için farenin sol düğmesini tıklayın</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve metin oluşturmak için sürükleyin</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Var olan harita değişimini rotaya eklemek için farenizin sol tuşuna tıklayın.</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Yeni harita değişimi yapmak için farenizin sol tuşuna tıklayın</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Harita değişimini kontrole eklemek için sol fare tuşunu tıklayın. "{0}" </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Sol fare tuşunu basılı tutun ve nesneyi oluşturmak için sürükleyin</value>
+  </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Kursda yeniden sıralamak için kontrol numarasını sürükleyin (çoğaltmak için kaydır'ı basılı tutun)</value>
+  </data>
 </root>

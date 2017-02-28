@@ -120,10 +120,28 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>エクスポート...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>印刷...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>印刷プレビュー...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>チームごとのレッグパターン数:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>バリエーションを割り当て</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>チーム数:</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>チームバリエーションの割り当て</value>
   </data>
 </root>

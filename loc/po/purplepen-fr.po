@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.0 beta 1\n"
+"Project-Id-Version: Purple Pen 3.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2016-11-18 15:25-08:00\n"
+"POT-Creation-Date: 2017-02-18 14:24-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © by Peter Golde"
-msgstr "Copyright © par Peter Golde"
+msgstr ""
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -403,11 +403,7 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "Tous les fichiers "
-"carte|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gi"
-"f|Fichiers OCAD (*.ocd)|*.ocd|Open Orienteering Mapper "
-"Files|*.omap;*.xmap|Fichiers PDF (*.pdf)|*.pdf|Fichiers "
-"image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
+msgstr ""
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -895,7 +891,7 @@ msgstr "Propriétés…"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part: "
-msgstr "Partie du circuit :"
+msgstr ""
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -1078,7 +1074,7 @@ msgid "One per course"
 msgstr "Un par circuit"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
-msgid "One per course part"
+msgid "One per course part/variation"
 msgstr "Un par partie de circuit"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
@@ -1338,7 +1334,7 @@ msgstr "Créer Fichier &Interchange XML..."
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
-msgstr "Créer Fichier &GPX..."
+msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1498,11 +1494,11 @@ msgstr "&Affichage"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr "Ajouter &Départ"
+msgstr ""
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr "Ajouter &Poste"
+msgstr ""
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
@@ -1511,7 +1507,7 @@ msgstr "&Terminer"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr "Ajouter Dé&finitions"
+msgstr ""
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1523,7 +1519,7 @@ msgstr "Parcours &Balisé vers Echange de Carte"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
-msgstr "Ajouter E&change de Carte"
+msgstr ""
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1531,7 +1527,7 @@ msgstr ""
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr "Ajouter une ligne de texte..."
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -2417,7 +2413,7 @@ msgstr ""
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr "Pdfium n'a pas réussi à lire correctement le fichier PDF"
+msgstr ""
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
@@ -2601,6 +2597,35 @@ msgstr ""
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
+msgstr ""
+
+#: MiscText.resx, CannotAddVariation
+msgid "Cannot add variation."
+msgstr ""
+
+#: MiscText.resx, VariationAlreadyExists
+msgid "A variation already exists at this control."
+msgstr ""
+
+#: MiscText.resx, VariationMustSelectControl
+msgid "A control or leg must be selected to add a variation."
+msgstr ""
+
+#: MiscText.resx, VariationNotFinish
+msgid "A variation cannot be added to a finish control."
+msgstr ""
+
+#: MiscText.resx, VariationNotInAllControls
+msgid "A variation cannot be added to the All Controls view."
+msgstr ""
+
+#: MiscText.resx, VariationNotInScoreCourse
+msgid "A variation cannot be added to a score course."
+msgstr ""
+
+#: MiscText.resx, VariationNotLastControl
+msgid "A variation cannot be added to the last control. Add a "
+"finish control first."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2858,7 +2883,7 @@ msgstr "Confirmer le remplacement des fichiers"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr "Pdfium est en train de lire votre PDF..."
+msgstr ""
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
@@ -3292,11 +3317,11 @@ msgstr "Moyenne"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr "{0} ({1} postes, {2}, dénivelé {3} m)"
+msgstr ""
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr "{0} ({1} postes, {2})"
+msgstr ""
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"

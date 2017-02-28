@@ -285,4 +285,16 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Kopioi rata</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>&amp;Luo {0} tiedostoja</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Lisää hajonta</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Poista hajonta</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Viestin joukkuehajonnat</value>
+  </data>
 </root>

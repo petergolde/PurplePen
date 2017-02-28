@@ -117,10 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="eventTitleMenuItem.Text" xml:space="preserve">
+    <value>Etkinlik Başlığı</value>
+  </data>
+  <data name="courseNameMenuItem.Text" xml:space="preserve">
+    <value>Parkur Adı</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Parkur Bölümü</value>
+  </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Parkur Varyansonu</value>
+  </data>
+  <data name="courseLengthMenuItem.Text" xml:space="preserve">
+    <value>Parkur Uzunluğu</value>
+  </data>
+  <data name="courseClimbMenuItem.Text" xml:space="preserve">
+    <value>Parkur Tırmanma Mesafesi</value>
+  </data>
+  <data name="classListMenuItem.Text" xml:space="preserve">
+    <value>Kategori Listesi</value>
+  </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Baskı Ölçeği</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Bayrak Yarışı Takımı</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Bayrak Yarışı Ayağı</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Görünüm</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Renk Değiştir...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Renk:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Eğik</value>
+  </data>
+  <data name="checkBoxBold.Text" xml:space="preserve">
+    <value>Kalın</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Yazı Tipi:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Örnek</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Metin</value>
+  </data>
+  <data name="insertSpecialButton.Text" xml:space="preserve">
+    <value>Özel Metin Giriniz</value>
   </data>
 </root>

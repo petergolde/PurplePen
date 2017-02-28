@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.0 beta 1\n"
+"Project-Id-Version: Purple Pen 3.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2016-11-18 15:28-08:00\n"
+"POT-Creation-Date: 2017-02-18 14:24-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -95,27 +95,27 @@ msgstr "記号とテキスト"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr "コントロール円のラベル"
+msgstr "コントロール円のラベル:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr "コントロール番号 (3)"
+msgstr "番号 (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr "コントロールコード (145)"
+msgstr "コード (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr "コントロール番号とコントロールコード (3-145)"
+msgstr "番号とコード (3-145)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr "コントロール番号とスコア (3(30))"
+msgstr "番号とスコア (3(30))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr "コントロールコードとスコア(145(30))"
+msgstr "コードとスコア(145(30))"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -198,70 +198,70 @@ msgstr "新規コース"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr ""
+msgstr "追加するバリエーションの種類を選択してください。"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
-msgstr ""
+msgstr "フォーク"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
-msgstr ""
+msgstr "ループ"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
-msgstr ""
+msgstr "分岐の数:"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items1
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items2
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items3
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items4
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items5
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items6
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items7
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items8
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #: AddForkDialog.resx, labelNumberLoops.Text
 msgid "Number of loops:"
-msgstr ""
+msgstr "ループの数:"
 
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
 "different ways through the loops."
-msgstr ""
+msgstr "ループコントロールを4回通過します。24通りのループをまわる順番の組み合わせがあります。"
 
 #: AddForkDialog.resx, $this.Text
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr ""
+msgstr "バリエーションを追加"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
@@ -392,9 +392,9 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "すべての地図ファイル|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png"
-";*.gif|OCADファイル (*.ocd)|*.ocd|Open Orienteering Mapper "
-"Files|*.omap;*.xmap|PDFファイル "
+msgstr "すべての地図ファイル|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.t"
+"if;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|Open "
+"Orienteering Mapperファイル|*.omap;*.xmap|PDFファイル "
 "(*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*"
 ".gif"
 
@@ -446,7 +446,7 @@ msgstr "コースパート"
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr ""
+msgstr "コースバリエーション"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -467,11 +467,11 @@ msgstr "印刷の縮尺"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
-msgstr ""
+msgstr "リレーチーム"
 
 #: ChangeText.resx, relayLegMenuItem.Text
 msgid "Relay Leg"
-msgstr ""
+msgstr "リレーレッグ"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -754,15 +754,15 @@ msgstr "コースを複製"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr ""
+msgstr "{0} ファイルを作成(&F)"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"
-msgstr ""
+msgstr "フォーク/ループを削除"
 
 #: CommandNameText.resx, RelayTeamVariations
 msgid "Relay Team Variations"
-msgstr ""
+msgstr "リレーチームバリエーション"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
@@ -873,7 +873,7 @@ msgstr "コースごとの走行人数"
 
 #: CoursePartBanner.resx, variationsLabel.Text
 msgid "Course Variation: "
-msgstr ""
+msgstr "コースバリエーション: "
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -881,7 +881,7 @@ msgstr "プロパティ..."
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part: "
-msgstr "コースパート:"
+msgstr "コースパート: "
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -907,7 +907,7 @@ msgstr "全解除"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
-msgstr ""
+msgstr "バリエーションを選択..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
@@ -921,7 +921,7 @@ msgstr "コース"
 #: CreateGpx.resx, namePrefixLabel.Text
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
 msgid "Name prefix:"
-msgstr "ファイル名プレフィックス:"
+msgstr "プレフィックス:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
@@ -966,7 +966,7 @@ msgstr "OCADファイルを保存するフォルダを選択してください"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
-msgstr "ファイル名プレフィックス:"
+msgstr "プレフィックス:"
 
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -1061,7 +1061,7 @@ msgid "One per course"
 msgstr "1個 / コース"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
-msgid "One per course part"
+msgid "One per course part/variation"
 msgstr "コースパートごとに一つ"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
@@ -1153,7 +1153,7 @@ msgstr "名詞の性"
 
 #: EnterSymbolText.resx, caseColumn.HeaderText
 msgid "Case"
-msgstr ""
+msgstr "格"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
@@ -1174,11 +1174,11 @@ msgstr "名詞の性:"
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "変更される記号の格:"
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "格形式を表示"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1266,15 +1266,15 @@ msgstr "全コントロール"
 
 #: MainFrame.resx, radioButtonDescriptions.Text
 msgid "Descriptions"
-msgstr ""
+msgstr "ディスクリプション"
 
 #: MainFrame.resx, radioButtonTopology.Text
 msgid "Ordering"
-msgstr ""
+msgstr "オーダリング"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "地図ビューアトポロジー"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1318,7 +1318,7 @@ msgstr "データ交換ファイル(IOF XML)を作成(&I)..."
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
-msgstr "GPXファイルを作成(&G)"
+msgstr "GPXファイルを作成(&P)..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1478,20 +1478,20 @@ msgstr "表示(&V)"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr "スタートを追加(&S)"
+msgstr "スタート(&S)"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr "コントロールを追加(&C)"
+msgstr "コントロール(&C)"
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr "完了(&F)"
+msgstr "フィニッシュ(&F)"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr "ディスクリプションを配置(&D)"
+msgstr "ディスクリプション(&D)"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1503,15 +1503,15 @@ msgstr "地図交換所までテープ誘導(&F)"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
-msgstr "地図交換所を追加(&E)"
+msgstr "地図交換(&X)"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
-msgstr ""
+msgstr "バリエーション(&V)..."
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr "テキスト行を追加(&L)"
+msgstr "テキストライン(&L)"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1590,7 +1590,7 @@ msgstr "長方形"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
-msgstr ""
+msgstr "追加(&A)"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1650,7 +1650,7 @@ msgstr "走行人数(&L)..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
-msgstr ""
+msgstr "リレーチームバリエーション(&V)..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1658,7 +1658,7 @@ msgstr "コース(&C)"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
-msgstr ""
+msgstr "フォーク/ループを削除"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -2357,11 +2357,11 @@ msgstr "[すべてのパート] "
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe が見つかりません"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr "Pdfium が PDF の読み込みに失敗しました"
+msgstr "Pdfium PDF converter がPDFファイルの正常な読み込みに失敗しました"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
@@ -2500,33 +2500,62 @@ msgstr "「{0}」の印刷が終わりました。OKをクリックで「{1}」�
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "すべてのバリエーション"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "リレーで1チームあたりのフォークにかかわる人数が {0} 人の場合に適しています。"
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "ループの中心コントロールを {0} 回通過します。 {1} 通りのループをまわる順番の組み合わせがあります。"
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "フォーク/ループの起点にあるコントロールはドラッグで順番を変更できません。"
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
+msgstr "このコースではバリエーションが多すぎます。バリエーション数の上限は {0} です。"
+
+#: MiscText.resx, CannotAddVariation
+msgid "Cannot add variation."
+msgstr ""
+
+#: MiscText.resx, VariationAlreadyExists
+msgid "A variation already exists at this control."
+msgstr ""
+
+#: MiscText.resx, VariationMustSelectControl
+msgid "A control or leg must be selected to add a variation."
+msgstr ""
+
+#: MiscText.resx, VariationNotFinish
+msgid "A variation cannot be added to a finish control."
+msgstr ""
+
+#: MiscText.resx, VariationNotInAllControls
+msgid "A variation cannot be added to the All Controls view."
+msgstr ""
+
+#: MiscText.resx, VariationNotInScoreCourse
+msgid "A variation cannot be added to a score course."
+msgstr ""
+
+#: MiscText.resx, VariationNotLastControl
+msgid "A variation cannot be added to the last control. Add a "
+"finish control first."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2757,7 +2786,7 @@ msgstr "ファイルの置き換えの確認"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr "Pdfium が PDF を読み込み中です..."
+msgstr "PDFium PDF converter がPDFを読み込み中です..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
@@ -2863,7 +2892,7 @@ msgstr "記号とテキスト"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr "ディスクリプションタイプ:"
+msgstr "種類:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
@@ -3178,7 +3207,7 @@ msgstr "平均"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr "{0} (コントロール数: {1} , 長さ: {2}, 登高: {3} m )"
+msgstr "{0} ({1} コントロール、 {2}, {3} m 登高)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
@@ -3221,25 +3250,27 @@ msgstr "注意:"
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "警告: 指定されたチームごとのレッグパターン数に従って割り当てると、 コントロール {0} "
+"のフォークが均等に使用されません。 {2} の分岐が {1} 個のレッグパターンで使用されるのに対して、{4} "
+"の分岐は {3} 個のレッグパターンで使用されます。 "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "レッグ {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "チーム数とレッグ数を設定し、「バリエーションを割り当て」ボタンを押してください。"
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "チーム {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "{0} のリレーアサインメント"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3411,58 +3442,59 @@ msgstr "計算された長さ"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "バリエーションごと"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "リレーレッグごと"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "すべてのバリエーション"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "バリエーション:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "すべてのフォークを同じ地図に表示します。"
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "コースを通じて可能なバリエーションごとに一枚の地図。"
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "リレーチームに割り当てたパターンごとに一枚の地図。"
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "メニューバー > [コース] から[リレーチームバリエーション...] でリレーチーム数を設定してください。"
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "バリエーションを個別に選択する"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "このコースには {0} チームが割り当てられています。チーム数を変更するには、メニューバー > [コース] "
+"から「リレーチームバリエーション...」を使用します。"
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "から"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "印刷/エクスポートするチームを選択してください:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "バリエーションを選択"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3644,31 +3676,31 @@ msgstr "左マウスボタンを押したままドラッグでオブジェクト
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "コントロール番号をドラッグして並べ替えます。シフトを押しながらドラッグすると複製できます。"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "エクスポート..."
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr ""
+msgstr "チームごとのレッグパターン数:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "バリエーションを割り当て"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "チーム数:"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr ""
+msgstr "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
 
 #: TeamVariationsForm.resx, $this.Text
 msgid "Assign Team Variations"
-msgstr ""
+msgstr "チームバリエーションの割り当て"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"

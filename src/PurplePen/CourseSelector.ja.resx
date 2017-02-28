@@ -123,4 +123,7 @@
   <data name="selectNone.Text" xml:space="preserve">
     <value>全解除</value>
   </data>
+  <data name="buttonChooseVariations.Text" xml:space="preserve">
+    <value>バリエーションを選択...</value>
+  </data>
 </root>

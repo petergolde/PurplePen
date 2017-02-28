@@ -120,10 +120,28 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Sulje</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Vie...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Tulosta...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Tulostuksen esikatselu...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Osuuksia:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Määritä hajonnat</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Joukkueita:</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Taulukkolaskenta (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Määritä joukkuehajonnat</value>
   </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventFinalLabel.Text" xml:space="preserve">
-    <value>Valitse "Valmis" luodaksesi uuden tapahtuman. Tapahtuma tallennetaan hakemistoon:</value>
+    <value>Olet jo loppusuoralla.  Kun klikkaat "Maali"-painiketta,  uusi tapahtuma tallennetaan hakemistoon:</value>
   </data>
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>Kun tapahtuma on luotu, valitse Rata-valikosta "Lisää rata..." luodaksesi yhden tai useampia ratoja.</value>

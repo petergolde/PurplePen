@@ -243,18 +243,6 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Visualizza</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Inizio</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Controllo</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Descrizioni</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>Aggiungi &amp;Linea Di Testo</value>
-  </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Punti di attraversamento obbligati</value>
   </data>

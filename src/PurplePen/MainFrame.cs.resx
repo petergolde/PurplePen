@@ -258,26 +258,11 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Zobrazit</value>
   </data>
-  <data name="addStartMenu.Text" xml:space="preserve">
-    <value>Přidat &amp;start</value>
-  </data>
-  <data name="addControlMenu.Text" xml:space="preserve">
-    <value>Přidat &amp;kontrolu</value>
-  </data>
-  <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Přidat &amp;popisy</value>
-  </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Výměna mapy na &amp;kontrole</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>Značený úsek na výměnu mapy</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Přidat výměnu mapy</value>
-  </data>
-  <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>V&amp;ložit Text a čáru</value>
   </data>
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Nebezpečná oblast</value>

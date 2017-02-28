@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="printerGroup.Text" xml:space="preserve">
-    <value>Väljund</value>
-  </data>
   <data name="marginChange.Text" xml:space="preserve">
     <value>Muuda ääriseid</value>
   </data>
@@ -150,8 +147,8 @@
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Printer:</value>
   </data>
-  <data name="layoutGroup.Text" xml:space="preserve">
-    <value>Välimus</value>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Väljund</value>
   </data>
   <data name="descriptionKindCombo.Items" xml:space="preserve">
     <value>Vaikimis rada</value>
@@ -174,6 +171,9 @@
   <data name="lineSizeLabel.Text" xml:space="preserve">
     <value>Joone suurus:</value>
   </data>
+  <data name="layoutGroup.Text" xml:space="preserve">
+    <value>Välimus</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Katkesta</value>
   </data>
@@ -185,9 +185,6 @@
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Rajad</value>
-  </data>
-  <data name="copiesGroupBox.Text" xml:space="preserve">
-    <value>Koopiad</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
     <value>legend raja kohta</value>
@@ -203,6 +200,9 @@
   </data>
   <data name="whatToPrintLabel.Text" xml:space="preserve">
     <value>Trüki:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Koopiad</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Trüki legendid:</value>

@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Her Varyasyon Ayrı Olarak</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Her  Ayak Ayrı</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Tüm Varyansonlar Birleştirildi</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Varyasyonlar:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Tüm çatalları tek bir haritada birlikte görüntüleyin.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Kurs boyunca olası her varyasyon için bir harita.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Seçtiğiniz röle takımlarındaki her bir bacak için bir harita.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Önce Kurs menüsünden Röle Ekibi Varyasyonları ... 'nı seçerek geçiş ekiplerini tanımlamalısınız.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Bireysel Varyasyonları Seç</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Bu derste {0} röle ekibi görevlendirildi. Takım sayısını değiştirmek için Ders menüsünden Röle Ekibi Varyasyonları ... kullanın.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>göre</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Yazdır / dışa aktarmak için takımları seçin:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Varyasyonları seçin</value>
+  </data>
 </root>

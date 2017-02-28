@@ -139,22 +139,22 @@
     <value>記号とテキスト</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>コントロール円のラベル</value>
+    <value>コントロール円のラベル:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
-    <value>コントロール番号 (3)</value>
+    <value>番号 (3)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
-    <value>コントロールコード (145)</value>
+    <value>コード (145)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
-    <value>コントロール番号とコントロールコード (3-145)</value>
+    <value>番号とコード (3-145)</value>
   </data>
   <data name="labelKindCombo.Items3" xml:space="preserve">
-    <value>コントロール番号とスコア (3(30))</value>
+    <value>番号とスコア (3(30))</value>
   </data>
   <data name="labelKindCombo.Items4" xml:space="preserve">
-    <value>コントロールコードとスコア(145(30))</value>
+    <value>コードとスコア(145(30))</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>得点の表示</value>

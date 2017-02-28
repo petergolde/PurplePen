@@ -420,9 +420,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Beskrivningar kan inte läggas till i en bana med kartbyte om "Alla delar" visas. Växla över till den delen som du vill lägga till beskrivningen till och välj "Lägg till beskrivningar" igen.</value>
   </data>
-  <data name="PdfConversionFailed" xml:space="preserve">
-    <value>Pdfium misslyckades med att läsa in PDF-fil</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunde inte läsa resultatet av PDF-konvertering från fil '{0}</value>
   </data>

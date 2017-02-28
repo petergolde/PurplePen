@@ -415,9 +415,6 @@ Użyj | aby rozdzielić linie
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Opisy mogą nie zostać dodane do trasy ze zmianą map, jeżeli "Wszystkie części" są aktualnie wyświetlane. Przełącz się na część, do której chcesz dodać opisy, a następnie wybierz "Dodaj opisy" ponownie.</value>
   </data>
-  <data name="PdfConversionFailed" xml:space="preserve">
-    <value>Nie udało się odczytać pliku PDF za pomocą Pdfium</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Nie można przeczytać rezultatu konwersji do PDF z pliku '{0}'</value>
   </data>
