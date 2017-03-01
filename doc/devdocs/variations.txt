@@ -1,28 +1,22 @@
-Big things to do before first beta:
-
-- Allow creating variation when leg is selected.
-
-- tooltips on ordering view don't disappear well, I think.
 
 - After adding variation, make sure next added control goes into one of the legs.
+
 
 - Allow starting team number to be changed
 
 - Allow variation choices to be manually assigned.
 
-
-Minor issues to check/add later.
-
 - GPX tracks.
 
 - Text lines above/below -- how do these work with variations and with butterfly courses
 
-- Allow variation that doesn't join. How to end it?
-
 - Loop control with start as the loop. Should this be allowed? Would this be a map change, or should you have to insert a map change at control? Needs some thinking here. 
 
+- check out other reports -- in particular audit 
+  (audit should check for some control two in a row, empty fork or loop, identical fork or loop, for example)
+  
+Probably won't do:  
+  
 - SelectionDescriber -- show what variations a control or leg is in. I'm not sure this is that useful.
 
 
-- check out other reports -- in particular leg length, control&leg load, audit 
-  (audit should check for some control two in a row, empty fork or loop, identical fork or loop, for example)

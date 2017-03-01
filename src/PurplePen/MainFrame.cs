@@ -1205,6 +1205,14 @@ namespace PurplePen
             UpdateStatusText();
         }
 
+        private void mapViewerTopology_OnPointerMove(object sender, bool inViewport, PointF location)
+        {
+            PointF pixelLocation = Util.PointFromPointF(mapViewerTopology.WorldToPixel(location));
+            if (pixelLocation != lastTooltipLocation)
+                toolTip.Hide(mapViewerTopology);
+        }
+
+
         private void mapViewer_OnPointerHover(object sender, bool inViewport, PointF location)
         {
             string tipText, titleText;

@@ -405,6 +405,7 @@ namespace PurplePen
             this.mapViewerTopology.VScrollValue = 0;
             this.mapViewerTopology.ZoomFactor = 1F;
             this.mapViewerTopology.OnViewportChange += new System.EventHandler(this.mapViewerTopology_OnViewportChange);
+            this.mapViewerTopology.OnPointerMove += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewerTopology_OnPointerMove);
             this.mapViewerTopology.OnPointerHover += new PurplePen.MapView.MapViewer.PointerEventHandler(this.mapViewerTopology_OnPointerHover);
             this.mapViewerTopology.OnMouseEvent += new PurplePen.MapView.MapViewer.MouseEventHandler(this.mapViewerTopology_OnMouseEvent);
             this.mapViewerTopology.Resize += new System.EventHandler(this.mapViewerTopology_Resize);
