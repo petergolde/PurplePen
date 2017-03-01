@@ -290,12 +290,12 @@ namespace PurplePen.Tests
 
             CollectionAssert.AreEquivalent(result, new QueryEvent.LegInfo[]
             {
-                new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(7)),
-                new QueryEvent.LegInfo(CourseControlId(7), CourseControlId(4)),
-                new QueryEvent.LegInfo(CourseControlId(4), CourseControlId(5)),
-                new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3)),
-                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(5)),
-                new QueryEvent.LegInfo(CourseControlId(5), CourseControlId(6)),
+                new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(2), 1),
+                new QueryEvent.LegInfo(CourseControlId(7), CourseControlId(4), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(4), CourseControlId(5), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(5), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(5), CourseControlId(6), 1),
             });
 
             // Score course has no legs in it.
@@ -330,15 +330,15 @@ namespace PurplePen.Tests
             CollectionAssert.AreEqual(result, new[] {
                 new QueryEvent.LegInfo(CourseControlId(1), CourseControlId(2)),
                 new QueryEvent.LegInfo(CourseControlId(2), CourseControlId(3)),
-                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(27)),
+                new QueryEvent.LegInfo(CourseControlId(3), CourseControlId(4)),
                 new QueryEvent.LegInfo(CourseControlId(27), CourseControlId(19)),
-                new QueryEvent.LegInfo(CourseControlId(19), CourseControlId(30)),
+                new QueryEvent.LegInfo(CourseControlId(19), CourseControlId(21)),
                 new QueryEvent.LegInfo(CourseControlId(30), CourseControlId(20)),
                 new QueryEvent.LegInfo(CourseControlId(20), CourseControlId(23)),
-                new QueryEvent.LegInfo(CourseControlId(23), CourseControlId(26)),
+                new QueryEvent.LegInfo(CourseControlId(23), CourseControlId(4)),
                 new QueryEvent.LegInfo(CourseControlId(26), CourseControlId(17)),
                 new QueryEvent.LegInfo(CourseControlId(17), CourseControlId(18)),
-                new QueryEvent.LegInfo(CourseControlId(18), CourseControlId(25)),
+                new QueryEvent.LegInfo(CourseControlId(18), CourseControlId(4)),
                 new QueryEvent.LegInfo(CourseControlId(25), CourseControlId(15)),
                 new QueryEvent.LegInfo(CourseControlId(15), CourseControlId(16)),
                 new QueryEvent.LegInfo(CourseControlId(16), CourseControlId(4)),
@@ -346,7 +346,7 @@ namespace PurplePen.Tests
                 new QueryEvent.LegInfo(CourseControlId(5), CourseControlId(6)),
                 new QueryEvent.LegInfo(CourseControlId(6), CourseControlId(7)),
                 new QueryEvent.LegInfo(CourseControlId(7), CourseControlId(8)),
-                new QueryEvent.LegInfo(CourseControlId(8), CourseControlId(28)),
+                new QueryEvent.LegInfo(CourseControlId(8), CourseControlId(9)),
                 new QueryEvent.LegInfo(CourseControlId(28), CourseControlId(13)),
                 new QueryEvent.LegInfo(CourseControlId(13), CourseControlId(10)),
                 new QueryEvent.LegInfo(CourseControlId(10), CourseControlId(11))
@@ -441,6 +441,34 @@ namespace PurplePen.Tests
             });
 
             result.Clear();
+        }
+
+        [TestMethod]
+        public void EnumLegsRelay()
+        {
+            Setup("queryevent\\relay.ppen");
+
+            List<QueryEvent.LegInfo> result = new List<QueryEvent.LegInfo>();
+
+            foreach (QueryEvent.LegInfo li in QueryEvent.EnumLegs(eventDB, Designator(4)))
+                result.Add(li);
+
+            CollectionAssert.AreEqual(result, new QueryEvent.LegInfo[]
+            {
+                new QueryEvent.LegInfo(CourseControlId(48), CourseControlId(52)),
+                new QueryEvent.LegInfo(CourseControlId(49), CourseControlId(50), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(50), CourseControlId(51), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(51), CourseControlId(55), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(52), CourseControlId(53), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(53), CourseControlId(54), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(54), CourseControlId(55), 0.5),
+                new QueryEvent.LegInfo(CourseControlId(58), CourseControlId(57), 0.33333333333333331),
+                new QueryEvent.LegInfo(CourseControlId(59), CourseControlId(62), 0.33333333333333331),
+                new QueryEvent.LegInfo(CourseControlId(62), CourseControlId(57), 0.33333333333333331),
+                new QueryEvent.LegInfo(CourseControlId(55), CourseControlId(60), 0.33333333333333331),
+                new QueryEvent.LegInfo(CourseControlId(60), CourseControlId(57), 0.33333333333333331),
+                new QueryEvent.LegInfo(CourseControlId(57), CourseControlId(56)),
+            });
         }
 
         [TestMethod]
@@ -1406,14 +1434,107 @@ namespace PurplePen.Tests
             load = QueryEvent.GetControlLoad(eventDB, ControlId(16));    // control "301"; used by "rambo", "Score 4"
             Assert.AreEqual(-1, load);
 
-            load = QueryEvent.GetControlLoad(eventDB, ControlId(8));    // control "8"; used by "Green Y", "Score 4", "White"
-            Assert.AreEqual(44, load);
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(8));    // control "8"; used by "Green Y", "Score 4", "White" (0.5 load)
+            Assert.AreEqual(32, load);
 
             load = QueryEvent.GetControlLoad(eventDB, ControlId(14));    // control "291"; used by "Sample Course 4"
             Assert.AreEqual(0, load);
 
             load = QueryEvent.GetControlLoad(eventDB, ControlId(2));    // control "31"; used by  "Score 4", "White"
             Assert.AreEqual(25, load);
+        }
+
+        [TestMethod]
+        public void GetControlVisitLoad()
+        {
+            int load;
+
+            Setup("queryevent\\visitload.ppen");
+
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(14));    // control "14"
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(4));    // control "33"
+            Assert.AreEqual(300, load);
+
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(20));    // control "48"
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(13));    // control "41"
+            Assert.AreEqual(-1, load);
+
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(7));    // control "36"
+            Assert.AreEqual(150, load);
+
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(23));    // control "51"
+            Assert.AreEqual(50, load);        }
+
+
+        [TestMethod]
+        public void GetControlLoadRelay()
+        {
+            int load;
+
+            Setup("reports\\marymoor7.ppen");
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(82));    // start; used by relay
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(41));    // "41"; used by all relay
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(91));    // "44"; used by all relay
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(83));    // "31"; used by all relay
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(81));    // "60"; not used relay
+            Assert.AreEqual(-1, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(46));    // "46"; used by 1/2 in relay
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(42));    // "42"; used by 1/2 in relay
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(49));    // "49"; used by 1/4 in relay
+            Assert.AreEqual(25, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(58));    // "58"; used by 1/4 in relay
+            Assert.AreEqual(25, load);
+        }
+
+        [TestMethod]
+        public void GetControlLoadRelay2()
+        {
+            int load;
+
+            Setup("reports\\marymoor8.ppen");
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(82));    // start; used by relay
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(43));    // "43"; relay loop 1
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(70));    // "70"; relay loop 1
+            Assert.AreEqual(100, load);
+
+            
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(91));    // "44"
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(42));    // "42";
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(42));    // "32"
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetControlLoad(eventDB, ControlId(91));    // "44"
+            Assert.AreEqual(100, load);
+
+
         }
 
         [TestMethod]
@@ -1437,6 +1558,65 @@ namespace PurplePen.Tests
 
             load = QueryEvent.GetLegLoad(eventDB, ControlId(72), ControlId(36)); // 72-36: doesn't exist.
             Assert.AreEqual(-1, load);
+        }
+
+        [TestMethod]
+        public void GetLegLoadRelay()
+        {
+            int load;
+
+            Setup("reports\\marymoor7.ppen");
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(82), ControlId(50));   // start to 50
+            Assert.AreEqual(100, load);
+            
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(41), ControlId(46));   // 41 - 46:
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(46), ControlId(91));   // 46 - 44
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(91), ControlId(83));   // 44 - 31
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(41), ControlId(42));   // 41 - 42
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(42), ControlId(58));   // 42 - 58
+            Assert.AreEqual(25, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(42), ControlId(49));   // 42 - 49
+            Assert.AreEqual(25, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(49), ControlId(91));   // 49 - 44
+            Assert.AreEqual(25, load);
+
+        }
+
+        [TestMethod]
+        public void GetLegLoadRelay2()
+        {
+            int load;
+
+            Setup("reports\\marymoor8.ppen");
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(82), ControlId(50));   // start to 50
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(50), ControlId(70));   // 50 - 70
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(50), ControlId(41));   // 50 - 41
+            Assert.AreEqual(100, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(51), ControlId(42));   // 51 - 42
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(42), ControlId(80));   // 42 - 80
+            Assert.AreEqual(50, load);
+
+            load = QueryEvent.GetLegLoad(eventDB, ControlId(88), ControlId(42));   // 32 - 42
+            Assert.AreEqual(50, load);
         }
 
         [TestMethod]

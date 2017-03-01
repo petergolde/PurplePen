@@ -73,6 +73,13 @@ namespace PurplePen
         // Enumerate all the course controls ids for a particular course.
         public static IEnumerable<Id<CourseControl>> EnumCourseControlIds(EventDB eventDB, CourseDesignator courseDesignator)
         {
+            return EnumCourseControlIdsWithPercent(eventDB, courseDesignator).Select(ccwp => ccwp.courseControlId);
+        }
+
+        // Enumerate all the course control ids for a particular course. If the course is "all variations" for a course
+        // with variations, also compute the fraction of the variations for which a particular course control is visited.
+        private static IEnumerable<CourseControlWithPercent> EnumCourseControlIdsWithPercent(EventDB eventDB, CourseDesignator courseDesignator)
+        {
             Debug.Assert(courseDesignator.IsNotAllControls);
 
             Id<Course> courseId = courseDesignator.CourseId;
@@ -86,13 +93,25 @@ namespace PurplePen
             else
                 variationChoices = courseDesignator.VariationInfo.Path.Choices;
 
-            return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, variationChoices, false, currentPart);
+            return EnumCourseControlsToJoin(eventDB, courseDesignator, firstCourseControlId, Id<CourseControl>.None, variationChoices, false, currentPart, 1.0);
         }
 
-        private static List<Id<CourseControl>> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join,
-                                                                        IEnumerable<Id<CourseControl>> variationChoices, bool ignoreFirstSplit, int currentPart)
+        struct CourseControlWithPercent
         {
-            List<Id<CourseControl>> result = new List<Id<CourseControl>>();
+            public Id<CourseControl> courseControlId;
+            public double visitFraction;  // 1.0 if always visition, 0.5 is visit on half of loops, etc.
+
+            public CourseControlWithPercent(Id<CourseControl> courseControlId, double visitFraction)
+            {
+                this.courseControlId = courseControlId;
+                this.visitFraction = visitFraction;
+            }
+        }
+
+        private static List<CourseControlWithPercent> EnumCourseControlsToJoin(EventDB eventDB, CourseDesignator courseDesignator, Id<CourseControl> start, Id<CourseControl> join,
+                                                                        IEnumerable<Id<CourseControl>> variationChoices, bool ignoreFirstSplit, int currentPart, double currentFraction)
+        {
+            List<CourseControlWithPercent> result = new List<CourseControlWithPercent>();
 
             int part = courseDesignator.Part;
             Id<CourseControl> nextCourseControlId = start;
@@ -114,23 +133,40 @@ namespace PurplePen
                         courseCtl = eventDB.GetCourseControl(nextCourseControlId);
                     }
                     else {
-                        // Follow all of the alternate paths except the current one.
+                        double newFraction;
+                        if (courseCtl.loop) 
+                            newFraction = currentFraction;// loops traverse all parts at some time.
+                        else
+                            newFraction = currentFraction / courseCtl.splitCourseControls.Length;
+
+                        // This could be simplified without the if and the AddRange after, but I'm trying to keep
+                        // things in the exact order they were before.
                         for (int i = 0; i < courseCtl.splitCourseControls.Length; ++i) {
                             if (courseCtl.splitCourseControls[i] != nextCourseControlId) {
-                                var splitControls = EnumCourseControlsToJoin(eventDB, courseDesignator, courseCtl.splitCourseControls[i], courseCtl.splitEnd, variationChoices, true, currentPart);
-                                result.AddRange(splitControls);
+                                result.AddRange(EnumCourseControlsToJoin(eventDB, courseDesignator, courseCtl.splitCourseControls[i],
+                                                courseCtl.splitEnd, variationChoices, true, currentPart, newFraction));
                             }
+                        }
+
+                        if (!courseCtl.loop) {
+                            result.AddRange(EnumCourseControlsToJoin(eventDB, courseDesignator, nextCourseControlId,
+                                            courseCtl.splitEnd, variationChoices, true, currentPart, newFraction));
+
+                            nextCourseControlId = courseCtl.splitEnd;
+                            if (nextCourseControlId.IsNone || nextCourseControlId == join)
+                                break;
+                            continue;
                         }
                     }
                 }
 
                 if (courseDesignator.AllParts || currentPart == part)
-                    result.Add(nextCourseControlId);
+                    result.Add(new CourseControlWithPercent(nextCourseControlId, currentFraction));
 
                 if (courseCtl.exchange) {
                     ++currentPart;
                     if (!courseDesignator.AllParts && currentPart == part)
-                        result.Add(nextCourseControlId);
+                        result.Add(new CourseControlWithPercent(nextCourseControlId, currentFraction));
                 }
 
                 nextCourseControlId = courseCtl.nextCourseControl;
@@ -216,10 +252,13 @@ namespace PurplePen
         {
             Id<CourseControl> next = eventDB.GetCourseControl(courseControlId).nextCourseControl;
 
+            return next;
+            /*
             // Simple case, the next control is not starting a split.
             if (next.IsNone || !eventDB.GetCourseControl(next).split)
                 return next;
 
+            
             // If it does, then we have to do the complex thing.
             List<Id<CourseControl>> allCourseControls = EnumCourseControlIds(eventDB, courseDesignator).ToList();
             for (int i = 0; i < allCourseControls.Count; ++i) {
@@ -232,6 +271,7 @@ namespace PurplePen
             }
 
             throw new Exception("Course does not contain give course control");
+            */
         }
 
         // Describes the information about a leg.
@@ -239,11 +279,20 @@ namespace PurplePen
         {
             public Id<CourseControl> courseControlId1;
             public Id<CourseControl> courseControlId2;
+            public double visitFraction;
 
             public LegInfo(Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2)
             {
                 this.courseControlId1 = courseControlId1;
                 this.courseControlId2 = courseControlId2;
+                this.visitFraction = 1.0;
+            }
+
+            public LegInfo(Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, double visitFraction)
+            {
+                this.courseControlId1 = courseControlId1;
+                this.courseControlId2 = courseControlId2;
+                this.visitFraction = visitFraction;
             }
         }
 
@@ -259,12 +308,13 @@ namespace PurplePen
                 yield break;
 
             bool first = true;
-            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
+            foreach (CourseControlWithPercent ccwp in EnumCourseControlIdsWithPercent(eventDB, courseDesignator)) {
+                Id<CourseControl> courseControlId = ccwp.courseControlId;
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
                 if (first || courseDesignator.AllParts || !courseControl.exchange) {
                     Id<CourseControl> nextCourseControlId = GetNextControl(eventDB, courseDesignator, courseControlId);
                     if (nextCourseControlId.IsNotNone) {
-                        yield return new LegInfo(courseControlId, nextCourseControlId);
+                        yield return new LegInfo(courseControlId, nextCourseControlId, ccwp.visitFraction);
                     }
                 }
                 first = false;
@@ -320,6 +370,18 @@ namespace PurplePen
             foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, courseDesignator)) {
                 if (eventDB.GetCourseControl(courseControlId).control == controlId)
                     return true;
+            }
+
+            return false;
+        }
+
+        public static bool CourseUsesLeg(EventDB eventDB, CourseDesignator courseDesignator, Id<ControlPoint> control1, Id<ControlPoint> control2)
+        {
+            foreach (LegInfo leg in EnumLegs(eventDB, courseDesignator)) {
+                if (eventDB.GetCourseControl(leg.courseControlId1).control == control1 &&
+                    eventDB.GetCourseControl(leg.courseControlId2).control == control2) {
+                    return true;
+                }
             }
 
             return false;
@@ -524,7 +586,7 @@ namespace PurplePen
         }
 
         // Given an array of courses, compute the control load. Return -1 if no control load set for any containing courses, or array is empty.
-        private static int ComputeLoad(EventDB eventDB, Id<Course>[] courses)
+        private static int ComputeLoad(EventDB eventDB, Id<ControlPoint> controlId, Id<Course>[] courses)
         {
             bool anyLoadFound = false;
             int totalLoad = 0;
@@ -533,7 +595,14 @@ namespace PurplePen
                 int load = eventDB.GetCourse(courseId).load;
                 if (load >= 0) {
                     anyLoadFound = true;
-                    totalLoad += load;
+                    if (HasVariations(eventDB, courseId)) {
+                        // If this course is a relay, then computer what percent of variations use this control.
+                        double variationPercent = ComputeLoadFraction(eventDB, courseId, controlId);
+                        totalLoad += (int)Math.Ceiling(variationPercent * load);
+                    }
+                    else {
+                        totalLoad += load;
+                    }
                 }
             }
 
@@ -541,6 +610,97 @@ namespace PurplePen
                 return totalLoad;
             else
                 return -1;
+        }
+
+        // Given an array of courses, compute the control visit. Return -1 if no control load set for any containing courses, or array is empty.
+        // Just like ComputeLoad, but counts visits with multiplicity.
+        private static int ComputeVisits(EventDB eventDB, Id<ControlPoint> controlId, Id<Course>[] courses)
+        {
+            bool anyLoadFound = false;
+            int totalLoad = 0;
+
+            foreach (Id<Course> courseId in courses) {
+                int load = eventDB.GetCourse(courseId).load;
+                if (load >= 0) {
+                    anyLoadFound = true;
+                    double variationPercent = ComputeVisitFraction(eventDB, courseId, controlId);
+                    totalLoad += (int)Math.Ceiling(variationPercent * load);
+                }
+            }
+
+            if (anyLoadFound)
+                return totalLoad;
+            else
+                return -1;
+        }
+
+        // Given an array of courses, compute the control load. Return -1 if no control load set for any containing courses, or array is empty.
+        private static int ComputeLoad(EventDB eventDB, Id<ControlPoint> controlId1, Id<ControlPoint> controlId2, Id<Course>[] courses)
+        {
+            bool anyLoadFound = false;
+            int totalLoad = 0;
+
+            foreach (Id<Course> courseId in courses) {
+                int load = eventDB.GetCourse(courseId).load;
+                if (load >= 0) {
+                    anyLoadFound = true;
+                    if (HasVariations(eventDB, courseId)) {
+                        // If this course is a relay, then computer what percent of variations use this control.
+                        double variationPercent = ComputeLoadFraction(eventDB, courseId, controlId1, controlId2);
+                        totalLoad += (int)Math.Ceiling(variationPercent * load);
+                    }
+                    else {
+                        totalLoad += load;
+                    }
+                }
+            }
+
+            if (anyLoadFound)
+                return totalLoad;
+            else
+                return -1;
+        }
+
+        // Determine what fract of the variations of a course use the given controlId. Returns 1 if all variations use the control, 
+        // 0.5 if half the variations use the control, etc.
+        private static double ComputeLoadFraction(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> controlId)
+        {
+            return (from c in EnumCourseControlIdsWithPercent(eventDB, new CourseDesignator(courseId))
+                    where eventDB.GetCourseControl(c.courseControlId).control == controlId
+                    let loadFraction = LoadFraction(eventDB, c)
+                    select (double?) loadFraction).Max() ?? 0;
+        }
+
+        // Determine what fract of the variations of a course use the given controlId, counting multiple visits with multiplicity. 
+        //Returns 1 if all variations use the control, 0.5 if half the variations use the control, 2 if all variations use the control twice
+        private static double ComputeVisitFraction(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> controlId)
+        {
+            return (from c in EnumCourseControlIdsWithPercent(eventDB, new CourseDesignator(courseId))
+                    where eventDB.GetCourseControl(c.courseControlId).control == controlId
+                    let loadFraction = LoadFraction(eventDB, c)
+                    select (double?)loadFraction).Sum() ?? 0;
+        }
+
+        // For non-loop split controls, multiply the visit fraction times the number of forks because of the way that
+        // multiple course controls are used for the split.
+        private static double LoadFraction(EventDB eventDB, CourseControlWithPercent c)
+        {
+            CourseControl cc = eventDB.GetCourseControl(c.courseControlId);
+            if (cc.split && !cc.loop)
+                return c.visitFraction * cc.splitCourseControls.Length;
+            else
+                return c.visitFraction;
+        }
+
+        // Determine what fract of the variations of a course use the given leg. Returns 1 if all variations use the control, 
+        // 0.5 if half the variations use the control, etc.
+        private static double ComputeLoadFraction(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> control1, Id<ControlPoint> control2)
+        {
+            return (from l in EnumLegs(eventDB, new CourseDesignator(courseId))
+                    where eventDB.GetCourseControl(l.courseControlId1).control == control1 &&
+                          eventDB.GetCourseControl(l.courseControlId2).control == control2
+                    let loadFraction = l.visitFraction
+                    select (double?)loadFraction).Max() ?? 0;
         }
 
         // Does courseControl1 precede courseControl2 in the given course.
@@ -562,14 +722,22 @@ namespace PurplePen
         public static int GetControlLoad(EventDB eventDB, Id<ControlPoint> controlId)
         {
             Id<Course>[] courses = CoursesUsingControl(eventDB, controlId);
-            return ComputeLoad(eventDB, courses);
+            return ComputeLoad(eventDB, controlId, courses);
+        }
+
+        // What is the visit load for this control. Return -1 if not used in any courses that have a load set for them.
+        // Counts multiple visits with multiplicity.
+        public static int GetControlVisitLoad(EventDB eventDB, Id<ControlPoint> controlId)
+        {
+            Id<Course>[] courses = CoursesUsingControl(eventDB, controlId);
+            return ComputeVisits(eventDB, controlId, courses);
         }
 
         // What is the load for this leg. Return -1 if not used in any courses that have a load set for them.
         public static int GetLegLoad(EventDB eventDB, Id<ControlPoint> control1, Id<ControlPoint> control2)
         {
             Id<Course>[] courses = CoursesUsingLeg(eventDB, control1, control2);
-            return ComputeLoad(eventDB, courses);
+            return ComputeLoad(eventDB, control1, control2, courses);
         }
 
         // What is the load for this course. Return -1 if not set.

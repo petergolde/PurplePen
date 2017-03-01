@@ -2,11 +2,13 @@ Big things to do before first beta:
 
 - Allow creating variation when leg is selected.
 
-- Better help if Add Variation is not enabled; instead put up a dialog box explaining.
-
 - tooltips on ordering view don't disappear well, I think.
 
 - After adding variation, make sure next added control goes into one of the legs.
+
+- Allow starting team number to be changed
+
+- Allow variation choices to be manually assigned.
 
 
 Minor issues to check/add later.
