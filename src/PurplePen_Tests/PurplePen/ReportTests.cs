@@ -603,13 +603,13 @@ namespace PurplePen.Tests
       <th>Visits</th>
     </tr>
     <tr>
-      <td>49</td>
+      <td>34</td>
       <td>1</td>
       <td>180</td>
-      <td>360</td>
+      <td>180</td>
     </tr>
     <tr>
-      <td>34</td>
+      <td>49</td>
       <td>1</td>
       <td>180</td>
       <td>180</td>

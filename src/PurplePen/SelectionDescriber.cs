@@ -247,9 +247,15 @@ namespace PurplePen
 
             // What is the competitor load?
             int load = QueryEvent.GetControlLoad(eventDB, controlId);
+            int visits = QueryEvent.GetControlVisitLoad(eventDB, controlId);
             if (load >= 0) {
                 list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.Load : SelectionDescriptionText.CompetitorLoad)));
-                list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", load)));
+                if (visits != load) {
+                    list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}/{1}", load, visits)));
+                }
+                else {
+                    list.Add(new TextPart(TextFormat.SameLine, string.Format("{0}", load)));
+                }
             }
 
             // Text version of the descriptions

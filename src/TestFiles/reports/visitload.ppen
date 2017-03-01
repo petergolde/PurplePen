@@ -3,7 +3,7 @@
     <title>variations</title>
     <map kind="none" scale="10000" />
     <all-controls print-scale="10000" description-kind="symbols" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="150.082764" right="330.9876" bottom="-116.617249" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="137.397339" right="329.797" bottom="-129.302673" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <numbering start="31" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
     <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
@@ -115,14 +115,14 @@
     <name>Butterfly</name>
     <labels label-kind="sequence" />
     <first course-control="119" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="150.082764" right="330.9876" bottom="-116.617249" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-156.613708" top="126.955292" right="262.4863" bottom="-139.74472" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" load="100" description-kind="symbols" />
   </course>
   <course id="10" kind="normal" order="2">
     <name>Relay</name>
     <labels label-kind="sequence" />
     <first course-control="130" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.1124" top="150.082764" right="330.9876" bottom="-116.617249" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.17147" top="125.814957" right="330.928528" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <options print-scale="10000" load="180" description-kind="symbols" />
   </course>
   <course-control id="126" control="17">

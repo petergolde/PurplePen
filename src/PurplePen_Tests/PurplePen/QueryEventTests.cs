@@ -1451,6 +1451,9 @@ namespace PurplePen.Tests
 
             Setup("queryevent\\visitload.ppen");
 
+            load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(21));    // control "49"
+            Assert.AreEqual(100, load);
+
             load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(14));    // control "14"
             Assert.AreEqual(100, load);
 
@@ -1467,7 +1470,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(150, load);
 
             load = QueryEvent.GetControlVisitLoad(eventDB, ControlId(23));    // control "51"
-            Assert.AreEqual(50, load);        }
+            Assert.AreEqual(50, load);
+        }
 
 
         [TestMethod]

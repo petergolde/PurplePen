@@ -675,10 +675,11 @@ namespace PurplePen
         //Returns 1 if all variations use the control, 0.5 if half the variations use the control, 2 if all variations use the control twice
         private static double ComputeVisitFraction(EventDB eventDB, Id<Course> courseId, Id<ControlPoint> controlId)
         {
+            var temp = EnumCourseControlIdsWithPercent(eventDB, new CourseDesignator(courseId));
+
             return (from c in EnumCourseControlIdsWithPercent(eventDB, new CourseDesignator(courseId))
                     where eventDB.GetCourseControl(c.courseControlId).control == controlId
-                    let loadFraction = LoadFraction(eventDB, c)
-                    select (double?)loadFraction).Sum() ?? 0;
+                    select (double?)c.visitFraction).Sum() ?? 0;
         }
 
         // For non-loop split controls, multiply the visit fraction times the number of forks because of the way that
