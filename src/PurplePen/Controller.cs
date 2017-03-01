@@ -2760,10 +2760,11 @@ namespace PurplePen
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
             Id<Course> courseId = selection.ActiveCourseDesignator.CourseId;
+            Id<CourseControl> selectedCourseControl = selection.SelectedCourseControl;
 
             undoMgr.BeginCommand(1992, CommandNameText.AddVariation);
 
-            bool result = ChangeEvent.AddVariation(eventDB, selection.ActiveCourseDesignator, selection.SelectedCourseControl, loop, numberOfForks);
+            bool result = ChangeEvent.AddVariation(eventDB, selection.ActiveCourseDesignator, selectedCourseControl, loop, numberOfForks);
             Debug.Assert(result);
 
             undoMgr.EndCommand(1992);
@@ -2773,6 +2774,12 @@ namespace PurplePen
                 // Adding this variation created too many total variations.
                 undoMgr.Undo();
                 ui.ErrorMessage(string.Format(MiscText.TooManyVariations, maxTotalVariationsAllowed));
+            }
+            else {
+                // Select the first branch.
+                Id<CourseControl> cc1 = eventDB.GetCourseControl(selectedCourseControl).splitCourseControls[loop ? 1 : 0];
+                Id<CourseControl> cc2 = eventDB.GetCourseControl(cc1).nextCourseControl;
+                selectionMgr.SelectLeg(cc1, cc2, LegInsertionLoc.Normal);
             }
 
             ui.ShowTopologyView();

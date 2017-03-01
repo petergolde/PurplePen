@@ -1,7 +1,4 @@
 
-- After adding variation, make sure next added control goes into one of the legs.
-
-
 - Allow starting team number to be changed
 
 - Allow variation choices to be manually assigned.
