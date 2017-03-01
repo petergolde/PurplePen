@@ -205,6 +205,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Visits.
+        /// </summary>
+        internal static string ColumnHeader_Visits {
+            get {
+                return ResourceManager.GetString("ColumnHeader_Visits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Course Summary for {0}.
         /// </summary>
         internal static string CourseSummary_Title {
@@ -457,6 +466,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Some controls are visited multiple times on the same course. The second load number counts each visit to a control separately..
+        /// </summary>
+        internal static string Load_ButterflyExists {
+            get {
+                return ResourceManager.GetString("Load_ButterflyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Control load.
         /// </summary>
         internal static string Load_ControlLoadSection {
@@ -502,11 +520,38 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to One or more courses has variations. Load numbers will be computed assuming that competitors are evenly distributed between forks..
+        /// </summary>
+        internal static string Load_VariationsExist {
+            get {
+                return ResourceManager.GetString("Load_VariationsExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0} visits).
+        /// </summary>
+        internal static string Load_Visit {
+            get {
+                return ResourceManager.GetString("Load_Visit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WARNING:.
         /// </summary>
         internal static string Load_Warning {
             get {
                 return ResourceManager.GetString("Load_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NOTE: .
+        /// </summary>
+        internal static string Note {
+            get {
+                return ResourceManager.GetString("Note", resourceCulture);
             }
         }
         

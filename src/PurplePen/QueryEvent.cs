@@ -1479,6 +1479,15 @@ namespace PurplePen
             return EnumCourseControlIds(eventDB, new CourseDesignator(courseId)).Any(courseControlId => eventDB.GetCourseControl(courseControlId).split);
         }
 
+        public static bool AnyCourseHasVariations(EventDB eventDB)
+        {
+            foreach (Id<Course> courseId in eventDB.AllCourseIds) {
+                if (HasVariations(eventDB, courseId))
+                    return true;
+            }
+            return false;
+        }
+
         // If a course control is the beginning of a variation split, return all course controls assigned to that variation split.
         // Otherwise, return just that course control.
         public static IEnumerable<Id<CourseControl>> AllVariationsOfCourseControl(EventDB eventDB, Id<CourseControl> courseControlId)

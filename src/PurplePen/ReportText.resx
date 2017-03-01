@@ -165,6 +165,9 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Same symbol?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visits</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Course Summary for {0}</value>
     <comment>{0} replaced with event title</comment>
@@ -256,6 +259,9 @@
     <value>Leg Length Report for {0}</value>
     <comment>{0} replaced with event title</comment>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Some controls are visited multiple times on the same course. The second load number counts each visit to a control separately.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Control load</value>
   </data>
@@ -272,9 +278,19 @@
     <value>Competitor Load Summary for {0}</value>
     <comment>{0} replaced with event title</comment>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>One or more courses has variations. Load numbers will be computed assuming that competitors are evenly distributed between forks.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visits)</value>
+    <comment>{0} replaced with number of visits</comment>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>WARNING:</value>
     <comment>boldfaced</comment>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTE: </value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
     <value>Warning: due to the number of legs specified, the fork at control {0} will not be used evenly. {1} leg(s) will use branch(es) {2}, while {3} leg(s) will use branch(es) {4}. </value>

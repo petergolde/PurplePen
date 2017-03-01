@@ -333,6 +333,7 @@ namespace PurplePen
         public string CreateLoadReport(EventDB eventDB)
         {
             InitReport();
+            GatherControlLoads(eventDB);
 
             // Header.
             WriteH1(string.Format(ReportText.Load_Title, QueryEvent.GetEventTitle(eventDB, " ")));
@@ -346,9 +347,29 @@ namespace PurplePen
                 EndPara();
             }
 
+            if (QueryEvent.AnyCourseHasVariations(eventDB)) {
+                // Some courses have variations. Give note.
+                StartPara();
+                WriteStyledText(ReportText.Note, FontStyle.Bold);
+                WriteText(" ");
+                WriteText(ReportText.Load_VariationsExist);
+                EndPara();
+            }
+
+            bool multiVisit = loadInfos.Any(li => li.visits > li.load);
+
+            if (multiVisit) {
+                // Some courses have multi-visit controls.
+                StartPara();
+                WriteStyledText(ReportText.Note, FontStyle.Bold);
+                WriteText(" ");
+                WriteText(ReportText.Load_ButterflyExists);
+                EndPara();
+            }
+
             // Section 1: Control load
             WriteH2(ReportText.Load_ControlLoadSection);
-            WriteControlLoadSection(eventDB);
+            WriteControlLoadSection(eventDB, multiVisit);
 
             // Section 2: Leg load
             WriteH2(ReportText.Load_LegLoadSection);
@@ -363,11 +384,14 @@ namespace PurplePen
             public string controlName;
             public int numCourses;
             public int load;
+            public int visits;
         }
 
-        void WriteControlLoadSection(EventDB eventDB)
+        List<ControlLoadInfo> loadInfos;
+
+        void GatherControlLoads(EventDB eventDB)
         {
-            List<ControlLoadInfo> loadInfos = new List<ControlLoadInfo>();
+            loadInfos = new List<ControlLoadInfo>();
 
             // Get load information about each control.
             foreach (Id<ControlPoint> controlId in eventDB.AllControlPointIds) {
@@ -382,14 +406,18 @@ namespace PurplePen
                 loadInfo.controlName = Util.ControlPointName(eventDB, controlId, NameStyle.Medium);
                 loadInfo.numCourses = QueryEvent.CoursesUsingControl(eventDB, controlId).Length;
                 loadInfo.load = QueryEvent.GetControlLoad(eventDB, controlId);
+                loadInfo.visits = QueryEvent.GetControlVisitLoad(eventDB, controlId);
 
                 loadInfos.Add(loadInfo);
             }
 
             // Sort the load information, first by load, then by number of courses, then by name.
-            loadInfos.Sort(delegate(ControlLoadInfo loadInfo1, ControlLoadInfo loadInfo2) {
+            loadInfos.Sort(delegate (ControlLoadInfo loadInfo1, ControlLoadInfo loadInfo2) {
                 if (loadInfo1.load < loadInfo2.load) return 1;
                 else if (loadInfo1.load > loadInfo2.load) return -1;
+
+                if (loadInfo1.visits < loadInfo2.visits) return 1;
+                else if (loadInfo1.visits > loadInfo2.visits) return -1;
 
                 if (loadInfo1.numCourses < loadInfo2.numCourses) return 1;
                 else if (loadInfo1.numCourses > loadInfo2.numCourses) return -1;
@@ -401,14 +429,31 @@ namespace PurplePen
                 return loadInfo1.controlId.id.CompareTo(loadInfo2.controlId.id);
             });
 
+
+        }
+
+        void WriteControlLoadSection(EventDB eventDB, bool multiVisits)
+        {
             // Write the table.
-            BeginTable("", 3, "leftalign", "rightalign", "rightalign");
-            WriteTableHeaderRow(ReportText.ColumnHeader_Control, ReportText.ColumnHeader_NumberOfCourses, ReportText.ColumnHeader_Load);
+            if (multiVisits) {
+                BeginTable("", 4, "leftalign", "rightalign", "rightalign", "rightalign");
+                WriteTableHeaderRow(ReportText.ColumnHeader_Control, ReportText.ColumnHeader_NumberOfCourses, ReportText.ColumnHeader_Load, ReportText.ColumnHeader_Visits);
+            }
+            else {
+                BeginTable("", 3, "leftalign", "rightalign", "rightalign");
+                WriteTableHeaderRow(ReportText.ColumnHeader_Control, ReportText.ColumnHeader_NumberOfCourses, ReportText.ColumnHeader_Load);
+            }
 
             foreach (ControlLoadInfo loadInfo in loadInfos) {
-                WriteTableRow(loadInfo.controlName, 
-                                        Convert.ToString(loadInfo.numCourses), 
-                                        loadInfo.load >= 0 ? Convert.ToString(loadInfo.load) : "");
+                string loadString = loadInfo.load >= 0 ? Convert.ToString(loadInfo.load) : "";
+                string visitString = loadInfo.visits >= 0 ? Convert.ToString(loadInfo.visits) : "";
+
+                if (multiVisits) {
+                    WriteTableRow(loadInfo.controlName, Convert.ToString(loadInfo.numCourses), loadString, visitString);
+                }
+                else {
+                    WriteTableRow(loadInfo.controlName, Convert.ToString(loadInfo.numCourses), loadString);
+                }
             }
 
             EndTable();

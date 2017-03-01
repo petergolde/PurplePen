@@ -575,6 +575,177 @@ namespace PurplePen.Tests
             Assert.AreEqual(expected, result);
         }
 
+
+        [TestMethod]
+        public void CourseLoad3()
+        {
+            Setup(@"reports\visitload.ppen");
+
+            Reports reports = new Reports();
+            string result = reports.CreateLoadReport(eventDB);
+
+            Assert.AreEqual(@"
+  <h1>Competitor Load Summary for variations</h1>
+  <p>
+    <strong>NOTE: </strong> One or more courses has variations. Load numbers will be computed assuming that competitors are evenly distributed between forks.</p>
+  <p>
+    <strong>NOTE: </strong> Some controls are visited multiple times on the same course. The second load number counts each visit to a control separately.</p>
+  <h2>Control load</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol rightalign"" />
+    <col class=""middlecol rightalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Control</th>
+      <th># Courses</th>
+      <th>Load</th>
+      <th>Visits</th>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>1</td>
+      <td>180</td>
+      <td>360</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>1</td>
+      <td>180</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>1</td>
+      <td>100</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>1</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>1</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>1</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>1</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>1</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>1</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>1</td>
+      <td>90</td>
+      <td>270</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>1</td>
+      <td>90</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>1</td>
+      <td>90</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>1</td>
+      <td>90</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>1</td>
+      <td>90</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>1</td>
+      <td>90</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>0</td>
+      <td />
+      <td />
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>0</td>
+      <td />
+      <td />
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>0</td>
+      <td />
+      <td />
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>0</td>
+      <td />
+      <td />
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>0</td>
+      <td />
+      <td />
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>0</td>
+      <td />
+      <td />
+    </tr>
+  </table>
+  <h2>Leg load</h2>
+  <p>(only legs used by more than one course appear in the following table)</p>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""middlecol rightalign"" />
+    <col class=""rightcol rightalign"" />
+    <tr>
+      <th>Leg</th>
+      <th># Courses</th>
+      <th>Load</th>
+    </tr>
+  </table>
+
+", result);
+        }
+
+
         [TestMethod]
         public void CrossRef()
         {
