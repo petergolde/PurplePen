@@ -386,7 +386,7 @@ namespace PurplePen
                     // Record information about the fork, and link it in.
                     Fork currentFork = new Fork();
                     currentFork.loop = courseCtl.loop;
-                    currentFork.controlCode = eventDB.GetControl(courseCtl.control).code;
+                    currentFork.controlCode = Util.ControlPointName(eventDB, courseCtl.control, NameStyle.Medium);
                     currentFork.numBranches = courseCtl.loop ? courseCtl.splitCourseControls.Length - 1 : courseCtl.splitCourseControls.Length;
                     currentFork.codes = new char[currentFork.numBranches];
                     currentFork.subForks = new Fork[currentFork.numBranches];
