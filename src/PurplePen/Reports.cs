@@ -1057,6 +1057,89 @@ namespace PurplePen
             result.Add(new RepeatControl(designator, controlId, score));
         }
 
+        class CourseLeg: IEquatable<CourseLeg>
+        {
+            public readonly Id<ControlPoint> controlId1, controlId2;
+
+            public CourseLeg(Id<ControlPoint> controlId1, Id<ControlPoint> controlId2)
+            {
+                this.controlId1 = controlId1;
+                this.controlId2 = controlId2;
+            }
+
+            public bool Equals(CourseLeg other)
+            {
+                return controlId1 == other.controlId1 && controlId2 == other.controlId2;
+            }
+
+            public override int GetHashCode()
+            {
+                return 31 * controlId1.GetHashCode() + controlId2.GetHashCode();
+            }
+        }
+
+        class BothDirectionsLeg
+        {
+            public readonly CourseLeg courseLeg;
+            public readonly List<Id<Course>> forwardCourses;
+            public readonly List<Id<Course>> backwardCourses;
+
+            public BothDirectionsLeg(CourseLeg courseLeg, List<Id<Course>> forwardCourses, List<Id<Course>> backwardCourses)
+            {
+                this.courseLeg = courseLeg;
+                this.forwardCourses = forwardCourses;
+                this.backwardCourses = backwardCourses;
+            }
+        }
+
+        List<BothDirectionsLeg> BothDirectionsLegs(EventDB eventDB)
+        {
+            List<BothDirectionsLeg> result = new List<BothDirectionsLeg>();
+
+            Dictionary<CourseLeg, List<Id<Course>>> forwardLegs = new Dictionary<CourseLeg, List<Id<Course>>>();
+
+            // Accumulate all the legs in the event into the above dictionaries.
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                if (eventDB.GetCourse(courseId).kind == CourseKind.Score)
+                    continue;
+
+                foreach (QueryEvent.LegInfo legInfo in QueryEvent.EnumLegs(eventDB, new CourseDesignator(courseId))) {
+                    CourseLeg forward = new CourseLeg(eventDB.GetCourseControl(legInfo.courseControlId1).control, eventDB.GetCourseControl(legInfo.courseControlId2).control);
+
+                    if (!forwardLegs.ContainsKey(forward))
+                        forwardLegs[forward] = new List<Id<Course>>();
+                    forwardLegs[forward].Add(courseId);
+                }
+            }
+
+            foreach (CourseLeg forward in forwardLegs.Keys) {
+                // The below prevent us from putting each pair of both directions legs in twice,
+                // and also filters out when same control is twice in a row (which is handled elsewhere in event audit).
+                if (forward.controlId1.id >= forward.controlId2.id)
+                    continue;
+
+                CourseLeg backward = new CourseLeg(forward.controlId2, forward.controlId1);
+                if (forwardLegs.ContainsKey(backward)) {
+                    result.Add(new BothDirectionsLeg(forward, forwardLegs[forward], forwardLegs[backward]));
+                }
+            }
+
+            return result;
+        }
+
+        string CourseList(EventDB eventDB, List<Id<Course>> courseList)
+        {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < courseList.Count; ++i) {
+                if (i != 0)
+                    builder.Append(", ");
+                builder.Append(Util.CourseName(eventDB, courseList[i]));
+            }
+
+            return builder.ToString();
+        }
+
+
         // Create a report showing missing things
         public string CreateEventAuditReport(EventDB eventDB)
         {
@@ -1129,6 +1212,36 @@ namespace PurplePen
                     }
 
                     WriteTableRow(string.Format("{0}, {1}", code1, code2), string.Format("{0} m", Math.Round(nearby.distance)), nearby.sameSymbol ? ReportText.EventAudit_Yes : ReportText.EventAudit_No);
+                }
+
+                EndTable();
+            }
+
+            // Courses with legs run in opposite directions.
+            List<BothDirectionsLeg> bothDirectionsLegs = BothDirectionsLegs(eventDB);
+            if (bothDirectionsLegs.Count > 0) {
+                problemFound = true;
+
+                WriteH2(ReportText.EventAudit_BothDirectionsLegs);
+                BeginTable("", 2, "leftalign", "leftalign");
+                WriteTableHeaderRow(ReportText.ColumnHeader_Leg, ReportText.ColumnHeader_Courses);
+
+                bool first = true;
+                foreach (BothDirectionsLeg bothDirectionsLeg in bothDirectionsLegs) {
+                    if (!first)
+                        WriteTableRow("\u00a0");
+
+                    WriteTableRow(Util.ControlPointName(eventDB, bothDirectionsLeg.courseLeg.controlId1, NameStyle.Medium) +
+                                  " \u2192 " +
+                                  Util.ControlPointName(eventDB, bothDirectionsLeg.courseLeg.controlId2, NameStyle.Medium),
+                                  CourseList(eventDB, bothDirectionsLeg.forwardCourses));
+
+                    WriteTableRow(Util.ControlPointName(eventDB, bothDirectionsLeg.courseLeg.controlId2, NameStyle.Medium) +
+                                  " \u2192 " +
+                                  Util.ControlPointName(eventDB, bothDirectionsLeg.courseLeg.controlId1, NameStyle.Medium),
+                                  CourseList(eventDB, bothDirectionsLeg.backwardCourses));
+
+                    first = false;
                 }
 
                 EndTable();

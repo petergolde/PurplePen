@@ -138,6 +138,9 @@
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Course</value>
   </data>
+  <data name="ColumnHeader_Courses" xml:space="preserve">
+    <value>Courses</value>
+  </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Distance</value>
   </data>
@@ -175,6 +178,9 @@
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Control cross-reference for {0}</value>
     <comment>{0} replaced with event title</comment>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Legs Run in Both Directions</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Close Together Controls</value>

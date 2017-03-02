@@ -124,6 +124,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Courses.
+        /// </summary>
+        internal static string ColumnHeader_Courses {
+            get {
+                return ResourceManager.GetString("ColumnHeader_Courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Distance.
         /// </summary>
         internal static string ColumnHeader_Distance {
@@ -228,6 +237,15 @@ namespace PurplePen {
         internal static string CrossRef_Title {
             get {
                 return ResourceManager.GetString("CrossRef_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legs Run in Both Directions.
+        /// </summary>
+        internal static string EventAudit_BothDirectionsLegs {
+            get {
+                return ResourceManager.GetString("EventAudit_BothDirectionsLegs", resourceCulture);
             }
         }
         

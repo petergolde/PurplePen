@@ -287,32 +287,32 @@ namespace PurplePen.Tests
       <th>Load</th>
     </tr>
     <tr>
-      <td>38–Finish</td>
+      <td>38â€“Finish</td>
       <td>6</td>
       <td>184</td>
     </tr>
     <tr>
-      <td>47–48</td>
+      <td>47â€“48</td>
       <td>2</td>
       <td>122</td>
     </tr>
     <tr>
-      <td>48–50</td>
+      <td>48â€“50</td>
       <td>2</td>
       <td>81</td>
     </tr>
     <tr>
-      <td>57–79</td>
+      <td>57â€“79</td>
       <td>2</td>
       <td>81</td>
     </tr>
     <tr>
-      <td>Start–59</td>
+      <td>Startâ€“59</td>
       <td>2</td>
       <td>71</td>
     </tr>
     <tr>
-      <td>55–38</td>
+      <td>55â€“38</td>
       <td>2</td>
       <td />
     </tr>
@@ -539,32 +539,32 @@ namespace PurplePen.Tests
       <th>Load</th>
     </tr>
     <tr>
-      <td>38–Finish</td>
+      <td>38â€“Finish</td>
       <td>6</td>
       <td>227</td>
     </tr>
     <tr>
-      <td>47–48</td>
+      <td>47â€“48</td>
       <td>3</td>
       <td>148</td>
     </tr>
     <tr>
-      <td>57–79</td>
+      <td>57â€“79</td>
       <td>2</td>
       <td>81</td>
     </tr>
     <tr>
-      <td>48–50</td>
+      <td>48â€“50</td>
       <td>2</td>
       <td>81</td>
     </tr>
     <tr>
-      <td>Start–59</td>
+      <td>Startâ€“59</td>
       <td>2</td>
       <td>71</td>
     </tr>
     <tr>
-      <td>55–38</td>
+      <td>55â€“38</td>
       <td>2</td>
       <td>43</td>
     </tr>
@@ -1395,6 +1395,48 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void LegsBothDirections()
+        {
+            Setup(@"reports\reversal.ppen");
+
+            Reports reports = new Reports();
+            string result = reports.CreateEventAuditReport(eventDB);
+
+            Assert.AreEqual(@"
+  <h1>Event Audit for Both Directions</h1>
+  <h2>Legs Run in Both Directions</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""rightcol leftalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Courses</th>
+    </tr>
+    <tr>
+      <td>42 â†’ 48</td>
+      <td>Course 1, Course 2</td>
+    </tr>
+    <tr>
+      <td>48 â†’ 42</td>
+      <td>Course 3</td>
+    </tr>
+    <tr>
+      <td>Â </td>
+    </tr>
+    <tr>
+      <td>40 â†’ 42</td>
+      <td>Course 2</td>
+    </tr>
+    <tr>
+      <td>42 â†’ 40</td>
+      <td>Course 3</td>
+    </tr>
+  </table>
+
+", result);
+        }
+
+        [TestMethod]
         public void EventAudit()
         {
             Setup(@"reports\marymoor6.ppen");
@@ -1570,6 +1612,23 @@ namespace PurplePen.Tests
       <td>55, 80</td>
       <td>100 m</td>
       <td>No</td>
+    </tr>
+  </table>
+  <h2>Legs Run in Both Directions</h2>
+  <table>
+    <col class=""leftcol leftalign"" />
+    <col class=""rightcol leftalign"" />
+    <tr>
+      <th>Leg</th>
+      <th>Courses</th>
+    </tr>
+    <tr>
+      <td>57 â†’ 79</td>
+      <td>Course 5</td>
+    </tr>
+    <tr>
+      <td>79 â†’ 57</td>
+      <td>Course 4G</td>
     </tr>
   </table>
   <h2>Unused Controls</h2>
@@ -1796,60 +1855,60 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td>Relay</td>
-      <td>5–7</td>
-      <td>3.3–4.1 km</td>
+      <td>5â€“7</td>
+      <td>3.3â€“4.1 km</td>
       <td />
     </tr>
     <tr>
-      <td>    AD</td>
+      <td>Â Â Â Â AD</td>
       <td>6</td>
       <td>3.7 km</td>
       <td />
     </tr>
     <tr>
-      <td>    AE</td>
+      <td>Â Â Â Â AE</td>
       <td>6</td>
       <td>3.5 km</td>
       <td />
     </tr>
     <tr>
-      <td>    AF</td>
+      <td>Â Â Â Â AF</td>
       <td>6</td>
       <td>4.1 km</td>
       <td />
     </tr>
     <tr>
-      <td>    BD</td>
+      <td>Â Â Â Â BD</td>
       <td>7</td>
       <td>3.8 km</td>
       <td />
     </tr>
     <tr>
-      <td>    BE</td>
+      <td>Â Â Â Â BE</td>
       <td>7</td>
       <td>3.6 km</td>
       <td />
     </tr>
     <tr>
-      <td>    BF</td>
+      <td>Â Â Â Â BF</td>
       <td>7</td>
       <td>4.1 km</td>
       <td />
     </tr>
     <tr>
-      <td>    CD</td>
+      <td>Â Â Â Â CD</td>
       <td>5</td>
       <td>3.5 km</td>
       <td />
     </tr>
     <tr>
-      <td>    CE</td>
+      <td>Â Â Â Â CE</td>
       <td>5</td>
       <td>3.3 km</td>
       <td />
     </tr>
     <tr>
-      <td>    CF</td>
+      <td>Â Â Â Â CF</td>
       <td>5</td>
       <td>3.9 km</td>
       <td />
@@ -1894,57 +1953,57 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td>1</td>
-      <td>Start–73</td>
+      <td>Startâ€“73</td>
       <td>51 m</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>73–44</td>
+      <td>73â€“44</td>
       <td>344 m</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>44–49</td>
+      <td>44â€“49</td>
       <td>157 m</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>49–53</td>
+      <td>49â€“53</td>
       <td>110 m</td>
     </tr>
     <tr>
       <td>5</td>
-      <td>53–58</td>
+      <td>53â€“58</td>
       <td>85 m</td>
     </tr>
     <tr>
       <td>6</td>
-      <td>58–76</td>
+      <td>58â€“76</td>
       <td>148 m</td>
     </tr>
     <tr>
       <td>7</td>
-      <td>76–70</td>
+      <td>76â€“70</td>
       <td>235 m</td>
     </tr>
     <tr>
       <td>8</td>
-      <td>70–71</td>
+      <td>70â€“71</td>
       <td>196 m</td>
     </tr>
     <tr>
       <td>9</td>
-      <td>71–55</td>
+      <td>71â€“55</td>
       <td>131 m</td>
     </tr>
     <tr>
       <td>10</td>
-      <td>55–38</td>
+      <td>55â€“38</td>
       <td>77 m</td>
     </tr>
     <tr>
       <td>11</td>
-      <td>38–Finish</td>
+      <td>38â€“Finish</td>
       <td>64 m</td>
     </tr>
     <tr class=""summaryrow"">
@@ -1964,22 +2023,22 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td>1</td>
-      <td>Start–59</td>
+      <td>Startâ€“59</td>
       <td>630 m</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>59–72</td>
+      <td>59â€“72</td>
       <td>787 m</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>72–48</td>
+      <td>72â€“48</td>
       <td>372 m</td>
     </tr>
     <tr>
       <td>4</td>
-      <td>48–Finish</td>
+      <td>48â€“Finish</td>
       <td>383 m</td>
     </tr>
     <tr class=""summaryrow"">
@@ -2010,12 +2069,12 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td>1</td>
-      <td>Start–58</td>
+      <td>Startâ€“58</td>
       <td>661 m</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>58–50</td>
+      <td>58â€“50</td>
       <td>366 m</td>
     </tr>
     <tr class=""summaryrow"">
@@ -2035,12 +2094,12 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td>1</td>
-      <td>80–50</td>
+      <td>80â€“50</td>
       <td>163 m</td>
     </tr>
     <tr>
       <td>2</td>
-      <td>50–Finish</td>
+      <td>50â€“Finish</td>
       <td>245 m</td>
     </tr>
     <tr class=""summaryrow"">
@@ -2067,7 +2126,7 @@ namespace PurplePen.Tests
 
             string expected = @"
   <h1>Leg Length Report for rgerg</h1>
-  <h2>Relay (5–7 controls, 3.2–3.8 km)</h2>
+  <h2>Relay (5â€“7 controls, 3.2â€“3.8 km)</h2>
   <table>
     <col class=""leftcol leftalign"" />
     <col class=""middlecol leftalign"" />
@@ -2079,77 +2138,77 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td />
-      <td>Start–31</td>
+      <td>Startâ€“31</td>
       <td>974 m</td>
     </tr>
     <tr>
       <td />
-      <td>31–34</td>
+      <td>31â€“34</td>
       <td>319 m</td>
     </tr>
     <tr>
       <td />
-      <td>31–35</td>
+      <td>31â€“35</td>
       <td>206 m</td>
     </tr>
     <tr>
       <td />
-      <td>31–32</td>
+      <td>31â€“32</td>
       <td>532 m</td>
     </tr>
     <tr>
       <td />
-      <td>35–36</td>
+      <td>35â€“36</td>
       <td>209 m</td>
     </tr>
     <tr>
       <td />
-      <td>36–32</td>
+      <td>36â€“32</td>
       <td>381 m</td>
     </tr>
     <tr>
       <td />
-      <td>34–32</td>
+      <td>34â€“32</td>
       <td>396 m</td>
     </tr>
     <tr>
       <td />
-      <td>32–33</td>
+      <td>32â€“33</td>
       <td>412 m</td>
     </tr>
     <tr>
       <td />
-      <td>33–38</td>
+      <td>33â€“38</td>
       <td>395 m</td>
     </tr>
     <tr>
       <td />
-      <td>33–39</td>
+      <td>33â€“39</td>
       <td>339 m</td>
     </tr>
     <tr>
       <td />
-      <td>33–40</td>
+      <td>33â€“40</td>
       <td>627 m</td>
     </tr>
     <tr>
       <td />
-      <td>39–37</td>
+      <td>39â€“37</td>
       <td>359 m</td>
     </tr>
     <tr>
       <td />
-      <td>40–37</td>
+      <td>40â€“37</td>
       <td>423 m</td>
     </tr>
     <tr>
       <td />
-      <td>38–37</td>
+      <td>38â€“37</td>
       <td>613 m</td>
     </tr>
     <tr>
       <td />
-      <td>37–Finish</td>
+      <td>37â€“Finish</td>
       <td>595 m</td>
     </tr>
     <tr class=""summaryrow"">
@@ -2157,7 +2216,7 @@ namespace PurplePen.Tests
       <td>452 m</td>
     </tr>
   </table>
-  <h2>RelayCross (5–7 controls, 3.3–4.2 km)</h2>
+  <h2>RelayCross (5â€“7 controls, 3.3â€“4.2 km)</h2>
   <table>
     <col class=""leftcol leftalign"" />
     <col class=""middlecol leftalign"" />
@@ -2169,77 +2228,77 @@ namespace PurplePen.Tests
     </tr>
     <tr>
       <td />
-      <td>Start–31</td>
+      <td>Startâ€“31</td>
       <td>992 m</td>
     </tr>
     <tr>
       <td />
-      <td>31–34</td>
+      <td>31â€“34</td>
       <td>319 m</td>
     </tr>
     <tr>
       <td />
-      <td>31–35</td>
+      <td>31â€“35</td>
       <td>206 m</td>
     </tr>
     <tr>
       <td />
-      <td>31–32</td>
+      <td>31â€“32</td>
       <td>533 m</td>
     </tr>
     <tr>
       <td />
-      <td>35–36</td>
+      <td>35â€“36</td>
       <td>209 m</td>
     </tr>
     <tr>
       <td />
-      <td>36–32</td>
+      <td>36â€“32</td>
       <td>381 m</td>
     </tr>
     <tr>
       <td />
-      <td>34–32</td>
+      <td>34â€“32</td>
       <td>396 m</td>
     </tr>
     <tr>
       <td />
-      <td>32–33</td>
+      <td>32â€“33</td>
       <td>412 m</td>
     </tr>
     <tr>
       <td />
-      <td>33–38</td>
+      <td>33â€“38</td>
       <td>395 m</td>
     </tr>
     <tr>
       <td />
-      <td>33–39</td>
+      <td>33â€“39</td>
       <td>339 m</td>
     </tr>
     <tr>
       <td />
-      <td>33–40</td>
+      <td>33â€“40</td>
       <td>627 m</td>
     </tr>
     <tr>
       <td />
-      <td>39–37</td>
+      <td>39â€“37</td>
       <td>450 m</td>
     </tr>
     <tr>
       <td />
-      <td>40–37</td>
+      <td>40â€“37</td>
       <td>734 m</td>
     </tr>
     <tr>
       <td />
-      <td>38–37</td>
+      <td>38â€“37</td>
       <td>620 m</td>
     </tr>
     <tr>
       <td />
-      <td>37–Finish</td>
+      <td>37â€“Finish</td>
       <td>595 m</td>
     </tr>
     <tr class=""summaryrow"">

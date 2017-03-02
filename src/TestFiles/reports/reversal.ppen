@@ -1,0 +1,183 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Both Directions</title>
+    <map kind="none" scale="10000" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="125.814957" right="329.797" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="2.77791548" y="4.89470434" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="39.5549927" y="4.100954" />
+    <description box="D" iof-2004-ref="2.5" />
+  </control>
+  <control id="7" kind="normal">
+    <code>36</code>
+    <location x="127.66124" y="6.217621" />
+    <description box="D" iof-2004-ref="2.9" />
+  </control>
+  <control id="12" kind="normal">
+    <code>40</code>
+    <location x="44.3174934" y="28.7072048" />
+    <description box="D" iof-2004-ref="5.5" />
+  </control>
+  <control id="14" kind="normal">
+    <code>42</code>
+    <location x="65.74875" y="24.4738712" />
+    <description box="D" iof-2004-ref="5.17" />
+  </control>
+  <control id="17" kind="normal">
+    <code>45</code>
+    <location x="99.87999" y="-40.084465" />
+    <description box="D" iof-2004-ref="1.7" />
+  </control>
+  <control id="18" kind="normal">
+    <code>46</code>
+    <location x="61.250824" y="-40.084465" />
+    <description box="D" iof-2004-ref="3.11" />
+  </control>
+  <control id="19" kind="normal">
+    <code>47</code>
+    <location x="96.4404144" y="-19.18238" />
+    <description box="D" iof-2004-ref="2.7" />
+  </control>
+  <control id="20" kind="normal">
+    <code>48</code>
+    <location x="72.8924942" y="-10.1865473" />
+    <description box="D" iof-2004-ref="1.10" />
+  </control>
+  <control id="26" kind="finish">
+    <location x="115.761284" y="-17.6312618" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="27" kind="start">
+    <location x="151.472626" y="49.3442078" />
+  </control>
+  <control id="29" kind="normal">
+    <code>44</code>
+    <location x="103.911835" y="6.25860357" />
+    <description box="D" iof-2004-ref="1.2" />
+  </control>
+  <control id="30" kind="finish">
+    <location x="116.176041" y="-19.1060276" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="14" kind="normal" order="3">
+    <name>Course 3</name>
+    <labels label-kind="sequence" />
+    <first course-control="175" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="125.814957" right="329.797" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="34" description-kind="symbols" />
+  </course>
+  <course id="13" kind="normal" order="2">
+    <name>Course 2</name>
+    <labels label-kind="sequence" />
+    <first course-control="167" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="125.814957" right="329.797" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="45" description-kind="symbols" />
+  </course>
+  <course id="12" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="160" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="125.814957" right="329.797" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="45" description-kind="symbols" />
+  </course>
+  <course id="15" kind="normal" order="4">
+    <name>Relay</name>
+    <labels label-kind="sequence" />
+    <first course-control="182" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="125.814957" right="329.797" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="12" description-kind="symbols" />
+  </course>
+  <course-control id="188" control="17">
+    <next course-control="185" />
+  </course-control>
+  <course-control id="189" control="20">
+    <next course-control="190" />
+  </course-control>
+  <course-control id="185" control="30" />
+  <course-control id="179" control="18">
+    <next course-control="180" />
+  </course-control>
+  <course-control id="187" control="18">
+    <next course-control="188" />
+  </course-control>
+  <course-control id="175" control="27">
+    <next course-control="176" />
+  </course-control>
+  <course-control id="173" control="26" />
+  <course-control id="182" control="27">
+    <next course-control="183" />
+  </course-control>
+  <course-control id="176" control="20">
+    <next course-control="177" />
+  </course-control>
+  <course-control id="178" control="12">
+    <next course-control="179" />
+  </course-control>
+  <course-control id="177" control="14">
+    <next course-control="178" />
+  </course-control>
+  <course-control id="180" control="17">
+    <next course-control="181" />
+  </course-control>
+  <course-control id="174" control="12">
+    <next course-control="169" />
+  </course-control>
+  <course-control id="183" control="7">
+    <next course-control="184" />
+  </course-control>
+  <course-control id="181" control="26" />
+  <course-control id="184" control="3" variation="fork" variation-end="185">
+    <next course-control="187" />
+    <variation course-control="184" />
+    <variation course-control="186" />
+  </course-control>
+  <course-control id="186" control="3" variation="fork" variation-end="185">
+    <next course-control="189" />
+    <variation course-control="184" />
+    <variation course-control="186" />
+  </course-control>
+  <course-control id="190" control="19">
+    <next course-control="185" />
+  </course-control>
+  <course-control id="160" control="1">
+    <next course-control="161" />
+  </course-control>
+  <course-control id="170" control="20">
+    <next course-control="173" />
+  </course-control>
+  <course-control id="169" control="14">
+    <next course-control="170" />
+  </course-control>
+  <course-control id="168" control="3">
+    <next course-control="174" />
+  </course-control>
+  <course-control id="167" control="1">
+    <next course-control="168" />
+  </course-control>
+  <course-control id="166" control="26" />
+  <course-control id="165" control="7">
+    <next course-control="166" />
+  </course-control>
+  <course-control id="164" control="29">
+    <next course-control="165" />
+  </course-control>
+  <course-control id="163" control="20">
+    <next course-control="164" />
+  </course-control>
+  <course-control id="162" control="14">
+    <next course-control="163" />
+  </course-control>
+  <course-control id="161" control="3">
+    <next course-control="162" />
+  </course-control>
+</course-scribe-event>
