@@ -3,14 +3,18 @@
 
 - Allow variation choices to be manually assigned.
 
+- Loop control with start as the loop. Should this be allowed? Would this be a map change, or should you have to insert a map change at control? Needs some thinking here. 
+
+
+
 - GPX tracks.
 
 - Text lines above/below -- how do these work with variations and with butterfly courses
 
-- Loop control with start as the loop. Should this be allowed? Would this be a map change, or should you have to insert a map change at control? Needs some thinking here. 
+
 
 - check out other reports -- in particular audit 
-  (audit should check for some control two in a row, empty fork or loop, identical fork or loop, for example)
+  (audit should check for some control two in a row, reversed legs  --- others? empty fork or loop, identical fork or loop, for example)
   
 Probably won't do:  
   

@@ -530,6 +530,12 @@ namespace PurplePen
             }
         }
 
+        // Get the text name for a course.
+        public static string CourseName(EventDB eventDB, Id<Course> courseId)
+        {
+            return eventDB.GetCourse(courseId).name;
+        }
+
         // Get the text name for a control. THe Name Style controls how the control points appear:
         // Long:  "Control 32", "Start", "Finish", "Mandatory crossing point".
         // Medium: "32", "Start", "Finish", "Crossing"

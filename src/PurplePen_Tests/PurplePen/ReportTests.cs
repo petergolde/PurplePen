@@ -1376,6 +1376,25 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void DuplicatedControls()
+        {
+            Setup(@"reports\dupcontrol.ppen");
+
+            Reports reports = new Reports();
+            string result = reports.CreateEventAuditReport(eventDB);
+
+            Assert.AreEqual(@"
+  <h1>Event Audit for Dup Controls</h1>
+  <h2>Repeated Controls</h2>
+  <p>Course ""Butterfly"" contains control ""33"" twice in a row.</p>
+  <p>Course ""Relay"" contains control ""36"" twice in a row.</p>
+  <p>Score course ""Score"" contains control ""43"" twice. </p>
+  <p>Score course ""Score"" contains control ""40"" twice. </p>
+
+", result);
+        }
+
+        [TestMethod]
         public void EventAudit()
         {
             Setup(@"reports\marymoor6.ppen");

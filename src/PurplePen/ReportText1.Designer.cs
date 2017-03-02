@@ -394,6 +394,33 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Course &quot;{0}&quot; contains control &quot;{1}&quot; twice in a row..
+        /// </summary>
+        internal static string EventAudit_RepeatControl {
+            get {
+                return ResourceManager.GetString("EventAudit_RepeatControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repeated Controls.
+        /// </summary>
+        internal static string EventAudit_RepeatedControls {
+            get {
+                return ResourceManager.GetString("EventAudit_RepeatedControls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Score course &quot;{0}&quot; contains control &quot;{1}&quot; twice. .
+        /// </summary>
+        internal static string EventAudit_ScoreDuplicateControl {
+            get {
+                return ResourceManager.GetString("EventAudit_ScoreDuplicateControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Event Audit for {0}.
         /// </summary>
         internal static string EventAudit_Title {

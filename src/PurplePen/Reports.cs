@@ -999,6 +999,64 @@ namespace PurplePen
             return missingScores;
         }
 
+        class RepeatControl
+        {
+            public CourseDesignator courseDesignator;
+            public Id<ControlPoint> controlId;
+            public bool scoreCourse;
+
+            public RepeatControl(CourseDesignator courseDesignator, Id<ControlPoint> controlId, bool scoreCourse)
+            {
+                this.courseDesignator = courseDesignator;
+                this.controlId = controlId;
+                this.scoreCourse = scoreCourse;
+            }
+        }
+
+        List<RepeatControl> RepeatedControls(EventDB eventDB)
+        {
+            List<RepeatControl> result = new List<RepeatControl>();
+
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                foreach (CourseDesignator designator in AllDesignatorsForCourse(eventDB, courseId)) {
+                    List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, designator).ToList();
+                    bool score = eventDB.GetCourse(courseId).kind == CourseKind.Score;
+
+                    if (score) {
+                        // Check for any repeated control.
+                        HashSet<Id<ControlPoint>> controls = new HashSet<Id<ControlPoint>>();
+                        foreach (Id<CourseControl> courseControlId in courseControls) {
+                            Id<ControlPoint> controlId = eventDB.GetCourseControl(courseControlId).control;
+                            if (controls.Contains(controlId))
+                                AddRepeatedControl(result, designator, controlId, score);
+                            controls.Add(controlId);
+                        }
+                    }
+                    else {
+                        for (int i = 1; i < courseControls.Count; ++i) {
+                            if (eventDB.GetCourseControl(courseControls[i]).control == 
+                                eventDB.GetCourseControl(courseControls[i-1]).control) {
+                                AddRepeatedControl(result, designator, eventDB.GetCourseControl(courseControls[i]).control, score);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        void AddRepeatedControl(List<RepeatControl> result, CourseDesignator designator, Id<ControlPoint> controlId, bool score)
+        {
+            // Check the result for the same course and control already.
+            foreach (RepeatControl repeat in result) {
+                if (repeat.courseDesignator.CourseId == designator.CourseId && repeat.controlId == controlId)
+                    return;
+            }
+
+            result.Add(new RepeatControl(designator, controlId, score));
+        }
+
         // Create a report showing missing things
         public string CreateEventAuditReport(EventDB eventDB)
         {
@@ -1022,6 +1080,26 @@ namespace PurplePen
                     WriteTableRow(eventDB.GetCourse(thing.courseId).name, thing.what, thing.why);
                 }
                 EndTable();
+            }
+
+            // Courses with repeated controls.
+            List<RepeatControl> repeatedControls = RepeatedControls(eventDB);
+            if (repeatedControls.Count > 0) {
+                problemFound = true;
+
+                WriteH2(ReportText.EventAudit_RepeatedControls);
+                foreach (RepeatControl repeatControl in repeatedControls) {
+                    if (repeatControl.scoreCourse) {
+                        WritePara(string.Format(ReportText.EventAudit_ScoreDuplicateControl,
+                                  Util.CourseName(eventDB, repeatControl.courseDesignator.CourseId),
+                                  Util.ControlPointName(eventDB, repeatControl.controlId, NameStyle.Medium)));
+                    }
+                    else {
+                        WritePara(string.Format(ReportText.EventAudit_RepeatControl,
+                                  Util.CourseName(eventDB, repeatControl.courseDesignator.CourseId),
+                                  Util.ControlPointName(eventDB, repeatControl.controlId, NameStyle.Medium)));
+                    }
+                }
             }
 
             // Close together controls.
