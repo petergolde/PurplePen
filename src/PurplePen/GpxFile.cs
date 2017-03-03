@@ -204,7 +204,7 @@ namespace PurplePen
         {
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
             if (courseView.Kind != CourseView.CourseViewKind.Normal)
-                return;  // don't show score courses.
+                return;  // don't show score courses or variation courses.
 
             xmlWriter.WriteStartElement("trk", gpxNamespace);
             xmlWriter.WriteElementString("name", gpxNamespace, courseView.CourseName);

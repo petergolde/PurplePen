@@ -7,11 +7,6 @@
 
 
 
-- GPX tracks.
-
-- Text lines above/below -- how do these work with variations and with butterfly courses
-
-  
 Probably won't do:  
   
 - SelectionDescriber -- show what variations a control or leg is in. I'm not sure this is that useful.
