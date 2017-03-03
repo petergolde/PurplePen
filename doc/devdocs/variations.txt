@@ -11,10 +11,6 @@
 
 - Text lines above/below -- how do these work with variations and with butterfly courses
 
-
-
-- check out other reports -- in particular audit 
-  (audit should check for some control two in a row, reversed legs  --- others? empty fork or loop, identical fork or loop, for example)
   
 Probably won't do:  
   

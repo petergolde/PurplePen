@@ -404,6 +404,37 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeTextLine3()
+        {
+            Setup("changeevent\\variations.ppen");
+
+            undomgr.BeginCommand(118, "Change text line");
+            ChangeEvent.ChangeTextLine(eventDB, CourseControlId(2), "hello", false);
+            undomgr.EndCommand(118);
+
+            eventDB.Validate();
+
+            CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(2));
+            Assert.AreEqual("hello", courseControl.descTextAfter);
+            Assert.IsNull(courseControl.descTextBefore);
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(24));
+            Assert.AreEqual("hello", courseControl.descTextAfter);
+            Assert.IsNull(courseControl.descTextBefore);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(2));
+            Assert.IsNull(courseControl.descTextAfter);
+            Assert.IsNull(courseControl.descTextBefore);
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(24));
+            Assert.IsNull(courseControl.descTextAfter);
+            Assert.IsNull(courseControl.descTextBefore);
+        }
+
+        [TestMethod]
         public void ChangeScore()
         {
             Setup("changeevent\\sampleevent1.coursescribe");

@@ -102,15 +102,28 @@ namespace PurplePen
         {
             CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
 
-            courseControl = (CourseControl) courseControl.Clone();
-            if (textLine == "")
-                textLine = null;
-            if (above)
-                courseControl.descTextBefore = textLine;
-            else
-                courseControl.descTextAfter = textLine;
+            // If this is a split course control, change all the course controls associated with the split.
+            Id<CourseControl>[] courseControlsToChange;
+            if (courseControl.split) {
+                courseControlsToChange = courseControl.splitCourseControls;
+            }
+            else {
+                courseControlsToChange = new[] { courseControlId };
+            }
 
-            eventDB.ReplaceCourseControl(courseControlId, courseControl);
+            foreach (Id<CourseControl> id in courseControlsToChange) {
+                courseControl = eventDB.GetCourseControl(id);
+
+                courseControl = (CourseControl)courseControl.Clone();
+                if (textLine == "")
+                    textLine = null;
+                if (above)
+                    courseControl.descTextBefore = textLine;
+                else
+                    courseControl.descTextAfter = textLine;
+
+                eventDB.ReplaceCourseControl(id, courseControl);
+            }
         }
 
         // Change a text line associated with a control
