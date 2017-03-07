@@ -1652,7 +1652,7 @@ namespace PurplePen
 
                 case VariationChoices.VariationChoicesKind.ChosenTeams:
                     Course course = eventDB.GetCourse(courseId);
-                    RelayVariations relayVariations = new RelayVariations(eventDB, courseId, course.relayTeams, course.relayLegs);
+                    RelayVariations relayVariations = new RelayVariations(eventDB, courseId, course.relayTeams, course.relayLegs, null);
 
                     List<CourseDesignator> result = new List<CourseDesignator>();
                     for (int team = variationChoices.FirstTeam; team <= variationChoices.LastTeam; ++team) {

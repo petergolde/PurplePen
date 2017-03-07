@@ -146,7 +146,7 @@ namespace PurplePen
                 if (QueryEvent.HasVariations(eventDB, courseId)) {
                     Course course = eventDB.GetCourse(courseId);
                     if (course.relayTeams > 0) {
-                        RelayVariations relayVariations = new RelayVariations(eventDB, courseId, course.relayTeams, course.relayLegs);
+                        RelayVariations relayVariations = new RelayVariations(eventDB, courseId, course.relayTeams, course.relayLegs, null);
                         WriteRelayVariations(courseId, relayVariations);
                     }
                 }

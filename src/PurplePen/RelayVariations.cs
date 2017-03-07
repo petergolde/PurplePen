@@ -13,6 +13,7 @@ namespace PurplePen
         EventDB eventDB;
         Id<Course> courseId;
         int numberTeams, numberLegs;
+        FixedBranchAssignments fixedBranchAssignments;
 
         Random random;
 
@@ -26,18 +27,19 @@ namespace PurplePen
         Fork firstForkInCourse;
         List<Fork> allForks;
         int totalPossiblePaths;  // Number of ways through the forks.
-        int minUniquePaths;  // minimum number of unique ways.
+        int[] minUniquePathsByLeg;  // minimum number of unique ways, given a particular leg.
 
         // Each element of the list is a team, with variation strings for each leg.
         List<TeamAssignment> results;
         List<BranchWarning> branchWarnings;
 
-        public RelayVariations(EventDB eventDB, Id<Course> courseId, int numberTeams, int numberLegs)
+        public RelayVariations(EventDB eventDB, Id<Course> courseId, int numberTeams, int numberLegs, FixedBranchAssignments fixedBranchAssignments)
         {
             this.eventDB = eventDB;
             this.courseId = courseId;
             this.numberTeams = numberTeams;
             this.numberLegs = numberLegs;
+            this.fixedBranchAssignments = fixedBranchAssignments;
         }
 
         // Get the variation to use for a particular team and leg.
@@ -94,7 +96,10 @@ namespace PurplePen
                 // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
                 totalPossiblePaths = ScanFork(firstForkInCourse, numberLegs, 1);
 
-                minUniquePaths = CalcMinUniquePaths(firstForkInCourse, 1);
+                minUniquePathsByLeg = new int[numberLegs];
+                for (int leg = 0; leg < numberLegs; ++leg) {
+                    minUniquePathsByLeg[leg] = CalcMinUniquePaths(firstForkInCourse, leg, 1);
+                }
 
                 forksScanned = true;
             }
@@ -200,14 +205,22 @@ namespace PurplePen
                     AddForkToTeamAssignment(subFork, leg, teamAssignment);
             }
             else {
-                // Get the branches remaining to be used for this team.
-                List<int> possibleBranches = GetPossibleBranches(fork);
-                for (int i = 0; i < leg; ++i) {
-                    if (teamAssignment.legAssignForFork[fork].branchForLeg[i].Length > 0)
-                        possibleBranches.Remove(teamAssignment.legAssignForFork[fork].branchForLeg[i][0]);
+                int selectedBranch;
+
+                if (fork.fixedLegs != null && fork.fixedLegs[leg] >= 0) {
+                    // This is a fixed leg.
+                    selectedBranch = fork.fixedLegs[leg];
                 }
-                // Pick a random one.
-                int selectedBranch = possibleBranches[random.Next(possibleBranches.Count)];
+                else {
+                    // Get the branches remaining to be used for this team.
+                    List<int> possibleBranches = GetPossibleBranches(fork);
+                    for (int i = 0; i < leg; ++i) {
+                        if ((fork.fixedLegs == null || fork.fixedLegs[i] < 0) && teamAssignment.legAssignForFork[fork].branchForLeg[i].Length > 0)
+                            possibleBranches.Remove(teamAssignment.legAssignForFork[fork].branchForLeg[i][0]);
+                    }
+                    // Pick a random one.
+                    selectedBranch = possibleBranches[random.Next(possibleBranches.Count)];
+                }
 
                 // Store it.
                 teamAssignment.legAssignForFork[fork].branchForLeg.Add(new int[1] { selectedBranch });
@@ -252,7 +265,7 @@ namespace PurplePen
             int score = 0;
 
             // Check 1: check again previous teams on same leg.
-            int allowedDuplicates = (results.Count / minUniquePaths);
+            int allowedDuplicates = (results.Count / minUniquePathsByLeg[leg]);
             if (allowedDuplicates >= 1) {
                 allowedDuplicates += (int)Math.Ceiling((double)allowedDuplicates / 3); // allow some slop after all options used once.
             }
@@ -264,7 +277,7 @@ namespace PurplePen
 
             score += Math.Max(0, (duplicates - allowedDuplicates));
 
-            if (numberLegs <= minUniquePaths) {
+            if (numberLegs <= minUniquePathsByLeg[leg]) {
                 // Check 2: check against previous legs on same team, if they should be unique
                 for (int otherLeg = 0; otherLeg < leg; ++otherLeg) {
                     if (teamAssignment.LegEquals(leg, teamAssignment, otherLeg))
@@ -280,7 +293,16 @@ namespace PurplePen
             List<int> result = new List<int>();
             int branch = 0;
             for (int i = 0; i < fork.numLegsHere; ++i) {
+                if (fork.fixedLegs != null && fork.fixedLegs[i] >= 0)
+                    continue;
+
+                // Skip any branches that are fixed to specific legs.
+                while (fork.fixedBranches != null && fork.fixedBranches[branch]) {
+                    branch = (branch + 1) % fork.numBranches;
+                }
+
                 result.Add(branch);
+
                 branch = (branch + 1) % fork.numBranches;
             }
             return result;
@@ -318,22 +340,67 @@ namespace PurplePen
                 return ScanFork(startFork.next, numLegsOnThisFork, waysThroughLoops);
             }
             else {
-                // Figure out how many legs per branch. May not be even.
-                int branchesMore = numLegsOnThisFork % startFork.numBranches;
-                int legsPerBranch = numLegsOnThisFork / startFork.numBranches;
+                // If there are fixed branches for this fork, put information about this into the Fork object.
+                int numUnfixedLegsOnThisFork = numLegsOnThisFork; // may be reduced below.
+                startFork.numNonFixedBranches = startFork.numBranches;  // may be reduced below.
+                List<char> nonFixedCodes = new List<char>(startFork.codes);
+                if (fixedBranchAssignments != null && numLegsOnThisFork == numberLegs)
+                {
+                    for (int i = 0; i < startFork.numBranches; ++i)
+                    {
+                        char code = startFork.codes[i];
+                        if (fixedBranchAssignments.BranchIsFixed(code))
+                        {
+                            if (startFork.fixedBranches == null)
+                                startFork.fixedBranches = new bool[startFork.numBranches];
+                            startFork.fixedBranches[i] = true;
+
+                            if (startFork.fixedLegs == null)
+                            {
+                                startFork.fixedLegs = new int[numLegsOnThisFork];
+                                for (int x = 0; x < startFork.fixedLegs.Length; ++x)
+                                    startFork.fixedLegs[x] = -1;
+                            }
+                            foreach (int leg in fixedBranchAssignments.FixedLegsForBranch(code))
+                            {
+                                startFork.fixedLegs[leg] = i;
+                                numUnfixedLegsOnThisFork -= 1;
+                            }
+
+                            --startFork.numNonFixedBranches;
+                        }
+                    }
+                }
+
+                int branchesMore = 0, legsPerBranch = 0;
+                if (startFork.numNonFixedBranches != 0)
+                {
+                    // Figure out how many legs per branch. May not be even.
+                    branchesMore = numUnfixedLegsOnThisFork % startFork.numNonFixedBranches;
+                    legsPerBranch = numUnfixedLegsOnThisFork / startFork.numNonFixedBranches;
+                }
 
                 if (branchesMore != 0) {
                     // The number of branches doesn't evenly divide the number of legs that start here. Given a warning.
-                    branchWarnings.Add(new BranchWarning(startFork.controlCode, legsPerBranch + 1, startFork.codes.Take(branchesMore),
-                                                                                legsPerBranch, startFork.codes.Skip(branchesMore)));
+                    branchWarnings.Add(new BranchWarning(startFork.controlCode, legsPerBranch + 1, nonFixedCodes.Take(branchesMore),
+                                                                                legsPerBranch, nonFixedCodes.Skip(branchesMore)));
                 }
 
                 int waysThroughBranches = 0;
 
                 for (int i = 0; i < startFork.numBranches; ++i) {
-                    int legsThisBranch = legsPerBranch;
-                    if (i < branchesMore)
-                        ++legsThisBranch;
+                    int legsThisBranch;
+                    char code = startFork.codes[i];
+                    if (startFork.fixedBranches != null && startFork.fixedBranches[i])
+                    {
+                        legsThisBranch = fixedBranchAssignments.FixedLegsForBranch(code).Length;
+                    }
+                    else
+                    {
+                        legsThisBranch = legsPerBranch;
+                        if (nonFixedCodes.IndexOf(code) < branchesMore)
+                            ++legsThisBranch;
+                    }
 
                     waysThroughBranches += ScanFork(startFork.subForks[i], legsThisBranch, totalPathsToThisPoint);
                 }
@@ -343,7 +410,7 @@ namespace PurplePen
         }
 
         // Scan forks starting at this fork, returning smallest number of unique paths.
-        private int CalcMinUniquePaths(Fork startFork, int smallestPathsToThisPoint)
+        private int CalcMinUniquePaths(Fork startFork, int leg, int smallestPathsToThisPoint)
         {
             if (startFork == null)
                 return smallestPathsToThisPoint;
@@ -352,22 +419,34 @@ namespace PurplePen
                 int waysThroughLoops = smallestPathsToThisPoint;
 
                 for (int i = 0; i < startFork.numBranches; ++i) {
-                    waysThroughLoops *= CalcMinUniquePaths(startFork.subForks[i], 1);
+                    waysThroughLoops *= CalcMinUniquePaths(startFork.subForks[i], leg, 1);
                 }
 
                 waysThroughLoops *= (int)Util.Factorial(startFork.numBranches);
 
-                return CalcMinUniquePaths(startFork.next, waysThroughLoops);
+                return CalcMinUniquePaths(startFork.next, leg, waysThroughLoops);
             }
             else {
-                int minWaysThroughBranches = int.MaxValue;
-
-                for (int i = 0; i < startFork.numBranches; ++i) {
-                    minWaysThroughBranches = Math.Min(CalcMinUniquePaths(startFork.subForks[i], smallestPathsToThisPoint), minWaysThroughBranches);
+                if (startFork.fixedLegs != null && startFork.fixedLegs[leg] >= 0)
+                {
+                    // Fixed leg.
+                    int branch = startFork.fixedLegs[leg];
+                    int ways = CalcMinUniquePaths(startFork.subForks[branch], leg, smallestPathsToThisPoint);
+                    return CalcMinUniquePaths(startFork.next, leg, ways);
                 }
-                minWaysThroughBranches *= startFork.numBranches;
+                else
+                {
+                    int minWaysThroughBranches = int.MaxValue;
 
-                return CalcMinUniquePaths(startFork.next, minWaysThroughBranches);
+                    for (int i = 0; i < startFork.numBranches; ++i)
+                    {
+                        if (startFork.fixedBranches == null || !startFork.fixedBranches[i])
+                            minWaysThroughBranches = Math.Min(CalcMinUniquePaths(startFork.subForks[i], leg, smallestPathsToThisPoint), minWaysThroughBranches);
+                    }
+                    minWaysThroughBranches *= startFork.numNonFixedBranches;
+
+                    return CalcMinUniquePaths(startFork.next, leg, minWaysThroughBranches);
+                }
             }
         }
 
@@ -452,7 +531,13 @@ namespace PurplePen
             public bool loop;        // Is it a loop?
             public int numLegsHere;  // number of legs that reach the start of this fork.
             public int numBranches;  // number of branches/loops in this fork.
+            public int numNonFixedBranches; // number of branches that are not fixed. Same as numBranches unless some branches are fixed.
             public char[] codes;     // codes for the branches.
+
+            // If numNonFixedBranches != numBranches, then these describe how legs are fixed to branches.
+            public int[] fixedLegs; // if a leg is fixed to a branch, then fixedLeg[leg] is the branch it is fixed to. Else -1.
+            public bool[] fixedBranches;  // array with numBranches elements. Indicates if a branch is fixed to one or more legs.
+
 
             public Fork next;        // next fork (after join point)
             public Fork[] subForks;  // first fork along each fork point.
@@ -607,6 +692,45 @@ namespace PurplePen
                 }
                 writer.WriteLine();
             }
+        }
+    }
+
+    class FixedBranchAssignments
+    {
+        readonly Dictionary<char, int[]> fixedLegsByBranchCode;
+
+        public FixedBranchAssignments()
+        {
+            fixedLegsByBranchCode = new Dictionary<char, int[]>();
+        }
+
+        public FixedBranchAssignments(Dictionary<char, int[]> fixedLegs)
+        {
+            this.fixedLegsByBranchCode = fixedLegs;
+        }
+
+        public void AddBranchAssignment(char code, int leg)
+        {
+            if (fixedLegsByBranchCode.ContainsKey(code))
+            {
+                List<int> newList = new List<int>(fixedLegsByBranchCode[code]);
+                newList.Add(leg);
+                fixedLegsByBranchCode[code] = newList.ToArray();
+            }
+            else
+            {
+                fixedLegsByBranchCode[code] = new int[] { leg };
+            }
+        }
+
+        public bool BranchIsFixed(char code)
+        {
+            return fixedLegsByBranchCode.ContainsKey(code);
+        }
+
+        public int[] FixedLegsForBranch(char code)
+        {
+            return fixedLegsByBranchCode[code];
         }
     }
 }

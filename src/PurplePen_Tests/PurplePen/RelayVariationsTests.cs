@@ -60,16 +60,16 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var relays = new RelayVariations(eventDB, CourseId(3), 1, 6);
+            var relays = new RelayVariations(eventDB, CourseId(3), 1, 6, null);
             Assert.AreEqual(2, relays.GetTotalPossiblePaths());
 
-            relays = new RelayVariations(eventDB, CourseId(4), 1, 6);
+            relays = new RelayVariations(eventDB, CourseId(4), 1, 6, null);
             Assert.AreEqual(6, relays.GetTotalPossiblePaths());
 
-            relays = new RelayVariations(eventDB, CourseId(5), 1, 6);
+            relays = new RelayVariations(eventDB, CourseId(5), 1, 6, null);
             Assert.AreEqual(6, relays.GetTotalPossiblePaths());
 
-            relays = new RelayVariations(eventDB, CourseId(1), 1, 6);
+            relays = new RelayVariations(eventDB, CourseId(1), 1, 6, null);
             Assert.AreEqual(37, relays.GetTotalPossiblePaths());
         }
 
@@ -78,7 +78,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(3), 64, 6);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(3), 64, 6, null);
             ValidateRelayVariationsTest(teamAssignment, "relay\\twowayfork");
         }
 
@@ -87,7 +87,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(5), 64, 6);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(5), 64, 6, null);
             ValidateRelayVariationsTest(teamAssignment, "relay\\threeloop");
         }
 
@@ -96,7 +96,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 64, 6);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 64, 6, null);
             ValidateRelayVariationsTest(teamAssignment, "relay\\doublebranch");
         }
 
@@ -105,7 +105,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(6), 64, 6);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(6), 64, 6, null);
             ValidateRelayVariationsTest(teamAssignment, "relay\\loopwithbranches");
         }
         
@@ -115,7 +115,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 5);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 5, null);
             ValidateRelayVariationsTest(teamAssignment, "relay\\nestedbranches");
         }
 
@@ -124,16 +124,94 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(1), 64, 5);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(1), 64, 5, null);
             ValidateRelayVariationsTest(teamAssignment, "relay\\complexuneven");
         }
+
+        [TestMethod]
+        public void FixedBranches1()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('A', 3);
+            fixedBranchAssignments.AddBranchAssignment('A', 1);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(8), 30, 5, fixedBranchAssignments);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\twowayfixed");
+        }
+
+        [TestMethod]
+        public void FixedBranches2()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('A', 3);
+            fixedBranchAssignments.AddBranchAssignment('A', 1);
+            fixedBranchAssignments.AddBranchAssignment('B', 2);
+            fixedBranchAssignments.AddBranchAssignment('B', 0);
+            fixedBranchAssignments.AddBranchAssignment('A', 4);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 30, 5, fixedBranchAssignments);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\nestedfixed");
+        }
+
+        [TestMethod]
+        public void FixedBranches3()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('A', 3);
+            fixedBranchAssignments.AddBranchAssignment('A', 1);
+            fixedBranchAssignments.AddBranchAssignment('A', 4);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 30, 5, fixedBranchAssignments);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\nestedfixed2");
+        }
+
+        [TestMethod]
+        public void FixedBranches4()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('A', 3);
+            fixedBranchAssignments.AddBranchAssignment('A', 1);
+            fixedBranchAssignments.AddBranchAssignment('A', 4);
+            fixedBranchAssignments.AddBranchAssignment('A', 0);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 30, 5, fixedBranchAssignments);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\nestedfixed3");
+        }
+
+        [TestMethod]
+        public void FixedBranches5()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('B', 0);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 30, 5, fixedBranchAssignments);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\nestedfixed4");
+        }
+
+        [TestMethod]
+        public void FixedBranches6()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('B', 3);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(9), 30, 5, fixedBranchAssignments);
+            ValidateRelayVariationsTest(teamAssignment, "relay\\fivewayfixed");
+        }
+
+
 
         [TestMethod]
         public void BranchWarnings1()
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(3), 64, 5);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(3), 64, 5, null);
             var warnings = teamAssignment.GetBranchWarnings().ToArray();
             Assert.AreEqual(1, warnings.Length);
             Assert.AreEqual(3, warnings[0].numMore);
@@ -147,7 +225,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 64, 5);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 64, 5, null);
             var warnings = teamAssignment.GetBranchWarnings().ToArray();
             Assert.AreEqual(2, warnings.Length);
             Assert.AreEqual(3, warnings[0].numMore);
@@ -165,7 +243,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 4);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 4, null);
             var warnings = teamAssignment.GetBranchWarnings().ToArray();
             Assert.AreEqual(1, warnings.Length);
             Assert.AreEqual(1, warnings[0].numMore);
@@ -179,7 +257,7 @@ namespace PurplePen.Tests
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 5);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(7), 64, 5, null);
             var warnings = teamAssignment.GetBranchWarnings().ToArray();
             Assert.AreEqual(1, warnings.Length);
             Assert.AreEqual(3, warnings[0].numMore);
@@ -195,7 +273,7 @@ namespace PurplePen.Tests
             string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.csv");
             string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline.csv");
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6, null);
             var csvWriter = new CsvWriter();
             csvWriter.WriteCsv(tempOutputFile, teamAssignment);
 
@@ -213,7 +291,7 @@ namespace PurplePen.Tests
             string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.xml");
             string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline.xml");
 
-            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), 143, 6, null);
             var xmlExporter = new ExportRelayVariations3();
             xmlExporter.WriteFullXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
 

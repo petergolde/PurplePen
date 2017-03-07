@@ -909,7 +909,7 @@ namespace PurplePen
         {
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             string courseName = eventDB.GetCourse(courseId).name;
-            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, numberTeams, numberLegs);
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, numberTeams, numberLegs, null);
             return new VariationReportData(courseName, relayVariations);
         }
 
@@ -2787,7 +2787,7 @@ namespace PurplePen
 
         int CheckTotalVariations(Id<Course> courseId)
         {
-            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, 1, 4);  // number of teams/legs irrelevant.
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, 1, 4, null);  // number of teams/legs irrelevant.
             return relayVariations.GetTotalPossiblePaths();
         }
 
