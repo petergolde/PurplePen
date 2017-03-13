@@ -172,8 +172,7 @@ namespace PurplePen.Tests
             course2.partPrintAreas[0] = new PrintArea(true, false, new RectangleF(70, 10, 130, 140));
             course2.partOptions[1] = new PartOptions() { ShowFinish = true };
             course2.partOptions[0] = new PartOptions() { ShowFinish = false };
-            course2.relayTeams = 43;
-            course2.relayLegs = 3;
+            course2.relaySettings = new RelaySettings(43, 3);
             course2.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course2);
 
@@ -200,7 +199,6 @@ namespace PurplePen.Tests
             course4.descKind = DescriptionKind.SymbolsAndText;
             course4.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80));
             course4.partOptions[1] = new PartOptions() { ShowFinish = false };
-            course4.relayTeams = 0;
             course4.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course4);
 
@@ -213,8 +211,12 @@ namespace PurplePen.Tests
             course5.labelKind = ControlLabelKind.CodeAndScore;
             course5.descKind = DescriptionKind.Symbols;
             course5.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80), 1.25F);
-            course5.relayTeams = 5;
-            course5.relayLegs = 6;
+            FixedBranchAssignments relayBranchAssignments = new FixedBranchAssignments();
+            relayBranchAssignments.AddBranchAssignment('B', 1);
+            relayBranchAssignments.AddBranchAssignment('A', 2);
+            relayBranchAssignments.AddBranchAssignment('A', 3);
+            relayBranchAssignments.AddBranchAssignment('C', 4);
+            course5.relaySettings = new RelaySettings(5, 6, relayBranchAssignments);
             course5.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course5);
 
@@ -900,6 +902,17 @@ namespace PurplePen.Tests
             }
         }
 
+        [TestMethod]
+        public void FixedBranchAssignmentsEquals()
+        {
+            FixedBranchAssignments a = new FixedBranchAssignments();
+            a.AddBranchAssignment('A', 1);
+            a.AddBranchAssignment('B', 2);
+            a.AddBranchAssignment('B', 3);
+            FixedBranchAssignments other = a.Clone();
+            Assert.IsTrue(a.Equals(other));
+
+        }
 
     }
 }

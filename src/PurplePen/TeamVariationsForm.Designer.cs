@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.fixedLegsLink = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).BeginInit();
@@ -92,6 +93,7 @@
             this.tableLayoutPanel2.Controls.Add(this.buttonCalculate, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.upDownNumberOfTeams, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.fixedLegsLink, 0, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // label2
@@ -152,6 +154,14 @@
             // 
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
+            // fixedLegsLink
+            // 
+            resources.ApplyResources(this.fixedLegsLink, "fixedLegsLink");
+            this.tableLayoutPanel2.SetColumnSpan(this.fixedLegsLink, 3);
+            this.fixedLegsLink.Name = "fixedLegsLink";
+            this.fixedLegsLink.TabStop = true;
+            this.fixedLegsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.fixedLegsLink_LinkClicked);
+            // 
             // TeamVariationsForm
             // 
             this.AcceptButton = this.buttonCalculate;
@@ -187,5 +197,6 @@
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.Button buttonPrintPreview;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.LinkLabel fixedLegsLink;
     }
 }

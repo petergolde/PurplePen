@@ -295,7 +295,7 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 16</value>
+    <value>208, 14</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 9</value>
@@ -325,7 +325,7 @@
     <value>Bottom</value>
   </data>
   <data name="upDownNumberOfLegs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 14</value>
+    <value>306, 12</value>
   </data>
   <data name="upDownNumberOfLegs.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 23</value>
@@ -352,7 +352,7 @@
     <value>True</value>
   </data>
   <data name="buttonCalculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 11</value>
+    <value>564, 9</value>
   </data>
   <data name="buttonCalculate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 4</value>
@@ -382,7 +382,7 @@
     <value>Bottom</value>
   </data>
   <data name="upDownNumberOfTeams.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 14</value>
+    <value>112, 12</value>
   </data>
   <data name="upDownNumberOfTeams.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 23</value>
@@ -409,7 +409,7 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>3, 14</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 0, 3, 9</value>
@@ -435,6 +435,36 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="fixedLegsLink.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="fixedLegsLink.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fixedLegsLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
+  </data>
+  <data name="fixedLegsLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 15</value>
+  </data>
+  <data name="fixedLegsLink.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Assign fixed legs to branches...</value>
+  </data>
+  <data name="&gt;&gt;fixedLegsLink.Name" xml:space="preserve">
+    <value>fixedLegsLink</value>
+  </data>
+  <data name="&gt;&gt;fixedLegsLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fixedLegsLink.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;fixedLegsLink.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -442,10 +472,10 @@
     <value>0, 0</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>713, 48</value>
+    <value>713, 72</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -463,19 +493,19 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label2" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="upDownNumberOfLegs" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonCalculate" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="upDownNumberOfTeams" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,Absolute,20,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,8" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label2" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="upDownNumberOfLegs" Row="0" RowSpan="1" Column="4" ColumnSpan="1" /&gt;&lt;Control Name="buttonCalculate" Row="0" RowSpan="1" Column="5" ColumnSpan="1" /&gt;&lt;Control Name="upDownNumberOfTeams" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="fixedLegsLink" Row="1" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,AutoSize,0,Absolute,20,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,60,Percent,40,Absolute,8" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="webBrowser.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="webBrowser.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 48</value>
+    <value>0, 72</value>
   </data>
   <data name="webBrowser.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
   </data>
   <data name="webBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>713, 495</value>
+    <value>713, 471</value>
   </data>
   <data name="webBrowser.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -520,6 +550,6 @@
     <value>TeamVariationsForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.6.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=3.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -905,37 +905,49 @@ namespace PurplePen
                 return CommandStatus.Disabled;
         }
 
-        public VariationReportData GetVariationReportData(int numberTeams, int numberLegs)
+        public VariationReportData GetVariationReportData(RelaySettings relaySettings)
         {
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             string courseName = eventDB.GetCourse(courseId).name;
-            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, numberTeams, numberLegs, null);
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, relaySettings);
             return new VariationReportData(courseName, relayVariations);
         }
 
         // For the current course, get the relay parameters.
-        public void GetRelayParameters(out int numberTeams, out int numberLegs)
+        public RelaySettings GetRelayParameters(out int numberTeams, out int numberLegs, out FixedBranchAssignments fixedBranchAssignments)
         {
             numberTeams = 0;
             numberLegs = 1;
+            fixedBranchAssignments = null;
+
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             if (courseId.IsNone)
-                return;
+                return null;
 
             Course course = eventDB.GetCourse(courseId);
-            numberTeams = course.relayTeams;
-            numberLegs = course.relayLegs;
+            return course.relaySettings.Clone();
+        }
+
+        // Get the branch codes that are available for leg assignments.
+        public List<char[]> GetLegAssignmentCodes()
+        {
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            if (courseId.IsNone)
+                return new List<char[]>();
+
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(1, 20));  // parameters are irrelavaent
+            return relayVariations.GetPossibleFixedBranches();
         }
 
         // For the current course, set the relay parameters.
-        public void SetRelayParameters(int numberTeams, int numberLegs)
+        public void SetRelayParameters(RelaySettings relaySettings)
         {
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             if (courseId.IsNone)
                 return;
 
             undoMgr.BeginCommand(9812, CommandNameText.RelayTeamVariations);
-            ChangeEvent.SetRelayParameters(eventDB, courseId, numberTeams, numberLegs);
+            ChangeEvent.SetRelayParameters(eventDB, courseId, relaySettings);
             undoMgr.EndCommand(9812);
         }
 
@@ -944,11 +956,11 @@ namespace PurplePen
             return QueryEvent.CreateOutputFileName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.WithAllParts(), "", "_Relay", ".xml");
         }
 
-        public bool ExportRelayVariationsReport(int numberOfTeams, int numberOfLegs, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
+        public bool ExportRelayVariationsReport(RelaySettings relaySettings, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
         {
             bool success = HandleExceptions(
                 delegate {
-                    VariationReportData variationReportData = GetVariationReportData(numberOfTeams, numberOfLegs);
+                    VariationReportData variationReportData = GetVariationReportData(relaySettings);
 
                     if (exportFileType == TeamVariationsForm.ExportFileType.Csv) {
                         CsvWriter csvWriter = new CsvWriter();
@@ -2787,7 +2799,7 @@ namespace PurplePen
 
         int CheckTotalVariations(Id<Course> courseId)
         {
-            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, 1, 4, null);  // number of teams/legs irrelevant.
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(1, 4));  // number of teams/legs irrelevant.
             return relayVariations.GetTotalPossiblePaths();
         }
 

@@ -2593,10 +2593,12 @@ namespace PurplePen
         private void courseVariationReportMenu_Click(object sender, EventArgs e)
         {
             int numTeams, numLegs;
-            controller.GetRelayParameters(out numTeams, out numLegs);
+            FixedBranchAssignments fixedBranchAssignments;
+            controller.GetRelayParameters(out numTeams, out numLegs, out fixedBranchAssignments);
             TeamVariationsForm reportForm = new TeamVariationsForm();
             reportForm.NumberOfTeams = numTeams;
             reportForm.NumberOfLegs = numLegs;
+            reportForm.FixedBranchAssignments = fixedBranchAssignments;
             reportForm.DefaultExportFileName = controller.GetDefaultVariationExportFileName();
 
             SetVariationReportBody(reportForm);
@@ -2605,16 +2607,28 @@ namespace PurplePen
                 SetVariationReportBody(reportForm);
             };
 
+            reportForm.AssignLegsPressed += (reportSender, reportEventArgs) => {
+                ShowAssignLegs(reportForm);
+            };
+
             reportForm.ExportFilePressed += (reportSender, reportEventArgs) => {
                 ExportVariationReport(reportForm, reportEventArgs.FileType, reportEventArgs.FileName);
             };
 
             reportForm.ShowDialog(this);
 
-            if (numTeams != reportForm.NumberOfTeams || numLegs != reportForm.NumberOfLegs)
-                controller.SetRelayParameters(reportForm.NumberOfTeams, reportForm.NumberOfLegs);
+            if (numTeams != reportForm.NumberOfTeams || numLegs != reportForm.NumberOfLegs || !object.Equals(fixedBranchAssignments, reportForm.FixedBranchAssignments))
+                controller.SetRelayParameters(reportForm.RelaySettings);
 
             reportForm.Dispose();
+        }
+
+        private void ShowAssignLegs(TeamVariationsForm reportForm)
+        {
+            LegAssignmentsDialog dialog = new LegAssignmentsDialog(controller.GetLegAssignmentCodes());
+            dialog.FixedBranchAssignments = reportForm.FixedBranchAssignments;
+            dialog.ShowDialog(reportForm);
+            reportForm.FixedBranchAssignments = dialog.FixedBranchAssignments;
         }
 
         void SetVariationReportBody(TeamVariationsForm form)
@@ -2623,15 +2637,15 @@ namespace PurplePen
                 form.SetBody(new Reports().CreateRelayVariationNotCreated());
             }
             else {
-                VariationReportData variationReportData = controller.GetVariationReportData(form.NumberOfTeams, form.NumberOfLegs);
+                VariationReportData variationReportData = controller.GetVariationReportData(form.RelaySettings);
                 form.SetBody(new Reports().CreateRelayVariationReport(variationReportData));
             }
         }
 
         void ExportVariationReport(TeamVariationsForm form, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
         {
-            VariationReportData variationReportData = controller.GetVariationReportData(form.NumberOfTeams, form.NumberOfLegs);
-            controller.ExportRelayVariationsReport(form.NumberOfTeams, form.NumberOfLegs, exportFileType, exportFileName);
+            VariationReportData variationReportData = controller.GetVariationReportData(form.RelaySettings);
+            controller.ExportRelayVariationsReport(form.RelaySettings, exportFileType, exportFileName);
         }
 
         private void MainFrame_Shown(object sender, EventArgs e)

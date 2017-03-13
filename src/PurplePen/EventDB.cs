@@ -629,8 +629,150 @@ namespace PurplePen
         {
             return this.Clone(); 
         }
-    }   
+    }
 
+    public class FixedBranchAssignments : ICloneable
+    {
+        readonly Dictionary<char, List<int>> fixedLegsByBranchCode;
+
+        public FixedBranchAssignments()
+        {
+            fixedLegsByBranchCode = new Dictionary<char, List<int>>();
+        }
+
+        public FixedBranchAssignments(Dictionary<char, List<int>> fixedLegs)
+        {
+            this.fixedLegsByBranchCode = fixedLegs;
+        }
+
+        public void AddBranchAssignment(char code, int leg)
+        {
+            if (fixedLegsByBranchCode.ContainsKey(code)) {
+                fixedLegsByBranchCode[code].Add(leg);
+            }
+            else {
+                fixedLegsByBranchCode[code] = new List<int>(new int[] { leg });
+            }
+        }
+
+        public bool BranchIsFixed(char code)
+        {
+            return fixedLegsByBranchCode.ContainsKey(code);
+        }
+
+        public ICollection<int> FixedLegsForBranch(char code)
+        {
+            return fixedLegsByBranchCode[code].AsReadOnly();
+        }
+
+        public FixedBranchAssignments Clone()
+        {
+            FixedBranchAssignments other = new FixedBranchAssignments();
+            foreach (KeyValuePair<char, List<int>> pair in fixedLegsByBranchCode) {
+                foreach (int leg in pair.Value) {
+                    other.AddBranchAssignment(pair.Key, leg);
+                }
+            }
+            return other;
+        }
+
+        public override bool Equals(object o)
+        {
+            FixedBranchAssignments other = o as FixedBranchAssignments;
+            if (other == null)
+                return false;
+
+            IEnumerable<char> keys = (from k in fixedLegsByBranchCode.Keys orderby k select k);
+            foreach (char key in keys) {
+                if (!other.fixedLegsByBranchCode.ContainsKey(key))
+                    return false;
+                List<int> x = fixedLegsByBranchCode[key];
+                List<int> y = other.fixedLegsByBranchCode[key];
+                if (x.Count != y.Count)
+                    return false;
+                for (int i = 0; i < x.Count; ++i) {
+                    if (x[i] != y[i])
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        public IEnumerable<KeyValuePair<char, int>> AllAssignments()
+        {
+            foreach (KeyValuePair<char, List<int>> pair in fixedLegsByBranchCode) {
+                foreach (int leg in pair.Value) {
+                    yield return new KeyValuePair<char, int>(pair.Key, leg);
+                }
+            }
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
+        }
+
+    }
+
+    public class RelaySettings
+    {
+        public int relayTeams;           // Number of teams for relay
+        public int relayLegs;            // Number of legs for relay
+        public FixedBranchAssignments relayBranchAssignments;  // For relay -- branch assignments.
+
+        public RelaySettings(int relayTeams, int relayLegs, FixedBranchAssignments relayBranchAssignments)
+        {
+            this.relayTeams = relayTeams;
+            this.relayLegs = relayLegs;
+            this.relayBranchAssignments = relayBranchAssignments;
+        }
+
+        public RelaySettings(int relayTeams, int relayLegs)
+        {
+            this.relayTeams = relayTeams;
+            this.relayLegs = relayLegs;
+            this.relayBranchAssignments = new FixedBranchAssignments();
+        }
+
+        public RelaySettings()
+        {
+            this.relayTeams = 0;
+            this.relayLegs = 1;
+            this.relayBranchAssignments = new FixedBranchAssignments();
+        }
+
+        public RelaySettings Clone()
+        {
+            RelaySettings n = (RelaySettings) this.MemberwiseClone();
+            if (n.relayBranchAssignments != null)
+                n.relayBranchAssignments = n.relayBranchAssignments.Clone();
+            return n;
+        }
+
+        public override bool Equals(object obj)
+        {
+            RelaySettings other = obj as RelaySettings;
+            if (obj == null)
+                return false;
+            if (other.relayLegs != relayLegs)
+                return false;
+            if (other.relayTeams != relayTeams)
+                return false;
+            if (!object.Equals(relayBranchAssignments, other.relayBranchAssignments))
+                return false;
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 1027;
+            hash = hash * 33 + relayLegs.GetHashCode();
+            hash = hash * 33 + relayTeams.GetHashCode();
+            hash = hash * 33 + relayBranchAssignments.GetHashCode();
+            return hash;
+        }
+    }
 
     // Description a main course (not a particular variation, map part, or all controls--
     // those exist only in a particular view).
@@ -651,14 +793,14 @@ namespace PurplePen
         public PrintArea printArea;  // print area, or empty if no defined print area.
         public Dictionary<int, PrintArea> partPrintAreas; // print area of parts.
         public Dictionary<int, PartOptions> partOptions;  // options of parts.
-        public int relayTeams;           // Number of teams for relay
-        public int relayLegs = 1;            // Number of legs for relay
+        public RelaySettings relaySettings;
         public Id<CourseControl> firstCourseControl;  // Id of first course control (None if no controls).
 
         public Course()
         {
             this.partPrintAreas = new Dictionary<int, PrintArea>();
             this.partOptions = new Dictionary<int, PartOptions>();
+            this.relaySettings = new RelaySettings();
         }
 
         public Course(CourseKind kind, string name, float printScale, int sortOrder): this()
@@ -751,7 +893,8 @@ namespace PurplePen
             n.partOptions = Util.CloneDictionary(n.partOptions);
             if (n.printArea != null)
                 n.printArea = (PrintArea) n.printArea.Clone();
-
+            if (n.relaySettings != null)
+                n.relaySettings = n.relaySettings.Clone();
             return n;
         }
 
@@ -801,9 +944,7 @@ namespace PurplePen
             }
             if (other.partOptions.Count != this.partOptions.Count)
                 return false;
-            if (other.relayLegs != relayLegs)
-                return false;
-            if (other.relayTeams != relayTeams)
+            if (!other.relaySettings.Equals(relaySettings))
                 return false;
             foreach (KeyValuePair<int, PartOptions> kvp in this.partOptions) {
                 PartOptions partOptions;
@@ -834,7 +975,7 @@ namespace PurplePen
             scoreColumn = (kind == CourseKind.Score) ? 0 : -1;
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options", "relay")) {
+            while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options", "relay", "relay-branch")) {
                 switch (xmlinput.Name) {
                     case "name":
                         name = xmlinput.GetContentString();
@@ -904,8 +1045,16 @@ namespace PurplePen
                         break;
 
                     case "relay":
-                        relayTeams = xmlinput.GetAttributeInt("teams", 0);
-                        relayLegs = xmlinput.GetAttributeInt("legs", 1);
+                        relaySettings.relayTeams = xmlinput.GetAttributeInt("teams", 0);
+                        relaySettings.relayLegs = xmlinput.GetAttributeInt("legs", 1);
+                        xmlinput.Skip();
+                        break;
+
+                    case "relay-branch":
+                        string code = xmlinput.GetAttributeString("branch");
+                        int leg = xmlinput.GetAttributeInt("leg", -1);
+                        if (code.Length == 1 && leg >= 1)
+                            relaySettings.relayBranchAssignments.AddBranchAssignment(code[0], leg - 1);
                         xmlinput.Skip();
                         break;
                 }
@@ -993,10 +1142,17 @@ namespace PurplePen
 
             xmloutput.WriteEndElement();
 
-            if (relayTeams > 0) {
+            if (relaySettings.relayTeams > 0 || relaySettings.relayLegs > 1) {
                 xmloutput.WriteStartElement("relay");
-                xmloutput.WriteAttributeString("teams", XmlConvert.ToString(relayTeams));
-                xmloutput.WriteAttributeString("legs", XmlConvert.ToString(relayLegs));
+                xmloutput.WriteAttributeString("teams", XmlConvert.ToString(relaySettings.relayTeams));
+                xmloutput.WriteAttributeString("legs", XmlConvert.ToString(relaySettings.relayLegs));
+                xmloutput.WriteEndElement();
+            }
+
+            foreach (KeyValuePair<char, int> relaybranch in relaySettings.relayBranchAssignments.AllAssignments()) {
+                xmloutput.WriteStartElement("relay-branch");
+                xmloutput.WriteAttributeString("branch", new string(relaybranch.Key, 1));
+                xmloutput.WriteAttributeString("leg", XmlConvert.ToString(relaybranch.Value + 1));
                 xmloutput.WriteEndElement();
             }
 

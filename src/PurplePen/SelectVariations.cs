@@ -24,8 +24,8 @@ namespace PurplePen
             this.courseId = courseId;
 
             Course course = eventDB.GetCourse(courseId);
-            if (course.relayTeams > 0)
-                lastTeam = course.relayTeams;
+            if (course.relaySettings.relayTeams > 0)
+                lastTeam = course.relaySettings.relayTeams;
             else
                 lastTeam = null;
 

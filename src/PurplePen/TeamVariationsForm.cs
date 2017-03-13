@@ -44,8 +44,9 @@ namespace PurplePen
 {
     public partial class TeamVariationsForm: PurplePen.BaseDialog
     {
-        public EventHandler<CalculateVariationsPressedEventArgs> CalculateVariationsPressed;
-        public EventHandler<ExportFilePressedEventArgs> ExportFilePressed;
+        public event EventHandler<VariationInfoEventArgs> CalculateVariationsPressed;
+        public event EventHandler<VariationInfoEventArgs> AssignLegsPressed;
+        public event EventHandler<ExportFilePressedEventArgs> ExportFilePressed;
 
         public TeamVariationsForm()
         {
@@ -85,6 +86,20 @@ namespace PurplePen
                 upDownNumberOfLegs.Value = value;
             }
         }
+
+        public RelaySettings RelaySettings
+        {
+            get {
+                return new RelaySettings(this.NumberOfTeams, this.NumberOfLegs, this.FixedBranchAssignments);
+            }
+            set {
+                this.NumberOfTeams = value.relayTeams;
+                this.NumberOfLegs = value.relayLegs;
+                this.FixedBranchAssignments = value.relayBranchAssignments;
+            }
+        }
+
+        public FixedBranchAssignments FixedBranchAssignments { get; set; }
         
         // Send the body of the report.
         public void SetBody(string body)
@@ -101,8 +116,19 @@ namespace PurplePen
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            CalculateVariationsPressedEventArgs eventArgs = new CalculateVariationsPressedEventArgs(NumberOfTeams, NumberOfLegs);
+            VariationInfoEventArgs eventArgs = GetVariationInfoEventArgs();
             CalculateVariationsPressed?.Invoke(this, eventArgs);
+        }
+
+
+        private void fixedLegsLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AssignLegsPressed?.Invoke(this, GetVariationInfoEventArgs());
+        }
+
+        private VariationInfoEventArgs GetVariationInfoEventArgs()
+        {
+            return new VariationInfoEventArgs(NumberOfTeams, NumberOfLegs, FixedBranchAssignments);
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -131,15 +157,17 @@ namespace PurplePen
 
         public enum ExportFileType { Xml, Csv};
 
-        public class CalculateVariationsPressedEventArgs: EventArgs
+        public class VariationInfoEventArgs: EventArgs
         {
             public int NumberOfTeams;
             public int NumberOfLegs;
+            public FixedBranchAssignments FixedBranchAssignments;
 
-            public CalculateVariationsPressedEventArgs(int numberOfTeams, int numberOfLegs)
+            public VariationInfoEventArgs(int numberOfTeams, int numberOfLegs, FixedBranchAssignments fixedBranchAssignments)
             {
                 NumberOfTeams = numberOfTeams;
                 NumberOfLegs = numberOfLegs;
+                FixedBranchAssignments = fixedBranchAssignments;
             }
         }
 
@@ -154,6 +182,5 @@ namespace PurplePen
                 FileName = fileName;
             }
         }
-
     }
 }

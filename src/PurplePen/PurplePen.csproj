@@ -366,6 +366,12 @@
     <Compile Include="InitialScreen.Designer.cs">
       <DependentUpon>InitialScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="LegAssignmentsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LegAssignmentsDialog.Designer.cs">
+      <DependentUpon>LegAssignmentsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="LegGap.cs" />
     <Compile Include="LicenseForm.cs">
       <SubType>Form</SubType>
@@ -1900,6 +1906,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InitialScreen.sv.resx">
       <DependentUpon>InitialScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LegAssignmentsDialog.resx">
+      <DependentUpon>LegAssignmentsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LicenseForm.bg.resx">
       <DependentUpon>LicenseForm.cs</DependentUpon>

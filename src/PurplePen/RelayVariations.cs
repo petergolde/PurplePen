@@ -33,13 +33,13 @@ namespace PurplePen
         List<TeamAssignment> results;
         List<BranchWarning> branchWarnings;
 
-        public RelayVariations(EventDB eventDB, Id<Course> courseId, int numberTeams, int numberLegs, FixedBranchAssignments fixedBranchAssignments)
+        public RelayVariations(EventDB eventDB, Id<Course> courseId, RelaySettings relaySettings)
         {
             this.eventDB = eventDB;
             this.courseId = courseId;
-            this.numberTeams = numberTeams;
-            this.numberLegs = numberLegs;
-            this.fixedBranchAssignments = fixedBranchAssignments;
+            this.numberTeams = relaySettings.relayTeams;
+            this.numberLegs = relaySettings.relayLegs;
+            this.fixedBranchAssignments = relaySettings.relayBranchAssignments;
         }
 
         // Get the variation to use for a particular team and leg.
@@ -64,6 +64,24 @@ namespace PurplePen
         public int NumberOfLegs
         {
             get { return numberLegs; }
+        }
+
+        // Get sets of branches that can be fixed to specific legs.
+        public List<char[]> GetPossibleFixedBranches()
+        {
+            List<char[]> result = new List<char[]>();
+
+            ScanAllForks();
+
+            foreach (Fork fork in allForks)
+            {
+                if (! fork.loop && fork.numLegsHere == numberLegs)
+                {
+                    result.Add(fork.codes);
+                }
+            }
+
+            return result;
         }
 
         // Get any warnings about branches that are used unevenly.
@@ -96,6 +114,7 @@ namespace PurplePen
                 // Do initial traverse of all forks to get number of runners, warnings about number of people at each branch.
                 totalPossiblePaths = ScanFork(firstForkInCourse, numberLegs, 1);
 
+                // Determine minimum unique paths, per leg.
                 minUniquePathsByLeg = new int[numberLegs];
                 for (int leg = 0; leg < numberLegs; ++leg) {
                     minUniquePathsByLeg[leg] = CalcMinUniquePaths(firstForkInCourse, leg, 1);
@@ -393,7 +412,7 @@ namespace PurplePen
                     char code = startFork.codes[i];
                     if (startFork.fixedBranches != null && startFork.fixedBranches[i])
                     {
-                        legsThisBranch = fixedBranchAssignments.FixedLegsForBranch(code).Length;
+                        legsThisBranch = fixedBranchAssignments.FixedLegsForBranch(code).Count;
                     }
                     else
                     {
@@ -695,42 +714,5 @@ namespace PurplePen
         }
     }
 
-    class FixedBranchAssignments
-    {
-        readonly Dictionary<char, int[]> fixedLegsByBranchCode;
 
-        public FixedBranchAssignments()
-        {
-            fixedLegsByBranchCode = new Dictionary<char, int[]>();
-        }
-
-        public FixedBranchAssignments(Dictionary<char, int[]> fixedLegs)
-        {
-            this.fixedLegsByBranchCode = fixedLegs;
-        }
-
-        public void AddBranchAssignment(char code, int leg)
-        {
-            if (fixedLegsByBranchCode.ContainsKey(code))
-            {
-                List<int> newList = new List<int>(fixedLegsByBranchCode[code]);
-                newList.Add(leg);
-                fixedLegsByBranchCode[code] = newList.ToArray();
-            }
-            else
-            {
-                fixedLegsByBranchCode[code] = new int[] { leg };
-            }
-        }
-
-        public bool BranchIsFixed(char code)
-        {
-            return fixedLegsByBranchCode.ContainsKey(code);
-        }
-
-        public int[] FixedLegsForBranch(char code)
-        {
-            return fixedLegsByBranchCode[code];
-        }
-    }
 }

@@ -384,13 +384,12 @@ namespace PurplePen
             eventDB.ReplaceCourse(courseId, course);
         }
 
-        public static void SetRelayParameters(EventDB eventDB, Id<Course> courseId, int numberTeams, int numberLegs)
+        public static void SetRelayParameters(EventDB eventDB, Id<Course> courseId, RelaySettings relaySettings)
         {
             Course course = eventDB.GetCourse(courseId);
 
             course = (Course)course.Clone();
-            course.relayTeams = numberTeams;
-            course.relayLegs = numberLegs;
+            course.relaySettings = relaySettings.Clone();
             eventDB.ReplaceCourse(courseId, course);
         }
 
