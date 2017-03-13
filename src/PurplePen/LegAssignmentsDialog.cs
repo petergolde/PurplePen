@@ -11,6 +11,7 @@ namespace PurplePen
 {
     public partial class LegAssignmentsDialog : OkCancelDialog
     {
+        public event EventHandler<ValidationEventArgs> Validate;
 
         public LegAssignmentsDialog(List<char[]> codes)
         {
@@ -27,6 +28,20 @@ namespace PurplePen
                 }
 
                 oddGroup = !oddGroup;
+            }
+        }
+
+        protected override bool OkButtonClicked()
+        {
+            ValidationEventArgs eventArgs = new ValidationEventArgs(null);
+            Validate?.Invoke(this, eventArgs);
+
+            if (eventArgs.ErrorMessage != null) {
+                MessageBox.Show(this, eventArgs.ErrorMessage);
+                return false;
+            }
+            else {
+                return true;
             }
         }
 
@@ -85,6 +100,16 @@ namespace PurplePen
                     result.Add(leg - 1);
             }
             return result;
+        }
+
+        public class ValidationEventArgs: EventArgs
+        {
+            public String ErrorMessage;
+
+            public ValidationEventArgs(string errorMessage)
+            {
+                ErrorMessage = errorMessage;
+            }
         }
     }
 }

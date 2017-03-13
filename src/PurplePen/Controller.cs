@@ -914,18 +914,20 @@ namespace PurplePen
         }
 
         // For the current course, get the relay parameters.
-        public RelaySettings GetRelayParameters(out int numberTeams, out int numberLegs, out FixedBranchAssignments fixedBranchAssignments)
+        public RelaySettings GetRelayParameters()
         {
-            numberTeams = 0;
-            numberLegs = 1;
-            fixedBranchAssignments = null;
-
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             if (courseId.IsNone)
                 return null;
 
             Course course = eventDB.GetCourse(courseId);
-            return course.relaySettings.Clone();
+            RelaySettings settings = course.relaySettings.Clone();
+
+            // Validate the fixed branch assignments.
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(settings.relayTeams, settings.relayLegs));
+            settings.relayBranchAssignments = relayVariations.ValidateFixedBranches(settings.relayBranchAssignments);
+
+            return settings;
         }
 
         // Get the branch codes that are available for leg assignments.
@@ -937,6 +939,22 @@ namespace PurplePen
 
             RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(1, 20));  // parameters are irrelavaent
             return relayVariations.GetPossibleFixedBranches();
+        }
+
+        // Validate fixed branch assignments, return error message on bad, null on good.
+        public string ValidateFixedBranchAssignments(int numberOfLegs, FixedBranchAssignments fixedBranchAssignments)
+        {
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            if (courseId.IsNone)
+                return null;
+
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(1, numberOfLegs));  // parameters are irrelavaent
+            relayVariations.ValidateFixedBranches(fixedBranchAssignments, out errors);
+            if (errors.Count > 0)
+                return errors[0];
+            else
+                return null;
         }
 
         // For the current course, set the relay parameters.

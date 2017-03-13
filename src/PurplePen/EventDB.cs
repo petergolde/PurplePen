@@ -655,6 +655,11 @@ namespace PurplePen
             }
         }
 
+        public bool IsEmpty
+        {
+            get { return fixedLegsByBranchCode.Count == 0; }
+        }
+
         public bool BranchIsFixed(char code)
         {
             return fixedLegsByBranchCode.ContainsKey(code);

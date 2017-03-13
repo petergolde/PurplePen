@@ -5,6 +5,6 @@
 
 - Loop control with start as the loop. Should this be allowed? Would this be a map change, or should you have to insert a map change at control? Needs some thinking here. 
 
-
+- Map exchanges with variations has some bugs. Need testing and fixes.
 
 

@@ -2592,13 +2592,11 @@ namespace PurplePen
 
         private void courseVariationReportMenu_Click(object sender, EventArgs e)
         {
-            int numTeams, numLegs;
-            FixedBranchAssignments fixedBranchAssignments;
-            controller.GetRelayParameters(out numTeams, out numLegs, out fixedBranchAssignments);
+            RelaySettings relaySettings = controller.GetRelayParameters();
             TeamVariationsForm reportForm = new TeamVariationsForm();
-            reportForm.NumberOfTeams = numTeams;
-            reportForm.NumberOfLegs = numLegs;
-            reportForm.FixedBranchAssignments = fixedBranchAssignments;
+            reportForm.NumberOfTeams = relaySettings.relayTeams;
+            reportForm.NumberOfLegs = relaySettings.relayLegs;
+            reportForm.FixedBranchAssignments = relaySettings.relayBranchAssignments;
             reportForm.DefaultExportFileName = controller.GetDefaultVariationExportFileName();
 
             SetVariationReportBody(reportForm);
@@ -2617,8 +2615,12 @@ namespace PurplePen
 
             reportForm.ShowDialog(this);
 
-            if (numTeams != reportForm.NumberOfTeams || numLegs != reportForm.NumberOfLegs || !object.Equals(fixedBranchAssignments, reportForm.FixedBranchAssignments))
+            if (relaySettings.relayTeams != reportForm.NumberOfTeams ||
+                relaySettings.relayLegs != reportForm.NumberOfLegs ||
+                !object.Equals(relaySettings.relayBranchAssignments, reportForm.FixedBranchAssignments)) 
+            {
                 controller.SetRelayParameters(reportForm.RelaySettings);
+            }
 
             reportForm.Dispose();
         }
@@ -2627,6 +2629,10 @@ namespace PurplePen
         {
             LegAssignmentsDialog dialog = new LegAssignmentsDialog(controller.GetLegAssignmentCodes());
             dialog.FixedBranchAssignments = reportForm.FixedBranchAssignments;
+            dialog.Validate += (sender, e) => {
+                e.ErrorMessage = controller.ValidateFixedBranchAssignments(reportForm.NumberOfLegs, dialog.FixedBranchAssignments);
+            };
+
             dialog.ShowDialog(reportForm);
             reportForm.FixedBranchAssignments = dialog.FixedBranchAssignments;
         }

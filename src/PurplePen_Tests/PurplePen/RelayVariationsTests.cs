@@ -290,6 +290,105 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ValidateFixedBranches1()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            // No Assignments.
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(7), new RelaySettings(1, 4));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            Assert.AreEqual(0, errors.Count);
+            Assert.AreEqual(branchAssignments, result);
+        }
+
+        [TestMethod]
+        public void ValidateFixedBranches2()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            // No Assignments.
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            branchAssignments.AddBranchAssignment('A', -1);
+            branchAssignments.AddBranchAssignment('A', 4);
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(7), new RelaySettings(1, 4));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            Assert.AreEqual(2, errors.Count);
+            Assert.AreEqual("'0' is not a valid leg number for branch 'A'", errors[0]);
+            Assert.AreEqual("'5' is not a valid leg number for branch 'A'", errors[1]);
+            Assert.AreEqual(result, new FixedBranchAssignments());
+        }
+
+
+        [TestMethod]
+        public void ValidateFixedBranches3()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            // No Assignments.
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            branchAssignments.AddBranchAssignment('D', 1);
+            branchAssignments.AddBranchAssignment('D', 2);
+            branchAssignments.AddBranchAssignment('E', 2);
+            branchAssignments.AddBranchAssignment('E', 3);
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(4), new RelaySettings(1, 6));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            FixedBranchAssignments expected = new FixedBranchAssignments();
+            expected.AddBranchAssignment('D', 1);
+            expected.AddBranchAssignment('D', 2);
+            expected.AddBranchAssignment('E', 3);
+
+            Assert.AreEqual(1, errors.Count);
+            Assert.AreEqual("Leg 3 is assigned to both branch 'D' and branch 'E'", errors[0]);
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void ValidateFixedBranches4()
+        {
+            Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
+
+            // No Assignments.
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            branchAssignments.AddBranchAssignment('A', 0);
+            branchAssignments.AddBranchAssignment('A', 1);
+            branchAssignments.AddBranchAssignment('A', 2);
+            branchAssignments.AddBranchAssignment('B', 3);
+            branchAssignments.AddBranchAssignment('B', 4);
+            branchAssignments.AddBranchAssignment('B', 5);
+
+            branchAssignments.AddBranchAssignment('C', 0);
+            branchAssignments.AddBranchAssignment('D', 3);
+            branchAssignments.AddBranchAssignment('D', 1);
+            branchAssignments.AddBranchAssignment('E', 5);
+            branchAssignments.AddBranchAssignment('E', 4);
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(4), new RelaySettings(1, 6));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            FixedBranchAssignments expected = new FixedBranchAssignments();
+            expected.AddBranchAssignment('A', 0);
+            expected.AddBranchAssignment('A', 1);
+            expected.AddBranchAssignment('A', 2);
+            expected.AddBranchAssignment('B', 3);
+            expected.AddBranchAssignment('B', 4);
+            expected.AddBranchAssignment('B', 5);
+
+            Assert.AreEqual(1, errors.Count);
+            Assert.AreEqual("Leg 3 should be assigned to one of branches C, D, E", errors[0]);
+            Assert.AreEqual(expected, result);
+        }
+
+
+
+
+        [TestMethod]
         public void ExportCsv()
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));

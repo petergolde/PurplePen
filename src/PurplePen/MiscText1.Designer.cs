@@ -187,6 +187,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; is not a valid leg number for branch &apos;{1}&apos;.
+        /// </summary>
+        internal static string BadLegNumber {
+            get {
+                return ResourceManager.GetString("BadLegNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The length for a course must be a number 0.1 - 99.9, or blank to calculate length automatically..
         /// </summary>
         internal static string BadLength {
@@ -874,6 +883,24 @@ namespace PurplePen {
         internal static string Landscape {
             get {
                 return ResourceManager.GetString("Landscape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leg {0} should be assigned to one of branches {1}.
+        /// </summary>
+        internal static string LegNotAssigned {
+            get {
+                return ResourceManager.GetString("LegNotAssigned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Leg {0} is assigned to both branch &apos;{1}&apos; and branch &apos;{2}&apos;.
+        /// </summary>
+        internal static string LegUsedTwice {
+            get {
+                return ResourceManager.GetString("LegUsedTwice", resourceCulture);
             }
         }
         

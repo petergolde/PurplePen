@@ -51,6 +51,7 @@ namespace PurplePen
         public TeamVariationsForm()
         {
             InitializeComponent();
+            FixedBranchAssignments = new FixedBranchAssignments();
         }
 
         public string DefaultExportFileName

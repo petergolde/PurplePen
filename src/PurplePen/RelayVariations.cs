@@ -39,7 +39,15 @@ namespace PurplePen
             this.courseId = courseId;
             this.numberTeams = relaySettings.relayTeams;
             this.numberLegs = relaySettings.relayLegs;
-            this.fixedBranchAssignments = relaySettings.relayBranchAssignments;
+
+            if (!relaySettings.relayBranchAssignments.IsEmpty) {
+                this.fixedBranchAssignments = ValidateFixedBranches(relaySettings.relayBranchAssignments);
+            }
+            else {
+                this.fixedBranchAssignments = relaySettings.relayBranchAssignments;
+            }
+
+            forksScanned = false;
         }
 
         // Get the variation to use for a particular team and leg.
@@ -82,6 +90,72 @@ namespace PurplePen
             }
 
             return result;
+        }
+
+        // Validate the fixed branches, and create a new FixedBranchAssignments that doesn't
+        // have errors in it.
+        public FixedBranchAssignments ValidateFixedBranches(FixedBranchAssignments assignments)
+        {
+            List<string> dummy;
+            return ValidateFixedBranches(assignments, out dummy);
+        }
+
+        public FixedBranchAssignments ValidateFixedBranches(FixedBranchAssignments assignments, out List<string> errors)
+        {
+            FixedBranchAssignments result = new FixedBranchAssignments();
+            errors = new List<string>();
+
+            ScanAllForks();
+            foreach (Fork fork in allForks) {
+                if (!fork.loop && fork.numLegsHere == numberLegs) {
+                    // This fork can have fixed branches.
+                    ValidateFixedBranchesForFork(assignments, fork, result, errors);
+                }
+                else {
+                    // This fork can't have branches. We don't give errors for this right now, but could here.
+                }
+
+            }
+
+            return result;
+        }
+
+        private void ValidateFixedBranchesForFork(FixedBranchAssignments assignments, Fork fork, FixedBranchAssignments result, List<string> errors)
+        {
+            char[] codeForLeg = new char[numberLegs];
+
+            foreach (char code in fork.codes) {
+                if (assignments.BranchIsFixed(code)) {
+                    foreach (int leg in assignments.FixedLegsForBranch(code)) {
+                        if (leg < 0 || leg >= numberLegs) {
+                            errors.Add(string.Format(MiscText.BadLegNumber, leg + 1, code));
+                        }
+                        else if (codeForLeg[leg] != 0) {
+                            errors.Add(string.Format(MiscText.LegUsedTwice, leg + 1, codeForLeg[leg], code));
+                        }
+                        else {
+                            codeForLeg[leg] = code;
+                        }
+                    }
+                }
+            }
+
+            bool allLegsAssigned = codeForLeg.All(c => (c != 0));
+            bool allBranchesAssigned = fork.codes.All(c => assignments.BranchIsFixed(c));
+
+            if (allBranchesAssigned && !allLegsAssigned) {
+                string allCodes = string.Join(", ", from c in fork.codes select c.ToString());
+                for (int leg = 0; leg < numberLegs; ++leg) {
+                    if (codeForLeg[leg] == 0)
+                        errors.Add(string.Format(MiscText.LegNotAssigned, leg + 1, allCodes));
+                }
+            }
+            else {
+                for (int leg = 0; leg < numberLegs; ++leg) {
+                    if (codeForLeg[leg] != 0)
+                        result.AddBranchAssignment(codeForLeg[leg], leg);
+                }
+            }
         }
 
         // Get any warnings about branches that are used unevenly.
@@ -370,6 +444,8 @@ namespace PurplePen
                         char code = startFork.codes[i];
                         if (fixedBranchAssignments.BranchIsFixed(code))
                         {
+                            nonFixedCodes.Remove(code);
+
                             if (startFork.fixedBranches == null)
                                 startFork.fixedBranches = new bool[startFork.numBranches];
                             startFork.fixedBranches[i] = true;
@@ -382,8 +458,10 @@ namespace PurplePen
                             }
                             foreach (int leg in fixedBranchAssignments.FixedLegsForBranch(code))
                             {
-                                startFork.fixedLegs[leg] = i;
-                                numUnfixedLegsOnThisFork -= 1;
+                                if (leg >= 0 && leg < startFork.fixedLegs.Length) {
+                                    startFork.fixedLegs[leg] = i;
+                                    numUnfixedLegsOnThisFork -= 1;
+                                }
                             }
 
                             --startFork.numNonFixedBranches;
