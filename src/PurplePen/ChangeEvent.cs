@@ -1360,7 +1360,7 @@ namespace PurplePen
         }
 
         // Check all descriptions other than the passed one, and remove any duplicate courses.
-        public static void UpdateDescriptionCourses(EventDB eventDB, Id<Special> descriptionId)
+        private static void UpdateDescriptionCourses(EventDB eventDB, Id<Special> descriptionId)
         {
             // Which courses to remove?
             CourseDesignator[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId);
@@ -1388,9 +1388,9 @@ namespace PurplePen
                                 if (!courseToRemove.AllParts && courses[courseIndex].AllParts) {
                                     int removedPart = courseToRemove.Part;
                                     courses.RemoveAt(courseIndex--);
-                                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseToRemove.CourseId); ++part) {
+                                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseToRemove); ++part) {
                                         if (part != removedPart)
-                                            courses.Add(new CourseDesignator(courseToRemove.CourseId, part));
+                                            courses.Add(courseToRemove.WithPart(part));
                                     }
                                 }
                                 else if (courseToRemove.AllParts) {

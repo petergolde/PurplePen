@@ -592,28 +592,6 @@ namespace PurplePen
             return description;
         }
 
-        // Find the longest description we have. If we have no courses, then return None.
-        static CourseDesignator FindLongestDescription(EventDB eventDB, SymbolDB symbolDB)
-        {
-            int longest = 0;
-            CourseDesignator longestCourse = CourseDesignator.AllControls;
-
-            foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                int numberOfParts = QueryEvent.CountCourseParts(eventDB, courseId);
-                for (int part = 0; part < numberOfParts; ++part) {
-                    DescriptionFormatter descFormatter = new DescriptionFormatter(CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId, part)), symbolDB);
-                    DescriptionKind descKind = QueryEvent.GetDefaultDescKind(eventDB, courseId);
-                    DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
-                    if (description.Length > longest) {
-                        longest = description.Length;
-                        longestCourse = new CourseDesignator(courseId, part);
-                    }
-                }
-            }
-
-            return longestCourse;
-        }
-
         // Create the object associated with the control/start/finish etc with this control view.
         // AngleOut is the direction IN RADIANs leaving the control.
         static CourseObj CreateCourseObject(EventDB eventDB, float scaleRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)

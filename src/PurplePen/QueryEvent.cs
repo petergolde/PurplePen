@@ -468,11 +468,30 @@ namespace PurplePen
             return CountCourseParts(eventDB, new CourseDesignator(courseId));
         }
 
+        // Does this course have any map exchanges. This can return true event if the course has
+        // variations, which don't allow access parts of all variations.
+        public static bool HasAnyMapExchanges(EventDB eventDB, Id<Course> courseId)
+        {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, new CourseDesignator(courseId))) {
+                if (eventDB.GetCourseControl(courseControlId).exchange)
+                    return true;
+            }
+
+            return false;
+        }
+
         // Get the number of parts that this course has.  A course with no map exchanges has 1 part, with one
         // map exchange has 2 parts, etc.
         public static int CountCourseParts(EventDB eventDB, CourseDesignator courseDesignator)
         {
-            Debug.Assert(courseDesignator.AllParts);
+            if (courseDesignator.IsAllControls)
+                return 1;
+
+            courseDesignator = courseDesignator.WithAllParts();
+
+            // The All Variations course designator does not have "parts" as such.
+            if (HasVariations(eventDB, courseDesignator.CourseId) && !courseDesignator.IsVariation)
+                return 1;
 
             int currentPart = 0;
 
@@ -522,9 +541,10 @@ namespace PurplePen
                 }
                 else {
                     // No variation.
-                    if (courseId.IsNotNone && enumeratePartsSeparately && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
+                    int numberOfParts = QueryEvent.CountCourseParts(eventDB, new CourseDesignator(courseId));
+                    if (courseId.IsNotNone && enumeratePartsSeparately && numberOfParts > 1) {
                         // Create files for each part.
-                        for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
+                        for (int part = 0; part < numberOfParts; ++part) {
                             yield return new CourseDesignator(courseId, part);
                         }
                     }
@@ -983,7 +1003,9 @@ namespace PurplePen
             if (special.allCourses)
                 return true;
 
-            if (courseDesignator.AllParts)
+            courseDesignator = courseDesignator.WithAllVariations();
+
+            if (courseDesignator.AllParts && special.kind != SpecialKind.Descriptions)
                 return special.courses.Any(cd => cd.CourseId == courseDesignator.CourseId);
             else
                 return special.courses.Contains(courseDesignator) || special.courses.Contains(new CourseDesignator(courseDesignator.CourseId));
@@ -1258,12 +1280,12 @@ namespace PurplePen
 
         public static bool AnyMultipartCourses(EventDB eventDB)
         {
-            bool anyMultipart = false;
-            foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                anyMultipart |= (CountCourseParts(eventDB, courseId) > 1);
+            foreach (CourseControl courseControl in eventDB.AllCourseControls) {
+                if (courseControl.exchange)
+                    return true;
             }
 
-            return anyMultipart;
+            return false;
         }
 
         // Get all course IDs, in the correct sorted order.
@@ -1349,7 +1371,7 @@ namespace PurplePen
             }
 
             // Show Finish is always true for the last part of the course.
-            if (courseDesignator.Part == QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) - 1) {
+            if (courseDesignator.Part == QueryEvent.CountCourseParts(eventDB, courseDesignator) - 1) {
                 partOptions = partOptions.Clone();
                 partOptions.ShowFinish = true;
             }

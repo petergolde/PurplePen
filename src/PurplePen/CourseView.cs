@@ -566,7 +566,8 @@ namespace PurplePen
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
         private void AddSpecials(CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
         {
-            bool multiPart = courseDesignator.IsNotAllControls && courseDesignator.AllParts && (QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) > 1);
+            bool multiPart = courseDesignator.IsNotAllControls && courseDesignator.AllParts && 
+                (QueryEvent.CountCourseParts(eventDB, courseDesignator) > 1 || (!courseDesignator.IsVariation && QueryEvent.HasAnyMapExchanges(eventDB, courseDesignator.CourseId)));
 
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                 SpecialKind specialKind = eventDB.GetSpecial(specialId).kind;
@@ -819,7 +820,7 @@ namespace PurplePen
             // If this is a part that should also have the finish on it, and it isn't the last part, then 
             // add the finish.
             if (courseDesignator.IsNotAllControls && !courseDesignator.AllParts && 
-                courseDesignator.Part != QueryEvent.CountCourseParts(eventDB, courseDesignator.CourseId) - 1 &&
+                courseDesignator.Part != QueryEvent.CountCourseParts(eventDB, courseDesignator) - 1 &&
                 QueryEvent.GetPartOptions(eventDB, courseDesignator).ShowFinish) 
             {
                 if (QueryEvent.HasFinishControl(eventDB, courseDesignator.CourseId))
@@ -1231,6 +1232,11 @@ namespace PurplePen
         public CourseDesignator WithAllParts()
         {
             return new CourseDesignator(courseId, variationInfo);
+        }
+
+        public CourseDesignator WithPart(int part)
+        {
+            return new CourseDesignator(courseId, variationInfo, part);
         }
 
         public CourseDesignator Clone()

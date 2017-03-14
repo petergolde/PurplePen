@@ -479,13 +479,15 @@ namespace PurplePen
             }
 
             // Does the current part still exist?
-            if (!activeCourseDesignator.IsAllControls && !activeCourseDesignator.AllParts && activeCourseDesignator.Part >= QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId)) {
+            int numberOfParts = QueryEvent.CountCourseParts(eventDB, activeCourseDesignator);
+            if (!activeCourseDesignator.IsAllControls && !activeCourseDesignator.AllParts && 
+                (numberOfParts == 1 || activeCourseDesignator.Part >= numberOfParts)) 
+            {
                 // No part that large any more.
-                int numberOfParts = QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId);
                 if (numberOfParts > 1)
-                    activeCourseDesignator = new CourseDesignator(activeCourseDesignator.CourseId, numberOfParts - 1);
+                    activeCourseDesignator = activeCourseDesignator.WithPart(numberOfParts - 1);
                 else
-                    activeCourseDesignator = new CourseDesignator(activeCourseDesignator.CourseId);
+                    activeCourseDesignator = activeCourseDesignator.WithAllParts();
                 ClearSelection();
             }
 

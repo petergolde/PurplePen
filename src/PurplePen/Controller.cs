@@ -756,10 +756,7 @@ namespace PurplePen
             get
             {
                 CourseDesignator activeCourseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
-                if (activeCourseDesignator.IsAllControls)
-                    return 1;
-                else
-                    return QueryEvent.CountCourseParts(eventDB, activeCourseDesignator.CourseId);
+                return QueryEvent.CountCourseParts(eventDB, activeCourseDesignator);
             }
         }
 
@@ -801,9 +798,9 @@ namespace PurplePen
         public void SelectPart(int newPart)
         {
             if (newPart == -1)
-                selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId));
+                selectionMgr.SelectCourseView(selectionMgr.Selection.ActiveCourseDesignator.WithAllParts());
             else
-                selectionMgr.SelectCourseView(new CourseDesignator(selectionMgr.Selection.ActiveCourseDesignator.CourseId, newPart));
+                selectionMgr.SelectCourseView(selectionMgr.Selection.ActiveCourseDesignator.WithPart(newPart));
             CancelMode();
         }
 
@@ -1800,8 +1797,9 @@ namespace PurplePen
             UpdateAutomaticPrintArea(CourseDesignator.AllControls);
 
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
-                UpdateAutomaticPrintArea(new CourseDesignator(courseId));
-                int parts = QueryEvent.CountCourseParts(eventDB, courseId);
+                CourseDesignator designator = new CourseDesignator(courseId);
+                UpdateAutomaticPrintArea(designator);
+                int parts = QueryEvent.CountCourseParts(eventDB, designator);
                 if (parts > 1) {
                     for (int part = 0; part < parts; ++part) {
                         UpdateAutomaticPrintArea(new CourseDesignator(courseId, part));
@@ -3363,7 +3361,7 @@ namespace PurplePen
             // All controls or a single part or a 1-part course can add descriptions. All parts of multi-part cannot.
             if (currentCourse.IsAllControls || ! currentCourse.AllParts)
                 return true;
-            if (QueryEvent.CountCourseParts(eventDB, currentCourse.CourseId) == 1)
+            if (! QueryEvent.HasAnyMapExchanges(eventDB, currentCourse.CourseId))
                 return true;
 
             return false;

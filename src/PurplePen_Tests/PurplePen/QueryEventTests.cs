@@ -1830,9 +1830,9 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\mapexchange1.ppen");
 
-            Assert.AreEqual(4, QueryEvent.CountCourseParts(eventDB, CourseId(6)));
-            Assert.AreEqual(1, QueryEvent.CountCourseParts(eventDB, CourseId(1)));
-            Assert.AreEqual(2, QueryEvent.CountCourseParts(eventDB, CourseId(2)));
+            Assert.AreEqual(4, QueryEvent.CountCourseParts(eventDB, Designator(6)));
+            Assert.AreEqual(1, QueryEvent.CountCourseParts(eventDB, Designator(1)));
+            Assert.AreEqual(2, QueryEvent.CountCourseParts(eventDB, Designator(2)));
         }
 
         [TestMethod]
