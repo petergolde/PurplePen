@@ -1938,17 +1938,18 @@ namespace PurplePen.Tests
             IEnumerable<CourseDesignator> result;
 
             Setup("queryevent\\mapexchange1.ppen");
+            Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
 
-            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(2), CourseId(3), Id<Course>.None }, false);
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(2), CourseId(3), Id<Course>.None }, variationChoicesPerCourse, false);
             CollectionAssert.AreEqual(new CourseDesignator[] { Designator(2), Designator(3), CourseDesignator.AllControls }, result.ToList());
 
-            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(2), CourseId(3), Id<Course>.None }, true);
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(2), CourseId(3), Id<Course>.None }, variationChoicesPerCourse, true);
             CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(2), 0), new CourseDesignator(CourseId(2), 1), Designator(3), CourseDesignator.AllControls }, result.ToList());
 
-            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(6), CourseId(3) }, false);
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(6), CourseId(3) }, variationChoicesPerCourse, false);
             CollectionAssert.AreEqual(new CourseDesignator[] { Designator(6), Designator(3) }, result.ToList());
 
-            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(6), CourseId(3) }, true);
+            result = QueryEvent.EnumerateCourseDesignators(eventDB, new Id<Course>[] { CourseId(6), CourseId(3) }, variationChoicesPerCourse, true);
             CollectionAssert.AreEqual(new CourseDesignator[] { new CourseDesignator(CourseId(6), 0), new CourseDesignator(CourseId(6), 1), new CourseDesignator(CourseId(6), 2), new CourseDesignator(CourseId(6), 3), Designator(3) }, result.ToList());
         }
 

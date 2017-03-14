@@ -232,7 +232,7 @@ namespace PurplePen
         // Enumerator all course designators to create.
         private IEnumerable<CourseDesignator> EnumerateCourseDesignators()
         {
-            return QueryEvent.EnumerateCourseDesignators(eventDB, creationSettings.CourseIds, true);
+            return QueryEvent.EnumerateCourseDesignators(eventDB, creationSettings.CourseIds, creationSettings.VariationChoicesPerCourse, true);
         }
 
         // Create all the OCAD files according to their creation settings. Throws exception on I/O error.
@@ -338,6 +338,9 @@ namespace PurplePen
         public short colorOcadId;                         // ocadID for the purple stuff.
         public float cyan, magenta, yellow, black;   // color to use for the "Purple" stuff.
         public bool purpleOverprint;
+
+        // variation choices for courses with variations.
+        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
 
         public OcadCreationSettings Clone()
         {

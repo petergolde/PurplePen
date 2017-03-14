@@ -461,13 +461,6 @@ namespace PurplePen
             return false;
         }
 
-        // Get the number of parts that this course has.  A course with no map exchanges has 1 part, with one
-        // map exchange has 2 parts, etc.
-        public static int CountCourseParts(EventDB eventDB, Id<Course> courseId)
-        {
-            return CountCourseParts(eventDB, new CourseDesignator(courseId));
-        }
-
         // Does this course have any map exchanges. This can return true event if the course has
         // variations, which don't allow access parts of all variations.
         public static bool HasAnyMapExchanges(EventDB eventDB, Id<Course> courseId)
@@ -501,22 +494,6 @@ namespace PurplePen
             }
 
             return currentPart + 1;
-        }
-
-        // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.
-        public static IEnumerable<CourseDesignator> EnumerateCourseDesignators(EventDB eventDB, Id<Course>[] courseIds, bool enumeratePartsSeparately)
-        {
-            foreach (Id<Course> courseId in courseIds) {
-                if (courseId.IsNotNone && enumeratePartsSeparately && QueryEvent.CountCourseParts(eventDB, courseId) > 1) {
-                    // Create files for each part.
-                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseId); ++part) {
-                        yield return new CourseDesignator(courseId, part);
-                    }
-                }
-                else {
-                    yield return new CourseDesignator(courseId);
-                }
-            }
         }
 
         // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.

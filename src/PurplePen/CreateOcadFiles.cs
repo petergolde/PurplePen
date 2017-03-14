@@ -115,6 +115,8 @@ namespace PurplePen
             if (settings.AllCourses)
                 courseSelector.AllCoursesSelected = true;
 
+            courseSelector.VariationChoicesPerCourse = settings.VariationChoicesPerCourse;
+
             // Folder name
             otherDirectoryTextBox.Text = settings.outputDirectory;
 
@@ -149,6 +151,7 @@ namespace PurplePen
             // Courses.
             settings.CourseIds = courseSelector.SelectedCourses;
             settings.AllCourses = courseSelector.AllCoursesSelected;
+            settings.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
 
             // Which folder?
             settings.mapDirectory = mapDirectory.Checked;
