@@ -3503,11 +3503,11 @@ namespace PurplePen
         }
 
         // Add a new localization language for descriptions. This is a debug-level command.
-        public void AddDescriptionLanguage(SymbolLanguage symbolLanguage)
+        public void AddDescriptionLanguage(SymbolLanguage symbolLanguage, string langIdCopyFrom)
         {
             DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
 
-            localizer.AddLanguage(symbolLanguage, "en");
+            localizer.AddLanguage(symbolLanguage, langIdCopyFrom);
         }
 
         // Add new localized description texts permanently. This is a debug-level command.

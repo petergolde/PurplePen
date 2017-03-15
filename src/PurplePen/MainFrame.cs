@@ -2773,7 +2773,7 @@ namespace PurplePen
 
         private void addDescriptionLanguageMenu_Click(object sender, EventArgs e)
         {
-            DebugUI.NewLanguage newLanguageDialog = new NewLanguage();
+            DebugUI.NewLanguage newLanguageDialog = new NewLanguage(symbolDB);
 
             if (newLanguageDialog.ShowDialog(this) == DialogResult.OK) {
                 SymbolLanguage symLanguage = new SymbolLanguage(newLanguageDialog.LanguageName, newLanguageDialog.LangId, newLanguageDialog.PluralNouns, 
@@ -2781,7 +2781,7 @@ namespace PurplePen
                     newLanguageDialog.GenderModifiers ? newLanguageDialog.Genders.Split(new string[] {",", " "}, StringSplitOptions.RemoveEmptyEntries) : new string[0],
                     newLanguageDialog.CaseModifiers,
                     newLanguageDialog.CaseModifiers ? newLanguageDialog.Cases.Split(new string[] { ",", " " }, StringSplitOptions.RemoveEmptyEntries) : new string[0]);
-                controller.AddDescriptionLanguage(symLanguage);
+                controller.AddDescriptionLanguage(symLanguage, newLanguageDialog.CopyFromLangId);
                 controller.SetDescriptionLanguage(symLanguage.LangId);
             }
         }

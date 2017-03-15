@@ -9,11 +9,18 @@ using System.Globalization;
 
 namespace PurplePen.DebugUI
 {
-    public partial class NewLanguage: Form
+    partial class NewLanguage: Form
     {
+        SymbolDB symbolDB;
+
         public NewLanguage()
         {
             InitializeComponent();
+        }
+
+        public NewLanguage(SymbolDB symbolDB): this()
+        {
+            this.symbolDB = symbolDB;
         }
 
         public string LangId
@@ -56,6 +63,11 @@ namespace PurplePen.DebugUI
             get { return casesTextBox.Text;  }
         }
 
+        public string CopyFromLangId
+        {
+            get { return (string) copyFromComboBox.SelectedItem; }
+        }
+
 
         private void NewLanguage_Load(object sender, EventArgs e)
         {
@@ -66,6 +78,11 @@ namespace PurplePen.DebugUI
             pluralNounCheckBox_CheckedChanged(this, EventArgs.Empty);
             genderAdjectiveCheckBox_CheckedChanged(this, EventArgs.Empty);
             caseModifiersCheckBox_CheckedChanged(this, EventArgs.Empty);
+
+            foreach (SymbolLanguage lang in symbolDB.AllLanguages) {
+                copyFromComboBox.Items.Add(lang.LangId);
+            }
+            copyFromComboBox.SelectedItem = "en";
         }
 
         private void languageComboBox_SelectedIndexChanged(object sender, EventArgs e)

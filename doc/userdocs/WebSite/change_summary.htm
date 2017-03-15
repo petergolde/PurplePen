@@ -16,6 +16,48 @@
 
 <h1>Purple Pen Change Summary</h1>
 
+<h2>Changes in 3.0.0 Beta 3</h2>
+<h3>New features</h3>
+<ul>
+    <li>
+        <p><strong>Course Variations and Relays</strong></p>
+        <p>
+            Finish up support through the program. All reports now handle variations correctly. Course summary shows the length of every variation. 
+            Creating OCAD Files handles variations correctly.
+        </p>
+        <p>IOF XML export now includes leg assignments for relays if those have been defined.</p>
+        <p>When defining relay team assignments, you can assign specific legs to specific branches. For example, if there are four branches
+        and four legs, you could assign leg 4 to always run branch D, and have legs 1, 2, 3 vary among branches A, B, C.</p>
+    </li>
+    <li>
+        <p>
+            White out, lines, images, text, and all special objects can now be specifically added or removed from the all 
+            controls view.
+        </p>
+    </li>
+    <li>
+        <p>
+            The type of flagging to the finish can now be set separately for different courses that use the same finish control.
+        </p>
+    </li>
+    <li>
+        <p>
+            Event Audit now shows legs run in opposite order on different courses. Event Audit also shows if the same control
+            is used twice in a row or twice in the same score course.
+        </p>
+    </li>
+</ul>
+<h3>Bug Fixes</h3>
+<ul>
+    <li>Double clicking in the description area sometimes didn't show popup correctly. </li>
+    <li>PDF creation when the printing scale differs from the map scale sometimes didn't scale correctly.</li>
+    <li>Print area setting with map exchanges didn't always work correctly.</li>
+    <li>Map exchanges are not included in IOF XML version 2 export, for better compatibility.</li>
+    <li>When a PDF was the base map, in rare cases PDF export had objects displaced from their correct location.</li>
+</ul>
+
+
+
 <h2>Changes in 3.0.0 Beta 2</h2>
 <h3>New features</h3>
 <ul>

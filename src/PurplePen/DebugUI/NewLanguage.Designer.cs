@@ -41,6 +41,8 @@
             this.caseModifiersCheckBox = new System.Windows.Forms.CheckBox();
             this.casesLabel = new System.Windows.Forms.Label();
             this.casesTextBox = new System.Windows.Forms.TextBox();
+            this.copyFromComboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +102,7 @@
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(248, 244);
+            this.cancelButton.Location = new System.Drawing.Point(248, 292);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 5;
@@ -111,7 +113,7 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.okButton.Location = new System.Drawing.Point(167, 243);
+            this.okButton.Location = new System.Drawing.Point(167, 291);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 6;
@@ -179,13 +181,35 @@
             this.casesTextBox.Size = new System.Drawing.Size(234, 20);
             this.casesTextBox.TabIndex = 13;
             // 
+            // copyFromComboBox
+            // 
+            this.copyFromComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.copyFromComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.copyFromComboBox.FormattingEnabled = true;
+            this.copyFromComboBox.Location = new System.Drawing.Point(134, 248);
+            this.copyFromComboBox.Name = "copyFromComboBox";
+            this.copyFromComboBox.Size = new System.Drawing.Size(185, 21);
+            this.copyFromComboBox.Sorted = true;
+            this.copyFromComboBox.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Copy initial text from:";
+            // 
             // NewLanguage
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(336, 279);
+            this.ClientSize = new System.Drawing.Size(336, 327);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.copyFromComboBox);
             this.Controls.Add(this.casesTextBox);
             this.Controls.Add(this.casesLabel);
             this.Controls.Add(this.caseModifiersCheckBox);
@@ -230,5 +254,7 @@
         private System.Windows.Forms.CheckBox caseModifiersCheckBox;
         private System.Windows.Forms.Label casesLabel;
         private System.Windows.Forms.TextBox casesTextBox;
+        private System.Windows.Forms.ComboBox copyFromComboBox;
+        private System.Windows.Forms.Label label3;
     }
 }
