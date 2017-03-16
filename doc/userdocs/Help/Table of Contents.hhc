@@ -116,7 +116,7 @@
 				<param name="Local" value="FileSaveAs.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Create OCAD Files...">
+				<param name="Name" value="Create OCAD/OOM Files...">
 				<param name="Local" value="FileCreateOcadFiles.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
@@ -130,6 +130,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Create Data Interchange File (IOF XML)...">
 				<param name="Local" value="FileCreateXml.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create GPX File...">
+				<param name="Local" value="GpsCreateGPXFile.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Print Descriptions...">
@@ -217,72 +221,8 @@
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Event Menu">
-			<param name="Local" value="EventMenu.htm">
-			</OBJECT>
-		<UL>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Map File...">
-				<param name="Local" value="EventMapFile.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Change Control Codes...">
-				<param name="Local" value="ControlsChangeCodes.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Automatic Numbering...">
-				<param name="Local" value="ControlsAutomaticNumbering.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Remove Unused Controls...">
-				<param name="Local" value="EventRemoveUnusedControls.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Punch Patterns...">
-				<param name="Local" value="ControlsPunchPatterns.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Customize Description Text...">
-				<param name="Local" value="ControlsCustomizeDescriptionText.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Customize Appearance...">
-				<param name="Local" value="EventCustomizeCourseAppearance.htm">
-				</OBJECT>
-		</UL>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Course Menu">
-			<param name="Local" value="CourseMenu.htm">
-			</OBJECT>
-		<UL>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Add Course...">
-				<param name="Local" value="CourseAddCourse.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Delete Course">
-				<param name="Local" value="CourseDeleteCourse.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Duplicate Course...">
-				<param name="Local" value="CourseDuplicate.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Properties...">
-				<param name="Local" value="CourseProperties.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Course Order...">
-				<param name="Local" value="CourseCourseOrder.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Competitor Load...">
-				<param name="Local" value="CourseCompetitorLoad.htm">
-				</OBJECT>
-		</UL>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="Item Menu">
-			<param name="Local" value="ItemMenu.htm">
+			<param name="Name" value="Add Menu">
+			<param name="Local" value="AddMenu.htm">
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
@@ -385,6 +325,76 @@
 				<param name="Name" value="Add Text line...">
 				<param name="Local" value="ItemAddTextLine.htm">
 				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Event Menu">
+			<param name="Local" value="EventMenu.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Map File...">
+				<param name="Local" value="EventMapFile.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Change Control Codes...">
+				<param name="Local" value="ControlsChangeCodes.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Automatic Numbering...">
+				<param name="Local" value="ControlsAutomaticNumbering.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Remove Unused Controls...">
+				<param name="Local" value="EventRemoveUnusedControls.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Punch Patterns...">
+				<param name="Local" value="ControlsPunchPatterns.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Customize Description Text...">
+				<param name="Local" value="ControlsCustomizeDescriptionText.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Customize Appearance...">
+				<param name="Local" value="EventCustomizeCourseAppearance.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Course Menu">
+			<param name="Local" value="CourseMenu.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Add Course...">
+				<param name="Local" value="CourseAddCourse.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Delete Course">
+				<param name="Local" value="CourseDeleteCourse.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Duplicate Course...">
+				<param name="Local" value="CourseDuplicate.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Properties...">
+				<param name="Local" value="CourseProperties.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Course Order...">
+				<param name="Local" value="CourseCourseOrder.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Competitor Load...">
+				<param name="Local" value="CourseCompetitorLoad.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Item Menu">
+			<param name="Local" value="ItemMenu.htm">
+			</OBJECT>
+		<UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Delete">
 				<param name="Local" value="EditDelete.htm">
@@ -424,16 +434,6 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Change Displayed Courses...">
 				<param name="Local" value="EditChangeDisplayedCourses.htm">
-				</OBJECT>
-		</UL>
-		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="GPS Menu">
-			<param name="Local" value="GpsMenu.htm">
-			</OBJECT>
-		<UL>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Create GPX File...">
-				<param name="Local" value="GpsCreateGPXFile.htm">
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
