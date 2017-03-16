@@ -345,6 +345,9 @@ namespace PurplePen
 
         private void buttonChangeText_Click(object sender, EventArgs e)
         {
+            if (selectedId != null)
+                UpdateDataFromControls(selectedId);
+
             EnterSymbolText dialog = new EnterSymbolText(symbolDB);
 
             char kind = symbolDB[selectedId].Kind; 
