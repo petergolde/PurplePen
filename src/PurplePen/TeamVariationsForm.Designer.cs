@@ -39,9 +39,9 @@
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.upDownNumberOfTeams = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.fixedLegsLink = new System.Windows.Forms.LinkLabel();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.fixedLegsLink = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).BeginInit();
@@ -143,6 +143,14 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // fixedLegsLink
+            // 
+            resources.ApplyResources(this.fixedLegsLink, "fixedLegsLink");
+            this.tableLayoutPanel2.SetColumnSpan(this.fixedLegsLink, 3);
+            this.fixedLegsLink.Name = "fixedLegsLink";
+            this.fixedLegsLink.TabStop = true;
+            this.fixedLegsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.fixedLegsLink_LinkClicked);
+            // 
             // webBrowser
             // 
             this.webBrowser.AllowWebBrowserDrop = false;
@@ -154,14 +162,6 @@
             // 
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
-            // fixedLegsLink
-            // 
-            resources.ApplyResources(this.fixedLegsLink, "fixedLegsLink");
-            this.tableLayoutPanel2.SetColumnSpan(this.fixedLegsLink, 3);
-            this.fixedLegsLink.Name = "fixedLegsLink";
-            this.fixedLegsLink.TabStop = true;
-            this.fixedLegsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.fixedLegsLink_LinkClicked);
-            // 
             // TeamVariationsForm
             // 
             this.AcceptButton = this.buttonCalculate;
@@ -171,6 +171,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "CourseRelayTeamVariations.htm";
             this.Name = "TeamVariationsForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -373,6 +373,6 @@
     <value>AddForkDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.6.2.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.0.0.220, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

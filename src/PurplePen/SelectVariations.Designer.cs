@@ -184,6 +184,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxVariations);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "ChooseVariations.htm";
             this.Name = "SelectVariations";
             this.Controls.SetChildIndex(this.comboBoxVariations, 0);
             this.Controls.SetChildIndex(this.label1, 0);

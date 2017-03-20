@@ -109,6 +109,7 @@
             this.Controls.Add(this.radioButtonLoop);
             this.Controls.Add(this.radioButtonFork);
             this.Controls.Add(this.labelWhichType);
+            this.HelpTopic = "ItemAddVariation.htm";
             this.Name = "AddForkDialog";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);

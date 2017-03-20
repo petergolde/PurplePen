@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- #BeginTemplate "master.dwt" -->
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<link rel=stylesheet href="StyleSheet.css" type="text/css">
+<!-- #BeginEditable "doctitle" -->
+<title>Variations and Relays</title>
+<!-- #EndEditable -->
+</HEAD>
+<BODY>
+<!-- #BeginEditable "content" -->
+<h1>Variations and Relays</h1>
+<h2>Overview of Variations</h2>
+<p>Starting with version 3.0, Purple Pen supports courses with <strong>Variations.</strong></p>
+<p>Variations are often used in relay courses, so that teams can race head-to-head with a mass start, but reduces the ability
+of competitors to follow each other. Different team members run different variations, but as a whole each team runs the exactly same
+set of legs. Variations (especially loop variations) can also be used in single-person races.
+</p>
+<p>The simplest form of variation is a <strong>fork</strong>. The following diagram shows the simplest possible fork, with two variations: </p>
+<p><img src="Variation1.png" /></p>
+<p>There are two possible ways through the course: A and B. Variation A visits controls 31, 48, 36, 38. Variation B visits controls 31, 40, 43, 38. In 
+a two-person relay, one team can run variation A, then B, while another team runs variation B, then A.
+</p>
+<p>A more complex course can sequence two or more forks. This provides more possible ways throught the course. For example, consider the following course, with two forks:</p>
+<p><img src="Variation2.png" /></p>
+<p>There are four possible ways throught the course, which are designated by letter pairs of which branches to take. Variation AC 
+visits 31, 48, 36, 38, 50, 39. Variation AD visits 31, 48, 36, 38, 49, 39. Variation BC visits 31, 40, 43, 38, 50, 39. Variation 
+BC visits 31, 40, 43, 38, 49, 39.
+</p>
+<p>In a two person relay, the first leg can run any of the four variations, and the second leg runs
+the opposite branches (e.g., the first leg runs BC, and the second leg runs AD). Each team runs branches A, B, C, and D
+exactly once.
+</p>
+<p>More complex courses can be set up, included 3-way, 4-way, 5-way, etc. forks. It is even possible to 
+put a fork within a branch of another fork.
+</p>
+<p>The other basic kind of variation is a <strong>loop.</strong></p>
+<p>In a loop, the competitor returns back to one of the controls multiple times, making several loops.
+A competitor can run the loops in any order. Here is an example of a 3-way loop:
+</p>
+<p><img src="Variation3.png" /></p>
+<p>There are 6 possible orders to run this course in: ABC, ACB, BAC, BCA, CAB, CBA. For example, Variation CAB runs the 
+controls in the order: 31, 52, 43, 42, 31, 46, 33, 32, 31, 40, 32, 31, 35, 36. No matter which order the loops 
+are run, the course is completely fair.</p>
+<h2>Creating and Editing Variations in Purple Pen</h2>
+<p>To create a course with variations, first insert the start and finish, and any fixed controls that should be on all variations. 
+Then click on the control where the fork or loop should start, and click "Add Variation" from the toolbar.
+</p>
+<p>Once you create a fork or loop, the left hand pane will switch to displaying the <a href="ControlOrderingPane.htm">Course Ordering.</a>
+You can use this to select different branches and insert controls on them.
+</p>
+<p>When working with a course that uses variations, you can switch between variations using the gray bar directly above
+the map:</p>
+<p><img src="CourseVariationsSwitcher.png" /></p>
+<p>Using this, you can display any variation of the course, or "All Variations", which displays all variations together.</p>
+<p>When printing (or exporting the courses to PDFs or OCAD files), you can select which variations that you wish to print.Select the course, with variations, then click the &quot;Variations&quot; button to select which variations to print.</p>
+<p><img src="PrintVariations.png" /></p>
+<h2>Assigning Variations to Relay Teams</h2>
+<p>If you are holding a relay, you will wish to assign variations to team members so that every team runs
+the exact same legs, and to vary the assignments to minimized the possibility of following. Purple Pen can help
+by assigning course variations to teams in a fair, randomized manner. Simply choose the <a href="CourseRelayTeamVariations.htm">Course/Relay Team Variations</a> command,
+and choose the number of teams and the number of legs on each team. Click "Assign Variations", and Purple Pen will
+pick a fair distribution of variations.
+</p>
+<!-- #EndEditable -->
+</BODY>
+<!-- #EndTemplate -->
+</HTML>

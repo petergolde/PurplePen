@@ -538,7 +538,7 @@
     <value>713, 587</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Assign Team Variations</value>
+    <value>Relay Team Variations</value>
   </data>
   <data name="&gt;&gt;saveFileDialog.Name" xml:space="preserve">
     <value>saveFileDialog</value>
