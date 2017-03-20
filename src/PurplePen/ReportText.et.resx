@@ -138,6 +138,9 @@
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Rada</value>
   </data>
+  <data name="ColumnHeader_Courses" xml:space="preserve">
+    <value>Rajad</value>
+  </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Pikkus</value>
   </data>

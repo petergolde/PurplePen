@@ -553,6 +553,27 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="TooManyVariations" xml:space="preserve">
     <value>Radalla on liian monta hajontavariaatiota. Erillisten hajontavariaatioiden määrä on rajoitettu {0}:een.</value>
   </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Hajontaa ei voi lisätä.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>Tällä rastilla on jo hajonta.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Valitse rasti tai rastiväli lisätäksesi hajonta.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Maaliin ei voi lisätä hajontaa.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Hajontaa ei voi lisätä Kaikki rastit -näkymässä.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Hajontaa ei voi lisätä pistesuunnistusradalle.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Hajontaa ei voi lisätä viimeiselle rastille. Lisää maali ensin.</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
   </data>

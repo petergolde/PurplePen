@@ -174,9 +174,6 @@
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
     <value>Üks raja kohta</value>
   </data>
-  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>Üks raja osa kohta</value>
-  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Failid</value>
   </data>

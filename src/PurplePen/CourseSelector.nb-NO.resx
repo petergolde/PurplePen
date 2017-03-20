@@ -123,4 +123,7 @@
   <data name="selectNone.Text" xml:space="preserve">
     <value>Ingen</value>
   </data>
+  <data name="buttonChooseVariations.Text" xml:space="preserve">
+    <value>Velg varianter:</value>
+  </data>
 </root>

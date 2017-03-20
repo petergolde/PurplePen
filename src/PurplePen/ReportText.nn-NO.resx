@@ -138,6 +138,9 @@
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Løype</value>
   </data>
+  <data name="ColumnHeader_Courses" xml:space="preserve">
+    <value>Løyper</value>
+  </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Distanse</value>
   </data>

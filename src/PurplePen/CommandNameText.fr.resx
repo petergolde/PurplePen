@@ -285,4 +285,16 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Dupliquer le circuit</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Créer {0} &amp;Fichier(s)</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Ajouter une variation</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Supprimer Fourche/Boucle</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Variations équipe de relais</value>
+  </data>
 </root>

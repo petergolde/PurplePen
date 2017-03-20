@@ -138,6 +138,9 @@
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>路线</value>
   </data>
+  <data name="ColumnHeader_Courses" xml:space="preserve">
+    <value>课程</value>
+  </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>距离</value>
   </data>

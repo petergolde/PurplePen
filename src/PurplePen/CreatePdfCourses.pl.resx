@@ -174,9 +174,6 @@
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
     <value>Jeden na każdą trasę</value>
   </data>
-  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>Jeden na każdą część trasy</value>
-  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Pliki</value>
   </data>

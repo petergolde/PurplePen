@@ -138,6 +138,9 @@
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Trasa</value>
   </data>
+  <data name="ColumnHeader_Courses" xml:space="preserve">
+    <value>Trasy</value>
+  </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Odległość</value>
   </data>

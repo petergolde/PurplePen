@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Partie de circuit</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Variation de circuit</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Longueur du circuit</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Echelle d'impression</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Equipe relais</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Numéro du relais</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Présentation</value>

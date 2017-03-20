@@ -126,6 +126,9 @@
   <data name="waypointGroupBox.Text" xml:space="preserve">
     <value>Veipunkt</value>
   </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>En GPX fil inneholder GPS koordinater for poster og kan lastes inn på GPS eller smartelefon for å verifisere korrekt postplassering.</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Lag GPX fil</value>
   </data>

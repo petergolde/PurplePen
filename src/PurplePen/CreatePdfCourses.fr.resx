@@ -175,7 +175,7 @@
     <value>Un par circuit</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>Un par partie de circuit</value>
+    <value>Un par partie de circuit/variation</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Fichiers</value>

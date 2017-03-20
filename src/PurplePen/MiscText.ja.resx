@@ -553,6 +553,27 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="TooManyVariations" xml:space="preserve">
     <value>このコースではバリエーションが多すぎます。バリエーション数の上限は {0} です。</value>
   </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>バリエーションを追加できません。</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>このコントロールにすでにバリエーションが存在します。</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>バリエーションを追加するにはコントロールまたはレッグを選択する必要があります。</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>バリエーションはフィニッシュコントロールには追加できません。</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>[全コントロール]ビューではバリエーションを追加できません。</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>スコア-Oのコースではバリエーションを追加できません。</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>バリエーションは最後のコントロールに追加できません。先にフィニッシュコントロールを追加してください。</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
   </data>

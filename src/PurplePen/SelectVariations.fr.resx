@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Chaque variation séparemment</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Chaque circuit de relais séparemment</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Toutes les variations combinées</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variations :</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Afficher toutes les fourches ensembles sur une seule carte.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Une carte pour chaque variation possible durant la totalité du circuit.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Une carte pour chaque circuit de relais pour l'équipe de relais choisie.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Vous devez d'abord définir les équipes de relais en sélectionnant "Variations d'équipes de relais..." dans le menu "Circuit".</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Sélectionner les variations individuelles</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>{0} équipe(s) de relais sont affectée(s) à ce circuit. Utilisez "Variations d'équipes de relais..." dans le menu "Circuit" pour modifier le nombre d'équipes.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>à</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Sélectionnez l'équipe à imprimer/exporter</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Choisir les variations</value>
+  </data>
 </root>

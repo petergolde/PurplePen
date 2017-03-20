@@ -120,6 +120,12 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Alle poster</value>
   </data>
+  <data name="radioButtonDescriptions.Text" xml:space="preserve">
+    <value>Beskrivelser</value>
+  </data>
+  <data name="radioButtonTopology.Text" xml:space="preserve">
+    <value>Rekkefølge</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen filer|*.ppen|Alle filer|*.*</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Lag data &amp;Utvekslingsfil (IOF XML)...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Lag GPX fil...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Skriv ut postbeskrivelser</value>
@@ -252,6 +261,9 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Kartkvalitet</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Vis utskriftsområde</value>
+  </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
     <value>Vis Popup informasjon</value>
   </data>
@@ -261,14 +273,29 @@
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Vis</value>
   </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>&amp;post</value>
+  </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
     <value>&amp;Fullfør</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;beskrivelser</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Kartbytte ved kontrollpost</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>Merket rute til kartbytte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Kartbytte</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>&amp;Variant</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Tekst &amp;Linje...</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>
@@ -312,6 +339,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Firkant</value>
   </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Legg til</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Kartfil...</value>
   </data>
@@ -330,6 +360,9 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Tilpass &amp;beskrivelsestekst</value>
   </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Tilpass &amp;Utseende</value>
+  </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>&amp;Arrangement</value>
   </data>
@@ -339,17 +372,29 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>&amp;Slett løype</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>Kopier løype...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Egenskaper …</value>
   </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Løype &amp;Rekkefølge...</value>
+  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Antall deltakere</value>
+  </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>Stafett lag &amp;Varianter...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Løype</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Slett</value>
+  </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>Slett gafling/sommerfugl</value>
   </data>
   <data name="addBendMenu.Text" xml:space="preserve">
     <value>Legg til &amp;bend</value>
@@ -587,6 +632,9 @@
   </data>
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X:-999.99 Y:-999.99</value>
+  </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML versjon 2.0.3|*.xml|IOF XML versjon 3.0|*.xml</value>
   </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Lag en XML-fil for eksport</value>

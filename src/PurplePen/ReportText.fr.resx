@@ -138,6 +138,9 @@
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>Circuit</value>
   </data>
+  <data name="ColumnHeader_Courses" xml:space="preserve">
+    <value>Circuits</value>
+  </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Distance</value>
   </data>
@@ -240,6 +243,12 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Moyenne</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} postes, {2}, {3} m de dénivelée)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1}postes, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Longueur des interpostes pour {0}</value>
   </data>
@@ -260,5 +269,20 @@
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>ATTENTION :</value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Attention : compte tenu du nombre de circuits de relais précisé, la fourche au poste {0} ne sera pas utilisée de manière équitable.  {1} circuit(s) de relais utilisera(ont) la(les) branche(s) {2}, alors que {3} circuit(s) de relais utilisera(ont) la(les) branche(s) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Circuit de relais {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Aucune équipe de relais n'a été définie pour le moment. Sélectionnez le nombre d'équipes et de relayeurs désiré et cliquez sur le bouton "Affecter Variation"</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Equipe {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Affectation de relais pour {0}</value>
   </data>
 </root>

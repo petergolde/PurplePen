@@ -282,4 +282,13 @@
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Endre strek utseende</value>
   </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Kopier løype</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Slett gafling/sommerfugl</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Stafettvarianter</value>
+  </data>
 </root>

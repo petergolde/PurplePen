@@ -175,7 +175,7 @@
     <value>En for hver løype</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>En for hver løypedel</value>
+    <value>En per løype del/variant</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Filer</value>

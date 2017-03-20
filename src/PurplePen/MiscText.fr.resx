@@ -424,6 +424,12 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Les Définitions ne peuvent pas être ajoutées à un circuit comportant un échange de carte si "Toutes les Parties" est affiché. Basculez sur la partie pour laquelle vous souhaitez ajoutez les définitions, puis choisissez de nouveau l'option "Ajouter Définitions".</value>
   </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe non trouvé</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF converter a échoué lors de la lecture du fichier PDF</value>
+  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Impossible de lire le résultat de la conversion PDF depuis le fichier '{0}'</value>
   </data>
@@ -525,6 +531,48 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Impression de "{0}" terminée. Cliquez sur OK pour démarrer l'impression de "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Toutes les variations</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Adapté pour une utilisation dans des relais avec {0} participants par équipe</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Le poste central dans la boucle sera visité {0} fois. Il y a {1} chemins possibles à travers les boucles.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>Un contrôle qui débute une fourche ou une boucle ne peut pas être déplacé à un nouvel endroit dans le circuit.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Le nombre total de variations pour ce circuit est trop élevé. Le nombre de variations distinctes est limité à {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Impossible d'ajouter une variation.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>Une variation existe déjà à ce poste.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Un poste ou un numéro de relais doit être sélectionné pour ajouter une variation.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Une variation ne peut pas être ajoutée à un poste Arrivée</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Une variation ne peut pas être ajoutée dans la vue Tous Postes.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Une variation ne peut pas être ajoutée à un circuit Au Score.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Une variation ne peut pas être ajoutée au dernier poste. Ajouter un poste Arrivée d'abord.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>

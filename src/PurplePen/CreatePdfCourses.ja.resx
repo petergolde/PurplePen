@@ -175,7 +175,7 @@
     <value>1個 / コース</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>コースパートごとに一つ</value>
+    <value>コースパート/バリエーションにつき1つ</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>ファイル</value>

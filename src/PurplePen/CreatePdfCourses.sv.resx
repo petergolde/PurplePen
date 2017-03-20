@@ -174,9 +174,6 @@
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
     <value>En per bana</value>
   </data>
-  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>En per del av bana</value>
-  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Filer</value>
   </data>

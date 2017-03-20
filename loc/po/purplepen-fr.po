@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-02-18 14:24-08:00\n"
+"POT-Creation-Date: 2017-03-20 13:32-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © by Peter Golde"
-msgstr ""
+msgstr "Copyright © par Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -203,70 +203,71 @@ msgstr "Nouveau circuit"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr ""
+msgstr "Quel type de variation souhaitez-vous ajouter ?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
-msgstr ""
+msgstr "Fourche"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
-msgstr ""
+msgstr "Boucle"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
-msgstr ""
+msgstr "Nombre de branches :"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items1
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items2
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items3
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items4
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items5
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items6
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items7
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items8
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #: AddForkDialog.resx, labelNumberLoops.Text
 msgid "Number of loops:"
-msgstr ""
+msgstr "Nombre de boucles :"
 
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
 "different ways through the loops."
-msgstr ""
+msgstr "Le poste de la boucle sera visité 4 fois. Il y a 24 "
+"parcours différents à travers les boucles."
 
 #: AddForkDialog.resx, $this.Text
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr ""
+msgstr "Ajouter une variation"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
@@ -403,7 +404,12 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Tous les fichiers "
+"cartes|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*"
+".bmp;*.png;*.gif|fichiers OCAD (*.ocd)|*.ocd|fichiers Open "
+"Orienteering Mapper|*.omap;*.xmap|fichiers PDF "
+"(*.pdf)|*.pdf|fichiers "
+"Image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -454,7 +460,7 @@ msgstr "Partie de circuit"
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr ""
+msgstr "Variation de circuit"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -475,11 +481,11 @@ msgstr "Echelle d'impression"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
-msgstr ""
+msgstr "Equipe relais"
 
 #: ChangeText.resx, relayLegMenuItem.Text
 msgid "Relay Leg"
-msgstr ""
+msgstr "Numéro du relais"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -762,15 +768,16 @@ msgstr "Dupliquer le circuit"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr ""
+msgstr "Créer {0} &Fichier(s)"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"
-msgstr ""
+msgstr "Supprimer Fourche/Boucle"
 
 #: CommandNameText.resx, RelayTeamVariations
+#: TeamVariationsForm.resx, $this.Text
 msgid "Relay Team Variations"
-msgstr ""
+msgstr "Variations équipe de relais"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
@@ -883,7 +890,7 @@ msgstr "Nombre de concurrents sur le circuit"
 
 #: CoursePartBanner.resx, variationsLabel.Text
 msgid "Course Variation: "
-msgstr ""
+msgstr "Variation de circuit : "
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -891,7 +898,7 @@ msgstr "Propriétés…"
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part: "
-msgstr ""
+msgstr "Partie du circuit : "
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -918,7 +925,7 @@ msgstr "Aucun"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
-msgstr ""
+msgstr "Choisir les variations..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
@@ -926,6 +933,7 @@ msgstr ""
 #: PrintCourses.resx, coursesGroupBox.Text
 #: PrintDescriptions.resx, coursesGroupBox.Text
 #: PrintPunches.resx, coursesGroupBox.Text
+#: ReportText.resx, ColumnHeader_Courses
 msgid "Courses"
 msgstr "Circuits"
 
@@ -1075,7 +1083,7 @@ msgstr "Un par circuit"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
-msgstr "Un par partie de circuit"
+msgstr "Un par partie de circuit/variation"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
@@ -1167,7 +1175,7 @@ msgstr "Genre"
 
 #: EnterSymbolText.resx, caseColumn.HeaderText
 msgid "Case"
-msgstr ""
+msgstr "Case"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
@@ -1189,11 +1197,11 @@ msgstr "Genre :"
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "Case du symbole modifié :"
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "Afficher les formes de case"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1230,6 +1238,28 @@ msgstr "Faire un don"
 #: InitialScreen.resx, $this.Text
 msgid "Welcome to Purple Pen"
 msgstr "Bienvenue sur Purple Pen"
+
+#: LegAssignmentsDialog.resx, BranchColumn.HeaderText
+msgid "Branch"
+msgstr ""
+
+#: LegAssignmentsDialog.resx, LegsColumn.HeaderText
+msgid "Legs"
+msgstr ""
+
+#: LegAssignmentsDialog.resx, labelDescription.Text
+msgid "To assign a specific leg to a specific branch, type the "
+"leg number(s) below. Legs not assigned to a branch will be "
+"distributed among remaining branches randomly."
+msgstr ""
+
+#: LegAssignmentsDialog.resx, linkLabel.Text
+msgid "More information..."
+msgstr ""
+
+#: LegAssignmentsDialog.resx, $this.Text
+msgid "Leg Assignments"
+msgstr ""
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -1282,15 +1312,15 @@ msgstr "Tous Postes"
 
 #: MainFrame.resx, radioButtonDescriptions.Text
 msgid "Descriptions"
-msgstr ""
+msgstr "Descriptions"
 
 #: MainFrame.resx, radioButtonTopology.Text
 msgid "Ordering"
-msgstr ""
+msgstr "Ordre de tri"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "mapViewerTopology"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1334,7 +1364,7 @@ msgstr "Créer Fichier &Interchange XML..."
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
-msgstr ""
+msgstr "Créer Fichier G&PX..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1494,11 +1524,11 @@ msgstr "&Affichage"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr ""
+msgstr "&Démarrer"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr ""
+msgstr "&Poste"
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
@@ -1507,7 +1537,7 @@ msgstr "&Terminer"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr ""
+msgstr "&Descriptions"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1519,15 +1549,15 @@ msgstr "Parcours &Balisé vers Echange de Carte"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
-msgstr ""
+msgstr "E&change de carte"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
-msgstr ""
+msgstr "&Variation..."
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr ""
+msgstr "Texte &Ligne..."
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1606,7 +1636,7 @@ msgstr "Rectangle"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
-msgstr ""
+msgstr "&Ajouter"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1666,7 +1696,7 @@ msgstr "&Nombre de Concurrents..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
-msgstr ""
+msgstr "Variations équipe de relais"
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1674,7 +1704,7 @@ msgstr "&Circuit"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
-msgstr ""
+msgstr "Supprimer Fourche/Boucle"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -1925,7 +1955,7 @@ msgstr "X : -999.99 Y : -999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
-msgstr ""
+msgstr "XML IOF version 2.0.3|*.xml|XML IOF version 3.0|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
@@ -2409,11 +2439,12 @@ msgstr "Les Définitions ne peuvent pas être ajoutées à un circuit "
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe non trouvé"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr ""
+msgstr "Pdfium PDF converter a échoué lors de la lecture du "
+"fichier PDF"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
@@ -2570,62 +2601,82 @@ msgstr "Impression de \"{0}\" terminée. Cliquez sur OK pour démarrer "
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "Toutes les variations"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "Adapté pour une utilisation dans des relais avec {0} "
+"participants par équipe"
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "Le poste central dans la boucle sera visité {0} fois. Il y "
+"a {1} chemins possibles à travers les boucles."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "Un contrôle qui débute une fourche ou une boucle ne peut "
+"pas être déplacé à un nouvel endroit dans le circuit."
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr ""
+msgstr "Le nombre total de variations pour ce circuit est trop "
+"élevé. Le nombre de variations distinctes est limité à {0}."
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "Impossible d'ajouter une variation."
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "Une variation existe déjà à ce poste."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "Un poste ou un numéro de relais doit être sélectionné pour "
+"ajouter une variation."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "Une variation ne peut pas être ajoutée à un poste Arrivée"
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Une variation ne peut pas être ajoutée dans la vue Tous "
+"Postes."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Une variation ne peut pas être ajoutée à un circuit Au "
+"Score."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
+msgstr "Une variation ne peut pas être ajoutée au dernier poste. "
+"Ajouter un poste Arrivée d'abord."
+
+#: MiscText.resx, BadLegNumber
+msgid "'{0}' is not a valid leg number for branch '{1}'"
+msgstr ""
+
+#: MiscText.resx, LegNotAssigned
+msgid "Leg {0} should be assigned to one of branches {1}"
+msgstr ""
+
+#: MiscText.resx, LegUsedTwice
+msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2883,7 +2934,7 @@ msgstr "Confirmer le remplacement des fichiers"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr ""
+msgstr "PDFium PDF converter est en cours de lecture de votre PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
@@ -3190,6 +3241,10 @@ msgstr "Motif"
 msgid "Same symbol?"
 msgstr "Symbole identique ?"
 
+#: ReportText.resx, ColumnHeader_Visits
+msgid "Visits"
+msgstr ""
+
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
 msgstr "Synthèse du circuit pour {0}"
@@ -3197,6 +3252,10 @@ msgstr "Synthèse du circuit pour {0}"
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
 msgstr "Contrôle croisé pour {0}"
+
+#: ReportText.resx, EventAudit_BothDirectionsLegs
+msgid "Legs Run in Both Directions"
+msgstr ""
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3285,6 +3344,18 @@ msgstr "Non"
 msgid "No problems found."
 msgstr "Aucun problème trouvé."
 
+#: ReportText.resx, EventAudit_RepeatControl
+msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
+msgstr ""
+
+#: ReportText.resx, EventAudit_RepeatedControls
+msgid "Repeated Controls"
+msgstr ""
+
+#: ReportText.resx, EventAudit_ScoreDuplicateControl
+msgid "Score course \"{0}\" contains control \"{1}\" twice. "
+msgstr ""
+
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
 msgstr "Audit de la course pour {0}"
@@ -3317,15 +3388,21 @@ msgstr "Moyenne"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr ""
+msgstr "{0} ({1} postes, {2}, {3} m de dénivelée)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr ""
+msgstr "{0} ({1}postes, {2})"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
 msgstr "Longueur des interpostes pour {0}"
+
+#: ReportText.resx, Load_ButterflyExists
+msgid "Some controls are visited multiple times on the same "
+"course. The second load number counts each visit to a "
+"control separately."
+msgstr ""
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
@@ -3356,33 +3433,53 @@ msgstr "(seules les interpostes utilisés sur plus d'un circuit "
 msgid "Competitor Load Summary for {0}"
 msgstr "Synthèse du nombre de concurrents pour {0}"
 
+#: ReportText.resx, Load_VariationsExist
+msgid "One or more courses has variations. Load numbers will be "
+"computed assuming that competitors are evenly distributed "
+"between forks."
+msgstr ""
+
+#: ReportText.resx, Load_Visit
+msgid "({0} visits)"
+msgstr ""
+
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
 msgstr "ATTENTION :"
+
+#: ReportText.resx, Note
+msgid "NOTE: "
+msgstr ""
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "Attention : compte tenu du nombre de circuits de relais "
+"précisé, la fourche au poste {0} ne sera pas utilisée de "
+"manière équitable.  {1} circuit(s) de relais "
+"utilisera(ont) la(les) branche(s) {2}, alors que {3} "
+"circuit(s) de relais utilisera(ont) la(les) branche(s) {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "Circuit de relais {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "Aucune équipe de relais n'a été définie pour le moment. "
+"Sélectionnez le nombre d'équipes et de relayeurs désiré et "
+"cliquez sur le bouton \"Affecter Variation\""
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "Equipe {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "Affectation de relais pour {0}"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3556,58 +3653,64 @@ msgstr "Longueur calculée :"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "Chaque variation séparemment"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Chaque circuit de relais séparemment"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Toutes les variations combinées"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Variations :"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "Afficher toutes les fourches ensembles sur une seule carte."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "Une carte pour chaque variation possible durant la "
+"totalité du circuit."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "Une carte pour chaque circuit de relais pour l'équipe de "
+"relais choisie."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "Vous devez d'abord définir les équipes de relais en "
+"sélectionnant \"Variations d'équipes de relais...\" dans le "
+"menu \"Circuit\"."
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Sélectionner les variations individuelles"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "{0} équipe(s) de relais sont affectée(s) à ce circuit. "
+"Utilisez \"Variations d'équipes de relais...\" dans le menu "
+"\"Circuit\" pour modifier le nombre d'équipes."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "à"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Sélectionnez l'équipe à imprimer/exporter"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Choisir les variations"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3849,12 +3952,12 @@ msgstr ""
 msgid "Number of teams:"
 msgstr ""
 
-#: TeamVariationsForm.resx, saveFileDialog.Filter
-msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
+#: TeamVariationsForm.resx, fixedLegsLink.Text
+msgid "Assign fixed legs to branches..."
 msgstr ""
 
-#: TeamVariationsForm.resx, $this.Text
-msgid "Assign Team Variations"
+#: TeamVariationsForm.resx, saveFileDialog.Filter
+msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
 msgstr ""
 
 #: UnusedControls.resx, okButton.Text

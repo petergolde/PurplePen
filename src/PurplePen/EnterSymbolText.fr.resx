@@ -123,6 +123,9 @@
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>Genre</value>
   </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Case</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Texte</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Genre :</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Case du symbole modifié :</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Afficher les formes de case</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Texte personnalisé pour le symbole</value>

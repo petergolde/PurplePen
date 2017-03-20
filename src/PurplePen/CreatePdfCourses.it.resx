@@ -171,9 +171,6 @@
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
     <value>Uno per percorso</value>
   </data>
-  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>Uno per parte di percorso</value>
-  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Files</value>
   </data>

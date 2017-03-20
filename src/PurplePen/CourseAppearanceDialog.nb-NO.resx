@@ -171,6 +171,9 @@
   <data name="groupBoxPurple.Text" xml:space="preserve">
     <value>Lilla farge</value>
   </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Bland purpur med underliggende kartfarger</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Svart:</value>
   </data>
@@ -200,6 +203,15 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Farge:</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD kart</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Bruk overtrykk for farger markert med "overtrykk".</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tilpass utseende</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Fargevelger...</value>

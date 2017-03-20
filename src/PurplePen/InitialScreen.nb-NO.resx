@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Åpne et eksisterende arrangenment</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen er fri programvare og kan kopieres og deles. Utvilking er kun støttet av frivillige donasjoner.</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>Gi et bidrag</value>
   </data>

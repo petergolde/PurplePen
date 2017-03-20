@@ -231,6 +231,9 @@ Bruk | for å skille rader</value>
     <value>Skriv inn ny symbolforklaring
 (påvirker all løyper)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Skriv ny tekst</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Postene {0} brukes ikke lengre i noen løyper. Vil du slette disse postene?</value>
   </data>
@@ -420,6 +423,12 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>Postbeskrivelsene er kanskje ikke lagt til ved kart bytte hvis "Alle deler" er vist. Bytt til den delen du vil legge til postbeskrivelsen og velg "Legg til beskrivelser" igjen.</value>
   </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>"PdfConverter.exe" ikke funnet</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>"Pdfium PDF" konvertering klarte ikke lese PDF filen</value>
+  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunne ikke lese resultatet av PDF konvertering fra fil '{0}'</value>
   </data>
@@ -494,6 +503,21 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   </data>
   <data name="GpxMustBeOcadMap" xml:space="preserve">
     <value>Kartfilen må være en OCAD fil for å bruke GPX filer.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD filen må ha et koordinatsystem for å kunne bruke GPX filer.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCAD filen må være georeferert for å kunne bruke GPX filer</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCAD filen bruker et ikke koordinatsystem som ikke er støttet av Purple Pen</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Kopier løype</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
