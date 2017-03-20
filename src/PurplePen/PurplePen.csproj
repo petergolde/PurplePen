@@ -780,7 +780,49 @@
     <EmbeddedResource Include="AddCourse.sv.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.bg.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.de.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.es.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.et.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.fi.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.fr.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.hu.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.ja.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.nb-NO.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.nn-NO.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.pl.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddForkDialog.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.ro.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.sv.resx">
+      <DependentUpon>AddForkDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddForkDialog.zh-CN.resx">
       <DependentUpon>AddForkDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTextLine.bg.resx">
@@ -3201,7 +3243,49 @@
     <EmbeddedResource Include="SelectionDescriptionText.sv.resx">
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.bg.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.de.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.es.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.et.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.fi.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.fr.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.hu.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.ja.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.nb-NO.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.nn-NO.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.pl.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectVariations.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.ro.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.sv.resx">
+      <DependentUpon>SelectVariations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectVariations.zh-CN.resx">
       <DependentUpon>SelectVariations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SetPrintAreaDialog.bg.resx">
@@ -3334,7 +3418,49 @@
     <EmbeddedResource Include="StatusBarText.sv.resx">
       <DependentUpon>StatusBarText.resx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.bg.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.de.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.es.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.et.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.fi.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.fr.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.hu.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.ja.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.nb-NO.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.nn-NO.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.pl.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeamVariationsForm.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.ro.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.sv.resx">
+      <DependentUpon>TeamVariationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamVariationsForm.zh-CN.resx">
       <DependentUpon>TeamVariationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TitleDetailButton.bg.resx">
