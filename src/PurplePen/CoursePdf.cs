@@ -64,8 +64,6 @@ namespace PurplePen
         private CourseAppearance appearance;
         private RectangleF mapBounds;  // bounds of the map, in map coordinates.
         private string sourcePdfMapFileName;
-        private PdfImporter pdfImporter;
-        private PdfPage pdfMapPage;
         private int totalPages, currentPage;
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
@@ -110,12 +108,13 @@ namespace PurplePen
         public void CreatePdfs()
         {
             List<Pair<string, IEnumerable<CourseDesignator>>> fileList = GetFilesToCreate();
-            pdfImporter = null;
 
+            // Test that we can read the page. We don't keep the page around, because there are weird
+            // bugs that occur if we do.
             if (IsPdfMap) {
-                pdfImporter = new PdfImporter(sourcePdfMapFileName);
+                PdfImporter pdfImporter = new PdfImporter(sourcePdfMapFileName);
                 try {
-                    pdfMapPage = pdfImporter.GetPage(0);
+                    PdfPage pdfMapPage = pdfImporter.GetPage(0);
                 }
                 catch (Exception) {
                     // We couldn't import the page. Fall back to normal map rendering methods.
@@ -137,11 +136,6 @@ namespace PurplePen
                 }
             }
             finally {
-                if (pdfImporter != null) {
-                    pdfImporter.Dispose();
-                    pdfImporter = null;
-                }
-
                 controller.EndProgressDialog();
             }
         }
@@ -209,12 +203,17 @@ namespace PurplePen
                     throw new Exception(MiscText.CancelledByUser);
 
                 IGraphicsTarget grTarget;
+                PdfImporter pdfImporter = null;
 
                 if (IsPdfMap) {
+                    // We need to re-obtain a PdfImporter every time, or else very strange bugs start to crop up.
+
+                    pdfImporter = new PdfImporter(sourcePdfMapFileName);
+
                     float scaleRatio = CourseView.CreatePrintingCourseView(eventDB, page.courseDesignator).ScaleRatio;
                     if (scaleRatio == 1.0) {
                         // If we're doing a PDF at scale 1, we just copy the page directly.
-                        grTarget = pdfWriter.BeginCopiedPage(pdfMapPage);
+                        grTarget = pdfWriter.BeginCopiedPage(pdfImporter, 0);
                         pageToDraw = PdfNonScaledPage(page.courseDesignator);
                     }
                     else {
@@ -239,6 +238,11 @@ namespace PurplePen
                 DrawPage(grTarget, pageToDraw);
                 pdfWriter.EndPage(grTarget);
                 grTarget.Dispose();
+
+                if (pdfImporter != null) {
+                    pdfImporter.Dispose();
+                    pdfImporter = null;
+                }
 
                 currentPage += 1;
             }

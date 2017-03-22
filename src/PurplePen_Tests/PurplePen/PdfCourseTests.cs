@@ -490,6 +490,32 @@ namespace PurplePen.Tests
 
         }
 
+        [TestMethod]
+        public void PdfCreationPdfBaseMap2()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\pdf_create9");
+            settings.CourseIds = new Id<Course>[] { CourseId(0), CourseId(1), CourseId(2), CourseId(3) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = true;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\St Pauls Week 4.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create9\\All Controls.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create9\\Short.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create9\\Medium.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create9\\Long.pdf")},
+                new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create9\\All Controls_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create9\\Short_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create9\\Medium_expected.png"),
+                               TestUtil.GetTestFile("pdfcourse\\pdf_create9\\Long_expected.png")});
+
+        }
+
 
         [TestMethod]
         public void PdfCreationPdfBaseMapRGB()

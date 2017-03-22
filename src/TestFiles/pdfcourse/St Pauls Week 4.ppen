@@ -1,0 +1,209 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Week 4</title>
+    <map kind="PDF" scale="4000">..\ST_Pauls_school_bald_hills_4000 Gordon v10.5.pdf</map>
+    <all-controls print-scale="4000" description-kind="text" />
+    <print-area automatic="true" restrict-to-page-size="true" left="14.1820679" top="282.701965" right="210.016068" bottom="-3.05175781E-05" page-width="827" page-height="1169" page-margins="28" page-landscape="false" />
+    <numbering start="51" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en-AU" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="normal">
+    <code>31</code>
+    <location x="142.151764" y="185.420868" />
+    <description box="D" iof-2004-ref="6.1" />
+  </control>
+  <control id="2" kind="normal">
+    <code>32</code>
+    <location x="82.7223053" y="187.387955" />
+    <description box="D" iof-2004-ref="4.9" />
+  </control>
+  <control id="3" kind="normal">
+    <code>33</code>
+    <location x="77.1884842" y="137.532639" />
+    <description box="D" iof-2004-ref="6.1" />
+  </control>
+  <control id="4" kind="normal">
+    <code>34</code>
+    <location x="96.83927" y="134.359009" />
+    <description box="D" iof-2004-ref="5.9" />
+  </control>
+  <control id="5" kind="normal">
+    <code>35</code>
+    <location x="89.9419861" y="89.85423" />
+    <description box="D" iof-2004-ref="5.9" />
+  </control>
+  <control id="6" kind="normal">
+    <code>36</code>
+    <location x="111.774612" y="109.850121" />
+    <description box="D" iof-2004-ref="5.24" />
+  </control>
+  <control id="7" kind="normal">
+    <code>37</code>
+    <location x="157.575745" y="102.812416" />
+    <description box="D" iof-2004-ref="4.9" />
+  </control>
+  <control id="8" kind="normal">
+    <code>38</code>
+    <location x="202.01207" y="79.07424" />
+    <description box="D" iof-2004-ref="4.9" />
+  </control>
+  <control id="9" kind="normal">
+    <code>39</code>
+    <location x="201.241425" y="130.109055" />
+    <description box="D" iof-2004-ref="4.9" />
+  </control>
+  <control id="10" kind="normal">
+    <code>40</code>
+    <location x="131.3425" y="134.456833" />
+    <description box="D" iof-2004-ref="5.9" />
+  </control>
+  <control id="11" kind="start">
+    <location x="198.7997" y="90.04413" />
+  </control>
+  <control id="13" kind="finish">
+    <location x="196.1745" y="83.95083" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Short</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="10.53656" top="297.011261" right="206.37056" bottom="14.3092651" page-width="827" page-height="1169" page-margins="28" page-landscape="false" />
+    <options print-scale="4000" description-kind="text" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Medium</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
+    <print-area automatic="true" restrict-to-page-size="true" left="10.5142365" top="297.011261" right="206.348236" bottom="14.3092651" page-width="827" page-height="1169" page-margins="28" page-landscape="false" />
+    <options print-scale="4000" description-kind="text" />
+  </course>
+  <course id="3" kind="normal" order="3">
+    <name>Long</name>
+    <labels label-kind="sequence" />
+    <first course-control="15" />
+    <print-area automatic="true" restrict-to-page-size="true" left="10.0683212" top="297.011261" right="205.902313" bottom="14.3092651" page-width="827" page-height="1169" page-margins="28" page-landscape="false" />
+    <options print-scale="4000" description-kind="text" />
+  </course>
+  <course-control id="1" control="11">
+    <next course-control="34" />
+  </course-control>
+  <course-control id="2" control="13" />
+  <course-control id="36" control="8">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="34" control="10">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="9">
+    <next course-control="36" />
+  </course-control>
+  <course-control id="7" control="11">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="8" control="13" />
+  <course-control id="11" control="4">
+    <next course-control="39" />
+  </course-control>
+  <course-control id="39" control="6">
+    <next course-control="14" />
+  </course-control>
+  <course-control id="14" control="7">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="15" control="11">
+    <next course-control="25" />
+  </course-control>
+  <course-control id="16" control="13" />
+  <course-control id="30" control="2">
+    <next course-control="31" />
+  </course-control>
+  <course-control id="29" control="3">
+    <next course-control="30" />
+  </course-control>
+  <course-control id="25" control="7">
+    <next course-control="28" />
+  </course-control>
+  <course-control id="28" control="5">
+    <next course-control="29" />
+  </course-control>
+  <course-control id="31" control="1">
+    <next course-control="33" />
+  </course-control>
+  <course-control id="33" control="4">
+    <next course-control="16" />
+  </course-control>
+  <leg id="1" start-control="8" end-control="7">
+    <bends>
+      <location x="191.19873" y="80.50365" />
+    </bends>
+  </leg>
+  <leg id="2" start-control="4" end-control="13">
+    <bends>
+      <location x="171.718964" y="111.095818" />
+    </bends>
+  </leg>
+  <leg id="4" start-control="11" end-control="4">
+    <bends>
+      <location x="160.207733" y="113.202065" />
+    </bends>
+  </leg>
+  <special-object id="1" kind="out-of-bounds">
+    <location x="129.778122" y="93.89273" />
+    <location x="144.361252" y="99.06312" />
+    <location x="164.910187" y="97.33965" />
+    <location x="176.17897" y="84.6125641" />
+    <location x="173.394928" y="71.2226" />
+    <location x="123.8123" y="70.55973" />
+    <location x="123.547157" y="81.4307861" />
+    <location x="134.0205" y="84.47999" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="2" kind="text">
+    <text>$(CourseName)</text>
+    <font name="Arial" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="156.254684" y="248.86882" />
+    <location x="203.715" y="239.58786" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="3" kind="text">
+    <text>$(EventTitle)</text>
+    <font name="Arial" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="119.46891" y="271.448517" />
+    <location x="163.216232" y="263.758423" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="4" kind="descriptions">
+    <location x="10.4545231" y="253.744644" />
+    <location x="17.3660469" y="253.744644" />
+    <courses>
+      <course course="0" />
+    </courses>
+  </special-object>
+  <special-object id="5" kind="descriptions">
+    <location x="8.670904" y="252.406921" />
+    <location x="14.212862" y="252.406921" />
+    <courses>
+      <course course="1" />
+    </courses>
+  </special-object>
+  <special-object id="6" kind="descriptions">
+    <location x="14.02176" y="252.852829" />
+    <location x="20.3918266" y="252.852829" />
+    <courses>
+      <course course="2" />
+    </courses>
+  </special-object>
+  <special-object id="7" kind="descriptions">
+    <location x="13.1299505" y="247.947876" />
+    <location x="19.81852" y="247.947876" />
+    <courses>
+      <course course="3" />
+    </courses>
+  </special-object>
+</course-scribe-event>
