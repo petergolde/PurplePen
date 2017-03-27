@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2017-02-13T14:26:03.9924585-08:00" creator="Purple Pen version 3.0.0 Beta 1">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2017-03-27T12:38:54.8913188-07:00" creator="Purple Pen version 3.0.0 Beta 4">
   <Event>
     <Name>variations</Name>
   </Event>
@@ -142,7 +142,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>AE</Name>
+      <Name>NestedBranch AE</Name>
       <CourseFamily>NestedBranch</CourseFamily>
       <Length>2400</Length>
       <CourseControl type="Start">
@@ -179,7 +179,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>AF</Name>
+      <Name>NestedBranch AF</Name>
       <CourseFamily>NestedBranch</CourseFamily>
       <Length>2500</Length>
       <CourseControl type="Start">
@@ -216,7 +216,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>AG</Name>
+      <Name>NestedBranch AG</Name>
       <CourseFamily>NestedBranch</CourseFamily>
       <Length>2800</Length>
       <CourseControl type="Start">
@@ -253,7 +253,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BC</Name>
+      <Name>NestedBranch BC</Name>
       <CourseFamily>NestedBranch</CourseFamily>
       <Length>2500</Length>
       <CourseControl type="Start">
@@ -290,7 +290,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BD</Name>
+      <Name>NestedBranch BD</Name>
       <CourseFamily>NestedBranch</CourseFamily>
       <Length>2500</Length>
       <CourseControl type="Start">
@@ -327,7 +327,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>AC</Name>
+      <Name>DoubleBranch AC</Name>
       <CourseFamily>DoubleBranch</CourseFamily>
       <Length>2500</Length>
       <CourseControl type="Start">
@@ -369,7 +369,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>AD</Name>
+      <Name>DoubleBranch AD</Name>
       <CourseFamily>DoubleBranch</CourseFamily>
       <Length>2400</Length>
       <CourseControl type="Start">
@@ -406,7 +406,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>AE</Name>
+      <Name>DoubleBranch AE</Name>
       <CourseFamily>DoubleBranch</CourseFamily>
       <Length>2600</Length>
       <CourseControl type="Start">
@@ -448,7 +448,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BC</Name>
+      <Name>DoubleBranch BC</Name>
       <CourseFamily>DoubleBranch</CourseFamily>
       <Length>2600</Length>
       <CourseControl type="Start">
@@ -490,7 +490,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BD</Name>
+      <Name>DoubleBranch BD</Name>
       <CourseFamily>DoubleBranch</CourseFamily>
       <Length>2500</Length>
       <CourseControl type="Start">
@@ -527,7 +527,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BE</Name>
+      <Name>DoubleBranch BE</Name>
       <CourseFamily>DoubleBranch</CourseFamily>
       <Length>2700</Length>
       <CourseControl type="Start">
@@ -569,7 +569,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>ABC</Name>
+      <Name>ThreeLoop ABC</Name>
       <CourseFamily>ThreeLoop</CourseFamily>
       <Length>6600</Length>
       <CourseControl type="Start">
@@ -641,7 +641,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>ACB</Name>
+      <Name>ThreeLoop ACB</Name>
       <CourseFamily>ThreeLoop</CourseFamily>
       <Length>6600</Length>
       <CourseControl type="Start">
@@ -713,7 +713,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BAC</Name>
+      <Name>ThreeLoop BAC</Name>
       <CourseFamily>ThreeLoop</CourseFamily>
       <Length>6600</Length>
       <CourseControl type="Start">
@@ -785,7 +785,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>BCA</Name>
+      <Name>ThreeLoop BCA</Name>
       <CourseFamily>ThreeLoop</CourseFamily>
       <Length>6600</Length>
       <CourseControl type="Start">
@@ -857,7 +857,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>CAB</Name>
+      <Name>ThreeLoop CAB</Name>
       <CourseFamily>ThreeLoop</CourseFamily>
       <Length>6600</Length>
       <CourseControl type="Start">
@@ -929,7 +929,7 @@
       </CourseControl>
     </Course>
     <Course>
-      <Name>CBA</Name>
+      <Name>ThreeLoop CBA</Name>
       <CourseFamily>ThreeLoop</CourseFamily>
       <Length>6600</Length>
       <CourseControl type="Start">
@@ -1031,22 +1031,22 @@
       <TeamName>1</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1055,22 +1055,22 @@
       <TeamName>2</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1079,22 +1079,22 @@
       <TeamName>3</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1103,22 +1103,22 @@
       <TeamName>4</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1127,22 +1127,22 @@
       <TeamName>5</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1151,22 +1151,22 @@
       <TeamName>6</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1175,22 +1175,22 @@
       <TeamName>7</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1199,22 +1199,22 @@
       <TeamName>8</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1223,22 +1223,22 @@
       <TeamName>9</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1247,22 +1247,22 @@
       <TeamName>10</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1271,22 +1271,22 @@
       <TeamName>11</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1295,22 +1295,22 @@
       <TeamName>12</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1319,22 +1319,22 @@
       <TeamName>13</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1343,22 +1343,22 @@
       <TeamName>14</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1367,22 +1367,22 @@
       <TeamName>15</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1391,22 +1391,22 @@
       <TeamName>16</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1415,22 +1415,22 @@
       <TeamName>17</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1439,22 +1439,22 @@
       <TeamName>18</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1463,22 +1463,22 @@
       <TeamName>19</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1487,22 +1487,22 @@
       <TeamName>20</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1511,22 +1511,22 @@
       <TeamName>21</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1535,22 +1535,22 @@
       <TeamName>22</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1559,22 +1559,22 @@
       <TeamName>23</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1583,22 +1583,22 @@
       <TeamName>24</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1607,22 +1607,22 @@
       <TeamName>25</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1631,22 +1631,22 @@
       <TeamName>26</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1655,22 +1655,22 @@
       <TeamName>27</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1679,22 +1679,22 @@
       <TeamName>28</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1703,22 +1703,22 @@
       <TeamName>29</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1727,22 +1727,22 @@
       <TeamName>30</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1751,22 +1751,22 @@
       <TeamName>31</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1775,22 +1775,22 @@
       <TeamName>32</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1799,22 +1799,22 @@
       <TeamName>33</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1823,22 +1823,22 @@
       <TeamName>34</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1847,22 +1847,22 @@
       <TeamName>35</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1871,22 +1871,22 @@
       <TeamName>36</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1895,22 +1895,22 @@
       <TeamName>37</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1919,22 +1919,22 @@
       <TeamName>38</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1943,22 +1943,22 @@
       <TeamName>39</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1967,22 +1967,22 @@
       <TeamName>40</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -1991,22 +1991,22 @@
       <TeamName>41</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2015,22 +2015,22 @@
       <TeamName>42</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2039,22 +2039,22 @@
       <TeamName>43</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2063,22 +2063,22 @@
       <TeamName>44</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2087,22 +2087,22 @@
       <TeamName>45</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2111,22 +2111,22 @@
       <TeamName>46</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2135,22 +2135,22 @@
       <TeamName>47</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2159,22 +2159,22 @@
       <TeamName>48</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2183,22 +2183,22 @@
       <TeamName>49</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2207,22 +2207,22 @@
       <TeamName>50</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2231,22 +2231,22 @@
       <TeamName>51</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2255,22 +2255,22 @@
       <TeamName>52</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2279,22 +2279,22 @@
       <TeamName>53</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2303,22 +2303,22 @@
       <TeamName>54</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2327,22 +2327,22 @@
       <TeamName>55</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2351,22 +2351,22 @@
       <TeamName>56</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2375,22 +2375,22 @@
       <TeamName>57</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2399,22 +2399,22 @@
       <TeamName>58</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2423,22 +2423,22 @@
       <TeamName>59</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>NestedBranch BD</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>AF</CourseName>
+        <CourseName>NestedBranch AF</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>NestedBranch BC</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>NestedBranch AE</CourseName>
         <CourseFamily>NestedBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2447,32 +2447,32 @@
       <TeamName>1</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>DoubleBranch AE</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>DoubleBranch BD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>AC</CourseName>
+        <CourseName>DoubleBranch AC</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BE</CourseName>
+        <CourseName>DoubleBranch BE</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>5</Leg>
-        <CourseName>AD</CourseName>
+        <CourseName>DoubleBranch AD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>6</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>DoubleBranch BC</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2481,32 +2481,32 @@
       <TeamName>2</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AD</CourseName>
+        <CourseName>DoubleBranch AD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>DoubleBranch BC</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>DoubleBranch BD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>DoubleBranch AE</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>5</Leg>
-        <CourseName>AC</CourseName>
+        <CourseName>DoubleBranch AC</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>6</Leg>
-        <CourseName>BE</CourseName>
+        <CourseName>DoubleBranch BE</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2515,32 +2515,32 @@
       <TeamName>3</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>AC</CourseName>
+        <CourseName>DoubleBranch AC</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BE</CourseName>
+        <CourseName>DoubleBranch BE</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BC</CourseName>
+        <CourseName>DoubleBranch BC</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BD</CourseName>
+        <CourseName>DoubleBranch BD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>5</Leg>
-        <CourseName>AE</CourseName>
+        <CourseName>DoubleBranch AE</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>6</Leg>
-        <CourseName>AD</CourseName>
+        <CourseName>DoubleBranch AD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2549,22 +2549,22 @@
       <TeamName>1</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>ABC</CourseName>
+        <CourseName>ThreeLoop ABC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>CAB</CourseName>
+        <CourseName>ThreeLoop CAB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BCA</CourseName>
+        <CourseName>ThreeLoop BCA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>ACB</CourseName>
+        <CourseName>ThreeLoop ACB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2573,22 +2573,22 @@
       <TeamName>2</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>CBA</CourseName>
+        <CourseName>ThreeLoop CBA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>ABC</CourseName>
+        <CourseName>ThreeLoop ABC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>BAC</CourseName>
+        <CourseName>ThreeLoop BAC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>CAB</CourseName>
+        <CourseName>ThreeLoop CAB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2597,22 +2597,22 @@
       <TeamName>3</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BAC</CourseName>
+        <CourseName>ThreeLoop BAC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>CBA</CourseName>
+        <CourseName>ThreeLoop CBA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>ACB</CourseName>
+        <CourseName>ThreeLoop ACB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BCA</CourseName>
+        <CourseName>ThreeLoop BCA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2621,22 +2621,22 @@
       <TeamName>4</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>ACB</CourseName>
+        <CourseName>ThreeLoop ACB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BAC</CourseName>
+        <CourseName>ThreeLoop BAC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>CAB</CourseName>
+        <CourseName>ThreeLoop CAB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>ABC</CourseName>
+        <CourseName>ThreeLoop ABC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2645,22 +2645,22 @@
       <TeamName>5</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>CAB</CourseName>
+        <CourseName>ThreeLoop CAB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BCA</CourseName>
+        <CourseName>ThreeLoop BCA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>ABC</CourseName>
+        <CourseName>ThreeLoop ABC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>CBA</CourseName>
+        <CourseName>ThreeLoop CBA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2669,22 +2669,22 @@
       <TeamName>6</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>BCA</CourseName>
+        <CourseName>ThreeLoop BCA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>ACB</CourseName>
+        <CourseName>ThreeLoop ACB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>CBA</CourseName>
+        <CourseName>ThreeLoop CBA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BAC</CourseName>
+        <CourseName>ThreeLoop BAC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
@@ -2693,22 +2693,22 @@
       <TeamName>7</TeamName>
       <TeamMemberCourseAssignment>
         <Leg>1</Leg>
-        <CourseName>ACB</CourseName>
+        <CourseName>ThreeLoop ACB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
-        <CourseName>BAC</CourseName>
+        <CourseName>ThreeLoop BAC</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>3</Leg>
-        <CourseName>CAB</CourseName>
+        <CourseName>ThreeLoop CAB</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
       <TeamMemberCourseAssignment>
         <Leg>4</Leg>
-        <CourseName>BCA</CourseName>
+        <CourseName>ThreeLoop BCA</CourseName>
         <CourseFamily>ThreeLoop</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>

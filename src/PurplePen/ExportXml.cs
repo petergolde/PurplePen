@@ -342,7 +342,7 @@ namespace PurplePen
             xmlWriter.WriteStartElement("Course");
 
             if (variationInfo != null) {
-                xmlWriter.WriteElementString("Name", variationInfo.CodeString);
+                xmlWriter.WriteElementString("Name", courseName + " " + variationInfo.CodeString);
                 xmlWriter.WriteElementString("CourseFamily", courseName);
             }
             else {
@@ -769,7 +769,7 @@ namespace PurplePen
             string variationString = relayVariations.GetVariation(teamNumber, legNumber).CodeString;
 
             xmlWriter.WriteElementString("Leg", XmlConvert.ToString(legNumber));
-            xmlWriter.WriteElementString("CourseName", variationString);
+            xmlWriter.WriteElementString("CourseName", courseName + " " + variationString);
             xmlWriter.WriteElementString("CourseFamily", courseName);
 
             xmlWriter.WriteEndElement(); // </TeamMemberCourseAssignment>
