@@ -1120,7 +1120,16 @@ namespace PurplePen
                 return false;
             CourseDesignator other = (CourseDesignator) obj;
 
-            return (courseId == other.courseId && part == other.part && object.Equals(variationInfo, other.variationInfo));
+            if (courseId != other.courseId)
+                return false;
+            if (part != other.part)
+                return false;
+            if (this.IsVariation != other.IsVariation)
+                return false;
+            if (this.IsVariation && !object.Equals(variationInfo, other.variationInfo))
+                return false;
+
+            return true;
         }
 
         public static bool operator ==(CourseDesignator cd1, CourseDesignator cd2)

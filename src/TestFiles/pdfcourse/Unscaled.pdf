@@ -1,118 +1,0 @@
-%PDF-1.4
-%”ÙÃ·
-% PDFsharp Version 1.31.1789.0 (verbose mode)
-% Creation date: 3/22/2017 12:17:33 PM           
-% Creation time: 0.007 seconds                   
-% File size: 3147 bytes                          
-% Pages: 1                                       
-% Objects: 8                                     
-%--------------------------------------------------------------------------------------------------
-1 0 obj   % PdfSharp.Pdf.PdfDocumentInformation
-<<
-  /CreationDate (D:20170322121733-07'00')
-  /Creator (PDFsharp 1.31.1789-g \(www.pdfsharp.com\))
-  /Producer (PDFsharp 1.31.1789-g \(www.pdfsharp.com\))
-  /Title (Unscaled)
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-2 0 obj   % PdfSharp.Pdf.Advanced.PdfCatalog
-<<
-  /Pages 3 0 R
-  /Type /Catalog
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-3 0 obj   % PdfSharp.Pdf.PdfPages
-<<
-  /Count 1
-  /Kids [4 0 R]
-  /Type /Pages
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-4 0 obj   % PdfSharp.Pdf.PdfPage
-<<
-  /ArtBox [0 0 1224 792]
-  /BleedBox [0 0 1224 792]
-  /Contents 5 0 R
-  /CropBox [0 0 1224 792]
-  /Group
-  <<
-    /CS /DeviceCMYK
-    /I false
-    /K false
-    /S /Transparency
-  >>
-  /MediaBox [0 0 1224 792]
-  /Parent 3 0 R
-  /Resources
-  <<
-    /ExtGState
-    <<
-      /GS0 6 0 R
-      /GS1 7 0 R
-      /GS2 8 0 R
-    >>
-    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
-  >>
-  /TrimBox [0 0 1224 792]
-  /Type /Page
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-5 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
-<<
-  /Filter /FlateDecode
-  /Length 338
->>
-stream
-xú}Q¡J1Ω˜+ÚçI”iõ/À
-ƒ”
-äÏã¡Ø7ùôv∑+H)IÛ^íóÊ‰»éØ&kÄ√l><˛∏ì¬BwÛ&÷õô'U‘“«`ZÌ±•¸	Ùîw˜üV˚ÊvOˆÂU2QYııó•`îX‚,Q’Uó'úÑ(&0Øƒ¨I°;gê£ g-B©§îk>°LÌÓÏ~∏	‹Û¡´¡ö-BÓ´>Æ˙"Rdõ^p2YHÅm?º…∆ÉΩ€]∂÷‚üÚ&J¶0¢⁄¨≥öQ∂"RlÔ⁄˙Í ∂![†Å
-N9éÀP€$¡>j2Íºyå°ò∞Õ4tµÁá∏R|#m√rÕ≠ﬁåYÁrıè§Îî≠ië$Õ4TŒ:/‚~HÒr÷)≠„ä\3ºtùó¿ò%ÉŒ]›T®õ⁄ıÛVè£Ñ
-endstream
-endobj
-%--------------------------------------------------------------------------------------------------
-6 0 obj   % PdfSharp.Pdf.Advanced.PdfExtGState
-<<
-  /BM /Darken
-  /Type /ExtGState
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-7 0 obj   % PdfSharp.Pdf.Advanced.PdfExtGState
-<<
-  /CA 1
-  /Type /ExtGState
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-8 0 obj   % PdfSharp.Pdf.Advanced.PdfExtGState
-<<
-  /BM /Normal
-  /Type /ExtGState
->>
-endobj
-%--------------------------------------------------------------------------------------------------
-xref
-0 9
-0000000000 65535 f 
-0000000411 00000 n 
-0000000745 00000 n 
-0000000935 00000 n 
-0000001124 00000 n 
-0000001684 00000 n 
-0000002235 00000 n 
-0000002428 00000 n 
-0000002615 00000 n 
-trailer
-<<
-  /ID [<4239F244136569478027B3E013A9C851><4239F244136569478027B3E013A9C851>]
-  /Info 1 0 R
-  /Root 2 0 R
-  /Size 9
->>
-startxref
-2808
-%%EOF
