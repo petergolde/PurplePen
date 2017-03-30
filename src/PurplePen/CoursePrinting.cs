@@ -180,8 +180,11 @@ namespace PurplePen
                     Matrix transform = Geometry.CreateInvertedRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
                     mapDisplay.Draw(bitmap, transform);
 
-                    // Draw the bitmap on the printer.
-                    g.DrawImage(bitmap, band.printRectangle);
+                    try {
+                        // Draw the bitmap on the printer.
+                        g.DrawImage(bitmap, band.printRectangle);
+                    }
+                    catch (Exception) { }
                 }
 
                 // restore state.

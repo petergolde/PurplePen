@@ -289,8 +289,9 @@ namespace PurplePen
             try {
                 client.UploadStringAsync(new Uri("http://monitor.purple-pen.org/api/Invocation"), status);
             }
-            catch (WebException) {
+            catch (WebException ex) {
                 // Ignore problems.
+                Debug.WriteLine(ex.ToString());
             }
 
             e.Result = results;

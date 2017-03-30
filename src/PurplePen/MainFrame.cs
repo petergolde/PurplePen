@@ -2342,7 +2342,7 @@ namespace PurplePen
             }
 
             // Show the dialog.
-            DialogResult result = dialog.ShowOpenFileDialogOnly(this);
+            DialogResult result = dialog.ShowOpenFileDialogOnly(this.IsHandleCreated ? this : null);
 
             // Apply new map file.
             if (result == DialogResult.OK) {
