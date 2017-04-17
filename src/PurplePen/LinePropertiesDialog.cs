@@ -253,11 +253,9 @@ namespace PurplePen
                     try {
                         g.DrawPath(linePen, path);
                     }
-                    catch (OutOfMemoryException) {
-                        // Do nothing. Very occasionally, GDI+ given an out of memory exception for very short curves. Just ignore it; there's nothing else to do. See bug #1997301.
-                    }
-                    catch (OverflowException) {
-                        // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                    catch (Exception) {
+                        // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                        // Just ignore it; there's nothing else to do. See bug #1997301.
                     }
 
                 }

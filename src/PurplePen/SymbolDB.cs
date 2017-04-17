@@ -729,8 +729,9 @@ namespace PurplePen
                             using (Pen p = new Pen(color, thickness))
                                 g.DrawEllipse(p, new RectangleF(points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2));
                         }
-                        catch (ExternalException) {
-                            // Ignore this exeption. Not sure what causes it.
+                        catch (Exception) {
+                            // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                            // Just ignore it; there's nothing else to do. See bug #1997301.
                         }
 
                         break;

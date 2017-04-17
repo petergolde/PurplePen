@@ -511,11 +511,12 @@ namespace PurplePen
                    p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
                }
            }
-           catch (ExternalException) {
-               // Ignore this exeption. Not sure what causes it.
-           }
+            catch (Exception) {
+                // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                // Just ignore it; there's nothing else to do. See bug #1997301.
+            }
 
-           grTarget.Dispose();
+            grTarget.Dispose();
        }
 
        // Get the bounds of the highlight.
@@ -1200,14 +1201,10 @@ namespace PurplePen
                             g.FillRectangle(brush, topLeftPixel[0].X - 2, topLeftPixel[0].Y - 2, expandedSize.Width, expandedSize.Height);
                             g.DrawString(text, font, brush, topLeftPixel[0], format);
                         }
-                        catch (System.Runtime.InteropServices.ExternalException) {
-                            // Do nothing
-                        }
-                        catch (OutOfMemoryException) {
+                        catch (Exception) {
                             // Sometimes happens with very small items. Nothing to do but ignore it.
-                        }
-                        catch (OverflowException) {
-                            // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                            // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                            // Just ignore it; there's nothing else to do. See bug #1997301.
                         }
                     }
                 }
@@ -1223,11 +1220,10 @@ namespace PurplePen
                             try {
                                 g.DrawPath(pen, path);
                             }
-                            catch (OutOfMemoryException) {
-                                // Do nothing. Very occasionally, GDI+ given an out of memory exception for very short curves. Just ignore it; there's nothing else to do. See bug #1997301.
-                            }
-                            catch (OverflowException) {
-                                // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                            catch (Exception) {
+                                // Sometimes happens with very small items. Nothing to do but ignore it.
+                                // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                                // Just ignore it; there's nothing else to do. See bug #1997301.
                             }
                         }
                         path.Dispose();
@@ -1236,14 +1232,10 @@ namespace PurplePen
                             // Draw red text.
                             g.DrawString(text, font, brush, topLeftPixel[0], format);
                         }
-                        catch (System.Runtime.InteropServices.ExternalException) {
-                            // Do nothing
-                        }
-                        catch (OutOfMemoryException) {
+                        catch (Exception) {
                             // Sometimes happens with very small items. Nothing to do but ignore it.
-                        }
-                        catch (OverflowException) {
-                            // Do nothing. Very occasionally, GDI+ given an overflow exception. Just ignore it; there's nothing else to do. See bug #1997301.
+                            // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                            // Just ignore it; there's nothing else to do. See bug #1997301.
                         }
                     }
                     g.TextRenderingHint = saveTextRenderingHint;
@@ -1349,11 +1341,9 @@ namespace PurplePen
 
                     // No center dot for highlighting (crosshair instead)
                 }
-                catch (ExternalException) {
-                    // Ignore this exeption. Not sure what causes it.
-                }
-                catch (OutOfMemoryException) {
-                    // Similar.
+                catch (Exception) {
+                    // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                    // Just ignore it; there's nothing else to do. See bug #1997301.
                 }
             }
 
@@ -1487,11 +1477,9 @@ namespace PurplePen
                         }
                     }
                 }
-                catch (ExternalException) {
-                    // Ignore this exeption. Not sure what causes it.
-                }
-                catch (OutOfMemoryException) {
-                    // Similar.
+                catch (Exception) {
+                    // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                    // Just ignore it; there's nothing else to do. See bug #1997301.
                 }
 
             }
