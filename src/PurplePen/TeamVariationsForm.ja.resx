@@ -142,6 +142,6 @@
     <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>チームバリエーションの割り当て</value>
+    <value>リレーチームバリエーション</value>
   </data>
 </root>

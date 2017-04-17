@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.0.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-03-20 13:32-07:00\n"
+"POT-Creation-Date: 2017-04-17 09:26-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1255,7 +1255,7 @@ msgstr ""
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
-msgstr ""
+msgstr "Plus d'informations..."
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
@@ -3243,7 +3243,7 @@ msgstr "Symbole identique ?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Visites"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
@@ -3938,7 +3938,7 @@ msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "Exporter..."
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
@@ -3950,7 +3950,7 @@ msgstr ""
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "Nombre d'équipes :"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."

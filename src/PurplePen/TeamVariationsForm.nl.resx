@@ -135,4 +135,7 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Estafette team varianten</value>
+  </data>
 </root>

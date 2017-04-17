@@ -168,6 +168,9 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Symbole identique ?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visites</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Synthèse du circuit pour {0}</value>
   </data>

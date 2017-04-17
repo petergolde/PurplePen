@@ -126,4 +126,7 @@
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Forhåndsvis utskrift ...</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Stafettvarianter</value>
+  </data>
 </root>

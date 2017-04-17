@@ -142,6 +142,6 @@
     <value>3 | IOF XML，XML |表格（CSV）| *. csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>指派团队的变化</value>
+    <value>接力队的变化</value>
   </data>
 </root>

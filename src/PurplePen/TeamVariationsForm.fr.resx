@@ -120,10 +120,19 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exporter...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Imprimer...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Aperçu avant impression...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nombre d'équipes :</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Variations équipe de relais</value>
   </data>
 </root>
