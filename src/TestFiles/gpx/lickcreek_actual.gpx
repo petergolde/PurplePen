@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<gpx creator="Purple Pen 3.0.0 Beta 4" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
+<gpx creator="Purple Pen 3.0.0" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1">
   <metadata>
     <name>lickcreek_actual.gpx</name>
     <desc>Lick Creek 2014</desc>
     <link href="http://purple-pen.org">
       <text>Purple Pen</text>
     </link>
-    <time>2017-03-27T19:43:58Z</time>
+    <time>2017-04-19T20:06:21Z</time>
     <bounds minlat="47.27725924523714" minlon="-120.89547226092165" maxlat="47.291566282154065" maxlon="-120.87027416660048" />
   </metadata>
   <wpt lat="47.280142217402854" lon="-120.8777055333771">
