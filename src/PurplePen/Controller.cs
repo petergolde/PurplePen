@@ -1404,7 +1404,7 @@ namespace PurplePen
             undoMgr.EndCommand(177);
 
             // Select the previous course control. Makes inserting a new control easier.
-            if (previous.IsNotNone)
+            if (previous.IsNotNone && eventDB.IsCourseControlPresent(previous))
                 selectionMgr.SelectCourseControl(previous);
 
             return true;
