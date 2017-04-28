@@ -49,7 +49,14 @@ namespace PurplePen
                 return (int) startingCodeNumericUpDown.Value;
             }
             set {
-                startingCodeNumericUpDown.Value = value;
+                if (value >= (int)startingCodeNumericUpDown.Minimum && value <= startingCodeNumericUpDown.Maximum)
+                {
+                    startingCodeNumericUpDown.Value = value;
+                }
+                else
+                {
+                    startingCodeNumericUpDown.Value = startingCodeNumericUpDown.Minimum;
+                }
             }
         }
 
