@@ -11885,7 +11885,7 @@ for the symbols.
       <point x="0" y="53" />
     </filled-circle>
   </symbol>
-
+  
   <!-- Kind "W". Taped route instructional lines. 
 	  {0} has the distance, plus a space
 	  -->
@@ -12280,6 +12280,93 @@ for the symbols.
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
+    <lines thickness="12.5">
+      <point x="-630" y="0" />
+      <point x="-510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="625" y="0" />
+      <point x="510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="480" y="0" />
+      <point x="360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="330" y="0" />
+      <point x="210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+
+    <polygon thickness="10">
+      <point x="700" y="70" />
+      <point x="760.6" y="-35" />
+      <point x="639.4" y="-35" />
+    </polygon>
+  </symbol>
+
+  <!-- Kind "V" Map Issue Point instructional lines. 
+        {0} has the distance, plus a space. 
+        -->
+  <symbol kind="V" id="13.6">
+    <name lang="en-AU">Map issue point</name>
+    <name lang="en">Map issue point</name>
+    <name lang="fr">Map issue point</name>
+    <name lang="en-GB">Map issue point</name>
+    <name lang="sv">Map issue point</name>
+    <name lang="nb-NO">Map issue point</name>
+    <name lang="es">Map issue point</name>
+    <name lang="nn-NO">Map issue point</name>
+    <name lang="fi">Map issue point</name>
+    <name lang="bg">Map issue point</name>
+    <name lang="ro">Map issue point</name>
+    <name lang="et">Map issue point</name>
+    <name lang="de">Map issue point</name>
+    <name lang="ca">Map issue point</name>
+    <name lang="ja">Map issue point</name>
+    <name lang="zh-HK">Map issue point</name>
+    <name lang="pl">Map issue point</name>
+
+    <text lang="en-AU">Map issue: follow tapes {0}to start</text>
+
+    <text lang="en">Map issue: follow tapes {0}to start</text>
+    <text lang="fr">Map issue: follow tapes {0}to start</text>
+    <text lang="en-GB">Map issue: follow tapes {0}to start</text>
+    <text lang="sv">Map issue: follow tapes {0}to start</text>
+    <text lang="nb-NO">Map issue: follow tapes {0}to start</text>
+    <text lang="es">Map issue: follow tapes {0}to start</text>
+    <text lang="nn-NO">Map issue: follow tapes {0}to start</text>
+    <text lang="fi">Map issue: follow tapes {0}to start</text>
+    <text lang="bg">Map issue: follow tapes {0}to start</text>
+    <text lang="ro">Map issue: follow tapes {0}to start</text>
+    <text lang="et">Map issue: follow tapes {0}to start</text>
+    <text lang="de">Map issue: follow tapes {0}to start</text>
+    <text lang="ca">Map issue: follow tapes {0}to start</text>
+    <text lang="ja">Map issue: follow tapes {0}to start</text>
+    <text lang="zh-HK">Map issue: follow tapes {0}to start</text>
+    <text lang="pl">Map issue: follow tapes {0}to start</text>
+
+
+    <lines thickness="12.5">
+      <point x="-760" y="-50" />
+      <point x="-760" y="50" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-760" y="0" />
+      <point x="-660" y="0" />
+    </lines>
     <lines thickness="12.5">
       <point x="-630" y="0" />
       <point x="-510" y="0" />
