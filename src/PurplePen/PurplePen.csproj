@@ -4007,6 +4007,7 @@
       <Link>x86\pdfium.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Images\MapIssue_OcadToolbox.png" />
     <Content Include="USWebCoatedSWOP.icc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

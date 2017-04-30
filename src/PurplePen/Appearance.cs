@@ -201,6 +201,9 @@ namespace PurplePen
         public const float centerDotDiameter = 0.0F;
         public const float crossingRadius = 2.5F;
 
+        // Map issue point dimensions
+        public const float mapIssueLength = 2.5F, mapIssueWidth = 0.6F;  // Map Issue point size.
+
         // Font to use for the control number in regular courses.
         // An Em Height of 5.57 yields the IOF specified 4mm for the height of a digit.
         public const float nominalControlNumberHeight = 4.0F;          // nominal height from top to bottom of a digit

@@ -193,6 +193,16 @@ namespace PurplePen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MapIssue_OcadToolbox {
+            get {
+                object obj = ResourceManager.GetObject("MapIssue_OcadToolbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuDown {
             get {
                 object obj = ResourceManager.GetObject("MenuDown", resourceCulture);

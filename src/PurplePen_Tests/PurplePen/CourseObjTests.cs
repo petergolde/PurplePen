@@ -272,6 +272,20 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void MapIssue()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0));
+            SingleObject(courseobj, "map_issue");
+        }
+
+        [TestMethod]
+        public void MapIssueSpecial()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0));
+            SingleObject(courseobj, "map_issue_special");
+        }
+
+        [TestMethod]
         public void FirstAid()
         {
             CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0));
@@ -833,6 +847,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void MapIssueDump()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(16), CourseControlId(144), 0.7F, defaultCourseAppearance, 77.6F, new PointF(5.5F, -2.5F));
+            AssertDump(courseobj, @"MapIssue:       control:16  course-control:144  scale:0.7  location:(5.5,-2.5)  orientation:77.6");
+        }
+
+        [TestMethod]
         public void FirstAidDump()
         {
             CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.5F, defaultCourseAppearance, new PointF(1, 2));
@@ -1044,6 +1065,20 @@ namespace PurplePen.Tests
             SingleObjectHighlight(courseobj, "start_triangle_highlight");
         }
 
+        [TestMethod]
+        public void MapIssueHighlight()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "map_issue_highlight");
+        }
+
+        [TestMethod]
+        public void MapIssueHighlightSpecial()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "map_issue_highlight_special");
+        }
+        
         [TestMethod]
         public void StartHighlightSpecial()
         {
@@ -1415,6 +1450,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectOffset(courseobj, "start_triangle_offset");
+        }
+
+        [TestMethod]
+        public void MapIssueOffset()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            SingleObjectOffset(courseobj, "map_issue_offset");
         }
 
         [TestMethod]

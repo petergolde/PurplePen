@@ -1412,6 +1412,60 @@ namespace PurplePen
         }
     }
 
+
+    // Map Issue Point
+    class MapIssueCourseObj : PointCourseObj
+    {
+        // Coordinates of the tmap issue.
+        static readonly PointF[] coords = { new PointF(0F, NormalCourseAppearance.mapIssueLength / 2.0F), new PointF(0F, - NormalCourseAppearance.mapIssueLength / 2.0F) };
+
+        public MapIssueCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio,
+                              CourseAppearance appearance, float orientation, PointF location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation, 0F, location)
+        {
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            PointKind[] kinds = { PointKind.Normal, PointKind.Normal };
+            PointF[] pts = ScaleCoords((PointF[])coords.Clone());
+            SymPath path = new SymPath(pts, kinds);
+
+            Glyph glyph = new Glyph();
+            glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * scaleRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
+            glyph.ConstructionComplete();
+
+            PointSymDef symdef = new PointSymDef("Map Issue Point", "715", glyph, true);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.MapIssue_OcadToolbox);
+            map.AddSymdef(symdef);
+            return symdef;
+        }
+
+        public override string ToString()
+        {
+            string result = base.ToString();
+            result += string.Format("  orientation:{0:0.##}", orientation);
+            return result;
+        }
+
+        // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            // Transform the thickness to pixel coords.
+            float thickness = TransformDistance(NormalCourseAppearance.mapIssueWidth * scaleRatio * appearance.controlCircleSize, xformWorldToPixel);
+
+            // Get coordinates of the feature and transform to pixel coords.
+            PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[])coords.Clone(), orientation)), location.X, location.Y);
+            xformWorldToPixel.TransformPoints(pts);
+
+            // Draw the triangle.
+            using (Pen pen = new Pen(brush, thickness))
+            {
+                g.DrawLines(pen, pts);
+            }
+        }
+    }
+
     // Finish circle
     class FinishCourseObj : PointCourseObj
     {
