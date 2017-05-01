@@ -235,6 +235,18 @@ namespace PurplePen
             return result;
         }
 
+        // Find a control of the given kind in the given course. Typically used to find start, finish, map issue.
+        public static Id<CourseControl> FindControlOfKind(EventDB eventDB, Id<Course> courseId, ControlPointKind controlKind)
+        {
+            foreach (Id<CourseControl> courseControlId in EnumCourseControlIds(eventDB, new CourseDesignator(courseId)))
+            {
+                if (eventDB.GetControl(eventDB.GetCourseControl(courseControlId).control).kind == controlKind)
+                    return courseControlId;
+            }
+
+            return Id<CourseControl>.None;
+        }
+
         // Get the fork start control that started the fork that courseControlId is one, or None if none.
         public static Id<CourseControl> GetForkStart(EventDB eventDB, Id<Course> courseId, Id<CourseControl> courseControlId)
         {
@@ -965,11 +977,13 @@ namespace PurplePen
         // Does the course have a start control?
         public static bool HasStartControl(EventDB eventDB, Id<Course> courseId)
         {
-            Id<CourseControl> firstId = eventDB.GetCourse(courseId).firstCourseControl;
-            if (firstId.IsNone || eventDB.GetControl(eventDB.GetCourseControl(firstId).control).kind != ControlPointKind.Start)
-                return false;
-            else
-                return true;
+            return (FindControlOfKind(eventDB, courseId, ControlPointKind.Start).IsNotNone);
+        }
+
+        // Does the course have a map issue point?
+        public static bool HasMapIssue(EventDB eventDB, Id<Course> courseId)
+        {
+            return (FindControlOfKind(eventDB, courseId, ControlPointKind.MapIssue).IsNotNone);
         }
 
         // Does the given course (or all controls) contain the given special? 

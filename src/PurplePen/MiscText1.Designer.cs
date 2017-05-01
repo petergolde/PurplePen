@@ -995,6 +995,33 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map Issue Point.
+        /// </summary>
+        internal static string MapIssue_Long {
+            get {
+                return ResourceManager.GetString("MapIssue_Long", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map Issue.
+        /// </summary>
+        internal static string MapIssue_Medium {
+            get {
+                return ResourceManager.GetString("MapIssue_Medium", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MI.
+        /// </summary>
+        internal static string MapIssue_Short {
+            get {
+                return ResourceManager.GetString("MapIssue_Short", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All: {0}.
         /// </summary>
         internal static string Margins_All {

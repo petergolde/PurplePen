@@ -115,6 +115,8 @@ namespace PurplePen
                 }
 
                 switch (controlKind) {
+                case ControlPointKind.MapIssue:
+                    return (existingControl.IsNone) ? StatusBarText.AddingMapIssue : StatusBarText.AddingExistingMapIssue;
                 case ControlPointKind.Start:
                     return (existingControl.IsNone) ? StatusBarText.AddingStart : StatusBarText.AddingExistingStart;
                 case ControlPointKind.Finish:
@@ -275,6 +277,7 @@ namespace PurplePen
             string commandString;
 
             switch (controlKind) {
+            case ControlPointKind.MapIssue: commandString = CommandNameText.AddMapIssue; break;
             case ControlPointKind.Start: commandString = CommandNameText.AddStart; break;
             case ControlPointKind.Finish: commandString = CommandNameText.AddFinish; break;
             case ControlPointKind.CrossingPoint: commandString = CommandNameText.AddCrossingPoint; break;
@@ -299,6 +302,8 @@ namespace PurplePen
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "14.3");   // set finish to "navigate to finish".
                 else if (controlKind == ControlPointKind.CrossingPoint)
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "13.3");   // set to mandatory crossing point.
+                else if (controlKind == ControlPointKind.MapIssue)
+                    ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "13.6");   // Map issue point.
             }
 
             if (allControls) {
@@ -318,7 +323,9 @@ namespace PurplePen
                 // And add it.
                 Id<CourseControl> courseControlId;
                 if (controlKind == ControlPointKind.Start)
-                    courseControlId = ChangeEvent.AddStartToCourse(eventDB, controlId, courseDesignator.CourseId, true);
+                    courseControlId = ChangeEvent.AddStartOrMapIssueToCourse(eventDB, controlId, courseDesignator.CourseId, true);
+                else if (controlKind == ControlPointKind.MapIssue)
+                    courseControlId = ChangeEvent.AddStartOrMapIssueToCourse(eventDB, controlId, courseDesignator.CourseId, true);
                 else if (controlKind == ControlPointKind.Finish)
                     courseControlId = ChangeEvent.AddFinishToCourse(eventDB, controlId, courseDesignator.CourseId, true);
                 else if (controlKind == ControlPointKind.MapExchange) {
@@ -378,6 +385,10 @@ namespace PurplePen
                     // Show the legs to and from the control also as additional highlights.
                     additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, scaleRatio, appearance);
                 }
+                break;
+
+            case ControlPointKind.MapIssue:
+                highlight = new MapIssueCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, scaleRatio, appearance, 0, highlightLocation);
                 break;
 
             case ControlPointKind.Start:

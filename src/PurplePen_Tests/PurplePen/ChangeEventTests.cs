@@ -1565,7 +1565,7 @@ namespace PurplePen.Tests
             controlId = ChangeEvent.AddControlPoint(eventDB, ControlPointKind.Start, null, new PointF(29, 27.4F), 95);
             undomgr.EndCommand(961);
             undomgr.BeginCommand(960, "Add Start");
-            courseControlId = ChangeEvent.AddStartToCourse(eventDB, controlId, CourseId(6), false);
+            courseControlId = ChangeEvent.AddStartOrMapIssueToCourse(eventDB, controlId, CourseId(6), false);
             undomgr.EndCommand(960);
             eventDB.Validate();
 
@@ -1604,7 +1604,7 @@ namespace PurplePen.Tests
             controlId = ChangeEvent.AddControlPoint(eventDB, ControlPointKind.Start, null, new PointF(29, 27.4F), 95);
             undomgr.EndCommand(961);
             undomgr.BeginCommand(960, "Add Start");
-            courseControlId = ChangeEvent.AddStartToCourse(eventDB, controlId, CourseId(6), true);
+            courseControlId = ChangeEvent.AddStartOrMapIssueToCourse(eventDB, controlId, CourseId(6), true);
             undomgr.EndCommand(960);
             eventDB.Validate();
 

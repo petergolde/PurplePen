@@ -351,7 +351,7 @@ namespace PurplePen
         private static string CountControls(CourseView courseView, Predicate<Id<ControlPoint>> predicate)
         {
             string desc = "";
-            int[] count = new int[6];
+            int[] count = new int[7];
 
             foreach (CourseView.ControlView controlView in courseView.ControlViews) {
                 if (predicate(controlView.controlId)) {
@@ -381,6 +381,8 @@ namespace PurplePen
             if (count[(int) ControlPointKind.MapExchange] > 0)
                 desc = AddCount(desc, count[(int) ControlPointKind.MapExchange], SelectionDescriptionText.MapExchange_Singular, SelectionDescriptionText.MapExchange_Plural);
 
+            if (count[(int)ControlPointKind.MapIssue] > 0)
+                desc = AddCount(desc, count[(int)ControlPointKind.MapIssue], SelectionDescriptionText.MapIssue_Singular, SelectionDescriptionText.MapIssue_Plural);
 
             // If we didn't find anthing the count string will still be empty.
             if (desc == "")

@@ -580,6 +580,14 @@ namespace PurplePen
                 else
                     return MiscText.MapExchange_Short;
 
+            case ControlPointKind.MapIssue:
+                if (style == NameStyle.Long)
+                    return MiscText.MapIssue_Long;
+                else if (style == NameStyle.Medium)
+                    return MiscText.MapIssue_Medium;
+                else
+                    return MiscText.MapIssue_Short;
+
             default:
                 Debug.Fail("bad control kind");
                 return "";

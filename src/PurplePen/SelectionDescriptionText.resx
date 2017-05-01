@@ -298,4 +298,10 @@
   <data name="CalculatedLength" xml:space="preserve">
     <value>Calculated Length:</value>
   </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>map issue points</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>map issue point</value>
+  </data>
 </root>

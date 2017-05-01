@@ -727,6 +727,7 @@ namespace PurplePen
 
             // This the course control to change to. Could be None.
             CourseControl courseControlRemove = eventDB.GetCourseControl(courseControlIdRemove);
+            ControlPointKind kindToRemove = eventDB.GetControl(courseControlRemove.control).kind;
             Id<CourseControl> afterRemove = courseControlRemove.nextCourseControl;
             if (courseControlRemove.split && !courseControlRemove.loop) {
                 // Change next to another one of the split controls.
@@ -786,6 +787,14 @@ namespace PurplePen
                     removedControls.Add(eventDB.GetCourseControl(courseControlId).control);
                     removedCourseControls.Add(courseControlId);
                     eventDB.RemoveCourseControl(courseControlId);
+                }
+            }
+
+            if (kindToRemove == ControlPointKind.Start) {
+                // Remove map issue point, if any.
+                if (course.firstCourseControl != null && eventDB.GetControl(eventDB.GetCourseControl(course.firstCourseControl).control).kind == ControlPointKind.MapIssue)
+                {
+                    removedControls.UnionWith(ChangeEvent.RemoveCourseControl(eventDB, courseId, course.firstCourseControl));
                 }
             }
 
@@ -1006,24 +1015,23 @@ namespace PurplePen
         // Otherwise add it as the new start control. The returned CourseControl may be new, or may be the first control with 
         // a different control point.
         // If addToOtherCourses is true, the new start control is also added to all courses without an existing start control.
-        public static Id<CourseControl> AddStartToCourse(EventDB eventDB, Id<ControlPoint> controlId, Id<Course> courseId, bool addToOtherCourses)
+        public static Id<CourseControl> AddStartOrMapIssueToCourse(EventDB eventDB, Id<ControlPoint> controlId, Id<Course> courseId, bool addToOtherCourses)
         {
-            Course course = eventDB.GetCourse(courseId);
-            Id<CourseControl> firstId = course.firstCourseControl;
+            ControlPointKind controlKind = eventDB.GetControl(controlId).kind;
+            Debug.Assert(controlKind == ControlPointKind.Start || controlKind == ControlPointKind.MapIssue);
+
+            Id<CourseControl> courseControlId = QueryEvent.FindControlOfKind(eventDB, courseId, controlKind);
             Id<CourseControl> newCourseControlId;
-            if (firstId.IsNotNone && eventDB.GetControl(eventDB.GetCourseControl(firstId).control).kind == ControlPointKind.Start) {
-                // First control exists and is a start control. Replace it.
-                CourseControl first = (CourseControl) eventDB.GetCourseControl(firstId).Clone();
-                first.control = controlId;
-                eventDB.ReplaceCourseControl(firstId, first);
-                newCourseControlId = firstId;
+            if (courseControlId.IsNotNone) {
+                // Start control already exists. Replace it.
+                CourseControl startControl = (CourseControl) eventDB.GetCourseControl(courseControlId).Clone();
+                startControl.control = controlId;
+                eventDB.ReplaceCourseControl(courseControlId, startControl);
+                newCourseControlId = courseControlId;
             }
             else {
                 // Add the control as a new start control.
-                newCourseControlId = eventDB.AddCourseControl(new CourseControl(controlId, firstId));
-                course = (Course) course.Clone();
-                course.firstCourseControl = newCourseControlId;
-                eventDB.ReplaceCourse(courseId, course);
+                newCourseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseId, Id<CourseControl>.None, eventDB.GetCourse(courseId).firstCourseControl, LegInsertionLoc.PreSplit);
             }
 
             if (addToOtherCourses) {
@@ -1031,7 +1039,7 @@ namespace PurplePen
 
                 // Check all courses to see if we should add the start to that course too.
                 foreach (Id<Course> courseSearchId in eventDB.AllCourseIds) {
-                    if (!QueryEvent.HasStartControl(eventDB, courseSearchId)) {
+                    if (QueryEvent.FindControlOfKind(eventDB, courseSearchId, controlKind).IsNone) {
                         // This course does not have a start control. 
                         courseModificationList.Add(courseSearchId);
                     }
@@ -1039,7 +1047,7 @@ namespace PurplePen
 
                 // Add the start control to each of those courses.
                 foreach (Id<Course> modifyCourseId in courseModificationList)
-                    AddStartToCourse(eventDB, controlId, modifyCourseId, false);
+                    AddStartOrMapIssueToCourse(eventDB, controlId, modifyCourseId, false);
             }
 
             return newCourseControlId;
@@ -1215,7 +1223,7 @@ namespace PurplePen
         }
 
         // If exactly one control of the given kind exists in the event, return the ID of it, otherwise, return None..
-        private static Id<ControlPoint> FindUniqueControl(EventDB eventDB, Id<Course> courseId, ControlPointKind controlPointKind)
+        private static Id<ControlPoint> FindUniqueControl(EventDB eventDB, ControlPointKind controlPointKind)
         {
             Id<ControlPoint> uniqueControlId = Id<ControlPoint>.None;
 
@@ -1256,12 +1264,16 @@ namespace PurplePen
             Id<Course> newCourseId = eventDB.AddCourse(newCourse);
 
             if (addStartAndFinish) {
-                // Add unique start and finish, if they exist.
-                Id<ControlPoint> uniqueStart = FindUniqueControl(eventDB, newCourseId, ControlPointKind.Start);
+                // Add unique map issue, start and finish, if they exist.
+                Id<ControlPoint> uniqueStart = FindUniqueControl(eventDB, ControlPointKind.Start);
                 if (uniqueStart.IsNotNone)
-                    AddStartToCourse(eventDB, uniqueStart, newCourseId, false);
+                    AddStartOrMapIssueToCourse(eventDB, uniqueStart, newCourseId, false);
 
-                Id<ControlPoint> uniqueFinish = FindUniqueControl(eventDB, newCourseId, ControlPointKind.Finish);
+                Id<ControlPoint> uniqueMapIssue = FindUniqueControl(eventDB, ControlPointKind.MapIssue);
+                if (uniqueMapIssue.IsNotNone)
+                    AddStartOrMapIssueToCourse(eventDB, uniqueMapIssue, newCourseId, false);
+
+                Id<ControlPoint> uniqueFinish = FindUniqueControl(eventDB, ControlPointKind.Finish);
                 if (uniqueFinish.IsNotNone)
                     AddFinishToCourse(eventDB, uniqueFinish, newCourseId, false);
             }

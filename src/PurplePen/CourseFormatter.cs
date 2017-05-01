@@ -607,6 +607,10 @@ namespace PurplePen
             CourseObj courseObj = null;
 
             switch (control.kind) {
+            case ControlPointKind.MapIssue:
+                courseObj = new MapIssueCourseObj(controlId, courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
+                break;
+
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
                 courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, CrossHairOptions.HighlightCrossHair);
@@ -805,6 +809,7 @@ namespace PurplePen
                 return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
 
             case ControlPointKind.None:
+            case ControlPointKind.MapIssue:
                 return 0;
 
             default:

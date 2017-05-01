@@ -219,4 +219,10 @@
   <data name="DraggingTopologyObject" xml:space="preserve">
     <value>Drag control number to reorder it in the course (hold shift to duplicate)</value>
   </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Click left mouse button to add existing map issue point to course</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Click left mouse button to place new map issue point</value>
+  </data>
 </root>

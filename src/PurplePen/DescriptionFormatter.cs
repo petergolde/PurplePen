@@ -539,7 +539,7 @@ namespace PurplePen
 
                 case CourseView.CourseViewKind.Score:
                     // Score course shows start, normal controls.
-                    return (control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Start);
+                    return (control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapIssue);
 
                 default:
                     Debug.Fail("bad course view kind");

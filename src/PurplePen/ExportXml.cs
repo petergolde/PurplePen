@@ -359,6 +359,9 @@ namespace PurplePen
 
         protected override void WriteCourseControl(ControlPointKind kind, CourseView.ControlView controlView, bool isScore, ref int sequenceNumber, ref float distanceThisLeg)
         {
+            if (kind == ControlPointKind.MapIssue)
+                return;
+
             xmlWriter.WriteStartElement("CourseControl");
 
             switch (kind) {

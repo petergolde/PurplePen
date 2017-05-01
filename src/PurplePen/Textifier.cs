@@ -82,6 +82,7 @@ namespace PurplePen
 
                 case ControlPointKind.Finish:
                 case ControlPointKind.CrossingPoint:
+                case ControlPointKind.MapIssue:
                     text = CreateTextForDirective(controlPoint.symbolIds[0], distanceText);
                     break;
 

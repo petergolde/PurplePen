@@ -124,6 +124,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Map Issue Point.
+        /// </summary>
+        internal static string AddMapIssue {
+            get {
+                return ResourceManager.GetString("AddMapIssue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Object.
         /// </summary>
         internal static string AddObject {

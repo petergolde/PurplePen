@@ -149,6 +149,7 @@ namespace PurplePen
     {
         // The order here determines the order of sorting for all controls course view or score course view
         None,
+        MapIssue,                       // Map Issue point.
         Start,                          // A start point
         MapExchange,             // A map exchange (that isn't a control)
         Normal,                         // A normal control point
@@ -193,7 +194,7 @@ namespace PurplePen
 
             if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[6];
-            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
+            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapIssue)
                 symbolIds = new string[1];
         }
 
@@ -206,7 +207,7 @@ namespace PurplePen
 
             if ((kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange) && symbolIds.Length != 6)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 6 symbols", id));
-            if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint) && symbolIds.Length != 1)
+            if ((kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapIssue) && symbolIds.Length != 1)
                 throw new ApplicationException(string.Format("Control point '{0}' should have 1 symbol", id));
 
             if ((kind != ControlPointKind.Normal && kind != ControlPointKind.Start) && columnFText != null)
@@ -299,6 +300,7 @@ namespace PurplePen
             switch (kindText) {
                 case "normal":              kind = ControlPointKind.Normal; break;
                 case "start":               kind = ControlPointKind.Start; break;
+                case "map-issue":           kind = ControlPointKind.MapIssue; break;
                 case "finish":              kind = ControlPointKind.Finish; break;
                 case "crossing-point":      kind = ControlPointKind.CrossingPoint; break;
                 case "map-exchange": kind = ControlPointKind.MapExchange; break;
@@ -307,7 +309,7 @@ namespace PurplePen
 
             if (kind == ControlPointKind.Normal || kind == ControlPointKind.Start || kind == ControlPointKind.MapExchange)
                 symbolIds = new string[6];
-            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint)
+            else if (kind == ControlPointKind.Finish || kind == ControlPointKind.CrossingPoint || kind == ControlPointKind.MapIssue)
                 symbolIds = new string[1];
 
             code = null;
@@ -459,6 +461,7 @@ namespace PurplePen
             switch (kind) {
                 case ControlPointKind.Normal: kindText = "normal"; break;
                 case ControlPointKind.Start: kindText = "start"; break;
+                case ControlPointKind.MapIssue: kindText = "map-issue"; break;
                 case ControlPointKind.Finish: kindText = "finish"; break;
                 case ControlPointKind.CrossingPoint: kindText = "crossing-point"; break;
                 case ControlPointKind.MapExchange: kindText = "map-exchange"; break;

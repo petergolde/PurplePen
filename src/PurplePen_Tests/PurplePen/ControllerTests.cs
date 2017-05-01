@@ -1126,7 +1126,7 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             // Change course 6 to use a new start control.
             UndoMgr undoMgr = controller.GetUndoMgr();
             undoMgr.BeginCommand(334, "Add start");
-            Id<CourseControl> courseControlId = ChangeEvent.AddStartToCourse(eventDB, ControlId(23), CourseId(6), false);
+            Id<CourseControl> courseControlId = ChangeEvent.AddStartOrMapIssueToCourse(eventDB, ControlId(23), CourseId(6), false);
             undoMgr.EndCommand(334);
 
             controller.SelectTab(1);

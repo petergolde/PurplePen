@@ -151,6 +151,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click left mouse button to add existing map issue point to course.
+        /// </summary>
+        internal static string AddingExistingMapIssue {
+            get {
+                return ResourceManager.GetString("AddingExistingMapIssue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click left mouse button to add existing start to course.
         /// </summary>
         internal static string AddingExistingStart {
@@ -201,6 +210,15 @@ namespace PurplePen {
         internal static string AddingMapExchangeToControl {
             get {
                 return ResourceManager.GetString("AddingMapExchangeToControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click left mouse button to place new map issue point.
+        /// </summary>
+        internal static string AddingMapIssue {
+            get {
+                return ResourceManager.GetString("AddingMapIssue", resourceCulture);
             }
         }
         

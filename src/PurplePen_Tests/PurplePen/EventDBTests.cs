@@ -59,7 +59,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            ControlPoint ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8;
+            ControlPoint ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8, ctl9;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -120,6 +120,12 @@ namespace PurplePen.Tests
             ctl8.symbolIds[0] = "13.5";
             eventDB.AddControlPoint(ctl8);
 
+            ctl9 = new ControlPoint(ControlPointKind.MapIssue, null, new PointF(40.3F, -7.11F));
+            ctl9.symbolIds[0] = "13.6";
+            eventDB.AddControlPoint(ctl9);
+
+
+
             undomgr.EndCommand(61);
 
             eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
@@ -138,7 +144,8 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(5), ctl5),
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(6), ctl6),
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(7), ctl7),
-                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(8), ctl8)
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(8), ctl8),
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(9), ctl9)
                 }
             );
         }
