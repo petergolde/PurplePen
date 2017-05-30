@@ -139,6 +139,9 @@ namespace PurplePen
             this.grid.RowTemplate.Height = 24;
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grid.ShowEditingIcon = false;
+            this.grid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.grid_CellFormatting);
+            this.grid.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.grid_CellValidating);
+            this.grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellValueChanged);
             // 
             // OldCode
             // 
