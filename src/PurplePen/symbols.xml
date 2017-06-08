@@ -5529,6 +5529,76 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
+  
+  <symbol kind="D" id="5.99">
+    <name lang="en">Out of bounds area</name>
+    <text lang="en">out of bounds area</text>
+    <text lang="en" plural="true">out of bounds areas</text>
+
+
+
+
+    <polygon thickness="12.5">
+      <point x="-70" y="-70" />
+      <point x="-70" y="70" />
+      <point x="70" y="70" />
+      <point x="70" y="-70" />
+    </polygon>
+
+    <beziers thickness="10">
+      <point x="0" y="0" />
+      <point x="-5" y="8.66" />
+
+      <point x="-17" y="22" />
+      <point x="-17" y="35" />
+      <point x="-17" y="42" />
+
+      <point x="-12" y="53" />
+      <point x="0" y="53" />
+      <point x="12" y="53" />
+
+      <point x="17" y="42" />
+      <point x="17" y="35" />
+      <point x="17" y="22" />
+
+      <point x="5" y="8.66" />
+      <point x="0" y="0" />
+      <point x="-5" y="-8.66" />
+
+      <point x="-10.553" y="-25.722" />
+      <point x="-21.811" y="-32.222" />
+      <point x="-27.873" y="-35.722" />
+
+      <point x="-39.899" y="-36.892" />
+      <point x="-45.899" y="-26.5" />
+      <point x="-51.899" y="-16.108" />
+
+      <point x="-44.873" y="-6.278" />
+      <point x="-38.811" y="-2.778" />
+      <point x="-27.553" y="3.722" />
+
+      <point x="-10" y="0" />
+      <point x="0" y="0" />
+      <point x="5" y="-8.66" />
+
+      <point x="10.553" y="-25.722" />
+      <point x="21.811" y="-32.222" />
+      <point x="27.873" y="-35.722" />
+
+      <point x="39.899" y="-36.892" />
+      <point x="45.899" y="-26.5" />
+      <point x="51.899" y="-16.108" />
+
+      <point x="44.873" y="-6.278" />
+      <point x="38.811" y="-2.778" />
+      <point x="27.553" y="3.722" />
+
+      <point x="10" y="0" />
+      <point x="0" y="0" />
+    </beziers>
+    
+  </symbol>
+
   <symbol kind="D" id="5.12">
     <name lang="en-AU">Paved area</name>
     <name lang="en">Paved area</name>
@@ -5606,7 +5676,7 @@ for the symbols.
       <point x="60" y="-12" />
     </lines>
   </symbol>
-
+  
   <symbol kind="D" id="5.13">
     <name lang="en-AU">Ruin</name>
     <name lang="en">Ruin</name>
