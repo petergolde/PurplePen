@@ -1867,6 +1867,27 @@ for the symbols.
     </filled-circle>
   </symbol>
 
+  <symbol kind="D" id="1.10b">
+    <name lang="en">New Knoll</name>
+    <text lang="en">new knoll</text>
+    <text lang="en" plural="true">new knolls</text>
+
+    <filled-beziers>
+      <point x="-70" y ="-30"/>
+        <point x="-10" y ="-30"/>
+        <point x="-10" y ="-30"/>
+      <point x="70" y ="-30"/>
+        <point x="70" y ="8.66"/>
+        <point x="38.66" y ="40"/>
+      <point x="0" y ="40"/>
+        <point x="-38.66" y ="40"/>
+        <point x="-70" y ="8.66"/>
+      <point x="-70" y ="-30"/>
+
+    </filled-beziers>
+  </symbol>
+  
+  
   <symbol kind="D" id="1.11">
     <name lang="en-AU">Saddle</name>
     <name lang="en">Saddle</name>
@@ -3001,6 +3022,23 @@ for the symbols.
       <point x="45" y="70" />
     </lines>
   </symbol>
+
+  <symbol kind="D" id="2.10" size-is-depth="true">
+    <name lang="en">Trench</name>
+
+    <text lang="en">trench</text>
+
+
+    <lines thickness="12.5">
+      <point x="-65" y="50" />
+      <point x="-35" y="50" />
+      <point x="-35" y="-50" />
+      <point x="35" y="-50" />
+      <point x="35" y="50" />
+      <point x="65" y="50" />
+    </lines>
+  </symbol>
+
 
   <symbol kind="D" id="3.1">
     <name lang="en-AU">Lake</name>
