@@ -44,6 +44,7 @@ using System.IO;
 
 using PurplePen.MapModel;
 using System.Runtime.InteropServices;
+using System.Linq;
 
 namespace PurplePen
 {
@@ -260,21 +261,24 @@ namespace PurplePen
     /// </summary>
     class Symbol
     {
+        public readonly int SortOrder;
         private readonly SymbolDB symbolDB;
         private char kind;
         private bool sizeIsDepth;
         private string id;
         private Dictionary<string, string> name = new Dictionary<string, string>();
         private List<SymbolText> texts = new List<SymbolText>();
+        private string[] standards;
 
 #if TEST
         internal   // Allow test code access.
 #endif
         SymbolStroke[] strokes;
 
-        public Symbol(SymbolDB symbolDB)
+        public Symbol(SymbolDB symbolDB, int sortOrder)
         {
             this.symbolDB = symbolDB;
+            this.SortOrder = sortOrder;
         }
 
         /// <summary>
@@ -293,6 +297,8 @@ namespace PurplePen
         {
             get { return id; }
         }
+
+
 
         /// <summary>
         /// Get whether sizes are heights or depths.
@@ -329,6 +335,15 @@ namespace PurplePen
                 return name[language];
             else
                 return null;
+        }
+
+        // Is this symbol used by the given standard?
+        public bool InStandard(string std)
+        {
+            if (standards == null)
+                return true;
+            else
+                return standards.Contains(std);
         }
 
         // Find the best matching SymbolText. Gender can be null or empty for don't care. Same with nounCase. If 
@@ -605,6 +620,11 @@ namespace PurplePen
             this.id = xmlinput.GetAttributeString("id");
             this.sizeIsDepth = xmlinput.GetAttributeBool("size-is-depth", false);
 
+            string standardStrings = xmlinput.GetAttributeString("standard", "");
+            if (standardStrings != "") {
+                this.standards = standardStrings.Split(',');
+            }
+
             bool first = true;
             List<SymbolStroke> strokes = new List<SymbolStroke>();
 
@@ -871,13 +891,15 @@ namespace PurplePen
     class SymbolDB
     {
         string filename;
-        Dictionary<string, Symbol> symbols = new Dictionary<string,Symbol>();
+        Dictionary<string, List<Symbol>> symbols = new Dictionary<string, List<Symbol>>();
         Dictionary<string, SymbolLanguage> languages = new Dictionary<string, SymbolLanguage>();
+
+        string currentStandard;
 
         /// <summary>
         /// Initialize the Symbol database from the given file.
         /// </summary>
-        public SymbolDB(string filename)
+        public SymbolDB(string filename, string standard = "2004")
         {
             this.filename = filename;
             ReadSymbolFile(filename);
@@ -889,14 +911,19 @@ namespace PurplePen
             get { return filename; }
         }
 
+        public string Standard {
+            get { return currentStandard; }
+            set { currentStandard = value; }
+        }
+
         /// <summary>
-        /// Enumerate all the available symbols.
+        /// Enumerate all the available symbols in the current standard.
         /// </summary>
         public ICollection<Symbol> AllSymbols
         {
             get
             {
-                return symbols.Values;
+                return (from s in symbols.SelectMany(kvp => kvp.Value) where s.InStandard(currentStandard) orderby s.SortOrder select s).ToList();
             }
         }
 
@@ -928,7 +955,7 @@ namespace PurplePen
         {
             get
             {
-                return symbols[id];
+                return symbols[id].First(s => s.InStandard(currentStandard));
             }
         }
 
@@ -942,17 +969,26 @@ namespace PurplePen
 
         private void ReadSymbolFile(string filename)
         {
+            int sortOrder = 1;
+
             using (XmlInput xmlinput = new XmlInput(filename)) {
                 xmlinput.CheckElement("symbols");
 
                 bool first = true;
                 while (xmlinput.FindSubElement(first, new string[] { "symbol", "language" })) {
                     if (xmlinput.Name == "symbol") {
-                        Symbol symbol = new Symbol(this);
+                        Symbol symbol = new Symbol(this, sortOrder);
+                        ++sortOrder;
 
                         symbol.ReadXml(xmlinput);
 
-                        symbols.Add(symbol.Id, symbol);
+                        if (symbols.ContainsKey(symbol.Id)) {
+                            symbols[symbol.Id].Add(symbol);
+                        }
+                        else {
+                            symbols[symbol.Id] = new List<Symbol>() { symbol };
+
+                        }
                     }
                     else if (xmlinput.Name == "language") {
                         SymbolLanguage language = new SymbolLanguage();
