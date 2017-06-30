@@ -902,6 +902,7 @@ namespace PurplePen
         public SymbolDB(string filename, string standard = "2004")
         {
             this.filename = filename;
+            this.currentStandard = standard;
             ReadSymbolFile(filename);
         }
 

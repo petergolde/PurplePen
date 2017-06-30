@@ -41,7 +41,10 @@ for the symbols.
 <symbol>           Describes one symbol.
    kind - (required) the column the symbol is usually associated with ("D", "E", etc.)
                      instructional line symbols are "W" through "Z".
-   id   - (required) the IOF id of the symbol. e.g. "1.14".
+   id   - (required) the IOF id of the symbol. e.g. "1.14". Uses the 2004 ids only, and does
+               not used the renumbered. Not ever showed to the user.
+   standard - (optional) If specified, either "2004" or "2018". Indicates which IOF standard
+                   the symbol is used in.
    size-is-depth - (optional, default=false) If true, indicates that a single number in 
                    column F indicates a depth, rather than a height.
    
@@ -1907,7 +1910,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="D" id="1.10">
+  <symbol kind="D" id="1.10" standard="2004">
     <name lang="en-AU">Knoll</name>
     <name lang="en">Knoll</name>
     <name lang="fr">Butte</name>
@@ -1974,10 +1977,8 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="D" id="1.10b">
-    <name lang="en">New Knoll</name>
-    <text lang="en">new knoll</text>
-    <text lang="en" plural="true">new knolls</text>
+  <symbol kind="D" id="1.10" standard="2018">
+    <text lang="cs" gender="femininum">kupka</text>
 
     <filled-beziers>
       <point x="-70" y ="-30"/>
@@ -2701,7 +2702,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="D" id="2.4">
+  <symbol kind="D" id="2.4" standard="2004">
     <name lang="en-AU">Boulder</name>
     <name lang="en">Boulder</name>
     <name lang="fr">Rocher, bloc</name>
@@ -2769,6 +2770,72 @@ for the symbols.
       <point x="63.5" y="-55" />
       <point x="-63.5" y="-55" />
     </filled-polygon>
+  </symbol>
+
+  <symbol kind="D" id="2.4" standard="2018">
+    <name lang="en-AU">Boulder</name>
+    <name lang="en">Boulder</name>
+    <name lang="fr">Rocher, bloc</name>
+    <name lang="en-GB">Boulder</name>
+    <name lang="sv">Sten</name>
+    <name lang="nb-NO">Stein</name>
+    <name lang="es">Roca</name>
+    <name lang="nn-NO">Stein</name>
+    <name lang="fi">Kivi</name>
+    <name lang="bg">Камък</name>
+    <name lang="ro">Bolovan</name>
+    <name lang="et">Kivi</name>
+    <name lang="de">Stein</name>
+    <name lang="ca">Roca</name>
+    <name lang="ja">岩</name>
+    <name lang="zh-HK">Boulder</name>
+    <name lang="pl">Boulder</name>
+    <name lang="cs">Kámen</name>
+
+    <text lang="en-AU" plural="true">boulders</text>
+    <text lang="en-AU">boulder</text>
+
+    <text lang="en">boulder</text>
+    <text lang="en" plural="true">boulders</text>
+    <text lang="fr" plural="true" gender="masculin">rochers ou blocs</text>
+    <text lang="fr" gender="masculin">rocher ou bloc</text>
+    <text lang="en-GB" plural="true">Boulders</text>
+    <text lang="en-GB">Boulder</text>
+    <text lang="sv" plural="true">stenarna</text>
+    <text lang="sv">stenen</text>
+    <text lang="nb-NO" plural="true">steiner</text>
+    <text lang="nb-NO">stein</text>
+    <text lang="es" plural="true" gender="femenino">rocas</text>
+    <text lang="es" gender="femenino">roca</text>
+    <text lang="nn-NO" plural="true">steiner</text>
+    <text lang="nn-NO">stein</text>
+    <text lang="fi" plural="true">kivien</text>
+    <text lang="fi">kivi</text>
+    <text lang="bg" plural="true" gender="мъжки">камъни</text>
+    <text lang="bg" gender="мъжки">камък</text>
+    <text lang="ro">bolovan</text>
+    <text lang="et" plural="true">kivid</text>
+    <text lang="et">kivi</text>
+    <text lang="de" plural="true" gender="maskulin">Steinen</text>
+    <text lang="de" gender="maskulin">Stein</text>
+    <text lang="ca" plural="true" gender="femení">roques</text>
+    <text lang="ca" gender="femení">roca</text>
+    <text lang="ja">岩</text>
+    <text lang="zh-HK">大石</text>
+    <text lang="pl" plural="true" gender="męski">głazy</text>
+    <text lang="pl" gender="męski">głaz</text>
+    <text lang="cs" plural="true">Kameny</text>
+    <text lang="cs" gender="maskulinum">kámen</text>
+    <text case="čeho" lang="cs">kamene</text>
+    <text case="čehoplur" lang="cs">kamenů</text>
+    <text case="čím" lang="cs">kameny</text>
+    <text case="čím" lang="cs">kamenem</text>
+    <text case="čímplur" lang="cs">kameny</text>
+
+    <filled-circle radius="23">
+      <point x="0" y="0" />
+    </filled-circle>
+
   </symbol>
 
   <symbol kind="D" id="2.5">
@@ -2858,7 +2925,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.6">
+  <symbol kind="D" id="2.6" standard="2004">
     <name lang="en-AU">Boulder cluster</name>
     <name lang="en">Boulder cluster</name>
     <name lang="fr">Tas de pierre</name>
@@ -2931,6 +2998,76 @@ for the symbols.
       <point x="-69.3" y="-30" />
     </filled-polygon>
   </symbol>
+
+  <symbol kind="D" id="2.6" standard="2018">
+    <name lang="en-AU">Boulder cluster</name>
+    <name lang="en">Boulder cluster</name>
+    <name lang="fr">Tas de pierre</name>
+    <name lang="en-GB">Boulder cluster</name>
+    <name lang="sv">Stensamling</name>
+    <name lang="nb-NO">Steinblokk</name>
+    <name lang="es">Grupo de rocas</name>
+    <name lang="nn-NO">Steinblokk</name>
+    <name lang="fi">Kiviryhmä</name>
+    <name lang="bg">Група камъни</name>
+    <name lang="ro">Adunătură de bolovani</name>
+    <name lang="et">Kivihunnik</name>
+    <name lang="de">Steinhaufen</name>
+    <name lang="ca">Grup de roques</name>
+    <name lang="ja">岩石群</name>
+    <name lang="zh-HK">Boulder cluster</name>
+    <name lang="pl">Boulder cluster</name>
+    <name lang="cs">Skupina kamenů</name>
+
+    <text lang="en-AU" plural="true">boulder clusters</text>
+    <text lang="en-AU">boulder cluster</text>
+
+    <text lang="en">boulder cluster</text>
+    <text lang="en" plural="true">boulder clusters</text>
+    <text lang="fr" plural="true" gender="masculin">tas de pierre</text>
+    <text lang="fr" gender="masculin">tas de pierre</text>
+    <text lang="en-GB" plural="true">Boulder Clusters</text>
+    <text lang="en-GB">Boulder Cluster</text>
+    <text lang="sv" plural="true">stensamlingarna</text>
+    <text lang="sv">stensamlingen</text>
+    <text lang="nb-NO" plural="true">steinblokker</text>
+    <text lang="nb-NO">steinblokk</text>
+    <text lang="es" plural="true" gender="masculino">grupos de rocas</text>
+    <text lang="es" gender="masculino">grupo de rocas</text>
+    <text lang="nn-NO" plural="true">steinblokker</text>
+    <text lang="nn-NO">steinblokk</text>
+    <text lang="fi" plural="true">kiviryhmien</text>
+    <text lang="fi">kiviryhmä</text>
+    <text lang="bg" plural="true" gender="женски">групи камъни</text>
+    <text lang="bg" gender="женски">група камъни</text>
+    <text lang="ro">adunătură de bolovani</text>
+    <text lang="et" plural="true">kivihunnikute</text>
+    <text lang="et">kivihunnik</text>
+    <text lang="de" plural="true" gender="maskulin">Steinhaufen</text>
+    <text lang="de" gender="maskulin">Steinhaufen</text>
+    <text lang="ca" plural="true" gender="masculí">grups de roques</text>
+    <text lang="ca" gender="masculí">grup de roques</text>
+    <text lang="ja">岩石群</text>
+    <text lang="zh-HK">大石堆</text>
+    <text lang="pl" plural="true" gender="żeński">grupy skał</text>
+    <text lang="pl" gender="żeński">grupa skał</text>
+    <text lang="cs" plural="true">Skupina kamenů</text>
+    <text lang="cs" gender="femininum">skupina kamenů</text>
+    <text case="čeho" lang="cs">skupiny kamenů</text>
+    <text case="čehoplur" lang="cs">skupin kamenů</text>
+    <text case="čím" lang="cs">skupinou kamenů</text>
+    <text case="čímplur" lang="cs">skupinami kamenů</text>
+
+    <filled-polygon>
+      <point x="0" y="55" />
+      <point x="63.5" y="-55" />
+      <point x="-63.5" y="-55" />
+    </filled-polygon>
+
+
+  </symbol>
+
+
 
   <symbol kind="D" id="2.7">
     <name lang="en-AU">Stony ground</name>
@@ -3241,11 +3378,10 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="D" id="2.10" size-is-depth="true">
+  <symbol kind="D" id="2.10" size-is-depth="true" standard="2018">
     <name lang="en">Trench</name>
 
     <text lang="en">trench</text>
-
 
     <lines thickness="12.5">
       <point x="-65" y="50" />
@@ -6004,138 +6140,6 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  
-  <symbol kind="D" id="5.99">
-    <name lang="en">Out of bounds area</name>
-    <text lang="en">out of bounds area</text>
-    <text lang="en" plural="true">out of bounds areas</text>
-
-
-
-
-    <polygon thickness="12.5">
-      <point x="-70" y="-70" />
-      <point x="-70" y="70" />
-      <point x="70" y="70" />
-      <point x="70" y="-70" />
-    </polygon>
-
-    <beziers thickness="10">
-      <point x="0" y="-5" />
-      <point x="-5" y="3.66" />
-
-      <point x="-17" y="17" />
-      <point x="-17" y="30" />
-      <point x="-17" y="37" />
-
-      <point x="-12" y="48" />
-      <point x="0" y="48" />
-      <point x="12" y="48" />
-
-      <point x="17" y="37" />
-      <point x="17" y="30" />
-      <point x="17" y="17" />
-
-      <point x="5" y="3.66" />
-      <point x="0" y="-5" />
-      <point x="-5" y="-13.66" />
-
-      <point x="-10.553" y="-30.722" />
-      <point x="-21.811" y="-37.222" />
-      <point x="-27.873" y="-40.722" />
-
-      <point x="-39.899" y="-41.892" />
-      <point x="-45.899" y="-31.5" />
-      <point x="-51.899" y="-21.108" />
-
-      <point x="-44.873" y="-11.278" />
-      <point x="-38.811" y="-7.778" />
-      <point x="-27.553" y="-1.278" />
-
-      <point x="-10" y="-5" />
-      <point x="0" y="-5" />
-      <point x="5" y="-13.66" />
-
-      <point x="10.553" y="-30.722" />
-      <point x="21.811" y="-37.222" />
-      <point x="27.873" y="-40.722" />
-
-      <point x="39.899" y="-41.892" />
-      <point x="45.899" y="-31.5" />
-      <point x="51.899" y="-21.108" />
-
-      <point x="44.873" y="-11.278" />
-      <point x="38.811" y="-7.778" />
-      <point x="27.553" y="-1.278" />
-
-      <point x="10" y="-5" />
-      <point x="0" y="-5" />
-    </beziers>
-
-    <lines thickness="10" ends="flat">
-      <point x="0" y="-5" />
-      <point x="0" y="-52" />
-
-    </lines>
-    
-  </symbol>
-
-  <symbol kind="D" id="5.991">
-    <name lang="en">Out of bounds area 2</name>
-    <text lang="en">out of bounds area 2</text>
-    <text lang="en" plural="true">out of bounds areas 2</text>
-
-
-
-
-    <polygon thickness="12.5">
-      <point x="-70" y="-70" />
-      <point x="-70" y="70" />
-      <point x="70" y="70" />
-      <point x="70" y="-70" />
-    </polygon>
-
-    <beziers thickness="10">
-      <point x="0" y = "-37" />
-      <point x="-7.660444" y = "-43.42788" />
-      <point x="-19.01736" y = "-53.69468" />
-      <point x="-31.15262" y = "-44.8779" />
-      <point x="-43.28787" y = "-36.06112" />
-      <point x="-37.03304" y = "-22.08743" />
-      <point x="-33.28698" y = "-12.81559" />
-      <point x="-41.76746" y = "-7.516402" />
-      <point x="-55.04125" y = "0.1120522" />
-      <point x="-50.40599" y = "14.3779" />
-      <point x="-45.77074" y = "28.64375" />
-      <point x="-30.54812" y = "27.01316" />
-      <point x="-20.57248" y = "26.3156" />
-      <point x="-18.15326" y = "36.01855" />
-      <point x="-15" y = "51" />
-      <point x="9.301504E-07" y = "51" />
-      <point x="15" y = "51" />
-      <point x="18.15326" y = "36.01855" />
-      <point x="20.57248" y = "26.3156" />
-      <point x="30.54812" y = "27.01316" />
-      <point x="45.77074" y = "28.64375" />
-      <point x="50.40599" y = "14.3779" />
-      <point x="55.04125" y = "0.1120543" />
-      <point x="41.76746" y = "-7.516402" />
-      <point x="33.28698" y = "-12.81559" />
-      <point x="37.03304" y = "-22.08743" />
-      <point x="43.28787" y = "-36.06112" />
-      <point x="31.15262" y = "-44.8779" />
-      <point x="19.01736" y = "-53.69468" />
-      <point x="7.660444" y = "-43.42788" />
-      <point x="0" y = "-37" />
-    </beziers>
-
-    <filled-circle radius="12.5">
-      <point x="0" y="-2" />
-    </filled-circle>
-
-
-  </symbol>
-
   <symbol kind="D" id="5.12">
     <name lang="en-AU">Paved area</name>
     <name lang="en">Paved area</name>
@@ -6968,6 +6972,61 @@ for the symbols.
       <point x="70" y="45" />
     </lines>
   </symbol>
+
+  <symbol kind="D" id="5.25">
+    <name lang="en">Out of bounds area</name>
+    <text lang="en">out of bounds area</text>
+    <text lang="en" plural="true">out of bounds areas 2</text>
+
+    <polygon thickness="12.5">
+      <point x="-70" y="-70" />
+      <point x="-70" y="70" />
+      <point x="70" y="70" />
+      <point x="70" y="-70" />
+    </polygon>
+
+    <beziers thickness="10">
+      <point x="0" y = "-37" />
+      <point x="-7.660444" y = "-43.42788" />
+      <point x="-19.01736" y = "-53.69468" />
+      <point x="-31.15262" y = "-44.8779" />
+      <point x="-43.28787" y = "-36.06112" />
+      <point x="-37.03304" y = "-22.08743" />
+      <point x="-33.28698" y = "-12.81559" />
+      <point x="-41.76746" y = "-7.516402" />
+      <point x="-55.04125" y = "0.1120522" />
+      <point x="-50.40599" y = "14.3779" />
+      <point x="-45.77074" y = "28.64375" />
+      <point x="-30.54812" y = "27.01316" />
+      <point x="-20.57248" y = "26.3156" />
+      <point x="-18.15326" y = "36.01855" />
+      <point x="-15" y = "51" />
+      <point x="9.301504E-07" y = "51" />
+      <point x="15" y = "51" />
+      <point x="18.15326" y = "36.01855" />
+      <point x="20.57248" y = "26.3156" />
+      <point x="30.54812" y = "27.01316" />
+      <point x="45.77074" y = "28.64375" />
+      <point x="50.40599" y = "14.3779" />
+      <point x="55.04125" y = "0.1120543" />
+      <point x="41.76746" y = "-7.516402" />
+      <point x="33.28698" y = "-12.81559" />
+      <point x="37.03304" y = "-22.08743" />
+      <point x="43.28787" y = "-36.06112" />
+      <point x="31.15262" y = "-44.8779" />
+      <point x="19.01736" y = "-53.69468" />
+      <point x="7.660444" y = "-43.42788" />
+      <point x="0" y = "-37" />
+    </beziers>
+
+    <filled-circle radius="12.5">
+      <point x="0" y="-2" />
+    </filled-circle>
+
+
+  </symbol>
+
+
 
   <symbol kind="D" id="6.1">
     <name lang="en-AU">Special item</name>
@@ -12048,7 +12107,7 @@ for the symbols.
     <text lang="ja">{0}の西の根元</text>
     <text lang="zh-HK">{0}西面腳下</text>
     <text lang="pl">zachodnia strona u podstawy {0}</text>
-		<text lang="cs">{0}, z pata</text>
+		<text lang="cs">{0}, z pata</text>out 
 
 
 
@@ -12115,7 +12174,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.7">
+  <symbol kind="G" id="11.7" standard="2004">
     <name lang="en-AU">Bend</name>
     <name lang="en">Bend</name>
     <name lang="fr">Coude</name>
@@ -12158,6 +12217,66 @@ for the symbols.
 		<text gender="maskulinum" lang="cs">{0}, jeho ohyb</text>
 		<text gender="femininum" lang="cs">{0}, její ohyb</text>
 		<text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
+
+
+
+    <beziers thickness="10">
+      <point x="35" y="70" />
+      <point x="25" y="62.22" />
+      <point x="-15" y="31.11" />
+      <point x="-25" y="23.33" />
+      <point x="-45" y="7.78" />
+      <point x="-45" y="-7.78" />
+      <point x="-25" y="-23.33" />
+      <point x="-15" y="-31.11" />
+      <point x="25" y="-62.22" />
+      <point x="35" y="-70" />
+    </beziers>
+  </symbol>
+
+  <symbol kind="F" id="11.7" standard="2018">
+    <name lang="en-AU">Bend</name>
+    <name lang="en">Bend</name>
+    <name lang="fr">Coude</name>
+    <name lang="en-GB">Bend</name>
+    <name lang="sv">Krök</name>
+    <name lang="nb-NO">Kne</name>
+    <name lang="es">En la curva</name>
+    <name lang="nn-NO">Kne</name>
+    <name lang="fi">Mutka</name>
+    <name lang="bg">Завой</name>
+    <name lang="ro">Cotitură</name>
+    <name lang="et">Käänak</name>
+    <name lang="de">Biegung</name>
+    <name lang="ca">Corba</name>
+    <name lang="ja">曲がり</name>
+    <name lang="zh-HK">Bend</name>
+    <name lang="pl">Bend</name>
+    <name lang="cs">Ohyb</name>
+
+    <text lang="en-AU">bend in {0}</text>
+
+    <text lang="en">bend in {0}</text>
+    <text lang="fr">{0}, au coude</text>
+    <text lang="en-GB">{0} bend</text>
+    <text lang="sv">{0}, kröken</text>
+    <text lang="nb-NO">kne {0}</text>
+    <text lang="es">{0} en la curva</text>
+    <text lang="nn-NO">kne {0}</text>
+    <text lang="fi">{0} mutka</text>
+    <text lang="bg">завой на {0}</text>
+    <text lang="ro">cotitură de {0}</text>
+    <text lang="et">{0} käänakul</text>
+    <text lang="de">{0}, Biegung</text>
+    <text lang="ca" gender="femení">a la corba d'una {0}</text>
+    <text lang="ca" gender="masculí">a la corba d'un {0}</text>
+    <text lang="ja">{0}の曲がり</text>
+    <text lang="zh-HK">{0}彎位</text>
+    <text lang="pl">zakręt {0}</text>
+    <text lang="cs" modifier-case="">ohyb {0}</text>
+    <text gender="maskulinum" lang="cs">{0}, jeho ohyb</text>
+    <text gender="femininum" lang="cs">{0}, její ohyb</text>
+    <text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
 
 
 
@@ -12700,7 +12819,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="H" id="12.3">
+  <symbol kind="H" id="12.3" standard="2004">
     <name lang="en-AU">Radio or TV control</name>
     <name lang="en">Radio or TV control</name>
     <name lang="fr">Radio ou TV (transmission)</name>
