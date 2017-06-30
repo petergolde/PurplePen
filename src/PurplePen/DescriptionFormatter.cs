@@ -405,7 +405,7 @@ namespace PurplePen
 
             // Get the text version of the control using the Textifier.
             Textifier textifier = new Textifier(eventDB, symbolDB, language);
-            line.textual = textifier.CreateTextForControl(controlView.controlId, distanceText); 
+            line.textual = textifier.CreateTextForDirective(directiveId, distanceText); 
 
             // The course control ID, for use in coordinating the selection
             line.controlId = controlView.controlId;

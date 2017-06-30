@@ -95,19 +95,26 @@ namespace PurplePen.MapView {
 		}
 
 
-		// This is the main entry point to the ViewCache. It asks to draw the part of the map into the graphics
-		// requested. This graphics is in pixel (viewport) coordinates. The transform that maps between the
-		// two is passed in, so that it doesn't need to be recomputed.
-		public void Draw(Graphics g, Rectangle clipRect, Size sizeView, RectangleF mapAreaToView, Matrix transform) {
-			// Make sure the cache is up to date.
-			UpdateCache(sizeView, mapAreaToView, transform);
+        // This is the main entry point to the ViewCache. It asks to draw the part of the map into the graphics
+        // requested. This graphics is in pixel (viewport) coordinates. The transform that maps between the
+        // two is passed in, so that it doesn't need to be recomputed.
+        public void Draw(Graphics g, Rectangle clipRect, Size sizeView, RectangleF mapAreaToView, Matrix transform)
+        {
+            // Make sure the cache is up to date.
+            UpdateCache(sizeView, mapAreaToView, transform);
 
-			// Draw the requested part of the bitmap to the destinated graphics.
-			g.DrawImage(bitmap, clipRect.Left, clipRect.Top, clipRect, GraphicsUnit.Pixel);
-		}
+            try {
+                // Draw the requested part of the bitmap to the destinated graphics.
+                g.DrawImage(bitmap, clipRect.Left, clipRect.Top, clipRect, GraphicsUnit.Pixel);
+            }
+            catch (Exception e) {
+                // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                // Just ignore it; there's nothing else to do. See bug #1997301.            
+            }
+        }
 
-		// Get a brush whose texture is the (up-to-date) viewcache for the given location.  Do not dispose this brush!
-		public Brush GetCacheBrush(Size sizeView, RectangleF mapAreaToView, Matrix transform) {
+        // Get a brush whose texture is the (up-to-date) viewcache for the given location.  Do not dispose this brush!
+        public Brush GetCacheBrush(Size sizeView, RectangleF mapAreaToView, Matrix transform) {
 			UpdateCache(sizeView, mapAreaToView, transform);
 
             if (bitmapBrush == null) {

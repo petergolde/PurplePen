@@ -141,6 +141,7 @@ for the symbols.
   <language lang="ja" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">日本語 (日本)</language>
   <language lang="zh-HK" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">中文(香港特別行政區)</language>
   <language lang="pl" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="męski,żeński,nijaki">polski</language>
+	<language lang="cs" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" case-modifers="true" genders="maskulinum,femininum,neutrum" cases="co,čeho,čehoplur,čím,čehoplur">čeština</language>
 
 
 
@@ -168,6 +169,7 @@ for the symbols.
     <name lang="ja">全コントロール</name>
     <name lang="zh-HK">All controls</name>
     <name lang="pl">All controls</name>
+		<name lang="cs">Všechny kontroly</name>
     <text lang="en-AU">All controls</text>
     <text lang="en">All controls</text>
     <text lang="fr">Tous Postes</text>
@@ -185,6 +187,7 @@ for the symbols.
     <text lang="ja">全コントロール</text>
     <text lang="zh-HK">所有控制點</text>
     <text lang="pl">Wszystkie PK</text>
+		<text lang="cs">všechny kontroly</text>
   </symbol>
 
 
@@ -210,6 +213,7 @@ for the symbols.
     <name lang="ja">コースの距離</name>
     <name lang="zh-HK">Course Length</name>
     <name lang="pl">Course Length</name>
+		<name lang="cs">Délka</name>
 
     <text lang="en-AU">Length {0}</text>
 
@@ -229,6 +233,7 @@ for the symbols.
     <text lang="ja">距離 {0}</text>
     <text lang="zh-HK">賽程長度 {0}</text>
     <text lang="pl">Dystans {0}</text>
+		<text lang="cs">délka {0}</text>
 
 
   </symbol>
@@ -255,6 +260,7 @@ for the symbols.
     <name lang="ja">コースの距離と登高</name>
     <name lang="zh-HK">Course Length and Climb</name>
     <name lang="pl">Course Length and Climb</name>
+		<name lang="cs">Délka a převýšení</name>
 
     <text lang="en-AU">Length {0}, climb {1}</text>
 
@@ -274,6 +280,7 @@ for the symbols.
     <text lang="ja">距離 {0}、登高 {1}</text>
     <text lang="zh-HK">賽程長度 {0}, 攀升 {1}</text>
     <text lang="pl">Dystans {0}, Przewyższenie {1}</text>
+		<text lang="cs">délka {0}, převýšení {1}</text>
 
 
   </symbol>
@@ -299,6 +306,7 @@ for the symbols.
     <name lang="ja">コントロール数</name>
     <name lang="zh-HK">Number of Controls</name>
     <name lang="pl">Number of Controls</name>
+		<name lang="cs">Počet kontrol</name>
 
     <text lang="en-AU">{0} controls</text>
 
@@ -318,6 +326,7 @@ for the symbols.
     <text lang="ja">{0} コントロール</text>
     <text lang="zh-HK">{0} 個控制點</text>
     <text lang="pl">{0} PK</text>
+		<text lang="cs">{0} kontrol</text>
 
 
   </symbol>
@@ -343,6 +352,7 @@ for the symbols.
     <name lang="ja">ポイント数</name>
     <name lang="zh-HK">Number of Points</name>
     <name lang="pl">Number of Points</name>
+		<name lang="cs">Body</name>
 
     <text lang="en-AU">{0} points</text>
 
@@ -362,6 +372,7 @@ for the symbols.
     <text lang="ja">{0} points</text>
     <text lang="zh-HK">{0} 分</text>
     <text lang="pl">{0} punktów</text>
+		<text lang="cs">{0} bodů</text>
 
 
   </symbol>
@@ -389,6 +400,7 @@ for the symbols.
     <name lang="ja">と</name>
     <name lang="zh-HK">And</name>
     <name lang="pl">And</name>
+		<name lang="cs">a</name>
 
     <text lang="en-AU">{0} and {1}</text>
 
@@ -408,6 +420,7 @@ for the symbols.
     <text lang="ja">{0}と{1}</text>
     <text lang="zh-HK">{0} 及 {1}</text>
     <text lang="pl">{0} i {1}</text>
+		<text lang="cs">{0} a {1}</text>
 
 
   </symbol>
@@ -438,6 +451,7 @@ for the symbols.
     <name lang="ja">スタート</name>
     <name lang="zh-HK">Start</name>
     <name lang="pl">Start</name>
+		<name lang="cs">Start</name>
 
     <text lang="en-AU">start</text>
 
@@ -457,6 +471,7 @@ for the symbols.
     <text lang="ja">スタート</text>
     <text lang="zh-HK">起點</text>
     <text lang="pl">start</text>
+		<text lang="cs">start</text>
 
 
     <polygon thickness="12.5" corners="sharp">
@@ -490,6 +505,7 @@ for the symbols.
     <name lang="ja">北の</name>
     <name lang="zh-HK">Northern</name>
     <name lang="pl">Northern</name>
+		<name lang="cs">Severní</name>
 
     <text lang="en-AU">N {0}</text>
 
@@ -515,6 +531,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">północne {0}</text>
     <text lang="pl" gender="żeński">północna {0}</text>
     <text lang="pl" gender="męski">północny {0}</text>
+		<text lang="cs">S {0}</text>
 
 
 
@@ -547,6 +564,7 @@ for the symbols.
     <name lang="ja">北東の</name>
     <name lang="zh-HK">North-eastern</name>
     <name lang="pl">North-eastern</name>
+		<name lang="cs">Severovýchodní</name>
 
     <text lang="en-AU">NE {0}</text>
 
@@ -572,6 +590,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">północno-wschodnie {0}</text>
     <text lang="pl" gender="żeński">północno-wschodnia {0}</text>
     <text lang="pl" gender="męski">północno-wschodni {0}</text>
+		<text lang="cs">SV {0}</text>
 
 
 
@@ -604,6 +623,7 @@ for the symbols.
     <name lang="ja">東の</name>
     <name lang="zh-HK">Eastern</name>
     <name lang="pl">Eastern</name>
+		<name lang="cs">Východní</name>
 
     <text lang="en-AU">E {0}</text>
 
@@ -629,6 +649,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">wschodnie {0}</text>
     <text lang="pl" gender="żeński">wschodnia {0}</text>
     <text lang="pl" gender="męski">wschodni {0}</text>
+		<text lang="cs">V {0}</text>
 
 
 
@@ -661,6 +682,7 @@ for the symbols.
     <name lang="ja">南東の</name>
     <name lang="zh-HK">South-eastern</name>
     <name lang="pl">South-eastern</name>
+		<name lang="cs">Jihovýchodní</name>
 
     <text lang="en-AU">SE {0}</text>
 
@@ -686,6 +708,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">południowo-wschodnie {0}</text>
     <text lang="pl" gender="żeński">południowo-wschodnia {0}</text>
     <text lang="pl" gender="męski">południowo-wschodni {0}</text>
+		<text lang="cs">JV {0}</text>
 
 
 
@@ -718,6 +741,7 @@ for the symbols.
     <name lang="ja">南の</name>
     <name lang="zh-HK">Southern</name>
     <name lang="pl">Southern</name>
+		<name lang="cs">Jižní</name>
 
     <text lang="en-AU">S {0}</text>
 
@@ -743,6 +767,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">południowe {0}</text>
     <text lang="pl" gender="żeński">południowa {0}</text>
     <text lang="pl" gender="męski">południowy {0}</text>
+		<text lang="cs">J {0}</text>
 
 
 
@@ -775,6 +800,7 @@ for the symbols.
     <name lang="ja">南西の</name>
     <name lang="zh-HK">South-western</name>
     <name lang="pl">South-western</name>
+		<name lang="cs">Jihozápadní</name>
 
     <text lang="en-AU">SW {0}</text>
 
@@ -800,6 +826,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">południowo-zachodnie {0}</text>
     <text lang="pl" gender="żeński">południowo-zachodnia {0}</text>
     <text lang="pl" gender="męski">południowo-zachodni {0}</text>
+		<text lang="cs">JZ {0}</text>
 
 
 
@@ -832,6 +859,7 @@ for the symbols.
     <name lang="ja">西の</name>
     <name lang="zh-HK">Western</name>
     <name lang="pl">Western</name>
+		<name lang="cs">Západní</name>
 
     <text lang="en-AU">W {0}</text>
 
@@ -857,6 +885,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">zachodnie {0}</text>
     <text lang="pl" gender="żeński">zachodnia {0}</text>
     <text lang="pl" gender="męski">zachodni {0}</text>
+		<text lang="cs">Z {0}</text>
 
 
 
@@ -889,6 +918,7 @@ for the symbols.
     <name lang="ja">北西の</name>
     <name lang="zh-HK">North-western</name>
     <name lang="pl">North-western</name>
+		<name lang="cs">Severozápadní</name>
 
     <text lang="en-AU">NW {0}</text>
 
@@ -914,6 +944,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">północno-zachonie {0}</text>
     <text lang="pl" gender="żeński">północno-zachonia {0}</text>
     <text lang="pl" gender="męski">północno-zachoni {0}</text>
+		<text lang="cs">SZ {0}</text>
 
 
 
@@ -946,6 +977,7 @@ for the symbols.
     <name lang="ja">上の</name>
     <name lang="zh-HK">Upper</name>
     <name lang="pl">Upper</name>
+		<name lang="cs">Horní</name>
 
     <text lang="en-AU">upper {0}</text>
 
@@ -973,6 +1005,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">górne {0}</text>
     <text lang="pl" gender="żeński">górna {0}</text>
     <text lang="pl" gender="męski">górny {0}</text>
+		<text lang="cs">horní {0}</text>
 
 
 
@@ -1009,6 +1042,7 @@ for the symbols.
     <name lang="ja">下の</name>
     <name lang="zh-HK">Lower</name>
     <name lang="pl">Lower</name>
+		<name lang="cs">Dolní</name>
 
     <text lang="en-AU">lower {0}</text>
 
@@ -1036,6 +1070,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">dolne {0}</text>
     <text lang="pl" gender="żeński">dolna {0}</text>
     <text lang="pl" gender="męski">dolny {0}</text>
+		<text lang="cs">dolní {0}</text>
 
 
 
@@ -1072,6 +1107,7 @@ for the symbols.
     <name lang="ja">まん中の</name>
     <name lang="zh-HK">Middle</name>
     <name lang="pl">Middle</name>
+		<name lang="cs">Prostřední</name>
 
     <text lang="en-AU">middle {0}</text>
 
@@ -1099,6 +1135,7 @@ for the symbols.
     <text lang="pl" gender="nijaki">środkowe {0}</text>
     <text lang="pl" gender="żeński">środkowa {0}</text>
     <text lang="pl" gender="męski">środkowy {0}</text>
+		<text lang="cs">prostřední {0}</text>
 
 
 
@@ -1143,6 +1180,7 @@ for the symbols.
     <name lang="ja">テラス</name>
     <name lang="zh-HK">Terrace</name>
     <name lang="pl">Terrace</name>
+		<name lang="cs">Terasa</name>
 
     <text lang="en-AU" plural="true">terraces</text>
     <text lang="en-AU">terrace</text>
@@ -1176,6 +1214,12 @@ for the symbols.
     <text lang="zh-HK">台地</text>
     <text lang="pl" plural="true" gender="męski">tarasy</text>
     <text lang="pl" gender="męski">taras</text>
+		<text lang="cs" plural="true">terasy</text>
+		<text lang="cs" gender="femininum">terasa</text>
+		<text case="čeho" lang="cs">terasy</text>
+		<text case="čehoplur" lang="cs">teras</text>
+		<text case="čím" lang="cs">terasou</text>
+		<text case="čímplur" lang="cs">terasami</text>
 
 
 
@@ -1221,6 +1265,7 @@ for the symbols.
     <name lang="ja">尾根</name>
     <name lang="zh-HK">Spur</name>
     <name lang="pl">Spur</name>
+		<name lang="cs">Hřbítek</name>
 
     <text lang="en-AU" plural="true">spurs</text>
     <text lang="en-AU">spur</text>
@@ -1254,6 +1299,12 @@ for the symbols.
     <text lang="zh-HK">山咀</text>
     <text lang="pl" plural="true" gender="męski">noski</text>
     <text lang="pl" gender="męski">nosek</text>
+		<text lang="cs" plural="true">hřbítky</text>
+		<text lang="cs" gender="maskulinum">hřbítek</text>
+		<text case="čeho" lang="cs">hřbítku</text>
+		<text case="čehoplur" lang="cs">hřbítků</text>
+		<text case="čím" lang="cs">hřbítkem</text>
+		<text case="čímplur" lang="cs">hřbítky</text>
 
 
 
@@ -1300,6 +1351,7 @@ for the symbols.
     <name lang="ja">沢</name>
     <name lang="zh-HK">Reentrant</name>
     <name lang="pl">Reentrant</name>
+		<name lang="cs">Údolíčko</name>
 
     <text lang="en-AU" plural="true">gullies</text>
     <text lang="en-AU">gully</text>
@@ -1335,6 +1387,12 @@ for the symbols.
     <text lang="zh-HK">山窩</text>
     <text lang="pl" plural="true" gender="żeński">muldy</text>
     <text lang="pl" gender="żeński">mulda</text>
+		<text lang="cs" plural="true">údolíčka</text>
+		<text lang="cs" gender="neutrum">údolíčko</text>
+		<text case="čeho" lang="cs">údolíčka</text>
+		<text case="čehoplur" lang="cs">údolíček</text>
+		<text case="čím" lang="cs">údolíčkem</text>
+		<text case="čímplur" lang="cs">údolíčky</text>
 
 
 
@@ -1374,6 +1432,7 @@ for the symbols.
     <name lang="ja">土がけ</name>
     <name lang="zh-HK">Earth bank</name>
     <name lang="pl">Earth bank</name>
+		<name lang="cs">Břeh</name>
 
     <text lang="en-AU" plural="true">earth banks</text>
     <text lang="en-AU">earth bank</text>
@@ -1407,6 +1466,12 @@ for the symbols.
     <text lang="zh-HK">泥坡</text>
     <text lang="pl" plural="true" gender="żeński">skarpy</text>
     <text lang="pl" gender="żeński">skarpa</text>
+		<text lang="cs" plural="true">břehy</text>
+		<text lang="cs" gender="maskulinum">břeh</text>
+		<text case="čeho" lang="cs">břehu</text>
+		<text case="čehoplur" lang="cs">břehů</text>
+		<text case="čím" lang="cs">břehem</text>
+		<text case="čímplur" lang="cs">břehy</text>
 
 
 
@@ -1453,6 +1518,7 @@ for the symbols.
     <name lang="ja">採石場</name>
     <name lang="zh-HK">Quarry</name>
     <name lang="pl">Quarry</name>
+		<name lang="cs">Lom</name>
 
     <text lang="en-AU" plural="true">quarries</text>
     <text lang="en-AU">quarry</text>
@@ -1485,6 +1551,12 @@ for the symbols.
     <text lang="zh-HK">採石地</text>
     <text lang="pl" plural="true" gender="nijaki">wyrobiska</text>
     <text lang="pl" gender="nijaki">wyrobisko</text>
+		<text lang="cs" plural="true">lomy</text>
+		<text lang="cs" gender="maskulinum">lom</text>
+		<text case="čeho" lang="cs">lomu</text>
+		<text case="čehoplur" lang="cs">lomů</text>
+		<text case="čím" lang="cs">lomem</text>
+		<text case="čímplur" lang="cs">lomy</text>
 
 
 
@@ -1534,6 +1606,7 @@ for the symbols.
     <name lang="ja">土塁・堤防</name>
     <name lang="zh-HK">Earth wall</name>
     <name lang="pl">Earth wall</name>
+		<name lang="cs">Násep</name>
 
     <text lang="en-AU" plural="true">earth walls</text>
     <text lang="en-AU">earth wall</text>
@@ -1567,6 +1640,12 @@ for the symbols.
     <text lang="zh-HK">土埂</text>
     <text lang="pl" plural="true" gender="męski">wały ziemne</text>
     <text lang="pl" gender="męski">wał ziemny</text>
+		<text lang="cs" plural="true">Náspy</text>
+		<text lang="cs" gender="maskulinum">násep</text>
+		<text case="čeho" lang="cs">náspu</text>
+		<text case="čehoplur" lang="cs">náspů</text>
+		<text case="čím" lang="cs">náspem</text>
+		<text case="čímplur" lang="cs">náspy</text>
 
 
 
@@ -1611,6 +1690,7 @@ for the symbols.
     <name lang="ja">きれつ</name>
     <name lang="zh-HK">Erosion gully</name>
     <name lang="pl">Erosion gully</name>
+		<name lang="cs">Rýha</name>
 
     <text lang="en-AU" plural="true">gullies</text>
     <text lang="en-AU">gully</text>
@@ -1644,6 +1724,12 @@ for the symbols.
     <text lang="zh-HK">沖溝</text>
     <text lang="pl" plural="true" gender="żeński">rynny</text>
     <text lang="pl" gender="żeński">rynna</text>
+		<text lang="cs" plural="true">rýhy</text>
+		<text lang="cs" gender="femininum">rýha</text>
+		<text lang="cs" case="čeho" gender="femininum">rýhy</text>
+		<text case="čehoplur" lang="cs">rýh</text>
+		<text case="čím" lang="cs">rýhy</text>
+		<text case="čímplur" lang="cs">rýhami</text>
 
 
 
@@ -1673,6 +1759,7 @@ for the symbols.
     <name lang="ja">小さなきれつ</name>
     <name lang="zh-HK">Small erosion gully</name>
     <name lang="pl">Small erosion gully</name>
+		<name lang="cs">Malá rýha</name>
 
     <text lang="en-AU" plural="true">small gullies</text>
     <text lang="en-AU">small gully</text>
@@ -1706,6 +1793,12 @@ for the symbols.
     <text lang="zh-HK">小乾溝</text>
     <text lang="pl" plural="true" gender="męski">suche rowy</text>
     <text lang="pl" gender="męski">suchy rów</text>
+		<text lang="cs" plural="true">malé rýhy</text>
+		<text lang="cs" gender="femininum">malá rýha</text>
+		<text case="čeho" lang="cs">malé rýhy</text>
+		<text case="čehoplur" lang="cs">malých rýh</text>
+		<text case="čím" lang="cs">malou rýhou</text>
+		<text case="čímplur" lang="cs">malými rýhami</text>
 
 
 
@@ -1753,6 +1846,7 @@ for the symbols.
     <name lang="ja">こぶ</name>
     <name lang="zh-HK">Hill</name>
     <name lang="pl">Hill</name>
+		<name lang="cs">Kupa</name>
 
     <text lang="en-AU" plural="true">hills</text>
     <text lang="en-AU">hill</text>
@@ -1786,6 +1880,12 @@ for the symbols.
     <text lang="zh-HK">山丘</text>
     <text lang="pl" plural="true" gender="żeński">górki</text>
     <text lang="pl" gender="żeński">górka</text>
+		<text lang="cs" plural="true">kupy</text>
+		<text lang="cs" gender="femininum">kupa</text>
+		<text case="čeho" lang="cs">kupy</text>
+		<text case="čehoplur" lang="cs">kup</text>
+		<text case="čím" lang="cs">kupou</text>
+		<text case="čímplur" lang="cs">kupami</text>
 
 
 
@@ -1825,6 +1925,7 @@ for the symbols.
     <name lang="ja">小さなこぶ</name>
     <name lang="zh-HK">Knoll</name>
     <name lang="pl">Knoll</name>
+		<name lang="cs">Kupka</name>
 
     <text lang="en-AU" plural="true">knolls</text>
     <text lang="en-AU">knoll</text>
@@ -1858,6 +1959,12 @@ for the symbols.
     <text lang="zh-HK">小丘</text>
     <text lang="pl" plural="true" gender="męski">kopczyki</text>
     <text lang="pl" gender="męski">kopczyk</text>
+		<text lang="cs" plural="true">kupky</text>
+		<text lang="cs" gender="femininum">kupka</text>
+		<text case="čeho" lang="cs">kupky</text>
+		<text case="čehoplur" lang="cs">kupek</text>
+		<text case="čím" lang="cs">kupkou</text>
+		<text case="čímplur" lang="cs">kupkami</text>
 
 
 
@@ -1906,6 +2013,7 @@ for the symbols.
     <name lang="ja">鞍部</name>
     <name lang="zh-HK">Saddle</name>
     <name lang="pl">Saddle</name>
+		<name lang="cs">Sedlo</name>
 
     <text lang="en-AU" plural="true">saddles</text>
     <text lang="en-AU">saddle</text>
@@ -1939,6 +2047,12 @@ for the symbols.
     <text lang="zh-HK">鞍部</text>
     <text lang="pl" plural="true" gender="nijaki">siodła</text>
     <text lang="pl" gender="nijaki">siodło</text>
+		<text lang="cs" plural="true">sedla</text>
+		<text lang="cs" gender="neutrum">sedlo</text>
+		<text case="čeho" lang="cs">sedla</text>
+		<text case="čehoplur" lang="cs">sedel</text>
+		<text case="čím" lang="cs">sedlem</text>
+		<text case="čímplur" lang="cs">sedly</text>
 
 
 
@@ -1975,6 +2089,7 @@ for the symbols.
     <name lang="ja">凹地</name>
     <name lang="zh-HK">Depression</name>
     <name lang="pl">Depression</name>
+		<name lang="cs">Prohlubeň</name>
 
     <text lang="en-AU" plural="true">depressions</text>
     <text lang="en-AU">depression</text>
@@ -2008,6 +2123,12 @@ for the symbols.
     <text lang="zh-HK">陷地</text>
     <text lang="pl" plural="true" gender="żeński">niecki</text>
     <text lang="pl" gender="żeński">niecka</text>
+		<text lang="cs" plural="true">Prohlubně</text>
+		<text lang="cs" gender="femininum">prohlubeň</text>
+		<text case="čeho" lang="cs">prohlubně</text>
+		<text case="čehoplur" lang="cs">prohlubní</text>
+		<text case="čím" lang="cs">prohlubní</text>
+		<text case="čímplur" lang="cs">prohlubněmi</text>
 
 
 
@@ -2055,6 +2176,7 @@ for the symbols.
     <name lang="ja">小凹地</name>
     <name lang="zh-HK">Small depression</name>
     <name lang="pl">Small depression</name>
+		<name lang="cs">Malá prohlubeň</name>
 
     <text lang="en-AU" plural="true">small depressions</text>
     <text lang="en-AU">small depression</text>
@@ -2088,6 +2210,14 @@ for the symbols.
     <text lang="zh-HK">小陷地</text>
     <text lang="pl" plural="true" gender="żeński">małe niecki</text>
     <text lang="pl" gender="żeński">mała niecka</text>
+		<text lang="cs" plural="true">malé prohlubně</text>
+		<text lang="cs" gender="femininum">malá prohlubeň</text>
+		<text case="čeho" lang="cs">malé prohlubně</text>
+		<text case="čehoplur" lang="cs">malých prohlubní</text>
+		<text case="čím" lang="cs">malu prohlubní</text>
+		<text case="čím" lang="cs">malou prohlubní</text>
+		<text case="čímplur" lang="cs">malými prohlubněmi</text>
+		<text case="čím" lang="cs">malou prohlubní</text>
 
 
 
@@ -2121,6 +2251,7 @@ for the symbols.
     <name lang="ja">穴</name>
     <name lang="zh-HK">Pit</name>
     <name lang="pl">Pit</name>
+		<name lang="cs">Jáma</name>
 
     <text lang="en-AU" plural="true">pits</text>
     <text lang="en-AU">pit</text>
@@ -2154,6 +2285,12 @@ for the symbols.
     <text lang="zh-HK">地洞</text>
     <text lang="pl" plural="true" gender="męski">doły</text>
     <text lang="pl" gender="męski">dół</text>
+		<text lang="cs" plural="true">jámy</text>
+		<text lang="cs" gender="femininum">jáma</text>
+		<text case="čeho" lang="cs">jámy</text>
+		<text case="čehoplur" lang="cs">jam</text>
+		<text case="čím" lang="cs">jámou</text>
+		<text case="čímplur" lang="cs">jámami</text>
 
 
 
@@ -2183,6 +2320,7 @@ for the symbols.
     <name lang="ja">凹凸地</name>
     <name lang="zh-HK">Broken ground</name>
     <name lang="pl">Broken ground</name>
+		<name lang="cs">Rozbitý povrch</name>
 
     <text lang="en-AU" plural="true">broken ground</text>
     <text lang="en-AU">broken ground</text>
@@ -2214,6 +2352,12 @@ for the symbols.
     <text lang="zh-HK">坎地</text>
     <text lang="pl" plural="true" gender="męski">zryte, nierówne tereny</text>
     <text lang="pl" gender="męski">zryty, nierówny teren</text>
+		<text lang="cs" plural="true">Rozbitý povrch</text>
+		<text lang="cs" gender="maskulinum">rozbitý povrch</text>
+		<text case="čeho" lang="cs">rozbitého povrchu</text>
+		<text case="čehoplur" lang="cs">rozbitých povrchů</text>
+		<text case="čím" lang="cs">rozbitým povrchem</text>
+		<text case="čímplur" lang="cs">rozbitými povrchy</text>
 
 
 
@@ -2265,6 +2409,7 @@ for the symbols.
     <name lang="ja">アリ塚</name>
     <name lang="zh-HK">Ant hill (termite mound)</name>
     <name lang="pl">Ant hill (termite mound)</name>
+		<name lang="cs">Mraveniště</name>
 
     <text lang="en-AU" plural="true">ant hills</text>
     <text lang="en-AU">ant hill</text>
@@ -2298,6 +2443,12 @@ for the symbols.
     <text lang="zh-HK">蟻丘</text>
     <text lang="pl" plural="true" gender="nijaki">mrowiska</text>
     <text lang="pl" gender="nijaki">mrowisko</text>
+		<text lang="cs" plural="true">Mraveniště</text>
+		<text lang="cs" gender="neutrum">mraveniště</text>
+		<text case="čeho" lang="cs">mraveniště</text>
+		<text case="čehoplur" lang="cs">mravenišť</text>
+		<text case="čím" lang="cs">mraveništěm</text>
+		<text case="čímplur" lang="cs">mraveništi</text>
 
 
 
@@ -2338,6 +2489,7 @@ for the symbols.
     <name lang="ja">岩がけ・岩壁</name>
     <name lang="zh-HK">Cliff</name>
     <name lang="pl">Cliff</name>
+		<name lang="cs">Skála</name>
 
     <text lang="en-AU" plural="true">cliffs</text>
     <text lang="en-AU">cliff</text>
@@ -2371,6 +2523,12 @@ for the symbols.
     <text lang="zh-HK">崖壁</text>
     <text lang="pl" plural="true" gender="żeński">ścianki skalne</text>
     <text lang="pl" gender="żeński">ścianka skalna</text>
+		<text lang="cs" plural="true">Skály</text>
+		<text lang="cs" gender="femininum">skála</text>
+		<text lang="cs" case="čeho">skály</text>
+		<text case="čehoplur" lang="cs">skal</text>
+		<text case="čím" lang="cs">skálou</text>
+		<text case="čímplur" lang="cs">skálami</text>
 
 
 
@@ -2409,6 +2567,7 @@ for the symbols.
     <name lang="ja">柱状の岩</name>
     <name lang="zh-HK">Rock pillar</name>
     <name lang="pl">Rock pillar</name>
+		<name lang="cs">Skalní věž</name>
 
     <text lang="en-AU" plural="true">rock pillars</text>
     <text lang="en-AU">rock pillar</text>
@@ -2442,6 +2601,14 @@ for the symbols.
     <text lang="zh-HK">石柱</text>
     <text lang="pl" plural="true" gender="męski">ostańce</text>
     <text lang="pl" gender="męski">ostaniec</text>
+		<text lang="cs" plural="true">Skalní věže</text>
+		<text lang="cs" gender="femininum">skalní věž</text>
+		<text case="čeho" lang="cs">sklaní věže</text>
+		<text case="čehoplur" lang="cs">skalními věžemi</text>
+		<text case="čím" lang="cs">sklaní věží</text>
+		<text case="čehoplur" lang="cs">skalních věží</text>
+		<text case="čím" lang="cs">skalní věží</text>
+		<text case="čímplur" lang="cs">skalními věžemi</text>
 
 
 
@@ -2471,6 +2638,7 @@ for the symbols.
     <name lang="ja">横穴</name>
     <name lang="zh-HK">Cave</name>
     <name lang="pl">Cave</name>
+		<name lang="cs">Jeskyně</name>
 
     <text lang="en-AU" plural="true">caves</text>
     <text lang="en-AU">cave</text>
@@ -2504,6 +2672,12 @@ for the symbols.
     <text lang="zh-HK">山洞</text>
     <text lang="pl" plural="true" gender="żeński">jaskinie</text>
     <text lang="pl" gender="żeński">jaskinia</text>
+		<text lang="cs" plural="true">Jeskyně</text>
+		<text lang="cs" gender="femininum">jeskyně</text>
+		<text case="čeho" lang="cs">jeskyně</text>
+		<text case="čehoplur" lang="cs">jeskyní</text>
+		<text case="čím" lang="cs">jeskyní</text>
+		<text case="čímplur" lang="cs">jeskyněmi</text>
 
 
 
@@ -2545,6 +2719,7 @@ for the symbols.
     <name lang="ja">岩</name>
     <name lang="zh-HK">Boulder</name>
     <name lang="pl">Boulder</name>
+		<name lang="cs">Kámen</name>
 
     <text lang="en-AU" plural="true">boulders</text>
     <text lang="en-AU">boulder</text>
@@ -2578,6 +2753,13 @@ for the symbols.
     <text lang="zh-HK">大石</text>
     <text lang="pl" plural="true" gender="męski">głazy</text>
     <text lang="pl" gender="męski">głaz</text>
+		<text lang="cs" plural="true">Kameny</text>
+		<text lang="cs" gender="maskulinum">kámen</text>
+		<text case="čeho" lang="cs">kamene</text>
+		<text case="čehoplur" lang="cs">kamenů</text>
+		<text case="čím" lang="cs">kameny</text>
+		<text case="čím" lang="cs">kamenem</text>
+		<text case="čímplur" lang="cs">kameny</text>
 
 
 
@@ -2607,6 +2789,7 @@ for the symbols.
     <name lang="ja">岩石地</name>
     <name lang="zh-HK">Boulder field</name>
     <name lang="pl">Boulder field</name>
+		<name lang="cs">Kamenné pole</name>
 
     <text lang="en-AU" plural="true">boulder fields</text>
     <text lang="en-AU">boulder field</text>
@@ -2638,6 +2821,12 @@ for the symbols.
     <text lang="zh-HK">群石地</text>
     <text lang="pl" plural="true" gender="nijaki">pola skalne</text>
     <text lang="pl" gender="nijaki">pole skalne</text>
+		<text lang="cs" plural="true">Kamenná pole</text>
+		<text lang="cs" gender="neutrum">kamenné pole</text>
+		<text case="čeho" lang="cs">kamenného pole</text>
+		<text case="čehoplur" lang="cs">kamenných polí</text>
+		<text case="čím" lang="cs">kamenným polem</text>
+		<text case="čímplur" lang="cs">kamennými poli</text>
 
 
 
@@ -2687,6 +2876,7 @@ for the symbols.
     <name lang="ja">岩石群</name>
     <name lang="zh-HK">Boulder cluster</name>
     <name lang="pl">Boulder cluster</name>
+		<name lang="cs">Skupina kamenů</name>
 
     <text lang="en-AU" plural="true">boulder clusters</text>
     <text lang="en-AU">boulder cluster</text>
@@ -2720,6 +2910,12 @@ for the symbols.
     <text lang="zh-HK">大石堆</text>
     <text lang="pl" plural="true" gender="żeński">grupy skał</text>
     <text lang="pl" gender="żeński">grupa skał</text>
+		<text lang="cs" plural="true">Skupina kamenů</text>
+		<text lang="cs" gender="femininum">skupina kamenů</text>
+		<text case="čeho" lang="cs">skupiny kamenů</text>
+		<text case="čehoplur" lang="cs">skupin kamenů</text>
+		<text case="čím" lang="cs">skupinou kamenů</text>
+		<text case="čímplur" lang="cs">skupinami kamenů</text>
 
 
 
@@ -2754,6 +2950,7 @@ for the symbols.
     <name lang="ja">礫(れき)地</name>
     <name lang="zh-HK">Stony ground</name>
     <name lang="pl">Stony ground</name>
+		<name lang="cs">Kamenitý povrch</name>
 
     <text lang="en-AU" plural="true">stony ground</text>
     <text lang="en-AU">stony ground</text>
@@ -2785,6 +2982,13 @@ for the symbols.
     <text lang="zh-HK">碎石地</text>
     <text lang="pl" plural="true" gender="męski">kamieniste tereny</text>
     <text lang="pl" gender="męski">kamienisty teren</text>
+		<text lang="cs" plural="true">Kamenité povrchy</text>
+		<text lang="cs" gender="maskulinum">kamenitý povrch</text>
+		<text case="čeho" lang="cs">kamnitého povrchu</text>
+		<text case="čeho" lang="cs">kamenitého povrchu</text>
+		<text case="čehoplur" lang="cs">kamenitých povrchů</text>
+		<text case="čím" lang="cs">kamenitým povrchem</text>
+		<text case="čímplur" lang="cs">kamenitými povrchy</text>
 
 
 
@@ -2884,6 +3088,7 @@ for the symbols.
     <name lang="ja">露岩</name>
     <name lang="zh-HK">Bare rock</name>
     <name lang="pl">Bare rock</name>
+		<name lang="cs">Holá skála</name>
 
     <text lang="en-AU" plural="true">bare rock</text>
     <text lang="en-AU">bare rock</text>
@@ -2916,6 +3121,12 @@ for the symbols.
     <text lang="zh-HK">岩石地</text>
     <text lang="pl" plural="true" gender="żeński">płaszczyzny skalne</text>
     <text lang="pl" gender="żeński">płaszczyzna skalna</text>
+		<text lang="cs" plural="true">Holé skály</text>
+		<text lang="cs" gender="femininum">holá skála</text>
+		<text case="čeho" lang="cs">holé skály</text>
+		<text case="čehoplur" lang="cs">holých skal</text>
+		<text case="čím" lang="cs">holou skálou</text>
+		<text case="čímplur" lang="cs">holými skalami</text>
 
 
 
@@ -2972,6 +3183,7 @@ for the symbols.
     <name lang="ja">がけの間の通過部分</name>
     <name lang="zh-HK">Narrow passage</name>
     <name lang="pl">Narrow passage</name>
+		<name lang="cs">Úzký průchod</name>
 
     <text lang="en-AU" plural="true">narrow passages</text>
     <text lang="en-AU">narrow passage</text>
@@ -3005,6 +3217,12 @@ for the symbols.
     <text lang="zh-HK">崖間狹路</text>
     <text lang="pl" plural="true" gender="nijaki">wąskie przejścia</text>
     <text lang="pl" gender="nijaki">wąskie przejście</text>
+		<text lang="cs" plural="true">Úzké průchody</text>
+		<text lang="cs" gender="maskulinum">úzký průchod</text>
+		<text case="čeho" lang="cs">úzkého průchodu</text>
+		<text case="čehoplur" lang="cs">úzkých průchodů</text>
+		<text case="čím" lang="cs">úzkým průchodem</text>
+		<text case="čímplur" lang="cs">úzkými průchody</text>
 
 
 
@@ -3058,6 +3276,7 @@ for the symbols.
     <name lang="ja">湖</name>
     <name lang="zh-HK">Lake</name>
     <name lang="pl">Lake</name>
+		<name lang="cs">Jezero</name>
 
     <text lang="en-AU" plural="true">lakes</text>
     <text lang="en-AU">lake</text>
@@ -3091,6 +3310,12 @@ for the symbols.
     <text lang="zh-HK">湖</text>
     <text lang="pl" plural="true" gender="nijaki">jeziora</text>
     <text lang="pl" gender="nijaki">jezioro</text>
+		<text lang="cs" plural="true">jezera</text>
+		<text lang="cs" gender="neutrum">jezero</text>
+		<text case="čeho" lang="cs">jezera</text>
+		<text case="čehoplur" lang="cs">jezer</text>
+		<text case="čím" lang="cs">jezerem</text>
+		<text case="čímplur" lang="cs">jezery</text>
 
 
 
@@ -3148,6 +3373,7 @@ for the symbols.
     <name lang="ja">池・沼</name>
     <name lang="zh-HK">Pond</name>
     <name lang="pl">Pond</name>
+		<name lang="cs">Rybníček</name>
 
     <text lang="en-AU" plural="true">ponds</text>
     <text lang="en-AU">pond</text>
@@ -3181,6 +3407,13 @@ for the symbols.
     <text lang="zh-HK">池塘</text>
     <text lang="pl" plural="true" gender="męski">stawy</text>
     <text lang="pl" gender="męski">staw</text>
+		<text lang="cs" plural="true">Rybníčky</text>
+		<text lang="cs" gender="maskulinum">rybníček</text>
+		<text case="čeho" lang="cs">rybníčku</text>
+		<text case="čehoplur" lang="cs">rybníčků</text>
+		<text case="čím" lang="cs">rybníčky</text>
+		<text case="čím" lang="cs">rybníčkem</text>
+		<text case="čímplur" lang="cs">rybníčky</text>
 
 
 
@@ -3239,6 +3472,7 @@ for the symbols.
     <name lang="ja">小さな池</name>
     <name lang="zh-HK">Water hole</name>
     <name lang="pl">Water hole</name>
+		<name lang="cs">Jáma s vodou</name>
 
     <text lang="en-AU" plural="true">water holes</text>
     <text lang="en-AU">water hole</text>
@@ -3271,6 +3505,12 @@ for the symbols.
     <text lang="zh-HK">水洞</text>
     <text lang="pl" plural="true" gender="męski">doły z wodą</text>
     <text lang="pl" gender="męski">dół z wodą</text>
+		<text lang="cs" plural="true">Jámy s vodou</text>
+		<text lang="cs" gender="femininum">jáma s vodou</text>
+		<text case="čeho" lang="cs">jámy s vodou</text>
+		<text case="čehoplur" lang="cs">jam  s vodou</text>
+		<text case="čím" lang="cs">jámou s vodou</text>
+		<text case="čímplur" lang="cs">jámami s vodou</text>
 
 
 
@@ -3325,6 +3565,7 @@ for the symbols.
     <name lang="ja">河川・小川・水路</name>
     <name lang="zh-HK">River, stream, water course</name>
     <name lang="pl">River, stream, water course</name>
+		<name lang="cs">Řeka, potok</name>
 
     <text lang="en-AU" plural="true">watercourses</text>
     <text lang="en-AU">watercourse</text>
@@ -3359,6 +3600,12 @@ for the symbols.
     <text lang="zh-HK">河溪</text>
     <text lang="pl" plural="true" gender="męski">strumienie</text>
     <text lang="pl" gender="męski">strumień</text>
+		<text lang="cs" plural="true">Řeka, potok</text>
+		<text lang="cs" gender="femininum">řeka, potok</text>
+		<text case="čeho" lang="cs">řeky, potoka</text>
+		<text case="čehoplur" lang="cs">řek, potoků</text>
+		<text case="čím" lang="cs">řekou, potokem</text>
+		<text case="čímplur" lang="cs">řekami, potoky</text>
 
 
 
@@ -3413,6 +3660,7 @@ for the symbols.
     <name lang="ja">細い水路</name>
     <name lang="zh-HK">Minor water channel, ditch</name>
     <name lang="pl">Minor water channel, ditch</name>
+		<name lang="cs">Vodoteč</name>
 
     <text lang="en-AU" plural="true">ditches</text>
     <text lang="en-AU">ditch</text>
@@ -3446,6 +3694,12 @@ for the symbols.
     <text lang="zh-HK">小溝</text>
     <text lang="pl" plural="true" gender="męski">rowy</text>
     <text lang="pl" gender="męski">rów</text>
+		<text lang="cs" plural="true">vodoteče</text>
+		<text lang="cs" case="čeho">vodoteče</text>
+		<text lang="cs" gender="femininum">vodoteč</text>
+		<text case="čehoplur" lang="cs">vodotečí</text>
+		<text case="čím" lang="cs">vodotečí</text>
+		<text case="čímplur" lang="cs">vodotečemi</text>
 
 
 
@@ -3524,6 +3778,7 @@ for the symbols.
     <name lang="ja">細い湿地</name>
     <name lang="zh-HK">Narrow marsh</name>
     <name lang="pl">Narrow marsh</name>
+		<name lang="cs">Úzká bažina</name>
 
     <text lang="en-AU" plural="true">narrow marshes</text>
     <text lang="en-AU">narrow marsh</text>
@@ -3557,6 +3812,12 @@ for the symbols.
     <text lang="zh-HK">狹窄沼澤</text>
     <text lang="pl" plural="true" gender="nijaki">wąskie bagna</text>
     <text lang="pl" gender="nijaki">wąskie bagno</text>
+		<text lang="cs" plural="true">Úzké bažiny</text>
+		<text lang="cs" gender="femininum">úzká bažina</text>
+		<text case="čeho" lang="cs">úzké bažiny</text>
+		<text case="čehoplur" lang="cs">úzkých bažin</text>
+		<text case="čím" lang="cs">úzkou bažinou</text>
+		<text case="čímplur" lang="cs">úzkými bažinami</text>
 
 
 
@@ -3596,6 +3857,7 @@ for the symbols.
     <name lang="ja">湿地</name>
     <name lang="zh-HK">Marsh</name>
     <name lang="pl">Marsh</name>
+		<name lang="cs">Bažina</name>
 
     <text lang="en-AU" plural="true">marshes</text>
     <text lang="en-AU">marsh</text>
@@ -3629,6 +3891,12 @@ for the symbols.
     <text lang="zh-HK">沼澤</text>
     <text lang="pl" plural="true" gender="nijaki">bagna</text>
     <text lang="pl" gender="nijaki">bagno</text>
+		<text lang="cs" plural="true">bažiny</text>
+		<text lang="cs" gender="femininum">bažina</text>
+		<text case="čeho" lang="cs">bažiny</text>
+		<text case="čehoplur" lang="cs">bažin</text>
+		<text case="čím" lang="cs">bažinou</text>
+		<text case="čímplur" lang="cs">bažinami</text>
 
 
 
@@ -3673,6 +3941,7 @@ for the symbols.
     <name lang="ja">湿地の中の乾燥地</name>
     <name lang="zh-HK">Firm ground in marsh</name>
     <name lang="pl">Firm ground in marsh</name>
+		<name lang="cs">Pevná půda v bažině</name>
 
     <text lang="en-AU" plural="true">firm ground in marsh</text>
     <text lang="en-AU">firm ground in marsh</text>
@@ -3704,6 +3973,12 @@ for the symbols.
     <text lang="zh-HK">沼澤中的乾地</text>
     <text lang="pl" plural="true" gender="męski">stałe grunty na bagnie</text>
     <text lang="pl" gender="męski">stały grunt na bagnie</text>
+		<text lang="cs" plural="true">Pevná půda v bažině</text>
+		<text lang="cs" gender="femininum">pevná půda v bažině</text>
+		<text case="čeho" lang="cs">pevné půdy v bažině</text>
+		<text case="čehoplur" lang="cs">pevných půd v bažině</text>
+		<text case="čím" lang="cs">pevnou půdou v bažině</text>
+		<text case="čímplur" lang="cs">pevnými půdami v bažině</text>
 
 
 
@@ -3782,6 +4057,7 @@ for the symbols.
     <name lang="ja">井戸</name>
     <name lang="zh-HK">Well</name>
     <name lang="pl">Well</name>
+		<name lang="cs">Studna</name>
 
     <text lang="en-AU" plural="true">wells</text>
     <text lang="en-AU">well</text>
@@ -3815,6 +4091,12 @@ for the symbols.
     <text lang="zh-HK">水井</text>
     <text lang="pl" plural="true" gender="żeński">studnie</text>
     <text lang="pl" gender="żeński">studnia</text>
+		<text lang="cs" plural="true">studny</text>
+		<text lang="cs" gender="femininum">studna</text>
+		<text case="čeho" lang="cs">studny</text>
+		<text case="čehoplur" lang="cs">studen</text>
+		<text case="čím" lang="cs">studnou</text>
+		<text case="čímplur" lang="cs">studnami</text>
 
 
 
@@ -3860,6 +4142,7 @@ for the symbols.
     <name lang="ja">湧水点</name>
     <name lang="zh-HK">Spring</name>
     <name lang="pl">Spring</name>
+		<name lang="cs">Pramen</name>
 
     <text lang="en-AU" plural="true">springs</text>
     <text lang="en-AU">spring</text>
@@ -3893,6 +4176,12 @@ for the symbols.
     <text lang="zh-HK">水泉</text>
     <text lang="pl" plural="true" gender="nijaki">źródła</text>
     <text lang="pl" gender="nijaki">źródło</text>
+		<text lang="cs" plural="true">prameny</text>
+		<text lang="cs" gender="maskulinum">pramen</text>
+		<text case="čeho" lang="cs">pramene</text>
+		<text case="čehoplur" lang="cs">pramenů</text>
+		<text case="čím" lang="cs">pramenem</text>
+		<text case="čímplur" lang="cs">prameny</text>
 
 
 
@@ -3941,6 +4230,7 @@ for the symbols.
     <name lang="ja">貯水槽</name>
     <name lang="zh-HK">Water tank, trough</name>
     <name lang="pl">Water tank, trough</name>
+		<name lang="cs">Vodní nádrž</name>
 
     <text lang="en-AU" plural="true">water tanks</text>
     <text lang="en-AU">water tank</text>
@@ -3973,6 +4263,12 @@ for the symbols.
     <text lang="zh-HK">水箱</text>
     <text lang="pl" plural="true" gender="męski">zbiorniki z wodą</text>
     <text lang="pl" gender="męski">zbiornik z wodą</text>
+		<text lang="cs" plural="true">Vodní nádrž</text>
+		<text lang="cs" gender="femininum">vodní nádrž</text>
+		<text case="čeho" lang="cs">vodní nádrže</text>
+		<text case="čehoplur" lang="cs">vodních nádrží</text>
+		<text case="čím" lang="cs">vodní nádrží</text>
+		<text case="čímplur" lang="cs">vodními nádržemi</text>
 
 
 
@@ -4027,6 +4323,7 @@ for the symbols.
     <name lang="ja">開けた土地</name>
     <name lang="zh-HK">Open land</name>
     <name lang="pl">Open land</name>
+		<name lang="cs">Otevřený prostor</name>
 
     <text lang="en-AU" plural="true">open land</text>
     <text lang="en-AU">open land</text>
@@ -4058,6 +4355,12 @@ for the symbols.
     <text lang="zh-HK">空曠地</text>
     <text lang="pl" plural="true" gender="męski">tereny otwarte</text>
     <text lang="pl" gender="męski">teren otwarty</text>
+		<text lang="cs" plural="true">Otevřený prostor</text>
+		<text lang="cs" gender="maskulinum">otevřený prostor</text>
+		<text case="čeho" lang="cs">otevřeného prostoru</text>
+		<text case="čehoplur" lang="cs">otevřených prostorů</text>
+		<text case="čím" lang="cs">otevřeným prostorem</text>
+		<text case="čímplur" lang="cs">otevřenými prostory</text>
 
 
 
@@ -4088,6 +4391,7 @@ for the symbols.
     <name lang="ja">半ば開けた土地</name>
     <name lang="zh-HK">Semi-open land</name>
     <name lang="pl">Semi-open land</name>
+		<name lang="cs">Polootevřený prostor</name>
 
     <text lang="en-AU" plural="true">semi-open land</text>
     <text lang="en-AU">semi-open land</text>
@@ -4119,6 +4423,8 @@ for the symbols.
     <text lang="zh-HK">半空曠地</text>
     <text lang="pl" plural="true" gender="męski">tereny półotwarte</text>
     <text lang="pl" gender="męski">teren półotwarty</text>
+		<text lang="cs" plural="true">Polootevřený prostor</text>
+		<text lang="cs" gender="maskulinum">polootevřený prostor</text>
 
 
 
@@ -4179,6 +4485,7 @@ for the symbols.
     <name lang="ja">林の角</name>
     <name lang="zh-HK">Forest corner</name>
     <name lang="pl">Forest corner</name>
+		<name lang="cs">Roh lesa</name>
 
     <text lang="en-AU" plural="true">forest corners</text>
     <text lang="en-AU">forest corner</text>
@@ -4211,6 +4518,9 @@ for the symbols.
     <text lang="zh-HK">樹林角</text>
     <text lang="pl" plural="true" gender="męski">rogi lasu</text>
     <text lang="pl" gender="męski">róg lasu</text>
+		<text lang="cs" plural="true">Roh lesa</text>
+		<text lang="cs" gender="maskulinum">roh lesa</text>
+		<text case="čeho" lang="cs">rohu lesa</text>
 
 
 
@@ -4242,6 +4552,7 @@ for the symbols.
     <name lang="ja">クリアリング</name>
     <name lang="zh-HK">Clearing</name>
     <name lang="pl">Clearing</name>
+		<name lang="cs">Světlina</name>
 
     <text lang="en-AU" plural="true">clearings</text>
     <text lang="en-AU">clearing</text>
@@ -4275,6 +4586,12 @@ for the symbols.
     <text lang="zh-HK">林中空曠地</text>
     <text lang="pl" plural="true" gender="żeński">polany</text>
     <text lang="pl" gender="żeński">polana</text>
+		<text lang="cs" plural="true">světliny</text>
+		<text lang="cs" gender="femininum">světlina</text>
+		<text case="čeho" lang="cs">světliny</text>
+		<text case="čehoplur" lang="cs">světlin</text>
+		<text case="čím" lang="cs">světlinou</text>
+		<text case="čímplur" lang="cs">světlinami</text>
 
 
 
@@ -4335,6 +4652,7 @@ for the symbols.
     <name lang="ja">藪(やぶ)・植えみ</name>
     <name lang="zh-HK">Thicket</name>
     <name lang="pl">Thicket</name>
+		<name lang="cs">Hustník</name>
 
     <text lang="en-AU" plural="true">thickets</text>
     <text lang="en-AU">thicket</text>
@@ -4367,6 +4685,12 @@ for the symbols.
     <text lang="zh-HK">密樹叢</text>
     <text lang="pl" plural="true" gender="żeński">gęstwiny</text>
     <text lang="pl" gender="żeński">gęstwina</text>
+		<text lang="cs" plural="true">Hustníky</text>
+		<text lang="cs" gender="maskulinum">hustník</text>
+		<text case="čeho" lang="cs">hustníku</text>
+		<text case="čehoplur" lang="cs">hustníků</text>
+		<text case="čím" lang="cs">hustníkem</text>
+		<text case="čímplur" lang="cs">hustníky</text>
 
 
 
@@ -4417,6 +4741,7 @@ for the symbols.
     <name lang="ja">線状の藪(やぶ)・線状の植込み</name>
     <name lang="zh-HK">Hedge, Linear thicket</name>
     <name lang="pl">Hedge, Linear thicket</name>
+		<name lang="cs">Živý plot</name>
 
     <text lang="en-AU" plural="true">hedges</text>
     <text lang="en-AU">hedge</text>
@@ -4450,6 +4775,12 @@ for the symbols.
     <text lang="zh-HK">密樹籬</text>
     <text lang="pl" plural="true" gender="męski">żywopłoty</text>
     <text lang="pl" gender="męski">żywopłot</text>
+		<text lang="cs" plural="true">živé ploty</text>
+		<text lang="cs" gender="maskulinum">živý plot</text>
+		<text case="čeho" lang="cs">živého plotu</text>
+		<text case="čehoplur" lang="cs">živých plotů</text>
+		<text case="čím" lang="cs">živým plotem</text>
+		<text case="čímplur" lang="cs">živými ploty</text>
 
 
 
@@ -4499,6 +4830,7 @@ for the symbols.
     <name lang="ja">植生界</name>
     <name lang="zh-HK">Vegetation boundary</name>
     <name lang="pl">Vegetation boundary</name>
+		<name lang="cs">Rozhraní porostů</name>
 
     <text lang="en-AU" plural="true">vegetation boundaries</text>
     <text lang="en-AU">vegetation boundary</text>
@@ -4531,6 +4863,12 @@ for the symbols.
     <text lang="zh-HK">植被分界</text>
     <text lang="pl" plural="true" gender="żeński">wyraźne granice kultur</text>
     <text lang="pl" gender="żeński">wyraźna granica kultur</text>
+		<text lang="cs" plural="true">Rozhraní porostů</text>
+		<text lang="cs" gender="neutrum">rozhraní porostů</text>
+		<text case="čeho" lang="cs">rozhraní porostů</text>
+		<text case="čehoplur" lang="cs">rozhraní porostů</text>
+		<text case="čím" lang="cs">rozhraním porostů</text>
+		<text case="čímplur" lang="cs">rozhraními porostů</text>
 
 
 
@@ -4582,6 +4920,7 @@ for the symbols.
     <name lang="ja">小さな林</name>
     <name lang="zh-HK">Copse</name>
     <name lang="pl">Copse</name>
+		<name lang="cs">Skupina stromů</name>
 
     <text lang="en-AU" plural="true">copses</text>
     <text lang="en-AU">copse</text>
@@ -4615,6 +4954,12 @@ for the symbols.
     <text lang="zh-HK">樹叢</text>
     <text lang="pl" plural="true" gender="męski">zagajniki</text>
     <text lang="pl" gender="męski">zagajnik</text>
+		<text lang="cs" plural="true">skupina stromů</text>
+		<text lang="cs" gender="femininum">skupina stromů</text>
+		<text lang="cs" case="čeho">skupiny stromů</text>
+		<text lang="cs" case="čím">skupinou stromů</text>
+		<text case="čehoplur" lang="cs">skupin stromů</text>
+		<text case="čímplur" lang="cs">skupinami stromů</text>
 
 
 
@@ -4654,6 +4999,7 @@ for the symbols.
     <name lang="ja">独立樹</name>
     <name lang="zh-HK">Distinctive tree</name>
     <name lang="pl">Distinctive tree</name>
+		<name lang="cs">Výrazný strom</name>
 
     <text lang="en-AU" plural="true">lone trees</text>
     <text lang="en-AU">lone tree</text>
@@ -4687,6 +5033,12 @@ for the symbols.
     <text lang="zh-HK">獨樹</text>
     <text lang="pl" plural="true" gender="nijaki">samotne drzewa</text>
     <text lang="pl" gender="nijaki">samotne drzewo</text>
+		<text lang="cs" plural="true">Výrazné stromy</text>
+		<text lang="cs" gender="maskulinum">výrazný strom</text>
+		<text case="čeho" lang="cs">výrazného stromu</text>
+		<text case="čehoplur" lang="cs">výrazných stromů</text>
+		<text case="čím" lang="cs">výrazným stromem</text>
+		<text case="čímplur" lang="cs">výraznými stromy</text>
 
 
 
@@ -4720,6 +5072,7 @@ for the symbols.
     <name lang="ja">切り株・木の根</name>
     <name lang="zh-HK">Tree stump, Root stock</name>
     <name lang="pl">Tree stump, Root stock</name>
+		<name lang="cs">Vývrat</name>
 
     <text lang="en-AU" plural="true">root stocks</text>
     <text lang="en-AU">root stock</text>
@@ -4753,6 +5106,12 @@ for the symbols.
     <text lang="zh-HK">樹根</text>
     <text lang="pl" plural="true" gender="męski">wykroty</text>
     <text lang="pl" gender="męski">wykrot</text>
+		<text lang="cs" plural="true">Vývraty</text>
+		<text lang="cs" gender="maskulinum">vývrat</text>
+		<text case="čeho" lang="cs">vývratu</text>
+		<text case="čehoplur" lang="cs">vývratů</text>
+		<text case="čím" lang="cs">vývratem</text>
+		<text case="čímplur" lang="cs">vývraty</text>
 
 
 
@@ -4760,11 +5119,11 @@ for the symbols.
     <circle thickness="12.5" radius="60">
       <point x="0" y="0" />
     </circle>
-    <lines thickness="12.5" ends="flat" >
+    <lines thickness="12.5" ends="flat">
       <point x="42" y="42" />
       <point x="-42" y="-42" />
     </lines>
-    <lines thickness="12.5" ends="flat" >
+    <lines thickness="12.5" ends="flat">
       <point x="42" y="-42" />
       <point x="-42" y="42" />
     </lines>
@@ -4788,6 +5147,7 @@ for the symbols.
     <name lang="ja">道路</name>
     <name lang="zh-HK">Road</name>
     <name lang="pl">Road</name>
+		<name lang="cs">Silnice</name>
 
     <text lang="en-AU" plural="true">roads</text>
     <text lang="en-AU">road</text>
@@ -4821,6 +5181,12 @@ for the symbols.
     <text lang="zh-HK">馬路</text>
     <text lang="pl" plural="true" gender="żeński">drogi</text>
     <text lang="pl" gender="żeński">droga</text>
+		<text lang="cs" plural="true">silnice</text>
+		<text lang="cs" gender="femininum">silnice</text>
+		<text case="čeho" lang="cs">silnice</text>
+		<text case="čehoplur" lang="cs">silnic</text>
+		<text case="čím" lang="cs">silnicí</text>
+		<text case="čímplur" lang="cs">silnicemi</text>
 
 
 
@@ -4849,6 +5215,7 @@ for the symbols.
     <name lang="ja">道・小道・小径</name>
     <name lang="zh-HK">Track, Path</name>
     <name lang="pl">Track, Path</name>
+		<name lang="cs">Stezka</name>
 
     <text lang="en-AU" plural="true">paths</text>
     <text lang="en-AU">path</text>
@@ -4882,6 +5249,13 @@ for the symbols.
     <text lang="zh-HK">小徑</text>
     <text lang="pl" plural="true" gender="żeński">ścieżki</text>
     <text lang="pl" gender="żeński">ścieżka</text>
+		<text lang="cs" plural="true">stezky</text>
+		<text lang="cs" gender="femininum">stezka</text>
+		<text lang="cs" case="čehoplur">stezek</text>
+		<text lang="cs" case="čeho">stezky</text>
+		<text lang="cs" plural="true">stezky</text>
+		<text case="čím" lang="cs">stezkou</text>
+		<text case="čímplur" lang="cs">stezkami</text>
 
 
 
@@ -4918,6 +5292,7 @@ for the symbols.
     <name lang="ja">切り開き</name>
     <name lang="zh-HK">Ride</name>
     <name lang="pl">Ride</name>
+		<name lang="cs">Průsek</name>
 
     <text lang="en-AU" plural="true">rides</text>
     <text lang="en-AU">ride</text>
@@ -4950,6 +5325,12 @@ for the symbols.
     <text lang="zh-HK">林中間隙</text>
     <text lang="pl" plural="true" gender="żeński">przecinki</text>
     <text lang="pl" gender="żeński">przecinka</text>
+		<text lang="cs" plural="true">průseky</text>
+		<text lang="cs" gender="maskulinum">průsek</text>
+		<text case="čeho" lang="cs">průseku</text>
+		<text case="čehoplur" lang="cs">průseků</text>
+		<text case="čím" lang="cs">průsekem</text>
+		<text case="čímplur" lang="cs">průseky</text>
 
 
 
@@ -5010,6 +5391,7 @@ for the symbols.
     <name lang="ja">橋</name>
     <name lang="zh-HK">Bridge</name>
     <name lang="pl">Bridge</name>
+		<name lang="cs">Most</name>
 
     <text lang="en-AU" plural="true">bridges</text>
     <text lang="en-AU">bridge</text>
@@ -5043,6 +5425,12 @@ for the symbols.
     <text lang="zh-HK">橋樑</text>
     <text lang="pl" plural="true" gender="męski">mosty</text>
     <text lang="pl" gender="męski">most</text>
+		<text lang="cs" plural="true">mosty</text>
+		<text lang="cs" gender="maskulinum">most</text>
+		<text case="čeho" lang="cs">mostu</text>
+		<text case="čehoplur" lang="cs">mostů</text>
+		<text case="čím" lang="cs">mostem</text>
+		<text case="čímplur" lang="cs">mosty</text>
 
 
 
@@ -5079,6 +5467,7 @@ for the symbols.
     <name lang="ja">送電線</name>
     <name lang="zh-HK">Power line</name>
     <name lang="pl">Power line</name>
+		<name lang="cs">Vedení</name>
 
     <text lang="en-AU" plural="true">power lines</text>
     <text lang="en-AU">power line</text>
@@ -5112,6 +5501,12 @@ for the symbols.
     <text lang="zh-HK">電線</text>
     <text lang="pl" plural="true" gender="żeński">linie energetyczne</text>
     <text lang="pl" gender="żeński">linia energetyczna</text>
+		<text lang="cs" plural="true">Vedení</text>
+		<text lang="cs" gender="neutrum">vedení</text>
+		<text case="čeho" lang="cs">vedení</text>
+		<text case="čehoplur" lang="cs">vedení</text>
+		<text case="čím" lang="cs">vedením</text>
+		<text case="čímplur" lang="cs">vedeními</text>
 
 
 
@@ -5152,6 +5547,7 @@ for the symbols.
     <name lang="ja">送電線の支柱・鉄塔</name>
     <name lang="zh-HK">Power line pylon</name>
     <name lang="pl">Power line pylon</name>
+		<name lang="cs">Sloup vedení</name>
 
     <text lang="en-AU" plural="true">power pylons</text>
     <text lang="en-AU">power pylon</text>
@@ -5185,6 +5581,12 @@ for the symbols.
     <text lang="zh-HK">電線桿</text>
     <text lang="pl" plural="true" gender="męski">słupy linii energetycznej</text>
     <text lang="pl" gender="męski">słup linii energetycznej</text>
+		<text lang="cs" plural="true">Sloup vedení</text>
+		<text lang="cs" gender="neutrum">sloup vedení</text>
+		<text case="čeho" lang="cs">sloupu vedení</text>
+		<text case="čehoplur" lang="cs">sloupů vedení</text>
+		<text case="čím" lang="cs">sloupem vedení</text>
+		<text case="čímplur" lang="cs">sloupy vedení</text>
 
 
 
@@ -5228,6 +5630,7 @@ for the symbols.
     <name lang="ja">トンネル</name>
     <name lang="zh-HK">Tunnel</name>
     <name lang="pl">Tunnel</name>
+		<name lang="cs">Tunel</name>
 
     <text lang="en-AU" plural="true">tunnels</text>
     <text lang="en-AU">tunnel</text>
@@ -5261,6 +5664,12 @@ for the symbols.
     <text lang="zh-HK">隧道</text>
     <text lang="pl" plural="true" gender="męski">tunele</text>
     <text lang="pl" gender="męski">tunel</text>
+		<text lang="cs" plural="true">tunely</text>
+		<text lang="cs" gender="maskulinum">tunel</text>
+		<text case="čeho" lang="cs">tunelu</text>
+		<text case="čehoplur" lang="cs">tunelů</text>
+		<text case="čím" lang="cs">tunelem</text>
+		<text case="čímplur" lang="cs">tunely</text>
 
 
 
@@ -5303,6 +5712,7 @@ for the symbols.
     <name lang="ja">石塁</name>
     <name lang="zh-HK">Stone wall</name>
     <name lang="pl">Stone wall</name>
+		<name lang="cs">Kamenná zeď</name>
 
     <text lang="en-AU" plural="true">stone walls</text>
     <text lang="en-AU">stone wall</text>
@@ -5336,6 +5746,12 @@ for the symbols.
     <text lang="zh-HK">石牆</text>
     <text lang="pl" plural="true" gender="męski">mury kamienne</text>
     <text lang="pl" gender="męski">mur kamienny</text>
+		<text lang="cs" plural="true">kamenná zeď</text>
+		<text lang="cs" gender="femininum">kamenná zeď</text>
+		<text case="čeho" lang="cs">kamenné zdi</text>
+		<text case="čehoplur" lang="cs">kamenných zdí</text>
+		<text case="čím" lang="cs">kamennou zdí</text>
+		<text case="čímplur" lang="cs">kamennými zdmi</text>
 
 
 
@@ -5373,6 +5789,7 @@ for the symbols.
     <name lang="ja">柵</name>
     <name lang="zh-HK">Fence</name>
     <name lang="pl">Fence</name>
+		<name lang="cs">Plot</name>
 
     <text lang="en-AU" plural="true">fences</text>
     <text lang="en-AU">fence</text>
@@ -5406,6 +5823,12 @@ for the symbols.
     <text lang="zh-HK">圍欄</text>
     <text lang="pl" plural="true" gender="męski">płoty</text>
     <text lang="pl" gender="męski">płot</text>
+		<text lang="cs" plural="true">ploty</text>
+		<text lang="cs" gender="maskulinum">plot</text>
+		<text lang="cs" case="čeho">plotu</text>
+		<text case="čehoplur" lang="cs">plotů</text>
+		<text case="čím" lang="cs">plotem</text>
+		<text case="čímplur" lang="cs">ploty</text>
 
 
 
@@ -5450,6 +5873,7 @@ for the symbols.
     <name lang="ja">横断地点</name>
     <name lang="zh-HK">Crossing point</name>
     <name lang="pl">Crossing point</name>
+		<name lang="cs">Průchod</name>
 
     <text lang="en-AU" plural="true">crossing points</text>
     <text lang="en-AU">crossing point</text>
@@ -5482,6 +5906,12 @@ for the symbols.
     <text lang="zh-HK">橫越點</text>
     <text lang="pl" plural="true" gender="nijaki">przejścia</text>
     <text lang="pl" gender="nijaki">przejście</text>
+		<text lang="cs" plural="true">crossing points</text>
+		<text lang="cs" gender="maskulinum">průchod</text>
+		<text case="čeho" lang="cs">průchodu</text>
+		<text case="čehoplur" lang="cs">pruchodů</text>
+		<text case="čím" lang="cs">průchodem</text>
+		<text case="čímplur" lang="cs">průchody</text>
 
 
 
@@ -5522,6 +5952,7 @@ for the symbols.
     <name lang="ja">建物</name>
     <name lang="zh-HK">Building</name>
     <name lang="pl">Building</name>
+		<name lang="cs">Budova</name>
 
     <text lang="en-AU" plural="true">buildings</text>
     <text lang="en-AU">building</text>
@@ -5555,6 +5986,12 @@ for the symbols.
     <text lang="zh-HK">建築物</text>
     <text lang="pl" plural="true" gender="męski">budynki</text>
     <text lang="pl" gender="męski">budynek</text>
+		<text lang="cs" plural="true">budovy</text>
+		<text lang="cs" gender="femininum">budova</text>
+		<text case="čeho" lang="cs">budovy</text>
+		<text case="čehoplur" lang="cs">budov</text>
+		<text case="čím" lang="cs">budovou</text>
+		<text case="čímplur" lang="cs">budovami</text>
 
 
 
@@ -5585,6 +6022,7 @@ for the symbols.
     <name lang="ja">舗装区域</name>
     <name lang="zh-HK">Paved area</name>
     <name lang="pl">Paved area</name>
+		<name lang="cs">Dlážděná plocha</name>
 
     <text lang="en-AU" plural="true">paved areas</text>
     <text lang="en-AU">paved area</text>
@@ -5617,6 +6055,12 @@ for the symbols.
     <text lang="zh-HK">水泥地</text>
     <text lang="pl" plural="true" gender="męski">obszary utwardzone</text>
     <text lang="pl" gender="męski">obszar utwardzony</text>
+		<text lang="cs" plural="true">paved areas</text>
+		<text lang="cs" gender="femininum">dlážděná plocha</text>
+		<text case="čeho" lang="cs">dlážděné plochy</text>
+		<text case="čehoplur" lang="cs">dlážděných ploch</text>
+		<text case="čím" lang="cs">dlážděnou plochou</text>
+		<text case="čímplur" lang="cs">dlážděnými plochami</text>
 
 
 
@@ -5663,6 +6107,7 @@ for the symbols.
     <name lang="ja">建物跡</name>
     <name lang="zh-HK">Ruin</name>
     <name lang="pl">Ruin</name>
+		<name lang="cs">Ruina</name>
 
     <text lang="en-AU" plural="true">ruins</text>
     <text lang="en-AU">ruin</text>
@@ -5696,6 +6141,12 @@ for the symbols.
     <text lang="zh-HK">破毀建築物</text>
     <text lang="pl" plural="true" gender="żeński">ruiny</text>
     <text lang="pl" gender="żeński">ruina</text>
+		<text lang="cs" plural="true">ruins</text>
+		<text lang="cs" gender="femininum">ruina</text>
+		<text case="čeho" lang="cs">ruiny</text>
+		<text case="čehoplur" lang="cs">ruin</text>
+		<text case="čím" lang="cs">ruinou</text>
+		<text case="čímplur" lang="cs">ruinami</text>
 
 
 
@@ -5740,6 +6191,7 @@ for the symbols.
     <name lang="ja">パイプライン</name>
     <name lang="zh-HK">Pipeline</name>
     <name lang="pl">Pipeline</name>
+		<name lang="cs">Potrubí</name>
 
     <text lang="en-AU" plural="true">pipelines</text>
     <text lang="en-AU">pipeline</text>
@@ -5773,6 +6225,12 @@ for the symbols.
     <text lang="zh-HK">管道</text>
     <text lang="pl" plural="true" gender="męski">rurociągi</text>
     <text lang="pl" gender="męski">rurociąg</text>
+		<text lang="cs" plural="true">pipelines</text>
+		<text lang="cs" gender="neutrum">potrubí</text>
+		<text case="čeho" lang="cs">potrubí</text>
+		<text case="čehoplur" lang="cs">potrubí</text>
+		<text case="čím" lang="cs">potrubím</text>
+		<text case="čímplur" lang="cs">potrubími</text>
 
 
 
@@ -5816,6 +6274,7 @@ for the symbols.
     <name lang="ja">塔</name>
     <name lang="zh-HK">Tower</name>
     <name lang="pl">Tower</name>
+		<name lang="cs">Věž</name>
 
     <text lang="en-AU" plural="true">towers</text>
     <text lang="en-AU">tower</text>
@@ -5849,6 +6308,12 @@ for the symbols.
     <text lang="zh-HK">塔架</text>
     <text lang="pl" plural="true" gender="żeński">wieże</text>
     <text lang="pl" gender="żeński">wieża</text>
+		<text lang="cs" plural="true">towers</text>
+		<text lang="cs" gender="femininum">věž</text>
+		<text case="čeho" lang="cs">věže</text>
+		<text case="čehoplur" lang="cs">věží</text>
+		<text case="čím" lang="cs">věží</text>
+		<text case="čímplur" lang="cs">věžemi</text>
 
 
 
@@ -5881,6 +6346,7 @@ for the symbols.
     <name lang="ja">射撃台</name>
     <name lang="zh-HK">Shooting platform</name>
     <name lang="pl">Shooting platform</name>
+		<name lang="cs">Posed</name>
 
     <text lang="en-AU" plural="true">shooting platforms</text>
     <text lang="en-AU">shooting platform</text>
@@ -5913,6 +6379,12 @@ for the symbols.
     <text lang="zh-HK">射擊台</text>
     <text lang="pl" plural="true" gender="żeński">ambony</text>
     <text lang="pl" gender="żeński">ambona</text>
+		<text lang="cs" plural="true">shooting platforms</text>
+		<text lang="cs" gender="maskulinum">posed</text>
+		<text case="čeho" lang="cs">posedu</text>
+		<text case="čehoplur" lang="cs">posedů</text>
+		<text case="čím" lang="cs">posedem</text>
+		<text case="čímplur" lang="cs">posedy</text>
 
 
 
@@ -5942,6 +6414,7 @@ for the symbols.
     <name lang="ja">境界石・ケルン</name>
     <name lang="zh-HK">Boundary stone, Cairn</name>
     <name lang="pl">Boundary stone, Cairn</name>
+		<name lang="cs">Hraniční kámen</name>
 
     <text lang="en-AU" plural="true">cairns</text>
     <text lang="en-AU">cairn</text>
@@ -5975,6 +6448,12 @@ for the symbols.
     <text lang="zh-HK">石標誌</text>
     <text lang="pl" plural="true" gender="męski">słupy graniczne, kopczyki</text>
     <text lang="pl" gender="męski">słup graniczny, kopczyk</text>
+		<text lang="cs" plural="true">cairns</text>
+		<text lang="cs" gender="maskulinum">hraniční kámen</text>
+		<text case="čeho" lang="cs">hraničního kamene</text>
+		<text case="čehoplur" lang="cs">hraničních kamenů</text>
+		<text case="čím" lang="cs">hraničním kamenem</text>
+		<text case="čímplur" lang="cs">hraničními kameny</text>
 
 
 
@@ -6005,6 +6484,7 @@ for the symbols.
     <name lang="ja">給餌台</name>
     <name lang="zh-HK">Fodder rack</name>
     <name lang="pl">Fodder rack</name>
+		<name lang="cs">Krmelec</name>
 
     <text lang="en-AU" plural="true">fodder racks</text>
     <text lang="en-AU">fodder rack</text>
@@ -6038,6 +6518,12 @@ for the symbols.
     <text lang="zh-HK">飼料架</text>
     <text lang="pl" plural="true" gender="męski">paśniki</text>
     <text lang="pl" gender="męski">paśnik</text>
+		<text lang="cs" plural="true">fodder racks</text>
+		<text lang="cs" gender="maskulinum">krmelec</text>
+		<text case="čeho" lang="cs">krmelce</text>
+		<text case="čehoplur" lang="cs">krmelců</text>
+		<text case="čím" lang="cs">krmelcem</text>
+		<text case="čímplur" lang="cs">krmelci</text>
 
 
 
@@ -6075,6 +6561,7 @@ for the symbols.
     <name lang="ja">炭焼き窯跡・炭焼き場</name>
     <name lang="zh-HK">Charcoal burning ground</name>
     <name lang="pl">Charcoal burning ground</name>
+		<name lang="cs">Milíř</name>
 
     <text lang="en-AU" plural="true">charcoal burning grounds</text>
     <text lang="en-AU">charcoal burning ground</text>
@@ -6108,6 +6595,12 @@ for the symbols.
     <text lang="zh-HK">炭灰地</text>
     <text lang="pl" plural="true" gender="nijaki">wypłaszczenia/mielerze</text>
     <text lang="pl" gender="nijaki">wypłaszczenie/mielerz</text>
+		<text lang="cs" plural="true">charcoal burning grounds</text>
+		<text lang="cs" gender="maskulinum">milíř</text>
+		<text case="čeho" lang="cs">milíře</text>
+		<text case="čehoplur" lang="cs">milířů</text>
+		<text case="čím" lang="cs">milířem</text>
+		<text case="čímplur" lang="cs">milíři</text>
 
 
 
@@ -6140,6 +6633,7 @@ for the symbols.
     <name lang="ja">記念物・彫像</name>
     <name lang="zh-HK">Monument or statue</name>
     <name lang="pl">Monument or statue</name>
+		<name lang="cs">Socha</name>
 
     <text lang="en-AU" plural="true">statues</text>
     <text lang="en-AU">statue</text>
@@ -6173,6 +6667,12 @@ for the symbols.
     <text lang="zh-HK">紀念碑或塑像</text>
     <text lang="pl" plural="true" gender="męski">pomniki</text>
     <text lang="pl" gender="męski">pomnik</text>
+		<text lang="cs" plural="true">statues</text>
+		<text lang="cs" gender="femininum">socha</text>
+		<text case="čeho" lang="cs">sochy</text>
+		<text case="čehoplur" lang="cs">soch</text>
+		<text case="čím" lang="cs">sochou</text>
+		<text case="čímplur" lang="cs">sochami</text>
 
 
 
@@ -6206,6 +6706,7 @@ for the symbols.
     <name lang="ja">建物の通過できる部分</name>
     <name lang="zh-HK">Building pass-through</name>
     <name lang="pl">Building pass-through</name>
+		<name lang="cs">Pasáž</name>
 
     <text lang="en-AU" plural="true">building pass-throughs</text>
     <text lang="en-AU">building pass-through</text>
@@ -6239,6 +6740,12 @@ for the symbols.
     <text lang="zh-HK">可通越建築物</text>
     <text lang="pl" plural="true" gender="nijaki">przejścia w budynku</text>
     <text lang="pl" gender="nijaki">przejście w budynku</text>
+		<text lang="cs" plural="true">building pass-throughs</text>
+		<text lang="cs" gender="femininum">pasáž</text>
+		<text case="čeho" lang="cs">pasáže</text>
+		<text case="čehoplur" lang="cs">pasáží</text>
+		<text case="čím" lang="cs">pasáží</text>
+		<text case="čímplur" lang="cs">pasážemi</text>
 
 
 
@@ -6275,6 +6782,7 @@ for the symbols.
     <name lang="ja">階段</name>
     <name lang="zh-HK">Stairway</name>
     <name lang="pl">Stairway</name>
+		<name lang="cs">Schodiště</name>
 
     <text lang="en-AU" plural="true">stairways</text>
     <text lang="en-AU">stairway</text>
@@ -6307,6 +6815,12 @@ for the symbols.
     <text lang="zh-HK">樓梯</text>
     <text lang="pl" plural="true" gender="nijaki">schody</text>
     <text lang="pl" gender="nijaki">schody</text>
+		<text lang="cs" plural="true">stairways</text>
+		<text lang="cs" gender="neutrum">schodiště</text>
+		<text case="čeho" lang="cs">schodiště</text>
+		<text case="čehoplur" lang="cs">schodišť</text>
+		<text case="čím" lang="cs">schodištěm</text>
+		<text case="čímplur" lang="cs">schodišti</text>
 
 
 
@@ -6341,6 +6855,7 @@ for the symbols.
     <name lang="ja">特殊な特徴物</name>
     <name lang="zh-HK">Special item</name>
     <name lang="pl">Special item</name>
+		<name lang="cs">Special item</name>
 
     <text lang="en-AU" plural="true">special items</text>
     <text lang="en-AU">special item</text>
@@ -6374,6 +6889,8 @@ for the symbols.
     <text lang="zh-HK">特別項目</text>
     <text lang="pl" plural="true" gender="męski">obiekty specjalne</text>
     <text lang="pl" gender="męski">obiekt specjalny</text>
+		<text lang="cs" plural="true">special items</text>
+		<text lang="cs">special item</text>
 
 
 
@@ -6406,6 +6923,7 @@ for the symbols.
     <name lang="ja">特殊な特徴物</name>
     <name lang="zh-HK">Special item</name>
     <name lang="pl">Special item</name>
+		<name lang="cs">Special item</name>
 
     <text lang="en-AU" plural="true">special items</text>
     <text lang="en-AU">special item</text>
@@ -6439,6 +6957,8 @@ for the symbols.
     <text lang="zh-HK">特別項目</text>
     <text lang="pl" plural="true" gender="męski">obiekty specjalne</text>
     <text lang="pl" gender="męski">obiekt specjalny</text>
+		<text lang="cs" plural="true">special items</text>
+		<text lang="cs">special item</text>
 
 
 
@@ -6469,6 +6989,7 @@ for the symbols.
     <name lang="ja">低い</name>
     <name lang="zh-HK">Low</name>
     <name lang="pl">Low</name>
+		<name lang="cs">Plochý</name>
 
     <text lang="en-AU">low {0}</text>
 
@@ -6512,6 +7033,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">płaskie {0}</text>
     <text lang="pl" gender="żeński">płaska {0}</text>
     <text lang="pl" gender="męski">płaski {0}</text>
+		<text lang="cs" gender="maskulinum">plochý {0}</text>
+		<text lang="cs" gender="femininum">plochá {0}</text>
+		<text lang="cs" gender="neutrum">ploché {0}</text>
 
 
 
@@ -6548,6 +7072,7 @@ for the symbols.
     <name lang="ja">浅い</name>
     <name lang="zh-HK">Shallow</name>
     <name lang="pl">Shallow</name>
+		<name lang="cs">Mělký</name>
 
     <text lang="en-AU">shallow {0}</text>
 
@@ -6589,6 +7114,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">płytkie {0}</text>
     <text lang="pl" gender="żeński">płytka {0}</text>
     <text lang="pl" gender="męski">płytki {0}</text>
+		<text lang="cs" gender="maskulinum">mělký {0}</text>
+		<text lang="cs" gender="femininum">mělká {0}</text>
+		<text lang="cs" gender="neutrum">mělké {0}</text>
 
 
 
@@ -6625,6 +7153,7 @@ for the symbols.
     <name lang="ja">深い</name>
     <name lang="zh-HK">Deep</name>
     <name lang="pl">Deep</name>
+		<name lang="cs">Hluboký</name>
 
     <text lang="en-AU">deep {0}</text>
 
@@ -6668,6 +7197,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">głębokie {0}</text>
     <text lang="pl" gender="żeński">głęboka {0}</text>
     <text lang="pl" gender="męski">głęboki {0}</text>
+		<text lang="cs" gender="maskulinum">hluboký {0}</text>
+		<text lang="cs" gender="femininum">hluboká {0}</text>
+		<text lang="cs" gender="neutrum">hluboké {0}</text>
 
 
 
@@ -6713,6 +7245,7 @@ for the symbols.
     <name lang="ja">植物の茂っている</name>
     <name lang="zh-HK">Overgrown</name>
     <name lang="pl">Overgrown</name>
+		<name lang="cs">Zarostlý</name>
 
     <text lang="en-AU">overgrown {0}</text>
 
@@ -6753,6 +7286,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">zarośnięte {0}</text>
     <text lang="pl" gender="żeński">zarośnięta {0}</text>
     <text lang="pl" gender="męski">zarośnięty {0}</text>
+		<text lang="cs" gender="maskulinum">zarostlý {0}</text>
+		<text lang="cs" gender="femininum">zarostlá {0}</text>
+		<text lang="cs" gender="neutrum">zarostlé {0}</text>
 
 
 
@@ -6815,6 +7351,7 @@ for the symbols.
     <name lang="ja">開けた</name>
     <name lang="zh-HK">Open</name>
     <name lang="pl">Open</name>
+		<name lang="cs">Otevřený</name>
 
     <text lang="en-AU">open {0}</text>
 
@@ -6855,6 +7392,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">otwarte {0}</text>
     <text lang="pl" gender="żeński">otwarta {0}</text>
     <text lang="pl" gender="męski">otwarty {0}</text>
+		<text lang="cs" gender="maskulinum">otevřený {0}</text>
+		<text lang="cs" gender="femininum">otevřená {0}</text>
+		<text lang="cs" gender="neutrum">otevřené {0}</text>
 
 
 
@@ -6921,6 +7461,7 @@ for the symbols.
     <name lang="ja">岩の・岩状の</name>
     <name lang="zh-HK">Rocky, stony</name>
     <name lang="pl">Rocky, stony</name>
+		<name lang="cs">Kamenitý</name>
 
     <text lang="en-AU">rocky {0}</text>
 
@@ -6961,6 +7502,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">skaliste {0}</text>
     <text lang="pl" gender="żeński">skalista {0}</text>
     <text lang="pl" gender="męski">skalisty {0}</text>
+		<text lang="cs" gender="maskulinum">kamenitý {0}</text>
+		<text lang="cs" gender="femininum">kamenitá {0}</text>
+		<text lang="cs" gender="neutrum">kamenité {0}</text>
 
 
 
@@ -7006,6 +7550,7 @@ for the symbols.
     <name lang="ja">湿地状の</name>
     <name lang="zh-HK">Marshy</name>
     <name lang="pl">Marshy</name>
+		<name lang="cs">Bažinatý</name>
 
     <text lang="en-AU">marshy {0}</text>
 
@@ -7046,6 +7591,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">bagniste {0}</text>
     <text lang="pl" gender="żeński">bagnista {0}</text>
     <text lang="pl" gender="męski">bagnisty {0}</text>
+		<text lang="cs" gender="maskulinum">bažinatý {0}</text>
+		<text lang="cs" gender="femininum">bažinatá {0}</text>
+		<text lang="cs" gender="neutrum">bažinaté {0}</text>
 
 
 
@@ -7088,6 +7636,7 @@ for the symbols.
     <name lang="ja">砂地状の</name>
     <name lang="zh-HK">Sandy</name>
     <name lang="pl">Sandy</name>
+		<name lang="cs">Písčitý</name>
 
     <text lang="en-AU">sandy {0}</text>
 
@@ -7128,6 +7677,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">piaszczyste {0}</text>
     <text lang="pl" gender="żeński">piaszczysta {0}</text>
     <text lang="pl" gender="męski">piaszczysty {0}</text>
+		<text lang="cs" gender="maskulinum">písčitý {0}</text>
+		<text lang="cs" gender="femininum">písčitá {0}</text>
+		<text lang="cs" gender="neutrum">písčité {0}</text>
 
 
 
@@ -7308,6 +7860,7 @@ for the symbols.
     <name lang="ja">針葉樹の</name>
     <name lang="zh-HK">Needle-leaved</name>
     <name lang="pl">Needle-leaved</name>
+		<name lang="cs">Jehličnatý</name>
 
     <text lang="en-AU">needle-leaved {0}</text>
 
@@ -7340,6 +7893,10 @@ for the symbols.
     <text lang="pl" gender="nijaki">iglaste {0}</text>
     <text lang="pl" gender="żeński">iglasta {0}</text>
     <text lang="pl" gender="męski">iglasty {0}</text>
+		<text lang="cs">jehličnatý {0}</text>
+		<text gender="maskulinum" lang="cs">jehličnatý {0}</text>
+		<text gender="femininum" lang="cs">jehličnatá {0}</text>
+		<text gender="neutrum" lang="cs">jehličnaté {0}</text>
 
 
 
@@ -7379,6 +7936,7 @@ for the symbols.
     <name lang="ja">広葉樹の</name>
     <name lang="zh-HK">Broad-leaved</name>
     <name lang="pl">Broad-leaved</name>
+		<name lang="cs">Listnatý</name>
 
     <text lang="en-AU">broad-leaved {0}</text>
 
@@ -7411,6 +7969,10 @@ for the symbols.
     <text lang="pl" gender="nijaki">liściaste {0}</text>
     <text lang="pl" gender="żeński">liściasta {0}</text>
     <text lang="pl" gender="męski">liściasty {0}</text>
+		<text lang="cs">listnatý {0}</text>
+		<text gender="maskulinum" lang="cs">listnatý {0}</text>
+		<text gender="femininum" lang="cs">listnatá {0}</text>
+		<text gender="neutrum" lang="cs">listnaté {0}</text>
 
 
 
@@ -7471,6 +8033,7 @@ for the symbols.
     <name lang="ja">倒れた・壊れた</name>
     <name lang="zh-HK">Ruined</name>
     <name lang="pl">Ruined</name>
+		<name lang="cs">Zbořený</name>
 
     <text lang="en-AU">ruined {0}</text>
 
@@ -7511,6 +8074,9 @@ for the symbols.
     <text lang="pl" gender="nijaki">zniszczone {0}</text>
     <text lang="pl" gender="żeński">zniszczona {0}</text>
     <text lang="pl" gender="męski">zniszczony {0}</text>
+		<text lang="cs" gender="maskulinum">zbořený {0}</text>
+		<text lang="cs" gender="femininum">zbořená {0}</text>
+		<text lang="cs" gender="neutrum">zbořené {0}</text>
 
 
 
@@ -7574,6 +8140,7 @@ for the symbols.
     <name lang="ja">交点</name>
     <name lang="zh-HK">Crossing</name>
     <name lang="pl">Crossing</name>
+		<name lang="cs">Křížení</name>
 
     <text lang="en-AU" plural="true">{0} and {1} crossings</text>
     <text lang="en-AU">{0} and {1} crossing</text>
@@ -7601,6 +8168,8 @@ for the symbols.
     <text lang="zh-HK">{0}及{1}的交叉處</text>
     <text lang="pl" plural="true" gender="nijaki">skrzyżowania {0} oraz {1}</text>
     <text lang="pl" gender="nijaki">skrzyżowanie {0} oraz {1}</text>
+		<text lang="cs" modified-case="čeho">křížení {0} a {1}</text>
+		<text lang="cs">xkřížení {0} a {1}</text>
 
 
 
@@ -7632,6 +8201,7 @@ for the symbols.
     <name lang="ja">(同種の特徴物の)交点</name>
     <name lang="zh-HK">Crossing (objects of same kind)</name>
     <name lang="pl">Crossing (objects of same kind)</name>
+		<name lang="cs">Křížení (stejných objektů)</name>
 
     <text lang="en-AU" plural="true">{0} crossings</text>
     <text lang="en-AU">{0} crossing</text>
@@ -7660,6 +8230,8 @@ for the symbols.
     <text lang="zh-HK">兩{0}的交叉處</text>
     <text lang="pl" plural="true" gender="nijaki">skrzyżowania {0}</text>
     <text lang="pl" gender="nijaki">skrzyżowanie {0}</text>
+		<text lang="cs" plural="true" modified-case="čeho">Křížení {0} </text>
+		<text lang="cs" modified-case="čehoplur">křížení {0} </text>
 
 
 
@@ -7683,6 +8255,7 @@ for the symbols.
     <name lang="ja">分岐</name>
     <name lang="zh-HK">Junction</name>
     <name lang="pl">Junction</name>
+		<name lang="cs">Odbočka</name>
 
     <text lang="en-AU" plural="true">{0} and {1} junctions</text>
     <text lang="en-AU">{0} and {1} junction</text>
@@ -7711,6 +8284,7 @@ for the symbols.
     <text lang="zh-HK">{0}及{1}的連接處</text>
     <text lang="pl" plural="true" gender="nijaki">rozwidlenia {0} oraz {1}</text>
     <text lang="pl" gender="nijaki">rozwidlenie {0} oraz {1}</text>
+		<text lang="cs" modified-case="čeho">odbočka {0} a {1}</text>
 
 
 
@@ -7742,6 +8316,7 @@ for the symbols.
     <name lang="ja">(同種の特徴物の)分岐</name>
     <name lang="zh-HK">Junction (objects of same kind)</name>
     <name lang="pl">Junction (objects of same kind)</name>
+		<name lang="cs">Odbočka (stejných objektů)</name>
 
     <text lang="en-AU" plural="true">{0} junctions</text>
     <text lang="en-AU">{0} junction</text>
@@ -7771,6 +8346,7 @@ for the symbols.
     <text lang="zh-HK">兩{0}的連接處</text>
     <text lang="pl" plural="true" gender="nijaki">rozwidlenia {0}</text>
     <text lang="pl" gender="nijaki">rozwidlenie {0}</text>
+		<text lang="cs" modified-case="čehoplur">odbočka {0}</text>
 
 
 
@@ -7799,6 +8375,7 @@ for the symbols.
     <name lang="ja">高さ</name>
     <name lang="zh-HK">Height of feature</name>
     <name lang="pl">Height of feature</name>
+		<name lang="cs">Výška</name>
 
     <text lang="en-AU">{0} high</text>
 
@@ -7818,6 +8395,9 @@ for the symbols.
     <text lang="ja">高さ {0}</text>
     <text lang="zh-HK">{0} 高</text>
     <text lang="pl">wysoki na {0}</text>
+		<text lang="cs" gender="maskulinum">{0} vysoký</text>
+		<text lang="cs" gender="femininum">{0} vysoká</text>
+		<text lang="cs" gender="neutrum">{0} vysoké</text>
 
 
   </symbol>
@@ -7840,6 +8420,7 @@ for the symbols.
     <name lang="ja">深さ</name>
     <name lang="zh-HK">Depth of feature</name>
     <name lang="pl">Depth of feature</name>
+		<name lang="cs">Hloubka</name>
 
     <text lang="en-AU">{0} deep</text>
 
@@ -7859,6 +8440,9 @@ for the symbols.
     <text lang="ja">深さ {0}</text>
     <text lang="zh-HK">{0} 深</text>
     <text lang="pl">głęboki na {0}</text>
+		<text lang="cs" gender="maskulinum">{0} hluboký</text>
+		<text lang="cs" gender="femininum">{0} hluboká</text>
+		<text lang="cs" gender="neutrum">{0} hluboké</text>
 
 
   </symbol>
@@ -7881,6 +8465,7 @@ for the symbols.
     <name lang="ja">大きさ</name>
     <name lang="zh-HK">Size of feature</name>
     <name lang="pl">Size of feature</name>
+		<name lang="cs">Rozměry</name>
 
     <text lang="en-AU">{0} by {1}</text>
 
@@ -7900,6 +8485,7 @@ for the symbols.
     <text lang="ja">大きさ {0} x {1}</text>
     <text lang="zh-HK">{0} 乘 {1}</text>
     <text lang="pl">{0} na {1}</text>
+		<text lang="cs">{0} krát {1}</text>
 
 
   </symbol>
@@ -7922,6 +8508,7 @@ for the symbols.
     <name lang="ja">傾斜上の高さ</name>
     <name lang="zh-HK">Height of feature on slope</name>
     <name lang="pl">Height of feature on slope</name>
+		<name lang="cs">Výška ve svahu</name>
 
     <text lang="en-AU">{0} to {1} high</text>
 
@@ -7941,6 +8528,7 @@ for the symbols.
     <text lang="ja">傾斜上の高さ {0} / {1}</text>
     <text lang="zh-HK">{0} 至 {1} 高</text>
     <text lang="pl">wysoki na {0} do {1}</text>
+		<text lang="cs">{0} z {1} výšky</text>
 
 
   </symbol>
@@ -7963,6 +8551,7 @@ for the symbols.
     <name lang="ja">傾斜上の深さ</name>
     <name lang="zh-HK">Depth of feature on slope</name>
     <name lang="pl">Depth of feature on slope</name>
+		<name lang="cs">Hloubka ve svahu</name>
 
     <text lang="en-AU">{0} to {1} deep</text>
 
@@ -7982,6 +8571,7 @@ for the symbols.
     <text lang="ja">傾斜上の深さ {0} / {1}</text>
     <text lang="zh-HK">{0} 至 {1} 深</text>
     <text lang="pl">głęboki na {0} do {1}</text>
+		<text lang="cs">{0} z {1} hloubky</text>
 
 
   </symbol>
@@ -8008,6 +8598,7 @@ for the symbols.
     <name lang="ja">ふたつの特徴物の高さ</name>
     <name lang="zh-HK">Size of two features</name>
     <name lang="pl">Size of two features</name>
+		<name lang="cs">Výšky dvou objektů</name>
 
     <text lang="en-AU">{0} and {1}</text>
 
@@ -8027,6 +8618,7 @@ for the symbols.
     <text lang="ja">ふたつの特徴物 {0}、{1}</text>
     <text lang="zh-HK">{0} 及 {1}</text>
     <text lang="pl">{0} i {1}</text>
+		<text lang="cs">{0} a {1}</text>
 
 
   </symbol>
@@ -8057,6 +8649,7 @@ for the symbols.
     <name lang="ja">北側</name>
     <name lang="zh-HK">North side</name>
     <name lang="pl">North side</name>
+		<name lang="cs">Severní side</name>
 
     <text lang="en-AU">N side of {0}</text>
 
@@ -8077,6 +8670,7 @@ for the symbols.
     <text lang="ja">{0}の北側</text>
     <text lang="zh-HK">{0}北面</text>
     <text lang="pl">północna strona {0}</text>
+		<text lang="cs">{0},s strana</text>
 
 
 
@@ -8106,6 +8700,7 @@ for the symbols.
     <name lang="ja">北東側</name>
     <name lang="zh-HK">North-east side</name>
     <name lang="pl">North-east side</name>
+		<name lang="cs">SV strana</name>
 
     <text lang="en-AU">NE side of {0}</text>
 
@@ -8126,6 +8721,7 @@ for the symbols.
     <text lang="ja">{0}の北東側</text>
     <text lang="zh-HK">{0}東北面</text>
     <text lang="pl">północno-wschodnia strona {0}</text>
+		<text lang="cs">{0},sv strana</text>
 
 
 
@@ -8155,6 +8751,7 @@ for the symbols.
     <name lang="ja">東側</name>
     <name lang="zh-HK">East side</name>
     <name lang="pl">East side</name>
+		<name lang="cs">V strana</name>
 
     <text lang="en-AU">E side of {0}</text>
 
@@ -8175,6 +8772,7 @@ for the symbols.
     <text lang="ja">{0}の東側</text>
     <text lang="zh-HK">{0}東面</text>
     <text lang="pl">wschodnia strona {0}</text>
+		<text lang="cs">{0},v strana</text>
 
 
 
@@ -8204,6 +8802,7 @@ for the symbols.
     <name lang="ja">南東側</name>
     <name lang="zh-HK">South-east side</name>
     <name lang="pl">South-east side</name>
+		<name lang="cs">JV strana</name>
 
     <text lang="en-AU">SE side of {0}</text>
 
@@ -8224,6 +8823,7 @@ for the symbols.
     <text lang="ja">{0}の南東側</text>
     <text lang="zh-HK">{0}東南面</text>
     <text lang="pl">południowo-wchodnia strona {0}</text>
+		<text lang="cs">{0},jv strana</text>
 
 
 
@@ -8253,6 +8853,7 @@ for the symbols.
     <name lang="ja">南側</name>
     <name lang="zh-HK">South side</name>
     <name lang="pl">South side</name>
+		<name lang="cs">Jižní strana</name>
 
     <text lang="en-AU">S side of {0}</text>
 
@@ -8273,6 +8874,7 @@ for the symbols.
     <text lang="ja">{0}の南側</text>
     <text lang="zh-HK">{0}南面</text>
     <text lang="pl">południowa strona {0}</text>
+		<text lang="cs">{0},j strana</text>
 
 
 
@@ -8302,6 +8904,7 @@ for the symbols.
     <name lang="ja">南西側</name>
     <name lang="zh-HK">South-west side</name>
     <name lang="pl">South-west side</name>
+		<name lang="cs">JZ strana</name>
 
     <text lang="en-AU">SW side of {0}</text>
 
@@ -8322,6 +8925,7 @@ for the symbols.
     <text lang="ja">{0}の南西側</text>
     <text lang="zh-HK">{0}西南面</text>
     <text lang="pl">południowo-zachodnia strona {0}</text>
+		<text lang="cs">{0},jz strana</text>
 
 
 
@@ -8351,6 +8955,7 @@ for the symbols.
     <name lang="ja">西側</name>
     <name lang="zh-HK">West side</name>
     <name lang="pl">West side</name>
+		<name lang="cs">Z strana</name>
 
     <text lang="en-AU">W side of {0}</text>
 
@@ -8371,6 +8976,7 @@ for the symbols.
     <text lang="ja">{0}の西側</text>
     <text lang="zh-HK">{0}西面</text>
     <text lang="pl">zachodnia strona {0}</text>
+		<text lang="cs">{0},z strana</text>
 
 
 
@@ -8400,6 +9006,7 @@ for the symbols.
     <name lang="ja">北西側</name>
     <name lang="zh-HK">North-west side</name>
     <name lang="pl">North-west side</name>
+		<name lang="cs">SZ strana</name>
 
     <text lang="en-AU">NW side of {0}</text>
 
@@ -8420,6 +9027,7 @@ for the symbols.
     <text lang="ja">{0}の北西側</text>
     <text lang="zh-HK">{0}西北面</text>
     <text lang="pl">północno-zachodnia strona {0}</text>
+		<text lang="cs">{0},sz strana</text>
 
 
 
@@ -8449,6 +9057,7 @@ for the symbols.
     <name lang="ja">北のふち</name>
     <name lang="zh-HK">North edge</name>
     <name lang="pl">North edge</name>
+		<name lang="cs">Severní okraj</name>
 
     <text lang="en-AU">N edge of {0}</text>
 
@@ -8469,6 +9078,7 @@ for the symbols.
     <text lang="ja">{0}の北のふち</text>
     <text lang="zh-HK">{0}北邊緣</text>
     <text lang="pl">północny skraj {0}</text>
+		<text lang="cs">{0}, s okraj</text>
 
 
 
@@ -8499,6 +9109,7 @@ for the symbols.
     <name lang="ja">北東のふち</name>
     <name lang="zh-HK">North-east edge</name>
     <name lang="pl">North-east edge</name>
+		<name lang="cs">Severovýchodní okraj</name>
 
     <text lang="en-AU">NE edge of {0}</text>
 
@@ -8519,6 +9130,7 @@ for the symbols.
     <text lang="ja">{0}の北東のふち</text>
     <text lang="zh-HK">{0}東北邊緣</text>
     <text lang="pl">północno-wschodni skraj {0}</text>
+		<text lang="cs">{0}, sv okraj</text>
 
 
 
@@ -8549,6 +9161,7 @@ for the symbols.
     <name lang="ja">東のふち</name>
     <name lang="zh-HK">East edge</name>
     <name lang="pl">East edge</name>
+		<name lang="cs">Východní okraj</name>
 
     <text lang="en-AU">E edge of {0}</text>
 
@@ -8569,6 +9182,7 @@ for the symbols.
     <text lang="ja">{0}の東のふち</text>
     <text lang="zh-HK">{0}東邊緣</text>
     <text lang="pl">wschodni skraj {0}</text>
+		<text lang="cs">{0}, v okraj</text>
 
 
 
@@ -8599,6 +9213,7 @@ for the symbols.
     <name lang="ja">南東のふち</name>
     <name lang="zh-HK">South-east edge</name>
     <name lang="pl">South-east edge</name>
+		<name lang="cs">Jihovýchodní okraj</name>
 
     <text lang="en-AU">SE edge of {0}</text>
 
@@ -8619,6 +9234,7 @@ for the symbols.
     <text lang="ja">{0}の南東のふち</text>
     <text lang="zh-HK">{0}東南邊緣</text>
     <text lang="pl">południowo-wschodni skraj {0}</text>
+		<text lang="cs">{0}, jv okraj</text>
 
 
 
@@ -8649,6 +9265,7 @@ for the symbols.
     <name lang="ja">南のふち</name>
     <name lang="zh-HK">South edge</name>
     <name lang="pl">South edge</name>
+		<name lang="cs">Jižní okraj</name>
 
     <text lang="en-AU">S edge of {0}</text>
 
@@ -8669,6 +9286,7 @@ for the symbols.
     <text lang="ja">{0}の南のふち</text>
     <text lang="zh-HK">{0}南邊緣</text>
     <text lang="pl">południowy skraj {0}</text>
+		<text lang="cs">{0}, j okraj</text>
 
 
 
@@ -8699,6 +9317,7 @@ for the symbols.
     <name lang="ja">南西のふち</name>
     <name lang="zh-HK">South-west edge</name>
     <name lang="pl">South-west edge</name>
+		<name lang="cs">Jihozápadní okraj</name>
 
     <text lang="en-AU">SW edge of {0}</text>
 
@@ -8719,6 +9338,7 @@ for the symbols.
     <text lang="ja">{0}の南西のふち</text>
     <text lang="zh-HK">{0}西南邊緣</text>
     <text lang="pl">południowo-zachodni skraj {0}</text>
+		<text lang="cs">{0}, jz okraj</text>
 
 
 
@@ -8749,6 +9369,7 @@ for the symbols.
     <name lang="ja">西のふち</name>
     <name lang="zh-HK">West edge</name>
     <name lang="pl">West edge</name>
+		<name lang="cs">Západní okraj</name>
 
     <text lang="en-AU">W edge of {0}</text>
 
@@ -8769,6 +9390,7 @@ for the symbols.
     <text lang="ja">{0}の西のふち</text>
     <text lang="zh-HK">{0}西邊緣</text>
     <text lang="pl">zachodni skraj {0}</text>
+		<text lang="cs">{0}, z okraj</text>
 
 
 
@@ -8799,6 +9421,7 @@ for the symbols.
     <name lang="ja">北西のふち</name>
     <name lang="zh-HK">North-west edge</name>
     <name lang="pl">North-west edge</name>
+		<name lang="cs">Severozápadní okraj</name>
 
     <text lang="en-AU">NW edge of {0}</text>
 
@@ -8819,6 +9442,7 @@ for the symbols.
     <text lang="ja">{0}の北西のふち</text>
     <text lang="zh-HK">{0}西北邊緣</text>
     <text lang="pl">północno-zachodni skraj {0}</text>
+		<text lang="cs">{0}, sz okraj</text>
 
 
 
@@ -8849,6 +9473,7 @@ for the symbols.
     <name lang="ja">北の部分</name>
     <name lang="zh-HK">North part</name>
     <name lang="pl">North part</name>
+		<name lang="cs">Severní část</name>
 
     <text lang="en-AU">N part of {0}</text>
 
@@ -8869,6 +9494,7 @@ for the symbols.
     <text lang="ja">{0}の北の部分</text>
     <text lang="zh-HK">{0}北部</text>
     <text lang="pl">północna część {0}</text>
+		<text lang="cs">{0}, s část</text>
 
 
 
@@ -8898,6 +9524,7 @@ for the symbols.
     <name lang="ja">北東の部分</name>
     <name lang="zh-HK">North-east part</name>
     <name lang="pl">North-east part</name>
+		<name lang="cs">Severovýchodní část</name>
 
     <text lang="en-AU">NE part of {0}</text>
 
@@ -8918,6 +9545,7 @@ for the symbols.
     <text lang="ja">{0}の北東の部分</text>
     <text lang="zh-HK">{0}東北部</text>
     <text lang="pl">północno-wschodnia część {0}</text>
+		<text lang="cs">{0}, sv část</text>
 
 
 
@@ -8947,6 +9575,7 @@ for the symbols.
     <name lang="ja">東の部分</name>
     <name lang="zh-HK">East part</name>
     <name lang="pl">East part</name>
+		<name lang="cs">Východní část</name>
 
     <text lang="en-AU">E part of {0}</text>
 
@@ -8967,6 +9596,7 @@ for the symbols.
     <text lang="ja">{0}の東の部分</text>
     <text lang="zh-HK">{0}東部</text>
     <text lang="pl">wschodnia część {0}</text>
+		<text lang="cs">{0}, v část</text>
 
 
 
@@ -8996,6 +9626,7 @@ for the symbols.
     <name lang="ja">南東の部分</name>
     <name lang="zh-HK">South-east part</name>
     <name lang="pl">South-east part</name>
+		<name lang="cs">Jihovýchodní část</name>
 
     <text lang="en-AU">SE part of {0}</text>
 
@@ -9016,6 +9647,7 @@ for the symbols.
     <text lang="ja">{0}の南東の部分</text>
     <text lang="zh-HK">{0}東南部</text>
     <text lang="pl">południowo-wschodnia część {0}</text>
+		<text lang="cs">{0}, jv část</text>
 
 
 
@@ -9045,6 +9677,7 @@ for the symbols.
     <name lang="ja">南の部分</name>
     <name lang="zh-HK">South part</name>
     <name lang="pl">South part</name>
+		<name lang="cs">Jižní část</name>
 
     <text lang="en-AU">S part of {0}</text>
 
@@ -9065,6 +9698,7 @@ for the symbols.
     <text lang="ja">{0}の南の部分</text>
     <text lang="zh-HK">{0}南部</text>
     <text lang="pl">południowa część {0}</text>
+		<text lang="cs">{0}, j část</text>
 
 
 
@@ -9094,6 +9728,7 @@ for the symbols.
     <name lang="ja">南西の部分</name>
     <name lang="zh-HK">South-west part</name>
     <name lang="pl">South-west part</name>
+		<name lang="cs">Jihozápadní část</name>
 
     <text lang="en-AU">SW part of {0}</text>
 
@@ -9114,6 +9749,7 @@ for the symbols.
     <text lang="ja">{0}の南西の部分</text>
     <text lang="zh-HK">{0}西南部</text>
     <text lang="pl">południowo-zachodnia część {0}</text>
+		<text lang="cs">{0}, jz část</text>
 
 
 
@@ -9143,6 +9779,7 @@ for the symbols.
     <name lang="ja">西の部分</name>
     <name lang="zh-HK">West part</name>
     <name lang="pl">West part</name>
+		<name lang="cs">Západní část</name>
 
     <text lang="en-AU">W part of {0}</text>
 
@@ -9163,6 +9800,7 @@ for the symbols.
     <text lang="ja">{0}の西の部分</text>
     <text lang="zh-HK">{0}西部</text>
     <text lang="pl">zachodnia część {0}</text>
+		<text lang="cs">{0}, z část</text>
 
 
 
@@ -9192,6 +9830,7 @@ for the symbols.
     <name lang="ja">北西の部分</name>
     <name lang="zh-HK">North-west part</name>
     <name lang="pl">North-west part</name>
+		<name lang="cs">Severozápadní část</name>
 
     <text lang="en-AU">NW part of {0}</text>
 
@@ -9212,6 +9851,7 @@ for the symbols.
     <text lang="ja">{0}の北西の部分</text>
     <text lang="zh-HK">{0}西北部</text>
     <text lang="pl">północno-zachodnia część {0}</text>
+		<text lang="cs">{0}, sz část</text>
 
 
 
@@ -9241,6 +9881,7 @@ for the symbols.
     <name lang="ja">北の角(内側)</name>
     <name lang="zh-HK">North corner (inside)</name>
     <name lang="pl">North corner (inside)</name>
+		<name lang="cs">Severní vnitřní roh</name>
 
     <text lang="en-AU">N inside corner of {0}</text>
 
@@ -9261,6 +9902,7 @@ for the symbols.
     <text lang="ja">{0}の北の角(内側)</text>
     <text lang="zh-HK">{0}北內角</text>
     <text lang="pl">północny róg wewnątrz {0}</text>
+		<text lang="cs">{0}, s vnitřní roh</text>
 
 
 
@@ -9292,6 +9934,7 @@ for the symbols.
     <name lang="ja">北東の角(内側)</name>
     <name lang="zh-HK">North-east corner (inside)</name>
     <name lang="pl">North-east corner (inside)</name>
+		<name lang="cs">Severovýchodní vnitřní roh</name>
 
     <text lang="en-AU">NE inside corner of {0}</text>
 
@@ -9312,6 +9955,7 @@ for the symbols.
     <text lang="ja">{0}の北東の角(内側)</text>
     <text lang="zh-HK">{0}東北內角</text>
     <text lang="pl">północno-wchodni róg wewnątrz {0}</text>
+		<text lang="cs">{0}, sv vnitřní roh</text>
 
 
 
@@ -9343,6 +9987,7 @@ for the symbols.
     <name lang="ja">東の角(内側)</name>
     <name lang="zh-HK">East corner (inside)</name>
     <name lang="pl">East corner (inside)</name>
+		<name lang="cs">Východní vnitřní roh</name>
 
     <text lang="en-AU">E inside corner of {0}</text>
 
@@ -9363,6 +10008,7 @@ for the symbols.
     <text lang="ja">{0}の東の角(内側)</text>
     <text lang="zh-HK">{0}東內角</text>
     <text lang="pl">wschodni róg wewnątrz {0}</text>
+		<text lang="cs">{0}, v vnitřní roh</text>
 
 
 
@@ -9394,6 +10040,7 @@ for the symbols.
     <name lang="ja">南東の角(内側)</name>
     <name lang="zh-HK">South-east corner (inside)</name>
     <name lang="pl">South-east corner (inside)</name>
+		<name lang="cs">Jihovýchodní vnitřní roh</name>
 
     <text lang="en-AU">SE inside corner of {0}</text>
 
@@ -9414,6 +10061,7 @@ for the symbols.
     <text lang="ja">{0}の南東の角(内側)</text>
     <text lang="zh-HK">{0}東南內角</text>
     <text lang="pl">południowo-wschodni róg wewnątrz {0}</text>
+		<text lang="cs">{0}, jv vnitřní roh</text>
 
 
 
@@ -9445,6 +10093,7 @@ for the symbols.
     <name lang="ja">南の角(内側)</name>
     <name lang="zh-HK">South corner (inside)</name>
     <name lang="pl">South corner (inside)</name>
+		<name lang="cs">Jižní vnitřní roh</name>
 
     <text lang="en-AU">S inside corner of {0}</text>
 
@@ -9465,6 +10114,7 @@ for the symbols.
     <text lang="ja">{0}の南の角(内側)</text>
     <text lang="zh-HK">{0}南內角</text>
     <text lang="pl">południowy róg wewnątrz {0}</text>
+		<text lang="cs">{0}, j vnitřní roh</text>
 
 
 
@@ -9496,6 +10146,7 @@ for the symbols.
     <name lang="ja">南西の角(内側)</name>
     <name lang="zh-HK">South-west corner (inside)</name>
     <name lang="pl">South-west corner (inside)</name>
+		<name lang="cs">Jihozápadní vnitřní roh</name>
 
     <text lang="en-AU">SW inside corner of {0}</text>
 
@@ -9516,6 +10167,7 @@ for the symbols.
     <text lang="ja">{0}の南西の角(内側)</text>
     <text lang="zh-HK">{0}西南內角</text>
     <text lang="pl">południowo-zachodni róg wewnątrz {0}</text>
+		<text lang="cs">{0}, jz vnitřní roh</text>
 
 
 
@@ -9547,6 +10199,7 @@ for the symbols.
     <name lang="ja">西の角(内側)</name>
     <name lang="zh-HK">West corner (inside)</name>
     <name lang="pl">West corner (inside)</name>
+		<name lang="cs">Západní vnitřní roh</name>
 
     <text lang="en-AU">W inside corner of {0}</text>
 
@@ -9567,6 +10220,7 @@ for the symbols.
     <text lang="ja">{0}の西の角(内側)</text>
     <text lang="zh-HK">{0}西內角</text>
     <text lang="pl">zachodni róg wewnątrz {0}</text>
+		<text lang="cs">{0}, z vnitřní roh</text>
 
 
 
@@ -9598,6 +10252,7 @@ for the symbols.
     <name lang="ja">北西の角(内側)</name>
     <name lang="zh-HK">North-west corner (inside)</name>
     <name lang="pl">North-west corner (inside)</name>
+		<name lang="cs">Severozápadní vnitřní roh</name>
 
     <text lang="en-AU">NW inside corner of {0}</text>
 
@@ -9618,6 +10273,7 @@ for the symbols.
     <text lang="ja">{0}の北西の角(内側)</text>
     <text lang="zh-HK">{0}西北內角</text>
     <text lang="pl">północno-zachodni róg wewnątrz {0}</text>
+		<text lang="cs">{0}, sz vnitřní roh</text>
 
 
 
@@ -9649,6 +10305,7 @@ for the symbols.
     <name lang="ja">北の角(外側)</name>
     <name lang="zh-HK">North corner (outside)</name>
     <name lang="pl">North corner (outside)</name>
+		<name lang="cs">Severní vnější roh</name>
 
     <text lang="en-AU">N outside corner of {0}</text>
 
@@ -9669,6 +10326,7 @@ for the symbols.
     <text lang="ja">{0}の北の角(外側)</text>
     <text lang="zh-HK">{0}北外角</text>
     <text lang="pl">północny zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, s vnější roh</text>
 
 
 
@@ -9700,6 +10358,7 @@ for the symbols.
     <name lang="ja">北東の角(外側)</name>
     <name lang="zh-HK">North-east corner (outside)</name>
     <name lang="pl">North-east corner (outside)</name>
+		<name lang="cs">Severovýchodní vnější roh</name>
 
     <text lang="en-AU">NE outside corner of {0}</text>
 
@@ -9720,6 +10379,7 @@ for the symbols.
     <text lang="ja">{0}の北東の角(外側)</text>
     <text lang="zh-HK">{0}東北外角</text>
     <text lang="pl">północno-wschodni zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, sv vnější roh</text>
 
 
 
@@ -9751,6 +10411,7 @@ for the symbols.
     <name lang="ja">東の角(外側)</name>
     <name lang="zh-HK">East corner (outside)</name>
     <name lang="pl">East corner (outside)</name>
+		<name lang="cs">Východní vnější roh</name>
 
     <text lang="en-AU">E outside corner of {0}</text>
 
@@ -9771,6 +10432,7 @@ for the symbols.
     <text lang="ja">{0}の東の角(外側)</text>
     <text lang="zh-HK">{0}東外角</text>
     <text lang="pl">wschodni zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, v vnější roh</text>
 
 
 
@@ -9802,6 +10464,7 @@ for the symbols.
     <name lang="ja">南東の角(外側)</name>
     <name lang="zh-HK">South-east corner (outside)</name>
     <name lang="pl">South-east corner (outside)</name>
+		<name lang="cs">Jihovýchodní vnější roh</name>
 
     <text lang="en-AU">SE outside corner of {0}</text>
 
@@ -9822,6 +10485,7 @@ for the symbols.
     <text lang="ja">{0}の南東の角(外側)</text>
     <text lang="zh-HK">{0}東南外角</text>
     <text lang="pl">południowo-wschodni zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, jv vnější roh</text>
 
 
 
@@ -9853,6 +10517,7 @@ for the symbols.
     <name lang="ja">南の角(外側)</name>
     <name lang="zh-HK">South corner (outside)</name>
     <name lang="pl">South corner (outside)</name>
+		<name lang="cs">Jižní vnější roh</name>
 
     <text lang="en-AU">S outside corner of {0}</text>
 
@@ -9873,6 +10538,7 @@ for the symbols.
     <text lang="ja">{0}の南の角(外側)</text>
     <text lang="zh-HK">{0}南外角</text>
     <text lang="pl">południowy zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, j vnější roh</text>
 
 
 
@@ -9904,6 +10570,7 @@ for the symbols.
     <name lang="ja">南西の角(外側)</name>
     <name lang="zh-HK">South-west corner (outside)</name>
     <name lang="pl">South-west corner (outside)</name>
+		<name lang="cs">Jihozápadní vnější roh</name>
 
     <text lang="en-AU">SW outside corner of {0}</text>
 
@@ -9924,6 +10591,7 @@ for the symbols.
     <text lang="ja">{0}の南西の角(外側)</text>
     <text lang="zh-HK">{0}西南外角</text>
     <text lang="pl">południowo-zachodni zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, jz vnější roh</text>
 
 
 
@@ -9955,6 +10623,7 @@ for the symbols.
     <name lang="ja">西の角(外側)</name>
     <name lang="zh-HK">West corner (outside)</name>
     <name lang="pl">West corner (outside)</name>
+		<name lang="cs">Západní vnější roh</name>
 
     <text lang="en-AU">W outside corner of {0}</text>
 
@@ -9975,6 +10644,7 @@ for the symbols.
     <text lang="ja">{0}の西の角(外側)</text>
     <text lang="zh-HK">{0}西外角</text>
     <text lang="pl">zachodni zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, z vnější roh</text>
 
 
 
@@ -10006,6 +10676,7 @@ for the symbols.
     <name lang="ja">北西の角(外側)</name>
     <name lang="zh-HK">North-west corner (outside)</name>
     <name lang="pl">North-west corner (outside)</name>
+		<name lang="cs">Severozápadní vnější roh</name>
 
     <text lang="en-AU">NW outside corner of {0}</text>
 
@@ -10026,6 +10697,7 @@ for the symbols.
     <text lang="ja">{0}の北西の角(外側)</text>
     <text lang="zh-HK">{0}西北外角</text>
     <text lang="pl">północno-zachodni zewnętrzny róg {0}</text>
+		<text lang="cs">{0}, sz vnější roh</text>
 
 
 
@@ -10057,6 +10729,7 @@ for the symbols.
     <name lang="ja">北の突端</name>
     <name lang="zh-HK">North tip</name>
     <name lang="pl">North tip</name>
+		<name lang="cs">Severní cíp</name>
 
     <text lang="en-AU">N tip of {0}</text>
 
@@ -10077,6 +10750,7 @@ for the symbols.
     <text lang="ja">{0}の北の突端</text>
     <text lang="zh-HK">{0}北端</text>
     <text lang="pl">północny szpic {0}</text>
+		<text lang="cs">{0}, s výběžek</text>
 
 
 
@@ -10108,6 +10782,7 @@ for the symbols.
     <name lang="ja">北東の突端</name>
     <name lang="zh-HK">North-east tip</name>
     <name lang="pl">North-east tip</name>
+		<name lang="cs">Severovýchodní cíp</name>
 
     <text lang="en-AU">NE tip of {0}</text>
 
@@ -10128,6 +10803,7 @@ for the symbols.
     <text lang="ja">{0}の北東の突端</text>
     <text lang="zh-HK">{0}東北端</text>
     <text lang="pl">północno-wschodni szpic {0}</text>
+		<text lang="cs">{0}, sv výběžek</text>
 
 
 
@@ -10159,6 +10835,7 @@ for the symbols.
     <name lang="ja">東の突端</name>
     <name lang="zh-HK">East tip</name>
     <name lang="pl">East tip</name>
+		<name lang="cs">Východní cíp</name>
 
     <text lang="en-AU">E tip of {0}</text>
 
@@ -10179,6 +10856,7 @@ for the symbols.
     <text lang="ja">{0}の東の突端</text>
     <text lang="zh-HK">{0}東端</text>
     <text lang="pl">wschodni szpic {0}</text>
+		<text lang="cs">{0}, v výběžek</text>
 
 
 
@@ -10210,6 +10888,7 @@ for the symbols.
     <name lang="ja">南東の突端</name>
     <name lang="zh-HK">South-east tip</name>
     <name lang="pl">South-east tip</name>
+		<name lang="cs">Jihovýchodní cíp</name>
 
     <text lang="en-AU">SE tip of {0}</text>
 
@@ -10230,6 +10909,7 @@ for the symbols.
     <text lang="ja">{0}の南東の突端</text>
     <text lang="zh-HK">{0}東南端</text>
     <text lang="pl">południowo-wschodni szpic {0}</text>
+		<text lang="cs">{0}, jv výběžek</text>
 
 
 
@@ -10261,6 +10941,7 @@ for the symbols.
     <name lang="ja">南の突端</name>
     <name lang="zh-HK">South tip</name>
     <name lang="pl">South tip</name>
+		<name lang="cs">Jižní cíp</name>
 
     <text lang="en-AU">S tip of {0}</text>
 
@@ -10281,6 +10962,7 @@ for the symbols.
     <text lang="ja">{0}の南の突端</text>
     <text lang="zh-HK">{0}南端</text>
     <text lang="pl">południowy szpic {0}</text>
+		<text lang="cs">{0}, j výběžek</text>
 
 
 
@@ -10312,6 +10994,7 @@ for the symbols.
     <name lang="ja">南西の突端</name>
     <name lang="zh-HK">South-west tip</name>
     <name lang="pl">South-west tip</name>
+		<name lang="cs">Jihozápadní cíp</name>
 
     <text lang="en-AU">SW tip of {0}</text>
 
@@ -10332,6 +11015,7 @@ for the symbols.
     <text lang="ja">{0}の南西の突端</text>
     <text lang="zh-HK">{0}西南端</text>
     <text lang="pl">południowo-zachodni szpic {0}</text>
+		<text lang="cs">{0}, jz výběžek</text>
 
 
 
@@ -10363,6 +11047,7 @@ for the symbols.
     <name lang="ja">西の突端</name>
     <name lang="zh-HK">West tip</name>
     <name lang="pl">West tip</name>
+		<name lang="cs">Západní cíp</name>
 
     <text lang="en-AU">W tip of {0}</text>
 
@@ -10383,6 +11068,7 @@ for the symbols.
     <text lang="ja">{0}の西の突端</text>
     <text lang="zh-HK">{0}西端</text>
     <text lang="pl">zachodni szpic {0}</text>
+		<text lang="cs">{0}, z výběžek</text>
 
 
 
@@ -10414,6 +11100,7 @@ for the symbols.
     <name lang="ja">北西の突端</name>
     <name lang="zh-HK">North-west tip</name>
     <name lang="pl">North-west tip</name>
+		<name lang="cs">Severozápadní cíp</name>
 
     <text lang="en-AU">NW tip of {0}</text>
 
@@ -10434,6 +11121,7 @@ for the symbols.
     <text lang="ja">{0}の北西の突端</text>
     <text lang="zh-HK">{0}西北端</text>
     <text lang="pl">północno-zachodni szpic {0}</text>
+		<text lang="cs">{0}, sz výběžek</text>
 
 
 
@@ -10465,6 +11153,7 @@ for the symbols.
     <name lang="ja">北の終わり</name>
     <name lang="zh-HK">North end</name>
     <name lang="pl">North end</name>
+		<name lang="cs">Severní konec</name>
 
     <text lang="en-AU">N end of {0}</text>
 
@@ -10485,6 +11174,7 @@ for the symbols.
     <text lang="ja">{0}の北の終わり</text>
     <text lang="zh-HK">{0}北盡頭</text>
     <text lang="pl">północny koniec {0}</text>
+		<text lang="cs">{0}, s konec</text>
 
 
 
@@ -10516,6 +11206,7 @@ for the symbols.
     <name lang="ja">北東の終わり</name>
     <name lang="zh-HK">North-east end</name>
     <name lang="pl">North-east end</name>
+		<name lang="cs">Severovýchodní konec</name>
 
     <text lang="en-AU">NE end of {0}</text>
 
@@ -10536,6 +11227,7 @@ for the symbols.
     <text lang="ja">{0}の北東の終わり</text>
     <text lang="zh-HK">{0}東北盡頭</text>
     <text lang="pl">północno-wschodni koniec {0}</text>
+		<text lang="cs">{0}, sv konec</text>
 
 
 
@@ -10567,6 +11259,7 @@ for the symbols.
     <name lang="ja">東の終わり</name>
     <name lang="zh-HK">East end</name>
     <name lang="pl">East end</name>
+		<name lang="cs">Východní konec</name>
 
     <text lang="en-AU">E end of {0}</text>
 
@@ -10587,6 +11280,7 @@ for the symbols.
     <text lang="ja">{0}の東の終わり</text>
     <text lang="zh-HK">{0}東盡頭</text>
     <text lang="pl">wschodni koniec {0}</text>
+		<text lang="cs">{0}, v konec</text>
 
 
 
@@ -10618,6 +11312,7 @@ for the symbols.
     <name lang="ja">南東の終わり</name>
     <name lang="zh-HK">South-east end</name>
     <name lang="pl">South-east end</name>
+		<name lang="cs">Jihovýchodní konec</name>
 
     <text lang="en-AU">SE end of {0}</text>
 
@@ -10638,6 +11333,7 @@ for the symbols.
     <text lang="ja">{0}の南東の終わり</text>
     <text lang="zh-HK">{0}東南盡頭</text>
     <text lang="pl">południowo-wschodni koniec {0}</text>
+		<text lang="cs">{0}, jv konec</text>
 
 
 
@@ -10669,6 +11365,7 @@ for the symbols.
     <name lang="ja">南の終わり</name>
     <name lang="zh-HK">South end</name>
     <name lang="pl">South end</name>
+		<name lang="cs">Jižní konec</name>
 
     <text lang="en-AU">S end of {0}</text>
 
@@ -10689,6 +11386,7 @@ for the symbols.
     <text lang="ja">{0}の南の終わり</text>
     <text lang="zh-HK">{0}南盡頭</text>
     <text lang="pl">południowy koniec {0}</text>
+		<text lang="cs">{0}, j konec</text>
 
 
 
@@ -10720,6 +11418,7 @@ for the symbols.
     <name lang="ja">南西の終わり</name>
     <name lang="zh-HK">South-west end</name>
     <name lang="pl">South-west end</name>
+		<name lang="cs">Jihozápadní konec</name>
 
     <text lang="en-AU">SW end of {0}</text>
 
@@ -10740,6 +11439,7 @@ for the symbols.
     <text lang="ja">{0}の南西の終わり</text>
     <text lang="zh-HK">{0}西南盡頭</text>
     <text lang="pl">południowo-zachodni koniec {0}</text>
+		<text lang="cs">{0}, jz konec</text>
 
 
 
@@ -10771,6 +11471,7 @@ for the symbols.
     <name lang="ja">西の終わり</name>
     <name lang="zh-HK">West end</name>
     <name lang="pl">West end</name>
+		<name lang="cs">Západní konec</name>
 
     <text lang="en-AU">W end of {0}</text>
 
@@ -10791,6 +11492,7 @@ for the symbols.
     <text lang="ja">{0}の西の終わり</text>
     <text lang="zh-HK">{0}西盡頭</text>
     <text lang="pl">zachodni koniec {0}</text>
+		<text lang="cs">{0}, z konec</text>
 
 
 
@@ -10822,6 +11524,7 @@ for the symbols.
     <name lang="ja">北西の終わり</name>
     <name lang="zh-HK">North-west end</name>
     <name lang="pl">North-west end</name>
+		<name lang="cs">Severozápadní konec</name>
 
     <text lang="en-AU">NW end of {0}</text>
 
@@ -10842,6 +11545,7 @@ for the symbols.
     <text lang="ja">{0}の北西の終わり</text>
     <text lang="zh-HK">{0}西北盡頭</text>
     <text lang="pl">północno-zachodni koniec {0}</text>
+		<text lang="cs">{0}, sz konec</text>
 
 
 
@@ -10873,6 +11577,7 @@ for the symbols.
     <name lang="ja">北の根元</name>
     <name lang="zh-HK">North foot</name>
     <name lang="pl">North foot</name>
+		<name lang="cs">Severní pata</name>
 
     <text lang="en-AU">N foot of {0}</text>
 
@@ -10893,6 +11598,7 @@ for the symbols.
     <text lang="ja">{0}の北の根元</text>
     <text lang="zh-HK">{0}北面腳下</text>
     <text lang="pl">północna strona u podstawy {0}</text>
+		<text lang="cs">{0}, s pata</text>
 
 
 
@@ -10924,6 +11630,7 @@ for the symbols.
     <name lang="ja">北東の根元</name>
     <name lang="zh-HK">North-east foot</name>
     <name lang="pl">North-east foot</name>
+		<name lang="cs">Severovýchodní pata</name>
 
     <text lang="en-AU">NE foot of {0}</text>
 
@@ -10944,6 +11651,7 @@ for the symbols.
     <text lang="ja">{0}の北東の根元</text>
     <text lang="zh-HK">{0}東北面腳下</text>
     <text lang="pl">północno-wschodnia strona u podstawy {0}</text>
+		<text lang="cs">{0}, sv pata</text>
 
 
 
@@ -10975,6 +11683,7 @@ for the symbols.
     <name lang="ja">東の根元</name>
     <name lang="zh-HK">East foot</name>
     <name lang="pl">East foot</name>
+		<name lang="cs">Východní pata</name>
 
     <text lang="en-AU">E foot of {0}</text>
 
@@ -10995,6 +11704,7 @@ for the symbols.
     <text lang="ja">{0}の東の根元</text>
     <text lang="zh-HK">{0}東面腳下</text>
     <text lang="pl">wschodnia strona u podstawy {0}</text>
+		<text lang="cs">{0}, v pata</text>
 
 
 
@@ -11026,6 +11736,7 @@ for the symbols.
     <name lang="ja">南東の根元</name>
     <name lang="zh-HK">South-east foot</name>
     <name lang="pl">South-east foot</name>
+		<name lang="cs">Jihovýchodní pata</name>
 
     <text lang="en-AU">SE foot of {0}</text>
 
@@ -11046,6 +11757,7 @@ for the symbols.
     <text lang="ja">{0}の南東の根元</text>
     <text lang="zh-HK">{0}東南面腳下</text>
     <text lang="pl">południowo-wschodnia strona u podstawy {0}</text>
+		<text lang="cs">{0}, jv pata</text>
 
 
 
@@ -11077,6 +11789,7 @@ for the symbols.
     <name lang="ja">南の根元</name>
     <name lang="zh-HK">South foot</name>
     <name lang="pl">South foot</name>
+		<name lang="cs">Jižní pata</name>
 
     <text lang="en-AU">S foot of {0}</text>
 
@@ -11097,6 +11810,7 @@ for the symbols.
     <text lang="ja">{0}の南の根元</text>
     <text lang="zh-HK">{0}南面腳下</text>
     <text lang="pl">południowa strona u podstawy {0}</text>
+		<text lang="cs">{0}, j pata</text>
 
 
 
@@ -11128,6 +11842,7 @@ for the symbols.
     <name lang="ja">南西の根元</name>
     <name lang="zh-HK">South-west foot</name>
     <name lang="pl">South-west foot</name>
+		<name lang="cs">Jihozápadní pata</name>
 
     <text lang="en-AU">SW foot of {0}</text>
 
@@ -11148,6 +11863,7 @@ for the symbols.
     <text lang="ja">{0}の南西の根元</text>
     <text lang="zh-HK">{0}西南面腳下</text>
     <text lang="pl">południowo-zachodnia strona u podstawy {0}</text>
+		<text lang="cs">{0}, jz pata</text>
 
 
 
@@ -11179,6 +11895,7 @@ for the symbols.
     <name lang="ja">西の根元</name>
     <name lang="zh-HK">West foot</name>
     <name lang="pl">West foot</name>
+		<name lang="cs">Západní pata</name>
 
     <text lang="en-AU">W foot of {0}</text>
 
@@ -11199,6 +11916,7 @@ for the symbols.
     <text lang="ja">{0}の西の根元</text>
     <text lang="zh-HK">{0}西面腳下</text>
     <text lang="pl">zachodnia strona u podstawy {0}</text>
+		<text lang="cs">{0}, z pata</text>
 
 
 
@@ -11230,6 +11948,7 @@ for the symbols.
     <name lang="ja">北西の根元</name>
     <name lang="zh-HK">North-west foot</name>
     <name lang="pl">North-west foot</name>
+		<name lang="cs">Severozápadní pata</name>
 
     <text lang="en-AU">NW foot of {0}</text>
 
@@ -11250,6 +11969,7 @@ for the symbols.
     <text lang="ja">{0}の北西の根元</text>
     <text lang="zh-HK">{0}西北面腳下</text>
     <text lang="pl">północno-zachodnia strona u podstawy {0}</text>
+		<text lang="cs">{0}, sz pata</text>
 
 
 
@@ -11281,6 +12001,7 @@ for the symbols.
     <name lang="ja">曲がり</name>
     <name lang="zh-HK">Bend</name>
     <name lang="pl">Bend</name>
+		<name lang="cs">Ohyb</name>
 
     <text lang="en-AU">bend in {0}</text>
 
@@ -11301,6 +12022,10 @@ for the symbols.
     <text lang="ja">{0}の曲がり</text>
     <text lang="zh-HK">{0}彎位</text>
     <text lang="pl">zakręt {0}</text>
+		<text lang="cs" modifier-case="">ohyb {0}</text>
+		<text gender="maskulinum" lang="cs">{0}, jeho ohyb</text>
+		<text gender="femininum" lang="cs">{0}, její ohyb</text>
+		<text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
 
 
 
@@ -11336,6 +12061,7 @@ for the symbols.
     <name lang="ja">上の部分</name>
     <name lang="zh-HK">Upper part</name>
     <name lang="pl">Upper part</name>
+		<name lang="cs">Horní část</name>
 
     <text lang="en-AU">upper part of {0}</text>
 
@@ -11356,6 +12082,7 @@ for the symbols.
     <text lang="ja">{0}の上の部分</text>
     <text lang="zh-HK">{0}上部</text>
     <text lang="pl">górna część {0}</text>
+		<text lang="cs">{0}, horní část</text>
 
 
 
@@ -11390,6 +12117,7 @@ for the symbols.
     <name lang="ja">下の部分</name>
     <name lang="zh-HK">Lower part</name>
     <name lang="pl">Lower part</name>
+		<name lang="cs">Dolní část</name>
 
     <text lang="en-AU">lower part of {0}</text>
 
@@ -11410,6 +12138,7 @@ for the symbols.
     <text lang="ja">{0}の下の部分</text>
     <text lang="zh-HK">{0}下部</text>
     <text lang="pl">dolna część {0}</text>
+		<text lang="cs">{0}, dolní část</text>
 
 
 
@@ -11444,6 +12173,7 @@ for the symbols.
     <name lang="ja">上</name>
     <name lang="zh-HK">Top</name>
     <name lang="pl">Top</name>
+		<name lang="cs">Nahoře</name>
 
     <text lang="en-AU">top of {0}</text>
 
@@ -11464,6 +12194,7 @@ for the symbols.
     <text lang="ja">{0}の上</text>
     <text lang="zh-HK">{0}頂部</text>
     <text lang="pl">na górze {0}</text>
+		<text lang="cs">{0}, nahoře</text>
 
 
 
@@ -11496,6 +12227,7 @@ for the symbols.
     <name lang="ja">下</name>
     <name lang="zh-HK">Beneath</name>
     <name lang="pl">Beneath</name>
+		<name lang="cs">Pod</name>
 
     <text lang="en-AU">beneath {0}</text>
 
@@ -11516,6 +12248,10 @@ for the symbols.
     <text lang="ja">{0}の下</text>
     <text lang="zh-HK">{0}底下</text>
     <text lang="pl">pod {0}</text>
+		<text lang="cs" modifier-case="">pod {0}</text>
+		<text gender="maskulinum" lang="cs">{0}, pod ním</text>
+		<text gender="femininum" lang="cs">{0}, pod ní</text>
+		<text gender="neutrum" lang="cs">{0}, pod ním</text>
 
 
 
@@ -11548,6 +12284,7 @@ for the symbols.
     <name lang="ja">根元</name>
     <name lang="zh-HK">Foot</name>
     <name lang="pl">Foot</name>
+		<name lang="cs">Pata</name>
 
     <text lang="en-AU">foot of {0}</text>
 
@@ -11568,6 +12305,10 @@ for the symbols.
     <text lang="ja">{0}の根元</text>
     <text lang="zh-HK">{0}腳下</text>
     <text lang="pl">u podstawy {0}</text>
+		<text lang="cs" modifier-case="">pata {0}</text>
+		<text gender="maskulinum" lang="cs">{0}, jeho pata</text>
+		<text gender="femininum" lang="cs">{0}, její pata</text>
+		<text gender="neutrum" lang="cs">{0}, jeho pata</text>
 
 
 
@@ -11613,6 +12354,7 @@ for the symbols.
     <name lang="ja">間</name>
     <name lang="zh-HK">Between</name>
     <name lang="pl">Between</name>
+		<name lang="cs">Mezi</name>
 
     <text lang="en-AU">between {0} and {1}</text>
 
@@ -11632,6 +12374,7 @@ for the symbols.
     <text lang="ja">{0}と{1}の間</text>
     <text lang="zh-HK">{0}及{1}之間</text>
     <text lang="pl">pomiędzy {0} oraz {1}</text>
+		<text lang="cs" modifier-case="čím">{0} a {1}, mezi nimi</text>
 
 
     <lines thickness="10">
@@ -11665,6 +12408,7 @@ for the symbols.
     <name lang="ja">(同種の特徴物の)間</name>
     <name lang="zh-HK">Between (objects of same kind)</name>
     <name lang="pl">Between (objects of same kind)</name>
+		<name lang="cs">Between (objects of same kind)</name>
 
     <text lang="en-AU">between {1}</text>
 
@@ -11684,6 +12428,7 @@ for the symbols.
     <text lang="ja">{0}の間</text>
     <text lang="zh-HK">兩{1}之間</text>
     <text lang="pl">pomiędzy {1}</text>
+		<text lang="cs" modifier-case="čímplur">{1}, mezi nimi</text>
 
 
   </symbol>
@@ -11709,6 +12454,7 @@ for the symbols.
     <name lang="ja">救護所が併設されたコントロール</name>
     <name lang="zh-HK">First aid post</name>
     <name lang="pl">First aid post</name>
+		<name lang="cs">První pomoc</name>
 
     <text lang="en-AU">first aid</text>
 
@@ -11728,6 +12474,7 @@ for the symbols.
     <text lang="ja">救護</text>
     <text lang="zh-HK">急救站</text>
     <text lang="pl">punkt pierwszej pomocy</text>
+		<text lang="cs">první pomoc</text>
 
 
     <filled-polygon>
@@ -11764,6 +12511,7 @@ for the symbols.
     <name lang="ja">給水所が併設されたコントロール</name>
     <name lang="zh-HK">Refreshment point</name>
     <name lang="pl">Refreshment point</name>
+		<name lang="cs">Občerstvení</name>
 
     <text lang="en-AU">water</text>
 
@@ -11783,6 +12531,7 @@ for the symbols.
     <text lang="ja">給水</text>
     <text lang="zh-HK">水站</text>
     <text lang="pl">punkt odżywczy</text>
+		<text lang="cs">voda</text>
 
 
     <beziers thickness="12.5">
@@ -11837,6 +12586,7 @@ for the symbols.
     <name lang="ja">無線またはTVのあるコントロール</name>
     <name lang="zh-HK">Radio or TV control</name>
     <name lang="pl">Radio or TV control</name>
+		<name lang="cs">Radiokontrola</name>
 
     <text lang="en-AU">radio</text>
 
@@ -11856,6 +12606,7 @@ for the symbols.
     <text lang="ja">無線またはTV</text>
     <text lang="zh-HK">無線電控制點</text>
     <text lang="pl">punkt z radiokontrolą lub TV</text>
+		<text lang="cs">radio</text>
 
 
     <lines thickness="12.5">
@@ -11884,6 +12635,7 @@ for the symbols.
     <name lang="ja">コントロールチェック</name>
     <name lang="zh-HK">Control check</name>
     <name lang="pl">Control check</name>
+		<name lang="cs">Kontrola průkazů</name>
 
     <text lang="en-AU">manned</text>
 
@@ -11903,6 +12655,7 @@ for the symbols.
     <text lang="ja">有人</text>
     <text lang="zh-HK">有工作人員檢查</text>
     <text lang="pl">sędzia na punkcie</text>
+		<text lang="cs">kontrola průkazů</text>
 
 
     <lines thickness="12.5">
@@ -11946,6 +12699,7 @@ for the symbols.
     <name lang="ja">コントロールから誘導</name>
     <name lang="zh-HK">Taped route away from control</name>
     <name lang="pl">Taped route away from control</name>
+		<name lang="cs">Značený úsek</name>
 
     <text lang="en-AU">follow tapes {0}away from control</text>
 
@@ -11965,6 +12719,7 @@ for the symbols.
     <text lang="ja">コントロールから誘導 {0}</text>
     <text lang="zh-HK">隨 {0} 索帶離開控制點</text>
     <text lang="pl">oszarfowane {0} odbiegu od PK</text>
+		<text lang="cs">značeno {0} od kontroly</text>
 
 
     <circle thickness="10" radius="70">
@@ -12019,6 +12774,7 @@ for the symbols.
     <name lang="ja">コントロール間の誘導</name>
     <name lang="zh-HK">Taped route between controls</name>
     <name lang="pl">Taped route between controls</name>
+		<name lang="cs">Značeno mezi kontrolami</name>
 
     <text lang="en-AU">follow tapes {0}between controls</text>
 
@@ -12038,6 +12794,7 @@ for the symbols.
     <text lang="ja">コントロール間の誘導 {0}</text>
     <text lang="zh-HK">隨 {0} 索帶前往下一個控制點</text>
     <text lang="pl">oszarfowane {0} pomiędzy PK</text>
+		<text lang="cs">značeno {0} mezi kontrolami</text>
 
 
     <circle thickness="10" radius="70">
@@ -12097,6 +12854,7 @@ for the symbols.
     <name lang="ja">横断地点</name>
     <name lang="zh-HK">Mandatory crossing point or points</name>
     <name lang="pl">Mandatory crossing point or points</name>
+		<name lang="cs">Povinný bod přechodu</name>
 
     <text lang="en-AU">mandatory crossing point</text>
 
@@ -12116,6 +12874,7 @@ for the symbols.
     <text lang="ja">横断地点</text>
     <text lang="zh-HK">強制橫越點</text>
     <text lang="pl">obowiązkowe miejsce przejścia</text>
+		<text lang="cs">povinný bod přechodu</text>
 
 
     <circle thickness="10" radius="70">
@@ -12166,6 +12925,7 @@ for the symbols.
     <name lang="ja">立入禁止区域の中の横断部分</name>
     <name lang="zh-HK">Mandatory passage</name>
     <name lang="pl">Mandatory passage</name>
+		<name lang="cs">Povinný průběh skrz zakázanou oblast</name>
 
     <text lang="en-AU">mandatory passage</text>
 
@@ -12185,6 +12945,7 @@ for the symbols.
     <text lang="ja">立入禁止区域の中の横断部分</text>
     <text lang="zh-HK">強制通道</text>
     <text lang="pl">obowiązkowe przejście przez teren zakazany</text>
+		<text lang="cs">povinný úsek</text>
 
 
     <circle thickness="10" radius="70">
@@ -12238,6 +12999,7 @@ for the symbols.
     <name lang="ja">地図交換所まで誘導</name>
     <name lang="zh-HK">Map exchange</name>
     <name lang="pl">Map exchange</name>
+		<name lang="cs">Výměna map</name>
 
     <text lang="en-AU">follow tapes {0}to map exchange</text>
 
@@ -12257,6 +13019,7 @@ for the symbols.
     <text lang="ja">地図交換所まで誘導 {0}</text>
     <text lang="zh-HK">隨 {0} 索帶前往換圖處</text>
     <text lang="pl">oszarfowane {0} przebiegu do punktu zmiany mapy</text>
+		<text lang="cs">značeno {0} k výměně map</text>
 
 
     <circle thickness="10" radius="70">
@@ -12308,6 +13071,7 @@ for the symbols.
     <name lang="ja">コントロールで地図交換</name>
     <name lang="zh-HK">Map exchange at a control</name>
     <name lang="pl">Map exchange at a control</name>
+		<name lang="cs">Výměna mapy na kontrole</name>
     <text lang="en-AU">map exchange at the control</text>
     <text lang="en">map exchange at the control</text>
     <text lang="en-GB">Map exchange at the control</text>
@@ -12315,6 +13079,7 @@ for the symbols.
     <text lang="ja">コントロールで地図交換</text>
     <text lang="zh-HK">在控制點換圖</text>
     <text lang="pl">zmiana mapy na PK</text>
+		<text lang="cs">výměna mapy na kontrole</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -12465,6 +13230,7 @@ for the symbols.
     <name lang="ja">フィニッシュまで誘導</name>
     <name lang="zh-HK">Taped route to finish</name>
     <name lang="pl">Taped route to finish</name>
+		<name lang="cs">Značeno do cíle</name>
 
     <text lang="en-AU">follow tapes {0}to finish</text>
 
@@ -12484,6 +13250,7 @@ for the symbols.
     <text lang="ja">フィニッシュまで誘導 {0}</text>
     <text lang="zh-HK">隨 {0} 索帶前往終點</text>
     <text lang="pl">oszarfowane {0}do mety</text>
+		<text lang="cs">značeno {0} do cíle</text>
 
 
     <circle thickness="10" radius="70">
@@ -12544,6 +13311,7 @@ for the symbols.
     <name lang="ja">フィニッシュまで漏斗状誘導</name>
     <name lang="zh-HK">Navigate to finish funnel</name>
     <name lang="pl">Navigate to finish funnel</name>
+		<name lang="cs">Trychtýř do cíle</name>
 
     <text lang="en-AU">navigate {0}to finish funnel</text>
 
@@ -12563,6 +13331,7 @@ for the symbols.
     <text lang="ja">フィニッシュまで漏斗状誘導 {0}</text>
     <text lang="zh-HK">往終點索帶 {0}</text>
     <text lang="pl">nawiguj {0}do tunelu dobiegowego przed metą</text>
+		<text lang="cs">{0} do cíle, trychtýřové značení</text>
 
 
     <circle thickness="10" radius="70">
@@ -12624,6 +13393,7 @@ for the symbols.
     <name lang="ja">フィニッシュまで誘導なし</name>
     <name lang="zh-HK">Navigate to finish (no tapes)</name>
     <name lang="pl">Navigate to finish (no tapes)</name>
+		<name lang="cs">Neznačeno</name>
 
     <text lang="en-AU">navigate {0}to finish</text>
 
@@ -12643,6 +13413,7 @@ for the symbols.
     <text lang="ja">フィニッシュまで誘導なし {0}</text>
     <text lang="zh-HK">往終點 {0}</text>
     <text lang="pl">nawiguj {0}do mety</text>
+		<text lang="cs">neznačeno {0}do cíle</text>
 
 
     <circle thickness="10" radius="70">
