@@ -120,6 +120,9 @@
   <data name="backButton.Text" xml:space="preserve">
     <value>&lt; &amp;Zpět</value>
   </data>
+  <data name="nextButton.Text" xml:space="preserve">
+    <value>&amp;Další &gt;</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Zrušit</value>
   </data>

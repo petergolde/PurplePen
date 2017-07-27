@@ -156,6 +156,15 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>První pomoc</value>
   </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Obrázek</value>
+  </data>
+  <data name="SpecialName_OptCrossing" xml:space="preserve">
+    <value>Volitelný průchod</value>
+  </data>
+  <data name="SpecialName_RegMark" xml:space="preserve">
+    <value>Soutisková značka</value>
+  </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Text</value>
   </data>
@@ -167,5 +176,11 @@
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Zabílená oblast</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Čára</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Obdélník</value>
   </data>
 </root>

@@ -141,6 +141,27 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopie</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Tisknout výměny map na té samé mapě </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Barevný model:</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Oříznout na jednu stránku</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Tisknout na více stránek</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Pokud je tisková plocha větší než jedna stránka:</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Zobrazení</value>
   </data>

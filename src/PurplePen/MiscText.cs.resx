@@ -201,11 +201,28 @@
   <data name="CancelOperation" xml:space="preserve">
     <value>Zrušit operaci</value>
   </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Nová bodová hodnota</value>
+  </data>
   <data name="EnterCode" xml:space="preserve">
     <value>Zadat nový kód</value>
   </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Vlož velikost objektu
+užij / pro výšku ve svahu
+užij | pro dvě hodnoty</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Vlož název závodu
+užij | na další řádek
+(platí pro všechny tratě)</value>
+  </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>Zadat název nové trati</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Vlož text
+užij | na řádky</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kontroly {0} již nejsou dále používány žádnou tratí. Přejete si smazat tyto kontroly z kolekce kontrol?</value>
@@ -225,6 +242,9 @@
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Kód kontroly by neměl začínat nulou.</value>
   </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Kód kontroly nemá vypadat  jako jiné převrácené číslo (66 68)</value>
+  </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>Kód "{0}" je použit vícekrát než jednou.</value>
   </data>
@@ -240,14 +260,38 @@
   <data name="Portrait" xml:space="preserve">
     <value>Na výšku</value>
   </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Žádné popisy se nevejdou na takto malou stránku.</value>
+  </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Verze {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Je k dispozici nová verze Purple Penu {0} (Teď máte {1}.)
+
+Stáhnout a instalovat?</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Soubor nápovědy '{0}' nemohl být otevřen.</value>
   </data>
   <data name="Zoom" xml:space="preserve">
     <value>Zvětšení</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Soubor s mapou "{0}" nenalezen.
+
+Odkaz na mapu se ukládá relativně k souboru ppen. Pravděpodobně otvíráš soubor z mailu a není u něj soubor s mapou. Zkus oba soubory dát do jednoho adresáře a pak teprve otevřít ppen. Nebo se soubor s mapou někam přestěhoval.
+
+OK - zkus soubor s mapou najít.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Všechny kontroly použité na trati</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Cíl</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Další &gt;</value>
   </data>
   <data name="Control_Code" xml:space="preserve">
     <value>Kontrola {0}</value>
@@ -258,14 +302,38 @@
   <data name="Finish_Short" xml:space="preserve">
     <value>C</value>
   </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Povinný průchod</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Průchod</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Všechny: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Vlevo: {0}, Vpravo: {1}, Nahoře: {2}, Dole: {3}</value>
+  </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
   </data>
   <data name="Plural" xml:space="preserve">
     <value>plurál</value>
   </data>
   <data name="Singular" xml:space="preserve">
     <value>singulár</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>stavba tratí pro orientační běh</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Vlož text, který má být na mapě, Po OK táhni myší na místo.</value>
   </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Přidat text</value>
@@ -276,6 +344,9 @@
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Změnit text</value>
   </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Jiný program změnil mapu - soubor {0}. Purple Pen ji natáhne znovu.</value>
+  </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>Otevřít "{0}"</value>
   </data>
@@ -284,6 +355,18 @@
   </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Uložit</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Černá</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Purpurová</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Změnit vzhled čáry</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Duplikuj trasu</value>
   </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>Kód kontroly by měl být 31 nebo vyšší.</value>
