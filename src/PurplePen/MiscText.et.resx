@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Ei saa luua kausta '{0}' põhjusel:</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Ei saa lugeda kaarti järgmisel põhjusel '{0}' Kasuta Optimeeri/Paranda funktsiooni OCADis probleemi parandamiseks.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Ei saa luua OCAD faili põhjusel:</value>
   </data>

@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Kan inte skapa katalog '{0}' av följande skäl:</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Kartfilen kan inte läsas: '{0}' Använd Optimize/Repair i OCAD för att förhoppningsvis fixa problemet.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Kan inte skapa OCAD-filer av följande skäl:</value>
   </data>

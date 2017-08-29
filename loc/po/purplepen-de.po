@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.0.01\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-07-27 14:06-07:00\n"
+"POT-Creation-Date: 2017-08-29 13:48-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -2026,8 +2026,7 @@ msgstr "Kann den Ordner '{0}' aus folgendem Grund nicht erstellen:"
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr "Kann die Karte aus dem folgenden Grund nicht lesen: '{0} "
-"\"Optimize/Repair\" in OCAD behebt möglicherweise das Problem."
+msgstr ""
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"

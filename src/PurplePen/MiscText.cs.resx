@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Z následujícího důvodu nelze vytvořit složku '{0}' :</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Z následujícího důvodu nelze načíst mapu: '{0}' Používání Optimize/Repair v OCAD může opravit problémy.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Z následujícího důvodu nelze vytvořit soubory OCADu:</value>
   </data>
