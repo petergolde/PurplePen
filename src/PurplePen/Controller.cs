@@ -3493,7 +3493,9 @@ namespace PurplePen
                                                                                  courseControlDest1, courseControlDest2, legInsertionLoc);
             undoMgr.EndCommand(139);
 
-            selectionMgr.SelectCourseControl(newCourseControl);
+            if (newCourseControl.IsNotNone && eventDB.IsCourseControlPresent(newCourseControl)) {
+                selectionMgr.SelectCourseControl(newCourseControl);
+            }
 
 #if DEBUG
             eventDB.Validate();
