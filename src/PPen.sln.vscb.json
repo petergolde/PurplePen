@@ -1,0 +1,23 @@
+{
+  "vscb_version": "1.0",
+  "description": "This is an example solution vscb config file.",
+  "homepage_url": "https://github.com/PaulHuizer/VsCommandBuddy/",
+  "author": "Paul Huizer",
+  "verbose": true,
+  "macros": {
+    "distDir": "$(SolutionDir)\\dist",
+    "testdataDir": "$(distDir)\\test"
+  },
+  "commands": [
+    {
+      "cmdname": "copymapmodellibs",
+      "title": "Copy MapModel libraries",
+      "description": "Copyies the MapModel libraries.",
+      "cwd": "$(SolutionDir)\\Libraries\\MapModel",
+      "filename": "cmd",
+      "arguments": "/c copy_mapmodel.bat master",
+      "async": false
+    }
+
+  ]
+}

@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Kansiota '{0}' ei voida luoda seuraavasta syystä:</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Karttaa ei voida lukea seuraavasta syystä: '{0}' OCAD:in optimoi/korjaa -toiminnon käyttäminen voi korjata ongelmat.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>OCAD-tiedostoja ei voida luoda seuraavasta syystä:</value>
   </data>

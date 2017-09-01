@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Nu se poate crea directorul '{0}' deoarece:</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Nu se poate citi harta deoarece: '{0}' Folosind opțiunea Optimize/Repair în OCAD poate rezolva problema.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Nu se poate crea fișierul OCAD deoarece:</value>
   </data>

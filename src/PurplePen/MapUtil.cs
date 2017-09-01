@@ -118,7 +118,13 @@ namespace PurplePen
                     }
                 }
 
-                errorMessageText = string.Format(MiscText.CannotReadMap, e.Message);
+                if (string.Compare(fileExtension, ".ocd", StringComparison.InvariantCultureIgnoreCase) == 0) {
+                    errorMessageText = string.Format(MiscText.CannotReadMap, e.Message);
+                }
+                else {
+                    errorMessageText = string.Format(MiscText.CannotReadMapOOM, e.Message);
+                }
+
                 mapBounds = new RectangleF();
                 return false;
             }

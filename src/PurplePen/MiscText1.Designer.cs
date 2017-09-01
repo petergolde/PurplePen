@@ -358,11 +358,20 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cannot read map for the following reason: &apos;{0}&apos; Using Optimize/Repair in OCAD may fix problems..
+        ///   Looks up a localized string similar to Cannot read map for the following reason: &apos;{0}&apos; Using Optimize/Repair and re-saving in OCAD may fix problems..
         /// </summary>
         internal static string CannotReadMap {
             get {
                 return ResourceManager.GetString("CannotReadMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot read map for the following reason: &apos;{0}&apos; Opening and re-saving the map in the latest version of OpenOrienteering Mapper may fix problems..
+        /// </summary>
+        internal static string CannotReadMapOOM {
+            get {
+                return ResourceManager.GetString("CannotReadMapOOM", resourceCulture);
             }
         }
         

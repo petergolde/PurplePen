@@ -107,7 +107,7 @@ namespace PurplePen.MapView {
                 // Draw the requested part of the bitmap to the destinated graphics.
                 g.DrawImage(bitmap, clipRect.Left, clipRect.Top, clipRect, GraphicsUnit.Pixel);
             }
-            catch (Exception e) {
+            catch (Exception) {
                 // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
                 // Just ignore it; there's nothing else to do. See bug #1997301.            
             }

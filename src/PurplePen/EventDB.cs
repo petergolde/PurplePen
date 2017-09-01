@@ -2568,8 +2568,10 @@ namespace PurplePen
             if (mapType == MapType.OCAD)
                 xmloutput.WriteAttributeString("ignore-missing-fonts", XmlConvert.ToString(ignoreMissingFonts));
 
-            if (mapType != MapType.None)
+            if (mapType != MapType.None) {
+                xmloutput.WriteAttributeString("absolute-path", Path.GetFullPath(mapFileName));
                 xmloutput.WriteString(Util.GetRelativeFileName(xmloutput, mapFileName));
+            }
 
             xmloutput.WriteEndElement();
 
@@ -2675,8 +2677,15 @@ namespace PurplePen
                             ignoreMissingFonts = xmlinput.GetAttributeBool("ignore-missing-fonts", false);
 
                         if (mapType != MapType.None) {
+                            String absolutePath = xmlinput.GetAttributeString("absolute-path", null);
+
                             mapFileName = xmlinput.GetContentString();
                             mapFileName = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(xmlinput.FileName), mapFileName)); // file name is relative to the XML file
+
+                            // Fall back to absolute path if relative path doesn't exist.
+                            if (!File.Exists(mapFileName) && absolutePath != null && File.Exists(absolutePath)) {
+                                mapFileName = absolutePath;
+                            }
                         }
                         else {
                             mapFileName = null;

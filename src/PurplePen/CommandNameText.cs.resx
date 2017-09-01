@@ -279,4 +279,22 @@
   <data name="ChangePartProperties" xml:space="preserve">
     <value>Změnit vlastnosti části trati</value>
   </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Změnit vzhled čáry</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplikuj trasu</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Vyrob {0} &amp;Soubory</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Přidej variantu</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Smazat větvení/motýla</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Varianty štafet</value>
+  </data>
 </root>

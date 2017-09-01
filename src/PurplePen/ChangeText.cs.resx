@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Část trati</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Varianta</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Délka tratě</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Měřítko tisku</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Štafeta</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Úsek</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Zobrazení</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Písmo:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ukázka</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Text</value>

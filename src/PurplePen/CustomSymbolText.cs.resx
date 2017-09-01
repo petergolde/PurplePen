@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Klikněte na piktogram a změňte text, který bude použit jako textový popis kontroly.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Nastav tento jazyk jako výchozí pro nové závody</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Upravit textový popis</value>
   </data>

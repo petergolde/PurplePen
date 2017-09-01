@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Не може да създаде папка '{0}' поради следната причина:</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Не може да разчете картата поради следната причина: '{0}' Изполването на функцията Оптимизирай/Поправи в OCAD може да отстрани проблема.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Не може да създаде файлове за OCAD поради следната причина:</value>
   </data>

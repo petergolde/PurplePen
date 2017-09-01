@@ -157,7 +157,7 @@
     <value>Cannot create folder '{0}' for the following reason:</value>
   </data>
   <data name="CannotReadMap" xml:space="preserve">
-    <value>Cannot read map for the following reason: '{0}' Using Optimize/Repair in OCAD may fix problems.</value>
+    <value>Cannot read map for the following reason: '{0}' Using Optimize/Repair and re-saving in OCAD may fix problems.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Cannot create OCAD files for the following reason:</value>
@@ -587,6 +587,9 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   </data>
   <data name="LegUsedTwice" xml:space="preserve">
     <value>Leg {0} is assigned to both branch '{1}' and branch '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Cannot read map for the following reason: '{0}' Opening and re-saving the map in the latest version of OpenOrienteering Mapper may fix problems.</value>
   </data>
   <data name="MapIssue_Long" xml:space="preserve">
     <value>Map Issue Point</value>

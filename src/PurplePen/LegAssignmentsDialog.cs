@@ -11,7 +11,7 @@ namespace PurplePen
 {
     public partial class LegAssignmentsDialog : OkCancelDialog
     {
-        public event EventHandler<ValidationEventArgs> Validate;
+        public new event EventHandler<ValidationEventArgs> Validate;
 
         public LegAssignmentsDialog(List<char[]> codes)
         {

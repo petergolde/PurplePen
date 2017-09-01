@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.0\n"
+"Project-Id-Version: Purple Pen 3.0.01\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-04-17 09:26-07:00\n"
+"POT-Creation-Date: 2017-08-29 13:48-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -2010,10 +2010,8 @@ msgstr "Не може да създаде папка '{0}' поради след
 
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
-"Optimize/Repair in OCAD may fix problems."
-msgstr "Не може да разчете картата поради следната причина: '{0}' "
-"Изполването на функцията Оптимизирай/Поправи в OCAD може "
-"да отстрани проблема."
+"Optimize/Repair and re-saving in OCAD may fix problems."
+msgstr ""
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -2615,6 +2613,12 @@ msgstr ""
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
+msgstr ""
+
+#: MiscText.resx, CannotReadMapOOM
+msgid "Cannot read map for the following reason: '{0}' Opening "
+"and re-saving the map in the latest version of "
+"OpenOrienteering Mapper may fix problems."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

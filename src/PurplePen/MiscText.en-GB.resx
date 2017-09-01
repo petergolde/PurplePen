@@ -156,9 +156,6 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Cannot create folder '{0}' for the following reason:</value>
   </data>
-  <data name="CannotReadMap" xml:space="preserve">
-    <value>Cannot read map for the following reason: '{0}' Using Optimise/Repair in OCAD may fix problems.</value>
-  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Cannot create OCAD files for the following reason:</value>
   </data>
