@@ -151,6 +151,8 @@ namespace PurplePen
                 var process = Process.Start(downloadedInstallerFile);
                 if (process != null) {
                     if (exitToInstall) {
+                        process.WaitForInputIdle();
+                        process.Dispose();
                         Environment.Exit(0);
                         return true;
                     }
