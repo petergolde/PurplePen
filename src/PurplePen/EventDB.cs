@@ -2418,6 +2418,8 @@ namespace PurplePen
         public PunchcardFormat punchcardFormat = new PunchcardFormat();   // format of punch cards
         public CourseAppearance courseAppearance = new CourseAppearance();   // appearance of courses.
         public string descriptionLangId;   // language id for descriptions.
+        public string mapStandard;         // map standard; either "2000" or "2017"
+        public string descriptionStandard; // description standard; either "2004" or "2018"
         public Dictionary<string, List<SymbolText>> customSymbolText = new Dictionary<string, List<SymbolText>>();   // maps symbol IDs to list of custom symbol text.
         public Dictionary<string, bool> customSymbolKey = new Dictionary<string, bool>();   // maps symbol IDs to whether to display key for this custom symbol
 
@@ -2426,6 +2428,8 @@ namespace PurplePen
             title = "";
             descriptionLangId = "en";
             printArea = PrintArea.DefaultPrintArea;
+            mapStandard = "2000";
+            descriptionStandard = "2004";
         }
 
         public void Validate(Id<Event> id, EventDB.ValidateInfo validateInfo)
@@ -2448,6 +2452,12 @@ namespace PurplePen
             foreach (string s in customSymbolText.Keys)
                 if (! customSymbolKey.ContainsKey(s))
                     throw new ApplicationException(string.Format("Event '{0}' has inconsistent custom symbols"));
+
+            if (mapStandard != "2000" && mapStandard != "2017")
+                throw new ApplicationException(string.Format("Event '{0}' has bad map standard", id));
+
+            if (descriptionStandard != "2004" && descriptionStandard != "2018")
+                throw new ApplicationException(string.Format("Event '{0}' has bad description standard", id));
         }
 
         public override StorableObject Clone()
@@ -2512,6 +2522,10 @@ namespace PurplePen
                 return false;
             if (other.descriptionLangId != descriptionLangId)
                 return false;
+            if (other.mapStandard != mapStandard)
+                return false;
+            if (other.descriptionStandard != descriptionStandard)
+                return false;
 
             if (customSymbolText.Count != other.customSymbolText.Count)
                 return false;
@@ -2573,6 +2587,11 @@ namespace PurplePen
                 xmloutput.WriteString(Util.GetRelativeFileName(xmloutput, mapFileName));
             }
 
+            xmloutput.WriteEndElement();
+
+            xmloutput.WriteStartElement("standards");
+            xmloutput.WriteAttributeString("map", mapStandard);
+            xmloutput.WriteAttributeString("description", descriptionStandard);
             xmloutput.WriteEndElement();
 
             // options for all controls view.
@@ -2646,8 +2665,14 @@ namespace PurplePen
             printArea = null;  // Will be set at end if not loaded.
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "ocad", "custom-symbol-text")) {
+            while (xmlinput.FindSubElement(first, "standards", "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "ocad", "custom-symbol-text")) {
                 switch (xmlinput.Name) {
+                    case "standards":
+                        mapStandard = xmlinput.GetAttributeString("map", "2000");
+                        descriptionStandard = xmlinput.GetAttributeString("description", "2004");
+                        xmlinput.Skip();
+                        break;
+
                     case "title":
                         title = xmlinput.GetContentString();
                         break;

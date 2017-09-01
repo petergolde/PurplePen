@@ -514,6 +514,9 @@ namespace PurplePen.Tests
             e.courseAppearance.purpleK = 0.74F;
             e.courseAppearance.descriptionsPurple = true;
 
+            e.mapStandard = "2017";
+            e.descriptionStandard = "2018";
+
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);
             undomgr.EndCommand(198);
@@ -552,6 +555,9 @@ namespace PurplePen.Tests
             e.customSymbolText["6.2"] = texts;
             e.customSymbolKey["6.2"] = true;
             e.customSymbolKey["6.1"] = false;
+
+            e.mapStandard = "2000";
+            e.descriptionStandard = "2004";
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);

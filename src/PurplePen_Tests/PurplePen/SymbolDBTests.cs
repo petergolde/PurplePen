@@ -457,8 +457,6 @@ namespace PurplePen.Tests
             Debug.Assert(!bend.InStandard("2004"));
             Debug.Assert(bend.InStandard("2018"));
             Debug.Assert(bend.Kind == 'F');
-
-
         }
     }
 
