@@ -266,6 +266,7 @@ namespace PurplePen
         private char kind;
         private bool sizeIsDepth;
         private string id;
+        private string replacementId;
         private Dictionary<string, string> name = new Dictionary<string, string>();
         private List<SymbolText> texts = new List<SymbolText>();
         private string[] standards;
@@ -298,6 +299,12 @@ namespace PurplePen
             get { return id; }
         }
 
+        /// <summary>
+        /// Get the replacement id for the symbol if this id doesn't exists in the current standard.
+        /// </summary>
+        public string ReplacementId {
+            get { return replacementId; }
+        }
 
 
         /// <summary>
@@ -618,6 +625,7 @@ namespace PurplePen
 
             this.kind = xmlinput.GetAttributeString("kind")[0];
             this.id = xmlinput.GetAttributeString("id");
+            this.replacementId = xmlinput.GetAttributeString("replacement-id", null);
             this.sizeIsDepth = xmlinput.GetAttributeBool("size-is-depth", false);
 
             string standardStrings = xmlinput.GetAttributeString("standard", "");
@@ -959,6 +967,15 @@ namespace PurplePen
                 return symbols[id].First(s => s.InStandard(currentStandard));
             }
         }
+
+        /// <summary>
+        /// See if id exists in a standard..
+        /// </summary>
+        public bool SymbolExistsInStandard(string id, string standard)
+        { 
+            return symbols.ContainsKey(id) && symbols[id].Any(s => s.InStandard(standard));
+        }
+
 
         // Reload the symbol DB file, after changes to it (for localization)
         public void Reload()

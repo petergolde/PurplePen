@@ -45,6 +45,8 @@ for the symbols.
                not used the renumbered. Not ever showed to the user.
    standard - (optional) If specified, either "2004" or "2018". Indicates which IOF standard
                    the symbol is used in.
+   replacement-id - (optional) The ID to switch to if the IOF standard is changed and this symbol doesn't exist
+                   in the new standard. E.g., trench->erosion gully; edge->side.
    size-is-depth - (optional, default=false) If true, indicates that a single number in 
                    column F indicates a depth, rather than a height.
    
@@ -1910,7 +1912,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="D" id="1.10" standard="2004">
+  <symbol kind="D" id="1.10" standard="2004" replacement-id="1.10">
     <name lang="en-AU">Knoll</name>
     <name lang="en">Knoll</name>
     <name lang="fr">Butte</name>
@@ -1977,8 +1979,64 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="D" id="1.10" standard="2018">
+  <symbol kind="D" id="1.10" standard="2018" replacement-id="1.10">
+    <name lang="en-AU">Knoll</name>
+    <name lang="en">Knoll</name>
+    <name lang="fr">Butte</name>
+    <name lang="en-GB">Knoll</name>
+    <name lang="sv">Punkthöjd</name>
+    <name lang="nb-NO">Høydepunkt</name>
+    <name lang="es">Cota</name>
+    <name lang="nn-NO">Høgdepunkt</name>
+    <name lang="fi">Kumpare</name>
+    <name lang="bg">Могилка, малко връхче</name>
+    <name lang="ro">Movilă</name>
+    <name lang="et">Tipp</name>
+    <name lang="de">Kuppe</name>
+    <name lang="ca">Pujol</name>
+    <name lang="ja">小さなこぶ</name>
+    <name lang="zh-HK">Knoll</name>
+    <name lang="pl">Knoll</name>
+    <name lang="cs">Kupka</name>
+
+    <text lang="en-AU" plural="true">knolls</text>
+    <text lang="en-AU">knoll</text>
+
+    <text lang="en">knoll</text>
+    <text lang="en" plural="true">knolls</text>
+    <text lang="fr" plural="true" gender="féminin">buttes</text>
+    <text lang="fr" gender="féminin">butte</text>
+    <text lang="en-GB" plural="true">Knolls</text>
+    <text lang="en-GB">Knoll</text>
+    <text lang="sv" plural="true">punkthöjderna</text>
+    <text lang="sv">punkthöjden</text>
+    <text lang="nb-NO" plural="true">høydepunkter</text>
+    <text lang="nb-NO">høydepunkt</text>
+    <text lang="es" plural="true" gender="femenino">cotas</text>
+    <text lang="es" gender="femenino">cota</text>
+    <text lang="nn-NO" plural="true">høgdepunkter</text>
+    <text lang="nn-NO">høgdepunkt</text>
+    <text lang="fi" plural="true">kumpareiden</text>
+    <text lang="fi">kumpare</text>
+    <text lang="bg" plural="true" gender="женски">могилки</text>
+    <text lang="bg" gender="женски">могилка</text>
+    <text lang="ro">movilă</text>
+    <text lang="et" plural="true">tipud</text>
+    <text lang="et">tipp</text>
+    <text lang="de" plural="true" gender="feminin">Kuppen</text>
+    <text lang="de" gender="feminin">Kuppe</text>
+    <text lang="ca" plural="true" gender="masculí">pujols</text>
+    <text lang="ca" gender="masculí">pujol</text>
+    <text lang="ja">小さなこぶ</text>
+    <text lang="zh-HK">小丘</text>
+    <text lang="pl" plural="true" gender="męski">kopczyki</text>
+    <text lang="pl" gender="męski">kopczyk</text>
+    <text lang="cs" plural="true">kupky</text>
     <text lang="cs" gender="femininum">kupka</text>
+    <text case="čeho" lang="cs">kupky</text>
+    <text case="čehoplur" lang="cs">kupek</text>
+    <text case="čím" lang="cs">kupkou</text>
+    <text case="čímplur" lang="cs">kupkami</text>
 
     <filled-beziers>
       <point x="-70" y ="-30"/>
@@ -1991,8 +2049,8 @@ for the symbols.
         <point x="-38.66" y ="40"/>
         <point x="-70" y ="8.66"/>
       <point x="-70" y ="-30"/>
-
     </filled-beziers>
+
   </symbol>
   
   
@@ -2702,7 +2760,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="D" id="2.4" standard="2004">
+  <symbol kind="D" id="2.4" standard="2004" replacement-id="2.4">
     <name lang="en-AU">Boulder</name>
     <name lang="en">Boulder</name>
     <name lang="fr">Rocher, bloc</name>
@@ -2772,7 +2830,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.4" standard="2018">
+  <symbol kind="D" id="2.4" standard="2018" replacement-id="2.4">
     <name lang="en-AU">Boulder</name>
     <name lang="en">Boulder</name>
     <name lang="fr">Rocher, bloc</name>
@@ -2925,7 +2983,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.6" standard="2004">
+  <symbol kind="D" id="2.6" standard="2004" replacement-id="2.6">
     <name lang="en-AU">Boulder cluster</name>
     <name lang="en">Boulder cluster</name>
     <name lang="fr">Tas de pierre</name>
@@ -2999,7 +3057,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.6" standard="2018">
+  <symbol kind="D" id="2.6" standard="2018" replacement-id="2.6">
     <name lang="en-AU">Boulder cluster</name>
     <name lang="en">Boulder cluster</name>
     <name lang="fr">Tas de pierre</name>
@@ -3378,7 +3436,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="D" id="2.10" size-is-depth="true" standard="2018">
+  <symbol kind="D" id="2.10" size-is-depth="true" standard="2018" replacement-id="1.7">
     <name lang="en">Trench</name>
 
     <text lang="en">trench</text>
@@ -6973,10 +7031,10 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="D" id="5.25">
+  <symbol kind="D" id="5.25" standard="2018">
     <name lang="en">Out of bounds area</name>
     <text lang="en">out of bounds area</text>
-    <text lang="en" plural="true">out of bounds areas 2</text>
+    <text lang="en" plural="true">out of bounds areas</text>
 
     <polygon thickness="12.5">
       <point x="-70" y="-70" />
@@ -8543,6 +8601,68 @@ for the symbols.
 
   </symbol>
 
+  <!-- Note that the Symbol ID keeps the 2004 id, even though it has now moved to column F. -->
+  <symbol kind="F" id="11.7" standard="2018" replacement-id="11.7">
+    <name lang="en-AU">Bend</name>
+    <name lang="en">Bend</name>
+    <name lang="fr">Coude</name>
+    <name lang="en-GB">Bend</name>
+    <name lang="sv">Krök</name>
+    <name lang="nb-NO">Kne</name>
+    <name lang="es">En la curva</name>
+    <name lang="nn-NO">Kne</name>
+    <name lang="fi">Mutka</name>
+    <name lang="bg">Завой</name>
+    <name lang="ro">Cotitură</name>
+    <name lang="et">Käänak</name>
+    <name lang="de">Biegung</name>
+    <name lang="ca">Corba</name>
+    <name lang="ja">曲がり</name>
+    <name lang="zh-HK">Bend</name>
+    <name lang="pl">Bend</name>
+    <name lang="cs">Ohyb</name>
+
+    <text lang="en-AU">bend in {0}</text>
+
+    <text lang="en">bend in {0}</text>
+    <text lang="fr">{0}, au coude</text>
+    <text lang="en-GB">{0} bend</text>
+    <text lang="sv">{0}, kröken</text>
+    <text lang="nb-NO">kne {0}</text>
+    <text lang="es">{0} en la curva</text>
+    <text lang="nn-NO">kne {0}</text>
+    <text lang="fi">{0} mutka</text>
+    <text lang="bg">завой на {0}</text>
+    <text lang="ro">cotitură de {0}</text>
+    <text lang="et">{0} käänakul</text>
+    <text lang="de">{0}, Biegung</text>
+    <text lang="ca" gender="femení">a la corba d'una {0}</text>
+    <text lang="ca" gender="masculí">a la corba d'un {0}</text>
+    <text lang="ja">{0}の曲がり</text>
+    <text lang="zh-HK">{0}彎位</text>
+    <text lang="pl">zakręt {0}</text>
+    <text lang="cs" modifier-case="">ohyb {0}</text>
+    <text gender="maskulinum" lang="cs">{0}, jeho ohyb</text>
+    <text gender="femininum" lang="cs">{0}, její ohyb</text>
+    <text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
+
+
+    <beziers thickness="10">
+      <point x="35" y="70" />
+      <point x="25" y="62.22" />
+      <point x="-15" y="31.11" />
+      <point x="-25" y="23.33" />
+      <point x="-45" y="7.78" />
+      <point x="-45" y="-7.78" />
+      <point x="-25" y="-23.33" />
+      <point x="-15" y="-31.11" />
+      <point x="25" y="-62.22" />
+      <point x="35" y="-70" />
+    </beziers>
+  </symbol>
+
+
+
   <!-- The dimensions of the symbol don't have a symbol, just text. Note that
 	       different text is used for high and deep symbols, which is controlled by the
 		   size-is-depth attribute on the symbol being described. 
@@ -9230,7 +9350,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.2N">
+  <symbol kind="G" id="11.2N" standard="2004" replacement-id="11.1N">
     <name lang="en-AU">North edge</name>
     <name lang="en">North edge</name>
     <name lang="fr">Bord Nord</name>
@@ -9282,7 +9402,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2NE">
+  <symbol kind="G" id="11.2NE" standard="2004" replacement-id="11.1NE">
     <name lang="en-AU">North-east edge</name>
     <name lang="en">North-east edge</name>
     <name lang="fr">Bord NE</name>
@@ -9334,7 +9454,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2E">
+  <symbol kind="G" id="11.2E"  standard="2004" replacement-id="11.1E">
     <name lang="en-AU">East edge</name>
     <name lang="en">East edge</name>
     <name lang="fr">Bord Est</name>
@@ -9386,7 +9506,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2SE">
+  <symbol kind="G" id="11.2SE"  standard="2004" replacement-id="11.1SE">
     <name lang="en-AU">South-east edge</name>
     <name lang="en">South-east edge</name>
     <name lang="fr">Bord SE</name>
@@ -9438,7 +9558,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2S">
+  <symbol kind="G" id="11.2S" standard="2004" replacement-id="11.1S">
     <name lang="en-AU">South edge</name>
     <name lang="en">South edge</name>
     <name lang="fr">Bord Sud</name>
@@ -9490,7 +9610,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2SW">
+  <symbol kind="G" id="11.2SW" standard="2004" replacement-id="11.1SW">
     <name lang="en-AU">South-west edge</name>
     <name lang="en">South-west edge</name>
     <name lang="fr">Bord SO</name>
@@ -9542,7 +9662,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2W">
+  <symbol kind="G" id="11.2W" standard="2004" replacement-id="11.1W">
     <name lang="en-AU">West edge</name>
     <name lang="en">West edge</name>
     <name lang="fr">Bord Ouest</name>
@@ -9594,7 +9714,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2NW">
+  <symbol kind="G" id="11.2NW" standard="2004" replacement-id="11.1NW">
     <name lang="en-AU">North-west edge</name>
     <name lang="en">North-west edge</name>
     <name lang="fr">Bord NO</name>
@@ -12174,7 +12294,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.7" standard="2004">
+  <symbol kind="G" id="11.7" standard="2004" replacement-id="11.7">
     <name lang="en-AU">Bend</name>
     <name lang="en">Bend</name>
     <name lang="fr">Coude</name>
@@ -12217,66 +12337,6 @@ for the symbols.
 		<text gender="maskulinum" lang="cs">{0}, jeho ohyb</text>
 		<text gender="femininum" lang="cs">{0}, její ohyb</text>
 		<text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
-
-
-
-    <beziers thickness="10">
-      <point x="35" y="70" />
-      <point x="25" y="62.22" />
-      <point x="-15" y="31.11" />
-      <point x="-25" y="23.33" />
-      <point x="-45" y="7.78" />
-      <point x="-45" y="-7.78" />
-      <point x="-25" y="-23.33" />
-      <point x="-15" y="-31.11" />
-      <point x="25" y="-62.22" />
-      <point x="35" y="-70" />
-    </beziers>
-  </symbol>
-
-  <symbol kind="F" id="11.7" standard="2018">
-    <name lang="en-AU">Bend</name>
-    <name lang="en">Bend</name>
-    <name lang="fr">Coude</name>
-    <name lang="en-GB">Bend</name>
-    <name lang="sv">Krök</name>
-    <name lang="nb-NO">Kne</name>
-    <name lang="es">En la curva</name>
-    <name lang="nn-NO">Kne</name>
-    <name lang="fi">Mutka</name>
-    <name lang="bg">Завой</name>
-    <name lang="ro">Cotitură</name>
-    <name lang="et">Käänak</name>
-    <name lang="de">Biegung</name>
-    <name lang="ca">Corba</name>
-    <name lang="ja">曲がり</name>
-    <name lang="zh-HK">Bend</name>
-    <name lang="pl">Bend</name>
-    <name lang="cs">Ohyb</name>
-
-    <text lang="en-AU">bend in {0}</text>
-
-    <text lang="en">bend in {0}</text>
-    <text lang="fr">{0}, au coude</text>
-    <text lang="en-GB">{0} bend</text>
-    <text lang="sv">{0}, kröken</text>
-    <text lang="nb-NO">kne {0}</text>
-    <text lang="es">{0} en la curva</text>
-    <text lang="nn-NO">kne {0}</text>
-    <text lang="fi">{0} mutka</text>
-    <text lang="bg">завой на {0}</text>
-    <text lang="ro">cotitură de {0}</text>
-    <text lang="et">{0} käänakul</text>
-    <text lang="de">{0}, Biegung</text>
-    <text lang="ca" gender="femení">a la corba d'una {0}</text>
-    <text lang="ca" gender="masculí">a la corba d'un {0}</text>
-    <text lang="ja">{0}の曲がり</text>
-    <text lang="zh-HK">{0}彎位</text>
-    <text lang="pl">zakręt {0}</text>
-    <text lang="cs" modifier-case="">ohyb {0}</text>
-    <text gender="maskulinum" lang="cs">{0}, jeho ohyb</text>
-    <text gender="femininum" lang="cs">{0}, její ohyb</text>
-    <text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
 
 
 

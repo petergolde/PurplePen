@@ -398,6 +398,68 @@ namespace PurplePen.Tests
                 TestUtil.CheckBitmapsBase(bmNew, "symbols\\" + symbol.Id + "_ocad");
             }
         }
+
+        [TestMethod]
+        public void MultiStandard()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"), "2004");
+
+            Debug.Assert(symbolDB.SymbolExistsInStandard("1.10", "2004"));
+            Debug.Assert(symbolDB.SymbolExistsInStandard("1.10", "2018"));
+            Symbol knoll = symbolDB["1.10"];
+            Debug.Assert(knoll.InStandard("2004"));
+            Debug.Assert(!knoll.InStandard("2018"));
+
+            symbolDB.Standard = "2018";
+            knoll = symbolDB["1.10"];
+            Debug.Assert(!knoll.InStandard("2004"));
+            Debug.Assert(knoll.InStandard("2018"));
+
+            Debug.Assert(symbolDB.SymbolExistsInStandard("1.11", "2004"));
+            Debug.Assert(symbolDB.SymbolExistsInStandard("1.11", "2018"));
+            symbolDB.Standard = "2004";
+            Symbol saddle = symbolDB["1.11"];
+            Debug.Assert(saddle.InStandard("2004"));
+            Debug.Assert(saddle.InStandard("2018"));
+
+            symbolDB.Standard = "2018";
+            saddle = symbolDB["1.11"];
+            Debug.Assert(saddle.InStandard("2004"));
+            Debug.Assert(saddle.InStandard("2018"));
+
+            Debug.Assert(! symbolDB.SymbolExistsInStandard("2.10", "2004"));
+            Debug.Assert(symbolDB.SymbolExistsInStandard("2.10", "2018"));
+            symbolDB.Standard = "2018";
+            Symbol trench = symbolDB["2.10"];
+            Debug.Assert(!trench.InStandard("2004"));
+            Debug.Assert(trench.InStandard("2018"));
+            Debug.Assert(trench.ReplacementId == "1.7");
+
+            symbolDB.Standard = "2004";
+            try {
+                trench = symbolDB["2.10"];
+                Debug.Fail("should throw exception");
+            }
+            catch (Exception e) {
+                Debug.Assert(e is InvalidOperationException);
+            }
+
+            symbolDB.Standard = "2004";
+            Debug.Assert(symbolDB.SymbolExistsInStandard("11.7", "2004"));
+            Debug.Assert(symbolDB.SymbolExistsInStandard("11.7", "2018"));
+            Symbol bend = symbolDB["11.7"];
+            Debug.Assert(bend.InStandard("2004"));
+            Debug.Assert(!bend.InStandard("2018"));
+            Debug.Assert(bend.Kind == 'G');
+
+            symbolDB.Standard = "2018";
+            bend = symbolDB["11.7"];
+            Debug.Assert(!bend.InStandard("2004"));
+            Debug.Assert(bend.InStandard("2018"));
+            Debug.Assert(bend.Kind == 'F');
+
+
+        }
     }
 
 
