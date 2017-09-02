@@ -1782,6 +1782,58 @@ namespace PurplePen
 
             return true;
         }
+
+        public static void UpdateDescriptionToMatchStandard(EventDB eventDB, SymbolDB symbolDB)
+        {
+            Debug.Assert(symbolDB.Standard == "2004" || symbolDB.Standard == "2018");
+
+            string newStandard = symbolDB.Standard;
+
+            Event e = eventDB.GetEvent();
+            string oldStandard = e.descriptionStandard;
+            if (oldStandard == newStandard) {
+                return; // nothing to do.
+            }
+            e.descriptionStandard = newStandard;
+            eventDB.ChangeEvent(e);
+
+            // We need to go through every description and change any symbols necessary.
+            foreach (var controlPointPair in eventDB.AllControlPointPairs) {
+                ControlPoint controlPoint = (ControlPoint) controlPointPair.Value.Clone();
+                UpdateControlPointForNewDescriptionStandard(controlPoint, symbolDB, oldStandard, newStandard);
+                eventDB.ReplaceControlPoint(controlPointPair.Key, controlPoint);
+            }
+        }
+
+        private static void UpdateControlPointForNewDescriptionStandard(ControlPoint controlPoint, SymbolDB symbolDB, string oldStandard, string newStandard)
+        {
+            for (int i = 0; i < controlPoint.symbolIds.Length; ++i) {
+                string symbolId = controlPoint.symbolIds[i];
+                if (!string.IsNullOrEmpty(symbolId)) {
+                    Symbol oldSymbol = symbolDB.SymbolFromId(symbolId, oldStandard);
+                    Symbol newSymbol = symbolDB.SymbolFromId(symbolId, newStandard);
+                    Debug.Assert(oldSymbol != null);
+                    if (newSymbol == null) {
+                        // Use the replacement id, if it exists.
+                        controlPoint.symbolIds[i] = oldSymbol.ReplacementId;
+                        if (!symbolDB.SymbolExistsInStandard(controlPoint.symbolIds[i], newStandard))
+                            controlPoint.symbolIds[i] = null;
+                    }
+
+                    if (i > 0) {
+                        // If symbol moves to a new column, then move it.
+                        newSymbol = symbolDB.SymbolFromId(controlPoint.symbolIds[i], newStandard);
+                        if (newSymbol != null) {
+                            bool correctKind = (('A' + i) == newSymbol.Kind) || (i == 4 && newSymbol.Kind == 'D');
+                            if (!correctKind) {
+                                controlPoint.symbolIds[i] = null;
+                                controlPoint.symbolIds[newSymbol.Kind - 'A'] = newSymbol.Id;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
