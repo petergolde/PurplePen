@@ -1789,16 +1789,17 @@ namespace PurplePen
 
             string newStandard = symbolDB.Standard;
 
-            Event e = eventDB.GetEvent();
-            string oldStandard = e.descriptionStandard;
+            Event ev = eventDB.GetEvent();
+            string oldStandard = ev.descriptionStandard;
             if (oldStandard == newStandard) {
                 return; // nothing to do.
             }
-            e.descriptionStandard = newStandard;
-            eventDB.ChangeEvent(e);
+            ev = (Event)ev.Clone();
+            ev.descriptionStandard = newStandard;
+            eventDB.ChangeEvent(ev);
 
             // We need to go through every description and change any symbols necessary.
-            foreach (var controlPointPair in eventDB.AllControlPointPairs) {
+            foreach (var controlPointPair in eventDB.AllControlPointPairs.ToList()) {
                 ControlPoint controlPoint = (ControlPoint) controlPointPair.Value.Clone();
                 UpdateControlPointForNewDescriptionStandard(controlPoint, symbolDB, oldStandard, newStandard);
                 eventDB.ReplaceControlPoint(controlPointPair.Key, controlPoint);
@@ -1816,18 +1817,18 @@ namespace PurplePen
                     if (newSymbol == null) {
                         // Use the replacement id, if it exists.
                         controlPoint.symbolIds[i] = oldSymbol.ReplacementId;
-                        if (!symbolDB.SymbolExistsInStandard(controlPoint.symbolIds[i], newStandard))
+                        if (controlPoint.symbolIds[i] != null && !symbolDB.SymbolExistsInStandard(controlPoint.symbolIds[i], newStandard))
                             controlPoint.symbolIds[i] = null;
                     }
 
-                    if (i > 0) {
+                    if (i > 0 && controlPoint.symbolIds[i] != null) {
                         // If symbol moves to a new column, then move it.
                         newSymbol = symbolDB.SymbolFromId(controlPoint.symbolIds[i], newStandard);
                         if (newSymbol != null) {
-                            bool correctKind = (('A' + i) == newSymbol.Kind) || (i == 4 && newSymbol.Kind == 'D');
+                            bool correctKind = (('C' + i) == newSymbol.Kind) || (i == 4 && newSymbol.Kind == 'D');
                             if (!correctKind) {
                                 controlPoint.symbolIds[i] = null;
-                                controlPoint.symbolIds[newSymbol.Kind - 'A'] = newSymbol.Id;
+                                controlPoint.symbolIds[newSymbol.Kind - 'C'] = newSymbol.Id;
                             }
                         }
                     }

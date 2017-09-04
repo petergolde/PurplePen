@@ -272,6 +272,8 @@ namespace PurplePen
 
             checkForMissingFonts = true;          // Warn about missing fonts once for this map.
             checkForUnrenderableObjects = true;   // warn about non-renderable objects.
+
+            symbolDB.Standard = eventDB.GetEvent().descriptionStandard;
         }
 
         // Try to recover from a missing map file. If the map file can be found in the same directory as the event file, then
@@ -3023,6 +3025,10 @@ namespace PurplePen
 #if DEBUG
             eventDB.Validate();
 #endif
+
+            Debug.WriteLine("Event standard: " + eventDB.GetEvent().descriptionStandard);
+            Debug.WriteLine("SymbolDB standard: " + symbolDB.Standard);
+
         }
 
         // Undo one command of changes.
@@ -3036,6 +3042,10 @@ namespace PurplePen
 #if DEBUG
             eventDB.Validate();
 #endif
+
+            Debug.WriteLine("Event standard: " + eventDB.GetEvent().descriptionStandard);
+            Debug.WriteLine("SymbolDB standard: " + symbolDB.Standard);
+
         }
 
         // A change has been made to a box in the description.
@@ -3527,6 +3537,54 @@ namespace PurplePen
             DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
 
             localizer.MergeSymbolsFile(filename, langId);
+        }
+
+        public string GetDescriptionStandard()
+        {
+            return symbolDB.Standard;
+        }
+
+        public void ChangeDescriptionStandard(string newDescriptionStd)
+        {
+            string oldDescriptionStd = symbolDB.Standard;
+
+            if (oldDescriptionStd != newDescriptionStd) {
+                undoMgr.BeginCommand(2971, CommandNameText.ChangeDescriptionStandard);
+
+                symbolDB.Standard = newDescriptionStd;
+                undoMgr.RecordAction(new DescriptionStandardChange(symbolDB, oldDescriptionStd, newDescriptionStd));
+                ChangeEvent.UpdateDescriptionToMatchStandard(eventDB, symbolDB);
+
+                undoMgr.EndCommand(2971);
+            }
+
+            Debug.WriteLine("Event standard: " + eventDB.GetEvent().descriptionStandard);
+            Debug.WriteLine("SymbolDB standard: " + symbolDB.Standard);
+        }
+
+        private class DescriptionStandardChange : UndoableAction
+        {
+            SymbolDB symbolDB;
+            string oldStandard, newStandard;
+
+            public DescriptionStandardChange(SymbolDB symbolDB, string oldStandard, string newStandard)
+            {
+                this.symbolDB = symbolDB;
+                this.oldStandard = oldStandard;
+                this.newStandard = newStandard;
+            }
+
+            public override void Redo()
+            {
+                symbolDB.Standard = newStandard;
+                Debug.WriteLine("Redo: symbolDb->" + newStandard);
+            }
+
+            public override void Undo()
+            {
+                symbolDB.Standard = oldStandard;
+                Debug.WriteLine("Undo: symbolDb->" + oldStandard);
+            }
         }
 
         // Mouse actions are delegated to the current mode that is active. If a display updated

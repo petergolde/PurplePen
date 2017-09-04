@@ -233,7 +233,12 @@ namespace PurplePen
 
         Symbol GetSingleVersionOfComboSymbol(Symbol comboSymbol)
         {
-            return symbolDB[comboSymbol.Id + "single"];
+            if (comboSymbol.Id == "10.1" || comboSymbol.Id == "10.2" || comboSymbol.Id == "11.15") {
+                return symbolDB[comboSymbol.Id + "single"];
+            }
+            else {
+                return symbolDB[comboSymbol.Id];
+            }
         }
 
         // Get the text associated with the main feature. Normally this is just the symbol in column D. But, 
@@ -335,7 +340,7 @@ namespace PurplePen
             }
 
             // Cross or junction
-            if (!ignoreCrossJunction && symbols[3] != null) {
+            if (!ignoreCrossJunction && symbols[3] != null && (symbols[3].Id == "10.1" || symbols[3].Id == "10.2")) {
                 Symbol s = symbols[3];
                 if (!IsDualMainSymbol(symbols)) {
                     s = GetSingleVersionOfComboSymbol(s);

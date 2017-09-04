@@ -8647,7 +8647,7 @@ for the symbols.
     <text gender="neutrum" lang="cs">{0}, jeho ohyb</text>
 
 
-    <beziers thickness="10">
+    <beziers thickness="12.5">
       <point x="35" y="70" />
       <point x="25" y="62.22" />
       <point x="-15" y="31.11" />

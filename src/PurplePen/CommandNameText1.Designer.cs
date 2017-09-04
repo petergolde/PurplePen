@@ -259,6 +259,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Control Description Standard.
+        /// </summary>
+        internal static string ChangeDescriptionStandard {
+            get {
+                return ResourceManager.GetString("ChangeDescriptionStandard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Displayed Courses.
         /// </summary>
         internal static string ChangeDisplayedCourses {

@@ -300,4 +300,7 @@
   <data name="AddMapIssue" xml:space="preserve">
     <value>Add Map Issue Point</value>
   </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Set Control Description Standard</value>
+  </data>
 </root>

@@ -958,22 +958,22 @@ namespace PurplePen
         }
 
         /// <summary>
-        /// Get the symbol with a given id. If id doesn't exist in that standard, returns null.
+        /// Get the symbol with a given id. If id doesn't exist, throws exception. 
         /// </summary>
         public Symbol this[string id]
         {
             get
             {
-                return symbols[id].FirstOrDefault(s => s.InStandard(currentStandard));
+                return symbols[id].First(s => s.InStandard(currentStandard));
             }
         }
 
         /// <summary>
-        /// Get the symbol with a given id. If id doesn't exist, throws exception.
+        /// Get the symbol with a given id. If id doesn't exist in that standard, returns null.
         /// </summary>
         public Symbol SymbolFromId(string id, string standard)
         {
-            return symbols[id].First(s => s.InStandard(standard));
+            return symbols[id].FirstOrDefault(s => s.InStandard(standard));
         }
 
         /// <summary>

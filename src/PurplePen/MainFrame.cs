@@ -704,6 +704,11 @@ namespace PurplePen
             UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
             UpdateMenuItem(courseVariationReportMenu, controller.CanGetVariationReport());
 
+            // Update standards checkboxes.
+            string descriptionStandard = controller.GetDescriptionStandard();
+            descriptionStd2004Menu.Checked = (descriptionStandard == "2004");
+            descriptionStd2018Menu.Checked = (descriptionStandard == "2018");
+
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
 
@@ -2894,6 +2899,17 @@ namespace PurplePen
         private void mapViewerTopology_OnViewportChange(object sender, EventArgs e)
         {
             UpdateTopologyScrollBars();
+        }
+
+        private void descriptionStd2004Menu_Click(object sender, EventArgs e)
+        {
+            controller.ChangeDescriptionStandard("2004");
+        }
+
+
+        private void descriptionStd2018Menu_Click(object sender, EventArgs e)
+        {
+            controller.ChangeDescriptionStandard("2018");
         }
 
     }
