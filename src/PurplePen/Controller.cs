@@ -458,6 +458,7 @@ namespace PurplePen
                     Settings.Default.Save();
                 }
                 undoMgr.MarkClean();
+                symbolDB.Standard = eventDB.GetEvent().descriptionStandard;
                 selectionMgr.SelectCourseView(CourseDesignator.AllControls);
                 selectionMgr.ClearSelection();
                 NewMapFileLoaded(true);

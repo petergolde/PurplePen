@@ -1825,7 +1825,7 @@ namespace PurplePen
                         // If symbol moves to a new column, then move it.
                         newSymbol = symbolDB.SymbolFromId(controlPoint.symbolIds[i], newStandard);
                         if (newSymbol != null) {
-                            bool correctKind = (('C' + i) == newSymbol.Kind) || (i == 4 && newSymbol.Kind == 'D');
+                            bool correctKind = (('C' + i) == newSymbol.Kind) || (i == 2 && newSymbol.Kind == 'D');
                             if (!correctKind) {
                                 controlPoint.symbolIds[i] = null;
                                 controlPoint.symbolIds[newSymbol.Kind - 'C'] = newSymbol.Id;
@@ -1834,6 +1834,9 @@ namespace PurplePen
                     }
                 }
             }
+
+            if (controlPoint.symbolIds.Length > 3 && controlPoint.symbolIds[3] != null)
+                controlPoint.columnFText = null;
         }
     }
 

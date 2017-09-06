@@ -1,0 +1,200 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Standards</title>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="true" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\marymoor.ocd">..\marymoor.ocd</map>
+    <standards map="2000" description="2018" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-113.039986" top="93.68993" right="242.560028" bottom="-122.210075" page-width="850" page-height="1400" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="2.90654564" y="-107.03318" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="14.88114" y="-106.434456" />
+    <description box="D" iof-2004-ref="1.10" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="25.05956" y="-107.03318" />
+    <description box="C" iof-2004-ref="0.2NE" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="E" iof-2004-ref="2.10" />
+    <description box="F">3</description>
+    <description box="H" iof-2004-ref="12.4" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="41.2252579" y="-107.03318" />
+    <description box="D" iof-2004-ref="2.6" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="58.5884476" y="-107.03318" />
+    <description box="D" iof-2004-ref="1.10" />
+    <description box="E" iof-2004-ref="2.6" />
+    <description box="G" iof-2004-ref="11.15" />
+  </control>
+  <control id="6" kind="normal">
+    <code>35</code>
+    <location x="71.7605057" y="-107.03318" />
+    <description box="C" iof-2004-ref="0.5" />
+    <description box="D" iof-2004-ref="2.6" />
+    <description box="E" iof-2004-ref="2.4" />
+    <description box="F">2</description>
+    <description box="G" iof-2004-ref="11.15" />
+    <description box="H" iof-2004-ref="12.2" />
+  </control>
+  <control id="7" kind="normal">
+    <code>36</code>
+    <location x="87.32749" y="-105.236977" />
+    <description box="D" iof-2004-ref="2.4" />
+    <description box="E" iof-2004-ref="1.10" />
+    <description box="F">4/5</description>
+    <description box="G" iof-2004-ref="11.15" />
+  </control>
+  <control id="8" kind="normal">
+    <code>37</code>
+    <location x="99.9008255" y="-105.8357" />
+    <description box="D" iof-2004-ref="5.2" />
+    <description box="F" iof-2004-ref="11.7" />
+  </control>
+  <control id="9" kind="normal">
+    <code>38</code>
+    <location x="113.072884" y="-104.039528" />
+    <description box="C" iof-2004-ref="0.2SW" />
+    <description box="D" iof-2004-ref="2.10" />
+    <description box="E" iof-2004-ref="8.2" />
+  </control>
+  <control id="10" kind="normal">
+    <code>39</code>
+    <location x="125.646217" y="-105.8357" />
+    <description box="D" iof-2004-ref="1.12" />
+    <description box="G" iof-2004-ref="11.1N" />
+    <description box="H" iof-2004-ref="12.2" />
+  </control>
+  <control id="11" kind="normal">
+    <code>40</code>
+    <location x="140.015717" y="-106.434456" />
+    <description box="D" iof-2004-ref="1.9" />
+    <description box="E" iof-2004-ref="1.10" />
+    <description box="F" iof-2004-ref="10.2" />
+    <description box="G" iof-2004-ref="11.1NE" />
+  </control>
+  <control id="12" kind="normal">
+    <code>41</code>
+    <location x="160.372528" y="-104.638252" />
+    <description box="D" iof-2004-ref="5.25" />
+    <description box="G" iof-2004-ref="11.1E" />
+  </control>
+  <control id="13" kind="normal">
+    <code>42</code>
+    <location x="175.34079" y="-107.631905" />
+    <description box="D" iof-2004-ref="2.10" />
+    <description box="E" iof-2004-ref="2.10" />
+    <description box="F" iof-2004-ref="10.2" />
+    <description box="G" iof-2004-ref="11.1SE" />
+    <description box="H" iof-2004-ref="12.1" />
+  </control>
+  <control id="14" kind="normal">
+    <code>43</code>
+    <location x="194.500153" y="-106.434456" />
+    <description box="D" iof-2004-ref="4.5" />
+    <description box="G" iof-2004-ref="11.1S" />
+  </control>
+  <control id="15" kind="normal">
+    <code>44</code>
+    <location x="211.264587" y="-104.638252" />
+    <description box="D" iof-2004-ref="4.1" />
+    <description box="G" iof-2004-ref="11.1SW" />
+  </control>
+  <control id="16" kind="normal">
+    <code>45</code>
+    <location x="220.844269" y="-92.66364" />
+    <description box="D" iof-2004-ref="3.8" />
+    <description box="G" iof-2004-ref="11.1W" />
+  </control>
+  <control id="17" kind="normal">
+    <code>46</code>
+    <location x="222.041748" y="-81.28777" />
+    <description box="D" iof-2004-ref="4.2" />
+    <description box="G" iof-2004-ref="11.1NW" />
+  </control>
+  <control id="18" kind="finish">
+    <location x="226.232834" y="36.06333" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="19" kind="normal">
+    <code>47</code>
+    <location x="222.08226" y="-55.68275" />
+    <description box="D" iof-2004-ref="5.1" />
+    <description box="F" iof-2004-ref="11.7" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Standard2</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-113.039986" top="93.68993" right="242.560028" bottom="-122.210075" page-width="850" page-height="1400" page-margins="0" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6">
+    <next course-control="7" />
+  </course-control>
+  <course-control id="7" control="7">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="8" control="8">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="9">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="10">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="11">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="12" control="12">
+    <next course-control="13" />
+  </course-control>
+  <course-control id="13" control="13">
+    <next course-control="14" />
+  </course-control>
+  <course-control id="14" control="14">
+    <next course-control="15" />
+  </course-control>
+  <course-control id="15" control="15">
+    <next course-control="16" />
+  </course-control>
+  <course-control id="16" control="16">
+    <next course-control="17" />
+  </course-control>
+  <course-control id="17" control="17">
+    <next course-control="19" />
+  </course-control>
+  <course-control id="18" control="18" />
+  <course-control id="19" control="19">
+    <next course-control="18" />
+  </course-control>
+</course-scribe-event>

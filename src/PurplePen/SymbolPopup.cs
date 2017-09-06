@@ -53,6 +53,7 @@ namespace PurplePen
 
         // Dictionary to map symbol id to image.
         Dictionary<string, Image> symbolImageCache = new Dictionary<string,Image>();
+        string symbolImageCacheStandard = "";
 
         ToolStripDropDown dropdown;     // The ToolStripDropDown that is the popup menu.
         ToolStripLabel infoLabel;       // The informational label at the bottom of the dropdown.
@@ -305,6 +306,11 @@ namespace PurplePen
         // The images for given symbols are cached, so we only render each one once.
         Image GetSymbolImage(Symbol symbol)
         {
+            if (symbolImageCacheStandard != symbolDB.Standard) {
+                symbolImageCacheStandard = symbolDB.Standard;
+                symbolImageCache.Clear();
+            }
+
             if (!symbolImageCache.ContainsKey(symbol.Id)) {
 
                 // Create a bitmap and draw into it.

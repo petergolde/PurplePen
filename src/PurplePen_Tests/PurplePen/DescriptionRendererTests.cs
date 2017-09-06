@@ -352,6 +352,36 @@ namespace PurplePen.Tests
                 TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_ocad", kind));
         }
 
+        // Render the given course id (0 = all controls) and kind to a map, and compare it to the saved version.
+        internal void CheckRenderMapStandardChange(string filename, Id<Course> id, DescriptionKind kind, string newDescStandard)
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+            CourseView courseView;
+
+            eventDB.Load(filename);
+            symbolDB.Standard = eventDB.GetEvent().descriptionStandard;
+            eventDB.Validate();
+
+            courseView = CourseView.CreateViewingCourseView(eventDB, DesignatorFromCourseId(eventDB, id));
+
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionLine[] description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
+
+            Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, 1);
+            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_std_default", kind));
+
+            undomgr.BeginCommand(71231, "change standard");
+            symbolDB.Standard = newDescStandard;
+            ChangeEvent.UpdateDescriptionToMatchStandard(eventDB, symbolDB);
+            undomgr.EndCommand(71231);
+            description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
+
+            bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, 1);
+            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_std_" + newDescStandard, kind));
+        }
+
         [TestMethod]
         public void AllControlsSymbolsToMap()
         {
@@ -525,7 +555,19 @@ namespace PurplePen.Tests
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent7.ppen"), CourseId(3), DescriptionKind.SymbolsAndText);
             CheckRenderMap(TestUtil.GetTestFile("descriptions\\sampleevent7.ppen"), CourseId(3), DescriptionKind.Text);
         }
-	
+
+        [TestMethod]
+        public void MultiStandard1()
+        {
+            CheckRenderMapStandardChange(TestUtil.GetTestFile("descriptions\\standards1.ppen"), CourseId(1), DescriptionKind.SymbolsAndText, "2018");
+        }
+
+        [TestMethod]
+        public void MultiStandard2()
+        {
+            CheckRenderMapStandardChange(TestUtil.GetTestFile("descriptions\\standards2.ppen"), CourseId(1), DescriptionKind.SymbolsAndText, "2004");
+        }
+
 
 #if false  // These tests are too slow to run normally.
 
@@ -595,7 +637,7 @@ namespace PurplePen.Tests
             CheckRenderBitmapPixelAtATime(CourseId(2), DescriptionKind.Symbols);
         }
 
-#endif 
+#endif
 
         void CheckHitTest(DescriptionRenderer renderer, Point pt, HitTestKind expectedKind, int expectedFirstLine, int expectedLastLine, int expectedBox, RectangleF expectedRect)
         {
