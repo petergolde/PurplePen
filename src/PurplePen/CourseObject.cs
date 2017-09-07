@@ -1571,14 +1571,21 @@ namespace PurplePen
     class FirstAidCourseObj : PointCourseObj
     {
         // outline of the first aid symbol.
-        static readonly PointF[] outlineCoords = { 
+        static readonly PointF[] outlineCoords2000 = { 
                 new PointF(-0.5F, 1.5F), new PointF(0.5F, 1.5F), new PointF(0.5F,  0.5F), new PointF(1.5F, 0.5F), 
                 new PointF(1.5F, -0.5F), new PointF(0.5F, -0.5F), new PointF(0.5F,  -1.5F), new PointF(-0.5F, -1.5F), 
                 new PointF(-0.5F, -0.5F), new PointF(-1.5F, -0.5F), new PointF(-1.5F,  0.5F), new PointF(-0.5F, 0.5F), new PointF(-0.5F, 1.5F) 
             };
+        static readonly PointF[] outlineCoords2017 = {
+                new PointF(-0.667F, 2.0F), new PointF(0.667F, 2.0F), new PointF(0.667F,  0.667F), new PointF(2.0F, 0.667F),
+                new PointF(2.0F, -0.667F), new PointF(0.667F, -0.667F), new PointF(0.667F,  -2.0F), new PointF(-0.667F, -2.0F),
+                new PointF(-0.667F, -0.667F), new PointF(-2.0F, -0.667F), new PointF(-2.0F,  0.667F), new PointF(-0.667F, 0.667F), new PointF(-0.667F, 2.0F)
+            };
 
         public FirstAidCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 1.5F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 
+                  (appearance.mapStandard == "2000") ? 1.5F : 2.0F, 
+                  location)
         {
         }
 
@@ -1589,6 +1596,7 @@ namespace PurplePen
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal
             };
+            PointF[] outlineCoords = (appearance.mapStandard == "2000") ? outlineCoords2000 : outlineCoords2017;
             PointF[] coords = ScaleCoords((PointF[]) outlineCoords.Clone());
             SymPath path = new SymPath(coords, kinds);
 
@@ -1606,6 +1614,8 @@ namespace PurplePen
         // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
+            PointF[] outlineCoords = (appearance.mapStandard == "2000") ? outlineCoords2000 : outlineCoords2017;
+
             // Get the world coordinates of the object.
             PointF[] coords = OffsetCoords(ScaleCoords((PointF[]) outlineCoords.Clone()), location.X, location.Y);
 

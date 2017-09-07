@@ -328,6 +328,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FirstAid2017()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "first_aid_2017");
+        }
+
+        [TestMethod]
         public void FirstAidSpecial()
         {
             CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
@@ -755,6 +762,17 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, 0.5F)));
             courseobj = new FirstAidCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF(1, 1));
             Assert.AreEqual(5.0 - 1.5/2.0, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, 0.3F)));
+        }
+
+        [TestMethod]
+        public void FirstAidDistance2017()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(1, 1));
+            Assert.AreEqual(5.0 - 2.0, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 3));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, 0.5F)));
+            courseobj = new FirstAidCourseObj(SpecialId(0), 0.5F, std2017CourseAppearance, new PointF(1, 1));
+            Assert.AreEqual(5.0 - 2.0 / 2.0, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, 0.3F)));
         }
 
@@ -1196,6 +1214,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "first_aid_highlight");
+        }
+
+        [TestMethod]
+        public void FirstAidHighlight2017()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "first_aid_2017_highlight");
         }
 
         [TestMethod]
