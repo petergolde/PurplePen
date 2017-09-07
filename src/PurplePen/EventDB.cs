@@ -2234,6 +2234,45 @@ namespace PurplePen
 
         public bool useOcadOverprint = false;       // If true, use overprint effect when rendering OCAD map.
 
+        public string mapStandard = "2000";         // Which ISOM standard to use.
+
+        public float ControlCircleOutsideDiameter {
+            get {
+                if (mapStandard == "2000")
+                    return NormalCourseAppearance.controlOutsideDiameter2000 * controlCircleSize;
+                else
+                    return NormalCourseAppearance.controlOutsideDiameter2017 * controlCircleSize;
+            }
+        }
+
+        public float FinishCircleOutsideDiameter {
+            get {
+                if (mapStandard == "2000")
+                    return NormalCourseAppearance.finishOutsideDiameter2000 * controlCircleSize;
+                else
+                    return NormalCourseAppearance.finishOutsideDiameter2017 * controlCircleSize;
+            }
+        }
+
+        // Outside diameter of the inner circle.
+        public float FinishCircleInsideDiameter {
+            get {
+                if (mapStandard == "2000")
+                    return ((NormalCourseAppearance.finishInsideDiameter2000 + NormalCourseAppearance.lineThickness) * controlCircleSize) - (lineWidth * NormalCourseAppearance.lineThickness);
+                else
+                    return ((NormalCourseAppearance.finishInsideDiameter2017 + NormalCourseAppearance.lineThickness) * controlCircleSize) - (lineWidth * NormalCourseAppearance.lineThickness);
+            }
+        }
+
+        public float StartRadius {
+            get {
+                if (mapStandard == "2000")
+                    return NormalCourseAppearance.startRadius2000 * controlCircleSize;
+                else
+                    return NormalCourseAppearance.startRadius2017 * controlCircleSize;
+            }
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is CourseAppearance))
@@ -2273,6 +2312,8 @@ namespace PurplePen
             if (descriptionsPurple != other.descriptionsPurple)
                 return false;
             if (useOcadOverprint != other.useOcadOverprint)
+                return false;
+            if (mapStandard != other.mapStandard)
                 return false;
 
             return true;
@@ -2418,7 +2459,6 @@ namespace PurplePen
         public PunchcardFormat punchcardFormat = new PunchcardFormat();   // format of punch cards
         public CourseAppearance courseAppearance = new CourseAppearance();   // appearance of courses.
         public string descriptionLangId;   // language id for descriptions.
-        public string mapStandard;         // map standard; either "2000" or "2017"
         public string descriptionStandard; // description standard; either "2004" or "2018"
         public Dictionary<string, List<SymbolText>> customSymbolText = new Dictionary<string, List<SymbolText>>();   // maps symbol IDs to list of custom symbol text.
         public Dictionary<string, bool> customSymbolKey = new Dictionary<string, bool>();   // maps symbol IDs to whether to display key for this custom symbol
@@ -2428,7 +2468,6 @@ namespace PurplePen
             title = "";
             descriptionLangId = "en";
             printArea = PrintArea.DefaultPrintArea;
-            mapStandard = "2000";
             descriptionStandard = "2004";
         }
 
@@ -2452,9 +2491,6 @@ namespace PurplePen
             foreach (string s in customSymbolText.Keys)
                 if (! customSymbolKey.ContainsKey(s))
                     throw new ApplicationException(string.Format("Event '{0}' has inconsistent custom symbols"));
-
-            if (mapStandard != "2000" && mapStandard != "2017")
-                throw new ApplicationException(string.Format("Event '{0}' has bad map standard", id));
 
             if (descriptionStandard != "2004" && descriptionStandard != "2018")
                 throw new ApplicationException(string.Format("Event '{0}' has bad description standard", id));
@@ -2522,8 +2558,6 @@ namespace PurplePen
                 return false;
             if (other.descriptionLangId != descriptionLangId)
                 return false;
-            if (other.mapStandard != mapStandard)
-                return false;
             if (other.descriptionStandard != descriptionStandard)
                 return false;
 
@@ -2590,7 +2624,7 @@ namespace PurplePen
             xmloutput.WriteEndElement();
 
             xmloutput.WriteStartElement("standards");
-            xmloutput.WriteAttributeString("map", mapStandard);
+            xmloutput.WriteAttributeString("map", courseAppearance.mapStandard);
             xmloutput.WriteAttributeString("description", descriptionStandard);
             xmloutput.WriteEndElement();
 
@@ -2668,7 +2702,7 @@ namespace PurplePen
             while (xmlinput.FindSubElement(first, "standards", "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "ocad", "custom-symbol-text")) {
                 switch (xmlinput.Name) {
                     case "standards":
-                        mapStandard = xmlinput.GetAttributeString("map", "2000");
+                        courseAppearance.mapStandard = xmlinput.GetAttributeString("map", "2000");
                         descriptionStandard = xmlinput.GetAttributeString("description", "2004");
                         xmlinput.Skip();
                         break;

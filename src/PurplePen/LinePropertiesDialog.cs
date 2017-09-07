@@ -178,7 +178,7 @@ namespace PurplePen
 
             // Get sizes and colors and so forth.
             float controlLineWidth = NormalCourseAppearance.lineThickness * appearance.lineWidth;
-            float controlCircleDiameter = NormalCourseAppearance.controlOutsideDiameter * appearance.controlCircleSize;    // outside diameter
+            float controlCircleDiameter = appearance.ControlCircleOutsideDiameter;    // outside diameter
             float controlDotDiameter = appearance.centerDotDiameter;
             float controlCircleDrawRadius = (controlCircleDiameter - controlLineWidth) / 2;    // radius to pen center
 

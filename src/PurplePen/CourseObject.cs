@@ -1282,17 +1282,30 @@ namespace PurplePen
     // A control circle
     class ControlCourseObj : PointCourseObj
     {
-        public const float diameter = NormalCourseAppearance.controlOutsideDiameter;
-
         public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.0F, location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 
+                  (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 : NormalCourseAppearance.controlOutsideDiameter2017) / 2F, 
+                  location)
         {
+        }
+
+        private float Diameter {
+            get {
+                return (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 
+                                                         : NormalCourseAppearance.controlOutsideDiameter2017) * scaleRatio * appearance.controlCircleSize;
+            }
+        }
+
+        private float LineThickness {
+            get {
+                return NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth;
+            }
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, diameter * scaleRatio * appearance.controlCircleSize);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
             if (appearance.centerDotDiameter > 0.0F) {
                 glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * scaleRatio);
             }
@@ -1318,7 +1331,7 @@ namespace PurplePen
             float thickness = TransformDistance(NormalCourseAppearance.lineThickness * appearance.lineWidth * scaleRatio, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner, 2 = lower-right corner
-            float radius = ((diameter * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * appearance.lineWidth) * scaleRatio) / 2F;
+            float radius = (Diameter - LineThickness) / 2F;
             PointF[] pts = { location, new PointF(location.X - radius, location.Y - radius), new PointF(location.X + radius, location.Y + radius) };
             xformWorldToPixel.TransformPoints(pts);
 
@@ -1473,7 +1486,9 @@ namespace PurplePen
 
         public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, 
             CircleGap[] gaps, PointF location, CrossHairOptions crossHairOptions)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 3.5F, location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 
+                  ((appearance.mapStandard == "2000") ? NormalCourseAppearance.finishOutsideDiameter2000 : NormalCourseAppearance.finishOutsideDiameter2017) / 2F, 
+                  location)
         {
             this.crossHairOptions = crossHairOptions;
         }

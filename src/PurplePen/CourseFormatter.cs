@@ -248,8 +248,8 @@ namespace PurplePen
                 }
                 else {
                     FontDesc fontDesc = appearance.numberBold ? NormalCourseAppearance.controlNumberFont : NormalCourseAppearance.controlNumberFontBold;
-                    textCenterLocation = GetTextLocation(controlLocation, (NormalCourseAppearance.controlOutsideDiameter / 2F + NormalCourseAppearance.controlNumberCircleDistance) * scaleRatio * appearance.controlCircleSize,
-                                                                                  text, fontDesc, scaleRatio * appearance.numberHeight, existingObjects);
+                    float textDistance = ((appearance.ControlCircleOutsideDiameter / 2F) + (NormalCourseAppearance.controlNumberCircleDistance * appearance.controlCircleSize)) * scaleRatio;
+                    textCenterLocation = GetTextLocation(controlLocation, textDistance, text, fontDesc, scaleRatio * appearance.numberHeight, existingObjects);
                 }
 
                 return new ControlNumberCourseObj(controlView.controlId, controlView.courseControlIds[0], scaleRatio, appearance, text, textCenterLocation);
@@ -268,7 +268,8 @@ namespace PurplePen
             PointF controlLocation = control.location;
             string text;
             PointF textCenterLocation;
-            float distanceFromCenter = (NormalCourseAppearance.controlOutsideDiameter / 2F + NormalCourseAppearance.codeCircleDistance) * scaleRatio * appearance.controlCircleSize;
+            float distanceFromCenter = ((appearance.ControlCircleOutsideDiameter / 2F) + (NormalCourseAppearance.codeCircleDistance * appearance.controlCircleSize)) * scaleRatio;
+
 
             if (control.kind == ControlPointKind.Normal) {
                 text = control.code;
@@ -799,14 +800,14 @@ namespace PurplePen
                 return scaleRatio * NormalCourseAppearance.crossingRadius * appearance.controlCircleSize;
 
             case ControlPointKind.Normal:
-                return scaleRatio * ((NormalCourseAppearance.controlOutsideDiameter * appearance.controlCircleSize / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
+                return scaleRatio * ((appearance.ControlCircleOutsideDiameter / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
 
             case ControlPointKind.Finish:
-                return scaleRatio * ((NormalCourseAppearance.finishOutsideDiameter * appearance.controlCircleSize / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
+                return scaleRatio * ((appearance.FinishCircleOutsideDiameter / 2F) - (NormalCourseAppearance.lineThickness * appearance.lineWidth / 2F));
 
             case ControlPointKind.Start:
             case ControlPointKind.MapExchange:
-                return scaleRatio * NormalCourseAppearance.startRadius * appearance.controlCircleSize;
+                return scaleRatio * appearance.StartRadius;
 
             case ControlPointKind.None:
             case ControlPointKind.MapIssue:
