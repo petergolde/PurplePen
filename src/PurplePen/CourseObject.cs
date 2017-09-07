@@ -2284,13 +2284,27 @@ namespace PurplePen
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             AreaSymDef symdef = new AreaSymDef("Out-of-bounds area", "709", null, null);
-            AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
-            hatchInfo.hatchColor = symColor;
-            hatchInfo.hatchWidth = 0.25F * scaleRatio;
-            hatchInfo.hatchSpacing = 0.6F * scaleRatio;
-            hatchInfo.hatchAngle = 90;
-            symdef.AddHatching(hatchInfo);
-            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
+            if (appearance.mapStandard == "2000") {
+                AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
+                hatchInfo.hatchColor = symColor;
+                hatchInfo.hatchWidth = 0.25F * scaleRatio;
+                hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+                hatchInfo.hatchAngle = 90;
+                symdef.AddHatching(hatchInfo);
+                symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
+            }
+            else {
+                AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
+                hatchInfo.hatchColor = symColor;
+                hatchInfo.hatchWidth = 0.25F * scaleRatio;
+                hatchInfo.hatchSpacing = 0.8F * scaleRatio;
+                hatchInfo.hatchAngle = 45;
+                symdef.AddHatching(hatchInfo);
+                hatchInfo.hatchAngle = 135;
+                symdef.AddHatching(hatchInfo);
+                symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Dangerous_OcadToolbox);
+
+            }
             map.AddSymdef(symdef);
             return symdef;
         }
@@ -2310,12 +2324,17 @@ namespace PurplePen
             AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
             hatchInfo.hatchColor = symColor;
             hatchInfo.hatchWidth = 0.25F * scaleRatio;
-            hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+            if (appearance.mapStandard == "2000") {
+                hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+            }
+            else {
+                hatchInfo.hatchSpacing = 0.8F * scaleRatio;
+            }
             hatchInfo.hatchAngle = 45;
             symdef.AddHatching(hatchInfo);
             hatchInfo.hatchAngle = 135;
             symdef.AddHatching(hatchInfo);
-            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Dangerous_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }

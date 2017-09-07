@@ -400,6 +400,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBounds2017()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "out_of_bounds_2017");
+        }
+
+        [TestMethod]
         public void OutOfBoundsSpecial()
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -411,6 +418,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObject(courseobj, "dangerous");
+        }
+
+        [TestMethod]
+        public void Dangerous2017()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "dangerous_2017");
         }
 
         [TestMethod]
@@ -1186,6 +1200,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsHighlight2017()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "out_of_bounds_2017_highlight");
+        }
+
+        [TestMethod]
         public void OutOfBoundsHighlightSpecial()
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -1197,6 +1218,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectHighlight(courseobj, "dangerous_highlight");
+        }
+
+        [TestMethod]
+        public void DangerousHighlight2017()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "dangerous_2017_highlight");
         }
 
         [TestMethod]
@@ -1566,10 +1594,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsOffset2017()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "out_of_bounds_2017_offset");
+        }
+
+        [TestMethod]
         public void DangerousOffset()
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectOffset(courseobj, "dangerous_offset");
+        }
+
+        [TestMethod]
+        public void DangerousOffset2017()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "dangerous_2017_offset");
         }
 
         [TestMethod]
