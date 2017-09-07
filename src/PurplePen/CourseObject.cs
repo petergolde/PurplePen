@@ -1369,19 +1369,24 @@ namespace PurplePen
     class StartCourseObj : PointCourseObj
     {
         // Coordinates of the triangle.
-        static readonly PointF[] coords = { new PointF(0F, 4.041F), new PointF(3.5F, -2.021F), new PointF(-3.5F, -2.021F), new PointF(0F, 4.041F) };
+        static readonly PointF[] coords2000 = { new PointF(0F, 4.041F), new PointF(3.5F, -2.021F), new PointF(-3.5F, -2.021F), new PointF(0F, 4.041F) };
+        static readonly PointF[] coords2017 = { new PointF(0F, 3.464F), new PointF(3.0F, -1.732F), new PointF(-3.0F, -1.732F), new PointF(0F, 3.464F) };
 
         CrossHairOptions crossHairOptions;
 
         public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, 
                               CourseAppearance appearance, float orientation, PointF location, CrossHairOptions crossHairOptions)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation, 4.041F, location)
+            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation,
+                  (appearance.mapStandard == "2000") ? NormalCourseAppearance.startRadius2000 : NormalCourseAppearance.startRadius2017,
+                  location)
         {
             this.crossHairOptions = crossHairOptions;
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
+            PointF[] coords = (appearance.mapStandard == "2000") ? coords2000 : coords2017;
+
             PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
             PointF[] pts = ScaleCoords((PointF[]) coords.Clone());
             SymPath path = new SymPath(pts, kinds);
@@ -1406,6 +1411,8 @@ namespace PurplePen
         // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
+            PointF[] coords = (appearance.mapStandard == "2000") ? coords2000 : coords2017;
+
             // Transform the thickness to pixel coords.
             float thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
 

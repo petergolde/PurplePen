@@ -293,6 +293,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void Start2017()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 0, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
+            SingleObject(courseobj, "start_triangle_2017");
+        }
+
+        [TestMethod]
         public void StartSpecial()
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
@@ -720,12 +727,25 @@ namespace PurplePen.Tests
         public void StartDistance()
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
-            Assert.AreEqual(0.959, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 3));
+            Assert.AreEqual(0.96, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 3));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
             courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
-            Assert.AreEqual(2.9795, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4));
+            Assert.AreEqual(2.98, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
+
+        [TestMethod]
+        public void StartDistance2017()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
+            Assert.AreEqual(1.54F, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 3), 0.001F);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 0.5F, std2017CourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
+            Assert.AreEqual(3.27F, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4), 0.001F);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+
 
         [TestMethod]
         public void FirstAidDistance()
@@ -1144,6 +1164,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void StartHighlight2017()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
+            SingleObjectHighlight(courseobj, "start_triangle_2017_highlight");
+        }
+
+        [TestMethod]
         public void MapIssueHighlight()
         {
             CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
@@ -1556,6 +1583,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectOffset(courseobj, "start_triangle_offset");
+        }
+
+        [TestMethod]
+        public void StartOffset2017()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
+            SingleObjectOffset(courseobj, "start_triangle_2017_offset");
         }
 
         [TestMethod]
