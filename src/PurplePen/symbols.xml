@@ -2890,7 +2890,7 @@ for the symbols.
     <text case="čím" lang="cs">kamenem</text>
     <text case="čímplur" lang="cs">kameny</text>
 
-    <filled-circle radius="23">
+    <filled-circle radius="25">
       <point x="0" y="0" />
     </filled-circle>
 
