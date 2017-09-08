@@ -1631,13 +1631,15 @@ namespace PurplePen
     // A water point
     class WaterCourseObj : PointCourseObj
     {
+        const float kappa = 0.5522847498F;  // constant used to create near-circle with a bezier.
+
         PointKind[] kinds1 = { 
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal
             };
-        PointF[] coords1 =  { 
+        PointF[] coords1_2000 =  { 
                 new PointF(1.5F, 1.375F), new PointF(1.5F, 1.5825F), new PointF(0.8275F, 1.75F), 
                 new PointF(0F, 1.75F), new PointF(-0.8275F, 1.75F), new PointF(-1.5F, 1.5825F), 
                 new PointF(-1.5F, 1.375F), new PointF(-1.5F, 1.1675F), new PointF(-0.8275F, 1.0F), 
@@ -1647,25 +1649,50 @@ namespace PurplePen
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal
             };
-        PointF[] coords2 =  { 
+        PointF[] coords2_2000 =  { 
                 new PointF(1.0F, -1.5F), new PointF(1.0F, -1.6375F), new PointF(0.551F, -1.75F), 
                 new PointF(0F, -1.75F), new PointF(-0.551F, -1.75F), new PointF(-1.0F, -1.6375F), new PointF(-1.0F, -1.5F) 
             };
         PointKind[] kinds3 =  { 
                 PointKind.Normal, PointKind.Normal, 
             };
-        PointF[] coords3 =  { 
+        PointF[] coords3_2000 =  { 
                 new PointF(1.5F, 1.375F), new PointF(1.0F, -1.5F),
             };
         PointKind[] kinds4 =  { 
                 PointKind.Normal, PointKind.Normal, 
             };
-        PointF[] coords4 =  { 
+        PointF[] coords4_2000 =  { 
                 new PointF(-1.5F, 1.375F), new PointF(-1.0F, -1.5F),
             };
 
+        const float alphaX = kappa * 1.55F, alphaY = kappa * 0.35F;
+        const float betaX = kappa * 0.85F, betaY = kappa * 0.15F;
+        const float gammaX = betaY * 0.23F;
+
+        PointF[] coords1_2017 =  {
+                new PointF(1.55F, 1.071F), new PointF(1.55F, 1.071F + alphaY), new PointF(alphaX, 1.421F),
+                new PointF(0F, 1.421F), new PointF(-alphaX, 1.421F), new PointF(-1.55F, 1.071F + alphaY),
+                new PointF(-1.55F, 1.071F), new PointF(-1.55F, 1.071F - alphaY), new PointF(-alphaX, 0.721F),
+                new PointF(0F, 0.721F), new PointF(alphaX, 0.721F), new PointF(1.55F, 1.071F - alphaY), new PointF(1.55F, 1.071F)
+            };
+        PointF[] coords2_2017 =  {
+                new PointF(0.85F, -1.529F), new PointF(0.85F - gammaX, -1.529F - betaY), new PointF(betaX, -1.679F),
+                new PointF(0F, -1.679F), new PointF(-betaX, -1.679F), new PointF(-0.85F, -1.529F - betaY), new PointF(-0.85F + gammaX, -1.529F)
+            };
+        PointF[] coords3_2017 =  {
+                new PointF(1.55F, 1.071F), new PointF(0.85F, -1.529F),
+            };
+        PointF[] coords4_2017 =  {
+                new PointF(-1.55F, 1.071F), new PointF(-0.85F, -1.529F),
+            };
+
+        const float thickness2017 = 0.4F;
+
         public WaterCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 2.0F, location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 
+                  (appearance.mapStandard == "2000") ? 2.0F : 1.5F, 
+                  location)
         {
         }
 
@@ -1673,17 +1700,23 @@ namespace PurplePen
         {
             Glyph glyph = new Glyph();
 
+            PointF[] coords1 = (appearance.mapStandard == "2000") ? coords1_2000 : coords1_2017;
+            PointF[] coords2 = (appearance.mapStandard == "2000") ? coords2_2000 : coords2_2017;
+            PointF[] coords3 = (appearance.mapStandard == "2000") ? coords3_2000 : coords3_2017;
+            PointF[] coords4 = (appearance.mapStandard == "2000") ? coords4_2000 : coords4_2017;
+            float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth : thickness2017 * scaleRatio;
+
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[]) coords3.Clone()), kinds3);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[]) coords4.Clone()), kinds4);
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             glyph.ConstructionComplete();
 
@@ -1699,13 +1732,19 @@ namespace PurplePen
             SymPath path1, path2, path3, path4;
             float thickness;
 
+            PointF[] coords1 = (appearance.mapStandard == "2000") ? coords1_2000 : coords1_2017;
+            PointF[] coords2 = (appearance.mapStandard == "2000") ? coords2_2000 : coords2_2017;
+            PointF[] coords3 = (appearance.mapStandard == "2000") ? coords3_2000 : coords3_2017;
+            PointF[] coords4 = (appearance.mapStandard == "2000") ? coords4_2000 : coords4_2017;
+            float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth : thickness2017 * scaleRatio;
+
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
             object brushKey = new object();
             grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
-            thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
+            thickness = TransformDistance(lineWidth, xformWorldToPixel);
 
             // Get the paths.
             path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);

@@ -349,6 +349,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void Water2017()
+        {
+            CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "water_2017");
+        }
+
+        [TestMethod]
         public void WaterSpecial()
         {
             CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
@@ -1466,6 +1473,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "water_highlight");
+        }
+
+        [TestMethod]
+        public void WaterHighlight2017()
+        {
+            CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "water_2017_highlight");
         }
 
         [TestMethod]
