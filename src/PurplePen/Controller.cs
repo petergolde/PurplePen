@@ -3027,9 +3027,6 @@ namespace PurplePen
             eventDB.Validate();
 #endif
 
-            Debug.WriteLine("Event standard: " + eventDB.GetEvent().descriptionStandard);
-            Debug.WriteLine("SymbolDB standard: " + symbolDB.Standard);
-
         }
 
         // Undo one command of changes.
@@ -3043,9 +3040,6 @@ namespace PurplePen
 #if DEBUG
             eventDB.Validate();
 #endif
-
-            Debug.WriteLine("Event standard: " + eventDB.GetEvent().descriptionStandard);
-            Debug.WriteLine("SymbolDB standard: " + symbolDB.Standard);
 
         }
 
@@ -3558,9 +3552,26 @@ namespace PurplePen
 
                 undoMgr.EndCommand(2971);
             }
+        }
 
-            Debug.WriteLine("Event standard: " + eventDB.GetEvent().descriptionStandard);
-            Debug.WriteLine("SymbolDB standard: " + symbolDB.Standard);
+        public string GetMapStandard()
+        {
+            return eventDB.GetEvent().courseAppearance.mapStandard;
+        }
+
+        public void ChangeMapStandard(string newMapStd)
+        {
+            string oldMapStd = GetMapStandard();
+
+            if (oldMapStd != newMapStd) {
+                undoMgr.BeginCommand(2571, CommandNameText.ChangeMapStandard);
+
+                CourseAppearance appearance = eventDB.GetEvent().courseAppearance;
+                appearance.mapStandard = newMapStd;
+                ChangeEvent.ChangeCourseAppearance(eventDB, appearance);
+
+                undoMgr.EndCommand(2571);
+            }
         }
 
         private class DescriptionStandardChange : UndoableAction

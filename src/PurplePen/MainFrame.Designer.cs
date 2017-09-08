@@ -174,6 +174,12 @@ namespace PurplePen
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.punchPatternsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator21 = new System.Windows.Forms.ToolStripSeparator();
+            this.iOFStandardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descriptionStd2004Menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.descriptionStd2018Menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.mapStd2000Menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapStd2017Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeCourseAppearanceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -282,12 +288,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.iOFStandardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.descriptionStd2004Menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.descriptionStd2018Menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.mapStd2000Menu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapStd2017Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1155,6 +1155,46 @@ namespace PurplePen
             this.toolStripSeparator21.Name = "toolStripSeparator21";
             resources.ApplyResources(this.toolStripSeparator21, "toolStripSeparator21");
             // 
+            // iOFStandardsToolStripMenuItem
+            // 
+            this.iOFStandardsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.descriptionStd2004Menu,
+            this.descriptionStd2018Menu,
+            this.toolStripSeparator4,
+            this.mapStd2000Menu,
+            this.mapStd2017Menu});
+            this.iOFStandardsToolStripMenuItem.Name = "iOFStandardsToolStripMenuItem";
+            resources.ApplyResources(this.iOFStandardsToolStripMenuItem, "iOFStandardsToolStripMenuItem");
+            // 
+            // descriptionStd2004Menu
+            // 
+            this.descriptionStd2004Menu.Name = "descriptionStd2004Menu";
+            resources.ApplyResources(this.descriptionStd2004Menu, "descriptionStd2004Menu");
+            this.descriptionStd2004Menu.Click += new System.EventHandler(this.descriptionStd2004Menu_Click);
+            // 
+            // descriptionStd2018Menu
+            // 
+            this.descriptionStd2018Menu.Name = "descriptionStd2018Menu";
+            resources.ApplyResources(this.descriptionStd2018Menu, "descriptionStd2018Menu");
+            this.descriptionStd2018Menu.Click += new System.EventHandler(this.descriptionStd2018Menu_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
+            // mapStd2000Menu
+            // 
+            this.mapStd2000Menu.Name = "mapStd2000Menu";
+            resources.ApplyResources(this.mapStd2000Menu, "mapStd2000Menu");
+            this.mapStd2000Menu.Click += new System.EventHandler(this.mapStd2000Menu_Click);
+            // 
+            // mapStd2017Menu
+            // 
+            this.mapStd2017Menu.Name = "mapStd2017Menu";
+            resources.ApplyResources(this.mapStd2017Menu, "mapStd2017Menu");
+            this.mapStd2017Menu.Click += new System.EventHandler(this.mapStd2017Menu_Click);
+            // 
             // customizeDescriptionsMenu
             // 
             this.customizeDescriptionsMenu.Name = "customizeDescriptionsMenu";
@@ -1896,44 +1936,6 @@ namespace PurplePen
             // 
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
-            // 
-            // iOFStandardsToolStripMenuItem
-            // 
-            this.iOFStandardsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.descriptionStd2004Menu,
-            this.descriptionStd2018Menu,
-            this.toolStripSeparator4,
-            this.mapStd2000Menu,
-            this.mapStd2017Menu});
-            this.iOFStandardsToolStripMenuItem.Name = "iOFStandardsToolStripMenuItem";
-            resources.ApplyResources(this.iOFStandardsToolStripMenuItem, "iOFStandardsToolStripMenuItem");
-            // 
-            // descriptionStd2004Menu
-            // 
-            this.descriptionStd2004Menu.Name = "descriptionStd2004Menu";
-            resources.ApplyResources(this.descriptionStd2004Menu, "descriptionStd2004Menu");
-            this.descriptionStd2004Menu.Click += new System.EventHandler(this.descriptionStd2004Menu_Click);
-            // 
-            // descriptionStd2018Menu
-            // 
-            this.descriptionStd2018Menu.Name = "descriptionStd2018Menu";
-            resources.ApplyResources(this.descriptionStd2018Menu, "descriptionStd2018Menu");
-            this.descriptionStd2018Menu.Click += new System.EventHandler(this.descriptionStd2018Menu_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
-            // mapStd2000Menu
-            // 
-            this.mapStd2000Menu.Name = "mapStd2000Menu";
-            resources.ApplyResources(this.mapStd2000Menu, "mapStd2000Menu");
-            // 
-            // mapStd2017Menu
-            // 
-            this.mapStd2017Menu.Name = "mapStd2017Menu";
-            resources.ApplyResources(this.mapStd2017Menu, "mapStd2017Menu");
             // 
             // MainFrame
             // 

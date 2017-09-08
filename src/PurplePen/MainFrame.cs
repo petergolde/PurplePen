@@ -90,6 +90,8 @@ namespace PurplePen
 
         int vScrollbarWidth;  // width of a default scroll bar.
 
+        Image dangerousImage, oobImage;
+
         public MainFrame()
         {
             Font = SystemFonts.MessageBoxFont;
@@ -144,8 +146,8 @@ namespace PurplePen
             addForbiddenMenu.Image = forbiddenRouteMarkingToolStripMenuItem.Image;
             addFirstAidMenu.Image = firstAidLocationToolStripMenuItem.Image;
             addDescriptionsMenu.Image = descriptionsToolStripMenuItem.Image;
-            addOutOfBoundsMenu.Image = outOfBoundsToolStripMenuItem.Image;
-            addDangerousMenu.Image = dangerousToolStripMenuItem.Image;
+            oobImage = addOutOfBoundsMenu.Image = outOfBoundsToolStripMenuItem.Image;
+            dangerousImage = addDangerousMenu.Image = dangerousToolStripMenuItem.Image;
             addBoundaryMenu.Image = boundaryToolStripMenuItem.Image;
             addTextMenu.Image = textToolStripMenuItem.Image;
             addImageMenu.Image = imageToolStripMenuItem.Image;
@@ -704,10 +706,21 @@ namespace PurplePen
             UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
             UpdateMenuItem(courseVariationReportMenu, controller.CanGetVariationReport());
 
-            // Update standards checkboxes.
+            // Update standards checkboxes and other menu items related to standards.
             string descriptionStandard = controller.GetDescriptionStandard();
             descriptionStd2004Menu.Checked = (descriptionStandard == "2004");
             descriptionStd2018Menu.Checked = (descriptionStandard == "2018");
+            string mapStandard = controller.GetMapStandard();
+            mapStd2000Menu.Checked = (mapStandard == "2000");
+            mapStd2017Menu.Checked = (mapStandard == "2017");
+            dangerousToolStripMenuItem.Visible = (mapStandard == "2000");
+            addDangerousMenu.Visible = (mapStandard == "2000");
+            if (mapStandard == "2000") {
+                outOfBoundsToolStripMenuItem.Image = addOutOfBoundsMenu.Image = oobImage;
+            }
+            else {
+                outOfBoundsToolStripMenuItem.Image = addOutOfBoundsMenu.Image = dangerousImage;
+            }
 
             // Update help menu
             UpdateMenuItem(helpTranslatedMenu, TranslatedWebSiteExists() ? CommandStatus.Enabled : CommandStatus.Hidden);
@@ -2912,5 +2925,14 @@ namespace PurplePen
             controller.ChangeDescriptionStandard("2018");
         }
 
+        private void mapStd2000Menu_Click(object sender, EventArgs e)
+        {
+            controller.ChangeMapStandard("2000");
+        }
+
+        private void mapStd2017Menu_Click(object sender, EventArgs e)
+        {
+            controller.ChangeMapStandard("2017");
+        }
     }
 }

@@ -303,4 +303,7 @@
   <data name="ChangeDescriptionStandard" xml:space="preserve">
     <value>Set Control Description Standard</value>
   </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Set Map Standard</value>
+  </data>
 </root>

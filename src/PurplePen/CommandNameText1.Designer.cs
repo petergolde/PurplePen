@@ -295,6 +295,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Map Standard.
+        /// </summary>
+        internal static string ChangeMapStandard {
+            get {
+                return ResourceManager.GetString("ChangeMapStandard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Course Part Properties.
         /// </summary>
         internal static string ChangePartProperties {
