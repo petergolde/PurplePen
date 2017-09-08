@@ -398,9 +398,9 @@ String of type 1026
   firstField=
   code=a, value=3000
   code=r, value=1
-  code=L, value=48.75697
+  code=L, value=48.75668
   code=B, value=21.76234
-  code=R, value=178.297
+  code=R, value=178.2967
   code=T, value=189.4024
 
 String of type 1030
