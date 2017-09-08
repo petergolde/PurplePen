@@ -53,6 +53,7 @@ namespace PurplePen
         NewEventPaperSize paperSizePage;
         NewEventDirectory directoryPage;
         NewEventNumbering numberingPage;
+        NewEventStandards standardsPage;
         NewEventFinal finalPage;
 
         // Which page is active?
@@ -92,9 +93,10 @@ namespace PurplePen
             paperSizePage = new NewEventPaperSize();
             directoryPage = new NewEventDirectory();
             numberingPage = new NewEventNumbering();
+            standardsPage = new NewEventStandards();
             finalPage = new NewEventFinal();
 
-            pages = new IWizardPage[] { eventTitlePage, mapFilePage, bitmapScalePage, printScalePage, paperSizePage, directoryPage, numberingPage, finalPage};
+            pages = new IWizardPage[] { eventTitlePage, mapFilePage, bitmapScalePage, printScalePage, paperSizePage, directoryPage, standardsPage, numberingPage, finalPage};
         }
 
         private void NewEventWizard_Load(object sender, EventArgs e)
@@ -229,6 +231,8 @@ namespace PurplePen
             createEventInfo.firstCode = (int) numberingPage.startingCodeNumericUpDown.Value;
             createEventInfo.disallowInvertibleCodes = numberingPage.disallowInvertibleCheckBox.Checked;
             createEventInfo.descriptionLangId = null;  // use default description language.
+            createEventInfo.mapStandard = standardsPage.radioButtonMap2017.Checked ? "2017" : "2000";
+            createEventInfo.descriptionStandard = standardsPage.radioButtonDescriptions2018.Checked ? "2018" : "2004";
 
             PrintArea printArea = new PrintArea();
             printArea.autoPrintArea = true;

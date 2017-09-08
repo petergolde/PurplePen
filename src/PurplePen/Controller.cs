@@ -491,6 +491,8 @@ namespace PurplePen
             public bool disallowInvertibleCodes;  // Can invertible codes be used?
             public string descriptionLangId;   // language for descriptions.
             public PrintArea printArea;        // default print area.
+            public string descriptionStandard; // description IOF standard
+            public string mapStandard;         // map IOF standard
         }
 
         // Create a new event. Should only be called before any file has been loaded.
@@ -512,7 +514,15 @@ namespace PurplePen
             ev.notes = null;
             ev.descriptionLangId = info.descriptionLangId ?? DefaultDescriptionLanguage;
             ev.printArea = info.printArea;
+            ev.descriptionStandard = info.descriptionStandard;
+            ev.courseAppearance.mapStandard = info.mapStandard;
             eventDB.ChangeEvent(ev);
+
+            Settings.Default.NewEventMapStandard = info.mapStandard;
+            Settings.Default.NewEventDescriptionStandard = info.descriptionStandard;
+            Settings.Default.Save();
+
+            symbolDB.Standard = info.descriptionStandard;
 
             undoMgr.EndCommand(8112);
 

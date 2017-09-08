@@ -456,6 +456,12 @@
     <Compile Include="NewEventMapFile.Designer.cs">
       <DependentUpon>NewEventMapFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewEventStandards.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewEventStandards.Designer.cs">
+      <DependentUpon>NewEventStandards.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewEventNumbering.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2651,6 +2657,9 @@
     <EmbeddedResource Include="NewEventMapFile.zh-CN.resx">
       <DependentUpon>NewEventMapFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewEventStandards.resx">
+      <DependentUpon>NewEventStandards.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewEventNumbering.bg.resx">
       <DependentUpon>NewEventNumbering.cs</DependentUpon>
     </EmbeddedResource>
@@ -4050,6 +4059,7 @@
     <None Include="MapView\MapViewer.csproj" />
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>

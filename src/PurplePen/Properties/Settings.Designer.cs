@@ -130,5 +130,29 @@ namespace PurplePen {
                 this["DefaultDescriptionLanguage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2017")]
+        public string NewEventMapStandard {
+            get {
+                return ((string)(this["NewEventMapStandard"]));
+            }
+            set {
+                this["NewEventMapStandard"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2004")]
+        public string NewEventDescriptionStandard {
+            get {
+                return ((string)(this["NewEventDescriptionStandard"]));
+            }
+            set {
+                this["NewEventDescriptionStandard"] = value;
+            }
+        }
     }
 }
