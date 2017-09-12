@@ -763,7 +763,7 @@ namespace PurplePen
                             ((LineCourseObj) courseobj).courseControlId2 == selectedCourseControl2) 
                     {
                         // The leg may be made up of multiple parts due to flagging and gaps. Create a single course object for the whole thing.
-                        CourseObj legObject = CourseFormatter.CreateSimpleLeg(eventDB, courseobj.scaleRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2);
+                        CourseObj legObject = CourseFormatter.CreateSimpleLeg(eventDB, courseobj.courseObjRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2);
                         if (legObject != null)
                             list.Add(legObject);
                         break;

@@ -60,7 +60,7 @@ namespace PurplePen
         Id<CourseControl>[] courseControlIdsSpecificVariation;
         Id<CourseControl> courseControlIdSelection1, courseControlIdSelection2;
         CourseAppearance appearance;
-        float scaleRatio;
+        float courseObjRatio;
 
         ControlPosition[] controlPositions;
 
@@ -108,7 +108,7 @@ namespace PurplePen
             SizeF totalAbstractSize = AssignControlPositions(0, controlViewsAllVariationsAndParts.Count, 0, 0);
 
             // Now create objects now that the positions have been created.
-            scaleRatio = 1.0F;
+            courseObjRatio = 1.0F;
             appearance = new CourseAppearance();
 
             for (int index = 0; index < controlViewsAllVariationsAndParts.Count; ++index) {
@@ -193,19 +193,19 @@ namespace PurplePen
                 case ControlPointKind.Start:
                 case ControlPointKind.MapExchange:
                     // Triangle looks best if we displace it down a bit (0.8 looks right).
-                    courseObj = new StartCourseObj(controlId, courseControlId, scaleRatio * 0.75F, appearance, 0, new PointF(location.X, location.Y - 0.8F), CrossHairOptions.NoCrossHair);
+                    courseObj = new StartCourseObj(controlId, courseControlId, courseObjRatio * 0.75F, appearance, 0, new PointF(location.X, location.Y - 0.8F), CrossHairOptions.NoCrossHair);
                     break;
 
                 case ControlPointKind.Finish:
-                    courseObj = new FinishCourseObj(controlId, courseControlId, scaleRatio * 0.75F, appearance, null, location, CrossHairOptions.NoCrossHair);
+                    courseObj = new FinishCourseObj(controlId, courseControlId, courseObjRatio * 0.75F, appearance, null, location, CrossHairOptions.NoCrossHair);
                     break;
 
                 case ControlPointKind.Normal:
-                    courseObj = new ControlNumberCourseObj(controlId, courseControlId, scaleRatio, appearance, control.code, location);
+                    courseObj = new ControlNumberCourseObj(controlId, courseControlId, courseObjRatio, appearance, control.code, location);
                     break;
 
                 case ControlPointKind.CrossingPoint:
-                    courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, scaleRatio * 1.5F, appearance, 0, location);
+                    courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, courseObjRatio * 1.5F, appearance, 0, location);
                     break;
 
                 default:
@@ -221,7 +221,7 @@ namespace PurplePen
         {
             List<DropTarget> dropTargets;
             SymPath path = PathBetweenControls(controlPosition1, controlPosition2, forkStart, out dropTargets);
-            CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, path);
+            CourseObj courseObj = new TopologyLegCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], courseObjRatio, appearance, path);
             CourseLayer layer;
 
             if (LegInSpecificVariation(controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0]))
@@ -234,7 +234,7 @@ namespace PurplePen
 
             // Add the drop targets
             foreach (DropTarget dropTarget in dropTargets) {
-                courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], scaleRatio, appearance, 
+                courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], courseObjRatio, appearance, 
                     LocationFromAbstractPosition(dropTarget.abstractX, dropTarget.abstractY), dropTarget.insertionLoc);
 
                 // Along the selected leg, show the drop targets in light gray. Along other legs, drop targets are invisible.
@@ -395,7 +395,7 @@ namespace PurplePen
             float y = forkStart.y + deltaY;
 
             string text = "(" + forkStart.variationCode + ")";
-            CourseObj courseObj = new VariationCodeCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], scaleRatio, appearance, text, LocationFromAbstractPosition(x, y));
+            CourseObj courseObj = new VariationCodeCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], courseObjRatio, appearance, text, LocationFromAbstractPosition(x, y));
             courseObj.layer = CourseLayer.AllVariations;
             return courseObj;
         }

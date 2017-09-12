@@ -512,6 +512,7 @@ namespace PurplePen.Tests
             e.courseAppearance.purpleM = 0.5F;
             e.courseAppearance.purpleY = 0.6F;
             e.courseAppearance.purpleK = 0.74F;
+            e.courseAppearance.scaleSizesWithMap = true;
             e.courseAppearance.descriptionsPurple = true;
 
             e.courseAppearance.mapStandard = "2017";

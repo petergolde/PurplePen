@@ -163,6 +163,8 @@ Invalid control point kind 'norfmal''
             info.firstCode = 100;
             info.disallowInvertibleCodes = true;
             info.descriptionLangId = "de";
+            info.descriptionStandard = "2018";
+            info.mapStandard = "2017";
             info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
 
             bool success = controller.InitialNewEvent(info);
@@ -183,6 +185,8 @@ Invalid control point kind 'norfmal''
             Assert.AreEqual("My New Event", e.title);
             Assert.AreEqual(info.eventFileName, controller.FileName);
             Assert.AreEqual("de", e.descriptionLangId);
+            Assert.AreEqual("2018", e.descriptionStandard);
+            Assert.AreEqual("2017", e.courseAppearance.mapStandard);
             Assert.IsFalse(controller.IsDirty);
 
             // Make sure we can add a new control and a new course.
@@ -219,6 +223,8 @@ Invalid control point kind 'norfmal''
             info.firstCode = 55;
             info.disallowInvertibleCodes = false;
             info.descriptionLangId = "en";
+            info.descriptionStandard = "2018";
+            info.mapStandard = "2017";
             info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
 
             success = controller.TryCloseFile();
@@ -247,6 +253,8 @@ Invalid control point kind 'norfmal''
             Assert.AreEqual(false, e.disallowInvertibleCodes);
             Assert.AreEqual(info.eventFileName, controller.FileName);
             Assert.IsFalse(controller.IsDirty);
+            Assert.AreEqual("2018", e.descriptionStandard);
+            Assert.AreEqual("2017", e.courseAppearance.mapStandard);
 
             // Make sure we can add a new control and a new course.
             UndoMgr undomgr = controller.GetUndoMgr();
@@ -273,6 +281,8 @@ Invalid control point kind 'norfmal''
             info.firstCode = 55;
             info.disallowInvertibleCodes = false;
             info.descriptionLangId = "en";
+            info.descriptionStandard = "2018";
+            info.mapStandard = "2017";
             info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
 
             bool success = controller.InitialNewEvent(info);

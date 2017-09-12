@@ -358,6 +358,25 @@ namespace PurplePen
             }
         }
 
+        // Get the ratio between course objects and the map size. If course objects scale with
+        // the map, then this is always 1.0.
+        public float CourseObjRatio(CourseAppearance appearance)
+        {
+            if (appearance.scaleSizesWithMap)
+                return 1.0F;
+            else
+                return ScaleRatio;
+        }
+
+        // Get the scale that circle gaps are stored at.
+        public float CircleGapScale(CourseAppearance appearance)
+        {
+            if (appearance.scaleSizesWithMap)
+                return MapScale;
+            else
+                return PrintScale;
+        }
+
         // Get the index of the next control. If this is a splitting control, just takes the first.
         // If no next control, then returns -1.
         public int GetNextControl(int controlIndex)

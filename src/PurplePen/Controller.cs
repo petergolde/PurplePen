@@ -3467,14 +3467,14 @@ namespace PurplePen
         // Move a control number. If the new location is on top of the existing control, it goes back to the default location.
         public void MoveControlNumber(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, PointF newLocation)
         {
-            float scaleRatio = 1;
+            float courseObjRatio = 1;
             if (selectionMgr.ActiveCourseView != null)
-                scaleRatio = selectionMgr.ActiveCourseView.ScaleRatio;
+                courseObjRatio = selectionMgr.ActiveCourseView.CourseObjRatio(GetCourseAppearance());
 
             PointF controlLocation = eventDB.GetControl(controlId).location;
 
             // If moving control number on top of the circle, then go to default location.
-            bool defaultLocation = (Geometry.Distance(controlLocation, newLocation) <= (eventDB.GetEvent().courseAppearance.ControlCircleOutsideDiameter / 2) * scaleRatio);
+            bool defaultLocation = (Geometry.Distance(controlLocation, newLocation) <= (eventDB.GetEvent().courseAppearance.ControlCircleOutsideDiameter / 2) * courseObjRatio);
 
             undoMgr.BeginCommand(138, CommandNameText.MoveControlNumber);
 

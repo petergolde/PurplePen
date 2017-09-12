@@ -57,19 +57,19 @@ namespace PurplePen
         public Id<ControlPoint> controlId;                        // Id of associated control (control/start/finish/crossing)
         public Id<CourseControl> courseControlId;             // Id of associated course control (control/start/finish/crossing)
         public Id<Special> specialId;                                // Id of special (water/dangerous/etc)
-        public float scaleRatio;                   // scale to display in (1.0 is normal scale).
+        public float courseObjRatio;                   // scale to display in (1.0 is normal scale).
         public CourseAppearance appearance;       // customize course appearance
 
         static Brush highlightBrush;             // brush used to draw highlights.
 
         public const int HANDLESIZE = 5;          // side of a square handle (should be odd).
 
-        protected CourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance)
+        protected CourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance)
         {
             this.controlId = controlId;
             this.courseControlId = courseControlId;
             this.specialId = specialId;
-            this.scaleRatio = scaleRatio;
+            this.courseObjRatio = courseObjRatio;
             this.appearance = appearance;
         }
 
@@ -89,8 +89,8 @@ namespace PurplePen
         protected PointF[] ScaleCoords(PointF[] coords)
         {
             for (int i = 0; i < coords.Length; ++i) {
-                coords[i].X *= scaleRatio * appearance.controlCircleSize;
-                coords[i].Y *= scaleRatio * appearance.controlCircleSize;
+                coords[i].X *= courseObjRatio * appearance.controlCircleSize;
+                coords[i].Y *= courseObjRatio * appearance.controlCircleSize;
             }
 
             return coords;
@@ -244,7 +244,7 @@ namespace PurplePen
                 result += string.Format("course-control:{0}  ", courseControlId);
             if (specialId.IsNotNone)
                 result += string.Format("special:{0}  ", specialId);
-            result += string.Format("scale:{0}  ", scaleRatio);
+            result += string.Format("scale:{0}  ", courseObjRatio);
 
             return result;
         }
@@ -262,7 +262,7 @@ namespace PurplePen
 
             CourseObj other = (CourseObj) obj;
             if (other.layer != layer || other.controlId != controlId || other.courseControlId != courseControlId || 
-                other.specialId != specialId || other.scaleRatio != scaleRatio || ! other.appearance.Equals(appearance))
+                other.specialId != specialId || other.courseObjRatio != courseObjRatio || ! other.appearance.Equals(appearance))
                 return false;
 
             return true;
@@ -293,8 +293,8 @@ namespace PurplePen
         float radius;                            // radius of the object (for hit-testing) -- unscaled.
 
 
-        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, float radius, PointF location) :
-           base(controlId, courseControlId, specialId, scaleRatio, appearance)
+        protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, float radius, PointF location) :
+           base(controlId, courseControlId, specialId, courseObjRatio, appearance)
        {
             this.gaps = gaps;
             this.movableGaps = gaps;
@@ -306,13 +306,13 @@ namespace PurplePen
         // Get the full radius of this point object. 
         public float FullRadius
         {
-            get { return radius * scaleRatio * appearance.controlCircleSize; }
+            get { return radius * courseObjRatio * appearance.controlCircleSize; }
         }
 
         // Get the radius that handles are placed on. Compensates for the line width. Used for cutting adjacent circles, and positioning handles
         public float ApparentRadius
         {
-            get {return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * scaleRatio) / 2.0F); }
+            get {return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * courseObjRatio) / 2.0F); }
         }
 
         protected override void AddToMap(Map map, SymDef symdef)
@@ -339,7 +339,7 @@ namespace PurplePen
         protected void HighlightCrossHair(Graphics g, Matrix xformWorldToPixel, Brush brush)
         {
             // Cross hair is 1.5mm in each direction.
-            float crossHairLength = 1.5F * scaleRatio;
+            float crossHairLength = 1.5F * courseObjRatio;
 
             // Get the points of the cross-hair.
             PointF[] pts = { new PointF(location.X - crossHairLength, location.Y), new PointF(location.X + crossHairLength, location.Y),
@@ -413,8 +413,8 @@ namespace PurplePen
         public LegGap[] movableGaps;              // Gaps that can be moved with a handle (can be null)
         float thickness;                               // thickness of the line  (unscaled)        
 
-        protected LineCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float thickness, SymPath path, LegGap[] gaps) :
-           base(controlId, courseControlId, specialId, scaleRatio, appearance)
+        protected LineCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, float thickness, SymPath path, LegGap[] gaps) :
+           base(controlId, courseControlId, specialId, courseObjRatio, appearance)
        {
            this.courseControlId2 = courseControlId2;
            this.thickness = thickness;
@@ -467,7 +467,7 @@ namespace PurplePen
        public override double DistanceFromPoint(PointF pt)
        {
            PointF closestPoint;
-           double dist = path.DistanceFromPoint(pt, out closestPoint) - (thickness / 2.0 * scaleRatio);
+           double dist = path.DistanceFromPoint(pt, out closestPoint) - (thickness / 2.0 * courseObjRatio);
            return Math.Max(0, dist);
        }
 
@@ -498,7 +498,7 @@ namespace PurplePen
            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
            // Get thickness of line.
-           float pixelThickness = TransformDistance(thickness * scaleRatio, xformWorldToPixel);
+           float pixelThickness = TransformDistance(thickness * courseObjRatio, xformWorldToPixel);
 
            SymPath[] gappedPaths = LegGap.SplitPathWithGaps(path, gaps);
 
@@ -619,8 +619,8 @@ namespace PurplePen
         // NOTE: if new fields are added, update Equals implementation.
         SymPathWithHoles path;                // closed path with the area to fill
 
-        protected AreaCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts) :
-           base(controlId, courseControlId, specialId, scaleRatio, appearance)
+        protected AreaCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts) :
+           base(controlId, courseControlId, specialId, courseObjRatio, appearance)
        {
             bool lastPtSynthesized = false;
 
@@ -759,9 +759,9 @@ namespace PurplePen
         // NOTE: if new fields are added, update Equals implementation.
         public RectangleF rect;                // rectangle with the area.
 
-        public RectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
+        public RectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, RectangleF rect)
             :
-           base(controlId, courseControlId, specialId, scaleRatio, appearance)
+           base(controlId, courseControlId, specialId, courseObjRatio, appearance)
         {
             this.rect = rect;
         }
@@ -937,8 +937,8 @@ namespace PurplePen
     {
         protected float aspect;                    // aspect to maintain: width / height
 
-        public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, RectangleF rect)
-            : base (controlId, courseControlId, specialId, scaleRatio, appearance, rect)
+        public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, RectangleF rect)
+            : base (controlId, courseControlId, specialId, courseObjRatio, appearance, rect)
         {
             if (rect.Height != 0)
                 aspect = rect.Width / rect.Height;
@@ -1282,8 +1282,8 @@ namespace PurplePen
     // A control circle
     class ControlCourseObj : PointCourseObj
     {
-        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 
+        public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0, 
                   (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 : NormalCourseAppearance.controlOutsideDiameter2017) / 2F, 
                   location)
         {
@@ -1292,13 +1292,13 @@ namespace PurplePen
         private float Diameter {
             get {
                 return (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 
-                                                         : NormalCourseAppearance.controlOutsideDiameter2017) * scaleRatio * appearance.controlCircleSize;
+                                                         : NormalCourseAppearance.controlOutsideDiameter2017) * courseObjRatio * appearance.controlCircleSize;
             }
         }
 
         private float LineThickness {
             get {
-                return NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth;
+                return NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth;
             }
         }
 
@@ -1307,7 +1307,7 @@ namespace PurplePen
             Glyph glyph = new Glyph();
             glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
             if (appearance.centerDotDiameter > 0.0F) {
-                glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * scaleRatio);
+                glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * courseObjRatio);
             }
             glyph.ConstructionComplete();
 
@@ -1328,7 +1328,7 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * appearance.lineWidth * scaleRatio, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * appearance.lineWidth * courseObjRatio, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner, 2 = lower-right corner
             float radius = (Diameter - LineThickness) / 2F;
@@ -1374,9 +1374,9 @@ namespace PurplePen
 
         CrossHairOptions crossHairOptions;
 
-        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, 
+        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, 
                               CourseAppearance appearance, float orientation, PointF location, CrossHairOptions crossHairOptions)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation,
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation,
                   (appearance.mapStandard == "2000") ? NormalCourseAppearance.startRadius2000 : NormalCourseAppearance.startRadius2017,
                   location)
         {
@@ -1392,7 +1392,7 @@ namespace PurplePen
             SymPath path = new SymPath(pts, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Start", "701", glyph, true);
@@ -1414,7 +1414,7 @@ namespace PurplePen
             PointF[] coords = (appearance.mapStandard == "2000") ? coords2000 : coords2017;
 
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
 
             // Get coordinates of the triangle and transform to pixel coords.
             PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[]) coords.Clone(), orientation)), location.X, location.Y);
@@ -1439,9 +1439,9 @@ namespace PurplePen
         // Coordinates of the tmap issue.
         static readonly PointF[] coords = { new PointF(0F, NormalCourseAppearance.mapIssueLength / 2.0F), new PointF(0F, - NormalCourseAppearance.mapIssueLength / 2.0F) };
 
-        public MapIssueCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio,
+        public MapIssueCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio,
                               CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, null, orientation, 0F, location)
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation, 0F, location)
         {
         }
 
@@ -1452,7 +1452,7 @@ namespace PurplePen
             SymPath path = new SymPath(pts, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * scaleRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Map Issue Point", "715", glyph, true);
@@ -1472,7 +1472,7 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.mapIssueWidth * scaleRatio * appearance.controlCircleSize, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, xformWorldToPixel);
 
             // Get coordinates of the feature and transform to pixel coords.
             PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[])coords.Clone(), orientation)), location.X, location.Y);
@@ -1491,9 +1491,9 @@ namespace PurplePen
     {
         CrossHairOptions crossHairOptions;
 
-        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, 
+        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, 
             CircleGap[] gaps, PointF location, CrossHairOptions crossHairOptions)
-            : base(controlId, courseControlId, Id<Special>.None, scaleRatio, appearance, gaps, 0, 
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0, 
                   ((appearance.mapStandard == "2000") ? NormalCourseAppearance.finishOutsideDiameter2000 : NormalCourseAppearance.finishOutsideDiameter2017) / 2F, 
                   location)
         {
@@ -1503,8 +1503,8 @@ namespace PurplePen
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, (5.35F * scaleRatio * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth));
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, 7.0F * scaleRatio * appearance.controlCircleSize);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, (5.35F * courseObjRatio * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth));
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, 7.0F * courseObjRatio * appearance.controlCircleSize);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Finish", "706", glyph, false);
@@ -1524,11 +1524,11 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
+            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner inner, 2 = lower-right corner inner, 3 = upper-left outer, 4=lower-right outer
-            float radiusOuter = ((7.0F * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * appearance.lineWidth) * scaleRatio) / 2F;
-            float radiusInner = ((5.35F * appearance.controlCircleSize - 2 * NormalCourseAppearance.lineThickness * appearance.lineWidth) * scaleRatio) / 2F;
+            float radiusOuter = ((7.0F * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * appearance.lineWidth) * courseObjRatio) / 2F;
+            float radiusInner = ((5.35F * appearance.controlCircleSize - 2 * NormalCourseAppearance.lineThickness * appearance.lineWidth) * courseObjRatio) / 2F;
             PointF[] pts = { location, new PointF(location.X - radiusInner, location.Y - radiusInner), new PointF(location.X + radiusInner, location.Y + radiusInner),
                                                                          new PointF(location.X - radiusOuter, location.Y - radiusOuter), new PointF(location.X + radiusOuter, location.Y + radiusOuter)};
             xformWorldToPixel.TransformPoints(pts);
@@ -1582,8 +1582,8 @@ namespace PurplePen
                 new PointF(-0.667F, -0.667F), new PointF(-2.0F, -0.667F), new PointF(-2.0F,  0.667F), new PointF(-0.667F, 0.667F), new PointF(-0.667F, 2.0F)
             };
 
-        public FirstAidCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 
+        public FirstAidCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0, 
                   (appearance.mapStandard == "2000") ? 1.5F : 2.0F, 
                   location)
         {
@@ -1689,8 +1689,8 @@ namespace PurplePen
 
         const float thickness2017 = 0.4F;
 
-        public WaterCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 
+        public WaterCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0, 
                   (appearance.mapStandard == "2000") ? 2.0F : 1.5F, 
                   location)
         {
@@ -1704,7 +1704,7 @@ namespace PurplePen
             PointF[] coords2 = (appearance.mapStandard == "2000") ? coords2_2000 : coords2_2017;
             PointF[] coords3 = (appearance.mapStandard == "2000") ? coords3_2000 : coords3_2017;
             PointF[] coords4 = (appearance.mapStandard == "2000") ? coords4_2000 : coords4_2017;
-            float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth : thickness2017 * scaleRatio;
+            float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth : thickness2017 * courseObjRatio;
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
             glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
@@ -1736,7 +1736,7 @@ namespace PurplePen
             PointF[] coords2 = (appearance.mapStandard == "2000") ? coords2_2000 : coords2_2017;
             PointF[] coords3 = (appearance.mapStandard == "2000") ? coords3_2000 : coords3_2017;
             PointF[] coords4 = (appearance.mapStandard == "2000") ? coords4_2000 : coords4_2017;
-            float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth : thickness2017 * scaleRatio;
+            float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth : thickness2017 * courseObjRatio;
 
             GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
@@ -1772,8 +1772,8 @@ namespace PurplePen
         static readonly PointF[] coords1 = { new PointF(-0.85F, -1.5F), new PointF(-0.35F, -0.65F), new PointF(-0.35F, 0.65F), new PointF(-0.85F, 1.5F) };
         static readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
 
-        public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float scaleRatio, CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, specialId, scaleRatio, appearance, null, orientation, 1.72F, location)
+        public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, float orientation, PointF location)
+            : base(controlId, courseControlId, specialId, courseObjRatio, appearance, null, orientation, 1.72F, location)
         {
         }
 
@@ -1800,8 +1800,8 @@ namespace PurplePen
             SymPath path1, path2;
             
             GetPaths(out path1, out path2);
-            glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
-            glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
@@ -1822,7 +1822,7 @@ namespace PurplePen
             grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
-            thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
+            thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
 
             // Get the paths.
             GetPaths(out path1, out path2);
@@ -1861,8 +1861,8 @@ namespace PurplePen
         PointKind[] kinds2 =  { PointKind.Normal, PointKind.Normal };
         PointF[] coords2 = { new PointF(0F, -2F), new PointF(0F, 2F) };
 
-        public RegMarkCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 2.0F, location)
+        public RegMarkCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0, 2.0F, location)
         {
         }
 
@@ -1871,10 +1871,10 @@ namespace PurplePen
             Glyph glyph = new Glyph();
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path, lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path, lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
@@ -1895,7 +1895,7 @@ namespace PurplePen
             grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
-            thickness = TransformDistance(lineThickness * scaleRatio * appearance.lineWidth, xformWorldToPixel);
+            thickness = TransformDistance(lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
 
             // Get the paths.
             path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
@@ -1920,8 +1920,8 @@ namespace PurplePen
         PointKind[] kinds2 =  { PointKind.Normal, PointKind.Normal };
         PointF[] coords2 = { new PointF(1.06F, -1.06F), new PointF(-1.06F, 1.06F) };
 
-        public ForbiddenCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, null, 0, 1.5F, location)
+        public ForbiddenCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0, 1.5F, location)
         {
         }
 
@@ -1933,10 +1933,10 @@ namespace PurplePen
             // otherwise it would look kind of weird. The scale with the control circle size instead to maintain the ratio.
 
             SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, 0.35F * scaleRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path, 0.35F * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
 
             path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, 0.35F * scaleRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(symColor, path, 0.35F * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
@@ -1957,7 +1957,7 @@ namespace PurplePen
             grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
             // Get line thickness.
-            thickness = TransformDistance(NormalCourseAppearance.lineThickness * scaleRatio * appearance.controlCircleSize, xformWorldToPixel);
+            thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.controlCircleSize, xformWorldToPixel);
 
             // Get the paths.
             path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
@@ -1977,14 +1977,14 @@ namespace PurplePen
     // A normal leg
     class LegCourseObj : LineCourseObj
     {
-        public LegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, NormalCourseAppearance.lineThickness * appearance.lineWidth, path, gaps)
+        public LegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float courseObjRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, courseObjRatio, appearance, NormalCourseAppearance.lineThickness * appearance.lineWidth, path, gaps)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Line", "704", symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Line", "704", symColor, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1999,18 +1999,18 @@ namespace PurplePen
     // A flagged leg
     class FlaggedLegCourseObj : LineCourseObj
     {
-        public FlaggedLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, NormalCourseAppearance.lineThickness * appearance.lineWidth, path, gaps)
+        public FlaggedLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float courseObjRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, courseObjRatio, appearance, NormalCourseAppearance.lineThickness * appearance.lineWidth, path, gaps)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Marked route", "705", symColor, NormalCourseAppearance.lineThickness * scaleRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Marked route", "705", symColor, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
 
             LineSymDef.DashInfo dashes = new LineSymDef.DashInfo();
-            dashes.dashLength = dashes.firstDashLength = dashes.lastDashLength = 2.0F * scaleRatio;
-            dashes.gapLength = 0.5F * scaleRatio;
+            dashes.dashLength = dashes.firstDashLength = dashes.lastDashLength = 2.0F * courseObjRatio;
+            dashes.gapLength = 0.5F * courseObjRatio;
             dashes.minGaps = 1;
             symdef.SetDashInfo(dashes);
 
@@ -2030,14 +2030,14 @@ namespace PurplePen
     {
         const float LineThickness = 0.55F;
 
-        public TopologyLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float scaleRatio, CourseAppearance appearance, SymPath path)
-            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, scaleRatio, appearance, LineThickness, path, null)
+        public TopologyLegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float courseObjRatio, CourseAppearance appearance, SymPath path)
+            : base(controlId, courseControlId, courseControlId2, Id<Special>.None, courseObjRatio, appearance, LineThickness, path, null)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Line", "704", symColor, LineThickness * scaleRatio, LineJoin.Round, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Line", "704", symColor, LineThickness * courseObjRatio, LineJoin.Round, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2054,14 +2054,14 @@ namespace PurplePen
     // A boundary
     class BoundaryCourseObj : LineCourseObj
     {
-        public BoundaryCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, SymPath path)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, 0.7F * appearance.lineWidth, path, null)
+        public BoundaryCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, SymPath path)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, 0.7F * appearance.lineWidth, path, null)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", symColor, 0.7F * scaleRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", symColor, 0.7F * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2332,8 +2332,8 @@ namespace PurplePen
     // An out of bounds area
     class OOBCourseObj : AreaCourseObj
     {
-        public OOBCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, pts)
+        public OOBCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, pts)
         {
         }
 
@@ -2343,8 +2343,8 @@ namespace PurplePen
             if (appearance.mapStandard == "2000") {
                 AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
                 hatchInfo.hatchColor = symColor;
-                hatchInfo.hatchWidth = 0.25F * scaleRatio;
-                hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+                hatchInfo.hatchWidth = 0.25F * courseObjRatio;
+                hatchInfo.hatchSpacing = 0.6F * courseObjRatio;
                 hatchInfo.hatchAngle = 90;
                 symdef.AddHatching(hatchInfo);
                 symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.OOB_OcadToolbox);
@@ -2352,8 +2352,8 @@ namespace PurplePen
             else {
                 AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
                 hatchInfo.hatchColor = symColor;
-                hatchInfo.hatchWidth = 0.25F * scaleRatio;
-                hatchInfo.hatchSpacing = 0.8F * scaleRatio;
+                hatchInfo.hatchWidth = 0.25F * courseObjRatio;
+                hatchInfo.hatchSpacing = 0.8F * courseObjRatio;
                 hatchInfo.hatchAngle = 45;
                 symdef.AddHatching(hatchInfo);
                 hatchInfo.hatchAngle = 135;
@@ -2369,8 +2369,8 @@ namespace PurplePen
     // A dangerous area
     class DangerousCourseObj : AreaCourseObj
     {
-        public DangerousCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, pts)
+        public DangerousCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, pts)
         {
         }
 
@@ -2379,12 +2379,12 @@ namespace PurplePen
             AreaSymDef symdef = new AreaSymDef("Dangerous area", "710", null, null);
             AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
             hatchInfo.hatchColor = symColor;
-            hatchInfo.hatchWidth = 0.25F * scaleRatio;
+            hatchInfo.hatchWidth = 0.25F * courseObjRatio;
             if (appearance.mapStandard == "2000") {
-                hatchInfo.hatchSpacing = 0.6F * scaleRatio;
+                hatchInfo.hatchSpacing = 0.6F * courseObjRatio;
             }
             else {
-                hatchInfo.hatchSpacing = 0.8F * scaleRatio;
+                hatchInfo.hatchSpacing = 0.8F * courseObjRatio;
             }
             hatchInfo.hatchAngle = 45;
             symdef.AddHatching(hatchInfo);
@@ -2399,8 +2399,8 @@ namespace PurplePen
     // A dangerous area
     class WhiteOutCourseObj: AreaCourseObj
     {
-        public WhiteOutCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] pts)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, pts)
+        public WhiteOutCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, pts)
         {
         }
         
@@ -2423,10 +2423,10 @@ namespace PurplePen
     {
         public PointF centerPoint;
 
-        public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
+        public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name,
                    appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, SpecialColor.Purple,
-                   NormalCourseAppearance.controlNumberFont.EmHeight * scaleRatio * appearance.numberHeight, scaleRatio * appearance.numberOutlineWidth)
+                   NormalCourseAppearance.controlNumberFont.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -2449,9 +2449,9 @@ namespace PurplePen
     {
         public PointF centerPoint;
 
-        public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
+        public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, SpecialColor.Purple,
-            NormalCourseAppearance.controlCodeFont.EmHeight * scaleRatio * appearance.numberHeight, scaleRatio * appearance.numberOutlineWidth)
+            NormalCourseAppearance.controlCodeFont.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -2474,9 +2474,9 @@ namespace PurplePen
     {
         public PointF centerPoint;
 
-        public VariationCodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float scaleRatio, CourseAppearance appearance, string text, PointF centerPoint)
+        public VariationCodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.variationCodeFont.Name, NormalCourseAppearance.variationCodeFont.Style, SpecialColor.Purple,
-            NormalCourseAppearance.variationCodeFont.EmHeight * scaleRatio, 0)
+            NormalCourseAppearance.variationCodeFont.EmHeight * courseObjRatio, 0)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -2828,8 +2828,8 @@ namespace PurplePen
         public readonly Bitmap imageBitmap;
         private ImageLoader imageLoader;
 
-        public ImageCourseObj(Id<Special> specialId, float scaleRatio, CourseAppearance appearance, PointF[] locations, string imageName, Bitmap imageBitmap)
-            :base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, scaleRatio, appearance, Geometry.RectFromPoints(locations[0].X, locations[0].Y, locations[1].X, locations[1].Y))
+        public ImageCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] locations, string imageName, Bitmap imageBitmap)
+            :base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, Geometry.RectFromPoints(locations[0].X, locations[0].Y, locations[1].X, locations[1].Y))
         {
             this.imageName = imageName;
             this.imageBitmap = imageBitmap;
@@ -2963,8 +2963,8 @@ namespace PurplePen
         public readonly Id<CourseControl> courseControlId2; 
 
         public TopologyDropTargetCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, 
-                                          float scaleRatio, CourseAppearance appearance, PointF location, LegInsertionLoc legInsertionLoc)
-            : base(controlId, courseControlId1, Id<Special>.None, scaleRatio, appearance, null, 0, RADIUS, location)
+                                          float courseObjRatio, CourseAppearance appearance, PointF location, LegInsertionLoc legInsertionLoc)
+            : base(controlId, courseControlId1, Id<Special>.None, courseObjRatio, appearance, null, 0, RADIUS, location)
         {
             this.courseControlId2 = courseControlId2;
             this.legInsertionLoc = legInsertionLoc;

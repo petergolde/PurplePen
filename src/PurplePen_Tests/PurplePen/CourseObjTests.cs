@@ -180,7 +180,7 @@ namespace PurplePen.Tests
         // Reduce the scale by 50% and check also.
         internal void CheckRenderBitmapSmall(CourseObj courseobj, string basename)
         {
-            courseobj.scaleRatio *= 0.5F;
+            courseobj.courseObjRatio *= 0.5F;
 
             CheckRenderBitmap(courseobj, basename + "_small");
         }
@@ -188,7 +188,7 @@ namespace PurplePen.Tests
         // Reduce the scale by 50% and check also.
         internal void CheckRenderBitmapSmall(CourseObj courseobj, string basename, Color backColor)
         {
-            courseobj.scaleRatio *= 0.5F;
+            courseobj.courseObjRatio *= 0.5F;
 
             CheckRenderBitmap(courseobj, basename + "_small", backColor);
         }
@@ -1095,7 +1095,7 @@ namespace PurplePen.Tests
         // Reduce the scale by 50% and check also.
         internal void CheckHighlightBitmapSmall(CourseObj courseobj, string basename)
         {
-            courseobj.scaleRatio *= 0.5F;
+            courseobj.courseObjRatio *= 0.5F;
 
             CheckHighlightBitmap(courseobj, basename + "_small");
         }
@@ -1103,7 +1103,7 @@ namespace PurplePen.Tests
         // Reduce the scale by 50% and check also.
         internal void CheckHighlightBitmapTiny(CourseObj courseobj, string basename)
         {
-            courseobj.scaleRatio *= 0.2F;
+            courseobj.courseObjRatio *= 0.2F;
 
             CheckHighlightBitmap(courseobj, basename + "_tiny");
         }
@@ -1576,7 +1576,7 @@ namespace PurplePen.Tests
         // Reduce the scale by 50% and check also.
         internal void CheckOffsetBitmapSmall(CourseObj courseobj, string basename)
         {
-            courseobj.scaleRatio *= 0.5F;
+            courseobj.courseObjRatio *= 0.5F;
 
             CheckOffsetBitmap(courseobj, basename + "_small");
         }
