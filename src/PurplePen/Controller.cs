@@ -516,6 +516,17 @@ namespace PurplePen
             ev.printArea = info.printArea;
             ev.descriptionStandard = info.descriptionStandard;
             ev.courseAppearance.mapStandard = info.mapStandard;
+            if (info.mapStandard == "2000") {
+                ev.courseAppearance.itemScaling = ItemScaling.None;
+            }
+            else {
+                if (info.allControlsPrintScale >= 9500 && info.allControlsPrintScale <= 15500) {
+                    ev.courseAppearance.itemScaling = ItemScaling.RelativeTo15000;
+                }
+                else {
+                    ev.courseAppearance.itemScaling = ItemScaling.RelativeToMap;
+                }
+            }
             eventDB.ChangeEvent(ev);
 
             Settings.Default.NewEventMapStandard = info.mapStandard;
