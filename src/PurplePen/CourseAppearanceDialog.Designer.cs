@@ -69,6 +69,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.groupBoxOcadMap = new System.Windows.Forms.GroupBox();
             this.checkBoxOverprint = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBoxScaleItemSizes = new System.Windows.Forms.ComboBox();
             this.groupBoxSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
@@ -97,6 +99,8 @@
             // 
             // groupBoxSizes
             // 
+            this.groupBoxSizes.Controls.Add(this.comboBoxScaleItemSizes);
+            this.groupBoxSizes.Controls.Add(this.label11);
             this.groupBoxSizes.Controls.Add(this.labelAutoGapSize);
             this.groupBoxSizes.Controls.Add(this.label12);
             this.groupBoxSizes.Controls.Add(this.upDownLegGapSize);
@@ -486,6 +490,22 @@
             this.checkBoxOverprint.Name = "checkBoxOverprint";
             this.checkBoxOverprint.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // comboBoxScaleItemSizes
+            // 
+            this.comboBoxScaleItemSizes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxScaleItemSizes.FormattingEnabled = true;
+            this.comboBoxScaleItemSizes.Items.AddRange(new object[] {
+            resources.GetString("comboBoxScaleItemSizes.Items"),
+            resources.GetString("comboBoxScaleItemSizes.Items1"),
+            resources.GetString("comboBoxScaleItemSizes.Items2")});
+            resources.ApplyResources(this.comboBoxScaleItemSizes, "comboBoxScaleItemSizes");
+            this.comboBoxScaleItemSizes.Name = "comboBoxScaleItemSizes";
+            // 
             // CourseAppearanceDialog
             // 
             resources.ApplyResources(this, "$this");
@@ -572,5 +592,7 @@
         private System.Windows.Forms.CheckBox checkBoxBlendPurple;
         private System.Windows.Forms.GroupBox groupBoxOcadMap;
         private System.Windows.Forms.CheckBox checkBoxOverprint;
+        private System.Windows.Forms.ComboBox comboBoxScaleItemSizes;
+        private System.Windows.Forms.Label label11;
     }
 }

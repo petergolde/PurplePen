@@ -59,6 +59,11 @@ namespace PurplePen
                 result.numberBold = (comboBoxControlNumberStyle.SelectedIndex == 1);
                 result.numberOutlineWidth = ((float) upDownOutlineWidth.Value);
                 result.autoLegGapSize = ((float) upDownLegGapSize.Value);
+                switch (comboBoxScaleItemSizes.SelectedIndex) {
+                    case 0: result.itemScaling = ItemScaling.None; break;
+                    case 1: result.itemScaling = ItemScaling.RelativeToMap; break;
+                    case 2: result.itemScaling = ItemScaling.RelativeTo15000; break;
+                }
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
                 result.purpleColorBlend = checkBoxBlendPurple.Checked;
                 result.purpleC = (float) (upDownCyan.Value / 100);
@@ -91,6 +96,14 @@ namespace PurplePen
 
                 upDownOutlineWidth.Value = (decimal) value.numberOutlineWidth;
                 upDownLegGapSize.Value = (decimal) value.autoLegGapSize;
+                switch (value.itemScaling) {
+                    case ItemScaling.None:
+                        comboBoxScaleItemSizes.SelectedIndex = 0; break;
+                    case ItemScaling.RelativeToMap:
+                        comboBoxScaleItemSizes.SelectedIndex = 1; break;
+                    case ItemScaling.RelativeTo15000:
+                        comboBoxScaleItemSizes.SelectedIndex = 2; break;
+                }
 
                 checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.centerDotDiameter == 0.0F && value.numberBold == false);
 

@@ -473,6 +473,7 @@ namespace PurplePen.Tests
             e.allControlsDescKind = DescriptionKind.Text;
             e.descriptionLangId = "bg";
             e.courseAppearance.useOcadOverprint = true;
+            e.courseAppearance.itemScaling = ItemScaling.RelativeTo15000;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);
@@ -512,7 +513,7 @@ namespace PurplePen.Tests
             e.courseAppearance.purpleM = 0.5F;
             e.courseAppearance.purpleY = 0.6F;
             e.courseAppearance.purpleK = 0.74F;
-            e.courseAppearance.scaleSizesWithMap = true;
+            e.courseAppearance.itemScaling = ItemScaling.RelativeToMap;
             e.courseAppearance.descriptionsPurple = true;
 
             e.courseAppearance.mapStandard = "2017";

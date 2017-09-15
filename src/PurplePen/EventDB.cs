@@ -2215,6 +2215,9 @@ namespace PurplePen
     // The type of map used.
     public enum MapType { None, OCAD, Bitmap, PDF };
 
+    // The type of item scaling
+    public enum ItemScaling { None, RelativeToMap, RelativeTo15000}
+
     // Describes appearance of the courses.
     public class CourseAppearance
     {
@@ -2235,7 +2238,7 @@ namespace PurplePen
         public bool useOcadOverprint = false;       // If true, use overprint effect when rendering OCAD map.
 
         public string mapStandard = "2000";         // Which ISOM standard to use.
-        public bool scaleSizesWithMap = false;      // If true, objects scale up with map on different print scales (ISOM 2017 style). Otherwise stay the same (ISOM 2000 style).
+        public ItemScaling itemScaling = ItemScaling.None;      // If not None, how objects scale up with map on different print scales (ISOM 2017 style). Otherwise stay the same (ISOM 2000 style).
 
         public float ControlCircleOutsideDiameter {
             get {
@@ -2316,7 +2319,7 @@ namespace PurplePen
                 return false;
             if (mapStandard != other.mapStandard)
                 return false;
-            if (scaleSizesWithMap != other.scaleSizesWithMap)
+            if (itemScaling != other.itemScaling)
                 return false;
 
             return true;
@@ -2660,7 +2663,7 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("center-dot-diameter", XmlConvert.ToString(courseAppearance.centerDotDiameter));
             if (courseAppearance.numberHeight != 1.0F)
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
-            xmloutput.WriteAttributeString("scale-sizes-with-map", XmlConvert.ToString(courseAppearance.scaleSizesWithMap));
+            xmloutput.WriteAttributeString("scale-sizes", courseAppearance.itemScaling.ToString());
             if (courseAppearance.numberBold)
                 xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
             if (courseAppearance.numberOutlineWidth > 0)
@@ -2782,7 +2785,7 @@ namespace PurplePen
                         courseAppearance.lineWidth = xmlinput.GetAttributeFloat("line-width-ratio", 1.0F);
                         courseAppearance.centerDotDiameter = xmlinput.GetAttributeFloat("center-dot-diameter", 0.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
-                        courseAppearance.scaleSizesWithMap = xmlinput.GetAttributeBool("scale-sizes-with-map", false);
+                        courseAppearance.itemScaling = (ItemScaling) Enum.Parse(typeof(ItemScaling), xmlinput.GetAttributeString("scale-sizes", "None"));
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
                         courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
