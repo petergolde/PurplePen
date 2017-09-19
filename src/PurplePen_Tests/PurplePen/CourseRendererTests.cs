@@ -373,6 +373,21 @@ namespace PurplePen.Tests
 
         }
 
+        [TestMethod]
+        public void ScalingMethods()
+        {
+            CourseAppearance appearance = (CourseAppearance) defaultCourseAppearance.Clone();
+
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(4));
+            appearance.itemScaling = ItemScaling.None;
+            CheckCourse("courserenderer\\scaling.ppen", courseDesignator, false, "scaling_noscale", new RectangleF(-22, -33, 160, 160), appearance);
+            appearance.itemScaling = ItemScaling.RelativeToMap;
+            CheckCourse("courserenderer\\scaling.ppen", courseDesignator, false, "scaling_maprelative", new RectangleF(-22, -33, 160, 160), appearance);
+            appearance.itemScaling = ItemScaling.RelativeTo15000;
+            CheckCourse("courserenderer\\scaling.ppen", courseDesignator, false, "scaling_15krelative", new RectangleF(-22, -33, 160, 160), appearance);
+
+        }
+
     }
 }
 
