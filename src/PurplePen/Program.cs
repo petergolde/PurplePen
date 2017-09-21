@@ -37,6 +37,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Globalization;
 using CrashReporterDotNET;
+using System.Configuration;
+using System.IO;
 
 namespace PurplePen
 {
@@ -50,6 +52,26 @@ namespace PurplePen
         [STAThread]
         static void Main(string[] args)
         {
+            // Make sure that settings aren't corrupted, and fix them.
+            try {
+                string uiLanguage = Settings.Default.UILanguage;
+            }
+            catch (ConfigurationErrorsException ex) { //(requires System.Configuration)
+                // Once the configuration system is corrupt, there doesn't appear a way to 
+                // fix it (Settings.Default.Reload() doesn't work, even though you would
+                // think it would. So restarting the application appears to be the best way.
+                // We inform the user in case deleting doesn't work they can try to delete the file
+                // themselves. This is so rare it isn't worth localizing the message.
+
+                string filename = ((ConfigurationErrorsException)ex.InnerException).Filename;
+                MessageBox.Show(string.Format("The configuration file '{0}' is corrupted. Purple Pen will delete this file and restart.", filename),
+                                "Corrupt Configuration File",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                File.Delete(filename);
+                System.Diagnostics.Process.Start(Application.ExecutablePath); // start new instance of application
+                return;  // exit current instance of application.
+            }
+
             // Enable crash reporting.
             Application.ThreadException += (sender, e) => SendCrashReport(e.Exception);
             AppDomain.CurrentDomain.UnhandledException += (sender, e) => {
@@ -59,6 +81,7 @@ namespace PurplePen
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
 
             InitUILanguage();
             InitClientId();
