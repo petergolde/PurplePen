@@ -365,7 +365,7 @@ namespace PurplePen
         // Select a course object in the current displayed course.
         public void SelectCourseObject(CourseObj courseObject)
         {
-            if (courseObject is ControlCourseObj || courseObject is StartCourseObj || courseObject is FinishCourseObj ||
+            if (courseObject is ControlCourseObj || courseObject is StartCourseObj || courseObject is FinishCourseObj || courseObject is MapIssueCourseObj ||
                 (courseObject is CrossingCourseObj && courseObject.specialId.IsNone) || courseObject is CodeCourseObj || courseObject is ControlNumberCourseObj)
             {
                 SetSelection(SelectionKind.Control, courseObject.courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, courseObject.controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
@@ -763,7 +763,7 @@ namespace PurplePen
                             ((LineCourseObj) courseobj).courseControlId2 == selectedCourseControl2) 
                     {
                         // The leg may be made up of multiple parts due to flagging and gaps. Create a single course object for the whole thing.
-                        CourseObj legObject = CourseFormatter.CreateSimpleLeg(eventDB, courseobj.courseObjRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2);
+                        CourseObj legObject = CourseFormatter.CreateSimpleLeg(eventDB, activeCourseView, courseobj.courseObjRatio, courseobj.appearance, selectedCourseControl, selectedCourseControl2);
                         if (legObject != null)
                             list.Add(legObject);
                         break;

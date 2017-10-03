@@ -150,6 +150,7 @@ namespace PurplePen
             this.addVariationMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addTextLineMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addMapIssueMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMandatoryCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addOutOfBoundsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -260,6 +261,7 @@ namespace PurplePen
             this.mapExchangeSeparateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addVariationToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.specialItemToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mapIssuePointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mandatoryCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionalCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outOfBoundsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -925,6 +927,7 @@ namespace PurplePen
             this.addVariationMenu,
             this.addTextLineMenu,
             this.toolStripMenuItem2,
+            this.addMapIssueMenu,
             this.addMandatoryCrossingMenu,
             this.addOptCrossingMenu,
             this.addOutOfBoundsMenu,
@@ -1003,6 +1006,12 @@ namespace PurplePen
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            // 
+            // addMapIssueMenu
+            // 
+            this.addMapIssueMenu.Name = "addMapIssueMenu";
+            resources.ApplyResources(this.addMapIssueMenu, "addMapIssueMenu");
+            this.addMapIssueMenu.Click += new System.EventHandler(this.addMapIssueMenu_Click);
             // 
             // addMandatoryCrossingMenu
             // 
@@ -1749,6 +1758,7 @@ namespace PurplePen
             // specialItemToolStripMenu
             // 
             this.specialItemToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapIssuePointToolStripMenuItem,
             this.mandatoryCrossingPointToolStripMenuItem,
             this.optionalCrossingPointToolStripMenuItem,
             this.outOfBoundsToolStripMenuItem,
@@ -1766,6 +1776,12 @@ namespace PurplePen
             this.rectangleToolStripMenuItem});
             resources.ApplyResources(this.specialItemToolStripMenu, "specialItemToolStripMenu");
             this.specialItemToolStripMenu.Name = "specialItemToolStripMenu";
+            // 
+            // mapIssuePointToolStripMenuItem
+            // 
+            resources.ApplyResources(this.mapIssuePointToolStripMenuItem, "mapIssuePointToolStripMenuItem");
+            this.mapIssuePointToolStripMenuItem.Name = "mapIssuePointToolStripMenuItem";
+            this.mapIssuePointToolStripMenuItem.Click += new System.EventHandler(this.addMapIssueMenu_Click);
             // 
             // mandatoryCrossingPointToolStripMenuItem
             // 
@@ -2204,5 +2220,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mapStd2000Menu;
         private System.Windows.Forms.ToolStripMenuItem mapStd2017Menu;
+        private System.Windows.Forms.ToolStripMenuItem addMapIssueMenu;
+        private System.Windows.Forms.ToolStripMenuItem mapIssuePointToolStripMenuItem;
     }
 }

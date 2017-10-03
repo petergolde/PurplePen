@@ -388,7 +388,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.MapIssue:
-                highlight = new MapIssueCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, courseObjRatio, appearance, 0, highlightLocation);
+                highlight = new MapIssueCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, courseObjRatio, appearance, 0, highlightLocation, true);
                 break;
 
             case ControlPointKind.Start:
@@ -431,7 +431,7 @@ namespace PurplePen
         {
             LegGap[] gaps;
 
-            SymPath path = CourseFormatter.GetLegPath(eventDB, pt1, kind1, controlId1, pt2, kind2, controlId2, courseObjRatio, appearance, out gaps);
+            SymPath path = CourseFormatter.GetLegPath(eventDB, pt1, kind1, controlId1, pt2, kind2, controlId2, float.NaN, courseObjRatio, appearance, out gaps);
             if (path != null)
                 return new LegCourseObj(controlId1, Id<CourseControl>.None, Id<CourseControl>.None, courseObjRatio, appearance, path, null);     // We never display the gaps, because it looks dumb.
             else

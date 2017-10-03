@@ -125,7 +125,7 @@ namespace PurplePen
                     // Get the object(s) associated with the leg(s) to the next control.
                     if (controlView.legTo != null) {
                         for (int leg = 0; leg < controlView.legTo.Length; ++leg) {
-                            CourseObj[] courseObjs = CreateLeg(eventDB, courseObjRatio, appearance, controlView.courseControlIds[leg], controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
+                            CourseObj[] courseObjs = CreateLeg(eventDB, courseView, courseObjRatio, appearance, controlView.courseControlIds[leg], controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
                             if (courseObjs != null) {
                                 foreach (CourseObj o in courseObjs) {
                                     o.layer = layer;
@@ -609,7 +609,7 @@ namespace PurplePen
 
             switch (control.kind) {
             case ControlPointKind.MapIssue:
-                courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
+                courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, false);
                 break;
 
             case ControlPointKind.Start:
@@ -653,7 +653,7 @@ namespace PurplePen
 
         // Create a single object associated with the leg from courseControlId1 to courseControlId2. Does not consider
         // flagging (but does consider bends and gaps.) Used for highlighting on the map. 
-        public static CourseObj CreateSimpleLeg(EventDB eventDB, float courseObjRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2)
+        public static CourseObj CreateSimpleLeg(EventDB eventDB, CourseView courseView, float courseObjRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2)
         {
             Id<ControlPoint> controlId1 = eventDB.GetCourseControl(courseControlId1).control;
             Id<ControlPoint> controlId2 = eventDB.GetCourseControl(courseControlId2).control;
@@ -661,7 +661,7 @@ namespace PurplePen
             ControlPoint control2 = eventDB.GetControl(controlId2);
             LegGap[] gaps;
 
-            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlId1, control2.location, control2.kind, controlId2, courseObjRatio, appearance, out gaps);
+            SymPath legPath = GetLegPath(eventDB, control1.location, control1.kind, controlId1, control2.location, control2.kind, controlId2, ComputeStartAngleOut(eventDB, courseView), courseObjRatio, appearance, out gaps);
             if (legPath == null)
                 return null;
 
@@ -670,7 +670,7 @@ namespace PurplePen
 
         // Create the objects associated with the leg from controlView1 to controlView2. Could be multiple because
         // a leg may be partly flagged, and so forth. Gaps do not create separate course objects.
-        private static CourseObj[] CreateLeg(EventDB eventDB, float courseObjRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
+        private static CourseObj[] CreateLeg(EventDB eventDB, CourseView courseView, float courseObjRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
         {
             ControlPoint control1 = eventDB.GetControl(controlView1.controlId);
             ControlPoint control2 = eventDB.GetControl(controlView2.controlId);
@@ -684,8 +684,8 @@ namespace PurplePen
             // Get the path of the line, and the gaps.
             SymPath legPath = GetLegPath(eventDB, 
                                          control1.location, controlView1.hiddenControl ? ControlPointKind.None : control1.kind, controlView1.controlId, 
-                                         control2.location, controlView2.hiddenControl ? ControlPointKind.None : control2.kind, controlView2.controlId, 
-                                         courseObjRatio, appearance, out gaps);
+                                         control2.location, controlView2.hiddenControl ? ControlPointKind.None : control2.kind, controlView2.controlId,
+                                         ComputeStartAngleOut(eventDB, courseView), courseObjRatio, appearance, out gaps);
             if (legPath == null)
                 return null;
 
@@ -736,7 +736,9 @@ namespace PurplePen
         // be of zero length, return null. The controlIds for the start and end points are optional -- if supplied, they are used
         // to deal with bends and gaps. If either is None, then the legs don't use bends or gaps. Returns the gaps to used
         // with the radius subtracted from them.
-        public static SymPath GetLegPath(EventDB eventDB, PointF pt1, ControlPointKind kind1, Id<ControlPoint> controlId1, PointF pt2, ControlPointKind kind2, Id<ControlPoint> controlId2, float courseObjRatio, CourseAppearance appearance, out LegGap[] gaps)
+        public static SymPath GetLegPath(EventDB eventDB, PointF pt1, ControlPointKind kind1, Id<ControlPoint> controlId1, 
+                                                          PointF pt2, ControlPointKind kind2, Id<ControlPoint> controlId2, double angleOutStart,
+                                                          float courseObjRatio, CourseAppearance appearance, out LegGap[] gaps)
         {
             PointF[] bends = null;
             gaps = null;
@@ -753,7 +755,21 @@ namespace PurplePen
                 }
             }
 
-            return GetLegPath(pt1, GetLegRadius(kind1, courseObjRatio, appearance), pt2, GetLegRadius(kind2, courseObjRatio, appearance), bends, gaps);
+            double legRadius1 = GetLegRadius(kind1, courseObjRatio, appearance);
+            double legRadius2 = GetLegRadius(kind2, courseObjRatio, appearance);
+
+            if (kind2 == ControlPointKind.Start && !double.IsNaN(angleOutStart)) {
+                double angleInStart;
+                if (bends == null || bends.Length == 0) {
+                    angleInStart = Math.Atan2(pt2.Y - pt1.Y, pt2.X - pt1.X);
+                }
+                else {
+                    angleInStart = Math.Atan2(pt2.Y - bends[bends.Length - 1].Y, pt2.X - bends[bends.Length - 1].X);
+                }
+                legRadius2 *= StartTriangleRadiusAdjustment(angleInStart, angleOutStart);
+            }
+
+            return GetLegPath(pt1, legRadius1, pt2, legRadius2, bends, gaps);
         }
 
         // Create a path from pt1 to pt2, with the given radius around the legs. If the leg would
@@ -819,7 +835,21 @@ namespace PurplePen
             }
         }
 
-        // Get the angle from the given control index to the next control. 
+        // Get the angle, in radians, that the start angle is 
+        public static double ComputeStartAngleOut(EventDB eventDB, CourseView courseView)
+        {
+            for (int i = 0; i < courseView.ControlViews.Count; ++i) {
+                CourseView.ControlView controlView = courseView.ControlViews[i];
+
+                if (eventDB.GetControl(controlView.controlId).kind == ControlPointKind.Start) {
+                    return ComputeAngleOut(eventDB, courseView, i);
+                }
+            }
+
+            return double.NaN;
+        }
+
+        // Get the angle, in radians, from the given control index to the next control. 
         public static double ComputeAngleOut(EventDB eventDB, CourseView courseView, int controlIndex)
         {
             PointF pt1 = eventDB.GetControl(courseView.ControlViews[controlIndex].controlId).location;
@@ -841,6 +871,30 @@ namespace PurplePen
             }
 
             return Math.Atan2(pt2.Y - pt1.Y, pt2.X - pt1.X);
+        }
+
+        // Get the amount to adjust the radius of a triage for a line going in at angleIn, assuming the triangle
+        // is oriented to point to angleOut;
+        private static double StartTriangleRadiusAdjustment(double angleIn, double angleOut)
+        {
+            if (double.IsNaN(angleIn) || double.IsNaN(angleOut))
+                return 1;
+
+            double oneThirdCircle = Math.PI * 2.0 / 3.0;
+            double netAngle = Math.Abs(Math.IEEERemainder(angleOut - angleIn, oneThirdCircle));
+
+            // Find the intersection between a ray coming from the origin at the given net angle, and a side
+            // of a triangle. netAngle has been constrained by symmetry to intersect that side.
+            PointF rayEnd = new PointF((float) (2 * Math.Cos(netAngle)), (float)(2 * Math.Sin(netAngle)));
+            PointF end1 = new PointF((float) Math.Cos(oneThirdCircle / 2), (float) Math.Sin(oneThirdCircle / 2));
+            PointF end2 = new PointF(-end1.X, end1.Y);
+            PointF intersectionPoint;
+            if (Geometry.LineSegmentsIntersect(end1, end2, new PointF(0, 0), rayEnd, out intersectionPoint)) {
+                return Geometry.Distance(new PointF(0, 0), intersectionPoint);
+            }
+            else {
+                return 1;
+            }
         }
 
         // Cut any overlapping control circles in the given layer.

@@ -365,16 +365,27 @@ namespace PurplePen
             else
                 courseControl = eventDB.GetCourseControl(controlView.courseControlIds[0]);
 
-            Debug.Assert(control.kind == ControlPointKind.Finish || control.kind == ControlPointKind.CrossingPoint);
+            Debug.Assert(control.kind == ControlPointKind.Finish || control.kind == ControlPointKind.CrossingPoint || control.kind == ControlPointKind.MapIssue);
 
             DescriptionLine line = new DescriptionLine();
             line.kind = DescriptionLineKind.Directive;
             line.boxes = new object[2];
 
             // Figure out the distance in the directive, rounded to nearest 10m.
+            float distance = float.NaN;
             string distanceText;
-            if (controlViewPrev != null && controlViewPrev.legLength != null) {
-                float distance = controlViewPrev.legLength[0];
+
+            if (control.kind == ControlPointKind.MapIssue) {
+                if (controlView.legLength != null)
+                    distance = controlView.legLength[0];
+            }
+            else {
+                if (controlViewPrev != null && controlViewPrev.legLength != null) {
+                    distance = controlViewPrev.legLength[0];
+                }
+            }
+
+            if (! float.IsNaN(distance)) {
                 distance = (float)(Math.Round(distance / 10.0) * 10.0);      // round to nearest 10 m.
                 distanceText = string.Format("{0} m", distance);
             }
@@ -400,7 +411,7 @@ namespace PurplePen
             line.boxes[0] = symbolDB[directiveId];
 
             // Box 2: distance for the control, if any.
-            if (control.kind == ControlPointKind.Finish)
+            if (control.kind == ControlPointKind.Finish || control.kind == ControlPointKind.MapIssue)
                 line.boxes[1] = distanceText;
 
             // Get the text version of the control using the Textifier.
@@ -633,7 +644,8 @@ namespace PurplePen
 
                     // The control itself.
                     if (control.kind == ControlPointKind.Finish ||
-                        control.kind == ControlPointKind.CrossingPoint) 
+                        control.kind == ControlPointKind.CrossingPoint ||
+                        control.kind == ControlPointKind.MapIssue) 
                     {
                         line = GetDirectiveLine(kind, controlView, iLine > 0 ? courseView.ControlViews[iLine - 1] : null);
                     }

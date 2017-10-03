@@ -1433,16 +1433,27 @@ namespace PurplePen
     }
 
 
-    // Map Issue Point
+    // Map Issue Point.
+    // Optionally show a "tail", which is useful if we aren't drawing a line from it.
     class MapIssueCourseObj : PointCourseObj
     {
         // Coordinates of the tmap issue.
-        static readonly PointF[] coords = { new PointF(0F, NormalCourseAppearance.mapIssueLength / 2.0F), new PointF(0F, - NormalCourseAppearance.mapIssueLength / 2.0F) };
+        static readonly PointF[] coords = { new PointF(NormalCourseAppearance.mapIssueLength / 2.0F, 0F), new PointF(- NormalCourseAppearance.mapIssueLength / 2.0F, 0F) };
+        static readonly PointF[] coordsTail = { new PointF(0F, 0F), new PointF(0F, NormalCourseAppearance.mapIssueLength * 0.6F) };
+
+        bool showTail;
+        static object withTailKey = new object(), withoutTailKey = new object();
 
         public MapIssueCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio,
-                              CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation, 0F, location)
+                              CourseAppearance appearance, float orientation, PointF location, bool showTail)
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation, NormalCourseAppearance.mapIssueLength / 2.0F, location)
         {
+            this.showTail = showTail;
+        }
+
+        protected override object SymDefKey()
+        {
+            return showTail ? withTailKey : withoutTailKey;
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
@@ -1450,9 +1461,13 @@ namespace PurplePen
             PointKind[] kinds = { PointKind.Normal, PointKind.Normal };
             PointF[] pts = ScaleCoords((PointF[])coords.Clone());
             SymPath path = new SymPath(pts, kinds);
+            PointF[] ptsTail = ScaleCoords((PointF[])coordsTail.Clone());
+            SymPath pathTail = new SymPath(ptsTail, kinds);
 
             Glyph glyph = new Glyph();
             glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
+            if (showTail)
+                glyph.AddLine(symColor, pathTail, NormalCourseAppearance.lineThickness * courseObjRatio, LineJoin.Miter, LineCap.Flat);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Map Issue Point", "715", glyph, true);
@@ -1472,17 +1487,26 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, xformWorldToPixel);
+            float thickness1 = TransformDistance(NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, xformWorldToPixel);
+            float thickness2 = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio, xformWorldToPixel);
 
             // Get coordinates of the feature and transform to pixel coords.
-            PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[])coords.Clone(), orientation)), location.X, location.Y);
-            xformWorldToPixel.TransformPoints(pts);
+            PointF[] pts1 = OffsetCoords(ScaleCoords(RotateCoords((PointF[])coords.Clone(), orientation)), location.X, location.Y);
+            PointF[] pts2 = OffsetCoords(ScaleCoords(RotateCoords((PointF[])coordsTail.Clone(), orientation)), location.X, location.Y);
+            xformWorldToPixel.TransformPoints(pts1);
+            xformWorldToPixel.TransformPoints(pts2);
 
-            // Draw the triangle.
-            using (Pen pen = new Pen(brush, thickness))
+            // Draw the map issue point, with tail.
+            using (Pen pen = new Pen(brush, thickness1))
             {
-                g.DrawLines(pen, pts);
+                g.DrawLines(pen, pts1);
             }
+            if (showTail) {
+                using (Pen pen = new Pen(brush, thickness2)) {
+                    g.DrawLines(pen, pts2);
+                }
+            }
+
         }
     }
 

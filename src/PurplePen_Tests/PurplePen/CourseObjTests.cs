@@ -309,15 +309,29 @@ namespace PurplePen.Tests
         [TestMethod]
         public void MapIssue()
         {
-            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0));
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0), false);
             SingleObject(courseobj, "map_issue");
+        }
+
+        [TestMethod]
+        public void MapIssueTail()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0), true);
+            SingleObject(courseobj, "map_issue_tail");
         }
 
         [TestMethod]
         public void MapIssueSpecial()
         {
-            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0));
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0), false);
             SingleObject(courseobj, "map_issue_special");
+        }
+
+        [TestMethod]
+        public void MapIssueSpecialTail()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 0, new PointF(0, 0), true);
+            SingleObject(courseobj, "map_issue_special_tail");
         }
 
         [TestMethod]
@@ -958,7 +972,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void MapIssueDump()
         {
-            CourseObj courseobj = new MapIssueCourseObj(ControlId(16), CourseControlId(144), 0.7F, defaultCourseAppearance, 77.6F, new PointF(5.5F, -2.5F));
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(16), CourseControlId(144), 0.7F, defaultCourseAppearance, 77.6F, new PointF(5.5F, -2.5F), false);
             AssertDump(courseobj, @"MapIssue:       control:16  course-control:144  scale:0.7  location:(5.5,-2.5)  orientation:77.6");
         }
 
@@ -1198,17 +1212,31 @@ namespace PurplePen.Tests
         [TestMethod]
         public void MapIssueHighlight()
         {
-            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), false);
             SingleObjectHighlight(courseobj, "map_issue_highlight");
+        }
+
+        [TestMethod]
+        public void MapIssueHighlightTail()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), true);
+            SingleObjectHighlight(courseobj, "map_issue_highlight_tail");
         }
 
         [TestMethod]
         public void MapIssueHighlightSpecial()
         {
-            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F), false);
             SingleObjectHighlight(courseobj, "map_issue_highlight_special");
         }
-        
+
+        [TestMethod]
+        public void MapIssueHighlightSpecialTail()
+        {
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F), true);
+            SingleObjectHighlight(courseobj, "map_issue_highlight_special_tail");
+        }
+
         [TestMethod]
         public void StartHighlightSpecial()
         {
@@ -1634,7 +1662,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void MapIssueOffset()
         {
-            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new MapIssueCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), true);
             SingleObjectOffset(courseobj, "map_issue_offset");
         }
 

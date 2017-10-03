@@ -208,6 +208,10 @@ namespace PurplePen
                     courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, courseObjRatio * 1.5F, appearance, 0, location);
                     break;
 
+                case ControlPointKind.MapIssue:
+                    courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio * 1.5F, appearance, -90, new PointF(location.X - 0.8F, location.Y), true);
+                    break;
+
                 default:
                     Debug.Fail("bad control kind");
                     return;

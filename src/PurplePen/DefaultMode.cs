@@ -533,8 +533,13 @@ namespace PurplePen
                         SymPath pathFromStart = ((LineCourseObj) additionalHighlights[additionalHighlights.Length - 1]).path;
                         PointF[] pts = pathFromStart.FlattenedPoints;
                         double angleOut = Math.Atan2(pts[1].Y - pts[0].Y, pts[1].X - pts[0].X);
-                        if (!double.IsNaN(angleOut)) 
-                            ((StartCourseObj) courseObjectDrag).orientation = (float) Geometry.RadiansToDegrees(angleOut);
+                        if (!double.IsNaN(angleOut)) {
+                            float angleInDegrees = (float)Geometry.RadiansToDegrees(angleOut);
+                            if (control.kind == ControlPointKind.MapIssue)
+                                ((MapIssueCourseObj)courseObjectDrag).orientation = angleInDegrees;
+                            else
+                                ((StartCourseObj)courseObjectDrag).orientation = angleInDegrees;
+                        }
                     }
                 }                                                             
             }

@@ -199,10 +199,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandNameText.ja.resx</DependentUpon>
     </Compile>
+    <Compile Include="CommandNameText.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.nl.resx</DependentUpon>
+    </Compile>
     <Compile Include="CommandNameText.pl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandNameText.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CommandNameText.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandNameText.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="CommandNameText1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -411,10 +421,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MiscText.ja.resx</DependentUpon>
     </Compile>
+    <Compile Include="MiscText.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.nl.resx</DependentUpon>
+    </Compile>
     <Compile Include="MiscText.pl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MiscText.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscText.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscText.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="MiscText1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -595,10 +615,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportText.ja.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportText.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.nl.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReportText.pl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportText.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportText.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportText.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="ReportText1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -617,10 +647,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SelectionDescriptionText.ja.resx</DependentUpon>
     </Compile>
+    <Compile Include="SelectionDescriptionText.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.nl.resx</DependentUpon>
+    </Compile>
     <Compile Include="SelectionDescriptionText.pl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SelectionDescriptionText.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDescriptionText.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectionDescriptionText.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="SelectionDescriptionText1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -656,10 +696,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusBarText.ja.resx</DependentUpon>
     </Compile>
+    <Compile Include="StatusBarText.nl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.nl.resx</DependentUpon>
+    </Compile>
     <Compile Include="StatusBarText.pl.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StatusBarText.pl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarText.zh-CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StatusBarText.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="StatusBarText1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1356,7 +1406,10 @@
     <EmbeddedResource Include="CommandNameText.nb-NO.resx">
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommandNameText.nl.resx" />
+    <EmbeddedResource Include="CommandNameText.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandNameText.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.nn-NO.resx">
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </EmbeddedResource>
@@ -1374,7 +1427,10 @@
     <EmbeddedResource Include="CommandNameText.sv.resx">
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommandNameText.zh-CN.resx" />
+    <EmbeddedResource Include="CommandNameText.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandNameText.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseAppearanceDialog.hu.resx">
       <DependentUpon>CourseAppearanceDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -2350,7 +2406,10 @@
     <EmbeddedResource Include="MiscText.nb-NO.resx">
       <DependentUpon>MiscText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.nl.resx" />
+    <EmbeddedResource Include="MiscText.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MiscText.nn-NO.resx">
       <DependentUpon>MiscText.resx</DependentUpon>
     </EmbeddedResource>
@@ -2369,7 +2428,10 @@
     <EmbeddedResource Include="MiscText.sv.resx">
       <DependentUpon>MiscText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiscText.zh-CN.resx" />
+    <EmbeddedResource Include="MiscText.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MiscText.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.bg.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </EmbeddedResource>
@@ -3565,7 +3627,10 @@
     <EmbeddedResource Include="ReportText.nb-NO.resx">
       <DependentUpon>ReportText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportText.nl.resx" />
+    <EmbeddedResource Include="ReportText.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportText.nn-NO.resx">
       <DependentUpon>ReportText.resx</DependentUpon>
     </EmbeddedResource>
@@ -3583,7 +3648,10 @@
     <EmbeddedResource Include="ReportText.sv.resx">
       <DependentUpon>ReportText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportText.zh-CN.resx" />
+    <EmbeddedResource Include="ReportText.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportText.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.bg.resx">
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </EmbeddedResource>
@@ -3613,7 +3681,10 @@
     <EmbeddedResource Include="SelectionDescriptionText.nb-NO.resx">
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectionDescriptionText.nl.resx" />
+    <EmbeddedResource Include="SelectionDescriptionText.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectionDescriptionText.nn-NO.resx">
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </EmbeddedResource>
@@ -3632,7 +3703,10 @@
     <EmbeddedResource Include="SelectionDescriptionText.sv.resx">
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SelectionDescriptionText.zh-CN.resx" />
+    <EmbeddedResource Include="SelectionDescriptionText.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectionDescriptionText.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectVariations.bg.resx">
       <DependentUpon>SelectVariations.cs</DependentUpon>
     </EmbeddedResource>
@@ -3806,7 +3880,10 @@
     <EmbeddedResource Include="StatusBarText.nb-NO.resx">
       <DependentUpon>StatusBarText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatusBarText.nl.resx" />
+    <EmbeddedResource Include="StatusBarText.nl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.nl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatusBarText.nn-NO.resx">
       <DependentUpon>StatusBarText.resx</DependentUpon>
     </EmbeddedResource>
@@ -3824,7 +3901,10 @@
     <EmbeddedResource Include="StatusBarText.sv.resx">
       <DependentUpon>StatusBarText.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatusBarText.zh-CN.resx" />
+    <EmbeddedResource Include="StatusBarText.zh-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatusBarText.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeamVariationsForm.bg.resx">
       <DependentUpon>TeamVariationsForm.cs</DependentUpon>
     </EmbeddedResource>

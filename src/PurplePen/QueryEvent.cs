@@ -1176,10 +1176,13 @@ namespace PurplePen
                 flagging = leg.flagging;
             }
 
+            ControlPoint control1 = eventDB.GetControl(controlId1);
             ControlPoint control2 = eventDB.GetControl(controlId2);
             if (control2.kind == ControlPointKind.Finish && control2.symbolIds[0] == "14.1")
                 flagging = FlaggingKind.All;
             if (control2.kind == ControlPointKind.MapExchange)
+                flagging = FlaggingKind.All;
+            if (control1.kind == ControlPointKind.MapIssue)
                 flagging = FlaggingKind.All;
 
             return flagging;

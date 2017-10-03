@@ -139,6 +139,7 @@ namespace PurplePen
             addMapExchangeMenu.Image = mapExchangeToolStripMenu.Image;
             mapExchangeControlMenuItem.Image = mapExchangeControlToolStripMenuItem.Image;
             mapExchangeSeparateMenuItem.Image = mapExchangeSeparateToolStripMenuItem.Image;
+            addMapIssueMenu.Image = mapIssuePointToolStripMenuItem.Image;
             addOptCrossingMenu.Image = optionalCrossingPointToolStripMenuItem.Image;
             addMandatoryCrossingMenu.Image = mandatoryCrossingPointToolStripMenuItem.Image;
             addWaterMenu.Image = waterLocationToolStripMenuItem.Image;
@@ -1567,6 +1568,11 @@ namespace PurplePen
                 controller.BeginAddDescriptionMode();
             else
                 InfoMessage(MiscText.CannotAddDescriptionsToAllParts);
+        }
+
+        private void addMapIssueMenu_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddControlMode(ControlPointKind.MapIssue, false);
         }
 
         private void addMandatoryCrossingMenu_Click(object sender, EventArgs e)
