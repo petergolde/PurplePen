@@ -528,7 +528,8 @@ namespace PurplePen
 
                     // If we're dragging the start, update the angle of the start appropriately.
                     if ((control.kind == ControlPointKind.Start || control.kind == ControlPointKind.MapExchange || control.kind == ControlPointKind.MapIssue) && 
-                        additionalHighlights.Length > 0)
+                        additionalHighlights.Length > 0 && 
+                        (courseView.Kind == CourseView.CourseViewKind.Normal || courseView.Kind == CourseView.CourseViewKind.AllVariations))
                     {
                         SymPath pathFromStart = ((LineCourseObj) additionalHighlights[additionalHighlights.Length - 1]).path;
                         PointF[] pts = pathFromStart.FlattenedPoints;

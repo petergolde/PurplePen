@@ -994,6 +994,15 @@ namespace PurplePen
                 }
             }
 
+            // Add leg from map issue point to start, if both exist.
+            if (courseView.ControlViews.Count >= 2 && 
+                eventDB.GetControl(courseView.controlViews[0].controlId).kind == ControlPointKind.MapIssue &&
+                eventDB.GetControl(courseView.controlViews[1].controlId).kind == ControlPointKind.Start) 
+            {
+                courseView.controlViews[0].legTo = new int[1] { courseView.controlViews[1].courseControlIds[0].id};
+            }
+
+
             courseView.Finish();
             return courseView;
         }

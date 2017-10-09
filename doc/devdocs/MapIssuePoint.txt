@@ -1,0 +1,8 @@
+Map Issue Point issues:
+
+- how work with score courses -- can be used; path to start is shown.
+- test with GPX export
+- test with IOF export (2.0 and 3.0)
+- test with reports
+- FIXED. Adding start after map issue doesn't work right.
+- FIXED. Dragging start in score course with map issue a little odd.

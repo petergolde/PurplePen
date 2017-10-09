@@ -1031,7 +1031,18 @@ namespace PurplePen
             }
             else {
                 // Add the control as a new start control.
-                newCourseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseId, Id<CourseControl>.None, eventDB.GetCourse(courseId).firstCourseControl, LegInsertionLoc.PreSplit);
+                if (controlKind == ControlPointKind.Start && QueryEvent.FindControlOfKind(eventDB, courseId, ControlPointKind.MapIssue) != null) {
+                    // Already a map issue and we are adding a start. It goes second.
+                    Id<CourseControl> cc1 = QueryEvent.FindControlOfKind(eventDB, courseId, ControlPointKind.MapIssue);
+                    Id<CourseControl> cc2 = Id<CourseControl>.None;
+                    LegInsertionLoc legInsertionLoc = LegInsertionLoc.Normal;
+                    QueryEvent.FindControlInsertionPoint(eventDB, new CourseDesignator(courseId), ref cc1, ref cc2, ref legInsertionLoc);
+                    newCourseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseId, cc1, cc2, legInsertionLoc);
+                }
+                else {
+                    // Just add at the beginning of the course.
+                    newCourseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseId, Id<CourseControl>.None, eventDB.GetCourse(courseId).firstCourseControl, LegInsertionLoc.PreSplit);
+                }
             }
 
             if (addToOtherCourses) {

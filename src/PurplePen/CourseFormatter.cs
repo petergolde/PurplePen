@@ -99,7 +99,7 @@ namespace PurplePen
                     double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
 
                     // Get the normal course object associated with this control.
-                    courseObj = CreateCourseObject(eventDB, courseObjRatio, appearance, courseView.PrintScale, controlView, angleOut);
+                    courseObj = CreateCourseObject(eventDB, courseView.Kind, courseObjRatio, appearance, courseView.PrintScale, controlView, angleOut);
                     if (courseObj != null) {
                         courseObj.layer = layer;
                         courseLayout.AddCourseObject(courseObj);
@@ -121,7 +121,9 @@ namespace PurplePen
                     }
                 }
 
-                if (kind == CourseView.CourseViewKind.Normal || kind == CourseView.CourseViewKind.AllVariations) {
+                if (kind == CourseView.CourseViewKind.Normal || kind == CourseView.CourseViewKind.AllVariations || 
+                    (kind == CourseView.CourseViewKind.Score && eventDB.GetControl(controlView.controlId).kind == ControlPointKind.MapIssue))
+                {
                     // Get the object(s) associated with the leg(s) to the next control.
                     if (controlView.legTo != null) {
                         for (int leg = 0; leg < controlView.legTo.Length; ++leg) {
@@ -139,7 +141,7 @@ namespace PurplePen
 
             // Add any additional controls
             foreach (Id<CourseControl> extraCourseControl in courseView.ExtraCourseControls) {
-                courseLayout.AddCourseObject(CreateCourseObject(eventDB, courseObjRatio, appearance, courseView.CircleGapScale(appearance),
+                courseLayout.AddCourseObject(CreateCourseObject(eventDB, courseView.Kind, courseObjRatio, appearance, courseView.CircleGapScale(appearance),
                                                                 eventDB.GetCourseControl(extraCourseControl).control, extraCourseControl, double.NaN));
             }
 
@@ -595,12 +597,12 @@ namespace PurplePen
 
         // Create the object associated with the control/start/finish etc with this control view.
         // AngleOut is the direction IN RADIANs leaving the control.
-        static CourseObj CreateCourseObject(EventDB eventDB, float courseObjRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
+        static CourseObj CreateCourseObject(EventDB eventDB, CourseView.CourseViewKind courseKind, float courseObjRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
-            return CreateCourseObject(eventDB, courseObjRatio, appearance, printScale, controlView.controlId, controlView.courseControlIds[0], angleOut);
+            return CreateCourseObject(eventDB, courseKind, courseObjRatio, appearance, printScale, controlView.controlId, controlView.courseControlIds[0], angleOut);
         }
 
-        static CourseObj CreateCourseObject(EventDB eventDB, float courseObjRatio, CourseAppearance appearance, float printScale, 
+        static CourseObj CreateCourseObject(EventDB eventDB, CourseView.CourseViewKind courseKind, float courseObjRatio, CourseAppearance appearance, float printScale, 
                                             Id<ControlPoint> controlId, Id<CourseControl> courseControlId, double angleOut)
         {
             ControlPoint control = eventDB.GetControl(controlId);
@@ -609,7 +611,9 @@ namespace PurplePen
 
             switch (control.kind) {
             case ControlPointKind.MapIssue:
-                courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio, appearance, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, false);
+                courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio, appearance, 
+                                                  double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, 
+                                                  courseKind == CourseView.CourseViewKind.AllControls);
                 break;
 
             case ControlPointKind.Start:
@@ -857,7 +861,7 @@ namespace PurplePen
             // Get index of next control.
             int nextControlIndex = courseView.GetNextControl(controlIndex);
             if (nextControlIndex < 0)
-                return double.NaN;
+                return Math.PI / 2;
 
             // By default, the location of the next control is the direction.
             PointF pt2 = eventDB.GetControl(courseView.ControlViews[nextControlIndex].controlId).location;
@@ -887,7 +891,7 @@ namespace PurplePen
             // of a triangle. netAngle has been constrained by symmetry to intersect that side.
             PointF rayEnd = new PointF((float) (2 * Math.Cos(netAngle)), (float)(2 * Math.Sin(netAngle)));
             PointF end1 = new PointF((float) Math.Cos(oneThirdCircle / 2), (float) Math.Sin(oneThirdCircle / 2));
-            PointF end2 = new PointF(-end1.X, end1.Y);
+            PointF end2 = new PointF(end1.X, -end1.Y);
             PointF intersectionPoint;
             if (Geometry.LineSegmentsIntersect(end1, end2, new PointF(0, 0), rayEnd, out intersectionPoint)) {
                 return Geometry.Distance(new PointF(0, 0), intersectionPoint);
