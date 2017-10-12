@@ -1042,8 +1042,6 @@ namespace PurplePen
                     Debug.Assert(cc2.split && cc2.splitCourseControls.Contains(courseControl2));
                     courseControl2 = cc1.nextCourseControl;
                 }
-
-                return;
             }
             else {
                 // Adding after courseControl1. If none, or a finish control, add at end, before the finish control if any.
@@ -1054,7 +1052,6 @@ namespace PurplePen
                     // Empty course or adding at start.
                     courseControl2 = eventDB.GetCourse(courseId).firstCourseControl;
                     legInsertionLoc = LegInsertionLoc.Normal;
-                    return;
                 }
                 else {
                     // Adding after courseControl1.
@@ -1064,9 +1061,19 @@ namespace PurplePen
                         legInsertionLoc = LegInsertionLoc.PreSplit;
                     else
                         legInsertionLoc = LegInsertionLoc.Normal;
-                    return;
                 }
             }
+
+            // Don't allow insertion between the map issue point and the start. Instead, put it after the start.
+            if (courseControl1.IsNotNone && courseControl2.IsNotNone &&
+                eventDB.GetControl(eventDB.GetCourseControl(courseControl1).control).kind == ControlPointKind.MapIssue &&
+                eventDB.GetControl(eventDB.GetCourseControl(courseControl2).control).kind == ControlPointKind.Start) 
+            {
+                courseControl1 = courseControl2;
+                courseControl2 = Id<CourseControl>.None;
+                FindControlInsertionPoint(eventDB, courseDesignator, ref courseControl1, ref courseControl2, ref legInsertionLoc);
+            }
+
         }
 
         // Get the real world distance, in meters, between two points.
