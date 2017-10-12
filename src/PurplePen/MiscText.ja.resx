@@ -431,7 +431,7 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
     <value>ファイル '{0}' からのPDF変換の結果が読み込めませんでした</value>
   </data>
   <data name="CannotCreatePdfs" xml:space="preserve">
-    <value>PDF '{0}' を作成できません。以下の理由:</value>
+    <value>PDF を作成できません。以下の理由:</value>
   </data>
   <data name="UserDefined" xml:space="preserve">
     <value>ユーザ定義</value>

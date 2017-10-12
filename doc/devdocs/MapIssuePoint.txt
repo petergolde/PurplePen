@@ -4,5 +4,7 @@ Map Issue Point issues:
 - test with GPX export
 - test with IOF export (2.0 and 3.0)
 - test with reports
+- test with topology view
+- test with variations (can get split at map issue -- shouldn't allow?)
 - FIXED. Adding start after map issue doesn't work right.
 - FIXED. Dragging start in score course with map issue a little odd.
