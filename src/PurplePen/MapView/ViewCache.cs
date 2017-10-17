@@ -105,7 +105,10 @@ namespace PurplePen.MapView {
 
             try {
                 // Draw the requested part of the bitmap to the destinated graphics.
-                g.DrawImage(bitmap, clipRect.Left, clipRect.Top, clipRect, GraphicsUnit.Pixel);
+                FastBitmapPaint.PaintBitmap(g, bitmap, clipRect, new Point(clipRect.Left, clipRect.Top));
+
+                // This used to be:
+                //g.DrawImage(bitmap, clipRect.Left, clipRect.Top, clipRect, GraphicsUnit.Pixel);
             }
             catch (Exception) {
                 // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 

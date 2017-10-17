@@ -368,6 +368,7 @@
     <Compile Include="ExportBitmap.cs" />
     <Compile Include="ExportRouteGadget.cs" />
     <Compile Include="ExportXml.cs" />
+    <Compile Include="FastBitmapPaint.cs" />
     <Compile Include="GpxFile.cs" />
     <Compile Include="GraphicsHelper.cs" />
     <Compile Include="Highlights.cs" />
