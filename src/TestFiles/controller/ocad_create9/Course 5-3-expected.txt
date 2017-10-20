@@ -807,7 +807,7 @@ Symbol definition for '800.5'
     (-20.27,0.00) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
-    (-18.25,0.00) (-14.77,0.00) 
+    (-18.10,0.00) (-14.77,0.00) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
     (-13.90,0.00) (-10.43,0.00) 
@@ -816,7 +816,7 @@ Symbol definition for '800.5'
     (-9.56,0.00) (-6.08,0.00) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
-    (18.10,0.00) (14.77,0.00) 
+    (17.96,0.00) (14.77,0.00) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
     (13.90,0.00) (10.43,0.00) 
