@@ -70,8 +70,12 @@ namespace PurplePen.MapView {
 		//  allInvalid=true -- no bits are a correct reflection of the map
 		//  both false -- some bits are valid, as specified in invalidRegion.
 		Region invalidRegion;	   // The invalid region of the bitmap, in bitmap coordinates.
+        long changeNumber;         // incremented every time re-validated.
 
 		void MarkAllValid() {
+            if (!allValid)
+                ++changeNumber;
+
 			allValid = true;
 			allInvalid = false;
 			if (invalidRegion != null) {
@@ -115,6 +119,15 @@ namespace PurplePen.MapView {
                 // Just ignore it; there's nothing else to do. See bug #1997301.            
             }
         }
+
+        // Get a bit that is is the (up-to-date) viewcache for the given location.  Do not dispose this brush!
+        public Bitmap GetCacheBitmap(Size sizeView, RectangleF mapAreaToView, Matrix transform, out long changeNumber)
+        {
+            UpdateCache(sizeView, mapAreaToView, transform);
+            changeNumber = this.changeNumber;
+            return bitmap;
+        }
+
 
         // Get a brush whose texture is the (up-to-date) viewcache for the given location.  Do not dispose this brush!
         public Brush GetCacheBrush(Size sizeView, RectangleF mapAreaToView, Matrix transform) {

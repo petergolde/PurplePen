@@ -79,5 +79,10 @@ namespace PurplePen
         {
             return rect;
         }
+
+        public int GetBorderPixels()
+        {
+            return (int)Math.Ceiling(penWidth / 2);
+        }
     }
 }

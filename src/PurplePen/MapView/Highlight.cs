@@ -50,6 +50,9 @@ namespace PurplePen.MapView
         // Get the bounding rectangle.
         RectangleF GetHighlightBounds();
 
+        // Get extra border, in pixels, around GetHighlightBounds
+        int GetBorderPixels();
+
         // Draw onto the (pixel coordinates) graphics, using the given world-to-pixel transformation.
         void DrawHighlight(Graphics g, Matrix xformWorldToPixel);
 

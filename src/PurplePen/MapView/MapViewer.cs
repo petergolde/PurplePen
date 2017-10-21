@@ -41,6 +41,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
+using PurplePen.Graphics2D;
 
 namespace PurplePen.MapView
 {
@@ -49,6 +50,8 @@ namespace PurplePen.MapView
 
         private IMapDisplay mapDisplay;							// The map display we are viewing.
         private ViewCache viewcache;							// The view cache for this map
+        private Bitmap compositedBitmap;                        // Bitmap from view cache, composited with highlights/grid.
+        private long lastViewCacheChangeNumber = -1;            // Last change number from viewCache
 
         // Timer for handling hover events.
         private System.Windows.Forms.Timer hoverTimer = new System.Windows.Forms.Timer();
@@ -621,17 +624,51 @@ namespace PurplePen.MapView
 
         public void ChangeHighlight(IMapViewerHighlight[] newHighlights)
         {
-            // TODO: should do much better in finding differences in highlight and redrawing efficiently.
             if (newHighlights == currentHighlights)
                 return;		// nothing to do.
 
-            using (Graphics g = CreateGraphics()) {
-                EraseHighlights(g, ClientRectangle, currentHighlights);
-                //Update();
-                DrawHighlights(g, ClientRectangle, newHighlights);
-            }
+            Rectangle dirtyOld = DirtyRect(currentHighlights);
+            Rectangle dirtyNew = DirtyRect(newHighlights);
+            Rectangle dirty;
+            if (dirtyOld.IsEmpty)
+                dirty = dirtyNew;
+            else if (dirtyNew.IsEmpty)
+                dirty = dirtyOld;
+            else 
+                dirty = Rectangle.Union(dirtyOld, dirtyNew);
+            dirty.Intersect(ClientRectangle);
 
             currentHighlights = newHighlights;
+
+            if (!dirty.IsEmpty) {
+                dirty.Inflate(1, 1);
+                CompositeBitmap(true);  // Force recomposite of bitmap.
+                using (Graphics g = CreateGraphics()) {
+                    Draw(g, dirty);
+                }
+            }
+        }
+
+        private Rectangle DirtyRect(IMapViewerHighlight[] highlights)
+        {
+            if (highlights == null || highlights.Length == 0)
+                return new Rectangle();
+
+            RectangleF accum = new RectangleF();
+            foreach (IMapViewerHighlight h in highlights) {
+                RectangleF bound = WorldToPixel(h.GetHighlightBounds());
+                int borderPixels = h.GetBorderPixels();
+                bound.Inflate(borderPixels, borderPixels);
+                if (accum.IsEmpty)
+                    accum = bound;
+                else
+                    accum = RectangleF.Union(accum, bound);
+            }
+
+            if (accum.IsEmpty)
+                return new Rectangle();
+
+            return Rectangle.FromLTRB((int)Math.Floor(accum.Left), (int)Math.Floor(accum.Top), (int)Math.Ceiling(accum.Right), (int)Math.Ceiling(accum.Bottom));
         }
 
         #endregion
@@ -889,32 +926,41 @@ namespace PurplePen.MapView
             pen.Dispose();
         }
 
-        void DrawCachedMap(Graphics g, Rectangle visRect) {
-            viewcache.Draw(g, visRect, ClientSize, viewport, xformWorldToPixel);
+        void CompositeBitmap(bool highlightsHaveChanged)
+        {
+            long changeNumber;
+            Bitmap bitmap = viewcache.GetCacheBitmap(ClientSize, viewport, xformWorldToPixel, out changeNumber);
+            if (!gridOn && (currentHighlights == null || currentHighlights.Length == 0)) {
+                // Nothing to composite.
+                compositedBitmap = bitmap;
+            }
+            else {
+                if (changeNumber != lastViewCacheChangeNumber || highlightsHaveChanged) {
+                    compositedBitmap = (Bitmap)bitmap.Clone();
+                    using (Graphics g = Graphics.FromImage(compositedBitmap)) {
+                        Rectangle clientRect = ClientRectangle;
+                        DrawHighlights(g, clientRect, currentHighlights);
+                        if (gridOn)
+                            DrawGrid(g, clientRect);
+                    }
+                }
+            }
+
+            lastViewCacheChangeNumber = changeNumber;
         }
+
+       
 
         private void Draw(Graphics g, Rectangle clip) {
             PointF[] pts = new PointF[2];
-            RectangleF clipWorld;
 
             if (mapDisplay == null) {
                 g.Clear(Color.White);
                 return;
             }
 
-            g.PixelOffsetMode = PixelOffsetMode.HighSpeed;
-            DrawCachedMap(g, clip);
-            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            DrawHighlights(g, clip, currentHighlights);
-
-            g.MultiplyTransform(xformWorldToPixel);
-
-            // Get the clip rectangle in world coordinates.
-            clip.Inflate(1, 1); // prevent round-off errors....
-            clipWorld = PixelToWorld(clip);
-
-            if (gridOn)
-                DrawGrid(g, clipWorld);
+            CompositeBitmap(false);
+            FastBitmapPaint.PaintBitmap(g, compositedBitmap, clip, new Point(clip.Left, clip.Top));
         }
 
         // Creates a bitmap that is an exact snapshot of what the 

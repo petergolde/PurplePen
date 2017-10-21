@@ -168,7 +168,7 @@ namespace PurplePen
         // Measure the size of the description. Includes the margins and multi-column splitting.
         public SizeF Measure()
         {
-            SizeF size = new SizeF((cellSize * WidthInCells()) * numColumns + cellSize * columnGap * (numColumns - 1) + margin * 2, cellSize * ColumnLengthInCells + margin * 2);
+            SizeF size = new SizeF(ColumnWidth * numColumns + ColumnGap * (numColumns - 1) + margin * 2, cellSize * ColumnLengthInCells + margin * 2);
             return size;
         }
 

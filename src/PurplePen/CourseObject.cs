@@ -162,6 +162,15 @@ namespace PurplePen
         // Get the bounds of the highlight.
         public abstract RectangleF GetHighlightBounds();
 
+        public int GetBorderPixels()
+        {
+            PointF[] handles = GetHandles();
+            if (handles == null || handles.Length == 0)
+                return 0;
+            else
+                return HANDLESIZE / 2;
+        }
+
         // Get the set of handles that should be drawn with the objects.
         public virtual PointF[] GetHandles()
         {
@@ -522,7 +531,9 @@ namespace PurplePen
        // Get the bounds of the highlight.
         public override RectangleF GetHighlightBounds()
         {
-            return path.BoundingBox;
+            RectangleF bounds = path.BoundingBox;
+            bounds.Inflate(thickness * 5, thickness * 5);
+            return bounds;
         }
 
        // Offset the object by a given amount
@@ -2718,7 +2729,7 @@ namespace PurplePen
 
             base.RectangleUpdating(ref newRect, dragAll, dragLeft, dragTop, dragRight, dragBottom);
 
-            renderer.CellSize = newRect.Height / renderer.ColumnLengthInCells;
+            renderer.CellSize = (newRect.Height - renderer.Margin * 2) / renderer.ColumnLengthInCells;
         }
 
         // Get the cell size.
@@ -2761,7 +2772,7 @@ namespace PurplePen
                 base.Highlight(g, xformWorldToPixel, brush, erasing);
             else {
                 RectangleF currentColumnRect = rect;
-                currentColumnRect.Width = renderer.ColumnWidth;
+                currentColumnRect.Width = renderer.ColumnWidth + renderer.Margin * 2;
                 for (int i = 0; i < renderer.NumberOfColumns; ++i) {
                     DrawBorderedRectangle(g, xformWorldToPixel, currentColumnRect, brush, erasing);
                     currentColumnRect.X += renderer.ColumnWidth + renderer.ColumnGap;
