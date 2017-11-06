@@ -236,17 +236,22 @@ namespace PurplePen
             courseObj.layer = layer;
             courseLayout.AddCourseObject(courseObj);
 
-            // Add the drop targets
-            foreach (DropTarget dropTarget in dropTargets) {
-                courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], courseObjRatio, appearance, 
-                    LocationFromAbstractPosition(dropTarget.abstractX, dropTarget.abstractY), dropTarget.insertionLoc);
+            // No drop targets between map issue and start.
+            if (!(eventDB.GetControl(controlView1.controlId).kind == ControlPointKind.MapIssue &&
+                  eventDB.GetControl(controlView2.controlId).kind == ControlPointKind.Start)) 
+            {
+                // Add the drop targets
+                foreach (DropTarget dropTarget in dropTargets) {
+                    courseObj = new TopologyDropTargetCourseObj(controlView1.controlId, controlView1.courseControlIds[splitLegIndex], controlView2.courseControlIds[0], courseObjRatio, appearance,
+                        LocationFromAbstractPosition(dropTarget.abstractX, dropTarget.abstractY), dropTarget.insertionLoc);
 
-                // Along the selected leg, show the drop targets in light gray. Along other legs, drop targets are invisible.
-                if (controlView1.courseControlIds[splitLegIndex] == courseControlIdSelection1 && controlView2.courseControlIds.Contains(courseControlIdSelection2))
-                    courseObj.layer = CourseLayer.AllVariations;
-                else
-                    courseObj.layer = CourseLayer.InvisibleObjects;
-                courseLayout.AddCourseObject(courseObj);
+                    // Along the selected leg, show the drop targets in light gray. Along other legs, drop targets are invisible.
+                    if (controlView1.courseControlIds[splitLegIndex] == courseControlIdSelection1 && controlView2.courseControlIds.Contains(courseControlIdSelection2))
+                        courseObj.layer = CourseLayer.AllVariations;
+                    else
+                        courseObj.layer = CourseLayer.InvisibleObjects;
+                    courseLayout.AddCourseObject(courseObj);
+                }
             }
 
             if (forkStart != null && forkStart.variationCode != '\0') {

@@ -1039,8 +1039,16 @@ namespace PurplePen
                 CourseControl cc2 = eventDB.GetCourseControl(courseControl2);
 
                 if (cc1.nextCourseControl != courseControl2) {
-                    Debug.Assert(cc2.split && cc2.splitCourseControls.Contains(courseControl2));
-                    courseControl2 = cc1.nextCourseControl;
+                    if (courseDesignator.CourseId.IsNotNone && eventDB.GetCourse(courseDesignator.CourseId).kind == CourseKind.Score) {
+                        // This can happen between map issue and start on a score course, for example.
+                        courseControl2 = Id<CourseControl>.None;
+                        FindControlInsertionPoint(eventDB, courseDesignator, ref courseControl1, ref courseControl2, ref legInsertionLoc);
+                        return;
+                    }
+                    else {
+                        Debug.Assert(cc2.split && cc2.splitCourseControls.Contains(courseControl2));
+                        courseControl2 = cc1.nextCourseControl;
+                    }
                 }
             }
             else {
