@@ -236,23 +236,23 @@
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Add Start">
+				<param name="Name" value="Start">
 				<param name="Local" value="EditAddStart.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Add Control">
+				<param name="Name" value="Control">
 				<param name="Local" value="EditAddControl.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Add Finish">
+				<param name="Name" value="Finish">
 				<param name="Local" value="EditAddFinish.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Add Descriptions">
+				<param name="Name" value="Descriptions">
 				<param name="Local" value="EditAddControlDescriptions.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Add Map Exchange">
+				<param name="Name" value="Map Exchange">
 				<param name="Local" value="EditAddMapExchange.htm">
 				</OBJECT>
 			<UL>
@@ -274,12 +274,16 @@
 				<param name="Local" value="ItemAddTextLine.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Control Descriptions">
-				<param name="Local" value="EditAddControlDescriptions.htm">
+				<param name="Name" value="Map Issue Point">
+				<param name="Local" value="EditAddMapIssuePoint.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Mandatory Crossing Point">
 				<param name="Local" value="EditAddMandatoryCrossingPoint.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Optional Crossing Point">
+				<param name="Local" value="EditAddOptionalCrossingPoint.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Out Of Bounds Area">
@@ -296,10 +300,6 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="First Aid Location">
 				<param name="Local" value="EditAddFirstAidLocation.htm">
-				</OBJECT>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Optional Crossing Point">
-				<param name="Local" value="EditAddOptionalCrossingPoint.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Forbidden Route Marking">
@@ -358,6 +358,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Punch Patterns...">
 				<param name="Local" value="ControlsPunchPatterns.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="IOF Standards">
+				<param name="Local" value="EventIofStandards.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Customize Description Text...">

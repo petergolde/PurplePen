@@ -23,10 +23,12 @@ exported to OCAD/OOM.</p>
 <p><strong>Use IOF standard sizes</strong>: If this is checked, Purple Pen uses 
 the IOF standard sizes for control circles, legs, control numbers, and other 
 items on the course. To change those sizes, uncheck this option.</p>
-<p><strong>Control circle diameter</strong>: Set the outside diameter of control 
+<p><strong>Control circle diameter</strong>: Sets the <u>outside diameter</u> of control 
 circles to the given size in mm. This also affects the size of the start 
 triangle, finish circle, crossing points, refreshment marking, and first aid 
-markings, which will be scaled in the same ratio. The IOF standard is 6.0 mm.</p>
+markings, which will be scaled in the same ratio. The IOF standard is 6.0 mm in ISOM2000, and 5.35mm in ISOM2017. 
+(Note that ISOM2017 measures the circle diameter from the center of the line, while Purple Pen uses the outside diameter,
+so 5.35mm outside diameter is equivalent to 5.0mm diameter from the line centers.)</p>
 <p><strong>Line width</strong>: Sets the width of lines for legs, control 
 circles, start triangle, and the finish circle. The IOF standard is 0.35 mm.</p>
     <p><strong>Center dot diameter</strong>: If set to something higher than 0.00m (the IOF standard), places a dot of the indicated diameter in the center of the control circle. Although not typically used, it is useful for certain types of maps.</p>
@@ -36,6 +38,17 @@ control numbers. The IOF standard is 4.0 mm.</p>
     <p><strong>White outline around numbers</strong>: If greater than zero, a white outline of the given width is placed around numbers to make them more visible against colored or complex backgrounds.
     A value between 0.1mm and 0.4mm usually works best.</p>
     <p><strong>Automatic leg gap size</strong>: If greater than zero, controls how much of a gap to automatically place when one leg crosses another leg. Set this to zero to disable placing automatic gaps in legs.</p>
+    <p><strong>Scale item sizes</strong>: Determines how the item sizes (circle diameter, line width, etc.) are modified based on the selected print scale of the course. There are three possible options:</p>
+    <ul>
+        <li><strong>Do not scale</strong>. The item sizes will always print at the given size on the paper, no matter the print scale. This option was how Purple Pen always worked prior to version 3.1.</li>
+        <li><strong>Relative to map scale</strong>. The item sizes will scale along with the map if the print scale is different than the map scale. For example, if the map scale is 1:10,000,
+                    and the print scale is 1:7,500, then circles, line width, etc. will be 1.333x of the given size. If the print scale is the same as the scale of the underlying map,
+                    then items will print at the given size.
+        </li>
+        <li><strong>Relative to 1:15,000</strong>. The item sizes will scale based on the printing scale relative to a 1:15,000 base resolution, regardless of the scale of the underlying map.
+            For example, if the map is 1:10,000, and also printed at 1:10,000, then circles, line width, etc. will be at 1.5x of the given size. This is consistent with the ISOM2017 mapping specification.
+        </li>
+    </ul>
 <p><strong>Blend purple with underlying map colors</strong>: If this is checked, the course lines and control numbers that are printed in purple will be blended with the underlying map. This allows features (especially black features) in the map to show through the purple. In most cases, this produces a more readable map, and this setting is on by default. To prevent blending of control numbers only, set the &quot;white outline around numbers&quot; setting to a value greater than zero.</p>
     <p><strong>Use purple color from map</strong>: If this is checked, the color 
 used for the course will be the same shade of Purple as used in the underlying 
