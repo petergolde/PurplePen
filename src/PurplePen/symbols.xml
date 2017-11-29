@@ -46,7 +46,7 @@ for the symbols.
    standard - (optional) If specified, either "2004" or "2018". Indicates which IOF standard
                    the symbol is used in.
    replacement-id - (optional) The ID to switch to if the IOF standard is changed and this symbol doesn't exist
-                   in the new standard. E.g., trench->erosion gully; edge->side.
+                   in the new standard. E.g., trench->erosion gully
    size-is-depth - (optional, default=false) If true, indicates that a single number in 
                    column F indicates a depth, rather than a height.
    
@@ -2038,18 +2038,9 @@ for the symbols.
     <text case="čím" lang="cs">kupkou</text>
     <text case="čímplur" lang="cs">kupkami</text>
 
-    <filled-beziers>
-      <point x="-70" y ="-30"/>
-      <point x="-10" y ="-30"/>
-      <point x="-10" y ="-30"/>
-      <point x="70" y ="-30"/>
-      <point x="70" y ="8.66"/>
-      <point x="38.66" y ="40"/>
-      <point x="0" y ="40"/>
-      <point x="-38.66" y ="40"/>
-      <point x="-70" y ="8.66"/>
-      <point x="-70" y ="-30"/>
-    </filled-beziers>
+    <filled-circle radius="30">
+      <point x="0" y="0" />
+    </filled-circle>
 
   </symbol>
 
@@ -2760,7 +2751,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="D" id="2.4" standard="2004" replacement-id="2.4">
+  <symbol kind="D" id="2.4" >
     <name lang="en-AU">Boulder</name>
     <name lang="en">Boulder</name>
     <name lang="fr">Rocher, bloc</name>
@@ -2819,81 +2810,12 @@ for the symbols.
     <text case="čím" lang="cs">kameny</text>
     <text case="čím" lang="cs">kamenem</text>
     <text case="čímplur" lang="cs">kameny</text>
-
-
-
 
     <filled-polygon>
-      <point x="0" y="55" />
-      <point x="63.5" y="-55" />
-      <point x="-63.5" y="-55" />
+      <point x="0" y="50" />
+      <point x="57.73" y="-50" />
+      <point x="-57.73" y="-50" />
     </filled-polygon>
-  </symbol>
-
-  <symbol kind="D" id="2.4" standard="2018" replacement-id="2.4">
-    <name lang="en-AU">Boulder</name>
-    <name lang="en">Boulder</name>
-    <name lang="fr">Rocher, bloc</name>
-    <name lang="en-GB">Boulder</name>
-    <name lang="sv">Sten</name>
-    <name lang="nb-NO">Stein</name>
-    <name lang="es">Roca</name>
-    <name lang="nn-NO">Stein</name>
-    <name lang="fi">Kivi</name>
-    <name lang="bg">Камък</name>
-    <name lang="ro">Bolovan</name>
-    <name lang="et">Kivi</name>
-    <name lang="de">Stein</name>
-    <name lang="ca">Roca</name>
-    <name lang="ja">岩</name>
-    <name lang="zh-HK">Boulder</name>
-    <name lang="pl">Boulder</name>
-    <name lang="cs">Kámen</name>
-
-    <text lang="en-AU" plural="true">boulders</text>
-    <text lang="en-AU">boulder</text>
-
-    <text lang="en">boulder</text>
-    <text lang="en" plural="true">boulders</text>
-    <text lang="fr" plural="true" gender="masculin">rochers ou blocs</text>
-    <text lang="fr" gender="masculin">rocher ou bloc</text>
-    <text lang="en-GB" plural="true">Boulders</text>
-    <text lang="en-GB">Boulder</text>
-    <text lang="sv" plural="true">stenarna</text>
-    <text lang="sv">stenen</text>
-    <text lang="nb-NO" plural="true">steiner</text>
-    <text lang="nb-NO">stein</text>
-    <text lang="es" plural="true" gender="femenino">rocas</text>
-    <text lang="es" gender="femenino">roca</text>
-    <text lang="nn-NO" plural="true">steiner</text>
-    <text lang="nn-NO">stein</text>
-    <text lang="fi" plural="true">kivien</text>
-    <text lang="fi">kivi</text>
-    <text lang="bg" plural="true" gender="мъжки">камъни</text>
-    <text lang="bg" gender="мъжки">камък</text>
-    <text lang="ro">bolovan</text>
-    <text lang="et" plural="true">kivid</text>
-    <text lang="et">kivi</text>
-    <text lang="de" plural="true" gender="maskulin">Steinen</text>
-    <text lang="de" gender="maskulin">Stein</text>
-    <text lang="ca" plural="true" gender="femení">roques</text>
-    <text lang="ca" gender="femení">roca</text>
-    <text lang="ja">岩</text>
-    <text lang="zh-HK">大石</text>
-    <text lang="pl" plural="true" gender="męski">głazy</text>
-    <text lang="pl" gender="męski">głaz</text>
-    <text lang="cs" plural="true">Kameny</text>
-    <text lang="cs" gender="maskulinum">kámen</text>
-    <text case="čeho" lang="cs">kamene</text>
-    <text case="čehoplur" lang="cs">kamenů</text>
-    <text case="čím" lang="cs">kameny</text>
-    <text case="čím" lang="cs">kamenem</text>
-    <text case="čímplur" lang="cs">kameny</text>
-
-    <filled-circle radius="25">
-      <point x="0" y="0" />
-    </filled-circle>
-
   </symbol>
 
   <symbol kind="D" id="2.5">
@@ -2983,7 +2905,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.6" standard="2004" replacement-id="2.6">
+  <symbol kind="D" id="2.6">
     <name lang="en-AU">Boulder cluster</name>
     <name lang="en">Boulder cluster</name>
     <name lang="fr">Tas de pierre</name>
@@ -3057,73 +2979,6 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.6" standard="2018" replacement-id="2.6">
-    <name lang="en-AU">Boulder cluster</name>
-    <name lang="en">Boulder cluster</name>
-    <name lang="fr">Tas de pierre</name>
-    <name lang="en-GB">Boulder cluster</name>
-    <name lang="sv">Stensamling</name>
-    <name lang="nb-NO">Steinblokk</name>
-    <name lang="es">Grupo de rocas</name>
-    <name lang="nn-NO">Steinblokk</name>
-    <name lang="fi">Kiviryhmä</name>
-    <name lang="bg">Група камъни</name>
-    <name lang="ro">Adunătură de bolovani</name>
-    <name lang="et">Kivihunnik</name>
-    <name lang="de">Steinhaufen</name>
-    <name lang="ca">Grup de roques</name>
-    <name lang="ja">岩石群</name>
-    <name lang="zh-HK">Boulder cluster</name>
-    <name lang="pl">Boulder cluster</name>
-    <name lang="cs">Skupina kamenů</name>
-
-    <text lang="en-AU" plural="true">boulder clusters</text>
-    <text lang="en-AU">boulder cluster</text>
-
-    <text lang="en">boulder cluster</text>
-    <text lang="en" plural="true">boulder clusters</text>
-    <text lang="fr" plural="true" gender="masculin">tas de pierre</text>
-    <text lang="fr" gender="masculin">tas de pierre</text>
-    <text lang="en-GB" plural="true">Boulder Clusters</text>
-    <text lang="en-GB">Boulder Cluster</text>
-    <text lang="sv" plural="true">stensamlingarna</text>
-    <text lang="sv">stensamlingen</text>
-    <text lang="nb-NO" plural="true">steinblokker</text>
-    <text lang="nb-NO">steinblokk</text>
-    <text lang="es" plural="true" gender="masculino">grupos de rocas</text>
-    <text lang="es" gender="masculino">grupo de rocas</text>
-    <text lang="nn-NO" plural="true">steinblokker</text>
-    <text lang="nn-NO">steinblokk</text>
-    <text lang="fi" plural="true">kiviryhmien</text>
-    <text lang="fi">kiviryhmä</text>
-    <text lang="bg" plural="true" gender="женски">групи камъни</text>
-    <text lang="bg" gender="женски">група камъни</text>
-    <text lang="ro">adunătură de bolovani</text>
-    <text lang="et" plural="true">kivihunnikute</text>
-    <text lang="et">kivihunnik</text>
-    <text lang="de" plural="true" gender="maskulin">Steinhaufen</text>
-    <text lang="de" gender="maskulin">Steinhaufen</text>
-    <text lang="ca" plural="true" gender="masculí">grups de roques</text>
-    <text lang="ca" gender="masculí">grup de roques</text>
-    <text lang="ja">岩石群</text>
-    <text lang="zh-HK">大石堆</text>
-    <text lang="pl" plural="true" gender="żeński">grupy skał</text>
-    <text lang="pl" gender="żeński">grupa skał</text>
-    <text lang="cs" plural="true">Skupina kamenů</text>
-    <text lang="cs" gender="femininum">skupina kamenů</text>
-    <text case="čeho" lang="cs">skupiny kamenů</text>
-    <text case="čehoplur" lang="cs">skupin kamenů</text>
-    <text case="čím" lang="cs">skupinou kamenů</text>
-    <text case="čímplur" lang="cs">skupinami kamenů</text>
-
-    <filled-polygon>
-      <point x="0" y="55" />
-      <point x="63.5" y="-55" />
-      <point x="-63.5" y="-55" />
-    </filled-polygon>
-
-
-  </symbol>
 
 
 
@@ -7032,9 +6887,9 @@ for the symbols.
   </symbol>
 
   <symbol kind="D" id="5.25" standard="2018">
-    <name lang="en">Out of bounds area</name>
-    <text lang="en">out of bounds area</text>
-    <text lang="en" plural="true">out of bounds areas</text>
+    <name lang="en">Flower bed / Out of bounds area</name>
+    <text lang="en">flower bed</text>
+    <text lang="en" plural="true">flower beds</text>
 
     <polygon thickness="12.5">
       <point x="-70" y="-70" />
@@ -13435,43 +13290,9 @@ for the symbols.
         {0} has the distance, plus a space. 
         -->
   <symbol kind="V" id="13.6">
-    <name lang="en-AU">Map issue point</name>
     <name lang="en">Map issue point</name>
-    <name lang="fr">Map issue point</name>
-    <name lang="en-GB">Map issue point</name>
-    <name lang="sv">Map issue point</name>
-    <name lang="nb-NO">Map issue point</name>
-    <name lang="es">Map issue point</name>
-    <name lang="nn-NO">Map issue point</name>
-    <name lang="fi">Map issue point</name>
-    <name lang="bg">Map issue point</name>
-    <name lang="ro">Map issue point</name>
-    <name lang="et">Map issue point</name>
-    <name lang="de">Map issue point</name>
-    <name lang="ca">Map issue point</name>
-    <name lang="ja">Map issue point</name>
-    <name lang="zh-HK">Map issue point</name>
-    <name lang="pl">Map issue point</name>
 
-    <text lang="en-AU">Map issue: follow tapes {0}to start</text>
-
-    <text lang="en">Map issue: follow tapes {0}to start</text>
-    <text lang="fr">Map issue: follow tapes {0}to start</text>
-    <text lang="en-GB">Map issue: follow tapes {0}to start</text>
-    <text lang="sv">Map issue: follow tapes {0}to start</text>
-    <text lang="nb-NO">Map issue: follow tapes {0}to start</text>
-    <text lang="es">Map issue: follow tapes {0}to start</text>
-    <text lang="nn-NO">Map issue: follow tapes {0}to start</text>
-    <text lang="fi">Map issue: follow tapes {0}to start</text>
-    <text lang="bg">Map issue: follow tapes {0}to start</text>
-    <text lang="ro">Map issue: follow tapes {0}to start</text>
-    <text lang="et">Map issue: follow tapes {0}to start</text>
-    <text lang="de">Map issue: follow tapes {0}to start</text>
-    <text lang="ca">Map issue: follow tapes {0}to start</text>
-    <text lang="ja">Map issue: follow tapes {0}to start</text>
-    <text lang="zh-HK">Map issue: follow tapes {0}to start</text>
-    <text lang="pl">Map issue: follow tapes {0}to start</text>
-
+    <text lang="en">{0}to start</text>
 
     <lines thickness="12.5">
       <point x="-760" y="-50" />

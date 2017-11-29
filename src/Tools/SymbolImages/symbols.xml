@@ -2038,18 +2038,9 @@ for the symbols.
     <text case="čím" lang="cs">kupkou</text>
     <text case="čímplur" lang="cs">kupkami</text>
 
-    <filled-beziers>
-      <point x="-70" y ="-30"/>
-      <point x="-10" y ="-30"/>
-      <point x="-10" y ="-30"/>
-      <point x="70" y ="-30"/>
-      <point x="70" y ="8.66"/>
-      <point x="38.66" y ="40"/>
-      <point x="0" y ="40"/>
-      <point x="-38.66" y ="40"/>
-      <point x="-70" y ="8.66"/>
-      <point x="-70" y ="-30"/>
-    </filled-beziers>
+    <filled-circle radius="30">
+      <point x="0" y="0" />
+    </filled-circle>
 
   </symbol>
 
@@ -2760,7 +2751,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="D" id="2.4" standard="2004" replacement-id="2.4">
+  <symbol kind="D" id="2.4" replacement-id="2.4">
     <name lang="en-AU">Boulder</name>
     <name lang="en">Boulder</name>
     <name lang="fr">Rocher, bloc</name>
@@ -2824,77 +2815,12 @@ for the symbols.
 
 
     <filled-polygon>
-      <point x="0" y="55" />
-      <point x="63.5" y="-55" />
-      <point x="-63.5" y="-55" />
+      <point x="0" y="50" />
+      <point x="57.73" y="-50" />
+      <point x="-57.73" y="-50" />
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.4" standard="2018" replacement-id="2.4">
-    <name lang="en-AU">Boulder</name>
-    <name lang="en">Boulder</name>
-    <name lang="fr">Rocher, bloc</name>
-    <name lang="en-GB">Boulder</name>
-    <name lang="sv">Sten</name>
-    <name lang="nb-NO">Stein</name>
-    <name lang="es">Roca</name>
-    <name lang="nn-NO">Stein</name>
-    <name lang="fi">Kivi</name>
-    <name lang="bg">Камък</name>
-    <name lang="ro">Bolovan</name>
-    <name lang="et">Kivi</name>
-    <name lang="de">Stein</name>
-    <name lang="ca">Roca</name>
-    <name lang="ja">岩</name>
-    <name lang="zh-HK">Boulder</name>
-    <name lang="pl">Boulder</name>
-    <name lang="cs">Kámen</name>
-
-    <text lang="en-AU" plural="true">boulders</text>
-    <text lang="en-AU">boulder</text>
-
-    <text lang="en">boulder</text>
-    <text lang="en" plural="true">boulders</text>
-    <text lang="fr" plural="true" gender="masculin">rochers ou blocs</text>
-    <text lang="fr" gender="masculin">rocher ou bloc</text>
-    <text lang="en-GB" plural="true">Boulders</text>
-    <text lang="en-GB">Boulder</text>
-    <text lang="sv" plural="true">stenarna</text>
-    <text lang="sv">stenen</text>
-    <text lang="nb-NO" plural="true">steiner</text>
-    <text lang="nb-NO">stein</text>
-    <text lang="es" plural="true" gender="femenino">rocas</text>
-    <text lang="es" gender="femenino">roca</text>
-    <text lang="nn-NO" plural="true">steiner</text>
-    <text lang="nn-NO">stein</text>
-    <text lang="fi" plural="true">kivien</text>
-    <text lang="fi">kivi</text>
-    <text lang="bg" plural="true" gender="мъжки">камъни</text>
-    <text lang="bg" gender="мъжки">камък</text>
-    <text lang="ro">bolovan</text>
-    <text lang="et" plural="true">kivid</text>
-    <text lang="et">kivi</text>
-    <text lang="de" plural="true" gender="maskulin">Steinen</text>
-    <text lang="de" gender="maskulin">Stein</text>
-    <text lang="ca" plural="true" gender="femení">roques</text>
-    <text lang="ca" gender="femení">roca</text>
-    <text lang="ja">岩</text>
-    <text lang="zh-HK">大石</text>
-    <text lang="pl" plural="true" gender="męski">głazy</text>
-    <text lang="pl" gender="męski">głaz</text>
-    <text lang="cs" plural="true">Kameny</text>
-    <text lang="cs" gender="maskulinum">kámen</text>
-    <text case="čeho" lang="cs">kamene</text>
-    <text case="čehoplur" lang="cs">kamenů</text>
-    <text case="čím" lang="cs">kameny</text>
-    <text case="čím" lang="cs">kamenem</text>
-    <text case="čímplur" lang="cs">kameny</text>
-
-    <filled-circle radius="25">
-      <point x="0" y="0" />
-    </filled-circle>
-
-  </symbol>
 
   <symbol kind="D" id="2.5">
     <name lang="en-AU">Boulder field</name>
@@ -2983,7 +2909,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="D" id="2.6" standard="2004" replacement-id="2.6">
+  <symbol kind="D" id="2.6" >
     <name lang="en-AU">Boulder cluster</name>
     <name lang="en">Boulder cluster</name>
     <name lang="fr">Tas de pierre</name>
@@ -3056,75 +2982,6 @@ for the symbols.
       <point x="-69.3" y="-30" />
     </filled-polygon>
   </symbol>
-
-  <symbol kind="D" id="2.6" standard="2018" replacement-id="2.6">
-    <name lang="en-AU">Boulder cluster</name>
-    <name lang="en">Boulder cluster</name>
-    <name lang="fr">Tas de pierre</name>
-    <name lang="en-GB">Boulder cluster</name>
-    <name lang="sv">Stensamling</name>
-    <name lang="nb-NO">Steinblokk</name>
-    <name lang="es">Grupo de rocas</name>
-    <name lang="nn-NO">Steinblokk</name>
-    <name lang="fi">Kiviryhmä</name>
-    <name lang="bg">Група камъни</name>
-    <name lang="ro">Adunătură de bolovani</name>
-    <name lang="et">Kivihunnik</name>
-    <name lang="de">Steinhaufen</name>
-    <name lang="ca">Grup de roques</name>
-    <name lang="ja">岩石群</name>
-    <name lang="zh-HK">Boulder cluster</name>
-    <name lang="pl">Boulder cluster</name>
-    <name lang="cs">Skupina kamenů</name>
-
-    <text lang="en-AU" plural="true">boulder clusters</text>
-    <text lang="en-AU">boulder cluster</text>
-
-    <text lang="en">boulder cluster</text>
-    <text lang="en" plural="true">boulder clusters</text>
-    <text lang="fr" plural="true" gender="masculin">tas de pierre</text>
-    <text lang="fr" gender="masculin">tas de pierre</text>
-    <text lang="en-GB" plural="true">Boulder Clusters</text>
-    <text lang="en-GB">Boulder Cluster</text>
-    <text lang="sv" plural="true">stensamlingarna</text>
-    <text lang="sv">stensamlingen</text>
-    <text lang="nb-NO" plural="true">steinblokker</text>
-    <text lang="nb-NO">steinblokk</text>
-    <text lang="es" plural="true" gender="masculino">grupos de rocas</text>
-    <text lang="es" gender="masculino">grupo de rocas</text>
-    <text lang="nn-NO" plural="true">steinblokker</text>
-    <text lang="nn-NO">steinblokk</text>
-    <text lang="fi" plural="true">kiviryhmien</text>
-    <text lang="fi">kiviryhmä</text>
-    <text lang="bg" plural="true" gender="женски">групи камъни</text>
-    <text lang="bg" gender="женски">група камъни</text>
-    <text lang="ro">adunătură de bolovani</text>
-    <text lang="et" plural="true">kivihunnikute</text>
-    <text lang="et">kivihunnik</text>
-    <text lang="de" plural="true" gender="maskulin">Steinhaufen</text>
-    <text lang="de" gender="maskulin">Steinhaufen</text>
-    <text lang="ca" plural="true" gender="masculí">grups de roques</text>
-    <text lang="ca" gender="masculí">grup de roques</text>
-    <text lang="ja">岩石群</text>
-    <text lang="zh-HK">大石堆</text>
-    <text lang="pl" plural="true" gender="żeński">grupy skał</text>
-    <text lang="pl" gender="żeński">grupa skał</text>
-    <text lang="cs" plural="true">Skupina kamenů</text>
-    <text lang="cs" gender="femininum">skupina kamenů</text>
-    <text case="čeho" lang="cs">skupiny kamenů</text>
-    <text case="čehoplur" lang="cs">skupin kamenů</text>
-    <text case="čím" lang="cs">skupinou kamenů</text>
-    <text case="čímplur" lang="cs">skupinami kamenů</text>
-
-    <filled-polygon>
-      <point x="0" y="55" />
-      <point x="63.5" y="-55" />
-      <point x="-63.5" y="-55" />
-    </filled-polygon>
-
-
-  </symbol>
-
 
 
   <symbol kind="D" id="2.7">
@@ -6882,9 +6739,9 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="D" id="5.23">
+  <symbol kind="D" id="5.23" id-2018="5.21">
     <name lang="en-AU">Building pass-through</name>
-    <name lang="en">Building pass-through</name>
+    <name lang="en">Canopy</name>
     <name lang="fr">Passage couvert</name>
     <name lang="en-GB">Building pass-through</name>
     <name lang="sv">Passage under byggnad</name>
@@ -6958,7 +6815,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="D" id="5.24">
+  <symbol kind="D" id="5.24" id-2018="5.22">
     <name lang="en-AU">Stairway</name>
     <name lang="en">Stairway</name>
     <name lang="fr">Escalier</name>
@@ -7031,7 +6888,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="D" id="5.25" standard="2018">
+  <symbol kind="D" id="5.25" standard="2018"  id-2018="5.23">
     <name lang="en">Out of bounds area</name>
     <text lang="en">out of bounds area</text>
     <text lang="en" plural="true">out of bounds areas</text>
@@ -8602,7 +8459,7 @@ for the symbols.
   </symbol>
 
   <!-- Note that the Symbol ID keeps the 2004 id, even though it has now moved to column F. -->
-  <symbol kind="F" id="11.7" standard="2018" replacement-id="11.7">
+  <symbol kind="F" id="11.7" standard="2018" replacement-id="11.7" id-2018="11.1">
     <name lang="en-AU">Bend</name>
     <name lang="en">Bend</name>
     <name lang="fr">Coude</name>
@@ -8942,7 +8799,7 @@ for the symbols.
 		 described is {0}.
 		 -->
 
-  <symbol kind="G" id="11.1N">
+  <symbol kind="G" id="11.1N" id-2018="12.1N">
     <name lang="en-AU">North side</name>
     <name lang="en">North side</name>
     <name lang="fr">Côté Nord</name>
@@ -8993,7 +8850,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1NE">
+  <symbol kind="G" id="11.1NE" id-2018="12.1NE">
     <name lang="en-AU">North-east side</name>
     <name lang="en">North-east side</name>
     <name lang="fr">Côté NE</name>
@@ -9044,7 +8901,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1E">
+  <symbol kind="G" id="11.1E"  id-2018="12.1E">
     <name lang="en-AU">East side</name>
     <name lang="en">East side</name>
     <name lang="fr">Côté Est</name>
@@ -9095,7 +8952,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1SE">
+  <symbol kind="G" id="11.1SE" id-2018="12.1SE">
     <name lang="en-AU">South-east side</name>
     <name lang="en">South-east side</name>
     <name lang="fr">Côté SE</name>
@@ -9146,7 +9003,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1S">
+  <symbol kind="G" id="11.1S" id-2018="12.1S">
     <name lang="en-AU">South side</name>
     <name lang="en">South side</name>
     <name lang="fr">Côté Sud</name>
@@ -9197,7 +9054,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1SW">
+  <symbol kind="G" id="11.1SW" id-2018="12.1SW">
     <name lang="en-AU">South-west side</name>
     <name lang="en">South-west side</name>
     <name lang="fr">Côté SO</name>
@@ -9248,7 +9105,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1W">
+  <symbol kind="G" id="11.1W" id-2018="12.1W">
     <name lang="en-AU">West side</name>
     <name lang="en">West side</name>
     <name lang="fr">Côté Ouest</name>
@@ -9299,7 +9156,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.1NW">
+  <symbol kind="G" id="11.1NW" id-2018="12.1NW">
     <name lang="en-AU">North-west side</name>
     <name lang="en">North-west side</name>
     <name lang="fr">Côté NO</name>
@@ -9350,7 +9207,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.2N" >
+  <symbol kind="G" id="11.2N" id-2018="12.2N" >
     <name lang="en-AU">North edge</name>
     <name lang="en">North edge</name>
     <name lang="fr">Bord Nord</name>
@@ -9402,7 +9259,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2NE" >
+  <symbol kind="G" id="11.2NE" id-2018="12.2NE" >
     <name lang="en-AU">North-east edge</name>
     <name lang="en">North-east edge</name>
     <name lang="fr">Bord NE</name>
@@ -9454,7 +9311,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2E"  >
+  <symbol kind="G" id="11.2E" id-2018="12.2E"  >
     <name lang="en-AU">East edge</name>
     <name lang="en">East edge</name>
     <name lang="fr">Bord Est</name>
@@ -9506,7 +9363,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2SE" >
+  <symbol kind="G" id="11.2SE" id-2018="12.2SE" >
     <name lang="en-AU">South-east edge</name>
     <name lang="en">South-east edge</name>
     <name lang="fr">Bord SE</name>
@@ -9558,7 +9415,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2S" >
+  <symbol kind="G" id="11.2S" id-2018="12.2S" >
     <name lang="en-AU">South edge</name>
     <name lang="en">South edge</name>
     <name lang="fr">Bord Sud</name>
@@ -9610,7 +9467,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2SW" >
+  <symbol kind="G" id="11.2SW" id-2018="12.2SW" >
     <name lang="en-AU">South-west edge</name>
     <name lang="en">South-west edge</name>
     <name lang="fr">Bord SO</name>
@@ -9662,7 +9519,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2W" >
+  <symbol kind="G" id="11.2W" id-2018="12.2W" >
     <name lang="en-AU">West edge</name>
     <name lang="en">West edge</name>
     <name lang="fr">Bord Ouest</name>
@@ -9714,7 +9571,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.2NW" >
+  <symbol kind="G" id="11.2NW" id-2018="12.2NW" >
     <name lang="en-AU">North-west edge</name>
     <name lang="en">North-west edge</name>
     <name lang="fr">Bord NO</name>
@@ -9766,7 +9623,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.3N">
+  <symbol kind="G" id="11.3N" id-2018="12.3N">
     <name lang="en-AU">North part</name>
     <name lang="en">North part</name>
     <name lang="fr">Partie Nord</name>
@@ -9817,7 +9674,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3NE">
+  <symbol kind="G" id="11.3NE" id-2018="12.3NE">
     <name lang="en-AU">North-east part</name>
     <name lang="en">North-east part</name>
     <name lang="fr">Partie NE</name>
@@ -9868,7 +9725,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3E">
+  <symbol kind="G" id="11.3E" id-2018="12.3E">
     <name lang="en-AU">East part</name>
     <name lang="en">East part</name>
     <name lang="fr">Partie Est</name>
@@ -9919,7 +9776,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3SE">
+  <symbol kind="G" id="11.3SE" id-2018="12.3SE">
     <name lang="en-AU">South-east part</name>
     <name lang="en">South-east part</name>
     <name lang="fr">Partie SE</name>
@@ -9970,7 +9827,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3S">
+  <symbol kind="G" id="11.3S" id-2018="12.3S">
     <name lang="en-AU">South part</name>
     <name lang="en">South part</name>
     <name lang="fr">Partie Sud</name>
@@ -10021,7 +9878,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3SW">
+  <symbol kind="G" id="11.3SW" id-2018="12.3SW">
     <name lang="en-AU">South-west part</name>
     <name lang="en">South-west part</name>
     <name lang="fr">Partie SO</name>
@@ -10072,7 +9929,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3W">
+  <symbol kind="G" id="11.3W" id-2018="12.3W">
     <name lang="en-AU">West part</name>
     <name lang="en">West part</name>
     <name lang="fr">Partie Ouest</name>
@@ -10123,7 +9980,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.3NW">
+  <symbol kind="G" id="11.3NW" id-2018="12.3NW">
     <name lang="en-AU">North-west part</name>
     <name lang="en">North-west part</name>
     <name lang="fr">Partie NO</name>
@@ -10174,7 +10031,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4N">
+  <symbol kind="G" id="11.4N"  id-2018="12.4N">
     <name lang="en-AU">North corner (inside)</name>
     <name lang="en">North corner (inside)</name>
     <name lang="fr">Angle Nord (intérieur)</name>
@@ -10227,7 +10084,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4NE">
+  <symbol kind="G" id="11.4NE"  id-2018="12.4NE">
     <name lang="en-AU">North-east corner (inside)</name>
     <name lang="en">North-east corner (inside)</name>
     <name lang="fr">Angle NE (intérieur)</name>
@@ -10280,7 +10137,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4E">
+  <symbol kind="G" id="11.4E" id-2018="12.4E">
     <name lang="en-AU">East corner (inside)</name>
     <name lang="en">East corner (inside)</name>
     <name lang="fr">Angle Est (intérieur)</name>
@@ -10333,7 +10190,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4SE">
+  <symbol kind="G" id="11.4SE" id-2018="12.4SE">
     <name lang="en-AU">South-east corner (inside)</name>
     <name lang="en">South-east corner (inside)</name>
     <name lang="fr">Angle SE (intérieur)</name>
@@ -10386,7 +10243,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4S">
+  <symbol kind="G" id="11.4S" id-2018="12.4S">
     <name lang="en-AU">South corner (inside)</name>
     <name lang="en">South corner (inside)</name>
     <name lang="fr">Angle Sud (intérieur)</name>
@@ -10439,7 +10296,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4SW">
+  <symbol kind="G" id="11.4SW" id-2018="12.4SW">
     <name lang="en-AU">South-west corner (inside)</name>
     <name lang="en">South-west corner (inside)</name>
     <name lang="fr">Angle SO (intérieur)</name>
@@ -10492,7 +10349,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4W">
+  <symbol kind="G" id="11.4W" id-2018="12.4W">
     <name lang="en-AU">West corner (inside)</name>
     <name lang="en">West corner (inside)</name>
     <name lang="fr">Angle Ouest (intérieur)</name>
@@ -10545,7 +10402,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.4NW">
+  <symbol kind="G" id="11.4NW" id-2018="12.4NW">
     <name lang="en-AU">North-west corner (inside)</name>
     <name lang="en">North-west corner (inside)</name>
     <name lang="fr">Angle NO (intérieur)</name>
@@ -10598,7 +10455,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5N">
+  <symbol kind="G" id="11.5N" id-2018="12.5N">
     <name lang="en-AU">North corner (outside)</name>
     <name lang="en">North corner (outside)</name>
     <name lang="fr">Angle Nord (extérieur)</name>
@@ -10651,7 +10508,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5NE">
+  <symbol kind="G" id="11.5NE" id-2018="12.5NE">
     <name lang="en-AU">North-east corner (outside)</name>
     <name lang="en">North-east corner (outside)</name>
     <name lang="fr">Angle NE (extérieur)</name>
@@ -10704,7 +10561,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5E">
+  <symbol kind="G" id="11.5E" id-2018="12.5E">
     <name lang="en-AU">East corner (outside)</name>
     <name lang="en">East corner (outside)</name>
     <name lang="fr">Angle Est (extérieur)</name>
@@ -10757,7 +10614,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5SE">
+  <symbol kind="G" id="11.5SE" id-2018="12.5SE">
     <name lang="en-AU">South-east corner (outside)</name>
     <name lang="en">South-east corner (outside)</name>
     <name lang="fr">Angle SE (extérieur)</name>
@@ -10810,7 +10667,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5S">
+  <symbol kind="G" id="11.5S" id-2018="12.5S">
     <name lang="en-AU">South corner (outside)</name>
     <name lang="en">South corner (outside)</name>
     <name lang="fr">Angle Sud (extérieur)</name>
@@ -10863,7 +10720,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5SW">
+  <symbol kind="G" id="11.5SW" id-2018="12.5SW">
     <name lang="en-AU">South-west corner (outside)</name>
     <name lang="en">South-west corner (outside)</name>
     <name lang="fr">Angle SO (extérieur)</name>
@@ -10916,7 +10773,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5W">
+  <symbol kind="G" id="11.5W" id-2018="12.5W">
     <name lang="en-AU">West corner (outside)</name>
     <name lang="en">West corner (outside)</name>
     <name lang="fr">Angle Ouest (extérieur)</name>
@@ -10969,7 +10826,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.5NW">
+  <symbol kind="G" id="11.5NW" id-2018="12.5NW">
     <name lang="en-AU">North-west corner (outside)</name>
     <name lang="en">North-west corner (outside)</name>
     <name lang="fr">Angle NO(extérieur)</name>
@@ -11022,7 +10879,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6N">
+  <symbol kind="G" id="11.6N" id-2018="12.6N">
     <name lang="en-AU">North tip</name>
     <name lang="en">North tip</name>
     <name lang="fr">Pointe Nord</name>
@@ -11075,7 +10932,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6NE">
+  <symbol kind="G" id="11.6NE" id-2018="12.6NE">
     <name lang="en-AU">North-east tip</name>
     <name lang="en">North-east tip</name>
     <name lang="fr">Pointe NE</name>
@@ -11128,7 +10985,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6E">
+  <symbol kind="G" id="11.6E" id-2018="12.6E">
     <name lang="en-AU">East tip</name>
     <name lang="en">East tip</name>
     <name lang="fr">Pointe Est</name>
@@ -11181,7 +11038,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6SE">
+  <symbol kind="G" id="11.6SE" id-2018="12.6SE">
     <name lang="en-AU">South-east tip</name>
     <name lang="en">South-east tip</name>
     <name lang="fr">Pointe SE</name>
@@ -11234,7 +11091,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6S">
+  <symbol kind="G" id="11.6S" id-2018="12.6S">
     <name lang="en-AU">South tip</name>
     <name lang="en">South tip</name>
     <name lang="fr">Pointe Sud</name>
@@ -11287,7 +11144,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6SW">
+  <symbol kind="G" id="11.6SW" id-2018="12.6SW">
     <name lang="en-AU">South-west tip</name>
     <name lang="en">South-west tip</name>
     <name lang="fr">Pointe SO</name>
@@ -11340,7 +11197,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6W">
+  <symbol kind="G" id="11.6W" id-2018="12.6W">
     <name lang="en-AU">West tip</name>
     <name lang="en">West tip</name>
     <name lang="fr">Pointe Ouest</name>
@@ -11393,7 +11250,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.6NW">
+  <symbol kind="G" id="11.6NW" id-2018="12.6NW">
     <name lang="en-AU">North-west tip</name>
     <name lang="en">North-west tip</name>
     <name lang="fr">Pointe NO</name>
@@ -11446,7 +11303,7 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.8N">
+  <symbol kind="G" id="11.8N" id-2018="12.7N">
     <name lang="en-AU">North end</name>
     <name lang="en">North end</name>
     <name lang="fr">Extrémité Nord</name>
@@ -11499,7 +11356,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8NE">
+  <symbol kind="G" id="11.8NE" id-2018="12.7NE">
     <name lang="en-AU">North-east end</name>
     <name lang="en">North-east end</name>
     <name lang="fr">Extrémité NE</name>
@@ -11552,7 +11409,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8E">
+  <symbol kind="G" id="11.8E" id-2018="12.7E">
     <name lang="en-AU">East end</name>
     <name lang="en">East end</name>
     <name lang="fr">Extrémité Est</name>
@@ -11605,7 +11462,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8SE">
+  <symbol kind="G" id="11.8SE" id-2018="12.7SE">
     <name lang="en-AU">South-east end</name>
     <name lang="en">South-east end</name>
     <name lang="fr">Extrémité SE</name>
@@ -11658,7 +11515,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8S">
+  <symbol kind="G" id="11.8S" id-2018="12.7S">
     <name lang="en-AU">South end</name>
     <name lang="en">South end</name>
     <name lang="fr">Extrémité Sud</name>
@@ -11711,7 +11568,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8SW">
+  <symbol kind="G" id="11.8SW" id-2018="12.7SW">
     <name lang="en-AU">South-west end</name>
     <name lang="en">South-west end</name>
     <name lang="fr">Extrémité SO</name>
@@ -11764,7 +11621,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8W">
+  <symbol kind="G" id="11.8W" id-2018="12.7W">
     <name lang="en-AU">West end</name>
     <name lang="en">West end</name>
     <name lang="fr">Extrémité Ouest</name>
@@ -11817,7 +11674,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.8NW">
+  <symbol kind="G" id="11.8NW" id-2018="12.7NW">
     <name lang="en-AU">North-west end</name>
     <name lang="en">North-west end</name>
     <name lang="fr">Extrémité NO</name>
@@ -11870,7 +11727,230 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="G" id="11.14N">
+  <symbol kind="G" id="11.9" id-2018="12.8">
+    <name lang="en-AU">Upper part</name>
+    <name lang="en">Upper part</name>
+    <name lang="fr">Partie amont</name>
+    <name lang="en-GB">Upper part</name>
+    <name lang="sv">Övre delen</name>
+    <name lang="nb-NO">Øvre del</name>
+    <name lang="es">Parte alta</name>
+    <name lang="nn-NO">Øvre del</name>
+    <name lang="fi">Yläosa (ylhäällä)</name>
+    <name lang="bg">Горната част</name>
+    <name lang="ro">Partea superioară</name>
+    <name lang="et">Ülaosas</name>
+    <name lang="de">Oberer Teil</name>
+    <name lang="ca">Part superior</name>
+    <name lang="ja">上の部分</name>
+    <name lang="zh-HK">Upper part</name>
+    <name lang="pl">Upper part</name>
+    <name lang="cs">Horní část</name>
+
+    <text lang="en-AU">upper part of {0}</text>
+
+    <text lang="en">upper part of {0}</text>
+    <text lang="fr">{0}, partie amont</text>
+    <text lang="en-GB">{0}, Upper Part</text>
+    <text lang="sv">{0}, övre delen</text>
+    <text lang="nb-NO">øvre del {0}</text>
+    <text lang="es">{0} parte alta</text>
+    <text lang="nn-NO">øvre del {0}</text>
+    <text lang="fi">{0}, yläosa</text>
+    <text lang="bg">горната част на {0}</text>
+    <text lang="ro">partea superioară {0}</text>
+    <text lang="et">{0} ülaosas</text>
+    <text lang="de">{0}, oberer Teil</text>
+    <text lang="ca" gender="femení">a la part superior d'una {0}</text>
+    <text lang="ca" gender="masculí">a la part superior d'un {0}</text>
+    <text lang="ja">{0}の上の部分</text>
+    <text lang="zh-HK">{0}上部</text>
+    <text lang="pl">górna część {0}</text>
+    <text lang="cs">{0}, horní část</text>
+
+
+
+    <lines thickness="10">
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
+    </lines>
+    <lines thickness="10">
+      <point x="30" y="60" />
+      <point x="30" y="-60" />
+    </lines>
+    <filled-circle radius="12.5">
+      <point x="0" y="52.5" />
+    </filled-circle>
+  </symbol>
+
+  <symbol kind="G" id="11.10" id-2018="12.9">
+    <name lang="en-AU">Lower part</name>
+    <name lang="en">Lower part</name>
+    <name lang="fr">Partie aval</name>
+    <name lang="en-GB">Lower part</name>
+    <name lang="sv">Nedre delen</name>
+    <name lang="nb-NO">Nedre del</name>
+    <name lang="es">Parte baja</name>
+    <name lang="nn-NO">Nedre del</name>
+    <name lang="fi">Alaosa (alhaalla)</name>
+    <name lang="bg">Долната част</name>
+    <name lang="ro">Partea inferioară</name>
+    <name lang="et">Lower part</name>
+    <name lang="de">Unterer Teil</name>
+    <name lang="ca">Part inferior</name>
+    <name lang="ja">下の部分</name>
+    <name lang="zh-HK">Lower part</name>
+    <name lang="pl">Lower part</name>
+    <name lang="cs">Dolní část</name>
+
+    <text lang="en-AU">lower part of {0}</text>
+
+    <text lang="en">lower part of {0}</text>
+    <text lang="fr">{0}, partie aval</text>
+    <text lang="en-GB">{0}, Lower Part</text>
+    <text lang="sv">{0}, Nedre delen</text>
+    <text lang="nb-NO">nedre del {0}</text>
+    <text lang="es">{0} parte baja</text>
+    <text lang="nn-NO">nedre del {0}</text>
+    <text lang="fi">{0}, alaosa</text>
+    <text lang="bg">долната част на {0}</text>
+    <text lang="ro">partea inferioară {0}</text>
+    <text lang="et">{0} alumises osas</text>
+    <text lang="de">{0}, unterer Teil</text>
+    <text lang="ca" gender="femení">a la part inferior d'una {0}</text>
+    <text lang="ca" gender="masculí">a la part inferior d'un {0}</text>
+    <text lang="ja">{0}の下の部分</text>
+    <text lang="zh-HK">{0}下部</text>
+    <text lang="pl">dolna część {0}</text>
+    <text lang="cs">{0}, dolní část</text>
+
+
+
+    <lines thickness="10">
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
+    </lines>
+    <lines thickness="10">
+      <point x="30" y="60" />
+      <point x="30" y="-60" />
+    </lines>
+    <filled-circle radius="12.5">
+      <point x="0" y="-52.5" />
+    </filled-circle>
+  </symbol>
+
+  <symbol kind="G" id="11.11" id-2018="12.10">
+    <name lang="en-AU">Top</name>
+    <name lang="en">Top</name>
+    <name lang="fr">Sur</name>
+    <name lang="en-GB">Top</name>
+    <name lang="sv">Uppe på</name>
+    <name lang="nb-NO">Oppå</name>
+    <name lang="es">Encima</name>
+    <name lang="nn-NO">Oppå</name>
+    <name lang="fi">Päällä</name>
+    <name lang="bg">Отгоре/върху</name>
+    <name lang="ro">În vârful</name>
+    <name lang="et">Peal</name>
+    <name lang="de">Obenauf</name>
+    <name lang="ca">Sobre</name>
+    <name lang="ja">上</name>
+    <name lang="zh-HK">Top</name>
+    <name lang="pl">Top</name>
+    <name lang="cs">Nahoře</name>
+
+    <text lang="en-AU">top of {0}</text>
+
+    <text lang="en">top of {0}</text>
+    <text lang="fr">sur {0}</text>
+    <text lang="en-GB">{0}, Top</text>
+    <text lang="sv">{0}, uppe på</text>
+    <text lang="nb-NO">oppå {0}</text>
+    <text lang="es">{0} encima</text>
+    <text lang="nn-NO">oppå {0}</text>
+    <text lang="fi">{0}, päällä</text>
+    <text lang="bg">отгоре/върху {0}</text>
+    <text lang="ro">în vârful {0}</text>
+    <text lang="et">{0} peal</text>
+    <text lang="de">{0}, obenauf</text>
+    <text lang="ca" gender="femení">sobre d'una {0}</text>
+    <text lang="ca" gender="masculí">sobre d'un {0}</text>
+    <text lang="ja">{0}の上</text>
+    <text lang="zh-HK">{0}頂部</text>
+    <text lang="pl">na górze {0}</text>
+    <text lang="cs">{0}, nahoře</text>
+
+
+
+    <lines thickness="10">
+      <point x="-28" y="-60" />
+      <point x="-28" y="25" />
+      <point x="28" y="25" />
+      <point x="28" y="-60" />
+    </lines>
+    <filled-circle radius="12.5">
+      <point x="0" y="52.5" />
+    </filled-circle>
+  </symbol>
+
+
+  <symbol kind="G" id="11.13" id-2018="12.11">
+    <name lang="en-AU">Foot</name>
+    <name lang="en">Foot</name>
+    <name lang="fr">Au pied</name>
+    <name lang="en-GB">Foot</name>
+    <name lang="sv">Foten</name>
+    <name lang="nb-NO">Ved foten av</name>
+    <name lang="es">Al pie</name>
+    <name lang="nn-NO">Ved foten av</name>
+    <name lang="fi">Juuri (ei suuntaa)</name>
+    <name lang="bg">В основата (без указване на местоположението)</name>
+    <name lang="ro">La piciorul</name>
+    <name lang="et">Jalamil</name>
+    <name lang="de">Fuß</name>
+    <name lang="ca">Al peu</name>
+    <name lang="ja">根元</name>
+    <name lang="zh-HK">Foot</name>
+    <name lang="pl">Foot</name>
+    <name lang="cs">Pata</name>
+
+    <text lang="en-AU">foot of {0}</text>
+
+    <text lang="en">foot of {0}</text>
+    <text lang="fr">{0}, au pied</text>
+    <text lang="en-GB">{0}, Foot</text>
+    <text lang="sv">{0}, foten</text>
+    <text lang="nb-NO">ved foten av {0}</text>
+    <text lang="es">{0} al pie</text>
+    <text lang="nn-NO">ved foten av {0}</text>
+    <text lang="fi">{0}, juurella</text>
+    <text lang="bg">в основата на {0}</text>
+    <text lang="ro">La piciorul {0}</text>
+    <text lang="et">{0} jalamil</text>
+    <text lang="de">{0}, Fuß</text>
+    <text lang="ca" gender="femení">al peu d'una {0}</text>
+    <text lang="ca" gender="masculí">al peu d'un {0}</text>
+    <text lang="ja">{0}の根元</text>
+    <text lang="zh-HK">{0}腳下</text>
+    <text lang="pl">u podstawy {0}</text>
+    <text lang="cs" modifier-case="">pata {0}</text>
+    <text gender="maskulinum" lang="cs">{0}, jeho pata</text>
+    <text gender="femininum" lang="cs">{0}, její pata</text>
+    <text gender="neutrum" lang="cs">{0}, jeho pata</text>
+
+
+
+    <lines thickness="10">
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
+      <point x="30" y="-60" />
+    </lines>
+    <filled-circle radius="12.5">
+      <point x="0" y="-30" />
+    </filled-circle>
+  </symbol>
+
+  <symbol kind="G" id="11.14N" id-2018="12.12N">
     <name lang="en-AU">North foot</name>
     <name lang="en">North foot</name>
     <name lang="fr">Pied Nord</name>
@@ -11923,7 +12003,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14NE">
+  <symbol kind="G" id="11.14NE" id-2018="12.12NE">
     <name lang="en-AU">North-east foot</name>
     <name lang="en">North-east foot</name>
     <name lang="fr">Pied NE</name>
@@ -11976,7 +12056,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14E">
+  <symbol kind="G" id="11.14E" id-2018="12.12E">
     <name lang="en-AU">East foot</name>
     <name lang="en">East foot</name>
     <name lang="fr">Pied Est</name>
@@ -12029,7 +12109,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14SE">
+  <symbol kind="G" id="11.14SE" id-2018="12.12SE">
     <name lang="en-AU">South-east foot</name>
     <name lang="en">South-east foot</name>
     <name lang="fr">Pied SE</name>
@@ -12082,7 +12162,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14S">
+  <symbol kind="G" id="11.14S" id-2018="12.12S">
     <name lang="en-AU">South foot</name>
     <name lang="en">South foot</name>
     <name lang="fr">Pied Sud</name>
@@ -12135,7 +12215,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14SW">
+  <symbol kind="G" id="11.14SW" id-2018="12.12SW">
     <name lang="en-AU">South-west foot</name>
     <name lang="en">South-west foot</name>
     <name lang="fr">Pied SO</name>
@@ -12188,7 +12268,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14W">
+  <symbol kind="G" id="11.14W" id-2018="12.12W">
     <name lang="en-AU">West foot</name>
     <name lang="en">West foot</name>
     <name lang="fr">Pied Ouest</name>
@@ -12241,7 +12321,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.14NW">
+  <symbol kind="G" id="11.14NW" id-2018="12.12NW">
     <name lang="en-AU">North-west foot</name>
     <name lang="en">North-west foot</name>
     <name lang="fr">Pied NO</name>
@@ -12294,7 +12374,7 @@ for the symbols.
     </circle>
   </symbol>
 
-  <symbol kind="G" id="11.7" standard="2004" replacement-id="11.7">
+  <symbol kind="G" id="11.7" standard="2004" replacement-id="11.7" id-2018="11.1">
     <name lang="en-AU">Bend</name>
     <name lang="en">Bend</name>
     <name lang="fr">Coude</name>
@@ -12354,173 +12434,7 @@ for the symbols.
     </beziers>
   </symbol>
 
-  <symbol kind="G" id="11.9">
-    <name lang="en-AU">Upper part</name>
-    <name lang="en">Upper part</name>
-    <name lang="fr">Partie amont</name>
-    <name lang="en-GB">Upper part</name>
-    <name lang="sv">Övre delen</name>
-    <name lang="nb-NO">Øvre del</name>
-    <name lang="es">Parte alta</name>
-    <name lang="nn-NO">Øvre del</name>
-    <name lang="fi">Yläosa (ylhäällä)</name>
-    <name lang="bg">Горната част</name>
-    <name lang="ro">Partea superioară</name>
-    <name lang="et">Ülaosas</name>
-    <name lang="de">Oberer Teil</name>
-    <name lang="ca">Part superior</name>
-    <name lang="ja">上の部分</name>
-    <name lang="zh-HK">Upper part</name>
-    <name lang="pl">Upper part</name>
-    <name lang="cs">Horní část</name>
-
-    <text lang="en-AU">upper part of {0}</text>
-
-    <text lang="en">upper part of {0}</text>
-    <text lang="fr">{0}, partie amont</text>
-    <text lang="en-GB">{0}, Upper Part</text>
-    <text lang="sv">{0}, övre delen</text>
-    <text lang="nb-NO">øvre del {0}</text>
-    <text lang="es">{0} parte alta</text>
-    <text lang="nn-NO">øvre del {0}</text>
-    <text lang="fi">{0}, yläosa</text>
-    <text lang="bg">горната част на {0}</text>
-    <text lang="ro">partea superioară {0}</text>
-    <text lang="et">{0} ülaosas</text>
-    <text lang="de">{0}, oberer Teil</text>
-    <text lang="ca" gender="femení">a la part superior d'una {0}</text>
-    <text lang="ca" gender="masculí">a la part superior d'un {0}</text>
-    <text lang="ja">{0}の上の部分</text>
-    <text lang="zh-HK">{0}上部</text>
-    <text lang="pl">górna część {0}</text>
-    <text lang="cs">{0}, horní část</text>
-
-
-
-    <lines thickness="10">
-      <point x="-30" y="60" />
-      <point x="-30" y="-60" />
-    </lines>
-    <lines thickness="10">
-      <point x="30" y="60" />
-      <point x="30" y="-60" />
-    </lines>
-    <filled-circle radius="12.5">
-      <point x="0" y="52.5" />
-    </filled-circle>
-  </symbol>
-
-  <symbol kind="G" id="11.10">
-    <name lang="en-AU">Lower part</name>
-    <name lang="en">Lower part</name>
-    <name lang="fr">Partie aval</name>
-    <name lang="en-GB">Lower part</name>
-    <name lang="sv">Nedre delen</name>
-    <name lang="nb-NO">Nedre del</name>
-    <name lang="es">Parte baja</name>
-    <name lang="nn-NO">Nedre del</name>
-    <name lang="fi">Alaosa (alhaalla)</name>
-    <name lang="bg">Долната част</name>
-    <name lang="ro">Partea inferioară</name>
-    <name lang="et">Lower part</name>
-    <name lang="de">Unterer Teil</name>
-    <name lang="ca">Part inferior</name>
-    <name lang="ja">下の部分</name>
-    <name lang="zh-HK">Lower part</name>
-    <name lang="pl">Lower part</name>
-    <name lang="cs">Dolní část</name>
-
-    <text lang="en-AU">lower part of {0}</text>
-
-    <text lang="en">lower part of {0}</text>
-    <text lang="fr">{0}, partie aval</text>
-    <text lang="en-GB">{0}, Lower Part</text>
-    <text lang="sv">{0}, Nedre delen</text>
-    <text lang="nb-NO">nedre del {0}</text>
-    <text lang="es">{0} parte baja</text>
-    <text lang="nn-NO">nedre del {0}</text>
-    <text lang="fi">{0}, alaosa</text>
-    <text lang="bg">долната част на {0}</text>
-    <text lang="ro">partea inferioară {0}</text>
-    <text lang="et">{0} alumises osas</text>
-    <text lang="de">{0}, unterer Teil</text>
-    <text lang="ca" gender="femení">a la part inferior d'una {0}</text>
-    <text lang="ca" gender="masculí">a la part inferior d'un {0}</text>
-    <text lang="ja">{0}の下の部分</text>
-    <text lang="zh-HK">{0}下部</text>
-    <text lang="pl">dolna część {0}</text>
-    <text lang="cs">{0}, dolní část</text>
-
-
-
-    <lines thickness="10">
-      <point x="-30" y="60" />
-      <point x="-30" y="-60" />
-    </lines>
-    <lines thickness="10">
-      <point x="30" y="60" />
-      <point x="30" y="-60" />
-    </lines>
-    <filled-circle radius="12.5">
-      <point x="0" y="-52.5" />
-    </filled-circle>
-  </symbol>
-
-  <symbol kind="G" id="11.11">
-    <name lang="en-AU">Top</name>
-    <name lang="en">Top</name>
-    <name lang="fr">Sur</name>
-    <name lang="en-GB">Top</name>
-    <name lang="sv">Uppe på</name>
-    <name lang="nb-NO">Oppå</name>
-    <name lang="es">Encima</name>
-    <name lang="nn-NO">Oppå</name>
-    <name lang="fi">Päällä</name>
-    <name lang="bg">Отгоре/върху</name>
-    <name lang="ro">În vârful</name>
-    <name lang="et">Peal</name>
-    <name lang="de">Obenauf</name>
-    <name lang="ca">Sobre</name>
-    <name lang="ja">上</name>
-    <name lang="zh-HK">Top</name>
-    <name lang="pl">Top</name>
-    <name lang="cs">Nahoře</name>
-
-    <text lang="en-AU">top of {0}</text>
-
-    <text lang="en">top of {0}</text>
-    <text lang="fr">sur {0}</text>
-    <text lang="en-GB">{0}, Top</text>
-    <text lang="sv">{0}, uppe på</text>
-    <text lang="nb-NO">oppå {0}</text>
-    <text lang="es">{0} encima</text>
-    <text lang="nn-NO">oppå {0}</text>
-    <text lang="fi">{0}, päällä</text>
-    <text lang="bg">отгоре/върху {0}</text>
-    <text lang="ro">în vârful {0}</text>
-    <text lang="et">{0} peal</text>
-    <text lang="de">{0}, obenauf</text>
-    <text lang="ca" gender="femení">sobre d'una {0}</text>
-    <text lang="ca" gender="masculí">sobre d'un {0}</text>
-    <text lang="ja">{0}の上</text>
-    <text lang="zh-HK">{0}頂部</text>
-    <text lang="pl">na górze {0}</text>
-    <text lang="cs">{0}, nahoře</text>
-
-
-
-    <lines thickness="10">
-      <point x="-28" y="-60" />
-      <point x="-28" y="25" />
-      <point x="28" y="25" />
-      <point x="28" y="-60" />
-    </lines>
-    <filled-circle radius="12.5">
-      <point x="0" y="52.5" />
-    </filled-circle>
-  </symbol>
-
-  <symbol kind="G" id="11.12">
+  <symbol kind="G" id="11.12" id-2018="12.13">
     <name lang="en-AU">Beneath</name>
     <name lang="en">Beneath</name>
     <name lang="fr">Sous</name>
@@ -12577,62 +12491,6 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <symbol kind="G" id="11.13">
-    <name lang="en-AU">Foot</name>
-    <name lang="en">Foot</name>
-    <name lang="fr">Au pied</name>
-    <name lang="en-GB">Foot</name>
-    <name lang="sv">Foten</name>
-    <name lang="nb-NO">Ved foten av</name>
-    <name lang="es">Al pie</name>
-    <name lang="nn-NO">Ved foten av</name>
-    <name lang="fi">Juuri (ei suuntaa)</name>
-    <name lang="bg">В основата (без указване на местоположението)</name>
-    <name lang="ro">La piciorul</name>
-    <name lang="et">Jalamil</name>
-    <name lang="de">Fuß</name>
-    <name lang="ca">Al peu</name>
-    <name lang="ja">根元</name>
-    <name lang="zh-HK">Foot</name>
-    <name lang="pl">Foot</name>
-    <name lang="cs">Pata</name>
-
-    <text lang="en-AU">foot of {0}</text>
-
-    <text lang="en">foot of {0}</text>
-    <text lang="fr">{0}, au pied</text>
-    <text lang="en-GB">{0}, Foot</text>
-    <text lang="sv">{0}, foten</text>
-    <text lang="nb-NO">ved foten av {0}</text>
-    <text lang="es">{0} al pie</text>
-    <text lang="nn-NO">ved foten av {0}</text>
-    <text lang="fi">{0}, juurella</text>
-    <text lang="bg">в основата на {0}</text>
-    <text lang="ro">La piciorul {0}</text>
-    <text lang="et">{0} jalamil</text>
-    <text lang="de">{0}, Fuß</text>
-    <text lang="ca" gender="femení">al peu d'una {0}</text>
-    <text lang="ca" gender="masculí">al peu d'un {0}</text>
-    <text lang="ja">{0}の根元</text>
-    <text lang="zh-HK">{0}腳下</text>
-    <text lang="pl">u podstawy {0}</text>
-    <text lang="cs" modifier-case="">pata {0}</text>
-    <text gender="maskulinum" lang="cs">{0}, jeho pata</text>
-    <text gender="femininum" lang="cs">{0}, její pata</text>
-    <text gender="neutrum" lang="cs">{0}, jeho pata</text>
-
-
-
-    <lines thickness="10">
-      <point x="-30" y="60" />
-      <point x="-30" y="-60" />
-      <point x="30" y="-60" />
-    </lines>
-    <filled-circle radius="12.5">
-      <point x="0" y="-30" />
-    </filled-circle>
-  </symbol>
-
   <!--
 	For between symbol. The following text is replaced as follows:
 	    {0}  - the primary (column D) symbol text
@@ -12647,7 +12505,7 @@ for the symbols.
 	In this text, {0} is replaced with the regular text of the main symbol, {1} is replaced with the plural-text of the main symbol.
 	-->
 
-  <symbol kind="G" id="11.15">
+  <symbol kind="G" id="11.15" id-2018="12.14">
     <name lang="en-AU">Between</name>
     <name lang="en">Between</name>
     <name lang="fr">Entre</name>
@@ -12747,7 +12605,7 @@ for the symbols.
   <!-- Kind "H". Symbols that go only in column H:
 	     other information. -->
 
-  <symbol kind="H" id="12.1">
+  <symbol kind="H" id="12.1" id-2018="13.1">
     <name lang="en-AU">First aid post</name>
     <name lang="en">First aid post</name>
     <name lang="fr">Secours</name>
@@ -12804,7 +12662,7 @@ for the symbols.
     </filled-polygon>
   </symbol>
 
-  <symbol kind="H" id="12.2">
+  <symbol kind="H" id="12.2" id-2018="13.2">
     <name lang="en-AU">Refreshment point</name>
     <name lang="en">Refreshment point</name>
     <name lang="fr">Ravitaillement</name>
@@ -12928,7 +12786,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="H" id="12.4">
+  <symbol kind="H" id="12.4" id-2018="13.3">
     <name lang="en-AU">Control check</name>
     <name lang="en">Control check</name>
     <name lang="fr">Contrôleur</name>
@@ -12988,455 +12846,12 @@ for the symbols.
     </filled-circle>
   </symbol>
 
-  <!-- Kind "W". Taped route instructional lines. 
-	  {0} has the distance, plus a space
-	  -->
-
-  <symbol kind="W" id="13.1">
-    <name lang="en-AU">Taped route away from control</name>
-    <name lang="en">Taped route away from control</name>
-    <name lang="fr">Parcours balisé après le poste</name>
-    <name lang="en-GB">Taped route away from control</name>
-    <name lang="sv">Snitsel bort från kontroll</name>
-    <name lang="nb-NO">Merket løype fra post</name>
-    <name lang="es">Ruta balizada desde el control</name>
-    <name lang="nn-NO">Merket løype frå post</name>
-    <name lang="fi">Seuraa viitoitusta rastilta eteenpäin</name>
-    <name lang="bg">Следвай маркиран път след/от КТ</name>
-    <name lang="ro">Urmează ruta cu banda departe de control</name>
-    <name lang="et">Tähistus KPst väljumisel</name>
-    <name lang="de">Vom Posten weg ausgeflaggte Strecke</name>
-    <name lang="ca">Tram encintat despres del control</name>
-    <name lang="ja">コントロールから誘導</name>
-    <name lang="zh-HK">Taped route away from control</name>
-    <name lang="pl">Taped route away from control</name>
-    <name lang="cs">Značený úsek</name>
-
-    <text lang="en-AU">follow tapes {0}away from control</text>
-
-    <text lang="en">follow tapes {0}away from control</text>
-    <text lang="fr">suivre le parcours balisé sur {0}après le poste</text>
-    <text lang="en-GB">Follow Tapes {0}away from control</text>
-    <text lang="sv">följ snitsel {0}bort från kontrollen</text>
-    <text lang="nb-NO">merket løype {0} fra post</text>
-    <text lang="es">sigue {0} de ruta balizada desde el control</text>
-    <text lang="nn-NO">merket løype {0} frå post</text>
-    <text lang="fi">seuraa viitoitusta rastilta eteenpäin {0}</text>
-    <text lang="bg">Следвай маркиран път {0}след/от КТ.</text>
-    <text lang="ro">urmează ruta cu banda {0} departe de control</text>
-    <text lang="et">järgi tähistust {0} KPst väljumisel</text>
-    <text lang="de">Ausgeflaggte Strecke über {0}von Posten weg</text>
-    <text lang="ca">seguiu el tram encintat {0}despres del control</text>
-    <text lang="ja">コントロールから誘導 {0}</text>
-    <text lang="zh-HK">隨 {0} 索帶離開控制點</text>
-    <text lang="pl">oszarfowane {0} odbiegu od PK</text>
-    <text lang="cs">značeno {0} od kontroly</text>
-
-
-    <circle thickness="10" radius="70">
-      <point x="-700" y="0" />
-    </circle>
-    <lines thickness="12.5">
-      <point x="-625" y="0" />
-      <point x="-510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-480" y="0" />
-      <point x="-360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-330" y="0" />
-      <point x="-210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="620" y="0" />
-      <point x="510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="480" y="0" />
-      <point x="360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="330" y="0" />
-      <point x="210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="555" y="70" />
-      <point x="625" y="0" />
-      <point x="555" y="-70" />
-    </lines>
-  </symbol>
-
-  <symbol kind="W" id="13.2">
-    <name lang="en-AU">Taped route between controls</name>
-    <name lang="en">Taped route between controls</name>
-    <name lang="fr">Parcours balisé entre deux postes</name>
-    <name lang="en-GB">Taped route between controls</name>
-    <name lang="sv">Snitsel mellan kontroller</name>
-    <name lang="nb-NO">Merket løype mellom poster</name>
-    <name lang="es">Ruta balizada entre controles</name>
-    <name lang="nn-NO">Merket løype mellom poster</name>
-    <name lang="fi">Seuraa viitoitusta seuraavalle rastille</name>
-    <name lang="bg">Следвай маркиран път между КТ</name>
-    <name lang="ro">Bandă între punctele de control</name>
-    <name lang="et">Tähistus KPde vahel</name>
-    <name lang="de">Ausgeflaggte Strecke zwischen zwei Posten</name>
-    <name lang="ca">Tram encintat entre controls</name>
-    <name lang="ja">コントロール間の誘導</name>
-    <name lang="zh-HK">Taped route between controls</name>
-    <name lang="pl">Taped route between controls</name>
-    <name lang="cs">Značeno mezi kontrolami</name>
-
-    <text lang="en-AU">follow tapes {0}between controls</text>
-
-    <text lang="en">follow tapes {0}between controls</text>
-    <text lang="fr">suivre le parcours balisé sur {0}entre les 2 postes</text>
-    <text lang="en-GB">Follow Tapes {0}between controls</text>
-    <text lang="sv">följ snitsel {0}mellan kontrollerna</text>
-    <text lang="nb-NO">merket løype {0}mellom poster</text>
-    <text lang="es">sigue {0} de ruta balizada entre controles</text>
-    <text lang="nn-NO">merket løype {0}mellom poster</text>
-    <text lang="fi">seuraa viitoitusta seuraavalle rastille {0}</text>
-    <text lang="bg">Следвай маркиран път {0}между КТ.</text>
-    <text lang="ro">urmează banda {0} între punctele de control</text>
-    <text lang="et">järgi tähistust {0} KPde vahel</text>
-    <text lang="de">Ausgeflaggte Strecke über {0}zwischen Posten</text>
-    <text lang="ca">siguiu el tram encintat {0}entre els dos controls</text>
-    <text lang="ja">コントロール間の誘導 {0}</text>
-    <text lang="zh-HK">隨 {0} 索帶前往下一個控制點</text>
-    <text lang="pl">oszarfowane {0} pomiędzy PK</text>
-    <text lang="cs">značeno {0} mezi kontrolami</text>
-
-
-    <circle thickness="10" radius="70">
-      <point x="-700" y="0" />
-    </circle>
-    <circle thickness="10" radius="70">
-      <point x="700" y="0" />
-    </circle>
-    <lines thickness="12.5">
-      <point x="-625" y="0" />
-      <point x="-510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-480" y="0" />
-      <point x="-360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-330" y="0" />
-      <point x="-210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="620" y="0" />
-      <point x="510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="480" y="0" />
-      <point x="360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="330" y="0" />
-      <point x="210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="555" y="70" />
-      <point x="625" y="0" />
-      <point x="555" y="-70" />
-    </lines>
-  </symbol>
-
-  <!-- Kind "X". Crossing point instructional lines. -->
-
-  <symbol kind="X" id="13.3">
-    <name lang="en-AU">Mandatory crossing point or points</name>
-    <name lang="en">Mandatory crossing point or points</name>
-    <name lang="fr">Point de passage obligatoire</name>
-    <name lang="en-GB">Mandatory crossing point or points</name>
-    <name lang="sv">Obligatorisk passerpunkt</name>
-    <name lang="nb-NO">Krysningspunkt</name>
-    <name lang="es">Punto(s) de cruce obligatorio(s)</name>
-    <name lang="nn-NO">Krysningspunkt</name>
-    <name lang="fi">Pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</name>
-    <name lang="bg">Задължително място/точка или места/точки за преминаване</name>
-    <name lang="ro">Punct(e) de trecere obligatoriu(ii)</name>
-    <name lang="et">Kohustuslik ristumine</name>
-    <name lang="de">Pflichtübergang</name>
-    <name lang="ca">Punt de pas obligatori</name>
-    <name lang="ja">横断地点</name>
-    <name lang="zh-HK">Mandatory crossing point or points</name>
-    <name lang="pl">Mandatory crossing point or points</name>
-    <name lang="cs">Povinný bod přechodu</name>
-
-    <text lang="en-AU">mandatory crossing point</text>
-
-    <text lang="en">mandatory crossing point</text>
-    <text lang="fr">point de passage obligatoire</text>
-    <text lang="en-GB">Use Compulsory Crossing Point</text>
-    <text lang="sv">obligatorisk passerpunkt</text>
-    <text lang="nb-NO">krysningspunkt</text>
-    <text lang="es">punto de cruce obligatorio</text>
-    <text lang="nn-NO">krysningspunkt</text>
-    <text lang="fi">pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</text>
-    <text lang="bg">задължително място/точка за преминаване</text>
-    <text lang="ro">punct de trecere obligatoriu</text>
-    <text lang="et">kohustuslik ristumine</text>
-    <text lang="de">Pflichtübergang</text>
-    <text lang="ca">punt de pas obligatori</text>
-    <text lang="ja">横断地点</text>
-    <text lang="zh-HK">強制橫越點</text>
-    <text lang="pl">obowiązkowe miejsce przejścia</text>
-    <text lang="cs">povinný bod přechodu</text>
-
-
-    <circle thickness="10" radius="70">
-      <point x="-700" y="0" />
-    </circle>
-    <circle thickness="10" radius="70">
-      <point x="700" y="0" />
-    </circle>
-    <lines thickness="12.5">
-      <point x="-555" y="70" />
-      <point x="-625" y="0" />
-      <point x="-555" y="-70" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="555" y="70" />
-      <point x="625" y="0" />
-      <point x="555" y="-70" />
-    </lines>
-    <beziers thickness="12.5">
-      <point x="-150" y="70" />
-      <point x="-80" y="0" />
-      <point x="80" y="0" />
-      <point x="150" y="70" />
-    </beziers>
-    <beziers thickness="12.5">
-      <point x="-150" y="-70" />
-      <point x="-80" y="0" />
-      <point x="80" y="0" />
-      <point x="150" y="-70" />
-    </beziers>
-  </symbol>
-
-  <symbol kind="X" id="13.4">
-    <name lang="en-AU">Mandatory passage</name>
-    <name lang="en">Mandatory passage</name>
-    <name lang="fr">Passage obligatoire dans une zone interdite</name>
-    <name lang="en-GB">Mandatory passage</name>
-    <name lang="sv">Obligatorisk passage</name>
-    <name lang="nb-NO">Passasje</name>
-    <name lang="es">Pasillo obligatorio</name>
-    <name lang="nn-NO">Passage</name>
-    <name lang="fi">Pakollinen reitti läpi kielletyn alueen</name>
-    <name lang="bg">Задължителен път/отсечка за преминаване през забранена зона</name>
-    <name lang="ro">Pasaj obligatoriu</name>
-    <name lang="et">Kohustuslik läbipääs</name>
-    <name lang="de">Pflichtpassage</name>
-    <name lang="ca">Tram de pas obligatori</name>
-    <name lang="ja">立入禁止区域の中の横断部分</name>
-    <name lang="zh-HK">Mandatory passage</name>
-    <name lang="pl">Mandatory passage</name>
-    <name lang="cs">Povinný průběh skrz zakázanou oblast</name>
-
-    <text lang="en-AU">mandatory passage</text>
-
-    <text lang="en">mandatory passage</text>
-    <text lang="fr">passage obligatoire à travers une zone interdite</text>
-    <text lang="en-GB">mandatory passage</text>
-    <text lang="sv">obligatorisk passage</text>
-    <text lang="nb-NO">passasje</text>
-    <text lang="es">pasillo obligatorio</text>
-    <text lang="nn-NO">passage</text>
-    <text lang="fi">pakollinen reitti läpi kielletyn alueen</text>
-    <text lang="bg">задължителен път/отсечка за преминаване през забранена зона</text>
-    <text lang="ro">pasaj obligatoriu</text>
-    <text lang="et">kohustuslik läbipääs</text>
-    <text lang="de">Pflichtpassage</text>
-    <text lang="ca">tram de pas obligatori</text>
-    <text lang="ja">立入禁止区域の中の横断部分</text>
-    <text lang="zh-HK">強制通道</text>
-    <text lang="pl">obowiązkowe przejście przez teren zakazany</text>
-    <text lang="cs">povinný úsek</text>
-
-
-    <circle thickness="10" radius="70">
-      <point x="-700" y="0" />
-    </circle>
-    <circle thickness="10" radius="70">
-      <point x="700" y="0" />
-    </circle>
-    <lines thickness="12.5">
-      <point x="-555" y="70" />
-      <point x="-625" y="0" />
-      <point x="-555" y="-70" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="555" y="70" />
-      <point x="625" y="0" />
-      <point x="555" y="-70" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-300" y="70" />
-      <point x="-250" y="20" />
-      <point x="250" y="20" />
-      <point x="300" y="70" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-300" y="-70" />
-      <point x="-250" y="-20" />
-      <point x="250" y="-20" />
-      <point x="300" y="-70" />
-    </lines>
-  </symbol>
-
-  <!-- Kind "Y". Map exchange instructional lines. -->
-  <!-- {0} has the distance, plus a space
-	-->
-  <symbol kind="W" id="13.5">
-    <name lang="en-AU">Map exchange</name>
-    <name lang="en">Map exchange</name>
-    <name lang="fr">Parcours balisé jusqu'au changement de carte</name>
-    <name lang="en-GB">Map exchange</name>
-    <name lang="sv">Kartbyte</name>
-    <name lang="nb-NO">Kartbytte</name>
-    <name lang="es">Cambio de mapa</name>
-    <name lang="nn-NO">Kartbytte</name>
-    <name lang="fi">Seuraa viitoitusta kartanvaihtopaikalle</name>
-    <name lang="bg">Следвай маркиран път до място за смяна на картата</name>
-    <name lang="ro">Schimb de hartă</name>
-    <name lang="et">Kaardivahetus</name>
-    <name lang="de">Kartenwechsel</name>
-    <name lang="ca">Canvi de mapa</name>
-    <name lang="ja">地図交換所まで誘導</name>
-    <name lang="zh-HK">Map exchange</name>
-    <name lang="pl">Map exchange</name>
-    <name lang="cs">Výměna map</name>
-
-    <text lang="en-AU">follow tapes {0}to map exchange</text>
-
-    <text lang="en">follow tapes {0}to map exchange</text>
-    <text lang="fr">suivre le parcours balisé sur {0}jusqu'au changement de carte</text>
-    <text lang="en-GB">Follow Tapes {0}to map exchange</text>
-    <text lang="sv">följ snitsel {0}till kartbyte</text>
-    <text lang="nb-NO">merket løype {0}til kartbytte</text>
-    <text lang="es">sigue {0} de balizado hasta cambio de mapa</text>
-    <text lang="nn-NO">merket løype {0}til kartbytte</text>
-    <text lang="fi">seuraa viitoitusta {0} kartanvaihtopaikalle</text>
-    <text lang="bg">Следвай маркиран път {0}до място за смяна на картата.</text>
-    <text lang="ro">urmează banda {0} pentru schimb de hartă</text>
-    <text lang="et">järgi tähistust {0} kaardivahetuseni</text>
-    <text lang="de">Ausgeflaggte Strecke {0}zum Kartenwechsel</text>
-    <text lang="ca"> {0}de tram encintat fins el canvi de mapa</text>
-    <text lang="ja">地図交換所まで誘導 {0}</text>
-    <text lang="zh-HK">隨 {0} 索帶前往換圖處</text>
-    <text lang="pl">oszarfowane {0} przebiegu do punktu zmiany mapy</text>
-    <text lang="cs">značeno {0} k výměně map</text>
-
-
-    <circle thickness="10" radius="70">
-      <point x="-700" y="0" />
-    </circle>
-    <lines thickness="12.5">
-      <point x="-625" y="0" />
-      <point x="-510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-480" y="0" />
-      <point x="-360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-330" y="0" />
-      <point x="-210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="620" y="0" />
-      <point x="510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="480" y="0" />
-      <point x="360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="330" y="0" />
-      <point x="210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="555" y="70" />
-      <point x="625" y="0" />
-      <point x="555" y="-70" />
-    </lines>
-
-    <polygon thickness="10">
-      <point x="700" y="70" />
-      <point x="760.6" y="-35" />
-      <point x="639.4" y="-35" />
-    </polygon>
-  </symbol>
-
-  <!-- Used for a map exchange at a control. -->
-  <symbol kind="W" id="13.5control">
-    <name lang="en-AU">Map exchange at a control</name>
-    <name lang="en">Map exchange at a control</name>
-    <name lang="en-GB">Map exchange at a control</name>
-    <name lang="ca">Canvi de mapa en un control</name>
-    <name lang="ja">コントロールで地図交換</name>
-    <name lang="zh-HK">Map exchange at a control</name>
-    <name lang="pl">Map exchange at a control</name>
-    <name lang="cs">Výměna mapy na kontrole</name>
-    <text lang="en-AU">map exchange at the control</text>
-    <text lang="en">map exchange at the control</text>
-    <text lang="en-GB">Map exchange at the control</text>
-    <text lang="ca">canvi de mapa al control</text>
-    <text lang="ja">コントロールで地図交換</text>
-    <text lang="zh-HK">在控制點換圖</text>
-    <text lang="pl">zmiana mapy na PK</text>
-    <text lang="cs">výměna mapy na kontrole</text>
-    <circle thickness="10" radius="70">
-      <point x="-700" y="0" />
-    </circle>
-    <lines thickness="12.5">
-      <point x="-625" y="0" />
-      <point x="-510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-480" y="0" />
-      <point x="-360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="-330" y="0" />
-      <point x="-210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="620" y="0" />
-      <point x="510" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="480" y="0" />
-      <point x="360" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="330" y="0" />
-      <point x="210" y="0" />
-    </lines>
-    <lines thickness="12.5">
-      <point x="555" y="70" />
-      <point x="625" y="0" />
-      <point x="555" y="-70" />
-    </lines>
-
-    <polygon thickness="10">
-      <point x="700" y="70" />
-      <point x="760.6" y="-35" />
-      <point x="639.4" y="-35" />
-    </polygon>
-  </symbol>
-
   <!-- Kind "V" Map Issue Point instructional lines. 
         {0} has the distance, plus a space. 
         -->
-  <symbol kind="V" id="13.6">
+  <symbol kind="V" id="13.6" id-2018="14.1">
     <name lang="en-AU">Map issue point</name>
-    <name lang="en">Map issue point</name>
+    <name lang="en">Timed start to start triangle</name>
     <name lang="fr">Map issue point</name>
     <name lang="en-GB">Map issue point</name>
     <name lang="sv">Map issue point</name>
@@ -13519,11 +12934,455 @@ for the symbols.
   </symbol>
 
 
+  <!-- Kind "W". Taped route instructional lines. 
+	  {0} has the distance, plus a space
+	  -->
+
+  <symbol kind="W" id="13.1" id-2018="15.1">
+    <name lang="en-AU">Taped route away from control</name>
+    <name lang="en">Taped route away from control</name>
+    <name lang="fr">Parcours balisé après le poste</name>
+    <name lang="en-GB">Taped route away from control</name>
+    <name lang="sv">Snitsel bort från kontroll</name>
+    <name lang="nb-NO">Merket løype fra post</name>
+    <name lang="es">Ruta balizada desde el control</name>
+    <name lang="nn-NO">Merket løype frå post</name>
+    <name lang="fi">Seuraa viitoitusta rastilta eteenpäin</name>
+    <name lang="bg">Следвай маркиран път след/от КТ</name>
+    <name lang="ro">Urmează ruta cu banda departe de control</name>
+    <name lang="et">Tähistus KPst väljumisel</name>
+    <name lang="de">Vom Posten weg ausgeflaggte Strecke</name>
+    <name lang="ca">Tram encintat despres del control</name>
+    <name lang="ja">コントロールから誘導</name>
+    <name lang="zh-HK">Taped route away from control</name>
+    <name lang="pl">Taped route away from control</name>
+    <name lang="cs">Značený úsek</name>
+
+    <text lang="en-AU">follow tapes {0}away from control</text>
+
+    <text lang="en">follow tapes {0}away from control</text>
+    <text lang="fr">suivre le parcours balisé sur {0}après le poste</text>
+    <text lang="en-GB">Follow Tapes {0}away from control</text>
+    <text lang="sv">följ snitsel {0}bort från kontrollen</text>
+    <text lang="nb-NO">merket løype {0} fra post</text>
+    <text lang="es">sigue {0} de ruta balizada desde el control</text>
+    <text lang="nn-NO">merket løype {0} frå post</text>
+    <text lang="fi">seuraa viitoitusta rastilta eteenpäin {0}</text>
+    <text lang="bg">Следвай маркиран път {0}след/от КТ.</text>
+    <text lang="ro">urmează ruta cu banda {0} departe de control</text>
+    <text lang="et">järgi tähistust {0} KPst väljumisel</text>
+    <text lang="de">Ausgeflaggte Strecke über {0}von Posten weg</text>
+    <text lang="ca">seguiu el tram encintat {0}despres del control</text>
+    <text lang="ja">コントロールから誘導 {0}</text>
+    <text lang="zh-HK">隨 {0} 索帶離開控制點</text>
+    <text lang="pl">oszarfowane {0} odbiegu od PK</text>
+    <text lang="cs">značeno {0} od kontroly</text>
+
+
+    <circle thickness="10" radius="70">
+      <point x="-700" y="0" />
+    </circle>
+    <lines thickness="12.5">
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="620" y="0" />
+      <point x="510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="480" y="0" />
+      <point x="360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="330" y="0" />
+      <point x="210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+  </symbol>
+
+  <symbol kind="W" id="13.2" id-2018="15.2">
+    <name lang="en-AU">Taped route between controls</name>
+    <name lang="en">Taped route between controls</name>
+    <name lang="fr">Parcours balisé entre deux postes</name>
+    <name lang="en-GB">Taped route between controls</name>
+    <name lang="sv">Snitsel mellan kontroller</name>
+    <name lang="nb-NO">Merket løype mellom poster</name>
+    <name lang="es">Ruta balizada entre controles</name>
+    <name lang="nn-NO">Merket løype mellom poster</name>
+    <name lang="fi">Seuraa viitoitusta seuraavalle rastille</name>
+    <name lang="bg">Следвай маркиран път между КТ</name>
+    <name lang="ro">Bandă între punctele de control</name>
+    <name lang="et">Tähistus KPde vahel</name>
+    <name lang="de">Ausgeflaggte Strecke zwischen zwei Posten</name>
+    <name lang="ca">Tram encintat entre controls</name>
+    <name lang="ja">コントロール間の誘導</name>
+    <name lang="zh-HK">Taped route between controls</name>
+    <name lang="pl">Taped route between controls</name>
+    <name lang="cs">Značeno mezi kontrolami</name>
+
+    <text lang="en-AU">follow tapes {0}between controls</text>
+
+    <text lang="en">follow tapes {0}between controls</text>
+    <text lang="fr">suivre le parcours balisé sur {0}entre les 2 postes</text>
+    <text lang="en-GB">Follow Tapes {0}between controls</text>
+    <text lang="sv">följ snitsel {0}mellan kontrollerna</text>
+    <text lang="nb-NO">merket løype {0}mellom poster</text>
+    <text lang="es">sigue {0} de ruta balizada entre controles</text>
+    <text lang="nn-NO">merket løype {0}mellom poster</text>
+    <text lang="fi">seuraa viitoitusta seuraavalle rastille {0}</text>
+    <text lang="bg">Следвай маркиран път {0}между КТ.</text>
+    <text lang="ro">urmează banda {0} între punctele de control</text>
+    <text lang="et">järgi tähistust {0} KPde vahel</text>
+    <text lang="de">Ausgeflaggte Strecke über {0}zwischen Posten</text>
+    <text lang="ca">siguiu el tram encintat {0}entre els dos controls</text>
+    <text lang="ja">コントロール間の誘導 {0}</text>
+    <text lang="zh-HK">隨 {0} 索帶前往下一個控制點</text>
+    <text lang="pl">oszarfowane {0} pomiędzy PK</text>
+    <text lang="cs">značeno {0} mezi kontrolami</text>
+
+
+    <circle thickness="10" radius="70">
+      <point x="-700" y="0" />
+    </circle>
+    <circle thickness="10" radius="70">
+      <point x="700" y="0" />
+    </circle>
+    <lines thickness="12.5">
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="620" y="0" />
+      <point x="510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="480" y="0" />
+      <point x="360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="330" y="0" />
+      <point x="210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+  </symbol>
+
+  <!-- Kind "X". Crossing point instructional lines. -->
+
+  <symbol kind="X" id="13.3" id-2018="15.3">
+    <name lang="en-AU">Mandatory crossing point or points</name>
+    <name lang="en">Mandatory crossing point or points</name>
+    <name lang="fr">Point de passage obligatoire</name>
+    <name lang="en-GB">Mandatory crossing point or points</name>
+    <name lang="sv">Obligatorisk passerpunkt</name>
+    <name lang="nb-NO">Krysningspunkt</name>
+    <name lang="es">Punto(s) de cruce obligatorio(s)</name>
+    <name lang="nn-NO">Krysningspunkt</name>
+    <name lang="fi">Pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</name>
+    <name lang="bg">Задължително място/точка или места/точки за преминаване</name>
+    <name lang="ro">Punct(e) de trecere obligatoriu(ii)</name>
+    <name lang="et">Kohustuslik ristumine</name>
+    <name lang="de">Pflichtübergang</name>
+    <name lang="ca">Punt de pas obligatori</name>
+    <name lang="ja">横断地点</name>
+    <name lang="zh-HK">Mandatory crossing point or points</name>
+    <name lang="pl">Mandatory crossing point or points</name>
+    <name lang="cs">Povinný bod přechodu</name>
+
+    <text lang="en-AU">mandatory crossing point</text>
+
+    <text lang="en">mandatory crossing point</text>
+    <text lang="fr">point de passage obligatoire</text>
+    <text lang="en-GB">Use Compulsory Crossing Point</text>
+    <text lang="sv">obligatorisk passerpunkt</text>
+    <text lang="nb-NO">krysningspunkt</text>
+    <text lang="es">punto de cruce obligatorio</text>
+    <text lang="nn-NO">krysningspunkt</text>
+    <text lang="fi">pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</text>
+    <text lang="bg">задължително място/точка за преминаване</text>
+    <text lang="ro">punct de trecere obligatoriu</text>
+    <text lang="et">kohustuslik ristumine</text>
+    <text lang="de">Pflichtübergang</text>
+    <text lang="ca">punt de pas obligatori</text>
+    <text lang="ja">横断地点</text>
+    <text lang="zh-HK">強制橫越點</text>
+    <text lang="pl">obowiązkowe miejsce przejścia</text>
+    <text lang="cs">povinný bod přechodu</text>
+
+
+    <circle thickness="10" radius="70">
+      <point x="-700" y="0" />
+    </circle>
+    <circle thickness="10" radius="70">
+      <point x="700" y="0" />
+    </circle>
+    <lines thickness="12.5">
+      <point x="-555" y="70" />
+      <point x="-625" y="0" />
+      <point x="-555" y="-70" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+    <beziers thickness="12.5">
+      <point x="-150" y="70" />
+      <point x="-80" y="0" />
+      <point x="80" y="0" />
+      <point x="150" y="70" />
+    </beziers>
+    <beziers thickness="12.5">
+      <point x="-150" y="-70" />
+      <point x="-80" y="0" />
+      <point x="80" y="0" />
+      <point x="150" y="-70" />
+    </beziers>
+  </symbol>
+
+  <symbol kind="X" id="13.4" id-2018="15.4">
+    <name lang="en-AU">Mandatory passage</name>
+    <name lang="en">Mandatory passage</name>
+    <name lang="fr">Passage obligatoire dans une zone interdite</name>
+    <name lang="en-GB">Mandatory passage</name>
+    <name lang="sv">Obligatorisk passage</name>
+    <name lang="nb-NO">Passasje</name>
+    <name lang="es">Pasillo obligatorio</name>
+    <name lang="nn-NO">Passage</name>
+    <name lang="fi">Pakollinen reitti läpi kielletyn alueen</name>
+    <name lang="bg">Задължителен път/отсечка за преминаване през забранена зона</name>
+    <name lang="ro">Pasaj obligatoriu</name>
+    <name lang="et">Kohustuslik läbipääs</name>
+    <name lang="de">Pflichtpassage</name>
+    <name lang="ca">Tram de pas obligatori</name>
+    <name lang="ja">立入禁止区域の中の横断部分</name>
+    <name lang="zh-HK">Mandatory passage</name>
+    <name lang="pl">Mandatory passage</name>
+    <name lang="cs">Povinný průběh skrz zakázanou oblast</name>
+
+    <text lang="en-AU">mandatory passage</text>
+
+    <text lang="en">mandatory passage</text>
+    <text lang="fr">passage obligatoire à travers une zone interdite</text>
+    <text lang="en-GB">mandatory passage</text>
+    <text lang="sv">obligatorisk passage</text>
+    <text lang="nb-NO">passasje</text>
+    <text lang="es">pasillo obligatorio</text>
+    <text lang="nn-NO">passage</text>
+    <text lang="fi">pakollinen reitti läpi kielletyn alueen</text>
+    <text lang="bg">задължителен път/отсечка за преминаване през забранена зона</text>
+    <text lang="ro">pasaj obligatoriu</text>
+    <text lang="et">kohustuslik läbipääs</text>
+    <text lang="de">Pflichtpassage</text>
+    <text lang="ca">tram de pas obligatori</text>
+    <text lang="ja">立入禁止区域の中の横断部分</text>
+    <text lang="zh-HK">強制通道</text>
+    <text lang="pl">obowiązkowe przejście przez teren zakazany</text>
+    <text lang="cs">povinný úsek</text>
+
+
+    <circle thickness="10" radius="70">
+      <point x="-700" y="0" />
+    </circle>
+    <circle thickness="10" radius="70">
+      <point x="700" y="0" />
+    </circle>
+    <lines thickness="12.5">
+      <point x="-555" y="70" />
+      <point x="-625" y="0" />
+      <point x="-555" y="-70" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-300" y="70" />
+      <point x="-250" y="20" />
+      <point x="250" y="20" />
+      <point x="300" y="70" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-300" y="-70" />
+      <point x="-250" y="-20" />
+      <point x="250" y="-20" />
+      <point x="300" y="-70" />
+    </lines>
+  </symbol>
+
+  <!-- Kind "Y". Map exchange instructional lines. -->
+  <!-- {0} has the distance, plus a space
+	-->
+  <symbol kind="W" id="13.5" id-2018="15.5">
+    <name lang="en-AU">Map exchange</name>
+    <name lang="en">Map exchange</name>
+    <name lang="fr">Parcours balisé jusqu'au changement de carte</name>
+    <name lang="en-GB">Map exchange</name>
+    <name lang="sv">Kartbyte</name>
+    <name lang="nb-NO">Kartbytte</name>
+    <name lang="es">Cambio de mapa</name>
+    <name lang="nn-NO">Kartbytte</name>
+    <name lang="fi">Seuraa viitoitusta kartanvaihtopaikalle</name>
+    <name lang="bg">Следвай маркиран път до място за смяна на картата</name>
+    <name lang="ro">Schimb de hartă</name>
+    <name lang="et">Kaardivahetus</name>
+    <name lang="de">Kartenwechsel</name>
+    <name lang="ca">Canvi de mapa</name>
+    <name lang="ja">地図交換所まで誘導</name>
+    <name lang="zh-HK">Map exchange</name>
+    <name lang="pl">Map exchange</name>
+    <name lang="cs">Výměna map</name>
+
+    <text lang="en-AU">follow tapes {0}to map exchange</text>
+
+    <text lang="en">follow tapes {0}to map exchange</text>
+    <text lang="fr">suivre le parcours balisé sur {0}jusqu'au changement de carte</text>
+    <text lang="en-GB">Follow Tapes {0}to map exchange</text>
+    <text lang="sv">följ snitsel {0}till kartbyte</text>
+    <text lang="nb-NO">merket løype {0}til kartbytte</text>
+    <text lang="es">sigue {0} de balizado hasta cambio de mapa</text>
+    <text lang="nn-NO">merket løype {0}til kartbytte</text>
+    <text lang="fi">seuraa viitoitusta {0} kartanvaihtopaikalle</text>
+    <text lang="bg">Следвай маркиран път {0}до място за смяна на картата.</text>
+    <text lang="ro">urmează banda {0} pentru schimb de hartă</text>
+    <text lang="et">järgi tähistust {0} kaardivahetuseni</text>
+    <text lang="de">Ausgeflaggte Strecke {0}zum Kartenwechsel</text>
+    <text lang="ca"> {0}de tram encintat fins el canvi de mapa</text>
+    <text lang="ja">地図交換所まで誘導 {0}</text>
+    <text lang="zh-HK">隨 {0} 索帶前往換圖處</text>
+    <text lang="pl">oszarfowane {0} przebiegu do punktu zmiany mapy</text>
+    <text lang="cs">značeno {0} k výměně map</text>
+
+
+    <circle thickness="10" radius="70">
+      <point x="-700" y="0" />
+    </circle>
+    <lines thickness="12.5">
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="620" y="0" />
+      <point x="510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="480" y="0" />
+      <point x="360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="330" y="0" />
+      <point x="210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+
+    <polygon thickness="10">
+      <point x="700" y="70" />
+      <point x="760.6" y="-35" />
+      <point x="639.4" y="-35" />
+    </polygon>
+  </symbol>
+
+  <!-- Used for a map exchange at a control. -->
+  <symbol kind="W" id="13.5control" id-2018="15.5">
+    <name lang="en-AU">Map exchange at a control</name>
+    <name lang="en">Map exchange at a control</name>
+    <name lang="en-GB">Map exchange at a control</name>
+    <name lang="ca">Canvi de mapa en un control</name>
+    <name lang="ja">コントロールで地図交換</name>
+    <name lang="zh-HK">Map exchange at a control</name>
+    <name lang="pl">Map exchange at a control</name>
+    <name lang="cs">Výměna mapy na kontrole</name>
+    <text lang="en-AU">map exchange at the control</text>
+    <text lang="en">map exchange at the control</text>
+    <text lang="en-GB">Map exchange at the control</text>
+    <text lang="ca">canvi de mapa al control</text>
+    <text lang="ja">コントロールで地図交換</text>
+    <text lang="zh-HK">在控制點換圖</text>
+    <text lang="pl">zmiana mapy na PK</text>
+    <text lang="cs">výměna mapy na kontrole</text>
+    <circle thickness="10" radius="70">
+      <point x="-700" y="0" />
+    </circle>
+    <lines thickness="12.5">
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="620" y="0" />
+      <point x="510" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="480" y="0" />
+      <point x="360" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="330" y="0" />
+      <point x="210" y="0" />
+    </lines>
+    <lines thickness="12.5">
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
+    </lines>
+
+    <polygon thickness="10">
+      <point x="700" y="70" />
+      <point x="760.6" y="-35" />
+      <point x="639.4" y="-35" />
+    </polygon>
+  </symbol>
+
+
   <!-- Kind "Z". Finish instructional lines. -->
   <!-- {0} has the distance, plus a space
 	-->
 
-  <symbol kind="Z" id="14.1">
+  <symbol kind="Z" id="14.1" id-2018="16.1">
     <name lang="en-AU">Taped route to finish</name>
     <name lang="en">Taped route to finish</name>
     <name lang="fr">Parcours entièrement balisé</name>
@@ -13604,7 +13463,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="Z" id="14.2">
+  <symbol kind="Z" id="14.2" id-2018="16.2">
     <name lang="en-AU">Navigate to finish funnel</name>
     <name lang="en">Navigate to finish funnel</name>
     <name lang="fr">Balisage convergent</name>
@@ -13686,7 +13545,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <symbol kind="Z" id="14.3">
+  <symbol kind="Z" id="14.3" id-2018="16.3">
     <name lang="en-AU">Navigate to finish (no tapes)</name>
     <name lang="en">Navigate to finish (no tapes)</name>
     <name lang="fr">Trajet non balisé</name>

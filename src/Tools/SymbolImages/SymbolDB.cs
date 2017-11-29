@@ -264,6 +264,7 @@ namespace SymbolImages
         private bool sizeIsDepth;
         private string id;
         private string replacementId;
+        private string id2018;
         private Dictionary<string, string> name = new Dictionary<string, string>();
         private List<SymbolText> texts = new List<SymbolText>();
         private string[] standards;
@@ -301,6 +302,13 @@ namespace SymbolImages
         /// </summary>
         public string ReplacementId {
             get { return replacementId; }
+        }
+
+        /// <summary>
+        /// Get the id for the symbol in the IOF 2018 spec.
+        /// </summary>
+        public string Id2018 {
+            get { return id2018 != null ? id2018 : id; }
         }
 
 
@@ -600,6 +608,7 @@ namespace SymbolImages
             this.kind = xmlinput.GetAttributeString("kind")[0];
             this.id = xmlinput.GetAttributeString("id");
             this.replacementId = xmlinput.GetAttributeString("replacement-id", null);
+            this.id2018 = xmlinput.GetAttributeString("id-2018", null);
             this.sizeIsDepth = xmlinput.GetAttributeBool("size-is-depth", false);
 
             string standardStrings = xmlinput.GetAttributeString("standard", "");

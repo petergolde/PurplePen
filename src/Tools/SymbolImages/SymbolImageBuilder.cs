@@ -30,7 +30,7 @@ namespace SymbolImages
             Directory.CreateDirectory(directory);
 
             foreach (Symbol symbol in symbolDB.AllSymbols) {
-                if (symbol.HasVisualImage) {
+                if (symbol.HasVisualImage && !symbol.Id.EndsWith("control")) {
                     Bitmap bitmap = CreateBitmap(symbol, size, backgroundColor);
                     string fileName = FileName(symbol) + ".png";
                     string fullPath = Path.Combine(directory, fileName);
@@ -49,7 +49,7 @@ namespace SymbolImages
             Directory.CreateDirectory(directory);
 
             foreach (Symbol symbol in symbolDB.AllSymbols) {
-                if (symbol.HasVisualImage) {
+                if (symbol.HasVisualImage && !symbol.Id.EndsWith("control")) {
                     string fileName = FileName(symbol) + ".svg";
                     string fullPath = Path.Combine(directory, fileName);
                     CreateSvg(symbol, fullPath);
@@ -72,8 +72,8 @@ namespace SymbolImages
 
         private string FileName(Symbol symbol)
         {
-            if (char.IsDigit(symbol.Id[0])) {
-                return symbol.Id + " " + symbol.GetName("en");
+            if (char.IsDigit(symbol.Id2018[0])) {
+                return symbol.Id2018 + " " + symbol.GetName("en");
             }
             else {
                 return symbol.GetName("en");
