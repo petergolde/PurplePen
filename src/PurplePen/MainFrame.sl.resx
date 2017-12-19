@@ -126,140 +126,14 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen datoteke|*.ppen</value>
   </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;Nova prireditev...</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Odpri ...</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>&amp;Shrani</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Shrani &amp;kot ...</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Ustvari OCAD &amp;Datoteke...</value>
-  </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Ustvari Route&amp;Gadget Datoteke...</value>
-  </data>
-  <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Ustvari podatkovno &amp;Datoteko za izmenjavo (IOF XML)...</value>
-  </data>
-  <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>&amp;Tiskaj Opise kontrolnih točk...</value>
-  </data>
-  <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Tiskaj &amp;Proge...</value>
-  </data>
-  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
-    <value>Izbran &amp;Samo delno</value>
-  </data>
-  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Izbrana Proga</value>
-  </data>
-  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Vse proge</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Določi območje tiskanja</value>
-  </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Program &amp;Jezik...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>I&amp;zhod</value>
-  </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Datoteka</value>
-  </data>
-  <data name="cancelMenu.Text" xml:space="preserve">
-    <value>&amp;Pobriši izbiro</value>
-  </data>
-  <data name="undoMenu.Text" xml:space="preserve">
-    <value>&amp;Prekliči</value>
-  </data>
-  <data name="redoMenu.Text" xml:space="preserve">
-    <value>&amp;Obnovi</value>
-  </data>
-  <data name="deleteMenu.Text" xml:space="preserve">
-    <value>&amp;Izbriši</value>
   </data>
   <data name="editMenu.Text" xml:space="preserve">
     <value>&amp;Uredi</value>
   </data>
-  <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>Celotna &amp;Proga</value>
-  </data>
-  <data name="entireMapMenu.Text" xml:space="preserve">
-    <value>Celotna &amp;Karta</value>
-  </data>
-  <data name="zoom50Menu.Text" xml:space="preserve">
-    <value>50%</value>
-  </data>
-  <data name="zoom100Menu.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="zoom150Menu.Text" xml:space="preserve">
-    <value>150%</value>
-  </data>
-  <data name="zoom200Menu.Text" xml:space="preserve">
-    <value>200%</value>
-  </data>
-  <data name="zoom300Menu.Text" xml:space="preserve">
-    <value>300%</value>
-  </data>
-  <data name="zoom500Menu.Text" xml:space="preserve">
-    <value>500%</value>
-  </data>
-  <data name="zoom1000Menu.Text" xml:space="preserve">
-    <value>1000%</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Povečaj</value>
-  </data>
-  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Zelo nizka</value>
-  </data>
-  <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Nizka</value>
-  </data>
-  <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Srednja</value>
-  </data>
-  <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Visoka</value>
-  </data>
-  <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Polno</value>
-  </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Karta &amp;Intenzivnost</value>
-  </data>
-  <data name="normalQualityMenu.Text" xml:space="preserve">
-    <value>Nizka</value>
-  </data>
-  <data name="highQualityMenu.Text" xml:space="preserve">
-    <value>Visoko</value>
-  </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Karta &amp;Kvaliteta</value>
-  </data>
-  <data name="showPopupsMenu.Text" xml:space="preserve">
-    <value>Prikaži &amp;Pojavna Informacija</value>
-  </data>
-  <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>&amp;Vse kontrolne točke</value>
-  </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Pogled</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Menjava karte na &amp;kontrolna točka</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;označena pote do menjave karte</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>obvezen prehod</value>
@@ -291,6 +165,144 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Besedilo</value>
   </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Prire&amp;ditev</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Proga</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Objekt</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Poročila</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Nova prireditev...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Odpri ...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Shrani</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Shrani &amp;kot ...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>Ustvari OCAD &amp;Datoteke...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Ustvari Route&amp;Gadget Datoteke...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Ustvari podatkovno &amp;Datoteko za izmenjavo (IOF XML)...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Tiskaj Opise kontrolnih točk...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Tiskaj &amp;Proge...</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Določi območje tiskanja</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Izbran &amp;Samo delno</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Izbrana Proga</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Vse proge</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Program &amp;Jezik...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>I&amp;zhod</value>
+  </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>&amp;Pobriši izbiro</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Prekliči</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>&amp;Obnovi</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Izbriši</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>Celotna &amp;Proga</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>Celotna &amp;Karta</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Povečaj</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150%</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200%</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300%</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500%</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000%</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Karta &amp;Intenzivnost</value>
+  </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Zelo nizka</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Nizka</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Srednja</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Visoka</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Polno</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Karta &amp;Kvaliteta</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Nizka</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Visoko</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Prikaži &amp;Pojavna Informacija</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Vse kontrolne točke</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Menjava karte na &amp;kontrolna točka</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;označena pote do menjave karte</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Datoteka s karto</value>
   </data>
@@ -309,9 +321,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Prilagodi &amp;Besedilni opis</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Prire&amp;ditev</value>
-  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Dodaj progo...</value>
   </data>
@@ -323,9 +332,6 @@
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Tekmovalec &amp;Obremenitev...</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Proga</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Izbriši</value>
@@ -348,6 +354,9 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>Z&amp;avrti</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Označena etapa</value>
+  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Ni oznak</value>
   </data>
@@ -360,14 +369,8 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Konec oznak na etapi</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Označena etapa</value>
-  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Spremeni označ&amp;eno progo...</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Objekt</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Proga &amp;Povzetek</value>
@@ -383,9 +386,6 @@
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Kontrolna točka in obremenitev et&amp;ap</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Poročila</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Pomoč</value>

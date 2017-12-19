@@ -126,119 +126,11 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>File Purple Pen|*.ppen</value>
   </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;Nuovo Evento...</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Apri...</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>&amp;Salva</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Salva &amp;Come...</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Crea &amp;File OCAD...</value>
-  </data>
-  <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>Stampa &amp;Descrizioni</value>
-  </data>
-  <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Stampa &amp;Corsi...</value>
-  </data>
-  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Questo Corso</value>
-  </data>
-  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Tutti I Corsi</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Imposta Stampa &amp;Area</value>
-  </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>&amp;Lingua Programma...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>E&amp;sci</value>
-  </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
-  <data name="cancelMenu.Text" xml:space="preserve">
-    <value>&amp;Pulisci Selezione</value>
-  </data>
-  <data name="undoMenu.Text" xml:space="preserve">
-    <value>&amp;Annulla</value>
-  </data>
-  <data name="redoMenu.Text" xml:space="preserve">
-    <value>&amp;Ripristina</value>
-  </data>
-  <data name="deleteMenu.Text" xml:space="preserve">
-    <value>&amp;Cancella</value>
-  </data>
   <data name="editMenu.Text" xml:space="preserve">
     <value>&amp;Modifica</value>
-  </data>
-  <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Corso Intero</value>
-  </data>
-  <data name="entireMapMenu.Text" xml:space="preserve">
-    <value>&amp;Mappa Intera</value>
-  </data>
-  <data name="zoom50Menu.Text" xml:space="preserve">
-    <value>50%</value>
-  </data>
-  <data name="zoom100Menu.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="zoom150Menu.Text" xml:space="preserve">
-    <value>150%</value>
-  </data>
-  <data name="zoom200Menu.Text" xml:space="preserve">
-    <value>200%</value>
-  </data>
-  <data name="zoom300Menu.Text" xml:space="preserve">
-    <value>300%</value>
-  </data>
-  <data name="zoom500Menu.Text" xml:space="preserve">
-    <value>500%</value>
-  </data>
-  <data name="zoom1000Menu.Text" xml:space="preserve">
-    <value>1000%</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
-  </data>
-  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>M&amp;olto Basso</value>
-  </data>
-  <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Basso</value>
-  </data>
-  <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Medio</value>
-  </data>
-  <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Alto</value>
-  </data>
-  <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Pieno</value>
-  </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Intensità Mappa</value>
-  </data>
-  <data name="normalQualityMenu.Text" xml:space="preserve">
-    <value>Basso</value>
-  </data>
-  <data name="highQualityMenu.Text" xml:space="preserve">
-    <value>Alto</value>
-  </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Qualità Mappa</value>
-  </data>
-  <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>&amp;Tutti I Controlli</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Visualizza</value>
@@ -267,6 +159,123 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Testo</value>
   </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Eve&amp;nto</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Corso</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Oggetto</value>
+  </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Nuovo Evento...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Apri...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Salva</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Salva &amp;Come...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>Crea &amp;File OCAD...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>Stampa &amp;Descrizioni</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Stampa &amp;Corsi...</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Imposta Stampa &amp;Area</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Questo Corso</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Tutti I Corsi</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>&amp;Lingua Programma...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>E&amp;sci</value>
+  </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>&amp;Pulisci Selezione</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Annulla</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>&amp;Ripristina</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Cancella</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Corso Intero</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>&amp;Mappa Intera</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150%</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200%</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300%</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500%</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000%</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Intensità Mappa</value>
+  </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>M&amp;olto Basso</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Basso</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Medio</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Alto</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Pieno</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Qualità Mappa</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Basso</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Alto</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Tutti I Controlli</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;File Mappa...</value>
   </data>
@@ -282,9 +291,6 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Personalizza &amp;Descrizione Del Testo...</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Eve&amp;nto</value>
-  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Aggiungi Corso</value>
   </data>
@@ -294,9 +300,6 @@
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Proprietà...</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Corso</value>
-  </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Cancella</value>
   </data>
@@ -305,9 +308,6 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;uota</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Oggetto</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Sommario Corso</value>

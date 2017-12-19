@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Elem méretek</value>
-  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automatikus átmenet rés mérete:</value>
   </data>
@@ -168,8 +165,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>IOF normál méretek használata</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>A lila szín</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Elem méretek</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Keverje a lila színt a térkép alapszínével</value>
@@ -189,11 +186,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>A térkép lila színét használja</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>A lila szín</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Előnézet</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Pontleírás</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Fekete</value>
@@ -204,11 +201,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Szín:</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD térkép</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Pontleírás</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Felülnyomás használata a megjelölt színekhez</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD térkép</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pályakép testreszabása</value>

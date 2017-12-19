@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Tamaño de Elementos</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -159,8 +156,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Usar medidas estándar IOF</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Color Magenta</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Tamaño de Elementos</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Negro:</value>
@@ -176,6 +173,9 @@
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Usar color magenta standar</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Color Magenta</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vista previa</value>

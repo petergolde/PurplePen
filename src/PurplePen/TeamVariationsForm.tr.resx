@@ -138,6 +138,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Takım sayısı:</value>
   </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Her ayağa sabit hedefler atayın.</value>
+  </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
   </data>

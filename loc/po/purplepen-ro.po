@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.01\n"
+"Project-Id-Version: Purple Pen 3.1.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-08-29 13:48-07:00\n"
+"POT-Creation-Date: 2017-12-19 11:49-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -771,9 +771,33 @@ msgstr ""
 msgid "Relay Team Variations"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Dimensiuni Element"
+#: CommandNameText.resx, AddMapIssue
+msgid "Add Map Issue Point"
+msgstr ""
+
+#: CommandNameText.resx, ChangeDescriptionStandard
+msgid "Set Control Description Standard"
+msgstr ""
+
+#: CommandNameText.resx, ChangeMapStandard
+msgid "Set Map Standard"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
+msgid "Do not scale"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items1
+msgid "Relative to map scale"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items2
+msgid "Relative to 1:15000"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, label11.Text
+msgid "Scale item sizes:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -826,9 +850,9 @@ msgstr "Diametru cerc post:"
 msgid "Use IOF standard sizes"
 msgstr "Utilizează standardele de dimensiune IOF"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Culoarea Violet"
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Dimensiuni Element"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -838,10 +862,9 @@ msgstr ""
 msgid "Use purple color from map"
 msgstr "Folosește culoarea violet din hartă"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Descrierea Posturilor"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Culoarea Violet"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -853,12 +876,17 @@ msgstr ""
 msgid "Purple"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr ""
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Descrierea Posturilor"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
+msgstr ""
+
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
@@ -1315,193 +1343,13 @@ msgstr "Fișiere Purple Pen|*.ppen|Toate fișierele|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Fișier Purple Pen|*.ppen"
 
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "Evniment &Nou..."
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Deschidere..."
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "&Salvare"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Salv&are ca..."
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "Creare Fișiere &OCAD..."
-
-#: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
-msgstr ""
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr "Creare Fișiere RouteGadget..."
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create Data &Interchange File (IOF XML)..."
-msgstr ""
-
-#: MainFrame.resx, createGPXFileMenu.Text
-msgid "Create G&PX File..."
-msgstr ""
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "&Tipărire Descriere..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr "Tipărire Fișe de &Control..."
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "Tipărire &Trasee..."
-
-#: MainFrame.resx, printAreaThisPartMenu.Text
-msgid "This &Part Only"
-msgstr ""
-
-#: MainFrame.resx, printAreaThisCourseMenu.Text
-msgid "&This Course"
-msgstr "&Acest Traseu"
-
-#: MainFrame.resx, printAreaAllCoursesMenu.Text
-msgid "&All Courses"
-msgstr "&Toate Traseele"
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Setare &Zonă de Tipărire"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "&Limba programului..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "&Ieșire"
-
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Fişier"
 
-#: MainFrame.resx, cancelMenu.Text
-#: MiscText.resx, ClearSelectionWithShortcut
-msgid "&Clear Selection"
-msgstr "&Golește selecția"
-
-#: MainFrame.resx, undoMenu.Text
-#: MiscText.resx, UndoWithShortcut
-msgid "&Undo"
-msgstr "An&ulare"
-
-#: MainFrame.resx, redoMenu.Text
-#: MiscText.resx, RedoWithShortcut
-msgid "&Redo"
-msgstr "&Refacere"
-
-#: MainFrame.resx, deleteMenu.Text
-#: MainFrame.resx, deleteItemMenu.Text
-msgid "&Delete"
-msgstr "&Ștergere"
-
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
 msgstr "&Editare"
-
-#: MainFrame.resx, entireCourseMenu.Text
-msgid "Entire &Course"
-msgstr "Tot &Traseul"
-
-#: MainFrame.resx, entireMapMenu.Text
-msgid "Entire &Map"
-msgstr "Toată &Harta"
-
-#: MainFrame.resx, zoom50Menu.Text
-msgid "50%"
-msgstr "50%"
-
-#: MainFrame.resx, zoom100Menu.Text
-msgid "100%"
-msgstr "100%"
-
-#: MainFrame.resx, zoom150Menu.Text
-msgid "150%"
-msgstr "150%"
-
-#: MainFrame.resx, zoom200Menu.Text
-msgid "200%"
-msgstr "200%"
-
-#: MainFrame.resx, zoom300Menu.Text
-msgid "300%"
-msgstr "300%"
-
-#: MainFrame.resx, zoom500Menu.Text
-msgid "500%"
-msgstr "500%"
-
-#: MainFrame.resx, zoom1000Menu.Text
-msgid "1000%"
-msgstr "1000%"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Zoom"
-
-#: MainFrame.resx, veryLowIntensityMenu.Text
-msgid "&Very Low"
-msgstr "Foarte s&căzută"
-
-#: MainFrame.resx, lowIntensityMenu.Text
-msgid "&Low"
-msgstr "&Scăzută"
-
-#: MainFrame.resx, mediumIntensityMenu.Text
-msgid "&Medium"
-msgstr "&Medie"
-
-#: MainFrame.resx, highIntensityMenu.Text
-msgid "&High"
-msgstr "&Ridicată"
-
-#: MainFrame.resx, fullIntensityMenu.Text
-msgid "&Full"
-msgstr "&Maximă"
-
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "&Intensitate Hartă"
-
-#: MainFrame.resx, normalQualityMenu.Text
-msgid "Low"
-msgstr "Scăzută"
-
-#: MainFrame.resx, highQualityMenu.Text
-msgid "High"
-msgstr "Ridicată"
-
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "&Calitate hartă"
-
-#: MainFrame.resx, showPrintAreaMenu.Text
-msgid "Show P&rint Area"
-msgstr ""
-
-#: MainFrame.resx, showPopupsMenu.Text
-msgid "Show &Popup Information"
-msgstr ""
-
-#: MainFrame.resx, allControlsMenu.Text
-msgid "&All Controls"
-msgstr "&Toate Posturile"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1524,14 +1372,6 @@ msgstr "&Finalizare"
 msgid "&Descriptions"
 msgstr ""
 
-#: MainFrame.resx, mapExchangeControlMenuItem.Text
-msgid "Map Exchange at &Control Point"
-msgstr ""
-
-#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
-msgstr ""
-
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
 msgstr ""
@@ -1542,6 +1382,12 @@ msgstr ""
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
+msgstr ""
+
+#: MainFrame.resx, addMapIssueMenu.Text
+#: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
+#: MiscText.resx, MapIssue_Long
+msgid "Map Issue Point"
 msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
@@ -1623,6 +1469,214 @@ msgstr ""
 msgid "&Add"
 msgstr ""
 
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Eve&niment"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Traseu"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Element"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapoarte"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Asistență"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "Evniment &Nou..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Deschidere..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Salvare"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Salv&are ca..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Creare Fișiere &OCAD..."
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr ""
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Creare Fișiere RouteGadget..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create Data &Interchange File (IOF XML)..."
+msgstr ""
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create G&PX File..."
+msgstr ""
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Tipărire Descriere..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Tipărire Fișe de &Control..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Tipărire &Trasee..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Setare &Zonă de Tipărire"
+
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
+msgstr ""
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Acest Traseu"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Toate Traseele"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "&Limba programului..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Ieșire"
+
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "&Golește selecția"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "An&ulare"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "&Refacere"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Ștergere"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "Tot &Traseul"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Toată &Harta"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zoom"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "&Intensitate Hartă"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "Foarte s&căzută"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "&Scăzută"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "&Medie"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "&Ridicată"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Maximă"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "&Calitate hartă"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Scăzută"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Ridicată"
+
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr ""
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Toate Posturile"
+
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr ""
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr ""
+
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
 msgstr "Fișier &Hartă..."
@@ -1643,6 +1697,26 @@ msgstr "Șterge Posturile &Nefolosite..."
 msgid "&Punch Patterns..."
 msgstr "Modele de Compostare..."
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
+#: MainFrame.resx, descriptionStd2004Menu.Text
+msgid "2004 Description Standard"
+msgstr ""
+
+#: MainFrame.resx, descriptionStd2018Menu.Text
+msgid "2018 Description Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStd2000Menu.Text
+msgid "ISOM2000 Map Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStd2017Menu.Text
+msgid "ISOM2017 Map Standard"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Personalizare Text &Descriere..."
@@ -1650,10 +1724,6 @@ msgstr "Personalizare Text &Descriere..."
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
 msgstr ""
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Eve&niment"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1682,10 +1752,6 @@ msgstr "&Încărcare Participanți..."
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
 msgstr ""
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Traseu"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1719,6 +1785,10 @@ msgstr ""
 msgid "R&otate"
 msgstr "&Rotire"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "Semnalizare &Secțiune"
+
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Fără Semnalizare"
@@ -1735,17 +1805,9 @@ msgstr "Semnalizare doar Început de Secțiune"
 msgid "End of Leg Flagged"
 msgstr "Semnalizare doar Sfârșit de Secțiune"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "Semnalizare &Secțiune"
-
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Schimbare Trasee Afișate..."
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Element"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1766,10 +1828,6 @@ msgstr "Referințe Încrucișate Posturi"
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
 msgstr "&Încărcare Post de control si Secțiune"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Rapoarte"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -1794,6 +1852,10 @@ msgstr ""
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Despre Purple Pen"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Depanare"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -1835,9 +1897,9 @@ msgstr "Metrici de Font"
 msgid "Crash"
 msgstr ""
 
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Depanare"
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Traducere text descriere"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1850,14 +1912,6 @@ msgstr "Adăugare Texte Traduse..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Îmbină Symbol.xml..."
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Traducere text descriere"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Asistență"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2616,6 +2670,14 @@ msgid "Cannot read map for the following reason: '{0}' Opening "
 "OpenOrienteering Mapper may fix problems."
 msgstr ""
 
+#: MiscText.resx, MapIssue_Medium
+msgid "Map Issue"
+msgstr ""
+
+#: MiscText.resx, MapIssue_Short
+msgid "MI"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Nu mai avertiza lipsa fonturilor pentru acest eveniment."
@@ -2791,6 +2853,44 @@ msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
 msgstr "(Puteți schimba scara de tipărire mai târziu pentru orice "
 "traseu accesând Traseu/Proprietăți.)"
+
+#: NewEventStandards.resx, changeLaterLabel.Text
+msgid "(These settings can be changed later using Event/IOF "
+"Standards)"
+msgstr ""
+
+#: NewEventStandards.resx, labelTitle.Text
+msgid "IOF Standards"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMap2017.Text
+msgid "ISOM 2017"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMap2000.Text
+msgid "ISOM 2000 / ISSOM 2007"
+msgstr ""
+
+#: NewEventStandards.resx, groupBoxMapStandard.Text
+msgid "IOF Map Standard"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonDescriptions2018.Text
+msgid "Descriptions 2018"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonDescriptions2004.Text
+msgid "Descriptions 2004"
+msgstr ""
+
+#: NewEventStandards.resx, groupBoxDescriptionStandard.Text
+msgid "IOF Description Standard"
+msgstr ""
+
+#: NewEventStandards.resx, labelStandardsIntro.Text
+msgid "Which versions of IOF standards would you like Purple Pen "
+"to follow?"
+msgstr ""
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3572,6 +3672,14 @@ msgstr ""
 msgid "Calculated Length:"
 msgstr ""
 
+#: SelectionDescriptionText.resx, MapIssue_Plural
+msgid "map issue points"
+msgstr ""
+
+#: SelectionDescriptionText.resx, MapIssue_Singular
+msgid "map issue point"
+msgstr ""
+
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
 msgstr ""
@@ -3831,6 +3939,15 @@ msgstr ""
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
+msgstr ""
+
+#: StatusBarText.resx, AddingExistingMapIssue
+msgid "Click left mouse button to add existing map issue point to "
+"course"
+msgstr ""
+
+#: StatusBarText.resx, AddingMapIssue
+msgid "Click left mouse button to place new map issue point"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text

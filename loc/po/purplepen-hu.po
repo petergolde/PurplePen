@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.01\n"
+"Project-Id-Version: Purple Pen 3.1.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-08-29 13:48-07:00\n"
+"POT-Creation-Date: 2017-12-19 11:49-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -774,9 +774,33 @@ msgstr ""
 msgid "Relay Team Variations"
 msgstr ""
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Elem méretek"
+#: CommandNameText.resx, AddMapIssue
+msgid "Add Map Issue Point"
+msgstr ""
+
+#: CommandNameText.resx, ChangeDescriptionStandard
+msgid "Set Control Description Standard"
+msgstr ""
+
+#: CommandNameText.resx, ChangeMapStandard
+msgid "Set Map Standard"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
+msgid "Do not scale"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items1
+msgid "Relative to map scale"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items2
+msgid "Relative to 1:15000"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, label11.Text
+msgid "Scale item sizes:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -829,9 +853,9 @@ msgstr "Ellenőrzőpont körének átmérője:"
 msgid "Use IOF standard sizes"
 msgstr "IOF normál méretek használata"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "A lila szín"
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Elem méretek"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -841,10 +865,9 @@ msgstr "Keverje a lila színt a térkép alapszínével"
 msgid "Use purple color from map"
 msgstr "A térkép lila színét használja"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Pontleírás"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "A lila szín"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -856,13 +879,18 @@ msgstr "Fekete"
 msgid "Purple"
 msgstr "Lila"
 
-#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD térkép"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Pontleírás"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "Felülnyomás használata a megjelölt színekhez"
+
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr "OCAD térkép"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -1322,193 +1350,13 @@ msgstr "Purple Pen fájlok|*.ppen|Minden fájl|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen fájl|*.ppen"
 
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "Új &Esemény"
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Megnyitás…"
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "Men&tés"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Mentés más&ként…"
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "OCAD fájlok létrehozása..."
-
-#: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
-msgstr "PDF fájlok létrehozása..."
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr "RouteGadget fájlok létrehozása..."
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create Data &Interchange File (IOF XML)..."
-msgstr "Adatcsere fájl létrehozása (IOF XML)..."
-
-#: MainFrame.resx, createGPXFileMenu.Text
-msgid "Create G&PX File..."
-msgstr "&GPX fájl készítése..."
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "&Leírások nyomtatása..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr "Kartonok &nyomtatása..."
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "&Pályák nyomtatása..."
-
-#: MainFrame.resx, printAreaThisPartMenu.Text
-msgid "This &Part Only"
-msgstr "Csak ez a &Rész"
-
-#: MainFrame.resx, printAreaThisCourseMenu.Text
-msgid "&This Course"
-msgstr "&Ez a pálya"
-
-#: MainFrame.resx, printAreaAllCoursesMenu.Text
-msgid "&All Courses"
-msgstr "&Minden pálya"
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Nyomtatandó &terület"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "A program nyel&ve:"
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "&Kilépés"
-
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Fájl"
 
-#: MainFrame.resx, cancelMenu.Text
-#: MiscText.resx, ClearSelectionWithShortcut
-msgid "&Clear Selection"
-msgstr "&Kijelölés megszüntetése"
-
-#: MainFrame.resx, undoMenu.Text
-#: MiscText.resx, UndoWithShortcut
-msgid "&Undo"
-msgstr "&Visszavonás"
-
-#: MainFrame.resx, redoMenu.Text
-#: MiscText.resx, RedoWithShortcut
-msgid "&Redo"
-msgstr "Ú&jra"
-
-#: MainFrame.resx, deleteMenu.Text
-#: MainFrame.resx, deleteItemMenu.Text
-msgid "&Delete"
-msgstr "&Törlés"
-
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
 msgstr "S&zerkesztés"
-
-#: MainFrame.resx, entireCourseMenu.Text
-msgid "Entire &Course"
-msgstr "&Teljes pálya"
-
-#: MainFrame.resx, entireMapMenu.Text
-msgid "Entire &Map"
-msgstr "Te&ljes térkép"
-
-#: MainFrame.resx, zoom50Menu.Text
-msgid "50%"
-msgstr "50%"
-
-#: MainFrame.resx, zoom100Menu.Text
-msgid "100%"
-msgstr "100%"
-
-#: MainFrame.resx, zoom150Menu.Text
-msgid "150%"
-msgstr "150%"
-
-#: MainFrame.resx, zoom200Menu.Text
-msgid "200%"
-msgstr "200%"
-
-#: MainFrame.resx, zoom300Menu.Text
-msgid "300%"
-msgstr "300%"
-
-#: MainFrame.resx, zoom500Menu.Text
-msgid "500%"
-msgstr "500%"
-
-#: MainFrame.resx, zoom1000Menu.Text
-msgid "1000%"
-msgstr "1000%"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "Na&gyítás"
-
-#: MainFrame.resx, veryLowIntensityMenu.Text
-msgid "&Very Low"
-msgstr "Nagyon &alacsony"
-
-#: MainFrame.resx, lowIntensityMenu.Text
-msgid "&Low"
-msgstr "Alacs&ony"
-
-#: MainFrame.resx, mediumIntensityMenu.Text
-msgid "&Medium"
-msgstr "Kö&zepes"
-
-#: MainFrame.resx, highIntensityMenu.Text
-msgid "&High"
-msgstr "Maga&s"
-
-#: MainFrame.resx, fullIntensityMenu.Text
-msgid "&Full"
-msgstr "&Teljes"
-
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "Térkép intenzitás"
-
-#: MainFrame.resx, normalQualityMenu.Text
-msgid "Low"
-msgstr "Alacsony"
-
-#: MainFrame.resx, highQualityMenu.Text
-msgid "High"
-msgstr "Magas"
-
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "Térkép&minőség"
-
-#: MainFrame.resx, showPrintAreaMenu.Text
-msgid "Show P&rint Area"
-msgstr "Mutassa &Nyomtatott területet"
-
-#: MainFrame.resx, showPopupsMenu.Text
-msgid "Show &Popup Information"
-msgstr "Mutassa a &Felugró adatokat"
-
-#: MainFrame.resx, allControlsMenu.Text
-msgid "&All Controls"
-msgstr "&Minden ellenőrzőpont"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1531,14 +1379,6 @@ msgstr "Be&fejezés"
 msgid "&Descriptions"
 msgstr "Új &pontleírás"
 
-#: MainFrame.resx, mapExchangeControlMenuItem.Text
-msgid "Map Exchange at &Control Point"
-msgstr "&Térképcsere az ellenőrzőpontnál"
-
-#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
-msgstr "&Szalagozás a térképcseréig"
-
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
 msgstr "Új &térképcsere"
@@ -1550,6 +1390,12 @@ msgstr ""
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
 msgstr "Új szö&vegsor"
+
+#: MainFrame.resx, addMapIssueMenu.Text
+#: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
+#: MiscText.resx, MapIssue_Long
+msgid "Map Issue Point"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1630,6 +1476,214 @@ msgstr "Téglalap"
 msgid "&Add"
 msgstr ""
 
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "&Esemény"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Pálya"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Elem"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Jelentések"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Súgó"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "Új &Esemény"
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Megnyitás…"
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "Men&tés"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Mentés más&ként…"
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "OCAD fájlok létrehozása..."
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr "PDF fájlok létrehozása..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "RouteGadget fájlok létrehozása..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create Data &Interchange File (IOF XML)..."
+msgstr "Adatcsere fájl létrehozása (IOF XML)..."
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create G&PX File..."
+msgstr "&GPX fájl készítése..."
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Leírások nyomtatása..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Kartonok &nyomtatása..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "&Pályák nyomtatása..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Nyomtatandó &terület"
+
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
+msgstr "Csak ez a &Rész"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Ez a pálya"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Minden pálya"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "A program nyel&ve:"
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Kilépés"
+
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "&Kijelölés megszüntetése"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "&Visszavonás"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "Ú&jra"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Törlés"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "&Teljes pálya"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Te&ljes térkép"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "Na&gyítás"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Térkép intenzitás"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "Nagyon &alacsony"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "Alacs&ony"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "Kö&zepes"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "Maga&s"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Teljes"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Térkép&minőség"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Alacsony"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Magas"
+
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr "Mutassa &Nyomtatott területet"
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr "Mutassa a &Felugró adatokat"
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Minden ellenőrzőpont"
+
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr "&Térképcsere az ellenőrzőpontnál"
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr "&Szalagozás a térképcseréig"
+
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
 msgstr "&Térkép fájl..."
@@ -1650,6 +1704,26 @@ msgstr "&Nem használt ellenőrzöpontok törlése"
 msgid "&Punch Patterns..."
 msgstr "&Szúrásminták..."
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
+#: MainFrame.resx, descriptionStd2004Menu.Text
+msgid "2004 Description Standard"
+msgstr ""
+
+#: MainFrame.resx, descriptionStd2018Menu.Text
+msgid "2018 Description Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStd2000Menu.Text
+msgid "ISOM2000 Map Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStd2017Menu.Text
+msgid "ISOM2017 Map Standard"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "&Leírás testreszabása"
@@ -1657,10 +1731,6 @@ msgstr "&Leírás testreszabása"
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
 msgstr "&Pálya kinézetének testreszabása..."
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "&Esemény"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1689,10 +1759,6 @@ msgstr "&Versenyzőszám..."
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
 msgstr ""
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Pálya"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1726,6 +1792,10 @@ msgstr "&Sor kinézete..."
 msgid "R&otate"
 msgstr "&Forgatás"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "Át&menet szalagozása"
+
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Nincs szalagozás"
@@ -1742,17 +1812,9 @@ msgstr "Az átmenet eleje szalagozott"
 msgid "End of Leg Flagged"
 msgstr "Az átmenet vége szalagozott"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "Át&menet szalagozása"
-
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "A megjelenített pályák módosítása..."
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Elem"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1773,10 +1835,6 @@ msgstr "Ellenőrzőpontok keresztreferenciája"
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
 msgstr "Ellenőrzőpont és átmenet forgalma"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Jelentések"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -1801,6 +1859,10 @@ msgstr "&Támogatás"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "A Purple Pen programról"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Hibakeresés"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -1842,9 +1904,9 @@ msgstr "Betűméretek"
 msgid "Crash"
 msgstr "Összeomlás"
 
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Hibakeresés"
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "Leírás lefordítása"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1857,14 +1919,6 @@ msgstr "Fordított szövegek megadása"
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Symbols.xml összefűzése"
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "Leírás lefordítása"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Súgó"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2642,6 +2696,14 @@ msgid "Cannot read map for the following reason: '{0}' Opening "
 "OpenOrienteering Mapper may fix problems."
 msgstr ""
 
+#: MiscText.resx, MapIssue_Medium
+msgid "Map Issue"
+msgstr ""
+
+#: MiscText.resx, MapIssue_Short
+msgid "MI"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Ne figyelmeztessen újra ebben az eseményben ha hiányzik "
@@ -2823,6 +2885,44 @@ msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
 msgstr "(Megváltoztathatja a nyomtatási léptéket bármely pályához "
 "a Pálya/Beállítások alatt.)"
+
+#: NewEventStandards.resx, changeLaterLabel.Text
+msgid "(These settings can be changed later using Event/IOF "
+"Standards)"
+msgstr ""
+
+#: NewEventStandards.resx, labelTitle.Text
+msgid "IOF Standards"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMap2017.Text
+msgid "ISOM 2017"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMap2000.Text
+msgid "ISOM 2000 / ISSOM 2007"
+msgstr ""
+
+#: NewEventStandards.resx, groupBoxMapStandard.Text
+msgid "IOF Map Standard"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonDescriptions2018.Text
+msgid "Descriptions 2018"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonDescriptions2004.Text
+msgid "Descriptions 2004"
+msgstr ""
+
+#: NewEventStandards.resx, groupBoxDescriptionStandard.Text
+msgid "IOF Description Standard"
+msgstr ""
+
+#: NewEventStandards.resx, labelStandardsIntro.Text
+msgid "Which versions of IOF standards would you like Purple Pen "
+"to follow?"
+msgstr ""
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3597,6 +3697,14 @@ msgstr "\"{0}\" pálya , {1} rész"
 msgid "Calculated Length:"
 msgstr "Számított hosszúság:"
 
+#: SelectionDescriptionText.resx, MapIssue_Plural
+msgid "map issue points"
+msgstr ""
+
+#: SelectionDescriptionText.resx, MapIssue_Singular
+msgid "map issue point"
+msgstr ""
+
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
 msgstr ""
@@ -3853,6 +3961,15 @@ msgstr "Tartsa lenyomva és mozgassa az egeret az új objektum "
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
+msgstr ""
+
+#: StatusBarText.resx, AddingExistingMapIssue
+msgid "Click left mouse button to add existing map issue point to "
+"course"
+msgstr ""
+
+#: StatusBarText.resx, AddingMapIssue
+msgid "Click left mouse button to place new map issue point"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text

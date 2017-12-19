@@ -121,7 +121,7 @@
     <value>Sil</value>
   </data>
   <data name="unusedControlsLabel.Text" xml:space="preserve">
-    <value>Aşağıdaki denetimler Tüm Denetimler koleksiyonunda bulunur ancak herhangi bir derste kullanılmaz. İşaretli kontrollerin tümünü kaldırmak için Sil düğmesini tıklayın.</value>
+    <value>Tüm Denetimler koleksiyonunda bulunur ancak herhangi bir derste kullanılmaz. İşaretli kontrollerin tümünü kaldırmak için Sil düğmesini tıklayın.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kullanılmayan Hedefler</value>

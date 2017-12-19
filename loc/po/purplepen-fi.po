@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.0.01\n"
+"Project-Id-Version: Purple Pen 3.1.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2017-08-29 13:48-07:00\n"
+"POT-Creation-Date: 2017-12-19 11:49-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -777,9 +777,33 @@ msgstr "Poista hajonta"
 msgid "Relay Team Variations"
 msgstr "Viestin joukkuehajonnat"
 
-#: CourseAppearanceDialog.resx, groupBoxSizes.Text
-msgid "Item Sizes"
-msgstr "Kohteiden mitat"
+#: CommandNameText.resx, AddMapIssue
+msgid "Add Map Issue Point"
+msgstr ""
+
+#: CommandNameText.resx, ChangeDescriptionStandard
+msgid "Set Control Description Standard"
+msgstr ""
+
+#: CommandNameText.resx, ChangeMapStandard
+msgid "Set Map Standard"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
+msgid "Do not scale"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items1
+msgid "Relative to map scale"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items2
+msgid "Relative to 1:15000"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, label11.Text
+msgid "Scale item sizes:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -832,9 +856,9 @@ msgstr "Rastiympyrän halkaisija:"
 msgid "Use IOF standard sizes"
 msgstr "Käytä IOF:n standardimittoja"
 
-#: CourseAppearanceDialog.resx, groupBoxPurple.Text
-msgid "Purple Color"
-msgstr "Violetti väri"
+#: CourseAppearanceDialog.resx, groupBoxSizes.Text
+msgid "Item Sizes"
+msgstr "Kohteiden mitat"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -844,10 +868,9 @@ msgstr "Läpinäkyvä violetti"
 msgid "Use purple color from map"
 msgstr "Käytä kartan violettia väriä"
 
-#: CourseAppearanceDialog.resx, groupBox1.Text
-#: SelectionDescriptionText.resx, SpecialName_Descriptions
-msgid "Control Descriptions"
-msgstr "Rastinmääritteet"
+#: CourseAppearanceDialog.resx, groupBoxPurple.Text
+msgid "Purple Color"
+msgstr "Violetti väri"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -859,13 +882,18 @@ msgstr "Musta"
 msgid "Purple"
 msgstr "Violetti"
 
-#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD kartta"
+#: CourseAppearanceDialog.resx, groupBox1.Text
+#: SelectionDescriptionText.resx, SpecialName_Descriptions
+msgid "Control Descriptions"
+msgstr "Rastinmääritteet"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "\"Overprint\"-värit läpikuultavina"
+
+#: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
+msgid "OCAD Map"
+msgstr "OCAD kartta"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -1325,193 +1353,13 @@ msgstr "Purple Pen tiedostot|*.ppen|Kaikki tiedostot|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen tiedosto|*.ppen"
 
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "&Uusi tapahtuma..."
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Avaa..."
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "&Tallenna"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Tallenna &nimellä..."
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "Vie &OCAD-tiedostoihin..."
-
-#: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
-msgstr "Vie PDF-tiedostoihin..."
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr "Vie Reitti&härveli-tiedostoihin..."
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create Data &Interchange File (IOF XML)..."
-msgstr "Vie &XML-tiedostoon..."
-
-#: MainFrame.resx, createGPXFileMenu.Text
-msgid "Create G&PX File..."
-msgstr "Luo &GPX-tiedosto..."
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "Tulosta rastin&määritteet..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr "Tulosta &leimauskuviot..."
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "Tulosta &ratoja..."
-
-#: MainFrame.resx, printAreaThisPartMenu.Text
-msgid "This &Part Only"
-msgstr "Vain tälle &osalle"
-
-#: MainFrame.resx, printAreaThisCourseMenu.Text
-msgid "&This Course"
-msgstr "&Tälle radalle"
-
-#: MainFrame.resx, printAreaAllCoursesMenu.Text
-msgid "&All Courses"
-msgstr "&Kaikille radoille"
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "A&seta tulostusalue"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Ohjelman &kieli..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "Lo&peta"
-
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Tiedosto"
 
-#: MainFrame.resx, cancelMenu.Text
-#: MiscText.resx, ClearSelectionWithShortcut
-msgid "&Clear Selection"
-msgstr "Tyhjennä &valinta"
-
-#: MainFrame.resx, undoMenu.Text
-#: MiscText.resx, UndoWithShortcut
-msgid "&Undo"
-msgstr "&Kumoa"
-
-#: MainFrame.resx, redoMenu.Text
-#: MiscText.resx, RedoWithShortcut
-msgid "&Redo"
-msgstr "&Tee uudelleen"
-
-#: MainFrame.resx, deleteMenu.Text
-#: MainFrame.resx, deleteItemMenu.Text
-msgid "&Delete"
-msgstr "&Poista"
-
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
 msgstr "&Muokkaa"
-
-#: MainFrame.resx, entireCourseMenu.Text
-msgid "Entire &Course"
-msgstr "Koko &rata"
-
-#: MainFrame.resx, entireMapMenu.Text
-msgid "Entire &Map"
-msgstr "Koko &kartta"
-
-#: MainFrame.resx, zoom50Menu.Text
-msgid "50%"
-msgstr "50 %"
-
-#: MainFrame.resx, zoom100Menu.Text
-msgid "100%"
-msgstr "100 %"
-
-#: MainFrame.resx, zoom150Menu.Text
-msgid "150%"
-msgstr "150 %"
-
-#: MainFrame.resx, zoom200Menu.Text
-msgid "200%"
-msgstr "200 %"
-
-#: MainFrame.resx, zoom300Menu.Text
-msgid "300%"
-msgstr "300 %"
-
-#: MainFrame.resx, zoom500Menu.Text
-msgid "500%"
-msgstr "500 %"
-
-#: MainFrame.resx, zoom1000Menu.Text
-msgid "1000%"
-msgstr "1000 %"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Zoomaa"
-
-#: MainFrame.resx, veryLowIntensityMenu.Text
-msgid "&Very Low"
-msgstr "&Hyvin matala"
-
-#: MainFrame.resx, lowIntensityMenu.Text
-msgid "&Low"
-msgstr "&Matala"
-
-#: MainFrame.resx, mediumIntensityMenu.Text
-msgid "&Medium"
-msgstr "Keski&suuri"
-
-#: MainFrame.resx, highIntensityMenu.Text
-msgid "&High"
-msgstr "&Korkea"
-
-#: MainFrame.resx, fullIntensityMenu.Text
-msgid "&Full"
-msgstr "&Täysi"
-
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "Kartan &intensiteetti"
-
-#: MainFrame.resx, normalQualityMenu.Text
-msgid "Low"
-msgstr "Matala"
-
-#: MainFrame.resx, highQualityMenu.Text
-msgid "High"
-msgstr "Korkea"
-
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "Kartan &laatu"
-
-#: MainFrame.resx, showPrintAreaMenu.Text
-msgid "Show P&rint Area"
-msgstr "Nä&ytä tulostusalue"
-
-#: MainFrame.resx, showPopupsMenu.Text
-msgid "Show &Popup Information"
-msgstr "Näytä &ponnahdustiedot"
-
-#: MainFrame.resx, allControlsMenu.Text
-msgid "&All Controls"
-msgstr "K&aikki rastit"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1534,14 +1382,6 @@ msgstr "&Maali"
 msgid "&Descriptions"
 msgstr "Rasti&nmääritteet"
 
-#: MainFrame.resx, mapExchangeControlMenuItem.Text
-msgid "Map Exchange at &Control Point"
-msgstr "Kartanvaihto &rastilla"
-
-#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
-msgstr "&Viitoitettu reitti kartanvaihtoon"
-
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
 msgstr "&Kartanvaihto"
@@ -1553,6 +1393,12 @@ msgstr "&Hajonta..."
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
 msgstr "&Tekstirivi..."
+
+#: MainFrame.resx, addMapIssueMenu.Text
+#: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
+#: MiscText.resx, MapIssue_Long
+msgid "Map Issue Point"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1633,6 +1479,214 @@ msgstr "Suorakulmio"
 msgid "&Add"
 msgstr "&Lisää"
 
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Tapa&htuma"
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Rata"
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Kohde"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "Ra&portit"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Ohje"
+
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "&Uusi tapahtuma..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Avaa..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Tallenna"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Tallenna &nimellä..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Vie &OCAD-tiedostoihin..."
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr "Vie PDF-tiedostoihin..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Vie Reitti&härveli-tiedostoihin..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create Data &Interchange File (IOF XML)..."
+msgstr "Vie &XML-tiedostoon..."
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create G&PX File..."
+msgstr "Luo &GPX-tiedosto..."
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "Tulosta rastin&määritteet..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Tulosta &leimauskuviot..."
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Tulosta &ratoja..."
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "A&seta tulostusalue"
+
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
+msgstr "Vain tälle &osalle"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Tälle radalle"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Kaikille radoille"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Ohjelman &kieli..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "Lo&peta"
+
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "Tyhjennä &valinta"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "&Kumoa"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "&Tee uudelleen"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Poista"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "Koko &rata"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Koko &kartta"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zoomaa"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50 %"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100 %"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150 %"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200 %"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300 %"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500 %"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000 %"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Kartan &intensiteetti"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "&Hyvin matala"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "&Matala"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "Keski&suuri"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "&Korkea"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Täysi"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Kartan &laatu"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Matala"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Korkea"
+
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr "Nä&ytä tulostusalue"
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr "Näytä &ponnahdustiedot"
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "K&aikki rastit"
+
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr "Kartanvaihto &rastilla"
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr "&Viitoitettu reitti kartanvaihtoon"
+
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
 msgstr "&Karttatiedosto..."
@@ -1653,6 +1707,26 @@ msgstr "&Poista käyttämättömät rastit..."
 msgid "&Punch Patterns..."
 msgstr "&Leimauskuviot..."
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
+#: MainFrame.resx, descriptionStd2004Menu.Text
+msgid "2004 Description Standard"
+msgstr ""
+
+#: MainFrame.resx, descriptionStd2018Menu.Text
+msgid "2018 Description Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStd2000Menu.Text
+msgid "ISOM2000 Map Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStd2017Menu.Text
+msgid "ISOM2017 Map Standard"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Muokkaa &sanallisia rastinmääritteitä..."
@@ -1660,10 +1734,6 @@ msgstr "Muokkaa &sanallisia rastinmääritteitä..."
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
 msgstr "Muokkaa &ulkoasua..."
-
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Tapa&htuma"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1692,10 +1762,6 @@ msgstr "&Aseta kuormitus..."
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
 msgstr "Viestin joukkue&hajonnat..."
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Rata"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1729,6 +1795,10 @@ msgstr "Muuta v&iivan ulkoasua..."
 msgid "R&otate"
 msgstr "&Kierrä"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Viitoitus"
+
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Ei viitoitusta"
@@ -1745,17 +1815,9 @@ msgstr "Alku rastivälistä viitoitettu"
 msgid "End of Leg Flagged"
 msgstr "Loppu rastivälistä viitoitettu"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "&Viitoitus"
-
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Muuta näk&ymisasetuksia..."
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Kohde"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1776,10 +1838,6 @@ msgstr "&Rastien ristiviiteraportti"
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
 msgstr "&Kuormitusraportti"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "Ra&portit"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -1804,6 +1862,10 @@ msgstr "Make a &Donation"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Tietoja ohjelmasta"
+
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Debug"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -1845,9 +1907,9 @@ msgstr "Font Metrics"
 msgid "Crash"
 msgstr "Kaatuminen"
 
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Debug"
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Käännä"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1860,14 +1922,6 @@ msgstr "Lisää tai muokkaa käännöksiä..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Merge Symbols.xml..."
-
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Käännä"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Ohje"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2651,6 +2705,14 @@ msgid "Cannot read map for the following reason: '{0}' Opening "
 "OpenOrienteering Mapper may fix problems."
 msgstr ""
 
+#: MiscText.resx, MapIssue_Medium
+msgid "Map Issue"
+msgstr ""
+
+#: MiscText.resx, MapIssue_Short
+msgid "MI"
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Älä jatkossa varoita puuttuvista fonteista tässä "
@@ -2832,6 +2894,44 @@ msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
 msgstr "(Voit myöhemmin muuttaa tulostusmittakaavaa valitsemalla "
 "Rata/Ominaisuudet.)"
+
+#: NewEventStandards.resx, changeLaterLabel.Text
+msgid "(These settings can be changed later using Event/IOF "
+"Standards)"
+msgstr ""
+
+#: NewEventStandards.resx, labelTitle.Text
+msgid "IOF Standards"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMap2017.Text
+msgid "ISOM 2017"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMap2000.Text
+msgid "ISOM 2000 / ISSOM 2007"
+msgstr ""
+
+#: NewEventStandards.resx, groupBoxMapStandard.Text
+msgid "IOF Map Standard"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonDescriptions2018.Text
+msgid "Descriptions 2018"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonDescriptions2004.Text
+msgid "Descriptions 2004"
+msgstr ""
+
+#: NewEventStandards.resx, groupBoxDescriptionStandard.Text
+msgid "IOF Description Standard"
+msgstr ""
+
+#: NewEventStandards.resx, labelStandardsIntro.Text
+msgid "Which versions of IOF standards would you like Purple Pen "
+"to follow?"
+msgstr ""
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3612,6 +3712,14 @@ msgstr "Rata \"{0}\", osa {1}"
 msgid "Calculated Length:"
 msgstr "Mitattu pituus:"
 
+#: SelectionDescriptionText.resx, MapIssue_Plural
+msgid "map issue points"
+msgstr ""
+
+#: SelectionDescriptionText.resx, MapIssue_Singular
+msgid "map issue point"
+msgstr ""
+
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
 msgstr "Jokainen hajonta erikseen"
@@ -3880,6 +3988,15 @@ msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
 msgstr "Vedä rastinumeroa toiseen kohtaan radan "
 "uudelleenjärjestämiseksi"
+
+#: StatusBarText.resx, AddingExistingMapIssue
+msgid "Click left mouse button to add existing map issue point to "
+"course"
+msgstr ""
+
+#: StatusBarText.resx, AddingMapIssue
+msgid "Click left mouse button to place new map issue point"
+msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."

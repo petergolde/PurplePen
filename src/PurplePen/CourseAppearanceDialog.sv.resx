@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Objektets Storlek</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -162,8 +159,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Använd IOF standardstorlek</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lila Färg</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Objektets Storlek</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Smält samman lila med underliggande kartfärger</value>
@@ -183,11 +180,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Använd lila färgen från kartan</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lila Färg</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Förhandsvisning</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Kontrollbeskrivning</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Svart</value>
@@ -197,6 +194,9 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Färg:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Kontrollbeskrivning</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Färgväljare...</value>

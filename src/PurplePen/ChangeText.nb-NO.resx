@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Løype del</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Løype variasjon</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Løypelende</value>
   </data>

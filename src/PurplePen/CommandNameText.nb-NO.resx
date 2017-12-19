@@ -285,6 +285,12 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Kopier løype</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Lag {0} &amp;Filer</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Legg til variasjon</value>
+  </data>
   <data name="DeleteFork" xml:space="preserve">
     <value>Slett gafling/sommerfugl</value>
   </data>

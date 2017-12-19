@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Maße der Bahnobjekte</value>
-  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automatische Linienunterbrechung:</value>
   </data>
@@ -168,8 +165,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Benutze IOF Standardgrößen</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Violetter Farbton</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Maße der Bahnobjekte</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Violett mit darunterliegenden Farben mischen</value>
@@ -189,11 +186,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Violetten Farbton der Karte verwenden</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Violetter Farbton</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vorschau</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Postenbeschreibungen</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Schwarz</value>
@@ -204,11 +201,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Farbe:</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD-Karte</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Postenbeschreibungen</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Überdruck-Effekt für mit "Überdruck" markierte Farben verwenden.</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD-Karte</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Aussehen anpassen</value>

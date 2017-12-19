@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Suurused</value>
-  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automaatne joone vahe</value>
   </data>
@@ -168,8 +165,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Kasuta IOF standard suuruseid</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lilla värv</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Suurused</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Sulata lilla alusvärvidesse</value>
@@ -189,11 +186,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Kasuta kaardil määratud lillat värvi</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Lilla värv</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Eelvaade</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>KP legendid</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Must</value>
@@ -204,11 +201,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Värv:</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD kaart</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>KP legendid</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Kasuta ületrüki effekti värvidele tunnusega "ületrükk"</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD kaart</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kohanda väljanägemist</value>

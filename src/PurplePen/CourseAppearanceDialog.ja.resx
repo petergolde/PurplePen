@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>アイテムサイズ</value>
-  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>自動で作成される切れ目の長さ:</value>
   </data>
@@ -168,8 +165,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>IOF標準サイズを使用</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>パープルカラー</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>アイテムサイズ</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>パープルを地図の色とブレンドする</value>
@@ -189,11 +186,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>地図ファイル(OCAD)のパープルカラーを使用する</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>パープルカラー</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>プレビュー</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>ディスクリプション</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>黒</value>
@@ -204,11 +201,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>色:</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCADマップ</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>ディスクリプション</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>「オーバープリント」にマークされた色を重ね合わせする</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCADマップ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>外観をカスタマイズ</value>

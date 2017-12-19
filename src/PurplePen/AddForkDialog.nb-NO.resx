@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWhichType.Text" xml:space="preserve">
+    <value>Velg hvilken type variant du ønsker?</value>
+  </data>
   <data name="radioButtonFork.Text" xml:space="preserve">
     <value>Gafling</value>
   </data>
@@ -125,5 +128,35 @@
   </data>
   <data name="labelNumberBranches.Text" xml:space="preserve">
     <value>Antall grener</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items1" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items2" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items3" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items4" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items5" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items6" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items7" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items8" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Legg til variasjon</value>
   </data>
 </root>

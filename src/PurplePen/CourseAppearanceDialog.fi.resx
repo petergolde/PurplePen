@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Kohteiden mitat</value>
-  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automaattisen katkon pituus:</value>
   </data>
@@ -168,8 +165,8 @@
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
     <value>Käytä IOF:n standardimittoja</value>
   </data>
-  <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Violetti väri</value>
+  <data name="groupBoxSizes.Text" xml:space="preserve">
+    <value>Kohteiden mitat</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Läpinäkyvä violetti</value>
@@ -189,11 +186,11 @@
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
     <value>Käytä kartan violettia väriä</value>
   </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Violetti väri</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Esikatselu</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Rastinmääritteet</value>
   </data>
   <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
     <value>Musta</value>
@@ -204,11 +201,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Väri:</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD kartta</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Rastinmääritteet</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>"Overprint"-värit läpikuultavina</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD kartta</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muokkaa ulkoasua</value>
