@@ -584,14 +584,14 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-77.41177,Width=60.35295,Height=127.4118}",
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-76.90884,Width=60.11472,Height=126.9088}",
                                         highlights[0].ToString());
             Assert.AreEqual(8, highlights[0].specialId.id);
 
             // Make sure the description is now sized.
             PointF[] newLocations = eventDB.GetSpecial(SpecialId(8)).locations;
             Assert.AreEqual(new PointF(-50,50), newLocations[0]);
-            Assert.AreEqual(-42.549, newLocations[1].X, 0.001);
+            Assert.AreEqual(-42.578, newLocations[1].X, 0.001);
             Assert.AreEqual(50, newLocations[1].Y);
         }
 
@@ -651,14 +651,14 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-47.22101,Width=55.91665,Height=13.48188} columns:3",
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-46.71266,Width=53.80825,Height=12.97353} columns:3",
                                         highlights[0].ToString());
             Assert.AreEqual(8, highlights[0].specialId.id);
 
             // Make sure the description is now sized.
             PointF[] newLocations = eventDB.GetSpecial(SpecialId(8)).locations;
             Assert.AreEqual(new PointF(-105F, -33.7391319F), newLocations[0]);
-            Assert.AreEqual(-102.79F, newLocations[1].X, 0.001);
+            Assert.AreEqual(-102.873F, newLocations[1].X, 0.001);
             Assert.AreEqual(-33.739F, newLocations[1].Y, 0.001);
 
             // Should be 3 columns.
