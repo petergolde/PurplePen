@@ -148,15 +148,25 @@
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="BranchColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="LegsColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="grid.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="BranchColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BranchColumn.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="LegsColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Legs</value>
   </data>
   <data name="grid.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 110</value>
@@ -164,7 +174,6 @@
   <data name="grid.Size" type="System.Drawing.Size, System.Drawing">
     <value>344, 245</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="grid.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -179,21 +188,6 @@
   </data>
   <data name="&gt;&gt;grid.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <metadata name="BranchColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="BranchColumn.HeaderText" xml:space="preserve">
-    <value>Branch</value>
-  </data>
-  <data name="BranchColumn.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <metadata name="LegsColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="LegsColumn.HeaderText" xml:space="preserve">
-    <value>Legs</value>
   </data>
   <data name="labelDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -277,6 +271,6 @@
     <value>LegAssignmentsDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.0.0.220, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.1.1.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

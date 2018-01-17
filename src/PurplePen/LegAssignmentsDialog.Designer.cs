@@ -93,6 +93,7 @@
             resources.ApplyResources(this.linkLabel, "linkLabel");
             this.linkLabel.Name = "linkLabel";
             this.linkLabel.TabStop = true;
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
             // LegAssignmentsDialog
             // 
@@ -102,6 +103,7 @@
             this.Controls.Add(this.labelDescription);
             this.Controls.Add(this.grid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "VariationFixedBranches.htm";
             this.Name = "LegAssignmentsDialog";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);

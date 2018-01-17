@@ -111,5 +111,10 @@ namespace PurplePen
                 ErrorMessage = errorMessage;
             }
         }
+
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Util.ShowHelpTopic(this, HelpTopic);
+        }
     }
 }

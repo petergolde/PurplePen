@@ -18,7 +18,7 @@ namespace PurplePen
         Color purpleColor;
         bool showRadius = true, showLineKind = true;
 
-        public LinePropertiesDialog(string dialogTitle, string usageText, CmykColor purpleColor, CourseAppearance appearance)
+        public LinePropertiesDialog(string dialogTitle, string usageText, string helpTopic, CmykColor purpleColor, CourseAppearance appearance)
         {
             InitializeComponent();
             this.appearance = appearance;
@@ -32,6 +32,7 @@ namespace PurplePen
             colorChooser.ColorChanged += colorChooser_ColorChanged;
             LineKind = PurplePen.LineKind.Single;
             this.Text = dialogTitle;
+            this.HelpTopic = helpTopic;
             usageLabel.Text = usageText;
         }
 
