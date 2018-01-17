@@ -129,7 +129,7 @@
     <value>0</value>
   </data>
   <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>In order to design your courses, you must select the map file you will be using. Typically this is an OCAD file (although image files like JPEGs can be used instead). Click the "Choose..." button to select a map file.</value>
+    <value>In order to design your courses, you must select the map file you will be using. Typically this is an OCAD or OpenOrienteering Mapper file (although PDFs and image files like JPEGs can be used instead). Click the "Choose..." button to select a map file.</value>
   </data>
   <data name="&gt;&gt;newEventMapFileLabel.Name" xml:space="preserve">
     <value>newEventMapFileLabel</value>
