@@ -3,8 +3,14 @@
     <title>Marymoor WIOL 2</title>
     <notes>This is a sample event for testing.</notes>
     <map kind="none" scale="10000" />
+    <standards map="2000" description="2018" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-52.82524" top="145.04686" right="163.074768" bottom="-134.353134" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="None" auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="56.8" y="-8.7" />
@@ -393,6 +399,7 @@
     <code>72</code>
     <location x="-0.7" y="10.3" />
     <description box="D" iof-2004-ref="5.9" />
+    <description box="F" iof-2004-ref="11.7" />
     <description box="G" iof-2004-ref="11.5NW" />
     <punch-pattern size="7">
 0000000
@@ -574,48 +581,66 @@
   </control>
   <course id="1" kind="normal" order="1">
     <name>Course 1</name>
+    <labels label-kind="sequence" />
     <first course-control="101" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-77.3587" top="146.073608" right="138.5413" bottom="-133.326385" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" load="45" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Course 2</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-72.76399" top="142.199356" right="143.136017" bottom="-137.200638" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Course 3</name>
+    <labels label-kind="sequence" />
     <first course-control="301" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-60.9548531" top="144.001053" right="154.94516" bottom="-135.398941" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" climb="37" load="26" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
+    <labels label-kind="sequence" />
     <first course-control="401" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-48.99614" top="152.799988" right="166.90387" bottom="-126.600006" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" load="46" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
+    <labels label-kind="sequence" />
     <first course-control="502" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-42.4901581" top="154.332428" right="173.409851" bottom="-125.067566" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" load="76" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="6">
     <name>Course 5</name>
+    <labels label-kind="sequence" />
     <first course-control="601" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-46.8002472" top="146.535583" right="169.099762" bottom="-132.86441" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="10000" climb="110" load="16" description-kind="symbols" />
   </course>
   <course id="7" kind="score" order="7">
     <name>Score 1</name>
+    <labels label-kind="code" />
     <first course-control="628" />
-    <options print-scale="10000" load="54" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-76.9511261" top="155.657288" right="138.948883" bottom="-123.742706" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" load="54" score-column="A" description-kind="symbols" />
   </course>
   <course id="8" kind="score" order="8">
     <name>Score 2</name>
+    <labels label-kind="code" />
     <first course-control="630" />
-    <options print-scale="10000" load="12" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-55.2827759" top="155.657288" right="160.617233" bottom="-123.742706" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" load="12" score-column="A" description-kind="symbols" />
   </course>
   <course id="9" kind="score" order="9">
     <name>Score 3</name>
+    <labels label-kind="code" />
     <first course-control="633" />
-    <options print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-77.030014" top="139.26535" right="138.87" bottom="-140.134644" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
   <course-control id="101" control="1">
     <next course-control="102" />

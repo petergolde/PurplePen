@@ -924,7 +924,9 @@ namespace PurplePen
                 if (string.IsNullOrEmpty(control.symbolIds[1])) {
                     missingBoxes.Add(new MissingThing(controlId, "D", ReportText.EventAudit_MissingD));
                 }
-                else if (! string.IsNullOrEmpty(control.symbolIds[3]) && string.IsNullOrEmpty(control.symbolIds[2])) {
+                else if ((control.symbolIds[3] == "10.1" || control.symbolIds[3] == "10.2") &&
+                         string.IsNullOrEmpty(control.symbolIds[2])) 
+                {
                     missingBoxes.Add(new MissingThing(controlId, "E", ReportText.EventAudit_MissingEJunction));
                 }
                 else if (control.symbolIds[4] == "11.15" && string.IsNullOrEmpty(control.symbolIds[2])) {
