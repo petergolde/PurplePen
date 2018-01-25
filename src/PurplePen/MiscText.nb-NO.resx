@@ -382,7 +382,7 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
     <value>Ingen løyper ble valgt for utskrift.</value>
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
-    <value>http://www.ok-moss.no/mwiki/doku.php?id=purple_pen</value>
+    <value>http://www.ok-moss.no/owiki/doku.php?id=veiledning:purplepen</value>
   </data>
   <data name="MapExchange_Long" xml:space="preserve">
     <value>Kartbytte</value>
