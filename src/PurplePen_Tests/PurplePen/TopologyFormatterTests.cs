@@ -72,7 +72,7 @@ namespace PurplePen.Tests
             RectangleF rect = formatter.FormatCourseToLayout(symbolDB, courseViewAllVariations, courseView, course, Id<CourseControl>.None, Id<CourseControl>.None, CourseLayer.AllVariations, CourseLayer.MainCourse);
 
             // Render to a map
-            Map map = course.RenderToMap();
+            Map map = course.RenderToMap(new CourseLayout.MapRenderOptions());
 
             // Make drop targets visible.
             using (map.Write()) {

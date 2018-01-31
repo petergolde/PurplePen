@@ -448,7 +448,7 @@ namespace PurplePen
                 if (course == null)
                     courseMap = null;
                 else
-                    courseMap = course.RenderToMap();
+                    courseMap = course.RenderToMap(new CourseLayout.MapRenderOptions());
 
                 RaiseChanged(null);
             }

@@ -2433,6 +2433,10 @@ namespace PurplePen
                         continue;
                 }
 
+                if (controller.OcadFilesWarnAboutImages(createOcadFilesDialog.OcadCreationSettings)) {
+                    WarningMessage(MiscText.ImagesMayAppearBadlyLayeredInOcad10Below);
+                }
+
                 // Save settings persisted between invocations of this dialog.
                 ocadCreationSettingsPrevious = createOcadFilesDialog.OcadCreationSettings;
                 controller.CreateOcadFiles(createOcadFilesDialog.OcadCreationSettings);

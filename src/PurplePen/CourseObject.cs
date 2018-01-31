@@ -75,7 +75,7 @@ namespace PurplePen
 
         // Add the given course object to the map, creating a SymDef if needed. The passed dictionary
         // should have the same lifetime as the map and is used to store symdefs.
-        public virtual void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        public virtual void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             object key = new Pair<short,object>(symColor.OcadId, SymDefKey());
 
@@ -1114,7 +1114,7 @@ namespace PurplePen
             return symdef;
         }
 
-        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             object key = new Pair<short, object>(symColor.OcadId, SymDefKey());
 
@@ -2445,7 +2445,7 @@ namespace PurplePen
             return null;
         }
 
-        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             AddToMap(map, dict[CourseLayout.KeyWhiteOut]);
         }
@@ -2748,7 +2748,7 @@ namespace PurplePen
         }
 
         // Add the description to the map. Uses the map rendering functionality in the renderer.
-        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             renderer.RenderToMap(map, symColor, new PointF(rect.Left, rect.Bottom), dict);
         }
@@ -2871,28 +2871,32 @@ namespace PurplePen
             this.imageLoader = new ImageLoader(imageName, imageBitmap);
         }
 
-        public override void AddToMap(Map map, SymColor symColor, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
-            IList<TemplateInfo> currentTemplates = map.Templates;
-            
-            PointF center = Geometry.RectCenter(rect);
-            float dpi = (25.4F * imageBitmap.Width) / rect.Width;
-            TemplateInfo newTemplate = new TemplateInfo(imageName, center, dpi, 0, true, imageLoader);
+            if (mapRenderOptions.RenderImagesAsTemplates) {
+                IList<TemplateInfo> currentTemplates = map.Templates;
 
-            List<TemplateInfo> newTemplates = new List<TemplateInfo>(currentTemplates.Count + 1);
-            newTemplates.Add(newTemplate);
-            newTemplates.AddRange(currentTemplates);
-            map.Templates = newTemplates;
+                PointF center = Geometry.RectCenter(rect);
+                float dpi = (25.4F * imageBitmap.Width) / rect.Width;
+                TemplateInfo newTemplate = new TemplateInfo(imageName, center, dpi, 0, 1.0F, 1.0F, 0, true, null, true);
 
-            /* The following code creates the image as a ImageSymDef instead of a template. We use templates because
-             * they are compatible with OCAD 8,9,10, while ImageSymDef only works for OCAD 11+.
-             
-            ImageSymDef layoutSymDef = (ImageSymDef) dict[CourseLayout.KeyLayout];
+                List<TemplateInfo> newTemplates = new List<TemplateInfo>(currentTemplates.Count + 1);
+                newTemplates.Add(newTemplate);
+                newTemplates.AddRange(currentTemplates);
+                map.Templates = newTemplates;
+            }
+            else {
+                /* The following code creates the image as a ImageSymDef instead of a template. We have the options for templates because
+                 * they are compatible with OOM, OCAD 8,9,10, while ImageSymDef only works for OCAD 11+.
+                 * 
+                 * But, ImageSymDef layers the images about white out and other things on the map itself, which is preferable.
+                 */
+                ImageSymDef layoutSymDef = (ImageSymDef) dict[CourseLayout.KeyLayout];
 
-            PointF center = Geometry.RectCenter(rect);
-            ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, true, specialId.id, imageLoader);
-            map.AddSymbol(symbol);
-             */
+                PointF center = Geometry.RectCenter(rect);
+                ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, true, specialId.id, imageLoader);
+                map.AddSymbol(symbol);
+            }
         }
 
         public override bool Equals(object obj)

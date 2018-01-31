@@ -73,7 +73,7 @@ namespace PurplePen.Tests
             }
 
             // Render to a map
-            Map map = course.RenderToMap();
+            Map map = course.RenderToMap(new CourseLayout.MapRenderOptions());
 
             // Render map to the graphics.
             Bitmap bm = new Bitmap(1000,1000);

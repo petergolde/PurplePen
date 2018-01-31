@@ -66,8 +66,20 @@ namespace PurplePen
             // Create the CourseLayout.
             CourseLayout courseLayout = CreateCourseLayout(courseView);
 
+            // OCAD 6-10 cannot handle images in the layout layer, and OOM doesn't have a layout layer.
+            CourseLayout.MapRenderOptions mapRenderOptions = new CourseLayout.MapRenderOptions();
+            if ((creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 10) ||
+                creationSettings.fileFormat.kind == MapFileFormatKind.OpenMapper) 
+            {
+                mapRenderOptions.RenderImagesAsTemplates = true;
+            }
+            else {
+                mapRenderOptions.RenderImagesAsTemplates = false;
+            }
+
             // Create the map and write it out.
-            Map map = courseLayout.RenderToMap();
+            Map map = courseLayout.RenderToMap(mapRenderOptions);
+
             using (map.Write()) {
                 map.MapScale = courseView.MapScale;
                 map.PrintScale = courseView.PrintScale;
@@ -269,6 +281,18 @@ namespace PurplePen
             }
 
             return overwrittenFiles;
+        }
+
+        // Should we warning about images?
+        public bool WarnAboutImages()
+        {
+            if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 10) {
+                // In OCAD 6-10, but not OOM, exporting images has them appear below other purple pen objects.
+                return (QueryEvent.HasAnyImages(eventDB));
+            }
+            else {
+                return false;
+            }
         }
 
         private struct BitmapToWrite

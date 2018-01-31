@@ -85,6 +85,7 @@ namespace PurplePen.Tests
         // Render one course object to a map.
         internal Map RenderCourseObjToMap(CourseObj courseobj)
         {
+            CourseLayout.MapRenderOptions mapRenderOptions = new CourseLayout.MapRenderOptions();
             Map map = new Map(new GDIPlus_TextMetrics(), null);
 
             using (map.Write()) {
@@ -117,7 +118,7 @@ namespace PurplePen.Tests
                         break;
                 }
 
-                courseobj.AddToMap(map, symColor, dict);
+                courseobj.AddToMap(map, symColor, mapRenderOptions, dict);
 
                 // Make drop targets visible for debugging.
                 foreach (SymDef symdef in map.AllSymdefs) {

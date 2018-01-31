@@ -1458,6 +1458,17 @@ namespace PurplePen
             return basename;
         }
 
+        // Are there any images
+        public static bool HasAnyImages(EventDB eventDB)
+        {
+            foreach (Special special in eventDB.AllSpecials) {
+                if (special.kind == SpecialKind.Image)
+                    return true;
+            }
+
+            return false;
+        }
+
         // Is the given image name in use?
         public static bool IsImageNameUsed(EventDB eventDB, string imageName)
         {

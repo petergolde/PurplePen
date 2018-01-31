@@ -601,4 +601,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
     <value>MI</value>
     <comment>Abbreviation for "Map Issue"</comment>
   </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Due to limitations of the OCAD file format (in OCAD 10 and below), image objects will appear underneath courses and white out areas in the exported OCAD files. Please check the OCAD files to make sure your images appear as desired.</value>
+  </data>
 </root>

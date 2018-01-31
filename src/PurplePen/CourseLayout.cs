@@ -116,7 +116,7 @@ namespace PurplePen
         }
 
         // Render a course onto a map.
-        public Map RenderToMap()
+        public Map RenderToMap(MapRenderOptions mapRenderOptions)
         {
             // Create the map to render into.
             Map map = new Map(MapUtil.TextMetricsProvider, null);
@@ -176,7 +176,7 @@ namespace PurplePen
                     if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Custom)
                         color = customColors[courseObject.CustomColor];
 
-                    courseObject.AddToMap(map, color, dict);
+                    courseObject.AddToMap(map, color, mapRenderOptions, dict);
                 }
             }
 
@@ -278,6 +278,12 @@ namespace PurplePen
         public override int GetHashCode()
         {
             throw new NotSupportedException("The method or operation is not supported.");
+        }
+
+        public class MapRenderOptions
+        {
+            // If true, images are rendered as templates instead of to the layout layer. Compatible with exporting to OCAD 6-10.
+            public bool RenderImagesAsTemplates = false;
         }
     }
 }

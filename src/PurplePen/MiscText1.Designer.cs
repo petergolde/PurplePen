@@ -887,6 +887,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Due to limitations of the OCAD file format (in OCAD 10 and below), image objects will appear underneath courses and white out areas in the exported OCAD files. Please check the OCAD files to make sure your images appear as desired..
+        /// </summary>
+        internal static string ImagesMayAppearBadlyLayeredInOcad10Below {
+            get {
+                return ResourceManager.GetString("ImagesMayAppearBadlyLayeredInOcad10Below", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Landscape.
         /// </summary>
         internal static string Landscape {
