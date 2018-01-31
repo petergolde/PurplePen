@@ -232,6 +232,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The underlying OCAD map has visible template files. In OCAD 8 and below, these templates may not appear due to limitations in OCAD..
+        /// </summary>
+        internal static string BaseMapHasVisibleTemplatesThatMayNotAppear {
+            get {
+                return ResourceManager.GetString("BaseMapHasVisibleTemplatesThatMayNotAppear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Black.
         /// </summary>
         internal static string Black {

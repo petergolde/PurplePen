@@ -231,8 +231,21 @@ namespace PurplePen
                 using (map.Read())
                     return new List<SymColor>(map.AllColors);
             }
-            else
+            else {
                 return new List<SymColor>();
+            }
+        }
+
+        // Templates in the map, or empty list in no map or bitmap map.
+        public IList<TemplateInfo> GetMapTemplates()
+        {
+            if (mapType == MapType.OCAD && map != null) {
+                using (map.Read())
+                    return map.Templates;
+            }
+            else {
+                return new List<TemplateInfo>();
+            }
         }
 
         // Get a coordinate mapper for the map, or null if mapping coordinates isn't possible.

@@ -2425,6 +2425,7 @@ namespace PurplePen
 
             // show the dialog; on success, create the files.
             while (createOcadFilesDialog.ShowDialog(this) == DialogResult.OK) {
+                // Warn about files that will be overwritten.
                 List<string> overwritingFiles = controller.OverwritingOcadFiles(createOcadFilesDialog.OcadCreationSettings);
                 if (overwritingFiles.Count > 0) {
                     OverwritingOcadFilesDialog overwriteDialog = new OverwritingOcadFilesDialog();
@@ -2433,8 +2434,10 @@ namespace PurplePen
                         continue;
                 }
 
-                if (controller.OcadFilesWarnAboutImages(createOcadFilesDialog.OcadCreationSettings)) {
-                    WarningMessage(MiscText.ImagesMayAppearBadlyLayeredInOcad10Below);
+                // Give any other warning messages.
+                List<string> warnings = controller.OcadFilesWarnings(createOcadFilesDialog.OcadCreationSettings);
+                foreach (string warning in warnings) {
+                    WarningMessage(warning);
                 }
 
                 // Save settings persisted between invocations of this dialog.

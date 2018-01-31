@@ -1308,13 +1308,13 @@ namespace PurplePen
             return success;
         }
 
-        // Should we warning about image files
-        public bool OcadFilesWarnAboutImages(OcadCreationSettings creationSettings)
+        // Any warnings other that overwriting for creating OCAD files.
+        public List<string> OcadFilesWarnings(OcadCreationSettings creationSettings)
         {
             SetOutputDirectory(creationSettings);
 
             OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, GetCourseAppearance(), creationSettings);
-            return creation.WarnAboutImages();
+            return creation.WarningMessages();
         }
 
         // Get the list of files that will be overwritteing by creating OCAD files

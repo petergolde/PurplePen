@@ -36,6 +36,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Drawing;
+using System.Linq;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using System.Drawing.Imaging;
@@ -283,16 +284,24 @@ namespace PurplePen
             return overwrittenFiles;
         }
 
-        // Should we warning about images?
-        public bool WarnAboutImages()
+        // List of warning messages to give.
+        public List<string> WarningMessages()
         {
+            List<string> warnings = new List<string>();
+
             if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 10) {
                 // In OCAD 6-10, but not OOM, exporting images has them appear below other purple pen objects.
-                return (QueryEvent.HasAnyImages(eventDB));
+                if (QueryEvent.HasAnyImages(eventDB))
+                    warnings.Add(MiscText.ImagesMayAppearBadlyLayeredInOcad10Below);
             }
-            else {
-                return false;
+
+            if (creationSettings.fileFormat.kind == MapFileFormatKind.OCAD && creationSettings.fileFormat.version <= 8) {
+                // In OCAD 6-8, but not OOM, templates in the underlying map might not appear.
+                if (controller.MapDisplay.GetMapTemplates().Any(templateInfo => templateInfo.visible))
+                    warnings.Add(MiscText.BaseMapHasVisibleTemplatesThatMayNotAppear);
             }
+
+            return warnings;
         }
 
         private struct BitmapToWrite
