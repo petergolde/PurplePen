@@ -427,6 +427,9 @@ namespace PurplePen
             if (touchedObject == null)
                 touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, co => !(co is TopologyDropTargetCourseObj));
 
+            if (touchedObject == null && pane == Pane.Map)
+                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.AllControls, co => !(co is TopologyDropTargetCourseObj));
+
             if (touchedObject != null) {
                 TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
                 ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
