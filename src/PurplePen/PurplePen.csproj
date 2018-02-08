@@ -745,6 +745,12 @@
     <Compile Include="Updater.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VersionNumber.cs" />
+    <Compile Include="ViewAdditionalCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAdditionalCourses.Designer.cs">
+      <DependentUpon>ViewAdditionalCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlInput.cs" />
     <EmbeddedResource Include="AboutForm.bg.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
@@ -4049,6 +4055,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UnusedControls.zh-CN.resx">
       <DependentUpon>UnusedControls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAdditionalCourses.resx">
+      <DependentUpon>ViewAdditionalCourses.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\..\doc\userdocs\Sample\Sample Event Exchange.ppen" />
     <None Include="..\..\doc\userdocs\Sample\SampleMap.ocd">

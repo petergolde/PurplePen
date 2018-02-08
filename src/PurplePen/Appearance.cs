@@ -255,6 +255,13 @@ namespace PurplePen
         public const float allControlsColorY = 0F;
         public const float allControlsColorK = 0.0F;
 
+        public const string extraCourseColorName = "Extra Course {0}";
+        public const short extraCourseOcadId = 37;
+        public static readonly float[] extraCourseC = { 0.00F, 0.00F, 0.75F, 1.00F, 0.00F, 0.45F, 0.00F, 0.80F, 0.15F, 0.55F};
+        public static readonly float[] extraCourseM = { 0.70F, 0.25F, 0.55F, 0.00F, 0.00F, 0.00F, 0.65F, 0.25F, 0.80F, 0.75F};
+        public static readonly float[] extraCourseY = { 1.00F, 1.00F, 0.00F, 0.50F, 1.00F, 0.40F, 0.60F, 0.00F, 0.45F, 0.15F};
+        public static readonly float[] extraCourseK = { 0.00F, 0.35F, 0.00F, 0.00F, 0.50F, 0.40F, 0.25F, 0.25F, 0.15F, 0.00F};
+
         // The color used to for the selected item in the map display.
         public static readonly Color highlightColor = Color.FromArgb(255, 70, 0);
 

@@ -66,6 +66,7 @@ namespace PurplePen
         // These variable control additional course displays.
         bool showAllControls;              // If true, secondary display of all controls not in the primary.
         ControlPointKind allControlsFilter;       // Filters to this kind of control point, unless set to None.
+        List<Id<Course>> extraCourses;  // Displays these extra courses.
 
         int selectionChangeNum;         // incremented every time one of the above changes, except within UpdateState.
         
@@ -304,6 +305,7 @@ namespace PurplePen
                 // CONSIDER: maybe change this later; e.g., keep the selected control if it is in common.
                 if (courseChanged) {
                     ClearSelection();
+                    extraCourses = null;
                 }
 
                 // CONSIDER: record a non-persistant command with the Undo Manager.
@@ -428,6 +430,13 @@ namespace PurplePen
             ++selectionChangeNum;
             this.showAllControls = showAllControls;
             this.allControlsFilter = allControlsFilter;
+        }
+
+        // Sets the display of extra courses.
+        public void SetExtraCourseDisplay(List<Id<Course>> extraCourses)
+        {
+            ++selectionChangeNum;
+            this.extraCourses = extraCourses;
         }
 
         // Update all state to be synced with the event DB. Called internally before 
@@ -606,18 +615,55 @@ namespace PurplePen
             // Place the active course in the layout.
             activeCourse = new CourseLayout();
             activeCourse.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
-            activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK, purpleOverprint); 
+            activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK, 
+                                       (purpleOverprint && (extraCourses == null || extraCourses.Count == 0))); 
             CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, appearance, activeCourse, CourseLayer.MainCourse);
 
             if (showAllControls && !activeCourseDesignator.IsAllControls) {
                 // Create the all controls view.
-                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { activeCourseDesignator }, allControlsFilter, false, true);
+                CourseView allControlsView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { activeCourseDesignator }, allControlsFilter, 
+                    new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = false });
 
                 // Add it to the CourseLayout.
                 activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,
                     NormalCourseAppearance.allControlsColorC, NormalCourseAppearance.allControlsColorM, NormalCourseAppearance.allControlsColorY, NormalCourseAppearance.allControlsColorK, purpleOverprint);
                 CourseFormatter.FormatCourseToLayout(symbolDB, allControlsView, appearance, activeCourse, CourseLayer.AllControls);
             }
+
+            if (extraCourses != null && extraCourses.Count > 0) {
+                for (int i = 0; i < extraCourses.Count; ++i) {
+                    Id<Course> courseId = extraCourses[i];
+                    if (eventDB.IsCoursePresent(courseId)) {
+                        AddExtraCourseToLayout(activeCourse, courseId, i % CourseLayout.EXTRACOURSECOUNT);
+                    }
+                }
+            }
+        }
+
+        // extraCourseIndex indicates the color/layer.
+        private void AddExtraCourseToLayout(CourseLayout courseLayout, Id<Course> courseId, int extraCourseIndex)
+        {
+            if (extraCourseIndex >= CourseLayout.EXTRACOURSECOUNT)
+                return;
+
+            CourseAppearance appearance = controller.GetCourseAppearance();
+            CourseLayer layer = CourseLayer.OtherCourse1 + extraCourseIndex;
+
+            // Create the course view.
+            CourseView courseView = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseId),
+                new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = false, showControlNumbers = false });
+
+            // Add it to the CourseLayout.
+            courseLayout.SetLayerColor(layer, (short) (NormalCourseAppearance.extraCourseOcadId + extraCourseIndex), 
+                                              string.Format(NormalCourseAppearance.allControlsColorName, extraCourseIndex + 1),
+                                              NormalCourseAppearance.extraCourseC[extraCourseIndex],
+                                              NormalCourseAppearance.extraCourseM[extraCourseIndex],
+                                              NormalCourseAppearance.extraCourseY[extraCourseIndex],
+                                              NormalCourseAppearance.extraCourseK[extraCourseIndex],
+                                              false);
+
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, courseLayout, layer,
+                new CourseFormatterOptions() { showControlNumbers = false });
         }
 
         // Update the topology

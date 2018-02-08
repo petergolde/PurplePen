@@ -48,6 +48,8 @@ namespace PurplePen
         All = -1,                        // For filtering to all layers
         MainCourse = 0,                 // The main course in regular purple
         Descriptions,                // The descriptions in black
+        OtherCourse1,                // Another course, up to 10.
+        OtherCourseMax = OtherCourse1 + CourseLayout.EXTRACOURSECOUNT - 1,
         AllControls,                  // The All Controls layer
         AllVariations,                // The All Variations layer in topology when viewing one variation.
         InvisibleObjects,             // For invisible objects (e.g., the TopologyDropTargets)
@@ -61,6 +63,7 @@ namespace PurplePen
         List<CourseObj> objects = new List<CourseObj>();
 
         public const int LAYERCOUNT = (int) CourseLayer.Count;
+        public const int EXTRACOURSECOUNT = 10;
         short[] ocadColorId = new short[LAYERCOUNT];
         string[] colorName = new string[LAYERCOUNT];
         float[] colorC = new float[LAYERCOUNT];

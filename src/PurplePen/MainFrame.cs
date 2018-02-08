@@ -706,6 +706,7 @@ namespace PurplePen
             UpdateMenuItem(addMapExchangeMenu, controller.CanAddMapExchangeSeparate().Combine(controller.CanAddMapExchangeControl()));
             UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
             UpdateMenuItem(courseVariationReportMenu, controller.CanGetVariationReport());
+            UpdateMenuItem(otherCoursesMenu, controller.CanChangeExtraCourseDisplay());
 
             // Update standards checkboxes and other menu items related to standards.
             string descriptionStandard = controller.GetDescriptionStandard();
@@ -1115,6 +1116,17 @@ namespace PurplePen
             Settings.Default.ViewAllControls = controller.ShowAllControls;
             Settings.Default.Save();
         }
+
+        private void otherCoursesMenu_Click(object sender, EventArgs e)
+        {
+            ViewAdditionalCourses dialog = new ViewAdditionalCourses(controller.CurrentTabName, controller.CurrentCourseId);
+            dialog.EventDB = controller.GetEventDB();
+            dialog.DisplayedCourses = controller.ExtraCourseDisplay;
+            if (dialog.ShowDialog() == DialogResult.OK) {
+                controller.ExtraCourseDisplay = dialog.DisplayedCourses;
+            }
+        }
+
 
         private void addControlMenu_Click(object sender, EventArgs e)
         {

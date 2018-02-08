@@ -60,12 +60,17 @@ namespace PurplePen
         public const string RelayLeg = "$(RelayLeg)";
     }
 
+    class CourseFormatterOptions
+    {
+        public bool showControlNumbers = true;
+    }
+
     // The course formatter transforms a CourseView into a abstract description of a course, which
     // is a CourseLayout. It does not include the description block itself.
     static class CourseFormatter
     {
         // Format the given CourseView into a bunch of course objects, and add it to the given course Layout
-        public static void FormatCourseToLayout(SymbolDB symbolDB, CourseView courseView, CourseAppearance appearance, CourseLayout courseLayout, CourseLayer layer)
+        public static void FormatCourseToLayout(SymbolDB symbolDB, CourseView courseView, CourseAppearance appearance, CourseLayout courseLayout, CourseLayer layer, CourseFormatterOptions options = null)
         {
             EventDB eventDB = courseView.EventDB;
             CourseView.CourseViewKind kind = courseView.Kind;
@@ -73,6 +78,10 @@ namespace PurplePen
             float courseObjRatio = courseView.CourseObjRatio(appearance);
             List<CourseView.ControlView> controlViews = courseView.ControlViews;
             CourseObj courseObj;
+
+            if (options == null)
+                options = new CourseFormatterOptions();
+
 
             // Go through all the specials in the view and process them to create course objects
             foreach(Id<Special> specialId in courseView.SpecialIds) {
@@ -106,7 +115,7 @@ namespace PurplePen
                     }
 
                     // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
-                    if (CustomPlaceNumber(eventDB, controlView)) {
+                    if (options.showControlNumbers && CustomPlaceNumber(eventDB, controlView)) {
                         if (kind == CourseView.CourseViewKind.AllControls)
                             courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout);
                         else if (kind == CourseView.CourseViewKind.AllVariations)
@@ -147,26 +156,28 @@ namespace PurplePen
 
             // No go through each control again and add an automatically placed number/code to each. We do this last so that the placement
             // of all fixed-position objects influences the auto-positioned numbers so that they don't interfere.
-            for (int controlIndex = 0; controlIndex < controlViews.Count; ++controlIndex) {
-                CourseView.ControlView controlView = controlViews[controlIndex];
+            if (options.showControlNumbers) {
+                for (int controlIndex = 0; controlIndex < controlViews.Count; ++controlIndex) {
+                    CourseView.ControlView controlView = controlViews[controlIndex];
 
-                // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
-                if (!controlView.hiddenControl && ! CustomPlaceNumber(eventDB, controlView)) {
-                    if (kind == CourseView.CourseViewKind.AllControls)
-                        courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout);
-                    else if (kind == CourseView.CourseViewKind.AllVariations)
-                        courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout);
-                    else
-                        courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, labelKind, controlView, courseView, courseLayout);
+                    // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
+                    if (!controlView.hiddenControl && !CustomPlaceNumber(eventDB, controlView)) {
+                        if (kind == CourseView.CourseViewKind.AllControls)
+                            courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout);
+                        else if (kind == CourseView.CourseViewKind.AllVariations)
+                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout);
+                        else
+                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, labelKind, controlView, courseView, courseLayout);
 
-                    if (courseObj != null) {
-                        courseObj.layer = layer;
-                        courseLayout.AddCourseObject(courseObj);
+                        if (courseObj != null) {
+                            courseObj.layer = layer;
+                            courseLayout.AddCourseObject(courseObj);
+                        }
                     }
                 }
             }
 
-            // Automatically add cuts to close control circles in the layout.
+            // Automatically add cuts to close control circles and crossing legs in the layout.
             if (courseView.Kind != CourseView.CourseViewKind.AllControls) {
                 AutoCutCircles(courseLayout, layer);
                 AutoCutLegs(eventDB, appearance, courseView.CourseDesignator, courseLayout, layer);

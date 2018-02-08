@@ -554,7 +554,7 @@ namespace PurplePen
                 minMeasuredLength = maxMeasuredLength = partLength;
             }
             else {
-                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), false, false);
+                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), new CourseViewOptions());
                 minMeasuredLength = viewEntireCourse.MinMeasuredLength;
                 maxMeasuredLength = viewEntireCourse.MaxMeasuredLength;
             }
@@ -581,7 +581,7 @@ namespace PurplePen
         {
             List<CourseView> result = new List<PurplePen.CourseView>();
             foreach (VariationInfo variationInfo in QueryEvent.GetAllVariations(eventDB, courseId)) {
-                CourseView viewVariation = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseId, variationInfo), false, false);
+                CourseView viewVariation = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseId, variationInfo), new CourseViewOptions());
                 result.Add(viewVariation);
             }
             return result;
@@ -597,7 +597,7 @@ namespace PurplePen
 
         // Add the appropriate specials for the given course to the course view.
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
-        private void AddSpecials(CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        private void AddSpecials(CourseDesignator courseDesignator, CourseViewOptions options)
         {
             bool multiPart = courseDesignator.IsNotAllControls && courseDesignator.AllParts && 
                 (QueryEvent.CountCourseParts(eventDB, courseDesignator) > 1 || (!courseDesignator.IsVariation && QueryEvent.HasAnyMapExchanges(eventDB, courseDesignator.CourseId)));
@@ -605,7 +605,7 @@ namespace PurplePen
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                 SpecialKind specialKind = eventDB.GetSpecial(specialId).kind;
 
-                if (ShouldAddSpecial(specialKind, addNonDescriptionSpecials, addDescriptionSpecials)) {
+                if (ShouldAddSpecial(specialKind, options)) {
                     if (specialKind == SpecialKind.Descriptions) {
                         // Descriptions are added differently. It's not entirely clear the best way to handle descriptions
                         // for all-parts of a multi-part course. For now, we don't put any descriptions on.
@@ -623,19 +623,19 @@ namespace PurplePen
         }
 
         // Should we add the given special?
-        private bool ShouldAddSpecial(SpecialKind kind, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        private bool ShouldAddSpecial(SpecialKind kind, CourseViewOptions options)
         {
             if (kind == SpecialKind.Descriptions)
-                return addDescriptionSpecials;
+                return options.showDescriptionSpecials;
             else
-                return addNonDescriptionSpecials;
+                return options.showNonDescriptionSpecials;
         }
 
 
         //  -----------  Static methods to create a new CourseView.  -----------------
 
         // Create a normal course view -- the standard view in order, from start control to finish control. courseId may NOT be None.
-        private static CourseView CreateCourseView(EventDB eventDB, CourseDesignator courseDesignator, bool addNonDescriptionSpecials, bool addDescriptionSpecials)
+        public static CourseView CreateCourseView(EventDB eventDB, CourseDesignator courseDesignator, CourseViewOptions options)
         {
             Debug.Assert(! courseDesignator.IsAllControls);
 
@@ -653,7 +653,7 @@ namespace PurplePen
                 Debug.Fail("Bad course kind"); return null;
             }
 
-            courseView.AddSpecials(courseDesignator, addNonDescriptionSpecials, addDescriptionSpecials);
+            courseView.AddSpecials(courseDesignator, options);
 
             return courseView;
         }
@@ -661,13 +661,14 @@ namespace PurplePen
         // Create the All Controls view -- show all controls, sorted.
         private static CourseView CreateAllControlsView(EventDB eventDB)
         {
-            return CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, true);
+            return CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, 
+                new CourseViewOptions() { showNonDescriptionSpecials = true, showDescriptionSpecials = true });
         }
 
         // Create an filtered All Controls view -- show controls from the control collection, but only includes some.
         // excludedCourses contains an array of course ids to excluded from the contgrols.
         // kindFilter, if non-null, limits the controls to this kind of controls.
-        public static CourseView CreateFilteredAllControlsView(EventDB eventDB, CourseDesignator[] excludedCourses, ControlPointKind kindFilter, bool addSpecials, bool addDescription)
+        public static CourseView CreateFilteredAllControlsView(EventDB eventDB, CourseDesignator[] excludedCourses, ControlPointKind kindFilter, CourseViewOptions options)
         {
             CourseView courseView = new CourseView(eventDB, CourseDesignator.AllControls);
 
@@ -716,13 +717,13 @@ namespace PurplePen
 
             courseView.Finish();
 
-            if (addSpecials) {
+            if (options.showNonDescriptionSpecials) {
                 // Add specials only if in all courses or the all controls course specifically. Descriptions are added only if "addDescription" is true
                 foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                     Special special = eventDB.GetSpecial(specialId);
 
                     if (special.kind == SpecialKind.Descriptions) {
-                        if (addDescription && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
+                        if (options.showDescriptionSpecials && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
                             courseView.descriptionViews.Add(new DescriptionView(specialId, CourseDesignator.AllControls));
                     }
                     else {
@@ -741,34 +742,39 @@ namespace PurplePen
             if (courseDesignator.IsAllControls)
                 return CourseView.CreateAllControlsView(eventDB);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, 
+                    new CourseViewOptions() { showNonDescriptionSpecials = true, showDescriptionSpecials = true });
         }
 
         // Create the course view for printing and OCAD export. If CourseId is 0, then the all controls view for printing.
         public static CourseView CreatePrintingCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
+            CourseViewOptions options = new CourseViewOptions() { showNonDescriptionSpecials = true, showDescriptionSpecials = true };
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, true, true);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, options);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, true, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, options);
         }
 
         // Create the course view for positioning the print area.
         public static CourseView CreatePositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
+            CourseViewOptions options = new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = true };
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, true);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, options);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, false, true);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, options);
         }
 
         // Create the course view for positioning the print area for just controls.
         public static CourseView CreateControlsOnlyPositioningCourseView(EventDB eventDB, CourseDesignator courseDesignator)
         {
+            CourseViewOptions options = new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = false };
+                    
             if (courseDesignator.IsAllControls)
-                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, false, false);
+                return CourseView.CreateFilteredAllControlsView(eventDB, null, ControlPointKind.None, options);
             else
-                return CourseView.CreateCourseView(eventDB, courseDesignator, false, false);
+                return CourseView.CreateCourseView(eventDB, courseDesignator, options) ;
         }
 
         // Create the standard view onto a regular course, or a single variation of a variation course.
@@ -1130,6 +1136,13 @@ namespace PurplePen
         }
 
 
+    }
+
+    public class CourseViewOptions
+    {
+        public bool showNonDescriptionSpecials = true;
+        public bool showDescriptionSpecials = true;
+        public bool showControlNumbers = true;
     }
 
     public class VariationChoices

@@ -67,6 +67,9 @@ namespace PurplePen
         bool temporaryControlView;
         ControlPointKind temporaryControlViewKind;      // temporary view of controls for an add control mode.
 
+        // For each course, we store the additional courses that we are displaying with that course.
+        Dictionary<Id<Course>, List<Id<Course>>> extraCourses = new Dictionary<Id<Course>, List<Id<Course>>>();  
+
         public bool scrollHighlightIntoView;  // If true, the UI should scroll the highlight into view.
 
         bool checkForMissingFonts = true;   // If true, should check for missing font. Only check once for each map file.
@@ -724,6 +727,16 @@ namespace PurplePen
             return result;
         }
 
+        // Get the current tab name.
+        public string CurrentTabName {
+            get { return selectionMgr.TabName(selectionMgr.ActiveTab); }
+        }
+
+        // Get the current course id.
+        public Id<Course> CurrentCourseId {
+            get { return selectionMgr.Selection.ActiveCourseDesignator.CourseId; }
+        }
+
         // Get the current description to show in the description pane.
         public DescriptionLine[] GetDescription(out CourseView.CourseViewKind kind, out bool isCoursePart, out bool hasCustomLength)
         {
@@ -1049,6 +1062,7 @@ namespace PurplePen
         {
             CancelMode();
             selectionMgr.ActiveTab = tabIndex;
+            UpdateExtraControlsDisplay();
         }
 
         // Select a line in the description pane.
@@ -1059,13 +1073,33 @@ namespace PurplePen
         }
 
         // Set the AllControlsDisplay of the selection manager correction.
-        private void UpdateAllControlsDisplay()
+        private void UpdateExtraControlsDisplay()
         {
             if (temporaryControlView) {
                 selectionMgr.SetAllControlsDisplay(true, temporaryControlViewKind);
             }
             else {
                 selectionMgr.SetAllControlsDisplay(showAllControls, ControlPointKind.None);
+            }
+
+            selectionMgr.SetExtraCourseDisplay(ExtraCourseDisplay);
+        }
+
+        public CommandStatus CanChangeExtraCourseDisplay()
+        {
+            return selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls ? CommandStatus.Enabled : CommandStatus.Disabled;
+        }
+
+        public List<Id<Course>> ExtraCourseDisplay {
+            get {
+                List<Id<Course>> extraCoursesToDisplay = null;
+                extraCourses.TryGetValue(selectionMgr.Selection.ActiveCourseDesignator.CourseId, out extraCoursesToDisplay);
+                return extraCoursesToDisplay;
+            }
+            set {
+                extraCourses[selectionMgr.Selection.ActiveCourseDesignator.CourseId] = value;
+                UpdateExtraControlsDisplay();
+                ++changeNum;
             }
         }
 
@@ -1080,7 +1114,7 @@ namespace PurplePen
             {
                 if (showAllControls != value) {
                     showAllControls = value;
-                    UpdateAllControlsDisplay();
+                    UpdateExtraControlsDisplay();
                     ++changeNum;
                 }
             }
@@ -1096,7 +1130,7 @@ namespace PurplePen
 
             this.temporaryControlView = temporaryControlView;
             this.temporaryControlViewKind = temporaryControlViewKind;
-            UpdateAllControlsDisplay();
+            UpdateExtraControlsDisplay();
             ++changeNum;
         }
 

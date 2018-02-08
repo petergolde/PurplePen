@@ -139,6 +139,7 @@ namespace PurplePen
             this.showPopupsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addStartMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addControlMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -744,7 +745,8 @@ namespace PurplePen
             this.showPrintAreaMenu,
             this.showPopupsMenu,
             this.toolStripSeparator7,
-            this.allControlsMenu});
+            this.allControlsMenu,
+            this.otherCoursesMenu});
             this.viewMenu.Name = "viewMenu";
             resources.ApplyResources(this.viewMenu, "viewMenu");
             // 
@@ -915,6 +917,12 @@ namespace PurplePen
             this.allControlsMenu.Name = "allControlsMenu";
             resources.ApplyResources(this.allControlsMenu, "allControlsMenu");
             this.allControlsMenu.Click += new System.EventHandler(this.allControlsMenu_Click);
+            // 
+            // otherCoursesMenu
+            // 
+            this.otherCoursesMenu.Name = "otherCoursesMenu";
+            resources.ApplyResources(this.otherCoursesMenu, "otherCoursesMenu");
+            this.otherCoursesMenu.Click += new System.EventHandler(this.otherCoursesMenu_Click);
             // 
             // addMenu
             // 
@@ -1893,13 +1901,13 @@ namespace PurplePen
             // 
             // statusBar
             // 
+            resources.ApplyResources(this.statusBar, "statusBar");
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel,
             this.toolStripSeparator6,
             this.zoomAmountLabel,
             this.zoomTracker,
             this.locationDisplay});
-            resources.ApplyResources(this.statusBar, "statusBar");
             this.statusBar.Name = "statusBar";
             // 
             // statusLabel
@@ -2222,5 +2230,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem mapStd2017Menu;
         private System.Windows.Forms.ToolStripMenuItem addMapIssueMenu;
         private System.Windows.Forms.ToolStripMenuItem mapIssuePointToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem otherCoursesMenu;
     }
 }

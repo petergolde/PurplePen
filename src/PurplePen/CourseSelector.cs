@@ -54,6 +54,8 @@ namespace PurplePen
 
         private Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
 
+        public Func<CourseDesignator, bool> Filter { get; set; }
+
         public CourseSelector()
         {
             InitializeComponent();
@@ -268,24 +270,29 @@ namespace PurplePen
                     if (showCourseParts && numberParts > 1) {
                         parts = new TreeNode[numberParts];
                         for (int part = 0; part < numberParts; ++part) {
-                            parts[part] = new TreeNode(string.Format(MiscText.PartN, part + 1))
-                            {
-                                Tag = new CourseDesignator(courseId, part),
-                                Checked = true
-                            };
+                            CourseDesignator partDesignator = new CourseDesignator(courseId, part);
+                            if (CheckFilter(partDesignator)) {
+                                parts[part] = new TreeNode(string.Format(MiscText.PartN, part + 1)) {
+                                    Tag = partDesignator,
+                                    Checked = true
+                                };
+                            }
                         }
                     }
 
                     // Add node for the course to the tree.
-                    TreeNode node;
-                    if (parts != null)
-                        node = new TreeNode(eventDB.GetCourse(courseId).name, parts);
-                    else
-                        node = new TreeNode(eventDB.GetCourse(courseId).name);
+                    CourseDesignator designator = new CourseDesignator(courseId);
+                    if (CheckFilter(designator)) {
+                        TreeNode node;
+                        if (parts != null)
+                            node = new TreeNode(eventDB.GetCourse(courseId).name, parts);
+                        else
+                            node = new TreeNode(eventDB.GetCourse(courseId).name);
 
-                    node.Tag = new CourseDesignator(courseId);
-                    node.Checked = true;
-                    courseTreeView.Nodes.Add(node);
+                        node.Tag = designator;
+                        node.Checked = true;
+                        courseTreeView.Nodes.Add(node);
+                    }
                 }
 
                 courseTreeView.ExpandAll();
@@ -294,6 +301,14 @@ namespace PurplePen
 
                 loaded = true;
             }
+        }
+
+        private bool CheckFilter(CourseDesignator designator)
+        {
+            if (Filter == null)
+                return true;
+            else
+                return Filter(designator);
         }
 
         // Prevent tree nodes from being collapsed.

@@ -422,13 +422,12 @@ namespace PurplePen
                 activeCourse = controller.GetTopologyLayout();
             }
 
-            CourseObj touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.MainCourse, co => !(co is TopologyDropTargetCourseObj));
+            CourseObj touchedObject = null;
 
-            if (touchedObject == null)
-                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.Descriptions, co => !(co is TopologyDropTargetCourseObj));
-
-            if (touchedObject == null && pane == Pane.Map)
-                touchedObject = activeCourse.HitTest(location, pixelSize, CourseLayer.AllControls, co => !(co is TopologyDropTargetCourseObj));
+            for (CourseLayer layer = CourseLayer.MainCourse; layer <= CourseLayer.AllControls; ++layer) {
+                if (touchedObject == null)
+                    touchedObject = activeCourse.HitTest(location, pixelSize, layer, co => !(co is TopologyDropTargetCourseObj));
+            }
 
             if (touchedObject != null) {
                 TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
