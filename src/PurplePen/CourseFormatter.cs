@@ -999,7 +999,7 @@ namespace PurplePen
         // Cut the leg "legObj" with respect to "otherObj", if they overlap
         private static void CutLegWithRespectTo(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, LineCourseObj legObj, PointCourseObj otherObj)
         {
-            float radiusOther = otherObj.ApparentRadius;
+            float radiusOther = otherObj.ApparentRadius + (appearance.lineWidth * NormalCourseAppearance.lineThickness * 2);
             PointF nearestPointOnLeg;
             float distance = legObj.path.DistanceFromPoint(otherObj.location, out nearestPointOnLeg);
 
