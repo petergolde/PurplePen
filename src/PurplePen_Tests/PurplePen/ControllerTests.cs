@@ -1289,11 +1289,11 @@ Could not find a part of the path '" + info.eventFileName + "'.'\r\n";
             writer = new StringWriter();
             course.Dump(writer);
             Assert.AreEqual(mainCourseText +
-@"Control:        layer:2  control:3  scale:1  location:(20,-10.5)  gaps:56.25:67.5
-Control:        layer:2  control:4  scale:1  location:(35.4,-22.5)  gaps:
-Code:           layer:2  control:3  scale:1  text:32  top-left:(13.15,-10.97)
+@"Control:        layer:12  control:3  scale:1  location:(20,-10.5)  gaps:56.25:67.5
+Control:        layer:12  control:4  scale:1  location:(35.4,-22.5)  gaps:
+Code:           layer:12  control:3  scale:1  text:32  top-left:(13.15,-10.97)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
+Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 ", writer.ToString());
 
@@ -1302,7 +1302,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             writer = new StringWriter();
             course.Dump(writer);
             Assert.AreEqual(mainCourseText + 
-@"Start:          layer:2  control:7  scale:1  location:(0,5)  orientation:0
+@"Start:          layer:12  control:7  scale:1  location:(0,5)  orientation:0
 ", writer.ToString());
 
             controller.ShowAllControls = true;
@@ -1310,7 +1310,7 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             writer = new StringWriter();
             course.Dump(writer);
             Assert.AreEqual(mainCourseText + 
-@"Start:          layer:2  control:7  scale:1  location:(0,5)  orientation:0
+@"Start:          layer:12  control:7  scale:1  location:(0,5)  orientation:0
 ", writer.ToString());
 
             controller.SetTemporaryControlView(false, ControlPointKind.None);
@@ -1318,12 +1318,12 @@ Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
             writer = new StringWriter();
             course.Dump(writer);
             Assert.AreEqual(mainCourseText +
-@"Start:          layer:2  control:7  scale:1  location:(0,5)  orientation:0
-Control:        layer:2  control:3  scale:1  location:(20,-10.5)  gaps:56.25:67.5
-Control:        layer:2  control:4  scale:1  location:(35.4,-22.5)  gaps:
-Code:           layer:2  control:3  scale:1  text:32  top-left:(13.15,-10.97)
+@"Start:          layer:12  control:7  scale:1  location:(0,5)  orientation:0
+Control:        layer:12  control:3  scale:1  location:(20,-10.5)  gaps:56.25:67.5
+Control:        layer:12  control:4  scale:1  location:(35.4,-22.5)  gaps:
+Code:           layer:12  control:3  scale:1  text:32  top-left:(13.15,-10.97)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
+Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 ", writer.ToString());
 

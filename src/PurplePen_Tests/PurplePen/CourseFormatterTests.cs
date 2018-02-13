@@ -104,15 +104,15 @@ ControlNumber:  control:36  course-control:701  scale:1  text:36  top-left:(132.
         {
             // Check that the default number location absent any constraints is in the right place.
             CheckCourse("courseformat\\marymoor1.coursescribe", CourseId(8), CourseLayer.AllControls, @"
-FirstAid:       layer:2  special:1  scale:1  location:(14.5,31.2)
-OOB:            layer:2  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
-BasicText:      layer:2  special:7  scale:1  text:StartAngle  top-left:(45,40)
+FirstAid:       layer:12  special:1  scale:1  location:(14.5,31.2)
+OOB:            layer:12  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
+BasicText:      layer:12  special:7  scale:1  text:StartAngle  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=29.5,Width=40.5,Height=20.5}
-Start:          layer:2  control:1  course-control:801  scale:1  location:(56.8,-8.7)  orientation:82.66
-Leg:            layer:2  control:1  course-control:801  scale:1  course-control2:802  path:N(52.79,-8.18)--N(23.1,-4.36)
-Control:        layer:2  control:58  course-control:802  scale:1  location:(20.3,-4)  gaps:
-ControlNumber:  layer:2  control:58  course-control:802  scale:1  text:1  top-left:(12.65,-4.41)
+Start:          layer:12  control:1  course-control:801  scale:1  location:(56.8,-8.7)  orientation:82.66
+Leg:            layer:12  control:1  course-control:801  scale:1  course-control2:802  path:N(52.79,-8.18)--N(23.1,-4.36)
+Control:        layer:12  control:58  course-control:802  scale:1  location:(20.3,-4)  gaps:
+ControlNumber:  layer:12  control:58  course-control:802  scale:1  text:1  top-left:(12.65,-4.41)
                 font-name:Arial  font-style:Regular  font-height:5.57
 ");
         }
@@ -544,120 +544,120 @@ ControlNumber:  control:52  course-control:910  scale:1  text:52(30)  top-left:(
         public void AllControls()
         {
             CheckCourse("courseformat\\marymoor1.coursescribe", CourseId(0), CourseLayer.AllControls, @"
-FirstAid:       layer:2  special:1  scale:1  location:(14.5,31.2)
-OOB:            layer:2  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
-BasicText:      layer:2  special:7  scale:1  text:All controls  top-left:(45,40)
+FirstAid:       layer:12  special:1  scale:1  location:(14.5,31.2)
+OOB:            layer:12  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
+BasicText:      layer:12  special:7  scale:1  text:All controls  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:5.201138  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-150.5,Width=40.5,Height=200.5}
-Start:          layer:2  control:1  scale:1  location:(56.8,-8.7)  orientation:0
-Control:        layer:2  control:35  scale:1  location:(115.6,-11.8)  gaps:
-Control:        layer:2  control:36  scale:1  location:(128.4,6.1)  gaps:
-Control:        layer:2  control:37  scale:1  location:(121.8,-23)  gaps:
-Control:        layer:2  control:38  scale:1  location:(50.3,2.9)  gaps:
-Control:        layer:2  control:39  scale:1  location:(129.2,37.7)  gaps:
-Control:        layer:2  control:40  scale:1  location:(124.2,29.5)  gaps:
-Control:        layer:2  control:41  scale:1  location:(28,6.2)  gaps:
-Control:        layer:2  control:42  scale:1  location:(38.4,-14)  gaps:
-Control:        layer:2  control:43  scale:1  location:(84,34.5)  gaps:
-Control:        layer:2  control:44  scale:1  location:(37.6,-22.8)  gaps:
-Control:        layer:2  control:45  scale:1  location:(55.9,25.6)  gaps:
-Control:        layer:2  control:46  scale:1  location:(-9.2,8.3)  gaps:
-Control:        layer:2  control:47  scale:1  location:(2.51,31.32)  gaps:
-Control:        layer:2  control:48  scale:1  location:(21.5,40.2)  gaps:
-Control:        layer:2  control:49  scale:1  location:(22,-20.8)  gaps:
-Control:        layer:2  control:50  scale:1  location:(45.2,22.8)  gaps:
-Control:        layer:2  control:51  scale:1  location:(16.4,-11.9)  gaps:
-Control:        layer:2  control:52  scale:1  location:(43,-11.1)  gaps:
-Control:        layer:2  control:53  scale:1  location:(25.8,-10.5)  gaps:
-Control:        layer:2  control:54  scale:1  location:(53.7,8.2)  gaps:
-Control:        layer:2  control:55  scale:1  location:(51.2,10.5)  gaps:
-Control:        layer:2  control:56  scale:1  location:(81.3,24)  gaps:
-Control:        layer:2  control:57  scale:1  location:(90,19.3)  gaps:
-Control:        layer:2  control:58  scale:1  location:(20.3,-4)  gaps:
-Control:        layer:2  control:59  scale:1  location:(51.2,-27)  gaps:
-Control:        layer:2  control:70  scale:1  location:(21.3,11.8)  gaps:
-Control:        layer:2  control:71  scale:1  location:(40.1,17.4)  gaps:
-Control:        layer:2  control:72  scale:1  location:(-0.7,10.3)  gaps:
-Control:        layer:2  control:73  scale:1  location:(57.4,-13.8)  gaps:
-Control:        layer:2  control:74  scale:1  location:(61.2,-18.8)  gaps:
-Control:        layer:2  control:75  scale:1  location:(72,27)  gaps:
-Control:        layer:2  control:76  scale:1  location:(5.6,-5.7)  gaps:
-Control:        layer:2  control:77  scale:1  location:(74.7,19.2)  gaps:
-Control:        layer:2  control:78  scale:1  location:(93.9,28.1)  gaps:
-Control:        layer:2  control:79  scale:1  location:(119.8,8.6)  gaps:
-Control:        layer:2  control:80  scale:1  location:(41.9,6.8)  gaps:
-Finish:         layer:2  control:2  scale:1  location:(53.2,-2.8)  gaps:
-Code:           layer:2  control:35  scale:1  text:35  top-left:(109.94,-5.13)
+Start:          layer:12  control:1  scale:1  location:(56.8,-8.7)  orientation:0
+Control:        layer:12  control:35  scale:1  location:(115.6,-11.8)  gaps:
+Control:        layer:12  control:36  scale:1  location:(128.4,6.1)  gaps:
+Control:        layer:12  control:37  scale:1  location:(121.8,-23)  gaps:
+Control:        layer:12  control:38  scale:1  location:(50.3,2.9)  gaps:
+Control:        layer:12  control:39  scale:1  location:(129.2,37.7)  gaps:
+Control:        layer:12  control:40  scale:1  location:(124.2,29.5)  gaps:
+Control:        layer:12  control:41  scale:1  location:(28,6.2)  gaps:
+Control:        layer:12  control:42  scale:1  location:(38.4,-14)  gaps:
+Control:        layer:12  control:43  scale:1  location:(84,34.5)  gaps:
+Control:        layer:12  control:44  scale:1  location:(37.6,-22.8)  gaps:
+Control:        layer:12  control:45  scale:1  location:(55.9,25.6)  gaps:
+Control:        layer:12  control:46  scale:1  location:(-9.2,8.3)  gaps:
+Control:        layer:12  control:47  scale:1  location:(2.51,31.32)  gaps:
+Control:        layer:12  control:48  scale:1  location:(21.5,40.2)  gaps:
+Control:        layer:12  control:49  scale:1  location:(22,-20.8)  gaps:
+Control:        layer:12  control:50  scale:1  location:(45.2,22.8)  gaps:
+Control:        layer:12  control:51  scale:1  location:(16.4,-11.9)  gaps:
+Control:        layer:12  control:52  scale:1  location:(43,-11.1)  gaps:
+Control:        layer:12  control:53  scale:1  location:(25.8,-10.5)  gaps:
+Control:        layer:12  control:54  scale:1  location:(53.7,8.2)  gaps:
+Control:        layer:12  control:55  scale:1  location:(51.2,10.5)  gaps:
+Control:        layer:12  control:56  scale:1  location:(81.3,24)  gaps:
+Control:        layer:12  control:57  scale:1  location:(90,19.3)  gaps:
+Control:        layer:12  control:58  scale:1  location:(20.3,-4)  gaps:
+Control:        layer:12  control:59  scale:1  location:(51.2,-27)  gaps:
+Control:        layer:12  control:70  scale:1  location:(21.3,11.8)  gaps:
+Control:        layer:12  control:71  scale:1  location:(40.1,17.4)  gaps:
+Control:        layer:12  control:72  scale:1  location:(-0.7,10.3)  gaps:
+Control:        layer:12  control:73  scale:1  location:(57.4,-13.8)  gaps:
+Control:        layer:12  control:74  scale:1  location:(61.2,-18.8)  gaps:
+Control:        layer:12  control:75  scale:1  location:(72,27)  gaps:
+Control:        layer:12  control:76  scale:1  location:(5.6,-5.7)  gaps:
+Control:        layer:12  control:77  scale:1  location:(74.7,19.2)  gaps:
+Control:        layer:12  control:78  scale:1  location:(93.9,28.1)  gaps:
+Control:        layer:12  control:79  scale:1  location:(119.8,8.6)  gaps:
+Control:        layer:12  control:80  scale:1  location:(41.9,6.8)  gaps:
+Finish:         layer:12  control:2  scale:1  location:(53.2,-2.8)  gaps:
+Code:           layer:12  control:35  scale:1  text:35  top-left:(109.94,-5.13)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:36  scale:1  text:36  top-left:(131.57,5.98)
+Code:           layer:12  control:36  scale:1  text:36  top-left:(131.57,5.98)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:37  scale:1  text:37  top-left:(123.64,-24.89)
+Code:           layer:12  control:37  scale:1  text:37  top-left:(123.64,-24.89)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:38  scale:1  text:38  top-left:(43.45,2.43)
+Code:           layer:12  control:38  scale:1  text:38  top-left:(43.45,2.43)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:39  scale:1  text:39  top-left:(130.72,44.56)
+Code:           layer:12  control:39  scale:1  text:39  top-left:(130.72,44.56)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:40  scale:1  text:40  top-left:(118.87,27.42)
+Code:           layer:12  control:40  scale:1  text:40  top-left:(118.87,27.42)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:41  scale:1  text:41  top-left:(28.82,3.86)
+Code:           layer:12  control:41  scale:1  text:41  top-left:(28.82,3.86)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:42  scale:1  text:42  top-left:(31.26,-12.3)
+Code:           layer:12  control:42  scale:1  text:42  top-left:(31.26,-12.3)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:43  scale:1  text:43  top-left:(81.46,41.72)
+Code:           layer:12  control:43  scale:1  text:43  top-left:(81.46,41.72)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:44  scale:1  text:44  top-left:(35.38,-25.25)
+Code:           layer:12  control:44  scale:1  text:44  top-left:(35.38,-25.25)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:45  scale:1  text:45  top-left:(57.74,23.71)
+Code:           layer:12  control:45  scale:1  text:45  top-left:(57.74,23.71)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:46  scale:1  text:46  top-left:(-8.74,15.49)
+Code:           layer:12  control:46  scale:1  text:46  top-left:(-8.74,15.49)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:47  scale:1  text:47  top-left:(0.29,28.87)
+Code:           layer:12  control:47  scale:1  text:47  top-left:(0.29,28.87)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:48  scale:1  text:48  top-left:(23.92,46.38)
+Code:           layer:12  control:48  scale:1  text:48  top-left:(23.92,46.38)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:49  scale:1  text:49  top-left:(20.73,-23.25)
+Code:           layer:12  control:49  scale:1  text:49  top-left:(20.73,-23.25)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:50  scale:1  text:50  top-left:(40.56,29.92)
+Code:           layer:12  control:50  scale:1  text:50  top-left:(40.56,29.92)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:51  scale:1  text:51  top-left:(10.17,-13.3)
+Code:           layer:12  control:51  scale:1  text:51  top-left:(10.17,-13.3)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:52  scale:1  text:52  top-left:(45.66,-12.22)
+Code:           layer:12  control:52  scale:1  text:52  top-left:(45.66,-12.22)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:53  scale:1  text:53  top-left:(28.22,-4.32)
+Code:           layer:12  control:53  scale:1  text:53  top-left:(28.22,-4.32)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:54  scale:1  text:54  top-left:(56.87,8.08)
+Code:           layer:12  control:54  scale:1  text:54  top-left:(56.87,8.08)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:55  scale:1  text:55  top-left:(47.65,17.72)
+Code:           layer:12  control:55  scale:1  text:55  top-left:(47.65,17.72)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:56  scale:1  text:56  top-left:(84.34,29.24)
+Code:           layer:12  control:56  scale:1  text:56  top-left:(84.34,29.24)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:57  scale:1  text:57  top-left:(89.73,16.85)
+Code:           layer:12  control:57  scale:1  text:57  top-left:(89.73,16.85)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:58  scale:1  text:58  top-left:(16.75,3.22)
+Code:           layer:12  control:58  scale:1  text:58  top-left:(16.75,3.22)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:59  scale:1  text:59  top-left:(49.93,-29.45)
+Code:           layer:12  control:59  scale:1  text:59  top-left:(49.93,-29.45)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:70  scale:1  text:70  top-left:(14.83,17.69)
+Code:           layer:12  control:70  scale:1  text:70  top-left:(14.83,17.69)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:71  scale:1  text:71  top-left:(32.96,19.1)
+Code:           layer:12  control:71  scale:1  text:71  top-left:(32.96,19.1)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:72  scale:1  text:72  top-left:(0.82,17.16)
+Code:           layer:12  control:72  scale:1  text:72  top-left:(0.82,17.16)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:73  scale:1  text:73  top-left:(52.07,-15.88)
+Code:           layer:12  control:73  scale:1  text:73  top-left:(52.07,-15.88)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:74  scale:1  text:74  top-left:(63.04,-20.69)
+Code:           layer:12  control:74  scale:1  text:74  top-left:(63.04,-20.69)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:75  scale:1  text:75  top-left:(64.86,29.73)
+Code:           layer:12  control:75  scale:1  text:75  top-left:(64.86,29.73)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:76  scale:1  text:76  top-left:(3.38,-8.15)
+Code:           layer:12  control:76  scale:1  text:76  top-left:(3.38,-8.15)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:77  scale:1  text:77  top-left:(70.43,16.79)
+Code:           layer:12  control:77  scale:1  text:77  top-left:(70.43,16.79)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:78  scale:1  text:78  top-left:(97.21,32.26)
+Code:           layer:12  control:78  scale:1  text:78  top-left:(97.21,32.26)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:79  scale:1  text:79  top-left:(112.81,13.49)
+Code:           layer:12  control:79  scale:1  text:79  top-left:(112.81,13.49)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:80  scale:1  text:80  top-left:(34.76,10.59)
+Code:           layer:12  control:80  scale:1  text:80  top-left:(34.76,10.59)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 ");
         }

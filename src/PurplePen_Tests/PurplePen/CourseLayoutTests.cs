@@ -97,10 +97,11 @@ namespace PurplePen.Tests
             CheckHitTest(course, new PointF(50.2F, -2.9F), 0, null, @"Finish:         control:2  course-control:315  scale:1  location:(53.2,-2.8)  gaps:");
 
             // Add in all controls.  Test with true and false for all Layers.
-            courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { Designator(3) }, ControlPointKind.Normal, false, true);
+            courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { Designator(3) }, ControlPointKind.Normal, 
+                                                                  new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = true });
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.AllControls);
 
-            CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.All, null, @"Control:        layer:2  control:76  scale:1  location:(5.6,-5.7)  gaps:");
+            CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.All, null, @"Control:        layer:12  control:76  scale:1  location:(5.6,-5.7)  gaps:");
             CheckHitTest(course, new PointF(5.1F, -5.1F), CourseLayer.MainCourse, null, null);
 
             // Test the type filter

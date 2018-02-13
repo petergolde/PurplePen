@@ -33,13 +33,13 @@ namespace PurplePen
                     return SD.Color.FromArgb((byte) Math.Round(cmykColor.Alpha * 255), SD.Color.White);
             }
 
-            if (cmykColor.Cyan == 0 && cmykColor.Magenta == 0 && cmykColor.Yellow == 0 && cmykColor.Black == 1) {
-                // The default mapping doesn't quite map black to pure black.
-                if (cmykColor.Alpha == 1)
-                    return SD.Color.Black;
-                else
-                    return SD.Color.FromArgb((byte)Math.Round(cmykColor.Alpha * 255), SD.Color.Black);
-            }
+            //if (cmykColor.Cyan == 0 && cmykColor.Magenta == 0 && cmykColor.Yellow == 0 && cmykColor.Black == 1) {
+            //    // The default mapping doesn't quite map black to pure black.
+            //    if (cmykColor.Alpha == 1)
+            //        return SD.Color.Black;
+            //    else
+            //        return SD.Color.FromArgb((byte)Math.Round(cmykColor.Alpha * 255), SD.Color.Black);
+            //}
 
             if (!cmykToColor.TryGetValue(cmykColor, out result)) {
                 float[] colorValues = { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };

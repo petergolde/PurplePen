@@ -771,12 +771,12 @@ Leg:            control:2  course-control:2  scale:1  course-control2:3  path:N(
 Finish:         control:6  course-control:3  scale:1  location:(30.3,-27.11)  gaps:
 ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(7.56,19.87)
                 font-name:Arial  font-style:Regular  font-height:5.57
-Start:          layer:2  control:7  scale:1  location:(0,5)  orientation:0
-Control:        layer:2  control:3  scale:1  location:(20,-10.5)  gaps:56.25:67.5
-Control:        layer:2  control:4  scale:1  location:(35.4,-22.5)  gaps:
-Code:           layer:2  control:3  scale:1  text:32  top-left:(13.15,-10.97)
+Start:          layer:12  control:7  scale:1  location:(0,5)  orientation:0
+Control:        layer:12  control:3  scale:1  location:(20,-10.5)  gaps:56.25:67.5
+Control:        layer:12  control:4  scale:1  location:(35.4,-22.5)  gaps:
+Code:           layer:12  control:3  scale:1  text:32  top-left:(13.15,-10.97)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
-Code:           layer:2  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
+Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.27,-16.92)
                 font-name:Arial Narrow  font-style:Bold  font-height:4.18
 ", writer.ToString());
 
@@ -794,7 +794,7 @@ Leg:            control:2  course-control:2  scale:1  course-control2:3  path:N(
 Finish:         control:6  course-control:3  scale:1  location:(30.3,-27.11)  gaps:
 ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(7.56,19.87)
                 font-name:Arial  font-style:Regular  font-height:5.57
-Start:          layer:2  control:7  scale:1  location:(0,5)  orientation:0
+Start:          layer:12  control:7  scale:1  location:(0,5)  orientation:0
 ", writer.ToString());
 
 

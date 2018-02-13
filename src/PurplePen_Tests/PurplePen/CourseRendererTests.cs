@@ -67,7 +67,8 @@ namespace PurplePen.Tests
 
             // Add all controls if requested.
             if (addAllControls && courseDesignator.IsNotAllControls) {
-                courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { courseDesignator }, ControlPointKind.None, false, true);
+                courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { courseDesignator }, ControlPointKind.None,
+                    new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = true });
                 course.SetLayerColor(CourseLayer.AllControls, 12, "LightPurple", 0.1F, 0.5F, 0.0F, 0.0F, false);
                 CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, course, CourseLayer.AllControls);
             }

@@ -946,7 +946,7 @@ namespace PurplePen.Tests
 
             CourseObj courseobj = new ControlCourseObj(ControlId(12), CourseControlId(33), 1.5F, defaultCourseAppearance, new CircleGap[] {new CircleGap(-10, 30)}, new PointF(1, 1.5F));
             courseobj.layer = CourseLayer.AllControls;
-            AssertDump(courseobj, @"Control:        layer:2  control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:-10:30");
+            AssertDump(courseobj, @"Control:        layer:12  control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:-10:30");
         }
 
         [TestMethod]

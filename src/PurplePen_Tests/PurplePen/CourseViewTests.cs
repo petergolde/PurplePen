@@ -468,7 +468,8 @@ Special 4 (OOB)
             eventDB.Load(TestUtil.GetTestFile("courseview\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            CourseView courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { Designator(3), Designator(4) }, ControlPointKind.Normal, false, true);
+            CourseView courseView = CourseView.CreateFilteredAllControlsView(eventDB, new CourseDesignator[] { Designator(3), Designator(4) }, ControlPointKind.Normal,
+                new CourseViewOptions() { showNonDescriptionSpecials = false, showDescriptionSpecials = true });
             DumpCourseView(courseView, writer);
             actual = writer.ToString();
             expected =

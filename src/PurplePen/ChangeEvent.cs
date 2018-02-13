@@ -1365,10 +1365,8 @@ namespace PurplePen
                 }
             }
 
-            if (special.kind == SpecialKind.Descriptions) {
-                if (Array.IndexOf(displayedCourses, CourseDesignator.AllControls) < 0)
-                    allCourses = false;   // all courses includes all controls only for descriptions.
-            }
+            if (Array.IndexOf(displayedCourses, CourseDesignator.AllControls) < 0)
+                allCourses = false;  
 
             special.allCourses = allCourses;
             if (allCourses) 
