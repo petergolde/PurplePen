@@ -707,6 +707,7 @@ namespace PurplePen
             UpdateMenuItem(deleteForkMenu, controller.CanDeleteFork());
             UpdateMenuItem(courseVariationReportMenu, controller.CanGetVariationReport());
             UpdateMenuItem(otherCoursesMenu, controller.CanChangeExtraCourseDisplay());
+            UpdateMenuItem(clearOtherCoursesMenu, controller.CanClearExtraCourseDisplay());
 
             // Update standards checkboxes and other menu items related to standards.
             string descriptionStandard = controller.GetDescriptionStandard();
@@ -1127,6 +1128,10 @@ namespace PurplePen
             }
         }
 
+        private void clearOtherCoursesMenu_Click(object sender, EventArgs e)
+        {
+            controller.ClearExtraCourseDisplay();
+        }
 
         private void addControlMenu_Click(object sender, EventArgs e)
         {

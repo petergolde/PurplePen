@@ -1103,6 +1103,22 @@ namespace PurplePen
             }
         }
 
+        public CommandStatus CanClearExtraCourseDisplay()
+        {
+            foreach (var pair in extraCourses) {
+                if (pair.Value != null && pair.Value.Count > 0) {
+                    return CommandStatus.Enabled;
+                }
+            }
+            return CommandStatus.Hidden;
+        }
+
+        public void ClearExtraCourseDisplay()
+        {
+            extraCourses.Clear();
+            UpdateExtraControlsDisplay();
+        }
+
         // Determine if show all controls mode is active.
         public bool ShowAllControls
         {

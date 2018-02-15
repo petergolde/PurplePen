@@ -140,6 +140,7 @@ namespace PurplePen
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.allControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.otherCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearOtherCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addStartMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addControlMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -746,7 +747,8 @@ namespace PurplePen
             this.showPopupsMenu,
             this.toolStripSeparator7,
             this.allControlsMenu,
-            this.otherCoursesMenu});
+            this.otherCoursesMenu,
+            this.clearOtherCoursesMenu});
             this.viewMenu.Name = "viewMenu";
             resources.ApplyResources(this.viewMenu, "viewMenu");
             // 
@@ -923,6 +925,12 @@ namespace PurplePen
             this.otherCoursesMenu.Name = "otherCoursesMenu";
             resources.ApplyResources(this.otherCoursesMenu, "otherCoursesMenu");
             this.otherCoursesMenu.Click += new System.EventHandler(this.otherCoursesMenu_Click);
+            // 
+            // clearOtherCoursesMenu
+            // 
+            this.clearOtherCoursesMenu.Name = "clearOtherCoursesMenu";
+            resources.ApplyResources(this.clearOtherCoursesMenu, "clearOtherCoursesMenu");
+            this.clearOtherCoursesMenu.Click += new System.EventHandler(this.clearOtherCoursesMenu_Click);
             // 
             // addMenu
             // 
@@ -2231,5 +2239,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem addMapIssueMenu;
         private System.Windows.Forms.ToolStripMenuItem mapIssuePointToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherCoursesMenu;
+        private System.Windows.Forms.ToolStripMenuItem clearOtherCoursesMenu;
     }
 }

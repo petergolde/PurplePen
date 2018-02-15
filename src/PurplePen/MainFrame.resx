@@ -214,7 +214,7 @@
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 216</value>
+    <value>3, 218</value>
   </data>
   <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 0, 3</value>
@@ -256,7 +256,7 @@
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 216</value>
+    <value>128, 218</value>
   </data>
   <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
@@ -292,7 +292,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAA+LgL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAABrkL
 </value>
   </data>
   <data name="mapViewerTopology.Location" type="System.Drawing.Point, System.Drawing">
@@ -302,7 +302,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 211</value>
+    <value>239, 213</value>
   </data>
   <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -314,8 +314,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAEvH8wTBP38EQ8XxC
-        8E5fQgs=
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAEvH8wRRt4cEQ8XxC
+        zmxhQgs=
 </value>
   </data>
   <data name="&gt;&gt;mapViewerTopology.Name" xml:space="preserve">
@@ -340,7 +340,7 @@
     <value>239, 0</value>
   </data>
   <data name="topologyScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 211</value>
+    <value>17, 213</value>
   </data>
   <data name="topologyScrollBar.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -364,7 +364,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 213</value>
+    <value>256, 215</value>
   </data>
   <data name="panelTopology.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -400,7 +400,7 @@
     <value>6, 6, 6, 6</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 213</value>
+    <value>256, 215</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -427,7 +427,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 213</value>
+    <value>256, 215</value>
   </data>
   <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -454,7 +454,7 @@
     <value>2</value>
   </data>
   <data name="leftColumnPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 242</value>
+    <value>256, 244</value>
   </data>
   <data name="leftColumnPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -502,7 +502,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 126</value>
+    <value>256, 124</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -538,7 +538,7 @@
     <value>256, 371</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>242</value>
+    <value>244</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -574,7 +574,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAAJLkL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAALLkL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -596,7 +596,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAAaezwvjcKcLupjND
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAAaezwvrcKcLupjND
         ztypQgs=
 </value>
   </data>
@@ -928,7 +928,7 @@
     <value>F2</value>
   </data>
   <data name="entireCourseMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Entire &amp;Course</value>
@@ -937,7 +937,7 @@
     <value>F3</value>
   </data>
   <data name="entireMapMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Entire &amp;Map</value>
@@ -985,13 +985,13 @@
     <value>1000%</value>
   </data>
   <data name="zoomMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="zoomMenu.Text" xml:space="preserve">
     <value>&amp;Zoom</value>
   </data>
   <data name="allControlsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>227, 6</value>
   </data>
   <data name="veryLowIntensityMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
@@ -1024,7 +1024,7 @@
     <value>&amp;Full</value>
   </data>
   <data name="mapIntensityMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="mapIntensityMenu.Text" xml:space="preserve">
     <value>Map &amp;Intensity</value>
@@ -1042,31 +1042,31 @@
     <value>High</value>
   </data>
   <data name="mapQualityMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Map &amp;Quality</value>
   </data>
   <data name="showPrintAreaMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>Show P&amp;rint Area</value>
   </data>
   <data name="showPopupsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
     <value>Show &amp;Popup Information</value>
   </data>
   <data name="toolStripSeparator7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 6</value>
+    <value>227, 6</value>
   </data>
   <data name="allControlsMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F4</value>
   </data>
   <data name="allControlsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;All Controls</value>
@@ -1075,10 +1075,19 @@
     <value>F5</value>
   </data>
   <data name="otherCoursesMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
+    <value>230, 22</value>
   </data>
   <data name="otherCoursesMenu.Text" xml:space="preserve">
     <value>Other Courses...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Shift+F5</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 22</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Clear Other Courses</value>
   </data>
   <data name="viewMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -1971,11 +1980,11 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gRrDoCkej/4ChXDBbmqBaD
-        xUIwYbMZtDFHoflXuFkJbnKNZpMGyHi98/PA4+7EGzI3+W7f3T3vbz9tHZGiYKZZxcW/IVZchvFc8wcS
-        5lydYKBBHuM9lZ7g61TTcJUTTd4sidHkscaHHi511d1LO2xKijY8hUTlC1OSvcP/Jd8TWIJHaRJ0bX49
-        9T7wO/PwJTA2zYjhylWZwKeMzwv7KLoqAUluqRTisHbzQw0LbbV3Xfxn1FTbod0DFzOB/dw6Z4I7VyWw
-        MzPSs83uqkwQfGM7hI+uWoLMwUijdzPaFb4ukiYdHFPklP/Q/JCrHr5or1pXPfLsG9EK9tXf9xTfxlg4
-        2MOzalnEr2VPgsI/z2wLtVm9o7U7+RVUC2DJxW1B+gTiCzXO7yStdgAAAABJRU5ErkJggg==
+        xUIwYbMZtBAcheZf4WYluMk1mk0aIOP1zs8Dj7sTb8jc5Lt9d/e8v/20dUSKgplmFRf/hlhxGcZzzR9I
+        mHN1goEGeYz3VHqCr1NNw1VONHmzJEaTxxoferjUVXcv7bApKdrwFBKVL0xJ9g7/l3xPYAkepUnQtfn1
+        1PvA78zDl8DYNCOGK1dlAp8yPi/so+iqBCS5pVKIw9rNDzUstNXedfGfUVNth3YPXMwE9nPrnAnuXJXA
+        zsxIzza7qzJB8I3tED66agkyByON3s1oV/i6SJp0cEyRU/5D80OueviivWpd9cizb0Qr2Fd/31N8G2Ph
+        YA/PqmURv5Y9CQr/PLMt1Gb1jtbu5FdQLYAlF7cF6RPZ2zXG5AaSHAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2879,6 +2888,12 @@
     <value>otherCoursesMenu</value>
   </data>
   <data name="&gt;&gt;otherCoursesMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearOtherCoursesMenu.Name" xml:space="preserve">
+    <value>clearOtherCoursesMenu</value>
+  </data>
+  <data name="&gt;&gt;clearOtherCoursesMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;addMenu.Name" xml:space="preserve">
