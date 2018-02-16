@@ -61,6 +61,7 @@
             this.Controls.Add(this.labelInstructions);
             this.Controls.Add(this.courseSelector);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.HelpTopic = "ViewAdditionalCourses.htm";
             this.Name = "ViewAdditionalCourses";
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);

@@ -229,6 +229,14 @@
 				<param name="Name" value="All Controls">
 				<param name="Local" value="ViewAllControls.htm">
 				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Other Courses...">
+				<param name="Local" value="ViewAdditionalCourses.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Clear Other Courses">
+				<param name="Local" value="ViewClearAdditionalCourses.htm">
+				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Add Menu">
