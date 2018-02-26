@@ -147,6 +147,9 @@
   <data name="labelNumberOfTeams.Text" xml:space="preserve">
     <value>Tälle radalle on määritelty {0} viestijoukkuetta. Joukkueiden lukumäärän voit vaihtaa valitsemalla Rata-valikosta Viestin joukkuehajonnat...</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>to</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Valitse, mitkä joukkueet tulostetaan/viedään:</value>
   </data>

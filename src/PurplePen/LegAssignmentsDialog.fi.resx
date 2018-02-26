@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Haara</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Osuudet</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Jos haluat määrittää tietyn osuuden tietylle haaralle, kirjoita osuusnumero(t) alapuolelle. Osuudet, joita ei ole määritetty haaralle, jaetaan jäljellä oleville haaroille satunnaisesti.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Lisätietoja...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Osuusmäärittelyt</value>
+  </data>
 </root>

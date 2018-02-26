@@ -219,4 +219,10 @@
   <data name="DraggingTopologyObject" xml:space="preserve">
     <value>Vedä rastinumeroa toiseen kohtaan radan uudelleenjärjestämiseksi</value>
   </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Lisää kartanottopaikka radalle klikkaamalla hiiren vasenta painiketta</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Lisää uusi kartanottopaikka klikkaamalla hiiren vasenta painiketta</value>
+  </data>
 </root>

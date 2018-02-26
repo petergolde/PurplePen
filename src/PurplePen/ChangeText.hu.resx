@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Nyomtatási lépték</value>
   </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Váltó csapat</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Kinézet</value>
   </data>

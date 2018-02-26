@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.1\n"
+"Project-Id-Version: Purple Pen 3.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-01-17 13:33-08:00\n"
+"POT-Creation-Date: 2018-02-16 14:31-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1338,13 +1338,201 @@ msgstr "Purple Pen datoteke|*.ppen|Vse datoteke|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen datoteke|*.ppen"
 
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "&Nova prireditev..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Odpri ..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Shrani"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Shrani &kot ..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Ustvari OCAD &Datoteke..."
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr ""
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Ustvari Route&Gadget Datoteke..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create Data &Interchange File (IOF XML)..."
+msgstr "Ustvari podatkovno &Datoteko za izmenjavo (IOF XML)..."
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create G&PX File..."
+msgstr ""
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Tiskaj Opise kontrolnih točk..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr ""
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Tiskaj &Proge..."
+
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
+msgstr "Izbran &Samo delno"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Izbrana Proga"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Vse proge"
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Določi območje tiskanja"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "Program &Jezik..."
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "I&zhod"
+
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Datoteka"
 
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "&Pobriši izbiro"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "&Prekliči"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "&Obnovi"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Izbriši"
+
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
 msgstr "&Uredi"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "Celotna &Proga"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Celotna &Karta"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Povečaj"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "&Zelo nizka"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "&Nizka"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "&Srednja"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "&Visoka"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Polno"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Karta &Intenzivnost"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Nizka"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Visoko"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Karta &Kvaliteta"
+
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr ""
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr "Prikaži &Pojavna Informacija"
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Vse kontrolne točke"
+
+#: MainFrame.resx, otherCoursesMenu.Text
+msgid "Other Courses..."
+msgstr ""
+
+#: MainFrame.resx, clearOtherCoursesMenu.Text
+msgid "Clear Other Courses"
+msgstr ""
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1366,6 +1554,14 @@ msgstr ""
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
 msgstr ""
+
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr "Menjava karte na &kontrolna točka"
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr "&označena pote do menjave karte"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
@@ -1464,214 +1660,6 @@ msgstr ""
 msgid "&Add"
 msgstr ""
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Prire&ditev"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Proga"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Objekt"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Poročila"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr ""
-
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "&Nova prireditev..."
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Odpri ..."
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "&Shrani"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Shrani &kot ..."
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "Ustvari OCAD &Datoteke..."
-
-#: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
-msgstr ""
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr "Ustvari Route&Gadget Datoteke..."
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create Data &Interchange File (IOF XML)..."
-msgstr "Ustvari podatkovno &Datoteko za izmenjavo (IOF XML)..."
-
-#: MainFrame.resx, createGPXFileMenu.Text
-msgid "Create G&PX File..."
-msgstr ""
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "&Tiskaj Opise kontrolnih točk..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr ""
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "Tiskaj &Proge..."
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Določi območje tiskanja"
-
-#: MainFrame.resx, printAreaThisPartMenu.Text
-msgid "This &Part Only"
-msgstr "Izbran &Samo delno"
-
-#: MainFrame.resx, printAreaThisCourseMenu.Text
-msgid "&This Course"
-msgstr "&Izbrana Proga"
-
-#: MainFrame.resx, printAreaAllCoursesMenu.Text
-msgid "&All Courses"
-msgstr "&Vse proge"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "Program &Jezik..."
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "I&zhod"
-
-#: MainFrame.resx, cancelMenu.Text
-#: MiscText.resx, ClearSelectionWithShortcut
-msgid "&Clear Selection"
-msgstr "&Pobriši izbiro"
-
-#: MainFrame.resx, undoMenu.Text
-#: MiscText.resx, UndoWithShortcut
-msgid "&Undo"
-msgstr "&Prekliči"
-
-#: MainFrame.resx, redoMenu.Text
-#: MiscText.resx, RedoWithShortcut
-msgid "&Redo"
-msgstr "&Obnovi"
-
-#: MainFrame.resx, deleteMenu.Text
-#: MainFrame.resx, deleteItemMenu.Text
-msgid "&Delete"
-msgstr "&Izbriši"
-
-#: MainFrame.resx, entireCourseMenu.Text
-msgid "Entire &Course"
-msgstr "Celotna &Proga"
-
-#: MainFrame.resx, entireMapMenu.Text
-msgid "Entire &Map"
-msgstr "Celotna &Karta"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Povečaj"
-
-#: MainFrame.resx, zoom50Menu.Text
-msgid "50%"
-msgstr "50%"
-
-#: MainFrame.resx, zoom100Menu.Text
-msgid "100%"
-msgstr "100%"
-
-#: MainFrame.resx, zoom150Menu.Text
-msgid "150%"
-msgstr "150%"
-
-#: MainFrame.resx, zoom200Menu.Text
-msgid "200%"
-msgstr "200%"
-
-#: MainFrame.resx, zoom300Menu.Text
-msgid "300%"
-msgstr "300%"
-
-#: MainFrame.resx, zoom500Menu.Text
-msgid "500%"
-msgstr "500%"
-
-#: MainFrame.resx, zoom1000Menu.Text
-msgid "1000%"
-msgstr "1000%"
-
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "Karta &Intenzivnost"
-
-#: MainFrame.resx, veryLowIntensityMenu.Text
-msgid "&Very Low"
-msgstr "&Zelo nizka"
-
-#: MainFrame.resx, lowIntensityMenu.Text
-msgid "&Low"
-msgstr "&Nizka"
-
-#: MainFrame.resx, mediumIntensityMenu.Text
-msgid "&Medium"
-msgstr "&Srednja"
-
-#: MainFrame.resx, highIntensityMenu.Text
-msgid "&High"
-msgstr "&Visoka"
-
-#: MainFrame.resx, fullIntensityMenu.Text
-msgid "&Full"
-msgstr "&Polno"
-
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "Karta &Kvaliteta"
-
-#: MainFrame.resx, normalQualityMenu.Text
-msgid "Low"
-msgstr "Nizka"
-
-#: MainFrame.resx, highQualityMenu.Text
-msgid "High"
-msgstr "Visoko"
-
-#: MainFrame.resx, showPrintAreaMenu.Text
-msgid "Show P&rint Area"
-msgstr ""
-
-#: MainFrame.resx, showPopupsMenu.Text
-msgid "Show &Popup Information"
-msgstr "Prikaži &Pojavna Informacija"
-
-#: MainFrame.resx, allControlsMenu.Text
-msgid "&All Controls"
-msgstr "&Vse kontrolne točke"
-
-#: MainFrame.resx, mapExchangeControlMenuItem.Text
-msgid "Map Exchange at &Control Point"
-msgstr "Menjava karte na &kontrolna točka"
-
-#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
-msgstr "&označena pote do menjave karte"
-
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
 msgstr "&Datoteka s karto"
@@ -1692,10 +1680,6 @@ msgstr "Odstrani &Neuporabljene kontrolne točke..."
 msgid "&Punch Patterns..."
 msgstr "&Vzorci perforacij"
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr ""
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr ""
@@ -1712,6 +1696,10 @@ msgstr ""
 msgid "ISOM2017 Map Standard"
 msgstr ""
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Prilagodi &Besedilni opis"
@@ -1719,6 +1707,10 @@ msgstr "Prilagodi &Besedilni opis"
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
 msgstr ""
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Prire&ditev"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1747,6 +1739,10 @@ msgstr "Tekmovalec &Obremenitev..."
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
 msgstr ""
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Proga"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1780,10 +1776,6 @@ msgstr ""
 msgid "R&otate"
 msgstr "Z&avrti"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "&Označena etapa"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Ni oznak"
@@ -1800,9 +1792,17 @@ msgstr "Začetek oznak na etapi"
 msgid "End of Leg Flagged"
 msgstr "Konec oznak na etapi"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Označena etapa"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Spremeni označ&eno progo..."
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Objekt"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1823,6 +1823,10 @@ msgstr "Kontrolna točka &Navzkrižna referenca"
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
 msgstr "Kontrolna točka in obremenitev et&ap"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Poročila"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -1846,10 +1850,6 @@ msgstr ""
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
-msgstr ""
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
 msgstr ""
 
 #: MainFrame.resx, symbolBrowserMenu.Text
@@ -1892,8 +1892,8 @@ msgstr ""
 msgid "Crash"
 msgstr ""
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
 msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
@@ -1906,6 +1906,14 @@ msgstr ""
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
+msgstr ""
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr ""
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
 msgstr ""
 
 #: MainFrame.resx, openToolStripButton.Text
@@ -2636,6 +2644,19 @@ msgstr ""
 msgid "MI"
 msgstr ""
 
+#: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
+msgid "The underlying OCAD map has visible template files. In "
+"OCAD 8 and below, these templates may not appear due to "
+"limitations in OCAD."
+msgstr ""
+
+#: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
+msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
+"below), image objects will appear underneath courses and "
+"white out areas in the exported OCAD files. Please check "
+"the OCAD files to make sure your images appear as desired."
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr ""
@@ -2739,9 +2760,10 @@ msgstr ""
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
-"file you will be using. Typically this is an OCAD file "
-"(although image files like JPEGs can be used instead). "
-"Click the \"Choose...\" button to select a map file."
+"file you will be using. Typically this is an OCAD or "
+"OpenOrienteering Mapper file (although PDFs and image "
+"files like JPEGs can be used instead). Click the "
+"\"Choose...\" button to select a map file."
 msgstr ""
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
@@ -3849,5 +3871,13 @@ msgstr ""
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
+msgstr ""
+
+#: ViewAdditionalCourses.resx, labelInstructions.Text
+msgid "Choose additional courses to view with course \"{0}\"."
+msgstr ""
+
+#: ViewAdditionalCourses.resx, $this.Text
+msgid "View Additional Courses"
 msgstr ""
 

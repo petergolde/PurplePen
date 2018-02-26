@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Kansiota '{0}' ei voida luoda seuraavasta syystä:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Karttaa ei voi lukea seuraavasta syystä: '{0}' Tiedoston optimointi ja uudelleen tallentaminen OCADissa voi korjata ongelmia.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>OCAD-tiedostoja ei voida luoda seuraavasta syystä:</value>
   </data>
@@ -570,6 +573,27 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="VariationNotLastControl" xml:space="preserve">
     <value>Hajontaa ei voi lisätä viimeiselle rastille. Lisää maali ensin.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' ei ole kelvollinen osuusnumero haaralle '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Osuus {0} on määritettävä yhdelle haaroista {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Osuus {0} on määritetty sekä haaralle '{1}' että haaralle '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Karttaa ei voi lukea seuraavasta syystä: '{0}' Kartan avaaminen ja tallentaminen uudelleen OpenOrienteering Mapperin viimeisimmässä versiossa voi korjata ongelmia.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Kartanottopaikka</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Kartanotto</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>KO</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>

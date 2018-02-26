@@ -123,6 +123,9 @@
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>Suku</value>
   </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Sijamuoto</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Teksti</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Suku:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Muokatun symbolin sijamuoto:</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Näytä sijamuodot</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muokattu symboliteksti</value>

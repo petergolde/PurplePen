@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.1\n"
+"Project-Id-Version: Purple Pen 3.1.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-01-17 13:33-08:00\n"
+"POT-Creation-Date: 2018-02-16 14:31-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1346,13 +1346,201 @@ msgstr "Pliki Purple Pen|*.ppen|Wszystkie|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Plik Purple Pen|*.ppen"
 
+#: MainFrame.resx, newEventMenu.Text
+msgid "&New Event..."
+msgstr "&Nowe zaowdy..."
+
+#: MainFrame.resx, openMenu.Text
+msgid "&Open..."
+msgstr "&Otwórz..."
+
+#: MainFrame.resx, saveMenu.Text
+msgid "&Save"
+msgstr "&Zapisz"
+
+#: MainFrame.resx, saveAsMenu.Text
+msgid "Save &As..."
+msgstr "Zapisz &jako..."
+
+#: MainFrame.resx, createOcadFilesMenu.Text
+msgid "Create OCAD &Files..."
+msgstr "Utwórz &pliki OCAD"
+
+#: MainFrame.resx, createCoursePdfMenu.Text
+msgid "Create PDFs..."
+msgstr "Utwórz pliki PDF..."
+
+#: MainFrame.resx, createRouteGadgetFilesMenu.Text
+msgid "Create Route&Gadget Files..."
+msgstr "Utwórz pliki Route&Gadget..."
+
+#: MainFrame.resx, createXmlMenu.Text
+msgid "Create Data &Interchange File (IOF XML)..."
+msgstr "Utwórz plik I&OF XML"
+
+#: MainFrame.resx, createGPXFileMenu.Text
+msgid "Create G&PX File..."
+msgstr ""
+
+#: MainFrame.resx, printDescriptionsMenu.Text
+msgid "&Print Descriptions..."
+msgstr "&Drukuj opisy PK..."
+
+#: MainFrame.resx, printPunchCardsMenu.Text
+msgid "Print Pu&nch Cards..."
+msgstr "Wydrukuj &perforowane karty startowe"
+
+#: MainFrame.resx, printCoursesMenu.Text
+msgid "Print &Courses..."
+msgstr "Drukuj &trasy..."
+
+#: MainFrame.resx, printAreaThisPartMenu.Text
+msgid "This &Part Only"
+msgstr "Tylko ta &część"
+
+#: MainFrame.resx, printAreaThisCourseMenu.Text
+msgid "&This Course"
+msgstr "&Ta trasa"
+
+#: MainFrame.resx, printAreaAllCoursesMenu.Text
+msgid "&All Courses"
+msgstr "&Wszystkie trasy"
+
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Ustaw &obszar wydruku"
+
+#: MainFrame.resx, programLanguageMenu.Text
+msgid "Program &Language..."
+msgstr "&Język programu"
+
+#: MainFrame.resx, exitMenu.Text
+msgid "E&xit"
+msgstr "&Wyjście"
+
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
 msgstr "&Plik"
 
+#: MainFrame.resx, cancelMenu.Text
+#: MiscText.resx, ClearSelectionWithShortcut
+msgid "&Clear Selection"
+msgstr "U&suń zaznaczenie"
+
+#: MainFrame.resx, undoMenu.Text
+#: MiscText.resx, UndoWithShortcut
+msgid "&Undo"
+msgstr "&Cofnij"
+
+#: MainFrame.resx, redoMenu.Text
+#: MiscText.resx, RedoWithShortcut
+msgid "&Redo"
+msgstr "&Ponów"
+
+#: MainFrame.resx, deleteMenu.Text
+#: MainFrame.resx, deleteItemMenu.Text
+msgid "&Delete"
+msgstr "&Usuń"
+
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
 msgstr "&Edycja"
+
+#: MainFrame.resx, entireCourseMenu.Text
+msgid "Entire &Course"
+msgstr "&Cała trasa"
+
+#: MainFrame.resx, entireMapMenu.Text
+msgid "Entire &Map"
+msgstr "Cała &mapa"
+
+#: MainFrame.resx, zoom50Menu.Text
+msgid "50%"
+msgstr "50%"
+
+#: MainFrame.resx, zoom100Menu.Text
+msgid "100%"
+msgstr "100%"
+
+#: MainFrame.resx, zoom150Menu.Text
+msgid "150%"
+msgstr "150%"
+
+#: MainFrame.resx, zoom200Menu.Text
+msgid "200%"
+msgstr "200%"
+
+#: MainFrame.resx, zoom300Menu.Text
+msgid "300%"
+msgstr "300%"
+
+#: MainFrame.resx, zoom500Menu.Text
+msgid "500%"
+msgstr "500%"
+
+#: MainFrame.resx, zoom1000Menu.Text
+msgid "1000%"
+msgstr "1000%"
+
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Powiększ"
+
+#: MainFrame.resx, veryLowIntensityMenu.Text
+msgid "&Very Low"
+msgstr "&Bardzo niska"
+
+#: MainFrame.resx, lowIntensityMenu.Text
+msgid "&Low"
+msgstr "&Niska"
+
+#: MainFrame.resx, mediumIntensityMenu.Text
+msgid "&Medium"
+msgstr "Ś&rednia"
+
+#: MainFrame.resx, highIntensityMenu.Text
+msgid "&High"
+msgstr "&Wysoka"
+
+#: MainFrame.resx, fullIntensityMenu.Text
+msgid "&Full"
+msgstr "&Pełna"
+
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "&Nieprzezroczystość mapy"
+
+#: MainFrame.resx, normalQualityMenu.Text
+msgid "Low"
+msgstr "Niska"
+
+#: MainFrame.resx, highQualityMenu.Text
+msgid "High"
+msgstr "Wysoka"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Jak&ość mapy"
+
+#: MainFrame.resx, showPrintAreaMenu.Text
+msgid "Show P&rint Area"
+msgstr "Pokaż obszar &wydruku"
+
+#: MainFrame.resx, showPopupsMenu.Text
+msgid "Show &Popup Information"
+msgstr ""
+
+#: MainFrame.resx, allControlsMenu.Text
+msgid "&All Controls"
+msgstr "&Wszystkie  PK"
+
+#: MainFrame.resx, otherCoursesMenu.Text
+msgid "Other Courses..."
+msgstr ""
+
+#: MainFrame.resx, clearOtherCoursesMenu.Text
+msgid "Clear Other Courses"
+msgstr ""
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1374,6 +1562,14 @@ msgstr "&Zakończ"
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
 msgstr ""
+
+#: MainFrame.resx, mapExchangeControlMenuItem.Text
+msgid "Map Exchange at &Control Point"
+msgstr "Zmiana &mapy na PK"
+
+#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
+msgid "&Flagged Route to Map Exchange"
+msgstr "O&taśmowany przebieg do zmiany mapy"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
@@ -1472,214 +1668,6 @@ msgstr "Prostokąt"
 msgid "&Add"
 msgstr ""
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "&Zawody"
-
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Trasa"
-
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Obiekt"
-
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Raporty"
-
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Pomoc"
-
-#: MainFrame.resx, newEventMenu.Text
-msgid "&New Event..."
-msgstr "&Nowe zaowdy..."
-
-#: MainFrame.resx, openMenu.Text
-msgid "&Open..."
-msgstr "&Otwórz..."
-
-#: MainFrame.resx, saveMenu.Text
-msgid "&Save"
-msgstr "&Zapisz"
-
-#: MainFrame.resx, saveAsMenu.Text
-msgid "Save &As..."
-msgstr "Zapisz &jako..."
-
-#: MainFrame.resx, createOcadFilesMenu.Text
-msgid "Create OCAD &Files..."
-msgstr "Utwórz &pliki OCAD"
-
-#: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
-msgstr "Utwórz pliki PDF..."
-
-#: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
-msgstr "Utwórz pliki Route&Gadget..."
-
-#: MainFrame.resx, createXmlMenu.Text
-msgid "Create Data &Interchange File (IOF XML)..."
-msgstr "Utwórz plik I&OF XML"
-
-#: MainFrame.resx, createGPXFileMenu.Text
-msgid "Create G&PX File..."
-msgstr ""
-
-#: MainFrame.resx, printDescriptionsMenu.Text
-msgid "&Print Descriptions..."
-msgstr "&Drukuj opisy PK..."
-
-#: MainFrame.resx, printPunchCardsMenu.Text
-msgid "Print Pu&nch Cards..."
-msgstr "Wydrukuj &perforowane karty startowe"
-
-#: MainFrame.resx, printCoursesMenu.Text
-msgid "Print &Courses..."
-msgstr "Drukuj &trasy..."
-
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Ustaw &obszar wydruku"
-
-#: MainFrame.resx, printAreaThisPartMenu.Text
-msgid "This &Part Only"
-msgstr "Tylko ta &część"
-
-#: MainFrame.resx, printAreaThisCourseMenu.Text
-msgid "&This Course"
-msgstr "&Ta trasa"
-
-#: MainFrame.resx, printAreaAllCoursesMenu.Text
-msgid "&All Courses"
-msgstr "&Wszystkie trasy"
-
-#: MainFrame.resx, programLanguageMenu.Text
-msgid "Program &Language..."
-msgstr "&Język programu"
-
-#: MainFrame.resx, exitMenu.Text
-msgid "E&xit"
-msgstr "&Wyjście"
-
-#: MainFrame.resx, cancelMenu.Text
-#: MiscText.resx, ClearSelectionWithShortcut
-msgid "&Clear Selection"
-msgstr "U&suń zaznaczenie"
-
-#: MainFrame.resx, undoMenu.Text
-#: MiscText.resx, UndoWithShortcut
-msgid "&Undo"
-msgstr "&Cofnij"
-
-#: MainFrame.resx, redoMenu.Text
-#: MiscText.resx, RedoWithShortcut
-msgid "&Redo"
-msgstr "&Ponów"
-
-#: MainFrame.resx, deleteMenu.Text
-#: MainFrame.resx, deleteItemMenu.Text
-msgid "&Delete"
-msgstr "&Usuń"
-
-#: MainFrame.resx, entireCourseMenu.Text
-msgid "Entire &Course"
-msgstr "&Cała trasa"
-
-#: MainFrame.resx, entireMapMenu.Text
-msgid "Entire &Map"
-msgstr "Cała &mapa"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Powiększ"
-
-#: MainFrame.resx, zoom50Menu.Text
-msgid "50%"
-msgstr "50%"
-
-#: MainFrame.resx, zoom100Menu.Text
-msgid "100%"
-msgstr "100%"
-
-#: MainFrame.resx, zoom150Menu.Text
-msgid "150%"
-msgstr "150%"
-
-#: MainFrame.resx, zoom200Menu.Text
-msgid "200%"
-msgstr "200%"
-
-#: MainFrame.resx, zoom300Menu.Text
-msgid "300%"
-msgstr "300%"
-
-#: MainFrame.resx, zoom500Menu.Text
-msgid "500%"
-msgstr "500%"
-
-#: MainFrame.resx, zoom1000Menu.Text
-msgid "1000%"
-msgstr "1000%"
-
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "&Nieprzezroczystość mapy"
-
-#: MainFrame.resx, veryLowIntensityMenu.Text
-msgid "&Very Low"
-msgstr "&Bardzo niska"
-
-#: MainFrame.resx, lowIntensityMenu.Text
-msgid "&Low"
-msgstr "&Niska"
-
-#: MainFrame.resx, mediumIntensityMenu.Text
-msgid "&Medium"
-msgstr "Ś&rednia"
-
-#: MainFrame.resx, highIntensityMenu.Text
-msgid "&High"
-msgstr "&Wysoka"
-
-#: MainFrame.resx, fullIntensityMenu.Text
-msgid "&Full"
-msgstr "&Pełna"
-
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "Jak&ość mapy"
-
-#: MainFrame.resx, normalQualityMenu.Text
-msgid "Low"
-msgstr "Niska"
-
-#: MainFrame.resx, highQualityMenu.Text
-msgid "High"
-msgstr "Wysoka"
-
-#: MainFrame.resx, showPrintAreaMenu.Text
-msgid "Show P&rint Area"
-msgstr "Pokaż obszar &wydruku"
-
-#: MainFrame.resx, showPopupsMenu.Text
-msgid "Show &Popup Information"
-msgstr ""
-
-#: MainFrame.resx, allControlsMenu.Text
-msgid "&All Controls"
-msgstr "&Wszystkie  PK"
-
-#: MainFrame.resx, mapExchangeControlMenuItem.Text
-msgid "Map Exchange at &Control Point"
-msgstr "Zmiana &mapy na PK"
-
-#: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
-msgstr "O&taśmowany przebieg do zmiany mapy"
-
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
 msgstr "Plik &mapy"
@@ -1700,10 +1688,6 @@ msgstr "Usuń nie&używane PK"
 msgid "&Punch Patterns..."
 msgstr "Wzorce &perforowania..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr ""
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr ""
@@ -1720,6 +1704,10 @@ msgstr ""
 msgid "ISOM2017 Map Standard"
 msgstr ""
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Dostosuj tekst &opisu..."
@@ -1727,6 +1715,10 @@ msgstr "Dostosuj tekst &opisu..."
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
 msgstr "Dostosuj &wygląd"
+
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "&Zawody"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1755,6 +1747,10 @@ msgstr "&Obciążenie zawodnikami..."
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
 msgstr ""
+
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Trasa"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1788,10 +1784,6 @@ msgstr "Zmień wygląd &linii..."
 msgid "R&otate"
 msgstr "&Obróć"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "&Otaśmowanie przebiegu"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Brak otaśmowania"
@@ -1808,9 +1800,17 @@ msgstr "Otaśmowany początek przebiegu"
 msgid "End of Leg Flagged"
 msgstr "Otaśmowany koniec przebiegu"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Otaśmowanie przebiegu"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Zmień w&yświetlane trasy..."
+
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Obiekt"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -1831,6 +1831,10 @@ msgstr "&Indeks PK"
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
 msgstr "O&bciążenie PK oraz przebiegów"
+
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Raporty"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -1855,10 +1859,6 @@ msgstr "Złóź darowiznę"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&O Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Debugowanie"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -1900,9 +1900,9 @@ msgstr "Metryka czcionki"
 msgid "Crash"
 msgstr "Awaria"
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Przetłumacz tekst opisu"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Debugowanie"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -1915,6 +1915,14 @@ msgstr "Dodaj przetłumaczone teksty..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Scal Symbols.xml..."
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Przetłumacz tekst opisu"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Pomoc"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2691,6 +2699,19 @@ msgstr ""
 msgid "MI"
 msgstr ""
 
+#: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
+msgid "The underlying OCAD map has visible template files. In "
+"OCAD 8 and below, these templates may not appear due to "
+"limitations in OCAD."
+msgstr ""
+
+#: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
+msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
+"below), image objects will appear underneath courses and "
+"white out areas in the exported OCAD files. Please check "
+"the OCAD files to make sure your images appear as desired."
+msgstr ""
+
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
 msgstr "Nie ostrzegaj ponownie o brakujących czcionkach dla tych "
@@ -2801,9 +2822,10 @@ msgstr "Stwórz zawody"
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
-"file you will be using. Typically this is an OCAD file "
-"(although image files like JPEGs can be used instead). "
-"Click the \"Choose...\" button to select a map file."
+"file you will be using. Typically this is an OCAD or "
+"OpenOrienteering Mapper file (although PDFs and image "
+"files like JPEGs can be used instead). Click the "
+"\"Choose...\" button to select a map file."
 msgstr "Aby zaprojektować trasy, musisz wybrać plik mapy. "
 "Zwyczajowo jest to plik OCAD (lecz można również użyć "
 "JPEG). Kliknij przycisk \"Wybierz...\" aby wybrac plik mapy."
@@ -3954,5 +3976,13 @@ msgstr "Usuń"
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
+msgstr ""
+
+#: ViewAdditionalCourses.resx, labelInstructions.Text
+msgid "Choose additional courses to view with course \"{0}\"."
+msgstr ""
+
+#: ViewAdditionalCourses.resx, $this.Text
+msgid "View Additional Courses"
 msgstr ""
 

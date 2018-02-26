@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Näitä asetuksia voit myöhemmin muuttaa valitsemalla Tapahtuma/IOF:n standardit)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>IOF:n standardit</value>
+  </data>
+  <data name="radioButtonMap2017.Text" xml:space="preserve">
+    <value>ISOM 2017</value>
+  </data>
+  <data name="radioButtonMap2000.Text" xml:space="preserve">
+    <value>ISOM 2000 / ISSOM 2007</value>
+  </data>
+  <data name="groupBoxMapStandard.Text" xml:space="preserve">
+    <value>IOF:n suunnistuskartan kuvausohje</value>
+  </data>
+  <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
+    <value>Rastinmääritteet 2018</value>
+  </data>
+  <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
+    <value>Rastinmääritteet 2004</value>
+  </data>
+  <data name="groupBoxDescriptionStandard.Text" xml:space="preserve">
+    <value>IOF:n rastinmääritestandardi</value>
+  </data>
+  <data name="labelStandardsIntro.Text" xml:space="preserve">
+    <value>Mitä IOF:n standardeja haluat Purple Penin noudattavan?</value>
+  </data>
 </root>

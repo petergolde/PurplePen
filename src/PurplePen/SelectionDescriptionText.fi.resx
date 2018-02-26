@@ -291,4 +291,10 @@
   <data name="CalculatedLength" xml:space="preserve">
     <value>Mitattu pituus:</value>
   </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>kartanottopaikkaa</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>kartanottopaikka</value>
+  </data>
 </root>

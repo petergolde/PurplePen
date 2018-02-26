@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Sama symboli?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Käyntejä</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Tapahtuman {0} ratayhteenveto</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Tapahtuman {0} rastien ristiviiteraportti</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Molempiin suuntiin juostavat rastivälit</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Toisiaan lähellä olevat rastit</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Ongelmia ei löydetty.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Rata "{0}" sisältää rastin "{1}" kahdesti peräkkäin.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Toistuvat rastit</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Pistesuunnistusrata "{0}" sisältää rastin "{1}" kahdesti. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Tapahtuman {0} virheraportti</value>
   </data>
@@ -252,6 +267,9 @@
   <data name="LegLength_Title" xml:space="preserve">
     <value>Tapahtuman {0} rastivälien pituusyhteenveto</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Joillakin rasteilla käydään useita kertoja samalla radalla. Toinen kuormitusluku (Käyntejä) laskee jokaisen käynnin rastilla erikseen.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Rastien kuormitus</value>
   </data>
@@ -267,11 +285,20 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Tapahtuman {0} kuormitusraportti</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Yhdellä tai useammalla radalla on hajonta. Kuormitus lasketaan olettaen, että kilpailijat jakautuvat tasaisesti hajontojen kesken.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} käyntiä)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>VAROITUS:</value>
   </data>
+  <data name="Note" xml:space="preserve">
+    <value>HUOMAUTUS: </value>
+  </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
-    <value>Varoitus: määritetystä osuuksien lukumäärästä johtuen rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. Osuuksista {1} käyttää hajontaa {2}, kun taas osuuksista {3} käyttää hajontaa {4}. </value>
+    <value>Varoitus: määritetystä osuuksien lukumäärästä johtuen rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. Osuuksista {1} käyttää haaraa (haaroja) {2}, kun taas osuuksista {3} käyttää haaraa (haaroja) {4}. </value>
   </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
     <value>Osuus {0}</value>

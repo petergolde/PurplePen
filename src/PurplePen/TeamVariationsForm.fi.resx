@@ -138,6 +138,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Joukkueita:</value>
   </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Määritä osuudet haaroille...</value>
+  </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Taulukkolaskenta (CSV)|*.csv</value>
   </data>

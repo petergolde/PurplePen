@@ -126,11 +126,143 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen fájl|*.ppen</value>
   </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>Új &amp;Esemény</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Megnyitás…</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>Men&amp;tés</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Mentés más&amp;ként…</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>OCAD fájlok létrehozása...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>PDF fájlok létrehozása...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>RouteGadget fájlok létrehozása...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Adatcsere fájl létrehozása (IOF XML)...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>&amp;GPX fájl készítése...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Leírások nyomtatása...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Kartonok &amp;nyomtatása...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Pályák nyomtatása...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Csak ez a &amp;Rész</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Ez a pálya</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Minden pálya</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Nyomtatandó &amp;terület</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>A program nyel&amp;ve:</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>&amp;Kilépés</value>
+  </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Fájl</value>
   </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>&amp;Kijelölés megszüntetése</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Visszavonás</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>Ú&amp;jra</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Törlés</value>
+  </data>
   <data name="editMenu.Text" xml:space="preserve">
     <value>S&amp;zerkesztés</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Teljes pálya</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>Te&amp;ljes térkép</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150%</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200%</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300%</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500%</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000%</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>Na&amp;gyítás</value>
+  </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>Nagyon &amp;alacsony</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>Alacs&amp;ony</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>Kö&amp;zepes</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>Maga&amp;s</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Teljes</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Térkép intenzitás</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Alacsony</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Magas</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Térkép&amp;minőség</value>
+  </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Mutassa &amp;Nyomtatott területet</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Mutassa a &amp;Felugró adatokat</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Minden ellenőrzőpont</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Nézet</value>
@@ -146,6 +278,12 @@
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Új &amp;pontleírás</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>&amp;Térképcsere az ellenőrzőpontnál</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Szalagozás a térképcseréig</value>
   </data>
   <data name="addMapExchangeMenu.Text" xml:space="preserve">
     <value>Új &amp;térképcsere</value>
@@ -195,159 +333,6 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Téglalap</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Esemény</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Pálya</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Elem</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Jelentések</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Súgó</value>
-  </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>Új &amp;Esemény</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Megnyitás…</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>Men&amp;tés</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Mentés más&amp;ként…</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>OCAD fájlok létrehozása...</value>
-  </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>PDF fájlok létrehozása...</value>
-  </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>RouteGadget fájlok létrehozása...</value>
-  </data>
-  <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Adatcsere fájl létrehozása (IOF XML)...</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>&amp;GPX fájl készítése...</value>
-  </data>
-  <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>&amp;Leírások nyomtatása...</value>
-  </data>
-  <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>Kartonok &amp;nyomtatása...</value>
-  </data>
-  <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Pályák nyomtatása...</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Nyomtatandó &amp;terület</value>
-  </data>
-  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
-    <value>Csak ez a &amp;Rész</value>
-  </data>
-  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Ez a pálya</value>
-  </data>
-  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Minden pálya</value>
-  </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>A program nyel&amp;ve:</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>&amp;Kilépés</value>
-  </data>
-  <data name="cancelMenu.Text" xml:space="preserve">
-    <value>&amp;Kijelölés megszüntetése</value>
-  </data>
-  <data name="undoMenu.Text" xml:space="preserve">
-    <value>&amp;Visszavonás</value>
-  </data>
-  <data name="redoMenu.Text" xml:space="preserve">
-    <value>Ú&amp;jra</value>
-  </data>
-  <data name="deleteMenu.Text" xml:space="preserve">
-    <value>&amp;Törlés</value>
-  </data>
-  <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Teljes pálya</value>
-  </data>
-  <data name="entireMapMenu.Text" xml:space="preserve">
-    <value>Te&amp;ljes térkép</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>Na&amp;gyítás</value>
-  </data>
-  <data name="zoom50Menu.Text" xml:space="preserve">
-    <value>50%</value>
-  </data>
-  <data name="zoom100Menu.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="zoom150Menu.Text" xml:space="preserve">
-    <value>150%</value>
-  </data>
-  <data name="zoom200Menu.Text" xml:space="preserve">
-    <value>200%</value>
-  </data>
-  <data name="zoom300Menu.Text" xml:space="preserve">
-    <value>300%</value>
-  </data>
-  <data name="zoom500Menu.Text" xml:space="preserve">
-    <value>500%</value>
-  </data>
-  <data name="zoom1000Menu.Text" xml:space="preserve">
-    <value>1000%</value>
-  </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Térkép intenzitás</value>
-  </data>
-  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>Nagyon &amp;alacsony</value>
-  </data>
-  <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>Alacs&amp;ony</value>
-  </data>
-  <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>Kö&amp;zepes</value>
-  </data>
-  <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>Maga&amp;s</value>
-  </data>
-  <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Teljes</value>
-  </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Térkép&amp;minőség</value>
-  </data>
-  <data name="normalQualityMenu.Text" xml:space="preserve">
-    <value>Alacsony</value>
-  </data>
-  <data name="highQualityMenu.Text" xml:space="preserve">
-    <value>Magas</value>
-  </data>
-  <data name="showPrintAreaMenu.Text" xml:space="preserve">
-    <value>Mutassa &amp;Nyomtatott területet</value>
-  </data>
-  <data name="showPopupsMenu.Text" xml:space="preserve">
-    <value>Mutassa a &amp;Felugró adatokat</value>
-  </data>
-  <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>&amp;Minden ellenőrzőpont</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>&amp;Térképcsere az ellenőrzőpontnál</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;Szalagozás a térképcseréig</value>
-  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Térkép fájl...</value>
   </data>
@@ -369,6 +354,9 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>&amp;Pálya kinézetének testreszabása...</value>
   </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Esemény</value>
+  </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>Új &amp;pálya</value>
   </data>
@@ -386,6 +374,9 @@
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>&amp;Versenyzőszám...</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Pálya</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Törlés</value>
@@ -411,9 +402,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Forgatás</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>Át&amp;menet szalagozása</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Nincs szalagozás</value>
   </data>
@@ -426,8 +414,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Az átmenet vége szalagozott</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>Át&amp;menet szalagozása</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>A megjelenített pályák módosítása...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Elem</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Pálya összefoglaló</value>
@@ -443,6 +437,9 @@
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Ellenőrzőpont és átmenet forgalma</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Jelentések</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Súgó</value>
@@ -461,9 +458,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>A Purple Pen programról</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Hibakeresés</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Szimbólum böngésző</value>
@@ -495,8 +489,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Összeomlás</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>Leírás lefordítása</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Hibakeresés</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Leírás nyelvének hozzáadása</value>
@@ -506,6 +500,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Symbols.xml összefűzése</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>Leírás lefordítása</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Súgó</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Megnyitás</value>
@@ -549,17 +549,14 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Új pontleírás</value>
   </data>
-  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
-    <value>Új térképcsere</value>
-  </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Térképcsere az ellenőrzőpontnál</value>
   </data>
   <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
     <value>Szalagozás a térképcseréig</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Új speciális elem</value>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Új térképcsere</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Kötelező átkelő</value>
@@ -602,6 +599,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Téglalap</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Új speciális elem</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Új kanyar (Ctrl+B)</value>

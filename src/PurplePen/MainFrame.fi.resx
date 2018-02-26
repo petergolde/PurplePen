@@ -126,17 +126,152 @@
   <data name="radioButtonTopology.Text" xml:space="preserve">
     <value>Järjestys</value>
   </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>mapViewerTopology</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen tiedostot|*.ppen|Kaikki tiedostot|*.*</value>
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen tiedosto|*.ppen</value>
   </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Uusi tapahtuma...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Avaa...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Tallenna</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Tallenna &amp;nimellä...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>Vie &amp;OCAD-tiedostoihin...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Vie PDF-tiedostoihin...</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Vie Reitti&amp;härveli-tiedostoihin...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Vie &amp;XML-tiedostoon...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Luo &amp;GPX-tiedosto...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>Tulosta rastin&amp;määritteet...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Tulosta &amp;leimauskuviot...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Tulosta &amp;ratoja...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Vain tälle &amp;osalle</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Tälle radalle</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Kaikille radoille</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>A&amp;seta tulostusalue</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Ohjelman &amp;kieli...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>Lo&amp;peta</value>
+  </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Tiedosto</value>
   </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>Tyhjennä &amp;valinta</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Kumoa</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>&amp;Tee uudelleen</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Poista</value>
+  </data>
   <data name="editMenu.Text" xml:space="preserve">
     <value>&amp;Muokkaa</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>Koko &amp;rata</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>Koko &amp;kartta</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50 %</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100 %</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150 %</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200 %</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300 %</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500 %</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000 %</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoomaa</value>
+  </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Hyvin matala</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Matala</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>Keski&amp;suuri</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Korkea</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Täysi</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Kartan &amp;intensiteetti</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Matala</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Korkea</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Kartan &amp;laatu</value>
+  </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Nä&amp;ytä tulostusalue</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Näytä &amp;ponnahdustiedot</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>K&amp;aikki rastit</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Näytä</value>
@@ -153,6 +288,12 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>Rasti&amp;nmääritteet</value>
   </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Kartanvaihto &amp;rastilla</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Viitoitettu reitti kartanvaihtoon</value>
+  </data>
   <data name="addMapExchangeMenu.Text" xml:space="preserve">
     <value>&amp;Kartanvaihto</value>
   </data>
@@ -161,6 +302,9 @@
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>&amp;Tekstirivi...</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Kartanottopaikka</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
@@ -207,159 +351,6 @@
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Lisää</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Tapa&amp;htuma</value>
-  </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Rata</value>
-  </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Kohde</value>
-  </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>Ra&amp;portit</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Ohje</value>
-  </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;Uusi tapahtuma...</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Avaa...</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>&amp;Tallenna</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Tallenna &amp;nimellä...</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Vie &amp;OCAD-tiedostoihin...</value>
-  </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>Vie PDF-tiedostoihin...</value>
-  </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Vie Reitti&amp;härveli-tiedostoihin...</value>
-  </data>
-  <data name="createXmlMenu.Text" xml:space="preserve">
-    <value>Vie &amp;XML-tiedostoon...</value>
-  </data>
-  <data name="createGPXFileMenu.Text" xml:space="preserve">
-    <value>Luo &amp;GPX-tiedosto...</value>
-  </data>
-  <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>Tulosta rastin&amp;määritteet...</value>
-  </data>
-  <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>Tulosta &amp;leimauskuviot...</value>
-  </data>
-  <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Tulosta &amp;ratoja...</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>A&amp;seta tulostusalue</value>
-  </data>
-  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
-    <value>Vain tälle &amp;osalle</value>
-  </data>
-  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Tälle radalle</value>
-  </data>
-  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Kaikille radoille</value>
-  </data>
-  <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>Ohjelman &amp;kieli...</value>
-  </data>
-  <data name="exitMenu.Text" xml:space="preserve">
-    <value>Lo&amp;peta</value>
-  </data>
-  <data name="cancelMenu.Text" xml:space="preserve">
-    <value>Tyhjennä &amp;valinta</value>
-  </data>
-  <data name="undoMenu.Text" xml:space="preserve">
-    <value>&amp;Kumoa</value>
-  </data>
-  <data name="redoMenu.Text" xml:space="preserve">
-    <value>&amp;Tee uudelleen</value>
-  </data>
-  <data name="deleteMenu.Text" xml:space="preserve">
-    <value>&amp;Poista</value>
-  </data>
-  <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>Koko &amp;rata</value>
-  </data>
-  <data name="entireMapMenu.Text" xml:space="preserve">
-    <value>Koko &amp;kartta</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoomaa</value>
-  </data>
-  <data name="zoom50Menu.Text" xml:space="preserve">
-    <value>50 %</value>
-  </data>
-  <data name="zoom100Menu.Text" xml:space="preserve">
-    <value>100 %</value>
-  </data>
-  <data name="zoom150Menu.Text" xml:space="preserve">
-    <value>150 %</value>
-  </data>
-  <data name="zoom200Menu.Text" xml:space="preserve">
-    <value>200 %</value>
-  </data>
-  <data name="zoom300Menu.Text" xml:space="preserve">
-    <value>300 %</value>
-  </data>
-  <data name="zoom500Menu.Text" xml:space="preserve">
-    <value>500 %</value>
-  </data>
-  <data name="zoom1000Menu.Text" xml:space="preserve">
-    <value>1000 %</value>
-  </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Kartan &amp;intensiteetti</value>
-  </data>
-  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Hyvin matala</value>
-  </data>
-  <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Matala</value>
-  </data>
-  <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>Keski&amp;suuri</value>
-  </data>
-  <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Korkea</value>
-  </data>
-  <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Täysi</value>
-  </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Kartan &amp;laatu</value>
-  </data>
-  <data name="normalQualityMenu.Text" xml:space="preserve">
-    <value>Matala</value>
-  </data>
-  <data name="highQualityMenu.Text" xml:space="preserve">
-    <value>Korkea</value>
-  </data>
-  <data name="showPrintAreaMenu.Text" xml:space="preserve">
-    <value>Nä&amp;ytä tulostusalue</value>
-  </data>
-  <data name="showPopupsMenu.Text" xml:space="preserve">
-    <value>Näytä &amp;ponnahdustiedot</value>
-  </data>
-  <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>K&amp;aikki rastit</value>
-  </data>
-  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Kartanvaihto &amp;rastilla</value>
-  </data>
-  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;Viitoitettu reitti kartanvaihtoon</value>
-  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Karttatiedosto...</value>
   </data>
@@ -375,11 +366,29 @@
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;Leimauskuviot...</value>
   </data>
+  <data name="descriptionStd2004Menu.Text" xml:space="preserve">
+    <value>Rastinmääritteet 2004</value>
+  </data>
+  <data name="descriptionStd2018Menu.Text" xml:space="preserve">
+    <value>Rastinmääritteet 2018</value>
+  </data>
+  <data name="mapStd2000Menu.Text" xml:space="preserve">
+    <value>ISOM2000-kuvausohje</value>
+  </data>
+  <data name="mapStd2017Menu.Text" xml:space="preserve">
+    <value>ISOM2017-kuvausohje</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;IOF:n standardit</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Muokkaa &amp;sanallisia rastinmääritteitä...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Muokkaa &amp;ulkoasua...</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Tapa&amp;htuma</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Lisää rata...</value>
@@ -401,6 +410,9 @@
   </data>
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>Viestin joukkue&amp;hajonnat...</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Rata</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Poista</value>
@@ -429,9 +441,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Kierrä</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Viitoitus</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Ei viitoitusta</value>
   </data>
@@ -444,8 +453,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Loppu rastivälistä viitoitettu</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Viitoitus</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Muuta näk&amp;ymisasetuksia...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Kohde</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Rata&amp;yhteenveto</value>
@@ -461,6 +476,9 @@
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>&amp;Kuormitusraportti</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>Ra&amp;portit</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen -&amp;ohje</value>
@@ -479,9 +497,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Tietoja ohjelmasta</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Debug</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbol Browser</value>
@@ -513,8 +528,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Kaatuminen</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Käännä</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Debug</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lisää rastinmääritteiden kieli...</value>
@@ -524,6 +539,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Merge Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Käännä</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Ohje</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Avaa</value>
@@ -567,20 +588,20 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lisää rastinmääritteet</value>
   </data>
-  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
-    <value>Lisää kartanvaihto</value>
-  </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Kartanvaihto rastilla</value>
   </data>
   <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
     <value>Viitoitettu reitti kartanvaihtoon</value>
   </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Lisää kartanvaihto</value>
+  </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Lisää hajonta</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Lisää erityiskohde</value>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kartanottopaikka</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
@@ -623,6 +644,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Suorakulmio</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Lisää erityiskohde</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Lisää kulmapiste (Ctrl+B)</value>

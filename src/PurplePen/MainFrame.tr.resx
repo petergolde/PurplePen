@@ -126,6 +126,66 @@
   <data name="radioButtonTopology.Text" xml:space="preserve">
     <value>Sipariş</value>
   </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Yeni etkinlik...</value>
+  </data>
+  <data name="openMenu.Text" xml:space="preserve">
+    <value>&amp;Aç...</value>
+  </data>
+  <data name="saveMenu.Text" xml:space="preserve">
+    <value>&amp;Kaydet</value>
+  </data>
+  <data name="saveAsMenu.Text" xml:space="preserve">
+    <value>Farklı kaydet...</value>
+  </data>
+  <data name="createOcadFilesMenu.Text" xml:space="preserve">
+    <value>OCAD ve Dosyalar Oluştur ...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>PDF'ler oluşturun ...</value>
+  </data>
+  <data name="zoom50Menu.Text" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="zoom100Menu.Text" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="zoom150Menu.Text" xml:space="preserve">
+    <value>150%</value>
+  </data>
+  <data name="zoom200Menu.Text" xml:space="preserve">
+    <value>200%</value>
+  </data>
+  <data name="zoom300Menu.Text" xml:space="preserve">
+    <value>300%</value>
+  </data>
+  <data name="zoom500Menu.Text" xml:space="preserve">
+    <value>500%</value>
+  </data>
+  <data name="zoom1000Menu.Text" xml:space="preserve">
+    <value>1000%</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Yaklaştır</value>
+  </data>
+  <data name="lowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Düşük</value>
+  </data>
+  <data name="mediumIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Orta</value>
+  </data>
+  <data name="highIntensityMenu.Text" xml:space="preserve">
+    <value>&amp; Yüksek</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Tam</value>
+  </data>
+  <data name="normalQualityMenu.Text" xml:space="preserve">
+    <value>Düşük</value>
+  </data>
+  <data name="highQualityMenu.Text" xml:space="preserve">
+    <value>Yüksek</value>
+  </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Görünüm</value>
   </data>
@@ -156,74 +216,14 @@
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Ekle</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Yardım</value>
-  </data>
-  <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;Yeni etkinlik...</value>
-  </data>
-  <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;Aç...</value>
-  </data>
-  <data name="saveMenu.Text" xml:space="preserve">
-    <value>&amp;Kaydet</value>
-  </data>
-  <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>Farklı kaydet...</value>
-  </data>
-  <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>OCAD ve Dosyalar Oluştur ...</value>
-  </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>PDF'ler oluşturun ...</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Yaklaştır</value>
-  </data>
-  <data name="zoom50Menu.Text" xml:space="preserve">
-    <value>50%</value>
-  </data>
-  <data name="zoom100Menu.Text" xml:space="preserve">
-    <value>100%</value>
-  </data>
-  <data name="zoom150Menu.Text" xml:space="preserve">
-    <value>150%</value>
-  </data>
-  <data name="zoom200Menu.Text" xml:space="preserve">
-    <value>200%</value>
-  </data>
-  <data name="zoom300Menu.Text" xml:space="preserve">
-    <value>300%</value>
-  </data>
-  <data name="zoom500Menu.Text" xml:space="preserve">
-    <value>500%</value>
-  </data>
-  <data name="zoom1000Menu.Text" xml:space="preserve">
-    <value>1000%</value>
-  </data>
-  <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Düşük</value>
-  </data>
-  <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Orta</value>
-  </data>
-  <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>&amp; Yüksek</value>
-  </data>
-  <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Tam</value>
-  </data>
-  <data name="normalQualityMenu.Text" xml:space="preserve">
-    <value>Düşük</value>
-  </data>
-  <data name="highQualityMenu.Text" xml:space="preserve">
-    <value>Yüksek</value>
-  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp; Harita Dosyası ...</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>&amp;Açıklama Metni Çevirisi</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Yardım</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Aç</value>
@@ -267,20 +267,17 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Açıklama Ekle</value>
   </data>
-  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
-    <value>Harita Değişimi Ekle</value>
-  </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Kontrol Noktasında Harita Değişimi</value>
   </data>
   <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
     <value>Harita Değişim Rotası</value>
   </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Harita Değişimi Ekle</value>
+  </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Varyanson Ekle</value>
-  </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Özel Öğe Ekle</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Metin</value>
@@ -293,6 +290,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Dikdörtgen</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Özel Öğe Ekle</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Add Bend (Ctrl+B)</value>

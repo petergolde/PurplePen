@@ -129,21 +129,6 @@
   <data name="mapViewerTopology.Text" xml:space="preserve">
     <value>mapViewerTopology</value>
   </data>
-  <data name="addTextMenu.Text" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
-  <data name="addImageMenu.Text" xml:space="preserve">
-    <value>Afbeelding</value>
-  </data>
-  <data name="addLineMenu.Text" xml:space="preserve">
-    <value>Lijn</value>
-  </data>
-  <data name="addRectangleMenu.Text" xml:space="preserve">
-    <value>Rechthoek</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Help</value>
-  </data>
   <data name="openMenu.Text" xml:space="preserve">
     <value>&amp;Open...</value>
   </data>
@@ -177,9 +162,6 @@
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Afdruk&amp;gebied instellen</value>
   </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
-  </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
   </data>
@@ -201,11 +183,26 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
+  </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Laag</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Hoog</value>
+  </data>
+  <data name="addTextMenu.Text" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Lijn</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rechthoek</value>
   </data>
   <data name="deleteForkMenu.Text" xml:space="preserve">
     <value>Verwijder a&amp;fsplitsing/lus</value>
@@ -230,6 +227,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Draai</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Help</value>
   </data>
   <data name="openToolStripButton.ToolTipText" xml:space="preserve">
     <value>Open (Ctrl+O)</value>
