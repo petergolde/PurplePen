@@ -19,14 +19,25 @@
 <h2>Changes in 3.1.2</h2>
 <h3>New features</h3>
     <ul>
-        <li></li>
+        <li>Contains the first implementation of a feature to view other courses at the same time as your current course. I am 
+            interested in feedback on this feature. Try it out using View/Other Courses menu item.
+        </li>
+        <li>Image objects (added with Add/Image) now appear above other Purple Pen objects, including white-out areas. Note that
+            when exporting to OCAD version 10 or below, this layering will not be preserved due to limitations of the OCAD file format.
+            You will receive a warning when this occurs.
+        </li>
     </ul>
 <h3>Bug Fixes</h3>
     <ul>
-        <li>Fix bug in Event Audit when used with the 2018 control description standard bend symbol. (Thank you David Rosen for reporting this.)</li>
-        <li>Fix some missing help topics.</li>
+        <li>Can now load files saved by the recently released OpenOrienteering Mapper 0.8.0.</li>
+        <li>Fixed a bad drawing bug with new OCAD 12 area features that were at an angle. (Thanks to Roger Stein for reporting this.) </li>
+        <li>Improved the automatic cutting of gaps in lines when they are touching control circles. (Thanks to Roger Stein for reporting this.)</li>
+        <li>Improved the conversion of CMYK to RGB colors so that 100% K converts to all black. (Thanks to Ove Baardsgaard for reporting this.)</li>
+        <li>Tooltips now appear on all controls if View/All Controls is selected.</li>
+        <li>A warning appears when exporting to OCAD 8 or lower format and the base map contains templates. (Thanks to Mike Godfree for reporting this.)</li>
+        <li>A fix for font names in OCAD files containing Japanese characters (Thanks to miyakawa_to@yahoo.co.jp for reporting this.)</li>
+        <li>When exported to OpenOrienteering Mapper format, image objects may have been layered incorrectly.</li>
     </ul>
-
 
 
 <h2>Changes in 3.1.1</h2>
