@@ -324,7 +324,13 @@ namespace PurplePen
                     try {
                         if (File.Exists(MapFileName)) {
                             ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
-                            mapDisplay.SetMapFile(MapType, MapFileName);
+
+                            bool success = HandleExceptions(
+                                delegate {
+                                    mapDisplay.SetMapFile(MapType, MapFileName);
+                                },
+                                MiscText.CannotLoadMapFile, MapFileName);
+
                             NewMapFileLoaded(false);
                         }
                         else {
