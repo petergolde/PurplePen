@@ -1339,7 +1339,7 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * appearance.lineWidth * courseObjRatio, xformWorldToPixel);
+            float thickness = TransformDistance(LineThickness, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner, 2 = lower-right corner
             float radius = (Diameter - LineThickness) / 2F;
@@ -1535,11 +1535,33 @@ namespace PurplePen
             this.crossHairOptions = crossHairOptions;
         }
 
+        // Diameter of outside circle, measured from the outside of the line.
+        private float OutsideDiameter {
+            get {
+                return appearance.FinishCircleOutsideDiameter * courseObjRatio;
+            }
+        }
+
+        // Diameter of inside circle, measured from the outside of the line.
+        private float InsideDiameter {
+            get {
+                return appearance.FinishCircleInsideDiameter * courseObjRatio;
+            }
+        }
+
+        private float LineThickness {
+            get {
+                return NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth;
+            }
+        }
+
+
+
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, (5.35F * courseObjRatio * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth));
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, 7.0F * courseObjRatio * appearance.controlCircleSize);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, InsideDiameter);
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, OutsideDiameter);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Finish", "706", glyph, false);
@@ -1559,13 +1581,13 @@ namespace PurplePen
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
             // Transform the thickness to pixel coords.
-            float thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
+            float thickness = TransformDistance(LineThickness, xformWorldToPixel);
 
             // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner inner, 2 = lower-right corner inner, 3 = upper-left outer, 4=lower-right outer
-            float radiusOuter = ((7.0F * appearance.controlCircleSize - NormalCourseAppearance.lineThickness * appearance.lineWidth) * courseObjRatio) / 2F;
-            float radiusInner = ((5.35F * appearance.controlCircleSize - 2 * NormalCourseAppearance.lineThickness * appearance.lineWidth) * courseObjRatio) / 2F;
+            float radiusOuter = (OutsideDiameter - LineThickness) / 2F;
+            float radiusInner = (InsideDiameter - LineThickness) / 2F;
             PointF[] pts = { location, new PointF(location.X - radiusInner, location.Y - radiusInner), new PointF(location.X + radiusInner, location.Y + radiusInner),
-                                                                         new PointF(location.X - radiusOuter, location.Y - radiusOuter), new PointF(location.X + radiusOuter, location.Y + radiusOuter)};
+                                       new PointF(location.X - radiusOuter, location.Y - radiusOuter), new PointF(location.X + radiusOuter, location.Y + radiusOuter)};
             xformWorldToPixel.TransformPoints(pts);
 
             // Draw the inner and outer circle.
