@@ -1338,7 +1338,7 @@ for the symbols.
   </symbol>
 
   <symbol kind="D" id="1.3" size-is-depth="true">
-    <name lang="en-AU">Reentrant</name>
+    <name lang="en-AU">Gully</name>
 
     <name lang="en">Reentrant</name>
     <name lang="fr">Rentrant</name>
@@ -5266,8 +5266,8 @@ for the symbols.
     <name lang="pl">Track, Path</name>
     <name lang="cs">Stezka</name>
 
-    <text lang="en-AU" plural="true">paths</text>
-    <text lang="en-AU">path</text>
+    <text lang="en-AU" plural="true">tracks</text>
+    <text lang="en-AU">track</text>
 
     <text lang="en">path</text>
     <text lang="en" plural="true">paths</text>
