@@ -3692,7 +3692,7 @@ for the symbols.
   </symbol>
 
   <symbol kind="D" id="3.5" size-is-depth="true">
-    <name lang="en-AU">Minor water channel, ditch</name>
+    <name lang="en-AU">Minor watercourse</name>
     <name lang="en">Minor water channel, ditch</name>
     <name lang="fr">Fossé ou rigole</name>
     <name lang="en-GB">Minor water channel, ditch</name>
@@ -3711,8 +3711,8 @@ for the symbols.
     <name lang="pl">Minor water channel, ditch</name>
     <name lang="cs">Vodoteč</name>
 
-    <text lang="en-AU" plural="true">ditches</text>
-    <text lang="en-AU">ditch</text>
+    <text lang="en-AU" plural="true">minor watercourses</text>
+    <text lang="en-AU">minor watercourse</text>
 
     <text lang="en">ditch</text>
     <text lang="en" plural="true">ditches</text>
