@@ -42,3 +42,4 @@ src/.vs/
 *.opendb
 *.db
 src/Tools/SignHelper/.vs/
+src/Innosetup/output/
