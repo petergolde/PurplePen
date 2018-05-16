@@ -792,7 +792,7 @@ namespace PurplePen
 
             if (kindToRemove == ControlPointKind.Start) {
                 // Remove map issue point, if any.
-                if (course.firstCourseControl != null && eventDB.GetControl(eventDB.GetCourseControl(course.firstCourseControl).control).kind == ControlPointKind.MapIssue)
+                if (course.firstCourseControl.IsNotNone && eventDB.GetControl(eventDB.GetCourseControl(course.firstCourseControl).control).kind == ControlPointKind.MapIssue)
                 {
                     removedControls.UnionWith(ChangeEvent.RemoveCourseControl(eventDB, courseId, course.firstCourseControl));
                 }
@@ -1031,7 +1031,7 @@ namespace PurplePen
             }
             else {
                 // Add the control as a new start control.
-                if (controlKind == ControlPointKind.Start && QueryEvent.FindControlOfKind(eventDB, courseId, ControlPointKind.MapIssue) != null) {
+                if (controlKind == ControlPointKind.Start && QueryEvent.FindControlOfKind(eventDB, courseId, ControlPointKind.MapIssue).IsNotNone) {
                     // Already a map issue and we are adding a start. It goes second.
                     Id<CourseControl> cc1 = QueryEvent.FindControlOfKind(eventDB, courseId, ControlPointKind.MapIssue);
                     Id<CourseControl> cc2 = Id<CourseControl>.None;
