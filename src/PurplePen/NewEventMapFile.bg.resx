@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>За начертаване на маршрутите трябва да изберете картов файл, който ще бъде използван. Обикновено това е OCAD файл (въпреки че графични файлове във формат JPEG също могат да се използват). Кликнете върху бутона "Избери...", за да изберете картов файл.</value>
-  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Избери картов файл...</value>
   </data>

@@ -43,3 +43,4 @@ src/.vs/
 *.db
 src/Tools/SignHelper/.vs/
 src/Innosetup/output/
+src/Tools/TranslateTool/.vs/

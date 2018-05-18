@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>Afin de dessiner vos circuits, vous devez sélectionner la carte que vous utiliserez. Habituellement c'est un fichier OCAD (sachant que des fichiers image tels que les JPEGs peuvent également être utilisés). Cliquer sur le bouton "Choisir..." pour sélectionner une carte.</value>
-  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Choisir une carte...</value>
   </data>

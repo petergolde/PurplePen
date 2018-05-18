@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>In order to design your courses, you must select the map file you will be using. Typically this is an OCAD file (although image files like JPEGs can be used instead). Click the "Choose..." button to select a map file.</value>
-  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Choose map file...</value>
   </data>

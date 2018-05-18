@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>For å kunne lage løyper må du velge en kartfil. Dette er vanligvis en OCAD fil, men også bildefiler som JPEG og GIF kan benyttes. Klikk på "Velg..." for å velge kartfilen.</value>
-  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Velg kartfil...</value>
   </data>

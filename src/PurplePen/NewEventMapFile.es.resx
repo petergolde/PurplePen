@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>Para poder trazar sus recorridos necesita seleccionar el archivo del mapa con el que quiere trabajar. Normalmente será un fichero OCAD, aunque también puede usar un fichero imagen en JPG o similar. Pulse el boton "Seleccionar..." para buscar el mapa.</value>
-  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Seleccionar otro archivo de mapa...</value>
   </data>

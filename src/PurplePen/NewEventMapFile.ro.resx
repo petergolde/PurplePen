@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>Pentru a defini traseele, trebuie selectat fișierul hartă care va fi utilizat. De obicei acesta este un fișier OCAD (deși pot fi folosite si fișiere imagine precum JPEG). Click pe butonul "Selectează..." pentru a selecta fișierul hartă.</value>
-  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Alege fișierul de hartă...</value>
   </data>
