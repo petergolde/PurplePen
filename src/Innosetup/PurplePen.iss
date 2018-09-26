@@ -52,7 +52,7 @@
 
 #define MyAppSetupName 'Purple Pen'
 #define MyAppName "Purple Pen"
-#define MyAppVersion "3.2.0"
+#define MyAppVersion "3.1.4"
 #define MyAppPublisher "Golde Software"
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
@@ -88,7 +88,7 @@ SignedUninstaller=yes
 UninstallDisplayIcon={app}\{#MyAppExeName},0
 
 ;MinVersion default value: "0,5.0 (Windows 2000+) if Unicode Inno Setup, else 4.0,4.0 (Windows 95+)"
-;MinVersion=0,5.0
+MinVersion=0,5.1
 PrivilegesRequired=admin
 
 ;These were turned on in the sample for the bootstrapper, but I turned them off again.

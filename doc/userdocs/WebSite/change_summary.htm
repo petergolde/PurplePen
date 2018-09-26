@@ -14,34 +14,46 @@
 
 <body>
 
-<h1>Purple Pen Change Summary</h1>
+    <h1>Purple Pen Change Summary</h1>
 
-<h2>Changes in 3.1.3</h2>
-<h3>New features</h3>
+    <h2>Changes in 3.1.4</h2>
+    <h3>Changed features</h3>
     <ul>
-        <li>Supports loading files created with OCAD 2018.
+        <li>Due to licensing issues, the setup program has been rewritten.</li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>Fixed bug loading OpenOrienteering Mapper files that were converted from georeferenced OCAD files. (Thanks to miyakawa_to)</li>
+        <li>Fixed bug adding start to an existing course. </li>
+    </ul>
+
+    <h2>Changes in 3.1.3</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            Supports loading files created with OCAD 2018.
         </li>
     </ul>
-<h3>Bug Fixes</h3>
+    <h3>Bug Fixes</h3>
     <ul>
         <li>Fixed the size of the finish symbol when ISOM2017 is selected. (Thanks to ezzrezzoni for spotting this!)</li>
         <li>No longer draws OpenOrienteering Mapper symbols marked as helper symbols. (Thanks to Sverre Froyen.) </li>
     </ul>
 
-<h1>Purple Pen Change Summary</h1>
-
-<h2>Changes in 3.1.2</h2>
-<h3>New features</h3>
+    <h2>Changes in 3.1.2</h2>
+    <h3>New features</h3>
     <ul>
-        <li>Contains the first implementation of a feature to view other courses at the same time as your current course. I am 
+        <li>
+            Contains the first implementation of a feature to view other courses at the same time as your current course. I am
             interested in feedback on this feature. Try it out using View/Other Courses menu item.
         </li>
-        <li>Image objects (added with Add/Image) now appear above other Purple Pen objects, including white-out areas. Note that
+        <li>
+            Image objects (added with Add/Image) now appear above other Purple Pen objects, including white-out areas. Note that
             when exporting to OCAD version 10 or below, this layering will not be preserved due to limitations of the OCAD file format.
             You will receive a warning when this occurs.
         </li>
     </ul>
-<h3>Bug Fixes</h3>
+    <h3>Bug Fixes</h3>
     <ul>
         <li>Can now load files saved by the recently released OpenOrienteering Mapper 0.8.0.</li>
         <li>Fixed a bad drawing bug with new OCAD 12 area features that were at an angle. (Thanks to Roger Stein for reporting this.) </li>
@@ -54,194 +66,213 @@
     </ul>
 
 
-<h2>Changes in 3.1.1</h2>
-<h3>New features</h3>
+    <h2>Changes in 3.1.1</h2>
+    <h3>New features</h3>
     <ul>
         <li>A new, modern web site at http://purple-pen.org.  Thanks to Eric Golde for designing and coding this.</li>
     </ul>
-<h3>Bug Fixes</h3>
+    <h3>Bug Fixes</h3>
     <ul>
         <li>Fix bug in Event Audit when used with the 2018 control description standard bend symbol. (Thank you David Rosen for reporting this.)</li>
         <li>Fix some missing help topics.</li>
     </ul>
 
 
-<h2>Changes in 3.1.0</h2>
-<h3>New features</h3>
-<ul>
-    <li>Now supports the 2018 control description standards. When creating an event, you have the choice as to which
-    control description standard to use. You can also switch an event from the 2000 standard to the 2018 standard by using the
-    Event/IOF Standards menu item.</li>
-    <li>Now supports the ISOM 2017 map standard. The control circles are slightly smaller, and the shapes and sizes of
-    items are slightly different. The out of bound area is hatched differently.</li>
-    <li>In Event/Customize Appearance, you can now change whether control circles and lines scale with the map when 
-    printing at different map scales.</li>
-    <li>You can now add an "Map Issue Point" before the start. The distance from the map issue point to the start is included
-    in the length of the course, and the map issue point is denoted with a cross bar and dashed line to the start, as described
-    in ISOM 2017.</li>
-    <li>The map display is updated faster and with less flicker.</li>
-    <li>OCAD 12 new structured area options are now displayed correctly. These are used in the OCAD 12 templates for ISOM 2017.</li>
-</ul>
+    <h2>Changes in 3.1.0</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            Now supports the 2018 control description standards. When creating an event, you have the choice as to which
+            control description standard to use. You can also switch an event from the 2000 standard to the 2018 standard by using the
+            Event/IOF Standards menu item.
+        </li>
+        <li>
+            Now supports the ISOM 2017 map standard. The control circles are slightly smaller, and the shapes and sizes of
+            items are slightly different. The out of bound area is hatched differently.
+        </li>
+        <li>
+            In Event/Customize Appearance, you can now change whether control circles and lines scale with the map when
+            printing at different map scales.
+        </li>
+        <li>
+            You can now add an "Map Issue Point" before the start. The distance from the map issue point to the start is included
+            in the length of the course, and the map issue point is denoted with a cross bar and dashed line to the start, as described
+            in ISOM 2017.
+        </li>
+        <li>The map display is updated faster and with less flicker.</li>
+        <li>OCAD 12 new structured area options are now displayed correctly. These are used in the OCAD 12 templates for ISOM 2017.</li>
+    </ul>
 
-<h2>Changes in 3.0.1</h2>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>Fix exceptions that occur when dragging or deleting controls in certain cases.</li>
-    <li>Record both absolute and relative paths of map file into the Purple Pen file so moving Purple Pen file works better (thanks to Mark Roberts for report).</li>
-    <li>Fix bug loading certain OpenOrienteering Mapper files.</li>
-    <li>Correct error message when attempting to load old format OpenOrienteering Mapper file.</li>
-</ul>
+    <h2>Changes in 3.0.1</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>Fix exceptions that occur when dragging or deleting controls in certain cases.</li>
+        <li>Record both absolute and relative paths of map file into the Purple Pen file so moving Purple Pen file works better (thanks to Mark Roberts for report).</li>
+        <li>Fix bug loading certain OpenOrienteering Mapper files.</li>
+        <li>Correct error message when attempting to load old format OpenOrienteering Mapper file.</li>
+    </ul>
 
-<h2>Changes in 3.0.0</h2>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>Several issues in loading OpenOrienteering Mapper files were fixed.</li>
-</ul>
+    <h2>Changes in 3.0.0</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>Several issues in loading OpenOrienteering Mapper files were fixed.</li>
+    </ul>
 
-<h2>Changes in 3.0.0 Beta 4</h2>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>Fixed: In some cases, when creating PDF files, and the base map file is a PDF, files after the first one
-        would be blank. (Thanks to Gordon Bossley for reporting the problem.)
-    </li>
-</ul>
+    <h2>Changes in 3.0.0 Beta 4</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            Fixed: In some cases, when creating PDF files, and the base map file is a PDF, files after the first one
+            would be blank. (Thanks to Gordon Bossley for reporting the problem.)
+        </li>
+    </ul>
 
-<h2>Changes in 3.0.0 Beta 3</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p><strong>Course Variations and Relays</strong></p>
-        <p>
-            Finish up support through the program. All reports now handle variations correctly. Course summary shows the length of every variation. 
-            Creating OCAD Files handles variations correctly.
-        </p>
-        <p>IOF XML export now includes leg assignments for relays if those have been defined.</p>
-        <p>When defining relay team assignments, you can assign specific legs to specific branches. For example, if there are four branches
-        and four legs, you could assign leg 4 to always run branch D, and have legs 1, 2, 3 vary among branches A, B, C.</p>
-    </li>
-    <li>
-        <p>
-            White out, lines, images, text, and all special objects can now be specifically added or removed from the all 
-            controls view.
-        </p>
-    </li>
-    <li>
-        <p>
-            The type of flagging to the finish can now be set separately for different courses that use the same finish control.
-        </p>
-    </li>
-    <li>
-        <p>
-            Event Audit now shows legs run in opposite order on different courses. Event Audit also shows if the same control
-            is used twice in a row or twice in the same score course.
-        </p>
-    </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>Double clicking in the description area sometimes didn't show popup correctly. </li>
-    <li>PDF creation when the printing scale differs from the map scale sometimes didn't scale correctly.</li>
-    <li>Print area setting with map exchanges didn't always work correctly.</li>
-    <li>Map exchanges are not included in IOF XML version 2 export, for better compatibility.</li>
-    <li>When a PDF was the base map, in rare cases PDF export had objects displaced from their correct location.</li>
-</ul>
+    <h2>Changes in 3.0.0 Beta 3</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p><strong>Course Variations and Relays</strong></p>
+            <p>
+                Finish up support through the program. All reports now handle variations correctly. Course summary shows the length of every variation.
+                Creating OCAD Files handles variations correctly.
+            </p>
+            <p>IOF XML export now includes leg assignments for relays if those have been defined.</p>
+            <p>
+                When defining relay team assignments, you can assign specific legs to specific branches. For example, if there are four branches
+                and four legs, you could assign leg 4 to always run branch D, and have legs 1, 2, 3 vary among branches A, B, C.
+            </p>
+        </li>
+        <li>
+            <p>
+                White out, lines, images, text, and all special objects can now be specifically added or removed from the all
+                controls view.
+            </p>
+        </li>
+        <li>
+            <p>
+                The type of flagging to the finish can now be set separately for different courses that use the same finish control.
+            </p>
+        </li>
+        <li>
+            <p>
+                Event Audit now shows legs run in opposite order on different courses. Event Audit also shows if the same control
+                is used twice in a row or twice in the same score course.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>Double clicking in the description area sometimes didn't show popup correctly. </li>
+        <li>PDF creation when the printing scale differs from the map scale sometimes didn't scale correctly.</li>
+        <li>Print area setting with map exchanges didn't always work correctly.</li>
+        <li>Map exchanges are not included in IOF XML version 2 export, for better compatibility.</li>
+        <li>When a PDF was the base map, in rare cases PDF export had objects displaced from their correct location.</li>
+    </ul>
 
 
 
-<h2>Changes in 3.0.0 Beta 2</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p><strong>Course Variations and Relays</strong></p>
-        <p>Fix signficant bugs that cause relay courses to sometimes not appear. Better flexibility for rearranging and inserting
-        controls in the control ordering view. Better support in reports. </p>
-    </li>
-    <li>
-        <p><strong>64-bit Support</strong></p>
-        <p>Purple Pen now runs in 64-bit mode on 64-bit operating systems. You do not need to select a separate 64-bit installation;
-        the installer installs 32-bit and 64-bit support. On 64-bit operating systems, Purple Pen will be able to load larger
-        bitmaps and PDFs (up to 500 megapixels) without running out of memory. </p>
-    </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>Numerous bug fixes. More detail to come.</li>
-</ul>
+    <h2>Changes in 3.0.0 Beta 2</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p><strong>Course Variations and Relays</strong></p>
+            <p>
+                Fix signficant bugs that cause relay courses to sometimes not appear. Better flexibility for rearranging and inserting
+                controls in the control ordering view. Better support in reports.
+            </p>
+        </li>
+        <li>
+            <p><strong>64-bit Support</strong></p>
+            <p>
+                Purple Pen now runs in 64-bit mode on 64-bit operating systems. You do not need to select a separate 64-bit installation;
+                the installer installs 32-bit and 64-bit support. On 64-bit operating systems, Purple Pen will be able to load larger
+                bitmaps and PDFs (up to 500 megapixels) without running out of memory.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>Numerous bug fixes. More detail to come.</li>
+    </ul>
 
-<h2>Changes in 3.0.0 Beta 1</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p><strong>Open Orienteering Mapper Files</strong></p>
-        <p>
-            Purple Pen now allows an Open Orienteering Mapper file (.xmap or .omap) to be used as the base map for course design. 
-            You can also export your course designs to a new Open Orienteering Mapper file. All Open Orienteering Mapper maps 
-            should display as they appear in OOM. Georeferenced OOM files are supported only if they use the UTM coordinate 
-            system (this restriction may be relaxed in the final version).
-        </p>
-    </li>
+    <h2>Changes in 3.0.0 Beta 1</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p><strong>Open Orienteering Mapper Files</strong></p>
+            <p>
+                Purple Pen now allows an Open Orienteering Mapper file (.xmap or .omap) to be used as the base map for course design.
+                You can also export your course designs to a new Open Orienteering Mapper file. All Open Orienteering Mapper maps
+                should display as they appear in OOM. Georeferenced OOM files are supported only if they use the UTM coordinate
+                system (this restriction may be relaxed in the final version).
+            </p>
+        </li>
 
-    <li>
-        <p><strong>Course Variations and Relays</strong></p>
-        <p>
-            You can now add forks or loops into courses, creating courses with variations. For example, a course might have 
-            two 2-way forks in a row, allowing four possible ways through the course. Each course variation is identified 
-            with a letter code that identifies which forks are taken. In the previous example, "AD" would indication that 
-            choice A is taken at the first fork, and choice D at the second fork. In order to view the variations more easily, 
-            the left side of the Purple Pen display (that normally shows the control descriptions), can be switched to show the 
-            control ordering, with forks displayed. Controls can be dragged around the ordering, and controls and legs can be 
-            easily selected for adding new controls. In order to create a variation, select a control, then click "Add Variation" 
-            on the toolbar. You can chose whether to add a fork or loop, and how many branches to create.
-        </p>
-        <p>
-            When you have a course with variations, Purple Pen can automatically assign variations to relay team members. 
-            Chose "Relay Team Variations" from the Course menu, and chose how many legs and teams you have. You can later 
-            add more teams without disrupting the assignments of existing teams, as long as the number and arrangement of 
-            forks doesn't change.
-        </p>
-        <p>
-            When printing (courses, description sheets, punch cards), you can chose which variations or teams to print. 
-            Click on the course with the variation, and click "Select Variations..." to chose variations for that course.
-        </p>
-    </li>
+        <li>
+            <p><strong>Course Variations and Relays</strong></p>
+            <p>
+                You can now add forks or loops into courses, creating courses with variations. For example, a course might have
+                two 2-way forks in a row, allowing four possible ways through the course. Each course variation is identified
+                with a letter code that identifies which forks are taken. In the previous example, "AD" would indication that
+                choice A is taken at the first fork, and choice D at the second fork. In order to view the variations more easily,
+                the left side of the Purple Pen display (that normally shows the control descriptions), can be switched to show the
+                control ordering, with forks displayed. Controls can be dragged around the ordering, and controls and legs can be
+                easily selected for adding new controls. In order to create a variation, select a control, then click "Add Variation"
+                on the toolbar. You can chose whether to add a fork or loop, and how many branches to create.
+            </p>
+            <p>
+                When you have a course with variations, Purple Pen can automatically assign variations to relay team members.
+                Chose "Relay Team Variations" from the Course menu, and chose how many legs and teams you have. You can later
+                add more teams without disrupting the assignments of existing teams, as long as the number and arrangement of
+                forks doesn't change.
+            </p>
+            <p>
+                When printing (courses, description sheets, punch cards), you can chose which variations or teams to print.
+                Click on the course with the variation, and click "Select Variations..." to chose variations for that course.
+            </p>
+        </li>
 
-    <li>
-        <p><strong>Better PDF Files</strong></p>
-        <p>
-            When using a PDF file as the base map for course design, Purple Pen no longer requires the download of 
-            GPL Ghostscript for reading PDF files. Purple Pen now has built in support for reading PDFs, based on the 
-            open source PDFium project used by Google Chrome. Compatibility is much better, especially for PDFs 
-            produced by OCAD.
-        </p>
-    </li>
+        <li>
+            <p><strong>Better PDF Files</strong></p>
+            <p>
+                When using a PDF file as the base map for course design, Purple Pen no longer requires the download of
+                GPL Ghostscript for reading PDF files. Purple Pen now has built in support for reading PDFs, based on the
+                open source PDFium project used by Google Chrome. Compatibility is much better, especially for PDFs
+                produced by OCAD.
+            </p>
+        </li>
 
-    <li>
-        <p><strong>User Interface Changes</strong></p>
-        <p>
-            The Item menu has been reorganized, and the entries that add items have been moved to a new "Add" menu.
-        </p>
-    </li>
-</ul>
+        <li>
+            <p><strong>User Interface Changes</strong></p>
+            <p>
+                The Item menu has been reorganized, and the entries that add items have been moved to a new "Add" menu.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.6.2</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>Polish and Hungarian translations included.</p>
-    </li>
-    <li>
-        <p>Now supports IOF XML version 3.0 export along with version 2.0.3.</p>
-    </li>
-    <li>
-        <p>IOF XML export (both versions 2 and 3) now output real-world coordinates of controls
-        when used with a geo-referenced OCAD map.</p>
-    </li>
-    <li>
-        <p>New support for text control descriptions to enable languages such as Polish to include nouns that change case
-        based on modifiers in other columns.</p>
-    </li>
-</ul>
-<h3>Bug fixes</h3>
+    <h2>Changes in 2.6.2</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>Polish and Hungarian translations included.</p>
+        </li>
+        <li>
+            <p>Now supports IOF XML version 3.0 export along with version 2.0.3.</p>
+        </li>
+        <li>
+            <p>
+                IOF XML export (both versions 2 and 3) now output real-world coordinates of controls
+                when used with a geo-referenced OCAD map.
+            </p>
+        </li>
+        <li>
+            <p>
+                New support for text control descriptions to enable languages such as Polish to include nouns that change case
+                based on modifiers in other columns.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug fixes</h3>
     <ul>
         <li>
             Ghostscript version updated to 9.16. This will require a re-download and install of Ghostscript when
@@ -255,475 +286,481 @@
         </li>
     </ul>
 
-<h2>Changes in 2.6.1</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            Supports Polish as a language for textual control descriptions. Thanks to Dominik Zalewski!
-        </p>
-    </li>
-</ul>
-<h3>Bug fixes</h3>
-<ul>
-    <li>
-        <p>
-            Eliminates a bug where the initial language for control descriptions was sometimes set incorrectly.
-        </p>
-    </li>
-    <li>
-        <p>
-            Eliminates a bug drawing PDF files >200 square inches or bitmap files >72,000,000 pixels. (Thanks
-            to Tommi Lahtonen for finding and reporting this bug.)
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.6.1</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Supports Polish as a language for textual control descriptions. Thanks to Dominik Zalewski!
+            </p>
+        </li>
+    </ul>
+    <h3>Bug fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Eliminates a bug where the initial language for control descriptions was sometimes set incorrectly.
+            </p>
+        </li>
+        <li>
+            <p>
+                Eliminates a bug drawing PDF files >200 square inches or bitmap files >72,000,000 pixels. (Thanks
+                to Tommi Lahtonen for finding and reporting this bug.)
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.6.0</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            Supports the OCAD 12 file format. Purple Pen can load map files in the OCAD 12 file format, and can
-            also export to the OCAD 12 file format. However, new symbol types only in OCAD 12 are not yet supported. These
-            symbol features are rarely, if ever, used in orienteering maps, so this should not be a significant 
-            issue. If you do use these features, a warning message will appear when loading the file, and also
-            when printing or exporting a PDF.
-        </p>
-    </li>
-    <li>
-        <p>
-            The handling of print areas, paper sizes, and orientation (landscape/portrait) has been substantially
-            redone in order to make it simpler to use. Instead of setting the paper size when printing or creating
-            a PDF, you now set the paper size when creating a new event, or when using the File/Set Print Area
-            command. You can set different paper sizes for different courses.
-        </p>
-        <p>
-            The print area can now be viewed all the time using the View/Show Print Area command. When changing
-            the print area, you can now have the print area fixed to be the same as the page size, which greatly
-            simplifies setting the print area. Also, there is an automatic setting which automatically choses
-            the print area based on the map and the course.
-        </p>
-        <p>
-            When loading files created in a previous version of Purple Pen, you should check the
-            paper size and make sure it is set correctly.
-        </p>
-    </li>
-    <li>
-        <p>
-            A new option is present on the Event/Customize Appearance dialog: Use overprint effect for
-            colors marked overprint. On an OCAD map, this causes Purple Pen to use the overprinting effect
-            when printing (or creating a PDF) for colors in the color table that request it.
-            This is off by default. If you don't know what this means, you probably want to leave it off.
-        </p>
-    </li>
-    <li>
-        <p>
-            When adding textual lines in the middle of a description using "Item/Add Text Line", you can now
-            have multiple lines of text.
-        </p>
-    </li>
-    <li>
-        <p>
-            On the "Event/Customize Description Text" dialog, there is now an option for "Make this the default
-            language for new events." This does just what it sounds like; change the language that is used
-            for textual control descriptions on new events.
-        </p>
-    </li>
-    <li>
-        <p>
-            Textual control descriptions for Chinese (Traditional) are included. Thanks to Raphael Mak.
-        </p>
-    </li>
-    <li>
-        <p>
-            The setting of View/All Controls" is now saved between runs of the program.
-        </p>
-    </li></ul>
+    <h2>Changes in 2.6.0</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Supports the OCAD 12 file format. Purple Pen can load map files in the OCAD 12 file format, and can
+                also export to the OCAD 12 file format. However, new symbol types only in OCAD 12 are not yet supported. These
+                symbol features are rarely, if ever, used in orienteering maps, so this should not be a significant
+                issue. If you do use these features, a warning message will appear when loading the file, and also
+                when printing or exporting a PDF.
+            </p>
+        </li>
+        <li>
+            <p>
+                The handling of print areas, paper sizes, and orientation (landscape/portrait) has been substantially
+                redone in order to make it simpler to use. Instead of setting the paper size when printing or creating
+                a PDF, you now set the paper size when creating a new event, or when using the File/Set Print Area
+                command. You can set different paper sizes for different courses.
+            </p>
+            <p>
+                The print area can now be viewed all the time using the View/Show Print Area command. When changing
+                the print area, you can now have the print area fixed to be the same as the page size, which greatly
+                simplifies setting the print area. Also, there is an automatic setting which automatically choses
+                the print area based on the map and the course.
+            </p>
+            <p>
+                When loading files created in a previous version of Purple Pen, you should check the
+                paper size and make sure it is set correctly.
+            </p>
+        </li>
+        <li>
+            <p>
+                A new option is present on the Event/Customize Appearance dialog: Use overprint effect for
+                colors marked overprint. On an OCAD map, this causes Purple Pen to use the overprinting effect
+                when printing (or creating a PDF) for colors in the color table that request it.
+                This is off by default. If you don't know what this means, you probably want to leave it off.
+            </p>
+        </li>
+        <li>
+            <p>
+                When adding textual lines in the middle of a description using "Item/Add Text Line", you can now
+                have multiple lines of text.
+            </p>
+        </li>
+        <li>
+            <p>
+                On the "Event/Customize Description Text" dialog, there is now an option for "Make this the default
+                language for new events." This does just what it sounds like; change the language that is used
+                for textual control descriptions on new events.
+            </p>
+        </li>
+        <li>
+            <p>
+                Textual control descriptions for Chinese (Traditional) are included. Thanks to Raphael Mak.
+            </p>
+        </li>
+        <li>
+            <p>
+                The setting of View/All Controls" is now saved between runs of the program.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.6.0 beta 1</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            The handling of print areas, paper sizes, and orientation (landscape/portrait) has been substantially
-            redone in order to make it simpler to use. Instead of setting the paper size when printing or creating
-            a PDF, you now set the paper size when creating a new event, or when using the File/Set Print Area
-            command. You can set different paper sizes for different courses. 
-        </p>
-        <p>
-            The print area can now be viewed all the time using the View/Show Print Area command. When changing
-            the print area, you can now have the print area fixed to be the same as the page size, which greatly
-            simplifies setting the print area. Also, there is an automatic setting which automatically choses
-            the print area based on the map and the course.
-        </p>
-        <p>
-            When loading files created in a previous version of Purple Pen, you should check the 
-            paper size and make sure it is set correctly.
-        </p>
-    </li>
-    <li>
-        <p>
-            A new option is present on the Event/Customize Appearance dialog: Use overprint effect for 
-            colors marked overprint. On an OCAD map, this causes Purple Pen to use the overprinting effect
-            when printing (or creating a PDF) for colors in the color table that request it. 
-            This is off by default. If you don't know what this means, you probably want to leave it off.
-        </p>
-    </li>
-    <li>
-        <p>
-            When adding textual lines in the middle of a description using "Item/Add Text Line", you can now
-            have multiple lines of text.
-        </p>
-    </li>
-    <li>
-        <p>
-            On the "Event/Customize Description Text" dialog, there is now an option for "Make this the default
-            language for new events." This does just what it sounds like; change the language that is used
-            for textual control descriptions on new events.
-        </p>
-    </li>
-    <li>
-        <p>
-            Textual control descriptions for Chinese (Traditional) are included. Thanks to Raphael Mak.
-        </p>
-    </li>
-    <li>
-        <p>
-            The setting of View/All Controls" is now saved between runs of the program.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.6.0 beta 1</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                The handling of print areas, paper sizes, and orientation (landscape/portrait) has been substantially
+                redone in order to make it simpler to use. Instead of setting the paper size when printing or creating
+                a PDF, you now set the paper size when creating a new event, or when using the File/Set Print Area
+                command. You can set different paper sizes for different courses.
+            </p>
+            <p>
+                The print area can now be viewed all the time using the View/Show Print Area command. When changing
+                the print area, you can now have the print area fixed to be the same as the page size, which greatly
+                simplifies setting the print area. Also, there is an automatic setting which automatically choses
+                the print area based on the map and the course.
+            </p>
+            <p>
+                When loading files created in a previous version of Purple Pen, you should check the
+                paper size and make sure it is set correctly.
+            </p>
+        </li>
+        <li>
+            <p>
+                A new option is present on the Event/Customize Appearance dialog: Use overprint effect for
+                colors marked overprint. On an OCAD map, this causes Purple Pen to use the overprinting effect
+                when printing (or creating a PDF) for colors in the color table that request it.
+                This is off by default. If you don't know what this means, you probably want to leave it off.
+            </p>
+        </li>
+        <li>
+            <p>
+                When adding textual lines in the middle of a description using "Item/Add Text Line", you can now
+                have multiple lines of text.
+            </p>
+        </li>
+        <li>
+            <p>
+                On the "Event/Customize Description Text" dialog, there is now an option for "Make this the default
+                language for new events." This does just what it sounds like; change the language that is used
+                for textual control descriptions on new events.
+            </p>
+        </li>
+        <li>
+            <p>
+                Textual control descriptions for Chinese (Traditional) are included. Thanks to Raphael Mak.
+            </p>
+        </li>
+        <li>
+            <p>
+                The setting of View/All Controls" is now saved between runs of the program.
+            </p>
+        </li>
+    </ul>
 
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            If the "White outline around numbers" options was used, and a PDF was created, the number "11"
-            in had the white outline on the second "1" offset. This was due to different kerning rules being
-            used for the control number and the outline. This is now fixed.
-        </p>
-    </li>
-    <li>
-        <p>
-            OCAD 11 changed the way that dashed lines were drawn, then in OCAD 11.5.4 added the 
-            View/Line Objects Appearance as in OCAD 10. Purple Pen now respects both options when drawing
-            dashed lines. (Thanks to Mark Roberts for noticing this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            In rare cases Purple Pen would draw fences and similar features with corner points different
-            than OCAD. (Thanks for Mark Roberts for noticing this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            A text symbol with an attached point symbol did not display correctly in some cases.
-        </p>
-    </li>
-    <li>
-        <p>
-           When loading bitmaps used as background maps, Purple Pen would lock the files so that OCAD could not
-           load them. Purple Pen no longer locks bitmap files. 
-        </p>
-    </li>
-    <li>
-        <p>
-           When using PDF files that used to produce the error "Cannot handle iref streams", Purple Pen
-           now detects the problem and works around it (at the cost of bigger file size and slightly reduced
-           resolution.)
-        </p>
-    </li>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                If the "White outline around numbers" options was used, and a PDF was created, the number "11"
+                in had the white outline on the second "1" offset. This was due to different kerning rules being
+                used for the control number and the outline. This is now fixed.
+            </p>
+        </li>
+        <li>
+            <p>
+                OCAD 11 changed the way that dashed lines were drawn, then in OCAD 11.5.4 added the
+                View/Line Objects Appearance as in OCAD 10. Purple Pen now respects both options when drawing
+                dashed lines. (Thanks to Mark Roberts for noticing this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                In rare cases Purple Pen would draw fences and similar features with corner points different
+                than OCAD. (Thanks for Mark Roberts for noticing this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                A text symbol with an attached point symbol did not display correctly in some cases.
+            </p>
+        </li>
+        <li>
+            <p>
+                When loading bitmaps used as background maps, Purple Pen would lock the files so that OCAD could not
+                load them. Purple Pen no longer locks bitmap files.
+            </p>
+        </li>
+        <li>
+            <p>
+                When using PDF files that used to produce the error "Cannot handle iref streams", Purple Pen
+                now detects the problem and works around it (at the cost of bigger file size and slightly reduced
+                resolution.)
+            </p>
+        </li>
 
-</ul>
-
-
-
-<h2>Changes in 2.5.0</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            Added the "Course/Duplicate Course..." command to duplicate a course. (Requested by several people.)
-        </p>
-    </li>
-    <li>
-        <p>
-            Added the ability to override the automatic computation of course length and specify a course length
-            in the course properties. (Thanks to David Rosen for this request.)
-        </p>
-    </li>
-    <li>
-        <p>
-            When a control that is shared between multiple courses is moved, a dialog now comes up asking if 
-            you want to move that control is all courses, or create a new control (thereby not changing the other
-            courses.) This does not occur if you move a control on the All Controls display, or move a control less
-            than 50 meters. This helps a common confusion, especially among beginners.
-        </p>
-    </li>
-    <li>
-        <p>
-            After deleting a control, the control that preceded it is selected. This makes it easier to add a new 
-            control. (Thanks to Mark Roberts for this suggestion.)
-        </p>
-    </li>    
-    <li>
-        <p>
-            On commands that have a list of courses to select from (Print, Create OCAD files, etc.), the set of 
-            courses selected is preserved between invocations of the command. (Thanks to Mark Roberts for this suggestion.)
-        </p>
-    </li>   
-    <li>
-        <p>
-            Printing courses has an option to pause printing after each course or course part is printed. This allows
-            easily changing paper or flipping paper over to print the back side. (Thanks to Mike Gammon for this suggestion.)
-        </p>
-    </li>   
-    <li>
-        <p>
-            Textual control descriptions can be done in Japanese. (Thanks to Tojo Masaya for this translation.)
-        </p>
-    </li>  
-    <li>
-        <p>
-            The default number of copies of a course to print is always 1. (Thanks to Mark Roberts for this suggestion.)
-        </p>
-    </li>   
-    <li>
-        <p>
-            Remove the "Exit" button from the initial screen, since there is already an "X" button in the
-            top corner. (Thanks to Mark Roberts for this suggestion.)
-        </p>
-    </li>
-</ul>
-
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fix problem where Purple Pen would not draw some text objects in the OCAD 11 layout layer.
-            (Thanks to )
-        </p>
-    </li>
-</ul>
+    </ul>
 
 
 
-<h2>Changes in 2.4.0</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            Add the ability to blend the purple color of courses with the underlying map, so that dark and
-            black objects show through the purple color. (This is sometime called overprinting.) This is turned
-            on by default when creating a new Purple Pen file. You can turn this on and off by choosing
-            Event/Customize Course Appearance, and checking the "blend purple with underlying map colors".
-        </p>
-        <p>
-            Purple blending works in the on screen display, printing, and PDF file creation. When exporting
-            to OCAD, the purple color has the "overprinting" option turned on.
-        </p>
-    </li>
-    <li>
-        <p>
-            Creating the ability to export a GPX file with control locations to copy to a mobile
-            GPS unit. If you use an OCAD map that is properly georeferenced, you can create a GPX file with
-            the control locations that you can download to your GPS device (or smartphone). When setting courses
-            this can help double check that the control location is correct.
-        </p>
-    </li>
-    <li>
-        <p>
-            Make the donation link on the initial screen more prominent.
-        </p>
-    </li>
-    <li>
-        <p>
-            Change the default color of purple to add some cyan.
-        </p>
-    </li>
-    <li>
-        <p>
-            The "Rasterize Before Printing" option in File/Print Courses is now on by default.
-        </p>
-    </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fix typo in German control description text (thanks to Andrea Schneider).
-        </p>
-    </li>
-</ul>
-        
-<h2>Changes in 2.3.2</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>Add the ability to change the size of the gap (or disable the gaps) placed when two legs cross each other. This is
-           changed in Event/Customize Course Appearance.
-        </p>
-    </li>
-    <li>
-        <p>Change the default gap size placed when two legs cross each other from 5.0mm to 3.5mm.
-        </p>
-    </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>Don't create a gap when a leg bend is inserted right at the end of a leg (for instance to slightly displace
-            a leg.)
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.5.0</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Added the "Course/Duplicate Course..." command to duplicate a course. (Requested by several people.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Added the ability to override the automatic computation of course length and specify a course length
+                in the course properties. (Thanks to David Rosen for this request.)
+            </p>
+        </li>
+        <li>
+            <p>
+                When a control that is shared between multiple courses is moved, a dialog now comes up asking if
+                you want to move that control is all courses, or create a new control (thereby not changing the other
+                courses.) This does not occur if you move a control on the All Controls display, or move a control less
+                than 50 meters. This helps a common confusion, especially among beginners.
+            </p>
+        </li>
+        <li>
+            <p>
+                After deleting a control, the control that preceded it is selected. This makes it easier to add a new
+                control. (Thanks to Mark Roberts for this suggestion.)
+            </p>
+        </li>
+        <li>
+            <p>
+                On commands that have a list of courses to select from (Print, Create OCAD files, etc.), the set of
+                courses selected is preserved between invocations of the command. (Thanks to Mark Roberts for this suggestion.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Printing courses has an option to pause printing after each course or course part is printed. This allows
+                easily changing paper or flipping paper over to print the back side. (Thanks to Mike Gammon for this suggestion.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Textual control descriptions can be done in Japanese. (Thanks to Tojo Masaya for this translation.)
+            </p>
+        </li>
+        <li>
+            <p>
+                The default number of copies of a course to print is always 1. (Thanks to Mark Roberts for this suggestion.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Remove the "Exit" button from the initial screen, since there is already an "X" button in the
+                top corner. (Thanks to Mark Roberts for this suggestion.)
+            </p>
+        </li>
+    </ul>
+
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fix problem where Purple Pen would not draw some text objects in the OCAD 11 layout layer.
+                (Thanks to )
+            </p>
+        </li>
+    </ul>
 
 
-<h2>Changes in 2.3.1</h2>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>Remove ArgumentNullException when loading non-OCAD map.</p>
-    </li>
-    <li>
-        <p>Prevent problem in rare case when an old symbols.xml file is in the Windows VirtualStore directory.
-            (Thanks to Roy McGregor for reporting this.)
-        </p>
-    </li>
-</ul>
 
-<h2>Changes in 2.3.0</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            Add the "Add Special Item/Image" command. This allows adding a bitmap image (in either
-            BMP, JPEG, PNG, GIF, or TIFF format to a map. This is useful for adding sponsor logos 
-            and other bitmaps to a map. NOTE: If you add an image object, your Purple Pen file
-            cannot be loaded by earlier versions of Purple Pen.
-        </p>
-        <p>
-            Add the "Add Special Item/Line" and "Add Special Item/Rectangle" commands. These allow adding 
-            a series or line segments or a rectangle to the map. The color and width of the line can
-            be set, and lines can be single, double, or dashed. NOTE: If you add a line or rectangle object,
-            your Purple Pen file cannot be loaded by earlier versions of Purple Pen.
-        </p>
-        <p>
-            Add the "Add Special Item/Text" command can now customize the color and font of the text.
-        </p>
-        <p>
-            In "Event/Customize Course Appearance", you can now choose whether the descriptions on the map
-            are shown in black or purple. (Thanks to Noel Schoknecht for this suggestion.)
-        </p>
-        <p>
-            Legs of a course automatically have gaps added where they cross other legs (or controls).
-        </p>
-        <p>
-            The setup program is now signed with a digital signature. This should make people feel more
-            safe downloading it, and also will make the Windows SmartScreen filter accept the file without
-            a nasty warning message (eventually).
-        </p>
-        <p>
-            Japanese translation. (Thanks to Tojo Masaya.)
-        </p>
-        <p>
-            Textual control descriptions are now available in Catalan. (Thanks to Salvador Pratt Oller
-            for the translation.)
-        </p>
-    </li>
-</ul>
-<h3>Bug fixes</h3>
-<ul>
-    <li>
-        <p>
-            When determining the bounds of a map (for printing), hidden symbols are now ignored. 
-            (Thanks to Bob Forgrave for reporting this.)
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.4.0</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Add the ability to blend the purple color of courses with the underlying map, so that dark and
+                black objects show through the purple color. (This is sometime called overprinting.) This is turned
+                on by default when creating a new Purple Pen file. You can turn this on and off by choosing
+                Event/Customize Course Appearance, and checking the "blend purple with underlying map colors".
+            </p>
+            <p>
+                Purple blending works in the on screen display, printing, and PDF file creation. When exporting
+                to OCAD, the purple color has the "overprinting" option turned on.
+            </p>
+        </li>
+        <li>
+            <p>
+                Creating the ability to export a GPX file with control locations to copy to a mobile
+                GPS unit. If you use an OCAD map that is properly georeferenced, you can create a GPX file with
+                the control locations that you can download to your GPS device (or smartphone). When setting courses
+                this can help double check that the control location is correct.
+            </p>
+        </li>
+        <li>
+            <p>
+                Make the donation link on the initial screen more prominent.
+            </p>
+        </li>
+        <li>
+            <p>
+                Change the default color of purple to add some cyan.
+            </p>
+        </li>
+        <li>
+            <p>
+                The "Rasterize Before Printing" option in File/Print Courses is now on by default.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fix typo in German control description text (thanks to Andrea Schneider).
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.2.4</h2>
-<h3>New features</h3>
-<ul>
-    <li>
-        <p>
-            Added the "white outline around numbers" options in Event/Customize Course Appearance.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.3.2</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Add the ability to change the size of the gap (or disable the gaps) placed when two legs cross each other. This is
+                changed in Event/Customize Course Appearance.
+            </p>
+        </li>
+        <li>
+            <p>
+                Change the default gap size placed when two legs cross each other from 5.0mm to 3.5mm.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Don't create a gap when a leg bend is inserted right at the end of a leg (for instance to slightly displace
+                a leg.)
+            </p>
+        </li>
+    </ul>
 
-<h3>Bug fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fixed occasional "Generic GDI+ Error" when exporting to OCAD and the map is a bitmap file.
-        </p>
-    </li>
-</ul>
 
-<h2>Changes in 2.2.3</h2>
-<h3>Bug fixes</h3>
-<ul>
-    <li>
-        <p>
-            Better handling of large bitmap and PDF maps. This should significant reduce out of memory errors.
-        </p>
-        <p>
-            Improve PDF output for better compatibility with Adobe Illustrator. (Thanks to "highervan" for this report).
-        </p>
-        <p>
-            First control number property now works correctly for score courses. (Thanks to "m.seddon33"" for this report).
-        </p>
-        <p>
-            Self-recursive background maps no longer crash the program.
-        </p>
-        <p>
-            Add notification message for rare case of incorrect .NET framework installation.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.3.1</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>Remove ArgumentNullException when loading non-OCAD map.</p>
+        </li>
+        <li>
+            <p>
+                Prevent problem in rare case when an old symbols.xml file is in the Windows VirtualStore directory.
+                (Thanks to Roy McGregor for reporting this.)
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.2.2</h2>
-<h3>Bug fixes</h3>
-<ul>
-    <li>
-        <p>
-            Improve program running in "high-DPI" systems. Maps should display sharper, and redrawing
-            bugs fixed.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.3.0</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Add the "Add Special Item/Image" command. This allows adding a bitmap image (in either
+                BMP, JPEG, PNG, GIF, or TIFF format to a map. This is useful for adding sponsor logos
+                and other bitmaps to a map. NOTE: If you add an image object, your Purple Pen file
+                cannot be loaded by earlier versions of Purple Pen.
+            </p>
+            <p>
+                Add the "Add Special Item/Line" and "Add Special Item/Rectangle" commands. These allow adding
+                a series or line segments or a rectangle to the map. The color and width of the line can
+                be set, and lines can be single, double, or dashed. NOTE: If you add a line or rectangle object,
+                your Purple Pen file cannot be loaded by earlier versions of Purple Pen.
+            </p>
+            <p>
+                Add the "Add Special Item/Text" command can now customize the color and font of the text.
+            </p>
+            <p>
+                In "Event/Customize Course Appearance", you can now choose whether the descriptions on the map
+                are shown in black or purple. (Thanks to Noel Schoknecht for this suggestion.)
+            </p>
+            <p>
+                Legs of a course automatically have gaps added where they cross other legs (or controls).
+            </p>
+            <p>
+                The setup program is now signed with a digital signature. This should make people feel more
+                safe downloading it, and also will make the Windows SmartScreen filter accept the file without
+                a nasty warning message (eventually).
+            </p>
+            <p>
+                Japanese translation. (Thanks to Tojo Masaya.)
+            </p>
+            <p>
+                Textual control descriptions are now available in Catalan. (Thanks to Salvador Pratt Oller
+                for the translation.)
+            </p>
+        </li>
+    </ul>
+    <h3>Bug fixes</h3>
+    <ul>
+        <li>
+            <p>
+                When determining the bounds of a map (for printing), hidden symbols are now ignored.
+                (Thanks to Bob Forgrave for reporting this.)
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.2.1</h2>
-<h3>Bug fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fix problem where bitmap background maps in OCAD 8 were incorrectly displayed. 
-            (Thanks to Mike Godfree for finding this.)
-        </p>
-        <p>
-            Fix problem where OCAD background maps with real world coordinates didn't align properly.
-            (Thanks to Phill Batts for finding this.)
-        </p>
-        <p>
-            Fix problem where OCAD 8 export of bitmap or PDF maps was incorrect.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.2.4</h2>
+    <h3>New features</h3>
+    <ul>
+        <li>
+            <p>
+                Added the "white outline around numbers" options in Event/Customize Course Appearance.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.2.0</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-        <p>When an OCAD files has visible background maps (also known as templates), those are now displayed as part of the map file. Some people used background
-           maps as part of the actual map they wanted to view or print, so this is now enabled.
-         </p>
-    </li>
-</ul>
-<h3>Bug fixes</h3>
+    <h3>Bug fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fixed occasional "Generic GDI+ Error" when exporting to OCAD and the map is a bitmap file.
+            </p>
+        </li>
+    </ul>
+
+    <h2>Changes in 2.2.3</h2>
+    <h3>Bug fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Better handling of large bitmap and PDF maps. This should significant reduce out of memory errors.
+            </p>
+            <p>
+                Improve PDF output for better compatibility with Adobe Illustrator. (Thanks to "highervan" for this report).
+            </p>
+            <p>
+                First control number property now works correctly for score courses. (Thanks to "m.seddon33"" for this report).
+            </p>
+            <p>
+                Self-recursive background maps no longer crash the program.
+            </p>
+            <p>
+                Add notification message for rare case of incorrect .NET framework installation.
+            </p>
+        </li>
+    </ul>
+
+    <h2>Changes in 2.2.2</h2>
+    <h3>Bug fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Improve program running in "high-DPI" systems. Maps should display sharper, and redrawing
+                bugs fixed.
+            </p>
+        </li>
+    </ul>
+
+    <h2>Changes in 2.2.1</h2>
+    <h3>Bug fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fix problem where bitmap background maps in OCAD 8 were incorrectly displayed.
+                (Thanks to Mike Godfree for finding this.)
+            </p>
+            <p>
+                Fix problem where OCAD background maps with real world coordinates didn't align properly.
+                (Thanks to Phill Batts for finding this.)
+            </p>
+            <p>
+                Fix problem where OCAD 8 export of bitmap or PDF maps was incorrect.
+            </p>
+        </li>
+    </ul>
+
+    <h2>Changes in 2.2.0</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>
+                When an OCAD files has visible background maps (also known as templates), those are now displayed as part of the map file. Some people used background
+                maps as part of the actual map they wanted to view or print, so this is now enabled.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug fixes</h3>
     <ul>
         <li>
             <p>
@@ -731,828 +768,992 @@
             </p>
             <p>
                 Better handling of the case where the map file cannot be found.
-            </p>        
+            </p>
         </li>
     </ul>
 
-<h2>Changes in 2.1.0</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-        <p>Allow using a PDF file as the map file, instead of an OCAD file or bitmap. Purple Pen automatically downloads and uses GPL Ghostscript to read PDF files. </p>
-    </li>
-    <li>
-        <p>Create vector PDF files directly from the program, without having to use a PDF print driver or OCAD. Uses the CMYK color space for the PDF files, if desired. If
-            the map file was a PDF also, incorporates the PDF map file into the final PDF at original quality.
-        </p>
-    </li>
-    <li>
-        <p>When exporting OCAD maps, if the map file was a PDF file, or a bitmap file of a format that isn't supported by the OCAD version targeted, Purple Pen
-            will automatically create a bitmap file of a supported format to use as the background map in OCAD.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.1.0</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Allow using a PDF file as the map file, instead of an OCAD file or bitmap. Purple Pen automatically downloads and uses GPL Ghostscript to read PDF files. </p>
+        </li>
+        <li>
+            <p>
+                Create vector PDF files directly from the program, without having to use a PDF print driver or OCAD. Uses the CMYK color space for the PDF files, if desired. If
+                the map file was a PDF also, incorporates the PDF map file into the final PDF at original quality.
+            </p>
+        </li>
+        <li>
+            <p>
+                When exporting OCAD maps, if the map file was a PDF file, or a bitmap file of a format that isn't supported by the OCAD version targeted, Purple Pen
+                will automatically create a bitmap file of a supported format to use as the background map in OCAD.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.0.3</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-        <p>Add Course Part Options to allow adding the finish to parts of a course with a map exchange. </p>
-    </li>
-</ul>
+    <h2>Changes in 2.0.3</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Add Course Part Options to allow adding the finish to parts of a course with a map exchange. </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.0.2</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-        <p>Add $(CoursePart) to the special text options for Text special items. </p>
-    </li>
-</ul>
+    <h2>Changes in 2.0.2</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Add $(CoursePart) to the special text options for Text special items. </p>
+        </li>
+    </ul>
 
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fixed OCAD export of courses with map exchange to export parts separately. 
-            (Thanks to Oliver O'Brien for the report on this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            Fixed display of description line height in tool tip. (Thanks to Mike Godfree for the report on this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            You can now delete a map exchange at a control point by selecting it in the description sheet and 
-            pressing Delete.
-        </p>
-    </li>
-    <li>
-        <p>
-            Flagged lags after mandatory crossing points now display in the description sheet.
-        </p>
-    </li>
-</ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fixed OCAD export of courses with map exchange to export parts separately.
+                (Thanks to Oliver O'Brien for the report on this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Fixed display of description line height in tool tip. (Thanks to Mike Godfree for the report on this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                You can now delete a map exchange at a control point by selecting it in the description sheet and
+                pressing Delete.
+            </p>
+        </li>
+        <li>
+            <p>
+                Flagged lags after mandatory crossing points now display in the description sheet.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.0.1</h2>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fixed exception with certain OCAD line symbols. (Thanks to Steve Watkins for the report on this.)
-        </p>
-        <p>
-            When exporting to OCAD, copy the real world coordinates of this underlying OCAD map. This fixes a problem
-            in OCAD 11 where the underlying map is not displayed.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.0.1</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fixed exception with certain OCAD line symbols. (Thanks to Steve Watkins for the report on this.)
+            </p>
+            <p>
+                When exporting to OCAD, copy the real world coordinates of this underlying OCAD map. This fixes a problem
+                in OCAD 11 where the underlying map is not displayed.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.0.0</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-        <p>Added Australian English as a new language for control descriptions. This is the same as the normal 
-            English descriptions, except that "reentrant" becomes "gully" and "stream" becomes "watercourse". I'm
-            happy to take further changes from any Australians who wish to make them.
-        </p>
-        <p>
-            Added documentation to the help file for all new features.
-        </p>
-    </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Fixed problem with XML and RouteGadget export when the classes are multiple lines.
-            (Thanks to Paul Frost for finding this issue.)
-        </p>
-        <p>
-            When using map exchange with marked route, the map exchange point is not shown on the 
-            previous part, but the marked route is (if long enough to extend beyond the last control circle).
-        </p>
-        <p>
-            Fixed problem with setup program not associated .ppen files correctly.
-        </p>
-    </li>
+    <h2>Changes in 2.0.0</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>
+                Added Australian English as a new language for control descriptions. This is the same as the normal
+                English descriptions, except that "reentrant" becomes "gully" and "stream" becomes "watercourse". I'm
+                happy to take further changes from any Australians who wish to make them.
+            </p>
+            <p>
+                Added documentation to the help file for all new features.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fixed problem with XML and RouteGadget export when the classes are multiple lines.
+                (Thanks to Paul Frost for finding this issue.)
+            </p>
+            <p>
+                When using map exchange with marked route, the map exchange point is not shown on the
+                previous part, but the marked route is (if long enough to extend beyond the last control circle).
+            </p>
+            <p>
+                Fixed problem with setup program not associated .ppen files correctly.
+            </p>
+        </li>
 
-</ul>
+    </ul>
 
-<h2>Changes in 2.0.0 beta 3</h2>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Printing of descriptions on All Controls now works.
-        </p>
-    </li>
-    <li>
-        <p>
-            A few crashing bugs fixed.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.0.0 beta 3</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Printing of descriptions on All Controls now works.
+            </p>
+        </li>
+        <li>
+            <p>
+                A few crashing bugs fixed.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.0.0 beta 2</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-        <p>
-            When the program crashes or encounters an unhandled exception, an option is provided
-            to send a detailed crash report to the developer to use to help find and fix the problem.
-        </p>
-    </li>
-    <li>
-        <p>
-            Added links to a new part of the Purple Pen web site that accepts donations.
-        </p>
-    </li>
-    <li>
-        <p>
-            Based on feedback, no longer warn for control codes that are numbers less than 31.
-        </p>
-    </li>
-    <li>
-        <p>
-            Files saved with 2.0 can now be loaded into 1.x version of Purple Pen without error.
-        </p>
-    </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-    <li>
-        <p>
-            Trying to add descriptions to "All Parts" of a course with a map exchange now gives a message 
-            explaining what to do, rather than just disabling the command.
-            (Thanks to Bruce Marshall for feedback on this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            If the Arial Narrow Regular font was missing, but Arial Narrow Bold was not, the program would crash.
-            (Thanks to Lukas Janusauskas for reporting this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            Arrow keys now work correctly for moving around the map.
-        </p>
-    </li>
-    <li>
-        <p>
-            The text on the all controls description that indicated the number of controls always appeared in English,
-            instead of using the language of the description. (Thanks to Christopher Schive for bringing this to my attention.)
-        </p>
-    </li>
-    <li>
-        <p>
-            Small or zero-sized rectangle symbols with rounded corners did not display correctly. 
-            (Thanks to Brian Ward for reporting this and helping me to track it down.)
-        </p>
-    </li>
-    <li>
-        <p>
-            Printing with JPG, GIF, PNG, BMP, or TIFF maps failed with "method not implemented" error.
-            (Thanks to several people for reporting this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            A few fonts were printing slightly vertically displaced.
-        </p>
-    </li>
-    <li>
-        <p>
-            Can now click on the background to de-selected whatever was selected. Also, dragging the map with the
-            left mouse button works even when placing controls. (Thanks to Steve Edgar for feedback on this.)
-        </p>
-    </li>
-    <li>
-        <p>
-            Install program now removes previous versions from the Add/Remove programs list.
-        </p>
-    </li>
-</ul>
+    <h2>Changes in 2.0.0 beta 2</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>
+                When the program crashes or encounters an unhandled exception, an option is provided
+                to send a detailed crash report to the developer to use to help find and fix the problem.
+            </p>
+        </li>
+        <li>
+            <p>
+                Added links to a new part of the Purple Pen web site that accepts donations.
+            </p>
+        </li>
+        <li>
+            <p>
+                Based on feedback, no longer warn for control codes that are numbers less than 31.
+            </p>
+        </li>
+        <li>
+            <p>
+                Files saved with 2.0 can now be loaded into 1.x version of Purple Pen without error.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Trying to add descriptions to "All Parts" of a course with a map exchange now gives a message
+                explaining what to do, rather than just disabling the command.
+                (Thanks to Bruce Marshall for feedback on this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                If the Arial Narrow Regular font was missing, but Arial Narrow Bold was not, the program would crash.
+                (Thanks to Lukas Janusauskas for reporting this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Arrow keys now work correctly for moving around the map.
+            </p>
+        </li>
+        <li>
+            <p>
+                The text on the all controls description that indicated the number of controls always appeared in English,
+                instead of using the language of the description. (Thanks to Christopher Schive for bringing this to my attention.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Small or zero-sized rectangle symbols with rounded corners did not display correctly.
+                (Thanks to Brian Ward for reporting this and helping me to track it down.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Printing with JPG, GIF, PNG, BMP, or TIFF maps failed with "method not implemented" error.
+                (Thanks to several people for reporting this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                A few fonts were printing slightly vertically displaced.
+            </p>
+        </li>
+        <li>
+            <p>
+                Can now click on the background to de-selected whatever was selected. Also, dragging the map with the
+                left mouse button works even when placing controls. (Thanks to Steve Edgar for feedback on this.)
+            </p>
+        </li>
+        <li>
+            <p>
+                Install program now removes previous versions from the Add/Remove programs list.
+            </p>
+        </li>
+    </ul>
 
-<h2>Changes in 2.0.0 beta 1</h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>
-    Full support for map exchanges. You can add a map exchange either at a control, or with a 
-    flagged route to a map exchange point. Purple Pen allows you to view either parts of the course,
-    or the entire course, and creates partial or full control descriptions, as appropriate. You can 
-    set a different print area for each part of a course with a map exchange, although all 
-    parts must be on the same map file. 
-</p>
-</li>
-<li>
-<p>
-    Multi-column descriptions on the map. If the control description won’t fit well in a single 
-    column on the map, you can change the shape of the description to appear in multiple columns.
-</p>
-</li>
-<li>
-<p>
-    The "all controls" map can have a description sheet placed on it with descriptions for all the controls.
-</p>
-</li>
-<li>
-<p>
-    When you hover over a control or leg on the map, a small popup appears with information 
-    about the control or leg. This can be turned on or off with the "View/Show Popup Information" menu item.
-</p>
-</li>
-<li>
-<p>
-    On Windows Vista and later, printing has been completely revamped to use a vector-based printing model. This should 
-    result in smaller spool files, faster printing, and better PDF creation when used with a 
-    PDF print driver. You can switch back to the old method (in case of problems) by 
-    checking the "Rasterize Before Printing" check box in the Print Courses dialog. (On Windows XP, 
-    the Rasterize Before Printing option is always on and cannot be disabled).
-</p>
-</li>
-<li>
-<p>
-    The program now uses the "CMYK" (cyan-magenta-yellow-black) color model by default 
-    when printing or displaying on the screen. This should mean that maps print with colors
-     much closer to what the map creator intended, and similar to how OCAD prints them on a
-     PostScript printer. When printing, you now have the option of using the "CMYK" color 
-    model (the new default), the “RGB” printing model (how Purple Pen 1.x did it), or "OCAD Compatible". 
-    The "OCAD Compatible" model should produce the same output as OCAD does on the same printer. 
-</p>
-</li>
-<li>
-<p>
-    Score courses can have the controls labeled with the number of points for the 
-    control (along with the control number or code). 
-</p>
-</li>
-<li>
-<p>Gaps in control circles are now much better and more like gaps in a leg. You can drag a gap of any
-size and adjust the size of a gap after it is created. You can now add a small (2mm) gap in a leg by just
-clicking after selecting the add gap command.
-</p>
-</li>
-<li>
-<p>Provide the option of a center dot for controls in Event/Customize Course Appearance. </p>
-</li>
-<li>
-<p>Add $(PrintScale) to the special text options for Text special items. </p>
-</li>
-<li>
-<p>
-    You can drag the map around with the left mouse button as well as the right mouse button.
-</p>
-</li>
-<li>
-<p>
-    For clarity, the "Create EPunch Interface File" menu item has been renamed 
-    to "Create Data Interchange File (IOF XML)".
-</p>
-</li>
-<li>
-<p>
-    When a new version is available for download, provides the option to automatically 
-    download and install the new version. 
-</p>
-</li>
-<li>
-<p>
-    The setup program is redone. This shouldn't make a large difference, 
-    but hopefully will be more reliable.
-</p>
-</li>
-<li>
-<p>
-    Class names (from the secondary title/class name for a course) are now 
-    exported to the IOF XML. This should improve compatibility with some other software.
-</p>
-</li>
-<li>
-<p>
-    The program now uses the .NET Framework 4.0 instead of the .NET Framework 2.0. 
-    The setup program will automatically download and install the new version if necessary. 
-</p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-</ul>
-<h2>Changes in 1.2.2 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>German translation, thanks to Andrea Schultze. </p>
-</li>
-</ul>
-<h2>Changes in 1.2.1 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Estonian translation, thanks to Tarmo Klaar. </p>
-</li>
-</ul>
-<h2>Changes in 1.2.1 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Estonian translation, thanks to Tarmo Klaar. </p>
-</li>
-</ul>
+    <h2>Changes in 2.0.0 beta 1</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>
+                Full support for map exchanges. You can add a map exchange either at a control, or with a
+                flagged route to a map exchange point. Purple Pen allows you to view either parts of the course,
+                or the entire course, and creates partial or full control descriptions, as appropriate. You can
+                set a different print area for each part of a course with a map exchange, although all
+                parts must be on the same map file.
+            </p>
+        </li>
+        <li>
+            <p>
+                Multi-column descriptions on the map. If the control description won’t fit well in a single
+                column on the map, you can change the shape of the description to appear in multiple columns.
+            </p>
+        </li>
+        <li>
+            <p>
+                The "all controls" map can have a description sheet placed on it with descriptions for all the controls.
+            </p>
+        </li>
+        <li>
+            <p>
+                When you hover over a control or leg on the map, a small popup appears with information
+                about the control or leg. This can be turned on or off with the "View/Show Popup Information" menu item.
+            </p>
+        </li>
+        <li>
+            <p>
+                On Windows Vista and later, printing has been completely revamped to use a vector-based printing model. This should
+                result in smaller spool files, faster printing, and better PDF creation when used with a
+                PDF print driver. You can switch back to the old method (in case of problems) by
+                checking the "Rasterize Before Printing" check box in the Print Courses dialog. (On Windows XP,
+                the Rasterize Before Printing option is always on and cannot be disabled).
+            </p>
+        </li>
+        <li>
+            <p>
+                The program now uses the "CMYK" (cyan-magenta-yellow-black) color model by default
+                when printing or displaying on the screen. This should mean that maps print with colors
+                much closer to what the map creator intended, and similar to how OCAD prints them on a
+                PostScript printer. When printing, you now have the option of using the "CMYK" color
+                model (the new default), the “RGB” printing model (how Purple Pen 1.x did it), or "OCAD Compatible".
+                The "OCAD Compatible" model should produce the same output as OCAD does on the same printer.
+            </p>
+        </li>
+        <li>
+            <p>
+                Score courses can have the controls labeled with the number of points for the
+                control (along with the control number or code).
+            </p>
+        </li>
+        <li>
+            <p>
+                Gaps in control circles are now much better and more like gaps in a leg. You can drag a gap of any
+                size and adjust the size of a gap after it is created. You can now add a small (2mm) gap in a leg by just
+                clicking after selecting the add gap command.
+            </p>
+        </li>
+        <li>
+            <p>Provide the option of a center dot for controls in Event/Customize Course Appearance. </p>
+        </li>
+        <li>
+            <p>Add $(PrintScale) to the special text options for Text special items. </p>
+        </li>
+        <li>
+            <p>
+                You can drag the map around with the left mouse button as well as the right mouse button.
+            </p>
+        </li>
+        <li>
+            <p>
+                For clarity, the "Create EPunch Interface File" menu item has been renamed
+                to "Create Data Interchange File (IOF XML)".
+            </p>
+        </li>
+        <li>
+            <p>
+                When a new version is available for download, provides the option to automatically
+                download and install the new version.
+            </p>
+        </li>
+        <li>
+            <p>
+                The setup program is redone. This shouldn't make a large difference,
+                but hopefully will be more reliable.
+            </p>
+        </li>
+        <li>
+            <p>
+                Class names (from the secondary title/class name for a course) are now
+                exported to the IOF XML. This should improve compatibility with some other software.
+            </p>
+        </li>
+        <li>
+            <p>
+                The program now uses the .NET Framework 4.0 instead of the .NET Framework 2.0.
+                The setup program will automatically download and install the new version if necessary.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul></ul>
+    <h2>Changes in 1.2.2 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>German translation, thanks to Andrea Schultze. </p>
+        </li>
+    </ul>
+    <h2>Changes in 1.2.1 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Estonian translation, thanks to Tarmo Klaar. </p>
+        </li>
+    </ul>
+    <h2>Changes in 1.2.1 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Estonian translation, thanks to Tarmo Klaar. </p>
+        </li>
+    </ul>
 
 
-<h2>Changes in 1.2.0 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Support for reading and writing OCAD 11 format files. </p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>Eliminate exceptions with certain video cards when dragging controls.</p>
-</li>
-<li>
-<p>Improve memory usage in some scenarios.</p>
-</li>
-<li>
-<p>Orienteering Interchange XML files are written without a byte order mark.</p>
-</li>
-</ul>
+    <h2>Changes in 1.2.0 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Support for reading and writing OCAD 11 format files. </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>Eliminate exceptions with certain video cards when dragging controls.</p>
+        </li>
+        <li>
+            <p>Improve memory usage in some scenarios.</p>
+        </li>
+        <li>
+            <p>Orienteering Interchange XML files are written without a byte order mark.</p>
+        </li>
+    </ul>
 
-<h2>Changes in 1.1.5 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Bulgarian translation, thanks to Galena Tomova. </p>
-</li>
-<li>
-<p>Romanian translation, thanks to Virtual Orienteering (vorienteering.com). </p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>In certain rare cases where a line object ended with a corner point, fence symbols (and similar) had an extra tick mark
-and the very end of of the line. (Thanks to Mike Godfree for the report.)</p>
-</li>
-<li>
-<p>In rare cases an empty text object would cause the map not to display. (Thanks to Mike Godfree for the report.)</p>
-</li>
-</ul>
-<h2>Changes in 1.1.4 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Nynorsk translation, thTTTTanks to Michael Willig. </p>
-</li>
-<li>
-<p>Spanish translation, thanks to Antonio Salguero. </p>
-</li>
-<li>
-<p>Finnish translation, thanks to Mikko Tani.</p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>In certain rare cases, line features with pointy ends (such as "Erosion Gully") were not drawn correctly. This is now fixed. Thanks to Andrew Evans for reporting
-this issue and providing a map that showed the problem.</p>
-</li>
-<li>
-<p>Treatment of symbols with colors that are not present the OCAD color table updated (now ignores color, rather than picking another color).</p>
-</li>
-<li>
-<p>Display of lines with decreasing symbols was improved, and a crashing bug fixed if the final size was zero. These symbols are rarely used in 
-orienteering maps.</p>
-</li>
-</ul>
-<h2>Changes in 1.1.2 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>The Course Appearance dialog now allows setting control numbers to be bold on the map. </p>
-</li>
-<li>
-<p>Text lines in the control descriptions will wrap to multiple lines if necessary. </p>
-</li>
-<li>
-<p>When the Norwegian translation is enabled, a menu item appears which brings up a web site
-with Norwegian documentation for Purple Pen. This can be enabled for other languages also, should
-anyone wish to create such web sites. </p>
-</li></ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>IOF XML files now number course ids starting at zero for better compatibility with other software.</p>
-</li>
-<li>
-<p>Fix problem loading certain malformed OCAD files, to avoid error message "Points array must have at least two elements".</p>
-</li>
-</ul>
-<h2>Changes in 1.1.1 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Now supports Norwegian in program user interface and control descriptions. </p>
-</li>
-<li>
-<p>Translations for some of the new features (RouteGadget file creation) are now available in French.</p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>In some cases, clicking in column A on the All Controls description would cause 
-    an exception.</p>
-</li>
-<li>
-<p>Some structured area symbols where the structured symbol was far from the origin did not display
-correctly. Now fixed.</p>
-</li>
-<li>
-<p>IOF XML files now include the date and time they were created in the XML.</p>
-</li>
-</ul>
-<h2>Changes in 1.1.0 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>Fully supports reading and creating OCAD 10 files, including all new symbol 
-and object features. </p>
-</li>
-	<li>
-	<p>The new "Create RouteGadget Files..." command on the File menu 
-	automatically creates both a .GIF format image of the map (appropriately 
-	cropped with the correct resolution) along with an .XML file, for use in 
-	RouteGadget.</p>
-</li>
-	<li>
-	<p>You can specify the number of the first control in a course in the 
-Course/New or Course/Properties command. The number is typically 1, but you can 
-set it to another value as a way to handle multi-part courses and other special 
-situations.</p>
-</li>
-	<li>
-	<p>You can specify the style to print the labels on control circles -- the 
-	usual sequence number, the control code, or both (e.g., "4-234"). Thanks to 
-	Andy Simpson for contributing code for this feature.</p>
-</li>
-	<li>
-	<p>For score courses, you can specify which column the points for each 
-	control is displayed in: column, A, B, H, or not displayed at all.</p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>When a font cannot be found, and bold and/or italic was specified, uses
-the bold and/or italic version of Arial (matching OCAD's behavior), instead of the
-non-bold, non-italic Arial.</p>
-</li>
-	<li>
-	<p>Fixed a bug that would result in OutOfMemoryException when drawing 
-	certain OCAD maps.</p>
-</li>
-</ul>
-<h2>Changes in 1.0.2 </h2>
-<h3>New Features</h3>
-<ul>
-<li>
-<p>A new special item has been added: white out area, which can be added like 
-other special items (such on out of bounds area). The white out area blanks out 
-the underlying map.</p>
-</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>Made more resilient in opening OCAD files with malformed or unexpected data.</p>
-</li>
-</ul>
-<h2>Changes in 1.0.1 </h2>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>Fixed a problem that prevented loading certain OCAD files with mismatched 
-objects/symbols.</p>
-</li>
-<li>
-<p>Text special items that were empty caused an exception.</p>
-</li>
-</ul>
-<h2>Changes in 1.0.0 </h2>
-<h3>Bug Fixes</h3>
-<ul>
-<li>
-<p>In certain cases, trying to place a text object that was empty would cause an 
-exception. This is fixed.</p>
-</li>
-<li>
-<p>OCAD text objects which had a newline at the very beginning drew one line too 
-low compared to OCAD (for no apparent reason, OCAD ignores an initial newline in 
-a text object.) Purple Pen now matches OCAD&#39;s behavior.</p>
-</li>
-<li>
-<p>Fixed the appearance of some dialog windows when running with &quot;Large Fonts&quot;.</p>
-</li>
-<li>
-<p>Some arrow characters didn&#39;t appear in a vanilla XP installation.</p>
-</li>
-<li>
-<p>Swedish and French translations updated.</p>
-</li>
-</ul>
-<h2>Changes in 1.0.0 RC1</h2>
-<h3>New Features</h3>
-<ul>
-    <li>
-    <p class=featurelist>The user interface of the program can be displayed in multiple languages. Use the File/Program Language
-    command to change the language of the user interface. English, French, and 
-	Swedish languages are provided.</p>
-    </li>
-    <li>
-    <p class=featurelist>Automatically generated textual control descriptions can be displayed or printed in different languages.
-    To change the language for an event, use the Event/Customize Description Text command. 
-	English, French, Swedish, and UK English are provided.</p>
-    </li>
-	<li>
-    <p class=featurelist>By default, when printing the map is cropped to fit on 
-	a single page. In most cases, this means you don&#39;t have to set the print 
-	area manually, since Purple Pen intelligently crops to fit the course best 
-	on the page. If you want you can still print a map across multiple pages.</p>
-    </li>
-	<li>
-    <p class=featurelist>Arbitrary text can be added to the map using Item/Add 
-	Special Item/Text. This text can have special text in it that changes 
-	depending on the course (e.g., $(CourseName) becomes the name of the 
-	course). </p>
-    </li>
-	<li>
-    <p class=featurelist>The new Event / Customize Course Appearance command can 
-	be used to adjust the sizes of controls circles, lines, and control numbers. 
-	It can also be used to change the shade of purple used for the course.</p>
-    </li>
-    <li>
-    <p class=featurelist>The event title, and the class list/secondary title, can have multiple lines in them. This is 
-    especially useful for courses with many classes in them. When editing directly in the description pane, use vertical
-    bar (|) to separate the lines.</p>
-    </li>
-	<li>
-    <p class=featurelist>Overlapping control circles are automatically cut to 
-	avoid the overlap (except on the All Controls display).</p>
-   </li>
-	<li>
-    <p class=featurelist>In the initial start up window, you are now given a 
-	choice (the default choice, in fact), to load the last file you were working 
-	on.</p>
-   </li>
-	<li>
-    <p class=featurelist>Dialog windows now use a nicer looking and slightly 
-	bigger font.</p>
-   </li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-<li><p class="featurelist">Problems loading or drawing certain OCAD files have 
-been fixed.</p></li><li><p class="featurelist">Exported IOF XML (Create E-Punch Interface File) no longer contains the 
-DOCTYPE declaration referencing the IOFdata.dtd file, since it caused problems 
-with some programs.</p></li>
-<li><p class="featurelist">Printing should be faster, especially in cases with large patterned area (e.g., open land with scattered trees), or printing multiple copies of the same map.</p></li>
-<li><p class="featurelist">If the background map is changed while it is open 
-(for example, the map is edited and saved in OCAD), Purple Pen will 
-automatically reload the changed map file.</p></li>
-<li><p class="featurelist">The AltGr key on some keyboards now works correctly 
-when directly editing the title of an event or the dimensions in column F. Also, 
-if you enter text here and then click outside the popup without pressing Enter, 
-the entered text is used instead of discarded.</p></li>
-<li><p class="featurelist">If the textual description for a control is too long 
-to fit into two lines using the default font size, the font size is 
-automatically shrunk so the description will fit.</p></li>
-<li><p class="featurelist">Display of the margins and page size now is in mm 
-when in a metric locale, instead of inches.</p></li>
-</ul> 
-<h2>Changes in 1.0.0 beta 3</h2>
-<h3>New Features</h3>
-<ul>
-	<li>
-	<p class="featurelist">OCAD compatibility has been completed (to my knowledge). All OCAD symbols and options 
-	should print and display correctly.</p> 
-	</li>
-	<li>
-	<p class="featurelist">New command "Delete Unused Controls" on the Event menu allows easily deleting all controls
-	in the All Controls collection that are not being used by any course.</p> </li>
-	<li>
-	<p class="featurelist">New Event Audit report checks and reports on many possible problems, including unused controls,
-	missing descriptions, controls less than 100m apart, missing punch patterns, and more.</p>
-	</li>
-	<li>
-	<p class="featurelist">It is now possible to move control codes on the All 
-	Controls display. To prevent errors, they must still be directly adjacent to 
-	the associated circle.</p>
-	</li>
-	<li>
-	<p class="featurelist">English description text is phrased better. Instead 
-	of &quot;knoll, rocky, E side&quot;, you get &quot;E side of rocky knoll&quot;.</p>
-	</li>
-	<li>
-	<p class="featurelist">Control gaps are now maintained separately for each 
-	print scale. So if one course is at 1:15,000 and another is at 1:10,000, 
-	then different gaps can be placed in the same control circle.</p>
-	</li>
-	<li>
-	<p class="featurelist">Create OCAD Files now allows placing a prefix before 
-	the course name for each file generated. Also, if files will be replaced, 
-	you are warned about them.</p>
-	</li>
-	<li>
-	<p class="featurelist">When creating a new event, you are now prompted for 
-	the default printing scale. This becomes the printing scale for All Controls 
-	as well as the default scale for new courses.</p>
-	</li>
-	<li>
-	<p class="featurelist">You can change the print scale for All Controls by 
-	choosing Course/Properties when the All Controls map is displayed. This 
-	affects the size of circles on the All Controls map, as well as the scale 
-	when printing the All Controls map.</p>
-	</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-	<li>
-	<p class="featurelist">On some printers, dashed lines (such as paths) would 
-	print without the dashes. On some printers, patterned areas like indistinct 
-	marshes might print partially in the wrong color. These are fixed.</p>
-	</li>
-	<li>
-	<p class="featurelist">If a leg had bends or gaps in it, and one of the controls on the end was deleted, an internal
-	error could occur due to inconsistent data. This is fixed.</p>
-	</li>
-	<li>
-	<p class="featurelist">Control codes that are a single letter or digit are now allowed.</p>
-	</li>
-	<li>
-	<p class="featurelist">When creating OCAD files, characters in the course 
-	name that are not allowed in file names are now correctly handled.</p>
-	</li>
-	<li>
-	<p class="featurelist">Very occasionally on a few maps with short dry ditch 
-	symbols, an OutOfMemoryException would occur at certain zoom levels. This should be 
-	fixed now.</p>
-	</li>
-</ul>
-<h2>Changes in 1.0.0 beta 2</h2>
-<h3>New Features</h3>
-<ul>
-	<li>
-	<p class="featurelist">OCAD compatibility has been vastly enhanced. Almost 
-	all OCAD symbols and options print and display correctly. The warning 
-	message that used to display before printing courses has been removed, 
-	because printing courses directly from Purple Pen now works correctly in 
-	virtually all cases. In the cases where the OCAD map contains a symbol that 
-	will not print correctly, Purple Pen detects in and displays a message 
-	before printing indicating which symbol is affected.</p>
-	</li>
-	<li>
-	<p class="featurelist">The menus have been somewhat rearranged to make the 
-	layout more logical and make commands easier to find. In particular, there 
-	are two new menus. The Event menu contains commands that affect the entire 
-	event. The Item menu contains commands that affect the currently selected 
-	item (control, start, finish, leg, special item). Other small changes have 
-	occurred also.</p>
-	</li>
-	<li>
-	<p class="featurelist">The new Item/Add Text Line command can be used to add 
-	an arbitrary text line anywhere in the description sheet.</p>
-	</li>
-	<li>
-	<p class="featurelist">The Create XML Interface File command has been 
-	renamed Create E-Punch Interface File to reflect its primary usage.</p>
-	</li>
-	<li>
-	<p class="featurelist">The Add Gap and Add Bend commands have toolbar 
-	buttons and keyboard shortcuts for them.</p>
-	</li>
-	<li>
-	<p class="featurelist">New command: Event/Map File, which allows changing the associated map file 
-after the event is created.</p>
-	</li>
-	<li>
-	<p class="featurelist">If the map file cannot be found when the Purple Pen file is opened, a useful 
-error message is shown and the user is prompted to find the map file.</p>
-	</li>
-	<li>
-	<p class="featurelist">Map files can now be bitmap files as well as OCAD files. The supported bitmap 
-file formats are TIFF, JPEG, BMP, GIF, and PNG. When you export courses to OCAD, 
-the bitmap becomes a template (background map) for the OCAD course.</p>
-	</li>
-	<li>
-	<p class="featurelist">If an OCAD map file contains a font that is not 
-	installed on the current computer, the user is warned about this when the 
-	event is loaded. If desired, the warning can then be turned off for the 
-	event.</p>
-	</li>
-	<li>
-	<p class="featurelist">Based on feedback, the control descriptions on the map now appear in black 
-(previously they appeared in purple).</p>
-	</li>
-	<li>
-	<p class="featurelist">Added &quot;Leg Lengths&quot; report to the Reports menu. This shows the lengths of 
-each leg on each course, as well as the average leg length for each course.</p>
-	</li>
-	<li>
-	<p class="featurelist">Added &quot;Customize Descriptions&quot; to the Controls menu. This dialog allows you 
-to change the English text associated with any of the symbols. This is 
-especially useful for the special item symbols. You can also add a key at the 
-bottom of description to show what the special item symbols denote.</p>
-	</li>
-	<li>
-	<p class="featurelist">The order of courses can be specified by using the Course/Course Order 
-command. By default, courses are displayed in the order in which you added them 
-(instead of alphabetically as before).</p>
-	</li>
-	<li>
-	<p class="featurelist">When adding a new control, if no control or leg is 
-	selected, the control is inserted in the nearest leg (instead of at the end 
-	of the course). When adding a new control, or moving a control, the 
-	connecting leg lines are shown to provide better feedback as to what will 
-	happen.</p>
-	</li>
-	<li>
-	<p class="featurelist">When adding a new control to a course, a control 
-	already in the existing course can be chosen, so that butterfly-style 
-	courses can be easily created.</p>
-	</li>
-	<li>
-	<p class="featurelist">The &quot;abbreviate in text&quot; option for printing control 
-	descriptions has been removed, as it added complexity with minimal benefit.</p>
-	</li>
-	<li>
-	<p class="featurelist">A new &quot;Clear Selection&quot; command (keyboard shortcut: 
-	Esc) clears the selection on the current course. Clicking on nothing 
-	accomplishes the same thing.</p>
-	</li>
-	<li>
-	<p class="featurelist">When starting Purple Pen, a new option allows loading 
-	the sample event, so people using the program for the first time can get a 
-	sense of how it works. This file also is placed in a different location on 
-	install.</p>
-	</li>
-</ul>
-<h3>Bug Fixes</h3>
-<ul>
-	<li>
-	<p class="featurelist">32x32 icon was empty. Now the correct Purple Pen icon 
-	is there -- used for desktop shortcuts, for example. You may need to rebuild 
-	your Windows icon cache for this to show up if you installed an older 
-	version of Purple Pen. </p>
-	</li>
-	<li>
-	<p class="featurelist">When textual (or text &amp; symbols) descriptions are 
-	placed on the map, one line descriptions are now correctly centered 
-	vertically in the box.</p>
-	</li>
-	<li>
-	<p class="featurelist">The map intensity reverted to full after printing. It 
-	doesn&#39;t do that any more. </p>
-	</li>
-	<li>
-	<p class="featurelist">Mandatory crossing points are now shown in the all 
-	controls map.</p>
-	</li>
-	<li>
-	<p class="featurelist">In score courses, the finish could not be selected or 
-	moved. This is fixed.</p>
-	</li>
-	<li>
-	<p class="featurelist">OCAD files that had a template (background map) with 
-	non-ASCII characters (accented letters) would not load.</p>
-	</li>
-	<li>
-	<p class="featurelist">Files from OCAD 5 and earlier are now detected and 
-	give a useful error message (but they still won&#39;t load).</p>
-	</li>
-	<li>
-	<p class="featurelist">Many cases of symbols not displaying like they do in 
-	OCAD (some major, some minor) are fixed.</p>
-	</li>
-	<li>
-	<p class="featurelist">Symbol &quot;fragments&quot; created when doing a &quot;To Graphics&quot; 
-	in OCAD 9 now display.</p>
-	</li>
-	<li>
-	<p class="featurelist">Creating OCAD files in OCAD 7 format did not write 
-	the template information correctly; now fixed.</p>
-	</li>
-</ul>
-<hr />
+    <h2>Changes in 1.1.5 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Bulgarian translation, thanks to Galena Tomova. </p>
+        </li>
+        <li>
+            <p>Romanian translation, thanks to Virtual Orienteering (vorienteering.com). </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                In certain rare cases where a line object ended with a corner point, fence symbols (and similar) had an extra tick mark
+                and the very end of of the line. (Thanks to Mike Godfree for the report.)
+            </p>
+        </li>
+        <li>
+            <p>In rare cases an empty text object would cause the map not to display. (Thanks to Mike Godfree for the report.)</p>
+        </li>
+    </ul>
+    <h2>Changes in 1.1.4 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Nynorsk translation, thTTTTanks to Michael Willig. </p>
+        </li>
+        <li>
+            <p>Spanish translation, thanks to Antonio Salguero. </p>
+        </li>
+        <li>
+            <p>Finnish translation, thanks to Mikko Tani.</p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                In certain rare cases, line features with pointy ends (such as "Erosion Gully") were not drawn correctly. This is now fixed. Thanks to Andrew Evans for reporting
+                this issue and providing a map that showed the problem.
+            </p>
+        </li>
+        <li>
+            <p>Treatment of symbols with colors that are not present the OCAD color table updated (now ignores color, rather than picking another color).</p>
+        </li>
+        <li>
+            <p>
+                Display of lines with decreasing symbols was improved, and a crashing bug fixed if the final size was zero. These symbols are rarely used in
+                orienteering maps.
+            </p>
+        </li>
+    </ul>
+    <h2>Changes in 1.1.2 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>The Course Appearance dialog now allows setting control numbers to be bold on the map. </p>
+        </li>
+        <li>
+            <p>Text lines in the control descriptions will wrap to multiple lines if necessary. </p>
+        </li>
+        <li>
+            <p>
+                When the Norwegian translation is enabled, a menu item appears which brings up a web site
+                with Norwegian documentation for Purple Pen. This can be enabled for other languages also, should
+                anyone wish to create such web sites.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>IOF XML files now number course ids starting at zero for better compatibility with other software.</p>
+        </li>
+        <li>
+            <p>Fix problem loading certain malformed OCAD files, to avoid error message "Points array must have at least two elements".</p>
+        </li>
+    </ul>
+    <h2>Changes in 1.1.1 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>Now supports Norwegian in program user interface and control descriptions. </p>
+        </li>
+        <li>
+            <p>Translations for some of the new features (RouteGadget file creation) are now available in French.</p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                In some cases, clicking in column A on the All Controls description would cause
+                an exception.
+            </p>
+        </li>
+        <li>
+            <p>
+                Some structured area symbols where the structured symbol was far from the origin did not display
+                correctly. Now fixed.
+            </p>
+        </li>
+        <li>
+            <p>IOF XML files now include the date and time they were created in the XML.</p>
+        </li>
+    </ul>
+    <h2>Changes in 1.1.0 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>
+                Fully supports reading and creating OCAD 10 files, including all new symbol
+                and object features.
+            </p>
+        </li>
+        <li>
+            <p>
+                The new "Create RouteGadget Files..." command on the File menu
+                automatically creates both a .GIF format image of the map (appropriately
+                cropped with the correct resolution) along with an .XML file, for use in
+                RouteGadget.
+            </p>
+        </li>
+        <li>
+            <p>
+                You can specify the number of the first control in a course in the
+                Course/New or Course/Properties command. The number is typically 1, but you can
+                set it to another value as a way to handle multi-part courses and other special
+                situations.
+            </p>
+        </li>
+        <li>
+            <p>
+                You can specify the style to print the labels on control circles -- the
+                usual sequence number, the control code, or both (e.g., "4-234"). Thanks to
+                Andy Simpson for contributing code for this feature.
+            </p>
+        </li>
+        <li>
+            <p>
+                For score courses, you can specify which column the points for each
+                control is displayed in: column, A, B, H, or not displayed at all.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                When a font cannot be found, and bold and/or italic was specified, uses
+                the bold and/or italic version of Arial (matching OCAD's behavior), instead of the
+                non-bold, non-italic Arial.
+            </p>
+        </li>
+        <li>
+            <p>
+                Fixed a bug that would result in OutOfMemoryException when drawing
+                certain OCAD maps.
+            </p>
+        </li>
+    </ul>
+    <h2>Changes in 1.0.2 </h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p>
+                A new special item has been added: white out area, which can be added like
+                other special items (such on out of bounds area). The white out area blanks out
+                the underlying map.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>Made more resilient in opening OCAD files with malformed or unexpected data.</p>
+        </li>
+    </ul>
+    <h2>Changes in 1.0.1 </h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                Fixed a problem that prevented loading certain OCAD files with mismatched
+                objects/symbols.
+            </p>
+        </li>
+        <li>
+            <p>Text special items that were empty caused an exception.</p>
+        </li>
+    </ul>
+    <h2>Changes in 1.0.0 </h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p>
+                In certain cases, trying to place a text object that was empty would cause an
+                exception. This is fixed.
+            </p>
+        </li>
+        <li>
+            <p>
+                OCAD text objects which had a newline at the very beginning drew one line too
+                low compared to OCAD (for no apparent reason, OCAD ignores an initial newline in
+                a text object.) Purple Pen now matches OCAD&#39;s behavior.
+            </p>
+        </li>
+        <li>
+            <p>Fixed the appearance of some dialog windows when running with &quot;Large Fonts&quot;.</p>
+        </li>
+        <li>
+            <p>Some arrow characters didn&#39;t appear in a vanilla XP installation.</p>
+        </li>
+        <li>
+            <p>Swedish and French translations updated.</p>
+        </li>
+    </ul>
+    <h2>Changes in 1.0.0 RC1</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p class=featurelist>
+                The user interface of the program can be displayed in multiple languages. Use the File/Program Language
+                command to change the language of the user interface. English, French, and
+                Swedish languages are provided.
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                Automatically generated textual control descriptions can be displayed or printed in different languages.
+                To change the language for an event, use the Event/Customize Description Text command.
+                English, French, Swedish, and UK English are provided.
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                By default, when printing the map is cropped to fit on
+                a single page. In most cases, this means you don&#39;t have to set the print
+                area manually, since Purple Pen intelligently crops to fit the course best
+                on the page. If you want you can still print a map across multiple pages.
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                Arbitrary text can be added to the map using Item/Add
+                Special Item/Text. This text can have special text in it that changes
+                depending on the course (e.g., $(CourseName) becomes the name of the
+                course).
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                The new Event / Customize Course Appearance command can
+                be used to adjust the sizes of controls circles, lines, and control numbers.
+                It can also be used to change the shade of purple used for the course.
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                The event title, and the class list/secondary title, can have multiple lines in them. This is
+                especially useful for courses with many classes in them. When editing directly in the description pane, use vertical
+                bar (|) to separate the lines.
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                Overlapping control circles are automatically cut to
+                avoid the overlap (except on the All Controls display).
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                In the initial start up window, you are now given a
+                choice (the default choice, in fact), to load the last file you were working
+                on.
+            </p>
+        </li>
+        <li>
+            <p class=featurelist>
+                Dialog windows now use a nicer looking and slightly
+                bigger font.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p class="featurelist">
+                Problems loading or drawing certain OCAD files have
+                been fixed.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Exported IOF XML (Create E-Punch Interface File) no longer contains the
+                DOCTYPE declaration referencing the IOFdata.dtd file, since it caused problems
+                with some programs.
+            </p>
+        </li>
+        <li><p class="featurelist">Printing should be faster, especially in cases with large patterned area (e.g., open land with scattered trees), or printing multiple copies of the same map.</p></li>
+        <li>
+            <p class="featurelist">
+                If the background map is changed while it is open
+                (for example, the map is edited and saved in OCAD), Purple Pen will
+                automatically reload the changed map file.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The AltGr key on some keyboards now works correctly
+                when directly editing the title of an event or the dimensions in column F. Also,
+                if you enter text here and then click outside the popup without pressing Enter,
+                the entered text is used instead of discarded.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                If the textual description for a control is too long
+                to fit into two lines using the default font size, the font size is
+                automatically shrunk so the description will fit.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Display of the margins and page size now is in mm
+                when in a metric locale, instead of inches.
+            </p>
+        </li>
+    </ul>
+    <h2>Changes in 1.0.0 beta 3</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p class="featurelist">
+                OCAD compatibility has been completed (to my knowledge). All OCAD symbols and options
+                should print and display correctly.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                New command "Delete Unused Controls" on the Event menu allows easily deleting all controls
+                in the All Controls collection that are not being used by any course.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                New Event Audit report checks and reports on many possible problems, including unused controls,
+                missing descriptions, controls less than 100m apart, missing punch patterns, and more.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                It is now possible to move control codes on the All
+                Controls display. To prevent errors, they must still be directly adjacent to
+                the associated circle.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                English description text is phrased better. Instead
+                of &quot;knoll, rocky, E side&quot;, you get &quot;E side of rocky knoll&quot;.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Control gaps are now maintained separately for each
+                print scale. So if one course is at 1:15,000 and another is at 1:10,000,
+                then different gaps can be placed in the same control circle.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Create OCAD Files now allows placing a prefix before
+                the course name for each file generated. Also, if files will be replaced,
+                you are warned about them.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                When creating a new event, you are now prompted for
+                the default printing scale. This becomes the printing scale for All Controls
+                as well as the default scale for new courses.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                You can change the print scale for All Controls by
+                choosing Course/Properties when the All Controls map is displayed. This
+                affects the size of circles on the All Controls map, as well as the scale
+                when printing the All Controls map.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p class="featurelist">
+                On some printers, dashed lines (such as paths) would
+                print without the dashes. On some printers, patterned areas like indistinct
+                marshes might print partially in the wrong color. These are fixed.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                If a leg had bends or gaps in it, and one of the controls on the end was deleted, an internal
+                error could occur due to inconsistent data. This is fixed.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">Control codes that are a single letter or digit are now allowed.</p>
+        </li>
+        <li>
+            <p class="featurelist">
+                When creating OCAD files, characters in the course
+                name that are not allowed in file names are now correctly handled.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Very occasionally on a few maps with short dry ditch
+                symbols, an OutOfMemoryException would occur at certain zoom levels. This should be
+                fixed now.
+            </p>
+        </li>
+    </ul>
+    <h2>Changes in 1.0.0 beta 2</h2>
+    <h3>New Features</h3>
+    <ul>
+        <li>
+            <p class="featurelist">
+                OCAD compatibility has been vastly enhanced. Almost
+                all OCAD symbols and options print and display correctly. The warning
+                message that used to display before printing courses has been removed,
+                because printing courses directly from Purple Pen now works correctly in
+                virtually all cases. In the cases where the OCAD map contains a symbol that
+                will not print correctly, Purple Pen detects in and displays a message
+                before printing indicating which symbol is affected.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The menus have been somewhat rearranged to make the
+                layout more logical and make commands easier to find. In particular, there
+                are two new menus. The Event menu contains commands that affect the entire
+                event. The Item menu contains commands that affect the currently selected
+                item (control, start, finish, leg, special item). Other small changes have
+                occurred also.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The new Item/Add Text Line command can be used to add
+                an arbitrary text line anywhere in the description sheet.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The Create XML Interface File command has been
+                renamed Create E-Punch Interface File to reflect its primary usage.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The Add Gap and Add Bend commands have toolbar
+                buttons and keyboard shortcuts for them.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                New command: Event/Map File, which allows changing the associated map file
+                after the event is created.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                If the map file cannot be found when the Purple Pen file is opened, a useful
+                error message is shown and the user is prompted to find the map file.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Map files can now be bitmap files as well as OCAD files. The supported bitmap
+                file formats are TIFF, JPEG, BMP, GIF, and PNG. When you export courses to OCAD,
+                the bitmap becomes a template (background map) for the OCAD course.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                If an OCAD map file contains a font that is not
+                installed on the current computer, the user is warned about this when the
+                event is loaded. If desired, the warning can then be turned off for the
+                event.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Based on feedback, the control descriptions on the map now appear in black
+                (previously they appeared in purple).
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Added &quot;Leg Lengths&quot; report to the Reports menu. This shows the lengths of
+                each leg on each course, as well as the average leg length for each course.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Added &quot;Customize Descriptions&quot; to the Controls menu. This dialog allows you
+                to change the English text associated with any of the symbols. This is
+                especially useful for the special item symbols. You can also add a key at the
+                bottom of description to show what the special item symbols denote.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The order of courses can be specified by using the Course/Course Order
+                command. By default, courses are displayed in the order in which you added them
+                (instead of alphabetically as before).
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                When adding a new control, if no control or leg is
+                selected, the control is inserted in the nearest leg (instead of at the end
+                of the course). When adding a new control, or moving a control, the
+                connecting leg lines are shown to provide better feedback as to what will
+                happen.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                When adding a new control to a course, a control
+                already in the existing course can be chosen, so that butterfly-style
+                courses can be easily created.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The &quot;abbreviate in text&quot; option for printing control
+                descriptions has been removed, as it added complexity with minimal benefit.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                A new &quot;Clear Selection&quot; command (keyboard shortcut:
+                Esc) clears the selection on the current course. Clicking on nothing
+                accomplishes the same thing.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                When starting Purple Pen, a new option allows loading
+                the sample event, so people using the program for the first time can get a
+                sense of how it works. This file also is placed in a different location on
+                install.
+            </p>
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            <p class="featurelist">
+                32x32 icon was empty. Now the correct Purple Pen icon
+                is there -- used for desktop shortcuts, for example. You may need to rebuild
+                your Windows icon cache for this to show up if you installed an older
+                version of Purple Pen.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                When textual (or text &amp; symbols) descriptions are
+                placed on the map, one line descriptions are now correctly centered
+                vertically in the box.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                The map intensity reverted to full after printing. It
+                doesn&#39;t do that any more.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Mandatory crossing points are now shown in the all
+                controls map.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                In score courses, the finish could not be selected or
+                moved. This is fixed.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                OCAD files that had a template (background map) with
+                non-ASCII characters (accented letters) would not load.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Files from OCAD 5 and earlier are now detected and
+                give a useful error message (but they still won&#39;t load).
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Many cases of symbols not displaying like they do in
+                OCAD (some major, some minor) are fixed.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Symbol &quot;fragments&quot; created when doing a &quot;To Graphics&quot;
+                in OCAD 9 now display.
+            </p>
+        </li>
+        <li>
+            <p class="featurelist">
+                Creating OCAD files in OCAD 7 format did not write
+                the template information correctly; now fixed.
+            </p>
+        </li>
+    </ul>
+    <hr />
 
-<h2>1.0.0 beta 1</h2>
-<p>Initial release.</p>
+    <h2>1.0.0 beta 1</h2>
+    <p>Initial release.</p>
 
 </body>
 

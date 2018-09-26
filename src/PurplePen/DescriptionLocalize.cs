@@ -96,15 +96,17 @@ namespace PurplePen
            symbolText.Plural = false;
            symbolText.Gender = "";
 
-            // The new node to insert/replace.
-            XmlNode newNode = symbolText.CreateXmlElement(xmldoc, "name");
+            // Find existing symbol, for this symbolId. Could be more than one for ones that have different ones for different standards.
+            XmlNodeList symbolNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']", symbolId));
 
-            // Find existing symbol, for this symbolId
-            XmlNode symbolNode = root.SelectSingleNode(string.Format("/symbols/symbol[@id='{0}']", symbolId));
+            foreach (XmlNode symbolNode in symbolNodes) {
+                // The new node to insert/replace.
+                XmlNode newNode = symbolText.CreateXmlElement(xmldoc, "name");
 
-            // Add new name node
-            symbolNode.PrependChild(newNode);
-            symbolNode.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+                // Add new name node
+                symbolNode.PrependChild(newNode);
+                symbolNode.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+            }
         }
 
         public void CustomizeDescriptionTexts(Dictionary<string, List<SymbolText>> descriptionText)
@@ -141,26 +143,37 @@ namespace PurplePen
             // The new node to insert/replace.
             XmlNode newNode = symbolText.CreateXmlElement(xmldoc, "text");
 
-            // Find existing name node, for this symbolId
-            XmlNodeList nameNodeList = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/name", symbolId));
-            XmlNode lastNameNode = nameNodeList[nameNodeList.Count - 1];
+            // Find existing symbol, for this symbolId. Could be more than one for ones that have different ones for different standards.
+            XmlNodeList symbolNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']", symbolId));
 
-            // Add new text node
-            XmlNode parent = lastNameNode.ParentNode;
-            parent.InsertAfter(newNode, lastNameNode);
-            parent.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+            foreach (XmlNode symbolNode in symbolNodes) {
+                // Find existing name node, for this symbolId
+                XmlNodeList nameNodeList = symbolNode.SelectNodes("name");
+                XmlNode lastNameNode = nameNodeList[nameNodeList.Count - 1];
+
+                // Add new text node
+                XmlNode parent = lastNameNode.ParentNode;
+                parent.InsertAfter(newNode, lastNameNode);
+                parent.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+            }
+
         }
 
         // Copy all texts from one language to another.
         private void CopyAllTexts(string langIdFrom, string langIdTo)
         {
             XmlNodeList allTexts = root.SelectNodes(string.Format("/symbols/symbol/text[@lang='{0}']", langIdFrom));
+            HashSet<string> handledSymbolsIds = new HashSet<string>();
 
             foreach (XmlNode node in allTexts) {
                 SymbolText symText = new SymbolText();
                 symText.ReadFromXmlElementNode((XmlElement) node);
                 symText.Lang = langIdTo;
-                AddOneDescriptionText(((XmlElement)node.ParentNode).GetAttribute("id"), symText);
+                string symbolId = ((XmlElement)node.ParentNode).GetAttribute("id");
+                if (!handledSymbolsIds.Contains(symbolId)) {
+                    AddOneDescriptionText(symbolId, symText);
+                    handledSymbolsIds.Add(symbolId);
+                }
             }
         }
 
@@ -168,12 +181,17 @@ namespace PurplePen
         private void CopyAllNames(string langIdFrom, string langIdTo)
         {
             XmlNodeList allNames = root.SelectNodes(string.Format("/symbols/symbol/name[@lang='{0}']", langIdFrom));
+            HashSet<string> handledSymbolsIds = new HashSet<string>();
 
             foreach (XmlNode node in allNames) {
                 SymbolText symText = new SymbolText();
                 symText.ReadFromXmlElementNode((XmlElement) node);
                 symText.Lang = langIdTo;
-                AddOneSymbolName(((XmlElement) node.ParentNode).GetAttribute("id"), symText);
+                string symbolId = ((XmlElement)node.ParentNode).GetAttribute("id");
+                if (!handledSymbolsIds.Contains(symbolId)) {
+                    AddOneSymbolName(symbolId, symText);
+                    handledSymbolsIds.Add(symbolId);
+                }
             }
         }
 

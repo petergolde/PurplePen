@@ -18,19 +18,11 @@ Releasing a new version of Purple Pen.
 
 7 1/2. Build PdfiumViewer (Debug and Release) and copy new versions over with batch file.
 
-8. In solution explorer, in SetupIS, goto General Information in section 1.
-   Change Product Version to new version. Immediately below, generate a new guid for the
-   Product Code.
-   In SetupIS, section 1, Update paths, under Previous Versions, enter the new version number 
-   as the MaxVersion.
-   In SetupIS, section 6, Releases, select "Builds/Expressi/SingleImage" in tree on left, then signing tab on right, then
-   enter private key password (usual with 5) in the private key password spot.
+8. In solution explorer, in InnoSetup, edit PurplePen.iss. Change "MyAppVersion" to new version number.
 
 9. Build release build.
 
-9b. Erase private key password.
-
-10. Copy and rename src\SetupIS\SetupIS\Express\SingleImage\DiskImages\DISK1\setup.exe and place in http://purplepen.golde.org/downloads
+10. Copy and rename src\InnoSetup\output\purplepen-setup.exe and place in http://purplepen.golde.org/downloads
 
 11. Update Home and Download page to link to new download. (Both the Download Now button and the list of all versions).
 
