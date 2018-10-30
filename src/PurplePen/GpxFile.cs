@@ -280,7 +280,7 @@ namespace PurplePen
     }
 
     // Has all the settings for creating OCAD files.
-    class GpxCreationSettings
+    public class GpxCreationSettings
     {
         public Id<Course>[] CourseIds;          // Courses to export. Course.None means all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.

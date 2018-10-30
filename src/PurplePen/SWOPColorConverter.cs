@@ -9,7 +9,7 @@ using SD = System.Drawing;
 
 namespace PurplePen
 {
-    class SwopColorConverter: GDIPlus_ColorConverter
+    public class SwopColorConverter: GDIPlus_ColorConverter
     {
         public readonly static string SwopFileName;
         public readonly static Uri SwopUri;

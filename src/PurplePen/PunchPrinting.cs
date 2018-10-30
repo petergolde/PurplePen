@@ -82,7 +82,7 @@ namespace PurplePen
     }
 
     // All the information needed to print punches.
-    class PunchPrintSettings
+    public class PunchPrintSettings
     {
         private PageSettings pageSettings;
 

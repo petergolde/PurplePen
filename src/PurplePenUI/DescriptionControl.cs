@@ -44,22 +44,6 @@ namespace PurplePen
 {
     partial class DescriptionControl : UserControl
     {
-        // What was changed?
-        public enum ChangeKind
-        {
-            None,               
-            Title,              // Primary title
-            SecondaryTitle,     // Secondary title
-            CourseName,         // Course name
-            Climb,              // Course climb box
-            Length,             // Course length box
-            Score,              // Score box for a control (column A on score course)
-            Code,               // Code box for a control (column B)
-            DescriptionBox,     // Other box (C-H) on a control
-            Directive,           // A directive
-            Key,                      // A symbol key line
-            TextLine,              // A text line
-        }
 
         SymbolDB symbolDB;
         DescriptionRenderer renderer;
@@ -75,7 +59,7 @@ namespace PurplePen
         int scrollWidth;                 // width of a vertical scroll bar.
 
         // If a popup is active, the below indicate what.
-        ChangeKind popupKind;
+        DescriptionChangeKind popupKind;
         int popupLine;
         int popupBox;
 
@@ -83,7 +67,7 @@ namespace PurplePen
         const int popupBoxSize = 28;     // box size in the popup menu
         const float minBoxSize = 20;     // minimum box size of the description panel; 
 
-        public delegate void DescriptionChangedHandler(DescriptionControl sender, ChangeKind kind, int line, int box, object newValue);
+        public delegate void DescriptionChangedHandler(DescriptionControl sender, DescriptionChangeKind kind, int line, int box, object newValue);
 
         // Via a popup-menu, the user requested a change to what is in a box in the description.
         public event DescriptionChangedHandler Change;
@@ -447,7 +431,7 @@ namespace PurplePen
             Point location = GetPopupMenuLocation(hitTest);
 
             // Save the line/box we are possibly changing
-            popupKind = ChangeKind.None;     // will change this below if we actual pop something up!
+            popupKind = DescriptionChangeKind.None;     // will change this below if we actual pop something up!
             popupLine = hitTest.firstLine;
             popupBox = hitTest.box;
 
@@ -457,7 +441,7 @@ namespace PurplePen
                         if (!(renderer.Description[hitTest.firstLine].boxes[0] is Symbol)) {
                             // In score courses, the score is in column A, so allow in-place editing of it, unless its the start triange.
                             popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterScore, (string)renderer.Description[hitTest.firstLine].boxes[hitTest.box], 2, descriptionPanel, location);
-                            popupKind = ChangeKind.Score;
+                            popupKind = DescriptionChangeKind.Score;
                         }
                     }
                     else if (hitTest.box == 0) {
@@ -468,13 +452,13 @@ namespace PurplePen
                         // Column B
                         if (!(renderer.Description[hitTest.firstLine].boxes[0] is Symbol)) {
                             popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCode, (string) renderer.Description[hitTest.firstLine].boxes[1], 2, descriptionPanel, location);
-                            popupKind = ChangeKind.Code;
+                            popupKind = DescriptionChangeKind.Code;
                         }
                     }
                     else if (hitTest.box == 4) {
                         // Column E
                         popup.ShowPopup(8, 'E', 'D', true, null, null, 0, descriptionPanel, location);
-                        popupKind = ChangeKind.DescriptionBox;
+                        popupKind = DescriptionChangeKind.DescriptionBox;
                     }
                     else if (hitTest.box == 5) {
                         // Column F
@@ -482,12 +466,12 @@ namespace PurplePen
                         if (renderer.Description[hitTest.firstLine].boxes[5] is string && renderer.Description[hitTest.firstLine].boxes[5] != null)
                             initialText = (string) renderer.Description[hitTest.firstLine].boxes[5];
                         popup.ShowPopup(8, 'F', (char) 0, true, MiscText.EnterDimensions, initialText, 4, descriptionPanel, location);
-                        popupKind = ChangeKind.DescriptionBox;
+                        popupKind = DescriptionChangeKind.DescriptionBox;
                     }
                     else {
                         // Column C, D, G, H
                         popup.ShowPopup(8, (char)(hitTest.box + 'A'), (char)0, true, null, null, 0, descriptionPanel, location);
-                        popupKind = ChangeKind.DescriptionBox;
+                        popupKind = DescriptionChangeKind.DescriptionBox;
                     }
                     break;
 
@@ -499,7 +483,7 @@ namespace PurplePen
                         // Only allow changing the crossing point or finish symbols.
                         if (kind == 'X' || kind == 'Z') {
                             popup.ShowPopup(1, kind, (char)0, false, null, null, 0, descriptionPanel, location);
-                            popupKind = ChangeKind.Directive;
+                            popupKind = DescriptionChangeKind.Directive;
                         }
                     }
                     break;
@@ -508,14 +492,14 @@ namespace PurplePen
                     text = MiscText.EnterEventTitle;
 
                     popup.ShowPopup(8, (char)0, (char)0, false, text, CombineBoxTexts(hitTest.firstLine, hitTest.lastLine, 0, "|"), 8, descriptionPanel, location);
-                    popupKind = ChangeKind.Title;
+                    popupKind = DescriptionChangeKind.Title;
                     break;
 
                 case HitTestKind.SecondaryTitle:
                     text = MiscText.EnterSecondaryTitle;
 
                     popup.ShowPopup(8, (char) 0, (char) 0, false, text, CombineBoxTexts(hitTest.firstLine, hitTest.lastLine, 0, "|"), 8, descriptionPanel, location);
-                    popupKind = ChangeKind.SecondaryTitle;
+                    popupKind = DescriptionChangeKind.SecondaryTitle;
                     break;
 
                 case HitTestKind.Header:
@@ -527,7 +511,7 @@ namespace PurplePen
                             courseName = courseName.Substring(0, courseName.LastIndexOf('-'));
                         }
                         popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterCourseName, courseName, 6, descriptionPanel, location);
-                        popupKind = ChangeKind.CourseName;
+                        popupKind = DescriptionChangeKind.CourseName;
                     }
                     else if (hitTest.box == 1  && courseViewKind == CourseView.CourseViewKind.Normal) {
                         // the length
@@ -538,23 +522,23 @@ namespace PurplePen
                             lengthText = "";  // automatically calculated length.
 
                         popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterLength, lengthText, 4, descriptionPanel, location);
-                        popupKind = ChangeKind.Length;
+                        popupKind = DescriptionChangeKind.Length;
                     }
                     else if (hitTest.box == 2) {
                         // the climb
                         popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterClimb, Util.RemoveMeterSuffix((string) renderer.Description[hitTest.firstLine].boxes[2]), 4, descriptionPanel, location);
-                        popupKind = ChangeKind.Climb;
+                        popupKind = DescriptionChangeKind.Climb;
                     }
                     break;
 
                 case HitTestKind.Key:
                     popup.ShowPopup(8, (char) 0, (char) 0, false, MiscText.EnterSymbolText, (string) renderer.Description[hitTest.firstLine].boxes[1], 8, descriptionPanel, location);
-                    popupKind = ChangeKind.Key;
+                    popupKind = DescriptionChangeKind.Key;
                     break;
 
                 case HitTestKind.OtherTextLine:
                     popup.ShowPopup(8, (char)0, (char)0, false, MiscText.EnterTextLine, CombineBoxTexts(hitTest.firstLine, hitTest.lastLine, 0, "|"), 8, descriptionPanel, location);
-                    popupKind = ChangeKind.TextLine;
+                    popupKind = DescriptionChangeKind.TextLine;
                     break;
 
                 default: Debug.Fail("bad hit test kind"); break;
@@ -621,7 +605,7 @@ namespace PurplePen
         // The user selected something in the popup menu. Fire event indicating the change.
         void popup_Selected(object sender, SymbolPopupEventArgs eventArgs)
         {
-            Debug.Assert(popupKind != ChangeKind.None);
+            Debug.Assert(popupKind != DescriptionChangeKind.None);
 
             if (Change != null) {
                 object newValue = null;
@@ -637,7 +621,7 @@ namespace PurplePen
         // The popup was canceled.
         void popup_Canceled(object sender, EventArgs e)
         {
-            popupKind = ChangeKind.None;
+            popupKind = DescriptionChangeKind.None;
         }
 
     }

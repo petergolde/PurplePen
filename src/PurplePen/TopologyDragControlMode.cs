@@ -65,7 +65,7 @@ namespace PurplePen
 
             // Find nearest drop target that is within MAXDISTANCE of location, and not adjacent to the 
             // course control we are dragging.
-            foreach (CourseObj obj in layout) {
+            foreach (CourseObj obj in layout.CourseObjects) {
                 TopologyDropTargetCourseObj dropTarget = obj as TopologyDropTargetCourseObj;
                 if (dropTarget != null && 
                     ((dropTarget.courseControlId != courseControlDrag && dropTarget.courseControlId2 != courseControlDrag) ||

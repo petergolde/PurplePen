@@ -53,7 +53,7 @@ namespace PurplePen.Tests
         // [TestMethod]
         public void CompareFiles()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             string filenameJpeg = TestUtil.GetTestFile(@"routegadget\exporttest.jpg");
             string filenameGif = TestUtil.GetTestFile(@"routegadget\exporttest.gif");
 
@@ -71,7 +71,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TestExportJpeg()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg1.jpg");
             string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg1_baseline.png");
 
@@ -97,7 +97,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TestExportJpegAutoDpi1()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg2.jpg");
             string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg2_baseline.png");
 
@@ -123,7 +123,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TestExportJpegAutoDpi2()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg3.jpg");
             string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg3_baseline.png");
 
@@ -150,7 +150,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TestExportJpegAutoDpi3()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg4.jpg");
             string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg4_baseline.png");
 
@@ -177,7 +177,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TestExportGif()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             string filename = TestUtil.GetTestFile(@"routegadget\exportgif1.gif");
             string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportgif1_baseline.png");
 

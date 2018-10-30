@@ -139,7 +139,7 @@ namespace PurplePen.Tests
             GC.Collect();
 
             // Get the map display
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
             mapDisplay.MapIntensity = 0.6F;
             mapDisplay.AntiAlias = true;
             mapDisplay.SetMapFile(controller.MapType, controller.MapFileName);

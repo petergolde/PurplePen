@@ -42,7 +42,7 @@ using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
-    enum CourseLayer
+    public enum CourseLayer
     {
         // The lower the integer, they are on top. E.g., MainCourse is layered above AllControls.
         All = -1,                        // For filtering to all layers
@@ -58,7 +58,7 @@ namespace PurplePen
 
     // A CourseLayout should how a course is laid out on the screen. It primarily
     // encapsulates a list of CourseObj objects, as well as a color.
-    class CourseLayout: IEnumerable<CourseObj>
+    public class CourseLayout
     {
         List<CourseObj> objects = new List<CourseObj>();
 
@@ -88,32 +88,13 @@ namespace PurplePen
             this.colorOverprint[(int)layer] = overprint;
         }
 
-        // Index to get a course objects.
-        public CourseObj this[int i] {
-            get {
-                return objects[i];
-            }
+        internal IList<CourseObj> CourseObjects {
+            get { return new System.Collections.ObjectModel.ReadOnlyCollection<CourseObj>(objects); }
         }
 
-        // Get count of objects.
-        public int Count
-        {
-            get { return objects.Count; }
-        }
-
-        // Enumerate the objects in the course.
-        public IEnumerator<CourseObj> GetEnumerator()
-        {
-            return objects.GetEnumerator();
-        }
-
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return ((System.Collections.IEnumerable) objects).GetEnumerator();
-        }
 
         // Add a bunch of course objects to this layout.
-        public void AddCourseObject(CourseObj newObject)
+        internal void AddCourseObject(CourseObj newObject)
         {
             objects.Add(newObject);
         }
@@ -123,7 +104,7 @@ namespace PurplePen
         {
             // Create the map to render into.
             Map map = new Map(MapUtil.TextMetricsProvider, null);
-            if (Count == 0)
+            if (CourseObjects.Count == 0)
                 return map;
 
             SymColor[] colors = new SymColor[LAYERCOUNT];
@@ -147,7 +128,7 @@ namespace PurplePen
 
                 // Create colors for the special colors.
                 short customColorId = 61;
-                foreach (CourseObj courseObject in this) {
+                foreach (CourseObj courseObject in this.CourseObjects) {
                     if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Custom) {
                         if (!customColors.ContainsKey(courseObject.CustomColor)) {
                             CmykColor cmyk = courseObject.CustomColor.CustomColor;
@@ -167,7 +148,7 @@ namespace PurplePen
                     }
                 }
 
-                foreach (CourseObj courseObject in this) {
+                foreach (CourseObj courseObject in this.CourseObjects) {
                     int layerIndex = (int) courseObject.layer;
 
                     if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Black) {
@@ -190,15 +171,15 @@ namespace PurplePen
         // If no course object is hit, then we return null. 
         // The layerFilter, if >= 0, limits the objects consider to those in the given layer.
         // The filter, if non-null, is an additional filter (return true to consider)
-        public CourseObj HitTest(PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
+        internal CourseObj HitTest(PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
         {
-            return HitTestCollection(this, point, pixelSize, layerFilter, filter);
+            return HitTestCollection(this.CourseObjects, point, pixelSize, layerFilter, filter);
         }
 
         // Check a point against a set of course objects. 
         // The layerFilter, if >= 0, limits the objects consider to those in the given layer.
         // The filter, if non-null, is an additional filter (return true to consider)
-        public static CourseObj HitTestCollection(IEnumerable<CourseObj> courseObjects, PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
+        internal static CourseObj HitTestCollection(IEnumerable<CourseObj> courseObjects, PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
         {
             // We need to hit within 3 pixels of an object to select it.
             double bestDistance = pixelSize * 3;
@@ -225,7 +206,7 @@ namespace PurplePen
             bool first = true;
             RectangleF rect = new Rectangle();
 
-            foreach (CourseObj courseObject in this) {
+            foreach (CourseObj courseObject in this.CourseObjects) {
                 if (first)
                     rect = courseObject.GetHighlightBounds();
                 else
@@ -241,7 +222,7 @@ namespace PurplePen
         public void Dump(TextWriter writer)
         {
             writer.WriteLine();
-            foreach (CourseObj courseObject in this) {
+            foreach (CourseObj courseObject in this.CourseObjects) {
                 writer.WriteLine(courseObject);
             }
         }

@@ -147,7 +147,7 @@ namespace PurplePen.DebugUI
         {
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK) {
-                mapDisplay = new MapDisplay();
+                mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
                 mapDisplay.SetMapFile(Path.GetExtension(openFileDialog.FileName) == ".ocd" ? MapType.OCAD : MapType.Bitmap, openFileDialog.FileName);
                 mapDisplay.AntiAlias = antialiasCheckBox.Checked;
                 mapDisplay.ShowSymbolBounds = showBoundsCheckBox.Checked;

@@ -360,7 +360,7 @@ namespace PurplePen
     }
 
     // Has all the settings for creating OCAD files.
-    class OcadCreationSettings
+    public class OcadCreationSettings
     {
         public Id<Course>[] CourseIds;          // Courses to print. Course.None means all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.

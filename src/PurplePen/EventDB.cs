@@ -2868,16 +2868,6 @@ namespace PurplePen
 
             if (allControlsPrintScale == 0)
                 allControlsPrintScale = mapScale;
-
-            float scaleRatio;
-            if (mapScale > 0 && allControlsPrintScale > 0)
-                scaleRatio = allControlsPrintScale / mapScale;
-            else
-                scaleRatio = 1.0F;
-
-            if (printArea == null) {
-                printArea = MapUtil.GetDefaultPrintArea(mapFileName, scaleRatio);
-            }
         }
 
 
@@ -3223,7 +3213,7 @@ namespace PurplePen
         }
 
         // Older versions of purple pen didn't store page sizes. Update them if needed.
-        void FixPrintAreas()
+        void FixPrintAreas(IPdfLoadingStatus pdfLoadingStatus)
         {
             Event eventDB = GetEvent();
             float mapScale = eventDB.mapScale;
@@ -3234,8 +3224,19 @@ namespace PurplePen
             MapType mapType;
             string errorMessageText;
 
+
+            float scaleRatio;
+            if (mapScale > 0 && eventDB.allControlsPrintScale > 0)
+                scaleRatio = eventDB.allControlsPrintScale / mapScale;
+            else
+                scaleRatio = 1.0F;
+
+            if (eventDB.printArea == null) {
+                eventDB.printArea = MapUtil.GetDefaultPrintArea(eventDB.mapFileName, scaleRatio, pdfLoadingStatus);
+            }
+
             // If this failes, mapBounds will be empty rectangle, which is what we want to pass to GetDefaultPageSize;
-            MapUtil.ValidateMapFile(eventDB.mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            MapUtil.ValidateMapFile(eventDB.mapFileName, pdfLoadingStatus, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
 
             eventDB.printArea.UpdateUnknownPageSize(mapBounds, mapScale);
 
@@ -3295,8 +3296,12 @@ namespace PurplePen
         /// <summary>
         /// Load the entire state of the event DB from a file.
         /// </summary>
-        public void Load(string filename)
+        public void Load(string filename, IPdfLoadingStatus pdfLoadingStatus = null)
         {
+            if (pdfLoadingStatus == null) {
+                pdfLoadingStatus = new NullPdfLoadingStatus();
+            }
+
             using (XmlInput xmlinput = new XmlInput(filename)) {
                 xmlinput.CheckElement(rootElement);
                 xmlinput.Read();
@@ -3311,7 +3316,7 @@ namespace PurplePen
                 // Fix backward compatibility issues.
                 FixCourseSortOrders();
                 FixControlPointGaps();
-                FixPrintAreas();
+                FixPrintAreas(pdfLoadingStatus);
             }
         }
 

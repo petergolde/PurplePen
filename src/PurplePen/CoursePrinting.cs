@@ -290,7 +290,7 @@ namespace PurplePen
     }
 
     // All the information needed to print courses.
-    class CoursePrintSettings
+    public class CoursePrintSettings
     {
         private PageSettings pageSettings;
 

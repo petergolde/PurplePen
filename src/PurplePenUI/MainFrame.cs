@@ -393,7 +393,7 @@ namespace PurplePen
         void UpdateTopology()
         {
             if (topologyMapDisplay == null) {
-                topologyMapDisplay = new MapDisplay();
+                topologyMapDisplay = new MapDisplay(GetPdfLoadingStatusDialog());
                 topologyMapDisplay.SetMapFile(MapType.None, null);
                 topologyMapDisplay.AntiAlias = false;
                 topologyMapDisplay.Printing = true;
@@ -1211,7 +1211,7 @@ namespace PurplePen
             controller.SelectTab(courseTabs.SelectedIndex);
         }
 
-        private void descriptionControl_Change(DescriptionControl sender, DescriptionControl.ChangeKind kind, int line, int box, object newValue)
+        private void descriptionControl_Change(DescriptionControl sender, DescriptionChangeKind kind, int line, int box, object newValue)
         {
             controller.DescriptionChange(kind, line, box, newValue);
         }
@@ -2696,7 +2696,7 @@ namespace PurplePen
             }
         }
 
-        void ExportVariationReport(TeamVariationsForm form, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
+        void ExportVariationReport(TeamVariationsForm form, VariationExportFileType exportFileType, string exportFileName)
         {
             VariationReportData variationReportData = controller.GetVariationReportData(form.RelaySettings);
             controller.ExportRelayVariationsReport(form.RelaySettings, exportFileType, exportFileName);
@@ -2817,6 +2817,11 @@ namespace PurplePen
             if (newString != null) {
                 control.GetType().InvokeMember(propertyName, BindingFlags.SetProperty, null, control, new object[] { newString });
             }
+        }
+
+        public IPdfLoadingStatus GetPdfLoadingStatusDialog()
+        {
+            return new PdfLoadingUI();
         }
 
         private void addDescriptionLanguageMenu_Click(object sender, EventArgs e)

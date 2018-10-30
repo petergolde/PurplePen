@@ -70,7 +70,7 @@ namespace PurplePen
 
         // Validate the map file to make sure it is readable. If OK, return true and set the scale.
         // If not OK, return false and set the error message. 
-        public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out Size bitmapSize, out RectangleF mapBounds, out MapType mapType, out string errorMessageText)
+        public static bool ValidateMapFile(string mapFileName, IPdfLoadingStatus pdfLoadingStatus, out float scale, out float dpi, out Size bitmapSize, out RectangleF mapBounds, out MapType mapType, out string errorMessageText)
         {
             scale = 0; dpi = 0;
             mapType = MapType.None;
@@ -78,7 +78,7 @@ namespace PurplePen
             string fileExtension = Path.GetExtension(mapFileName);
 
             if (string.Compare(fileExtension, ".pdf", StringComparison.InvariantCultureIgnoreCase) == 0) {
-                if (ValidatePdf(mapFileName, out dpi, out bitmapSize, out errorMessageText) != null) {
+                if (ValidatePdf(mapFileName, pdfLoadingStatus, out dpi, out bitmapSize, out errorMessageText) != null) {
                     mapType = MapType.PDF;
                     mapBounds = new RectangleF(0, 0, (float)bitmapSize.Width / dpi * 25.4F, (float) bitmapSize.Height / dpi * 25.4F);
                     return true;
@@ -140,10 +140,8 @@ namespace PurplePen
             return true;
         }
 
-        public static PdfMapFile ValidatePdf(string pdfFileName, out float dpi, out Size bitmapSize, out string errorMessageText)
+        public static PdfMapFile ValidatePdf(string pdfFileName, IPdfLoadingStatus loadingStatus, out float dpi, out Size bitmapSize, out string errorMessageText)
         {
-            IPdfLoadingStatus loadingStatus = new PdfLoadingUI();  // UNDONE: Should this be passed in instead?
-
             PdfMapFile mapFile = new PdfMapFile(pdfFileName);
 
             bool ok = true;
@@ -246,7 +244,7 @@ namespace PurplePen
         }
 
         // Give a map file name, get the default print area.
-        public static PrintArea GetDefaultPrintArea(string mapFileName, float printScaleRatio)
+        public static PrintArea GetDefaultPrintArea(string mapFileName, float printScaleRatio, IPdfLoadingStatus pdfLoadingStatus)
         {
             float scale, dpi;
             Size bitmapSize;
@@ -255,7 +253,7 @@ namespace PurplePen
             string errorMessageText;
 
             // If this failes, mapBounds will be empty rectangle, which is what we want to pass to GetDefaultPageSize;
-            ValidateMapFile(mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            ValidateMapFile(mapFileName, pdfLoadingStatus, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
 
             PrintArea printArea = new PrintArea();
             printArea.autoPrintArea = true;
@@ -266,10 +264,22 @@ namespace PurplePen
         }
     }
 
-    interface IPdfLoadingStatus
+    public interface IPdfLoadingStatus
     {
         bool ShowLoadingStatus(string fileName);
         void LoadingComplete(bool success, string errorMessage);
+    }
+
+    public class NullPdfLoadingStatus : IPdfLoadingStatus
+    {
+        public void LoadingComplete(bool success, string errorMessage)
+        {
+        }
+
+        public bool ShowLoadingStatus(string fileName)
+        {
+            return true;
+        }
     }
 
     static class FindPurple

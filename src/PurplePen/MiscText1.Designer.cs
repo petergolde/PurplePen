@@ -19,10 +19,10 @@ namespace PurplePen {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class MiscText {
+    public class MiscText {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace PurplePen {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PurplePen.MiscText", typeof(MiscText).Assembly);
@@ -51,7 +51,7 @@ namespace PurplePen {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Set the appearance of the line. After pressing OK, drag the mouse to draw the line segments in the desired location..
         /// </summary>
-        internal static string AddLineExplanation {
+        public static string AddLineExplanation {
             get {
                 return ResourceManager.GetString("AddLineExplanation", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Add Line.
         /// </summary>
-        internal static string AddLineTitle {
+        public static string AddLineTitle {
             get {
                 return ResourceManager.GetString("AddLineTitle", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Set the appearance of the rectangle. After pressing OK, drag the mouse to place the rectangle in the desired location..
         /// </summary>
-        internal static string AddRectangleExplanation {
+        public static string AddRectangleExplanation {
             get {
                 return ResourceManager.GetString("AddRectangleExplanation", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Add Rectangle.
         /// </summary>
-        internal static string AddRectangleTitle {
+        public static string AddRectangleTitle {
             get {
                 return ResourceManager.GetString("AddRectangleTitle", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter the text you wish to place on the map. After pressing OK, drag the mouse to place the text in the desired location..
         /// </summary>
-        internal static string AddTextSpecialExplanation {
+        public static string AddTextSpecialExplanation {
             get {
                 return ResourceManager.GetString("AddTextSpecialExplanation", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Add Text.
         /// </summary>
-        internal static string AddTextSpecialTitle {
+        public static string AddTextSpecialTitle {
             get {
                 return ResourceManager.GetString("AddTextSpecialTitle", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to All controls.
         /// </summary>
-        internal static string AllControls {
+        public static string AllControls {
             get {
                 return ResourceManager.GetString("AllControls", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to All Parts.
         /// </summary>
-        internal static string AllParts {
+        public static string AllParts {
             get {
                 return ResourceManager.GetString("AllParts", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to All Variations.
         /// </summary>
-        internal static string AllVariations {
+        public static string AllVariations {
             get {
                 return ResourceManager.GetString("AllVariations", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to course setting for orienteering.
         /// </summary>
-        internal static string AppSubtitle {
+        public static string AppSubtitle {
             get {
                 return ResourceManager.GetString("AppSubtitle", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Purple Pen.
         /// </summary>
-        internal static string AppTitle {
+        public static string AppTitle {
             get {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Automatic.
         /// </summary>
-        internal static string AutomaticLength {
+        public static string AutomaticLength {
             get {
                 return ResourceManager.GetString("AutomaticLength", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The climb for a course must be a number 0-9999, or blank..
         /// </summary>
-        internal static string BadClimb {
+        public static string BadClimb {
             get {
                 return ResourceManager.GetString("BadClimb", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The  .NET framework on your computer does not appear to be correctly installed. Please visit http://microsoft.com/net and install the latest version of the .NET framework for your Windows operating system..
         /// </summary>
-        internal static string BadDotNetFramework {
+        public static string BadDotNetFramework {
             get {
                 return ResourceManager.GetString("BadDotNetFramework", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to &apos;{0}&apos; is not a valid leg number for branch &apos;{1}&apos;.
         /// </summary>
-        internal static string BadLegNumber {
+        public static string BadLegNumber {
             get {
                 return ResourceManager.GetString("BadLegNumber", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The length for a course must be a number 0.1 - 99.9, or blank to calculate length automatically..
         /// </summary>
-        internal static string BadLength {
+        public static string BadLength {
             get {
                 return ResourceManager.GetString("BadLength", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The load for a course must be an integer 0-999999, or blank..
         /// </summary>
-        internal static string BadLoad {
+        public static string BadLoad {
             get {
                 return ResourceManager.GetString("BadLoad", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The print scale must be a number between 100 and 100,000..
         /// </summary>
-        internal static string BadScale {
+        public static string BadScale {
             get {
                 return ResourceManager.GetString("BadScale", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The points for a control must be an integer 1-999..
         /// </summary>
-        internal static string BadScore {
+        public static string BadScore {
             get {
                 return ResourceManager.GetString("BadScore", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The underlying OCAD map has visible template files. In OCAD 8 and below, these templates may not appear due to limitations in OCAD..
         /// </summary>
-        internal static string BaseMapHasVisibleTemplatesThatMayNotAppear {
+        public static string BaseMapHasVisibleTemplatesThatMayNotAppear {
             get {
                 return ResourceManager.GetString("BaseMapHasVisibleTemplatesThatMayNotAppear", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Black.
         /// </summary>
-        internal static string Black {
+        public static string Black {
             get {
                 return ResourceManager.GetString("Black", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cancelled by user.
         /// </summary>
-        internal static string CancelledByUser {
+        public static string CancelledByUser {
             get {
                 return ResourceManager.GetString("CancelledByUser", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cancel Operation.
         /// </summary>
-        internal static string CancelOperation {
+        public static string CancelOperation {
             get {
                 return ResourceManager.GetString("CancelOperation", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Ca&amp;ncel Operation.
         /// </summary>
-        internal static string CancelOperationWithShortcut {
+        public static string CancelOperationWithShortcut {
             get {
                 return ResourceManager.GetString("CancelOperationWithShortcut", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Descriptions may not be added to a course with a map exchange if &quot;All Parts&quot; is being displayed. Switch to the part you wish to add descriptions to, and then choose &quot;Add Descriptions&quot; again..
         /// </summary>
-        internal static string CannotAddDescriptionsToAllParts {
+        public static string CannotAddDescriptionsToAllParts {
             get {
                 return ResourceManager.GetString("CannotAddDescriptionsToAllParts", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot add variation..
         /// </summary>
-        internal static string CannotAddVariation {
+        public static string CannotAddVariation {
             get {
                 return ResourceManager.GetString("CannotAddVariation", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot create folder &apos;{0}&apos; for the following reason:.
         /// </summary>
-        internal static string CannotCreateDirectory {
+        public static string CannotCreateDirectory {
             get {
                 return ResourceManager.GetString("CannotCreateDirectory", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot create &apos;{0}&apos; for the following reason:.
         /// </summary>
-        internal static string CannotCreateFile {
+        public static string CannotCreateFile {
             get {
                 return ResourceManager.GetString("CannotCreateFile", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot create OCAD files for the following reason:.
         /// </summary>
-        internal static string CannotCreateOcadFiles {
+        public static string CannotCreateOcadFiles {
             get {
                 return ResourceManager.GetString("CannotCreateOcadFiles", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot create PDFs for the following reason:.
         /// </summary>
-        internal static string CannotCreatePdfs {
+        public static string CannotCreatePdfs {
             get {
                 return ResourceManager.GetString("CannotCreatePdfs", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot load &apos;{0}&apos; for the following reason:.
         /// </summary>
-        internal static string CannotLoadFile {
+        public static string CannotLoadFile {
             get {
                 return ResourceManager.GetString("CannotLoadFile", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot load map file &apos;{0}&apos; for the following reason:.
         /// </summary>
-        internal static string CannotLoadMapFile {
+        public static string CannotLoadMapFile {
             get {
                 return ResourceManager.GetString("CannotLoadMapFile", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot print &apos;{0}&apos; for the following reason:.
         /// </summary>
-        internal static string CannotPrint {
+        public static string CannotPrint {
             get {
                 return ResourceManager.GetString("CannotPrint", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot read image file &apos;{0}&apos;..
         /// </summary>
-        internal static string CannotReadImageFile {
+        public static string CannotReadImageFile {
             get {
                 return ResourceManager.GetString("CannotReadImageFile", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot read map for the following reason: &apos;{0}&apos; Using Optimize/Repair and re-saving in OCAD may fix problems..
         /// </summary>
-        internal static string CannotReadMap {
+        public static string CannotReadMap {
             get {
                 return ResourceManager.GetString("CannotReadMap", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot read map for the following reason: &apos;{0}&apos; Opening and re-saving the map in the latest version of OpenOrienteering Mapper may fix problems..
         /// </summary>
-        internal static string CannotReadMapOOM {
+        public static string CannotReadMapOOM {
             get {
                 return ResourceManager.GetString("CannotReadMapOOM", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cannot save &apos;{0}&apos; for the following reason:.
         /// </summary>
-        internal static string CannotSaveFile {
+        public static string CannotSaveFile {
             get {
                 return ResourceManager.GetString("CannotSaveFile", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A control that starts a fork or loop cannot be dragged to a new place in the course..
         /// </summary>
-        internal static string CantRearrangeSplitControl {
+        public static string CantRearrangeSplitControl {
             get {
                 return ResourceManager.GetString("CantRearrangeSplitControl", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The current event has textual control descriptions in {0}. Would you like to change the language of control descriptions to {1}?.
         /// </summary>
-        internal static string ChangeDescriptionLanguage {
+        public static string ChangeDescriptionLanguage {
             get {
                 return ResourceManager.GetString("ChangeDescriptionLanguage", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Change the appearance of the line or rectangle..
         /// </summary>
-        internal static string ChangeLineAppearanceExplanation {
+        public static string ChangeLineAppearanceExplanation {
             get {
                 return ResourceManager.GetString("ChangeLineAppearanceExplanation", resourceCulture);
             }
@@ -423,7 +423,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Change Line Appearance.
         /// </summary>
-        internal static string ChangeLineAppearanceTitle {
+        public static string ChangeLineAppearanceTitle {
             get {
                 return ResourceManager.GetString("ChangeLineAppearanceTitle", resourceCulture);
             }
@@ -432,7 +432,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter the new text..
         /// </summary>
-        internal static string ChangeTextSpecialExplanation {
+        public static string ChangeTextSpecialExplanation {
             get {
                 return ResourceManager.GetString("ChangeTextSpecialExplanation", resourceCulture);
             }
@@ -441,7 +441,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Change Text.
         /// </summary>
-        internal static string ChangeTextTitle {
+        public static string ChangeTextTitle {
             get {
                 return ResourceManager.GetString("ChangeTextTitle", resourceCulture);
             }
@@ -450,7 +450,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Choose Color....
         /// </summary>
-        internal static string ChooseOtherColor {
+        public static string ChooseOtherColor {
             get {
                 return ResourceManager.GetString("ChooseOtherColor", resourceCulture);
             }
@@ -459,7 +459,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to &amp;Clear Selection.
         /// </summary>
-        internal static string ClearSelectionWithShortcut {
+        public static string ClearSelectionWithShortcut {
             get {
                 return ResourceManager.GetString("ClearSelectionWithShortcut", resourceCulture);
             }
@@ -468,7 +468,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Purple Pen must be closed before loading the created OCAD files..
         /// </summary>
-        internal static string ClosePPBeforeLoadingOCAD {
+        public static string ClosePPBeforeLoadingOCAD {
             get {
                 return ResourceManager.GetString("ClosePPBeforeLoadingOCAD", resourceCulture);
             }
@@ -477,7 +477,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A control code must be one, two, or three letters or digits..
         /// </summary>
-        internal static string CodeBadLength {
+        public static string CodeBadLength {
             get {
                 return ResourceManager.GetString("CodeBadLength", resourceCulture);
             }
@@ -486,7 +486,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A control code should not begin with zero..
         /// </summary>
-        internal static string CodeBeginsWithZero {
+        public static string CodeBeginsWithZero {
             get {
                 return ResourceManager.GetString("CodeBeginsWithZero", resourceCulture);
             }
@@ -495,7 +495,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A control code must not contain a space..
         /// </summary>
-        internal static string CodeContainsSpace {
+        public static string CodeContainsSpace {
             get {
                 return ResourceManager.GetString("CodeContainsSpace", resourceCulture);
             }
@@ -504,7 +504,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A control code should not look like another number when upside-down..
         /// </summary>
-        internal static string CodeCouldBeUpsideDown {
+        public static string CodeCouldBeUpsideDown {
             get {
                 return ResourceManager.GetString("CodeCouldBeUpsideDown", resourceCulture);
             }
@@ -513,7 +513,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The control code &apos;{0}&apos; is already used by another control..
         /// </summary>
-        internal static string CodeInUse {
+        public static string CodeInUse {
             get {
                 return ResourceManager.GetString("CodeInUse", resourceCulture);
             }
@@ -522,7 +522,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Control {0}.
         /// </summary>
-        internal static string Control_Code {
+        public static string Control_Code {
             get {
                 return ResourceManager.GetString("Control_Code", resourceCulture);
             }
@@ -531,7 +531,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Course Properties.
         /// </summary>
-        internal static string CoursePropertiesTitle {
+        public static string CoursePropertiesTitle {
             get {
                 return ResourceManager.GetString("CoursePropertiesTitle", resourceCulture);
             }
@@ -540,7 +540,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string CrashCancel {
+        public static string CrashCancel {
             get {
                 return ResourceManager.GetString("CrashCancel", resourceCulture);
             }
@@ -549,7 +549,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Contact Email.
         /// </summary>
-        internal static string CrashEmail {
+        public static string CrashEmail {
             get {
                 return ResourceManager.GetString("CrashEmail", resourceCulture);
             }
@@ -558,7 +558,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to An error has occurred. In order to help us fix the problem, please enter your email address and additional information, and send us an error report..
         /// </summary>
-        internal static string CrashIntro {
+        public static string CrashIntro {
             get {
                 return ResourceManager.GetString("CrashIntro", resourceCulture);
             }
@@ -567,7 +567,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Please tell us what you were doing in the program, to help fix the problem.
         /// </summary>
-        internal static string CrashMessage {
+        public static string CrashMessage {
             get {
                 return ResourceManager.GetString("CrashMessage", resourceCulture);
             }
@@ -576,7 +576,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        internal static string CrashSave {
+        public static string CrashSave {
             get {
                 return ResourceManager.GetString("CrashSave", resourceCulture);
             }
@@ -585,7 +585,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Send Report.
         /// </summary>
-        internal static string CrashSend {
+        public static string CrashSend {
             get {
                 return ResourceManager.GetString("CrashSend", resourceCulture);
             }
@@ -594,7 +594,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Creating {0}....
         /// </summary>
-        internal static string CreatingFile {
+        public static string CreatingFile {
             get {
                 return ResourceManager.GetString("CreatingFile", resourceCulture);
             }
@@ -603,7 +603,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Ctrl+Y.
         /// </summary>
-        internal static string CtrlY {
+        public static string CtrlY {
             get {
                 return ResourceManager.GetString("CtrlY", resourceCulture);
             }
@@ -612,7 +612,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Ctrl+Z.
         /// </summary>
-        internal static string CtrlZ {
+        public static string CtrlZ {
             get {
                 return ResourceManager.GetString("CtrlZ", resourceCulture);
             }
@@ -621,7 +621,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Custom Color.
         /// </summary>
-        internal static string CustomColor {
+        public static string CustomColor {
             get {
                 return ResourceManager.GetString("CustomColor", resourceCulture);
             }
@@ -630,7 +630,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Dark Blue.
         /// </summary>
-        internal static string DarkBlue {
+        public static string DarkBlue {
             get {
                 return ResourceManager.GetString("DarkBlue", resourceCulture);
             }
@@ -639,7 +639,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Control {0} is currently used by the following courses: {1}. Do you want to delete this control anyway?.
         /// </summary>
-        internal static string DeleteControlFromAllControls {
+        public static string DeleteControlFromAllControls {
             get {
                 return ResourceManager.GetString("DeleteControlFromAllControls", resourceCulture);
             }
@@ -648,7 +648,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Control {0} is no longer used by any course. Do you want to delete this control from the control collection?.
         /// </summary>
-        internal static string DeleteControlFromControlsCollection {
+        public static string DeleteControlFromControlsCollection {
             get {
                 return ResourceManager.GetString("DeleteControlFromControlsCollection", resourceCulture);
             }
@@ -657,7 +657,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Controls {0} are no longer used by any course. Do you want to delete these controls from the control collection?.
         /// </summary>
-        internal static string DeleteMultipleControlsFromControlsCollection {
+        public static string DeleteMultipleControlsFromControlsCollection {
             get {
                 return ResourceManager.GetString("DeleteMultipleControlsFromControlsCollection", resourceCulture);
             }
@@ -666,7 +666,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The code &quot;{0}&quot; is used more than once..
         /// </summary>
-        internal static string DuplicateCode {
+        public static string DuplicateCode {
             get {
                 return ResourceManager.GetString("DuplicateCode", resourceCulture);
             }
@@ -675,7 +675,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Duplicate Course.
         /// </summary>
-        internal static string DuplicateCourseTitle {
+        public static string DuplicateCourseTitle {
             get {
                 return ResourceManager.GetString("DuplicateCourseTitle", resourceCulture);
             }
@@ -684,7 +684,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter new climb in meters.
         /// </summary>
-        internal static string EnterClimb {
+        public static string EnterClimb {
             get {
                 return ResourceManager.GetString("EnterClimb", resourceCulture);
             }
@@ -693,7 +693,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter new code.
         /// </summary>
-        internal static string EnterCode {
+        public static string EnterCode {
             get {
                 return ResourceManager.GetString("EnterCode", resourceCulture);
             }
@@ -702,7 +702,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter new course name.
         /// </summary>
-        internal static string EnterCourseName {
+        public static string EnterCourseName {
             get {
                 return ResourceManager.GetString("EnterCourseName", resourceCulture);
             }
@@ -713,7 +713,7 @@ namespace PurplePen {
         ///Use / for height on a slope
         ///Use | for two features.
         /// </summary>
-        internal static string EnterDimensions {
+        public static string EnterDimensions {
             get {
                 return ResourceManager.GetString("EnterDimensions", resourceCulture);
             }
@@ -724,7 +724,7 @@ namespace PurplePen {
         ///Use | to separate lines
         ///(affects all courses).
         /// </summary>
-        internal static string EnterEventTitle {
+        public static string EnterEventTitle {
             get {
                 return ResourceManager.GetString("EnterEventTitle", resourceCulture);
             }
@@ -733,7 +733,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter length in km, or leave blank to calculate automatically.
         /// </summary>
-        internal static string EnterLength {
+        public static string EnterLength {
             get {
                 return ResourceManager.GetString("EnterLength", resourceCulture);
             }
@@ -742,7 +742,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Enter new score.
         /// </summary>
-        internal static string EnterScore {
+        public static string EnterScore {
             get {
                 return ResourceManager.GetString("EnterScore", resourceCulture);
             }
@@ -752,7 +752,7 @@ namespace PurplePen {
         ///   Looks up a localized string similar to Enter new secondary title
         ///Use | to separate lines.
         /// </summary>
-        internal static string EnterSecondaryTitle {
+        public static string EnterSecondaryTitle {
             get {
                 return ResourceManager.GetString("EnterSecondaryTitle", resourceCulture);
             }
@@ -762,7 +762,7 @@ namespace PurplePen {
         ///   Looks up a localized string similar to Enter new symbol meaning
         ///(affects all courses).
         /// </summary>
-        internal static string EnterSymbolText {
+        public static string EnterSymbolText {
             get {
                 return ResourceManager.GetString("EnterSymbolText", resourceCulture);
             }
@@ -772,7 +772,7 @@ namespace PurplePen {
         ///   Looks up a localized string similar to Enter new text
         ///Use | to separate lines.
         /// </summary>
-        internal static string EnterTextLine {
+        public static string EnterTextLine {
             get {
                 return ResourceManager.GetString("EnterTextLine", resourceCulture);
             }
@@ -781,7 +781,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Esc.
         /// </summary>
-        internal static string Esc {
+        public static string Esc {
             get {
                 return ResourceManager.GetString("Esc", resourceCulture);
             }
@@ -790,7 +790,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to File &apos;{0}&apos; already exists in the specified folder. Click the &quot;Back&quot; button and choose a new folder or a new event title..
         /// </summary>
-        internal static string FileAlreadyExists {
+        public static string FileAlreadyExists {
             get {
                 return ResourceManager.GetString("FileAlreadyExists", resourceCulture);
             }
@@ -799,7 +799,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
-        internal static string Finish {
+        public static string Finish {
             get {
                 return ResourceManager.GetString("Finish", resourceCulture);
             }
@@ -808,7 +808,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to F.
         /// </summary>
-        internal static string Finish_Short {
+        public static string Finish_Short {
             get {
                 return ResourceManager.GetString("Finish_Short", resourceCulture);
             }
@@ -817,7 +817,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to &amp;Finish.
         /// </summary>
-        internal static string FinishButtonText {
+        public static string FinishButtonText {
             get {
                 return ResourceManager.GetString("FinishButtonText", resourceCulture);
             }
@@ -826,7 +826,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Suitable for use in relays with {0} participants per team..
         /// </summary>
-        internal static string ForkSummary {
+        public static string ForkSummary {
             get {
                 return ResourceManager.GetString("ForkSummary", resourceCulture);
             }
@@ -835,7 +835,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The map file must be an OCAD file to use GPX files..
         /// </summary>
-        internal static string GpxMustBeOcadMap {
+        public static string GpxMustBeOcadMap {
             get {
                 return ResourceManager.GetString("GpxMustBeOcadMap", resourceCulture);
             }
@@ -844,7 +844,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The OCAD file must have a coordinate system defined to use GPX files..
         /// </summary>
-        internal static string GpxMustHaveCoordSystem {
+        public static string GpxMustHaveCoordSystem {
             get {
                 return ResourceManager.GetString("GpxMustHaveCoordSystem", resourceCulture);
             }
@@ -853,7 +853,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The OCAD file must have real world coordinates defined to use GPX files..
         /// </summary>
-        internal static string GpxMustHaveRealWorldCoord {
+        public static string GpxMustHaveRealWorldCoord {
             get {
                 return ResourceManager.GetString("GpxMustHaveRealWorldCoord", resourceCulture);
             }
@@ -862,7 +862,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Could not reproject points; either the coordinate system or the real world coordinates in the OCAD map are wrong..
         /// </summary>
-        internal static string GpxReprojectFailure {
+        public static string GpxReprojectFailure {
             get {
                 return ResourceManager.GetString("GpxReprojectFailure", resourceCulture);
             }
@@ -871,7 +871,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The OCAD file uses a coordinate system that is not supported by Purple Pen..
         /// </summary>
-        internal static string GpxUnsupportedCoordSystem {
+        public static string GpxUnsupportedCoordSystem {
             get {
                 return ResourceManager.GetString("GpxUnsupportedCoordSystem", resourceCulture);
             }
@@ -880,7 +880,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Green.
         /// </summary>
-        internal static string Green {
+        public static string Green {
             get {
                 return ResourceManager.GetString("Green", resourceCulture);
             }
@@ -889,7 +889,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Help file &apos;{0}&apos; could not be opened..
         /// </summary>
-        internal static string HelpFileNotFound {
+        public static string HelpFileNotFound {
             get {
                 return ResourceManager.GetString("HelpFileNotFound", resourceCulture);
             }
@@ -898,7 +898,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Due to limitations of the OCAD file format (in OCAD 10 and below), image objects will appear underneath courses and white out areas in the exported OCAD files. Please check the OCAD files to make sure your images appear as desired..
         /// </summary>
-        internal static string ImagesMayAppearBadlyLayeredInOcad10Below {
+        public static string ImagesMayAppearBadlyLayeredInOcad10Below {
             get {
                 return ResourceManager.GetString("ImagesMayAppearBadlyLayeredInOcad10Below", resourceCulture);
             }
@@ -907,7 +907,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Landscape.
         /// </summary>
-        internal static string Landscape {
+        public static string Landscape {
             get {
                 return ResourceManager.GetString("Landscape", resourceCulture);
             }
@@ -916,7 +916,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Leg {0} should be assigned to one of branches {1}.
         /// </summary>
-        internal static string LegNotAssigned {
+        public static string LegNotAssigned {
             get {
                 return ResourceManager.GetString("LegNotAssigned", resourceCulture);
             }
@@ -925,7 +925,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Leg {0} is assigned to both branch &apos;{1}&apos; and branch &apos;{2}&apos;.
         /// </summary>
-        internal static string LegUsedTwice {
+        public static string LegUsedTwice {
             get {
                 return ResourceManager.GetString("LegUsedTwice", resourceCulture);
             }
@@ -934,7 +934,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Light Blue.
         /// </summary>
-        internal static string LightBlue {
+        public static string LightBlue {
             get {
                 return ResourceManager.GetString("LightBlue", resourceCulture);
             }
@@ -943,7 +943,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The central control in the loop will be visited {0} times. There are {1} possible paths through the loops..
         /// </summary>
-        internal static string LoopSummary {
+        public static string LoopSummary {
             get {
                 return ResourceManager.GetString("LoopSummary", resourceCulture);
             }
@@ -952,7 +952,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Mandatory crossing point.
         /// </summary>
-        internal static string MandCrossing_Long {
+        public static string MandCrossing_Long {
             get {
                 return ResourceManager.GetString("MandCrossing_Long", resourceCulture);
             }
@@ -961,7 +961,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Crossing.
         /// </summary>
-        internal static string MandCrossing_Medium {
+        public static string MandCrossing_Medium {
             get {
                 return ResourceManager.GetString("MandCrossing_Medium", resourceCulture);
             }
@@ -970,7 +970,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to C.
         /// </summary>
-        internal static string MandCrossing_Short {
+        public static string MandCrossing_Short {
             get {
                 return ResourceManager.GetString("MandCrossing_Short", resourceCulture);
             }
@@ -979,7 +979,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Map exchange.
         /// </summary>
-        internal static string MapExchange_Long {
+        public static string MapExchange_Long {
             get {
                 return ResourceManager.GetString("MapExchange_Long", resourceCulture);
             }
@@ -988,7 +988,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Exchange.
         /// </summary>
-        internal static string MapExchange_Medium {
+        public static string MapExchange_Medium {
             get {
                 return ResourceManager.GetString("MapExchange_Medium", resourceCulture);
             }
@@ -997,7 +997,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to MX.
         /// </summary>
-        internal static string MapExchange_Short {
+        public static string MapExchange_Short {
             get {
                 return ResourceManager.GetString("MapExchange_Short", resourceCulture);
             }
@@ -1006,7 +1006,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Another program has changed the map file &quot;{0}&quot;. Purple Pen will now reload the map..
         /// </summary>
-        internal static string MapFileChanged {
+        public static string MapFileChanged {
             get {
                 return ResourceManager.GetString("MapFileChanged", resourceCulture);
             }
@@ -1015,7 +1015,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The map file &quot;{0}&quot; has been deleted. Please try to restore the map file, then press &quot;Ok&quot;..
         /// </summary>
-        internal static string MapFileDeleted {
+        public static string MapFileDeleted {
             get {
                 return ResourceManager.GetString("MapFileDeleted", resourceCulture);
             }
@@ -1024,7 +1024,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Map Issue Point.
         /// </summary>
-        internal static string MapIssue_Long {
+        public static string MapIssue_Long {
             get {
                 return ResourceManager.GetString("MapIssue_Long", resourceCulture);
             }
@@ -1033,7 +1033,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Map Issue.
         /// </summary>
-        internal static string MapIssue_Medium {
+        public static string MapIssue_Medium {
             get {
                 return ResourceManager.GetString("MapIssue_Medium", resourceCulture);
             }
@@ -1042,7 +1042,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to MI.
         /// </summary>
-        internal static string MapIssue_Short {
+        public static string MapIssue_Short {
             get {
                 return ResourceManager.GetString("MapIssue_Short", resourceCulture);
             }
@@ -1051,7 +1051,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to All: {0}.
         /// </summary>
-        internal static string Margins_All {
+        public static string Margins_All {
             get {
                 return ResourceManager.GetString("Margins_All", resourceCulture);
             }
@@ -1060,7 +1060,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Left: {0}, Right: {1}, Top: {2}, Bottom: {3}.
         /// </summary>
-        internal static string Margins_LRTB {
+        public static string Margins_LRTB {
             get {
                 return ResourceManager.GetString("Margins_LRTB", resourceCulture);
             }
@@ -1073,7 +1073,7 @@ namespace PurplePen {
         ///
         ///After pressing OK, try to find a copy of the map file on your computer..
         /// </summary>
-        internal static string MissingMapFile {
+        public static string MissingMapFile {
             get {
                 return ResourceManager.GetString("MissingMapFile", resourceCulture);
             }
@@ -1084,7 +1084,7 @@ namespace PurplePen {
         ///
         ///Would you like to download and install the latest version?.
         /// </summary>
-        internal static string NewerVersionAvailable {
+        public static string NewerVersionAvailable {
             get {
                 return ResourceManager.GetString("NewerVersionAvailable", resourceCulture);
             }
@@ -1093,7 +1093,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to &amp;Next &gt;.
         /// </summary>
-        internal static string NextButtonText {
+        public static string NextButtonText {
             get {
                 return ResourceManager.GetString("NextButtonText", resourceCulture);
             }
@@ -1102,7 +1102,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to No courses were selected to print..
         /// </summary>
-        internal static string NoCoursesSelected {
+        public static string NoCoursesSelected {
             get {
                 return ResourceManager.GetString("NoCoursesSelected", resourceCulture);
             }
@@ -1111,7 +1111,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to No symbol.
         /// </summary>
-        internal static string NoSymbol {
+        public static string NoSymbol {
             get {
                 return ResourceManager.GetString("NoSymbol", resourceCulture);
             }
@@ -1120,7 +1120,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to All controls are used in a course..
         /// </summary>
-        internal static string NoUnusedControls {
+        public static string NoUnusedControls {
             get {
                 return ResourceManager.GetString("NoUnusedControls", resourceCulture);
             }
@@ -1129,7 +1129,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to OCAD.
         /// </summary>
-        internal static string OCAD {
+        public static string OCAD {
             get {
                 return ResourceManager.GetString("OCAD", resourceCulture);
             }
@@ -1138,7 +1138,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Open &quot;{0}&quot;.
         /// </summary>
-        internal static string OpenLastEvent {
+        public static string OpenLastEvent {
             get {
                 return ResourceManager.GetString("OpenLastEvent", resourceCulture);
             }
@@ -1147,7 +1147,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to OOM.
         /// </summary>
-        internal static string OpenOrienteeringMapper {
+        public static string OpenOrienteeringMapper {
             get {
                 return ResourceManager.GetString("OpenOrienteeringMapper", resourceCulture);
             }
@@ -1156,7 +1156,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The page size is too small for any descriptions to be printed..
         /// </summary>
-        internal static string PageTooSmall {
+        public static string PageTooSmall {
             get {
                 return ResourceManager.GetString("PageTooSmall", resourceCulture);
             }
@@ -1165,7 +1165,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Part {0}.
         /// </summary>
-        internal static string PartN {
+        public static string PartN {
             get {
                 return ResourceManager.GetString("PartN", resourceCulture);
             }
@@ -1174,7 +1174,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Part {0} (of {1}).
         /// </summary>
-        internal static string PartXOfY {
+        public static string PartXOfY {
             get {
                 return ResourceManager.GetString("PartXOfY", resourceCulture);
             }
@@ -1183,7 +1183,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Finished printing &quot;{0}&quot;. Press OK to begin printing &quot;{1}&quot;..
         /// </summary>
-        internal static string PausePrinting {
+        public static string PausePrinting {
             get {
                 return ResourceManager.GetString("PausePrinting", resourceCulture);
             }
@@ -1192,7 +1192,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Pdfium PDF converter failed to read PDF file successfully.
         /// </summary>
-        internal static string PdfConversionFailed {
+        public static string PdfConversionFailed {
             get {
                 return ResourceManager.GetString("PdfConversionFailed", resourceCulture);
             }
@@ -1201,7 +1201,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to PdfConverter.exe not found.
         /// </summary>
-        internal static string PdfConverterNotFound {
+        public static string PdfConverterNotFound {
             get {
                 return ResourceManager.GetString("PdfConverterNotFound", resourceCulture);
             }
@@ -1210,7 +1210,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Map size from PDF.
         /// </summary>
-        internal static string PdfMapSize {
+        public static string PdfMapSize {
             get {
                 return ResourceManager.GetString("PdfMapSize", resourceCulture);
             }
@@ -1219,7 +1219,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Could not read result of PDF conversion from file &apos;{0}&apos;.
         /// </summary>
-        internal static string PdfResultNotReadable {
+        public static string PdfResultNotReadable {
             get {
                 return ResourceManager.GetString("PdfResultNotReadable", resourceCulture);
             }
@@ -1228,7 +1228,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to plural.
         /// </summary>
-        internal static string Plural {
+        public static string Plural {
             get {
                 return ResourceManager.GetString("Plural", resourceCulture);
             }
@@ -1237,7 +1237,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Portrait.
         /// </summary>
-        internal static string Portrait {
+        public static string Portrait {
             get {
                 return ResourceManager.GetString("Portrait", resourceCulture);
             }
@@ -1246,7 +1246,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Printing page {0} (of {1}).
         /// </summary>
-        internal static string PrintingPage {
+        public static string PrintingPage {
             get {
                 return ResourceManager.GetString("PrintingPage", resourceCulture);
             }
@@ -1255,7 +1255,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Purple.
         /// </summary>
-        internal static string Purple {
+        public static string Purple {
             get {
                 return ResourceManager.GetString("Purple", resourceCulture);
             }
@@ -1264,7 +1264,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Red.
         /// </summary>
-        internal static string Red {
+        public static string Red {
             get {
                 return ResourceManager.GetString("Red", resourceCulture);
             }
@@ -1273,7 +1273,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Redo.
         /// </summary>
-        internal static string Redo {
+        public static string Redo {
             get {
                 return ResourceManager.GetString("Redo", resourceCulture);
             }
@@ -1282,7 +1282,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to &amp;Redo.
         /// </summary>
-        internal static string RedoWithShortcut {
+        public static string RedoWithShortcut {
             get {
                 return ResourceManager.GetString("RedoWithShortcut", resourceCulture);
             }
@@ -1291,7 +1291,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to The customized text requires a &quot;*&quot; to indicate where the object being modified is placed..
         /// </summary>
-        internal static string RequireStar {
+        public static string RequireStar {
             get {
                 return ResourceManager.GetString("RequireStar", resourceCulture);
             }
@@ -1300,7 +1300,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to save the changes you made to &apos;{0}&apos;?.
         /// </summary>
-        internal static string SaveChanges {
+        public static string SaveChanges {
             get {
                 return ResourceManager.GetString("SaveChanges", resourceCulture);
             }
@@ -1309,7 +1309,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to singular.
         /// </summary>
-        internal static string Singular {
+        public static string Singular {
             get {
                 return ResourceManager.GetString("Singular", resourceCulture);
             }
@@ -1318,7 +1318,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Start.
         /// </summary>
-        internal static string Start {
+        public static string Start {
             get {
                 return ResourceManager.GetString("Start", resourceCulture);
             }
@@ -1327,7 +1327,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to S.
         /// </summary>
-        internal static string Start_Short {
+        public static string Start_Short {
             get {
                 return ResourceManager.GetString("Start_Short", resourceCulture);
             }
@@ -1336,7 +1336,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Too many total variations in this course. The number of distinct variations is limited to {0}..
         /// </summary>
-        internal static string TooManyVariations {
+        public static string TooManyVariations {
             get {
                 return ResourceManager.GetString("TooManyVariations", resourceCulture);
             }
@@ -1345,7 +1345,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to *** If there exists a web site in the translated language that contains documentation for Purple Pen, enter the URL (including http) as the translation of this item. Otherwise leave it alone..
         /// </summary>
-        internal static string TranslatedHelpWebSite {
+        public static string TranslatedHelpWebSite {
             get {
                 return ResourceManager.GetString("TranslatedHelpWebSite", resourceCulture);
             }
@@ -1354,7 +1354,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Undo.
         /// </summary>
-        internal static string Undo {
+        public static string Undo {
             get {
                 return ResourceManager.GetString("Undo", resourceCulture);
             }
@@ -1363,7 +1363,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to &amp;Undo.
         /// </summary>
-        internal static string UndoWithShortcut {
+        public static string UndoWithShortcut {
             get {
                 return ResourceManager.GetString("UndoWithShortcut", resourceCulture);
             }
@@ -1372,7 +1372,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to User Defined.
         /// </summary>
-        internal static string UserDefined {
+        public static string UserDefined {
             get {
                 return ResourceManager.GetString("UserDefined", resourceCulture);
             }
@@ -1381,7 +1381,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A variation already exists at this control..
         /// </summary>
-        internal static string VariationAlreadyExists {
+        public static string VariationAlreadyExists {
             get {
                 return ResourceManager.GetString("VariationAlreadyExists", resourceCulture);
             }
@@ -1390,7 +1390,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A control or leg must be selected to add a variation..
         /// </summary>
-        internal static string VariationMustSelectControl {
+        public static string VariationMustSelectControl {
             get {
                 return ResourceManager.GetString("VariationMustSelectControl", resourceCulture);
             }
@@ -1399,7 +1399,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A variation cannot be added to a finish control..
         /// </summary>
-        internal static string VariationNotFinish {
+        public static string VariationNotFinish {
             get {
                 return ResourceManager.GetString("VariationNotFinish", resourceCulture);
             }
@@ -1408,7 +1408,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A variation cannot be added to the All Controls view..
         /// </summary>
-        internal static string VariationNotInAllControls {
+        public static string VariationNotInAllControls {
             get {
                 return ResourceManager.GetString("VariationNotInAllControls", resourceCulture);
             }
@@ -1417,7 +1417,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A variation cannot be added to a score course..
         /// </summary>
-        internal static string VariationNotInScoreCourse {
+        public static string VariationNotInScoreCourse {
             get {
                 return ResourceManager.GetString("VariationNotInScoreCourse", resourceCulture);
             }
@@ -1426,7 +1426,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to A variation cannot be added to the last control. Add a finish control first..
         /// </summary>
-        internal static string VariationNotLastControl {
+        public static string VariationNotLastControl {
             get {
                 return ResourceManager.GetString("VariationNotLastControl", resourceCulture);
             }
@@ -1435,7 +1435,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Alpha {0}.
         /// </summary>
-        internal static string Version_Alpha {
+        public static string Version_Alpha {
             get {
                 return ResourceManager.GetString("Version_Alpha", resourceCulture);
             }
@@ -1444,7 +1444,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Beta {0}.
         /// </summary>
-        internal static string Version_Beta {
+        public static string Version_Beta {
             get {
                 return ResourceManager.GetString("Version_Beta", resourceCulture);
             }
@@ -1453,7 +1453,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to RC {0}.
         /// </summary>
-        internal static string Version_RC {
+        public static string Version_RC {
             get {
                 return ResourceManager.GetString("Version_RC", resourceCulture);
             }
@@ -1462,7 +1462,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Version {0}.
         /// </summary>
-        internal static string VersionLabel {
+        public static string VersionLabel {
             get {
                 return ResourceManager.GetString("VersionLabel", resourceCulture);
             }
@@ -1471,7 +1471,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Yellow.
         /// </summary>
-        internal static string Yellow {
+        public static string Yellow {
             get {
                 return ResourceManager.GetString("Yellow", resourceCulture);
             }
@@ -1480,7 +1480,7 @@ namespace PurplePen {
         /// <summary>
         ///   Looks up a localized string similar to Zoom.
         /// </summary>
-        internal static string Zoom {
+        public static string Zoom {
             get {
                 return ResourceManager.GetString("Zoom", resourceCulture);
             }

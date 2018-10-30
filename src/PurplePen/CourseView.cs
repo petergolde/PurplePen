@@ -49,7 +49,7 @@ namespace PurplePen
     /// map exchanges, relay variations, the all controls view, etc. It is the basis for
     /// control descriptions and the course drawing.
     /// </summary>
-    class CourseView
+    public class CourseView
     {
         public enum CourseViewKind {
             Normal,

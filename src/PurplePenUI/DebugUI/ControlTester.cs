@@ -111,7 +111,7 @@ namespace PurplePen.DebugUI
             descriptionControl1.CourseKind = courseView.Kind;
         }
 
-        private void descriptionControl1_Change(DescriptionControl sender, DescriptionControl.ChangeKind kind, int line, int box, object newValue)
+        private void descriptionControl1_Change(DescriptionControl sender, DescriptionChangeKind kind, int line, int box, object newValue)
         {
             this.eventLabel.Text = string.Format("Change: {0}", kind);
             lineLabel.Text = string.Format("Line: {0}", line);

@@ -46,7 +46,7 @@ using PurplePen.Graphics2D;
 namespace PurplePen
 {
     // What did we hit?
-    enum HitTestKind
+    public enum HitTestKind
     {
         None,               // didn't hit anything
         Title,              // hit a title (box always 0)
@@ -61,7 +61,7 @@ namespace PurplePen
     }
 
     // Indicates the hittest of a hit test operation.
-    struct HitTestResult
+    public struct HitTestResult
     {
         public HitTestKind kind;   // What did we hit?
         public int firstLine, lastLine;          // What line(s) of the description?
@@ -72,7 +72,7 @@ namespace PurplePen
     /// <summary>
     /// Renders a CourseView onto a Graphics.
     /// </summary>
-    class DescriptionRenderer: IPrintableRectangle, ICloneable
+    public class DescriptionRenderer: IPrintableRectangle, ICloneable
     {
         private SymbolDB symbolDB;
 

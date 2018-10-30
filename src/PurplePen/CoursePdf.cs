@@ -323,7 +323,7 @@ namespace PurplePen
     }
 
     // All the information needed to print courses.
-    class CoursePdfSettings
+    public class CoursePdfSettings
     {
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.

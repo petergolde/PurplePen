@@ -794,7 +794,7 @@ namespace PurplePen
             List<CourseObj> list = new List<CourseObj>();
 
             // Get through each object in the active course and find which ones match. Ignore stuff in the All Controls layer.
-            foreach (CourseObj courseobj in activeCourse) {
+            foreach (CourseObj courseobj in activeCourse.CourseObjects) {
                 if (courseobj.layer != CourseLayer.AllControls) {
                     if (selectionKind == SelectionKind.Control &&
                             !(courseobj is LineCourseObj) &&    // don't select legs
@@ -836,7 +836,7 @@ namespace PurplePen
             List<CourseObj> list = new List<CourseObj>();
 
             // Get through each object in the active course and find which ones match. Ignore stuff in the All Controls layer.
-            foreach (CourseObj courseobj in activeTopologyCourseLayout) {
+            foreach (CourseObj courseobj in activeTopologyCourseLayout.CourseObjects) {
                 if (courseobj.layer != CourseLayer.AllControls) {
                     if (selectionKind == SelectionKind.Control &&
                             !(courseobj is VariationCodeCourseObj) &&    // don't select legs

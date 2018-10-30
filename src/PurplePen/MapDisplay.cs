@@ -51,7 +51,7 @@ namespace PurplePen
     // on the map. It includes the map proper, as well as the courses and so forth drawn on top.
     // The IMapDisplay interface is the communication channel with the ViewCache and the MapViewer
     // controls -- it simply has to be able to draw itself, and notify when parts change.
-    class MapDisplay: IMapDisplay
+    public class MapDisplay: IMapDisplay
     {
         MapType mapType;    // Map type. Note that OpenMapper and OCAD files both called MapType.OCAD. See MapVersion property to distinguish.
         string filename;
@@ -76,6 +76,13 @@ namespace PurplePen
         bool showBounds = false;       // show symbols bounds (for testing)
 
         RectangleF? printArea;          // print area to display, or null for none.
+
+        IPdfLoadingStatus pdfLoadingStatus;              // Used to pop up dialog when converting PDFs.
+
+        public MapDisplay(IPdfLoadingStatus pdfLoadingStatus)
+        {
+            this.pdfLoadingStatus = pdfLoadingStatus;
+        }
 
         // Clones this map display.
         public MapDisplay Clone()
@@ -249,7 +256,7 @@ namespace PurplePen
         }
 
         // Get a coordinate mapper for the map, or null if mapping coordinates isn't possible.
-        public CoordinateMapper CoordinateMapper
+        internal CoordinateMapper CoordinateMapper
         {
             get {
                 if (mapType == MapType.OCAD && map != null)
@@ -434,7 +441,7 @@ namespace PurplePen
                 map = null;
                 mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
                 Size bitmapSize;
-                pdfMapFile = MapUtil.ValidatePdf(newFilename, out bitmapDpi, out bitmapSize, out errorText);
+                pdfMapFile = MapUtil.ValidatePdf(newFilename, pdfLoadingStatus, out bitmapDpi, out bitmapSize, out errorText);
                 if (pdfMapFile == null) {
                     this.mapType = MapType.None;
                     bitmap = null;

@@ -49,7 +49,7 @@ using System.Linq;
 namespace PurplePen
 {
     // Represents a language that symbols can be described in
-    class SymbolLanguage
+    public class SymbolLanguage
     {
         public string Name {get; private set; }
         public string LangId {get; private set; }
@@ -259,7 +259,7 @@ namespace PurplePen
     /// <summary>
     /// Represents a graphical symbol that can be drawn into a text box.
     /// </summary>
-    class Symbol
+    public class Symbol
     {
         public readonly int SortOrder;
         private readonly SymbolDB symbolDB;
@@ -896,7 +896,7 @@ namespace PurplePen
     }
 
 
-    class SymbolDB
+    public class SymbolDB
     {
         string filename;
         Dictionary<string, List<Symbol>> symbols = new Dictionary<string, List<Symbol>>();
@@ -971,7 +971,7 @@ namespace PurplePen
         /// <summary>
         /// Get the symbol with a given id. If id doesn't exist in that standard, returns null.
         /// </summary>
-        public Symbol SymbolFromId(string id, string standard)
+        internal Symbol SymbolFromId(string id, string standard)
         {
             return symbols[id].FirstOrDefault(s => s.InStandard(standard));
         }

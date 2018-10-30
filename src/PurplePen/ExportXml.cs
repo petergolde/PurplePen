@@ -779,4 +779,6 @@ namespace PurplePen
         }
     }
 
+    public enum VariationExportFileType { Xml, Csv };
+
 }

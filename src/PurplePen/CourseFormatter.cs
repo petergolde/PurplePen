@@ -46,7 +46,7 @@ namespace PurplePen
     using PurplePen.Graphics2D;
 
     // Macros used in text specials
-    static class TextMacros
+    public static class TextMacros
     {
         public const string EventTitle = "$(EventTitle)";
         public const string CourseName = "$(CourseName)";
@@ -117,11 +117,11 @@ namespace PurplePen
                     // If this course-control indicates custom placement, place the number/code now (so it influences auto-placed numbers).
                     if (options.showControlNumbers && CustomPlaceNumber(eventDB, controlView)) {
                         if (kind == CourseView.CourseViewKind.AllControls)
-                            courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout);
+                            courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout.CourseObjects);
                         else if (kind == CourseView.CourseViewKind.AllVariations)
-                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout);
+                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout.CourseObjects);
                         else
-                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, labelKind, controlView, courseView, courseLayout);
+                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, labelKind, controlView, courseView, courseLayout.CourseObjects);
 
                         if (courseObj != null) {
                             courseObj.layer = layer;
@@ -163,11 +163,11 @@ namespace PurplePen
                     // Only place numbers WITHOUT custom number placement. Those with custom placement were done previously above.
                     if (!controlView.hiddenControl && !CustomPlaceNumber(eventDB, controlView)) {
                         if (kind == CourseView.CourseViewKind.AllControls)
-                            courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout);
+                            courseObj = CreateCode(eventDB, courseObjRatio, appearance, controlView, courseLayout.CourseObjects);
                         else if (kind == CourseView.CourseViewKind.AllVariations)
-                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout);
+                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, ControlLabelKind.Code, controlView, courseView, courseLayout.CourseObjects);
                         else
-                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, labelKind, controlView, courseView, courseLayout);
+                            courseObj = CreateControlNumber(eventDB, courseObjRatio, appearance, labelKind, controlView, courseView, courseLayout.CourseObjects);
 
                         if (courseObj != null) {
                             courseObj.layer = layer;
@@ -915,7 +915,7 @@ namespace PurplePen
         // Cut any overlapping control circles in the given layer.
         private static void AutoCutCircles(CourseLayout courseLayout, CourseLayer layer)
         {
-            foreach (CourseObj courseObj in courseLayout) {
+            foreach (CourseObj courseObj in courseLayout.CourseObjects) {
                 if (courseObj.layer == layer && (courseObj is ControlCourseObj || courseObj is FinishCourseObj))
                     AutoCutControl((PointCourseObj) courseObj, courseLayout);
             }
@@ -924,7 +924,7 @@ namespace PurplePen
         // Check this control and add cuts to it if needed.
         private static void AutoCutControl(PointCourseObj controlObj, CourseLayout courseLayout)
         {
-            foreach (CourseObj courseObj in courseLayout) {
+            foreach (CourseObj courseObj in courseLayout.CourseObjects) {
                 if (courseObj != controlObj && courseObj.layer == controlObj.layer && courseObj is PointCourseObj)
                     CutControlWithRespectTo(controlObj, (PointCourseObj)courseObj);
             }
@@ -955,7 +955,7 @@ namespace PurplePen
             if (appearance.autoLegGapSize <= 0)
                 return;     // No cutting requested.
 
-            foreach (CourseObj courseObj in courseLayout) {
+            foreach (CourseObj courseObj in courseLayout.CourseObjects) {
                 if (courseObj.layer == layer && (courseObj is LegCourseObj || courseObj is FlaggedLegCourseObj))
                     AutoCutLeg(eventDB, appearance, courseDesignator, (LineCourseObj)courseObj, courseLayout);
             }
@@ -964,7 +964,7 @@ namespace PurplePen
         // Check this leg and add cuts to it if needed.
         private static void AutoCutLeg(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, LineCourseObj legObj, CourseLayout courseLayout)
         {
-            foreach (CourseObj courseObj in courseLayout) {
+            foreach (CourseObj courseObj in courseLayout.CourseObjects) {
                 if (courseObj != legObj && courseObj.layer == legObj.layer && (courseObj is LegCourseObj || courseObj is FlaggedLegCourseObj))
                     CutLegWithRespectTo(eventDB, appearance, courseDesignator, legObj, (LineCourseObj)courseObj);
                 if (courseObj != legObj && courseObj.layer == legObj.layer && courseObj is PointCourseObj)

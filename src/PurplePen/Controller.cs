@@ -48,7 +48,7 @@ namespace PurplePen
 {
     // The controller cooperates with the UI and the selection manager to run the application. It primarily
     // handles all the different commands in the application.
-    class Controller
+    public class Controller
     {
         IUserInterface ui;      // interface to the UI.
         EventDB eventDB;        // event database
@@ -56,7 +56,7 @@ namespace PurplePen
         SelectionMgr selectionMgr;  // selection manager
         SymbolDB symbolDB;      // symbol database
         string fileName;        // full file name of the event.
-        MapDisplay mapDisplay = new MapDisplay();  // The map display being used.
+        MapDisplay mapDisplay;  // The map display being used.
         string mapCantLoad;       // If non-null, means the map with this name didn't load last time we tried to load it.
         DateTime mapFileLastWrite;        // last write time of the map file, if any.
 
@@ -83,6 +83,7 @@ namespace PurplePen
         {
             // Create the core objects needed for the application to run.
             this.ui = ui;
+            mapDisplay = new MapDisplay(ui.GetPdfLoadingStatusDialog());
             symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
 
             // Reset state
@@ -1014,17 +1015,17 @@ namespace PurplePen
             return QueryEvent.CreateOutputFileName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.WithAllParts(), "", "_Relay", ".xml");
         }
 
-        public bool ExportRelayVariationsReport(RelaySettings relaySettings, TeamVariationsForm.ExportFileType exportFileType, string exportFileName)
+        public bool ExportRelayVariationsReport(RelaySettings relaySettings, VariationExportFileType exportFileType, string exportFileName)
         {
             bool success = HandleExceptions(
                 delegate {
                     VariationReportData variationReportData = GetVariationReportData(relaySettings);
 
-                    if (exportFileType == TeamVariationsForm.ExportFileType.Csv) {
+                    if (exportFileType == VariationExportFileType.Csv) {
                         CsvWriter csvWriter = new CsvWriter();
                         csvWriter.WriteCsv(exportFileName, variationReportData.RelayVariations);
                     }
-                    else if (exportFileType == TeamVariationsForm.ExportFileType.Xml) {
+                    else if (exportFileType == VariationExportFileType.Xml) {
                         ExportRelayVariations3 exporter = new ExportRelayVariations3();
                         exporter.WriteFullXml(exportFileName, variationReportData.RelayVariations, eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId);
                     }
@@ -3130,7 +3131,7 @@ namespace PurplePen
         }
 
         // A change has been made to a box in the description.
-        public void DescriptionChange(DescriptionControl.ChangeKind kind, int line, int box, object newValue)
+        public void DescriptionChange(DescriptionChangeKind kind, int line, int box, object newValue)
         {
             string newStringValue = "";  // never null!
             if (newValue is string)
@@ -3139,10 +3140,10 @@ namespace PurplePen
             CancelMode();
 
             switch (kind) {
-                case DescriptionControl.ChangeKind.None:
+                case DescriptionChangeKind.None:
                     break;
 
-                case DescriptionControl.ChangeKind.Climb:
+                case DescriptionChangeKind.Climb:
                     float newClimb;
 
                     if (newStringValue == "") {
@@ -3161,7 +3162,7 @@ namespace PurplePen
                     undoMgr.EndCommand(108);
                     break;
 
-                case DescriptionControl.ChangeKind.Length:
+                case DescriptionChangeKind.Length:
                     float newLength;
 
                     if (newStringValue == "") {
@@ -3181,7 +3182,7 @@ namespace PurplePen
                     undoMgr.EndCommand(45108);
                     break;
 
-                case DescriptionControl.ChangeKind.Score:
+                case DescriptionChangeKind.Score:
                     int newScore;
 
                     if (newStringValue == "") {
@@ -3200,27 +3201,27 @@ namespace PurplePen
                     undoMgr.EndCommand(107);
                     break;
 
-                case DescriptionControl.ChangeKind.SecondaryTitle:
+                case DescriptionChangeKind.SecondaryTitle:
                     Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(106, CommandNameText.ChangeTitle);
                     ChangeEvent.ChangeCourseSecondaryTitle(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newStringValue);
                     undoMgr.EndCommand(106);
                     break;
 
-                case DescriptionControl.ChangeKind.CourseName:
+                case DescriptionChangeKind.CourseName:
                     Debug.Assert(selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls);
                     undoMgr.BeginCommand(105, CommandNameText.ChangeCourseName);
                     ChangeEvent.ChangeCourseName(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, newStringValue);
                     undoMgr.EndCommand(105);
                     break;
 
-                case DescriptionControl.ChangeKind.Title:
+                case DescriptionChangeKind.Title:
                     undoMgr.BeginCommand(104, CommandNameText.ChangeTitle);
                     ChangeEvent.ChangeEventTitle(eventDB, newStringValue);
                     undoMgr.EndCommand(104);
                     break;
 
-                case DescriptionControl.ChangeKind.Code:
+                case DescriptionChangeKind.Code:
                     if (eventDB.GetControl(selectionMgr.ActiveDescription[line].controlId).code == newStringValue)
                         break;  // no change to control.
 
@@ -3257,7 +3258,7 @@ namespace PurplePen
                     }
                     break;
 
-                case DescriptionControl.ChangeKind.DescriptionBox:
+                case DescriptionChangeKind.DescriptionBox:
                     undoMgr.BeginCommand(101, CommandNameText.ChangeSymbol);
 
                     if (newValue == null)
@@ -3273,7 +3274,7 @@ namespace PurplePen
 
                     break;
 
-                case DescriptionControl.ChangeKind.Directive:
+                case DescriptionChangeKind.Directive:
                     // Directive change can't be text, empty, and must be box zero.
                     Debug.Assert(newValue is Symbol);
                     Debug.Assert(box == 0);
@@ -3295,7 +3296,7 @@ namespace PurplePen
                     undoMgr.EndCommand(102);
                     break;
 
-                case DescriptionControl.ChangeKind.Key:
+                case DescriptionChangeKind.Key:
                     // Change the custom text for a symbol.
                     Dictionary<string, List<SymbolText>> customSymbolText;
                     Dictionary<string, bool> customSymbolKey;
@@ -3326,7 +3327,7 @@ namespace PurplePen
                     undoMgr.EndCommand(9731);
                     break;
 
-                case DescriptionControl.ChangeKind.TextLine:
+                case DescriptionChangeKind.TextLine:
                     // Change a text line.
                     Debug.Assert(newValue == null || newValue is String);
                     string text = newStringValue;
@@ -3564,7 +3565,7 @@ namespace PurplePen
 
         // Move a course control to a different place in the course, like from the topology view.
         // If duplicate is true, makes a duplicate of the control.
-        public bool RearrangeControl(Id<CourseControl> courseControlToMove, Id<CourseControl> courseControlDest1, Id<CourseControl> courseControlDest2, 
+        internal bool RearrangeControl(Id<CourseControl> courseControlToMove, Id<CourseControl> courseControlDest1, Id<CourseControl> courseControlDest2, 
                                     LegInsertionLoc legInsertionLoc)
         {
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
@@ -3943,12 +3944,12 @@ namespace PurplePen
 
     }
 
-    class VariationReportData
+    public class VariationReportData
     {
         public readonly string CourseName;
-        public readonly RelayVariations RelayVariations;
+        internal readonly RelayVariations RelayVariations;
 
-        public VariationReportData(string courseName, RelayVariations relayVariations)
+        internal VariationReportData(string courseName, RelayVariations relayVariations)
         {
             CourseName = courseName;
             RelayVariations = relayVariations;
@@ -3957,10 +3958,10 @@ namespace PurplePen
 
 
     // Which pane are we interacting in.
-    enum Pane { Map, Topology}
+    public enum Pane { Map, Topology}
 
     // Describes the interface to a command mode. This handles modal multi-step commands.
-    interface ICommandMode
+    public interface ICommandMode
     {
         // Mode begins and ends.
         void BeginMode();
@@ -4012,7 +4013,7 @@ namespace PurplePen
     // Describes the interface to the user interface. Allows the UI
     // to be implemented by test code for testing the application
     // with the UI.
-    interface IUserInterface
+    public interface IUserInterface
     {
         // Called to initialize the user interface with the controller and the symbol database.
         void Initialize(Controller controller, SymbolDB symbolDB);
@@ -4049,15 +4050,36 @@ namespace PurplePen
         void ShowProgressDialog(bool knownDuration);
         bool UpdateProgressDialog(string info, double fractionDone);
         void EndProgressDialog();
+
+        // Get an object that allows showing PDF status.
+        IPdfLoadingStatus GetPdfLoadingStatusDialog();
     }
 
     // Indicates the status of a contextual command
-    enum CommandStatus
+    public enum CommandStatus
     {
         Hidden,                 // Don't show the command
         Disabled,              // Show command as disabled
         Enabled               // Show the command as enabled.
     }
+
+    // What was changed?
+    public enum DescriptionChangeKind
+    {
+        None,
+        Title,              // Primary title
+        SecondaryTitle,     // Secondary title
+        CourseName,         // Course name
+        Climb,              // Course climb box
+        Length,             // Course length box
+        Score,              // Score box for a control (column A on score course)
+        Code,               // Code box for a control (column B)
+        DescriptionBox,     // Other box (C-H) on a control
+        Directive,           // A directive
+        Key,                      // A symbol key line
+        TextLine,              // A text line
+    }
+
 
     static class CommandStatusExtensions
     {
@@ -4067,11 +4089,11 @@ namespace PurplePen
         }
     }
 
-    enum PrintAreaKind { AllCourses, OneCourse, OnePart }
+    public enum PrintAreaKind { AllCourses, OneCourse, OnePart }
 
 
     // Indicates the status of undo.
-    struct UndoStatus
+    public struct UndoStatus
     {
         public bool CanUndo;
         public bool CanRedo;
@@ -4080,5 +4102,5 @@ namespace PurplePen
     }
 
     // A delegate to represent a parameterless operation.
-    delegate void Operation();
+    public delegate void Operation();
 }

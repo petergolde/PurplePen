@@ -72,7 +72,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void OcadBoundsScale()
         {
-            MapDisplay mapDisplay = new MapDisplay() ;
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus()) ;
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.ocd"));
             Assert.AreEqual(15000, mapDisplay.MapScale);
@@ -82,7 +82,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void BitmapBounds()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
             mapDisplay.SetMapFile(MapType.Bitmap, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.jpg"));
             mapDisplay.Dpi = 300;
@@ -93,7 +93,7 @@ namespace PurplePen.Tests
         public void BasicOcadMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.ocd"));
             mapDisplay.AntiAlias = false;
@@ -109,7 +109,7 @@ namespace PurplePen.Tests
         public void BasicBitmapMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
             mapDisplay.SetMapFile(MapType.Bitmap, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.jpg"));
             mapDisplay.Dpi = 300;
@@ -126,7 +126,7 @@ namespace PurplePen.Tests
         public void AntialiasOcadMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.ocd"));
@@ -143,7 +143,7 @@ namespace PurplePen.Tests
         public void AntialiasBitmapMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
 
             mapDisplay.SetMapFile(MapType.Bitmap, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.jpg"));
@@ -161,7 +161,7 @@ namespace PurplePen.Tests
         public void IntensityOcadMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.ocd"));
@@ -178,7 +178,7 @@ namespace PurplePen.Tests
         public void IntensityBitmapMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
 
             mapDisplay.SetMapFile(MapType.Bitmap, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.jpg"));
@@ -195,7 +195,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CloneOcad()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.ocd"));
             mapDisplay.AntiAlias = false;
@@ -221,7 +221,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CloneBitmap()
         {
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
             mapDisplay.SetMapFile(MapType.Bitmap, TestUtil.GetTestFile(@"mapdisplay\SampleEvent.jpg"));
             mapDisplay.Dpi = 300;
@@ -249,7 +249,7 @@ namespace PurplePen.Tests
         public void OverprintOcadMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\overprint.ocd"));
@@ -268,7 +268,7 @@ namespace PurplePen.Tests
         public void NoOverprintOcadMap()
         {
             SetupBitmap();
-            MapDisplay mapDisplay = new MapDisplay();
+            MapDisplay mapDisplay = new MapDisplay(new NullPdfLoadingStatus());
 
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"mapdisplay\overprint.ocd"));

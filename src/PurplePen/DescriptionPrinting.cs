@@ -99,7 +99,7 @@ namespace PurplePen
 
 
     // All the information needed to print the descriptions.
-    class DescriptionPrintSettings
+    public class DescriptionPrintSettings
     {
         private PageSettings pageSettings;
 
