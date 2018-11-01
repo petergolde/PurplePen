@@ -52,7 +52,7 @@
 
 #define MyAppSetupName 'Purple Pen'
 #define MyAppName "Purple Pen"
-#define MyAppVersion "3.1.4"
+#define MyAppVersion "3.1.5"
 #define MyAppPublisher "Golde Software"
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
