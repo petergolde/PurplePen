@@ -2,8 +2,8 @@
 <CourseData>
   <IOFVersion version="2.0.3" />
   <ModifyDate>
-    <Date>2017-02-16</Date>
-    <Clock>12:51</Clock>
+    <Date>2018-11-02</Date>
+    <Clock>10:48</Clock>
   </ModifyDate>
   <Map>
     <Scale>10000</Scale>
@@ -100,6 +100,8 @@
   <Course>
     <CourseName>Two Part</CourseName>
     <CourseId>0</CourseId>
+    <ClassShortName>M12</ClassShortName>
+    <ClassShortName>F12</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>3100</CourseLength>
@@ -136,6 +138,8 @@
   <Course>
     <CourseName>NestedBranch</CourseName>
     <CourseId>1</CourseId>
+    <ClassShortName>M14</ClassShortName>
+    <ClassShortName>F14</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <Name>AE</Name>
@@ -305,6 +309,8 @@
   <Course>
     <CourseName>DoubleBranch</CourseName>
     <CourseId>2</CourseId>
+    <ClassShortName>M16</ClassShortName>
+    <ClassShortName>F16</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <Name>AC</Name>
@@ -527,6 +533,8 @@
   <Course>
     <CourseName>ThreeLoop</CourseName>
     <CourseId>3</CourseId>
+    <ClassShortName>M18</ClassShortName>
+    <ClassShortName>F18</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <Name>ABC</Name>
@@ -939,6 +947,8 @@
   <Course>
     <CourseName>Simple</CourseName>
     <CourseId>4</CourseId>
+    <ClassShortName>M21</ClassShortName>
+    <ClassShortName>F21</ClassShortName>
     <CourseVariation>
       <CourseVariationId>0</CourseVariationId>
       <CourseLength>2500</CourseLength>

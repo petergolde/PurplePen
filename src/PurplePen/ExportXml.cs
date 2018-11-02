@@ -132,12 +132,16 @@ namespace PurplePen
         }
         void WriteCourses()
         {
+            WriteAllCoursesStart();
+
             // Sport Software requires that the courses be numbers started at 0.
             int courseNumber = 0;
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
                 if (WriteCourse(courseId, courseNumber))
                     ++courseNumber;
             }
+
+            WriteAllCoursesEnd();
         }
 
         void WriteTeamAssignments()
@@ -222,6 +226,10 @@ namespace PurplePen
 
         protected abstract void WriteStart();
 
+        protected virtual void WriteAllCoursesStart() { }
+
+        protected virtual void WriteAllCoursesEnd() { }
+
         protected abstract void WriteControlPoint(ControlPointKind controlKind, ControlPoint control, string code);
 
         protected abstract void WriteCourseGroupStart(string courseName, int courseNumber, string[] classNames, bool isScore);
@@ -236,12 +244,18 @@ namespace PurplePen
 
         protected abstract void WriteRelayVariations(Id<Course> courseId, RelayVariations relayVariations);
 
-
         protected abstract void WriteEnd();
     }
 
-    class ExportXmlVersion3: ExportXmlBase
+    class ExportXmlVersion3 : ExportXmlBase
     {
+        // Keep a list of class assignments to write after the courses.
+        private class PendingClassAssignment
+        {
+            public string className, courseName, courseFamily;
+        }
+        private List<PendingClassAssignment> pendingClassAssignments = new List<PendingClassAssignment>();
+
         protected override void WriteStart()
         {
             // Write the root
@@ -265,7 +279,8 @@ namespace PurplePen
         }
 
 
-        void WriteEventInfo(){
+        void WriteEventInfo()
+        {
             xmlWriter.WriteStartElement("Event");
             xmlWriter.WriteElementString("Name", eventDB.GetEvent().title);
             xmlWriter.WriteEndElement();
@@ -339,20 +354,35 @@ namespace PurplePen
 
         protected override void WriteCourseStart(CourseView courseView, string courseName, int courseNumber, string[] classNames, bool isScore, int variationNumber, VariationInfo variationInfo)
         {
-            xmlWriter.WriteStartElement("Course");
-
+            string outputCourseName;
+            string outputFamilyName;
             if (variationInfo != null) {
-                xmlWriter.WriteElementString("Name", courseName + " " + variationInfo.CodeString);
-                xmlWriter.WriteElementString("CourseFamily", courseName);
+                outputCourseName = courseName + " " + variationInfo.CodeString;
+                outputFamilyName = courseName;
             }
             else {
-                xmlWriter.WriteElementString("Name", courseName);
+                outputCourseName = courseName;
+                outputFamilyName = null;
             }
+
+
+            xmlWriter.WriteStartElement("Course");
+
+            xmlWriter.WriteElementString("Name", outputCourseName);
+            if (outputFamilyName != null)
+                xmlWriter.WriteElementString("CourseFamily", outputFamilyName);
 
             if (!isScore) {
                 xmlWriter.WriteElementString("Length", XmlConvert.ToString(Math.Round(courseView.MaxTotalLength / 100F) * 100F));   // round to nearest 100m
                 if (courseView.TotalClimb > 0)
                     xmlWriter.WriteElementString("Climb", XmlConvert.ToString(Math.Round(courseView.TotalClimb / 5, MidpointRounding.AwayFromZero) * 5.0));  // round to nearest 5m
+            }
+
+            if (classNames != null && classNames.Length > 0) {
+                // Save the class names for later output.
+                foreach (string className in classNames) {
+                    pendingClassAssignments.Add(new PendingClassAssignment() { className = className, courseName = outputCourseName, courseFamily = outputFamilyName });
+                }
             }
         }
 
@@ -374,7 +404,7 @@ namespace PurplePen
                     xmlWriter.WriteAttributeString("type", "Finish");
                     if (eventDB.GetControl(controlView.controlId).symbolIds?[0] == "14.1")
                         xmlWriter.WriteAttributeString("specialInstruction", "TapedRoute");
-                    else if(eventDB.GetControl(controlView.controlId).symbolIds?[0] == "14.2")
+                    else if (eventDB.GetControl(controlView.controlId).symbolIds?[0] == "14.2")
                         xmlWriter.WriteAttributeString("specialInstruction", "FunnelTapedRoute");
 
                     break;
@@ -431,8 +461,23 @@ namespace PurplePen
             // Nothing to do.
         }
 
+        protected override void WriteAllCoursesEnd()
+        {
+            // Write pending class assignments.
+            foreach (PendingClassAssignment classAssignment in pendingClassAssignments) {
+                xmlWriter.WriteStartElement("ClassCourseAssignment");
+                xmlWriter.WriteElementString("ClassName", classAssignment.className);
+                xmlWriter.WriteElementString("CourseName", classAssignment.courseName);
+                if (classAssignment.courseFamily != null) {
+                    xmlWriter.WriteElementString("CourseFamily", classAssignment.courseFamily);
+                }
+                xmlWriter.WriteEndElement();
+            }
+        }
+
         // Return an exception map used to test exported XML files.
-        public static Dictionary<string, string> TestFileExceptionMap() {
+        public static Dictionary<string, string> TestFileExceptionMap()
+        {
             Dictionary<string, string> exceptions = new Dictionary<string, string>();
             exceptions[@"modifyTime=""\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\d\d\d?\d?\d?-\d\d:00"""] = @"modifyTime=""\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\d\d\d?\d?\d?-\d\d:00""";
             exceptions[@"createTime=""\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\d\d\d?\d?\d?-\d\d:00"""] = @"createTime=""\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\d\.\d\d\d\d\d?\d?\d?-\d\d:00""";
@@ -474,7 +519,7 @@ namespace PurplePen
 
 
 
-    class ExportXmlVersion2: ExportXmlBase
+    class ExportXmlVersion2 : ExportXmlBase
     {
         protected override void WriteStart()
         {
@@ -630,7 +675,7 @@ namespace PurplePen
                     break;
 
                 case ControlPointKind.MapExchange:
-                    // Intentionally skip map exchanges.
+                // Intentionally skip map exchanges.
                 case ControlPointKind.CrossingPoint:
                     // Intentionally skip crossing points.
                     break;
@@ -664,7 +709,7 @@ namespace PurplePen
     }
 
 
-    
+
 
 
 

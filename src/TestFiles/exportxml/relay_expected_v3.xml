@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2017-03-27T12:38:54.8913188-07:00" creator="Purple Pen version 3.0.0 Beta 4">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2018-11-02T10:50:32.3250531-07:00" creator="Purple Pen version 3.1.5 Beta 1">
   <Event>
     <Name>variations</Name>
   </Event>
@@ -1026,6 +1026,192 @@
         <LegLength>1130</LegLength>
       </CourseControl>
     </Course>
+    <ClassCourseAssignment>
+      <ClassName>M12</ClassName>
+      <CourseName>Two Part</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F12</ClassName>
+      <CourseName>Two Part</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M14</ClassName>
+      <CourseName>NestedBranch AE</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F14</ClassName>
+      <CourseName>NestedBranch AE</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M14</ClassName>
+      <CourseName>NestedBranch AF</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F14</ClassName>
+      <CourseName>NestedBranch AF</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M14</ClassName>
+      <CourseName>NestedBranch AG</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F14</ClassName>
+      <CourseName>NestedBranch AG</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M14</ClassName>
+      <CourseName>NestedBranch BC</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F14</ClassName>
+      <CourseName>NestedBranch BC</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M14</ClassName>
+      <CourseName>NestedBranch BD</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F14</ClassName>
+      <CourseName>NestedBranch BD</CourseName>
+      <CourseFamily>NestedBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M16</ClassName>
+      <CourseName>DoubleBranch AC</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F16</ClassName>
+      <CourseName>DoubleBranch AC</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M16</ClassName>
+      <CourseName>DoubleBranch AD</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F16</ClassName>
+      <CourseName>DoubleBranch AD</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M16</ClassName>
+      <CourseName>DoubleBranch AE</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F16</ClassName>
+      <CourseName>DoubleBranch AE</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M16</ClassName>
+      <CourseName>DoubleBranch BC</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F16</ClassName>
+      <CourseName>DoubleBranch BC</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M16</ClassName>
+      <CourseName>DoubleBranch BD</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F16</ClassName>
+      <CourseName>DoubleBranch BD</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M16</ClassName>
+      <CourseName>DoubleBranch BE</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F16</ClassName>
+      <CourseName>DoubleBranch BE</CourseName>
+      <CourseFamily>DoubleBranch</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M18</ClassName>
+      <CourseName>ThreeLoop ABC</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F18</ClassName>
+      <CourseName>ThreeLoop ABC</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M18</ClassName>
+      <CourseName>ThreeLoop ACB</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F18</ClassName>
+      <CourseName>ThreeLoop ACB</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M18</ClassName>
+      <CourseName>ThreeLoop BAC</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F18</ClassName>
+      <CourseName>ThreeLoop BAC</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M18</ClassName>
+      <CourseName>ThreeLoop BCA</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F18</ClassName>
+      <CourseName>ThreeLoop BCA</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M18</ClassName>
+      <CourseName>ThreeLoop CAB</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F18</ClassName>
+      <CourseName>ThreeLoop CAB</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M18</ClassName>
+      <CourseName>ThreeLoop CBA</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F18</ClassName>
+      <CourseName>ThreeLoop CBA</CourseName>
+      <CourseFamily>ThreeLoop</CourseFamily>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>M21</ClassName>
+      <CourseName>Simple</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F21</ClassName>
+      <CourseName>Simple</CourseName>
+    </ClassCourseAssignment>
     <TeamCourseAssignment>
       <BibNumber>1</BibNumber>
       <TeamName>1</TeamName>

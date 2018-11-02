@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2016-05-16T15:44:45.6856599-07:00" creator="Purple Pen version 2.6.1">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2018-11-02T10:43:52.0984704-07:00" creator="Purple Pen version 3.1.5 Beta 1">
   <Event>
     <Name>Marymoor WIOL 2</Name>
   </Event>
@@ -417,5 +417,13 @@
         <LegLength>64</LegLength>
       </CourseControl>
     </Course>
+    <ClassCourseAssignment>
+      <ClassName>M20</ClassName>
+      <CourseName>Course 5</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F20</ClassName>
+      <CourseName>Course 5</CourseName>
+    </ClassCourseAssignment>
   </RaceCourseData>
 </CourseData>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2016-05-16T15:44:26.7934212-07:00" creator="Purple Pen version 2.6.1">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2018-11-02T10:43:09.8461842-07:00" creator="Purple Pen version 3.1.5 Beta 1">
   <Event>
     <Name>Marymoor WIOL 2</Name>
   </Event>
@@ -387,5 +387,37 @@
         <Control>FIN2</Control>
       </CourseControl>
     </Course>
+    <ClassCourseAssignment>
+      <ClassName>M20</ClassName>
+      <CourseName>Course 2</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F20</ClassName>
+      <CourseName>Course 2</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F35</ClassName>
+      <CourseName>Course 2</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F40</ClassName>
+      <CourseName>Course 2</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F50</ClassName>
+      <CourseName>Course 2</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>F65</ClassName>
+      <CourseName>Course 2</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>WIOL Elementary</ClassName>
+      <CourseName>Score</CourseName>
+    </ClassCourseAssignment>
+    <ClassCourseAssignment>
+      <ClassName>Public Beginner</ClassName>
+      <CourseName>Score</CourseName>
+    </ClassCourseAssignment>
   </RaceCourseData>
 </CourseData>
