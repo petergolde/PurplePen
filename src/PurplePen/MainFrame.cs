@@ -2642,6 +2642,7 @@ namespace PurplePen
         {
             RelaySettings relaySettings = controller.GetRelayParameters();
             TeamVariationsForm reportForm = new TeamVariationsForm();
+            reportForm.FirstTeamNumber = relaySettings.firstTeamNumber;
             reportForm.NumberOfTeams = relaySettings.relayTeams;
             reportForm.NumberOfLegs = relaySettings.relayLegs;
             reportForm.FixedBranchAssignments = relaySettings.relayBranchAssignments;
@@ -2663,7 +2664,8 @@ namespace PurplePen
 
             reportForm.ShowDialog(this);
 
-            if (relaySettings.relayTeams != reportForm.NumberOfTeams ||
+            if (relaySettings.firstTeamNumber != reportForm.FirstTeamNumber ||
+                relaySettings.relayTeams != reportForm.NumberOfTeams ||
                 relaySettings.relayLegs != reportForm.NumberOfLegs ||
                 !object.Equals(relaySettings.relayBranchAssignments, reportForm.FixedBranchAssignments)) 
             {

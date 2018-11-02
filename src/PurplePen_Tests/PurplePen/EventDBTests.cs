@@ -179,7 +179,7 @@ namespace PurplePen.Tests
             course2.partPrintAreas[0] = new PrintArea(true, false, new RectangleF(70, 10, 130, 140));
             course2.partOptions[1] = new PartOptions() { ShowFinish = true };
             course2.partOptions[0] = new PartOptions() { ShowFinish = false };
-            course2.relaySettings = new RelaySettings(43, 3);
+            course2.relaySettings = new RelaySettings(6, 43, 3);
             course2.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course2);
 
@@ -223,7 +223,7 @@ namespace PurplePen.Tests
             relayBranchAssignments.AddBranchAssignment('A', 2);
             relayBranchAssignments.AddBranchAssignment('A', 3);
             relayBranchAssignments.AddBranchAssignment('C', 4);
-            course5.relaySettings = new RelaySettings(5, 6, relayBranchAssignments);
+            course5.relaySettings = new RelaySettings(10, 5, 6, relayBranchAssignments);
             course5.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course5);
 

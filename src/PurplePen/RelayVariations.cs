@@ -12,7 +12,7 @@ namespace PurplePen
     {
         EventDB eventDB;
         Id<Course> courseId;
-        int numberTeams, numberLegs;
+        int firstTeamNumber, numberTeams, numberLegs;
         FixedBranchAssignments fixedBranchAssignments;
 
         Random random;
@@ -37,6 +37,7 @@ namespace PurplePen
         {
             this.eventDB = eventDB;
             this.courseId = courseId;
+            this.firstTeamNumber = relaySettings.firstTeamNumber;
             this.numberTeams = relaySettings.relayTeams;
             this.numberLegs = relaySettings.relayLegs;
 
@@ -55,13 +56,21 @@ namespace PurplePen
         {
             GenerateAllTeams();
 
-            if (team < 1 || team > numberTeams)
-                throw new ArgumentOutOfRangeException("team", "team numbers are from 1 to number of teams");
+            if (team < firstTeamNumber || team >= firstTeamNumber + numberTeams)
+                throw new ArgumentOutOfRangeException("team", string.Format("team numbers are from {0} to {1}", firstTeamNumber, firstTeamNumber + numberTeams - 1));
             if (leg < 1 || leg > numberLegs)
                 throw new ArgumentOutOfRangeException("leg", "leg numbers are from 1 to number of legs");
 
-            string variationString = results[team - 1].GetVariationStringForLeg(leg - 1);
+            string variationString = results[team - firstTeamNumber].GetVariationStringForLeg(leg - 1);
             return new VariationInfo(variationString, variationPaths[variationString], team, leg);
+        }
+
+        public int FirstTeamNumber {
+            get { return firstTeamNumber; }
+        }
+
+        public int LastTeamNumber {
+            get { return firstTeamNumber + numberTeams - 1; }
         }
 
         public int NumberOfTeams
@@ -782,7 +791,7 @@ namespace PurplePen
         }
         private void WriteTeams()
         {
-            for (int teamNumber = 1; teamNumber <= relayVariations.NumberOfTeams; ++teamNumber) {
+            for (int teamNumber = relayVariations.FirstTeamNumber; teamNumber <= relayVariations.LastTeamNumber; ++teamNumber) {
                 writer.Write(teamNumber.ToString(CultureInfo.InvariantCulture));
                 for (int legNumber = 1; legNumber <= relayVariations.NumberOfLegs; ++legNumber) {
                     writer.Write(",{0}", relayVariations.GetVariation(teamNumber, legNumber).CodeString);

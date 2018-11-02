@@ -725,21 +725,40 @@ namespace PurplePen
 
     public class RelaySettings
     {
+        public int firstTeamNumber;      // Number of first team
         public int relayTeams;           // Number of teams for relay
         public int relayLegs;            // Number of legs for relay
         public FixedBranchAssignments relayBranchAssignments;  // For relay -- branch assignments.
+
+        public RelaySettings(int firstTeamNumber, int relayTeams, int relayLegs, FixedBranchAssignments relayBranchAssignments)
+        {
+            this.relayTeams = relayTeams;
+            this.relayLegs = relayLegs;
+            this.firstTeamNumber = firstTeamNumber;
+            this.relayBranchAssignments = relayBranchAssignments;
+        }
 
         public RelaySettings(int relayTeams, int relayLegs, FixedBranchAssignments relayBranchAssignments)
         {
             this.relayTeams = relayTeams;
             this.relayLegs = relayLegs;
+            this.firstTeamNumber = 1;
             this.relayBranchAssignments = relayBranchAssignments;
+        }
+
+        public RelaySettings(int firstTeamNumber, int relayTeams, int relayLegs)
+        {
+            this.relayTeams = relayTeams;
+            this.relayLegs = relayLegs;
+            this.firstTeamNumber = firstTeamNumber;
+            this.relayBranchAssignments = new FixedBranchAssignments();
         }
 
         public RelaySettings(int relayTeams, int relayLegs)
         {
             this.relayTeams = relayTeams;
             this.relayLegs = relayLegs;
+            this.firstTeamNumber = 1;
             this.relayBranchAssignments = new FixedBranchAssignments();
         }
 
@@ -747,6 +766,7 @@ namespace PurplePen
         {
             this.relayTeams = 0;
             this.relayLegs = 1;
+            this.firstTeamNumber = 1;
             this.relayBranchAssignments = new FixedBranchAssignments();
         }
 
@@ -763,6 +783,8 @@ namespace PurplePen
             RelaySettings other = obj as RelaySettings;
             if (obj == null)
                 return false;
+            if (other.firstTeamNumber != firstTeamNumber)
+                return false;
             if (other.relayLegs != relayLegs)
                 return false;
             if (other.relayTeams != relayTeams)
@@ -777,6 +799,7 @@ namespace PurplePen
             int hash = 1027;
             hash = hash * 33 + relayLegs.GetHashCode();
             hash = hash * 33 + relayTeams.GetHashCode();
+            hash = hash * 33 + firstTeamNumber.GetHashCode();
             hash = hash * 33 + relayBranchAssignments.GetHashCode();
             return hash;
         }
@@ -1053,6 +1076,7 @@ namespace PurplePen
                         break;
 
                     case "relay":
+                        relaySettings.firstTeamNumber = xmlinput.GetAttributeInt("first-team", 1);
                         relaySettings.relayTeams = xmlinput.GetAttributeInt("teams", 0);
                         relaySettings.relayLegs = xmlinput.GetAttributeInt("legs", 1);
                         xmlinput.Skip();
@@ -1152,6 +1176,7 @@ namespace PurplePen
 
             if (relaySettings.relayTeams > 0 || relaySettings.relayLegs > 1) {
                 xmloutput.WriteStartElement("relay");
+                xmloutput.WriteAttributeString("first-team", XmlConvert.ToString(relaySettings.firstTeamNumber));
                 xmloutput.WriteAttributeString("teams", XmlConvert.ToString(relaySettings.relayTeams));
                 xmloutput.WriteAttributeString("legs", XmlConvert.ToString(relaySettings.relayLegs));
                 xmloutput.WriteEndElement();

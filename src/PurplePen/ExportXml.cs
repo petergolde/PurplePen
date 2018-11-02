@@ -792,7 +792,7 @@ namespace PurplePen
 
         private void WriteAllTeams()
         {
-            for (int teamNumber = 1; teamNumber < relayVariations.NumberOfTeams; ++teamNumber) {
+            for (int teamNumber = relayVariations.FirstTeamNumber; teamNumber <= relayVariations.LastTeamNumber; ++teamNumber) {
                 WriteTeam(teamNumber);
             }
         }

@@ -1349,7 +1349,7 @@ namespace PurplePen
             EndTableRow();
 
             // Write the relay variation rows. Table rule after every 3rd line
-            for (int teamNumber = 1; teamNumber <= relayVariations.NumberOfTeams; ++teamNumber) {
+            for (int teamNumber = relayVariations.FirstTeamNumber; teamNumber <= relayVariations.LastTeamNumber; ++teamNumber) {
                 bool tablerule = (teamNumber % 3 == 0);
                 BeginTableRow();
                 WriteTableCell(tablerule ? "tablerule" : "", string.Format(ReportText.RelayVariation_TeamNumber, teamNumber));

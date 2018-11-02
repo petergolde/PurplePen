@@ -65,6 +65,15 @@ namespace PurplePen
             }
         }
 
+        public int FirstTeamNumber {
+            get {
+                return (int)upDownFirstTeamNumber.Value;
+            }
+            set {
+                upDownFirstTeamNumber.Value = value;
+            }
+        }
+
         public int NumberOfTeams { 
             get
             {
@@ -91,9 +100,10 @@ namespace PurplePen
         public RelaySettings RelaySettings
         {
             get {
-                return new RelaySettings(this.NumberOfTeams, this.NumberOfLegs, this.FixedBranchAssignments);
+                return new RelaySettings(this.FirstTeamNumber, this.NumberOfTeams, this.NumberOfLegs, this.FixedBranchAssignments);
             }
             set {
+                this.FirstTeamNumber = value.firstTeamNumber;
                 this.NumberOfTeams = value.relayTeams;
                 this.NumberOfLegs = value.relayLegs;
                 this.FixedBranchAssignments = value.relayBranchAssignments;
@@ -129,7 +139,7 @@ namespace PurplePen
 
         private VariationInfoEventArgs GetVariationInfoEventArgs()
         {
-            return new VariationInfoEventArgs(NumberOfTeams, NumberOfLegs, FixedBranchAssignments);
+            return new VariationInfoEventArgs(FirstTeamNumber, NumberOfTeams, NumberOfLegs, FixedBranchAssignments);
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -160,12 +170,14 @@ namespace PurplePen
 
         public class VariationInfoEventArgs: EventArgs
         {
+            public int FirstTeamNumber;
             public int NumberOfTeams;
             public int NumberOfLegs;
             public FixedBranchAssignments FixedBranchAssignments;
 
-            public VariationInfoEventArgs(int numberOfTeams, int numberOfLegs, FixedBranchAssignments fixedBranchAssignments)
+            public VariationInfoEventArgs(int firstTeamNumber, int numberOfTeams, int numberOfLegs, FixedBranchAssignments fixedBranchAssignments)
             {
+                FirstTeamNumber = firstTeamNumber;
                 NumberOfTeams = numberOfTeams;
                 NumberOfLegs = numberOfLegs;
                 FixedBranchAssignments = fixedBranchAssignments;

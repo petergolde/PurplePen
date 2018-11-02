@@ -34,7 +34,7 @@ namespace PurplePen.Tests
         void DumpAssignment(RelayVariations relayAssignment, string fileName)
         {
             using (TextWriter writer = new StreamWriter(fileName)) {
-                for (int team = 1; team <= relayAssignment.NumberOfTeams; ++team) {
+                for (int team = relayAssignment.FirstTeamNumber; team <= relayAssignment.LastTeamNumber; ++team) {
                     writer.Write("Team {0,3}: \t", team);
                     for (int leg = 1; leg <= relayAssignment.NumberOfLegs; ++leg) {
                         if (leg != 0)

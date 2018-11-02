@@ -42,10 +42,13 @@
             this.fixedLegsLink = new System.Windows.Forms.LinkLabel();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.upDownFirstTeamNumber = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfTeams)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownFirstTeamNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -93,7 +96,9 @@
             this.tableLayoutPanel2.Controls.Add(this.buttonCalculate, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.upDownNumberOfTeams, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.fixedLegsLink, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.fixedLegsLink, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.upDownFirstTeamNumber, 1, 1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // label2
@@ -162,6 +167,31 @@
             // 
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // upDownFirstTeamNumber
+            // 
+            resources.ApplyResources(this.upDownFirstTeamNumber, "upDownFirstTeamNumber");
+            this.upDownFirstTeamNumber.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.upDownFirstTeamNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.upDownFirstTeamNumber.Name = "upDownFirstTeamNumber";
+            this.upDownFirstTeamNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // TeamVariationsForm
             // 
             this.AcceptButton = this.buttonCalculate;
@@ -179,6 +209,7 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfTeams)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownFirstTeamNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +230,7 @@
         private System.Windows.Forms.Button buttonPrintPreview;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.LinkLabel fixedLegsLink;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown upDownFirstTeamNumber;
     }
 }

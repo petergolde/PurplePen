@@ -964,7 +964,7 @@ namespace PurplePen
             RelaySettings settings = course.relaySettings.Clone();
 
             // Validate the fixed branch assignments.
-            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(settings.relayTeams, settings.relayLegs));
+            RelayVariations relayVariations = new RelayVariations(eventDB, courseId, new RelaySettings(settings.firstTeamNumber, settings.relayTeams, settings.relayLegs));
             settings.relayBranchAssignments = relayVariations.ValidateFixedBranches(settings.relayBranchAssignments);
 
             return settings;
