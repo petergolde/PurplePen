@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2017-03-27T12:46:10.301448-07:00" creator="Purple Pen version 3.0.0 Beta 4">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2018-11-02T14:13:05.0356302-07:00" creator="Purple Pen version 3.1.5 Beta 1">
   <Event>
     <Name>variations</Name>
   </Event>
@@ -4829,6 +4829,40 @@
       <TeamMemberCourseAssignment>
         <Leg>6</Leg>
         <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>143</BibNumber>
+      <TeamName>143</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
         <CourseFamily>DoubleBranch</CourseFamily>
       </TeamMemberCourseAssignment>
     </TeamCourseAssignment>
