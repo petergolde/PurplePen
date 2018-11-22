@@ -148,6 +148,11 @@ namespace PurplePen
         // Determine the distance of this object from the given point, or 0 if the object overlaps the point.
         public abstract double DistanceFromPoint(PointF pt);
 
+        // Return the selection priority of this object. 100 is the default. Higher are selection in preference
+        // to lower.
+        public virtual int SelectionPriority()
+        { return 100; }
+
         // Draw or erase the highlight, given a brush.
         public abstract void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing);
 
@@ -2471,6 +2476,12 @@ namespace PurplePen
         {
             AddToMap(map, dict[CourseLayout.KeyWhiteOut]);
         }
+
+        // Allow selection other objects above white-out.
+        public override int SelectionPriority()
+        {
+            return 0;
+        }
     }
 
     // CONSIDER: merge ControlNumberCourseObj and CodeCourseObj since they are so similar!
@@ -2834,6 +2845,12 @@ namespace PurplePen
             return bestColumns;
         }
 
+        // Less priority than other objects.
+        public override int SelectionPriority()
+        {
+            return 80;
+        }
+
         // Are we equal?
         public override bool Equals(object obj)
         {
@@ -2949,6 +2966,11 @@ namespace PurplePen
         {
             // Shouldn't be called.
             throw new NotImplementedException();
+        }
+
+        public override int SelectionPriority()
+        {
+            return 50;
         }
 
         // The ImageLoader handles providing images to the map based on the image name.

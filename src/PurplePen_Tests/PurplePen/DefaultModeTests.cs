@@ -170,6 +170,52 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        // Should be able to select text inside whiteout and have it highlight. 
+        public void SelectTextInWhiteout()
+        {
+            MapViewer.DragAction dragAction;
+            CourseObj[] highlights;
+
+            Setup("modes\\marymoor4.coursescribe");
+
+            // Select course 3.
+            controller.SelectTab(3);       // Course 3.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on first aid point
+            dragAction = controller.LeftButtonDown(Pane.Map, new PointF(158.0F, -7.0F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(Pane.Map, new PointF(158.0F, -7.0F), 0.3F);
+
+            // Check no description line highlighted.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Check correct highlights appear.
+            highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
+            Assert.IsInstanceOfType(highlights[0], typeof(BasicTextCourseObj));
+            Assert.AreEqual("Hello", ((BasicTextCourseObj)highlights[0]).text);
+
+            // Select all controls.
+            controller.SelectTab(0);
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Click on white-out
+            dragAction = controller.LeftButtonDown(Pane.Map, new PointF(158.0F, -18.0F), 0.1F);
+            Assert.AreEqual(MapViewer.DragAction.DelayedDrag, dragAction);
+            controller.LeftButtonClick(Pane.Map, new PointF(158.0F, -18.0F), 0.3F);
+
+            // Check no description line highlighted.
+            CheckHighlightedLines(controller, -1, -1);
+
+            // Check correct highlights appear.
+            highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
+            Assert.IsInstanceOfType(highlights[0], typeof(WhiteOutCourseObj));
+
+            // Default mode should not be cancellable
+            Assert.IsFalse(controller.CanCancelMode());
+        }
+
+        [TestMethod]
         // Should have the move cursor on when moving over a highlighted object.
         // Also, the status text should change appropriately.
         public void MoveCursor()

@@ -201,7 +201,9 @@ namespace PurplePen
         public static CourseObj HitTestCollection(IEnumerable<CourseObj> courseObjects, PointF point, float pixelSize, CourseLayer layerFilter, Predicate<CourseObj> filter)
         {
             // We need to hit within 3 pixels of an object to select it.
-            double bestDistance = pixelSize * 3;
+            double distanceLimit = pixelSize * 3;
+            double bestDistance = distanceLimit;
+            int bestPriority = -1;
             CourseObj bestObject = null;
 
             foreach (CourseObj courseObject in courseObjects) {
@@ -211,9 +213,14 @@ namespace PurplePen
                     continue;
 
                 double dist = courseObject.DistanceFromPoint(point);
-                if (dist < bestDistance) {
-                    bestDistance = dist;
-                    bestObject = courseObject;
+                int priority = courseObject.SelectionPriority();
+                if (dist < distanceLimit) {
+                    // Could be selected. Check if other object is better.
+                    if (priority > bestPriority || (priority == bestPriority && dist < bestDistance)) {
+                        bestDistance = dist;
+                        bestObject = courseObject;
+                        bestPriority = priority;
+                    }
                 }
             }
 
