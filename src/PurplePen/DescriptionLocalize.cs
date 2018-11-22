@@ -140,13 +140,13 @@ namespace PurplePen
         // Add one description text.
         private void AddOneDescriptionText(string symbolId, SymbolText symbolText)
         {
-            // The new node to insert/replace.
-            XmlNode newNode = symbolText.CreateXmlElement(xmldoc, "text");
-
             // Find existing symbol, for this symbolId. Could be more than one for ones that have different ones for different standards.
             XmlNodeList symbolNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']", symbolId));
 
             foreach (XmlNode symbolNode in symbolNodes) {
+                // The new node to insert/replace.
+                XmlNode newNode = symbolText.CreateXmlElement(xmldoc, "text");
+
                 // Find existing name node, for this symbolId
                 XmlNodeList nameNodeList = symbolNode.SelectNodes("name");
                 XmlNode lastNameNode = nameNodeList[nameNodeList.Count - 1];
@@ -163,16 +163,17 @@ namespace PurplePen
         private void CopyAllTexts(string langIdFrom, string langIdTo)
         {
             XmlNodeList allTexts = root.SelectNodes(string.Format("/symbols/symbol/text[@lang='{0}']", langIdFrom));
-            HashSet<string> handledSymbolsIds = new HashSet<string>();
+            HashSet<SymbolText> handledSymbolTexts = new HashSet<SymbolText>();
 
             foreach (XmlNode node in allTexts) {
                 SymbolText symText = new SymbolText();
                 symText.ReadFromXmlElementNode((XmlElement) node);
                 symText.Lang = langIdTo;
-                string symbolId = ((XmlElement)node.ParentNode).GetAttribute("id");
-                if (!handledSymbolsIds.Contains(symbolId)) {
+                XmlElement parentNode = (XmlElement)node.ParentNode;
+                string symbolId = parentNode.GetAttribute("id");
+                if (!handledSymbolTexts.Contains(symText)) {
                     AddOneDescriptionText(symbolId, symText);
-                    handledSymbolsIds.Add(symbolId);
+                    handledSymbolTexts.Add(symText);
                 }
             }
         }
