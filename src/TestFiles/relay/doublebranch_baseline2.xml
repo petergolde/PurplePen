@@ -1,0 +1,4870 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2018-11-23T21:08:16.0344035-08:00" creator="Purple Pen version 3.1.5 Beta 2">
+  <Event>
+    <Name>variations</Name>
+  </Event>
+  <RaceCourseData>
+    <TeamCourseAssignment>
+      <BibNumber>101</BibNumber>
+      <TeamName>101</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>102</BibNumber>
+      <TeamName>102</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>103</BibNumber>
+      <TeamName>103</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>104</BibNumber>
+      <TeamName>104</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>105</BibNumber>
+      <TeamName>105</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>106</BibNumber>
+      <TeamName>106</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>107</BibNumber>
+      <TeamName>107</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>108</BibNumber>
+      <TeamName>108</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>109</BibNumber>
+      <TeamName>109</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>110</BibNumber>
+      <TeamName>110</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>111</BibNumber>
+      <TeamName>111</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>112</BibNumber>
+      <TeamName>112</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>113</BibNumber>
+      <TeamName>113</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>114</BibNumber>
+      <TeamName>114</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>115</BibNumber>
+      <TeamName>115</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>116</BibNumber>
+      <TeamName>116</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>117</BibNumber>
+      <TeamName>117</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>118</BibNumber>
+      <TeamName>118</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>119</BibNumber>
+      <TeamName>119</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>120</BibNumber>
+      <TeamName>120</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>121</BibNumber>
+      <TeamName>121</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>122</BibNumber>
+      <TeamName>122</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>123</BibNumber>
+      <TeamName>123</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>124</BibNumber>
+      <TeamName>124</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>125</BibNumber>
+      <TeamName>125</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>126</BibNumber>
+      <TeamName>126</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>127</BibNumber>
+      <TeamName>127</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>128</BibNumber>
+      <TeamName>128</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>129</BibNumber>
+      <TeamName>129</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>130</BibNumber>
+      <TeamName>130</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>131</BibNumber>
+      <TeamName>131</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>132</BibNumber>
+      <TeamName>132</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>133</BibNumber>
+      <TeamName>133</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>134</BibNumber>
+      <TeamName>134</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>135</BibNumber>
+      <TeamName>135</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>136</BibNumber>
+      <TeamName>136</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>137</BibNumber>
+      <TeamName>137</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>138</BibNumber>
+      <TeamName>138</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>139</BibNumber>
+      <TeamName>139</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>140</BibNumber>
+      <TeamName>140</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>141</BibNumber>
+      <TeamName>141</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>142</BibNumber>
+      <TeamName>142</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>143</BibNumber>
+      <TeamName>143</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>144</BibNumber>
+      <TeamName>144</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>145</BibNumber>
+      <TeamName>145</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>146</BibNumber>
+      <TeamName>146</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>147</BibNumber>
+      <TeamName>147</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>148</BibNumber>
+      <TeamName>148</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>149</BibNumber>
+      <TeamName>149</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>150</BibNumber>
+      <TeamName>150</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>151</BibNumber>
+      <TeamName>151</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>152</BibNumber>
+      <TeamName>152</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>153</BibNumber>
+      <TeamName>153</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>154</BibNumber>
+      <TeamName>154</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>155</BibNumber>
+      <TeamName>155</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>156</BibNumber>
+      <TeamName>156</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>157</BibNumber>
+      <TeamName>157</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>158</BibNumber>
+      <TeamName>158</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>159</BibNumber>
+      <TeamName>159</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>160</BibNumber>
+      <TeamName>160</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>161</BibNumber>
+      <TeamName>161</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>162</BibNumber>
+      <TeamName>162</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>163</BibNumber>
+      <TeamName>163</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>164</BibNumber>
+      <TeamName>164</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>165</BibNumber>
+      <TeamName>165</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>166</BibNumber>
+      <TeamName>166</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>167</BibNumber>
+      <TeamName>167</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>168</BibNumber>
+      <TeamName>168</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>169</BibNumber>
+      <TeamName>169</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>170</BibNumber>
+      <TeamName>170</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>171</BibNumber>
+      <TeamName>171</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>172</BibNumber>
+      <TeamName>172</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>173</BibNumber>
+      <TeamName>173</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>174</BibNumber>
+      <TeamName>174</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>175</BibNumber>
+      <TeamName>175</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>176</BibNumber>
+      <TeamName>176</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>177</BibNumber>
+      <TeamName>177</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>178</BibNumber>
+      <TeamName>178</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>179</BibNumber>
+      <TeamName>179</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>180</BibNumber>
+      <TeamName>180</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>181</BibNumber>
+      <TeamName>181</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>182</BibNumber>
+      <TeamName>182</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>183</BibNumber>
+      <TeamName>183</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>184</BibNumber>
+      <TeamName>184</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>185</BibNumber>
+      <TeamName>185</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>186</BibNumber>
+      <TeamName>186</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>187</BibNumber>
+      <TeamName>187</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>188</BibNumber>
+      <TeamName>188</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>189</BibNumber>
+      <TeamName>189</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>190</BibNumber>
+      <TeamName>190</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>191</BibNumber>
+      <TeamName>191</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>192</BibNumber>
+      <TeamName>192</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>193</BibNumber>
+      <TeamName>193</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>194</BibNumber>
+      <TeamName>194</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>195</BibNumber>
+      <TeamName>195</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>196</BibNumber>
+      <TeamName>196</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>197</BibNumber>
+      <TeamName>197</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>198</BibNumber>
+      <TeamName>198</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>199</BibNumber>
+      <TeamName>199</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>200</BibNumber>
+      <TeamName>200</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>201</BibNumber>
+      <TeamName>201</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>202</BibNumber>
+      <TeamName>202</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>203</BibNumber>
+      <TeamName>203</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>204</BibNumber>
+      <TeamName>204</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>205</BibNumber>
+      <TeamName>205</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>206</BibNumber>
+      <TeamName>206</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>207</BibNumber>
+      <TeamName>207</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>208</BibNumber>
+      <TeamName>208</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>209</BibNumber>
+      <TeamName>209</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>210</BibNumber>
+      <TeamName>210</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>211</BibNumber>
+      <TeamName>211</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>212</BibNumber>
+      <TeamName>212</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>213</BibNumber>
+      <TeamName>213</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>214</BibNumber>
+      <TeamName>214</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>215</BibNumber>
+      <TeamName>215</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>216</BibNumber>
+      <TeamName>216</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>217</BibNumber>
+      <TeamName>217</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>218</BibNumber>
+      <TeamName>218</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>219</BibNumber>
+      <TeamName>219</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>220</BibNumber>
+      <TeamName>220</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>221</BibNumber>
+      <TeamName>221</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>222</BibNumber>
+      <TeamName>222</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>223</BibNumber>
+      <TeamName>223</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>224</BibNumber>
+      <TeamName>224</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>225</BibNumber>
+      <TeamName>225</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>226</BibNumber>
+      <TeamName>226</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>227</BibNumber>
+      <TeamName>227</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>228</BibNumber>
+      <TeamName>228</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>229</BibNumber>
+      <TeamName>229</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>230</BibNumber>
+      <TeamName>230</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>231</BibNumber>
+      <TeamName>231</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>232</BibNumber>
+      <TeamName>232</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>233</BibNumber>
+      <TeamName>233</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>234</BibNumber>
+      <TeamName>234</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>235</BibNumber>
+      <TeamName>235</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>236</BibNumber>
+      <TeamName>236</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>237</BibNumber>
+      <TeamName>237</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>238</BibNumber>
+      <TeamName>238</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>239</BibNumber>
+      <TeamName>239</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>240</BibNumber>
+      <TeamName>240</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>241</BibNumber>
+      <TeamName>241</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>242</BibNumber>
+      <TeamName>242</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+    <TeamCourseAssignment>
+      <BibNumber>243</BibNumber>
+      <TeamName>243</TeamName>
+      <TeamMemberCourseAssignment>
+        <Leg>1</Leg>
+        <CourseName>DoubleBranch AE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>2</Leg>
+        <CourseName>DoubleBranch AC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>3</Leg>
+        <CourseName>DoubleBranch BD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>4</Leg>
+        <CourseName>DoubleBranch BC</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>5</Leg>
+        <CourseName>DoubleBranch BE</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+      <TeamMemberCourseAssignment>
+        <Leg>6</Leg>
+        <CourseName>DoubleBranch AD</CourseName>
+        <CourseFamily>DoubleBranch</CourseFamily>
+      </TeamMemberCourseAssignment>
+    </TeamCourseAssignment>
+  </RaceCourseData>
+</CourseData>
