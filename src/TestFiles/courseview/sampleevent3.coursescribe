@@ -2,7 +2,15 @@
   <event id="1">
     <title>Sample Event 1</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="none" scale="15000"></map>
+    <map kind="none" scale="15000" />
+    <standards map="2000" description="2004" />
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-106.337921" top="139.682938" right="109.562088" bottom="-139.717056" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <numbering start="31" disallow-invertible="true" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="None" auto-leg-gap-size="3.5" blend-purple="false" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
   </event>
   <control id="1" kind="start">
     <location x="5" y="0" />
@@ -20,11 +28,15 @@
     <location x="13" y="-7.8" />
     <description box="all" iof-2004-ref="13.3" />
   </control>
-  <control id="4" kind="normal" gaps="11111111111111111111111111011111">
+  <control id="4" kind="normal">
     <code>32</code>
     <location x="20" y="-10.5" />
     <description box="D" iof-2004-ref="3.7" />
     <description box="H" iof-2004-ref="12.1" />
+    <gaps scale="15000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="15000">56.25:67.5</circle-gaps>
+    <gaps scale="10000">11111111111111111111111111011111</gaps>
+    <circle-gaps scale="10000">56.25:67.5</circle-gaps>
     <description-text>very marshy spot</description-text>
   </control>
   <control id="5" kind="normal">
@@ -99,11 +111,11 @@
     <description box="D" iof-2004-ref="1.10" />
     <description box="E" iof-2004-ref="2.4" />
   </control>
-	<control id="15" kind="crossing-point" orientation="90">
-		<location x="17.4" y="-29" />
-		<description box="all" iof-2004-ref="13.3" />
-	</control>
-	<control id="16" kind="normal">
+  <control id="15" kind="crossing-point" orientation="90">
+    <location x="17.4" y="-29" />
+    <description box="all" iof-2004-ref="13.3" />
+  </control>
+  <control id="16" kind="normal">
     <code>301</code>
     <location x="-22.4" y="5.1" />
     <description box="D" iof-2004-ref="1.14" />
@@ -153,54 +165,61 @@
     <location x="14.3" y="-7.11" />
     <description box="all" iof-2004-ref="14.1" />
   </control>
-  <course id="1" kind="normal">
+  <course id="1" kind="normal" order="5">
     <name>White</name>
     <secondary-title>White is right</secondary-title>
+    <labels label-kind="sequence" />
     <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-82.35063" top="134.32869" right="133.549377" bottom="-145.0713" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" climb="66" description-kind="symbols-and-text" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
   </course>
-  <course id="2" kind="normal">
+  <course id="2" kind="normal" order="6">
     <name>Yellow</name>
+    <labels label-kind="sequence" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-65.65001" top="139.4" right="150.25" bottom="-140" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" description-kind="symbols-and-text" />
   </course>
-  <course id="3" kind="score">
+  <course id="3" kind="score" order="2">
     <name>Rambo</name>
+    <labels label-kind="code" />
     <first course-control="51" />
-    <options print-scale="10000" description-kind="symbols" />
-    <description square-size="6" left-edge="10.5" top-edge="-10.5" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-65.76444" top="83.0972" right="78.16889" bottom="-103.169479" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" score-column="A" description-kind="symbols" />
   </course>
-  <course id="4" kind="normal">
+  <course id="4" kind="normal" order="3">
     <name>SampleCourse4</name>
+    <labels label-kind="sequence" />
     <first course-control="11" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.030014" top="134.2487" right="110.869995" bottom="-145.151291" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" climb="173" description-kind="symbols" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
   </course>
-  <course id="5" kind="score">
+  <course id="5" kind="score" order="4">
     <name>Score 4</name>
     <secondary-title>Score more!</secondary-title>
+    <labels label-kind="sequence-and-code" />
     <first course-control="101" />
-    <options print-scale="15000" description-kind="symbols" score-column="B"/>
-    <description square-size="5.5" left-edge="0" top-edge="0" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-106.386543" top="145.516418" right="109.513466" bottom="-133.883575" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="15000" score-column="B" description-kind="symbols" />
   </course>
-  <course id="6" kind="normal">
+  <course id="6" kind="normal" order="1">
     <name>Green Y</name>
+    <labels label-kind="sequence" />
     <first course-control="201" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.030014" top="119.401245" right="110.869995" bottom="-159.998749" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" description-kind="symbols" />
-    <description square-size="5.5" left-edge="0" top-edge="0" />
   </course>
   <course-control id="1" control="1">
     <next course-control="2" />
   </course-control>
   <course-control id="2" control="2" variation="fork" variation-end="5">
     <next course-control="3" />
-    <variation course-control="2"/>
-    <variation course-control="7"/>
+    <variation course-control="2" />
+    <variation course-control="7" />
   </course-control>
   <course-control id="7" control="2" variation="fork" variation-end="5">
     <next course-control="4" />
-    <variation course-control="2"/>
-    <variation course-control="7"/>
+    <variation course-control="2" />
+    <variation course-control="7" />
   </course-control>
   <course-control id="3" control="5" points="10">
     <next course-control="5" />
@@ -208,7 +227,7 @@
   <course-control id="4" control="8" points="20">
     <next course-control="5" />
   </course-control>
-  <course-control id="5" control="7" >
+  <course-control id="5" control="7">
     <next course-control="6" />
   </course-control>
   <course-control id="6" control="6" />
@@ -345,48 +364,49 @@
     <next course-control="213" />
   </course-control>
   <course-control id="213" control="6" />
-	<special-object id="1" kind="first-aid">
-		<location x="4.5" y="1.2" />
-		<courses all="true" />
-	</special-object>
-	<special-object id="2" kind="optional-crossing-point" orientation="45">
-		<location x="-4.2" y="1.7" />
-		<courses>
-			<course course="1" />
-			<course course="2" />
-			<course course="3" />
-		</courses>
-	</special-object>
-	<special-object id="3" kind="boundary">
-		<location x="8" y="7" />
-		<location x="1" y="2" />
-		<courses>
-			<course course="5" />
-		</courses>
-	</special-object>
-	<special-object id="4" kind="out-of-bounds">
-		<location x="3" y="7" />
-		<location x="11" y="2" />
-		<location x="0" y="-1" />
-		<location x="-12" y="-3" />
-		<courses all="true" />
-	</special-object>
-	<special-object id="5" kind="text">
-		<text>Hello</text>
-		<font name="Tahoma" bold="true" italic="false"/>
-		<location x="3" y="7" />
-		<location x="11" y="4" />
-		<courses>
-			<course course="2" />
-		</courses>
-	</special-object>
-	<special-object id="6" kind="descriptions">
-		<location x="5" y="6" />
-		<location x="11" y="6" />
-		<courses>
-			<course course="6" />
-			<course course="2" />
-			<course course="4" />
-		</courses>
-	</special-object>
+  <special-object id="1" kind="first-aid">
+    <location x="4.5" y="1.2" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="2" kind="optional-crossing-point" orientation="45">
+    <location x="-4.2" y="1.7" />
+    <courses>
+      <course course="1" />
+      <course course="2" />
+      <course course="3" />
+    </courses>
+  </special-object>
+  <special-object id="3" kind="boundary">
+    <location x="8" y="7" />
+    <location x="1" y="2" />
+    <courses>
+      <course course="5" />
+    </courses>
+  </special-object>
+  <special-object id="4" kind="out-of-bounds">
+    <location x="3" y="7" />
+    <location x="11" y="2" />
+    <location x="0" y="-1" />
+    <location x="-12" y="-3" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="5" kind="text">
+    <text>Hello</text>
+    <font name="Tahoma" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="3" y="7" />
+    <location x="11" y="4" />
+    <courses>
+      <course course="2" />
+    </courses>
+  </special-object>
+  <special-object id="6" kind="descriptions">
+    <location x="5" y="6" />
+    <location x="11" y="6" />
+    <courses>
+      <course course="6" />
+      <course course="2" />
+      <course course="4" />
+    </courses>
+  </special-object>
 </course-scribe-event>

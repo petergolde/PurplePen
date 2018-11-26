@@ -953,6 +953,9 @@ namespace PurplePen
 
             courseControlId = course.firstCourseControl;
 
+            bool showOrdinals = courseView.scoreColumn != 0 && 
+                (course.labelKind == ControlLabelKind.Sequence || course.labelKind == ControlLabelKind.SequenceAndCode || course.labelKind == ControlLabelKind.SequenceAndScore);
+
             while (courseControlId.IsNotNone) {
                 ControlView controlView = new ControlView();
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
@@ -991,8 +994,8 @@ namespace PurplePen
                 return view1.controlId.id.CompareTo(view2.controlId.id);                
             });
 
-            // Assign ordinals, if applicable. If scores in column A, then no ordinals will be assigned.
-            if (courseView.scoreColumn != 0) {
+            // Assign ordinals, if applicable. 
+            if (showOrdinals) {
                 int ordinal = course.firstControlOrdinal;
                 foreach (ControlView control in courseView.controlViews) {
                     if (eventDB.GetControl(control.controlId).kind == ControlPointKind.Normal)

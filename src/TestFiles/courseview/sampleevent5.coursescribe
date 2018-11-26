@@ -2,7 +2,7 @@
   <event id="1">
     <title>Sample Event 1</title>
     <notes>This is a sample event for testing.</notes>
-    <map kind="OCAD" scale="15000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\descformatter\Lake Sammamish.ocd">Lake Sammamish.ocd</map>
+    <map kind="none" scale="15000" />
     <standards map="2000" description="2004" />
     <all-controls print-scale="15000" description-kind="symbols" />
     <print-area automatic="true" restrict-to-page-size="true" left="-106.337921" top="139.682938" right="109.562088" bottom="-139.717056" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
@@ -176,7 +176,7 @@
   <course id="2" kind="normal" order="6">
     <name>Yellow</name>
     <labels label-kind="sequence" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-107.950005" top="139.7" right="107.950005" bottom="-139.7" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-65.65001" top="139.4" right="150.25" bottom="-140" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="score" order="2">
@@ -190,22 +190,22 @@
     <name>SampleCourse4</name>
     <labels label-kind="sequence" />
     <first course-control="11" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-110.168625" top="146.1887" right="105.731384" bottom="-133.211288" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.030014" top="134.2487" right="110.869995" bottom="-145.151291" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" climb="173" description-kind="symbols" />
   </course>
   <course id="5" kind="score" order="4">
     <name>Score 4</name>
     <secondary-title>Score more!</secondary-title>
-    <labels label-kind="sequence" />
+    <labels label-kind="code-and-score" />
     <first course-control="101" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-106.386543" top="145.516418" right="109.513466" bottom="-133.883575" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="15000" score-column="none" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-106.7829" top="146.823685" right="109.117111" bottom="-132.576309" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="15000" score-column="B" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="1">
     <name>Green Y</name>
     <labels label-kind="sequence" />
     <first course-control="201" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-103.862793" top="146.396255" right="112.037216" bottom="-133.003738" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-105.030014" top="119.401245" right="110.869995" bottom="-159.998749" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <options print-scale="15000" description-kind="symbols" />
   </course>
   <course-control id="1" control="1">
@@ -364,4 +364,49 @@
     <next course-control="213" />
   </course-control>
   <course-control id="213" control="6" />
+  <special-object id="1" kind="first-aid">
+    <location x="4.5" y="1.2" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="2" kind="optional-crossing-point" orientation="45">
+    <location x="-4.2" y="1.7" />
+    <courses>
+      <course course="1" />
+      <course course="2" />
+      <course course="3" />
+    </courses>
+  </special-object>
+  <special-object id="3" kind="boundary">
+    <location x="8" y="7" />
+    <location x="1" y="2" />
+    <courses>
+      <course course="5" />
+    </courses>
+  </special-object>
+  <special-object id="4" kind="out-of-bounds">
+    <location x="3" y="7" />
+    <location x="11" y="2" />
+    <location x="0" y="-1" />
+    <location x="-12" y="-3" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="5" kind="text">
+    <text>Hello</text>
+    <font name="Tahoma" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="3" y="7" />
+    <location x="11" y="4" />
+    <courses>
+      <course course="2" />
+    </courses>
+  </special-object>
+  <special-object id="6" kind="descriptions">
+    <location x="5" y="6" />
+    <location x="11" y="6" />
+    <courses>
+      <course course="6" />
+      <course course="2" />
+      <course course="4" />
+    </courses>
+  </special-object>
 </course-scribe-event>
