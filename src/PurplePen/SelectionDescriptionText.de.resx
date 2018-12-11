@@ -291,4 +291,10 @@
   <data name="CalculatedLength" xml:space="preserve">
     <value>Länge berechnen:</value>
   </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>Kartenabgabepunkte</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>Kartenabgabepunkt</value>
+  </data>
 </root>

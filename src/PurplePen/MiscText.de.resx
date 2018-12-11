@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Kann den Ordner '{0}' aus folgendem Grund nicht erstellen:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Die Karte kann wegen folgendem Problem nicht geladen werden '{0}' Durch Benützen der Optimieren/Reparieren Funktion könnte das Problem behoben werden.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Die OCAD-Dateien können aus folgendem Grund nicht erstellt werden:</value>
   </data>
@@ -549,6 +552,54 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   </data>
   <data name="TooManyVariations" xml:space="preserve">
     <value>Die Bahn enthält zu viele Varianten. Die Anzahl der Varianten ist auf {0} beschränkt.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Variante kann nicht eingefügt werden.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>An diesem Posten existiert bereits eine Variante.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Ein Posten oder eine Strecke muss selektiert sein, um eine Gabelung hinzuzufügen.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Beim Zielposten kann keine Variante hinzugefügt werden.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Eine Gavelung kann nicht beim Postennetz hinzugefügt werden.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Bei einer Score Bahn kann keine Variante hinzugefügt werden.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Beim letzten Posten kann keine Variante hinzugefügt werden. Zuerst muss ein Zielposten hinzugefügt werden.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' ist keine gültige Etappennummer für die Verzweigung '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Etappe {0} sollte einer Verzweigung {1} zugewiesen sein.</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Etappe {0} ist Verzweigung '{1}1 und Verzweigung '{2}' zugewiesen</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Die Karte kann wegen folgendem Prpblem nicht geladen werden: '{0}' Die Karte in der neusten Version von OpenOrienteering Mapper öffnen und neu speichern, könnte das Problem beheben.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Kartenabgabepunkt</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Kartenabgabe</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>MI</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Die hinterlegte OCAD Karte hat sichtbare Vorlage Dateien. In OCAD 8 und älter, können diese Vorlagen unter Umständen nicht dargestellt werden, da in OCAD Beschränkungen vorhanden sind.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Wegen Beschränkungen im OCAD Dateiformat (OCAD 10 und älter) erscheinen Bildobjekte unterhalb der Bahnen und weissen Flächen in der exportierten OCAD Datei. Überprüfe die OCAD Datei, um sicher zu gehen, dass die Bilder wie gewünscht erscheinen.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>

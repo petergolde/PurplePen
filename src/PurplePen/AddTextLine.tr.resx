@@ -124,13 +124,13 @@
     <value>Parkurlar:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
-    <value>Durum:</value>
+    <value>Konum:</value>
   </data>
   <data name="comboBoxPosition.Items" xml:space="preserve">
-    <value>Yukarda{0}</value>
+    <value>Yukarıda</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>Altında{0}</value>
+    <value>Altında</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
     <value>Sadece Bu Parkur</value>

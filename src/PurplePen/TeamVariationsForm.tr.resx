@@ -133,15 +133,15 @@
     <value>Bacak sayısı:</value>
   </data>
   <data name="buttonCalculate.Text" xml:space="preserve">
-    <value>Varyasyon ata</value>
+    <value>Varyasyon Ata</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Takım sayısı:</value>
+    <value>Takım Sayısı:</value>
   </data>
   <data name="fixedLegsLink.Text" xml:space="preserve">
     <value>Her ayağa sabit hedefler atayın.</value>
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
+    <value>IOF XML 3.0|*.xml|Tablo (CSV)|*.csv</value>
   </data>
 </root>

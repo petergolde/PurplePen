@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Gleiches Symbol?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Besuche</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Bahnstatistik für {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Bahn-Posten Bezüge für {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Etappe geht in beide Richtungen</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Posten mit geringem Abstand</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Keine Fehler gefunden.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Bahn "{0}" enthält Posten "{1}" zweimal hintereinander.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Wiederholter Posten</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Skore Bahn "{0}" enthält Posten "{1}" zweimal. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Wettkampfprüfung für {0}</value>
   </data>
@@ -252,6 +267,9 @@
   <data name="LegLength_Title" xml:space="preserve">
     <value>Liste der Etappenlängen für {0}</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Einige Posten werden mehrere Male von der gleichen Bahn besucht. Die Nummer 'Besuche' zählt jeden Besuch pro Posten einzeln.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Postenauslastung</value>
   </data>
@@ -267,8 +285,17 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Zusammenfassung der Läuferauslastung für {0}</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Ein oder mehrer Kurse haben Bahnvarianten. Die Zahlen werden berechnet unter der Annahme, dass die Gabelungen gleichmässig verteilt sind.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} Besuche)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>WARNUNG:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>BEMERKUNG: </value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
     <value>Warnung: Aufgrund der Anzahl der Etappen wird die Gabelung bei Posten {0} nicht gleichmäßig genutzt. {1} Etappe(n) nutzen Zweig {2}, und {3} Etappe(n) nutzen Zweig {4}. </value>

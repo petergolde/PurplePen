@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.4\n"
+"Project-Id-Version: Purple Pen 3.1.5\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-05-17 18:46-07:00\n"
+"POT-Creation-Date: 2018-12-11 15:19-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -128,15 +128,15 @@ msgstr "Puanları Göster:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr "Kolon A"
+msgstr "Sütun A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr "Sütün B"
+msgstr "Sütun B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr "Kolon H"
+msgstr "Sütun H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
@@ -156,12 +156,12 @@ msgstr "Görünüm"
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
-msgstr "Aşağıdaki metin (isteğe bağlı olarak), kontrol açıklama "
+msgstr "Aşağıdaki metin (İsteğe Bağlı Olarak), kontol açılma "
 "sayfasının ikinci satırında görünür."
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr "Sınıf Listesi/ İkinici Başlık"
+msgstr "Sınıf Listesi/ İkinci Başlık"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -204,11 +204,11 @@ msgstr "Yeni Parkur"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr "Nasıl bir varyanson eklemek istersiniz?"
+msgstr "Nasıl bir varyasyon eklemek istersiniz?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
-msgstr "Çatal"
+msgstr "Ayrım"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
@@ -216,7 +216,7 @@ msgstr "Döngü"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
-msgstr "Sınıf Numarası:"
+msgstr "Sınıf Sayısı:"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
@@ -268,7 +268,7 @@ msgstr "Döngü kontrolü 4 kez ziyaret edilecek. Döngüler boyunca 24 "
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr "Varyanson Ekle"
+msgstr "Varyasyon Ekle"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
@@ -282,15 +282,15 @@ msgstr "Parkurlar:"
 
 #: AddTextLine.resx, positionLabel.Text
 msgid "Position:"
-msgstr "Durum:"
+msgstr "Konum:"
 
 #: AddTextLine.resx, comboBoxPosition.Items
 msgid "Above {0}"
-msgstr "Yukarda{0}"
+msgstr "Yukarıda"
 
 #: AddTextLine.resx, comboBoxPosition.Items1
 msgid "Below {0}"
-msgstr "Altında{0}"
+msgstr "Altında"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
@@ -319,11 +319,11 @@ msgstr "Tüm Kontrol Özellikleri"
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Baş aşağı okunabilen kodlara izin verme (e.g., \"68\"/\"89\")"
+msgstr "Ters okunan kodlara izin verme (Örnek, \"69\"/\"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr "Var olan kontrolleri yeniden adlandır"
+msgstr "Atanan Kontrol noktalarını yeniden adlandır."
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
@@ -336,7 +336,7 @@ msgstr "Mevcut Kontoller"
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr "Yeni oluşturulan kontroller otomatik olarak aşağıdaki "
+msgstr "Yeni oluşturulan kontroller otomatik olarak tanımlanan "
 "ayarlara göre numaralandırılır."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
@@ -3901,19 +3901,23 @@ msgstr "Bacak sayısı:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr "Varyasyon ata"
+msgstr "Varyasyon Ata"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr "Takım sayısı:"
+msgstr "Takım Sayısı:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
 msgstr "Her ayağa sabit hedefler atayın."
 
+#: TeamVariationsForm.resx, label3.Text
+msgid "Team numbers start at: "
+msgstr ""
+
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
+msgstr "IOF XML 3.0|*.xml|Tablo (CSV)|*.csv"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -3929,9 +3933,9 @@ msgstr "Tüm Denetimler koleksiyonunda bulunur ancak herhangi bir "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Parkurları görmek için ek parkurları seçin"
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Ek parkurları görüntüleyin"
 

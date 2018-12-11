@@ -297,4 +297,13 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Staffelteam Varianten</value>
   </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Kartenabgabepunkt hinzufügen</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Postenbeschreibungsnorm auswählen</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Kartennorm auswählen</value>
+  </data>
 </root>

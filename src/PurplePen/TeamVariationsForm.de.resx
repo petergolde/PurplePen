@@ -138,6 +138,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Anzahl der Teams:</value>
   </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Fixe Verzweigungen für Etappen zuweisen...</value>
+  </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Tabelle (CSV)|*.csv</value>
   </data>

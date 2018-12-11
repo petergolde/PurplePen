@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Baş aşağı okunabilen kodlara izin verme (e.g., "68"/"89")</value>
+    <value>Ters okunan kodlara izin verme (Örnek, "69"/"89")</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
-    <value>Var olan kontrolleri yeniden adlandır</value>
+    <value>Atanan Kontrol noktalarını yeniden adlandır.</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
     <value>Bu ayarları yalnızca yeni oluşturulan denetime uygulayın</value>
@@ -130,7 +130,7 @@
     <value>Mevcut Kontoller</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
-    <value>Yeni oluşturulan kontroller otomatik olarak aşağıdaki ayarlara göre numaralandırılır.</value>
+    <value>Yeni oluşturulan kontroller otomatik olarak tanımlanan ayarlara göre numaralandırılır.</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Başlangıç Kodu:</value>

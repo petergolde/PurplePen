@@ -160,13 +160,13 @@
     <value>Puanları Göster:</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
-    <value>Kolon A</value>
+    <value>Sütun A</value>
   </data>
   <data name="scoreColumnCombo.Items1" xml:space="preserve">
-    <value>Sütün B</value>
+    <value>Sütun B</value>
   </data>
   <data name="scoreColumnCombo.Items2" xml:space="preserve">
-    <value>Kolon H</value>
+    <value>Sütun H</value>
   </data>
   <data name="scoreColumnCombo.Items3" xml:space="preserve">
     <value>(Gösterme)</value>
@@ -175,10 +175,10 @@
     <value>Görünüm</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Aşağıdaki metin (isteğe bağlı olarak), kontrol açıklama sayfasının ikinci satırında görünür.</value>
+    <value>Aşağıdaki metin (İsteğe Bağlı Olarak), kontol açılma sayfasının ikinci satırında görünür.</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Sınıf Listesi/ İkinici Başlık</value>
+    <value>Sınıf Listesi/ İkinci Başlık</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Uzunluk:</value>

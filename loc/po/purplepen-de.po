@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.4\n"
+"Project-Id-Version: Purple Pen 3.1.5\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-05-17 18:46-07:00\n"
+"POT-Creation-Date: 2018-12-11 15:19-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -204,7 +204,7 @@ msgstr "Neue Bahn"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr "Welche Bahnvariate soll hinzugefügt werden?"
+msgstr "Welche Bahnvariante soll hinzugefügt werden?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
@@ -783,31 +783,31 @@ msgstr "Staffelteam Varianten"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr ""
+msgstr "Kartenabgabepunkt hinzufügen"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
-msgstr ""
+msgstr "Postenbeschreibungsnorm auswählen"
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
-msgstr ""
+msgstr "Kartennorm auswählen"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
-msgstr ""
+msgstr "Nicht skalieren"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items1
 msgid "Relative to map scale"
-msgstr ""
+msgstr "Relativ zum Kartenmassstab"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items2
 msgid "Relative to 1:15000"
-msgstr ""
+msgstr "Relativ zu 1:15000"
 
 #: CourseAppearanceDialog.resx, label11.Text
 msgid "Scale item sizes:"
-msgstr ""
+msgstr "Objektgrössen skalieren"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -1112,7 +1112,7 @@ msgstr "Eine pro Bahn"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
-msgstr ""
+msgstr "Eine Datei pro Variante"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
@@ -1270,25 +1270,28 @@ msgstr "Willkommen bei Purple Pen"
 
 #: LegAssignmentsDialog.resx, BranchColumn.HeaderText
 msgid "Branch"
-msgstr ""
+msgstr "Verzweigung"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
-msgstr ""
+msgstr "Teilstrecken"
 
 #: LegAssignmentsDialog.resx, labelDescription.Text
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr ""
+msgstr "Um eine bestimmte Etappe einer bestimmten Verzweigung "
+"zuzuweisen, gebe die Etappennummer(n) unten ein. Etappen "
+"welche nicht einer Verzweigung zugewiesen werden, werden "
+"auf die verbleibenden Verzweigungen zufällig verteilt."
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
-msgstr ""
+msgstr "Weitere Informationen..."
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
-msgstr ""
+msgstr "Etappenzuweisung"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -1549,11 +1552,11 @@ msgstr "&Alle Posten"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "Andere Bahnen"
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Andere Bahnen löschen"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1600,7 +1603,7 @@ msgstr "Text&zeile..."
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
 #: MiscText.resx, MapIssue_Long
 msgid "Map Issue Point"
-msgstr ""
+msgstr "Kartenabgabepunkt"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1703,23 +1706,23 @@ msgstr "Kontrollkarten&design"
 
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
-msgstr ""
+msgstr "Postenbeschreibungsnorm 2004"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
 msgid "2018 Description Standard"
-msgstr ""
+msgstr "Postenbeschreibungsnorm 2018"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
-msgstr ""
+msgstr "ISOM2000 Kartennorm"
 
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
-msgstr ""
+msgstr "ISOM2017 Kartennorm"
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
-msgstr ""
+msgstr "IOF Standards"
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
@@ -2088,7 +2091,9 @@ msgstr "Kann den Ordner '{0}' aus folgendem Grund nicht erstellen:"
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr ""
+msgstr "Die Karte kann wegen folgendem Problem nicht geladen "
+"werden '{0}' Durch Benützen der Optimieren/Reparieren "
+"Funktion könnte das Problem behoben werden."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -2692,71 +2697,85 @@ msgstr "Die Bahn enthält zu viele Varianten. Die Anzahl der "
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "Variante kann nicht eingefügt werden."
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "An diesem Posten existiert bereits eine Variante."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "Ein Posten oder eine Strecke muss selektiert sein, um eine "
+"Gabelung hinzuzufügen."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "Beim Zielposten kann keine Variante hinzugefügt werden."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Eine Gavelung kann nicht beim Postennetz hinzugefügt werden."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Bei einer Score Bahn kann keine Variante hinzugefügt werden."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "Beim letzten Posten kann keine Variante hinzugefügt "
+"werden. Zuerst muss ein Zielposten hinzugefügt werden."
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr ""
+msgstr "'{0}' ist keine gültige Etappennummer für die Verzweigung "
+"'{1}'"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "Etappe {0} sollte einer Verzweigung {1} zugewiesen sein."
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr ""
+msgstr "Etappe {0} ist Verzweigung '{1}1 und Verzweigung '{2}' "
+"zugewiesen"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
-msgstr ""
+msgstr "Die Karte kann wegen folgendem Prpblem nicht geladen "
+"werden: '{0}' Die Karte in der neusten Version von "
+"OpenOrienteering Mapper öffnen und neu speichern, könnte "
+"das Problem beheben."
 
 #: MiscText.resx, MapIssue_Medium
 msgid "Map Issue"
-msgstr ""
+msgstr "Kartenabgabe"
 
 #: MiscText.resx, MapIssue_Short
 msgid "MI"
-msgstr ""
+msgstr "MI"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "Die hinterlegte OCAD Karte hat sichtbare Vorlage Dateien. "
+"In OCAD 8 und älter, können diese Vorlagen unter Umständen "
+"nicht dargestellt werden, da in OCAD Beschränkungen "
+"vorhanden sind."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "Wegen Beschränkungen im OCAD Dateiformat (OCAD 10 und "
+"älter) erscheinen Bildobjekte unterhalb der Bahnen und "
+"weissen Flächen in der exportierten OCAD Datei. Überprüfe "
+"die OCAD Datei, um sicher zu gehen, dass die Bilder wie "
+"gewünscht erscheinen."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2891,7 +2910,11 @@ msgid "In order to design your courses, you must select the map "
 "OpenOrienteering Mapper file (although PDFs and image "
 "files like JPEGs can be used instead). Click the "
 "\"Choose...\" button to select a map file."
-msgstr ""
+msgstr "Um Bahnen zu zeichnen, muss eine Kartendatei ausgewählt "
+"werden. Normalerweise ist das eine OCAD oder "
+"OpenOrienteering Mapper Datei (auch PDFs und Bilder wie "
+"JPEGs können verwendet werden). Um eine Karte auszuwählen, "
+"klicke auf \"Durchsuchen...\"."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
@@ -2943,40 +2966,42 @@ msgstr "(Sie können den Druckmaßstab später unter "
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "(Diese Einstellungen können später unter Wettkampf/IOF "
+"Normen geändert werden)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
-msgstr ""
+msgstr "IOF Normen"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
-msgstr ""
+msgstr "ISOM 2017"
 
 #: NewEventStandards.resx, radioButtonMap2000.Text
 msgid "ISOM 2000 / ISSOM 2007"
-msgstr ""
+msgstr "ISOM 2000 / ISSOM 2007"
 
 #: NewEventStandards.resx, groupBoxMapStandard.Text
 msgid "IOF Map Standard"
-msgstr ""
+msgstr "IOF Kartennorm"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
 msgid "Descriptions 2018"
-msgstr ""
+msgstr "Postenbeschreibungen 2018"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
-msgstr ""
+msgstr "Postenbeschreibungen 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "IOF Postenbeschreibungsnorm"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
 "to follow?"
-msgstr ""
+msgstr "Welche Version der IOF Postenbeschreibungsnorm soll Purple "
+"Pen benutzen?"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3360,7 +3385,7 @@ msgstr "Gleiches Symbol?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Besuche"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
@@ -3372,7 +3397,7 @@ msgstr "Bahn-Posten Bezüge für {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "Etappe geht in beide Richtungen"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3462,15 +3487,15 @@ msgstr "Keine Fehler gefunden."
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "Bahn \"{0}\" enthält Posten \"{1}\" zweimal hintereinander."
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
-msgstr ""
+msgstr "Wiederholter Posten"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "Skore Bahn \"{0}\" enthält Posten \"{1}\" zweimal. "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -3514,7 +3539,9 @@ msgstr "Liste der Etappenlängen für {0}"
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr ""
+msgstr "Einige Posten werden mehrere Male von der gleichen Bahn "
+"besucht. Die Nummer 'Besuche' zählt jeden Besuch pro "
+"Posten einzeln."
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
@@ -3549,11 +3576,13 @@ msgstr "Zusammenfassung der Läuferauslastung für {0}"
 msgid "One or more courses has variations. Load numbers will be "
 "computed assuming that competitors are evenly distributed "
 "between forks."
-msgstr ""
+msgstr "Ein oder mehrer Kurse haben Bahnvarianten. Die Zahlen "
+"werden berechnet unter der Annahme, dass die Gabelungen "
+"gleichmässig verteilt sind."
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "({0} Besuche)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -3561,7 +3590,7 @@ msgstr "WARNUNG:"
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "BEMERKUNG: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
@@ -3761,11 +3790,11 @@ msgstr "Länge berechnen:"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "Kartenabgabepunkte"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "Kartenabgabepunkt"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
@@ -4051,11 +4080,13 @@ msgstr "Kontrollnummer ziehen, um sie neu zu positionieren "
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
 "course"
-msgstr ""
+msgstr "Mit linker Maustaste klicken, um einen bereuts "
+"existierenden Kartenabgabepunkt zur Bahn hinzuzufügen"
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
-msgstr ""
+msgstr "Klicke mit linker Maustaste, um einen neuen "
+"Kartenabgabepunkt zu platzieren"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
@@ -4075,6 +4106,10 @@ msgstr "Anzahl der Teams:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
+msgstr "Fixe Verzweigungen für Etappen zuweisen..."
+
+#: TeamVariationsForm.resx, label3.Text
+msgid "Team numbers start at: "
 msgstr ""
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
@@ -4095,9 +4130,10 @@ msgstr "Die folgenden Posten aus der Gesamtpostenliste werden in "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Wähle die zusätzliche Bahn aus, um sie zusammen mit der "
+"Bahn \"{0}\" anzuzeigen."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Zusätzliche Bahnen anzeigen"
 
