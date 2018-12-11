@@ -199,7 +199,7 @@
     <value>Cambiar Códigos</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Cambiar Recorridos en que Aparece</value>
+    <value>Cambiar Recorridos Mostrados</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
     <value>Mover Angulo del Tramo</value>
@@ -269,5 +269,35 @@
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Personalizar la Impresión del Recorrido</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Añadir Cambio de Mapa</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Borrar Cambio de Mapa</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Cambiar Propiedades de Parte del Recorrido</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Cambiar Apariencia de Línea</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicar Recorrido</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Crear {0} &amp;Files</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Añadir variación</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Borrar Mariposa/Bucle</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Variaciones de Equipo de Relevos</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Establecer Estándar de Mapa</value>
   </data>
 </root>

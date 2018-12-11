@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>¿Mismo símbolo?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visitas</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Resumen por Recorridos para {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Referencias cruzadas por controles para {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Postas realizadas en ambas direcciones</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Controles Cercanos</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>No se encontraron problemas.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>El recorrido «{0}» contiene el control «{1}» dos veces sucesivas.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Controles Repetidos</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>El recorrido Score «{0}» contiene el control «{1}» dos veces.</value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Revisión del Evento para {0}</value>
   </data>
@@ -243,8 +258,17 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Media</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} controles, {2}, {3} m desnivel)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} controles, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Informe de Longitudes por Tramos para {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Algunos controles son visitados varias veces en el mismo recorrido. El segundo número de carga cuenta cada visita a un control de forma separada.</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Desnidad de Corredores</value>
@@ -261,7 +285,31 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Resumen de Densidad de Corredores para {0}</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Uno o más recorridos tienen variaciones. Los números de carga serán computados asumiendo que los competidores son distribuidos de forma equitativa entre las mariposas.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visitas)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>AVISO:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTA: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Aviso: debido al número de postas especificado, la mariposa en el control {0} no será usado de forma equitativa. {1} posta(s) usará(n) la mariposa {2}, mientras que {3} posta(s) usará(n) la mariposa {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Posta {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Ningún equipo de relevos ha sido definido todavía. Selecciona el número de equipos y postas deseadas y presiona el botón «Asignar Variaciones».</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Equipo {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Asignaciones de Relevo para {0}</value>
   </data>
 </root>

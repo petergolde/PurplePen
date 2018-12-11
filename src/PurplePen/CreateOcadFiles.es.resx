@@ -142,7 +142,7 @@
     <value>Seleccionar carpeta...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Otra Carpeta</value>
+    <value>Otra carpeta</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo del mapa</value>

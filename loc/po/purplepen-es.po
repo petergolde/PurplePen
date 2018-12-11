@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.1.5\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-12-11 15:19-08:00\n"
+"POT-Creation-Date: 2018-12-11 15:28-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -261,8 +261,8 @@ msgstr "Número de bucles:"
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
 "different ways through the loops."
-msgstr "El control del bucle será visitado 4 veces. Hay 24 "
-"vías diferentes a través de los bucles."
+msgstr "El control del bucle será visitado 4 veces. Hay 24 vías "
+"diferentes a través de los bucles."
 
 #: AddForkDialog.resx, $this.Text
 #: CommandNameText.resx, AddVariation
@@ -273,8 +273,8 @@ msgstr "Añadir variación"
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr "Introduzca el texto que se colocará en una línea aparte "
-"en la descripción de control:"
+msgstr "Introduzca el texto que se colocará en una línea aparte en "
+"la descripción de control:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -404,10 +404,10 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "Mapas"
-"files|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*."
-"bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
-"Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
+msgstr "Mapasfiles|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.t"
+"if;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open "
+"Orienteering Mapper Files|*.omap;*.xmap|PDF files "
+"(*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
@@ -434,8 +434,8 @@ msgstr "Archivo de Mapa"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr "Seleccione los recorridos en los que se mostrará "
-"este elemento:"
+msgstr "Seleccione los recorridos en los que se mostrará este "
+"elemento:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
@@ -1187,8 +1187,8 @@ msgstr "Haga click en la descripción de un símbolo para "
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr "Establecer este como el idioma por defecto "
-"para nuevos eventos"
+msgstr "Establecer este como el idioma por defecto para nuevos "
+"eventos"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1256,8 +1256,8 @@ msgstr "Abrir un evento existente..."
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr "Purple Pen es un software libre y puede ser copiado "
-" y compartido. Su desarrollo es apoyado únicamente por sus "
+msgstr "Purple Pen es un software libre y puede ser copiado  y "
+"compartido. Su desarrollo es apoyado únicamente por sus "
 "donaciones."
 
 #: InitialScreen.resx, donationLink.Text
@@ -2465,14 +2465,14 @@ msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
 msgstr "Ha ocurrido un error. Para que puedas ayudarnos a "
-"solucionar el problema, por favor introduce tu email "
-"e información adicional, y envíanos un informe del error."
+"solucionar el problema, por favor introduce tu email e "
+"información adicional, y envíanos un informe del error."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr "Por favor, dinos qué estabas haciendo en el programa, "
-"para ayudarnos a solucionar el problema"
+msgstr "Por favor, dinos qué estabas haciendo en el programa, para "
+"ayudarnos a solucionar el problema"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
@@ -2483,10 +2483,11 @@ msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr "Las descripciones pueden no ser añadidas a un "
-"recorrido con un cambio de mapa si «Todas las partes» "
-"es mostrado. Cambia a la parte en la que deseas añadir las "
-"descripciones, y luego elige «Añadir Descripciones» de nuevo."
+msgstr "Las descripciones pueden no ser añadidas a un recorrido "
+"con un cambio de mapa si «Todas las partes» es mostrado. "
+"Cambia a la parte en la que deseas añadir las "
+"descripciones, y luego elige «Añadir Descripciones» de "
+"nuevo."
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
@@ -2498,8 +2499,8 @@ msgstr "El conversor Pdfium PDF falló en leer el archivo PDF"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr "No se pudo leer el resultado de la conversión de PDF "
-"del archivo '{0}'"
+msgstr "No se pudo leer el resultado de la conversión de PDF del "
+"archivo '{0}'"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
@@ -2529,16 +2530,18 @@ msgstr "Imprimiendo página {0} (de {1})"
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
 msgstr "El archivo de mapa «{0}» ha sido borrado. Por favor "
-"intenta restaurar el archivo de mapa, y luego presiona «Vale»."
+"intenta restaurar el archivo de mapa, y luego presiona "
+"«Vale»."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr "El framework .NET de tu ordenador parece no estar instalado "
-" correctamente. Por favor visita http://microsoft.com/net e "
-"instala la última version de .NET para tu sistema operativo Windows."
+msgstr "El framework .NET de tu ordenador parece no estar "
+"instalado  correctamente. Por favor visita "
+"http://microsoft.com/net e instala la última version de "
+".NET para tu sistema operativo Windows."
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
@@ -2572,8 +2575,8 @@ msgstr "Amarillo"
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
 msgstr "Asigna la apariencia de la línea. Despues de presionar "
-"Vale, arrastra el ratón para dibujar los segmentos de línea en "
-"la posición deseada."
+"Vale, arrastra el ratón para dibujar los segmentos de "
+"línea en la posición deseada."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
@@ -2584,8 +2587,8 @@ msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
 msgstr "Asigna la apariencia de un rectángulo. Después de "
-"presionar Vale, arrastra el ratón para colocar el rectángulo "
-"en la posición deseada."
+"presionar Vale, arrastra el ratón para colocar el "
+"rectángulo en la posición deseada."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
@@ -2597,8 +2600,8 @@ msgstr "Cambiar la apariencia de la línea o rectángulo."
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr "El archivo de mapa debe ser un archivo OCAD para "
-"usar archivos GPX."
+msgstr "El archivo de mapa debe ser un archivo OCAD para usar "
+"archivos GPX."
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
@@ -2615,15 +2618,15 @@ msgstr "El archivo OCAD debe tener coordenadas de mundo real "
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr "No se pudieron reproyectar los puntos; o bien el "
-"sistema de coordenadas o las coordenadas de mundo real en el "
-"mapa OCAD son incorrectas."
+msgstr "No se pudieron reproyectar los puntos; o bien el sistema "
+"de coordenadas o las coordenadas de mundo real en el mapa "
+"OCAD son incorrectas."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr "El archivo OCAD usa un sistema de coordenadas que no "
-"es soportado por Purple Pen."
+msgstr "El archivo OCAD usa un sistema de coordenadas que no es "
+"soportado por Purple Pen."
 
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
@@ -2638,8 +2641,8 @@ msgstr "La longitud de un recorrido debe ser un número entre 0.1 - "
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr "Introduce longitud en km, o deja en blanco para "
-"calcular automáticamente."
+msgstr "Introduce longitud en km, o deja en blanco para calcular "
+"automáticamente."
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
@@ -2660,13 +2663,14 @@ msgstr "Todas las Variaciones"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr "Adecuado para uso en relevos con {0} participantes por equipo."
+msgstr "Adecuado para uso en relevos con {0} participantes por "
+"equipo."
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr "El control central del bucle será visitado {0} veces. "
-"Hay {1} posibles vías a través de los bucles."
+msgstr "El control central del bucle será visitado {0} veces. Hay "
+"{1} posibles vías a través de los bucles."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
@@ -2690,23 +2694,22 @@ msgstr "Ya existe una variación en este control."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr "Un control o posta debe ser seleccionada para "
-"añadir una variación."
+msgstr "Un control o posta debe ser seleccionada para añadir una "
+"variación."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr "Una variación no puede ser añadida a un control "
-"de meta."
+msgstr "Una variación no puede ser añadida a un control de meta."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr "Una variación no puede ser añadida a la vista de "
-"Todos los controles."
+msgstr "Una variación no puede ser añadida a la vista de Todos los "
+"controles."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr "Una variación no puede ser añadida a un recorrido "
-"tipo Score."
+msgstr "Una variación no puede ser añadida a un recorrido tipo "
+"Score."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
@@ -2716,26 +2719,26 @@ msgstr "Una variación no puede ser añadida al último control. "
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr "«{0}» no es un número válido de posta para la "
-"variación «{1}»"
+msgstr "«{0}» no es un número válido de posta para la variación "
+"«{1}»"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr "La posta {0} debería ser asignada a una de las "
-"variaciones {1}"
+msgstr "La posta {0} debería ser asignada a una de las variaciones "
+"{1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr "La posta {0} es asignada a ambas variaciones «{1}» "
-"y «{2}»"
+msgstr "La posta {0} es asignada a ambas variaciones «{1}» y «{2}»"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
 msgstr "No se puede leer el mapa por la siguiente razón: «{0}» "
-"Abriendo y volviendo a guardar el mapa en la última versión "
-"de OpenOrienteering Mapper puede solucionar problemas."
+"Abriendo y volviendo a guardar el mapa en la última "
+"versión de OpenOrienteering Mapper puede solucionar "
+"problemas."
 
 #: MiscText.resx, MapIssue_Medium
 msgid "Map Issue"
@@ -2750,19 +2753,19 @@ msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
 msgstr "El mapa OCAD subyaciente tiene archivos de plantilla "
-"visibles. En OCAD 8 y anteriores, estas plantillas podrían no "
-"aparecer debido a las limitaciones en OCAD."
+"visibles. En OCAD 8 y anteriores, estas plantillas podrían "
+"no aparecer debido a las limitaciones en OCAD."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr "Debido a limitaciones en el formato de archivo OCAD "
-"(en OCAD 10 y anteriores), los objetos de imágenes aparecerán "
-"debajo de los recorridos y areas blancas en los archivos OCAD "
-"exportados. Por favor compruebe los archivos OCAD para asegurarse "
-"de que las imágenes se muestren como desee."
+msgstr "Debido a limitaciones en el formato de archivo OCAD (en "
+"OCAD 10 y anteriores), los objetos de imágenes aparecerán "
+"debajo de los recorridos y areas blancas en los archivos "
+"OCAD exportados. Por favor compruebe los archivos OCAD "
+"para asegurarse de que las imágenes se muestren como desee."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2902,9 +2905,9 @@ msgstr "Seleccionar Archivo de Mapa"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr "El mapa ha sido cargado exitosamente. Si envía su "
-"archivo Purple Pen a alguien más, debe tener el archivo "
-"de mapa también."
+msgstr "El mapa ha sido cargado exitosamente. Si envía su archivo "
+"Purple Pen a alguien más, debe tener el archivo de mapa "
+"también."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
@@ -3058,8 +3061,8 @@ msgstr "El conversor PDFium PDF está leyendo su PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr "La lectura de PDF ha fallado. Los errores se "
-"muesteran a continuación."
+msgstr "La lectura de PDF ha fallado. Los errores se muesteran a "
+"continuación."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
@@ -3101,8 +3104,7 @@ msgstr "Copias por recorrido:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr "Pausar impresión después de cada recorrido "
-"o parte"
+msgstr "Pausar impresión después de cada recorrido o parte"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
@@ -3477,8 +3479,8 @@ msgstr "Controles Repetidos"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr "El recorrido Score «{0}» contiene el control «{1}» "
-"dos veces."
+msgstr "El recorrido Score «{0}» contiene el control «{1}» dos "
+"veces."
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -3525,9 +3527,9 @@ msgstr "Informe de Longitudes por Tramos para {0}"
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr "Algunos controles son visitados varias veces en "
-"el mismo recorrido. El segundo número de carga cuenta cada "
-"visita a un control de forma separada."
+msgstr "Algunos controles son visitados varias veces en el mismo "
+"recorrido. El segundo número de carga cuenta cada visita a "
+"un control de forma separada."
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
@@ -3583,10 +3585,9 @@ msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
 msgstr "Aviso: debido al número de postas especificado, la "
-"mariposa en el control {0} no será usado de forma equitativa. {1} "
-"posta(s) usará(n) la mariposa {2}, mientras que {3} posta(s) "
-"usará(n) la mariposa {4}. "
-
+"mariposa en el control {0} no será usado de forma "
+"equitativa. {1} posta(s) usará(n) la mariposa {2}, "
+"mientras que {3} posta(s) usará(n) la mariposa {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
@@ -3596,9 +3597,9 @@ msgstr "Posta {0}"
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr "Ningún equipo de relevos ha sido definido todavía. Selecciona "
-"el número de equipos y postas deseadas y presiona el botón «Asignar "
-"Variaciones»."
+msgstr "Ningún equipo de relevos ha sido definido todavía. "
+"Selecciona el número de equipos y postas deseadas y "
+"presiona el botón «Asignar Variaciones»."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
@@ -3810,8 +3811,7 @@ msgstr "Un mapa para cada posible variación en el recorrido."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr "Un mapa para cada posta en los equipos de relevos que "
-"elija."
+msgstr "Un mapa para cada posta en los equipos de relevos que elija."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
@@ -3827,9 +3827,9 @@ msgstr "Seleccionar Variaciones Individuales"
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr "Este recorrido tiene {0} equipos de relevos asignados. "
-"Usa Variaciones de Equipo de Relevos... en el menú Recorrido para "
-"cambiar el número de equipos."
+msgstr "Este recorrido tiene {0} equipos de relevos asignados. Usa "
+"Variaciones de Equipo de Relevos... en el menú Recorrido "
+"para cambiar el número de equipos."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
@@ -3971,13 +3971,14 @@ msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
 msgstr "Click izquierdo del ratón en el círculo del control para "
-"añadir un pequeño hueco; mantener botón izquierdo del ratón y "
-"arrastrar para crear un hueco grande"
+"añadir un pequeño hueco; mantener botón izquierdo del "
+"ratón y arrastrar para crear un hueco grande"
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr "Click izquierdo del ratón sobre el hueco del circulo para eliminarlo"
+msgstr "Click izquierdo del ratón sobre el hueco del circulo para "
+"eliminarlo"
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
@@ -4020,8 +4021,8 @@ msgstr "Mantener botón izquierdo del ratón y arrastrar para añadir "
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr "Mantener botón izquierdo del ratón y arrastrar para crear un "
-"Texto"
+msgstr "Mantener botón izquierdo del ratón y arrastrar para crear "
+"un Texto"
 
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
@@ -4031,19 +4032,19 @@ msgstr "Click izquierdo del ratón para añadir un cambio de mapa "
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr "Click izquierdo del ratón para colocar un nuevo cambio "
-"de mapa"
+msgstr "Click izquierdo del ratón para colocar un nuevo cambio de "
+"mapa"
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr "Click izquierdo del ratón para añadir cambio de mapa en "
-"el control «{0}»"
+msgstr "Click izquierdo del ratón para añadir cambio de mapa en el "
+"control «{0}»"
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr "Mantener botón izquierdo del ratón y arrastrar para "
-"crear objeto"
+msgstr "Mantener botón izquierdo del ratón y arrastrar para crear "
+"objeto"
 
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
@@ -4102,7 +4103,8 @@ msgstr "Los siguientes controles estan en la descripción de Todos "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr "Elige recorridos adicionales para ver con el recorrido «{0}»."
+msgstr "Elige recorridos adicionales para ver con el recorrido "
+"«{0}»."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"

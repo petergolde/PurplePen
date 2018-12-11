@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Haga click en la descripción de un símbolo para personalizar el texto utilizado en las descripciones de controles textuales.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Establecer este como el idioma por defecto para nuevos eventos</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personalizar Textos de las Descripciones</value>
   </data>
