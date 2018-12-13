@@ -208,6 +208,26 @@ namespace PurplePen.Tests
             SetPrintArea(1, currentPrintArea, newPrintArea, PrintAreaKind.AllCourses);
         }
 
+        [TestMethod] 
+        public void AutoPrintArea()
+        {
+            RectangleF expectedPrintArea = RectangleF.FromLTRB(25.9F, 68.9F, 305.3F, 284.8F);
+
+            Setup("modes\\printarea2.ppen");
+
+            controller.SelectTab(1);
+            RectangleF autoPrintArea = controller.GetCurrentPrintAreaRectangle(new CourseDesignator(CourseId(1)));
+            TestUtil.AssertEqualRect(expectedPrintArea, autoPrintArea, 0.1, "print rectangle");
+
+            controller.SelectTab(2);
+            autoPrintArea = controller.GetCurrentPrintAreaRectangle(new CourseDesignator(CourseId(2)));
+            TestUtil.AssertEqualRect(expectedPrintArea, autoPrintArea, 0.1, "print rectangle");
+
+            controller.SelectTab(0);
+            autoPrintArea = controller.GetCurrentPrintAreaRectangle(new CourseDesignator(CourseId(0)));
+            TestUtil.AssertEqualRect(expectedPrintArea, autoPrintArea, 0.1, "print rectangle");
+        }
+
         void DumpMapFile(string mapFileName, string outputDump)
         {
             using (TextWriter writer = new StreamWriter(outputDump, false, System.Text.Encoding.UTF8)) {

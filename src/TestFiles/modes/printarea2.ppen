@@ -1,0 +1,66 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>ShoreView Test</title>
+    <map kind="OCAD" scale="5000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Orienteering\Shoreview 2018\ShorelineCC_Dec2018.omap">..\..\..\..\..\Orienteering\Shoreview 2018\ShorelineCC_Dec2018.omap</map>
+    <standards map="2017" description="2018" />
+    <all-controls print-scale="5000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="25.8895111" top="284.80368" right="305.2895" bottom="68.90368" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeToMap" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="187.5838" y="164.634521" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="241.347778" y="141.324265" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="252.250946" y="96.20763" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="63.5130959" y="143.95607" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="117.653038" y="194.3363" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="175.5527" y="143.204117" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="25.8895111" top="284.80368" right="305.2895" bottom="68.90368" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Empty Course</name>
+    <labels label-kind="sequence" />
+    <print-area automatic="true" restrict-to-page-size="true" left="25.8895111" top="284.80368" right="305.2895" bottom="68.90368" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6" />
+</course-scribe-event>

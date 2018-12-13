@@ -1696,12 +1696,22 @@ namespace PurplePen
                 // Automatically determine the print rectangle.
                 // High priority: conver the bounding rect of the course objects with a 1mm padding.
                 // Lower priority: cover the map rectangle.
-                RectangleF courseObjectsRectangle = RectangleF.Inflate(layout.BoundingRect(), 1.0F, 1.0F);
+                RectangleF courseObjectsRectangle = layout.BoundingRect();
+                if (! courseObjectsRectangle.IsEmpty) {
+                    courseObjectsRectangle = RectangleF.Inflate(courseObjectsRectangle, 1.0F, 1.0F);
+                }
                 RectangleF mapRectangle = mapDisplay.MapBounds;
 
                 float l, b, r, t;
-                PositionPrintInterval(pageSizeInMapUnits.Width, courseObjectsRectangle.Left, courseObjectsRectangle.Right, mapRectangle.Left, mapRectangle.Right, out l, out r);
-                PositionPrintInterval(pageSizeInMapUnits.Height, courseObjectsRectangle.Top, courseObjectsRectangle.Bottom, mapRectangle.Top, mapRectangle.Bottom, out t, out b);
+                if (courseObjectsRectangle.IsEmpty) {
+                    PositionPrintInterval(pageSizeInMapUnits.Width, mapRectangle.Left, mapRectangle.Right, mapRectangle.Left, mapRectangle.Right, out l, out r);
+                    PositionPrintInterval(pageSizeInMapUnits.Height, mapRectangle.Top, mapRectangle.Bottom, mapRectangle.Top, mapRectangle.Bottom, out t, out b);
+                }
+                else {
+                    PositionPrintInterval(pageSizeInMapUnits.Width, courseObjectsRectangle.Left, courseObjectsRectangle.Right, mapRectangle.Left, mapRectangle.Right, out l, out r);
+                    PositionPrintInterval(pageSizeInMapUnits.Height, courseObjectsRectangle.Top, courseObjectsRectangle.Bottom, mapRectangle.Top, mapRectangle.Bottom, out t, out b);
+                }
+
                 printRectangle = RectangleF.FromLTRB(l, t, r, b);
 
                 //printRectangle = RectangleF.Union(courseObjectsRectangle, mapDisplay.MapBounds);
