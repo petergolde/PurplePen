@@ -4153,7 +4153,7 @@
     <EmbeddedResource Include="MapView\DragCursor.cur" />
     <None Include="MapView\MapViewer.csproj" />
     <Content Include="symbols.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
