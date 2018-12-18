@@ -897,12 +897,12 @@ Symbol definition for '800.7'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=8
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=29  
-    (-1.16,-1.88) (0.72,0.00) (-1.16,1.88) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=72
     (1.59,0.00) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=29  
+    (-1.16,-1.88) (0.72,0.00) (-1.16,1.88) 
 
 Symbol definition for '800.8'
  Description: Navigate to finish': 

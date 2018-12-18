@@ -739,12 +739,12 @@ Symbol definition for '800.4'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=8
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=29  
-    (1.95,-0.72) (-0.61,0.61) (0.72,-1.95) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=72
     (-1.23,1.23) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=29  
+    (1.95,-0.72) (-0.61,0.61) (0.72,-1.95) 
 
 Symbol definition for '800.5'
  Description: Distinctive tree': 
@@ -779,10 +779,10 @@ Symbol definition for '800.5'
   Reserved=0
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
-    (0.00,2.03) (-1.07,-1.01) (1.07,-1.01) (0.00,2.03) 
+    (0.00,-1.16) (0.00,-2.03) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
-    (0.00,-1.16) (0.00,-2.03) 
+    (0.00,2.03) (-1.07,-1.01) (1.07,-1.01) (0.00,2.03) 
 
 Symbol definition for '800.6'
  Description: Copse': 
@@ -817,14 +817,14 @@ Symbol definition for '800.6'
   Reserved=0
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
-    (-1.74,-1.01) (-0.67,2.03) (0.00,0.14) (0.67,2.03) (1.74,-1.01) 
-    (-1.74,-1.01) 
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=36  
     (-0.67,-1.16) (-0.67,-2.03) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
     (0.67,-1.16) (0.67,-2.03) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=36  
+    (-1.74,-1.01) (-0.67,2.03) (0.00,0.14) (0.67,2.03) (1.74,-1.01) 
+    (-1.74,-1.01) 
 
 Symbol definition for '800.7'
  Description: South tip': 
@@ -857,12 +857,12 @@ Symbol definition for '800.7'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=8
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=29  
-    (0.87,1.88) (0.00,-0.87) (-0.87,1.88) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=72
     (0.00,-1.74) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=29  
+    (0.87,1.88) (0.00,-0.87) (-0.87,1.88) 
 
 Symbol definition for '800.8'
  Description: Minor water channe': 

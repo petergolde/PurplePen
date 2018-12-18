@@ -1043,14 +1043,14 @@ Symbol definition for '801.1'
   Reserved=0
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
-    (-1.74,-1.01) (-0.67,2.03) (0.00,0.14) (0.67,2.03) (1.74,-1.01) 
-    (-1.74,-1.01) 
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=36  
     (-0.67,-1.16) (-0.67,-2.03) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=36  
     (0.67,-1.16) (0.67,-2.03) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=36  
+    (-1.74,-1.01) (-0.67,2.03) (0.00,0.14) (0.67,2.03) (1.74,-1.01) 
+    (-1.74,-1.01) 
 
 Symbol definition for '801.2'
  Description: West edge': 

@@ -601,15 +601,15 @@ Symbol definition for '800.3'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=11
   Reserved=0
+  SymbolElement of type 4 -- dot
+    stColor=0  stDiameter=65
+    (0.00,0.00) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=26  
     (-1.55,1.03) (1.55,1.03) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=26  
     (-1.55,-1.03) (1.55,-1.03) 
-  SymbolElement of type 4 -- dot
-    stColor=0  stDiameter=65
-    (0.00,0.00) 
 
 Symbol definition for '800.4'
  Description: Fence': 
@@ -689,12 +689,12 @@ Symbol definition for '800.5'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=8
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=26  
-    (1.79,0.59) (-0.59,0.59) (-0.59,-1.79) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=65
     (-1.14,1.14) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=26  
+    (1.79,0.59) (-0.59,0.59) (-0.59,-1.79) 
 
 Symbol definition for '800.6'
  Description: Earth bank': 
@@ -775,12 +775,12 @@ Symbol definition for '800.7'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=9
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=26  
-    (-0.72,-1.55) (-0.72,0.65) (0.72,0.65) (0.72,-1.55) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=65
     (0.00,1.36) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=26  
+    (-0.72,-1.55) (-0.72,0.65) (0.72,0.65) (0.72,-1.55) 
 
 Symbol definition for '800.8'
  Description: Small erosion gully': 
@@ -813,12 +813,6 @@ Symbol definition for '800.8'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
   DataSize=23
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=32  
-    (-0.54,1.58) (1.58,-0.54) 
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=32  
-    (-1.58,0.54) (0.54,-1.58) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=39
     (-1.03,1.03) 
@@ -834,6 +828,12 @@ Symbol definition for '800.8'
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=39
     (1.03,-1.03) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=32  
+    (-0.54,1.58) (1.58,-0.54) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=32  
+    (-1.58,0.54) (0.54,-1.58) 
 
 Symbol definition for '800.9'
  Description: West side': 

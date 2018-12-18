@@ -978,10 +978,10 @@ Uncompressed:
   Reserved=0
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=26  
-    (0.00,1.47) (-0.78,-0.73) (0.78,-0.73) (0.00,1.47) 
+    (0.00,-0.84) (0.00,-1.47) 
   SymbolElement of type 1 -- line
     stFlags=1  stColor=0  stLineWidth=26  
-    (0.00,-0.84) (0.00,-1.47) 
+    (0.00,1.47) (-0.78,-0.73) (0.78,-0.73) (0.00,1.47) 
 
 Symbol definition for '800.4'
  Description: South-west side': 
@@ -1448,12 +1448,12 @@ Uncompressed:
 
   DataSize=8
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=21  
-    (1.45,0.48) (-0.48,0.48) (-0.48,-1.45) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=52
     (-0.92,0.92) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=21  
+    (1.45,0.48) (-0.48,0.48) (-0.48,-1.45) 
 
 Symbol definition for '801.2'
  Description: North-east end': 
@@ -1870,12 +1870,12 @@ Uncompressed:
 
   DataSize=8
   Reserved=0
-  SymbolElement of type 1 -- line
-    stFlags=1  stColor=0  stLineWidth=21  
-    (-0.84,-1.36) (0.52,0.00) (-0.84,1.36) 
   SymbolElement of type 4 -- dot
     stColor=0  stDiameter=52
     (1.15,0.00) 
+  SymbolElement of type 1 -- line
+    stFlags=1  stColor=0  stLineWidth=21  
+    (-0.84,-1.36) (0.52,0.00) (-0.84,1.36) 
 
 Symbol definition for '801.9'
  Description: Navigate to finish': 
