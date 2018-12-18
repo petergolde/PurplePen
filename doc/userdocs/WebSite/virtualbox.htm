@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h2>Using VirtualBox to run Purple Pen on Mac OS X or Linux</h2>
+    <p>
+        Although Purple Pen is a Windows-only program, you can use the free Virtual Box program to run a virtual machine on your Mac or Linux computer. Within that virtual machine, you can run a copy of Windows, and inside that copy of Windows, download and run Purple Pen. This document gives an overview on how to set this up.</p>
+    <p>
+        Your main computer and operating system (Linux or Mac OS X) is called the &quot;host&quot; computer. You will need approximately 20 GB of free disk space on your host computer.</p>
+    <p>
+        First, you need to download a copy of Windows 10 in the form of an &quot;ISO&quot; file; a file with the .iso extension. This is a very large file (around 4 GB), which can be treated by Virtual Box as a DVD disc. To download this ISO file, I recommend reading the following article and following the instructions: <a href="https://www.windowscentral.com/you-do-not-need-activate-windows-10">https://www.windowscentral.com/you-do-not-need-activate-windows-10</a>&nbsp; If that site no longer exists, try downloading the Windows 10 download tool at&nbsp; <a href="http://www.microsoft.com/software-download/windows10">http://www.microsoft.com/software-download/windows10</a>
+    </p>
+    <p>
+        Once you have the Windows 10 ISO file on your host computer, you need to install VirtualBox. Browse to <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a> Click the large &quot;Download&quot; button, then download one of the platform packages, either &quot;OSX hosts&quot; for a Mac, or &quot;Linux distributions&quot; for Linux. Download and run the installation. For Mac, the installation may at first be blocked from installing a system extension. If that happens, allow the system extension to be installed through Settings, and run the installation again.</p>
+    <p>
+        Once VirtualBox is installed, run it. From the Virtual Box Manager window, click &quot;New&quot;. Select Type as &quot;Microsoft Windows&quot; and Version as &quot;Windows 10 (64-bit)&quot;. On the next screen, I recommend 4096MB Memory Size. On the new few screens, select to create a virtual hard disk now, VDI file type, dynamically allocated, and 20 GB in size (go larger if you intend to install significant other software besides Purple Pen; otherwise 20 GB is enough.)</p>
+    <p>
+        Now click the Start button in the Virtual Box Manager window. Another Virtual Machine window should appear, which prompts you to select a virtual optical disk file. Click the folder icon with the small green up arrow, and select the Windows 10 ISO file that you downloaded at the beginning of this process. </p>
+    <p>
+        After a short time (or maybe long, depending on the speed of your computer), your VirtualBox window should now show the Windows 10 installation program. Continue through the Windows 10 installation. If you haven&#39;t purchased a product key, you can select &quot;I don&#39;t have a product key&quot; at the bottom of the &quot;Activate Windows&quot; screen. Select &quot;Windows 10 Home&quot; as the operating system to install, and choose &quot;Custom: Install Windows only (advanced)&quot; when asked what type of installation. For the rest of the installation you should be able to use the default options. At this point, it may take half an hour to an hour to install Windows.</p>
+    <p>
+        After the Windows installation is finally complete, use Microsoft Edge (the Windows web browser) in your Virtual Machine to navigate to &quot;<a href="http://purple-pen.org">http://purple-pen.org</a>&quot; and download and install Purple Pen.</p>
+    <p>
+        When you close the Virtual Box window, it&#39;s easiest to select &quot;Save Machine State&quot;. The next time you start Virtual Box, select &quot;Start&quot; on your virtual machine and you will be back in Purple Pen right away.</p>
+    <p>
+        You can get improved performance and better ease of use by installing the Virtual Box &quot;Guest Additions&quot;. From the Virtual box menu bar, from the &quot;Devices&quot; menu, select &quot;Insert Guest Additions CD Image&quot;. Then, from the Windows File Explorer in your virtual machine, select the &quot;D:&quot; drive, and run the &quot;VBoxWindowsAdditions&quot; program. Be sure to allow it to install the device drivers that it needs to. Reboot the virtual machine when finished. You should only need to do this once in each virtual machine that you create.</p>
+    <p>
+        It is important to realize that your &quot;virtual&quot; Windows computer has a separate, &quot;virtual&quot; disk and file system. Your host computer files will not show up directly on the virtual Windows computer, you can&#39;t access any files on the virtual Windows computer from your host operating system. If you installed the VirtualBox &quot;Guest Additions&quot; as explained above, you should be able to access your host computer files as a network drive from your Windows installation with the shared folders feature of Virtual Box (on the Devices menu). If you can&#39;t get that to work, using a network file service such as OneDrive, DropBox, or Google Drive can be useful to transfer files back and forth from you virtual Windows to your host computer operating system.</p>
+    <p>
+        Once you are complete with installing Windows, you can delete the Windows installation ISO file from your host computer.</p>
+    <p>
+        If you have questions, please use the Purple Pen Yahoo Groups email mailing list for questions.</p>
+    <p>
+        &nbsp;</p>
+
+</body>
+</html>
