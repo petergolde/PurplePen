@@ -62,8 +62,8 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 0.3F;
 
             ExportBitmap exporter = new ExportBitmap(mapDisplay.Clone());
-            exporter.CreateBitmap(filenameJpeg, RectangleF.FromLTRB(-90F, 10F, 60F, 105F), ImageFormat.Jpeg, 200F);
-            exporter.CreateBitmap(filenameGif, RectangleF.FromLTRB(-90F, 10F, 60F, 105F), ImageFormat.Gif, 200F);
+            exporter.CreateBitmap(filenameJpeg, RectangleF.FromLTRB(-90F, 10F, 60F, 105F), ImageFormat.Jpeg, 200F, null);
+            exporter.CreateBitmap(filenameGif, RectangleF.FromLTRB(-90F, 10F, 60F, 105F), ImageFormat.Gif, 200F, null);
         }
 
 
@@ -80,7 +80,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 0.3F;
 
             ExportBitmap exporter = new ExportBitmap(mapDisplay.Clone());
-            exporter.CreateBitmap(filename, RectangleF.FromLTRB(0F, 70F, 300F, 400F), ImageFormat.Jpeg, 200F);
+            exporter.CreateBitmap(filename, RectangleF.FromLTRB(0F, 70F, 300F, 400F), ImageFormat.Jpeg, 200F, null);
 
             Assert.IsFalse(mapDisplay.AntiAlias);
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
@@ -186,7 +186,7 @@ namespace PurplePen.Tests
             mapDisplay.MapIntensity = 0.3F;
 
             ExportBitmap exporter = new ExportBitmap(mapDisplay.Clone());
-            exporter.CreateBitmap(filename, RectangleF.FromLTRB(0F, 70F, 300F, 400F), ImageFormat.Gif, 200F);
+            exporter.CreateBitmap(filename, RectangleF.FromLTRB(0F, 70F, 300F, 400F), ImageFormat.Gif, 200F, null);
 
             Assert.IsFalse(mapDisplay.AntiAlias);
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
@@ -196,6 +196,36 @@ namespace PurplePen.Tests
             TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
+        }
+
+        [TestMethod]
+        public void TestExportWorldFile()
+        {
+            MapDisplay mapDisplay = new MapDisplay();
+            string filename = TestUtil.GetTestFile(@"routegadget\exportgif2.gif");
+            string worldfile = TestUtil.GetTestFile(@"routegadget\exportgif2.gfw");
+            string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportgif2_baseline.png");
+            string worldfileBaseline = TestUtil.GetTestFile(@"routegadget\exportgif2.gfw.expected");
+
+            mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"routegadget\GRC-Jan2017.ocd"));
+            mapDisplay.AntiAlias = false;
+            mapDisplay.MapIntensity = 0.3F;
+
+            ExportBitmap exporter = new ExportBitmap(mapDisplay.Clone());
+            exporter.CreateBitmap(filename, RectangleF.FromLTRB(-43.78F, 201.04F, 168.46F, 418.32F), ImageFormat.Gif, 200F, mapDisplay.CoordinateMapper);
+
+            Assert.IsFalse(mapDisplay.AntiAlias);
+            Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
+
+            Bitmap bmLoaded = (Bitmap)Image.FromFile(filename);
+
+            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            bmLoaded.Dispose();
+
+            TestUtil.CompareTextFileBaseline(worldfile, worldfileBaseline);
+
+            File.Delete(filename);
+            File.Delete(worldfile);
         }
 
         [TestMethod]

@@ -44,6 +44,8 @@ using System.Runtime.InteropServices;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.IO;
+using System.Globalization;
 
 namespace PurplePen
 {
@@ -64,7 +66,8 @@ namespace PurplePen
         }
 
         // Create a bitmap file of the mapDisplay supplied at construction.
-        public void CreateBitmap(string fileName, RectangleF rect, ImageFormat imageFormat, float dpi)
+        // If mapperForWorldFile is not null and real world coords are defined, also create a world file.
+        public void CreateBitmap(string fileName, RectangleF rect, ImageFormat imageFormat, float dpi, CoordinateMapper mapperForWorldFile)
         {
             float bitmapWidth, bitmapHeight; // size of the bitmap in pixels.
             int pixelWidth, pixelHeight; // bitmapWidth/Height, rounded up to integer.
@@ -72,7 +75,7 @@ namespace PurplePen
             bitmapWidth = (rect.Width / 25.4F) * dpi;
             bitmapHeight = (rect.Height / 25.4F) * dpi;
             pixelWidth = (int)Math.Ceiling(bitmapWidth);
-            pixelHeight = (int) Math.Ceiling(bitmapHeight);
+            pixelHeight = (int)Math.Ceiling(bitmapHeight);
 
             Bitmap bitmap = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format24bppRgb);
             bitmap.SetResolution(dpi, dpi);
@@ -93,9 +96,15 @@ namespace PurplePen
                 bitmap.Save(fileName, imageFormat);
 
             bitmap.Dispose();
+
+            if (mapperForWorldFile != null && mapperForWorldFile.HasRealWorldCoords) {
+                string extension = Path.GetExtension(fileName);
+                string worldFileName = Path.ChangeExtension(fileName, WorldFileExtension(extension));
+                CreateWorldFile(worldFileName, rect, bitmapWidth, bitmapHeight, mapperForWorldFile);
+            }
         }
 
-        public void CreateBitmapAutoDpi(string fileName, RectangleF rect, ImageFormat imageFormat, int maxPixelWidth, float minDpi, float maxDpi)
+        public void CreateBitmapAutoDpi(string fileName, RectangleF rect, ImageFormat imageFormat, int maxPixelWidth, float minDpi, float maxDpi, CoordinateMapper mapperForWorldFile = null)
         {
             float dpi = maxPixelWidth * 25.4F / Math.Max(rect.Width, rect.Height);
 
@@ -107,8 +116,50 @@ namespace PurplePen
                 dpi = (float)Math.Round(dpi / 10F) * 10F;
             }
 
-            CreateBitmap(fileName, rect, imageFormat, dpi);
+            CreateBitmap(fileName, rect, imageFormat, dpi, mapperForWorldFile);
         }
+
+        // Get the file extension for a world file.
+        private string WorldFileExtension(string extension)
+        {
+            if (extension.Length == 4) {
+                return "." + extension[1].ToString() + extension[3].ToString() + "w";
+            }
+            else {
+                return extension + "w";
+            }
+        }
+
+        // Create a world file using the given coordinate mapper.
+        // See https://en.wikipedia.org/wiki/World_file
+        private void CreateWorldFile(string worldFileName, RectangleF rect, float bitmapWidth, float bitmapHeight, CoordinateMapper mapperForWorldFile)
+        {
+            double a, b, c, d, e, f;
+            Matrix transform = Geometry.CreateInvertedRectangleTransform(new RectangleF(0, 0, bitmapWidth, bitmapHeight), rect);
+            PointF[] transformedPoints = Geometry.TransformPoints(new PointF[] { new PointF(0, 0), new PointF(1, 0), new PointF(0, 1) }, transform);
+            double[] realX = new double[transformedPoints.Length];
+            double[] realY = new double[transformedPoints.Length];
+            for (int i = 0; i < transformedPoints.Length; ++i) {
+                mapperForWorldFile.GetRealWorld(transformedPoints[i], out realX[i], out realY[i]);
+            }
+
+            c = realX[0];
+            f = realY[0];
+            a = realX[1] - c;
+            d = realY[1] - f;
+            b = realX[2] - c;
+            e = realY[2] - f;
+
+            using (TextWriter writer = new StreamWriter(worldFileName)) {
+                writer.WriteLine(a.ToString("F10", CultureInfo.InvariantCulture));
+                writer.WriteLine(d.ToString("F10", CultureInfo.InvariantCulture));
+                writer.WriteLine(b.ToString("F10", CultureInfo.InvariantCulture));
+                writer.WriteLine(e.ToString("F10", CultureInfo.InvariantCulture));
+                writer.WriteLine(c.ToString("F5", CultureInfo.InvariantCulture));
+                writer.WriteLine(f.ToString("F5", CultureInfo.InvariantCulture));
+            }
+        }
+
     }
 
 }
