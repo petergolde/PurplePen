@@ -47,50 +47,59 @@ namespace PurplePen
     {
         SymbolDB symbolDB;
         EventDB eventDB;
+        Controller controller;
         MapDisplay mapDisplay;
 
-        const int MAXPIXELWITH = 1700;
-        const float MINDPI = 100;
+        const int MAXPIXELWITH = 2000;
+        const float MINDPI = 140;
         const float MAXDPI = 200;
 
-        public ExportRouteGadget(SymbolDB symbolDB, EventDB eventDB, MapDisplay mapDisplay)
+        public ExportRouteGadget(SymbolDB symbolDB, EventDB eventDB, Controller controller, MapDisplay mapDisplay)
         {
             this.symbolDB = symbolDB;
             this.eventDB = eventDB;
+            this.controller = controller;
             this.mapDisplay = mapDisplay.CloneToFullIntensity();
             this.mapDisplay.SetCourse(null);
             this.mapDisplay.SetPrintArea(null);
         }
 
-        public void ExportXml(string xmlFileName)
+        public void ExportXml(string xmlFileName, int version)
         {
             // Get the area to export.
-            RectangleF mapArea = GetAllCourseAreas();
+            RectangleF mapArea = GetAllPrintAreas();
 
             // Export the XML file.
-            ExportXmlBase exportXml = new ExportXmlVersion2();
+            ExportXmlBase exportXml;
+            if (version == 2)
+                exportXml = new ExportXmlVersion2();
+            else if (version == 3)
+                exportXml = new ExportXmlVersion3();
+            else
+                throw new ApplicationException("Unknown XML version " + version.ToString());
+
             exportXml.WriteXml(xmlFileName, eventDB, mapArea, mapDisplay.CoordinateMapper);
         }
 
         public void ExportGif(string gifFileName)
         {
             // Get the area to export.
-            RectangleF mapArea = GetAllCourseAreas();
+            RectangleF mapArea = GetAllPrintAreas();
 
             // Export the GIF file.
             ExportBitmap exportBitmap = new ExportBitmap(mapDisplay);
-            exportBitmap.CreateBitmapAutoDpi(gifFileName, mapArea, ImageFormat.Gif, MAXPIXELWITH, MINDPI, MAXDPI);
+            exportBitmap.CreateBitmapAutoDpi(gifFileName, mapArea, ImageFormat.Gif, MAXPIXELWITH, MINDPI, MAXDPI, mapDisplay.CoordinateMapper);
         }
 
-        // Get the union of all the course area in the event.
-        private RectangleF GetAllCourseAreas()
+        // Get the union of all the print areas in the event.
+        private RectangleF GetAllPrintAreas()
         {
             RectangleF mergedRect = new RectangleF();
             RectangleF mapBounds = mapDisplay.MapBounds;
 
             bool first = true;
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                RectangleF courseArea = GetCourseArea(courseId);
+                RectangleF courseArea = GetPrintArea(courseId);
                 if (first)
                     mergedRect = courseArea;
                 else
@@ -105,15 +114,10 @@ namespace PurplePen
                 return RectangleF.Intersect(mergedRect, mapBounds);
         }
             
-        // Get the area that encloses the given courseId.
-        private RectangleF GetCourseArea(Id<Course> courseId)
+        // Get the print area that encloses the given courseId.
+        private RectangleF GetPrintArea(Id<Course> courseId)
         {
-            // The default route gadget is the union of the bounding rectangle of the course objects, not including specials, inflated by 2cm.
-            CourseView courseView = CourseView.CreateControlsOnlyPositioningCourseView(eventDB, new CourseDesignator(courseId));
-            CourseLayout layout = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, eventDB.GetEvent().courseAppearance, layout, 0);
-            RectangleF courseObjects = RectangleF.Inflate(layout.BoundingRect(), 20.0F, 20.0F);
-            return courseObjects;
+            return controller.GetCurrentPrintAreaRectangle(new CourseDesignator(courseId));
         }
     }
 }

@@ -76,8 +76,12 @@ namespace PurplePen
             this.fileNameTextBox = new System.Windows.Forms.TextBox();
             this.learnMoreLink = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxIofXml = new System.Windows.Forms.ComboBox();
+            this.labelIofXml = new System.Windows.Forms.Label();
             this.folderGroupBox.SuspendLayout();
             this.nameGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // createButton
@@ -173,12 +177,36 @@ namespace PurplePen
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxIofXml);
+            this.groupBox1.Controls.Add(this.labelIofXml);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // comboBoxIofXml
+            // 
+            this.comboBoxIofXml.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIofXml.FormattingEnabled = true;
+            this.comboBoxIofXml.Items.AddRange(new object[] {
+            resources.GetString("comboBoxIofXml.Items"),
+            resources.GetString("comboBoxIofXml.Items1")});
+            resources.ApplyResources(this.comboBoxIofXml, "comboBoxIofXml");
+            this.comboBoxIofXml.Name = "comboBoxIofXml";
+            // 
+            // labelIofXml
+            // 
+            resources.ApplyResources(this.labelIofXml, "labelIofXml");
+            this.labelIofXml.Name = "labelIofXml";
+            // 
             // CreateRouteGadgetFiles
             // 
             this.AcceptButton = this.createButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.cancelButton;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.learnMoreLink);
             this.Controls.Add(this.nameGroupBox);
@@ -191,6 +219,8 @@ namespace PurplePen
             this.folderGroupBox.PerformLayout();
             this.nameGroupBox.ResumeLayout(false);
             this.nameGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +242,8 @@ namespace PurplePen
         private System.Windows.Forms.TextBox fileNameTextBox;
         private System.Windows.Forms.LinkLabel learnMoreLink;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBoxIofXml;
+        private System.Windows.Forms.Label labelIofXml;
     }
 }

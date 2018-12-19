@@ -88,6 +88,12 @@ namespace PurplePen
             else {
                 mapDirectory.Checked = false; coursesDirectory.Checked = false; otherDirectory.Checked = true;
             }
+
+            // IOF Version.
+            if (settings.xmlVersion == 2)
+                comboBoxIofXml.SelectedIndex = 0;
+            else
+                comboBoxIofXml.SelectedIndex = 1;
         }
 
         // Update the settings with information from the dialog.
@@ -102,6 +108,12 @@ namespace PurplePen
 
             // Filename prefix
             settings.fileBaseName = fileNameTextBox.Text;
+
+            // IOF Version
+            if (comboBoxIofXml.SelectedIndex == 0)
+                settings.xmlVersion = 2;
+            else
+                settings.xmlVersion = 3;
         }
 
         private void selectOtherDirectoryButton_Click(object sender, EventArgs e)
@@ -134,6 +146,7 @@ namespace PurplePen
         public bool mapDirectory, fileDirectory;   // directory to place output files in
         public string outputDirectory;              // the output directory if mapDirectory and fileDirectoy are false.
         public string fileBaseName;                      // base name for file names which are .xml,.gif
+        public int xmlVersion = 3;                      // version of IOF XML to use (2 or 3).
 
         public RouteGadgetCreationSettings Clone()
         {

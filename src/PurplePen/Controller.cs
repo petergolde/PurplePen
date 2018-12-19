@@ -653,14 +653,14 @@ namespace PurplePen
         }
 
         // Export RouteGadget files
-        public bool ExportRouteGadget(string xmlFileName, string gifFileName)
+        public bool ExportRouteGadget(string xmlFileName, string gifFileName, int xmlVersion)
         {
-            ExportRouteGadget exportRouteGadget = new ExportRouteGadget(symbolDB, eventDB, mapDisplay);
+            ExportRouteGadget exportRouteGadget = new ExportRouteGadget(symbolDB, eventDB, this, mapDisplay);
 
             bool successXml = HandleExceptions(
                 delegate
                 {
-                    exportRouteGadget.ExportXml(xmlFileName);
+                    exportRouteGadget.ExportXml(xmlFileName, xmlVersion);
                 },
                 MiscText.CannotCreateFile, xmlFileName);
 
@@ -717,7 +717,7 @@ namespace PurplePen
             string xmlFileName, gifFileName;
 
             GetRouteGadgetFileNames(settings, out xmlFileName, out gifFileName);
-            return ExportRouteGadget(xmlFileName, gifFileName);
+            return ExportRouteGadget(xmlFileName, gifFileName, settings.xmlVersion);
         }
 
 

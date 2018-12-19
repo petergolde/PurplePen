@@ -243,7 +243,7 @@ namespace PurplePen.Tests
 
             controller.MapDisplay.SetCourse(controller.GetCourseLayout());
 
-            success = controller.ExportRouteGadget(xmlFileName, gifFileName);
+            success = controller.ExportRouteGadget(xmlFileName, gifFileName, 2);
             Assert.IsTrue(success);
 
             Dictionary<string, string> exceptions = ExportXmlVersion2.TestFileExceptionMap();
@@ -253,6 +253,36 @@ namespace PurplePen.Tests
 
             File.Delete(xmlFileName);
             File.Delete(gifFileName);
+        }
+
+        [TestMethod]
+        public void ExportRouteGadget2()
+        {
+            string ppenFileName = TestUtil.GetTestFile(@"routegadget\GRC.ppen");
+            string xmlFileName = TestUtil.GetTestFile(@"routegadget\GRC.xml");
+            string gifFileName = TestUtil.GetTestFile(@"routegadget\GRC.gif");
+            string worldFileName = TestUtil.GetTestFile(@"routegadget\GRC.gfw");
+
+            TestUI ui = TestUI.Create();
+            Controller controller = ui.controller;
+
+            bool success = controller.LoadInitialFile(ppenFileName, true);
+            Assert.IsTrue(success);
+
+            controller.MapDisplay.SetCourse(controller.GetCourseLayout());
+
+            success = controller.ExportRouteGadget(xmlFileName, gifFileName, 3);
+            Assert.IsTrue(success);
+
+            Dictionary<string, string> exceptions = ExportXmlVersion3.TestFileExceptionMap();
+
+            TestUtil.CompareBitmapBaseline((Bitmap)Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\GRC GIF.baseline.png"));
+            TestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\GRC XML.baseline.xml"), exceptions);
+            TestUtil.CompareTextFileBaseline(worldFileName, TestUtil.GetTestFile(@"routegadget\GRC World File.baseline.gfw"), exceptions);
+
+            File.Delete(xmlFileName);
+            File.Delete(gifFileName);
+            File.Delete(worldFileName);
         }
 
     }

@@ -1,0 +1,92 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>GRC</title>
+    <map kind="OCAD" scale="4000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\routegadget\GRC-Jan2017.ocd">GRC-Jan2017.ocd</map>
+    <standards map="2017" description="2004" />
+    <all-controls print-scale="5000" description-kind="symbols" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-28.7327271" top="423.595459" right="241.142273" bottom="74.34546" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeToMap" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="108.594383" y="339.469147" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="151.272491" y="275.0416" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="99.56632" y="194.199387" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="52.78454" y="223.335419" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="35.95951" y="298.842834" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="87.66569" y="342.752075" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="7" kind="normal">
+    <code>35</code>
+    <location x="177.12558" y="256.164734" />
+  </control>
+  <control id="8" kind="normal">
+    <code>36</code>
+    <location x="129.933441" y="157.676758" />
+  </control>
+  <control id="9" kind="normal">
+    <code>37</code>
+    <location x="32.2662125" y="240.981171" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-54.10852" top="431.403381" right="215.766479" bottom="82.15338" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Course 2</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-28.7327271" top="423.595459" right="241.142273" bottom="74.34546" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6" />
+  <course-control id="7" control="1">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="8" control="6" />
+  <course-control id="9" control="7">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="8">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="9">
+    <next course-control="8" />
+  </course-control>
+</course-scribe-event>
