@@ -14,19 +14,20 @@
 
 <p>This command creates files for use in the RouteGadget route display program. RouteGadget is a web-based program that allows competitors to draw their 
 routes on a copy of the map and compare them with other competitors. You can 
-learn more about RouteGadget <a href="http://www.routegadget.net/">here</a> and
-<a href="http://www.routegadget.co.uk/index/competitor/what-is-routegadget">here</a>.</p>
-<p>RouteGadget requires uploading three files to the web site for an event: </p>
+learn more about RouteGadget 
+<a href="https://www.routegadget.co.uk/">here</a>.</p>
+<p>RouteGadget requires uploading three or four files to the web site for an event: </p>
 <ul>
 	<li>A .gif file with an image of the map</li>
+    <li>If your map is georeferenced, a .gfw file with georeferencing information</li>
 	<li>A .xml file that describes the locations of the controls and the courses</li>
 	<li>A file from the timing program with split times for each competitor</li>
 </ul>
-<p>This command automatically creates the first two files. After the event is 
+<p>This command automatically creates the first two (three if geoferenced) files. After the event is 
 complete, you must obtain the timing program output before posting the event to 
 Route Gadget.</p>
 <p>When creating the image of the map, Purple Pen automatically creates a map 
-image of the appropriate resolution that encloses all the courses.</p>
+image of the appropriate resolution that encloses all the print areas.</p>
 <p>&nbsp;</p>
 <p>
 <img alt="Create RouteGadget Files Dialog" src="CreateRouteGadgetFiles.png"></p>
@@ -46,6 +47,9 @@ created. There are three choices:</p>
 	<li><strong>Other folder. </strong>Any other folder. If you chose this, a 
 	&quot;Select Folder...&quot; button appears which you can click to select any folder.</li>
 </ul>
+<h2>IOF XML section</h2>
+<p>This sections allows you specify which version of IOF XML to use. The default (3.0),
+should work for almost all cases. Very old RouteGadget installations may require 2.0.3.</p>
 <h2>Other buttons</h2>
 <p><strong>Create</strong>: This button Creates the RouteGadget files. The dialog box closes.</p>
 <p><strong>Cancel</strong>: Closes the dialog box without creating anything.</p>
