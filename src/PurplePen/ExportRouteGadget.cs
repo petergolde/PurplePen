@@ -62,6 +62,7 @@ namespace PurplePen
             this.mapDisplay = mapDisplay.CloneToFullIntensity();
             this.mapDisplay.SetCourse(null);
             this.mapDisplay.SetPrintArea(null);
+            this.mapDisplay.ColorModel = ColorModel.CMYK;
         }
 
         public void ExportXml(string xmlFileName, int version)

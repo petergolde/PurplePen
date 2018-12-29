@@ -62,7 +62,6 @@ namespace PurplePen
             this.mapDisplay.AntiAlias = true;
             this.mapDisplay.MapIntensity = 1.0F;
             this.mapDisplay.Printing = false;
-            this.mapDisplay.ColorModel = ColorModel.CMYK;
         }
 
         // Create a bitmap file of the mapDisplay supplied at construction.
@@ -161,5 +160,6 @@ namespace PurplePen
         }
 
     }
+
 
 }

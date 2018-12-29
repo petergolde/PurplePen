@@ -1,0 +1,99 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>StEd</title>
+    <map kind="PDF" scale="10000" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\bitmapcreate\St. Edward.pdf">St. Edward.pdf</map>
+    <standards map="2017" description="2018" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="0" top="0" right="0" bottom="0" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeTo15000" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="92.245224" y="106.80542" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="122.780365" y="117.778992" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="152.838409" y="86.76674" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="109.898346" y="75.79317" />
+  </control>
+  <control id="5" kind="finish">
+    <location x="93.19945" y="90.58362" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="6" kind="normal">
+    <code>34</code>
+    <location x="125.165924" y="104.896973" />
+  </control>
+  <control id="7" kind="normal">
+    <code>35</code>
+    <location x="111.329681" y="73.40761" />
+  </control>
+  <control id="8" kind="normal">
+    <code>36</code>
+    <location x="82.22589" y="76.27028" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="false" left="67.74727" top="150.064072" right="164.59552" bottom="32.26706" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Course 2</name>
+    <labels label-kind="sequence" />
+    <first course-control="6" />
+    <print-area automatic="false" restrict-to-page-size="false" left="56.2965851" top="126.208481" right="167.9353" bottom="41.3321838" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5" />
+  <course-control id="6" control="1">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="7" control="5" />
+  <course-control id="8" control="6">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="7">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="8">
+    <next course-control="7" />
+  </course-control>
+  <special-object id="1" kind="descriptions">
+    <location x="127.074371" y="61.4798126" />
+    <location x="130.525253" y="61.4798126" />
+    <courses>
+      <course course="1" />
+    </courses>
+  </special-object>
+  <special-object id="2" kind="descriptions">
+    <location x="83.65723" y="63.38826" />
+    <location x="86.0770645" y="63.38826" />
+    <courses>
+      <course course="2" />
+    </courses>
+  </special-object>
+</course-scribe-event>

@@ -1316,6 +1316,18 @@ namespace PurplePen
             }
         }
 
+        // Set the outputDirectory field of BitmapCreationSettings.
+        private void SetOutputDirectory(BitmapCreationSettings creationSettings)
+        {
+            // Process the fileDirectory and mapDirectory fields.
+            if (creationSettings.fileDirectory) {
+                creationSettings.outputDirectory = Path.GetDirectoryName(FileName);
+            }
+            else if (creationSettings.mapDirectory) {
+                creationSettings.outputDirectory = Path.GetDirectoryName(MapFileName);
+            }
+        }
+
         // Set the outputDirectory field of OcadCreationSettings.
         private void SetOutputDirectory(CoursePdfSettings coursePdfSettings)
         {
@@ -1381,6 +1393,33 @@ namespace PurplePen
             OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, GetCourseAppearance(), creationSettings);
             return creation.OverwrittenFiles();
         }
+
+        // Create Bitmap files.
+        // Returns success or failure; any errors are already reported to the user.
+        // If mapDirectory or fileDirectory is set, the outputDirectory fields is filled in.
+        public bool CreateBitmapFiles(BitmapCreationSettings creationSettings)
+        {
+            SetOutputDirectory(creationSettings);
+
+            bool success = HandleExceptions(
+                delegate {
+                    BitmapCreation creation = new BitmapCreation(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), creationSettings, GetCourseAppearance());
+                    creation.CreateBitmaps();
+                },
+                MiscText.CannotCreateImageFiles);
+
+            return success;
+        }
+
+        // Get the list of files that will be overwritteing by creating Bitmaps files
+        public List<string> OverwritingBitmapFiles(BitmapCreationSettings creationSettings)
+        {
+            SetOutputDirectory(creationSettings);
+
+            BitmapCreation creation = new BitmapCreation(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), creationSettings, GetCourseAppearance());
+            return creation.OverwrittenFiles();
+        }
+
 
         // Combine two status.
         CommandStatus CombineStatus(CommandStatus status1, CommandStatus status2)
