@@ -151,6 +151,7 @@ namespace PurplePen
             // 
             // courseSelector
             // 
+            this.courseSelector.Filter = null;
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;

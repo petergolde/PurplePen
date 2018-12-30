@@ -227,6 +227,12 @@
     <Compile Include="CreateGpx.Designer.cs">
       <DependentUpon>CreateGpx.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateImageFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateImageFiles.Designer.cs">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreatePdfCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1591,6 +1597,56 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGpx.zh-CN.resx">
       <DependentUpon>CreateGpx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.bg.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.de.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.es.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.et.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.fi.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.fr.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.hu.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.ja.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.nb-NO.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.nl.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.nn-NO.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.pl.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.ro.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.sv.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateImageFiles.zh-CN.resx">
+      <DependentUpon>CreateImageFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.hu.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>

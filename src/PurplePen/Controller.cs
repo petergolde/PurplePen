@@ -1420,6 +1420,12 @@ namespace PurplePen
             return creation.OverwrittenFiles();
         }
 
+        // Should bitmap files enable world file.
+        public bool BitmapFilesCanCreateWorldFile()
+        {
+            return mapDisplay.CoordinateMapper.HasRealWorldCoords;
+        }
+
 
         // Combine two status.
         CommandStatus CombineStatus(CommandStatus status1, CommandStatus status2)

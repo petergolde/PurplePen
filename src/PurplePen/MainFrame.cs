@@ -70,6 +70,7 @@ namespace PurplePen
         CoursePrintSettings coursePrintSettings = new CoursePrintSettings();   // printing settings for courses.
         CoursePdfSettings coursePdfSettings = null;   // PDF creation settings for courses.
         OcadCreationSettings ocadCreationSettingsPrevious = null;     // creation settings for OCAD creation, if it has been done before.
+        BitmapCreationSettings bitmapCreationSettingsPrevious = null; // creation settings for image creation, if it has been done before.
         RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
         GpxCreationSettings gpxCreationSettingsPrevious = null;  // creation settings for Gpx creation, if it has been done before.
 
@@ -324,6 +325,7 @@ namespace PurplePen
 
                 // Reset the OCAD file creating settings dialog to default settings.
                 ocadCreationSettingsPrevious = null;
+                bitmapCreationSettingsPrevious = null;
             }
 
             if (mapDisplay.OcadOverprintEffect != controller.OcadOverprintEffect) {
@@ -2472,6 +2474,58 @@ namespace PurplePen
             createOcadFilesDialog.Dispose();
         }
 
+        private void createImageFilesMenu_Click(object sender, EventArgs e)
+        {
+            // Get the settings for the dialog. If we've previously show the dialog, then
+            // use the previous settings. Note that the previous settings are wiped out when a new map file
+            // is loaded.
+
+            BitmapCreationSettings settings;
+            if (bitmapCreationSettingsPrevious != null) {
+                settings = bitmapCreationSettingsPrevious.Clone();
+            }
+            else {
+                // Default settings: creating in file directory, use format of the current map file.
+                settings = new BitmapCreationSettings();
+
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
+                settings.Dpi = 200;
+                settings.ColorModel = ColorModel.CMYK;
+                settings.ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
+            }
+
+            // Initialize the dialog.
+            // CONSIDER: shouldn't have GetEventDB here! Do something different.
+            CreateImageFiles createImageFilesDialog = new CreateImageFiles(controller.GetEventDB());
+            if (!controller.BitmapFilesCanCreateWorldFile()) {
+                createImageFilesDialog.WorldFileEnabled = false;
+                settings.WorldFile = false;
+            }
+            createImageFilesDialog.BitmapCreationSettings = settings;
+
+            // show the dialog; on success, create the files.
+            while (createImageFilesDialog.ShowDialog(this) == DialogResult.OK) {
+                // Warn about files that will be overwritten.
+                List<string> overwritingFiles = controller.OverwritingBitmapFiles(createImageFilesDialog.BitmapCreationSettings);
+                if (overwritingFiles.Count > 0) {
+                    OverwritingOcadFilesDialog overwriteDialog = new OverwritingOcadFilesDialog();
+                    overwriteDialog.Filenames = overwritingFiles;
+                    if (overwriteDialog.ShowDialog(this) == DialogResult.Cancel)
+                        continue;
+                }
+
+                // Save settings persisted between invocations of this dialog.
+                bitmapCreationSettingsPrevious = createImageFilesDialog.BitmapCreationSettings;
+                controller.CreateBitmapFiles(createImageFilesDialog.BitmapCreationSettings);
+
+                break;
+            }
+
+            // And the dialog is done.
+            createImageFilesDialog.Dispose();
+        }
 
         private void createRouteGadgetFilesMenu_Click(object sender, EventArgs e)
         {

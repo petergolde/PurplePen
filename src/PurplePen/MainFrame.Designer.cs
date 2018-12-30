@@ -292,6 +292,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.createImageFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -535,6 +536,7 @@ namespace PurplePen
             this.saveAsMenu,
             this.toolStripSeparator18,
             this.createOcadFilesMenu,
+            this.createImageFilesMenu,
             this.createCoursePdfMenu,
             this.createRouteGadgetFilesMenu,
             this.createXmlMenu,
@@ -1969,6 +1971,12 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
+            // createImageFilesMenu
+            // 
+            this.createImageFilesMenu.Name = "createImageFilesMenu";
+            resources.ApplyResources(this.createImageFilesMenu, "createImageFilesMenu");
+            this.createImageFilesMenu.Click += new System.EventHandler(this.createImageFilesMenu_Click);
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2240,5 +2248,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem mapIssuePointToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherCoursesMenu;
         private System.Windows.Forms.ToolStripMenuItem clearOtherCoursesMenu;
+        private System.Windows.Forms.ToolStripMenuItem createImageFilesMenu;
     }
 }
