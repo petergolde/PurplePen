@@ -130,6 +130,10 @@
 				<param name="Local" value="FileCreateOcadFiles.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create Image Files...">
+				<param name="Local" value="FileCreateImageFiles.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Create PDFs...">
 				<param name="Local" value="FileCreatePdfFiles.htm">
 				</OBJECT>
