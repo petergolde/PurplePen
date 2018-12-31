@@ -42,6 +42,7 @@ using System.Drawing.Drawing2D;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Globalization;
 
 namespace PurplePen
 {
@@ -208,15 +209,14 @@ namespace PurplePen
          // the clip rect.
         public void RenderToGraphics(Graphics g, RectangleF clipRect)
         {
-            IRenderer renderer = new GraphicsRenderer(g);
-
+            IRenderer renderer = new GraphicsTargetRenderer(new GDIPlus_GraphicsTarget(g), new GDIPlus_TextMetrics(), CmykColor.FromCmyk(0, 0, 0, 1));
             replaceMultiplySign = true;
             Render(renderer, clipRect, 0, description.Length);
         }
 
         void IPrintableRectangle.Draw(Graphics g, float x, float y, int startLine, int countLines)
         {
-            IRenderer renderer = new GraphicsRenderer(g);
+            IRenderer renderer = new GraphicsTargetRenderer(new GDIPlus_GraphicsTarget(g), new GDIPlus_TextMetrics(), CmykColor.FromCmyk(0, 0, 0, 1));
 
             Matrix saveTransform = g.Transform;
 
@@ -236,7 +236,7 @@ namespace PurplePen
             Matrix mat = new Matrix();
             mat.Scale(1, -1);      // flip Y axis.
             mat.Translate(point.X, -point.Y);
-            renderer.Transform = mat;
+            renderer.PushTransform(mat);
             
             // White out the background.
             SizeF size = Measure();
@@ -271,7 +271,7 @@ namespace PurplePen
                         bounds.Inflate(thickLineWidth, thickLineWidth);
 
                         if (bounds.IntersectsWith(clipRect)) {
-                            Matrix matrixSave, matrixNew;
+                            Matrix matrixNew;
                             int row, col;
                             int nextRow, nextCol;
 
@@ -282,11 +282,10 @@ namespace PurplePen
                                 thickLineCounter = 0;
 
                             // Set transform so the each cell is 100x100, and the origin of the line is at (0,0).
-                            matrixSave = renderer.Transform;
-                            matrixNew = matrixSave.Clone();
+                            matrixNew = new Matrix();
                             matrixNew.Translate(upperLeft.X, upperLeft.Y);
                             matrixNew.Scale(cellSize / 100.0F, cellSize / 100.0F);
-                            renderer.Transform = matrixNew;
+                            renderer.PushTransform(matrixNew);
 
                             // Transform the clip rectangle into world coordinate relative to the line.
                             RectangleF clipWorld = new RectangleF((clipRect.X - upperLeft.X) * 100.0F / cellSize,
@@ -301,7 +300,7 @@ namespace PurplePen
                             bool noTopLine = (line != 0) && (DescriptionLine.NoBoundaryBetween(description[line], description[line - 1]));
                             RenderLine(renderer, description[line], descriptionKind, lastLine,  drawThickLine, noTopLine, clipWorld);
 
-                            renderer.Transform = matrixSave;
+                            renderer.PopTransform();
                         }
                     }
 
@@ -513,14 +512,13 @@ namespace PurplePen
         // Create the drawing objects we need.
         void CreateObjects(IRenderer renderer, float cellSize)
         {
-            Matrix matrixSave, matrixNew;
+            Matrix matrixNew;
 
             // Set transform so that the each cell is 100x100. The objects must be created
             // with the same transform (except translations) that they are drawn in.
-            matrixSave = renderer.Transform;
-            matrixNew = matrixSave.Clone();
+            matrixNew = new Matrix();
             matrixNew.Scale(cellSize / 100.0F, cellSize / 100.0F);
-            renderer.Transform = matrixNew;
+            renderer.PushTransform(matrixNew);
 
             thickPen = renderer.CreatePen(DescriptionAppearance.thickDescriptionLine, LineJoin.Miter, LineCap.Flat);
             thinPen = renderer.CreatePen(DescriptionAppearance.thinDescriptionLine, LineJoin.Miter, LineCap.Flat);
@@ -538,7 +536,7 @@ namespace PurplePen
             for (int i = 0; i < NUM_FONTS; ++i)
                 fonts[i] = renderer.CreateFont(fontDescs[i].Name, fontDescs[i].EmHeight, fontDescs[i].Bold, fontDescs[i].Italic, fontAlignments[i]);
 
-            renderer.Transform = matrixSave;
+            renderer.PopTransform();
         }
 
         // Dispose one object.
@@ -824,8 +822,11 @@ namespace PurplePen
     // a Graphics and putting objects in a Map.
     interface IRenderer
     {
-        // Get/Set the transformation matrix.
-        Matrix Transform { get; set; }
+        // Push a new transform.
+        void PushTransform(Matrix m);
+
+        // Pop the transform.
+        void PopTransform();
 
         // Create a pen used for drawing lines.
         object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap);
@@ -852,105 +853,277 @@ namespace PurplePen
         void DrawSymbol(Symbol symbol, RectangleF rect);
     }
 
-    // The Graphics renderer handles rendering to a System.Drawing.Graphics. The passed
-    // in graphics may have a non-standard transform.
-    class GraphicsRenderer: IRenderer
+    
+    // The Graphics renderer handles rendering to a GraphicsTarget. The passed
+    // in GraphicsTarget may have a non-standard transform.
+    class GraphicsTargetRenderer : IRenderer
     {
-        private Graphics g;
+        private IGraphicsTarget grTarget;
+        private ITextMetrics textMetrics;
+        private CmykColor color;
 
         // Create a new rendered around the given graphics.
-        public GraphicsRenderer(Graphics graphics)
+        public GraphicsTargetRenderer(IGraphicsTarget grTarget, ITextMetrics textMetrics, CmykColor color)
         {
-            g = graphics;
+            this.grTarget = grTarget;
+            this.textMetrics = textMetrics;
+            this.color = color;
+            grTarget.CreateSolidBrush(color, color);
         }
 
-        public Matrix Transform
+        public void PushTransform(Matrix m)
         {
-            get
-            {
-                return g.Transform;
-            }
-            set
-            {
-                g.Transform = value;
-            }
+            grTarget.PushTransform(m);
+        }
+
+        public void PopTransform()
+        {
+            grTarget.PopTransform();
         }
 
         public object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap)
         {
-            Pen p = new Pen(Color.Black, thickness);
-            p.LineJoin = lineJoin;
-            p.StartCap = p.EndCap = lineCap;
-            return p;
+            object pen = new object();
+            grTarget.CreatePen(pen, color, thickness, lineCap, lineJoin, 5);
+            return pen;
         }
 
         public object CreateFont(string fontName, float emHeight, bool bold, bool italic, StringAlignment alignment)
         {
-            FontStyle style = FontStyle.Regular;
+            TextEffects textEffects = TextEffects.None;
+
             if (bold)
-                style |= FontStyle.Bold;
+                textEffects |= TextEffects.Bold;
             if (italic)
-                style |= FontStyle.Italic;
-            return new Font(fontName, emHeight, style, GraphicsUnit.World);
+                textEffects |= TextEffects.Italic;
+
+            FontInfo font = new FontInfo(fontName, emHeight, textEffects, textMetrics);
+            grTarget.CreateFont(font, fontName, emHeight, textEffects);
+
+            return font;
         }
 
         public void DrawLine(object pen, float x1, float y1, float x2, float y2)
         {
-            g.DrawLine((Pen) pen, x1, y1, x2, y2);
+            grTarget.DrawLine(pen, new PointF(x1, y1), new PointF(x2, y2));
         }
 
         public float MeasureSingleLineText(object font, string text, RectangleF rect, StringAlignment horizAlignment)
         {
-            StringFormat stringFormat = new StringFormat(StringFormat.GenericTypographic);
-            stringFormat.Alignment = horizAlignment;
-            stringFormat.LineAlignment = StringAlignment.Center;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-
-            return g.MeasureString(text, (Font) font, rect.Location, stringFormat).Width;
+            FontInfo fontInfo = (FontInfo)font;
+            return fontInfo.Metrics.GetTextWidth(text);
         }
 
         public void DrawSingleLineText(object font, string text, RectangleF rect, StringAlignment horizAlignment)
         {
-            StringFormat stringFormat = new StringFormat(StringFormat.GenericTypographic);
-            stringFormat.Alignment = horizAlignment;
-            stringFormat.LineAlignment = StringAlignment.Center;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
+            FontInfo fontInfo = (FontInfo)font;
+            SizeF size = fontInfo.Metrics.GetTextSize(text);
 
-            g.DrawString(text, (Font) font, Brushes.Black, rect, stringFormat);
+            float x, y;
+            y = rect.Center().Y - (fontInfo.Metrics.Ascent + fontInfo.Metrics.Descent) / 2F;
+            switch (horizAlignment) {
+                case StringAlignment.Near:
+                    x = rect.Left; break;
+                case StringAlignment.Center:
+                    x = rect.Center().X - (size.Width / 2F); break;
+                case StringAlignment.Far:
+                    x = rect.Right - size.Width; break;
+                default:
+                    throw new ArgumentException("unknown value for horizAlignment");
+            }
+
+            grTarget.DrawText(text, font, color, new PointF(x, y));
         }
 
         public bool WrappedTextFits(object font, string text, RectangleF rect, StringAlignment horizAlignment)
         {
-            StringFormat stringFormat = new StringFormat(StringFormat.GenericTypographic);
-            stringFormat.Alignment = horizAlignment;
-            stringFormat.LineAlignment = StringAlignment.Center;
+            FontInfo fontInfo = (FontInfo)font;
+            List<string> wrapped = WrapText(fontInfo, text, rect.Width);
+            int numLines = wrapped.Count;
 
-            SizeF size = g.MeasureString(text, (Font) font, new SizeF(rect.Width, rect.Height * 2), stringFormat);
-            return size.Height <= rect.Height;
+            float height = fontInfo.Metrics.Ascent + fontInfo.Metrics.Descent + (numLines - 1) * fontInfo.Metrics.RecommendedLineSpacing;
+
+            return height <= rect.Height;
         }
 
         public void DrawWrappedText(object font, string text, RectangleF rect, StringAlignment horizAlignment)
         {
-            StringFormat stringFormat = new StringFormat(StringFormat.GenericTypographic);
-            stringFormat.Alignment = horizAlignment;
-            stringFormat.LineAlignment = StringAlignment.Center;
+            FontInfo fontInfo = (FontInfo)font;
+            List<string> wrapped = WrapText(fontInfo, text, rect.Width);
+            int numLines = wrapped.Count;
 
-            g.DrawString(text, (Font) font, Brushes.Black, rect, stringFormat);
+            float height = fontInfo.Metrics.Ascent + fontInfo.Metrics.Descent + (numLines - 1) * fontInfo.Metrics.RecommendedLineSpacing;
+
+            float y = rect.Center().Y - height / 2F;
+            float lineHeight = fontInfo.Metrics.Ascent + fontInfo.Metrics.Descent;
+
+            for (int i = 0; i < wrapped.Count; ++i) {
+                RectangleF lineRect = new RectangleF(rect.X, y, rect.Width, lineHeight);
+                DrawSingleLineText(font, wrapped[i], lineRect, horizAlignment);
+                y += fontInfo.Metrics.RecommendedLineSpacing;
+            }
         }
 
         public void DrawSymbol(Symbol sym, RectangleF rect)
         {
-            sym.Draw(g, Color.Black, rect);
+            sym.Draw(grTarget, color, rect);
         }
-}
 
+
+        // Wrap text into lines of length width or less, and return a list of all the lines.
+        private List<string> WrapText(FontInfo fontInfo, string text, float width)
+        {
+            List<string> lineList = new List<string>();
+
+            while (text != null) {
+                float lineWidth;
+                string line = WrapOneLine(fontInfo, ref text, width, out lineWidth);
+                lineList.Add(line);
+            }
+
+            return lineList;
+        }
+
+        // Figure out how much of the line will fit and return that. line is modified
+        // to be the remaining text to fit on subsequent lines, or null if nothing left. The amount of width
+        // actually consumed is returned in actualLineWidth.
+        private string WrapOneLine(FontInfo fontInfo, ref string line, float lineWidth, out float actualLineWidth)
+        {
+            StringBuilder lineSoFar = new StringBuilder();
+            float widthUsed = 0F;
+            bool useSingleLetters = false;
+
+            while (!string.IsNullOrEmpty(line)) {
+                // Get next segment of text to add.
+                string nextSegment;
+                if (useSingleLetters)
+                    nextSegment = GetNextTextElement(line);
+                else
+                    nextSegment = GetNextTextSegment(line);
+                if (string.IsNullOrEmpty(nextSegment))
+                    break;
+
+                // See if this segment will fit on the line.
+                float segmentWidth = WidthOfTextSegment(fontInfo, nextSegment, widthUsed);
+                if (segmentWidth + widthUsed > lineWidth) {
+                    // The segment won't fit. If we haven't placed any segments yet, we need to try placing single letters.
+                    if (widthUsed == 0) {
+                        if (!useSingleLetters) {
+                            useSingleLetters = true;
+                            continue;
+                        }
+                    }
+                    else
+                        break;  // we're done.
+                }
+
+                // Add nextSegment to the line, and remove from the line under consideration.
+                lineSoFar.Append(nextSegment);
+                line = line.Substring(nextSegment.Length);
+                widthUsed += segmentWidth;
+            }
+
+            // If we're wrapping, the new line replaces spaces.
+            if (line.Length > 0) {
+                // Remove trailing spaces from current line.
+                while (lineSoFar.Length > 0 && lineSoFar[lineSoFar.Length - 1] == ' ') {
+                    lineSoFar.Remove(lineSoFar.Length - 1, 1);
+                    widthUsed -= WidthOfTextSegment(fontInfo, " ", widthUsed);
+                }
+
+                // Remove initial spaces from next line.
+                int startNextLine = 0;
+                while (startNextLine < line.Length && line[startNextLine] == ' ')
+                    ++startNextLine;
+                if (startNextLine > 0)
+                    line = line.Substring(startNextLine);
+            }
+
+            if (line == "")
+                line = null;
+
+            actualLineWidth = widthUsed;
+            return lineSoFar.ToString();
+        }
+
+        // Calculate width of one line, not limited by wrapping.
+        private float LineWidth(FontInfo fontInfo, string text)
+        {
+            string nextSegment;
+            float width = 0;
+
+            while ((nextSegment = GetNextTextSegment(text)) != null) {
+                width += WidthOfTextSegment(fontInfo, nextSegment, width);
+                text = text.Substring(nextSegment.Length);
+            }
+
+            return width;
+        }
+
+        // Get the next text segment needed. If empty, returns null.
+        // Is the next is a space or tab, that is it.
+        // Otherwise, the whole word to the next space or tab.
+        private string GetNextTextSegment(string text)
+        {
+            if (String.IsNullOrEmpty(text))
+                return null;
+
+            if (text[0] == ' ')
+                return " ";
+            if (text[0] == '\t')
+                return "\t";
+
+            int i = 0;
+            while (i < text.Length && text[i] != ' ' && text[i] != '\t')
+                ++i;
+
+            return text.Substring(0, i);
+        }
+
+        // Get the next "character" in a string (a length of unicode characters that appear as a single character).
+        private string GetNextTextElement(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return "";
+            else
+                return StringInfo.GetNextTextElement(s);
+        }
+
+
+        // Get the width of a text segment. Handles tabs, spaces between characters, and space widths.
+        private float WidthOfTextSegment(FontInfo fontInfo, string text, float widthSoFar)
+        {
+            // "widthSoFar" is useful for tabs, but we aren't dealing with those.
+            return fontInfo.Metrics.GetTextWidth(text);
+        }
+
+
+        // Object returns from CreateFont, stores font information.
+        private class FontInfo
+        {
+            public readonly string FamilyName;
+            public readonly float EmHeight;
+            public readonly TextEffects TextEffects;
+            public readonly ITextFaceMetrics Metrics;
+
+            public FontInfo(string familyName, float emHeight, TextEffects textEffects, ITextMetrics metricsProvider)
+            {
+                this.FamilyName = familyName;
+                this.EmHeight = emHeight;
+                this.TextEffects = textEffects;
+                this.Metrics = metricsProvider.GetTextFaceMetrics(familyName, emHeight, textEffects);
+            }
+        }
+    }
+    
     // The MapRenderer handles rendering to a map, creating symbols as needed.
     // The SymColor to use must be already created a passed in.
-    class MapRenderer: IRenderer
+    class MapRenderer : IRenderer
     {
         private Map map;
         private SymColor color;
         private Matrix currentTransform, inverseTransform;
+        private Stack<Matrix> transformStack = new Stack<Matrix>();
         private Dictionary<object, SymDef> dict;
 
         public MapRenderer(Map map, SymColor color, Dictionary<object, SymDef> dict)
@@ -961,7 +1134,7 @@ namespace PurplePen
             currentTransform = new Matrix();
         }
 
-        public Matrix Transform
+        private Matrix Transform
         {
             get
             {
@@ -973,6 +1146,20 @@ namespace PurplePen
                 inverseTransform = currentTransform.Clone();
                 inverseTransform.Invert();
             }
+        }
+
+        public void PushTransform(Matrix m)
+        {
+            transformStack.Push(currentTransform);
+
+            Matrix newTransform = currentTransform.Clone();
+            newTransform.Multiply(m, MatrixOrder.Prepend);
+            Transform = newTransform;
+        }
+
+        public void PopTransform()
+        {
+            Transform = transformStack.Pop();
         }
 
         // Get a free OCAD id number

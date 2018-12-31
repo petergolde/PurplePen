@@ -45,6 +45,7 @@ using System.IO;
 using PurplePen.MapModel;
 using System.Runtime.InteropServices;
 using System.Linq;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -526,6 +527,34 @@ namespace PurplePen
             g.Transform = matSave;
         }
 
+        /// <summary>
+        /// Draw the given symbol to fill the rectange in that graphics.
+        /// </summary>
+        /// <param name="g">Graphics to draw in.</param>
+        /// <param name="color">Color to use for drawing.</param>
+        /// <param name="rect">The rectange to fill.</param>
+        public void Draw(IGraphicsTarget g, CmykColor color, RectangleF rect)
+        {
+            Matrix matNew = new Matrix();
+
+            matNew.Translate((rect.Left + rect.Right) / 2.0F, (rect.Top + rect.Bottom) / 2.0F);
+            if (kind >= 'T') {
+                // An instructional directive that spans 8 columns
+                matNew.Scale(rect.Width / 1600.0F, -rect.Height / 200.0F);
+            }
+            else {
+                // Regular square symbol.
+                matNew.Scale(rect.Width / 200.0F, -rect.Height / 200.0F);
+            }
+
+            g.PushTransform(matNew);
+
+            for (int i = 0; i < strokes.Length; ++i)
+                strokes[i].Draw(g, color);
+
+            g.PopTransform();
+        }
+
         // Create a point symbol that can be used to put this symbol onto a map inside
         // a box of the given size (in mm). 
         public PointSymDef CreateSymdef(Map map, SymColor color, float boxSize)
@@ -805,6 +834,68 @@ namespace PurplePen
                         Debug.Fail("Bad SymbolStroke kind");
                         break;
                 }
+            }
+
+            public void Draw(IGraphicsTarget g, CmykColor color)
+            {
+                object brush = new object();
+                object pen = new object();
+
+                if (kind == SymbolStrokes.Circle || kind == SymbolStrokes.Polyline || kind == SymbolStrokes.Polygon ||
+                    kind == SymbolStrokes.PolyBezier) {
+                    g.CreatePen(pen, color, thickness, ends, corners, 5);
+                }
+                else {
+                    g.CreateSolidBrush(brush, color);
+                }
+
+                switch (kind) {
+                    case SymbolStrokes.Disc:
+                        g.FillEllipse(brush, points[0], radius, radius);
+                        break;
+
+                    case SymbolStrokes.Circle:
+                        g.DrawEllipse(pen, points[0], radius, radius);
+                        break;
+
+                    case SymbolStrokes.Polyline:
+                        g.DrawPolyline(pen, points);
+                        break;
+
+                    case SymbolStrokes.Polygon:
+                        g.DrawPolygon(pen, points);
+                        break;
+
+                    case SymbolStrokes.FilledPolygon:
+                        g.FillPolygon(brush, points, FillMode.Alternate);
+                        break;
+
+                    case SymbolStrokes.PolyBezier:
+                        g.DrawPath(pen, CreateBezierPath(points));
+                        break;
+
+                    case SymbolStrokes.FilledPolyBezier:
+                        g.FillPath(brush, CreateBezierPath(points));
+                        break;
+
+                    default:
+                        Debug.Fail("Bad SymbolStroke kind");
+                        break;
+                }
+            }
+
+            // Create a list of GraphicsPathPart for beziers from an array of points.
+            private List<GraphicsPathPart> CreateBezierPath(PointF[] points)
+            {
+                List<GraphicsPathPart> result = new List<GraphicsPathPart>(2);
+
+                result.Add(new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[] { points[0] }));
+
+                PointF[] rest = new PointF[points.Length - 1];
+                Array.Copy(points, 1, rest, 0, points.Length - 1);
+                result.Add(new GraphicsPathPart(GraphicsPathPartKind.Beziers, rest));
+
+                return result;
             }
 
             // Add the stroke to an OCAD Map glyph with the given box size.
