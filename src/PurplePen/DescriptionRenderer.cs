@@ -214,17 +214,18 @@ namespace PurplePen
             Render(renderer, clipRect, 0, description.Length);
         }
 
-        void IPrintableRectangle.Draw(Graphics g, float x, float y, int startLine, int countLines)
+        void IPrintableRectangle.Draw(IGraphicsTarget grTarget, float x, float y, int startLine, int countLines)
         {
-            IRenderer renderer = new GraphicsTargetRenderer(new GDIPlus_GraphicsTarget(g), new GDIPlus_TextMetrics(), CmykColor.FromCmyk(0, 0, 0, 1));
+            IRenderer renderer = new GraphicsTargetRenderer(grTarget, new GDIPlus_TextMetrics(), CmykColor.FromCmyk(0, 0, 0, 1));
 
-            Matrix saveTransform = g.Transform;
+            Matrix transform = new Matrix();
+            transform.Translate(x, y);
 
-            g.TranslateTransform(x, y);
+            grTarget.PushTransform(transform);
             replaceMultiplySign = true;
             Render(renderer, new RectangleF(-100000, -100000, 200000, 200000), startLine, countLines);
 
-            g.Transform = saveTransform;
+            grTarget.PopTransform();
         }
 
         // Render the description into the given map at the given location in the given color.

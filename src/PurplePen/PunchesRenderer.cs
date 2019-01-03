@@ -36,6 +36,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace PurplePen
 {
@@ -49,8 +51,9 @@ namespace PurplePen
         private CourseView courseView;
         PunchcardFormat punchcardFormat;
 
-        Pen thinPen, thickPen;
-        Font titleFont, ordinalFont, codeFont, scoreFont;
+        object blackBrush;
+        object thinPen, thickPen;
+        ITextMetrics textMetrics;
 
         public PunchesRenderer(EventDB eventDB)
         {
@@ -113,34 +116,26 @@ namespace PurplePen
         }
 
         // Create pens and fonts we use.
-        void CreateObjects()
+        void CreateObjects(IGraphicsTarget g)
         {
-            thinPen = new Pen(Color.Black, PunchcardAppearance.thinLine);
-            thinPen.StartCap = thinPen.EndCap = LineCap.Flat;
-            thickPen = new Pen(Color.Black, PunchcardAppearance.thickLine);
-            thickPen.StartCap = thinPen.EndCap = LineCap.Flat;
+            CmykColor black = CmykColor.FromCmyk(0, 0, 0, 1);
+            blackBrush = new object();
+            g.CreateSolidBrush(blackBrush, black);
+            thinPen = new object();
+            g.CreatePen(thinPen, black, PunchcardAppearance.thinLine, LineCap.Flat, LineJoin.Miter, 5F);
+            thickPen = new object();
+            g.CreatePen(thickPen, black, PunchcardAppearance.thickLine, LineCap.Flat, LineJoin.Miter, 5F);
 
-            titleFont = PunchcardAppearance.titleFont.GetFont();
-            ordinalFont = PunchcardAppearance.controlNumberFont.GetFont();
-            codeFont = PunchcardAppearance.codeFont.GetFont();
-            scoreFont = PunchcardAppearance.scoreFont.GetFont();
-        }
+            textMetrics = new GDIPlus_TextMetrics();        }
 
         // Dispose the pens and fonts we use.
         void DisposeObjects()
         {
-            thinPen.Dispose();
+            blackBrush = null;
             thinPen = null;
-            thickPen.Dispose();
             thickPen = null;
-            titleFont.Dispose();
-            titleFont = null;
-            ordinalFont.Dispose();
-            ordinalFont = null;
-            codeFont.Dispose();
-            codeFont = null;
-            scoreFont.Dispose();
-            scoreFont = null;
+            textMetrics.Dispose();
+            textMetrics = null;
         }
 
         // Get all the boxes we are going to fill into an array.
@@ -157,31 +152,30 @@ namespace PurplePen
 
         // Render the punchcard onto the given graphics at (0,0). Only draw the parts that lie within
         // the clip rect.
-        void Render(Graphics g, int startLine, int countLines)
+        void Render(IGraphicsTarget g, int startLine, int countLines)
         {
             PointF upperLeft = new PointF(margin, margin);   // upper left of the current line.
 
             List<CourseView.ControlView> boxes = GetAllBoxes();           // mapping from box number to control views.
             int lineCount = NumberOfLines(boxes);
 
-            CreateObjects();
+            CreateObjects(g);
 
             try {
                 for (int line = 0; line <= lineCount; ++line) {
                     if (line >= startLine && line < startLine + countLines) {
-                        Matrix matrixSave, matrixNew;
+                        Matrix matrixNew;
 
                         // Set transform so the each cell is 100x100, and the origin of the line is at (0,0).
-                        matrixSave = g.Transform;
-                        matrixNew = matrixSave.Clone();
+                        matrixNew = new Matrix();
                         matrixNew.Translate(upperLeft.X, upperLeft.Y);
                         matrixNew.Scale(cellSize / 100.0F, cellSize / 100.0F);
-                        g.Transform = matrixNew;
+                        g.PushTransform(matrixNew);
 
                         // Draw the line.
                         RenderLine(g, boxes, line, (line == lineCount || line == startLine + countLines - 1));
 
-                        g.Transform = matrixSave;
+                        g.PopTransform();
 
                         upperLeft.Y += cellSize;
                     }
@@ -193,16 +187,12 @@ namespace PurplePen
         }
 
         // Render one punch box
-        private void RenderPunchBox(Graphics g, CourseView.ControlView controlView, RectangleF rect)
+        private void RenderPunchBox(IGraphicsTarget g, CourseView.ControlView controlView, RectangleF rect)
         {
-            StringFormat stringFormat = new StringFormat(StringFormat.GenericDefault);
-            stringFormat.Alignment = StringAlignment.Near;
-            stringFormat.LineAlignment = StringAlignment.Near;
-            stringFormat.FormatFlags = StringFormatFlags.NoWrap;
-
             // Draw the ordinal number, if there is one.
-            if (controlView.ordinal > 0)
-                g.DrawString(controlView.ordinal.ToString(), ordinalFont, Brushes.Black, rect.Left + 3, rect.Top + 3, stringFormat);
+            if (controlView.ordinal > 0) {
+                DrawSingleLineText(g, controlView.ordinal.ToString(), PunchcardAppearance.controlNumberFont, new PointF(rect.Left + 6, rect.Top + 3), StringAlignment.Near, StringAlignment.Near);
+            }
 
             // If it's a score course, and a score has been defined, then put the score.
             if (courseView.Kind == CourseView.CourseViewKind.Score) {
@@ -211,17 +201,13 @@ namespace PurplePen
                     points = eventDB.GetCourseControl(controlView.courseControlIds[0]).points;
 
                 if (points > 0) {
-                    stringFormat.Alignment = StringAlignment.Center;
-                    stringFormat.LineAlignment = StringAlignment.Near;
-                    g.DrawString(points.ToString(), scoreFont, Brushes.Black, (rect.Left + rect.Right) / 2, rect.Top + 3, stringFormat);
+                    DrawSingleLineText(g, points.ToString(), PunchcardAppearance.scoreFont, new PointF((rect.Left + rect.Right) / 2, rect.Top + 3), StringAlignment.Center, StringAlignment.Near);
                 }
             }
 
             // Draw the code.
             string code = string.Format("({0})", eventDB.GetControl(controlView.controlId).code);
-            stringFormat.Alignment = StringAlignment.Far;
-            stringFormat.LineAlignment = StringAlignment.Near;
-            g.DrawString(code, codeFont, Brushes.Black, rect.Right - 1.5F, rect.Top + 3, stringFormat);
+            DrawSingleLineText(g, code, PunchcardAppearance.codeFont, new PointF(rect.Right - 5F, rect.Top + 3), StringAlignment.Far, StringAlignment.Near);
 
             // Draw the punch pattern.
             RectangleF punchRect = RectangleF.FromLTRB(rect.Left + 20F, rect.Top + 27.5F, rect.Right - 20F, rect.Bottom - 12.5F);
@@ -233,7 +219,7 @@ namespace PurplePen
 
         // Draw a pattern of dots. The center of the edge dots are on the edges of the given rectangle, so the dots
         // protrude out a dot radius from the rectangle.
-        private void DrawPattern(Graphics g, PunchPattern pattern, RectangleF punchRect)
+        private void DrawPattern(IGraphicsTarget g, PunchPattern pattern, RectangleF punchRect)
         {
             float dxPerDot = (pattern.size > 1) ? punchRect.Width / (pattern.size - 1) : 0;
             float dyPerDot = (pattern.size > 1) ? punchRect.Height / (pattern.size - 1) : 0;
@@ -244,35 +230,35 @@ namespace PurplePen
                     if (pattern.dots[row, col]) {
                         float xCenter = punchRect.Left + dxPerDot * col;
                         float yCenter = punchRect.Top + dyPerDot * row;
-                        g.FillEllipse(Brushes.Black, xCenter - r, yCenter - r, r * 2, r * 2);
+                        g.FillEllipse(blackBrush, new PointF(xCenter, yCenter), r, r);
                     }
                 }
             }
         }
 
         // Render a single line of the punchcard. "lastLine" is true if this is the last line (draws the bottom line). 
-        private void RenderLine(Graphics g, List<CourseView.ControlView> boxes, int line, bool lastLine)
+        private void RenderLine(IGraphicsTarget g, List<CourseView.ControlView> boxes, int line, bool lastLine)
         {
             int lineCount = NumberOfLines(boxes);
 
             // Draw top line.
             float fullWidth = punchcardFormat.boxesAcross * 100;
             if (line == 0 || line == 1) {
-                g.DrawLine(thickPen, 0, 0, fullWidth, 0);
+                g.DrawLine(thickPen, new PointF(0, 0), new PointF(fullWidth, 0));
             }
             else {
-                g.DrawLine(thinPen, 0, 0, fullWidth, 0);
+                g.DrawLine(thinPen, new PointF(0, 0), new PointF(fullWidth, 0));
             }
 
             // Draw bottom line, if requested
             if (lastLine)
-                g.DrawLine(thickPen, 0, 100, fullWidth, 100);
+                g.DrawLine(thickPen, new PointF(0, 100), new PointF(fullWidth, 100));
 
             // Draw side lines.
             float lineTop = -PunchcardAppearance.thickLine / 2;
             float lineBottom = 100 + PunchcardAppearance.thickLine / 2;
-            g.DrawLine(thickPen, 0, lineTop, 0, lineBottom);
-            g.DrawLine(thickPen, fullWidth, lineTop, fullWidth, lineBottom);
+            g.DrawLine(thickPen, new PointF(0, lineTop), new PointF(0, lineBottom));
+            g.DrawLine(thickPen, new PointF(fullWidth, lineTop), new PointF(fullWidth, lineBottom));
 
             if (line == 0) {
                 // Draw title
@@ -282,13 +268,13 @@ namespace PurplePen
                 stringFormat.LineAlignment = StringAlignment.Center;
                 stringFormat.FormatFlags = StringFormatFlags.NoWrap;
 
-                g.DrawString(courseView.CourseFullName, titleFont, Brushes.Black, rect, stringFormat);
+                DrawSingleLineText(g, courseView.CourseFullName, PunchcardAppearance.titleFont, rect.Center(), StringAlignment.Center, StringAlignment.Center);
             }
             else {
                 // Draw grid lines and the boxes.
                 for (int col = 0; col < punchcardFormat.boxesAcross; ++col) {
                     if (col != 0)
-                        g.DrawLine(thinPen, 100 * col, lineTop, 100 * col, lineBottom);
+                        g.DrawLine(thinPen, new PointF(100 * col, lineTop), new PointF(100 * col, lineBottom));
 
                     RectangleF boxRect = new RectangleF(100 * col, 0, 100, 100);
 
@@ -310,18 +296,45 @@ namespace PurplePen
             }
         }
 
-        // Draw all or part of the punch card.
-        public void Draw(Graphics g, float x, float y, int startLine, int countLines)
+        private void DrawSingleLineText(IGraphicsTarget g, string text, FontDesc fontDesc, PointF pt, StringAlignment horizAlignment, StringAlignment vertAlignment)
         {
-            Matrix saveTransform = g.Transform;
+            object font = new object();
+            g.CreateFont(font, fontDesc.Name, fontDesc.EmHeight, fontDesc.TextEffects);
 
-            g.TranslateTransform(x, y);
+            ITextFaceMetrics fontMetrics = textMetrics.GetTextFaceMetrics(fontDesc.Name, fontDesc.EmHeight, fontDesc.TextEffects);
+            SizeF size = fontMetrics.GetTextSize(text);
 
-            Render(g, startLine, countLines);
+            switch (horizAlignment) {
+                case StringAlignment.Near:
+                    break;
+                case StringAlignment.Center:
+                    pt.X = pt.X - size.Width / 2F; break;
+                case StringAlignment.Far:
+                    pt.X = pt.X - size.Width; break;
+            }
 
-            g.Transform = saveTransform;
+            switch (vertAlignment) {
+                case StringAlignment.Near:
+                    break;
+                case StringAlignment.Center:
+                    pt.Y = pt.Y - size.Height / 2F; break;
+                case StringAlignment.Far:
+                    pt.Y = pt.Y - size.Height; break;
+            }
+
+            g.DrawText(text, font, blackBrush, pt);
+
+            fontMetrics.Dispose();
         }
 
+        public void Draw(IGraphicsTarget grTarget, float x, float y, int startLine, int countLines)
+        {
+            Matrix transform = new Matrix();
+            transform.Translate(x, y);
+            grTarget.PushTransform(transform);
+            Render(grTarget, startLine, countLines);
+            grTarget.PopTransform();
+        }
     }
 
     // The format of a punch card.

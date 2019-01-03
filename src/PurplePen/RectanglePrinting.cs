@@ -115,8 +115,9 @@ namespace PurplePen
         // and the printArea in the size to draw into (in hundreths of an inch).
         protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
         {
-            Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
-            positioner.DrawPage(g, pageNumber);
+            //Graphics g = ((GDIPlus_GraphicsTarget)graphicsTarget).Graphics;
+            //positioner.DrawPage(g, pageNumber);
+            positioner.DrawPage(graphicsTarget, pageNumber);
         }
     }
 
@@ -286,12 +287,13 @@ namespace PurplePen
             }
         }
 
+
         // Draws a given page. 0 is the first page.
-        public void DrawPage(Graphics g, int pageNumber)
+        public void DrawPage(IGraphicsTarget grTarget, int pageNumber)
         {
             foreach (PositionedRectangle positionedRectangle in positions) {
                 if (positionedRectangle.pageNumber == pageNumber) {
-                    positionedRectangle.description.Draw(g, positionedRectangle.location.X, positionedRectangle.location.Y, positionedRectangle.startLine, positionedRectangle.countLines);
+                    positionedRectangle.description.Draw(grTarget, positionedRectangle.location.X, positionedRectangle.location.Y, positionedRectangle.startLine, positionedRectangle.countLines);
                 }
             }
         }
@@ -440,6 +442,6 @@ namespace PurplePen
         Size Boxes { get; }
 
         // Draw all or part of the description.
-        void Draw(Graphics g, float x, float y, int startLine, int countLines);
+        void Draw(IGraphicsTarget grTarget, float x, float y, int startLine, int countLines);
     }
 }

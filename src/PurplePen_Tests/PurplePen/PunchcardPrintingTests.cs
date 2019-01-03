@@ -72,6 +72,51 @@ namespace PurplePen.Tests
             }
         }
 
+        private void PunchPdfTest(string basename, PunchPrintSettings punchPrintSettings)
+        {
+            // Get the pages of the printing.
+            PunchPrinting punchPrinter = new PunchPrinting(controller.GetEventDB(), controller, punchPrintSettings);
+            string pdfFileName = TestUtil.GetTestFile(basename + ".pdf");
+            punchPrinter.PrintToPdf(pdfFileName, false);
+            CheckPdfDump(pdfFileName, TestUtil.GetTestFile(basename + "_baseline_page%d.png"));
+        }
+
+        private void CheckPdfDump(string pdfFile, string expectedPng)
+        {
+            PdfMapFile mapFile = new PdfMapFile(pdfFile);
+            string pngFile = Path.Combine(Path.GetDirectoryName(pdfFile), Path.GetFileNameWithoutExtension(pdfFile) + "_page%d_temp.png");
+            mapFile.BeginUncachedConversion(pngFile, 200); // Convert 200 DPI.
+            while (mapFile.Status == PdfMapFile.ConversionStatus.Working)
+                System.Threading.Thread.Sleep(10);
+            Assert.AreEqual(PdfMapFile.ConversionStatus.Success, mapFile.Status);
+
+            int pageNum = 1;
+            for (; ; ) {
+                string pngExpectedPage = expectedPng.Replace("%d", pageNum.ToString());
+                pngExpectedPage = TestUtil.GetBitnessSpecificFileName(pngExpectedPage, true);
+                bool expectedPageExists = File.Exists(pngExpectedPage);
+                string pngActualPage = pngFile.Replace("%d", pageNum.ToString());
+                bool actualPageExists = File.Exists(pngActualPage);
+
+                Assert.AreEqual(expectedPageExists, actualPageExists);
+                if (expectedPageExists) {
+                    using (Bitmap bmNew = (Bitmap)Image.FromFile(pngActualPage)) {
+                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage);
+                    }
+                }
+                else {
+                    break;
+                }
+
+                if (!expectedPng.Contains("%d"))
+                    break;
+
+                pageNum++;
+            }
+        }
+
+
+
         [TestMethod]
         public void PrintPunches1()
         {
@@ -137,6 +182,30 @@ namespace PurplePen.Tests
 
             punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(2) };
             PunchPrintingTest("punchcards\\relay3", punchPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintPunchesPdf1()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"), true);
+            PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
+            punchPrintSettings.BoxSize = 18;
+
+            punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(0) };
+            PunchPdfTest("punchcards\\descpdf1", punchPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintPunchesPdf2()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("punchcards\\sample1.ppen"), true);
+            PunchPrintSettings punchPrintSettings = new PunchPrintSettings();
+            punchPrintSettings.PageSettings.Landscape = true;
+            punchPrintSettings.PageSettings.Margins = new Margins(50, 50, 200, 200);
+            punchPrintSettings.BoxSize = 9;
+
+            punchPrintSettings.CourseIds = new Id<Course>[] { CourseId(0), CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5), CourseId(6), CourseId(7) };
+            PunchPdfTest("punchcards\\descpdf2", punchPrintSettings);
         }
 
 

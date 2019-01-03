@@ -42,6 +42,7 @@ using System.Diagnostics;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
+using PurplePen.Graphics2D;
 
 namespace PurplePen.Tests
 {
@@ -71,6 +72,51 @@ namespace PurplePen.Tests
                 TestUtil.CheckBitmapsBase(bm, baseFileName);
             }
         }
+
+        private void DescriptionPdfTest(string basename, DescriptionPrintSettings descPrintSettings)
+        {
+            // Get the pages of the printing.
+            DescriptionPrinting descPrinter = new DescriptionPrinting(controller.GetEventDB(), ui.symbolDB, controller, descPrintSettings);
+            string pdfFileName = TestUtil.GetTestFile(basename + ".pdf");
+            descPrinter.PrintToPdf(pdfFileName, false);
+            CheckPdfDump(pdfFileName, TestUtil.GetTestFile(basename + "_baseline_page%d.png"));
+        }
+
+        private void CheckPdfDump(string pdfFile, string expectedPng)
+        {
+            PdfMapFile mapFile = new PdfMapFile(pdfFile);
+            string pngFile = Path.Combine(Path.GetDirectoryName(pdfFile), Path.GetFileNameWithoutExtension(pdfFile) + "_page%d_temp.png");
+            mapFile.BeginUncachedConversion(pngFile, 200); // Convert 200 DPI.
+            while (mapFile.Status == PdfMapFile.ConversionStatus.Working)
+                System.Threading.Thread.Sleep(10);
+            Assert.AreEqual(PdfMapFile.ConversionStatus.Success, mapFile.Status);
+
+            int pageNum = 1;
+            for (; ; ) {
+                string pngExpectedPage = expectedPng.Replace("%d", pageNum.ToString());
+                pngExpectedPage = TestUtil.GetBitnessSpecificFileName(pngExpectedPage, true);
+                bool expectedPageExists = File.Exists(pngExpectedPage);
+                string pngActualPage = pngFile.Replace("%d", pageNum.ToString());
+                bool actualPageExists = File.Exists(pngActualPage);
+
+                Assert.AreEqual(expectedPageExists, actualPageExists);
+                if (expectedPageExists) {
+                    using (Bitmap bmNew = (Bitmap)Image.FromFile(pngActualPage)) {
+                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage);
+                    }
+                }
+                else {
+                    break;
+                }
+
+                if (!expectedPng.Contains("%d"))
+                    break;
+
+                pageNum++;
+            }
+        }
+
+
 
         [TestMethod]
         public void PrintDescriptions1()
@@ -144,6 +190,77 @@ namespace PurplePen.Tests
             DescriptionPrintingTest("printdesc\\relay_desc3", descPrintSettings);
         }
 
+        [TestMethod]
+        public void PrintDescriptionsPdf1()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };
+            DescriptionPdfTest("printdesc\\descpdf1", descPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintDescriptionsPdf2()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.PageSettings.Landscape = true;
+            descPrintSettings.PageSettings.Margins = new Margins(50, 50, 200, 200);
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(0), CourseId(1), CourseId(2), CourseId(3) };
+            DescriptionPdfTest("printdesc\\descpdf2", descPrintSettings);
+        }
+
+        // Should be symbols and text for all controls.
+        [TestMethod]
+        public void PrintDescriptionsPdf3()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor2.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.PageSettings.Landscape = true;
+            descPrintSettings.PageSettings.Margins = new Margins(50, 50, 200, 200);
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(0) };
+            DescriptionPdfTest("printdesc\\descpdf3", descPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintDescriptionsPdf_Relay1()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(2), CourseId(0) };
+            DescriptionPdfTest("printdesc\\relay_pdf_desc1", descPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintDescriptionsPdf_Relay2()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.CountKind = PrintingCountKind.OnePage;
+            descPrintSettings.Count = 1;
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(2), CourseId(0) };
+            DescriptionPdfTest("printdesc\\relay_pdf_desc2", descPrintSettings);
+        }
+
+        [TestMethod]
+        public void PrintDescriptionsPdf_Relay3()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("controller\\variations.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.VariationChoicesPerCourse[CourseId(2)] = new VariationChoices() {
+                Kind = VariationChoices.VariationChoicesKind.ChosenTeams,
+                FirstTeam = 2,
+                LastTeam = 5
+            };
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(2) };
+            DescriptionPdfTest("printdesc\\relay_pdf_desc3", descPrintSettings);
+        }
 
 
 
@@ -193,7 +310,7 @@ Settings to access printer 'foobar' are not valid.'
                 get { return boxes; }
             }
 
-            public void Draw(Graphics g, float x, float y, int startLine, int countLines)
+            public void Draw(IGraphicsTarget grTarget, float x, float y, int startLine, int countLines)
             {
                 if (startLine != 0 || countLines < boxes.Height)
                     writer.WriteLine("@ ({1},{2}) partial description '{0}' [start:{3} count:{4}]", id, x, y, startLine, countLines, x, y);
@@ -216,7 +333,7 @@ Settings to access printer 'foobar' are not valid.'
             int count = positioner.LayoutOneDescriptionPage(description);
             Assert.AreEqual(1, positioner.PageCount);
             Assert.AreEqual(6, count);
-            positioner.DrawPage(null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
             Assert.AreEqual(
 @"@ (0,0) description 'desc1'
 @ (0,185) description 'desc1'
@@ -241,7 +358,7 @@ Settings to access printer 'foobar' are not valid.'
             int count = positioner.LayoutOneDescriptionPage(description);
             Assert.AreEqual(1, positioner.PageCount);
             Assert.AreEqual(3, count);
-            positioner.DrawPage(null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
             Assert.AreEqual(
 @"@ (0,0) description 'desc1'
 @ (95,0) description 'desc1'
@@ -263,7 +380,7 @@ Settings to access printer 'foobar' are not valid.'
             int count = positioner.LayoutOneDescriptionPage(description);
             Assert.AreEqual(1, positioner.PageCount);
             Assert.AreEqual(4, count);
-            positioner.DrawPage(null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
             Assert.AreEqual(
 @"@ (0,0) description 'desc1'
 @ (0,185) description 'desc1'
@@ -286,8 +403,8 @@ Settings to access printer 'foobar' are not valid.'
             int count = positioner.LayoutOneDescriptionPage(description);
             Assert.AreEqual(2, positioner.PageCount);
             Assert.AreEqual(1, count);
-            positioner.DrawPage(null, 0);
-            positioner.DrawPage(null, 1);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 1);
             Assert.AreEqual(
 @"@ (0,0) partial description 'desc1' [start:0 count:10]
 @ (95,0) partial description 'desc1' [start:10 count:10]
@@ -312,7 +429,7 @@ Settings to access printer 'foobar' are not valid.'
             int count = positioner.LayoutOneDescriptionPage(description);
             Assert.AreEqual(1, positioner.PageCount);
             Assert.AreEqual(1, count);
-            positioner.DrawPage(null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
             Assert.AreEqual(
 @"", writer.ToString());
         }
@@ -358,7 +475,7 @@ Settings to access printer 'foobar' are not valid.'
 
             positioner.LayoutMultipleDescriptions(new MockDescription[] { desc1, desc2, desc3, desc4, desc5, desc6, desc7 });
             //Assert.AreEqual(1, positioner.PageCount);
-            positioner.DrawPage(null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
             Assert.AreEqual(
 @"@ (0,0) description 'desc4'
 @ (0,255) description 'desc3'
@@ -386,7 +503,7 @@ Settings to access printer 'foobar' are not valid.'
 
             positioner.LayoutMultipleDescriptions(new MockDescription[] { desc1, desc2, desc3 });
             //Assert.AreEqual(1, positioner.PageCount);
-            positioner.DrawPage(null, 0);
+            positioner.DrawPage((IGraphicsTarget)null, 0);
             Assert.AreEqual(
 @"@ (0,0) description 'desc1'
 @ (135,0) partial description 'desc2' [start:0 count:25]

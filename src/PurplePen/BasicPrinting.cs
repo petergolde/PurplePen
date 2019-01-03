@@ -48,6 +48,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Xps;
 using System.Windows.Documents;
 using System.Diagnostics;
+using System.IO;
 
 namespace PurplePen
 {
@@ -334,6 +335,56 @@ namespace PurplePen
                 e.PageSettings.PaperSize = paperSize;
             }
         }
+
+        #region Pdf Printing
+
+        public void PrintToPdf(string pathName, bool cmykMode)
+        {
+            PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(pathName), cmykMode);
+
+            // Set up and position everything.
+            printPreviewInProgress = false;
+            printingToBitmaps = false;
+            SetupPrinting();
+
+            PrintEventArgs printArgs = new PrintEventArgs();
+            BeginPrint(this, printArgs);
+
+            while (currentPage < totalPages) {
+                // Set the page settings.
+                QueryPageSettingsEventArgs queryPageSettingsArgs = new QueryPageSettingsEventArgs(pageSettings);
+                QueryPageSettings(this, queryPageSettingsArgs);
+
+                Size pageSize = pageSettings.Bounds.Size;
+                SizeF paperSizeInInches = new SizeF(pageSize.Width / 100F, pageSize.Height / 100F);
+
+                Rectangle pageBounds = pageSettings.Bounds;
+                Rectangle marginBounds = Rectangle.FromLTRB(pageBounds.Left + pageSettings.Margins.Left, pageBounds.Top + pageSettings.Margins.Top, pageBounds.Right - pageSettings.Margins.Right, pageBounds.Bottom - pageSettings.Margins.Bottom);
+                float dpi = 1200;  // Make a PDF high resolution, although this is unlikely to matter much.
+
+                // create and print a page.
+                using (IGraphicsTarget grTarget = pdfWriter.BeginPage(paperSizeInInches)) {
+                    // Move the origin of the graphics to the margin boundaries.
+                    Matrix translateTransform = new Matrix();
+                    translateTransform.Translate(marginBounds.Left, marginBounds.Top);
+                    grTarget.PushTransform(translateTransform);
+                    SizeF size = new SizeF(marginBounds.Width, marginBounds.Height);
+
+                    DrawPage(grTarget, currentPage, size, dpi);
+
+                    grTarget.PopTransform();
+
+                }
+
+                ++currentPage;
+            } 
+
+            EndPrint(this, printArgs);
+
+            pdfWriter.Save(pathName);
+        }
+
+        #endregion
 
         #region Xps Printing Support
 

@@ -68,7 +68,7 @@ namespace PurplePen.Tests
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
             g.Clear(Color.White);
-            punchesRenderer.Draw(g, 0, 0, 0, punchesRenderer.Boxes.Height);
+            punchesRenderer.Draw(new GDIPlus_GraphicsTarget(g), 0, 0, 0, punchesRenderer.Boxes.Height);
 
             g.Dispose();
 
