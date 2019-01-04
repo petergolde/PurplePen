@@ -2121,7 +2121,7 @@ namespace PurplePen
         {
             // Initialize dialog
             // CONSIDER: shouldn't have GetEventDB here! Do something different.
-            PrintDescriptions printDescDialog = new PrintDescriptions(controller.GetEventDB());
+            PrintDescriptions printDescDialog = new PrintDescriptions(controller.GetEventDB(), false);
             printDescDialog.controller = controller;
             printDescDialog.PrintSettings = descPrintSettings;
 
@@ -2136,11 +2136,41 @@ namespace PurplePen
             printDescDialog.Dispose();
         }
 
+        private void createDescriptionPdfMenu_Click(object sender, EventArgs e)
+        {
+            // Initialize dialog
+            // CONSIDER: shouldn't have GetEventDB here! Do something different.
+            PrintDescriptions printDescDialog = new PrintDescriptions(controller.GetEventDB(), true);
+            printDescDialog.controller = controller;
+            printDescDialog.PrintSettings = descPrintSettings;
+
+            // show the dialog, on success, print.
+            if (printDescDialog.ShowDialog(this) == DialogResult.OK) {
+                // Figure out filename
+                SaveFileDialog savePdfDialog = new SaveFileDialog();
+                savePdfDialog.Filter = MiscText.PdfFilter;
+                savePdfDialog.FilterIndex = 1;
+                savePdfDialog.DefaultExt = "pdf";
+                savePdfDialog.OverwritePrompt = true;
+                savePdfDialog.InitialDirectory = Path.GetDirectoryName(controller.FileName);
+
+                if (savePdfDialog.ShowDialog(this) == DialogResult.OK) {
+                    // Save the settings for the next invocation of the dialog.
+                    descPrintSettings = printDescDialog.PrintSettings;
+                    controller.CreateDescriptionsPdf(descPrintSettings, savePdfDialog.FileName);
+                }
+            }
+
+            // And the dialog is done.
+            printDescDialog.Dispose();
+        }
+
+
         private void printPunchCardsMenu_Click(object sender, EventArgs e)
         {
             // Initialize dialog
             // CONSIDER: shouldn't have GetEventDB here! Do something different.
-            PrintPunches printPunchesDialog = new PrintPunches(controller.GetEventDB());
+            PrintPunches printPunchesDialog = new PrintPunches(controller.GetEventDB(), false);
             printPunchesDialog.controller = controller;
             printPunchesDialog.PrintSettings = punchPrintSettings;
             printPunchesDialog.PrintSettings.Count = 1;
@@ -2150,6 +2180,36 @@ namespace PurplePen
                 // Save the settings for the next invocation of the dialog.
                 punchPrintSettings = printPunchesDialog.PrintSettings;
                 controller.PrintPunches(punchPrintSettings, false);
+            }
+
+            // And the dialog is done.
+            printPunchesDialog.Dispose();
+        }
+
+        private void createPunchcardPdfMenu_Click(object sender, EventArgs e)
+        {
+            // Initialize dialog
+            // CONSIDER: shouldn't have GetEventDB here! Do something different.
+            PrintPunches printPunchesDialog = new PrintPunches(controller.GetEventDB(), true);
+            printPunchesDialog.controller = controller;
+            printPunchesDialog.PrintSettings = punchPrintSettings;
+            printPunchesDialog.PrintSettings.Count = 1;
+
+            // show the dialog, on success, print.
+            if (printPunchesDialog.ShowDialog(this) == DialogResult.OK) {
+                // Figure out filename
+                SaveFileDialog savePdfDialog = new SaveFileDialog();
+                savePdfDialog.Filter = MiscText.PdfFilter;
+                savePdfDialog.FilterIndex = 1;
+                savePdfDialog.DefaultExt = "pdf";
+                savePdfDialog.OverwritePrompt = true;
+                savePdfDialog.InitialDirectory = Path.GetDirectoryName(controller.FileName);
+
+                if (savePdfDialog.ShowDialog(this) == DialogResult.OK) {
+                    // Save the settings for the next invocation of the dialog.
+                    punchPrintSettings = printPunchesDialog.PrintSettings;
+                    controller.CreatePunchesPdf(punchPrintSettings, savePdfDialog.FileName);
+                }
             }
 
             // And the dialog is done.

@@ -610,4 +610,10 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="CannotCreateImageFiles" xml:space="preserve">
     <value>Cannot create image files for the following reason:</value>
   </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Create PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF File|*.pdf</value>
+  </data>
 </root>

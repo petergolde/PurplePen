@@ -601,6 +601,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create PDF.
+        /// </summary>
+        internal static string CreatePdf {
+            get {
+                return ResourceManager.GetString("CreatePdf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Creating {0}....
         /// </summary>
         internal static string CreatingFile {
@@ -1213,6 +1222,15 @@ namespace PurplePen {
         internal static string PdfConverterNotFound {
             get {
                 return ResourceManager.GetString("PdfConverterNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PDF File|*.pdf.
+        /// </summary>
+        internal static string PdfFilter {
+            get {
+                return ResourceManager.GetString("PdfFilter", resourceCulture);
             }
         }
         

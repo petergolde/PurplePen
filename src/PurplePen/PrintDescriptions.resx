@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+  <data name="outputPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -154,7 +154,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;marginChange.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;marginChange.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -184,7 +184,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;paperSize.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;paperSize.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -214,7 +214,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;paperSizeLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;paperSizeLabel.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -244,7 +244,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;margins.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;margins.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -274,7 +274,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;marginsLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;marginsLabel.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -304,7 +304,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;orientation.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;orientation.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -334,7 +334,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;orientationLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;orientationLabel.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -364,7 +364,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printerName.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;printerName.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -403,7 +403,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printerChange.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;printerChange.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -433,39 +433,39 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;printerLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>outputPanel</value>
   </data>
   <data name="&gt;&gt;printerLabel.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="outputPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="outputPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 19</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+  <data name="outputPanel.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="outputPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>492, 83</value>
   </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="outputPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="&gt;&gt;outputPanel.Name" xml:space="preserve">
+    <value>outputPanel</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;outputPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;outputPanel.Parent" xml:space="preserve">
     <value>printerGroup</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;outputPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+  <data name="outputPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="marginChange" Row="2" RowSpan="2" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="paperSize" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="paperSizeLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="margins" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="marginsLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="orientation" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="orientationLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="printerName" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="printerChange" Row="0" RowSpan="2" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="printerLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,25,Percent,25,Percent,25,Percent,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="printerGroup.Location" type="System.Drawing.Point, System.Drawing">
@@ -802,7 +802,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=3.0.0.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.1.5.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -1042,6 +1042,6 @@
     <value>PrintDescriptions</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=3.0.0.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=3.1.5.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -1231,7 +1231,20 @@ namespace PurplePen
             return success;
         }
 
-        // Print or print preview the descriptions. Returns success or failure; any errors are already reported to the user.
+        // Create a PDF for descriptions. Returns success or failure; any errors are already reported to the user.
+        public bool CreateDescriptionsPdf(DescriptionPrintSettings descriptionPrintSettings, string pathName)
+        {
+            bool success = HandleExceptions(
+                delegate {
+                    DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, this, descriptionPrintSettings);
+                    descriptionPrinter.PrintToPdf(pathName, false);
+                },
+                MiscText.CannotCreatePdfs);
+
+            return success;
+        }
+
+        // Print or print preview punch cards. Returns success or failure; any errors are already reported to the user.
         public bool PrintPunches(PunchPrintSettings punchPrintSettings, bool preview)
         {
             bool success = HandleExceptions(
@@ -1243,6 +1256,19 @@ namespace PurplePen
                         punchPrinter.Print();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));
+
+            return success;
+        }
+
+        // Create PDF for punch cards. Returns success or failure; any errors are already reported to the user.
+        public bool CreatePunchesPdf(PunchPrintSettings punchPrintSettings, string pathName)
+        {
+            bool success = HandleExceptions(
+                delegate {
+                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, this, punchPrintSettings);
+                    punchPrinter.PrintToPdf(pathName, false);
+                },
+                MiscText.CannotCreatePdfs);
 
             return success;
         }

@@ -49,6 +49,7 @@ namespace PurplePen
     {
         DescriptionPrintSettings settings;
         internal Controller controller;
+        readonly bool isPdfCreation = false;
 
         public DescriptionPrintSettings PrintSettings
         {
@@ -64,10 +65,21 @@ namespace PurplePen
         }
 
         // CONSIDER: shouldn't take an eventDB. Should instead take a pair of CourseViewData/name or some such.
-        public PrintDescriptions(EventDB eventDB)
+        public PrintDescriptions(EventDB eventDB, bool isPdfCreation)
         {
+            this.isPdfCreation = isPdfCreation;
             InitializeComponent();
             courseSelector.EventDB = eventDB;
+
+            if (isPdfCreation) {
+                printerLabel.Visible = printerName.Visible = printerChange.Visible = false;
+                printButton.Text = MiscText.CreatePdf;
+                this.Text = MiscText.CreatePdf;
+                this.HelpTopic = "FileCreatePdfDescriptions.htm";
+                foreach (Control c in outputPanel.Controls) {
+                    outputPanel.SetRow(c, outputPanel.GetRow(c) - 1);
+                }
+            }
         }
 
         // Update the dialog with information from the settings.

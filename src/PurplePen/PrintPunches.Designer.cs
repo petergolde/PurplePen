@@ -63,7 +63,7 @@ namespace PurplePen
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintPunches));
             this.printerGroup = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.outputPanel = new System.Windows.Forms.TableLayoutPanel();
             this.marginChange = new System.Windows.Forms.Button();
             this.paperSize = new System.Windows.Forms.Label();
             this.paperSizeLabel = new System.Windows.Forms.Label();
@@ -92,7 +92,7 @@ namespace PurplePen
             this.descriptionsLabel = new System.Windows.Forms.Label();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printerGroup.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.outputPanel.SuspendLayout();
             this.layoutGroup.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.boxSizeUpDown)).BeginInit();
@@ -104,31 +104,31 @@ namespace PurplePen
             // 
             // printerGroup
             // 
-            this.printerGroup.Controls.Add(this.tableLayoutPanel1);
+            this.printerGroup.Controls.Add(this.outputPanel);
             resources.ApplyResources(this.printerGroup, "printerGroup");
             this.printerGroup.Name = "printerGroup";
             this.printerGroup.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // outputPanel
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.marginChange, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.paperSize, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.paperSizeLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.margins, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.marginsLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.orientation, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.orientationLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.printerName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.printerChange, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.printerLabel, 0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            resources.ApplyResources(this.outputPanel, "outputPanel");
+            this.outputPanel.Controls.Add(this.marginChange, 2, 2);
+            this.outputPanel.Controls.Add(this.paperSize, 1, 1);
+            this.outputPanel.Controls.Add(this.paperSizeLabel, 0, 1);
+            this.outputPanel.Controls.Add(this.margins, 1, 3);
+            this.outputPanel.Controls.Add(this.marginsLabel, 0, 3);
+            this.outputPanel.Controls.Add(this.orientation, 1, 2);
+            this.outputPanel.Controls.Add(this.orientationLabel, 0, 2);
+            this.outputPanel.Controls.Add(this.printerName, 1, 0);
+            this.outputPanel.Controls.Add(this.printerChange, 2, 0);
+            this.outputPanel.Controls.Add(this.printerLabel, 0, 0);
+            this.outputPanel.Name = "outputPanel";
             // 
             // marginChange
             // 
             resources.ApplyResources(this.marginChange, "marginChange");
             this.marginChange.Name = "marginChange";
-            this.tableLayoutPanel1.SetRowSpan(this.marginChange, 2);
+            this.outputPanel.SetRowSpan(this.marginChange, 2);
             this.marginChange.UseVisualStyleBackColor = true;
             this.marginChange.Click += new System.EventHandler(this.marginChange_Click);
             // 
@@ -171,7 +171,7 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.printerChange, "printerChange");
             this.printerChange.Name = "printerChange";
-            this.tableLayoutPanel1.SetRowSpan(this.printerChange, 2);
+            this.outputPanel.SetRowSpan(this.printerChange, 2);
             this.printerChange.UseVisualStyleBackColor = true;
             this.printerChange.Click += new System.EventHandler(this.printerChange_Click);
             // 
@@ -265,6 +265,7 @@ namespace PurplePen
             // 
             // courseSelector
             // 
+            this.courseSelector.Filter = null;
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
@@ -334,8 +335,8 @@ namespace PurplePen
             this.HelpTopic = "FilePrintPunchCards.htm";
             this.Name = "PrintPunches";
             this.printerGroup.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.outputPanel.ResumeLayout(false);
+            this.outputPanel.PerformLayout();
             this.layoutGroup.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -362,7 +363,7 @@ namespace PurplePen
         private System.Windows.Forms.GroupBox copiesGroupBox;
         private CourseSelector courseSelector;
         private System.Windows.Forms.PrintDialog printDialog;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel outputPanel;
         private System.Windows.Forms.Button marginChange;
         private System.Windows.Forms.Label paperSize;
         private System.Windows.Forms.Label paperSizeLabel;
