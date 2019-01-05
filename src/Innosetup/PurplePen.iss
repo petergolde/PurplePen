@@ -163,6 +163,16 @@ Source: "{#BuildDir}\pl\*"; DestDir: "{app}\pl"; Flags: ignoreversion recursesub
 Source: "{#BuildDir}\ro\*"; DestDir: "{app}\ro"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\sv\*"; DestDir: "{app}\sv"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\zh-CN\*"; DestDir: "{app}\zh-CN"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Italic"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold Italic"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Italic"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold Italic"; Flags: onlyifdoesntexist
+
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
