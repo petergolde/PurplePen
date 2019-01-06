@@ -183,7 +183,7 @@ Symbol definition for '810.2'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial Narrow, FontColor=0, FontSize=76
+  FontName=Roboto Condensed, FontColor=0, FontSize=76
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -220,7 +220,7 @@ Symbol definition for '810.3'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial, FontColor=0, FontSize=76
+  FontName=Roboto, FontColor=0, FontSize=76
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -257,8 +257,8 @@ Symbol definition for '810.4'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial Narrow, FontColor=0, FontSize=76
-  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  FontName=Roboto Condensed, FontColor=0, FontSize=76
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
   nTabs=0: 
@@ -294,7 +294,7 @@ Symbol definition for '810.5'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial, FontColor=0, FontSize=60
+  FontName=Roboto, FontColor=0, FontSize=60
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -331,7 +331,7 @@ Symbol definition for '810.6'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial Narrow, FontColor=0, FontSize=54
+  FontName=Roboto Condensed, FontColor=0, FontSize=54
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -368,7 +368,7 @@ Symbol definition for '810.7'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial Narrow, FontColor=0, FontSize=76
+  FontName=Roboto Condensed, FontColor=0, FontSize=76
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -405,7 +405,7 @@ Symbol definition for '810.8'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial Narrow, FontColor=0, FontSize=52
+  FontName=Roboto Condensed, FontColor=0, FontSize=52
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -442,7 +442,7 @@ Symbol definition for '810.9'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial, FontColor=0, FontSize=63
+  FontName=Roboto, FontColor=0, FontSize=63
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -479,7 +479,7 @@ Symbol definition for '811.0'
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial Narrow, FontColor=0, FontSize=67
+  FontName=Roboto Condensed, FontColor=0, FontSize=67
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -697,7 +697,7 @@ Symbol definition for '703.0'
     F F F F F F F F D D D D D D D D F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial, FontColor=11, FontSize=174
+  FontName=Roboto, FontColor=11, FontSize=174
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -746,7 +746,7 @@ Object Sym=810.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Marymoor WIOL 2
-    (148.83,51.60) (182.82,51.60) (182.82,54.84) (148.83,54.84) 
+    (148.83,51.72) (182.82,51.72) (182.82,55.07) (148.83,55.07) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -795,7 +795,7 @@ Object Sym=810.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Course 3
-    (148.83,47.35) (161.57,47.35) (161.57,50.59) (148.83,50.59) 
+    (148.83,47.47) (161.57,47.47) (161.57,50.82) (148.83,50.82) 
 
 Index entry Sym=810.2
 Object Sym=810.2 Otp=5
@@ -804,7 +804,7 @@ Object Sym=810.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2.9 km
-    (161.57,47.35) (174.32,47.35) (174.32,50.59) (161.57,50.59) 
+    (161.57,47.47) (174.32,47.47) (174.32,50.82) (161.57,50.82) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -853,7 +853,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Start: clearing
-    (157.96,43.49) (182.18,43.49) (182.18,45.70) (157.96,45.70) 
+    (157.96,43.61) (182.18,43.61) (182.18,45.89) (157.96,45.89) 
 
 Index entry Sym=800.0
 Object Sym=800 Otp=1
@@ -910,7 +910,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=N side of thicket
-    (157.96,39.24) (182.18,39.24) (182.18,41.45) (157.96,41.45) 
+    (157.96,39.36) (182.18,39.36) (182.18,41.64) (157.96,41.64) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -919,7 +919,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (148.83,38.74) (153.08,38.74) (153.08,41.99) (148.83,41.99) 
+    (148.83,38.98) (153.08,38.98) (153.08,42.32) (148.83,42.32) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -928,7 +928,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=59
-    (153.08,38.85) (157.32,38.85) (157.32,42.09) (153.08,42.09) 
+    (153.08,38.98) (157.32,38.98) (157.32,42.32) (153.08,42.32) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -977,7 +977,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=SW side of lone tree
-    (157.96,34.99) (182.18,34.99) (182.18,37.21) (157.96,37.21) 
+    (157.96,35.11) (182.18,35.11) (182.18,37.39) (157.96,37.39) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -986,7 +986,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (148.83,34.50) (153.08,34.50) (153.08,37.74) (148.83,37.74) 
+    (148.83,34.73) (153.08,34.73) (153.08,38.07) (148.83,38.07) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -995,7 +995,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=53
-    (153.08,34.60) (157.32,34.60) (157.32,37.84) (153.08,37.84) 
+    (153.08,34.73) (157.32,34.73) (157.32,38.07) (153.08,38.07) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1044,7 +1044,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=NW edge of thicket
-    (157.96,30.75) (182.18,30.75) (182.18,32.96) (157.96,32.96) 
+    (157.96,30.86) (182.18,30.86) (182.18,33.14) (157.96,33.14) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1053,7 +1053,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (148.83,30.25) (153.08,30.25) (153.08,33.49) (148.83,33.49) 
+    (148.83,30.48) (153.08,30.48) (153.08,33.82) (148.83,33.82) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1062,7 +1062,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=41
-    (153.08,30.35) (157.32,30.35) (157.32,33.59) (153.08,33.59) 
+    (153.08,30.48) (157.32,30.48) (157.32,33.82) (153.08,33.82) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -1111,7 +1111,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=NW outside corner of fence
-    (157.96,26.50) (182.18,26.50) (182.18,28.71) (157.96,28.71) 
+    (157.96,26.61) (182.18,26.61) (182.18,28.89) (157.96,28.89) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1120,7 +1120,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=4
-    (148.83,26.00) (153.08,26.00) (153.08,29.24) (148.83,29.24) 
+    (148.83,26.23) (153.08,26.23) (153.08,29.57) (148.83,29.57) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1129,7 +1129,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=72
-    (153.08,26.11) (157.32,26.11) (157.32,29.35) (153.08,29.35) 
+    (153.08,26.23) (157.32,26.23) (157.32,29.57) (153.08,29.57) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1178,7 +1178,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=NW side of thicket
-    (157.96,22.25) (182.18,22.25) (182.18,24.46) (157.96,24.46) 
+    (157.96,22.36) (182.18,22.36) (182.18,24.65) (157.96,24.65) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1187,7 +1187,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=5
-    (148.83,21.75) (153.08,21.75) (153.08,24.99) (148.83,24.99) 
+    (148.83,21.98) (153.08,21.98) (153.08,25.33) (148.83,25.33) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1196,7 +1196,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=47
-    (153.08,21.86) (157.32,21.86) (157.32,25.10) (153.08,25.10) 
+    (153.08,21.98) (157.32,21.98) (157.32,25.33) (153.08,25.33) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1245,7 +1245,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=S side of lone tree
-    (157.96,18.00) (182.18,18.00) (182.18,20.21) (157.96,20.21) 
+    (157.96,18.11) (182.18,18.11) (182.18,20.40) (157.96,20.40) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1254,7 +1254,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=6
-    (148.83,17.50) (153.08,17.50) (153.08,20.74) (148.83,20.74) 
+    (148.83,17.73) (153.08,17.73) (153.08,21.08) (148.83,21.08) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1263,7 +1263,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=71
-    (153.08,17.61) (157.32,17.61) (157.32,20.85) (153.08,20.85) 
+    (153.08,17.73) (157.32,17.73) (157.32,21.08) (153.08,21.08) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -1312,7 +1312,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Ditch junction
-    (157.96,13.75) (182.18,13.75) (182.18,15.96) (157.96,15.96) 
+    (157.96,13.87) (182.18,13.87) (182.18,16.15) (157.96,16.15) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1321,7 +1321,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=7
-    (148.83,13.25) (153.08,13.25) (153.08,16.50) (148.83,16.50) 
+    (148.83,13.48) (153.08,13.48) (153.08,16.83) (148.83,16.83) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1330,7 +1330,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=77
-    (153.08,13.36) (157.32,13.36) (157.32,16.60) (153.08,16.60) 
+    (153.08,13.48) (157.32,13.48) (157.32,16.83) (153.08,16.83) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1379,7 +1379,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=SW outside corner of building
-    (157.96,9.50) (182.18,9.50) (182.18,11.71) (157.96,11.71) 
+    (157.96,9.62) (182.18,9.62) (182.18,11.90) (157.96,11.90) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1388,7 +1388,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=8
-    (148.83,9.00) (153.08,9.00) (153.08,12.25) (148.83,12.25) 
+    (148.83,9.23) (153.08,9.23) (153.08,12.58) (148.83,12.58) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1397,7 +1397,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=78
-    (153.08,9.11) (157.32,9.11) (157.32,12.35) (153.08,12.35) 
+    (153.08,9.23) (157.32,9.23) (157.32,12.58) (153.08,12.58) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1446,7 +1446,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=E ditch and thicket crossing
-    (157.96,5.25) (182.18,5.25) (182.18,7.47) (157.96,7.47) 
+    (157.96,5.37) (182.18,5.37) (182.18,7.65) (157.96,7.65) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1455,7 +1455,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=9
-    (148.83,4.75) (153.08,4.75) (153.08,8.00) (148.83,8.00) 
+    (148.83,4.99) (153.08,4.99) (153.08,8.33) (148.83,8.33) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1464,7 +1464,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=43
-    (153.08,4.86) (157.32,4.86) (157.32,8.10) (153.08,8.10) 
+    (153.08,4.99) (157.32,4.99) (157.32,8.33) (153.08,8.33) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -1513,7 +1513,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Path and ditch crossing
-    (157.96,1.01) (182.18,1.01) (182.18,3.22) (157.96,3.22) 
+    (157.96,1.12) (182.18,1.12) (182.18,3.40) (157.96,3.40) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1522,7 +1522,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=10
-    (148.83,0.51) (153.08,0.51) (153.08,3.75) (148.83,3.75) 
+    (148.83,0.74) (153.08,0.74) (153.08,4.08) (148.83,4.08) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1531,7 +1531,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=75
-    (153.08,0.61) (157.32,0.61) (157.32,3.85) (153.08,3.85) 
+    (153.08,0.74) (157.32,0.74) (157.32,4.08) (153.08,4.08) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1580,7 +1580,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=SW tip of thicket
-    (157.96,-3.24) (182.18,-3.24) (182.18,-1.03) (157.96,-1.03) 
+    (157.96,-3.13) (182.18,-3.13) (182.18,-0.85) (157.96,-0.85) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1589,7 +1589,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=11
-    (148.83,-3.74) (153.08,-3.74) (153.08,-0.50) (148.83,-0.50) 
+    (148.83,-3.51) (153.08,-3.51) (153.08,-0.17) (148.83,-0.17) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1598,7 +1598,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=45
-    (153.08,-3.63) (157.32,-3.63) (157.32,-0.39) (153.08,-0.39) 
+    (153.08,-3.51) (157.32,-3.51) (157.32,-0.17) (153.08,-0.17) 
 
 Index entry Sym=810.1
 Object Sym=810.1 Otp=2
@@ -1647,7 +1647,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=S inside corner of forest corner
-    (157.96,-7.49) (182.18,-7.49) (182.18,-5.28) (157.96,-5.28) 
+    (157.96,-7.38) (182.18,-7.38) (182.18,-5.09) (157.96,-5.09) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1656,7 +1656,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=12
-    (148.83,-7.99) (153.08,-7.99) (153.08,-4.75) (148.83,-4.75) 
+    (148.83,-7.76) (153.08,-7.76) (153.08,-4.41) (148.83,-4.41) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1665,7 +1665,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=80
-    (153.08,-7.88) (157.32,-7.88) (157.32,-4.64) (153.08,-4.64) 
+    (153.08,-7.76) (157.32,-7.76) (157.32,-4.41) (153.08,-4.41) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -1714,7 +1714,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=E outside corner of forest corner
-    (157.96,-11.74) (182.18,-11.74) (182.18,-9.53) (157.96,-9.53) 
+    (157.96,-11.63) (182.18,-11.63) (182.18,-9.34) (157.96,-9.34) 
 
 Index entry Sym=810.3
 Object Sym=810.3 Otp=5
@@ -1723,7 +1723,7 @@ Object Sym=810.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=13
-    (148.83,-12.24) (153.08,-12.24) (153.08,-9.00) (148.83,-9.00) 
+    (148.83,-12.01) (153.08,-12.01) (153.08,-8.66) (148.83,-8.66) 
 
 Index entry Sym=810.4
 Object Sym=810.4 Otp=5
@@ -1732,7 +1732,7 @@ Object Sym=810.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=38
-    (153.08,-12.13) (157.32,-12.13) (157.32,-8.89) (153.08,-8.89) 
+    (153.08,-12.01) (157.32,-12.01) (157.32,-8.66) (153.08,-8.66) 
 
 Index entry Sym=810.0
 Object Sym=810 Otp=2
@@ -1773,7 +1773,7 @@ Object Sym=810.8 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Navigate 60 m to finish
-    (149.47,-15.99) (182.18,-15.99) (182.18,-13.78) (149.47,-13.78) 
+    (149.47,-15.87) (182.18,-15.87) (182.18,-13.59) (149.47,-13.59) 
 
 Index entry Sym=701.0
 Object Sym=701 Otp=1
@@ -2014,8 +2014,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (52.00,-36.50) (52.00,-37.79) (55.41,-37.79) (55.41,-30.37) 
-    (52.00,-30.37) 
+    (51.99,-36.54) (51.99,-38.08) (55.43,-38.08) (55.43,-30.42) 
+    (51.99,-30.42) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2024,8 +2024,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (17.38,-16.50) (17.38,-17.80) (20.79,-17.80) (20.79,-10.37) 
-    (17.38,-10.37) 
+    (17.32,-16.55) (17.32,-18.08) (20.76,-18.08) (20.76,-10.42) 
+    (17.32,-10.42) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2034,8 +2034,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (26.78,11.51) (26.78,10.21) (30.19,10.21) (30.19,17.63) 
-    (26.78,17.63) 
+    (26.77,11.51) (26.77,9.98) (30.21,9.98) (30.21,17.63) (26.77,17.63) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2044,7 +2043,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=4
-    (-8.39,2.92) (-8.39,1.62) (-4.99,1.62) (-4.99,9.05) (-8.39,9.05) 
+    (-8.45,2.86) (-8.45,1.33) (-5.01,1.33) (-5.01,8.99) (-8.45,8.99) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2053,7 +2052,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=5
-    (-3.19,36.11) (-3.19,34.81) (0.22,34.81) (0.22,42.24) (-3.19,42.24) 
+    (-3.22,36.12) (-3.22,34.59) (0.22,34.59) (0.22,42.25) (-3.22,42.25) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2062,8 +2061,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=6
-    (40.39,22.70) (40.39,21.40) (43.79,21.40) (43.79,28.83) 
-    (40.39,28.83) 
+    (40.38,22.70) (40.38,21.17) (43.82,21.17) (43.82,28.83) 
+    (40.38,28.83) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2072,7 +2071,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=7
-    (75.50,9.70) (75.50,8.41) (78.91,8.41) (78.91,15.83) (75.50,15.83) 
+    (75.49,9.66) (75.49,8.12) (78.93,8.12) (78.93,15.78) (75.49,15.78) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2081,8 +2080,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=8
-    (99.06,22.59) (99.06,21.29) (102.46,21.29) (102.46,28.72) 
-    (99.06,28.72) 
+    (99.09,22.55) (99.09,21.01) (102.53,21.01) (102.53,28.67) 
+    (99.09,28.67) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2091,8 +2090,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=9
-    (82.78,39.81) (82.78,38.51) (86.19,38.51) (86.19,45.93) 
-    (82.78,45.93) 
+    (82.77,39.81) (82.77,38.28) (86.21,38.28) (86.21,45.93) 
+    (82.77,45.93) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2101,8 +2100,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=10
-    (66.07,32.31) (66.07,31.01) (72.88,31.01) (72.88,38.43) 
-    (66.07,38.43) 
+    (66.03,32.31) (66.03,30.78) (72.91,30.78) (72.91,38.43) 
+    (66.03,38.43) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2111,8 +2110,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=11
-    (48.24,30.84) (48.24,29.54) (55.06,29.54) (55.06,36.97) 
-    (48.24,36.97) 
+    (48.19,30.85) (48.19,29.32) (55.07,29.32) (55.07,36.98) 
+    (48.19,36.98) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2121,7 +2120,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=12
-    (34.83,-2.75) (34.83,-4.05) (41.65,-4.05) (41.65,3.38) (34.83,3.38) 
+    (34.79,-2.80) (34.79,-4.33) (41.67,-4.33) (41.67,3.33) (34.79,3.33) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -2130,5 +2129,5 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=13
-    (53.83,6.86) (53.83,5.56) (60.65,5.56) (60.65,12.99) (53.83,12.99) 
+    (53.86,6.90) (53.86,5.37) (60.75,5.37) (60.75,13.03) (53.86,13.03) 
 

@@ -217,7 +217,7 @@ Symbol definition for '703.0'
     7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=11, FontSize=63
+  FontName=Roboto, FontColor=11, FontSize=63
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -325,7 +325,7 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (128.12,83.27) (128.12,82.80) (129.36,82.80) (129.36,85.50) 
+    (128.12,83.27) (128.12,82.72) (129.37,82.72) (129.37,85.50) 
     (128.12,85.50) 
 
 Index entry Sym=70300.0
@@ -337,8 +337,8 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (101.27,85.03) (101.27,84.56) (102.50,84.56) (102.50,87.26) 
-    (101.27,87.26) 
+    (101.25,85.04) (101.25,84.48) (102.50,84.48) (102.50,87.26) 
+    (101.25,87.26) 
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
@@ -349,8 +349,8 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (94.76,65.32) (94.76,64.85) (96.00,64.85) (96.00,67.55) 
-    (94.76,67.55) 
+    (94.74,65.30) (94.74,64.74) (95.99,64.74) (95.99,67.53) 
+    (94.74,67.53) 
 
 String of type 9
   ObjIndex=0

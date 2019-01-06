@@ -152,7 +152,7 @@ Symbol definition for '810.2'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=92
+  FontName=Roboto Condensed, FontColor=0, FontSize=92
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=9, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -190,7 +190,7 @@ Symbol definition for '810.3'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=0, FontSize=92
+  FontName=Roboto, FontColor=0, FontSize=92
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=9, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -228,8 +228,8 @@ Symbol definition for '810.4'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=92
-  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  FontName=Roboto Condensed, FontColor=0, FontSize=92
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=9, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
   nTabs=0: 
@@ -266,7 +266,7 @@ Symbol definition for '810.5'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=0, FontSize=73
+  FontName=Roboto, FontColor=0, FontSize=73
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=9, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -304,7 +304,7 @@ Symbol definition for '810.6'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=66
+  FontName=Roboto Condensed, FontColor=0, FontSize=66
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=9, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -342,7 +342,7 @@ Symbol definition for '810.7'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=92
+  FontName=Roboto Condensed, FontColor=0, FontSize=92
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=9, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -380,7 +380,7 @@ Symbol definition for '810.8'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=63
+  FontName=Roboto Condensed, FontColor=0, FontSize=63
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=8, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -418,7 +418,7 @@ Symbol definition for '810.9'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=0, FontSize=76
+  FontName=Roboto, FontColor=0, FontSize=76
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=8, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -456,7 +456,7 @@ Symbol definition for '811.0'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=82
+  FontName=Roboto Condensed, FontColor=0, FontSize=82
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=8, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -1438,7 +1438,7 @@ Symbol definition for '720.0'
     7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=11, FontSize=118
+  FontName=Roboto Condensed, FontColor=11, FontSize=118
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=8, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -1497,7 +1497,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Madrona Permanent
-    (79.21,-191.63) (120.59,-191.63) (120.59,-187.69) (79.21,-187.69) 
+    (79.21,-191.48) (120.59,-191.48) (120.59,-187.41) (79.21,-187.41) 
 
 Index entry Sym=81000.0
   ObjType=2  Rex=0  Status=1
@@ -1548,7 +1548,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=All controls
-    (79.21,-196.80) (94.73,-196.80) (94.73,-192.86) (79.21,-192.86) 
+    (79.21,-196.65) (94.73,-196.65) (94.73,-192.58) (79.21,-192.58) 
 
 Index entry Sym=81000.2
   ObjType=5  Rex=0  Status=1
@@ -1559,7 +1559,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=18 controls
-    (94.73,-196.80) (120.59,-196.80) (120.59,-192.86) (94.73,-192.86) 
+    (94.73,-196.65) (120.59,-196.65) (120.59,-192.58) (94.73,-192.58) 
 
 Index entry Sym=81000.0
   ObjType=2  Rex=0  Status=1
@@ -1780,7 +1780,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (84.38,-207.15) (89.55,-207.15) (89.55,-203.20) (84.38,-203.20) 
+    (84.38,-207.00) (89.55,-207.00) (89.55,-202.93) (84.38,-202.93) 
 
 Index entry Sym=80000.1
   ObjType=1  Rex=0  Status=1
@@ -1901,7 +1901,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (84.38,-212.32) (89.55,-212.32) (89.55,-208.38) (84.38,-208.38) 
+    (84.38,-212.17) (89.55,-212.17) (89.55,-208.10) (84.38,-208.10) 
 
 Index entry Sym=80000.2
   ObjType=1  Rex=0  Status=1
@@ -2022,7 +2022,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (84.38,-217.49) (89.55,-217.49) (89.55,-213.55) (84.38,-213.55) 
+    (84.38,-217.34) (89.55,-217.34) (89.55,-213.27) (84.38,-213.27) 
 
 Index entry Sym=80000.1
   ObjType=1  Rex=0  Status=1
@@ -2163,7 +2163,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=4
-    (84.38,-222.67) (89.55,-222.67) (89.55,-218.72) (84.38,-218.72) 
+    (84.38,-222.52) (89.55,-222.52) (89.55,-218.44) (84.38,-218.44) 
 
 Index entry Sym=80000.4
   ObjType=1  Rex=0  Status=1
@@ -2294,7 +2294,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=5
-    (84.38,-227.84) (89.55,-227.84) (89.55,-223.89) (84.38,-223.89) 
+    (84.38,-227.69) (89.55,-227.69) (89.55,-223.61) (84.38,-223.61) 
 
 Index entry Sym=80000.6
   ObjType=1  Rex=0  Status=1
@@ -2425,7 +2425,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=6
-    (84.38,-233.01) (89.55,-233.01) (89.55,-229.07) (84.38,-229.07) 
+    (84.38,-232.86) (89.55,-232.86) (89.55,-228.79) (84.38,-228.79) 
 
 Index entry Sym=80000.8
   ObjType=1  Rex=0  Status=1
@@ -2556,7 +2556,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=7
-    (84.38,-238.18) (89.55,-238.18) (89.55,-234.24) (84.38,-234.24) 
+    (84.38,-238.03) (89.55,-238.03) (89.55,-233.96) (84.38,-233.96) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -2687,7 +2687,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=8
-    (84.38,-243.36) (89.55,-243.36) (89.55,-239.41) (84.38,-239.41) 
+    (84.38,-243.20) (89.55,-243.20) (89.55,-239.13) (84.38,-239.13) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -2818,7 +2818,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=9
-    (84.38,-248.53) (89.55,-248.53) (89.55,-244.58) (84.38,-244.58) 
+    (84.38,-248.38) (89.55,-248.38) (89.55,-244.30) (84.38,-244.30) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -2949,7 +2949,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=10
-    (84.38,-253.70) (89.55,-253.70) (89.55,-249.76) (84.38,-249.76) 
+    (84.38,-253.55) (89.55,-253.55) (89.55,-249.48) (84.38,-249.48) 
 
 Index entry Sym=80100.3
   ObjType=1  Rex=0  Status=1
@@ -3070,7 +3070,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=11
-    (84.38,-258.87) (89.55,-258.87) (89.55,-254.93) (84.38,-254.93) 
+    (84.38,-258.72) (89.55,-258.72) (89.55,-254.65) (84.38,-254.65) 
 
 Index entry Sym=80100.3
   ObjType=1  Rex=0  Status=1
@@ -3191,7 +3191,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=12
-    (84.38,-264.04) (89.55,-264.04) (89.55,-260.10) (84.38,-260.10) 
+    (84.38,-263.89) (89.55,-263.89) (89.55,-259.82) (84.38,-259.82) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -3322,7 +3322,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=13
-    (84.38,-269.22) (89.55,-269.22) (89.55,-265.27) (84.38,-265.27) 
+    (84.38,-269.07) (89.55,-269.07) (89.55,-264.99) (84.38,-264.99) 
 
 Index entry Sym=80100.4
   ObjType=1  Rex=0  Status=1
@@ -3453,7 +3453,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=14
-    (84.38,-274.39) (89.55,-274.39) (89.55,-270.44) (84.38,-270.44) 
+    (84.38,-274.24) (89.55,-274.24) (89.55,-270.17) (84.38,-270.17) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -3584,7 +3584,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=15
-    (84.38,-279.56) (89.55,-279.56) (89.55,-275.62) (84.38,-275.62) 
+    (84.38,-279.41) (89.55,-279.41) (89.55,-275.34) (84.38,-275.34) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -3715,7 +3715,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=16
-    (84.38,-284.73) (89.55,-284.73) (89.55,-280.79) (84.38,-280.79) 
+    (84.38,-284.58) (89.55,-284.58) (89.55,-280.51) (84.38,-280.51) 
 
 Index entry Sym=80100.6
   ObjType=1  Rex=0  Status=1
@@ -3846,7 +3846,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=17
-    (84.38,-289.91) (89.55,-289.91) (89.55,-285.96) (84.38,-285.96) 
+    (84.38,-289.76) (89.55,-289.76) (89.55,-285.68) (84.38,-285.68) 
 
 Index entry Sym=80100.0
   ObjType=1  Rex=0  Status=1
@@ -3977,7 +3977,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=18
-    (84.38,-295.08) (89.55,-295.08) (89.55,-291.13) (84.38,-291.13) 
+    (84.38,-294.93) (89.55,-294.93) (89.55,-290.85) (84.38,-290.85) 
 
 Index entry Sym=80100.8
   ObjType=1  Rex=0  Status=1
@@ -4258,8 +4258,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (66.10,-36.28) (66.10,-40.15) (68.00,-40.15) (68.00,-35.09) 
-    (66.10,-35.09) 
+    (66.07,-36.21) (66.07,-40.23) (68.18,-40.23) (68.18,-35.00) 
+    (66.07,-35.00) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4270,8 +4270,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (86.07,-90.13) (86.07,-94.01) (87.97,-94.01) (87.97,-88.95) 
-    (86.07,-88.95) 
+    (86.04,-90.06) (86.04,-94.08) (88.16,-94.08) (88.16,-88.86) 
+    (86.04,-88.86) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4282,8 +4282,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (107.04,-124.29) (107.04,-128.17) (108.95,-128.17) (108.95,-123.11) 
-    (107.04,-123.11) 
+    (107.02,-124.22) (107.02,-128.24) (109.13,-128.24) (109.13,-123.02) 
+    (107.02,-123.02) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4294,8 +4294,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=4
-    (78.08,-156.05) (78.08,-159.92) (79.99,-159.92) (79.99,-154.86) 
-    (78.08,-154.86) 
+    (78.05,-155.98) (78.05,-159.99) (80.17,-159.99) (80.17,-154.77) 
+    (78.05,-154.77) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4306,8 +4306,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=5
-    (28.72,-174.81) (28.72,-178.68) (30.62,-178.68) (30.62,-173.62) 
-    (28.72,-173.62) 
+    (28.69,-174.74) (28.69,-178.76) (30.81,-178.76) (30.81,-173.53) 
+    (28.69,-173.53) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4318,8 +4318,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=6
-    (-11.41,-172.50) (-11.41,-176.37) (-9.50,-176.37) (-9.50,-171.31) 
-    (-11.41,-171.31) 
+    (-11.43,-172.43) (-11.43,-176.45) (-9.32,-176.45) (-9.32,-171.22) 
+    (-11.43,-171.22) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4330,8 +4330,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=7
-    (-8.33,-121.12) (-8.33,-124.99) (-6.42,-124.99) (-6.42,-119.93) 
-    (-8.33,-119.93) 
+    (-8.36,-121.05) (-8.36,-125.07) (-6.24,-125.07) (-6.24,-119.84) 
+    (-8.36,-119.84) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4342,8 +4342,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=8
-    (-29.59,-110.44) (-29.59,-114.31) (-27.69,-114.31) (-27.69,-109.25) 
-    (-29.59,-109.25) 
+    (-29.62,-110.37) (-29.62,-114.38) (-27.51,-114.38) (-27.51,-109.16) 
+    (-29.62,-109.16) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4354,8 +4354,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=9
-    (11.29,-87.56) (11.29,-91.43) (13.20,-91.43) (13.20,-86.37) 
-    (11.29,-86.37) 
+    (11.27,-87.49) (11.27,-91.51) (13.38,-91.51) (13.38,-86.28) 
+    (11.27,-86.28) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4366,8 +4366,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=10
-    (6.97,-66.50) (6.97,-70.37) (10.79,-70.37) (10.79,-65.31) 
-    (6.97,-65.31) 
+    (6.91,-66.39) (6.91,-70.41) (11.14,-70.41) (11.14,-65.18) 
+    (6.91,-65.18) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4378,8 +4378,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=11
-    (-20.53,-64.27) (-20.53,-68.14) (-16.72,-68.14) (-16.72,-63.08) 
-    (-20.53,-63.08) 
+    (-20.59,-64.16) (-20.59,-68.18) (-16.36,-68.18) (-16.36,-62.95) 
+    (-20.59,-62.95) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4390,8 +4390,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=12
-    (-61.99,-85.55) (-61.99,-89.42) (-58.18,-89.42) (-58.18,-84.36) 
-    (-61.99,-84.36) 
+    (-62.06,-85.44) (-62.06,-89.45) (-57.83,-89.45) (-57.83,-84.23) 
+    (-62.06,-84.23) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4402,8 +4402,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=13
-    (-64.68,-118.55) (-64.68,-122.42) (-60.87,-122.42) (-60.87,-117.36) 
-    (-64.68,-117.36) 
+    (-64.74,-118.44) (-64.74,-122.46) (-60.51,-122.46) (-60.51,-117.23) 
+    (-64.74,-117.23) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4414,8 +4414,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=14
-    (-74.69,-53.49) (-74.69,-57.36) (-70.88,-57.36) (-70.88,-52.30) 
-    (-74.69,-52.30) 
+    (-74.75,-53.38) (-74.75,-57.40) (-70.52,-57.40) (-70.52,-52.17) 
+    (-74.75,-52.17) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4426,8 +4426,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=15
-    (-32.26,-49.46) (-32.26,-53.33) (-28.45,-53.33) (-28.45,-48.27) 
-    (-32.26,-48.27) 
+    (-32.32,-49.35) (-32.32,-53.36) (-28.09,-53.36) (-28.09,-48.14) 
+    (-32.32,-48.14) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4438,8 +4438,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=16
-    (-30.91,-30.70) (-30.91,-34.57) (-27.10,-34.57) (-27.10,-29.51) 
-    (-30.91,-29.51) 
+    (-30.98,-30.59) (-30.98,-34.60) (-26.75,-34.60) (-26.75,-29.38) 
+    (-30.98,-29.38) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4450,8 +4450,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=17
-    (-7.26,-29.70) (-7.26,-33.57) (-3.45,-33.57) (-3.45,-28.51) 
-    (-7.26,-28.51) 
+    (-7.63,-29.59) (-7.63,-33.61) (-3.40,-33.61) (-3.40,-28.38) 
+    (-7.63,-28.38) 
 
 Index entry Sym=72000.0
   ObjType=4  Rex=0  Status=1
@@ -4462,8 +4462,8 @@ Object Sym=72000 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=18
-    (39.62,-21.74) (39.62,-25.62) (43.43,-25.62) (43.43,-20.56) 
-    (39.62,-20.56) 
+    (39.56,-21.63) (39.56,-25.65) (43.79,-25.65) (43.79,-20.43) 
+    (39.56,-20.43) 
 
 String of type 9
   ObjIndex=0

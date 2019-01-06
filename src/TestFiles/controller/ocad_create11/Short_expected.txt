@@ -246,7 +246,7 @@ Symbol definition for '703.0'
     F F F F F F F F D D D D D D D D F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
     F F F F F F F F F F F F F F F F F F F F F F 
-  FontName=Arial, FontColor=11, FontSize=158
+  FontName=Roboto, FontColor=11, FontSize=158
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -326,8 +326,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (131.41,113.48) (131.41,112.30) (134.50,112.30) (134.50,119.05) 
-    (131.41,119.05) 
+    (131.43,113.50) (131.43,112.11) (134.56,112.11) (134.56,119.07) 
+    (131.43,119.07) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -336,6 +336,6 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (63.24,125.91) (63.24,124.73) (66.34,124.73) (66.34,131.48) 
-    (63.24,131.48) 
+    (63.20,125.93) (63.20,124.54) (66.32,124.54) (66.32,131.50) 
+    (63.20,131.50) 
 

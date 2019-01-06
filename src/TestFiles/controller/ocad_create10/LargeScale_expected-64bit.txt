@@ -217,7 +217,7 @@ Symbol definition for '703.0'
     7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=11, FontSize=253
+  FontName=Roboto, FontColor=11, FontSize=253
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -325,8 +325,8 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (126.23,203.09) (126.23,201.20) (131.19,201.20) (131.19,212.00) 
-    (126.23,212.00) 
+    (126.28,203.10) (126.28,200.87) (131.29,200.87) (131.29,212.01) 
+    (126.28,212.01) 
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
@@ -337,8 +337,8 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (75.47,247.64) (75.47,245.76) (80.42,245.76) (80.42,256.56) 
-    (75.47,256.56) 
+    (75.43,247.65) (75.43,245.43) (80.43,245.43) (80.43,256.57) 
+    (75.43,256.57) 
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
@@ -349,8 +349,8 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (51.44,111.43) (51.44,109.54) (56.40,109.54) (56.40,120.34) 
-    (51.44,120.34) 
+    (51.34,111.37) (51.34,109.15) (56.34,109.15) (56.34,120.29) 
+    (51.34,120.29) 
 
 String of type 9
   ObjIndex=0

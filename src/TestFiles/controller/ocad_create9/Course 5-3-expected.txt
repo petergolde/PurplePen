@@ -234,7 +234,7 @@ Symbol definition for '810.2'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=103
+  FontName=Roboto Condensed, FontColor=0, FontSize=103
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -272,7 +272,7 @@ Symbol definition for '810.3'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=0, FontSize=103
+  FontName=Roboto, FontColor=0, FontSize=103
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -310,8 +310,8 @@ Symbol definition for '810.4'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=103
-  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  FontName=Roboto Condensed, FontColor=0, FontSize=103
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
   nTabs=0: 
@@ -348,7 +348,7 @@ Symbol definition for '810.5'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=0, FontSize=82
+  FontName=Roboto, FontColor=0, FontSize=82
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -386,7 +386,7 @@ Symbol definition for '810.6'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=74
+  FontName=Roboto Condensed, FontColor=0, FontSize=74
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -424,7 +424,7 @@ Symbol definition for '810.7'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=103
+  FontName=Roboto Condensed, FontColor=0, FontSize=103
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=1, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -462,7 +462,7 @@ Symbol definition for '810.8'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=71
+  FontName=Roboto Condensed, FontColor=0, FontSize=71
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -500,7 +500,7 @@ Symbol definition for '810.9'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=0, FontSize=85
+  FontName=Roboto, FontColor=0, FontSize=85
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -538,7 +538,7 @@ Symbol definition for '811.0'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial Narrow, FontColor=0, FontSize=92
+  FontName=Roboto Condensed, FontColor=0, FontSize=92
   Weight=700, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=110, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -937,7 +937,7 @@ Symbol definition for '703.0'
     7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Arial, FontColor=11, FontSize=158
+  FontName=Roboto, FontColor=11, FontSize=158
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -1016,7 +1016,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Marymoor WIOL 2
-    (163.61,14.07) (209.94,14.07) (209.94,18.48) (163.61,18.48) 
+    (163.61,14.23) (209.94,14.23) (209.94,18.80) (163.61,18.80) 
 
 Index entry Sym=81000.0
   ObjType=2  Rex=0  Status=1
@@ -1057,7 +1057,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=M20, F20
-    (163.61,8.27) (209.94,8.27) (209.94,12.69) (163.61,12.69) 
+    (163.61,8.44) (209.94,8.44) (209.94,13.00) (163.61,13.00) 
 
 Index entry Sym=81000.0
   ObjType=2  Rex=0  Status=1
@@ -1118,7 +1118,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=Course 5-3
-    (163.61,2.48) (180.98,2.48) (180.98,6.90) (163.61,6.90) 
+    (163.61,2.65) (180.98,2.65) (180.98,7.21) (163.61,7.21) 
 
 Index entry Sym=81000.2
   ObjType=5  Rex=0  Status=1
@@ -1129,7 +1129,7 @@ Object Sym=81000.2 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=5.0 km
-    (180.98,2.48) (198.36,2.48) (198.36,6.90) (180.98,6.90) 
+    (180.98,2.65) (198.36,2.65) (198.36,7.21) (180.98,7.21) 
 
 Index entry Sym=81000.0
   ObjType=2  Rex=0  Status=1
@@ -1240,7 +1240,7 @@ Object Sym=81000.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=13
-    (163.61,-3.46) (169.40,-3.46) (169.40,0.96) (163.61,0.96) 
+    (163.61,-3.14) (169.40,-3.14) (169.40,1.42) (163.61,1.42) 
 
 Index entry Sym=81000.4
   ObjType=5  Rex=0  Status=1
@@ -1251,7 +1251,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=43
-    (169.40,-3.31) (175.19,-3.31) (175.19,1.11) (169.40,1.11) 
+    (169.40,-3.14) (175.19,-3.14) (175.19,1.42) (169.40,1.42) 
 
 Index entry Sym=80000.0
   ObjType=1  Rex=0  Status=1
@@ -1402,7 +1402,7 @@ Object Sym=81000.3 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=14
-    (163.61,-9.25) (169.40,-9.25) (169.40,-4.83) (163.61,-4.83) 
+    (163.61,-8.94) (169.40,-8.94) (169.40,-4.37) (163.61,-4.37) 
 
 Index entry Sym=81000.4
   ObjType=5  Rex=0  Status=1
@@ -1413,7 +1413,7 @@ Object Sym=81000.4 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=54
-    (169.40,-9.10) (175.19,-9.10) (175.19,-4.69) (169.40,-4.69) 
+    (169.40,-8.94) (175.19,-8.94) (175.19,-4.37) (169.40,-4.37) 
 
 Index entry Sym=80000.1
   ObjType=1  Rex=0  Status=1
@@ -1514,7 +1514,7 @@ Object Sym=81000.7 Otp=5
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=0 m
-    (180.98,-14.90) (192.57,-14.90) (192.57,-10.48) (180.98,-10.48) 
+    (180.98,-14.73) (192.57,-14.73) (192.57,-10.17) (180.98,-10.17) 
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
@@ -1555,8 +1555,8 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=13
-    (88.24,36.80) (88.24,35.62) (94.43,35.62) (94.43,42.37) 
-    (88.24,42.37) 
+    (88.29,36.83) (88.29,35.44) (94.55,35.44) (94.55,42.40) 
+    (88.29,42.40) 
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
@@ -1567,7 +1567,7 @@ Object Sym=70300 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=14
-    (43.27,2.03) (43.27,0.85) (49.46,0.85) (49.46,7.60) (43.27,7.60) 
+    (43.15,1.97) (43.15,0.57) (49.41,0.57) (49.41,7.54) (43.15,7.54) 
 
 String of type 9
   ObjIndex=0
