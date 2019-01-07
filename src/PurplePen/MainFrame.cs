@@ -2227,12 +2227,14 @@ namespace PurplePen
             printCoursesDialog.controller = controller;
             printCoursesDialog.PrintSettings = coursePrintSettings;
 
+#if XPS_PRINTING
             if (controller.MustRasterizePrinting) {
                 // Force rasterization.
                 coursePrintSettings.UseXpsPrinting = false;
                 printCoursesDialog.PrintSettings = coursePrintSettings;
                 printCoursesDialog.EnableRasterizeChoice = false;
             }
+#endif // XPS_PRINTING
 
             printCoursesDialog.PrintSettings.Count = 1;
 

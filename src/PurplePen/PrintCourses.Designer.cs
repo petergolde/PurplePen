@@ -77,7 +77,6 @@ namespace PurplePen
             this.checkBoxPausePrinting = new System.Windows.Forms.CheckBox();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.groupBoxAppearance = new System.Windows.Forms.GroupBox();
-            this.checkBoxRasterPrinting = new System.Windows.Forms.CheckBox();
             this.checkBoxMergeParts = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelColorModel = new System.Windows.Forms.Label();
@@ -211,7 +210,6 @@ namespace PurplePen
             // 
             // groupBoxAppearance
             // 
-            this.groupBoxAppearance.Controls.Add(this.checkBoxRasterPrinting);
             this.groupBoxAppearance.Controls.Add(this.checkBoxMergeParts);
             this.groupBoxAppearance.Controls.Add(this.tableLayoutPanel4);
             this.groupBoxAppearance.Controls.Add(this.comboBoxMultiPage);
@@ -219,12 +217,6 @@ namespace PurplePen
             resources.ApplyResources(this.groupBoxAppearance, "groupBoxAppearance");
             this.groupBoxAppearance.Name = "groupBoxAppearance";
             this.groupBoxAppearance.TabStop = false;
-            // 
-            // checkBoxRasterPrinting
-            // 
-            resources.ApplyResources(this.checkBoxRasterPrinting, "checkBoxRasterPrinting");
-            this.checkBoxRasterPrinting.Name = "checkBoxRasterPrinting";
-            this.checkBoxRasterPrinting.UseVisualStyleBackColor = true;
             // 
             // checkBoxMergeParts
             // 
@@ -326,7 +318,6 @@ namespace PurplePen
         private System.Windows.Forms.ComboBox comboBoxColorModel;
         private System.Windows.Forms.Label labelColorModel;
         private System.Windows.Forms.ComboBox comboBoxMultiPage;
-        private System.Windows.Forms.CheckBox checkBoxRasterPrinting;
         private System.Windows.Forms.CheckBox checkBoxMergeParts;
         private System.Windows.Forms.CheckBox checkBoxPausePrinting;
     }

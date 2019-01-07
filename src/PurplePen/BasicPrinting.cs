@@ -220,6 +220,7 @@ namespace PurplePen
             return bitmapList.ToArray();
         }
 
+#if XPS_PRINTING
         // Do printing to a set of bitmaps using the XPS/WPF path. This is used for testing support.
         public System.Windows.Media.Imaging.BitmapSource[] PrintXpsBitmaps(float dpi)
         {
@@ -262,6 +263,7 @@ namespace PurplePen
 
             return bitmapList.ToArray();
         }
+#endif // XPS_PRINTING
 
         private void PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -336,7 +338,7 @@ namespace PurplePen
             }
         }
 
-        #region Pdf Printing
+#region Pdf Printing
 
         public void PrintToPdf(string pathName, bool cmykMode)
         {
@@ -386,8 +388,8 @@ namespace PurplePen
 
         #endregion
 
-        #region Xps Printing Support
-
+#region Xps Printing Support
+#if XPS_PRINTING
         public void PrintUsingXps(bool showProgressDialog)
         {
             if (showProgressDialog)
@@ -608,10 +610,10 @@ namespace PurplePen
                 get { return null; }
             }
         }
+#endif // XPS_PRINTING
+#endregion Xps Printing Support
 
-        #endregion Xps Printing Support
-
-        #region Postscript detection
+#region Postscript detection
         //By Justin Alexander, aka TheLoneCabbage
 
         static Int32 GETTECHNOLOGY = 20;
@@ -663,7 +665,7 @@ namespace PurplePen
             return false;
 
         }
-        #endregion
+#endregion
 
         // Routine to layout all the pages. Must return the number of pages to print. "printArea" is the size
         // without the margins as set in the pageSettings. 

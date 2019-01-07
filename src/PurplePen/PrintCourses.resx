@@ -358,7 +358,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=3.1.5.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.1.6.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -546,33 +546,6 @@
   <metadata name="printDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 21</value>
   </metadata>
-  <data name="checkBoxRasterPrinting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="checkBoxRasterPrinting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 147</value>
-  </data>
-  <data name="checkBoxRasterPrinting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 35</value>
-  </data>
-  <data name="checkBoxRasterPrinting.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Rasterize Before Printing</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRasterPrinting.Name" xml:space="preserve">
-    <value>checkBoxRasterPrinting</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRasterPrinting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRasterPrinting.Parent" xml:space="preserve">
-    <value>groupBoxAppearance</value>
-  </data>
-  <data name="&gt;&gt;checkBoxRasterPrinting.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="checkBoxMergeParts.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 122</value>
   </data>
@@ -595,7 +568,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;checkBoxMergeParts.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -643,7 +616,7 @@
     <value>CMYK</value>
   </data>
   <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>85, 4</value>
+    <value>85, 3</value>
   </data>
   <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 23</value>
@@ -685,7 +658,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelColorModel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxColorModel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
@@ -715,7 +688,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;comboBoxMultiPage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="labelAppearanceInfo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -742,7 +715,7 @@
     <value>groupBoxAppearance</value>
   </data>
   <data name="&gt;&gt;labelAppearanceInfo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="groupBoxAppearance.Location" type="System.Drawing.Point, System.Drawing">
     <value>272, 181</value>
@@ -790,6 +763,6 @@
     <value>PrintCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.1.5.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.1.6.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

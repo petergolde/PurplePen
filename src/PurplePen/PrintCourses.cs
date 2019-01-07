@@ -70,10 +70,12 @@ namespace PurplePen
             checkBoxMergeParts.Visible = enableMultipart;
         }
 
+#if XPS_PRINTING
         public bool EnableRasterizeChoice {
             get { return checkBoxRasterPrinting.Enabled; }
             set { checkBoxRasterPrinting.Enabled = value;  }
         }
+#endif // XPS_PRINTING
 
         // Update the dialog with information from the settings.
         void UpdateDialog()
@@ -97,7 +99,9 @@ namespace PurplePen
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.PrintingColorModel;
             checkBoxMergeParts.Checked = settings.PrintMapExchangesOnOneMap;
+#if XPS_PRINTING
             checkBoxRasterPrinting.Checked = !settings.UseXpsPrinting;
+#endif // XPS_PRINTING
         }
 
         // Update the settings with information from the dialog.
@@ -114,7 +118,9 @@ namespace PurplePen
 
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
+#if XPS_PRINTING
             settings.UseXpsPrinting = ! checkBoxRasterPrinting.Checked;
+#endif // XPS_PRINTING
             settings.PrintMapExchangesOnOneMap = checkBoxMergeParts.Checked;
             settings.PrintingColorModel = (ColorModel)comboBoxColorModel.SelectedIndex;
         }

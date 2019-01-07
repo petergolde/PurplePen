@@ -1296,8 +1296,10 @@ namespace PurplePen
                     CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePrintSettings, GetCourseAppearance());
                     if (preview)
                         coursePrinter.PrintPreview(new Size((int)(ui.Size.Width * 0.8), (int)(ui.Size.Height * 0.8)));
+#if XPS_PRINTING
                     else if (coursePrintSettings.UseXpsPrinting && MapType == MapType.OCAD)
                         coursePrinter.PrintUsingXps(true);
+#endif // XPS_PRINTING
                     else
                         coursePrinter.Print();
                 },

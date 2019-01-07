@@ -158,7 +158,8 @@ namespace PurplePen.Tests
                 TestUtil.CheckBitmapsBase(bm, baseFileName);
                 bm.Dispose();
             }
-            
+
+#if XPS_PRINTING
             // Only OCAD maps can be printed in XPS mode.
             if (controller.MapType == MapType.OCAD) {
                 // Get the pages of the printing in XPS/WPF mode
@@ -176,6 +177,7 @@ namespace PurplePen.Tests
                     TestUtil.CheckBitmapsBase(newBitmap, baseFileName, 25);
                 }
             }
+#endif // XPS_PRINTING
         }
 
         [TestMethod]
