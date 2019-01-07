@@ -13,7 +13,7 @@ namespace PurplePen
     {
         EventDB eventDB;
         bool variationListUpdated = false;
-        int? lastTeam;  // last team, or null if no team.
+        int? firstTeam, lastTeam;  // last team, or null if no team.
         Id<Course> courseId;
 
         public SelectVariations(EventDB eventDB, Id<Course> courseId)
@@ -24,19 +24,22 @@ namespace PurplePen
             this.courseId = courseId;
 
             Course course = eventDB.GetCourse(courseId);
-            if (course.relaySettings.relayTeams > 0)
-                lastTeam = course.relaySettings.relayTeams;
-            else
-                lastTeam = null;
+            if (course.relaySettings.relayTeams > 0) {
+                firstTeam = course.relaySettings.firstTeamNumber;
+                lastTeam = firstTeam + course.relaySettings.relayTeams - 1;
+            }
+            else {
+                firstTeam = lastTeam = null;
+            }
 
             comboBoxVariations.SelectedIndex = 0;
-            if (lastTeam.HasValue) {
+            if (firstTeam.HasValue && lastTeam.HasValue) {
                 upDownFirstTeam.Maximum = upDownLastTeam.Maximum = lastTeam.Value;
-                upDownFirstTeam.Minimum = upDownLastTeam.Minimum = 1;
-                upDownFirstTeam.Value = 1;
+                upDownFirstTeam.Minimum = upDownLastTeam.Minimum = firstTeam.Value;
+                upDownFirstTeam.Value = firstTeam.Value;
                 upDownLastTeam.Value = lastTeam.Value;
 
-                labelNumberOfTeams.Text = string.Format(labelNumberOfTeams.Text, lastTeam.Value);
+                labelNumberOfTeams.Text = string.Format(labelNumberOfTeams.Text, (lastTeam.Value - firstTeam.Value) + 1);
             }
 
             UpdateControls();
