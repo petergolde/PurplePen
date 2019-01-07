@@ -406,8 +406,8 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(6.03,26.42)
-                font-name:Arial  font-style:Regular  font-height:5.57", highlights[0].ToString());
+            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(6,26.68)
+                font-name:Roboto  font-style:Regular  font-height:5.57", highlights[0].ToString());
             // Check the status text
             Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
 
@@ -420,8 +420,8 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(7.63,33.22)
-                font-name:Arial  font-style:Regular  font-height:5.57",
+            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(7.6,33.48)
+                font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
             Assert.IsInstanceOfType(   highlights[0],   typeof(ControlCourseObj));
             Assert.AreEqual(47, highlights[0].controlId.id);
@@ -429,8 +429,8 @@ namespace PurplePen.Tests
             // Make sure the number is now moved.
             CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(306));
             Assert.AreEqual(true, courseControl.customNumberPlacement);
-            Assert.AreEqual(6.67F, courseControl.numberDeltaX, 0.01F);
-            Assert.AreEqual(-1.22F, courseControl.numberDeltaY, 0.01F);
+            Assert.AreEqual(6.65F, courseControl.numberDeltaX, 0.01F);
+            Assert.AreEqual(-1.18F, courseControl.numberDeltaY, 0.01F);
         }
 	
 

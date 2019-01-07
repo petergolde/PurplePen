@@ -903,15 +903,15 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, "37", new PointF(0, 0));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(2, 1)));
-            Assert.AreEqual(0.89, Math.Round(courseobj.DistanceFromPoint(new PointF(1, 4)), 2));
-            Assert.AreEqual(0.9, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 1)), 2));
-            Assert.AreEqual(1.27, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 4)), 2));
+            Assert.AreEqual(0.66, Math.Round(courseobj.DistanceFromPoint(new PointF(1, 4)), 2));
+            Assert.AreEqual(0.87, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 1)), 2));
+            Assert.AreEqual(1.09, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 4)), 2));
 
             courseobj = new ControlNumberCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, "37", new PointF(0, 0));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1, -0.5F)));
-            Assert.AreEqual(2.44, Math.Round(courseobj.DistanceFromPoint(new PointF(1, 4)), 2));
-            Assert.AreEqual(2.45, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 1)), 2));
-            Assert.AreEqual(3.46, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 4)), 2));
+            Assert.AreEqual(2.33, Math.Round(courseobj.DistanceFromPoint(new PointF(1, 4)), 2));
+            Assert.AreEqual(2.44, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 1)), 2));
+            Assert.AreEqual(3.37, Math.Round(courseobj.DistanceFromPoint(new PointF(4, 4)), 2));
         }
 
         [TestMethod]
@@ -1051,7 +1051,8 @@ namespace PurplePen.Tests
         public void ControlNumberDump()
         {
             CourseObj courseobj = new ControlNumberCourseObj(ControlId(23), CourseControlId(78), 1.0F, defaultCourseAppearance, "37", new PointF(1, 1));
-            AssertDump(courseobj, "ControlNumber:  control:23  course-control:78  scale:1  text:37  top-left:(-2.1,4.11)\r\n                font-name:Arial  font-style:Regular  font-height:5.57");
+            AssertDump(courseobj, @"ControlNumber:  control:23  course-control:78  scale:1  text:37  top-left:(-2.13,4.34)
+                font-name:Roboto  font-style:Regular  font-height:5.57");
         }
 
         [TestMethod]

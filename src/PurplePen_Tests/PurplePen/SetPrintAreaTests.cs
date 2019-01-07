@@ -182,7 +182,7 @@ namespace PurplePen.Tests
         public void SetPrintAreaAllControls()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = new RectangleF(-48.28381F, -133.1161F, 215.9F, 279.4F);
+            RectangleF currentPrintArea = new RectangleF(-48.27457F, -133.2415F, 215.9F, 279.4F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, 20F, 70F, 130F);
 
             SetPrintArea(0, currentPrintArea, newPrintArea, PrintAreaKind.OneCourse);
@@ -197,7 +197,7 @@ namespace PurplePen.Tests
         public void SetPrintAreaAllCourses()
         {
             Setup("modes\\printarea.ppen");
-            RectangleF currentPrintArea = new RectangleF(-48.28381F, -133.1161F, 215.9F, 279.4F);
+            RectangleF currentPrintArea = new RectangleF(-48.27457F, -133.2415F, 215.9F, 279.4F);
             RectangleF newPrintArea = RectangleF.FromLTRB(-5F, -20F, 70F, 30F);
 
             SetPrintArea(1, currentPrintArea, newPrintArea, PrintAreaKind.AllCourses);
@@ -262,7 +262,7 @@ namespace PurplePen.Tests
                 using (newMap.Write())
                     InputOutput.ReadFile(expectedOcadFiles[i], newMap);
                 using (newMap.Read())
-                    TestUtil.AssertEqualRect(expectedPrintRectangles[i], newMap.PrintArea, 0.01F, "ocad imported print area");
+                    TestUtil.AssertEqualRect(expectedPrintRectangles[i], newMap.PrintArea, 0.02F, "ocad imported print area");
             }
         }
 
@@ -272,7 +272,7 @@ namespace PurplePen.Tests
 
             SetPrintArea(1, new RectangleF(-77.68744F, -142.4035F, 215.9F, 279.4F), RectangleF.FromLTRB(-5F, -20F, 70F, 30F), PrintAreaKind.OneCourse);
             SetPrintArea(2, RectangleF.FromLTRB(32.1F, -12F, 177F, 101.1F), RectangleF.FromLTRB(-51.5F, 0F, 170.06F, 39.8F), PrintAreaKind.OneCourse);
-            SetPrintArea(0, new RectangleF(-48.28381F, -133.1161F, 215.9F, 279.4F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), PrintAreaKind.OneCourse);
+            SetPrintArea(0, new RectangleF(-48.27457F, -133.2415F, 215.9F, 279.4F), RectangleF.FromLTRB(-250F, -110F, -170F, -10F), PrintAreaKind.OneCourse);
 
             OcadCreationSettings settings = new OcadCreationSettings();
             settings.mapDirectory = settings.fileDirectory = false;
@@ -290,7 +290,7 @@ namespace PurplePen.Tests
                                          TestUtil.GetTestFile("modes\\ocad_print_area\\Course 2.ocd"),
                                          TestUtil.GetTestFile("modes\\ocad_print_area\\Course 4B.ocd"),
                                          TestUtil.GetTestFile("modes\\ocad_print_area\\All Controls.ocd") },
-                new RectangleF[4] { RectangleF.FromLTRB(-5F, -20F, 70F, 30F),
+                new RectangleF[4] { RectangleF.FromLTRB(-5.01F, -20F, 69.99F, 30F),
                                                                                RectangleF.FromLTRB(-51.5F, 0F, 170.06F, 39.8F),
                                                                                RectangleF.FromLTRB(0F, 20F, 177F, 100F),
                                                                                RectangleF.FromLTRB(-250F, -110F, -170F, -10F)});

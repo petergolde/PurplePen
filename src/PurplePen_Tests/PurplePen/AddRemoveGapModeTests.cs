@@ -113,8 +113,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:260.707031:290.707031",
                                         highlights[0].ToString());
-            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.33,50.81)
-                font-name:Arial  font-style:Regular  font-height:5.57",
+            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.3,51.07)
+                font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
 
             // Make sure the control has a new gap.
@@ -170,8 +170,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:252.6131:316.040161",
                                         highlights[0].ToString());
-            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.33,50.81)
-                font-name:Arial  font-style:Regular  font-height:5.57",
+            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.3,51.07)
+                font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
 
             // Make sure the control has a new gap.
@@ -227,8 +227,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:112.5:146.25",
                                         highlights[0].ToString());
-            Assert.AreEqual(@"ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(35.73,-26.06)
-                font-name:Arial  font-style:Regular  font-height:5.57",
+            Assert.AreEqual(@"ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(35.72,-25.85)
+                font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
 
             // Make sure the control has a new gap.
