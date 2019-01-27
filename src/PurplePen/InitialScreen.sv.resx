@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Öppna en befintlig tävling...</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen är fri mjukvara och får kopieras och delas. Vidareutvecklingen av Purple Pen är helt beroende av frivilliga bidrag.</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>Ge ett bidrag</value>
   </data>

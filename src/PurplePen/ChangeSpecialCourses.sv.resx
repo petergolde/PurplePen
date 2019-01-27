@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="changeDisplayedCoursesLabel.Text" xml:space="preserve">
-    <value>Välj vilka banor detta objekt skall visas på.</value>
+    <value>Välj vilka banor detta objekt skall visas på:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ändra visade banor</value>

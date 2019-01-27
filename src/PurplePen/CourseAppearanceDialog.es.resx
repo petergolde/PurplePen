@@ -117,20 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
-    <value>No escalar</value>
-  </data>
-  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
-    <value>Relativo a escala de mapa</value>
-  </data>
-  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
-    <value>Relativo a 1:15000</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
-  </data>
-  <data name="labelOutlineWidth.Text" xml:space="preserve">
-    <value>Reborde blanco alrededor de los números</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
@@ -171,9 +159,6 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Tamaño de Elementos</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Mezclar magenta con los colores subyacentes del mapa</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Negro:</value>
   </data>
@@ -195,23 +180,8 @@
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vista previa</value>
   </data>
-  <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
-    <value>Negro</value>
-  </data>
-  <data name="comboBoxDescriptionColor.Items1" xml:space="preserve">
-    <value>Magenta</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Color:</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Descripciones de Controles</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>Mapa OCAD</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Personalizar Apariencia</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Paleta de Colores...</value>

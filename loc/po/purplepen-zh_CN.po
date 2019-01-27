@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.5\n"
+"Project-Id-Version: Purple Pen 3.1.7\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-12-11 15:29-08:00\n"
+"POT-Creation-Date: 2019-01-27 12:43-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -750,7 +750,7 @@ msgstr "重复的课程"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr "创建{ 0 }和文件"
+msgstr "创建{0}和文件"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"

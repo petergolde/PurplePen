@@ -124,7 +124,7 @@
     <value>Stigning:</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
-    <value>Inställning av antal löpare per bana:</value>
+    <value>Löparbelastning:</value>
   </data>
   <data name="ControlsInUse" xml:space="preserve">
     <value>Använda kontroller:</value>
@@ -148,7 +148,7 @@
     <value>Bana "{0}"</value>
   </data>
   <data name="CustomizedSymbolDesc" xml:space="preserve">
-    <value>Specialanpassad symbolbeskrivning</value>
+    <value>Anpassad symbolbeskrivning</value>
   </data>
   <data name="EntireLeg" xml:space="preserve">
     <value>hela sträckan</value>
@@ -175,7 +175,7 @@
     <value>Längd:</value>
   </data>
   <data name="LineHeight" xml:space="preserve">
-    <value>Linje höjd:</value>
+    <value>Linjehöjd:</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>Placering:</value>
@@ -232,7 +232,7 @@
     <value>start</value>
   </data>
   <data name="TextDescription" xml:space="preserve">
-    <value>Text beskrivning:</value>
+    <value>Textbeskrivning:</value>
   </data>
   <data name="TextLine" xml:space="preserve">
     <value>Textrad</value>
@@ -241,16 +241,16 @@
     <value>Syns ovan {0}, i alla banor som innehåller {0}</value>
   </data>
   <data name="TextLine_AboveThisCourse" xml:space="preserve">
-    <value>Syns ovan {0}, i denna bana enbart</value>
+    <value>Syns ovanför {0}, enbart i denna bana</value>
   </data>
   <data name="TextLine_BelowAllCourses" xml:space="preserve">
     <value>Syns nedan {0}, i alla banor som innehåller {0}</value>
   </data>
   <data name="TextLine_BelowThisCourse" xml:space="preserve">
-    <value>Syns nedan {0}, i denna bana enbart</value>
+    <value>Syns nedanför {0}, enbart i denna bana</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
-    <value>Totalt antal kontroller:</value>
+    <value>Antal kontroller:</value>
   </data>
   <data name="TotalScore" xml:space="preserve">
     <value>Total poäng:</value>
@@ -258,13 +258,43 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Används i banorna:</value>
   </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Namn:</value>
+  </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Blankt område</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>kartbyten</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>kartbyte</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Kartbyte vid {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Belastning:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Används i:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Bana "{0}", del {1}</value>
   </data>
   <data name="SpecialName_Line" xml:space="preserve">
     <value>Linje</value>
   </data>
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>Rektangel</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Beräknad längd:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>kartutdelningsplatser</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>kartutdelningsplats</value>
   </data>
 </root>

@@ -126,10 +126,10 @@
     <value>Kartskala:</value>
   </data>
   <data name="defaultPrintScaleLabel.Text" xml:space="preserve">
-    <value>Standard &amp;utskriftsskala:</value>
+    <value>Förvald &amp;utskriftsskala:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(Du kan ändra utskriftsskalan senare genom att välja Bana/Egenskaper.)</value>
+    <value>(Du kan ändra utskriftsskalan senare genom att välja Banor/Egenskaper.)</value>
   </data>
   <data name="oneToPrefixLabel1.Text" xml:space="preserve">
     <value>1:</value>

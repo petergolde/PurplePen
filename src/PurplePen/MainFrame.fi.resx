@@ -273,6 +273,12 @@
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>K&amp;aikki rastit</value>
   </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>Muut radat...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Tyhjennä muut radat</value>
+  </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Näytä</value>
   </data>

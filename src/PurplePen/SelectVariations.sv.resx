@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Varje gaffling för sig</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Varje stafettsträcka för sig</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Alla gafflingar tillsammans</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Gafflingar:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Visa alla gafflingar samtidigt på en karta.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>En karta för varje möjlig gaffling på banan.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>En karta för varje sträcka för de stafettlag som du väljer.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Du måste först skapa stafettlag genom att välja 'Stafettgafflingar...' i menyn 'Banor'.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Välj individuella gafflingar</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Denna bana har {0} stafettlag tilldelade. Välj 'Stafettgaffling...' i menyn 'Banor' för att ändra antalet lag.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>till</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Välj stafettlag  att skriva ut / exportera:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Välj gafflingar</value>
+  </data>
 </root>

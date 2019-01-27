@@ -124,13 +124,13 @@
     <value>Ändra kodsiffra</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Ändra Kontroll</value>
+    <value>Ändra kontroll</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
     <value>Ändra kontrollpunkter</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
-    <value>Ändra titel</value>
+    <value>Ändra namn</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
     <value>Ändra stigning</value>
@@ -160,7 +160,7 @@
     <value>Ta bort objekt</value>
   </data>
   <data name="DeleteTextLine" xml:space="preserve">
-    <value>Ta bort textraden</value>
+    <value>Ta bort textrad</value>
   </data>
   <data name="AddControl" xml:space="preserve">
     <value>Lägg till kontroll</value>
@@ -202,16 +202,16 @@
     <value>Ändra visade banor</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
-    <value>Flytta Böj</value>
+    <value>Flytta böj</value>
   </data>
   <data name="AddBend" xml:space="preserve">
-    <value>Lägg Till Böjning</value>
+    <value>Lägg till böj</value>
   </data>
   <data name="AddCorner" xml:space="preserve">
     <value>Lägg till hörn</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Ta bort Böj</value>
+    <value>Ta bort böj</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
     <value>Ta bort hörn</value>
@@ -265,10 +265,10 @@
     <value>Byt kontrolldefinitionens språk</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
-    <value>Byt Text</value>
+    <value>Ändra text</value>
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
-    <value>Ändra Banans Utseende</value>
+    <value>Ändra banutseende</value>
   </data>
   <data name="AddMapExchange" xml:space="preserve">
     <value>Lägg till kartbyte</value>
@@ -284,5 +284,26 @@
   </data>
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Duplicera bana</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Skapa {0} &amp;filer</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Lägg till spridningsmetod</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Ta bort gaffling/slinga</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Stafettgafflingar</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Lägg till kartutdelningsplats</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Välj norm för kontrollbeskrivning</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Välj kartnorm</value>
   </data>
 </root>

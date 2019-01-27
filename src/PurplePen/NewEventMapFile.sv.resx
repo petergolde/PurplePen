@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>För att kunna lägga banor så måste du välja vilken kartfil du vill använda. Vanligtvis så är den en OCAD- eller OpenOrienteering Mapper-fil (PDF-filer och t.ex. JPEG-bilder kan dock också användas). Klicka på "Välj..."-knappen för att välja en kartfil.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Välj kartfil...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Alla kartfiler|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD-filer (*.ocd)|*.ocd|Open Orienteering Mapper-filer|*.omap;*.xmap|PDF-filer (*.pdf)|*.pdf|Bildfiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vald kartfil</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Kartfilen har laddats. Om du skickar din Purple Pen-fil till någon annan så måste dom även ha tillgång till denna kartfil.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Kartfil</value>

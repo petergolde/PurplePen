@@ -595,6 +595,12 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="MapIssue_Short" xml:space="preserve">
     <value>KO</value>
   </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Taustalla olevalla OCAD-kartalla on näkyviä mallinetiedostoja. Mallineet (templates) eivät välttämättä näy OCADin rajoitusten takia.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>OCAD-tiedostomuodon rajoitusten vuoksi (OCAD 10: ssä ja jäljempänä), kuvaobjektit tulevat näkyviin ratatiedostoissa ja lisätyt valkoiset alueet vietyihin OCAD-tiedostoihin. Tarkista OCAD-tiedostot varmistaaksesi, että kuvat näkyvät halutulla tavalla.</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
   </data>

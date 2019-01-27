@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.5\n"
+"Project-Id-Version: Purple Pen 3.1.7\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-12-11 15:28-08:00\n"
+"POT-Creation-Date: 2019-01-27 12:43-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1107,7 +1107,7 @@ msgstr "Yksi per rata"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
-msgstr "Yksi per radan osa/hajonta"
+msgstr "1 per radan osa/hajonta"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
@@ -1546,11 +1546,11 @@ msgstr "K&aikki rastit"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "Muut radat..."
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Tyhjennä muut radat"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -2733,14 +2733,20 @@ msgstr "KO"
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "Taustalla olevalla OCAD-kartalla on näkyviä "
+"mallinetiedostoja. Mallineet (templates) eivät välttämättä "
+"näy OCADin rajoitusten takia."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "OCAD-tiedostomuodon rajoitusten vuoksi (OCAD 10: ssä ja "
+"jäljempänä), kuvaobjektit tulevat näkyviin "
+"ratatiedostoissa ja lisätyt valkoiset alueet vietyihin "
+"OCAD-tiedostoihin. Tarkista OCAD-tiedostot varmistaaksesi, "
+"että kuvat näkyvät halutulla tavalla."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2871,7 +2877,12 @@ msgid "In order to design your courses, you must select the map "
 "OpenOrienteering Mapper file (although PDFs and image "
 "files like JPEGs can be used instead). Click the "
 "\"Choose...\" button to select a map file."
-msgstr ""
+msgstr "Jotta voit aloittaa ratasuunnittelun, sinun on valittava "
+"käytettävä karttatiedosto. Yleensä se on OCAD-tiedosto tai "
+"OpenOrienteering Mapper -tiedosto, mutta myös PDF- tai "
+"kuvatiedostoja, kuten JPEG-tiedostoja voidaan käyttää. "
+"Valitse karttatiedosto napsauttamalla \"Valitse "
+"karttatiedosto...\" -painiketta."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
@@ -4052,7 +4063,7 @@ msgstr "Määritä osuudet haaroille..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Numerointi alkaa numerosta: "
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
@@ -4072,9 +4083,9 @@ msgstr "Seuraavat rastit (tai muut kohteet) ovat Kaikki rastit "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Valitse radan \"{0}\" lisäksi näytettävät radat."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Näytä muut radat"
 

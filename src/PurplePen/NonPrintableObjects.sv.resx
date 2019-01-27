@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>Kartfilen {0} innehåller objekt eller symboler som inte till fullo stöds av Purple Pen, och kanske inte visas korrekt. Objekten som kanske inte visas korrekt listas nedan.
+    <value>Kartfilen {0} innehåller objekt eller symboler som Purple Pen inte har fullt stöd för och som därför kanske inte skrivs ut korrekt. De objekt som kan bli felaktiga vid utskrift listas här under.
 
-För att skriva ut tävlingskartor, är det rekommenderat att banorna exporteras och skrivs ut med OCAD (använd Arkiv/Skapa OCAD-filer...).
+För att skriva ut tävlingskartor är det rekommenderat att banorna exporteras (använd Arkiv/Skapa OCAD-filer...) och istället skrivs ut med hjälp av OCAD.
 </value>
   </data>
   <data name="okButton.Text" xml:space="preserve">

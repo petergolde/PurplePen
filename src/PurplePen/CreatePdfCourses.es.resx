@@ -123,18 +123,6 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Recorridos</value>
   </data>
-  <data name="checkBoxMergeParts.Text" xml:space="preserve">
-    <value>Imprimir Cambios de Mapa en el mismo mapa</value>
-  </data>
-  <data name="labelColorModel.Text" xml:space="preserve">
-    <value>Modelo de color:</value>
-  </data>
-  <data name="comboBoxColorModel.Items" xml:space="preserve">
-    <value>RGB</value>
-  </data>
-  <data name="comboBoxColorModel.Items1" xml:space="preserve">
-    <value>CMYK</value>
-  </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Recortar a una página</value>
   </data>
@@ -151,7 +139,7 @@
     <value>Seleccionar carpeta...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Otra carpeta</value>
+    <value>Otra Carpeta</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo del mapa</value>
@@ -162,29 +150,8 @@
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Carpeta</value>
   </data>
-  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>Prefijo de nombre:</value>
-  </data>
-  <data name="filesLabel.Text" xml:space="preserve">
-    <value>Archivos:</value>
-  </data>
-  <data name="comboBoxFileFormat.Items" xml:space="preserve">
-    <value>Uno para todos los recorridos</value>
-  </data>
-  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
-    <value>Uno por recorrido</value>
-  </data>
-  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>Uno por parte/variación de recorrido</value>
-  </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Archivos</value>
-  </data>
-  <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Selecciona una carpeta para los archivos PDF</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Crear archivos PDF</value>
+    <value>Imprimir Recorridos</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Márgenes:</value>

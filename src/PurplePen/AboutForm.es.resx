@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="copyrightLabel.Text" xml:space="preserve">
-    <value>Copyright © por Peter Golde</value>
-  </data>
   <data name="freeLabel.Text" xml:space="preserve">
-    <value>Purple Pen es un software libre y puede ser copiado y compartido.</value>
+    <value>Purple Pen es un software libre y puede copiarse y compartirse.</value>
   </data>
   <data name="disclaimerLabel.Text" xml:space="preserve">
-    <value>ESTE SOFTWARE ES PROPORCIONADO POR LOS PROPIETARIOS DEL COPYRIGHT Y COLABORADORES «TAL CUAL» Y SE DESESTIMA CUALQUIER GARANTÍA EXPRESA O IMPLÍCITA, INCLUYENDO, PERO NO LIMITADA A, LAS GARANTÍAS IMPLICITAS DE COMERCIALIZACIÓN Y APROVECHAIMIENTO PARA UN PROPÓSITO PARTICULAR.</value>
+    <value>ESTE SOFTWARE SE PROPORCIONA POR LOS PROPIETARIOS DEL COPYRIGHT Y COLABORADORES «TAL CUAL» Y SE DESESTIMA CUALQUIER GARANTÍA EXPRESA O IMPLÍCITA, INCLUYENDO, PERO NO LIMITADA A, LAS GARANTÍAS IMPLICITAS DE COMERCIALIZACIÓN Y APROVECHAIMIENTO PARA UN PROPÓSITO PARTICULAR.</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceptar</value>

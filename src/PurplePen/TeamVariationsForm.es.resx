@@ -120,31 +120,10 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
-  <data name="buttonExport.Text" xml:space="preserve">
-    <value>Exportar</value>
-  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Imprimir...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Previsualizar Impresión...</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Número de postas:</value>
-  </data>
-  <data name="buttonCalculate.Text" xml:space="preserve">
-    <value>Asignar Variaciones</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Número de equipos:</value>
-  </data>
-  <data name="fixedLegsLink.Text" xml:space="preserve">
-    <value>Asignar postas fijas a variaciones...</value>
-  </data>
-  <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Variaciones de Equipo de Relevos</value>
   </data>
 </root>

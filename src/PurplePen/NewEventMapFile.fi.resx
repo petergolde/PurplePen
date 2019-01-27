@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Jotta voit aloittaa ratasuunnittelun, sinun on valittava käytettävä karttatiedosto. Yleensä se on OCAD-tiedosto tai OpenOrienteering Mapper -tiedosto, mutta myös PDF- tai kuvatiedostoja, kuten JPEG-tiedostoja voidaan käyttää. Valitse karttatiedosto napsauttamalla "Valitse karttatiedosto..." -painiketta.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Valitse karttatiedosto...</value>
   </data>

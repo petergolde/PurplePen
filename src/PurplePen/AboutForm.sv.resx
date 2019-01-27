@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="copyrightLabel.Text" xml:space="preserve">
+    <value>Copyright © by Peter Golde</value>
+  </data>
   <data name="freeLabel.Text" xml:space="preserve">
     <value>Purple Pen är fri programvara och får spridas och delas.</value>
   </data>
@@ -127,7 +130,7 @@
     <value>OK</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Credits</value>
+    <value>Tack till</value>
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
     <value>Se hela licensen</value>

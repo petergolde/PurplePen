@@ -124,7 +124,7 @@
     <value>Ny kodsiffra</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>För att ändra kodsiffra för en eller flera kontroller - klicka i "Ny kodsiffra"-kolumnen och mata in den nya kodsiffran. </value>
+    <value>För att byta kodsiffra för en eller flera kontroller - klicka i kolumnen "Ny kodsiffra"och mata in den nya kodsiffran. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Ändra kodsiffror</value>

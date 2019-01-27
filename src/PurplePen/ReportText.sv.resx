@@ -154,7 +154,7 @@
     <value>Längd</value>
   </data>
   <data name="ColumnHeader_Load" xml:space="preserve">
-    <value>Ladda</value>
+    <value>Belastning</value>
   </data>
   <data name="ColumnHeader_Location" xml:space="preserve">
     <value>Plats</value>
@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Samma symbol?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Antal besök</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Bansammanställning för {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>Korsreferens kontroller för {0}</value>
+    <value>Kontrollsammanställning för {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Sträckor som nyttjas i båda riktningarna</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Tättliggande kontroller</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Allt är OK</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Bana "{0}" innehåller kontroll "{1}" två gånger på raken.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Upprepade kontroller</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Poängbana "{0}" innehåller kontroll "{1}" två gånger. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Tävlingskontroll för {0}</value>
   </data>
@@ -235,7 +250,7 @@
     <value>Oanvända kontroller</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>Följande kontroller finns i samlingen Alla kontroller men används inte i någn bana. Ta bort dem genom "Ta bort oanvända kontroller" som finns under Tävlingsmenyn. Dessa kontroller kommer inte att räknas in i resten av denna rapport.</value>
+    <value>Följande kontroller finns i "Alla kontroller" men används inte i någon bana. Ta bort dom genom "Ta bort oanvända kontroller" under menyn "Tävling". Dessa kontroller kommer inte att räknas in i resten av denna rapport.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Ja</value>
@@ -243,25 +258,58 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Medelvärde</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} kontroller, {2}, {3} m stigning)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} kontroller, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Sträcklängdsrapport för {0}</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Några kontroller kommer att besökas flera gånger på samma bana. Det andra belastningsvärdet räknar varje besök vid en kontroll separat.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
-    <value>Belastning kontroll</value>
+    <value>Kontrollbelastning</value>
   </data>
   <data name="Load_LegLoadSection" xml:space="preserve">
-    <value>Belastning sträcka</value>
+    <value>Sträckbelastning</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
-    <value>Några eller alla banor saknar angivelse om hur många löpare det är per bana. Tätheten av löpare angiven nedan kan därför vara saknad eller felaktig. För att ange antal löpare per bana, välj "Inställning av antal löpare per bana" från menyn "Bana"</value>
+    <value>Några eller alla banor saknar uppgift om hur många löpare som kommer att använda banan. Löparbelastningen här under kan därför vara felaktig eller saknas. För att ange antalet löpare per bana, välj "Löparbelastning" i menyn "Banor".</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
-    <value>(Enbart sträckor som används i mer än en bana syns i denna rapport)</value>
+    <value>(enbart sträckor som används i mer än en bana syns i denna rapport)</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
-    <value>Sammanfattning av antal löpare för {0}</value>
+    <value>Sammanställning av löparbelastning för {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>En eller flera banor har gafflingar. Framräknade belastningsvärden förutsätter att löparna är jämt fördelade mellan gafflingarna.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} besök)</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>VARNING:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>OBS: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Varning: P.g.a. antalet sträckor som angetts så kommer gafflingen vid kontroll {0} inte att bli jämt utnyttjad. {1} sträcka/or kommer att använda gaffling(ar) {2} medan {3} sträcka/or kommer att använda gaffling(ar) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Sträcka {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Inga stafettlag har blivit skapade ännu. Välj önskat antal lag och sträckor och klicka sedan på knappen "Tilldela gafflingar".</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Lag {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Gafflingstilldelning för {0}</value>
   </data>
 </root>

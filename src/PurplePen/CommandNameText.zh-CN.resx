@@ -286,7 +286,7 @@
     <value>重复的课程</value>
   </data>
   <data name="CreateMapFiles" xml:space="preserve">
-    <value>创建{ 0 }和文件</value>
+    <value>创建{0}和文件</value>
   </data>
   <data name="AddVariation" xml:space="preserve">
     <value>添加变化</value>

@@ -120,10 +120,34 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Stäng</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportera…</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Skriv ut...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Förhandsgranska utskrift...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Antal sträckor:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Tilldela gafflingar</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Antal lag:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Tilldela fasta sträckor till gafflingar...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Lagnummer börjar på: </value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Kalkylark (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Stafettgafflingar</value>
   </data>
 </root>

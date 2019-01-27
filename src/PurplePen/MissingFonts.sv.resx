@@ -124,7 +124,7 @@
     <value>OK</value>
   </data>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>Kartfil "{0}" använder teckensnitt som inte är installerade på datorn. Text med dessa teckensnitt kommer visas med en standardteckensnitt, vilket kan leda till att text ser annorlunda ut jämfört med hur kartritaren tänkt sig. 
+    <value>Kartfil "{0}" använder teckensnitt som inte är installerade på datorn. Text med dessa teckensnitt kommer att visas med ett standardteckensnitt, vilket kan leda till att text ser annorlunda ut jämfört med hur kartritaren tänkt sig. 
 
 För att åtgärda problemet, leta upp och installera teckensnitten listade nedan (använd Windows kontrollpanel). Starta sedan om Purple Pen.
 </value>

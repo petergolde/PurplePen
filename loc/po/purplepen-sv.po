@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.5\n"
+"Project-Id-Version: Purple Pen 3.1.7\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-12-11 15:29-08:00\n"
+"POT-Creation-Date: 2019-01-27 12:43-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © by Peter Golde"
-msgstr ""
+msgstr "Copyright © by Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -46,7 +46,7 @@ msgstr "OK"
 
 #: AboutForm.resx, creditsButton.Text
 msgid "Credits"
-msgstr "Credits"
+msgstr "Tack till"
 
 #: AboutForm.resx, licenseButton.Text
 msgid "View Full License"
@@ -63,7 +63,7 @@ msgstr "Första kodsiffra:"
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
 msgid "Description appearance:"
-msgstr "Definitionens utseende"
+msgstr "Definitionens utseende:"
 
 #: AddCourse.resx, mapScaleLabel.Text
 #: AllControlsProperties.resx, printingScaleLabel.Text
@@ -99,7 +99,7 @@ msgstr "Symboler och text"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr "Kontrollcirkel-text:"
+msgstr "Kontrolltext:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
@@ -160,7 +160,7 @@ msgstr "Följande text kommer synas på andra raden av "
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr "Klasslista / sekundär titel"
+msgstr "Klasslista / Undertitel"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -186,7 +186,7 @@ msgstr "Normal bana"
 
 #: AddCourse.resx, courseKindCombo.Items1
 msgid "Score Course"
-msgstr "Poängbana"
+msgstr "Poängbana (ScoreO)"
 
 #: AddCourse.resx, metersSuffix.Text
 msgid "meters"
@@ -203,7 +203,7 @@ msgstr "Ny bana"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr ""
+msgstr "Vilken typ av spridningsmetod vill du lägga till?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
@@ -211,11 +211,11 @@ msgstr "Gaffel"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
-msgstr ""
+msgstr "Slinga"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
-msgstr ""
+msgstr "Antal gafflingar:"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
@@ -255,24 +255,24 @@ msgstr "10"
 
 #: AddForkDialog.resx, labelNumberLoops.Text
 msgid "Number of loops:"
-msgstr ""
+msgstr "Antal slingor:"
 
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
 "different ways through the loops."
-msgstr ""
+msgstr "Den gemensamma kontrollen kommer att besökas 4 gånger. Det "
+"finns 24 olika sätt att springa slingorna."
 
 #: AddForkDialog.resx, $this.Text
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr ""
+msgstr "Lägg till spridningsmetod"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr "Skriv in text att placera på separat rad i "
-"kontrolldefinitionen"
+msgstr "Ange text att placera på separat rad i kontrolldefinitionen:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -322,21 +322,21 @@ msgstr "Tillåt inte kodsiffror som kan läsas upp-och-ned (t.ex. "
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr "Numrera om existerande kontroller med"
+msgstr "Numrera även om existerande kontroller"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr "Använd inställningar endast på nyskapade kontroller"
+msgstr "Använd dessa inställningar endast för nya kontroller"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
-msgstr "Existerande Kontroller"
+msgstr "Existerande kontroller"
 
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
 msgstr "Nya kontroller numreras automatiskt efter följande "
-"inställningar"
+"inställningar."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
@@ -359,8 +359,8 @@ msgstr "Ny kodsiffra"
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr "För att ändra kodsiffra för en eller flera kontroller - "
-"klicka i \"Ny kodsiffra\"-kolumnen och mata in den nya "
+msgstr "För att byta kodsiffra för en eller flera kontroller - "
+"klicka i kolumnen \"Ny kodsiffra\"och mata in den nya "
 "kodsiffran. "
 
 #: ChangeAllCodes.resx, $this.Text
@@ -403,7 +403,12 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Alla "
+"kartfiler|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.ti"
+"f;*.bmp;*.png;*.gif|OCAD-filer (*.ocd)|*.ocd|Open "
+"Orienteering Mapper-filer|*.omap;*.xmap|PDF-filer "
+"(*.pdf)|*.pdf|Bildfiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.pn"
+"g;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -429,7 +434,7 @@ msgstr "Kartfil"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr "Välj vilka banor detta objekt skall visas på."
+msgstr "Välj vilka banor detta objekt skall visas på:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
@@ -439,7 +444,7 @@ msgstr "Ändra visade banor"
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
-msgstr "Tävlingens Titel"
+msgstr "Tävlingsnamn"
 
 #: ChangeText.resx, courseNameMenuItem.Text
 #: CourseLoad.resx, CourseName.HeaderText
@@ -453,7 +458,7 @@ msgstr "Del av bana"
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr ""
+msgstr "Banvariant"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -461,7 +466,7 @@ msgstr "Banlängd"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
-msgstr "Banans Stigning"
+msgstr "Banans stigning"
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
@@ -474,11 +479,11 @@ msgstr "Utskriftsskala"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
-msgstr ""
+msgstr "Stafettlag"
 
 #: ChangeText.resx, relayLegMenuItem.Text
 msgid "Relay Leg"
-msgstr ""
+msgstr "Stafettsträcka"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -515,12 +520,12 @@ msgstr "Infoga text"
 #: ColorChooserDialog.resx, label5.Text
 #: CourseAppearanceDialog.resx, label5.Text
 msgid "Black:"
-msgstr "Black:"
+msgstr "Svart:"
 
 #: ColorChooserDialog.resx, label6.Text
 #: CourseAppearanceDialog.resx, label6.Text
 msgid "Yellow:"
-msgstr "Yellow:"
+msgstr "Gul:"
 
 #: ColorChooserDialog.resx, label3.Text
 #: CourseAppearanceDialog.resx, label3.Text
@@ -551,7 +556,7 @@ msgstr "Ändra kodsiffra"
 
 #: CommandNameText.resx, ChangeControl
 msgid "Change Control"
-msgstr "Ändra Kontroll"
+msgstr "Ändra kontroll"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
@@ -559,7 +564,7 @@ msgstr "Ändra kontrollpunkter"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
-msgstr "Ändra titel"
+msgstr "Ändra namn"
 
 #: CommandNameText.resx, ChangeClimb
 msgid "Change Climb"
@@ -599,7 +604,7 @@ msgstr "Ta bort objekt"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
-msgstr "Ta bort textraden"
+msgstr "Ta bort textrad"
 
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
@@ -651,11 +656,11 @@ msgstr "Ändra kodsiffror"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr "Flytta Böj"
+msgstr "Flytta böj"
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
-msgstr "Lägg Till Böjning"
+msgstr "Lägg till böj"
 
 #: CommandNameText.resx, AddCorner
 msgid "Add Corner"
@@ -663,7 +668,7 @@ msgstr "Lägg till hörn"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr "Ta bort Böj"
+msgstr "Ta bort böj"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
@@ -730,11 +735,11 @@ msgstr "Byt kontrolldefinitionens språk"
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
 msgid "Change Text"
-msgstr "Byt Text"
+msgstr "Ändra text"
 
 #: CommandNameText.resx, ChangeCourseAppearance
 msgid "Customize Course Appearance"
-msgstr "Ändra Banans Utseende"
+msgstr "Ändra banutseende"
 
 #: CommandNameText.resx, AddMapExchange
 #: MainFrame.resx, mapExchangeToolStripMenu.Text
@@ -761,48 +766,48 @@ msgstr "Duplicera bana"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr ""
+msgstr "Skapa {0} &filer"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"
-msgstr ""
+msgstr "Ta bort gaffling/slinga"
 
 #: CommandNameText.resx, RelayTeamVariations
 #: TeamVariationsForm.resx, $this.Text
 msgid "Relay Team Variations"
-msgstr ""
+msgstr "Stafettgafflingar"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr ""
+msgstr "Lägg till kartutdelningsplats"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
-msgstr ""
+msgstr "Välj norm för kontrollbeskrivning"
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
-msgstr ""
+msgstr "Välj kartnorm"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
-msgstr ""
+msgstr "Skala inte"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items1
 msgid "Relative to map scale"
-msgstr ""
+msgstr "Relativt kartskalan"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items2
 msgid "Relative to 1:15000"
-msgstr ""
+msgstr "Relativt 1:15000"
 
 #: CourseAppearanceDialog.resx, label11.Text
 msgid "Scale item sizes:"
-msgstr ""
+msgstr "Skala objekts storlek:"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Storlek på automatisk sträckgap:"
 
 #: CourseAppearanceDialog.resx, label12.Text
 #: CourseAppearanceDialog.resx, label10.Text
@@ -825,11 +830,11 @@ msgstr "Vit kantlinje runt nummer:"
 
 #: CourseAppearanceDialog.resx, label7.Text
 msgid "Center dot diameter:"
-msgstr ""
+msgstr "Storlek på centrumpunkt:"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items
 msgid "Regular"
-msgstr "Vanlig"
+msgstr "Normal"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -837,23 +842,23 @@ msgstr "Kontrollnummerutseende:"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
-msgstr "Kontrollnummrets höjd"
+msgstr "Höjd på kontrollnummer:"
 
 #: CourseAppearanceDialog.resx, labelLineWidth.Text
 msgid "Line width:"
-msgstr "Linjens bredd"
+msgstr "Linjebredd:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
-msgstr "Kontrollcirkelns diameter"
+msgstr "Kontrollringens diameter"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
-msgstr "Använd IOF standardstorlek"
+msgstr "Använd IOF-normens storlek"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
-msgstr "Objektets Storlek"
+msgstr "Objektstorlek"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -865,7 +870,7 @@ msgstr "Använd lila färgen från kartan"
 
 #: CourseAppearanceDialog.resx, groupBoxPurple.Text
 msgid "Purple Color"
-msgstr "Lila Färg"
+msgstr "Färgen lila"
 
 #: CourseAppearanceDialog.resx, comboBoxDescriptionColor.Items
 #: MiscText.resx, Black
@@ -884,15 +889,15 @@ msgstr "Kontrollbeskrivning"
 
 #: CourseAppearanceDialog.resx, checkBoxOverprint.Text
 msgid "Use overprint effect for colors marked \"overprint\""
-msgstr ""
+msgstr "Använd övertryckseffekt för färger markerade med 'övertryck'"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "OCAD Map"
-msgstr ""
+msgstr "OCAD-karta"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
-msgstr ""
+msgstr "Anpassa utseende"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
@@ -901,8 +906,8 @@ msgstr "Antal löpare"
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
 "in the second column and typing a number."
-msgstr "Mata in antalet löpare på varje bana genom att klicka i "
-"andra kolumnen och skriv in antalet löpare."
+msgstr "Ange antalet löpare på varje bana genom att klicka i andra "
+"kolumnen och mata in antalet löpare."
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
@@ -910,7 +915,7 @@ msgstr "Antal löpare"
 
 #: CoursePartBanner.resx, variationsLabel.Text
 msgid "Course Variation: "
-msgstr ""
+msgstr "Gafflingsalternativ: "
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -918,7 +923,7 @@ msgstr "Egenskaper..."
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part: "
-msgstr ""
+msgstr "Bandel: "
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
@@ -945,7 +950,7 @@ msgstr "Ingen"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
-msgstr ""
+msgstr "Välj gafflingar..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
@@ -964,7 +969,7 @@ msgstr "Namnprefix:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "Waypoints"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
@@ -1002,7 +1007,7 @@ msgstr "Avbryt"
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
-msgstr "Välj katalog för OCAD-filerna"
+msgstr "Välj mapp för OCAD-filerna"
 
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
@@ -1017,37 +1022,37 @@ msgstr "Filformat:"
 #: PrintDescriptions.resx, printerGroup.Text
 #: PrintPunches.resx, printerGroup.Text
 msgid "Output"
-msgstr "Utdata"
+msgstr "Skrivare"
 
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
-msgstr "Välj katalog..."
+msgstr "Välj mapp..."
 
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
-msgstr "Annan katalog"
+msgstr "Annan mapp"
 
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
-msgstr "Samma katalog som kartfilen"
+msgstr "Samma mapp som kartfilen"
 
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
-msgstr "Samma katalog som Puple Pen-filen"
+msgstr "Samma mapp som Purple Pen-filen"
 
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
-msgstr "Katalog"
+msgstr "Mapp"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1102,7 +1107,7 @@ msgstr "En per bana"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
-msgstr ""
+msgstr "En per bandel/gaffling"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
@@ -1114,7 +1119,7 @@ msgstr "Välj en mapp för PDF-filerna"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
-msgstr "Skriv ut banor"
+msgstr "Skapa PDF-filer"
 
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
@@ -1139,7 +1144,7 @@ msgstr "RouteGadget kräver både en bild (.gif) och en IOF XML-fil "
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
-msgstr "Skapa OCAD-filer"
+msgstr "Skapa RouteGadget-filer"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
@@ -1151,7 +1156,7 @@ msgstr "Symbolnamn:"
 
 #: CustomSymbolText.resx, labelCustomizedText.Text
 msgid "Customized text:"
-msgstr "Anpassad Text:"
+msgstr "Anpassad text:"
 
 #: CustomSymbolText.resx, buttonChangeText.Text
 msgid "Change text..."
@@ -1163,7 +1168,7 @@ msgstr "Återställ standardinställning"
 
 #: CustomSymbolText.resx, labelStandardText.Text
 msgid "Standard text:"
-msgstr "Standard text:"
+msgstr "Förvald textbeskrivning:"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
@@ -1172,12 +1177,12 @@ msgstr "Visa betydelse under symbol för kontrollbeskrivning"
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr "Klicka på en symbol beskrivning för att anpassa den text "
+msgstr "Klicka på en symbolbeskrivning för att anpassa den text "
 "som används i den skrivna kontrollbeskrivningen."
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "Använd som standardspråk för nya tävlingar"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1206,7 +1211,7 @@ msgstr "Visa ords genusändelse"
 #: EnterSymbolText.resx, labelDescription.Text
 msgid "Enter the customized text for the symbol in the \"Text\" "
 "column."
-msgstr "Ange den anpassade texten för symbolen under \"Text\"-kolumnen"
+msgstr "Ange den anpassade texten för symbolen under kolumnen 'Text'"
 
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
@@ -1244,7 +1249,9 @@ msgstr "Öppna en befintlig tävling..."
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "Purple Pen är fri mjukvara och får kopieras och delas. "
+"Vidareutvecklingen av Purple Pen är helt beroende av "
+"frivilliga bidrag."
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1256,25 +1263,28 @@ msgstr "Välkommen till Purple Pen"
 
 #: LegAssignmentsDialog.resx, BranchColumn.HeaderText
 msgid "Branch"
-msgstr ""
+msgstr "Gaffling"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
-msgstr ""
+msgstr "Sträcka"
 
 #: LegAssignmentsDialog.resx, labelDescription.Text
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr ""
+msgstr "För att tilldela en viss sträcka till en viss gaffling, "
+"skriv in sträcknumret/en här under. Sträckor som inte "
+"tilldelats en viss gaffling kommer att slumpvis "
+"distribueras på de kvarvarande gafflingarna."
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
-msgstr ""
+msgstr "Mer information..."
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
-msgstr ""
+msgstr "Sträcktilldelning"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -1327,23 +1337,23 @@ msgstr "Alla kontroller"
 
 #: MainFrame.resx, radioButtonDescriptions.Text
 msgid "Descriptions"
-msgstr ""
+msgstr "Kontrollbeskrivning"
 
 #: MainFrame.resx, radioButtonTopology.Text
 msgid "Ordering"
-msgstr ""
+msgstr "Kontrollordning"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "mapViewerTopology"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
-msgstr "Purple Pen filer|*.ppen|Alla filer|*.*"
+msgstr "Purple Pen-filer|*.ppen|Alla filer|*.*"
 
 #: MainFrame.resx, saveFileDialog.Filter
 msgid "Purple Pen file|*.ppen"
-msgstr "Purple Pen fil|*.ppen"
+msgstr "Purple Pen-fil|*.ppen"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
@@ -1363,7 +1373,7 @@ msgstr "Spara &som..."
 
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
-msgstr "Skapa OCAD &Filer..."
+msgstr "Skapa OCAD-&filer..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "Create PDFs..."
@@ -1371,15 +1381,15 @@ msgstr "Skapa PDF..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
-msgstr "Skapa RouteGadget-filer"
+msgstr "Skapa Route&Gadget-filer..."
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
-msgstr "Skapa Data &Utbytesfil (IOF XML)..."
+msgstr "Skapa data&utbytesfil (IOF XML)..."
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
-msgstr ""
+msgstr "Skapa G&PX-fil..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1407,11 +1417,11 @@ msgstr "&Alla banor"
 
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
-msgstr "Skapa utskriftsområde"
+msgstr "Välj &utskriftsområde"
 
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
-msgstr "Språk"
+msgstr "S&pråk..."
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
@@ -1419,7 +1429,7 @@ msgstr "&Avsluta"
 
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
-msgstr "&Fil"
+msgstr "&Arkiv"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1439,7 +1449,7 @@ msgstr "&Gör om"
 #: MainFrame.resx, deleteMenu.Text
 #: MainFrame.resx, deleteItemMenu.Text
 msgid "&Delete"
-msgstr "&Radera"
+msgstr "&Ta bort"
 
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
@@ -1507,7 +1517,7 @@ msgstr "&Full"
 
 #: MainFrame.resx, mapIntensityMenu.Text
 msgid "Map &Intensity"
-msgstr "Karta &Intensitet"
+msgstr "Kart&intensitet"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1519,11 +1529,11 @@ msgstr "Hög"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
-msgstr "&Kartans kvalitet"
+msgstr "&Kartkvalitet"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "Visa utsk&riftsområde"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
@@ -1535,11 +1545,11 @@ msgstr "&Alla kontroller"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "Andra banor..."
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Rensa andra banor"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1547,11 +1557,11 @@ msgstr "&Visa"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr ""
+msgstr "&Start"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr ""
+msgstr "&Kontroll"
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
@@ -1560,7 +1570,7 @@ msgstr "Slut&för"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr ""
+msgstr "&Definition"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1572,21 +1582,21 @@ msgstr "&Markerad sträcka till kartbyte"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
-msgstr ""
+msgstr "Kart&byte"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
-msgstr ""
+msgstr "Spridningsmetod..."
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr ""
+msgstr "Text&linje..."
 
 #: MainFrame.resx, addMapIssueMenu.Text
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
 #: MiscText.resx, MapIssue_Long
 msgid "Map Issue Point"
-msgstr ""
+msgstr "Kartutdelningsplats"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1665,7 +1675,7 @@ msgstr "Rektangel"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
-msgstr ""
+msgstr "&Lägg till"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1673,47 +1683,47 @@ msgstr "&Kartfil..."
 
 #: MainFrame.resx, changeCodesMenu.Text
 msgid "Change Control &Codes..."
-msgstr "Ändra &kontrollkoder"
+msgstr "Ändra &kontrollkoder..."
 
 #: MainFrame.resx, autoNumberingMenu.Text
 msgid "Automatic &Numbering..."
-msgstr "Automatisk &numrering"
+msgstr "Automatisk &numrering..."
 
 #: MainFrame.resx, removeUnusedControlsMenu.Text
 msgid "Remove &Unused Controls..."
-msgstr "Ta bort &oanvända kontroller"
+msgstr "Ta bort &oanvända kontroller..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
-msgstr "Stämpel&mönster"
+msgstr "Stämpel&mönster..."
 
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
-msgstr ""
+msgstr "2004 års norm för kontrollbeskrivning"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
 msgid "2018 Description Standard"
-msgstr ""
+msgstr "2018 års norm för kontrollbeskrivning"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
-msgstr ""
+msgstr "ISOM2000 kartnorm"
 
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
-msgstr ""
+msgstr "ISOM2017 kartnorm"
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
-msgstr ""
+msgstr "IOF-&normer"
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr "Anpassa &Beskrivningstext..."
+msgstr "Anpassa &beskrivningstext..."
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr ""
+msgstr "Anpassa &utseende..."
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
@@ -1721,11 +1731,11 @@ msgstr "Tävling"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
-msgstr "&Lägg till bana"
+msgstr "&Lägg till bana..."
 
 #: MainFrame.resx, deleteCourseMenu.Text
 msgid "&Delete Course"
-msgstr "&Radera bana"
+msgstr "&Ta bort bana"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
@@ -1741,19 +1751,19 @@ msgstr "Ban&ordning..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr "Ladda antal löpare..."
+msgstr "Löpar&belastning..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
-msgstr ""
+msgstr "Stafettgafflingar..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
-msgstr "&Bana"
+msgstr "&Banor"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
-msgstr ""
+msgstr "Ta bort &gaffling/slinga"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -1761,19 +1771,19 @@ msgstr "Lägg till &böj"
 
 #: MainFrame.resx, removeBendMenu.Text
 msgid "Remove B&end"
-msgstr "Ta bort böj"
+msgstr "Ta bort &böj"
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
-msgstr "Skapa gap i figur"
+msgstr "Skapa &gap i figur"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove G&ap"
-msgstr "Ta bort gap i figur"
+msgstr "Ta bort &gap i figur"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
-msgstr "Ändra &Text"
+msgstr "Ändra &text..."
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
@@ -1789,7 +1799,7 @@ msgstr "Inga snitslar"
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr "Hela Sträckan Snitslad"
+msgstr "Hela sträckan snitslad"
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
@@ -1801,7 +1811,7 @@ msgstr "Slutet av sträckan snitslad"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr "Snitslad sträcka"
+msgstr "&Snitslad sträcka"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
@@ -1813,7 +1823,7 @@ msgstr "&Objekt"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
-msgstr "Sammanfattning av banor"
+msgstr "Bansammanställning"
 
 #: MainFrame.resx, eventAuditMenu.Text
 msgid "Event &Audit"
@@ -1821,15 +1831,15 @@ msgstr "Kontrollera tävling"
 
 #: MainFrame.resx, legLengthsMenu.Text
 msgid "&Leg Lengths"
-msgstr "Längder delsträckor"
+msgstr "&Sträcklängdsrapport"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr "Korsreferens kontroller"
+msgstr "Kontrollsammanställning"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
-msgstr "Statistik för kontroll och sträckutnyttjande"
+msgstr "Kontroll- och sträck&belastning"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
@@ -1853,7 +1863,7 @@ msgstr "&Support/Felrapportering"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr ""
+msgstr "Ge ett bidrag"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
@@ -1909,15 +1919,15 @@ msgstr "Lägg till språk för kontrollbeskrivning..."
 
 #: MainFrame.resx, addTranslatedTextsMenu.Text
 msgid "Add Translated Texts..."
-msgstr "Lägg till översatta texter...."
+msgstr "Lägg till översatta texter..."
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
-msgstr "Merge Symbols.xml..."
+msgstr "Sammanfoga Symbols.xml..."
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
-msgstr "&Översätt Kontrollbeskrivning"
+msgstr "&Översätt kontrollbeskrivning"
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
@@ -2004,7 +2014,7 @@ msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
-msgstr ""
+msgstr "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
@@ -2069,12 +2079,13 @@ msgstr "Kan inte skapa '{0}' av följande skäl:"
 
 #: MiscText.resx, CannotCreateDirectory
 msgid "Cannot create folder '{0}' for the following reason:"
-msgstr "Kan inte skapa katalog '{0}' av följande skäl:"
+msgstr "Kan inte skapa mappen '{0}' av följande skäl:"
 
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr ""
+msgstr "Kan inte läsa kartan på grund av: '{0}' Optimera/reparera "
+"och spara om som OCAD kan lösa problemet."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -2088,9 +2099,8 @@ msgstr "Vill du spara ändringarna du gjort till '{0}'?"
 msgid "File '{0}' already exists in the specified folder. Click "
 "the \"Back\" button and choose a new folder or a new event "
 "title."
-msgstr "Fil '{0}' finns redan i denna katalog. Klicka på "
-"\"Tillbaka\"-knappen och välj en ny katalog eller ett nytt "
-"tävlingsnamn."
+msgstr "Filen '{0}' finns redan i den valda mappen. Klicka "
+"\"Tillbaka\" och välj en ny mapp eller ett nytt tävlingsnamn."
 
 #: MiscText.resx, CodeInUse
 msgid "The control code '{0}' is already used by another control."
@@ -2124,13 +2134,13 @@ msgstr "Ange ny poäng"
 
 #: MiscText.resx, EnterCode
 msgid "Enter new code"
-msgstr "Skriv in ny kodsiffra"
+msgstr "Ange ny kodsiffra"
 
 #: MiscText.resx, EnterDimensions
 msgid "Enter feature size\n"
 "Use / for height on a slope\n"
 "Use | for two features"
-msgstr "Skriv in föremålets storlek\n"
+msgstr "Ange föremålets storlek\n"
 "Använd / för höjder i en sluttning\n"
 "Använd | för två föremål"
 
@@ -2138,23 +2148,23 @@ msgstr "Skriv in föremålets storlek\n"
 msgid "Enter new event title\n"
 "Use | to separate lines\n"
 "(affects all courses)"
-msgstr "Ny titel för tävlingen\n"
+msgstr "Ange nytt tävlingsnamn\n"
 "Använd | för att separera rader\n"
 "(påverkar samtliga banor)"
 
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr "Lägg till ny andrahands titel\n"
+msgstr "Ange ny undertitel\n"
 "Använd | för att separera rader"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
-msgstr "Skriv in nytt bannamn"
+msgstr "Ange nytt bannamn"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr "Skriv in ny stigning i meter"
+msgstr "Ange ny stigning i meter"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
@@ -2165,7 +2175,8 @@ msgstr "Ange ny betydelse för symbol\n"
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "Ange ny text\n"
+"Använd | för att separera rader"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
@@ -2293,7 +2304,7 @@ msgstr "Kontroll {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr "Slutför"
+msgstr "Mål"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
@@ -2317,7 +2328,7 @@ msgstr "Alla: {0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr "Vänster: {0}, Höger: {1}, Topp: {2}, Botten: {3}"
+msgstr "Vänster: {0}, Höger: {1}, Uppe: {2}, Nere: {3}"
 
 #: MiscText.resx, Start
 msgid "Start"
@@ -2361,22 +2372,22 @@ msgstr "banläggning för orientering"
 msgid "Enter the text you wish to place on the map. After "
 "pressing OK, drag the mouse to place the text in the "
 "desired location."
-msgstr "Skriv in texten du vill ha på kartan. Tryck på OK, sedan "
+msgstr "Ange texten du vill ha på kartan. Tryck på OK, sedan "
 "klicka och dra på kartan för att placera texten."
 
 #: MiscText.resx, AddTextSpecialTitle
 msgid "Add Text"
-msgstr "Lägg till Text"
+msgstr "Lägg till text"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr "Skriv in ny text"
+msgstr "Ange ny text."
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
 "will now reload the map."
-msgstr "Ett annant program har gjort ändringar på kartan \"{0}\". "
-"Purple Pen kommer ladda om kartan nu."
+msgstr "Ett annat program har ändrat i kart-filen \"{0}\". Purple "
+"Pen kommer nu ladda om kartan."
 
 #: MiscText.resx, ChangeDescriptionLanguage
 msgid "The current event has textual control descriptions in {0}. "
@@ -2419,7 +2430,7 @@ msgstr "Byte"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr "MX"
+msgstr "KB"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
@@ -2442,14 +2453,14 @@ msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
 msgstr "Ett fel har uppstått. För att hjälpa oss att rätta felet, "
-"vänligen skriv in din e-mailadress samt ytterligare "
-"information och skicka oss en felrapport."
+"vänligen skriv in din mejladress samt ytterligare "
+"information för att skicka en felrapport till oss."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
 msgstr "Vänligen berätta vad du gjorde i programmet för att hjälpa "
-"oss att läsa problemet"
+"oss att lösa problemet"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
@@ -2460,18 +2471,18 @@ msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr "Beskrivningar kan inte läggas till i en bana med kartbyte "
-"om \"Alla delar\" visas. Växla över till den delen som du "
-"vill lägga till beskrivningen till och välj \"Lägg till "
-"beskrivningar\" igen."
+msgstr "Kontrollbeskrivningar kan inte läggas till i en bana med "
+"kartbyte om \"Alla delar\" visas. Växla över till den delen "
+"som du vill lägga till beskrivningen till och välj \"Lägg "
+"till kontrollbeskrivning\" igen."
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe hittades inte"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr ""
+msgstr "Pdfium PDF konverterare misslyckades att läsa PDF-filen"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
@@ -2504,8 +2515,8 @@ msgstr "Skriver ut sida {0} (av {1})"
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr "Kartfilen \"{0}\" har raderats. Vänligen försök att "
-"återställa kartfilen och tryck därefter på \"Ok\"."
+msgstr "Kartfilen \"{0}\" har tagits bort. Försök att återställa "
+"kartfilen och tryck sedan på \"Ok\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
@@ -2548,8 +2559,8 @@ msgstr "Gul"
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr "Sätt utseendet på linjen. Efter att du tryckt OK, dra med "
-"musen för att rita ett linjesegment på önskad plats."
+msgstr "Välj utseende på linjen. Efter att ha tryckt OK, dra för "
+"att rita ett linjesegment på önskad plats."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
@@ -2607,14 +2618,13 @@ msgstr "Automatisk"
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr "Längden på en bana måste vara ett nummer mellan 0.1 - "
-"99.1, eller lämnas tom för att längden ska beräknas "
-"automatiskt."
+msgstr "Längden på en bana måste vara ett nummer mellan 0.1 - 99.9 "
+"eller lämnas tom för att beräkna längden automatiskt."
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr "Skriv in en längd i km, eller lämna tomt för att beräkna "
+msgstr "Ange en längd i km, eller lämna tomt för att beräkna "
 "automatiskt"
 
 #: MiscText.resx, PausePrinting
@@ -2624,102 +2634,116 @@ msgstr "Klar med att skriva ut \"{0}\". Tryck OK för att börja "
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "Alla alternativ"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "Lämplig för stafetter med {0} löpare per lag."
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "Bokontrollen för slingorna kommer att besökas {0} gånger. "
+"Det finns {1} möjliga löpalternativ för slingorna."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "En kontroll som startar en gaffling eller slinga kan inte "
+"flyttas till ett nytt ställe på banan."
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr ""
+msgstr "För stort totalt antal gafflingsalternativ på banan. "
+"Antalet distinkta alternativ är begränsat till {0}."
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "Kan inte lägga till gaffling."
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "En gaffling finns redan vid den här kontrollen."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "En kontroll eller sträcka måste vara vald för att lägga "
+"till spridningsmetod."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "Spridningsmetod kan inte läggas till på målkontrollen."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Spridningsmetod kan inte läggas till via vyn 'Alla "
+"kontroller'."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Spridningsmetod kan inte läggas till i en poängbana."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "Spridningsmetod kan inte läggas till på sista kontrollen. "
+"Lägg till ett mål först."
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr ""
+msgstr "'{0}' är inte ett giltigt sträcknummer för gaffling '{1}'"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "Sträcka {0} bör tilldelas till en av gafflingarna {1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr ""
+msgstr "Sträcka {0} är tilldelad till både gaffling '{1}' och '{2}'"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
-msgstr ""
+msgstr "Kan inte läsa kartan på grund av: '{0}' Öppna och spara om "
+"kartan i senaste versionen av OpenOrienteering Mapper så "
+"löser det kanske problemet."
 
 #: MiscText.resx, MapIssue_Medium
 msgid "Map Issue"
-msgstr ""
+msgstr "Kartutdelning"
 
 #: MiscText.resx, MapIssue_Short
 msgid "MI"
-msgstr ""
+msgstr "KU"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "Den underliggande OCAD-kartan har synliga mallfiler. I "
+"OCAD 8 och äldre så syns kanske inte mallfilerna p.g.a. "
+"begränsningar i OCAD."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "P.g.a. begränsningar i OCAD-filformatet (OCAD 10 och "
+"äldre) så kommer bildobjekt att läggas under banor och "
+"vita områden i exporterade OCAD-filer. Kontrollera "
+"OCAD-filerna för att säkerställa att dina bilder verkligen "
+"syns som det är tänkt."
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2737,9 +2761,9 @@ msgid "Map file \"{0}\" uses fonts that are not installed on your "
 "Pen again.\n"
 msgstr "Kartfil \"{0}\" använder teckensnitt som inte är "
 "installerade på datorn. Text med dessa teckensnitt kommer "
-"visas med en standardteckensnitt, vilket kan leda till att "
-"text ser annorlunda ut jämfört med hur kartritaren tänkt "
-"sig. \n"
+"att visas med ett standardteckensnitt, vilket kan leda "
+"till att text ser annorlunda ut jämfört med hur "
+"kartritaren tänkt sig. \n"
 "\n"
 "För att åtgärda problemet, leta upp och installera "
 "teckensnitten listade nedan (använd Windows "
@@ -2764,7 +2788,7 @@ msgstr "När du använder en bildfil som kartunderlag måste du "
 "\n"
 "Upplösningen på bilden anger hur många pixlar eller "
 "punkter det är i bilden för varje (engelsk) tum på den "
-"utskrivna kartan; vanligtvis benämd punkter per tum (dots "
+"utskrivna kartan; vanligtvis benämnd punkter per tum (dots "
 "per inch, dpi).\n"
 "\n"
 "Kartans skala anger förhållandet mellan (utskriven) karta "
@@ -2795,36 +2819,40 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "När en PDF-fil används som karta så måste du ange "
+"kartskalan. \n"
+"\n"
+"Kartskalan anger relationen mellan papperskartan och "
+"verkligheten.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
-msgstr "Vilken katalog vill du spara dina tävlingsbanfiler i?"
+msgstr "I vilken mapp vill du spara dina tävlingsbanfiler?"
 
 #: NewEventDirectory.resx, useMapDirectory.Text
 msgid "In the same folder as the map file."
-msgstr "I samma katalog som kartfilen."
+msgstr "I samma mapp som kartfilen."
 
 #: NewEventDirectory.resx, useOtherFolder.Text
 msgid "In another folder I choose."
-msgstr "I en annan katalog som jag väljer."
+msgstr "I en annan mapp som jag väljer."
 
 #: NewEventDirectory.resx, chooseFolder.Text
 msgid "Choose Folder..."
-msgstr "Välj katalog..."
+msgstr "Välj mapp..."
 
 #: NewEventDirectory.resx, folderBrowserDialog.Description
 msgid "Select the folder for your event file"
-msgstr "Välj katalog för din tävlingsfil"
+msgstr "Välj mapp för din tävlingsfil"
 
 #: NewEventDirectory.resx, directoryDisplay.Text
 msgid "Selected Folder"
-msgstr "Vald katalog"
+msgstr "Vald mapp"
 
 #: NewEventDirectory.resx, labelTitle.Text
 msgid "Event File Location"
-msgstr ""
+msgstr "Tävlingsfilens plats"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
@@ -2835,12 +2863,12 @@ msgstr "Klicka på \"Slutför\" för att skapa din nya tävling. Din "
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr "När din tävlingsfil skapats, väljer du \"Ny bana...\" från "
-"banmenyn för att skapa en eller flera banor."
+msgstr "När din tävlingsfil skapats väljer du \"Lägg till bana...\" "
+"i menyn \"Banor\" för att skapa en eller flera banor."
 
 #: NewEventFinal.resx, labelTitle.Text
 msgid "Create Event"
-msgstr ""
+msgstr "Skapa tävling"
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
@@ -2848,7 +2876,11 @@ msgid "In order to design your courses, you must select the map "
 "OpenOrienteering Mapper file (although PDFs and image "
 "files like JPEGs can be used instead). Click the "
 "\"Choose...\" button to select a map file."
-msgstr ""
+msgstr "För att kunna lägga banor så måste du välja vilken kartfil "
+"du vill använda. Vanligtvis så är den en OCAD- eller "
+"OpenOrienteering Mapper-fil (PDF-filer och t.ex. "
+"JPEG-bilder kan dock också användas). Klicka på "
+"\"Välj...\"-knappen för att välja en kartfil."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
@@ -2858,22 +2890,25 @@ msgstr "Vald kartfil"
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr ""
+msgstr "Kartfilen har laddats. Om du skickar din Purple Pen-fil "
+"till någon annan så måste dom även ha tillgång till denna "
+"kartfil."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr "Nya kontroller numreras automatiskt. Välj nummer att börja "
-"numreringen med."
+msgstr "Nya kontroller numreras automatiskt. Välj första kodsiffra "
+"att börja numreringen med."
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
 "Numbering)"
-msgstr ""
+msgstr "(Den här inställningen kan ändras senare via "
+"Tävling/Automatisk numrering)"
 
 #: NewEventNumbering.resx, labelTitle.Text
 msgid "Control Numbering"
-msgstr ""
+msgstr "Kontrollnumrering"
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
@@ -2886,51 +2921,53 @@ msgstr "Vilken skala kommer du skriva ut dina banor i? I de flesta "
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
 msgid "Default &printing scale:"
-msgstr "Standard &utskriftsskala:"
+msgstr "Förvald &utskriftsskala:"
 
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
 msgstr "(Du kan ändra utskriftsskalan senare genom att välja "
-"Bana/Egenskaper.)"
+"Banor/Egenskaper.)"
 
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "(De här inställningarna kan ändras senare via "
+"Tävling/IOF-normer)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
-msgstr ""
+msgstr "IOF-normer"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
-msgstr ""
+msgstr "ISOM 2017"
 
 #: NewEventStandards.resx, radioButtonMap2000.Text
 msgid "ISOM 2000 / ISSOM 2007"
-msgstr ""
+msgstr "ISOM 2000 / ISSOM 2007"
 
 #: NewEventStandards.resx, groupBoxMapStandard.Text
 msgid "IOF Map Standard"
-msgstr ""
+msgstr "IOF-kartnorm"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
 msgid "Descriptions 2018"
-msgstr ""
+msgstr "Kontrollbeskrivningsnorm 2018"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
-msgstr ""
+msgstr "Kontrollbeskrivningsnorm 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "IOF kontrollbeskrivningsnorm"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
 "to follow?"
-msgstr ""
+msgstr "Vilken version av IOF-normerna vill du att Purple Pen ska "
+"använda?"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -2940,13 +2977,14 @@ msgid "The event title will be displayed on the first line of "
 "To fit on the description sheet, it should be less than 25 "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
-msgstr "Tävlingstiteln kommer visas på första raden på varje sida "
-"av kontrollbeskrivning. Det används användas som filnamnet "
-"för att spara din tävling på hårddisken.\n"
+msgstr "Tävlingsnamnet kommer att visas på första raden på varje "
+"sida av kontrollbeskrivningen. Det används också som "
+"filnamn för att spara tävlingen på hårddisken.\n"
 "\n"
-"För att passa in på kontrollbeskrivningen måste den vara "
-"mindre än 25 tecken lång. Exempel på bra tävlingstitlar är "
-"\"O-ringen Etapp 1\" eller \"Skogen OK, 5 jan 2009\"."
+"För att passa in på kontrollbeskrivningen måste namnet "
+"vara mindre än 25 tecken långt. Exempel på bra "
+"tävlingsnamn är \"O-ringen Etapp 1\" eller \"Skogen OK, 5 jan "
+"2019\"."
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
@@ -2965,14 +3003,14 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "For printing competition maps, it is suggested that "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
-msgstr "Kartfilen {0} innehåller objekt eller symboler som inte "
-"till fullo stöds av Purple Pen, och kanske inte visas "
-"korrekt. Objekten som kanske inte visas korrekt listas "
-"nedan.\n"
+msgstr "Kartfilen {0} innehåller objekt eller symboler som Purple "
+"Pen inte har fullt stöd för och som därför kanske inte "
+"skrivs ut korrekt. De objekt som kan bli felaktiga vid "
+"utskrift listas här under.\n"
 "\n"
-"För att skriva ut tävlingskartor, är det rekommenderat att "
-"banorna exporteras och skrivs ut med OCAD (använd "
-"Arkiv/Skapa OCAD-filer...).\n"
+"För att skriva ut tävlingskartor är det rekommenderat att "
+"banorna exporteras (använd Arkiv/Skapa OCAD-filer...) och "
+"istället skrivs ut med hjälp av OCAD.\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
@@ -2984,7 +3022,7 @@ msgstr "Kartfil kan inte skrivas ut korrekt"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Operationen utförs"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
@@ -3001,15 +3039,15 @@ msgstr "Bekräfta ersättning av filer"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr ""
+msgstr "PDFium PDF konverteraren bearbetar din PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "PDF-bearbetningen misslyckades. Felen visas här under."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Bearbetar PDF"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -3047,7 +3085,7 @@ msgstr "Antal kopior av varje bana:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
+msgstr "Pausa utskriften efter varje bana eller del"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
@@ -3057,11 +3095,11 @@ msgstr "Kopior"
 
 #: PrintCourses.resx, checkBoxRasterPrinting.Text
 msgid "Rasterize Before Printing"
-msgstr ""
+msgstr "Rastrerar innan utskrift"
 
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
+msgstr "OCAD-kompatibel"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
@@ -3100,7 +3138,7 @@ msgstr "Orientering:"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr "Bana standard"
+msgstr "Banans förvalda"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
@@ -3112,7 +3150,7 @@ msgstr "Beskrivning typ:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
-msgstr "Linjetjocklek"
+msgstr "Linjetjocklek:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
@@ -3120,7 +3158,7 @@ msgstr "kontrollbeskrivningar per bana"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
-msgstr "en kopia av varje bana"
+msgstr "en kopia för varje bana"
 
 #: PrintDescriptions.resx, copiesCombo.Items1
 msgid "one page of each course"
@@ -3140,43 +3178,43 @@ msgstr "Skriv ut kontrollbeskrivningar"
 
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
+msgstr "Storlek:"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Höjd:"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Pappersstorlek ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Sidorientering"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Vänster:"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Överkant:"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Höger:"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Nederkant:"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Marginaler ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Sidinställning"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
@@ -3288,7 +3326,7 @@ msgstr "Längd"
 
 #: ReportText.resx, ColumnHeader_Load
 msgid "Load"
-msgstr "Ladda"
+msgstr "Belastning"
 
 #: ReportText.resx, ColumnHeader_Location
 msgid "Location"
@@ -3308,7 +3346,7 @@ msgstr "Samma symbol?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Antal besök"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
@@ -3316,11 +3354,11 @@ msgstr "Bansammanställning för {0}"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr "Korsreferens kontroller för {0}"
+msgstr "Kontrollsammanställning för {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "Sträckor som nyttjas i båda riktningarna"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3407,15 +3445,15 @@ msgstr "Allt är OK"
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "Bana \"{0}\" innehåller kontroll \"{1}\" två gånger på raken."
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
-msgstr ""
+msgstr "Upprepade kontroller"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "Poängbana \"{0}\" innehåller kontroll \"{1}\" två gånger. "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -3432,11 +3470,10 @@ msgid "The following controls are present in the All Controls "
 "use the \"Remove Unused Controls\" command on the \"Event\" "
 "menu. These controls will not be considered further in "
 "this report."
-msgstr "Följande kontroller finns i samlingen Alla kontroller men "
-"används inte i någn bana. Ta bort dem genom \"Ta bort "
-"oanvända kontroller\" som finns under Tävlingsmenyn. Dessa "
-"kontroller kommer inte att räknas in i resten av denna "
-"rapport."
+msgstr "Följande kontroller finns i \"Alla kontroller\" men används "
+"inte i någon bana. Ta bort dom genom \"Ta bort oanvända "
+"kontroller\" under menyn \"Tävling\". Dessa kontroller kommer "
+"inte att räknas in i resten av denna rapport."
 
 #: ReportText.resx, EventAudit_Yes
 msgid "Yes"
@@ -3448,11 +3485,11 @@ msgstr "Medelvärde"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr ""
+msgstr "{0} ({1} kontroller, {2}, {3} m stigning)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr ""
+msgstr "{0} ({1} kontroller, {2})"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
@@ -3462,46 +3499,50 @@ msgstr "Sträcklängdsrapport för {0}"
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr ""
+msgstr "Några kontroller kommer att besökas flera gånger på samma "
+"bana. Det andra belastningsvärdet räknar varje besök vid "
+"en kontroll separat."
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr "Belastning kontroll"
+msgstr "Kontrollbelastning"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr "Belastning sträcka"
+msgstr "Sträckbelastning"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr "Några eller alla banor saknar angivelse om hur många "
-"löpare det är per bana. Tätheten av löpare angiven nedan "
-"kan därför vara saknad eller felaktig. För att ange antal "
-"löpare per bana, välj \"Inställning av antal löpare per "
-"bana\" från menyn \"Bana\""
+msgstr "Några eller alla banor saknar uppgift om hur många löpare "
+"som kommer att använda banan. Löparbelastningen här under "
+"kan därför vara felaktig eller saknas. För att ange "
+"antalet löpare per bana, välj \"Löparbelastning\" i menyn "
+"\"Banor\"."
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr "(Enbart sträckor som används i mer än en bana syns i denna "
+msgstr "(enbart sträckor som används i mer än en bana syns i denna "
 "rapport)"
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr "Sammanfattning av antal löpare för {0}"
+msgstr "Sammanställning av löparbelastning för {0}"
 
 #: ReportText.resx, Load_VariationsExist
 msgid "One or more courses has variations. Load numbers will be "
 "computed assuming that competitors are evenly distributed "
 "between forks."
-msgstr ""
+msgstr "En eller flera banor har gafflingar. Framräknade "
+"belastningsvärden förutsätter att löparna är jämt "
+"fördelade mellan gafflingarna."
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "({0} besök)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -3509,31 +3550,36 @@ msgstr "VARNING:"
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "OBS: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "Varning: P.g.a. antalet sträckor som angetts så kommer "
+"gafflingen vid kontroll {0} inte att bli jämt utnyttjad. "
+"{1} sträcka/or kommer att använda gaffling(ar) {2} medan "
+"{3} sträcka/or kommer att använda gaffling(ar) {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "Sträcka {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "Inga stafettlag har blivit skapade ännu. Välj önskat antal "
+"lag och sträckor och klicka sedan på knappen \"Tilldela "
+"gafflingar\"."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "Lag {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "Gafflingstilldelning för {0}"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3541,7 +3587,7 @@ msgstr "borta från kontroll"
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr "Inställning av antal löpare per bana:"
+msgstr "Löparbelastning:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
@@ -3569,7 +3615,7 @@ msgstr "Bana \"{0}\""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr "Specialanpassad symbolbeskrivning"
+msgstr "Anpassad symbolbeskrivning"
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
@@ -3601,7 +3647,7 @@ msgstr "fålla in till mål"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr "Linje höjd:"
+msgstr "Linjehöjd:"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
@@ -3637,7 +3683,7 @@ msgstr "start"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr "Text beskrivning:"
+msgstr "Textbeskrivning:"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
@@ -3649,7 +3695,7 @@ msgstr "Syns ovan {0}, i alla banor som innehåller {0}"
 
 #: SelectionDescriptionText.resx, TextLine_AboveThisCourse
 msgid "Appears above {0}, in this course only"
-msgstr "Syns ovan {0}, i denna bana enbart"
+msgstr "Syns ovanför {0}, enbart i denna bana"
 
 #: SelectionDescriptionText.resx, TextLine_BelowAllCourses
 msgid "Appears below {0}, in all courses that contain {0}"
@@ -3657,11 +3703,11 @@ msgstr "Syns nedan {0}, i alla banor som innehåller {0}"
 
 #: SelectionDescriptionText.resx, TextLine_BelowThisCourse
 msgid "Appears below {0}, in this course only"
-msgstr "Syns nedan {0}, i denna bana enbart"
+msgstr "Syns nedanför {0}, enbart i denna bana"
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
-msgstr "Totalt antal kontroller:"
+msgstr "Antal kontroller:"
 
 #: SelectionDescriptionText.resx, TotalScore
 msgid "Total score:"
@@ -3673,98 +3719,101 @@ msgstr "Används i banorna:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
-msgstr ""
+msgstr "kartbyten"
 
 #: SelectionDescriptionText.resx, MapExchange_Singular
 msgid "map exchange"
-msgstr ""
+msgstr "kartbyte"
 
 #: SelectionDescriptionText.resx, MapExchangeAtControl
 msgid "Map exchange at {0}"
-msgstr ""
+msgstr "Kartbyte vid {0}"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "Belastning:"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
-msgstr ""
+msgstr "Används i:"
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
-msgstr ""
+msgstr "Bana \"{0}\", del {1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "Beräknad längd:"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "kartutdelningsplatser"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "kartutdelningsplats"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "Varje gaffling för sig"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Varje stafettsträcka för sig"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Alla gafflingar tillsammans"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Gafflingar:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "Visa alla gafflingar samtidigt på en karta."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "En karta för varje möjlig gaffling på banan."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "En karta för varje sträcka för de stafettlag som du väljer."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "Du måste först skapa stafettlag genom att välja "
+"'Stafettgafflingar...' i menyn 'Banor'."
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Välj individuella gafflingar"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "Denna bana har {0} stafettlag tilldelade. Välj "
+"'Stafettgaffling...' i menyn 'Banor' för att ändra antalet "
+"lag."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "till"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Välj stafettlag  att skriva ut / exportera:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Välj gafflingar"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3776,15 +3825,15 @@ msgstr "Välj utskriftsområde genom att dra med musen."
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Pappersstorlek"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Välj utskriftsområde automatiskt"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Lås storleken på utskriftsområdet till pappersstorleken"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "
@@ -3799,23 +3848,22 @@ msgstr "Programspråk"
 #: StatusBarText.resx, DefaultStatus
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
-msgstr "Vänster musknapp: Välj objekt; Höger musknapp: Flytta "
-"karta; Musens scrollhjul: Zooma in/ut"
+msgstr "Klicka: Välj objekt; Högerklick: Panorera; Scrollhjul: "
+"Zooma in/ut"
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
-msgstr "Vänster musknapp: flytta/storleksförändra rektangel; Höger "
-"musknapp: flytta karta; Musens scrollhjul: Zooma in/ut"
+msgstr "Klicka/dra: Flytta/storleksförändra rektangel; Högerklick: "
+"Panorera; Scrollhjul: Zooma in/ut"
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
-msgstr "Håll ner vänster musknapp och dra för att flytta valt objekt"
+msgstr "Håll ner och dra för att flytta valt objekt"
 
 #: StatusBarText.resx, DragCorner
 msgid "Hold down left mouse button and drag corner point to move it"
-msgstr "Håll ner vänster musknapp och dra hörnpunkten för att "
-"flytta den"
+msgstr "Håll ner och dra hörnpunkten för att flytta den"
 
 #: StatusBarText.resx, DraggingObject
 msgid "Move object to desired location and release mouse button"
@@ -3828,178 +3876,173 @@ msgstr "Flytta hörnpunkten till önskad position och släpp musknappen"
 
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
-msgstr "Klicka på vänster musknapp för att placera ut en ny kontroll"
+msgstr "Klicka för att placera ut en ny kontroll"
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr "Klicka på vänster musknapp för att lägga till kontroll "
-"\"{0}\" till banan"
+msgstr "Klicka för att lägga till kontroll \"{0}\" till banan"
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr "Klicka på vänster musknapp för att lägga till en ny start"
+msgstr "Klicka för att placera en ny start"
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr "Klicka med vänster musknapp för att lägga till befintlig "
-"start till bana"
+msgstr "Klicka för att lägga till en befintlig start till banan"
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr "Klicka på vänster musknapp för att lägga till ett nytt mål"
+msgstr "Klicka för att placera ett nytt mål"
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr "Klicka med vänster musknapp för att lägga till mål till "
-"bana."
+msgstr "Klicka för att lägga till ett befintligt mål till banan."
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr "Klicka med vänster musknapp för att placera ut ny "
-"obligatorisk passage."
+msgstr "Klicka för att placera ut ny obligatorisk passage."
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
 "point to course"
-msgstr "Klicka med vänster musknapp för att lägga till befintlig "
-"obligatorisk passage till bana"
+msgstr "Klicka för att lägga till en befintlig obligatorisk "
+"passage till banan"
 
 #: StatusBarText.resx, AddingObject
 msgid "Click left mouse button to place new object"
-msgstr "Klicka på vänster musknapp för att lägga till ett nytt "
-"objekt"
+msgstr "Klicka för att lägga till ett nytt objekt"
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
-msgstr "Klicka med vänster musknapp på platsen för böjen"
+msgstr "Klicka på platsen för böjen"
 
 #: StatusBarText.resx, AddingCorner
 msgid "Click left mouse button to add a new corner"
-msgstr "Klicka med vänster musknapp för att placera ut nytt hörn."
+msgstr "Klicka för att placera ut nytt hörn."
 
 #: StatusBarText.resx, DeletingBend
 msgid "Click left mouse button on a bend to remove it"
-msgstr "Klicka på en böj med vänster musknapp för att ta bort den."
+msgstr "Klicka på en böj för att ta bort den."
 
 #: StatusBarText.resx, DeletingCorner
 msgid "Click left mouse button on a corner to remove it"
-msgstr "Klicka på ett hörn med vänster musknapp för att ta bort det."
+msgstr "Klicka på ett hörn för att ta bort det."
 
 #: StatusBarText.resx, AddingControlGap
 msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
-msgstr ""
+msgstr "Klicka på kontrollringen för att skapa ett litet gap; håll "
+"ner och dra för att skapa ett större gap"
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr "Klicka på ett gap i kontrollcirkeln med vänster musknapp "
-"för att ta bort det."
+msgstr "Klicka på ett gap i kontrollringen för att ta bort det."
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr ""
+msgstr "Klicka för att skapa ett litet uppehåll; håll ner och dra "
+"för att skapa ett större uppehåll i sammanbindningslinjen"
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr "Klicka på ett gap i sträckans linje med vänster musknapp "
-"för att ta bort gapet"
+msgstr "Klicka på ett gap i sammanbindningslinjen för att ta bort "
+"gapet"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
 "object"
-msgstr "Håll ner vänster musknapp och dra till önskad storlek för "
-"valt objekt"
+msgstr "Håll ner och dra till önskad storlek för valt objekt"
 
 #: StatusBarText.resx, SizingRectangle
 msgid "Move edge(s) to desired location and release mouse button"
-msgstr "Flytta kant(er) till önskad position och släpp mus knapp"
+msgstr "Flytta kanten/erna till önskad position och släpp musknappen"
 
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr "Håll ned vänster musknapp och drag för att lägga till "
-"kontrollbeskrivning"
+msgstr "Håll ner och dra för att skapa kontrollbeskrivning"
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
 "to the correct angle"
-msgstr "Klicka med vänster musknapp när passagen är roterad i rätt "
-"riktning."
+msgstr "Klicka när passagen är roterad i rätt riktning."
 
 #: StatusBarText.resx, AddingLineArea
 msgid "Hold down left mouse button and drag to add a line "
 "segment; click the left mouse button to finish adding object"
-msgstr "Håll ned vänster musknapp och dra för att lägga till ett "
-"linjesegment, klicka med vänster musknapp för att avsluta"
+msgstr "Håll ner och dra för att lägga till ett linjesegment; "
+"klicka för att avsluta segmentet"
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr "Håll ner vänster musknapp och dra för att skapa text"
+msgstr "Håll ner och dra för att placera text"
 
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
 "course"
-msgstr ""
+msgstr "Klicka för att lägga till ett befintligt kartbyte till banan"
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr ""
+msgstr "Klicka för att placera ett nytt kartbyte"
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr ""
+msgstr "Klicka för att lägga till kartbyte vid kontroll \"{0}\" "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Håll ner och dra för att skapa objekt"
 
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "Dra ett kontrollnummer för att ändra dess ordning på banan "
+"(håll ner Skift för att duplicera kontrollen)"
 
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
 "course"
-msgstr ""
+msgstr "Klicka för att lägga till en befintlig kartutdelningsplats "
+"till banan"
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
-msgstr ""
+msgstr "Klicka för att placera en ny kartutdelningsplats"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "Exportera…"
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr ""
+msgstr "Antal sträckor:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "Tilldela gafflingar"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "Antal lag:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
-msgstr ""
+msgstr "Tilldela fasta sträckor till gafflingar..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Lagnummer börjar på: "
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr ""
+msgstr "IOF XML 3.0|*.xml|Kalkylark (CSV)|*.csv"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -4009,15 +4052,15 @@ msgstr "Ta bort"
 msgid "The following controls are in the All Controls collection, "
 "but not used in any course. Click Delete to remove all "
 "checked controls."
-msgstr "Följande kontroller finns i samlingen \"Alla kontroller\" "
-"men ingen av dem används i någon bana. Klicka Ta bort för "
-"att ta bort alla markerade kontroller"
+msgstr "Följande kontroller finns i \"Alla kontroller\" men ingen av "
+"dom används i någon bana. Klicka \"Ta bort\" för att ta bort "
+"alla markerade kontroller"
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Välj ytterligare banor att visa tillsammans med bana \"{0}\"."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Visa ytterligare banor"
 

@@ -130,7 +130,7 @@
     <value>Skrivare:</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
-    <value>Utdata</value>
+    <value>Skrivare</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
     <value>Förhandsgranska...</value>
@@ -141,14 +141,23 @@
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Antal kopior av varje bana:</value>
   </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Pausa utskriften efter varje bana eller del</value>
+  </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopior</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Rastrerar innan utskrift</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Skriv ut kartbyten på samma karta </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>Färgläge:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD-kompatibel</value>
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>RGB</value>

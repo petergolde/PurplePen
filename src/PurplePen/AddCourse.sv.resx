@@ -121,7 +121,7 @@
     <value>Första kodsiffra:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Definitionens utseende</value>
+    <value>Definitionens utseende:</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kartans utskriftsskala:</value>
@@ -139,7 +139,7 @@
     <value>Symboler och text</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Kontrollcirkel-text:</value>
+    <value>Kontrolltext:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>Sekvensnummer (3)</value>
@@ -178,7 +178,7 @@
     <value>Följande text kommer synas på andra raden av kontrolldefinitionen (valfritt).</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Klasslista / sekundär titel</value>
+    <value>Klasslista / Undertitel</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Längd:</value>
@@ -196,7 +196,7 @@
     <value>Normal bana</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>Poängbana</value>
+    <value>Poängbana (ScoreO)</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>meter</value>

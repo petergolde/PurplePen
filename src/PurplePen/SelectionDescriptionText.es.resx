@@ -204,9 +204,6 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Punto de Primeros Auxilios</value>
   </data>
-  <data name="SpecialName_Image" xml:space="preserve">
-    <value>Imagen</value>
-  </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
     <value>Ruta Prohibida</value>
   </data>
@@ -258,37 +255,7 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Usado en recorridos:</value>
   </data>
-  <data name="FileName" xml:space="preserve">
-    <value>Nombre:</value>
-  </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Área con Fondo Blanco</value>
-  </data>
-  <data name="MapExchange_Plural" xml:space="preserve">
-    <value>cambios de mapa</value>
-  </data>
-  <data name="MapExchange_Singular" xml:space="preserve">
-    <value>cambio de mapa</value>
-  </data>
-  <data name="MapExchangeAtControl" xml:space="preserve">
-    <value>Cambio de mapa en {0}</value>
-  </data>
-  <data name="Load" xml:space="preserve">
-    <value>Carga:</value>
-  </data>
-  <data name="UsedIn" xml:space="preserve">
-    <value>Usado en:</value>
-  </data>
-  <data name="CourseNameAndPart" xml:space="preserve">
-    <value>Recorrido «{0}», Parte {1}</value>
-  </data>
-  <data name="SpecialName_Line" xml:space="preserve">
-    <value>Línea</value>
-  </data>
-  <data name="SpecialName_Rectangle" xml:space="preserve">
-    <value>Rectángulo</value>
-  </data>
-  <data name="CalculatedLength" xml:space="preserve">
-    <value>Longitud calculada:</value>
   </data>
 </root>

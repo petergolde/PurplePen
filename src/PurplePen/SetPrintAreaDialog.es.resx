@@ -126,15 +126,6 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Ajusta el area de impresión arrastrando las esquinas con el ratón.</value>
   </data>
-  <data name="groupBoxPaperSize.Text" xml:space="preserve">
-    <value>Tamaño de papel</value>
-  </data>
-  <data name="checkBoxAutomatic.Text" xml:space="preserve">
-    <value>Asignar área de impresión automáticamente</value>
-  </data>
-  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
-    <value>Fijar área de impresión al tamaño de papel</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Establecer Área de Impresión</value>
   </data>

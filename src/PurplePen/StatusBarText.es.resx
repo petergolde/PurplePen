@@ -174,11 +174,8 @@
   <data name="DeletingCorner" xml:space="preserve">
     <value>Clik Izquierdo: sobre una esqina para quitarla</value>
   </data>
-  <data name="AddingControlGap" xml:space="preserve">
-    <value>Click izquierdo del ratón en el círculo del control para añadir un pequeño hueco; mantener botón izquierdo del ratón y arrastrar para crear un hueco grande</value>
-  </data>
   <data name="RemovingControlGap" xml:space="preserve">
-    <value>Click izquierdo del ratón sobre el hueco del circulo para eliminarlo</value>
+    <value>Clik Izquierdo: sobre el hueco del circulo para eliminarlo</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Clik Izquierdo: sobre el hueco en la linea para eliminarlo</value>
@@ -196,24 +193,9 @@
     <value>Clik Izquierdo: cuando el punto de paso tenga la orientación correcta</value>
   </data>
   <data name="AddingLineArea" xml:space="preserve">
-    <value>Mantener botón izquierdo del ratón y arrastrar para añadir un nuevo segmento |Clik Izquierdo: para dejar de añadir objetos.</value>
+    <value>Manten pulsado el botón izquierdo y suéltalo para añadir un nuevo segmento |Clik Izquierdo: para dejar de añadir objetos.</value>
   </data>
   <data name="AddingText" xml:space="preserve">
-    <value>Mantener botón izquierdo del ratón y arrastrar para crear un Texto</value>
-  </data>
-  <data name="AddingExistingMapExchange" xml:space="preserve">
-    <value>Click izquierdo del ratón para añadir un cambio de mapa existente al recorrido</value>
-  </data>
-  <data name="AddingMapExchange" xml:space="preserve">
-    <value>Click izquierdo del ratón para colocar un nuevo cambio de mapa</value>
-  </data>
-  <data name="AddingMapExchangeToControl" xml:space="preserve">
-    <value>Click izquierdo del ratón para añadir cambio de mapa en el control «{0}»</value>
-  </data>
-  <data name="AddingRectangle" xml:space="preserve">
-    <value>Mantener botón izquierdo del ratón y arrastrar para crear objeto</value>
-  </data>
-  <data name="DraggingTopologyObject" xml:space="preserve">
-    <value>Arrastrar número de control para reordenarlo en el recorrido (mantener SHIFT para duplicar)</value>
+    <value>Manten pulsado el botón izquierdo y suéltalo para crear un Texto</value>
   </data>
 </root>
