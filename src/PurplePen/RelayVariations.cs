@@ -228,39 +228,54 @@ namespace PurplePen
         {
             // Return a potential team that doesn't duplicate previous teams, or failing that,
             // with the minimum number of duplicates.
-            int minCount = int.MaxValue;
+            int minDupCount = int.MaxValue;
+            int minTotalScore = int.MaxValue;
             TeamAssignment minTeam = null;
 
+            // Try 100 teams, first prioritizing number of complete duplicates, then
+            // prioritizing total score.
             for (int i = 0; i < 100; ++i) { 
                 TeamAssignment team = GeneratePotentialTeam();
                 int countDups = results.Count(existingTeam => existingTeam.Equals(team));
-                if (countDups == 0) {
-                    Debug.WriteLine("Team {0} formed with 0 dups", results.Count);
-                    return team;
-                }
-                if (countDups < minCount) {
-                    minCount = countDups;
+
+                if (countDups < minDupCount) {
+                    // duplicates takes priority always.
+                    minDupCount = countDups;
+                    minTotalScore = team.totalScore;
                     minTeam = team;
                 }
+                else if (countDups == minDupCount && team.totalScore <= minTotalScore) {
+                    // if # duplicates is the same, then prioritize by score.
+                    if (team.totalScore == minTotalScore && i >= 10)
+                        return team;
+                    minTotalScore = team.totalScore;
+                    minTeam = team;
+                }
+
+                if (countDups == 0 && team.totalScore == 0)
+                    return team;  // can't be better than 0 on both measures.
+                if (countDups == 0 && i > 25)
+                    break;
             }
 
-            Debug.WriteLine("Team {0} formed with {1} dups", results.Count, minCount);
+            Debug.WriteLine("Team {0} formed with {1} dups, totalScore of {2}", results.Count, minDupCount, minTeam.totalScore);
             return minTeam;
         }
 
         private TeamAssignment GeneratePotentialTeam()
         {
             TeamAssignment teamAssignment = new TeamAssignment(this);
+            teamAssignment.totalScore = 0;
 
             for (int leg = 0; leg < numberLegs; ++leg) {
-                AddLegToTeamAssignment(leg, teamAssignment);
+                teamAssignment.totalScore += AddLegToTeamAssignment(leg, teamAssignment);
             }
 
             return teamAssignment;
         }
 
-
-        private void AddLegToTeamAssignment(int leg, TeamAssignment teamAssignment)
+        // Add a leg to the given assignment with a low score (for that leg), and return the score assigned for that leg.
+        private int AddLegToTeamAssignment(int leg, TeamAssignment teamAssignment)
         {
             int minScore = int.MaxValue;
 
@@ -276,9 +291,16 @@ namespace PurplePen
                 int score = ScoreLegAssignment(leg, teamAssignment);
 
                 if (score == 0)
-                    return;  // perfect enough to return.
-                if (score <= minScore && count > 50)
-                    return; // good enough; as good as all previous and more than 50 considered.
+                    return score;  // perfect enough to return.
+                if (score <= minScore && count > 20)
+                    return score; // good enough; as good as all previous and more than 20 considered.
+                if (score <= minScore * 4 / 3 && count > 50)
+                    return score;
+                if (score <= minScore * 2 && count > 75)
+                    return score;
+                if (count > 100)
+                    return score;
+
                 minScore = Math.Min(minScore, score);
 
                 foreach (Fork fork in allForks) {
@@ -366,7 +388,31 @@ namespace PurplePen
         {
             int score = 0;
 
-            // Check 1: check again previous teams on same leg.
+            // Check 1: check agains previous teams on same leg, add penalty if 
+            // too many on same branch. Boost penalty for first leg and first fork.
+            bool firstFork = true;
+            foreach (Fork fork in allForks) {
+                if (fork.fixedLegs != null && fork.fixedLegs[leg] >= 0) {
+                    continue; // This is a fixed branch; nothing to score.
+                }
+
+                int allowedSimilarBranches = (int) Math.Floor(1.17 * ((double)results.Count / fork.numNonFixedBranches));
+                int similarBranches = 0;
+                for (int i = 0; i < results.Count; ++i) {
+                    if (results[i].LegEqualForFork(fork, leg, teamAssignment, leg)) {
+                        ++similarBranches;
+                    }
+                }
+                int penalty = Math.Max(0, (similarBranches - allowedSimilarBranches));
+                if (firstFork)
+                    penalty *= 3;
+                if (leg == 0)
+                    penalty *= 3;
+                score += penalty;
+                firstFork = false;
+            }
+
+            // Check 2: check again previous teams on same leg.
             int allowedDuplicates = (results.Count / minUniquePathsByLeg[leg]);
             if (allowedDuplicates >= 1) {
                 allowedDuplicates += (int)Math.Ceiling((double)allowedDuplicates / 3); // allow some slop after all options used once.
@@ -377,13 +423,13 @@ namespace PurplePen
                     ++duplicates;
             }
 
-            score += Math.Max(0, (duplicates - allowedDuplicates));
+            score += 10 * Math.Max(0, (duplicates - allowedDuplicates));
 
             if (numberLegs <= minUniquePathsByLeg[leg]) {
-                // Check 2: check against previous legs on same team, if they should be unique
+                // Check 3: check against previous legs on same team, if they should be unique
                 for (int otherLeg = 0; otherLeg < leg; ++otherLeg) {
                     if (teamAssignment.LegEquals(leg, teamAssignment, otherLeg))
-                        score += 10;
+                        score += 100;
                 }
             }
 
@@ -673,6 +719,7 @@ namespace PurplePen
         {
             RelayVariations outer;
             public Dictionary<Fork, LegAssignmentForOneFork> legAssignForFork;
+            public int totalScore; // Total score for all forks.
 
             public TeamAssignment(RelayVariations relayVariations)
             {
@@ -701,18 +748,27 @@ namespace PurplePen
             public bool LegEquals(int leg, TeamAssignment other, int otherLeg)
             {
                 foreach (Fork fork in outer.allForks) {
-                    int[] thisForkLeg = legAssignForFork[fork].branchForLeg[leg];
-                    int[] otherForkLeg = other.legAssignForFork[fork].branchForLeg[otherLeg];
-                    if (thisForkLeg.Length != otherForkLeg.Length)
+                    if (!LegEqualForFork(fork, leg, other, otherLeg))
                         return false;
-                    for (int j = 0; j < thisForkLeg.Length; ++j) {
-                        if (thisForkLeg[j] != otherForkLeg[j])
-                            return false;
-                    }
                 }
 
                 return true;
             }
+
+            public bool LegEqualForFork(Fork fork, int leg, TeamAssignment other, int otherLeg)
+            {
+                int[] thisForkLeg = legAssignForFork[fork].branchForLeg[leg];
+                int[] otherForkLeg = other.legAssignForFork[fork].branchForLeg[otherLeg];
+                if (thisForkLeg.Length != otherForkLeg.Length)
+                    return false;
+                for (int j = 0; j < thisForkLeg.Length; ++j) {
+                    if (thisForkLeg[j] != otherForkLeg[j])
+                        return false;
+                }
+
+                return true;
+            }
+
 
             public string GetVariationStringForLeg(int leg)
             {

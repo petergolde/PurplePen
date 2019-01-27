@@ -633,23 +633,39 @@ namespace PurplePen.Tests
         [TestMethod]
         public void Text()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, -1);
             CheckRenderBitmap(courseobj, "text");
         }
 
         [TestMethod]
         public void Text2()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 4, 6), "Times New Roman", FontStyle.Bold, SpecialColor.Black);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 4, 6), "Times New Roman", FontStyle.Bold, SpecialColor.Black, -1);
             CheckRenderBitmap(courseobj, "text2");
         }
 
         [TestMethod]
         public void TextEmpty()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "", new RectangleF(-4, -2, 8, 6), "Arial", FontStyle.Bold, new SpecialColor(0.8F, 0.5F, 0, 0));
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "", new RectangleF(-4, -2, 8, 6), "Arial", FontStyle.Bold, new SpecialColor(0.8F, 0.5F, 0, 0), -1);
             CheckRenderBitmap(courseobj, "textempty");
         }
+
+        [TestMethod]
+        public void TextFixedHeight1()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "012", new RectangleF(-4, -2.4F, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, 2F);
+            CheckRenderBitmap(courseobj, "textfixedheight1");
+        }
+
+        [TestMethod]
+        public void TextFixedHeight2()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CheckRenderBitmap(courseobj, "textfixedheight2");
+        }
+
+
 
         // Create a description course object to use in testing.
         DescriptionCourseObj CreateDescriptionCourseObj(CourseAppearance appearance, int numColumns = 1)
@@ -1543,15 +1559,29 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextHighlight()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 7, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 7, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, -1);
             CheckHighlightBitmap(courseobj, "text_highlight");
         }
 
         [TestMethod]
         public void TextHighlight2()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 4, 6), "Times New Roman", FontStyle.Italic, new SpecialColor(0.7F, 0.5F, 0, 0));
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 4, 6), "Times New Roman", FontStyle.Italic, new SpecialColor(0.7F, 0.5F, 0, 0), -1);
             CheckHighlightBitmap(courseobj, "text_highlight2");
+        }
+
+        [TestMethod]
+        public void TextFixedHeightHighlight()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CheckHighlightBitmap(courseobj, "textfixedheight_highlight");
+        }
+
+        [TestMethod]
+        public void TextFixedHeightHighlight2()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "123", new RectangleF(-3, -2.7F, 7, 5), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, 1F);
+            CheckHighlightBitmap(courseobj, "textfixedheight2_highlight");
         }
 
         [TestMethod]
@@ -1815,16 +1845,25 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextOffset()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 6.5F, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 6.5F, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, -1);
             CheckOffsetBitmap(courseobj, "text_offset");
         }
 
         [TestMethod]
         public void TextOffset2()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 4.5F, 6), "Times New Roman", FontStyle.Italic, new SpecialColor(0.8F, 0, 0.6F, 0));
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 4.5F, 6), "Times New Roman", FontStyle.Italic, new SpecialColor(0.8F, 0, 0.6F, 0), -1);
             CheckOffsetBitmap(courseobj, "text2_offset");
         }
+
+        [TestMethod]
+        public void TextFixedHeightOffset()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CheckOffsetBitmap(courseobj, "textfixedheight_offset");
+        }
+
+
 
         [TestMethod]
         public void DescriptionOffset()

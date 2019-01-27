@@ -129,6 +129,24 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void GenerateAssignment7()
+        {
+            Setup(TestUtil.GetTestFile("relay\\harper.ppen"));
+
+            var teamAssignment = new RelayVariations(eventDB, CourseId(2), new RelaySettings(101, 10, 3));
+            ValidateRelayVariationsTest(teamAssignment, "relay\\harper1");
+        }
+
+        [TestMethod]
+        public void GenerateAssignment8()
+        {
+            Setup(TestUtil.GetTestFile("relay\\harper.ppen"));
+
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), new RelaySettings(201, 10, 3));
+            ValidateRelayVariationsTest(teamAssignment, "relay\\harper2");
+        }
+
+        [TestMethod]
         public void FixedBranches1()
         {
             Setup(TestUtil.GetTestFile("relay\\relay.ppen"));

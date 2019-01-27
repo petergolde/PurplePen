@@ -1581,6 +1581,7 @@ namespace PurplePen
         public string text;                 // for text objects, the text.
         public string fontName;             // for text objects, the font name
         public bool fontBold, fontItalic;   // for text objects, the font style
+        public float fontHeight = -1;       // for text objects, the font height (digit height, not em height), or -1 for auto (old style).
         public int numColumns = 1;          // for description objects, the number of columns.
         public Bitmap imageBitmap;          // for image objects, the bitmap.
 
@@ -1738,6 +1739,8 @@ namespace PurplePen
                 return false;
             if (other.fontItalic != fontItalic)
                 return false;
+            if (other.fontHeight != fontHeight)
+                return false;
             if (other.numColumns != numColumns)
                 return false;
             if (other.imageBitmap != imageBitmap)
@@ -1821,6 +1824,7 @@ namespace PurplePen
                     fontName = xmlinput.GetAttributeString("name");
                     fontBold = xmlinput.GetAttributeBool("bold");
                     fontItalic = xmlinput.GetAttributeBool("italic");
+                    fontHeight = xmlinput.GetAttributeFloat("height", -1F);
                     xmlinput.Skip();
                     break;
 
@@ -1948,6 +1952,9 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("name", fontName);
                 xmloutput.WriteAttributeString("bold", XmlConvert.ToString(fontBold));
                 xmloutput.WriteAttributeString("italic", XmlConvert.ToString(fontItalic));
+                if (fontHeight > 0) {
+                    xmloutput.WriteAttributeString("height", XmlConvert.ToString(fontHeight));
+                }
                 xmloutput.WriteEndElement();
                 xmloutput.WriteStartElement("appearance");
                 xmloutput.WriteAttributeString("color", color.ToString());

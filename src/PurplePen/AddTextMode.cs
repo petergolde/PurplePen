@@ -65,8 +65,9 @@ namespace PurplePen
         string fontName;
         bool fontBold, fontItalic;
         SpecialColor fontColor;
+        float fontHeight;
 
-        public AddTextMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, string text, string fontName, bool fontBold, bool fontItalic, SpecialColor fontColor)
+        public AddTextMode(Controller controller, UndoMgr undoMgr, SelectionMgr selectionMgr, EventDB eventDB, string text, string fontName, bool fontBold, bool fontItalic, SpecialColor fontColor, float fontHeight)
         {
             this.controller = controller;
             this.undoMgr = undoMgr;
@@ -77,6 +78,7 @@ namespace PurplePen
             this.fontBold = fontBold;
             this.fontItalic = fontItalic;
             this.fontColor = fontColor;
+            this.fontHeight = fontHeight;
             this.displayText = CourseFormatter.ExpandText(eventDB, selectionMgr.ActiveCourseView, text);
         }
 
@@ -119,7 +121,7 @@ namespace PurplePen
 
             // Begin dragging out the description block.
             startLocation = location;
-            startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), fontName, Util.GetFontStyle(fontBold, fontItalic), fontColor);
+            startingObj = new BasicTextCourseObj(Id<Special>.None, displayText, new RectangleF(location, new SizeF(0.001F, 0.001F)), fontName, Util.GetFontStyle(fontBold, fontItalic), fontColor, fontHeight);
             handleDragging = location;
             DragTo(location);
             displayUpdateNeeded = true;
@@ -148,7 +150,9 @@ namespace PurplePen
             using (Font f = new Font(NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.emHeightDefaultTextSpecial, NormalCourseAppearance.fontStyleTextSpecial, GraphicsUnit.World))
                 size = g.MeasureString(measureText, f, new PointF(0,0), StringFormat.GenericTypographic);
 
-            CreateTextSpecial(new RectangleF(new PointF(location.X, location.Y - size.Height), size));
+            RectangleF boundingRect = new RectangleF(new PointF(location.X, location.Y - size.Height), size);
+            boundingRect = currentObj.AdjustBoundingRect(boundingRect);
+            CreateTextSpecial(boundingRect);
             displayUpdateNeeded = true;
         }
 
@@ -164,6 +168,7 @@ namespace PurplePen
                 LeftButtonClick(pane, location, pixelSize, ref displayUpdateNeeded);
             }
             else {
+                rect = currentObj.AdjustBoundingRect(rect);
                 CreateTextSpecial(rect);
                 displayUpdateNeeded = true;
             }
@@ -172,7 +177,8 @@ namespace PurplePen
         void CreateTextSpecial(RectangleF boundingRect)
         {
             undoMgr.BeginCommand(1551, CommandNameText.AddObject);
-            Id<Special> specialId = ChangeEvent.AddTextSpecial(eventDB, boundingRect, text, currentObj.fontName, (currentObj.fontStyle & FontStyle.Bold) != 0, (currentObj.fontStyle & FontStyle.Italic) != 0, currentObj.fontColor);
+
+            Id<Special> specialId = ChangeEvent.AddTextSpecial(eventDB, boundingRect, text, currentObj.fontName, (currentObj.fontStyle & FontStyle.Bold) != 0, (currentObj.fontStyle & FontStyle.Italic) != 0, currentObj.fontColor, currentObj.fontDigitHeight);
             undoMgr.EndCommand(1551);
 
             selectionMgr.SelectSpecial(specialId);

@@ -558,7 +558,7 @@ namespace PurplePen
                 FontStyle fontStyle = Util.GetFontStyle(special.fontBold, special.fontItalic);
                 RectangleF boundingRect = RectangleF.FromLTRB((float)Math.Min(special.locations[0].X, special.locations[1].X), (float)Math.Min(special.locations[0].Y, special.locations[1].Y),
                                                                                               (float)Math.Max(special.locations[0].X, special.locations[1].X), (float)Math.Max(special.locations[0].Y, special.locations[1].Y));
-                courseObj = new BasicTextCourseObj(specialId, text, boundingRect, special.fontName, fontStyle, special.color);
+                courseObj = new BasicTextCourseObj(specialId, text, boundingRect, special.fontName, fontStyle, special.color, special.fontHeight);
                 break;
             case SpecialKind.Descriptions:
                 Debug.Fail("description specials should not be passed to this function");

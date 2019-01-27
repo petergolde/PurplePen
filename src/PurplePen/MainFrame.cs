@@ -1646,6 +1646,8 @@ namespace PurplePen
             bool purpleOverprint;
             string fontName;
             bool fontBold, fontItalic;
+            float fontHeight;
+            bool fontAutoSize;
             SpecialColor fontColor;
 
             FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
@@ -1654,14 +1656,16 @@ namespace PurplePen
                                                CmykColor.FromCmyk(c, m, y, k), controller.ExpandText);
             dialog.HelpTopic = "EditAddText.htm";
 
-            controller.GetAddTextDefaultProperties(out fontName, out fontBold, out fontItalic, out fontColor);
+            controller.GetAddTextDefaultProperties(out fontName, out fontBold, out fontItalic, out fontColor, out fontHeight, out fontAutoSize);
             dialog.FontName = fontName;
             dialog.FontBold = fontBold;
             dialog.FontItalic = fontItalic;
             dialog.FontColor = fontColor;
+            dialog.FontSize = fontHeight;
+            dialog.FontSizeAutomatic = fontAutoSize;
 
             if (dialog.ShowDialog(this) == DialogResult.OK) {
-                controller.BeginAddTextSpecialMode(dialog.UserText, dialog.FontName, dialog.FontBold, dialog.FontItalic, dialog.FontColor);
+                controller.BeginAddTextSpecialMode(dialog.UserText, dialog.FontName, dialog.FontBold, dialog.FontItalic, dialog.FontColor, dialog.FontSizeAutomatic ? -1 : dialog.FontSize);
             }
 
             dialog.Dispose();
@@ -1757,11 +1761,12 @@ namespace PurplePen
                 bool purpleOverprint;
                 string fontName;
                 bool fontBold, fontItalic;
+                float fontHeight;
                 SpecialColor fontColor;
                 FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
 
                 string oldText = controller.GetChangableText();
-                controller.GetChangableTextProperties(out fontName, out fontBold, out fontItalic, out fontColor);
+                controller.GetChangableTextProperties(out fontName, out fontBold, out fontItalic, out fontColor, out fontHeight);
                 ChangeText dialog = new ChangeText(MiscText.ChangeTextTitle, MiscText.ChangeTextSpecialExplanation, true,
                                                    CmykColor.FromCmyk(c, m, y, k), controller.ExpandText);
                 dialog.HelpTopic = "ItemChangeText.htm";
@@ -1770,9 +1775,11 @@ namespace PurplePen
                 dialog.FontBold = fontBold;
                 dialog.FontItalic = fontItalic;
                 dialog.FontColor = fontColor;
+                dialog.FontSize = (fontHeight < 0) ? 5 : fontHeight;
+                dialog.FontSizeAutomatic = (fontHeight < 0);
 
                 if (dialog.ShowDialog(this) == DialogResult.OK) {
-                    controller.ChangeText(dialog.UserText, dialog.FontName, dialog.FontBold, dialog.FontItalic, dialog.FontColor);
+                    controller.ChangeText(dialog.UserText, dialog.FontName, dialog.FontBold, dialog.FontItalic, dialog.FontColor, dialog.FontSizeAutomatic ? -1 : dialog.FontSize);
                 }
 
                 dialog.Dispose();

@@ -52,7 +52,7 @@
 
 #define MyAppSetupName 'Purple Pen'
 #define MyAppName "Purple Pen"
-#define MyAppVersion "3.1.5"
+#define MyAppVersion "3.2.1"
 #define MyAppPublisher "Golde Software"
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
@@ -164,14 +164,14 @@ Source: "{#BuildDir}\ro\*"; DestDir: "{app}\ro"; Flags: ignoreversion recursesub
 Source: "{#BuildDir}\sv\*"; DestDir: "{app}\sv"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\zh-CN\*"; DestDir: "{app}\zh-CN"; Flags: ignoreversion recursesubdirs createallsubdirs
 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Italic"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold Italic"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Italic"; Flags: onlyifdoesntexist
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold Italic"; Flags: onlyifdoesntexist
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

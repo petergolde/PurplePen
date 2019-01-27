@@ -695,6 +695,7 @@ namespace PurplePen
                     BasicTextCourseObj textObj = (BasicTextCourseObj)courseObjectStart.Clone();
                     textObj.MoveHandle(handleLocation, location);
                     RectangleF rect = textObj.GetHighlightBounds();
+                    rect = textObj.AdjustBoundingRect(rect);
                     controller.MoveSpecial(specialId, new PointF[2] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) });
                 }
                 else {

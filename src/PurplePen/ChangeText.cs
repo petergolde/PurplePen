@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 using PurplePen.Graphics2D;
@@ -120,6 +121,16 @@ namespace PurplePen
             set { colorChooser.Color = value; }
         }
 
+        public bool FontSizeAutomatic {
+            get { return checkBoxAutoFontSize.Checked; }
+            set { checkBoxAutoFontSize.Checked = value; }
+        }
+
+        public float FontSize {
+            get { return (float) upDownFontSize.Value; }
+            set { upDownFontSize.Value = (decimal) value; }
+        }
+
         void InsertSpecialText(string specialText)
         {
             textBoxMain.Paste(specialText);
@@ -199,10 +210,22 @@ namespace PurplePen
             float emHeight = pictureBoxPreview.Height * 0.7F;
             Color textColor = SwopColorConverter.CmykToRgbColor(colorChooser.CmykColor);
 
+            if (!checkBoxAutoFontSize.Checked) {
+                emHeight = GetEmHeight(e.Graphics, this.FontName, this.FontStyle, (float)upDownFontSize.Value);
+            }
+
+            StringFormat stringFormat = new StringFormat(StringFormat.GenericDefault);
+            stringFormat.LineAlignment = StringAlignment.Center;
+            stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
             using (Font font = new Font(this.FontName, emHeight, this.FontStyle, GraphicsUnit.Pixel)) 
             using (Brush brush = new SolidBrush(textColor)) {
-                e.Graphics.DrawString(expandedText, font, brush, new PointF(5, 5));
+                e.Graphics.DrawString(expandedText, font, brush, pictureBoxPreview.ClientRectangle, stringFormat);
             }
+        }
+
+        private float GetEmHeight(Graphics graphics, string fontName, FontStyle fontStyle, float desiredDigitHeight)
+        {
+            return ((float)pictureBoxPreview.Height / 10) * desiredDigitHeight * BasicTextCourseObj.EmHeightToDigitHeightRatio(fontName, fontStyle);
         }
 
         private void listBoxFonts_SelectedIndexChanged(object sender, EventArgs e)
@@ -225,5 +248,15 @@ namespace PurplePen
             UpdatePreview();
         }
 
+        private void checkBoxAutoFontSize_CheckedChanged(object sender, EventArgs e)
+        {
+            upDownFontSize.Enabled = labelFontSizeMm.Enabled = !checkBoxAutoFontSize.Checked;
+            UpdatePreview();
+        }
+
+        private void upDownFontSize_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
     }
 }

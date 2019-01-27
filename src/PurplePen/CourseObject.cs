@@ -48,11 +48,11 @@ using System.Drawing.Text;
 namespace PurplePen
 {
     // A CourseObj defines a single object on the rendered course.
-    abstract class CourseObj: IMapViewerHighlight, ICloneable
+    abstract class CourseObj : IMapViewerHighlight, ICloneable
     {
         // NOTE: if you add new fields, update the Equals override!
         public CourseLayer layer;                            // layer in the map
-                                                            // The layer number is set when the objects are added to a course layout.
+                                                             // The layer number is set when the objects are added to a course layout.
 
         public Id<ControlPoint> controlId;                        // Id of associated control (control/start/finish/crossing)
         public Id<CourseControl> courseControlId;             // Id of associated course control (control/start/finish/crossing)
@@ -77,9 +77,9 @@ namespace PurplePen
         // should have the same lifetime as the map and is used to store symdefs.
         public virtual void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
-            object key = new Pair<short,object>(symColor.OcadId, SymDefKey());
+            object key = new Pair<short, object>(symColor.OcadId, SymDefKey());
 
-            if (! dict.ContainsKey(key))
+            if (!dict.ContainsKey(key))
                 dict[key] = CreateSymDef(map, symColor);
 
             AddToMap(map, dict[key]);
@@ -122,7 +122,7 @@ namespace PurplePen
         {
             PointF[] vectors = { new PointF(distance, 0) };
             xform.TransformVectors(vectors);
-            return (float) Math.Sqrt(vectors[0].X * vectors[0].X + vectors[0].Y * vectors[0].Y);
+            return (float)Math.Sqrt(vectors[0].X * vectors[0].X + vectors[0].Y * vectors[0].Y);
         }
 
         // Overrides...
@@ -137,8 +137,7 @@ namespace PurplePen
         protected abstract SymDef CreateSymDef(Map map, SymColor symColor);
 
         // If returns non-null, indicates the color of the object. Null means use default for the layer it is in.
-        public virtual SpecialColor CustomColor
-        {
+        public virtual SpecialColor CustomColor {
             get { return null; }
         }
 
@@ -157,7 +156,7 @@ namespace PurplePen
         public abstract void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing);
 
         // Offset this course object by the given amount.
-        public abstract void Offset(float dx, float dy); 
+        public abstract void Offset(float dx, float dy);
 
         // Move a handle on the object.
         public virtual void MoveHandle(PointF oldHandle, PointF newHandle)
@@ -267,16 +266,16 @@ namespace PurplePen
         // override object.Equals
         public override bool Equals(object obj)
         {
-            if ((object) obj == (object) this)
+            if ((object)obj == (object)this)
                 return true;
 
             if (obj == null || GetType() != obj.GetType()) {
                 return false;
             }
 
-            CourseObj other = (CourseObj) obj;
-            if (other.layer != layer || other.controlId != controlId || other.courseControlId != courseControlId || 
-                other.specialId != specialId || other.courseObjRatio != courseObjRatio || ! other.appearance.Equals(appearance))
+            CourseObj other = (CourseObj)obj;
+            if (other.layer != layer || other.controlId != controlId || other.courseControlId != courseControlId ||
+                other.specialId != specialId || other.courseObjRatio != courseObjRatio || !other.appearance.Equals(appearance))
                 return false;
 
             return true;
@@ -294,10 +293,10 @@ namespace PurplePen
         }
     }
 
-    enum CrossHairOptions { NoCrossHair, HighlightCrossHair}
+    enum CrossHairOptions { NoCrossHair, HighlightCrossHair }
 
     // A type of course object that exists at a single point.
-    abstract class PointCourseObj: CourseObj
+    abstract class PointCourseObj : CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
         public CircleGap[] gaps;                 // gaps if its a control or finish circle
@@ -309,24 +308,22 @@ namespace PurplePen
 
         protected PointCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, float radius, PointF location) :
            base(controlId, courseControlId, specialId, courseObjRatio, appearance)
-       {
+        {
             this.gaps = gaps;
             this.movableGaps = gaps;
             this.orientation = orientation;
             this.location = location;
             this.radius = radius;
-       }
+        }
 
         // Get the full radius of this point object. 
-        public float FullRadius
-        {
+        public float FullRadius {
             get { return radius * courseObjRatio * appearance.controlCircleSize; }
         }
 
         // Get the radius that handles are placed on. Compensates for the line width. Used for cutting adjacent circles, and positioning handles
-        public float ApparentRadius
-        {
-            get {return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * courseObjRatio) / 2.0F); }
+        public float ApparentRadius {
+            get { return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * courseObjRatio) / 2.0F); }
         }
 
         protected override void AddToMap(Map map, SymDef symdef)
@@ -362,7 +359,7 @@ namespace PurplePen
 
             // Draw the cross-hair.
             using (Pen pen = new Pen(brush, 0)) {
-                g.DrawLine(pen, (float) Math.Round(pts[0].X), (float) Math.Round(pts[0].Y), (float) Math.Round(pts[1].X), (float)Math.Round(pts[1].Y));
+                g.DrawLine(pen, (float)Math.Round(pts[0].X), (float)Math.Round(pts[0].Y), (float)Math.Round(pts[1].X), (float)Math.Round(pts[1].Y));
                 g.DrawLine(pen, (float)Math.Round(pts[2].X), (float)Math.Round(pts[2].Y), (float)Math.Round(pts[3].X), (float)Math.Round(pts[3].Y));
             }
         }
@@ -377,7 +374,7 @@ namespace PurplePen
         {
             if (gaps == null)
                 return null;
-            else 
+            else
                 return CircleGap.GapStartStopPoints(location, ApparentRadius, movableGaps);
         }
 
@@ -402,7 +399,7 @@ namespace PurplePen
                 return false;
             }
 
-            PointCourseObj other = (PointCourseObj) obj;
+            PointCourseObj other = (PointCourseObj)obj;
 
             if (other.gaps != gaps || other.orientation != orientation || other.location != location || other.radius != radius)
                 return false;
@@ -418,7 +415,7 @@ namespace PurplePen
     }
 
     // A type of course object that is a series of line segments.
-    abstract class LineCourseObj: CourseObj
+    abstract class LineCourseObj : CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
         public Id<CourseControl> courseControlId2;            // Id of second associated course control (normal leg/flagged leg)
@@ -429,111 +426,110 @@ namespace PurplePen
 
         protected LineCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, float thickness, SymPath path, LegGap[] gaps) :
            base(controlId, courseControlId, specialId, courseObjRatio, appearance)
-       {
-           this.courseControlId2 = courseControlId2;
-           this.thickness = thickness;
+        {
+            this.courseControlId2 = courseControlId2;
+            this.thickness = thickness;
 
-           this.path = path;
-           this.gaps = this.movableGaps = gaps;
-       }
+            this.path = path;
+            this.gaps = this.movableGaps = gaps;
+        }
 
         // Should the ends of the line have handles?
-        public virtual bool HandlesOnEnds
-        {
+        public virtual bool HandlesOnEnds {
             get { return true; }
         }
 
-       public override PointF[] GetHandles()
-       {
-           List<PointF> handleList = new List<PointF>();
+        public override PointF[] GetHandles()
+        {
+            List<PointF> handleList = new List<PointF>();
 
-           // Add handles for the bends, and possibly the end points.
-           handleList.AddRange(path.Points);
-           if (! HandlesOnEnds) {
-               // Remove handles from the ends.
-               handleList.RemoveAt(0);
-               handleList.RemoveAt(handleList.Count - 1);
-           }
+            // Add handles for the bends, and possibly the end points.
+            handleList.AddRange(path.Points);
+            if (!HandlesOnEnds) {
+                // Remove handles from the ends.
+                handleList.RemoveAt(0);
+                handleList.RemoveAt(handleList.Count - 1);
+            }
 
-           // Add handles for the gaps. (Only the moveable ones)
-           if (movableGaps != null) {
-               handleList.AddRange(LegGap.GapStartStopPoints(path, movableGaps));
-           }
+            // Add handles for the gaps. (Only the moveable ones)
+            if (movableGaps != null) {
+                handleList.AddRange(LegGap.GapStartStopPoints(path, movableGaps));
+            }
 
-           // Return the handles as an array.
-           if (handleList.Count > 0)
-               return handleList.ToArray();
-           else
-               return null;
-       }
+            // Return the handles as an array.
+            if (handleList.Count > 0)
+                return handleList.ToArray();
+            else
+                return null;
+        }
 
-       protected override void AddToMap(Map map, SymDef symdef)
-       {
+        protected override void AddToMap(Map map, SymDef symdef)
+        {
             SymPath[] gappedPaths = LegGap.SplitPathWithGaps(path, gaps);
 
             foreach (SymPath p in gappedPaths) {
-                LineSymbol sym = new LineSymbol((LineSymDef) symdef, p);
+                LineSymbol sym = new LineSymbol((LineSymDef)symdef, p);
                 map.AddSymbol(sym);
             }
-       }
+        }
 
-       // Get the distance of a point from this object, or 0 if the point is covered by the object.
-       public override double DistanceFromPoint(PointF pt)
-       {
-           PointF closestPoint;
-           double dist = path.DistanceFromPoint(pt, out closestPoint) - (thickness / 2.0 * courseObjRatio);
-           return Math.Max(0, dist);
-       }
+        // Get the distance of a point from this object, or 0 if the point is covered by the object.
+        public override double DistanceFromPoint(PointF pt)
+        {
+            PointF closestPoint;
+            double dist = path.DistanceFromPoint(pt, out closestPoint) - (thickness / 2.0 * courseObjRatio);
+            return Math.Max(0, dist);
+        }
 
-       public override string ToString()
-       {
-           string result = base.ToString();
+        public override string ToString()
+        {
+            string result = base.ToString();
 
-           if (courseControlId2.IsNotNone)
+            if (courseControlId2.IsNotNone)
                 result += string.Format("course-control2:{0}  ", courseControlId2);
 
-           result += string.Format("path:{0}", path);
+            result += string.Format("path:{0}", path);
 
-           if (gaps != null) {
-               result += "  gaps:";
-               foreach (LegGap gap in gaps)
-                   result += string.Format(" (s:{0:0.##},l:{1:0.##})", gap.distanceFromStart, gap.length);
-           }
+            if (gaps != null) {
+                result += "  gaps:";
+                foreach (LegGap gap in gaps)
+                    result += string.Format(" (s:{0:0.##},l:{1:0.##})", gap.distanceFromStart, gap.length);
+            }
 
-           return result;
-       }
+            return result;
+        }
 
-       // Draw the highlight. Everything must be drawn in pixel coords so fast erase works correctly.
-       public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
-       {
-           GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
+        // Draw the highlight. Everything must be drawn in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g);
 
-           object brushKey = new object();
-           grTarget.CreateGdiPlusBrush(brushKey, brush, false);
+            object brushKey = new object();
+            grTarget.CreateGdiPlusBrush(brushKey, brush, false);
 
-           // Get thickness of line.
-           float pixelThickness = TransformDistance(thickness * courseObjRatio, xformWorldToPixel);
+            // Get thickness of line.
+            float pixelThickness = TransformDistance(thickness * courseObjRatio, xformWorldToPixel);
 
-           SymPath[] gappedPaths = LegGap.SplitPathWithGaps(path, gaps);
+            SymPath[] gappedPaths = LegGap.SplitPathWithGaps(path, gaps);
 
-           // Draw it.
-           object penKey = new object();
-           grTarget.CreatePen(penKey, brushKey, pixelThickness, LineCap.Flat, LineJoin.Miter, 5);
+            // Draw it.
+            object penKey = new object();
+            grTarget.CreatePen(penKey, brushKey, pixelThickness, LineCap.Flat, LineJoin.Miter, 5);
 
-           try {
-               foreach (SymPath p in gappedPaths) {
-                   p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
-               }
-           }
+            try {
+                foreach (SymPath p in gappedPaths) {
+                    p.DrawTransformed(grTarget, penKey, xformWorldToPixel);
+                }
+            }
             catch (Exception) {
                 // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
                 // Just ignore it; there's nothing else to do. See bug #1997301.
             }
 
             grTarget.Dispose();
-       }
+        }
 
-       // Get the bounds of the highlight.
+        // Get the bounds of the highlight.
         public override RectangleF GetHighlightBounds()
         {
             RectangleF bounds = path.BoundingBox;
@@ -541,103 +537,103 @@ namespace PurplePen
             return bounds;
         }
 
-       // Offset the object by a given amount
-       public override void Offset(float dx, float dy)
-       {
-           Matrix m = new Matrix();
-           m.Translate(dx, dy);
-           path = path.Transform(m);
-       }
+        // Offset the object by a given amount
+        public override void Offset(float dx, float dy)
+        {
+            Matrix m = new Matrix();
+            m.Translate(dx, dy);
+            path = path.Transform(m);
+        }
 
-       // Move a handle on the line.
-       public override void MoveHandle(PointF oldHandle, PointF newHandle)
-       {
-           SymPath oldPath = path;
-           PointF[] points = (PointF[]) path.Points.Clone();
-           PointKind[] kinds = path.PointKinds;
-           bool foundPoint = false;
+        // Move a handle on the line.
+        public override void MoveHandle(PointF oldHandle, PointF newHandle)
+        {
+            SymPath oldPath = path;
+            PointF[] points = (PointF[])path.Points.Clone();
+            PointKind[] kinds = path.PointKinds;
+            bool foundPoint = false;
 
-           // Check if handle being moved is an path handle.
-           if (HandlesOnEnds) {
-               for (int i = 0; i < points.Length; ++i) {
-                   if (!foundPoint && points[i] == oldHandle) {
-                       points[i] = newHandle;
-                       foundPoint = true;
-                   }
-               }
-           }
-           else {
-               for (int i = 1; i < points.Length - 1; ++i) {
-                   if (!foundPoint && points[i] == oldHandle) {
-                       points[i] = newHandle;
-                       foundPoint = true;
-                   }
-               }
-           }
+            // Check if handle being moved is an path handle.
+            if (HandlesOnEnds) {
+                for (int i = 0; i < points.Length; ++i) {
+                    if (!foundPoint && points[i] == oldHandle) {
+                        points[i] = newHandle;
+                        foundPoint = true;
+                    }
+                }
+            }
+            else {
+                for (int i = 1; i < points.Length - 1; ++i) {
+                    if (!foundPoint && points[i] == oldHandle) {
+                        points[i] = newHandle;
+                        foundPoint = true;
+                    }
+                }
+            }
 
-           if (foundPoint) {
-               // Create new path.
-               path = new SymPath(points, kinds);
+            if (foundPoint) {
+                // Create new path.
+                path = new SymPath(points, kinds);
 
-               // Update gaps for the new path.
-               if (gaps != null)
-                   gaps = LegGap.MoveGapsToNewPath(gaps, oldPath, path);
-           }
-           else {
-               // Handle may be on the gaps. Update those.
-                if (gaps != null) 
+                // Update gaps for the new path.
+                if (gaps != null)
+                    gaps = LegGap.MoveGapsToNewPath(gaps, oldPath, path);
+            }
+            else {
+                // Handle may be on the gaps. Update those.
+                if (gaps != null)
                     gaps = LegGap.MoveStartStopPoint(path, gaps, oldHandle, newHandle);
                 if (movableGaps != null)
                     movableGaps = LegGap.MoveStartStopPoint(path, movableGaps, oldHandle, newHandle);
-           }
-       }
+            }
+        }
 
 
-       // Are we equal?
-       public override bool Equals(object obj)
-       {
-           if (obj == null || GetType() != obj.GetType()) {
-               return false;
-           }
+        // Are we equal?
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType()) {
+                return false;
+            }
 
-           LineCourseObj other = (LineCourseObj) obj;
+            LineCourseObj other = (LineCourseObj)obj;
 
-           if (other.courseControlId2 != courseControlId2 || other.thickness != thickness || !(path.Equals(other.path)))
-               return false;
+            if (other.courseControlId2 != courseControlId2 || other.thickness != thickness || !(path.Equals(other.path)))
+                return false;
 
-           if (gaps != null) {
-               if (other.gaps == null)
-                   return false;
-               if (gaps.Length != other.gaps.Length)
-                   return false;
-               for (int i = 0; i < gaps.Length; ++i)
-                   if (other.gaps[i] != gaps[i])
-                       return false;
-           }
-           else {
-               if (other.gaps != null)
-                   return false;
-           }
+            if (gaps != null) {
+                if (other.gaps == null)
+                    return false;
+                if (gaps.Length != other.gaps.Length)
+                    return false;
+                for (int i = 0; i < gaps.Length; ++i)
+                    if (other.gaps[i] != gaps[i])
+                        return false;
+            }
+            else {
+                if (other.gaps != null)
+                    return false;
+            }
 
-           return base.Equals(obj);
-       }
+            return base.Equals(obj);
+        }
 
         // override object.GetHashCode
         public override int GetHashCode()
         {
             throw new NotSupportedException("The method or operation is not supported.");
         }
-   }
+    }
 
     // A type of course object that spans an area.
-    abstract class AreaCourseObj: CourseObj
+    abstract class AreaCourseObj : CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
         SymPathWithHoles path;                // closed path with the area to fill
 
         protected AreaCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts) :
            base(controlId, courseControlId, specialId, courseObjRatio, appearance)
-       {
+        {
             bool lastPtSynthesized = false;
 
             if (pts[pts.Length - 1] != pts[0]) {
@@ -649,12 +645,12 @@ namespace PurplePen
                 lastPtSynthesized = true;
             }
 
-           PointKind[] kinds = new PointKind[pts.Length];
-           for (int i = 0; i < kinds.Length; ++i)
-               kinds[i] = PointKind.Normal;
+            PointKind[] kinds = new PointKind[pts.Length];
+            for (int i = 0; i < kinds.Length; ++i)
+                kinds[i] = PointKind.Normal;
 
-           this.path = new SymPathWithHoles(new SymPath(pts, kinds, null, lastPtSynthesized), null);
-       }
+            this.path = new SymPathWithHoles(new SymPath(pts, kinds, null, lastPtSynthesized), null);
+        }
 
         public override PointF[] GetHandles()
         {
@@ -678,9 +674,9 @@ namespace PurplePen
             if (path.IsInside(pt))
                 return 0.0;
 
-           // Not inside: use the distance from the path.
-           PointF closestPoint;
-           return path.MainPath.DistanceFromPoint(pt, out closestPoint);
+            // Not inside: use the distance from the path.
+            PointF closestPoint;
+            return path.MainPath.DistanceFromPoint(pt, out closestPoint);
         }
 
         public override string ToString()
@@ -736,7 +732,7 @@ namespace PurplePen
         // Move a handle on the area.
         public override void MoveHandle(PointF oldHandle, PointF newHandle)
         {
-            PointF[] points = (PointF[]) path.MainPath.Points.Clone();
+            PointF[] points = (PointF[])path.MainPath.Points.Clone();
             PointKind[] kinds = path.MainPath.PointKinds;
 
             for (int i = 0; i < points.Length; ++i) {
@@ -754,7 +750,7 @@ namespace PurplePen
                 return false;
             }
 
-            AreaCourseObj other = (AreaCourseObj) obj;
+            AreaCourseObj other = (AreaCourseObj)obj;
 
             if (!(path.Equals(other.path)))
                 return false;
@@ -770,7 +766,7 @@ namespace PurplePen
     }
 
     // A type of course object that spans an rectangular area.
-    class RectCourseObj: CourseObj
+    class RectCourseObj : CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
         public RectangleF rect;                // rectangle with the area.
@@ -800,11 +796,11 @@ namespace PurplePen
             int index = Array.IndexOf(GetHandles(), handlePoint);
 
             switch (index) {
-            case 0: case 7: return Cursors.SizeNESW;
-            case 1: case 6: return Cursors.SizeNS;
-            case 2: case 5: return Cursors.SizeNWSE;
-            case 3: case 4: return Cursors.SizeWE;
-            default: return Util.MoveHandleCursor;
+                case 0: case 7: return Cursors.SizeNESW;
+                case 1: case 6: return Cursors.SizeNS;
+                case 2: case 5: return Cursors.SizeNWSE;
+                case 3: case 4: return Cursors.SizeWE;
+                default: return Util.MoveHandleCursor;
             }
         }
 
@@ -885,26 +881,26 @@ namespace PurplePen
             // Figure out which coord(s) moving this handle changes.
             bool changeLeft = false, changeTop = false, changeRight = false, changeBottom = false;
             switch (handleIndex) {
-            case 0: changeLeft = true; changeTop = true; break;
-            case 1: changeTop = true; break;
-            case 2: changeRight = true; changeTop = true; break;
-            case 3: changeLeft = true; break;
-            case 4: changeRight = true; break;
-            case 5: changeLeft = true; changeBottom = true; break;
-            case 6: changeBottom = true; break;
-            case 7: changeRight = true; changeBottom = true; break;
-            default:
-                Debug.Fail("bad handle"); break;
+                case 0: changeLeft = true; changeTop = true; break;
+                case 1: changeTop = true; break;
+                case 2: changeRight = true; changeTop = true; break;
+                case 3: changeLeft = true; break;
+                case 4: changeRight = true; break;
+                case 5: changeLeft = true; changeBottom = true; break;
+                case 6: changeBottom = true; break;
+                case 7: changeRight = true; changeBottom = true; break;
+                default:
+                    Debug.Fail("bad handle"); break;
             }
 
             // Update the coordinates based on movement.
-            if (changeLeft)         left = newHandle.X;
-            if (changeTop)          top = newHandle.Y;
-            if (changeRight)       right = newHandle.X;
-            if (changeBottom)    bottom = newHandle.Y;
+            if (changeLeft) left = newHandle.X;
+            if (changeTop) top = newHandle.Y;
+            if (changeRight) right = newHandle.X;
+            if (changeBottom) bottom = newHandle.Y;
 
             RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
-           
+
             // Update the rectangle.
             RectangleUpdating(ref newRect, false, changeLeft, changeTop, changeRight, changeBottom);
             rect = newRect;
@@ -923,7 +919,7 @@ namespace PurplePen
                 return false;
             }
 
-            RectCourseObj other = (RectCourseObj) obj;
+            RectCourseObj other = (RectCourseObj)obj;
 
             if (!(rect.Equals(other.rect)))
                 return false;
@@ -949,12 +945,12 @@ namespace PurplePen
     }
 
     // A rectangle that preserves aspect when resized.
-    abstract class AspectPreservingRectCourseObj: RectCourseObj
+    abstract class AspectPreservingRectCourseObj : RectCourseObj
     {
         protected float aspect;                    // aspect to maintain: width / height
 
         public AspectPreservingRectCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, RectangleF rect)
-            : base (controlId, courseControlId, specialId, courseObjRatio, appearance, rect)
+            : base(controlId, courseControlId, specialId, courseObjRatio, appearance, rect)
         {
             if (rect.Height != 0)
                 aspect = rect.Width / rect.Height;
@@ -1025,7 +1021,7 @@ namespace PurplePen
 
 
     // A type of course object that is text.
-    abstract class TextCourseObj: CourseObj
+    abstract class TextCourseObj : CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
         public string text;                             // text for a Text object
@@ -1042,7 +1038,7 @@ namespace PurplePen
         public TextCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, string text, PointF topLeft, string fontName, FontStyle fontStyle, SpecialColor fontColor, float emHeight, float outlineWidth)
             :
            base(controlId, courseControlId, specialId, 1.0F, new CourseAppearance())
-       {
+        {
             this.text = text;
             this.topLeft = topLeft;
             this.fontName = fontName;
@@ -1051,23 +1047,21 @@ namespace PurplePen
             this.emHeight = emHeight;
             this.outlineWidth = outlineWidth;
             this.size = MeasureText();
-       }
+        }
 
-        public float EmHeight
-        {
+        public float EmHeight {
             get { return emHeight; }
-            set
-            {
+            set {
                 emHeight = value;
                 this.size = MeasureText();
             }
         }
 
         // Get the name for the text symdef created.
-        protected abstract string SymDefName {get;} 
+        protected abstract string SymDefName { get; }
 
         // Get the ID for the text symdef created.
-        protected abstract int OcadIdIntegerPart { get;}
+        protected abstract int OcadIdIntegerPart { get; }
 
         // A struct synthesizes Equals/GetHashCode automatically.
         // CONSIDER: use FontDesc instead!
@@ -1131,26 +1125,24 @@ namespace PurplePen
             AddToMap(map, dict[key]);
         }
 
-        public override SpecialColor CustomColor
-        {
-            get
-            {
+        public override SpecialColor CustomColor {
+            get {
                 return fontColor;
             }
         }
 
-       protected override void AddToMap(Map map, SymDef symdef)
-       {
-           TextSymbol sym = new TextSymbol((TextSymDef) symdef, new string[1] { text }, topLeft, 0, 0, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
+        protected override void AddToMap(Map map, SymDef symdef)
+        {
+            TextSymbol sym = new TextSymbol((TextSymDef)symdef, new string[1] { text }, topLeft, 0, 0, TextSymDefHorizAlignment.Default, TextSymDefVertAlignment.Default);
 
-           /*Show size of text
-            * PointF[] pts = { topLeft, new PointF(topLeft.X, topLeft.Y - size.Height), new PointF(topLeft.X + size.Width, topLeft.Y - size.Height), new PointF(topLeft.X + size.Width, topLeft.Y), topLeft };
-           PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
-           SymPathWithHoles path = new SymPathWithHoles(new SymPath(pts, kinds), null);
-           AreaSymbol sym = new AreaSymbol((AreaSymDef) symdef, path, 0); */
+            /*Show size of text
+             * PointF[] pts = { topLeft, new PointF(topLeft.X, topLeft.Y - size.Height), new PointF(topLeft.X + size.Width, topLeft.Y - size.Height), new PointF(topLeft.X + size.Width, topLeft.Y), topLeft };
+            PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
+            SymPathWithHoles path = new SymPathWithHoles(new SymPath(pts, kinds), null);
+            AreaSymbol sym = new AreaSymbol((AreaSymDef) symdef, path, 0); */
 
-           map.AddSymbol(sym);
-       }
+            map.AddSymbol(sym);
+        }
 
         public override double DistanceFromPoint(PointF pt)
         {
@@ -1161,8 +1153,8 @@ namespace PurplePen
 
             // Return distance to the border of the rectangle.
             PointF closestPoint;
-            SymPath path = new SymPath(new PointF[] {new PointF(rect.Left, rect.Top), new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Bottom), new PointF(rect.Right, rect.Top), new PointF(rect.Left, rect.Top) },
-                new PointKind[] { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal} );
+            SymPath path = new SymPath(new PointF[] { new PointF(rect.Left, rect.Top), new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Bottom), new PointF(rect.Right, rect.Top), new PointF(rect.Left, rect.Top) },
+                new PointKind[] { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal });
             return path.DistanceFromPoint(pt, out closestPoint);
         }
 
@@ -1280,7 +1272,7 @@ namespace PurplePen
                 return false;
             }
 
-            TextCourseObj other = (TextCourseObj) obj;
+            TextCourseObj other = (TextCourseObj)obj;
 
             if (text != other.text || topLeft != other.topLeft || fontName != other.fontName || fontStyle != other.fontStyle || !fontColor.Equals(other.fontColor) || emHeight != other.emHeight)
                 return false;
@@ -1299,15 +1291,15 @@ namespace PurplePen
     class ControlCourseObj : PointCourseObj
     {
         public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
-            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0, 
-                  (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 : NormalCourseAppearance.controlOutsideDiameter2017) / 2F, 
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0,
+                  (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 : NormalCourseAppearance.controlOutsideDiameter2017) / 2F,
                   location)
         {
         }
 
         private float Diameter {
             get {
-                return (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 
+                return (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000
                                                          : NormalCourseAppearance.controlOutsideDiameter2017) * courseObjRatio * appearance.controlCircleSize;
             }
         }
@@ -1390,7 +1382,7 @@ namespace PurplePen
 
         CrossHairOptions crossHairOptions;
 
-        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, 
+        public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio,
                               CourseAppearance appearance, float orientation, PointF location, CrossHairOptions crossHairOptions)
             : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation,
                   (appearance.mapStandard == "2000") ? NormalCourseAppearance.startRadius2000 : NormalCourseAppearance.startRadius2017,
@@ -1404,7 +1396,7 @@ namespace PurplePen
             PointF[] coords = (appearance.mapStandard == "2000") ? coords2000 : coords2017;
 
             PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
-            PointF[] pts = ScaleCoords((PointF[]) coords.Clone());
+            PointF[] pts = ScaleCoords((PointF[])coords.Clone());
             SymPath path = new SymPath(pts, kinds);
 
             Glyph glyph = new Glyph();
@@ -1433,7 +1425,7 @@ namespace PurplePen
             float thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
 
             // Get coordinates of the triangle and transform to pixel coords.
-            PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[]) coords.Clone(), orientation)), location.X, location.Y);
+            PointF[] pts = OffsetCoords(ScaleCoords(RotateCoords((PointF[])coords.Clone(), orientation)), location.X, location.Y);
             xformWorldToPixel.TransformPoints(pts);
 
             // Draw the triangle.
@@ -1454,7 +1446,7 @@ namespace PurplePen
     class MapIssueCourseObj : PointCourseObj
     {
         // Coordinates of the tmap issue.
-        static readonly PointF[] coords = { new PointF(NormalCourseAppearance.mapIssueLength / 2.0F, 0F), new PointF(- NormalCourseAppearance.mapIssueLength / 2.0F, 0F) };
+        static readonly PointF[] coords = { new PointF(NormalCourseAppearance.mapIssueLength / 2.0F, 0F), new PointF(-NormalCourseAppearance.mapIssueLength / 2.0F, 0F) };
         static readonly PointF[] coordsTail = { new PointF(0F, 0F), new PointF(0F, NormalCourseAppearance.mapIssueLength * 0.6F) };
 
         bool showTail;
@@ -1513,8 +1505,7 @@ namespace PurplePen
             xformWorldToPixel.TransformPoints(pts2);
 
             // Draw the map issue point, with tail.
-            using (Pen pen = new Pen(brush, thickness1))
-            {
+            using (Pen pen = new Pen(brush, thickness1)) {
                 g.DrawLines(pen, pts1);
             }
             if (showTail) {
@@ -1531,10 +1522,10 @@ namespace PurplePen
     {
         CrossHairOptions crossHairOptions;
 
-        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, 
+        public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance,
             CircleGap[] gaps, PointF location, CrossHairOptions crossHairOptions)
-            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0, 
-                  ((appearance.mapStandard == "2000") ? NormalCourseAppearance.finishOutsideDiameter2000 : NormalCourseAppearance.finishOutsideDiameter2017) / 2F, 
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0,
+                  ((appearance.mapStandard == "2000") ? NormalCourseAppearance.finishOutsideDiameter2000 : NormalCourseAppearance.finishOutsideDiameter2017) / 2F,
                   location)
         {
             this.crossHairOptions = crossHairOptions;
@@ -1627,16 +1618,16 @@ namespace PurplePen
                 HighlightCrossHair(g, xformWorldToPixel, brush);
             }
         }
-   }
+    }
 
     // A first aid point
     class FirstAidCourseObj : PointCourseObj
     {
         // outline of the first aid symbol.
-        static readonly PointF[] outlineCoords2000 = { 
-                new PointF(-0.5F, 1.5F), new PointF(0.5F, 1.5F), new PointF(0.5F,  0.5F), new PointF(1.5F, 0.5F), 
-                new PointF(1.5F, -0.5F), new PointF(0.5F, -0.5F), new PointF(0.5F,  -1.5F), new PointF(-0.5F, -1.5F), 
-                new PointF(-0.5F, -0.5F), new PointF(-1.5F, -0.5F), new PointF(-1.5F,  0.5F), new PointF(-0.5F, 0.5F), new PointF(-0.5F, 1.5F) 
+        static readonly PointF[] outlineCoords2000 = {
+                new PointF(-0.5F, 1.5F), new PointF(0.5F, 1.5F), new PointF(0.5F,  0.5F), new PointF(1.5F, 0.5F),
+                new PointF(1.5F, -0.5F), new PointF(0.5F, -0.5F), new PointF(0.5F,  -1.5F), new PointF(-0.5F, -1.5F),
+                new PointF(-0.5F, -0.5F), new PointF(-1.5F, -0.5F), new PointF(-1.5F,  0.5F), new PointF(-0.5F, 0.5F), new PointF(-0.5F, 1.5F)
             };
         static readonly PointF[] outlineCoords2017 = {
                 new PointF(-0.667F, 2.0F), new PointF(0.667F, 2.0F), new PointF(0.667F,  0.667F), new PointF(2.0F, 0.667F),
@@ -1645,21 +1636,21 @@ namespace PurplePen
             };
 
         public FirstAidCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0, 
-                  (appearance.mapStandard == "2000") ? 1.5F : 2.0F, 
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0,
+                  (appearance.mapStandard == "2000") ? 1.5F : 2.0F,
                   location)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            PointKind[] kinds = { 
+            PointKind[] kinds = {
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal
             };
             PointF[] outlineCoords = (appearance.mapStandard == "2000") ? outlineCoords2000 : outlineCoords2017;
-            PointF[] coords = ScaleCoords((PointF[]) outlineCoords.Clone());
+            PointF[] coords = ScaleCoords((PointF[])outlineCoords.Clone());
             SymPath path = new SymPath(coords, kinds);
 
             Glyph glyph = new Glyph();
@@ -1679,7 +1670,7 @@ namespace PurplePen
             PointF[] outlineCoords = (appearance.mapStandard == "2000") ? outlineCoords2000 : outlineCoords2017;
 
             // Get the world coordinates of the object.
-            PointF[] coords = OffsetCoords(ScaleCoords((PointF[]) outlineCoords.Clone()), location.X, location.Y);
+            PointF[] coords = OffsetCoords(ScaleCoords((PointF[])outlineCoords.Clone()), location.X, location.Y);
 
             // Transform to pixel coordinates.
             xformWorldToPixel.TransformPoints(coords);
@@ -1695,36 +1686,36 @@ namespace PurplePen
     {
         const float kappa = 0.5522847498F;  // constant used to create near-circle with a bezier.
 
-        PointKind[] kinds1 = { 
-                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
-                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
-                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
+        PointKind[] kinds1 = {
+                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl,
+                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl,
+                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl,
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal
             };
-        PointF[] coords1_2000 =  { 
-                new PointF(1.5F, 1.375F), new PointF(1.5F, 1.5825F), new PointF(0.8275F, 1.75F), 
-                new PointF(0F, 1.75F), new PointF(-0.8275F, 1.75F), new PointF(-1.5F, 1.5825F), 
-                new PointF(-1.5F, 1.375F), new PointF(-1.5F, 1.1675F), new PointF(-0.8275F, 1.0F), 
-                new PointF(0F, 1.0F), new PointF(0.8275F, 1.0F), new PointF(1.5F, 1.1675F), new PointF(1.5F, 1.375F) 
+        PointF[] coords1_2000 =  {
+                new PointF(1.5F, 1.375F), new PointF(1.5F, 1.5825F), new PointF(0.8275F, 1.75F),
+                new PointF(0F, 1.75F), new PointF(-0.8275F, 1.75F), new PointF(-1.5F, 1.5825F),
+                new PointF(-1.5F, 1.375F), new PointF(-1.5F, 1.1675F), new PointF(-0.8275F, 1.0F),
+                new PointF(0F, 1.0F), new PointF(0.8275F, 1.0F), new PointF(1.5F, 1.1675F), new PointF(1.5F, 1.375F)
             };
-        PointKind[]  kinds2 =  { 
-                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, 
+        PointKind[] kinds2 =  {
+                PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl,
                 PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal
             };
-        PointF[] coords2_2000 =  { 
-                new PointF(1.0F, -1.5F), new PointF(1.0F, -1.6375F), new PointF(0.551F, -1.75F), 
-                new PointF(0F, -1.75F), new PointF(-0.551F, -1.75F), new PointF(-1.0F, -1.6375F), new PointF(-1.0F, -1.5F) 
+        PointF[] coords2_2000 =  {
+                new PointF(1.0F, -1.5F), new PointF(1.0F, -1.6375F), new PointF(0.551F, -1.75F),
+                new PointF(0F, -1.75F), new PointF(-0.551F, -1.75F), new PointF(-1.0F, -1.6375F), new PointF(-1.0F, -1.5F)
             };
-        PointKind[] kinds3 =  { 
-                PointKind.Normal, PointKind.Normal, 
+        PointKind[] kinds3 =  {
+                PointKind.Normal, PointKind.Normal,
             };
-        PointF[] coords3_2000 =  { 
+        PointF[] coords3_2000 =  {
                 new PointF(1.5F, 1.375F), new PointF(1.0F, -1.5F),
             };
-        PointKind[] kinds4 =  { 
-                PointKind.Normal, PointKind.Normal, 
+        PointKind[] kinds4 =  {
+                PointKind.Normal, PointKind.Normal,
             };
-        PointF[] coords4_2000 =  { 
+        PointF[] coords4_2000 =  {
                 new PointF(-1.5F, 1.375F), new PointF(-1.0F, -1.5F),
             };
 
@@ -1752,8 +1743,8 @@ namespace PurplePen
         const float thickness2017 = 0.4F;
 
         public WaterCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0, 
-                  (appearance.mapStandard == "2000") ? 2.0F : 1.5F, 
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, null, 0,
+                  (appearance.mapStandard == "2000") ? 2.0F : 1.5F,
                   location)
         {
         }
@@ -1768,16 +1759,16 @@ namespace PurplePen
             PointF[] coords4 = (appearance.mapStandard == "2000") ? coords4_2000 : coords4_2017;
             float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth : thickness2017 * courseObjRatio;
 
-            SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
+            SymPath path = new SymPath(ScaleCoords((PointF[])coords1.Clone()), kinds1);
             glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
-            path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
+            path = new SymPath(ScaleCoords((PointF[])coords2.Clone()), kinds2);
             glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
-            path = new SymPath(ScaleCoords((PointF[]) coords3.Clone()), kinds3);
+            path = new SymPath(ScaleCoords((PointF[])coords3.Clone()), kinds3);
             glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
-            path = new SymPath(ScaleCoords((PointF[]) coords4.Clone()), kinds4);
+            path = new SymPath(ScaleCoords((PointF[])coords4.Clone()), kinds4);
             glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             glyph.ConstructionComplete();
@@ -1809,10 +1800,10 @@ namespace PurplePen
             thickness = TransformDistance(lineWidth, xformWorldToPixel);
 
             // Get the paths.
-            path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
-            path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords2.Clone()), location.X, location.Y), kinds2);
-            path3 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords3.Clone()), location.X, location.Y), kinds3);
-            path4 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords4.Clone()), location.X, location.Y), kinds4);
+            path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords1.Clone()), location.X, location.Y), kinds1);
+            path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords2.Clone()), location.X, location.Y), kinds2);
+            path3 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords3.Clone()), location.X, location.Y), kinds3);
+            path4 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords4.Clone()), location.X, location.Y), kinds4);
 
             object penKey = new object();
             grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Round, LineJoin.Miter, 5);
@@ -1848,11 +1839,11 @@ namespace PurplePen
         void GetPaths(out SymPath path1, out SymPath path2)
         {
             PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
-            PointF[] pts = ScaleCoords((PointF[]) coords1.Clone());
+            PointF[] pts = ScaleCoords((PointF[])coords1.Clone());
             path1 = new SymPath(pts, kinds);
 
             kinds = new PointKind[4] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
-            pts = ScaleCoords((PointF[]) coords2.Clone());
+            pts = ScaleCoords((PointF[])coords2.Clone());
             path2 = new SymPath(pts, kinds);
         }
 
@@ -1860,7 +1851,7 @@ namespace PurplePen
         {
             Glyph glyph = new Glyph();
             SymPath path1, path2;
-            
+
             GetPaths(out path1, out path2);
             glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
             glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
@@ -1920,7 +1911,7 @@ namespace PurplePen
         const float lineThickness = 0.1F;
         PointKind[] kinds1 = { PointKind.Normal, PointKind.Normal };
         PointF[] coords1 = { new PointF(-2F, 0F), new PointF(2F, 0F) };
-        PointKind[] kinds2 =  { PointKind.Normal, PointKind.Normal };
+        PointKind[] kinds2 = { PointKind.Normal, PointKind.Normal };
         PointF[] coords2 = { new PointF(0F, -2F), new PointF(0F, 2F) };
 
         public RegMarkCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
@@ -1932,10 +1923,10 @@ namespace PurplePen
         {
             Glyph glyph = new Glyph();
 
-            SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
+            SymPath path = new SymPath(ScaleCoords((PointF[])coords1.Clone()), kinds1);
             glyph.AddLine(symColor, path, lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
-            path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
+            path = new SymPath(ScaleCoords((PointF[])coords2.Clone()), kinds2);
             glyph.AddLine(symColor, path, lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
@@ -1960,8 +1951,8 @@ namespace PurplePen
             thickness = TransformDistance(lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
 
             // Get the paths.
-            path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
-            path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords2.Clone()), location.X, location.Y), kinds2);
+            path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords1.Clone()), location.X, location.Y), kinds1);
+            path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords2.Clone()), location.X, location.Y), kinds2);
 
             object penKey = new object();
             grTarget.CreatePen(penKey, brushKey, thickness, LineCap.Flat, LineJoin.Miter, 5);
@@ -1975,11 +1966,11 @@ namespace PurplePen
     }
 
     // A forbidden cross
-    class ForbiddenCourseObj: PointCourseObj
+    class ForbiddenCourseObj : PointCourseObj
     {
         PointKind[] kinds1 = { PointKind.Normal, PointKind.Normal };
         PointF[] coords1 = { new PointF(-1.06F, -1.06F), new PointF(1.06F, 1.06F) };
-        PointKind[] kinds2 =  { PointKind.Normal, PointKind.Normal };
+        PointKind[] kinds2 = { PointKind.Normal, PointKind.Normal };
         PointF[] coords2 = { new PointF(1.06F, -1.06F), new PointF(-1.06F, 1.06F) };
 
         public ForbiddenCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF location)
@@ -1994,10 +1985,10 @@ namespace PurplePen
             // Note: the line thickness of forbidden marks do NOT scale with the Line Thickness in the Course Appearance. This is by design,
             // otherwise it would look kind of weird. The scale with the control circle size instead to maintain the ratio.
 
-            SymPath path = new SymPath(ScaleCoords((PointF[]) coords1.Clone()), kinds1);
+            SymPath path = new SymPath(ScaleCoords((PointF[])coords1.Clone()), kinds1);
             glyph.AddLine(symColor, path, 0.35F * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
 
-            path = new SymPath(ScaleCoords((PointF[]) coords2.Clone()), kinds2);
+            path = new SymPath(ScaleCoords((PointF[])coords2.Clone()), kinds2);
             glyph.AddLine(symColor, path, 0.35F * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
@@ -2022,8 +2013,8 @@ namespace PurplePen
             thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.controlCircleSize, xformWorldToPixel);
 
             // Get the paths.
-            path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords1.Clone()), location.X, location.Y), kinds1);
-            path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[]) coords2.Clone()), location.X, location.Y), kinds2);
+            path1 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords1.Clone()), location.X, location.Y), kinds1);
+            path2 = new SymPath(OffsetCoords(ScaleCoords((PointF[])coords2.Clone()), location.X, location.Y), kinds2);
 
             // Draw the paths
             object penKey = new object();
@@ -2052,8 +2043,7 @@ namespace PurplePen
             return symdef;
         }
 
-        public override bool HandlesOnEnds
-        {
+        public override bool HandlesOnEnds {
             get { return false; }
         }
     }
@@ -2076,19 +2066,18 @@ namespace PurplePen
             dashes.minGaps = 1;
             symdef.SetDashInfo(dashes);
 
-            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DashedLine_OcadToolbox);   
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DashedLine_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
 
-        public override bool HandlesOnEnds
-        {
+        public override bool HandlesOnEnds {
             get { return false; }
         }
     }
 
     // A leg in the topology view.
-    class TopologyLegCourseObj: LineCourseObj
+    class TopologyLegCourseObj : LineCourseObj
     {
         const float LineThickness = 0.55F;
 
@@ -2131,7 +2120,7 @@ namespace PurplePen
     }
 
     // An arbitrary line.
-    class LineSpecialCourseObj: LineCourseObj
+    class LineSpecialCourseObj : LineCourseObj
     {
         public readonly SpecialColor color;
         public readonly LineKind lineKind;
@@ -2140,7 +2129,7 @@ namespace PurplePen
         public readonly float dashSize;
 
         public LineSpecialCourseObj(Id<Special> specialId, CourseAppearance appearance, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, SymPath path)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, 1.0F, appearance, 
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, 1.0F, appearance,
                    (lineKind == LineKind.Double) ? (lineWidth * 2 + gapSize) : lineWidth, path, null)
         {
             this.color = color;
@@ -2154,8 +2143,8 @@ namespace PurplePen
         // CONSIDER: use FontDesc instead!
         struct MySymdefKey
         {
-            public SpecialColor color; 
-            public LineKind lineKind; 
+            public SpecialColor color;
+            public LineKind lineKind;
             public float lineWidth;
             public float gapSize;
             public float dashSize;
@@ -2164,8 +2153,8 @@ namespace PurplePen
         protected override object SymDefKey()
         {
             MySymdefKey key = new MySymdefKey();
-            key.color = color; 
-            key.lineKind = lineKind; 
+            key.color = color;
+            key.lineKind = lineKind;
             key.lineWidth = lineWidth;
             key.gapSize = gapSize;
             key.dashSize = dashSize;
@@ -2194,7 +2183,7 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode() ;
+            return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode();
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
@@ -2238,8 +2227,7 @@ namespace PurplePen
             return symdef;
         }
 
-        public override SpecialColor CustomColor
-        {
+        public override SpecialColor CustomColor {
             get {
                 return color;
             }
@@ -2328,10 +2316,8 @@ namespace PurplePen
         }
 
         // The full width of the line, even if a double line.
-        private float FullWidth
-        {
-            get
-            {
+        private float FullWidth {
+            get {
                 if (lineKind == LineKind.Double)
                     return lineWidth * 2 + gapSize;
                 else
@@ -2345,7 +2331,7 @@ namespace PurplePen
             PointF closestPoint;
 
             SymPath path = CreateSymPath();
-            return Math.Max(0, path.DistanceFromPoint(pt, out closestPoint) - (FullWidth/2));
+            return Math.Max(0, path.DistanceFromPoint(pt, out closestPoint) - (FullWidth / 2));
         }
 
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
@@ -2375,10 +2361,8 @@ namespace PurplePen
             map.AddSymbol(sym);
         }
 
-        public override SpecialColor CustomColor
-        {
-            get
-            {
+        public override SpecialColor CustomColor {
+            get {
                 return color;
             }
         }
@@ -2456,16 +2440,16 @@ namespace PurplePen
             map.AddSymdef(symdef);
             return symdef;
         }
-  }
+    }
 
     // A dangerous area
-    class WhiteOutCourseObj: AreaCourseObj
+    class WhiteOutCourseObj : AreaCourseObj
     {
         public WhiteOutCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts)
             : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, pts)
         {
         }
-        
+
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
             Debug.Fail("should never be called");
@@ -2501,13 +2485,11 @@ namespace PurplePen
             topLeft = new PointF(centerPoint.X - size.Width / 2, centerPoint.Y + size.Height / 2);
         }
 
-        protected override string SymDefName
-        {
+        protected override string SymDefName {
             get { return "Control number"; }
         }
 
-        protected override int OcadIdIntegerPart
-        {
+        protected override int OcadIdIntegerPart {
             get { return 703; }
         }
     }
@@ -2526,19 +2508,17 @@ namespace PurplePen
             topLeft = new PointF(centerPoint.X - size.Width / 2, centerPoint.Y + size.Height / 2);
         }
 
-        protected override string SymDefName
-        {
+        protected override string SymDefName {
             get { return "Control code"; }
         }
 
-        protected override int OcadIdIntegerPart
-        {
+        protected override int OcadIdIntegerPart {
             get { return 720; }
         }
-   }
+    }
 
     // A Variation code
-    class VariationCodeCourseObj: TextCourseObj
+    class VariationCodeCourseObj : TextCourseObj
     {
         public PointF centerPoint;
 
@@ -2551,164 +2531,200 @@ namespace PurplePen
             topLeft = new PointF(centerPoint.X - size.Width / 2, centerPoint.Y + size.Height / 2);
         }
 
-        protected override string SymDefName
-        {
+        protected override string SymDefName {
             get { return "Variation code"; }
         }
 
-        protected override int OcadIdIntegerPart
-        {
+        protected override int OcadIdIntegerPart {
             get { return 721; }
         }
     }
 
-    // Arbitrary text, set withing a bounding rectangle. The text is sized to fit inside the bounding rectangle.
-    class BasicTextCourseObj: TextCourseObj
-   {
-       private RectangleF rectBounding;
+    // Arbitrary text, set withing a bounding rectangle. The text is sized to fit inside the bounding rectangle (automatic sizing) or of a particular height.
+    class BasicTextCourseObj : TextCourseObj
+    {
+        private RectangleF rectBounding;
+        public readonly float fontDigitHeight; // -1 for automatic.
 
-       public BasicTextCourseObj(Id<Special> specialId, string text, RectangleF rectBounding, string fontName, FontStyle fontStyle, SpecialColor color)
-           : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, color, CalculateEmHeight(text, fontName, fontStyle, rectBounding.Size), 0.0F)
-       {
-           this.rectBounding = rectBounding;
-       }
+        public BasicTextCourseObj(Id<Special> specialId, string text, RectangleF rectBounding, string fontName, FontStyle fontStyle, SpecialColor color, float fontDigitHeight)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, text, new PointF(rectBounding.Left, rectBounding.Bottom), fontName, fontStyle, color, CalculateEmHeight(text, fontName, fontStyle, fontDigitHeight, rectBounding.Size), 0.0F)
+        {
+            this.fontDigitHeight = fontDigitHeight;
+            this.rectBounding = AdjustBoundingRect(rectBounding);
+        }
 
-       // Given some text in a font and a bounding rectangle, figure out the correct em-height so that the text fits in the rectangle.
-       static private float CalculateEmHeight(string text, string fontName, FontStyle fontStyle, SizeF desiredSize)
-       {
-           if (String.IsNullOrEmpty(text) || desiredSize.Width == 0)
-               return desiredSize.Height;
-           if (desiredSize.Height == 0)
-               return 0;
+        // Get the ratio (emHeight / digitHeight) for the given font.
+        public static float EmHeightToDigitHeightRatio(string fontName, FontStyle fontStyle)
+        {
+            float emHeight = 100;
+            using (FontFamily family = new FontFamily(fontName)) {
+                GraphicsPath path = new GraphicsPath();
+                path.AddString("0", family, (int)fontStyle, emHeight, new PointF(0, 0), StringFormat.GenericTypographic);
+                float digitHeight = path.GetBounds().Height;
+                return emHeight / digitHeight;
+            }
+        }
 
-           // Measure with a font size of 1, then scale appropriately.
-           Graphics g = Util.GetHiresGraphics();
-           SizeF size;
-           using (Font f = new Font(fontName, 1F, fontStyle, GraphicsUnit.World))
-               size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
+        // Given some text in a font and a bounding rectangle, figure out the correct em-height so that the text fits in the rectangle.
+        static private float CalculateEmHeight(string text, string fontName, FontStyle fontStyle, float fontDigitHeight, SizeF desiredSize)
+        {
+            if (fontDigitHeight > 0) {
+                // Specific height, but as the height of a digit. Convert to EmHeight for the given font.
+                return EmHeightToDigitHeightRatio(fontName, fontStyle) * fontDigitHeight;
+            }
+            else {
+                // Automatically calculate height from bounding rectangle.
+                if (String.IsNullOrEmpty(text) || desiredSize.Width == 0)
+                    return desiredSize.Height;
+                if (desiredSize.Height == 0)
+                    return 0;
 
-           if (size.Width * desiredSize.Height > size.Height * desiredSize.Width) {
-               // width is the deciding factor.
-               return desiredSize.Width / size.Width;
-           }
-           else {
-               // height is the deciding factor.
-               return desiredSize.Height / size.Height;
-           }
-       }
+                // Measure with a font size of 1, then scale appropriately.
+                Graphics g = Util.GetHiresGraphics();
+                SizeF size;
+                using (Font f = new Font(fontName, 1F, fontStyle, GraphicsUnit.World))
+                    size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
 
-       protected override string SymDefName
-       {
-           get { return "Text"; }
-       }
+                if (size.Width * desiredSize.Height > size.Height * desiredSize.Width) {
+                    // width is the deciding factor.
+                    return desiredSize.Width / size.Width;
+                }
+                else {
+                    // height is the deciding factor.
+                    return desiredSize.Height / size.Height;
+                }
+            }
+        }
 
-       protected override int OcadIdIntegerPart
-       {
-           get { return 730; }
-       }
+        // Adjust the bounding rect if the text is of a fixed size.
+        public RectangleF AdjustBoundingRect(RectangleF boundingRect)
+        {
+            if (fontDigitHeight < 0 || boundingRect.Height < 0.01F || boundingRect.Width < 0.01F) {
+                // Automatic sizing of text -- don't adjust rectangle.
+                return boundingRect;
+            }
+            else {
+                // Fit rectangle around the text. Use the same top left corner, but that's actually bottom left
+                // in terms of RectangleF because of inverted coordinate system.
+                Graphics g = Util.GetHiresGraphics();
+                SizeF size;
+                using (Font f = new Font(fontName, CalculateEmHeight(text, fontName, fontStyle, fontDigitHeight, new SizeF()), fontStyle, GraphicsUnit.World))
+                    size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
+                return RectangleF.FromLTRB(boundingRect.Left, boundingRect.Bottom - size.Height, boundingRect.Left + size.Width, boundingRect.Bottom);
+            }
+        }
 
-       public override PointF[] GetHandles()
-       {
-           // Handles on sides and corners. Handle 0 is at bottom-left (which corresponds to rectBounding.Left,rectBounding.Top, since rectBounding is inverted). Goes counter-clockwise
-           // from there.
-           float middleWidth = (rectBounding.Left + rectBounding.Right) / 2;
-           float middleHeight = (rectBounding.Top + rectBounding.Bottom) / 2;
-           PointF[] handles = { new PointF(rectBounding.Left, rectBounding.Top), new PointF(middleWidth, rectBounding.Top), new PointF(rectBounding.Right, rectBounding.Top),
+        protected override string SymDefName {
+            get { return "Text"; }
+        }
+
+        protected override int OcadIdIntegerPart {
+            get { return 730; }
+        }
+
+        public override PointF[] GetHandles()
+        {
+            // Handles on sides and corners. Handle 0 is at bottom-left (which corresponds to rectBounding.Left,rectBounding.Top, since rectBounding is inverted). Goes counter-clockwise
+            // from there.
+            float middleWidth = (rectBounding.Left + rectBounding.Right) / 2;
+            float middleHeight = (rectBounding.Top + rectBounding.Bottom) / 2;
+            PointF[] handles = { new PointF(rectBounding.Left, rectBounding.Top), new PointF(middleWidth, rectBounding.Top), new PointF(rectBounding.Right, rectBounding.Top),
                                              new PointF(rectBounding.Left, middleHeight), new PointF(rectBounding.Right, middleHeight),
                                              new PointF(rectBounding.Left, rectBounding.Bottom), new PointF(middleWidth, rectBounding.Bottom), new PointF(rectBounding.Right, rectBounding.Bottom)};
-           return handles;
-       }
+            return handles;
+        }
 
-       public override Cursor GetHandleCursor(PointF handlePoint)
-       {
-           // Get the correct sizing cursors for each point given above. 
-           int index = Array.IndexOf(GetHandles(), handlePoint);
+        public override Cursor GetHandleCursor(PointF handlePoint)
+        {
+            // Get the correct sizing cursors for each point given above. 
+            int index = Array.IndexOf(GetHandles(), handlePoint);
 
-           switch (index) {
-           case 0:
-           case 7: return Cursors.SizeNESW;
-           case 1:
-           case 6: return Cursors.SizeNS;
-           case 2:
-           case 5: return Cursors.SizeNWSE;
-           case 3:
-           case 4: return Cursors.SizeWE;
-           default: return Util.MoveHandleCursor;
-           }
-       }
+            switch (index) {
+                case 0:
+                case 7: return Cursors.SizeNESW;
+                case 1:
+                case 6: return Cursors.SizeNS;
+                case 2:
+                case 5: return Cursors.SizeNWSE;
+                case 3:
+                case 4: return Cursors.SizeWE;
+                default: return Util.MoveHandleCursor;
+            }
+        }
 
-       public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
-       {
-           // Draw the text.
-           base.Highlight(g, xformWorldToPixel, brush, erasing);
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            // Draw the text.
+            base.Highlight(g, xformWorldToPixel, brush, erasing);
 
-           PointF[] corners = { new PointF(rectBounding.Left, rectBounding.Bottom), new PointF(rectBounding.Right, rectBounding.Top) };
-           xformWorldToPixel.TransformPoints(corners);
+            PointF[] corners = { new PointF(rectBounding.Left, rectBounding.Bottom), new PointF(rectBounding.Right, rectBounding.Top) };
+            xformWorldToPixel.TransformPoints(corners);
 
-           // Draw an outline.
-           using (Pen p = new Pen(brush, 0)) {
-               g.DrawRectangle(p, corners[0].X, corners[0].Y, corners[1].X - corners[0].X, corners[1].Y - corners[0].Y);
-           }
-       }
+            // Draw an outline.
+            using (Pen p = new Pen(brush, 0)) {
+                g.DrawRectangle(p, corners[0].X, corners[0].Y, corners[1].X - corners[0].X, corners[1].Y - corners[0].Y);
+            }
+        }
 
-       // Get the bounds of the highlight
-       public override RectangleF GetHighlightBounds()
-       {
-           return rectBounding;
-       }
+        // Get the bounds of the highlight
+        public override RectangleF GetHighlightBounds()
+        {
+            return RectangleF.Union(base.GetHighlightBounds(), rectBounding);
+        }
 
-       public override void Offset(float dx, float dy)
-       {
-           base.Offset(dx, dy);
-           rectBounding.Offset(dx, dy);
-       }
+        public override void Offset(float dx, float dy)
+        {
+            base.Offset(dx, dy);
+            rectBounding.Offset(dx, dy);
+        }
 
-       // Move a handle on the rectangle.
-       public override void MoveHandle(PointF oldHandle, PointF newHandle)
-       {
-           PointF[] handles = GetHandles();
-           int handleIndex = Array.IndexOf(handles, oldHandle);
+        // Move a handle on the rectangle.
+        public override void MoveHandle(PointF oldHandle, PointF newHandle)
+        {
+            PointF[] handles = GetHandles();
+            int handleIndex = Array.IndexOf(handles, oldHandle);
 
-           // Existing coordinates of the rectangle.
-           float left = rectBounding.Left, top = rectBounding.Top, right = rectBounding.Right, bottom = rectBounding.Bottom;
+            // Existing coordinates of the rectangle.
+            float left = rectBounding.Left, top = rectBounding.Top, right = rectBounding.Right, bottom = rectBounding.Bottom;
 
-           // Figure out which coord(s) moving this handle changes.
-           bool changeLeft = false, changeTop = false, changeRight = false, changeBottom = false;
-           switch (handleIndex) {
-           case 0: changeLeft = true; changeTop = true; break;
-           case 1: changeTop = true; break;
-           case 2: changeRight = true; changeTop = true; break;
-           case 3: changeLeft = true; break;
-           case 4: changeRight = true; break;
-           case 5: changeLeft = true; changeBottom = true; break;
-           case 6: changeBottom = true; break;
-           case 7: changeRight = true; changeBottom = true; break;
-           default:
-               Debug.Fail("bad handle"); break;
-           }
+            // Figure out which coord(s) moving this handle changes.
+            bool changeLeft = false, changeTop = false, changeRight = false, changeBottom = false;
+            switch (handleIndex) {
+                case 0: changeLeft = true; changeTop = true; break;
+                case 1: changeTop = true; break;
+                case 2: changeRight = true; changeTop = true; break;
+                case 3: changeLeft = true; break;
+                case 4: changeRight = true; break;
+                case 5: changeLeft = true; changeBottom = true; break;
+                case 6: changeBottom = true; break;
+                case 7: changeRight = true; changeBottom = true; break;
+                default:
+                    Debug.Fail("bad handle"); break;
+            }
 
-           // Update the coordinates based on movement.
-           if (changeLeft) left = newHandle.X;
-           if (changeTop) top = newHandle.Y;
-           if (changeRight) right = newHandle.X;
-           if (changeBottom) bottom = newHandle.Y;
+            // Update the coordinates based on movement.
+            if (changeLeft) left = newHandle.X;
+            if (changeTop) top = newHandle.Y;
+            if (changeRight) right = newHandle.X;
+            if (changeBottom) bottom = newHandle.Y;
 
-           RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
+            RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
 
-           // Update the rectangle.
-           base.EmHeight = CalculateEmHeight(text, fontName, fontStyle, newRect.Size);
-           base.topLeft = new PointF(newRect.Left, newRect.Bottom);
-           rectBounding = newRect;
-       }
+            // Update the rectangle.
+            base.EmHeight = CalculateEmHeight(text, fontName, fontStyle, fontDigitHeight, newRect.Size);
+            base.topLeft = new PointF(newRect.Left, newRect.Bottom);
+            rectBounding = newRect;
+            //rectBounding = AdjustBoundingRect(newRect, text, fontName, fontStyle, fontDigitHeight);
+        }
 
-       public override string ToString()
-       {
-           return base.ToString() + string.Format("  rect:({0},{1})-({2},{3})", rectBounding.Left, rectBounding.Bottom, rectBounding.Right, rectBounding.Top);
-       }
+        public override string ToString()
+        {
+            return base.ToString() + string.Format("  rect:({0},{1})-({2},{3})", rectBounding.Left, rectBounding.Bottom, rectBounding.Right, rectBounding.Top);
+        }
     }
 
     // This course object is a description sheet block.
-    class DescriptionCourseObj: AspectPreservingRectCourseObj
+    class DescriptionCourseObj : AspectPreservingRectCourseObj
     {
         DescriptionRenderer renderer;        // The description renderer that holds the description.
         float[] aspectAnglesByColumns;       // array describing the angles that are closest for each number of columns.
@@ -2745,7 +2761,7 @@ namespace PurplePen
         public override object Clone()
         {
             DescriptionCourseObj c = (DescriptionCourseObj)(base.Clone());
-            c.renderer = (DescriptionRenderer) this.renderer.Clone();
+            c.renderer = (DescriptionRenderer)this.renderer.Clone();
             return c;
         }
 
@@ -2766,17 +2782,14 @@ namespace PurplePen
         }
 
         // Get the cell size.
-        public float CellSize
-        {
-            get
-            {
+        public float CellSize {
+            get {
                 return renderer.CellSize;
             }
         }
 
         // Get the number of columns
-        public int NumberOfColumns
-        {
+        public int NumberOfColumns {
             get { return renderer.NumberOfColumns; }
         }
 
@@ -2830,7 +2843,7 @@ namespace PurplePen
 
         private int BestNumberOfColumns(SizeF currentSize)
         {
-            float aspectAngle = (float) Math.Atan2(currentSize.Height, currentSize.Width);
+            float aspectAngle = (float)Math.Atan2(currentSize.Height, currentSize.Width);
 
             float bestAngleDiff = Math.Abs(aspectAnglesByColumns[1] - aspectAngle);
             int bestColumns = 1;
@@ -2858,7 +2871,7 @@ namespace PurplePen
                 return false;
             }
 
-            DescriptionCourseObj other = (DescriptionCourseObj) obj;
+            DescriptionCourseObj other = (DescriptionCourseObj)obj;
 
             // Check description kind
             if (renderer.DescriptionKind != other.renderer.DescriptionKind)
@@ -2872,7 +2885,7 @@ namespace PurplePen
             if (myDesc.Length != otherDesc.Length)
                 return false;
             for (int i = 0; i < myDesc.Length; ++i) {
-                if (! myDesc[i].Equals(otherDesc[i]))
+                if (!myDesc[i].Equals(otherDesc[i]))
                     return false;
             }
 
@@ -2895,15 +2908,15 @@ namespace PurplePen
         }
     }
 
-    
-    class ImageCourseObj: AspectPreservingRectCourseObj
+
+    class ImageCourseObj : AspectPreservingRectCourseObj
     {
         public readonly string imageName;
         public readonly Bitmap imageBitmap;
         private ImageLoader imageLoader;
 
         public ImageCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] locations, string imageName, Bitmap imageBitmap)
-            :base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, Geometry.RectFromPoints(locations[0].X, locations[0].Y, locations[1].X, locations[1].Y))
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, Geometry.RectFromPoints(locations[0].X, locations[0].Y, locations[1].X, locations[1].Y))
         {
             this.imageName = imageName;
             this.imageBitmap = imageBitmap;
@@ -2930,7 +2943,7 @@ namespace PurplePen
                  * 
                  * But, ImageSymDef layers the images about white out and other things on the map itself, which is preferable.
                  */
-                ImageSymDef layoutSymDef = (ImageSymDef) dict[CourseLayout.KeyLayout];
+                ImageSymDef layoutSymDef = (ImageSymDef)dict[CourseLayout.KeyLayout];
 
                 PointF center = Geometry.RectCenter(rect);
                 ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, true, specialId.id, imageLoader);
@@ -2974,7 +2987,7 @@ namespace PurplePen
         }
 
         // The ImageLoader handles providing images to the map based on the image name.
-        private class ImageLoader: IFileLoader
+        private class ImageLoader : IFileLoader
         {
             private string imageName;
             private Bitmap imageBitmap;
@@ -3009,14 +3022,14 @@ namespace PurplePen
         }
     }
 
-    class TopologyDropTargetCourseObj: PointCourseObj
+    class TopologyDropTargetCourseObj : PointCourseObj
     {
         // outline of the arrows
         const float TIPOFFSET = 0.75F;
         const float HEADHALFWIDTH = 1.5F;
         const float TAILHALFWIDTH = 0.5F;
         const float TAILLENGTH = 1.25F;
-        static readonly float RADIUS = (float) Math.Sqrt(Math.Pow(TIPOFFSET + HEADHALFWIDTH, 2) + Math.Pow(TAILHALFWIDTH, 2));
+        static readonly float RADIUS = (float)Math.Sqrt(Math.Pow(TIPOFFSET + HEADHALFWIDTH, 2) + Math.Pow(TAILHALFWIDTH, 2));
 
         // When two different drop positions on a leg (in fork/loop situations, which one. (0 or 1)
         LegInsertionLoc legInsertionLoc;
@@ -3043,9 +3056,9 @@ namespace PurplePen
                 new PointF(-TIPOFFSET, 0)
             };
 
-        public readonly Id<CourseControl> courseControlId2; 
+        public readonly Id<CourseControl> courseControlId2;
 
-        public TopologyDropTargetCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2, 
+        public TopologyDropTargetCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId1, Id<CourseControl> courseControlId2,
                                           float courseObjRatio, CourseAppearance appearance, PointF location, LegInsertionLoc legInsertionLoc)
             : base(controlId, courseControlId1, Id<Special>.None, courseObjRatio, appearance, null, 0, RADIUS, location)
         {
@@ -3053,8 +3066,7 @@ namespace PurplePen
             this.legInsertionLoc = legInsertionLoc;
         }
 
-        public LegInsertionLoc InsertionLoc
-        {
+        public LegInsertionLoc InsertionLoc {
             get { return legInsertionLoc; }
         }
 

@@ -2648,7 +2648,7 @@ namespace PurplePen
         }
 
         // Get the text properties of a object if can change the text.
-        public bool GetChangableTextProperties(out string fontName, out bool fontBold, out bool fontItalic, out SpecialColor specialColor)
+        public bool GetChangableTextProperties(out string fontName, out bool fontBold, out bool fontItalic, out SpecialColor specialColor, out float fontHeight)
         {
             if (CanChangeText() == CommandStatus.Enabled) {
                 Special special = eventDB.GetSpecial(selectionMgr.Selection.SelectedSpecial);
@@ -2656,6 +2656,7 @@ namespace PurplePen
                 fontBold = special.fontBold;
                 fontItalic = special.fontItalic;
                 specialColor = special.color;
+                fontHeight = special.fontHeight;
                 return true;
             }
             else {
@@ -2663,12 +2664,13 @@ namespace PurplePen
                 fontBold = false;
                 fontItalic = false;
                 specialColor = SpecialColor.Purple;
+                fontHeight = -1;
                 return false;
             }
         }
 
         // Get the properties of a new text object.
-        public void GetAddTextDefaultProperties(out string fontName, out bool fontBold, out bool fontItalic, out SpecialColor fontColor)
+        public void GetAddTextDefaultProperties(out string fontName, out bool fontBold, out bool fontItalic, out SpecialColor fontColor, out float fontHeight, out bool fontAutoSize)
         {
             var specials = eventDB.AllSpecialPairs.Where(s => s.Value.kind == SpecialKind.Text);
             if (specials.Any()) {
@@ -2678,6 +2680,8 @@ namespace PurplePen
                 fontBold = maxIdSpecial.fontBold;
                 fontItalic = maxIdSpecial.fontItalic;
                 fontColor = maxIdSpecial.color;
+                fontAutoSize = (maxIdSpecial.fontHeight < 0);
+                fontHeight = fontAutoSize ? 5.0F : maxIdSpecial.fontHeight;
                 return;
             }
             else {
@@ -2686,17 +2690,19 @@ namespace PurplePen
                 fontBold = (NormalCourseAppearance.fontStyleTextSpecial & FontStyle.Bold) != 0;
                 fontItalic = (NormalCourseAppearance.fontStyleTextSpecial & FontStyle.Italic) != 0;
                 fontColor = NormalCourseAppearance.fontColorTextSpecial;
+                fontAutoSize = true;
+                fontHeight = 5.0F;
                 return;
             }
         }
 
 
         // Change the text.
-        public void ChangeText(string newText, string fontName, bool fontBold, bool fontItalic, SpecialColor specialColor)
+        public void ChangeText(string newText, string fontName, bool fontBold, bool fontItalic, SpecialColor specialColor, float fontHeight)
         {
             if (CanChangeText() == CommandStatus.Enabled) {
                 undoMgr.BeginCommand(7114, CommandNameText.ChangeText);
-                ChangeEvent.ChangeSpecialText(eventDB, selectionMgr.Selection.SelectedSpecial, newText, fontName, fontBold, fontItalic, specialColor);
+                ChangeEvent.ChangeSpecialText(eventDB, selectionMgr.Selection.SelectedSpecial, newText, fontName, fontBold, fontItalic, specialColor, fontHeight);
                 undoMgr.EndCommand(7114);
             }
         }
@@ -3550,9 +3556,9 @@ namespace PurplePen
         }
 
         // Start the mode to add text to a course
-        public void BeginAddTextSpecialMode(string text, string fontName, bool fontBold, bool fontItalic, SpecialColor fontColor)
+        public void BeginAddTextSpecialMode(string text, string fontName, bool fontBold, bool fontItalic, SpecialColor fontColor, float fontHeight)
         {
-            SetCommandMode(new AddTextMode(this, undoMgr, selectionMgr, eventDB, text, fontName, fontBold, fontItalic, fontColor));
+            SetCommandMode(new AddTextMode(this, undoMgr, selectionMgr, eventDB, text, fontName, fontBold, fontItalic, fontColor, fontHeight));
         }
 
         // expand text via current state.

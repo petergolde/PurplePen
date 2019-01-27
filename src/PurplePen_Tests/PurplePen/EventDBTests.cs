@@ -597,6 +597,7 @@ namespace PurplePen.Tests
             sp5.fontName = "Tahoma";
             sp5.fontBold = true;
             sp5.fontItalic = false;
+            sp5.fontHeight = 6.5F;
             sp5.allCourses = false;
             sp5.color = new SpecialColor(0.2F, 0.5F, 0.3F, 0F);
             sp5.courses = new CourseDesignator[2] { Designator(2), new CourseDesignator(CourseId(3), 1) };

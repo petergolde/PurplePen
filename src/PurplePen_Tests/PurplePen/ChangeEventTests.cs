@@ -1935,7 +1935,7 @@ namespace PurplePen.Tests
             Assert.AreEqual("$(CourseName)", eventDB.GetSpecial(SpecialId(7)).text);
 
             undomgr.BeginCommand(11, "change text");
-            ChangeEvent.ChangeSpecialText(eventDB, SpecialId(7), "Mr. Mr.", "Times New Roman", true, true, new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F));
+            ChangeEvent.ChangeSpecialText(eventDB, SpecialId(7), "Mr. Mr.", "Times New Roman", true, true, new SpecialColor(0.4F, 0.5F, 0.1F, 0.2F), -1);
             undomgr.EndCommand(11);
             eventDB.Validate();
 
@@ -2292,7 +2292,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add text special");
-            Id<Special> newSpecialId = ChangeEvent.AddTextSpecial(eventDB, new RectangleF(10, 20, 30, 40), "hello $(CourseName)", "Arial", true, true, new SpecialColor(0.5F, 0.8F, 0.2F, 0.3F));
+            Id<Special> newSpecialId = ChangeEvent.AddTextSpecial(eventDB, new RectangleF(10, 20, 30, 40), "hello $(CourseName)", "Arial", true, true, new SpecialColor(0.5F, 0.8F, 0.2F, 0.3F), 4.5F);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -2310,6 +2310,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(special.fontItalic);
             Assert.IsTrue(special.allCourses);
             Assert.IsTrue(special.color.Equals(new SpecialColor(0.5F, 0.8F, 0.2F, 0.3F)));
+            Assert.AreEqual(4.5F, special.fontHeight);
 
             undomgr.Undo();
             eventDB.Validate();
