@@ -16,11 +16,29 @@
 
     <h1>Purple Pen Change Summary</h1>
 
+    <h2>Changes in 3.1.7</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            The algorithm for distributing relay variations among teams has been revised to better distribute
+            legs among team members. Thanks to Eric Harper for reporting this bug.
+        </li>
+        <li>
+            OCAD produces PDF files that are not correctly formatted according to the PDF specification. In certain
+            rare cases, this caused Purple Pen to hang when creating PDF files with such a PDF as the map file. The
+            PDF reading code was updated to not be susceptable to such incorrect PDF files. Thanks to Ian Jessup for 
+            providing an example of this issue.
+        </li>
+    </ul>
+
+
     <h2>Changes in 3.1.6</h2>
     <h3>Bug Fixes</h3>
     <ul>
-        <li>Relay teams where the starting bib number was not 1 had problem when trying to print courses or descriptions and
-        selecting print "each relay leg separately". Thanks to Eric Halper for reporting this bug.</li>
+        <li>
+            Relay teams where the starting bib number was not 1 had problem when trying to print courses or descriptions and
+            selecting print "each relay leg separately". Thanks to Eric Halper for reporting this bug.
+        </li>
     </ul>
 
     <h2>Changes in 3.1.5</h2>
