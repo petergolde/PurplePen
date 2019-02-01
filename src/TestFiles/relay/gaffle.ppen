@@ -1,0 +1,161 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Sample Gaffle</title>
+    <map kind="OCAD" scale="5000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\temp\12magnuson-edit-no-base.ocd">..\..\..\..\..\temp\12magnuson-edit-no-base.ocd</map>
+    <standards map="2017" description="2004" />
+    <all-controls print-scale="5000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-140.5302" top="147.057419" right="138.8698" bottom="-68.84259" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeToMap" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="-136.07019" y="67.99477" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="-91.6103" y="106.5826" />
+  </control>
+  <control id="12" kind="normal">
+    <code>32</code>
+    <location x="-49.35307" y="65.3724" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="-35.1965675" y="103.646576" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="-74.41354" y="140.9761" />
+  </control>
+  <control id="11" kind="finish">
+    <location x="-125.374657" y="108.889481" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="7" kind="normal">
+    <code>36</code>
+    <location x="-117.425079" y="65.33046" />
+  </control>
+  <control id="8" kind="normal">
+    <code>37</code>
+    <location x="-99.7892456" y="72.39882" />
+  </control>
+  <control id="9" kind="normal">
+    <code>38</code>
+    <location x="-92.50871" y="62.3621864" />
+  </control>
+  <control id="10" kind="normal">
+    <code>39</code>
+    <location x="-103.354416" y="48.2814064" />
+  </control>
+  <control id="13" kind="normal">
+    <code>35</code>
+    <location x="-58.6470757" y="79.87159" />
+  </control>
+  <control id="14" kind="normal">
+    <code>40</code>
+    <location x="-35.30206" y="81.1011353" />
+  </control>
+  <control id="15" kind="normal">
+    <code>41</code>
+    <location x="-77.85223" y="79.45913" />
+  </control>
+  <control id="16" kind="normal">
+    <code>42</code>
+    <location x="-46.9818878" y="77.64961" />
+  </control>
+  <control id="17" kind="normal">
+    <code>43</code>
+    <location x="-73.6741257" y="62.2274323" />
+  </control>
+  <control id="18" kind="normal">
+    <code>44</code>
+    <location x="-14.6551647" y="88.62295" />
+  </control>
+  <course id="4" kind="normal" order="3">
+    <name>Nested Fixed</name>
+    <labels label-kind="sequence" />
+    <first course-control="94" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-140.5302" top="116.227257" right="138.8698" bottom="-99.67275" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
+    <options print-scale="5000" description-kind="symbols" />
+    <relay first-team="10" teams="10" legs="3" />
+    <relay-branch branch="D" leg="1" />
+    <relay-branch branch="H" leg="2" />
+    <relay-branch branch="I" leg="3" />
+  </course>
+  <course-control id="94" control="1">
+    <next course-control="96" />
+  </course-control>
+  <course-control id="95" control="11" />
+  <course-control id="96" control="7" variation="fork" variation-end="118">
+    <next course-control="122" />
+    <variation course-control="96" />
+    <variation course-control="120" />
+    <variation course-control="121" />
+  </course-control>
+  <course-control id="101" control="15">
+    <next course-control="98" />
+  </course-control>
+  <course-control id="98" control="2">
+    <next course-control="95" />
+  </course-control>
+  <course-control id="120" control="7" variation="fork" variation-end="118">
+    <next course-control="123" />
+    <variation course-control="96" />
+    <variation course-control="120" />
+    <variation course-control="121" />
+  </course-control>
+  <course-control id="100" control="12" variation="fork" variation-end="115">
+    <next course-control="115" />
+    <variation course-control="100" />
+    <variation course-control="117" />
+  </course-control>
+  <course-control id="117" control="12" variation="fork" variation-end="115">
+    <next course-control="115" />
+    <variation course-control="100" />
+    <variation course-control="117" />
+  </course-control>
+  <course-control id="103" control="14">
+    <next course-control="98" />
+  </course-control>
+  <course-control id="104" control="13">
+    <next course-control="98" />
+  </course-control>
+  <course-control id="115" control="16" variation="fork" variation-end="98">
+    <next course-control="104" />
+    <variation course-control="115" />
+    <variation course-control="116" />
+  </course-control>
+  <course-control id="116" control="16" variation="fork" variation-end="98">
+    <next course-control="103" />
+    <variation course-control="115" />
+    <variation course-control="116" />
+  </course-control>
+  <course-control id="118" control="17" variation="fork" variation-end="98">
+    <next course-control="101" />
+    <variation course-control="118" />
+    <variation course-control="119" />
+  </course-control>
+  <course-control id="119" control="17" variation="fork" variation-end="98">
+    <next course-control="100" />
+    <variation course-control="118" />
+    <variation course-control="119" />
+  </course-control>
+  <course-control id="121" control="7" variation="fork" variation-end="118">
+    <next course-control="124" />
+    <variation course-control="96" />
+    <variation course-control="120" />
+    <variation course-control="121" />
+  </course-control>
+  <course-control id="122" control="8">
+    <next course-control="118" />
+  </course-control>
+  <course-control id="123" control="10">
+    <next course-control="118" />
+  </course-control>
+  <course-control id="124" control="9">
+    <next course-control="118" />
+  </course-control>
+</course-scribe-event>

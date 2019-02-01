@@ -1,0 +1,10 @@
+Team   1: 		CD	BEFH	AEGI
+Team   2: 		AD	CEGH	BEFI
+Team   3: 		BD	AEGH	CEFI
+Team   4: 		AD	CEFH	BEGI
+Team   5: 		BD	AEFH	CEGI
+Team   6: 		CD	BEGH	AEFI
+Team   7: 		AD	BEGH	CEFI
+Team   8: 		CD	AEFH	BEGI
+Team   9: 		CD	AEGH	BEFI
+Team  10: 		BD	CEGH	AEFI

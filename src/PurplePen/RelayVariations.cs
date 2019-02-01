@@ -73,13 +73,11 @@ namespace PurplePen
             get { return firstTeamNumber + numberTeams - 1; }
         }
 
-        public int NumberOfTeams
-        {
+        public int NumberOfTeams {
             get { return numberTeams; }
         }
 
-        public int NumberOfLegs
-        {
+        public int NumberOfLegs {
             get { return numberLegs; }
         }
 
@@ -90,10 +88,8 @@ namespace PurplePen
 
             ScanAllForks();
 
-            foreach (Fork fork in allForks)
-            {
-                if (! fork.loop && fork.numLegsHere == numberLegs)
-                {
+            foreach (Fork fork in allForks) {
+                if (!fork.loop) {
                     result.Add(fork.codes);
                 }
             }
@@ -114,57 +110,100 @@ namespace PurplePen
             FixedBranchAssignments result = new FixedBranchAssignments();
             errors = new List<string>();
 
-            ScanAllForks();
-            foreach (Fork fork in allForks) {
-                if (!fork.loop && fork.numLegsHere == numberLegs) {
-                    // This fork can have fixed branches.
-                    ValidateFixedBranchesForFork(assignments, fork, result, errors);
-                }
-                else {
-                    // This fork can't have branches. We don't give errors for this right now, but could here.
-                }
+            // All legs reach the first fork.
+            bool[] legsReachingHere = new bool[numberLegs];
+            for (int i = 0; i < legsReachingHere.Length; ++i)
+                legsReachingHere[i] = true;
 
-            }
+            ScanAllForks();
+            ValidateFixedBranchesForFork(assignments, firstForkInCourse, legsReachingHere, result, errors);
 
             return result;
         }
 
-        private void ValidateFixedBranchesForFork(FixedBranchAssignments assignments, Fork fork, FixedBranchAssignments result, List<string> errors)
+        // Validate branfixed ches for this fork, sub-forks, and subsequents forks.
+        private void ValidateFixedBranchesForFork(FixedBranchAssignments assignments, Fork fork, bool[] legsReachingHere, FixedBranchAssignments result, List<string> errors)
         {
-            char[] codeForLeg = new char[numberLegs];
+            if (fork == null)
+                return;
 
-            foreach (char code in fork.codes) {
-                if (assignments.BranchIsFixed(code)) {
-                    foreach (int leg in assignments.FixedLegsForBranch(code)) {
-                        if (leg < 0 || leg >= numberLegs) {
-                            errors.Add(string.Format(MiscText.BadLegNumber, leg + 1, code));
-                        }
-                        else if (codeForLeg[leg] != 0) {
-                            errors.Add(string.Format(MiscText.LegUsedTwice, leg + 1, codeForLeg[leg], code));
-                        }
-                        else {
-                            codeForLeg[leg] = code;
-                        }
-                    }
-                }
-            }
-
-            bool allLegsAssigned = codeForLeg.All(c => (c != 0));
-            bool allBranchesAssigned = fork.codes.All(c => assignments.BranchIsFixed(c));
-
-            if (allBranchesAssigned && !allLegsAssigned) {
-                string allCodes = string.Join(", ", from c in fork.codes select c.ToString());
-                for (int leg = 0; leg < numberLegs; ++leg) {
-                    if (codeForLeg[leg] == 0)
-                        errors.Add(string.Format(MiscText.LegNotAssigned, leg + 1, allCodes));
+            if (fork.loop) {
+                // Loops can't have fixed branches. Just validate sub-forks.
+                for (int i = 0; i < fork.subForks.Length; ++i) {
+                    ValidateFixedBranchesForFork(assignments, fork.subForks[i], legsReachingHere, result, errors);
                 }
             }
             else {
+                char[] codeForLeg = new char[numberLegs];
+
+                foreach (char code in fork.codes) {
+                    if (assignments.BranchIsFixed(code)) {
+                        foreach (int leg in assignments.FixedLegsForBranch(code)) {
+                            if (leg < 0 || leg >= numberLegs) {
+                                errors.Add(string.Format(MiscText.BadLegNumber, leg + 1, code));
+                            }
+                            else if (codeForLeg[leg] != 0) {
+                                errors.Add(string.Format(MiscText.LegUsedTwice, leg + 1, codeForLeg[leg], code));
+                            }
+                            else if (!legsReachingHere[leg]) {
+                                // This leg can't be assigned, because it doesn't ever reach here.
+                                errors.Add(string.Format(MiscText.LegAssignedOuterBranch, leg + 1, code));
+                            }
+                            else {
+                                codeForLeg[leg] = code;
+                            }
+                        }
+                    }
+                }
+
+                bool allLegsAssigned = true; // Are all legs that could reach here assigned to a branch?
                 for (int leg = 0; leg < numberLegs; ++leg) {
-                    if (codeForLeg[leg] != 0)
-                        result.AddBranchAssignment(codeForLeg[leg], leg);
+                    if (legsReachingHere[leg] && codeForLeg[leg] == 0)
+                        allLegsAssigned = false;
+                }
+                bool allBranchesAssigned = fork.codes.All(c => assignments.BranchIsFixed(c));  // Are all branches assigned one or more legs?
+
+                if (allBranchesAssigned && !allLegsAssigned) {
+                    string allCodes = string.Join(", ", from c in fork.codes select c.ToString());
+                    for (int leg = 0; leg < numberLegs; ++leg) {
+                        if (legsReachingHere[leg] && codeForLeg[leg] == 0)
+                            errors.Add(string.Format(MiscText.LegNotAssigned, leg + 1, allCodes));
+                    }
+                }
+                else {
+                    for (int leg = 0; leg < numberLegs; ++leg) {
+                        if (legsReachingHere[leg] && codeForLeg[leg] != 0)
+                            result.AddBranchAssignment(codeForLeg[leg], leg);
+                    }
+                }
+
+                // Validate sub-forks, updating the legsReachingHere based on any fixed branches.
+                for (int forkIndex = 0; forkIndex < fork.subForks.Length; ++forkIndex) {
+                    char code = fork.codes[forkIndex];
+                    bool[] legsReachingSubFork = (bool[])legsReachingHere.Clone();
+                    if (result.BranchIsFixed(code)) {
+                        // Only allow legs that are fixed to this branch.
+                        for (int leg = 0; leg < legsReachingSubFork.Length; ++leg) {
+                            legsReachingSubFork[leg] &= result.FixedLegsForBranch(code).Contains(leg);
+                        }
+                    }
+                    else {
+                        // Only allow legs that are NOT fixed to another branch.
+                        foreach (char otherCode in fork.codes) {
+                            if (otherCode != code && result.BranchIsFixed(otherCode)) {
+                                for (int leg = 0; leg < legsReachingSubFork.Length; ++leg) {
+                                    legsReachingSubFork[leg] &= !result.FixedLegsForBranch(otherCode).Contains(leg);
+                                }
+                            }
+                        }
+                    }
+
+                    ValidateFixedBranchesForFork(assignments, fork.subForks[forkIndex], legsReachingSubFork, result, errors);
                 }
             }
+
+            // Validate the next fork.
+            ValidateFixedBranchesForFork(assignments, fork.next, legsReachingHere, result, errors);
         }
 
         // Get any warnings about branches that are used unevenly.
@@ -234,7 +273,7 @@ namespace PurplePen
 
             // Try 100 teams, first prioritizing number of complete duplicates, then
             // prioritizing total score.
-            for (int i = 0; i < 100; ++i) { 
+            for (int i = 0; i < 100; ++i) {
                 TeamAssignment team = GeneratePotentialTeam();
                 int countDups = results.Count(existingTeam => existingTeam.Equals(team));
 
@@ -396,7 +435,7 @@ namespace PurplePen
                     continue; // This is a fixed branch; nothing to score.
                 }
 
-                int allowedSimilarBranches = (int) Math.Floor(1.17 * ((double)results.Count / fork.numNonFixedBranches));
+                int allowedSimilarBranches = (int)Math.Floor(1.17 * ((double)results.Count / fork.numNonFixedBranches));
                 int similarBranches = 0;
                 for (int i = 0; i < results.Count; ++i) {
                     if (results[i].LegEqualForFork(fork, leg, teamAssignment, leg)) {
@@ -483,7 +522,7 @@ namespace PurplePen
                     waysThroughLoops *= ScanFork(startFork.subForks[i], numLegsOnThisFork, 1);
                 }
 
-                waysThroughLoops *= (int) Util.Factorial(startFork.numBranches);
+                waysThroughLoops *= (int)Util.Factorial(startFork.numBranches);
 
                 return ScanFork(startFork.next, numLegsOnThisFork, waysThroughLoops);
             }
@@ -492,27 +531,22 @@ namespace PurplePen
                 int numUnfixedLegsOnThisFork = numLegsOnThisFork; // may be reduced below.
                 startFork.numNonFixedBranches = startFork.numBranches;  // may be reduced below.
                 List<char> nonFixedCodes = new List<char>(startFork.codes);
-                if (fixedBranchAssignments != null && numLegsOnThisFork == numberLegs)
-                {
-                    for (int i = 0; i < startFork.numBranches; ++i)
-                    {
+                if (fixedBranchAssignments != null) {
+                    for (int i = 0; i < startFork.numBranches; ++i) {
                         char code = startFork.codes[i];
-                        if (fixedBranchAssignments.BranchIsFixed(code))
-                        {
+                        if (fixedBranchAssignments.BranchIsFixed(code)) {
                             nonFixedCodes.Remove(code);
 
                             if (startFork.fixedBranches == null)
                                 startFork.fixedBranches = new bool[startFork.numBranches];
                             startFork.fixedBranches[i] = true;
 
-                            if (startFork.fixedLegs == null)
-                            {
-                                startFork.fixedLegs = new int[numLegsOnThisFork];
+                            if (startFork.fixedLegs == null) {
+                                startFork.fixedLegs = new int[numberLegs];
                                 for (int x = 0; x < startFork.fixedLegs.Length; ++x)
                                     startFork.fixedLegs[x] = -1;
                             }
-                            foreach (int leg in fixedBranchAssignments.FixedLegsForBranch(code))
-                            {
+                            foreach (int leg in fixedBranchAssignments.FixedLegsForBranch(code)) {
                                 if (leg >= 0 && leg < startFork.fixedLegs.Length) {
                                     startFork.fixedLegs[leg] = i;
                                     numUnfixedLegsOnThisFork -= 1;
@@ -525,8 +559,7 @@ namespace PurplePen
                 }
 
                 int branchesMore = 0, legsPerBranch = 0;
-                if (startFork.numNonFixedBranches != 0)
-                {
+                if (startFork.numNonFixedBranches != 0) {
                     // Figure out how many legs per branch. May not be even.
                     branchesMore = numUnfixedLegsOnThisFork % startFork.numNonFixedBranches;
                     legsPerBranch = numUnfixedLegsOnThisFork / startFork.numNonFixedBranches;
@@ -543,12 +576,10 @@ namespace PurplePen
                 for (int i = 0; i < startFork.numBranches; ++i) {
                     int legsThisBranch;
                     char code = startFork.codes[i];
-                    if (startFork.fixedBranches != null && startFork.fixedBranches[i])
-                    {
+                    if (startFork.fixedBranches != null && startFork.fixedBranches[i]) {
                         legsThisBranch = fixedBranchAssignments.FixedLegsForBranch(code).Count;
                     }
-                    else
-                    {
+                    else {
                         legsThisBranch = legsPerBranch;
                         if (nonFixedCodes.IndexOf(code) < branchesMore)
                             ++legsThisBranch;
@@ -579,19 +610,16 @@ namespace PurplePen
                 return CalcMinUniquePaths(startFork.next, leg, waysThroughLoops);
             }
             else {
-                if (startFork.fixedLegs != null && startFork.fixedLegs[leg] >= 0)
-                {
+                if (startFork.fixedLegs != null && startFork.fixedLegs[leg] >= 0) {
                     // Fixed leg.
                     int branch = startFork.fixedLegs[leg];
                     int ways = CalcMinUniquePaths(startFork.subForks[branch], leg, smallestPathsToThisPoint);
                     return CalcMinUniquePaths(startFork.next, leg, ways);
                 }
-                else
-                {
+                else {
                     int minWaysThroughBranches = int.MaxValue;
 
-                    for (int i = 0; i < startFork.numBranches; ++i)
-                    {
+                    for (int i = 0; i < startFork.numBranches; ++i) {
                         if (startFork.fixedBranches == null || !startFork.fixedBranches[i])
                             minWaysThroughBranches = Math.Min(CalcMinUniquePaths(startFork.subForks[i], leg, smallestPathsToThisPoint), minWaysThroughBranches);
                     }
@@ -645,7 +673,8 @@ namespace PurplePen
 
                     if (!courseCtl.loop) {
                         nextCourseControlId = courseCtl.splitEnd;
-                    } else {
+                    }
+                    else {
                         nextCourseControlId = courseCtl.nextCourseControl;
                     }
                 }

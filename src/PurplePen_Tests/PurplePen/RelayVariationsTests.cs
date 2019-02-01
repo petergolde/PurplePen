@@ -245,6 +245,19 @@ namespace PurplePen.Tests
             ValidateRelayVariationsTest(teamAssignment, "relay\\complexfixed2");
         }
 
+        [TestMethod]
+        public void FixedBranches9()
+        {
+            Setup(TestUtil.GetTestFile("relay\\gaffle.ppen"));
+
+            FixedBranchAssignments fixedBranchAssignments = new FixedBranchAssignments();
+            fixedBranchAssignments.AddBranchAssignment('D', 0);
+            fixedBranchAssignments.AddBranchAssignment('H', 1);
+            fixedBranchAssignments.AddBranchAssignment('I', 2);
+            var teamAssignment = new RelayVariations(eventDB, CourseId(4), new RelaySettings(10, 3, fixedBranchAssignments));
+            ValidateRelayVariationsTest(teamAssignment, "relay\\fixedinnnerbranch");
+        }
+
 
 
         [TestMethod]
@@ -402,6 +415,66 @@ namespace PurplePen.Tests
             Assert.AreEqual("Leg 3 should be assigned to one of branches C, D, E", errors[0]);
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void ValidateFixedBranches5()
+        {
+            Setup(TestUtil.GetTestFile("relay\\gaffle.ppen"));
+
+            // No Assignments.
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(4), new RelaySettings(10, 3));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            Assert.AreEqual(0, errors.Count);
+            Assert.AreEqual(branchAssignments, result);
+        }
+
+        [TestMethod]
+        public void ValidateFixedBranches6()
+        {
+            Setup(TestUtil.GetTestFile("relay\\gaffle.ppen"));
+
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            branchAssignments.AddBranchAssignment('D', 0);
+            branchAssignments.AddBranchAssignment('H', 1);
+            branchAssignments.AddBranchAssignment('I', 2);
+
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(4), new RelaySettings(10, 3));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            Assert.AreEqual(0, errors.Count);
+            Assert.AreEqual(branchAssignments, result);
+        }
+
+        [TestMethod]
+        public void ValidateFixedBranches7()
+        {
+            Setup(TestUtil.GetTestFile("relay\\gaffle.ppen"));
+
+            FixedBranchAssignments branchAssignments = new FixedBranchAssignments();
+            branchAssignments.AddBranchAssignment('D', 0);
+            branchAssignments.AddBranchAssignment('H', 1);
+            branchAssignments.AddBranchAssignment('I', 0);
+            branchAssignments.AddBranchAssignment('I', 2);
+
+            List<string> errors;
+            RelayVariations relayVariations = new RelayVariations(eventDB, CourseId(4), new RelaySettings(10, 3));
+            FixedBranchAssignments result = relayVariations.ValidateFixedBranches(branchAssignments, out errors);
+
+            FixedBranchAssignments expected = new FixedBranchAssignments();
+            branchAssignments.AddBranchAssignment('D', 0);
+            branchAssignments.AddBranchAssignment('H', 1);
+            branchAssignments.AddBranchAssignment('I', 2);
+
+            Assert.AreEqual(1, errors.Count);
+            Assert.AreEqual("Leg 1 never reaches branch 'I': it was assigned to go a different way in a containing fork.", errors[0]);
+            Assert.AreEqual(expected, result);
+        }
+
+
 
 
 

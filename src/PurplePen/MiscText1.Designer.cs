@@ -932,6 +932,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Leg {0} never reaches branch &apos;{1}&apos;: it was assigned to go a different way in a containing fork..
+        /// </summary>
+        internal static string LegAssignedOuterBranch {
+            get {
+                return ResourceManager.GetString("LegAssignedOuterBranch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Leg {0} should be assigned to one of branches {1}.
         /// </summary>
         internal static string LegNotAssigned {
