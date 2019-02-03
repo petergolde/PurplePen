@@ -554,7 +554,7 @@ namespace PurplePen
                 minMeasuredLength = maxMeasuredLength = partLength;
             }
             else {
-                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, new CourseDesignator(courseDesignator.CourseId), new CourseViewOptions());
+                CourseView viewEntireCourse = CourseView.CreateCourseView(eventDB, courseDesignator.WithAllParts(), new CourseViewOptions());
                 minMeasuredLength = viewEntireCourse.MinMeasuredLength;
                 maxMeasuredLength = viewEntireCourse.MaxMeasuredLength;
             }
