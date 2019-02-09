@@ -1049,7 +1049,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map Issue Point.
+        ///   Looks up a localized string similar to Timed Start.
         /// </summary>
         internal static string MapIssue_Long {
             get {
@@ -1058,7 +1058,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map Issue.
+        ///   Looks up a localized string similar to Timed Start.
         /// </summary>
         internal static string MapIssue_Medium {
             get {
@@ -1067,7 +1067,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MI.
+        ///   Looks up a localized string similar to TS.
         /// </summary>
         internal static string MapIssue_Short {
             get {

@@ -59,7 +59,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            ControlPoint ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8, ctl9;
+            ControlPoint ctl1, ctl2, ctl3, ctl4, ctl5, ctl6, ctl7, ctl8, ctl9, ctl10, ctl11;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -122,9 +122,18 @@ namespace PurplePen.Tests
 
             ctl9 = new ControlPoint(ControlPointKind.MapIssue, null, new PointF(40.3F, -7.11F));
             ctl9.symbolIds[0] = "13.6";
+            ctl9.mapIssueKind = MapIssueKind.Beginning;
             eventDB.AddControlPoint(ctl9);
 
+            ctl10 = new ControlPoint(ControlPointKind.MapIssue, null, new PointF(-17.2F, 7.01F));
+            ctl10.symbolIds[0] = "13.6";
+            ctl10.mapIssueKind = MapIssueKind.Middle;
+            eventDB.AddControlPoint(ctl10);
 
+            ctl11 = new ControlPoint(ControlPointKind.MapIssue, null, new PointF(1.3F, 14.5F));
+            ctl11.symbolIds[0] = "13.6";
+            ctl11.mapIssueKind = MapIssueKind.End;
+            eventDB.AddControlPoint(ctl11);
 
             undomgr.EndCommand(61);
 
@@ -145,7 +154,9 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(6), ctl6),
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(7), ctl7),
                     new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(8), ctl8),
-                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(9), ctl9)
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(9), ctl9),
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(10), ctl10),
+                    new KeyValuePair<Id<ControlPoint>,ControlPoint>(ControlId(11), ctl11)
                 }
             );
         }
@@ -330,7 +341,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Leg leg1, leg2, leg3, leg4, leg5;
+            Leg leg1, leg2, leg3, leg4, leg5, leg6;
             ControlPoint ctl1, ctl2;
             Id<ControlPoint> ctlId1, ctlId2;
 
@@ -375,6 +386,13 @@ namespace PurplePen.Tests
             leg5.gaps = new LegGap[3] { new LegGap(0.9F, 0.3F), new LegGap(3.4F, 0.4F), new LegGap(4.5F, 1.1F) };
             eventDB.AddLeg(leg5);
 
+            leg6 = new Leg(ctlId1, ctlId2);
+            leg6.flagging = FlaggingKind.IssuePointMiddle;
+            leg6.flagStartStop = new PointF(5, -7.5F);
+            leg6.bends = new PointF[1] { leg6.flagStartStop };
+            eventDB.AddLeg(leg6);
+
+
             undomgr.EndCommand(81);
 
             eventDB.Validate();
@@ -393,7 +411,8 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Leg>,Leg>(LegId(2), leg2),
                     new KeyValuePair<Id<Leg>,Leg>(LegId(3), leg3),
                     new KeyValuePair<Id<Leg>,Leg>(LegId(4), leg4),
-                    new KeyValuePair<Id<Leg>,Leg>(LegId(5), leg5)
+                    new KeyValuePair<Id<Leg>,Leg>(LegId(5), leg5),
+                    new KeyValuePair<Id<Leg>,Leg>(LegId(6), leg6)
                 }
             );
         }

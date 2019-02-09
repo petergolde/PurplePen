@@ -209,7 +209,7 @@ namespace PurplePen
                     break;
 
                 case ControlPointKind.MapIssue:
-                    courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio * 1.5F, appearance, -90, new PointF(location.X - 0.8F, location.Y), true);
+                    courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio * 1.5F, appearance, -90, new PointF(location.X - 0.8F, location.Y), MapIssueCourseObj.RenderStyle.WithTail);
                     break;
 
                 default:

@@ -245,6 +245,9 @@ namespace PurplePen
             if (courseObject == null || (courseObject is LegCourseObj) || (courseObject is FlaggedLegCourseObj))
                 return false;
 
+            if (courseObject is MapIssueCourseObj && courseObject.controlId.IsNone)
+                return false;
+
             // Everything else is draggable.
             return true;
         }
@@ -322,8 +325,10 @@ namespace PurplePen
         public override void LeftButtonClick(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             // Drop targets are the only think in the All Variations layer we can click on.
+            // Also, don't click 
             CourseObj clickedObject = HitTest(pane, location, pixelSize, 
-                co => co.layer != CourseLayer.AllVariations || co is TopologyDropTargetCourseObj);
+                co => !(co.layer == CourseLayer.AllVariations && !(co is TopologyDropTargetCourseObj)) &&
+                      !((co is MapIssueCourseObj) && co.controlId.IsNone));
 
             if (clickedObject != null) {
                 selectionMgr.SelectCourseObject(clickedObject);
@@ -344,7 +349,9 @@ namespace PurplePen
                 controller.InitiateMapDragging(locationStart, System.Windows.Forms.MouseButtons.Left);
             }
             else if (pane == Pane.Topology) {
-                CourseObj clickedObject = HitTest(pane, locationStart, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));
+                CourseObj clickedObject = HitTest(pane, locationStart, pixelSize,
+                co => !(co.layer == CourseLayer.AllVariations && !(co is TopologyDropTargetCourseObj)) &&
+                      !((co is MapIssueCourseObj) && co.controlId.IsNone));
                 TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, clickedObject, locationStart, location);
                 controller.SetCommandMode(commandMode);
             }
@@ -431,13 +438,14 @@ namespace PurplePen
 
             if (touchedObject != null) {
                 TextPart[] textParts = SelectionDescriber.DescribeCourseObject(symbolDB, eventDB, touchedObject, courseView.ScaleRatio);
-                ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
-                return true;
+                if (textParts != null) {
+                    ConvertTextPartsToToolTip(textParts, out tipText, out titleText);
+                    return true;
+                }
             }
-            else {
-                tipText = titleText = "";
-                return false;
-            }
+
+            tipText = titleText = "";
+            return false;
         }
     }
 

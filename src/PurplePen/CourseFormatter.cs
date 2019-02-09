@@ -136,7 +136,7 @@ namespace PurplePen
                     // Get the object(s) associated with the leg(s) to the next control.
                     if (controlView.legTo != null) {
                         for (int leg = 0; leg < controlView.legTo.Length; ++leg) {
-                            CourseObj[] courseObjs = CreateLeg(eventDB, courseView, courseObjRatio, appearance, controlView.courseControlIds[leg], controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
+                            List<CourseObj> courseObjs = CreateLeg(eventDB, courseView, courseObjRatio, appearance, controlView.courseControlIds[leg], controlView, controlViews[controlView.legTo[leg]], controlView.legId[leg]);
                             if (courseObjs != null) {
                                 foreach (CourseObj o in courseObjs) {
                                     o.layer = layer;
@@ -622,9 +622,21 @@ namespace PurplePen
 
             switch (control.kind) {
             case ControlPointKind.MapIssue:
+                MapIssueCourseObj.RenderStyle mapIssueRenderStyle;
+
+                if (control.mapIssueKind == MapIssueKind.Beginning && courseKind == CourseView.CourseViewKind.AllControls) {
+                    mapIssueRenderStyle = MapIssueCourseObj.RenderStyle.WithTail;
+                }
+                else if (control.mapIssueKind == MapIssueKind.Beginning) {
+                    mapIssueRenderStyle = MapIssueCourseObj.RenderStyle.WithoutTail;
+                }
+                else {
+                    mapIssueRenderStyle = MapIssueCourseObj.RenderStyle.Nothing;
+                }
+
                 courseObj = new MapIssueCourseObj(controlId, courseControlId, courseObjRatio, appearance, 
-                                                  double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, 
-                                                  courseKind == CourseView.CourseViewKind.AllControls);
+                                                double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location, 
+                                                mapIssueRenderStyle);
                 break;
 
             case ControlPointKind.Start:
@@ -685,7 +697,7 @@ namespace PurplePen
 
         // Create the objects associated with the leg from controlView1 to controlView2. Could be multiple because
         // a leg may be partly flagged, and so forth. Gaps do not create separate course objects.
-        private static CourseObj[] CreateLeg(EventDB eventDB, CourseView courseView, float courseObjRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
+        private static List<CourseObj> CreateLeg(EventDB eventDB, CourseView courseView, float courseObjRatio, CourseAppearance appearance, Id<CourseControl> courseControlId1, CourseView.ControlView controlView1, CourseView.ControlView controlView2, Id<Leg> legId)
         {
             ControlPoint control1 = eventDB.GetControl(controlView1.controlId);
             ControlPoint control2 = eventDB.GetControl(controlView2.controlId);
@@ -736,12 +748,22 @@ namespace PurplePen
             }
 
             // Create course objects for this leg from the paths/isFlagged lists.
-            CourseObj[] objs = new CourseObj[paths.Count];
+            List<CourseObj> objs = new List<CourseObj>();
             for (int i = 0; i < paths.Count; ++i) {
                 if (isFlagged[i]) 
-                    objs[i] = new FlaggedLegCourseObj(controlView1.controlId, courseControlId1, controlView2.courseControlIds[0], courseObjRatio, appearance, paths[i], gapsList[i]);
+                    objs.Add(new FlaggedLegCourseObj(controlView1.controlId, courseControlId1, controlView2.courseControlIds[0], courseObjRatio, appearance, paths[i], gapsList[i]));
                 else
-                    objs[i] = new LegCourseObj(controlView1.controlId, courseControlId1, controlView2.courseControlIds[0], courseObjRatio, appearance, paths[i], gapsList[i]);
+                    objs.Add(new LegCourseObj(controlView1.controlId, courseControlId1, controlView2.courseControlIds[0], courseObjRatio, appearance, paths[i], gapsList[i]));
+            }
+
+            // If there is a map issue point along the leg, draw it.
+            // We do not associate it with an controlId or courseControlId, because the timed start is associated with those,
+            // and weird things happen otherwise.
+            if (leg != null && leg.flagging == FlaggingKind.IssuePointMiddle) {
+                float angleOfIssuePoint = legPath.TangentAngleAtPoint(leg.flagStartStop) + 90.0F;
+                objs.Add(new MapIssueCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, courseObjRatio, appearance,
+                                angleOfIssuePoint, leg.flagStartStop,
+                                MapIssueCourseObj.RenderStyle.WithoutTail));
             }
 
             return objs;
@@ -756,6 +778,7 @@ namespace PurplePen
                                                           float courseObjRatio, CourseAppearance appearance, out LegGap[] gaps)
         {
             PointF[] bends = null;
+            PointF? dashPoint = null;
             gaps = null;
 
             // Get bends and gaps if controls were supplied.
@@ -766,6 +789,10 @@ namespace PurplePen
                 // Get the path of the line.
                 if (leg != null) {
                     bends = leg.bends;
+                    if (leg.flagging == FlaggingKind.IssuePointMiddle) {
+                        // The issue point should be a dash point to get the dashes to look right.
+                        dashPoint = leg.flagStartStop;
+                    }
                     gaps = QueryEvent.GetLegGaps(eventDB, controlId1, controlId2);
                 }
             }
@@ -784,13 +811,13 @@ namespace PurplePen
                 legRadius2 *= StartTriangleRadiusAdjustment(angleInStart, angleOutStart);
             }
 
-            return GetLegPath(pt1, legRadius1, pt2, legRadius2, bends, gaps);
+            return GetLegPath(pt1, legRadius1, pt2, legRadius2, bends, gaps, dashPoint);
         }
 
         // Create a path from pt1 to pt2, with the given radius around the legs. If the leg would
         // be of zero length, return null. If bends is non-null, then the path should include those bends.
         // If gaps is non-null, updates the gaps by subtracting the radius from them.
-        private static SymPath GetLegPath(PointF pt1, double radius1, PointF pt2, double radius2, PointF[] bends, LegGap[] gaps)
+        private static SymPath GetLegPath(PointF pt1, double radius1, PointF pt2, double radius2, PointF[] bends, LegGap[] gaps, PointF? dashPoint)
         {
             double legLength = Geometry.Distance(pt1, pt2);
 
@@ -818,6 +845,14 @@ namespace PurplePen
             if (gaps != null) {
                 for (int i = 0; i < gaps.Length; ++i)
                     gaps[i].distanceFromStart -= (float) radius1;
+            }
+
+            // If one is requested to be a dash point, set that.
+            if (dashPoint.HasValue) {
+                for (int i = 0; i < coords.Length; ++i) {
+                    if (coords[i] == dashPoint.Value)
+                        kinds[i] = PointKind.Dash;
+                }
             }
 
             return new SymPath(coords, kinds);
@@ -999,6 +1034,9 @@ namespace PurplePen
         // Cut the leg "legObj" with respect to "otherObj", if they overlap
         private static void CutLegWithRespectTo(EventDB eventDB, CourseAppearance appearance, CourseDesignator courseDesignator, LineCourseObj legObj, PointCourseObj otherObj)
         {
+            if (otherObj.ApparentRadius == 0)
+                return;
+
             float radiusOther = otherObj.ApparentRadius + (appearance.lineWidth * NormalCourseAppearance.lineThickness * 2);
             PointF nearestPointOnLeg;
             float distance = legObj.path.DistanceFromPoint(otherObj.location, out nearestPointOnLeg);

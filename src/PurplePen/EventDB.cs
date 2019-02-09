@@ -149,12 +149,20 @@ namespace PurplePen
     {
         // The order here determines the order of sorting for all controls course view or score course view
         None,
-        MapIssue,                       // Map Issue point.
+        MapIssue,                       // Map Issue point (actually, the start of the marked route to the start)
         Start,                          // A start point
         MapExchange,             // A map exchange (that isn't a control)
         Normal,                         // A normal control point
         Finish,                         // A finish point
         CrossingPoint,                  // A crossing point
+    }
+
+    public enum MapIssueKind
+    {
+        None,
+        Beginning,              // Map issue at beginning of marked route to start
+        Middle,                 // Map issue in the middle of marked route (marked by Leg.flagStartStop)
+        End,                    // Map issue at the start triangle
     }
 
     /// <summary>
@@ -176,6 +184,7 @@ namespace PurplePen
         public string descTextAfter;         // Description text to show after this control (in all courses)
         public bool customCodeLocation;  // If false, default code location in all controls view. If true, use codeLocationAngle.
         public float codeLocationAngle;   // Angle to the code location in the all controls view.
+        public MapIssueKind mapIssueKind; // if kind==MapIssue, where the map issue point is drawn.
 
         public ControlPoint()
         {
@@ -212,6 +221,10 @@ namespace PurplePen
 
             if ((kind != ControlPointKind.Normal && kind != ControlPointKind.Start) && columnFText != null)
                 throw new ApplicationException(string.Format("Control point '{0}' should not have column F text", id));
+
+            if (kind == ControlPointKind.MapIssue && mapIssueKind == MapIssueKind.None) {
+                throw new ApplicationException(string.Format("Control point '{0}' should have mapIssueKind set", id));
+            }
 
             if (code != null) {
                 if (validateInfo.usedCodes.ContainsKey(code))
@@ -290,6 +303,8 @@ namespace PurplePen
                 return false;
             if (other.codeLocationAngle != codeLocationAngle)
                 return false;
+            if (other.mapIssueKind != mapIssueKind)
+                return false;
 
             return true;
         }
@@ -333,6 +348,18 @@ namespace PurplePen
 
             if (kind == ControlPointKind.CrossingPoint)
                 orientation = xmlinput.GetAttributeFloat("orientation");
+
+            if (kind == ControlPointKind.MapIssue) {
+                string mapIssueKindString = xmlinput.GetAttributeString("map-issue-location", "beginning");
+                switch (mapIssueKindString) {
+                    case "beginning":
+                        mapIssueKind = MapIssueKind.Beginning; break;
+                    case "middle":
+                        mapIssueKind = MapIssueKind.Middle; break;
+                    case "end":
+                        mapIssueKind = MapIssueKind.End; break;
+                }
+            }
 
             bool first = true;
             while (xmlinput.FindSubElement(first, "code", "location", "description", "description-text", "gaps", "circle-gaps", "punch-pattern", "description-text-line")) {
@@ -475,6 +502,20 @@ namespace PurplePen
 
             if (customCodeLocation) 
                 xmloutput.WriteAttributeString("all-controls-code-angle", XmlConvert.ToString(codeLocationAngle));
+
+            if (kind == ControlPointKind.MapIssue) {
+                switch (mapIssueKind) {
+                    case MapIssueKind.Beginning:
+                        xmloutput.WriteAttributeString("map-issue-location", "beginning");
+                        break;
+                    case MapIssueKind.Middle:
+                        xmloutput.WriteAttributeString("map-issue-location", "middle");
+                        break;
+                    case MapIssueKind.End:
+                        xmloutput.WriteAttributeString("map-issue-location", "end");
+                        break;
+                }
+            }
 
             // Write sub-elements
             if (code != null)
@@ -2015,7 +2056,8 @@ namespace PurplePen
         None,               // no flagging
         All,                    // all flagged
         Begin,              // beginning part of the leg is flagged
-        End                  // end of the leg is flagged
+        End,                  // end of the leg is flagged
+        IssuePointMiddle,     // The map issue point is drawn at the flagStartStop position.
     };
 
     // A leg describes the leg between two controls. Not all legs have a leg object; it is 
@@ -2024,7 +2066,8 @@ namespace PurplePen
     {
         public Id<ControlPoint> controlId1, controlId2;       // start and end of the leg.
         public FlaggingKind flagging;   // what kind of flagging.
-        public PointF flagStartStop;     // start or stop of the flagging, if flagging kind is begin or end. This point is always in the bend array too.
+        public PointF flagStartStop;     // start or stop of the flagging, if flagging kind is begin or end. This point is always in the bend array too. 
+                                         // For FlaggingKind.IssuePointMiddle, the point of the map issue point.
         public PointF[] bends;              // bends in the leg.
         public LegGap[] gaps;              // list of gaps in the leg (null if no gaps)
 
@@ -2053,7 +2096,7 @@ namespace PurplePen
             validateInfo.eventDB.CheckControlId(controlId1);
             validateInfo.eventDB.CheckControlId(controlId2);
 
-            if (flagging == FlaggingKind.Begin || flagging == FlaggingKind.End) {
+            if (Leg.NeedsFlaggingStartStopPosition(flagging)) {
                 if (bends == null || bends.Length == 0 || Array.IndexOf(bends, flagStartStop) < 0) {
                     throw new ApplicationException(string.Format("Leg {0} has a flagStartStop that isn't in the bends array", id));
                 }
@@ -2073,7 +2116,7 @@ namespace PurplePen
                 return false;
             if (other.flagging != flagging)
                 return false;
-            if ((flagging == FlaggingKind.Begin || flagging == FlaggingKind.End) && other.flagStartStop != flagStartStop)
+            if (Leg.NeedsFlaggingStartStopPosition(flagging) && other.flagStartStop != flagStartStop)
                 return false;
 
             if (bends != null) {
@@ -2133,11 +2176,12 @@ namespace PurplePen
                     case "none": flagging = FlaggingKind.None; break;
                     case "beginning-part": flagging = FlaggingKind.Begin; break;
                     case "end-part": flagging = FlaggingKind.End; break;
+                    case "map-issue-middle": flagging = FlaggingKind.IssuePointMiddle; break;
                     case "all": flagging = FlaggingKind.All; break;
                     default: xmlinput.BadXml("Invalid flagging kind '{0}'", flagKind); break;
                     }
 
-                    if (flagging == FlaggingKind.Begin || flagging == FlaggingKind.End) {
+                    if (NeedsFlaggingStartStopPosition(flagging)) {
                         float x = xmlinput.GetAttributeFloat("x");
                         float y = xmlinput.GetAttributeFloat("y");
                         flagStartStop = new PointF(x, y);
@@ -2195,6 +2239,7 @@ namespace PurplePen
                 switch (flagging) {
                 case FlaggingKind.Begin: flagKind = "beginning-part"; break;
                 case FlaggingKind.End: flagKind = "end-part"; break;
+                case FlaggingKind.IssuePointMiddle: flagKind = "map-issue-middle"; break;
                 case FlaggingKind.All: flagKind = "all"; break;
                 default: Debug.Fail("bad flagging kind"); flagKind = ""; break;
                 }
@@ -2242,6 +2287,11 @@ namespace PurplePen
             get { return "leg"; }
         }
 
+        // Does this specific flagging kind require a flagStartStop position.
+        public static bool NeedsFlaggingStartStopPosition(FlaggingKind flaggingKind)
+        {
+            return (flaggingKind == FlaggingKind.Begin || flaggingKind == FlaggingKind.End || flaggingKind == FlaggingKind.IssuePointMiddle);
+        }
     }
 
     // The type of map used.

@@ -592,14 +592,14 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
     <value>Cannot read map for the following reason: '{0}' Opening and re-saving the map in the latest version of OpenOrienteering Mapper may fix problems.</value>
   </data>
   <data name="MapIssue_Long" xml:space="preserve">
-    <value>Map Issue Point</value>
+    <value>Timed Start</value>
   </data>
   <data name="MapIssue_Medium" xml:space="preserve">
-    <value>Map Issue</value>
+    <value>Timed Start</value>
   </data>
   <data name="MapIssue_Short" xml:space="preserve">
-    <value>MI</value>
-    <comment>Abbreviation for "Map Issue"</comment>
+    <value>TS</value>
+    <comment>Abbreviation for "Timed Start"</comment>
   </data>
   <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
     <value>The underlying OCAD map has visible template files. In OCAD 8 and below, these templates may not appear due to limitations in OCAD.</value>

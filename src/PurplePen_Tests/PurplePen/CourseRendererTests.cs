@@ -236,6 +236,18 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void TimedStart()
+        {
+            CheckCourseBothAppearances("courserenderer\\MapIssueTest.ppen", Designator(1), false, "timedstart1", new RectangleF(0, -50, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\MapIssueTest.ppen", Designator(2), false, "timedstart2", new RectangleF(0, -50, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\MapIssueTest.ppen", Designator(3), false, "timedstart3", new RectangleF(0, -50, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\MapIssueTest.ppen", Designator(4), false, "timedstart4", new RectangleF(-120, 0, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\MapIssueTest.ppen", Designator(5), false, "timedstart5", new RectangleF(-120, 0, 150, 150));
+            CheckCourseBothAppearances("courserenderer\\MapIssueTest.ppen", Designator(6), false, "timedstart6", new RectangleF(-120, -50, 150, 150));
+
+        }
+
+        [TestMethod]
         public void AllControlsDifferentScale()
         {
             CheckCourseBothAppearances("courserenderer\\allcontrolsscale.ppen", CourseDesignator.AllControls, false, "allcontrolsscale", new RectangleF(-20, -50, 160, 160));

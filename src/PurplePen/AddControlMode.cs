@@ -58,12 +58,13 @@ namespace PurplePen
         ControlPointKind controlKind;      // Kind of control we are adding.
         bool exchangeAtControl;            // If true, controlKind == Normal and we are changing a control to an exchange point.
         float courseObjRatio;
+        MapIssueKind mapIssueKind;
         CourseAppearance appearance;
 
         PointCourseObj highlight;    // the highlight of the control we are creating.
         CourseObj[] additionalHighlights;  // additional highlights to show also. 
 
-        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, SymbolDB symbolDB, bool allControls, ControlPointKind controlKind, bool exchangeAtControl)
+        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, SymbolDB symbolDB, bool allControls, ControlPointKind controlKind, bool exchangeAtControl, MapIssueKind mapIssueKind)
         {
             this.controller = controller;
             this.selectionMgr = selectionMgr;
@@ -73,6 +74,7 @@ namespace PurplePen
             this.allControls = allControls;
             this.controlKind = controlKind;
             this.exchangeAtControl = exchangeAtControl;
+            this.mapIssueKind = mapIssueKind;
             this.appearance = controller.GetCourseAppearance();
             this.courseObjRatio = selectionMgr.ActiveCourseView.CourseObjRatio(appearance);
         }
@@ -297,7 +299,7 @@ namespace PurplePen
                 string newCode = null;
                 if (controlKind == ControlPointKind.Normal)
                     newCode = QueryEvent.NextUnusedControlCode(eventDB);
-                controlId = ChangeEvent.AddControlPoint(eventDB, controlKind, newCode, highlightLocation, 0);
+                controlId = ChangeEvent.AddControlPoint(eventDB, controlKind, newCode, highlightLocation, 0, mapIssueKind);
                 if (controlKind == ControlPointKind.Finish)
                     ChangeEvent.ChangeDescriptionSymbol(eventDB, controlId, 0, "14.3");   // set finish to "navigate to finish".
                 else if (controlKind == ControlPointKind.CrossingPoint)
@@ -388,7 +390,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.MapIssue:
-                highlight = new MapIssueCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, courseObjRatio, appearance, 0, highlightLocation, true);
+                highlight = new MapIssueCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, courseObjRatio, appearance, 0, highlightLocation, MapIssueCourseObj.RenderStyle.WithTail);
                 break;
 
             case ControlPointKind.Start:

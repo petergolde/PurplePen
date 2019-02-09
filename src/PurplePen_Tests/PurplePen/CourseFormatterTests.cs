@@ -956,7 +956,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
 
             CourseDesignator designator = QueryEvent.EnumerateCourseDesignators(eventDB, 
                 new[] { CourseId(1) },
-                new Dictionary<Id<Course>, VariationChoices>() { { CourseId(1), new VariationChoices() { Kind = VariationChoices.VariationChoicesKind.ChosenTeams, FirstTeam = 4, LastTeam = 6 } } }, 
+                new Dictionary<Id<Course>, VariationChoices>() { { CourseId(1), new VariationChoices() { Kind = VariationChoices.VariationChoicesKind.ChosenTeams, FirstTeam = 3, LastTeam = 6 } } }, 
                 true).Skip(1).First();
             courseView = CourseView.CreateViewingCourseView(eventDB, designator);
 
@@ -964,10 +964,10 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
             Assert.AreEqual("Course 1", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(Variation)");
-            Assert.AreEqual("ADEFCH", result);
+            Assert.AreEqual("ADCEFJ", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayTeam)");
-            Assert.AreEqual("4", result);
+            Assert.AreEqual("3", result);
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayLeg)");
             Assert.AreEqual("2", result);

@@ -322,7 +322,7 @@ namespace PurplePen
         }
 
         // Get the radius that handles are placed on. Compensates for the line width. Used for cutting adjacent circles, and positioning handles
-        public float ApparentRadius {
+        public virtual float ApparentRadius {
             get { return FullRadius - ((appearance.lineWidth * NormalCourseAppearance.lineThickness * courseObjRatio) / 2.0F); }
         }
 
@@ -1449,19 +1449,29 @@ namespace PurplePen
         static readonly PointF[] coords = { new PointF(NormalCourseAppearance.mapIssueLength / 2.0F, 0F), new PointF(-NormalCourseAppearance.mapIssueLength / 2.0F, 0F) };
         static readonly PointF[] coordsTail = { new PointF(0F, 0F), new PointF(0F, NormalCourseAppearance.mapIssueLength * 0.6F) };
 
-        bool showTail;
-        static object withTailKey = new object(), withoutTailKey = new object();
+        RenderStyle renderStyle;
+        static object noRenderKey = new object(), withTailKey = new object(), withoutTailKey = new object();
 
         public MapIssueCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio,
-                              CourseAppearance appearance, float orientation, PointF location, bool showTail)
-            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation, NormalCourseAppearance.mapIssueLength / 2.0F, location)
+                              CourseAppearance appearance, float orientation, PointF location, RenderStyle renderStyle)
+            : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation, NormalCourseAppearance.mapIssueLength * 0.6F, location)
         {
-            this.showTail = showTail;
+            this.renderStyle = renderStyle;
+        }
+
+        // No apparent radius, for cutting lines, etc.
+        public override float ApparentRadius {
+            get { return 0;  }
         }
 
         protected override object SymDefKey()
         {
-            return showTail ? withTailKey : withoutTailKey;
+            switch (renderStyle) {
+                case RenderStyle.Nothing: return noRenderKey;
+                case RenderStyle.WithoutTail: return withoutTailKey;
+                case RenderStyle.WithTail: return withTailKey;
+                default: throw new ApplicationException("Unexpected render style");
+            }
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
@@ -1473,9 +1483,11 @@ namespace PurplePen
             SymPath pathTail = new SymPath(ptsTail, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
-            if (showTail)
-                glyph.AddLine(symColor, pathTail, NormalCourseAppearance.lineThickness * courseObjRatio, LineJoin.Miter, LineCap.Flat);
+            if (renderStyle != RenderStyle.Nothing) {
+                glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
+                if (renderStyle == RenderStyle.WithTail)
+                    glyph.AddLine(symColor, pathTail, NormalCourseAppearance.lineThickness * courseObjRatio, LineJoin.Miter, LineCap.Flat);
+            }
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Map Issue Point", "715", glyph, true);
@@ -1504,17 +1516,31 @@ namespace PurplePen
             xformWorldToPixel.TransformPoints(pts1);
             xformWorldToPixel.TransformPoints(pts2);
 
-            // Draw the map issue point, with tail.
+            // Draw the map issue point, with tail. Even RenderStyle.None draws the highlight without tail.
             using (Pen pen = new Pen(brush, thickness1)) {
                 g.DrawLines(pen, pts1);
             }
-            if (showTail) {
+            if (renderStyle != RenderStyle.WithoutTail) {
                 using (Pen pen = new Pen(brush, thickness2)) {
                     g.DrawLines(pen, pts2);
                 }
             }
 
         }
+
+        public override int SelectionPriority()
+        {
+            if (this.controlId.IsNone)
+                return 0; // don't hit test ones that aren't associated with a control id.
+
+            return base.SelectionPriority();
+        }
+
+        public enum RenderStyle {
+          Nothing,  // Don't render at end (used for the beginnging when map issue at middle or end.)
+          WithoutTail,  // Render without tail
+          WithTail // Render with tail
+        };
     }
 
     // Finish circle

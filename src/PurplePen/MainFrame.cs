@@ -1591,7 +1591,11 @@ namespace PurplePen
 
         private void addMapIssueMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.MapIssue, false);
+            MapIssueChoiceDialog dialog = new MapIssueChoiceDialog();
+            if (dialog.ShowDialog(this) == DialogResult.OK) {
+                controller.BeginAddMapIssuePointMode(dialog.MapIssueKind);
+            }
+            dialog.Dispose();
         }
 
         private void addMandatoryCrossingMenu_Click(object sender, EventArgs e)

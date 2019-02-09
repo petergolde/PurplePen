@@ -838,10 +838,11 @@ namespace PurplePen
         }
 
         // Add a new control point to the all controls collection. Doesn't add it to any courses, even for a start/finish control.
-        public static Id<ControlPoint> AddControlPoint(EventDB eventDB, ControlPointKind kind, string code, PointF location, float orientation)
+        public static Id<ControlPoint> AddControlPoint(EventDB eventDB, ControlPointKind kind, string code, PointF location, float orientation, MapIssueKind mapIssueKind = MapIssueKind.None)
         {
             ControlPoint newControlPoint = new ControlPoint(kind, code, location);
             newControlPoint.orientation = orientation;
+            newControlPoint.mapIssueKind = mapIssueKind;
             return eventDB.AddControlPoint(newControlPoint);
         }
 
@@ -1018,7 +1019,8 @@ namespace PurplePen
         // If addToOtherCourses is true, the new start control is also added to all courses without an existing start control.
         public static Id<CourseControl> AddStartOrMapIssueToCourse(EventDB eventDB, Id<ControlPoint> controlId, Id<Course> courseId, bool addToOtherCourses)
         {
-            ControlPointKind controlKind = eventDB.GetControl(controlId).kind;
+            ControlPoint controlPoint = eventDB.GetControl(controlId);
+            ControlPointKind controlKind = controlPoint.kind;
             Debug.Assert(controlKind == ControlPointKind.Start || controlKind == ControlPointKind.MapIssue);
 
             Id<CourseControl> courseControlId = QueryEvent.FindControlOfKind(eventDB, courseId, controlKind);
@@ -1043,6 +1045,21 @@ namespace PurplePen
                 else {
                     // Just add at the beginning of the course.
                     newCourseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseId, Id<CourseControl>.None, eventDB.GetCourse(courseId).firstCourseControl, LegInsertionLoc.PreSplit);
+                }
+            }
+
+            // Check for MapIssue point in the middle of marked route to tstart.
+            CourseControl firstCourseControl = eventDB.GetCourseControl(eventDB.GetCourse(courseId).firstCourseControl);
+            CourseControl secondCourseControl = null;
+            if (firstCourseControl.nextCourseControl.IsNotNone)
+                secondCourseControl = eventDB.GetCourseControl(firstCourseControl.nextCourseControl);
+            if (firstCourseControl != null && secondCourseControl != null) {
+                ControlPoint firstControl, secondControl;
+                firstControl = eventDB.GetControl(firstCourseControl.control);
+                secondControl = eventDB.GetControl(secondCourseControl.control);
+                if (firstControl.kind == ControlPointKind.MapIssue && secondControl.kind == ControlPointKind.Start && firstControl.mapIssueKind == MapIssueKind.Middle) {
+                    // We need a Leg object with appropriate flagging kind.
+                    ChangeFlagging(eventDB, firstCourseControl.control, secondCourseControl.control, FlaggingKind.IssuePointMiddle);
                 }
             }
 
@@ -1315,10 +1332,14 @@ namespace PurplePen
             else
                 leg = (Leg) eventDB.GetLeg(legId).Clone();
 
+            // Can't change the leg flagging away from IssuePointMiddle.
+            if (leg.flagging == FlaggingKind.IssuePointMiddle && flagging != FlaggingKind.IssuePointMiddle)
+                return;
+
             // Set the flagging kind.
             leg.flagging = flagging;
 
-            if (flagging == FlaggingKind.Begin || flagging == FlaggingKind.End) {
+            if (Leg.NeedsFlaggingStartStopPosition(flagging)) {
                 // These kinds of flagging require a bend in the flaggingStartStop field.
                 if (leg.bends != null && leg.bends.Length > 0) {
                     // Already have a bend we can use.
@@ -1519,13 +1540,18 @@ namespace PurplePen
             Leg leg = (Leg) eventDB.GetLeg(legId).Clone();
             SymPath oldPath = QueryEvent.GetLegPath(eventDB, controlId1, controlId2, legId);
 
-            if (leg.flagging == FlaggingKind.Begin || leg.flagging == FlaggingKind.End && leg.flagStartStop == bendToRemove) {
+            if (Leg.NeedsFlaggingStartStopPosition(leg.flagging) && leg.flagStartStop == bendToRemove) {
                 // We are removing the point at which flagging starts/stop. The start/stop point must move to another, unless there are no 
                 // other bends left.
                 if (leg.bends.Length == 1) {
-                    // No other bends left. Make leg all flagging.
+                    // No other bends left. Make leg all flagging, except for map issue kind, which requires a bend.
                     newFlagging = true;
-                    newFlaggingKind = FlaggingKind.All;
+                    if (leg.flagging == FlaggingKind.IssuePointMiddle) {
+                        newFlaggingKind = FlaggingKind.IssuePointMiddle;
+                    }
+                    else { 
+                        newFlaggingKind = FlaggingKind.All;
+                    }
                 }
                 else {
                     // Basic idea is to move to the bend that is at the flagging end, unless there is no such bend.
@@ -1556,6 +1582,7 @@ namespace PurplePen
                 eventDB.ReplaceLeg(legId, leg);
 
             // Change flagging if we need to. This is more complex that just setting the flagging kind in the leg object.
+            // For map issue point, it will add a bend in the middle if needed.
             if (newFlagging)
                 ChangeFlagging(eventDB, controlId1, controlId2, newFlaggingKind);
 

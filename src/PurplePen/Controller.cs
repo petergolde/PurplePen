@@ -3499,7 +3499,13 @@ namespace PurplePen
         // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
         public void BeginAddControlMode(ControlPointKind controlKind, bool exchangeAtControl)
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl));
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl, MapIssueKind.None));
+        }
+
+        // Start the mode to add a new map issue point with the given kind.
+        public void BeginAddMapIssuePointMode(MapIssueKind mapIssueKind)
+        {
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, ControlPointKind.MapIssue, false, mapIssueKind));
         }
 
         // Start the mode to add a point special of a certain kind (Water, FirstAid, ...).

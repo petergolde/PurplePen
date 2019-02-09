@@ -92,6 +92,10 @@ namespace PurplePen
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.createOcadFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createImageFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createPDFsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createDescriptionPdfMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createPunchcardPdfMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createCoursePdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createRouteGadgetFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createGPXFileMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -292,10 +296,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.createPDFsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createDescriptionPdfMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createPunchcardPdfMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createCoursePdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -601,6 +601,33 @@ namespace PurplePen
             this.createImageFilesMenu.Name = "createImageFilesMenu";
             resources.ApplyResources(this.createImageFilesMenu, "createImageFilesMenu");
             this.createImageFilesMenu.Click += new System.EventHandler(this.createImageFilesMenu_Click);
+            // 
+            // createPDFsMenu
+            // 
+            this.createPDFsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createDescriptionPdfMenu,
+            this.createPunchcardPdfMenu,
+            this.createCoursePdfMenu});
+            this.createPDFsMenu.Name = "createPDFsMenu";
+            resources.ApplyResources(this.createPDFsMenu, "createPDFsMenu");
+            // 
+            // createDescriptionPdfMenu
+            // 
+            this.createDescriptionPdfMenu.Name = "createDescriptionPdfMenu";
+            resources.ApplyResources(this.createDescriptionPdfMenu, "createDescriptionPdfMenu");
+            this.createDescriptionPdfMenu.Click += new System.EventHandler(this.createDescriptionPdfMenu_Click);
+            // 
+            // createPunchcardPdfMenu
+            // 
+            this.createPunchcardPdfMenu.Name = "createPunchcardPdfMenu";
+            resources.ApplyResources(this.createPunchcardPdfMenu, "createPunchcardPdfMenu");
+            this.createPunchcardPdfMenu.Click += new System.EventHandler(this.createPunchcardPdfMenu_Click);
+            // 
+            // createCoursePdfMenu
+            // 
+            this.createCoursePdfMenu.Name = "createCoursePdfMenu";
+            resources.ApplyResources(this.createCoursePdfMenu, "createCoursePdfMenu");
+            this.createCoursePdfMenu.Click += new System.EventHandler(this.createCoursePdfMenu_Click);
             // 
             // createRouteGadgetFilesMenu
             // 
@@ -1973,33 +2000,6 @@ namespace PurplePen
             // 
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
-            // 
-            // createPDFsMenu
-            // 
-            this.createPDFsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createDescriptionPdfMenu,
-            this.createPunchcardPdfMenu,
-            this.createCoursePdfMenu});
-            this.createPDFsMenu.Name = "createPDFsMenu";
-            resources.ApplyResources(this.createPDFsMenu, "createPDFsMenu");
-            // 
-            // createDescriptionPdfMenu
-            // 
-            this.createDescriptionPdfMenu.Name = "createDescriptionPdfMenu";
-            resources.ApplyResources(this.createDescriptionPdfMenu, "createDescriptionPdfMenu");
-            this.createDescriptionPdfMenu.Click += new System.EventHandler(this.createDescriptionPdfMenu_Click);
-            // 
-            // createPunchcardPdfMenu
-            // 
-            this.createPunchcardPdfMenu.Name = "createPunchcardPdfMenu";
-            resources.ApplyResources(this.createPunchcardPdfMenu, "createPunchcardPdfMenu");
-            this.createPunchcardPdfMenu.Click += new System.EventHandler(this.createPunchcardPdfMenu_Click);
-            // 
-            // createCoursePdfMenu
-            // 
-            this.createCoursePdfMenu.Name = "createCoursePdfMenu";
-            resources.ApplyResources(this.createCoursePdfMenu, "createCoursePdfMenu");
-            this.createCoursePdfMenu.Click += new System.EventHandler(this.createCoursePdfMenu_Click);
             // 
             // MainFrame
             // 

@@ -1,0 +1,150 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>MapIssueTest</title>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\controller\Lake Sammamish.ocd">..\Programs\PurplePen\src\TestFiles\controller\Lake Sammamish.ocd</map>
+    <standards map="2017" description="2004" />
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeTo15000" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="80.09504" y="23.05443" />
+  </control>
+  <control id="6" kind="map-issue" map-issue-location="middle">
+    <location x="92.39236" y="1.21341038" />
+    <description box="all" iof-2004-ref="13.6" />
+  </control>
+  <control id="5" kind="normal">
+    <code>31</code>
+    <location x="-41.02223" y="55.7843552" />
+  </control>
+  <control id="7" kind="start">
+    <location x="52.9418449" y="34.706" />
+  </control>
+  <control id="8" kind="map-issue" map-issue-location="beginning">
+    <location x="83.65108" y="38.86753" />
+    <description box="all" iof-2004-ref="13.6" />
+  </control>
+  <control id="9" kind="start">
+    <location x="83.507576" y="3.99676371" />
+  </control>
+  <control id="10" kind="map-issue" map-issue-location="end">
+    <location x="104.315231" y="-14.371377" />
+    <description box="all" iof-2004-ref="13.6" />
+  </control>
+  <control id="11" kind="start">
+    <location x="-86.55982" y="64.11545" />
+  </control>
+  <control id="12" kind="map-issue" map-issue-location="middle">
+    <location x="-114.970566" y="64.52132" />
+    <description box="all" iof-2004-ref="13.6" />
+  </control>
+  <control id="13" kind="start">
+    <location x="-104.012138" y="42.60445" />
+  </control>
+  <control id="14" kind="map-issue" map-issue-location="beginning">
+    <location x="-92.6478348" y="29.6166725" />
+    <description box="all" iof-2004-ref="13.6" />
+  </control>
+  <control id="15" kind="start">
+    <location x="-96.712326" y="18.23299" />
+  </control>
+  <control id="16" kind="map-issue" map-issue-location="end">
+    <location x="-95.90059" y="-2.46628237" />
+    <description box="all" iof-2004-ref="13.6" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Test1</name>
+    <labels label-kind="sequence" />
+    <first course-control="6" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Test2</name>
+    <labels label-kind="sequence" />
+    <first course-control="9" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="normal" order="3">
+    <name>Test3</name>
+    <labels label-kind="sequence" />
+    <first course-control="11" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course id="4" kind="score" order="4">
+    <name>Score1</name>
+    <labels label-kind="sequence" />
+    <first course-control="14" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" score-column="H" description-kind="symbols" />
+  </course>
+  <course id="5" kind="score" order="5">
+    <name>Score2</name>
+    <labels label-kind="sequence" />
+    <first course-control="17" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" score-column="H" description-kind="symbols" />
+  </course>
+  <course id="6" kind="score" order="6">
+    <name>Score3</name>
+    <labels label-kind="sequence" />
+    <first course-control="20" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" score-column="H" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="6" control="6">
+    <next course-control="1" />
+  </course-control>
+  <course-control id="5" control="5" />
+  <course-control id="7" control="7" />
+  <course-control id="9" control="8">
+    <next course-control="7" />
+  </course-control>
+  <course-control id="10" control="9" />
+  <course-control id="11" control="10">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="12" control="11">
+    <next course-control="13" />
+  </course-control>
+  <course-control id="13" control="5" />
+  <course-control id="14" control="12">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="15" control="13">
+    <next course-control="16" />
+  </course-control>
+  <course-control id="16" control="5" />
+  <course-control id="17" control="14">
+    <next course-control="15" />
+  </course-control>
+  <course-control id="18" control="15">
+    <next course-control="19" />
+  </course-control>
+  <course-control id="19" control="5" />
+  <course-control id="20" control="16">
+    <next course-control="18" />
+  </course-control>
+  <leg id="4" start-control="6" end-control="1">
+    <flagging kind="map-issue-middle" x="85.91203" y="10.4874735" />
+    <bends>
+      <location x="85.91203" y="10.4874735" />
+    </bends>
+  </leg>
+  <leg id="5" start-control="12" end-control="11">
+    <flagging kind="map-issue-middle" x="-100.7652" y="64.31838" />
+    <bends>
+      <location x="-100.7652" y="64.31838" />
+    </bends>
+  </leg>
+</course-scribe-event>

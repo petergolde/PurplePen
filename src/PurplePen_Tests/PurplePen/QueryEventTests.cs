@@ -2206,14 +2206,14 @@ namespace PurplePen.Tests
                   where vi.CodeString == "BD"
                   select vi).First();
             expected = new CourseDesignator[] {
-                new CourseDesignator(CourseId(2), new VariationInfo(bd.CodeString, bd.Path, 6, 1)),
-                new CourseDesignator(CourseId(2), new VariationInfo(bc.CodeString, bc.Path, 6, 2)),
-                new CourseDesignator(CourseId(2), new VariationInfo(ac.CodeString, ac.Path, 6, 3)),
-                new CourseDesignator(CourseId(2), new VariationInfo(ad.CodeString, ad.Path, 6, 4)),
-                new CourseDesignator(CourseId(2), new VariationInfo(ad.CodeString, ad.Path, 7, 1)),
-                new CourseDesignator(CourseId(2), new VariationInfo(ac.CodeString, ac.Path, 7, 2)),
-                new CourseDesignator(CourseId(2), new VariationInfo(bc.CodeString, bc.Path, 7, 3)),
-                new CourseDesignator(CourseId(2), new VariationInfo(bd.CodeString, bd.Path, 7, 4))
+                new CourseDesignator(CourseId(2), new VariationInfo(ad.CodeString, ad.Path, 6, 1)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bd.CodeString, bd.Path, 6, 2)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bc.CodeString, bc.Path, 6, 3)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ac.CodeString, ac.Path, 6, 4)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bd.CodeString, bd.Path, 7, 1)),
+                new CourseDesignator(CourseId(2), new VariationInfo(bc.CodeString, bc.Path, 7, 2)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ac.CodeString, ac.Path, 7, 3)),
+                new CourseDesignator(CourseId(2), new VariationInfo(ad.CodeString, ad.Path, 7, 4))
             };
             result = QueryEvent.GetDesignatorsFromVariationChoices(eventDB, CourseId(2), new VariationChoices() {
                 Kind = VariationChoices.VariationChoicesKind.ChosenTeams,

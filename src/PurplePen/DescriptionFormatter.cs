@@ -572,6 +572,10 @@ namespace PurplePen
             if (to.kind == ControlPointKind.Finish || to.kind == ControlPointKind.MapExchange)
                 return false;
 
+            // Flagged legs that start at a map issue point are included in the map issue point.
+            if (from.kind == ControlPointKind.MapIssue)
+                return false;
+
             return true;
         }
 

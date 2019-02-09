@@ -455,6 +455,12 @@
     <Compile Include="MissingFonts.Designer.cs">
       <DependentUpon>MissingFonts.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapIssueChoiceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapIssueChoiceDialog.Designer.cs">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MoveControlChoiceDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2543,6 +2549,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MissingFonts.zh-CN.resx">
       <DependentUpon>MissingFonts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.bg.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.de.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.es.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.et.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.fi.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.fr.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.hu.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.ja.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.nb-NO.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.nl.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.nn-NO.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.pl.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.ro.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.sv.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapIssueChoiceDialog.zh-CN.resx">
+      <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MoveControlChoiceDialog.bg.resx">
       <DependentUpon>MoveControlChoiceDialog.cs</DependentUpon>
