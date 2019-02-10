@@ -1,5 +1,6 @@
 @import url(font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700,700i');
 
 /* Reset */
 
@@ -1827,8 +1828,9 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather Sans';
+    font-family: 'Josefin Sans';
     font-weight: bold;
+    font-style: italic;
 }
 
 @media screen and (max-width: 1680px) {
