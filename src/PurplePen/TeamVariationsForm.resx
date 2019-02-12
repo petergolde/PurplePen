@@ -364,7 +364,7 @@
     <value>141, 25</value>
   </data>
   <data name="buttonCalculate.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="buttonCalculate.Text" xml:space="preserve">
     <value>Assign Variations</value>
@@ -451,7 +451,7 @@
     <value>168, 15</value>
   </data>
   <data name="fixedLegsLink.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="fixedLegsLink.Text" xml:space="preserve">
     <value>Assign fixed legs to branches...</value>
@@ -484,7 +484,7 @@
     <value>131, 15</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Team numbers start at: </value>
@@ -511,7 +511,7 @@
     <value>70, 23</value>
   </data>
   <data name="upDownFirstTeamNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;upDownFirstTeamNumber.Name" xml:space="preserve">
     <value>upDownFirstTeamNumber</value>
@@ -538,7 +538,7 @@
     <value>178, 19</value>
   </data>
   <data name="checkBoxHideVariationsFromMap.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
     <value>Hide variation codes on map</value>

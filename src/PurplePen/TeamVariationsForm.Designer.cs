@@ -42,9 +42,9 @@
             this.fixedLegsLink = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.upDownFirstTeamNumber = new System.Windows.Forms.NumericUpDown();
+            this.checkBoxHideVariationsFromMap = new System.Windows.Forms.CheckBox();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.checkBoxHideVariationsFromMap = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).BeginInit();
@@ -183,6 +183,13 @@
             0,
             0});
             // 
+            // checkBoxHideVariationsFromMap
+            // 
+            resources.ApplyResources(this.checkBoxHideVariationsFromMap, "checkBoxHideVariationsFromMap");
+            this.tableLayoutPanel2.SetColumnSpan(this.checkBoxHideVariationsFromMap, 3);
+            this.checkBoxHideVariationsFromMap.Name = "checkBoxHideVariationsFromMap";
+            this.checkBoxHideVariationsFromMap.UseVisualStyleBackColor = true;
+            // 
             // webBrowser
             // 
             this.webBrowser.AllowWebBrowserDrop = false;
@@ -193,13 +200,6 @@
             // saveFileDialog
             // 
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
-            // 
-            // checkBoxHideVariationsFromMap
-            // 
-            resources.ApplyResources(this.checkBoxHideVariationsFromMap, "checkBoxHideVariationsFromMap");
-            this.tableLayoutPanel2.SetColumnSpan(this.checkBoxHideVariationsFromMap, 3);
-            this.checkBoxHideVariationsFromMap.Name = "checkBoxHideVariationsFromMap";
-            this.checkBoxHideVariationsFromMap.UseVisualStyleBackColor = true;
             // 
             // TeamVariationsForm
             // 

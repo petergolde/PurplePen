@@ -265,6 +265,8 @@ namespace PurplePen
         {
             Dictionary<string, string> exceptions = new Dictionary<string, string>();
             exceptions[@"^    <time>\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ</time>$"] = @"^    <time>\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ</time>$";
+            exceptions[@"^<gpx creator=""Purple Pen .*"" version=""1\.1"" xsi:schemaLocation=""http://www\.topografix\.com/GPX/1/1 http://www\.topografix\.com/GPX/1/1/gpx\.xsd"" xmlns:xsi=""http://www\.w3\.org/2001/XMLSchema-instance"" xmlns=""http://www\.topografix\.com/GPX/1/1"">$"] =
+                       @"^<gpx creator=""Purple Pen .*"" version=""1\.1"" xsi:schemaLocation=""http://www\.topografix\.com/GPX/1/1 http://www\.topografix\.com/GPX/1/1/gpx\.xsd"" xmlns:xsi=""http://www\.w3\.org/2001/XMLSchema-instance"" xmlns=""http://www\.topografix\.com/GPX/1/1"">$";
             return exceptions;
         }
 
