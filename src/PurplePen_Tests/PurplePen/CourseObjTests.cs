@@ -676,7 +676,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("coursesymbols\\sampleevent1.coursescribe"));
             eventDB.Validate();
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(3))); 
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
             return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F / numColumns, symbolDB, description, DescriptionKind.Symbols, numColumns);
@@ -1989,7 +1989,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("coursesymbols\\sampleevent1.coursescribe"));
             eventDB.Validate();
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(3)));  
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
             CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);

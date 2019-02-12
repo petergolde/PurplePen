@@ -2768,11 +2768,13 @@ namespace PurplePen
         private void courseVariationReportMenu_Click(object sender, EventArgs e)
         {
             RelaySettings relaySettings = controller.GetRelayParameters();
+            bool hideVariationsOnMap = controller.GetHideVariationsOnMap();
             TeamVariationsForm reportForm = new TeamVariationsForm();
             reportForm.FirstTeamNumber = relaySettings.firstTeamNumber;
             reportForm.NumberOfTeams = relaySettings.relayTeams;
             reportForm.NumberOfLegs = relaySettings.relayLegs;
             reportForm.FixedBranchAssignments = relaySettings.relayBranchAssignments;
+            reportForm.HideVariationsOnMap = hideVariationsOnMap;
             reportForm.DefaultExportFileName = controller.GetDefaultVariationExportFileName();
 
             SetVariationReportBody(reportForm);
@@ -2794,9 +2796,10 @@ namespace PurplePen
             if (relaySettings.firstTeamNumber != reportForm.FirstTeamNumber ||
                 relaySettings.relayTeams != reportForm.NumberOfTeams ||
                 relaySettings.relayLegs != reportForm.NumberOfLegs ||
+                hideVariationsOnMap != reportForm.HideVariationsOnMap || 
                 !object.Equals(relaySettings.relayBranchAssignments, reportForm.FixedBranchAssignments)) 
             {
-                controller.SetRelayParameters(reportForm.RelaySettings);
+                controller.SetRelayParameters(reportForm.RelaySettings, reportForm.HideVariationsOnMap);
             }
 
             reportForm.Dispose();

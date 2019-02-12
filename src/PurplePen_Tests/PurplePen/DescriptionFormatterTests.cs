@@ -73,14 +73,14 @@ namespace PurplePen.Tests
                     designator = new CourseDesignator(courseId);
                 }
                 courseView = CourseView.CreateViewingCourseView(eventDB, designator);
-                descFormatter = new DescriptionFormatter(courseView, symbolDB);
+                descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
                 description = descFormatter.CreateDescription(false);
                 DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
                 Console.WriteLine();
             }
 
             courseView = CourseView.CreateViewingCourseView(eventDB, CourseDesignator.AllControls);
-            descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             description = descFormatter.CreateDescription(false);
             DescriptionFormatter.DumpDescription(symbolDB, description, Console.Out);
 
@@ -105,7 +105,7 @@ namespace PurplePen.Tests
 
             CourseView courseView;
             courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(createKey);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
@@ -180,7 +180,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
-            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -216,7 +216,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
-            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -253,7 +253,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, Designator(5));
-            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB).CreateDescription(false);
+            DescriptionLine[] description = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting).CreateDescription(false);
 
             DescriptionFormatter.DumpDescription(symbolDB, description, writer);
             actual = writer.ToString();
@@ -368,7 +368,7 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             CourseView courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(4)));
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
             DescriptionFormatter.ClearTextAndSymbols(description);
 

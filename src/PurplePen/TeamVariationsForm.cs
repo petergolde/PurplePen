@@ -97,6 +97,15 @@ namespace PurplePen
             }
         }
 
+        public bool HideVariationsOnMap {
+            get {
+                return checkBoxHideVariationsFromMap.Checked;
+            }
+            set {
+                checkBoxHideVariationsFromMap.Checked = value;
+            }
+        }
+
         public RelaySettings RelaySettings
         {
             get {

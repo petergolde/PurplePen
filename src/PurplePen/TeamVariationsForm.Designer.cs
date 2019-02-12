@@ -40,10 +40,11 @@
             this.upDownNumberOfTeams = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.fixedLegsLink = new System.Windows.Forms.LinkLabel();
-            this.webBrowser = new System.Windows.Forms.WebBrowser();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.label3 = new System.Windows.Forms.Label();
             this.upDownFirstTeamNumber = new System.Windows.Forms.NumericUpDown();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.checkBoxHideVariationsFromMap = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfLegs)).BeginInit();
@@ -99,6 +100,7 @@
             this.tableLayoutPanel2.Controls.Add(this.fixedLegsLink, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.upDownFirstTeamNumber, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.checkBoxHideVariationsFromMap, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // label2
@@ -156,17 +158,6 @@
             this.fixedLegsLink.TabStop = true;
             this.fixedLegsLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.fixedLegsLink_LinkClicked);
             // 
-            // webBrowser
-            // 
-            this.webBrowser.AllowWebBrowserDrop = false;
-            resources.ApplyResources(this.webBrowser, "webBrowser");
-            this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Url = new System.Uri("http://purple-pen.org", System.UriKind.Absolute);
-            // 
-            // saveFileDialog
-            // 
-            resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
-            // 
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
@@ -192,6 +183,24 @@
             0,
             0});
             // 
+            // webBrowser
+            // 
+            this.webBrowser.AllowWebBrowserDrop = false;
+            resources.ApplyResources(this.webBrowser, "webBrowser");
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Url = new System.Uri("http://purple-pen.org", System.UriKind.Absolute);
+            // 
+            // saveFileDialog
+            // 
+            resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
+            // 
+            // checkBoxHideVariationsFromMap
+            // 
+            resources.ApplyResources(this.checkBoxHideVariationsFromMap, "checkBoxHideVariationsFromMap");
+            this.tableLayoutPanel2.SetColumnSpan(this.checkBoxHideVariationsFromMap, 3);
+            this.checkBoxHideVariationsFromMap.Name = "checkBoxHideVariationsFromMap";
+            this.checkBoxHideVariationsFromMap.UseVisualStyleBackColor = true;
+            // 
             // TeamVariationsForm
             // 
             this.AcceptButton = this.buttonCalculate;
@@ -211,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.upDownNumberOfTeams)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownFirstTeamNumber)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,5 +242,6 @@
         private System.Windows.Forms.LinkLabel fixedLegsLink;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown upDownFirstTeamNumber;
+        private System.Windows.Forms.CheckBox checkBoxHideVariationsFromMap;
     }
 }

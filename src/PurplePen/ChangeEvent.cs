@@ -393,6 +393,17 @@ namespace PurplePen
             eventDB.ReplaceCourse(courseId, course);
         }
 
+        public static void SetHideVariationsOnMap(EventDB eventDB, Id<Course> courseId, bool hideVariationsOnMap)
+        {
+            Course course = eventDB.GetCourse(courseId);
+
+            if (course.hideVariationsOnMap != hideVariationsOnMap) {
+                course = (Course)course.Clone();
+                course.hideVariationsOnMap = hideVariationsOnMap;
+                eventDB.ReplaceCourse(courseId, course);
+            }
+        }
+
 
         // Change the course print area. If "removeParts" is true, and the course is an all parts,
         // then remove print descriptions for each part.

@@ -597,7 +597,7 @@ namespace PurplePen
             courseViewDescription = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
 
             // Create the description. Note the courseId is None only if we're both in all controls, and there are no courses.
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseViewDescription, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseViewDescription, symbolDB, DescriptionFormatter.Purpose.ForMap);
             descKind = QueryEvent.GetDefaultDescKind(eventDB, courseDesignator.CourseId);
             description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             if (noTextOrSymbols)

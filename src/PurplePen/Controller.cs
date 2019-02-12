@@ -970,6 +970,16 @@ namespace PurplePen
             return settings;
         }
 
+        public bool GetHideVariationsOnMap()
+        {
+            Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
+            if (courseId.IsNone)
+                return false;
+
+            Course course = eventDB.GetCourse(courseId);
+            return course.hideVariationsOnMap;
+        }
+
         // Get the branch codes that are available for leg assignments.
         public List<char[]> GetLegAssignmentCodes()
         {
@@ -998,7 +1008,7 @@ namespace PurplePen
         }
 
         // For the current course, set the relay parameters.
-        public void SetRelayParameters(RelaySettings relaySettings)
+        public void SetRelayParameters(RelaySettings relaySettings, bool hideVariationsOnMap)
         {
             Id<Course> courseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             if (courseId.IsNone)
@@ -1006,6 +1016,7 @@ namespace PurplePen
 
             undoMgr.BeginCommand(9812, CommandNameText.RelayTeamVariations);
             ChangeEvent.SetRelayParameters(eventDB, courseId, relaySettings);
+            ChangeEvent.SetHideVariationsOnMap(eventDB, courseId, hideVariationsOnMap);
             undoMgr.EndCommand(9812);
         }
 

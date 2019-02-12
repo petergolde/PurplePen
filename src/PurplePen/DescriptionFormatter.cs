@@ -127,20 +127,30 @@ namespace PurplePen
     /// </summary>
     class DescriptionFormatter
     {
+        // The purpose for this description formatter
+        public enum Purpose
+        {
+            ForPrinting,        // For the printer
+            ForMap,             // For the map
+            ForUI               // For the UI of the program
+        }
+
         private EventDB eventDB;
         private SymbolDB symbolDB;
         private CourseView courseView;
         private string language;
+        private Purpose purpose;
 
         // Create a description formatter to format the given courseView.
         // Currently, the language for the text descriptions is taken from the language set for the event. It would be easy to make this
         // a parameter to the constructor (e.g., to allow printing in a different language), but this currently isn't required.
-        public DescriptionFormatter(CourseView courseView, SymbolDB symbolDB)
+        public DescriptionFormatter(CourseView courseView, SymbolDB symbolDB, Purpose purpose)
         {
             this.courseView = courseView;
             this.eventDB = courseView.EventDB;
             this.symbolDB = symbolDB;
             this.language = QueryEvent.GetDescriptionLanguage(eventDB);
+            this.purpose = purpose;
         }
 
         // Get the text of the firse (main) title line.
@@ -192,6 +202,13 @@ namespace PurplePen
             line.boxes = new object[3];
             line.boxes[0] = courseView.CourseFullName;
             line.boxes[1] = Util.GetLengthInKm(courseView.MinTotalLength, courseView.MaxTotalLength, 1);
+
+            if (purpose == Purpose.ForMap) {
+                Id<Course> courseId = courseView.CourseDesignator.CourseId;
+                if (courseId.IsNotNone && eventDB.GetCourse(courseId).hideVariationsOnMap) {
+                    line.boxes[0] = courseView.CourseNameAndPart;
+                }
+            }
 
             if (courseView.TotalClimb < 0) {
                 line.boxes[2] = null;

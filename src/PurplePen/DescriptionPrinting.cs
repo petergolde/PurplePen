@@ -84,7 +84,7 @@ namespace PurplePen
         // Get a description renderer for rendering the description from a course view.
         private DescriptionRenderer GetRenderer(CourseView courseView)
         {
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionKind descKind = GetDescriptionKind(courseView);
             DescriptionLine[] description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             DescriptionRenderer renderer = new DescriptionRenderer(symbolDB);

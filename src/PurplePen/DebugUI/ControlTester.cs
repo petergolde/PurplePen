@@ -101,7 +101,7 @@ namespace PurplePen.DebugUI
 
             courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(id));
 
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB);
+            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForUI);
             return descFormatter.CreateDescription(false);
         }
 

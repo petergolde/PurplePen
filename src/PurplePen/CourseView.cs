@@ -207,6 +207,21 @@ namespace PurplePen
             }
         }
 
+        // Same as CourseName, but add 
+        // "-1", "-2", etc. for a part of a multi-part course.
+        public string CourseNameAndPart {
+            get {
+                string nameWithPart = courseName;
+
+                if (!courseDesignator.IsAllControls && !courseDesignator.AllParts) {
+                    return string.Format("{0}-{1}", nameWithPart, courseDesignator.Part + 1);
+                }
+                else {
+                    return nameWithPart;
+                }
+            }
+        }
+
         // Variation code string.
         public string VariationName
         {

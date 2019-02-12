@@ -349,6 +349,25 @@ namespace PurplePen.Tests
             CheckCourseBothAppearances("courserenderer\\Fake Relay.ppen", courseDesignator, false, "relayvariations_3", RectangleF.FromLTRB(-80, -110, 110, 80));
         }
 
+        [TestMethod]
+        public void HideVariationCode()
+        {
+            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("courserenderer\\Fake Relay.ppen"));
+            eventDB.Validate();
+
+            VariationInfo[] variationInfos = QueryEvent.GetAllVariations(eventDB, CourseId(3)).ToArray();
+            CourseDesignator courseDesignator = new CourseDesignator(CourseId(3), variationInfos.First(vi => vi.CodeString == "BD"));
+            CheckCourseBothAppearances("courserenderer\\Fake Relay.ppen", courseDesignator, false, "relayvariations_hidecode_1", RectangleF.FromLTRB(-80, -160, 180, 100));
+
+            variationInfos = QueryEvent.GetAllVariations(eventDB, CourseId(2)).ToArray();
+            courseDesignator = new CourseDesignator(CourseId(2), variationInfos.First(vi => vi.CodeString == "BD"));
+            CheckCourseBothAppearances("courserenderer\\Fake Relay.ppen", courseDesignator, false, "relayvariations_hidecode_2", RectangleF.FromLTRB(-80, -160, 180, 100));
+        }
+
 
 
         [TestMethod]

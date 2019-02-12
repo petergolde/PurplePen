@@ -181,6 +181,7 @@ namespace PurplePen.Tests
             eventDB.AddCourse(course1);
 
             course2 = new Course(CourseKind.Normal, "Yellow", 15000, 2);
+            course2.hideVariationsOnMap = true;
             course2.descKind = DescriptionKind.SymbolsAndText;
             course2.climb = 95;
             course2.labelKind = ControlLabelKind.Code;

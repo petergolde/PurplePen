@@ -852,6 +852,7 @@ namespace PurplePen
     {
         public CourseKind kind;         // The kind of course
         public string name;             // Name of the course
+        public bool hideVariationsOnMap;  // Hide variation codes from the description on the map
         public ControlLabelKind labelKind;// Kind of label for controls on the map
         public int sortOrder;             // Order this course is sorted in. Must be >0, and unique among all courses.
         public string secondaryTitle;   // Secondary title line, or null if none.
@@ -879,6 +880,7 @@ namespace PurplePen
         {
             this.kind = kind;
             this.name = name;
+            this.hideVariationsOnMap = false;
             this.printScale = printScale; 
             this.sortOrder = sortOrder;
             this.labelKind = (kind == CourseKind.Score) ? ControlLabelKind.Code : ControlLabelKind.Sequence;
@@ -983,6 +985,8 @@ namespace PurplePen
                 return false;
             if (other.name != name)
                 return false;
+            if (other.hideVariationsOnMap != hideVariationsOnMap)
+                return false;
             if (other.sortOrder != sortOrder)
                 return false;
             if (other.climb != climb)
@@ -1050,6 +1054,7 @@ namespace PurplePen
             while (xmlinput.FindSubElement(first, "name", "secondary-title", "first", "print-area", "options", "labels", "part-options", "relay", "relay-branch")) {
                 switch (xmlinput.Name) {
                     case "name":
+                        hideVariationsOnMap = xmlinput.GetAttributeBool("hide-variations-on-map", false);
                         name = xmlinput.GetContentString();
                         break;
 
@@ -1167,7 +1172,11 @@ namespace PurplePen
             xmloutput.WriteAttributeString("order", XmlConvert.ToString(sortOrder));
 
             // Write sub-elements
-            xmloutput.WriteElementString("name", name);
+            xmloutput.WriteStartElement("name");
+            if (hideVariationsOnMap)
+                xmloutput.WriteAttributeString("hide-variations-on-map", XmlConvert.ToString(hideVariationsOnMap));
+            xmloutput.WriteString(name);
+            xmloutput.WriteEndElement();
 
             if (secondaryTitle != null)
                 xmloutput.WriteElementString("secondary-title", secondaryTitle);
