@@ -2585,7 +2585,7 @@ namespace PurplePen
             float emHeight = 100;
             using (FontFamily family = new FontFamily(fontName)) {
                 GraphicsPath path = new GraphicsPath();
-                path.AddString("0", family, (int)fontStyle, emHeight, new PointF(0, 0), StringFormat.GenericTypographic);
+                path.AddString("8", family, (int)fontStyle, emHeight, new PointF(0, 0), StringFormat.GenericTypographic);
                 float digitHeight = path.GetBounds().Height;
                 return emHeight / digitHeight;
             }
