@@ -2993,6 +2993,8 @@ namespace PurplePen
         ObjectStore<Leg> legStore;
         ObjectStore<Special> specialStore;
 
+        string pathName; // Path the event was last loaded to or saved from.
+
         long random;        // A random long number added to the change numbers, so that
                             // different event DBs have different change numbers.
 
@@ -3019,6 +3021,10 @@ namespace PurplePen
                 return random + controlPointStore.ChangeNum + courseStore.ChangeNum +
                     courseControlStore.ChangeNum + eventStore.ChangeNum + specialStore.ChangeNum + legStore.ChangeNum;
             }
+        }
+
+        public string PathName {
+            get { return pathName; }
         }
 
         public ICollection<ControlPoint> AllControlPoints
@@ -3381,6 +3387,11 @@ namespace PurplePen
 
                 xmloutput.WriteEndElement();
             }
+
+            if (pathName != filename) {
+                pathName = filename;
+                ++random;  // Update the change number.
+            }
         }
 
         /// <summary>
@@ -3404,6 +3415,8 @@ namespace PurplePen
                 FixControlPointGaps();
                 FixPrintAreas();
             }
+
+            pathName = filename;
         }
 
         // Holds state information for the validation process.

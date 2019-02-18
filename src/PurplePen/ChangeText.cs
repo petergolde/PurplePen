@@ -192,6 +192,15 @@ namespace PurplePen
             InsertSpecialText(TextMacros.RelayLeg);
         }
 
+        private void fileNameMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.FileName);
+        }
+
+        private void mapFileNameMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSpecialText(TextMacros.MapFileName);
+        }
 
         private void textBoxMain_TextChanged(object sender, EventArgs e)
         {
@@ -258,5 +267,6 @@ namespace PurplePen
         {
             UpdatePreview();
         }
+
     }
 }

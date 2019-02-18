@@ -924,6 +924,23 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
 
             result = CourseFormatter.ExpandText(eventDB, courseView, "$(RelayLeg)");
             Assert.AreEqual("-", result);
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "File name is : $(FileName) now");
+            Assert.AreEqual("File name is : marymoor6.coursescribe now", result);
+
+            // no map file
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Map file name is : $(MapFileName) now");
+            Assert.AreEqual("Map file name is :  now", result);
+
+            eventDB = new EventDB(undomgr);
+            eventDB.Load(TestUtil.GetTestFile("courseformat\\marymoor9.coursescribe"));
+            eventDB.Validate();
+
+            // Use course 1
+            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(CourseId(1)));
+
+            result = CourseFormatter.ExpandText(eventDB, courseView, "Map file name is : $(MapFileName) now");
+            Assert.AreEqual("Map file name is : marymoor.ocd now", result);
         }
 
         [TestMethod]

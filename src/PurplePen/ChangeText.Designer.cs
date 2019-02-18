@@ -50,22 +50,24 @@
             this.checkBoxBold = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxFonts = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.upDownFontSize = new System.Windows.Forms.NumericUpDown();
+            this.labelFontSizeMm = new System.Windows.Forms.Label();
+            this.checkBoxAutoFontSize = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.insertSpecialButton = new System.Windows.Forms.Button();
             this.textBoxMain = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelFontSizeMm = new System.Windows.Forms.Label();
-            this.upDownFontSize = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxAutoFontSize = new System.Windows.Forms.CheckBox();
+            this.fileNameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapFileNameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.specialTextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownFontSize)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upDownFontSize)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -88,7 +90,9 @@
             this.classListMenuItem,
             this.printScaleMenuItem,
             this.relayTeamMenuItem,
-            this.relayLegMenuItem});
+            this.relayLegMenuItem,
+            this.fileNameMenuItem,
+            this.mapFileNameMenuItem});
             this.specialTextMenu.Name = "specialTextMenu";
             this.specialTextMenu.ShowImageMargin = false;
             resources.ApplyResources(this.specialTextMenu, "specialTextMenu");
@@ -229,6 +233,45 @@
             this.listBoxFonts.Sorted = true;
             this.listBoxFonts.SelectedIndexChanged += new System.EventHandler(this.listBoxFonts_SelectedIndexChanged);
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // upDownFontSize
+            // 
+            resources.ApplyResources(this.upDownFontSize, "upDownFontSize");
+            this.upDownFontSize.DecimalPlaces = 1;
+            this.upDownFontSize.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.upDownFontSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.upDownFontSize.Name = "upDownFontSize";
+            this.upDownFontSize.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            65536});
+            this.upDownFontSize.ValueChanged += new System.EventHandler(this.upDownFontSize_ValueChanged);
+            // 
+            // labelFontSizeMm
+            // 
+            resources.ApplyResources(this.labelFontSizeMm, "labelFontSizeMm");
+            this.labelFontSizeMm.Name = "labelFontSizeMm";
+            // 
+            // checkBoxAutoFontSize
+            // 
+            resources.ApplyResources(this.checkBoxAutoFontSize, "checkBoxAutoFontSize");
+            this.checkBoxAutoFontSize.Name = "checkBoxAutoFontSize";
+            this.checkBoxAutoFontSize.UseVisualStyleBackColor = true;
+            this.checkBoxAutoFontSize.CheckedChanged += new System.EventHandler(this.checkBoxAutoFontSize_CheckedChanged);
+            // 
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
@@ -266,44 +309,17 @@
             this.textBoxMain.Name = "textBoxMain";
             this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
-            // label3
+            // fileNameMenuItem
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
+            this.fileNameMenuItem.Name = "fileNameMenuItem";
+            resources.ApplyResources(this.fileNameMenuItem, "fileNameMenuItem");
+            this.fileNameMenuItem.Click += new System.EventHandler(this.fileNameMenuItem_Click);
             // 
-            // labelFontSizeMm
+            // mapFileNameMenuItem
             // 
-            resources.ApplyResources(this.labelFontSizeMm, "labelFontSizeMm");
-            this.labelFontSizeMm.Name = "labelFontSizeMm";
-            // 
-            // upDownFontSize
-            // 
-            resources.ApplyResources(this.upDownFontSize, "upDownFontSize");
-            this.upDownFontSize.DecimalPlaces = 1;
-            this.upDownFontSize.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.upDownFontSize.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.upDownFontSize.Name = "upDownFontSize";
-            this.upDownFontSize.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            65536});
-            this.upDownFontSize.ValueChanged += new System.EventHandler(this.upDownFontSize_ValueChanged);
-            // 
-            // checkBoxAutoFontSize
-            // 
-            resources.ApplyResources(this.checkBoxAutoFontSize, "checkBoxAutoFontSize");
-            this.checkBoxAutoFontSize.Name = "checkBoxAutoFontSize";
-            this.checkBoxAutoFontSize.UseVisualStyleBackColor = true;
-            this.checkBoxAutoFontSize.CheckedChanged += new System.EventHandler(this.checkBoxAutoFontSize_CheckedChanged);
+            this.mapFileNameMenuItem.Name = "mapFileNameMenuItem";
+            resources.ApplyResources(this.mapFileNameMenuItem, "mapFileNameMenuItem");
+            this.mapFileNameMenuItem.Click += new System.EventHandler(this.mapFileNameMenuItem_Click);
             // 
             // ChangeText
             // 
@@ -324,11 +340,11 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upDownFontSize)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upDownFontSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +381,7 @@
         private System.Windows.Forms.NumericUpDown upDownFontSize;
         private System.Windows.Forms.Label labelFontSizeMm;
         private System.Windows.Forms.CheckBox checkBoxAutoFontSize;
+        private System.Windows.Forms.ToolStripMenuItem fileNameMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapFileNameMenuItem;
     }
 }

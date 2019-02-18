@@ -58,6 +58,8 @@ namespace PurplePen
         public const string Variation = "$(Variation)";
         public const string RelayTeam = "$(RelayTeam)";
         public const string RelayLeg = "$(RelayLeg)";
+        public const string FileName = "$(FileName)";
+        public const string MapFileName = "$(MapFileName)";
     }
 
     class CourseFormatterOptions
@@ -514,7 +516,17 @@ namespace PurplePen
 
                 text = text.Replace(TextMacros.ClassList, classList);
             }
-            
+
+            if (text.Contains(TextMacros.FileName)) {
+                text = text.Replace(TextMacros.FileName, Path.GetFileName(eventDB.PathName));
+            }
+
+            if (text.Contains(TextMacros.MapFileName)) {
+                Event ev = eventDB.GetEvent();
+                string mapFileName = (ev.mapType == MapType.None) ? "" : Path.GetFileName(ev.mapFileName);
+                text = text.Replace(TextMacros.MapFileName, mapFileName);
+            }
+
             return text;
         }
 
