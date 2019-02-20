@@ -1443,7 +1443,7 @@ namespace PurplePen
                                 if (!courseToRemove.AllParts && courses[courseIndex].AllParts) {
                                     int removedPart = courseToRemove.Part;
                                     courses.RemoveAt(courseIndex--);
-                                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseToRemove); ++part) {
+                                    for (int part = 0; part < QueryEvent.CountCourseParts(eventDB, courseToRemove, true); ++part) {
                                         if (part != removedPart)
                                             courses.Add(courseToRemove.WithPart(part));
                                     }

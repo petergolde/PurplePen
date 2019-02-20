@@ -266,7 +266,7 @@ namespace PurplePen
                     TreeNode[] parts = null;
 
                     // If the course has parts, get all the parts.
-                    int numberParts = QueryEvent.CountCourseParts(eventDB, new CourseDesignator(courseId));
+                    int numberParts = QueryEvent.CountCourseParts(eventDB, new CourseDesignator(courseId), true);
                     if (showCourseParts && numberParts > 1) {
                         parts = new TreeNode[numberParts];
                         for (int part = 0; part < numberParts; ++part) {

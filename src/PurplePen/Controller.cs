@@ -911,28 +911,6 @@ namespace PurplePen
             }
         }
 
-        // If a course designation doesn't have a variation path, and the course has variations, pick the
-        // first variation and use it.
-        public CourseDesignator AddDefaultVariationIfNecessary(CourseDesignator courseDesignator)
-        {
-            if (courseDesignator.IsAllControls)
-                return courseDesignator;
-            if (!QueryEvent.HasVariations(eventDB, courseDesignator.CourseId))
-                return courseDesignator;
-            if (courseDesignator.VariationInfo != null)
-                return courseDesignator;
-
-            IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
-            VariationInfo firstVariationInfo = variations.First();
-
-            int oldPart = courseDesignator.Part;
-            courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationInfo);
-            if (oldPart >= 0 && oldPart < QueryEvent.CountCourseParts(eventDB, courseDesignator))
-                return new CourseDesignator(courseDesignator.CourseId, firstVariationInfo, oldPart);
-            else
-                return courseDesignator;  
-        }
-
         public CommandStatus CanGetVariationReport()
         {
             CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
@@ -1758,7 +1736,7 @@ namespace PurplePen
         // is restricting to the page size, or is automatically computed, handles that computation.
         public RectangleF GetPrintAreaRectangle(CourseDesignator courseDesignator, PrintArea printArea)
         {
-            courseDesignator = AddDefaultVariationIfNecessary(courseDesignator);
+            courseDesignator = QueryEvent.AddDefaultVariationIfNecessary(eventDB, courseDesignator);
 
             // Get the course view and course layout for this course.
             CourseView courseView = CourseView.CreatePositioningCourseView(eventDB, courseDesignator);
@@ -1982,7 +1960,7 @@ namespace PurplePen
             foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
                 CourseDesignator designator = new CourseDesignator(courseId);
                 UpdateAutomaticPrintArea(designator);
-                int parts = QueryEvent.CountCourseParts(eventDB, designator);
+                int parts = QueryEvent.CountCourseParts(eventDB, designator, true);
                 if (parts > 1) {
                     for (int part = 0; part < parts; ++part) {
                         UpdateAutomaticPrintArea(new CourseDesignator(courseId, part));

@@ -487,16 +487,22 @@ namespace PurplePen
 
         // Get the number of parts that this course has.  A course with no map exchanges has 1 part, with one
         // map exchange has 2 parts, etc.
-        public static int CountCourseParts(EventDB eventDB, CourseDesignator courseDesignator)
+        public static int CountCourseParts(EventDB eventDB, CourseDesignator courseDesignator, bool useDefaultVariation = false)
         {
             if (courseDesignator.IsAllControls)
                 return 1;
 
             courseDesignator = courseDesignator.WithAllParts();
 
-            // The All Variations course designator does not have "parts" as such.
-            if (HasVariations(eventDB, courseDesignator.CourseId) && !courseDesignator.IsVariation)
+            if (useDefaultVariation) {
+                courseDesignator = AddDefaultVariationIfNecessary(eventDB, courseDesignator);
+            }
+
+            if (HasVariations(eventDB, courseDesignator.CourseId) && !courseDesignator.IsVariation) {
+                // The All Variations course designator does not have "parts" as such.
+                // Note that this case does not occur if "useDefaultVariation" is true.
                 return 1;
+            }
 
             int currentPart = 0;
 
@@ -507,6 +513,30 @@ namespace PurplePen
 
             return currentPart + 1;
         }
+
+        // If a course designation doesn't have a variation path, and the course has variations, pick the
+        // first variation and use it.
+        public static CourseDesignator AddDefaultVariationIfNecessary(EventDB eventDB, CourseDesignator courseDesignator)
+        {
+            if (courseDesignator.IsAllControls)
+                return courseDesignator;
+            if (!QueryEvent.HasVariations(eventDB, courseDesignator.CourseId))
+                return courseDesignator;
+            if (courseDesignator.VariationInfo != null)
+                return courseDesignator;
+
+            IEnumerable<VariationInfo> variations = QueryEvent.GetAllVariations(eventDB, courseDesignator.CourseId);
+            VariationInfo firstVariationInfo = variations.First();
+
+            int oldPart = courseDesignator.Part;
+            courseDesignator = new CourseDesignator(courseDesignator.CourseId, firstVariationInfo);
+            if (oldPart >= 0 && oldPart < QueryEvent.CountCourseParts(eventDB, courseDesignator))
+                return new CourseDesignator(courseDesignator.CourseId, firstVariationInfo, oldPart);
+            else
+                return courseDesignator;
+        }
+
+
 
         // Enumerator all course designators in a list of course ids, possibly enumerating parts separately.
         public static IEnumerable<CourseDesignator> EnumerateCourseDesignators(EventDB eventDB, Id<Course>[] courseIds, 
