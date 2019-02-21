@@ -175,7 +175,7 @@
     <value>Yksi per rata</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>Yksi per radan osa/hajonta</value>
+    <value>1 per radan osa/hajonta</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Tiedostot</value>

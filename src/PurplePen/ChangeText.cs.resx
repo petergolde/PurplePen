@@ -147,6 +147,9 @@
   <data name="relayLegMenuItem.Text" xml:space="preserve">
     <value>Úsek</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Název souboru</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Zobrazení</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Písmo:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ukázka</value>

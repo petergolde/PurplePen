@@ -154,7 +154,10 @@
     <value>Kan inte skapa '{0}' av följande skäl:</value>
   </data>
   <data name="CannotCreateDirectory" xml:space="preserve">
-    <value>Kan inte skapa katalog '{0}' av följande skäl:</value>
+    <value>Kan inte skapa mappen '{0}' av följande skäl:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Kan inte läsa kartan på grund av: '{0}' Optimera/reparera och spara om som OCAD kan lösa problemet.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Kan inte skapa OCAD-filer av följande skäl:</value>
@@ -163,7 +166,7 @@
     <value>Vill du spara ändringarna du gjort till '{0}'?</value>
   </data>
   <data name="FileAlreadyExists" xml:space="preserve">
-    <value>Fil '{0}' finns redan i denna katalog. Klicka på "Tillbaka"-knappen och välj en ny katalog eller ett nytt tävlingsnamn.</value>
+    <value>Filen '{0}' finns redan i den valda mappen. Klicka "Tillbaka" och välj en ny mapp eller ett nytt tävlingsnamn.</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
     <value>Kodsiffra '{0}' används redan till en annan kontroll.</value>
@@ -202,31 +205,35 @@
     <value>Ange ny poäng</value>
   </data>
   <data name="EnterCode" xml:space="preserve">
-    <value>Skriv in ny kodsiffra</value>
+    <value>Ange ny kodsiffra</value>
   </data>
   <data name="EnterDimensions" xml:space="preserve">
-    <value>Skriv in föremålets storlek
+    <value>Ange föremålets storlek
 Använd / för höjder i en sluttning
 Använd | för två föremål</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
-    <value>Ny titel för tävlingen
+    <value>Ange nytt tävlingsnamn
 Använd | för att separera rader
 (påverkar samtliga banor)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
-    <value>Lägg till ny andrahands titel
+    <value>Ange ny undertitel
 Använd | för att separera rader</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
-    <value>Skriv in nytt bannamn</value>
+    <value>Ange nytt bannamn</value>
   </data>
   <data name="EnterClimb" xml:space="preserve">
-    <value>Skriv in ny stigning i meter</value>
+    <value>Ange ny stigning i meter</value>
   </data>
   <data name="EnterSymbolText" xml:space="preserve">
     <value>Ange ny betydelse för symbol
 (påverkar alla banor)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Ange ny text
+Använd | för att separera rader</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Kontrollerna {0} används inte längre av någon bana. Vill du ta bort dessa kontroller?</value>
@@ -301,7 +308,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Kontroll {0}</value>
   </data>
   <data name="Finish" xml:space="preserve">
-    <value>Slutför</value>
+    <value>Mål</value>
   </data>
   <data name="Finish_Short" xml:space="preserve">
     <value>F</value>
@@ -319,7 +326,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Alla: {0}</value>
   </data>
   <data name="Margins_LRTB" xml:space="preserve">
-    <value>Vänster: {0}, Höger: {1}, Topp: {2}, Botten: {3}</value>
+    <value>Vänster: {0}, Höger: {1}, Uppe: {2}, Nere: {3}</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
@@ -349,19 +356,19 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>banläggning för orientering</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
-    <value>Skriv in texten du vill ha på kartan. Tryck på OK, sedan klicka och dra på kartan för att placera texten.</value>
+    <value>Ange texten du vill ha på kartan. Tryck på OK, sedan klicka och dra på kartan för att placera texten.</value>
   </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
-    <value>Lägg till Text</value>
+    <value>Lägg till text</value>
   </data>
   <data name="ChangeTextSpecialExplanation" xml:space="preserve">
-    <value>Skriv in ny text</value>
+    <value>Ange ny text.</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
-    <value>Byt Text</value>
+    <value>Ändra text</value>
   </data>
   <data name="MapFileChanged" xml:space="preserve">
-    <value>Ett annant program har gjort ändringar på kartan "{0}". Purple Pen kommer ladda om kartan nu.</value>
+    <value>Ett annat program har ändrat i kart-filen "{0}". Purple Pen kommer nu ladda om kartan.</value>
   </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
     <value>Tävlingen har nuvarande kontrolldefinitioner på {0}. Vill du ändra språk till {1}?</value>
@@ -385,7 +392,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Byte</value>
   </data>
   <data name="MapExchange_Short" xml:space="preserve">
-    <value>MX</value>
+    <value>KB</value>
   </data>
   <data name="PartN" xml:space="preserve">
     <value>Del {0}</value>
@@ -403,10 +410,10 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>E-mail för kontakt</value>
   </data>
   <data name="CrashIntro" xml:space="preserve">
-    <value>Ett fel har uppstått. För att hjälpa oss att rätta felet, vänligen skriv in din e-mailadress samt ytterligare information och skicka oss en felrapport.</value>
+    <value>Ett fel har uppstått. För att hjälpa oss att rätta felet, vänligen skriv in din mejladress samt ytterligare information för att skicka en felrapport till oss.</value>
   </data>
   <data name="CrashMessage" xml:space="preserve">
-    <value>Vänligen berätta vad du gjorde i programmet för att hjälpa oss att läsa problemet</value>
+    <value>Vänligen berätta vad du gjorde i programmet för att hjälpa oss att lösa problemet</value>
   </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Spara</value>
@@ -415,7 +422,13 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Skicka rapport</value>
   </data>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Beskrivningar kan inte läggas till i en bana med kartbyte om "Alla delar" visas. Växla över till den delen som du vill lägga till beskrivningen till och välj "Lägg till beskrivningar" igen.</value>
+    <value>Kontrollbeskrivningar kan inte läggas till i en bana med kartbyte om "Alla delar" visas. Växla över till den delen som du vill lägga till beskrivningen till och välj "Lägg till kontrollbeskrivning" igen.</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe hittades inte</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF konverterare misslyckades att läsa PDF-filen</value>
   </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunde inte läsa resultatet av PDF-konvertering från fil '{0}</value>
@@ -439,7 +452,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Skriver ut sida {0} (av {1})</value>
   </data>
   <data name="MapFileDeleted" xml:space="preserve">
-    <value>Kartfilen "{0}" har raderats. Vänligen försök att återställa kartfilen och tryck därefter på "Ok".</value>
+    <value>Kartfilen "{0}" har tagits bort. Försök att återställa kartfilen och tryck sedan på "Ok".</value>
   </data>
   <data name="BadDotNetFramework" xml:space="preserve">
     <value>.NET-ramverket på din dator verkar inte vara korrekt installerat. Vänligen besök http://microsoft.com/net och installera den senaste versionen av .NET för ditt Windows-operativsystem.</value>
@@ -472,7 +485,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Gul</value>
   </data>
   <data name="AddLineExplanation" xml:space="preserve">
-    <value>Sätt utseendet på linjen. Efter att du tryckt OK, dra med musen för att rita ett linjesegment på önskad plats.</value>
+    <value>Välj utseende på linjen. Efter att ha tryckt OK, dra för att rita ett linjesegment på önskad plats.</value>
   </data>
   <data name="AddLineTitle" xml:space="preserve">
     <value>Lägg till linje</value>
@@ -508,16 +521,85 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Automatisk</value>
   </data>
   <data name="BadLength" xml:space="preserve">
-    <value>Längden på en bana måste vara ett nummer mellan 0.1 - 99.1, eller lämnas tom för att längden ska beräknas automatiskt.</value>
+    <value>Längden på en bana måste vara ett nummer mellan 0.1 - 99.9 eller lämnas tom för att beräkna längden automatiskt.</value>
   </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Duplicera bana</value>
   </data>
   <data name="EnterLength" xml:space="preserve">
-    <value>Skriv in en längd i km, eller lämna tomt för att beräkna automatiskt</value>
+    <value>Ange en längd i km, eller lämna tomt för att beräkna automatiskt</value>
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>Klar med att skriva ut "{0}". Tryck OK för att börja skriva ut "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Alla alternativ</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Lämplig för stafetter med {0} löpare per lag.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Bokontrollen för slingorna kommer att besökas {0} gånger. Det finns {1} möjliga löpalternativ för slingorna.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>En kontroll som startar en gaffling eller slinga kan inte flyttas till ett nytt ställe på banan.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>För stort totalt antal gafflingsalternativ på banan. Antalet distinkta alternativ är begränsat till {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Kan inte lägga till gaffling.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>En gaffling finns redan vid den här kontrollen.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>En kontroll eller sträcka måste vara vald för att lägga till spridningsmetod.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Spridningsmetod kan inte läggas till på målkontrollen.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Spridningsmetod kan inte läggas till via vyn 'Alla kontroller'.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Spridningsmetod kan inte läggas till i en poängbana.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Spridningsmetod kan inte läggas till på sista kontrollen. Lägg till ett mål först.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' är inte ett giltigt sträcknummer för gaffling '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Sträcka {0} bör tilldelas till en av gafflingarna {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Sträcka {0} är tilldelad till både gaffling '{1}' och '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Kan inte läsa kartan på grund av: '{0}' Öppna och spara om kartan i senaste versionen av OpenOrienteering Mapper så löser det kanske problemet.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Kartutdelningsplats</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Kartutdelning</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>KU</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Den underliggande OCAD-kartan har synliga mallfiler. I OCAD 8 och äldre så syns kanske inte mallfilerna p.g.a. begränsningar i OCAD.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>P.g.a. begränsningar i OCAD-filformatet (OCAD 10 och äldre) så kommer bildobjekt att läggas under banor och vita områden i exporterade OCAD-filer. Kontrollera OCAD-filerna för att säkerställa att dina bilder verkligen syns som det är tänkt.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>

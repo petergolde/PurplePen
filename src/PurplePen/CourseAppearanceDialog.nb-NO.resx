@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Ikke skalér</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Tilpasset kartets målestokk</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Tilpasset 1:15000</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automatisk strekk mellomrom størrelse:</value>
   </data>

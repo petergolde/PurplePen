@@ -120,7 +120,7 @@
   <data name="bitmapScaleLabel.Text" xml:space="preserve">
     <value>När du använder en bildfil som kartunderlag måste du specificera upplösningen på bilden och kartskalan. 
 
-Upplösningen på bilden anger hur många pixlar eller punkter det är i bilden för varje (engelsk) tum på den utskrivna kartan; vanligtvis benämd punkter per tum (dots per inch, dpi).
+Upplösningen på bilden anger hur många pixlar eller punkter det är i bilden för varje (engelsk) tum på den utskrivna kartan; vanligtvis benämnd punkter per tum (dots per inch, dpi).
 
 Kartans skala anger förhållandet mellan (utskriven) karta och verkligheten.
 </value>
@@ -139,5 +139,11 @@ Kartans skala anger förhållandet mellan (utskriven) karta och verkligheten.
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Upplösning på bitmap</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>När en PDF-fil används som karta så måste du ange kartskalan. 
+
+Kartskalan anger relationen mellan papperskartan och verkligheten.
+</value>
   </data>
 </root>

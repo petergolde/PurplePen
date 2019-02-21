@@ -285,4 +285,22 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Pálya másolása</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>{0} &amp;Fájl készítése</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Variáció hozzáadása</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Villa/hurok törlése</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Váltó csapat variáció</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Pontleírás szabványa</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Térkép szabványa</value>
+  </data>
 </root>

@@ -126,6 +126,15 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Välj utskriftsområde genom att dra med musen.</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Pappersstorlek</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Välj utskriftsområde automatiskt</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Lås storleken på utskriftsområdet till pappersstorleken</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Välj utskriftsområde</value>
   </data>

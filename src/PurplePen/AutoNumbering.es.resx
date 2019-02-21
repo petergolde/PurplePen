@@ -121,7 +121,7 @@
     <value>Evitar códigos que puedan leerse de forma inversa (ej. «68»/«89»)</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
-    <value>Renumerar controles existentes también</value>
+    <value>Renumerar controles existentes</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
     <value>Aplicar opciones únicamente a nuevos controles</value>

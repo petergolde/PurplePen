@@ -147,9 +147,6 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copies</value>
   </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Tramer (aplatir) avant impression</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Imprimer les échanges de carte sur la même carte </value>
   </data>
@@ -179,6 +176,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Imprimer les circuits</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Tramer (aplatir) avant impression</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
     <value>Tabloid (11"x17")</value>

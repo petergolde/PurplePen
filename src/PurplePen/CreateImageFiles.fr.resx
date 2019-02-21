@@ -129,11 +129,32 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Sélectionner un dossier pour les fichiers OCAD</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Format de fichier :</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Préfixe du nom de fichier :</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Format de fichier :</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Oui</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RVB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMJN</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Sortie</value>
@@ -155,15 +176,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Créer des fichiers OCAD</value>
-  </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

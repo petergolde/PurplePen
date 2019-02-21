@@ -129,11 +129,26 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Seleccione una carpeta para los archivos OCAD</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Formato de archivo:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Extensión del archivo:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Formato de archivo:</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Sí</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Salida</value>
@@ -142,7 +157,7 @@
     <value>Seleccionar carpeta...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Otra carpeta</value>
+    <value>Otra Carpeta</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo del mapa</value>
@@ -155,15 +170,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crear Archivos OCAD</value>
-  </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

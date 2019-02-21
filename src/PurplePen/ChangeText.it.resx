@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Scala di Stampa</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Nome file</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspetto</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Tipo di carattere:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Esempio</value>

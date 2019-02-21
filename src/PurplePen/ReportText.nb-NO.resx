@@ -243,6 +243,12 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Gjennomsnitt</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} poster, {2}, {3} m stigning)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>0} ({1} poster, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Strekklengde rapport for {0}</value>
   </data>
@@ -263,5 +269,11 @@
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>ADVARSEL:</value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Etappe {0}</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Lag {0}</value>
   </data>
 </root>

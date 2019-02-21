@@ -424,6 +424,9 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
     <value>A pontleírás lehet, hogy nem tartalmazza a térképcserét ha "Minden rész" van megjelenítve.  Váltson a megfelelő részre és használja az "Új pontleírás"-t újra.</value>
   </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>A PdfConverter.exe nem található</value>
+  </data>
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>A Pdfium nem tudta sikeresen beolvasni a PDF fájlt.</value>
   </data>
@@ -528,6 +531,9 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   </data>
   <data name="PausePrinting" xml:space="preserve">
     <value>A {0} nyomtatása befejeződött. Nyomjon OK-t a(z) {1} nyomtatásához!</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>

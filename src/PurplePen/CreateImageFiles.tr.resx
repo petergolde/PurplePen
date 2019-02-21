@@ -129,11 +129,17 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCAD dosyaları için bir klasör seçin</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Dosya formatı:</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Dosya adı öneki:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Dosya formatı:</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>hayır</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Evet</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Çıktı</value>

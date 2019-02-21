@@ -558,6 +558,9 @@
   <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
     <value>Új térképcsere</value>
   </data>
+  <data name="addVariationToolStripButton.Text" xml:space="preserve">
+    <value>Variáció hozzáadása</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Kötelező átkelő</value>
   </data>

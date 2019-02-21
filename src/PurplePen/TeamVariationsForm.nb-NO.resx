@@ -120,11 +120,20 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Lukk</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Eksporter</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Skriv ut …</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Forhåndsvis utskrift ...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Antall etapper:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Antall lag:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Stafettvarianter</value>

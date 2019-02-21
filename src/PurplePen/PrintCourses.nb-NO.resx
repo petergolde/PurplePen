@@ -144,9 +144,6 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopier</value>
   </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Skriv ut som raster</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Skriv ut kartbytte på samme kart </value>
   </data>
@@ -176,6 +173,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skriv ut løyper</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Skriv ut som raster</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
     <value>Tabloid (11"x17")</value>

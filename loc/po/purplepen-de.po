@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.5\n"
+"Project-Id-Version: Purple Pen 3.2.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-12-11 15:28-08:00\n"
+"POT-Creation-Date: 2019-02-20 20:23-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -489,6 +489,15 @@ msgstr "Staffelteam"
 msgid "Relay Leg"
 msgstr "Staffel-Etappe"
 
+#: ChangeText.resx, fileNameMenuItem.Text
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr "Dateiname"
+
+#: ChangeText.resx, mapFileNameMenuItem.Text
+msgid "Map File Name"
+msgstr ""
+
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
 msgstr "Farbe ändern ..."
@@ -511,6 +520,32 @@ msgstr "Fett"
 #: ChangeText.resx, label1.Text
 msgid "Font:"
 msgstr "Schriftart:"
+
+#: ChangeText.resx, label3.Text
+#: PrinterMargins.resx, labelPaper.Text
+msgid "Size:"
+msgstr "Größe:"
+
+#: ChangeText.resx, labelFontSizeMm.Text
+#: CourseAppearanceDialog.resx, label12.Text
+#: CourseAppearanceDialog.resx, label10.Text
+#: CourseAppearanceDialog.resx, label8.Text
+#: CourseAppearanceDialog.resx, label4.Text
+#: CourseAppearanceDialog.resx, label2.Text
+#: CourseAppearanceDialog.resx, labelMM1.Text
+#: LinePropertiesDialog.resx, labelWidthMm.Text
+#: LinePropertiesDialog.resx, labelGapSizeMm.Text
+#: LinePropertiesDialog.resx, labelDashSizeMm.Text
+#: LinePropertiesDialog.resx, labelRadiusMm.Text
+#: PrintDescriptions.resx, mmSuffixLabel.Text
+#: PrintPunches.resx, mmSuffixLabel.Text
+msgid "mm"
+msgstr "mm"
+
+#: ChangeText.resx, checkBoxAutoFontSize.Text
+#: MiscText.resx, AutomaticLength
+msgid "Automatic"
+msgstr "Automatisch"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
@@ -813,21 +848,6 @@ msgstr "Objektgrössen skalieren"
 msgid "Automatic leg gap size:"
 msgstr "Automatische Linienunterbrechung:"
 
-#: CourseAppearanceDialog.resx, label12.Text
-#: CourseAppearanceDialog.resx, label10.Text
-#: CourseAppearanceDialog.resx, label8.Text
-#: CourseAppearanceDialog.resx, label4.Text
-#: CourseAppearanceDialog.resx, label2.Text
-#: CourseAppearanceDialog.resx, labelMM1.Text
-#: LinePropertiesDialog.resx, labelWidthMm.Text
-#: LinePropertiesDialog.resx, labelGapSizeMm.Text
-#: LinePropertiesDialog.resx, labelDashSizeMm.Text
-#: LinePropertiesDialog.resx, labelRadiusMm.Text
-#: PrintDescriptions.resx, mmSuffixLabel.Text
-#: PrintPunches.resx, mmSuffixLabel.Text
-msgid "mm"
-msgstr "mm"
-
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
 msgstr "Weiße Textfreistellung:"
@@ -958,6 +978,7 @@ msgid "Choose Variations..."
 msgstr "Varianten auswählen..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
+#: CreateImageFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -989,12 +1010,14 @@ msgstr "Eine GPX-Datei enthält GPS-Koordinaten für die Posten und "
 msgid "Create GPX File"
 msgstr "GPX-File erstellen ..."
 
+#: CreateImageFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
 msgstr "Erstellen"
 
+#: CreateImageFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1009,19 +1032,97 @@ msgstr "Erstellen"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#: CreateImageFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Wählen Sie einen Ordner für die OCAD-Dateien aus"
 
-#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
-msgid "File name prefix:"
-msgstr "Präfix für Dateinamen:"
-
+#: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
 msgstr "Dateiformat:"
 
+#: CreateImageFiles.resx, fileFormatCombo.Items
+msgid "PNG"
+msgstr "OCAD 6"
+
+#: CreateImageFiles.resx, fileFormatCombo.Items1
+msgid "JPEG"
+msgstr "OCAD 7"
+
+#: CreateImageFiles.resx, fileFormatCombo.Items2
+msgid "GIF"
+msgstr "OCAD 8"
+
+#: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
+msgid "File name prefix:"
+msgstr "Präfix für Dateinamen:"
+
+#: CreateImageFiles.resx, label1.Text
+msgid "World file:"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items
+msgid "100"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items1
+msgid "150"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items2
+msgid "200"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items3
+msgid "300"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items4
+msgid "400"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items5
+msgid "500"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items6
+msgid "600"
+msgstr ""
+
+#: CreateImageFiles.resx, dpiLabel.Text
+msgid "Dpi:"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxWorldFile.Items
+#: ReportText.resx, EventAudit_No
+msgid "No"
+msgstr "Nein"
+
+#: CreateImageFiles.resx, comboBoxWorldFile.Items1
+#: ReportText.resx, EventAudit_Yes
+msgid "Yes"
+msgstr "Ja"
+
+#: CreateImageFiles.resx, labelColorModel.Text
+msgid "Color model:"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxColorModel.Items
+#: CreatePdfCourses.resx, comboBoxColorModel.Items
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr "RGB"
+
+#: CreateImageFiles.resx, comboBoxColorModel.Items1
+#: CreatePdfCourses.resx, comboBoxColorModel.Items1
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr "CMYK"
+
+#: CreateImageFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1029,35 +1130,44 @@ msgstr "Dateiformat:"
 msgid "Output"
 msgstr "Ausgabe"
 
+#: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
 msgstr "Ordner auswählen..."
 
+#: CreateImageFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
 msgstr "Anderer Ordner"
 
+#: CreateImageFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
 msgstr "Selber Ordner wie Kartendatei"
 
+#: CreateImageFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
 msgstr "Selber Ordner wie Purple Pen-Datei"
 
+#: CreateImageFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
 msgstr "Ordner"
+
+#: CreateImageFiles.resx, $this.Text
+msgid "Create Image Files"
+msgstr "OCAD-Dateien erstellen"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1072,16 +1182,6 @@ msgstr "Alle Teilstrecken auf dieser Karte drucken "
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
 msgstr "Farbmodell:"
-
-#: CreatePdfCourses.resx, comboBoxColorModel.Items
-#: PrintCourses.resx, comboBoxColorModel.Items1
-msgid "RGB"
-msgstr "RGB"
-
-#: CreatePdfCourses.resx, comboBoxColorModel.Items1
-#: PrintCourses.resx, comboBoxColorModel.Items2
-msgid "CMYK"
-msgstr "CMYK"
 
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items
 #: PrintCourses.resx, comboBoxMultiPage.Items
@@ -1132,10 +1232,6 @@ msgid "Enter the name (without .xml or .gif) for both of the "
 msgstr "Einen Namen (ohne .xml or .gif) für die beiden "
 "RouteGadget-Dateien eintragen:"
 
-#: CreateRouteGadget.resx, nameGroupBox.Text
-msgid "File Name"
-msgstr "Dateiname"
-
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
 msgstr "Mehr über RouteGadget erfahren"
@@ -1147,6 +1243,22 @@ msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 msgstr "RouteGadget benötigt sowohl eine Bilddatei (.gif), als "
 "auch eine IOF XML Datei (.xml). Wählen Sie Namen und "
 "Ordner für beide Dateien."
+
+#: CreateRouteGadget.resx, comboBoxIofXml.Items
+msgid "2.0.3"
+msgstr ""
+
+#: CreateRouteGadget.resx, comboBoxIofXml.Items1
+msgid "3.0"
+msgstr ""
+
+#: CreateRouteGadget.resx, labelIofXml.Text
+msgid "IOF XML Version:"
+msgstr ""
+
+#: CreateRouteGadget.resx, groupBox1.Text
+msgid "IOF XML"
+msgstr ""
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1382,9 +1494,25 @@ msgstr "Speichern &unter …"
 msgid "Create OCAD &Files..."
 msgstr "OCAD-Da&teien erstellen …"
 
+#: MainFrame.resx, createImageFilesMenu.Text
+msgid "Create Ima&ge Files..."
+msgstr ""
+
+#: MainFrame.resx, createDescriptionPdfMenu.Text
+msgid "&Descriptions..."
+msgstr ""
+
+#: MainFrame.resx, createPunchcardPdfMenu.Text
+msgid "Pu&nch Cards..."
+msgstr ""
+
 #: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
+msgid "&Courses..."
 msgstr "PDF-Dateien erstellen ..."
+
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1602,7 +1730,8 @@ msgstr "Text&zeile..."
 #: MainFrame.resx, addMapIssueMenu.Text
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
 #: MiscText.resx, MapIssue_Long
-msgid "Map Issue Point"
+#: MiscText.resx, MapIssue_Medium
+msgid "Timed Start"
 msgstr "Kartenabgabepunkt"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
@@ -2639,10 +2768,6 @@ msgid "The OCAD file uses a coordinate system that is not "
 msgstr "Die OCAD-Datei verwendet ein Koordinatensystem, das von "
 "Purple Pen nicht unterstützt wird."
 
-#: MiscText.resx, AutomaticLength
-msgid "Automatic"
-msgstr "Automatisch"
-
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
@@ -2749,12 +2874,8 @@ msgstr "Die Karte kann wegen folgendem Prpblem nicht geladen "
 "OpenOrienteering Mapper öffnen und neu speichern, könnte "
 "das Problem beheben."
 
-#: MiscText.resx, MapIssue_Medium
-msgid "Map Issue"
-msgstr "Kartenabgabe"
-
 #: MiscText.resx, MapIssue_Short
-msgid "MI"
+msgid "TS"
 msgstr "MI"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
@@ -2776,6 +2897,23 @@ msgstr "Wegen Beschränkungen im OCAD Dateiformat (OCAD 10 und "
 "weissen Flächen in der exportierten OCAD Datei. Überprüfe "
 "die OCAD Datei, um sicher zu gehen, dass die Bilder wie "
 "gewünscht erscheinen."
+
+#: MiscText.resx, CannotCreateImageFiles
+msgid "Cannot create image files for the following reason:"
+msgstr ""
+
+#: MiscText.resx, CreatePdf
+msgid "Create PDF"
+msgstr ""
+
+#: MiscText.resx, PdfFilter
+msgid "PDF File|*.pdf"
+msgstr ""
+
+#: MiscText.resx, LegAssignedOuterBranch
+msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
+"a different way in a containing fork."
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -3132,10 +3270,6 @@ msgstr "Drucken nach jeder Bahn bzw. Teilbahn unterbrechen"
 msgid "Copies"
 msgstr "Kopien"
 
-#: PrintCourses.resx, checkBoxRasterPrinting.Text
-msgid "Rasterize Before Printing"
-msgstr "Vor dem Druck rastern"
-
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
 msgstr "OCAD-kompatibel"
@@ -3213,10 +3347,6 @@ msgstr "Drucken:"
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
 msgstr "Postenbeschreibungen drucken"
-
-#: PrinterMargins.resx, labelPaper.Text
-msgid "Size:"
-msgstr "Größe:"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
@@ -3477,10 +3607,6 @@ msgstr "Normalbahnen sollten ein Start-Dreieck haben"
 msgid "Score courses should have a start triangle"
 msgstr "Score-Bahnen sollten ein Start-Dreieck haben"
 
-#: ReportText.resx, EventAudit_No
-msgid "No"
-msgstr "Nein"
-
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
 msgstr "Keine Fehler gefunden."
@@ -3514,10 +3640,6 @@ msgid "The following controls are present in the All Controls "
 "this report."
 msgstr "Die folgenden Posten aus der Gesamtpostenliste werden in "
 "keiner Bahn verwendet."
-
-#: ReportText.resx, EventAudit_Yes
-msgid "Yes"
-msgstr "Ja"
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
@@ -4110,6 +4232,10 @@ msgstr "Fixe Verzweigungen für Etappen zuweisen..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
+msgstr ""
+
+#: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
+msgid "Hide variation codes on map"
 msgstr ""
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter

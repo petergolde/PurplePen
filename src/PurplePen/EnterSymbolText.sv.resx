@@ -133,7 +133,7 @@
     <value>Visa ords genusändelse</value>
   </data>
   <data name="labelDescription.Text" xml:space="preserve">
-    <value>Ange den anpassade texten för symbolen under "Text"-kolumnen</value>
+    <value>Ange den anpassade texten för symbolen under kolumnen 'Text'</value>
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Kön:</value>

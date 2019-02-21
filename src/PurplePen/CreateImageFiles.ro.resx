@@ -129,11 +129,26 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Selectați un director pentru fișierul OCAD</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Format fişier:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Prefixul numelui de fișier:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Format fişier:</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Da</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Rezultat</value>
@@ -155,15 +170,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Creare Fișier OCAD</value>
-  </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

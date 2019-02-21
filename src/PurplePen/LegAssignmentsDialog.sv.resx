@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Gaffling</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Sträcka</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>För att tilldela en viss sträcka till en viss gaffling, skriv in sträcknumret/en här under. Sträckor som inte tilldelats en viss gaffling kommer att slumpvis distribueras på de kvarvarande gafflingarna.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Mer information...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Sträcktilldelning</value>
+  </data>
 </root>

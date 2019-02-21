@@ -148,7 +148,7 @@
     <value>Skrivare:</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
-    <value>Utdata</value>
+    <value>Skrivare</value>
   </data>
   <data name="punchCardLayoutButton.Text" xml:space="preserve">
     <value>Stämpelkort layout...</value>

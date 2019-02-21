@@ -516,8 +516,32 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="AutomaticLength" xml:space="preserve">
     <value>Automatisk</value>
   </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Løypelengden må være et tall i intervallet 0.1 - 99.9, eller la feltet være blankt for automatisk beregning.</value>
+  </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Kopier løype</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Angi lengde i km, eller la feltet være blankt for automatisk beregning.</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Avslutt utskrift "{0}". Velg OK for å starte utskrift "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Alle varianter</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Egnet for bruk i stafetter med {0} deltakere per lag.</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Kan ikke lese kartet på grunn av: '{0}' Åpne og lagre kartet i nyeste versjon av OpenOrienteering Mapper kan fikse problemene.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>

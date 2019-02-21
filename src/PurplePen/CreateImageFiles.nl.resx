@@ -120,6 +120,18 @@
   <data name="createButton.Text" xml:space="preserve">
     <value>Creëren</value>
   </data>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>Nee</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Uitvoer</value>
   </data>

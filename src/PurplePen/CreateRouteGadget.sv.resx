@@ -124,22 +124,22 @@
     <value>Avbryt</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Välj katalog för OCAD-filerna</value>
+    <value>Välj mapp för OCAD-filerna</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Välj katalog...</value>
+    <value>Välj mapp...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Annan katalog</value>
+    <value>Annan mapp</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Samma katalog som kartfilen</value>
+    <value>Samma mapp som kartfilen</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samma katalog som Puple Pen-filen</value>
+    <value>Samma mapp som Purple Pen-filen</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
-    <value>Katalog</value>
+    <value>Mapp</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Fyll i namnet (utan .xml eller .gif) för båda RouteGadget-filerna:</value>
@@ -154,7 +154,7 @@
     <value>RouteGadget kräver både en bild (.gif) och en IOF XML-fil (.xml). Välj namn och mapp för båda dessa filer.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Skapa OCAD-filer</value>
+    <value>Skapa RouteGadget-filer</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Banor</value>

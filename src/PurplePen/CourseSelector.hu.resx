@@ -123,4 +123,7 @@
   <data name="selectNone.Text" xml:space="preserve">
     <value>Egyik sem</value>
   </data>
+  <data name="buttonChooseVariations.Text" xml:space="preserve">
+    <value>Variáció választás...</value>
+  </data>
 </root>

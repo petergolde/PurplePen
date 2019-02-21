@@ -121,16 +121,16 @@
     <value>Tillåt inte kodsiffror som kan läsas upp-och-ned (t.ex. "68" och "89")</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
-    <value>Numrera om existerande kontroller med</value>
+    <value>Numrera även om existerande kontroller</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
-    <value>Använd inställningar endast på nyskapade kontroller</value>
+    <value>Använd dessa inställningar endast för nya kontroller</value>
   </data>
   <data name="existingControlsGroupBox.Text" xml:space="preserve">
-    <value>Existerande Kontroller</value>
+    <value>Existerande kontroller</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
-    <value>Nya kontroller numreras automatiskt efter följande inställningar</value>
+    <value>Nya kontroller numreras automatiskt efter följande inställningar.</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Börja med kodsiffra:</value>

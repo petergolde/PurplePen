@@ -134,9 +134,22 @@
 				<param name="Local" value="FileCreateImageFiles.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Create PDFs...">
-				<param name="Local" value="FileCreatePdfFiles.htm">
+				<param name="Name" value="Create PDFs">
 				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Descriptions...">
+					<param name="Local" value="FileCreatePdfDescriptions.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Punch Cards...">
+					<param name="Local" value="FileCreatePdfPunchCards.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Courses...">
+					<param name="Local" value="FileCreatePdfCourses.htm">
+					</OBJECT>
+			</UL>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Create RouteGadget Files...">
 				<param name="Local" value="FileCreateRouteGadget.htm">
@@ -286,8 +299,8 @@
 				<param name="Local" value="ItemAddTextLine.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Map Issue Point">
-				<param name="Local" value="EditAddMapIssuePoint.htm">
+				<param name="Name" value="Timed Start">
+				<param name="Local" value="EditAddTimedStart.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Mandatory Crossing Point">

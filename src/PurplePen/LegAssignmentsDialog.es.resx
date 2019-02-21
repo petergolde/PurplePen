@@ -117,19 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BranchColumn.HeaderText" xml:space="preserve">
-    <value>Variación</value>
-  </data>
-  <data name="LegsColumn.HeaderText" xml:space="preserve">
-    <value>Postas</value>
-  </data>
-  <data name="labelDescription.Text" xml:space="preserve">
-    <value>Para asignar una posta específica a una variación específica, escriba el número de la posta debajo. Las postas no asignadas a una variación serán distribuidas entre las variaciones restantes aleatoriamente.</value>
-  </data>
-  <data name="linkLabel.Text" xml:space="preserve">
-    <value>Más información...</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Asignaciones de Postas</value>
-  </data>
 </root>

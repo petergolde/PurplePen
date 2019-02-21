@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>IOF-standarder</value>
+  </data>
+  <data name="radioButtonMap2017.Text" xml:space="preserve">
+    <value>ISOM 2017</value>
+  </data>
+  <data name="radioButtonMap2000.Text" xml:space="preserve">
+    <value>ISOM 2000 / ISSOM 2007</value>
+  </data>
+  <data name="groupBoxMapStandard.Text" xml:space="preserve">
+    <value>IOF kartstandard</value>
+  </data>
+  <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
+    <value>Postbeskrivelser 2018</value>
+  </data>
+  <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
+    <value>Postbeskrivelser 2004</value>
+  </data>
+  <data name="groupBoxDescriptionStandard.Text" xml:space="preserve">
+    <value>IOF postbeskrivelsesstandard</value>
+  </data>
+  <data name="labelStandardsIntro.Text" xml:space="preserve">
+    <value>Hvilke versjoner av IOF-standarder vil du at Purple Pen skal følge?</value>
+  </data>
 </root>

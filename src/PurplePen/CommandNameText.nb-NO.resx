@@ -297,4 +297,7 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Stafettvarianter</value>
   </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Angi postbeskrivelsesstandard</value>
+  </data>
 </root>

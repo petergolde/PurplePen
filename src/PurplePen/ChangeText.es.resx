@@ -123,12 +123,6 @@
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Nombre del Recorrido</value>
   </data>
-  <data name="coursePartMenuItem.Text" xml:space="preserve">
-    <value>Parte del Recorrido</value>
-  </data>
-  <data name="variationMenuItem.Text" xml:space="preserve">
-    <value>Variación del Recorrido</value>
-  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Longitud del Recorrido</value>
   </data>
@@ -136,37 +130,19 @@
     <value>Desnivel del Recorrido</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
-    <value>Lista de Categorías</value>
+    <value>Categorías o Clases</value>
   </data>
-  <data name="printScaleMenuItem.Text" xml:space="preserve">
-    <value>Escala de Impresión</value>
-  </data>
-  <data name="relayTeamMenuItem.Text" xml:space="preserve">
-    <value>Equipo de Relevos</value>
-  </data>
-  <data name="relayLegMenuItem.Text" xml:space="preserve">
-    <value>Posta de Relevos</value>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Nombre del archivo</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Apariencia</value>
   </data>
-  <data name="buttonChangeColor.Text" xml:space="preserve">
-    <value>Cambiar Color...</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Color:</value>
-  </data>
-  <data name="checkBoxItalic.Text" xml:space="preserve">
-    <value>Cursiva</value>
-  </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Negrita</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Fuente:</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Muestra</value>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Texto</value>

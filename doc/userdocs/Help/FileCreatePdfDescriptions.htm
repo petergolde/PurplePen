@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<!-- #BeginTemplate "master.dwt" -->
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<link rel=stylesheet href="StyleSheet.css" type="text/css">
+<!-- #BeginEditable "doctitle" -->
+<Title>File/Create PDFs/Descriptions...</Title>
+<!-- #EndEditable -->
+</HEAD>
+<BODY>
+<!-- #BeginEditable "content" -->
+<div class="topicheading">
+<h1>File/Create PDFs/Descriptions...</h1>
+</div>
+<p>The Create PDFs/Descriptions command creates a PDF with control description sheets for one 
+or more courses.</p>
+<p>
+<img alt="Create PDFs/Descriptions Dialog" src="CreatePdfsDescriptions.png"></p>
+<p>This dialog has several options to customize the result of the created PDF.</p>
+<h2>Output section</h2>
+<p>This section shows the paper size and 
+orientation, and the margins. Click <strong>Change Margins</strong> to change the paper 
+size, orientation, or margins.</p>
+<h2>Courses section</h2>
+<p>
+    This section shows which courses will have their control description sheets
+    printed. The default setting is for all courses except &quot;All Controls&quot; to be
+    printed. Click the checkboxes next to the courses you wish to print. Click
+    <strong>All</strong> or <strong>None</strong> to quickly select or unselect all
+    of the checkboxes at once. If you are printing a course with variations, click on the course name (not just the checkbox), select <a href="ChooseVariations.htm">Choose Variations...</a> to select how to print the variations.
+</p>
+<h2>Copies section</h2>
+<p>This section determines how many copies of each description sheet will be 
+printed. There are three options:</p>
+<ul>
+	<li><strong>one copy of each course</strong>. With this option, one 
+	description will be printed for each course, with different courses being 
+	placed on the same sheet of paper. The program will attempt to arrange the 
+	control descriptions so that as few sheets of paper as possible will be 
+	used.</li>
+	<li><strong>one page of each course</strong>. With the option, one <em>page</em> 
+	of descriptions will be printed for each course. As many copies of the same 
+	course&#39;s description will be placed on each page as will fit. </li>
+	<li><strong>multiple pages of each course</strong>. With this option, you 
+	can chose how many descriptions to print for each course. The program will 
+	print as many pages as needed of each description to reach the requested 
+	number. The program will not mix different descriptions on the same page.</li>
+</ul>
+<p>If you choose &quot;multiple pages of each course&quot;, enter the number of copies of 
+each description (not the number of pages) in the text box below. For example, 
+if you enter 50 descriptions per course, and the program can fit 10 descriptions 
+on each page, 5 pages of 10 descriptions each will be printed for that course. 
+If another course can only fit 6 description on each page, then 9 pages of 6 
+descriptions each will be printed for that course.</p>
+<h2>Appearance section</h2>
+<p>The section determines how the descriptions appear. </p>
+<p><strong>Line size</strong>: The height of each line in the description sheet. 
+Since the boxes in a description sheet are square, this also determines the 
+width of boxes. The IOF recommends a size between 5mm and 7mm, but any size 
+between 3 and 10mm may be specified.</p>
+<p><strong>Description type:</strong> The type of description sheet to use. The 
+possible options are:</p>
+<ul>
+	<li><strong>Symbols</strong>: the standard IOF symbolic description sheet, 
+	with 8 columns and symbols used to describe controls.</li>
+	<li><strong>Text</strong>: instead of symbols, an English language textual 
+	description of the control is used. The textual description fills the area 
+	normally occupied by the last 6 columns of the description. The textual 
+	description is automatically generated.</li>
+	<li><strong>Symbols and Text</strong>: The IOF symbols, with text 
+	equivalents to the right. The textual description for each control is 
+	automatically generated.</li>
+</li>
+	<li><strong>Course Default</strong>: Whichever of Symbols, Text, and Symbols 
+	and Text is specified in the <a href="CourseProperties.htm">course 
+	properties</a> for the course.</li>
+</ul>
+<h2>Other buttons</h2>
+<p><strong>Create PDF</strong>: This button creates the PDF file. The dialog box closes,
+and you are prompted for where to save the PDF file.</p>
+<p><strong>Preview: </strong>Opens a print preview dialog box that shows what 
+will be in the created PDF. </p>
+<p><strong>Cancel</strong>: Closes the dialog box without doing anything.</p>
+<!-- #EndEditable -->
+</BODY>
+<!-- #EndTemplate -->
+</HTML>

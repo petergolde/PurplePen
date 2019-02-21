@@ -121,6 +121,9 @@
     <value>Klicka på "Slutför" för att skapa din nya tävling. Din tävlingsfil kommer att sparas som:</value>
   </data>
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
-    <value>När din tävlingsfil skapats, väljer du "Ny bana..." från banmenyn för att skapa en eller flera banor.</value>
+    <value>När din tävlingsfil skapats väljer du "Lägg till bana..." i menyn "Banor" för att skapa en eller flera banor.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Skapa tävling</value>
   </data>
 </root>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.1.5\n"
+"Project-Id-Version: Purple Pen 3.2.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2018-12-11 15:28-08:00\n"
+"POT-Creation-Date: 2019-02-20 20:24-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -485,6 +485,15 @@ msgstr "Joukkue"
 msgid "Relay Leg"
 msgstr "Osuus"
 
+#: ChangeText.resx, fileNameMenuItem.Text
+#: CreateRouteGadget.resx, nameGroupBox.Text
+msgid "File Name"
+msgstr "Tiedoston nimi"
+
+#: ChangeText.resx, mapFileNameMenuItem.Text
+msgid "Map File Name"
+msgstr ""
+
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
 msgstr "Vaihda väri..."
@@ -507,6 +516,32 @@ msgstr "Lihavoitu"
 #: ChangeText.resx, label1.Text
 msgid "Font:"
 msgstr "Fontti:"
+
+#: ChangeText.resx, label3.Text
+#: PrinterMargins.resx, labelPaper.Text
+msgid "Size:"
+msgstr "Koko:"
+
+#: ChangeText.resx, labelFontSizeMm.Text
+#: CourseAppearanceDialog.resx, label12.Text
+#: CourseAppearanceDialog.resx, label10.Text
+#: CourseAppearanceDialog.resx, label8.Text
+#: CourseAppearanceDialog.resx, label4.Text
+#: CourseAppearanceDialog.resx, label2.Text
+#: CourseAppearanceDialog.resx, labelMM1.Text
+#: LinePropertiesDialog.resx, labelWidthMm.Text
+#: LinePropertiesDialog.resx, labelGapSizeMm.Text
+#: LinePropertiesDialog.resx, labelDashSizeMm.Text
+#: LinePropertiesDialog.resx, labelRadiusMm.Text
+#: PrintDescriptions.resx, mmSuffixLabel.Text
+#: PrintPunches.resx, mmSuffixLabel.Text
+msgid "mm"
+msgstr "mm"
+
+#: ChangeText.resx, checkBoxAutoFontSize.Text
+#: MiscText.resx, AutomaticLength
+msgid "Automatic"
+msgstr "Automaattinen"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
@@ -809,21 +844,6 @@ msgstr "Skaalaa kohteiden kokoja:"
 msgid "Automatic leg gap size:"
 msgstr "Automaattisen katkon pituus:"
 
-#: CourseAppearanceDialog.resx, label12.Text
-#: CourseAppearanceDialog.resx, label10.Text
-#: CourseAppearanceDialog.resx, label8.Text
-#: CourseAppearanceDialog.resx, label4.Text
-#: CourseAppearanceDialog.resx, label2.Text
-#: CourseAppearanceDialog.resx, labelMM1.Text
-#: LinePropertiesDialog.resx, labelWidthMm.Text
-#: LinePropertiesDialog.resx, labelGapSizeMm.Text
-#: LinePropertiesDialog.resx, labelDashSizeMm.Text
-#: LinePropertiesDialog.resx, labelRadiusMm.Text
-#: PrintDescriptions.resx, mmSuffixLabel.Text
-#: PrintPunches.resx, mmSuffixLabel.Text
-msgid "mm"
-msgstr "mm"
-
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
 msgstr "Rastinumeron valkoinen ääriviiva:"
@@ -953,6 +973,7 @@ msgid "Choose Variations..."
 msgstr "Valitse hajonnat..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
+#: CreateImageFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -984,12 +1005,14 @@ msgstr "GPX-tiedosto sisältää rastien GPS-koordinaatit ja se "
 msgid "Create GPX File"
 msgstr "Luo GPX-tiedosto"
 
+#: CreateImageFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
 msgid "Create"
 msgstr "Vie"
 
+#: CreateImageFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1004,19 +1027,97 @@ msgstr "Vie"
 msgid "Cancel"
 msgstr "Peruuta"
 
+#: CreateImageFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Valitse kansio OCAD-tiedostoille"
 
-#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
-msgid "File name prefix:"
-msgstr "Tiedostonimen etuliite:"
-
+#: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
 msgstr "Tiedostomuoto:"
 
+#: CreateImageFiles.resx, fileFormatCombo.Items
+msgid "PNG"
+msgstr "OCAD 6"
+
+#: CreateImageFiles.resx, fileFormatCombo.Items1
+msgid "JPEG"
+msgstr "OCAD 7"
+
+#: CreateImageFiles.resx, fileFormatCombo.Items2
+msgid "GIF"
+msgstr "OCAD 8"
+
+#: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateOcadFiles.resx, fileNamePrefixLabel.Text
+msgid "File name prefix:"
+msgstr "Tiedostonimen etuliite:"
+
+#: CreateImageFiles.resx, label1.Text
+msgid "World file:"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items
+msgid "100"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items1
+msgid "150"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items2
+msgid "200"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items3
+msgid "300"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items4
+msgid "400"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items5
+msgid "500"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxDpi.Items6
+msgid "600"
+msgstr ""
+
+#: CreateImageFiles.resx, dpiLabel.Text
+msgid "Dpi:"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxWorldFile.Items
+#: ReportText.resx, EventAudit_No
+msgid "No"
+msgstr "Ei"
+
+#: CreateImageFiles.resx, comboBoxWorldFile.Items1
+#: ReportText.resx, EventAudit_Yes
+msgid "Yes"
+msgstr "Kyllä"
+
+#: CreateImageFiles.resx, labelColorModel.Text
+msgid "Color model:"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxColorModel.Items
+#: CreatePdfCourses.resx, comboBoxColorModel.Items
+#: PrintCourses.resx, comboBoxColorModel.Items1
+msgid "RGB"
+msgstr "RGB"
+
+#: CreateImageFiles.resx, comboBoxColorModel.Items1
+#: CreatePdfCourses.resx, comboBoxColorModel.Items1
+#: PrintCourses.resx, comboBoxColorModel.Items2
+msgid "CMYK"
+msgstr "CMYK"
+
+#: CreateImageFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1024,35 +1125,44 @@ msgstr "Tiedostomuoto:"
 msgid "Output"
 msgstr "Tuotos"
 
+#: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
 msgid "Select folder..."
 msgstr "Valitse kansio..."
 
+#: CreateImageFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
 msgid "Other folder"
 msgstr "Muu kansio"
 
+#: CreateImageFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
 msgid "Same folder as map file"
 msgstr "Samaan kuin karttatiedosto"
 
+#: CreateImageFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
 msgid "Same folder as Purple Pen file"
 msgstr "Samaan kuin Purple Pen -tiedosto"
 
+#: CreateImageFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
 msgid "Folder"
 msgstr "Kansio"
+
+#: CreateImageFiles.resx, $this.Text
+msgid "Create Image Files"
+msgstr "Vie OCAD-tiedostoihin"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1067,16 +1177,6 @@ msgstr "Kaikki osat samalle kartalle "
 #: PrintCourses.resx, labelColorModel.Text
 msgid "Color Model:"
 msgstr "Värimalli:"
-
-#: CreatePdfCourses.resx, comboBoxColorModel.Items
-#: PrintCourses.resx, comboBoxColorModel.Items1
-msgid "RGB"
-msgstr "RGB"
-
-#: CreatePdfCourses.resx, comboBoxColorModel.Items1
-#: PrintCourses.resx, comboBoxColorModel.Items2
-msgid "CMYK"
-msgstr "CMYK"
 
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items
 #: PrintCourses.resx, comboBoxMultiPage.Items
@@ -1107,7 +1207,7 @@ msgstr "Yksi per rata"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
-msgstr "Yksi per radan osa/hajonta"
+msgstr "1 per radan osa/hajonta"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
@@ -1127,10 +1227,6 @@ msgid "Enter the name (without .xml or .gif) for both of the "
 msgstr "Syötä nimi (ilman .xml tai .gif -päätteitä) molemmille "
 "Reittihärveli-tiedostoille:"
 
-#: CreateRouteGadget.resx, nameGroupBox.Text
-msgid "File Name"
-msgstr "Tiedoston nimi"
-
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
 msgstr "Lisätietoja Reittihärvelistä"
@@ -1142,6 +1238,22 @@ msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 msgstr "Reittihärveli vaatii sekä kuvatiedoston (.gif) että IOF "
 "XML -tiedoston (.xml). Valitse nimi ja kansio molemmille "
 "näille tiedostoille."
+
+#: CreateRouteGadget.resx, comboBoxIofXml.Items
+msgid "2.0.3"
+msgstr ""
+
+#: CreateRouteGadget.resx, comboBoxIofXml.Items1
+msgid "3.0"
+msgstr ""
+
+#: CreateRouteGadget.resx, labelIofXml.Text
+msgid "IOF XML Version:"
+msgstr ""
+
+#: CreateRouteGadget.resx, groupBox1.Text
+msgid "IOF XML"
+msgstr ""
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1376,9 +1488,25 @@ msgstr "Tallenna &nimellä..."
 msgid "Create OCAD &Files..."
 msgstr "Vie &OCAD-tiedostoihin..."
 
+#: MainFrame.resx, createImageFilesMenu.Text
+msgid "Create Ima&ge Files..."
+msgstr ""
+
+#: MainFrame.resx, createDescriptionPdfMenu.Text
+msgid "&Descriptions..."
+msgstr ""
+
+#: MainFrame.resx, createPunchcardPdfMenu.Text
+msgid "Pu&nch Cards..."
+msgstr ""
+
 #: MainFrame.resx, createCoursePdfMenu.Text
-msgid "Create PDFs..."
+msgid "&Courses..."
 msgstr "Vie PDF-tiedostoihin..."
+
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1546,11 +1674,11 @@ msgstr "K&aikki rastit"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "Muut radat..."
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Tyhjennä muut radat"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1596,7 +1724,8 @@ msgstr "&Tekstirivi..."
 #: MainFrame.resx, addMapIssueMenu.Text
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
 #: MiscText.resx, MapIssue_Long
-msgid "Map Issue Point"
+#: MiscText.resx, MapIssue_Medium
+msgid "Timed Start"
 msgstr "Kartanottopaikka"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
@@ -2615,10 +2744,6 @@ msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
 msgstr "Purple Pen ei tue OCAD-tiedoston käyttämää koordinaatistoa."
 
-#: MiscText.resx, AutomaticLength
-msgid "Automatic"
-msgstr "Automaattinen"
-
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
@@ -2721,25 +2846,44 @@ msgstr "Karttaa ei voi lukea seuraavasta syystä: '{0}' Kartan "
 "avaaminen ja tallentaminen uudelleen OpenOrienteering "
 "Mapperin viimeisimmässä versiossa voi korjata ongelmia."
 
-#: MiscText.resx, MapIssue_Medium
-msgid "Map Issue"
-msgstr "Kartanotto"
-
 #: MiscText.resx, MapIssue_Short
-msgid "MI"
+msgid "TS"
 msgstr "KO"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "Taustalla olevalla OCAD-kartalla on näkyviä "
+"mallinetiedostoja. Mallineet (templates) eivät välttämättä "
+"näy OCADin rajoitusten takia."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
+msgstr "OCAD-tiedostomuodon rajoitusten vuoksi (OCAD 10: ssä ja "
+"jäljempänä), kuvaobjektit tulevat näkyviin "
+"ratatiedostoissa ja lisätyt valkoiset alueet vietyihin "
+"OCAD-tiedostoihin. Tarkista OCAD-tiedostot varmistaaksesi, "
+"että kuvat näkyvät halutulla tavalla."
+
+#: MiscText.resx, CannotCreateImageFiles
+msgid "Cannot create image files for the following reason:"
+msgstr ""
+
+#: MiscText.resx, CreatePdf
+msgid "Create PDF"
+msgstr ""
+
+#: MiscText.resx, PdfFilter
+msgid "PDF File|*.pdf"
+msgstr ""
+
+#: MiscText.resx, LegAssignedOuterBranch
+msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
+"a different way in a containing fork."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -2871,7 +3015,12 @@ msgid "In order to design your courses, you must select the map "
 "OpenOrienteering Mapper file (although PDFs and image "
 "files like JPEGs can be used instead). Click the "
 "\"Choose...\" button to select a map file."
-msgstr ""
+msgstr "Jotta voit aloittaa ratasuunnittelun, sinun on valittava "
+"käytettävä karttatiedosto. Yleensä se on OCAD-tiedosto tai "
+"OpenOrienteering Mapper -tiedosto, mutta myös PDF- tai "
+"kuvatiedostoja, kuten JPEG-tiedostoja voidaan käyttää. "
+"Valitse karttatiedosto napsauttamalla \"Valitse "
+"karttatiedosto...\" -painiketta."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
@@ -3084,10 +3233,6 @@ msgstr "Keskeytä tulostus jokaisen radan tai osan jälkeen"
 msgid "Copies"
 msgstr "Kopiot"
 
-#: PrintCourses.resx, checkBoxRasterPrinting.Text
-msgid "Rasterize Before Printing"
-msgstr "Rasteroi ennen tulostusta"
-
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
 msgstr "OCAD yhteensopiva"
@@ -3165,10 +3310,6 @@ msgstr "Tulosta:"
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
 msgstr "Tulosta rastinmääritteet"
-
-#: PrinterMargins.resx, labelPaper.Text
-msgid "Size:"
-msgstr "Koko:"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
@@ -3427,10 +3568,6 @@ msgstr "Tavallisilla radoilla pitäisi olla lähtökolmio"
 msgid "Score courses should have a start triangle"
 msgstr "Pistesuunnistusradoilla pitäisi olla lähtökolmio"
 
-#: ReportText.resx, EventAudit_No
-msgid "No"
-msgstr "Ei"
-
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
 msgstr "Ongelmia ei löydetty."
@@ -3467,10 +3604,6 @@ msgstr "Seuraavat rastit (tai muut kohteet) ovat Kaikki rastit "
 "Voit poistaa kohteet valitsemalla  Tapahtuma-valikosta "
 "\"Poista käyttämättömät rastit\". Näitä kohteita ei "
 "käsitellä tässä raportissa."
-
-#: ReportText.resx, EventAudit_Yes
-msgid "Yes"
-msgstr "Kyllä"
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
@@ -4052,6 +4185,10 @@ msgstr "Määritä osuudet haaroille..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
+msgstr "Numerointi alkaa numerosta: "
+
+#: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
+msgid "Hide variation codes on map"
 msgstr ""
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
@@ -4072,9 +4209,9 @@ msgstr "Seuraavat rastit (tai muut kohteet) ovat Kaikki rastit "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Valitse radan \"{0}\" lisäksi näytettävät radat."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Näytä muut radat"
 

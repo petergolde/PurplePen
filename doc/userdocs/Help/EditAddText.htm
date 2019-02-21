@@ -26,45 +26,63 @@ margin-left:60px;
 appropriate text differently for each course. This can be used, for example, to 
 place the name of each course on the map. The special texts are:</p>
 <table class="style1">
-	<tr>
-		<td class="style2">$(EventTitle)</td>
-		<td class="style2">The main title of the entire event.</td>
-	</tr>
-	<tr>
-		<td class="style2">$(CourseName)</td>
-		<td class="style2">The name of the course</td>
-	</tr>
-	<tr>
-		<td class="style2">$(CoursePart)</td>
-		<td class="style2">The part number of a course with a map exchange.</td>
-	</tr>
-	<tr>
-		<td class="style2">$(CourseLength)</td>
-		<td class="style2">The length of the course, in km.</td>
-	</tr>
-	<tr>
-		<td class="style2">$(CourseClimb)</td>
-		<td class="style2">The climb of the course. Blank if not climb was specified.</td>
-	</tr>
-	<tr>
-		<td class="style2">$(ClassList)</td>
-		<td class="style2">The secondary title or class list for the course, if 
-		any.</td>
-	</tr>
-	<tr>
-		<td class="style2">$(PrintScale)</td>
-		<td class="style2">The printing scale for this course.</td>
-	</tr>
-	<tr>
-		<td class="style2">$(RelayTeam)</td>
-		<td class="style2">The relay team number. This special text only takes effect when selecting &quot;Each Relay Leg Separately&quot; 
-            when <a href="ChooseVariations.htm">choosing variations to print.</a></td>
-	</tr>
-	<tr>
-		<td class="style2">$(RelayLeg)</td>
-		<td class="style2">The relay leg number. This special text only takes effect when selecting &quot;Each Relay Leg Separately&quot; 
-            when <a href="ChooseVariations.htm">choosing variations to print.</a></td>
-	</tr>
+    <tr>
+        <td class="style2">$(EventTitle)</td>
+        <td class="style2">The main title of the entire event.</td>
+    </tr>
+    <tr>
+        <td class="style2">$(CourseName)</td>
+        <td class="style2">The name of the course</td>
+    </tr>
+    <tr>
+        <td class="style2">$(CoursePart)</td>
+        <td class="style2">The part number of a course with a map exchange.</td>
+    </tr>
+    <tr>
+        <td class="style2">$(CourseLength)</td>
+        <td class="style2">The length of the course, in km.</td>
+    </tr>
+    <tr>
+        <td class="style2">$(CourseClimb)</td>
+        <td class="style2">The climb of the course. Blank if not climb was specified.</td>
+    </tr>
+    <tr>
+        <td class="style2">$(ClassList)</td>
+        <td class="style2">
+            The secondary title or class list for the course, if
+            any.
+        </td>
+    </tr>
+    <tr>
+        <td class="style2">$(PrintScale)</td>
+        <td class="style2">The printing scale for this course.</td>
+    </tr>
+    <tr>
+        <td class="style2">$(RelayTeam)</td>
+        <td class="style2">
+            The relay team number. This special text only takes effect when selecting &quot;Each Relay Leg Separately&quot;
+            when <a href="ChooseVariations.htm">choosing variations to print.</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="style2">$(RelayLeg)</td>
+        <td class="style2">
+            The relay leg number. This special text only takes effect when selecting &quot;Each Relay Leg Separately&quot;
+            when <a href="ChooseVariations.htm">choosing variations to print.</a>
+        </td>
+    </tr>
+    <tr>
+        <td class="style2">$(FileName)</td>
+        <td class="style2">
+            The file name of the Purple Pen file. </a>
+        </td>
+    </tr>
+    <tr>
+        <td class="style2">$(MapFileName)</td>
+        <td class="style2">
+            The file name of the map file used. </a>
+        </td>
+    </tr>
 </table>
 <p>To add text, select the Add Special Item/Text command.</p>
 <p>First, you enter the text to display in a dialog:</p>
@@ -73,17 +91,21 @@ place the name of each course on the map. The special texts are:</p>
 used to easily insert one of the special texts from the table above.</p>
     <p>You can customize the appearance of the text on the map as follows:</p>
     <ul>
-    <p><strong>Font:</strong> Select the name of the font you wish to use. You can see a preview of the text in the &quot;Sample&quot; box.</p>
-    <p><strong>Bold:</strong> Check the box to boldface the text.</p>
-    <p><strong>Italic:</strong> Check the box to make the text italic.</p>
-    <p><strong>Color:</strong> Select the color of the text. You can select one of the predefined colors from the list. 
-        If you select &quot;Purple&quot;, the color of the text will match the purple color used for the 
-        rest of the course (which can be set through the <a href="EventCustomizeCourseAppearance.htm">Customize Appearance</a> command.)</p>
-    <p><strong>Change Color:</strong> If you wish to select a color other than the predefined colors in the list, click this button and choose the amount of Cyan, Magenta, Yellow, and Black in the color that you want.</p>
+        <p><strong>Font:</strong> Select the name of the font you wish to use. You can see a preview of the text in the &quot;Sample&quot; box.</p>
+        <p><strong>Bold:</strong> Check the box to boldface the text.</p>
+        <p><strong>Italic:</strong> Check the box to make the text italic.</p>
+        <p>
+            <strong>Color:</strong> Select the color of the text. You can select one of the predefined colors from the list.
+            If you select &quot;Purple&quot;, the color of the text will match the purple color used for the
+            rest of the course (which can be set through the <a href="EventCustomizeCourseAppearance.htm">Customize Appearance</a> command.)
+        </p>
+        <p><strong>Change Color:</strong> If you wish to select a color other than the predefined colors in the list, click this button and choose the amount of Cyan, Magenta, Yellow, and Black in the color that you want.</p>
+        <p><strong>Size:</strong> If Automatic is <u>not</u> checked, determines the size of the text. The size indicates the height, in mm, of a capital letter or digit.</p>
+        <p><strong>Automatic:</strong> If checked, indicates that the text size is set to fill the rectangle.</p>
     </ul>
     <p>&nbsp;</p>
 <p>After clicking &quot;OK&quot;, then press and hold the left mouse button. Drag the 
-mouse to size the text as desired. When the text is the correct size, release 
+mouse to size the text box as desired. When the text is the correct size, release 
 the left mouse button.</p>
 <p>&nbsp;</p>
 <p><strong>Note: </strong>once the text is placed, use the

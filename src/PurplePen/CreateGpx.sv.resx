@@ -123,6 +123,9 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>Namnprefix:</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Waypoints</value>
+  </data>
   <data name="headerLabel.Text" xml:space="preserve">
     <value>En GPX-fil innehåller GPS-koordinater för kontroller och kan laddas in i en GPS eller smarttelefon för att verifiera den korrekta positionen på kontroller.</value>
   </data>

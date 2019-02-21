@@ -147,6 +147,9 @@
   <data name="relayLegMenuItem.Text" xml:space="preserve">
     <value>リレーレッグ</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>外観</value>
   </data>
@@ -164,6 +167,15 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>フォント:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>サイズ:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>自動入力</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>サンプル</value>

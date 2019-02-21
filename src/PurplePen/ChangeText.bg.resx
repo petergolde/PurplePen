@@ -132,11 +132,17 @@
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Списък на класовете</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Име на файла</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Оформление</value>
   </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Получер</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>мм</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Текст</value>

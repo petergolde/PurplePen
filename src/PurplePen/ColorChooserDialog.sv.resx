@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label5.Text" xml:space="preserve">
-    <value>Black:</value>
+    <value>Svart:</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Yellow:</value>
+    <value>Gul:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Magenta:</value>

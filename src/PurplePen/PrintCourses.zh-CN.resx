@@ -147,9 +147,6 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>副本</value>
   </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>栅格化印刷前</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>打印地图交流在同一地图 </value>
   </data>
@@ -179,5 +176,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>打印课程</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>栅格化印刷前</value>
   </data>
 </root>

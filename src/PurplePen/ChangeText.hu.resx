@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Pálya rész</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Pálya variáció</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Pálya hossz</value>
   </data>
@@ -140,6 +143,12 @@
   </data>
   <data name="relayTeamMenuItem.Text" xml:space="preserve">
     <value>Váltó csapat</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Váltó átmenet</value>
+  </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Fájl neve</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Kinézet</value>
@@ -158,6 +167,15 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Betűtípus:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automatikus</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Minta</value>

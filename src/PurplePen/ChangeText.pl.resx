@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Skala</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Wygląd</value>
   </data>
@@ -155,6 +158,15 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Czcionka:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Rozmiar:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automatyczna</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Przykład</value>

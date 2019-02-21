@@ -135,11 +135,17 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Merilo tiska</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Ime datoteke</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Prikaz</value>
   </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
     <value>Krepko</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Besedilo</value>

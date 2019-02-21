@@ -141,6 +141,15 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Utskrifts skala</value>
   </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Stafettlag</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Stafettetappe</value>
+  </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Filnavn</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>
   </data>
@@ -158,6 +167,15 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Skrift:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Størrelse:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automatisk</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Eksempel</value>

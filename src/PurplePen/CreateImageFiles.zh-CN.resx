@@ -129,11 +129,23 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>选择一个文件夹的软件包</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>文件格式：</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>文件名前缀：</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>文件格式：</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>绿红黄黑标准颜色</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>输出</value>

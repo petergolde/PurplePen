@@ -147,9 +147,6 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Liczba kopii</value>
   </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Zmień na raster przed wydrukiem</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Wydrukuj zmiany map na tej samej mapie </value>
   </data>
@@ -179,5 +176,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Drukuj trasy</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Zmień na raster przed wydrukiem</value>
   </data>
 </root>

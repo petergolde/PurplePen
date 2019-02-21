@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Skala inte</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Relativt kartskalan</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Relativt 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Skala objekts storlek:</value>
+  </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Storlek på automatisk sträckgap:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -129,8 +144,11 @@
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Storlek på centrumpunkt:</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Vanlig</value>
+    <value>Normal</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
     <value>Fet</value>
@@ -139,37 +157,37 @@
     <value>Kontrollnummerutseende:</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
-    <value>Kontrollnummrets höjd</value>
+    <value>Höjd på kontrollnummer:</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="labelLineWidth.Text" xml:space="preserve">
-    <value>Linjens bredd</value>
+    <value>Linjebredd:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="labelControlCircle.Text" xml:space="preserve">
-    <value>Kontrollcirkelns diameter</value>
+    <value>Kontrollringens diameter</value>
   </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
-    <value>Använd IOF standardstorlek</value>
+    <value>Använd IOF-normens storlek</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Objektets Storlek</value>
+    <value>Objektstorlek</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Smält samman lila med underliggande kartfärger</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Black:</value>
+    <value>Svart:</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Yellow:</value>
+    <value>Gul:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Magenta:</value>
@@ -181,7 +199,7 @@
     <value>Använd lila färgen från kartan</value>
   </data>
   <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Lila Färg</value>
+    <value>Färgen lila</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Förhandsvisning</value>
@@ -197,6 +215,15 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Kontrollbeskrivning</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Använd övertryckseffekt för färger markerade med 'övertryck'</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>OCAD-karta</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Anpassa utseende</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Färgväljare...</value>

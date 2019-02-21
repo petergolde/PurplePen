@@ -124,7 +124,7 @@
     <value>Antal löpare</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
-    <value>Mata in antalet löpare på varje bana genom att klicka i andra kolumnen och skriv in antalet löpare.</value>
+    <value>Ange antalet löpare på varje bana genom att klicka i andra kolumnen och mata in antalet löpare.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Antal löpare</value>

@@ -129,11 +129,26 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Velg en mappe for OCAD filer</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Filformat:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Filnamnprefiks:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Filformat:</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>Nei</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Ja</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Utdata</value>
@@ -155,15 +170,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Lag OCAD filer</value>
-  </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

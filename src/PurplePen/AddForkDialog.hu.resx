@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWhichType.Text" xml:space="preserve">
+    <value>Milyen variációt ad hozzá?</value>
+  </data>
+  <data name="radioButtonFork.Text" xml:space="preserve">
+    <value>Villa</value>
+  </data>
   <data name="radioButtonLoop.Text" xml:space="preserve">
     <value>Hurok</value>
+  </data>
+  <data name="labelNumberBranches.Text" xml:space="preserve">
+    <value>Elágazások száma:</value>
   </data>
   <data name="comboBoxNumberBranches.Items" xml:space="preserve">
     <value>2</value>
@@ -137,5 +146,23 @@
   </data>
   <data name="comboBoxNumberBranches.Items5" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items6" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items7" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="comboBoxNumberBranches.Items8" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="labelNumberLoops.Text" xml:space="preserve">
+    <value>Hurkok száma:</value>
+  </data>
+  <data name="labelSummary.Text" xml:space="preserve">
+    <value>A hurokpontot négyszer kell érinteni. Így 24 különböző út lehetséges a hurkokon.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Variáció hozzáadása</value>
   </data>
 </root>

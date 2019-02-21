@@ -138,6 +138,9 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Trüki mõõtkava</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Faili nimi</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Välimus</value>
   </data>
@@ -155,6 +158,15 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Font:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Suurus:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automaatne</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Näide</value>

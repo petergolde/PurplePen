@@ -156,6 +156,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Tipo de letra:</value>
   </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Amostra</value>
   </data>

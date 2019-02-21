@@ -121,7 +121,7 @@
     <value>Ta bort</value>
   </data>
   <data name="unusedControlsLabel.Text" xml:space="preserve">
-    <value>Följande kontroller finns i samlingen "Alla kontroller" men ingen av dem används i någon bana. Klicka Ta bort för att ta bort alla markerade kontroller</value>
+    <value>Följande kontroller finns i "Alla kontroller" men ingen av dom används i någon bana. Klicka "Ta bort" för att ta bort alla markerade kontroller</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Oanvända kontroller</value>

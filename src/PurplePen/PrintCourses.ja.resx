@@ -147,9 +147,6 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>部数</value>
   </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>印刷の前にラスタ化する</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>複数のコースパートを同じ地図に印刷 </value>
   </data>
@@ -179,6 +176,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>コースを印刷</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>印刷の前にラスタ化する</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
     <value>Tabloid (11"x17")</value>

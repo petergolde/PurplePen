@@ -147,9 +147,6 @@
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Koopiad</value>
   </data>
-  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
-    <value>Rasterkaardi loomine enne trükkimist</value>
-  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Lisa kaardivahetus samale kaardile </value>
   </data>
@@ -179,6 +176,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Trüki rajad</value>
+  </data>
+  <data name="checkBoxRasterPrinting.Text" xml:space="preserve">
+    <value>Rasterkaardi loomine enne trükkimist</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
     <value>Paber (11"x17")</value>

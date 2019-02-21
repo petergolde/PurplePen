@@ -126,4 +126,7 @@
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Nyomtatási kép…</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Váltó csapat variáció</value>
+  </data>
 </root>

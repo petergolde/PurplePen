@@ -110,10 +110,10 @@
             this.Controls.Add(this.middleButton);
             this.Controls.Add(this.labelExplanation);
             this.Controls.Add(this.startButton);
-            this.HelpTopic = "MovingSharedControl.htm";
+            this.HelpTopic = "EditAddTimedStart.htm";
             this.KeyPreview = true;
             this.Name = "MapIssueChoiceDialog";
-            this.Text = "Moving Shared Control";
+            this.Text = "Select Map Issue Point";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MoveControlChoiceDialog_KeyDown);
             this.ResumeLayout(false);
 

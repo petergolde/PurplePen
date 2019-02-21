@@ -129,11 +129,26 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Избери папка за OCAD файловете</value>
   </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Формат на файла:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>OCAD 6</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>OCAD 7</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>OCAD 8</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Представка за име на файл:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Формат на файла:</value>
+  <data name="comboBoxWorldFile.Items" xml:space="preserve">
+    <value>Не</value>
+  </data>
+  <data name="comboBoxWorldFile.Items1" xml:space="preserve">
+    <value>Да</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Извеждане към</value>
@@ -155,15 +170,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Създай файлове за OCAD</value>
-  </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

@@ -118,21 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventDirectoryLabel.Text" xml:space="preserve">
-    <value>Vilken katalog vill du spara dina tävlingsbanfiler i?</value>
+    <value>I vilken mapp vill du spara dina tävlingsbanfiler?</value>
   </data>
   <data name="useMapDirectory.Text" xml:space="preserve">
-    <value>I samma katalog som kartfilen.</value>
+    <value>I samma mapp som kartfilen.</value>
   </data>
   <data name="useOtherFolder.Text" xml:space="preserve">
-    <value>I en annan katalog som jag väljer.</value>
+    <value>I en annan mapp som jag väljer.</value>
   </data>
   <data name="chooseFolder.Text" xml:space="preserve">
-    <value>Välj katalog...</value>
+    <value>Välj mapp...</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>Välj katalog för din tävlingsfil</value>
+    <value>Välj mapp för din tävlingsfil</value>
   </data>
   <data name="directoryDisplay.Text" xml:space="preserve">
-    <value>Vald katalog</value>
+    <value>Vald mapp</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Tävlingsfilens plats</value>
   </data>
 </root>

@@ -148,10 +148,10 @@
     <value>Skrivare:</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
-    <value>Utdata</value>
+    <value>Skrivare</value>
   </data>
   <data name="descriptionKindCombo.Items" xml:space="preserve">
-    <value>Bana standard</value>
+    <value>Banans förvalda</value>
   </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Symboler</value>
@@ -169,7 +169,7 @@
     <value>mm</value>
   </data>
   <data name="lineSizeLabel.Text" xml:space="preserve">
-    <value>Linjetjocklek</value>
+    <value>Linjetjocklek:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Utseende</value>
@@ -190,7 +190,7 @@
     <value>kontrollbeskrivningar per bana</value>
   </data>
   <data name="copiesCombo.Items" xml:space="preserve">
-    <value>en kopia av varje bana</value>
+    <value>en kopia för varje bana</value>
   </data>
   <data name="copiesCombo.Items1" xml:space="preserve">
     <value>en sida för varje bana</value>

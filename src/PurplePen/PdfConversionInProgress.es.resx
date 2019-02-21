@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="labelReadingPDF.Text" xml:space="preserve">
-    <value>El conversor PDFium PDF está leyendo su PDF...</value>
-  </data>
-  <data name="labelFailure.Text" xml:space="preserve">
-    <value>La lectura de PDF ha fallado. Los errores se muesteran a continuación.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Leyendo PDF</value>
-  </data>
 </root>

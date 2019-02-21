@@ -165,6 +165,12 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Yazı Tipi:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="labelFontSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Örnek</value>
   </data>

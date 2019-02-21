@@ -123,7 +123,7 @@ UsingMapExchanges.htm
 EditAddMapExchangeAtControlPoint.htm
 EditAddFlaggedRouteToMapExchange.htm
 CoursePartProperties.htm
-FileCreatePdfFiles.htm
+FileCreatePdfCourses.htm
 EditAddImage.htm
 EditAddLine.htm
 EditAddRectangle.htm
@@ -140,6 +140,6 @@ AdditionalTopics.htm
 VariationFixedBranches.htm
 ViewAdditionalCourses.htm
 ViewClearAdditionalCourses.htm
-
+EditAddTimedStart.htm
 [INFOTYPES]
 

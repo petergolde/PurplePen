@@ -117,43 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="comboBoxVariations.Items" xml:space="preserve">
-    <value>Cada variación de forma separada</value>
-  </data>
-  <data name="comboBoxVariations.Items1" xml:space="preserve">
-    <value>Cada posta de forma separada</value>
-  </data>
-  <data name="comboBoxVariations.Items2" xml:space="preserve">
-    <value>Todas las variaciones combinadas</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Variaciones:</value>
-  </data>
-  <data name="labelAllVariations.Text" xml:space="preserve">
-    <value>Mostrar todas las mariposas juntas en un solo mapa.</value>
-  </data>
-  <data name="labelSeparateVariations.Text" xml:space="preserve">
-    <value>Un mapa para cada posible variación en el recorrido.</value>
-  </data>
-  <data name="labelByLeg.Text" xml:space="preserve">
-    <value>Un mapa para cada posta en los equipos de relevos que elija.</value>
-  </data>
-  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
-    <value>Debes definir primero equipos de relevos seleccionando Variaciones de Equipo de Relevos... en el menú Recorrido.</value>
-  </data>
-  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
-    <value>Seleccionar Variaciones Individuales</value>
-  </data>
-  <data name="labelNumberOfTeams.Text" xml:space="preserve">
-    <value>Este recorrido tiene {0} equipos de relevos asignados. Usa Variaciones de Equipo de Relevos... en el menú Recorrido para cambiar el número de equipos.</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>a</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Seleccionar qué equipos imprimir/exportar:</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Elegir Variaciones</value>
-  </data>
 </root>

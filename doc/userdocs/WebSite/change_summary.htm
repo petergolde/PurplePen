@@ -16,6 +16,81 @@
 
     <h1>Purple Pen Change Summary</h1>
 
+    <h2>Changes in 3.2.0</h2>
+    <h3>New/Changed features</h3>
+    <ul>
+        <li>
+            A new font is now used for the control descriptions, and also for numbers on the map. This font
+            has a more current look, and also has better digits "6" and "9" that are less likely to be confused for an "8".
+            The font is "Roboto" and "Roboto Condensed", and is installed automatically when Purple Pen is installed.
+        </li>
+        <li>
+            A new command, File/Create Image Files..., allows you to create PNG, JPEG, or GIF images from your courses. 
+            Optionally, the images can be georeferenced with world files.
+        </li>
+        <li>
+            Two new commands: File/Create PDFs/Descriptions and File/Create PDFs/Punch Cards allow you to create PDFs of the
+            description sheets or master punch cards. This is easier than using a PDF print driver.
+        </li>
+        <li>
+            The Add/Text command allows explicitly setting a text size.
+        </li>
+        <li>
+            The File/Create RouteGadget files command now exports a world file along with the GIF file (if the underlying map is georeferenced) so that 
+            RouteGadget understands the georeferencing. Also, the RouteGadget image now includes the entire print area.
+        </li>
+        <li>
+            The Add/Map Issue Point has been renamed to Add/Timed Start to better reflect its correct purpose. The command
+            now allows you to place the map issue point at the beginning, middle, or end of a marked route from the timed start
+            to the start triangle. (Thanks to David Rosen for clarifying this.)
+        </li>
+        <li>
+            Purple Pen now correctly reads all kinds of georeferencing from OpenOrienteering Mapper (previously only UTM
+            georeferencing worked).
+        </li>
+        <li>
+            Two new special texts are available for the Add/Text command: $(FileName) for the Purple Pen file name, and $(MapFileName)
+            for the map file name.
+        </li>
+        <li>
+            You can now used fixed branches within nested forks when creating relay variations. 
+        </li>
+        <li>
+            When using relay variations, the variation code can be hidden from the control descriptions on the map.
+        </li>
+        <li>
+            When printing courses, the rasterize option that used to be present (and on by default) is no longer an option -- it
+            is always used.
+        </li>
+        <li>
+            The web site now has a "Learn" section with links to videos and other resources for helping to learn Purple Pen.
+            If you have materials that would be useful for this section, please let me know!
+        </li>
+
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            Control circles with gaps in them are now exported to OpenOrienteering Mapper correctly.
+        </li>
+        <li>
+            Some fixes were made in reading georeferenced OCAD maps for some less commonly used map projections.
+        </li>
+        <li>
+            Several fixes were made for relays that include map exchanges. (Thanks to John Ockenden for reporting these.)
+        </li>
+        <li>
+            The algorithm for distributing relay variations among teams has been revised to better distribute
+            legs among team members. Thanks to Eric Harper for reporting this bug.
+        </li>
+        <li>
+            OCAD produces PDF files that are not correctly formatted according to the PDF specification. In certain
+            rare cases, this caused Purple Pen to hang when creating PDF files with such a PDF as the map file. The
+            PDF reading code was updated to not be susceptable to such incorrect PDF files. Thanks to Ian Jessup for 
+            providing an example of this issue.
+        </li>
+    </ul>
+
     <h2>Changes in 3.1.6</h2>
     <h3>Bug Fixes</h3>
     <ul>
