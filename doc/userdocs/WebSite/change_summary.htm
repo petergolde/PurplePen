@@ -16,6 +16,16 @@
 
     <h1>Purple Pen Change Summary</h1>
 
+    <h2>Changes in 3.2.1</h2>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            In certain rare cases, an old version of "Roboto Thin" already installed on a computer would
+            cause the wrong font to be used for control number. This version fixes that problem.
+            (Thanks to David Rosen for noticing and helping to debug this problem.)
+        </li>
+    </ul>
+
     <h2>Changes in 3.2.0</h2>
     <h3>New/Changed features</h3>
     <ul>
@@ -25,7 +35,7 @@
             The font is "Roboto" and "Roboto Condensed", and is installed automatically when Purple Pen is installed.
         </li>
         <li>
-            A new command, File/Create Image Files..., allows you to create PNG, JPEG, or GIF images from your courses. 
+            A new command, File/Create Image Files..., allows you to create PNG, JPEG, or GIF images from your courses.
             Optionally, the images can be georeferenced with world files.
         </li>
         <li>
@@ -36,7 +46,7 @@
             The Add/Text command allows explicitly setting a text size.
         </li>
         <li>
-            The File/Create RouteGadget files command now exports a world file along with the GIF file (if the underlying map is georeferenced) so that 
+            The File/Create RouteGadget files command now exports a world file along with the GIF file (if the underlying map is georeferenced) so that
             RouteGadget understands the georeferencing. Also, the RouteGadget image now includes the entire print area.
         </li>
         <li>
@@ -53,7 +63,7 @@
             for the map file name.
         </li>
         <li>
-            You can now used fixed branches within nested forks when creating relay variations. 
+            You can now used fixed branches within nested forks when creating relay variations.
         </li>
         <li>
             When using relay variations, the variation code can be hidden from the control descriptions on the map.
@@ -86,7 +96,7 @@
         <li>
             OCAD produces PDF files that are not correctly formatted according to the PDF specification. In certain
             rare cases, this caused Purple Pen to hang when creating PDF files with such a PDF as the map file. The
-            PDF reading code was updated to not be susceptable to such incorrect PDF files. Thanks to Ian Jessup for 
+            PDF reading code was updated to not be susceptable to such incorrect PDF files. Thanks to Ian Jessup for
             providing an example of this issue.
         </li>
     </ul>
@@ -94,8 +104,10 @@
     <h2>Changes in 3.1.6</h2>
     <h3>Bug Fixes</h3>
     <ul>
-        <li>Relay teams where the starting bib number was not 1 had problem when trying to print courses or descriptions and
-        selecting print "each relay leg separately". Thanks to Eric Halper for reporting this bug.</li>
+        <li>
+            Relay teams where the starting bib number was not 1 had problem when trying to print courses or descriptions and
+            selecting print "each relay leg separately". Thanks to Eric Halper for reporting this bug.
+        </li>
     </ul>
 
     <h2>Changes in 3.1.5</h2>
