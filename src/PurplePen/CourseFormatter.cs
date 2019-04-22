@@ -110,7 +110,7 @@ namespace PurplePen
                     double angleOut = ComputeAngleOut(eventDB, courseView, controlIndex);
 
                     // Get the normal course object associated with this control.
-                    courseObj = CreateCourseObject(eventDB, courseView.Kind, courseObjRatio, appearance, courseView.PrintScale, controlView, angleOut);
+                    courseObj = CreateCourseObject(eventDB, courseView.Kind, courseObjRatio, appearance, courseView.CircleGapScale(appearance), controlView, angleOut);
                     if (courseObj != null) {
                         courseObj.layer = layer;
                         courseLayout.AddCourseObject(courseObj);
@@ -625,11 +625,11 @@ namespace PurplePen
             return CreateCourseObject(eventDB, courseKind, courseObjRatio, appearance, printScale, controlView.controlId, controlView.courseControlIds[0], angleOut);
         }
 
-        static CourseObj CreateCourseObject(EventDB eventDB, CourseView.CourseViewKind courseKind, float courseObjRatio, CourseAppearance appearance, float printScale, 
+        static CourseObj CreateCourseObject(EventDB eventDB, CourseView.CourseViewKind courseKind, float courseObjRatio, CourseAppearance appearance, float scaleForCircleGaps, 
                                             Id<ControlPoint> controlId, Id<CourseControl> courseControlId, double angleOut)
         {
             ControlPoint control = eventDB.GetControl(controlId);
-            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, printScale);
+            CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, scaleForCircleGaps);
             CourseObj courseObj = null;
 
             switch (control.kind) {

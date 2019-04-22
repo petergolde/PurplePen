@@ -2320,10 +2320,12 @@ namespace PurplePen
                     return;         // gapLocation must be the same.
 
                 // Change the gaps of the control.
+                float scaleForCircleGaps = selectionMgr.ActiveCourseView.CircleGapScale(GetCourseAppearance());
+
                 undoMgr.BeginCommand(8142, CommandNameText.AddGap);
-                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, scaleForCircleGaps);
                 gaps = ChangeEvent.AddGap(gaps, angleInRadians);
-                ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale, gaps);
+                ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, scaleForCircleGaps, gaps);
                 undoMgr.EndCommand(8142);
             }
         }
@@ -2335,8 +2337,10 @@ namespace PurplePen
 
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
                 // Change the gaps of the control.
+                float scaleForCircleGaps = selectionMgr.ActiveCourseView.CircleGapScale(GetCourseAppearance());
+
                 undoMgr.BeginCommand(8142, CommandNameText.AddGap);
-                ChangeEvent.AddGap(eventDB, selectionMgr.ActiveCourseView.PrintScale, selection.SelectedControl, gapLocation1, gapLocation2);
+                ChangeEvent.AddGap(eventDB, scaleForCircleGaps, selection.SelectedControl, gapLocation1, gapLocation2);
                 undoMgr.EndCommand(8142);
             }
         }
@@ -2344,8 +2348,10 @@ namespace PurplePen
         // Move a gap end point on a control.
         public void MoveControlGap(Id<ControlPoint> controlId, CircleGap[] newGaps)
         {
+            float scaleForCircleGaps = selectionMgr.ActiveCourseView.CircleGapScale(GetCourseAppearance());
+
             undoMgr.BeginCommand(8142, CommandNameText.MoveGap);
-            ChangeEvent.ChangeControlGaps(eventDB, controlId, selectionMgr.ActiveCourseView.PrintScale, CircleGap.SimplifyGaps(newGaps));
+            ChangeEvent.ChangeControlGaps(eventDB, controlId, scaleForCircleGaps, CircleGap.SimplifyGaps(newGaps));
             undoMgr.EndCommand(8142);
         }
 
@@ -2399,7 +2405,9 @@ namespace PurplePen
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Control) {
                 ControlPoint control = eventDB.GetControl(selection.SelectedControl);
                 if (control.kind == ControlPointKind.Normal || control.kind == ControlPointKind.Finish) {
-                    CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                    float scaleForCircleGaps = selectionMgr.ActiveCourseView.CircleGapScale(GetCourseAppearance());
+
+                    CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, scaleForCircleGaps);
 
                     if (gaps == null || gaps.Length == 0)
                         return CommandStatus.Disabled;        // no gaps to remove
@@ -2449,10 +2457,12 @@ namespace PurplePen
                     return;         // gapLocation must be the same.
 
                 // Change the gaps of the control.
+                float scaleForCircleGaps = selectionMgr.ActiveCourseView.CircleGapScale(GetCourseAppearance());
+
                 undoMgr.BeginCommand(8147, CommandNameText.RemoveGap);
-                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale);
+                CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, selection.SelectedControl, scaleForCircleGaps);
                 gaps = ChangeEvent.RemoveGap(gaps, angleInRadians);
-                ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, selectionMgr.ActiveCourseView.PrintScale, gaps);
+                ChangeEvent.ChangeControlGaps(eventDB, selection.SelectedControl, scaleForCircleGaps, gaps);
                 undoMgr.EndCommand(8147);
             }
         }

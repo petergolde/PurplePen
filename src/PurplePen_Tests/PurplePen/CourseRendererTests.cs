@@ -420,6 +420,32 @@ namespace PurplePen.Tests
 
         }
 
+        [TestMethod]
+        public void ScalingCircleGaps()
+        {
+            CourseAppearance appearance = (CourseAppearance)defaultCourseAppearance.Clone();
+
+            CourseDesignator courseDesignator10K = new CourseDesignator(CourseId(1));
+            CourseDesignator courseDesignator5K = new CourseDesignator(CourseId(2));
+            CourseDesignator courseDesignator15K = new CourseDesignator(CourseId(3));
+
+            appearance.itemScaling = ItemScaling.None;
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator5K, false, "scaling_5k_noscale", new RectangleF(69, -80, 70, 70), appearance);
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator10K, false, "scaling_10k_noscale", new RectangleF(69, -80, 70, 70), appearance);
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator15K, false, "scaling_15k_noscale", new RectangleF(69, -80, 70, 70), appearance);
+
+            appearance.itemScaling = ItemScaling.RelativeToMap;
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator5K, false, "scaling_5k_maprelative", new RectangleF(69, -80, 70, 70), appearance);
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator10K, false, "scaling_10k_maprelative", new RectangleF(69, -80, 70, 70), appearance);
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator15K, false, "scaling_15k_maprelative", new RectangleF(69, -80, 70, 70), appearance);
+
+            appearance.itemScaling = ItemScaling.RelativeTo15000;
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator5K, false, "scaling_5k_15krelative", new RectangleF(69, -80, 70, 70), appearance);
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator10K, false, "scaling_10k_15krelative", new RectangleF(69, -80, 70, 70), appearance);
+            CheckCourse("courserenderer\\CircleGapScaling.ppen", courseDesignator15K, false, "scaling_15k_15krelative", new RectangleF(69, -80, 70, 70), appearance);
+
+        }
+
     }
 }
 

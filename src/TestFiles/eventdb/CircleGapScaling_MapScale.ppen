@@ -1,0 +1,100 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>CircleGapScaling</title>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\marymoor.ocd">..\marymoor.ocd</map>
+    <standards map="2017" description="2018" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="false" restrict-to-page-size="false" left="68.6841354" top="-36.1607437" right="139.327362" bottom="-81.8287354" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeToMap" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="85.8438644" y="-60.8830643" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="105.251122" y="-62.4152145" />
+    <gaps scale="10000">11111111111111111111111111100011</gaps>
+    <circle-gaps scale="10000">20.32541:57.95049</circle-gaps>
+    <gaps scale="5000">11111111000001111111111111111111</gaps>
+    <circle-gaps scale="5000">213.8882:265.411469</circle-gaps>
+    <gaps scale="15000">11111000000001111111000000001111</gaps>
+    <circle-gaps scale="15000">45.168232:139.630951,210.8604:306.251465</circle-gaps>
+  </control>
+  <control id="3" kind="finish">
+    <location x="128.233383" y="-68.5438156" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <control id="4" kind="normal">
+    <code>32</code>
+    <location x="94.99775" y="-57.34821" />
+    <gaps scale="5000">11111111000011111111111111111111</gaps>
+    <circle-gaps scale="5000">226.656967:270.173065</circle-gaps>
+  </control>
+  <control id="5" kind="normal">
+    <code>33</code>
+    <location x="95.0198441" y="-66.9218445" />
+    <gaps scale="10000">11111111111111111111111110001111</gaps>
+    <circle-gaps scale="10000">40.3643837:73.49548</circle-gaps>
+  </control>
+  <control id="6" kind="normal">
+    <code>34</code>
+    <location x="95.2004242" y="-61.77541" />
+    <gaps scale="15000">11111000000011111111100000001111</gaps>
+    <circle-gaps scale="15000">46.78991:120.465515,224.029037:303.023834</circle-gaps>
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course10K</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="false" left="68.6841354" top="-36.1607437" right="139.327362" bottom="-81.8287354" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Course5K</name>
+    <labels label-kind="sequence" />
+    <first course-control="4" />
+    <print-area automatic="false" restrict-to-page-size="false" left="68.6841354" top="-36.1607437" right="139.327362" bottom="-81.8287354" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="5000" description-kind="symbols" />
+  </course>
+  <course id="3" kind="normal" order="3">
+    <name>Course 15K</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
+    <print-area automatic="false" restrict-to-page-size="false" left="68.6841354" top="-36.1607437" right="139.327362" bottom="-81.8287354" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3" />
+  <course-control id="4" control="1">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="5" control="2">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="3" />
+  <course-control id="7" control="1">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="8" control="2">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="3" />
+  <course-control id="10" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="11" control="5">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="12" control="6">
+    <next course-control="8" />
+  </course-control>
+</course-scribe-event>

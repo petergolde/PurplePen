@@ -2558,6 +2558,7 @@ namespace PurplePen
         public bool ignoreMissingFonts;   // If true, don't warn about missing fonts in the map.
         public PunchcardFormat punchcardFormat = new PunchcardFormat();   // format of punch cards
         public CourseAppearance courseAppearance = new CourseAppearance();   // appearance of courses.
+        public bool itemScalingAppliedToCircleGaps = false; // for a backward compatibility bug; used only in FixCircleGaps.
         public string descriptionLangId;   // language id for descriptions.
         public string descriptionStandard; // description standard; either "2004" or "2018"
         public Dictionary<string, List<SymbolText>> customSymbolText = new Dictionary<string, List<SymbolText>>();   // maps symbol IDs to list of custom symbol text.
@@ -2758,6 +2759,7 @@ namespace PurplePen
             if (courseAppearance.numberHeight != 1.0F)
                 xmloutput.WriteAttributeString("number-size-ratio", XmlConvert.ToString(courseAppearance.numberHeight));
             xmloutput.WriteAttributeString("scale-sizes", courseAppearance.itemScaling.ToString());
+            xmloutput.WriteAttributeString("scale-sizes-circle-gaps", XmlConvert.ToString(true));  // mark that circle gaps scales have taken scaling into account.
             if (courseAppearance.numberBold)
                 xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
             if (courseAppearance.numberOutlineWidth > 0)
@@ -2880,6 +2882,7 @@ namespace PurplePen
                         courseAppearance.centerDotDiameter = xmlinput.GetAttributeFloat("center-dot-diameter", 0.0F);
                         courseAppearance.numberHeight = xmlinput.GetAttributeFloat("number-size-ratio", 1.0F);
                         courseAppearance.itemScaling = (ItemScaling) Enum.Parse(typeof(ItemScaling), xmlinput.GetAttributeString("scale-sizes", "None"));
+                        itemScalingAppliedToCircleGaps = xmlinput.GetAttributeBool("scale-sizes-circle-gaps", false);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
                         courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
                         courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
@@ -3299,12 +3302,14 @@ namespace PurplePen
             }
         }
 
-        // Older version of purple pen did not store control gaps on a per-scale basis. These are now loaded with a scale of 0. Get all the scales
-        // in the event.
         void FixControlPointGaps()
         {
-            List<Id<ControlPoint>> controlIds = new List<Id<ControlPoint>>(AllControlPointIds);
+            Event ev = GetEvent();
+            List < Id<ControlPoint>> controlIds = new List<Id<ControlPoint>>(AllControlPointIds);
 
+            // Fix 1:
+            // Older version of purple pen did not store control gaps on a per-scale basis. These are now loaded with a scale of 0. Get all the scales
+            // in the event.
             foreach (Id<ControlPoint> controlId in controlIds) {
                 ControlPoint control = GetControl(controlId);
                 if (control.gaps != null && control.gaps.ContainsKey(0)) {
@@ -3314,10 +3319,33 @@ namespace PurplePen
                     CircleGap[] gaps = control.gaps[0];
 
                     control.gaps.Remove(0);
-                    control.gaps[(int) Math.Round(GetEvent().mapScale)] = gaps;
+                    control.gaps[(int) Math.Round(ev.mapScale)] = gaps;
 
                     foreach (Course course in AllCourses)
                         control.gaps[(int) Math.Round(course.printScale)] = gaps;
+                }
+            }
+
+            // Fix 2:
+            // Per-scale gap storage didn't take item scaling into account.
+            if (ev.itemScalingAppliedToCircleGaps == false &&
+                (ev.courseAppearance.itemScaling == ItemScaling.RelativeTo15000 || ev.courseAppearance.itemScaling == ItemScaling.RelativeToMap)) {
+                // The old version incorrectly stored to the gap with the course print scale, even
+                // if item scaling was scaling things. So fix that up.
+                int scaleTo, scaleFrom;
+                if (ev.courseAppearance.itemScaling == ItemScaling.RelativeTo15000)
+                    scaleTo = 15000;
+                else
+                    scaleTo = (int) Math.Round(ev.mapScale);
+
+                foreach (Id<ControlPoint> controlId in controlIds) {
+                    ControlPoint control = GetControl(controlId);
+                    if (control.gaps != null && control.gaps.Count > 0 && !control.gaps.ContainsKey(scaleTo)) {
+                        scaleFrom = (from sc in control.gaps.Keys orderby sc descending select sc).First();
+
+                        // Fix up the gaps by copying from the largest scale that has gaps.
+                        control.gaps[scaleTo] = control.gaps[scaleFrom];
+                    }
                 }
             }
         }

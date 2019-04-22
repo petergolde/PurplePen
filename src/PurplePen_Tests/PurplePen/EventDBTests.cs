@@ -948,6 +948,74 @@ namespace PurplePen.Tests
             FixedBranchAssignments other = a.Clone();
             Assert.IsTrue(a.Equals(other));
 
+            other = new FixedBranchAssignments();
+            other.AddBranchAssignment('A', 1);
+            Assert.IsFalse(other.Equals(a));
+            Assert.IsFalse(a.Equals(other));
+        }
+
+        [TestMethod]
+        public void UpdateCircleGapsForItemScaling()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("eventdb\\CircleGapScaling_MapScale.ppen"));
+            eventDB.Validate();
+
+            ControlPoint control;
+            
+            control = eventDB.GetControl(ControlId(4));
+            Assert.IsTrue(control.gaps.ContainsKey(5000) && control.gaps.ContainsKey(10000));
+            Assert.AreEqual(control.gaps[5000], control.gaps[10000]);
+
+            control = eventDB.GetControl(ControlId(5));
+            Assert.IsTrue(control.gaps.Count == 1 && control.gaps.ContainsKey(10000));
+
+            control = eventDB.GetControl(ControlId(6));
+            Assert.IsTrue(control.gaps.ContainsKey(15000) && control.gaps.ContainsKey(10000));
+            Assert.AreEqual(control.gaps[15000], control.gaps[10000]);
+
+
+            undomgr = new UndoMgr(5);
+            eventDB = new EventDB(undomgr);
+            eventDB.Load(TestUtil.GetTestFile("eventdb\\CircleGapScaling_15000.ppen"));
+            eventDB.Validate();
+
+            control = eventDB.GetControl(ControlId(5));
+            Assert.IsTrue(control.gaps.ContainsKey(5000) && control.gaps.ContainsKey(15000));
+            Assert.AreEqual(control.gaps[5000], control.gaps[15000]);
+
+            control = eventDB.GetControl(ControlId(4));
+            Assert.IsTrue(control.gaps.ContainsKey(10000) && control.gaps.ContainsKey(15000));
+            Assert.AreEqual(control.gaps[10000], control.gaps[15000]);
+
+            control = eventDB.GetControl(ControlId(6));
+            Assert.IsTrue(control.gaps.Count == 1 && control.gaps.ContainsKey(15000));
+
+
+        }
+
+        [TestMethod]
+        public void DontUpdateCircleGapsForItemScaling()
+        {
+            UndoMgr undomgr = new UndoMgr(5);
+            EventDB eventDB = new EventDB(undomgr);
+
+            eventDB.Load(TestUtil.GetTestFile("eventdb\\CircleGapScaling_MapScale_new.ppen"));
+            eventDB.Validate();
+
+            ControlPoint control;
+
+            control = eventDB.GetControl(ControlId(4));
+            Assert.IsTrue(control.gaps.Count == 1 && control.gaps.ContainsKey(5000));
+
+            control = eventDB.GetControl(ControlId(5));
+            Assert.IsTrue(control.gaps.Count == 1 && control.gaps.ContainsKey(10000));
+
+            control = eventDB.GetControl(ControlId(6));
+            Assert.IsTrue(control.gaps.Count == 1 && control.gaps.ContainsKey(15000));
+
         }
 
     }
