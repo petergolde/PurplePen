@@ -989,10 +989,12 @@ namespace PurplePen
 
                 // Law of cosines...
                 double arcCos = (radiusControl * radiusControl + distance * distance - radiusOther * radiusOther) / (2 * radiusControl * distance);
-                float halfAngleGap = (float) (180 * Math.Acos(arcCos) / Math.PI);
-                float angleGap = Geometry.Angle(controlObj.location, courseObj.location);
+                if (Math.Abs(arcCos) < 1) { 
+                    float halfAngleGap = (float)(180 * Math.Acos(arcCos) / Math.PI);
+                    float angleGap = Geometry.Angle(controlObj.location, courseObj.location);
 
-                controlObj.gaps = CircleGap.AddGap(controlObj.gaps, angleGap - halfAngleGap, angleGap + halfAngleGap);
+                    controlObj.gaps = CircleGap.AddGap(controlObj.gaps, angleGap - halfAngleGap, angleGap + halfAngleGap);
+                }
             }
         }
 
