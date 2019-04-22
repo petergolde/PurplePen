@@ -471,7 +471,7 @@ namespace PurplePen.Tests
 
             Assert.AreEqual(1, errors.Count);
             Assert.AreEqual("Leg 1 never reaches branch 'I': it was assigned to go a different way in a containing fork.", errors[0]);
-            Assert.AreEqual(expected, result);
+            Assert.AreNotEqual(expected, result);
         }
 
 
