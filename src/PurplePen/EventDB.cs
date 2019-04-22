@@ -731,6 +731,9 @@ namespace PurplePen
             if (other == null)
                 return false;
 
+            if (other.fixedLegsByBranchCode.Count != fixedLegsByBranchCode.Count)
+                return false;
+
             IEnumerable<char> keys = (from k in fixedLegsByBranchCode.Keys orderby k select k);
             foreach (char key in keys) {
                 if (!other.fixedLegsByBranchCode.ContainsKey(key))
