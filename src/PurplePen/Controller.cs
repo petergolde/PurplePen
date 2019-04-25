@@ -1440,6 +1440,9 @@ namespace PurplePen
         // Should bitmap files enable world file.
         public bool BitmapFilesCanCreateWorldFile()
         {
+            if (mapDisplay.CoordinateMapper == null)
+                return false;
+
             return mapDisplay.CoordinateMapper.HasRealWorldCoords;
         }
 
