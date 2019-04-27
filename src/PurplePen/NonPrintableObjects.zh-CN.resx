@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>地图文件“{ 0 }”包含的对象或者不由紫色笔完全支持符号，可能无法正确打印。可能无法正确打印如下对象。印刷竞争地图，认为课程是出口产品的文件（使用文件/创建软件包文件…），从产品的打印地图。
+    <value>地图文件“{0}”包含的对象或者不由紫色笔完全支持符号，可能无法正确打印。可能无法正确打印如下对象。印刷竞争地图，认为课程是出口产品的文件（使用文件/创建软件包文件…），从产品的打印地图。
 </value>
   </data>
   <data name="okButton.Text" xml:space="preserve">

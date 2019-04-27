@@ -169,16 +169,16 @@
     <value>相同的符号？</value>
   </data>
   <data name="CourseSummary_Title" xml:space="preserve">
-    <value>{ 0 }为课程总结</value>
+    <value>{0}为课程总结</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>{ 0 }为控制交叉引用</value>
+    <value>{0}为控制交叉引用</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>关闭在控制</value>
   </data>
   <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
-    <value>下表显示了所有的控制对，在{ 0 }米对方。相同的符号栏显示是否两个控件具有相同的主符号（D）。</value>
+    <value>下表显示了所有的控制对，在{0}米对方。相同的符号栏显示是否两个控件具有相同的主符号（D）。</value>
   </data>
   <data name="EventAudit_MissingBoxes" xml:space="preserve">
     <value>描述盒子失踪</value>
@@ -229,7 +229,7 @@
     <value>没有发现问题</value>
   </data>
   <data name="EventAudit_Title" xml:space="preserve">
-    <value>{ 0 }为事件审计</value>
+    <value>{0}为事件审计</value>
   </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
     <value>未使用的控制</value>
@@ -244,13 +244,13 @@
     <value>平均</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{ 0 }（{ 1 }控制，{ 2 }，{ 3 }我爬）</value>
+    <value>{0}（{1}控制，{2}，{3}我爬）</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
-    <value>{ 0 }（{一} Controls，{二}）</value>
+    <value>{0}（{一} Controls，{二}）</value>
   </data>
   <data name="LegLength_Title" xml:space="preserve">
-    <value>{ 0 }为课程的报告</value>
+    <value>{0}为课程的报告</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>负荷控制</value>
@@ -271,18 +271,18 @@
     <value>警告：</value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
-    <value>警告：由于腿指定的数量，在控制{ 0 }叉不会用均匀。{ 1 }腿（S）将使用分支（ES）{ 2 }，而{ 3 }腿（S）将使用分支（ES）{ 4 }。 </value>
+    <value>警告：由于腿指定的数量，在控制{0}叉不会用均匀。{1}腿（S）将使用分支（ES）{2}，而{3}腿（S）将使用分支（ES）{4}。 </value>
   </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
-    <value>把{ 0 }</value>
+    <value>把{0}</value>
   </data>
   <data name="RelayVariation_NoTeams" xml:space="preserve">
     <value>没有接力的队伍已尚未确定。选择团队和腿所需数量按“分配变化”按钮。</value>
   </data>
   <data name="RelayVariation_TeamNumber" xml:space="preserve">
-    <value>{ 0 }队</value>
+    <value>{0}队</value>
   </data>
   <data name="RelayVariation_Title" xml:space="preserve">
-    <value>{ 0 }为中继分配</value>
+    <value>{0}为中继分配</value>
   </data>
 </root>

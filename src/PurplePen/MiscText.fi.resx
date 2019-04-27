@@ -560,7 +560,7 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
     <value>Tällä rastilla on jo hajonta.</value>
   </data>
   <data name="VariationMustSelectControl" xml:space="preserve">
-    <value>Valitse rasti tai rastiväli lisätäksesi hajonta.</value>
+    <value>Valitse rasti tai rastiväli lisätäksesi hajonnan.</value>
   </data>
   <data name="VariationNotFinish" xml:space="preserve">
     <value>Maaliin ei voi lisätä hajontaa.</value>
@@ -575,31 +575,31 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
     <value>Hajontaa ei voi lisätä viimeiselle rastille. Lisää maali ensin.</value>
   </data>
   <data name="BadLegNumber" xml:space="preserve">
-    <value>'{0}' ei ole kelvollinen osuusnumero haaralle '{1}'</value>
+    <value>'{0}' ei ole kelvollinen osuusnumero hajonnalle '{1}'</value>
   </data>
   <data name="LegNotAssigned" xml:space="preserve">
     <value>Osuus {0} on määritettävä yhdelle haaroista {1}</value>
   </data>
   <data name="LegUsedTwice" xml:space="preserve">
-    <value>Osuus {0} on määritetty sekä haaralle '{1}' että haaralle '{2}'</value>
+    <value>Osuus {0} on määritetty sekä hajonnalle '{1}' että hajonnalle '{2}'</value>
   </data>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Karttaa ei voi lukea seuraavasta syystä: '{0}' Kartan avaaminen ja tallentaminen uudelleen OpenOrienteering Mapperin viimeisimmässä versiossa voi korjata ongelmia.</value>
-  </data>
-  <data name="MapIssue_Long" xml:space="preserve">
-    <value>Kartanottopaikka</value>
-  </data>
-  <data name="MapIssue_Medium" xml:space="preserve">
-    <value>Kartanotto</value>
-  </data>
-  <data name="MapIssue_Short" xml:space="preserve">
-    <value>KO</value>
   </data>
   <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
     <value>Taustalla olevalla OCAD-kartalla on näkyviä mallinetiedostoja. Mallineet (templates) eivät välttämättä näy OCADin rajoitusten takia.</value>
   </data>
   <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
     <value>OCAD-tiedostomuodon rajoitusten vuoksi (OCAD 10: ssä ja jäljempänä), kuvaobjektit tulevat näkyviin ratatiedostoissa ja lisätyt valkoiset alueet vietyihin OCAD-tiedostoihin. Tarkista OCAD-tiedostot varmistaaksesi, että kuvat näkyvät halutulla tavalla.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Kuvatiedostoja ei voi luoda seuraavasta syystä:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Luo PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF-tiedosto|*.pdf</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>

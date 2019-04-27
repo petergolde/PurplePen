@@ -133,22 +133,58 @@
     <value>File format:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
+    <value>PNG</value>
   </data>
   <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
+    <value>JPEG</value>
   </data>
   <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
+    <value>GIF</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>File name prefix:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>World file:</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>Dpi:</value>
   </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Colour model:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Output</value>
@@ -169,7 +205,7 @@
     <value>Folder</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Create OCAD Files</value>
+    <value>Create Image Files</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

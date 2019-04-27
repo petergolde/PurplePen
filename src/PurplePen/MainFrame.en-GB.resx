@@ -120,6 +120,15 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>All Controls</value>
   </data>
+  <data name="radioButtonDescriptions.Text" xml:space="preserve">
+    <value>Descriptions</value>
+  </data>
+  <data name="radioButtonTopology.Text" xml:space="preserve">
+    <value>Ordering</value>
+  </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>mapViewerTopology</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen files|*.ppen|All files|*.*</value>
   </data>
@@ -141,8 +150,29 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Create OCAD &amp;Files...</value>
   </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Create Ima&amp;ge Files...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>&amp;Descriptions...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>Pu&amp;nch Cards...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>&amp;Courses...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Create P&amp;DFs</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Create Route&amp;Gadget Files...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Create Data &amp;Interchange File (IOF XML)...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Create G&amp;PX File...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Print Descriptions...</value>
@@ -152,6 +182,9 @@
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Print &amp;Courses...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>This &amp;Part Only</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;This Course</value>
@@ -243,14 +276,53 @@
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>Map &amp;Quality</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Show P&amp;rint Area</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Show &amp;Popup Information</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;All Controls</value>
+  </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>Other Courses...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Clear Other Courses</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;View</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>&amp;Start</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>&amp;Control</value>
+  </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
     <value>&amp;Finish</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Descriptions</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Map Exchange at &amp;Control Point</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>&amp;Flagged Route to Map Exchange</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Map E&amp;xchange</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>&amp;Variation...</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Text &amp;Line...</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Timed Start</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Mandatory Crossing Point</value>
@@ -285,6 +357,18 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Add</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Map File...</value>
   </data>
@@ -300,8 +384,26 @@
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;Pin-Punch Patterns...</value>
   </data>
+  <data name="descriptionStd2004Menu.Text" xml:space="preserve">
+    <value>2004 Description Standard</value>
+  </data>
+  <data name="descriptionStd2018Menu.Text" xml:space="preserve">
+    <value>2018 Description Standard</value>
+  </data>
+  <data name="mapStd2000Menu.Text" xml:space="preserve">
+    <value>ISOM2000 Map Standard</value>
+  </data>
+  <data name="mapStd2017Menu.Text" xml:space="preserve">
+    <value>ISOM2017 Map Standard</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF &amp;Standards</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Customise &amp;Description Text...</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Customise &amp;Appearance...</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
     <value>Eve&amp;nt</value>
@@ -312,17 +414,29 @@
   <data name="deleteCourseMenu.Text" xml:space="preserve">
     <value>&amp;Delete Course</value>
   </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>D&amp;uplicate Course...</value>
+  </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Properties...</value>
   </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Course &amp;Order...</value>
+  </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>Competitor &amp;Load...</value>
+  </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>Relay Team &amp;Variations...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Course</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Delete</value>
+  </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>Delete For&amp;k/Loop</value>
   </data>
   <data name="addBendMenu.Text" xml:space="preserve">
     <value>Add &amp;Bend</value>
@@ -338,6 +452,9 @@
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Change &amp;Text...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Change Line &amp;Appearance...</value>
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otate</value>
@@ -393,6 +510,9 @@
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>&amp;Support/Bug Reporting</value>
   </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>Make a &amp;Donation</value>
+  </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;About Purple Pen</value>
   </data>
@@ -422,6 +542,9 @@
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font Metrics</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Crash</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Debug</value>
@@ -483,6 +606,21 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Add Descriptions</value>
   </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Map Exchange at Control Point</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Flagged Route to Map Exchange</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Add Map Exchange</value>
+  </data>
+  <data name="addVariationToolStripButton.Text" xml:space="preserve">
+    <value>Add Variation</value>
+  </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Timed Start</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Mandatory Crossing Point</value>
   </data>
@@ -516,6 +654,15 @@
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Add Special Item</value>
   </data>
@@ -534,8 +681,20 @@
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X:-999.99 Y:-999.99</value>
   </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml</value>
+  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Create XML Interchange File</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX file|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Create GPX File</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

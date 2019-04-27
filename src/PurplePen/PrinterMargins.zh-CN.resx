@@ -127,7 +127,7 @@
     <value>高度</value>
   </data>
   <data name="groupBoxPaperSize.Text" xml:space="preserve">
-    <value>纸张大小（{ 0 }）</value>
+    <value>纸张大小（{0}）</value>
   </data>
   <data name="radioButtonLandscape.Text" xml:space="preserve">
     <value>风景</value>

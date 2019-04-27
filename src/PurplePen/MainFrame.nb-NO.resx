@@ -147,9 +147,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Lage OCAD &amp;Filer...</value>
   </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>Lag PDF...</value>
-  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Lag Route&amp;Gadget filer...</value>
   </data>

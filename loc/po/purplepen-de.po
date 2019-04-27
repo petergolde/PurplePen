@@ -1,13 +1,13 @@
-# Purple Pen localization file
+#  localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the Purple Pen package.
+# This file is distributed under the same license as the  package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.2.0\n"
-"Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-02-20 20:23-08:00\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1045,15 +1045,15 @@ msgstr "Dateiformat:"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items
 msgid "PNG"
-msgstr "OCAD 6"
+msgstr "PNG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items1
 msgid "JPEG"
-msgstr "OCAD 7"
+msgstr "JPEG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items2
 msgid "GIF"
-msgstr "OCAD 8"
+msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
@@ -1062,39 +1062,39 @@ msgstr "Präfix für Dateinamen:"
 
 #: CreateImageFiles.resx, label1.Text
 msgid "World file:"
-msgstr ""
+msgstr "Weltdatei"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items1
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items2
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items3
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items4
 msgid "400"
-msgstr ""
+msgstr "400"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items5
 msgid "500"
-msgstr ""
+msgstr "500"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items6
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: CreateImageFiles.resx, dpiLabel.Text
 msgid "Dpi:"
-msgstr ""
+msgstr "Dpi:"
 
 #: CreateImageFiles.resx, comboBoxWorldFile.Items
 #: ReportText.resx, EventAudit_No
@@ -1108,7 +1108,7 @@ msgstr "Ja"
 
 #: CreateImageFiles.resx, labelColorModel.Text
 msgid "Color model:"
-msgstr ""
+msgstr "Farbmodell"
 
 #: CreateImageFiles.resx, comboBoxColorModel.Items
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
@@ -1167,7 +1167,7 @@ msgstr "Ordner"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr "OCAD-Dateien erstellen"
+msgstr ""
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1246,19 +1246,19 @@ msgstr "RouteGadget benötigt sowohl eine Bilddatei (.gif), als "
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
-msgstr ""
+msgstr "2.0.3"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items1
 msgid "3.0"
-msgstr ""
+msgstr "3.0"
 
 #: CreateRouteGadget.resx, labelIofXml.Text
 msgid "IOF XML Version:"
-msgstr ""
+msgstr "IOF XML Version:"
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1508,7 +1508,7 @@ msgstr ""
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr "PDF-Dateien erstellen ..."
+msgstr ""
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
@@ -1732,7 +1732,7 @@ msgstr "Text&zeile..."
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr "Kartenabgabepunkt"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -2876,7 +2876,7 @@ msgstr "Die Karte kann wegen folgendem Prpblem nicht geladen "
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr "MI"
+msgstr "TS"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
@@ -2904,11 +2904,11 @@ msgstr ""
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "PDF erstellen"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF-Datei|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "

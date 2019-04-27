@@ -270,4 +270,40 @@
   <data name="ChangeCourseAppearance" xml:space="preserve">
     <value>Customise Course Appearance</value>
   </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Add Map Exchange</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Delete Map Exchange</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Change Course Part Properties</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Change Line Appearance</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicate Course</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Create {0} &amp;Files</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Add Variation</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Delete Fork/Loop</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Relay Team Variations</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Add Map Issue Point</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Set Control Description Standard</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Set Map Standard</value>
+  </data>
 </root>

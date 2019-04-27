@@ -121,7 +121,7 @@
     <value>Kontrol dışı</value>
   </data>
   <data name="Climb" xml:space="preserve">
-    <value>Tırmanış:</value>
+    <value>Tırmanış</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
     <value>Rakip yükü:</value>
@@ -172,7 +172,7 @@
     <value>son huniye girin</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>Uzunluk:</value>
+    <value>Uzunluk</value>
   </data>
   <data name="LineHeight" xml:space="preserve">
     <value>Satır yüksekliği:</value>

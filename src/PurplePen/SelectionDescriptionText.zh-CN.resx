@@ -145,7 +145,7 @@
     <value>无</value>
   </data>
   <data name="CourseName" xml:space="preserve">
-    <value>“{ 0 }”</value>
+    <value>“{0}”</value>
   </data>
   <data name="CustomizedSymbolDesc" xml:space="preserve">
     <value>定制符号说明</value>
@@ -238,16 +238,16 @@
     <value>文本行</value>
   </data>
   <data name="TextLine_AboveAllCourses" xml:space="preserve">
-    <value>出现以上{ 0 }，{ 0，包含所有课程}</value>
+    <value>出现以上{0}，{ 0，包含所有课程}</value>
   </data>
   <data name="TextLine_AboveThisCourse" xml:space="preserve">
-    <value>出现以上{ 0 }，只有在这一过程中</value>
+    <value>出现以上{0}，只有在这一过程中</value>
   </data>
   <data name="TextLine_BelowAllCourses" xml:space="preserve">
-    <value>下面出现{ 0 }，{ 0，包含所有课程}</value>
+    <value>下面出现{0}，{ 0，包含所有课程}</value>
   </data>
   <data name="TextLine_BelowThisCourse" xml:space="preserve">
-    <value>下面出现{ 0 }，只有在这一过程中</value>
+    <value>下面出现{0}，只有在这一过程中</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
     <value>总控制：</value>
@@ -271,7 +271,7 @@
     <value>地图交换</value>
   </data>
   <data name="MapExchangeAtControl" xml:space="preserve">
-    <value>在{ 0 }交换图</value>
+    <value>在{0}交换图</value>
   </data>
   <data name="Load" xml:space="preserve">
     <value>负荷：</value>
@@ -280,7 +280,7 @@
     <value>用于：</value>
   </data>
   <data name="CourseNameAndPart" xml:space="preserve">
-    <value>“{ 0 }”，部分{ 1 }</value>
+    <value>“{0}”，部分{1}</value>
   </data>
   <data name="SpecialName_Line" xml:space="preserve">
     <value>线</value>

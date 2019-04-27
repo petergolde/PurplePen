@@ -133,22 +133,52 @@
     <value>Dateiformat:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
+    <value>PNG</value>
   </data>
   <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
+    <value>JPEG</value>
   </data>
   <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
+    <value>GIF</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Präfix für Dateinamen:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Weltdatei</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>Dpi:</value>
   </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>Nein</value>
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Ja</value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Farbmodell</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RGB</value>
@@ -173,9 +203,6 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Ordner</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>OCAD-Dateien erstellen</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

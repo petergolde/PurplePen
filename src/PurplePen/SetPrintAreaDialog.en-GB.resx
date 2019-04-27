@@ -126,6 +126,15 @@
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
     <value>Set the desired printing area by dragging with the mouse.</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Paper Size</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Set Print Area Automatically</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Fix Print Area Size to Paper Size</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Set Print Area</value>
   </data>

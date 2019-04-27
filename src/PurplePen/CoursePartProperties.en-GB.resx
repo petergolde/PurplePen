@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
+    <value>Display finish circle on this course part</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>These settings control the appearance of this part of a multi-part course.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Course Part Properties</value>
+  </data>
 </root>

@@ -157,7 +157,7 @@
     <value>Kod ve Nokta</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
-    <value>Puanları Göster:</value>
+    <value>Noktaları Göster</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
     <value>Sütun A</value>
@@ -181,10 +181,10 @@
     <value>Sınıf Listesi/ İkinci Başlık</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
-    <value>Uzunluk:</value>
+    <value>Uzunluk</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Tırmanış:</value>
+    <value>Tırmanış</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
     <value>Parkur Tipi:</value>

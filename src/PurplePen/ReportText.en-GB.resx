@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Same symbol?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visits</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Course Summary for {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Control cross-reference for {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Legs Run in Both Directions</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Neighbouring Controls</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>No problems found.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Course "{0}" contains control "{1}" twice in a row.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Repeated Controls</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Score course "{0}" contains control "{1}" twice. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Event Audit for {0}</value>
   </data>
@@ -243,8 +258,17 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Average</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} controls, {2}, {3} m climb)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} controls, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>Leg Length Report for {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Some controls are visited multiple times on the same course. The second load number counts each visit to a control separately.</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Control load</value>
@@ -261,7 +285,31 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Competitor Load Summary for {0}</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>One or more courses has variations. Load numbers will be computed assuming that competitors are evenly distributed between forks.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visits)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>WARNING:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTE: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Warning: due to the number of legs specified, the fork at control {0} will not be used evenly. {1} leg(s) will use branch(es) {2}, while {3} leg(s) will use branch(es) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Leg {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>No relay teams have been defined yet. Selected the desired number of teams and legs and press the "Assign Variations" button.</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Team {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Relay Assignments for {0}</value>
   </data>
 </root>

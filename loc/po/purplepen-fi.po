@@ -1,13 +1,13 @@
-# Purple Pen localization file
+#  localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the Purple Pen package.
+# This file is distributed under the same license as the  package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.2.0\n"
-"Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-02-20 20:24-08:00\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -492,7 +492,7 @@ msgstr "Tiedoston nimi"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Karttatiedoston nimi"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -1040,15 +1040,15 @@ msgstr "Tiedostomuoto:"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items
 msgid "PNG"
-msgstr "OCAD 6"
+msgstr "PNG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items1
 msgid "JPEG"
-msgstr "OCAD 7"
+msgstr "JPEG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items2
 msgid "GIF"
-msgstr "OCAD 8"
+msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
@@ -1057,39 +1057,39 @@ msgstr "Tiedostonimen etuliite:"
 
 #: CreateImageFiles.resx, label1.Text
 msgid "World file:"
-msgstr ""
+msgstr "World file:"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items1
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items2
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items3
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items4
 msgid "400"
-msgstr ""
+msgstr "400"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items5
 msgid "500"
-msgstr ""
+msgstr "500"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items6
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: CreateImageFiles.resx, dpiLabel.Text
 msgid "Dpi:"
-msgstr ""
+msgstr "Dpi:"
 
 #: CreateImageFiles.resx, comboBoxWorldFile.Items
 #: ReportText.resx, EventAudit_No
@@ -1103,7 +1103,7 @@ msgstr "Kyllä"
 
 #: CreateImageFiles.resx, labelColorModel.Text
 msgid "Color model:"
-msgstr ""
+msgstr "Värimalli:"
 
 #: CreateImageFiles.resx, comboBoxColorModel.Items
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
@@ -1162,7 +1162,7 @@ msgstr "Kansio"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr "Vie OCAD-tiedostoihin"
+msgstr "Luo kuvatiedostoja"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1241,19 +1241,19 @@ msgstr "Reittihärveli vaatii sekä kuvatiedoston (.gif) että IOF "
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
-msgstr ""
+msgstr "2.0.3"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items1
 msgid "3.0"
-msgstr ""
+msgstr "3.0"
 
 #: CreateRouteGadget.resx, labelIofXml.Text
 msgid "IOF XML Version:"
-msgstr ""
+msgstr "IOF XML -versio:"
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1376,7 +1376,7 @@ msgstr "Purple Pen"
 
 #: LegAssignmentsDialog.resx, BranchColumn.HeaderText
 msgid "Branch"
-msgstr "Haara"
+msgstr "Hajonta"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
@@ -1386,10 +1386,10 @@ msgstr "Osuudet"
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr "Jos haluat määrittää tietyn osuuden tietylle haaralle, "
+msgstr "Jos haluat määrittää tietyn osuuden tietylle hajonnalle, "
 "kirjoita osuusnumero(t) alapuolelle. Osuudet, joita ei ole "
-"määritetty haaralle, jaetaan jäljellä oleville haaroille "
-"satunnaisesti."
+"määritetty hajonnoille, jaetaan jäljellä oleville "
+"hajonnoille satunnaisesti."
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
@@ -1490,23 +1490,23 @@ msgstr "Vie &OCAD-tiedostoihin..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "Luo ku&vatiedostoja..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "Rastin&määritteet..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "&Leimauskuviot..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr "Vie PDF-tiedostoihin..."
+msgstr "&Radat..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr ""
+msgstr "Luo P&DF-tiedostoja"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1726,7 +1726,7 @@ msgstr "&Tekstirivi..."
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr "Kartanottopaikka"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -2805,7 +2805,7 @@ msgstr "Tällä rastilla on jo hajonta."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr "Valitse rasti tai rastiväli lisätäksesi hajonta."
+msgstr "Valitse rasti tai rastiväli lisätäksesi hajonnan."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
@@ -2827,7 +2827,7 @@ msgstr "Hajontaa ei voi lisätä viimeiselle rastille. Lisää maali "
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr "'{0}' ei ole kelvollinen osuusnumero haaralle '{1}'"
+msgstr "'{0}' ei ole kelvollinen osuusnumero hajonnalle '{1}'"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
@@ -2835,8 +2835,8 @@ msgstr "Osuus {0} on määritettävä yhdelle haaroista {1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr "Osuus {0} on määritetty sekä haaralle '{1}' että haaralle "
-"'{2}'"
+msgstr "Osuus {0} on määritetty sekä hajonnalle '{1}' että "
+"hajonnalle '{2}'"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
@@ -2848,7 +2848,7 @@ msgstr "Karttaa ei voi lukea seuraavasta syystä: '{0}' Kartan "
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr "KO"
+msgstr ""
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
@@ -2871,15 +2871,15 @@ msgstr "OCAD-tiedostomuodon rajoitusten vuoksi (OCAD 10: ssä ja "
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "Kuvatiedostoja ei voi luoda seuraavasta syystä:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "Luo PDF"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF-tiedosto|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
@@ -3121,8 +3121,8 @@ msgstr "Tapahtuman nimi näytetään kaikkien rastinmääritteiden "
 "nimenä, kun tapahtuma tallennetaan levylle.\n"
 "\n"
 "Jotta nimi mahtuu rastinmääritteisiin, sen pitää olla alle "
-"25 merkkiä pitkä. Esimerkkejä hyvistä nimistä ovat \"Kevät "
-"Suunnistus, 1. pv\" tai \"Keskilaakso-Rastit 29.9.\"."
+"25 merkkiä pitkä. Esimerkkejä hyvistä nimistä ovat "
+"\"KevätSuunnistus, 1. pv\" tai \"Keskilaakso-Rastit 29.9.\"."
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
@@ -3562,11 +3562,11 @@ msgstr "Puuttuvat pistemäärät"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
-msgstr "Tavallisilla radoilla pitäisi olla lähtökolmio"
+msgstr "Tavallisilla radoilla pitäisi olla K-piste"
 
 #: ReportText.resx, EventAudit_MissingStartScore
 msgid "Score courses should have a start triangle"
-msgstr "Pistesuunnistusradoilla pitäisi olla lähtökolmio"
+msgstr "Pistesuunnistusradoilla pitäisi olla K-piste"
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
@@ -3684,8 +3684,8 @@ msgid "Warning: due to the number of legs specified, the fork at "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
 msgstr "Varoitus: määritetystä osuuksien lukumäärästä johtuen "
 "rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. "
-"Osuuksista {1} käyttää haaraa (haaroja) {2}, kun taas "
-"osuuksista {3} käyttää haaraa (haaroja) {4}. "
+"Osuuksista {1} käyttää hajontaa (hajontoja) {2}, kun taas "
+"osuuksista {3} käyttää hajontaa (hajontoja) {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
@@ -4015,11 +4015,11 @@ msgstr "Lisää rasti \"{0}\" radalle klikkaamalla hiiren vasenta "
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr "Lisää uusi lähtö klikkaamalla hiiren vasenta painiketta"
+msgstr "Lisää uusi K-piste klikkaamalla hiiren vasenta painiketta"
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr "Lisää lähtö radalle klikkaamalla hiiren vasenta painiketta"
+msgstr "Lisää K-piste radalle klikkaamalla hiiren vasenta painiketta"
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
@@ -4181,7 +4181,7 @@ msgstr "Joukkueita:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
-msgstr "Määritä osuudet haaroille..."
+msgstr "Määritä osuudet hajonnoille..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
@@ -4189,7 +4189,7 @@ msgstr "Numerointi alkaa numerosta: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Piilota hajontakoodit kartalta"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"

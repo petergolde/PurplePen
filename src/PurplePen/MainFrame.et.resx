@@ -141,9 +141,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Tee OCADi &amp;failid...</value>
   </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>Salvesta PDFid...</value>
-  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Salvesta Route&amp;Gadget failid...</value>
   </data>

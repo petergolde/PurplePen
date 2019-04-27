@@ -139,7 +139,7 @@
     <value>点击鼠标左键放置新的控制</value>
   </data>
   <data name="AddingExistingControl" xml:space="preserve">
-    <value>单击鼠标左键添加现有的控制“{ 0 }”课程</value>
+    <value>单击鼠标左键添加现有的控制“{0}”课程</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
     <value>点击鼠标左键放置新的开始</value>
@@ -211,7 +211,7 @@
     <value>点击鼠标左键放置新的地图交换</value>
   </data>
   <data name="AddingMapExchangeToControl" xml:space="preserve">
-    <value>点击鼠标左键控制“{ 0 }“添加地图交换 </value>
+    <value>点击鼠标左键控制“{0}“添加地图交换 </value>
   </data>
   <data name="AddingRectangle" xml:space="preserve">
     <value>按住鼠标左键并拖动创建对象</value>

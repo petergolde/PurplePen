@@ -120,7 +120,7 @@
   <data name="newEventTitleLabel.Text" xml:space="preserve">
     <value>Tapahtuman nimi näytetään kaikkien rastinmääritteiden ensimmäisellä rivillä. Sitä käytetään myös tiedoston nimenä, kun tapahtuma tallennetaan levylle.
 
-Jotta nimi mahtuu rastinmääritteisiin, sen pitää olla alle 25 merkkiä pitkä. Esimerkkejä hyvistä nimistä ovat "Kevät Suunnistus, 1. pv" tai "Keskilaakso-Rastit 29.9.".</value>
+Jotta nimi mahtuu rastinmääritteisiin, sen pitää olla alle 25 merkkiä pitkä. Esimerkkejä hyvistä nimistä ovat "KevätSuunnistus, 1. pv" tai "Keskilaakso-Rastit 29.9.".</value>
   </data>
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Tapahtuman nimi:</value>

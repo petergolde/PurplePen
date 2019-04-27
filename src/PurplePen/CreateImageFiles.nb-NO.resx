@@ -132,15 +132,6 @@
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Filformat:</value>
   </data>
-  <data name="fileFormatCombo.Items" xml:space="preserve">
-    <value>OCAD 6</value>
-  </data>
-  <data name="fileFormatCombo.Items1" xml:space="preserve">
-    <value>OCAD 7</value>
-  </data>
-  <data name="fileFormatCombo.Items2" xml:space="preserve">
-    <value>OCAD 8</value>
-  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Filnavnprefiks:</value>
   </data>
@@ -173,9 +164,6 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mappe</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Lag OCAD filer</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

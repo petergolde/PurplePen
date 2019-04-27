@@ -1,13 +1,13 @@
-# Purple Pen localization file
+#  localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the Purple Pen package.
+# This file is distributed under the same license as the  package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.2.0\n"
-"Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-02-20 20:25-08:00\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -281,7 +281,7 @@ msgstr "以上{0}"
 
 #: AddTextLine.resx, comboBoxPosition.Items1
 msgid "Below {0}"
-msgstr "below { 0 }"
+msgstr "below {0}"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
@@ -289,7 +289,7 @@ msgstr "本课程只"
 
 #: AddTextLine.resx, comboBoxCourses.Items1
 msgid "All courses with {0}"
-msgstr "所有的课程{ 0 }"
+msgstr "所有的课程{0}"
 
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
@@ -2157,36 +2157,36 @@ msgstr "所有控制"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
-msgstr "无法加载“{ 0 }的原因如下："
+msgstr "无法加载“{0}的原因如下："
 
 #: MiscText.resx, CannotSaveFile
 msgid "Cannot save '{0}' for the following reason:"
-msgstr "无法保存“{ 0 }的原因如下："
+msgstr "无法保存“{0}的原因如下："
 
 #: MiscText.resx, CannotLoadMapFile
 msgid "Cannot load map file '{0}' for the following reason:"
-msgstr "无法加载地图文件“{ 0 }的原因如下："
+msgstr "无法加载地图文件“{0}的原因如下："
 
 #: MiscText.resx, CannotReadImageFile
 msgid "Cannot read image file '{0}'."
-msgstr "无法读取图像文件“{ 0 }”。"
+msgstr "无法读取图像文件“{0}”。"
 
 #: MiscText.resx, CannotPrint
 msgid "Cannot print '{0}' for the following reason:"
-msgstr "无法打印“{ 0 }的原因如下："
+msgstr "无法打印“{0}的原因如下："
 
 #: MiscText.resx, CannotCreateFile
 msgid "Cannot create '{0}' for the following reason:"
-msgstr "无法创建“{ 0 }的原因如下："
+msgstr "无法创建“{0}的原因如下："
 
 #: MiscText.resx, CannotCreateDirectory
 msgid "Cannot create folder '{0}' for the following reason:"
-msgstr "无法创建文件夹“{ 0 }的原因如下："
+msgstr "无法创建文件夹“{0}的原因如下："
 
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr "无法读取地图的原因如下：“{ 0 }使用优化/修复产品可以解决的问题。"
+msgstr "无法读取地图的原因如下：“{0}使用优化/修复产品可以解决的问题。"
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -2194,17 +2194,17 @@ msgstr "无法为以下原因造成的产品文件："
 
 #: MiscText.resx, SaveChanges
 msgid "Do you want to save the changes you made to '{0}'?"
-msgstr "你想保存您所做的更改为“{ 0 }”？"
+msgstr "你想保存您所做的更改为“{0}”？"
 
 #: MiscText.resx, FileAlreadyExists
 msgid "File '{0}' already exists in the specified folder. Click "
 "the \"Back\" button and choose a new folder or a new event "
 "title."
-msgstr "文件“{ 0 }”已存在于指定的文件夹。单击“后退”按钮选择一个新的文件夹或一个新的事件标题。"
+msgstr "文件“{0}”已存在于指定的文件夹。单击“后退”按钮选择一个新的文件夹或一个新的事件标题。"
 
 #: MiscText.resx, CodeInUse
 msgid "The control code '{0}' is already used by another control."
-msgstr "控制代码“{ 0 }”已被其他控件使用。"
+msgstr "控制代码“{0}”已被其他控件使用。"
 
 #: MiscText.resx, BadScore
 msgid "The points for a control must be an integer 1-999."
@@ -2275,17 +2275,17 @@ msgstr "输入新的文字使用|分隔线"
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
 "to delete these controls from the control collection?"
-msgstr "控制{ 0 }不再使用任何课程。你想从控制收藏删除这些控件？"
+msgstr "控制{0}不再使用任何课程。你想从控制收藏删除这些控件？"
 
 #: MiscText.resx, DeleteControlFromControlsCollection
 msgid "Control {0} is no longer used by any course. Do you want "
 "to delete this control from the control collection?"
-msgstr "控制{ 0 }是没有任何课程的应用。你想从控制收藏删除该控制吗？"
+msgstr "控制{0}是没有任何课程的应用。你想从控制收藏删除该控制吗？"
 
 #: MiscText.resx, DeleteControlFromAllControls
 msgid "Control {0} is currently used by the following courses: "
 "{1}. Do you want to delete this control anyway?"
-msgstr "控制{ 0 }目前由以下课程：{ 1 }。你想删除这个控制呢？"
+msgstr "控制{0}目前由以下课程：{1}。你想删除这个控制呢？"
 
 #: MiscText.resx, CodeBadLength
 msgid "A control code must be one, two, or three letters or digits."
@@ -2306,7 +2306,7 @@ msgstr "控制代码不应该看起来像是另一个数时颠倒。"
 
 #: MiscText.resx, DuplicateCode
 msgid "The code \"{0}\" is used more than once."
-msgstr "代码“{ 0 }”被多次使用。"
+msgstr "代码“{0}”被多次使用。"
 
 #: MiscText.resx, BadScale
 msgid "The print scale must be a number between 100 and 100,000."
@@ -2342,11 +2342,11 @@ msgid "Version {0} of Purple Pen is now available for download. "
 "(You are currently running version {1}.)\n"
 "\n"
 "Would you like to download and install the latest version?"
-msgstr "版{ 0 }紫色笔是现在可供下载。（您当前正在运行的版本{ 1 }。）要下载并安装最新版本？"
+msgstr "版{0}紫色笔是现在可供下载。（您当前正在运行的版本{1}。）要下载并安装最新版本？"
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
-msgstr "帮助文件“{ 0 }无法打开。"
+msgstr "帮助文件“{0}无法打开。"
 
 #: MiscText.resx, Zoom
 msgid "Zoom"
@@ -2364,10 +2364,9 @@ msgid "The map file \"{0}\" could not be found.\n"
 "\n"
 "After pressing OK, try to find a copy of the map file on "
 "your computer."
-msgstr "地图文件“{ 0 "
-"}”可能不会被发现。最有可能的是，地图文件已被移动或删除，或者紫色的笔文件已被移动（或不同的计算机上）。映射文件必须每次"
-"紫色笔事件文件加载存在。如果你把一个紫色的笔事件文件给另一个人，肯定的是，人都有一个副本地图文件也。按下OK，试图找到一"
-"个副本的计算机上的映射文件。"
+msgstr "地图文件“{0}”可能不会被发现。最有可能的是，地图文件已被移动或删除，或者紫色的笔文件已被移动（或不同的计算机上）。映"
+"射文件必须每次紫色笔事件文件加载存在。如果你把一个紫色的笔事件文件给另一个人，肯定的是，人都有一个副本地图文件也。按下O"
+"K，试图找到一个副本的计算机上的映射文件。"
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
@@ -2380,7 +2379,7 @@ msgstr "下一步(&N) >"
 
 #: MiscText.resx, Control_Code
 msgid "Control {0}"
-msgstr "控制{ 0 }"
+msgstr "控制{0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
@@ -2404,11 +2403,11 @@ msgstr "C"
 
 #: MiscText.resx, Margins_All
 msgid "All: {0}"
-msgstr "所有：{ 0 }"
+msgstr "所有：{0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr "左：{0}：{1}右上：{ 2 }，{三}：底"
+msgstr "左：{0}：{1}右上：{2}，{三}：底"
 
 #: MiscText.resx, Start
 msgid "Start"
@@ -2420,15 +2419,15 @@ msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
-msgstr "阿尔法{ 0 }"
+msgstr "阿尔法{0}"
 
 #: MiscText.resx, Version_Beta
 msgid "Beta {0}"
-msgstr "β{ 0 }"
+msgstr "β{0}"
 
 #: MiscText.resx, Version_RC
 msgid "RC {0}"
-msgstr "RC { 0 }"
+msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
@@ -2464,17 +2463,17 @@ msgstr "输入新的文本"
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
 "will now reload the map."
-msgstr "另一个程序改变了地图文件“{ 0 }”。紫色的笔将载入地图。"
+msgstr "另一个程序改变了地图文件“{0}”。紫色的笔将载入地图。"
 
 #: MiscText.resx, ChangeDescriptionLanguage
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr "目前事件已控制描述} { 0篇。你想改变控制描述语言{ 1 }？"
+msgstr "目前事件已控制描述} { 0篇。你想改变控制描述语言{1}？"
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr "打开“{ 0 }”"
+msgstr "打开“{0}”"
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
@@ -2506,7 +2505,7 @@ msgstr "MX"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
-msgstr "一方面{ 0 }"
+msgstr "一方面{0}"
 
 #: MiscText.resx, AllParts
 msgid "All Parts"
@@ -2514,7 +2513,7 @@ msgstr "所有的零件"
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
-msgstr "（除了{ 0 } {一}）"
+msgstr "（除了{0} {一}）"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
@@ -2552,7 +2551,7 @@ msgstr "PDFium PDF转换器无法读取PDF文件成功"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr "无法读取的文件“{ 0 } PDF转换的结果”"
+msgstr "无法读取的文件“{0} PDF转换的结果”"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
@@ -2572,16 +2571,16 @@ msgstr "被用户取消"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr "创建{ 0 }…"
+msgstr "创建{0}…"
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr "打印页的{ 0 }（的{ 1 }）"
+msgstr "打印页的{0}（的{1}）"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr "地图文件“{ 0 }”已被删除。请尝试恢复地图的文件，然后按“确定”。"
+msgstr "地图文件“{0}”已被删除。请尝试恢复地图的文件，然后按“确定”。"
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
@@ -2678,7 +2677,7 @@ msgstr "在进入或离开的空白公里长度，自动计算"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr "打印完“{ 0 }”。按OK开始印刷“{ 1 }”。"
+msgstr "打印完“{0}”。按OK开始印刷“{1}”。"
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
@@ -2694,12 +2693,12 @@ msgstr "所有的变化"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr "适合使用在{ 0 }每个参赛队继电器。"
+msgstr "适合使用在{0}每个参赛队继电器。"
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr "在环的中央控制将参观{ 0 }倍。有{ 1 }可能的路径通过循环。"
+msgstr "在环的中央控制将参观{0}倍。有{1}可能的路径通过循环。"
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
@@ -2709,7 +2708,7 @@ msgstr "控制启动一个叉或回路不能拖过程中一个新的地方。"
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr "在这个过程中有太多的总变化。不同数目的变化是有限的{ 0 }。"
+msgstr "在这个过程中有太多的总变化。不同数目的变化是有限的{0}。"
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
@@ -2805,9 +2804,8 @@ msgid "Map file \"{0}\" uses fonts that are not installed on your "
 "To fix this problem, find and install the fonts listed "
 "below with the Windows control panel, then start Purple "
 "Pen again.\n"
-msgstr "地图文件“{ 0 "
-"}”使用您的计算机上没有安装的字体。使用这些字体的文本将被绘制和印刷用默认的字体，这可能导致文本出现不同于地图设计者的原"
-"意。为了解决这个问题，找到并安装下面列出的Windows控制面板的字体，然后再开始紫色的笔。\n"
+msgstr "地图文件“{0}”使用您的计算机上没有安装的字体。使用这些字体的文本将被绘制和印刷用默认的字体，这可能导致文本出现不同于"
+"地图设计者的原意。为了解决这个问题，找到并安装下面列出的Windows控制面板的字体，然后再开始紫色的笔。\n"
 
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
@@ -3012,9 +3010,8 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "For printing competition maps, it is suggested that "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
-msgstr "地图文件“{ 0 "
-"}”包含的对象或者不由紫色笔完全支持符号，可能无法正确打印。可能无法正确打印如下对象。印刷竞争地图，认为课程是出口产品的"
-"文件（使用文件/创建软件包文件…），从产品的打印地图。\n"
+msgstr "地图文件“{0}”包含的对象或者不由紫色笔完全支持符号，可能无法正确打印。可能无法正确打印如下对象。印刷竞争地图，认为课"
+"程是出口产品的文件（使用文件/创建软件包文件…），从产品的打印地图。\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
@@ -3181,7 +3178,7 @@ msgstr "高度"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr "纸张大小（{ 0 }）"
+msgstr "纸张大小（{0}）"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
@@ -3343,11 +3340,11 @@ msgstr ""
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr "{ 0 }为课程总结"
+msgstr "{0}为课程总结"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr "{ 0 }为控制交叉引用"
+msgstr "{0}为控制交叉引用"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
@@ -3362,7 +3359,7 @@ msgid "The following table shows all control pairs that are "
 "within {0} meters of each other. The same symbol column "
 "shows whether the two controls have the same primary "
 "symbol (column D)."
-msgstr "下表显示了所有的控制对，在{ 0 }米对方。相同的符号栏显示是否两个控件具有相同的主符号（D）。"
+msgstr "下表显示了所有的控制对，在{0}米对方。相同的符号栏显示是否两个控件具有相同的主符号（D）。"
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
@@ -3441,7 +3438,7 @@ msgstr ""
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
-msgstr "{ 0 }为事件审计"
+msgstr "{0}为事件审计"
 
 #: ReportText.resx, EventAudit_UnusedControls
 #: UnusedControls.resx, $this.Text
@@ -3463,15 +3460,15 @@ msgstr "平均"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr "{ 0 }（{ 1 }控制，{ 2 }，{ 3 }我爬）"
+msgstr "{0}（{1}控制，{2}，{3}我爬）"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr "{ 0 }（{一} Controls，{二}）"
+msgstr "{0}（{一} Controls，{二}）"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
-msgstr "{ 0 }为课程的报告"
+msgstr "{0}为课程的报告"
 
 #: ReportText.resx, Load_ButterflyExists
 msgid "Some controls are visited multiple times on the same "
@@ -3526,12 +3523,12 @@ msgstr ""
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr "警告：由于腿指定的数量，在控制{ 0 }叉不会用均匀。{ 1 }腿（S）将使用分支（ES）{ 2 }，而{ 3 "
-"}腿（S）将使用分支（ES）{ 4 }。 "
+msgstr "警告：由于腿指定的数量，在控制{0}叉不会用均匀。{1}腿（S）将使用分支（ES）{2}，而{3}腿（S）将使用分支（E"
+"S）{4}。 "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr "把{ 0 }"
+msgstr "把{0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
@@ -3541,11 +3538,11 @@ msgstr "没有接力的队伍已尚未确定。选择团队和腿所需数量按
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr "{ 0 }队"
+msgstr "{0}队"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr "{ 0 }为中继分配"
+msgstr "{0}为中继分配"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3577,7 +3574,7 @@ msgstr "所有的课程"
 
 #: SelectionDescriptionText.resx, CourseName
 msgid "Course \"{0}\""
-msgstr "“{ 0 }”"
+msgstr "“{0}”"
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
@@ -3657,19 +3654,19 @@ msgstr "文本行"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
-msgstr "出现以上{ 0 }，{ 0，包含所有课程}"
+msgstr "出现以上{0}，{ 0，包含所有课程}"
 
 #: SelectionDescriptionText.resx, TextLine_AboveThisCourse
 msgid "Appears above {0}, in this course only"
-msgstr "出现以上{ 0 }，只有在这一过程中"
+msgstr "出现以上{0}，只有在这一过程中"
 
 #: SelectionDescriptionText.resx, TextLine_BelowAllCourses
 msgid "Appears below {0}, in all courses that contain {0}"
-msgstr "下面出现{ 0 }，{ 0，包含所有课程}"
+msgstr "下面出现{0}，{ 0，包含所有课程}"
 
 #: SelectionDescriptionText.resx, TextLine_BelowThisCourse
 msgid "Appears below {0}, in this course only"
-msgstr "下面出现{ 0 }，只有在这一过程中"
+msgstr "下面出现{0}，只有在这一过程中"
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
@@ -3697,7 +3694,7 @@ msgstr "地图交换"
 
 #: SelectionDescriptionText.resx, MapExchangeAtControl
 msgid "Map exchange at {0}"
-msgstr "在{ 0 }交换图"
+msgstr "在{0}交换图"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
@@ -3709,7 +3706,7 @@ msgstr "用于："
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
-msgstr "“{ 0 }”，部分{ 1 }"
+msgstr "“{0}”，部分{1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
@@ -3764,7 +3761,7 @@ msgstr "选择的个体差异"
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr "本课程有{ 0 }接力的队伍分配。用接力队的变化…从课程菜单改变球队数量。"
+msgstr "本课程有{0}接力的队伍分配。用接力队的变化…从课程菜单改变球队数量。"
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
@@ -3841,7 +3838,7 @@ msgstr "点击鼠标左键放置新的控制"
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr "单击鼠标左键添加现有的控制“{ 0 }”课程"
+msgstr "单击鼠标左键添加现有的控制“{0}”课程"
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
@@ -3949,7 +3946,7 @@ msgstr "点击鼠标左键放置新的地图交换"
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr "点击鼠标左键控制“{ 0 }“添加地图交换 "
+msgstr "点击鼠标左键控制“{0}“添加地图交换 "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"

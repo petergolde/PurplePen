@@ -120,10 +120,37 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Print...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Print Preview...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Number of legs:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Assign Variations</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Number of teams:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Assign fixed legs to branches...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Team numbers start at: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Hide variation codes on map</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Relay Team Variations</value>
   </data>
 </root>

@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Each Variation Separately</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Each Relay Leg Separately</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>All Variations Combined</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variations:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Display all the forks together on a single map.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>One map for each possible variation through the course.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>One map for each leg on the relay teams that you choose.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>You must first define relay teams by selecting Relay Team Variations... from the Course menu.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Select Individual Variations</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>This course has {0} relay teams assigned. Use Relay Team Variations... from the Course menu to change the number of teams.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Select which teams to print/export:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Choose Variations</value>
+  </data>
 </root>

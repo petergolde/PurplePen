@@ -586,15 +586,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Kan inte läsa kartan på grund av: '{0}' Öppna och spara om kartan i senaste versionen av OpenOrienteering Mapper så löser det kanske problemet.</value>
   </data>
-  <data name="MapIssue_Long" xml:space="preserve">
-    <value>Kartutdelningsplats</value>
-  </data>
-  <data name="MapIssue_Medium" xml:space="preserve">
-    <value>Kartutdelning</value>
-  </data>
-  <data name="MapIssue_Short" xml:space="preserve">
-    <value>KU</value>
-  </data>
   <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
     <value>Den underliggande OCAD-kartan har synliga mallfiler. I OCAD 8 och äldre så syns kanske inte mallfilerna p.g.a. begränsningar i OCAD.</value>
   </data>

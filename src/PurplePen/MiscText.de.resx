@@ -586,20 +586,20 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Die Karte kann wegen folgendem Prpblem nicht geladen werden: '{0}' Die Karte in der neusten Version von OpenOrienteering Mapper öffnen und neu speichern, könnte das Problem beheben.</value>
   </data>
-  <data name="MapIssue_Long" xml:space="preserve">
-    <value>Kartenabgabepunkt</value>
-  </data>
-  <data name="MapIssue_Medium" xml:space="preserve">
-    <value>Kartenabgabe</value>
-  </data>
   <data name="MapIssue_Short" xml:space="preserve">
-    <value>MI</value>
+    <value>TS</value>
   </data>
   <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
     <value>Die hinterlegte OCAD Karte hat sichtbare Vorlage Dateien. In OCAD 8 und älter, können diese Vorlagen unter Umständen nicht dargestellt werden, da in OCAD Beschränkungen vorhanden sind.</value>
   </data>
   <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
     <value>Wegen Beschränkungen im OCAD Dateiformat (OCAD 10 und älter) erscheinen Bildobjekte unterhalb der Bahnen und weissen Flächen in der exportierten OCAD Datei. Überprüfe die OCAD Datei, um sicher zu gehen, dass die Bilder wie gewünscht erscheinen.</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>PDF erstellen</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF-Datei|*.pdf</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>

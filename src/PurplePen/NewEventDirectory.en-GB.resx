@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Selected Folder</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Event File Location</value>
+  </data>
 </root>

@@ -129,4 +129,7 @@
   <data name="changeLaterLabel.Text" xml:space="preserve">
     <value>(This setting can be changed later using Controls/Automatic Numbering)</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Control Numbering</value>
+  </data>
 </root>

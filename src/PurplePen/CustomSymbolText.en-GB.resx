@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Click on a description symbol to customise the text that is used in textual control descriptions.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Make this the default language for new events</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customise Description Text</value>
   </data>

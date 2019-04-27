@@ -23,9 +23,10 @@ namespace TranslateTool
                 foreach (ResXFile resxfile in resdir.AllFiles)
                     foreach (LocString str in resxfile.AllStrings) {
                         if (str.NonLocalized == entry.NonLocalized) {
-                            if (str.Localized != entry.Localized) {
+                            string localizedEntry = FixupLocalized(entry.Localized);
+                            if (str.Localized != localizedEntry) {
                                 statusOutput.WriteLine("Updating localized RESX for '{0}' to '{1}'", str.Name, entry.Localized);
-                                str.Localized = entry.Localized;
+                                str.Localized = localizedEntry;
                             }
                         }
                     }
@@ -45,10 +46,12 @@ namespace TranslateTool
 
         void ApplyEntry(PoEntry entry, LocString str, TextWriter statusOutput)
         {
+            string localizedEntry = FixupLocalized(entry.Localized);
+
             if (str.NonLocalized == entry.NonLocalized) {
-                if (str.Localized != entry.Localized) {
+                if (str.Localized != localizedEntry) {
                     statusOutput.WriteLine("Updating localized RESX for '{0}' to '{1}'", str.Name, entry.Localized);
-                    str.Localized = entry.Localized;
+                    str.Localized = localizedEntry;
                 }
             }
             else {
@@ -56,7 +59,7 @@ namespace TranslateTool
                 ResolvePoEntry dialog = new ResolvePoEntry();
                 dialog.textBoxCurrentUnlocalized.Text = str.NonLocalized;
                 dialog.textBoxOldUnlocalized.Text = entry.NonLocalized;
-                dialog.textBoxLocalized.Text = entry.Localized;
+                dialog.textBoxLocalized.Text = localizedEntry;
                 dialog.labelStringId.Text = str.Name;
                 dialog.labelLanguageName.Text = str.File.Culture.DisplayName;
                 dialog.ShowDialog();
@@ -64,6 +67,18 @@ namespace TranslateTool
                 statusOutput.WriteLine("Updating localized RESX for '{0}' to '{1}'", str.Name, str.Localized);
                 dialog.Dispose();
             }
+        }
+
+        // Fix a localized string, changing "{ 0 }" to "{0}".
+        private string FixupLocalized(string localized)
+        {
+            string result = localized;
+            for (char c = '0'; c <= '9'; ++c) {
+                if (result.Contains("{ " + c.ToString() + " }")) {
+                    result = result.Replace("{ " + c.ToString() + " }", "{" + c.ToString() + "}");
+                }
+            }
+            return result;
         }
     }
 }

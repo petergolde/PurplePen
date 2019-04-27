@@ -1,13 +1,13 @@
-# Purple Pen localization file
+#  localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the Purple Pen package.
+# This file is distributed under the same license as the  package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.2.0\n"
-"Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-02-20 20:25-08:00\n"
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1040,15 +1040,15 @@ msgstr "Filformat:"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items
 msgid "PNG"
-msgstr "OCAD 6"
+msgstr ""
 
 #: CreateImageFiles.resx, fileFormatCombo.Items1
 msgid "JPEG"
-msgstr "OCAD 7"
+msgstr ""
 
 #: CreateImageFiles.resx, fileFormatCombo.Items2
 msgid "GIF"
-msgstr "OCAD 8"
+msgstr ""
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
@@ -1162,7 +1162,7 @@ msgstr "Mapp"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr "Skapa OCAD-filer"
+msgstr ""
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1501,7 +1501,7 @@ msgstr ""
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr "Skapa PDF..."
+msgstr ""
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
@@ -1725,7 +1725,7 @@ msgstr "Text&linje..."
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr "Kartutdelningsplats"
+msgstr ""
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -2845,7 +2845,7 @@ msgstr "Kan inte läsa kartan på grund av: '{0}' Öppna och spara om "
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr "KU"
+msgstr ""
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "

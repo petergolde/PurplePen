@@ -150,8 +150,20 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Vie &amp;OCAD-tiedostoihin...</value>
   </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Luo ku&amp;vatiedostoja...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>Rastin&amp;määritteet...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>&amp;Leimauskuviot...</value>
+  </data>
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>Vie PDF-tiedostoihin...</value>
+    <value>&amp;Radat...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Luo P&amp;DF-tiedostoja</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Vie Reitti&amp;härveli-tiedostoihin...</value>
@@ -308,9 +320,6 @@
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>&amp;Tekstirivi...</value>
-  </data>
-  <data name="addMapIssueMenu.Text" xml:space="preserve">
-    <value>Kartanottopaikka</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
@@ -605,9 +614,6 @@
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Lisää hajonta</value>
-  </data>
-  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kartanottopaikka</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>

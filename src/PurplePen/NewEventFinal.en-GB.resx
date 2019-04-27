@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>After your event is created, select "New Course..." from the Course menu to create one or more courses.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Create Event</value>
+  </data>
 </root>

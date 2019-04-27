@@ -141,9 +141,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>OCAD ve Dosyalar Oluştur ...</value>
   </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>PDF'ler oluşturun ...</value>
-  </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
   </data>

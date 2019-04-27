@@ -137,4 +137,13 @@ The scale of the map indicates the relationship between the paper map and the re
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Map scale:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Bitmap Resolution</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>When using an PDF file as a map, you must specify the map scale. 
+
+The scale of the map indicates the relationship between the paper map and the real world.
+</value>
+  </data>
 </root>

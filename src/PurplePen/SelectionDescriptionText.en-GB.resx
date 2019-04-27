@@ -204,6 +204,9 @@
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>First Aid Posy</value>
   </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
     <value>Forbidden Route</value>
   </data>
@@ -255,7 +258,43 @@
   <data name="UsedInCourses" xml:space="preserve">
     <value>Used in courses:</value>
   </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Whiteout Area</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>map exchanges</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>map exchange</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Map exchange at {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Load:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Used in:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Course "{0}", Part {1}</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Calculated Length:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>map issue points</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>map issue point</value>
   </data>
 </root>

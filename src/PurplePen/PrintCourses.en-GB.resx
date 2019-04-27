@@ -141,8 +141,26 @@
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Copies of each course:</value>
   </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Pause printing after each course or part</value>
+  </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Copies</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Print Map Exchanges on Same Map </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Colour Model:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD Compatible</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Crop to a single page</value>

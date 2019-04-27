@@ -150,9 +150,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>OCADファイルを作成(&amp;F)...</value>
   </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>PDFを作成...</value>
-  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>RouteGadget ファイルを作成(&amp;G)...</value>
   </data>

@@ -142,10 +142,10 @@
     <value>Lisää rasti "{0}" radalle klikkaamalla hiiren vasenta painiketta</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
-    <value>Lisää uusi lähtö klikkaamalla hiiren vasenta painiketta</value>
+    <value>Lisää uusi K-piste klikkaamalla hiiren vasenta painiketta</value>
   </data>
   <data name="AddingExistingStart" xml:space="preserve">
-    <value>Lisää lähtö radalle klikkaamalla hiiren vasenta painiketta</value>
+    <value>Lisää K-piste radalle klikkaamalla hiiren vasenta painiketta</value>
   </data>
   <data name="AddingFinish" xml:space="preserve">
     <value>Lisää uusi maali klikkaamalla hiiren vasenta painiketta</value>

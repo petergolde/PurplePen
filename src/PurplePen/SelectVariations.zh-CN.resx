@@ -142,7 +142,7 @@
     <value>选择的个体差异</value>
   </data>
   <data name="labelNumberOfTeams.Text" xml:space="preserve">
-    <value>本课程有{ 0 }接力的队伍分配。用接力队的变化…从课程菜单改变球队数量。</value>
+    <value>本课程有{0}接力的队伍分配。用接力队的变化…从课程菜单改变球队数量。</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>收件人：</value>

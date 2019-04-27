@@ -150,9 +150,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Skapa OCAD-&amp;filer...</value>
   </data>
-  <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>Skapa PDF...</value>
-  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Skapa Route&amp;Gadget-filer...</value>
   </data>
@@ -308,9 +305,6 @@
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Text&amp;linje...</value>
-  </data>
-  <data name="addMapIssueMenu.Text" xml:space="preserve">
-    <value>Kartutdelningsplats</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk passage</value>
@@ -605,9 +599,6 @@
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Lägg till spridningsmetod</value>
-  </data>
-  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
-    <value>Kartutdelningsplats</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Obligatorisk passage</value>

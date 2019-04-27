@@ -223,10 +223,10 @@
     <value>Puuttuvat pistemäärät</value>
   </data>
   <data name="EventAudit_MissingStart" xml:space="preserve">
-    <value>Tavallisilla radoilla pitäisi olla lähtökolmio</value>
+    <value>Tavallisilla radoilla pitäisi olla K-piste</value>
   </data>
   <data name="EventAudit_MissingStartScore" xml:space="preserve">
-    <value>Pistesuunnistusradoilla pitäisi olla lähtökolmio</value>
+    <value>Pistesuunnistusradoilla pitäisi olla K-piste</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>Ei</value>
@@ -298,7 +298,7 @@
     <value>HUOMAUTUS: </value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
-    <value>Varoitus: määritetystä osuuksien lukumäärästä johtuen rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. Osuuksista {1} käyttää haaraa (haaroja) {2}, kun taas osuuksista {3} käyttää haaraa (haaroja) {4}. </value>
+    <value>Varoitus: määritetystä osuuksien lukumäärästä johtuen rastilta {0} alkavaa hajontaa ei käytetä tasaisesti. Osuuksista {1} käyttää hajontaa (hajontoja) {2}, kun taas osuuksista {3} käyttää hajontaa (hajontoja) {4}. </value>
   </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
     <value>Osuus {0}</value>

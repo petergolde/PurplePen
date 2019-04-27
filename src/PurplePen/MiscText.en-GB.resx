@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Cannot create folder '{0}' for the following reason:</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Cannot read map for the following reason: '{0}' Using Optimize/Repair and re-saving in OCAD may fix problems.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Cannot create OCAD files for the following reason:</value>
   </data>
@@ -228,6 +231,10 @@ Use | to separate lines</value>
     <value>Enter new symbol meaning
 (affects all courses)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Enter new text
+Use | to separate lines</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
     <value>Controls {0} are no longer used by any course. Do you want to delete these controls from the control collection?</value>
   </data>
@@ -269,6 +276,11 @@ Use | to separate lines</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Version {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} of Purple Pen is now available for download. (You are currently running version {1}.)
+
+Would you like to download and install the latest version?</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Help file '{0}' could not be opened.</value>
@@ -373,11 +385,233 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
     <value>*** Eğer Mor Kalem için çevirilen dilde belgeler içeren bir internet sitesi bulunuyorsa, bu öğenin çevirisi olarak URL'yi (http içerecek şekilde) girin. Aksi halde boş bırakın.</value>
   </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Map exchange</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Part {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>All Parts</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Part {0} (of {1})</value>
+  </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Contact Email</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>An error has occurred. In order to help us fix the problem, please enter your email address and additional information, and send us an error report.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Please tell us what you were doing in the program, to help fix the problem</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Send Report</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Descriptions may not be added to a course with a map exchange if "All Parts" is being displayed. Switch to the part you wish to add descriptions to, and then choose "Add Descriptions" again.</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe not found</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF converter failed to read PDF file successfully</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Could not read result of PDF conversion from file '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Cannot create PDFs for the following reason:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>User Defined</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Map size from PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Cancelled by user</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Creating {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Printing page {0} (of {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>The map file "{0}" has been deleted. Please try to restore the map file, then press "Ok".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>The  .NET framework on your computer does not appear to be correctly installed. Please visit http://microsoft.com/net and install the latest version of the .NET framework for your Windows operating system.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Choose Colour...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Custom Colour</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Dark Blue</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Light Blue</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Set the appearance of the line. After pressing OK, drag the mouse to draw the line segments in the desired location.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Add Line</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Set the appearance of the rectangle. After pressing OK, drag the mouse to place the rectangle in the desired location.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Add Rectangle</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Change the appearance of the line or rectangle.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Change Line Appearance</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>The map file must be an OCAD file to use GPX files.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>The OCAD file must have a coordinate system defined to use GPX files.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>The OCAD file must have real world coordinates defined to use GPX files.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Could not reproject points; either the coordinate system or the real world coordinates in the OCAD map are wrong.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>The OCAD file uses a coordinate system that is not supported by Purple Pen.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>The length for a course must be a number 0.1 - 99.9, or blank to calculate length automatically.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Duplicate Course</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Enter length in km, or leave blank to calculate automatically</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Finished printing "{0}". Press OK to begin printing "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>All Variations</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Suitable for use in relays with {0} participants per team.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>The central control in the loop will be visited {0} times. There are {1} possible paths through the loops.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>A control that starts a fork or loop cannot be dragged to a new place in the course.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Too many total variations in this course. The number of distinct variations is limited to {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Cannot add variation.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>A variation already exists at this control.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>A control or leg must be selected to add a variation.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>A variation cannot be added to a finish control.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>A variation cannot be added to the All Controls view.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>A variation cannot be added to a score course.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>A variation cannot be added to the last control. Add a finish control first.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' is not a valid leg number for branch '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Leg {0} should be assigned to one of branches {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Leg {0} is assigned to both branch '{1}' and branch '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Cannot read map for the following reason: '{0}' Opening and re-saving the map in the latest version of OpenOrienteering Mapper may fix problems.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Timed Start</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Timed Start</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>The underlying OCAD map has visible template files. In OCAD 8 and below, these templates may not appear due to limitations in OCAD.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Due to limitations of the OCAD file format (in OCAD 10 and below), image objects will appear underneath courses and white out areas in the exported OCAD files. Please check the OCAD files to make sure your images appear as desired.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Cannot create image files for the following reason:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Create PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF File|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Leg {0} never reaches branch '{1}': it was assigned to go a different way in a containing fork.</value>
   </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>A control code should be 31 or higher.</value>

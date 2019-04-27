@@ -130,13 +130,13 @@
     <value>以上{0}</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>below { 0 }</value>
+    <value>below {0}</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
     <value>本课程只</value>
   </data>
   <data name="comboBoxCourses.Items1" xml:space="preserve">
-    <value>所有的课程{ 0 }</value>
+    <value>所有的课程{0}</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>添加的文本行</value>

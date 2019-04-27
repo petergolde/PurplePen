@@ -139,10 +139,13 @@
     <value>Joukkueita:</value>
   </data>
   <data name="fixedLegsLink.Text" xml:space="preserve">
-    <value>Määritä osuudet haaroille...</value>
+    <value>Määritä osuudet hajonnoille...</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Numerointi alkaa numerosta: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Piilota hajontakoodit kartalta</value>
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Taulukkolaskenta (CSV)|*.csv</value>
