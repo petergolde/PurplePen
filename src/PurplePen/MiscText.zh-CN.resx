@@ -310,7 +310,7 @@
     <value>所有：{ 0 }</value>
   </data>
   <data name="Margins_LRTB" xml:space="preserve">
-    <value>左：{0}：{1}右上：{ 2 }，{三}：底</value>
+    <value>左：{0}：{1}右上：{2}，{3}：底</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>开始</value>
@@ -358,7 +358,7 @@
     <value>目前事件已控制描述} { 0篇。你想改变控制描述语言{ 1 }？</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
-    <value>打开“{ 0 }”</value>
+    <value>打开“{0}”</value>
   </data>
   <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
     <value>紫色的笔在装载前必须创建软件包文件关闭。</value>
