@@ -1,0 +1,28 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>TextSpecialBadFont</title>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\Lake Sammamish.ocd">Lake Sammamish.ocd</map>
+    <standards map="2017" description="2004" />
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeTo15000" scale-sizes-circle-gaps="true" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-143.485016" top="95.61001" right="123.215" bottom="-107.590004" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <options print-scale="15000" description-kind="symbols" />
+  </course>
+  <special-object id="1" kind="text">
+    <text>Fiery Good</text>
+    <font name="Blazed" bold="true" italic="false" />
+    <appearance color="purple" />
+    <location x="47.3741531" y="44.52262" />
+    <location x="108.464935" y="32.235" />
+    <courses all="true" />
+  </special-object>
+</course-scribe-event>

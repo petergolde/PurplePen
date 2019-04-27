@@ -645,6 +645,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void TextMissingFont()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 4, 6), "Blazing", FontStyle.Bold, SpecialColor.Black, -1);
+            CheckRenderBitmap(courseobj, "textmissing");
+        }
+
+        [TestMethod]
         public void TextEmpty()
         {
             CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "", new RectangleF(-4, -2, 8, 6), "Arial", FontStyle.Bold, new SpecialColor(0.8F, 0.5F, 0, 0), -1);
@@ -663,6 +670,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
             CheckRenderBitmap(courseobj, "textfixedheight2");
+        }
+
+        [TestMethod]
+        public void TextFixedHeightMissingFont()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Blazing", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CheckRenderBitmap(courseobj, "textfixedheightmissingfont");
         }
 
 
@@ -1571,6 +1585,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void TextHighlightMissingFont()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 4, 6), "Blazing", FontStyle.Bold, new SpecialColor(0.7F, 0.5F, 0, 0), -1);
+            CheckHighlightBitmap(courseobj, "text_highlightmissingfont");
+        }
+
+        [TestMethod]
         public void TextFixedHeightHighlight()
         {
             CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
@@ -1582,6 +1603,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "123", new RectangleF(-3, -2.7F, 7, 5), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, 1F);
             CheckHighlightBitmap(courseobj, "textfixedheight2_highlight");
+        }
+
+        [TestMethod]
+        public void TextFixedHeightHighlightMissingFont()
+        {
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Blazing", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CheckHighlightBitmap(courseobj, "textfixedheightmissingfont_highlight");
         }
 
         [TestMethod]

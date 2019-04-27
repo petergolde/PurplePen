@@ -1057,6 +1057,21 @@ namespace PurplePen
             }
         }
 
+        // Get the font name, or Arial if not installed.
+        protected string SafeFontName {
+            get {
+                return FontNameSafe(fontName);
+            }
+        }
+
+        protected static string FontNameSafe(string fontName)
+        {
+            if (MapUtil.TextMetricsProvider.TextFaceIsInstalled(fontName))
+                return fontName;
+            else
+                return "Arial";
+        }
+
         // Get the name for the text symdef created.
         protected abstract string SymDefName { get; }
 
@@ -1165,7 +1180,7 @@ namespace PurplePen
                 return new SizeF(0, 0);
 
             Graphics g = Util.GetHiresGraphics();
-            using (Font f = new Font(fontName, emHeight, fontStyle, GraphicsUnit.World))
+            using (Font f = new Font(SafeFontName, emHeight, fontStyle, GraphicsUnit.World))
                 return g.MeasureString(text, f, topLeft, StringFormat.GenericTypographic);
         }
 
@@ -1187,7 +1202,7 @@ namespace PurplePen
             xformWorldToPixel.TransformPoints(topLeftPixel);
 
             // Draw it.
-            using (FontFamily fontFam = new FontFamily(fontName)) {
+            using (FontFamily fontFam = new FontFamily(SafeFontName)) {
                 StringFormat format = new StringFormat(StringFormat.GenericTypographic);
                 format.Alignment = StringAlignment.Near;
                 format.LineAlignment = StringAlignment.Near;
@@ -2583,7 +2598,7 @@ namespace PurplePen
         public static float EmHeightToDigitHeightRatio(string fontName, FontStyle fontStyle)
         {
             float emHeight = 100;
-            using (FontFamily family = new FontFamily(fontName)) {
+            using (FontFamily family = new FontFamily(FontNameSafe(fontName))) {
                 GraphicsPath path = new GraphicsPath();
                 path.AddString("8", family, (int)fontStyle, emHeight, new PointF(0, 0), StringFormat.GenericTypographic);
                 float digitHeight = path.GetBounds().Height;
@@ -2608,7 +2623,7 @@ namespace PurplePen
                 // Measure with a font size of 1, then scale appropriately.
                 Graphics g = Util.GetHiresGraphics();
                 SizeF size;
-                using (Font f = new Font(fontName, 1F, fontStyle, GraphicsUnit.World))
+                using (Font f = new Font(FontNameSafe(fontName), 1F, fontStyle, GraphicsUnit.World))
                     size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
 
                 if (size.Width * desiredSize.Height > size.Height * desiredSize.Width) {
@@ -2634,7 +2649,7 @@ namespace PurplePen
                 // in terms of RectangleF because of inverted coordinate system.
                 Graphics g = Util.GetHiresGraphics();
                 SizeF size;
-                using (Font f = new Font(fontName, CalculateEmHeight(text, fontName, fontStyle, fontDigitHeight, new SizeF()), fontStyle, GraphicsUnit.World))
+                using (Font f = new Font(SafeFontName, CalculateEmHeight(text, SafeFontName, fontStyle, fontDigitHeight, new SizeF()), fontStyle, GraphicsUnit.World))
                     size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
                 return RectangleF.FromLTRB(boundingRect.Left, boundingRect.Bottom - size.Height, boundingRect.Left + size.Width, boundingRect.Bottom);
             }
@@ -2737,7 +2752,7 @@ namespace PurplePen
             RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
 
             // Update the rectangle.
-            base.EmHeight = CalculateEmHeight(text, fontName, fontStyle, fontDigitHeight, newRect.Size);
+            base.EmHeight = CalculateEmHeight(text, SafeFontName, fontStyle, fontDigitHeight, newRect.Size);
             base.topLeft = new PointF(newRect.Left, newRect.Bottom);
             rectBounding = newRect;
             //rectBounding = AdjustBoundingRect(newRect, text, fontName, fontStyle, fontDigitHeight);

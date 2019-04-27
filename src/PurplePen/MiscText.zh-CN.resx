@@ -355,7 +355,7 @@
     <value>另一个程序改变了地图文件“{0}”。紫色的笔将载入地图。</value>
   </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
-    <value>目前事件已控制描述} { 0篇。你想改变控制描述语言{1}？</value>
+    <value>目前事件已控制描述} {0}篇。你想改变控制描述语言{1}？</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>打开“{0}”</value>
