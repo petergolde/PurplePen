@@ -1527,7 +1527,8 @@ namespace PurplePen
         Descriptions,                    // control description sheet (rectangle of first square)
         Image,                           // A bitmap image.
         Line,                            // A line.
-        Rectangle                        // A rectangle.
+        Rectangle,                       // A rectangle.
+        Ellipse                         // An ellipse/circle
     }
 
     // Kinds of a line. Note: order must match combo box order in line properties dialog.
@@ -1678,6 +1679,7 @@ namespace PurplePen
             case SpecialKind.Descriptions:
             case SpecialKind.Image:
             case SpecialKind.Rectangle:
+                case SpecialKind.Ellipse:
                 if (locations.Length != 2)
                     throw new ApplicationException(string.Format("Text or descriptions object {0} should have 2 coordinates", id));
                 break;
@@ -1696,7 +1698,7 @@ namespace PurplePen
                     throw new ApplicationException(string.Format("Text object {0} should have non-null color", id));
             }
 
-            if (kind == SpecialKind.Line || kind == SpecialKind.Rectangle) {
+            if (kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse) {
                 if (color == null)
                     throw new ApplicationException(string.Format("Text object {0} should have non-null color", id));
             }
@@ -1838,8 +1840,9 @@ namespace PurplePen
             case "image": kind = SpecialKind.Image; break;
             case "line": kind = SpecialKind.Line; break;
             case "rectangle": kind = SpecialKind.Rectangle; break;
-              
-            default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
+            case "ellipse": kind = SpecialKind.Ellipse; break;
+
+                default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
             }
 
             if (kind == SpecialKind.OptCrossing)
@@ -1852,7 +1855,7 @@ namespace PurplePen
             imageBitmap = null;
             List<PointF> locationList = new List<PointF>();
 
-            if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle)
+            if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse)
                 color = SpecialColor.Purple;  // default color is purple.
 
             bool first = true;
@@ -1891,7 +1894,7 @@ namespace PurplePen
                 case "appearance":
                     numColumns = xmlinput.GetAttributeInt("columns", 1);
 
-                    if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle) {
+                    if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse) {
                         color = xmlinput.GetAttributeColor("color", SpecialColor.Purple);
                     }
 
@@ -1969,6 +1972,7 @@ namespace PurplePen
             case SpecialKind.Image: kindText = "image"; break;
             case SpecialKind.Line: kindText = "line"; break;
             case SpecialKind.Rectangle: kindText = "rectangle"; break;
+            case SpecialKind.Ellipse: kindText = "ellipse"; break;
             default:
                 Debug.Fail("bad kind"); kindText = "none";  break;
             }
@@ -2014,7 +2018,7 @@ namespace PurplePen
                 xmloutput.WriteEndElement();
             }
 
-            if (kind == SpecialKind.Line || kind == SpecialKind.Rectangle) {
+            if (kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse) {
                 xmloutput.WriteStartElement("appearance");
                 switch (lineKind) {
                     case LineKind.Single: xmloutput.WriteAttributeString("line-kind", "single"); break;

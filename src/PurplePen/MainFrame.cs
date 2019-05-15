@@ -1751,7 +1751,7 @@ namespace PurplePen
             DialogResult result = linePropertiesDialog.ShowDialog();
 
             if (result == DialogResult.OK) {
-                controller.BeginAddRectangleSpecialMode(linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize, linePropertiesDialog.CornerRadius);
+                controller.BeginAddRectangleSpecialMode(false, linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize, linePropertiesDialog.CornerRadius);
             }
 
             linePropertiesDialog.Dispose();

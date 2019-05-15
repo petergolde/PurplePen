@@ -2282,9 +2282,10 @@ namespace PurplePen
         }
     }
 
-    // An arbitrary rectangle
+    // An arbitrary rectangle, rounded rectangle, or ellipse.
     class RectSpecialCourseObj : RectCourseObj
     {
+        public readonly bool isEllipse;
         public readonly SpecialColor color;
         public readonly LineKind lineKind;
         public readonly float lineWidth;
@@ -2292,9 +2293,10 @@ namespace PurplePen
         public readonly float gapSize;
         public readonly float dashSize;
 
-        public RectSpecialCourseObj(Id<Special> specialId, CourseAppearance appearance, SpecialColor color, LineKind lineKind, float lineWidth, float cornerRadius, float gapSize, float dashSize, RectangleF rect)
+        public RectSpecialCourseObj(Id<Special> specialId, CourseAppearance appearance, bool isEllipse, SpecialColor color, LineKind lineKind, float lineWidth, float cornerRadius, float gapSize, float dashSize, RectangleF rect)
             : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1.0F, appearance, rect)
         {
+            this.isEllipse = isEllipse;
             this.color = color;
             this.lineKind = lineKind;
             this.lineWidth = lineWidth;
@@ -2305,11 +2307,13 @@ namespace PurplePen
 
         private SymPath CreateSymPath()
         {
-            return SymPath.CreateRoundedRectangle(rect, cornerRadius);
+            if (isEllipse)
+                return SymPath.CreateEllipsePath(rect);
+            else
+                return SymPath.CreateRoundedRectangle(rect, cornerRadius);
         }
 
         // A struct synthesizes Equals/GetHashCode automatically.
-        // CONSIDER: use FontDesc instead!
         struct MySymdefKey
         {
             public SpecialColor color;
@@ -2335,6 +2339,8 @@ namespace PurplePen
             RectSpecialCourseObj other = obj as RectSpecialCourseObj;
             if (other == null)
                 return false;
+            if (other.isEllipse != isEllipse)
+                return false;
             if (!other.color.Equals(color))
                 return false;
             if (other.lineKind != lineKind)
@@ -2353,7 +2359,7 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode() + cornerRadius.GetHashCode();
+            return base.GetHashCode() + isEllipse.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode() + cornerRadius.GetHashCode();
         }
 
         // The full width of the line, even if a double line.
@@ -2411,6 +2417,9 @@ namespace PurplePen
         public override string ToString()
         {
             string result = base.ToString();
+            if (isEllipse) {
+                result += "  ellipse";
+            }
             result += string.Format("  color:{0}  lineKind:{1}  lineWidth:{2}  cornerRadius:{3}  gapSize:{4}  dashSize:{5}", color, lineKind, cornerRadius, lineWidth, gapSize, dashSize);
             return result;
         }

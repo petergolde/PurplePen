@@ -702,7 +702,7 @@ namespace PurplePen
         {
             Special special = eventDB.GetSpecial(specialId);
 
-            Debug.Assert(special.kind == SpecialKind.Rectangle || special.kind == SpecialKind.Line);
+            Debug.Assert(special.kind == SpecialKind.Rectangle || special.kind == SpecialKind.Line || special.kind == SpecialKind.Ellipse);
 
             special = (Special)special.Clone();
             special.color = color;
@@ -710,7 +710,7 @@ namespace PurplePen
             special.lineWidth = lineWidth;
             special.gapSize = gapSize;
             special.dashSize = dashSize;
-            if (special.kind == SpecialKind.Rectangle)
+            if (special.kind == SpecialKind.Rectangle || special.kind == SpecialKind.Ellipse)
                 special.cornerRadius = cornerRadius;
 
             eventDB.ReplaceSpecial(specialId, special);
@@ -1170,9 +1170,10 @@ namespace PurplePen
             return eventDB.AddSpecial(special);
         }
 
-        public static Id<Special> AddRectangleSpecial(EventDB eventDB, RectangleF rect, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
+        public static Id<Special> AddRectangleSpecial(EventDB eventDB, RectangleF rect, bool isEllipse, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
         {
-            Special special = new Special(SpecialKind.Rectangle, new PointF[] { rect.Location, new PointF(rect.Right, rect.Bottom)});
+            Special special = new Special(isEllipse ? SpecialKind.Ellipse : SpecialKind.Rectangle, 
+                                          new PointF[] { rect.Location, new PointF(rect.Right, rect.Bottom)});
             special.color = color;
             special.lineKind = lineKind;
             special.lineWidth = lineWidth;

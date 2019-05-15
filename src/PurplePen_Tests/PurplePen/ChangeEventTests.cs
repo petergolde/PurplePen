@@ -2155,7 +2155,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add special");
-            Id<Special> newSpecialId = ChangeEvent.AddRectangleSpecial(eventDB, rect, new SpecialColor(0.4F, 0.5F, 0.2F, 0.1F), LineKind.Dashed, 1.2F, 2.3F, 3.7F, 3.3F);
+            Id<Special> newSpecialId = ChangeEvent.AddRectangleSpecial(eventDB, rect, false, new SpecialColor(0.4F, 0.5F, 0.2F, 0.1F), LineKind.Dashed, 1.2F, 2.3F, 3.7F, 3.3F);
             undomgr.EndCommand(13);
             eventDB.Validate();
 

@@ -2714,10 +2714,10 @@ namespace PurplePen
         {
             SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
 
-            // Only line and rectangle special can have their text changed.
+            // Only line and rectangle special can have their line appearance changed.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 Special special = eventDB.GetSpecial(selection.SelectedSpecial);
-                if (special.kind == SpecialKind.Line || special.kind == SpecialKind.Rectangle)
+                if (special.kind == SpecialKind.Line || special.kind == SpecialKind.Rectangle || special.kind == SpecialKind.Ellipse)
                     return CommandStatus.Enabled;
             }
                 
@@ -3533,11 +3533,11 @@ namespace PurplePen
         }
 
         // Start the mode to add a line special 
-        public void BeginAddRectangleSpecialMode(SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
+        public void BeginAddRectangleSpecialMode(bool isEllipse, SpecialColor color, LineKind lineKind, float lineWidth, float gapSize, float dashSize, float cornerRadius)
         {
             SetCommandMode(new AddRectangleMode(this, undoMgr, selectionMgr, eventDB, 1.0F,
-                           rect => new RectSpecialCourseObj(Id<Special>.None, GetCourseAppearance(), color, lineKind, lineWidth, cornerRadius, gapSize, dashSize, rect),
-                           rect => ChangeEvent.AddRectangleSpecial(eventDB, rect, color, lineKind, lineWidth, gapSize, dashSize, cornerRadius)));
+                           rect => new RectSpecialCourseObj(Id<Special>.None, GetCourseAppearance(), isEllipse, color, lineKind, lineWidth, cornerRadius, gapSize, dashSize, rect),
+                           rect => ChangeEvent.AddRectangleSpecial(eventDB, rect, isEllipse, color, lineKind, lineWidth, gapSize, dashSize, cornerRadius)));
         }
 
         // Can we add descriptions. The only reason we can't is all parts of a multi-part. If other reasons

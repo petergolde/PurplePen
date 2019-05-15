@@ -48,6 +48,7 @@ namespace PurplePen.Tests
 {
     using System.Globalization;
     using System.Threading;
+    using PurplePen.Graphics2D;
     using PurplePen.MapModel;
 
     [TestClass]
@@ -601,7 +602,7 @@ namespace PurplePen.Tests
             UndoMgr undomgr = new UndoMgr(5);
             EventDB eventDB = new EventDB(undomgr);
 
-            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9, sp10, sp11, sp12, sp13;
+            Special sp1, sp2, sp3, sp4, sp5, sp6, sp7, sp8, sp9, sp10, sp11, sp12, sp13, sp14;
 
             undomgr.BeginCommand(88, "Command1");
 
@@ -653,6 +654,10 @@ namespace PurplePen.Tests
             sp13.lineKind = LineKind.Single;
             sp13.lineWidth = 0.1F;
             sp13.cornerRadius = 0.23F;
+            sp14 = new Special(SpecialKind.Ellipse, new PointF[2] { new PointF(5, 6), new PointF(1, 3) });
+            sp14.color = new SpecialColor(CmykColor.FromCmyk(0.8F, 0.3F, 0.2F, 0.1F));
+            sp14.lineKind = LineKind.Double;
+            sp14.lineWidth = 0.25F;
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);
@@ -667,6 +672,7 @@ namespace PurplePen.Tests
             eventDB.AddSpecial(sp11);
             eventDB.AddSpecial(sp12);
             eventDB.AddSpecial(sp13);
+            eventDB.AddSpecial(sp14);
 
             undomgr.EndCommand(88);
 
@@ -700,6 +706,7 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Special>,Special>(SpecialId(11), sp11),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(12), sp12),
                     new KeyValuePair<Id<Special>,Special>(SpecialId(13), sp13),
+                    new KeyValuePair<Id<Special>,Special>(SpecialId(14), sp14),
                 }
             );
         }
