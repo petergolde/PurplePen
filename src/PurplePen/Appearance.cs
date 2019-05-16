@@ -42,6 +42,8 @@ using System.Windows.Forms;
 namespace PurplePen
 {
     using PurplePen.Graphics2D;
+    using PurplePen.MapModel;
+    using System.IO;
 
     // Describes a particular font, without instanting a Font object.
     public struct FontDesc
@@ -99,12 +101,12 @@ namespace PurplePen
 
         public Font GetFont()
         {
-            return new Font(Name, EmHeight, Style, GraphicsUnit.World);
+            return GdiplusFontLoader.CreateFont(Name, EmHeight, Style);
         }
 
         public Font GetScaledFont(float scaleRatio)
         {
-            return new Font(Name, EmHeight * scaleRatio, Style, GraphicsUnit.World);
+            return GdiplusFontLoader.CreateFont(Name, EmHeight * scaleRatio, Style);
         }
 
         private static bool checkedArialNarrow = false;
@@ -116,18 +118,7 @@ namespace PurplePen
 
         private static bool IsInstalled(string fontName)
         {
-            // Test if font is installed.
-            try {
-#pragma warning disable RECS0026 // Possible unassigned object created by 'new'
-                new FontFamily(fontName);
-                new Font(fontName, 10, FontStyle.Regular);
-                new Font(fontName, 10, FontStyle.Bold);
-#pragma warning restore RECS0026 // Possible unassigned object created by 'new'
-                return true;
-            }
-            catch (ArgumentException) {
-                return false;
-            }
+            return GdiplusFontLoader.FontFamilyIsInstalled(fontName);
         }
 
 
@@ -183,6 +174,24 @@ namespace PurplePen
                 checkedRoboto = true;
                 installedRoboto = value;
             }
+        }
+
+        // Initialize fonts to use fonts installed in the fonts subdirectory for the Roboto
+        // fonts. Done on startup.
+        public static void InitializeFonts()
+        {
+            Uri uri = new Uri(typeof(FontDesc).Assembly.CodeBase);
+            string executablePath = Path.GetDirectoryName(uri.LocalPath);
+            string fontPath = Path.Combine(executablePath, "fonts");
+
+            GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Regular, Path.Combine(fontPath, "Roboto-Regular.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Bold, Path.Combine(fontPath, "Roboto-Bold.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Italic, Path.Combine(fontPath, "Roboto-Italic.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Bold | FontStyle.Italic, Path.Combine(fontPath, "Roboto-BoldItalic.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Regular, Path.Combine(fontPath, "RobotoCondensed-Regular.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Bold, Path.Combine(fontPath, "RobotoCondensed-Bold.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Italic, Path.Combine(fontPath, "RobotoCondensed-Italic.ttf"));
+            GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Bold | FontStyle.Italic, Path.Combine(fontPath, "RobotoCondensed-BoldItalic.ttf"));
         }
     }
 

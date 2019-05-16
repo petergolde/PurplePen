@@ -7,6 +7,7 @@ using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace PurplePen
 {
@@ -226,7 +227,7 @@ namespace PurplePen
             StringFormat stringFormat = new StringFormat(StringFormat.GenericDefault);
             stringFormat.LineAlignment = StringAlignment.Center;
             stringFormat.FormatFlags |= StringFormatFlags.NoWrap;
-            using (Font font = new Font(this.FontName, emHeight, this.FontStyle, GraphicsUnit.Pixel)) 
+            using (Font font = GdiplusFontLoader.CreateFont(this.FontName, emHeight, this.FontStyle)) 
             using (Brush brush = new SolidBrush(textColor)) {
                 e.Graphics.DrawString(expandedText, font, brush, pictureBoxPreview.ClientRectangle, stringFormat);
             }

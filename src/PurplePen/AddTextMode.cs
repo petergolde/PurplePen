@@ -147,7 +147,7 @@ namespace PurplePen
             // User just clicked. Create text of a default size.
             SizeF size;
             Graphics g = Util.GetHiresGraphics();
-            using (Font f = new Font(NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.emHeightDefaultTextSpecial, NormalCourseAppearance.fontStyleTextSpecial, GraphicsUnit.World))
+            using (Font f = GdiplusFontLoader.CreateFont(NormalCourseAppearance.fontNameTextSpecial, NormalCourseAppearance.emHeightDefaultTextSpecial, NormalCourseAppearance.fontStyleTextSpecial))
                 size = g.MeasureString(measureText, f, new PointF(0,0), StringFormat.GenericTypographic);
 
             RectangleF boundingRect = new RectangleF(new PointF(location.X, location.Y - size.Height), size);

@@ -85,6 +85,7 @@ namespace PurplePen
 
             InitUILanguage();
             InitClientId();
+            FontDesc.InitializeFonts();
 
             if (args.Length > 0 && LoadCommandLineFile(args[0])) {
                 // We successfully loaded a file from the command line.

@@ -1180,7 +1180,7 @@ namespace PurplePen
                 return new SizeF(0, 0);
 
             Graphics g = Util.GetHiresGraphics();
-            using (Font f = new Font(SafeFontName, emHeight, fontStyle, GraphicsUnit.World))
+            using (Font f = GdiplusFontLoader.CreateFont(SafeFontName, emHeight, fontStyle))
                 return g.MeasureString(text, f, topLeft, StringFormat.GenericTypographic);
         }
 
@@ -1202,7 +1202,7 @@ namespace PurplePen
             xformWorldToPixel.TransformPoints(topLeftPixel);
 
             // Draw it.
-            using (FontFamily fontFam = new FontFamily(SafeFontName)) {
+            using (FontFamily fontFam = GdiplusFontLoader.CreateFontFamily(SafeFontName)) {
                 StringFormat format = new StringFormat(StringFormat.GenericTypographic);
                 format.Alignment = StringAlignment.Near;
                 format.LineAlignment = StringAlignment.Near;
@@ -1217,7 +1217,7 @@ namespace PurplePen
 
                 if (erasing) {
                     // Erase a rectangle that encloses the text.
-                    using (Font font = new Font(fontFam, pixelEmHight, fontStyle, GraphicsUnit.World)) {
+                    using (Font font = GdiplusFontLoader.CreateFont(SafeFontName, pixelEmHight, fontStyle)) {
                         SizeF textSize = g.MeasureString(text, font, topLeftPixel[0], format);
                         Size expandedSize = new Size((int)Math.Ceiling(textSize.Width) + 4, (int)Math.Ceiling(textSize.Height) + 4);
                         try {
@@ -1234,7 +1234,7 @@ namespace PurplePen
                 else {
                     TextRenderingHint saveTextRenderingHint = g.TextRenderingHint;
                     g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                    using (Font font = new Font(fontFam, pixelEmHight, fontStyle, GraphicsUnit.World)) {
+                    using (Font font = GdiplusFontLoader.CreateFont(SafeFontName, pixelEmHight, fontStyle)) {
                         // Outline in white, makes the red text pop much better.
                         GraphicsPath path = new GraphicsPath();
                         path.AddString(text, fontFam, (int)fontStyle, pixelEmHight, topLeftPixel[0], format);
@@ -2607,7 +2607,7 @@ namespace PurplePen
         public static float EmHeightToDigitHeightRatio(string fontName, FontStyle fontStyle)
         {
             float emHeight = 100;
-            using (FontFamily family = new FontFamily(FontNameSafe(fontName))) {
+            using (FontFamily family = GdiplusFontLoader.CreateFontFamily(FontNameSafe(fontName))) {
                 GraphicsPath path = new GraphicsPath();
                 path.AddString("8", family, (int)fontStyle, emHeight, new PointF(0, 0), StringFormat.GenericTypographic);
                 float digitHeight = path.GetBounds().Height;
@@ -2632,7 +2632,7 @@ namespace PurplePen
                 // Measure with a font size of 1, then scale appropriately.
                 Graphics g = Util.GetHiresGraphics();
                 SizeF size;
-                using (Font f = new Font(FontNameSafe(fontName), 1F, fontStyle, GraphicsUnit.World))
+                using (Font f = GdiplusFontLoader.CreateFont(FontNameSafe(fontName), 1F, fontStyle))
                     size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
 
                 if (size.Width * desiredSize.Height > size.Height * desiredSize.Width) {
@@ -2658,7 +2658,7 @@ namespace PurplePen
                 // in terms of RectangleF because of inverted coordinate system.
                 Graphics g = Util.GetHiresGraphics();
                 SizeF size;
-                using (Font f = new Font(SafeFontName, CalculateEmHeight(text, SafeFontName, fontStyle, fontDigitHeight, new SizeF()), fontStyle, GraphicsUnit.World))
+                using (Font f = GdiplusFontLoader.CreateFont(SafeFontName, CalculateEmHeight(text, SafeFontName, fontStyle, fontDigitHeight, new SizeF()), fontStyle))
                     size = g.MeasureString(text, f, new PointF(0, 0), StringFormat.GenericTypographic);
                 return RectangleF.FromLTRB(boundingRect.Left, boundingRect.Bottom - size.Height, boundingRect.Left + size.Width, boundingRect.Bottom);
             }
