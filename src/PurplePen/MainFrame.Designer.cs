@@ -172,6 +172,7 @@ namespace PurplePen
             this.addImageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addLineMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addRectangleMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEllipseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.eventMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.changeMapFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -283,6 +284,7 @@ namespace PurplePen
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rectangleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ellipseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.addBendToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.addGapToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -990,7 +992,8 @@ namespace PurplePen
             this.addTextMenu,
             this.addImageMenu,
             this.addLineMenu,
-            this.addRectangleMenu});
+            this.addRectangleMenu,
+            this.addEllipseMenu});
             this.addMenu.Name = "addMenu";
             resources.ApplyResources(this.addMenu, "addMenu");
             // 
@@ -1149,6 +1152,12 @@ namespace PurplePen
             this.addRectangleMenu.Name = "addRectangleMenu";
             resources.ApplyResources(this.addRectangleMenu, "addRectangleMenu");
             this.addRectangleMenu.Click += new System.EventHandler(this.addRectangleMenu_Click);
+            // 
+            // addEllipseMenu
+            // 
+            this.addEllipseMenu.Name = "addEllipseMenu";
+            resources.ApplyResources(this.addEllipseMenu, "addEllipseMenu");
+            this.addEllipseMenu.Click += new System.EventHandler(this.addEllipseMenu_Click);
             // 
             // eventMenu
             // 
@@ -1821,7 +1830,8 @@ namespace PurplePen
             this.textToolStripMenuItem,
             this.imageToolStripMenuItem,
             this.lineToolStripMenuItem,
-            this.rectangleToolStripMenuItem});
+            this.rectangleToolStripMenuItem,
+            this.ellipseToolStripMenuItem});
             resources.ApplyResources(this.specialItemToolStripMenu, "specialItemToolStripMenu");
             this.specialItemToolStripMenu.Name = "specialItemToolStripMenu";
             // 
@@ -1919,6 +1929,12 @@ namespace PurplePen
             resources.ApplyResources(this.rectangleToolStripMenuItem, "rectangleToolStripMenuItem");
             this.rectangleToolStripMenuItem.Name = "rectangleToolStripMenuItem";
             this.rectangleToolStripMenuItem.Click += new System.EventHandler(this.addRectangleMenu_Click);
+            // 
+            // ellipseToolStripMenuItem
+            // 
+            resources.ApplyResources(this.ellipseToolStripMenuItem, "ellipseToolStripMenuItem");
+            this.ellipseToolStripMenuItem.Name = "ellipseToolStripMenuItem";
+            this.ellipseToolStripMenuItem.Click += new System.EventHandler(this.addEllipseMenu_Click);
             // 
             // toolStripSeparator1
             // 
@@ -2276,5 +2292,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createDescriptionPdfMenu;
         private System.Windows.Forms.ToolStripMenuItem createPunchcardPdfMenu;
         private System.Windows.Forms.ToolStripMenuItem createCoursePdfMenu;
+        private System.Windows.Forms.ToolStripMenuItem ellipseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEllipseMenu;
     }
 }

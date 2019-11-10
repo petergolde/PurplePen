@@ -2372,6 +2372,13 @@ namespace PurplePen
             }
         }
 
+        public override RectangleF GetHighlightBounds()
+        {
+            RectangleF bounds = rect;
+            bounds.Inflate(FullWidth / 2F, FullWidth / 2F);
+            return bounds;
+        }
+
         // Get the distance of a point from this object, or 0 if the point is covered by the object.
         public override double DistanceFromPoint(PointF pt)
         {

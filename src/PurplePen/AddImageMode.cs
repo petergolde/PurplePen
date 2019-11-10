@@ -51,7 +51,7 @@ namespace PurplePen
         UndoMgr undoMgr;
         EventDB eventDB;
         CourseObj startingObj;           // base object being dragged out -- used to create current obj being dragged.
-        CourseObj currentObj;           // current object being dragged out.
+        RectCourseObj currentObj;           // current object being dragged out.
         PointF startLocation;                               // location where dragging started.
         PointF handleDragging;
 
@@ -143,7 +143,7 @@ namespace PurplePen
 
             DragTo(location);
 
-            RectangleF rect = currentObj.GetHighlightBounds();
+            RectangleF rect = currentObj.rect;
             if (rect.Height < 1 || rect.Width < 1) {
                 // Too small. Use the click action.
                 LeftButtonClick(pane, location, pixelSize, ref displayUpdateNeeded);

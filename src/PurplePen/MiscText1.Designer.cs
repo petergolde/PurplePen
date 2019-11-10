@@ -61,6 +61,24 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set the appearance of the ellipse. After pressing OK, drag the mouse to place the ellipse in the desired location..
+        /// </summary>
+        internal static string AddEllipseExplanation {
+            get {
+                return ResourceManager.GetString("AddEllipseExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Ellipse.
+        /// </summary>
+        internal static string AddEllipseTitle {
+            get {
+                return ResourceManager.GetString("AddEllipseTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set the appearance of the line. After pressing OK, drag the mouse to draw the line segments in the desired location..
         /// </summary>
         internal static string AddLineExplanation {

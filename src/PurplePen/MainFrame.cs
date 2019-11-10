@@ -155,6 +155,7 @@ namespace PurplePen
             addImageMenu.Image = imageToolStripMenuItem.Image;
             addLineMenu.Image = lineToolStripMenuItem.Image;
             addRectangleMenu.Image = rectangleToolStripMenuItem.Image;
+            addEllipseMenu.Image = ellipseToolStripMenuItem.Image;
             whiteOutMenu.Image = whiteOutToolStripMenuItem.Image;
             addGapMenu.Image = addGapToolStripButton.Image;
             addBendMenu.Image = addBendToolStripButton.Image;
@@ -1752,6 +1753,42 @@ namespace PurplePen
 
             if (result == DialogResult.OK) {
                 controller.BeginAddRectangleSpecialMode(false, linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize, linePropertiesDialog.CornerRadius);
+            }
+
+            linePropertiesDialog.Dispose();
+        }
+
+        private void addEllipseMenu_Click(object sender, EventArgs e)
+        {
+            // Set the course appearance into the dialog
+            CourseAppearance appearance = controller.GetCourseAppearance();
+
+            // Get the correct default purple color to use.
+            float c, m, y, k;
+            bool purpleOverprint;
+            short ocadId;
+            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
+
+            LinePropertiesDialog linePropertiesDialog = new LinePropertiesDialog(MiscText.AddEllipseTitle, MiscText.AddEllipseExplanation, "EditAddEllipse.htm", CmykColor.FromCmyk(c, m, y, k), appearance);
+
+            // Get the defaults for a new line.
+            SpecialColor color;
+            LineKind lineKind;
+            float lineWidth, gapSize, dashSize, cornerRadius;
+            controller.GetLineSpecialProperties(SpecialKind.Ellipse, false, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
+            linePropertiesDialog.ShowRadius = false;
+            linePropertiesDialog.ShowLineKind = true;
+            linePropertiesDialog.Color = color;
+            linePropertiesDialog.LineKind = LineKind.Single;
+            linePropertiesDialog.LineWidth = lineWidth;
+            linePropertiesDialog.GapSize = gapSize;
+            linePropertiesDialog.DashSize = dashSize;
+            linePropertiesDialog.CornerRadius = cornerRadius;
+
+            DialogResult result = linePropertiesDialog.ShowDialog();
+
+            if (result == DialogResult.OK) {
+                controller.BeginAddRectangleSpecialMode(true, linePropertiesDialog.Color, linePropertiesDialog.LineKind, linePropertiesDialog.LineWidth, linePropertiesDialog.GapSize, linePropertiesDialog.DashSize, 0);
             }
 
             linePropertiesDialog.Dispose();

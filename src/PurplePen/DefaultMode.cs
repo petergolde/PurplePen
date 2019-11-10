@@ -695,7 +695,7 @@ namespace PurplePen
                     // Moving rectangle handles is sort of special too.
                     RectCourseObj rectObj = (RectCourseObj)courseObjectStart.Clone();
                     rectObj.MoveHandle(handleLocation, location);
-                    RectangleF rect = rectObj.GetHighlightBounds();
+                    RectangleF rect = rectObj.rect;
                     controller.MoveSpecial(specialId, new PointF[2] { new PointF(rect.Left, rect.Bottom), new PointF(rect.Right, rect.Top) });
                 }
                 else if (courseObjectStart is BasicTextCourseObj) {

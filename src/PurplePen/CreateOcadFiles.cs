@@ -60,7 +60,9 @@ namespace PurplePen
             MiscText.OpenOrienteeringMapper + " 0.7 (.omap)",
             MiscText.OpenOrienteeringMapper + " 0.7 (.xmap)",
             MiscText.OpenOrienteeringMapper + " 0.8 (.omap)",
-            MiscText.OpenOrienteeringMapper + " 0.8 (.xmap)"
+            MiscText.OpenOrienteeringMapper + " 0.8 (.xmap)",
+            MiscText.OpenOrienteeringMapper + " 0.9 (.omap)",
+            MiscText.OpenOrienteeringMapper + " 0.9 (.xmap)",
         };
 
         // These must match strings above in order.
@@ -77,6 +79,8 @@ namespace PurplePen
             new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.XMap, 6),
             new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.OMap, 7),
             new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.XMap, 7),
+            new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.OMap, 9),
+            new MapFileFormat(MapFileFormatKind.OpenMapper, OpenMapperSubKind.XMap, 9),
         };
 
         // CONSIDER: shouldn't take an eventDB. Should instead take a pair of CourseViewData/name or some such.
