@@ -80,6 +80,7 @@ namespace PurplePen.Tests
             ctl3 = new ControlPoint(ControlPointKind.CrossingPoint, null, new PointF(13, -7.8F));
             ctl3.symbolIds[0] = "13.2";
             ctl3.orientation = 94.5F;
+            ctl3.stretch = 2.4F;
             eventDB.AddControlPoint(ctl3);
 
             ctl4 = new ControlPoint(ControlPointKind.Normal, "32", new PointF(20, -10.5F));
@@ -611,6 +612,7 @@ namespace PurplePen.Tests
             sp2.allCourses = false;
             sp2.courses = new CourseDesignator[] { Designator(1), Designator(2), Designator(3), CourseDesignator.AllControls };
             sp2.orientation = 45F;
+            sp2.stretch = 1.4F;
             sp3 = new Special(SpecialKind.Boundary, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
             sp4 = new Special(SpecialKind.OOB, new PointF[4] { new PointF(3, 7), new PointF(11, 2), new PointF(0, -1), new PointF(-12, -3) });
             sp5 = new Special(SpecialKind.Text, new PointF[2] { new PointF(3, 7), new PointF(11, 4) });

@@ -380,15 +380,29 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CrossingPoint()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 0, new PointF(0, 0));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 0, 0, new PointF(0, 0));
             SingleObject(courseobj, "crossing_point");
+        }
+
+        [TestMethod]
+        public void CrossingPointStretch()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 0, 3, new PointF(0, 0));
+            SingleObject(courseobj, "crossing_point_stretch");
         }
 
         [TestMethod]
         public void CrossingPointSpecial()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 0, new PointF(0, 0));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 0, 0, new PointF(0, 0));
             SingleObject(courseobj, "crossing_point_special");
+        }
+
+        [TestMethod]
+        public void CrossingPointStretchSpecial()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 0, 3, new PointF(0, 0));
+            SingleObject(courseobj, "crossing_point_stretch_special");
         }
 
         [TestMethod]
@@ -863,11 +877,22 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CrossingPointDistance()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 0, new PointF(1, 1));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 0, 0, new PointF(1, 1));
             Assert.AreEqual(5.0 - 1.72, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.01);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, 0.5F)));
-            courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 0.5F, defaultCourseAppearance, 0, new PointF(1, 1));
+            courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 0.5F, defaultCourseAppearance, 0, 0, new PointF(1, 1));
             Assert.AreEqual(5.0 - 1.72 / 2.0, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.01);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, 0.3F)));
+        }
+
+        [TestMethod]
+        public void CrossingPointStretchDistance()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 0, 3, new PointF(1, 1));
+            Assert.AreEqual(5.0 - 1.72 - 1.5, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.01);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, 0.5F)));
+            courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 0.5F, defaultCourseAppearance, 0, 3, new PointF(1, 1));
+            Assert.AreEqual(5.0 - (1.72 + 1.5) / 2.0, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.01);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, 0.3F)));
         }
 
@@ -1045,7 +1070,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CrossingPointDump()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(12), CourseControlId(19), SpecialId(0), 0.666F, defaultCourseAppearance, 77.4F, new PointF(-9.6F, 12.5F));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(12), CourseControlId(19), SpecialId(0), 0.666F, defaultCourseAppearance, 77.4F, 0, new PointF(-9.6F, 12.5F));
             AssertDump(courseobj, @"Crossing:       control:12  course-control:19  scale:0.666  location:(-9.6,12.5)  orientation:77.4");
         }
 
@@ -1321,15 +1346,29 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CrossingPointHighlight()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, 0, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "crossing_point_highlight");
+        }
+
+        [TestMethod]
+        public void CrossingPointStretchHighlight()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, 3, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "crossing_point_stretch_highlight");
         }
 
         [TestMethod]
         public void CrossingPointHighlightSpecial()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 75, 0, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "crossing_point_highlight_special");
+        }
+
+        [TestMethod]
+        public void CrossingPointStretchHighlightSpecial()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, specialAppearance, 75, 3, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "crossing_point_stretch_highlight_special");
         }
 
         [TestMethod]
@@ -1778,8 +1817,15 @@ namespace PurplePen.Tests
         [TestMethod]
         public void CrossingPointOffset()
         {
-            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F));
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, 0, new PointF(0.1F, 0.4F));
             SingleObjectOffset(courseobj, "crossing_point_offset");
+        }
+
+        [TestMethod]
+        public void CrossingPointStretchOffset()
+        {
+            CourseObj courseobj = new CrossingCourseObj(ControlId(0), CourseControlId(0), SpecialId(0), 1.0F, defaultCourseAppearance, 75, 3, new PointF(0.1F, 0.4F));
+            SingleObjectOffset(courseobj, "crossing_point_stretch_offset");
         }
 
         [TestMethod]

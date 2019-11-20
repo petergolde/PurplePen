@@ -631,6 +631,19 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, control);
         }
 
+        // Change the stretch of a control. Must be a crossing point.
+        public static void ChangeControlStretch(EventDB eventDB, Id<ControlPoint> controlId, float newStretch)
+        {
+            ControlPoint control = eventDB.GetControl(controlId);
+
+            Debug.Assert(control.kind == ControlPointKind.CrossingPoint);
+
+            control = (ControlPoint)control.Clone();
+            control.stretch = newStretch;
+
+            eventDB.ReplaceControlPoint(controlId, control);
+        }
+
         // Change the gaps of a control for a given scale.
         public static void ChangeControlGaps(EventDB eventDB, Id<ControlPoint> controlId, float scale, CircleGap[] newGaps)
         {
@@ -675,6 +688,19 @@ namespace PurplePen
 
             special = (Special) special.Clone();
             special.orientation = newOrientation;
+
+            eventDB.ReplaceSpecial(specialId, special);
+        }
+
+        // Change the stretch associated with a special. Must be an optional crossing point.
+        public static void ChangeSpecialStretch(EventDB eventDB, Id<Special> specialId, float newStretch)
+        {
+            Special special = eventDB.GetSpecial(specialId);
+
+            Debug.Assert(special.kind == SpecialKind.OptCrossing);
+
+            special = (Special)special.Clone();
+            special.stretch = newStretch;
 
             eventDB.ReplaceSpecial(specialId, special);
         }

@@ -2628,6 +2628,60 @@ namespace PurplePen
             }
         }
 
+        // Command status for stretching the currently selected object. Only crossing points
+        // can be stretched.
+        public CommandStatus CanStretch()
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            //  Only crossing points (optional or mandatory) can be rotated.
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Special && eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.OptCrossing) {
+                return CommandStatus.Enabled;
+            }
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.Control && eventDB.GetControl(selection.SelectedControl).kind == ControlPointKind.CrossingPoint) {
+                return CommandStatus.Enabled;
+            }
+            else {
+                return CommandStatus.Disabled;
+            }
+        }
+
+        // Begin mode to stretch the selected object.
+        public void BeginStretch()
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            //  Only crossing points (optional or mandatory) can be stretched.
+            if ((selection.SelectionKind == SelectionMgr.SelectionKind.Special && eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.OptCrossing) ||
+                (selection.SelectionKind == SelectionMgr.SelectionKind.Control && eventDB.GetControl(selection.SelectedControl).kind == ControlPointKind.CrossingPoint)) {
+                SetCommandMode(new StretchMode(this, (CrossingCourseObj)selectionMgr.SelectedCourseObjects[0]));
+            }
+        }
+
+        // Stretch the selected object to the given new orientation.
+        public void Stretch(float newStretch)
+        {
+            SelectionMgr.SelectionInfo selection = selectionMgr.Selection;
+
+            //  Only crossing points (optional or mandatory) can be stretched.
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Special && eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.OptCrossing) {
+                Id<Special> specialId = selection.SelectedSpecial;
+
+                undoMgr.BeginCommand(8812, CommandNameText.Stretch);
+                ChangeEvent.ChangeSpecialStretch(eventDB, specialId, newStretch);
+                undoMgr.EndCommand(8812);
+            }
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.Control && eventDB.GetControl(selection.SelectedControl).kind == ControlPointKind.CrossingPoint) {
+                Id<ControlPoint> controlId = selection.SelectedControl;
+
+                undoMgr.BeginCommand(8813, CommandNameText.Rotate);
+                ChangeEvent.ChangeControlStretch(eventDB, controlId, newStretch);
+                undoMgr.EndCommand(8813);
+            }
+        }
+
+
+
         // Command status for changing the text of a given item.
         public CommandStatus CanChangeText()
         {

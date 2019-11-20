@@ -1866,9 +1866,12 @@ namespace PurplePen
         static readonly PointF[] coords1 = { new PointF(-0.85F, -1.5F), new PointF(-0.35F, -0.65F), new PointF(-0.35F, 0.65F), new PointF(-0.85F, 1.5F) };
         static readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
 
-        public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, float orientation, PointF location)
-            : base(controlId, courseControlId, specialId, courseObjRatio, appearance, null, orientation, 1.72F, location)
+        public float stretch;
+
+        public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, float orientation, float stretch, PointF location)
+            : base(controlId, courseControlId, specialId, courseObjRatio, appearance, null, orientation, 1.72F + stretch / 2, location)
         {
+            this.stretch = stretch;
         }
 
         // Change the orientation of this crossing point.
@@ -1877,15 +1880,37 @@ namespace PurplePen
             orientation = newOrientation;
         }
 
+        // Change the stretch of this crossing point.
+        public void ChangeStretch(float newStretch)
+        {
+            stretch = newStretch;
+        }
+
         void GetPaths(out SymPath path1, out SymPath path2)
         {
-            PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
-            PointF[] pts = ScaleCoords((PointF[])coords1.Clone());
-            path1 = new SymPath(pts, kinds);
+            if (stretch <= 0) {
+                PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
+                PointF[] pts = ScaleCoords((PointF[])coords1.Clone());
+                path1 = new SymPath(pts, kinds);
 
-            kinds = new PointKind[4] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
-            pts = ScaleCoords((PointF[])coords2.Clone());
-            path2 = new SymPath(pts, kinds);
+                kinds = new PointKind[4] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
+                pts = ScaleCoords((PointF[])coords2.Clone());
+                path2 = new SymPath(pts, kinds);
+            }
+            else {
+                float hStretch = stretch / 2F;
+                PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
+                PointF[] pts = { new PointF(-0.85F, -1.5F - hStretch), new PointF(-0.6F, -1.08F - hStretch), new PointF(-0.48F, -0.5F - hStretch), new PointF(-0.48F, - hStretch),
+                                 new PointF(-0.48F, hStretch), new PointF(-0.48F, 0.5F + hStretch), new PointF(-0.6F, 1.08F + hStretch), new PointF(-0.85F, 1.5F + hStretch) };
+                pts = ScaleCoords(pts);
+                path1 = new SymPath(pts, kinds);
+
+                kinds = new PointKind[] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
+                pts = new PointF[] { new PointF(0.85F, -1.5F - hStretch), new PointF(0.6F, -1.08F - hStretch), new PointF(0.48F, -0.5F - hStretch), new PointF(0.48F, -hStretch),
+                                     new PointF(0.48F, hStretch), new PointF(0.48F, 0.5F + hStretch), new PointF(0.6F, 1.08F + hStretch), new PointF(0.85F, 1.5F + hStretch) };
+                pts = ScaleCoords(pts);
+                path2 = new SymPath(pts, kinds);
+            }
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
@@ -1899,7 +1924,7 @@ namespace PurplePen
 
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Crossing point", "708", glyph, true);
+            PointSymDef symdef = new PointSymDef("Crossing point", map.GetFreeSymbolId(708), glyph, true);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Crossing_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -1938,10 +1963,28 @@ namespace PurplePen
             grTarget.Dispose();
         }
 
+        // A struct synthesizes Equals/GetHashCode automatically.
+        struct MySymdefKey
+        {
+            public float stretch;
+        }
+
+        protected override object SymDefKey()
+        {
+            MySymdefKey key = new MySymdefKey();
+            key.stretch = stretch;
+            return key;
+        }
+
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("  orientation:{0:0.##}", orientation);
+            if (stretch <= 0) {
+                result += string.Format("  orientation:{0:0.##}", orientation);
+            }
+            else {
+                result += string.Format("  orientation:{0:0.##}  stretch:{1:0.##}", orientation, stretch);
+            }
             return result;
         }
     }

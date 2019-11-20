@@ -996,6 +996,28 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ChangeControlStretch()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            Assert.AreEqual(0, eventDB.GetControl(ControlId(3)).stretch);
+
+            undomgr.BeginCommand(812, "Stretch crossing point");
+
+            ChangeEvent.ChangeControlStretch(eventDB, ControlId(3), 2.33F);
+
+            undomgr.EndCommand(812);
+            eventDB.Validate();
+
+            Assert.AreEqual(2.33F, eventDB.GetControl(ControlId(3)).stretch);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual(0, eventDB.GetControl(ControlId(3)).stretch);
+        }
+
+        [TestMethod]
         public void ChangeControlGaps()
         {
             Setup("changeevent\\sampleevent1.coursescribe");
@@ -1925,6 +1947,26 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             Assert.AreEqual(45F, eventDB.GetSpecial(SpecialId(2)).orientation);
+        }
+
+        [TestMethod]
+        public void ChangeSpecialStretch()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            Assert.AreEqual(0F, eventDB.GetSpecial(SpecialId(2)).stretch);
+
+            undomgr.BeginCommand(1154, "stretch special");
+            ChangeEvent.ChangeSpecialStretch(eventDB, SpecialId(2), 2.3F);
+            undomgr.EndCommand(1154);
+            eventDB.Validate();
+
+            Assert.AreEqual(2.3F, eventDB.GetSpecial(SpecialId(2)).stretch);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            Assert.AreEqual(0, eventDB.GetSpecial(SpecialId(2)).stretch);
         }
 
         [TestMethod]

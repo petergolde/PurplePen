@@ -411,7 +411,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.CrossingPoint:
-                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, courseObjRatio, appearance, 0, highlightLocation);
+                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, courseObjRatio, appearance, 0, 0, highlightLocation);
 
                 if (courseDesignator.IsNotAllControls && eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) {
                     // Show the legs to and from the control also as additional highlights.
@@ -610,7 +610,7 @@ namespace PurplePen
                 highlight = new WaterCourseObj(Id<Special>.None, courseObjRatio, appearance, highlightLocation);
                 break;
             case SpecialKind.OptCrossing:
-                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, courseObjRatio, appearance, 0, highlightLocation);
+                highlight = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, Id<Special>.None, courseObjRatio, appearance, 0, 0, highlightLocation);
                 break;
             case SpecialKind.Forbidden:
                 highlight = new ForbiddenCourseObj(Id<Special>.None, courseObjRatio, appearance, highlightLocation);

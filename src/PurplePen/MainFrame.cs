@@ -698,6 +698,7 @@ namespace PurplePen
             UpdateMenuItem(addGapToolStripButton, controller.CanAddGap());
             UpdateMenuItem(removeGapMenu, controller.CanRemoveGap());
             UpdateMenuItem(rotateMenu, controller.CanRotate());
+            UpdateMenuItem(stretchMenu, controller.CanStretch());
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
             UpdateMenuItem(changeLineAppearanceMenu, controller.CanChangeLineAppearance());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
@@ -1894,6 +1895,11 @@ namespace PurplePen
         private void rotateMenu_Click(object sender, EventArgs e)
         {
             controller.BeginRotate();
+        }
+
+        private void stretchMenu_Click(object sender, EventArgs e)
+        {
+            controller.BeginStretch();
         }
 
         private void noFlaggingMenu_Click(object sender, EventArgs e)

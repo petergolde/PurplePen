@@ -176,6 +176,7 @@ namespace PurplePen
         public PointF location;         // The location of the control.
         public PunchPattern punches;  // The punch pattern. Null means no punch pattern set yet.
         public float orientation;       // For crossing points only, the orientation in degress
+        public float stretch;           // For crossing points only, the mm of stretch (0.0 is normal, <0.0 not allowed)
         public string descriptionText;  // null for auto-text, or custom description text
         public string[] symbolIds;      // Array of six symbols ids for column C-H (or one for Finish, CrossingPoint)
         public string columnFText;      // Text for column F, or null for none (/ or | to separate two numbers)
@@ -263,6 +264,8 @@ namespace PurplePen
                 return false;
             if (other.orientation != orientation)
                 return false;
+            if (other.stretch != stretch)
+                return false;
             if (other.descriptionText != descriptionText)
                 return false;
             if ((other.symbolIds == null || symbolIds == null)) {
@@ -346,8 +349,10 @@ namespace PurplePen
                 codeLocationAngle = XmlConvert.ToSingle(codeAngle);
             }
 
-            if (kind == ControlPointKind.CrossingPoint)
+            if (kind == ControlPointKind.CrossingPoint) {
                 orientation = xmlinput.GetAttributeFloat("orientation");
+                stretch = xmlinput.GetAttributeFloat("stretch", 0);
+            }
 
             if (kind == ControlPointKind.MapIssue) {
                 string mapIssueKindString = xmlinput.GetAttributeString("map-issue-location", "beginning");
@@ -497,8 +502,12 @@ namespace PurplePen
 
             xmloutput.WriteAttributeString("kind", kindText);
 
-            if (kind == ControlPointKind.CrossingPoint)
+            if (kind == ControlPointKind.CrossingPoint) {
                 xmloutput.WriteAttributeString("orientation", XmlConvert.ToString(orientation));
+                if (stretch > 0) {
+                    xmloutput.WriteAttributeString("stretch", XmlConvert.ToString(stretch));
+                }
+            }
 
             if (customCodeLocation) 
                 xmloutput.WriteAttributeString("all-controls-code-angle", XmlConvert.ToString(codeLocationAngle));
@@ -1624,6 +1633,7 @@ namespace PurplePen
         public SpecialKind kind;            // The kind of special.
         public PointF[] locations;          // The location of the control; might be one or more coordinates (two for a rectangle)
         public float orientation;           // For crossing points only, the orientation in degress
+        public float stretch;               // For crossing points only, the mm of stretch (0.0 being default)
         public bool allCourses;             // If true, special is in all courses.
         public CourseDesignator[] courses;  // If allCourses is false, an array of the course designators this special is in.
         public SpecialColor color;          // For text, line, rectangle, the color
@@ -1772,6 +1782,8 @@ namespace PurplePen
                 return false;
             if (other.orientation != orientation)
                 return false;
+            if (other.stretch != stretch)
+                return false;
             if (other.allCourses != allCourses)
                 return false;
             if (!object.Equals(color, other.color))
@@ -1845,8 +1857,10 @@ namespace PurplePen
                 default: xmlinput.BadXml("Invalid special-object kind '{0}'", kindText); break;
             }
 
-            if (kind == SpecialKind.OptCrossing)
+            if (kind == SpecialKind.OptCrossing) {
                 orientation = xmlinput.GetAttributeFloat("orientation");
+                stretch = xmlinput.GetAttributeFloat("stretch", 0.0F);
+            }
 
             text = null;
             locations = null;
@@ -1979,8 +1993,12 @@ namespace PurplePen
 
             xmloutput.WriteAttributeString("kind", kindText);
 
-            if (kind == SpecialKind.OptCrossing)
+            if (kind == SpecialKind.OptCrossing) {
                 xmloutput.WriteAttributeString("orientation", XmlConvert.ToString(orientation));
+                if (stretch > 0.0F) {
+                    xmloutput.WriteAttributeString("stretch", XmlConvert.ToString(stretch));
+                }
+            }
 
             // Write sub-elements
             if (text != null) {

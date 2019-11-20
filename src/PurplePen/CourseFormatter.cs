@@ -542,7 +542,7 @@ namespace PurplePen
             case SpecialKind.Water:
                 courseObj = new WaterCourseObj(specialId, courseObjRatio, appearance, special.locations[0]); break;
             case SpecialKind.OptCrossing:
-                courseObj = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, special.orientation, special.locations[0]); break;
+                courseObj = new CrossingCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, special.orientation, special.stretch, special.locations[0]); break;
             case SpecialKind.Forbidden:
                 courseObj = new ForbiddenCourseObj(specialId, courseObjRatio, appearance, special.locations[0]); break;
             case SpecialKind.RegMark:
@@ -667,7 +667,7 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.CrossingPoint:
-                courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, control.orientation, control.location);
+                courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, control.orientation, control.stretch, control.location);
                 break;
 
             default:
@@ -814,6 +814,13 @@ namespace PurplePen
             double legRadius1 = GetLegRadius(kind1, courseObjRatio, appearance);
             double legRadius2 = GetLegRadius(kind2, courseObjRatio, appearance);
 
+            if (kind1 == ControlPointKind.CrossingPoint && controlId1.IsNotNone) {
+                pt1 = AdjustedCrossingPointLocation(eventDB, controlId1, pt2, courseObjRatio);
+            }
+            if (kind2 == ControlPointKind.CrossingPoint && controlId2.IsNotNone) {
+                pt2 = AdjustedCrossingPointLocation(eventDB, controlId2, pt1, courseObjRatio);
+            }
+
             if (kind2 == ControlPointKind.Start && !double.IsNaN(angleOutStart)) {
                 double angleInStart;
                 if (bends == null || bends.Length == 0) {
@@ -826,6 +833,30 @@ namespace PurplePen
             }
 
             return GetLegPath(pt1, legRadius1, pt2, legRadius2, bends, gaps, dashPoint);
+        }
+
+        // If a crossing point is stretched, we need to adjust it's location for the purposes of the end 
+        // of the leg path. The "ptOtherEnd" is the other end of the leg that tells us which way to adjust it.
+        private static PointF AdjustedCrossingPointLocation(EventDB eventDB, Id<ControlPoint> controlId, PointF ptOtherEnd, float courseObjRatio)
+        {
+            ControlPoint control = eventDB.GetControl(controlId);
+            if (control.kind == ControlPointKind.CrossingPoint && control.stretch > 0) {
+                // Get the two possible places to put the new endpoint.
+                PointF possiblePt1 = Geometry.MoveDistance(control.location, courseObjRatio * (control.stretch / 2), control.orientation + 90);
+                PointF possiblePt2 = Geometry.MoveDistance(control.location, courseObjRatio * (control.stretch / 2), control.orientation - 90);
+
+                // Pick the closest one to the other end of the leg.
+                if (Geometry.Distance(possiblePt1, ptOtherEnd) < Geometry.Distance(possiblePt2, ptOtherEnd)) {
+                    return possiblePt1;
+                }
+                else {
+                    return possiblePt2;
+                }
+            }
+            else {
+                // Not stretched.
+                return control.location;
+            }
         }
 
         // Create a path from pt1 to pt2, with the given radius around the legs. If the leg would

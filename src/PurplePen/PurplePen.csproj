@@ -649,6 +649,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportText.resx</DependentUpon>
     </Compile>
+    <Compile Include="StretchMode.cs" />
     <Compile Include="RotateMode.cs" />
     <Compile Include="SelectionDescriber.cs" />
     <Compile Include="SelectionDescriptionText.hu.Designer.cs">

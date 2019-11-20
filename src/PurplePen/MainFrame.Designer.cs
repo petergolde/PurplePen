@@ -212,6 +212,7 @@ namespace PurplePen
             this.changeTextMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.changeLineAppearanceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.stretchMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.legFlaggingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.noFlaggingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.entireFlaggingMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -1354,6 +1355,7 @@ namespace PurplePen
             this.changeTextMenu,
             this.changeLineAppearanceMenu,
             this.rotateMenu,
+            this.stretchMenu,
             this.legFlaggingMenu,
             this.toolStripSeparator19,
             this.changeDisplayedCoursesMenu});
@@ -1423,6 +1425,12 @@ namespace PurplePen
             this.rotateMenu.Name = "rotateMenu";
             resources.ApplyResources(this.rotateMenu, "rotateMenu");
             this.rotateMenu.Click += new System.EventHandler(this.rotateMenu_Click);
+            // 
+            // stretchMenu
+            // 
+            this.stretchMenu.Name = "stretchMenu";
+            resources.ApplyResources(this.stretchMenu, "stretchMenu");
+            this.stretchMenu.Click += new System.EventHandler(this.stretchMenu_Click);
             // 
             // legFlaggingMenu
             // 
@@ -2294,5 +2302,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createCoursePdfMenu;
         private System.Windows.Forms.ToolStripMenuItem ellipseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addEllipseMenu;
+        private System.Windows.Forms.ToolStripMenuItem stretchMenu;
     }
 }

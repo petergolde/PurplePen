@@ -205,7 +205,7 @@ namespace PurplePen
                     break;
 
                 case ControlPointKind.CrossingPoint:
-                    courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, courseObjRatio * 1.5F, appearance, 0, location);
+                    courseObj = new CrossingCourseObj(controlId, courseControlId, Id<Special>.None, courseObjRatio * 1.5F, appearance, 0, 0, location);
                     break;
 
                 case ControlPointKind.MapIssue:
