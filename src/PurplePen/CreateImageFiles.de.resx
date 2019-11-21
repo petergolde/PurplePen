@@ -204,6 +204,9 @@
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Ordner</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bilddateien erstellen</value>
+  </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>
   </data>

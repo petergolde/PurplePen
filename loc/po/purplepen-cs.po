@@ -1,13 +1,13 @@
-#  localization file
+# Purple Pen localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the  package.
+# This file is distributed under the same license as the Purple Pen package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
+"Project-Id-Version: Purple Pen 3.4.0\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -812,6 +812,10 @@ msgstr ""
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
+msgstr ""
+
+#: CommandNameText.resx, Stretch
+msgid "Stretch"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -1787,6 +1791,11 @@ msgstr "Čára"
 msgid "Rectangle"
 msgstr "Obdélník"
 
+#: MainFrame.resx, addEllipseMenu.Text
+#: MainFrame.resx, ellipseToolStripMenuItem.Text
+msgid "Ellipse"
+msgstr ""
+
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
 msgstr "&Přidat"
@@ -1892,7 +1901,7 @@ msgid "Add &Gap"
 msgstr "Přidat &mezeru"
 
 #: MainFrame.resx, removeGapMenu.Text
-msgid "Remove G&ap"
+msgid "Remove Ga&p"
 msgstr "Odebrat me&zeru"
 
 #: MainFrame.resx, changeTextMenu.Text
@@ -1906,6 +1915,10 @@ msgstr "Změnit vzhled čáry"
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
 msgstr "&Otočit"
+
+#: MainFrame.resx, stretchMenu.Text
+msgid "&Stretch"
+msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -2819,6 +2832,15 @@ msgstr ""
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
+msgstr ""
+
+#: MiscText.resx, AddEllipseExplanation
+msgid "Set the appearance of the ellipse. After pressing OK, drag "
+"the mouse to place the ellipse in the desired location."
+msgstr ""
+
+#: MiscText.resx, AddEllipseTitle
+msgid "Add Ellipse"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -3986,6 +4008,11 @@ msgstr ""
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
+msgstr ""
+
+#: StatusBarText.resx, StretchingObject
+msgid "Hold down left mouse button and drag to stretch the "
+"stretch the crossing point"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text

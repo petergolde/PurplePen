@@ -1,13 +1,13 @@
-#  localization file
+# Purple Pen localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the  package.
+# This file is distributed under the same license as the Purple Pen package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
+"Project-Id-Version: Purple Pen 3.4.0\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2019-11-20 17:15-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -59,7 +59,7 @@ msgstr "Pruple Pen Hakkında"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr "İlk kontrol numarası:"
+msgstr "Birinci Kontrol Numarası"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -303,17 +303,17 @@ msgstr "Bütün Parkurlar {0}"
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
-msgstr "Metin satırı Ekle"
+msgstr "Metin Satırı Ekle"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr "Bu ayarlar harita ve tanımların nasıl yazılacağını kontrol "
-"eder."
+msgstr "Bu ayarlar, haritanın ve tüm kontrol noktalarının "
+"açıklamalarının nasıl  yazılacağını kontrol eder."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr "Tüm Kontrol Özellikleri"
+msgstr "Tüm Kontrol Noktaların  Özellikleri"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
@@ -389,12 +389,12 @@ msgstr "Parkur Sırası"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
-msgstr "Geçerli Harita Dosyası"
+msgstr "Seçili Harita"
 
 #: ChangeMapFile.resx, buttonChooseFile.Text
 #: NewEventMapFile.resx, chooseMapFileButton.Text
 msgid "&Choose map file..."
-msgstr "&Seçilen Harita Dosyası"
+msgstr "Harita dosyasını seç..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
@@ -403,7 +403,12 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr "Bütün Harita Dosya Biçimleri"
+msgstr "Tüm harta "
+"dosyaları|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.ti"
+"f;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open "
+"Orienteering Mapper Files|*.omap;*.xmap|PDF files "
+"(*.pdf)|*.pdf|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -487,7 +492,7 @@ msgstr ""
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Harita Dosya Adı"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -634,12 +639,12 @@ msgstr "Nesne Sil"
 
 #: CommandNameText.resx, DeleteTextLine
 msgid "Delete Text Line"
-msgstr "Metin AlanıSil"
+msgstr "Metin Alanını Sil"
 
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr "Hedef Ekle"
+msgstr "Hedef  Ekle"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
@@ -722,7 +727,7 @@ msgstr "Döndür"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr "Change Punch Patterns"
+msgstr "Zımba Kalıplarını Değiştir"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
@@ -731,7 +736,7 @@ msgstr "Delgi Kartı Düzenini Değiştir"
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
 msgid "Set Print Area"
-msgstr "Baskı Alanı Ayarla"
+msgstr "Yazdırma Alanı Ayarla"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
@@ -748,7 +753,7 @@ msgstr "Parkur Sırasını Değiştir"
 
 #: CommandNameText.resx, ChangeMapFile
 msgid "Change Map File"
-msgstr "Change Map File"
+msgstr "Harita Dosyasını Değiştir"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
@@ -782,25 +787,25 @@ msgstr "Harita Değişimi Sil"
 
 #: CommandNameText.resx, ChangePartProperties
 msgid "Change Course Part Properties"
-msgstr ""
+msgstr "Parkur Bölüm Özelliklerini Değiştirme"
 
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr ""
+msgstr "Satır Görünümünü Değiştir"
 
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
 msgid "Duplicate Course"
-msgstr ""
+msgstr "Parkur Çoğalt"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr ""
+msgstr "Dosya &{0} Oluştur"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"
-msgstr ""
+msgstr "Ayrım/Döngü Sil"
 
 #: CommandNameText.resx, RelayTeamVariations
 #: TeamVariationsForm.resx, $this.Text
@@ -817,6 +822,10 @@ msgstr ""
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
+msgstr ""
+
+#: CommandNameText.resx, Stretch
+msgid "Stretch"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -1787,6 +1796,11 @@ msgstr "Çizgi"
 msgid "Rectangle"
 msgstr "Dikdörtgen"
 
+#: MainFrame.resx, addEllipseMenu.Text
+#: MainFrame.resx, ellipseToolStripMenuItem.Text
+msgid "Ellipse"
+msgstr ""
+
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
 msgstr "&Ekle"
@@ -1892,7 +1906,7 @@ msgid "Add &Gap"
 msgstr ""
 
 #: MainFrame.resx, removeGapMenu.Text
-msgid "Remove G&ap"
+msgid "Remove Ga&p"
 msgstr ""
 
 #: MainFrame.resx, changeTextMenu.Text
@@ -1905,6 +1919,10 @@ msgstr ""
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
+msgstr ""
+
+#: MainFrame.resx, stretchMenu.Text
+msgid "&Stretch"
 msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
@@ -2795,6 +2813,15 @@ msgstr ""
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
+msgstr ""
+
+#: MiscText.resx, AddEllipseExplanation
+msgid "Set the appearance of the ellipse. After pressing OK, drag "
+"the mouse to place the ellipse in the desired location."
+msgstr ""
+
+#: MiscText.resx, AddEllipseTitle
+msgid "Add Ellipse"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -4001,8 +4028,8 @@ msgstr "Sol fare tuşunu basılı tutun ve nesneyi oluşturmak için "
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr "Kursda yeniden sıralamak için kontrol numarasını "
-"sürükleyin (çoğaltmak için kaydır'ı basılı tutun)"
+msgstr "Parkur numaralarını yeniden sıralamak için sürükleyin "
+"(Çoğaltmak için Kaydıra basılı tutunuz)"
 
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
@@ -4011,6 +4038,11 @@ msgstr ""
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
+msgstr ""
+
+#: StatusBarText.resx, StretchingObject
+msgid "Hold down left mouse button and drag to stretch the "
+"stretch the crossing point"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text

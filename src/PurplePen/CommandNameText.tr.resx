@@ -160,10 +160,10 @@
     <value>Nesne Sil</value>
   </data>
   <data name="DeleteTextLine" xml:space="preserve">
-    <value>Metin AlanıSil</value>
+    <value>Metin Alanını Sil</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Hedef Ekle</value>
+    <value>Hedef  Ekle</value>
   </data>
   <data name="AddStart" xml:space="preserve">
     <value>Başlangıç Ekle</value>
@@ -232,13 +232,13 @@
     <value>Otomotik Numaralandırma</value>
   </data>
   <data name="ChangePunchPatterns" xml:space="preserve">
-    <value>Change Punch Patterns</value>
+    <value>Zımba Kalıplarını Değiştir</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
     <value>Delgi Kartı Düzenini Değiştir</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
-    <value>Baskı Alanı Ayarla</value>
+    <value>Yazdırma Alanı Ayarla</value>
   </data>
   <data name="SetCourseLoad" xml:space="preserve">
     <value>Yarışmacı Yüklemesi Değiştir</value>
@@ -250,13 +250,13 @@
     <value>Parkur Sırasını Değiştir</value>
   </data>
   <data name="ChangeMapFile" xml:space="preserve">
-    <value>Change Map File</value>
+    <value>Harita Dosyasını Değiştir</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
     <value>Eksik Fontları Yoksay</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
-    <value>Metin satırı Ekle</value>
+    <value>Metin Satırı Ekle</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
     <value>Kullanılmayan Kontrolleri Kaldır</value>
@@ -276,7 +276,22 @@
   <data name="DeleteMapExchangeAtControl" xml:space="preserve">
     <value>Harita Değişimi Sil</value>
   </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Parkur Bölüm Özelliklerini Değiştirme</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Satır Görünümünü Değiştir</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Parkur Çoğalt</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Dosya &amp;{0} Oluştur</value>
+  </data>
   <data name="AddVariation" xml:space="preserve">
     <value>Varyasyon Ekle</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Ayrım/Döngü Sil</value>
   </data>
 </root>

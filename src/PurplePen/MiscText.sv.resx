@@ -586,11 +586,33 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Kan inte läsa kartan på grund av: '{0}' Öppna och spara om kartan i senaste versionen av OpenOrienteering Mapper så löser det kanske problemet.</value>
   </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Tidsstart</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Tidsstart</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
   <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
     <value>Den underliggande OCAD-kartan har synliga mallfiler. I OCAD 8 och äldre så syns kanske inte mallfilerna p.g.a. begränsningar i OCAD.</value>
   </data>
   <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
     <value>P.g.a. begränsningar i OCAD-filformatet (OCAD 10 och äldre) så kommer bildobjekt att läggas under banor och vita områden i exporterade OCAD-filer. Kontrollera OCAD-filerna för att säkerställa att dina bilder verkligen syns som det är tänkt.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Kunde inte skapa bildfilerna på grund av:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Skapa PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF-fil|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Sträcka {0} når aldrig gaffling '{1}': den är ritad att gå en annan väg i en yttre gaffling.
+Leg {0} never reaches branch '{1}': it was assigned to go a different way in a containing fork.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>

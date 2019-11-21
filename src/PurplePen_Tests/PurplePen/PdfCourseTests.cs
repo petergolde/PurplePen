@@ -333,6 +333,8 @@ namespace PurplePen.Tests
         [TestMethod]
         public void PdfCreation1()
         {
+            FontDesc.InitializeFonts();
+
             CoursePdfSettings settings = new CoursePdfSettings();
             settings.mapDirectory = settings.fileDirectory = false;
             settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create1");

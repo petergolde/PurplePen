@@ -183,6 +183,12 @@
   <data name="Yellow" xml:space="preserve">
     <value>Sarı</value>
   </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Satır Görünümünü Değiştir</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Parkur Çoğalt</value>
+  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

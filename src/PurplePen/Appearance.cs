@@ -192,6 +192,16 @@ namespace PurplePen
             GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Bold, Path.Combine(fontPath, "RobotoCondensed-Bold.ttf"));
             GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Italic, Path.Combine(fontPath, "RobotoCondensed-Italic.ttf"));
             GdiplusFontLoader.AddFontFile("Roboto Condensed", FontStyle.Bold | FontStyle.Italic, Path.Combine(fontPath, "RobotoCondensed-BoldItalic.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-Black.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-BlackItalic.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-Medium.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-MediumItalic.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-Thin.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-ThinItalic.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-Light.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-LightItalic.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "RobotoCondensed-Light.ttf"));
+            // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "RobotoCondensed-LightItalic.ttf"));
         }
     }
 

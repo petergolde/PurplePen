@@ -121,7 +121,7 @@
     <value>Verzweigung</value>
   </data>
   <data name="LegsColumn.HeaderText" xml:space="preserve">
-    <value>Teilstrecken</value>
+    <value>Etappen</value>
   </data>
   <data name="labelDescription.Text" xml:space="preserve">
     <value>Um eine bestimmte Etappe einer bestimmten Verzweigung zuzuweisen, gebe die Etappennummer(n) unten ein. Etappen welche nicht einer Verzweigung zugewiesen werden, werden auf die verbleibenden Verzweigungen zufällig verteilt.</value>

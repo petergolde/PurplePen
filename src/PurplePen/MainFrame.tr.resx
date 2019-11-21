@@ -253,7 +253,7 @@
     <value>Başlangıç Ekle</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
-    <value>Hedef Ekle</value>
+    <value>Hedef  Ekle</value>
   </data>
   <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
     <value>Hedef Ekle (Ctrl+A)</value>

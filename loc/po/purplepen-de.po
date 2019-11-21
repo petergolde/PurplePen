@@ -1,13 +1,13 @@
-#  localization file
+# Purple Pen localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the  package.
+# This file is distributed under the same license as the Purple Pen package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
+"Project-Id-Version: Purple Pen 3.4.0\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -496,7 +496,7 @@ msgstr "Dateiname"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Dateiname der Karte"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -796,7 +796,7 @@ msgstr "Eigenschaften Teilstrecke"
 #: CommandNameText.resx, ChangeLineAppearance
 #: MiscText.resx, ChangeLineAppearanceTitle
 msgid "Change Line Appearance"
-msgstr "Aussehen der Linie ändern"
+msgstr "Aussehen der Linie / Rechteck ändern"
 
 #: CommandNameText.resx, DuplicateCourse
 #: MiscText.resx, DuplicateCourseTitle
@@ -827,6 +827,10 @@ msgstr "Postenbeschreibungsnorm auswählen"
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
 msgstr "Kartennorm auswählen"
+
+#: CommandNameText.resx, Stretch
+msgid "Stretch"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -1167,7 +1171,7 @@ msgstr "Ordner"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr ""
+msgstr "Bilddateien erstellen"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1176,7 +1180,7 @@ msgstr "OCAD-Dateien erstellen"
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr "Alle Teilstrecken auf dieser Karte drucken "
+msgstr "Kartenwechsel auf gleicher Karte drucken "
 
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
@@ -1386,7 +1390,7 @@ msgstr "Verzweigung"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
-msgstr "Teilstrecken"
+msgstr "Etappen"
 
 #: LegAssignmentsDialog.resx, labelDescription.Text
 msgid "To assign a specific leg to a specific branch, type the "
@@ -1496,23 +1500,23 @@ msgstr "OCAD-Da&teien erstellen …"
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "B&ilddateien erstellen..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "&Postenbeschreibungen..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "St&empelkarten..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr ""
+msgstr "&Bahnen..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr ""
+msgstr "P&DFs erstellen"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1732,7 +1736,7 @@ msgstr "Text&zeile..."
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr ""
+msgstr "Zeitgesteuerter Start"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1808,6 +1812,11 @@ msgstr "Linie"
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
 msgstr "Rechteck"
+
+#: MainFrame.resx, addEllipseMenu.Text
+#: MainFrame.resx, ellipseToolStripMenuItem.Text
+msgid "Ellipse"
+msgstr ""
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1914,7 +1923,7 @@ msgid "Add &Gap"
 msgstr "&Lücke einfügen"
 
 #: MainFrame.resx, removeGapMenu.Text
-msgid "Remove G&ap"
+msgid "Remove Ga&p"
 msgstr "Lücke ent&fernen"
 
 #: MainFrame.resx, changeTextMenu.Text
@@ -1928,6 +1937,10 @@ msgstr "Linie & Aussehen ändern"
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
 msgstr "&Drehen"
+
+#: MainFrame.resx, stretchMenu.Text
+msgid "&Stretch"
+msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -2831,7 +2844,7 @@ msgstr "An diesem Posten existiert bereits eine Variante."
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
 msgstr "Ein Posten oder eine Strecke muss selektiert sein, um eine "
-"Gabelung hinzuzufügen."
+"Variante hinzuzufügen."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
@@ -2839,7 +2852,8 @@ msgstr "Beim Zielposten kann keine Variante hinzugefügt werden."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr "Eine Gavelung kann nicht beim Postennetz hinzugefügt werden."
+msgstr "Bei der Ansicht \"Alle Posten\" kann keine Bahnvriante "
+"hinzugefügt werden."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
@@ -2862,7 +2876,7 @@ msgstr "Etappe {0} sollte einer Verzweigung {1} zugewiesen sein."
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr "Etappe {0} ist Verzweigung '{1}1 und Verzweigung '{2}' "
+msgstr "Etappe {0} ist Verzweigung '{1}' und Verzweigung '{2}' "
 "zugewiesen"
 
 #: MiscText.resx, CannotReadMapOOM
@@ -2900,7 +2914,7 @@ msgstr "Wegen Beschränkungen im OCAD Dateiformat (OCAD 10 und "
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "Aus folgendem Grund kann keine Bilddatei erstellt werden:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
@@ -2913,11 +2927,22 @@ msgstr "PDF-Datei|*.pdf"
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
+msgstr "Etappe {0} erreicht nie Verzweigung '{1}': Die Etappe "
+"wurde angewiesen in einer Gabelung eine andere Richtung zu "
+"gehen."
+
+#: MiscText.resx, AddEllipseExplanation
+msgid "Set the appearance of the ellipse. After pressing OK, drag "
+"the mouse to place the ellipse in the desired location."
+msgstr ""
+
+#: MiscText.resx, AddEllipseTitle
+msgid "Add Ellipse"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
-msgstr "Für diesen Wettkampf nie mehr wegen fehlender Fonts warnen."
+msgstr "Für dieses Ereignis nie mehr wegen fehlender Fonts warnen"
 
 #: MissingFonts.resx, labelWarning.Text
 msgid "Map file \"{0}\" uses fonts that are not installed on your "
@@ -3920,15 +3945,15 @@ msgstr "Kartenabgabepunkt"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr "Jede Variante Einzeln"
+msgstr "Jede Variante einzeln"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr "Jede Staffeletappe Einzeln"
+msgstr "Jede Staffeletappe einzeln"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr "Alle Varianten Kombiniert"
+msgstr "Alle Varianten kombiniert"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
@@ -3954,7 +3979,7 @@ msgstr "Sie müssen zuerst über \"Staffelteam Varianten...\" im Menü "
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr "Einzelne Varianten Auswählen"
+msgstr "Einzelne Varianten auswählen"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
@@ -3974,7 +3999,7 @@ msgstr "Auswählen, für welche Teams gedruckt/exportiert werden soll:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr "Varianten auswählen:"
+msgstr "Varianten auswählen"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -4202,13 +4227,18 @@ msgstr "Kontrollnummer ziehen, um sie neu zu positionieren "
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
 "course"
-msgstr "Mit linker Maustaste klicken, um einen bereuts "
+msgstr "Mit linker Maustaste klicken, um einen bereits "
 "existierenden Kartenabgabepunkt zur Bahn hinzuzufügen"
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
 msgstr "Klicke mit linker Maustaste, um einen neuen "
 "Kartenabgabepunkt zu platzieren"
+
+#: StatusBarText.resx, StretchingObject
+msgid "Hold down left mouse button and drag to stretch the "
+"stretch the crossing point"
+msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
@@ -4232,11 +4262,11 @@ msgstr "Fixe Verzweigungen für Etappen zuweisen..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Team Nummer startet bei: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Verstecke Varianten Codes auf Karte"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"

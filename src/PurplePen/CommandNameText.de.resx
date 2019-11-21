@@ -280,7 +280,7 @@
     <value>Eigenschaften Teilstrecke</value>
   </data>
   <data name="ChangeLineAppearance" xml:space="preserve">
-    <value>Aussehen der Linie ändern</value>
+    <value>Aussehen der Linie / Rechteck ändern</value>
   </data>
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Bahn duplizieren ...</value>

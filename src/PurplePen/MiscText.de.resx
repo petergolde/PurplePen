@@ -500,7 +500,7 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>Ändere das Aussehen der Linie oder Rechteck</value>
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
-    <value>Aussehen der Linie ändern</value>
+    <value>Aussehen der Linie / Rechteck ändern</value>
   </data>
   <data name="GpxMustBeOcadMap" xml:space="preserve">
     <value>Um GPX-Dateien zu nutzen, muss eine OCAD-Kartendatei verwendet werden.</value>
@@ -560,13 +560,13 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>An diesem Posten existiert bereits eine Variante.</value>
   </data>
   <data name="VariationMustSelectControl" xml:space="preserve">
-    <value>Ein Posten oder eine Strecke muss selektiert sein, um eine Gabelung hinzuzufügen.</value>
+    <value>Ein Posten oder eine Strecke muss selektiert sein, um eine Variante hinzuzufügen.</value>
   </data>
   <data name="VariationNotFinish" xml:space="preserve">
     <value>Beim Zielposten kann keine Variante hinzugefügt werden.</value>
   </data>
   <data name="VariationNotInAllControls" xml:space="preserve">
-    <value>Eine Gavelung kann nicht beim Postennetz hinzugefügt werden.</value>
+    <value>Bei der Ansicht "Alle Posten" kann keine Bahnvriante hinzugefügt werden.</value>
   </data>
   <data name="VariationNotInScoreCourse" xml:space="preserve">
     <value>Bei einer Score Bahn kann keine Variante hinzugefügt werden.</value>
@@ -581,10 +581,16 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>Etappe {0} sollte einer Verzweigung {1} zugewiesen sein.</value>
   </data>
   <data name="LegUsedTwice" xml:space="preserve">
-    <value>Etappe {0} ist Verzweigung '{1}1 und Verzweigung '{2}' zugewiesen</value>
+    <value>Etappe {0} ist Verzweigung '{1}' und Verzweigung '{2}' zugewiesen</value>
   </data>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Die Karte kann wegen folgendem Prpblem nicht geladen werden: '{0}' Die Karte in der neusten Version von OpenOrienteering Mapper öffnen und neu speichern, könnte das Problem beheben.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Zeitgesteuerter Start</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Zeitgesteuerter Start</value>
   </data>
   <data name="MapIssue_Short" xml:space="preserve">
     <value>TS</value>
@@ -595,11 +601,17 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
     <value>Wegen Beschränkungen im OCAD Dateiformat (OCAD 10 und älter) erscheinen Bildobjekte unterhalb der Bahnen und weissen Flächen in der exportierten OCAD Datei. Überprüfe die OCAD Datei, um sicher zu gehen, dass die Bilder wie gewünscht erscheinen.</value>
   </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Aus folgendem Grund kann keine Bilddatei erstellt werden:</value>
+  </data>
   <data name="CreatePdf" xml:space="preserve">
     <value>PDF erstellen</value>
   </data>
   <data name="PdfFilter" xml:space="preserve">
     <value>PDF-Datei|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Etappe {0} erreicht nie Verzweigung '{1}': Die Etappe wurde angewiesen in einer Gabelung eine andere Richtung zu gehen.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>

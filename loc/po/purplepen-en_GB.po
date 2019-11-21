@@ -1,13 +1,13 @@
-#  localization file
+# Purple Pen localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the  package.
+# This file is distributed under the same license as the Purple Pen package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
+"Project-Id-Version: Purple Pen 3.4.0\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -822,6 +822,10 @@ msgstr "Set Control Description Standard"
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
 msgstr "Set Map Standard"
+
+#: CommandNameText.resx, Stretch
+msgid "Stretch"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -1802,6 +1806,11 @@ msgstr "Line"
 msgid "Rectangle"
 msgstr "Rectangle"
 
+#: MainFrame.resx, addEllipseMenu.Text
+#: MainFrame.resx, ellipseToolStripMenuItem.Text
+msgid "Ellipse"
+msgstr ""
+
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
 msgstr "&Add"
@@ -1907,7 +1916,7 @@ msgid "Add &Gap"
 msgstr "Add &Gap"
 
 #: MainFrame.resx, removeGapMenu.Text
-msgid "Remove G&ap"
+msgid "Remove Ga&p"
 msgstr "Remove G&ap"
 
 #: MainFrame.resx, changeTextMenu.Text
@@ -1921,6 +1930,10 @@ msgstr "Change Line &Appearance..."
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
 msgstr "R&otate"
+
+#: MainFrame.resx, stretchMenu.Text
+msgid "&Stretch"
+msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -2880,6 +2893,15 @@ msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
 msgstr "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
+
+#: MiscText.resx, AddEllipseExplanation
+msgid "Set the appearance of the ellipse. After pressing OK, drag "
+"the mouse to place the ellipse in the desired location."
+msgstr ""
+
+#: MiscText.resx, AddEllipseTitle
+msgid "Add Ellipse"
+msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -4142,6 +4164,11 @@ msgstr "Click left mouse button to add existing map issue point to "
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
 msgstr "Click left mouse button to place new map issue point"
+
+#: StatusBarText.resx, StretchingObject
+msgid "Hold down left mouse button and drag to stretch the "
+"stretch the crossing point"
+msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."

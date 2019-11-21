@@ -139,9 +139,9 @@
     <value>Görünüm</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>Bu ayarlar harita ve tanımların nasıl yazılacağını kontrol eder.</value>
+    <value>Bu ayarlar, haritanın ve tüm kontrol noktalarının açıklamalarının nasıl  yazılacağını kontrol eder.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Tüm Kontrol Özellikleri</value>
+    <value>Tüm Kontrol Noktaların  Özellikleri</value>
   </data>
 </root>

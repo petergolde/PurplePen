@@ -217,6 +217,6 @@
     <value>Sol fare tuşunu basılı tutun ve nesneyi oluşturmak için sürükleyin</value>
   </data>
   <data name="DraggingTopologyObject" xml:space="preserve">
-    <value>Kursda yeniden sıralamak için kontrol numarasını sürükleyin (çoğaltmak için kaydır'ı basılı tutun)</value>
+    <value>Parkur numaralarını yeniden sıralamak için sürükleyin (Çoğaltmak için Kaydıra basılı tutunuz)</value>
   </data>
 </root>

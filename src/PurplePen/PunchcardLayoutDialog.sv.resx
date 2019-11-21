@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
-    <value>Stämpelruteordning</value>
+    <value>Stämpelrutornas ordning</value>
   </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Kolumner:</value>

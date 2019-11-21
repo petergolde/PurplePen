@@ -118,10 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="numberColumn.HeaderText" xml:space="preserve">
-    <value>Nummer</value>
+    <value>Antal</value>
   </data>
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>Kön</value>
+  </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Case</value>
   </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Text</value>
@@ -137,6 +140,12 @@
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Kön:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Case på modifierad symbol:</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Visa case-formulär</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Anpassad symboltext</value>

@@ -147,6 +147,9 @@
   <data name="relayLegMenuItem.Text" xml:space="preserve">
     <value>Bayrak Yarışı Ayağı</value>
   </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Harita Dosya Adı</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Görünüm</value>
   </data>

@@ -220,7 +220,7 @@
     <value>Kontrollnummer ziehen, um sie neu zu positionieren ("Shift" gedrückt halten, um sie zu duplizieren)</value>
   </data>
   <data name="AddingExistingMapIssue" xml:space="preserve">
-    <value>Mit linker Maustaste klicken, um einen bereuts existierenden Kartenabgabepunkt zur Bahn hinzuzufügen</value>
+    <value>Mit linker Maustaste klicken, um einen bereits existierenden Kartenabgabepunkt zur Bahn hinzuzufügen</value>
   </data>
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Klicke mit linker Maustaste, um einen neuen Kartenabgabepunkt zu platzieren</value>

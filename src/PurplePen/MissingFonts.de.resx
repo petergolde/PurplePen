@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
-    <value>Für diesen Wettkampf nie mehr wegen fehlender Fonts warnen.</value>
+    <value>Für dieses Ereignis nie mehr wegen fehlender Fonts warnen</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>

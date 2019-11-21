@@ -150,6 +150,9 @@
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Filnamn</value>
   </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Kartfilnamn</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>
   </data>

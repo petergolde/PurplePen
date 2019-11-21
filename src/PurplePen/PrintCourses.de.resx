@@ -148,7 +148,7 @@
     <value>Kopien</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
-    <value>Alle Teilstrecken auf dieser Karte drucken </value>
+    <value>Kartenwechsel auf gleicher Karte drucken </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>Farbmodell:</value>

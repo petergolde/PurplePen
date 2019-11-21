@@ -136,6 +136,6 @@
     <value>Baskı Alanı Boyutunu Kağıt Boyutu'na Düzelt</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Baskı Alanı Ayarla</value>
+    <value>Yazdırma Alanı Ayarla</value>
   </data>
 </root>

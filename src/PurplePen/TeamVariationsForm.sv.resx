@@ -144,6 +144,9 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Lagnummer börjar på: </value>
   </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Visa inte gafflingsnyckeln på kartan</value>
+  </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Kalkylark (CSV)|*.csv</value>
   </data>

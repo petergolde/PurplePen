@@ -150,6 +150,21 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>OCAD-Da&amp;teien erstellen …</value>
   </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>B&amp;ilddateien erstellen...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>&amp;Postenbeschreibungen...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>St&amp;empelkarten...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>&amp;Bahnen...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>P&amp;DFs erstellen</value>
+  </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Route&amp;Gadget-Dateien erstellen …</value>
   </data>
@@ -305,6 +320,9 @@
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Text&amp;zeile...</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Zeitgesteuerter Start</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pflichtpassage</value>
@@ -599,6 +617,9 @@
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Bahnvariante hinzufügen</value>
+  </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zeitgesteuerter Start</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pflichtpassage</value>

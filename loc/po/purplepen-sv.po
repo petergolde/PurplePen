@@ -1,13 +1,13 @@
-#  localization file
+# Purple Pen localization file
 # Copyright (C) 2008
-# This file is distributed under the same license as the  package.
+# This file is distributed under the same license as the Purple Pen package.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-27 12:28-07:00\n"
+"Project-Id-Version: Purple Pen 3.4.0\n"
+"Report-Msgid-Bugs-To: peter@golde.org\n"
+"POT-Creation-Date: 2019-11-20 17:15-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -492,7 +492,7 @@ msgstr "Filnamn"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Kartfilnamn"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -824,6 +824,10 @@ msgstr "Välj norm för kontrollbeskrivning"
 msgid "Set Map Standard"
 msgstr "Välj kartnorm"
 
+#: CommandNameText.resx, Stretch
+msgid "Stretch"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
 msgstr "Skala inte"
@@ -870,7 +874,7 @@ msgstr "Linjebredd:"
 
 #: CourseAppearanceDialog.resx, labelControlCircle.Text
 msgid "Control circle diameter:"
-msgstr "Kontrollringens diameter"
+msgstr "Kontrollringens diameter:"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
@@ -1040,15 +1044,15 @@ msgstr "Filformat:"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items
 msgid "PNG"
-msgstr ""
+msgstr "PNG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items1
 msgid "JPEG"
-msgstr ""
+msgstr "JPEG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items2
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
@@ -1057,39 +1061,39 @@ msgstr "Filnamnsprefix:"
 
 #: CreateImageFiles.resx, label1.Text
 msgid "World file:"
-msgstr ""
+msgstr "World-fil:"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items1
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items2
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items3
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items4
 msgid "400"
-msgstr ""
+msgstr "400"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items5
 msgid "500"
-msgstr ""
+msgstr "500"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items6
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: CreateImageFiles.resx, dpiLabel.Text
 msgid "Dpi:"
-msgstr ""
+msgstr "Dpi:"
 
 #: CreateImageFiles.resx, comboBoxWorldFile.Items
 #: ReportText.resx, EventAudit_No
@@ -1103,7 +1107,7 @@ msgstr "Ja"
 
 #: CreateImageFiles.resx, labelColorModel.Text
 msgid "Color model:"
-msgstr ""
+msgstr "Färgmodell:"
 
 #: CreateImageFiles.resx, comboBoxColorModel.Items
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
@@ -1162,7 +1166,7 @@ msgstr "Mapp"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr ""
+msgstr "Skapa bildfiler"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1240,19 +1244,19 @@ msgstr "RouteGadget kräver både en bild (.gif) och en IOF XML-fil "
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
-msgstr ""
+msgstr "2.0.3"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items1
 msgid "3.0"
-msgstr ""
+msgstr "3.0"
 
 #: CreateRouteGadget.resx, labelIofXml.Text
 msgid "IOF XML Version:"
-msgstr ""
+msgstr "IOF XML Version:"
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1302,7 +1306,7 @@ msgstr "Laddar ned"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
-msgstr "Nummer"
+msgstr "Antal"
 
 #: EnterSymbolText.resx, genderColumn.HeaderText
 msgid "Gender"
@@ -1310,7 +1314,7 @@ msgstr "Kön"
 
 #: EnterSymbolText.resx, caseColumn.HeaderText
 msgid "Case"
-msgstr ""
+msgstr "Case"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
@@ -1331,11 +1335,11 @@ msgstr "Kön:"
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "Case på modifierad symbol:"
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "Visa case-formulär"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1489,23 +1493,23 @@ msgstr "Skapa OCAD-&filer..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "Skapa &bildfiler..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "&Kontrollbeskrivningar..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "Stä&mpelkort..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr ""
+msgstr "&Banor..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr ""
+msgstr "Skapa P&DFer"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create Route&Gadget Files..."
@@ -1725,7 +1729,7 @@ msgstr "Text&linje..."
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr ""
+msgstr "Tidsstart"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1801,6 +1805,11 @@ msgstr "Linje"
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
 msgstr "Rektangel"
+
+#: MainFrame.resx, addEllipseMenu.Text
+#: MainFrame.resx, ellipseToolStripMenuItem.Text
+msgid "Ellipse"
+msgstr ""
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1907,7 +1916,7 @@ msgid "Add &Gap"
 msgstr "Skapa &gap i figur"
 
 #: MainFrame.resx, removeGapMenu.Text
-msgid "Remove G&ap"
+msgid "Remove Ga&p"
 msgstr "Ta bort &gap i figur"
 
 #: MainFrame.resx, changeTextMenu.Text
@@ -1921,6 +1930,10 @@ msgstr "Ändr&a linjeutseende..."
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
 msgstr "R&otera"
+
+#: MainFrame.resx, stretchMenu.Text
+msgid "&Stretch"
+msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -2845,7 +2858,7 @@ msgstr "Kan inte läsa kartan på grund av: '{0}' Öppna och spara om "
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr ""
+msgstr "TS"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
@@ -2868,19 +2881,31 @@ msgstr "P.g.a. begränsningar i OCAD-filformatet (OCAD 10 och "
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "Kunde inte skapa bildfilerna på grund av:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "Skapa PDF"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF-fil|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
+msgstr "Sträcka {0} når aldrig gaffling '{1}': den är ritad att gå "
+"en annan väg i en yttre gaffling.\r\n"
+"Leg {0} never reaches branch '{1}': it was assigned to go "
+"a different way in a containing fork."
+
+#: MiscText.resx, AddEllipseExplanation
+msgid "Set the appearance of the ellipse. After pressing OK, drag "
+"the mouse to place the ellipse in the desired location."
+msgstr ""
+
+#: MiscText.resx, AddEllipseTitle
+msgid "Add Ellipse"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -3280,7 +3305,7 @@ msgstr "Symboler & text"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr "Beskrivning typ:"
+msgstr "Typ av beskrivning:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
@@ -3365,7 +3390,7 @@ msgstr "Skriv ut stämpelkort"
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr "Stämpelruteordning"
+msgstr "Stämpelrutornas ordning"
 
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
@@ -4138,6 +4163,11 @@ msgstr "Klicka för att lägga till en befintlig kartutdelningsplats "
 msgid "Click left mouse button to place new map issue point"
 msgstr "Klicka för att placera en ny kartutdelningsplats"
 
+#: StatusBarText.resx, StretchingObject
+msgid "Hold down left mouse button and drag to stretch the "
+"stretch the crossing point"
+msgstr ""
+
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
 msgstr "Exportera…"
@@ -4164,7 +4194,7 @@ msgstr "Lagnummer börjar på: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Visa inte gafflingsnyckeln på kartan"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"

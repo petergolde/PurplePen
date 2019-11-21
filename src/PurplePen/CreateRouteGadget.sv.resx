@@ -153,6 +153,18 @@
   <data name="label2.Text" xml:space="preserve">
     <value>RouteGadget kräver både en bild (.gif) och en IOF XML-fil (.xml). Välj namn och mapp för båda dessa filer.</value>
   </data>
+  <data name="comboBoxIofXml.Items" xml:space="preserve">
+    <value>2.0.3</value>
+  </data>
+  <data name="comboBoxIofXml.Items1" xml:space="preserve">
+    <value>3.0</value>
+  </data>
+  <data name="labelIofXml.Text" xml:space="preserve">
+    <value>IOF XML Version:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>IOF XML</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skapa RouteGadget-filer</value>
   </data>

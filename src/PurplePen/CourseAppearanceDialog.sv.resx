@@ -169,7 +169,7 @@
     <value>mm</value>
   </data>
   <data name="labelControlCircle.Text" xml:space="preserve">
-    <value>Kontrollringens diameter</value>
+    <value>Kontrollringens diameter:</value>
   </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
