@@ -415,6 +415,9 @@ namespace PurplePen
 
                 case ControlPointKind.Normal:
                     xmlWriter.WriteAttributeString("type", "Control");
+                    if (isScore) {
+                        xmlWriter.WriteAttributeString("randomOrder", XmlConvert.ToString(true));
+                    }
                     break;
 
                 case ControlPointKind.CrossingPoint:

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2018-11-02T10:43:09.8461842-07:00" creator="Purple Pen version 3.1.5 Beta 1">
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2020-09-24T16:50:22.0358727-07:00" creator="Purple Pen version 3.3.0">
   <Event>
     <Name>Marymoor WIOL 2</Name>
   </Event>
@@ -286,67 +286,67 @@
       <CourseControl type="Start">
         <Control>STA1</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>35</Control>
         <Score>5</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>38</Control>
         <Score>5</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>45</Control>
         <Score>5</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>50</Control>
         <Score>5</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>55</Control>
         <Score>5</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>48</Control>
         <Score>10</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>72</Control>
         <Score>10</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>78</Control>
         <Score>10</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>41</Control>
         <Score>15</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>75</Control>
         <Score>15</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>47</Control>
         <Score>20</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>71</Control>
         <Score>20</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>56</Control>
         <Score>30</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>58</Control>
         <Score>30</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>37</Control>
         <Score>40</Score>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>42</Control>
         <Score>40</Score>
       </CourseControl>
@@ -359,28 +359,28 @@
       <CourseControl type="Start">
         <Control>STA2</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>42</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>43</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>50</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>54</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>56</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>57</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>73</Control>
       </CourseControl>
-      <CourseControl type="Control">
+      <CourseControl type="Control" randomOrder="true">
         <Control>80</Control>
       </CourseControl>
       <CourseControl type="Finish">
