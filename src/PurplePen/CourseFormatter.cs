@@ -594,14 +594,16 @@ namespace PurplePen
             Debug.Assert(special.kind == SpecialKind.Descriptions);
 
             DescriptionKind descKind;
-            DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, descriptionView.CourseDesignator, out descKind);
-            CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), symbolDB, description, descKind, special.numColumns);
+            bool columnHScore;
+            DescriptionLine[] description = GetCourseDescription(eventDB, symbolDB, descriptionView.CourseDesignator, out descKind, out columnHScore);
+            CourseObj courseObj = new DescriptionCourseObj(descriptionView.SpecialId, special.locations[0], (float)Geometry.Distance(special.locations[0], special.locations[1]), 
+                                                          symbolDB, description, descKind, columnHScore, special.numColumns);
             courseObj.layer = layer;
             return courseObj;
         }
 
         // Return the description and description kind for a given CourseView.
-        public static DescriptionLine[] GetCourseDescription(EventDB eventDB, SymbolDB symbolDB, CourseDesignator courseDesignator, out DescriptionKind descKind)
+        public static DescriptionLine[] GetCourseDescription(EventDB eventDB, SymbolDB symbolDB, CourseDesignator courseDesignator, out DescriptionKind descKind, out bool columnHScore)
         {
             CourseView courseViewDescription;
             DescriptionLine[] description;
@@ -613,6 +615,7 @@ namespace PurplePen
             // Create the description. Note the courseId is None only if we're both in all controls, and there are no courses.
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseViewDescription, symbolDB, DescriptionFormatter.Purpose.ForMap);
             descKind = QueryEvent.GetDefaultDescKind(eventDB, courseDesignator.CourseId);
+            columnHScore = (descKind == DescriptionKind.Text && courseViewDescription.ScoreColumn == 7);
             description = descFormatter.CreateDescription(descKind == DescriptionKind.Symbols);
             if (noTextOrSymbols)
                 DescriptionFormatter.ClearTextAndSymbols(description);

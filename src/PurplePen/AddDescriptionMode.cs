@@ -112,7 +112,7 @@ namespace PurplePen
 
             // Begin dragging out the description block; start at 1 column
             startLocation = location;
-            startingObj = new DescriptionCourseObj(Id<Special>.None, startLocation, 1F, symbolDB, description, kind, 1);
+            startingObj = new DescriptionCourseObj(Id<Special>.None, startLocation, 1F, symbolDB, description, kind, false, 1);
             handleDragging = new PointF(startingObj.rect.Right, startingObj.rect.Top);
             DragTo(location);
             displayUpdateNeeded = true;

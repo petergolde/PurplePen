@@ -1,7 +1,7 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>Sample Gaffle</title>
-    <map kind="OCAD" scale="5000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\temp\12magnuson-edit-no-base.ocd">..\..\..\..\..\temp\12magnuson-edit-no-base.ocd</map>
+    <map kind="none" scale="5000"></map>
     <standards map="2017" description="2004" />
     <all-controls print-scale="5000" description-kind="symbols" />
     <print-area automatic="true" restrict-to-page-size="true" left="-140.5302" top="147.057419" right="138.8698" bottom="-68.84259" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />

@@ -91,6 +91,7 @@ namespace PurplePen
             renderer.CellSize = descPrintSettings.BoxSize / 0.254F;
             renderer.Description = description;
             renderer.DescriptionKind = descKind;
+            renderer.ColumnHScore = descKind == DescriptionKind.Text && courseView.ScoreColumn == 7;
             renderer.Margin = 0;
 
             return renderer;

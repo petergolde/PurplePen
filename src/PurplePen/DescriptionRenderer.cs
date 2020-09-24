@@ -101,6 +101,7 @@ namespace PurplePen
         private int numColumns = 1;
         DescriptionLine[] description;
         DescriptionKind descriptionKind;
+        bool columnHScore; // If true, show score in column H for text-only descriptions.
 
         private bool replaceMultiplySign;         // If true, replace 'x' in column F with multiply sign.
 
@@ -117,6 +118,7 @@ namespace PurplePen
             n.cellSize = this.cellSize;
             n.numColumns = this.numColumns;
             n.description = this.description;
+            n.columnHScore = this.columnHScore;
             n.descriptionKind = this.descriptionKind;
             n.replaceMultiplySign = this.replaceMultiplySign;
             return n;
@@ -154,6 +156,12 @@ namespace PurplePen
         {
             get { return descriptionKind; }
             set { descriptionKind = value; }
+        }
+
+        // Reserve column H for score, even in text-only option.
+        public bool ColumnHScore {
+            get { return columnHScore; }
+            set { columnHScore = value; }
         }
 
         public float ColumnWidth
@@ -422,10 +430,10 @@ namespace PurplePen
                         result.box = -1;
                         result.rect = new RectangleF(8 * cellSize, iLine * cellSize, 5 * cellSize, cellSize);
                     }
-                    else if (descriptionKind == DescriptionKind.Text && iCol >= 2) {
+                    else if (descriptionKind == DescriptionKind.Text && iCol >= 2 && !(columnHScore && iCol == 7)) {
                         result.kind = HitTestKind.NormalText;
                         result.box = -1;
-                        result.rect = new RectangleF(2 * cellSize, iLine * cellSize, 6 * cellSize, cellSize);
+                        result.rect = new RectangleF(2 * cellSize, iLine * cellSize, (columnHScore ? 5 : 6) * cellSize, cellSize);
                     }
                     else {
                         result.kind = HitTestKind.NormalBox;
@@ -746,12 +754,22 @@ namespace PurplePen
                     break;
 
                 case DescriptionLineKind.Normal:
-                    int numBoxes;
+                    Func<int, bool> boxesToShow = (i => true);  // which boxes to show?
+
                     if (descriptionKind == DescriptionKind.Text) {
                         renderer.DrawLine(thinPen, 100, lineTop, 100, lineBottom);
                         renderer.DrawLine(thickPen, 200, lineTop, 200, lineBottom);
-                        RenderWrappedText(renderer, TEXT_FONT, StringAlignment.Near, descriptionLine.textual, 215, 0, 785, 100, clipRect);
-                        numBoxes = 2;
+                        if (columnHScore) {
+                            renderer.DrawLine(thickPen, 700, lineTop, 700, lineBottom);
+                        }
+                        RenderWrappedText(renderer, TEXT_FONT, StringAlignment.Near, descriptionLine.textual, 215, 0, (columnHScore ? 685 : 785), 100, clipRect);
+
+                        if (columnHScore) {
+                            boxesToShow = (i => (i < 2 || i == 7));
+                        }
+                        else {
+                            boxesToShow = (i => (i < 2));
+                        }
                     }
                     else {
                         renderer.DrawLine(thinPen, 100, lineTop, 100, lineBottom);
@@ -761,7 +779,6 @@ namespace PurplePen
                         renderer.DrawLine(thinPen, 500, lineTop, 500, lineBottom);
                         renderer.DrawLine(thickPen, 600, lineTop, 600, lineBottom);
                         renderer.DrawLine(thinPen, 700, lineTop, 700, lineBottom);
-                        numBoxes = 8;
 
                         if (descriptionKind == DescriptionKind.SymbolsAndText) {
                             renderer.DrawLine(thickPen, 1300, lineTop, 1300, lineBottom);
@@ -769,17 +786,19 @@ namespace PurplePen
                         }
                     }
 
-                    for (int i = 0; i < numBoxes; ++i) {
-                        if (descriptionLine.boxes[i] is Symbol) {
-                            RenderSymbol(renderer, (Symbol)descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
-                        }
-                        else if (descriptionLine.boxes[i] is String) {
-                            if (i == 5) 
-                                RenderColumnFText(renderer, (string)descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
-                            else if (i == 0)
-                                RenderSingleLineText(renderer, COLUMNA_FONT, StringAlignment.Center, (string) descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
-                            else
-                                RenderSingleLineText(renderer, COLUMNB_FONT, StringAlignment.Center, (string) descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
+                    for (int i = 0; i < 8; ++i) {
+                        if (boxesToShow(i)) {
+                            if (descriptionLine.boxes[i] is Symbol) {
+                                RenderSymbol(renderer, (Symbol)descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
+                            }
+                            else if (descriptionLine.boxes[i] is String) {
+                                if (i == 5)
+                                    RenderColumnFText(renderer, (string)descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
+                                else if (i == 0)
+                                    RenderSingleLineText(renderer, COLUMNA_FONT, StringAlignment.Center, (string)descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
+                                else
+                                    RenderSingleLineText(renderer, COLUMNB_FONT, StringAlignment.Center, (string)descriptionLine.boxes[i], i * 100, 0, i * 100 + 100, 100, clipRect);
+                            }
                         }
                     }
 

@@ -184,6 +184,7 @@ namespace PurplePen
             string executablePath = Path.GetDirectoryName(uri.LocalPath);
             string fontPath = Path.Combine(executablePath, "fonts");
 
+#if true
             GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Regular, Path.Combine(fontPath, "Roboto-Regular.ttf"));
             GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Bold, Path.Combine(fontPath, "Roboto-Bold.ttf"));
             GdiplusFontLoader.AddFontFile("Roboto", FontStyle.Italic, Path.Combine(fontPath, "Roboto-Italic.ttf"));
@@ -202,6 +203,7 @@ namespace PurplePen
             // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "Roboto-LightItalic.ttf"));
             // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "RobotoCondensed-Light.ttf"));
             // GdiplusFontLoader.AddFontFile(Path.Combine(fontPath, "RobotoCondensed-LightItalic.ttf"));
+#endif
         }
     }
 

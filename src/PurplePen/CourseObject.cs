@@ -2830,13 +2830,14 @@ namespace PurplePen
         float[] aspectAnglesByColumns;       // array describing the angles that are closest for each number of columns.
 
         // Create a new description course object.
-        public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
+        public DescriptionCourseObj(Id<Special> specialId, PointF topLeft, float cellSize, SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, bool columnHScore, int numColumns)
             : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, 1, new CourseAppearance(), GetRect(topLeft, cellSize, symbolDB, description, kind, numColumns))
         {
             // Create the renderer.
             renderer = new DescriptionRenderer(symbolDB);
             renderer.Description = description;
             renderer.DescriptionKind = kind;
+            renderer.ColumnHScore = columnHScore;
             renderer.Margin = cellSize / 20;   // about the thickness of the thick lines.
             renderer.CellSize = cellSize;
             renderer.NumberOfColumns = numColumns;
@@ -2977,6 +2978,8 @@ namespace PurplePen
             if (renderer.DescriptionKind != other.renderer.DescriptionKind)
                 return false;
             if (renderer.NumberOfColumns != other.renderer.NumberOfColumns)
+                return false;
+            if (renderer.ColumnHScore != other.renderer.ColumnHScore)
                 return false;
 
             // Check description 

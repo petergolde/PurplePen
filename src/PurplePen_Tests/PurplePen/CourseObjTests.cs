@@ -728,7 +728,7 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
-            return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F / numColumns, symbolDB, description, DescriptionKind.Symbols, numColumns);
+            return new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F / numColumns, symbolDB, description, DescriptionKind.Symbols, false, numColumns);
         }
 
         [TestMethod]
@@ -2129,34 +2129,34 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
-            CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj1 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 1);
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj2 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 1);
             CourseObj courseobj3 = (CourseObj) courseobj1.Clone();
-            CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
-            CourseObj courseobj5 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 1.0F, symbolDB, description, DescriptionKind.Symbols, 1);
-            CourseObj courseobj6 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Text, 1);
+            CourseObj courseobj4 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 3), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 1);
+            CourseObj courseobj5 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 1.0F, symbolDB, description, DescriptionKind.Symbols, false, 1);
+            CourseObj courseobj6 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Text, false, 1);
 
             undomgr.BeginCommand(12, "move control");
             ChangeEvent.ChangeControlLocation(eventDB, ControlId(11), new PointF(4, 8));
             undomgr.EndCommand(12);
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj7 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 1);
 
             undomgr.BeginCommand(13, "change description");
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.4");
             undomgr.EndCommand(13);
 
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
+            CourseObj courseobj8 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 1);
 
             undomgr.BeginCommand(13, "change description");  // change description back
             ChangeEvent.ChangeDescriptionSymbol(eventDB, ControlId(11), 1, "5.2");
             undomgr.EndCommand(13);
 
             description = descFormatter.CreateDescription(false);
-            CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 1);
-            CourseObj courseobj10 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, 2);
+            CourseObj courseobj9 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 1);
+            CourseObj courseobj10 = new DescriptionCourseObj(Id<Special>.None, new PointF(-4, 4), 0.9F, symbolDB, description, DescriptionKind.Symbols, false, 2);
 
             Assert.AreEqual(courseobj1, courseobj2);
             Assert.AreEqual(courseobj1, courseobj3);

@@ -578,7 +578,9 @@ namespace PurplePen
             using (var grTargetDimmed = new GDIPlus_BitmapGraphicsTarget(bitmap, CmykColor.FromCmyk(0,0,0,0), transform, colorConverter, mapIntensity))
             using (var grTargetUndimmed = new GDIPlus_BitmapGraphicsTarget(bitmap, null, transform, colorConverter)) {
                 float minResolution = GetMinResolution(transform);
-                RectangleF clipBounds = grTargetDimmed.Graphics.ClipBounds;
+                Matrix transformInverse = transform.Clone();
+                transformInverse.Invert();
+                RectangleF clipBounds = Geometry.TransformRectangle(transformInverse, new RectangleF(0, 0, bitmap.Width, bitmap.Height));
                 DrawHelper(grTargetDimmed, grTargetUndimmed, grTargetUndimmed, clipBounds, minResolution);
             }
         }
