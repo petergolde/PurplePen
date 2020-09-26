@@ -139,9 +139,6 @@ namespace PurplePen
             if (courseIds.Length == 0)
                 return SelectionDescriptionText.CourseList_None; 
 
-            if (courseIds.Length == QueryEvent.CountCourses(eventDB))
-                return SelectionDescriptionText.CourseList_AllCourses;
-
             StringBuilder builder = new StringBuilder();
 
             Id<Course>[] sortedCourseIds = QueryEvent.SortedCourseIds(eventDB);
@@ -151,9 +148,16 @@ namespace PurplePen
                 courseNames.Add(MiscText.AllControls);
             }
 
+            bool inAllCourses = true;
             for (int i = 0; i < sortedCourseIds.Length; ++i) {
                 if (courseIds.Contains(sortedCourseIds[i]))
                     courseNames.Add(eventDB.GetCourse(sortedCourseIds[i]).name);
+                else
+                    inAllCourses = false;
+            }
+
+            if (inAllCourses) {
+                return SelectionDescriptionText.CourseList_AllCourses;
             }
 
             for (int i = 0; i < courseNames.Count; ++i) {
