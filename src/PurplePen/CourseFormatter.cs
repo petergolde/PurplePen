@@ -235,10 +235,15 @@ namespace PurplePen
                 text += control.code;
             }
 
-            if (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore) {
+            if (labelKind == ControlLabelKind.CodeAndScore || labelKind == ControlLabelKind.SequenceAndScore || labelKind == ControlLabelKind.Score) {
                 int points = eventDB.GetCourseControl(controlView.courseControlIds[0]).points;
                 if (points > 0) {
-                    text += "(" + points.ToString() + ")";
+                    if (labelKind == ControlLabelKind.Score) {
+                        text += points.ToString();
+                    }
+                    else {
+                        text += "(" + points.ToString() + ")";
+                    }
                 }
             }
 

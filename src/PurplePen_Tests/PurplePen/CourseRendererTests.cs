@@ -180,6 +180,14 @@ namespace PurplePen.Tests
             CheckCourseBothAppearances("courserenderer\\marymoor8.coursescribe", Designator(9), true, "scorescodescore_plusall", new RectangleF(-20, -60, 150, 140));
         }
 
+
+        [TestMethod]
+        public void ScoreCourseOnlyScore()
+        {
+            CheckCourseBothAppearances("courserenderer\\marymoor9.coursescribe", Designator(9), false, "scoreonlyscore", new RectangleF(-20, -60, 150, 140));
+            CheckCourseBothAppearances("courserenderer\\marymoor9.coursescribe", Designator(9), true, "scoresonlyscore_plusall", new RectangleF(-20, -60, 150, 140));
+        }
+
         [TestMethod]
         public void AllControls()
         {

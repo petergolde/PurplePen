@@ -185,6 +185,8 @@ namespace PurplePen
                         return ControlLabelKind.SequenceAndScore;
                     case 4:
                         return ControlLabelKind.CodeAndScore;
+                    case 5:
+                        return ControlLabelKind.Score;
                     default:
                         Debug.Fail("Bad control label kind???");
                         return ControlLabelKind.Sequence;
@@ -205,6 +207,8 @@ namespace PurplePen
                         labelKindCombo.SelectedIndex = 3; break;
                     case ControlLabelKind.CodeAndScore:
                         labelKindCombo.SelectedIndex = 4; break;
+                    case ControlLabelKind.Score:
+                        labelKindCombo.SelectedIndex = 5; break;
                 }
             }
         }
@@ -348,7 +352,7 @@ namespace PurplePen
             climbLabel.Visible = climbTextBox.Visible = metersSuffix.Visible = !enableScoreControls;
 
             // Only show the label kinds for the given kind.
-            SetLabelKindLength((CourseKind == CourseKind.Score) ? 5 : 3);
+            SetLabelKindLength((CourseKind == CourseKind.Score) ? 6 : 3);
         }
 
         private void SetLabelKindLength(int l)
@@ -365,13 +369,16 @@ namespace PurplePen
 
         private void scoreColumnCombo_SelectionChangeCommitted(object sender, EventArgs e) {
             // Column A as Score Column means we need to display only codes, since there are no sequence numbers on the description.
-            if (ScoreColumn == 0)
+            if (ScoreColumn == 0 &&
+                (ControlLabelKind == ControlLabelKind.Sequence || ControlLabelKind == ControlLabelKind.SequenceAndCode || ControlLabelKind == ControlLabelKind.SequenceAndScore))
+            {
                 ControlLabelKind = ControlLabelKind.Code;
+            }
         }
 
         private void labelKindCombo_SelectionChangeCommitted(object sender, EventArgs e) {
-            // Any seeting except code is incompatible with column A as score column.
-            if (ControlLabelKind != ControlLabelKind.Code && ScoreColumn == 0)
+            // Any seeting with sequence is incompatible with column A as score column.
+            if ((ControlLabelKind == ControlLabelKind.Sequence || ControlLabelKind == ControlLabelKind.SequenceAndCode || ControlLabelKind == ControlLabelKind.SequenceAndScore) && ScoreColumn == 0)
                 ScoreColumn = 1;
         }
     }

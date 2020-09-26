@@ -465,6 +465,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Code and score (145(30))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Score (30)</value>
+  </data>
   <data name="labelKindCombo.Location" type="System.Drawing.Point, System.Drawing">
     <value>140, 61</value>
   </data>
@@ -1153,6 +1156,6 @@
     <value>AddCourse</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.4.1.210, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.3.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

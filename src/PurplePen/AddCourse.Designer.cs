@@ -213,7 +213,8 @@ namespace PurplePen
             resources.GetString("labelKindCombo.Items1"),
             resources.GetString("labelKindCombo.Items2"),
             resources.GetString("labelKindCombo.Items3"),
-            resources.GetString("labelKindCombo.Items4")});
+            resources.GetString("labelKindCombo.Items4"),
+            resources.GetString("labelKindCombo.Items5")});
             resources.ApplyResources(this.labelKindCombo, "labelKindCombo");
             this.labelKindCombo.Name = "labelKindCombo";
             this.labelKindCombo.SelectionChangeCommitted += new System.EventHandler(this.labelKindCombo_SelectionChangeCommitted);

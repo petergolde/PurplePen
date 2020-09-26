@@ -170,7 +170,7 @@ namespace PurplePen.Tests
             EventDB eventDB = new EventDB(undomgr);
             RectangleF mapBounds = new RectangleF(0, 0, 200, 300);
 
-            Course course1, course2, course3, course4, course5;
+            Course course1, course2, course3, course4, course5, course6;
 
             undomgr.BeginCommand(61, "Command1");
 
@@ -241,6 +241,20 @@ namespace PurplePen.Tests
             course5.UpdateUnknownPageSizes(mapBounds, 15000);
             eventDB.AddCourse(course5);
 
+            course6 = new Course(CourseKind.Score, "Silly3", 10000, 3);
+            course6.secondaryTitle = "";
+            course6.firstCourseControl = CourseControlId(2);
+            course6.load = 0;
+            course6.climb = 25;
+            course6.overrideCourseLength = 4243;
+            course6.firstControlOrdinal = 3;
+            course6.labelKind = ControlLabelKind.Score;
+            course6.descKind = DescriptionKind.SymbolsAndText;
+            course6.partPrintAreas[1] = new PrintArea(false, false, new RectangleF(-10, -20, 90, 80));
+            course6.partOptions[1] = new PartOptions() { ShowFinish = false };
+            course6.UpdateUnknownPageSizes(mapBounds, 15000);
+            eventDB.AddCourse(course6);
+
             undomgr.EndCommand(61);
 
             eventDB.Save(TestUtil.GetTestFile("eventdb\\testoutput_temp.xml"));
@@ -263,6 +277,7 @@ namespace PurplePen.Tests
                     new KeyValuePair<Id<Course>,Course>(CourseId(3), course3),
                     new KeyValuePair<Id<Course>,Course>(CourseId(4), course4),
                     new KeyValuePair<Id<Course>,Course>(CourseId(5), course5),
+                    new KeyValuePair<Id<Course>,Course>(CourseId(6), course6),
                 }
             );
         }
