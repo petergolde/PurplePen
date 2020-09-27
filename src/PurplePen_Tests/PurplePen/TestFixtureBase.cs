@@ -45,6 +45,7 @@ namespace PurplePen.Tests
 
         protected CourseAppearance defaultCourseAppearance = new CourseAppearance();          // Use when you the default course appearance.
         protected CourseAppearance std2017CourseAppearance = new CourseAppearance() { mapStandard = "2017" };  // ISOM2017 course appearance.
+        protected CourseAppearance stdSpr2019CourseAppearance = new CourseAppearance() { mapStandard = "Spr2019" };  // ISSprOM2019 course appearance.
 
         /// <summary>
         ///Gets or sets the test context which provides

@@ -231,7 +231,15 @@ namespace PurplePen
             createEventInfo.firstCode = (int) numberingPage.startingCodeNumericUpDown.Value;
             createEventInfo.disallowInvertibleCodes = numberingPage.disallowInvertibleCheckBox.Checked;
             createEventInfo.descriptionLangId = null;  // use default description language.
-            createEventInfo.mapStandard = standardsPage.radioButtonMap2017.Checked ? "2017" : "2000";
+            if (standardsPage.radioButtonMap2017.Checked) {
+                createEventInfo.mapStandard = "2017";
+            }
+            else if (standardsPage.radioButtonMapSpr2019.Checked) {
+                createEventInfo.mapStandard = "Spr2019";
+            }
+            else {
+                createEventInfo.mapStandard = "2000";
+            }
             createEventInfo.descriptionStandard = standardsPage.radioButtonDescriptions2018.Checked ? "2018" : "2004";
 
             PrintArea printArea = new PrintArea();

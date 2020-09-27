@@ -16,6 +16,8 @@ namespace PurplePen
 
             if (Settings.Default.NewEventMapStandard == "2017")
                 radioButtonMap2017.Checked = true;
+            else if (Settings.Default.NewEventMapStandard == "Spr2019")
+                radioButtonMapSpr2019.Checked = true;
             else
                 radioButtonMap2000.Checked = true;
 
@@ -29,7 +31,7 @@ namespace PurplePen
         {
             get {
                 return (radioButtonDescriptions2004.Checked || radioButtonDescriptions2018.Checked) &&
-                       (radioButtonMap2000.Checked || radioButtonMap2017.Checked);
+                       (radioButtonMap2000.Checked || radioButtonMap2017.Checked || radioButtonMapSpr2019.Checked);
 
             } 
         }

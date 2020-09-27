@@ -188,6 +188,7 @@ namespace PurplePen
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mapStd2000Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.mapStd2017Menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapStdSpr2019Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.customizeCourseAppearanceMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -1229,7 +1230,8 @@ namespace PurplePen
             this.descriptionStd2018Menu,
             this.toolStripSeparator4,
             this.mapStd2000Menu,
-            this.mapStd2017Menu});
+            this.mapStd2017Menu,
+            this.mapStdSpr2019Menu});
             this.iOFStandardsToolStripMenuItem.Name = "iOFStandardsToolStripMenuItem";
             resources.ApplyResources(this.iOFStandardsToolStripMenuItem, "iOFStandardsToolStripMenuItem");
             // 
@@ -1261,6 +1263,12 @@ namespace PurplePen
             this.mapStd2017Menu.Name = "mapStd2017Menu";
             resources.ApplyResources(this.mapStd2017Menu, "mapStd2017Menu");
             this.mapStd2017Menu.Click += new System.EventHandler(this.mapStd2017Menu_Click);
+            // 
+            // mapStdSpr2019Menu
+            // 
+            this.mapStdSpr2019Menu.Name = "mapStdSpr2019Menu";
+            resources.ApplyResources(this.mapStdSpr2019Menu, "mapStdSpr2019Menu");
+            this.mapStdSpr2019Menu.Click += new System.EventHandler(this.mapStdSpr2019Menu_Click);
             // 
             // customizeDescriptionsMenu
             // 
@@ -2303,5 +2311,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem ellipseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addEllipseMenu;
         private System.Windows.Forms.ToolStripMenuItem stretchMenu;
+        private System.Windows.Forms.ToolStripMenuItem mapStdSpr2019Menu;
     }
 }

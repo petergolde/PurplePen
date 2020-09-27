@@ -1307,15 +1307,15 @@ namespace PurplePen
     {
         public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0,
-                  (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000 : NormalCourseAppearance.controlOutsideDiameter2017) / 2F,
+                  (appearance.mapStandard == "2017" ? NormalCourseAppearance.controlOutsideDiameter2017 : NormalCourseAppearance.controlOutsideDiameter2000) / 2F,
                   location)
         {
         }
 
         private float Diameter {
             get {
-                return (appearance.mapStandard == "2000" ? NormalCourseAppearance.controlOutsideDiameter2000
-                                                         : NormalCourseAppearance.controlOutsideDiameter2017) * courseObjRatio * appearance.controlCircleSize;
+                return (appearance.mapStandard == "2017" ? NormalCourseAppearance.controlOutsideDiameter2017
+                                                         : NormalCourseAppearance.controlOutsideDiameter2000) * courseObjRatio * appearance.controlCircleSize;
             }
         }
 
@@ -1400,7 +1400,7 @@ namespace PurplePen
         public StartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio,
                               CourseAppearance appearance, float orientation, PointF location, CrossHairOptions crossHairOptions)
             : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, null, orientation,
-                  (appearance.mapStandard == "2000") ? NormalCourseAppearance.startRadius2000 : NormalCourseAppearance.startRadius2017,
+                  (appearance.mapStandard == "2017") ? NormalCourseAppearance.startRadius2017 : NormalCourseAppearance.startRadius2000,
                   location)
         {
             this.crossHairOptions = crossHairOptions;
@@ -1408,7 +1408,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            PointF[] coords = (appearance.mapStandard == "2000") ? coords2000 : coords2017;
+            PointF[] coords = (appearance.mapStandard == "2017") ? coords2017 : coords2000;
 
             PointKind[] kinds = { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal };
             PointF[] pts = ScaleCoords((PointF[])coords.Clone());
@@ -1434,7 +1434,7 @@ namespace PurplePen
         // Draw the highlight. Everything must be draw in pixel coords so fast erase works correctly.
         public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
         {
-            PointF[] coords = (appearance.mapStandard == "2000") ? coords2000 : coords2017;
+            PointF[] coords = (appearance.mapStandard == "2017") ? coords2017 : coords2000;
 
             // Transform the thickness to pixel coords.
             float thickness = TransformDistance(NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, xformWorldToPixel);
@@ -1566,7 +1566,7 @@ namespace PurplePen
         public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance,
             CircleGap[] gaps, PointF location, CrossHairOptions crossHairOptions)
             : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0,
-                  ((appearance.mapStandard == "2000") ? NormalCourseAppearance.finishOutsideDiameter2000 : NormalCourseAppearance.finishOutsideDiameter2017) / 2F,
+                  ((appearance.mapStandard == "2017") ? NormalCourseAppearance.finishOutsideDiameter2017 : NormalCourseAppearance.finishOutsideDiameter2000) / 2F,
                   location)
         {
             this.crossHairOptions = crossHairOptions;
@@ -1863,15 +1863,22 @@ namespace PurplePen
     // A crossing point (could be associated with a control or a special, depending on whether it is mandatory or optional)
     class CrossingCourseObj : PointCourseObj
     {
-        static readonly PointF[] coords1 = { new PointF(-0.85F, -1.5F), new PointF(-0.35F, -0.65F), new PointF(-0.35F, 0.65F), new PointF(-0.85F, 1.5F) };
-        static readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
+        readonly PointF[] coords1 = { new PointF(-0.85F, -1.5F), new PointF(-0.35F, -0.65F), new PointF(-0.35F, 0.65F), new PointF(-0.85F, 1.5F) };
+        readonly PointF[] coords2 = { new PointF(0.85F, -1.5F), new PointF(0.35F, -0.65F), new PointF(0.35F, 0.65F), new PointF(0.85F, 1.5F) };
 
         public float stretch;
 
         public CrossingCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, float orientation, float stretch, PointF location)
-            : base(controlId, courseControlId, specialId, courseObjRatio, appearance, null, orientation, 1.72F + stretch / 2, location)
+            : base(controlId, courseControlId, specialId, courseObjRatio, appearance, null, orientation, (appearance.mapStandard == "Spr2019" ? 1.82F : 1.72F) + stretch / 2, location)
         {
             this.stretch = stretch;
+            if (appearance.mapStandard == "Spr2019") {
+                // In ISSpr2019, the inner width of crossing symbols is larger.
+                for (int i = 0; i < coords1.Length; ++i) {
+                    coords1[i].X -= 0.175F;
+                    coords2[i].X += 0.175F;
+                }
+            }
         }
 
         // Change the orientation of this crossing point.
@@ -1890,7 +1897,8 @@ namespace PurplePen
         {
             if (stretch <= 0) {
                 PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
-                PointF[] pts = ScaleCoords((PointF[])coords1.Clone());
+                PointF[] pts;
+                pts = ScaleCoords((PointF[])coords1.Clone());
                 path1 = new SymPath(pts, kinds);
 
                 kinds = new PointKind[4] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
@@ -1902,12 +1910,24 @@ namespace PurplePen
                 PointKind[] kinds = { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
                 PointF[] pts = { new PointF(-0.85F, -1.5F - hStretch), new PointF(-0.6F, -1.08F - hStretch), new PointF(-0.48F, -0.5F - hStretch), new PointF(-0.48F, - hStretch),
                                  new PointF(-0.48F, hStretch), new PointF(-0.48F, 0.5F + hStretch), new PointF(-0.6F, 1.08F + hStretch), new PointF(-0.85F, 1.5F + hStretch) };
+                if (appearance.mapStandard == "Spr2019") {
+                    // In ISSpr2019, the inner width of crossing symbols is larger.
+                    for (int i = 0; i < pts.Length; ++i) {
+                        pts[i].X -= 0.175F;
+                    }
+                }
                 pts = ScaleCoords(pts);
                 path1 = new SymPath(pts, kinds);
 
                 kinds = new PointKind[] { PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal, PointKind.Normal, PointKind.BezierControl, PointKind.BezierControl, PointKind.Normal };
                 pts = new PointF[] { new PointF(0.85F, -1.5F - hStretch), new PointF(0.6F, -1.08F - hStretch), new PointF(0.48F, -0.5F - hStretch), new PointF(0.48F, -hStretch),
                                      new PointF(0.48F, hStretch), new PointF(0.48F, 0.5F + hStretch), new PointF(0.6F, 1.08F + hStretch), new PointF(0.85F, 1.5F + hStretch) };
+                if (appearance.mapStandard == "Spr2019") {
+                    // In ISSpr2019, the inner width of crossing symbols is larger.
+                    for (int i = 0; i < pts.Length; ++i) {
+                        pts[i].X += 0.175F;
+                    }
+                }
                 pts = ScaleCoords(pts);
                 path2 = new SymPath(pts, kinds);
             }
@@ -2190,13 +2210,15 @@ namespace PurplePen
     class BoundaryCourseObj : LineCourseObj
     {
         public BoundaryCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, SymPath path)
-            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, 0.7F * appearance.lineWidth, path, null)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, 
+                   (appearance.mapStandard == "Spr2019" ? 1.0F : 0.7F) * appearance.lineWidth, 
+                   path, null)
         {
         }
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor)
         {
-            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", symColor, 0.7F * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", symColor, (appearance.mapStandard == "Spr2019" ? 1.0F : 0.7F) * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;

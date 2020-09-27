@@ -46,10 +46,10 @@ namespace PurplePen
                     result.centerDotDiameter = 0.0F;
                 }
                 else {
-                    if (mapStandard == "2000") 
-                        result.controlCircleSize = ((float) upDownControlCircle.Value) / NormalCourseAppearance.controlOutsideDiameter2000;
+                    if (mapStandard == "2017") 
+                        result.controlCircleSize = ((float) upDownControlCircle.Value) / NormalCourseAppearance.controlOutsideDiameter2017;
                     else
-                        result.controlCircleSize = ((float)upDownControlCircle.Value) / NormalCourseAppearance.controlOutsideDiameter2017;
+                        result.controlCircleSize = ((float)upDownControlCircle.Value) / NormalCourseAppearance.controlOutsideDiameter2000;
 
                     result.lineWidth = ((float) upDownLineWidth.Value) / NormalCourseAppearance.lineThickness;
                     result.centerDotDiameter = ((float)upDownCenterDot.Value);
@@ -81,10 +81,10 @@ namespace PurplePen
             {
                 this.mapStandard = value.mapStandard;
 
-                if (mapStandard == "2000")
-                    upDownControlCircle.Value = (decimal) (NormalCourseAppearance.controlOutsideDiameter2000 * value.controlCircleSize);
+                if (mapStandard == "2017")
+                    upDownControlCircle.Value = (decimal) (NormalCourseAppearance.controlOutsideDiameter2017 * value.controlCircleSize);
                 else
-                    upDownControlCircle.Value = (decimal)(NormalCourseAppearance.controlOutsideDiameter2017 * value.controlCircleSize);
+                    upDownControlCircle.Value = (decimal)(NormalCourseAppearance.controlOutsideDiameter2000 * value.controlCircleSize);
 
                 upDownLineWidth.Value = (decimal) (NormalCourseAppearance.lineThickness * value.lineWidth);
                 upDownCenterDot.Value = (decimal)value.centerDotDiameter;
@@ -137,10 +137,10 @@ namespace PurplePen
         private void checkBoxStandardSizes_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxStandardSizes.Checked) {
-                if (mapStandard == "2000")
-                    upDownControlCircle.Value = (decimal) (NormalCourseAppearance.controlOutsideDiameter2000);
+                if (mapStandard == "2017")
+                    upDownControlCircle.Value = (decimal) (NormalCourseAppearance.controlOutsideDiameter2017);
                 else
-                    upDownControlCircle.Value = (decimal)(NormalCourseAppearance.controlOutsideDiameter2017);
+                    upDownControlCircle.Value = (decimal)(NormalCourseAppearance.controlOutsideDiameter2000);
 
                 upDownLineWidth.Value = (decimal) (NormalCourseAppearance.lineThickness);
                 upDownNumberHeight.Value = (decimal) (NormalCourseAppearance.nominalControlNumberHeight);
@@ -202,13 +202,13 @@ namespace PurplePen
 
                 float finishDrawRadiusOuter, finishDrawRadiusInner;
 
-                if (mapStandard == "2000") {
-                    finishDrawRadiusOuter = ((circleDiameter * NormalCourseAppearance.finishOutsideDiameter2000 / NormalCourseAppearance.controlOutsideDiameter2000) - lineWidth) / 2F;
-                    finishDrawRadiusInner = ((circleDiameter * (NormalCourseAppearance.finishInsideDiameter2000 + NormalCourseAppearance.lineThickness) / NormalCourseAppearance.controlOutsideDiameter2000) - 2F * lineWidth) / 2F;
+                if (mapStandard == "2017") {
+                    finishDrawRadiusOuter = ((circleDiameter * NormalCourseAppearance.finishOutsideDiameter2017 / NormalCourseAppearance.controlOutsideDiameter2017) - lineWidth) / 2F;
+                    finishDrawRadiusInner = ((circleDiameter * (NormalCourseAppearance.finishInsideDiameter2017 + NormalCourseAppearance.lineThickness) / NormalCourseAppearance.controlOutsideDiameter2000) - 2F * lineWidth) / 2F;
                 }
                 else {
-                    finishDrawRadiusOuter = ((circleDiameter * NormalCourseAppearance.finishOutsideDiameter2017 / NormalCourseAppearance.controlOutsideDiameter2017) - lineWidth) / 2F;
-                    finishDrawRadiusInner = ((circleDiameter * (NormalCourseAppearance.finishInsideDiameter2017 + NormalCourseAppearance.lineThickness) / NormalCourseAppearance.controlOutsideDiameter2017) - 2F * lineWidth) / 2F;
+                    finishDrawRadiusOuter = ((circleDiameter * NormalCourseAppearance.finishOutsideDiameter2000 / NormalCourseAppearance.controlOutsideDiameter2000) - lineWidth) / 2F;
+                    finishDrawRadiusInner = ((circleDiameter * (NormalCourseAppearance.finishInsideDiameter2000 + NormalCourseAppearance.lineThickness) / NormalCourseAppearance.controlOutsideDiameter2017) - 2F * lineWidth) / 2F;
                 }
 
                 PointF centerCircle = new PointF(40, 5);

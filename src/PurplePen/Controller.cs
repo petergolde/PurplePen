@@ -528,6 +528,9 @@ namespace PurplePen
             if (info.mapStandard == "2000") {
                 ev.courseAppearance.itemScaling = ItemScaling.None;
             }
+            else if (info.mapStandard == "Spr2019") {
+                ev.courseAppearance.itemScaling = ItemScaling.RelativeToMap;
+            }
             else {
                 if (info.allControlsPrintScale >= 9500 && info.allControlsPrintScale <= 15500) {
                     ev.courseAppearance.itemScaling = ItemScaling.RelativeTo15000;

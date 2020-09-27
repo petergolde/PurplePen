@@ -2361,38 +2361,38 @@ namespace PurplePen
 
         public float ControlCircleOutsideDiameter {
             get {
-                if (mapStandard == "2000")
-                    return NormalCourseAppearance.controlOutsideDiameter2000 * controlCircleSize;
-                else
+                if (mapStandard == "2017")
                     return NormalCourseAppearance.controlOutsideDiameter2017 * controlCircleSize;
+                else
+                    return NormalCourseAppearance.controlOutsideDiameter2000 * controlCircleSize;
             }
         }
 
         public float FinishCircleOutsideDiameter {
             get {
-                if (mapStandard == "2000")
-                    return NormalCourseAppearance.finishOutsideDiameter2000 * controlCircleSize;
-                else
+                if (mapStandard == "2017")
                     return NormalCourseAppearance.finishOutsideDiameter2017 * controlCircleSize;
+                else
+                    return NormalCourseAppearance.finishOutsideDiameter2000 * controlCircleSize;
             }
         }
 
         // Outside diameter of the inner circle.
         public float FinishCircleInsideDiameter {
             get {
-                if (mapStandard == "2000")
-                    return ((NormalCourseAppearance.finishInsideDiameter2000 + NormalCourseAppearance.lineThickness) * controlCircleSize) - (lineWidth * NormalCourseAppearance.lineThickness);
-                else
+                if (mapStandard == "2017")
                     return ((NormalCourseAppearance.finishInsideDiameter2017 + NormalCourseAppearance.lineThickness) * controlCircleSize) - (lineWidth * NormalCourseAppearance.lineThickness);
+                else
+                    return ((NormalCourseAppearance.finishInsideDiameter2000 + NormalCourseAppearance.lineThickness) * controlCircleSize) - (lineWidth * NormalCourseAppearance.lineThickness);
             }
         }
 
         public float StartRadius {
             get {
-                if (mapStandard == "2000")
-                    return NormalCourseAppearance.startRadius2000 * controlCircleSize;
-                else
+                if (mapStandard == "2017")
                     return NormalCourseAppearance.startRadius2017 * controlCircleSize;
+                else
+                    return NormalCourseAppearance.startRadius2000 * controlCircleSize;
             }
         }
 
@@ -2613,10 +2613,10 @@ namespace PurplePen
                 throw new ApplicationException(string.Format("Event '{0}' has bad description language", id));
 
             if (customSymbolKey.Count != customSymbolText.Count)
-                throw new ApplicationException(string.Format("Event '{0}' has inconsistent custom symbols"));
+                throw new ApplicationException(string.Format("Event '{0}' has inconsistent custom symbols", id));
             foreach (string s in customSymbolText.Keys)
                 if (! customSymbolKey.ContainsKey(s))
-                    throw new ApplicationException(string.Format("Event '{0}' has inconsistent custom symbols"));
+                    throw new ApplicationException(string.Format("Event '{0}' has inconsistent custom symbols", id));
 
             if (descriptionStandard != "2004" && descriptionStandard != "2018")
                 throw new ApplicationException(string.Format("Event '{0}' has bad description standard", id));

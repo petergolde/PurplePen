@@ -71,6 +71,7 @@ namespace PurplePen
             this.radioButtonDescriptions2018 = new System.Windows.Forms.RadioButton();
             this.radioButtonDescriptions2004 = new System.Windows.Forms.RadioButton();
             this.labelStandardsIntro = new System.Windows.Forms.Label();
+            this.radioButtonMapSpr2019 = new System.Windows.Forms.RadioButton();
             this.groupBoxMapStandard.SuspendLayout();
             this.groupBoxDescriptionStandard.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +88,7 @@ namespace PurplePen
             // 
             // groupBoxMapStandard
             // 
+            this.groupBoxMapStandard.Controls.Add(this.radioButtonMapSpr2019);
             this.groupBoxMapStandard.Controls.Add(this.radioButtonMap2017);
             this.groupBoxMapStandard.Controls.Add(this.radioButtonMap2000);
             resources.ApplyResources(this.groupBoxMapStandard, "groupBoxMapStandard");
@@ -134,6 +136,13 @@ namespace PurplePen
             resources.ApplyResources(this.labelStandardsIntro, "labelStandardsIntro");
             this.labelStandardsIntro.Name = "labelStandardsIntro";
             // 
+            // radioButtonMapSpr2019
+            // 
+            resources.ApplyResources(this.radioButtonMapSpr2019, "radioButtonMapSpr2019");
+            this.radioButtonMapSpr2019.Name = "radioButtonMapSpr2019";
+            this.radioButtonMapSpr2019.TabStop = true;
+            this.radioButtonMapSpr2019.UseVisualStyleBackColor = true;
+            // 
             // NewEventStandards
             // 
             resources.ApplyResources(this, "$this");
@@ -163,5 +172,6 @@ namespace PurplePen
         internal System.Windows.Forms.RadioButton radioButtonMap2000;
         internal System.Windows.Forms.RadioButton radioButtonDescriptions2018;
         internal System.Windows.Forms.RadioButton radioButtonDescriptions2004;
+        internal System.Windows.Forms.RadioButton radioButtonMapSpr2019;
     }
 }

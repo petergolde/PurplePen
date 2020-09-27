@@ -720,6 +720,7 @@ namespace PurplePen
             string mapStandard = controller.GetMapStandard();
             mapStd2000Menu.Checked = (mapStandard == "2000");
             mapStd2017Menu.Checked = (mapStandard == "2017");
+            mapStdSpr2019Menu.Checked = (mapStandard == "Spr2019");
             dangerousToolStripMenuItem.Visible = (mapStandard == "2000");
             addDangerousMenu.Visible = (mapStandard == "2000");
             if (mapStandard == "2000") {
@@ -3138,6 +3139,10 @@ namespace PurplePen
         private void mapStd2017Menu_Click(object sender, EventArgs e)
         {
             controller.ChangeMapStandard("2017");
+        }
+        private void mapStdSpr2019Menu_Click(object sender, EventArgs e)
+        {
+            controller.ChangeMapStandard("Spr2019");
         }
     }
 }

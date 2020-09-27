@@ -217,6 +217,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlCircleSpr2019()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0, 0));
+            SingleObject(courseobj, "control_circle_spr2019");
+        }
+
+        [TestMethod]
         public void ControlCircleSpecial()
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0, 0));
@@ -235,6 +242,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
             SingleObject(courseobj, "control_circle_gaps_2017");
+        }
+
+        [TestMethod]
+        public void ControlCircleGapsSpr2019()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
+            SingleObject(courseobj, "control_circle_gaps_spr2019");
         }
 
         [TestMethod]
@@ -259,6 +273,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FinishSpr2019()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
+            SingleObject(courseobj, "finish_circle_spr2019");
+        }
+
+        [TestMethod]
         public void FinishGaps()
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
@@ -270,6 +291,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "finish_circle_gaps_2017");
+        }
+
+        [TestMethod]
+        public void FinishGapsSpr2019()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
+            SingleObject(courseobj, "finish_circle_gaps_spr2019");
         }
 
         [TestMethod]
@@ -298,6 +326,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 0, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
             SingleObject(courseobj, "start_triangle_2017");
+        }
+
+        [TestMethod]
+        public void StartSpr2019()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, 0, new PointF(0, 0), CrossHairOptions.HighlightCrossHair);
+            SingleObject(courseobj, "start_triangle_spr2019");
         }
 
         [TestMethod]
@@ -350,6 +385,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FirstAidSpr2019()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, stdSpr2019CourseAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "first_aid_spr2019");
+        }
+
+        [TestMethod]
         public void FirstAidSpecial()
         {
             CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0, 0));
@@ -368,6 +410,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(0, 0));
             SingleObject(courseobj, "water_2017");
+        }
+
+        [TestMethod]
+        public void WaterSpr2019()
+        {
+            CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, stdSpr2019CourseAppearance, new PointF(0, 0));
+            SingleObject(courseobj, "water_spr2019");
         }
 
         [TestMethod]
@@ -457,6 +506,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsSpr2019()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "out_of_bounds_spr2019");
+        }
+
+        [TestMethod]
         public void OutOfBoundsSpecial()
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -475,6 +531,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObject(courseobj, "dangerous_2017");
+        }
+
+        [TestMethod]
+        public void DangerousSpr2019()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "dangerous_spr2019");
         }
 
         [TestMethod]
@@ -557,6 +620,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObject(courseobj, "boundary");
+        }
+
+        [TestMethod]
+        public void BoundarySpr2019()
+        {
+            CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, stdSpr2019CourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObject(courseobj, "boundary_spr2019");
         }
 
         [TestMethod]
@@ -796,6 +866,17 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlCircleDistanceSpr2019()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(1, 1));
+            Assert.AreEqual(2.0, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, stdSpr2019CourseAppearance, null, new PointF(1, 1));
+            Assert.AreEqual(3.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+        [TestMethod]
         public void FinishDistance()
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
@@ -818,6 +899,17 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FinishDistanceSpr2019()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
+            Assert.AreEqual(1.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 0.5F, stdSpr2019CourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
+            Assert.AreEqual(3.25, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+        [TestMethod]
         public void StartDistance()
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
@@ -836,6 +928,17 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
             courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 0.5F, std2017CourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
             Assert.AreEqual(3.27F, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4), 0.001F);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+        [TestMethod]
+        public void StartDistanceSpr2019()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
+            Assert.AreEqual(0.96, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 3));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 0.5F, stdSpr2019CourseAppearance, 0, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
+            Assert.AreEqual(2.98, Math.Round(courseobj.DistanceFromPoint(new PointF(4, -3)), 4));
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
 
@@ -1225,6 +1328,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlCircleHighlightSpr2019()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "control_circle_highlight_spr2019");
+        }
+
+        [TestMethod]
         public void ControlCircleHighlightSpecial()
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, null, new PointF(0.5F, 0.5F));
@@ -1250,6 +1360,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "finish_circle_highlight_2017");
+        }
+
+        [TestMethod]
+        public void FinishHighlightSpr2019()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
+            SingleObjectHighlight(courseobj, "finish_circle_highlight_spr2019");
         }
 
         [TestMethod]
@@ -1285,6 +1402,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
             SingleObjectHighlight(courseobj, "start_triangle_2017_highlight");
+        }
+
+        [TestMethod]
+        public void StartHighlightSpr2019()
+        {
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
+            SingleObjectHighlight(courseobj, "start_triangle_spr2019_highlight");
         }
 
         [TestMethod]
@@ -1337,6 +1461,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FirstAidHighlightSpr2013()
+        {
+            CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, stdSpr2019CourseAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "first_aid_spr2019_highlight");
+        }
+
+        [TestMethod]
         public void FirstAidHighlightSpecial()
         {
             CourseObj courseobj = new FirstAidCourseObj(SpecialId(0), 1.0F, specialAppearance, new PointF(0.1F, 0.4F));
@@ -1386,6 +1517,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsHighlightSpr2019()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "out_of_bounds_spr2019_highlight");
+        }
+
+        [TestMethod]
         public void OutOfBoundsHighlightSpecial()
         {
             CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -1404,6 +1542,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectHighlight(courseobj, "dangerous_2017_highlight");
+        }
+
+        [TestMethod]
+        public void DangerousHighlightSpr2019()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "dangerous_spr2019_highlight");
         }
 
         [TestMethod]
@@ -1499,6 +1644,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, defaultCourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObjectHighlight(courseobj, "boundary_highlight");
+        }
+
+        [TestMethod]
+        public void BoundaryHighlightSpr2019()
+        {
+            CourseObj courseobj = new BoundaryCourseObj(SpecialId(0), 1.0F, stdSpr2019CourseAppearance, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObjectHighlight(courseobj, "boundary_highlight_spr2019");
         }
 
         [TestMethod]
@@ -1621,6 +1773,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, std2017CourseAppearance, new PointF(0.1F, 0.4F));
             SingleObjectHighlight(courseobj, "water_2017_highlight");
+        }
+
+        [TestMethod]
+        public void WaterHighlightSpr2019()
+        {
+            CourseObj courseobj = new WaterCourseObj(SpecialId(0), 1.0F, stdSpr2019CourseAppearance, new PointF(0.1F, 0.4F));
+            SingleObjectHighlight(courseobj, "water_spr2019_highlight");
         }
 
         [TestMethod]
@@ -1773,6 +1932,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ControlCircleOffsetSpr2019()
+        {
+            CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0.5F, 0.5F));
+            SingleObjectOffset(courseobj, "control_circle_offset_spr2019");
+        }
+
+        [TestMethod]
         public void FinishOffset()
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
@@ -1787,6 +1953,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void FinishOffset2019()
+        {
+            CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
+            SingleObjectOffset(courseobj, "finish_circle_offset_spr2019");
+        }
+
+        [TestMethod]
         public void StartOffset()
         {
             CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
@@ -1794,10 +1967,10 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
-        public void StartOffset2017()
+        public void StartOffsetSpr2019()
         {
-            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
-            SingleObjectOffset(courseobj, "start_triangle_2017_offset");
+            CourseObj courseobj = new StartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, 75, new PointF(0.1F, 0.4F), CrossHairOptions.HighlightCrossHair);
+            SingleObjectOffset(courseobj, "start_triangle_spr2019_offset");
         }
 
         [TestMethod]
@@ -1850,6 +2023,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void OutOfBoundsOffsetSpr2019()
+        {
+            CourseObj courseobj = new OOBCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "out_of_bounds_spr2019_offset");
+        }
+
+        [TestMethod]
         public void DangerousOffset()
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
@@ -1861,6 +2041,13 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, std2017CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectOffset(courseobj, "dangerous_2017_offset");
+        }
+
+        [TestMethod]
+        public void DangerousOffsetSpr2019()
+        {
+            CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "dangerous_spr2019_offset");
         }
 
         [TestMethod]
