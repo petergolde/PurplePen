@@ -88,7 +88,7 @@ SignedUninstaller=yes
 UninstallDisplayIcon={app}\{#MyAppExeName},0
 
 ;MinVersion default value: "0,5.0 (Windows 2000+) if Unicode Inno Setup, else 4.0,4.0 (Windows 95+)"
-MinVersion=0,5.1
+MinVersion=0,6.0
 PrivilegesRequired=admin
 
 ;These were turned on in the sample for the bootstrapper, but I turned them off again.
@@ -118,7 +118,6 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
 Name: "finnish"; MessagesFile: "compiler:Languages\Finnish.isl"
 Name: "german"; MessagesFile: "compiler:Languages\German.isl"
-Name: "hungarian"; MessagesFile: "compiler:Languages\Hungarian.isl"
 Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "japanese"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "norwegian"; MessagesFile: "compiler:Languages\Norwegian.isl"
