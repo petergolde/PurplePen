@@ -1,0 +1,78 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Test Event</title>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false" absolute-path="D:\dev\PurplePen\src\TestFiles\marymoor.ocd">..\marymoor.ocd</map>
+    <standards map="2017" description="2018" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-100.465981" top="108.530304" right="305.426025" bottom="-174.171692" page-width="1169" page-height="1654" page-margins="28" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeTo15000" scale-sizes-circle-gaps="true" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="sv" color="black" />
+    <ocad overprint-colors="false" />
+    <livelox importable-event-id="069cbad3ed7241939edc4aa46cb6d2d5" />
+  </event>
+  <control id="1" kind="start">
+    <location x="37.1508942" y="5.694525" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="57.51533" y="13.6029434" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="65.78541" y="40.20189" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="18.8823" y="39.0101547" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="10.795557" y="7.1739254" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="13.94512" y="-3.55166435" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-100.465981" top="108.530304" right="305.426025" bottom="-174.171692" page-width="1169" page-height="1654" page-margins="28" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Course 2</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-100.465981" top="108.530304" right="305.426025" bottom="-174.171692" page-width="1169" page-height="1654" page-margins="28" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6" />
+  <course-control id="7" control="1">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="8" control="6" />
+  <course-control id="9" control="4">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="5">
+    <next course-control="8" />
+  </course-control>
+</course-scribe-event>

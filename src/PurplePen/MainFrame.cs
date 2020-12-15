@@ -45,12 +45,13 @@ using System.Net;
 using System.Reflection;
 using System.Globalization;
 using System.Linq;
-
+using System.Threading;
 using PurplePen.MapView;
 using PurplePen.MapModel;
 
 using PurplePen.DebugUI;
 using PurplePen.Graphics2D;
+using PurplePen.Livelox;
 
 namespace PurplePen
 {
@@ -73,6 +74,7 @@ namespace PurplePen
         BitmapCreationSettings bitmapCreationSettingsPrevious = null; // creation settings for image creation, if it has been done before.
         RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
         GpxCreationSettings gpxCreationSettingsPrevious = null;  // creation settings for Gpx creation, if it has been done before.
+        LiveloxPublishSettings liveloxPublishSettingsPrevious = null;  // settings for Livelox export, if it has been done before.
 
         Uri helpFileUrl;                       // URL of the help file.
 
@@ -2349,6 +2351,10 @@ namespace PurplePen
 
                 // Save the settings for the next invocation of the dialog.
                 coursePdfSettings = createPdfDialog.PdfSettings;
+                // TODO: MT: remove
+                coursePdfSettings.RenderMap = false;
+                // TODO: MT: remove
+                coursePdfSettings.RenderControlDescriptions = false;
                 controller.CreateCoursePdfs(coursePdfSettings);
 
                 break;
@@ -2687,8 +2693,39 @@ namespace PurplePen
             // And the dialog is done.
             createRouteGadgetFilesDialog.Dispose();
         }
-        
-        
+
+        private void publishToLiveloxMenu_Click(object sender, EventArgs e)
+        {
+            LiveloxPublishSettings settings;
+            if (liveloxPublishSettingsPrevious != null)
+            {
+                settings = liveloxPublishSettingsPrevious.Clone();
+            }
+            else
+            {
+                settings = new LiveloxPublishSettings();
+            }
+
+            var publishToLiveloxDialog = new PublishToLiveloxDialog(controller, symbolDB, settings);
+            publishToLiveloxDialog.InitializeImportableEvent(this, call =>
+            {
+                // must invoke on UI thread
+                this.InvokeOnUiThread(() => {
+                    controller.EndProgressDialog();
+                    if (call.Success)
+                    {
+                        publishToLiveloxDialog.ShowDialog(this);
+                        liveloxPublishSettingsPrevious = publishToLiveloxDialog.PublishSettings;
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, call.Exception?.Message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    publishToLiveloxDialog.Dispose();
+                });
+            });
+        }
+
         private void createXmlMenu_Click(object sender, EventArgs e)
         {
             // The default output for the XML is the same as the event file name, with xml extension.
@@ -3058,10 +3095,18 @@ namespace PurplePen
 
         private OperationInProgress operationInProgressDialog = null;
 
-        public void ShowProgressDialog(bool knownDuration)
+        public void ShowProgressDialog(bool knownDuration, Action onCancelPressed = null)
         {
             operationInProgressDialog = new OperationInProgress();
             operationInProgressDialog.IndefiniteDuration = !knownDuration;
+            if (onCancelPressed != null)
+            {
+                operationInProgressDialog.OnCancelPressed += (sender, args) =>
+                {
+                    EndProgressDialog();
+                    onCancelPressed();
+                };
+            }
             operationInProgressDialog.Show(this);
             this.Enabled = false;
             Application.DoEvents();
@@ -3069,12 +3114,13 @@ namespace PurplePen
 
         public bool UpdateProgressDialog(string info, double fractionDone)
         {
-            if (operationInProgressDialog != null) {
-                operationInProgressDialog.StatusText = info;
-                if (!operationInProgressDialog.IndefiniteDuration)
-                    operationInProgressDialog.SetProgress(fractionDone);
+            var dialog = operationInProgressDialog;
+            if (dialog != null) {
+                dialog.StatusText = info;
+                if (!dialog.IndefiniteDuration)
+                    dialog.SetProgress(fractionDone);
                 Application.DoEvents();
-                return operationInProgressDialog.CancelPressed;
+                return dialog.CancelPressed;
             }
             else {
                 return true;

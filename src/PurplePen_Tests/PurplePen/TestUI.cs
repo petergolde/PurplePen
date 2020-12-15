@@ -195,7 +195,7 @@ namespace PurplePen.Tests
         }
 
 
-        public void ShowProgressDialog(bool knownDuration)
+        public void ShowProgressDialog(bool knownDuration, Action onCancelPressed = null)
         {
         }
 

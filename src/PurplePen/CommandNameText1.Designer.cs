@@ -619,6 +619,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Livelox importable event ID.
+        /// </summary>
+        internal static string SetLiveloxImportableEventId {
+            get {
+                return ResourceManager.GetString("SetLiveloxImportableEventId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set Print Area.
         /// </summary>
         internal static string SetPrintArea {

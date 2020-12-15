@@ -1306,8 +1306,17 @@ namespace PurplePen
             SetOutputDirectory(coursePdfSettings);
 
             bool success = HandleExceptions(
-                delegate {
-                    CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePdfSettings, GetCourseAppearance());
+                delegate
+                {
+                    MapDisplay clonedMapDisplay = mapDisplay.CloneToFullIntensity();
+                    if (!coursePdfSettings.RenderMap)
+                    {
+                        clonedMapDisplay.SetMapFile(MapType.None, null);
+                    }
+
+                    CourseAppearance courseAppearance = GetCourseAppearance();
+                    courseAppearance.renderDescriptions = coursePdfSettings.RenderControlDescriptions;
+                    CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, clonedMapDisplay, coursePdfSettings, courseAppearance);
                     coursePdf.CreatePdfs();
                 },
                 MiscText.CannotCreatePdfs);
@@ -3985,9 +3994,9 @@ namespace PurplePen
             return eventDB;
         }
 
-        public void ShowProgressDialog(bool knownDuration)
+        public void ShowProgressDialog(bool knownDuration, Action onCancelPressed = null)
         {
-            ui.ShowProgressDialog(knownDuration);
+            ui.ShowProgressDialog(knownDuration, onCancelPressed);
         }
 
         public bool UpdateProgressDialog(string info, double fractionDone)
@@ -4201,7 +4210,7 @@ namespace PurplePen
         void ShowTopologyView();
 
         // Put up a progress dialog for long-running operation.
-        void ShowProgressDialog(bool knownDuration);
+        void ShowProgressDialog(bool knownDuration, Action onCancelPressed = null);
         bool UpdateProgressDialog(string info, double fractionDone);
         void EndProgressDialog();
     }

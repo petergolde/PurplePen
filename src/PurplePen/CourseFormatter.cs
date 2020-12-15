@@ -93,11 +93,14 @@ namespace PurplePen
             }
 
             // Go through all the descriptions in the view and process them to create course objects
-            foreach (CourseView.DescriptionView descriptionView in courseView.DescriptionViews) {
-                // The layer depends on "descriptions in purple" setting in the course appearance.
-                courseObj = CreateDescriptionSpecial(eventDB, symbolDB, descriptionView, appearance.descriptionsPurple ? layer : CourseLayer.Descriptions);
-                if (courseObj != null)
-                    courseLayout.AddCourseObject(courseObj);
+            if (appearance.renderDescriptions)
+            {
+                foreach (CourseView.DescriptionView descriptionView in courseView.DescriptionViews) {
+                    // The layer depends on "descriptions in purple" setting in the course appearance.
+                    courseObj = CreateDescriptionSpecial(eventDB, symbolDB, descriptionView, appearance.descriptionsPurple ? layer : CourseLayer.Descriptions);
+                    if (courseObj != null)
+                        courseLayout.AddCourseObject(courseObj);
+                }
             }
 
             // Go through all the controls in the view and process them to create controls and legs.

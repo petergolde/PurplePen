@@ -708,4 +708,7 @@
   <data name="ncross.Text" xml:space="preserve">
     <value>Lägg till specialsymbol</value>
   </data>
+  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
+    <value>Publicera till &amp;Livelox...</value>
+  </data>
 </root>

@@ -2352,6 +2352,7 @@ namespace PurplePen
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
 
+        public bool renderDescriptions = true;          // Whether to render control descriptions.
         public bool descriptionsPurple = false;         // If true, descriptions in purple instead of black.
 
         public bool useOcadOverprint = false;       // If true, use overprint effect when rendering OCAD map.
@@ -2433,6 +2434,8 @@ namespace PurplePen
                     return false;
             }
             if (descriptionsPurple != other.descriptionsPurple)
+                return false;
+            if (renderDescriptions != other.renderDescriptions)
                 return false;
             if (useOcadOverprint != other.useOcadOverprint)
                 return false;
@@ -2588,6 +2591,7 @@ namespace PurplePen
         public string descriptionStandard; // description standard; either "2004" or "2018"
         public Dictionary<string, List<SymbolText>> customSymbolText = new Dictionary<string, List<SymbolText>>();   // maps symbol IDs to list of custom symbol text.
         public Dictionary<string, bool> customSymbolKey = new Dictionary<string, bool>();   // maps symbol IDs to whether to display key for this custom symbol
+        public string liveloxImportableEventId; // the Livelox identifier for this event if it has ben posted to Livelox
 
         public Event()
         {
@@ -2644,6 +2648,7 @@ namespace PurplePen
             ev.courseAppearance = (CourseAppearance) courseAppearance.Clone();
             if (ev.printArea != null)
                 ev.printArea = (PrintArea)printArea.Clone();
+            ev.liveloxImportableEventId = liveloxImportableEventId;
             return ev;
         }
 
@@ -2685,6 +2690,8 @@ namespace PurplePen
             if (other.descriptionLangId != descriptionLangId)
                 return false;
             if (other.descriptionStandard != descriptionStandard)
+                return false;
+            if (other.liveloxImportableEventId != liveloxImportableEventId)
                 return false;
 
             if (customSymbolText.Count != other.customSymbolText.Count)
@@ -2817,6 +2824,13 @@ namespace PurplePen
                     text.WriteXml(xmloutput);
                 xmloutput.WriteEndElement();
             }
+
+            if (liveloxImportableEventId != null)
+            {
+                xmloutput.WriteStartElement("livelox");
+                xmloutput.WriteAttributeString("importable-event-id", liveloxImportableEventId);
+                xmloutput.WriteEndElement();
+            }
         }
 
         public override void ReadAttributesAndContent(XmlInput xmlinput)
@@ -2827,7 +2841,7 @@ namespace PurplePen
             printArea = null;  // Will be set at end if not loaded.
 
             bool first = true;
-            while (xmlinput.FindSubElement(first, "standards", "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "ocad", "custom-symbol-text")) {
+            while (xmlinput.FindSubElement(first, "standards", "title", "notes", "map", "all-controls", "numbering", "punch-card", "course-appearance", "print-area", "descriptions", "ocad", "custom-symbol-text", "livelox")) {
                 switch (xmlinput.Name) {
                     case "standards":
                         courseAppearance.mapStandard = xmlinput.GetAttributeString("map", "2000");
@@ -2980,6 +2994,11 @@ namespace PurplePen
                         }
                         
                         customSymbolText[iof2004id] = texts;
+                        xmlinput.Skip();
+                        break;
+
+                    case "livelox":
+                        liveloxImportableEventId = xmlinput.GetAttributeString("importable-event-id");
                         xmlinput.Skip();
                         break;
                         
@@ -3421,7 +3440,7 @@ namespace PurplePen
             foreach (Id<Leg> legId in AllLegIds)
                 GetLeg(legId).Validate(legId, validateInfo);
         }
-
+        
 
         /// <summary>
         /// Save the entire state of the event DB to a file.

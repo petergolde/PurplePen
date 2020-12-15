@@ -70,6 +70,9 @@
     <Reference Include="Graphics2D">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Graphics2D.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Libraries\SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="MapModel">
       <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
     </Reference>
@@ -81,6 +84,10 @@
     </Reference>
     <Reference Include="Map_PDF">
       <HintPath>..\Libraries\MapModel\$(Configuration)\Map_PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\Newtonsoft.Json\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PdfSharp">
       <HintPath>..\Libraries\MapModel\$(Configuration)\PdfSharp.dll</HintPath>
@@ -282,6 +289,34 @@
     <Compile Include="CreateOcadFiles.Designer.cs">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Livelox\ApiContracts\Country.cs" />
+    <Compile Include="Livelox\ApiContracts\Event.cs" />
+    <Compile Include="Livelox\ApiContracts\ImportableEvent.cs" />
+    <Compile Include="Livelox\ApiContracts\CoordinateMapping.cs" />
+    <Compile Include="Livelox\ApiContracts\GeoCoordinate.cs" />
+    <Compile Include="Livelox\ApiContracts\ImportableEventLink.cs" />
+    <Compile Include="Livelox\ApiContracts\Map.cs" />
+    <Compile Include="Livelox\ApiContracts\Georeference.cs" />
+    <Compile Include="Livelox\ApiContracts\MapCoordinate.cs" />
+    <Compile Include="Livelox\ApiContracts\Organisation.cs" />
+    <Compile Include="Livelox\ApiContracts\Person.cs" />
+    <Compile Include="Livelox\ApiContracts\RoleType.cs" />
+    <Compile Include="Livelox\ApiContracts\OrganisationRoleType.cs" />
+    <Compile Include="Livelox\ApiContracts\TimeInterval.cs" />
+    <Compile Include="Livelox\ApiContracts\UserInfo.cs" />
+    <Compile Include="Livelox\ConsentRedirectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Livelox\ConsentRedirectionDialog.Designer.cs">
+      <DependentUpon>ConsentRedirectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Livelox\ControlExtensions.cs" />
+    <Compile Include="Livelox\PublishToLiveloxDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Livelox\PublishToLiveloxDialog.Designer.cs">
+      <DependentUpon>PublishToLiveloxDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateRouteGadget.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -404,12 +439,31 @@
     <Compile Include="LinePropertiesDialog.Designer.cs">
       <DependentUpon>LinePropertiesDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Livelox\PublishManager.cs" />
+    <Compile Include="Livelox\IAbortable.cs" />
+    <Compile Include="Livelox\LiveloxApiCall.cs" />
+    <Compile Include="Livelox\LiveloxApiNullResponse.cs" />
+    <Compile Include="Livelox\LiveloxApiRequestContext.cs" />
+    <Compile Include="Livelox\LiveloxPublishSettings.cs" />
+    <Compile Include="Livelox\LiveloxResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LiveloxResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Livelox\OAuth2Exception.cs" />
+    <Compile Include="Livelox\LiveloxApiClient.cs" />
+    <Compile Include="Livelox\OAuth2TokenInformation.cs" />
+    <Compile Include="Livelox\LiveloxSettings.cs" />
+    <Compile Include="Livelox\SettingsProvider.cs" />
+    <Compile Include="Livelox\StatusCodeException.cs" />
+    <Compile Include="Livelox\User.cs" />
     <Compile Include="MainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFrame.Designer.cs">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Livelox\ApiContracts\ImageCoordinate.cs" />
     <Compile Include="MapDisplay.cs" />
     <Compile Include="MapUtil.cs" />
     <Compile Include="MapView\BitmapUtil.cs" />
@@ -860,6 +914,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.ro.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
@@ -956,6 +1011,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddTextLine.resx">
       <DependentUpon>AddTextLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddTextLine.ro.resx">
       <DependentUpon>AddTextLine.cs</DependentUpon>
@@ -1367,6 +1423,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ColorChooserDialog.fr.resx">
       <DependentUpon>ColorChooserDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ColorChooserDialog.hu.resx">
       <DependentUpon>ColorChooserDialog.cs</DependentUpon>
@@ -1441,6 +1498,7 @@
     <EmbeddedResource Include="CommandNameText.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CommandNameText1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.ro.resx">
       <DependentUpon>CommandNameText.resx</DependentUpon>
@@ -1595,6 +1653,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGpx.resx">
       <DependentUpon>CreateGpx.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGpx.ro.resx">
       <DependentUpon>CreateGpx.cs</DependentUpon>
@@ -1887,6 +1946,22 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePdfCourses.zh-CN.resx">
       <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livelox\ConsentRedirectionDialog.resx">
+      <DependentUpon>ConsentRedirectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livelox\ConsentRedirectionDialog.sv.resx">
+      <DependentUpon>ConsentRedirectionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livelox\PublishToLiveloxDialog.resx">
+      <DependentUpon>PublishToLiveloxDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livelox\PublishToLiveloxDialog.sv.resx">
+      <DependentUpon>PublishToLiveloxDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRouteGadget.bg.resx">
       <DependentUpon>CreateRouteGadget.cs</DependentUpon>
@@ -2395,6 +2470,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LinePropertiesDialog.zh-CN.resx">
       <DependentUpon>LinePropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livelox\LiveloxResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LiveloxResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Livelox\LiveloxResources.sv.resx">
+      <DependentUpon>Livelox\LiveloxResources.resx</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.bg.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
@@ -4248,6 +4332,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Images\MapIssue_OcadToolbox.png" />
+    <Content Include="Images\Livelox64x64.png" />
     <Content Include="USWebCoatedSWOP.icc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
