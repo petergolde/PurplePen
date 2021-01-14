@@ -1882,6 +1882,16 @@ namespace PurplePen
             }
         }
 
+        public static void SetLiveloxImportableEventId(EventDB eventDB, string newLiveloxImportableEventId)
+        {
+            Event e = eventDB.GetEvent();
+
+            e = (Event)e.Clone();
+            e.liveloxImportableEventId = newLiveloxImportableEventId;
+
+            eventDB.ChangeEvent(e);
+        }
+
         private static void UpdateControlPointForNewDescriptionStandard(ControlPoint controlPoint, SymbolDB symbolDB, string oldStandard, string newStandard)
         {
             for (int i = 0; i < controlPoint.symbolIds.Length; ++i) {

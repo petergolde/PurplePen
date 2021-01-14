@@ -35,5 +35,8 @@
     <Setting Name="NewEventDescriptionStandard" Type="System.String" Scope="User">
       <Value Profile="(Default)">2004</Value>
     </Setting>
+    <Setting Name="LiveloxSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)"/>
+    </Setting>
   </Settings>
 </SettingsFile>

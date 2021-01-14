@@ -127,7 +127,10 @@ namespace PurplePen
                 totalPages += LayoutPages(pair.Second).Count;
             }
 
-            controller.ShowProgressDialog(true);
+            if (coursePdfSettings.ShowProgressDialog)
+            {
+                controller.ShowProgressDialog(true);
+            }
 
             try {
                 currentPage = 0;
@@ -136,7 +139,10 @@ namespace PurplePen
                 }
             }
             finally {
-                controller.EndProgressDialog();
+                if (coursePdfSettings.ShowProgressDialog)
+                {
+                    controller.EndProgressDialog();
+                }
             }
         }
 
@@ -199,8 +205,13 @@ namespace PurplePen
                 if (pageToDraw.landscape)
                     paperSize = new SizeF(paperSize.Height, paperSize.Width);
 
-                if (controller.UpdateProgressDialog(string.Format(MiscText.CreatingFile, Path.GetFileName(fileName)), (double)currentPage / (double)totalPages))
-                    throw new Exception(MiscText.CancelledByUser);
+                if (coursePdfSettings.ShowProgressDialog)
+                {
+                    if (controller.UpdateProgressDialog(string.Format(MiscText.CreatingFile, Path.GetFileName(fileName)), (double) currentPage / (double) totalPages))
+                    {
+                        throw new Exception(MiscText.CancelledByUser);
+                    }
+                }
 
                 IGraphicsTarget grTarget;
                 PdfImporter pdfImporter = null;
@@ -332,6 +343,9 @@ namespace PurplePen
         public bool PrintMapExchangesOnOneMap = false;
         public PdfFileCreation FileCreation = PdfFileCreation.FilePerCourse; 
         public ColorModel ColorModel = ColorModel.CMYK;
+        public bool RenderMap = true;
+        public bool RenderControlDescriptions = true;
+        public bool ShowProgressDialog = true;
 
         public bool mapDirectory, fileDirectory;     // directory to place output files in
         public string outputDirectory;               // the output directory if mapDirectory and fileDirectoy are false.

@@ -108,6 +108,8 @@ namespace PurplePen
             this.printAreaThisCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaAllCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.publishToLiveloxMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.programLanguageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.exitMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -554,6 +556,8 @@ namespace PurplePen
             this.printCoursesMenu,
             this.setPrintAreaMenu,
             this.toolStripMenuItem3,
+            this.publishToLiveloxMenu,
+            this.toolStripSeparator24,
             this.programLanguageMenu,
             this.toolStripSeparator12,
             this.exitMenu});
@@ -706,6 +710,17 @@ namespace PurplePen
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            // 
+            // publishToLiveloxMenu
+            // 
+            this.publishToLiveloxMenu.Name = "publishToLiveloxMenu";
+            resources.ApplyResources(this.publishToLiveloxMenu, "publishToLiveloxMenu");
+            this.publishToLiveloxMenu.Click += new System.EventHandler(this.publishToLiveloxMenu_Click);
+            // 
+            // toolStripSeparator24
+            // 
+            this.toolStripSeparator24.Name = "toolStripSeparator24";
+            resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
             // 
             // programLanguageMenu
             // 
@@ -2312,5 +2327,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem addEllipseMenu;
         private System.Windows.Forms.ToolStripMenuItem stretchMenu;
         private System.Windows.Forms.ToolStripMenuItem mapStdSpr2019Menu;
+        private System.Windows.Forms.ToolStripMenuItem publishToLiveloxMenu;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
     }
 }

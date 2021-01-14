@@ -705,4 +705,7 @@
   <data name="ncross.Text" xml:space="preserve">
     <value>Add Special Item</value>
   </data>
+  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
+    <value>Publish to &amp;Livelox...</value>
+  </data>
 </root>

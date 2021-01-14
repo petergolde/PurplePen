@@ -11,6 +11,7 @@ namespace PurplePen
     public partial class OperationInProgress : PurplePen.BaseDialog
     {
         bool cancelPressed = false;
+        public EventHandler<EventArgs> OnCancelPressed;
 
         public OperationInProgress()
         {
@@ -56,6 +57,7 @@ namespace PurplePen
         private void cancelButton_Click(object sender, EventArgs e)
         {
             cancelPressed = true;
+            OnCancelPressed?.Invoke(this, new EventArgs());
         }
     }
 }

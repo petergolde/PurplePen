@@ -3902,4 +3902,9 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="publishToLiveloxMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+      iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVDhPlZNBaNNQGMe/7yVp06VdW6ftdNqhwiZucxNHNy8iuFsVvXgZnoQ6BHcTBC+iIF49efHiRQT1ouBAEWRqd5BJ0dJpcahzrtWmRdcs0aZJPpMsKMyt0x+El/y+/3v5Et5DaMKLWHfUHiT7KibLBcuVK/hrgdzQbl5dtNJfFet0xdD7lIYOHSjInZx4RQHr6qHyO/KiLpw3urxN9SRkjR7NNyi9yFFcQ8yXwJycqn+fE4iOSrwwvC0kTmSWFMOb8qeD96N9W6tlK/OtRglNt25rOl0cnSnMeGWYinUxBHz9hPuh/gTr8KXSZ9nx7gLzY3v4RpWeL9Vor1qnk/sn8zcdvxL7n1wuCOb5EhhP7e84eG7hIzGngDqc4g1IhkQ8sdbkG91daVnCsSjy0MYJB8KMP+J4VhzvR9LgLBBc334/d8dNr4LeoLwqQFuLyEMcBYhZ/HHHMzJgH9Vpi31/wRFrUTdoWjFNXWoFCLcwiBMOPNy8CxmpNGi/fSJxL/fFy67K+KdZvaabHwJBhGAEoDWIvT6CM8xqQMyuP1uONcfuoCL47Z21EcHXjqUNDG8xuzVF1WnByzRFJQP9AQBxE1aFGEv1F99UGPjhpVKnkJdpCjEzIoQxy4k4vONuLus4JkVZhgWw3U2sQyLiG2F+GOq49mrWU8tkj/UmMyM9O73H/+L3Vp5O9XRCAzTeAnngcd6z6+PuRIfBB/k5iQPZPjSCp/4BgF+DcdSme+eupgAAAABJRU5ErkJggg==
+    </value>
+  </data>
 </root>
