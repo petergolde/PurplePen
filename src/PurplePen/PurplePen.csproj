@@ -289,6 +289,7 @@
     <Compile Include="CreateOcadFiles.Designer.cs">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Livelox\ApiContracts\ApiError.cs" />
     <Compile Include="Livelox\ApiContracts\Country.cs" />
     <Compile Include="Livelox\ApiContracts\Event.cs" />
     <Compile Include="Livelox\ApiContracts\ImportableEvent.cs" />
@@ -3307,6 +3308,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OperationInProgress.sv.resx">
       <DependentUpon>OperationInProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OperationInProgress.zh-CN.resx">
       <DependentUpon>OperationInProgress.cs</DependentUpon>

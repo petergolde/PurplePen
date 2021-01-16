@@ -133,6 +133,9 @@
   <data name="resolutionLabel.Text" xml:space="preserve">
     <value>Upplösning (antal pixlar per meter i terrängen för kartbilden)</value>
   </data>
+  <data name="settingsGroupBox.Text" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
   <data name="showSettingsCheckBox.Text" xml:space="preserve">
     <value>Visa inställningar</value>
   </data>

@@ -178,6 +178,15 @@ namespace PurplePen.Livelox {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The request was not authorized. Livelox permissions for PurplePen may have been revoked. Please remove the user under the Settings section, and try again..
+        /// </summary>
+        internal static string UnauthorizedMessage {
+            get {
+                return ResourceManager.GetString("UnauthorizedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updating Livelox event....
         /// </summary>
         internal static string UpdatingLiveloxEvent {
