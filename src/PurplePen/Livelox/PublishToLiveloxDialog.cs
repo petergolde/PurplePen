@@ -40,6 +40,7 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using ICSharpCode.SharpZipLib.Zip;
+using Newtonsoft.Json;
 using PurplePen.Livelox.ApiContracts;
 
 namespace PurplePen.Livelox
@@ -261,6 +262,7 @@ namespace PurplePen.Livelox
             var liveloxApiClient = CreateLiveloxApiClient(null);
             Action<LiveloxApiCall<User>> callback = call =>
             {
+                SetProgressInfo(null);
                 if (!call.Success)
                 {
                     ShowErrorBox(call, true);
@@ -496,6 +498,15 @@ namespace PurplePen.Livelox
         {
             if (userComboBox.SelectedItem is User selectedUser)
             {
+                Action executeRemoveSelectedUser = () =>
+                {
+                    var settings = settingsProvider.LoadSettings();
+                    settings.Users = settings.Users.Where(o => o.PersonId != selectedUser.PersonId).ToArray();
+                    settingsProvider.SaveSettings(settings);
+                    userComboBox.Items.Remove(selectedUser);
+                    userComboBox.SelectedIndex = 0;
+                };
+
                 StartExecuting(LiveloxResources.RemovingUser);
                 var liveloxApiClient = CreateLiveloxApiClient(selectedUser.TokenInformation);
                 liveloxApiClient.RevokeToken(selectedUser.TokenInformation.RefreshToken, "refresh_token",
@@ -504,6 +515,22 @@ namespace PurplePen.Livelox
                         if (!deleteRefreshTokenCall.Success)
                         {
                             StopExecuting();
+
+                            try
+                            {
+                                if((deleteRefreshTokenCall.Exception as StatusCodeException)?.StatusCode == HttpStatusCode.Unauthorized ||
+                                    JsonConvert.DeserializeObject<ApiError>(deleteRefreshTokenCall.Exception.Message)?.Error == "invalid_grant")
+                                {
+                                    // the token was not found in Livelox, just remove it locally
+                                    executeRemoveSelectedUser();
+                                    return;
+                                }
+                            }
+                            catch
+                            {
+                                // just swallow and continue
+                            }
+
                             ShowErrorBox(deleteRefreshTokenCall, false);
                             return;
                         }
@@ -519,13 +546,7 @@ namespace PurplePen.Livelox
                                         ShowErrorBox(deleteAccessTokenCall, false);
                                         return;
                                     }
-
-                                    var settings = settingsProvider.LoadSettings();
-                                    settings.Users = settings.Users.Where(o => o.PersonId != selectedUser.PersonId).ToArray();
-                                    settingsProvider.SaveSettings(settings);
-
-                                    userComboBox.Items.Remove(selectedUser);
-                                    userComboBox.SelectedIndex = 0;
+                                    executeRemoveSelectedUser();
                                 });
                             });
                     });
@@ -571,7 +592,14 @@ namespace PurplePen.Livelox
         {
             InvokeOnUiThread(() =>
             {
-                controller.UpdateProgressDialog(info, 0);
+                if(info == null)
+                {
+                    controller.EndProgressDialog();
+                }
+                else
+                {
+                    controller.UpdateProgressDialog(info, 0);
+                }
             });
         }
 
@@ -654,7 +682,17 @@ namespace PurplePen.Livelox
             {
                 if (!aborted)
                 {
-                    ShowDialogBox(ex?.Message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string message;
+                    if ((ex as StatusCodeException)?.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        message = LiveloxResources.UnauthorizedMessage;
+                    }
+                    else
+                    {
+                        message = ex?.Message;
+                    }
+
+                    ShowDialogBox(message, MiscText.AppTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 if (closeDialog)

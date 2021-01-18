@@ -163,6 +163,9 @@
     <value>Du har inte tillåtelse att administrera den här Livelox-aktiviteten. Kontakta aktivitetens administratörer.</value>
   </data>
   <data name="Timeout" xml:space="preserve">
-    <value>Det ser ut som Livelox tar lång tid på sig att svara. Detta kan bero på en långsam internetanslutning eller ett fel med Livelox-servrarna. Försök igen om ett tag.</value>
+    <value>Det ser ut som Livelox tar lång tid på sig att svara. Det kan bero på en långsam internetanslutning eller ett fel med Livelox-servrarna. Försök igen om ett tag.</value>
+  </data>
+  <data name="UnauthorizedMessage" xml:space="preserve">
+    <value>Anropet nekades. Det kan bero på att användaren har dragit tillbaka sitt godkännande för Purple Pen att använda Livelox. Ta bort användaren under avdelningen Inställningar och försök igen.</value>
   </data>
 </root>

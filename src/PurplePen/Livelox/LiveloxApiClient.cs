@@ -40,8 +40,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading;
-using System.Timers;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using PurplePen.Livelox.ApiContracts;
@@ -56,7 +54,6 @@ namespace PurplePen.Livelox
         private readonly Action<IAbortable> requestCreatedCallback;
         private readonly Action<IAbortable> requestCompletedCallback;
         private readonly TimeSpan timeout;
-        private static ManualResetEvent allDone = new ManualResetEvent(false);
 
         private const string baseUrl = "https://api.livelox.com";
         private const string applicationJson = "application/json";

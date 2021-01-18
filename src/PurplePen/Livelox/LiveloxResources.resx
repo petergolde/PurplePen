@@ -165,4 +165,7 @@
   <data name="Timeout" xml:space="preserve">
     <value>It looks like Livelox is taking a long time to respond. This can be caused by either poor connectivity or an error with the Livelox servers. Please try again in a while.</value>
   </data>
+  <data name="UnauthorizedMessage" xml:space="preserve">
+    <value>The request was not authorized. Livelox permissions for PurplePen may have been revoked. Please remove the user under the Settings section, and try again.</value>
+  </data>
 </root>
