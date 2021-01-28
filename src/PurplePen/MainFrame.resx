@@ -214,7 +214,7 @@
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 227</value>
+    <value>3, 230</value>
   </data>
   <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 0, 3</value>
@@ -256,7 +256,7 @@
     <value>Segoe UI, 8pt</value>
   </data>
   <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 227</value>
+    <value>128, 230</value>
   </data>
   <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 3, 3, 3</value>
@@ -292,7 +292,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAAMrkL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAtgAAQrkL
 </value>
   </data>
   <data name="mapViewerTopology.Location" type="System.Drawing.Point, System.Drawing">
@@ -302,7 +302,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 222</value>
+    <value>239, 225</value>
   </data>
   <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -314,8 +314,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAEvH8wZHz6sEQ8XxC
-        NPNqQgs=
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAEvH8wWQg7sEQ8XxC
+        ASBuQgs=
 </value>
   </data>
   <data name="&gt;&gt;mapViewerTopology.Name" xml:space="preserve">
@@ -340,7 +340,7 @@
     <value>239, 0</value>
   </data>
   <data name="topologyScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 222</value>
+    <value>17, 225</value>
   </data>
   <data name="topologyScrollBar.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -364,7 +364,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 224</value>
+    <value>256, 227</value>
   </data>
   <data name="panelTopology.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -400,7 +400,7 @@
     <value>6, 6, 6, 6</value>
   </data>
   <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 224</value>
+    <value>256, 227</value>
   </data>
   <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -427,7 +427,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 224</value>
+    <value>256, 227</value>
   </data>
   <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -454,7 +454,7 @@
     <value>2</value>
   </data>
   <data name="leftColumnPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 253</value>
+    <value>256, 256</value>
   </data>
   <data name="leftColumnPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -502,7 +502,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 115</value>
+    <value>256, 112</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -538,7 +538,7 @@
     <value>256, 371</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>253</value>
+    <value>256</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -574,7 +574,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAAZLkL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAAcLkL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -596,7 +596,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAAaezwgjdKcLupjND
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAAaezwgvdKcLupjND
         ztypQgs=
 </value>
   </data>
@@ -814,10 +814,22 @@
     <value>Create P&amp;DFs</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
+    <value>215, 22</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Create Route&amp;Gadget Files...</value>
+    <value>Create RouteGadget Files...</value>
+  </data>
+  <data name="publishToLiveloxMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 22</value>
+  </data>
+  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
+    <value>Publish to Livelox...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create Route Review Files</value>
   </data>
   <data name="createXmlMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
@@ -879,7 +891,7 @@
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Set Print A&amp;rea</value>
   </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 6</value>
   </data>
   <data name="programLanguageMenu.Size" type="System.Drawing.Size, System.Drawing">
@@ -2021,12 +2033,12 @@
   <data name="mapExchangeToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7gZrDqC0ej/4ChXDBTmrBYD
-        xUIwYbPJptVRbPwVblSCm1yj0aQBMl7v/DzwsDv1hsxNvtt3d8/7209bR6QomGl24eLfECsuwniu+RMJ
-        91ydYKBBDuMjlV7g21TT8DsnmnQsidHkscYnHi511d1PO2xKitY8hUTlkinJ3ub/mm8B5uFpmgTdml9P
-        vQ/8Lj18CYzPZsRw46pM4FPE55V9HLsqAUnuqRTisHbzQw2PWmrtuvjPqKiyQ7uHLmYC+5V1zgQPrkpg
-        Z2akhs3uqkwQfGc7hHVXLUHmYKTRuxntCquLpEkHZxQ55z80P+Syhy/aK1dVjTz7RrSCffUPPMWXMRYO
-        9vCsWhbxa9qToPDPM9tCbVbvaO1OfgXVAph3cVuQPgG1AzWiRyW+EgAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAExSURBVDhPvZKtTwJxGMe/M7ARrDIC0ej/4ChXDBbmqBaD
+        xUIwYbMwA1ZnsfFXuFkNbHLNZpMGyHi98/PA4+7UGzI2+W7f3T3vbz9tHZGiYKZZ1cXNECuuwHiu+R0J
+        865OMNCgiPGWSo/wZapp+JMTTd4sidHkscYHHi511d1NO6xLit57ConK56Yk+yv/F3yPYRkepknQlfn1
+        1PvA79TDl8D4YEYMl67KBD4VfNrsY99VCUhyQ6UQh5WbH2pY6qiTc/GfUVd9h3YLLmYC+5l1zgRNVyWw
+        MzPSk83uqkwQfG07hC1XLUHmYKTRuxntCl8XSZMOjihywn9ofsg1D1+0V2uoEXn2tWgF++rveYpvYywc
+        7OFZtSzi92xPgsK/z2wLtVm9o5U7+RNUC2DZxW1B+gSouzWWff+9cAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="mapExchangeToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2684,10 +2696,22 @@
   <data name="&gt;&gt;createCoursePdfMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;createRouteReviewFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>createRouteReviewFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;createRouteReviewFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;createRouteGadgetFilesMenu.Name" xml:space="preserve">
     <value>createRouteGadgetFilesMenu</value>
   </data>
   <data name="&gt;&gt;createRouteGadgetFilesMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;publishToLiveloxMenu.Name" xml:space="preserve">
+    <value>publishToLiveloxMenu</value>
+  </data>
+  <data name="&gt;&gt;publishToLiveloxMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;createXmlMenu.Name" xml:space="preserve">
@@ -2750,10 +2774,10 @@
   <data name="&gt;&gt;printAreaAllCoursesMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
-    <value>toolStripMenuItem3</value>
+  <data name="&gt;&gt;toolStripSeparator24.Name" xml:space="preserve">
+    <value>toolStripSeparator24</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripSeparator24.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;programLanguageMenu.Name" xml:space="preserve">
@@ -3901,10 +3925,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="publishToLiveloxMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-      iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVDhPlZNBaNNQGMe/7yVp06VdW6ftdNqhwiZucxNHNy8iuFsVvXgZnoQ6BHcTBC+iIF49efHiRQT1ouBAEWRqd5BJ0dJpcahzrtWmRdcs0aZJPpMsKMyt0x+El/y+/3v5Et5DaMKLWHfUHiT7KibLBcuVK/hrgdzQbl5dtNJfFet0xdD7lIYOHSjInZx4RQHr6qHyO/KiLpw3urxN9SRkjR7NNyi9yFFcQ8yXwJycqn+fE4iOSrwwvC0kTmSWFMOb8qeD96N9W6tlK/OtRglNt25rOl0cnSnMeGWYinUxBHz9hPuh/gTr8KXSZ9nx7gLzY3v4RpWeL9Vor1qnk/sn8zcdvxL7n1wuCOb5EhhP7e84eG7hIzGngDqc4g1IhkQ8sdbkG91daVnCsSjy0MYJB8KMP+J4VhzvR9LgLBBc334/d8dNr4LeoLwqQFuLyEMcBYhZ/HHHMzJgH9Vpi31/wRFrUTdoWjFNXWoFCLcwiBMOPNy8CxmpNGi/fSJxL/fFy67K+KdZvaabHwJBhGAEoDWIvT6CM8xqQMyuP1uONcfuoCL47Z21EcHXjqUNDG8xuzVF1WnByzRFJQP9AQBxE1aFGEv1F99UGPjhpVKnkJdpCjEzIoQxy4k4vONuLus4JkVZhgWw3U2sQyLiG2F+GOq49mrWU8tkj/UmMyM9O73H/+L3Vp5O9XRCAzTeAnngcd6z6+PuRIfBB/k5iQPZPjSCp/4BgF+DcdSme+eupgAAAABJRU5ErkJggg==
-    </value>
   </data>
 </root>

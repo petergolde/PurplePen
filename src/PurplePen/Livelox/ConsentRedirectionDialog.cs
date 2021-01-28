@@ -2,7 +2,7 @@
 
 namespace PurplePen.Livelox
 {
-    public partial class ConsentRedirectionDialog : BaseDialog
+    public partial class ConsentRedirectionDialog : OkCancelDialog
     {
         public ConsentRedirectionDialog()
         {

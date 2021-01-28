@@ -278,6 +278,7 @@ namespace PurplePen.Livelox
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.cancelButton;
             this.Controls.Add(this.buttonPanel);
             this.Controls.Add(this.existingEventGroupBox);
             this.Controls.Add(this.showSettingsCheckBox);

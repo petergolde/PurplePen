@@ -96,7 +96,9 @@ namespace PurplePen
             this.createDescriptionPdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createPunchcardPdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createCoursePdfMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createRouteReviewFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createRouteGadgetFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.publishToLiveloxMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createGPXFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -107,8 +109,6 @@ namespace PurplePen
             this.printAreaThisPartMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaThisCourseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printAreaAllCoursesMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.publishToLiveloxMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator24 = new System.Windows.Forms.ToolStripSeparator();
             this.programLanguageMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
@@ -547,7 +547,7 @@ namespace PurplePen
             this.createOcadFilesMenu,
             this.createImageFilesMenu,
             this.createPDFsMenu,
-            this.createRouteGadgetFilesMenu,
+            this.createRouteReviewFilesToolStripMenuItem,
             this.createXmlMenu,
             this.createGPXFileMenu,
             this.toolStripMenuItem1,
@@ -555,8 +555,6 @@ namespace PurplePen
             this.printPunchCardsMenu,
             this.printCoursesMenu,
             this.setPrintAreaMenu,
-            this.toolStripMenuItem3,
-            this.publishToLiveloxMenu,
             this.toolStripSeparator24,
             this.programLanguageMenu,
             this.toolStripSeparator12,
@@ -637,11 +635,26 @@ namespace PurplePen
             resources.ApplyResources(this.createCoursePdfMenu, "createCoursePdfMenu");
             this.createCoursePdfMenu.Click += new System.EventHandler(this.createCoursePdfMenu_Click);
             // 
+            // createRouteReviewFilesToolStripMenuItem
+            // 
+            this.createRouteReviewFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createRouteGadgetFilesMenu,
+            this.publishToLiveloxMenu});
+            this.createRouteReviewFilesToolStripMenuItem.Name = "createRouteReviewFilesToolStripMenuItem";
+            resources.ApplyResources(this.createRouteReviewFilesToolStripMenuItem, "createRouteReviewFilesToolStripMenuItem");
+            // 
             // createRouteGadgetFilesMenu
             // 
             this.createRouteGadgetFilesMenu.Name = "createRouteGadgetFilesMenu";
             resources.ApplyResources(this.createRouteGadgetFilesMenu, "createRouteGadgetFilesMenu");
             this.createRouteGadgetFilesMenu.Click += new System.EventHandler(this.createRouteGadgetFilesMenu_Click);
+            // 
+            // publishToLiveloxMenu
+            // 
+            this.publishToLiveloxMenu.Image = global::PurplePen.Properties.Resources.Livelox64x64;
+            this.publishToLiveloxMenu.Name = "publishToLiveloxMenu";
+            resources.ApplyResources(this.publishToLiveloxMenu, "publishToLiveloxMenu");
+            this.publishToLiveloxMenu.Click += new System.EventHandler(this.publishToLiveloxMenu_Click);
             // 
             // createXmlMenu
             // 
@@ -705,17 +718,6 @@ namespace PurplePen
             this.printAreaAllCoursesMenu.Name = "printAreaAllCoursesMenu";
             resources.ApplyResources(this.printAreaAllCoursesMenu, "printAreaAllCoursesMenu");
             this.printAreaAllCoursesMenu.Click += new System.EventHandler(this.printAreaAllCoursesMenu_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
-            // 
-            // publishToLiveloxMenu
-            // 
-            this.publishToLiveloxMenu.Name = "publishToLiveloxMenu";
-            resources.ApplyResources(this.publishToLiveloxMenu, "publishToLiveloxMenu");
-            this.publishToLiveloxMenu.Click += new System.EventHandler(this.publishToLiveloxMenu_Click);
             // 
             // toolStripSeparator24
             // 
@@ -2177,7 +2179,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem setPrintAreaMenu;
         private System.Windows.Forms.ToolStripMenuItem printAreaThisCourseMenu;
         private System.Windows.Forms.ToolStripMenuItem printAreaAllCoursesMenu;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem helpMenu;
         private System.Windows.Forms.ToolStripMenuItem helpContentsMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
@@ -2247,7 +2248,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem customizeCourseAppearanceMenu;
         private System.Windows.Forms.ToolStripMenuItem mergeSymbolsMenu;
         private System.Windows.Forms.ToolStripMenuItem whiteOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem fontMetricsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpTranslatedMenu;
         private CoursePartBanner coursePartBanner;
@@ -2327,7 +2327,9 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem addEllipseMenu;
         private System.Windows.Forms.ToolStripMenuItem stretchMenu;
         private System.Windows.Forms.ToolStripMenuItem mapStdSpr2019Menu;
-        private System.Windows.Forms.ToolStripMenuItem publishToLiveloxMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
+        private System.Windows.Forms.ToolStripMenuItem createRouteReviewFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
+        private System.Windows.Forms.ToolStripMenuItem publishToLiveloxMenu;
     }
 }

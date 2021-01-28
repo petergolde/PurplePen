@@ -126,10 +126,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="learnMoreLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 85</value>
+    <value>82, 92</value>
   </data>
   <data name="learnMoreLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 15</value>
+    <value>126, 13</value>
   </data>
   <data name="learnMoreLink.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -223,10 +223,10 @@
     <value>NoControl</value>
   </data>
   <data name="removeUserLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 23</value>
+    <value>365, 23</value>
   </data>
   <data name="removeUserLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 15</value>
+    <value>148, 13</value>
   </data>
   <data name="removeUserLink.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -253,7 +253,7 @@
     <value>0, 20</value>
   </data>
   <data name="userComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 23</value>
+    <value>357, 21</value>
   </data>
   <data name="userComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -280,7 +280,7 @@
     <value>0, 0</value>
   </data>
   <data name="userLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 15</value>
+    <value>107, 13</value>
   </data>
   <data name="userLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -301,10 +301,10 @@
     <value>2</value>
   </data>
   <data name="userPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 88</value>
+    <value>6, 64</value>
   </data>
   <data name="userPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 43</value>
+    <value>618, 43</value>
   </data>
   <data name="userPanel.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -325,10 +325,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="resolutionTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
+    <value>375, 26</value>
   </data>
   <data name="resolutionTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 23</value>
+    <value>245, 20</value>
   </data>
   <data name="resolutionTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -355,16 +355,13 @@
     <value>6, 29</value>
   </data>
   <data name="resolutionLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>332, 15</value>
+    <value>203, 13</value>
   </data>
   <data name="resolutionLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="resolutionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
   <data name="resolutionLabel.Text" xml:space="preserve">
-    <value>Resolution (pixels per meter in the terrain for the map image)</value>
+    <value>Resolution (pixels per meter in the terrain):</value>
   </data>
   <data name="&gt;&gt;resolutionLabel.Name" xml:space="preserve">
     <value>resolutionLabel</value>
@@ -379,10 +376,10 @@
     <value>2</value>
   </data>
   <data name="settingsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 155</value>
+    <value>85, 155</value>
   </data>
   <data name="settingsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>633, 145</value>
+    <value>630, 121</value>
   </data>
   <data name="settingsGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -412,10 +409,10 @@
     <value>NoControl</value>
   </data>
   <data name="showSettingsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 126</value>
+    <value>85, 126</value>
   </data>
   <data name="showSettingsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 19</value>
+    <value>92, 17</value>
   </data>
   <data name="showSettingsCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -451,13 +448,13 @@
     <value>NoControl</value>
   </data>
   <data name="editEventLink.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 0</value>
+    <value>95, 0</value>
   </data>
   <data name="editEventLink.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 8, 0</value>
   </data>
   <data name="editEventLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 15</value>
+    <value>80, 13</value>
   </data>
   <data name="editEventLink.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -493,7 +490,7 @@
     <value>6, 0, 8, 0</value>
   </data>
   <data name="showEventLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 15</value>
+    <value>95, 13</value>
   </data>
   <data name="showEventLink.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -514,10 +511,10 @@
     <value>1</value>
   </data>
   <data name="eventLinksPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 110</value>
+    <value>1, 122</value>
   </data>
   <data name="eventLinksPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>631, 24</value>
+    <value>628, 24</value>
   </data>
   <data name="eventLinksPanel.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -544,7 +541,7 @@
     <value>6, 77</value>
   </data>
   <data name="eventTimeIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
+    <value>0, 13</value>
   </data>
   <data name="eventTimeIntervalLabel.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -571,7 +568,7 @@
     <value>6, 53</value>
   </data>
   <data name="eventOrganisersLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
+    <value>0, 13</value>
   </data>
   <data name="eventOrganisersLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -598,7 +595,7 @@
     <value>6, 29</value>
   </data>
   <data name="eventNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
+    <value>0, 13</value>
   </data>
   <data name="eventNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -616,10 +613,10 @@
     <value>3</value>
   </data>
   <data name="existingEventGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 316</value>
+    <value>85, 289</value>
   </data>
   <data name="existingEventGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>633, 137</value>
+    <value>630, 149</value>
   </data>
   <data name="existingEventGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -655,7 +652,7 @@
     <value>159, 0</value>
   </data>
   <data name="updateEventButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 34</value>
+    <value>142, 25</value>
   </data>
   <data name="updateEventButton.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -682,7 +679,7 @@
     <value>301, 0</value>
   </data>
   <data name="publishToOtherEventButtonMarginPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>8, 34</value>
+    <value>8, 25</value>
   </data>
   <data name="publishToOtherEventButtonMarginPanel.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -712,7 +709,7 @@
     <value>309, 0</value>
   </data>
   <data name="publishToOtherEventButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 34</value>
+    <value>190, 25</value>
   </data>
   <data name="publishToOtherEventButton.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -739,7 +736,7 @@
     <value>499, 0</value>
   </data>
   <data name="publishButtonMarginPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>8, 34</value>
+    <value>8, 25</value>
   </data>
   <data name="publishButtonMarginPanel.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -769,7 +766,7 @@
     <value>507, 0</value>
   </data>
   <data name="publishButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 34</value>
+    <value>100, 25</value>
   </data>
   <data name="publishButton.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -796,7 +793,7 @@
     <value>607, 0</value>
   </data>
   <data name="cancelButtonMarginPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>8, 34</value>
+    <value>8, 25</value>
   </data>
   <data name="cancelButtonMarginPanel.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -826,7 +823,7 @@
     <value>615, 0</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 34</value>
+    <value>100, 25</value>
   </data>
   <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -847,10 +844,10 @@
     <value>6</value>
   </data>
   <data name="buttonPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 471</value>
+    <value>0, 444</value>
   </data>
   <data name="buttonPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>715, 34</value>
+    <value>715, 25</value>
   </data>
   <data name="buttonPanel.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -874,7 +871,13 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>727, 518</value>
+    <value>727, 481</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
