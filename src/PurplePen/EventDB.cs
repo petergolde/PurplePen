@@ -2352,7 +2352,6 @@ namespace PurplePen
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
 
-        public bool renderDescriptions = true;          // Whether to render control descriptions.
         public bool descriptionsPurple = false;         // If true, descriptions in purple instead of black.
 
         public bool useOcadOverprint = false;       // If true, use overprint effect when rendering OCAD map.
@@ -2434,8 +2433,6 @@ namespace PurplePen
                     return false;
             }
             if (descriptionsPurple != other.descriptionsPurple)
-                return false;
-            if (renderDescriptions != other.renderDescriptions)
                 return false;
             if (useOcadOverprint != other.useOcadOverprint)
                 return false;

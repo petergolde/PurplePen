@@ -127,16 +127,16 @@ namespace PurplePen.Livelox
                 CropLargePrintArea = true,
                 FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse,
                 PrintMapExchangesOnOneMap = true,
-                RenderMap = false,
-                RenderControlDescriptions = false,
+                RenderControlDescriptions = false,  // Don't render control descriptions.
                 ShowProgressDialog = false
             };
 
+            // Do not render the actual map, just the courses.
             var clonedMapDisplay = mapDisplay.Clone();
             clonedMapDisplay.SetMapFile(MapType.None, null);
+
             var ev = eventDB.GetEvent();
             var courseAppearance = (CourseAppearance)ev.courseAppearance.Clone();
-            courseAppearance.renderDescriptions = false;
 
             var coursePdf = new CoursePdf(eventDB, symbolDB, controller, clonedMapDisplay, coursePdfSettings, courseAppearance);
             coursePdf.CreatePdfs();

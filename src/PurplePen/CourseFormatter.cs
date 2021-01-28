@@ -65,6 +65,7 @@ namespace PurplePen
     class CourseFormatterOptions
     {
         public bool showControlNumbers = true;
+        public bool showDescriptions = true;
     }
 
     // The course formatter transforms a CourseView into a abstract description of a course, which
@@ -93,7 +94,7 @@ namespace PurplePen
             }
 
             // Go through all the descriptions in the view and process them to create course objects
-            if (appearance.renderDescriptions)
+            if (options.showDescriptions)
             {
                 foreach (CourseView.DescriptionView descriptionView in courseView.DescriptionViews) {
                     // The layer depends on "descriptions in purple" setting in the course appearance.

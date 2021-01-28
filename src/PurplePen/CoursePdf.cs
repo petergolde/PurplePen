@@ -298,7 +298,10 @@ namespace PurplePen
             CourseLayout layout = new CourseLayout();
             layout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
             layout.SetLayerColor(CourseLayer.MainCourse, ocadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK, purpleOverprint);
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, layout, CourseLayer.MainCourse);
+
+            CourseFormatterOptions formatterOptions = new CourseFormatterOptions();
+            formatterOptions.showDescriptions = coursePdfSettings.RenderControlDescriptions;
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, layout, CourseLayer.MainCourse, formatterOptions);
 
             // Set the course layout into the map display
             mapDisplay.SetCourse(layout);
@@ -343,7 +346,6 @@ namespace PurplePen
         public bool PrintMapExchangesOnOneMap = false;
         public PdfFileCreation FileCreation = PdfFileCreation.FilePerCourse; 
         public ColorModel ColorModel = ColorModel.CMYK;
-        public bool RenderMap = true;
         public bool RenderControlDescriptions = true;
         public bool ShowProgressDialog = true;
 

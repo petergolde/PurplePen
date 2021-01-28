@@ -1309,13 +1309,8 @@ namespace PurplePen
                 delegate
                 {
                     MapDisplay clonedMapDisplay = mapDisplay.CloneToFullIntensity();
-                    if (!coursePdfSettings.RenderMap)
-                    {
-                        clonedMapDisplay.SetMapFile(MapType.None, null);
-                    }
 
                     CourseAppearance courseAppearance = GetCourseAppearance();
-                    courseAppearance.renderDescriptions = coursePdfSettings.RenderControlDescriptions;
                     CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, clonedMapDisplay, coursePdfSettings, courseAppearance);
                     coursePdf.CreatePdfs();
                 },

@@ -310,6 +310,6 @@
     <value>Stretch</value>
   </data>
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
-    <value>Set Livelox importable event ID</value>
+    <value>Publish to Livelox</value>
   </data>
 </root>
