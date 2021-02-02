@@ -300,6 +300,7 @@ namespace PurplePen
     class CoordinateMapper
     {
         double mapScale;
+        double gridScaleFactor;
         RealWorldCoords realWorldCoords;
         ProjectionInfo mapProjection, wgs1984Projection;
         MapProjectionType mapProjectionType;
@@ -320,6 +321,7 @@ namespace PurplePen
                 }
                 else {
                     hasRealWorldCoords = true;
+                    gridScaleFactor = realWorldCoords.GridScaleFactor;
                     mapProjectionType = realWorldCoords.ProjectionType;
                     if (mapProjectionType == MapProjectionType.Known) {
                         SetupProjection(realWorldCoords.Proj4String);
@@ -350,7 +352,7 @@ namespace PurplePen
         {
             if (hasRealWorldCoords) {
                 double x = paperCoord.X, y = paperCoord.Y;
-                x *= (mapScale / 1000.0); y *= (mapScale / 1000.0);
+                x *= (gridScaleFactor * mapScale / 1000.0); y *= (gridScaleFactor * mapScale / 1000.0);
                 double ang = (-realWorldCoords.RealWorldAngle * Math.PI) / 180.0;
                 realX = x * Math.Cos(ang) - y * Math.Sin(ang);
                 realY = x * Math.Sin(ang) + y * Math.Cos(ang);
