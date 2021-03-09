@@ -302,10 +302,11 @@ namespace PurplePen
         public const float blackColorK = 1F;
 
         // The color to use in the map display for the course (purple).
+        // Taken from ISOM 2017 Appendix 1 – CMYK Printing and Colour Definitions
         public const string courseColorName = "Purple";
         public const short courseOcadId = 11;
-        public const float courseColorC = 0.25F;
-        public const float courseColorM = 1.0F;
+        public const float courseColorC = 0.35F;
+        public const float courseColorM = 0.85F;
         public const float courseColorY = 0F;
         public const float courseColorK = 0F;
 
