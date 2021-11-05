@@ -589,7 +589,7 @@ namespace PurplePen
             }
         }
 
-        public bool CanExportGpx(out string message)
+        public bool CanExportGpxOrKml(out string message)
         {
             // First check and give immediate message if we can't do coordinate mapping.
             CoordinateMapper coordinateMapper = mapDisplay.CoordinateMapper;
@@ -621,7 +621,7 @@ namespace PurplePen
             bool success = HandleExceptions(
                 delegate {
                     string msg;
-                    if (!CanExportGpx(out msg)) {
+                    if (!CanExportGpxOrKml(out msg)) {
                         throw new Exception(msg);
                     }
 
@@ -1340,6 +1340,18 @@ namespace PurplePen
             }
         }
 
+        // Set the outputDirectory field of ExportKmlSettings.
+        private void SetOutputDirectory(ExportKmlSettings creationSettings)
+        {
+            // Process the fileDirectory and mapDirectory fields.
+            if (creationSettings.fileDirectory) {
+                creationSettings.outputDirectory = Path.GetDirectoryName(FileName);
+            }
+            else if (creationSettings.mapDirectory) {
+                creationSettings.outputDirectory = Path.GetDirectoryName(MapFileName);
+            }
+        }
+
         // Set the outputDirectory field of BitmapCreationSettings.
         private void SetOutputDirectory(BitmapCreationSettings creationSettings)
         {
@@ -1416,6 +1428,42 @@ namespace PurplePen
 
             OcadCreation creation = new OcadCreation(symbolDB, eventDB, this, GetCourseAppearance(), creationSettings);
             return creation.OverwrittenFiles();
+        }
+
+        // Create KML files.
+        // Returns success or failure; any errors are already reported to the user.
+        // If mapDirectory or fileDirectory is set, the outputDirectory fields is filled in.
+        public bool CreateKmlFiles(ExportKmlSettings creationSettings)
+        {
+            SetOutputDirectory(creationSettings);
+
+            bool success = HandleExceptions(
+                delegate {
+                    string msg;
+                    if (!CanExportGpxOrKml(out msg)) {
+                        throw new Exception(msg);
+                    }
+
+                    ExportKml exportKml = new ExportKml(eventDB, creationSettings, mapDisplay.CoordinateMapper);
+                    exportKml.CreateKmlFiles();
+                },
+                MiscText.CannotCreateOcadFiles);
+
+            return success;
+        }
+
+        // Get the list of files that will be overwritteing by creating KML files
+        public List<string> OverwritingKmlFiles(ExportKmlSettings creationSettings)
+        {
+            string msg;
+            if (!CanExportGpxOrKml(out msg)) {
+                return new List<string>();
+            }
+
+            SetOutputDirectory(creationSettings);
+
+            ExportKml exportKml = new ExportKml(eventDB, creationSettings, mapDisplay.CoordinateMapper);
+            return exportKml.OverwrittenFiles();
         }
 
         // Create Bitmap files.

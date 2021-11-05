@@ -240,6 +240,12 @@
     <Compile Include="CreateImageFiles.Designer.cs">
       <DependentUpon>CreateImageFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateKmlFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateKmlFiles.Designer.cs">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreatePdfCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,7 @@
     <Compile Include="CreateOcadFiles.Designer.cs">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExportKml.cs" />
     <Compile Include="Livelox\ApiContracts\ApiError.cs" />
     <Compile Include="Livelox\ApiContracts\Country.cs" />
     <Compile Include="Livelox\ApiContracts\Event.cs" />
@@ -1714,6 +1721,56 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateImageFiles.zh-CN.resx">
       <DependentUpon>CreateImageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.bg.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.de.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.es.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.et.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.fi.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.fr.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.hu.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.ja.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.nb-NO.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.nl.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.nn-NO.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.pl.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.ro.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.sv.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateKmlFiles.zh-CN.resx">
+      <DependentUpon>CreateKmlFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOcadFiles.hu.resx">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>

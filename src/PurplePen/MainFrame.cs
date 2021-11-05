@@ -71,6 +71,7 @@ namespace PurplePen
         CoursePrintSettings coursePrintSettings = new CoursePrintSettings();   // printing settings for courses.
         CoursePdfSettings coursePdfSettings = null;   // PDF creation settings for courses.
         OcadCreationSettings ocadCreationSettingsPrevious = null;     // creation settings for OCAD creation, if it has been done before.
+        ExportKmlSettings exportKmlSettingsPrevious = null;     // creation settings for KML creation, if it has been done before.
         BitmapCreationSettings bitmapCreationSettingsPrevious = null; // creation settings for image creation, if it has been done before.
         RouteGadgetCreationSettings routeGadgetCreationSettingsPrevious = null;  // creation settings for RouteGadget creation, if it has been done before.
         GpxCreationSettings gpxCreationSettingsPrevious = null;  // creation settings for Gpx creation, if it has been done before.
@@ -2365,7 +2366,7 @@ namespace PurplePen
         {
             // First check and give immediate message if we can't do coordinate mapping.
             string message;
-            if (!controller.CanExportGpx(out message)) {
+            if (!controller.CanExportGpxOrKml(out message)) {
                 ErrorMessage(message);
                 return;
             }
@@ -2592,6 +2593,59 @@ namespace PurplePen
 
             // And the dialog is done.
             createOcadFilesDialog.Dispose();
+        }
+
+        private void createKmlFilesMenu_Click(object sender, EventArgs e)
+        {
+            // First check and give immediate message if we can't do coordinate mapping.
+            string message;
+            if (!controller.CanExportGpxOrKml(out message)) {
+                ErrorMessage(message);
+                return;
+            }
+
+            // Get the settings for the dialog. If we've previously show the dialog, then
+            // use the previous settings. Note that the previous settings are wiped out when a new map file
+            // is loaded.
+
+            ExportKmlSettings settings;
+            if (exportKmlSettingsPrevious != null) {
+                settings = exportKmlSettingsPrevious.Clone();
+            }
+            else {
+                // Default settings: creating in file directory, use format of the current map file.
+                settings = new ExportKmlSettings();
+
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
+            }
+
+            // Initialize the dialog.
+            // CONSIDER: shouldn't have GetEventDB here! Do something different.
+            CreateKmlFiles createKmlFilesDialog = new CreateKmlFiles(controller.GetEventDB());
+            createKmlFilesDialog.ExportKmlSettings = settings;
+
+            // show the dialog; on success, create the files.
+            while (createKmlFilesDialog.ShowDialog(this) == DialogResult.OK) {
+                // Warn about files that will be overwritten.
+                List<string> overwritingFiles = controller.OverwritingKmlFiles(createKmlFilesDialog.ExportKmlSettings);
+                if (overwritingFiles.Count > 0) {
+                    OverwritingOcadFilesDialog overwriteDialog = new OverwritingOcadFilesDialog();
+                    overwriteDialog.Filenames = overwritingFiles;
+                    if (overwriteDialog.ShowDialog(this) == DialogResult.Cancel)
+                        continue;
+                }
+
+                // Save settings persisted between invocations of this dialog.
+                exportKmlSettingsPrevious = createKmlFilesDialog.ExportKmlSettings;
+                controller.CreateKmlFiles(createKmlFilesDialog.ExportKmlSettings);
+
+                break;
+            }
+
+            // And the dialog is done.
+            createKmlFilesDialog.Dispose();
         }
 
         private void createImageFilesMenu_Click(object sender, EventArgs e)
