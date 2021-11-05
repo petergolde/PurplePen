@@ -29,6 +29,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseAppearanceDialog));
             this.groupBoxSizes = new System.Windows.Forms.GroupBox();
+            this.comboBoxScaleItemSizes = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.labelAutoGapSize = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.upDownLegGapSize = new System.Windows.Forms.NumericUpDown();
@@ -69,8 +71,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.groupBoxOcadMap = new System.Windows.Forms.GroupBox();
             this.checkBoxOverprint = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxScaleItemSizes = new System.Windows.Forms.ComboBox();
             this.groupBoxSizes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upDownLegGapSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upDownOutlineWidth)).BeginInit();
@@ -125,6 +125,22 @@
             resources.ApplyResources(this.groupBoxSizes, "groupBoxSizes");
             this.groupBoxSizes.Name = "groupBoxSizes";
             this.groupBoxSizes.TabStop = false;
+            // 
+            // comboBoxScaleItemSizes
+            // 
+            this.comboBoxScaleItemSizes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxScaleItemSizes.FormattingEnabled = true;
+            this.comboBoxScaleItemSizes.Items.AddRange(new object[] {
+            resources.GetString("comboBoxScaleItemSizes.Items"),
+            resources.GetString("comboBoxScaleItemSizes.Items1"),
+            resources.GetString("comboBoxScaleItemSizes.Items2")});
+            resources.ApplyResources(this.comboBoxScaleItemSizes, "comboBoxScaleItemSizes");
+            this.comboBoxScaleItemSizes.Name = "comboBoxScaleItemSizes";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
             // 
             // labelAutoGapSize
             // 
@@ -489,22 +505,6 @@
             resources.ApplyResources(this.checkBoxOverprint, "checkBoxOverprint");
             this.checkBoxOverprint.Name = "checkBoxOverprint";
             this.checkBoxOverprint.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
-            // comboBoxScaleItemSizes
-            // 
-            this.comboBoxScaleItemSizes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxScaleItemSizes.FormattingEnabled = true;
-            this.comboBoxScaleItemSizes.Items.AddRange(new object[] {
-            resources.GetString("comboBoxScaleItemSizes.Items"),
-            resources.GetString("comboBoxScaleItemSizes.Items1"),
-            resources.GetString("comboBoxScaleItemSizes.Items2")});
-            resources.ApplyResources(this.comboBoxScaleItemSizes, "comboBoxScaleItemSizes");
-            this.comboBoxScaleItemSizes.Name = "comboBoxScaleItemSizes";
             // 
             // CourseAppearanceDialog
             // 

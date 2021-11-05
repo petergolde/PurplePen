@@ -1267,7 +1267,7 @@
     <value>3</value>
   </data>
   <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD Map</value>
+    <value>Advanced</value>
   </data>
   <data name="&gt;&gt;groupBoxOcadMap.Name" xml:space="preserve">
     <value>groupBoxOcadMap</value>
@@ -1306,6 +1306,6 @@
     <value>CourseAppearanceDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.0.1.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.3.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
