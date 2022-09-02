@@ -120,6 +120,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>顏色：</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> 變更顏色...</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>樣式：</value>
   </data>

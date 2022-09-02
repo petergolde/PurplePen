@@ -124,7 +124,7 @@
     <value>取消</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>选择一个文件夹的软件包</value>
+    <value>选择一个ocad文件的文件夹</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>选择文件夹…</value>
@@ -133,10 +133,10 @@
     <value>其他文件夹</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>作为地图文件相同的文件夹</value>
+    <value>与地图文件相同的文件夹</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>紫色笔文件相同的文件夹</value>
+    <value>紫笔文件相同的文件夹</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>文件夹</value>
@@ -151,7 +151,19 @@
     <value>了解更多关于routegadget</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>routegadget既需要一个图像文件（GIF）和法语国家国际组织的XML文件（XML）。选择针对这些文件和文件夹的名称。</value>
+    <value>RouteGadget需要一个图像文件(GIF)和国际定联XML文件(XML)。选择这两个文件的名称和文件夹。</value>
+  </data>
+  <data name="comboBoxIofXml.Items" xml:space="preserve">
+    <value>2.0.3</value>
+  </data>
+  <data name="comboBoxIofXml.Items1" xml:space="preserve">
+    <value>3.0</value>
+  </data>
+  <data name="labelIofXml.Text" xml:space="preserve">
+    <value>国际定联XML 版本:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>国际定联XML</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>routegadget文件创建</value>

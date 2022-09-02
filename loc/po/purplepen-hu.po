@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
+"POT-Creation-Date: 2022-08-10 14:52-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -98,7 +98,7 @@ msgstr "Szimbólumok és szöveg"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr "Ellenőrzőpont kör címke:"
+msgstr "Ellenőrzőpont címke:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
@@ -119,6 +119,10 @@ msgstr "Sorszám és érték (3(30))"
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
 msgstr "Kód és érték (145(30))"
+
+#: AddCourse.resx, labelKindCombo.Items5
+msgid "Score (30)"
+msgstr ""
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -405,7 +409,7 @@ msgid "All map "
 msgstr "Minden térkép "
 "fájl|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 "|OCAD fájlok (*.ocd)|*.ocd|Open Orienteering Mapper "
-"Files|*.omap;*.xmap|PDF fájlok (*.pdf)|*.pdf|Kép "
+"fájlok|*.omap;*.xmap|PDF fájlok (*.pdf)|*.pdf|Kép "
 "fájlok|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
@@ -481,7 +485,7 @@ msgstr "Váltó csapat"
 
 #: ChangeText.resx, relayLegMenuItem.Text
 msgid "Relay Leg"
-msgstr "Váltó átmenet"
+msgstr "Váltó ág"
 
 #: ChangeText.resx, fileNameMenuItem.Text
 #: CreateRouteGadget.resx, nameGroupBox.Text
@@ -490,7 +494,7 @@ msgstr "Fájl neve"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Térkép Fájl Neve"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -812,7 +816,7 @@ msgstr "Váltó csapat variáció"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr ""
+msgstr "Térképfelvételi pont hozzáadása"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
@@ -824,6 +828,10 @@ msgstr "Térkép szabványa"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
+msgstr ""
+
+#: CommandNameText.resx, SetLiveloxImportableEventId
+msgid "Publish to Livelox"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -840,7 +848,7 @@ msgstr "1:15000 méretarány"
 
 #: CourseAppearanceDialog.resx, label11.Text
 msgid "Scale item sizes:"
-msgstr ""
+msgstr "Elemek méretezése:"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -914,8 +922,8 @@ msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "Felülnyomás használata a megjelölt színekhez"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD térkép"
+msgid "Advanced"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -976,6 +984,7 @@ msgstr "Variáció választás..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateImageFiles.resx, coursesGroupBox.Text
+#: CreateKmlFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -1008,6 +1017,7 @@ msgid "Create GPX File"
 msgstr "GPX fájl készítése"
 
 #: CreateImageFiles.resx, createButton.Text
+#: CreateKmlFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
@@ -1015,6 +1025,7 @@ msgid "Create"
 msgstr "Létrehozás"
 
 #: CreateImageFiles.resx, cancelButton.Text
+#: CreateKmlFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1030,6 +1041,7 @@ msgid "Cancel"
 msgstr "Mégsem"
 
 #: CreateImageFiles.resx, folderBrowserDialog.Description
+#: CreateKmlFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
@@ -1053,45 +1065,46 @@ msgid "GIF"
 msgstr "OCAD 8"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateKmlFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
 msgstr "Fájlnév előtag:"
 
 #: CreateImageFiles.resx, label1.Text
 msgid "World file:"
-msgstr ""
+msgstr "Világ fájl:"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items1
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items2
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items3
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items4
 msgid "400"
-msgstr ""
+msgstr "400"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items5
 msgid "500"
-msgstr ""
+msgstr "500"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items6
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: CreateImageFiles.resx, dpiLabel.Text
 msgid "Dpi:"
-msgstr ""
+msgstr "Dpi:"
 
 #: CreateImageFiles.resx, comboBoxWorldFile.Items
 #: ReportText.resx, EventAudit_No
@@ -1105,7 +1118,7 @@ msgstr "Igen"
 
 #: CreateImageFiles.resx, labelColorModel.Text
 msgid "Color model:"
-msgstr ""
+msgstr "Szín modell:"
 
 #: CreateImageFiles.resx, comboBoxColorModel.Items
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
@@ -1120,6 +1133,7 @@ msgid "CMYK"
 msgstr "CMYK"
 
 #: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1128,6 +1142,7 @@ msgid "Output"
 msgstr "Kimenet"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
+#: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
@@ -1135,6 +1150,7 @@ msgid "Select folder..."
 msgstr "Könyvtár kiválasztása.."
 
 #: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
@@ -1142,6 +1158,7 @@ msgid "Other folder"
 msgstr "Másik könyvtár"
 
 #: CreateImageFiles.resx, mapDirectory.Text
+#: CreateKmlFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
@@ -1149,6 +1166,7 @@ msgid "Same folder as map file"
 msgstr "A térkép fájllal azonos könyvtár"
 
 #: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
@@ -1156,6 +1174,7 @@ msgid "Same folder as Purple Pen file"
 msgstr "A Purple Pen fájllal azonos könyvtár"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
+#: CreateKmlFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
@@ -1164,6 +1183,25 @@ msgstr "Könyvtár"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
+msgstr "OCAD fájlok létrehozása"
+
+#: CreateKmlFiles.resx, filesLabel.Text
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr "Fájlok:"
+
+#: CreateKmlFiles.resx, filesCombo.Items
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr "Egy az összes pályához"
+
+#: CreateKmlFiles.resx, filesCombo.Items1
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr "Pályánként különböző"
+
+#: CreateKmlFiles.resx, $this.Text
+msgid "Create KML File"
 msgstr "OCAD fájlok létrehozása"
 
 #: CreateOcadFiles.resx, $this.Text
@@ -1194,18 +1232,6 @@ msgstr "Több oldalra nyomtatni"
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
 msgstr "Ha nem fér ki egy oldalra:"
-
-#: CreatePdfCourses.resx, filesLabel.Text
-msgid "Files:"
-msgstr "Fájlok:"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items
-msgid "One for all courses"
-msgstr "Egy az összes pályához"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
-msgid "One per course"
-msgstr "Pályánként különböző"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
@@ -1243,19 +1269,19 @@ msgstr "A RouteGadget-hez szükséges a képfájl (.gif) és az IOF "
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
-msgstr ""
+msgstr "2.0.3"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items1
 msgid "3.0"
-msgstr ""
+msgstr "3.0"
 
 #: CreateRouteGadget.resx, labelIofXml.Text
 msgid "IOF XML Version:"
-msgstr ""
+msgstr "IOF XML verzió:"
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1312,7 +1338,7 @@ msgstr "Nem"
 
 #: EnterSymbolText.resx, caseColumn.HeaderText
 msgid "Case"
-msgstr ""
+msgstr "Eset"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
@@ -1334,11 +1360,11 @@ msgstr "Nem:"
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "Módosított jelkulcs"
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "Esetek adatlapja"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1378,17 +1404,19 @@ msgstr "Üdözöljük a Purple Pen-ben"
 
 #: LegAssignmentsDialog.resx, BranchColumn.HeaderText
 msgid "Branch"
-msgstr "Ág"
+msgstr "Elágazás"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
-msgstr "Lábak"
+msgstr "Ágak"
 
 #: LegAssignmentsDialog.resx, labelDescription.Text
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr ""
+msgstr "Egy adott ág hozzárendeléséhez egy adott elágazáshoz "
+"gépelje be az ág számát. A hozzá nem rendelt ágak "
+"véletlenszerűen lesznek az elágazásokhoz rendelve."
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
@@ -1396,7 +1424,7 @@ msgstr "További információk…"
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
-msgstr ""
+msgstr "Ág hozzárendelések"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -1449,15 +1477,15 @@ msgstr "Minden ellenőrzőpont"
 
 #: MainFrame.resx, radioButtonDescriptions.Text
 msgid "Descriptions"
-msgstr ""
+msgstr "Leírások"
 
 #: MainFrame.resx, radioButtonTopology.Text
 msgid "Ordering"
-msgstr ""
+msgstr "Sorrend"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "mapViewerTopology"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1489,27 +1517,35 @@ msgstr "OCAD fájlok létrehozása..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "Képfájlok létrehozása..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "Pontleírások..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "Kartonok..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr "PDF fájlok létrehozása..."
+msgstr "Pályák..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr ""
+msgstr "PDF fájlok létrehozása..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
+msgid "Create RouteGadget Files..."
 msgstr "RouteGadget fájlok létrehozása..."
+
+#: MainFrame.resx, publishToLiveloxMenu.Text
+msgid "Publish to Livelox..."
+msgstr ""
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1518,6 +1554,10 @@ msgstr "Adatcsere fájl létrehozása (IOF XML)..."
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
 msgstr "&GPX fájl készítése..."
+
+#: MainFrame.resx, createKMLFileMenu.Text
+msgid "Create &KML File..."
+msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1673,11 +1713,11 @@ msgstr "&Minden ellenőrzőpont"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "Egyéb pályák..."
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Egyéb pályák törlése"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1714,18 +1754,18 @@ msgstr "Új &térképcsere"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
-msgstr ""
+msgstr "Új &variáció"
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr "Új szö&vegsor"
+msgstr "Új szöve&gsor"
 
 #: MainFrame.resx, addMapIssueMenu.Text
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr ""
+msgstr "Időzített indítás"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1809,7 +1849,7 @@ msgstr ""
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
-msgstr ""
+msgstr "Ú&j"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1833,23 +1873,27 @@ msgstr "&Szúrásminták..."
 
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
-msgstr ""
+msgstr "2004-es leírás szabvány"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
 msgid "2018 Description Standard"
-msgstr ""
+msgstr "2018-as lerírás szabvány"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
-msgstr ""
+msgstr "ISOM2000 térkép jelkulcs"
 
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
+msgstr "ISOM2017 térkép jelkulcs"
+
+#: MainFrame.resx, mapStdSpr2019Menu.Text
+msgid "ISSprOM 2019 Map Standard"
 msgstr ""
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
-msgstr ""
+msgstr "IOF &Szabvány"
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
@@ -1889,7 +1933,7 @@ msgstr "&Versenyzőszám..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
-msgstr ""
+msgstr "Váltó csapat &Variációk..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
@@ -1897,7 +1941,7 @@ msgstr "&Pálya"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
-msgstr ""
+msgstr "Villa/Hurok &törlése"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
@@ -2771,111 +2815,127 @@ msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "Minden variáció"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "Használható {0} tagú váltók esetén."
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "A központi ellenőrzőpontot {0} esetben kell érinteni. Ez "
+"{1} lehetséges útvonal a hurokban."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "A hurok vagy villa kezdőpontját nem lehet a pálya másik "
+"részére húzni."
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr ""
+msgstr "Túl sok variáció van a pályában. A variációk száma "
+"limitált {0} esetre."
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "A variációt nem lehet hozzáadni."
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "Egy variáció már létezik ennél az ellenőrzőpontnál."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "Az ellenőrzőpontot vgy ágat ki kell választani hozzáadás "
+"előtt."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "A célhoz nem lehet variációt hozzáadni."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Variációt nem lehet hozzáadni minden ellenőrzőpont nézetben."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Variáció nem adható értékes pályához."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "Variációt nem lehet az utolsó ellenőrzőponthoz adni. Adja "
+"hozzá előbb a célt."
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr ""
+msgstr "'{0}' nem egy valós ág a(z)  '{1}' elágazáshoz."
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "A(z) {0} ágat hozzá kell rendelni valamelyik elágazáshoz: "
+"{1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr ""
+msgstr "A(z) {0} ág hozzá van rendelve a(z) '{1}' és a(z) '{2}' "
+"elágazáshoz is."
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
-msgstr ""
+msgstr "A térkép fájl nem beolvasható az alábbi okból: '{0}' "
+"Megnyitva majd elmentve a legújabb OpenOrienteering Mapper "
+"segítségével megoldhatja a problémát."
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr ""
+msgstr "TF"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "A háttér OCAD térkép tartalmaz látható mintafájlokat. OCAD "
+"8 és az előtti verziókban ez nem jelenik meg jól az OCAD "
+"limitációja miatt."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "Az OCAD fájl formátum limitációja miatt (OCAD 10 és "
+"régebbi fájl esetén) a kép objektumok a pályák alatt "
+"lehetnek és fehér üres területként jelenhetnek meg. Kérem "
+"ellenőrizze, hogy a kimentett OCAD fájlokban ott jelennek "
+"meg a képek, ahova tervezte."
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "A képfájl nem hozható létre az alábbi ok miatt:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "PDF fájl létrehozása"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF Fájl|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
-msgstr ""
+msgstr "A(z) {0} ág sohasem érinti a(z) '{1}' elágazást: másként "
+"kell megadni az utakat a tatalmazó villában."
 
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
@@ -3072,40 +3132,45 @@ msgstr "(Megváltoztathatja a nyomtatási léptéket bármely pályához "
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "(Ezek a beállítások később megváltoztathatók az "
+"Esemény/IOF Szabvány menüpontban)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
+msgstr "IOF Szabványok"
+
+#: NewEventStandards.resx, radioButtonMapSpr2019.Text
+msgid "ISSprOM 2019"
 msgstr ""
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
-msgstr ""
+msgstr "ISOM 2017"
 
 #: NewEventStandards.resx, radioButtonMap2000.Text
 msgid "ISOM 2000 / ISSOM 2007"
-msgstr ""
+msgstr "ISOM 2000 / ISSOM 2007"
 
 #: NewEventStandards.resx, groupBoxMapStandard.Text
 msgid "IOF Map Standard"
-msgstr ""
+msgstr "IOF jelkulcs szabvány"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
 msgid "Descriptions 2018"
-msgstr ""
+msgstr "Pontmegnevezések 2018"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
-msgstr ""
+msgstr "Pontmegnevezések 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "IOF pontmegnevezések"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
 "to follow?"
-msgstr ""
+msgstr "Melyik IOF szabványokat használja a Purple Pen?"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3475,7 +3540,7 @@ msgstr "Azonos szimbólum?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Látogatások"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
@@ -3487,7 +3552,7 @@ msgstr "Ellenőrzőpont keresztreferencia {0}-hoz"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "Mindkét irányból futott átmenetek"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3572,15 +3637,17 @@ msgstr "Nem található probléma."
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "A(z) \"{0}\" pálya kétszer tartalmazza egymás után a(z) "
+"\"{1}\" ellenőrzőpontot."
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
-msgstr ""
+msgstr "Ismételt ellenőrzőpontok"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "A(z)  \"{0}\" értékes pálya a(z) \"{1}\" ellenőrzőpontot "
+"kétszer tartalmazza. "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -3624,7 +3691,8 @@ msgstr "Átmenet hossz jelentés {0}-hoz"
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr ""
+msgstr "Néhány pontot többször érintenek egy pályán. A második "
+"terhelés szám minden érintést külön számol."
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
@@ -3658,11 +3726,12 @@ msgstr "{0} versenyzőszám összefoglalója"
 msgid "One or more courses has variations. Load numbers will be "
 "computed assuming that competitors are evenly distributed "
 "between forks."
-msgstr ""
+msgstr "Egy vagy több pálya variációkat tartalmaz. A terhelés a "
+"villákra szétosztott versenyzők alapján számított."
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "({0} látogatás)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -3670,31 +3739,35 @@ msgstr "FIGYELMEZTETÉS:"
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "FIGYELEM: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "Figyelem: az ágak száma miatt, a(z) {0} pontnál levő "
+"villában nem arányos a használat. {1} ágat használ a(z) "
+"{2} elágazás, míg {3} ágat használ a(z) {4} elágazás. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "Ág {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "A váltó csapatok nincsenek definiálva. Válassza ki a "
+"kívánt számú csapatot és ágat és kattintson a \"Variációk "
+"hozzárendelése\" gombra."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "Csapat {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "Váltó hozzárendelés {0} számára"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3714,7 +3787,7 @@ msgstr "Nem használt ellenőrzőpontok:"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
-msgstr "ellenőrzőpontok"
+msgstr "ellenőrzőpont"
 
 #: SelectionDescriptionText.resx, Control_Singular
 msgid "control"
@@ -3866,66 +3939,68 @@ msgstr "Számított hosszúság:"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "térkép felvételi pont"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "térkép felvételi pont"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "Minden variáció külön"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Minden váltó ág külön"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Minden variáció kombinálva"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Variációk:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "Jelenítse meg a villák összes ágát egy térképen."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "Egy térkép minden lehetséges variációhoz a pályán belül."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "Egy térkép minden ághoz a kiválasztott csapatokhoz."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "Előbb definiálni kell  a váltó csapatokat a Váltó csapat "
+"variációk... pontban a Pályák menüben."
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Egyéni variáció választás"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "Ehhez a pályához {0} váltó csapat van rendelve. Használja "
+"a Váltó csapat variációk... pontot a Pályák menüben."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "-"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Válassza ki a nyomtatandó/exportálandó csapatokat:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Válasszon variációkat"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -4128,16 +4203,18 @@ msgstr "Tartsa lenyomva és mozgassa az egeret az új objektum "
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "Húzza az ellenőrzőpont számát a pályán belüli "
+"átrendezéshez (tartsa lenyomva a Shift-et a duplikáláshoz)"
 
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
 "course"
-msgstr ""
+msgstr "Kattintson a bal gombbal a meglevő térkép felvételi pont "
+"pályához adásához"
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
-msgstr ""
+msgstr "Kattintson a bal gombbal egy új térképfelvételi ponthoz."
 
 #: StatusBarText.resx, StretchingObject
 msgid "Hold down left mouse button and drag to stretch the "
@@ -4146,35 +4223,35 @@ msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "Exportálás..."
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr ""
+msgstr "Ágak széma:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "Varióciók hozzárendelése"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "Csapatok száma:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
-msgstr ""
+msgstr "Rögzített ágak elágazásokhoz rendelése..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Csapatszámzás kezdete: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Variációs kódok elrejtése a térképen"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr ""
+msgstr "IOF XML 3.0|*.xml|Számolótábla (CSV)|*.csv"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -4191,9 +4268,10 @@ msgstr "A következő ellenőrzőpontok szerepelnek a Minden "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Válasszon további pályákat a(z) \"{0}\" pálya mellé a "
+"megtekintéshez."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "További pályák megtekintése"
 

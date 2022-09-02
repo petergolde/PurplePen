@@ -219,9 +219,6 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Use overprint effect for colours marked "overprint"</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD Map</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customise Appearance</value>
   </data>

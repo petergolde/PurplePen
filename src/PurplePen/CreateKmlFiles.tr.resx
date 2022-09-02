@@ -132,9 +132,6 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Dosya adı öneki:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Dosya formatı:</value>
-  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Çıktı</value>
   </data>
@@ -143,5 +140,8 @@
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Diğer klasör</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Dosya formatı:</value>
   </data>
 </root>

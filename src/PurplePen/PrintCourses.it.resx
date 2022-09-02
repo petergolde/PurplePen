@@ -123,6 +123,9 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percorsi</value>
   </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Copie per ogni percorso:</value>
+  </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Stampa i Cambi Carta sulla Stessa Mappa </value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Aspetto</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Stampa percorsi</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Dimensione carta:</value>

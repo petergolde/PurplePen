@@ -124,16 +124,16 @@
     <value>宽度</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>高度</value>
+    <value>高度：</value>
   </data>
   <data name="groupBoxPaperSize.Text" xml:space="preserve">
-    <value>纸张大小（{0}）</value>
+    <value>纸张尺寸（{0}）</value>
   </data>
   <data name="radioButtonLandscape.Text" xml:space="preserve">
-    <value>风景</value>
+    <value>横向</value>
   </data>
   <data name="radioButtonPortrait.Text" xml:space="preserve">
-    <value>竖直</value>
+    <value>纵向</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>方向</value>

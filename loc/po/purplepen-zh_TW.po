@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-11-20 17:15-08:00\n"
+"POT-Creation-Date: 2022-08-10 14:53-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -21,7 +21,7 @@ msgstr "版權為  Peter Golde 所有"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
-msgstr "Purple Pen 是開放軟體，可以複製與分享。"
+msgstr "Purple Pen 是自由軟體，可以複製與分享。"
 
 #: AboutForm.resx, disclaimerLabel.Text
 msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
@@ -99,27 +99,31 @@ msgstr "檢查點圓圈的標示"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
-msgstr "只標示序號"
+msgstr "只標示序號 (6)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr "只標示編號"
+msgstr "只標示編號 (42)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
-msgstr "標示序號和編號"
+msgstr "標示序號和編號 (6-42)"
 
 #: AddCourse.resx, labelKindCombo.Items3
 msgid "Sequence and score (3(30))"
-msgstr "標示序號和分值"
+msgstr "標示序號和積分值 (6(100))"
 
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
-msgstr "標示編號和分值"
+msgstr "標示編號和積分值 (42(100))"
+
+#: AddCourse.resx, labelKindCombo.Items5
+msgid "Score (30)"
+msgstr ""
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr "分值顯示在:"
+msgstr "積分值顯示在:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
@@ -135,7 +139,7 @@ msgstr "H欄"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr "不顯示"
+msgstr "(不顯示)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -155,7 +159,7 @@ msgstr "以下文字（選填）將出現在檢查點說明表的第二列："
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
-msgstr "組別/次要標題"
+msgstr "組別列表/次要標題"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -194,15 +198,15 @@ msgstr "公里"
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
 msgid "New Course"
-msgstr "新賽程"
+msgstr "新增賽程"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr "你想要增加什麼類型的變化分支？"
+msgstr "你想要增加什麼類型的分散變化？"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
-msgstr "分支"
+msgstr "分叉"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
@@ -261,7 +265,7 @@ msgstr "此賽環檢查點將被到訪4次。會有24種不同的方式通過此
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr "增加分支變化"
+msgstr "增加分散變化"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
@@ -278,19 +282,19 @@ msgstr "位置："
 
 #: AddTextLine.resx, comboBoxPosition.Items
 msgid "Above {0}"
-msgstr "高於{0}"
+msgstr "在編號{0}的上一列"
 
 #: AddTextLine.resx, comboBoxPosition.Items1
 msgid "Below {0}"
-msgstr "低於{0}"
+msgstr "在編號{0}的下一列"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
-msgstr "只有這個賽程"
+msgstr "只有在這個賽程"
 
 #: AddTextLine.resx, comboBoxCourses.Items1
 msgid "All courses with {0}"
-msgstr "所有賽程為{0}"
+msgstr "有編號{0}的所有賽程"
 
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
@@ -300,7 +304,7 @@ msgstr "增加文字說明列"
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr "這些設定是控制如何列印所有檢查點的地圖和說明。"
+msgstr "這些設定是控制此地圖與所有檢查點之說明如何被列印輸出。"
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
@@ -310,7 +314,7 @@ msgstr "所有檢查點的設定調整"
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "不允許會上下顛倒閱讀的編號"
+msgstr "不允許會上下顛倒閱讀的編號 (如68或89)"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
@@ -364,7 +368,7 @@ msgstr "下移"
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr "使用\"上移\"和\"下移\"按鍵變更賽程在使用者介界，整體報告和輸出文件中列出的順序。"
+msgstr "使用\"上移\"和\"下移\"按鍵，變更賽程在使用者介面、整體報告或列印文件中的順序。"
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
@@ -381,7 +385,7 @@ msgstr "目前的地圖檔案"
 #: ChangeMapFile.resx, buttonChooseFile.Text
 #: NewEventMapFile.resx, chooseMapFileButton.Text
 msgid "&Choose map file..."
-msgstr "&選擇地圖檔案..."
+msgstr "選擇地圖檔案(&C)..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
@@ -444,7 +448,7 @@ msgstr "賽程的部分"
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr "賽程的分支變化"
+msgstr "賽程的分散變化"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -461,7 +465,7 @@ msgstr "組別列表"
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr "列印比例尺"
+msgstr "列印的比例尺"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
@@ -506,7 +510,7 @@ msgstr "字型："
 #: ChangeText.resx, label3.Text
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr "大小："
+msgstr "字體大小:"
 
 #: ChangeText.resx, labelFontSizeMm.Text
 #: CourseAppearanceDialog.resx, label12.Text
@@ -527,7 +531,7 @@ msgstr "公釐"
 #: ChangeText.resx, checkBoxAutoFontSize.Text
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
-msgstr "自動"
+msgstr "自動調整"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
@@ -581,7 +585,7 @@ msgstr "變更檢查點"
 
 #: CommandNameText.resx, ChangeScore
 msgid "Change Control Points"
-msgstr "變更檢查點分值"
+msgstr "變更檢查點積分值"
 
 #: CommandNameText.resx, ChangeTitle
 msgid "Change Title"
@@ -677,11 +681,11 @@ msgstr "變更編號"
 
 #: CommandNameText.resx, MoveBend
 msgid "Move Leg Bend"
-msgstr "移動賽段的彎曲處"
+msgstr "移動賽段的轉彎處"
 
 #: CommandNameText.resx, AddBend
 msgid "Add Bend"
-msgstr "增加轉彎"
+msgstr "增加轉彎處"
 
 #: CommandNameText.resx, AddCorner
 msgid "Add Corner"
@@ -689,7 +693,7 @@ msgstr "增加轉角"
 
 #: CommandNameText.resx, DeleteBend
 msgid "Remove Bend"
-msgstr "移除轉彎"
+msgstr "移除轉彎處"
 
 #: CommandNameText.resx, DeleteCorner
 msgid "Remove Corner"
@@ -726,12 +730,12 @@ msgstr "設定列印範圍"
 
 #: CommandNameText.resx, SetCourseLoad
 msgid "Change Competitor Load"
-msgstr "變更選手的承受量"
+msgstr "變更選手的負荷量"
 
 #: CommandNameText.resx, SetCustomSymbolText
 #: CustomSymbolText.resx, $this.Text
 msgid "Customize Description Text"
-msgstr "自定說明文字"
+msgstr "自訂檢查點說明文字"
 
 #: CommandNameText.resx, ChangeCourseOrder
 msgid "Change Course Order"
@@ -743,7 +747,7 @@ msgstr "變更地圖檔案"
 
 #: CommandNameText.resx, IgnoreMissingFonts
 msgid "Ignore Missing Fonts"
-msgstr "忽略缺失的字型"
+msgstr "忽略缺少的字型"
 
 #: CommandNameText.resx, RemoveUnusedControls
 msgid "Remove Unused Controls"
@@ -751,7 +755,7 @@ msgstr "移除未使用的檢查點"
 
 #: CommandNameText.resx, SetDescriptionLanguage
 msgid "Change Description Language"
-msgstr "變更說明內容語言"
+msgstr "變更檢查點說明的語言"
 
 #: CommandNameText.resx, ChangeText
 #: MiscText.resx, ChangeTextTitle
@@ -787,16 +791,16 @@ msgstr "直接複製相同的賽程"
 
 #: CommandNameText.resx, CreateMapFiles
 msgid "Create {0} &Files"
-msgstr "建立 {0} &檔案"
+msgstr "建立 {0} 檔案(&F)"
 
 #: CommandNameText.resx, DeleteFork
 msgid "Delete Fork/Loop"
-msgstr "刪除賽段分支/賽環"
+msgstr "刪除賽段分叉/賽環"
 
 #: CommandNameText.resx, RelayTeamVariations
 #: TeamVariationsForm.resx, $this.Text
 msgid "Relay Team Variations"
-msgstr "接力隊伍的變化"
+msgstr "接力隊伍的分散變化"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
@@ -804,14 +808,18 @@ msgstr "增加取圖點"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
-msgstr "設定檢查點說明標準"
+msgstr "設定檢查點說明的標準"
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
-msgstr "設定地圖標準"
+msgstr "設定地圖的標準"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
+msgstr ""
+
+#: CommandNameText.resx, SetLiveloxImportableEventId
+msgid "Publish to Livelox"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -828,7 +836,7 @@ msgstr "相對於1:15000"
 
 #: CourseAppearanceDialog.resx, label11.Text
 msgid "Scale item sizes:"
-msgstr "比例尺物件大小："
+msgstr "比例尺物件的大小："
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -902,8 +910,8 @@ msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "對標記為“套印”的顏色使用套印效果"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD 地圖"
+msgid "Advanced"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -924,7 +932,7 @@ msgstr "賽程負荷量"
 
 #: CoursePartBanner.resx, variationsLabel.Text
 msgid "Course Variation: "
-msgstr "賽程變化： "
+msgstr "賽程分散變化： "
 
 #: CoursePartBanner.resx, buttonProperties.Text
 msgid "Properties..."
@@ -932,16 +940,16 @@ msgstr "設定調整..."
 
 #: CoursePartBanner.resx, coursePartLabel.Text
 msgid "Course Part: "
-msgstr "賽程部分 "
+msgstr "賽程部分: "
 
 #: CoursePartProperties.resx, checkBoxDisplayFinish.Text
 msgid "Display finish circle on this course part"
-msgstr "在這個賽程的部分顯示終點圓圈"
+msgstr "在這個賽程的部分顯示終點雙圓圈"
 
 #: CoursePartProperties.resx, label1.Text
 msgid "These settings control the appearance of this part of a "
 "multi-part course."
-msgstr ""
+msgstr "這些設定控制多個部分賽程之此部分的外觀。"
 
 #: CoursePartProperties.resx, $this.Text
 msgid "Course Part Properties"
@@ -958,10 +966,11 @@ msgstr "無"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
-msgstr "選擇變化..."
+msgstr "選擇分散變化..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateImageFiles.resx, coursesGroupBox.Text
+#: CreateKmlFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -984,7 +993,7 @@ msgstr "航點"
 msgid "A GPX File contains GPS coordinates for controls, and can "
 "be loaded onto a GPS or smartphone to verify the correct "
 "location of controls."
-msgstr ""
+msgstr "GPX檔案包含用於檢查點的GPS坐標，並且可以加載到GPS或智慧型手機上以驗證檢查點的正確位置。"
 
 #: CreateGpx.resx, $this.Text
 #: MainFrame.resx, saveGpxFileDialog.Title
@@ -992,6 +1001,7 @@ msgid "Create GPX File"
 msgstr "建立GPX檔案"
 
 #: CreateImageFiles.resx, createButton.Text
+#: CreateKmlFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
@@ -999,6 +1009,7 @@ msgid "Create"
 msgstr "建立"
 
 #: CreateImageFiles.resx, cancelButton.Text
+#: CreateKmlFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1014,6 +1025,7 @@ msgid "Cancel"
 msgstr "取消"
 
 #: CreateImageFiles.resx, folderBrowserDialog.Description
+#: CreateKmlFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
@@ -1037,6 +1049,7 @@ msgid "GIF"
 msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateKmlFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
 msgstr "檔案名稱字首："
@@ -1104,6 +1117,7 @@ msgid "CMYK"
 msgstr "CMYK 色彩模式"
 
 #: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1112,6 +1126,7 @@ msgid "Output"
 msgstr "輸出"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
+#: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
@@ -1119,6 +1134,7 @@ msgid "Select folder..."
 msgstr "選擇資料夾..."
 
 #: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
@@ -1126,6 +1142,7 @@ msgid "Other folder"
 msgstr "其他資料夾"
 
 #: CreateImageFiles.resx, mapDirectory.Text
+#: CreateKmlFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
@@ -1133,6 +1150,7 @@ msgid "Same folder as map file"
 msgstr "同地圖檔案的資料夾"
 
 #: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
@@ -1140,6 +1158,7 @@ msgid "Same folder as Purple Pen file"
 msgstr "同Purple Pen檔案的資料夾"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
+#: CreateKmlFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
@@ -1150,6 +1169,25 @@ msgstr "資料夾"
 msgid "Create Image Files"
 msgstr "建立圖片檔案"
 
+#: CreateKmlFiles.resx, filesLabel.Text
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr "檔案："
+
+#: CreateKmlFiles.resx, filesCombo.Items
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr "所有賽程之一"
+
+#: CreateKmlFiles.resx, filesCombo.Items1
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr "每組賽程一個"
+
+#: CreateKmlFiles.resx, $this.Text
+msgid "Create KML File"
+msgstr "建立OCAD檔案"
+
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
 msgstr "建立OCAD檔案"
@@ -1157,7 +1195,7 @@ msgstr "建立OCAD檔案"
 #: CreatePdfCourses.resx, checkBoxMergeParts.Text
 #: PrintCourses.resx, checkBoxMergeParts.Text
 msgid "Print Map Exchanges on Same Map "
-msgstr ""
+msgstr "在同一地圖上列印地圖更換區 "
 
 #: CreatePdfCourses.resx, labelColorModel.Text
 #: PrintCourses.resx, labelColorModel.Text
@@ -1167,33 +1205,21 @@ msgstr "色彩模式："
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items
 #: PrintCourses.resx, comboBoxMultiPage.Items
 msgid "Crop to a single page"
-msgstr ""
+msgstr "裁剪到單一頁面"
 
 #: CreatePdfCourses.resx, comboBoxMultiPage.Items1
 #: PrintCourses.resx, comboBoxMultiPage.Items1
 msgid "Print on multiple pages"
-msgstr ""
+msgstr "列印到多個頁面"
 
 #: CreatePdfCourses.resx, labelAppearanceInfo.Text
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
-msgstr ""
-
-#: CreatePdfCourses.resx, filesLabel.Text
-msgid "Files:"
-msgstr "檔案："
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items
-msgid "One for all courses"
-msgstr ""
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
-msgid "One per course"
-msgstr ""
+msgstr "如果列印範圍太大而無法容納在一個頁面上："
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
-msgstr ""
+msgstr "每組部分賽程/每組分散變化一個"
 
 #: CreatePdfCourses.resx, outputGroupBox.Text
 msgid "Files"
@@ -1201,7 +1227,7 @@ msgstr "檔案"
 
 #: CreatePdfCourses.resx, folderBrowserDialog.Description
 msgid "Select a folder for the PDF files"
-msgstr ""
+msgstr "選擇PDF檔案的資料夾"
 
 #: CreatePdfCourses.resx, $this.Text
 msgid "Create PDF Files"
@@ -1210,17 +1236,17 @@ msgstr "建立PDF檔案"
 #: CreateRouteGadget.resx, label1.Text
 msgid "Enter the name (without .xml or .gif) for both of the "
 "RouteGadget files:"
-msgstr ""
+msgstr "輸入兩個RouteGadget檔案的名稱（沒有.xml或.gif）："
 
 #: CreateRouteGadget.resx, learnMoreLink.Text
 msgid "Learn more about RouteGadget"
-msgstr ""
+msgstr "了解更多有關RouteGadget的資訊"
 
 #: CreateRouteGadget.resx, label2.Text
 msgid "RouteGadget requires both an image file (.gif) and IOF XML "
 "file (.xml). Choose the name and folder for both of these "
 "files."
-msgstr ""
+msgstr "RouteGadget同時需要圖像檔案（.gif）和IOF XML檔案（.xml）。 選擇這兩個檔案的名稱和資料夾。"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
@@ -1240,44 +1266,44 @@ msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
-msgstr ""
+msgstr "建立RouteGadget檔案"
 
 #: CustomSymbolText.resx, labelChooseLanguage.Text
 msgid "Choose the language used for textual control descriptions:"
-msgstr ""
+msgstr "選擇用於文字式檢查點說明的語言："
 
 #: CustomSymbolText.resx, labelSymbolName.Text
 msgid "Symbol name:"
-msgstr ""
+msgstr "符號名稱："
 
 #: CustomSymbolText.resx, labelCustomizedText.Text
 msgid "Customized text:"
-msgstr ""
+msgstr "自行定義的文字："
 
 #: CustomSymbolText.resx, buttonChangeText.Text
 msgid "Change text..."
-msgstr ""
+msgstr "變更文字..."
 
 #: CustomSymbolText.resx, buttonDefault.Text
 msgid "Reset to standard"
-msgstr ""
+msgstr "重新設定為標準格式"
 
 #: CustomSymbolText.resx, labelStandardText.Text
 msgid "Standard text:"
-msgstr ""
+msgstr "標準的文字"
 
 #: CustomSymbolText.resx, checkBoxShowKey.Text
 msgid "Show meaning below symbolic descriptions"
-msgstr ""
+msgstr "在符號式說明下顯示意義"
 
 #: CustomSymbolText.resx, labelCustomizeText.Text
 msgid "Click on a description symbol to customize the text that "
 "is used in textual control descriptions."
-msgstr ""
+msgstr "點擊檢查點說明符號，可自行定義文字式檢查點說明採用的文字。"
 
 #: CustomSymbolText.resx, checkBoxDefaultLanguage.Text
 msgid "Make this the default language for new events"
-msgstr ""
+msgstr "將其設定為新賽事的預設語言"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
@@ -1297,16 +1323,16 @@ msgstr "案例"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
-msgstr ""
+msgstr "顯示複數格式"
 
 #: EnterSymbolText.resx, checkBoxGender.Text
 msgid "Show gender forms"
-msgstr ""
+msgstr "顯示性別格式"
 
 #: EnterSymbolText.resx, labelDescription.Text
 msgid "Enter the customized text for the symbol in the \"Text\" "
 "column."
-msgstr ""
+msgstr "在[文字]欄位輸入此符號自行定義的文字"
 
 #: EnterSymbolText.resx, labelGenderChooser.Text
 msgid "Gender:"
@@ -1314,23 +1340,23 @@ msgstr "性別："
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "修改符號的情況："
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "顯示情況表格"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
-msgstr "自訂圖例文字"
+msgstr "自行定義符號文字"
 
 #: InitialScreen.resx, openLastRadioButton.Text
 msgid "Open last viewed event"
-msgstr ""
+msgstr "開啟最近檢視的賽事"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
-msgstr ""
+msgstr "開啟範例賽事"
 
 #: InitialScreen.resx, createNewRadioButton.Text
 msgid "Create a new event..."
@@ -1338,13 +1364,13 @@ msgstr "建立一個新賽事..."
 
 #: InitialScreen.resx, openExistingRadioButton.Text
 msgid "Open an existing event..."
-msgstr ""
+msgstr "開啟既有的賽事..."
 
 #: InitialScreen.resx, label1.Text
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "Purple Pen 是自由軟體，可以複製和共享。 Purple Pen 的研發僅靠您的捐款支持。"
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1366,7 +1392,7 @@ msgstr "賽段"
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr ""
+msgstr "將特定賽段分配給特定分支，請在下面鍵入賽段編號。 未分配給分支的賽段將隨機分佈在剩餘的分支中。"
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
@@ -1374,11 +1400,11 @@ msgstr "更多資訊..."
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
-msgstr ""
+msgstr "賽段分配"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
-msgstr ""
+msgstr "Purple Pen 是在BSD授權條款下提供的。"
 
 #: LicenseForm.resx, $this.Text
 msgid "Purple Pen License"
@@ -1386,7 +1412,7 @@ msgstr "Purple Pen 授權條款"
 
 #: LinePropertiesDialog.resx, buttonChangeColor.Text
 msgid " Change Color..."
-msgstr ""
+msgstr " 變更顏色..."
 
 #: LinePropertiesDialog.resx, label2.Text
 msgid "Style:"
@@ -1435,7 +1461,7 @@ msgstr "排序中"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "地圖檢視者拓樸"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1447,79 +1473,91 @@ msgstr "Purple Pen 檔案|*.ppen"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
-msgstr ""
+msgstr "新增賽事(&N)..."
 
 #: MainFrame.resx, openMenu.Text
 msgid "&Open..."
-msgstr "開啟..."
+msgstr "開啟(&O)..."
 
 #: MainFrame.resx, saveMenu.Text
 msgid "&Save"
-msgstr "儲存"
+msgstr "儲存(&S)"
 
 #: MainFrame.resx, saveAsMenu.Text
 msgid "Save &As..."
-msgstr "另存新檔…"
+msgstr "另存新檔(&A)..."
 
 #: MainFrame.resx, createOcadFilesMenu.Text
 msgid "Create OCAD &Files..."
-msgstr "建立OCAD &檔案..."
+msgstr "建立OCAD &檔案(&F)..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "建立圖片檔案..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "檢查點說明(&D)..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr "核對卡..."
+msgstr "核對卡(&n)..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr "賽程..."
+msgstr "賽程(&C)..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr "建立PDFs"
+msgstr "建立PDFs(&D)"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
+msgid "Create RouteGadget Files..."
+msgstr "建立 RouteGadget 檔案(&G)..."
+
+#: MainFrame.resx, publishToLiveloxMenu.Text
+msgid "Publish to Livelox..."
+msgstr ""
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
 msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
-msgstr ""
+msgstr "建立資料交換檔案 (IOF XML)(&I)..."
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
+msgstr "建立 GPX 檔案(&P)..."
+
+#: MainFrame.resx, createKMLFileMenu.Text
+msgid "Create &KML File..."
 msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
-msgstr ""
+msgstr "列印檢查點說明(&P)..."
 
 #: MainFrame.resx, printPunchCardsMenu.Text
 msgid "Print Pu&nch Cards..."
-msgstr "列印核對卡..."
+msgstr "列印核對卡(&n)..."
 
 #: MainFrame.resx, printCoursesMenu.Text
 msgid "Print &Courses..."
-msgstr "列印賽程..."
+msgstr "列印賽程(&C)..."
 
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
-msgstr "只有此部分"
+msgstr "只有此部分(&P)"
 
 #: MainFrame.resx, printAreaThisCourseMenu.Text
 msgid "&This Course"
-msgstr "此賽程"
+msgstr "此賽程(&T)"
 
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
-msgstr "所有賽程"
+msgstr "所有賽程(&A)"
 
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
@@ -1531,43 +1569,43 @@ msgstr "程式語言..."
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
-msgstr "離開"
+msgstr "離開(&x)"
 
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
-msgstr "檔案"
+msgstr "檔案(&F)"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
 msgid "&Clear Selection"
-msgstr "清除選擇"
+msgstr "清除選擇(&C)"
 
 #: MainFrame.resx, undoMenu.Text
 #: MiscText.resx, UndoWithShortcut
 msgid "&Undo"
-msgstr "復原"
+msgstr "復原(&U)"
 
 #: MainFrame.resx, redoMenu.Text
 #: MiscText.resx, RedoWithShortcut
 msgid "&Redo"
-msgstr "取消復原"
+msgstr "取消復原(&R)"
 
 #: MainFrame.resx, deleteMenu.Text
 #: MainFrame.resx, deleteItemMenu.Text
 msgid "&Delete"
-msgstr "刪除"
+msgstr "刪除(&D)"
 
 #: MainFrame.resx, editMenu.Text
 msgid "&Edit"
-msgstr "編輯"
+msgstr "編輯(&E)"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr ""
+msgstr "整個賽程"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
-msgstr ""
+msgstr "整個地圖"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1599,31 +1637,31 @@ msgstr "1000%"
 
 #: MainFrame.resx, zoomMenu.Text
 msgid "&Zoom"
-msgstr "縮放"
+msgstr "縮放(&Z)"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
-msgstr "非常低"
+msgstr "非常低(&V)"
 
 #: MainFrame.resx, lowIntensityMenu.Text
 msgid "&Low"
-msgstr "低"
+msgstr "低(&L)"
 
 #: MainFrame.resx, mediumIntensityMenu.Text
 msgid "&Medium"
-msgstr "中"
+msgstr "中(&M)"
 
 #: MainFrame.resx, highIntensityMenu.Text
 msgid "&High"
-msgstr "高"
+msgstr "高(&H)"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr ""
+msgstr "完整的(&F)"
 
 #: MainFrame.resx, mapIntensityMenu.Text
 msgid "Map &Intensity"
-msgstr ""
+msgstr "地圖明暗度"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1635,27 +1673,27 @@ msgstr "高"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
-msgstr "地圖品質"
+msgstr "地圖品質(&Q)"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
-msgstr ""
+msgstr "顯示列印範圍"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
-msgstr ""
+msgstr "顯示彈出資訊"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
-msgstr ""
+msgstr "所有檢查點"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "其他賽程..."
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "清除其他賽程"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1663,122 +1701,122 @@ msgstr "檢視"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr ""
+msgstr "起點"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
-msgstr ""
+msgstr "檢查點"
 
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr ""
+msgstr "終點"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr ""
+msgstr "檢查點說明"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
-msgstr ""
+msgstr "在檢查點換地圖"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "&Flagged Route to Map Exchange"
-msgstr ""
+msgstr "指定路線至換圖區"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
 msgid "Map E&xchange"
-msgstr ""
+msgstr "換圖區"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
-msgstr ""
+msgstr "分散變化..."
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr ""
+msgstr "文字列"
 
 #: MainFrame.resx, addMapIssueMenu.Text
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr ""
+msgstr "計時起點"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
 msgid "Mandatory Crossing Point"
-msgstr ""
+msgstr "強制穿越點"
 
 #: MainFrame.resx, addOptCrossingMenu.Text
 #: MainFrame.resx, optionalCrossingPointToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_OptCrossing
 msgid "Optional Crossing Point"
-msgstr ""
+msgstr "可選擇的穿越點"
 
 #: MainFrame.resx, addOutOfBoundsMenu.Text
 #: MainFrame.resx, outOfBoundsToolStripMenuItem.Text
 msgid "Out Of Bounds Area"
-msgstr ""
+msgstr "禁制區域"
 
 #: MainFrame.resx, addDangerousMenu.Text
 #: MainFrame.resx, dangerousToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
-msgstr ""
+msgstr "危險區域"
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Water
 msgid "Water Location"
-msgstr ""
+msgstr "補給站位置"
 
 #: MainFrame.resx, addFirstAidMenu.Text
 #: MainFrame.resx, firstAidLocationToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_FirstAid
 msgid "First Aid Location"
-msgstr ""
+msgstr "急救站位置"
 
 #: MainFrame.resx, addForbiddenMenu.Text
 #: MainFrame.resx, forbiddenRouteMarkingToolStripMenuItem.Text
 msgid "Forbidden Route Marking"
-msgstr ""
+msgstr "禁制路線標示"
 
 #: MainFrame.resx, addBoundaryMenu.Text
 #: MainFrame.resx, boundaryToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Boundary
 msgid "Uncrossable Boundary"
-msgstr ""
+msgstr "不可跨越的邊界"
 
 #: MainFrame.resx, addRegMarkMenu.Text
 #: MainFrame.resx, registrationMarkToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_RegMark
 msgid "Registration Mark"
-msgstr ""
+msgstr "套印標記"
 
 #: MainFrame.resx, whiteOutMenu.Text
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
-msgstr ""
+msgstr "白底的範圍"
 
 #: MainFrame.resx, addImageMenu.Text
 #: MainFrame.resx, imageToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Image
 msgid "Image"
-msgstr ""
+msgstr "圖片"
 
 #: MainFrame.resx, addLineMenu.Text
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr ""
+msgstr "列"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Rectangle
 msgid "Rectangle"
-msgstr ""
+msgstr "矩形"
 
 #: MainFrame.resx, addEllipseMenu.Text
 #: MainFrame.resx, ellipseToolStripMenuItem.Text
@@ -1787,123 +1825,127 @@ msgstr ""
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
-msgstr ""
+msgstr "新增"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
-msgstr ""
+msgstr "地圖檔案..."
 
 #: MainFrame.resx, changeCodesMenu.Text
 msgid "Change Control &Codes..."
-msgstr ""
+msgstr "變更檢查點編號..."
 
 #: MainFrame.resx, autoNumberingMenu.Text
 msgid "Automatic &Numbering..."
-msgstr ""
+msgstr "自動編號..."
 
 #: MainFrame.resx, removeUnusedControlsMenu.Text
 msgid "Remove &Unused Controls..."
-msgstr ""
+msgstr "移除未採用的檢查點..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
-msgstr ""
+msgstr "打孔器圖案..."
 
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
-msgstr ""
+msgstr "2004檢查點說明規範"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
 msgid "2018 Description Standard"
-msgstr ""
+msgstr "2018檢查點說明規範"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
-msgstr ""
+msgstr "ISOM 2000地圖繪製規範"
 
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
+msgstr "ISOM 2017地圖繪製規範"
+
+#: MainFrame.resx, mapStdSpr2019Menu.Text
+msgid "ISSprOM 2019 Map Standard"
 msgstr ""
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
-msgstr ""
+msgstr "IOF 規範"
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
-msgstr ""
+msgstr "自行定義的檢查點說明文字"
 
 #: MainFrame.resx, customizeCourseAppearanceMenu.Text
 msgid "Customize &Appearance..."
-msgstr ""
+msgstr "自行定義外觀..."
 
 #: MainFrame.resx, eventMenu.Text
 msgid "Eve&nt"
-msgstr ""
+msgstr "賽事"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
-msgstr ""
+msgstr "新增賽程..."
 
 #: MainFrame.resx, deleteCourseMenu.Text
 msgid "&Delete Course"
-msgstr ""
+msgstr "刪除賽程"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
-msgstr ""
+msgstr "直接複製賽程..."
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
-msgstr ""
+msgstr "內容設定"
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
-msgstr ""
+msgstr "賽程順序..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr ""
+msgstr "選手負荷量..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
-msgstr ""
+msgstr "接力隊伍的分散變化..."
 
 #: MainFrame.resx, courseMenu.Text
 msgid "&Course"
-msgstr ""
+msgstr "賽程"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
-msgstr ""
+msgstr "刪除分叉/賽環"
 
 #: MainFrame.resx, addBendMenu.Text
 msgid "Add &Bend"
-msgstr ""
+msgstr "新增轉彎處"
 
 #: MainFrame.resx, removeBendMenu.Text
 msgid "Remove B&end"
-msgstr ""
+msgstr "移除轉彎處"
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
-msgstr ""
+msgstr "新增間隔"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove Ga&p"
-msgstr ""
+msgstr "移除間隔"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
-msgstr ""
+msgstr "變更文字..."
 
 #: MainFrame.resx, changeLineAppearanceMenu.Text
 msgid "Change Line &Appearance..."
-msgstr ""
+msgstr "變更線段外觀..."
 
 #: MainFrame.resx, rotateMenu.Text
 msgid "R&otate"
-msgstr ""
+msgstr "旋轉"
 
 #: MainFrame.resx, stretchMenu.Text
 msgid "&Stretch"
@@ -1911,457 +1953,466 @@ msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
-msgstr ""
+msgstr "沒有標記"
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr ""
+msgstr "整個賽段被標記"
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
-msgstr ""
+msgstr "賽段開始標記"
 
 #: MainFrame.resx, endFlaggingMenu.Text
 msgid "End of Leg Flagged"
-msgstr ""
+msgstr "已標記的賽段末端"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr ""
+msgstr "賽段標記"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
-msgstr ""
+msgstr "變更顯示的賽程 ..."
 
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
-msgstr ""
+msgstr "項目"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
-msgstr ""
+msgstr "賽程摘要"
 
 #: MainFrame.resx, eventAuditMenu.Text
 msgid "Event &Audit"
-msgstr ""
+msgstr "賽事檢核"
 
 #: MainFrame.resx, legLengthsMenu.Text
 msgid "&Leg Lengths"
-msgstr ""
+msgstr "賽段長度"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr ""
+msgstr "檢查點對照"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
-msgstr ""
+msgstr "檢查點與賽段載入"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
-msgstr ""
+msgstr "報告"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
-msgstr ""
+msgstr "Purple Pen 線上協助"
 
 #: MainFrame.resx, helpTranslatedMenu.Text
 msgid "Purple Pen Help (Translated)"
-msgstr ""
+msgstr "Purple Pen 線上協助 (已翻譯的)"
 
 #: MainFrame.resx, mainWebSiteToolMenu.Text
 msgid "Purple Pen &Web Site"
-msgstr ""
+msgstr "Purple Pen 網站"
 
 #: MainFrame.resx, supportWebSiteMenu.Text
 msgid "&Support/Bug Reporting"
-msgstr ""
+msgstr "支援/錯誤報告"
 
 #: MainFrame.resx, donateWebSiteMenu.Text
 msgid "Make a &Donation"
-msgstr ""
+msgstr "捐贈"
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
-msgstr ""
+msgstr "關於Purple Pen"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
-msgstr ""
+msgstr "符號瀏覽器"
 
 #: MainFrame.resx, descriptionBrowserMenu.Text
 msgid "Description Browser"
-msgstr ""
+msgstr "說明表瀏覽器"
 
 #: MainFrame.resx, controlTesterMenu.Text
 msgid "Control Tester"
-msgstr ""
+msgstr "檢查點測試器"
 
 #: MainFrame.resx, mapTesterMenu.Text
 msgid "Map Tester"
-msgstr ""
+msgstr "地圖測試器"
 
 #: MainFrame.resx, courseSelectorTesterMenu.Text
 msgid "Course Selector Tester"
-msgstr ""
+msgstr "賽程選取測試器"
 
 #: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
 msgid "Dot Grid Tester"
-msgstr ""
+msgstr "網格測試器"
 
 #: MainFrame.resx, dumpOCADFileMenu.Text
 msgid "Dump OCAD File"
-msgstr ""
+msgstr "Dump OCAD 檔案"
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
-msgstr ""
+msgstr "報告測試器"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
+msgstr "字型量度"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
-msgstr ""
+msgstr "當機"
 
 #: MainFrame.resx, debugMenu.Text
 msgid "Debug"
-msgstr ""
+msgstr "偵錯"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
-msgstr ""
+msgstr "新增描述語言..."
 
 #: MainFrame.resx, addTranslatedTextsMenu.Text
 msgid "Add Translated Texts..."
-msgstr ""
+msgstr "新增翻譯的文字..."
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
-msgstr ""
+msgstr "合併符號.xml..."
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
-msgstr ""
+msgstr "翻譯說明的文字"
 
 #: MainFrame.resx, helpMenu.Text
 msgid "&Help"
-msgstr ""
+msgstr "說明"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
-msgstr ""
+msgstr "開啟"
 
 #: MainFrame.resx, openToolStripButton.ToolTipText
 msgid "Open (Ctrl+O)"
-msgstr ""
+msgstr "開啟 (Ctrl+O)"
 
 #: MainFrame.resx, saveToolStripButton.Text
 #: MiscText.resx, CrashSave
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: MainFrame.resx, saveToolStripButton.ToolTipText
 msgid "Save (Ctrl+S)"
-msgstr ""
+msgstr "儲存 (Ctrl+S)"
 
 #: MainFrame.resx, undoToolStripButton.Text
 #: MiscText.resx, Undo
 msgid "Undo"
-msgstr ""
+msgstr "復原"
 
 #: MainFrame.resx, undoToolStripButton.ToolTipText
 msgid "Undo (Ctrl+Z)"
-msgstr ""
+msgstr "復原 (Ctrl+Z)"
 
 #: MainFrame.resx, redoToolStripButton.Text
 #: MiscText.resx, Redo
 msgid "Redo"
-msgstr ""
+msgstr "重複"
 
 #: MainFrame.resx, redoToolStripButton.ToolTipText
 msgid "Redo (Ctrl+Y)"
-msgstr ""
+msgstr "重複 (Ctrl+Y)"
 
 #: MainFrame.resx, deleteToolStripButton.Text
 msgid "Delete (Del)"
-msgstr ""
+msgstr "刪除 (Del)"
 
 #: MainFrame.resx, addControlToolStripButton.ToolTipText
 msgid "Add Control (Ctrl+A)"
-msgstr ""
+msgstr "新增檢查點 (Ctrl+A)"
 
 #: MainFrame.resx, descriptionsToolStripMenuItem.Text
 msgid "Add Descriptions"
-msgstr ""
+msgstr "新增檢查點說明"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
-msgstr ""
+msgstr "在檢查點地圖更換"
 
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
-msgstr ""
+msgstr "標記路線至地圖更換"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
-msgstr ""
+msgstr "增加特定項目"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
-msgstr ""
+msgstr "增加轉彎處 (Ctrl+B)"
 
 #: MainFrame.resx, addGapToolStripButton.Text
 msgid "toolStripButton1"
-msgstr ""
+msgstr "工具列按鈕1"
 
 #: MainFrame.resx, addGapToolStripButton.ToolTipText
 msgid "Add Gap (Ctrl+G)"
-msgstr ""
+msgstr "新增間隔 (Ctrl+G)"
 
 #: MainFrame.resx, zoomAmountLabel.Text
 msgid "Zoom: 100%"
-msgstr ""
+msgstr "縮放: 100%"
 
 #: MainFrame.resx, locationDisplay.Text
 msgid "X:-999.99 Y:-999.99"
-msgstr ""
+msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
-msgstr ""
+msgstr "IOF XML  2.0.3版本|*.xml|IOF XML 3.0版本|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
-msgstr ""
+msgstr "建立 XML 交換檔案"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
-msgstr ""
+msgstr "圖片圖檔|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, saveGpxFileDialog.Filter
 msgid "GPX file|*.gpx"
-msgstr ""
+msgstr "GPX檔案|*.gpx"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
 msgid "Purple Pen"
-msgstr ""
+msgstr "Purple Pen"
 
 #: MiscText.resx, CtrlZ
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: MiscText.resx, CtrlY
 msgid "Ctrl+Y"
-msgstr ""
+msgstr "Ctrl+Y"
 
 #: MiscText.resx, Esc
 msgid "Esc"
-msgstr ""
+msgstr "Esc 鍵"
 
 #: MiscText.resx, NoSymbol
 msgid "No symbol"
-msgstr ""
+msgstr "無符號"
 
 #: MiscText.resx, AllControls
 msgid "All controls"
-msgstr ""
+msgstr "所有檢查點"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
-msgstr ""
+msgstr "無法載入 '{0}' 由於下列原因:"
 
 #: MiscText.resx, CannotSaveFile
 msgid "Cannot save '{0}' for the following reason:"
-msgstr ""
+msgstr "無法儲存 '{0}' 由於下列原因:"
 
 #: MiscText.resx, CannotLoadMapFile
 msgid "Cannot load map file '{0}' for the following reason:"
-msgstr ""
+msgstr "無法載入地圖檔案 '{0}' 由於下列原因:"
 
 #: MiscText.resx, CannotReadImageFile
 msgid "Cannot read image file '{0}'."
-msgstr ""
+msgstr "無法讀取地圖檔案 '{0}'."
 
 #: MiscText.resx, CannotPrint
 msgid "Cannot print '{0}' for the following reason:"
-msgstr ""
+msgstr "無法列印 '{0}' 由於下列原因:"
 
 #: MiscText.resx, CannotCreateFile
 msgid "Cannot create '{0}' for the following reason:"
-msgstr ""
+msgstr "無法建立 '{0}' 由於下列原因:"
 
 #: MiscText.resx, CannotCreateDirectory
 msgid "Cannot create folder '{0}' for the following reason:"
-msgstr ""
+msgstr "無法建立資料夾 '{0}' 由於下列原因:"
 
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr ""
+msgstr "無法讀取地圖由於下列原因: '{0}' 採用優化/修復並且在 OCAD再儲存可能修復的問題。"
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
-msgstr ""
+msgstr "無法建立OCAD 檔案由於下列原因:"
 
 #: MiscText.resx, SaveChanges
 msgid "Do you want to save the changes you made to '{0}'?"
-msgstr ""
+msgstr "你想要儲存你在 '{0}'所做的變更?"
 
 #: MiscText.resx, FileAlreadyExists
 msgid "File '{0}' already exists in the specified folder. Click "
 "the \"Back\" button and choose a new folder or a new event "
 "title."
-msgstr ""
+msgstr "檔案'{0}' 已經存在特定的資料夾. 點擊 \"上一步\"  並且選擇新的資料夾或新的賽事標題."
 
 #: MiscText.resx, CodeInUse
 msgid "The control code '{0}' is already used by another control."
-msgstr ""
+msgstr "檢查點編號 '{0}' 已經使用在其他檢查點上."
 
 #: MiscText.resx, BadScore
 msgid "The points for a control must be an integer 1-999."
-msgstr ""
+msgstr "檢查點的積分值必須是1-999之間的整數."
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
-msgstr ""
+msgstr "賽程的爬高必須是 0-9999之間的數字, 或是空白."
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
-msgstr ""
+msgstr "賽程的承載量必須是 0-999999之間的整數, 或是空白."
 
 #: MiscText.resx, CancelOperationWithShortcut
 msgid "Ca&ncel Operation"
-msgstr ""
+msgstr "取消操作"
 
 #: MiscText.resx, CancelOperation
 msgid "Cancel Operation"
-msgstr ""
+msgstr "取消操作"
 
 #: MiscText.resx, EnterScore
 msgid "Enter new score"
-msgstr ""
+msgstr "輸入新的分數"
 
 #: MiscText.resx, EnterCode
 msgid "Enter new code"
-msgstr ""
+msgstr "輸入新的編號"
 
 #: MiscText.resx, EnterDimensions
 msgid "Enter feature size\n"
 "Use / for height on a slope\n"
 "Use | for two features"
-msgstr ""
+msgstr "輸入特徵大小\n"
+"使用 / 斜坡上的高度專用\n"
+"使用 | 兩個特徵專用"
 
 #: MiscText.resx, EnterEventTitle
 msgid "Enter new event title\n"
 "Use | to separate lines\n"
 "(affects all courses)"
-msgstr ""
+msgstr "輸入新的賽事標題\n"
+"使用 | 分隔線\n"
+"(影響所有的賽程)"
 
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "輸入新的次要標題\n"
+"使用 | 分隔線"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
-msgstr ""
+msgstr "輸入新的賽程名稱"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr ""
+msgstr "以公尺為單位輸入新的爬高"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
 "(affects all courses)"
-msgstr ""
+msgstr "輸入新的符號含義\n"
+"(影響所有的賽程)"
 
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "輸入新的文字\n"
+"使用 | 分隔線"
 
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
 "to delete these controls from the control collection?"
-msgstr ""
+msgstr "檢查點 {0} 不再使用在任何賽程中. 您是否要從檢查點列表中刪除這些檢查點?"
 
 #: MiscText.resx, DeleteControlFromControlsCollection
 msgid "Control {0} is no longer used by any course. Do you want "
 "to delete this control from the control collection?"
-msgstr ""
+msgstr "檢查點 {0} 不再使用在任何賽程中. 您是否要從檢查點列表中刪除這些檢查點?"
 
 #: MiscText.resx, DeleteControlFromAllControls
 msgid "Control {0} is currently used by the following courses: "
 "{1}. Do you want to delete this control anyway?"
-msgstr ""
+msgstr "檢查點{0} 目前使用在下列賽程中 {1}. 您是否一定要刪除這個檢查點?"
 
 #: MiscText.resx, CodeBadLength
 msgid "A control code must be one, two, or three letters or digits."
-msgstr ""
+msgstr "檢查點編號必須是一、二、三個字母或數字。"
 
 #: MiscText.resx, CodeContainsSpace
 msgid "A control code must not contain a space."
-msgstr ""
+msgstr "檢查點編號必須不包含空格."
 
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
-msgstr ""
+msgstr "檢查點編號不應從零開始."
 
 #: MiscText.resx, CodeCouldBeUpsideDown
 msgid "A control code should not look like another number when "
 "upside-down."
-msgstr ""
+msgstr "檢查點編號在上下顛倒時不應該看起來像另一個數字。"
 
 #: MiscText.resx, DuplicateCode
 msgid "The code \"{0}\" is used more than once."
-msgstr ""
+msgstr "編號 \"{0}\"被使用超過1次."
 
 #: MiscText.resx, BadScale
 msgid "The print scale must be a number between 100 and 100,000."
-msgstr ""
+msgstr "列印比例必須是100至100,000之間的數字."
 
 #: MiscText.resx, CoursePropertiesTitle
 msgid "Course Properties"
-msgstr ""
+msgstr "賽程內容設定"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
 #: PrinterMargins.resx, radioButtonLandscape.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
-msgstr ""
+msgstr "横向"
 
 #: MiscText.resx, Portrait
 #: PrinterMargins.resx, radioButtonPortrait.Text
 msgid "Portrait"
-msgstr ""
+msgstr "直向"
 
 #: MiscText.resx, PageTooSmall
 msgid "The page size is too small for any descriptions to be "
 "printed."
-msgstr ""
+msgstr "紙張頁面太小，無法列印任何檢查點說明。"
 
 #: MiscText.resx, VersionLabel
 msgid "Version {0}"
-msgstr ""
+msgstr "{0} 版本"
 
 #: MiscText.resx, NewerVersionAvailable
 msgid "Version {0} of Purple Pen is now available for download. "
 "(You are currently running version {1}.)\n"
 "\n"
 "Would you like to download and install the latest version?"
-msgstr ""
+msgstr "Purple Pen{0} 版本現在可以下載. (您目前是使用 {1}版本.)\n"
+"\n"
+"您想要下載並安裝最新版本嗎?"
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
-msgstr ""
+msgstr "協助檔案 '{0}' 不能開啟."
 
 #: MiscText.resx, Zoom
 msgid "Zoom"
-msgstr ""
+msgstr "縮放"
 
 #: MiscText.resx, MissingMapFile
 msgid "The map file \"{0}\" could not be found.\n"
@@ -2375,429 +2426,441 @@ msgid "The map file \"{0}\" could not be found.\n"
 "\n"
 "After pressing OK, try to find a copy of the map file on "
 "your computer."
-msgstr ""
+msgstr "地圖檔案 \"{0}\"找不到.\n"
+"\n"
+"最有可能的是，地圖檔案已經被移動或刪除，或者Purple Pen檔案已被移動（可能移動到另一台電腦）。 "
+"每次載入Purple Pen賽事檔案時地圖檔案都必須被顯示。 如果您將Purple "
+"Pen賽事檔案發送給另一個人，請確保該人也擁有地圖檔案的複製檔。\n"
+"\n"
+"按下OK鍵之後, 試著在你的電腦找尋地圖檔案的複製檔."
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
-msgstr ""
+msgstr "使用在此賽程的所有檢查點"
 
 #: MiscText.resx, NextButtonText
 #: NewEventWizard.resx, nextButton.Text
 msgid "&Next >"
-msgstr ""
+msgstr "下一步 >"
 
 #: MiscText.resx, Control_Code
 msgid "Control {0}"
-msgstr ""
+msgstr "檢查點 {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr ""
+msgstr "終點"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: MiscText.resx, MandCrossing_Long
 msgid "Mandatory crossing point"
-msgstr ""
+msgstr "強制穿越點"
 
 #: MiscText.resx, MandCrossing_Medium
 msgid "Crossing"
-msgstr ""
+msgstr "穿越點"
 
 #: MiscText.resx, MandCrossing_Short
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: MiscText.resx, Margins_All
 msgid "All: {0}"
-msgstr ""
+msgstr "全部：{0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr ""
+msgstr "左：{0}，右：{1}，上：{2}，下：{3}"
 
 #: MiscText.resx, Start
 msgid "Start"
-msgstr ""
+msgstr "起點"
 
 #: MiscText.resx, Start_Short
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
-msgstr ""
+msgstr "Alpha {0}"
 
 #: MiscText.resx, Version_Beta
 msgid "Beta {0}"
-msgstr ""
+msgstr "Beta {0}"
 
 #: MiscText.resx, Version_RC
 msgid "RC {0}"
-msgstr ""
+msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
-msgstr ""
+msgstr "複數"
 
 #: MiscText.resx, Singular
 msgid "singular"
-msgstr ""
+msgstr "單數"
 
 #: MiscText.resx, RequireStar
 msgid "The customized text requires a \"*\" to indicate where the "
 "object being modified is placed."
-msgstr ""
+msgstr "自行定義的文字需要一個 \"*\" 指示正在修改的物件的位置。"
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr ""
+msgstr "定向越野運動的賽程規劃"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
 "pressing OK, drag the mouse to place the text in the "
 "desired location."
-msgstr ""
+msgstr "輸入您要設置在地圖上的文字。按下確認鍵後，移動滑鼠游標將文字放置到您要的位置。"
 
 #: MiscText.resx, AddTextSpecialTitle
 msgid "Add Text"
-msgstr ""
+msgstr "新增文字"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr ""
+msgstr "輸入新的文字"
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
 "will now reload the map."
-msgstr ""
+msgstr "其他程式已經變更此地圖檔案\"{0}\". Purple Pen現在將重新載入此地圖."
 
 #: MiscText.resx, ChangeDescriptionLanguage
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr ""
+msgstr "目前的賽事在 {0}有文字式地檢查點說明.您想要變更檢查點說明的語言至 {1}嗎?"
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr ""
+msgstr "開啟 \"{0}\""
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr ""
+msgstr "在載入建立的OCAD 檔案之前 Purple Pen 必須關閉."
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
-msgstr ""
+msgstr "沒有選取要列印的賽程."
 
 #: MiscText.resx, TranslatedHelpWebSite
 msgid "*** If there exists a web site in the translated language "
 "that contains documentation for Purple Pen, enter the URL "
 "(including http) as the translation of this item. "
 "Otherwise leave it alone."
-msgstr ""
+msgstr "*** 如果有包含 Purple Pen 文件檔案的翻譯語言網站，請輸入 URL（包括 http）作為此項目的翻譯。 "
+"否則就不用理會。"
 
 #: MiscText.resx, MapExchange_Long
 msgid "Map exchange"
-msgstr ""
+msgstr "地圖更換"
 
 #: MiscText.resx, MapExchange_Medium
 msgid "Exchange"
-msgstr ""
+msgstr "更換"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr ""
+msgstr "MX"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
-msgstr ""
+msgstr "部分 {0}"
 
 #: MiscText.resx, AllParts
 msgid "All Parts"
-msgstr ""
+msgstr "整個"
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
-msgstr ""
+msgstr "{0}的部分 (在 {1}中)"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
-msgstr ""
+msgstr "聯絡電子郵件"
 
 #: MiscText.resx, CrashIntro
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "發生錯誤了。 為了幫助我們解決問題，請輸入您的電子郵件和其他資訊，並向我們發送錯誤報告。"
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "請告訴我們您在程式中做了什麼，以幫助解決問題"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
-msgstr ""
+msgstr "發送報告"
 
 #: MiscText.resx, CannotAddDescriptionsToAllParts
 msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "如果顯示“整個”，檢查點說明可能無法通過更換地圖增加到賽程中。 "
+"你要增加檢查點說明的，切換到部分，然後再次選擇“增加檢查點說明”。"
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe 找不到"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr ""
+msgstr "Pdfium PDF 轉換器無法成功讀取PDF檔案"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "無法從檔案 '{0}'讀取 PDF 轉換的結果"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "由於下列原因無法建立 PDF："
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "使用者自行定義"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "來自PDF的地圖大小"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "被使用者取消"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "建立 {0}中..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr ""
+msgstr "列印頁面 {0} (在 {1}中的)"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "地圖檔案 \"{0}\" 已經刪除. 請嘗試恢復地圖檔案, 然後按下 \"確定\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr ""
+msgstr "您電腦上的 .NET framework似乎未正確安裝。 請至 http://microsoft.com/net "
+"為您的 Windows 作業系統安裝最新版本的 .NET framework。"
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "選擇顏色..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "自訂顏色"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "深藍色"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "綠色"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "淡藍色"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "紅色"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "黃色"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "設定線條的外觀。 按確定後，移動滑鼠游標在所需位置拖曳繪製線段。"
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "新增線段"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "設定矩形的外觀。按下確定之後，移動滑鼠游標設定矩形至您要的位置。"
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "新增矩形"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
-msgstr ""
+msgstr "變更線段或矩形的外觀"
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "地圖檔案必須是使用GPX檔案的OCAD檔案。"
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "OCAD檔案必須有GPX檔案定義的座標系統。"
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "OCAD檔案必須有GPX檔案定義的真實世界座標。"
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "無法重新投影點； OCAD 地圖中的坐標系統或真實世界坐標是錯誤的。"
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "OCAD檔案採用不是Purple Pen支援的座標系統。"
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "賽程的長度必須是0.1至99.9的數字，或是空白，將自動計算長度。"
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "以公里為單位輸入長度，或留空白將自動計算"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "已完成列印“{0}”。按下確定開始列印“{1}”。"
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "所有的分散變化"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "適用於每支隊伍有 {0} 名參賽者的接力賽。"
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "賽環的中央檢查點將被到訪 {0} 次。通過賽環有 {1} 條可能的路徑。"
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "在賽程中，分叉或賽環起始的檢查點不能拖曵到新的位置。"
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr ""
+msgstr "此賽程中分散變化的總數量太多。不同分散變化的數量限制為 {0}。"
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "無法新增分散變化。"
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "此檢查點中已存在分散變化。"
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "必須選擇一個檢查點或賽段來新增一個分散變化。"
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "不能將分散變化新增到終點。"
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "無法將分散變化新增到“所有檢查點”檢視畫面中。"
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "不能將分散變化新增到積分賽中。"
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "不能將分散變化新增到最後一個檢查點。要先新增一個終點。"
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr ""
+msgstr "“{0}”不是分支“{1}”的有效賽段編號"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "賽段 {0} 應分配至分支 {1} 之一"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr ""
+msgstr "賽段 {0} 同時被分配給分支“{1}”和分支“{2}”"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
-msgstr ""
+msgstr "由於下列原因無法讀取地圖：“{0}”在最新版本的 OpenOrienteering Mapper "
+"中開啟並重新儲存地圖，可能會解決問題。"
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr ""
+msgstr "TS"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "底層 OCAD 地圖具有可見的背景圖檔案。在 OCAD 8 及以下版本中，由於 OCAD "
+"中的限制，這些背景圖可能不會出現。"
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "由於 OCAD 檔案格式（在 OCAD 10 及以下版本中）的限制，圖像物件將出現在轉出的 OCAD "
+"檔案中的賽程和白色區域下方。請檢查 OCAD 檔案以確保您的圖像按要求顯示。"
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "由於下列原因無法建立圖像檔案："
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "建立 PDF"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF檔案|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
-msgstr ""
+msgstr "賽段 {0} 永遠不會到達分支“{1}”：它被分配到分叉中的不同路線。"
 
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
@@ -2810,7 +2873,7 @@ msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
-msgstr ""
+msgstr "不要再警告此賽事缺少字型"
 
 #: MissingFonts.resx, labelWarning.Text
 msgid "Map file \"{0}\" uses fonts that are not installed on your "
@@ -2821,11 +2884,14 @@ msgid "Map file \"{0}\" uses fonts that are not installed on your "
 "To fix this problem, find and install the fonts listed "
 "below with the Windows control panel, then start Purple "
 "Pen again.\n"
-msgstr ""
+msgstr "地圖檔案“{0}”使用的字型未安裝在您的電腦上。使用這些字型的文字將使用預設字型顯示和列印，這可能會導致文字與地圖設計者"
+"預期的不同。 \n"
+"\n"
+"要解決此問題，請使用 Windows 控制台尋找並安裝下面列出的字型，然後再次啟動 Purple Pen。\n"
 
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
-msgstr ""
+msgstr "缺少字型"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -2837,26 +2903,30 @@ msgid "When using an image file as a map, you must specify the "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "使用圖像檔案作為地圖時，您必須指定圖像的解析度和地圖比例尺。 \n"
+"\n"
+"圖像的解析度表示在紙質地圖上每英寸圖像中有多少像素或點；通常稱為每英寸點數或“dpi”。\n"
+"\n"
+"地圖的比例尺表示紙質地圖與真實世界的關係。\n"
 
 #: NewEventBitmapScale.resx, resolutionLabel.Text
 msgid "Image resolution:"
-msgstr ""
+msgstr "圖像解析度："
 
 #: NewEventBitmapScale.resx, oneToPrefixLabel.Text
 #: NewEventPrintScale.resx, oneToPrefixLabel1.Text
 #: NewEventPrintScale.resx, oneToPrefixLabel2.Text
 msgid "1:"
-msgstr ""
+msgstr "1："
 
 #: NewEventBitmapScale.resx, mapScaleLabel.Text
 #: NewEventPrintScale.resx, mapScaleLabel.Text
 msgid "Map scale:"
-msgstr ""
+msgstr "地圖比例尺："
 
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
-msgstr ""
+msgstr "點陣圖解析度"
 
 #: NewEventBitmapScale.resx, pdfScaleLabel.Text
 msgid "When using an PDF file as a map, you must specify the map "
@@ -2864,50 +2934,52 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "使用 PDF 檔案作為地圖時，您必須指定地圖比例尺。 \n"
+"\n"
+"地圖的比例尺表示紙質地圖與真實世界的關係。\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
-msgstr ""
+msgstr "您想將賽程檔案儲存在哪個資料夾（目錄）中？"
 
 #: NewEventDirectory.resx, useMapDirectory.Text
 msgid "In the same folder as the map file."
-msgstr ""
+msgstr "在與地圖檔案相同的資料夾中。"
 
 #: NewEventDirectory.resx, useOtherFolder.Text
 msgid "In another folder I choose."
-msgstr ""
+msgstr "在我選擇的另一個資料夾中。"
 
 #: NewEventDirectory.resx, chooseFolder.Text
 msgid "Choose Folder..."
-msgstr ""
+msgstr "選擇資料夾..."
 
 #: NewEventDirectory.resx, folderBrowserDialog.Description
 msgid "Select the folder for your event file"
-msgstr ""
+msgstr "為您的賽事檔案選擇資料夾"
 
 #: NewEventDirectory.resx, directoryDisplay.Text
 msgid "Selected Folder"
-msgstr ""
+msgstr "選取的資料夾"
 
 #: NewEventDirectory.resx, labelTitle.Text
 msgid "Event File Location"
-msgstr ""
+msgstr "賽事檔案位置"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
-msgstr ""
+msgstr "點擊 \"完成\"以建立新的賽事. 您的賽事檔案將儲存為:"
 
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr ""
+msgstr "您的賽事建立之後, 選擇 \"新增賽程...\"從賽程選單中建立一組或多組賽程."
 
 #: NewEventFinal.resx, labelTitle.Text
 msgid "Create Event"
-msgstr ""
+msgstr "建立賽事"
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
@@ -2915,85 +2987,91 @@ msgid "In order to design your courses, you must select the map "
 "OpenOrienteering Mapper file (although PDFs and image "
 "files like JPEGs can be used instead). Click the "
 "\"Choose...\" button to select a map file."
-msgstr ""
+msgstr "為了設計您的賽程, 您必須選擇您將使用的地圖檔案. 通常這是一個 OCAD 或 OpenOrienteering "
+"Mapper 檔案（儘管可以使用 PDF 和圖像檔案如 JPEG替代）。 點擊“選擇...”按鈕以選取地圖檔案。"
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
-msgstr ""
+msgstr "已選取的地圖檔案"
 
 #: NewEventMapFile.resx, infoMessage.Text
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr ""
+msgstr "地圖檔案已成功載入。 如果您將 Purple Pen 檔案傳送給其他人，他們也必須有地圖檔案。"
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr ""
+msgstr "新建立的檢查點會自動編號。請選擇要採用的起始檢查點編號。"
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
 "Numbering)"
-msgstr ""
+msgstr "（此設定可以稍後使用 賽事/自動編號 變更）"
 
 #: NewEventNumbering.resx, labelTitle.Text
 msgid "Control Numbering"
-msgstr ""
+msgstr "檢查點進行編號"
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
 "most cases, you will want to use the existing scale of the "
 "map.\n"
 "\n"
-msgstr ""
+msgstr "您將使用什麼比例來列印賽程？在大多數情況下，您會希望使用地圖現有的比例。\n"
+"\n"
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
 msgid "Default &printing scale:"
-msgstr ""
+msgstr "預設列印比例："
 
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr ""
+msgstr "（您稍後可以透過選擇 賽程/選項設定 來變更任何賽程的列印比例。）"
 
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "（稍後可以使用 賽事/IOF 標準 變更這些設定）"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
+msgstr "IOF標準"
+
+#: NewEventStandards.resx, radioButtonMapSpr2019.Text
+msgid "ISSprOM 2019"
 msgstr ""
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
-msgstr ""
+msgstr "ISOM 2017"
 
 #: NewEventStandards.resx, radioButtonMap2000.Text
 msgid "ISOM 2000 / ISSOM 2007"
-msgstr ""
+msgstr "ISOM 2000 / ISOM 2007"
 
 #: NewEventStandards.resx, groupBoxMapStandard.Text
 msgid "IOF Map Standard"
-msgstr ""
+msgstr "IOF 地圖繪製規範"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
 msgid "Descriptions 2018"
-msgstr ""
+msgstr "檢查點說明規範 2018"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
-msgstr ""
+msgstr "檢查點說明規範 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "IOF 檢查點說明規範"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
 "to follow?"
-msgstr ""
+msgstr "您要Purple Pen遵循哪一個版本的 IOF 規範?"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3003,15 +3081,18 @@ msgid "The event title will be displayed on the first line of "
 "To fit on the description sheet, it should be less than 25 "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
-msgstr ""
+msgstr "賽事標題將顯示在每個檢查點說明表的第一列。它也用在硬碟儲存賽事的檔案名稱上。\n"
+"\n"
+"為了適合檢查點說明表，它的長度應少於 25 個字母。好的賽事標題的範例是“台灣錦標賽第 1 天” 或 “青年公園 "
+"20210410”。"
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
-msgstr ""
+msgstr "賽事標題："
 
 #: NewEventWizard.resx, backButton.Text
 msgid "< &Back"
-msgstr ""
+msgstr "< 上一步"
 
 #: NonPrintableObjects.resx, labelWarning.Text
 msgid "Map file \"{0}\" contains objects or symbols that are not "
@@ -3022,439 +3103,442 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "For printing competition maps, it is suggested that "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
-msgstr ""
+msgstr "地圖檔案“{0}”包含 Purple Pen "
+"不完全支援的物件或符號，可能無法正確列印。下面列出可能無法正確列印的物件。\n"
+"\n"
+"對於列印比賽地圖，建議將賽程轉出到 OCAD 檔案（使用 檔案/建立 OCAD 檔案...）並從 OCAD 列印地圖。\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
-msgstr ""
+msgstr "繼續"
 
 #: NonPrintableObjects.resx, $this.Text
 msgid "Map File Cannot Be Printed Accurately"
-msgstr ""
+msgstr "地圖檔案無法準確列印"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "操作模式進行中"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
 "will be replaced."
-msgstr ""
+msgstr "下列檔案已經存在。如果您要繼續，它們將會被取代。"
 
 #: OverwritingOcadFilesDialog.resx, buttonOK.Text
 msgid "Replace"
-msgstr ""
+msgstr "取代"
 
 #: OverwritingOcadFilesDialog.resx, $this.Text
 msgid "Confirm Replace Files"
-msgstr ""
+msgstr "確認取代檔案"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr ""
+msgstr "PDFium PDF 轉換器正在讀取您的 PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "PDF讀取失敗。錯誤訊息如下所示。"
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "讀取PDF中"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
 #: PrintPunches.resx, printButton.Text
 msgid "Print"
-msgstr ""
+msgstr "列印"
 
 #: PrintCourses.resx, printerChange.Text
 #: PrintDescriptions.resx, printerChange.Text
 #: PrintPunches.resx, printerChange.Text
 msgid "Change Printer..."
-msgstr ""
+msgstr "變更印表機..."
 
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
 msgid "Printer Name"
-msgstr ""
+msgstr "印表機名稱"
 
 #: PrintCourses.resx, printerLabel.Text
 #: PrintDescriptions.resx, printerLabel.Text
 #: PrintPunches.resx, printerLabel.Text
 msgid "Printer:"
-msgstr ""
+msgstr "印表機："
 
 #: PrintCourses.resx, previewButton.Text
 #: PrintDescriptions.resx, previewButton.Text
 #: PrintPunches.resx, previewButton.Text
 msgid "Preview..."
-msgstr ""
+msgstr "預覽..."
 
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
-msgstr ""
+msgstr "每一個賽程的列印數量:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
+msgstr "在每一個賽程或部分之後暫停列印"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
 #: PrintPunches.resx, copiesGroupBox.Text
 msgid "Copies"
-msgstr ""
+msgstr "列印數量"
 
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
+msgstr "OCAD 相容"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
-msgstr ""
+msgstr "列印賽程"
 
 #: PrintDescriptions.resx, marginChange.Text
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
-msgstr ""
+msgstr "變更邊距"
 
 #: PrintDescriptions.resx, paperSize.Text
 #: PrintPunches.resx, paperSize.Text
 msgid "Tabloid (11\"x17\")"
-msgstr ""
+msgstr "Tabloid (279mm x 432mm)"
 
 #: PrintDescriptions.resx, paperSizeLabel.Text
 #: PrintPunches.resx, paperSizeLabel.Text
 msgid "Paper Size:"
-msgstr ""
+msgstr "紙張大小："
 
 #: PrintDescriptions.resx, margins.Text
 #: PrintPunches.resx, margins.Text
 msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr ""
+msgstr "上: 0.55\", 下: 0.55\", 左: 0.55\", 右: 0.55\""
 
 #: PrintDescriptions.resx, marginsLabel.Text
 #: PrintPunches.resx, marginsLabel.Text
 msgid "Margins:"
-msgstr ""
+msgstr "邊距:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
 msgid "Orientation:"
-msgstr ""
+msgstr "方向："
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr ""
+msgstr "賽程預設"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
-msgstr ""
+msgstr "符號與文字"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr ""
+msgstr "說明類型:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
-msgstr ""
+msgstr "線條尺寸:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr ""
+msgstr "每一個賽程的說明"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
-msgstr ""
+msgstr "每一個賽程列印一份"
 
 #: PrintDescriptions.resx, copiesCombo.Items1
 msgid "one page of each course"
-msgstr ""
+msgstr "每一個賽程列印一頁"
 
 #: PrintDescriptions.resx, copiesCombo.Items2
 msgid "multiple pages of each course"
-msgstr ""
+msgstr "每一個賽程列印多頁"
 
 #: PrintDescriptions.resx, whatToPrintLabel.Text
 msgid "Print:"
-msgstr ""
+msgstr "列印："
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
-msgstr ""
+msgstr "列印說明"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "高度："
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "紙張尺寸 ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "方向"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "左："
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "上："
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "右："
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "下："
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "邊距 ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "頁面設定"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr ""
+msgstr "核對卡版面..."
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
-msgstr ""
+msgstr "打卡格尺寸:"
 
 #: PrintPunches.resx, descriptionsLabel.Text
 msgid "Copies:"
-msgstr ""
+msgstr "列印數量："
 
 #: PrintPunches.resx, $this.Text
 msgid "Print Punch Cards"
-msgstr ""
+msgstr "列印核對卡"
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr ""
+msgstr "格子順序"
 
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
-msgstr ""
+msgstr "欄："
 
 #: PunchcardLayoutDialog.resx, rowsLabel.Text
 msgid "Rows:"
-msgstr ""
+msgstr "列："
 
 #: PunchcardLayoutDialog.resx, sizeGroupBox.Text
 msgid "Size"
-msgstr ""
+msgstr "尺寸"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr ""
+msgstr "打孔空格版面"
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr ""
+msgstr "點擊左側列表中的檢查點編號，並在右側設定打孔圖案。 紅色編號表示沒有定義打孔圖案的檢查點。"
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
-msgstr ""
+msgstr "打孔圖案"
 
 #: ReportForm.resx, printButton.Text
 #: TeamVariationsForm.resx, buttonPrint.Text
 msgid "Print..."
-msgstr ""
+msgstr "列印..."
 
 #: ReportForm.resx, previewButton.Text
 #: TeamVariationsForm.resx, buttonPrintPreview.Text
 msgid "Print Preview..."
-msgstr ""
+msgstr "預覽列印.."
 
 #: ReportForm.resx, okButton.Text
 #: TeamVariationsForm.resx, buttonClose.Text
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: ReportText.resx, ColumnHeader_Climb
 msgid "Climb"
-msgstr ""
+msgstr "爬高"
 
 #: ReportText.resx, ColumnHeader_Code
 msgid "Code"
-msgstr ""
+msgstr "編號"
 
 #: ReportText.resx, ColumnHeader_Column
 msgid "Column"
-msgstr ""
+msgstr "欄"
 
 #: ReportText.resx, ColumnHeader_Control
 msgid "Control"
-msgstr ""
+msgstr "檢查點"
 
 #: ReportText.resx, ColumnHeader_ControlCodes
 msgid "Control codes"
-msgstr ""
+msgstr "檢查點編號"
 
 #: ReportText.resx, ColumnHeader_Controls
 msgid "Controls"
-msgstr ""
+msgstr "檢查點"
 
 #: ReportText.resx, ColumnHeader_Course
 msgid "Course"
-msgstr ""
+msgstr "賽程"
 
 #: ReportText.resx, ColumnHeader_Distance
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 #: ReportText.resx, ColumnHeader_Item
 msgid "Item"
-msgstr ""
+msgstr "項目"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
-msgstr ""
+msgstr "賽段"
 
 #: ReportText.resx, ColumnHeader_Length
 msgid "Length"
-msgstr ""
+msgstr "長度"
 
 #: ReportText.resx, ColumnHeader_Load
 msgid "Load"
-msgstr ""
+msgstr "載入"
 
 #: ReportText.resx, ColumnHeader_Location
 msgid "Location"
-msgstr ""
+msgstr "位置"
 
 #: ReportText.resx, ColumnHeader_NumberOfCourses
 msgid "# Courses"
-msgstr ""
+msgstr "# 賽程"
 
 #: ReportText.resx, ColumnHeader_Reason
 msgid "Reason"
-msgstr ""
+msgstr "原因"
 
 #: ReportText.resx, ColumnHeader_SameSymbol
 msgid "Same symbol?"
-msgstr ""
+msgstr "相同的符號?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "到訪次數"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr ""
+msgstr "{0}的賽程摘要"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr ""
+msgstr "{0}的檢查點對照"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "賽段往兩個方向跑"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
-msgstr ""
+msgstr "緊靠的檢查點"
 
 #: ReportText.resx, EventAudit_CloseTogetherExplanation
 msgid "The following table shows all control pairs that are "
 "within {0} meters of each other. The same symbol column "
 "shows whether the two controls have the same primary "
 "symbol (column D)."
-msgstr ""
+msgstr "下表顯示了彼此相距在 {0} 公尺內的所有檢查點。 相同的符號欄顯示兩個檢查點是否具有相同的主要符號（D欄）。"
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
-msgstr ""
+msgstr "缺少說明表格"
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
-msgstr ""
+msgstr "正規賽程應註明爬高"
 
 #: ReportText.resx, EventAudit_MissingD
 msgid "All controls must have a main feature in column D"
-msgstr ""
+msgstr "所有檢查點都必須在 D欄中顯示主要特徵"
 
 #: ReportText.resx, EventAudit_MissingEBetween
 msgid "When \"between\" is in column G, two features must be shown "
 "in columns D and E"
-msgstr ""
+msgstr "當“兩者之間”出現在 G 欄中時，兩個特徵必須顯示在 D欄 與 E 欄中"
 
 #: ReportText.resx, EventAudit_MissingEJunction
 msgid "When \"junction\" or \"crossing\" is in column F, two features "
 "must be shown in columns D and E"
-msgstr ""
+msgstr "當“交會處”或“連接處”出現在 F 欄中時，兩個特徵必須顯示在 D 欄與 E 欄中"
 
 #: ReportText.resx, EventAudit_MissingFinish
 msgid "Regular courses should have a finish circle"
-msgstr ""
+msgstr "正規賽程應該有一個終點"
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr ""
+msgstr "賽程中缺少的項目"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr ""
+msgstr "賽程應該有預期的選手負荷量"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
-msgstr ""
+msgstr "未定義打孔圖案"
 
 #: ReportText.resx, EventAudit_MissingPunchPatterns
 msgid "Missing Punch Patterns"
-msgstr ""
+msgstr "缺少打孔圖案"
 
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
 "controls"
-msgstr ""
+msgstr "積分賽應該為所有檢查點設置分數或者沒有此檢查點"
 
 #: ReportText.resx, EventAudit_MissingScores
 msgid "Missing Scores"
-msgstr ""
+msgstr "缺少積分值"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
-msgstr ""
+msgstr "正規賽程應該有一個起點三角形圖例"
 
 #: ReportText.resx, EventAudit_MissingStartScore
 msgid "Score courses should have a start triangle"
-msgstr ""
+msgstr "積分賽應該有一個起點三角形圖例"
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
-msgstr ""
+msgstr "沒有發現問題。"
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "賽程“{0}”中檢查點“{1}”連續出現兩次。"
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
-msgstr ""
+msgstr "重複的檢查點"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "積分賽程“{0}”中檢查點“{1}出現兩次”。 "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
-msgstr ""
+msgstr "{0} 的賽事檢核"
 
 #: ReportText.resx, EventAudit_UnusedControls
 #: UnusedControls.resx, $this.Text
 msgid "Unused Controls"
-msgstr ""
+msgstr "未使用的檢查點"
 
 #: ReportText.resx, EventAudit_UnusedControlsExplanation
 msgid "The following controls are present in the All Controls "
@@ -3462,412 +3546,415 @@ msgid "The following controls are present in the All Controls "
 "use the \"Remove Unused Controls\" command on the \"Event\" "
 "menu. These controls will not be considered further in "
 "this report."
-msgstr ""
+msgstr "以下檢查點存在於所有檢查點集合中，但未使用在任何賽程中。要移除它們，請使用“賽事”選單上的“移除未使用的檢查點”指令。這"
+"些檢查點將不再出現於此報告中。"
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
-msgstr ""
+msgstr "平均"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr ""
+msgstr "{0} (檢查點{1}, {2}, {3} 公尺 爬高)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr ""
+msgstr "{0} (檢查點{1}, {2})"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
-msgstr ""
+msgstr "{0}的賽段長度報告"
 
 #: ReportText.resx, Load_ButterflyExists
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr ""
+msgstr "在同一賽程中會多次到訪某些檢查點。 第二次負荷量將分別計算對檢查點的每次到訪。"
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr ""
+msgstr "檢查點負荷量"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr ""
+msgstr "賽段負荷量"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr ""
+msgstr "有些賽程或所有的賽程沒有選手負荷量的設定. 下列的負荷量可能不正確或是因此原因而缺少. 要設定選手負荷量, 請在 "
+"\"賽程\"選單中點選  \" 選手負荷量 \" ."
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr ""
+msgstr "(下表只有顯示兩個以上之賽程使用的賽段)"
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr ""
+msgstr "{0}的選手負荷量摘要"
 
 #: ReportText.resx, Load_VariationsExist
 msgid "One or more courses has variations. Load numbers will be "
 "computed assuming that competitors are evenly distributed "
 "between forks."
-msgstr ""
+msgstr "一組或多組賽程有分散變化。 將以選手均勻分佈在分叉之間來計算負荷數量。"
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "(到訪{0}次)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
-msgstr ""
+msgstr "警告："
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "注意: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "警告：由於賽段的數量有指定，檢查點 {0} 的分叉將不會被採用。賽段 {1} 將採用分支{2}，而賽段 {3} "
+"將使用分支{4}。 "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "賽段 {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "接力隊伍還沒有定義. 選擇需要的隊伍數量與棒次，然後按下 \"分配分散變化\" 鍵。"
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "隊伍 {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "接力分配至 {0}"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
-msgstr ""
+msgstr "遠離檢查點"
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr ""
+msgstr "選手負荷量:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
-msgstr ""
+msgstr "使用中的檢查點:"
 
 #: SelectionDescriptionText.resx, ControlsNotInUse
 msgid "Controls not in use:"
-msgstr ""
+msgstr "沒有使用的檢查點:"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
-msgstr ""
+msgstr "檢查點"
 
 #: SelectionDescriptionText.resx, Control_Singular
 msgid "control"
-msgstr ""
+msgstr "檢查點"
 
 #: SelectionDescriptionText.resx, CourseList_AllCourses
 msgid "All courses"
-msgstr ""
+msgstr "所有賽程"
 
 #: SelectionDescriptionText.resx, CourseName
 msgid "Course \"{0}\""
-msgstr ""
+msgstr "賽程 \"{0}\""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr ""
+msgstr "自行定義符號說明"
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
-msgstr ""
+msgstr "整個賽段"
 
 #: SelectionDescriptionText.resx, FinishFunnel
 msgid "finish funnel"
-msgstr ""
+msgstr "終點通道"
 
 #: SelectionDescriptionText.resx, Finish_Plural
 msgid "finishes"
-msgstr ""
+msgstr "終點"
 
 #: SelectionDescriptionText.resx, Finish_Singular
 msgid "finish"
-msgstr ""
+msgstr "終點"
 
 #: SelectionDescriptionText.resx, Flagging
 msgid "Flagging:"
-msgstr ""
+msgstr "標註:"
 
 #: SelectionDescriptionText.resx, IntoControl
 msgid "into control"
-msgstr ""
+msgstr "進入檢查點"
 
 #: SelectionDescriptionText.resx, IntoFinishFunnel
 msgid "into finish funnel"
-msgstr ""
+msgstr "進入終點通道"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr ""
+msgstr "行高:"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
-msgstr ""
+msgstr "位置："
 
 #: SelectionDescriptionText.resx, MandCrossing_Plural
 msgid "mandatory crossing points"
-msgstr ""
+msgstr "強制穿越點"
 
 #: SelectionDescriptionText.resx, MandCrossing_Singular
 msgid "mandatory crossing point"
-msgstr ""
+msgstr "強制穿越點"
 
 #: SelectionDescriptionText.resx, None
 msgid "none"
-msgstr ""
+msgstr "空白"
 
 #: SelectionDescriptionText.resx, SpecialName_Forbidden
 msgid "Forbidden Route"
-msgstr ""
+msgstr "禁制路線"
 
 #: SelectionDescriptionText.resx, SpecialName_OOB
 msgid "Out-of-bounds Area"
-msgstr ""
+msgstr "禁制區域"
 
 #: SelectionDescriptionText.resx, Start_Plural
 msgid "starts"
-msgstr ""
+msgstr "起點"
 
 #: SelectionDescriptionText.resx, Start_Singular
 msgid "start"
-msgstr ""
+msgstr "起點"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr ""
+msgstr "文字說明:"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
-msgstr ""
+msgstr "文字列"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
-msgstr ""
+msgstr "在包含 {0} 的所有賽程，顯示在 {0} 上方"
 
 #: SelectionDescriptionText.resx, TextLine_AboveThisCourse
 msgid "Appears above {0}, in this course only"
-msgstr ""
+msgstr "只有在此賽程，顯示在 {0} 上方"
 
 #: SelectionDescriptionText.resx, TextLine_BelowAllCourses
 msgid "Appears below {0}, in all courses that contain {0}"
-msgstr ""
+msgstr "在包含 {0} 的所有賽程，顯示在 {0} 下方"
 
 #: SelectionDescriptionText.resx, TextLine_BelowThisCourse
 msgid "Appears below {0}, in this course only"
-msgstr ""
+msgstr "只有在此賽程，顯示在 {0} 下方"
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
-msgstr ""
+msgstr "檢查點總數:"
 
 #: SelectionDescriptionText.resx, TotalScore
 msgid "Total score:"
-msgstr ""
+msgstr "總積分值:"
 
 #: SelectionDescriptionText.resx, UsedInCourses
 msgid "Used in courses:"
-msgstr ""
+msgstr "使用在賽程中:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "名稱："
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
-msgstr ""
+msgstr "更換地圖"
 
 #: SelectionDescriptionText.resx, MapExchange_Singular
 msgid "map exchange"
-msgstr ""
+msgstr "更換地圖"
 
 #: SelectionDescriptionText.resx, MapExchangeAtControl
 msgid "Map exchange at {0}"
-msgstr ""
+msgstr "在{0}更換地圖"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "載入:"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
-msgstr ""
+msgstr "使用在:"
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
-msgstr ""
+msgstr "賽程 \"{0}\", 部分{1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "計算後的長度:"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "取圖點"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "取圖點"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "每個分散變化單獨"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "每個接力棒次單獨"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "所有分散變化組合"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "分散變化:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "顯示所有分叉在同一張地圖上"
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "賽程中每種可能的分散變化的地圖。"
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "您選擇的接力隊伍其每一個棒次的地圖。"
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "您必須先從 賽程 選單選取 接力隊伍的分散變化...來定義接力隊伍。"
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "選擇個別的分散變化"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "此賽程已經分配了 {0} 個接力隊伍。 使用 賽程 選單中的 接力隊伍的分散變化... 來變更隊伍數量。"
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "至"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "選取要列印/轉出的隊伍"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "選擇分散變化"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
-msgstr ""
+msgstr "完成"
 
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
-msgstr ""
+msgstr "拖曳滑鼠游標設定要列印的範圍"
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "紙張大小"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "自動設定列印範圍"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "將列印範圍固定為紙張大小"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "
 "user interface of Purple Pen (menus, windows, etc.)"
-msgstr ""
+msgstr "選擇您要用於 Purple Pen 使用者介面（選單、視窗等）的語言"
 
 #: SetUILanguage.resx, $this.Text
 msgid "Program Language"
-msgstr ""
+msgstr "程式語言"
 
 #: StatusBarText.resx, DefaultStatus
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
-msgstr ""
+msgstr "滑鼠左鍵：選取物件；滑鼠右鍵：移動地圖；滾輪：放大/縮小"
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
-msgstr ""
+msgstr "滑鼠左鍵：移動/調整矩形；滑鼠右鍵：移動地圖；滾輪：放大/縮小"
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
-msgstr ""
+msgstr "按住滑鼠左鍵並拖曳以移動所選物件"
 
 #: StatusBarText.resx, DragCorner
 msgid "Hold down left mouse button and drag corner point to move it"
-msgstr ""
+msgstr "按住滑鼠左鍵並拖曳轉角點來移動它"
 
 #: StatusBarText.resx, DraggingObject
 msgid "Move object to desired location and release mouse button"
-msgstr ""
+msgstr "將物件移動到所需位置並釋放滑鼠按鍵"
 
 #: StatusBarText.resx, DraggingCorner
 msgid "Move corner point to desired location and release mouse "
 "button"
-msgstr ""
+msgstr "將轉角點移動到所需位置並釋放滑鼠按鍵"
 
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
-msgstr ""
+msgstr "單擊滑鼠左鍵設置新的檢查點"
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr ""
+msgstr "單擊滑鼠左鍵將現有檢查點“{0}”新增到賽程"
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr ""
+msgstr "單擊滑鼠左鍵設置新的起點"
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr ""
+msgstr "單擊滑鼠左鍵新增既有的起點至賽程"
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr ""
+msgstr "單擊滑鼠左鍵設置新的終點"
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr ""
+msgstr "單擊滑鼠左鍵新增既有的終點至賽程"
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr ""
+msgstr "單擊滑鼠左鍵設置新的強制穿越點"
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
@@ -3931,34 +4018,34 @@ msgstr "按住滑鼠左鍵並且拖曳動以建立檢查點說明"
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
 "to the correct angle"
-msgstr ""
+msgstr "當穿越點旋轉至正確的角度時單擊滑鼠左鍵"
 
 #: StatusBarText.resx, AddingLineArea
 msgid "Hold down left mouse button and drag to add a line "
 "segment; click the left mouse button to finish adding object"
-msgstr ""
+msgstr "按住滑鼠左鍵並拖曳以新增一條線段；單擊滑鼠左鍵以完成新增物件"
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr ""
+msgstr "按住滑鼠左鍵並拖曳以建立文字"
 
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
 "course"
-msgstr ""
+msgstr "按滑鼠左鍵一次以增加已有的換圖區至賽程中"
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr ""
+msgstr "按滑鼠左鍵一次以設置新的換圖區"
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr ""
+msgstr "按滑鼠左鍵一次以在檢查點增加換圖區 \"{0}\" "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "按住滑鼠左鍵並且拖曳以建立物件"
 
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "

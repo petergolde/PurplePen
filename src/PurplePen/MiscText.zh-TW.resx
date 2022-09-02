@@ -117,34 +117,500 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc 鍵</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>無符號</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>所有檢查點</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>無法載入 '{0}' 由於下列原因:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>無法儲存 '{0}' 由於下列原因:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>無法載入地圖檔案 '{0}' 由於下列原因:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>無法讀取地圖檔案 '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>無法列印 '{0}' 由於下列原因:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>無法建立 '{0}' 由於下列原因:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>無法建立資料夾 '{0}' 由於下列原因:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>無法讀取地圖由於下列原因: '{0}' 採用優化/修復並且在 OCAD再儲存可能修復的問題。</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>無法建立OCAD 檔案由於下列原因:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>你想要儲存你在 '{0}'所做的變更?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>檔案'{0}' 已經存在特定的資料夾. 點擊 "上一步"  並且選擇新的資料夾或新的賽事標題.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>檢查點編號 '{0}' 已經使用在其他檢查點上.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>檢查點的積分值必須是1-999之間的整數.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>賽程的爬高必須是 0-9999之間的數字, 或是空白.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>賽程的承載量必須是 0-999999之間的整數, 或是空白.</value>
+  </data>
   <data name="UndoWithShortcut" xml:space="preserve">
+    <value>復原(&amp;U)</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
     <value>復原</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>取消復原</value>
+    <value>取消復原(&amp;R)</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>重複</value>
   </data>
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
-    <value>清除選擇</value>
+    <value>清除選擇(&amp;C)</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>取消操作</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>取消操作</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>輸入新的分數</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>輸入新的編號</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>輸入特徵大小
+使用 / 斜坡上的高度專用
+使用 | 兩個特徵專用</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>輸入新的賽事標題
+使用 | 分隔線
+(影響所有的賽程)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>輸入新的次要標題
+使用 | 分隔線</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>輸入新的賽程名稱</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>以公尺為單位輸入新的爬高</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>輸入新的符號含義
+(影響所有的賽程)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>輸入新的文字
+使用 | 分隔線</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>檢查點 {0} 不再使用在任何賽程中. 您是否要從檢查點列表中刪除這些檢查點?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>檢查點 {0} 不再使用在任何賽程中. 您是否要從檢查點列表中刪除這些檢查點?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>檢查點{0} 目前使用在下列賽程中 {1}. 您是否一定要刪除這個檢查點?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>檢查點編號必須是一、二、三個字母或數字。</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>檢查點編號必須不包含空格.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>檢查點編號不應從零開始.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>檢查點編號在上下顛倒時不應該看起來像另一個數字。</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>編號 "{0}"被使用超過1次.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>列印比例必須是100至100,000之間的數字.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>賽程內容設定</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>横向</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>直向</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>紙張頁面太小，無法列印任何檢查點說明。</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>{0} 版本</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Purple Pen{0} 版本現在可以下載. (您目前是使用 {1}版本.)
+
+您想要下載並安裝最新版本嗎?</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>協助檔案 '{0}' 不能開啟.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>縮放</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>地圖檔案 "{0}"找不到.
+
+最有可能的是，地圖檔案已經被移動或刪除，或者Purple Pen檔案已被移動（可能移動到另一台電腦）。 每次載入Purple Pen賽事檔案時地圖檔案都必須被顯示。 如果您將Purple Pen賽事檔案發送給另一個人，請確保該人也擁有地圖檔案的複製檔。
+
+按下OK鍵之後, 試著在你的電腦找尋地圖檔案的複製檔.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>使用在此賽程的所有檢查點</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>終點</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>下一步 &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>檢查點 {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>終點</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>強制穿越點</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>穿越點</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>全部：{0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>左：{0}，右：{1}，上：{2}，下：{3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>起點</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>複數</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>單數</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>自行定義的文字需要一個 "*" 指示正在修改的物件的位置。</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>定向越野運動的賽程規劃</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>輸入您要設置在地圖上的文字。按下確認鍵後，移動滑鼠游標將文字放置到您要的位置。</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>新增文字</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>輸入新的文字</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>變更文字</value>
   </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>其他程式已經變更此地圖檔案"{0}". Purple Pen現在將重新載入此地圖.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>目前的賽事在 {0}有文字式地檢查點說明.您想要變更檢查點說明的語言至 {1}嗎?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>開啟 "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>在載入建立的OCAD 檔案之前 Purple Pen 必須關閉.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>沒有選取要列印的賽程.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** 如果有包含 Purple Pen 文件檔案的翻譯語言網站，請輸入 URL（包括 http）作為此項目的翻譯。 否則就不用理會。</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>地圖更換</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>更換</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>部分 {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>整個</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>{0}的部分 (在 {1}中)</value>
+  </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>聯絡電子郵件</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>發生錯誤了。 為了幫助我們解決問題，請輸入您的電子郵件和其他資訊，並向我們發送錯誤報告。</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>請告訴我們您在程式中做了什麼，以幫助解決問題</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>發送報告</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>如果顯示“整個”，檢查點說明可能無法通過更換地圖增加到賽程中。 你要增加檢查點說明的，切換到部分，然後再次選擇“增加檢查點說明”。</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe 找不到</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF 轉換器無法成功讀取PDF檔案</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>無法從檔案 '{0}'讀取 PDF 轉換的結果</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>由於下列原因無法建立 PDF：</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>使用者自行定義</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>來自PDF的地圖大小</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>被使用者取消</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>建立 {0}中...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>列印頁面 {0} (在 {1}中的)</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>地圖檔案 "{0}" 已經刪除. 請嘗試恢復地圖檔案, 然後按下 "確定".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>您電腦上的 .NET framework似乎未正確安裝。 請至 http://microsoft.com/net 為您的 Windows 作業系統安裝最新版本的 .NET framework。</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>黑色</value>
   </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>選擇顏色...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>自訂顏色</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>深藍色</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>綠色</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>淡藍色</value>
+  </data>
   <data name="Purple" xml:space="preserve">
     <value>紫紅色</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>紅色</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>黃色</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>設定線條的外觀。 按確定後，移動滑鼠游標在所需位置拖曳繪製線段。</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>新增線段</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>設定矩形的外觀。按下確定之後，移動滑鼠游標設定矩形至您要的位置。</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>新增矩形</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>變更線段或矩形的外觀</value>
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>變更線段的外觀</value>
   </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>地圖檔案必須是使用GPX檔案的OCAD檔案。</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD檔案必須有GPX檔案定義的座標系統。</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCAD檔案必須有GPX檔案定義的真實世界座標。</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>無法重新投影點； OCAD 地圖中的坐標系統或真實世界坐標是錯誤的。</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCAD檔案採用不是Purple Pen支援的座標系統。</value>
+  </data>
   <data name="AutomaticLength" xml:space="preserve">
-    <value>自動</value>
+    <value>自動調整</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>賽程的長度必須是0.1至99.9的數字，或是空白，將自動計算長度。</value>
   </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>直接複製相同的賽程</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>以公里為單位輸入長度，或留空白將自動計算</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>已完成列印“{0}”。按下確定開始列印“{1}”。</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>所有的分散變化</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>適用於每支隊伍有 {0} 名參賽者的接力賽。</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>賽環的中央檢查點將被到訪 {0} 次。通過賽環有 {1} 條可能的路徑。</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>在賽程中，分叉或賽環起始的檢查點不能拖曵到新的位置。</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>此賽程中分散變化的總數量太多。不同分散變化的數量限制為 {0}。</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>無法新增分散變化。</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>此檢查點中已存在分散變化。</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>必須選擇一個檢查點或賽段來新增一個分散變化。</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>不能將分散變化新增到終點。</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>無法將分散變化新增到“所有檢查點”檢視畫面中。</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>不能將分散變化新增到積分賽中。</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>不能將分散變化新增到最後一個檢查點。要先新增一個終點。</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>“{0}”不是分支“{1}”的有效賽段編號</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>賽段 {0} 應分配至分支 {1} 之一</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>賽段 {0} 同時被分配給分支“{1}”和分支“{2}”</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>由於下列原因無法讀取地圖：“{0}”在最新版本的 OpenOrienteering Mapper 中開啟並重新儲存地圖，可能會解決問題。</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>計時起點</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>計時起點</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>底層 OCAD 地圖具有可見的背景圖檔案。在 OCAD 8 及以下版本中，由於 OCAD 中的限制，這些背景圖可能不會出現。</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>由於 OCAD 檔案格式（在 OCAD 10 及以下版本中）的限制，圖像物件將出現在轉出的 OCAD 檔案中的賽程和白色區域下方。請檢查 OCAD 檔案以確保您的圖像按要求顯示。</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>由於下列原因無法建立圖像檔案：</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>建立 PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF檔案|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>賽段 {0} 永遠不會到達分支“{1}”：它被分配到分叉中的不同路線。</value>
   </data>
 </root>

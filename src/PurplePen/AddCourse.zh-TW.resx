@@ -142,22 +142,22 @@
     <value>檢查點圓圈的標示</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
-    <value>只標示序號</value>
+    <value>只標示序號 (6)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
-    <value>只標示編號</value>
+    <value>只標示編號 (42)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
-    <value>標示序號和編號</value>
+    <value>標示序號和編號 (6-42)</value>
   </data>
   <data name="labelKindCombo.Items3" xml:space="preserve">
-    <value>標示序號和分值</value>
+    <value>標示序號和積分值 (6(100))</value>
   </data>
   <data name="labelKindCombo.Items4" xml:space="preserve">
-    <value>標示編號和分值</value>
+    <value>標示編號和積分值 (42(100))</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
-    <value>分值顯示在:</value>
+    <value>積分值顯示在:</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
     <value>A欄</value>
@@ -169,7 +169,7 @@
     <value>H欄</value>
   </data>
   <data name="scoreColumnCombo.Items3" xml:space="preserve">
-    <value>不顯示</value>
+    <value>(不顯示)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>外觀</value>
@@ -178,7 +178,7 @@
     <value>以下文字（選填）將出現在檢查點說明表的第二列：</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>組別/次要標題</value>
+    <value>組別列表/次要標題</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>賽程長度</value>
@@ -205,6 +205,6 @@
     <value>公里</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>新賽程</value>
+    <value>新增賽程</value>
   </data>
 </root>

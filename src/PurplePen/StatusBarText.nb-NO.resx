@@ -216,4 +216,13 @@
   <data name="AddingRectangle" xml:space="preserve">
     <value>Hold nede venstre museknapp og dra for å opprette objekt</value>
   </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Dra postnummer for å endre rekkefølgen i løypen. (Bruk shift for å kopiere)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Bruk venstre museknapp for å legge til spesielt symbol til løypen.</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Bruk venstre museknapp for å legge til spesielt symbol på kartet.</value>
+  </data>
 </root>

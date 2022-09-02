@@ -127,7 +127,7 @@
     <value>相對於1:15000</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>比例尺物件大小：</value>
+    <value>比例尺物件的大小：</value>
   </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>賽段自動間隔的距離:</value>
@@ -218,9 +218,6 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>對標記為“套印”的顏色使用套印效果</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD 地圖</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>自定的外觀</value>

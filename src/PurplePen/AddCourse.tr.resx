@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Birinci Kontrol Numarası</value>
+    <value>Birinci Kontrol Numarası:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Görüntü Açıklaması</value>
@@ -175,13 +175,13 @@
     <value>Görünüm</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Aşağıdaki metin (İsteğe Bağlı Olarak), kontol açılma sayfasının ikinci satırında görünür.</value>
+    <value>Aşağıdaki metin (isteğe bağlı olarak), kontol açılma sayfasının ikinci satırında görünür.</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Sınıf Listesi/ İkinci Başlık</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
-    <value>Uzunluk</value>
+    <value>Uzunluk:</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Tırmanış</value>

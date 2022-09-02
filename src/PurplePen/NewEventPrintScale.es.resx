@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventPrintScaleLabel.Text" xml:space="preserve">
-    <value>¿Que escala quiere utilizar para imprimir el recorrido?. En la mayoría de los casos, querrá utilizar la escala del mapa por defecto.
+    <value>¿Que escala quiere utilizar para imprimir el recorrido?. En la mayoría de los casos, querrá utilizar la escala predeterminada del mapa.
 
 </value>
   </data>
@@ -126,7 +126,7 @@
     <value>Escala del mapa:</value>
   </data>
   <data name="defaultPrintScaleLabel.Text" xml:space="preserve">
-    <value>Escala de &amp;impresión por defecto:</value>
+    <value>Escala de &amp;impresión predeterminada:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
     <value>(Puede cambiar la escala de impresión después para cualquier recorrido seleccionando: menú Recorridos-&gt;Propiedades).</value>
@@ -136,5 +136,8 @@
   </data>
   <data name="oneToPrefixLabel2.Text" xml:space="preserve">
     <value>1:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Escala de impresión</value>
   </data>
 </root>

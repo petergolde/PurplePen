@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
+"POT-Creation-Date: 2022-08-10 14:51-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -119,6 +119,10 @@ msgstr "Sequence and score (3(30))"
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
 msgstr "Code and score (145(30))"
+
+#: AddCourse.resx, labelKindCombo.Items5
+msgid "Score (30)"
+msgstr ""
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -827,6 +831,10 @@ msgstr "Set Map Standard"
 msgid "Stretch"
 msgstr ""
 
+#: CommandNameText.resx, SetLiveloxImportableEventId
+msgid "Publish to Livelox"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
 msgstr "Do not scale"
@@ -915,8 +923,8 @@ msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "Use overprint effect for colours marked \"overprint\""
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD Map"
+msgid "Advanced"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -977,6 +985,7 @@ msgstr "Choose Variations..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateImageFiles.resx, coursesGroupBox.Text
+#: CreateKmlFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -1009,6 +1018,7 @@ msgid "Create GPX File"
 msgstr "Create GPX File"
 
 #: CreateImageFiles.resx, createButton.Text
+#: CreateKmlFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
@@ -1016,6 +1026,7 @@ msgid "Create"
 msgstr "Create"
 
 #: CreateImageFiles.resx, cancelButton.Text
+#: CreateKmlFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1031,6 +1042,7 @@ msgid "Cancel"
 msgstr "Cancel"
 
 #: CreateImageFiles.resx, folderBrowserDialog.Description
+#: CreateKmlFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
@@ -1054,6 +1066,7 @@ msgid "GIF"
 msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateKmlFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
 msgstr "File name prefix:"
@@ -1121,6 +1134,7 @@ msgid "CMYK"
 msgstr "CMYK"
 
 #: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1129,6 +1143,7 @@ msgid "Output"
 msgstr "Output"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
+#: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
@@ -1136,6 +1151,7 @@ msgid "Select folder..."
 msgstr "Select folder..."
 
 #: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
@@ -1143,6 +1159,7 @@ msgid "Other folder"
 msgstr "Other folder"
 
 #: CreateImageFiles.resx, mapDirectory.Text
+#: CreateKmlFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
@@ -1150,6 +1167,7 @@ msgid "Same folder as map file"
 msgstr "Same folder as map file"
 
 #: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
@@ -1157,6 +1175,7 @@ msgid "Same folder as Purple Pen file"
 msgstr "Same folder as Purple Pen file"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
+#: CreateKmlFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
@@ -1166,6 +1185,25 @@ msgstr "Folder"
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
 msgstr "Create Image Files"
+
+#: CreateKmlFiles.resx, filesLabel.Text
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr "Files:"
+
+#: CreateKmlFiles.resx, filesCombo.Items
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr "One for all courses"
+
+#: CreateKmlFiles.resx, filesCombo.Items1
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr "One per course"
+
+#: CreateKmlFiles.resx, $this.Text
+msgid "Create KML File"
+msgstr "Create OCAD Files"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1195,18 +1233,6 @@ msgstr "Print on multiple pages"
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
 msgstr "If the print area is too large to fit on one page:"
-
-#: CreatePdfCourses.resx, filesLabel.Text
-msgid "Files:"
-msgstr "Files:"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items
-msgid "One for all courses"
-msgstr "One for all courses"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
-msgid "One per course"
-msgstr "One per course"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
@@ -1512,8 +1538,16 @@ msgid "Create P&DFs"
 msgstr "Create P&DFs"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
+msgid "Create RouteGadget Files..."
 msgstr "Create Route&Gadget Files..."
+
+#: MainFrame.resx, publishToLiveloxMenu.Text
+msgid "Publish to Livelox..."
+msgstr "Publish to &Livelox..."
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1522,6 +1556,10 @@ msgstr "Create Data &Interchange File (IOF XML)..."
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
 msgstr "Create G&PX File..."
+
+#: MainFrame.resx, createKMLFileMenu.Text
+msgid "Create &KML File..."
+msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1850,6 +1888,10 @@ msgstr "ISOM2000 Map Standard"
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
 msgstr "ISOM2017 Map Standard"
+
+#: MainFrame.resx, mapStdSpr2019Menu.Text
+msgid "ISSprOM 2019 Map Standard"
+msgstr ""
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
@@ -3095,6 +3137,10 @@ msgstr "(These settings can be changed later using Event/IOF "
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
 msgstr "IOF Standards"
+
+#: NewEventStandards.resx, radioButtonMapSpr2019.Text
+msgid "ISSprOM 2019"
+msgstr ""
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"

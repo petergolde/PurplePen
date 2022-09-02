@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Muovi oggetto nella posizione desiderata e rilascia il pulsante del mouse</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Clicca il pulsante sinistro del mouse per posizionare un nuovo controllo</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Clicca il pulsante sinistro del mouse per aggiungere un controllo esistente "{0}" al percorso</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Clicca il pulsante sinistro del mouse per posizionare una nuova partenza</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Clicca il pulsante sinistro del mouse per aggiungere una partenza esistente al percorso</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Clicca il pulsante sinistro del mouse per posizionare un nuovo arrivo</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Clicca il pulsante sinistro del mouse per aggiungere un arrivo esistente al percorso</value>
+  </data>
 </root>

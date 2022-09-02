@@ -123,4 +123,7 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>prefisso Nome:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Crea file GPX</value>
+  </data>
 </root>

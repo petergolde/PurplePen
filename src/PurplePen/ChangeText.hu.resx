@@ -145,10 +145,13 @@
     <value>Váltó csapat</value>
   </data>
   <data name="relayLegMenuItem.Text" xml:space="preserve">
-    <value>Váltó átmenet</value>
+    <value>Váltó ág</value>
   </data>
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Fájl neve</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Térkép Fájl Neve</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Kinézet</value>

@@ -126,6 +126,9 @@
   <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
     <value>Tilpasset 1:15000</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Skalering:</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automatisk strekk mellomrom størrelse:</value>
   </data>
@@ -215,9 +218,6 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Bruk overtrykk for farger markert med "overtrykk".</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD kart</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpass utseende</value>

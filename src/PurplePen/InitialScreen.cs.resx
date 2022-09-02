@@ -132,6 +132,9 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Otevřít existující závod...</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen je svobodný software a může být kopírován a sdílen. Vývoj Purple Penu je financován pouze z vašich darů.</value>
+  </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>Přispět na vývoj</value>
   </data>

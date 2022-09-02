@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>為了設計您的賽程, 您必須選擇您將使用的地圖檔案. 通常這是一個 OCAD 或 OpenOrienteering Mapper 檔案（儘管可以使用 PDF 和圖像檔案如 JPEG替代）。 點擊“選擇...”按鈕以選取地圖檔案。</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
-    <value>&amp;選擇地圖檔案...</value>
+    <value>選擇地圖檔案(&amp;C)...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>所有的地圖檔案|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD 檔案 (*.ocd)|*.ocd|OOM檔案|*.omap;*.xmap|PDF 檔案 (*.pdf)|*.pdf|圖片檔案|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>已選取的地圖檔案</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>地圖檔案已成功載入。 如果您將 Purple Pen 檔案傳送給其他人，他們也必須有地圖檔案。</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>地圖檔案</value>

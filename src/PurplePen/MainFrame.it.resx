@@ -141,17 +141,20 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Crea &amp;File OCAD...</value>
   </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>&amp;Percorsi...</value>
+  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Stampa &amp;Descrizioni</value>
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Stampa &amp;Corsi...</value>
+    <value>Stampa&amp;Percorsi</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Questo Corso</value>
+    <value>&amp;Questo Percorso</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>&amp;Tutti I Corsi</value>
+    <value>&amp;Tutti i Percorsi</value>
   </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Imposta Stampa &amp;Area</value>
@@ -181,7 +184,7 @@
     <value>&amp;Modifica</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Corso Intero</value>
+    <value>Intero &amp;Percorso</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>&amp;Mappa Intera</value>
@@ -240,6 +243,12 @@
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Tutti I Controlli</value>
   </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>Altri Perocrsi...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Pulisci altri Percorsi</value>
+  </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Visualizza</value>
   </data>
@@ -286,16 +295,19 @@
     <value>Eve&amp;nto</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Aggiungi Corso</value>
+    <value>&amp;Aggiungi Percorso...</value>
   </data>
   <data name="deleteCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Rimuovi Corso</value>
+    <value>&amp;Rimuovi Percorso</value>
+  </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Duplicata Percorso...</value>
   </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
     <value>&amp;Proprietà...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Corso</value>
+    <value>&amp;Percorso</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Cancella</value>
@@ -310,7 +322,7 @@
     <value>&amp;Oggetto</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
-    <value>&amp;Sommario Corso</value>
+    <value>Percorso &amp;Sommario</value>
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Riguardo A Purple Pen</value>
@@ -350,6 +362,9 @@
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Testo</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Crea file GPX</value>
   </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Aggiungi &amp;Oggetto Speciale</value>

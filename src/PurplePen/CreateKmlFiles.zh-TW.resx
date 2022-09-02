@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>檔案名稱字首：</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>檔案格式：</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>檔案：</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>所有賽程之一</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>每組賽程一個</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>輸出</value>
@@ -155,5 +161,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>建立OCAD檔案</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>檔案格式：</value>
   </data>
 </root>

@@ -120,6 +120,27 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Cor:</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Alterar cor...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Estilo:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Único</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Duplo</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Tracejado</value>
+  </data>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Tamanho do traço:</value>
+  </data>
   <data name="labelWidthMm.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -128,6 +149,9 @@
   </data>
   <data name="labelDashSizeMm.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Raio do canto:</value>
   </data>
   <data name="labelRadiusMm.Text" xml:space="preserve">
     <value>mm</value>

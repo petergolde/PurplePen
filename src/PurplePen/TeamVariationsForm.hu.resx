@@ -120,11 +120,35 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Bezárás</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportálás...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Nyomtatás…</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Nyomtatási kép…</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Ágak széma:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Varióciók hozzárendelése</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Csapatok száma:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Rögzített ágak elágazásokhoz rendelése...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Csapatszámzás kezdete: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Variációs kódok elrejtése a térképen</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Számolótábla (CSV)|*.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Váltó csapat variáció</value>

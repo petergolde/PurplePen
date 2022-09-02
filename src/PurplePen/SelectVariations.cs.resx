@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Každá varianta zvlášť</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Každý úsek zvlášť</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Všechny varianty dohromady</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Varianty:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>zobrazit všechny varianty na jedné mapě.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Jedna mapa pro každou variantu trati.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Jedna mapa pro každý úsek vybraných týmů</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Vybrat jednotlivé varianty</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>do</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Vybrat týmy k tisku/exportu:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vybrat varianty</value>
+  </data>
 </root>

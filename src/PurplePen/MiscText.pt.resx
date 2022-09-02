@@ -117,8 +117,126 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Todos os controlos</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Não é possível carregar '{0}' pelo seguinte motivo:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Não é possível gravar '{0}' pelo seguinte motivo:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Não é possível carregar o ficheiro do mapa '{0}' pelo seguinte motivo:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Não é possível ler o ficheiro imagem '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Não é possível imprimir '{0}' pelo seguinte motivo:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Não é possível criar '{0}' pelo seguinte motivo:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Não é possível criar a pasta '{0}' pelo seguinte motivo:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Não é possível ler o mapa pelo seguinte motivo: '{0}' Usar Otimizar/Reparar e salvar novamente no OCAD pode resolver o problema.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Não é possível criar o ficheiro OCAD pelo seguinte motivo:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Quer gravar as alterações feitas em '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>O ficheiro '{0}' já existe na pasta especificada. Clique no botão "Voltar" e escolha uma nova pasta ou um novo título para o evento.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>O código de controlo '{0}' já está atribuído a outro controlo.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>A pontuação de um posto de controlo devem ser um número inteiro de 1 a 999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>A subida acumulada de um percurso deve ser um número 0-9999 ou deixar o campo em branco.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>O número de participantes de um percurso deve ser um número inteiro 0-999999 ou deixar o campo em branco.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>An&amp;ular</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Anular</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Repetir</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Repetir</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>Limpar a Sele&amp;cção</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>Ca&amp;ncelar a Operação</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Cancelar a operação</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Insira uma nova pontuação</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Insira o novo código</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Insira o tamanho do elemento
+Use / para altura em declive
+Use | para dois elementos</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Insira o novo título do evento
+Use | para separar linhas
+(afeta todos os percursos)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Insira um novo subtítulo
+Use | para separar linhas</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Insira o novo nome do percurso</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Digite nova subida em metros</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Insira o novo significado do símbolo
+(afeta todos os percursos)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Insira novo texto
+Use | para separar linhas</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>Meta (&amp;F)</value>
+  </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Mudar o Texto</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Gravar</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Preto</value>
@@ -128,5 +246,17 @@
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Alterar aparência da linha</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Duplicar o percurso</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Início cronometrado</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Início cronometrado</value>
   </data>
 </root>

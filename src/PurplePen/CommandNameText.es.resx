@@ -118,156 +118,192 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChangeSymbol" xml:space="preserve">
-    <value>Cambiar Símbolo</value>
+    <value>Cambiar símbolo</value>
   </data>
   <data name="ChangeCode" xml:space="preserve">
-    <value>Cambiar Código de Control</value>
+    <value>Cambiar código de control</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Cambiar Control</value>
+    <value>Cambiar control</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
-    <value>Cambiar Puntos de Control</value>
+    <value>Cambiar puntos de control</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
-    <value>Cambiar Título</value>
+    <value>Cambiar título</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
-    <value>Cambiar Desnivel</value>
+    <value>Cambiar desnivel</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
-    <value>Cambiar Nombre del Recorrido</value>
+    <value>Cambiar nombre del recorrido</value>
   </data>
   <data name="ChangeTextLine" xml:space="preserve">
-    <value>Cambiar Línea de Texto</value>
+    <value>Cambiar línea de texto</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Actualizar Escala del Mapa</value>
+    <value>Actualizar escala del mapa</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
-    <value>Mover Control</value>
+    <value>Mover control</value>
   </data>
   <data name="MoveControlNumber" xml:space="preserve">
-    <value>Mover Número de Control</value>
+    <value>Mover número de control</value>
   </data>
   <data name="MoveObject" xml:space="preserve">
-    <value>Mover Objeto</value>
+    <value>Mover objeto</value>
   </data>
   <data name="DeleteControl" xml:space="preserve">
-    <value>Borrar Control</value>
+    <value>Borrar control</value>
   </data>
   <data name="DeleteObject" xml:space="preserve">
-    <value>Borrar Objeto</value>
+    <value>Borrar objeto</value>
   </data>
   <data name="DeleteTextLine" xml:space="preserve">
-    <value>Eliminar Línea de Texto</value>
+    <value>Eliminar línea de texto</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Añadir Control</value>
+    <value>Añadir control</value>
   </data>
   <data name="AddStart" xml:space="preserve">
-    <value>Añadir Salida</value>
+    <value>Añadir salida</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
-    <value>Añadir Meta</value>
+    <value>Añadir meta</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
-    <value>Añadir Punto de Paso Obligatorio</value>
+    <value>Añadir punto de paso obligatorio</value>
   </data>
   <data name="AddObject" xml:space="preserve">
-    <value>Añadir Objeto</value>
+    <value>Añadir objeto</value>
   </data>
   <data name="DeleteCourse" xml:space="preserve">
-    <value>Eliminar Recorrido</value>
+    <value>Eliminar recorrido</value>
   </data>
   <data name="NewCourse" xml:space="preserve">
-    <value>Nuevo Recorrido</value>
+    <value>Nuevo recorrido</value>
   </data>
   <data name="ChangeCourseProperties" xml:space="preserve">
-    <value>Cambiar Propiedades del Recorrido</value>
+    <value>Cambiar propiedades del recorrido</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Cambiar Propiedades de Todos los Controles</value>
+    <value>Cambiar propiedades de todos los controles</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
-    <value>Crear un Nuevo Evento</value>
+    <value>Crear un nuevo evento</value>
   </data>
   <data name="SetLegFlagging" xml:space="preserve">
-    <value>Cambiar Tramo Balizado</value>
+    <value>Cambiar tramo balizado</value>
   </data>
   <data name="ChangeCodes" xml:space="preserve">
-    <value>Cambiar Códigos</value>
+    <value>Cambiar códigos</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Cambiar Recorridos en que Aparece</value>
+    <value>Cambiar recorridos en que aparece</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
-    <value>Mover Angulo del Tramo</value>
+    <value>Mover ángulo del tramo</value>
   </data>
   <data name="AddBend" xml:space="preserve">
-    <value>Agregar Angulo</value>
+    <value>Agregar ángulo</value>
   </data>
   <data name="AddCorner" xml:space="preserve">
-    <value>Agregar Esquina</value>
+    <value>Agregar esquina</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Suprimir Angulo</value>
+    <value>Suprimir ángulo</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
-    <value>Suprimir Esquina</value>
+    <value>Suprimir esquina</value>
   </data>
   <data name="AddGap" xml:space="preserve">
-    <value>Añadir Recorte</value>
+    <value>Añadir recorte</value>
   </data>
   <data name="RemoveGap" xml:space="preserve">
-    <value>Suprimir Recorte</value>
+    <value>Suprimir recorte</value>
   </data>
   <data name="MoveGap" xml:space="preserve">
-    <value>Mover Recorte</value>
+    <value>Mover recorte</value>
   </data>
   <data name="Rotate" xml:space="preserve">
-    <value>Rotar</value>
+    <value>Girar</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
-    <value>Numeración Automática</value>
+    <value>Numeración automática</value>
   </data>
   <data name="ChangePunchPatterns" xml:space="preserve">
-    <value>Cambiar Marcas de Perforación</value>
+    <value>Cambiar marcas de perforación</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Cambiar Formato de la Tarjeta de Controles</value>
+    <value>Cambiar formato de la tarjeta de controles</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
-    <value>Establecer Área de Impresión</value>
+    <value>Establecer área de impresión</value>
   </data>
   <data name="SetCourseLoad" xml:space="preserve">
-    <value>Cambiar Densidad de Corredores</value>
+    <value>Cambiar densidad de corredores</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>Personalizar Textos de las Descripciones</value>
+    <value>Personalizar textos de las descripciones</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
-    <value>Cambiar Orden de los Recorrios</value>
+    <value>Cambiar orden de los recorridos</value>
   </data>
   <data name="ChangeMapFile" xml:space="preserve">
-    <value>Cambiar Archivo de Mapa</value>
+    <value>Cambiar archivo de mapa</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Ignorar Tipografías Faltantes</value>
+    <value>Ignorar tipografías faltantes</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Añadir línea de texto</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
-    <value>Suprimir Controles no Utilizados</value>
+    <value>Suprimir controles no utilizados</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>Cambiar el Idioma de las Descripciones</value>
+    <value>Cambiar el idioma de las descripciones</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
-    <value>Cambiar Texto</value>
+    <value>Cambiar texto</value>
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
-    <value>Personalizar la Impresión del Recorrido</value>
+    <value>Personalizar la impresión del recorrido</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Añadir un cambio de mapa</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Eliminar cambio de mapa</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Cambiar las propiedades de esta sección del recorrido</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Cambiar el aspecto de la línea</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicar el recorrido</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Crear {0} &amp;archivos</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Añadir variante</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Eliminar la bifurcación/bucle</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Variantes para equipos de relevos</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Añadir punto de entrega de mapa</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Establecer el estándar de descripción de los controles</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Establecer el estándar del mapa</value>
   </data>
 </root>

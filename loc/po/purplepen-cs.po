@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
+"POT-Creation-Date: 2022-08-10 14:51-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © by Peter Golde"
-msgstr ""
+msgstr "Copyright © Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
@@ -42,7 +42,7 @@ msgstr "OK"
 
 #: AboutForm.resx, creditsButton.Text
 msgid "Credits"
-msgstr "Zásluhy"
+msgstr "Kredity"
 
 #: AboutForm.resx, licenseButton.Text
 msgid "View Full License"
@@ -116,6 +116,10 @@ msgstr "Pořadí a body (3(30))"
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
 msgstr "Kód a body (145(30))"
+
+#: AddCourse.resx, labelKindCombo.Items5
+msgid "Score (30)"
+msgstr ""
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -398,7 +402,12 @@ msgid "All map "
 "bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering "
 "Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image "
 "files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
-msgstr ""
+msgstr "Všechny mapové "
+"soubory|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;"
+"*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open "
+"Orienteering Mapper Files|*.omap;*.xmap|PDF files "
+"(*.pdf)|*.pdf|Image "
+"files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
 msgid "Resolution:"
@@ -482,7 +491,7 @@ msgstr "Název souboru"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Mapový soubor"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -510,7 +519,7 @@ msgstr "Písmo:"
 #: ChangeText.resx, label3.Text
 #: PrinterMargins.resx, labelPaper.Text
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
 #: ChangeText.resx, labelFontSizeMm.Text
 #: CourseAppearanceDialog.resx, label12.Text
@@ -531,7 +540,7 @@ msgstr "mm"
 #: ChangeText.resx, checkBoxAutoFontSize.Text
 #: MiscText.resx, AutomaticLength
 msgid "Automatic"
-msgstr ""
+msgstr "Automaticky"
 
 #: ChangeText.resx, groupBox2.Text
 #: LinePropertiesDialog.resx, groupBox1.Text
@@ -804,39 +813,43 @@ msgstr "Varianty štafet"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr ""
+msgstr "Přidat místo výdeje map"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
-msgstr ""
+msgstr "Vyber standard pro popisy"
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
-msgstr ""
+msgstr "Vyber mapový standard"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
 msgstr ""
 
+#: CommandNameText.resx, SetLiveloxImportableEventId
+msgid "Publish to Livelox"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
-msgstr ""
+msgstr "Neměnit měřítko"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items1
 msgid "Relative to map scale"
-msgstr ""
+msgstr "Relativně k měřítku mapy"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items2
 msgid "Relative to 1:15000"
-msgstr ""
+msgstr "Relativníěk 1:15000"
 
 #: CourseAppearanceDialog.resx, label11.Text
 msgid "Scale item sizes:"
-msgstr ""
+msgstr "Změnit velikost objektů"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
-msgstr ""
+msgstr "Automatická mezera"
 
 #: CourseAppearanceDialog.resx, labelOutlineWidth.Text
 msgid "White outline around numbers:"
@@ -868,7 +881,7 @@ msgstr "Průměr kruhu kontroly:"
 
 #: CourseAppearanceDialog.resx, checkBoxStandardSizes.Text
 msgid "Use IOF standard sizes"
-msgstr "Používat velikosti standarní podle IOF"
+msgstr "Používat standartní velikosti podle IOF"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
@@ -876,7 +889,7 @@ msgstr "Velikosti položek"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
-msgstr ""
+msgstr "Míchat purpurovou s barvami mapy"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -906,8 +919,8 @@ msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "Použít overprint u barev, kde je uveden"
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD mapa"
+msgid "Advanced"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -968,6 +981,7 @@ msgstr "Vyberte varianty..."
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateImageFiles.resx, coursesGroupBox.Text
+#: CreateKmlFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -984,7 +998,7 @@ msgstr "Předpona"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "Body trasy"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
@@ -999,6 +1013,7 @@ msgid "Create GPX File"
 msgstr "Vyrobit GPX soubor"
 
 #: CreateImageFiles.resx, createButton.Text
+#: CreateKmlFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
@@ -1006,6 +1021,7 @@ msgid "Create"
 msgstr "Vytvořit"
 
 #: CreateImageFiles.resx, cancelButton.Text
+#: CreateKmlFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1021,6 +1037,7 @@ msgid "Cancel"
 msgstr "Zrušit"
 
 #: CreateImageFiles.resx, folderBrowserDialog.Description
+#: CreateKmlFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
@@ -1033,56 +1050,57 @@ msgstr "Formát souboru:"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items
 msgid "PNG"
-msgstr ""
+msgstr "PNG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items1
 msgid "JPEG"
-msgstr ""
+msgstr "JPEG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items2
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateKmlFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
 msgstr "Předpona souboru:"
 
 #: CreateImageFiles.resx, label1.Text
 msgid "World file:"
-msgstr ""
+msgstr "Soubor .world:"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items1
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items2
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items3
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items4
 msgid "400"
-msgstr ""
+msgstr "400"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items5
 msgid "500"
-msgstr ""
+msgstr "500"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items6
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: CreateImageFiles.resx, dpiLabel.Text
 msgid "Dpi:"
-msgstr ""
+msgstr "DPI"
 
 #: CreateImageFiles.resx, comboBoxWorldFile.Items
 #: ReportText.resx, EventAudit_No
@@ -1096,7 +1114,7 @@ msgstr "Ano"
 
 #: CreateImageFiles.resx, labelColorModel.Text
 msgid "Color model:"
-msgstr ""
+msgstr "Barevný model:"
 
 #: CreateImageFiles.resx, comboBoxColorModel.Items
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
@@ -1111,6 +1129,7 @@ msgid "CMYK"
 msgstr "CMYK"
 
 #: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1119,6 +1138,7 @@ msgid "Output"
 msgstr "Výstup"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
+#: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
@@ -1126,6 +1146,7 @@ msgid "Select folder..."
 msgstr "Vybrat složku..."
 
 #: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
@@ -1133,6 +1154,7 @@ msgid "Other folder"
 msgstr "Jiná složka"
 
 #: CreateImageFiles.resx, mapDirectory.Text
+#: CreateKmlFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
@@ -1140,6 +1162,7 @@ msgid "Same folder as map file"
 msgstr "Stejná složka jako u mapového souboru"
 
 #: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
@@ -1147,6 +1170,7 @@ msgid "Same folder as Purple Pen file"
 msgstr "Stejná složka jako u souboru Purple Pen"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
+#: CreateKmlFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
@@ -1155,7 +1179,26 @@ msgstr "Složka"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr ""
+msgstr "Vytvořit obrázek"
+
+#: CreateKmlFiles.resx, filesLabel.Text
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr "Soubory:"
+
+#: CreateKmlFiles.resx, filesCombo.Items
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr "Jeden soubor dohromady pro všechny tratě"
+
+#: CreateKmlFiles.resx, filesCombo.Items1
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr "Co trať to soubor"
+
+#: CreateKmlFiles.resx, $this.Text
+msgid "Create KML File"
+msgstr "Vytvořit soubory OCAD"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1185,18 +1228,6 @@ msgstr "Tisknout na více stránek"
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
 msgstr "Pokud je tisková plocha větší než jedna stránka:"
-
-#: CreatePdfCourses.resx, filesLabel.Text
-msgid "Files:"
-msgstr "Soubory:"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items
-msgid "One for all courses"
-msgstr "Jeden soubor dohromady pro všechny tratě"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
-msgid "One per course"
-msgstr "Co trať to soubor"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
@@ -1234,19 +1265,19 @@ msgstr "RouteGadget vyžaduje soubor s mapou (.gif) a IOF XML "
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
-msgstr ""
+msgstr "2.0.3"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items1
 msgid "3.0"
-msgstr ""
+msgstr "3.0"
 
 #: CreateRouteGadget.resx, labelIofXml.Text
 msgid "IOF XML Version:"
-msgstr ""
+msgstr "IOF XML Verze:"
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1355,7 +1386,8 @@ msgstr "Otevřít existující závod..."
 msgid "Purple Pen is free software and may be copied and shared. "
 "Development of Purple Pen is supported only by your "
 "donations."
-msgstr ""
+msgstr "Purple Pen je svobodný software a může být kopírován a "
+"sdílen. Vývoj Purple Penu je financován pouze z vašich darů."
 
 #: InitialScreen.resx, donationLink.Text
 msgid "Make a donation"
@@ -1377,7 +1409,9 @@ msgstr "Úseky"
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr ""
+msgstr "Chcete-li určitý úsek přiřadit určité větvi, zadejte níže "
+"uvedené číslo. Úseky, které nejsou přiřazeny k větvi, "
+"budou rozděleny mezi zbývající větve náhodně."
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
@@ -1422,7 +1456,7 @@ msgstr "Šířka:"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr "Velikost díry"
+msgstr "Velikost mezery"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
@@ -1446,7 +1480,7 @@ msgstr "Pořadí"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "mapViewerTopology"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1478,27 +1512,35 @@ msgstr "Vytvořit &soubory OCAD..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "Vytvořit  &JPEG mapy..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "&Popisy kontrol..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "Razící průkazy"
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr ""
+msgstr "&Tratě..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr ""
+msgstr "Vytvořit P&DF..."
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
+msgid "Create RouteGadget Files..."
 msgstr "Vytvořit soubory Route&Gadget..."
+
+#: MainFrame.resx, publishToLiveloxMenu.Text
+msgid "Publish to Livelox..."
+msgstr ""
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1507,6 +1549,10 @@ msgstr "Vytvořit soubory Data &Interchange File (IOF XML)..."
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
 msgstr "Vytvořit GP&X..."
+
+#: MainFrame.resx, createKMLFileMenu.Text
+msgid "Create &KML File..."
+msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1662,11 +1708,11 @@ msgstr "&Všechny kontroly"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
-msgstr ""
+msgstr "Ostatní tratě..."
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Vymazat ostatní tratě"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1714,7 +1760,7 @@ msgstr "Texty a čáry"
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr ""
+msgstr "Intervalový start"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1822,23 +1868,27 @@ msgstr "Vzo&ry ražení"
 
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
-msgstr ""
+msgstr "2004 Standard popisků"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
 msgid "2018 Description Standard"
-msgstr ""
+msgstr "2018 Standard popisků"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
-msgstr ""
+msgstr "ISOM2000 Mapový klíč"
 
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
+msgstr "ISOM2017 Mapový klíč"
+
+#: MainFrame.resx, mapStdSpr2019Menu.Text
+msgid "ISSprOM 2019 Map Standard"
 msgstr ""
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
-msgstr ""
+msgstr "IOF &Standards"
 
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
@@ -2014,15 +2064,15 @@ msgstr "Zkoušeč map"
 
 #: MainFrame.resx, courseSelectorTesterMenu.Text
 msgid "Course Selector Tester"
-msgstr ""
+msgstr "Course Selector Tester"
 
 #: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
 msgid "Dot Grid Tester"
-msgstr ""
+msgstr "Dot Grid Tester"
 
 #: MainFrame.resx, dumpOCADFileMenu.Text
 msgid "Dump OCAD File"
-msgstr ""
+msgstr "Dump OCAD File"
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
@@ -2030,7 +2080,7 @@ msgstr "Tester reportů"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
-msgstr ""
+msgstr "Font Metrics"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2050,7 +2100,7 @@ msgstr "Přidat přeložené texty"
 
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
-msgstr ""
+msgstr "Sloučit Symbols.xml..."
 
 #: MainFrame.resx, translateMenu.Text
 msgid "&Translate Description Text"
@@ -2141,7 +2191,7 @@ msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
-msgstr ""
+msgstr "IOF XML verze 2.0.3|*.xml|IOF XML verze 3.0|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
@@ -2149,11 +2199,11 @@ msgstr "Vytvořit soubor IOF XML"
 
 #: MainFrame.resx, openImageDialog.Filter
 msgid "Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
-msgstr ""
+msgstr "Obrázkový soubor|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff"
 
 #: MainFrame.resx, saveGpxFileDialog.Filter
 msgid "GPX file|*.gpx"
-msgstr ""
+msgstr "GPX soubor|*.gpx"
 
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
@@ -2211,7 +2261,9 @@ msgstr "Z následujícího důvodu nelze vytvořit složku '{0}' :"
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr ""
+msgstr "Nelze načíst mapa z následujících důvodů: '{0}' Použití "
+"Optimalizace/Oprava a opětovné uložení v OCAD může problém "
+"vyřešit."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -2281,7 +2333,8 @@ msgstr "Vlož název závodu\n"
 #: MiscText.resx, EnterSecondaryTitle
 msgid "Enter new secondary title\n"
 "Use | to separate lines"
-msgstr ""
+msgstr "Zadejte nový podtitulek\n"
+"Pužijte | pro nový řádek"
 
 #: MiscText.resx, EnterCourseName
 msgid "Enter new course name"
@@ -2289,12 +2342,13 @@ msgstr "Zadat název nové trati"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr ""
+msgstr "Zadejte novou hodnotu stoupání v metrech"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
 "(affects all courses)"
-msgstr ""
+msgstr "Zadej nový význam symbolu\n"
+"(ovlivní všechny kategorie)"
 
 #: MiscText.resx, EnterTextLine
 msgid "Enter new text\n"
@@ -2462,15 +2516,15 @@ msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
-msgstr ""
+msgstr "Alpha {0}"
 
 #: MiscText.resx, Version_Beta
 msgid "Beta {0}"
-msgstr ""
+msgstr "Beta {0}"
 
 #: MiscText.resx, Version_RC
 msgid "RC {0}"
-msgstr ""
+msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
@@ -2483,7 +2537,8 @@ msgstr "singulár"
 #: MiscText.resx, RequireStar
 msgid "The customized text requires a \"*\" to indicate where the "
 "object being modified is placed."
-msgstr ""
+msgstr "Přizpůsobený text vyžaduje \"*\" pro ukázání, kde je umístěn "
+"upravovaný objekt."
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
@@ -2513,7 +2568,8 @@ msgstr "Jiný program změnil mapu - soubor {0}. Purple Pen ji "
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr ""
+msgstr "Aktuální závod má textový popis kontrol v jazyce {0}. "
+"Chcete změnit jazyk popisů kontrol na {1}?"
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
@@ -2522,11 +2578,11 @@ msgstr "Otevřít \"{0}\""
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr ""
+msgstr "Purple Pen před načtením nového OCAD souboru."
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
-msgstr ""
+msgstr "Žádná trať nebyla vybrána k tisku."
 
 #: MiscText.resx, TranslatedHelpWebSite
 msgid "*** If there exists a web site in the translated language "
@@ -2537,211 +2593,229 @@ msgstr ""
 
 #: MiscText.resx, MapExchange_Long
 msgid "Map exchange"
-msgstr ""
+msgstr "Výměna mapy"
 
 #: MiscText.resx, MapExchange_Medium
 msgid "Exchange"
-msgstr ""
+msgstr "Výměna"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr ""
+msgstr "MX"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
-msgstr ""
+msgstr "Úsek {0}"
 
 #: MiscText.resx, AllParts
 msgid "All Parts"
-msgstr ""
+msgstr "Všechny úseky"
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
-msgstr ""
+msgstr "Úsek {0} (z {1})"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
-msgstr ""
+msgstr "Kontaktní e-mail"
 
 #: MiscText.resx, CrashIntro
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "Vyskytla se chyba. Pro odstranění problému, prosíme "
+"zadejte Váš email a doplňující informace, a pošlete nám "
+"hlášení o chybě."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "Popište co jste dělal v programu, aby jsme mohli případnou "
+"chybu opravit (ideálně anglicky)"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
-msgstr ""
+msgstr "Odeslat hlášení"
 
 #: MiscText.resx, CannotAddDescriptionsToAllParts
 msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "Popisy nemohou být přidány do kategorie se změnou mapy, "
+"pokud jsou zobrazeny \"Všechny části\". Zvolte část, které "
+"chcete přidat popisy, a poté znovu zvolte \"Přidat popisy\"."
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe nenalezen"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr ""
+msgstr "Pdfium PDF converter nemůže přečíst PDF soubor."
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "Nelze přečíst výsledek konverze PDFka ze souboru '{0}'"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "Nelze vytvořit PDFko z tohoto důvodu:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "Definováno uživatelem"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "Velikost mapy z PDF souboru"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "Zrušeno uživatelem"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "Vytvářím {0}..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr ""
+msgstr "Tisknu stránku {0} (z {1})"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "Mapový soubor \"{0}\" byl vymazán. Zkuste obnovit tento "
+"mapový soubor a poté stiskněte \"OK\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr ""
+msgstr "Platforma .NET se zdá být na Vašem počítači nesprávně "
+"nainstalována. Navštivte prosím http://microsoft.com/net a "
+"nainstalujte si nejnovější verzi platformy .NET pro Váš "
+"operační systém Windows."
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "Vybrat barvu..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "Vlastní barva"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "Tmavě modrá"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "Zelená"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "Světle modrá"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "Červená"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "Žlutá"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "Zadejte vzhled čáry. Po stisknutí OK táhněte myší pro "
+"kreslení čáry v požadovaném místě."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "Přidat linii"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "Zadejte vzhled obdélníku. Po stisknutí OK táhněte myší pro "
+"umístění obdélníku na požadované místo."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "Přidat obdelník"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
-msgstr ""
+msgstr "Změnit vzhled linie nebo obdelníku."
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "Mapový soubor musí být z OCADu pro použití GPX."
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "OCAD soubor musí být georeferencovaný pro použitý GPX."
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "Soubor OCAD musí mít definované skutečné světové "
+"souřadnice, aby bylo možné použít soubor GPX."
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "Nebylo možné překreslit body - buď souřadnicový systém "
+"nebo skutečné světové souřadnice v OCAD jsou chybné."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "Soubor OCAD používá souřadnicový systém, který Purple Pen "
+"nepodporuje."
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "Délka tratě musí být číslo v rozmezí 0.1 - 99.9, nebo "
+"prázdné pole pro automatický výpočet délky."
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "Zadejte délku v KM, nebo nechte prázdné pro automatický "
+"výpočet"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "Dokončený tisk \"{0}\". Stikněte OK pro zahájení tisku \"{1}\"."
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOM"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "Všechny varianty"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "Vhodný pro použití ve štafetách při počtu {0} účastníků v "
+"týmu."
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "Prostřední kontrola ve smyčce bude navštívena {0} krát. "
+"Existují {1} možné cesty skrz smyčku."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
@@ -2755,32 +2829,33 @@ msgstr ""
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "Nelze přidat variantu."
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "Větvení již existuje na této kontrole."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "Kontrola nebo postup musí být vybrán pro přidání větvení."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "Větvení nemůže být přidáno k cíli."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Varianta nemůže být přidána v oknu Všechny kontroly"
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Varianta nemůže být přidána ke scorelaufu."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "Varianta nemůže být přidána na poslední kontrolu. Nejdřív "
+"přidej cílovou kontrolu."
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
@@ -2788,7 +2863,7 @@ msgstr ""
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "Postup {0} by měl být přiřazen k jedné z variant {1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
@@ -2802,7 +2877,7 @@ msgstr ""
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr ""
+msgstr "TS"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
@@ -2819,15 +2894,15 @@ msgstr ""
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "Nelze exportovat obrázek z těchto důvodů:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "Vytvořit PDF"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF soubor|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
@@ -2845,7 +2920,7 @@ msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
-msgstr ""
+msgstr "Znovu NEupozorňovat na chybějící fonty pro tento event"
 
 #: MissingFonts.resx, labelWarning.Text
 msgid "Map file \"{0}\" uses fonts that are not installed on your "
@@ -2891,7 +2966,7 @@ msgstr "Měřítko mapy:"
 
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
-msgstr ""
+msgstr "Rozlišení bitmapu"
 
 #: NewEventBitmapScale.resx, pdfScaleLabel.Text
 msgid "When using an PDF file as a map, you must specify the map "
@@ -2899,7 +2974,11 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Při použití PDF souboru jako mapy musíte specifikovat "
+"měřítko mapy. \n"
+"\n"
+"Měřítko mapy určuje vztah mezi papírovou mapou a reálným "
+"světem.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
@@ -2929,21 +3008,23 @@ msgstr "Vybrané složky"
 
 #: NewEventDirectory.resx, labelTitle.Text
 msgid "Event File Location"
-msgstr ""
+msgstr "Umístění souboru s tratěmi"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
-msgstr ""
+msgstr "Kliknutím na \"Dokončit\" vytvoř nový závod. Soubor tvého "
+"závodu bude uložený jako:"
 
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr ""
+msgstr "Když je tvůj závod vytvořený, vyber \"Nová trať\" z menu "
+"Tratě pro vytvoření jedné, nebo více tratí."
 
 #: NewEventFinal.resx, labelTitle.Text
 msgid "Create Event"
-msgstr ""
+msgstr "Vytvořit závod"
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
@@ -2955,27 +3036,30 @@ msgstr ""
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
-msgstr ""
+msgstr "Vybraný mapový soubor"
 
 #: NewEventMapFile.resx, infoMessage.Text
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr ""
+msgstr "Mapa byla úspěšně načtena. Pokud chceš poslat svůj "
+"PurplePen soubor někomu jinému, musí mít soubor mapy také."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr ""
+msgstr "Nově vytvořené kontroly jsou automaticky očíslovány. Vyber "
+"prosím kód první kontroly."
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
 "Numbering)"
-msgstr ""
+msgstr "(Tohle nastavení může být později změněno pomocí "
+"Event/Automatické číslování)"
 
 #: NewEventNumbering.resx, labelTitle.Text
 msgid "Control Numbering"
-msgstr ""
+msgstr "Číslování kontrol"
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
@@ -2991,45 +3075,51 @@ msgstr "Výchozí &tiskové měřítko:"
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr ""
+msgstr "(Měřítko tisku můžeš změnit později pro jakoukoliv z tratí "
+"kliknutím na Trať/Vlastnosti.)"
 
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "Tyto nastavení mohou být změněny později pomocí Závod/IOF "
+"Standardy)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
+msgstr "IOF Standardy"
+
+#: NewEventStandards.resx, radioButtonMapSpr2019.Text
+msgid "ISSprOM 2019"
 msgstr ""
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
-msgstr ""
+msgstr "ISOM 2017"
 
 #: NewEventStandards.resx, radioButtonMap2000.Text
 msgid "ISOM 2000 / ISSOM 2007"
-msgstr ""
+msgstr "ISOM 2000 / ISSOM 2007"
 
 #: NewEventStandards.resx, groupBoxMapStandard.Text
 msgid "IOF Map Standard"
-msgstr ""
+msgstr "IOF mapový klíč"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
 msgid "Descriptions 2018"
-msgstr ""
+msgstr "Popisy 2018"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
-msgstr ""
+msgstr "Popisy 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "IOF Standard popisů kontrol"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
 "to follow?"
-msgstr ""
+msgstr "Jakou verzi IOF standardů chcete použít v tomto eventu?"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3062,20 +3152,21 @@ msgstr ""
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
-msgstr ""
+msgstr "Pokračovat"
 
 #: NonPrintableObjects.resx, $this.Text
 msgid "Map File Cannot Be Printed Accurately"
-msgstr ""
+msgstr "Mapový soubor nemůže být vytištěn přesně"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Probíhá načítání"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
 "will be replaced."
-msgstr ""
+msgstr "Následující soubory již existují. Když budete pokračovat, "
+"budou nevratně PŘEPSÁNY!"
 
 #: OverwritingOcadFilesDialog.resx, buttonOK.Text
 msgid "Replace"
@@ -3083,19 +3174,19 @@ msgstr "Nahradit"
 
 #: OverwritingOcadFilesDialog.resx, $this.Text
 msgid "Confirm Replace Files"
-msgstr ""
+msgstr "Potvrdit přepsání souboru"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr ""
+msgstr "PDFium PDF converter čte Vaše PDFko..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "Čtení PDF selhalo. Chyby jsou zobrazeny níže."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Čtení PDF"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
@@ -3129,11 +3220,11 @@ msgstr "Náhled..."
 
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
-msgstr ""
+msgstr "Kopie každé trati:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
+msgstr "Pozastavit tisk po vytisknutí každé trati, nebo části"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
@@ -3143,11 +3234,11 @@ msgstr "Kopie"
 
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
+msgstr "OCAD Kompatibilita"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
-msgstr ""
+msgstr "Vytisknout tratě"
 
 #: PrintDescriptions.resx, marginChange.Text
 #: PrintPunches.resx, marginChange.Text
@@ -3157,7 +3248,7 @@ msgstr "Změnit okraje..."
 #: PrintDescriptions.resx, paperSize.Text
 #: PrintPunches.resx, paperSize.Text
 msgid "Tabloid (11\"x17\")"
-msgstr ""
+msgstr "Tabloid (11\"x17\")"
 
 #: PrintDescriptions.resx, paperSizeLabel.Text
 #: PrintPunches.resx, paperSizeLabel.Text
@@ -3167,7 +3258,7 @@ msgstr "Velikost papíru:"
 #: PrintDescriptions.resx, margins.Text
 #: PrintPunches.resx, margins.Text
 msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr ""
+msgstr "Nahoře: 0.55\", Dole: 0.55\", Vlevo: 0.55\", Vpravo: 0.55\""
 
 #: PrintDescriptions.resx, marginsLabel.Text
 #: PrintPunches.resx, marginsLabel.Text
@@ -3181,15 +3272,15 @@ msgstr "Orientace:"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr ""
+msgstr "Výchozí nastavení tratí"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
-msgstr ""
+msgstr "Symboly & Text"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr ""
+msgstr "Typ popisku:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
@@ -3197,72 +3288,72 @@ msgstr "Velikost řádky:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr ""
+msgstr "Popisky podle trati"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
-msgstr ""
+msgstr "jedna kopie od každé tratě"
 
 #: PrintDescriptions.resx, copiesCombo.Items1
 msgid "one page of each course"
-msgstr ""
+msgstr "jedna stránka od každé tratě"
 
 #: PrintDescriptions.resx, copiesCombo.Items2
 msgid "multiple pages of each course"
-msgstr ""
+msgstr "více stránek každé tratě"
 
 #: PrintDescriptions.resx, whatToPrintLabel.Text
 msgid "Print:"
-msgstr ""
+msgstr "Vytisknout:"
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
-msgstr ""
+msgstr "Vytisknout popisy"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Výška:"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Velikost papíru ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Orientace"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Vlevo:"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Nahoře:"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Vpravo:"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Dole:"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Okraje ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Vzhled stránky"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr ""
+msgstr "Rozložení průkazky"
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
-msgstr ""
+msgstr "Velikost políčka pro ražení"
 
 #: PrintPunches.resx, descriptionsLabel.Text
 msgid "Copies:"
@@ -3270,11 +3361,11 @@ msgstr "Kopie:"
 
 #: PrintPunches.resx, $this.Text
 msgid "Print Punch Cards"
-msgstr ""
+msgstr "Vytisknout průkazky"
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr ""
+msgstr "Pořadí"
 
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
@@ -3290,17 +3381,19 @@ msgstr "Velikost"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr ""
+msgstr "Rozložení průkazky"
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr ""
+msgstr "Klikni na kód kontroly na levé straně seznamu a navrhni "
+"vzor ražení na pravé straně. Červené kódy značí kontroly, "
+"které nemají definovaný žádný vzor ražení."
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
-msgstr ""
+msgstr "Vzor ražení"
 
 #: ReportForm.resx, printButton.Text
 #: TeamVariationsForm.resx, buttonPrint.Text
@@ -3351,11 +3444,11 @@ msgstr "Vzdálenost"
 
 #: ReportText.resx, ColumnHeader_Item
 msgid "Item"
-msgstr ""
+msgstr "Položka"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
-msgstr ""
+msgstr "Postup"
 
 #: ReportText.resx, ColumnHeader_Length
 msgid "Length"
@@ -3371,54 +3464,58 @@ msgstr "Umístění"
 
 #: ReportText.resx, ColumnHeader_NumberOfCourses
 msgid "# Courses"
-msgstr ""
+msgstr "# Tratí"
 
 #: ReportText.resx, ColumnHeader_Reason
 msgid "Reason"
-msgstr ""
+msgstr "Důvod"
 
 #: ReportText.resx, ColumnHeader_SameSymbol
 msgid "Same symbol?"
-msgstr ""
+msgstr "Stejný symbol?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Návštěvy"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr ""
+msgstr "Shrnutí tratí pro {0}"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr ""
+msgstr "Použití kontrol v tratích pro {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "Protiběhy"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
-msgstr ""
+msgstr "Kontroly umístěné blízko sebe"
 
 #: ReportText.resx, EventAudit_CloseTogetherExplanation
 msgid "The following table shows all control pairs that are "
 "within {0} meters of each other. The same symbol column "
 "shows whether the two controls have the same primary "
 "symbol (column D)."
-msgstr ""
+msgstr "Následující tabulka ukazuje všechny dvojce kontrol, které "
+"jsou od sebe vzdáleny méně než {0} metrů. Sloupec Stejný "
+"symbol ukazuje, jestli mají obě kontroly stejný primární "
+"symbol (podle sloupce D v popisech)."
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
-msgstr ""
+msgstr "Chybějící popisy kontrol"
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
-msgstr ""
+msgstr "Běžné tratě by měly mít zadané převýšení"
 
 #: ReportText.resx, EventAudit_MissingD
 msgid "All controls must have a main feature in column D"
-msgstr ""
+msgstr "Všechny kontroly musí mít určený typ objektu ve sloupci D "
+"v popisech kontrol."
 
 #: ReportText.resx, EventAudit_MissingEBetween
 msgid "When \"between\" is in column G, two features must be shown "
@@ -3432,23 +3529,23 @@ msgstr ""
 
 #: ReportText.resx, EventAudit_MissingFinish
 msgid "Regular courses should have a finish circle"
-msgstr ""
+msgstr "Běžné tratě by měly mít cíl."
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr ""
+msgstr "Chybějící detaily v Tratích"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr ""
+msgstr "Trať by měla mít předpokládaný počet závodníků"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
-msgstr ""
+msgstr "Žádný vzor ražení není definován."
 
 #: ReportText.resx, EventAudit_MissingPunchPatterns
 msgid "Missing Punch Patterns"
-msgstr ""
+msgstr "Chybějící vzor ražení"
 
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
@@ -3457,11 +3554,11 @@ msgstr ""
 
 #: ReportText.resx, EventAudit_MissingScores
 msgid "Missing Scores"
-msgstr ""
+msgstr "Chybějící skóre"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
-msgstr ""
+msgstr "Běžné tratě by měly mít startovní trojúhelník."
 
 #: ReportText.resx, EventAudit_MissingStartScore
 msgid "Score courses should have a start triangle"
@@ -3469,7 +3566,7 @@ msgstr ""
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
-msgstr ""
+msgstr "Vše je v pořádku."
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
@@ -3524,11 +3621,11 @@ msgstr ""
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr ""
+msgstr "Vytížení kontroly"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr ""
+msgstr "Vytížení postupů"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
@@ -3544,7 +3641,7 @@ msgstr ""
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr ""
+msgstr "Souhrn vytížení {0}"
 
 #: ReportText.resx, Load_VariationsExist
 msgid "One or more courses has variations. Load numbers will be "
@@ -3554,7 +3651,7 @@ msgstr ""
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "({0} závodníků)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -3562,7 +3659,7 @@ msgstr "VAROVÁNÍ:"
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "POZNÁMKA: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
@@ -3572,7 +3669,7 @@ msgstr ""
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "Postup {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
@@ -3582,7 +3679,7 @@ msgstr ""
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "Team {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
@@ -3590,19 +3687,19 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
-msgstr ""
+msgstr "pryč od kontroly"
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr ""
+msgstr "Vytížení závodníky:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
-msgstr ""
+msgstr "Využité kontroly:"
 
 #: SelectionDescriptionText.resx, ControlsNotInUse
 msgid "Controls not in use:"
-msgstr ""
+msgstr "Nevyužité kontroly:"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
@@ -3622,23 +3719,23 @@ msgstr "Trať \"{0}\""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr ""
+msgstr "Upravené popisky kontrol"
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
-msgstr ""
+msgstr "celý postup"
 
 #: SelectionDescriptionText.resx, FinishFunnel
 msgid "finish funnel"
-msgstr ""
+msgstr "cílový koridor"
 
 #: SelectionDescriptionText.resx, Finish_Plural
 msgid "finishes"
-msgstr ""
+msgstr "finishuje"
 
 #: SelectionDescriptionText.resx, Finish_Singular
 msgid "finish"
-msgstr ""
+msgstr "finish"
 
 #: SelectionDescriptionText.resx, Flagging
 msgid "Flagging:"
@@ -3646,15 +3743,15 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, IntoControl
 msgid "into control"
-msgstr ""
+msgstr "ke kontrole"
 
 #: SelectionDescriptionText.resx, IntoFinishFunnel
 msgid "into finish funnel"
-msgstr ""
+msgstr "do cílového koridoru"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr ""
+msgstr "Šířka linie:"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
@@ -3662,27 +3759,27 @@ msgstr "Umístění:"
 
 #: SelectionDescriptionText.resx, MandCrossing_Plural
 msgid "mandatory crossing points"
-msgstr ""
+msgstr "povinné průchody"
 
 #: SelectionDescriptionText.resx, MandCrossing_Singular
 msgid "mandatory crossing point"
-msgstr ""
+msgstr "povinný průchod"
 
 #: SelectionDescriptionText.resx, None
 msgid "none"
-msgstr ""
+msgstr "Žádný"
 
 #: SelectionDescriptionText.resx, SpecialName_Forbidden
 msgid "Forbidden Route"
-msgstr ""
+msgstr "Zakázaný postup"
 
 #: SelectionDescriptionText.resx, SpecialName_OOB
 msgid "Out-of-bounds Area"
-msgstr ""
+msgstr "Zakázaný prostor"
 
 #: SelectionDescriptionText.resx, Start_Plural
 msgid "starts"
-msgstr ""
+msgstr "začíná"
 
 #: SelectionDescriptionText.resx, Start_Singular
 msgid "start"
@@ -3690,11 +3787,11 @@ msgstr "start"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr ""
+msgstr "Psaný popis :"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
-msgstr ""
+msgstr "Text"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
@@ -3714,83 +3811,83 @@ msgstr ""
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
-msgstr ""
+msgstr "Celkem kontrol:"
 
 #: SelectionDescriptionText.resx, TotalScore
 msgid "Total score:"
-msgstr ""
+msgstr "Celkem bodů:"
 
 #: SelectionDescriptionText.resx, UsedInCourses
 msgid "Used in courses:"
-msgstr ""
+msgstr "Použit v tratích:"
 
 #: SelectionDescriptionText.resx, FileName
 msgid "Name:"
-msgstr ""
+msgstr "Název:"
 
 #: SelectionDescriptionText.resx, MapExchange_Plural
 msgid "map exchanges"
-msgstr ""
+msgstr "výměny mapy"
 
 #: SelectionDescriptionText.resx, MapExchange_Singular
 msgid "map exchange"
-msgstr ""
+msgstr "výměna mapy"
 
 #: SelectionDescriptionText.resx, MapExchangeAtControl
 msgid "Map exchange at {0}"
-msgstr ""
+msgstr "Výměna mapy na {0}"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "Vytížení:"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
-msgstr ""
+msgstr "Použito v:"
 
 #: SelectionDescriptionText.resx, CourseNameAndPart
 msgid "Course \"{0}\", Part {1}"
-msgstr ""
+msgstr "Trať \"{0}\", Část {1}"
 
 #: SelectionDescriptionText.resx, CalculatedLength
 msgid "Calculated Length:"
-msgstr ""
+msgstr "Automatická délka:"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "Body vydání mapy"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "Bod vydání mapy"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "Každá varianta zvlášť"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Každý úsek zvlášť"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Všechny varianty dohromady"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Varianty:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "zobrazit všechny varianty na jedné mapě."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "Jedna mapa pro každou variantu trati."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "Jedna mapa pro každý úsek vybraných týmů"
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
@@ -3799,7 +3896,7 @@ msgstr ""
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Vybrat jednotlivé varianty"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
@@ -3809,15 +3906,15 @@ msgstr ""
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "do"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Vybrat týmy k tisku/exportu:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Vybrat varianty"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -3829,15 +3926,15 @@ msgstr ""
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Velikost papíru"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Nastavit oblast tisku automaticky"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Fixovat tiskovou plochu na velikost papíru"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "
@@ -3886,88 +3983,101 @@ msgstr ""
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro umístění nového startu."
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro přidání existujícího "
+"startu do trati."
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro umístění nového cíle."
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro přidání existujícího cíle "
+"do trati."
 
 #: StatusBarText.resx, AddingCrossingPoint
 msgid "Click left mouse button to place new mandatory crossing "
 "point"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro umístění nového povinného "
+"průchodu."
 
 #: StatusBarText.resx, AddingExistingCrossingPoint
 msgid "Click left mouse button to add existing mandatory crossing "
 "point to course"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro přidání existujícího "
+"povinného průchodu do trati."
 
 #: StatusBarText.resx, AddingObject
 msgid "Click left mouse button to place new object"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro umístění nového objektu."
 
 #: StatusBarText.resx, AddingBend
 msgid "Click left mouse button at the location of the bend"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši do místa ohybu."
 
 #: StatusBarText.resx, AddingCorner
 msgid "Click left mouse button to add a new corner"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro přidání nového rohového "
+"bodu."
 
 #: StatusBarText.resx, DeletingBend
 msgid "Click left mouse button on a bend to remove it"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši na ohyb pro jeho smazání."
 
 #: StatusBarText.resx, DeletingCorner
 msgid "Click left mouse button on a corner to remove it"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši na rohový bod pro jeho smazání"
 
 #: StatusBarText.resx, AddingControlGap
 msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši na kolečko kontroly pro "
+"přidání malé mezery; přidrž levé tlačítko a táhni pro "
+"přidání velké mezery."
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši na mezeru v kolečku kontroly "
+"pro její smazání."
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro vytvoření malé mezery; "
+"přidrž levé tlačítko a táhni pro vytvoření velké mezery ve "
+"spojnici kontrol"
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši na mezeru pro její odstranění"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
 "object"
-msgstr ""
+msgstr "Přidrž levé tlačítko myši a táhni pro změnu velikosti "
+"vybraného objektu."
 
 #: StatusBarText.resx, SizingRectangle
 msgid "Move edge(s) to desired location and release mouse button"
-msgstr ""
+msgstr "Přesuň okraj(e) do požadovaného místa a pusť tlačítko myši"
 
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr ""
+msgstr "Přidrž levé tlačítko myši a táhni pro vytvoření popisů "
+"kontrol."
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
 "to the correct angle"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši ve chvíli, kdy bude průchod "
+"otočený ve správném úhlu."
 
 #: StatusBarText.resx, AddingLineArea
 msgid "Hold down left mouse button and drag to add a line "
@@ -3976,30 +4086,33 @@ msgstr ""
 
 #: StatusBarText.resx, AddingText
 msgid "Hold down left mouse button and drag to create text"
-msgstr ""
+msgstr "Přidrž levé tlačítko myši a táhni pro vytvoření textu."
 
 #: StatusBarText.resx, AddingExistingMapExchange
 msgid "Click left mouse button to add existing map exchange to "
 "course"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro přidání existující výměny "
+"mapy do trati"
 
 #: StatusBarText.resx, AddingMapExchange
 msgid "Click left mouse button to place new map exchange"
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro umístění nové výměny mapy."
 
 #: StatusBarText.resx, AddingMapExchangeToControl
 msgid "Click left mouse button to add map exchange at control "
 "\"{0}\" "
-msgstr ""
+msgstr "Klikni levým tlačítkem myši pro přidání výměny mapy na "
+"kontrolu \"{0}\" "
 
 #: StatusBarText.resx, AddingRectangle
 msgid "Hold down left mouse button and drag to create object"
-msgstr ""
+msgstr "Přidrž levé tlačítko myši a táhni pro vytvoření objektu."
 
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "Táhni číslem kontroly pro změnu pořadí v trati (přidrž "
+"shift pro duplikování)"
 
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
@@ -4017,19 +4130,19 @@ msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "Exportovat…"
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr ""
+msgstr "Počet úseků:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "Přiřadit varianty"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "Počet týmů:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
@@ -4037,15 +4150,15 @@ msgstr ""
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Čísla týmů začínají od: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Skrýt kódy variant na mapě"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr ""
+msgstr "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -4063,5 +4176,5 @@ msgstr ""
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Zobrazit další Tratě"
 

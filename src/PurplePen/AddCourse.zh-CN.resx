@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>第一个控制程序：</value>
+    <value>第一个检查点序号</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>描述外观：</value>
+    <value>说明表外观：</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>地图印刷尺度：</value>
+    <value>地图打印比例：</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1： </value>
+    <value>1 : </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>符号</value>
@@ -139,34 +139,34 @@
     <value>符号和文字</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>控制环标签：</value>
+    <value>检查点序号</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>序列号（3）</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
-    <value>控制代码（145）</value>
+    <value>检查点序号（145）</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>序列和编码（3-145）</value>
   </data>
   <data name="labelKindCombo.Items3" xml:space="preserve">
-    <value>序列和评分（3（30））</value>
+    <value>序列号和积分（3(30)）</value>
   </data>
   <data name="labelKindCombo.Items4" xml:space="preserve">
-    <value>代码和评分（145（30））</value>
+    <value>代码和积分 (145(30))</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>显示点：</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
-    <value>柱</value>
+    <value>A列</value>
   </data>
   <data name="scoreColumnCombo.Items1" xml:space="preserve">
-    <value>B柱</value>
+    <value>B列</value>
   </data>
   <data name="scoreColumnCombo.Items2" xml:space="preserve">
-    <value>H形</value>
+    <value>H列</value>
   </data>
   <data name="scoreColumnCombo.Items3" xml:space="preserve">
     <value>（不显示）</value>
@@ -175,28 +175,28 @@
     <value>界面</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>以下（可选）的文本将出现在控制描述表的第二行：</value>
+    <value>以下（可选）的文本将出现在检查点说明表的第二行：</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>类列表/次级标题</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
-    <value>长度</value>
+    <value>长度：</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>爬：</value>
+    <value>爬高量：</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>课程类型：</value>
+    <value>线路类型：</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>课程名称：</value>
+    <value>线路名称：</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>正常的课程</value>
+    <value>普通线路</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>评分过程</value>
+    <value>积分赛线路</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>米</value>
@@ -205,6 +205,6 @@
     <value>千米</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>新课程</value>
+    <value>新线路</value>
   </data>
 </root>

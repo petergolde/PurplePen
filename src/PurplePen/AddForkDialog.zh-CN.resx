@@ -118,51 +118,51 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWhichType.Text" xml:space="preserve">
-    <value>你想添加什么类型的变化？</value>
+    <value>你想添加什么类型的分支？</value>
   </data>
   <data name="radioButtonFork.Text" xml:space="preserve">
-    <value>分叉</value>
+    <value>分支</value>
   </data>
   <data name="radioButtonLoop.Text" xml:space="preserve">
     <value>循环</value>
   </data>
   <data name="labelNumberBranches.Text" xml:space="preserve">
-    <value>分枝数：</value>
+    <value>分支数：</value>
   </data>
   <data name="comboBoxNumberBranches.Items" xml:space="preserve">
-    <value>二</value>
+    <value>2</value>
   </data>
   <data name="comboBoxNumberBranches.Items1" xml:space="preserve">
-    <value>三</value>
+    <value>3</value>
   </data>
   <data name="comboBoxNumberBranches.Items2" xml:space="preserve">
-    <value>四</value>
+    <value>4</value>
   </data>
   <data name="comboBoxNumberBranches.Items3" xml:space="preserve">
-    <value>五</value>
+    <value>5</value>
   </data>
   <data name="comboBoxNumberBranches.Items4" xml:space="preserve">
-    <value>六</value>
+    <value>6</value>
   </data>
   <data name="comboBoxNumberBranches.Items5" xml:space="preserve">
-    <value>七</value>
+    <value>7</value>
   </data>
   <data name="comboBoxNumberBranches.Items6" xml:space="preserve">
-    <value>八</value>
+    <value>8</value>
   </data>
   <data name="comboBoxNumberBranches.Items7" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="comboBoxNumberBranches.Items8" xml:space="preserve">
-    <value>十</value>
+    <value>10</value>
   </data>
   <data name="labelNumberLoops.Text" xml:space="preserve">
     <value>圈数：</value>
   </data>
   <data name="labelSummary.Text" xml:space="preserve">
-    <value>闭环控制将被访问4次。有24种不同的方法通过循环。</value>
+    <value>这个循环检查点将被访问4次。有24种不同的方法通过这个循环。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>添加变化</value>
+    <value>添加分支</value>
   </data>
 </root>

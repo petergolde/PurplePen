@@ -132,14 +132,53 @@
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Formát souboru:</value>
   </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>PNG</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>JPEG</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>GIF</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Předpona souboru:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Soubor .world:</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>DPI</value>
   </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>Ne</value>
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Ano</value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Barevný model:</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RGB</value>
@@ -164,6 +203,9 @@
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Složka</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vytvořit obrázek</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

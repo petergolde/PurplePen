@@ -144,11 +144,41 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Fájlnév előtag:</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Világ fájl:</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>Dpi:</value>
+  </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>Nem</value>
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Igen</value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Szín modell:</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RGB</value>

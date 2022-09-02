@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Arquivo de Mapa Atual</value>
+  </data>
+  <data name="buttonChooseFile.Text" xml:space="preserve">
+    <value>&amp;Escolha o arquivo de mapa ...</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Resolução:</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Escala:</value>
+  </data>
+  <data name="labelDpi2.Text" xml:space="preserve">
+    <value>pontos por polegada</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Arquivo de Mapa</value>
   </data>
 </root>

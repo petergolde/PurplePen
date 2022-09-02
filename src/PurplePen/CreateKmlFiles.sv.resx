@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Filnamnsprefix:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Filformat:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Filer:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>En för alla banor</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>En per bana</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Skrivare</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Skapa OCAD-filer</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Filformat:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

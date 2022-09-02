@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>Tyto nastavení mohou být změněny později pomocí Závod/IOF Standardy)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>IOF Standardy</value>
+  </data>
+  <data name="radioButtonMap2017.Text" xml:space="preserve">
+    <value>ISOM 2017</value>
+  </data>
+  <data name="radioButtonMap2000.Text" xml:space="preserve">
+    <value>ISOM 2000 / ISSOM 2007</value>
+  </data>
+  <data name="groupBoxMapStandard.Text" xml:space="preserve">
+    <value>IOF mapový klíč</value>
+  </data>
+  <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
+    <value>Popisy 2018</value>
+  </data>
+  <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
+    <value>Popisy 2004</value>
+  </data>
+  <data name="groupBoxDescriptionStandard.Text" xml:space="preserve">
+    <value>IOF Standard popisů kontrol</value>
+  </data>
+  <data name="labelStandardsIntro.Text" xml:space="preserve">
+    <value>Jakou verzi IOF standardů chcete použít v tomto eventu?</value>
+  </data>
 </root>

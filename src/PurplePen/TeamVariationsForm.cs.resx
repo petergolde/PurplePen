@@ -120,11 +120,32 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Zavřít</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportovat…</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Tisk…</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Náhled tisku...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Počet úseků:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Přiřadit varianty</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Počet týmů:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Čísla týmů začínají od: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Skrýt kódy variant na mapě</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Varianty štafet</value>

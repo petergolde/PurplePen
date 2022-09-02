@@ -121,7 +121,7 @@
     <value>下移</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>使用"上移"和"下移"按鍵變更賽程在使用者介界，整體報告和輸出文件中列出的順序。</value>
+    <value>使用"上移"和"下移"按鍵，變更賽程在使用者介面、整體報告或列印文件中的順序。</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>上移</value>

@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Iga variant eraldi</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Iga teatevahetus eraldi</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Kõik variandid kombineeritult</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variandid:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Kuva kõik hajutused koos ühel kaardil.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Üks kaart iga võimaliku variandi kohta rajal.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Üks kaart iga teatevahetuse jaoks valitud võistkondadele.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Kõigepealt pead määrama võistkonnad valides Radade menüüst Võistkonna variandid.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Vali personaalsed variandid</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Rajale {0} on võistkonnad määratud. Võistkondade arvu muutmiseks vali menüüst rajad Võistkonna variandid .</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>kuni</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Vali millised võistkonnad trükkida/eksportida:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vali variandid</value>
+  </data>
 </root>

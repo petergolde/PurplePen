@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
+"POT-Creation-Date: 2022-08-10 14:52-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgstr "Sobre o Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr ""
+msgstr "Primeiro número de controle:"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -117,25 +117,29 @@ msgstr ""
 msgid "Code and score (145(30))"
 msgstr ""
 
+#: AddCourse.resx, labelKindCombo.Items5
+msgid "Score (30)"
+msgstr ""
+
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
-msgstr ""
+msgstr "Exibir pontos em:"
 
 #: AddCourse.resx, scoreColumnCombo.Items
 msgid "Column A"
-msgstr ""
+msgstr "Coluna A"
 
 #: AddCourse.resx, scoreColumnCombo.Items1
 msgid "Column B"
-msgstr ""
+msgstr "Coluna B"
 
 #: AddCourse.resx, scoreColumnCombo.Items2
 msgid "Column H"
-msgstr ""
+msgstr "Coluna H"
 
 #: AddCourse.resx, scoreColumnCombo.Items3
 msgid "(do not display)"
-msgstr ""
+msgstr "(não mostrar)"
 
 #: AddCourse.resx, groupBox1.Text
 #: AllControlsProperties.resx, appearanceGroupBox.Text
@@ -161,7 +165,7 @@ msgstr "Relação de categorias/ Título secundário"
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
 msgid "Length:"
-msgstr ""
+msgstr "Comprimento:"
 
 #: AddCourse.resx, climbLabel.Text
 #: SelectionDescriptionText.resx, Climb
@@ -190,7 +194,7 @@ msgstr "metros"
 
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -199,15 +203,15 @@ msgstr "Novo Percurso"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr ""
+msgstr "Que tipo de variação você gostaria de adicionar?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
-msgstr ""
+msgstr "Bifurcação"
 
 #: AddForkDialog.resx, radioButtonLoop.Text
 msgid "Loop"
-msgstr ""
+msgstr "Laço"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
@@ -215,59 +219,61 @@ msgstr ""
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items1
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items2
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items3
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items4
 msgid "6"
-msgstr ""
+msgstr "6"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items5
 msgid "7"
-msgstr ""
+msgstr "7"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items6
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items7
 msgid "9"
-msgstr ""
+msgstr "9"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items8
 msgid "10"
-msgstr ""
+msgstr "10"
 
 #: AddForkDialog.resx, labelNumberLoops.Text
 msgid "Number of loops:"
-msgstr ""
+msgstr "Número de laços:"
 
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
 "different ways through the loops."
-msgstr ""
+msgstr "O controle de laço será visitado 4 vezes. Há 24 caminhos "
+"diferentes através dos laços."
 
 #: AddForkDialog.resx, $this.Text
 #: CommandNameText.resx, AddVariation
 #: MainFrame.resx, addVariationToolStripButton.Text
 msgid "Add Variation"
-msgstr ""
+msgstr "Adicionar Variação"
 
 #: AddTextLine.resx, textLineLabel.Text
 msgid "Enter text to place on separate line of control "
 "descriptions:"
-msgstr ""
+msgstr "Digite o texto para colocar em uma linha separada de "
+"descrições de controle:"
 
 #: AddTextLine.resx, coursesLabel.Text
 msgid "Courses:"
@@ -296,49 +302,53 @@ msgstr "Todos os percursos com"
 #: AddTextLine.resx, $this.Text
 #: CommandNameText.resx, AddTextLine
 msgid "Add Text Line"
-msgstr ""
+msgstr "Adicionar Linha de Texto"
 
 #: AllControlsProperties.resx, allControlsPropertiesLabel.Text
 msgid "These settings control how the map and descriptions for "
 "All Controls are printed."
-msgstr ""
+msgstr "Essas configurações controlam como o mapa e as descrições "
+"para Todos os Controles são impressos."
 
 #: AllControlsProperties.resx, $this.Text
 msgid "All Controls Properties"
-msgstr ""
+msgstr "Todas as propriedades dos controles"
 
 #: AutoNumbering.resx, disallowInvertibleCheckBox.Text
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr ""
+msgstr "Não permitir códigos que possam ser lidos de cabeça para "
+"baixo (por exemplo, \"68\" / \"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
 msgid "Renumber existing controls also"
-msgstr ""
+msgstr "Renumerar controles existentes também"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr ""
+msgstr "Aplique essas configurações apenas aos controles "
+"recém-criados"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
-msgstr ""
+msgstr "Controles Existentes"
 
 #: AutoNumbering.resx, automaticNumberingLabel.Text
 msgid "Newly created controls are automatically numbered "
 "according to the following settings."
-msgstr ""
+msgstr "Controles criados recentemente são automaticamente "
+"numerados de acordo com as seguintes configurações."
 
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
 msgid "Starting code:"
-msgstr ""
+msgstr "Código inicial:"
 
 #: AutoNumbering.resx, $this.Text
 #: CommandNameText.resx, AutoNumbering
 msgid "Automatic Numbering"
-msgstr ""
+msgstr "Numeração automática"
 
 #: ChangeAllCodes.resx, OldCode.HeaderText
 msgid "Original Code"
@@ -351,11 +361,12 @@ msgstr "Novo código"
 #: ChangeAllCodes.resx, changeControlCodesLabel.Text
 msgid "To change the code for one or more controls,click in the "
 "\"New Code\" column and enter the new code. "
-msgstr ""
+msgstr "Para alterar o código de um ou mais controles, clique na "
+"coluna \"Novo código\" e insira o novo código. "
 
 #: ChangeAllCodes.resx, $this.Text
 msgid "Change Control Codes"
-msgstr ""
+msgstr "Alterar Código dos Controles"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
@@ -365,7 +376,9 @@ msgstr "Mover para baixo"
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr ""
+msgstr "Use os botões \"Mover para cima\" e \"Mover para baixo\" para "
+"alterar a ordem em que os cursos são listados na interface "
+"do usuário, nos relatórios e na impressão."
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
@@ -373,16 +386,16 @@ msgstr "Mover para cima"
 
 #: ChangeCourseOrder.resx, $this.Text
 msgid "Course Order"
-msgstr ""
+msgstr "Ordem do Curso"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
-msgstr ""
+msgstr "Arquivo de Mapa Atual"
 
 #: ChangeMapFile.resx, buttonChooseFile.Text
 #: NewEventMapFile.resx, chooseMapFileButton.Text
 msgid "&Choose map file..."
-msgstr ""
+msgstr "&Escolha o arquivo de mapa ..."
 
 #: ChangeMapFile.resx, openFileDialog.Filter
 #: NewEventMapFile.resx, openFileDialog.Filter
@@ -408,32 +421,32 @@ msgstr ""
 #: ChangeMapFile.resx, labelDpi2.Text
 #: NewEventBitmapScale.resx, dpiLabel.Text
 msgid "dots per inch"
-msgstr ""
+msgstr "pontos por polegada"
 
 #: ChangeMapFile.resx, $this.Text
 #: NewEventMapFile.resx, labelTitle.Text
 msgid "Map File"
-msgstr ""
+msgstr "Arquivo de Mapa"
 
 #: ChangeSpecialCourses.resx, changeDisplayedCoursesLabel.Text
 msgid "Choose the courses that this object will be displayed on:"
-msgstr ""
+msgstr "Escolha os cursos em que este objeto será exibido:"
 
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr ""
+msgstr "Alterar Cursos Exibidos"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
-msgstr ""
+msgstr "Título do Evento"
 
 #: ChangeText.resx, courseNameMenuItem.Text
 #: CourseLoad.resx, CourseName.HeaderText
 #: SelectionDescriptionText.resx, SpecialName_CourseName
 msgid "Course Name"
-msgstr ""
+msgstr "Nome do Curso"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
@@ -441,7 +454,7 @@ msgstr ""
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr ""
+msgstr "Variação do Curso"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
@@ -453,39 +466,39 @@ msgstr ""
 
 #: ChangeText.resx, classListMenuItem.Text
 msgid "Class List"
-msgstr ""
+msgstr "Lista de Classe"
 
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr ""
+msgstr "Escala de Impressão"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
-msgstr ""
+msgstr "Equipe de Revezamento"
 
 #: ChangeText.resx, relayLegMenuItem.Text
 msgid "Relay Leg"
-msgstr ""
+msgstr "Perna de Revezamento"
 
 #: ChangeText.resx, fileNameMenuItem.Text
 #: CreateRouteGadget.resx, nameGroupBox.Text
 msgid "File Name"
-msgstr ""
+msgstr "Nome do Arquivo"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Nome do Arquivo de Mapa"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
-msgstr ""
+msgstr "Alterar Cor..."
 
 #: ChangeText.resx, label2.Text
 #: CourseAppearanceDialog.resx, label9.Text
 #: LinePropertiesDialog.resx, label1.Text
 msgid "Color:"
-msgstr ""
+msgstr "Cor:"
 
 #: ChangeText.resx, checkBoxItalic.Text
 msgid "Italic"
@@ -811,6 +824,10 @@ msgstr ""
 msgid "Stretch"
 msgstr ""
 
+#: CommandNameText.resx, SetLiveloxImportableEventId
+msgid "Publish to Livelox"
+msgstr ""
+
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
 msgstr ""
@@ -899,7 +916,7 @@ msgid "Use overprint effect for colors marked \"overprint\""
 msgstr ""
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
+msgid "Advanced"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
@@ -959,6 +976,7 @@ msgstr ""
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateImageFiles.resx, coursesGroupBox.Text
+#: CreateKmlFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -989,6 +1007,7 @@ msgid "Create GPX File"
 msgstr ""
 
 #: CreateImageFiles.resx, createButton.Text
+#: CreateKmlFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
@@ -996,6 +1015,7 @@ msgid "Create"
 msgstr ""
 
 #: CreateImageFiles.resx, cancelButton.Text
+#: CreateKmlFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1011,6 +1031,7 @@ msgid "Cancel"
 msgstr ""
 
 #: CreateImageFiles.resx, folderBrowserDialog.Description
+#: CreateKmlFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
@@ -1034,6 +1055,7 @@ msgid "GIF"
 msgstr ""
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateKmlFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
 msgstr ""
@@ -1101,6 +1123,7 @@ msgid "CMYK"
 msgstr ""
 
 #: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1109,6 +1132,7 @@ msgid "Output"
 msgstr ""
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
+#: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
@@ -1116,6 +1140,7 @@ msgid "Select folder..."
 msgstr ""
 
 #: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
@@ -1123,6 +1148,7 @@ msgid "Other folder"
 msgstr ""
 
 #: CreateImageFiles.resx, mapDirectory.Text
+#: CreateKmlFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
@@ -1130,6 +1156,7 @@ msgid "Same folder as map file"
 msgstr ""
 
 #: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
@@ -1137,6 +1164,7 @@ msgid "Same folder as Purple Pen file"
 msgstr ""
 
 #: CreateImageFiles.resx, folderGroupBox.Text
+#: CreateKmlFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
@@ -1145,6 +1173,25 @@ msgstr ""
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
+msgstr ""
+
+#: CreateKmlFiles.resx, filesLabel.Text
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr ""
+
+#: CreateKmlFiles.resx, filesCombo.Items
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr ""
+
+#: CreateKmlFiles.resx, filesCombo.Items1
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr ""
+
+#: CreateKmlFiles.resx, $this.Text
+msgid "Create KML File"
 msgstr ""
 
 #: CreateOcadFiles.resx, $this.Text
@@ -1174,18 +1221,6 @@ msgstr ""
 #: CreatePdfCourses.resx, labelAppearanceInfo.Text
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
-msgstr ""
-
-#: CreatePdfCourses.resx, filesLabel.Text
-msgid "Files:"
-msgstr ""
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items
-msgid "One for all courses"
-msgstr ""
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
-msgid "One per course"
 msgstr ""
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
@@ -1483,7 +1518,15 @@ msgid "Create P&DFs"
 msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
+msgid "Create RouteGadget Files..."
+msgstr ""
+
+#: MainFrame.resx, publishToLiveloxMenu.Text
+msgid "Publish to Livelox..."
+msgstr ""
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
 msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
@@ -1492,6 +1535,10 @@ msgstr ""
 
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
+msgstr ""
+
+#: MainFrame.resx, createKMLFileMenu.Text
+msgid "Create &KML File..."
 msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
@@ -1820,6 +1867,10 @@ msgstr ""
 
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
+msgstr ""
+
+#: MainFrame.resx, mapStdSpr2019Menu.Text
+msgid "ISSprOM 2019 Map Standard"
 msgstr ""
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
@@ -2961,6 +3012,10 @@ msgstr ""
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
+msgstr ""
+
+#: NewEventStandards.resx, radioButtonMapSpr2019.Text
+msgid "ISSprOM 2019"
 msgstr ""
 
 #: NewEventStandards.resx, radioButtonMap2017.Text

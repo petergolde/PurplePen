@@ -138,6 +138,12 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Tratě</value>
   </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Kopie každé trati:</value>
+  </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Pozastavit tisk po vytisknutí každé trati, nebo části</value>
+  </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopie</value>
   </data>
@@ -146,6 +152,9 @@
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>Barevný model:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD Kompatibilita</value>
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>RGB</value>
@@ -164,6 +173,9 @@
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Zobrazení</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vytisknout tratě</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Velikost papíru:</value>

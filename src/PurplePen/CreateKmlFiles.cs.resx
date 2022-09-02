@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Předpona souboru:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Formát souboru:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Soubory:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Jeden soubor dohromady pro všechny tratě</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Co trať to soubor</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Výstup</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vytvořit soubory OCAD</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Formát souboru:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

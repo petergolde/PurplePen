@@ -120,4 +120,10 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percursos</value>
   </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>Um arquivo GPX contém coordenadas GPS dos postos de controlo e pode ser carregado num GPS ou smartphone para verificar a localização correta dos controlos.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Criar ficheiro GPX</value>
+  </data>
 </root>

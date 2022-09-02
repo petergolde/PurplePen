@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="introLabel.Text" xml:space="preserve">
-    <value>Selecciona el idioma que te gustaría utilizar para el interface de Purple Pen (menus, ventanas, etc.)</value>
+    <value>Selecciona el idioma que te gustaría utilizar para la interface de Purple Pen (menus, ventanas, etc.).</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Idioma del Programa</value>
+    <value>Idioma del programa</value>
   </data>
 </root>

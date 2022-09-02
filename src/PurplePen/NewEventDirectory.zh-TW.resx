@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventDirectoryLabel.Text" xml:space="preserve">
+    <value>您想將賽程檔案儲存在哪個資料夾（目錄）中？</value>
+  </data>
+  <data name="useMapDirectory.Text" xml:space="preserve">
+    <value>在與地圖檔案相同的資料夾中。</value>
+  </data>
+  <data name="useOtherFolder.Text" xml:space="preserve">
+    <value>在我選擇的另一個資料夾中。</value>
+  </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>選擇資料夾...</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>為您的賽事檔案選擇資料夾</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>選取的資料夾</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>賽事檔案位置</value>
+  </data>
 </root>

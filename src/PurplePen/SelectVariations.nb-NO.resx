@@ -117,7 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Hver variant for seg</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Hver stafettetappe for seg</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Alle variasjoner sammen</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variasjoner:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Vis alle avgreninger på ett kart.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Ett kart for alle mulige variasjoner av løypen.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Et kart for hver stafettetappe du velger</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Du må først definere stafettetapper ved å velge Stafettlag variasjoner... fra Løype menyen.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Velg indviduelle variasjoner</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Denne løypen har {0} definerte stafettlag. Bruk stafettlag variasjoner... fra løypemenyen for å endre antall stafettlag.</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>til</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Velg hvilke lag som skal skrives ut/eksporteres:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Velg variasjoner</value>
   </data>
 </root>

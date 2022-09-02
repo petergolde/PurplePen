@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>點擊 "完成"以建立新的賽事. 您的賽事檔案將儲存為:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>您的賽事建立之後, 選擇 "新增賽程..."從賽程選單中建立一組或多組賽程.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>建立賽事</value>
+  </data>
 </root>

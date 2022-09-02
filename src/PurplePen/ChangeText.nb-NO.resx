@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
-    <value>Navn på arrangement</value>
+    <value>Arrangementsnavn</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
     <value>Løypenavn</value>
   </data>
   <data name="coursePartMenuItem.Text" xml:space="preserve">
-    <value>Løype del</value>
+    <value>Løypedel</value>
   </data>
   <data name="variationMenuItem.Text" xml:space="preserve">
-    <value>Løype variasjon</value>
+    <value>Løypevariasjon</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
-    <value>Løypelende</value>
+    <value>Løypelengde</value>
   </data>
   <data name="courseClimbMenuItem.Text" xml:space="preserve">
     <value>Løypas stigning</value>
@@ -139,7 +139,7 @@
     <value>Klasseliste</value>
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
-    <value>Utskrifts skala</value>
+    <value>Utskriftsskala</value>
   </data>
   <data name="relayTeamMenuItem.Text" xml:space="preserve">
     <value>Stafettlag</value>
@@ -149,6 +149,9 @@
   </data>
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Filnavn</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Navn på kartfil</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>

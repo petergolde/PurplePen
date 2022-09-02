@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>课程</value>
+    <value>线路</value>
   </data>
   <data name="createButton.Text" xml:space="preserve">
     <value>创造</value>
@@ -127,7 +127,7 @@
     <value>取消</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>选择一个文件夹的软件包</value>
+    <value>选择一个ocad文件的文件夹</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>文件名前缀：</value>
@@ -145,15 +145,15 @@
     <value>其他文件夹</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>作为地图文件相同的文件夹</value>
+    <value>与地图文件相同的文件夹</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>紫色笔文件相同的文件夹</value>
+    <value>紫笔文件相同的文件夹</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>文件夹</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>创建软件包文件</value>
+    <value>创建ocad文件</value>
   </data>
 </root>

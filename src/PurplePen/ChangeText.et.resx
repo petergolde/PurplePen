@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Raja osa</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Raja variant</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Raja pikkus</value>
   </data>
@@ -138,8 +141,17 @@
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Trüki mõõtkava</value>
   </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Teate võistkond</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Teate vahetus</value>
+  </data>
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Faili nimi</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Kaardifaili nimi</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Välimus</value>

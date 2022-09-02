@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Ära muuda mõõtkava</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Vastavalt kaardi mõõtkavale</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>1:15 000 vastavalt</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Muuda suurust:</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automaatne joone vahe</value>
   </data>
@@ -206,9 +218,6 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Kasuta ületrüki effekti värvidele tunnusega "ületrükk"</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD kaart</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kohanda väljanägemist</value>

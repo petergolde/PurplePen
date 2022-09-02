@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>课程</value>
+    <value>线路</value>
   </data>
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>名称前缀：</value>
@@ -127,7 +127,7 @@
     <value>路点</value>
   </data>
   <data name="headerLabel.Text" xml:space="preserve">
-    <value>一个GPX文件包含GPS坐标的控制，并可以装上GPS或手机验证控件的正确位置。</value>
+    <value>一个GPX文件包含检查点的GPS坐标，并可以装上GPS或智能手机来验证检查点的正确位置。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>创建GPX文件</value>

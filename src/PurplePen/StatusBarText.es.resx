@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
-    <value>Click Izquierdo: selecciona objeto | Click Derecho: mueve mapa | Rueda Ratón: zoom más o menos</value>
+    <value>Clic izquierdo: selecciona objeto | Clic derecho: mueve mapa | Rueda ratón: zoom más o menos</value>
   </data>
   <data name="DefaultRectangle" xml:space="preserve">
-    <value>Click Izquierdo: mueve o modifica rectángulo | Click Derecho: mueve mapa | Rueda Ratón: zoom más o menos</value>
+    <value>Clic izquierdo: mueve o modifica rectángulo | Clic derecho: mueve mapa | Rueda ratón: zoom más o menos</value>
   </data>
   <data name="DragObject" xml:space="preserve">
-    <value>Manten pulsado el botón izquierdo del ratón y suelta para mover el objeto seleccionado</value>
+    <value>Mantén pulsado el botón izquierdo del ratón y suelta para mover el objeto seleccionado</value>
   </data>
   <data name="DragCorner" xml:space="preserve">
-    <value>Manten pulsado el botón izquierdo del ratón y suelta el punto de esquina para moverlo</value>
+    <value>Mantén pulsado el botón izquierdo del ratón y suelta el punto de esquina para moverlo</value>
   </data>
   <data name="DraggingObject" xml:space="preserve">
     <value>Mueve objeto hacia la posición deseada y suelta el botón del ratón</value>
@@ -136,66 +136,93 @@
     <value>Mueve el punto de esquina hacia la posición deseada y suelta el botón del ratón</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
-    <value>Clik Izquierdo: para situar un nuevo control</value>
+    <value>Clic izquierdo: para situar un nuevo control</value>
   </data>
   <data name="AddingExistingControl" xml:space="preserve">
-    <value>Clik Izquierdo: para añadir un control existente "{0}" al recorrido</value>
+    <value>Clic izquierdo: para añadir un control existente «{0}» al recorrido</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
-    <value>Clik Izquierdo: para situar una nueva salida</value>
+    <value>Clic izquierdo: para situar una nueva salida</value>
   </data>
   <data name="AddingExistingStart" xml:space="preserve">
-    <value>Clik Izquierdo: para añadir un triángulo de salida al recorrido</value>
+    <value>Clic izquierdo: para añadir un triángulo de salida al recorrido</value>
   </data>
   <data name="AddingFinish" xml:space="preserve">
-    <value>Clik Izquierdo: para situar un nuevo punto de meta</value>
+    <value>Clic izquierdo: para situar un nuevo punto de meta</value>
   </data>
   <data name="AddingExistingFinish" xml:space="preserve">
-    <value>Clik Izquierdo: para añadir un punto de meta al recorrido</value>
+    <value>Clic izquierdo: para añadir un punto de meta al recorrido</value>
   </data>
   <data name="AddingCrossingPoint" xml:space="preserve">
-    <value>Clik Izquierdo: para situar un nuevo punto de paso obligatorio</value>
+    <value>Clic izquierdo: para situar un nuevo punto de paso obligatorio</value>
   </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
-    <value>Clik Izquierdo: para añadir un nuevo punto de paso obligatorio al recorrido</value>
+    <value>Clic izquierdo: para añadir un nuevo punto de paso obligatorio al recorrido</value>
   </data>
   <data name="AddingObject" xml:space="preserve">
-    <value>Clik Izquierdo: para situar un nuevo elemento</value>
+    <value>Clic izquierdo: para situar un nuevo elemento</value>
   </data>
   <data name="AddingBend" xml:space="preserve">
-    <value>Clik Izquierdo: para indicar la posición del ángulo</value>
+    <value>Clic izquierdo: para indicar la posición del ángulo</value>
   </data>
   <data name="AddingCorner" xml:space="preserve">
-    <value>Clik Izquierdo: para añadir una nueva esquina</value>
+    <value>Clic izquierdo: para añadir una nueva esquina</value>
   </data>
   <data name="DeletingBend" xml:space="preserve">
-    <value>Clik Izquierdo: sobre un ángulo para quitarlo</value>
+    <value>Clic izquierdo: sobre un ángulo para quitarlo</value>
   </data>
   <data name="DeletingCorner" xml:space="preserve">
-    <value>Clik Izquierdo: sobre una esqina para quitarla</value>
+    <value>Clic izquierdo: sobre una esquina para quitarla</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Clic izquierdo: sobre el círculo de control para añadir un pequeño recorte; pulse y arrastre para crear un recorte grande.</value>
   </data>
   <data name="RemovingControlGap" xml:space="preserve">
-    <value>Clik Izquierdo: sobre el hueco del circulo para eliminarlo</value>
+    <value>Clic izquierdo: sobre el hueco del circulo para eliminarlo</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Clic izquierdo: crea un pequeño hueco; pulse y arrastre para crear un recorte grande en el tramo.</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
-    <value>Clik Izquierdo: sobre el hueco en la linea para eliminarlo</value>
+    <value>Clic Izquierdo: sobre el hueco en la línea para eliminarlo</value>
   </data>
   <data name="SizeRectangle" xml:space="preserve">
-    <value>Manten pulsado el bóton izquierdo y suéltalo para definir el tamaño del objeto seleccionado</value>
+    <value>Mantén pulsado el botón izquierdo y suéltalo para definir el tamaño del objeto seleccionado</value>
   </data>
   <data name="SizingRectangle" xml:space="preserve">
     <value>Mueve esquina(s) hacia la posición deseada y suelta el botón del ratón</value>
   </data>
   <data name="AddingDescription" xml:space="preserve">
-    <value>Manten pulsado el botón izquierdo y suéltalo para crear la descripción de controles</value>
+    <value>Mantén pulsado el botón izquierdo y suéltalo para crear la descripción de controles</value>
   </data>
   <data name="RotatingObject" xml:space="preserve">
-    <value>Clik Izquierdo: cuando el punto de paso tenga la orientación correcta</value>
+    <value>Clic izquierdo: cuando el punto de paso tenga la orientación correcta</value>
   </data>
   <data name="AddingLineArea" xml:space="preserve">
-    <value>Manten pulsado el botón izquierdo y suéltalo para añadir un nuevo segmento |Clik Izquierdo: para dejar de añadir objetos.</value>
+    <value>Mantén pulsado el botón izquierdo y arrástralo para añadir un segmento |Clic izquierdo: para dejar de añadir objetos.</value>
   </data>
   <data name="AddingText" xml:space="preserve">
-    <value>Manten pulsado el botón izquierdo y suéltalo para crear un Texto</value>
+    <value>Mantén pulsado el botón izquierdo y suéltalo para crear un texto</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Clic izquierdo: añade un cambio de mapa al recorrido</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Clic izquierdo: sitúa el nuevo cambio de mapa</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Clic izquierdo: añade cambio de mapa en el control «{0}» </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Mantén pulsado el botón izquierdo y suéltalo para crear un objeto</value>
+  </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Arrastre el número del control para reordenarlo en el recorrido (con mayúscula para duplicarlo)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Clic izquierdo: añade al recorrido un punto de entrega de mapas ya existente.</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Pulse el botón izquierdo del ratón para situar un nuevo punto de entrega de mapas</value>
   </data>
 </root>

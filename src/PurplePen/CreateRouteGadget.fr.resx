@@ -153,6 +153,12 @@
   <data name="label2.Text" xml:space="preserve">
     <value>RouteGadget exige à la fois un fichier image (.gif) et un fichier XML IOF (.xml). Choisissez le nom et le dossier de ces 2 fichiers.</value>
   </data>
+  <data name="comboBoxIofXml.Items" xml:space="preserve">
+    <value>2.0.3</value>
+  </data>
+  <data name="comboBoxIofXml.Items1" xml:space="preserve">
+    <value>3.0</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Créer des fichiers RouteGadget</value>
   </data>

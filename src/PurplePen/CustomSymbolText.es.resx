@@ -127,10 +127,10 @@
     <value>Texto personalizado:</value>
   </data>
   <data name="buttonChangeText.Text" xml:space="preserve">
-    <value>Cambiar texto:</value>
+    <value>Cambiar texto...</value>
   </data>
   <data name="buttonDefault.Text" xml:space="preserve">
-    <value>Restaurar estándar</value>
+    <value>Restaurar el estándar</value>
   </data>
   <data name="labelStandardText.Text" xml:space="preserve">
     <value>Texto estándar:</value>
@@ -139,9 +139,12 @@
     <value>Mostrar significados debajo de las descripciones simbólicas</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Haga click en la descripción de un símbolo para personalizar el texto utilizado en las descripciones de controles textuales.</value>
+    <value>Haga clic en la descripción de un símbolo para personalizar el texto utilizado en las descripciones textuales de controles.</value>
+  </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Hacer este el idioma predeterminado de los nuevos eventos</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Personalizar Textos de las Descripciones</value>
+    <value>Personalizar textos de las descripciones</value>
   </data>
 </root>

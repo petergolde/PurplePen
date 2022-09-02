@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Failinime prefiks:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Failivorming:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Failid:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Üks kõigi radade jaoks</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Üks raja kohta</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Väljund</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tee OCADi failid</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Failivorming:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

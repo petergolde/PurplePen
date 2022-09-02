@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>Kliknutím na "Dokončit" vytvoř nový závod. Soubor tvého závodu bude uložený jako:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>Když je tvůj závod vytvořený, vyber "Nová trať" z menu Tratě pro vytvoření jedné, nebo více tratí.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Vytvořit závod</value>
+  </data>
 </root>

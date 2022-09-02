@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="formatButton.Text" xml:space="preserve">
-    <value>Modelo de Trajeta de Controles...</value>
+    <value>Modelo de tarjeta de controles...</value>
   </data>
   <data name="punchPatternsLabel.Text" xml:space="preserve">
-    <value>Pulse en el codigo de control de la izquierda y señala la marca de picada en la zona derecha. Control en rojo indica que no tiene definida la marca de picada.</value>
+    <value>Pulse en un código de control de la izquierda y diseñe la marca de picada en la zona derecha. Control en rojo indica que no tiene definida la marca de picada.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Patrones de Picadas</value>
+    <value>Patrones de picadas</value>
   </data>
 </root>

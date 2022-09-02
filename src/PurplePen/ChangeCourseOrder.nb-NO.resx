@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="moveDownButton.Text" xml:space="preserve">
-    <value>Flytt ned</value>
+    <value>Flytt nedover</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Bruk "Flytt opp" og "Flytt ned"-knappene for å endre rekkefølgen løypene vises i brukergrensesnittet, på rapporter og utskrifter.</value>
+    <value>Bruk "Flytt oppover" og "Flytt nedover"-knappene for å endre rekkefølgen løypene vises i brukergrensesnittet, på rapporter og utskrifter.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
-    <value>Flytt opp</value>
+    <value>Flytt oppover</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Rekkefølge på løyper</value>
+    <value>Løyperekkefølge</value>
   </data>
 </root>

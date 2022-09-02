@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>percorso</value>
+  </data>
   <data name="ColumnHeader_Courses" xml:space="preserve">
     <value>Percorsi</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Percorsi</value>
+  </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Si</value>
   </data>
 </root>

@@ -117,7 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventPrintScaleLabel.Text" xml:space="preserve">
+    <value>您將使用什麼比例來列印賽程？在大多數情況下，您會希望使用地圖現有的比例。
+
+</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>地圖比例尺：</value>
+  </data>
+  <data name="defaultPrintScaleLabel.Text" xml:space="preserve">
+    <value>預設列印比例：</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>（您稍後可以透過選擇 賽程/選項設定 來變更任何賽程的列印比例。）</value>
+  </data>
+  <data name="oneToPrefixLabel1.Text" xml:space="preserve">
+    <value>1：</value>
+  </data>
+  <data name="oneToPrefixLabel2.Text" xml:space="preserve">
+    <value>1：</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>列印比例尺</value>
+    <value>列印的比例尺</value>
   </data>
 </root>

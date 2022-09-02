@@ -123,6 +123,9 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Vali kaardi fail...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Kõik kaardi failid|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|Open Orienteering Mapper Failid|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Eraldusvõime:</value>
   </data>

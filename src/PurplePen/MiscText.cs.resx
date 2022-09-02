@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Z následujícího důvodu nelze vytvořit složku '{0}' :</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Nelze načíst mapa z následujících důvodů: '{0}' Použití Optimalizace/Oprava a opětovné uložení v OCAD může problém vyřešit.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Z následujícího důvodu nelze vytvořit soubory OCADu:</value>
   </data>
@@ -214,8 +217,19 @@ užij | pro dvě hodnoty</value>
 užij | na další řádek
 (platí pro všechny tratě)</value>
   </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Zadejte nový podtitulek
+Pužijte | pro nový řádek</value>
+  </data>
   <data name="EnterCourseName" xml:space="preserve">
     <value>Zadat název nové trati</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Zadejte novou hodnotu stoupání v metrech</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Zadej nový význam symbolu
+(ovlivní všechny kategorie)</value>
   </data>
   <data name="EnterTextLine" xml:space="preserve">
     <value>Vlož text
@@ -320,11 +334,23 @@ OK - zkus soubor s mapou najít.</value>
   <data name="Start_Short" xml:space="preserve">
     <value>S</value>
   </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
   <data name="Plural" xml:space="preserve">
     <value>plurál</value>
   </data>
   <data name="Singular" xml:space="preserve">
     <value>singulár</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Přizpůsobený text vyžaduje "*" pro ukázání, kde je umístěn upravovaný objekt.</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
     <value>stavba tratí pro orientační běh</value>
@@ -344,26 +370,221 @@ OK - zkus soubor s mapou najít.</value>
   <data name="MapFileChanged" xml:space="preserve">
     <value>Jiný program změnil mapu - soubor {0}. Purple Pen ji natáhne znovu.</value>
   </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Aktuální závod má textový popis kontrol v jazyce {0}. Chcete změnit jazyk popisů kontrol na {1}?</value>
+  </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>Otevřít "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen před načtením nového OCAD souboru.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Žádná trať nebyla vybrána k tisku.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Výměna mapy</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Výměna</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Úsek {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Všechny úseky</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Úsek {0} (z {1})</value>
   </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontaktní e-mail</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Vyskytla se chyba. Pro odstranění problému, prosíme zadejte Váš email a doplňující informace, a pošlete nám hlášení o chybě.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Popište co jste dělal v programu, aby jsme mohli případnou chybu opravit (ideálně anglicky)</value>
+  </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Uložit</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Odeslat hlášení</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Popisy nemohou být přidány do kategorie se změnou mapy, pokud jsou zobrazeny "Všechny části". Zvolte část, které chcete přidat popisy, a poté znovu zvolte "Přidat popisy".</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe nenalezen</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF converter nemůže přečíst PDF soubor.</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Nelze přečíst výsledek konverze PDFka ze souboru '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Nelze vytvořit PDFko z tohoto důvodu:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Definováno uživatelem</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Velikost mapy z PDF souboru</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Zrušeno uživatelem</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Vytvářím {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Tisknu stránku {0} (z {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Mapový soubor "{0}" byl vymazán. Zkuste obnovit tento mapový soubor a poté stiskněte "OK".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Platforma .NET se zdá být na Vašem počítači nesprávně nainstalována. Navštivte prosím http://microsoft.com/net a nainstalujte si nejnovější verzi platformy .NET pro Váš operační systém Windows.</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Černá</value>
   </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Vybrat barvu...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Vlastní barva</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Tmavě modrá</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Zelená</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Světle modrá</value>
+  </data>
   <data name="Purple" xml:space="preserve">
     <value>Purpurová</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Červená</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Žlutá</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Zadejte vzhled čáry. Po stisknutí OK táhněte myší pro kreslení čáry v požadovaném místě.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Přidat linii</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Zadejte vzhled obdélníku. Po stisknutí OK táhněte myší pro umístění obdélníku na požadované místo.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Přidat obdelník</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Změnit vzhled linie nebo obdelníku.</value>
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Změnit vzhled čáry</value>
   </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Mapový soubor musí být z OCADu pro použití GPX.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD soubor musí být georeferencovaný pro použitý GPX.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>Soubor OCAD musí mít definované skutečné světové souřadnice, aby bylo možné použít soubor GPX.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Nebylo možné překreslit body - buď souřadnicový systém nebo skutečné světové souřadnice v OCAD jsou chybné.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Soubor OCAD používá souřadnicový systém, který Purple Pen nepodporuje.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automaticky</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Délka tratě musí být číslo v rozmezí 0.1 - 99.9, nebo prázdné pole pro automatický výpočet délky.</value>
+  </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Duplikuj trasu</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Zadejte délku v KM, nebo nechte prázdné pro automatický výpočet</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Dokončený tisk "{0}". Stikněte OK pro zahájení tisku "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Všechny varianty</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Vhodný pro použití ve štafetách při počtu {0} účastníků v týmu.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Prostřední kontrola ve smyčce bude navštívena {0} krát. Existují {1} možné cesty skrz smyčku.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Nelze přidat variantu.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>Větvení již existuje na této kontrole.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Kontrola nebo postup musí být vybrán pro přidání větvení.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Větvení nemůže být přidáno k cíli.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Varianta nemůže být přidána v oknu Všechny kontroly</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Varianta nemůže být přidána ke scorelaufu.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Varianta nemůže být přidána na poslední kontrolu. Nejdřív přidej cílovou kontrolu.</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Postup {0} by měl být přiřazen k jedné z variant {1}</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Intervalový start</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Intervalový start</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Nelze exportovat obrázek z těchto důvodů:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Vytvořit PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF soubor|*.pdf</value>
   </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>Kód kontroly by měl být 31 nebo vyšší.</value>

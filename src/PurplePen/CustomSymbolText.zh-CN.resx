@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelChooseLanguage.Text" xml:space="preserve">
-    <value>选择用于文本控制描述语言：</value>
+    <value>选择用于检查点说明文本的语言：</value>
   </data>
   <data name="labelSymbolName.Text" xml:space="preserve">
     <value>符号名称：</value>
@@ -130,19 +130,19 @@
     <value>更改文本…</value>
   </data>
   <data name="buttonDefault.Text" xml:space="preserve">
-    <value>复位标准</value>
+    <value>恢复标准设置</value>
   </data>
   <data name="labelStandardText.Text" xml:space="preserve">
     <value>标准文本：</value>
   </data>
   <data name="checkBoxShowKey.Text" xml:space="preserve">
-    <value>下面显示的意义符号描述</value>
+    <value>在符号描述下面显示含义</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>点击一个描述符号定制用于控制文本的文本描述。</value>
+    <value>单击检查点说明符号可自定义检查点说明中使用的文本。</value>
   </data>
   <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
-    <value>让这个新事件的默认语言</value>
+    <value>设置为新赛事的默认语言</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>自定义的描述文本</value>

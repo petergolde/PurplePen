@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelChooseLanguage.Text" xml:space="preserve">
+    <value>選擇用於文字式檢查點說明的語言：</value>
+  </data>
+  <data name="labelSymbolName.Text" xml:space="preserve">
+    <value>符號名稱：</value>
+  </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>自行定義的文字：</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>變更文字...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>重新設定為標準格式</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>標準的文字</value>
+  </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>在符號式說明下顯示意義</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>點擊檢查點說明符號，可自行定義文字式檢查點說明採用的文字。</value>
+  </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>將其設定為新賽事的預設語言</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>自定說明文字</value>
+    <value>自訂檢查點說明文字</value>
   </data>
 </root>

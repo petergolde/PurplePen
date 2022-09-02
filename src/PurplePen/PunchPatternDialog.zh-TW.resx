@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="formatButton.Text" xml:space="preserve">
+    <value>核對卡版面...</value>
+  </data>
+  <data name="punchPatternsLabel.Text" xml:space="preserve">
+    <value>點擊左側列表中的檢查點編號，並在右側設定打孔圖案。 紅色編號表示沒有定義打孔圖案的檢查點。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>打孔圖案</value>
+  </data>
 </root>

@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Vybrané složky</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Umístění souboru s tratěmi</value>
+  </data>
 </root>

@@ -207,9 +207,6 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>「オーバープリント」にマークされた色を重ね合わせする</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCADマップ</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>外観をカスタマイズ</value>
   </data>

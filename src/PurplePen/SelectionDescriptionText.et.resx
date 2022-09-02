@@ -235,7 +235,7 @@
     <value>Tekst legend:</value>
   </data>
   <data name="TextLine" xml:space="preserve">
-    <value>Tekst</value>
+    <value>Teksti rida</value>
   </data>
   <data name="TextLine_AboveAllCourses" xml:space="preserve">
     <value>Leidub ülalpool {0}, radadel mis sisaldavad {0}</value>
@@ -290,5 +290,11 @@
   </data>
   <data name="CalculatedLength" xml:space="preserve">
     <value>Arvutatud pikkus:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>kaardivahetuspunktid</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>kaardivahetuspunkt</value>
   </data>
 </root>

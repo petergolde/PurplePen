@@ -126,11 +126,14 @@
   <data name="Esc" xml:space="preserve">
     <value>Esc键</value>
   </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>紫笔</value>
+  </data>
   <data name="NoSymbol" xml:space="preserve">
     <value>没有符号</value>
   </data>
   <data name="AllControls" xml:space="preserve">
-    <value>所有控制</value>
+    <value>所有检查点</value>
   </data>
   <data name="CannotLoadFile" xml:space="preserve">
     <value>无法加载“{0}的原因如下：</value>
@@ -163,34 +166,34 @@
     <value>你想保存您所做的更改为“{0}”？</value>
   </data>
   <data name="FileAlreadyExists" xml:space="preserve">
-    <value>文件“{0}”已存在于指定的文件夹。单击“后退”按钮选择一个新的文件夹或一个新的事件标题。</value>
+    <value>指定文件夹中已存在文件{0}。单击“上一步”按钮并选择新文件夹或新赛事标题。</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
-    <value>控制代码“{0}”已被其他控件使用。</value>
+    <value>检查点编号“{0}”已被其他检查点使用。</value>
   </data>
   <data name="BadScore" xml:space="preserve">
-    <value>一个控制点必须是整数1-999。</value>
+    <value>一个检查点点必须是整数1-999。</value>
   </data>
   <data name="BadClimb" xml:space="preserve">
-    <value>一个课程上必须是一个数字0-9999，或空白。</value>
+    <value>线路的爬高量必须是数字0-9999或空白。</value>
   </data>
   <data name="BadLoad" xml:space="preserve">
-    <value>一个课程的负载必须是一个整数，是999999，还是空白。</value>
+    <value>线路的通过量必须是0-999999的整数或空白。</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>撤消(&amp;U)</value>
+    <value>撤消</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>撤消</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>重做(&amp;#38;R)</value>
+    <value>重做</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>重做</value>
   </data>
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
-    <value>清楚的选择</value>
+    <value>清除选择</value>
   </data>
   <data name="CancelOperationWithShortcut" xml:space="preserve">
     <value>CA和取消操作</value>
@@ -206,45 +209,51 @@
   </data>
   <data name="EnterDimensions" xml:space="preserve">
     <value>输入特征尺寸
-使用/高度的斜坡上
-使用|两特征
-表示一个换行。在翻译的等效位置开始新的一行。</value>
+使用/用于斜坡上的高度
+使用 | 对于两个特征物</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
-    <value>进入新的活动名称使用|分隔线（影响所有课程）</value>
+    <value>输入新赛事标题
+使用 | 作为分隔线
+(影响所有线路)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
-    <value>进入新的次级标题使用|分隔线</value>
+    <value>输入新的副标题
+使用 | 作为分隔线</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>输入新的线路名称</value>
   </data>
   <data name="EnterClimb" xml:space="preserve">
     <value>在米进入新的攀登</value>
   </data>
   <data name="EnterSymbolText" xml:space="preserve">
-    <value>输入新的符号意义（影响所有课程）</value>
+    <value>输入新的符号含义
+（影响所有线路）</value>
   </data>
   <data name="EnterTextLine" xml:space="preserve">
     <value>输入新的文字使用|分隔线</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
-    <value>控制{0}不再使用任何课程。你想从控制收藏删除这些控件？</value>
+    <value>检查点{0}不再使用在任何线路。你想从检查点集合中删除这些检查点？</value>
   </data>
   <data name="DeleteControlFromControlsCollection" xml:space="preserve">
-    <value>控制{0}是没有任何课程的应用。你想从控制收藏删除该控制吗？</value>
+    <value>检查点{0}不再使用在任何线路。你想从检查点集合中删除这个检查点？</value>
   </data>
   <data name="DeleteControlFromAllControls" xml:space="preserve">
-    <value>控制{0}目前由以下课程：{1}。你想删除这个控制呢？</value>
+    <value>检查点{0}当前由以下线路使用：{1}。是否仍要删除此检查点？</value>
   </data>
   <data name="CodeBadLength" xml:space="preserve">
-    <value>控制代码必须是一个，两个，或三个字母或数字。</value>
+    <value>检查点编号必须是一个、两个或三个字母或数字。</value>
   </data>
   <data name="CodeContainsSpace" xml:space="preserve">
-    <value>控制代码不能包含空格。</value>
+    <value>检查点编号不能包含空格。</value>
   </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
-    <value>控制代码不应该从零</value>
+    <value>检查点编号不应以零开头。</value>
   </data>
   <data name="CodeCouldBeUpsideDown" xml:space="preserve">
-    <value>控制代码不应该看起来像是另一个数时颠倒。</value>
+    <value>当一个检查点编号颠倒时，它不应该看起来像另一个数字。</value>
   </data>
   <data name="DuplicateCode" xml:space="preserve">
     <value>代码“{0}”被多次使用。</value>
@@ -253,34 +262,40 @@
     <value>打印比例必须在100和100000之间的数。</value>
   </data>
   <data name="CoursePropertiesTitle" xml:space="preserve">
-    <value>课程性质</value>
+    <value>线路属性</value>
   </data>
   <data name="Landscape" xml:space="preserve">
-    <value>风景</value>
+    <value>横向</value>
   </data>
   <data name="Portrait" xml:space="preserve">
-    <value>竖直</value>
+    <value>纵向</value>
   </data>
   <data name="PageTooSmall" xml:space="preserve">
-    <value>页面大小是任何描述被印得太小。</value>
+    <value>页面太小，无法打印任何说明。</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>版本{0}</value>
   </data>
   <data name="NewerVersionAvailable" xml:space="preserve">
-    <value>版{0}紫色笔是现在可供下载。（您当前正在运行的版本{1}。）要下载并安装最新版本？</value>
+    <value>紫笔的{0}版本现在可以下载。（您当前正在运行版本{1}。）
+
+是否要下载并安装最新版本？</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
-    <value>帮助文件“{0}无法打开。</value>
+    <value>帮助文件 '{0}' 无法打开。</value>
   </data>
   <data name="Zoom" xml:space="preserve">
     <value>缩放</value>
   </data>
   <data name="MissingMapFile" xml:space="preserve">
-    <value>地图文件“{0}”可能不会被发现。最有可能的是，地图文件已被移动或删除，或者紫色的笔文件已被移动（或不同的计算机上）。映射文件必须每次紫色笔事件文件加载存在。如果你把一个紫色的笔事件文件给另一个人，肯定的是，人都有一个副本地图文件也。按下OK，试图找到一个副本的计算机上的映射文件。</value>
+    <value>找不到地图文件{0}。
+
+很可能地图文件已被移动或删除，或者紫笔文件已被移动（可能移动到其他计算机）。每次加载紫笔赛事文件时，地图文件必须存在。如果将紫笔赛事文件发送给其他人，请确保该人也有地图文件的副本。
+
+按“确定”后，请尝试在计算机上查找地图文件的副本。</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
-    <value>所有的控件中使用的课程。</value>
+    <value>所有检查点都在一个线路中使用。</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
     <value>完成(&amp;F)</value>
@@ -289,7 +304,7 @@
     <value>下一步(&amp;N) &gt;</value>
   </data>
   <data name="Control_Code" xml:space="preserve">
-    <value>控制{0}</value>
+    <value>检查点{0}</value>
   </data>
   <data name="Finish" xml:space="preserve">
     <value>结束</value>
@@ -298,7 +313,7 @@
     <value>F</value>
   </data>
   <data name="MandCrossing_Long" xml:space="preserve">
-    <value>强制性的交叉点</value>
+    <value>必经通过点</value>
   </data>
   <data name="MandCrossing_Medium" xml:space="preserve">
     <value>交叉道口</value>
@@ -337,7 +352,7 @@
     <value>自定义的文本需要一个“*”表示在对象被修改设置。</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
-    <value>定向运动课程的设置</value>
+    <value>定向运动线路设计</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
     <value>输入您希望的地方，地图上的文字。按下OK，拖动鼠标将文本置于所需的位置。</value>
@@ -352,25 +367,25 @@
     <value>更改文字</value>
   </data>
   <data name="MapFileChanged" xml:space="preserve">
-    <value>另一个程序改变了地图文件“{0}”。紫色的笔将载入地图。</value>
+    <value>另一个程序已更改地图文件{0}。紫笔现在将重新加载地图。</value>
   </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
-    <value>目前事件已控制描述} { 0篇。你想改变控制描述语言{1}？</value>
+    <value>当前赛事在{0}中有检查点说明文本。是否将这个检查点说明的语言更改为{1}？</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
     <value>打开“{0}”</value>
   </data>
   <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
-    <value>紫色的笔在装载前必须创建软件包文件关闭。</value>
+    <value>紫笔必须在加载创建的OCAD文件之前关闭。</value>
   </data>
   <data name="NoCoursesSelected" xml:space="preserve">
-    <value>没有课程的选择打印</value>
+    <value>没有选择要打印的线路。</value>
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
-    <value>*如果存在一个网站在翻译语言包含文档的紫色笔，输入网址（HTTP）作为本项目的翻译。否则你独自离开。</value>
+    <value>***如果存在一个包含紫笔文档的翻译语言网站，请输入URL（包括http）作为此项目的翻译。否则就别管它了。</value>
   </data>
   <data name="MapExchange_Long" xml:space="preserve">
-    <value>地图交换</value>
+    <value>换图</value>
   </data>
   <data name="MapExchange_Medium" xml:space="preserve">
     <value>交换</value>
@@ -406,7 +421,7 @@
     <value>发送报告</value>
   </data>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>描述可能不如果“零件”是显示添加到一个地图交换过程。切换到要添加描述部分，然后选择“添加描述”了。</value>
+    <value>如果正在显示“所有部分”，则不能将检查点说明添加到带有换图的线路中。切换到要添加检查点说明的部分，然后再次选择“添加检查点说明”。</value>
   </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>pdfconverter.exe没有发现</value>
@@ -468,6 +483,9 @@
   <data name="Yellow" xml:space="preserve">
     <value>黄色</value>
   </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>设置线条的外观。按“确定”后，拖动鼠标在所需位置绘制线段。</value>
+  </data>
   <data name="AddLineTitle" xml:space="preserve">
     <value>新增行</value>
   </data>
@@ -496,16 +514,16 @@
     <value>不能重投影点；要么是坐标系统或真实世界坐标系在OCAD地图是错的。</value>
   </data>
   <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
-    <value>该软件包文件使用一个坐标系统，不是用紫色笔支持。</value>
+    <value>OCAD文件中使用的坐标系不受紫笔支持。</value>
   </data>
   <data name="AutomaticLength" xml:space="preserve">
     <value>自动</value>
   </data>
   <data name="BadLength" xml:space="preserve">
-    <value>一个课程的长度必须是数字0.1 - 99.9，或空白的自动计算长度。</value>
+    <value>线路长度必须为0.1-99.9，或者为空，才能自动计算长度。</value>
   </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
-    <value>重复的课程</value>
+    <value>复制路线</value>
   </data>
   <data name="EnterLength" xml:space="preserve">
     <value>在进入或离开的空白公里长度，自动计算</value>
@@ -520,18 +538,78 @@
     <value>OOM</value>
   </data>
   <data name="AllVariations" xml:space="preserve">
-    <value>所有的变化</value>
+    <value>所有的分支</value>
   </data>
   <data name="ForkSummary" xml:space="preserve">
     <value>适合使用在{0}每个参赛队继电器。</value>
   </data>
   <data name="LoopSummary" xml:space="preserve">
-    <value>在环的中央控制将参观{0}倍。有{1}可能的路径通过循环。</value>
+    <value>循环中的中心检查点将被访问{0}次，循环中存在{1}条可能的路径。</value>
   </data>
   <data name="CantRearrangeSplitControl" xml:space="preserve">
-    <value>控制启动一个叉或回路不能拖过程中一个新的地方。</value>
+    <value>开始分支或循环的检查点不能拖动到线路中的新位置。</value>
   </data>
   <data name="TooManyVariations" xml:space="preserve">
-    <value>在这个过程中有太多的总变化。不同数目的变化是有限的{0}。</value>
+    <value>这线路总的分支太多了。分支的数量限制为{0}。</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>无法添加分支。</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>此检查点中已存在分支。</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>必须选择检查点或路段才能添加分支。</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>无法将分支添加到终点。</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>无法将分支添加到“所有检查点”视图。</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>不能将分支添加到积分赛线路中。</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>无法将分支添加到最后一个检查点。首先要添加一个终点。</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' 不是一个有效的路段序号对于分支 '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>路段 {0} 应该分配给其中一个分支 {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>路段 {0} 同时分配给分支 '{1}' 和分支 '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>无法读取地图，原因如下：'{0}'在最新版本的OOM中打开并重新保存地图可能会修复问题。</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>计时起始位置</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>计时起始位置</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>OCAD底图具有可见的模板文件。在OCAD 8及以下版本中，由于OCAD中的限制，这些模板可能不会显示。</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>由于OCAD文件格式（在OCAD 10及以下版本中）的限制，图像对象将出现在导出的OCAD文件中的线路和空白区域下面。请检查OCAD文件以确保您的图像显示符合要求。</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>无法创建图像文件，原因如下：</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>生成PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF文件|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>路段{0}永远不会到达分支{1}：它被分配到包含分支的另一个方向。</value>
   </data>
 </root>

@@ -120,6 +120,15 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Vybrat mapový soubor...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Všechny mapové soubory|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Vybraný mapový soubor</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Mapa byla úspěšně načtena. Pokud chceš poslat svůj PurplePen soubor někomu jinému, musí mít soubor mapy také.</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Mapový soubor</value>
   </data>

@@ -120,8 +120,20 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>確定</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>開啟最近檢視的賽事</value>
+  </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>開啟範例賽事</value>
+  </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
     <value>建立一個新賽事...</value>
+  </data>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>開啟既有的賽事...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen 是自由軟體，可以複製和共享。 Purple Pen 的研發僅靠您的捐款支持。</value>
   </data>
   <data name="donationLink.Text" xml:space="preserve">
     <value>進行捐款</value>

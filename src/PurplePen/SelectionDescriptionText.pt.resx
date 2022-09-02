@@ -118,18 +118,96 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Climb" xml:space="preserve">
-    <value>Aclive</value>
+    <value>Desnível</value>
+  </data>
+  <data name="CourseList_None" xml:space="preserve">
+    <value>Nenhum(a)</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>Comprimento:</value>
+    <value>Distância</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Localização:</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>nenhum</value>
+  </data>
+  <data name="SpecialName_Boundary" xml:space="preserve">
+    <value>Limite Intransponível</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
     <value>Nome do Percurso</value>
   </data>
+  <data name="SpecialName_Dangerous" xml:space="preserve">
+    <value>Área Perigosa</value>
+  </data>
   <data name="SpecialName_Descriptions" xml:space="preserve">
-    <value>Descrição dos postos de controlo</value>
+    <value>Sinalética</value>
+  </data>
+  <data name="SpecialName_FirstAid" xml:space="preserve">
+    <value>Localização dos Primeiros Socorros</value>
+  </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Imagem</value>
+  </data>
+  <data name="SpecialName_Forbidden" xml:space="preserve">
+    <value>Rota proibida</value>
+  </data>
+  <data name="SpecialName_OOB" xml:space="preserve">
+    <value>Área Fora de Prova</value>
+  </data>
+  <data name="SpecialName_OptCrossing" xml:space="preserve">
+    <value>Ponto de Passagem Facultativo</value>
   </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Texto</value>
+  </data>
+  <data name="SpecialName_Water" xml:space="preserve">
+    <value>Localização do Abastecimento</value>
+  </data>
+  <data name="Start_Plural" xml:space="preserve">
+    <value>partidas</value>
+  </data>
+  <data name="Start_Singular" xml:space="preserve">
+    <value>Partida</value>
+  </data>
+  <data name="TextLine" xml:space="preserve">
+    <value>Linha de texto</value>
+  </data>
+  <data name="TotalScore" xml:space="preserve">
+    <value>Pontuação total:</value>
+  </data>
+  <data name="UsedInCourses" xml:space="preserve">
+    <value>Usado nos percursos:</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Área Branca</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>Trocas de mapa</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>Troca de mapa</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Troca de mapa no {0}</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Usado em:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Percurso "{0}", Parte {1}</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Linha</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Retângulo</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Distância Calculada</value>
   </data>
 </root>

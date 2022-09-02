@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Azonos szimbólum?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Látogatások</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Összefoglaló a(z) {0} pályához</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Ellenőrzőpont keresztreferencia {0}-hoz</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Mindkét irányból futott átmenetek</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Közeli ellenőrzőpontok</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Nem található probléma.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>A(z) "{0}" pálya kétszer tartalmazza egymás után a(z) "{1}" ellenőrzőpontot.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Ismételt ellenőrzőpontok</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>A(z)  "{0}" értékes pálya a(z) "{1}" ellenőrzőpontot kétszer tartalmazza. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>{0} esemény ellenőrzése</value>
   </data>
@@ -252,6 +267,9 @@
   <data name="LegLength_Title" xml:space="preserve">
     <value>Átmenet hossz jelentés {0}-hoz</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Néhány pontot többször érintenek egy pályán. A második terhelés szám minden érintést külön számol.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Ellenőrzőpont terhelés</value>
   </data>
@@ -267,7 +285,31 @@
   <data name="Load_Title" xml:space="preserve">
     <value>{0} versenyzőszám összefoglalója</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Egy vagy több pálya variációkat tartalmaz. A terhelés a villákra szétosztott versenyzők alapján számított.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} látogatás)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>FIGYELMEZTETÉS:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>FIGYELEM: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Figyelem: az ágak száma miatt, a(z) {0} pontnál levő villában nem arányos a használat. {1} ágat használ a(z) {2} elágazás, míg {3} ágat használ a(z) {4} elágazás. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Ág {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>A váltó csapatok nincsenek definiálva. Válassza ki a kívánt számú csapatot és ágat és kattintson a "Variációk hozzárendelése" gombra.</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Csapat {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Váltó hozzárendelés {0} számára</value>
   </data>
 </root>

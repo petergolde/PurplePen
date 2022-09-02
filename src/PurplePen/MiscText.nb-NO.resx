@@ -307,7 +307,7 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
     <value>Post {0}</value>
   </data>
   <data name="Finish" xml:space="preserve">
-    <value>Fullfør</value>
+    <value>Mål</value>
   </data>
   <data name="Finish_Short" xml:space="preserve">
     <value>F</value>
@@ -510,6 +510,9 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
     <value>OCAD filen må være georeferert for å kunne bruke GPX filer</value>
   </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Klarte ikke å plassere punkter, enten er koordinatsystemet eller lokale koordinater i Ocad kartfilen feil.</value>
+  </data>
   <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
     <value>OCAD filen bruker et ikke koordinatsystem som ikke er støttet av Purple Pen</value>
   </data>
@@ -540,8 +543,74 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="ForkSummary" xml:space="preserve">
     <value>Egnet for bruk i stafetter med {0} deltakere per lag.</value>
   </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Den sentrale posten I sløyfen vil bli besøkt {0} ganger. Det er {1} mulige veivalg gjennom sløyfene.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>En post som starter en gafling kan ikke flyttes til en ny plassering i løypen.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Det er for mange varianter i denne løypen. Maksimalt antall varianter er begrenset til {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Kan ikke legge til variasjon</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>Det er allerede en variasjon fra denne posten.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>En post eller et strekk må være valgt for å kunne legge til en variasjon</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Kan ikke legge til variasjon fra målpost.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Kan ikke legge til variasjon i Alle poster-visningen.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Kan ikke legge til variasjon i poengløype.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Kan ikke legge til variasjon fra siste post. Legg til en målpost først.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' er ikke gyldig strekknummer for avgreining '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Strekk {0} må tilordnes et av strekkene {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Strekk {0} er tilordnet til både avgreining '{1}' og '{2}'</value>
+  </data>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Kan ikke lese kartet på grunn av: '{0}' Åpne og lagre kartet i nyeste versjon av OpenOrienteering Mapper kan fikse problemene.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Tidsstart</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Tidsstart</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>OCAD kartfilen har synlige malfiler som gjerne ikke vil være synlige i OCAD 8 eller eldre på grunn av begrensinger i OCAD.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Begrensinger i OCAD filformatet, før versjon 10, vil bildefiler vises under løyper og hvit avblending i eksporterte OCAD filer. Sjekk OCAD filen om bilder vises som ønsket.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Kan ikke opprette bildefiler på grunn av:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Lag PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF-fil|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Strekk {0} når ikke avgreining '{1}': Den ble tilordnet en annen retning i gaflingen den inngår i.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>

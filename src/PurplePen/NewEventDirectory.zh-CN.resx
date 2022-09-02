@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventDirectoryLabel.Text" xml:space="preserve">
-    <value>什么文件夹（目录）你想救你的课程事件的文件吗？</value>
+    <value>要将线路赛事文件保存到哪个文件夹（目录）？</value>
   </data>
   <data name="useMapDirectory.Text" xml:space="preserve">
     <value>在同一文件夹中的地图文件。</value>
@@ -136,6 +136,6 @@
     <value>选定的文件夹</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>项目文件的位置</value>
+    <value>赛事文件的位置</value>
   </data>
 </root>

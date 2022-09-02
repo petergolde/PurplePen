@@ -121,6 +121,6 @@
     <value>Velg hvilke løyper dette objektet skal vises på:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Endre viste løyper</value>
+    <value>Velg visning i løyper</value>
   </data>
 </root>

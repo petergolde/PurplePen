@@ -117,6 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>滑鼠左鍵：選取物件；滑鼠右鍵：移動地圖；滾輪：放大/縮小</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>滑鼠左鍵：移動/調整矩形；滑鼠右鍵：移動地圖；滾輪：放大/縮小</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>按住滑鼠左鍵並拖曳以移動所選物件</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>按住滑鼠左鍵並拖曳轉角點來移動它</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>將物件移動到所需位置並釋放滑鼠按鍵</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>將轉角點移動到所需位置並釋放滑鼠按鍵</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>單擊滑鼠左鍵設置新的檢查點</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>單擊滑鼠左鍵將現有檢查點“{0}”新增到賽程</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>單擊滑鼠左鍵設置新的起點</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>單擊滑鼠左鍵新增既有的起點至賽程</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>單擊滑鼠左鍵設置新的終點</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>單擊滑鼠左鍵新增既有的終點至賽程</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>單擊滑鼠左鍵設置新的強制穿越點</value>
+  </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
     <value>點擊滑鼠左鍵一次以新增現有的強制穿越點至賽程中</value>
   </data>
@@ -155,6 +194,27 @@
   </data>
   <data name="AddingDescription" xml:space="preserve">
     <value>按住滑鼠左鍵並且拖曳動以建立檢查點說明</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>當穿越點旋轉至正確的角度時單擊滑鼠左鍵</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>按住滑鼠左鍵並拖曳以新增一條線段；單擊滑鼠左鍵以完成新增物件</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>按住滑鼠左鍵並拖曳以建立文字</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>按滑鼠左鍵一次以增加已有的換圖區至賽程中</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>按滑鼠左鍵一次以設置新的換圖區</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>按滑鼠左鍵一次以在檢查點增加換圖區 "{0}" </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>按住滑鼠左鍵並且拖曳以建立物件</value>
   </data>
   <data name="DraggingTopologyObject" xml:space="preserve">
     <value>在賽程中拖曳檢查點序號以重新排序 (按住shift鍵可直接複製)</value>

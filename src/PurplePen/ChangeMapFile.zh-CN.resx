@@ -124,13 +124,13 @@
     <value>选择地图文件…</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>所有的地图文件| *。强迫症；*。OMAP；*。平台；* PDF格式；*。JPEG；*. JPG；*。TIFF；* .tif；*. BMP；*。png；* .gif | OCAD文件（*. OCD）| *。强迫症|开放定向运动制图文件| *。OMAP；*. xMAP | PDF文件（*. PDF）| *。PDF |图像文件| *。JPEG；*. JPG；*。TIFF；* .tif；*. BMP；* png，gif；*。</value>
+    <value>所有的地图文件|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD文件 (*.ocd)|*.ocd|OOM文件|*.omap;*.xmap|PDF文件 (*.pdf)|*.pdf|图像文件|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="labelDpi.Text" xml:space="preserve">
-    <value>解像度：</value>
+    <value>分辨率：</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
-    <value>规模：</value>
+    <value>比例</value>
   </data>
   <data name="labelOneTo.Text" xml:space="preserve">
     <value>1：</value>

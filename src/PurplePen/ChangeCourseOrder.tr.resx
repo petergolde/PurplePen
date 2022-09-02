@@ -121,10 +121,10 @@
     <value>Aşağı Taşı</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Dersler kullanıcı arayüzünde, raporlarda ve yazdırmada listelenen sırayı değiştirmek için "Yukarı Taşı" ve "Aşağı Taşı" düğmelerini kullanın.</value>
+    <value>Kullanıcı ara yüzündeki raporda ve yazıcıda listelenen derslerin sırasını değiştirmek için aşağı yukarı tuşlarını kullanın.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
-    <value>Yukarı Taşı</value>
+    <value>Yukarı taşı</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Parkur Sırası</value>

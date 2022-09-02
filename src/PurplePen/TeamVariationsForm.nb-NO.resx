@@ -132,8 +132,23 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Antall etapper:</value>
   </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Tildel varianter</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Antall lag:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Tildel faste strekk til avgreininger</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Lagnummer starter på: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Sjul variasjonsnummer på kartet</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Regneark (CSV)|*.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Stafettvarianter</value>

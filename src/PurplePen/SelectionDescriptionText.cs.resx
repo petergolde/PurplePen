@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AwayFromControl" xml:space="preserve">
+    <value>pryč od kontroly</value>
+  </data>
   <data name="Climb" xml:space="preserve">
     <value>Převýšení:</value>
+  </data>
+  <data name="CompetitorLoad" xml:space="preserve">
+    <value>Vytížení závodníky:</value>
+  </data>
+  <data name="ControlsInUse" xml:space="preserve">
+    <value>Využité kontroly:</value>
+  </data>
+  <data name="ControlsNotInUse" xml:space="preserve">
+    <value>Nevyužité kontroly:</value>
   </data>
   <data name="Control_Plural" xml:space="preserve">
     <value>kontroly</value>
@@ -135,11 +147,44 @@
   <data name="CourseName" xml:space="preserve">
     <value>Trať "{0}"</value>
   </data>
+  <data name="CustomizedSymbolDesc" xml:space="preserve">
+    <value>Upravené popisky kontrol</value>
+  </data>
+  <data name="EntireLeg" xml:space="preserve">
+    <value>celý postup</value>
+  </data>
+  <data name="FinishFunnel" xml:space="preserve">
+    <value>cílový koridor</value>
+  </data>
+  <data name="Finish_Plural" xml:space="preserve">
+    <value>finishuje</value>
+  </data>
+  <data name="Finish_Singular" xml:space="preserve">
+    <value>finish</value>
+  </data>
+  <data name="IntoControl" xml:space="preserve">
+    <value>ke kontrole</value>
+  </data>
+  <data name="IntoFinishFunnel" xml:space="preserve">
+    <value>do cílového koridoru</value>
+  </data>
   <data name="Length" xml:space="preserve">
     <value>Délka:</value>
   </data>
+  <data name="LineHeight" xml:space="preserve">
+    <value>Šířka linie:</value>
+  </data>
   <data name="Location" xml:space="preserve">
     <value>Umístění:</value>
+  </data>
+  <data name="MandCrossing_Plural" xml:space="preserve">
+    <value>povinné průchody</value>
+  </data>
+  <data name="MandCrossing_Singular" xml:space="preserve">
+    <value>povinný průchod</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Žádný</value>
   </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
     <value>Nepřekonatelná hranice</value>
@@ -159,6 +204,12 @@
   <data name="SpecialName_Image" xml:space="preserve">
     <value>Obrázek</value>
   </data>
+  <data name="SpecialName_Forbidden" xml:space="preserve">
+    <value>Zakázaný postup</value>
+  </data>
+  <data name="SpecialName_OOB" xml:space="preserve">
+    <value>Zakázaný prostor</value>
+  </data>
   <data name="SpecialName_OptCrossing" xml:space="preserve">
     <value>Volitelný průchod</value>
   </data>
@@ -171,16 +222,64 @@
   <data name="SpecialName_Water" xml:space="preserve">
     <value>Občerstvení</value>
   </data>
+  <data name="Start_Plural" xml:space="preserve">
+    <value>začíná</value>
+  </data>
   <data name="Start_Singular" xml:space="preserve">
     <value>start</value>
   </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>Psaný popis :</value>
+  </data>
+  <data name="TextLine" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="TotalControls" xml:space="preserve">
+    <value>Celkem kontrol:</value>
+  </data>
+  <data name="TotalScore" xml:space="preserve">
+    <value>Celkem bodů:</value>
+  </data>
+  <data name="UsedInCourses" xml:space="preserve">
+    <value>Použit v tratích:</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Název:</value>
+  </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
     <value>Zabílená oblast</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>výměny mapy</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>výměna mapy</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Výměna mapy na {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Vytížení:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Použito v:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Trať "{0}", Část {1}</value>
   </data>
   <data name="SpecialName_Line" xml:space="preserve">
     <value>Čára</value>
   </data>
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>Obdélník</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Automatická délka:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>Body vydání mapy</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>Bod vydání mapy</value>
   </data>
 </root>

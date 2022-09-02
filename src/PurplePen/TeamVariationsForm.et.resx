@@ -120,10 +120,37 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Sulge</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Ekspordi ...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Trüki...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Väljatrüki eelvaatlus...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Vahetuste arv:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Määra variandid</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Võistkondade arv:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Määra kindel vahetus harule...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Võistkondade arv startimas: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Peida kaardil variantide koodid</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Tabelfail (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Teatevõistkonna variandid</value>
   </data>
 </root>

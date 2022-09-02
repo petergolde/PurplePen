@@ -130,10 +130,16 @@
     <value>Seleccione una carpeta para los archivos OCAD</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>Extensión del archivo:</value>
+    <value>Prefijo del nombre de archivo:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Formato de archivo:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Archivos:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Uno para todos los recorridos</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Uno para cada recorrido</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Salida</value>
@@ -142,7 +148,7 @@
     <value>Seleccionar carpeta...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Otra Carpeta</value>
+    <value>Otra carpeta</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo del mapa</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crear Archivos OCAD</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Formato de archivo:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

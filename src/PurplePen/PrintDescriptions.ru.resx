@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
-    <value>Символы</value>
+    <value>Символьная</value>
   </data>
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
-    <value>Текст</value>
+    <value>Словесная</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
-    <value>Внешний вид</value>
+    <value>Оформление</value>
   </data>
 </root>

@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Haru</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Vahetus</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Vahetustele kindlate harude määramiseks sisesta vahetuse number. Vahetused, kus ei ole haru määratud, jagatakse ülejäänud harude vahel juhuslikult.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Rohkem teavet...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vahetuste omistamine</value>
+  </data>
 </root>

@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BranchColumn.HeaderText" xml:space="preserve">
-    <value>Ág</value>
+    <value>Elágazás</value>
   </data>
   <data name="LegsColumn.HeaderText" xml:space="preserve">
-    <value>Lábak</value>
+    <value>Ágak</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Egy adott ág hozzárendeléséhez egy adott elágazáshoz gépelje be az ág számát. A hozzá nem rendelt ágak véletlenszerűen lesznek az elágazásokhoz rendelve.</value>
   </data>
   <data name="linkLabel.Text" xml:space="preserve">
     <value>További információk…</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ág hozzárendelések</value>
   </data>
 </root>

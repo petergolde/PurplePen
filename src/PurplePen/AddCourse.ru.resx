@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
+    <value>Оформление и содержание легенд</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Маштаб карты для печати</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
-    <value>Символы</value>
+    <value>Символьная</value>
   </data>
   <data name="descKindCombo.Items1" xml:space="preserve">
-    <value>Текст</value>
+    <value>Словесная</value>
+  </data>
+  <data name="descKindCombo.Items2" xml:space="preserve">
+    <value>Словесная и символьная</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Порядковый номер КП</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Код КП</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Порядковый номер и код КП</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
     <value>Столбец A</value>
@@ -136,7 +157,7 @@
     <value>(не показывать)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Внешний вид</value>
+    <value>Оформление</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Длина:</value>
@@ -152,6 +173,9 @@
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
     <value>Обычная дистанция</value>
+  </data>
+  <data name="courseKindCombo.Items1" xml:space="preserve">
+    <value>По выбору</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>метры</value>

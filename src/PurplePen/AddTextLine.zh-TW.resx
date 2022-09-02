@@ -127,16 +127,16 @@
     <value>位置：</value>
   </data>
   <data name="comboBoxPosition.Items" xml:space="preserve">
-    <value>高於{0}</value>
+    <value>在編號{0}的上一列</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>低於{0}</value>
+    <value>在編號{0}的下一列</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
-    <value>只有這個賽程</value>
+    <value>只有在這個賽程</value>
   </data>
   <data name="comboBoxCourses.Items1" xml:space="preserve">
-    <value>所有賽程為{0}</value>
+    <value>有編號{0}的所有賽程</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>增加文字說明列</value>

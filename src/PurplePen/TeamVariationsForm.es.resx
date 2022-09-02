@@ -120,10 +120,37 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Cerrar</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Exportar...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Imprimir...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
-    <value>Previsualizar Impresión...</value>
+    <value>Previsualizar impresión...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Cantidad de postas:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Asignar variantes</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cantidad de equipos:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Asignar postas fijas a ramas...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Los números de equipo empiezan en: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Ocultar los códigos de variantes en el mapa</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Hoja de cálculo (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Variantes para equipos de relevos</value>
   </data>
 </root>

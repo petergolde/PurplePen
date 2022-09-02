@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventFinalLabel.Text" xml:space="preserve">
-    <value>单击“完成”来创建新的事件。你的事件的文件将被保存为：</value>
+    <value>单击“完成”创建新赛事。您的赛事文件将另存为：</value>
   </data>
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
-    <value>在您创建活动，选择“新课程…”从菜单创建一个或多个课程。</value>
+    <value>创建赛事后，从“路线”菜单中选择“新建线路…”以创建一个或多个线路。</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>创建事件</value>
+    <value>创建赛事</value>
   </data>
 </root>

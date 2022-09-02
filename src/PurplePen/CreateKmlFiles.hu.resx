@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Fájlnév előtag:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Fájlformátum:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Fájlok:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Egy az összes pályához</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Pályánként különböző</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Kimenet</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>OCAD fájlok létrehozása</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Fájlformátum:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

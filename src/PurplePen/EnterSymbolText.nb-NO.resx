@@ -123,6 +123,9 @@
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>Kjønn</value>
   </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Små/store bokstavar</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Tekst</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Kjønn:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Utgave av endret symbol:</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Vis utgaver</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpasset symboltekst</value>

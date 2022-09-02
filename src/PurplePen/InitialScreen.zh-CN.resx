@@ -121,24 +121,24 @@
     <value>确定</value>
   </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
-    <value>打开最近浏览的事件</value>
+    <value>打开最近浏览的赛事</value>
   </data>
   <data name="openSampleRadioButton.Text" xml:space="preserve">
-    <value>打开样本事件</value>
+    <value>打开示例赛事</value>
   </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
-    <value>创建一个新的事件…</value>
+    <value>创建一个新的赛事…</value>
   </data>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
-    <value>打开一个现有的事件…</value>
+    <value>打开一个现有的赛事…</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>紫色的笔是免费软件，可以复制和共享。紫色笔的发展则是由你的捐款支持。</value>
+    <value>紫笔是一个免费软件，可以进行复制和共享。紫笔软件的未来发展需要您的捐赠支持。</value>
   </data>
   <data name="donationLink.Text" xml:space="preserve">
-    <value>捐款</value>
+    <value>捐赠</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>欢迎来到Purple Pen</value>
+    <value>欢迎使用紫笔</value>
   </data>
 </root>

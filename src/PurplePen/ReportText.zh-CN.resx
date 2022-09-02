@@ -127,19 +127,19 @@
     <value>列</value>
   </data>
   <data name="ColumnHeader_Control" xml:space="preserve">
-    <value>控制装置</value>
+    <value>检查点</value>
   </data>
   <data name="ColumnHeader_ControlCodes" xml:space="preserve">
-    <value>控制码</value>
+    <value>检查点编号</value>
   </data>
   <data name="ColumnHeader_Controls" xml:space="preserve">
-    <value>控制装置</value>
+    <value>检查点</value>
   </data>
   <data name="ColumnHeader_Course" xml:space="preserve">
-    <value>路线</value>
+    <value>线路</value>
   </data>
   <data name="ColumnHeader_Courses" xml:space="preserve">
-    <value>课程</value>
+    <value>线路</value>
   </data>
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>距离</value>
@@ -160,7 +160,7 @@
     <value>位置</value>
   </data>
   <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
-    <value>路线</value>
+    <value># 线路</value>
   </data>
   <data name="ColumnHeader_Reason" xml:space="preserve">
     <value>原因</value>
@@ -168,26 +168,32 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>相同的符号？</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>浏览次数</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
-    <value>{0}为课程总结</value>
+    <value>{0}的线路概要信息</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>{0}为控制交叉引用</value>
+    <value>{0}的检查点对照表</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>两个方向的路段跑</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
-    <value>关闭在控制</value>
+    <value>靠近的检查点</value>
   </data>
   <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
-    <value>下表显示了所有的控制对，在{0}米对方。相同的符号栏显示是否两个控件具有相同的主符号（D）。</value>
+    <value>下表显示距离在{0}米范围内的所有检查点对。同一符号列显示两个检查点是否具有相同的主符号(D列)。</value>
   </data>
   <data name="EventAudit_MissingBoxes" xml:space="preserve">
-    <value>描述盒子失踪</value>
+    <value>缺少说明表</value>
   </data>
   <data name="EventAudit_MissingClimb" xml:space="preserve">
-    <value>正规课程应该指出额攀升</value>
+    <value>正规线路应该标明爬高量</value>
   </data>
   <data name="EventAudit_MissingD" xml:space="preserve">
-    <value>所有的控件必须在D列的主要特征</value>
+    <value>所有的控件必须在D列显示主要特征</value>
   </data>
   <data name="EventAudit_MissingEBetween" xml:space="preserve">
     <value>当“以柱克之间，两特征必须列D和E所示</value>
@@ -196,13 +202,13 @@
     <value>当“结”或“穿越”是在F栏，两特征必须列D和E所示</value>
   </data>
   <data name="EventAudit_MissingFinish" xml:space="preserve">
-    <value>正规课程应该完成的圆</value>
+    <value>正规线路应该有终点</value>
   </data>
   <data name="EventAudit_MissingItems" xml:space="preserve">
-    <value>课程中的缺项</value>
+    <value>线路中的缺少项目</value>
   </data>
   <data name="EventAudit_MissingLoad" xml:space="preserve">
-    <value>当然应该有竞争对手的负荷</value>
+    <value>线路应该有预期的参赛者通过量</value>
   </data>
   <data name="EventAudit_MissingPunch" xml:space="preserve">
     <value>没有定义的穿孔模式</value>
@@ -211,16 +217,16 @@
     <value>失踪的穿孔模式</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
-    <value>评分过程中应该有得分为所有控制或不控制</value>
+    <value>积分赛线路应设置所有检查点或无检查点的分数</value>
   </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
     <value>丢失的分数</value>
   </data>
   <data name="EventAudit_MissingStart" xml:space="preserve">
-    <value>正规课程应该有一个开始的三角形</value>
+    <value>正规线路应该有一个起点的三角形</value>
   </data>
   <data name="EventAudit_MissingStartScore" xml:space="preserve">
-    <value>评分的课程应该有一个开始的三角形</value>
+    <value>积分赛线路应该有一个起点的三角形</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>否</value>
@@ -228,14 +234,23 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>没有发现问题</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>线路“{0}”连续两次包含检查点“{1}”。</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>重复的检查点</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>积分赛线路 "{0}" 包含检查点 "{1}" 两次。 </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
-    <value>{0}为事件审计</value>
+    <value>{0}的赛事信息统计</value>
   </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
-    <value>未使用的控制</value>
+    <value>未使用的检查点</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>以下控件中的所有控件的集合而不是用于任何课程。删除它们，使用“删除未使用的控件”命令，在“项目”菜单。这些控件将不会进一步考虑本报告中。</value>
+    <value>以下检查点存在于“所有检查点”集合中，但不在任何线路中使用。要删除它们，请使用“赛事”菜单上的“删除未使用的检查点”命令。本提示将不再进一步考虑这些检查点。</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>是</value>
@@ -244,7 +259,7 @@
     <value>平均</value>
   </data>
   <data name="LegLength_CourseInfo" xml:space="preserve">
-    <value>{0}（{1}控制，{2}，{3}我爬）</value>
+    <value>{0}（{1}检查点，{2}，{3}米 爬高量）</value>
   </data>
   <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
     <value>{0}（{一} Controls，{二}）</value>
@@ -252,32 +267,44 @@
   <data name="LegLength_Title" xml:space="preserve">
     <value>{0}为课程的报告</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>一些检查点在同一条线路中被多次到达。第二个数字计算分别访问检查点的次数。</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
-    <value>负荷控制</value>
+    <value>检查点通过量</value>
   </data>
   <data name="Load_LegLoadSection" xml:space="preserve">
     <value>腿部负荷</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
-    <value>一些或所有的课程没有竞争对手的荷载为他们设定。下面列出的负载可能不正确或丢失的原因。建立竞争对手的荷载，选择“竞争对手负荷”与“课程”菜单。</value>
+    <value>部分或所有线路没有为它们设置参赛者的通过量。由于这个原因，下面列出的通过量可能不正确或丢失。要设置参赛者通过量，请从“路线”菜单中选择“参赛者通过量”。</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
-    <value>（只有腿由一个以上的课程出现在下面的表格）</value>
+    <value>（下表中仅显示多个线路使用的路段）</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
-    <value>为{ 0竞争者负荷总结}</value>
+    <value>{0}的参赛者通过量统计</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>一个或多个线路有分支，假设参赛者在分支之间均匀分布，则计算数量。</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0}浏览次数)</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>警告：</value>
   </data>
+  <data name="Note" xml:space="preserve">
+    <value>注意： </value>
+  </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
-    <value>警告：由于腿指定的数量，在控制{0}叉不会用均匀。{1}腿（S）将使用分支（ES）{2}，而{3}腿（S）将使用分支（ES）{4}。 </value>
+    <value>警告：由于指定的分支数，控件{0}处的分支将不能均匀使用。{1} 分支将使用分支{2}，而{3}分支将使用分支{4}。 </value>
   </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
     <value>把{0}</value>
   </data>
   <data name="RelayVariation_NoTeams" xml:space="preserve">
-    <value>没有接力的队伍已尚未确定。选择团队和腿所需数量按“分配变化”按钮。</value>
+    <value>目前还没有确定接力队，选择所需的队数和路段数，然后按“分配分支”按钮。</value>
   </data>
   <data name="RelayVariation_TeamNumber" xml:space="preserve">
     <value>{0}队</value>

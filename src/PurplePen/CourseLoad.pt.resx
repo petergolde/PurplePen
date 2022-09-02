@@ -121,7 +121,7 @@
     <value>Nome do Percurso</value>
   </data>
   <data name="Load.HeaderText" xml:space="preserve">
-    <value>Indicar competidores</value>
+    <value>Número de atletas</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
     <value>Defina o número de concorrentes em cada percurso clicando na segunda coluna e digitando o número.</value>

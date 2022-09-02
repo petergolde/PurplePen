@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
-    <value>Orden de Casillas</value>
+    <value>Orden de casillas</value>
   </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Columnas:</value>
@@ -130,6 +130,6 @@
     <value>Tamaño</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Modelo de Tarjeta de Controles</value>
+    <value>Modelo de tarjeta de controles</value>
   </data>
 </root>

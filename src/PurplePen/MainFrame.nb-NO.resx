@@ -126,6 +126,9 @@
   <data name="radioButtonTopology.Text" xml:space="preserve">
     <value>Rekkefølge</value>
   </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>kartVisningsTopologi</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen filer|*.ppen|Alle filer|*.*</value>
   </data>
@@ -146,6 +149,21 @@
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Lage OCAD &amp;Filer...</value>
+  </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Lag bildefiler...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>Postbeskrivelser...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>Klippekort...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>Løyper...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Lag PDF-filer</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Lag Route&amp;Gadget filer...</value>
@@ -270,6 +288,9 @@
   <data name="otherCoursesMenu.Text" xml:space="preserve">
     <value>Andre løyper</value>
   </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Slett andre løyper</value>
+  </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Vis</value>
   </data>
@@ -299,6 +320,9 @@
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Tekst &amp;Linje...</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Tidsstart</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>
@@ -593,6 +617,9 @@
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Legg til variasjon</value>
+  </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tidsstart</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Obligatorisk kryssningspunkt</value>

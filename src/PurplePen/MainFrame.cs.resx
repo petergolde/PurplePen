@@ -126,6 +126,9 @@
   <data name="radioButtonTopology.Text" xml:space="preserve">
     <value>Pořadí</value>
   </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>mapViewerTopology</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Soubory Purple Pen|*.ppen|Všechny soubory|*.*</value>
   </data>
@@ -146,6 +149,21 @@
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Vytvořit &amp;soubory OCAD...</value>
+  </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Vytvořit  &amp;JPEG mapy...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>&amp;Popisy kontrol...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>Razící průkazy</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>&amp;Tratě...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Vytvořit P&amp;DF...</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Vytvořit soubory Route&amp;Gadget...</value>
@@ -267,6 +285,12 @@
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Všechny kontroly</value>
   </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>Ostatní tratě...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Vymazat ostatní tratě</value>
+  </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Zobrazit</value>
   </data>
@@ -296,6 +320,9 @@
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>Texty a čáry</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Intervalový start</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Povinný průchod</value>
@@ -356,6 +383,21 @@
   </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>Vzo&amp;ry ražení</value>
+  </data>
+  <data name="descriptionStd2004Menu.Text" xml:space="preserve">
+    <value>2004 Standard popisků</value>
+  </data>
+  <data name="descriptionStd2018Menu.Text" xml:space="preserve">
+    <value>2018 Standard popisků</value>
+  </data>
+  <data name="mapStd2000Menu.Text" xml:space="preserve">
+    <value>ISOM2000 Mapový klíč</value>
+  </data>
+  <data name="mapStd2017Menu.Text" xml:space="preserve">
+    <value>ISOM2017 Mapový klíč</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF &amp;Standards</value>
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Upravit textové popisy</value>
@@ -486,8 +528,20 @@
   <data name="mapTesterMenu.Text" xml:space="preserve">
     <value>Zkoušeč map</value>
   </data>
+  <data name="courseSelectorTesterMenu.Text" xml:space="preserve">
+    <value>Course Selector Tester</value>
+  </data>
+  <data name="dotGridTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dot Grid Tester</value>
+  </data>
+  <data name="dumpOCADFileMenu.Text" xml:space="preserve">
+    <value>Dump OCAD File</value>
+  </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Tester reportů</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Font Metrics</value>
   </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Selhání</value>
@@ -500,6 +554,9 @@
   </data>
   <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
     <value>Přidat přeložené texty</value>
+  </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>Sloučit Symbols.xml...</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>Přeloži&amp;t popisy</value>
@@ -561,6 +618,9 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Přidej variantu</value>
   </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Intervalový start</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Povinný průchod</value>
   </data>
@@ -621,8 +681,17 @@
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X:-999.99 Y:-999.99</value>
   </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML verze 2.0.3|*.xml|IOF XML verze 3.0|*.xml</value>
+  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Vytvořit soubor IOF XML</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Obrázkový soubor|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX soubor|*.gpx</value>
   </data>
   <data name="saveGpxFileDialog.Title" xml:space="preserve">
     <value>Vyrobit GPX soubor</value>

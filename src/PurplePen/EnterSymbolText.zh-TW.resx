@@ -129,10 +129,25 @@
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>文字</value>
   </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>顯示複數格式</value>
+  </data>
+  <data name="checkBoxGender.Text" xml:space="preserve">
+    <value>顯示性別格式</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>在[文字]欄位輸入此符號自行定義的文字</value>
+  </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>性別：</value>
   </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>修改符號的情況：</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>顯示情況表格</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>自訂圖例文字</value>
+    <value>自行定義符號文字</value>
   </data>
 </root>

@@ -132,9 +132,6 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Prefixul numelui de fișier:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Format fişier:</value>
-  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Rezultat</value>
   </data>
@@ -155,6 +152,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Creare Fișier OCAD</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Format fişier:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

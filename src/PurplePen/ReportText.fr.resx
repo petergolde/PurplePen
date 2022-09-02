@@ -231,6 +231,9 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Aucun problème trouvé.</value>
   </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Postes répétés</value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Audit de la course pour {0}</value>
   </data>
@@ -270,8 +273,14 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Synthèse du nombre de concurrents pour {0}</value>
   </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visites)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>ATTENTION :</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTE : </value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
     <value>Attention : compte tenu du nombre de circuits de relais précisé, la fourche au poste {0} ne sera pas utilisée de manière équitable.  {1} circuit(s) de relais utilisera(ont) la(les) branche(s) {2}, alors que {3} circuit(s) de relais utilisera(ont) la(les) branche(s) {4}. </value>

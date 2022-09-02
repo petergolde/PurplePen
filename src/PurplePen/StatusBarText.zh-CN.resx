@@ -136,28 +136,28 @@
     <value>移动角点所需的位置，释放鼠标按钮</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
-    <value>点击鼠标左键放置新的控制</value>
+    <value>点击鼠标左键放置新的检查点</value>
   </data>
   <data name="AddingExistingControl" xml:space="preserve">
-    <value>单击鼠标左键添加现有的控制“{0}”课程</value>
+    <value>单击鼠标左键将现有检查点{0}添加到线路</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
     <value>点击鼠标左键放置新的开始</value>
   </data>
   <data name="AddingExistingStart" xml:space="preserve">
-    <value>单击鼠标左键添加现有的启动过程</value>
+    <value>单击鼠标左键将现有的起点添加到线路</value>
   </data>
   <data name="AddingFinish" xml:space="preserve">
     <value>点击鼠标左键放置新的完成</value>
   </data>
   <data name="AddingExistingFinish" xml:space="preserve">
-    <value>单击鼠标左键添加现有完成课程</value>
+    <value>单击鼠标左键将现有的“终点”添加到线路中</value>
   </data>
   <data name="AddingCrossingPoint" xml:space="preserve">
-    <value>点击鼠标左键放置新的强制性的交叉点</value>
+    <value>点击鼠标左键放置新的必经通过点</value>
   </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
-    <value>点击鼠标左键添加现有的强制性交叉点过程</value>
+    <value>单击鼠标左键将现有的必经通过点添加到线路</value>
   </data>
   <data name="AddingObject" xml:space="preserve">
     <value>点击鼠标左键放置新的对象</value>
@@ -175,10 +175,10 @@
     <value>点击鼠标左键在一个角落里删除它</value>
   </data>
   <data name="AddingControlGap" xml:space="preserve">
-    <value>点击鼠标左键在控制界添加了一个小的差距；按住鼠标左键并拖动创建一个大的差距</value>
+    <value>在检查点圆圈上单击鼠标左键以添加一个小间隙；按住鼠标左键并拖动以创建一个大间隙</value>
   </data>
   <data name="RemovingControlGap" xml:space="preserve">
-    <value>点击控制圈的间隙消除鼠标左键</value>
+    <value>在检查点圆圈的间隙上单击鼠标左键将其删除</value>
   </data>
   <data name="AddingLegGap" xml:space="preserve">
     <value>点击鼠标左键创建小间隙；按住鼠标左键并拖动创建腿的一个大的差距</value>
@@ -193,10 +193,10 @@
     <value>移动边缘（S）到所需的位置，释放鼠标按钮</value>
   </data>
   <data name="AddingDescription" xml:space="preserve">
-    <value>按住鼠标左键并拖动创建控制描述</value>
+    <value>按住鼠标左键并拖动以创建检查点说明表</value>
   </data>
   <data name="RotatingObject" xml:space="preserve">
-    <value>点击鼠标左键时，交叉点旋转到正确的角度</value>
+    <value>点击鼠标左键时，通过点旋转到正确的角度</value>
   </data>
   <data name="AddingLineArea" xml:space="preserve">
     <value>按住鼠标左键并拖动添加线段；点击鼠标左键完成添加对象</value>
@@ -205,18 +205,24 @@
     <value>按住鼠标左键并拖动创建文本</value>
   </data>
   <data name="AddingExistingMapExchange" xml:space="preserve">
-    <value>点击鼠标左键添加现有的地图交换过程</value>
+    <value>单击鼠标左键将现有换图添加到线路</value>
   </data>
   <data name="AddingMapExchange" xml:space="preserve">
-    <value>点击鼠标左键放置新的地图交换</value>
+    <value>点击鼠标左键放置新的换图</value>
   </data>
   <data name="AddingMapExchangeToControl" xml:space="preserve">
-    <value>点击鼠标左键控制“{0}“添加地图交换 </value>
+    <value>单击鼠标左键在检查“{0}”处添加换图 </value>
   </data>
   <data name="AddingRectangle" xml:space="preserve">
     <value>按住鼠标左键并拖动创建对象</value>
   </data>
   <data name="DraggingTopologyObject" xml:space="preserve">
-    <value>拖动控制数排序在课程（按住shift复制）</value>
+    <value>拖动检查点编号可在线路中对其重新排序（按住shift键可复制）</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>单击鼠标左键将现有地图关键点添加到线路</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>单击鼠标左键以放置新的地图关键点</value>
   </data>
 </root>

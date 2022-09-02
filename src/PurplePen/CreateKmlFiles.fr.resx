@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Préfixe du nom de fichier :</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Format de fichier :</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Fichiers :</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Un pour tous les circuits</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Un par circuit</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Sortie</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Créer des fichiers OCAD</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Format de fichier :</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

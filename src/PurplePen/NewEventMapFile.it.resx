@@ -120,6 +120,9 @@
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Scegli file mappa...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Tutti i file mappa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>File Mappa</value>
   </data>

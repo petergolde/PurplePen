@@ -144,6 +144,12 @@
   <data name="ColumnHeader_Distance" xml:space="preserve">
     <value>Vzdálenost</value>
   </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Položka</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Postup</value>
+  </data>
   <data name="ColumnHeader_Length" xml:space="preserve">
     <value>Délka</value>
   </data>
@@ -153,8 +159,68 @@
   <data name="ColumnHeader_Location" xml:space="preserve">
     <value>Umístění</value>
   </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Tratí</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Důvod</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Stejný symbol?</value>
+  </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Návštěvy</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Shrnutí tratí pro {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Použití kontrol v tratích pro {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Protiběhy</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Kontroly umístěné blízko sebe</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Následující tabulka ukazuje všechny dvojce kontrol, které jsou od sebe vzdáleny méně než {0} metrů. Sloupec Stejný symbol ukazuje, jestli mají obě kontroly stejný primární symbol (podle sloupce D v popisech).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Chybějící popisy kontrol</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Běžné tratě by měly mít zadané převýšení</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Všechny kontroly musí mít určený typ objektu ve sloupci D v popisech kontrol.</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Běžné tratě by měly mít cíl.</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Chybějící detaily v Tratích</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Trať by měla mít předpokládaný počet závodníků</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Žádný vzor ražení není definován.</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Chybějící vzor ražení</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Chybějící skóre</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Běžné tratě by měly mít startovní trojúhelník.</value>
+  </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>Ne</value>
+  </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Vše je v pořádku.</value>
   </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
     <value>Nepoužité kontroly</value>
@@ -165,7 +231,28 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Průměr</value>
   </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Vytížení kontroly</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Vytížení postupů</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Souhrn vytížení {0}</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} závodníků)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>VAROVÁNÍ:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>POZNÁMKA: </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Postup {0}</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Team {0}</value>
   </data>
 </root>

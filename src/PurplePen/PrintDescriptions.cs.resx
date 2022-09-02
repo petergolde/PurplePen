@@ -120,8 +120,14 @@
   <data name="marginChange.Text" xml:space="preserve">
     <value>Změnit okraje...</value>
   </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tabloid (11"x17")</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Velikost papíru:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>Nahoře: 0.55", Dole: 0.55", Vlevo: 0.55", Vpravo: 0.55"</value>
   </data>
   <data name="marginsLabel.Text" xml:space="preserve">
     <value>Okraje:</value>
@@ -144,11 +150,20 @@
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Výstup</value>
   </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>Výchozí nastavení tratí</value>
+  </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Symboly</value>
   </data>
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="descriptionKindCombo.Items3" xml:space="preserve">
+    <value>Symboly &amp; Text</value>
+  </data>
+  <data name="descriptionTypeLabel.Text" xml:space="preserve">
+    <value>Typ popisku:</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
@@ -171,7 +186,25 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Tratě</value>
   </data>
+  <data name="descriptionsLabel.Text" xml:space="preserve">
+    <value>Popisky podle trati</value>
+  </data>
+  <data name="copiesCombo.Items" xml:space="preserve">
+    <value>jedna kopie od každé tratě</value>
+  </data>
+  <data name="copiesCombo.Items1" xml:space="preserve">
+    <value>jedna stránka od každé tratě</value>
+  </data>
+  <data name="copiesCombo.Items2" xml:space="preserve">
+    <value>více stránek každé tratě</value>
+  </data>
+  <data name="whatToPrintLabel.Text" xml:space="preserve">
+    <value>Vytisknout:</value>
+  </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopie</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vytisknout popisy</value>
   </data>
 </root>

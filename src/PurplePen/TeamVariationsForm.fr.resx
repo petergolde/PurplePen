@@ -129,6 +129,12 @@
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Aperçu avant impression...</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Nombre d'interpostes :</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Attribuer les variations</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Nombre d'équipes :</value>
   </data>

@@ -118,12 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventTitleLabel.Text" xml:space="preserve">
-    <value>活动的标题将显示在每一控制描述表的第一行。它也可以用来作为文件在磁盘上存储你的事件。适合于描述表，它应该是长度小于25个字符。好的例子是“美国冠军赛的冠军1天”或“江景公园，4 / 12 / 06”。</value>
+    <value>赛事标题将显示在每个检查点说明表的第一行。它还用作将赛事存储在硬盘上的文件名。
+为了适合检查点说明表，它的长度应该小于25个字符。好的赛事名称包括“北斗定向大赛第一场”或“千灯湖公园定向活动”。</value>
   </data>
   <data name="eventTitleLabel.Text" xml:space="preserve">
-    <value>活动名称：</value>
+    <value>赛事标题：</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>活动名称</value>
+    <value>赛事名称</value>
   </data>
 </root>

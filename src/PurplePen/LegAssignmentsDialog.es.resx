@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Rama</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Tramos</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Para asignar un tramo específico a una rama en concreto escriba abajo los números de tramo. Los tramos no asignados a una rama de distribuirán aleatoriamente entre las demás ramas.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Más información...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Asignaciones de tramos</value>
+  </data>
 </root>

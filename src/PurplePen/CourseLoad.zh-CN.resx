@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CourseName.HeaderText" xml:space="preserve">
-    <value>课程名称</value>
+    <value>线路名称</value>
   </data>
   <data name="Load.HeaderText" xml:space="preserve">
     <value>竞争对手的负荷</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
-    <value>点击第二列和输入的号码设置在每一课程的竞争者的数量。</value>
+    <value>通过单击第二列并键入一个数字，设置每个线路的参赛者数量。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>课程负担</value>
+    <value>线路通过量</value>
   </data>
 </root>

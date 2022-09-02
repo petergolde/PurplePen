@@ -120,4 +120,16 @@
   <data name="NewCourse" xml:space="preserve">
     <value>Novo Percurso</value>
   </data>
+  <data name="ChangeDisplayedCourses" xml:space="preserve">
+    <value>Alterar Cursos Exibidos</value>
+  </data>
+  <data name="AutoNumbering" xml:space="preserve">
+    <value>Numeração automática</value>
+  </data>
+  <data name="AddTextLine" xml:space="preserve">
+    <value>Adicionar Linha de Texto</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Adicionar Variação</value>
+  </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Formato de la Descripción</value>
+    <value>Formato de la descripción:</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
     <value>Escala de impresión del mapa:</value>
@@ -139,9 +139,9 @@
     <value>Apariencia</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>Estas opciones controlan como se imprimen el mapa maestro y la descripción de todos los controles.</value>
+    <value>Estas opciones controlan como se imprimen el mapa y la descripción del mapa maestro.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Propiedades de Mapa Maestro</value>
+    <value>Propiedades de mapa maestro</value>
   </data>
 </root>

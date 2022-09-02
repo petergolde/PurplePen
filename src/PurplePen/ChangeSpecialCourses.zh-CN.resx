@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="changeDisplayedCoursesLabel.Text" xml:space="preserve">
-    <value>选择该对象将显示在课程：</value>
+    <value>选择此对象将显示在的线路：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>改变显示的课程</value>
+    <value>改变显示的线路</value>
   </data>
 </root>

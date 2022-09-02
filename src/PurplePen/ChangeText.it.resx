@@ -133,13 +133,22 @@
     <value>Dislivello Percorso</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
-    <value>Lista Classe</value>
+    <value>Lista categorie</value>
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Scala di Stampa</value>
   </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Squadra in staffetta</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Frazione di staffetta</value>
+  </data>
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Nome file</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Nome file della mappa</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspetto</value>
@@ -159,8 +168,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Tipo di carattere:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Dimensione:</value>
+  </data>
   <data name="labelFontSizeMm.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automatico</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Esempio</value>

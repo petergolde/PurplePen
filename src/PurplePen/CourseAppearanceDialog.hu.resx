@@ -126,6 +126,9 @@
   <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
     <value>1:15000 méretarány</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Elemek méretezése:</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
     <value>Automatikus átmenet rés mérete:</value>
   </data>
@@ -215,9 +218,6 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Felülnyomás használata a megjelölt színekhez</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD térkép</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pályakép testreszabása</value>

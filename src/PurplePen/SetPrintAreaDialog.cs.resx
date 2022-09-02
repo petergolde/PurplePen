@@ -123,6 +123,15 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Zrušit</value>
   </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Velikost papíru</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Nastavit oblast tisku automaticky</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Fixovat tiskovou plochu na velikost papíru</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nastavit oblast pro tisk</value>
   </data>

@@ -123,6 +123,9 @@
   <data name="LegsColumn.HeaderText" xml:space="preserve">
     <value>Úseky</value>
   </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Chcete-li určitý úsek přiřadit určité větvi, zadejte níže uvedené číslo. Úseky, které nejsou přiřazeny k větvi, budou rozděleny mezi zbývající větve náhodně.</value>
+  </data>
   <data name="linkLabel.Text" xml:space="preserve">
     <value>Více informací...</value>
   </data>

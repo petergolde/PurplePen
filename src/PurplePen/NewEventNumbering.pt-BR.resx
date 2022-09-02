@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
+    <value>Não permitir códigos que possam ser lidos de cabeça para baixo (por exemplo, "68" / "89")</value>
+  </data>
+  <data name="startingCodeLabel.Text" xml:space="preserve">
+    <value>Código inicial:</value>
+  </data>
 </root>

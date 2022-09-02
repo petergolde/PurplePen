@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Cada variante por separado</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Cada posta de relevo por separado</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Todas las variantes juntas</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variantes:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Mostrar todas las bifurcaciones juntas en un único mapa.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Un mapa para cada variante del recorrido.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Un mapa para cada posta en los equipos de relevo que elija.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Antes debe definir los equipos de relevos en «Variantes para equipos de relevos...» en el menú «Recorridos».</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Escoger variantes individuales</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Este recorrido tiene {0} equipos de relevos. Use «Variantes para equipos de relevos...» en el menú Recorridos para cambiar el número de equipos.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>hasta</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Elija los equipos a imprimir/exportar:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Escoja variantes</value>
+  </data>
 </root>

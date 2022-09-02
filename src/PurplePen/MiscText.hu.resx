@@ -535,6 +535,84 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Minden variáció</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Használható {0} tagú váltók esetén.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>A központi ellenőrzőpontot {0} esetben kell érinteni. Ez {1} lehetséges útvonal a hurokban.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>A hurok vagy villa kezdőpontját nem lehet a pálya másik részére húzni.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Túl sok variáció van a pályában. A variációk száma limitált {0} esetre.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>A variációt nem lehet hozzáadni.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>Egy variáció már létezik ennél az ellenőrzőpontnál.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Az ellenőrzőpontot vgy ágat ki kell választani hozzáadás előtt.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>A célhoz nem lehet variációt hozzáadni.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Variációt nem lehet hozzáadni minden ellenőrzőpont nézetben.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Variáció nem adható értékes pályához.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Variációt nem lehet az utolsó ellenőrzőponthoz adni. Adja hozzá előbb a célt.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' nem egy valós ág a(z)  '{1}' elágazáshoz.</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>A(z) {0} ágat hozzá kell rendelni valamelyik elágazáshoz: {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>A(z) {0} ág hozzá van rendelve a(z) '{1}' és a(z) '{2}' elágazáshoz is.</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>A térkép fájl nem beolvasható az alábbi okból: '{0}' Megnyitva majd elmentve a legújabb OpenOrienteering Mapper segítségével megoldhatja a problémát.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Időzített indítás</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Időzített indítás</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TF</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>A háttér OCAD térkép tartalmaz látható mintafájlokat. OCAD 8 és az előtti verziókban ez nem jelenik meg jól az OCAD limitációja miatt.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Az OCAD fájl formátum limitációja miatt (OCAD 10 és régebbi fájl esetén) a kép objektumok a pályák alatt lehetnek és fehér üres területként jelenhetnek meg. Kérem ellenőrizze, hogy a kimentett OCAD fájlokban ott jelennek meg a képek, ahova tervezte.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>A képfájl nem hozható létre az alábbi ok miatt:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>PDF fájl létrehozása</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF Fájl|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>A(z) {0} ág sohasem érinti a(z) '{1}' elágazást: másként kell megadni az utakat a tatalmazó villában.</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
   </data>

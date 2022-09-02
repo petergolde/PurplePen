@@ -117,7 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="numberColumn.HeaderText" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="genderColumn.HeaderText" xml:space="preserve">
+    <value>Género</value>
+  </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Caso</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Texto</value>
+  </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>Mostrar formas no plural</value>
+  </data>
+  <data name="checkBoxGender.Text" xml:space="preserve">
+    <value>Mostrar formas de género</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Insira o texto personalizado para o símbolo na coluna "Texto".</value>
+  </data>
+  <data name="labelGenderChooser.Text" xml:space="preserve">
+    <value>Género:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Texto Personalizado do Símbolo</value>
   </data>
 </root>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Tillat ikke postkoder som kan leses opp-ned (f.eks. "68" og "89")</value>
+    <value>Ikke tillat postkoder som kan leses opp-ned (f.eks. "68" og "89")</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
     <value>Renummerer alle postkoder</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
-    <value>Kun bruk disse innstillingene på nye poster</value>
+    <value>Bruk disse innstillingene bare på nye poster</value>
   </data>
   <data name="existingControlsGroupBox.Text" xml:space="preserve">
     <value>Eksisterende poster</value>
@@ -133,7 +133,7 @@
     <value>Nye poster nummereres automatisk etter følgende innstillinger</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
-    <value>Start med kode:</value>
+    <value>Start med postkode:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Automatisk nummerering</value>

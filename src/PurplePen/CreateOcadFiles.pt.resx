@@ -120,4 +120,40 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percursos</value>
   </data>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Selecionar uma pasta para os ficheiros OCAD</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Prefixo do nome do ficheiro:</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Formato do ficheiro:</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Saída:</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Selecionar pasta...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Outra pasta</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Na mesma pasta que o ficheiro do mapa</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Na mesma pasta que o ficheiro do purple pen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Exportar para ficheiro OCAD</value>
+  </data>
 </root>

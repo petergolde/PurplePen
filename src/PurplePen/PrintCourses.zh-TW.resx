@@ -117,14 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>列印</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>變更印表機...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>印表機名稱</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>印表機：</value>
+  </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>輸出</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>預覽...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>賽程</value>
   </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>每一個賽程的列印數量:</value>
+  </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>在每一個賽程或部分之後暫停列印</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>列印數量</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>在同一地圖上列印地圖更換區 </value>
+  </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>色彩模式：</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>OCAD 相容</value>
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>紅綠藍三原色</value>
@@ -132,7 +162,19 @@
   <data name="comboBoxColorModel.Items2" xml:space="preserve">
     <value>CMYK 色彩模式</value>
   </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>裁剪到單一頁面</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>列印到多個頁面</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>如果列印範圍太大而無法容納在一個頁面上：</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>外觀</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>列印賽程</value>
   </data>
 </root>

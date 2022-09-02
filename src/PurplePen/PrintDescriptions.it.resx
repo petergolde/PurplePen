@@ -126,6 +126,9 @@
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Output</value>
   </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>Default del percorso</value>
+  </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Simboli</value>
   </data>
@@ -143,5 +146,14 @@
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percorsi</value>
+  </data>
+  <data name="copiesCombo.Items" xml:space="preserve">
+    <value>una copia per ogni percorso</value>
+  </data>
+  <data name="copiesCombo.Items1" xml:space="preserve">
+    <value>una pagina pe ogni percorso</value>
+  </data>
+  <data name="copiesCombo.Items2" xml:space="preserve">
+    <value>più pagine per ogni percorso</value>
   </data>
 </root>

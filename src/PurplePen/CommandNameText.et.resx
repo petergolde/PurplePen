@@ -285,4 +285,25 @@
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Dublikeeri rada</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Loo {0} &amp;Failid</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Lisa hajutus</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Kustuta hajutus/ring</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Teatevõistkonna variandid</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Lisa kaardivahetuspunk</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Määra legendide stadard</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Määra kaardi standard</value>
+  </data>
 </root>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>课程</value>
+    <value>线路</value>
   </data>
   <data name="createButton.Text" xml:space="preserve">
     <value>创造</value>
@@ -127,19 +127,58 @@
     <value>取消</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
-    <value>选择一个文件夹的软件包</value>
+    <value>选择一个ocad文件的文件夹</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>文件格式：</value>
   </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>PNG</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>JPEG</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>GIF</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>文件名前缀：</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>世界文件：</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>图像分辨率：</value>
   </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>否</value>
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>是</value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>颜色模型</value>
   </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RGB</value>
@@ -157,15 +196,15 @@
     <value>其他文件夹</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>作为地图文件相同的文件夹</value>
+    <value>与地图文件相同的文件夹</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>紫色笔文件相同的文件夹</value>
+    <value>紫笔文件相同的文件夹</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>文件夹</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>创建软件包文件</value>
+    <value>创建图片文件</value>
   </data>
 </root>

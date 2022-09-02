@@ -120,4 +120,10 @@
   <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
     <value>Mostar a chegada nesta parte do percurso</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Estas configurações controlam a aparência desta parte do percurso com várias partes.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Propriedades da Parte do Percurso</value>
+  </data>
 </root>

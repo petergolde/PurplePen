@@ -123,6 +123,9 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>賽程</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>在同一地圖上列印地圖更換區 </value>
+  </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>色彩模式：</value>
   </data>
@@ -131,6 +134,15 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK 色彩模式</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>裁剪到單一頁面</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>列印到多個頁面</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>如果列印範圍太大而無法容納在一個頁面上：</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>外觀</value>
@@ -156,8 +168,20 @@
   <data name="filesLabel.Text" xml:space="preserve">
     <value>檔案：</value>
   </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>所有賽程之一</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>每組賽程一個</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>每組部分賽程/每組分散變化一個</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>檔案</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>選擇PDF檔案的資料夾</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>建立PDF檔案</value>

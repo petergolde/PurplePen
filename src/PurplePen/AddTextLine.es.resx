@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>Introduzca el texto que se colocará en una línea aparte, en la Descripción de Control:</value>
+    <value>Introduzca el texto que se colocará en una línea aparte, en la descripción de control:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>Recorridos:</value>

@@ -117,14 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>不缩放</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>关于地图比例尺</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>相对于1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>缩放地物尺寸</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
-    <value>自动课程间隙尺寸：</value>
+    <value>自动路段间隙尺寸</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>毫米</value>
   </data>
   <data name="labelOutlineWidth.Text" xml:space="preserve">
-    <value>白色轮廓周围数：</value>
+    <value>数字白边</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>毫米</value>
@@ -142,10 +154,10 @@
     <value>加粗</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
-    <value>控制方式：数</value>
+    <value>检查点编号样式：</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
-    <value>高度控制数：</value>
+    <value>检查点编号高度：</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>毫米</value>
@@ -157,22 +169,22 @@
     <value>毫米</value>
   </data>
   <data name="labelControlCircle.Text" xml:space="preserve">
-    <value>控制圆直径：</value>
+    <value>检查点圆圈直径：</value>
   </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>毫米</value>
   </data>
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
-    <value>使用国际标准尺寸</value>
+    <value>使用国际定联标准尺寸</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>项目规模</value>
+    <value>物体尺寸</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>混合紫色的底层地图的颜色</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>黑点：</value>
+    <value>黑色：</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>黄色</value>
@@ -202,13 +214,10 @@
     <value>颜色：</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>控制的描述</value>
+    <value>检查点说明</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>使用叠印效果的颜色标明“复印”</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD地图</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>自定义外观</value>

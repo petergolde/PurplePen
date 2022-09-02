@@ -117,7 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>使用圖像檔案作為地圖時，您必須指定圖像的解析度和地圖比例尺。 
+
+圖像的解析度表示在紙質地圖上每英寸圖像中有多少像素或點；通常稱為每英寸點數或“dpi”。
+
+地圖的比例尺表示紙質地圖與真實世界的關係。
+</value>
+  </data>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>圖像解析度：</value>
+  </data>
   <data name="dpiLabel.Text" xml:space="preserve">
     <value>解析度(dpi)</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1：</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>地圖比例尺：</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>點陣圖解析度</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>使用 PDF 檔案作為地圖時，您必須指定地圖比例尺。 
+
+地圖的比例尺表示紙質地圖與真實世界的關係。
+</value>
   </data>
 </root>

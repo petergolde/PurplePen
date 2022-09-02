@@ -118,34 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AwayFromControl" xml:space="preserve">
-    <value>远离控制</value>
+    <value>离开检查点</value>
   </data>
   <data name="Climb" xml:space="preserve">
-    <value>爬：</value>
+    <value>爬高量：</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
     <value>竞争对手的负荷：</value>
   </data>
   <data name="ControlsInUse" xml:space="preserve">
-    <value>控件的使用：</value>
+    <value>使用中的检查点：</value>
   </data>
   <data name="ControlsNotInUse" xml:space="preserve">
     <value>对照组不使用：</value>
   </data>
   <data name="Control_Plural" xml:space="preserve">
-    <value>控制装置</value>
+    <value>检查点</value>
   </data>
   <data name="Control_Singular" xml:space="preserve">
-    <value>控制装置</value>
+    <value>检查点</value>
   </data>
   <data name="CourseList_AllCourses" xml:space="preserve">
-    <value>所有的课程</value>
+    <value>所有的线路</value>
   </data>
   <data name="CourseList_None" xml:space="preserve">
     <value>无</value>
   </data>
   <data name="CourseName" xml:space="preserve">
-    <value>“{0}”</value>
+    <value>线路 "{0}"</value>
   </data>
   <data name="CustomizedSymbolDesc" xml:space="preserve">
     <value>定制符号说明</value>
@@ -166,25 +166,25 @@
     <value>flagging：</value>
   </data>
   <data name="IntoControl" xml:space="preserve">
-    <value>为控制</value>
+    <value>到达检查点</value>
   </data>
   <data name="IntoFinishFunnel" xml:space="preserve">
     <value>为完成漏斗</value>
   </data>
   <data name="Length" xml:space="preserve">
-    <value>长度</value>
+    <value>长度：</value>
   </data>
   <data name="LineHeight" xml:space="preserve">
-    <value>线高度：</value>
+    <value>线高：</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>位置：</value>
   </data>
   <data name="MandCrossing_Plural" xml:space="preserve">
-    <value>强制性的交叉点</value>
+    <value>必经通过点</value>
   </data>
   <data name="MandCrossing_Singular" xml:space="preserve">
-    <value>强制性的交叉点</value>
+    <value>必经通过点</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>无</value>
@@ -193,13 +193,13 @@
     <value>跨越边界</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
-    <value>课程名称</value>
+    <value>线路名称</value>
   </data>
   <data name="SpecialName_Dangerous" xml:space="preserve">
     <value>危险路段</value>
   </data>
   <data name="SpecialName_Descriptions" xml:space="preserve">
-    <value>控制的描述</value>
+    <value>检查点说明</value>
   </data>
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>急救的位置</value>
@@ -208,13 +208,13 @@
     <value>图像</value>
   </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
-    <value>禁止的路线</value>
+    <value>禁止的线路</value>
   </data>
   <data name="SpecialName_OOB" xml:space="preserve">
-    <value>界外区</value>
+    <value>禁区</value>
   </data>
   <data name="SpecialName_OptCrossing" xml:space="preserve">
-    <value>可选的交叉点</value>
+    <value>可选通过点</value>
   </data>
   <data name="SpecialName_RegMark" xml:space="preserve">
     <value>登记马克</value>
@@ -223,7 +223,7 @@
     <value>文本</value>
   </data>
   <data name="SpecialName_Water" xml:space="preserve">
-    <value>水的位置</value>
+    <value>水站</value>
   </data>
   <data name="Start_Plural" xml:space="preserve">
     <value>开始</value>
@@ -232,31 +232,31 @@
     <value>起点</value>
   </data>
   <data name="TextDescription" xml:space="preserve">
-    <value>文字描述：</value>
+    <value>文字说明：</value>
   </data>
   <data name="TextLine" xml:space="preserve">
     <value>文本行</value>
   </data>
   <data name="TextLine_AboveAllCourses" xml:space="preserve">
-    <value>出现以上{0}，{ 0，包含所有课程}</value>
+    <value>出现在{0}上方，包含{0}的所有线路中</value>
   </data>
   <data name="TextLine_AboveThisCourse" xml:space="preserve">
-    <value>出现以上{0}，只有在这一过程中</value>
+    <value>出现在{0}上方，仅在本线路中</value>
   </data>
   <data name="TextLine_BelowAllCourses" xml:space="preserve">
-    <value>下面出现{0}，{ 0，包含所有课程}</value>
+    <value>出现在{0}下面，包含{0}的所有线路中</value>
   </data>
   <data name="TextLine_BelowThisCourse" xml:space="preserve">
-    <value>下面出现{0}，只有在这一过程中</value>
+    <value>出现在{0}下面，仅在本线路中</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
-    <value>总控制：</value>
+    <value>总检查点：</value>
   </data>
   <data name="TotalScore" xml:space="preserve">
     <value>总得分：</value>
   </data>
   <data name="UsedInCourses" xml:space="preserve">
-    <value>用于课程：</value>
+    <value>用于线路：</value>
   </data>
   <data name="FileName" xml:space="preserve">
     <value>名称：</value>
@@ -265,13 +265,13 @@
     <value>白色区域</value>
   </data>
   <data name="MapExchange_Plural" xml:space="preserve">
-    <value>地图交流</value>
+    <value>换图</value>
   </data>
   <data name="MapExchange_Singular" xml:space="preserve">
-    <value>地图交换</value>
+    <value>换图</value>
   </data>
   <data name="MapExchangeAtControl" xml:space="preserve">
-    <value>在{0}交换图</value>
+    <value>在{0}换图</value>
   </data>
   <data name="Load" xml:space="preserve">
     <value>负荷：</value>
@@ -280,7 +280,7 @@
     <value>用于：</value>
   </data>
   <data name="CourseNameAndPart" xml:space="preserve">
-    <value>“{0}”，部分{1}</value>
+    <value>线路{0}，部分{1}</value>
   </data>
   <data name="SpecialName_Line" xml:space="preserve">
     <value>线</value>
@@ -290,5 +290,11 @@
   </data>
   <data name="CalculatedLength" xml:space="preserve">
     <value>计算长度：</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>地图关键点</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>地图关键点</value>
   </data>
 </root>

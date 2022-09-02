@@ -127,7 +127,7 @@
     <value>變更檢查點</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
-    <value>變更檢查點分值</value>
+    <value>變更檢查點積分值</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
     <value>變更標題</value>
@@ -181,7 +181,7 @@
     <value>刪除賽程</value>
   </data>
   <data name="NewCourse" xml:space="preserve">
-    <value>新賽程</value>
+    <value>新增賽程</value>
   </data>
   <data name="ChangeCourseProperties" xml:space="preserve">
     <value>變更賽程設定</value>
@@ -202,16 +202,16 @@
     <value>變更顯示的賽程</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
-    <value>移動賽段的彎曲處</value>
+    <value>移動賽段的轉彎處</value>
   </data>
   <data name="AddBend" xml:space="preserve">
-    <value>增加轉彎</value>
+    <value>增加轉彎處</value>
   </data>
   <data name="AddCorner" xml:space="preserve">
     <value>增加轉角</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>移除轉彎</value>
+    <value>移除轉彎處</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
     <value>移除轉角</value>
@@ -241,10 +241,10 @@
     <value>設定列印範圍</value>
   </data>
   <data name="SetCourseLoad" xml:space="preserve">
-    <value>變更選手的承受量</value>
+    <value>變更選手的負荷量</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>自定說明文字</value>
+    <value>自訂檢查點說明文字</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>變更賽程順序</value>
@@ -253,7 +253,7 @@
     <value>變更地圖檔案</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>忽略缺失的字型</value>
+    <value>忽略缺少的字型</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>增加文字說明列</value>
@@ -262,7 +262,7 @@
     <value>移除未使用的檢查點</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>變更說明內容語言</value>
+    <value>變更檢查點說明的語言</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>變更文字</value>
@@ -286,24 +286,24 @@
     <value>直接複製相同的賽程</value>
   </data>
   <data name="CreateMapFiles" xml:space="preserve">
-    <value>建立 {0} &amp;檔案</value>
+    <value>建立 {0} 檔案(&amp;F)</value>
   </data>
   <data name="AddVariation" xml:space="preserve">
-    <value>增加分支變化</value>
+    <value>增加分散變化</value>
   </data>
   <data name="DeleteFork" xml:space="preserve">
-    <value>刪除賽段分支/賽環</value>
+    <value>刪除賽段分叉/賽環</value>
   </data>
   <data name="RelayTeamVariations" xml:space="preserve">
-    <value>接力隊伍的變化</value>
+    <value>接力隊伍的分散變化</value>
   </data>
   <data name="AddMapIssue" xml:space="preserve">
     <value>增加取圖點</value>
   </data>
   <data name="ChangeDescriptionStandard" xml:space="preserve">
-    <value>設定檢查點說明標準</value>
+    <value>設定檢查點說明的標準</value>
   </data>
   <data name="ChangeMapStandard" xml:space="preserve">
-    <value>設定地圖標準</value>
+    <value>設定地圖的標準</value>
   </data>
 </root>

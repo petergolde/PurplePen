@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Ingen symbol</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Tilføj kontroller</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Kan ikke indlæse '(0)' af følgende grund:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Kan ikke gemme '(0)' af følgende grund:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Kan ikke indlæse kortfil '(0)' af følgende grund:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Kan ikke læse billedfil '(0)'</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Kan ikke udskrive '(0)' af følgende grund:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Kan ikke oprette '(0)' af følgende grund:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Kan ikke oprette mappe '(0)' af følgende grund:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Kan ikke læse kort af den følgende grund: '(0)' Optimer/Reparer og gen-gem i OCAD kan klare problemerne.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Kan ikke oprette OCAD filer af følgende grund:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Ønsker du at gemme de ændringer du lavede til '(0)'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Fil '(0)' eksisterer i den specificerede mappe. Klik "Tilbage" knappen og vælg en ny mappe eller en ny hændelsestitel.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Kontrolkoden '(0)' er allerede i brug af en anden kontrol.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Punkterne for en kontrol skal være et heltal 1-999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Stigningen for et kursus skal være et nummer mellem 0-999, eller blank.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Indlæsningen af et kursus skal være et heltal 0-999999, eller blank.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Fortryd</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Fortryd</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Gendan</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Gentag</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Ryd markering</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>An&amp;nuler handlingen</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Annuller handlingen</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Indtast ny score</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Indtast ny kode</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Indtast feature størrelse
+Brug / for højde på en skråning
+Brug | for to features</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Indtast ny hændelsestitel
+Brug | for at skille linjer
+(påvirker alle kurser)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Indtast ny sekundær titel
+Brug | for at skille linjer</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Indtast nyt kursusnavn</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Indtast ny stigning i meter</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Indtast ny symbolbetydning
+(påvirker alle kurser)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Indtast by tekst
+Brug | for at skille linjer</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>Kontroller {0} bruges ikke længere af noget kursus. Ønsker du at slette disse kontroller fra kontrol-samlingen?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Kontrol {0} bruges ikke længere af noget kursus. Ønsker du at slette denne kontrol fra kontrolsamlingen?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Kontrol {0} bruges af de følgende kurser: {1}. Ønsker du at slette denne kontrol alligevel?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>En kontrolkode skal være en, to eller tre bogstaver eller tal.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>En kontrolkode må ikke indeholde mellemrum.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>En kontrolkode skulle ikke begynde med et nul.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>En kontrolkode skulle ikke se ud som et andet nummer ved op-ned.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Koden {0} bruges mere end en gang.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Udskriftskala skal være et nummer mellem 100 og 100.000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Kursusegenskaber</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Landskab</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Portræt</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Sidestørrelsen er for lille til at nogen beskrivelse kan udskrives.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Version {0} af Purple Pen er nu tilgængelig for download. Du bruger i øjeblikket versiom {1}.
+
+Ønsker du at downloade og installere den seneste version?</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Hjælpfil '{0}' kunne ikke åbnes.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Kortfilen"{0}" blev ikke fundet.
+
+Sandsynligvis er kortfilen blevet flyttet eller slettet, eller Purple Pen filen er blevet flyttet (muligvis til en anden computer). Kortfilen skal være til stede hver gang Purple Pen hændelsesfilen indlæses. Hvis du sender en Purple Pen hændelsesfil til en anden person, vær sikker på at den person også har en kopi af kortfilen.
+
+Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Alle kontroller er brugt på et kursus.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Færdig</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Next &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Kontrol {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Afslut</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Oblikatorisk krydspunkt</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Overgang</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Alle {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Venste {0}, Højre {1}, Top {2}, Bund {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>flertal</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>ental</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Den tilpassede tekst kræver en "*" for at indikere hvor objektet som bliver modificeret er placeret.</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Indtast teksten du ønsker at placere på kortet. Efter tryk på OK, træk musen for at placere teksten i den ønskede lokation.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Tilføj tekst</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Indtast den nye tekst</value>
+  </data>
+  <data name="ChangeTextTitle" xml:space="preserve">
+    <value>Ændr tekst</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Et andet program har ændret kortfilen "{0}". Purple Pen vil nu genindlæse kortet.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Den nuværende hændelse har tekstuel kontrolbeskrivelser in {0}. Ønsker du at ændre sprog på kontrolbeskrivelser til {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Åben "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Purple Pen skal lukkes før indlæsning af de oprettede OCADfiler.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Ingen kurser var valgt til udskrift.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Hvis der eksisterer en webside i det oversatte sprog som indeholder dokumentation for Purple Pen, indtast den URL (inklusive http) som oversættelse af denne vare. Ellers lad den være.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Kortudveksling</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Udveksl</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Del {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Alle dele</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Del {0} af {1})</value>
+  </data>
+  <data name="CrashCancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontakt E-mail</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Der er sket en fejl. For at hjælpe os med at løse problemet, venligst indtast din email adresse og yderligere information, og send os en fejlrapport.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Venligst fortæl os hvad du lavede i programmet, for at hjælpe med at løse problemet</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Gem</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Send rapport</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Beskrivelse må ikke tilføjes et kursus med en kortudveksling hvis *Alle dele* bliver vist. Skift til den del du ønsker at tilføje, og vælg så "Tilføj beskrivelser" igen.</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe blev ikke fundet</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF converter mislykkedes med at læse PDF fil successfuldt</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Kunne ikke læse resultatet af PDF omdannelse fra fil '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Kan ikke oprette PDFs af følgende grund:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Brugerdefineret</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Kortstørrelse fra PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Annulleret af bruger</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Opretter {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Udskriver side {0} (af {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Kortfilen "{0}" er blevet slettet. Venligst prøv at genskabe kortfilen, derpå tryk på "OK".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>.NET frameworket på din computer ser ikke ud til at være korrekt installeret. Venligst besøg http://microsoft.com/net og installer den seneste version af .NET-frameworket for dit Windows operativsystem.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Vælg farve...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Brugerdefineret farve</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Mørkeblå</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Grøn</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Lyseblå</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Lilla</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Rød</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Gul</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Sæt udseende af linjen. Efter a have trykket OK, træk musen for at tegne linjesegmentet i på den  ønskede lokation.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Tilføj linje</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Sæt udseendet af rektanglen, Efter at du har trykket OK, træk musen for at placere rektanglen på den ønskede lokation.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Tilføj rektangel</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Ændr udseende på linje eller rektakgel.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Ændr linjefremtræden</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Kortfilen skal være en OCADfil for at bruge GPXfiler.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCADfilen skal have et koordinatsystem defineret for at bruge GPXfiler.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCADfilen skal have virkelige koordinater definere for at bruge GPXfiler.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Kunne ikke genprojekt punkter; enten er koordinaterne og de virkelige koordinater i OCAD kortet forkerte.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCADfil bruger et koordinatsystem som ikke er understøttet af Purple Pen.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Længden på et kursus skal være et nummer 0,1 - 99,9 eller blank for at udregne længden automatisk.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Dupliker kursus</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Indtast længde i km, eller efterlad blank for at udregne automatisk</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Afsluttede udskrivning "{0}", Tryk OK for at begynde udskrivning "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Alle variationer</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Passende for brug i relays med {0} deltagere per team.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Den centrale kontrol i løkken vil blive besøgt {0} gange. der er {1} mulige stier gennem løkkerne.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>En kontrol der starter en fork eller løkke kan ikke trækkes til et nyt sted i kurset.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>For mange totale variationer i dette kursus. Nummeret af tydelige variationer er begrænset til {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Kan ikke tilføje variation.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>En variation eksisterer ved denne kontrol.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>En kontrol eller ben skal vælges for at tilføje variation.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>En variation kan ikke tilfæjes til en færdig kontrol.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>En variation kan ikke tilføjes alle kontroller vis.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>En variation kan ikke tilføjees til et scrorekursus.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>En variation kan ikke tilføjes den sidste kontrol. Tilføj en slutkontrol først.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' er  ikke et gyldigt bennummer til gren '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Ben {0} skal tildeles en sf grenene {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Ben {0} er tildelt begge grene '{1}' og gren '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Kan ikke læse kort af følgende grund: '{0}' Åbning og gen-gem kortet i den seneste version af OpenOrienteering Mapper kan løse problemerne.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Timet start</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Timet start</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Det underliggende OCAD kort har synlig skabelonfiler. I OCAD 8 og lavere, disse skabeloner vil måske ikke træde frem på grund af begrænsninger i OCAD.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>På grund af begrænsninger i OCAD filformatet (i OCAD 10 og lavere), vil billedobjekter træde frem under kurser og uden områder i de eksporterede OCAD-filer for at være sikker på at dine billeder vises som ønsket.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Kan ikke oprette billedfiler af følgende grund:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Opret PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF Fil|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Ben {0} når aldrig gren '{1}': det var tildelt at gå en anderledes vej i en Indeholdende fork.</value>
+  </data>
+</root>

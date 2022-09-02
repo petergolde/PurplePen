@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>プレフィックス:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>ファイル形式:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>ファイル:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>すべてのコースで一つ</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>1個 / コース</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>出力</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>OCADファイルを作成</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>ファイル形式:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

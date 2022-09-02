@@ -117,20 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Não aumentar/reduzir</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Relativo à escala do mapa</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Em relação à escala 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Alterar o tamanho do item:</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
-    <value>Espaço em branco na linha da "pernada" automatico:</value>
+    <value>Espaços nas "pernada" automáticos:</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="labelOutlineWidth.Text" xml:space="preserve">
-    <value>Números realçados com linha branca:</value>
+    <value>Contorno branço nos números:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Diâmetro do ponto central</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Normal</value>
@@ -139,10 +154,10 @@
     <value>Negrito</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
-    <value>Tipo de letra do número do posto de controlo:</value>
+    <value>Tipo de letra do número do pnsto de controlo:</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
-    <value>Altura do número do posto de controlo:</value>
+    <value>Altura do número do ponto de controlo:</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
@@ -154,7 +169,7 @@
     <value>mm</value>
   </data>
   <data name="labelControlCircle.Text" xml:space="preserve">
-    <value>Diâmetro do círculo do posto de controlo:</value>
+    <value>Diâmetro do círculo do ponto de controlo:</value>
   </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
@@ -163,7 +178,10 @@
     <value>Utilizar tamanhos "standard" da IOF</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Duplicar percurso</value>
+    <value>Tamanho do item</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Mistura a cor púrpura com as cores do mapa</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Preto:</value>
@@ -181,7 +199,7 @@
     <value>Utiliza a cor púrpura do mapa</value>
   </data>
   <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Cor púrpura (roxo)</value>
+    <value>Púrpura/Magenta</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Pré-visualizar</value>
@@ -196,13 +214,10 @@
     <value>Cor:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Descrição dos postos de controlo</value>
+    <value>Sinalética</value>
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Utiliza efeito de impressão sobreposta para cores marcadas com "sobrepor" ("overprint")</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>Mapa OCAD</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personalizar aparência</value>

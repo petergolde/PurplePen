@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventMapFileLabel.Text" xml:space="preserve">
-    <value>为了设计你的课程，你必须选择你将使用的映射文件。这通常是一个软件包文件（虽然像JPEG图像文件可以用来代替）。点击“选择…”按钮，选择一个地图文件。</value>
+    <value>为了设计你的线路，必须选择要使用的地图文件。通常这是一个OCAD或OOM文件（尽管可以使用pdf和jpeg等图像文件）。单击“选择…”按钮选择地图文件。</value>
   </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>选择地图文件…</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>所有的地图文件| *。强迫症；*。OMAP；*。平台；* PDF格式；*。JPEG；*. JPG；*。TIFF；* .tif；*. BMP；*。png；* .gif | OCAD文件（*. OCD）| *。强迫症|开放定向运动制图文件| *。OMAP；*. xMAP | PDF文件（*. PDF）| *。PDF |图像文件| *。JPEG；*. JPG；*。TIFF；* .tif；*. BMP；* png，gif；*。</value>
+    <value>所有的地图文件|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD文件 (*.ocd)|*.ocd|OOM文件|*.omap;*.xmap|PDF文件 (*.pdf)|*.pdf|图像文件|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>选择地图文件</value>
   </data>
   <data name="infoMessage.Text" xml:space="preserve">
-    <value>地图文件被成功加载。如果你把你的紫色笔文件给别人，他们必须要有地图文件也。</value>
+    <value>已成功加载地图文件。如果你把你的紫笔文件发给别人，他们也必须有地图文件。</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>地图文件</value>

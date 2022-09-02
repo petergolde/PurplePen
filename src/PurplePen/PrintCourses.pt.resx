@@ -117,8 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="printerGroup.Text" xml:space="preserve">
+    <value>Saída:</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percursos</value>
+  </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Imprimir trocas de mapa no mesmo mapa </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Modelo de cores:</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Recortar para uma página</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Imprimir em múltiplas páginas</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Se a área de impressão for muito grande, reduzir para uma página</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Aspecto</value>

@@ -124,7 +124,7 @@
     <value>小报（11“X17”）</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>页面大小：</value>
+    <value>纸张尺寸：</value>
   </data>
   <data name="margins.Text" xml:space="preserve">
     <value>上：“：0.55 0.55，自底向上”，“左，右：0.55 0.55。”</value>
@@ -133,7 +133,7 @@
     <value>利润率：</value>
   </data>
   <data name="orientation.Text" xml:space="preserve">
-    <value>风景</value>
+    <value>横向</value>
   </data>
   <data name="orientationLabel.Text" xml:space="preserve">
     <value>定位：</value>
@@ -172,7 +172,7 @@
     <value>预览</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>课程</value>
+    <value>线路</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
     <value>副本:</value>

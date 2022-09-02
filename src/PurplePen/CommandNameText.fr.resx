@@ -297,4 +297,7 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Variations équipe de relais</value>
   </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Définir la norme de la carte</value>
+  </data>
 </root>

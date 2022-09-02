@@ -120,4 +120,10 @@
   <data name="ColumnHeader_Courses" xml:space="preserve">
     <value>Percursos</value>
   </data>
+  <data name="EventAudit_No" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="EventAudit_Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
 </root>

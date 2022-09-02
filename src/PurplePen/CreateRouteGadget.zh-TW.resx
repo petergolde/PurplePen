@@ -141,8 +141,17 @@
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>資料夾</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>輸入兩個RouteGadget檔案的名稱（沒有.xml或.gif）：</value>
+  </data>
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>檔案名稱</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>了解更多有關RouteGadget的資訊</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget同時需要圖像檔案（.gif）和IOF XML檔案（.xml）。 選擇這兩個檔案的名稱和資料夾。</value>
   </data>
   <data name="comboBoxIofXml.Items" xml:space="preserve">
     <value>2.0.3</value>
@@ -155,5 +164,8 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>IOF XML</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>建立RouteGadget檔案</value>
   </data>
 </root>

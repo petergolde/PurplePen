@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Samme symbol?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Besøk</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Løypesammenstilling for {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Kryssreferanse sjekk for  {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Strekk som løpes i begge retninger</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Tilliggende poster</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Alt er OK</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Løype "{0}" inneholder post "{1}" to ganger etterhverandre.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Gjentatte poster</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Poengløype "{0}" inneholder post "{1}" to ganger. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Arrangementskontroll for {0}</value>
   </data>
@@ -252,6 +267,9 @@
   <data name="LegLength_Title" xml:space="preserve">
     <value>Strekklengde rapport for {0}</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Noen poster inngår flere ganger i samme løype. Det andre belastningstallet viser totalt antatt postbesøk.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Belastning post</value>
   </data>
@@ -267,13 +285,31 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Summering av antall deltakere for {0}</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Enn eller flere løyper har variasjoner. Belastningstall vil bli beregnet med forutsetning at deltakere er jevnt fordelt mellom gaflingene.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} postbesøk)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>ADVARSEL:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Merk: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Varsel: på grunn av antallet strekk på gaflingen ved post {0} vill ikke bli jevnt fordelt. {1} strekk vil bruke gren(er) {2}, mens {3} strekk vil bruke avgrening {4}. </value>
   </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
     <value>Etappe {0}</value>
   </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Ingen stafettlag har blitt definert. Velg ønsket antall lag og strekk og trykk "Tildel varianter" knappen.</value>
+  </data>
   <data name="RelayVariation_TeamNumber" xml:space="preserve">
     <value>Lag {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Stafettilordninger for {0}</value>
   </data>
 </root>

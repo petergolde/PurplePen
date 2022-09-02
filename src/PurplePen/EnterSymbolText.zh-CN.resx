@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="numberColumn.HeaderText" xml:space="preserve">
-    <value>名称</value>
+    <value>编号</value>
   </data>
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>性别</value>

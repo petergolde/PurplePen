@@ -98,9 +98,9 @@ namespace PurplePen
             this.createCoursePdfMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createRouteReviewFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createRouteGadgetFilesMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.publishToLiveloxMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createXmlMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createGPXFileMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.createKMLFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.printDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.printPunchCardsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -302,7 +302,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.createKMLFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -640,8 +639,7 @@ namespace PurplePen
             // createRouteReviewFilesToolStripMenuItem
             // 
             this.createRouteReviewFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createRouteGadgetFilesMenu,
-            this.publishToLiveloxMenu});
+            this.createRouteGadgetFilesMenu});
             this.createRouteReviewFilesToolStripMenuItem.Name = "createRouteReviewFilesToolStripMenuItem";
             resources.ApplyResources(this.createRouteReviewFilesToolStripMenuItem, "createRouteReviewFilesToolStripMenuItem");
             // 
@@ -650,13 +648,6 @@ namespace PurplePen
             this.createRouteGadgetFilesMenu.Name = "createRouteGadgetFilesMenu";
             resources.ApplyResources(this.createRouteGadgetFilesMenu, "createRouteGadgetFilesMenu");
             this.createRouteGadgetFilesMenu.Click += new System.EventHandler(this.createRouteGadgetFilesMenu_Click);
-            // 
-            // publishToLiveloxMenu
-            // 
-            this.publishToLiveloxMenu.Image = global::PurplePen.Properties.Resources.Livelox64x64;
-            this.publishToLiveloxMenu.Name = "publishToLiveloxMenu";
-            resources.ApplyResources(this.publishToLiveloxMenu, "publishToLiveloxMenu");
-            this.publishToLiveloxMenu.Click += new System.EventHandler(this.publishToLiveloxMenu_Click);
             // 
             // createXmlMenu
             // 
@@ -669,6 +660,12 @@ namespace PurplePen
             this.createGPXFileMenu.Name = "createGPXFileMenu";
             resources.ApplyResources(this.createGPXFileMenu, "createGPXFileMenu");
             this.createGPXFileMenu.Click += new System.EventHandler(this.createGpxMenu_Click);
+            // 
+            // createKMLFileMenu
+            // 
+            this.createKMLFileMenu.Name = "createKMLFileMenu";
+            resources.ApplyResources(this.createKMLFileMenu, "createKMLFileMenu");
+            this.createKMLFileMenu.Click += new System.EventHandler(this.createKmlFilesMenu_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -2052,12 +2049,6 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
-            // createKMLFileMenu
-            // 
-            this.createKMLFileMenu.Name = "createKMLFileMenu";
-            resources.ApplyResources(this.createKMLFileMenu, "createKMLFileMenu");
-            this.createKMLFileMenu.Click += new System.EventHandler(this.createKmlFilesMenu_Click);
-            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2338,7 +2329,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator24;
         private System.Windows.Forms.ToolStripMenuItem createRouteReviewFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
-        private System.Windows.Forms.ToolStripMenuItem publishToLiveloxMenu;
         private System.Windows.Forms.ToolStripMenuItem createKMLFileMenu;
     }
 }

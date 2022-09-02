@@ -118,34 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
-    <value>活动名称</value>
+    <value>赛事名称</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
-    <value>课程名称</value>
+    <value>线路名称</value>
   </data>
   <data name="coursePartMenuItem.Text" xml:space="preserve">
-    <value>课程的一部分</value>
+    <value>部分线路</value>
   </data>
   <data name="variationMenuItem.Text" xml:space="preserve">
-    <value>课程的变化</value>
+    <value>线路分支</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
-    <value>课程长度</value>
+    <value>线路长度</value>
   </data>
   <data name="courseClimbMenuItem.Text" xml:space="preserve">
-    <value>课上</value>
+    <value>线路爬高量</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
-    <value>班级列表</value>
+    <value>组别列表</value>
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>打印比例</value>
   </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>接力赛团队</value>
+  </data>
   <data name="relayLegMenuItem.Text" xml:space="preserve">
-    <value>中继站</value>
+    <value>接力棒次</value>
   </data>
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>文件名</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>地图文件名</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>界面</value>
@@ -175,7 +181,7 @@
     <value>自动</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>样本</value>
+    <value>示例</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>文本</value>

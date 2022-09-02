@@ -118,9 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelPaper.Text" xml:space="preserve">
-    <value>大小：</value>
+    <value>字體大小:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>寬度：</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>高度：</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>紙張尺寸 ({0})</value>
+  </data>
+  <data name="radioButtonLandscape.Text" xml:space="preserve">
+    <value>横向</value>
+  </data>
+  <data name="radioButtonPortrait.Text" xml:space="preserve">
+    <value>直向</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>方向</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>左：</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>上：</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>右：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>下：</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>邊距 ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>頁面設定</value>
   </data>
 </root>

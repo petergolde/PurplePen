@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>输入文本放置在单独的行控制的描述：</value>
+    <value>输入要放置在检查点说明表单独行上的文本：</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
-    <value>课程</value>
+    <value>线路：</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
     <value>位置：</value>
@@ -130,13 +130,13 @@
     <value>以上{0}</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>below {0}</value>
+    <value>以下 {0}</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
-    <value>本课程只</value>
+    <value>这条线路只</value>
   </data>
   <data name="comboBoxCourses.Items1" xml:space="preserve">
-    <value>所有的课程{0}</value>
+    <value>所有的线路{0}</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>添加的文本行</value>

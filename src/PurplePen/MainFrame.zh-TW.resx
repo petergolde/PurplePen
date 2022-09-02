@@ -126,47 +126,71 @@
   <data name="radioButtonTopology.Text" xml:space="preserve">
     <value>排序中</value>
   </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>地圖檢視者拓樸</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen 檔案|*.ppen|All files|*.*</value>
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen 檔案|*.ppen</value>
   </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>新增賽事(&amp;N)...</value>
+  </data>
   <data name="openMenu.Text" xml:space="preserve">
-    <value>開啟...</value>
+    <value>開啟(&amp;O)...</value>
   </data>
   <data name="saveMenu.Text" xml:space="preserve">
-    <value>儲存</value>
+    <value>儲存(&amp;S)</value>
   </data>
   <data name="saveAsMenu.Text" xml:space="preserve">
-    <value>另存新檔…</value>
+    <value>另存新檔(&amp;A)...</value>
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>建立OCAD &amp;檔案...</value>
+    <value>建立OCAD &amp;檔案(&amp;F)...</value>
+  </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>建立圖片檔案...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>檢查點說明(&amp;D)...</value>
   </data>
   <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
-    <value>核對卡...</value>
+    <value>核對卡(&amp;n)...</value>
   </data>
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
-    <value>賽程...</value>
+    <value>賽程(&amp;C)...</value>
   </data>
   <data name="createPDFsMenu.Text" xml:space="preserve">
-    <value>建立PDFs</value>
+    <value>建立PDFs(&amp;D)</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>建立 RouteGadget 檔案(&amp;G)...</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>建立資料交換檔案 (IOF XML)(&amp;I)...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>建立 GPX 檔案(&amp;P)...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>列印檢查點說明(&amp;P)...</value>
   </data>
   <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>列印核對卡...</value>
+    <value>列印核對卡(&amp;n)...</value>
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>列印賽程...</value>
+    <value>列印賽程(&amp;C)...</value>
   </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
-    <value>只有此部分</value>
+    <value>只有此部分(&amp;P)</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
-    <value>此賽程</value>
+    <value>此賽程(&amp;T)</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
-    <value>所有賽程</value>
+    <value>所有賽程(&amp;A)</value>
   </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>設定列印範圍</value>
@@ -175,25 +199,31 @@
     <value>程式語言...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
-    <value>離開</value>
+    <value>離開(&amp;x)</value>
   </data>
   <data name="fileMenu.Text" xml:space="preserve">
-    <value>檔案</value>
+    <value>檔案(&amp;F)</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
-    <value>清除選擇</value>
+    <value>清除選擇(&amp;C)</value>
   </data>
   <data name="undoMenu.Text" xml:space="preserve">
-    <value>復原</value>
+    <value>復原(&amp;U)</value>
   </data>
   <data name="redoMenu.Text" xml:space="preserve">
-    <value>取消復原</value>
+    <value>取消復原(&amp;R)</value>
   </data>
   <data name="deleteMenu.Text" xml:space="preserve">
-    <value>刪除</value>
+    <value>刪除(&amp;D)</value>
   </data>
   <data name="editMenu.Text" xml:space="preserve">
-    <value>編輯</value>
+    <value>編輯(&amp;E)</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>整個賽程</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>整個地圖</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -217,19 +247,25 @@
     <value>1000%</value>
   </data>
   <data name="zoomMenu.Text" xml:space="preserve">
-    <value>縮放</value>
+    <value>縮放(&amp;Z)</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>非常低</value>
+    <value>非常低(&amp;V)</value>
   </data>
   <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>低</value>
+    <value>低(&amp;L)</value>
   </data>
   <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>中</value>
+    <value>中(&amp;M)</value>
   </data>
   <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>高</value>
+    <value>高(&amp;H)</value>
+  </data>
+  <data name="fullIntensityMenu.Text" xml:space="preserve">
+    <value>完整的(&amp;F)</value>
+  </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>地圖明暗度</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>低</value>
@@ -238,16 +274,322 @@
     <value>高</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>地圖品質</value>
+    <value>地圖品質(&amp;Q)</value>
+  </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>顯示列印範圍</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>顯示彈出資訊</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>所有檢查點</value>
+  </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>其他賽程...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>清除其他賽程</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>檢視</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>起點</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>檢查點</value>
+  </data>
+  <data name="addFinishMenu.Text" xml:space="preserve">
+    <value>終點</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>檢查點說明</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>在檢查點換地圖</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>指定路線至換圖區</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>換圖區</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>分散變化...</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>文字列</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>計時起點</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>強制穿越點</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>可選擇的穿越點</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>禁制區域</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>危險區域</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>補給站位置</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>急救站位置</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>禁制路線標示</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>不可跨越的邊界</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>套印標記</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>白底的範圍</value>
+  </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>文字</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>列</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>矩形</value>
+  </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="changeMapFileMenu.Text" xml:space="preserve">
+    <value>地圖檔案...</value>
+  </data>
+  <data name="changeCodesMenu.Text" xml:space="preserve">
+    <value>變更檢查點編號...</value>
+  </data>
+  <data name="autoNumberingMenu.Text" xml:space="preserve">
+    <value>自動編號...</value>
+  </data>
+  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
+    <value>移除未採用的檢查點...</value>
+  </data>
+  <data name="punchPatternsMenu.Text" xml:space="preserve">
+    <value>打孔器圖案...</value>
+  </data>
+  <data name="descriptionStd2004Menu.Text" xml:space="preserve">
+    <value>2004檢查點說明規範</value>
+  </data>
+  <data name="descriptionStd2018Menu.Text" xml:space="preserve">
+    <value>2018檢查點說明規範</value>
+  </data>
+  <data name="mapStd2000Menu.Text" xml:space="preserve">
+    <value>ISOM 2000地圖繪製規範</value>
+  </data>
+  <data name="mapStd2017Menu.Text" xml:space="preserve">
+    <value>ISOM 2017地圖繪製規範</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF 規範</value>
+  </data>
+  <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
+    <value>自行定義的檢查點說明文字</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>自行定義外觀...</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>賽事</value>
+  </data>
+  <data name="addCourseMenu.Text" xml:space="preserve">
+    <value>新增賽程...</value>
+  </data>
+  <data name="deleteCourseMenu.Text" xml:space="preserve">
+    <value>刪除賽程</value>
+  </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>直接複製賽程...</value>
+  </data>
+  <data name="propertiesMenu.Text" xml:space="preserve">
+    <value>內容設定</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>賽程順序...</value>
+  </data>
+  <data name="courseLoadMenu.Text" xml:space="preserve">
+    <value>選手負荷量...</value>
+  </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>接力隊伍的分散變化...</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>賽程</value>
+  </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
-    <value>刪除</value>
+    <value>刪除(&amp;D)</value>
+  </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>刪除分叉/賽環</value>
+  </data>
+  <data name="addBendMenu.Text" xml:space="preserve">
+    <value>新增轉彎處</value>
+  </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>移除轉彎處</value>
+  </data>
+  <data name="addGapMenu.Text" xml:space="preserve">
+    <value>新增間隔</value>
+  </data>
+  <data name="removeGapMenu.Text" xml:space="preserve">
+    <value>移除間隔</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>變更文字...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>變更線段外觀...</value>
+  </data>
+  <data name="rotateMenu.Text" xml:space="preserve">
+    <value>旋轉</value>
+  </data>
+  <data name="noFlaggingMenu.Text" xml:space="preserve">
+    <value>沒有標記</value>
+  </data>
+  <data name="entireFlaggingMenu.Text" xml:space="preserve">
+    <value>整個賽段被標記</value>
+  </data>
+  <data name="beginFlaggingMenu.Text" xml:space="preserve">
+    <value>賽段開始標記</value>
+  </data>
+  <data name="endFlaggingMenu.Text" xml:space="preserve">
+    <value>已標記的賽段末端</value>
+  </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>賽段標記</value>
+  </data>
+  <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
+    <value>變更顯示的賽程 ...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>項目</value>
+  </data>
+  <data name="courseSummaryMenu.Text" xml:space="preserve">
+    <value>賽程摘要</value>
+  </data>
+  <data name="eventAuditMenu.Text" xml:space="preserve">
+    <value>賽事檢核</value>
+  </data>
+  <data name="legLengthsMenu.Text" xml:space="preserve">
+    <value>賽段長度</value>
+  </data>
+  <data name="controlCrossrefMenu.Text" xml:space="preserve">
+    <value>檢查點對照</value>
+  </data>
+  <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
+    <value>檢查點與賽段載入</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>報告</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen 線上協助</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen 線上協助 (已翻譯的)</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen 網站</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>支援/錯誤報告</value>
+  </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>捐贈</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>關於Purple Pen</value>
+  </data>
+  <data name="symbolBrowserMenu.Text" xml:space="preserve">
+    <value>符號瀏覽器</value>
+  </data>
+  <data name="descriptionBrowserMenu.Text" xml:space="preserve">
+    <value>說明表瀏覽器</value>
+  </data>
+  <data name="controlTesterMenu.Text" xml:space="preserve">
+    <value>檢查點測試器</value>
+  </data>
+  <data name="mapTesterMenu.Text" xml:space="preserve">
+    <value>地圖測試器</value>
+  </data>
+  <data name="courseSelectorTesterMenu.Text" xml:space="preserve">
+    <value>賽程選取測試器</value>
+  </data>
+  <data name="dotGridTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>網格測試器</value>
+  </data>
+  <data name="dumpOCADFileMenu.Text" xml:space="preserve">
+    <value>Dump OCAD 檔案</value>
+  </data>
+  <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>報告測試器</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>字型量度</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>當機</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>偵錯</value>
+  </data>
+  <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
+    <value>新增描述語言...</value>
+  </data>
+  <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
+    <value>新增翻譯的文字...</value>
+  </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>合併符號.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>翻譯說明的文字</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="openToolStripButton.Text" xml:space="preserve">
+    <value>開啟</value>
+  </data>
+  <data name="openToolStripButton.ToolTipText" xml:space="preserve">
+    <value>開啟 (Ctrl+O)</value>
+  </data>
+  <data name="saveToolStripButton.Text" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="saveToolStripButton.ToolTipText" xml:space="preserve">
+    <value>儲存 (Ctrl+S)</value>
+  </data>
+  <data name="undoToolStripButton.Text" xml:space="preserve">
+    <value>復原</value>
+  </data>
+  <data name="undoToolStripButton.ToolTipText" xml:space="preserve">
+    <value>復原 (Ctrl+Z)</value>
+  </data>
+  <data name="redoToolStripButton.Text" xml:space="preserve">
+    <value>重複</value>
+  </data>
+  <data name="redoToolStripButton.ToolTipText" xml:space="preserve">
+    <value>重複 (Ctrl+Y)</value>
+  </data>
+  <data name="deleteToolStripButton.Text" xml:space="preserve">
+    <value>刪除 (Del)</value>
   </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
     <value>增加起點</value>
@@ -255,19 +597,106 @@
   <data name="addControlToolStripButton.Text" xml:space="preserve">
     <value>增加檢查點</value>
   </data>
+  <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
+    <value>新增檢查點 (Ctrl+A)</value>
+  </data>
   <data name="addFinishToolStripButton.Text" xml:space="preserve">
     <value>增加終點</value>
+  </data>
+  <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>新增檢查點說明</value>
+  </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>在檢查點地圖更換</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>標記路線至地圖更換</value>
   </data>
   <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
     <value>增加換圖點</value>
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
-    <value>增加分支變化</value>
+    <value>增加分散變化</value>
+  </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>計時起點</value>
+  </data>
+  <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>強制穿越點</value>
+  </data>
+  <data name="optionalCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>可選擇的穿越點</value>
+  </data>
+  <data name="outOfBoundsToolStripMenuItem.Text" xml:space="preserve">
+    <value>禁制區域</value>
+  </data>
+  <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
+    <value>危險區域</value>
+  </data>
+  <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>補給站位置</value>
+  </data>
+  <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>急救站位置</value>
+  </data>
+  <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
+    <value>禁制路線標示</value>
+  </data>
+  <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
+    <value>不可跨越的邊界</value>
+  </data>
+  <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
+    <value>套印標記</value>
+  </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>白底的範圍</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>文字</value>
   </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>列</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>矩形</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>增加特定項目</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>增加轉彎處 (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>工具列按鈕1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>新增間隔 (Ctrl+G)</value>
+  </data>
+  <data name="zoomAmountLabel.Text" xml:space="preserve">
+    <value>縮放: 100%</value>
+  </data>
+  <data name="locationDisplay.Text" xml:space="preserve">
+    <value>X:-999.99 Y:-999.99</value>
+  </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML  2.0.3版本|*.xml|IOF XML 3.0版本|*.xml</value>
+  </data>
+  <data name="saveXmlFileDialog.Title" xml:space="preserve">
+    <value>建立 XML 交換檔案</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>圖片圖檔|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX檔案|*.gpx</value>
+  </data>
   <data name="saveGpxFileDialog.Title" xml:space="preserve">
     <value>建立GPX檔案</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Purple Pen</value>
   </data>
 </root>

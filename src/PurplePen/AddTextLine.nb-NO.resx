@@ -127,10 +127,10 @@
     <value>Plassering:</value>
   </data>
   <data name="comboBoxPosition.Items" xml:space="preserve">
-    <value>Over</value>
+    <value>Over {0}</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>Under</value>
+    <value>Under {0}</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
     <value>Bare denne løypa</value>

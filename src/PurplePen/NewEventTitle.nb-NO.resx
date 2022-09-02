@@ -126,6 +126,6 @@ For å passe i postbeskrivelsen må teksten være mindre enn 25 tegn. Eksempel p
     <value>Arrangements navn:</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>Navn på arrangement</value>
+    <value>Arrangementsnavn</value>
   </data>
 </root>

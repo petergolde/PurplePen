@@ -121,10 +121,10 @@
     <value>创造</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
-    <value>课程</value>
+    <value>线路</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
-    <value>打印地图交流在同一地图 </value>
+    <value>打印换图在同一张地图 </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>颜色模型：</value>
@@ -136,13 +136,13 @@
     <value>绿红黄黑标准颜色</value>
   </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
-    <value>作物的单页</value>
+    <value>合成单页</value>
   </data>
   <data name="comboBoxMultiPage.Items1" xml:space="preserve">
     <value>多页打印</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
-    <value>如果打印面积太大，放在一页：</value>
+    <value>如果打印区域太大，无法放在一页上：</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>界面</value>
@@ -154,10 +154,10 @@
     <value>其他文件夹</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>作为地图文件相同的文件夹</value>
+    <value>与地图文件相同的文件夹</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>紫色笔文件相同的文件夹</value>
+    <value>紫笔文件相同的文件夹</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>文件夹</value>
@@ -169,13 +169,13 @@
     <value>文件</value>
   </data>
   <data name="comboBoxFileFormat.Items" xml:space="preserve">
-    <value>一个为所有课程</value>
+    <value>其中一个线路</value>
   </data>
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
-    <value>每一个课程</value>
+    <value>每一条路线</value>
   </data>
   <data name="comboBoxFileFormat.Items2" xml:space="preserve">
-    <value>每一个课程的一部分</value>
+    <value>每一条路线部分/分支</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>文件</value>

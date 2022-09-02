@@ -141,6 +141,9 @@
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Antall kopier av hver løype:</value>
   </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Pause utskriften etter hver løype eller del</value>
+  </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopier</value>
   </data>

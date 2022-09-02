@@ -120,6 +120,9 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Texto</value>
   </data>
+  <data name="addVariationToolStripButton.Text" xml:space="preserve">
+    <value>Adicionar Variação</value>
+  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Texto</value>
   </data>

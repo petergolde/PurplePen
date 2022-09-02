@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
+    <value>Mostrar círculo de meta en esta sección del recorrido</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Estos parámetros controlan la apariencia de esta sección de un recorrido con varias partes.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Propiedades de la sección</value>
+  </data>
 </root>

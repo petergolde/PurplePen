@@ -178,7 +178,7 @@
     <value>Le texte suivant (facultatif) apparaîtra sur la deuxième ligne des définitions :</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Liste des catégories / Titre secondaire</value>
+    <value>Liste des catégories/titre secondaire</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Distance :</value>

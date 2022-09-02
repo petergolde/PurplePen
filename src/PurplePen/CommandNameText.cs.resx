@@ -297,4 +297,13 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Varianty štafet</value>
   </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Přidat místo výdeje map</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Vyber standard pro popisy</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Vyber mapový standard</value>
+  </data>
 </root>

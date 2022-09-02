@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>每個分散變化單獨</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>每個接力棒次單獨</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>所有分散變化組合</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>分散變化:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>顯示所有分叉在同一張地圖上</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>賽程中每種可能的分散變化的地圖。</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>您選擇的接力隊伍其每一個棒次的地圖。</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>您必須先從 賽程 選單選取 接力隊伍的分散變化...來定義接力隊伍。</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>選擇個別的分散變化</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>此賽程已經分配了 {0} 個接力隊伍。 使用 賽程 選單中的 接力隊伍的分散變化... 來變更隊伍數量。</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>至</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>選取要列印/轉出的隊伍</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>選擇分散變化</value>
+  </data>
 </root>

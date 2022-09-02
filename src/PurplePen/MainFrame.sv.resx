@@ -168,6 +168,9 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Skapa Route&amp;Gadget-filer...</value>
   </data>
+  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
+    <value>Publicera till &amp;Livelox...</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Skapa data&amp;utbytesfil (IOF XML)...</value>
   </data>
@@ -707,8 +710,5 @@
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Lägg till specialsymbol</value>
-  </data>
-  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
-    <value>Publicera till &amp;Livelox...</value>
   </data>
 </root>

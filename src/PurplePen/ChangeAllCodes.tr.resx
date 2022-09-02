@@ -124,7 +124,7 @@
     <value>Yeni Kod</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>Bir veya daha fazla denetimin kodunu değiştirmek için "Yeni Kod" sütununu tıklayın ve yeni kodu girin. </value>
+    <value>Bir veya birden fazla kontrolü değiştirmek için "Yeni Kod" sütununa tıklayıp yeni kodu girin. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kontrol Kodlarını Değiştir</value>

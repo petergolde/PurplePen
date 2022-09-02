@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="formatButton.Text" xml:space="preserve">
+    <value>Rozložení průkazky</value>
+  </data>
+  <data name="punchPatternsLabel.Text" xml:space="preserve">
+    <value>Klikni na kód kontroly na levé straně seznamu a navrhni vzor ražení na pravé straně. Červené kódy značí kontroly, které nemají definovaný žádný vzor ražení.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vzor ražení</value>
+  </data>
 </root>

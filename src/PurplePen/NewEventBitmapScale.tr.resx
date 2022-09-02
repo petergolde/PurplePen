@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="dpiLabel.Text" xml:space="preserve">
-    <value>İnc Başına Nokta Sayısı</value>
+    <value>inç başına nokta sayısı</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1:</value>

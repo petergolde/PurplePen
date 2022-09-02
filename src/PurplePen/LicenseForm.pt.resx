@@ -120,4 +120,10 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceitar</value>
   </data>
+  <data name="bsdLicenseLinkLabel.Text" xml:space="preserve">
+    <value>Purple Pen é disponibilizado sob uma licença do tipo "BSD".</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Licença Purple Pen</value>
+  </data>
 </root>

@@ -120,4 +120,7 @@
   <data name="NewCourse" xml:space="preserve">
     <value>Новая дистанция</value>
   </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Добавить рассеивание</value>
+  </data>
 </root>

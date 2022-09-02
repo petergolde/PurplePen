@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Første post nummer:</value>
+    <value>Første postnummer:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Postbeskrivelsens utseende</value>
@@ -139,13 +139,13 @@
     <value>Symboler og tekst</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Postsirkel tekst:</value>
+    <value>Postnummerering tekst:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>Sekvensnummer (3)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
-    <value>Post kode (145)</value>
+    <value>Postkode (145)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>Sekvens og kode (3-145)</value>
@@ -187,10 +187,10 @@
     <value>Stigning:</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Løypetype</value>
+    <value>Løypetype:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Navn på løypa:</value>
+    <value>Navn på løype:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
     <value>Normal løype</value>

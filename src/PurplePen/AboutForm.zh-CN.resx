@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copyrightLabel.Text" xml:space="preserve">
-    <value>Peter Golde的著作权©</value>
+    <value>版权 ©  由 Peter Golde 开发</value>
   </data>
   <data name="freeLabel.Text" xml:space="preserve">
-    <value>紫色的笔是免费软件，可以复制和共享。</value>
+    <value>紫笔是免费软件，可以复制和共享。</value>
   </data>
   <data name="disclaimerLabel.Text" xml:space="preserve">
-    <value>本软件是由版权所有者和贡献者”，是“任何明示或暗示的保证，包括但不限于，默示保证适销性和适用性的担保。</value>
+    <value>该软件由版权持有人和贡献者提供，包括但不限于，商业性和其他用途默认放弃，提供任何明示或暗示的保证。</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>确定</value>
@@ -134,5 +134,8 @@
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
     <value>查看完整的许可证</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>关于紫笔软件</value>
   </data>
 </root>

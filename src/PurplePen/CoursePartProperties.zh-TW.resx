@@ -118,7 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
-    <value>在這個賽程的部分顯示終點圓圈</value>
+    <value>在這個賽程的部分顯示終點雙圓圈</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>這些設定控制多個部分賽程之此部分的外觀。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>賽程部分的設定調整</value>

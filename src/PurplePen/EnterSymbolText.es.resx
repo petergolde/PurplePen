@@ -133,12 +133,12 @@
     <value>Mostrar formas de género</value>
   </data>
   <data name="labelDescription.Text" xml:space="preserve">
-    <value>Introduzca el texto personalizado para el símbolo en la columna «texto»</value>
+    <value>Introduzca el texto personalizado para el símbolo en la columna «texto».</value>
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Género:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Personalizar Texto de Símbolos</value>
+    <value>Texto personalizado de símbolo</value>
   </data>
 </root>

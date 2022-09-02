@@ -121,9 +121,9 @@
     <value>删除</value>
   </data>
   <data name="unusedControlsLabel.Text" xml:space="preserve">
-    <value>以下控件中的所有控件的集合，但不能用于任何课程。单击“删除”按钮以删除所有选中的控件。</value>
+    <value>以下检查点位于“所有检查点”集合中，但不在任何线路中使用。单击“删除”以删除所有选中的检查点。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>未使用的控制</value>
+    <value>未使用的检查点</value>
   </data>
 </root>

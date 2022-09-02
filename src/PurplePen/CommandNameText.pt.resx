@@ -121,19 +121,19 @@
     <value>Alterar Símbolo</value>
   </data>
   <data name="ChangeCode" xml:space="preserve">
-    <value>Alterar Código de Posto de controlo</value>
+    <value>Alterar Código de Ponto de controlo</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Alterar Posto de controlo</value>
+    <value>Alterar Ponto de controlo</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
-    <value>Alterar Pontuação de Posto de controlo</value>
+    <value>Alterar Pontuação do Ponto de controlo</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
     <value>Mudar Título</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
-    <value>Alterar Desnível positivo</value>
+    <value>Alterar Desnível</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
     <value>Alterar Nome do Percurso</value>
@@ -142,40 +142,40 @@
     <value>Alterar Linha de Texto</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Actualizar Escala do Mapa</value>
+    <value>Atualizar Escala do Mapa</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
-    <value>Mover Posto de controlo</value>
+    <value>Mover Ponto de controlo</value>
   </data>
   <data name="MoveControlNumber" xml:space="preserve">
-    <value>Mover Número do Posto de controlo</value>
+    <value>Mover Número do Ponto de controlo</value>
   </data>
   <data name="MoveObject" xml:space="preserve">
     <value>Mover Objecto</value>
   </data>
   <data name="DeleteControl" xml:space="preserve">
-    <value>Remover Posto de controlo</value>
+    <value>Remover Ponto de controlo</value>
   </data>
   <data name="DeleteObject" xml:space="preserve">
-    <value>Remover Objecto</value>
+    <value>Eliminar objeto</value>
   </data>
   <data name="DeleteTextLine" xml:space="preserve">
     <value>Apagar a linha de texto</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Adicionar Posto de controlo</value>
+    <value>Adicionar Ponto de controlo</value>
   </data>
   <data name="AddStart" xml:space="preserve">
-    <value>Criar partida</value>
+    <value>Criar Partida</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
-    <value>Criar chegada</value>
+    <value>Criar Chegada</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
     <value>Criar passagem obrigatória</value>
   </data>
   <data name="AddObject" xml:space="preserve">
-    <value>Adicionar Objecto</value>
+    <value>Adicionar Objeto</value>
   </data>
   <data name="DeleteCourse" xml:space="preserve">
     <value>Eliminar Percurso</value>
@@ -244,7 +244,7 @@
     <value>Alterar quantidade de participantes</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
-    <value>Personalize a descrição em texto</value>
+    <value>Personalize a sinalética textual</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
     <value>Alterar Ordem dos Percursos</value>
@@ -259,16 +259,16 @@
     <value>Adicionar Linha de Texto</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
-    <value>Remover postos de controlo não usados</value>
+    <value>Remover pontos de controlo não usados</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>Alterar a linguagem da descrição dos postos de controlo</value>
+    <value>Alterar a língua da sinalética dos pontos de controlo</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Mudar o Texto</value>
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
-    <value>Definir a aparência do percurso</value>
+    <value>Personalizar a aparência do percurso</value>
   </data>
   <data name="AddMapExchange" xml:space="preserve">
     <value>Adicionar troca de mapa</value>
@@ -281,5 +281,29 @@
   </data>
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Alterar aparência da linha</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicar o percurso</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Criar {0} &amp;Ficheiros</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Adicionar variação</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Apagar bifurcação/loop</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Variações da Equipa</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Adicionar local onde o atleta pega no mapa</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Definir standard da sinalética</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Definir standar do mapa</value>
   </data>
 </root>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="marginChange.Text" xml:space="preserve">
-    <value>Cambiar Márgenes...</value>
+    <value>Cambiar márgenes...</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
     <value>Tabloide (11"x17")</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Tamaño del Papel:</value>
+    <value>Tamaño del papel:</value>
   </data>
   <data name="margins.Text" xml:space="preserve">
     <value>Arriba: 0.55", Abajo: 0.55", Izquierda: 0.55", Derecha: 0.55"</value>
@@ -139,10 +139,10 @@
     <value>Orientación:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
-    <value>Nombre de la Impresora</value>
+    <value>Nombre de la impresora</value>
   </data>
   <data name="printerChange.Text" xml:space="preserve">
-    <value>Seleccionar Impresora...</value>
+    <value>Seleccionar impresora...</value>
   </data>
   <data name="printerLabel.Text" xml:space="preserve">
     <value>Impresora:</value>
@@ -160,10 +160,10 @@
     <value>Texto</value>
   </data>
   <data name="descriptionKindCombo.Items3" xml:space="preserve">
-    <value>Símbolos y Texto</value>
+    <value>Símbolos y texto</value>
   </data>
   <data name="descriptionTypeLabel.Text" xml:space="preserve">
-    <value>Tipo de Descripción:</value>
+    <value>Tipo de descripción:</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
@@ -205,6 +205,6 @@
     <value>Copias</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Imprimir Descripciones</value>
+    <value>Imprimir descripciones</value>
   </data>
 </root>

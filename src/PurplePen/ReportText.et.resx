@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Sama sümbol?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Külastusi</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Raja {0} kokkuvõte</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Kontrollpunktide risttabel - {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Vahetused jooksevad mõlemas suunas</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Liialt lähedased KPd</value>
@@ -228,6 +234,15 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Probleeme ei leitud.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Rajal "{0}" kordub KP "{1}" mitu korda järjest.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Korduvad kontrollpunktid</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Valik rada "{0}" sisaldab kontrollpunkti "{1}" mitu korda. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Võistluse {0} ülevaade</value>
   </data>
@@ -243,8 +258,17 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Keskmine</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} KP, {2}, {3} m tõusu)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} KP, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
     <value>{0} etappide pikkuste aruanee</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Mõnda KPd läbitakse mitu korda samal rajal. Teine arv näitab mitu korda läbitakse eraldi.</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>KPde koormus</value>
@@ -261,7 +285,31 @@
   <data name="Load_Title" xml:space="preserve">
     <value>Osalejate summaarne arv {0}</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Üks või mitu rada sisaldavad variatsioone. Läbimiste arv on arvutatud eeldusel, et võistlejad on jaotatud ühtlaselt hajutuste vahel.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} läbimist)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>HOIATUS:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>MÄRKUS: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Hoiatus: Sõltuvalt valitud vahetuste arvust, hajutuse KP {0} ei ole võrdselt jagatud. {1} vahetus(ed) kasutavad haru(sid) {2}, samas {3} vahetuse(ed) kasutavad haru(sid) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Vahetus {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Teate võistkonnad ei ole defineeritud. Vali võistkondade ja vahetuste arv ning vajuta nupule "Määra variandid".</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Võistkond {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Teate määramine {0}</value>
   </data>
 </root>

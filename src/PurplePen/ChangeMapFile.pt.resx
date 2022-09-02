@@ -123,6 +123,9 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Escolher ficheiro do mapa...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Todos os tipos de ficheiros de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Resolução:</value>
   </data>

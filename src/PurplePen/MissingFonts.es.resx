@@ -124,9 +124,9 @@
     <value>Aceptar</value>
   </data>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>El fichero del mapa "{0}" usa fuentes no instaladas en su ordenador. El texto que use esas fuentes será formateado e imprimido con la fuente por defecto, lo que puede provocar que el texto aparezca de forma distinta a lo deseado. 
+    <value>El archivo del mapa «{0}» usa fuentes no instaladas en su ordenador. El texto que use esas fuentes será formateado e imprimido con la fuente por defecto, lo que puede provocar que el texto aparezca de forma distinta a lo deseado. 
 
-Para resolver el problema, busca e instala la relación de fuentes que abajo se indican mediante el Panel de Control de Windows. Despues arranca de nuevo Purple Pen.
+Para resolver el problema, busca e instala la relación de fuentes que abajo se indican mediante el Panel de Control de Windows. Después arranca de nuevo Purple Pen.
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">

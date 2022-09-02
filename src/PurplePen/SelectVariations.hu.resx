@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Minden variáció külön</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Minden váltó ág külön</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Minden variáció kombinálva</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variációk:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Jelenítse meg a villák összes ágát egy térképen.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Egy térkép minden lehetséges variációhoz a pályán belül.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Egy térkép minden ághoz a kiválasztott csapatokhoz.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Előbb definiálni kell  a váltó csapatokat a Váltó csapat variációk... pontban a Pályák menüben.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Egyéni variáció választás</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Ehhez a pályához {0} váltó csapat van rendelve. Használja a Váltó csapat variációk... pontot a Pályák menüben.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Válassza ki a nyomtatandó/exportálandó csapatokat:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Válasszon variációkat</value>
+  </data>
 </root>

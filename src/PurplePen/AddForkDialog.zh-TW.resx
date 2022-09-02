@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWhichType.Text" xml:space="preserve">
-    <value>你想要增加什麼類型的變化分支？</value>
+    <value>你想要增加什麼類型的分散變化？</value>
   </data>
   <data name="radioButtonFork.Text" xml:space="preserve">
-    <value>分支</value>
+    <value>分叉</value>
   </data>
   <data name="radioButtonLoop.Text" xml:space="preserve">
     <value>賽環</value>
@@ -163,6 +163,6 @@
     <value>此賽環檢查點將被到訪4次。會有24種不同的方式通過此賽環。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>增加分支變化</value>
+    <value>增加分散變化</value>
   </data>
 </root>

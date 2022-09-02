@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.4.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2019-11-20 17:14-08:00\n"
+"POT-Creation-Date: 2022-08-10 14:52-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -17,11 +17,12 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright © by Peter Golde"
-msgstr "Copyright © by Peter Golde"
+msgstr "Kopirettigheter © Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
-msgstr "Purple Pen programvare kan kopieres og deles fritt"
+msgstr "Purple Pen er åpen programvare som kan kopieres og deles "
+"fritt"
 
 #: AboutForm.resx, disclaimerLabel.Text
 msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND "
@@ -56,7 +57,7 @@ msgstr "Om Purple Pen"
 
 #: AddCourse.resx, firstControlLabel.Text
 msgid "First control number:"
-msgstr "Første post nummer:"
+msgstr "Første postnummer:"
 
 #: AddCourse.resx, descriptionAppearanceLabel.Text
 #: AllControlsProperties.resx, descriptionAppearanceLabel.Text
@@ -97,7 +98,7 @@ msgstr "Symboler og tekst"
 
 #: AddCourse.resx, labelKindLabel.Text
 msgid "Control circle labels:"
-msgstr "Postsirkel tekst:"
+msgstr "Postnummerering tekst:"
 
 #: AddCourse.resx, labelKindCombo.Items
 msgid "Sequence number (3)"
@@ -105,7 +106,7 @@ msgstr "Sekvensnummer (3)"
 
 #: AddCourse.resx, labelKindCombo.Items1
 msgid "Control code (145)"
-msgstr "Post kode (145)"
+msgstr "Postkode (145)"
 
 #: AddCourse.resx, labelKindCombo.Items2
 msgid "Sequence and code (3-145)"
@@ -118,6 +119,10 @@ msgstr "Sekvens og poeng"
 #: AddCourse.resx, labelKindCombo.Items4
 msgid "Code and score (145(30))"
 msgstr "Postkode og poeng"
+
+#: AddCourse.resx, labelKindCombo.Items5
+msgid "Score (30)"
+msgstr ""
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -172,11 +177,11 @@ msgstr "Stigning:"
 
 #: AddCourse.resx, courseTypeLabel.Text
 msgid "Course type:"
-msgstr "Løypetype"
+msgstr "Løypetype:"
 
 #: AddCourse.resx, courseNameLabel.Text
 msgid "Course name:"
-msgstr "Navn på løypa:"
+msgstr "Navn på løype:"
 
 #: AddCourse.resx, courseKindCombo.Items
 msgid "Normal Course"
@@ -201,7 +206,7 @@ msgstr "Ny løype"
 
 #: AddForkDialog.resx, labelWhichType.Text
 msgid "What type of variation would you like to add?"
-msgstr "Velg hvilken type variant du ønsker?"
+msgstr "Velg hvilken variant type du ønsker?"
 
 #: AddForkDialog.resx, radioButtonFork.Text
 msgid "Fork"
@@ -253,7 +258,7 @@ msgstr "10"
 
 #: AddForkDialog.resx, labelNumberLoops.Text
 msgid "Number of loops:"
-msgstr "Antall gaflinger"
+msgstr "Antall sløyfer"
 
 #: AddForkDialog.resx, labelSummary.Text
 msgid "The loop control will be visited 4 times. There are 24 "
@@ -282,11 +287,11 @@ msgstr "Plassering:"
 
 #: AddTextLine.resx, comboBoxPosition.Items
 msgid "Above {0}"
-msgstr "Over"
+msgstr "Over {0}"
 
 #: AddTextLine.resx, comboBoxPosition.Items1
 msgid "Below {0}"
-msgstr "Under"
+msgstr "Under {0}"
 
 #: AddTextLine.resx, comboBoxCourses.Items
 msgid "This course only"
@@ -315,7 +320,7 @@ msgstr "Innstillinger alle poster"
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Tillat ikke postkoder som kan leses opp-ned (f.eks. \"68\" "
+msgstr "Ikke tillat postkoder som kan leses opp-ned (f.eks. \"68\" "
 "og \"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
@@ -324,7 +329,7 @@ msgstr "Renummerer alle postkoder"
 
 #: AutoNumbering.resx, newControlsOnlyRadioButton.Text
 msgid "Apply these settings to newly created controls only"
-msgstr "Kun bruk disse innstillingene på nye poster"
+msgstr "Bruk disse innstillingene bare på nye poster"
 
 #: AutoNumbering.resx, existingControlsGroupBox.Text
 msgid "Existing Controls"
@@ -339,7 +344,7 @@ msgstr "Nye poster nummereres automatisk etter følgende "
 #: AutoNumbering.resx, startingCodeLabel.Text
 #: NewEventNumbering.resx, startingCodeLabel.Text
 msgid "Starting code:"
-msgstr "Start med kode:"
+msgstr "Start med postkode:"
 
 #: AutoNumbering.resx, $this.Text
 #: CommandNameText.resx, AutoNumbering
@@ -366,23 +371,23 @@ msgstr "Endre postkoder"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
-msgstr "Flytt ned"
+msgstr "Flytt nedover"
 
 #: ChangeCourseOrder.resx, courseOrderLabel.Text
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
 "order that courses are listed in the user interface, "
 "reports, and printing."
-msgstr "Bruk \"Flytt opp\" og \"Flytt ned\"-knappene for å endre "
-"rekkefølgen løypene vises i brukergrensesnittet, på "
+msgstr "Bruk \"Flytt oppover\" og \"Flytt nedover\"-knappene for å "
+"endre rekkefølgen løypene vises i brukergrensesnittet, på "
 "rapporter og utskrifter."
 
 #: ChangeCourseOrder.resx, moveUpButton.Text
 msgid "Move up"
-msgstr "Flytt opp"
+msgstr "Flytt oppover"
 
 #: ChangeCourseOrder.resx, $this.Text
 msgid "Course Order"
-msgstr "Rekkefølge på løyper"
+msgstr "Løyperekkefølge"
 
 #: ChangeMapFile.resx, mapFileDisplay.Text
 msgid "Current Map File"
@@ -403,7 +408,7 @@ msgid "All map "
 msgstr "Alle kart "
 "filer|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*."
 "bmp;*.png;*.gif|OCAD filer (*.ocd)|*.ocd|Open Orienteering "
-"Mapper Filer|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Bilde "
+"Mapper Filer|*.omap;*.xmap|PDF filer (*.pdf)|*.pdf|Bilde "
 "filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif"
 
 #: ChangeMapFile.resx, labelDpi.Text
@@ -435,12 +440,12 @@ msgstr "Velg hvilke løyper dette objektet skal vises på:"
 #: ChangeSpecialCourses.resx, $this.Text
 #: CommandNameText.resx, ChangeDisplayedCourses
 msgid "Change Displayed Courses"
-msgstr "Endre viste løyper"
+msgstr "Velg visning i løyper"
 
 #: ChangeText.resx, eventTitleMenuItem.Text
 #: NewEventTitle.resx, labelTitle.Text
 msgid "Event Title"
-msgstr "Navn på arrangement"
+msgstr "Arrangementsnavn"
 
 #: ChangeText.resx, courseNameMenuItem.Text
 #: CourseLoad.resx, CourseName.HeaderText
@@ -450,15 +455,15 @@ msgstr "Løypenavn"
 
 #: ChangeText.resx, coursePartMenuItem.Text
 msgid "Course Part"
-msgstr "Løype del"
+msgstr "Løypedel"
 
 #: ChangeText.resx, variationMenuItem.Text
 msgid "Course Variation"
-msgstr "Løype variasjon"
+msgstr "Løypevariasjon"
 
 #: ChangeText.resx, courseLengthMenuItem.Text
 msgid "Course Length"
-msgstr "Løypelende"
+msgstr "Løypelengde"
 
 #: ChangeText.resx, courseClimbMenuItem.Text
 msgid "Course Climb"
@@ -471,7 +476,7 @@ msgstr "Klasseliste"
 #: ChangeText.resx, printScaleMenuItem.Text
 #: NewEventPrintScale.resx, labelTitle.Text
 msgid "Print Scale"
-msgstr "Utskrifts skala"
+msgstr "Utskriftsskala"
 
 #: ChangeText.resx, relayTeamMenuItem.Text
 msgid "Relay Team"
@@ -488,7 +493,7 @@ msgstr "Filnavn"
 
 #: ChangeText.resx, mapFileNameMenuItem.Text
 msgid "Map File Name"
-msgstr ""
+msgstr "Navn på kartfil"
 
 #: ChangeText.resx, buttonChangeColor.Text
 msgid "Change Color..."
@@ -579,7 +584,7 @@ msgstr "Velg farge"
 
 #: CommandNameText.resx, ChangeSymbol
 msgid "Change Symbol"
-msgstr "Bytt symbol"
+msgstr "Endre symbol"
 
 #: CommandNameText.resx, ChangeCode
 msgid "Change Control Code"
@@ -611,7 +616,7 @@ msgstr "Endre tekstlinje"
 
 #: CommandNameText.resx, ChangeScale
 msgid "Update Map Scale"
-msgstr "Oppdatere målestokk"
+msgstr "Oppdater målestokk"
 
 #: CommandNameText.resx, MoveControl
 msgid "Move Control"
@@ -810,7 +815,7 @@ msgstr "Stafettvarianter"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr ""
+msgstr "Spesielt symbol"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
@@ -818,10 +823,14 @@ msgstr "Angi postbeskrivelsesstandard"
 
 #: CommandNameText.resx, ChangeMapStandard
 msgid "Set Map Standard"
-msgstr ""
+msgstr "Set kartstandard"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
+msgstr ""
+
+#: CommandNameText.resx, SetLiveloxImportableEventId
+msgid "Publish to Livelox"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -838,7 +847,7 @@ msgstr "Tilpasset 1:15000"
 
 #: CourseAppearanceDialog.resx, label11.Text
 msgid "Scale item sizes:"
-msgstr ""
+msgstr "Skalering:"
 
 #: CourseAppearanceDialog.resx, labelAutoGapSize.Text
 msgid "Automatic leg gap size:"
@@ -912,8 +921,8 @@ msgid "Use overprint effect for colors marked \"overprint\""
 msgstr "Bruk overtrykk for farger markert med \"overtrykk\"."
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
-msgid "OCAD Map"
-msgstr "OCAD kart"
+msgid "Advanced"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -974,6 +983,7 @@ msgstr "Velg varianter:"
 
 #: CreateGpx.resx, coursesGroupBox.Text
 #: CreateImageFiles.resx, coursesGroupBox.Text
+#: CreateKmlFiles.resx, coursesGroupBox.Text
 #: CreateOcadFiles.resx, coursesGroupBox.Text
 #: CreatePdfCourses.resx, coursesGroupBox.Text
 #: PrintCourses.resx, coursesGroupBox.Text
@@ -1006,6 +1016,7 @@ msgid "Create GPX File"
 msgstr "Lag GPX fil"
 
 #: CreateImageFiles.resx, createButton.Text
+#: CreateKmlFiles.resx, createButton.Text
 #: CreateOcadFiles.resx, createButton.Text
 #: CreatePdfCourses.resx, okButton.Text
 #: CreateRouteGadget.resx, createButton.Text
@@ -1013,6 +1024,7 @@ msgid "Create"
 msgstr "Opprett"
 
 #: CreateImageFiles.resx, cancelButton.Text
+#: CreateKmlFiles.resx, cancelButton.Text
 #: CreateOcadFiles.resx, cancelButton.Text
 #: CreateRouteGadget.resx, cancelButton.Text
 #: MiscText.resx, CrashCancel
@@ -1028,6 +1040,7 @@ msgid "Cancel"
 msgstr "Avbryt"
 
 #: CreateImageFiles.resx, folderBrowserDialog.Description
+#: CreateKmlFiles.resx, folderBrowserDialog.Description
 #: CreateOcadFiles.resx, folderBrowserDialog.Description
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
@@ -1040,56 +1053,57 @@ msgstr "Filformat:"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items
 msgid "PNG"
-msgstr ""
+msgstr "PNG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items1
 msgid "JPEG"
-msgstr ""
+msgstr "JPEG"
 
 #: CreateImageFiles.resx, fileFormatCombo.Items2
 msgid "GIF"
-msgstr ""
+msgstr "GIF"
 
 #: CreateImageFiles.resx, fileNamePrefixLabel.Text
+#: CreateKmlFiles.resx, fileNamePrefixLabel.Text
 #: CreateOcadFiles.resx, fileNamePrefixLabel.Text
 msgid "File name prefix:"
 msgstr "Filnavnprefiks:"
 
 #: CreateImageFiles.resx, label1.Text
 msgid "World file:"
-msgstr ""
+msgstr "Referansefil (World fil):"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items1
 msgid "150"
-msgstr ""
+msgstr "150"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items2
 msgid "200"
-msgstr ""
+msgstr "200"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items3
 msgid "300"
-msgstr ""
+msgstr "300"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items4
 msgid "400"
-msgstr ""
+msgstr "400"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items5
 msgid "500"
-msgstr ""
+msgstr "500"
 
 #: CreateImageFiles.resx, comboBoxDpi.Items6
 msgid "600"
-msgstr ""
+msgstr "600"
 
 #: CreateImageFiles.resx, dpiLabel.Text
 msgid "Dpi:"
-msgstr ""
+msgstr "PPI"
 
 #: CreateImageFiles.resx, comboBoxWorldFile.Items
 #: ReportText.resx, EventAudit_No
@@ -1103,7 +1117,7 @@ msgstr "Ja"
 
 #: CreateImageFiles.resx, labelColorModel.Text
 msgid "Color model:"
-msgstr ""
+msgstr "Fargemodell:"
 
 #: CreateImageFiles.resx, comboBoxColorModel.Items
 #: CreatePdfCourses.resx, comboBoxColorModel.Items
@@ -1118,6 +1132,7 @@ msgid "CMYK"
 msgstr "CMYK"
 
 #: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
 #: CreateOcadFiles.resx, outputGroupBox.Text
 #: PrintCourses.resx, printerGroup.Text
 #: PrintDescriptions.resx, printerGroup.Text
@@ -1126,6 +1141,7 @@ msgid "Output"
 msgstr "Utdata"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
+#: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
 #: CreatePdfCourses.resx, selectOtherDirectoryButton.Text
 #: CreateRouteGadget.resx, selectOtherDirectoryButton.Text
@@ -1133,6 +1149,7 @@ msgid "Select folder..."
 msgstr "Velg mappe..."
 
 #: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
 #: CreateOcadFiles.resx, otherDirectory.Text
 #: CreatePdfCourses.resx, otherDirectory.Text
 #: CreateRouteGadget.resx, otherDirectory.Text
@@ -1140,6 +1157,7 @@ msgid "Other folder"
 msgstr "Annen mappe"
 
 #: CreateImageFiles.resx, mapDirectory.Text
+#: CreateKmlFiles.resx, mapDirectory.Text
 #: CreateOcadFiles.resx, mapDirectory.Text
 #: CreatePdfCourses.resx, mapDirectory.Text
 #: CreateRouteGadget.resx, mapDirectory.Text
@@ -1147,6 +1165,7 @@ msgid "Same folder as map file"
 msgstr "Samme mappe som kartfila"
 
 #: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
 #: CreateOcadFiles.resx, coursesDirectory.Text
 #: CreatePdfCourses.resx, coursesDirectory.Text
 #: CreateRouteGadget.resx, coursesDirectory.Text
@@ -1154,6 +1173,7 @@ msgid "Same folder as Purple Pen file"
 msgstr "Samme mappe som Purple Pen filen"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
+#: CreateKmlFiles.resx, folderGroupBox.Text
 #: CreateOcadFiles.resx, folderGroupBox.Text
 #: CreatePdfCourses.resx, folderGroupBox.Text
 #: CreateRouteGadget.resx, folderGroupBox.Text
@@ -1162,7 +1182,26 @@ msgstr "Mappe"
 
 #: CreateImageFiles.resx, $this.Text
 msgid "Create Image Files"
-msgstr ""
+msgstr "Lag bildefiler"
+
+#: CreateKmlFiles.resx, filesLabel.Text
+#: CreatePdfCourses.resx, filesLabel.Text
+msgid "Files:"
+msgstr "Filer:"
+
+#: CreateKmlFiles.resx, filesCombo.Items
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items
+msgid "One for all courses"
+msgstr "En for alle løyper"
+
+#: CreateKmlFiles.resx, filesCombo.Items1
+#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
+msgid "One per course"
+msgstr "En for hver løype"
+
+#: CreateKmlFiles.resx, $this.Text
+msgid "Create KML File"
+msgstr "Lag OCAD filer"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1192,18 +1231,6 @@ msgstr "Skriv ut på flere sider"
 #: PrintCourses.resx, labelAppearanceInfo.Text
 msgid "If the print area is too large to fit on one page:"
 msgstr "Dersom utskriftsomfådet er for stort til å passe på en side:"
-
-#: CreatePdfCourses.resx, filesLabel.Text
-msgid "Files:"
-msgstr "Filer:"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items
-msgid "One for all courses"
-msgstr "En for alle løyper"
-
-#: CreatePdfCourses.resx, comboBoxFileFormat.Items1
-msgid "One per course"
-msgstr "En for hver løype"
 
 #: CreatePdfCourses.resx, comboBoxFileFormat.Items2
 msgid "One per course part/variation"
@@ -1241,19 +1268,19 @@ msgstr "RouteGadget trenger både en bildefil (.gif) og en IOF XML "
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items
 msgid "2.0.3"
-msgstr ""
+msgstr "2.0.3"
 
 #: CreateRouteGadget.resx, comboBoxIofXml.Items1
 msgid "3.0"
-msgstr ""
+msgstr "3,0"
 
 #: CreateRouteGadget.resx, labelIofXml.Text
 msgid "IOF XML Version:"
-msgstr ""
+msgstr "IOF XML versjon:"
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1311,7 +1338,7 @@ msgstr "Kjønn"
 
 #: EnterSymbolText.resx, caseColumn.HeaderText
 msgid "Case"
-msgstr ""
+msgstr "Små/store bokstavar"
 
 #: EnterSymbolText.resx, checkBoxPlural.Text
 msgid "Show plural forms"
@@ -1332,11 +1359,11 @@ msgstr "Kjønn:"
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "Utgave av endret symbol:"
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "Vis utgaver"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1375,7 +1402,7 @@ msgstr "Velkommen til Purple Pen"
 
 #: LegAssignmentsDialog.resx, BranchColumn.HeaderText
 msgid "Branch"
-msgstr ""
+msgstr "Gren"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
@@ -1385,7 +1412,10 @@ msgstr "Etapper"
 msgid "To assign a specific leg to a specific branch, type the "
 "leg number(s) below. Legs not assigned to a branch will be "
 "distributed among remaining branches randomly."
-msgstr ""
+msgstr "For å tildele et spesifikt strekk til en avgreining, skriv "
+"inn strekknummer under. Strekk som ikke er tildelt en "
+"avgreining vil bli fordelt tilfeldig mellom gjenstående "
+"avgreiqinger."
 
 #: LegAssignmentsDialog.resx, linkLabel.Text
 msgid "More information..."
@@ -1393,7 +1423,7 @@ msgstr "Mer informasjon..."
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
-msgstr ""
+msgstr "Strekk tilordning"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -1454,7 +1484,7 @@ msgstr "Rekkefølge"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr ""
+msgstr "kartVisningsTopologi"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1486,27 +1516,35 @@ msgstr "Lage OCAD &Filer..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "Lag bildefiler..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr ""
+msgstr "Postbeskrivelser..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "Klippekort..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
-msgstr ""
+msgstr "Løyper..."
 
 #: MainFrame.resx, createPDFsMenu.Text
 msgid "Create P&DFs"
-msgstr ""
+msgstr "Lag PDF-filer"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
-msgid "Create Route&Gadget Files..."
+msgid "Create RouteGadget Files..."
 msgstr "Lag Route&Gadget filer..."
+
+#: MainFrame.resx, publishToLiveloxMenu.Text
+msgid "Publish to Livelox..."
+msgstr ""
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1515,6 +1553,10 @@ msgstr "Lag data &Utvekslingsfil (IOF XML)..."
 #: MainFrame.resx, createGPXFileMenu.Text
 msgid "Create G&PX File..."
 msgstr "Lag GPX fil..."
+
+#: MainFrame.resx, createKMLFileMenu.Text
+msgid "Create &KML File..."
+msgstr ""
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1674,7 +1716,7 @@ msgstr "Andre løyper"
 
 #: MainFrame.resx, clearOtherCoursesMenu.Text
 msgid "Clear Other Courses"
-msgstr ""
+msgstr "Slett andre løyper"
 
 #: MainFrame.resx, viewMenu.Text
 msgid "&View"
@@ -1722,7 +1764,7 @@ msgstr "Tekst &Linje..."
 #: MiscText.resx, MapIssue_Long
 #: MiscText.resx, MapIssue_Medium
 msgid "Timed Start"
-msgstr ""
+msgstr "Tidsstart"
 
 #: MainFrame.resx, addMandatoryCrossingMenu.Text
 #: MainFrame.resx, mandatoryCrossingPointToolStripMenuItem.Text
@@ -1843,6 +1885,10 @@ msgstr "ISOM2000 kartstandard"
 #: MainFrame.resx, mapStd2017Menu.Text
 msgid "ISOM2017 Map Standard"
 msgstr "ISOM2017 kartstandard"
+
+#: MainFrame.resx, mapStdSpr2019Menu.Text
+msgid "ISSprOM 2019 Map Standard"
+msgstr ""
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
@@ -2438,7 +2484,7 @@ msgstr "Post {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr "Fullfør"
+msgstr "Mål"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
@@ -2727,7 +2773,8 @@ msgstr "OCAD filen må være georeferert for å kunne bruke GPX filer"
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "Klarte ikke å plassere punkter, enten er koordinatsystemet "
+"eller lokale koordinater i Ocad kartfilen feil."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
@@ -2770,58 +2817,63 @@ msgstr "Egnet for bruk i stafetter med {0} deltakere per lag."
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "Den sentrale posten I sløyfen vil bli besøkt {0} ganger. "
+"Det er {1} mulige veivalg gjennom sløyfene."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "En post som starter en gafling kan ikke flyttes til en ny "
+"plassering i løypen."
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr ""
+msgstr "Det er for mange varianter i denne løypen. Maksimalt "
+"antall varianter er begrenset til {0}."
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "Kan ikke legge til variasjon"
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "Det er allerede en variasjon fra denne posten."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "En post eller et strekk må være valgt for å kunne legge "
+"til en variasjon"
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "Kan ikke legge til variasjon fra målpost."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Kan ikke legge til variasjon i Alle poster-visningen."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Kan ikke legge til variasjon i poengløype."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "Kan ikke legge til variasjon fra siste post. Legg til en "
+"målpost først."
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr ""
+msgstr "'{0}' er ikke gyldig strekknummer for avgreining '{1}'"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "Strekk {0} må tilordnes et av strekkene {1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr ""
+msgstr "Strekk {0} er tilordnet til både avgreining '{1}' og '{2}'"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
@@ -2833,37 +2885,43 @@ msgstr "Kan ikke lese kartet på grunn av: '{0}' Åpne og lagre "
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr ""
+msgstr "TS"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "OCAD kartfilen har synlige malfiler som gjerne ikke vil "
+"være synlige i OCAD 8 eller eldre på grunn av begrensinger "
+"i OCAD."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "Begrensinger i OCAD filformatet, før versjon 10, vil "
+"bildefiler vises under løyper og hvit avblending i "
+"eksporterte OCAD filer. Sjekk OCAD filen om bilder vises "
+"som ønsket."
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "Kan ikke opprette bildefiler på grunn av:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "Lag PDF"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "PDF-fil|*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
-msgstr ""
+msgstr "Strekk {0} når ikke avgreining '{1}': Den ble tilordnet en "
+"annen retning i gaflingen den inngår i."
 
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
@@ -3053,11 +3111,15 @@ msgstr "(Du kan endre utskriftskalaen senere for hver enkelt løype "
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "(Dette kan endres senere fra Arrangement/IOF standarder)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
 msgstr "IOF-standarder"
+
+#: NewEventStandards.resx, radioButtonMapSpr2019.Text
+msgid "ISSprOM 2019"
+msgstr ""
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
@@ -3205,7 +3267,7 @@ msgstr "Antall kopier av hver løype:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
+msgstr "Pause utskriften etter hver løype eller del"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
@@ -3457,7 +3519,7 @@ msgstr "Samme symbol?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Besøk"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
@@ -3469,7 +3531,7 @@ msgstr "Kryssreferanse sjekk for  {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "Strekk som løpes i begge retninger"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3551,15 +3613,15 @@ msgstr "Alt er OK"
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "Løype \"{0}\" inneholder post \"{1}\" to ganger etterhverandre."
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
-msgstr ""
+msgstr "Gjentatte poster"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "Poengløype \"{0}\" inneholder post \"{1}\" to ganger. "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -3601,7 +3663,8 @@ msgstr "Strekklengde rapport for {0}"
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr ""
+msgstr "Noen poster inngår flere ganger i samme løype. Det andre "
+"belastningstallet viser totalt antatt postbesøk."
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
@@ -3636,11 +3699,13 @@ msgstr "Summering av antall deltakere for {0}"
 msgid "One or more courses has variations. Load numbers will be "
 "computed assuming that competitors are evenly distributed "
 "between forks."
-msgstr ""
+msgstr "Enn eller flere løyper har variasjoner. Belastningstall "
+"vil bli beregnet med forutsetning at deltakere er jevnt "
+"fordelt mellom gaflingene."
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "({0} postbesøk)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
@@ -3648,13 +3713,15 @@ msgstr "ADVARSEL:"
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "Merk: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "Varsel: på grunn av antallet strekk på gaflingen ved post "
+"{0} vill ikke bli jevnt fordelt. {1} strekk vil bruke "
+"gren(er) {2}, mens {3} strekk vil bruke avgrening {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
@@ -3664,7 +3731,8 @@ msgstr "Etappe {0}"
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "Ingen stafettlag har blitt definert. Velg ønsket antall "
+"lag og strekk og trykk \"Tildel varianter\" knappen."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
@@ -3672,7 +3740,7 @@ msgstr "Lag {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "Stafettilordninger for {0}"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
@@ -3844,54 +3912,57 @@ msgstr "Beregnet lengde:"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "spesielle symboler"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "spesielt symbol"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
-msgstr ""
+msgstr "Hver variant for seg"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Hver stafettetappe for seg"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Alle variasjoner sammen"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Variasjoner:"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "Vis alle avgreninger på ett kart."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "Ett kart for alle mulige variasjoner av løypen."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "Et kart for hver stafettetappe du velger"
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "Du må først definere stafettetapper ved å velge Stafettlag "
+"variasjoner... fra Løype menyen."
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Velg indviduelle variasjoner"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "Denne løypen har {0} definerte stafettlag. Bruk stafettlag "
+"variasjoner... fra løypemenyen for å endre antall "
+"stafettlag."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
@@ -3899,11 +3970,11 @@ msgstr "til"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Velg hvilke lag som skal skrives ut/eksporteres:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Velg variasjoner"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
@@ -4105,16 +4176,19 @@ msgstr "Hold nede venstre museknapp og dra for å opprette objekt"
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "Dra postnummer for å endre rekkefølgen i løypen. (Bruk "
+"shift for å kopiere)"
 
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
 "course"
-msgstr ""
+msgstr "Bruk venstre museknapp for å legge til spesielt symbol til "
+"løypen."
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
-msgstr ""
+msgstr "Bruk venstre museknapp for å legge til spesielt symbol på "
+"kartet."
 
 #: StatusBarText.resx, StretchingObject
 msgid "Hold down left mouse button and drag to stretch the "
@@ -4131,7 +4205,7 @@ msgstr "Antall etapper:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "Tildel varianter"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
@@ -4139,19 +4213,19 @@ msgstr "Antall lag:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
-msgstr ""
+msgstr "Tildel faste strekk til avgreininger"
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Lagnummer starter på: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Sjul variasjonsnummer på kartet"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
-msgstr ""
+msgstr "IOF XML 3.0|*.xml|Regneark (CSV)|*.csv"
 
 #: UnusedControls.resx, okButton.Text
 msgid "Delete"
@@ -4167,9 +4241,9 @@ msgstr "Følgende poster er i \"Alle poster\" men ingen av dem "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Velg andre løyper som skal vises med løype \"{0}\"."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Vis flere løyper"
 

@@ -133,15 +133,24 @@
     <value>多腿：</value>
   </data>
   <data name="buttonCalculate.Text" xml:space="preserve">
-    <value>分配的变化</value>
+    <value>分配分支</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>球队数量：</value>
   </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>将固定路段分配给分支...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>团队序号开始于： </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>在地图上隐藏分支代码</value>
+  </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>3 | IOF XML，XML |表格（CSV）| *. csv</value>
+    <value>国际定联XML 3.0|*.xml|电子表格(CSV)|*.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>接力队的变化</value>
+    <value>接力队分支</value>
   </data>
 </root>

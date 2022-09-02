@@ -121,7 +121,7 @@
     <value>穿孔卡片布局…</value>
   </data>
   <data name="punchPatternsLabel.Text" xml:space="preserve">
-    <value>在左侧的列表上点击控制代码，设计在右侧的穿孔模式。红色代码表示没有穿孔模式定义控件。</value>
+    <value>单击左侧列表中的检查点编号，并在右侧设计打卡图案。红色编号表示没有设计打卡图案的检查点。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>冲床模式</value>

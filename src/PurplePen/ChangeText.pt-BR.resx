@@ -117,6 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="eventTitleMenuItem.Text" xml:space="preserve">
+    <value>Título do Evento</value>
+  </data>
+  <data name="courseNameMenuItem.Text" xml:space="preserve">
+    <value>Nome do Curso</value>
+  </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Variação do Curso</value>
+  </data>
+  <data name="classListMenuItem.Text" xml:space="preserve">
+    <value>Lista de Classe</value>
+  </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Escala de Impressão</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Equipe de Revezamento</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Perna de Revezamento</value>
+  </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Nome do Arquivo de Mapa</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Alterar Cor...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Cor:</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Texto</value>
   </data>

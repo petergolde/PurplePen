@@ -178,13 +178,16 @@
     <value>Il testo seguente (facoltativo) apparirà nella seconda linea del foglio della descrizione del controllo:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Lista classe / Titolo secondario</value>
+    <value>Lista categorie/ Titolo secondario</value>
+  </data>
+  <data name="lengthLabel.Text" xml:space="preserve">
+    <value>Lunghezza:</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Dislivello</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Tipo corsa</value>
+    <value>Tipo percorso</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
     <value>Nome Percorso</value>
@@ -197,6 +200,9 @@
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metri</value>
+  </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>km</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nuovo Percorso</value>

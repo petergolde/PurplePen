@@ -133,7 +133,7 @@
     <value>自动设置打印区域</value>
   </data>
   <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
-    <value>解决了打印区域大小的纸张尺寸</value>
+    <value>将打印区域大小固定为纸张尺寸</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>设置打印区域</value>

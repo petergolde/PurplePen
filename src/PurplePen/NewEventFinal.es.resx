@@ -118,9 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventFinalLabel.Text" xml:space="preserve">
-    <value>Pulsa "Terminar" para crear su nuevo evento. Su archivo del evento se guardará como:</value>
+    <value>Pulsa «Terminar» para crear su nuevo evento. Su archivo del evento se guardará como:</value>
   </data>
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
-    <value>Despues de que su evento sea creado, seleccione "Nuevo Recorrido..." en el Menu Recorridos para crear uno o más trazados.</value>
+    <value>Después de que su evento sea creado, seleccione «Nuevo recorrido...»´ en el Menú Recorridos para crear uno o más trazados.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Crear un evento</value>
   </data>
 </root>

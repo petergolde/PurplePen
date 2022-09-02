@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="variationsLabel.Text" xml:space="preserve">
-    <value>课程的变化： </value>
+    <value>线路分支： </value>
   </data>
   <data name="buttonProperties.Text" xml:space="preserve">
     <value>属性...</value>
   </data>
   <data name="coursePartLabel.Text" xml:space="preserve">
-    <value>课程的一部分： </value>
+    <value>部分线路： </value>
   </data>
 </root>

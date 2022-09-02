@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>Digite o texto para colocar em linha separada da sinalética:</value>
+    <value>Escreva o texto para aparecer numa linha da sinalética:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
-    <value>Percursos</value>
+    <value>Percursos:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
     <value>Posição</value>
@@ -133,7 +133,7 @@
     <value>Abaixo</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
-    <value>Somente neste percurso</value>
+    <value>Apenas para este percurso</value>
   </data>
   <data name="comboBoxCourses.Items1" xml:space="preserve">
     <value>Todos os percursos com</value>

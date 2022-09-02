@@ -297,6 +297,9 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Váltó csapat variáció</value>
   </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Térképfelvételi pont hozzáadása</value>
+  </data>
   <data name="ChangeDescriptionStandard" xml:space="preserve">
     <value>Pontleírás szabványa</value>
   </data>

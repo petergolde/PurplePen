@@ -586,6 +586,15 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Karttaa ei voi lukea seuraavasta syystä: '{0}' Kartan avaaminen ja tallentaminen uudelleen OpenOrienteering Mapperin viimeisimmässä versiossa voi korjata ongelmia.</value>
   </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Aikalähtö</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Aikalähtö</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
   <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
     <value>Taustalla olevalla OCAD-kartalla on näkyviä mallinetiedostoja. Mallineet (templates) eivät välttämättä näy OCADin rajoitusten takia.</value>
   </data>
@@ -600,6 +609,9 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="PdfFilter" xml:space="preserve">
     <value>PDF-tiedosto|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Osuus {0} ei koskaan saavuta hajontaa '{1}': Se on määrätty menemään eri tavalla ulommassa hajonnassa.</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>

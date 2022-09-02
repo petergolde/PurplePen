@@ -135,4 +135,10 @@
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Símbolos e texto</value>
   </data>
+  <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
+    <value>Essas configurações controlam como o mapa e as descrições para Todos os Controles são impressos.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Todas as propriedades dos controles</value>
+  </data>
 </root>

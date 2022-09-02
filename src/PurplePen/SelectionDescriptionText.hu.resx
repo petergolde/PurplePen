@@ -133,7 +133,7 @@
     <value>Nem használt ellenőrzőpontok:</value>
   </data>
   <data name="Control_Plural" xml:space="preserve">
-    <value>ellenőrzőpontok</value>
+    <value>ellenőrzőpont</value>
   </data>
   <data name="Control_Singular" xml:space="preserve">
     <value>ellenőrzőpont</value>
@@ -290,5 +290,11 @@
   </data>
   <data name="CalculatedLength" xml:space="preserve">
     <value>Számított hosszúság:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>térkép felvételi pont</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>térkép felvételi pont</value>
   </data>
 </root>

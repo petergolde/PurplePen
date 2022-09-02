@@ -223,7 +223,7 @@
     <value>Muovi Varco</value>
   </data>
   <data name="Rotate" xml:space="preserve">
-    <value>Ruota</value>
+    <value>Rotazione</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
     <value>Numerazione Automatica</value>
@@ -275,5 +275,11 @@
   </data>
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Cambia Stile Linea</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplica percorso</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Elimina Fork/Loop</value>
   </data>
 </root>

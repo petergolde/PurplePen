@@ -117,10 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Criar</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Percursos</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Imprimir trocas de mapa no mesmo mapa </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Modelo de cores:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Recortar para uma página</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Imprimir em múltiplas páginas</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Se a área de impressão for muito grande, reduzir para uma página</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Aspecto</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Selecionar pasta...</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Outra pasta</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Na mesma pasta que o ficheiro do mapa</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Na mesma pasta que o ficheiro do purple pen</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Ficheiros:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Um para todos os percursos</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Um por percurso</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Um por cada parte do percurso/variação</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Ficheiros</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Selecionar a pasta para os ficheiros PDF</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Exportar para ficheiro PDF</value>
   </data>
 </root>

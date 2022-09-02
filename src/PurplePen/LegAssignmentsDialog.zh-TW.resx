@@ -123,7 +123,13 @@
   <data name="LegsColumn.HeaderText" xml:space="preserve">
     <value>賽段</value>
   </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>將特定賽段分配給特定分支，請在下面鍵入賽段編號。 未分配給分支的賽段將隨機分佈在剩餘的分支中。</value>
+  </data>
   <data name="linkLabel.Text" xml:space="preserve">
     <value>更多資訊...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>賽段分配</value>
   </data>
 </root>

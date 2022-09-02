@@ -121,12 +121,12 @@
     <value>向下移动</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>使用“上移”和“下移”按钮更改，课程是在用户界面方面，报告列出的顺序，和印刷。</value>
+    <value>使用“上移”和“下移”按钮更改线路在用户界面、报表和打印中列出的顺序。</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
-    <value>动起来</value>
+    <value>向上移动</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>课程顺序</value>
+    <value>线路顺序</value>
   </data>
 </root>

@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>地圖檔案“{0}”包含 Purple Pen 不完全支援的物件或符號，可能無法正確列印。下面列出可能無法正確列印的物件。
+
+對於列印比賽地圖，建議將賽程轉出到 OCAD 檔案（使用 檔案/建立 OCAD 檔案...）並從 OCAD 列印地圖。
+</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>繼續</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>地圖檔案無法準確列印</value>
   </data>
 </root>

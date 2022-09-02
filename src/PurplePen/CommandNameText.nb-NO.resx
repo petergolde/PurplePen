@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ChangeSymbol" xml:space="preserve">
-    <value>Bytt symbol</value>
+    <value>Endre symbol</value>
   </data>
   <data name="ChangeCode" xml:space="preserve">
     <value>Endre postkode</value>
@@ -142,7 +142,7 @@
     <value>Endre tekstlinje</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Oppdatere målestokk</value>
+    <value>Oppdater målestokk</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
     <value>Flytt postring</value>
@@ -199,7 +199,7 @@
     <value>Endre koder</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Endre viste løyper</value>
+    <value>Velg visning i løyper</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
     <value>Flytt bend</value>
@@ -297,7 +297,13 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Stafettvarianter</value>
   </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Spesielt symbol</value>
+  </data>
   <data name="ChangeDescriptionStandard" xml:space="preserve">
     <value>Angi postbeskrivelsesstandard</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Set kartstandard</value>
   </data>
 </root>

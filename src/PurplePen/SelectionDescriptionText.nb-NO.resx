@@ -291,4 +291,10 @@
   <data name="CalculatedLength" xml:space="preserve">
     <value>Beregnet lengde:</value>
   </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>spesielle symboler</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>spesielt symbol</value>
+  </data>
 </root>

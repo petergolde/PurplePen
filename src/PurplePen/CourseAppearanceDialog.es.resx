@@ -117,14 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>No a escala</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Relativo a la escala del mapa</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Relativo a 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Cambiar el tamaño de los elementos:</value>
+  </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Tamaño del recorte automático en la línea de tramo:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelOutlineWidth.Text" xml:space="preserve">
+    <value>Aureola blanca alrededor de los números:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Diámetro del punto central:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Normal</value>
@@ -133,7 +154,7 @@
     <value>Negrita</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
-    <value>Estilo de los numeros de control</value>
+    <value>Estilo de los números de control:</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>Altura del número de control:</value>
@@ -157,7 +178,10 @@
     <value>Usar medidas estándar IOF</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Tamaño de Elementos</value>
+    <value>Tamaño de elementos</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Mezclar el magenta con los colores del mapa</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Negro:</value>
@@ -172,16 +196,31 @@
     <value>Cian:</value>
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
-    <value>Usar color magenta standar</value>
+    <value>Usar color magenta estándar</value>
   </data>
   <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Color Magenta</value>
+    <value>Color magenta</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Vista previa</value>
   </data>
+  <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
+    <value>Negro</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items1" xml:space="preserve">
+    <value>Morado</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Color:</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Descripciones de Controles</value>
+    <value>Descripciones de controles</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Utilizar efecto de sobreimpresión en los colores marcados con «sobreimprimir»</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Personalizar la  apariencia</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Paleta de Colores...</value>

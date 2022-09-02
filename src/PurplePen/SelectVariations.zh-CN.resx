@@ -118,31 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="comboBoxVariations.Items" xml:space="preserve">
-    <value>每一个变化都分别</value>
+    <value>每种分支都是分开的</value>
   </data>
   <data name="comboBoxVariations.Items1" xml:space="preserve">
     <value>每个继电器的腿分开</value>
   </data>
   <data name="comboBoxVariations.Items2" xml:space="preserve">
-    <value>所有的变化组合</value>
+    <value>所有的分支组合</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>变化:</value>
+    <value>分支:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>在一张地图上显示所有的分支。</value>
   </data>
   <data name="labelSeparateVariations.Text" xml:space="preserve">
-    <value>一个地图的每一个可能的变化过程。</value>
+    <value>在整条线路中，每个可能的分支都有一张地图。</value>
   </data>
   <data name="labelByLeg.Text" xml:space="preserve">
     <value>一个地图的每个回合的接力队，你选择。</value>
   </data>
   <data name="labelByLegNotAvailable.Text" xml:space="preserve">
-    <value>您必须先选择接力队变化定义的接力队…从课程菜单。</value>
+    <value>您必须首先通过选择接力队分支来定义接力队... 从线路菜单。</value>
   </data>
   <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
-    <value>选择的个体差异</value>
+    <value>选择单独的分支</value>
   </data>
   <data name="labelNumberOfTeams.Text" xml:space="preserve">
-    <value>本课程有{0}接力的队伍分配。用接力队的变化…从课程菜单改变球队数量。</value>
+    <value>本线路已分配{0}接力队。使用接力队分支...从“线路”菜单中更改队伍的数量。</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>收件人：</value>
@@ -151,6 +154,6 @@
     <value>选择打印/导出哪些球队：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>选择的变化</value>
+    <value>选择分支</value>
   </data>
 </root>

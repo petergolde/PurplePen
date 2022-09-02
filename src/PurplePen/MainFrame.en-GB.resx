@@ -168,6 +168,9 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Create Route&amp;Gadget Files...</value>
   </data>
+  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
+    <value>Publish to &amp;Livelox...</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Create Data &amp;Interchange File (IOF XML)...</value>
   </data>
@@ -704,8 +707,5 @@
   </data>
   <data name="ncross.Text" xml:space="preserve">
     <value>Add Special Item</value>
-  </data>
-  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
-    <value>Publish to &amp;Livelox...</value>
   </data>
 </root>

@@ -126,8 +126,20 @@
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
     <value>&amp;Pulisci Selezione</value>
   </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Inserisci nome nuovo percorso</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Proprietà percorso</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>tutti i controlli sono usati in un percorso.</value>
+  </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Cambia Testo</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Nessun percorso è stato selezionato in stampa</value>
   </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Annulla</value>
@@ -140,5 +152,11 @@
   </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Cambia Stile Linea</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Automatico</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Duplica percorso</value>
   </data>
 </root>

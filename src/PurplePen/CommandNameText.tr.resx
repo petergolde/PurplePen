@@ -199,7 +199,7 @@
     <value>Kod Değiştir</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Gösterilen Parkurları Değiştir</value>
+    <value>Görüntülenen Parkurları Değiştir</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
     <value>Bayrak Yarış Ayağı Bükmesi Taşı</value>
@@ -229,7 +229,7 @@
     <value>Döndür</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
-    <value>Otomotik Numaralandırma</value>
+    <value>Otomatik Numaralandırma</value>
   </data>
   <data name="ChangePunchPatterns" xml:space="preserve">
     <value>Zımba Kalıplarını Değiştir</value>

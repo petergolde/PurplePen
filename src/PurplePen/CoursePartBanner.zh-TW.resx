@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="variationsLabel.Text" xml:space="preserve">
-    <value>賽程變化： </value>
+    <value>賽程分散變化： </value>
   </data>
   <data name="buttonProperties.Text" xml:space="preserve">
     <value>設定調整...</value>
   </data>
   <data name="coursePartLabel.Text" xml:space="preserve">
-    <value>賽程部分 </value>
+    <value>賽程部分: </value>
   </data>
 </root>

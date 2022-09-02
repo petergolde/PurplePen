@@ -571,6 +571,21 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="VariationNotLastControl" xml:space="preserve">
     <value>Une variation ne peut pas être ajoutée au dernier poste. Ajouter un poste Arrivée d'abord.</value>
   </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Départ chronométré</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Départ chronométré</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Impossible de créer des fichiers image pour la raison suivante :</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Créer un fichier PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>Fichier PDF|*.pdf</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
   </data>

@@ -160,7 +160,7 @@
     <value>Ubicación</value>
   </data>
   <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
-    <value># Recorridos</value>
+    <value>Nº de  recorridos</value>
   </data>
   <data name="ColumnHeader_Reason" xml:space="preserve">
     <value>Razón</value>
@@ -168,20 +168,26 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>¿Mismo símbolo?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visitas</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
-    <value>Resumen por Recorridos para {0}</value>
+    <value>Resumen por recorridos para {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Referencias cruzadas por controles para {0}</value>
   </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Tramos recorridos en ambas direcciones</value>
+  </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
-    <value>Controles Cercanos</value>
+    <value>Controles cercanos</value>
   </data>
   <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
     <value>La siguiente tabla muestra todos los controles que están a menos de {0} metros unos de otros. En columna de elemento muestra donde dos controles tiene el mismo símbolo (columna D).</value>
   </data>
   <data name="EventAudit_MissingBoxes" xml:space="preserve">
-    <value>Casillas de Descripción Olvidadas</value>
+    <value>Casillas de descripción olvidadas</value>
   </data>
   <data name="EventAudit_MissingClimb" xml:space="preserve">
     <value>En los recorridos oficiales se suele indicar el desnivel acumulado</value>
@@ -190,16 +196,16 @@
     <value>Todos los controles deben tener un elemento característico en la columna D</value>
   </data>
   <data name="EventAudit_MissingEBetween" xml:space="preserve">
-    <value>Cuando "entre" aparece en la columna G, los dos elementos a que se refiere deben indicarse en la columna D y E</value>
+    <value>Cuando «entre» aparece en la columna G, los dos elementos a que se refiere deben indicarse en la columna D y E</value>
   </data>
   <data name="EventAudit_MissingEJunction" xml:space="preserve">
-    <value>Cuando "union" o "cruce" aparecen en la columna F, los dos elementos a que se refiere deben indicarse en la columna D y E</value>
+    <value>Cuando «unión» o «cruce» aparecen en la columna F, los dos elementos a que se refiere deben indicarse en la columna D y E</value>
   </data>
   <data name="EventAudit_MissingFinish" xml:space="preserve">
     <value>Normalmente los recorridos suelen terminar en un punto de meta</value>
   </data>
   <data name="EventAudit_MissingItems" xml:space="preserve">
-    <value>Elementos Olvidados en el Recorrido</value>
+    <value>Elementos olvidados en el recorrido</value>
   </data>
   <data name="EventAudit_MissingLoad" xml:space="preserve">
     <value>El recorrido necesita tener definida una densidad de corredores por control</value>
@@ -208,19 +214,19 @@
     <value>Patrones de perforación no definidos</value>
   </data>
   <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
-    <value>Patrones de Perforación Olvidados</value>
+    <value>Patrones de perforación olvidados</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
-    <value>Los recorridos en Socre debe tener un set de puntuacion para todos los controles o para ninguno</value>
+    <value>Los recorridos en Score debe tener puntuación definida o para todos los controles o para ninguno</value>
   </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
-    <value>Puntuaciones Olvidadas</value>
+    <value>Puntuaciones olvidadas</value>
   </data>
   <data name="EventAudit_MissingStart" xml:space="preserve">
     <value>Una carrera normalmente suele tener un triángulo de salida</value>
   </data>
   <data name="EventAudit_MissingStartScore" xml:space="preserve">
-    <value>Los recorridos Score suelen tener un triángulo de salida</value>
+    <value>Los recorridos en Score suelen tener un triángulo de salida</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>No</value>
@@ -228,14 +234,23 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>No se encontraron problemas.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>El recorrido «{0}» tiene el control «{1}» dos veces consecutivas.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Controles repetidos</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>El recorrido en Score «{0}» contiene el control «{1}» dos veces. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
-    <value>Revisión del Evento para {0}</value>
+    <value>Revisión del evento para {0}</value>
   </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
-    <value>Controles no Usados</value>
+    <value>Controles no usados</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>Los siguientes controles aparecen en la descripción de Todos los Controles, pero no se usan en ningún recorrido. Para borrarlos, use el comando "Borrar Controles no Usados" en el menu "Evento". Estos controles no se considerán despues en este informe.</value>
+    <value>Los siguientes controles aparecen en la descripción de Mapa maestro, pero no se usan en ningún recorrido. Para borrarlos, use el comando "Borrar controles no usados" en el menu "Evento". Estos controles no se consideran después en este informe.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Sí</value>
@@ -243,25 +258,58 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Media</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} controles, {2}, {3} m desnivel)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} controles, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
-    <value>Informe de Longitudes por Tramos para {0}</value>
+    <value>Informe de longitudes por tramos para {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Algunos controles se visitan varias veces en el mismo recorrido. La segunda cantidad de carga cuenta cada visita por separado.</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
-    <value>Desnidad de Corredores</value>
+    <value>Densidad de corredores</value>
   </data>
   <data name="Load_LegLoadSection" xml:space="preserve">
-    <value>Densidad del Tramo</value>
+    <value>Densidad del tramo</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
-    <value>A algunos recorridos les falta indicar la densidad de corredores por control. La lista de abajo puede estar equivocada o vacia por este motivo. Para indicar dicha densidad, selecciona menú Recorridos-&gt;Densidad de Corredores.</value>
+    <value>A algunos recorridos les falta indicar la densidad de corredores por control. La lista de abajo puede estar equivocada o vacía por este motivo. Para indicar dicha densidad, selecciona menú Recorridos-&gt;Densidad de Corredores.</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
     <value>(solamente los tramos usados en más de un recorrido aparecen en la siguiente tabla)</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
-    <value>Resumen de Densidad de Corredores para {0}</value>
+    <value>Resumen de densidad de corredores para {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Al menos un recorrido tiene variantes.  Se calcularán las densidades asumiendo que los competidores se distribuyen por igual en las bifurcaciones.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visitas)</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>AVISO:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTA: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Advertencia: Debido a la cantidad de tramos especificados la bifurcación en el control {0} no se usarán por igual. El/Los tramo(s) {1} usarán las ramas {2}, en tanto que el/los tramo(s) {3} usarán las ramas {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Tramo {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>No se ha añadido aún ningún equipo de relevos. Elija la cantidad de equipos y secciones y pulse el botón «Asignar variantes».</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Equipo {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Asignaciones de relevos para {0}</value>
   </data>
 </root>

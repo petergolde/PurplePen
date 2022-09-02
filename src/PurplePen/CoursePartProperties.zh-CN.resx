@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
-    <value>在这一过程中部分显示完成圈</value>
+    <value>在这部分线路显示终点</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>这些设置控制这部分多部分课程的出现。</value>
+    <value>这些设置控制多部分线路的此部分外观。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>课程的部分性质</value>
+    <value>部分线路属性</value>
   </data>
 </root>

@@ -150,6 +150,9 @@
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Název souboru</value>
   </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Mapový soubor</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Zobrazení</value>
   </data>
@@ -168,8 +171,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Písmo:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Velikost:</value>
+  </data>
   <data name="labelFontSizeMm.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automaticky</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ukázka</value>

@@ -117,13 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelPaper.Text" xml:space="preserve">
+    <value>Velikost:</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Šířka:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Výška:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Velikost papíru ({0})</value>
   </data>
   <data name="radioButtonLandscape.Text" xml:space="preserve">
     <value>Na šířku</value>
   </data>
   <data name="radioButtonPortrait.Text" xml:space="preserve">
     <value>Na výšku</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Orientace</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Vlevo:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Nahoře:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Vpravo:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Dole:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Okraje ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Vzhled stránky</value>
   </data>
 </root>

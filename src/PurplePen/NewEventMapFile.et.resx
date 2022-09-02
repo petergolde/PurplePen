@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Oma raja planeerimiseks pead kõigepealt valima kaardifaili. Tavaliselt on selleks OCAD või OpenOrienteerin Mapperi fail (kuigi PDFe ja pildifaile nagu JPEG võib kasutada). Klõpsa "Vali... " nuppu kaardfaili valimiseks.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Vali kaardi fail...</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Kõik kaardi failid|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|Open Orienteering Mapper Failid|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
     <value>Vali kaardi fail</value>

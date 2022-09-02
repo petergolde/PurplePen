@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>完成</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="setPrintAreaLabel.Text" xml:space="preserve">
+    <value>拖曳滑鼠游標設定要列印的範圍</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>紙張大小</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>自動設定列印範圍</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>將列印範圍固定為紙張大小</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定列印範圍</value>

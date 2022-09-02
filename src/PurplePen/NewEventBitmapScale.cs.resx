@@ -129,4 +129,13 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Měřítko mapy:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Rozlišení bitmapu</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Při použití PDF souboru jako mapy musíte specifikovat měřítko mapy. 
+
+Měřítko mapy určuje vztah mezi papírovou mapou a reálným světem.
+</value>
+  </data>
 </root>

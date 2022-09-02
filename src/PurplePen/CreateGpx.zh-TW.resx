@@ -126,6 +126,9 @@
   <data name="waypointGroupBox.Text" xml:space="preserve">
     <value>航點</value>
   </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>GPX檔案包含用於檢查點的GPS坐標，並且可以加載到GPS或智慧型手機上以驗證檢查點的正確位置。</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>建立GPX檔案</value>
   </data>

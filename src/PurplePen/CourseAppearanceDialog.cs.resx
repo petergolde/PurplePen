@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Neměnit měřítko</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Relativně k měřítku mapy</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Relativníěk 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Změnit velikost objektů</value>
+  </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Automatická mezera</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -160,10 +175,13 @@
     <value>mm</value>
   </data>
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
-    <value>Používat velikosti standarní podle IOF</value>
+    <value>Používat standartní velikosti podle IOF</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Velikosti položek</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Míchat purpurovou s barvami mapy</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Černá:</value>
@@ -200,9 +218,6 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Použít overprint u barev, kde je uveden</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>OCAD mapa</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Upravit vzhled</value>

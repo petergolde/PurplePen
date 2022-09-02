@@ -121,10 +121,10 @@
     <value>Nye poster nummereres automatisk. Velg nummeret du ønsker starte fra.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Tillat ikke postkoder som kan leses opp-ned (f.eks. "68" og "89")</value>
+    <value>Ikke tillat postkoder som kan leses opp-ned (f.eks. "68" og "89")</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
-    <value>Start med kode:</value>
+    <value>Start med postkode:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
     <value>(Dette kan endres senere ved å gå til Arrangement/Automatisk nummerering</value>

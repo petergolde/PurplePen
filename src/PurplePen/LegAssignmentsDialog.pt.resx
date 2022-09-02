@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Ramo</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Pernadas</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Para associar sempre uma pernada a uma variante, digite o (s) número (s) das pernadas abaixo. As pernadas não atribuídas a uma variante serão distribuídas aleatoriamente entre as restantes variantes.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Mais informações...</value>
+  </data>
 </root>

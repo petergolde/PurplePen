@@ -118,10 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="mapFileDisplay.Text" xml:space="preserve">
-    <value>Archivo de Mapa Actual</value>
+    <value>Archivo de mapa actual</value>
   </data>
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Seleccionar otro archivo de mapa...</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Todos los archivos de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Ficheros de OCAD (*.ocd)|*.ocd|Archivos de Open Orienteering Mapper|*.omap;*.xmap|Archivos PDF (*.pdf)|*.pdf|Archivos de imágenes|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Resolución:</value>
@@ -136,6 +139,6 @@
     <value>puntos por pulgada</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Archivo de Mapa</value>
+    <value>Archivo de mapa</value>
   </data>
 </root>

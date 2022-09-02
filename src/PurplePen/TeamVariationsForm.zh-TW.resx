@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>關閉</value>
+  </data>
   <data name="buttonExport.Text" xml:space="preserve">
     <value>轉出...</value>
+  </data>
+  <data name="buttonPrint.Text" xml:space="preserve">
+    <value>列印...</value>
+  </data>
+  <data name="buttonPrintPreview.Text" xml:space="preserve">
+    <value>預覽列印..</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>接力棒次的數量：</value>
@@ -142,6 +151,6 @@
     <value>IOF XML 3.0|副檔名.xml|逗號分隔 (CSV)|副檔名.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>接力隊伍的變化</value>
+    <value>接力隊伍的分散變化</value>
   </data>
 </root>

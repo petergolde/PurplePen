@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventNumberingLabel.Text" xml:space="preserve">
-    <value>新创建的控件是自动编号。请选择开始控制使用数。</value>
+    <value>新创建的检查点是自动编号，请选择开始的编号。</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>不允许的代码，可以读取颠倒（如“68”或“89”）</value>
+    <value>不允许可以颠倒读取的代码(例如“68”或“89”)</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
-    <value>启动代码：</value>
+    <value>初始编号：</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>（这个设置可以使用事件/自动编号后改）</value>
+    <value>（此设置可在以后使用赛事/自动编号进行更改）</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>控制编号</value>
+    <value>检查点编号</value>
   </data>
 </root>

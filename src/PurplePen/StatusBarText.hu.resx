@@ -216,4 +216,13 @@
   <data name="AddingRectangle" xml:space="preserve">
     <value>Tartsa lenyomva és mozgassa az egeret az új objektum létrehozásához</value>
   </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Húzza az ellenőrzőpont számát a pályán belüli átrendezéshez (tartsa lenyomva a Shift-et a duplikáláshoz)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Kattintson a bal gombbal a meglevő térkép felvételi pont pályához adásához</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Kattintson a bal gombbal egy új térképfelvételi ponthoz.</value>
+  </data>
 </root>

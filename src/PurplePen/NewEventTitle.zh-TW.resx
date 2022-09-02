@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventTitleLabel.Text" xml:space="preserve">
+    <value>賽事標題將顯示在每個檢查點說明表的第一列。它也用在硬碟儲存賽事的檔案名稱上。
+
+為了適合檢查點說明表，它的長度應少於 25 個字母。好的賽事標題的範例是“台灣錦標賽第 1 天” 或 “青年公園 20210410”。</value>
+  </data>
+  <data name="eventTitleLabel.Text" xml:space="preserve">
+    <value>賽事標題：</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>賽事標題</value>
   </data>

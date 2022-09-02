@@ -126,17 +126,32 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Secção do Percurso</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Variação do Percurso</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Distância do Percurso</value>
   </data>
   <data name="courseClimbMenuItem.Text" xml:space="preserve">
-    <value>Desnível positivo do Percurso</value>
+    <value>Desnível do Percurso</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
     <value>Lista de Escalões</value>
   </data>
   <data name="printScaleMenuItem.Text" xml:space="preserve">
     <value>Escala de Impressão</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Equipa de Estafeta</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Pernada da Estafeta</value>
+  </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Nome do ficheiro</value>
+  </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Nome do ficheiro do mapa</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspecto</value>
@@ -156,8 +171,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Tipo de letra:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tamanho:</value>
+  </data>
   <data name="labelFontSizeMm.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Automático</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Amostra</value>

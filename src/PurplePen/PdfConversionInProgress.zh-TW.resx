@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelReadingPDF.Text" xml:space="preserve">
+    <value>PDFium PDF 轉換器正在讀取您的 PDF...</value>
+  </data>
+  <data name="labelFailure.Text" xml:space="preserve">
+    <value>PDF讀取失敗。錯誤訊息如下所示。</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>讀取PDF中</value>
+  </data>
 </root>

@@ -124,7 +124,7 @@
     <value>&amp;Velg kartfil...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Alle kart filer|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD filer (*.ocd)|*.ocd|Open Orienteering Mapper Filer|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Bilde filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+    <value>Alle kart filer|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD filer (*.ocd)|*.ocd|Open Orienteering Mapper Filer|*.omap;*.xmap|PDF filer (*.pdf)|*.pdf|Bilde filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Oppløsning:</value>

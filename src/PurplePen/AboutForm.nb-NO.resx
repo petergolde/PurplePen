@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copyrightLabel.Text" xml:space="preserve">
-    <value>Copyright © by Peter Golde</value>
+    <value>Kopirettigheter © Peter Golde</value>
   </data>
   <data name="freeLabel.Text" xml:space="preserve">
-    <value>Purple Pen programvare kan kopieres og deles fritt</value>
+    <value>Purple Pen er åpen programvare som kan kopieres og deles fritt</value>
   </data>
   <data name="disclaimerLabel.Text" xml:space="preserve">
     <value>DENNE PROGRAMVAREN ER UTGITT AV RETTIGHETSINNEHAVERE OG BIDRAGSYTERE "SOM DET ER" OG FRASIER SEG ALLE SKREVNE OG USKREVNE GARANTIER, INKLUDERT, MEN IKKE BEGRENSET TIL DETTE ELLER OM PROGRAMVAREN ER BRUKBAR FOR SÆRKILTE FORMÅL</value>

@@ -216,4 +216,13 @@
   <data name="AddingRectangle" xml:space="preserve">
     <value>Hoia all hiire vasakut nuppu ja lohista objekti lisamiseks</value>
   </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>KP ümber järjestamiseks lohista KP number soovitud kohta (dubleerimiseks hoia alla tõusu klahvi)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Olemasoleva kaardivahetuspunkti lisamiseks rajale klõpsa hiire vasaku nupuga</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Hiire vasaku nupule klõpsates lisa uus kaardivahetuspunkt</value>
+  </data>
 </root>

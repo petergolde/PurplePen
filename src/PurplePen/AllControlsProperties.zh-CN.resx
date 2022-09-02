@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>描述外观：</value>
+    <value>说明表外观：</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
-    <value>地图印刷尺度：</value>
+    <value>地图打印比例：</value>
   </data>
   <data name="oneToPrefix.Text" xml:space="preserve">
-    <value>1： </value>
+    <value>1 : </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>符号</value>
@@ -139,9 +139,9 @@
     <value>界面</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>这些设置控制所有控制图和描述印刷。</value>
+    <value>这些设置控制如何打印地图和所有检查点说明。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>所有控件的属性</value>
+    <value>所有检查点的属性</value>
   </data>
 </root>

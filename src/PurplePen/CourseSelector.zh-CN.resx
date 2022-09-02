@@ -124,6 +124,6 @@
     <value>无</value>
   </data>
   <data name="buttonChooseVariations.Text" xml:space="preserve">
-    <value>选择的变化…</value>
+    <value>选择分支</value>
   </data>
 </root>

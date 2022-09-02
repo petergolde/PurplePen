@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWhichType.Text" xml:space="preserve">
-    <value>Velg hvilken type variant du ønsker?</value>
+    <value>Velg hvilken variant type du ønsker?</value>
   </data>
   <data name="radioButtonFork.Text" xml:space="preserve">
     <value>Gafling</value>
@@ -157,7 +157,7 @@
     <value>10</value>
   </data>
   <data name="labelNumberLoops.Text" xml:space="preserve">
-    <value>Antall gaflinger</value>
+    <value>Antall sløyfer</value>
   </data>
   <data name="labelSummary.Text" xml:space="preserve">
     <value>Fellesposten vil bli besøkt 4 ganger. Det er 24 ulike gaflingsalternativer.</value>

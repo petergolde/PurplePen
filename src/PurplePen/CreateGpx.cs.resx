@@ -123,6 +123,9 @@
   <data name="namePrefixLabel.Text" xml:space="preserve">
     <value>Předpona</value>
   </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Body trasy</value>
+  </data>
   <data name="headerLabel.Text" xml:space="preserve">
     <value>GPX soubor obsahuje souřadnice kontrol a lze ho natáhnout do GPS zařízení nebo telefonu.</value>
   </data>

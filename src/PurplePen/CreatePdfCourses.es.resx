@@ -123,11 +123,23 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Recorridos</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Imprimir los cambios de mapa en el mismo mapa </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Modelo de color:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
     <value>Recortar a una página</value>
   </data>
   <data name="comboBoxMultiPage.Items1" xml:space="preserve">
-    <value>Imprime en multiples páginas</value>
+    <value>Imprimir en múltiples páginas</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
     <value>Si el área de impresión es demasiado grande, ajustar a la página:</value>
@@ -139,7 +151,7 @@
     <value>Seleccionar carpeta...</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Otra Carpeta</value>
+    <value>Otra carpeta</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Misma carpeta que el archivo del mapa</value>
@@ -150,8 +162,29 @@
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Carpeta</value>
   </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Prefijo del nombre:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Archivos:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Uno para todos los recorridos</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Uno para cada recorrido</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Uno para cada sección o variante de recorrido</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Archivos</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Escoja una carpeta para los archivos PDF</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Imprimir Recorridos</value>
+    <value>Crear archivos PDF</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Márgenes:</value>

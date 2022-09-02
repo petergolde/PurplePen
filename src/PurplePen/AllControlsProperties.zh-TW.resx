@@ -139,7 +139,7 @@
     <value>外觀</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>這些設定是控制如何列印所有檢查點的地圖和說明。</value>
+    <value>這些設定是控制此地圖與所有檢查點之說明如何被列印輸出。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>所有檢查點的設定調整</value>

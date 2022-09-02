@@ -121,7 +121,7 @@
     <value>Inserisci il testo da mettere su una linea separata nelle descrizioni del controllo:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
-    <value>Percorsi</value>
+    <value>Percorsi:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
     <value>Posizione:</value>

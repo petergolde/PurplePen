@@ -120,6 +120,15 @@
   <data name="createButton.Text" xml:space="preserve">
     <value>Creëren</value>
   </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Bestanden:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Eén voor alle routes</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Eén per route</value>
+  </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Uitvoer</value>
   </data>

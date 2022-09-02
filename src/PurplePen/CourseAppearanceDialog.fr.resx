@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Ne pas mettre à l'échelle</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Par rapport à l'échelle de la carte</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Par rapport à 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Mettre à l'échelle les tailles des éléments :</value>
+  </data>
   <data name="labelAutoGapSize.Text" xml:space="preserve">
-    <value>Dimension auto pour espace d'interposte</value>
+    <value>Dimension auto pour espace d'interposte :</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
@@ -206,9 +218,6 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Utiliser l'effet de surimpression pour les couleurs marquées « surimpression »</value>
-  </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>Carte OCAD</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personnaliser l'apparence</value>

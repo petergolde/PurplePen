@@ -321,6 +321,9 @@
   <data name="addTextLineMenu.Text" xml:space="preserve">
     <value>&amp;Tekstirivi...</value>
   </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Aikalähtö</value>
+  </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>
   </data>
@@ -614,6 +617,9 @@
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Lisää hajonta</value>
+  </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aikalähtö</value>
   </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Pakollinen ylitys/alituspaikka</value>

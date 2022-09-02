@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Prefisso nome file:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Formato file:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Files:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Uno per tutti i percorsi</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Uno per percorso</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Output</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crea File OCAD</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Formato file:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

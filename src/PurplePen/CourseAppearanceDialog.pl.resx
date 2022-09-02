@@ -207,9 +207,6 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Użyj efektu nadrukowania dla kolorów oznaczonych jako "nadrukowane"</value>
   </data>
-  <data name="groupBoxOcadMap.Text" xml:space="preserve">
-    <value>Mapa OCAD</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Dostosuj wygląd</value>
   </data>

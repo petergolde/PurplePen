@@ -132,8 +132,14 @@
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Tiedostonimen etuliite:</value>
   </data>
-  <data name="fileFormatLabel.Text" xml:space="preserve">
-    <value>Tiedostomuoto:</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Tiedostoja:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Yksi</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Yksi per rata</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Tuotos</value>
@@ -155,6 +161,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Vie OCAD-tiedostoihin</value>
+  </data>
+  <data name="fileFormatLabel.Text" xml:space="preserve">
+    <value>Tiedostomuoto:</value>
   </data>
   <data name="fileFormatCombo.Items" xml:space="preserve">
     <value>OCAD 6</value>

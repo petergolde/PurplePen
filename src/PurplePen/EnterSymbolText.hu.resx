@@ -123,6 +123,9 @@
   <data name="genderColumn.HeaderText" xml:space="preserve">
     <value>Nem</value>
   </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Eset</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Szöveg</value>
   </data>
@@ -137,6 +140,12 @@
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Nem:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Módosított jelkulcs</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Esetek adatlapja</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Egyedi szöveg</value>

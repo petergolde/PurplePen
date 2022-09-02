@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>不要再警告此賽事缺少字型</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>確定</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>地圖檔案“{0}”使用的字型未安裝在您的電腦上。使用這些字型的文字將使用預設字型顯示和列印，這可能會導致文字與地圖設計者預期的不同。 
+
+要解決此問題，請使用 Windows 控制台尋找並安裝下面列出的字型，然後再次啟動 Purple Pen。
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>缺少字型</value>
   </data>
 </root>

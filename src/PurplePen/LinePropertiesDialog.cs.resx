@@ -139,7 +139,7 @@
     <value>Šířka:</value>
   </data>
   <data name="labelGapSize.Text" xml:space="preserve">
-    <value>Velikost díry</value>
+    <value>Velikost mezery</value>
   </data>
   <data name="labelDashSize.Text" xml:space="preserve">
     <value>Velikost čáry</value>
