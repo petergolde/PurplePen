@@ -1,7 +1,7 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>ShoreView Test</title>
-    <map kind="OCAD" scale="5000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Orienteering\Shoreview 2018\ShorelineCC_Dec2018.omap">..\..\..\..\..\Orienteering\Shoreview 2018\ShorelineCC_Dec2018.omap</map>
+    <map kind="OCAD" scale="5000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Orienteering\Shoreview 2018\ShorelineCC_Dec2018.omap">ShorelineCC_Dec2018.omap</map>
     <standards map="2017" description="2018" />
     <all-controls print-scale="5000" description-kind="symbols" />
     <print-area automatic="true" restrict-to-page-size="true" left="25.8895111" top="284.80368" right="305.2895" bottom="68.90368" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
