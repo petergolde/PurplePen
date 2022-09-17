@@ -2520,8 +2520,14 @@ namespace PurplePen
             else {
                 AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
                 hatchInfo.hatchColor = symColor;
-                hatchInfo.hatchWidth = 0.25F * courseObjRatio;
-                hatchInfo.hatchSpacing = 0.8F * courseObjRatio;
+                if (appearance.mapStandard == "Spr2019") {
+                    hatchInfo.hatchWidth = 0.2F * courseObjRatio;
+                    hatchInfo.hatchSpacing = 1.2F * courseObjRatio;
+                }
+                else {
+                    hatchInfo.hatchWidth = 0.25F * courseObjRatio;
+                    hatchInfo.hatchSpacing = 0.8F * courseObjRatio;
+                }
                 hatchInfo.hatchAngle = 45;
                 symdef.AddHatching(hatchInfo);
                 hatchInfo.hatchAngle = 135;
@@ -2547,12 +2553,17 @@ namespace PurplePen
             AreaSymDef symdef = new AreaSymDef("Dangerous area", "710", null, null);
             AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
             hatchInfo.hatchColor = symColor;
-            hatchInfo.hatchWidth = 0.25F * courseObjRatio;
             if (appearance.mapStandard == "2000") {
                 hatchInfo.hatchSpacing = 0.6F * courseObjRatio;
+                hatchInfo.hatchWidth = 0.25F * courseObjRatio;
+            }
+            else if (appearance.mapStandard == "Spr2019") {
+                hatchInfo.hatchSpacing = 1.2F * courseObjRatio;
+                hatchInfo.hatchWidth = 0.2F * courseObjRatio;
             }
             else {
                 hatchInfo.hatchSpacing = 0.8F * courseObjRatio;
+                hatchInfo.hatchWidth = 0.25F * courseObjRatio;
             }
             hatchInfo.hatchAngle = 45;
             symdef.AddHatching(hatchInfo);
