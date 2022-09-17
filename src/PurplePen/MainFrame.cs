@@ -2352,7 +2352,6 @@ namespace PurplePen
 
                 // Save the settings for the next invocation of the dialog.
                 coursePdfSettings = createPdfDialog.PdfSettings;
-                coursePdfSettings.RenderControlDescriptions = false;
                 controller.CreateCoursePdfs(coursePdfSettings);
 
                 break;
