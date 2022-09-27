@@ -1,0 +1,4 @@
+﻿layoutbitmap11.ocd
+hittestlayoutbitmap.png
+-235.943039,77.53888,9.943039,-135.5389
+697,604

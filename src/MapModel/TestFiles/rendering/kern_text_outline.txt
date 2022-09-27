@@ -1,0 +1,4 @@
+﻿kern_text_outline.ocd
+kern_text_outline.png
+-104.137733,67.2485352,85.42696,-26.1988544
+1704,840

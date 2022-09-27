@@ -1,0 +1,4 @@
+﻿MagNorthArrowBug.ocd
+MagNorthArrowBug.png
+-17.3097687,39.21501,78.83391,-10.4075375
+682,352

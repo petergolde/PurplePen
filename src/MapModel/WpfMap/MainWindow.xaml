@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfMap.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:l="clr-namespace:WpfMap"
+    Title="WPF Map Browser" Height="Auto" Width="Auto" Background="{DynamicResource MainWindowBkgd}" SnapsToDevicePixels="False">
+	<Window.Resources>
+	</Window.Resources>
+	<Window.Triggers>
+	</Window.Triggers>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Name="fileMenu" Header="_File">
+                <MenuItem Name="fileOpenMenuItem" Header="_Open" Command="Open">
+
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Width="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+				<RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" />
+				<ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="0.8*" />
+            </Grid.ColumnDefinitions>
+			
+            <HeaderedContentControl Width="Auto" Height="Auto" Header="Map" Style="{DynamicResource HeaderedPane}" 
+			                         Background="#FFFFFFFF" Grid.Column="2" Grid.Row="0">
+                <l:PanAndZoom x:Name="panAndZoom" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            </HeaderedContentControl>
+			
+            <GridSplitter Background="{DynamicResource MainWindowBkgd}" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="3" Height="Auto" Grid.Column="1" Grid.Row="0"/>
+
+            <HeaderedContentControl Width="Auto" Height="Auto" Header="Symbols" Style="{DynamicResource HeaderedPane}" Background="#FFFFFFFF" Grid.Column="0" Grid.Row="0"/>
+            <GridSplitter Background="{DynamicResource MainWindowBkgd}" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Center" Height="3" Width="Auto" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+            <HeaderedContentControl Width="Auto" Height="Auto" Header="Help" Style="{DynamicResource HeaderedPane}" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2"/>
+        </Grid>
+    </DockPanel>
+</Window>

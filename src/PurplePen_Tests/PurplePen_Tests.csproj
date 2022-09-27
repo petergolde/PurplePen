@@ -42,15 +42,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Graphics2D">
-      <HintPath>..\Libraries\MapModel\$(Configuration)\Graphics2D.dll</HintPath>
-    </Reference>
-    <Reference Include="MapModel">
-      <HintPath>..\Libraries\MapModel\$(Configuration)\MapModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Map_GDIPlus">
-      <HintPath>..\Libraries\MapModel\$(Configuration)\Map_GDIPlus.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -139,6 +130,18 @@
     <Content Include="AuthoringTests.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MapModel\Graphics2D\Graphics2D.csproj">
+      <Project>{ef01e0b6-d7e7-4a4c-970a-29d677d59233}</Project>
+      <Name>Graphics2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj">
+      <Project>{d3ac7c61-0b90-42f3-9438-05f53531c9a3}</Project>
+      <Name>MapModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MapModel\Map_GDIPlus\Map_GDIPlus.csproj">
+      <Project>{3d75be05-1f36-4a11-99a2-7a8e27884948}</Project>
+      <Name>Map_GDIPlus</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PdfConverter\PdfConverter.csproj">
       <Project>{89318625-2f71-4c44-bfb1-8984f4d06152}</Project>
       <Name>PdfConverter</Name>

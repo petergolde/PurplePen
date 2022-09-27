@@ -1,0 +1,37 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x0
+  Version=6
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol header: 
+  nColors=0, nColorSep=0
+  CyanFreq=1500; CyanAng=150
+  MagentaFreq=1500; MagentaAng=750
+  YellowFreq=1500; YellowAng=0
+  BlackFreq=1500; BlackAng=450
+  Reserved1=0x0 Reserved2=0x0
+
+
+
+Setup structure:
+  Offset=(0.00,0.00), rGridDist=10
+  WorkMode=0, LineMode=0, EditMode=0
+  ActSym=0, MapScale=15000
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=100
+  GpsAngle=0.0000, nGpsAdjust=0
+  DraftScaleX=15000, DraftScaleY=15000
+  TempOffset=(0.00,0.00), TemplateFileName=
+  TemplateEnabled=0, TempResol=0, rTempAng=0
+  Res1=(0.00,0.00), Res2=0
+  PrLowerLeft=(-30.50,12.00), PrUpperRight=(111.00,98.60)
+  PrGrid=0, PrGridColor=0, PrOverlapX=0, PrOverlapY=0
+  PrintScale=10000, PrIntensity=0, prLineWidth=0, PrReserved=0
+  PrStdFonts=0, PrReserved2=0, PrReserved3=0
+  PartialLowerLeft=(0.00,0.00), PartialLowerRight=(0.00,0.00)
+  Zoom=4, nZoomHist=0
+  RealWorldCoord=0
+  HatchAreas=0, DimTemp=0, HideTemp=0, TempMode=0, TempColor=0
+
+Ocad File Info:
+  
+

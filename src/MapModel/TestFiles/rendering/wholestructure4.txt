@@ -1,0 +1,4 @@
+﻿wholestructure4.ocd
+wholestructure4.png
+-26.0908222,14.7349329,7.51365471,-7.78933239
+1016,681

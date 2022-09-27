@@ -1,0 +1,4 @@
+﻿dbldashlengths7.ocd
+dbldashlengths9.png
+-105.440674,67.34678,-42.59989,9.674713
+693,636

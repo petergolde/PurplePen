@@ -1,0 +1,4 @@
+﻿layout_objects11.ocd
+selectlayoutobjects.png
+-67.6028442,45.17762,66.5441,-34.4638748
+1014,602

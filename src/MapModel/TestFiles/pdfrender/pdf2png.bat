@@ -1,0 +1,1 @@
+..\..\tools\gswin32c -dSTRICT -dSAFER -dBATCH -dNOPAUSE -r100  -dTextAlphaBits=4 -dGraphicsAlphaBits=4 -sDEVICE=png16m -sOutputFile=%2 %1

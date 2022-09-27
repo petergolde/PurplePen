@@ -1,0 +1,4 @@
+﻿multimainglyph7.ocd
+multimainglyph9.png
+-41.0394173,28.1697655,0.422119141,-12.6721764
+803,791

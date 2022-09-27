@@ -1,0 +1,4 @@
+﻿justify.ocd
+hittestjustifytextsymbols.png
+-92.33953,64.68959,92.33962,-132.68959
+698,746

@@ -1,0 +1,4 @@
+﻿ocad11blending.ocd
+ocad11overprinting.png
+-19.3714676,9.872437,18.8634644,-12.2726841
+663,384

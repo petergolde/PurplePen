@@ -2,6 +2,8 @@ bin
 obj
 Debug
 Release
+x64/
+build/
 *_temp.*
 *_diff.png
 *_new.png
@@ -45,3 +47,37 @@ src/Tools/SignHelper/.vs/
 src/Innosetup/output/
 src/Tools/TranslateTool/.vs/
 /.vs
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.cachefile
+
+# Specific to this project.
+
+*_temp.*
+*_diff.png
+*_new.png
+*.crunchproject.local.xml
+src/TestResults
+src/tools/TranslateTool/TestResults
+src/tools/TranslateTool/TestFiles
+src/PurplePen_Tests/Test References
+src/TestFiles/controller/ocad_create1/*.ocd
+src/TestFiles/controller/ocad_create2/*.ocd
+src/TestFiles/controller/ocad_create3/*.ocd
+src/TestFiles/controller/ocad_create4/*.ocd
+src/TestFiles/controller/ocad_create5/*.ocd
+src/TestFiles/controller/ocad_create6/*.ocd
+doc/userdocs/Help/_vti_cnf
+doc/userdocs/Help/_vti_pvt
+doc/userdocs/Help/*.log
+doc/userdocs/Help/desktop.ini
+src/PPenDXCore.Solution
+*.DS_Store
+src/TestFiles/rendering/startendglyph9_tempnew.png
+*.VC.opendb
+*.VC.db
+src/packages/
+src/.vs/

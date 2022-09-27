@@ -1,0 +1,4 @@
+﻿linesymbols.ocd
+hittestlinesymbols.png
+-18.4748249,10.3176594,17.4007626,-17.5426617
+743,577

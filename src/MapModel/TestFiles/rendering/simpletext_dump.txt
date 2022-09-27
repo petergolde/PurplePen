@@ -1,0 +1,752 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x7
+  Version=7
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol header: 
+  nColors=1, nColorSep=0
+  CyanFreq=1500; CyanAng=150
+  MagentaFreq=1500; MagentaAng=750
+  YellowFreq=1500; YellowAng=0
+  BlackFreq=1500; BlackAng=450
+  Reserved1=0x0 Reserved2=0x0
+
+Color #0:   name:  Black  value:  Cy=0 Mg=0 Yl=0 Bk=200
+
+
+Setup structure:
+  Offset=(-31.67,-2.99), rGridDist=10
+  WorkMode=12, LineMode=10, EditMode=11
+  ActSym=1, MapScale=10000
+  RealWorldOfsX=0, RealWorldOfsY=0, RealWorldAngle=0, RealWorldGrid=250
+  GpsAngle=0.0000, nGpsAdjust=0
+  DraftScaleX=10000, DraftScaleY=10000
+  TempOffset=(0.00,0.00), TemplateFileName=
+  TemplateEnabled=0, TempResol=300, rTempAng=0
+  Res1=(0.00,0.00), Res2=0
+  PrLowerLeft=(-50.00,-50.00), PrUpperRight=(50.00,50.00)
+  PrGrid=0, PrGridColor=0, PrOverlapX=1000, PrOverlapY=1000
+  PrintScale=10000, PrIntensity=0, prLineWidth=0, PrReserved=0
+  PrStdFonts=0, PrReserved2=0, PrReserved3=0
+  PartialLowerLeft=(0.00,0.00), PartialLowerRight=(0.00,0.00)
+  Zoom=4, nZoomHist=0
+  RealWorldCoord=0
+  HatchAreas=0, DimTemp=0, HideTemp=0, TempMode=0, TempColor=0
+
+Ocad File Info:
+  
+
+Symbol definition for '1.0 Simple texy symbol': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=280
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Times New Roman, FontColor=0, FontSize=120
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=120, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=71, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=10
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '1.1 ': 
+  Size=424, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  LineColor=0, LineWidth=1, LineEnds=0
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+
+Symbol definition for '1.2 ': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Times New Roman, FontColor=0, FontSize=120
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=2, LineSpace=120, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=10
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '1.3 ': 
+  Size=588, Otp=4, SymTp=1, Flags=0
+    Status=0, Tool=0, FrWidth=0
+  Colorset=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Icon=
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+    F F F F F F F F F F F F F F F F F F F F F F 
+  FontName=Times New Roman, FontColor=0, FontSize=120
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=120, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=10
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Index entry Sym=1.0
+Object Sym=1 Otp=5
+  nItem=4, nText=24
+  Ang=0
+  Res1=0, ResId=
+  Text=This is formatted text that should be word wrapped into several lines of text by determining how to break the lines which make it up.
+    (-18.99,3.76) (16.24,3.76) (16.24,39.37) (-18.99,39.37) 
+
+Index entry Sym=1.0
+Object Sym=1 Otp=4
+  nItem=5, nText=8
+  Ang=0
+  Res1=0, ResId=
+  Text=This is unformatted text
+    (-13.36,-2.64) (-13.36,-3.55) (27.25,-3.55) (27.25,1.58) 
+    (-13.36,1.58) 
+
+Index entry Sym=1.0
+Object Sym=1 Otp=5
+  nItem=4, nText=8
+  Ang=2319
+  Res1=0, ResId=
+  Text=This is formatted text
+    (21.66,-7.24) (2.90,-31.16) (10.95,-37.46) (29.70,-13.53) 
+
+Index entry Sym=1.0
+Object Sym=1 Otp=4
+  nItem=5, nText=8
+  Ang=2319
+  Res1=0, ResId=
+  Text=This is unformatted text
+    (15.36,-3.30) (14.64,-2.74) (-10.42,-34.70) (-6.38,-37.87) 
+    (18.68,-5.91) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-14.78,1.13) (-13.20,0.17) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-14.83,-4.02) (-12.67,-2.64) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-11.46,-2.64) (-9.74,-4.41) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-10.92,0.16) (-10.37,1.11) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-10.09,0.31) (-9.09,1.03) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-10.71,-2.65) (-9.87,-3.71) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-9.78,-2.64) (-9.57,-3.86) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-9.62,-2.63) (-9.18,-4.03) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-8.70,-2.65) (-8.62,-4.17) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (17.48,-5.18) (20.72,-4.68) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (14.94,-3.84) (19.92,-3.30) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (16.06,-6.94) (19.32,-8.04) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (14.20,-4.78) (10.76,-4.20) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (13.68,-5.42) (10.00,-4.92) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (15.66,-7.74) (17.38,-9.54) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (13.14,-6.12) (9.70,-5.84) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (26.72,-0.06) (29.24,0.92) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (27.22,-2.28) (30.36,-5.70) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (26.02,-2.62) (26.82,-6.20) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (24.00,-2.62) (24.44,-6.42) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-9.44,-35.46) (-15.48,-36.80) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-7.40,-36.40) (-7.14,-37.62) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-8.92,-34.30) (-14.58,-34.10) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-7.72,-32.76) (-8.72,-30.06) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-6.22,-33.90) (-4.12,-33.92) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-7.32,-35.30) (-5.66,-37.82) 
+
+Index entry Sym=1.0
+Object Sym=1 Otp=4
+  nItem=5, nText=16
+  Ang=0
+  Res1=0, ResId=
+  Text=This is unformatted text
+with some
+line breaks 
+in the middle
+of it.
+    (-64.31,20.97) (-64.31,-0.26) (-23.70,-0.26) (-23.70,25.19) 
+    (-64.31,25.19) 
+
+Index entry Sym=1.0
+Object Sym=1 Otp=4
+  nItem=5, nText=8
+  Ang=0
+  Res1=0, ResId=
+  Text=1
+2
+3
+    (-63.67,-8.75) (-63.67,-19.82) (-61.55,-19.82) (-61.55,-4.53) 
+    (-63.67,-4.53) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-64.19,5.77) (-68.63,12.61) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-64.27,10.85) (-67.99,15.97) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-63.43,15.85) (-68.23,17.61) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-63.71,21.05) (-69.35,22.65) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-46.91,16.65) (-38.03,17.73) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-46.19,12.17) (-39.31,15.01) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-42.11,6.49) (-38.35,12.85) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-56.55,0.89) (-49.23,0.89) 
+
+Index entry Sym=1.2
+Object Sym=1.2 Otp=4
+  nItem=5, nText=8
+  Ang=0
+  Res1=0, ResId=
+  Text=This is some
+right aligned text
+that is
+aligned on the right
+    (-26.03,-7.67) (-59.12,-23.82) (-26.03,-23.82) (-26.03,-3.45) 
+    (-59.12,-3.45) 
+
+Index entry Sym=1.3
+Object Sym=1.3 Otp=4
+  nItem=5, nText=8
+  Ang=0
+  Res1=0, ResId=
+  Text=This is centered
+text that is centered
+around a center
+line
+    (-50.35,44.97) (-66.89,28.82) (-33.81,28.82) (-33.81,49.19) 
+    (-66.89,49.19) 
+
+Index entry Sym=1.2
+Object Sym=1.2 Otp=5
+  nItem=4, nText=8
+  Ang=0
+  Res1=0, ResId=
+  Text=This is formatted text that is right justified.
+    (15.57,25.73) (48.53,25.73) (48.53,41.02) (15.57,41.02) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (27.93,-12.39) (31.17,-6.67) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=3, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (23.41,-17.83) (35.17,-20.67, Corner) (32.49,-13.51) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (18.73,-13.07) (12.49,-16.51) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (23.97,-9.87) (29.17,-6.83) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (29.69,-13.59) (35.61,-5.07) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-18.87,37.41) (-26.11,34.85) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-18.31,32.61) (-26.83,32.77) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-18.99,26.93) (-25.39,31.13) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-63.71,47.89) (-67.23,51.73) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-70.63,39.05) (-66.95,41.69) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-40.87,27.61) (-47.23,30.45) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-31.55,48.21) (-36.79,45.25) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-33.07,32.61) (-37.67,34.85) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-29.67,39.89) (-33.71,40.09) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (48.61,37.13) (53.81,39.45) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (48.29,39.85) (53.97,41.49) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (48.61,32.13) (54.65,33.37) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (21.65,33.53) (16.97,31.09) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (19.57,38.89) (15.17,36.73) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (27.81,27.21) (33.77,29.41) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (52.25,23.85) (48.37,26.57) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-66.35,-20.23) (-63.63,-18.75) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-57.23,-6.27) (-61.99,-8.67) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-23.55,-24.35) (-25.95,-22.55) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-22.31,-9.95) (-25.99,-12.39) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-62.23,-23.55) (-59.03,-21.59) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-49.63,-4.43) (-47.59,-5.35) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-57.43,-15.23) (-54.99,-12.79) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-23.43,-14.23) (-26.27,-15.79) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (-22.87,-7.59) (-26.11,-7.03) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (19.37,18.05) (15.21,16.61) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (16.65,6.29) (11.13,4.93) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (12.33,41.73) (9.69,38.13) 
+
+Index entry Sym=1.1
+Object Sym=1.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Res1=0, ResId=
+    (22.01,23.57) (13.61,22.37) 
+

@@ -1,0 +1,4 @@
+﻿recursivetempl.ocd
+recursivetempl.png
+-39.04587,29.3441868,32.2467842,-14.0309811
+761,463

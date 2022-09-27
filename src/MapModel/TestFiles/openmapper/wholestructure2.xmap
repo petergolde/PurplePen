@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns="http://openorienteering.org/apps/mapper/xml/v2" version="7">
+    <notes></notes>
+    <georeferencing scale="15000">
+        <projected_crs id="Local"/>
+    </georeferencing>
+    <colors count="38">
+        <color priority="0" name="Upper Purple for Course Overprint" c="0.300" m="1.000" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.700" g="0.000" b="1.000"/>
+        </color>
+        <color priority="1" name="White for Course Overprint" c="0.000" m="0.000" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="1.000" b="1.000"/>
+        </color>
+        <color priority="2" name="Lower Purple for Course Overprint" c="0.300" m="1.000" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.700" g="0.000" b="1.000"/>
+        </color>
+        <color priority="3" name="All printing colours" c="1.000" m="1.000" y="1.000" k="1.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.000" g="0.000" b="0.000"/>
+        </color>
+        <color priority="4" name="Black 100%" c="0.000" m="0.000" y="0.000" k="1.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.000" g="0.000" b="0.000"/>
+        </color>
+        <color priority="5" name="Blue 100% - North Line" c="0.950" m="0.300" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.050" g="0.700" b="1.000"/>
+        </color>
+        <color priority="6" name="Blue 100% - Point Feature" c="0.950" m="0.300" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.050" g="0.700" b="1.000"/>
+        </color>
+        <color priority="7" name="Brown 100%  - Point Feature" c="0.200" m="0.700" y="1.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.800" g="0.300" b="0.000"/>
+        </color>
+        <color priority="8" name="Green 100%  - Point Feature" c="0.800" m="0.000" y="1.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.200" g="1.000" b="0.000"/>
+        </color>
+        <color priority="9" name="Black 100% - Street Middleline" c="0.000" m="0.000" y="0.000" k="1.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.000" g="0.000" b="0.000"/>
+        </color>
+        <color priority="10" name="Brown 50% - Street Infill" c="0.100" m="0.350" y="0.500" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.900" g="0.650" b="0.500"/>
+        </color>
+        <color priority="11" name="White for Railway" c="0.000" m="0.000" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="1.000" b="1.000"/>
+        </color>
+        <color priority="12" name="Black 100% - Street" c="0.000" m="0.000" y="0.000" k="1.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.000" g="0.000" b="0.000"/>
+        </color>
+        <color priority="13" name="Black 65% - Area Feature" c="0.000" m="0.000" y="0.000" k="0.650" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.350" g="0.350" b="0.350"/>
+        </color>
+        <color priority="14" name="Black 20% - Area Feature" c="0.000" m="0.000" y="0.000" k="0.200" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.800" g="0.800" b="0.800"/>
+        </color>
+        <color priority="15" name="Green 100% + 50% Black Line Feature" c="0.800" m="0.000" y="1.000" k="0.400" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.120" g="0.600" b="0.000"/>
+        </color>
+        <color priority="16" name="Blue 100%  - Line Feature" c="0.950" m="0.300" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.050" g="0.700" b="1.000"/>
+        </color>
+        <color priority="17" name="Brown 100% - Line Feature" c="0.200" m="0.700" y="1.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.800" g="0.300" b="0.000"/>
+        </color>
+        <color priority="18" name="Blue 100% - Area Feature" c="0.950" m="0.300" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.050" g="0.700" b="1.000"/>
+        </color>
+        <color priority="19" name="Blue 70% - Area Feature" c="0.710" m="0.260" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.290" g="0.740" b="1.000"/>
+        </color>
+        <color priority="20" name="Blue 50% - Area Feature" c="0.475" m="0.195" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.525" g="0.805" b="1.000"/>
+        </color>
+        <color priority="21" name="Brown 50% - Area Feature" c="0.100" m="0.350" y="0.500" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.900" g="0.650" b="0.500"/>
+        </color>
+        <color priority="22" name="Yellow 100% - Narrow Ride" c="0.000" m="0.250" y="0.950" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="0.750" b="0.050"/>
+        </color>
+        <color priority="23" name="Green 50% - Narrow Ride" c="0.400" m="0.000" y="0.600" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.600" g="1.000" b="0.400"/>
+        </color>
+        <color priority="24" name="Green 20% - Narrow Ride" c="0.200" m="0.000" y="0.300" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.800" g="1.000" b="0.700"/>
+        </color>
+        <color priority="25" name="White for Green" c="0.000" m="0.000" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="1.000" b="1.000"/>
+        </color>
+        <color priority="26" name="Yellow 100%/Green 50%" c="0.400" m="0.300" y="0.900" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.600" g="0.700" b="0.100"/>
+        </color>
+        <color priority="27" name="Grey 25%- Area Feature" c="0.000" m="0.000" y="0.000" k="0.250" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.750" g="0.750" b="0.750"/>
+        </color>
+        <color priority="28" name="Green 100% + 50% Black Area Feature" c="0.800" m="0.000" y="1.000" k="0.400" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.120" g="0.600" b="0.000"/>
+        </color>
+        <color priority="29" name="Green 100% - Area Feature" c="0.800" m="0.000" y="1.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.200" g="1.000" b="0.000"/>
+        </color>
+        <color priority="30" name="Green 50% - Area Feature" c="0.400" m="0.000" y="0.600" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.600" g="1.000" b="0.400"/>
+        </color>
+        <color priority="31" name="Green 20% - Area Feature" c="0.200" m="0.000" y="0.300" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.800" g="1.000" b="0.700"/>
+        </color>
+        <color priority="32" name="Green 100% - Undergrowth" c="0.800" m="0.000" y="1.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.200" g="1.000" b="0.000"/>
+        </color>
+        <color priority="33" name="White for Yellow" c="0.000" m="0.000" y="0.000" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="1.000" b="1.000"/>
+        </color>
+        <color priority="34" name="Black Cultivated Land" c="0.000" m="0.000" y="0.000" k="1.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="0.000" g="0.000" b="0.000"/>
+        </color>
+        <color priority="35" name="Yellow 100% - Area Feature" c="0.000" m="0.250" y="0.950" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="0.750" b="0.050"/>
+        </color>
+        <color priority="36" name="Yellow 75% - Area Feature" c="0.000" m="0.180" y="0.650" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="0.820" b="0.350"/>
+        </color>
+        <color priority="37" name="Yellow 50%- Area Feature" c="0.000" m="0.100" y="0.350" k="0.000" opacity="1.000">
+            <cmyk method="custom"/>
+            <rgb method="cmyk" r="1.000" g="0.900" b="0.650"/>
+        </color>
+    </colors>
+    <barrier version="6" required="0.6.0">
+        <symbols count="3" id="OCD">
+            <symbol type="4" id="0" code="208.0" name="Center Inside">
+                <area_symbol inner_color="31" min_area="0" patterns="1">
+                    <pattern type="2" angle="0" no_clipping="2" rotatable="true" line_spacing="2000" line_offset="0" offset_along_line="0" point_distance="2000">
+                        <symbol type="1" code="" name="Pattern fill 1">
+                            <point_symbol rotatable="true" inner_radius="1000" inner_color="-1" outer_width="0" outer_color="-1" elements="4">
+                                <element>
+                                    <symbol type="4" code="">
+                                        <area_symbol inner_color="4" min_area="0" patterns="0"/>
+                                    </symbol>
+                                    <object type="1">
+                                        <coords count="4">
+                                            <coord x="-830" y="170"/>
+                                            <coord x="-290" y="380" flags="32"/>
+                                            <coord x="-440" y="870" flags="32"/>
+                                            <coord x="-830" y="170" flags="18"/>
+                                        </coords>
+                                        <pattern rotation="0">
+                                            <coord x="0" y="0"/>
+                                        </pattern>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="2" code="">
+                                        <line_symbol color="4" line_width="100" minimum_length="0" join_style="1" cap_style="0" pointed_cap_length="1000" segment_length="4000" end_length="0" show_at_least_one_symbol="true" minimum_mid_symbol_count="0" minimum_mid_symbol_count_when_closed="0" dash_length="4000" break_length="1000" dashes_in_group="1" in_group_break_length="500" mid_symbols_per_spot="1" mid_symbol_distance="0"/>
+                                    </symbol>
+                                    <object type="1">
+                                        <coords count="3">
+                                            <coord x="-300" y="-900"/>
+                                            <coord x="-830" y="-380" flags="32"/>
+                                            <coord x="-210" y="-170"/>
+                                        </coords>
+                                        <pattern rotation="0">
+                                            <coord x="0" y="0"/>
+                                        </pattern>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="1" code="">
+                                        <point_symbol inner_radius="300" inner_color="4" outer_width="0" outer_color="-1" elements="0"/>
+                                    </symbol>
+                                    <object type="0">
+                                        <coords count="1">
+                                            <coord x="440" y="-510"/>
+                                        </coords>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="1" code="">
+                                        <point_symbol inner_radius="100" inner_color="-1" outer_width="100" outer_color="4" elements="0"/>
+                                    </symbol>
+                                    <object type="0">
+                                        <coords count="1">
+                                            <coord x="440" y="560"/>
+                                        </coords>
+                                    </object>
+                                </element>
+                            </point_symbol>
+                        </symbol>
+                    </pattern>
+                </area_symbol>
+            </symbol>
+            <symbol type="4" id="1" code="208.5" name="Entire Inside">
+                <area_symbol inner_color="37" min_area="0" patterns="1">
+                    <pattern type="2" angle="0" no_clipping="1" rotatable="true" line_spacing="2000" line_offset="0" offset_along_line="0" point_distance="2000">
+                        <symbol type="1" code="" name="Pattern fill 1">
+                            <point_symbol rotatable="true" inner_radius="1000" inner_color="-1" outer_width="0" outer_color="-1" elements="4">
+                                <element>
+                                    <symbol type="4" code="">
+                                        <area_symbol inner_color="4" min_area="0" patterns="0"/>
+                                    </symbol>
+                                    <object type="1">
+                                        <coords count="4">
+                                            <coord x="-830" y="170"/>
+                                            <coord x="-290" y="380" flags="32"/>
+                                            <coord x="-440" y="870" flags="32"/>
+                                            <coord x="-830" y="170" flags="18"/>
+                                        </coords>
+                                        <pattern rotation="0">
+                                            <coord x="0" y="0"/>
+                                        </pattern>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="2" code="">
+                                        <line_symbol color="4" line_width="100" minimum_length="0" join_style="1" cap_style="0" pointed_cap_length="1000" segment_length="4000" end_length="0" show_at_least_one_symbol="true" minimum_mid_symbol_count="0" minimum_mid_symbol_count_when_closed="0" dash_length="4000" break_length="1000" dashes_in_group="1" in_group_break_length="500" mid_symbols_per_spot="1" mid_symbol_distance="0"/>
+                                    </symbol>
+                                    <object type="1">
+                                        <coords count="3">
+                                            <coord x="-300" y="-900"/>
+                                            <coord x="-830" y="-380" flags="32"/>
+                                            <coord x="-210" y="-170"/>
+                                        </coords>
+                                        <pattern rotation="0">
+                                            <coord x="0" y="0"/>
+                                        </pattern>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="1" code="">
+                                        <point_symbol inner_radius="300" inner_color="4" outer_width="0" outer_color="-1" elements="0"/>
+                                    </symbol>
+                                    <object type="0">
+                                        <coords count="1">
+                                            <coord x="440" y="-510"/>
+                                        </coords>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="1" code="">
+                                        <point_symbol inner_radius="100" inner_color="-1" outer_width="100" outer_color="4" elements="0"/>
+                                    </symbol>
+                                    <object type="0">
+                                        <coords count="1">
+                                            <coord x="440" y="560"/>
+                                        </coords>
+                                    </object>
+                                </element>
+                            </point_symbol>
+                        </symbol>
+                    </pattern>
+                </area_symbol>
+            </symbol>
+            <symbol type="4" id="2" code="208.4" name="Any Insider">
+                <area_symbol inner_color="20" min_area="0" patterns="1">
+                    <pattern type="2" angle="0" no_clipping="3" rotatable="true" line_spacing="2000" line_offset="0" offset_along_line="0" point_distance="2000">
+                        <symbol type="1" code="" name="Pattern fill 1">
+                            <point_symbol rotatable="true" inner_radius="1000" inner_color="-1" outer_width="0" outer_color="-1" elements="4">
+                                <element>
+                                    <symbol type="4" code="">
+                                        <area_symbol inner_color="4" min_area="0" patterns="0"/>
+                                    </symbol>
+                                    <object type="1">
+                                        <coords count="4">
+                                            <coord x="-830" y="170"/>
+                                            <coord x="-290" y="380" flags="32"/>
+                                            <coord x="-440" y="870" flags="32"/>
+                                            <coord x="-830" y="170" flags="18"/>
+                                        </coords>
+                                        <pattern rotation="0">
+                                            <coord x="0" y="0"/>
+                                        </pattern>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="2" code="">
+                                        <line_symbol color="4" line_width="100" minimum_length="0" join_style="1" cap_style="0" pointed_cap_length="1000" segment_length="4000" end_length="0" show_at_least_one_symbol="true" minimum_mid_symbol_count="0" minimum_mid_symbol_count_when_closed="0" dash_length="4000" break_length="1000" dashes_in_group="1" in_group_break_length="500" mid_symbols_per_spot="1" mid_symbol_distance="0"/>
+                                    </symbol>
+                                    <object type="1">
+                                        <coords count="3">
+                                            <coord x="-300" y="-900"/>
+                                            <coord x="-830" y="-380" flags="32"/>
+                                            <coord x="-210" y="-170"/>
+                                        </coords>
+                                        <pattern rotation="0">
+                                            <coord x="0" y="0"/>
+                                        </pattern>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="1" code="">
+                                        <point_symbol inner_radius="300" inner_color="4" outer_width="0" outer_color="-1" elements="0"/>
+                                    </symbol>
+                                    <object type="0">
+                                        <coords count="1">
+                                            <coord x="440" y="-510"/>
+                                        </coords>
+                                    </object>
+                                </element>
+                                <element>
+                                    <symbol type="1" code="">
+                                        <point_symbol inner_radius="100" inner_color="-1" outer_width="100" outer_color="4" elements="0"/>
+                                    </symbol>
+                                    <object type="0">
+                                        <coords count="1">
+                                            <coord x="440" y="560"/>
+                                        </coords>
+                                    </object>
+                                </element>
+                            </point_symbol>
+                        </symbol>
+                    </pattern>
+                </area_symbol>
+            </symbol>
+        </symbols>
+        <parts count="1" current="0">
+            <part name="default part">
+                <objects count="7">
+                    <object type="1" symbol="0">
+                        <coords count="13">
+                            <coord x="-14090" y="-8890" flags="1"/>
+                            <coord x="-15100" y="-7730"/>
+                            <coord x="-14990" y="-5980"/>
+                            <coord x="-13840" y="-4970" flags="1"/>
+                            <coord x="-12690" y="-3960"/>
+                            <coord x="-10940" y="-4070"/>
+                            <coord x="-9920" y="-5230" flags="1"/>
+                            <coord x="-8910" y="-6380"/>
+                            <coord x="-9030" y="-8130"/>
+                            <coord x="-10180" y="-9140" flags="1"/>
+                            <coord x="-11330" y="-10150"/>
+                            <coord x="-13080" y="-10040"/>
+                            <coord x="-14090" y="-8890" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                    <object type="1" symbol="0">
+                        <coords count="13">
+                            <coord x="-16520" y="-12220" flags="1"/>
+                            <coord x="-18990" y="-10920"/>
+                            <coord x="-20260" y="-8470"/>
+                            <coord x="-19350" y="-6740" flags="1"/>
+                            <coord x="-18440" y="-5010"/>
+                            <coord x="-15710" y="-4660"/>
+                            <coord x="-13230" y="-5960" flags="33"/>
+                            <coord x="-10770" y="-7250"/>
+                            <coord x="-9510" y="-9700"/>
+                            <coord x="-10410" y="-11430" flags="1"/>
+                            <coord x="-11320" y="-13160"/>
+                            <coord x="-14060" y="-13510"/>
+                            <coord x="-16520" y="-12220" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                    <object type="1" symbol="1">
+                        <coords count="13">
+                            <coord x="-4460" y="-12480" flags="1"/>
+                            <coord x="-5120" y="-11130"/>
+                            <coord x="-3220" y="-8850"/>
+                            <coord x="-200" y="-7360" flags="1"/>
+                            <coord x="2810" y="-5880"/>
+                            <coord x="5780" y="-5770"/>
+                            <coord x="6440" y="-7120" flags="33"/>
+                            <coord x="7100" y="-8450"/>
+                            <coord x="5190" y="-10740"/>
+                            <coord x="2190" y="-12220" flags="1"/>
+                            <coord x="-830" y="-13700"/>
+                            <coord x="-3800" y="-13820"/>
+                            <coord x="-4460" y="-12480" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                    <object type="1" symbol="1">
+                        <coords count="13">
+                            <coord x="-4520" y="-7480" flags="1"/>
+                            <coord x="-4020" y="-6920"/>
+                            <coord x="-2840" y="-7150"/>
+                            <coord x="-1900" y="-8000" flags="1"/>
+                            <coord x="-960" y="-8840"/>
+                            <coord x="-600" y="-9990"/>
+                            <coord x="-1100" y="-10540" flags="33"/>
+                            <coord x="-1590" y="-11100"/>
+                            <coord x="-2770" y="-10860"/>
+                            <coord x="-3710" y="-10020" flags="1"/>
+                            <coord x="-4650" y="-9170"/>
+                            <coord x="-5010" y="-8030"/>
+                            <coord x="-4520" y="-7480" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                    <object type="1" symbol="1">
+                        <coords count="13">
+                            <coord x="1540" y="-6600" flags="1"/>
+                            <coord x="390" y="-5670"/>
+                            <coord x="430" y="-3700"/>
+                            <coord x="1660" y="-2180" flags="1"/>
+                            <coord x="2870" y="-660"/>
+                            <coord x="4790" y="-190"/>
+                            <coord x="5940" y="-1120" flags="33"/>
+                            <coord x="7090" y="-2040"/>
+                            <coord x="7040" y="-4010"/>
+                            <coord x="5830" y="-5530" flags="1"/>
+                            <coord x="4610" y="-7050"/>
+                            <coord x="2690" y="-7520"/>
+                            <coord x="1540" y="-6600" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                    <object type="1" symbol="2">
+                        <coords count="13">
+                            <coord x="-24740" y="2100" flags="1"/>
+                            <coord x="-24830" y="3970"/>
+                            <coord x="-19810" y="5720"/>
+                            <coord x="-13550" y="6010" flags="1"/>
+                            <coord x="-7300" y="6300"/>
+                            <coord x="-2140" y="5010"/>
+                            <coord x="-2060" y="3140" flags="33"/>
+                            <coord x="-1970" y="1290"/>
+                            <coord x="-6990" y="-460"/>
+                            <coord x="-13240" y="-750" flags="1"/>
+                            <coord x="-19500" y="-1040"/>
+                            <coord x="-24660" y="250"/>
+                            <coord x="-24740" y="2100" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                    <object type="1" symbol="2">
+                        <coords count="13">
+                            <coord x="-3740" y="-5460" flags="1"/>
+                            <coord x="-4580" y="-5770"/>
+                            <coord x="-6040" y="-3890"/>
+                            <coord x="-7010" y="-1260" flags="1"/>
+                            <coord x="-7970" y="1360"/>
+                            <coord x="-8080" y="3740"/>
+                            <coord x="-7240" y="4040" flags="33"/>
+                            <coord x="-6420" y="4350"/>
+                            <coord x="-4960" y="2470"/>
+                            <coord x="-3990" y="-150" flags="1"/>
+                            <coord x="-3030" y="-2780"/>
+                            <coord x="-2920" y="-5160"/>
+                            <coord x="-3740" y="-5460" flags="18"/>
+                        </coords>
+                        <pattern rotation="0">
+                            <coord x="0" y="0"/>
+                        </pattern>
+                    </object>
+                </objects>
+            </part>
+        </parts>
+        <templates count="0" first_front_template="0">
+            <defaults use_meters_per_pixel="true" meters_per_pixel="0" dpi="0" scale="0"/>
+        </templates>
+        <view>
+            <grid color="#80646464" display="0" alignment="0" additional_rotation="0" unit="1" h_spacing="250" v_spacing="250" h_offset="0" v_offset="0" snapping_enabled="true"/>
+            <map_view zoom="4.24808" rotation="0" position_x="-2467" position_y="359">
+                <map opacity="1" visible="true"/>
+                <templates count="0"/>
+            </map_view>
+        </view>
+    </barrier>
+    <barrier version="6" required="0.6.0">
+        <undo/>
+        <redo/>
+    </barrier>
+</map>

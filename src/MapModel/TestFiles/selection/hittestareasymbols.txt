@@ -1,0 +1,4 @@
+﻿areasymbols.ocd
+hittestareasymbols.png
+-14.9472342,11.5255136,12.62024,-9.448955
+761,579

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="MapModel rule set" Description="This rule set contains all rules. Running this rule set may result in a large number of warnings being reported. Use this rule set to get a comprehensive picture of all issues in your code. This can help you decide which of the more focused rule sets are most appropriate to run for your projects." ToolsVersion="14.0">
+  <IncludeAll Action="Warning" />
+  <Rules AnalyzerId="RefactoringEssentials" RuleNamespace="RefactoringEssentials">
+    <Rule Id="RECS0010" Action="Hidden" />
+    <Rule Id="RECS0012" Action="Hidden" />
+    <Rule Id="RECS0014" Action="Warning" />
+    <Rule Id="RECS0018" Action="None" />
+    <Rule Id="RECS0033" Action="Hidden" />
+    <Rule Id="RECS0072" Action="Hidden" />
+    <Rule Id="RECS0073" Action="Hidden" />
+    <Rule Id="RECS0082" Action="Info" />
+    <Rule Id="RECS0083" Action="Warning" />
+    <Rule Id="RECS0085" Action="Info" />
+    <Rule Id="RECS0091" Action="Hidden" />
+    <Rule Id="RECS0092" Action="Hidden" />
+    <Rule Id="RECS0093" Action="Hidden" />
+    <Rule Id="RECS0104" Action="Hidden" />
+    <Rule Id="RECS0107" Action="None" />
+    <Rule Id="RECS0113" Action="None" />
+    <Rule Id="RECS0122" Action="Hidden" />
+    <Rule Id="RECS0154" Action="Hidden" />
+    <Rule Id="RECS0163" Action="None" />
+  </Rules>
+</RuleSet>

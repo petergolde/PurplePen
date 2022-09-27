@@ -1,0 +1,4 @@
+﻿multisymonedash.ocd
+multisymonedash.png
+25.101202,-50.2240219,67.43164,-74.1983
+761,431

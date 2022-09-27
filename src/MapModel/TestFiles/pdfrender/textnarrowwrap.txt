@@ -1,0 +1,4 @@
+﻿textnarrowwrap.ocd
+textnarrowwrap.png
+-79.2300949,48.2183838,128.192383,-93.66672
+921,630

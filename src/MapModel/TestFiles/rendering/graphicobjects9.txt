@@ -1,0 +1,4 @@
+﻿graphicobjects9.ocd
+graphicobjects9.png
+-10.674057,12.7055826,10.5798073,-0.7761857
+979,621

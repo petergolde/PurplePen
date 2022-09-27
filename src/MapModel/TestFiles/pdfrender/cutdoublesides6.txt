@@ -1,0 +1,4 @@
+﻿cutdoublesides6.ocd
+cutdoublesides9.png
+-59.2051125,73.24245,22.7501411,-3.21318269
+760,709

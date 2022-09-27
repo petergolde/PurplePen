@@ -1,0 +1,31 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x0
+  Version=11
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+String of type 1039
+  ObjIndex=0
+  firstField=
+  code=m, value=2400
+  code=g, value=50
+  code=r, value=1
+  code=x, value=431983
+  code=y, value=-734682
+  code=a, value=34.1998
+  code=d, value=72
+  code=b, value=5.71
+  code=c, value=-7.22
+  code=i, value=-2003
+
+String of type 1026
+  ObjIndex=0
+  firstField=
+  code=a, value=0
+  code=r, value=0
+
+String of type 1030
+  ObjIndex=0
+  firstField=
+  code=d, value=0
+  code=p, value=1
+

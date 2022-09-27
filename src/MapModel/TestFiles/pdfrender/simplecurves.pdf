@@ -1,0 +1,111 @@
+%PDF-1.4
+%”ÙÃ·
+% PDFsharp Version 1.31.1789.0 (verbose mode)
+% Creation date: 11/5/2011 10:12:10 PM           
+% Creation time: 0.092 seconds                   
+% File size: 2443 bytes                          
+% Pages: 1                                       
+% Objects: 6                                     
+%--------------------------------------------------------------------------------------------------
+1 0 obj   % PdfSharp.Pdf.PdfDocumentInformation
+<<
+  /CreationDate (D:20111105221210-07'00')
+  /Creator (PDFsharp 1.31.1789-g \(www.pdfsharp.com\))
+  /Producer (PDFsharp 1.31.1789-g \(www.pdfsharp.com\))
+  /Title (simplecurves)
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+2 0 obj   % PdfSharp.Pdf.Advanced.PdfCatalog
+<<
+  /Pages 3 0 R
+  /Type /Catalog
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+3 0 obj   % PdfSharp.Pdf.PdfPages
+<<
+  /Count 1
+  /Kids [4 0 R]
+  /Type /Pages
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+4 0 obj   % PdfSharp.Pdf.PdfPage
+<<
+  /ArtBox [0 0 612 792]
+  /BleedBox [0 0 612 792]
+  /Contents 5 0 R
+  /CropBox [0 0 612 792]
+  /Group
+  <<
+    /CS /DeviceRGB
+    /I false
+    /K false
+    /S /Transparency
+  >>
+  /MediaBox [0 0 612 792]
+  /Parent 3 0 R
+  /Resources
+  <<
+    /ExtGState
+    <<
+      /GS0 6 0 R
+    >>
+    /ProcSet [/PDF/Text/ImageB/ImageC/ImageI]
+  >>
+  /TrimBox [0 0 612 792]
+  /Type /Page
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+5 0 obj   % PdfSharp.Pdf.Advanced.PdfContent
+<<
+  /Length 120
+>>
+stream
+q
+1 0 0 -1 0 792 cm -100 Tz
+q
+q
+0.72 0 0 0.72 0 0 cm
+20 w
+1 J
+1 j
+[]0 d
+0 0 0.545 RG
+/GS0 gs
+100 200 500 200 re
+S
+Q
+Q
+Q
+endstream
+endobj
+%--------------------------------------------------------------------------------------------------
+6 0 obj   % PdfSharp.Pdf.Advanced.PdfExtGState
+<<
+  /CA 1
+  /Type /ExtGState
+>>
+endobj
+%--------------------------------------------------------------------------------------------------
+xref
+0 7
+0000000000 65535 f 
+0000000411 00000 n 
+0000000749 00000 n 
+0000000939 00000 n 
+0000001128 00000 n 
+0000001648 00000 n 
+0000001957 00000 n 
+trailer
+<<
+  /ID [<8203784D8F7F2C42A3C2FE8E5470567C><8203784D8F7F2C42A3C2FE8E5470567C>]
+  /Info 1 0 R
+  /Root 2 0 R
+  /Size 7
+>>
+startxref
+2144
+%%EOF

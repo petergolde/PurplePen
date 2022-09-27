@@ -1,0 +1,4 @@
+﻿rectanglesymbols.ocd
+rectanglesymbols.png
+-325.697418,68.01091,-248.47287,14.7700281
+1069,737

@@ -1,0 +1,4 @@
+﻿offsetpattern_rot2.ocd
+offsetpattern_rot2_nopatbm.png
+-12.4457493,5.383869,16.7927914,-14.5935993
+884,604

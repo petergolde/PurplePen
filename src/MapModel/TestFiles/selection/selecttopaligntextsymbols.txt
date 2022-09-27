@@ -1,0 +1,4 @@
+﻿topaligntext10.ocd
+selecttopaligntextsymbols.png
+-89.1658554,75.27298,96.04246,-55.69579
+700,495

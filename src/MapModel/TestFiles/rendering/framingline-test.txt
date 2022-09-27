@@ -1,0 +1,4 @@
+﻿framingline.ocd
+framingline-test.png
+-21.24804,26.4598713,6.51038551,5.0354476
+1398,1079

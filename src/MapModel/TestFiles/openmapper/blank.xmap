@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns="http://openorienteering.org/apps/mapper/xml/v2" version="6">
+    <notes></notes>
+    <georeferencing scale="15000">
+        <projected_crs id="Local"/>
+    </georeferencing>
+    <colors count="0"/>
+    <barrier version="6" required="0.6.0">
+        <symbols count="0"/>
+        <parts count="1" current="0">
+            <part name="default part">
+                <objects count="0"/>
+            </part>
+        </parts>
+        <templates count="0" first_front_template="0">
+            <defaults use_meters_per_pixel="true" meters_per_pixel="0" dpi="0" scale="0"/>
+        </templates>
+        <view>
+            <grid color="#646464" display="0" alignment="0" additional_rotation="0" unit="1" h_spacing="500" v_spacing="500" h_offset="0" v_offset="0" snapping_enabled="true"/>
+            <map_view zoom="1" rotation="0" position_x="0" position_y="0">
+                <map opacity="1" visible="true"/>
+                <templates count="0"/>
+            </map_view>
+        </view>
+    </barrier>
+    <barrier version="6" required="0.6.0">
+        <undo/>
+        <redo/>
+    </barrier>
+</map>

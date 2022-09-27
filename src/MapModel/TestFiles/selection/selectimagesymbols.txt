@@ -1,0 +1,4 @@
+﻿aiimport.ocd
+selectimagesymbols.png
+-55.3833847,46.1390724,21.60276,-15.2225847
+813,648

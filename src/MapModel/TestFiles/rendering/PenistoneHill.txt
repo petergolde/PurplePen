@@ -1,0 +1,4 @@
+﻿Penistone Hill no legend.ocd
+PenistoneHill.png
+-73.65886,-120.72345,61.2786255,-265.215363
+918,983

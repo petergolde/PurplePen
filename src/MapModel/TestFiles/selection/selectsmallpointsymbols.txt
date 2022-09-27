@@ -1,0 +1,4 @@
+﻿pointsymbols2.ocd
+selectsmallpointsymbols.png
+-118.503387,71.38648,119.560455,-73.45397
+761,463

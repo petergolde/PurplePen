@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5cf3dd1b-7f14-44d7-9c5e-0e881fdafb6f</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MapModel_Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MatrixUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenMapperFileFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DebugCode\OcadDump.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glyph.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GraphicsUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InputOutput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LZWCompression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MapProjection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OcadExport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OcadFileFormat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OcadImport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenMapperExport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OpenMapperImport.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Projections\AuthorityCodeHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Symbol.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SymColor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SymDef.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SymPath.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToolboxIcon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UndoMgr.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)XmlInput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Projections\AuthorityCodeToProj4.ds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Projections\AuthorityCodeToProj4.txt" />
+    <None Include="$(MSBuildThisFileDirectory)Projections\Readme.txt" />
+  </ItemGroup>
+</Project>
