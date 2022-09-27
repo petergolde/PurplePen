@@ -81,3 +81,7 @@ src/TestFiles/rendering/startendglyph9_tempnew.png
 *.VC.db
 src/packages/
 src/.vs/
+
+!src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x86
+!src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
+

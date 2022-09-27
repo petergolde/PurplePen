@@ -46,10 +46,13 @@ namespace DotSpatial.Projections.Tests
 
         static Proj4()
         {
+            Uri uri = new Uri(typeof(Proj4).Assembly.CodeBase);
+            string callingPath = Path.GetDirectoryName(uri.LocalPath);
+
             // init proj delegates
             var basePath = (IntPtr.Size == 8) ? "x64" : "x86";
             var path = basePath + "/" + "proj.dll";
-            path = Path.GetFullPath(path);
+            path = Path.Combine(callingPath, path);
 
             _pj_init_plus = (pj_init_plus_delegate)FunctionLoader.LoadFunction<pj_init_plus_delegate>(path, "pj_init_plus");
             _pj_free = (pj_free_delegate)FunctionLoader.LoadFunction<pj_free_delegate>(path, "pj_free");
