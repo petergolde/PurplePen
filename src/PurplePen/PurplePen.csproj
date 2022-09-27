@@ -64,9 +64,6 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotSpatial.Projections">
-      <HintPath>..\Libraries\DotSpatialProjections\Debug\DotSpatial.Projections.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
@@ -4426,6 +4423,10 @@
     <ProjectReference Include="..\CrashReporter.NET\CrashReporter.NET.csproj">
       <Project>{67912bda-1572-46b0-8623-5872d9dadbc8}</Project>
       <Name>CrashReporter.NET</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DotSpatialProjectionsLite\DotSpatial.Projections\DotSpatial.Projections.csproj">
+      <Project>{d286df06-21fa-40be-b384-6aca509ac98c}</Project>
+      <Name>DotSpatial.Projections</Name>
     </ProjectReference>
     <ProjectReference Include="..\MapModel\Graphics2D\Graphics2D.csproj">
       <Project>{ef01e0b6-d7e7-4a4c-970a-29d677d59233}</Project>

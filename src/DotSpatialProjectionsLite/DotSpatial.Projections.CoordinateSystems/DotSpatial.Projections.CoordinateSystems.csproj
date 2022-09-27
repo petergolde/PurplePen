@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EEDF2E9-2490-4C43-ADB1-D4986DE74E73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotSpatial.Projections</RootNamespace>
+    <AssemblyName>DotSpatial.Projections.CoordinateSystems</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorityCodes\AuthorityCodeHandler.cs" />
+    <Compile Include="ProjectionInfoLookup.cs" />
+    <Compile Include="GeographicCategories\Africa.cs" />
+    <Compile Include="GeographicCategories\Antarctica.cs" />
+    <Compile Include="GeographicCategories\Asia.cs" />
+    <Compile Include="GeographicCategories\Australia.cs" />
+    <Compile Include="GeographicCategories\CountySystems.cs" />
+    <Compile Include="GeographicCategories\Europe.cs" />
+    <Compile Include="GeographicCategories\NorthAmerica.cs" />
+    <Compile Include="GeographicCategories\Oceans.cs" />
+    <Compile Include="GeographicCategories\SolarSystem.cs" />
+    <Compile Include="GeographicCategories\SouthAmerica.cs" />
+    <Compile Include="GeographicCategories\SpheroidBased.cs" />
+    <Compile Include="GeographicCategories\World.cs" />
+    <Compile Include="GeographicSystems.cs" />
+    <Compile Include="KnownCoordinateSystems.cs" />
+    <Compile Include="ProjectedCategories\Africa.cs" />
+    <Compile Include="ProjectedCategories\Asia.cs" />
+    <Compile Include="ProjectedCategories\Europe.cs" />
+    <Compile Include="ProjectedCategories\GaussKrugerBeijing1954.cs" />
+    <Compile Include="ProjectedCategories\GaussKrugerOther.cs" />
+    <Compile Include="ProjectedCategories\GaussKrugerPulkovo1942.cs" />
+    <Compile Include="ProjectedCategories\GaussKrugerPulkovo1995.cs" />
+    <Compile Include="ProjectedCategories\KrugerXian1980.cs" />
+    <Compile Include="ProjectedCategories\Minnesota.cs" />
+    <Compile Include="ProjectedCategories\Nad1983IntlFeet.cs" />
+    <Compile Include="ProjectedCategories\NationalGrids.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsAustralia.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsCanada.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsIndia.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsJapan.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsNewZealand.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsNorway.cs" />
+    <Compile Include="ProjectedCategories\NationalGridsSweden.cs" />
+    <Compile Include="ProjectedCategories\NorthAmerica.cs" />
+    <Compile Include="ProjectedCategories\Polar.cs" />
+    <Compile Include="ProjectedCategories\SouthAmerica.cs" />
+    <Compile Include="ProjectedCategories\SpheroidBased.cs" />
+    <Compile Include="ProjectedCategories\StatePlaneNad1927.cs" />
+    <Compile Include="ProjectedCategories\StatePlaneNad1983.cs" />
+    <Compile Include="ProjectedCategories\StatePlaneNad1983Feet.cs" />
+    <Compile Include="ProjectedCategories\StatePlaneNad1983Harn.cs" />
+    <Compile Include="ProjectedCategories\StatePlaneNad1983HarnFeet.cs" />
+    <Compile Include="ProjectedCategories\StatePlaneOther.cs" />
+    <Compile Include="ProjectedCategories\StateSystems.cs" />
+    <Compile Include="ProjectedCategories\TransverseMercator.cs" />
+    <Compile Include="ProjectedCategories\UtmNad1927.cs" />
+    <Compile Include="ProjectedCategories\UtmNad1983.cs" />
+    <Compile Include="ProjectedCategories\UtmOther.cs" />
+    <Compile Include="ProjectedCategories\UtmWgs1972.cs" />
+    <Compile Include="ProjectedCategories\UtmWgs1984.cs" />
+    <Compile Include="ProjectedCategories\Wisconsin.cs" />
+    <Compile Include="ProjectedCategories\World.cs" />
+    <Compile Include="ProjectedCategories\WorldSpheroid.cs" />
+    <Compile Include="ProjectedSystems.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotSpatial.Projections\DotSpatial.Projections.csproj">
+      <Project>{d286df06-21fa-40be-b384-6aca509ac98c}</Project>
+      <Name>DotSpatial.Projections</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="AuthorityCodes\AuthorityCodeToProj4.ds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AuthorityCodes\AuthorityCodeToProj4.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AuthorityCodes\Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

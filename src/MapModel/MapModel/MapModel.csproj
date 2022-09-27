@@ -55,9 +55,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DotSpatial.Projections">
-      <HintPath>..\Libraries\DotSpatialProjections\$(Configuration)\DotSpatial.Projections.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
@@ -86,6 +83,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\DotSpatialProjectionsLite\DotSpatial.Projections\DotSpatial.Projections.csproj">
+      <Project>{d286df06-21fa-40be-b384-6aca509ac98c}</Project>
+      <Name>DotSpatial.Projections</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj">
       <Project>{EF01E0B6-D7E7-4A4C-970A-29D677D59233}</Project>
       <Name>Graphics2D</Name>
