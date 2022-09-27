@@ -84,4 +84,6 @@ src/.vs/
 
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x86
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
+!src/PdfiumViewer/Libraries/**/x86
+!src/PdfiumViewer/Libraries/**/x64
 
