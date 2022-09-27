@@ -32,22 +32,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(VersionNumber.Current)]
-[assembly: AssemblyFileVersion(VersionNumber.Current)]
+[assembly: AssemblyVersion("3.4.*")]
 
-// Contains the current version number.
-// NOTE: WHEN CHANGING THIS, YOU MUST ALSO CHANGE THE VERSION PROPERTY OF THE SETUP PROJECT 
-// (Go to solution explorer, highligh setup project, choose View/Properties Window.) Also, change the 
-// product code (you will be prompted for this -- say yes).
-static class VersionNumber
-{
-    public const string Current = "3.0.0.211";
 
-    // The last component encodes the Alpha/Beta/RC/Stable notion.
-    // 101 is Alpha 1, 220 is Beta 2, 500 is stable release
-    public const int Alpha = 100;
-    public const int Beta = 200;
-    public const int RC = 300;
-    public const int Stable = 500;
-}
 
