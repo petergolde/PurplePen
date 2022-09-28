@@ -4354,19 +4354,19 @@
     <None Include="Images\Landscape.PNG" />
     <Content Include="..\PdfiumViewer\Libraries\Pdfium\Without V8\x64\dbghelp.dll">
       <Link>x64\dbghelp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\PdfiumViewer\Libraries\Pdfium\Without V8\x64\pdfium.dll">
       <Link>x64\pdfium.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\PdfiumViewer\Libraries\Pdfium\Without V8\x86\dbghelp.dll">
       <Link>x86\dbghelp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\PdfiumViewer\Libraries\Pdfium\Without V8\x86\pdfium.dll">
       <Link>x86\pdfium.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\x64\$(Configuration)\GDIPlusNative64.dll">
       <Link>GDIPlusNative64.dll</Link>
