@@ -3,7 +3,7 @@
 ; This script shows how to download and install any dependency such as .NET,
 ; Visual C++ or SQL Server during your application's installation process.
 ;
-; downloaded from: https://github.com/DomGries/InnoDependencyInstaller
+; contribute: https://github.com/DomGries/InnoDependencyInstaller
 
 
 ; -----------
@@ -600,113 +600,81 @@ end;
 ; -------------
 ; EXAMPLE SETUP
 ; -------------
+#ifndef Dependency_NoExampleSetup
 
 ; comment out dependency defines to disable installing them
-;#define UseDotNet35
-;#define UseDotNet40
-;#define UseDotNet45
-;#define UseDotNet46
-;#define UseDotNet47
+#define UseDotNet35
+#define UseDotNet40
+#define UseDotNet45
+#define UseDotNet46
+#define UseDotNet47
 #define UseDotNet48
 
 ; requires netcorecheck.exe and netcorecheck_x64.exe (see download link below)
-;#define UseNetCoreCheck
-;#ifdef UseNetCoreCheck
-;  #define UseNetCore31
-;  #define UseNetCore31Asp
-;  #define UseNetCore31Desktop
-;  #define UseDotNet50
-;  #define UseDotNet50Asp
-;  #define UseDotNet50Desktop
-;  #define UseDotNet60
-;  #define UseDotNet60Asp
-;  #define UseDotNet60Desktop
-;#endif
+#define UseNetCoreCheck
+#ifdef UseNetCoreCheck
+  #define UseNetCore31
+  #define UseNetCore31Asp
+  #define UseNetCore31Desktop
+  #define UseDotNet50
+  #define UseDotNet50Asp
+  #define UseDotNet50Desktop
+  #define UseDotNet60
+  #define UseDotNet60Asp
+  #define UseDotNet60Desktop
+#endif
 
-;#define UseVC2005
-;#define UseVC2008
-;#define UseVC2010
-;#define UseVC2012
-;#define UseVC2013
-;#define UseVC2015To2022
+#define UseVC2005
+#define UseVC2008
+#define UseVC2010
+#define UseVC2012
+#define UseVC2013
+#define UseVC2015To2022
 
 ; requires dxwebsetup.exe (see download link below)
 ;#define UseDirectX
 
-;#define UseSql2008Express
-;#define UseSql2012Express
-;#define UseSql2014Express
-;#define UseSql2016Express
-;#define UseSql2017Express
-;#define UseSql2019Express
+#define UseSql2008Express
+#define UseSql2012Express
+#define UseSql2014Express
+#define UseSql2016Express
+#define UseSql2017Express
+#define UseSql2019Express
 
-;#define UseWebView2
+#define UseWebView2
 
-#define MyAppSetupName 'Purple Pen'
-#define MyAppName "Purple Pen"
-#define MyAppVersion "3.5.0"
-#define MyAppPublisher "Golde Software"
-#define MyAppURL "http://purple-pen.org"
-#define MyAppExeName "PurplePen.exe"
-#define BuildDir "..\PurplePen\bin\Release"
+#define MyAppSetupName 'MyProgram'
+#define MyAppVersion '1.0'
+#define MyAppPublisher 'Inno Setup'
+#define MyAppCopyright 'Copyright © Inno Setup'
+#define MyAppURL 'https://jrsoftware.org/isinfo.php'
 
-; NOTE: The value of AppId uniquely identifies this application.
-; Do not use the same AppId value in installers for other applications.
-; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{347D1E62-7134-4827-9679-4952BEC91C95}
-
-AppName={#MyAppName}
+AppName={#MyAppSetupName}
 AppVersion={#MyAppVersion}
-AppVerName={#MyAppName} {#MyAppVersion}
+AppVerName={#MyAppSetupName} {#MyAppVersion}
+AppCopyright={#MyAppCopyright}
+VersionInfoVersion={#MyAppVersion}
+VersionInfoCompany={#MyAppPublisher}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-UninstallDisplayName={#MyAppName}
-DefaultDirName={pf}\{#MyAppName}
-DefaultGroupName={#MyAppName}
-OutputDir=output
-OutputBaseFilename=purplepen-setup
-Compression=lzma
-SolidCompression=yes
-ChangesAssociations=yes
-
-DisableProgramGroupPage=yes
-ShowLanguageDialog=auto
-
-SignTool=signhelper
-SignedUninstaller=yes
-
-UninstallDisplayIcon={app}\{#MyAppExeName},0
-
-;MinVersion default value: "0,5.0 (Windows 2000+) if Unicode Inno Setup, else 4.0,4.0 (Windows 95+)"
-
-; Min version: Windows 7 SP1
-MinVersion=0,6.1.7601
+OutputBaseFilename={#MyAppSetupName}-{#MyAppVersion}
+DefaultGroupName={#MyAppSetupName}
+DefaultDirName={autopf}\{#MyAppSetupName}
+UninstallDisplayIcon={app}\MyProgram.exe
+SourceDir=src
+OutputDir={#SourcePath}\bin
+AllowNoIcons=yes
 PrivilegesRequired=admin
 
-;These were turned on in the sample for the bootstrapper, but I turned them off again.
-;ArchitecturesAllowed=x86 x64 ia64
-;ArchitecturesInstallIn64BitMode=x64 ia64
+; remove next line if you only deploy 32-bit binaries and dependencies
+ArchitecturesInstallIn64BitMode=x64
 
-; downloading and installing dependencies will only work if the memo/ready page is enabled (default and current behaviour)
-DisableReadyPage=no
-DisableReadyMemo=no
-
-; supported languages
-#include "scripts\lang\english.iss"
-#include "scripts\lang\german.iss"
-#include "scripts\lang\french.iss"
-#include "scripts\lang\italian.iss"
-#include "scripts\lang\dutch.iss"
-
-#ifdef UNICODE
-#include "scripts\lang\chinese.iss"
-#include "scripts\lang\polish.iss"
-#include "scripts\lang\russian.iss"
-#include "scripts\lang\japanese.iss"
-#endif
-
+[Languages]
+Name: en; MessagesFile: "compiler:Default.isl"
+Name: nl; MessagesFile: "compiler:Languages\Dutch.isl"
+Name: de; MessagesFile: "compiler:Languages\German.isl"
 
 [Files]
 #ifdef UseNetCoreCheck
@@ -720,108 +688,21 @@ Source: "netcorecheck_x64.exe"; Flags: dontcopy noencryption
 Source: "dxwebsetup.exe"; Flags: dontcopy noencryption
 #endif
 
-Source: "{#BuildDir}\PurplePen.exe"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\CrashReporter.NET.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\DotSpatial.Projections.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\GDIPlusNative.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\GDIPlusNative64.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\Graphics2D.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\Map_GDIPlus.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\Map_PDF.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Map_WPF.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\MapModel.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfConverter.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\..\..\..\PdfConverter\bin\Release\PdfConverter.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfiumViewer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Purple Pen Help.chm"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PurplePen.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\symbols.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\USWebCoatedSWOP.icc"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Samples\*"; DestDir: "{app}\Samples"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\x64\*"; DestDir: "{app}\x64"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\x86\*"; DestDir: "{app}\x86"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\bg\*"; DestDir: "{app}\bg"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\de\*"; DestDir: "{app}\de"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\es\*"; DestDir: "{app}\es"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\et\*"; DestDir: "{app}\et"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\fi\*"; DestDir: "{app}\fi"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\fr\*"; DestDir: "{app}\fr"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\hu\*"; DestDir: "{app}\hu"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\ja\*"; DestDir: "{app}\ja"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\nb-NO\*"; DestDir: "{app}\nb-NO"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\nl\*"; DestDir: "{app}\nl"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\nn-NO\*"; DestDir: "{app}\nn-NO"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\pl\*"; DestDir: "{app}\pl"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\ro\*"; DestDir: "{app}\ro"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\sv\*"; DestDir: "{app}\sv"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\zh-CN\*"; DestDir: "{app}\zh-CN"; Flags: ignoreversion recursesubdirs createallsubdirs
-
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Black.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Black"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-BlackItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Black Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Light.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Light"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-LightItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Medium.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Medium"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-MediumItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Medium Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Thin.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Thin"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-ThinItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Thin Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-Light.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Light"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\RobotoFont\RobotoCondensed-LightItalic.ttf"; DestDir: "{fonts}"; FontInstall: "Roboto Condensed Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: "MyProg-x64.exe"; DestDir: "{app}"; DestName: "MyProg.exe"; Check: Dependency_IsX64; Flags: ignoreversion
+Source: "MyProg.exe"; DestDir: "{app}"; Check: not Dependency_IsX64; Flags: ignoreversion
 
 [Icons]
-Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{#MyAppSetupName}"; Filename: "{app}\MyProg.exe"
+Name: "{group}\{cm:UninstallProgram,{#MyAppSetupName}}"; Filename: "{uninstallexe}"
+Name: "{commondesktop}\{#MyAppSetupName}"; Filename: "{app}\MyProg.exe"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
-[Registry]
-Root: HKCR; SubKey: ".ppen"; ValueType: string; ValueData: "Purple Pen Files"; Flags: uninsdeletekey
-Root: HKCR; SubKey: "Purple Pen Files"; ValueType: string; ValueData: "Purple Pen Event File"; Flags: uninsdeletekey
-Root: HKCR; SubKey: "Purple Pen Files\Shell\Open\Command"; ValueType: string; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
-Root: HKCR; Subkey: "Purple Pen Files\DefaultIcon"; ValueType: string; ValueData: "{app}\{#MyAppExeName},0"; Flags: uninsdeletevalue
-
-[CustomMessages]
-DependenciesDir=MyProgramDependencies
-WindowsServicePack=Windows %1 Service Pack %2
+Filename: "{app}\MyProg.exe"; Description: "{cm:LaunchProgram,{#MyAppSetupName}}"; Flags: nowait postinstall skipifsilent
 
 [Code]
-
-const
-  // This is a list of all the old InstallShield app ids that we should uninstall
-  // before installation.
-  OldAppIds = '{3B58B548-0ECD-4ADA-93F0-CD2391051E36},{429A824E-8BC4-4317-B1E1-6CB5C4D764EE},{E788526D-59B0-4CBC-BC5D-F064E7A01A7F},{95A47628-872C-4BF9-A108-4204113A6FC6},{FCD4408C-26FE-4C88-A008-95FCD5EC9079},' +
-              '{F8BF1EAA-844A-4B13-AD00-62400084CF0F},{64352D23-29F2-4AAC-A18D-0D8583BE91CC},{CFCECA27-0BEA-49B0-A0B1-269D33FED29A},{8E49D865-B9CB-46AB-BC89-CCEE165ED9DB},{7B807BE7-506F-404F-95CB-BDBB00535010},' +
-			  '{3A0A803D-20BC-4137-AD76-C242AEED29AC},{AAC50A38-6ED4-4702-89FF-E2B1FBE459F2},{02CC5ED8-227C-4533-AB89-14E8D0C0EF5B},{66C9FB5B-61B3-4B34-BB99-9F12BC9E89E0},{4326052A-5A34-4B9C-88CF-83FF56182B41},' +
-			  '{CC58D288-8B02-442B-97BC-538FD9E91350},{4FA6D9DF-9AAE-4107-9788-FE50B568F0E7},{5BDA646D-D28B-421D-AB9B-5A665B155857},{73B952E2-83A5-4EF3-B7C0-021F8434ED12},{BFA9EBB2-EFB5-4383-8048-1515FB21E3BF},' +
-			  '{2C5471C8-2725-40FF-8BA3-DA231E2E97E3},{79D33ADC-3851-43D0-8D32-C6C050DAEFD1},{DEEA0FF7-76F7-436A-9291-532CF60F1C71},{E5210D4C-7DDA-4129-B093-4E9FDC3CC5DA},{0A95E799-4F85-4D04-8CFE-C9F97BAA7CCF},' +
-			  '{0F25C741-8C36-4900-BB0B-808916F3950E},{E0C667D6-1959-4F4F-A96C-4D6F547E9102},{28A0421F-72A9-45ED-8B83-7B900BD4F825},{36FFCD63-8922-4DB6-92B1-6734268F6DA7},{74E3ACC5-8326-402C-B793-6B698DEF74F2},' +
-			  '{9C4992FA-DF21-488B-A6DD-48EC0EF94686},{77B1343B-A564-4F73-824B-FB60B7B3AD42},{9E76C620-36D2-4452-9AEA-F96BD598E794},{EFCB7AC9-09D9-43E2-9A97-76DE338A208C},{6B5026C8-36D4-4D80-BEFD-4836761BDD24}';
-
-
-
 function InitializeSetup: Boolean;
 begin
 #ifdef UseDotNet35
@@ -923,67 +804,4 @@ begin
   Result := True;
 end;
 
-/////////////////////////////////////////////////////////////////////
-function GetUninstallString(appId: String): String;
-var
-  sUnInstPath: String;
-  sUnInstallString: String;
-begin
-  sUnInstPath := 'Software\Microsoft\Windows\CurrentVersion\Uninstall\' + appId;
-  sUnInstallString := '';
-  if not RegQueryStringValue(HKLM, sUnInstPath, 'UninstallString', sUnInstallString) then
-    RegQueryStringValue(HKCU, sUnInstPath, 'UninstallString', sUnInstallString);
-  Result := sUnInstallString;
-end;
-
-
-/////////////////////////////////////////////////////////////////////
-function IsUpgrade(appId: String): Boolean;
-begin
-  Result := (GetUninstallString(appId) <> '');
-end;
-
-
-/////////////////////////////////////////////////////////////////////
-function UnInstallOldVersion(appId: String): Integer;
-var
-  sUnInstallString: String;
-  iResultCode: Integer;
-begin
-// Return Values:
-// 1 - uninstall string is empty
-// 2 - error executing the UnInstallString
-// 3 - successfully executed the UnInstallString
-
-  // default return value
-  Result := 0;
-
-  // get the uninstall string of the old app
-  sUnInstallString := GetUninstallString(appId);
-  if sUnInstallString <> '' then begin
-    sUnInstallString := RemoveQuotes(sUnInstallString);
-    if Exec('>', sUnInstallString + ' /qn','', SW_SHOW, ewWaitUntilTerminated, iResultCode) then
-      Result := 3
-    else
-      Result := 2;
-  end else
-    Result := 1;
-end;
-
-/////////////////////////////////////////////////////////////////////
-procedure CurStepChanged(CurStep: TSetupStep);
-var
-  i: Integer;
-  appIdList: TStringList;
-begin
-  if (CurStep=ssInstall) then
-  begin
-    appIdList := TStringList.Create;
-    appIdList.CommaText := OldAppIds;
-
-    for i := 0 to appIdList.Count - 1 do
-    begin
-        UnInstallOldVersion(appIdList[i]);
-    end;
-  end;
-end;
+#endif
