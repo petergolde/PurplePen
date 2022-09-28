@@ -52,6 +52,9 @@ namespace PurplePen
         [STAThread]
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             // Make sure that settings aren't corrupted, and fix them.
             try {
                 string uiLanguage = Settings.Default.UILanguage;
@@ -79,8 +82,6 @@ namespace PurplePen
                     Environment.Exit(0);
                 };
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
 
 
             InitUILanguage();
