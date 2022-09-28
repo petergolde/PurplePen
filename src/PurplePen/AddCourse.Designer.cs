@@ -206,6 +206,7 @@ namespace PurplePen
             // 
             // labelKindCombo
             // 
+            resources.ApplyResources(this.labelKindCombo, "labelKindCombo");
             this.labelKindCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.labelKindCombo.FormattingEnabled = true;
             this.labelKindCombo.Items.AddRange(new object[] {
@@ -215,7 +216,6 @@ namespace PurplePen
             resources.GetString("labelKindCombo.Items3"),
             resources.GetString("labelKindCombo.Items4"),
             resources.GetString("labelKindCombo.Items5")});
-            resources.ApplyResources(this.labelKindCombo, "labelKindCombo");
             this.labelKindCombo.Name = "labelKindCombo";
             this.labelKindCombo.SelectionChangeCommitted += new System.EventHandler(this.labelKindCombo_SelectionChangeCommitted);
             // 
@@ -226,6 +226,7 @@ namespace PurplePen
             // 
             // scoreColumnCombo
             // 
+            resources.ApplyResources(this.scoreColumnCombo, "scoreColumnCombo");
             this.scoreColumnCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.scoreColumnCombo.FormattingEnabled = true;
             this.scoreColumnCombo.Items.AddRange(new object[] {
@@ -233,7 +234,6 @@ namespace PurplePen
             resources.GetString("scoreColumnCombo.Items1"),
             resources.GetString("scoreColumnCombo.Items2"),
             resources.GetString("scoreColumnCombo.Items3")});
-            resources.ApplyResources(this.scoreColumnCombo, "scoreColumnCombo");
             this.scoreColumnCombo.Name = "scoreColumnCombo";
             this.scoreColumnCombo.SelectionChangeCommitted += new System.EventHandler(this.scoreColumnCombo_SelectionChangeCommitted);
             // 
