@@ -1084,7 +1084,7 @@ for the symbols.
     <name lang="ro">Mijloc</name>
     <text lang="ro">mijloc {0}</text>
     <name lang="sv">Mellersta</name>
-    <text lang="sv">mellertsa {0}</text>
+    <text lang="sv">mellersta {0}</text>
     <name lang="zh-HK">Middle</name>
     <text lang="zh-HK">中間的{0}</text>
     <filled-circle radius="20">
@@ -1163,7 +1163,7 @@ for the symbols.
     <text lang="ro">terasă</text>
     <name lang="sv">Terrass</name>
     <text lang="sv">terrassen</text>
-    <text lang="sv" plural="true">terrassor</text>
+    <text lang="sv" plural="true">terrasser</text>
     <name lang="zh-HK">Terrace</name>
     <text lang="zh-HK">台地</text>
     <beziers thickness="12.5">
@@ -1245,7 +1245,7 @@ for the symbols.
     <text lang="ro">pinten</text>
     <name lang="sv">Näsa</name>
     <text lang="sv">näsan</text>
-    <text lang="sv" plural="true">näsarna</text>
+    <text lang="sv" plural="true">näsorna</text>
     <name lang="zh-HK">Spur</name>
     <text lang="zh-HK">山咀</text>
     <beziers thickness="12.5">
@@ -2006,7 +2006,7 @@ for the symbols.
     <text lang="ro">șa</text>
     <name lang="sv">Sadel</name>
     <text lang="sv">sadeln</text>
-    <text lang="sv" plural="true">sadlena</text>
+    <text lang="sv" plural="true">sadlarna</text>
     <name lang="zh-HK">Saddle</name>
     <text lang="zh-HK">鞍部</text>
     <beziers thickness="12.5">
@@ -2464,7 +2464,7 @@ for the symbols.
     <text lang="ro">margine stâncoasă</text>
     <name lang="sv">Brant</name>
     <text lang="sv">branten</text>
-    <text lang="sv" plural="true">brantarna</text>
+    <text lang="sv" plural="true">branterna</text>
     <name lang="zh-HK">Cliff</name>
     <text lang="zh-HK">崖壁</text>
     <lines thickness="12.5">
@@ -3134,7 +3134,7 @@ for the symbols.
     <text lang="ro">pasaj îngust</text>
     <name lang="sv">Trång passage</name>
     <text lang="sv">trång passage</text>
-    <text lang="sv" plural="true">trångar passager</text>
+    <text lang="sv" plural="true">trånga passager</text>
     <name lang="zh-HK">Narrow passage</name>
     <text lang="zh-HK">崖間狹路</text>
     <lines thickness="12.5">
@@ -4454,7 +4454,7 @@ for the symbols.
     <text lang="ro">defrișare</text>
     <name lang="sv">Glänta</name>
     <text lang="sv">gläntan</text>
-    <text lang="sv" plural="true">gläntarna</text>
+    <text lang="sv" plural="true">gläntorna</text>
     <name lang="zh-HK">Clearing</name>
     <text lang="zh-HK">林中空曠地</text>
     <filled-circle radius="7.5">
@@ -4808,7 +4808,7 @@ for the symbols.
     <text lang="ro">crâng</text>
     <name lang="sv">Dunge</name>
     <text lang="sv">dunge</text>
-    <text lang="sv" plural="true">dunger</text>
+    <text lang="sv" plural="true">dungar</text>
     <name lang="zh-HK">Copse</name>
     <text lang="zh-HK">樹叢</text>
     <lines thickness="12.5">
@@ -5644,7 +5644,7 @@ for the symbols.
     <text lang="ro">gard</text>
     <name lang="sv">Stängsel</name>
     <text lang="sv">stängsel</text>
-    <text lang="sv" plural="true">stängslar</text>
+    <text lang="sv" plural="true">stängsel</text>
     <name lang="zh-HK">Fence</name>
     <text lang="zh-HK">圍欄</text>
     <lines thickness="12.5">
@@ -6455,7 +6455,7 @@ for the symbols.
     <text lang="ro">statuie</text>
     <name lang="sv">Monument/staty</name>
     <text lang="sv">monument/staty</text>
-    <text lang="sv" plural="true">statyar</text>
+    <text lang="sv" plural="true">statyer</text>
     <name lang="zh-HK">Monument or statue</name>
     <text lang="zh-HK">紀念碑或塑像</text>
     <lines thickness="12.5">
