@@ -52,6 +52,7 @@
             this.grid.AllowUserToResizeColumns = false;
             this.grid.AllowUserToResizeRows = false;
             resources.ApplyResources(this.grid, "grid");
+            this.grid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BranchColumn,
