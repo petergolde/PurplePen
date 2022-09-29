@@ -84,12 +84,14 @@ namespace PurplePen
             this.filesLabel = new System.Windows.Forms.Label();
             this.comboBoxFileFormat = new System.Windows.Forms.ComboBox();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.coursesGroupBox.SuspendLayout();
             this.groupBoxAppearance.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.folderGroupBox.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -110,6 +112,7 @@ namespace PurplePen
             // 
             // courseSelector
             // 
+            this.courseSelector.Filter = null;
             resources.ApplyResources(this.courseSelector, "courseSelector");
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
@@ -171,11 +174,7 @@ namespace PurplePen
             // 
             // folderGroupBox
             // 
-            this.folderGroupBox.Controls.Add(this.otherDirectoryTextBox);
-            this.folderGroupBox.Controls.Add(this.selectOtherDirectoryButton);
-            this.folderGroupBox.Controls.Add(this.otherDirectory);
-            this.folderGroupBox.Controls.Add(this.mapDirectory);
-            this.folderGroupBox.Controls.Add(this.coursesDirectory);
+            this.folderGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.folderGroupBox, "folderGroupBox");
             this.folderGroupBox.Name = "folderGroupBox";
             this.folderGroupBox.TabStop = false;
@@ -249,6 +248,7 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.comboBoxFileFormat, "comboBoxFileFormat");
             this.comboBoxFileFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFileFormat.DropDownWidth = 280;
             this.comboBoxFileFormat.FormattingEnabled = true;
             this.comboBoxFileFormat.Items.AddRange(new object[] {
             resources.GetString("comboBoxFileFormat.Items"),
@@ -259,6 +259,16 @@ namespace PurplePen
             // folderBrowserDialog
             // 
             resources.ApplyResources(this.folderBrowserDialog, "folderBrowserDialog");
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.selectOtherDirectoryButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.coursesDirectory, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.otherDirectoryTextBox, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.mapDirectory, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.otherDirectory, 0, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // CreatePdfCourses
             // 
@@ -281,10 +291,11 @@ namespace PurplePen
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.folderGroupBox.ResumeLayout(false);
-            this.folderGroupBox.PerformLayout();
             this.outputGroupBox.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,5 +323,6 @@ namespace PurplePen
         private System.Windows.Forms.Label filesLabel;
         private System.Windows.Forms.ComboBox comboBoxFileFormat;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
