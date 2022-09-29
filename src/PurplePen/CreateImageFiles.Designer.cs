@@ -80,12 +80,12 @@ namespace PurplePen
             this.labelColorModel = new System.Windows.Forms.Label();
             this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
             this.folderGroupBox = new System.Windows.Forms.GroupBox();
-            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
-            this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
-            this.otherDirectory = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
             this.coursesDirectory = new System.Windows.Forms.RadioButton();
             this.mapDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
             this.coursesGroupBox.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -232,27 +232,6 @@ namespace PurplePen
             this.folderGroupBox.Name = "folderGroupBox";
             this.folderGroupBox.TabStop = false;
             // 
-            // otherDirectoryTextBox
-            // 
-            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
-            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
-            this.otherDirectoryTextBox.TextChanged += new System.EventHandler(this.otherDirectoryTextBox_TextChanged);
-            // 
-            // selectOtherDirectoryButton
-            // 
-            resources.ApplyResources(this.selectOtherDirectoryButton, "selectOtherDirectoryButton");
-            this.selectOtherDirectoryButton.Name = "selectOtherDirectoryButton";
-            this.selectOtherDirectoryButton.UseVisualStyleBackColor = true;
-            this.selectOtherDirectoryButton.Click += new System.EventHandler(this.selectOtherDirectoryButton_Click);
-            // 
-            // otherDirectory
-            // 
-            resources.ApplyResources(this.otherDirectory, "otherDirectory");
-            this.otherDirectory.Name = "otherDirectory";
-            this.otherDirectory.TabStop = true;
-            this.otherDirectory.UseVisualStyleBackColor = true;
-            this.otherDirectory.CheckedChanged += new System.EventHandler(this.otherDirectory_CheckedChanged);
-            // 
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
@@ -262,6 +241,13 @@ namespace PurplePen
             this.tableLayoutPanel2.Controls.Add(this.otherDirectory, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.otherDirectoryTextBox, 0, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // selectOtherDirectoryButton
+            // 
+            resources.ApplyResources(this.selectOtherDirectoryButton, "selectOtherDirectoryButton");
+            this.selectOtherDirectoryButton.Name = "selectOtherDirectoryButton";
+            this.selectOtherDirectoryButton.UseVisualStyleBackColor = true;
+            this.selectOtherDirectoryButton.Click += new System.EventHandler(this.selectOtherDirectoryButton_Click);
             // 
             // coursesDirectory
             // 
@@ -276,6 +262,20 @@ namespace PurplePen
             this.mapDirectory.Name = "mapDirectory";
             this.mapDirectory.TabStop = true;
             this.mapDirectory.UseVisualStyleBackColor = true;
+            // 
+            // otherDirectory
+            // 
+            resources.ApplyResources(this.otherDirectory, "otherDirectory");
+            this.otherDirectory.Name = "otherDirectory";
+            this.otherDirectory.TabStop = true;
+            this.otherDirectory.UseVisualStyleBackColor = true;
+            this.otherDirectory.CheckedChanged += new System.EventHandler(this.otherDirectory_CheckedChanged);
+            // 
+            // otherDirectoryTextBox
+            // 
+            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
+            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
+            this.otherDirectoryTextBox.TextChanged += new System.EventHandler(this.otherDirectoryTextBox_TextChanged);
             // 
             // CreateImageFiles
             // 
