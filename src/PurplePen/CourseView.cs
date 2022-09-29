@@ -1087,7 +1087,7 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            return CodeString.GetHashCode() + Path.GetHashCode() * 7;
+            return CodeString.GetHashCode() + ((Path != null) ? (Path.GetHashCode() * 7) : 44981);
         }
 
 

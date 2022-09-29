@@ -29,10 +29,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoursePartBanner));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.variationsComboBox = new System.Windows.Forms.ComboBox();
             this.variationsLabel = new System.Windows.Forms.Label();
             this.partComboBox = new System.Windows.Forms.ComboBox();
             this.buttonProperties = new System.Windows.Forms.Button();
-            this.variationsComboBox = new System.Windows.Forms.ComboBox();
             this.coursePartLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +48,14 @@
             this.tableLayoutPanel1.Controls.Add(this.coursePartLabel, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
+            // variationsComboBox
+            // 
+            resources.ApplyResources(this.variationsComboBox, "variationsComboBox");
+            this.variationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.variationsComboBox.FormattingEnabled = true;
+            this.variationsComboBox.Name = "variationsComboBox";
+            this.variationsComboBox.SelectedIndexChanged += new System.EventHandler(this.variationsComboBox_SelectedIndexChanged);
+            // 
             // variationsLabel
             // 
             resources.ApplyResources(this.variationsLabel, "variationsLabel");
@@ -55,9 +63,9 @@
             // 
             // partComboBox
             // 
+            resources.ApplyResources(this.partComboBox, "partComboBox");
             this.partComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.partComboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.partComboBox, "partComboBox");
             this.partComboBox.Name = "partComboBox";
             this.partComboBox.SelectedIndexChanged += new System.EventHandler(this.partComboBox_SelectedIndexChanged);
             // 
@@ -67,14 +75,6 @@
             this.buttonProperties.Name = "buttonProperties";
             this.buttonProperties.UseVisualStyleBackColor = true;
             this.buttonProperties.Click += new System.EventHandler(this.buttonProperties_Click);
-            // 
-            // variationsComboBox
-            // 
-            this.variationsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.variationsComboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.variationsComboBox, "variationsComboBox");
-            this.variationsComboBox.Name = "variationsComboBox";
-            this.variationsComboBox.SelectedIndexChanged += new System.EventHandler(this.variationsComboBox_SelectedIndexChanged);
             // 
             // coursePartLabel
             // 
