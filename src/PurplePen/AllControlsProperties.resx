@@ -295,7 +295,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 29</value>
+    <value>171, 29</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -313,7 +313,7 @@
     <value>2</value>
   </data>
   <data name="descKindCombo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+    <value>Top, Left, Right</value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symbols</value>
@@ -328,7 +328,7 @@
     <value>143, 32</value>
   </data>
   <data name="descKindCombo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 23</value>
+    <value>165, 23</value>
   </data>
   <data name="descKindCombo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -345,14 +345,17 @@
   <data name="&gt;&gt;descKindCombo.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="tableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 24</value>
+    <value>3, 19</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 59</value>
+    <value>311, 58</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -439,6 +442,6 @@
     <value>AllControlsProperties</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
