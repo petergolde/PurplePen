@@ -66,7 +66,7 @@ namespace PurplePen
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Load = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseLoadLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize) (this.grid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
             // 
             // okButton
@@ -84,6 +84,7 @@ namespace PurplePen
             this.grid.AllowUserToResizeColumns = false;
             this.grid.AllowUserToResizeRows = false;
             resources.ApplyResources(this.grid, "grid");
+            this.grid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CourseName,
@@ -136,7 +137,7 @@ namespace PurplePen
             this.Controls.SetChildIndex(this.courseLoadLabel, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.cancelButton, 0);
-            ((System.ComponentModel.ISupportInitialize) (this.grid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             this.ResumeLayout(false);
 
         }
