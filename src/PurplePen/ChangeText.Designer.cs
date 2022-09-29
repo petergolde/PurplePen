@@ -40,6 +40,8 @@
             this.printScaleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relayTeamMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relayLegMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileNameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mapFileNameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usageLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,10 +59,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.insertSpecialButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxMain = new System.Windows.Forms.TextBox();
-            this.fileNameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mapFileNameMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertSpecialButton = new System.Windows.Forms.Button();
             this.specialTextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,6 +69,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -156,6 +158,18 @@
             this.relayLegMenuItem.Name = "relayLegMenuItem";
             resources.ApplyResources(this.relayLegMenuItem, "relayLegMenuItem");
             this.relayLegMenuItem.Click += new System.EventHandler(this.relayLegMenuItem_Click);
+            // 
+            // fileNameMenuItem
+            // 
+            this.fileNameMenuItem.Name = "fileNameMenuItem";
+            resources.ApplyResources(this.fileNameMenuItem, "fileNameMenuItem");
+            this.fileNameMenuItem.Click += new System.EventHandler(this.fileNameMenuItem_Click);
+            // 
+            // mapFileNameMenuItem
+            // 
+            this.mapFileNameMenuItem.Name = "mapFileNameMenuItem";
+            resources.ApplyResources(this.mapFileNameMenuItem, "mapFileNameMenuItem");
+            this.mapFileNameMenuItem.Click += new System.EventHandler(this.mapFileNameMenuItem_Click);
             // 
             // usageLabel
             // 
@@ -289,11 +303,23 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.insertSpecialButton);
-            this.groupBox3.Controls.Add(this.textBoxMain);
+            this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.insertSpecialButton, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxMain, 0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // textBoxMain
+            // 
+            resources.ApplyResources(this.textBoxMain, "textBoxMain");
+            this.textBoxMain.Name = "textBoxMain";
+            this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
             // insertSpecialButton
             // 
@@ -302,24 +328,6 @@
             this.insertSpecialButton.Name = "insertSpecialButton";
             this.insertSpecialButton.UseVisualStyleBackColor = true;
             this.insertSpecialButton.Click += new System.EventHandler(this.insertSpecialButton_Click);
-            // 
-            // textBoxMain
-            // 
-            resources.ApplyResources(this.textBoxMain, "textBoxMain");
-            this.textBoxMain.Name = "textBoxMain";
-            this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
-            // 
-            // fileNameMenuItem
-            // 
-            this.fileNameMenuItem.Name = "fileNameMenuItem";
-            resources.ApplyResources(this.fileNameMenuItem, "fileNameMenuItem");
-            this.fileNameMenuItem.Click += new System.EventHandler(this.fileNameMenuItem_Click);
-            // 
-            // mapFileNameMenuItem
-            // 
-            this.mapFileNameMenuItem.Name = "mapFileNameMenuItem";
-            resources.ApplyResources(this.mapFileNameMenuItem, "mapFileNameMenuItem");
-            this.mapFileNameMenuItem.Click += new System.EventHandler(this.mapFileNameMenuItem_Click);
             // 
             // ChangeText
             // 
@@ -344,7 +352,8 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,8 +381,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxFonts;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button insertSpecialButton;
-        private System.Windows.Forms.TextBox textBoxMain;
         private System.Windows.Forms.ToolStripMenuItem variationMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relayTeamMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relayLegMenuItem;
@@ -383,5 +390,8 @@
         private System.Windows.Forms.CheckBox checkBoxAutoFontSize;
         private System.Windows.Forms.ToolStripMenuItem fileNameMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapFileNameMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button insertSpecialButton;
+        private System.Windows.Forms.TextBox textBoxMain;
     }
 }
