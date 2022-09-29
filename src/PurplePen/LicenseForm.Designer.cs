@@ -100,7 +100,6 @@ namespace PurplePen
             this.Name = "LicenseForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
