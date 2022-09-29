@@ -201,5 +201,15 @@ namespace PurplePen
             otherDirectoryTextBox.Visible = otherDirectory.Checked;
             selectOtherDirectoryButton.Visible = otherDirectory.Checked;
         }
+
+        private void outputGroupBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void otherDirectoryTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

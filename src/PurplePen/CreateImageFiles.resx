@@ -117,26 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="courseSelector.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 24</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="courseSelector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="courseSelector.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 280</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="courseSelector.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;courseSelector.Name" xml:space="preserve">
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=3.1.5.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -144,12 +129,14 @@
   <data name="&gt;&gt;courseSelector.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="coursesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 12</value>
   </data>
   <data name="coursesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 324</value>
+    <value>246, 331</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="coursesGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -168,6 +155,31 @@
   <data name="&gt;&gt;coursesGroupBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="courseSelector.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 24</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="courseSelector.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="courseSelector.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 300</value>
+  </data>
+  <data name="courseSelector.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;courseSelector.Name" xml:space="preserve">
+    <value>courseSelector</value>
+  </data>
+  <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
+    <value>coursesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;courseSelector.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="createButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -175,7 +187,7 @@
     <value>True</value>
   </data>
   <data name="createButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 352</value>
+    <value>300, 352</value>
   </data>
   <data name="createButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -205,7 +217,7 @@
     <value>True</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>409, 352</value>
+    <value>407, 352</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
@@ -234,17 +246,206 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Select a folder for the OCAD files</value>
   </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>outputGroupBox</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="filenamePrefixTextBox" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="fileFormatLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="fileFormatCombo" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="fileNamePrefixLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxDpi" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="dpiLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxWorldFile" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelColorModel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxColorModel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,20,Percent,20,Percent,20,Percent,20,Percent,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="outputGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 12</value>
+  </data>
+  <data name="outputGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 170</value>
+  </data>
+  <data name="outputGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="&gt;&gt;outputGroupBox.Name" xml:space="preserve">
+    <value>outputGroupBox</value>
+  </data>
+  <data name="&gt;&gt;outputGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;outputGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;outputGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;filenamePrefixTextBox.Name" xml:space="preserve">
+    <value>filenamePrefixTextBox</value>
+  </data>
+  <data name="&gt;&gt;filenamePrefixTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filenamePrefixTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;filenamePrefixTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;fileFormatLabel.Name" xml:space="preserve">
+    <value>fileFormatLabel</value>
+  </data>
+  <data name="&gt;&gt;fileFormatLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileFormatLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;fileFormatLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;fileFormatCombo.Name" xml:space="preserve">
+    <value>fileFormatCombo</value>
+  </data>
+  <data name="&gt;&gt;fileFormatCombo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileFormatCombo.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;fileFormatCombo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fileNamePrefixLabel.Name" xml:space="preserve">
+    <value>fileNamePrefixLabel</value>
+  </data>
+  <data name="&gt;&gt;fileNamePrefixLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileNamePrefixLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;fileNamePrefixLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDpi.Name" xml:space="preserve">
+    <value>comboBoxDpi</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDpi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDpi.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxDpi.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;dpiLabel.Name" xml:space="preserve">
+    <value>dpiLabel</value>
+  </data>
+  <data name="&gt;&gt;dpiLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dpiLabel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;dpiLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;comboBoxWorldFile.Name" xml:space="preserve">
+    <value>comboBoxWorldFile</value>
+  </data>
+  <data name="&gt;&gt;comboBoxWorldFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxWorldFile.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxWorldFile.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;labelColorModel.Name" xml:space="preserve">
+    <value>labelColorModel</value>
+  </data>
+  <data name="&gt;&gt;labelColorModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelColorModel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labelColorModel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Name" xml:space="preserve">
+    <value>comboBoxColorModel</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;comboBoxColorModel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 142</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>outputGroupBox</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="filenamePrefixTextBox" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="fileFormatLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="fileFormatCombo" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="fileNamePrefixLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxDpi" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="dpiLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxWorldFile" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelColorModel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxColorModel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,20,Percent,20,Percent,20,Percent,20,Percent,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="filenamePrefixTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
   <data name="filenamePrefixTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 111</value>
+    <value>103, 115</value>
   </data>
   <data name="filenamePrefixTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 20</value>
+    <value>121, 23</value>
   </data>
   <data name="filenamePrefixTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -271,10 +472,10 @@
     <value>NoControl</value>
   </data>
   <data name="fileFormatLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 7</value>
+    <value>3, 6</value>
   </data>
   <data name="fileFormatLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>67, 15</value>
   </data>
   <data name="fileFormatLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -307,10 +508,10 @@
     <value>GIF</value>
   </data>
   <data name="fileFormatCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 3</value>
+    <value>103, 3</value>
   </data>
   <data name="fileFormatCombo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
+    <value>121, 23</value>
   </data>
   <data name="fileFormatCombo.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -337,10 +538,10 @@
     <value>NoControl</value>
   </data>
   <data name="fileNamePrefixLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 114</value>
+    <value>3, 119</value>
   </data>
   <data name="fileNamePrefixLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 13</value>
+    <value>94, 15</value>
   </data>
   <data name="fileNamePrefixLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -367,10 +568,10 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 88</value>
+    <value>3, 90</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+    <value>61, 15</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -415,10 +616,10 @@
     <value>600</value>
   </data>
   <data name="comboBoxDpi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 30</value>
+    <value>103, 31</value>
   </data>
   <data name="comboBoxDpi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
+    <value>121, 23</value>
   </data>
   <data name="comboBoxDpi.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -445,7 +646,7 @@
     <value>3, 34</value>
   </data>
   <data name="dpiLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
+    <value>28, 15</value>
   </data>
   <data name="dpiLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -475,10 +676,10 @@
     <value>Yes</value>
   </data>
   <data name="comboBoxWorldFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 84</value>
+    <value>103, 87</value>
   </data>
   <data name="comboBoxWorldFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
+    <value>121, 23</value>
   </data>
   <data name="comboBoxWorldFile.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -502,10 +703,10 @@
     <value>True</value>
   </data>
   <data name="labelColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 61</value>
+    <value>3, 62</value>
   </data>
   <data name="labelColorModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>76, 15</value>
   </data>
   <data name="labelColorModel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -535,10 +736,10 @@
     <value>CMYK</value>
   </data>
   <data name="comboBoxColorModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 57</value>
+    <value>103, 59</value>
   </data>
   <data name="comboBoxColorModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 21</value>
+    <value>121, 23</value>
   </data>
   <data name="comboBoxColorModel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -555,203 +756,26 @@
   <data name="&gt;&gt;comboBoxColorModel.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 134</value>
-  </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
-    <value>outputGroupBox</value>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>folderGroupBox</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="filenamePrefixTextBox" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="fileFormatLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="fileFormatCombo" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="fileNamePrefixLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxDpi" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="dpiLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxWorldFile" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelColorModel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="comboBoxColorModel" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="outputGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 12</value>
-  </data>
-  <data name="outputGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 170</value>
-  </data>
-  <data name="outputGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Output</value>
-  </data>
-  <data name="&gt;&gt;outputGroupBox.Name" xml:space="preserve">
-    <value>outputGroupBox</value>
-  </data>
-  <data name="&gt;&gt;outputGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;outputGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;outputGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="otherDirectoryTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 90</value>
-  </data>
-  <data name="otherDirectoryTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 20</value>
-  </data>
-  <data name="otherDirectoryTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="otherDirectoryTextBox.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.Name" xml:space="preserve">
-    <value>otherDirectoryTextBox</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;otherDirectoryTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="selectOtherDirectoryButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="selectOtherDirectoryButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowAndShrink</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 119</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 23</value>
-  </data>
-  <data name="selectOtherDirectoryButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
-    <value>Select folder...</value>
-  </data>
-  <data name="selectOtherDirectoryButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.Name" xml:space="preserve">
-    <value>selectOtherDirectoryButton</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;selectOtherDirectoryButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="otherDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="otherDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 66</value>
-  </data>
-  <data name="otherDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 17</value>
-  </data>
-  <data name="otherDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Other folder</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.Name" xml:space="preserve">
-    <value>otherDirectory</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;otherDirectory.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="mapDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="mapDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 42</value>
-  </data>
-  <data name="mapDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
-  </data>
-  <data name="mapDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Same folder as map file</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.Name" xml:space="preserve">
-    <value>mapDirectory</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;mapDirectory.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="coursesDirectory.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="coursesDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 18</value>
-  </data>
-  <data name="coursesDirectory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
-  </data>
-  <data name="coursesDirectory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Same folder as Purple Pen file</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.Name" xml:space="preserve">
-    <value>coursesDirectory</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.Parent" xml:space="preserve">
-    <value>folderGroupBox</value>
-  </data>
-  <data name="&gt;&gt;coursesDirectory.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="selectOtherDirectoryButton" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="coursesDirectory" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="mapDirectory" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="otherDirectory" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="otherDirectoryTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,20.0008,Percent,20.0008,Percent,20.0008,Percent,19.9988,Percent,19.9988" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="folderGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>266, 188</value>
   </data>
   <data name="folderGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 148</value>
+    <value>240, 155</value>
   </data>
   <data name="folderGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -771,6 +795,255 @@
   <data name="&gt;&gt;folderGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="otherDirectoryTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="otherDirectoryTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 81</value>
+  </data>
+  <data name="otherDirectoryTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 23</value>
+  </data>
+  <data name="otherDirectoryTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="otherDirectoryTextBox.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.Name" xml:space="preserve">
+    <value>otherDirectoryTextBox</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="selectOtherDirectoryButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="selectOtherDirectoryButton.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
+  <data name="selectOtherDirectoryButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>140, 107</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
+  </data>
+  <data name="selectOtherDirectoryButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Select folder...</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.Name" xml:space="preserve">
+    <value>selectOtherDirectoryButton</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="otherDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="otherDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="otherDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 55</value>
+  </data>
+  <data name="otherDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 19</value>
+  </data>
+  <data name="otherDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Other folder</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.Name" xml:space="preserve">
+    <value>otherDirectory</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.Name" xml:space="preserve">
+    <value>selectOtherDirectoryButton</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;selectOtherDirectoryButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.Name" xml:space="preserve">
+    <value>coursesDirectory</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.Name" xml:space="preserve">
+    <value>mapDirectory</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.Name" xml:space="preserve">
+    <value>otherDirectory</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;otherDirectory.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.Name" xml:space="preserve">
+    <value>otherDirectoryTextBox</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;otherDirectoryTextBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 19</value>
+  </data>
+  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 133</value>
+  </data>
+  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>folderGroupBox</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="selectOtherDirectoryButton" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="coursesDirectory" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="mapDirectory" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="otherDirectory" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="otherDirectoryTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,20.0008,Percent,20.0008,Percent,20.0008,Percent,19.9988,Percent,19.9988" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="coursesDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="coursesDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="coursesDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="coursesDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 19</value>
+  </data>
+  <data name="coursesDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Same folder as Purple Pen file</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.Name" xml:space="preserve">
+    <value>coursesDirectory</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;coursesDirectory.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="mapDirectory.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mapDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="mapDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="mapDirectory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 19</value>
+  </data>
+  <data name="mapDirectory.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Same folder as map file</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.Name" xml:space="preserve">
+    <value>mapDirectory</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;mapDirectory.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -778,10 +1051,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>527, 391</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+    <value>525, 391</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Create Image Files</value>
@@ -796,6 +1066,6 @@
     <value>CreateImageFiles</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=3.1.5.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
