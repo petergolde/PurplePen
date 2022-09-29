@@ -414,7 +414,8 @@ namespace PurplePen
 
         private void CustomSymbolText_Load(object sender, EventArgs e)
         {
-            listBoxSymbols.Height = this.ClientSize.Height - listBoxSymbols.Top - 25;
+            listBoxSymbols.ItemHeight = LogicalToDeviceUnits(24);
+            listBoxSymbols.Height = this.ClientSize.Height - listBoxSymbols.Top - LogicalToDeviceUnits(25);
         }
     }
 }

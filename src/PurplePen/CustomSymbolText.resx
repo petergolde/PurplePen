@@ -187,7 +187,7 @@
     <value>15, 9</value>
   </data>
   <data name="labelChooseLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 15</value>
+    <value>315, 15</value>
   </data>
   <data name="labelChooseLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -283,7 +283,7 @@
     <value>233, 141</value>
   </data>
   <data name="labelCustomizedText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 15</value>
+    <value>96, 15</value>
   </data>
   <data name="labelCustomizedText.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -403,7 +403,7 @@
     <value>233, 141</value>
   </data>
   <data name="labelStandardText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 15</value>
+    <value>80, 15</value>
   </data>
   <data name="labelStandardText.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -510,14 +510,11 @@
   <data name="&gt;&gt;labelCustomizeText.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="checkBoxDefaultLanguage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="checkBoxDefaultLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="checkBoxDefaultLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 59</value>
+    <value>49, 59</value>
   </data>
   <data name="checkBoxDefaultLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 19</value>
@@ -556,6 +553,6 @@
     <value>CustomSymbolText</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
