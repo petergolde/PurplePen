@@ -168,14 +168,17 @@
   <data name="printerChange.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="printerChange.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="printerChange.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="printerChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 3</value>
+    <value>384, 3</value>
   </data>
   <data name="printerChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 25</value>
+    <value>105, 25</value>
   </data>
   <data name="printerChange.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -358,7 +361,7 @@
     <value>courseSelector</value>
   </data>
   <data name="&gt;&gt;courseSelector.Type" xml:space="preserve">
-    <value>PurplePen.CourseSelector, PurplePen, Version=3.1.6.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CourseSelector, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;courseSelector.Parent" xml:space="preserve">
     <value>coursesGroupBox</value>
@@ -763,6 +766,6 @@
     <value>PrintCourses</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.1.6.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
