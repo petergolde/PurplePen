@@ -352,6 +352,6 @@ To fix this problem, find and install the fonts listed below with the Windows co
     <value>MissingFonts</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

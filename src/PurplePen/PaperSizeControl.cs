@@ -185,6 +185,14 @@ namespace PurplePen
 
         private void PaperSizeControl_Loaded(object sender, EventArgs e)
         {
+            Bitmap bitmap = (Bitmap)checkBoxPortrait.Image;
+            ScaleBitmapLogicalToDevice(ref bitmap);
+            checkBoxPortrait.Image = bitmap;
+
+            bitmap = (Bitmap) checkBoxLandscape.Image;
+            ScaleBitmapLogicalToDevice(ref bitmap);
+            checkBoxLandscape.Image = bitmap;
+
             UpdateDialog();
         }
 
