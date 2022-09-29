@@ -74,15 +74,17 @@ namespace PurplePen
             this.filesLabel = new System.Windows.Forms.Label();
             this.filesCombo = new System.Windows.Forms.ComboBox();
             this.folderGroupBox = new System.Windows.Forms.GroupBox();
-            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
             this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
             this.otherDirectory = new System.Windows.Forms.RadioButton();
             this.mapDirectory = new System.Windows.Forms.RadioButton();
             this.coursesDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.coursesGroupBox.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.folderGroupBox.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // coursesGroupBox
@@ -162,19 +164,10 @@ namespace PurplePen
             // 
             // folderGroupBox
             // 
-            this.folderGroupBox.Controls.Add(this.otherDirectoryTextBox);
-            this.folderGroupBox.Controls.Add(this.selectOtherDirectoryButton);
-            this.folderGroupBox.Controls.Add(this.otherDirectory);
-            this.folderGroupBox.Controls.Add(this.mapDirectory);
-            this.folderGroupBox.Controls.Add(this.coursesDirectory);
+            this.folderGroupBox.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.folderGroupBox, "folderGroupBox");
             this.folderGroupBox.Name = "folderGroupBox";
             this.folderGroupBox.TabStop = false;
-            // 
-            // otherDirectoryTextBox
-            // 
-            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
-            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
             // 
             // selectOtherDirectoryButton
             // 
@@ -205,6 +198,21 @@ namespace PurplePen
             this.coursesDirectory.TabStop = true;
             this.coursesDirectory.UseVisualStyleBackColor = true;
             // 
+            // otherDirectoryTextBox
+            // 
+            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
+            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.selectOtherDirectoryButton, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.coursesDirectory, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.otherDirectoryTextBox, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.mapDirectory, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.otherDirectory, 0, 2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
             // CreateKmlFiles
             // 
             this.AcceptButton = this.createButton;
@@ -223,7 +231,8 @@ namespace PurplePen
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.folderGroupBox.ResumeLayout(false);
-            this.folderGroupBox.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,15 +247,16 @@ namespace PurplePen
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.GroupBox outputGroupBox;
         private System.Windows.Forms.GroupBox folderGroupBox;
-        private System.Windows.Forms.RadioButton otherDirectory;
-        private System.Windows.Forms.RadioButton mapDirectory;
-        private System.Windows.Forms.RadioButton coursesDirectory;
         private System.Windows.Forms.Button selectOtherDirectoryButton;
-        private System.Windows.Forms.TextBox otherDirectoryTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label fileNamePrefixLabel;
         private System.Windows.Forms.TextBox filenamePrefixTextBox;
         private System.Windows.Forms.Label filesLabel;
         private System.Windows.Forms.ComboBox filesCombo;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.RadioButton coursesDirectory;
+        private System.Windows.Forms.TextBox otherDirectoryTextBox;
+        private System.Windows.Forms.RadioButton mapDirectory;
+        private System.Windows.Forms.RadioButton otherDirectory;
     }
 }
