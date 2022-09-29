@@ -1207,6 +1207,16 @@ namespace PurplePen
             return success;
         }
 
+        private Size GetPrintPreviewSize()
+        {
+            // We really wanted DeviceUnits to LogicalUnits, so we have to go about it in a roundabout way.
+            Size scaledSize = ui.Size;
+            int scaled1000 = ui.LogicalToDeviceUnits(1000);
+
+            // Size is 0.8 times size of main window.
+            return new Size((int) (scaledSize.Width * 0.8 * 1000 / scaled1000), (int) (scaledSize.Height * 0.8 * 1000 / scaled1000));
+        }
+
         // Print or print preview the descriptions. Returns success or failure; any errors are already reported to the user.
         public bool PrintDescriptions(DescriptionPrintSettings descriptionPrintSettings, bool preview)
         {
@@ -1214,7 +1224,7 @@ namespace PurplePen
                 delegate {
                     DescriptionPrinting descriptionPrinter = new DescriptionPrinting(eventDB, symbolDB, this, descriptionPrintSettings);
                     if (preview)
-                        descriptionPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
+                        descriptionPrinter.PrintPreview(GetPrintPreviewSize());
                     else
                         descriptionPrinter.Print();
                 },
@@ -1243,7 +1253,7 @@ namespace PurplePen
                 delegate {
                     PunchPrinting punchPrinter = new PunchPrinting(eventDB, this, punchPrintSettings);
                     if (preview)
-                        punchPrinter.PrintPreview(new Size((int) (ui.Size.Width * 0.8), (int) (ui.Size.Height * 0.8)));
+                        punchPrinter.PrintPreview(GetPrintPreviewSize());
                     else
                         punchPrinter.Print();
                 },
@@ -1287,7 +1297,7 @@ namespace PurplePen
                 delegate {
                     CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePrintSettings, GetCourseAppearance());
                     if (preview)
-                        coursePrinter.PrintPreview(new Size((int)(ui.Size.Width * 0.8), (int)(ui.Size.Height * 0.8)));
+                        coursePrinter.PrintPreview(GetPrintPreviewSize());
 #if XPS_PRINTING
                     else if (coursePrintSettings.UseXpsPrinting && MapType == MapType.OCAD)
                         coursePrinter.PrintUsingXps(true);
@@ -4231,6 +4241,7 @@ namespace PurplePen
         string GetOpenFileName();
 
         Size Size { get; }             // Get the size of the main UI
+        int LogicalToDeviceUnits(int value);
 
         // Different kinds of message box like messages
         void ErrorMessage(string message);

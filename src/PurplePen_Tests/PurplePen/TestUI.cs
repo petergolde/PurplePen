@@ -106,6 +106,11 @@ namespace PurplePen.Tests
             }
         }
 
+        public int LogicalToDeviceUnits(int value)
+        {
+            return value;
+        }
+
         public string GetOpenFileName()
         {
             return returnOpenFileName;
