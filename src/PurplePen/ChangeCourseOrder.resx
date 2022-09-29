@@ -219,11 +219,8 @@
   <data name="courseOrderLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 10</value>
   </data>
-  <data name="courseOrderLabel.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 120</value>
-  </data>
   <data name="courseOrderLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 45</value>
+    <value>294, 45</value>
   </data>
   <data name="courseOrderLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -358,6 +355,6 @@
     <value>ChangeCourseOrder</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=2.3.0.110, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
