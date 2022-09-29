@@ -79,9 +79,11 @@ namespace PurplePen
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxIofXml = new System.Windows.Forms.ComboBox();
             this.labelIofXml = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.folderGroupBox.SuspendLayout();
             this.nameGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // createButton
@@ -104,11 +106,7 @@ namespace PurplePen
             // 
             // folderGroupBox
             // 
-            this.folderGroupBox.Controls.Add(this.otherDirectoryTextBox);
-            this.folderGroupBox.Controls.Add(this.selectOtherDirectoryButton);
-            this.folderGroupBox.Controls.Add(this.otherDirectory);
-            this.folderGroupBox.Controls.Add(this.mapDirectory);
-            this.folderGroupBox.Controls.Add(this.coursesDirectory);
+            this.folderGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.folderGroupBox, "folderGroupBox");
             this.folderGroupBox.Name = "folderGroupBox";
             this.folderGroupBox.TabStop = false;
@@ -200,6 +198,16 @@ namespace PurplePen
             resources.ApplyResources(this.labelIofXml, "labelIofXml");
             this.labelIofXml.Name = "labelIofXml";
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.selectOtherDirectoryButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.coursesDirectory, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.otherDirectoryTextBox, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.mapDirectory, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.otherDirectory, 0, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
             // CreateRouteGadgetFiles
             // 
             this.AcceptButton = this.createButton;
@@ -216,11 +224,12 @@ namespace PurplePen
             this.HelpTopic = "FileCreateRouteGadget.htm";
             this.Name = "CreateRouteGadgetFiles";
             this.folderGroupBox.ResumeLayout(false);
-            this.folderGroupBox.PerformLayout();
             this.nameGroupBox.ResumeLayout(false);
             this.nameGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +254,6 @@ namespace PurplePen
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxIofXml;
         private System.Windows.Forms.Label labelIofXml;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
