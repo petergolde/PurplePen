@@ -2065,6 +2065,7 @@ namespace PurplePen
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFrame_FormClosed);
             this.Load += new System.EventHandler(this.MainFrame_Load);
             this.Shown += new System.EventHandler(this.MainFrame_Shown);
+            this.DpiChanged += new System.Windows.Forms.DpiChangedEventHandler(this.MainFrame_DpiChanged);
             this.courseTabs.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);

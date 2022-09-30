@@ -2977,11 +2977,22 @@ namespace PurplePen
             new DotGridTester().ShowDialog(this);
         }
 
-        private void MainFrame_Load(object sender, EventArgs e)
+        // Update the size of controls based on the DPI.
+        private void UpdateControlsForDpi()
         {
             locationDisplay.Width = LogicalToDeviceUnits(120);
             splitContainer.SplitterDistance = LogicalToDeviceUnits(256);
             splitDescription.SplitterDistance = splitDescription.Height - LogicalToDeviceUnits(150);
+        }
+
+        private void MainFrame_Load(object sender, EventArgs e)
+        {
+            UpdateControlsForDpi();
+        }
+
+        private void MainFrame_DpiChanged(object sender, DpiChangedEventArgs e)
+        {
+            UpdateControlsForDpi();
         }
 
         private void zoomAmountLabel_Click(object sender, EventArgs e)
@@ -3238,6 +3249,7 @@ namespace PurplePen
         {
             controller.ChangeMapStandard("2017");
         }
+
         private void mapStdSpr2019Menu_Click(object sender, EventArgs e)
         {
             controller.ChangeMapStandard("Spr2019");
