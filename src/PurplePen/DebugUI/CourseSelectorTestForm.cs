@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen.DebugUI
 {
-    partial class CourseSelectorTestForm: Form
+    partial class CourseSelectorTestForm: DpiFixedForm
     {
         public CourseSelectorTestForm(EventDB eventDB)
         {

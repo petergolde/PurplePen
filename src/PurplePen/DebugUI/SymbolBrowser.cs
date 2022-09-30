@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen.DebugUI
 {
-    partial class SymbolBrowser : Form
+    partial class SymbolBrowser : DpiFixedForm
     {
         SymbolDB symbolDB;
         string idSelected;

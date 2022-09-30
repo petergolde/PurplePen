@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class LicenseForm: Form
+    public partial class LicenseForm: DpiFixedForm
     {
         public LicenseForm()
         {

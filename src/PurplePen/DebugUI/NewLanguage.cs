@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace PurplePen.DebugUI
 {
-    partial class NewLanguage: Form
+    partial class NewLanguage: DpiFixedForm
     {
         SymbolDB symbolDB;
 

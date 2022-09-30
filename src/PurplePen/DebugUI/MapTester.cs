@@ -48,7 +48,7 @@ using PurplePen.MapView;
 
 namespace PurplePen.DebugUI
 {
-    public partial class MapTester : Form
+    public partial class MapTester : DpiFixedForm
     {
         IMapViewerHighlight highlight;
         MapDisplay mapDisplay;

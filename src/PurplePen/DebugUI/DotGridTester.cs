@@ -42,7 +42,7 @@ using System.Windows.Forms;
 
 namespace PurplePen.DebugUI
 {
-    public partial class DotGridTester: Form
+    public partial class DotGridTester: DpiFixedForm
     {
         public DotGridTester()
         {

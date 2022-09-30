@@ -41,7 +41,7 @@ using System.Windows.Forms;
 
 namespace PurplePen.DebugUI
 {
-    partial class ControlTester : Form
+    partial class ControlTester : DpiFixedForm
     {
         SymbolDB symbolDB;
         EventDB eventDB;

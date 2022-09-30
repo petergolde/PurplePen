@@ -55,7 +55,7 @@ using PurplePen.Livelox;
 
 namespace PurplePen
 {
-    partial class MainFrame : Form, IUserInterface
+    partial class MainFrame : DpiFixedForm, IUserInterface
     {
         Controller controller;
         SymbolDB symbolDB;

@@ -11,7 +11,7 @@ using PurplePen.Graphics2D;
 
 namespace PurplePen.DebugUI
 {
-    public partial class ShowFontMetrics : Form
+    public partial class ShowFontMetrics : DpiFixedForm
     {
         private ITextMetrics textMetrics;
 

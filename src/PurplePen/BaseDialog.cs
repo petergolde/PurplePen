@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    public partial class BaseDialog: Form
+    public partial class BaseDialog: DpiFixedForm
     {
         public BaseDialog()
         {

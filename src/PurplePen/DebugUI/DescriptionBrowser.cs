@@ -44,7 +44,7 @@ using System.IO;
 
 namespace PurplePen.DebugUI
 {
-    partial class DescriptionBrowser : Form
+    partial class DescriptionBrowser : DpiFixedForm
     {
         SymbolDB symbolDB;
         EventDB eventDB;
