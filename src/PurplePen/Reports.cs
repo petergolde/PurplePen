@@ -497,7 +497,7 @@ namespace PurplePen
             List<LegLoadInfo> loadInfoList = new List<LegLoadInfo>(loadInfos.Values);
             loadInfoList = loadInfoList.FindAll(delegate(LegLoadInfo loadInfo) { return loadInfo.numCourses > 1; });
 
-            // Sort the list of legs, first by load, then by number of courses
+            // Sort the list of legs, first by load, then by number of courses, then by text (so tests are consistent).
             loadInfoList.Sort(delegate(LegLoadInfo loadInfo1, LegLoadInfo loadInfo2) {
                 if (loadInfo1.load < loadInfo2.load) return 1;
                 else if (loadInfo1.load > loadInfo2.load) return -1;
@@ -505,7 +505,7 @@ namespace PurplePen
                 if (loadInfo1.numCourses < loadInfo2.numCourses) return 1;
                 else if (loadInfo1.numCourses > loadInfo2.numCourses) return -1;
 
-                return 0;
+                return loadInfo1.text.CompareTo(loadInfo2.text);
             });
 
             // Write the table.
