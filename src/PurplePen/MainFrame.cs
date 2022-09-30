@@ -2979,7 +2979,9 @@ namespace PurplePen
 
         private void MainFrame_Load(object sender, EventArgs e)
         {
-
+            locationDisplay.Width = LogicalToDeviceUnits(120);
+            splitContainer.SplitterDistance = LogicalToDeviceUnits(256);
+            splitDescription.SplitterDistance = splitDescription.Height - LogicalToDeviceUnits(150);
         }
 
         private void zoomAmountLabel_Click(object sender, EventArgs e)
