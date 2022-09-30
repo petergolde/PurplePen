@@ -204,11 +204,17 @@
   <data name="groupBoxPaperSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="paperSizeControl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="paperSizeControl.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="paperSizeControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="paperSizeControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 22</value>
+    <value>3, 19</value>
   </data>
   <data name="paperSizeControl.PaperSize" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -221,7 +227,7 @@
 </value>
   </data>
   <data name="paperSizeControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 161</value>
+    <value>276, 161</value>
   </data>
   <data name="paperSizeControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -230,7 +236,7 @@
     <value>paperSizeControl</value>
   </data>
   <data name="&gt;&gt;paperSizeControl.Type" xml:space="preserve">
-    <value>PurplePen.PaperSizeControl, PurplePen, Version=2.6.1.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.PaperSizeControl, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;paperSizeControl.Parent" xml:space="preserve">
     <value>groupBoxPaperSize</value>
@@ -299,7 +305,7 @@
     <value>10, 255</value>
   </data>
   <data name="checkBoxFixSizeToPaper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 19</value>
+    <value>189, 19</value>
   </data>
   <data name="checkBoxFixSizeToPaper.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -350,6 +356,6 @@
     <value>SetPrintAreaDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=2.6.1.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

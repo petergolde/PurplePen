@@ -150,14 +150,12 @@
             // 
             // comboBoxPaperSize
             // 
-            this.comboBoxPaperSize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.comboBoxPaperSize, 5);
             this.comboBoxPaperSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPaperSize.FormattingEnabled = true;
             this.comboBoxPaperSize.Location = new System.Drawing.Point(47, 3);
             this.comboBoxPaperSize.Name = "comboBoxPaperSize";
-            this.comboBoxPaperSize.Size = new System.Drawing.Size(204, 21);
+            this.comboBoxPaperSize.Size = new System.Drawing.Size(180, 21);
             this.comboBoxPaperSize.TabIndex = 1;
             this.comboBoxPaperSize.SelectedIndexChanged += new System.EventHandler(this.comboBoxPaperSize_SelectedIndexChanged);
             // 
