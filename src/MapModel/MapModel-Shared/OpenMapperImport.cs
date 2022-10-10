@@ -1611,6 +1611,11 @@ namespace PurplePen.MapModel
                         bool utmSouth = char.ToUpper(utmParams[1][0]) == 'S';
                         realWorldCoords.RealWorldGridAndZone = utmSouth ? -(2000 + utmZone) : (2000 + utmZone);
                     }
+                    else if (utmParams.Length == 1) {
+                        // no "N" or "S" defaults to north.
+                        int utmZone = int.Parse(utmParams[0]);
+                        realWorldCoords.RealWorldGridAndZone = (2000 + utmZone);
+                    }
                 }
                 else if (projection.gridRefSystem == OpenMapperGeoreferencing.ReferenceSystem.EPSG) {
                     int epsgCode;
