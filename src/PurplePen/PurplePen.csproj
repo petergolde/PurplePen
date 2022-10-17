@@ -507,12 +507,19 @@
     <Compile Include="MapIssueChoiceDialog.Designer.cs">
       <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveAllControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveAllControls.Designer.cs">
+      <DependentUpon>MoveAllControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="MoveControlChoiceDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MoveControlChoiceDialog.Designer.cs">
       <DependentUpon>MoveControlChoiceDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveControlsMode.cs" />
     <Compile Include="NewEventBitmapScale.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -694,6 +701,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectLocationsForMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectLocationsForMove.Designer.cs">
+      <DependentUpon>SelectLocationsForMove.cs</DependentUpon>
     </Compile>
     <Compile Include="StretchMode.cs" />
     <Compile Include="RotateMode.cs" />
@@ -2728,6 +2741,9 @@
     <EmbeddedResource Include="MapIssueChoiceDialog.zh-CN.resx">
       <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MoveAllControls.resx">
+      <DependentUpon>MoveAllControls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MoveControlChoiceDialog.bg.resx">
       <DependentUpon>MoveControlChoiceDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -3955,6 +3971,9 @@
     <EmbeddedResource Include="SelectionDescriptionText.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SelectionDescriptionText.zh-CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectLocationsForMove.resx">
+      <DependentUpon>SelectLocationsForMove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectVariations.bg.resx">
       <DependentUpon>SelectVariations.cs</DependentUpon>

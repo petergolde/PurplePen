@@ -3812,6 +3812,52 @@ namespace PurplePen
             return true;
         }
 
+
+        // Begin moving all controls.
+        public void BeginMoveAllControls()
+        {
+            // Select all controls.
+            selectionMgr.SelectCourseView(CourseDesignator.AllControls);
+            selectionMgr.ClearSelection();
+        }
+
+        public delegate void MoveAllControlSelected(Id<ControlPoint> controlId, Id<Special> specialId, PointF location);
+        public delegate void MoveAllLocationSelected(PointF location);
+
+        // Select a control or registration mark to move.
+        public void MoveAllControlSelectControl(MoveAllControlSelected controlSelected)
+        {
+            SetCommandMode(new SelectControlToMoveMode(this, selectionMgr, eventDB, symbolDB, controlSelected));
+        }
+
+        // Select a location for the control or registration mark to move to.
+        public void MoveAllControlsSelectNewLocation(Id<ControlPoint> controlId, Id<Special> specialId, MoveAllLocationSelected locationSelected)
+        {
+            SelectNewControlLocationMode mode;
+
+            if (controlId.IsNotNone) {
+                mode = new SelectNewControlLocationMode(this, selectionMgr, eventDB, eventDB.GetControl(controlId).kind, default(SpecialKind), locationSelected);
+            }
+            else {
+                mode = new SelectNewControlLocationMode(this, selectionMgr, eventDB, ControlPointKind.None, eventDB.GetSpecial(specialId).kind, locationSelected);
+            }
+
+            SetCommandMode(mode);
+        }
+
+        public void MoveAllControlsWaitingForConfirmation()
+        {
+            SetCommandMode(new ConfirmAllControlsMoveMode());
+        }
+
+        // Actually move all the controls and finish the command.
+        public void FinishMoveAllControls()
+        {
+            // UNDONE: Actually do the moving.
+
+            DefaultCommandMode();
+        }
+
         // Add a new localization language for descriptions. This is a debug-level command.
         public void AddDescriptionLanguage(SymbolLanguage symbolLanguage, string langIdCopyFrom)
         {

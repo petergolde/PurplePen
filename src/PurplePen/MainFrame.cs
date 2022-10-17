@@ -2175,6 +2175,30 @@ namespace PurplePen
             }
         }
 
+        private void moveAllControlsMenu_Click(object sender, EventArgs e)
+        {
+            // Part 1: Determine which action we are doing.
+            MoveAllControls moveAllControlsDialog = new MoveAllControls();
+            if (moveAllControlsDialog.ShowDialog() == DialogResult.Cancel) {
+                moveAllControlsDialog.Dispose();
+                return;
+            }
+
+            MoveAllControlsAction action = moveAllControlsDialog.Action;
+            moveAllControlsDialog.Dispose();
+
+            // Part 2: Prompt use to move controls
+            controller.BeginMoveAllControls();
+
+            SelectLocationsForMove selectLocationsForMoveDialog = new SelectLocationsForMove(controller, action);
+            Point location = this.Location;
+            location.Offset(10, 130);
+            selectLocationsForMoveDialog.Location = location;
+            selectLocationsForMoveDialog.Show(this);
+
+            // Dialog dismisses/disposes itself and invokes controller.
+        }
+
         private void printDescriptionsMenu_Click(object sender, EventArgs e)
         {
             // Initialize dialog
@@ -3232,7 +3256,8 @@ namespace PurplePen
         private void descriptionStd2004Menu_Click(object sender, EventArgs e)
         {
             controller.ChangeDescriptionStandard("2004");
-        }
+        } 
+        
 
 
         private void descriptionStd2018Menu_Click(object sender, EventArgs e)

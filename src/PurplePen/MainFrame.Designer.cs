@@ -302,6 +302,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.moveAllControlsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1185,6 +1186,7 @@ namespace PurplePen
             this.changeCodesMenu,
             this.autoNumberingMenu,
             this.removeUnusedControlsMenu,
+            this.moveAllControlsMenu,
             this.toolStripSeparator11,
             this.punchPatternsMenu,
             this.toolStripSeparator21,
@@ -2049,6 +2051,12 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
+            // moveAllControlsMenu
+            // 
+            this.moveAllControlsMenu.Name = "moveAllControlsMenu";
+            resources.ApplyResources(this.moveAllControlsMenu, "moveAllControlsMenu");
+            this.moveAllControlsMenu.Click += new System.EventHandler(this.moveAllControlsMenu_Click);
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2331,5 +2339,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createRouteReviewFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem createKMLFileMenu;
+        private System.Windows.Forms.ToolStripMenuItem moveAllControlsMenu;
     }
 }
