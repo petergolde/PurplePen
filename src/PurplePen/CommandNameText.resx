@@ -312,4 +312,7 @@
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
     <value>Publish to Livelox</value>
   </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Move All Controls</value>
+  </data>
 </root>

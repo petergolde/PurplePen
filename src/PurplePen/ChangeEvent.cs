@@ -41,6 +41,8 @@ using System.Linq;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using System.Drawing.Drawing2D;
+using PurplePen.Livelox.ApiContracts;
 
 namespace PurplePen
 {
@@ -666,6 +668,102 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, control); 
         }
 
+        // Change the location of every object by the given matrix. Also rotates objects if needed.
+        public static void ChangeAllObjectLocations(EventDB eventDB, Matrix matrix)
+        {
+            // Determine rotation and scale factors from the matrix.
+            PointF[] pts = { new PointF(0, 0), new PointF(1, 0) };
+
+            matrix.TransformPoints(pts);
+            float scale = Geometry.DistanceF(pts[1], pts[0]);  // always positive.
+            float rotation = Geometry.Angle(pts[0], pts[1]);
+
+            // Create a matrix of rotation and scale only, for the control numbers.
+            Matrix matrixRotateScaleOnly = new Matrix();
+            if (scale != 1.0) {
+                matrixRotateScaleOnly.Scale((float)scale, (float)scale, MatrixOrder.Append);
+            }
+            if (rotation != 0) {
+                matrixRotateScaleOnly.Rotate((float)rotation, MatrixOrder.Append);
+            }
+
+
+            foreach (Id<ControlPoint> controlId in eventDB.AllControlPointIds.ToArray()) {
+                ControlPoint control = eventDB.GetControl(controlId);
+
+                // Update location. Note, we don't use ChangeControlLocation because we don't want leg gaps
+                // to be updated; we will do those ourselves.
+                control = (ControlPoint)control.Clone();
+                control.location = Geometry.TransformPoint(control.location, matrix); 
+
+                if (control.kind == ControlPointKind.CrossingPoint && rotation != 0) {
+                    control.orientation += rotation;
+                }
+
+                if (control.customCodeLocation && rotation != 0) {
+                    control.codeLocationAngle += rotation;
+                }
+
+                if (control.gaps != null && control.gaps.Count > 0 && rotation != 0) {
+                    Dictionary<int, CircleGap[]> newGaps = new Dictionary<int, CircleGap[]>();
+
+                    foreach (KeyValuePair<int, CircleGap[]> pair in control.gaps) {
+                        newGaps.Add(pair.Key, CircleGap.RotateGaps(pair.Value, rotation));
+                    }
+
+                    control.gaps = newGaps;
+                }
+
+                eventDB.ReplaceControlPoint(controlId, control);
+            }
+
+            foreach (Id<Special> specialId in eventDB.AllSpecialIds.ToArray()) {
+                Special special = eventDB.GetSpecial(specialId);
+
+                special = (Special)special.Clone();
+                special.locations = Geometry.TransformPoints(special.locations, matrix);
+
+                if (special.kind == SpecialKind.OptCrossing && rotation != 0) {
+                    special.orientation += rotation;
+                }
+
+                eventDB.ReplaceSpecial(specialId, special);
+            }
+
+            foreach (Id<Leg> legId in eventDB.AllLegIds.ToArray()) {
+                Leg leg = eventDB.GetLeg(legId);
+
+                leg = (Leg)leg.Clone();
+
+                if (leg.bends != null) {
+                    leg.bends = Geometry.TransformPoints(leg.bends, matrix);
+                }
+
+                if (leg.gaps != null && scale != 1.0) {
+                    LegGap[] newGaps = new LegGap[leg.gaps.Length];
+                    for (int i = 0; i < leg.gaps.Length; ++i) {
+                        newGaps[i] = new LegGap(leg.gaps[i].distanceFromStart * scale, leg.gaps[i].length * scale);
+                    }
+                    leg.gaps = newGaps;
+                }
+
+                eventDB.ReplaceLeg(legId, leg);
+            }
+
+            // Move custom number placement, if needed.
+            foreach (Id<CourseControl> courseControlId in eventDB.AllCourseControlIds.ToArray()) {
+                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+
+                if (courseControl.customNumberPlacement && (scale != 1.0 || rotation != 0)) {
+                    courseControl = (CourseControl) courseControl.Clone();
+
+                    PointF ptPlacement = Geometry.TransformPoint(new PointF(courseControl.numberDeltaX, courseControl.numberDeltaY), matrixRotateScaleOnly);
+                    courseControl.numberDeltaX = ptPlacement.X;
+                    courseControl.numberDeltaY = ptPlacement.Y;
+                    eventDB.ReplaceCourseControl(courseControlId, courseControl);
+                }
+            }
+        }
 
 
         // Change the locations associated with a special.

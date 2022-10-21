@@ -35,6 +35,6 @@ namespace PurplePen
 
     public enum MoveAllControlsAction
     {
-        Move, MoveScale, MoveRotate, MoveRotateScale
+        None, Move, MoveScale, MoveRotate, MoveRotateScale
     }
 }

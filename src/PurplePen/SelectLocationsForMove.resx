@@ -693,31 +693,31 @@
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="labelArrowFirstControl" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelArrowFirstNewLocation" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelArrowSecondControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelArrowSecondNewLocation" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelArrowConfirmLocations" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labelFirstControl" Row="0" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelSecondNewLocation" Row="3" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelConfirmLocations" Row="4" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelRotation" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelScale" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelYOffset" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelXOffset" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labelSecondControl" Row="2" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelFirstNewLocation" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="labelDisplayXOffset" Row="6" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDisplayYOffset" Row="7" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDisplayScale" Row="8" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="labelDisplayRotation" Row="9" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,30,Percent,40,Percent,60" /&gt;&lt;Rows Styles="Absolute,40,Absolute,40,Absolute,40,Absolute,40,Absolute,40,Absolute,20,Absolute,20,Absolute,20,Absolute,20,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="buttonRestart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="buttonBack.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="buttonRestart.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="buttonBack.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 359</value>
   </data>
-  <data name="buttonRestart.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 25</value>
   </data>
-  <data name="buttonRestart.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonBack.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="buttonRestart.Text" xml:space="preserve">
-    <value>Restart</value>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Back</value>
   </data>
-  <data name="&gt;&gt;buttonRestart.Name" xml:space="preserve">
-    <value>buttonRestart</value>
+  <data name="&gt;&gt;buttonBack.Name" xml:space="preserve">
+    <value>buttonBack</value>
   </data>
-  <data name="&gt;&gt;buttonRestart.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonBack.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;buttonRestart.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonBack.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;buttonRestart.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonBack.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="buttonConfirm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

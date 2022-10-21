@@ -408,6 +408,17 @@ namespace PurplePen
             }
 
             return bits;
-        }       
+        } 
+        
+        // Rotate circle gaps by adding the rotation amount to all gaps.
+        public static CircleGap[] RotateGaps(CircleGap[] original, float rotation)
+        {
+            CircleGap[] newGaps = new CircleGap[original.Length];
+            for (int i = 0; i < original.Length; ++i) {
+                newGaps[i] = new CircleGap(original[i].startAngle + rotation, original[i].stopAngle + rotation);
+            }
+
+            return SimplifyGaps(newGaps);
+        }
     }
 }

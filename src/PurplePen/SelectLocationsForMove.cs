@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace PurplePen
         Controller controller;
         Id<ControlPoint> firstControlPoint, secondControlPoint;
         Id<Special> firstSpecial, secondSpecial;
+        PointF[] locations = new PointF[4];
+        bool mapUpdated = false;
 
         Color activeColor = Color.Red;
         Color inactiveColor = Color.Gray;
@@ -68,30 +71,73 @@ namespace PurplePen
             labelArrowSecondNewLocation.Visible = (stage == DialogStage.MoveSecondControl);
             labelArrowConfirmLocations.Visible = (stage == DialogStage.Confirm);
 
-            labelXOffset.Visible = labelDisplayXOffset.Visible = (stage == DialogStage.Confirm);
-            labelYOffset.Visible = labelDisplayYOffset.Visible = (stage == DialogStage.Confirm);
-            labelScale.Visible = labelDisplayScale.Visible = (stage == DialogStage.Confirm && (action == MoveAllControlsAction.MoveScale || action == MoveAllControlsAction.MoveRotateScale));
-            labelRotation.Visible = labelDisplayRotation.Visible = (stage == DialogStage.Confirm && (action == MoveAllControlsAction.MoveRotate || action == MoveAllControlsAction.MoveRotateScale));
+            labelXOffset.Visible = labelDisplayXOffset.Visible = (stage >= DialogStage.MoveFirstControl);
+            labelYOffset.Visible = labelDisplayYOffset.Visible = (stage >= DialogStage.MoveFirstControl);
+            labelScale.Visible = labelDisplayScale.Visible = (stage >= DialogStage.MoveSecondControl && (action == MoveAllControlsAction.MoveScale || action == MoveAllControlsAction.MoveRotateScale));
+            labelRotation.Visible = labelDisplayRotation.Visible = (stage >= DialogStage.MoveSecondControl && (action == MoveAllControlsAction.MoveRotate || action == MoveAllControlsAction.MoveRotateScale));
 
-            buttonConfirm.Visible = buttonRestart.Visible = (stage == DialogStage.Confirm);
+            if (stage == DialogStage.Confirm) {
+                buttonConfirm.Visible = buttonBack.Visible = true;
+                this.AcceptButton = buttonConfirm;
+                this.ActiveControl = buttonConfirm;
+            }
+            else if (stage >= DialogStage.MoveFirstControl) {
+                buttonConfirm.Visible = false;
+                buttonBack.Visible = true;
+                this.AcceptButton = buttonBack;
+                this.ActiveControl = buttonBack;
+            }
+            else {
+                buttonConfirm.Visible = buttonBack.Visible = false;
+                this.AcceptButton = null;
+                this.ActiveControl = null;
+            }
+
+            UpdateMoveValues();
+        }
+
+        private void UpdateMoveValues()
+        {
+            if (stage >= DialogStage.MoveSecondControl) {
+                MoveAllComputations compute = new MoveAllComputations(action, locations);
+                labelDisplayXOffset.Text = compute.XOffset.ToString("###0.##");
+                labelDisplayYOffset.Text = compute.YOffset.ToString("###0.##");
+                labelDisplayScale.Text = compute.Scale.ToString("##0.####");
+                labelDisplayRotation.Text = compute.Rotation.ToString("##0.##");
+            }
+            else if (stage >= DialogStage.MoveFirstControl) {
+                MoveAllComputations compute = new MoveAllComputations(MoveAllControlsAction.Move, locations);
+                labelDisplayXOffset.Text = compute.XOffset.ToString("###0.##");
+                labelDisplayYOffset.Text = compute.YOffset.ToString("###0.##");
+            }
         }
 
         void EnterNewStage()
         {
             switch (stage) {
                 case DialogStage.SelectFirstControl:
-                    controller.MoveAllControlSelectControl(ControlSelected);
+                    controller.MoveAllControlsUpdateMovement(MoveAllControlsAction.None, locations, mapUpdated);
+                    mapUpdated = true;
+                    controller.MoveAllControlSelectControl(null, ControlSelected);
                     break;
                 case DialogStage.MoveFirstControl:
-                    controller.MoveAllControlsSelectNewLocation(firstControlPoint, firstSpecial, LocationSelected);
+                    controller.MoveAllControlsUpdateMovement(MoveAllControlsAction.None, locations, mapUpdated);
+                    mapUpdated = true;
+                    controller.MoveAllControlsSelectNewLocation(firstControlPoint, firstSpecial, new PointF(), new PointF(), MoveAllControlsAction.Move, LocationSelected);
                     break;
                 case DialogStage.SelectSecondControl:
-                    controller.MoveAllControlSelectControl(ControlSelected);
+                    controller.MoveAllControlsUpdateMovement(MoveAllControlsAction.Move, locations, mapUpdated);
+                    mapUpdated = true;
+                    controller.MoveAllControlSelectControl(locations[1], ControlSelected);
                     break;
                 case DialogStage.MoveSecondControl:
-                    controller.MoveAllControlsSelectNewLocation(secondControlPoint, secondSpecial, LocationSelected);
+                    controller.MoveAllControlsUpdateMovement(MoveAllControlsAction.Move, locations, mapUpdated);
+                    mapUpdated = true;
+                    controller.MoveAllControlsSelectNewLocation(secondControlPoint, secondSpecial, locations[2], locations[1], action, LocationSelected);
                     break;
                 case DialogStage.Confirm:
+                    controller.MoveAllControlsUpdateMovement(action, locations, mapUpdated);
+                    mapUpdated = true;
                     controller.MoveAllControlsWaitingForConfirmation();
                     break;
             }
@@ -100,30 +146,68 @@ namespace PurplePen
         void ControlSelected(Id<ControlPoint> controlId, Id<Special> specialId, PointF location)
         {
             if (stage == DialogStage.SelectFirstControl) {
+                locations[0] = location;
                 firstControlPoint = controlId;
                 firstSpecial = specialId;
                 Stage = DialogStage.MoveFirstControl;
             }
             else {
+                locations[2] = location;
                 secondControlPoint = controlId;
                 secondSpecial = specialId;
                 Stage = DialogStage.MoveSecondControl;
             }
         }
 
-        void LocationSelected(PointF location)
+        void LocationSelected(PointF location, bool finalLocation)
         {
             if (stage == DialogStage.MoveFirstControl) {
-                if (action == MoveAllControlsAction.Move) {
-                    Stage = DialogStage.Confirm;
-                }
-                else {
-                    Stage = DialogStage.SelectSecondControl;
+                locations[1] = location;
+
+                if (finalLocation) {
+                    if (action == MoveAllControlsAction.Move) {
+                        Stage = DialogStage.Confirm;
+                    }
+                    else {
+                        Stage = DialogStage.SelectSecondControl;
+                    }
                 }
             }
             else {
-                Stage = DialogStage.Confirm;
+                locations[3] = location;
+
+                if (finalLocation) {
+                    Stage = DialogStage.Confirm;
+                }
             }
+
+            UpdateMoveValues();
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            controller.FinishMoveAllControls(false);
+            Hide();
+            Dispose();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            if (stage > DialogStage.SelectFirstControl) {
+                Stage = (DialogStage) (stage - 1);
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            controller.FinishMoveAllControls(mapUpdated);
+            Hide();
+            Dispose();
+        }
+
+        private void SelectLocationsForMove_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            buttonCancel_Click(sender, e);
         }
 
         public enum DialogStage

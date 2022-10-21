@@ -484,6 +484,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Move All Controls.
+        /// </summary>
+        internal static string MoveAllControls {
+            get {
+                return ResourceManager.GetString("MoveAllControls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Move Leg Bend.
         /// </summary>
         internal static string MoveBend {

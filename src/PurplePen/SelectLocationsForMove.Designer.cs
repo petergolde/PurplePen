@@ -48,7 +48,7 @@
             this.labelDisplayYOffset = new System.Windows.Forms.Label();
             this.labelDisplayScale = new System.Windows.Forms.Label();
             this.labelDisplayRotation = new System.Windows.Forms.Label();
-            this.buttonRestart = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -178,11 +179,12 @@
             resources.ApplyResources(this.labelDisplayRotation, "labelDisplayRotation");
             this.labelDisplayRotation.Name = "labelDisplayRotation";
             // 
-            // buttonRestart
+            // buttonBack
             // 
-            resources.ApplyResources(this.buttonRestart, "buttonRestart");
-            this.buttonRestart.Name = "buttonRestart";
-            this.buttonRestart.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.buttonBack, "buttonBack");
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonConfirm
             // 
@@ -190,16 +192,20 @@
             this.buttonConfirm.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // SelectLocationsForMove
             // 
+            this.AcceptButton = this.buttonConfirm;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.buttonCancel;
             this.Controls.Add(this.buttonConfirm);
-            this.Controls.Add(this.buttonRestart);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonCancel);
             this.Name = "SelectLocationsForMove";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectLocationsForMove_FormClosing);
             this.Load += new System.EventHandler(this.SelectLocationsForMove_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -225,7 +231,7 @@
         private System.Windows.Forms.Label labelScale;
         private System.Windows.Forms.Label labelYOffset;
         private System.Windows.Forms.Label labelXOffset;
-        private System.Windows.Forms.Button buttonRestart;
+        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonConfirm;
         private System.Windows.Forms.Label labelDisplayXOffset;
         private System.Windows.Forms.Label labelDisplayYOffset;

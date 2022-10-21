@@ -40,6 +40,8 @@ using PurplePen.MapView;
 using PurplePen.MapModel;
 using System.Diagnostics;
 using static PurplePen.Controller;
+using PurplePen.Graphics2D;
+using System.Data;
 
 namespace PurplePen
 {
@@ -52,18 +54,20 @@ namespace PurplePen
         SelectionMgr selectionMgr;
         EventDB eventDB;
         SymbolDB symbolDB;
+        PointF? blockLocation;
         float courseObjRatio;
         CourseAppearance appearance;
         MoveAllControlSelected controlSelected;
 
         PointCourseObj highlight;    // the highlight of the control we are creating.
 
-        public SelectControlToMoveMode(Controller controller, SelectionMgr selectionMgr, EventDB eventDB, SymbolDB symbolDB, MoveAllControlSelected controlSelected)
+        public SelectControlToMoveMode(Controller controller, SelectionMgr selectionMgr, EventDB eventDB, SymbolDB symbolDB, PointF? blockLocation, MoveAllControlSelected controlSelected)
         {
             this.controller = controller;
             this.selectionMgr = selectionMgr;
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
+            this.blockLocation = blockLocation;
             this.controlSelected = controlSelected;
             this.appearance = controller.GetCourseAppearance();
             this.courseObjRatio = selectionMgr.ActiveCourseView.CourseObjRatio(appearance);
@@ -105,7 +109,9 @@ namespace PurplePen
             // Are we over a control we might add?
             CourseLayout layout = controller.GetCourseLayout();
             PointCourseObj courseObj = layout.HitTest(mouseLocation, pixelSize, CourseLayer.MainCourse, (co => co is PointCourseObj)) as PointCourseObj;
-            if (courseObj != null) {
+
+
+            if (courseObj != null && NotNear(courseObj.location, blockLocation)) {
                 if (courseObj.controlId.IsNotNone) {
                     ControlPointKind controlPointKind = eventDB.GetControl(courseObj.controlId).kind;
                     if (controlPointKind == ControlPointKind.Start || controlPointKind == ControlPointKind.Finish || controlPointKind == ControlPointKind.Normal || controlPointKind == ControlPointKind.MapExchange) {
@@ -124,6 +130,18 @@ namespace PurplePen
 
             highlightLocation = new PointF();
             return null;
+        }
+
+        private bool NotNear(PointF location, PointF? blockLocation)
+        {
+            if (blockLocation == null)
+                return true;
+
+            if (Geometry.Distance(location, blockLocation.Value) > 1) {
+                return true;
+            }
+
+            return false;
         }
 
         public override void MouseMoved(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
@@ -236,19 +254,25 @@ namespace PurplePen
         EventDB eventDB;
         ControlPointKind controlPointKind;  // Kind of control we are moving.
         SpecialKind specialKind;            // Kind of special we are moving, if controlPointKind==ControlPointKind.None.
+        PointF initialLocation;
+        PointF otherLocation;
+        MoveAllControlsAction action;
         float courseObjRatio;
         CourseAppearance appearance;
         MoveAllLocationSelected locationSelected;
 
         PointCourseObj highlight;    // the highlight we are creating.
 
-        public SelectNewControlLocationMode(Controller controller, SelectionMgr selectionMgr, EventDB eventDB, ControlPointKind controlPointKind, SpecialKind specialKind, MoveAllLocationSelected locationSelected)
-        {
+        public SelectNewControlLocationMode(Controller controller, SelectionMgr selectionMgr, EventDB eventDB, ControlPointKind controlPointKind, SpecialKind specialKind, PointF initialLocation, PointF otherLocation, MoveAllControlsAction action, MoveAllLocationSelected locationSelected)
+        { 
             this.controller = controller;
             this.selectionMgr = selectionMgr;
             this.eventDB = eventDB;
             this.controlPointKind = controlPointKind;
             this.specialKind = specialKind;
+            this.initialLocation = initialLocation;
+            this.otherLocation = otherLocation;
+            this.action = action;
             this.locationSelected = locationSelected;
             this.appearance = controller.GetCourseAppearance();
             this.courseObjRatio = selectionMgr.ActiveCourseView.CourseObjRatio(appearance);
@@ -285,7 +309,28 @@ namespace PurplePen
                 return;
 
             PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
+            highlightLocation = ConstrainLocation(highlightLocation);
             SetHighlightLocation(highlightLocation, pixelSize, ref displayUpdateNeeded);
+            locationSelected(highlightLocation, false);
+        }
+
+        // Constrain the location to be on a line or on a circle. 
+        private PointF ConstrainLocation(PointF highlightLocation)
+        {
+            if (action == MoveAllControlsAction.MoveScale) {
+                // Constrain to be on a line.
+                return Geometry.ClosestPointOnLine(initialLocation, otherLocation, highlightLocation);
+            }
+            else if (action == MoveAllControlsAction.MoveRotate) {
+                // Constrain to be on a circle.
+                double radius = Geometry.Distance(initialLocation, otherLocation);
+                double angle = Math.Atan2(highlightLocation.Y - otherLocation.Y, highlightLocation.X - otherLocation.X);
+                return new PointF((float)(radius * Math.Cos(angle)) + otherLocation.X, (float)(radius * Math.Sin(angle)) + otherLocation.Y);
+            }
+            else {
+                // No constraining
+                return highlightLocation;
+            }
         }
 
         public override IMapViewerHighlight[] GetHighlights(Pane pane)
@@ -324,8 +369,8 @@ namespace PurplePen
                 return;
 
             PointF highlightLocation = new PointF(location.X + PIXELOFFSETX * pixelSize, location.Y + PIXELOFFSETY * pixelSize);
-
-            locationSelected(highlightLocation);
+            highlightLocation = ConstrainLocation(highlightLocation);
+            locationSelected(highlightLocation, true);
         }
 
         // Create the highlight, and put it at the given location.
@@ -382,6 +427,11 @@ namespace PurplePen
             else {
                 return MapViewer.DragAction.None;
             }
+        }
+
+        public override bool CanCancel()
+        {
+            return false;
         }
     }
 }

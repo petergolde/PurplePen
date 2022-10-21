@@ -3822,27 +3822,47 @@ namespace PurplePen
         }
 
         public delegate void MoveAllControlSelected(Id<ControlPoint> controlId, Id<Special> specialId, PointF location);
-        public delegate void MoveAllLocationSelected(PointF location);
+        public delegate void MoveAllLocationSelected(PointF location, bool finalLocation);
 
         // Select a control or registration mark to move.
-        public void MoveAllControlSelectControl(MoveAllControlSelected controlSelected)
+        public void MoveAllControlSelectControl(PointF? blockLocation, MoveAllControlSelected controlSelected)
         {
-            SetCommandMode(new SelectControlToMoveMode(this, selectionMgr, eventDB, symbolDB, controlSelected));
+            SetCommandMode(new SelectControlToMoveMode(this, selectionMgr, eventDB, symbolDB, blockLocation, controlSelected));
         }
 
         // Select a location for the control or registration mark to move to.
-        public void MoveAllControlsSelectNewLocation(Id<ControlPoint> controlId, Id<Special> specialId, MoveAllLocationSelected locationSelected)
+        public void MoveAllControlsSelectNewLocation(Id<ControlPoint> controlId, Id<Special> specialId, PointF initialLocation, PointF otherLocation, MoveAllControlsAction action, MoveAllLocationSelected locationSelected)
         {
             SelectNewControlLocationMode mode;
 
             if (controlId.IsNotNone) {
-                mode = new SelectNewControlLocationMode(this, selectionMgr, eventDB, eventDB.GetControl(controlId).kind, default(SpecialKind), locationSelected);
+                mode = new SelectNewControlLocationMode(this, selectionMgr, eventDB, eventDB.GetControl(controlId).kind, default(SpecialKind), initialLocation, otherLocation, action, locationSelected);
             }
             else {
-                mode = new SelectNewControlLocationMode(this, selectionMgr, eventDB, ControlPointKind.None, eventDB.GetSpecial(specialId).kind, locationSelected);
+                mode = new SelectNewControlLocationMode(this, selectionMgr, eventDB, ControlPointKind.None, eventDB.GetSpecial(specialId).kind, initialLocation, otherLocation, action, locationSelected);
             }
 
             SetCommandMode(mode);
+        }
+
+        public void MoveAllControlsUpdateMovement(MoveAllControlsAction action, PointF[] points, bool alreadyUpdatedBefore)
+        {
+            if (alreadyUpdatedBefore) {
+                // Undo previous move all controls.
+                while (undoMgr.CanUndo && undoMgr.UndoName != CommandNameText.MoveAllControls) {
+                    undoMgr.Undo();
+                }
+                if (undoMgr.CanUndo) {
+                    undoMgr.Undo();
+                }
+            }
+
+            undoMgr.BeginCommand(94431, CommandNameText.MoveAllControls);
+
+            MoveAllComputations computation = new MoveAllComputations(action, points);
+            ChangeEvent.ChangeAllObjectLocations(eventDB, computation.Matrix);
+
+            undoMgr.EndCommand(94431);
         }
 
         public void MoveAllControlsWaitingForConfirmation()
@@ -3851,9 +3871,17 @@ namespace PurplePen
         }
 
         // Actually move all the controls and finish the command.
-        public void FinishMoveAllControls()
+        public void FinishMoveAllControls(bool cancelPreviousUpdates)
         {
-            // UNDONE: Actually do the moving.
+            if (cancelPreviousUpdates) {
+                // Undo previous move all controls.
+                while (undoMgr.CanUndo && undoMgr.UndoName != CommandNameText.MoveAllControls) {
+                    undoMgr.Undo();
+                }
+                if (undoMgr.CanUndo) {
+                    undoMgr.Undo();
+                }
+            }
 
             DefaultCommandMode();
         }

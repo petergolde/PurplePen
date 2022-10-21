@@ -507,6 +507,7 @@
     <Compile Include="MapIssueChoiceDialog.Designer.cs">
       <DependentUpon>MapIssueChoiceDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveAllComputations.cs" />
     <Compile Include="MoveAllControls.cs">
       <SubType>Form</SubType>
     </Compile>
