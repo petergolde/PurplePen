@@ -259,6 +259,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click the left mouse button on a control or registration mark to move to a new location.
+        /// </summary>
+        internal static string ControlForMoveAllControls {
+            get {
+                return ResourceManager.GetString("ControlForMoveAllControls", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left mouse button: move/size rectangle;   Right mouse button: move map;   Scroll wheel: zoom in/out.
         /// </summary>
         internal static string DefaultRectangle {
@@ -336,6 +345,15 @@ namespace PurplePen {
         internal static string DragObject {
             get {
                 return ResourceManager.GetString("DragObject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click the left mouse button on the new location for the control or registration mark.
+        /// </summary>
+        internal static string NewLocationForMoveAllControls {
+            get {
+                return ResourceManager.GetString("NewLocationForMoveAllControls", resourceCulture);
             }
         }
         

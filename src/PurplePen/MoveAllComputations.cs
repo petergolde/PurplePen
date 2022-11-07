@@ -39,9 +39,14 @@ namespace PurplePen
                 // Determine amount of scale.
                 double dist1 = Geometry.Distance(points[1], points[2]);
                 double dist2 = Geometry.Distance(points[1], points[3]);
-                scale = dist2 / dist1;
-                if (Geometry.Angle(points[2], points[1], points[3]) > 90) {
-                    scale = -scale;
+                if (dist1 == 0 || dist2 == 0) {
+                    scale = 1.0;
+                }
+                else {
+                    scale = dist2 / dist1;
+                    if (Geometry.Angle(points[2], points[1], points[3]) > 90) {
+                        scale = -scale;
+                    }
                 }
             }
             else {
@@ -50,9 +55,14 @@ namespace PurplePen
 
             if (action == MoveAllControlsAction.MoveRotate || action == MoveAllControlsAction.MoveRotateScale) {
                 // Determine amount of rotation.
-                double angle1 = Geometry.Angle(points[1], points[2]);
-                double angle2 = Geometry.Angle(points[1], points[3]);
-                rotation = angle2 - angle1;
+                if ((points[1].X == points[2].X && points[1].Y == points[2].Y) || (points[1].X == points[3].X && points[1].Y == points[3].Y)) {
+                    rotation = 0;
+                }
+                else {
+                    double angle1 = Geometry.Angle(points[1], points[2]);
+                    double angle2 = Geometry.Angle(points[1], points[3]);
+                    rotation = angle2 - angle1;
+                }
             }
             else {
                 rotation = 0;

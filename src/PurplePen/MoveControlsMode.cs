@@ -99,7 +99,7 @@ namespace PurplePen
         public override string StatusText
         {
             get {
-                return /* UNDONE */ "Mode: select control for moving";
+                return StatusBarText.ControlForMoveAllControls;
             }
         }
 
@@ -299,7 +299,7 @@ namespace PurplePen
         public override string StatusText
         {
             get {
-                return /* UNDONE: StatusBarText.NewLocationForMoveAllControls */ "Status Bar: new location for move all controls";
+                return StatusBarText.NewLocationForMoveAllControls;
             }
         }
 

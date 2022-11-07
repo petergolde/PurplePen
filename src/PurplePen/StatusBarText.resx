@@ -228,4 +228,10 @@
   <data name="StretchingObject" xml:space="preserve">
     <value>Hold down left mouse button and drag to stretch the stretch the crossing point</value>
   </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Click the left mouse button on a control or registration mark to move to a new location</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Click the left mouse button on the new location for the control or registration mark</value>
+  </data>
 </root>
