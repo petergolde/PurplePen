@@ -869,10 +869,10 @@ namespace PurplePen.Tests
         public void ControlCircleDistanceSpr2019()
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(1, 1));
-            Assert.AreEqual(2.0, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(1.825, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.001);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
             courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 0.5F, stdSpr2019CourseAppearance, null, new PointF(1, 1));
-            Assert.AreEqual(3.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(3.4125, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.001);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
 
@@ -902,10 +902,10 @@ namespace PurplePen.Tests
         public void FinishDistanceSpr2019()
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
-            Assert.AreEqual(1.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(1.325, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.001);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
             courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 0.5F, stdSpr2019CourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
-            Assert.AreEqual(3.25, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(3.1625, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.001);
             Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
         }
 

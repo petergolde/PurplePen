@@ -87,3 +87,4 @@ src/.vs/
 !src/PdfiumViewer/Libraries/**/x86
 !src/PdfiumViewer/Libraries/**/x64
 
+/src/InternalTrace.*.log

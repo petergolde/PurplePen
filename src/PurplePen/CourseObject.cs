@@ -1307,7 +1307,9 @@ namespace PurplePen
     {
         public ControlCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, PointF location)
             : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0,
-                  (appearance.mapStandard == "2017" ? NormalCourseAppearance.controlOutsideDiameter2017 : NormalCourseAppearance.controlOutsideDiameter2000) / 2F,
+                  (appearance.mapStandard == "2017" ? 
+                      NormalCourseAppearance.controlOutsideDiameter2017 : 
+                      (appearance.mapStandard == "Spr2019" ? NormalCourseAppearance.controlOutsideDiameterSpr2019 : NormalCourseAppearance.controlOutsideDiameter2000)) / 2F,
                   location)
         {
         }
@@ -1315,7 +1317,7 @@ namespace PurplePen
         private float Diameter {
             get {
                 return (appearance.mapStandard == "2017" ? NormalCourseAppearance.controlOutsideDiameter2017
-                                                         : NormalCourseAppearance.controlOutsideDiameter2000) * courseObjRatio * appearance.controlCircleSize;
+                                                         : (appearance.mapStandard == "Spr2019" ? NormalCourseAppearance.controlOutsideDiameterSpr2019 : NormalCourseAppearance.controlOutsideDiameter2000)) * courseObjRatio * appearance.controlCircleSize;
             }
         }
 
@@ -1566,7 +1568,7 @@ namespace PurplePen
         public FinishCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance,
             CircleGap[] gaps, PointF location, CrossHairOptions crossHairOptions)
             : base(controlId, courseControlId, Id<Special>.None, courseObjRatio, appearance, gaps, 0,
-                  ((appearance.mapStandard == "2017") ? NormalCourseAppearance.finishOutsideDiameter2017 : NormalCourseAppearance.finishOutsideDiameter2000) / 2F,
+                  ((appearance.mapStandard == "2017") ? NormalCourseAppearance.finishOutsideDiameter2017 : (appearance.mapStandard == "Spr2019" ? NormalCourseAppearance.finishOutsideDiameterSpr2019 : NormalCourseAppearance.finishOutsideDiameter2000)) / 2F,
                   location)
         {
             this.crossHairOptions = crossHairOptions;
@@ -2520,7 +2522,7 @@ namespace PurplePen
             else {
                 AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
                 hatchInfo.hatchColor = symColor;
-                if (appearance.mapStandard == "Spr2019") {
+                if (appearance.mapStandard != "2000" ) {
                     hatchInfo.hatchWidth = 0.2F * courseObjRatio;
                     hatchInfo.hatchSpacing = 1.2F * courseObjRatio;
                 }
