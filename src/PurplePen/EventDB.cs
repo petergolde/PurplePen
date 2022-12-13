@@ -1692,7 +1692,7 @@ namespace PurplePen
             case SpecialKind.Descriptions:
             case SpecialKind.Image:
             case SpecialKind.Rectangle:
-                case SpecialKind.Ellipse:
+            case SpecialKind.Ellipse:
                 if (locations.Length != 2)
                     throw new ApplicationException(string.Format("Text or descriptions object {0} should have 2 coordinates", id));
                 break;

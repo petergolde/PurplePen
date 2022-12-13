@@ -20,7 +20,8 @@ namespace PurplePen
         double rotation;
 
         // Type of move all action, plus the points that control it. This is 2 points for 
-        // Move actions, and 4 points for Move + Scale and/or Rotate.
+        // Move actions, and 4 points for Move + Scale and/or Rotate. The first of the second is a point that is 
+        // after the first transform.
         public MoveAllComputations(MoveAllControlsAction action, PointF[] points)
         {
             this.action = action;
@@ -43,10 +44,7 @@ namespace PurplePen
                     scale = 1.0;
                 }
                 else {
-                    scale = dist2 / dist1;
-                    if (Geometry.Angle(points[2], points[1], points[3]) > 90) {
-                        scale = -scale;
-                    }
+                    scale = Math.Abs(dist2 / dist1);
                 }
             }
             else {
@@ -61,7 +59,7 @@ namespace PurplePen
                 else {
                     double angle1 = Geometry.Angle(points[1], points[2]);
                     double angle2 = Geometry.Angle(points[1], points[3]);
-                    rotation = angle2 - angle1;
+                    rotation = Math.IEEERemainder(angle2 - angle1, 360.0);
                 }
             }
             else {
@@ -92,9 +90,6 @@ namespace PurplePen
                 }
 
                 matrix.Translate(points[1].X, points[1].Y, MatrixOrder.Append);
-
-                PointF converted0 = Geometry.TransformPoint(points[0], matrix);
-                PointF converted2 = Geometry.TransformPoint(points[2], matrix);
 
                 return matrix;
             }

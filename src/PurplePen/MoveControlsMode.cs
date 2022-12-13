@@ -318,8 +318,10 @@ namespace PurplePen
         private PointF ConstrainLocation(PointF highlightLocation)
         {
             if (action == MoveAllControlsAction.MoveScale) {
-                // Constrain to be on a line.
-                return Geometry.ClosestPointOnLine(initialLocation, otherLocation, highlightLocation);
+                // Constrain to be on a half-line.
+                PointF constrain1 = new PointF(otherLocation.X + (initialLocation.X - otherLocation.X) * 0.01F, otherLocation.Y + (initialLocation.Y - otherLocation.Y) * 0.01F);
+                PointF constrain2 = new PointF(otherLocation.X + (initialLocation.X - otherLocation.X) * 10000F, otherLocation.Y + (initialLocation.Y - otherLocation.Y) * 10000F);
+                return Geometry.ClosestPointOnLineSegment(constrain1, constrain2, highlightLocation);
             }
             else if (action == MoveAllControlsAction.MoveRotate) {
                 // Constrain to be on a circle.

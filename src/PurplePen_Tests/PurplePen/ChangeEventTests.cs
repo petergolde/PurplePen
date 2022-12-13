@@ -49,10 +49,12 @@ using PurplePen.Graphics2D;
 namespace PurplePen.Tests
 {
     using PurplePen.MapModel;
-
+    using System.Drawing.Drawing2D;
+    using System.Windows.Media;
+    using Geometry = PurplePen.Graphics2D.Geometry;
 
     [TestClass]
-    public class ChangeEventTests: TestFixtureBase
+    public class ChangeEventTests : TestFixtureBase
     {
         UndoMgr undomgr;
         EventDB eventDB;
@@ -491,7 +493,7 @@ namespace PurplePen.Tests
             courseControl = eventDB.GetCourseControl(CourseControlId(4));
             Assert.AreEqual(false, courseControl.customNumberPlacement);
         }
-	
+
 
         [TestMethod]
         public void ChangeEventTitle()
@@ -562,7 +564,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(31, eventDB.GetEvent().firstControlCode);
             Assert.AreEqual(true, eventDB.GetEvent().disallowInvertibleCodes);
         }
-	
+
 
 
         [TestMethod]
@@ -806,7 +808,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0, eventDB.GetControl(ControlId(1)).location.Y);
             Assert.AreEqual(35.4F, eventDB.GetControl(ControlId(5)).location.X);
             Assert.AreEqual(-22.5F, eventDB.GetControl(ControlId(5)).location.Y);
-            
+
         }
 
         [TestMethod]
@@ -943,7 +945,7 @@ namespace PurplePen.Tests
             LegGap[] legGaps;
 
             Setup(@"changeevent\gappedlegs.coursescribe");
-            
+
             undomgr.BeginCommand(999, "remove gap");
             ChangeEvent.RemoveLegGap(eventDB, ControlId(1), ControlId(2), new PointF(70, -13));
             undomgr.EndCommand(999);
@@ -971,7 +973,7 @@ namespace PurplePen.Tests
             legGaps = QueryEvent.GetLegGaps(eventDB, ControlId(1), ControlId(2));
             Assert.IsNull(legGaps);
         }
-	
+
 
         [TestMethod]
         public void ChangeControlOrientation()
@@ -1026,7 +1028,7 @@ namespace PurplePen.Tests
 
             ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 10000F, CircleGap.ComputeCircleGaps(0x3FF1F00F));
             ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 15000F, CircleGap.ComputeCircleGaps(0xF0FFFFFF));
-            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 5000F,  CircleGap.ComputeCircleGaps(0xFFFFFFFF));
+            ChangeEvent.ChangeControlGaps(eventDB, ControlId(4), 5000F, CircleGap.ComputeCircleGaps(0xFFFFFFFF));
 
             ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 12000F, CircleGap.ComputeCircleGaps(0xFFFFFFFF));
             ChangeEvent.ChangeControlGaps(eventDB, ControlId(2), 10000F, CircleGap.ComputeCircleGaps(0xF00FFFFF));
@@ -1321,12 +1323,12 @@ namespace PurplePen.Tests
             eventDB.Validate();
 
             Assert.IsFalse(eventDB.IsControlPresent(ControlId(23)));
-            
+
             undomgr.Undo();
             eventDB.Validate();
 
             Assert.IsTrue(eventDB.IsControlPresent(ControlId(23)));
-       }
+        }
 
         [TestMethod]
         public void RemoveUsedControl()
@@ -1367,7 +1369,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(104, cc.nextCourseControl.id);
             Assert.IsTrue(eventDB.IsCourseControlPresent(CourseControlId(104)));
             Assert.IsTrue(eventDB.IsControlPresent(ControlId(3)));
-            
+
         }
 
         [TestMethod]
@@ -1377,7 +1379,7 @@ namespace PurplePen.Tests
 
             // Create a leg
             undomgr.BeginCommand(9214, "Add Leg gaps");
-            ChangeEvent.ChangeLegGaps(eventDB, ControlId(9), ControlId(8), new LegGap[] {new LegGap(3F, 1.2F)});
+            ChangeEvent.ChangeLegGaps(eventDB, ControlId(9), ControlId(8), new LegGap[] { new LegGap(3F, 1.2F) });
             undomgr.EndCommand(9214);
 
             Id<Leg> leg = QueryEvent.FindLeg(eventDB, ControlId(9), ControlId(8));
@@ -1907,18 +1909,18 @@ namespace PurplePen.Tests
 
             undomgr.BeginCommand(11, "move special");
             ChangeEvent.ChangeSpecialLocations(eventDB, SpecialId(1), new PointF[1] { new PointF(12.1F, -38.1F) });
-            ChangeEvent.ChangeSpecialLocations(eventDB, SpecialId(4), new PointF[5] { new PointF(5,3), new PointF(1,2), new PointF(6,4), new PointF(11,1), new PointF(5,3) });
+            ChangeEvent.ChangeSpecialLocations(eventDB, SpecialId(4), new PointF[5] { new PointF(5, 3), new PointF(1, 2), new PointF(6, 4), new PointF(11, 1), new PointF(5, 3) });
             undomgr.EndCommand(11);
             eventDB.Validate();
 
             Assert.AreEqual(1, eventDB.GetSpecial(SpecialId(1)).locations.Length);
             Assert.AreEqual(new PointF(12.1F, -38.1F), eventDB.GetSpecial(SpecialId(1)).locations[0]);
             Assert.AreEqual(5, eventDB.GetSpecial(SpecialId(4)).locations.Length);
-            Assert.AreEqual(new PointF(5,3), eventDB.GetSpecial(SpecialId(4)).locations[0]);
-            Assert.AreEqual(new PointF(1,2), eventDB.GetSpecial(SpecialId(4)).locations[1]);
-            Assert.AreEqual(new PointF(6,4), eventDB.GetSpecial(SpecialId(4)).locations[2]);
-            Assert.AreEqual(new PointF(11,1), eventDB.GetSpecial(SpecialId(4)).locations[3]);
-            Assert.AreEqual(new PointF(5,3), eventDB.GetSpecial(SpecialId(4)).locations[4]);
+            Assert.AreEqual(new PointF(5, 3), eventDB.GetSpecial(SpecialId(4)).locations[0]);
+            Assert.AreEqual(new PointF(1, 2), eventDB.GetSpecial(SpecialId(4)).locations[1]);
+            Assert.AreEqual(new PointF(6, 4), eventDB.GetSpecial(SpecialId(4)).locations[2]);
+            Assert.AreEqual(new PointF(11, 1), eventDB.GetSpecial(SpecialId(4)).locations[3]);
+            Assert.AreEqual(new PointF(5, 3), eventDB.GetSpecial(SpecialId(4)).locations[4]);
 
             undomgr.Undo();
             eventDB.Validate();
@@ -1926,7 +1928,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(1, eventDB.GetSpecial(SpecialId(1)).locations.Length);
             Assert.AreEqual(new PointF(14.5F, 31.2F), eventDB.GetSpecial(SpecialId(1)).locations[0]);
             Assert.AreEqual(4, eventDB.GetSpecial(SpecialId(4)).locations.Length);
-            Assert.AreEqual(new PointF(3,7), eventDB.GetSpecial(SpecialId(4)).locations[0]);
+            Assert.AreEqual(new PointF(3, 7), eventDB.GetSpecial(SpecialId(4)).locations[0]);
         }
 
         [TestMethod]
@@ -2037,7 +2039,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.77F, eventDB.GetSpecial(SpecialId(9)).lineWidth);
             Assert.AreEqual(1.33F, eventDB.GetSpecial(SpecialId(9)).gapSize);
             Assert.AreEqual(0F, eventDB.GetSpecial(SpecialId(9)).dashSize);
-            Assert.AreEqual(3.4F, eventDB.GetSpecial(SpecialId(9)).cornerRadius);  
+            Assert.AreEqual(3.4F, eventDB.GetSpecial(SpecialId(9)).cornerRadius);
 
             undomgr.Undo();
             eventDB.Validate();
@@ -2114,7 +2116,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add special");
-            Id<Special> newSpecialId = ChangeEvent.AddLineAreaSpecial(eventDB, SpecialKind.OOB, locations );
+            Id<Special> newSpecialId = ChangeEvent.AddLineAreaSpecial(eventDB, SpecialKind.OOB, locations);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
@@ -2227,14 +2229,14 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(13, "add description");
-            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, true, null, new PointF(30,40), 4.5F, 2);
+            Id<Special> newSpecialId = ChangeEvent.AddDescription(eventDB, true, null, new PointF(30, 40), 4.5F, 2);
             undomgr.EndCommand(13);
             eventDB.Validate();
 
             Assert.IsTrue(eventDB.IsSpecialPresent(newSpecialId));
             Special special = eventDB.GetSpecial(newSpecialId);
             Assert.AreEqual(2, special.locations.Length);
-            Assert.AreEqual(new PointF(30,40), special.locations[0]);
+            Assert.AreEqual(new PointF(30, 40), special.locations[0]);
             Assert.AreEqual(new PointF(34.5F, 40F), special.locations[1]);
             Assert.AreEqual(SpecialKind.Descriptions, special.kind);
             Assert.AreEqual(0F, special.orientation);
@@ -2359,7 +2361,7 @@ namespace PurplePen.Tests
 
             Assert.IsFalse(eventDB.IsSpecialPresent(newSpecialId));
         }
-	
+
 
         [TestMethod]
         public void ChangeFlagging()
@@ -2378,7 +2380,7 @@ namespace PurplePen.Tests
             Assert.IsFalse(legId.IsNone);
             Assert.AreNotEqual("14.1", eventDB.GetControl(ControlId(6)).symbolIds[0]);
             Assert.AreEqual(FlaggingKind.All, QueryEvent.GetLegFlagging(eventDB, ControlId(5), ControlId(6)));
-            
+
             undomgr.BeginCommand(4112, "Change flagging");
             ChangeEvent.ChangeFlagging(eventDB, ControlId(1), ControlId(2), FlaggingKind.All);
             undomgr.EndCommand(4112);
@@ -2531,7 +2533,7 @@ namespace PurplePen.Tests
             Assert.IsFalse(eventDB.IsSpecialPresent(desc2));
             TestUtil.TestEnumerableAnyOrder(QueryEvent.GetSpecialDisplayedCourses(eventDB, desc3), new CourseDesignator[] { Designator(1), Designator(5) });
         }
-	
+
 
         [TestMethod]
         public void MoveLegBend()
@@ -2552,12 +2554,12 @@ namespace PurplePen.Tests
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(2, leg.bends.Length);
             Assert.AreEqual(new PointF(54, 13), leg.bends[0]);
-            Assert.AreEqual(new PointF(50,30), leg.bends[1]);
+            Assert.AreEqual(new PointF(50, 30), leg.bends[1]);
 
             legId = QueryEvent.FindLeg(eventDB, ControlId(3), ControlId(4));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(1, leg.bends.Length);
-            Assert.AreEqual(new PointF(17,21), leg.bends[0]);
+            Assert.AreEqual(new PointF(17, 21), leg.bends[0]);
             Assert.AreEqual(new PointF(17, 21), leg.flagStartStop);
 
             undomgr.Undo();
@@ -2566,14 +2568,14 @@ namespace PurplePen.Tests
             legId = QueryEvent.FindLeg(eventDB, ControlId(4), ControlId(5));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(2, leg.bends.Length);
-            Assert.AreEqual(new PointF(35,41), leg.bends[0]);
+            Assert.AreEqual(new PointF(35, 41), leg.bends[0]);
             Assert.AreEqual(new PointF(50, 30), leg.bends[1]);
 
             legId = QueryEvent.FindLeg(eventDB, ControlId(3), ControlId(4));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(1, leg.bends.Length);
-            Assert.AreEqual(new PointF(12,20), leg.bends[0]);
-            Assert.AreEqual(new PointF(12,20), leg.flagStartStop);
+            Assert.AreEqual(new PointF(12, 20), leg.bends[0]);
+            Assert.AreEqual(new PointF(12, 20), leg.flagStartStop);
         }
 
         [TestMethod]
@@ -2596,22 +2598,22 @@ namespace PurplePen.Tests
             legId = QueryEvent.FindLeg(eventDB, ControlId(4), ControlId(5));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(3, leg.bends.Length);
-            Assert.AreEqual(new PointF(31,41), leg.bends[0]);
-            Assert.AreEqual(new PointF(35,41), leg.bends[1]);
+            Assert.AreEqual(new PointF(31, 41), leg.bends[0]);
+            Assert.AreEqual(new PointF(35, 41), leg.bends[1]);
             Assert.AreEqual(new PointF(50, 30), leg.bends[2]);
 
             legId = QueryEvent.FindLeg(eventDB, ControlId(5), ControlId(6));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(4, leg.bends.Length);
-            Assert.AreEqual(new PointF(83,43), leg.bends[0]);
-            Assert.AreEqual(new PointF(88,33), leg.bends[1]);
-            Assert.AreEqual(new PointF(103,30), leg.bends[2]);
-            Assert.AreEqual(new PointF(106,20), leg.bends[3]);
+            Assert.AreEqual(new PointF(83, 43), leg.bends[0]);
+            Assert.AreEqual(new PointF(88, 33), leg.bends[1]);
+            Assert.AreEqual(new PointF(103, 30), leg.bends[2]);
+            Assert.AreEqual(new PointF(106, 20), leg.bends[3]);
 
             legId = QueryEvent.FindLeg(eventDB, ControlId(1), ControlId(2));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(1, leg.bends.Length);
-            Assert.AreEqual(new PointF(49,0), leg.bends[0]);
+            Assert.AreEqual(new PointF(49, 0), leg.bends[0]);
         }
 
         [TestMethod]
@@ -2668,12 +2670,12 @@ namespace PurplePen.Tests
             PointF[] locations = special.locations;
 
             Assert.AreEqual(7, locations.Length);
-            Assert.AreEqual(new PointF(3,7), locations[0]);
-            Assert.AreEqual(new PointF(11,2), locations[1]);
-            Assert.AreEqual(new PointF(12,-1), locations[2]);
-            Assert.AreEqual(new PointF(0,-7), locations[3]);
-            Assert.AreEqual(new PointF(-4,-2), locations[4]);
-            Assert.AreEqual(new PointF(-12,-3), locations[5]);
+            Assert.AreEqual(new PointF(3, 7), locations[0]);
+            Assert.AreEqual(new PointF(11, 2), locations[1]);
+            Assert.AreEqual(new PointF(12, -1), locations[2]);
+            Assert.AreEqual(new PointF(0, -7), locations[3]);
+            Assert.AreEqual(new PointF(-4, -2), locations[4]);
+            Assert.AreEqual(new PointF(-12, -3), locations[5]);
             Assert.AreEqual(new PointF(-5, 5), locations[6]);
 
             undomgr.Undo();
@@ -2683,11 +2685,11 @@ namespace PurplePen.Tests
             locations = special.locations;
 
             Assert.AreEqual(4, locations.Length);
-            Assert.AreEqual(new PointF(3,7), locations[0]);
-            Assert.AreEqual(new PointF(11,2), locations[1]);
-            Assert.AreEqual(new PointF(0,-7), locations[2]);
-            Assert.AreEqual(new PointF(-12,-3), locations[3]);
-        
+            Assert.AreEqual(new PointF(3, 7), locations[0]);
+            Assert.AreEqual(new PointF(11, 2), locations[1]);
+            Assert.AreEqual(new PointF(0, -7), locations[2]);
+            Assert.AreEqual(new PointF(-12, -3), locations[3]);
+
         }
 
         [TestMethod]
@@ -2696,7 +2698,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(7119, "Remove corner");
-            ChangeEvent.RemoveSpecialCorner(eventDB, SpecialId(4), new PointF(3,7));
+            ChangeEvent.RemoveSpecialCorner(eventDB, SpecialId(4), new PointF(3, 7));
             undomgr.EndCommand(7119);
 
             eventDB.Validate();
@@ -2722,7 +2724,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(new PointF(-12, -3), locations[3]);
 
             undomgr.BeginCommand(7119, "Remove corner");
-            ChangeEvent.RemoveSpecialCorner(eventDB, SpecialId(4), new PointF(-12,-3));
+            ChangeEvent.RemoveSpecialCorner(eventDB, SpecialId(4), new PointF(-12, -3));
             undomgr.EndCommand(7119);
 
             eventDB.Validate();
@@ -2746,7 +2748,7 @@ namespace PurplePen.Tests
 
             undomgr.BeginCommand(4129, "Remove bends");
             ChangeEvent.RemoveLegBend(eventDB, ControlId(2), ControlId(3), new PointF(20, 0));
-            ChangeEvent.RemoveLegBend(eventDB, ControlId(2), ControlId(3), new PointF(18,8));
+            ChangeEvent.RemoveLegBend(eventDB, ControlId(2), ControlId(3), new PointF(18, 8));
             undomgr.EndCommand(4129);
 
             eventDB.Validate();
@@ -2772,7 +2774,7 @@ namespace PurplePen.Tests
             legId = QueryEvent.FindLeg(eventDB, ControlId(2), ControlId(3));
             leg = eventDB.GetLeg(legId);
             Assert.AreEqual(1, leg.bends.Length);
-            Assert.AreEqual(new PointF(18,8), leg.bends[0]);
+            Assert.AreEqual(new PointF(18, 8), leg.bends[0]);
         }
 
         [TestMethod]
@@ -2784,7 +2786,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\speciallegs3.coursescribe");
 
             undomgr.BeginCommand(4129, "Remove bends");
-            ChangeEvent.RemoveLegBend(eventDB, ControlId(3), ControlId(4), new PointF(12,20));
+            ChangeEvent.RemoveLegBend(eventDB, ControlId(3), ControlId(4), new PointF(12, 20));
             undomgr.EndCommand(4129);
 
             eventDB.Validate();
@@ -2828,7 +2830,7 @@ namespace PurplePen.Tests
             Setup("changeevent\\speciallegs3.coursescribe");
 
             undomgr.BeginCommand(4129, "Remove bends");
-            ChangeEvent.RemoveLegBend(eventDB, ControlId(5), ControlId(6), new PointF(83,43));
+            ChangeEvent.RemoveLegBend(eventDB, ControlId(5), ControlId(6), new PointF(83, 43));
             undomgr.EndCommand(4129);
 
             eventDB.Validate();
@@ -2951,8 +2953,8 @@ namespace PurplePen.Tests
 
             pattern = new PunchPattern();
             pattern.size = 9;
-            pattern.dots = new bool[9,9];
-            pattern.dots[1,1] = pattern.dots[4,6] = pattern.dots[8,1] = true;
+            pattern.dots = new bool[9, 9];
+            pattern.dots[1, 1] = pattern.dots[4, 6] = pattern.dots[8, 1] = true;
             dict["31"] = pattern;
 
             dict["32"] = null;
@@ -2960,7 +2962,7 @@ namespace PurplePen.Tests
             pattern = new PunchPattern();
             pattern.size = 9;
             pattern.dots = new bool[9, 9];
-            pattern.dots[6,1] = pattern.dots[6,4] = pattern.dots[6,7] = true;
+            pattern.dots[6, 1] = pattern.dots[6, 4] = pattern.dots[6, 7] = true;
             dict["34"] = pattern;
 
             undomgr.BeginCommand(811, "Set punch patterns");
@@ -2971,7 +2973,7 @@ namespace PurplePen.Tests
             Assert.IsNotNull(control.punches);
             Assert.AreEqual(9, control.punches.size);
             Assert.IsTrue(control.punches.dots[1, 1]);
-            Assert.IsTrue(control.punches.dots[4,6]);
+            Assert.IsTrue(control.punches.dots[4, 6]);
             Assert.IsFalse(control.punches.dots[6, 4]);
 
             control = eventDB.GetControl(ControlId(3));
@@ -2981,8 +2983,8 @@ namespace PurplePen.Tests
             Assert.IsNotNull(control.punches);
             Assert.AreEqual(9, control.punches.size);
             Assert.IsTrue(control.punches.dots[6, 1]);
-            Assert.IsTrue(control.punches.dots[6,4]);
-            Assert.IsFalse(control.punches.dots[4,6]);
+            Assert.IsTrue(control.punches.dots[6, 4]);
+            Assert.IsFalse(control.punches.dots[4, 6]);
 
             dict.Clear();
             dict["31"] = null;
@@ -3009,7 +3011,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(control.punches.dots[1, 1]);
             Assert.IsTrue(control.punches.dots[4, 4]);
             Assert.IsFalse(control.punches.dots[6, 4]);
-            Assert.IsFalse(control.punches.dots[4,6]);
+            Assert.IsFalse(control.punches.dots[4, 6]);
 
         }
 
@@ -3157,7 +3159,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(false, customSymbolKey["8.7"]);
             Assert.IsFalse(customSymbolText.ContainsKey("5.23"));
         }
-	
+
 
         [TestMethod]
         public void ChangePrintArea()
@@ -3167,7 +3169,7 @@ namespace PurplePen.Tests
             undomgr.BeginCommand(9151, "Change print area");
             ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, false, new PrintArea(false, true, new RectangleF(25, 50, 110, 130)));
             undomgr.EndCommand(9151);
-          
+
             PrintArea result = QueryEvent.GetPrintArea(eventDB, CourseDesignator.AllControls);
             Assert.AreEqual(25, result.printAreaRectangle.Left);
             Assert.AreEqual(50, result.printAreaRectangle.Top);
@@ -3385,7 +3387,7 @@ namespace PurplePen.Tests
         {
             Setup("changeevent\\sampleevent1.coursescribe");
 
-            string[] expectedBefore = { null, "305", "211", "210", "32", "302", "GO", "303", "74", "191", "189", "190", null};
+            string[] expectedBefore = { null, "305", "211", "210", "32", "302", "GO", "303", "74", "191", "189", "190", null };
             string[] expectedAfter = { null, "305", "74", "211", "210", "32", "302", "GO", "303", "191", "189", "190", null };
             CollectionAssert.AreEqual(expectedBefore, CodesInOrder(Designator(6)));
 
@@ -3414,21 +3416,21 @@ namespace PurplePen.Tests
                 "43", "33", "44", "46", "45",
                 "46", "47", "48", "33", "34",
                 "35", "36", "37", "38", "49",
-                "38", "50", "38", "39", null 
+                "38", "50", "38", "39", null
             };
             string[] expectedAfter = {
                 null, "31", "52", "31", "32",
                 "33", "49", "40", "41", "33", "42",
                 "43", "33", "44", "46", "45",
                 "46", "47", "48", "33", "34",
-                "35", "36", "37", "38", 
+                "35", "36", "37", "38",
                 "38", "50", "38", "39", null
             }; string[] codes = CodesInOrder(Designator(1));
             CollectionAssert.AreEqual(expectedBefore, codes);
 
             eventDB.Validate();
 
-            
+
             undomgr.BeginCommand(3712, "Move Control");
             ChangeEvent.MoveControlInCourse(eventDB, CourseId(1), CourseControlId(13), CourseControlId(25), CourseControlId(15), LegInsertionLoc.Normal);
             undomgr.EndCommand(3712);
@@ -3439,7 +3441,7 @@ namespace PurplePen.Tests
             undomgr.Undo();
             eventDB.Validate();
             CollectionAssert.AreEqual(expectedBefore, CodesInOrder(Designator(1)));
-            
+
         }
 
         [TestMethod]
@@ -3514,7 +3516,194 @@ namespace PurplePen.Tests
 
         }
 
+        private void CheckGaps(CircleGap[] oldGaps, CircleGap[] newGaps, float rotation)
+        {
+            HashSet<int> usedNewIndices = new HashSet<int>();
+            foreach (CircleGap oldGap in oldGaps) {
+                bool foundMatch = false;
 
+                for (int i = 0; i < newGaps.Length; ++i) {
+                    if (usedNewIndices.Contains(i))
+                        continue;
+
+                    if (Math.Abs(Math.IEEERemainder(oldGap.startAngle + rotation, 360.0) - Math.IEEERemainder(newGaps[i].startAngle, 360.0)) < 0.001 &&
+                        Math.Abs(Math.IEEERemainder(oldGap.stopAngle + rotation, 360.0) - Math.IEEERemainder(newGaps[i].stopAngle, 360.0)) < 0.001) {
+                        usedNewIndices.Add(i);
+                        foundMatch = true;
+                        break;
+                    }
+                }
+
+                Assert.IsTrue(foundMatch, string.Format("No match found for circle gap: {0}", oldGap));
+            }
+        }
+
+        private void CheckChangedControlPointLocation(ControlPoint newControlPoint, ControlPoint oldControlPoint, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        {
+            PointF expectedLocation = Geometry.TransformPoint(oldControlPoint.location, matrix);
+            Assert.AreEqual(expectedLocation.X, newControlPoint.location.X, 0.0001);
+            Assert.AreEqual(expectedLocation.Y, newControlPoint.location.Y, 0.0001);
+            if (oldControlPoint.kind == ControlPointKind.CrossingPoint) {
+                Assert.AreEqual(Math.IEEERemainder(oldControlPoint.orientation + rotation, 360.0), Math.IEEERemainder(newControlPoint.orientation, 360.0), 0.001);
+                Assert.AreEqual(oldControlPoint.stretch * scale, newControlPoint.stretch, 0.001);
+            }
+            if (oldControlPoint.customCodeLocation) {
+                Assert.AreEqual(Math.IEEERemainder(oldControlPoint.codeLocationAngle + rotation, 360.0), Math.IEEERemainder(newControlPoint.codeLocationAngle, 360.0), 0.001);
+            }
+            if (oldControlPoint.gaps != null) {
+                foreach (var gapPair in oldControlPoint.gaps) {
+                    CircleGap[] gapsOld = gapPair.Value;
+                    CircleGap[] gapsNew = newControlPoint.gaps[gapPair.Key];
+                    CheckGaps(gapsOld, gapsNew, rotation);
+                }
+            }
+        }
+
+        private void CheckChangesCourseControlLocation(CourseControl newCourseControl, CourseControl oldCourseControl, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        {
+            double rotRadians = rotation * Math.PI / 180.0;
+            if (oldCourseControl.customNumberPlacement) {
+                Assert.AreEqual(oldCourseControl.numberDeltaX * Math.Cos(rotRadians) * scale - oldCourseControl.numberDeltaY * Math.Sin(rotRadians) * scale, newCourseControl.numberDeltaX, 0.001);
+                Assert.AreEqual(oldCourseControl.numberDeltaX * Math.Sin(rotRadians) * scale + oldCourseControl.numberDeltaY * Math.Cos(rotRadians) * scale, newCourseControl.numberDeltaY, 0.001);
+            }
+        }
+
+        private void CheckChangesSpecialLocation(Special newSpecial, Special oldSpecial, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        {
+            switch (oldSpecial.kind) {
+                case SpecialKind.Text:
+                case SpecialKind.Descriptions:
+                case SpecialKind.Image:
+                case SpecialKind.Rectangle:
+                case SpecialKind.Ellipse:
+                    RectangleF oldRectangle = Geometry.RectFromPoints(oldSpecial.locations[0], oldSpecial.locations[1]);
+                    RectangleF newRectangle = Geometry.RectFromPoints(newSpecial.locations[0], newSpecial.locations[1]);
+                    PointF expectedCenter = Geometry.TransformPoint(oldRectangle.Center(), matrix);
+                    Assert.AreEqual(expectedCenter.X, newRectangle.Center().X, 0.01);
+                    Assert.AreEqual(expectedCenter.Y, newRectangle.Center().Y, 0.01);
+                    Assert.AreEqual(oldRectangle.Width * scale, newRectangle.Width, 0.01);
+                    Assert.AreEqual(oldRectangle.Height * scale, newRectangle.Height, 0.01);
+                    break;
+
+                default:
+                    PointF[] expectedLocations = Geometry.TransformPoints(oldSpecial.locations, matrix);
+                    for (int i = 0; i < expectedLocations.Length; ++i) {
+                        Assert.AreEqual(expectedLocations[i].X, newSpecial.locations[i].X, 0.01);
+                        Assert.AreEqual(expectedLocations[i].Y, newSpecial.locations[i].Y, 0.01);
+                    }
+                    break;
+            }
+
+            if (oldSpecial.kind == SpecialKind.OptCrossing) {
+                Assert.AreEqual(Math.IEEERemainder(oldSpecial.orientation + rotation, 360.0), Math.IEEERemainder(newSpecial.orientation, 360.0), 0.001);
+                Assert.AreEqual(oldSpecial.stretch * scale, newSpecial.stretch, 0.001);
+            }
+        }
+
+        private void CheckChangesLegLocation(Leg newLeg, Leg oldLeg, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        {
+            if (oldLeg.bends != null) {
+                PointF[] expectedBends = Geometry.TransformPoints(oldLeg.bends, matrix);
+                for (int i = 0; i < expectedBends.Length; ++i) {
+                    Assert.AreEqual(expectedBends[i].X, newLeg.bends[i].X, 0.01);
+                    Assert.AreEqual(expectedBends[i].Y, newLeg.bends[i].Y, 0.01);
+                }
+            }
+
+            if (oldLeg.gaps != null) {
+                for (int i = 0; i < oldLeg.gaps.Length; ++i) {
+                    Assert.AreEqual(oldLeg.gaps[i].distanceFromStart * scale, newLeg.gaps[i].distanceFromStart, 0.01);
+                    Assert.AreEqual(oldLeg.gaps[i].length * scale, newLeg.gaps[i].length, 0.01);
+                }
+            }
+
+            if (Leg.NeedsFlaggingStartStopPosition(oldLeg.flagging)) {
+                PointF expectedStartStop = Geometry.TransformPoint(oldLeg.flagStartStop, matrix);
+                Assert.AreEqual(expectedStartStop.X, newLeg.flagStartStop.X, 0.01);
+                Assert.AreEqual(expectedStartStop.Y, newLeg.flagStartStop.Y, 0.01);
+            }
+        }
+
+        private void CheckChangesPrintArea(PrintArea newPrintArea, PrintArea oldPrintArea, System.Drawing.Drawing2D.Matrix matrix, float scale)
+        {
+            if (oldPrintArea.autoPrintArea) {
+                Assert.IsTrue(newPrintArea.autoPrintArea);
+                return;
+            }
+
+            RectangleF oldRectangle = oldPrintArea.printAreaRectangle;
+            RectangleF newRectangle = newPrintArea.printAreaRectangle;
+
+            PointF expectedCenter = Geometry.TransformPoint(oldRectangle.Center(), matrix);
+            Assert.AreEqual(expectedCenter.X, newRectangle.Center().X, 0.01);
+            Assert.AreEqual(expectedCenter.Y, newRectangle.Center().Y, 0.01);
+            Assert.AreEqual(oldRectangle.Width * scale, newRectangle.Width, 0.02);
+            Assert.AreEqual(oldRectangle.Height * scale, newRectangle.Height, 0.02);
+        }
+
+
+        private void TestChangeAllObjectLocations(EventDB eventDB, PointF location, float rotation, float scale)
+        {
+            System.Drawing.Drawing2D.Matrix matrix = new System.Drawing.Drawing2D.Matrix();
+            matrix.Scale(scale, scale);
+            matrix.RotateAt(rotation, location);
+
+            eventDB.Validate();
+
+            undomgr.BeginCommand(6671, "Move All Object Locations");
+
+            Dictionary<Id<ControlPoint>, ControlPoint> controlPoints = eventDB.AllControlPointPairs.ToDictionary(pair => pair.Key, pair => pair.Value);
+            Dictionary<Id<CourseControl>, CourseControl> courseControls = eventDB.AllCourseControlPairs.ToDictionary(pair => pair.Key, pair => pair.Value);
+            Dictionary<Id<Special>, Special> specials = eventDB.AllSpecialPairs.ToDictionary(pair => pair.Key, pair => pair.Value);
+            Dictionary<Id<Leg>, Leg> legs = eventDB.AllLegPairs.ToDictionary(pair => pair.Key, pair => pair.Value);
+            Dictionary<Id<Course>, Course> courses = eventDB.AllCoursePairs.ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            ChangeEvent.ChangeAllObjectLocations(eventDB, matrix);
+
+            foreach (var pair in eventDB.AllControlPointPairs) {
+                CheckChangedControlPointLocation(pair.Value, controlPoints[pair.Key], matrix, rotation, scale);
+            }
+
+            foreach (var pair in eventDB.AllCourseControlPairs) {
+                CheckChangesCourseControlLocation(pair.Value, courseControls[pair.Key], matrix, rotation, scale);
+            }
+
+            foreach (var pair in eventDB.AllSpecialPairs) {
+                CheckChangesSpecialLocation(pair.Value, specials[pair.Key], matrix, rotation, scale);
+            }
+
+            foreach (var pair in eventDB.AllLegPairs) {
+                CheckChangesLegLocation(pair.Value, legs[pair.Key], matrix, rotation, scale);
+            }
+
+            foreach (var pair in eventDB.AllCoursePairs) {
+                if (pair.Value.printArea != null) {
+                    CheckChangesPrintArea(pair.Value.printArea, courses[pair.Key].printArea, matrix, scale);
+                }
+                if (pair.Value.partPrintAreas != null) {
+                    foreach (var partPair in pair.Value.partPrintAreas.ToArray()) {
+                        CheckChangesPrintArea(partPair.Value, courses[pair.Key].partPrintAreas[partPair.Key], matrix, scale);
+                    }
+                }
+            }
+
+            undomgr.EndCommand(6671);
+
+            eventDB.Validate();
+            undomgr.Undo();
+            eventDB.Validate();
+        }
+
+        [TestMethod]
+        public void ChangeAllObjectLocations()
+        {
+            Setup("changeevent\\sampleevent13.ppen");
+
+            TestChangeAllObjectLocations(eventDB, new PointF(11, -18), -205, 1);
+            TestChangeAllObjectLocations(eventDB, new PointF(-5, 4), 312, 1.5F);
+            TestChangeAllObjectLocations(eventDB, new PointF(6, 1), 0, 0.9F);
+            TestChangeAllObjectLocations(eventDB, new PointF(-6, -99), -99, 4.5F);
+        }
 
 
 

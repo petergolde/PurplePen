@@ -668,6 +668,27 @@ namespace PurplePen
             eventDB.ReplaceControlPoint(controlId, control); 
         }
 
+        private static PrintArea MovePrintArea(PrintArea printArea, Matrix matrix, float scale)
+        {
+            if (printArea == null)
+                return null;
+            if (printArea.autoPrintArea)
+                return printArea;
+
+            PrintArea newPrintArea = (PrintArea)printArea.Clone();
+            RectangleF rect = printArea.printAreaRectangle;
+
+            float width = rect.Width;
+            float height = rect.Height;
+            PointF center = Geometry.RectCenter(rect);
+            center = Geometry.TransformPoint(center, matrix);
+            width *= scale;
+            height *= scale;
+            newPrintArea.printAreaRectangle = Geometry.RectangleFromCenterSize(center, new SizeF(width, height));
+
+            return newPrintArea;
+        }
+
         // Change the location of every object by the given matrix. Also rotates objects if needed.
         public static void ChangeAllObjectLocations(EventDB eventDB, Matrix matrix)
         {
@@ -704,6 +725,10 @@ namespace PurplePen
                     control.codeLocationAngle += rotation;
                 }
 
+                if (control.kind == ControlPointKind.CrossingPoint && control.stretch > 0.0 && scale != 1.0F) {
+                    control.stretch *= scale;
+                }
+
                 if (control.gaps != null && control.gaps.Count > 0 && rotation != 0) {
                     Dictionary<int, CircleGap[]> newGaps = new Dictionary<int, CircleGap[]>();
 
@@ -721,10 +746,39 @@ namespace PurplePen
                 Special special = eventDB.GetSpecial(specialId);
 
                 special = (Special)special.Clone();
-                special.locations = Geometry.TransformPoints(special.locations, matrix);
 
-                if (special.kind == SpecialKind.OptCrossing && rotation != 0) {
-                    special.orientation += rotation;
+                switch (special.kind) {
+                    case SpecialKind.Text:
+                    case SpecialKind.Descriptions:
+                    case SpecialKind.Image:
+                    case SpecialKind.Rectangle:
+                    case SpecialKind.Ellipse:
+                        // These 5 kinds use a rectangle. To transform it, we should transform the
+                        // center location, then also transform the width and height by the scale factor.
+                        RectangleF rect = Geometry.RectFromPoints(special.locations[0], special.locations[1]);
+                        float width = rect.Width;
+                        float height = rect.Height;
+                        PointF center = Geometry.RectCenter(rect);
+                        center = Geometry.TransformPoint(center, matrix);
+                        width *= scale;
+                        height *= scale;
+                        rect = Geometry.RectangleFromCenterSize(center, new SizeF(width, height));
+                        special.locations = new PointF[2] { rect.TopLeft(), rect.BottomRight() };
+                        break;
+
+                    default:
+                        // Just transform all the locations.
+                        special.locations = Geometry.TransformPoints(special.locations, matrix);
+                        break;
+                }
+
+                if (special.kind == SpecialKind.OptCrossing) {
+                    if (rotation != 0) {
+                        special.orientation += rotation;
+                    }
+                    if (special.stretch > 0 && scale != 1.0) {
+                        special.stretch *= scale;
+                    }
                 }
 
                 eventDB.ReplaceSpecial(specialId, special);
@@ -747,6 +801,10 @@ namespace PurplePen
                     leg.gaps = newGaps;
                 }
 
+                if (Leg.NeedsFlaggingStartStopPosition(leg.flagging)) {
+                    leg.flagStartStop = Geometry.TransformPoint(leg.flagStartStop, matrix);
+                }
+
                 eventDB.ReplaceLeg(legId, leg);
             }
 
@@ -762,6 +820,41 @@ namespace PurplePen
                     courseControl.numberDeltaY = ptPlacement.Y;
                     eventDB.ReplaceCourseControl(courseControlId, courseControl);
                 }
+            }
+
+            // Move print areas for courses.
+            foreach (Id<Course> courseId in eventDB.AllCourseIds.ToArray()) {
+                bool replaced = false;
+                Course course = eventDB.GetCourse(courseId);
+                if (course.printArea != null && !course.printArea.autoPrintArea) {
+                    course = (Course) course.Clone();
+                    course.printArea = MovePrintArea(course.printArea, matrix, scale);
+                    replaced = true;
+                }
+
+                if (course.partPrintAreas != null) {
+                    foreach (KeyValuePair<int, PrintArea> pair in course.partPrintAreas.ToArray()) {
+                        if (! pair.Value.autoPrintArea) {
+                            if (!replaced) {
+                                course = (Course) course.Clone();
+                                replaced = true;
+                            }
+                            course.partPrintAreas[pair.Key] = MovePrintArea(pair.Value, matrix, scale);
+                        }
+                    }
+                }
+
+                if (replaced) {
+                    eventDB.ReplaceCourse(courseId, course);
+                }
+            }
+
+            // Move print area for all controls.
+            Event ev = eventDB.GetEvent();
+            if (ev.printArea != null && !ev.printArea.autoPrintArea) {
+                ev = (Event)ev.Clone();
+                ev.printArea = MovePrintArea(ev.printArea, matrix, scale);
+                eventDB.ChangeEvent(ev);
             }
         }
 
