@@ -88,3 +88,4 @@ src/.vs/
 !src/PdfiumViewer/Libraries/**/x64
 
 /src/InternalTrace.*.log
+/src/Tools/LinearColorConverter/.vs/LinearColorConverter/FileContentIndex
