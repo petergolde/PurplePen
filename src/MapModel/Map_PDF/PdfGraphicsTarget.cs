@@ -343,7 +343,10 @@ namespace PurplePen.MapModel
         // Draw an arc with a pen.
         public void DrawArc(object penKey, PointF center, float radius, float startAngle, float sweepAngle)
         {
-            gfx.DrawArc(GetPen(penKey), new RectangleF(center.X - radius, center.Y - radius, radius * 2, radius * 2), startAngle, sweepAngle);
+            // Weirdly, using a sweepAngle of 0 causes the PDF code to generate a corrupt PDF.
+            if (sweepAngle > 0) {
+                gfx.DrawArc(GetPen(penKey), new RectangleF(center.X - radius, center.Y - radius, radius * 2, radius * 2), startAngle, sweepAngle);
+            }
         }
 
         // Draw an ellipse with a pen.

@@ -425,6 +425,27 @@ namespace PurplePen.Tests
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create6\\Course 2_expected.png") });
         }
 
+        [TestMethod]
+        public void PdfCreation9()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create9");
+            settings.CourseIds = new Id<Course>[1] { CourseId(1) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.itemScaling = ItemScaling.RelativeToMap;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\McHugh 2021.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create9\\Long.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create9\\Long_expected.png") });
+        }
+
 
         [TestMethod]
         public void PdfCreationBitmapBaseMap()

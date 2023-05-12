@@ -106,6 +106,7 @@
     <Compile Include="PurplePen\MapDisplayTests.cs" />
     <Compile Include="PurplePen\MapUtilTests.cs" />
     <Compile Include="PurplePen\MoveAllComputationsTests.cs" />
+    <Compile Include="PurplePen\MoveAllControlsModeTests.cs" />
     <Compile Include="PurplePen\ObjectStoreTests.cs" />
     <Compile Include="PurplePen\PairTests.cs" />
     <Compile Include="PurplePen\PdfCourseTests.cs" />

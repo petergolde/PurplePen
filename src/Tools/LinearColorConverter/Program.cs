@@ -17,7 +17,7 @@ namespace LinearColorConverter
             Console.WriteLine("Populating...");
 
             colorModel.Populate();
-            /*
+            
             Test(0, 0, 0, 0);
             Test(1, 1, 1, 1);
             Test(1, 0, 0, 0);
@@ -48,14 +48,14 @@ namespace LinearColorConverter
             Test(0.2F, 0.4F, 0.6F, 0.9F);
             Test(0.2F, 0.4F, 0.6F, 0.95F);
             Test(0.2F, 0.4F, 0.6F, 1.0F);
-            */
-            /*
+            
+            
             double maxDiff = 0;
             float maxC = 0, maxM = 0, maxY = 0, maxK = 0;
 
             Console.WriteLine("Testing...");
 
-            for (int i = 0; i < 100000; ++i) {
+            for (int i = 0; i < 10000; ++i) {
                 if (i % 1000 == 0) {
                     Console.Write($"{i}... ");
                 }
@@ -75,7 +75,7 @@ namespace LinearColorConverter
 
             Console.WriteLine();
             Test(maxC, maxM, maxY, maxK);
-            */
+            
 
             colorModel.OutputSamples("CmykConverterSamples.cs");
         }
@@ -107,7 +107,7 @@ namespace LinearColorConverter
 
     class ColorModel
     {
-        public const int SAMPLESIZE = 11;
+        public const int SAMPLESIZE = 8;  // Was 11.
         public RGB[,,,] samples = new RGB[SAMPLESIZE, SAMPLESIZE, SAMPLESIZE, SAMPLESIZE];
 
         Uri SwopUri;
