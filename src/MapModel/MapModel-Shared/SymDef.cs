@@ -2866,7 +2866,7 @@ namespace PurplePen.MapModel
 
         public void SetFont(string fontName, float fontSize, TextEffects effects, SymColor fontColor, float lineSpacing, float paraSpacing, 
                             float firstIndent, float restIndent, float[] tabs, float charSpacing, float wordSpacing, 
-                            TextSymDefHorizAlignment defaulHorizAlign, TextSymDefVertAlignment defaultVertAlign)
+                            TextSymDefHorizAlignment defaultHorizAlign, TextSymDefVertAlignment defaultVertAlign)
         {
             CheckModifiable();
             this.fontName = fontName;
@@ -2879,7 +2879,7 @@ namespace PurplePen.MapModel
             this.restIndent = restIndent;
             this.charSpacing = charSpacing;
             this.wordSpacing = wordSpacing;
-            this.defaultHorizAlign = defaulHorizAlign;
+            this.defaultHorizAlign = defaultHorizAlign;
             this.defaultVertAlign = defaultVertAlign;
             this.tabs = tabs;
         }
