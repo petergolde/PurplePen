@@ -58,7 +58,7 @@
             this.pictureBoxScreenshot = new System.Windows.Forms.PictureBox();
             this.checkBoxIncludeScreenshot = new System.Windows.Forms.CheckBox();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCacel = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSendReport = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -404,19 +404,19 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.ButtonSaveClick);
             // 
-            // buttonCacel
+            // buttonCancel
             // 
-            this.buttonCacel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCacel.Image = global::CrashReporterDotNET.Properties.Resources.stop;
-            this.buttonCacel.Location = new System.Drawing.Point(473, 542);
-            this.buttonCacel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCacel.Name = "buttonCacel";
-            this.buttonCacel.Size = new System.Drawing.Size(139, 56);
-            this.buttonCacel.TabIndex = 4;
-            this.buttonCacel.Text = "Cancel";
-            this.buttonCacel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCacel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCacel.UseVisualStyleBackColor = true;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Image = global::CrashReporterDotNET.Properties.Resources.stop;
+            this.buttonCancel.Location = new System.Drawing.Point(473, 542);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(139, 56);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "Cancel";
+            this.buttonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonSendReport
             // 
@@ -462,11 +462,11 @@
             this.AcceptButton = this.buttonSendReport;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCacel;
+            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(652, 612);
             this.Controls.Add(this.labelIntro);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.buttonCacel);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSendReport);
             this.Controls.Add(this.tabControl);
             this.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
@@ -502,7 +502,7 @@
         private System.Windows.Forms.TabPage tabPageGeneral;
         private System.Windows.Forms.TabPage tabPageExceptions;
         private System.Windows.Forms.Button buttonSendReport;
-        private System.Windows.Forms.Button buttonCacel;
+        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.PictureBox pictureBoxError;
         private System.Windows.Forms.TextBox textBoxExceptionMessage;
         private System.Windows.Forms.TextBox textBoxApplicationVersion;
