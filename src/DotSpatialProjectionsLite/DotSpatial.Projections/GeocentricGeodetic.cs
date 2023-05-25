@@ -27,11 +27,11 @@ namespace DotSpatial.Projections
     /*
     * Reference...
     * ============
-    * Wenzel, H.-G.(1985): Hochauflösende Kugelfunktionsmodelle für
+    * Wenzel, H.-G.(1985): HochauflÃ¶sende Kugelfunktionsmodelle fÃ¼r
     * das Gravitationspotential der Erde. Wiss. Arb. Univ. Hannover
     * Nr. 137, p. 130-131.
 
-    * Programmed by GGA- Leibniz-Institue of Applied Geophysics
+    * Programmed by GGA- Leibniz-Institute of Applied Geophysics
     *               Stilleweg 2
     *               D-30655 Hannover
     *               Federal Republic of Germany
@@ -56,7 +56,7 @@ namespace DotSpatial.Projections
     */
 
     /// <summary>
-    /// Wenzel, H.-G.(1985): Hochauflösende Kugelfunktionsmodelle für
+    /// Wenzel, H.-G.(1985): HochauflÃ¶sende Kugelfunktionsmodelle fÃ¼r
     /// das Gravitationspotential der Erde. Wiss. Arb. Univ. Hannover
     /// Nr. 137, p. 130-131.
     /// </summary>
@@ -311,7 +311,7 @@ namespace DotSpatial.Projections
 
             /* --------------------------------------------------------------
              * Following iterative algorithm was developped by
-             * "Institut für Erdmessung", University of Hannover, July 1988.
+             * "Institut fÃ¼r Erdmessung", University of Hannover, July 1988.
              * Internet: www.ife.uni-hannover.de
              * Iterative computation of CPHI, SPHI and Height.
              * Iteration of CPHI and SPHI to 10**-12 radian resp.
@@ -323,7 +323,7 @@ namespace DotSpatial.Projections
             double rx = 1.0 / Math.Sqrt(1.0 - _e2 * (2.0 - _e2) * st * st);
             double cosPhi0 = st * (1.0 - _e2) * rx; /* cos of start or old geodetic latitude in iterations */
             double sinPhi0 = ct * rx; /* sin of start or old geodetic latitude in iterations */
-            int iter = 0; /* # of continous iteration, max. 30 is always enough (s.a.) */
+            int iter = 0; /* # of continuous iteration, max. 30 is always enough (s.a.) */
 
             /* loop to find sin(Latitude) resp. Latitude
              * until |sin(Latitude(iter)-Latitude(iter-1))| < genau */
@@ -405,7 +405,7 @@ namespace DotSpatial.Projections
 
         //    /* --------------------------------------------------------------
         //     * Following iterative algorithm was developped by
-        //     * "Institut für Erdmessung", University of Hannover, July 1988.
+        //     * "Institut fÃ¼r Erdmessung", University of Hannover, July 1988.
         //     * Internet: www.ife.uni-hannover.de
         //     * Iterative computation of CPHI, SPHI and Height.
         //     * Iteration of CPHI and SPHI to 10**-12 radian resp.

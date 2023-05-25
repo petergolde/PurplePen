@@ -1335,7 +1335,7 @@ namespace PdfSharp.Drawing.Pdf
     {
       if (this.gfxState.Level == GraphicsStackLevelInitial)
       {
-        // Flip page horizontaly and mirror text.
+        // Flip page horizontally and mirror text.
         // TODO: Is PageOriging and PageScale (== Viewport) useful? Or just public DefaultViewMatrix (like Presentation Manager has had)
         this.defaultViewMatrix = new XMatrix();  //XMatrix.Identity;
         if (this.gfx.PageDirection == XPageDirection.Downwards)
@@ -1392,7 +1392,7 @@ namespace PdfSharp.Drawing.Pdf
 
             if (trimOffset != new XPoint())
             {
-              Debug.Assert(this.gfx.PageUnit == XGraphicsUnit.Point, "With TrimMargins set the page units must be Point. Ohter cases nyi.");
+              Debug.Assert(this.gfx.PageUnit == XGraphicsUnit.Point, "With TrimMargins set the page units must be Point. Other cases nyi.");
               defaultViewMatrix.TranslatePrepend(trimOffset.x, trimOffset.y);
             }
 

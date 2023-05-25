@@ -306,7 +306,7 @@ namespace PdfSharp.Pdf
     /// </summary>
     internal void FlattenPageTree()
     {
-      // Acrobat creates a balanced tree if the number of pages is rougly more than ten. This is
+      // Acrobat creates a balanced tree if the number of pages is roughly more than ten. This is
       // not difficult but obviously also not necessary. I created a document with 50000 pages with
       // PDF4NET and Acrobat opened it in less than 2 seconds.
 

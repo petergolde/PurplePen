@@ -164,7 +164,7 @@ namespace PdfSharp.Drawing
     {
       if (value == null)
         throw new ArgumentNullException("value");
-      // TODO: Reflect reliabel implementation from Avalon
+      // TODO: Reflect reliable implementation from Avalon
       // TODOWPF
       string[] values = value.Split(' ');
       int count = values.Length;

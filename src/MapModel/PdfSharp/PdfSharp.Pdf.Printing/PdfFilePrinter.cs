@@ -43,7 +43,7 @@ namespace PdfSharp.Pdf.Printing
   //
   // The four parameters of the /t option evaluate to strings.
   // printername     The name of the Printer.
-  // drivername      Your printer drivers name i.e. whatever apperars in the Driver Used box when viewing printer properties.
+  // drivername      Your printer drivers name i.e. whatever appears in the Driver Used box when viewing printer properties.
   // portname        The printers port. portname cannot contain any "/" characters; if it does, output is routed to
   //                 the default port for that printer.
   //

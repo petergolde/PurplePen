@@ -1554,7 +1554,7 @@ namespace PurplePen.MapModel
                 if (scale > 1) {
                     // If the width/height isn't an exactly multiple of scale, these scale factors make be slightly off an exact scale so that
                     // the result bitmap has integral size.
-                    // We try to make sure this doesn't happen, but it can. The tiny difference shouldn't be noticable.
+                    // We try to make sure this doesn't happen, but it can. The tiny difference shouldn't be noticeable.
                     finalWidth = (int)Math.Ceiling(width / (double)scale);
                     finalHeight = (int)Math.Ceiling(height / (double)scale);
                     transform.Scale((nfloat)finalWidth / (nfloat)width, (nfloat)finalHeight / (nfloat)height);

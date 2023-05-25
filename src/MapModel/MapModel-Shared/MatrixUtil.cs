@@ -91,7 +91,7 @@ namespace PurplePen.MapModel
         static double[][] MatrixDecompose(double[][] matrix, out int[] perm, out int toggle)
         {
             // Doolittle LUP decomposition with partial pivoting.
-            // rerturns: result is L (with 1s on diagonal) and U;
+            // returns: result is L (with 1s on diagonal) and U;
             // perm holds row permutations; toggle is +1 or -1 (even or odd)
             int rows = matrix.Length;
             int cols = matrix[0].Length; // assume square

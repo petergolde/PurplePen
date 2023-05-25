@@ -815,7 +815,7 @@ namespace PurplePen.MapModel
 
     public interface IFileLoader
     {
-        // Determine file existance and kind.
+        // Determine file existence and kind.
         FileKind CheckFileKind(string path);
 
         // Load a bitmap from the given path. 
@@ -1331,7 +1331,7 @@ namespace PurplePen.MapModel
             }
         }
 
-        // Get the one and only image symdef for this map. Used for iamge objects -- created with OCAD image import command.
+        // Get the one and only image symdef for this map. Used for image objects -- created with OCAD image import command.
         public ImageSymDef GetImageSymDef()
         {
             CheckWritable();
@@ -1371,7 +1371,7 @@ namespace PurplePen.MapModel
         }
 
 
-        // If true, use Euclidan metrics for line symbols (OCAD 11 without OCAD 10 compability flag)
+        // If true, use Euclidean metrics for line symbols (OCAD 11 without OCAD 10 compability flag)
         public bool UseEuclideanMetric
         {
             get

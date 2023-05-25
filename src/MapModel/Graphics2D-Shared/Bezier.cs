@@ -124,7 +124,7 @@ namespace PurplePen.Graphics2D
             return false;
         }
 
-		// Find the cooeficient value for a particular point on the bezier. If the point
+		// Find the coefficient value for a particular point on the bezier. If the point
 		// isn't sufficiently close to the bezier, returns NaN. The error value indicates
 		// how close the point might be to the bezier.
 		public float FindCoefficient(PointF point, float error) {

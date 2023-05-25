@@ -31,7 +31,7 @@ Here is a list of changes:
 - TLTextSym: new variables Tool, FrWidth (reserved in OCAD 6)
 - TAreaSym: new variable Tool (reserved in OCAD 6)
 - TTextSym: new variable FrWidth (reserved in OCAD 6)
-- TStp: new varialbles RealWorldCord, FileName, HatchAreas,
+- TStp: new variables RealWorldCord, FileName, HatchAreas,
     HideTemp, TempMode, TempColor
 
 The OCAD 8 format is still under development. However here are the
@@ -990,7 +990,7 @@ of the file and adjust SetupPos and SetupSize.
                                {Last 8 Zoom magnification for use
                                in the Zoom out command. TZoomRec
                                is explained below.}
-    nZoomHist: longint;        {number of magnificiations in
+    nZoomHist: longint;        {number of magnifications in
                                ZoomHist}
 
                                {OCAD 6: the setup ends here

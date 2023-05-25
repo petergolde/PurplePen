@@ -81,14 +81,14 @@ namespace PurplePen.MapModel
             // Get the column vector of target points.
             double[] to_values = { a1_to, a2_to, b1_to, b2_to, c1_to, c2_to };
 
-            // Multiple to get column value of new cooefficients.
+            // Multiple to get column value of new coefficients.
             double[] transform_values = MatrixUtil.MatrixVectorProduct(m_inverse, to_values);
 
             // Use those coefficients to create a transform matrix. Note the order is different.
             return new Matrix((float)transform_values[0], (float)transform_values[3], (float)transform_values[1], (float)transform_values[4], (float)transform_values[2], (float)transform_values[5]);
         }
 
-        // Get the projection assocaited with a proj4 string.
+        // Get the projection associated with a proj4 string.
         public static ProjectionInfo GetProjection(string proj4)
         {
             return ProjectionInfo.FromProj4String(ProcessProj4(proj4));
@@ -152,7 +152,7 @@ namespace PurplePen.MapModel
         }
 
 
-        // Get the Proj4String assocated with the given ocad projection id.
+        // Get the Proj4String associated with the given ocad projection id.
         public static string Proj4StringFromOcadProjectionId(int ocadProjectionId)
         {
             int index = Array.BinarySearch(projectionMapping, new OcadToProj4Projection(ocadProjectionId, null));

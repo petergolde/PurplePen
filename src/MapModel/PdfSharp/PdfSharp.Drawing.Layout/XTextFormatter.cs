@@ -83,7 +83,7 @@ namespace PdfSharp.Drawing.Layout
         this.cyDescent = lineSpace * font.cellDescent / font.cellSpace;
 
         // HACK in XTextFormatter
-        this.spaceWidth = gfx.MeasureString("x x", value).width;
+        this.spaceWidth = gfx.MeasureString("xÂ x", value).width;
         this.spaceWidth -= gfx.MeasureString("xx", value).width;
       }
     }
@@ -390,7 +390,7 @@ namespace PdfSharp.Drawing.Layout
     // - kerning
     // - change font, size, text color etc.
     // - line spacing
-    // - underine and strike-out variation
+    // - underline and strike-out variation
     // - super- and sub-script
     // - ...
   }

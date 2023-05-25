@@ -275,7 +275,7 @@ namespace PurplePen.MapModel
         PointF location;
         public PointF Location {get { return location; }}
 
-        float rotation;  // angle in dgrees symbol is rotated.
+        float rotation;  // angle in degrees symbol is rotated.
         public float Rotation {get { return rotation; }}
 
         float[] gaps;     // sorted array of start/end angles for gaps in circles; null for none.
@@ -1097,7 +1097,7 @@ namespace PurplePen.MapModel
         }
     }
 
-    // This is an line object creating by a import graphcs  -- it draws into the image layer, below all colors.
+    // This is an line object creating by a import graphics  -- it draws into the image layer, below all colors.
     public class ImageLineSymbol: LineLikeSymbol
     {
         ImageSymDef def;

@@ -2,7 +2,7 @@
 //
 // Authors:
 //   Stefan Lange (mailto:Stefan.Lange@pdfsharp.com)
-//   Thomas Hövel (mailto:Thomas.Hoevel@pdfsharp.com)
+//   Thomas HÃ¶vel (mailto:Thomas.Hoevel@pdfsharp.com)
 //
 // Copyright (c) 2005-2009 empira Software GmbH, Cologne (Germany)
 //
@@ -258,7 +258,7 @@ namespace PdfSharp.Pdf.Advanced
       }
 #endif
 #if WPF // && !GDI
-      // WPFTHHO: Bitte prüfen, siehe System.Windows.Media.PixelFormats
+      // WPFTHHO: Bitte prÃ¼fen, siehe System.Windows.Media.PixelFormats
       //bool hasMask = false;
 #if !SILVERLIGHT
       string format = image.wpfImage.Format.ToString();
@@ -347,7 +347,7 @@ namespace PdfSharp.Pdf.Advanced
 #endif
 #if WPF
 #if !SILVERLIGHT
-      // WPFTHHO: Bitte prüfen
+      // WPFTHHO: Bitte prÃ¼fen
       BmpBitmapEncoder encoder = new BmpBitmapEncoder();
       encoder.Frames.Add(BitmapFrame.Create(image.wpfImage));
       encoder.Save(memory);
@@ -469,7 +469,7 @@ namespace PdfSharp.Pdf.Advanced
         }
         if (hasMask && hasAlphaMask && pdfVersion >= 14)
         {
-          // The image provides an alpha mask (requires Arcrobat 5.0 or higher)
+          // The image provides an alpha mask (requires Acrobat 5.0 or higher)
           byte[] alphaMaskCompressed = fd.Encode(alphaMask);
           PdfDictionary smask = new PdfDictionary(document);
           smask.Elements.SetName(Keys.Type, "/XObject");
@@ -935,8 +935,8 @@ namespace PdfSharp.Pdf.Advanced
       /// (Required for images, except those that use the JPXDecode filter; not allowed for image masks)
       /// The color space in which image samples are specified; it can be any type of color space except
       /// Pattern. If the image uses the JPXDecode filter, this entry is optional:
-      /// • If ColorSpace is present, any color space specifications in the JPEG2000 data are ignored.
-      /// • If ColorSpace is absent, the color space specifications in the JPEG2000 data are used.
+      /// Â• If ColorSpace is present, any color space specifications in the JPEG2000 data are ignored.
+      /// Â• If ColorSpace is absent, the color space specifications in the JPEG2000 data are used.
       ///   The Decode array is also ignored unless ImageMask is true.
       /// </summary>
       [KeyInfo(KeyType.NameOrArray | KeyType.Required)]
@@ -986,10 +986,10 @@ namespace PdfSharp.Pdf.Advanced
 
       /// <summary>
       /// (Optional) An array of numbers describing how to map image samples into the range of values
-      /// appropriate for the image’s color space. If ImageMask is true, the array must be either
+      /// appropriate for the imageÂ’s color space. If ImageMask is true, the array must be either
       /// [0 1] or [1 0]; otherwise, its length must be twice the number of color components required 
       /// by ColorSpace. If the image uses the JPXDecode filter and ImageMask is false, Decode is ignored.
-      /// Default value: see “Decode Arrays”.
+      /// Default value: see Â“Decode ArraysÂ”.
       /// </summary>
       [KeyInfo(KeyType.Array | KeyType.Optional)]
       public const string Decode = "/Decode";
@@ -1014,8 +1014,8 @@ namespace PdfSharp.Pdf.Advanced
       /// source of mask shape or mask opacity values in the transparent imaging model. The alpha 
       /// source parameter in the graphics state determines whether the mask values are interpreted as
       /// shape or opacity. If present, this entry overrides the current soft mask in the graphics state,
-      /// as well as the image’s Mask entry, if any. (However, the other transparency related graphics 
-      /// state parameters — blend mode and alpha constant — remain in effect.) If SMask is absent, the 
+      /// as well as the imageÂ’s Mask entry, if any. (However, the other transparency related graphics 
+      /// state parameters Â— blend mode and alpha constant Â— remain in effect.) If SMask is absent, the 
       /// image has no associated soft mask (although the current soft mask in the graphics state may
       /// still apply).
       /// </summary>
@@ -1026,10 +1026,10 @@ namespace PdfSharp.Pdf.Advanced
       /// (Optional for images that use the JPXDecode filter, meaningless otherwise; PDF 1.5)
       /// A code specifying how soft-mask information encoded with image samples should be used:
       /// 0 If present, encoded soft-mask image information should be ignored.
-      /// 1 The image’s data stream includes encoded soft-mask values. An application can create
+      /// 1 The imageÂ’s data stream includes encoded soft-mask values. An application can create
       ///   a soft-mask image from the information to be used as a source of mask shape or mask 
       ///   opacity in the transparency imaging model.
-      /// 2 The image’s data stream includes color channels that have been preblended with a 
+      /// 2 The imageÂ’s data stream includes color channels that have been preblended with a 
       ///   background; the image data also includes an opacity channel. An application can create
       ///   a soft-mask image with a Matte entry from the opacity channel information to be used as
       ///   a source of mask shape or mask opacity in the transparency model. If this entry has a 
@@ -1048,13 +1048,13 @@ namespace PdfSharp.Pdf.Advanced
 
       /// <summary>
       /// (Required if the image is a structural content item; PDF 1.3) The integer key of the 
-      /// image’s entry in the structural parent tree.
+      /// imageÂ’s entry in the structural parent tree.
       /// </summary>
       [KeyInfo(KeyType.Integer | KeyType.Required)]
       public const string StructParent = "/StructParent";
 
       /// <summary>
-      /// (Optional; PDF 1.3; indirect reference preferred) The digital identifier of the image’s
+      /// (Optional; PDF 1.3; indirect reference preferred) The digital identifier of the imageÂ’s
       /// parent Web Capture content set.
       /// </summary>
       [KeyInfo(KeyType.String | KeyType.Optional)]

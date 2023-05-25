@@ -690,7 +690,7 @@ namespace PdfSharp.Drawing
       // Degenerate case: single point
       if (halfChord2 < fuzz2)
       {
-        // The chord degeneartes to a point, the arc will be ignored 
+        // The chord degenerates to a point, the arc will be ignored 
         return null;
       }
 
@@ -832,7 +832,7 @@ namespace PdfSharp.Drawing
     /// <param name="radius">The radius to accept (or not).</param>
     public static bool AcceptRadius(double halfChord2, double fuzz2, ref double radius)
     {
-      Debug.Assert(halfChord2 >= fuzz2);   // Otherewise we have no guarantee that the radius is not 0, and we need to divide by the radius
+      Debug.Assert(halfChord2 >= fuzz2);   // Otherwise we have no guarantee that the radius is not 0, and we need to divide by the radius
       bool accept = radius * radius > halfChord2 * fuzz2;
       if (accept)
       {

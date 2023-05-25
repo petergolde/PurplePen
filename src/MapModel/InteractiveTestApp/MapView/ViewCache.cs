@@ -66,7 +66,7 @@ namespace InteractiveTestApp.MapView
         IMapDisplay mapDisplay; // The map display being viewed.
 		Brush bitmapBrush; // Brush made from bitmap.
 
-		bool allValid, allInvalid; // State of the iamge in the bitmap: 
+		bool allValid, allInvalid; // State of the image in the bitmap: 
 		//  allValid=true -- all bits are a correct reflection of the map
 		//  allInvalid=true -- no bits are a correct reflection of the map
 		//  both false -- some bits are valid, as specified in invalidRegion.
