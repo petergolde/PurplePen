@@ -62,11 +62,20 @@ namespace PurplePen
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateImageFiles));
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.coursesGroupBox = new System.Windows.Forms.GroupBox();
             this.courseSelector = new PurplePen.CourseSelector();
-            this.createButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.folderGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.coursesDirectory = new System.Windows.Forms.RadioButton();
+            this.mapDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.filenamePrefixTextBox = new System.Windows.Forms.TextBox();
@@ -79,61 +88,126 @@ namespace PurplePen
             this.comboBoxWorldFile = new System.Windows.Forms.ComboBox();
             this.labelColorModel = new System.Windows.Forms.Label();
             this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
-            this.folderGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
-            this.coursesDirectory = new System.Windows.Forms.RadioButton();
-            this.mapDirectory = new System.Windows.Forms.RadioButton();
-            this.otherDirectory = new System.Windows.Forms.RadioButton();
-            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.createButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
-            this.outputGroupBox.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.folderGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.outputGroupBox.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // coursesGroupBox
-            // 
-            this.coursesGroupBox.Controls.Add(this.courseSelector);
-            resources.ApplyResources(this.coursesGroupBox, "coursesGroupBox");
-            this.coursesGroupBox.Name = "coursesGroupBox";
-            this.coursesGroupBox.TabStop = false;
-            // 
-            // courseSelector
-            // 
-            this.courseSelector.Filter = null;
-            resources.ApplyResources(this.courseSelector, "courseSelector");
-            this.courseSelector.Name = "courseSelector";
-            this.courseSelector.ShowAllControls = true;
-            this.courseSelector.ShowCourseParts = false;
-            this.courseSelector.ShowVariationChooser = true;
-            // 
-            // createButton
-            // 
-            resources.ApplyResources(this.createButton, "createButton");
-            this.createButton.Name = "createButton";
-            this.createButton.UseVisualStyleBackColor = true;
-            this.createButton.Click += new System.EventHandler(this.createButton_Click);
-            // 
-            // cancelButton
-            // 
-            resources.ApplyResources(this.cancelButton, "cancelButton");
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // folderBrowserDialog
             // 
             resources.ApplyResources(this.folderBrowserDialog, "folderBrowserDialog");
             // 
+            // tableLayoutPanel5
+            // 
+            resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 1);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.coursesGroupBox, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
+            // coursesGroupBox
+            // 
+            resources.ApplyResources(this.coursesGroupBox, "coursesGroupBox");
+            this.coursesGroupBox.Controls.Add(this.courseSelector);
+            this.coursesGroupBox.Name = "coursesGroupBox";
+            this.coursesGroupBox.TabStop = false;
+            // 
+            // courseSelector
+            // 
+            resources.ApplyResources(this.courseSelector, "courseSelector");
+            this.courseSelector.Filter = null;
+            this.courseSelector.Name = "courseSelector";
+            this.courseSelector.ShowAllControls = true;
+            this.courseSelector.ShowCourseParts = false;
+            this.courseSelector.ShowVariationChooser = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+            this.tableLayoutPanel4.Controls.Add(this.folderGroupBox, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.outputGroupBox, 0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            // 
+            // folderGroupBox
+            // 
+            resources.ApplyResources(this.folderGroupBox, "folderGroupBox");
+            this.folderGroupBox.Controls.Add(this.tableLayoutPanel2);
+            this.folderGroupBox.Name = "folderGroupBox";
+            this.folderGroupBox.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.coursesDirectory, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.mapDirectory, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.otherDirectory, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.otherDirectoryTextBox, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 4);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // coursesDirectory
+            // 
+            resources.ApplyResources(this.coursesDirectory, "coursesDirectory");
+            this.coursesDirectory.Name = "coursesDirectory";
+            this.coursesDirectory.TabStop = true;
+            this.coursesDirectory.UseVisualStyleBackColor = true;
+            // 
+            // mapDirectory
+            // 
+            resources.ApplyResources(this.mapDirectory, "mapDirectory");
+            this.mapDirectory.Name = "mapDirectory";
+            this.mapDirectory.TabStop = true;
+            this.mapDirectory.UseVisualStyleBackColor = true;
+            // 
+            // otherDirectory
+            // 
+            resources.ApplyResources(this.otherDirectory, "otherDirectory");
+            this.otherDirectory.Name = "otherDirectory";
+            this.otherDirectory.TabStop = true;
+            this.otherDirectory.UseVisualStyleBackColor = true;
+            this.otherDirectory.CheckedChanged += new System.EventHandler(this.otherDirectory_CheckedChanged);
+            // 
+            // otherDirectoryTextBox
+            // 
+            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
+            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
+            // 
+            // tableLayoutPanel7
+            // 
+            resources.ApplyResources(this.tableLayoutPanel7, "tableLayoutPanel7");
+            this.tableLayoutPanel7.Controls.Add(this.selectOtherDirectoryButton, 1, 0);
+            this.tableLayoutPanel7.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            // 
+            // selectOtherDirectoryButton
+            // 
+            resources.ApplyResources(this.selectOtherDirectoryButton, "selectOtherDirectoryButton");
+            this.selectOtherDirectoryButton.Name = "selectOtherDirectoryButton";
+            this.selectOtherDirectoryButton.UseVisualStyleBackColor = true;
+            this.selectOtherDirectoryButton.Click += new System.EventHandler(this.selectOtherDirectoryButton_Click);
+            // 
             // outputGroupBox
             // 
-            this.outputGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.outputGroupBox, "outputGroupBox");
+            this.outputGroupBox.Controls.Add(this.tableLayoutPanel1);
             this.outputGroupBox.Name = "outputGroupBox";
             this.outputGroupBox.TabStop = false;
-            this.outputGroupBox.Enter += new System.EventHandler(this.outputGroupBox_Enter);
             // 
             // tableLayoutPanel1
             // 
@@ -225,108 +299,88 @@ namespace PurplePen
             resources.GetString("comboBoxColorModel.Items1")});
             this.comboBoxColorModel.Name = "comboBoxColorModel";
             // 
-            // folderGroupBox
+            // tableLayoutPanel6
             // 
-            this.folderGroupBox.Controls.Add(this.tableLayoutPanel2);
-            resources.ApplyResources(this.folderGroupBox, "folderGroupBox");
-            this.folderGroupBox.Name = "folderGroupBox";
-            this.folderGroupBox.TabStop = false;
+            resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
+            this.tableLayoutPanel6.Controls.Add(this.createButton, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.cancelButton, 2, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             // 
-            // tableLayoutPanel2
+            // createButton
             // 
-            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
-            this.tableLayoutPanel2.Controls.Add(this.selectOtherDirectoryButton, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.coursesDirectory, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.mapDirectory, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.otherDirectory, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.otherDirectoryTextBox, 0, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            resources.ApplyResources(this.createButton, "createButton");
+            this.createButton.Name = "createButton";
+            this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
-            // selectOtherDirectoryButton
+            // cancelButton
             // 
-            resources.ApplyResources(this.selectOtherDirectoryButton, "selectOtherDirectoryButton");
-            this.selectOtherDirectoryButton.Name = "selectOtherDirectoryButton";
-            this.selectOtherDirectoryButton.UseVisualStyleBackColor = true;
-            this.selectOtherDirectoryButton.Click += new System.EventHandler(this.selectOtherDirectoryButton_Click);
-            // 
-            // coursesDirectory
-            // 
-            resources.ApplyResources(this.coursesDirectory, "coursesDirectory");
-            this.coursesDirectory.Name = "coursesDirectory";
-            this.coursesDirectory.TabStop = true;
-            this.coursesDirectory.UseVisualStyleBackColor = true;
-            // 
-            // mapDirectory
-            // 
-            resources.ApplyResources(this.mapDirectory, "mapDirectory");
-            this.mapDirectory.Name = "mapDirectory";
-            this.mapDirectory.TabStop = true;
-            this.mapDirectory.UseVisualStyleBackColor = true;
-            // 
-            // otherDirectory
-            // 
-            resources.ApplyResources(this.otherDirectory, "otherDirectory");
-            this.otherDirectory.Name = "otherDirectory";
-            this.otherDirectory.TabStop = true;
-            this.otherDirectory.UseVisualStyleBackColor = true;
-            this.otherDirectory.CheckedChanged += new System.EventHandler(this.otherDirectory_CheckedChanged);
-            // 
-            // otherDirectoryTextBox
-            // 
-            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
-            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
-            this.otherDirectoryTextBox.TextChanged += new System.EventHandler(this.otherDirectoryTextBox_TextChanged);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // CreateImageFiles
             // 
-            this.AcceptButton = this.createButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.cancelButton;
-            this.Controls.Add(this.folderGroupBox);
-            this.Controls.Add(this.outputGroupBox);
-            this.Controls.Add(this.coursesGroupBox);
-            this.Controls.Add(this.createButton);
-            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.tableLayoutPanel5);
             this.HelpTopic = "FileCreateImageFiles.htm";
             this.Name = "CreateImageFiles";
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.coursesGroupBox.ResumeLayout(false);
-            this.outputGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.coursesGroupBox.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.folderGroupBox.ResumeLayout(false);
+            this.folderGroupBox.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.outputGroupBox.ResumeLayout(false);
+            this.outputGroupBox.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox coursesGroupBox;
         private CourseSelector courseSelector;
-        private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
-        private System.Windows.Forms.GroupBox outputGroupBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.GroupBox folderGroupBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.RadioButton coursesDirectory;
+        private System.Windows.Forms.RadioButton mapDirectory;
+        private System.Windows.Forms.RadioButton otherDirectory;
+        private System.Windows.Forms.TextBox otherDirectoryTextBox;
+        private System.Windows.Forms.GroupBox outputGroupBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label fileNamePrefixLabel;
         private System.Windows.Forms.TextBox filenamePrefixTextBox;
         private System.Windows.Forms.Label fileFormatLabel;
         private System.Windows.Forms.ComboBox fileFormatCombo;
+        private System.Windows.Forms.Label fileNamePrefixLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxDpi;
         private System.Windows.Forms.Label dpiLabel;
         private System.Windows.Forms.ComboBox comboBoxWorldFile;
         private System.Windows.Forms.Label labelColorModel;
         private System.Windows.Forms.ComboBox comboBoxColorModel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.RadioButton coursesDirectory;
-        private System.Windows.Forms.RadioButton mapDirectory;
-        private System.Windows.Forms.RadioButton otherDirectory;
-        private System.Windows.Forms.TextBox otherDirectoryTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button selectOtherDirectoryButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button createButton;
     }
 }
