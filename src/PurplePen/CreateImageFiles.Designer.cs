@@ -78,6 +78,7 @@ namespace PurplePen
             this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.imageQualityLabel = new System.Windows.Forms.Label();
             this.filenamePrefixTextBox = new System.Windows.Forms.TextBox();
             this.fileFormatLabel = new System.Windows.Forms.Label();
             this.fileFormatCombo = new System.Windows.Forms.ComboBox();
@@ -88,6 +89,7 @@ namespace PurplePen
             this.comboBoxWorldFile = new System.Windows.Forms.ComboBox();
             this.labelColorModel = new System.Windows.Forms.Label();
             this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
+            this.imageQualityUpDown = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.createButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -100,6 +102,7 @@ namespace PurplePen
             this.tableLayoutPanel7.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageQualityUpDown)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,6 +215,7 @@ namespace PurplePen
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.imageQualityLabel, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.filenamePrefixTextBox, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.fileFormatLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.fileFormatCombo, 1, 0);
@@ -222,7 +226,13 @@ namespace PurplePen
             this.tableLayoutPanel1.Controls.Add(this.comboBoxWorldFile, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.labelColorModel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxColorModel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.imageQualityUpDown, 1, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // imageQualityLabel
+            // 
+            resources.ApplyResources(this.imageQualityLabel, "imageQualityLabel");
+            this.imageQualityLabel.Name = "imageQualityLabel";
             // 
             // filenamePrefixTextBox
             // 
@@ -299,6 +309,21 @@ namespace PurplePen
             resources.GetString("comboBoxColorModel.Items1")});
             this.comboBoxColorModel.Name = "comboBoxColorModel";
             // 
+            // imageQualityUpDown
+            // 
+            resources.ApplyResources(this.imageQualityUpDown, "imageQualityUpDown");
+            this.imageQualityUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.imageQualityUpDown.Name = "imageQualityUpDown";
+            this.imageQualityUpDown.Value = new decimal(new int[] {
+            95,
+            0,
+            0,
+            0});
+            // 
             // tableLayoutPanel6
             // 
             resources.ApplyResources(this.tableLayoutPanel6, "tableLayoutPanel6");
@@ -345,6 +370,7 @@ namespace PurplePen
             this.outputGroupBox.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageQualityUpDown)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
@@ -382,5 +408,7 @@ namespace PurplePen
         private System.Windows.Forms.Button selectOtherDirectoryButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.Label imageQualityLabel;
+        private System.Windows.Forms.NumericUpDown imageQualityUpDown;
     }
 }

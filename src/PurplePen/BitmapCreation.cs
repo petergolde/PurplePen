@@ -179,7 +179,8 @@ namespace PurplePen
 
             ExportBitmap exportBitmap = new ExportBitmap(mapDisplay);
             exportBitmap.CreateBitmap(fileName, mapRectangle, GetImageFormat(), bitmapCreationSettings.Dpi,
-                                      bitmapCreationSettings.WorldFile ? mapDisplay.CoordinateMapper : null);
+                                      bitmapCreationSettings.WorldFile ? mapDisplay.CoordinateMapper : null,
+                                      bitmapCreationSettings.Quality);
         }
     }
 
@@ -192,6 +193,7 @@ namespace PurplePen
         public bool PrintMapExchangesOnOneMap = false;
         public BitmapKind ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
         public float Dpi;
+        public int Quality = 95;
         public bool WorldFile;                      // Create a world file?
         public ColorModel ColorModel = ColorModel.CMYK;
 
