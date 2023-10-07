@@ -93,6 +93,8 @@ namespace PurplePen
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.createButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.autoRotateLabel = new System.Windows.Forms.Label();
+            this.autoRotateCheckBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.coursesGroupBox.SuspendLayout();
@@ -215,6 +217,7 @@ namespace PurplePen
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.autoRotateLabel, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.imageQualityLabel, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.filenamePrefixTextBox, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.fileFormatLabel, 0, 0);
@@ -227,6 +230,7 @@ namespace PurplePen
             this.tableLayoutPanel1.Controls.Add(this.labelColorModel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxColorModel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.imageQualityUpDown, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.autoRotateCheckBox, 1, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // imageQualityLabel
@@ -345,6 +349,17 @@ namespace PurplePen
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // autoRotateLabel
+            // 
+            resources.ApplyResources(this.autoRotateLabel, "autoRotateLabel");
+            this.autoRotateLabel.Name = "autoRotateLabel";
+            // 
+            // autoRotateCheckBox
+            // 
+            resources.ApplyResources(this.autoRotateCheckBox, "autoRotateCheckBox");
+            this.autoRotateCheckBox.Name = "autoRotateCheckBox";
+            this.autoRotateCheckBox.UseVisualStyleBackColor = true;
+            // 
             // CreateImageFiles
             // 
             resources.ApplyResources(this, "$this");
@@ -410,5 +425,7 @@ namespace PurplePen
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Label imageQualityLabel;
         private System.Windows.Forms.NumericUpDown imageQualityUpDown;
+        private System.Windows.Forms.Label autoRotateLabel;
+        private System.Windows.Forms.CheckBox autoRotateCheckBox;
     }
 }
