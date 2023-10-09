@@ -608,7 +608,7 @@ namespace PurplePen
             DescriptionLine line;
             DescriptionLine[] lines;
             Dictionary<string, string> descriptionKey = new Dictionary<string, string>(); // dictionary for any symbols encountered with custom text.
-
+            
             // Get the first title line.
             text = GetTitleLine1();
             Debug.Assert(text != null);
@@ -618,7 +618,7 @@ namespace PurplePen
             // Get the second title line.
             text = GetTitleLine2();
             if (text != null) {
-                lines = GetTitleLineFromText(DescriptionLineKind.SecondaryTitle, text);
+                lines = GetTitleLineFromText(DescriptionLineKind.SecondaryTitle, CourseFormatter.ExpandText(eventDB, courseView, text));
                 list.AddRange(lines);
             }
 
