@@ -89,3 +89,4 @@ src/.vs/
 
 /src/InternalTrace.*.log
 /src/Tools/LinearColorConverter/.vs/
+*.vsidx
