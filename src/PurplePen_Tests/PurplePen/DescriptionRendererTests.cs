@@ -339,6 +339,7 @@ namespace PurplePen.Tests
 
             eventDB.Load(filename);
             eventDB.Validate();
+            symbolDB.Standard = eventDB.GetEvent().descriptionStandard;
 
             courseView = CourseView.CreateViewingCourseView(eventDB, DesignatorFromCourseId(eventDB, id));
 
@@ -557,6 +558,16 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void NewSymbols2018and2024()
+        {
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\newsymbols.ppen"), CourseId(1), DescriptionKind.Symbols);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\newsymbols.ppen"), CourseId(1), DescriptionKind.SymbolsAndText);
+            CheckRenderMap(TestUtil.GetTestFile("descriptions\\newsymbols.ppen"), CourseId(1), DescriptionKind.Text);
+        }
+
+
+
+        [TestMethod]
         public void MultiStandard1()
         {
             CheckRenderMapStandardChange(TestUtil.GetTestFile("descriptions\\standards1.ppen"), CourseId(1), DescriptionKind.SymbolsAndText, "2018");
@@ -567,6 +578,7 @@ namespace PurplePen.Tests
         {
             CheckRenderMapStandardChange(TestUtil.GetTestFile("descriptions\\standards2.ppen"), CourseId(1), DescriptionKind.SymbolsAndText, "2004");
         }
+
 
 
 #if false  // These tests are too slow to run normally.

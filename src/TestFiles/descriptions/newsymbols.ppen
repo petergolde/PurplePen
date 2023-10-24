@@ -1,0 +1,89 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>NewSymbols</title>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="true" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\marymoor.ocd">..\marymoor.ocd</map>
+    <standards map="2000" description="2018" />
+    <all-controls print-scale="10000" description-kind="symbols" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-113.039986" top="93.68993" right="242.560028" bottom="-122.210075" page-width="850" page-height="1400" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" auto-leg-gap-size="3.5" blend-purple="true" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="2.90654564" y="-107.03318" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="14.88114" y="-106.434456" />
+    <description box="D" iof-2004-ref="5.23" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="25.05956" y="-107.03318" />
+    <description box="C" iof-2004-ref="0.2NE" />
+    <description box="D" iof-2004-ref="5.24" />
+    <description box="F">3</description>
+    <description box="H" iof-2004-ref="12.4" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="41.2252579" y="-107.03318" />
+    <description box="D" iof-2004-ref="2.10" />
+    <description box="E" iof-2004-ref="8.3" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="58.5884476" y="-107.03318" />
+    <description box="D" iof-2004-ref="5.25" />
+    <description box="G" iof-2004-ref="11.5NW" />
+  </control>
+  <control id="6" kind="normal">
+    <code>35</code>
+    <location x="71.7605057" y="-107.03318" />
+    <description box="D" iof-2004-ref="5.26" />
+    <description box="F" iof-2004-ref="11.7" />
+    <description box="H" iof-2004-ref="12.2" />
+  </control>
+  <control id="17" kind="normal">
+    <code>46</code>
+    <location x="222.041748" y="-81.28777" />
+    <description box="D" iof-2004-ref="4.2" />
+    <description box="G" iof-2004-ref="11.2NW" />
+    <description box="H" iof-2004-ref="12.1" />
+  </control>
+  <control id="18" kind="finish">
+    <location x="226.232834" y="36.06333" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>New</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="false" restrict-to-page-size="true" left="-113.039986" top="93.68993" right="242.560028" bottom="-122.210075" page-width="850" page-height="1400" page-margins="0" page-landscape="true" />
+    <options print-scale="10000" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6">
+    <next course-control="17" />
+  </course-control>
+  <course-control id="17" control="17">
+    <next course-control="18" />
+  </course-control>
+  <course-control id="18" control="18" />
+</course-scribe-event>
