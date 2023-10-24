@@ -6663,6 +6663,87 @@ for the symbols.
     </polygon>
   </symbol>
 
+  <symbol kind="D" id="5.26" standard="2018">
+    <name lang="en">Railway</name>
+    <text lang="en">railroad tracks</text>
+    <text lang="en" plural="true">railroad tracks</text>
+
+    <!--
+    Rotate the following by 40 degress counter-clockwise.
+    
+    <lines thickness="10" ends="round">
+      <point x="-78" y="23"/>
+      <point x="78" y="23"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="-78" y="-23"/>
+      <point x="78" y="-23"/>
+    </lines>
+
+    <lines thickness="10" ends="round">
+      <point x="-13" y="38"/>
+      <point x="-13" y="-38"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="-39" y="38"/>
+      <point x="-39" y="-38"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="-65" y="38"/>
+      <point x="-65" y="-38"/>
+    </lines>
+    
+    <lines thickness="10" ends="round">
+      <point x="13" y="38"/>
+      <point x="13" y="-38"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="39" y="38"/>
+      <point x="39" y="-38"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="65" y="38"/>
+      <point x="65" y="-38"/>
+    </lines>
+ -->
+    <lines thickness="10" ends="round">
+      <point x="-44.97" y="-67.76"/>
+      <point x="74.54" y="32.52"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="-74.54" y="-32.52"/>
+      <point x="44.97" y="67.76"/>
+    </lines>
+
+    <lines thickness="10" ends="round">
+      <point x="14.47" y="-37.47"/>
+      <point x="-34.38" y="20.75"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="-5.45" y="-54.18"/>
+      <point x="-54.30" y="4.04"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="-25.37" y="-70.89"/>
+      <point x="-74.22" y="-12.67"/>
+    </lines>
+
+    <lines thickness="10" ends="round">
+      <point x="34.38" y="-20.75"/>
+      <point x="-14.47" y="37.47"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="54.30" y="-4.04"/>
+      <point x="5.45" y="54.18"/>
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="74.22" y="12.67"/>
+      <point x="25.37" y="70.89"/>
+    </lines>
+
+  </symbol>
+
+
   <symbol kind="D" id="6.1">
     <name lang="bg">Специфичен обект</name>
     <text lang="bg" gender="мъжки">специфичен обект</text>
@@ -12504,7 +12585,7 @@ for the symbols.
     </lines>
   </symbol>
 
-  <!-- Kind "Y". Map exchange instructional lines. -->
+  <!-- Kind "W". Map exchange instructional lines. -->
 
   <!-- {0} has the distance, plus a space
 	-->
@@ -12645,6 +12726,46 @@ for the symbols.
     </polygon>
   </symbol>
 
+
+  <!-- Used for a map flip at a control. Introduced in Descriptions 2024 standard -->
+  <symbol kind="W" id="15.6" standard="2018" >
+    <name lang="en">Map flip</name>
+    <text lang="en">Flip map over</text>
+
+    <polygon thickness="12.5">
+      <point x="-140" y="-70"></point>
+      <point x="140" y="-70"></point>
+      <point x="140" y="70"></point>
+      <point x="-140" y="70"></point>
+    </polygon>
+
+    <filled-polygon>
+      <point x="125" y="58"/>
+      <point x="125" y="-6"/>
+      <point x="45" y="26"/>
+    </filled-polygon>
+
+    <filled-beziers>
+      <point x="120" y="42"/>
+      <point x="120" y="32"/>
+      <point x="120" y="20"/>
+      <point x="120" y="10"/>
+      <point x="140" y="10"/>
+      <point x="190" y="3"/>
+      <point x="190" y="-21"/>
+      <point x="190" y="-42"/>
+      <point x="166" y="-52"/>
+      <point x="148" y="-58"/>
+      <point x="183" y="-58"/>
+      <point x="215" y="-40"/>
+      <point x="215" y="-10"/>
+      <point x="215" y="25"/>
+      <point x="145" y="42"/>
+      <point x="120" y="42"/>
+    </filled-beziers>
+  </symbol>
+  
+  
   <!-- Kind "V" Map Issue Point instructional lines. 
         {0} has the distance, plus a space. 
         -->
