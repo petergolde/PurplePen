@@ -72,12 +72,16 @@ namespace SymbolImages
 
         private string FileName(Symbol symbol)
         {
+            string s;
             if (char.IsDigit(symbol.Id2018[0])) {
-                return symbol.Id2018 + " " + symbol.GetName("en");
+                s = symbol.Id2018 + " " + symbol.GetName("en");
             }
             else {
-                return symbol.GetName("en");
+                s = symbol.GetName("en");
             }
+
+            s = s.Replace('/', '-');
+            return s;
         }
 
         private Bitmap CreateBitmap(Symbol symbol, int size, Color backgroundColor)

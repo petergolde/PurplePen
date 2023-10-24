@@ -41,6 +41,7 @@ src/SetupIS/SetupIS
 
 Thumbs.db
 src/.vs/
+src/Tools/SymbolImages/.vs
 *.opendb
 *.db
 src/Tools/SignHelper/.vs/

@@ -14,6 +14,8 @@ Server side should be split into web front end and "logic" that isn't
 front-end specific. Database usage probably split into repository class
 also.
 
+Also look at: https://xel-toolkit.org/ for UI components.
+
 ## Core version of Purple Pen
 
 Separate out a core version of Purple Pen, by slowly moving files into 
@@ -25,7 +27,7 @@ We may need to port System.Drawing.Drawing2D.Matrix from old sources.
 Maybe look at https://source.winehq.org/source/dlls/gdiplus/matrix.c
 Or use SkMatrix from Skia. Or port code from Skia. PdfSharp/PdfSharpCore also
 has a version we may be able to use. We also have an embedded matrix
-class we can use.
+class we can use. Also look at System.Numerics.Matrix3x2.
 
 Idea is to keep the Windows Forms version continuing to work and be enhanced,
 while also building the web version. Probably means changing the Windows
