@@ -295,13 +295,13 @@
     <value>200, 23</value>
   </data>
   <data name="radioButtonDescriptions2018.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 19</value>
+    <value>158, 19</value>
   </data>
   <data name="radioButtonDescriptions2018.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
-    <value>Descriptions 2018</value>
+    <value>Descriptions 2018 or 2024</value>
   </data>
   <data name="&gt;&gt;radioButtonDescriptions2018.Name" xml:space="preserve">
     <value>radioButtonDescriptions2018</value>

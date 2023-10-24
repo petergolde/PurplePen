@@ -65,13 +65,13 @@ namespace PurplePen
             this.changeLaterLabel = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.groupBoxMapStandard = new System.Windows.Forms.GroupBox();
+            this.radioButtonMapSpr2019 = new System.Windows.Forms.RadioButton();
             this.radioButtonMap2017 = new System.Windows.Forms.RadioButton();
             this.radioButtonMap2000 = new System.Windows.Forms.RadioButton();
             this.groupBoxDescriptionStandard = new System.Windows.Forms.GroupBox();
             this.radioButtonDescriptions2018 = new System.Windows.Forms.RadioButton();
             this.radioButtonDescriptions2004 = new System.Windows.Forms.RadioButton();
             this.labelStandardsIntro = new System.Windows.Forms.Label();
-            this.radioButtonMapSpr2019 = new System.Windows.Forms.RadioButton();
             this.groupBoxMapStandard.SuspendLayout();
             this.groupBoxDescriptionStandard.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,13 @@ namespace PurplePen
             resources.ApplyResources(this.groupBoxMapStandard, "groupBoxMapStandard");
             this.groupBoxMapStandard.Name = "groupBoxMapStandard";
             this.groupBoxMapStandard.TabStop = false;
+            // 
+            // radioButtonMapSpr2019
+            // 
+            resources.ApplyResources(this.radioButtonMapSpr2019, "radioButtonMapSpr2019");
+            this.radioButtonMapSpr2019.Name = "radioButtonMapSpr2019";
+            this.radioButtonMapSpr2019.TabStop = true;
+            this.radioButtonMapSpr2019.UseVisualStyleBackColor = true;
             // 
             // radioButtonMap2017
             // 
@@ -135,13 +142,6 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.labelStandardsIntro, "labelStandardsIntro");
             this.labelStandardsIntro.Name = "labelStandardsIntro";
-            // 
-            // radioButtonMapSpr2019
-            // 
-            resources.ApplyResources(this.radioButtonMapSpr2019, "radioButtonMapSpr2019");
-            this.radioButtonMapSpr2019.Name = "radioButtonMapSpr2019";
-            this.radioButtonMapSpr2019.TabStop = true;
-            this.radioButtonMapSpr2019.UseVisualStyleBackColor = true;
             // 
             // NewEventStandards
             // 

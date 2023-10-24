@@ -145,7 +145,7 @@ namespace PurplePen {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2004")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2018")]
         public string NewEventDescriptionStandard {
             get {
                 return ((string)(this["NewEventDescriptionStandard"]));
