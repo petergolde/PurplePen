@@ -674,8 +674,8 @@ ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ShowLanguageDialog=auto
 
-SignTool=signhelper
-SignedUninstaller=yes
+;SignTool=signhelper
+;SignedUninstaller=yes
 
 UninstallDisplayIcon={app}\{#MyAppExeName},0
 
