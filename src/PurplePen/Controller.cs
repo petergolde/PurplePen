@@ -3606,6 +3606,12 @@ namespace PurplePen
             return CommandStatus.Enabled;
         }
 
+        public CommandStatus CanAddMapFlipControl()
+        {
+            // Same rules as for a map exchange.
+            return CanAddMapExchangeControl();
+        }
+
         // Can we add a standalong map exchange 
         public CommandStatus CanAddMapExchangeSeparate()
         {

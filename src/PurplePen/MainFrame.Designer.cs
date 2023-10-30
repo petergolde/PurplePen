@@ -153,6 +153,7 @@ namespace PurplePen
             this.addFinishMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDescriptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addMapExchangeMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addMapFlipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeControlMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeSeparateMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addVariationMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -269,6 +270,7 @@ namespace PurplePen
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.descriptionsToolStripMenuItem = new System.Windows.Forms.ToolStripButton();
             this.mapExchangeToolStripMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.mapFlipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapExchangeSeparateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addVariationToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -1043,10 +1045,17 @@ namespace PurplePen
             // addMapExchangeMenu
             // 
             this.addMapExchangeMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addMapFlipMenuItem,
             this.mapExchangeControlMenuItem,
             this.mapExchangeSeparateMenuItem});
             this.addMapExchangeMenu.Name = "addMapExchangeMenu";
             resources.ApplyResources(this.addMapExchangeMenu, "addMapExchangeMenu");
+            // 
+            // addMapFlipMenuItem
+            // 
+            this.addMapFlipMenuItem.Name = "addMapFlipMenuItem";
+            resources.ApplyResources(this.addMapFlipMenuItem, "addMapFlipMenuItem");
+            this.addMapFlipMenuItem.Click += new System.EventHandler(this.addMapFlipControl_Click);
             // 
             // mapExchangeControlMenuItem
             // 
@@ -1829,10 +1838,17 @@ namespace PurplePen
             // mapExchangeToolStripMenu
             // 
             this.mapExchangeToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mapFlipMenuItem,
             this.mapExchangeControlToolStripMenuItem,
             this.mapExchangeSeparateToolStripMenuItem});
             resources.ApplyResources(this.mapExchangeToolStripMenu, "mapExchangeToolStripMenu");
             this.mapExchangeToolStripMenu.Name = "mapExchangeToolStripMenu";
+            // 
+            // mapFlipMenuItem
+            // 
+            this.mapFlipMenuItem.Name = "mapFlipMenuItem";
+            resources.ApplyResources(this.mapFlipMenuItem, "mapFlipMenuItem");
+            this.mapFlipMenuItem.Click += new System.EventHandler(this.addMapFlipControl_Click);
             // 
             // mapExchangeControlToolStripMenuItem
             // 
@@ -2340,5 +2356,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem createRouteGadgetFilesMenu;
         private System.Windows.Forms.ToolStripMenuItem createKMLFileMenu;
         private System.Windows.Forms.ToolStripMenuItem moveAllControlsMenu;
+        private System.Windows.Forms.ToolStripMenuItem addMapFlipMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mapFlipMenuItem;
     }
 }

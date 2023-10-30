@@ -705,6 +705,8 @@ namespace PurplePen
             UpdateMenuItem(changeTextMenu, controller.CanChangeText());
             UpdateMenuItem(changeLineAppearanceMenu, controller.CanChangeLineAppearance());
             UpdateMenuItem(addTextLineMenu, controller.CanAddTextLine());
+            UpdateMenuItem(mapFlipMenuItem, controller.CanAddMapFlipControl());
+            UpdateMenuItem(addMapFlipMenuItem, controller.CanAddMapFlipControl());
             UpdateMenuItem(mapExchangeControlMenuItem, controller.CanAddMapExchangeControl());
             UpdateMenuItem(mapExchangeControlToolStripMenuItem, controller.CanAddMapExchangeControl());
             UpdateMenuItem(mapExchangeSeparateMenuItem, controller.CanAddMapExchangeSeparate());
@@ -1157,6 +1159,11 @@ namespace PurplePen
         }
 
         private void addMapExchangeControl_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddControlMode(ControlPointKind.Normal, true);
+        }
+
+        private void addMapFlipControl_Click(object sender, EventArgs e)
         {
             controller.BeginAddControlMode(ControlPointKind.Normal, true);
         }
@@ -3258,7 +3265,6 @@ namespace PurplePen
             controller.ChangeDescriptionStandard("2004");
         } 
         
-
 
         private void descriptionStd2018Menu_Click(object sender, EventArgs e)
         {
