@@ -479,7 +479,7 @@ namespace PurplePen
             Symbol[] symbols = new Symbol[ids.Length];
 
             for (int i = 0; i < ids.Length; ++i) {
-                if (ids[i] != null)
+                if (ids[i] != null && symbolDB.SymbolExistsInStandard(ids[i], symbolDB.Standard))
                     symbols[i] = symbolDB[ids[i]];
             }
 

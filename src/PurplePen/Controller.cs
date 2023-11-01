@@ -1534,7 +1534,7 @@ namespace PurplePen
 
             // We can delete any selected control or a special or a text line
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.Special || 
-                selection.SelectionKind == SelectionMgr.SelectionKind.TextLine || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl)
+                selection.SelectionKind == SelectionMgr.SelectionKind.TextLine || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeOrFlipAtControl)
                 return true;
 
             return false;
@@ -1577,10 +1577,10 @@ namespace PurplePen
                 undoMgr.EndCommand(811);
                 return true;
             }
-            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeOrFlipAtControl) {
                 // Remove the map exchange at this course control.
                 undoMgr.BeginCommand(812, CommandNameText.DeleteMapExchangeAtControl);
-                ChangeEvent.ChangeControlExchange(eventDB, selection.SelectedCourseControl, false);
+                ChangeEvent.ChangeControlExchange(eventDB, selection.SelectedCourseControl, MapExchangeType.None);
                 undoMgr.EndCommand(812);
                 return true;
             }
@@ -3126,7 +3126,7 @@ namespace PurplePen
                 return CommandStatus.Disabled;
             Id<Course> courseId = selection.ActiveCourseDesignator.CourseId;
 
-            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
+            if (selection.SelectionKind == SelectionMgr.SelectionKind.Control || selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeOrFlipAtControl) {
                 // Case 1 -- selected control.
                 Id<CourseControl> courseControlId = selection.SelectedCourseControl;
                 CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
@@ -3608,7 +3608,11 @@ namespace PurplePen
 
         public CommandStatus CanAddMapFlipControl()
         {
-            // Same rules as for a map exchange.
+            // Map flips cannot be added for the old control standard.
+            if (GetDescriptionStandard() == "2004")
+                return CommandStatus.Disabled;
+
+            // Otherwise Same rules as for a map exchange.
             return CanAddMapExchangeControl();
         }
 
@@ -3624,15 +3628,15 @@ namespace PurplePen
         }
 
         // Start the mode to add a new control of a certain kind (Start/Finish/Control/CrossingPoint).
-        public void BeginAddControlMode(ControlPointKind controlKind, bool exchangeAtControl)
+        public void BeginAddControlMode(ControlPointKind controlKind, MapExchangeType mapExchangeType)
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, exchangeAtControl, MapIssueKind.None));
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, controlKind, mapExchangeType, MapIssueKind.None));
         }
 
         // Start the mode to add a new map issue point with the given kind.
         public void BeginAddMapIssuePointMode(MapIssueKind mapIssueKind)
         {
-            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, ControlPointKind.MapIssue, false, mapIssueKind));
+            SetCommandMode(new AddControlMode(this, selectionMgr, undoMgr, eventDB, symbolDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId.IsNone, ControlPointKind.MapIssue, MapExchangeType.None, mapIssueKind));
         }
 
         // Start the mode to add a point special of a certain kind (Water, FirstAid, ...).

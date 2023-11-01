@@ -310,6 +310,8 @@ namespace PurplePen.Tests
             ctl4.customNumberPlacement = true;
             ctl4.numberDeltaX = -6.3F;
             ctl4.numberDeltaY = 7.41F;
+            ctl4.exchange = true;
+            ctl4.exchangeIsFlip = true;
             eventDB.AddCourseControl(ctl4);
 
             ctl5 = new CourseControl(ControlId(7), CourseControlId(6));

@@ -1145,32 +1145,32 @@ namespace PurplePen
 
         private void addControlMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Normal, false);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.None);
         }
 
         private void addStartMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Start, false);
+            controller.BeginAddControlMode(ControlPointKind.Start, MapExchangeType.None);
         }
 
         private void addFinishMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Finish, false);
+            controller.BeginAddControlMode(ControlPointKind.Finish, MapExchangeType.None);
         }
 
         private void addMapExchangeControl_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Normal, true);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.Exchange);
         }
 
         private void addMapFlipControl_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.Normal, true);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.MapFlip);
         }
 
         private void addMapExchangeSeparate_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.MapExchange, false);
+            controller.BeginAddControlMode(ControlPointKind.MapExchange, MapExchangeType.None);
         }
 
         private void addVariationMenu_Click(object sender, EventArgs e)
@@ -1613,7 +1613,7 @@ namespace PurplePen
 
         private void addMandatoryCrossingMenu_Click(object sender, EventArgs e)
         {
-            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, false);
+            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, MapExchangeType.None);
         }
 
         private void addOutOfBoundsMenu_Click(object sender, EventArgs e)

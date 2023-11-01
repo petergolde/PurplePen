@@ -334,7 +334,7 @@ namespace PurplePen
             // Boxes C-H, from the symbols
             for (int i = 2; i < 8; ++i) {
                 String symbolID = control.symbolIds[i - 2];
-                if (symbolID != null) {
+                if (symbolID != null && symbolDB.SymbolExistsInStandard(symbolID, symbolDB.Standard)) {
                     line.boxes[i] = symbolDB[control.symbolIds[i - 2]];
 
                     // See if we need to add this to the key.
@@ -516,29 +516,44 @@ namespace PurplePen
         }
 
         // Get a directive line for a map exchange at a control (not to the finish). 
+
         private DescriptionLine GetMapExchangeAtControlLine(CourseView.ControlView controlWithExchange)
         {
+            Id<CourseControl> courseControlId = controlWithExchange.courseControlIds[0];
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+
             DescriptionLine line = new DescriptionLine();
             line.kind = DescriptionLineKind.Directive;
             line.boxes = new object[2];
 
-            // Distance is 0m at the control!
-            string distanceText = string.Format("{0} m", 0);
+            if (courseControl.exchangeIsFlip && symbolDB.Standard != "2004") {
+                // Box 1: directive graphics.
+                string symbolId = "15.6";
+                line.boxes[0] = symbolDB[symbolId];
 
-            // Box 1: directive graphics.
-            string symbolId = "13.5control";
-            line.boxes[0] = symbolDB[symbolId];
+                // Get the text version of the control using the Textifier.
+                Textifier textifier = new Textifier(eventDB, symbolDB, language);
+                line.textual = textifier.CreateTextForDirective(symbolId, "");
+            }
+            else {
+                // Distance is 0m at the control!
+                string distanceText = string.Format("{0} m", 0);
 
-            // Box 2: distance of the flagging
-            line.boxes[1] = distanceText;
+                // Box 1: directive graphics.
+                string symbolId = "13.5control";
+                line.boxes[0] = symbolDB[symbolId];
 
-            // Get the text version of the control using the Textifier.
-            Textifier textifier = new Textifier(eventDB, symbolDB, language);
-            line.textual = textifier.CreateTextForDirective(symbolId, distanceText);
+                // Box 2: distance of the flagging
+                line.boxes[1] = distanceText;
+
+                // Get the text version of the control using the Textifier.
+                Textifier textifier = new Textifier(eventDB, symbolDB, language);
+                line.textual = textifier.CreateTextForDirective(symbolId, distanceText);
+            }
 
             // The course control IDs, for use in coordinating the selection
             line.controlId = controlWithExchange.controlId;
-            line.courseControlId = controlWithExchange.courseControlIds[0];
+            line.courseControlId = courseControlId;
 
             return line;
         }

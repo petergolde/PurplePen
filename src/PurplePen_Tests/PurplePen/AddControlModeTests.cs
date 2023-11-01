@@ -93,7 +93,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal, false);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -165,7 +165,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal, false);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -266,7 +266,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Normal, false);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.None);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -317,7 +317,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal, false);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -388,7 +388,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Normal, false);
+            controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(3, highlights.Length);
             ControlCourseObj obj = (ControlCourseObj) highlights[0];
@@ -433,7 +433,7 @@ namespace PurplePen.Tests
 
             // Begin adding a start.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Start, false);
+            controller.BeginAddControlMode(ControlPointKind.Start, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             PointCourseObj obj = (PointCourseObj) highlights[0];
@@ -492,7 +492,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Start, false);
+            controller.BeginAddControlMode(ControlPointKind.Start, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             StartCourseObj obj = (StartCourseObj) highlights[0];
@@ -569,7 +569,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Start, false);
+            controller.BeginAddControlMode(ControlPointKind.Start, MapExchangeType.None);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -614,7 +614,7 @@ namespace PurplePen.Tests
 
             // Begin adding a finish.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Finish, false);
+            controller.BeginAddControlMode(ControlPointKind.Finish, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             PointCourseObj obj = (PointCourseObj) highlights[0];
@@ -674,7 +674,7 @@ namespace PurplePen.Tests
 
             // Begin adding a control.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.Finish, false);
+            controller.BeginAddControlMode(ControlPointKind.Finish, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             FinishCourseObj obj = (FinishCourseObj) highlights[0];
@@ -752,7 +752,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(47, highlights[1].controlId.id);
 
             // Begin adding a control.
-            controller.BeginAddControlMode(ControlPointKind.Finish, false);
+            controller.BeginAddControlMode(ControlPointKind.Finish, MapExchangeType.None);
 
             // All controls should be displayed.
             Assert.IsTrue(ControllerTests.IsAllControlsLayer(controller.GetCourseLayout()));
@@ -978,7 +978,7 @@ namespace PurplePen.Tests
 
             // Begin adding a crossing point.
             ui.MouseMoved(23, 37, 0.1f);
-            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, false);
+            controller.BeginAddControlMode(ControlPointKind.CrossingPoint, MapExchangeType.None);
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(3, highlights.Length);
             CrossingCourseObj obj = (CrossingCourseObj) highlights[0];

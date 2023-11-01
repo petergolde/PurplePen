@@ -315,4 +315,7 @@
   <data name="MoveAllControls" xml:space="preserve">
     <value>Move All Controls</value>
   </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Add Map Flip</value>
+  </data>
 </root>

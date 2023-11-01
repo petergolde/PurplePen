@@ -509,6 +509,7 @@ namespace PurplePen
         /// <param name="rect">The rectange to fill.</param>
         public void Draw(Graphics g, Color color, RectangleF rect)
         {
+            /* 
             Matrix matSave = g.Transform;
 
             g.TranslateTransform((rect.Left + rect.Right) / 2.0F, (rect.Top + rect.Bottom) / 2.0F);
@@ -525,6 +526,17 @@ namespace PurplePen
                 strokes[i].Draw(g, color);
 
             g.Transform = matSave;
+            */
+
+            GraphicsState state = g.Save();
+            try {
+                using (GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g)) {
+                    Draw(grTarget, CmykColor.FromColor(color), rect);
+                }
+            }
+            finally {
+                g.Restore(state);
+            }
         }
 
         /// <summary>
@@ -773,69 +785,6 @@ namespace PurplePen
             public LineJoin corners;
             public PointF[] points;
 
-            public void Draw(Graphics g, System.Drawing.Color color)
-            {
-                switch (kind) {
-                    case SymbolStrokes.Disc:
-                        using (Brush b = new SolidBrush(color))
-                            g.FillEllipse(b, new RectangleF(points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2));
-                        break;
-
-                    case SymbolStrokes.Circle:
-                        try {
-                            using (Pen p = new Pen(color, thickness))
-                                g.DrawEllipse(p, new RectangleF(points[0].X - radius, points[0].Y - radius, radius * 2, radius * 2));
-                        }
-                        catch (Exception) {
-                            // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
-                            // Just ignore it; there's nothing else to do. See bug #1997301.
-                        }
-
-                        break;
-
-                    case SymbolStrokes.Polyline:
-                        using (Pen p = new Pen(color, thickness)) {
-                            p.LineJoin = corners;
-                            p.StartCap = ends;
-                            p.EndCap = ends;
-                            g.DrawLines(p, points);
-                        }
-                        break;
-
-                    case SymbolStrokes.Polygon:
-                        using (Pen p = new Pen(color, thickness)) {
-                            p.LineJoin = corners;
-                            g.DrawPolygon(p, points);
-                        }
-                        break;
-
-                    case SymbolStrokes.FilledPolygon:
-                        using (Brush b = new SolidBrush(color))
-                            g.FillPolygon(b, points);
-                        break;
-
-                    case SymbolStrokes.PolyBezier:
-                        using (Pen p = new Pen(color, thickness)) {
-                            p.StartCap = ends;
-                            p.EndCap = ends;
-                            g.DrawBeziers(p, points);
-                        }
-                        break;
-
-                    case SymbolStrokes.FilledPolyBezier:
-                        using (Brush b = new SolidBrush(color))
-                        using (GraphicsPath path = new GraphicsPath()) {
-                            path.AddBeziers(points);
-                            g.FillPath(b, path);
-                        }
-                        break;
-
-                    default:
-                        Debug.Fail("Bad SymbolStroke kind");
-                        break;
-                }
-            }
-
             public void Draw(IGraphicsTarget g, CmykColor color)
             {
                 object brush = new object();
@@ -875,7 +824,7 @@ namespace PurplePen
                         break;
 
                     case SymbolStrokes.FilledPolyBezier:
-                        g.FillPath(brush, CreateBezierPath(points));
+                        g.FillPath(brush, CreateBezierPath(points), FillMode.Alternate);
                         break;
 
                     default:

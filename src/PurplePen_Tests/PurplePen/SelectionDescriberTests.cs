@@ -1096,6 +1096,43 @@ namespace PurplePen.Tests
             Assert.AreEqual("Map exchange at Control 43", textpart.text);
             Assert.AreEqual(TextFormat.Title, textpart.format);
 
+            textpart = description[index++];
+            Assert.AreEqual("Text description:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Map exchange at the control", textpart.text);
+            Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
+            Assert.AreEqual(index, description.Length);
+        }
+
+        [TestMethod]
+        public void SelectedMapFlipAtControl()
+        {
+            TextPart textpart;
+            int index;
+
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile("selectiondescriber\\mapexchange3.ppen"), true);
+            Assert.IsTrue(success);
+
+            selectionMgr.SelectCourseView(Designator(6));
+            selectionMgr.SelectMapExchangeAtControl(ControlId(43), CourseControlId(615));
+            TextPart[] description = SelectionDescriber.DescribeSelection(ui.symbolDB, eventDB, selectionMgr.ActiveCourseView, selectionMgr.Selection);
+            index = 0;
+
+            textpart = description[index++];
+            Assert.AreEqual("Map flip at Control 43", textpart.text);
+            Assert.AreEqual(TextFormat.Title, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Text description:", textpart.text);
+            Assert.AreEqual(TextFormat.Header, textpart.format);
+
+            textpart = description[index++];
+            Assert.AreEqual("Flip map over", textpart.text);
+            Assert.AreEqual(TextFormat.NewLine, textpart.format);
+
             Assert.AreEqual(index, description.Length);
         }
 

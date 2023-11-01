@@ -205,13 +205,17 @@ namespace PurplePen
         }
 
         // Change if a course-control has a map exchange. 
-        public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, bool isExchange)
+        public static void ChangeControlExchange(EventDB eventDB, Id<CourseControl> courseControlId, MapExchangeType exchangeType)
         {
+            bool isExchange = (exchangeType != MapExchangeType.None);
+            bool isMapFlip = (exchangeType == MapExchangeType.MapFlip);
+
             foreach (Id<CourseControl> variantCourseControlId in QueryEvent.AllVariationsOfCourseControl(eventDB, courseControlId)) {
                 CourseControl courseControl = eventDB.GetCourseControl(variantCourseControlId);
-                if (courseControl.exchange != isExchange) {
+                if (courseControl.exchange != isExchange || courseControl.exchangeIsFlip != isMapFlip) {
                     courseControl = (CourseControl)courseControl.Clone();
                     courseControl.exchange = isExchange;
+                    courseControl.exchangeIsFlip = isMapFlip;
                     eventDB.ReplaceCourseControl(variantCourseControlId, courseControl);
                 }
             }
@@ -2115,6 +2119,13 @@ namespace PurplePen
             if (controlPoint.symbolIds.Length > 3 && controlPoint.symbolIds[3] != null)
                 controlPoint.columnFText = null;
         }
+    }
+
+    // Different ways to change map exchange 
+    enum MapExchangeType { 
+        None,
+        Exchange,     // Can occur at regular control or at a map exchange
+        MapFlip       // Can only occur at regular control
     }
 
 }

@@ -48,7 +48,7 @@ namespace PurplePen
         SymbolDB symbolDB;      // symbol database
         Controller controller;        // controller
 
-        public enum SelectionKind { None, Control, Special, Leg, Title, SecondaryTitle, Header, TextLine, Key, MapExchangeAtControl };
+        public enum SelectionKind { None, Control, Special, Leg, Title, SecondaryTitle, Header, TextLine, Key, MapExchangeOrFlipAtControl };
 
         // These variables have the current active state of the application, apart from 
         // the event database. Changes to the event database could delete these ids.
@@ -245,7 +245,12 @@ namespace PurplePen
             }
         }
 
-       public void SelectDescriptionLine(int line)
+        private bool IsMapFlipOrExchangeAtControl(string id)
+        {
+            return id == "13.5control" || id == "15.6";
+        }
+
+        public void SelectDescriptionLine(int line)
         {
             UpdateState();
             if (line == -1) {
@@ -263,8 +268,8 @@ namespace PurplePen
                     SetSelection(SelectionKind.Key, Id<CourseControl>.None, Id<CourseControl>.None, LegInsertionLoc.Normal, Id<ControlPoint>.None, Id<Special>.None, (Symbol) activeDescription[line].boxes[0], DescriptionLine.TextLineKind.None);
                 else if (kind == DescriptionLineKind.Text)
                     SetSelection(SelectionKind.TextLine, activeDescription[line].courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, activeDescription[line].textLineKind);
-                else if (kind == DescriptionLineKind.Directive && ((Symbol)(activeDescription[line].boxes[0])).Id == "13.5control")
-                    SetSelection(SelectionKind.MapExchangeAtControl, activeDescription[line].courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+                else if (kind == DescriptionLineKind.Directive && IsMapFlipOrExchangeAtControl(((Symbol)(activeDescription[line].boxes[0])).Id))
+                    SetSelection(SelectionKind.MapExchangeOrFlipAtControl, activeDescription[line].courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else if (activeDescription[line].isLeg)
                     SetSelection(SelectionKind.Leg, activeDescription[line].courseControlId, activeDescription[line].courseControlId2, LegInsertionLoc.Normal, activeDescription[line].controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
                 else
@@ -398,7 +403,7 @@ namespace PurplePen
         // Set a map exchange at control line
         public void SelectMapExchangeAtControl(Id<ControlPoint> controlId, Id<CourseControl> courseControlId)
         {
-            SetSelection(SelectionKind.MapExchangeAtControl, courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
+            SetSelection(SelectionKind.MapExchangeOrFlipAtControl, courseControlId, Id<CourseControl>.None, LegInsertionLoc.Normal, controlId, Id<Special>.None, null, DescriptionLine.TextLineKind.None);
         }
 
 
@@ -736,8 +741,8 @@ namespace PurplePen
                     return;
                 }
 
-                if (selectionKind == SelectionKind.MapExchangeAtControl && lineKind == DescriptionLineKind.Directive && (activeDescription[line].boxes[0] is Symbol) &&
-                    (activeDescription[line].boxes[0] as Symbol).Id == "13.5control" && selectedCourseControl == activeDescription[line].courseControlId)
+                if (selectionKind == SelectionKind.MapExchangeOrFlipAtControl && lineKind == DescriptionLineKind.Directive && (activeDescription[line].boxes[0] is Symbol) &&
+                    IsMapFlipOrExchangeAtControl((activeDescription[line].boxes[0] as Symbol).Id) && selectedCourseControl == activeDescription[line].courseControlId)
                 {
                     selectedDescriptionLineFirst = selectedDescriptionLineLast = line;
                     return;

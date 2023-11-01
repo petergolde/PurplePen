@@ -71,10 +71,17 @@ namespace PurplePen.Tests
 
         static Bitmap RenderToBitmap(Symbol sym)
         {
-            Bitmap bm = new Bitmap(256, 256);
+            
+            int width = 256, height = 256;
+            
+            if (sym.Kind >= 'T') {
+                width *= 8;  // directive symbol.
+            }
+
+            Bitmap bm = new Bitmap(width, height);
             Graphics g = Graphics.FromImage(bm);
             g.Clear(Color.White);
-            RectangleF rect = new RectangleF(0.0F, 0.0F, 256.0F, 256.0F);
+            RectangleF rect = new RectangleF(0.0F, 0.0F, width, height);
 
             sym.Draw(g, Color.Black, rect);
 
@@ -101,7 +108,7 @@ namespace PurplePen.Tests
             SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("symbols\\testread.xml"));
 
             ICollection<Symbol> symbolCollection = symbolDB.AllSymbols;
-            Assert.AreEqual(7, symbolCollection.Count);
+            Assert.AreEqual(8, symbolCollection.Count);
 
             Symbol[] symbols = new Symbol[symbolCollection.Count];
             symbolCollection.CopyTo(symbols, 0);
@@ -346,10 +353,12 @@ namespace PurplePen.Tests
         // Get the transform matrix from world coords to bitmap coords.
         Matrix GetTransform(Size sizeBitmap)
         {
+            float minSize = Math.Min(sizeBitmap.Width, sizeBitmap.Height);
+
             Matrix m = new Matrix();
 
             m.Translate(sizeBitmap.Width / 2, sizeBitmap.Height / 2);
-            m.Scale((float) (sizeBitmap.Width / 8.0), -(float) (sizeBitmap.Height / 8.0));
+            m.Scale((float) (minSize / 8.0), -(float) (minSize / 8.0));
             return m;
         }
 
@@ -357,9 +366,15 @@ namespace PurplePen.Tests
         // Render a course to a bitmap for testing purposes. 
         internal Bitmap RenderSymbolMapToBitmap(Symbol sym)
         {
+            int width = 250, height = 250;
+
+            if (sym.Kind >= 'T') {
+                width *= 8;  // directive symbol.
+            }
+
             Map map = RenderSymbolToMap(sym, 8.0F);
 
-            Bitmap bm = new Bitmap(250, 250);
+            Bitmap bm = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(bm)) {
                 RenderOptions options = new RenderOptions();
 

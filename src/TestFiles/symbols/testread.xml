@@ -98,4 +98,42 @@
 		</filled-beziers>
 	</symbol>
 
+  <symbol kind="W" id="15.6"  >
+    <name lang="en">Map flip</name>
+    <text lang="en">Flip map over</text>
+
+    <polygon thickness="12.5">
+      <point x="-140" y="-70"></point>
+      <point x="140" y="-70"></point>
+      <point x="140" y="70"></point>
+      <point x="-140" y="70"></point>
+    </polygon>
+
+    <filled-polygon>
+      <point x="125" y="58"/>
+      <point x="125" y="-6"/>
+      <point x="45" y="26"/>
+    </filled-polygon>
+
+    <filled-beziers>
+      <point x="120" y="42"/>
+      <point x="120" y="32"/>
+      <point x="120" y="20"/>
+      <point x="120" y="10"/>
+      <point x="140" y="10"/>
+      <point x="190" y="3"/>
+      <point x="190" y="-21"/>
+      <point x="190" y="-42"/>
+      <point x="166" y="-52"/>
+      <point x="148" y="-58"/>
+      <point x="183" y="-58"/>
+      <point x="215" y="-40"/>
+      <point x="215" y="-10"/>
+      <point x="215" y="25"/>
+      <point x="145" y="42"/>
+      <point x="120" y="42"/>
+    </filled-beziers>
+  </symbol>
+
+
 </symbols>

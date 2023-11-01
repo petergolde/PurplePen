@@ -56,7 +56,7 @@ namespace PurplePen
         SymbolDB symbolDB;
         bool allControls;                  // Are we in All Controls (true), or adding to a course (false)
         ControlPointKind controlKind;      // Kind of control we are adding.
-        bool exchangeAtControl;            // If true, controlKind == Normal and we are changing a control to an exchange point.
+        MapExchangeType mapExchangeType;   // If not None, controlKind == Normal and we are changing a control to an exchange point.
         float courseObjRatio;
         MapIssueKind mapIssueKind;
         CourseAppearance appearance;
@@ -64,7 +64,7 @@ namespace PurplePen
         PointCourseObj highlight;    // the highlight of the control we are creating.
         CourseObj[] additionalHighlights;  // additional highlights to show also. 
 
-        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, SymbolDB symbolDB, bool allControls, ControlPointKind controlKind, bool exchangeAtControl, MapIssueKind mapIssueKind)
+        public AddControlMode(Controller controller, SelectionMgr selectionMgr, UndoMgr undoMgr, EventDB eventDB, SymbolDB symbolDB, bool allControls, ControlPointKind controlKind, MapExchangeType mapExchangeType, MapIssueKind mapIssueKind)
         {
             this.controller = controller;
             this.selectionMgr = selectionMgr;
@@ -73,7 +73,7 @@ namespace PurplePen
             this.symbolDB = symbolDB;
             this.allControls = allControls;
             this.controlKind = controlKind;
-            this.exchangeAtControl = exchangeAtControl;
+            this.mapExchangeType = mapExchangeType;
             this.mapIssueKind = mapIssueKind;
             this.appearance = controller.GetCourseAppearance();
             this.courseObjRatio = selectionMgr.ActiveCourseView.CourseObjRatio(appearance);
@@ -131,7 +131,7 @@ namespace PurplePen
                     if (existingControl.IsNone) {
                         return StatusBarText.AddingControl;
                     } else {
-                        return string.Format(exchangeAtControl && QueryEvent.CourseUsesControl(eventDB, selectionMgr.Selection.ActiveCourseDesignator, existingControl) ? 
+                        return string.Format(mapExchangeType != MapExchangeType.None && QueryEvent.CourseUsesControl(eventDB, selectionMgr.Selection.ActiveCourseDesignator, existingControl) ? 
                                                     StatusBarText.AddingMapExchangeToControl : StatusBarText.AddingExistingControl, 
                                              eventDB.GetControl(existingControl).code);
                     }
@@ -171,7 +171,7 @@ namespace PurplePen
 
                             GetControlInsertionPoint(courseObj.location, out courseDesignator, out courseControl1, out courseControl2, out legInsertionLoc);
                             if (eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score && 
-                                (exchangeAtControl || 
+                                (mapExchangeType != MapExchangeType.None || 
                                  (courseObj.courseControlId != courseControl1 && courseObj.courseControlId != courseControl2))) {
                                 highlightLocation = courseObj.location;
                                 return courseObj.controlId;
@@ -285,8 +285,10 @@ namespace PurplePen
             case ControlPointKind.CrossingPoint: commandString = CommandNameText.AddCrossingPoint; break;
             case ControlPointKind.MapExchange: commandString = CommandNameText.AddMapExchange; break;
             default:
-                if (exchangeAtControl)
+                if (mapExchangeType == MapExchangeType.Exchange)
                     commandString = CommandNameText.AddMapExchange;
+                else if (mapExchangeType == MapExchangeType.MapFlip)
+                    commandString = CommandNameText.AddMapFlip;
                 else
                     commandString = CommandNameText.AddControl;
                 break;
@@ -332,20 +334,20 @@ namespace PurplePen
                     courseControlId = ChangeEvent.AddFinishToCourse(eventDB, controlId, courseDesignator.CourseId, true);
                 else if (controlKind == ControlPointKind.MapExchange) {
                     courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, legInsertionLoc);
-                    ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
+                    ChangeEvent.ChangeControlExchange(eventDB, courseControlId, MapExchangeType.Exchange);
                 }
-                else if (exchangeAtControl && QueryEvent.CourseUsesControl(eventDB, courseDesignator, controlId)) {
+                else if (mapExchangeType != MapExchangeType.None && QueryEvent.CourseUsesControl(eventDB, courseDesignator, controlId)) {
                     // Selected control already on course, just add map exchange at that courseControl(s)).
                     courseControlId = Id<CourseControl>.None;
                     foreach (Id<CourseControl> courseControlBecomesExchange in QueryEvent.GetCourseControlsInCourse(eventDB, courseDesignator, controlId)) {
-                        ChangeEvent.ChangeControlExchange(eventDB, courseControlBecomesExchange, true);
+                        ChangeEvent.ChangeControlExchange(eventDB, courseControlBecomesExchange, mapExchangeType);
                         courseControlId = courseControlBecomesExchange;
                     }
                 }
                 else {
                     courseControlId = ChangeEvent.AddCourseControl(eventDB, controlId, courseDesignator.CourseId, courseControl1, courseControl2, legInsertionLoc);
-                    if (exchangeAtControl)
-                        ChangeEvent.ChangeControlExchange(eventDB, courseControlId, true);
+                    if (mapExchangeType != MapExchangeType.None)
+                        ChangeEvent.ChangeControlExchange(eventDB, courseControlId, mapExchangeType);
                 }
 
                 // select the new control.
@@ -382,8 +384,9 @@ namespace PurplePen
                 highlight = new ControlCourseObj(Id<ControlPoint>.None, Id<CourseControl>.None, courseObjRatio, appearance, null, highlightLocation);
 
                 if (courseDesignator.IsNotAllControls &&
-                    !(exchangeAtControl && existingControl.IsNotNone && QueryEvent.CourseUsesControl(eventDB, courseDesignator, existingControl)) &&
-                    eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) {
+                    !(mapExchangeType != MapExchangeType.None && existingControl.IsNotNone && QueryEvent.CourseUsesControl(eventDB, courseDesignator, existingControl)) &&
+                    eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score) 
+                {
                     // Show the legs to and from the control also as additional highlights.
                     additionalHighlights = CreateLegHighlights(eventDB, highlightLocation, Id<ControlPoint>.None, controlKind, courseControl1, courseControl2, courseObjRatio, appearance);
                 }

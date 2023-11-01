@@ -291,19 +291,44 @@ namespace PurplePen.Tests
             Setup("changeevent\\sampleevent1.coursescribe");
 
             undomgr.BeginCommand(119, "Add exchange");
-            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(204), true);
+            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(204), MapExchangeType.Exchange);
             undomgr.EndCommand(119);
 
             eventDB.Validate();
 
             CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(204));
             Assert.IsTrue(courseControl.exchange);
+            Assert.IsFalse(courseControl.exchangeIsFlip);
 
             undomgr.Undo();
             eventDB.Validate();
 
             courseControl = eventDB.GetCourseControl(CourseControlId(204));
             Assert.IsFalse(courseControl.exchange);
+            Assert.IsFalse(courseControl.exchangeIsFlip);
+        }
+
+        [TestMethod]
+        public void ChangeControlMapFlip()
+        {
+            Setup("changeevent\\sampleevent1.coursescribe");
+
+            undomgr.BeginCommand(129, "Add exchange");
+            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(204), MapExchangeType.MapFlip);
+            undomgr.EndCommand(129);
+
+            eventDB.Validate();
+
+            CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsTrue(courseControl.exchange);
+            Assert.IsTrue(courseControl.exchangeIsFlip);
+
+            undomgr.Undo();
+            eventDB.Validate();
+
+            courseControl = eventDB.GetCourseControl(CourseControlId(204));
+            Assert.IsFalse(courseControl.exchange);
+            Assert.IsFalse(courseControl.exchangeIsFlip);
         }
 
         [TestMethod]
@@ -312,19 +337,21 @@ namespace PurplePen.Tests
             Setup("changeevent\\variations.ppen");
 
             undomgr.BeginCommand(119, "Add exchange");
-            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(4), true);
+            ChangeEvent.ChangeControlExchange(eventDB, CourseControlId(4), MapExchangeType.Exchange);
             undomgr.EndCommand(119);
 
             eventDB.Validate();
 
             CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(4));
             Assert.IsTrue(courseControl.exchange);
+            Assert.IsFalse(courseControl.exchangeIsFlip);
 
             undomgr.Undo();
             eventDB.Validate();
 
             courseControl = eventDB.GetCourseControl(CourseControlId(4));
             Assert.IsFalse(courseControl.exchange);
+            Assert.IsFalse(courseControl.exchangeIsFlip);
         }
 
         [TestMethod]

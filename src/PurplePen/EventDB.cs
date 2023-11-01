@@ -1273,6 +1273,7 @@ namespace PurplePen
     {
         public Id<ControlPoint> control;             // Id of the control.
         public bool exchange;     // Is this control a map exchange? (must be true for ControlPointKind.MapExchange)
+        public bool exchangeIsFlip;  // Only if exchange==true. If exchangeIsFlip==true, then use Map flip symbol on control description.
         public bool split;              // Is this the first control before a variation split?
         public bool loop;               // If split is true, indicates this is a loop vs. join.
         public Id<CourseControl> splitEnd;  // If a split, the course control that ends the split. Same as this for a loop.
@@ -1308,6 +1309,10 @@ namespace PurplePen
 
             if (exchange && validateInfo.eventDB.GetControl(control).kind != ControlPointKind.MapExchange && validateInfo.eventDB.GetControl(control).kind != ControlPointKind.Normal)
                 throw new ApplicationException(string.Format("Course control '{0}' is a exchange, but is not a control or map exchange", id));
+
+            if (exchangeIsFlip && !exchange) {
+                throw new ApplicationException(string.Format("Course control '{0}' is a flip, but is not a map exchange", id));
+            }
 
             if (split) {
                 if (splitCourseControls == null)
@@ -1355,6 +1360,8 @@ namespace PurplePen
             if (other.splitEnd != splitEnd)
                 return false;
             if (other.exchange != exchange)
+                return false;
+            if (other.exchangeIsFlip != exchangeIsFlip)
                 return false;
             if (other.points != points)
                 return false;
@@ -1414,6 +1421,12 @@ namespace PurplePen
             if (split)
                 splitEnd = new Id<CourseControl>(xmlinput.GetAttributeInt("variation-end"));
             exchange = xmlinput.GetAttributeBool("map-exchange", false);
+            if (exchange) {
+                exchangeIsFlip = xmlinput.GetAttributeBool("map-flip", false);
+            }
+            else {
+                exchangeIsFlip = false; // can't have flip without exchange.
+            }
             points = xmlinput.GetAttributeInt("points", 0);
 
             List<Id<CourseControl>> variationCourseControls = null;
@@ -1477,6 +1490,8 @@ namespace PurplePen
             }
             if (exchange)
                 xmloutput.WriteAttributeString("map-exchange", XmlConvert.ToString(true));
+            if (exchangeIsFlip && exchange)
+                xmloutput.WriteAttributeString("map-flip", XmlConvert.ToString(true));
             if (points != 0)
                 xmloutput.WriteAttributeString("points", XmlConvert.ToString(points));
 

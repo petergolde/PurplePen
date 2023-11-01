@@ -87,8 +87,8 @@ namespace PurplePen
             else if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
                 return DescribeSpecial(eventDB, selection.SelectedSpecial, activeCourseView.ScaleRatio, DescKind.DescPane);
             }
-            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeAtControl) {
-                return DescribeMapExchangeAtControl(eventDB, selection.SelectedControl);
+            else if (selection.SelectionKind == SelectionMgr.SelectionKind.MapExchangeOrFlipAtControl) {
+                return DescribeMapExchangeAtControl(symbolDB, eventDB, selection.SelectedControl, selection.SelectedCourseControl, DescKind.DescPane);
             }
             else if (selection.ActiveCourseDesignator.IsNotAllControls) {
                 return DescribeCourse(eventDB, activeCourseView);
@@ -484,11 +484,31 @@ namespace PurplePen
         }
 
         // Describe a map exchange at control
-        private static TextPart[] DescribeMapExchangeAtControl(EventDB eventDB, Id<ControlPoint> controlId)
+        private static TextPart[] DescribeMapExchangeAtControl(SymbolDB symbolDB, EventDB eventDB, Id<ControlPoint> controlId, Id<CourseControl> courseControlId, DescKind descKind)
         {
             List<TextPart> list = new List<TextPart>();
+            CourseControl courseControl = courseControlId.IsNotNone ? eventDB.GetCourseControl(courseControlId) : null;
+            string titleText;
+            string symbolId;
 
-            list.Add(new TextPart(TextFormat.Title, string.Format(SelectionDescriptionText.MapExchangeAtControl, Util.ControlPointName(eventDB, controlId, NameStyle.Long))));
+            if (courseControl != null && courseControl.exchangeIsFlip && symbolDB.Standard != "2004") {
+                titleText = SelectionDescriptionText.MapFlipAtControl;
+                symbolId = "15.6";
+            }
+            else {
+                titleText = SelectionDescriptionText.MapExchangeAtControl;
+                symbolId = "13.5control";
+            }
+
+            list.Add(new TextPart(TextFormat.Title, string.Format(titleText, Util.ControlPointName(eventDB, controlId, NameStyle.Long))));
+
+            // Text version of the descriptions
+            if (descKind == DescKind.DescPane) {
+                Textifier textifier = new Textifier(eventDB, symbolDB, QueryEvent.GetDescriptionLanguage(eventDB));
+                string descText = textifier.CreateTextForDirective(symbolId, "0");
+                list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.TextDescription));
+                list.Add(new TextPart(TextFormat.NewLine, descText));
+            }
 
             return list.ToArray();
         }

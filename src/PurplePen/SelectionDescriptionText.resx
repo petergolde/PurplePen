@@ -304,4 +304,7 @@
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>map issue point</value>
   </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Map flip at {0}</value>
+  </data>
 </root>

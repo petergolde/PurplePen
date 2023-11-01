@@ -331,6 +331,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Map flip at {0}.
+        /// </summary>
+        internal static string MapFlipAtControl {
+            get {
+                return ResourceManager.GetString("MapFlipAtControl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to map issue points.
         /// </summary>
         internal static string MapIssue_Plural {
