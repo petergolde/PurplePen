@@ -141,6 +141,7 @@ namespace PurplePen
             deleteMenu.Image = deleteToolStripButton.Image;
             deleteItemMenu.Image = deleteToolStripButton.Image;
             addMapExchangeMenu.Image = mapExchangeToolStripMenu.Image;
+            addMapFlipMenuItem.Image = mapFlipMenuItem.Image;
             mapExchangeControlMenuItem.Image = mapExchangeControlToolStripMenuItem.Image;
             mapExchangeSeparateMenuItem.Image = mapExchangeSeparateToolStripMenuItem.Image;
             addMapIssueMenu.Image = mapIssuePointToolStripMenuItem.Image;

@@ -1846,8 +1846,8 @@ namespace PurplePen
             // 
             // mapFlipMenuItem
             // 
-            this.mapFlipMenuItem.Name = "mapFlipMenuItem";
             resources.ApplyResources(this.mapFlipMenuItem, "mapFlipMenuItem");
+            this.mapFlipMenuItem.Name = "mapFlipMenuItem";
             this.mapFlipMenuItem.Click += new System.EventHandler(this.addMapFlipControl_Click);
             // 
             // mapExchangeControlToolStripMenuItem

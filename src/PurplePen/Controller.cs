@@ -3489,13 +3489,20 @@ namespace PurplePen
                     Debug.Assert(box == 0);
 
                     Id<ControlPoint> controlId = selectionMgr.ActiveDescription[line].controlId;
+                    Id<CourseControl> courseControlId = selectionMgr.ActiveDescription[line].courseControlId;
 
                     undoMgr.BeginCommand(102, CommandNameText.ChangeSymbol);
 
-                    // If changing the directive on the finish, this may update flagging instead.
                     bool updateControlSymbol = true;
+
+                    // If changing the directive on the finish, this may update flagging instead.
                     if (eventDB.GetControl(controlId).kind == ControlPointKind.Finish && selectionMgr.Selection.ActiveCourseDesignator.IsNotAllControls) {
                         updateControlSymbol = UpdateFinishFlagging(controlId, ((Symbol)newValue).Id);
+                    }
+
+                    // If changing the directive on a map exchange at a control, change the attribute of the associated course control instead.
+                    if ((newValue as Symbol).Kind == 'Y') {
+                        updateControlSymbol = UpdateExchangeAtControl(courseControlId, ((Symbol)newValue).Id);
                     }
 
                     if (updateControlSymbol) { 
@@ -3593,6 +3600,24 @@ namespace PurplePen
             }
 
             return modifySymbolId;
+        }
+
+        private bool UpdateExchangeAtControl(Id<CourseControl> courseControlId, string newSymbolId)
+        {
+            Debug.Assert(courseControlId.IsNotNone);
+
+            if (newSymbolId == "13.5control") {
+                ChangeEvent.ChangeControlExchange(eventDB, courseControlId, MapExchangeType.Exchange);
+                return false; // Don't change the symbol in the associated control.
+            }
+            else if (newSymbolId == "15.6") {
+                ChangeEvent.ChangeControlExchange(eventDB, courseControlId, MapExchangeType.MapFlip);
+                return false; // Don't change the symbol in the associated control.
+            }
+            else {
+                Debug.Fail("Unexpected newSymbolId");
+                return false; 
+            }
         }
 
         // Can we add a map exchange at a control?

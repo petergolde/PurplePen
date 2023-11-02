@@ -496,8 +496,8 @@ namespace PurplePen
                     if (current != null) {
                         char kind = current.Kind;       // Allow changing in the existing kind only.
 
-                        // Only allow changing the crossing point or finish symbols.
-                        if (kind == 'X' || kind == 'Z') {
+                        // Only allow changing the crossing point, map exchange at control, or finish symbols.
+                        if (kind == 'X' || kind == 'Y' || kind == 'Z') {
                             popup.ShowPopup(1, kind, (char)0, false, null, null, 0, descriptionPanel, location);
                             popupKind = ChangeKind.Directive;
                         }

@@ -6667,6 +6667,10 @@ for the symbols.
     <name lang="en">Railway</name>
     <text lang="en">railroad tracks</text>
     <text lang="en" plural="true">railroad tracks</text>
+    <text lang="en-GB">railway track</text>
+    <text lang="en-GB" plural="true">railway tracks</text>
+    <text lang="en-AU">railway track</text>
+    <text lang="en-AU" plural="true">railway tracks</text>
 
     <!--
     Rotate the following by 40 degress counter-clockwise.
@@ -12667,8 +12671,10 @@ for the symbols.
     </polygon>
   </symbol>
 
+  <!-- Kind "Y". Map exchange or flip at a control. -->
+
   <!-- Used for a map exchange at a control. -->
-  <symbol kind="W" id="13.5control">
+  <symbol kind="Y" id="13.5control">
     <name lang="ca">Canvi de mapa en un control</name>
     <text lang="ca">canvi de mapa al control</text>
     <name lang="cs">Výměna mapy na kontrole</name>
@@ -12728,7 +12734,7 @@ for the symbols.
 
 
   <!-- Used for a map flip at a control. Introduced in Descriptions 2024 standard -->
-  <symbol kind="W" id="15.6" standard="2018" >
+  <symbol kind="Y" id="15.6" standard="2018" >
     <name lang="en">Map flip</name>
     <text lang="en">Flip map over</text>
 
