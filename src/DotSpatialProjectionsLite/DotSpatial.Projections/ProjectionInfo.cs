@@ -46,7 +46,7 @@ namespace DotSpatial.Projections
 
         private double? _scaleFactor;
 
-        private string LongitudeOfCenterAlias;
+        private string LongitudeOfCenterAlias = null;
 
         // stores the value of the actual parameter name that was used in the original (when the string came from WKT/Esri)
         private string LatitudeOfOriginAlias;
