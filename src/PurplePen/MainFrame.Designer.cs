@@ -250,6 +250,7 @@ namespace PurplePen
             this.dumpOCADFileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.reportTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontMetricsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.missingTranslationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translateMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDescriptionLanguageMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -305,7 +306,6 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.missingTranslationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1694,6 +1694,12 @@ namespace PurplePen
             resources.ApplyResources(this.fontMetricsToolStripMenuItem, "fontMetricsToolStripMenuItem");
             this.fontMetricsToolStripMenuItem.Click += new System.EventHandler(this.fontMetricsToolStripMenuItem_Click);
             // 
+            // missingTranslationsMenuItem
+            // 
+            this.missingTranslationsMenuItem.Name = "missingTranslationsMenuItem";
+            resources.ApplyResources(this.missingTranslationsMenuItem, "missingTranslationsMenuItem");
+            this.missingTranslationsMenuItem.Click += new System.EventHandler(this.missingTranslationsMenuItem_Click);
+            // 
             // crashToolStripMenuItem
             // 
             this.crashToolStripMenuItem.Name = "crashToolStripMenuItem";
@@ -2064,6 +2070,7 @@ namespace PurplePen
             // 
             this.saveXmlFileDialog.DefaultExt = "xml";
             resources.ApplyResources(this.saveXmlFileDialog, "saveXmlFileDialog");
+            this.saveXmlFileDialog.FilterIndex = 2;
             this.saveXmlFileDialog.SupportMultiDottedExtensions = true;
             // 
             // openImageDialog
@@ -2074,12 +2081,6 @@ namespace PurplePen
             // 
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
-            // 
-            // missingTranslationsMenuItem
-            // 
-            this.missingTranslationsMenuItem.Name = "missingTranslationsMenuItem";
-            resources.ApplyResources(this.missingTranslationsMenuItem, "missingTranslationsMenuItem");
-            this.missingTranslationsMenuItem.Click += new System.EventHandler(this.missingTranslationsMenuItem_Click);
             // 
             // MainFrame
             // 
