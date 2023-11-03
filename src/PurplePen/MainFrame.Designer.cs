@@ -305,6 +305,7 @@ namespace PurplePen
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveGpxFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.missingTranslationsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.courseTabs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -1634,6 +1635,7 @@ namespace PurplePen
             this.dumpOCADFileMenu,
             this.reportTesterToolStripMenuItem,
             this.fontMetricsToolStripMenuItem,
+            this.missingTranslationsMenuItem,
             this.crashToolStripMenuItem});
             this.debugMenu.Name = "debugMenu";
             resources.ApplyResources(this.debugMenu, "debugMenu");
@@ -2073,6 +2075,12 @@ namespace PurplePen
             this.saveGpxFileDialog.DefaultExt = "gpx";
             resources.ApplyResources(this.saveGpxFileDialog, "saveGpxFileDialog");
             // 
+            // missingTranslationsMenuItem
+            // 
+            this.missingTranslationsMenuItem.Name = "missingTranslationsMenuItem";
+            resources.ApplyResources(this.missingTranslationsMenuItem, "missingTranslationsMenuItem");
+            this.missingTranslationsMenuItem.Click += new System.EventHandler(this.missingTranslationsMenuItem_Click);
+            // 
             // MainFrame
             // 
             resources.ApplyResources(this, "$this");
@@ -2358,5 +2366,6 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem moveAllControlsMenu;
         private System.Windows.Forms.ToolStripMenuItem addMapFlipMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapFlipMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem missingTranslationsMenuItem;
     }
 }

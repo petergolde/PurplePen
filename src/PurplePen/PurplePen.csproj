@@ -276,6 +276,13 @@
     <Compile Include="CreateOcadFiles.Designer.cs">
       <DependentUpon>CreateOcadFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="DebugUI\DebugTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugUI\DebugTextForm.Designer.cs">
+      <DependentUpon>DebugTextForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI\UntranslatedSymbolTexts.cs" />
     <Compile Include="DpiFixedForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2002,6 +2009,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePdfCourses.zh-CN.resx">
       <DependentUpon>CreatePdfCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugUI\DebugTextForm.resx">
+      <DependentUpon>DebugTextForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Livelox\ConsentRedirectionDialog.resx">
       <DependentUpon>ConsentRedirectionDialog.cs</DependentUpon>

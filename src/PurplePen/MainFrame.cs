@@ -3050,6 +3050,18 @@ namespace PurplePen
             fontMetricsDialog.Dispose();
         }
 
+        private void missingTranslationsMenuItem_Click(object sender, EventArgs e)
+        {
+            UntranslatedSymbolTexts untranslatedSymbolTexts = new UntranslatedSymbolTexts();
+            string report = untranslatedSymbolTexts.ReportOnUntranslatedSymbolTexts(symbolDB);
+
+            DebugTextForm debugTextForm = new DebugTextForm("Missing Translations", report);
+            debugTextForm.ShowDialog(this);
+            debugTextForm.Dispose();
+        }
+
+
+
         private void programLanguageMenu_Click(object sender, EventArgs e)
         {
             SetUILanguage dialog = new SetUILanguage();
