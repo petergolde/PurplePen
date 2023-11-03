@@ -2547,7 +2547,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Livelox\LiveloxResources.sv.resx">
-      <DependentUpon>Livelox\LiveloxResources.resx</DependentUpon>
+      <DependentUpon>LiveloxResources.resx</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.bg.resx">
