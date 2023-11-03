@@ -774,6 +774,12 @@ namespace PurplePen
                 return true;
             }
 
+            // We never put instances in a hash table, but this prevents CS0659 warning.
+            public override int GetHashCode()
+            {
+                return 1;
+            }
+
             public bool LegEquals(int leg, TeamAssignment other, int otherLeg)
             {
                 foreach (Fork fork in outer.allForks) {
@@ -841,6 +847,12 @@ namespace PurplePen
                         return false;
 
                 return true;
+            }
+
+            // We never put instances in a hash table, but this prevents CS0659 warning.
+            public override int GetHashCode()
+            {
+                return 1;
             }
 
         }

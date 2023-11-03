@@ -95,8 +95,6 @@ namespace PurplePen.MapModel
         // Symbols that can't be rendered correct -- match an error message (which includes a symdef name) to number of instances.
         Dictionary<string, int> nonRenderableObjects = new Dictionary<string, int>();
 
-        int ocadIdNext = 999950;  // next OCAD id to assign a synthetic symbol.
-
         public OcadImport(Map map) {
             this.map = map;
         }

@@ -1517,7 +1517,7 @@ namespace PurplePen.MapModel
 
                 return result;
             }
-            catch (Exception e) {
+            catch (Exception) {
                 return null;
             }
         }

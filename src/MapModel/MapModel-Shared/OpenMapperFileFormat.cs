@@ -360,7 +360,7 @@ namespace PurplePen.MapModel
         public float resolution;
         public bool showTemplates;
         public bool showGrid;
-        public bool simulateOverprinting;
+        //public bool simulateOverprinting;
         public string mode;
         public string colorMode;
 

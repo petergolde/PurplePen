@@ -408,7 +408,7 @@ namespace PurplePen.MapModel
             WPF_Font font = GetFont(fontKey);
             Typeface typeface = font.Typeface;
             float emHeight = font.EmHeight;
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, GetBrush(brushKey));
+            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, GetBrush(brushKey), null, 1.0);
             if (font.Underline)
                 formattedText.SetTextDecorations(TextDecorations.Underline);
             DrawingContext.DrawText(formattedText, new Point(upperLeft.X, upperLeft.Y + font.VerticalDisplacement));
@@ -420,7 +420,7 @@ namespace PurplePen.MapModel
             WPF_Font font = GetFont(fontKey);
             Typeface typeface = (font as WPF_Font).Typeface;
             float emHeight = (font as WPF_Font).EmHeight;
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black);
+            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black, null, 1.0);
             Geometry geometry = formattedText.BuildGeometry(new Point(upperLeft.X, upperLeft.Y + font.VerticalDisplacement));
             DrawingContext.DrawGeometry(null, GetPen(penKey), geometry);
         }
@@ -729,13 +729,13 @@ namespace PurplePen.MapModel
 
         public float GetTextWidth(string text)
         {
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black);
+            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black, null, 1.0);
             return (float) formattedText.WidthIncludingTrailingWhitespace;
         }
 
         public SizeF GetTextSize(string text)
         {
-            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black);
+            FormattedText formattedText = new FormattedText(text, CultureInfo.CurrentUICulture, FlowDirection.LeftToRight, typeface, emHeight, Brushes.Black, null, 1.0);
             return new SizeF((float)formattedText.WidthIncludingTrailingWhitespace, (float)formattedText.Height);
         }
 

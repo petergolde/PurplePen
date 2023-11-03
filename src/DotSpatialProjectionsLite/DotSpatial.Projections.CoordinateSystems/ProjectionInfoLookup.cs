@@ -27,7 +27,9 @@ namespace DotSpatial.Projections
                 info.NoDefs = true;
                 info.Authority = authority;
                 info.AuthorityCode = code;
+#pragma warning disable CS0618 // Type or member is obsolete
                 info.EpsgCode = code;
+#pragma warning restore CS0618 // Type or member is obsolete
                 return info;
             }
 

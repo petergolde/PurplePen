@@ -208,8 +208,10 @@ namespace DotSpatial.Projections.AuthorityCodes
              var pi = ProjectionInfo.FromProj4String(proj4String);
              pi.Authority = authorityCode.Substring(0, pos);
              pi.AuthorityCode = int.Parse(authorityCode.Substring(pos + 1));
-             pi.EpsgCode = int.Parse(authorityCode.Substring(pos + 1));
-             pi.Name = String.IsNullOrEmpty(name) ? authorityCode : name;
+#pragma warning disable CS0618 // Type or member is obsolete
+            pi.EpsgCode = int.Parse(authorityCode.Substring(pos + 1));
+#pragma warning restore CS0618 // Type or member is obsolete
+            pi.Name = String.IsNullOrEmpty(name) ? authorityCode : name;
 
              _authorityCodeToProjectionInfo[authorityCode] =  pi;
 
