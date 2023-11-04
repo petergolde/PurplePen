@@ -117,13 +117,199 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Набір висоти</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Стовпчик</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>КП</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Коди КП</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>КП</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Дистанція</value>
+  </data>
   <data name="ColumnHeader_Courses" xml:space="preserve">
     <value>Дистанції</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Відстань</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Елемент</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Перегон</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Довжина</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Навантаження</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Розташування</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Дистанції</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Причина</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Той самий умовний знак?</value>
+  </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Відвідань</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Підсумки дистанції для {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Перехресність КП для {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Перегони із зустрічним бігом</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Близькі КП</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>Наступна таблиця показує всі пари КП, що розташовані ближче ніж {0} м один від одного. Колонка "Той самий знак" говорить про те чи на подібних об'єктах установлені ці КП (колонка D таблиці легенд).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Не привласнена легенда</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Для звичайних дистанцій слід вказувати набір висоти</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Всі КП повинні мати зазначений у колонці D об'єкт постановки</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Якщо у колонці G використано піктограму "між", у колонках D та E необхідно вказати два об'єкти</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Якщо у колонці F використано піктограми "злиття" або "перехрестя", у колонках D та E необхідно вказати два об'єкти</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Звичайні дистанції повинні мати фініш</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Не вистачає елемента дистанції</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Слід задати для дистанцій очікуване навантаження учасниками</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Не задано форму компостера</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Не задані форми компостерів</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>У дистанціях за вибором кожен КП оцінюється у певну кількість очок, або КП не використовуються</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Не задані очки</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Звичайні дистанції повинні мати Старт</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Дистанції за вибором повинні мати Старт</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>Ні</value>
   </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Проблем не знайдено.</value>
+  </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Дистанція "{0}" містить КП "{1}" двічі підряд.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Повторювані КП</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Дистанція за вибором "{0}" містить КП "{1}" двічі. </value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Аудит змагань для {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>КП, що не використовуються</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Наступні КП присутні у наборі Всі КП, але не задіяні у жодній із дистанцій. Щоб видалити їх, скористайтеся "Видалити незадіяні КП" з меню "Змагання". These controls will not be considered further in this report. Ці КП більше не фігуруватимуть у звіті.</value>
+  </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Так</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Середнє</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} КП, {2}, {3} м перепаду)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} КП, {2})</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Звіт щодо довжини перегонів для {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Деякі КП відвідуються кілька разів упродовж проходження дистанції. Друге число навантаження враховує кожне відвідування контрольного пункту окремо.</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Навантаження КП</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Навантаження перегонів</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Для деяких або всіх дистанцій не задано навантаження учасниками. Тому перелічені нижче навантаження можуть бути неправильними або не відображатися. Щоб задати навантаження учасниками, виберіть "Навантаження учасниками" у меню "Дистанція".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(у наступній таблиці відображено тільки перегони, що задіяні у понад одній дистанції)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Підсумок щодо навантаження учасниками для {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Одна або кілька дистанцій мають розсіювання. Навантаження буде обчислено за умови, що розподіл учасників на вилці є рівномірним.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} відвідувань)</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>ПОПЕРЕДЖЕННЯ:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>ПРИМІТКА: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Увага: через вказану кількість етапів вилка на КП {0} навантажена нерівномірно. Етап(и) {1} будуть призначені на гілку(и) {2}, тоді як етап(и) {3} - гілку(и) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Етап {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Естафетні команди ще не визначені. Виберіть потрібну кількість команд і етапів і натисніть кнопку "Призначити розсіювання".</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Команда {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Призначення естафети для {0}</value>
   </data>
 </root>

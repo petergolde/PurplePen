@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Järjestys</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Koko</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Sarakkeita:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Rivejä:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Koko</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Leimauskortin asettelu</value>

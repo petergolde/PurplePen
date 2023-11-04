@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Parkurlarınızı tasarlamak için kullanacağınız harita dosyasını seçmelisiniz. Tipik olarak bu bir OCAD veya OpenOrienteering harita dosyasıdır (ancak bunun yerine PDF'ler ve JPEG'ler gibi görüntü dosyaları kullanılabilir). Bir harita dosyası seçmek için "Seç..." düğmesini tıklayın.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Harita dosyası seç...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Tüm harita dosyaları|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Harta Dosyasını Seç</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Harita dosyası başarıyla yüklendi. Purple Pen dosyanızı başka birine gönderirseniz, harita dosyasına da sahip olması gerekir.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Harita Dosyası</value>

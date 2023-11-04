@@ -165,9 +165,6 @@
   <data name="createPDFsMenu.Text" xml:space="preserve">
     <value>Crear &amp;PDF...</value>
   </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Crear archivos Route&amp;Gadget...</value>
-  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Crear archivos de &amp;intercambio de datos (IOF XML)...</value>
   </data>
@@ -388,7 +385,7 @@
     <value>Estándar de descripciones de 2004</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>Estándar de descripciones de 2018</value>
+    <value>Estándar de descripciones de 2018/2024</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>Estándar de mapa ISOM2000</value>
@@ -446,9 +443,6 @@
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Hacer un &amp;recorte</value>
-  </data>
-  <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>&amp;Eliminar un recorte</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Cambiar &amp;texto</value>

@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventDirectoryLabel.Text" xml:space="preserve">
+    <value>У яку папку (директорію) ви бажаєте зберегти ваш файл змагань?</value>
+  </data>
+  <data name="useMapDirectory.Text" xml:space="preserve">
+    <value>У ту саму папку, де файл карти.</value>
+  </data>
+  <data name="useOtherFolder.Text" xml:space="preserve">
+    <value>У іншу папку, яку я виберу.</value>
+  </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>Вибрати папку...</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Виберіть папку для вашого файлу змагань</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>Вибрана папка</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Розміщення файлу змагань</value>
+  </data>
 </root>

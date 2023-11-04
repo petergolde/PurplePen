@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Selectați un director pentru fișierul OCAD</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Rezultat</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Format fişier:</value>
   </data>
@@ -141,20 +144,17 @@
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Da</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Rezultat</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Selectare director...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Alt director</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Același director ca și fișierul Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Același director ca și fișierul hartă</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Același director ca și fișierul Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Alt director</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Director</value>

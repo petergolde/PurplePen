@@ -141,7 +141,19 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Dosya Seç...</value>
   </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen dosyasıyla aynı klasör</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Harita dosyası ile aynı klasör</value>
+  </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Diğer klasör</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>OCAD Dosyası Oluştur</value>
   </data>
 </root>

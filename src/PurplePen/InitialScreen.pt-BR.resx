@@ -120,4 +120,25 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceitar</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Abrir último evento visualizado</value>
+  </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>Abrir um evento modelo</value>
+  </data>
+  <data name="createNewRadioButton.Text" xml:space="preserve">
+    <value>Criar um novo evento...</value>
+  </data>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>Abrir um evento existente...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen é um software livre e pode ser copiado e compartilhado. O desenvolvimento da Purple Pen é suportado apenas por suas doações.</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Fazer uma doação</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bem-vindo ao Purple Pen</value>
+  </data>
 </root>

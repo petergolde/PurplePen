@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Файл карти "{0}" місить об'єкти, що не повністю підтримуються Purple Pen і, можливо, будуть надруковані невірно. Такі об'єкти перелічені нижче.
+
+Для друку змагальних карт рекомендується експортувати дистанції у файли OCAD (меню Файл/Створити файли OCAD...) і виконати друк безпосередньо з OCAD.
+</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Продовжити</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Скасувати</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Файл карти не можна надрукувати точно</value>
   </data>
 </root>

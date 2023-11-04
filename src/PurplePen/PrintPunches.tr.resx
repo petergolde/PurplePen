@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Kenar Boşluğunu Değiştir...</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tablet (11"x17")</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Kağıt boyutu...</value>
+    <value>Kağıt Boyutu:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>Üst: 0,55", Alt: 0,55", Sol: 0,55", Sağ: 0,55"</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Kenar Boşluğu ({0})</value>
+  </data>
+  <data name="orientation.Text" xml:space="preserve">
+    <value>Düzenlemek</value>
+  </data>
+  <data name="orientationLabel.Text" xml:space="preserve">
+    <value>Yönlendirme:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Yazıcı Adı</value>
@@ -139,7 +157,7 @@
     <value>mm</value>
   </data>
   <data name="punchBoxSizeLabel.Text" xml:space="preserve">
-    <value>Kontrol Kartı Boyutu...</value>
+    <value>Kontrol Kartı Boyutu:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Görünüm</value>
@@ -157,9 +175,12 @@
     <value>Parkur</value>
   </data>
   <data name="descriptionsLabel.Text" xml:space="preserve">
-    <value>Kopya...</value>
+    <value>Kopya:</value>
   </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Kopya Sayısı</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Delikli Kartları Yazdır</value>
   </data>
 </root>

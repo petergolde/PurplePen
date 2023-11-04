@@ -120,4 +120,13 @@
   <data name="CourseName.HeaderText" xml:space="preserve">
     <value>Parkur Adı</value>
   </data>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Rakip Yükü</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>İkinci sütuna tıklayıp bir sayı yazarak her kparkurdaki yarışmacı sayısını ayarlayın.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Parkur Yükle</value>
+  </data>
 </root>

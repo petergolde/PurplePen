@@ -174,10 +174,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Voorbeeld</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Tekst</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Voer speciale tekst in</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Tekst</value>
   </data>
 </root>

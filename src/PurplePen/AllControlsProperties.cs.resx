@@ -136,7 +136,7 @@
     <value>Symboly a text</value>
   </data>
   <data name="appearanceGroupBox.Text" xml:space="preserve">
-    <value>Zobrazení</value>
+    <value>Vzhled</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
     <value>Tato nastavení řeší jak budou vytištěny mapa a popisy pro "Všechny kontroly".</value>

@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CourseName.HeaderText" xml:space="preserve">
-    <value>Nome do Curso</value>
+    <value>Nome do Percurso</value>
+  </data>
+  <data name="Load.HeaderText" xml:space="preserve">
+    <value>Densidade de competidores</value>
+  </data>
+  <data name="courseLoadLabel.Text" xml:space="preserve">
+    <value>Defina o número de competidores em cada percurso clicando na segunda coluna e digitando um número.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Carga de Percurso</value>
   </data>
 </root>

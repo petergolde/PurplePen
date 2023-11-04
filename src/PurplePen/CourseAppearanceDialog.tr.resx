@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Ölçeklendirme yapma</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Harita Ölçeğini Güncelle</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>1:15000 e göre güncelle</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Ölçek boyutu:</value>
+  </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Otomatik bacak boşluğu boyutu:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelOutlineWidth.Text" xml:space="preserve">
+    <value>Sayıların etrafındaki beyaz anahat:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>mm</value>
@@ -126,23 +144,44 @@
   <data name="label8.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Merkez nokta çapı:</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Düzenli</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
     <value>Kalın</value>
   </data>
+  <data name="labelControlNumberStyle.Text" xml:space="preserve">
+    <value>Kontrol numarası stili:</value>
+  </data>
+  <data name="labelControlNumber.Text" xml:space="preserve">
+    <value>Kontrol numarası yüksekliği:</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="labelLineWidth.Text" xml:space="preserve">
+    <value>Hat genişliği:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="labelControlCircle.Text" xml:space="preserve">
+    <value>Kontrol çemberi çapı:</value>
+  </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="checkBoxStandardSizes.Text" xml:space="preserve">
+    <value>IOF standart boyutlarını kullan</value>
+  </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Kalem Boyutu</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Mor ile temel harita renklerini karıştırın</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Siyah:</value>
@@ -156,6 +195,12 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Cam Göbeği:</value>
   </data>
+  <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
+    <value>Haritadan mor rengi kullan</value>
+  </data>
+  <data name="groupBoxPurple.Text" xml:space="preserve">
+    <value>Mor Renk</value>
+  </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
     <value>Önizleme</value>
   </data>
@@ -167,5 +212,17 @@
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Renk:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Kontrol Açıklamaları</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>"Üst baskı" olarak işaretlenmiş renkler için üst baskı efektini kullanın</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Gelişmiş</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Görünüşü özelleştirme</value>
   </data>
 </root>

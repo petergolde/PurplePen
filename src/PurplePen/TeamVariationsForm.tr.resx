@@ -121,7 +121,7 @@
     <value>Kapat</value>
   </data>
   <data name="buttonExport.Text" xml:space="preserve">
-    <value>Dışa Aktar...</value>
+    <value>Dışarı aktar...</value>
   </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Yazdır...</value>
@@ -141,7 +141,16 @@
   <data name="fixedLegsLink.Text" xml:space="preserve">
     <value>Her ayağa sabit hedefler atayın.</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Takım numaraları şuradan başlar: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Haritada varyasyon kodlarını gizle</value>
+  </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Tablo (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Bayrak Takımı Varyasyonları</value>
   </data>
 </root>

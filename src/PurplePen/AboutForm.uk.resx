@@ -130,7 +130,7 @@
     <value>OK</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Подяки</value>
+    <value>Учасники</value>
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
     <value>Переглянути текст ліцензії</value>

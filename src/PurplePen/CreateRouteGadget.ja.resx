@@ -129,14 +129,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>フォルダを選択...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>その他のフォルダ</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen ファイルと同じフォルダ</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>地図ファイルと同じフォルダ</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Purple Pen ファイルと同じフォルダ</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>その他のフォルダ</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>フォルダ</value>

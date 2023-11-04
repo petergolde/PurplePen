@@ -117,13 +117,199 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Desnível</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Coluna</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Ponto de Controlo</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Código de ponto de controlo</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Pontos de Controlo</value>
+  </data>
+  <data name="ColumnHeader_Course" xml:space="preserve">
+    <value>Percurso</value>
+  </data>
   <data name="ColumnHeader_Courses" xml:space="preserve">
     <value>Percursos</value>
+  </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distância</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Pernada</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Distância</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Carga</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Localização</value>
+  </data>
+  <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
+    <value># Percursos</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Justificativa</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Mesmo símbolo?</value>
+  </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visitas</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Resumo do Percurso para {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Referência Cruzada de Ponto de controlo para {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Pernadas Correm em Ambas Direções</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Pontos de controlo próximos</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>A tabela a seguir mostra todos os pares de pontos de controlo que estão a {0} metros um do outro. A mesma coluna de símbolo mostra se os dois controlos têm o mesmo símbolo primário (coluna D).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Caixas de descrição ausentes</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Percursos regulares devem indicar o valor de desnível</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Todos os pontos de controlo devem ter um elemento principal na coluna D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Quando "entre" estiver na coluna G, dois elementos devem ser mostrados nas colunas D e E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Quando "junção" ou "cruzamento" estiver na coluna F, dois elementos devem ser mostrados nas colunas D e E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Percursos regulares devem ter um círculo de chegada</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Itens ausentes nos percursos</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>O percurso deve ter a densidade de competidores esperada</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Nenhum padrão de picote definido</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Padrões de Picote ausentes</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Percurso de pontuação deve ter pontuação definida para todos os pontos de controlo ou nenhum ponto de controlo</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Pontuação ausente</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>Percursos regulares devem ter um triângulo de partida</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Percursos de pontuação devem ter um triângulo de partida</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>Não</value>
   </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Nenhum problema encontrado.</value>
+  </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>O percurso "{0}" contém o ponto de controlo "{1}" duas vezes seguidas.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Ponto de Controlo Repetidos</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>O percurso de pontuação "{0}" contém o ponto de controlo "{1}" duas vezes. </value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Auditoria de Percurso para {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Pontos de controlo não utilizados</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Os pontos de controlo a seguir estão presentes na coleção "Matriz de Pontos de Controlo", mas não são usados em nenhum percurso. Para removê-los, use o comando "Remover Controles não Utilizados" no menu "Evento". Esses pontos de controlo não serão considerados mais neste relatório.</value>
+  </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Sim</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Média</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} pontos de controlo, {2}, {3} m de desnível)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} pontos de controlo, {2})</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Relatório de distância de pernada para {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Alguns pontos de controlo são visitados várias vezes no mesmo percurso. O segundo número de carga conta cada visita a um ponto de controlo separadamente.</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Carga de ponto de controlo</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Carga de pernada</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Alguns ou todos os percursos não têm densidade de competidores definidas para eles. Os competidores listados abaixo podem estar incorretos ou ausentes por esse motivo. Para definir a densidade de competidores, selecione "Densidade de Competidores" no menu "Percurso".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(somente as pernadas usadas por mais de um percurso aparecem na tabela a seguir)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Resumo da Densidade de Competidores para {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Um ou mais percursos tem variações. Os números de carga serão calculados assumindo que os competidores estão distribuídos uniformemente entre as dispersões.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visitas)</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>AVISO:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTA: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Atenção: devido ao número de pernadas especificado, a dispersão no ponto de controlo {0} não será usada uniformemente. {1} pernada(s) usarão variantes {2}, enquanto {3} pernada(s) usarão variantes {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Pernada {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Nenhuma equipa de estafetas foi definida ainda. Selecione o número desejado de equipas e pernadas e pressione o botão "Atribuir Variações".</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Equipa  {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Atribuições de Estafeta para {0}</value>
   </data>
 </root>

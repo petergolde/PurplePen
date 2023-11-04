@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Variante</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Pernadas</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Para atribuir uma pernada específica a uma variante específica, digite o(s) número(s) da pernada abaixo. Pernadas não atribuídas a uma variante serão distribuídas aleatoriamente entre as variantes restantes.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Mais informações...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Atribuições de Pernadas</value>
+  </data>
 </root>

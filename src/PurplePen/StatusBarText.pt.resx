@@ -117,6 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Botão esquerdo do mouse: seleciona objeto; Botão direito do mouse: mover o mapa; Roda de rolagem: zoom in/out</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Botão esquerdo do mouse: mover/dimensionar retângulo; Botão direito do mouse: mover o mapa; Roda de rolagem: zoom in/out</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Mantenha pressionado o botão esquerdo do mouse e arraste para mover o objeto selecionado</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Mantenha pressionado o botão esquerdo do mouse e arraste o ponto do canto para movê-lo</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Mova o objeto para o local desejado e solte o botão do mouse</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Mova o ponto de canto para o local desejado e solte o botão do mouse</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Clique no botão esquerdo do mouse para colocar um novo ponto de controlo</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Clique no botão esquerdo do mouse para adicionar o ponto de controlo existente "{0}" ao percurso</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Clique no botão esquerdo do mouse para colocar uma nova partida</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Clique no botão esquerdo do mouse para adicionar uma partida existente ao percurso</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Clique com o botão esquerdo do mouse para colocar uma nova chegada</value>
+  </data>
   <data name="AddingExistingFinish" xml:space="preserve">
     <value>Clique no botão esquerdo do rato para adicionar ao percurso um ponto de chegada existente</value>
   </data>
@@ -160,7 +193,7 @@
     <value>Mover o bordo para o  local desejado e largar o botão do rato</value>
   </data>
   <data name="AddingDescription" xml:space="preserve">
-    <value>Segure o botão esquerdo do rato e arraste para criar descrição dos postos de controlo</value>
+    <value>Segure o botão esquerdo do rato e arraste para criar a sinalética</value>
   </data>
   <data name="RotatingObject" xml:space="preserve">
     <value>Clique no botão esquerdo do rato quando o símbolo de passagem está rodado no ângulo correto</value>
@@ -182,5 +215,17 @@
   </data>
   <data name="AddingRectangle" xml:space="preserve">
     <value>Segure o botão esquerdo do rato e arraste para criar o objeto</value>
+  </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Arraste o número do controlo para reordená-lo no percurso (segure shift para duplicar)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Clique no botão esquerdo do mouse para adicionar um ponto de troca de mapa existente ao percurso</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Clique no botão esquerdo do mouse para posicionar o novo ponto de troca de mapa</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Segure o botão esquerdo do mouse e arraste para ajustar o ponto de cruzamento</value>
   </data>
 </root>

@@ -195,6 +195,12 @@
   <data name="EventAudit_MissingD" xml:space="preserve">
     <value>Všechny kontroly musí mít určený typ objektu ve sloupci D v popisech kontrol.</value>
   </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Když je "mezi" v sloupci G, musí být vyplněny oba sloupce D a E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Když je "křižení" nebo "odbočka" ve sloupci F, musí být vyplněny oba sloupce D a E</value>
+  </data>
   <data name="EventAudit_MissingFinish" xml:space="preserve">
     <value>Běžné tratě by měly mít cíl.</value>
   </data>
@@ -210,11 +216,17 @@
   <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
     <value>Chybějící vzor ražení</value>
   </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Bodovaná trať by měla mít nastaveno skóre pro všechny kontroly nebo žádné kontroly</value>
+  </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
     <value>Chybějící skóre</value>
   </data>
   <data name="EventAudit_MissingStart" xml:space="preserve">
     <value>Běžné tratě by měly mít startovní trojúhelník.</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>Bodované tratě by měly mít start</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>Ne</value>
@@ -222,8 +234,23 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Vše je v pořádku.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Trať "{0}" obsahuje kontrolu "{1}" dvakrát za sebou</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Opakující se kontroly</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Trať "{0}" obsahuje kontrolu "{1}" dvakrát. </value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Kontrola události {0}</value>
+  </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
     <value>Nepoužité kontroly</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>Následující kontroly jsou v seznamu Všechny kontroly, ale nejsou použity na žádné trati. Chcete-li je odstranit, použijte příkaz "Odstranit nepoužité kontroly" v nabídce "Závod". Tyto kontroly nebudou vstupovat do reportu.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Ano</value>
@@ -231,14 +258,35 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Průměr</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} kontrol, {2}, {3} m převýšení)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} kontrol, {2})</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Report délky postupů pro {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Některé kontroly jsou na stejné trati použity vícekrát. Druhé číslo vytížení kontroly počítá každou návštěvu kontroly zvlášť.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Vytížení kontroly</value>
   </data>
   <data name="Load_LegLoadSection" xml:space="preserve">
     <value>Vytížení postupů</value>
   </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Některé nebo všechny tratě nemají nastavené vytížení závodníky. Níže uvedená vytížení mohou být z tohoto důvodu nesprávná nebo mohou chybět. Chcete-li nastavit vytížení kontroly, vyberte v nabídce "Trať" položku "Počty závodníků".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(V tabulce jsou zobrazeny pouze postupy, které se vyskytují ve více tratích)</value>
+  </data>
   <data name="Load_Title" xml:space="preserve">
     <value>Souhrn vytížení {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Jedna nebo více tratí má varianty. Čísla vytížení budou vypočtena za předpokladu, že závodníci jsou rovnoměrně rozděleni mezi farsty.</value>
   </data>
   <data name="Load_Visit" xml:space="preserve">
     <value>({0} závodníků)</value>
@@ -249,10 +297,19 @@
   <data name="Note" xml:space="preserve">
     <value>POZNÁMKA: </value>
   </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Upozornění: Vzhledem k počtu zadaných úseků nebude větvení na kontrole {0} použito rovnoměrně. Úsek(y) {1} budou používat větvení {2}, zatímco {3} úseky budou používat větvení {4}. </value>
+  </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
     <value>Postup {0}</value>
   </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Zatím nebyly definované žádné štafety. Vyberte požadovaný počet týmů a úseků a stiskněte tlačítko "Přiřadit varianty".</value>
+  </data>
   <data name="RelayVariation_TeamNumber" xml:space="preserve">
     <value>Team {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Přirazení variant pro {0}</value>
   </data>
 </root>

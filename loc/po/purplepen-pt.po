@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.4.0\n"
+"Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2022-08-10 14:52-07:00\n"
+"POT-Creation-Date: 2023-11-03 16:46-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -70,11 +70,6 @@ msgstr "Aparência da Sinalética"
 msgid "Map printing scale:"
 msgstr "Escala de impressão do mapa"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1: "
-
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
 #: PrintDescriptions.resx, descriptionKindCombo.Items1
@@ -123,7 +118,7 @@ msgstr "Código e Pontuação (145(30))"
 
 #: AddCourse.resx, labelKindCombo.Items5
 msgid "Score (30)"
-msgstr ""
+msgstr "Score (30)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -156,14 +151,19 @@ msgstr "(não mostrar)"
 msgid "Appearance"
 msgstr "Aspecto"
 
-#: AddCourse.resx, secondaryTitleDescription.Text
-msgid "The following (optional) text will appear on the second "
-"line of the control description sheet:"
-msgstr "O texto seguinte irá aparecer na segunda linha da sinalética"
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1: "
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
 msgstr "Lista dos escalões / Título secundário"
+
+#: AddCourse.resx, secondaryTitleDescription.Text
+msgid "The following (optional) text will appear on the second "
+"line of the control description sheet:"
+msgstr "O texto seguinte irá aparecer na segunda linha da sinalética"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -218,7 +218,7 @@ msgstr "Loop"
 
 #: AddForkDialog.resx, labelNumberBranches.Text
 msgid "Number of branches:"
-msgstr "Número de ramos da bifurcação"
+msgstr "Número de variantes"
 
 #: AddForkDialog.resx, comboBoxNumberBranches.Items
 msgid "2"
@@ -417,6 +417,7 @@ msgid "Resolution:"
 msgstr "Resolução:"
 
 #: ChangeMapFile.resx, labelScale.Text
+#: SelectLocationsForMove.resx, labelScale.Text
 msgid "Scale:"
 msgstr "Escala:"
 
@@ -646,7 +647,7 @@ msgstr "Apagar a linha de texto"
 #: CommandNameText.resx, AddControl
 #: MainFrame.resx, addControlToolStripButton.Text
 msgid "Add Control"
-msgstr "Adicionar Ponto de controlo"
+msgstr "Adicionar Ponto de Controlo"
 
 #: CommandNameText.resx, AddStart
 #: MainFrame.resx, addStartToolStripButton.Text
@@ -676,7 +677,7 @@ msgstr "Alterar as propriedades do percurso"
 
 #: CommandNameText.resx, ChangeAllControlsProperties
 msgid "Change All Controls Properties"
-msgstr "Alterar as propriedades do \"All controls\""
+msgstr "Alterar as propriedades da Matriz de Pontos de Controlo"
 
 #: CommandNameText.resx, NewEvent
 #: NewEventWizard.resx, $this.Text
@@ -779,7 +780,6 @@ msgid "Customize Course Appearance"
 msgstr "Personalizar a aparência do percurso"
 
 #: CommandNameText.resx, AddMapExchange
-#: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
 msgstr "Adicionar troca de mapa"
 
@@ -816,7 +816,7 @@ msgstr "Variações da Equipa"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr "Adicionar local onde o atleta pega no mapa"
+msgstr "Adicionar Ponto de Troca de Mapa"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
@@ -828,10 +828,20 @@ msgstr "Definir standar do mapa"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
-msgstr ""
+msgstr "Estender"
 
 #: CommandNameText.resx, SetLiveloxImportableEventId
 msgid "Publish to Livelox"
+msgstr "Publicar no Livelox"
+
+#: CommandNameText.resx, MoveAllControls
+#: MoveAllControls.resx, $this.Text
+#: SelectLocationsForMove.resx, $this.Text
+msgid "Move All Controls"
+msgstr ""
+
+#: CommandNameText.resx, AddMapFlip
+msgid "Add Map Flip"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -868,7 +878,7 @@ msgstr "Normal"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
-msgstr "Tipo de letra do número do pnsto de controlo:"
+msgstr "Tipo de letra do número do ponto de controlo:"
 
 #: CourseAppearanceDialog.resx, labelControlNumber.Text
 msgid "Control number height:"
@@ -924,7 +934,7 @@ msgstr "Utiliza efeito de impressão sobreposta para cores marcadas "
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -932,7 +942,7 @@ msgstr "Personalizar aparência"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr "Número de atletas"
+msgstr "Densidade de competidores"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
@@ -942,7 +952,7 @@ msgstr "Defina o número de concorrentes em cada percurso clicando "
 
 #: CourseLoad.resx, $this.Text
 msgid "Course Load"
-msgstr "Indicar percurso"
+msgstr "Carga de Percurso"
 
 #: CoursePartBanner.resx, variationsLabel.Text
 msgid "Course Variation: "
@@ -998,11 +1008,11 @@ msgstr "Percursos"
 #: CreateGpx.resx, namePrefixLabel.Text
 #: CreatePdfCourses.resx, fileNamePrefixLabel.Text
 msgid "Name prefix:"
-msgstr ""
+msgstr "Prefixo do nome:"
 
 #: CreateGpx.resx, waypointGroupBox.Text
 msgid "Waypoints"
-msgstr ""
+msgstr "Waypoints"
 
 #: CreateGpx.resx, headerLabel.Text
 msgid "A GPX File contains GPS coordinates for controls, and can "
@@ -1037,6 +1047,7 @@ msgstr "Criar"
 #: OverwritingOcadFilesDialog.resx, buttonCancel.Text
 #: PrintDescriptions.resx, cancelButton.Text
 #: PrintPunches.resx, cancelButton.Text
+#: SelectLocationsForMove.resx, buttonCancel.Text
 #: SetPrintAreaDialog.resx, cancelButton.Text
 msgid "Cancel"
 msgstr "Cancelar"
@@ -1047,6 +1058,15 @@ msgstr "Cancelar"
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Selecionar uma pasta para os ficheiros OCAD"
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Saída:"
 
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
@@ -1133,15 +1153,6 @@ msgstr "RGB"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Saída:"
-
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
@@ -1150,13 +1161,13 @@ msgstr "Saída:"
 msgid "Select folder..."
 msgstr "Selecionar pasta..."
 
-#: CreateImageFiles.resx, otherDirectory.Text
-#: CreateKmlFiles.resx, otherDirectory.Text
-#: CreateOcadFiles.resx, otherDirectory.Text
-#: CreatePdfCourses.resx, otherDirectory.Text
-#: CreateRouteGadget.resx, otherDirectory.Text
-msgid "Other folder"
-msgstr "Outra pasta"
+#: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "Na mesma pasta que o ficheiro do purple pen"
 
 #: CreateImageFiles.resx, mapDirectory.Text
 #: CreateKmlFiles.resx, mapDirectory.Text
@@ -1166,13 +1177,13 @@ msgstr "Outra pasta"
 msgid "Same folder as map file"
 msgstr "Na mesma pasta que o ficheiro do mapa"
 
-#: CreateImageFiles.resx, coursesDirectory.Text
-#: CreateKmlFiles.resx, coursesDirectory.Text
-#: CreateOcadFiles.resx, coursesDirectory.Text
-#: CreatePdfCourses.resx, coursesDirectory.Text
-#: CreateRouteGadget.resx, coursesDirectory.Text
-msgid "Same folder as Purple Pen file"
-msgstr "Na mesma pasta que o ficheiro do purple pen"
+#: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Outra pasta"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
 #: CreateKmlFiles.resx, folderGroupBox.Text
@@ -1203,7 +1214,7 @@ msgstr "Um por percurso"
 
 #: CreateKmlFiles.resx, $this.Text
 msgid "Create KML File"
-msgstr ""
+msgstr "Exportar ficheiro KML"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1363,11 +1374,11 @@ msgstr "Género:"
 
 #: EnterSymbolText.resx, labelCaseChooser.Text
 msgid "Case of modified symbol:"
-msgstr ""
+msgstr "No caso de modificar o símbolo"
 
 #: EnterSymbolText.resx, checkBoxCases.Text
 msgid "Show case forms"
-msgstr ""
+msgstr "Mostrar a caixa de formulário"
 
 #: EnterSymbolText.resx, $this.Text
 msgid "Customized Symbol Text"
@@ -1379,7 +1390,7 @@ msgstr "Abrir o último evento visualizado"
 
 #: InitialScreen.resx, openSampleRadioButton.Text
 msgid "Open a sample event"
-msgstr ""
+msgstr "Abrir o evento exemplo"
 
 #: InitialScreen.resx, createNewRadioButton.Text
 msgid "Create a new event..."
@@ -1407,7 +1418,7 @@ msgstr "Benvindo ao Purple Pen"
 
 #: LegAssignmentsDialog.resx, BranchColumn.HeaderText
 msgid "Branch"
-msgstr "Ramo"
+msgstr "Variante"
 
 #: LegAssignmentsDialog.resx, LegsColumn.HeaderText
 msgid "Legs"
@@ -1428,7 +1439,7 @@ msgstr "Mais informações..."
 
 #: LegAssignmentsDialog.resx, $this.Text
 msgid "Leg Assignments"
-msgstr ""
+msgstr "Atributos de pernada"
 
 #: LicenseForm.resx, bsdLicenseLinkLabel.Text
 msgid "Purple Pen is provided under a \"BSD\" style license."
@@ -1465,7 +1476,7 @@ msgstr "Largura:"
 
 #: LinePropertiesDialog.resx, labelGapSize.Text
 msgid "Gap Size:"
-msgstr ""
+msgstr "Tamanho do afastamento:"
 
 #: LinePropertiesDialog.resx, labelDashSize.Text
 msgid "Dash Size:"
@@ -1477,7 +1488,7 @@ msgstr "Raio do canto:"
 
 #: MainFrame.resx, tabPage1.Text
 msgid "All Controls"
-msgstr "Todos os Pontos de Controlo"
+msgstr "Matriz de Pontos de Controlo"
 
 #: MainFrame.resx, radioButtonDescriptions.Text
 msgid "Descriptions"
@@ -1501,7 +1512,7 @@ msgstr "Ficheiro Purple Pen|*.ppen"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
-msgstr ""
+msgstr "&Novo Evento..."
 
 #: MainFrame.resx, openMenu.Text
 msgid "&Open..."
@@ -1521,11 +1532,11 @@ msgstr "Criar &Ficheiros OCAD..."
 
 #: MainFrame.resx, createImageFilesMenu.Text
 msgid "Create Ima&ge Files..."
-msgstr ""
+msgstr "Criar Ficheiros de Ima&gem..."
 
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
-msgstr "&Sinalética..."
+msgstr "(&D) Sinalética..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
@@ -1541,15 +1552,11 @@ msgstr "Criar P&DFs"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
-msgstr "Criar Ficheiros Route&Gadget..."
-
-#: MainFrame.resx, publishToLiveloxMenu.Text
-msgid "Publish to Livelox..."
-msgstr ""
+msgstr "Exportar para ficheiros RouteGadget..."
 
 #: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
 msgid "Create Route Review Files"
-msgstr ""
+msgstr "Exportar para ficheiros Route Review"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1561,7 +1568,7 @@ msgstr "Criar Ficheiros G&PX..."
 
 #: MainFrame.resx, createKMLFileMenu.Text
 msgid "Create &KML File..."
-msgstr ""
+msgstr "Exportar para ficheiro &KML..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1585,7 +1592,7 @@ msgstr "Es&te Percurso"
 
 #: MainFrame.resx, printAreaAllCoursesMenu.Text
 msgid "&All Courses"
-msgstr ""
+msgstr "&A Todos os Percursos"
 
 #: MainFrame.resx, setPrintAreaMenu.Text
 msgid "Set Print A&rea"
@@ -1597,7 +1604,7 @@ msgstr "Idioma do Programa"
 
 #: MainFrame.resx, exitMenu.Text
 msgid "E&xit"
-msgstr ""
+msgstr "&Saír"
 
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
@@ -1709,11 +1716,11 @@ msgstr "Mostrar a Área de Imp&ressão"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
-msgstr ""
+msgstr "Mostrar janela de Informação (&Popup)"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
-msgstr "Todos os Controlos (&All)"
+msgstr "Matriz de Pontos de Controlo (&All)"
 
 #: MainFrame.resx, otherCoursesMenu.Text
 msgid "Other Courses..."
@@ -1742,18 +1749,22 @@ msgstr "Meta (&F)"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
-msgstr "Sinalética (&D)"
+msgstr "(&D) Sinalética"
+
+#: MainFrame.resx, addMapFlipMenuItem.Text
+msgid "Map &Flip at Control Point"
+msgstr ""
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
-msgstr "Troca de mapa no Posto de &Controlo"
+msgstr "Troca de mapa no Ponto de &Controlo"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
+msgid "Flagged &Route to Map Exchange"
 msgstr "Percurso Balizado para troca de Mapa (&F)"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map E&xchange"
+msgid "Map Flip/E&xchange"
 msgstr "Troca de Mapa (&X)"
 
 #: MainFrame.resx, addVariationMenu.Text
@@ -1820,7 +1831,7 @@ msgstr "Limite Intransponível"
 #: MainFrame.resx, registrationMarkToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_RegMark
 msgid "Registration Mark"
-msgstr ""
+msgstr "Marca de Mira"
 
 #: MainFrame.resx, whiteOutMenu.Text
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
@@ -1849,7 +1860,7 @@ msgstr "Retângulo"
 #: MainFrame.resx, addEllipseMenu.Text
 #: MainFrame.resx, ellipseToolStripMenuItem.Text
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipse"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1871,6 +1882,10 @@ msgstr "&Numeração Automática"
 msgid "Remove &Unused Controls..."
 msgstr "Remover Controlos não &Utilizados..."
 
+#: MainFrame.resx, moveAllControlsMenu.Text
+msgid "Mo&ve All Controls..."
+msgstr ""
+
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
 msgstr "Padrão de &Picotagem"
@@ -1880,8 +1895,8 @@ msgid "2004 Description Standard"
 msgstr "Sinalética Standard 2004"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
-msgid "2018 Description Standard"
-msgstr "Sinalética Standard 2018"
+msgid "2018/2024 Description Standard"
+msgstr "Sinalética Standard 2018/2024"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
@@ -1893,7 +1908,7 @@ msgstr "Standard dos Mapas ISOM2017"
 
 #: MainFrame.resx, mapStdSpr2019Menu.Text
 msgid "ISSprOM 2019 Map Standard"
-msgstr ""
+msgstr "Padrão de Mapa ISSprOM 2019"
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
@@ -1933,7 +1948,7 @@ msgstr "&Ordem do Percurso..."
 
 #: MainFrame.resx, courseLoadMenu.Text
 msgid "Competitor &Load..."
-msgstr "Carregar (&L) competidor..."
+msgstr "(&L) Densidade de Competidores..."
 
 #: MainFrame.resx, courseVariationReportMenu.Text
 msgid "Relay Team &Variations..."
@@ -1953,7 +1968,7 @@ msgstr "Adicionar Curva (&B)"
 
 #: MainFrame.resx, removeBendMenu.Text
 msgid "Remove B&end"
-msgstr ""
+msgstr "&Eliminar Curva"
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
@@ -1961,7 +1976,7 @@ msgstr "Adicionar Espaço (&G)"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove Ga&p"
-msgstr "Eliminar Esp&aço"
+msgstr "Remover Es&paço"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
@@ -1977,7 +1992,7 @@ msgstr "R&odar"
 
 #: MainFrame.resx, stretchMenu.Text
 msgid "&Stretch"
-msgstr ""
+msgstr "E&stender"
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -1997,7 +2012,7 @@ msgstr "Fim de Percurso Balizado"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr ""
+msgstr "Pernada Balizada"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
@@ -2021,7 +2036,7 @@ msgstr "Tamanho da Pernada (&L)"
 
 #: MainFrame.resx, controlCrossrefMenu.Text
 msgid "Control &Cross-reference"
-msgstr "Controlos Referência &Cruzada"
+msgstr "Referência &Cruzada de Controlos"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
@@ -2077,11 +2092,11 @@ msgstr "Seletor do Teste dos Percursos"
 
 #: MainFrame.resx, dotGridTesterToolStripMenuItem.Text
 msgid "Dot Grid Tester"
-msgstr ""
+msgstr "Teste da Grelha de Pontos"
 
 #: MainFrame.resx, dumpOCADFileMenu.Text
 msgid "Dump OCAD File"
-msgstr ""
+msgstr "Descartar Ficheiro OCAD"
 
 #: MainFrame.resx, reportTesterToolStripMenuItem.Text
 msgid "Report Tester"
@@ -2089,6 +2104,10 @@ msgstr "Relatório de Teste"
 
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
+msgstr "Métrica da Fonte"
+
+#: MainFrame.resx, missingTranslationsMenuItem.Text
+msgid "Missing Description Translations"
 msgstr ""
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
@@ -2166,6 +2185,10 @@ msgstr "Adicionar Controlo (Ctrl+A)"
 msgid "Add Descriptions"
 msgstr "Adicionar sinalética"
 
+#: MainFrame.resx, mapFlipMenuItem.Text
+msgid "Map Flip at Control Point"
+msgstr ""
+
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
 msgstr "Troca de Mapa no Posto de Controlo"
@@ -2173,6 +2196,10 @@ msgstr "Troca de Mapa no Posto de Controlo"
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
 msgstr "Percurso Balizado até Troca do Mapa"
+
+#: MainFrame.resx, mapExchangeToolStripMenu.Text
+msgid "Add Map Flip/Exchange"
+msgstr "Adicionar troca de mapa"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
@@ -2196,11 +2223,11 @@ msgstr "Ampliação: 100%"
 
 #: MainFrame.resx, locationDisplay.Text
 msgid "X:-999.99 Y:-999.99"
-msgstr ""
+msgstr "X:-999.99 Y:-999.99"
 
 #: MainFrame.resx, saveXmlFileDialog.Filter
 msgid "IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml"
-msgstr ""
+msgstr "IOF XML versão 2.0.3|*.xml|IOF XML versão 3.0|*.xml"
 
 #: MainFrame.resx, saveXmlFileDialog.Title
 msgid "Create XML Interchange File"
@@ -2217,11 +2244,11 @@ msgstr "Ficheiro GPX|*.gpx"
 #: MainFrame.resx, $this.Text
 #: MiscText.resx, AppTitle
 msgid "Purple Pen"
-msgstr ""
+msgstr "Purple Pen"
 
 #: MiscText.resx, CtrlZ
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: MiscText.resx, CtrlY
 msgid "Ctrl+Y"
@@ -2233,11 +2260,11 @@ msgstr "Esc"
 
 #: MiscText.resx, NoSymbol
 msgid "No symbol"
-msgstr ""
+msgstr "Nenhum símbolo"
 
 #: MiscText.resx, AllControls
 msgid "All controls"
-msgstr "Todos os controlos"
+msgstr "Matriz de Pontos de Controlo"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
@@ -2303,13 +2330,13 @@ msgstr "A pontuação de um posto de controlo devem ser um número "
 
 #: MiscText.resx, BadClimb
 msgid "The climb for a course must be a number 0-9999, or blank."
-msgstr "A subida acumulada de um percurso deve ser um número "
-"0-9999 ou deixar o campo em branco."
+msgstr "O desnível de um percurso deve ser um número 0-9999 ou "
+"deixar o campo em branco."
 
 #: MiscText.resx, BadLoad
 msgid "The load for a course must be an integer 0-999999, or blank."
-msgstr "O número de participantes de um percurso deve ser um "
-"número inteiro 0-999999 ou deixar o campo em branco."
+msgstr "A carga para um percurso deve ser um número inteiro "
+"0-999999 ou deixar o campo em branco."
 
 #: MiscText.resx, CancelOperationWithShortcut
 msgid "Ca&ncel Operation"
@@ -2355,7 +2382,7 @@ msgstr "Insira o novo nome do percurso"
 
 #: MiscText.resx, EnterClimb
 msgid "Enter new climb in meters"
-msgstr "Digite nova subida em metros"
+msgstr "Digite o novo desnível em metros"
 
 #: MiscText.resx, EnterSymbolText
 msgid "Enter new symbol meaning\n"
@@ -2372,82 +2399,98 @@ msgstr "Insira novo texto\n"
 #: MiscText.resx, DeleteMultipleControlsFromControlsCollection
 msgid "Controls {0} are no longer used by any course. Do you want "
 "to delete these controls from the control collection?"
-msgstr ""
+msgstr "Os pontos de controlo {0} não são mais usados por nenhum "
+"percurso.\r\n"
+"Deseja excluir esses controlos da coleção de pontos de "
+"controlo?"
 
 #: MiscText.resx, DeleteControlFromControlsCollection
 msgid "Control {0} is no longer used by any course. Do you want "
 "to delete this control from the control collection?"
-msgstr ""
+msgstr "O ponto de controlo {0} não é mais usado por nenhum "
+"percurso.\r\n"
+"Deseja excluir este controle da coleção de pontos de "
+"controlo?"
 
 #: MiscText.resx, DeleteControlFromAllControls
 msgid "Control {0} is currently used by the following courses: "
 "{1}. Do you want to delete this control anyway?"
-msgstr ""
+msgstr "O ponto de controlo {0} é usado atualmente pelos seguintes "
+"percursos: {1}.\r\n"
+"Deseja excluir este ponto de controlo mesmo assim?"
 
 #: MiscText.resx, CodeBadLength
 msgid "A control code must be one, two, or three letters or digits."
-msgstr ""
+msgstr "Um código de ponto de controlo deve ter uma, duas ou três "
+"letras ou dígitos."
 
 #: MiscText.resx, CodeContainsSpace
 msgid "A control code must not contain a space."
-msgstr ""
+msgstr "Um código de ponto de controlo não deve conter um espaço."
 
 #: MiscText.resx, CodeBeginsWithZero
 msgid "A control code should not begin with zero."
-msgstr ""
+msgstr "Um código de ponto de controlo não deve começar com zero."
 
 #: MiscText.resx, CodeCouldBeUpsideDown
 msgid "A control code should not look like another number when "
 "upside-down."
-msgstr ""
+msgstr "Um código de ponto de controlo não deve se parecer com "
+"outro número quando está de cabeça para baixo."
 
 #: MiscText.resx, DuplicateCode
 msgid "The code \"{0}\" is used more than once."
-msgstr ""
+msgstr "O código \"{0}\" é usado mais de uma vez."
 
 #: MiscText.resx, BadScale
 msgid "The print scale must be a number between 100 and 100,000."
-msgstr ""
+msgstr "A escala de impressão deve ser um número entre 100 e "
+"100.000."
 
 #: MiscText.resx, CoursePropertiesTitle
 msgid "Course Properties"
-msgstr ""
+msgstr "Propriedades do Percurso"
 
 #: MiscText.resx, Landscape
 #: PrintDescriptions.resx, orientation.Text
 #: PrinterMargins.resx, radioButtonLandscape.Text
 #: PrintPunches.resx, orientation.Text
 msgid "Landscape"
-msgstr ""
+msgstr "Paisagem"
 
 #: MiscText.resx, Portrait
 #: PrinterMargins.resx, radioButtonPortrait.Text
 msgid "Portrait"
-msgstr ""
+msgstr "Retrato"
 
 #: MiscText.resx, PageTooSmall
 msgid "The page size is too small for any descriptions to be "
 "printed."
-msgstr ""
+msgstr "O tamanho da página é muito pequeno para que quaisquer "
+"descrições sejam impressas."
 
 #: MiscText.resx, VersionLabel
 msgid "Version {0}"
-msgstr ""
+msgstr "Versão {0}"
 
 #: MiscText.resx, NewerVersionAvailable
 msgid "Version {0} of Purple Pen is now available for download. "
 "(You are currently running version {1}.)\n"
 "\n"
 "Would you like to download and install the latest version?"
-msgstr ""
+msgstr "A versão {0} do Purple Pen já está disponível para "
+"download.\n"
+"(Você está executando a versão {1}.)\n"
+"\n"
+"Deseja baixar e instalar a versão mais recente?"
 
 #: MiscText.resx, HelpFileNotFound
 msgid "Help file '{0}' could not be opened."
-msgstr ""
+msgstr "O arquivo de ajuda '{0}' não pôde ser aberto."
 
 #: MiscText.resx, Zoom
 msgid "Zoom"
-msgstr ""
+msgstr "Zoom"
 
 #: MiscText.resx, MissingMapFile
 msgid "The map file \"{0}\" could not be found.\n"
@@ -2461,442 +2504,511 @@ msgid "The map file \"{0}\" could not be found.\n"
 "\n"
 "After pressing OK, try to find a copy of the map file on "
 "your computer."
-msgstr ""
+msgstr "O ficheiro de mapa \"{0}\" não foi encontrado.\n"
+"\n"
+"Muito provavelmente, o ficheiro de mapa foi movido ou "
+"excluído, ou o ficheiro Purple Pen foi movido "
+"(possivelmente para um computador diferente). O ficheiro "
+"de mapa deve estar presente sempre que o ficheiro de "
+"evento Purple Pen for carregado. Se você enviar um "
+"ficheiro de evento Purple Pen para outra pessoa, "
+"certifique-se de que essa pessoa também tenha uma cópia do "
+"ficheiro de mapa.\n"
+"\n"
+"Após pressionar OK, tente encontrar uma cópia do ficheiro "
+"de mapa em seu computador."
 
 #: MiscText.resx, NoUnusedControls
 msgid "All controls are used in a course."
-msgstr ""
+msgstr "Todos os pontos de controlo são usados em um percurso."
 
 #: MiscText.resx, NextButtonText
 #: NewEventWizard.resx, nextButton.Text
 msgid "&Next >"
-msgstr ""
+msgstr "Segui&nte >"
 
 #: MiscText.resx, Control_Code
 msgid "Control {0}"
-msgstr ""
+msgstr "Ponto de Controlo {0}"
 
 #: MiscText.resx, Finish
 msgid "Finish"
-msgstr ""
+msgstr "Chegada"
 
 #: MiscText.resx, Finish_Short
 msgid "F"
-msgstr ""
+msgstr "C"
 
 #: MiscText.resx, MandCrossing_Long
 msgid "Mandatory crossing point"
-msgstr ""
+msgstr "Ponto de passagem obrigatório"
 
 #: MiscText.resx, MandCrossing_Medium
 msgid "Crossing"
-msgstr ""
+msgstr "Cruzamento"
 
 #: MiscText.resx, MandCrossing_Short
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #: MiscText.resx, Margins_All
 msgid "All: {0}"
-msgstr ""
+msgstr "Todos: {0}"
 
 #: MiscText.resx, Margins_LRTB
 msgid "Left: {0}, Right: {1}, Top: {2}, Bottom: {3}"
-msgstr ""
+msgstr "Esquerda: {0}, Direita: {1}, Superior: {2}, Inferior: {3}"
 
 #: MiscText.resx, Start
 msgid "Start"
-msgstr ""
+msgstr "Partida"
 
 #: MiscText.resx, Start_Short
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: MiscText.resx, Version_Alpha
 msgid "Alpha {0}"
-msgstr ""
+msgstr "Alpha {0}"
 
 #: MiscText.resx, Version_Beta
 msgid "Beta {0}"
-msgstr ""
+msgstr "Beta {0}"
 
 #: MiscText.resx, Version_RC
 msgid "RC {0}"
-msgstr ""
+msgstr "RC {0}"
 
 #: MiscText.resx, Plural
 msgid "plural"
-msgstr ""
+msgstr "plural"
 
 #: MiscText.resx, Singular
 msgid "singular"
-msgstr ""
+msgstr "singular"
 
 #: MiscText.resx, RequireStar
 msgid "The customized text requires a \"*\" to indicate where the "
 "object being modified is placed."
-msgstr ""
+msgstr "O texto personalizado requer um \"*\" para indicar onde o "
+"objeto que está sendo modificado é colocado."
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr ""
+msgstr "traçado de percurso de orientação"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
 "pressing OK, drag the mouse to place the text in the "
 "desired location."
-msgstr ""
+msgstr "Digite o texto que deseja colocar no mapa. Após pressionar "
+"OK, arraste o mouse para colocar o texto no local desejado."
 
 #: MiscText.resx, AddTextSpecialTitle
 msgid "Add Text"
-msgstr ""
+msgstr "Adicionar Texto"
 
 #: MiscText.resx, ChangeTextSpecialExplanation
 msgid "Enter the new text."
-msgstr ""
+msgstr "Inserir um novo texto"
 
 #: MiscText.resx, MapFileChanged
 msgid "Another program has changed the map file \"{0}\". Purple Pen "
 "will now reload the map."
-msgstr ""
+msgstr "Outro programa alterou o ficheiro de mapa \"{0}\".\r\n"
+"O Purple Pen agora recarregará o mapa."
 
 #: MiscText.resx, ChangeDescriptionLanguage
 msgid "The current event has textual control descriptions in {0}. "
 "Would you like to change the language of control "
 "descriptions to {1}?"
-msgstr ""
+msgstr "O evento atual tem sinalética textual em {0}.\r\n"
+"Deseja alterar o idioma da sinalética para {1}?"
 
 #: MiscText.resx, OpenLastEvent
 msgid "Open \"{0}\""
-msgstr ""
+msgstr "Abrir \"{0}\""
 
 #: MiscText.resx, ClosePPBeforeLoadingOCAD
 msgid "Purple Pen must be closed before loading the created OCAD "
 "files."
-msgstr ""
+msgstr "Purple Pen deve ser fechado antes de carregar os ficheiros "
+"OCAD criados."
 
 #: MiscText.resx, NoCoursesSelected
 msgid "No courses were selected to print."
-msgstr ""
+msgstr "Nenhum percurso foi selecionado para impressão."
 
 #: MiscText.resx, TranslatedHelpWebSite
 msgid "*** If there exists a web site in the translated language "
 "that contains documentation for Purple Pen, enter the URL "
 "(including http) as the translation of this item. "
 "Otherwise leave it alone."
-msgstr ""
+msgstr "*** Se existir um web site no idioma traduzido que "
+"contenha documentação para Purple Pen, insira a URL "
+"(incluindo http) como a tradução deste item. Caso "
+"contrário, deixe-o em paz."
 
 #: MiscText.resx, MapExchange_Long
 msgid "Map exchange"
-msgstr ""
+msgstr "Troca de Mapa"
 
 #: MiscText.resx, MapExchange_Medium
 msgid "Exchange"
-msgstr ""
+msgstr "Troca"
 
 #: MiscText.resx, MapExchange_Short
 msgid "MX"
-msgstr ""
+msgstr "MX"
 
 #: MiscText.resx, PartN
 msgid "Part {0}"
-msgstr ""
+msgstr "Parte {0}"
 
 #: MiscText.resx, AllParts
 msgid "All Parts"
-msgstr ""
+msgstr "Todas as Partes"
 
 #: MiscText.resx, PartXOfY
 msgid "Part {0} (of {1})"
-msgstr ""
+msgstr "Parte {0} (de {1})"
 
 #: MiscText.resx, CrashEmail
 msgid "Contact Email"
-msgstr ""
+msgstr "Correio electrónico"
 
 #: MiscText.resx, CrashIntro
 msgid "An error has occurred. In order to help us fix the "
 "problem, please enter your email address and additional "
 "information, and send us an error report."
-msgstr ""
+msgstr "Ocorreu um erro. Para nos ajudar a corrigir o problema, "
+"insira seu endereço de correio electrónico e informações "
+"adicionais e envie-nos um relatório de erro."
 
 #: MiscText.resx, CrashMessage
 msgid "Please tell us what you were doing in the program, to help "
 "fix the problem"
-msgstr ""
+msgstr "Por favor, diga-nos o que você estava fazendo no programa, "
+"para ajudar a corrigir o problema"
 
 #: MiscText.resx, CrashSend
 msgid "Send Report"
-msgstr ""
+msgstr "Enviar Relatório"
 
 #: MiscText.resx, CannotAddDescriptionsToAllParts
 msgid "Descriptions may not be added to a course with a map "
 "exchange if \"All Parts\" is being displayed. Switch to the "
 "part you wish to add descriptions to, and then choose \"Add "
 "Descriptions\" again."
-msgstr ""
+msgstr "Descrições não podem ser adicionadas a um percurso com "
+"troca de mapas se \"Todas as Partes\" estiver sendo exibida. "
+"Alterne para a parte à qual deseja adicionar descrições e, "
+"em seguida, escolha \"Adicionar Descrições\" novamente."
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
-msgstr ""
+msgstr "PdfConverter.exe não encontrado"
 
 #: MiscText.resx, PdfConversionFailed
 msgid "Pdfium PDF converter failed to read PDF file successfully"
-msgstr ""
+msgstr "O conversor de PDF Pdfium falhou ao ler o ficheiro PDF"
 
 #: MiscText.resx, PdfResultNotReadable
 msgid "Could not read result of PDF conversion from file '{0}'"
-msgstr ""
+msgstr "Não foi possível ler o resultado da conversão de PDF do "
+"ficheiro '{0}'"
 
 #: MiscText.resx, CannotCreatePdfs
 msgid "Cannot create PDFs for the following reason:"
-msgstr ""
+msgstr "Não é possível criar PDFs pelo seguinte motivo:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr ""
+msgstr "Definido pelo Utilizador"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
-msgstr ""
+msgstr "Tamanho do mapa de PDF"
 
 #: MiscText.resx, CancelledByUser
 msgid "Cancelled by user"
-msgstr ""
+msgstr "Cancelado pelo utilizador"
 
 #: MiscText.resx, CreatingFile
 msgid "Creating {0}..."
-msgstr ""
+msgstr "Criando {0}..."
 
 #: MiscText.resx, PrintingPage
 msgid "Printing page {0} (of {1})"
-msgstr ""
+msgstr "Imprimindo página {0} (de {1})"
 
 #: MiscText.resx, MapFileDeleted
 msgid "The map file \"{0}\" has been deleted. Please try to restore "
 "the map file, then press \"Ok\"."
-msgstr ""
+msgstr "O ficheiro de mapa \"{0}\" foi excluído.\r\n"
+"Por favor, tente restaurar o ficheiro  de mapa e pressione "
+"\"Ok\"."
 
 #: MiscText.resx, BadDotNetFramework
 msgid "The  .NET framework on your computer does not appear to be "
 "correctly installed. Please visit http://microsoft.com/net "
 "and install the latest version of the .NET framework for "
 "your Windows operating system."
-msgstr ""
+msgstr "O framework .NET em seu computador não parece estar "
+"instalado corretamente.\r\n"
+"Visite http://microsoft.com/net e instale a versão mais "
+"recente do framework .NET para seu sistema operacional "
+"Windows."
 
 #: MiscText.resx, ChooseOtherColor
 msgid "Choose Color..."
-msgstr ""
+msgstr "Escolher Cor..."
 
 #: MiscText.resx, CustomColor
 msgid "Custom Color"
-msgstr ""
+msgstr "Cor Personalizada"
 
 #: MiscText.resx, DarkBlue
 msgid "Dark Blue"
-msgstr ""
+msgstr "Azul Escuro"
 
 #: MiscText.resx, Green
 msgid "Green"
-msgstr ""
+msgstr "Verde"
 
 #: MiscText.resx, LightBlue
 msgid "Light Blue"
-msgstr ""
+msgstr "Azul Claro"
 
 #: MiscText.resx, Red
 msgid "Red"
-msgstr ""
+msgstr "Vermelho"
 
 #: MiscText.resx, Yellow
 msgid "Yellow"
-msgstr ""
+msgstr "Amarelo"
 
 #: MiscText.resx, AddLineExplanation
 msgid "Set the appearance of the line. After pressing OK, drag "
 "the mouse to draw the line segments in the desired location."
-msgstr ""
+msgstr "Defina a aparência da linha. Após pressionar OK, arraste o "
+"mouse para desenhar os segmentos de linha no local desejado."
 
 #: MiscText.resx, AddLineTitle
 msgid "Add Line"
-msgstr ""
+msgstr "Adicionar Linha"
 
 #: MiscText.resx, AddRectangleExplanation
 msgid "Set the appearance of the rectangle. After pressing OK, "
 "drag the mouse to place the rectangle in the desired "
 "location."
-msgstr ""
+msgstr "Defina a aparência do retângulo. Após pressionar OK, "
+"arraste o mouse para colocar o retângulo no local desejado."
 
 #: MiscText.resx, AddRectangleTitle
 msgid "Add Rectangle"
-msgstr ""
+msgstr "Adicionar Retângulo"
 
 #: MiscText.resx, ChangeLineAppearanceExplanation
 msgid "Change the appearance of the line or rectangle."
-msgstr ""
+msgstr "Altere a aparência da linha ou retângulo."
 
 #: MiscText.resx, GpxMustBeOcadMap
 msgid "The map file must be an OCAD file to use GPX files."
-msgstr ""
+msgstr "O ficheiro de mapa deve ser um ficheiro OCAD para usar "
+"ficheiros GPX."
 
 #: MiscText.resx, GpxMustHaveCoordSystem
 msgid "The OCAD file must have a coordinate system defined to use "
 "GPX files."
-msgstr ""
+msgstr "O ficheiro OCAD deve ter um sistema de coordenadas "
+"definido para usar ficheiros GPX."
 
 #: MiscText.resx, GpxMustHaveRealWorldCoord
 msgid "The OCAD file must have real world coordinates defined to "
 "use GPX files."
-msgstr ""
+msgstr "O ficeiro OCAD deve ter coordenadas do mundo real "
+"definidas para usar ficheiros GPX."
 
 #: MiscText.resx, GpxReprojectFailure
 msgid "Could not reproject points; either the coordinate system "
 "or the real world coordinates in the OCAD map are wrong."
-msgstr ""
+msgstr "Não foi possível reprojetar pontos; ou o sistema de "
+"coordenadas ou as coordenadas do mundo real no mapa OCAD "
+"estão erradas."
 
 #: MiscText.resx, GpxUnsupportedCoordSystem
 msgid "The OCAD file uses a coordinate system that is not "
 "supported by Purple Pen."
-msgstr ""
+msgstr "O ficheiro OCAD usa um sistema de coordenadas que não é "
+"suportado por Purple Pen."
 
 #: MiscText.resx, BadLength
 msgid "The length for a course must be a number 0.1 - 99.9, or "
 "blank to calculate length automatically."
-msgstr ""
+msgstr "A duração de um curso deve ser um número de 0.1 a 99.9 ou "
+"em branco para calcular a distância automaticamente."
 
 #: MiscText.resx, EnterLength
 msgid "Enter length in km, or leave blank to calculate "
 "automatically"
-msgstr ""
+msgstr "Insira o comprimento em km ou deixe em branco para "
+"calcular automaticamente"
 
 #: MiscText.resx, PausePrinting
 msgid "Finished printing \"{0}\". Press OK to begin printing \"{1}\"."
-msgstr ""
+msgstr "Impressão de \"{0}\" concluída.\r\n"
+"Pressione OK para começar a imprimir \"{1}\"."
 
 #: MiscText.resx, OCAD
 msgid "OCAD"
-msgstr ""
+msgstr "OCAD"
 
 #: MiscText.resx, OpenOrienteeringMapper
 msgid "OOM"
-msgstr ""
+msgstr "OOMapper"
 
 #: MiscText.resx, AllVariations
 msgid "All Variations"
-msgstr ""
+msgstr "Todas as Variações"
 
 #: MiscText.resx, ForkSummary
 msgid "Suitable for use in relays with {0} participants per team."
-msgstr ""
+msgstr "Adequado para uso em estafetas com {0} participantes por "
+"equipa."
 
 #: MiscText.resx, LoopSummary
 msgid "The central control in the loop will be visited {0} times. "
 "There are {1} possible paths through the loops."
-msgstr ""
+msgstr "O ponto de controlo central no loop será visitado {0} "
+"vezes.\r\n"
+"Existem {1} caminhos possíveis pelos loops."
 
 #: MiscText.resx, CantRearrangeSplitControl
 msgid "A control that starts a fork or loop cannot be dragged to "
 "a new place in the course."
-msgstr ""
+msgstr "Um ponto de controlo que inicia uma bifurcação ou loop não "
+"pode ser arrastado para um novo local no percurso."
 
 #: MiscText.resx, TooManyVariations
 msgid "Too many total variations in this course. The number of "
 "distinct variations is limited to {0}."
-msgstr ""
+msgstr "Muitas variações totais neste curso.\r\n"
+"O número de variações distintas é limitado a {0}."
 
 #: MiscText.resx, CannotAddVariation
 msgid "Cannot add variation."
-msgstr ""
+msgstr "Não é possível adicionar variação."
 
 #: MiscText.resx, VariationAlreadyExists
 msgid "A variation already exists at this control."
-msgstr ""
+msgstr "Já existe uma variação neste ponto de controlo."
 
 #: MiscText.resx, VariationMustSelectControl
 msgid "A control or leg must be selected to add a variation."
-msgstr ""
+msgstr "Um ponto de controlo ou pernada deve ser selecionado para "
+"adicionar uma variação."
 
 #: MiscText.resx, VariationNotFinish
 msgid "A variation cannot be added to a finish control."
-msgstr ""
+msgstr "Uma variação não pode ser adicionada a um ponto de "
+"controlo de chegada."
 
 #: MiscText.resx, VariationNotInAllControls
 msgid "A variation cannot be added to the All Controls view."
-msgstr ""
+msgstr "Uma variação não pode ser adicionada na exibição de Matriz "
+"de Pontos de Controlo."
 
 #: MiscText.resx, VariationNotInScoreCourse
 msgid "A variation cannot be added to a score course."
-msgstr ""
+msgstr "Uma variação não pode ser adicionada a um percurso de "
+"pontuação."
 
 #: MiscText.resx, VariationNotLastControl
 msgid "A variation cannot be added to the last control. Add a "
 "finish control first."
-msgstr ""
+msgstr "Uma variação não pode ser adicionada ao último ponto de "
+"controlo.\r\n"
+"\r\n"
+"Adicione um ponto de controlo de chegada primeiro."
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr ""
+msgstr "'{0}' não é um número de pernada válido para a variante {1}'"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr ""
+msgstr "A pernada {0} deve ser atribuída a uma das variantes {1}"
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr ""
+msgstr "A pernada {0} é atribuída tanto à variante '{1}' quanto à "
+"variante '{2}'"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
-msgstr ""
+msgstr "Não é possível ler o mapa pelo seguinte motivo: '{0}' \r\n"
+"Abrir e salvar novamente o mapa na versão mais recente do "
+"OpenOrienteering Mapper pode corrigir problemas."
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
-msgstr ""
+msgstr "TS"
 
 #: MiscText.resx, BaseMapHasVisibleTemplatesThatMayNotAppear
 msgid "The underlying OCAD map has visible template files. In "
 "OCAD 8 and below, these templates may not appear due to "
 "limitations in OCAD."
-msgstr ""
+msgstr "O mapa OCAD subjacente tem arquivos de modelo visíveis. No "
+"OCAD 8 e anterior, esses modelos podem não aparecer devido "
+"a limitações no OCAD."
 
 #: MiscText.resx, ImagesMayAppearBadlyLayeredInOcad10Below
 msgid "Due to limitations of the OCAD file format (in OCAD 10 and "
 "below), image objects will appear underneath courses and "
 "white out areas in the exported OCAD files. Please check "
 "the OCAD files to make sure your images appear as desired."
-msgstr ""
+msgstr "Devido às limitações do formato de ficheiro OCAD (no OCAD "
+"10 e anterior), os objetos de imagem aparecerão abaixo dos "
+"percursos e áreas brancas nos ficheiros OCAD exportados. "
+"Verifique os ficheiros OCAD para garantir que suas imagens "
+"apareçam conforme desejado."
 
 #: MiscText.resx, CannotCreateImageFiles
 msgid "Cannot create image files for the following reason:"
-msgstr ""
+msgstr "Não é possível criar ficheiros de imagem pelo seguinte "
+"motivo:"
 
 #: MiscText.resx, CreatePdf
 msgid "Create PDF"
-msgstr ""
+msgstr "Criar PDF"
 
 #: MiscText.resx, PdfFilter
 msgid "PDF File|*.pdf"
-msgstr ""
+msgstr "Ficheiro PDF |*.pdf"
 
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
-msgstr ""
+msgstr "A pernada {0} nunca alcança a variante '{1}': ela foi "
+"atribuída para seguir um caminho diferente em uma "
+"dispersão de contenção."
 
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
 "the mouse to place the ellipse in the desired location."
-msgstr ""
+msgstr "Defina a aparência da elipse. Após pressionar OK, arraste "
+"o mouse para posicionar a elipse no local desejado."
 
 #: MiscText.resx, AddEllipseTitle
 msgid "Add Ellipse"
-msgstr ""
+msgstr "Adicionar Elipse"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
-msgstr ""
+msgstr "Não avise sobre fontes ausentes para este evento novamente"
 
 #: MissingFonts.resx, labelWarning.Text
 msgid "Map file \"{0}\" uses fonts that are not installed on your "
@@ -2907,10 +3019,38 @@ msgid "Map file \"{0}\" uses fonts that are not installed on your "
 "To fix this problem, find and install the fonts listed "
 "below with the Windows control panel, then start Purple "
 "Pen again.\n"
-msgstr ""
+msgstr "O ficheiro de mapa \"{0}\" usa fontes que não estão "
+"instaladas em seu computador. O texto que usa essas fontes "
+"será desenhado e impresso com uma fonte padrão, o que pode "
+"fazer com que o texto apareça de forma diferente da "
+"pretendida pelo designer do mapa.\n"
+"\n"
+"Para corrigir esse problema, localize e instale as fontes "
+"listadas abaixo no painel de controle do Windows e inicie "
+"o Purple Pen novamente.\n"
 
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
+msgstr "Fontes ausentes"
+
+#: MoveAllControls.resx, labelDescription.Text
+msgid "Which way would you like to move all controls on the map?"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMove.Text
+msgid "Move Only"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndScale.Text
+msgid "Move and Scale"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndRotate.Text
+msgid "Move and Rotate"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveRotateScale.Text
+msgid "Move, Scale, and Rotate"
 msgstr ""
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
@@ -2923,26 +3063,34 @@ msgid "When using an image file as a map, you must specify the "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Ao usar um arquivo de imagem como mapa, você deve "
+"especificar a resolução da imagem e a escala do mapa.\n"
+"\n"
+"A resolução da imagem indica quantos pixels ou pontos "
+"estão na imagem para cada polegada no mapa de papel; "
+"geralmente denominado pontos por polegada ou \"dpi\".\n"
+"\n"
+"A escala do mapa indica a relação entre o mapa de papel e "
+"o mundo real.\n"
 
 #: NewEventBitmapScale.resx, resolutionLabel.Text
 msgid "Image resolution:"
-msgstr ""
+msgstr "Resolução da imagem:"
 
 #: NewEventBitmapScale.resx, oneToPrefixLabel.Text
 #: NewEventPrintScale.resx, oneToPrefixLabel1.Text
 #: NewEventPrintScale.resx, oneToPrefixLabel2.Text
 msgid "1:"
-msgstr ""
+msgstr "1:"
 
 #: NewEventBitmapScale.resx, mapScaleLabel.Text
 #: NewEventPrintScale.resx, mapScaleLabel.Text
 msgid "Map scale:"
-msgstr ""
+msgstr "Escala do Mapa:"
 
 #: NewEventBitmapScale.resx, labelTitle.Text
 msgid "Bitmap Resolution"
-msgstr ""
+msgstr "Resolução de Bitmap"
 
 #: NewEventBitmapScale.resx, pdfScaleLabel.Text
 msgid "When using an PDF file as a map, you must specify the map "
@@ -2950,50 +3098,58 @@ msgid "When using an PDF file as a map, you must specify the map "
 "\n"
 "The scale of the map indicates the relationship between "
 "the paper map and the real world.\n"
-msgstr ""
+msgstr "Ao usar um ficheiro PDF como mapa, você deve especificar a "
+"escala do mapa.\n"
+"\n"
+"A escala do mapa indica a relação entre o mapa de papel e "
+"o mundo real.\n"
 
 #: NewEventDirectory.resx, newEventDirectoryLabel.Text
 msgid "What folder (directory) do you want to save your course "
 "event file in?"
-msgstr ""
+msgstr "Em qual pasta (directório) você deseja salvar seu arquivo "
+"de percurso de evento?"
 
 #: NewEventDirectory.resx, useMapDirectory.Text
 msgid "In the same folder as the map file."
-msgstr ""
+msgstr "Na mesma pasta que o ficheiro de mapa."
 
 #: NewEventDirectory.resx, useOtherFolder.Text
 msgid "In another folder I choose."
-msgstr ""
+msgstr "Em outra pasta que eu escolher."
 
 #: NewEventDirectory.resx, chooseFolder.Text
 msgid "Choose Folder..."
-msgstr ""
+msgstr "Escolher Pasta..."
 
 #: NewEventDirectory.resx, folderBrowserDialog.Description
 msgid "Select the folder for your event file"
-msgstr ""
+msgstr "Selecione a pasta do seu ficheiro de evento"
 
 #: NewEventDirectory.resx, directoryDisplay.Text
 msgid "Selected Folder"
-msgstr ""
+msgstr "Pasta Seleccionada"
 
 #: NewEventDirectory.resx, labelTitle.Text
 msgid "Event File Location"
-msgstr ""
+msgstr "Localização do ficheiro de evento"
 
 #: NewEventFinal.resx, newEventFinalLabel.Text
 msgid "Click \"Finish\" to create your new event. Your event file "
 "will be saved as:"
-msgstr ""
+msgstr "Clique em \"Concluir\" para criar seu novo evento. Seu "
+"ficheiro de evento será salvo como:"
 
 #: NewEventFinal.resx, afterEventCreatedLabel.Text
 msgid "After your event is created, select \"New Course...\" from "
 "the Course menu to create one or more courses."
-msgstr ""
+msgstr "Depois que seu evento for criado, selecione \"Novo "
+"Percurso...\" no menu Percurso para criar um ou mais "
+"percursos."
 
 #: NewEventFinal.resx, labelTitle.Text
 msgid "Create Event"
-msgstr ""
+msgstr "Criar evento"
 
 #: NewEventMapFile.resx, newEventMapFileLabel.Text
 msgid "In order to design your courses, you must select the map "
@@ -3001,89 +3157,107 @@ msgid "In order to design your courses, you must select the map "
 "OpenOrienteering Mapper file (although PDFs and image "
 "files like JPEGs can be used instead). Click the "
 "\"Choose...\" button to select a map file."
-msgstr ""
+msgstr "Para traçar seus percursos, você deve selecionar o "
+"ficheiro de mapa que você usará. \r\n"
+"Normalmente, este é um ficheiro OCAD ou OpenOrienteering "
+"Mapper \r\n"
+"(embora PDFs e ficheiros de imagem como JPEGs possam ser "
+"usados). \r\n"
+"Clique no botão \"Escolher...\" para selecionar um ficheiro "
+"de mapa."
 
 #: NewEventMapFile.resx, mapFileDisplay.Text
 msgid "Selected Map File"
-msgstr ""
+msgstr "Selecionar Ficheiro de Mapa"
 
 #: NewEventMapFile.resx, infoMessage.Text
 msgid "The map file was successfully loaded. If you send your "
 "Purple Pen file to someone else, they must have the map "
 "file also."
-msgstr ""
+msgstr "O ficheiro de mapa foi carregado com sucesso. Se você "
+"enviar seu ficheiro Purple Pen para outra pessoa, ela "
+"também deverá ter o ficheiro de mapa."
 
 #: NewEventNumbering.resx, newEventNumberingLabel.Text
 msgid "Newly created controls are automatically numbered. Please "
 "choose the starting control number to use."
-msgstr ""
+msgstr "Os pontos de controlo recém-criados são numerados "
+"automaticamente. Por favor, escolha o número de controle "
+"inicial a ser usado."
 
 #: NewEventNumbering.resx, changeLaterLabel.Text
 msgid "(This setting can be changed later using Event/Automatic "
 "Numbering)"
-msgstr ""
+msgstr "(Esta configuração pode ser alterada posteriormente usando "
+"Numeração Automática/Evento)"
 
 #: NewEventNumbering.resx, labelTitle.Text
 msgid "Control Numbering"
-msgstr ""
+msgstr "Numeração de ponto de controlo"
 
 #: NewEventPrintScale.resx, newEventPrintScaleLabel.Text
 msgid "What scale will you be using to print your courses? In "
 "most cases, you will want to use the existing scale of the "
 "map.\n"
 "\n"
-msgstr ""
+msgstr "Qual escala você usará para imprimir seus percursos? Na "
+"maioria dos casos, você desejará usar a escala existente "
+"do mapa.\n"
+"\n"
 
 #: NewEventPrintScale.resx, defaultPrintScaleLabel.Text
 msgid "Default &printing scale:"
-msgstr ""
+msgstr "Escala de im&pressão padrão:"
 
 #: NewEventPrintScale.resx, changeLaterLabel.Text
 msgid "(You can change the printing scale later for any course by "
 "choosing Course/Properties.)"
-msgstr ""
+msgstr "(Você pode alterar a escala de impressão posteriormente "
+"para qualquer percurso escolhendo Percurso/Propriedades.)"
 
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "(Essas configurações podem ser alteradas posteriormente "
+"usando os Padrões de Evento/IOF)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
-msgstr ""
+msgstr "Padrões IOF"
 
 #: NewEventStandards.resx, radioButtonMapSpr2019.Text
 msgid "ISSprOM 2019"
-msgstr ""
+msgstr "ISSprOM 2019"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
-msgstr ""
+msgstr "ISOM 2017"
 
 #: NewEventStandards.resx, radioButtonMap2000.Text
 msgid "ISOM 2000 / ISSOM 2007"
-msgstr ""
+msgstr "ISOM 2000 / ISSOM 2007"
 
 #: NewEventStandards.resx, groupBoxMapStandard.Text
 msgid "IOF Map Standard"
-msgstr ""
+msgstr "Padrão de Mapa IOF"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
-msgid "Descriptions 2018"
-msgstr ""
+msgid "Descriptions 2018 or 2024"
+msgstr "Sinalética 2018/2024"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
-msgstr ""
+msgstr "Sinalética 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "Padrão de Descrição IOF"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
 "to follow?"
-msgstr ""
+msgstr "Quais versões dos padrões IOF você gostaria que o Purple "
+"Pen seguisse?"
 
 #: NewEventTitle.resx, newEventTitleLabel.Text
 msgid "The event title will be displayed on the first line of "
@@ -3093,15 +3267,23 @@ msgid "The event title will be displayed on the first line of "
 "To fit on the description sheet, it should be less than 25 "
 "characters in length. Examples of good event titles are "
 "\"US Champs Day 1\" or \"Riverview Park, 4/12/06\"."
-msgstr ""
+msgstr "O título do evento será exibido na primeira linha de cada "
+"folha de descrição de controle. \n"
+"Também é usado como o nome do arquivo para armazenar seu "
+"evento no disco.\n"
+"\n"
+"Para caber na folha de descrição, ela deve ter menos de 25 "
+"caracteres. \n"
+"Exemplos de bons títulos de eventos são \"Campeonato "
+"Nacional Dia 1\" ou \"Parque Portugal, 4/12/22\"."
 
 #: NewEventTitle.resx, eventTitleLabel.Text
 msgid "Event Title:"
-msgstr ""
+msgstr "Título do Evento"
 
 #: NewEventWizard.resx, backButton.Text
 msgid "< &Back"
-msgstr ""
+msgstr "< A&nterior"
 
 #: NonPrintableObjects.resx, labelWarning.Text
 msgid "Map file \"{0}\" contains objects or symbols that are not "
@@ -3112,439 +3294,462 @@ msgid "Map file \"{0}\" contains objects or symbols that are not "
 "For printing competition maps, it is suggested that "
 "courses be exported to OCAD files (use File/Create OCAD "
 "Files...) and to print the maps from OCAD.\n"
-msgstr ""
+msgstr "O ficheiro de mapa \"{0}\" contém objectos ou símbolos que "
+"não são totalmente compatíveis com o Purple Pen e podem "
+"não ser impressos corretamente. Os objectos que podem não "
+"ser impressos corretamente estão listados abaixo.\n"
+"\n"
+"Para a impressão dos mapas da competição, sugere-se "
+"exportar os percursos para ficheiros OCAD (utilizar "
+"Ficheiro/Criar Ficheiros OCAD...) e imprimir os mapas do "
+"OCAD.\n"
 
 #: NonPrintableObjects.resx, okButton.Text
 msgid "Continue"
-msgstr ""
+msgstr "Avançar"
 
 #: NonPrintableObjects.resx, $this.Text
 msgid "Map File Cannot Be Printed Accurately"
-msgstr ""
+msgstr "O ficheiro de mapa não pode ser impresso com precisão"
 
 #: OperationInProgress.resx, $this.Text
 msgid "Operation In Progress"
-msgstr ""
+msgstr "Operação em andamento"
 
 #: OverwritingOcadFilesDialog.resx, confirmReplaceLabel.Text
 msgid "The following files already exist. If you continue, they "
 "will be replaced."
-msgstr ""
+msgstr "Os seguintes ficheiros já existem. Se continuar, eles "
+"serão substituídos."
 
 #: OverwritingOcadFilesDialog.resx, buttonOK.Text
 msgid "Replace"
-msgstr ""
+msgstr "Substituir"
 
 #: OverwritingOcadFilesDialog.resx, $this.Text
 msgid "Confirm Replace Files"
-msgstr ""
+msgstr "Confirmar substituição de ficheiros"
 
 #: PdfConversionInProgress.resx, labelReadingPDF.Text
 msgid "PDFium PDF converter is reading your PDF..."
-msgstr ""
+msgstr "O conversor de PDF do PDFium está lendo seu PDF..."
 
 #: PdfConversionInProgress.resx, labelFailure.Text
 msgid "PDF reading has failed. The errors are shown below."
-msgstr ""
+msgstr "A leitura do PDF falhou. Os erros são mostrados abaixo."
 
 #: PdfConversionInProgress.resx, $this.Text
 msgid "Reading PDF"
-msgstr ""
+msgstr "Lendo PDF"
 
 #: PrintCourses.resx, okButton.Text
 #: PrintDescriptions.resx, printButton.Text
 #: PrintPunches.resx, printButton.Text
 msgid "Print"
-msgstr ""
+msgstr "Imprimir"
 
 #: PrintCourses.resx, printerChange.Text
 #: PrintDescriptions.resx, printerChange.Text
 #: PrintPunches.resx, printerChange.Text
 msgid "Change Printer..."
-msgstr ""
+msgstr "Alterar Impressora..."
 
 #: PrintCourses.resx, printerName.Text
 #: PrintDescriptions.resx, printerName.Text
 #: PrintPunches.resx, printerName.Text
 msgid "Printer Name"
-msgstr ""
+msgstr "Nome da Impressora"
 
 #: PrintCourses.resx, printerLabel.Text
 #: PrintDescriptions.resx, printerLabel.Text
 #: PrintPunches.resx, printerLabel.Text
 msgid "Printer:"
-msgstr ""
+msgstr "Impressora:"
 
 #: PrintCourses.resx, previewButton.Text
 #: PrintDescriptions.resx, previewButton.Text
 #: PrintPunches.resx, previewButton.Text
 msgid "Preview..."
-msgstr ""
+msgstr "Antevisão..."
 
 #: PrintCourses.resx, copiesLabel.Text
 msgid "Copies of each course:"
-msgstr ""
+msgstr "Cópias de cada percurso:"
 
 #: PrintCourses.resx, checkBoxPausePrinting.Text
 msgid "Pause printing after each course or part"
-msgstr ""
+msgstr "Pausar a impressão após cada percurso ou parte"
 
 #: PrintCourses.resx, copiesGroupBox.Text
 #: PrintDescriptions.resx, copiesGroupBox.Text
 #: PrintPunches.resx, copiesGroupBox.Text
 msgid "Copies"
-msgstr ""
+msgstr "Cópias"
 
 #: PrintCourses.resx, comboBoxColorModel.Items
 msgid "OCAD Compatible"
-msgstr ""
+msgstr "Compatível com OCAD"
 
 #: PrintCourses.resx, $this.Text
 msgid "Print Courses"
-msgstr ""
+msgstr "Imprimir Percursos"
 
 #: PrintDescriptions.resx, marginChange.Text
 #: PrintPunches.resx, marginChange.Text
 msgid "Change Margins..."
-msgstr ""
+msgstr "Alterar Margens..."
 
 #: PrintDescriptions.resx, paperSize.Text
 #: PrintPunches.resx, paperSize.Text
 msgid "Tabloid (11\"x17\")"
-msgstr ""
+msgstr "Tablóide (11\" x 17\")"
 
 #: PrintDescriptions.resx, paperSizeLabel.Text
 #: PrintPunches.resx, paperSizeLabel.Text
 msgid "Paper Size:"
-msgstr ""
+msgstr "Tamanho do papel:"
 
 #: PrintDescriptions.resx, margins.Text
 #: PrintPunches.resx, margins.Text
 msgid "Top: 0.55\", Bottom: 0.55\", Left: 0.55\", Right: 0.55\""
-msgstr ""
+msgstr "Superior: 0,55\", Inferior: 0,55\", Esquerda: 0,55\", "
+"Direita: 0,55\""
 
 #: PrintDescriptions.resx, marginsLabel.Text
 #: PrintPunches.resx, marginsLabel.Text
 msgid "Margins:"
-msgstr ""
+msgstr "Margens:"
 
 #: PrintDescriptions.resx, orientationLabel.Text
 #: PrintPunches.resx, orientationLabel.Text
 msgid "Orientation:"
-msgstr ""
+msgstr "Orientação:"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items
 msgid "Course default"
-msgstr ""
+msgstr "Padrão de Percurso"
 
 #: PrintDescriptions.resx, descriptionKindCombo.Items3
 msgid "Symbols & Text"
-msgstr ""
+msgstr "Símbolos e Texto"
 
 #: PrintDescriptions.resx, descriptionTypeLabel.Text
 msgid "Description type:"
-msgstr ""
+msgstr "Tipo de descrição:"
 
 #: PrintDescriptions.resx, lineSizeLabel.Text
 msgid "Line size:"
-msgstr ""
+msgstr "Tamanho de linha:"
 
 #: PrintDescriptions.resx, descriptionsLabel.Text
 msgid "descriptions per course"
-msgstr ""
+msgstr "Sinalética por percurso"
 
 #: PrintDescriptions.resx, copiesCombo.Items
 msgid "one copy of each course"
-msgstr ""
+msgstr "uma cópia de cada percurso"
 
 #: PrintDescriptions.resx, copiesCombo.Items1
 msgid "one page of each course"
-msgstr ""
+msgstr "uma página de cada percurso"
 
 #: PrintDescriptions.resx, copiesCombo.Items2
 msgid "multiple pages of each course"
-msgstr ""
+msgstr "várias páginas de cada percurso"
 
 #: PrintDescriptions.resx, whatToPrintLabel.Text
 msgid "Print:"
-msgstr ""
+msgstr "Imprimir:"
 
 #: PrintDescriptions.resx, $this.Text
 msgid "Print Descriptions"
-msgstr ""
+msgstr "Imprimir Sinalética"
 
 #: PrinterMargins.resx, label3.Text
 msgid "Height:"
-msgstr ""
+msgstr "Altura:"
 
 #: PrinterMargins.resx, groupBoxPaperSize.Text
 msgid "Paper Size ({0})"
-msgstr ""
+msgstr "Tamanho de Papel ({0})"
 
 #: PrinterMargins.resx, groupBox1.Text
 msgid "Orientation"
-msgstr ""
+msgstr "Orientação"
 
 #: PrinterMargins.resx, label1.Text
 msgid "Left:"
-msgstr ""
+msgstr "Esquerda:"
 
 #: PrinterMargins.resx, label4.Text
 msgid "Top:"
-msgstr ""
+msgstr "Superior:"
 
 #: PrinterMargins.resx, label5.Text
 msgid "Right:"
-msgstr ""
+msgstr "Direita:"
 
 #: PrinterMargins.resx, label6.Text
 msgid "Bottom:"
-msgstr ""
+msgstr "Inferior:"
 
 #: PrinterMargins.resx, groupBoxMargins.Text
 msgid "Margins ({0})"
-msgstr ""
+msgstr "Margens ({0})"
 
 #: PrinterMargins.resx, $this.Text
 msgid "Page Setup"
-msgstr ""
+msgstr "Configuração de página"
 
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr ""
+msgstr "Layout do Cartão de Controlo"
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
-msgstr ""
+msgstr "Tamanho de caixa de picote:"
 
 #: PrintPunches.resx, descriptionsLabel.Text
 msgid "Copies:"
-msgstr ""
+msgstr "Cópias"
 
 #: PrintPunches.resx, $this.Text
 msgid "Print Punch Cards"
-msgstr ""
+msgstr "Imprimir Cartões de Controlo"
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr ""
-
-#: PunchcardLayoutDialog.resx, columnsLabel.Text
-msgid "Columns:"
-msgstr ""
-
-#: PunchcardLayoutDialog.resx, rowsLabel.Text
-msgid "Rows:"
-msgstr ""
+msgstr "Ordem de caixa de picote"
 
 #: PunchcardLayoutDialog.resx, sizeGroupBox.Text
 msgid "Size"
-msgstr ""
+msgstr "Tamanho"
+
+#: PunchcardLayoutDialog.resx, columnsLabel.Text
+msgid "Columns:"
+msgstr "Colunas:"
+
+#: PunchcardLayoutDialog.resx, rowsLabel.Text
+msgid "Rows:"
+msgstr "Linhas:"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr ""
+msgstr "Layout do Cartão de Controlo"
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr ""
+msgstr "Superior: 0,55\", Inferior: 0,55\", Esquerda: 0,55\", "
+"Direita: 0,55\" Clique em um código de controlo na lista do "
+"lado esquerdo e desenhe o padrão de picote no lado "
+"direito. Os códigos vermelhos indicam controles que não "
+"possuem padrão de picote definido."
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
-msgstr ""
+msgstr "Padrões de picote"
 
 #: ReportForm.resx, printButton.Text
 #: TeamVariationsForm.resx, buttonPrint.Text
 msgid "Print..."
-msgstr ""
+msgstr "Imprimir..."
 
 #: ReportForm.resx, previewButton.Text
 #: TeamVariationsForm.resx, buttonPrintPreview.Text
 msgid "Print Preview..."
-msgstr ""
+msgstr "Antevisão da Impressão..."
 
 #: ReportForm.resx, okButton.Text
 #: TeamVariationsForm.resx, buttonClose.Text
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #: ReportText.resx, ColumnHeader_Climb
 msgid "Climb"
-msgstr ""
+msgstr "Desnível"
 
 #: ReportText.resx, ColumnHeader_Code
 msgid "Code"
-msgstr ""
+msgstr "Código"
 
 #: ReportText.resx, ColumnHeader_Column
 msgid "Column"
-msgstr ""
+msgstr "Coluna"
 
 #: ReportText.resx, ColumnHeader_Control
 msgid "Control"
-msgstr ""
+msgstr "Ponto de Controlo"
 
 #: ReportText.resx, ColumnHeader_ControlCodes
 msgid "Control codes"
-msgstr ""
+msgstr "Código de ponto de controlo"
 
 #: ReportText.resx, ColumnHeader_Controls
 msgid "Controls"
-msgstr ""
+msgstr "Pontos de Controlo"
 
 #: ReportText.resx, ColumnHeader_Course
 msgid "Course"
-msgstr ""
+msgstr "Percurso"
 
 #: ReportText.resx, ColumnHeader_Distance
 msgid "Distance"
-msgstr ""
+msgstr "Distância"
 
 #: ReportText.resx, ColumnHeader_Item
 msgid "Item"
-msgstr ""
+msgstr "Item"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
-msgstr ""
+msgstr "Pernada"
 
 #: ReportText.resx, ColumnHeader_Length
 msgid "Length"
-msgstr ""
+msgstr "Distância"
 
 #: ReportText.resx, ColumnHeader_Load
 msgid "Load"
-msgstr ""
+msgstr "Carga"
 
 #: ReportText.resx, ColumnHeader_Location
 msgid "Location"
-msgstr ""
+msgstr "Localização"
 
 #: ReportText.resx, ColumnHeader_NumberOfCourses
 msgid "# Courses"
-msgstr ""
+msgstr "# Percursos"
 
 #: ReportText.resx, ColumnHeader_Reason
 msgid "Reason"
-msgstr ""
+msgstr "Justificativa"
 
 #: ReportText.resx, ColumnHeader_SameSymbol
 msgid "Same symbol?"
-msgstr ""
+msgstr "Mesmo símbolo?"
 
 #: ReportText.resx, ColumnHeader_Visits
 msgid "Visits"
-msgstr ""
+msgstr "Visitas"
 
 #: ReportText.resx, CourseSummary_Title
 msgid "Course Summary for {0}"
-msgstr ""
+msgstr "Resumo do Percurso para {0}"
 
 #: ReportText.resx, CrossRef_Title
 msgid "Control cross-reference for {0}"
-msgstr ""
+msgstr "Referência Cruzada de Ponto de controlo para {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "Pernadas Correm em Ambas Direções"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
-msgstr ""
+msgstr "Pontos de controlo próximos"
 
 #: ReportText.resx, EventAudit_CloseTogetherExplanation
 msgid "The following table shows all control pairs that are "
 "within {0} meters of each other. The same symbol column "
 "shows whether the two controls have the same primary "
 "symbol (column D)."
-msgstr ""
+msgstr "A tabela a seguir mostra todos os pares de pontos de "
+"controlo que estão a {0} metros um do outro. A mesma "
+"coluna de símbolo mostra se os dois controlos têm o mesmo "
+"símbolo primário (coluna D)."
 
 #: ReportText.resx, EventAudit_MissingBoxes
 msgid "Missing Description Boxes"
-msgstr ""
+msgstr "Caixas de descrição ausentes"
 
 #: ReportText.resx, EventAudit_MissingClimb
 msgid "Regular courses should indicate the amount of climb"
-msgstr ""
+msgstr "Percursos regulares devem indicar o valor de desnível"
 
 #: ReportText.resx, EventAudit_MissingD
 msgid "All controls must have a main feature in column D"
-msgstr ""
+msgstr "Todos os pontos de controlo devem ter um elemento "
+"principal na coluna D"
 
 #: ReportText.resx, EventAudit_MissingEBetween
 msgid "When \"between\" is in column G, two features must be shown "
 "in columns D and E"
-msgstr ""
+msgstr "Quando \"entre\" estiver na coluna G, dois elementos devem "
+"ser mostrados nas colunas D e E"
 
 #: ReportText.resx, EventAudit_MissingEJunction
 msgid "When \"junction\" or \"crossing\" is in column F, two features "
 "must be shown in columns D and E"
-msgstr ""
+msgstr "Quando \"junção\" ou \"cruzamento\" estiver na coluna F, dois "
+"elementos devem ser mostrados nas colunas D e E"
 
 #: ReportText.resx, EventAudit_MissingFinish
 msgid "Regular courses should have a finish circle"
-msgstr ""
+msgstr "Percursos regulares devem ter um círculo de chegada"
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr ""
+msgstr "Itens ausentes nos percursos"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr ""
+msgstr "O percurso deve ter a densidade de competidores esperada"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
-msgstr ""
+msgstr "Nenhum padrão de picote definido"
 
 #: ReportText.resx, EventAudit_MissingPunchPatterns
 msgid "Missing Punch Patterns"
-msgstr ""
+msgstr "Padrões de Picote ausentes"
 
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
 "controls"
-msgstr ""
+msgstr "Percurso de pontuação deve ter pontuação definida para "
+"todos os pontos de controlo ou nenhum ponto de controlo"
 
 #: ReportText.resx, EventAudit_MissingScores
 msgid "Missing Scores"
-msgstr ""
+msgstr "Pontuação ausente"
 
 #: ReportText.resx, EventAudit_MissingStart
 msgid "Regular courses should have a start triangle"
-msgstr ""
+msgstr "Percursos regulares devem ter um triângulo de partida"
 
 #: ReportText.resx, EventAudit_MissingStartScore
 msgid "Score courses should have a start triangle"
-msgstr ""
+msgstr "Percursos de pontuação devem ter um triângulo de partida"
 
 #: ReportText.resx, EventAudit_NoProblems
 msgid "No problems found."
-msgstr ""
+msgstr "Nenhum problema encontrado."
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "O percurso \"{0}\" contém o ponto de controlo \"{1}\" duas "
+"vezes seguidas."
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
-msgstr ""
+msgstr "Ponto de Controlo Repetidos"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "O percurso de pontuação \"{0}\" contém o ponto de controlo "
+"\"{1}\" duas vezes. "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
-msgstr ""
+msgstr "Auditoria de Percurso para {0}"
 
 #: ReportText.resx, EventAudit_UnusedControls
 #: UnusedControls.resx, $this.Text
 msgid "Unused Controls"
-msgstr ""
+msgstr "Pontos de controlo não utilizados"
 
 #: ReportText.resx, EventAudit_UnusedControlsExplanation
 msgid "The following controls are present in the All Controls "
@@ -3552,163 +3757,181 @@ msgid "The following controls are present in the All Controls "
 "use the \"Remove Unused Controls\" command on the \"Event\" "
 "menu. These controls will not be considered further in "
 "this report."
-msgstr ""
+msgstr "Os pontos de controlo a seguir estão presentes na coleção "
+"\"Matriz de Pontos de Controlo\", mas não são usados em "
+"nenhum percurso. Para removê-los, use o comando \"Remover "
+"Controles não Utilizados\" no menu \"Evento\". Esses pontos "
+"de controlo não serão considerados mais neste relatório."
 
 #: ReportText.resx, LegLength_Average
 msgid "Average"
-msgstr ""
+msgstr "Média"
 
 #: ReportText.resx, LegLength_CourseInfo
 msgid "{0} ({1} controls, {2}, {3} m climb)"
-msgstr ""
+msgstr "{0} ({1} pontos de controlo, {2}, {3} m de desnível)"
 
 #: ReportText.resx, LegLength_CourseInfoNoClimb
 msgid "{0} ({1} controls, {2})"
-msgstr ""
+msgstr "{0} ({1} pontos de controlo, {2})"
 
 #: ReportText.resx, LegLength_Title
 msgid "Leg Length Report for {0}"
-msgstr ""
+msgstr "Relatório de distância de pernada para {0}"
 
 #: ReportText.resx, Load_ButterflyExists
 msgid "Some controls are visited multiple times on the same "
 "course. The second load number counts each visit to a "
 "control separately."
-msgstr ""
+msgstr "Alguns pontos de controlo são visitados várias vezes no "
+"mesmo percurso. O segundo número de carga conta cada "
+"visita a um ponto de controlo separadamente."
 
 #: ReportText.resx, Load_ControlLoadSection
 msgid "Control load"
-msgstr ""
+msgstr "Carga de ponto de controlo"
 
 #: ReportText.resx, Load_LegLoadSection
 msgid "Leg load"
-msgstr ""
+msgstr "Carga de pernada"
 
 #: ReportText.resx, Load_MissingLoads
 msgid "Some or all courses do not have competitor loads set for "
 "them. The loads listed below may be incorrect or missing "
 "for this reason. To set competitor loads, select "
 "\"Competitor Load\" from the \"Course\" menu."
-msgstr ""
+msgstr "Alguns ou todos os percursos não têm densidade de "
+"competidores definidas para eles. Os competidores listados "
+"abaixo podem estar incorretos ou ausentes por esse motivo. "
+"Para definir a densidade de competidores, selecione "
+"\"Densidade de Competidores\" no menu \"Percurso\"."
 
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr ""
+msgstr "(somente as pernadas usadas por mais de um percurso "
+"aparecem na tabela a seguir)"
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr ""
+msgstr "Resumo da Densidade de Competidores para {0}"
 
 #: ReportText.resx, Load_VariationsExist
 msgid "One or more courses has variations. Load numbers will be "
 "computed assuming that competitors are evenly distributed "
 "between forks."
-msgstr ""
+msgstr "Um ou mais percursos tem variações. Os números de carga "
+"serão calculados assumindo que os competidores estão "
+"distribuídos uniformemente entre as dispersões."
 
 #: ReportText.resx, Load_Visit
 msgid "({0} visits)"
-msgstr ""
+msgstr "({0} visitas)"
 
 #: ReportText.resx, Load_Warning
 msgid "WARNING:"
-msgstr ""
+msgstr "AVISO:"
 
 #: ReportText.resx, Note
 msgid "NOTE: "
-msgstr ""
+msgstr "NOTA: "
 
 #: ReportText.resx, RelayVariation_BranchWarning
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr ""
+msgstr "Atenção: devido ao número de pernadas especificado, a "
+"dispersão no ponto de controlo {0} não será usada "
+"uniformemente. {1} pernada(s) usarão variantes {2}, "
+"enquanto {3} pernada(s) usarão variantes {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr ""
+msgstr "Pernada {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
-msgstr ""
+msgstr "Nenhuma equipa de estafetas foi definida ainda. Selecione "
+"o número desejado de equipas e pernadas e pressione o "
+"botão \"Atribuir Variações\"."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
-msgstr ""
+msgstr "Equipa  {0}"
 
 #: ReportText.resx, RelayVariation_Title
 msgid "Relay Assignments for {0}"
-msgstr ""
+msgstr "Atribuições de Estafeta para {0}"
 
 #: SelectionDescriptionText.resx, AwayFromControl
 msgid "away from control"
-msgstr ""
+msgstr "longe do ponto de controlo"
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr ""
+msgstr "Densidade de Competidores:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
-msgstr ""
+msgstr "Pontos de controlo em uso:"
 
 #: SelectionDescriptionText.resx, ControlsNotInUse
 msgid "Controls not in use:"
-msgstr ""
+msgstr "Pontos de controlo sem uso:"
 
 #: SelectionDescriptionText.resx, Control_Plural
 msgid "controls"
-msgstr ""
+msgstr "pontos de controlo"
 
 #: SelectionDescriptionText.resx, Control_Singular
 msgid "control"
-msgstr ""
+msgstr "ponto de controlo"
 
 #: SelectionDescriptionText.resx, CourseList_AllCourses
 msgid "All courses"
-msgstr ""
+msgstr "Todos os percursos"
 
 #: SelectionDescriptionText.resx, CourseName
 msgid "Course \"{0}\""
-msgstr ""
+msgstr "Percurso \"{0}\""
 
 #: SelectionDescriptionText.resx, CustomizedSymbolDesc
 msgid "Customized symbol description"
-msgstr ""
+msgstr "Percurso \"{0}\""
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
-msgstr ""
+msgstr "pernada inteira"
 
 #: SelectionDescriptionText.resx, FinishFunnel
 msgid "finish funnel"
-msgstr ""
+msgstr "funil de chegada"
 
 #: SelectionDescriptionText.resx, Finish_Plural
 msgid "finishes"
-msgstr ""
+msgstr "chegadas"
 
 #: SelectionDescriptionText.resx, Finish_Singular
 msgid "finish"
-msgstr ""
+msgstr "chegada"
 
 #: SelectionDescriptionText.resx, Flagging
 msgid "Flagging:"
-msgstr ""
+msgstr "Balizamento"
 
 #: SelectionDescriptionText.resx, IntoControl
 msgid "into control"
-msgstr ""
+msgstr "no ponto de controlo"
 
 #: SelectionDescriptionText.resx, IntoFinishFunnel
 msgid "into finish funnel"
-msgstr ""
+msgstr "no funil de chegada"
 
 #: SelectionDescriptionText.resx, LineHeight
 msgid "Line height:"
-msgstr ""
+msgstr "Altura da linha"
 
 #: SelectionDescriptionText.resx, Location
 msgid "Location:"
@@ -3716,11 +3939,11 @@ msgstr "Localização:"
 
 #: SelectionDescriptionText.resx, MandCrossing_Plural
 msgid "mandatory crossing points"
-msgstr ""
+msgstr "pontos de passagem obrigatória"
 
 #: SelectionDescriptionText.resx, MandCrossing_Singular
 msgid "mandatory crossing point"
-msgstr ""
+msgstr "ponto de passagem obrigatória"
 
 #: SelectionDescriptionText.resx, None
 msgid "none"
@@ -3744,7 +3967,7 @@ msgstr "Partida"
 
 #: SelectionDescriptionText.resx, TextDescription
 msgid "Text description:"
-msgstr ""
+msgstr "Sinalética em texto"
 
 #: SelectionDescriptionText.resx, TextLine
 msgid "Text line"
@@ -3752,23 +3975,23 @@ msgstr "Linha de texto"
 
 #: SelectionDescriptionText.resx, TextLine_AboveAllCourses
 msgid "Appears above {0}, in all courses that contain {0}"
-msgstr ""
+msgstr "Aparece acima de {0}, em todos os percursos que contêm {0}"
 
 #: SelectionDescriptionText.resx, TextLine_AboveThisCourse
 msgid "Appears above {0}, in this course only"
-msgstr ""
+msgstr "Aparece acima de {0}, neste percurso apenas"
 
 #: SelectionDescriptionText.resx, TextLine_BelowAllCourses
 msgid "Appears below {0}, in all courses that contain {0}"
-msgstr ""
+msgstr "Aparece abaixo de {0}, em todos os percursos que contêm {0}"
 
 #: SelectionDescriptionText.resx, TextLine_BelowThisCourse
 msgid "Appears below {0}, in this course only"
-msgstr ""
+msgstr "Aparece abaixo de {0}, neste percurso apenas"
 
 #: SelectionDescriptionText.resx, TotalControls
 msgid "Total controls:"
-msgstr ""
+msgstr "Total de pontos de controlo:"
 
 #: SelectionDescriptionText.resx, TotalScore
 msgid "Total score:"
@@ -3796,7 +4019,7 @@ msgstr "Troca de mapa no {0}"
 
 #: SelectionDescriptionText.resx, Load
 msgid "Load:"
-msgstr ""
+msgstr "Carga:"
 
 #: SelectionDescriptionText.resx, UsedIn
 msgid "Used in:"
@@ -3812,10 +4035,62 @@ msgstr "Distância Calculada"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "pontos de troca de mapa"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
+msgstr "ponto de troca de mapa"
+
+#: SelectionDescriptionText.resx, MapFlipAtControl
+msgid "Map flip at {0}"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelArrowFirstControl.Text
+#: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowSecondControl.Text
+#: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
+msgid "è"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstControl.Text
+msgid "Select first control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondNewLocation.Text
+msgid "Choose new location for second control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelConfirmLocations.Text
+msgid "Confirm new locations"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelRotation.Text
+msgid "Rotation:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelYOffset.Text
+msgid "Y Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelXOffset.Text
+msgid "X Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondControl.Text
+msgid "Select second control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstNewLocation.Text
+msgid "Choose new location for first control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonBack.Text
+msgid "Back"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonConfirm.Text
+msgid "Confirm"
 msgstr ""
 
 #: SelectVariations.resx, comboBoxVariations.Items
@@ -3824,131 +4099,148 @@ msgstr "Cada Variante Separadamente"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr ""
+msgstr "Cada pernada de Estafeta Separadamente"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
-msgstr ""
+msgstr "Todas as Variações Combinadas"
 
 #: SelectVariations.resx, label1.Text
 msgid "Variations:"
-msgstr ""
+msgstr "Variações"
 
 #: SelectVariations.resx, labelAllVariations.Text
 msgid "Display all the forks together on a single map."
-msgstr ""
+msgstr "Exiba todas as dispersões juntas em um único mapa."
 
 #: SelectVariations.resx, labelSeparateVariations.Text
 msgid "One map for each possible variation through the course."
-msgstr ""
+msgstr "Um mapa para cada variação possível ao longo do percurso."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr ""
+msgstr "Um mapa para cada pernada nas equipas de estafeta que você "
+"escolher."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
 "Variations... from the Course menu."
-msgstr ""
+msgstr "Você deve primeiro definir as equipas de estafeta "
+"selecionando \"Variações de Equipe de Revezamento...\" no "
+"menu Percurso."
 
 #: SelectVariations.resx, checkBoxSelectIndividualVariations.Text
 msgid "Select Individual Variations"
-msgstr ""
+msgstr "Selecionar Variações Individualmente"
 
 #: SelectVariations.resx, labelNumberOfTeams.Text
 msgid "This course has {0} relay teams assigned. Use Relay Team "
 "Variations... from the Course menu to change the number of "
 "teams."
-msgstr ""
+msgstr "Este percurso tem {0} equipas de estafetas atribuídas. Use "
+"Variações de Equipa de Estafetas... no menu Percurso para "
+"alterar o número de equipas."
 
 #: SelectVariations.resx, label3.Text
 msgid "to"
-msgstr ""
+msgstr "para"
 
 #: SelectVariations.resx, label2.Text
 msgid "Select which teams to print/export:"
-msgstr ""
+msgstr "Selecione quais equipas imprimir/exportar:"
 
 #: SelectVariations.resx, $this.Text
 msgid "Choose Variations"
-msgstr ""
+msgstr "Selecionar Variações"
 
 #: SetPrintAreaDialog.resx, okButton.Text
 msgid "Done"
-msgstr ""
+msgstr "Concluído"
 
 #: SetPrintAreaDialog.resx, setPrintAreaLabel.Text
 msgid "Set the desired printing area by dragging with the mouse."
-msgstr ""
+msgstr "Defina a área de impressão desejada arrastando com o mouse."
 
 #: SetPrintAreaDialog.resx, groupBoxPaperSize.Text
 msgid "Paper Size"
-msgstr ""
+msgstr "Tamanho do Papel"
 
 #: SetPrintAreaDialog.resx, checkBoxAutomatic.Text
 msgid "Set Print Area Automatically"
-msgstr ""
+msgstr "Definir área de impressão automaticamente"
 
 #: SetPrintAreaDialog.resx, checkBoxFixSizeToPaper.Text
 msgid "Fix Print Area Size to Paper Size"
-msgstr ""
+msgstr "Ajustar o tamanho da área de impressão ao tamanho do papel"
 
 #: SetUILanguage.resx, introLabel.Text
 msgid "Select the language that you would like to use for the "
 "user interface of Purple Pen (menus, windows, etc.)"
-msgstr ""
+msgstr "Selecione o idioma que você gostaria de usar para a "
+"interface de usuário do Purple Pen (menus, janelas, etc.)"
 
 #: SetUILanguage.resx, $this.Text
 msgid "Program Language"
-msgstr ""
+msgstr "Idioma do Programa"
 
 #: StatusBarText.resx, DefaultStatus
 msgid "Left mouse button: select object;   Right mouse button: "
 "move map;   Scroll wheel: zoom in/out"
-msgstr ""
+msgstr "Botão esquerdo do mouse: seleciona objeto; Botão direito "
+"do mouse: mover o mapa; Roda de rolagem: zoom in/out"
 
 #: StatusBarText.resx, DefaultRectangle
 msgid "Left mouse button: move/size rectangle;   Right mouse "
 "button: move map;   Scroll wheel: zoom in/out"
-msgstr ""
+msgstr "Botão esquerdo do mouse: mover/dimensionar retângulo; "
+"Botão direito do mouse: mover o mapa; Roda de rolagem: "
+"zoom in/out"
 
 #: StatusBarText.resx, DragObject
 msgid "Hold down left mouse button and drag to move selected object"
-msgstr ""
+msgstr "Mantenha pressionado o botão esquerdo do mouse e arraste "
+"para mover o objeto selecionado"
 
 #: StatusBarText.resx, DragCorner
 msgid "Hold down left mouse button and drag corner point to move it"
-msgstr ""
+msgstr "Mantenha pressionado o botão esquerdo do mouse e arraste o "
+"ponto do canto para movê-lo"
 
 #: StatusBarText.resx, DraggingObject
 msgid "Move object to desired location and release mouse button"
-msgstr ""
+msgstr "Mova o objeto para o local desejado e solte o botão do mouse"
 
 #: StatusBarText.resx, DraggingCorner
 msgid "Move corner point to desired location and release mouse "
 "button"
-msgstr ""
+msgstr "Mova o ponto de canto para o local desejado e solte o "
+"botão do mouse"
 
 #: StatusBarText.resx, AddingControl
 msgid "Click left mouse button to place new control"
-msgstr ""
+msgstr "Clique no botão esquerdo do mouse para colocar um novo "
+"ponto de controlo"
 
 #: StatusBarText.resx, AddingExistingControl
 msgid "Click left mouse button to add existing control \"{0}\" to "
 "course"
-msgstr ""
+msgstr "Clique no botão esquerdo do mouse para adicionar o ponto "
+"de controlo existente \"{0}\" ao percurso"
 
 #: StatusBarText.resx, AddingStart
 msgid "Click left mouse button to place new start"
-msgstr ""
+msgstr "Clique no botão esquerdo do mouse para colocar uma nova "
+"partida"
 
 #: StatusBarText.resx, AddingExistingStart
 msgid "Click left mouse button to add existing start to course"
-msgstr ""
+msgstr "Clique no botão esquerdo do mouse para adicionar uma "
+"partida existente ao percurso"
 
 #: StatusBarText.resx, AddingFinish
 msgid "Click left mouse button to place new finish"
-msgstr ""
+msgstr "Clique com o botão esquerdo do mouse para colocar uma nova "
+"chegada"
 
 #: StatusBarText.resx, AddingExistingFinish
 msgid "Click left mouse button to add existing finish to course"
@@ -4027,8 +4319,8 @@ msgstr "Mover o bordo para o  local desejado e largar o botão do "
 #: StatusBarText.resx, AddingDescription
 msgid "Hold down left mouse button and drag to create control "
 "descriptions"
-msgstr "Segure o botão esquerdo do rato e arraste para criar "
-"descrição dos postos de controlo"
+msgstr "Segure o botão esquerdo do rato e arraste para criar a "
+"sinalética"
 
 #: StatusBarText.resx, RotatingObject
 msgid "Click left mouse button when the crossing point is rotated "
@@ -4072,49 +4364,63 @@ msgstr "Segure o botão esquerdo do rato e arraste para criar o "
 #: StatusBarText.resx, DraggingTopologyObject
 msgid "Drag control number to reorder it in the course (hold "
 "shift to duplicate)"
-msgstr ""
+msgstr "Arraste o número do controlo para reordená-lo no percurso "
+"(segure shift para duplicar)"
 
 #: StatusBarText.resx, AddingExistingMapIssue
 msgid "Click left mouse button to add existing map issue point to "
 "course"
-msgstr ""
+msgstr "Clique no botão esquerdo do mouse para adicionar um ponto "
+"de troca de mapa existente ao percurso"
 
 #: StatusBarText.resx, AddingMapIssue
 msgid "Click left mouse button to place new map issue point"
-msgstr ""
+msgstr "Clique no botão esquerdo do mouse para posicionar o novo "
+"ponto de troca de mapa"
 
 #: StatusBarText.resx, StretchingObject
 msgid "Hold down left mouse button and drag to stretch the "
 "stretch the crossing point"
+msgstr "Segure o botão esquerdo do mouse e arraste para ajustar o "
+"ponto de cruzamento"
+
+#: StatusBarText.resx, ControlForMoveAllControls
+msgid "Click the left mouse button on a control or registration "
+"mark to move to a new location"
+msgstr ""
+
+#: StatusBarText.resx, NewLocationForMoveAllControls
+msgid "Click the left mouse button on the new location for the "
+"control or registration mark"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."
-msgstr ""
+msgstr "Exportar..."
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr ""
+msgstr "Número de pernadas:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
-msgstr ""
+msgstr "Atribuir Variações"
 
 #: TeamVariationsForm.resx, label1.Text
 msgid "Number of teams:"
-msgstr ""
+msgstr "Número de equipas:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
-msgstr ""
+msgstr "Atribuir pernadas fixas para variantes..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "
-msgstr ""
+msgstr "Os números de equipa começam em: "
 
 #: TeamVariationsForm.resx, checkBoxHideVariationsFromMap.Text
 msgid "Hide variation codes on map"
-msgstr ""
+msgstr "Ocultar códigos de variação no mapa"
 
 #: TeamVariationsForm.resx, saveFileDialog.Filter
 msgid "IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv"
@@ -4134,9 +4440,10 @@ msgstr "Os seguintes postos de controlo não são usados em nenhum "
 
 #: ViewAdditionalCourses.resx, labelInstructions.Text
 msgid "Choose additional courses to view with course \"{0}\"."
-msgstr ""
+msgstr "Escolha percursos adicionais para visualizar com o "
+"percurso \"{0}\"."
 
 #: ViewAdditionalCourses.resx, $this.Text
 msgid "View Additional Courses"
-msgstr ""
+msgstr "Visualizar Percursos Adicionais"
 

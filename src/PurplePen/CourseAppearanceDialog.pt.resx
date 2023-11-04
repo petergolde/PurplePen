@@ -154,7 +154,7 @@
     <value>Negrito</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
-    <value>Tipo de letra do número do pnsto de controlo:</value>
+    <value>Tipo de letra do número do ponto de controlo:</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
     <value>Altura do número do ponto de controlo:</value>
@@ -218,6 +218,9 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Utiliza efeito de impressão sobreposta para cores marcadas com "sobrepor" ("overprint")</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Avançado</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personalizar aparência</value>

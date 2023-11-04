@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Pořadí</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Velikost</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Sloupce:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Řádky:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Velikost</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Rozložení průkazky</value>

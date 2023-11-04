@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Anordnung der Kontrollfelder</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Größe</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Spalten:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Zeilen:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Größe</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kontrollkartenlayout</value>

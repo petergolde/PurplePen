@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Hely sorrend</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Méret</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Oszlopok:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Sorok:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Méret</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Karton elrendezés</value>

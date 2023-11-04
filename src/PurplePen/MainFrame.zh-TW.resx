@@ -168,11 +168,17 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>建立 RouteGadget 檔案(&amp;G)...</value>
   </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>建立路線審查檔案</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>建立資料交換檔案 (IOF XML)(&amp;I)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>建立 GPX 檔案(&amp;P)...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>建立KML檔案</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>列印檢查點說明(&amp;P)...</value>
@@ -366,6 +372,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>橢圓模式</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>新增</value>
   </data>
@@ -388,13 +397,16 @@
     <value>2004檢查點說明規範</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>2018檢查點說明規範</value>
+    <value>2018/2024檢查點說明規範</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM 2000地圖繪製規範</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM 2017地圖繪製規範</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019繪圖標準</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOF 規範</value>
@@ -458,6 +470,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>旋轉</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>放大</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>沒有標記</value>
@@ -662,6 +677,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>矩形</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>橢圓模式</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>增加特定項目</value>

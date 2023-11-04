@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Kolejność prostokątów</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Rozmiar</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Kolumny:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Wiersze:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Rozmiar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Układ karty do perforacji</value>

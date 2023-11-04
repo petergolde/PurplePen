@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="boxOrderGroupBox.Text" xml:space="preserve">
+    <value>Kutu  Ekleme</value>
+  </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Boyut</value>
+  </data>
+  <data name="columnsLabel.Text" xml:space="preserve">
+    <value>Sütunlar:</value>
+  </data>
+  <data name="rowsLabel.Text" xml:space="preserve">
+    <value>Satırlar:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Delikli Kart Düzeni</value>
+  </data>
 </root>

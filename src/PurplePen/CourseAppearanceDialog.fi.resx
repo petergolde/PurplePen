@@ -219,6 +219,9 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>"Overprint"-värit läpikuultavina</value>
   </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Lisäasetukset</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muokkaa ulkoasua</value>
   </data>

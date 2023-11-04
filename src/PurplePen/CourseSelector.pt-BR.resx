@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="selectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="selectNone.Text" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="buttonChooseVariations.Text" xml:space="preserve">
+    <value>Escolher Variações...</value>
+  </data>
 </root>

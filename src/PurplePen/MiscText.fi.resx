@@ -613,6 +613,12 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="LegAssignedOuterBranch" xml:space="preserve">
     <value>Osuus {0} ei koskaan saavuta hajontaa '{1}': Se on määrätty menemään eri tavalla ulommassa hajonnassa.</value>
   </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Aseta ellipsin ulkoasu. Paina OK, minkä jälkeen paina hiiren vasen painike pohjaan ja vedä sijoittaaksesi ellipsin haluamaasi kohtaan kartalle.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Lisää ellipsi</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
   </data>

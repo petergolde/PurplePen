@@ -136,37 +136,37 @@
     <value>Köşeyi istediğiniz konuma taşıyın ve fare tuşunu bırakın</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
-    <value>Yeni kontrolü yerleştirmek için sol fare tuşunu tıklayın.</value>
+    <value>Yeni kontrolü yerleştirmek için sol fare tuşunu tıklayın</value>
   </data>
   <data name="AddingExistingControl" xml:space="preserve">
-    <value>Varolan "{0}" kontrolü parkura eklemek için farenizin sol tuşuna tıklayın.</value>
+    <value>Varolan "{0}" kontrolü parkura eklemek için farenizin sol tuşuna tıklayın</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
     <value>Yeni başlatmak için sol fare tuşunu tıklayın</value>
   </data>
   <data name="AddingExistingStart" xml:space="preserve">
-    <value>Mevcut başlangıca kursa eklemek için farenizin sol tuşuna tıklayın.</value>
+    <value>Mevcut başlangıca kursa eklemek için farenizin sol tuşuna tıklayın</value>
   </data>
   <data name="AddingFinish" xml:space="preserve">
     <value>Yeni bitirmek için sol fare düğmesini tıklayın</value>
   </data>
   <data name="AddingExistingFinish" xml:space="preserve">
-    <value>Mevcut bitirmeyi rotaya eklemek için farenizin sol tuşuna tıklayın.</value>
+    <value>Mevcut bitirmeyi rotaya eklemek için farenizin sol tuşuna tıklayın</value>
   </data>
   <data name="AddingCrossingPoint" xml:space="preserve">
     <value>Zorunlu yeni geçiş noktasını yerleştirmek için sol fare düğmesini tıklayın</value>
   </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
-    <value>Mevcut zorunlu geçiş noktasını rotaya eklemek için sol fare tuşunu tıklayın.</value>
+    <value>Mevcut zorunlu geçiş noktasını rotaya eklemek için sol fare tuşunu tıklayın</value>
   </data>
   <data name="AddingObject" xml:space="preserve">
-    <value>Yeni nesne yerleştirmek için sol fare tuşunu tıklayın.</value>
+    <value>Yeni nesne yerleştirmek için sol fare tuşunu tıklayın</value>
   </data>
   <data name="AddingBend" xml:space="preserve">
     <value>Viraj yerinde sol fare tuşunu tıklayın</value>
   </data>
   <data name="AddingCorner" xml:space="preserve">
-    <value>Yeni bir köşe eklemek için sol fare tuşunu tıklayın.</value>
+    <value>Yeni bir köşe eklemek için sol fare tuşunu tıklayın</value>
   </data>
   <data name="DeletingBend" xml:space="preserve">
     <value>Bir virajı kaldırmak için farenin sol tuşuna tıklayın</value>
@@ -205,7 +205,7 @@
     <value>Sol fare tuşunu basılı tutun ve metin oluşturmak için sürükleyin</value>
   </data>
   <data name="AddingExistingMapExchange" xml:space="preserve">
-    <value>Var olan harita değişimini rotaya eklemek için farenizin sol tuşuna tıklayın.</value>
+    <value>Var olan harita değişimini rotaya eklemek için farenizin sol tuşuna tıklayın</value>
   </data>
   <data name="AddingMapExchange" xml:space="preserve">
     <value>Yeni harita değişimi yapmak için farenizin sol tuşuna tıklayın</value>
@@ -218,5 +218,14 @@
   </data>
   <data name="DraggingTopologyObject" xml:space="preserve">
     <value>Parkur numaralarını yeniden sıralamak için sürükleyin (Çoğaltmak için Kaydıra basılı tutunuz)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Harita basımında rotayı eklemek için farenin sol düğmesine basınız</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Yeni harita dağıtım noktası yerleştirmek için farenin sol düğmesine tıklayınız</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Geçiş noktasını uzatmak için farenin sol tuşuna basılı tatarak sürükleyin</value>
   </data>
 </root>

@@ -147,6 +147,9 @@
   <data name="relayLegMenuItem.Text" xml:space="preserve">
     <value>Bayrak Yarışı Ayağı</value>
   </data>
+  <data name="fileNameMenuItem.Text" xml:space="preserve">
+    <value>Dosya Adı</value>
+  </data>
   <data name="mapFileNameMenuItem.Text" xml:space="preserve">
     <value>Harita Dosya Adı</value>
   </data>
@@ -174,13 +177,16 @@
   <data name="labelFontSizeMm.Text" xml:space="preserve">
     <value>mm</value>
   </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Otomarik</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Örnek</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Metin</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Özel Metin Giriniz</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Metin</value>
   </data>
 </root>

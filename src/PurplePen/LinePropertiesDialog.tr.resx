@@ -120,6 +120,12 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Renk:</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Renk Değiştir...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
   <data name="comboBoxStyle.Items" xml:space="preserve">
     <value>Tek</value>
   </data>

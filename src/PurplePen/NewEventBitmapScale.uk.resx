@@ -117,7 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>Коли у якості карти використовується файл зображення, необхідно вказати роздільність зображення та масштаб карти. 
+
+Роздільність зображення вказує на те скільки пікселів або точок зображення міститься у кожному дюймі друкованої карти; зазвичай вимірюється у dots per inch або "dpi".
+
+масштаб карти вказує на співвідношення між друкованою картою і реальним світом.
+</value>
+  </data>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Роздільна здатність зображення:</value>
+  </data>
   <data name="dpiLabel.Text" xml:space="preserve">
     <value>точок на дюйм</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Масштаб карти:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Роздільна здатність растрового зображення</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>При використанні PDF файла у якості карти, необхідно вказати масштаб карти. 
+
+Масштаб карти вказує на співвідношення між друкованою картою та реальним світом.
+</value>
   </data>
 </root>

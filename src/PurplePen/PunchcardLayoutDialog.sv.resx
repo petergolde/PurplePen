@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Stämpelrutornas ordning</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Storlek</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Kolumner:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Rader:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Storlek</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Stämpelkort layout</value>

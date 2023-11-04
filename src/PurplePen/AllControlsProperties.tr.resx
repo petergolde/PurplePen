@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Görüntü Açıklaması</value>
+    <value>Görüntü açıklaması:</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
-    <value>Harita Baskı Ölçeği</value>
+    <value>Harita Baskı Ölçeği:</value>
   </data>
   <data name="oneToPrefix.Text" xml:space="preserve">
     <value>1 : </value>

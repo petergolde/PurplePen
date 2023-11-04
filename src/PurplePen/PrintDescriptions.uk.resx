@@ -117,8 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Змінити поля...</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Таблоїд (11"x17")</value>
+  </data>
+  <data name="paperSizeLabel.Text" xml:space="preserve">
+    <value>Розмір сторінки:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>Верхнє: 0.55", Нижнє: 0.55", Ліве: 0.55", Праве: 0.55"</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Поля:</value>
+  </data>
+  <data name="orientation.Text" xml:space="preserve">
+    <value>Альбомна</value>
+  </data>
+  <data name="orientationLabel.Text" xml:space="preserve">
+    <value>Орієнтація:</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Назва принтера</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Змінити принтер...</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Принтер:</value>
+  </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Вивід</value>
+  </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>Як і на картах</value>
   </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Піктограми</value>
@@ -126,8 +159,17 @@
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
     <value>Текст</value>
   </data>
+  <data name="descriptionKindCombo.Items3" xml:space="preserve">
+    <value>Піктограми та текст</value>
+  </data>
+  <data name="descriptionTypeLabel.Text" xml:space="preserve">
+    <value>Вид легенд:</value>
+  </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>мм</value>
+  </data>
+  <data name="lineSizeLabel.Text" xml:space="preserve">
+    <value>Висота рядка:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Вигляд</value>
@@ -135,7 +177,34 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Скасувати</value>
   </data>
+  <data name="printButton.Text" xml:space="preserve">
+    <value>Друкувати</value>
+  </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Попередній перегляд...</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Дистанції</value>
+  </data>
+  <data name="descriptionsLabel.Text" xml:space="preserve">
+    <value>легенд на дистанцію</value>
+  </data>
+  <data name="copiesCombo.Items" xml:space="preserve">
+    <value>одна копія для кожної дистанції</value>
+  </data>
+  <data name="copiesCombo.Items1" xml:space="preserve">
+    <value>одна сторінка для кожної дистанції</value>
+  </data>
+  <data name="copiesCombo.Items2" xml:space="preserve">
+    <value>кілька сторінок для кожної дистанції</value>
+  </data>
+  <data name="whatToPrintLabel.Text" xml:space="preserve">
+    <value>Друк:</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Копії</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Друкувати легенди</value>
   </data>
 </root>

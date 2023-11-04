@@ -117,4 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Ліва кнопка миші: вибрати об'єкт; Права кнопка миші: рухати карту; Коліщатко: наблизити/віддалити</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Ліва кнопка миші: рухати/змінити розмір прямокутника;   Права кнопка миші: рухати карту;   Коліщатко: наблизити/віддалити</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та перетащіть мишку, щоб рухати виділений об'єкт</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Утримуйте ліву кнопку мишки та перетащіть вузлову точку, щоб змінити її позицію</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Перемістіть об'єкт в бажане місце та відпустіть кнопку</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Перемістіть вузлову точку в бажане місце та відпустіть кнопку</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб розмістити новий КП</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб додати існуючий КП "{0}" на дистанцію</value>
+  </data>
+  <data name="AddingStart" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щлб розмістити новий старт</value>
+  </data>
+  <data name="AddingExistingStart" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб додати існуючий старт до дистанції</value>
+  </data>
+  <data name="AddingFinish" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб розмістити новий фініш</value>
+  </data>
+  <data name="AddingExistingFinish" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб додати існуючий фініш до дистанціїї</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб розмістити новий обов'язковий пункт перетину</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб додати існуючий пункт перетину до дистанції</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб розмістити новий об'єкт</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб розмістити вигин</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб додати новий кут</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки на вигин, щоб видалити його</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки на кут, щоб видалити його</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки на коло КП, щоб додати невеликий розріз; утримуйте ліву кнопку та проведіть мишкою, щоб створити більший розріз</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки на розріз у колі КП, щоб видалити його</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки щоб створити невеликий розріз; утримуйте ліву кнопку та проведіть мишкою, щоб створити більший розріз на з'єднувальній лінії</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки на розрізі на з'єднувальній лінії, щоб видалити його</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та проведіть мишкою, щоб змінювати розмір вибраного об'єкту</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Перемістіть край(ї) у потрібне місце та відпустіть кнопку миші</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та проведіть мишкою, щоб створити таблицю легенд</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки коли пункт перетину повернуто у вірному напрямку</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та проведіть мишкою, щоб додати лінійний сегмент; клацніть лівою кнопкою мишки щоб завершити додавання об'єкта</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та проведіть мишкою, щоб створити текст</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки, щоб додати існуючий пункт зміни карт на дистанцію</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки, щоб розмістити новий пункт зміни карт</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки, щоб додати зміну карти на КП "{0}" </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та проведіть мишкою, щоб створити об'єкт</value>
+  </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Потягніть за номер КП, щоб змінити їх порядок у дистанції (утримуйте Shift щоб продублювати)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки, щоб додати існуючий пункт зміни карт на дистанцію</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Клацніть лівою кнопкою мишки, щоб розмістити існуючий пункт зміни карт</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Утримуйте ліву кнопку та проведіть мишкою, щоб розтягнути пункт перетину</value>
+  </data>
 </root>

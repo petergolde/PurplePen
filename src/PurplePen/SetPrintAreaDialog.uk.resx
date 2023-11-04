@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Готово</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Скасувати</value>
+  </data>
+  <data name="setPrintAreaLabel.Text" xml:space="preserve">
+    <value>Вберіть область друку, перетягуючи її мишкою.</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Розмір аркуша</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Визначити область друку автоматично</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Закріпити області друку відповідно до розміру аркуша</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Задати область друку</value>

@@ -117,10 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>Bir görüntü dosyasını harita olarak kullanırken, görüntünün çözünürlüğünü ve harita ölçeğini belirtmelisiniz.
+
+Görüntünün çözünürlüğü, kağıt haritasındaki her inç için görüntüde piksellerin veya noktaların nasıl olabileceğini gösterir; genellikle inç başına nokta veya "dpi" olarak adlandırılır.
+
+Haritanın ölçeği, kağıt harita ile gerçek dünya arasındaki ilişkiyi gösterir.
+</value>
+  </data>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Resim çözünürlüğü:</value>
+  </data>
   <data name="dpiLabel.Text" xml:space="preserve">
     <value>inç başına nokta sayısı</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1:</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Harita ölçeği:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Bitmap Çözünürlüğü</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Bir PDF dosyasını harita olarak kullanırken harita ölçeğini belirtmelisiniz.
+
+Haritanın ölçeği, kağıt harita ile gerçek dünya arasındaki ilişkiyi gösterir.
+</value>
   </data>
 </root>

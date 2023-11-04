@@ -141,9 +141,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Creare Fișiere &amp;OCAD...</value>
   </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Creare Fișiere RouteGadget...</value>
-  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Tipărire Descriere...</value>
   </data>
@@ -332,9 +329,6 @@
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Adăugare Spațiu &amp;Gol</value>
-  </data>
-  <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Ștergere Spațiu G&amp;ol</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Schimbare &amp;Text...</value>

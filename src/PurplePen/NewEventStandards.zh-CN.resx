@@ -123,6 +123,9 @@
   <data name="labelTitle.Text" xml:space="preserve">
     <value>国际定联标准</value>
   </data>
+  <data name="radioButtonMapSpr2019.Text" xml:space="preserve">
+    <value>ISSprOM 2019</value>
+  </data>
   <data name="radioButtonMap2017.Text" xml:space="preserve">
     <value>ISOM 2017</value>
   </data>
@@ -133,7 +136,7 @@
     <value>国际定联制图标准</value>
   </data>
   <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
-    <value>检查点说明标准2018</value>
+    <value>检查点说明标准2018/2024</value>
   </data>
   <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
     <value>检查点说明标准2004</value>

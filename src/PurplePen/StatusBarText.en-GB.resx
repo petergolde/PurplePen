@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Click left mouse button to place new map issue point</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Hold down left mouse button and drag to stretch the stretch the crossing point</value>
+  </data>
 </root>

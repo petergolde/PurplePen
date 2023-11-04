@@ -171,10 +171,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Przykład</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Opis</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Wstaw Tekst Specjalny</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Opis</value>
   </data>
 </root>

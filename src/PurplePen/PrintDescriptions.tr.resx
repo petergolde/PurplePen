@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="marginChange.Text" xml:space="preserve">
+    <value>Kenar Boşluğunu Değiştir...</value>
+  </data>
+  <data name="paperSize.Text" xml:space="preserve">
+    <value>Tablet (11"x17")</value>
+  </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
-    <value>Kağıt boyutu...</value>
+    <value>Kağıt Boyutu:</value>
+  </data>
+  <data name="margins.Text" xml:space="preserve">
+    <value>Üst: 0,55", Alt: 0,55", Sol: 0,55", Sağ: 0,55"</value>
+  </data>
+  <data name="marginsLabel.Text" xml:space="preserve">
+    <value>Kenar Boşluğu ({0})</value>
+  </data>
+  <data name="orientation.Text" xml:space="preserve">
+    <value>Düzenlemek</value>
+  </data>
+  <data name="orientationLabel.Text" xml:space="preserve">
+    <value>Yönlendirme:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Yazıcı Adı</value>
@@ -132,14 +150,26 @@
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Çıktı</value>
   </data>
+  <data name="descriptionKindCombo.Items" xml:space="preserve">
+    <value>Parkur varsayılanı</value>
+  </data>
   <data name="descriptionKindCombo.Items1" xml:space="preserve">
     <value>Semboller</value>
   </data>
   <data name="descriptionKindCombo.Items2" xml:space="preserve">
     <value>Metin</value>
   </data>
+  <data name="descriptionKindCombo.Items3" xml:space="preserve">
+    <value>Sembol &amp; Metin</value>
+  </data>
+  <data name="descriptionTypeLabel.Text" xml:space="preserve">
+    <value>Açıklama türü:</value>
+  </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>mm</value>
+  </data>
+  <data name="lineSizeLabel.Text" xml:space="preserve">
+    <value>Çizgi Boyutu:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
     <value>Görünüm</value>
@@ -155,6 +185,18 @@
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Parkur</value>
+  </data>
+  <data name="descriptionsLabel.Text" xml:space="preserve">
+    <value>parkur başına açıklamalar</value>
+  </data>
+  <data name="copiesCombo.Items" xml:space="preserve">
+    <value>her parkur için bir kopya</value>
+  </data>
+  <data name="copiesCombo.Items1" xml:space="preserve">
+    <value>her parkur için bir sayfa</value>
+  </data>
+  <data name="copiesCombo.Items2" xml:space="preserve">
+    <value>her parkur için birden fazla sayfa</value>
   </data>
   <data name="whatToPrintLabel.Text" xml:space="preserve">
     <value>Yazdır:</value>

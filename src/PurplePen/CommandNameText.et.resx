@@ -306,4 +306,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Määra kaardi standard</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Venita</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Avalda Liveloxis</value>
+  </data>
 </root>

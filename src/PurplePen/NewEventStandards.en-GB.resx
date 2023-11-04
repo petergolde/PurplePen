@@ -123,6 +123,9 @@
   <data name="labelTitle.Text" xml:space="preserve">
     <value>IOF Standards</value>
   </data>
+  <data name="radioButtonMapSpr2019.Text" xml:space="preserve">
+    <value>ISSprOM 2019</value>
+  </data>
   <data name="radioButtonMap2017.Text" xml:space="preserve">
     <value>ISOM 2017</value>
   </data>
@@ -133,7 +136,7 @@
     <value>IOF Map Standard</value>
   </data>
   <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
-    <value>Descriptions 2018</value>
+    <value>Descriptions 2018 or 2024</value>
   </data>
   <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
     <value>Descriptions 2004</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.4.0\n"
+"Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2022-08-10 14:51-07:00\n"
+"POT-Creation-Date: 2023-11-03 16:44-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -68,11 +68,6 @@ msgstr "Legendi kujundus :"
 msgid "Map printing scale:"
 msgstr "Trükikaardi mastaap :"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1 : "
-
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
 #: PrintDescriptions.resx, descriptionKindCombo.Items1
@@ -121,7 +116,7 @@ msgstr "Tunnus ja väärtus 145(30))"
 
 #: AddCourse.resx, labelKindCombo.Items5
 msgid "Score (30)"
-msgstr ""
+msgstr "Skoor (30)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -154,14 +149,19 @@ msgstr "(ära näita)"
 msgid "Appearance"
 msgstr "Välimus"
 
-#: AddCourse.resx, secondaryTitleDescription.Text
-msgid "The following (optional) text will appear on the second "
-"line of the control description sheet:"
-msgstr "Järgnev (täiendav) tekst lisatakse legendi teisele reale:"
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
 
 #: AddCourse.resx, secondaryTitleGroup.Text
 msgid "Class list / Secondary title"
 msgstr "Klasside nimekiri / Teine pealkiri"
+
+#: AddCourse.resx, secondaryTitleDescription.Text
+msgid "The following (optional) text will appear on the second "
+"line of the control description sheet:"
+msgstr "Järgnev (täiendav) tekst lisatakse legendi teisele reale:"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -413,6 +413,7 @@ msgid "Resolution:"
 msgstr "Eraldusvõime:"
 
 #: ChangeMapFile.resx, labelScale.Text
+#: SelectLocationsForMove.resx, labelScale.Text
 msgid "Scale:"
 msgstr "Mastaap:"
 
@@ -775,7 +776,6 @@ msgid "Customize Course Appearance"
 msgstr "Muuda raja sümbolite väljanägemist"
 
 #: CommandNameText.resx, AddMapExchange
-#: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
 msgstr "Lisa kaardivahetus"
 
@@ -824,10 +824,20 @@ msgstr "Määra kaardi standard"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
-msgstr ""
+msgstr "Venita"
 
 #: CommandNameText.resx, SetLiveloxImportableEventId
 msgid "Publish to Livelox"
+msgstr "Avalda Liveloxis"
+
+#: CommandNameText.resx, MoveAllControls
+#: MoveAllControls.resx, $this.Text
+#: SelectLocationsForMove.resx, $this.Text
+msgid "Move All Controls"
+msgstr ""
+
+#: CommandNameText.resx, AddMapFlip
+msgid "Add Map Flip"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -919,7 +929,7 @@ msgstr "Kasuta ületrüki effekti värvidele tunnusega \"ületrükk\""
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "Advanced"
-msgstr ""
+msgstr "Täpsemalt"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -1031,6 +1041,7 @@ msgstr "Tee"
 #: OverwritingOcadFilesDialog.resx, buttonCancel.Text
 #: PrintDescriptions.resx, cancelButton.Text
 #: PrintPunches.resx, cancelButton.Text
+#: SelectLocationsForMove.resx, buttonCancel.Text
 #: SetPrintAreaDialog.resx, cancelButton.Text
 msgid "Cancel"
 msgstr "Katkesta"
@@ -1041,6 +1052,15 @@ msgstr "Katkesta"
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Vali kaust OCADi failide jaoks"
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Väljund"
 
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
@@ -1127,15 +1147,6 @@ msgstr "RGB"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Väljund"
-
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
@@ -1144,13 +1155,13 @@ msgstr "Väljund"
 msgid "Select folder..."
 msgstr "Vali kaust..."
 
-#: CreateImageFiles.resx, otherDirectory.Text
-#: CreateKmlFiles.resx, otherDirectory.Text
-#: CreateOcadFiles.resx, otherDirectory.Text
-#: CreatePdfCourses.resx, otherDirectory.Text
-#: CreateRouteGadget.resx, otherDirectory.Text
-msgid "Other folder"
-msgstr "Teine kaust"
+#: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "Kausta kus asub Purple Pen fail"
 
 #: CreateImageFiles.resx, mapDirectory.Text
 #: CreateKmlFiles.resx, mapDirectory.Text
@@ -1160,13 +1171,13 @@ msgstr "Teine kaust"
 msgid "Same folder as map file"
 msgstr "Kausta kus asub kaardi fail"
 
-#: CreateImageFiles.resx, coursesDirectory.Text
-#: CreateKmlFiles.resx, coursesDirectory.Text
-#: CreateOcadFiles.resx, coursesDirectory.Text
-#: CreatePdfCourses.resx, coursesDirectory.Text
-#: CreateRouteGadget.resx, coursesDirectory.Text
-msgid "Same folder as Purple Pen file"
-msgstr "Kausta kus asub Purple Pen fail"
+#: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Teine kaust"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
 #: CreateKmlFiles.resx, folderGroupBox.Text
@@ -1197,7 +1208,7 @@ msgstr "Üks raja kohta"
 
 #: CreateKmlFiles.resx, $this.Text
 msgid "Create KML File"
-msgstr "Tee OCADi failid"
+msgstr "Loo KML fail"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1531,15 +1542,11 @@ msgstr "Salvesta P&DF'id"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
-msgstr "Salvesta Route&Gadget failid..."
-
-#: MainFrame.resx, publishToLiveloxMenu.Text
-msgid "Publish to Livelox..."
-msgstr ""
+msgstr "Loo RouteGadget failid..."
 
 #: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
 msgid "Create Route Review Files"
-msgstr ""
+msgstr "Loo raja analüüsi failid"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1551,7 +1558,7 @@ msgstr "Salvesta G&PX fail..."
 
 #: MainFrame.resx, createKMLFileMenu.Text
 msgid "Create &KML File..."
-msgstr ""
+msgstr "Salvesta &KML fail..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1734,16 +1741,20 @@ msgstr "&Finiš"
 msgid "&Descriptions"
 msgstr "&Legendid"
 
+#: MainFrame.resx, addMapFlipMenuItem.Text
+msgid "Map &Flip at Control Point"
+msgstr ""
+
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
 msgstr "Kaardivahetus on &kontrollpunktis"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
+msgid "Flagged &Route to Map Exchange"
 msgstr "&Märgitud rada kaardivahetusse"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map E&xchange"
+msgid "Map Flip/E&xchange"
 msgstr "Kaardivahetus"
 
 #: MainFrame.resx, addVariationMenu.Text
@@ -1839,7 +1850,7 @@ msgstr "Ristkülik"
 #: MainFrame.resx, addEllipseMenu.Text
 #: MainFrame.resx, ellipseToolStripMenuItem.Text
 msgid "Ellipse"
-msgstr ""
+msgstr "Ellips"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1861,6 +1872,10 @@ msgstr "Automaatne &nummerdamine"
 msgid "Remove &Unused Controls..."
 msgstr "Eemalda &kasutamata KPd..."
 
+#: MainFrame.resx, moveAllControlsMenu.Text
+msgid "Mo&ve All Controls..."
+msgstr ""
+
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
 msgstr "&Kompostri jäljendid..."
@@ -1870,8 +1885,8 @@ msgid "2004 Description Standard"
 msgstr "2004 a legendi standard"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
-msgid "2018 Description Standard"
-msgstr "2018 a legendi standard"
+msgid "2018/2024 Description Standard"
+msgstr "2018/2024 a legendi standard"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
@@ -1883,7 +1898,7 @@ msgstr "ISOM2017 kaardi standard"
 
 #: MainFrame.resx, mapStdSpr2019Menu.Text
 msgid "ISSprOM 2019 Map Standard"
-msgstr ""
+msgstr "ISSprOM 2019 Kaardi standard"
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
@@ -1951,7 +1966,7 @@ msgstr "Lisa &katkestus"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove Ga&p"
-msgstr "Eemalda K&atkestus"
+msgstr "Eemalda katkestus"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
@@ -1967,7 +1982,7 @@ msgstr "&Pööra"
 
 #: MainFrame.resx, stretchMenu.Text
 msgid "&Stretch"
-msgstr ""
+msgstr "Venita"
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -2081,6 +2096,10 @@ msgstr "Aruande test"
 msgid "Font Metrics"
 msgstr "Font Metrics"
 
+#: MainFrame.resx, missingTranslationsMenuItem.Text
+msgid "Missing Description Translations"
+msgstr ""
+
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
 msgstr "Krahh"
@@ -2156,6 +2175,10 @@ msgstr "Lisa KP (Ctrl+A)"
 msgid "Add Descriptions"
 msgstr "Lisa legend"
 
+#: MainFrame.resx, mapFlipMenuItem.Text
+msgid "Map Flip at Control Point"
+msgstr ""
+
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
 msgstr "Kaardivahetus kontrollpunktis"
@@ -2163,6 +2186,10 @@ msgstr "Kaardivahetus kontrollpunktis"
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
 msgstr "Tähistatud rada kaardivahetusse"
+
+#: MainFrame.resx, mapExchangeToolStripMenu.Text
+msgid "Add Map Flip/Exchange"
+msgstr "Lisa kaardivahetus"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
@@ -2922,11 +2949,12 @@ msgstr "Vahetus {0} ei jõua kunagi harusse '{1}': see on määratud "
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
 "the mouse to place the ellipse in the desired location."
-msgstr ""
+msgstr "Seadista ellipsi visuaal. Peale OK nupule vajutamist "
+"lohista hiirega ellips soovitud kohale."
 
 #: MiscText.resx, AddEllipseTitle
 msgid "Add Ellipse"
-msgstr ""
+msgstr "Lisa ellips"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2951,6 +2979,26 @@ msgstr "Kaardi fail \"{0}\" kasutab fonte, mis ei ole installeeritud "
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
 msgstr "Puuduvad fondid"
+
+#: MoveAllControls.resx, labelDescription.Text
+msgid "Which way would you like to move all controls on the map?"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMove.Text
+msgid "Move Only"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndScale.Text
+msgid "Move and Scale"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndRotate.Text
+msgid "Move and Rotate"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveRotateScale.Text
+msgid "Move, Scale, and Rotate"
+msgstr ""
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3115,7 +3163,7 @@ msgstr "IOF Standardid"
 
 #: NewEventStandards.resx, radioButtonMapSpr2019.Text
 msgid "ISSprOM 2019"
-msgstr ""
+msgstr "ISSprOM 2019"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
@@ -3130,8 +3178,8 @@ msgid "IOF Map Standard"
 msgstr "IOF Kaardi standard"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
-msgid "Descriptions 2018"
-msgstr "Legendid 2018"
+msgid "Descriptions 2018 or 2024"
+msgstr "Legendid 2018/2024"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
@@ -3401,6 +3449,10 @@ msgstr "Trüki kompostri kaardid"
 msgid "Box Order"
 msgstr "Ruutude järjekord"
 
+#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
+msgid "Size"
+msgstr "Suurus"
+
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
 msgstr "Veerud:"
@@ -3408,10 +3460,6 @@ msgstr "Veerud:"
 #: PunchcardLayoutDialog.resx, rowsLabel.Text
 msgid "Rows:"
 msgstr "Read:"
-
-#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
-msgid "Size"
-msgstr "Suurus"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
@@ -3907,6 +3955,58 @@ msgstr "kaardivahetuspunktid"
 msgid "map issue point"
 msgstr "kaardivahetuspunkt"
 
+#: SelectionDescriptionText.resx, MapFlipAtControl
+msgid "Map flip at {0}"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelArrowFirstControl.Text
+#: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowSecondControl.Text
+#: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
+msgid "è"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstControl.Text
+msgid "Select first control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondNewLocation.Text
+msgid "Choose new location for second control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelConfirmLocations.Text
+msgid "Confirm new locations"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelRotation.Text
+msgid "Rotation:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelYOffset.Text
+msgid "Y Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelXOffset.Text
+msgid "X Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondControl.Text
+msgid "Select second control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstNewLocation.Text
+msgid "Choose new location for first control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonBack.Text
+msgid "Back"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonConfirm.Text
+msgid "Confirm"
+msgstr ""
+
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
 msgstr "Iga variant eraldi"
@@ -4173,6 +4273,17 @@ msgstr "Hiire vasaku nupule klõpsates lisa uus kaardivahetuspunkt"
 #: StatusBarText.resx, StretchingObject
 msgid "Hold down left mouse button and drag to stretch the "
 "stretch the crossing point"
+msgstr "Hoia all hiire vasakut nuppu ja venitamiseks lohista "
+"keskpunkti soovitud kohta"
+
+#: StatusBarText.resx, ControlForMoveAllControls
+msgid "Click the left mouse button on a control or registration "
+"mark to move to a new location"
+msgstr ""
+
+#: StatusBarText.resx, NewLocationForMoveAllControls
+msgid "Click the left mouse button on the new location for the "
+"control or registration mark"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text

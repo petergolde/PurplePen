@@ -117,6 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventTitleLabel.Text" xml:space="preserve">
+    <value>Název závodu se zobrazí na prvním řádku každého listu popisů. Používá se také jako název souboru pro uložení vašeho závodu na disk.
+
+Aby se vešel na list popisů, měl by být kratší než 25 znaků. Příklady dobrých názvů závodů jsou „US Champs Day 1“ nebo „Riverview Park, 4/12/06“.</value>
+  </data>
   <data name="eventTitleLabel.Text" xml:space="preserve">
     <value>Název závodu:</value>
   </data>

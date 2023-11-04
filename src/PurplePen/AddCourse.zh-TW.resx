@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>地圖列印比例尺</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>符號</value>
   </data>
@@ -156,6 +153,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>標示編號和積分值 (42(100))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>積分式(30)</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>積分值顯示在:</value>
   </data>
@@ -174,11 +174,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>外觀</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>以下文字（選填）將出現在檢查點說明表的第二列：</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>組別列表/次要標題</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>以下文字（選填）將出現在檢查點說明表的第二列：</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>賽程長度</value>

@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Поредност на клетките</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Размер</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Колони:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Редове:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Размер</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Оформление на състезателния картон</value>

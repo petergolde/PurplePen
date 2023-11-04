@@ -117,19 +117,175 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AwayFromControl" xml:space="preserve">
+    <value>далеко від КП</value>
+  </data>
   <data name="Climb" xml:space="preserve">
     <value>Набір висоти:</value>
+  </data>
+  <data name="CompetitorLoad" xml:space="preserve">
+    <value>Навантаження учасниками:</value>
+  </data>
+  <data name="ControlsInUse" xml:space="preserve">
+    <value>КП використовуються:</value>
+  </data>
+  <data name="ControlsNotInUse" xml:space="preserve">
+    <value>КП не використовуються:</value>
+  </data>
+  <data name="Control_Plural" xml:space="preserve">
+    <value>КП</value>
+  </data>
+  <data name="Control_Singular" xml:space="preserve">
+    <value>КП</value>
+  </data>
+  <data name="CourseList_AllCourses" xml:space="preserve">
+    <value>Всі дистанції</value>
+  </data>
+  <data name="CourseList_None" xml:space="preserve">
+    <value>Немає</value>
+  </data>
+  <data name="CourseName" xml:space="preserve">
+    <value>Дистанція "{0}"</value>
+  </data>
+  <data name="CustomizedSymbolDesc" xml:space="preserve">
+    <value>Ленеди, що зазнали правки</value>
+  </data>
+  <data name="EntireLeg" xml:space="preserve">
+    <value>весь етап</value>
+  </data>
+  <data name="FinishFunnel" xml:space="preserve">
+    <value>фініштий коридор</value>
+  </data>
+  <data name="Finish_Plural" xml:space="preserve">
+    <value>фініші</value>
+  </data>
+  <data name="Finish_Singular" xml:space="preserve">
+    <value>фініш</value>
+  </data>
+  <data name="Flagging" xml:space="preserve">
+    <value>Маркування:</value>
+  </data>
+  <data name="IntoControl" xml:space="preserve">
+    <value>на КП</value>
+  </data>
+  <data name="IntoFinishFunnel" xml:space="preserve">
+    <value>у фінішному коридорі</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>Довжина:</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Розташування:</value>
+  </data>
+  <data name="MandCrossing_Singular" xml:space="preserve">
+    <value>обов'язковий пункт перетину</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>немає</value>
+  </data>
+  <data name="SpecialName_Boundary" xml:space="preserve">
+    <value>Непрохідна межа</value>
+  </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
     <value>Назва дистанції</value>
+  </data>
+  <data name="SpecialName_Dangerous" xml:space="preserve">
+    <value>Небезпечна територія</value>
   </data>
   <data name="SpecialName_Descriptions" xml:space="preserve">
     <value>Легенди КП</value>
   </data>
+  <data name="SpecialName_FirstAid" xml:space="preserve">
+    <value>Пункт першої допомоги</value>
+  </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="SpecialName_Forbidden" xml:space="preserve">
+    <value>Заборонений шлях</value>
+  </data>
+  <data name="SpecialName_OOB" xml:space="preserve">
+    <value>Заборонена територія</value>
+  </data>
+  <data name="SpecialName_OptCrossing" xml:space="preserve">
+    <value>Необов'язковий пункт перетину</value>
+  </data>
+  <data name="SpecialName_RegMark" xml:space="preserve">
+    <value>Мітка суміщення</value>
+  </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Текст</value>
+  </data>
+  <data name="SpecialName_Water" xml:space="preserve">
+    <value>Пункт підживлення</value>
+  </data>
+  <data name="Start_Singular" xml:space="preserve">
+    <value>початок</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>Опис текстом:</value>
+  </data>
+  <data name="TextLine" xml:space="preserve">
+    <value>Строка тексту</value>
+  </data>
+  <data name="TextLine_AboveAllCourses" xml:space="preserve">
+    <value>З’являється над {0} у всіх дистанціях, які містять {0}</value>
+  </data>
+  <data name="TextLine_AboveThisCourse" xml:space="preserve">
+    <value>З’являється над {0} тільки у цій дистанції</value>
+  </data>
+  <data name="TextLine_BelowAllCourses" xml:space="preserve">
+    <value>З’являється під {0} у всіх дистанціях, які містять {0}</value>
+  </data>
+  <data name="TextLine_BelowThisCourse" xml:space="preserve">
+    <value>З’являється під {0} тільки у цій дистанції</value>
+  </data>
+  <data name="TotalControls" xml:space="preserve">
+    <value>Всього КП:</value>
+  </data>
+  <data name="TotalScore" xml:space="preserve">
+    <value>Всього очків:</value>
+  </data>
+  <data name="UsedInCourses" xml:space="preserve">
+    <value>Використано у дистанціях:</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Назва:</value>
+  </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Забілена область</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>зміна карт</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>зміна карти</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Зміна карти у {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Навантаження:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Використано у:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Дистанція "{0}", Частина {1}</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Лінія</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Прямокутник</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Розрахована довжина:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>пункти видачі карт</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>пункт видачі карт</value>
   </data>
 </root>

@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Skala wydruku mapy:</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Piktografiki</value>
   </data>
@@ -174,11 +171,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Wygląd</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Poniższy (opcjonalny) tekst pojawi się w drugiej linii na stronie z opisami punktów:</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Lista kategorii / Podtytuł</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Poniższy (opcjonalny) tekst pojawi się w drugiej linii na stronie z opisami punktów:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Długość:</value>

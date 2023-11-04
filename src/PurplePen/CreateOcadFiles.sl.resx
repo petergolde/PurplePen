@@ -141,14 +141,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Izberi mapo...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Druga mapa</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Ista mapa kot datoteka Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Ista mapa kot datoteka s karto</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Ista mapa kot datoteka Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Druga mapa</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mapa</value>

@@ -129,17 +129,38 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCAD dosyaları için bir klasör seçin</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Dosya adı öneki:</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Çıktı</value>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Dosyalar:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Tüm parkurlar için bir tane</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Parkur için bir tane</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Dosya Seç...</value>
   </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen dosyasıyla aynı klasör</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Harita dosyası ile aynı klasör</value>
+  </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Diğer klasör</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>KML Dosyası Oluştur</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Dosya formatı:</value>

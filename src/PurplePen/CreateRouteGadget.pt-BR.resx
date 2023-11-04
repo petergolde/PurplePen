@@ -117,7 +117,55 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Selecionar uma pasta para os arquivos OCD</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Selecionar pasta...</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Mesma pasta do arquivo Purple Pen</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Mesma pasta do arquivo de mapa</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Outra pasta</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Pasta (Diretório)</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Digite o nome (sem .xml ou .gif) para ambos os arquivos RouteGadget:</value>
+  </data>
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>Nome do Arquivo</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>Aprenda mais sobre RouteGadget</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget requer um arquivo de imagem (.gif) e um arquivo IOF XML (.xml). Escolha o nome e a pasta para estes dois arquivos.</value>
+  </data>
+  <data name="comboBoxIofXml.Items" xml:space="preserve">
+    <value>2.0.3</value>
+  </data>
+  <data name="comboBoxIofXml.Items1" xml:space="preserve">
+    <value>3.0</value>
+  </data>
+  <data name="labelIofXml.Text" xml:space="preserve">
+    <value>Versão IOF XML</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>IOF XML</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Criar Arquivos RouteGadget</value>
   </data>
 </root>

@@ -611,6 +611,12 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="LegAssignedOuterBranch" xml:space="preserve">
     <value>Vahetus {0} ei jõua kunagi harusse '{1}': see on määratud teisele teele valitud hajutuses.</value>
   </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Seadista ellipsi visuaal. Peale OK nupule vajutamist lohista hiirega ellips soovitud kohale.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Lisa ellips</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
   </data>

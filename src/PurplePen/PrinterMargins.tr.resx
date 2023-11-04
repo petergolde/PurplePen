@@ -129,6 +129,12 @@
   <data name="groupBoxPaperSize.Text" xml:space="preserve">
     <value>Kağıt Boyutu ({0})</value>
   </data>
+  <data name="radioButtonLandscape.Text" xml:space="preserve">
+    <value>Düzenlemek</value>
+  </data>
+  <data name="radioButtonPortrait.Text" xml:space="preserve">
+    <value>Portre</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Yönlendirme</value>
   </data>

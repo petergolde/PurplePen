@@ -151,7 +151,7 @@
     <value>Angepasste Symbolbeschreibung</value>
   </data>
   <data name="EntireLeg" xml:space="preserve">
-    <value>Gesamte Etappe</value>
+    <value>Gesamte Teilstrecke</value>
   </data>
   <data name="FinishFunnel" xml:space="preserve">
     <value>Zieleinlauf</value>

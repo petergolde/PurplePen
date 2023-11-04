@@ -612,4 +612,10 @@
   <data name="LegAssignedOuterBranch" xml:space="preserve">
     <value>路段{0}永远不会到达分支{1}：它被分配到包含分支的另一个方向。</value>
   </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>设置椭圆的参数。按“确定”后，拖动鼠标将椭圆放置在所需位置。</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>添加椭圆</value>
+  </data>
 </root>

@@ -127,10 +127,10 @@
     <value>1 : </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
-    <value>Символьная</value>
+    <value>Символы</value>
   </data>
   <data name="descKindCombo.Items1" xml:space="preserve">
-    <value>Словесная</value>
+    <value>Текст</value>
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Словесная и символьная</value>

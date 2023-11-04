@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>Більше не попереджати про відсутні шрифти для цих змагань</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Файл карти "{0}" використовує шрифти, що відсутні на комп'ютері. Текст, написаний такими шрифтами, буде відображено та роздруковано із використанням шрифта за замовченням, що може призвести до порушення до порушення дизайну. 
+
+Щоб виправити цю проблему, знайдіть та встановіть шрифти перелічені нижче за допомогою контрольної панелі Windows, тоді запустіть Purple Pen знову.
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Відсутні шрифти</value>
   </data>
 </root>

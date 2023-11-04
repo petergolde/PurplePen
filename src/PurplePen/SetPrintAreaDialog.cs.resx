@@ -123,6 +123,9 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Zrušit</value>
   </data>
+  <data name="setPrintAreaLabel.Text" xml:space="preserve">
+    <value>Táhnutím myši vyberte požadovanou oblast tisku</value>
+  </data>
   <data name="groupBoxPaperSize.Text" xml:space="preserve">
     <value>Velikost papíru</value>
   </data>

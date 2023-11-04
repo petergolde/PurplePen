@@ -141,14 +141,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vybrat složku...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Jiná složka</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Stejná složka jako u souboru Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Stejná složka jako u mapového souboru</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Stejná složka jako u souboru Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Jiná složka</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Složka</value>

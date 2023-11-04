@@ -163,7 +163,7 @@
     <value>Apagar a linha de texto</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Adicionar Ponto de controlo</value>
+    <value>Adicionar Ponto de Controlo</value>
   </data>
   <data name="AddStart" xml:space="preserve">
     <value>Criar Partida</value>
@@ -187,7 +187,7 @@
     <value>Alterar as propriedades do percurso</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Alterar as propriedades do "All controls"</value>
+    <value>Alterar as propriedades da Matriz de Pontos de Controlo</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
     <value>Criar Novo Evento</value>
@@ -298,12 +298,18 @@
     <value>Variações da Equipa</value>
   </data>
   <data name="AddMapIssue" xml:space="preserve">
-    <value>Adicionar local onde o atleta pega no mapa</value>
+    <value>Adicionar Ponto de Troca de Mapa</value>
   </data>
   <data name="ChangeDescriptionStandard" xml:space="preserve">
     <value>Definir standard da sinalética</value>
   </data>
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Definir standar do mapa</value>
+  </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Estender</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Publicar no Livelox</value>
   </data>
 </root>

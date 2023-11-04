@@ -120,6 +120,30 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Колір:</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Змінити колір...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Стиль:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Одинарна</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Подвійна</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Пунктирна</value>
+  </data>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Товщина:</value>
+  </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Розмір проміжку:</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Розмір штриха:</value>
+  </data>
   <data name="labelWidthMm.Text" xml:space="preserve">
     <value>мм</value>
   </data>
@@ -128,6 +152,9 @@
   </data>
   <data name="labelDashSizeMm.Text" xml:space="preserve">
     <value>мм</value>
+  </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Радіус скруглення:</value>
   </data>
   <data name="labelRadiusMm.Text" xml:space="preserve">
     <value>мм</value>

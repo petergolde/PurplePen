@@ -118,16 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Primeiro número de controle:</value>
+    <value>Primeiro número de ponto de controle:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Descrição aparente</value>
+    <value>Aparência da descrição:</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Escala de impressão do mapa</value>
-  </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
+    <value>Escala de impressão do mapa:</value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Símbolos</value>
@@ -137,6 +134,27 @@
   </data>
   <data name="descKindCombo.Items2" xml:space="preserve">
     <value>Símbolos e texto</value>
+  </data>
+  <data name="labelKindLabel.Text" xml:space="preserve">
+    <value>Rótulos do círculo do ponto de controle:</value>
+  </data>
+  <data name="labelKindCombo.Items" xml:space="preserve">
+    <value>Número de sequência (3)</value>
+  </data>
+  <data name="labelKindCombo.Items1" xml:space="preserve">
+    <value>Código do ponto de controle (145)</value>
+  </data>
+  <data name="labelKindCombo.Items2" xml:space="preserve">
+    <value>Sequência e código (3-145)</value>
+  </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Sequência e pontuação (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Código e pontuação (145(30))</value>
+  </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Pontuação (30)</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Exibir pontos em:</value>
@@ -153,17 +171,23 @@
   <data name="scoreColumnCombo.Items3" xml:space="preserve">
     <value>(não mostrar)</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>O texto seguinte irá aparecer na segunda linha do cartão de descrição dos controles</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Aparência</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Relação de categorias/ Título secundário</value>
   </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>O texto seguinte irá aparecer na segunda linha da sinalética</value>
+  </data>
   <data name="lengthLabel.Text" xml:space="preserve">
-    <value>Comprimento:</value>
+    <value>Distância</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
-    <value>Aclive</value>
+    <value>Desnível:</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
     <value>Tipo de percurso</value>
@@ -175,7 +199,7 @@
     <value>Percurso Normal</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>Registro do Percurso</value>
+    <value>Percurso de pontuação (fazenda)</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metros</value>

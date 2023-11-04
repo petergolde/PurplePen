@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>Yeni etkinliğinizi oluşturmak için "Bitir"e tıklayın. Etkinlik dosyanız şu şekilde kaydedilecektir:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>Etkinliğiniz oluşturulduktan sonra, bir veya daha fazla parkur oluşturmak için Parkur menüsünden "Yeni Parkur..." öğesini seçin.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Etkinlik Oluştur</value>
+  </data>
 </root>

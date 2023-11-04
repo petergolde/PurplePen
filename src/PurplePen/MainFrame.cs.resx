@@ -168,11 +168,17 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Vytvořit soubory Route&amp;Gadget...</value>
   </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vytvořit soubory na Analýzu Trati</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Vytvořit soubory Data &amp;Interchange File (IOF XML)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>Vytvořit GP&amp;X...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Vytvořit &amp;KML soubor...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Tisk &amp;popisů...</value>
@@ -366,6 +372,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Obdélník</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Elipsa</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Přidat</value>
   </data>
@@ -388,13 +397,16 @@
     <value>2004 Standard popisků</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>2018 Standard popisků</value>
+    <value>2018/2024 Standard popisků</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM2000 Mapový klíč</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM2017 Mapový klíč</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019 Mapový klíč</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOF &amp;Standards</value>
@@ -458,6 +470,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Otočit</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>&amp;Stretch</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Bez zančení</value>
@@ -662,6 +677,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Obdélník</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elipsa</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Přidat speciální prvek</value>

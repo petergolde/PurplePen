@@ -150,14 +150,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>選擇資料夾...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>其他資料夾</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>同Purple Pen檔案的資料夾</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>同地圖檔案的資料夾</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>同Purple Pen檔案的資料夾</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>其他資料夾</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>資料夾</value>

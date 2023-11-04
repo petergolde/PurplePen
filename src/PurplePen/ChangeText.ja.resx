@@ -180,10 +180,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>サンプル</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>テキスト</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>特殊なテキストを入力</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>テキスト</value>
   </data>
 </root>

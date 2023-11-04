@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>箱订单</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>配置</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>列数：</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>排:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>配置</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>穿孔卡片布局</value>

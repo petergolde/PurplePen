@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Hiire vasaku nupule klõpsates lisa uus kaardivahetuspunkt</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Hoia all hiire vasakut nuppu ja venitamiseks lohista keskpunkti soovitud kohta</value>
+  </data>
 </root>

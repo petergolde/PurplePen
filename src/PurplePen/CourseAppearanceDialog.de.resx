@@ -219,6 +219,9 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Überdruck-Effekt für mit "Überdruck" markierte Farben verwenden.</value>
   </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Erweitert</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Aussehen anpassen</value>
   </data>

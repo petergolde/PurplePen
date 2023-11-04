@@ -183,10 +183,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Minta</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Szöveg</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Speciális szöveg beszúrása</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Szöveg</value>
   </data>
 </root>

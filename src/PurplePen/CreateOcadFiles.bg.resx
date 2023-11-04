@@ -141,14 +141,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Избери папка...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Друга папка</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Същата папка като на файла Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Същата папка като на файла с картата</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Друга папка</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Папка</value>

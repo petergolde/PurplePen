@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Bu ayarlar daha sonra Event/IOF Standartları kullanılarak değiştirilebilir)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>IOF Standardı</value>
+  </data>
+  <data name="radioButtonMapSpr2019.Text" xml:space="preserve">
+    <value>ISSprOM 2019</value>
+  </data>
+  <data name="radioButtonMap2017.Text" xml:space="preserve">
+    <value>ISOM 2017</value>
+  </data>
+  <data name="radioButtonMap2000.Text" xml:space="preserve">
+    <value>ISOM 2000 / ISSOM 2007</value>
+  </data>
+  <data name="groupBoxMapStandard.Text" xml:space="preserve">
+    <value>IOF Harita Standardı</value>
+  </data>
+  <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
+    <value>2018/2024 Tanımlamalar</value>
+  </data>
+  <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
+    <value>2004 Tanımlamalar</value>
+  </data>
+  <data name="groupBoxDescriptionStandard.Text" xml:space="preserve">
+    <value>IOF Tanım Standardı</value>
+  </data>
+  <data name="labelStandardsIntro.Text" xml:space="preserve">
+    <value>Purple Pen'in IOF standartlarının hangi sürümlerini izlemesini istersiniz?</value>
+  </data>
 </root>

@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Vælg mappe til OCADfilerne</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Uddata</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Filformat:</value>
   </data>
@@ -186,20 +189,17 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Uddata</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vælg mappe...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Anden mappe</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samme mappe som Purple Pen fil</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samme mappe som kortfil</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samme mappe som Purple Pen fil</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Anden mappe</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mappe</value>

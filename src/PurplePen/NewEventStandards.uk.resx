@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Ці налаштування можливо буде змінити пізніше за допомогою меню Змагання/Стандарти IOF)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Стандарти IOF</value>
+  </data>
+  <data name="radioButtonMapSpr2019.Text" xml:space="preserve">
+    <value>ISSprOM 2019</value>
+  </data>
+  <data name="radioButtonMap2017.Text" xml:space="preserve">
+    <value>ISOM 2017</value>
+  </data>
+  <data name="radioButtonMap2000.Text" xml:space="preserve">
+    <value>ISOM 2000 / ISSOM 2007</value>
+  </data>
+  <data name="groupBoxMapStandard.Text" xml:space="preserve">
+    <value>Стандарти карти IOF</value>
+  </data>
+  <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
+    <value>Легенди 2018/2024</value>
+  </data>
+  <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
+    <value>Легенди 2004</value>
+  </data>
+  <data name="groupBoxDescriptionStandard.Text" xml:space="preserve">
+    <value>Стандарт легенд IOF</value>
+  </data>
+  <data name="labelStandardsIntro.Text" xml:space="preserve">
+    <value>Яких стандартів IOF, ви би хотіли, щоб дотримувався Purple Pen?</value>
+  </data>
 </root>

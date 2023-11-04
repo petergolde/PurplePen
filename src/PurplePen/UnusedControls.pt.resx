@@ -123,4 +123,7 @@
   <data name="unusedControlsLabel.Text" xml:space="preserve">
     <value>Os seguintes postos de controlo não são usados em nenhum dos percursos. Selecione Excluir para remover todos os postos de controlo indicados .</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pontos de controlo não utilizados</value>
+  </data>
 </root>

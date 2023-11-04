@@ -306,4 +306,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Vyber mapový standard</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Roztáhnout</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Publikovat na Livelox</value>
+  </data>
 </root>

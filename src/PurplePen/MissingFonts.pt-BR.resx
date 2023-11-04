@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>Não avise sobre fontes ausentes para este evento novamente</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Aceitar</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>O arquivo de mapa "{0}" usa fontes que não estão instaladas em seu computador. O texto que usa essas fontes será desenhado e impresso com uma fonte padrão, o que pode fazer com que o texto apareça de forma diferente da pretendida pelo designer do mapa.
+
+Para corrigir esse problema, localize e instale as fontes listadas abaixo no painel de controle do Windows e inicie o Purple Pen novamente.
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Fontes ausentes</value>
   </data>
 </root>

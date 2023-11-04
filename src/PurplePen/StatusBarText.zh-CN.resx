@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>单击鼠标左键以放置新的地图关键点</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>在交点按住鼠标左键并拖动拉伸</value>
+  </data>
 </root>

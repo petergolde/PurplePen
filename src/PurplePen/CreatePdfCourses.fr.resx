@@ -150,14 +150,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Sélectionner un dossier...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Autre dossier</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Même dossier que le fichier Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Même dossier que la carte</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Même dossier que le fichier Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Autre dossier</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Dossier</value>

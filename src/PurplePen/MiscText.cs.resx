@@ -382,6 +382,9 @@ OK - zkus soubor s mapou najít.</value>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Žádná trať nebyla vybrána k tisku.</value>
   </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Pokud existuje webová stránka v přeloženém jazyce, která obsahuje dokumentaci k Purple Pen, zadejte URL (včetně http) jako překlad této položky. Jinak to nechte být.</value>
+  </data>
   <data name="MapExchange_Long" xml:space="preserve">
     <value>Výměna mapy</value>
   </data>
@@ -419,7 +422,7 @@ OK - zkus soubor s mapou najít.</value>
     <value>Odeslat hlášení</value>
   </data>
   <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Popisy nemohou být přidány do kategorie se změnou mapy, pokud jsou zobrazeny "Všechny části". Zvolte část, které chcete přidat popisy, a poté znovu zvolte "Přidat popisy".</value>
+    <value>Popisy nemohou být přidány do tratě se změnou mapy, pokud jsou zobrazeny "Všechny části". Zvolte část, které chcete přidat popisy, a poté znovu zvolte "Přidat popisy"</value>
   </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe nenalezen</value>
@@ -544,6 +547,12 @@ OK - zkus soubor s mapou najít.</value>
   <data name="LoopSummary" xml:space="preserve">
     <value>Prostřední kontrola ve smyčce bude navštívena {0} krát. Existují {1} možné cesty skrz smyčku.</value>
   </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>Kontrola, která začíná vidlici nebo smyčku nemůže být přetažena na nové místo v trati</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Až moc celkových variací v této trati. Počet odlišných variací je omezen na {0}.</value>
+  </data>
   <data name="CannotAddVariation" xml:space="preserve">
     <value>Nelze přidat variantu.</value>
   </data>
@@ -565,8 +574,17 @@ OK - zkus soubor s mapou najít.</value>
   <data name="VariationNotLastControl" xml:space="preserve">
     <value>Varianta nemůže být přidána na poslední kontrolu. Nejdřív přidej cílovou kontrolu.</value>
   </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' je neplatné číslo farsty '{1}'</value>
+  </data>
   <data name="LegNotAssigned" xml:space="preserve">
     <value>Postup {0} by měl být přiřazen k jedné z variant {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Postup {0} je přiřazený k farstám '{1}' i '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Nelze otevřít mapu z následujícího důvodu: '{0}' Otevření a opětovné uložení mapy v nejnovější verzi OpenOrienteering Mapper  může vyřešit problémy.</value>
   </data>
   <data name="MapIssue_Long" xml:space="preserve">
     <value>Intervalový start</value>
@@ -577,6 +595,12 @@ OK - zkus soubor s mapou najít.</value>
   <data name="MapIssue_Short" xml:space="preserve">
     <value>TS</value>
   </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Podkladová mapa OCAD má viditelné soubory šablon. V OCAD 8 a nižších se tyto šablony nemusí objevit kvůli omezením v OCADu.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Vzhledem k omezením formátu souboru OCAD (v OCAD 10 a nižších) se obrazové objekty objeví pod tratěmi a vybělí oblasti v exportovaných souborech OCAD. Zkontrolujte prosím soubory OCAD, abyste se ujistili, že vaše obrázky vypadají tak, jak chcete.</value>
+  </data>
   <data name="CannotCreateImageFiles" xml:space="preserve">
     <value>Nelze exportovat obrázek z těchto důvodů:</value>
   </data>
@@ -585,6 +609,15 @@ OK - zkus soubor s mapou najít.</value>
   </data>
   <data name="PdfFilter" xml:space="preserve">
     <value>PDF soubor|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Postup {0} není ve farstě '{1}': byl již přiřazený k jinému větvení farsty</value>
+  </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Nastavte vzhled elipsy. Po stisknutí tlačítka OK táhněte myší a umístěte elipsu na požadované místo.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Přidat elipsu</value>
   </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>Kód kontroly by měl být 31 nebo vyšší.</value>

@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="boxOrderGroupBox.Text" xml:space="preserve">
+    <value>Ordem de Caixa de Picote</value>
+  </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="columnsLabel.Text" xml:space="preserve">
+    <value>Colunas:</value>
+  </data>
+  <data name="rowsLabel.Text" xml:space="preserve">
+    <value>Linhas:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Layout do Cartão de Controle</value>
+  </data>
 </root>

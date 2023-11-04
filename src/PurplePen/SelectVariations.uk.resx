@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Кожен варіант окремо</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Кожен етап естафети окремо</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Всі варіанти розсіювання разом</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Варіанти розсіювання:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Відобразити усі розвилки разом на одній карті.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Одна карта для кожного можливого варіанту дистанції.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Одна карта для кожного етапу в естафетних командах, які ви виберете.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Спершу необхідно задати естафетні команди, вибравши "Розсіювання естафетних команд..." у меню Дистанція.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Вбрати окремі варіанти розсіювання</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Для цієї дистанції призначено {0} естафетних команд. Щоб змінити кількість команд, скористайтеся  пунктом "Розсіювання естафетних команд..." у меню Дистанція.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>до</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Виберіть команди для друку/експорту:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Виберіть варіанти розсіювання</value>
+  </data>
 </root>

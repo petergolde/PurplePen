@@ -150,14 +150,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Valitse kansio...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Muu kansio</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samaan kuin Purple Pen -tiedosto</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samaan kuin karttatiedosto</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samaan kuin Purple Pen -tiedosto</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Muu kansio</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Kansio</value>

@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Merilo karte</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Simboli</value>
   </data>
@@ -174,11 +171,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Prikaz</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Naslednje (neobvezno) besedilo bo prikazano v drugi vrstici opisa kontrolnih točk:</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Spisek kategorij/ dodatni naslov</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Naslednje (neobvezno) besedilo bo prikazano v drugi vrstici opisa kontrolnih točk:</value>
   </data>
   <data name="climbLabel.Text" xml:space="preserve">
     <value>Vzpon:</value>

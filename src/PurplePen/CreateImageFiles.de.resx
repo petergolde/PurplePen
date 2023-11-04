@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Wählen Sie einen Ordner für die OCAD-Dateien aus</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Ausgabe</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Dateiformat:</value>
   </data>
@@ -186,20 +189,17 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Ausgabe</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Ordner auswählen...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Anderer Ordner</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Selber Ordner wie Purple Pen-Datei</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Selber Ordner wie Kartendatei</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Selber Ordner wie Purple Pen-Datei</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Anderer Ordner</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Ordner</value>

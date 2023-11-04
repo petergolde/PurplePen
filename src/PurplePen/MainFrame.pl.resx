@@ -141,9 +141,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Utwórz &amp;pliki OCAD</value>
   </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Utwórz pliki Route&amp;Gadget...</value>
-  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Utwórz plik I&amp;OF XML</value>
   </data>
@@ -365,9 +362,6 @@
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>&amp;Dodaj przerwę</value>
-  </data>
-  <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>&amp;Usuń przerwę</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Zmień &amp;tekst...</value>

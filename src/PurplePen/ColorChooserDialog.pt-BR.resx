@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Preto:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Amarelo:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ciano:</value>
+  </data>
+  <data name="groupBoxPreview.Text" xml:space="preserve">
+    <value>Visualização</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Escolher a Cor</value>
+  </data>
 </root>

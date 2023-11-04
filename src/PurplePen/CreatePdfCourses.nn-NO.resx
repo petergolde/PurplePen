@@ -138,14 +138,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vel mappe...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Annan mappe</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samme mappe som Purple Pen fila</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samme mappe som kartfila</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samme mappe som Purple Pen fila</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annan mappe</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mappe</value>

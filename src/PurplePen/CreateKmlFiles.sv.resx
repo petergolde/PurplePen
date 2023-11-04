@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Välj mapp för OCAD-filerna</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Skrivare</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Filnamnsprefix:</value>
   </data>
@@ -141,26 +144,23 @@
   <data name="filesCombo.Items1" xml:space="preserve">
     <value>En per bana</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Skrivare</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Välj mapp...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Annan mapp</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samma mapp som Purple Pen-filen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samma mapp som kartfilen</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samma mapp som Purple Pen-filen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annan mapp</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mapp</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Skapa OCAD-filer</value>
+    <value>Skapa KML-fil</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Filformat:</value>

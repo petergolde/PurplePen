@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.4.0\n"
+"Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2022-08-10 14:51-07:00\n"
+"POT-Creation-Date: 2023-11-03 16:44-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -69,11 +69,6 @@ msgstr "Description appearance:"
 msgid "Map printing scale:"
 msgstr "Map printing scale:"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1 : "
-
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
 #: PrintDescriptions.resx, descriptionKindCombo.Items1
@@ -122,7 +117,7 @@ msgstr "Code and score (145(30))"
 
 #: AddCourse.resx, labelKindCombo.Items5
 msgid "Score (30)"
-msgstr ""
+msgstr "Score (30)"
 
 #: AddCourse.resx, scoreColumnLabel.Text
 msgid "Show points in:"
@@ -155,15 +150,20 @@ msgstr "(do not display)"
 msgid "Appearance"
 msgstr "Appearance"
 
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Class list / Secondary title"
+
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
 msgstr "The following (optional) text will appear on the second "
 "line of the control description sheet:"
-
-#: AddCourse.resx, secondaryTitleGroup.Text
-msgid "Class list / Secondary title"
-msgstr "Class list / Secondary title"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -417,6 +417,7 @@ msgid "Resolution:"
 msgstr "Resolution:"
 
 #: ChangeMapFile.resx, labelScale.Text
+#: SelectLocationsForMove.resx, labelScale.Text
 msgid "Scale:"
 msgstr "Scale:"
 
@@ -780,7 +781,6 @@ msgid "Customize Course Appearance"
 msgstr "Customise Course Appearance"
 
 #: CommandNameText.resx, AddMapExchange
-#: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
 msgstr "Add Map Exchange"
 
@@ -829,10 +829,20 @@ msgstr "Set Map Standard"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
-msgstr ""
+msgstr "Stretch"
 
 #: CommandNameText.resx, SetLiveloxImportableEventId
 msgid "Publish to Livelox"
+msgstr "Publish to Livelox"
+
+#: CommandNameText.resx, MoveAllControls
+#: MoveAllControls.resx, $this.Text
+#: SelectLocationsForMove.resx, $this.Text
+msgid "Move All Controls"
+msgstr ""
+
+#: CommandNameText.resx, AddMapFlip
+msgid "Add Map Flip"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -924,7 +934,7 @@ msgstr "Use overprint effect for colours marked \"overprint\""
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "Advanced"
-msgstr ""
+msgstr "Advanced"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -1037,6 +1047,7 @@ msgstr "Create"
 #: OverwritingOcadFilesDialog.resx, buttonCancel.Text
 #: PrintDescriptions.resx, cancelButton.Text
 #: PrintPunches.resx, cancelButton.Text
+#: SelectLocationsForMove.resx, buttonCancel.Text
 #: SetPrintAreaDialog.resx, cancelButton.Text
 msgid "Cancel"
 msgstr "Cancel"
@@ -1047,6 +1058,15 @@ msgstr "Cancel"
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Select a folder for the OCAD files"
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Output"
 
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
@@ -1133,15 +1153,6 @@ msgstr "RGB"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Output"
-
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
@@ -1150,13 +1161,13 @@ msgstr "Output"
 msgid "Select folder..."
 msgstr "Select folder..."
 
-#: CreateImageFiles.resx, otherDirectory.Text
-#: CreateKmlFiles.resx, otherDirectory.Text
-#: CreateOcadFiles.resx, otherDirectory.Text
-#: CreatePdfCourses.resx, otherDirectory.Text
-#: CreateRouteGadget.resx, otherDirectory.Text
-msgid "Other folder"
-msgstr "Other folder"
+#: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "Same folder as Purple Pen file"
 
 #: CreateImageFiles.resx, mapDirectory.Text
 #: CreateKmlFiles.resx, mapDirectory.Text
@@ -1166,13 +1177,13 @@ msgstr "Other folder"
 msgid "Same folder as map file"
 msgstr "Same folder as map file"
 
-#: CreateImageFiles.resx, coursesDirectory.Text
-#: CreateKmlFiles.resx, coursesDirectory.Text
-#: CreateOcadFiles.resx, coursesDirectory.Text
-#: CreatePdfCourses.resx, coursesDirectory.Text
-#: CreateRouteGadget.resx, coursesDirectory.Text
-msgid "Same folder as Purple Pen file"
-msgstr "Same folder as Purple Pen file"
+#: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Other folder"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
 #: CreateKmlFiles.resx, folderGroupBox.Text
@@ -1203,7 +1214,7 @@ msgstr "One per course"
 
 #: CreateKmlFiles.resx, $this.Text
 msgid "Create KML File"
-msgstr "Create OCAD Files"
+msgstr "Create KML File"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1539,15 +1550,11 @@ msgstr "Create P&DFs"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
-msgstr "Create Route&Gadget Files..."
-
-#: MainFrame.resx, publishToLiveloxMenu.Text
-msgid "Publish to Livelox..."
-msgstr "Publish to &Livelox..."
+msgstr "Create RouteGadget Files..."
 
 #: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
 msgid "Create Route Review Files"
-msgstr ""
+msgstr "Create Route Review Files"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1559,7 +1566,7 @@ msgstr "Create G&PX File..."
 
 #: MainFrame.resx, createKMLFileMenu.Text
 msgid "Create &KML File..."
-msgstr ""
+msgstr "Create &KML File..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1742,17 +1749,21 @@ msgstr "&Finish"
 msgid "&Descriptions"
 msgstr "&Descriptions"
 
+#: MainFrame.resx, addMapFlipMenuItem.Text
+msgid "Map &Flip at Control Point"
+msgstr ""
+
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
 msgstr "Map Exchange at &Control Point"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
-msgstr "&Flagged Route to Map Exchange"
+msgid "Flagged &Route to Map Exchange"
+msgstr "Flagged &Route to Map Exchange"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map E&xchange"
-msgstr "Map E&xchange"
+msgid "Map Flip/E&xchange"
+msgstr "Map Flip/E&xchange"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1847,7 +1858,7 @@ msgstr "Rectangle"
 #: MainFrame.resx, addEllipseMenu.Text
 #: MainFrame.resx, ellipseToolStripMenuItem.Text
 msgid "Ellipse"
-msgstr ""
+msgstr "Ellipse"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1869,6 +1880,10 @@ msgstr "Automatic &Numbering..."
 msgid "Remove &Unused Controls..."
 msgstr "Remove &Unused Controls..."
 
+#: MainFrame.resx, moveAllControlsMenu.Text
+msgid "Mo&ve All Controls..."
+msgstr ""
+
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
 msgstr "&Pin-Punch Patterns..."
@@ -1878,8 +1893,8 @@ msgid "2004 Description Standard"
 msgstr "2004 Description Standard"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
-msgid "2018 Description Standard"
-msgstr "2018 Description Standard"
+msgid "2018/2024 Description Standard"
+msgstr "2018/2024 Description Standard"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
@@ -1891,7 +1906,7 @@ msgstr "ISOM2017 Map Standard"
 
 #: MainFrame.resx, mapStdSpr2019Menu.Text
 msgid "ISSprOM 2019 Map Standard"
-msgstr ""
+msgstr "ISSprOM 2019 Map Standard"
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
@@ -1959,7 +1974,7 @@ msgstr "Add &Gap"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove Ga&p"
-msgstr "Remove G&ap"
+msgstr "Remove Ga&p"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
@@ -1975,7 +1990,7 @@ msgstr "R&otate"
 
 #: MainFrame.resx, stretchMenu.Text
 msgid "&Stretch"
-msgstr ""
+msgstr "&Stretch"
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -2089,6 +2104,10 @@ msgstr "Report Tester"
 msgid "Font Metrics"
 msgstr "Font Metrics"
 
+#: MainFrame.resx, missingTranslationsMenuItem.Text
+msgid "Missing Description Translations"
+msgstr ""
+
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
 msgstr "Crash"
@@ -2164,6 +2183,10 @@ msgstr "Add Control (Ctrl+A)"
 msgid "Add Descriptions"
 msgstr "Add Descriptions"
 
+#: MainFrame.resx, mapFlipMenuItem.Text
+msgid "Map Flip at Control Point"
+msgstr ""
+
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
 msgstr "Map Exchange at Control Point"
@@ -2171,6 +2194,10 @@ msgstr "Map Exchange at Control Point"
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
 msgstr "Flagged Route to Map Exchange"
+
+#: MainFrame.resx, mapExchangeToolStripMenu.Text
+msgid "Add Map Flip/Exchange"
+msgstr "Add Map Flip/Exchange"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
@@ -2939,11 +2966,12 @@ msgstr "Leg {0} never reaches branch '{1}': it was assigned to go "
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
 "the mouse to place the ellipse in the desired location."
-msgstr ""
+msgstr "Set the appearance of the ellipse. After pressing OK, drag "
+"the mouse to place the ellipse in the desired location."
 
 #: MiscText.resx, AddEllipseTitle
 msgid "Add Ellipse"
-msgstr ""
+msgstr "Add Ellipse"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -2970,6 +2998,26 @@ msgstr "Map file \"{0}\" uses fonts that are not installed on your "
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
 msgstr "Missing Fonts"
+
+#: MoveAllControls.resx, labelDescription.Text
+msgid "Which way would you like to move all controls on the map?"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMove.Text
+msgid "Move Only"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndScale.Text
+msgid "Move and Scale"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndRotate.Text
+msgid "Move and Rotate"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveRotateScale.Text
+msgid "Move, Scale, and Rotate"
+msgstr ""
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3140,7 +3188,7 @@ msgstr "IOF Standards"
 
 #: NewEventStandards.resx, radioButtonMapSpr2019.Text
 msgid "ISSprOM 2019"
-msgstr ""
+msgstr "ISSprOM 2019"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
@@ -3155,8 +3203,8 @@ msgid "IOF Map Standard"
 msgstr "IOF Map Standard"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
-msgid "Descriptions 2018"
-msgstr "Descriptions 2018"
+msgid "Descriptions 2018 or 2024"
+msgstr "Descriptions 2018 or 2024"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
@@ -3431,6 +3479,10 @@ msgstr "Print Control Cards"
 msgid "Box Order"
 msgstr "Box Order"
 
+#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
+msgid "Size"
+msgstr "Size"
+
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
 msgstr "Columns:"
@@ -3438,10 +3490,6 @@ msgstr "Columns:"
 #: PunchcardLayoutDialog.resx, rowsLabel.Text
 msgid "Rows:"
 msgstr "Rows:"
-
-#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
-msgid "Size"
-msgstr "Size"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
@@ -3943,6 +3991,58 @@ msgstr "map issue points"
 msgid "map issue point"
 msgstr "map issue point"
 
+#: SelectionDescriptionText.resx, MapFlipAtControl
+msgid "Map flip at {0}"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelArrowFirstControl.Text
+#: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowSecondControl.Text
+#: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
+msgid "è"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstControl.Text
+msgid "Select first control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondNewLocation.Text
+msgid "Choose new location for second control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelConfirmLocations.Text
+msgid "Confirm new locations"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelRotation.Text
+msgid "Rotation:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelYOffset.Text
+msgid "Y Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelXOffset.Text
+msgid "X Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondControl.Text
+msgid "Select second control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstNewLocation.Text
+msgid "Choose new location for first control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonBack.Text
+msgid "Back"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonConfirm.Text
+msgid "Confirm"
+msgstr ""
+
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
 msgstr "Each Variation Separately"
@@ -4214,6 +4314,17 @@ msgstr "Click left mouse button to place new map issue point"
 #: StatusBarText.resx, StretchingObject
 msgid "Hold down left mouse button and drag to stretch the "
 "stretch the crossing point"
+msgstr "Hold down left mouse button and drag to stretch the "
+"stretch the crossing point"
+
+#: StatusBarText.resx, ControlForMoveAllControls
+msgid "Click the left mouse button on a control or registration "
+"mark to move to a new location"
+msgstr ""
+
+#: StatusBarText.resx, NewLocationForMoveAllControls
+msgid "Click the left mouse button on the new location for the "
+"control or registration mark"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text

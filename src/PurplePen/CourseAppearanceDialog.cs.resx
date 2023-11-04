@@ -219,6 +219,9 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Použít overprint u barev, kde je uveden</value>
   </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Pokročilé</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Upravit vzhled</value>
   </data>

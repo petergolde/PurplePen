@@ -306,4 +306,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>設定地圖的標準</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>放大</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>發布到Livelox</value>
+  </data>
 </root>

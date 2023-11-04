@@ -614,6 +614,12 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Sträcka {0} når aldrig gaffling '{1}': den är ritad att gå en annan väg i en yttre gaffling.
 Leg {0} never reaches branch '{1}': it was assigned to go a different way in a containing fork.</value>
   </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Ställ in utseendet på ellipsen. Efter att ha tryckt på OK, dra musen för att placera ellipsen på önskad plats.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Lägg till ellips</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
   </data>

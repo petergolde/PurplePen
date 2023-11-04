@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.4.0\n"
+"Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2022-08-10 14:51-07:00\n"
+"POT-Creation-Date: 2023-11-03 16:43-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -70,11 +70,6 @@ msgstr "Postenbeschreibung"
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
 msgstr "Druckmaßstab:"
-
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1: "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
@@ -157,15 +152,20 @@ msgstr "nicht sichtbar"
 msgid "Appearance"
 msgstr "Darstellung"
 
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1: "
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Kategorie"
+
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
 msgstr "Der folgende (optionale) Text, wird in der zweiten Zeile "
 "der Postenbeschreibung  angezeigt:"
-
-#: AddCourse.resx, secondaryTitleGroup.Text
-msgid "Class list / Secondary title"
-msgstr "Kategorie"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -422,6 +422,7 @@ msgid "Resolution:"
 msgstr "Auflösung:"
 
 #: ChangeMapFile.resx, labelScale.Text
+#: SelectLocationsForMove.resx, labelScale.Text
 msgid "Scale:"
 msgstr "Maßstab:"
 
@@ -785,7 +786,6 @@ msgid "Customize Course Appearance"
 msgstr "Bahndesign anpassen"
 
 #: CommandNameText.resx, AddMapExchange
-#: MainFrame.resx, mapExchangeToolStripMenu.Text
 msgid "Add Map Exchange"
 msgstr "Kartenwechsel hinzufügen"
 
@@ -834,10 +834,20 @@ msgstr "Kartennorm auswählen"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
-msgstr ""
+msgstr "Verlängern"
 
 #: CommandNameText.resx, SetLiveloxImportableEventId
 msgid "Publish to Livelox"
+msgstr "Auf Livelox veröffentlichen"
+
+#: CommandNameText.resx, MoveAllControls
+#: MoveAllControls.resx, $this.Text
+#: SelectLocationsForMove.resx, $this.Text
+msgid "Move All Controls"
+msgstr ""
+
+#: CommandNameText.resx, AddMapFlip
+msgid "Add Map Flip"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
@@ -930,7 +940,7 @@ msgstr "Überdruck-Effekt für mit \"Überdruck\" markierte Farben "
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "Advanced"
-msgstr ""
+msgstr "Erweitert"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -1043,6 +1053,7 @@ msgstr "Erstellen"
 #: OverwritingOcadFilesDialog.resx, buttonCancel.Text
 #: PrintDescriptions.resx, cancelButton.Text
 #: PrintPunches.resx, cancelButton.Text
+#: SelectLocationsForMove.resx, buttonCancel.Text
 #: SetPrintAreaDialog.resx, cancelButton.Text
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -1053,6 +1064,15 @@ msgstr "Abbrechen"
 #: CreateRouteGadget.resx, folderBrowserDialog.Description
 msgid "Select a folder for the OCAD files"
 msgstr "Wählen Sie einen Ordner für die OCAD-Dateien aus"
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Ausgabe"
 
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
@@ -1139,15 +1159,6 @@ msgstr "RGB"
 msgid "CMYK"
 msgstr "CMYK"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Ausgabe"
-
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
@@ -1156,13 +1167,13 @@ msgstr "Ausgabe"
 msgid "Select folder..."
 msgstr "Ordner auswählen..."
 
-#: CreateImageFiles.resx, otherDirectory.Text
-#: CreateKmlFiles.resx, otherDirectory.Text
-#: CreateOcadFiles.resx, otherDirectory.Text
-#: CreatePdfCourses.resx, otherDirectory.Text
-#: CreateRouteGadget.resx, otherDirectory.Text
-msgid "Other folder"
-msgstr "Anderer Ordner"
+#: CreateImageFiles.resx, coursesDirectory.Text
+#: CreateKmlFiles.resx, coursesDirectory.Text
+#: CreateOcadFiles.resx, coursesDirectory.Text
+#: CreatePdfCourses.resx, coursesDirectory.Text
+#: CreateRouteGadget.resx, coursesDirectory.Text
+msgid "Same folder as Purple Pen file"
+msgstr "Selber Ordner wie Purple Pen-Datei"
 
 #: CreateImageFiles.resx, mapDirectory.Text
 #: CreateKmlFiles.resx, mapDirectory.Text
@@ -1172,13 +1183,13 @@ msgstr "Anderer Ordner"
 msgid "Same folder as map file"
 msgstr "Selber Ordner wie Kartendatei"
 
-#: CreateImageFiles.resx, coursesDirectory.Text
-#: CreateKmlFiles.resx, coursesDirectory.Text
-#: CreateOcadFiles.resx, coursesDirectory.Text
-#: CreatePdfCourses.resx, coursesDirectory.Text
-#: CreateRouteGadget.resx, coursesDirectory.Text
-msgid "Same folder as Purple Pen file"
-msgstr "Selber Ordner wie Purple Pen-Datei"
+#: CreateImageFiles.resx, otherDirectory.Text
+#: CreateKmlFiles.resx, otherDirectory.Text
+#: CreateOcadFiles.resx, otherDirectory.Text
+#: CreatePdfCourses.resx, otherDirectory.Text
+#: CreateRouteGadget.resx, otherDirectory.Text
+msgid "Other folder"
+msgstr "Anderer Ordner"
 
 #: CreateImageFiles.resx, folderGroupBox.Text
 #: CreateKmlFiles.resx, folderGroupBox.Text
@@ -1209,7 +1220,7 @@ msgstr "Eine pro Bahn"
 
 #: CreateKmlFiles.resx, $this.Text
 msgid "Create KML File"
-msgstr "OCAD-Dateien erstellen"
+msgstr "KML-Datei erstellen"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1546,15 +1557,11 @@ msgstr "P&DFs erstellen"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
-msgstr "Route&Gadget-Dateien erstellen …"
-
-#: MainFrame.resx, publishToLiveloxMenu.Text
-msgid "Publish to Livelox..."
-msgstr ""
+msgstr "RouteGadget Dateien erstellen..."
 
 #: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
 msgid "Create Route Review Files"
-msgstr ""
+msgstr "Bahnprüfungs-Dateien erstellen"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1566,7 +1573,7 @@ msgstr "G&PX File erstellen..."
 
 #: MainFrame.resx, createKMLFileMenu.Text
 msgid "Create &KML File..."
-msgstr ""
+msgstr "&KML-Datei erstellen..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1743,22 +1750,26 @@ msgstr "&Posten"
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr "&Fertigstellen"
+msgstr "&Ziel"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
 msgstr "&Beschreibungen"
+
+#: MainFrame.resx, addMapFlipMenuItem.Text
+msgid "Map &Flip at Control Point"
+msgstr ""
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
 msgstr "Kartenwechsel an &Posten"
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
-msgid "&Flagged Route to Map Exchange"
+msgid "Flagged &Route to Map Exchange"
 msgstr "&Ausgeflaggte Strecke zum Kartenwechsel"
 
 #: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map E&xchange"
+msgid "Map Flip/E&xchange"
 msgstr "Karten&wechsel"
 
 #: MainFrame.resx, addVariationMenu.Text
@@ -1854,7 +1865,7 @@ msgstr "Rechteck"
 #: MainFrame.resx, addEllipseMenu.Text
 #: MainFrame.resx, ellipseToolStripMenuItem.Text
 msgid "Ellipse"
-msgstr ""
+msgstr "Ellipse"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1876,6 +1887,10 @@ msgstr "Automatische &Nummerierung..."
 msgid "Remove &Unused Controls..."
 msgstr "Nicht genutzte Posten &entfernen..."
 
+#: MainFrame.resx, moveAllControlsMenu.Text
+msgid "Mo&ve All Controls..."
+msgstr ""
+
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
 msgstr "Kontrollkarten&design"
@@ -1885,8 +1900,8 @@ msgid "2004 Description Standard"
 msgstr "Postenbeschreibungsnorm 2004"
 
 #: MainFrame.resx, descriptionStd2018Menu.Text
-msgid "2018 Description Standard"
-msgstr "Postenbeschreibungsnorm 2018"
+msgid "2018/2024 Description Standard"
+msgstr "Postenbeschreibungsnorm 2018/2024"
 
 #: MainFrame.resx, mapStd2000Menu.Text
 msgid "ISOM2000 Map Standard"
@@ -1898,7 +1913,7 @@ msgstr "ISOM2017 Kartennorm"
 
 #: MainFrame.resx, mapStdSpr2019Menu.Text
 msgid "ISSprOM 2019 Map Standard"
-msgstr ""
+msgstr "ISSprOM 2019 Kartenstandard"
 
 #: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
 msgid "IOF &Standards"
@@ -1966,7 +1981,7 @@ msgstr "&Lücke einfügen"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove Ga&p"
-msgstr "Lücke ent&fernen"
+msgstr "Lücke &entfernen"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
@@ -1982,7 +1997,7 @@ msgstr "&Drehen"
 
 #: MainFrame.resx, stretchMenu.Text
 msgid "&Stretch"
-msgstr ""
+msgstr "&Verlängern"
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
@@ -1990,19 +2005,19 @@ msgstr "Nicht ausgeflaggt"
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr "Gesamte Etappe ausgeflaggt"
+msgstr "Gesamte Teilstrecke ausgeflaggt"
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
-msgstr "Anfang der Etappe ausgeflaggt"
+msgstr "Anfang der Teilstrecke ausgeflaggt"
 
 #: MainFrame.resx, endFlaggingMenu.Text
 msgid "End of Leg Flagged"
-msgstr "Ende der Etappe ausgeflaggt"
+msgstr "Ende der Teilstrecke ausgeflaggt"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr "Etappe &ausflaggen"
+msgstr "Teilstrecke &ausflaggen"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
@@ -2030,7 +2045,7 @@ msgstr "Bahn-Posten &Querverweise"
 
 #: MainFrame.resx, controlAndLegLoadMenu.Text
 msgid "Control and Leg Loa&d"
-msgstr "Posten- und Etappen&auslastung"
+msgstr "Auslastung der Posten und Teilstrecken"
 
 #: MainFrame.resx, reportMenu.Text
 msgid "&Reports"
@@ -2095,6 +2110,10 @@ msgstr "Berichtstester"
 #: MainFrame.resx, fontMetricsToolStripMenuItem.Text
 msgid "Font Metrics"
 msgstr "Fontmaße"
+
+#: MainFrame.resx, missingTranslationsMenuItem.Text
+msgid "Missing Description Translations"
+msgstr ""
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2171,6 +2190,10 @@ msgstr "Posten hinzufügen (Ctrl+A)"
 msgid "Add Descriptions"
 msgstr "Postenbeschreibung hinzufügen"
 
+#: MainFrame.resx, mapFlipMenuItem.Text
+msgid "Map Flip at Control Point"
+msgstr ""
+
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
 msgstr "Kartenwechsel an Posten"
@@ -2178,6 +2201,10 @@ msgstr "Kartenwechsel an Posten"
 #: MainFrame.resx, mapExchangeSeparateToolStripMenuItem.Text
 msgid "Flagged Route to Map Exchange"
 msgstr "Ausgeflaggte Strecke zum Kartenwechsel"
+
+#: MainFrame.resx, mapExchangeToolStripMenu.Text
+msgid "Add Map Flip/Exchange"
+msgstr "Kartenwechsel hinzufügen"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
@@ -2909,17 +2936,18 @@ msgstr "Beim letzten Posten kann keine Variante hinzugefügt "
 
 #: MiscText.resx, BadLegNumber
 msgid "'{0}' is not a valid leg number for branch '{1}'"
-msgstr "'{0}' ist keine gültige Etappennummer für die Verzweigung "
-"'{1}'"
+msgstr "'{0}' ist keine gültige Teilstreckennummer für die "
+"Verzweigung '{1}'"
 
 #: MiscText.resx, LegNotAssigned
 msgid "Leg {0} should be assigned to one of branches {1}"
-msgstr "Etappe {0} sollte einer Verzweigung {1} zugewiesen sein."
+msgstr "Teilstrecke {0} sollte einer Verzweigung {1} zugewiesen "
+"sein."
 
 #: MiscText.resx, LegUsedTwice
 msgid "Leg {0} is assigned to both branch '{1}' and branch '{2}'"
-msgstr "Etappe {0} ist Verzweigung '{1}' und Verzweigung '{2}' "
-"zugewiesen"
+msgstr "Teilstrecke {0} ist Verzweigung '{1}' und Verzweigung "
+"'{2}' zugewiesen"
 
 #: MiscText.resx, CannotReadMapOOM
 msgid "Cannot read map for the following reason: '{0}' Opening "
@@ -2969,18 +2997,19 @@ msgstr "PDF-Datei|*.pdf"
 #: MiscText.resx, LegAssignedOuterBranch
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
-msgstr "Etappe {0} erreicht nie Verzweigung '{1}': Die Etappe "
-"wurde angewiesen in einer Gabelung eine andere Richtung zu "
-"gehen."
+msgstr "Teilstrecke {0} erreicht nie Verzweigung '{1}': Der "
+"Teilstrecke wurde an einer Gabelung eine andere Richtung "
+"zugewiesen."
 
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
 "the mouse to place the ellipse in the desired location."
-msgstr ""
+msgstr "Das Aussehen der Ellipse festlegen. Nach Klicken  auf \"OK\" "
+"die Ellipse an die gewünschte Position ziehen."
 
 #: MiscText.resx, AddEllipseTitle
 msgid "Add Ellipse"
-msgstr ""
+msgstr "Ellipse hinzufügen"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -3009,6 +3038,26 @@ msgstr "Die Kartendatei \"{0}\" benutzt Schriftarten (Fonts), die "
 #: MissingFonts.resx, $this.Text
 msgid "Missing Fonts"
 msgstr "Fehlende Schriftarten"
+
+#: MoveAllControls.resx, labelDescription.Text
+msgid "Which way would you like to move all controls on the map?"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMove.Text
+msgid "Move Only"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndScale.Text
+msgid "Move and Scale"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveAndRotate.Text
+msgid "Move and Rotate"
+msgstr ""
+
+#: MoveAllControls.resx, radioButtonMoveRotateScale.Text
+msgid "Move, Scale, and Rotate"
+msgstr ""
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3180,7 +3229,7 @@ msgstr "IOF Normen"
 
 #: NewEventStandards.resx, radioButtonMapSpr2019.Text
 msgid "ISSprOM 2019"
-msgstr ""
+msgstr "ISSprOM 2019"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
@@ -3195,8 +3244,8 @@ msgid "IOF Map Standard"
 msgstr "IOF Kartennorm"
 
 #: NewEventStandards.resx, radioButtonDescriptions2018.Text
-msgid "Descriptions 2018"
-msgstr "Postenbeschreibungen 2018"
+msgid "Descriptions 2018 or 2024"
+msgstr "Postenbeschreibungen 2018/2024"
 
 #: NewEventStandards.resx, radioButtonDescriptions2004.Text
 msgid "Descriptions 2004"
@@ -3476,6 +3525,10 @@ msgstr "Kontrollkarten drucken"
 msgid "Box Order"
 msgstr "Anordnung der Kontrollfelder"
 
+#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
+msgid "Size"
+msgstr "Größe"
+
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
 msgstr "Spalten:"
@@ -3483,10 +3536,6 @@ msgstr "Spalten:"
 #: PunchcardLayoutDialog.resx, rowsLabel.Text
 msgid "Rows:"
 msgstr "Zeilen:"
-
-#: PunchcardLayoutDialog.resx, sizeGroupBox.Text
-msgid "Size"
-msgstr "Größe"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
@@ -3558,7 +3607,7 @@ msgstr "Element"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
-msgstr "Etappe"
+msgstr "Teilstrecke"
 
 #: ReportText.resx, ColumnHeader_Length
 msgid "Length"
@@ -3598,7 +3647,7 @@ msgstr "Bahn-Posten Bezüge für {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr "Etappe geht in beide Richtungen"
+msgstr "Teilstrecke geht in beide Richtungen"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3758,8 +3807,8 @@ msgstr "Einige oder alle Bahnen haben keine Angabe zur "
 #: ReportText.resx, Load_OnlyLegsMoreThanOnce
 msgid "(only legs used by more than one course appear in the "
 "following table)"
-msgstr "(In der folgenden Tabelle erscheinen nur Etappen, die von "
-"mehr als einer Bahn genutzt werden.)"
+msgstr "(In der folgenden Tabelle erscheinen nur Teilstrecken, die "
+"von mehr als einer Bahn genutzt werden.)"
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
@@ -3789,21 +3838,22 @@ msgstr "BEMERKUNG: "
 msgid "Warning: due to the number of legs specified, the fork at "
 "control {0} will not be used evenly. {1} leg(s) will use "
 "branch(es) {2}, while {3} leg(s) will use branch(es) {4}. "
-msgstr "Warnung: Aufgrund der Anzahl der Etappen wird die Gabelung "
-"bei Posten {0} nicht gleichmäßig genutzt. {1} Etappe(n) "
-"nutzen Zweig {2}, und {3} Etappe(n) nutzen Zweig {4}. "
+msgstr "Warnung: Aufgrund der Anzahl der Teilstrecken wird die "
+"Gabelung bei Posten {0} nicht gleichmäßig genutzt. {1} "
+"Teilstrecke(n) nutzen Zweig {2}, und {3} Teilstrecke(n) "
+"nutzen Zweig {4}. "
 
 #: ReportText.resx, RelayVariation_LegHeader
 msgid "Leg {0}"
-msgstr "Etappe {0}"
+msgstr "Teilstrecke {0}"
 
 #: ReportText.resx, RelayVariation_NoTeams
 msgid "No relay teams have been defined yet. Selected the desired "
 "number of teams and legs and press the \"Assign Variations\" "
 "button."
 msgstr "Bislang wurden keine Staffelteams festgelegt. Wählen sie "
-"die Anzahl der Teams und Etappen aus und klicken sie auf "
-"\"Varianten zuweisen\"."
+"die Anzahl der Teams und Teilstrecken aus und klicken sie "
+"auf \"Varianten zuweisen\"."
 
 #: ReportText.resx, RelayVariation_TeamNumber
 msgid "Team {0}"
@@ -3851,7 +3901,7 @@ msgstr "Angepasste Symbolbeschreibung"
 
 #: SelectionDescriptionText.resx, EntireLeg
 msgid "entire leg"
-msgstr "Gesamte Etappe"
+msgstr "Gesamte Teilstrecke"
 
 #: SelectionDescriptionText.resx, FinishFunnel
 msgid "finish funnel"
@@ -3989,13 +4039,65 @@ msgstr "Kartenabgabepunkte"
 msgid "map issue point"
 msgstr "Kartenabgabepunkt"
 
+#: SelectionDescriptionText.resx, MapFlipAtControl
+msgid "Map flip at {0}"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelArrowFirstControl.Text
+#: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowSecondControl.Text
+#: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
+#: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
+msgid "è"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstControl.Text
+msgid "Select first control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondNewLocation.Text
+msgid "Choose new location for second control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelConfirmLocations.Text
+msgid "Confirm new locations"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelRotation.Text
+msgid "Rotation:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelYOffset.Text
+msgid "Y Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelXOffset.Text
+msgid "X Offset:"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelSecondControl.Text
+msgid "Select second control or registration mark to move"
+msgstr ""
+
+#: SelectLocationsForMove.resx, labelFirstNewLocation.Text
+msgid "Choose new location for first control/mark"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonBack.Text
+msgid "Back"
+msgstr ""
+
+#: SelectLocationsForMove.resx, buttonConfirm.Text
+msgid "Confirm"
+msgstr ""
+
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
 msgstr "Jede Variante einzeln"
 
 #: SelectVariations.resx, comboBoxVariations.Items1
 msgid "Each Relay Leg Separately"
-msgstr "Jede Staffeletappe einzeln"
+msgstr "Jede Staffel-Teilstrecke einzeln"
 
 #: SelectVariations.resx, comboBoxVariations.Items2
 msgid "All Variations Combined"
@@ -4015,7 +4117,8 @@ msgstr "Eine Karte für jede mögliche Variante der Bahn."
 
 #: SelectVariations.resx, labelByLeg.Text
 msgid "One map for each leg on the relay teams that you choose."
-msgstr "Eine Karte für jede Etappe des ausgewählten Staffelteams."
+msgstr "Eine Karte für jede Teilstrecke des ausgewählten "
+"Staffelteams."
 
 #: SelectVariations.resx, labelByLegNotAvailable.Text
 msgid "You must first define relay teams by selecting Relay Team "
@@ -4206,7 +4309,7 @@ msgstr "Klicken Sie mit der linken Maustaste auf eine Linie, um "
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
 msgstr "Klicken Sie mit der linken Maustaste auf eine Lücke in der "
-"Etappe, um sie zu entfernen"
+"Teilstrecke, um sie zu entfernen"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "
@@ -4284,6 +4387,17 @@ msgstr "Klicke mit linker Maustaste, um einen neuen "
 #: StatusBarText.resx, StretchingObject
 msgid "Hold down left mouse button and drag to stretch the "
 "stretch the crossing point"
+msgstr "Die linke Maustaste gedrückt halten und die Verlängerung "
+"zu dem gewünschten Kreuzungspunkt ziehen."
+
+#: StatusBarText.resx, ControlForMoveAllControls
+msgid "Click the left mouse button on a control or registration "
+"mark to move to a new location"
+msgstr ""
+
+#: StatusBarText.resx, NewLocationForMoveAllControls
+msgid "Click the left mouse button on the new location for the "
+"control or registration mark"
 msgstr ""
 
 #: TeamVariationsForm.resx, buttonExport.Text
@@ -4292,7 +4406,7 @@ msgstr "Exportieren..."
 
 #: TeamVariationsForm.resx, label2.Text
 msgid "Number of legs:"
-msgstr "Anzahl der Etappen:"
+msgstr "Anzahl der Teilstrecken:"
 
 #: TeamVariationsForm.resx, buttonCalculate.Text
 msgid "Assign Variations"
@@ -4304,7 +4418,7 @@ msgstr "Anzahl der Teams:"
 
 #: TeamVariationsForm.resx, fixedLegsLink.Text
 msgid "Assign fixed legs to branches..."
-msgstr "Fixe Verzweigungen für Etappen zuweisen..."
+msgstr "Fixe Verzweigungen für Teilstrecken zuweisen..."
 
 #: TeamVariationsForm.resx, label3.Text
 msgid "Team numbers start at: "

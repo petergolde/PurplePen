@@ -306,4 +306,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Set kartstandard</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Strekk ut</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Publiser til Livelox</value>
+  </data>
 </root>

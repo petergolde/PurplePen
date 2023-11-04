@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>格子順序</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>尺寸</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>欄：</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>列：</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>尺寸</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>打孔空格版面</value>

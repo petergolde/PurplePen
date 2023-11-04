@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Valitse kansio OCAD-tiedostoille</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Tuotos</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Tiedostomuoto:</value>
   </data>
@@ -186,20 +189,17 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Tuotos</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Valitse kansio...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Muu kansio</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samaan kuin Purple Pen -tiedosto</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samaan kuin karttatiedosto</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samaan kuin Purple Pen -tiedosto</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Muu kansio</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Kansio</value>

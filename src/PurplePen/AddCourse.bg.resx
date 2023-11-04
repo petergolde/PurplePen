@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Мащаб на отпечатване на картата:</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Символи</value>
   </data>
@@ -168,11 +165,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Оформление</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Следният (незадължителен) текст ще се изобрази на втория ред от описанието на КТ.</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Списък на класовете / Подзаглавие</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Следният (незадължителен) текст ще се изобрази на втория ред от описанието на КТ.</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Дължина:</value>

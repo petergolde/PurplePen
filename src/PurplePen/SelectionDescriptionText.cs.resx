@@ -162,6 +162,9 @@
   <data name="Finish_Singular" xml:space="preserve">
     <value>finish</value>
   </data>
+  <data name="Flagging" xml:space="preserve">
+    <value>Označování:</value>
+  </data>
   <data name="IntoControl" xml:space="preserve">
     <value>ke kontrole</value>
   </data>
@@ -190,7 +193,7 @@
     <value>Nepřekonatelná hranice</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
-    <value>Kategorie</value>
+    <value>Název trati</value>
   </data>
   <data name="SpecialName_Dangerous" xml:space="preserve">
     <value>Nebezpečná oblast</value>
@@ -233,6 +236,18 @@
   </data>
   <data name="TextLine" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="TextLine_AboveAllCourses" xml:space="preserve">
+    <value>Je nad {0}, ve všech tratích co obsahují {0}</value>
+  </data>
+  <data name="TextLine_AboveThisCourse" xml:space="preserve">
+    <value>Je nad {0}, pouze v této trati</value>
+  </data>
+  <data name="TextLine_BelowAllCourses" xml:space="preserve">
+    <value>Je po {0}, ve všech tratích co obsahují {0}</value>
+  </data>
+  <data name="TextLine_BelowThisCourse" xml:space="preserve">
+    <value>Je pod {0}, pouze v této trati</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
     <value>Celkem kontrol:</value>

@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Concluído</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="setPrintAreaLabel.Text" xml:space="preserve">
+    <value>Defina a área de impressão desejada arrastando com o mouse.</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Tamanho do Papel</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Definir área de impressão automaticamente</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Ajustar o tamanho da área de impressão ao tamanho do papel</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Definir Área de Impressão</value>

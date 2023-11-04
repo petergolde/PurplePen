@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="boxOrderGroupBox.Text" xml:space="preserve">
+    <value>Порядок відміток</value>
+  </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Розмір</value>
+  </data>
+  <data name="columnsLabel.Text" xml:space="preserve">
+    <value>Колонки:</value>
+  </data>
+  <data name="rowsLabel.Text" xml:space="preserve">
+    <value>Рядки:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Макет картки для відмітки</value>
+  </data>
 </root>

@@ -129,14 +129,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Seleziona cartella...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Altra cartella</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Stessa cartella come file di Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Stessa cartella come file di mappa</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Stessa cartella come file di Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Altra cartella</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Cartella</value>

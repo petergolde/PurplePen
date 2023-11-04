@@ -129,25 +129,82 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCAD dosyaları için bir klasör seçin</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Çıktı</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Dosya formatı:</value>
+  </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>PNG</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>JPEG</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>GIF</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Dosya adı öneki:</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Web dosyası:</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>Dpi:</value>
+  </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
-    <value>hayır</value>
+    <value>Hayır</value>
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Evet</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Çıktı</value>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Renk modeli:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Dosya Seç...</value>
   </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen dosyasıyla aynı klasör</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Harita dosyası ile aynı klasör</value>
+  </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Diğer klasör</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Görüntü Dosyası Oluştur</value>
   </data>
 </root>

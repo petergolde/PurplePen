@@ -120,6 +120,9 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Odstranit</value>
   </data>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>Následující kontroly jsou ve Všechny kontroly, ale nejsou použity v žádné trati. Kliknutím na tlačítko Odstranit odstraníte všechny zaškrtnuté kontroly.</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Nepoužité kontroly</value>
   </data>

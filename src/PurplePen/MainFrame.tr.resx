@@ -126,6 +126,15 @@
   <data name="radioButtonTopology.Text" xml:space="preserve">
     <value>Sipariş</value>
   </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>mapViewerTopoloji</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Purple Pen dosyası|*.ppen|Tüm dosyalar|*.*</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>Purple Pen dosyası|*.ppen</value>
+  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Yeni etkinlik...</value>
   </data>
@@ -140,6 +149,87 @@
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>OCAD ve Dosyalar Oluştur ...</value>
+  </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Ima&amp;ge Dosyası Oluştur...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>&amp;Açıklamalar...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>Delme Kartları Yazdır...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>&amp;Parkurlar...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>P&amp;DF ler oluştur</value>
+  </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>RouteGadget Dosyaları Oluşturun...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rota İnceleme Dosyaları Oluşturun</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Veri ve Değişim Dosyası Oluştur (IOF XML)...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>G&amp;PX Dosyası Oluştur...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>&amp;KML Dosyası Oluştur...</value>
+  </data>
+  <data name="printDescriptionsMenu.Text" xml:space="preserve">
+    <value>Açıklamaları &amp;Yazdır...</value>
+  </data>
+  <data name="printPunchCardsMenu.Text" xml:space="preserve">
+    <value>Delme Kartları Yazdır...</value>
+  </data>
+  <data name="printCoursesMenu.Text" xml:space="preserve">
+    <value>Yazdır &amp; Parkurları...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>&amp;Yalnızca bu bölümü</value>
+  </data>
+  <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Bu Parkuru</value>
+  </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;Tüm Parkurlar</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Yazdırma Alanını&amp; Ayarla</value>
+  </data>
+  <data name="programLanguageMenu.Text" xml:space="preserve">
+    <value>Program &amp;Dili...</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Dosya</value>
+  </data>
+  <data name="cancelMenu.Text" xml:space="preserve">
+    <value>&amp;Seçili olanı temizle</value>
+  </data>
+  <data name="undoMenu.Text" xml:space="preserve">
+    <value>&amp;Geri al</value>
+  </data>
+  <data name="redoMenu.Text" xml:space="preserve">
+    <value>&amp;Yinele</value>
+  </data>
+  <data name="deleteMenu.Text" xml:space="preserve">
+    <value>&amp;Sil</value>
+  </data>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Düzenle</value>
+  </data>
+  <data name="entireCourseMenu.Text" xml:space="preserve">
+    <value>Bütün &amp;Parkur</value>
+  </data>
+  <data name="entireMapMenu.Text" xml:space="preserve">
+    <value>Bütün &amp;Harita</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -165,6 +255,9 @@
   <data name="zoomMenu.Text" xml:space="preserve">
     <value>&amp;Yaklaştır</value>
   </data>
+  <data name="veryLowIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Çok düşük</value>
+  </data>
   <data name="lowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Düşük</value>
   </data>
@@ -177,11 +270,32 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Tam</value>
   </data>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Harita &amp;Yoğunluk</value>
+  </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Düşük</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Yüksek</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Harita &amp;Kalite</value>
+  </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Baskı &amp;Alanını Göster</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>&amp;Açılır Bilgiyi Göster</value>
+  </data>
+  <data name="allControlsMenu.Text" xml:space="preserve">
+    <value>%Tüm Hedefler</value>
+  </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>Diğer Parkurlar...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Diğer Parkurları Temizle</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Görünüm</value>
@@ -198,6 +312,54 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp; Açıklamalar</value>
   </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>&amp;Kontrol Noktasında Harita Değişimi</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>Harita Değişimine Yönelik İşaretli Rota</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Harita &amp;Değişimi</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>&amp;Varyasyon...</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Metin &amp;Çizgi...</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Zamanlayıcı Başlatma</value>
+  </data>
+  <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
+    <value>Zorunlu Geçiş Noktası</value>
+  </data>
+  <data name="addOptCrossingMenu.Text" xml:space="preserve">
+    <value>Opsiyonel Geçiş Noktası</value>
+  </data>
+  <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
+    <value>Sınır Dışı Alan</value>
+  </data>
+  <data name="addDangerousMenu.Text" xml:space="preserve">
+    <value>Tehlikeli Alan</value>
+  </data>
+  <data name="addWaterMenu.Text" xml:space="preserve">
+    <value>Su Noktası</value>
+  </data>
+  <data name="addFirstAidMenu.Text" xml:space="preserve">
+    <value>İlk yardım Noktası</value>
+  </data>
+  <data name="addForbiddenMenu.Text" xml:space="preserve">
+    <value>Yasak Güzergah İşaretleme</value>
+  </data>
+  <data name="addBoundaryMenu.Text" xml:space="preserve">
+    <value>Aşılmaz Sınır</value>
+  </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Kayıt İşareti</value>
+  </data>
+  <data name="whiteOutMenu.Text" xml:space="preserve">
+    <value>Beyaz Dış Alan</value>
+  </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Metin</value>
   </data>
@@ -210,11 +372,206 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Dikdörtgen</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Elips</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Ekle</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp; Harita Dosyası ...</value>
+  </data>
+  <data name="changeCodesMenu.Text" xml:space="preserve">
+    <value>Kontrol &amp;Kodlarını Değiştir...</value>
+  </data>
+  <data name="autoNumberingMenu.Text" xml:space="preserve">
+    <value>Otomatik &amp;Numaralandırma...</value>
+  </data>
+  <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
+    <value>Kullanılmayan Kontrolleri Kaldır...</value>
+  </data>
+  <data name="punchPatternsMenu.Text" xml:space="preserve">
+    <value>Zımba Desenleri...</value>
+  </data>
+  <data name="descriptionStd2004Menu.Text" xml:space="preserve">
+    <value>2004 Tanım Satandardı</value>
+  </data>
+  <data name="descriptionStd2018Menu.Text" xml:space="preserve">
+    <value>2018/2024 Tanım Satandardı</value>
+  </data>
+  <data name="mapStd2000Menu.Text" xml:space="preserve">
+    <value>ISOM2000 Harita Standardı</value>
+  </data>
+  <data name="mapStd2017Menu.Text" xml:space="preserve">
+    <value>ISOM2017 Harita Standardı</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019 Harita Standardı</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF &amp;Standartları</value>
+  </data>
+  <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Açıklama Metnini Özelleştir...</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>&amp;Görünüşü özelleştirme...</value>
+  </data>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Etkinlik</value>
+  </data>
+  <data name="addCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Parkur ekle...</value>
+  </data>
+  <data name="deleteCourseMenu.Text" xml:space="preserve">
+    <value>&amp;Parkur Sil</value>
+  </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>Parkuru Çoğalt...</value>
+  </data>
+  <data name="propertiesMenu.Text" xml:space="preserve">
+    <value>Özellikler...</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Parkur &amp;Sırası...</value>
+  </data>
+  <data name="courseLoadMenu.Text" xml:space="preserve">
+    <value>Rakip &amp;Yükle...</value>
+  </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>Röle Takımı &amp; Varyasyonlar...</value>
+  </data>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Parkur</value>
+  </data>
+  <data name="deleteItemMenu.Text" xml:space="preserve">
+    <value>&amp;Sil</value>
+  </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>Ayrım/Döngü Sil</value>
+  </data>
+  <data name="addBendMenu.Text" xml:space="preserve">
+    <value>Ekle&amp;Kıvrım</value>
+  </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>Bükme Sil</value>
+  </data>
+  <data name="addGapMenu.Text" xml:space="preserve">
+    <value>Ekle&amp;Açıklık</value>
+  </data>
+  <data name="removeGapMenu.Text" xml:space="preserve">
+    <value>Boşluğu kaldır</value>
+  </data>
+  <data name="changeTextMenu.Text" xml:space="preserve">
+    <value>Değiştir &amp;Metin...</value>
+  </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Satır &amp;Görünümünü Değiştir...</value>
+  </data>
+  <data name="rotateMenu.Text" xml:space="preserve">
+    <value>Döndür</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>Uzat</value>
+  </data>
+  <data name="noFlaggingMenu.Text" xml:space="preserve">
+    <value>İşaretleme Yok</value>
+  </data>
+  <data name="entireFlaggingMenu.Text" xml:space="preserve">
+    <value>Tüm Bacak İşaretlendi</value>
+  </data>
+  <data name="beginFlaggingMenu.Text" xml:space="preserve">
+    <value>Bacak Bayraklı Başlangıcı</value>
+  </data>
+  <data name="endFlaggingMenu.Text" xml:space="preserve">
+    <value>Bacak Sonu İşaretlendi</value>
+  </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Bacak İşaretleme</value>
+  </data>
+  <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
+    <value>Görüntülenen Parkurları Değiştir...</value>
+  </data>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Öğe</value>
+  </data>
+  <data name="courseSummaryMenu.Text" xml:space="preserve">
+    <value>Parkur &amp; Özet</value>
+  </data>
+  <data name="eventAuditMenu.Text" xml:space="preserve">
+    <value>Etkinlik &amp; Denetim</value>
+  </data>
+  <data name="legLengthsMenu.Text" xml:space="preserve">
+    <value>&amp;Bacak Uzunlukları</value>
+  </data>
+  <data name="controlCrossrefMenu.Text" xml:space="preserve">
+    <value>Kontrol &amp;Çapraz referans</value>
+  </data>
+  <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
+    <value>Kontrol ve Bacak Yükleme</value>
+  </data>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Rapor</value>
+  </data>
+  <data name="helpContentsMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Yardım</value>
+  </data>
+  <data name="helpTranslatedMenu.Text" xml:space="preserve">
+    <value>Purple Pen Yardım (Çeviri)</value>
+  </data>
+  <data name="mainWebSiteToolMenu.Text" xml:space="preserve">
+    <value>Purple Pen &amp;Web Sitesi</value>
+  </data>
+  <data name="supportWebSiteMenu.Text" xml:space="preserve">
+    <value>&amp;Destek/Hata Raporlama</value>
+  </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>Bağış Yap</value>
+  </data>
+  <data name="aboutMenu.Text" xml:space="preserve">
+    <value>&amp;Purple Pen Hakkında</value>
+  </data>
+  <data name="symbolBrowserMenu.Text" xml:space="preserve">
+    <value>Sembol Tarayıcı</value>
+  </data>
+  <data name="descriptionBrowserMenu.Text" xml:space="preserve">
+    <value>Açıklama Tarayıcı</value>
+  </data>
+  <data name="controlTesterMenu.Text" xml:space="preserve">
+    <value>Kontrol Testi</value>
+  </data>
+  <data name="mapTesterMenu.Text" xml:space="preserve">
+    <value>Harita Testi</value>
+  </data>
+  <data name="courseSelectorTesterMenu.Text" xml:space="preserve">
+    <value>Parkur Seçme Testi</value>
+  </data>
+  <data name="dotGridTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Grid Noktası Testi</value>
+  </data>
+  <data name="dumpOCADFileMenu.Text" xml:space="preserve">
+    <value>OCAD Dosyası Dökümü</value>
+  </data>
+  <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rapor Testi</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Metrik Yazı Tipi</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Çarpışmak</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Hata ayıklama</value>
+  </data>
+  <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
+    <value>Tanım Dili Ekle...</value>
+  </data>
+  <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
+    <value>Çevrilmiş Metinleri Ekle...</value>
+  </data>
+  <data name="mergeSymbolsMenu.Text" xml:space="preserve">
+    <value>Sembolleri Birleştir.xml...</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
     <value>&amp;Açıklama Metni Çevirisi</value>
@@ -276,6 +633,39 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Varyasyon Ekle</value>
   </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zamanlayıcı Başlatma</value>
+  </data>
+  <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Zorunlu Geçiş Noktası</value>
+  </data>
+  <data name="optionalCrossingPointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Opsiyonel Geçiş Noktası</value>
+  </data>
+  <data name="outOfBoundsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sınır Dışı Alan</value>
+  </data>
+  <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tehlikeli Alan</value>
+  </data>
+  <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Su Noktası</value>
+  </data>
+  <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
+    <value>İlk yardım Noktası</value>
+  </data>
+  <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Yasak Güzergah İşaretleme</value>
+  </data>
+  <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aşılmaz Sınır</value>
+  </data>
+  <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kayıt İşareti</value>
+  </data>
+  <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Beyaz Dış Alan</value>
+  </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Metin</value>
   </data>
@@ -287,6 +677,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Dikdörtgen</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elips</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Özel Öğe Ekle</value>

@@ -168,11 +168,17 @@
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
     <value>Aynı sembol mi?</value>
   </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Ziyarteler</value>
+  </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>{0} için Parkur Özeti</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
     <value>{0} için çapraz referans kontrolü</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Bacaklar her iki yöne hareket eder</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Kontrolleri Birlikte Kapat</value>
@@ -211,7 +217,7 @@
     <value>Eksik Punch Kalıpları</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
-    <value>Skor dersinin tüm kontroller için puan seti veya kontrolü yok olmalıdır.</value>
+    <value>Skor dersinin tüm kontroller için puan seti veya kontrolü yok olmalıdır</value>
   </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
     <value>Eksik Puanlar</value>
@@ -223,10 +229,19 @@
     <value>Score courses should have a start triangle</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
-    <value>hayır</value>
+    <value>Hayır</value>
   </data>
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Hiçbir sorun bulunamadı.</value>
+  </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Parkur  "{0}" kontrol içerir"{1}" arka arkaya iki kez.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Tekrarlanan Hedefler</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Skor parkuru "{0}" kontrol içerir "{1}" iki kez. </value>
   </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Etkinlik Denetimi için {0}</value>
@@ -252,6 +267,9 @@
   <data name="LegLength_Title" xml:space="preserve">
     <value>{0} için Ayak Uzunluğu Raporu</value>
   </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Bazı hedefler aynı parkurda birden çok kez ziyaret edilir. İkinci yük sayısı, bir hedefe yapılan her ziyareti ayrı olarak sayar.</value>
+  </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
     <value>Kontrol Ekle</value>
   </data>
@@ -267,8 +285,17 @@
   <data name="Load_Title" xml:space="preserve">
     <value>{0} için Rakip Yükü Özeti</value>
   </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Bir veya daha fazla parkurun varyasyonları vardır. Yük sayıları, rakiplerin çatallar arasında eşit olarak dağıldığı varsayılarak hesaplanacaktır.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} ziyaret)</value>
+  </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>UYARI:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOT: </value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
     <value>Uyarı: Belirtilen bacaklar nedeniyle, {0} denetimindeki çatal eşit şekilde kullanılamaz. {1} bacak dalları {2}, {3} bacakları ise dalları {4} kullanacaktır. </value>

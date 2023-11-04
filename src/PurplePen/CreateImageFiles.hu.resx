@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Válassza ki az OCAD fájlok könyvtárát</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Kimenet</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Fájlformátum:</value>
   </data>
@@ -186,20 +189,17 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Kimenet</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Könyvtár kiválasztása..</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Másik könyvtár</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>A Purple Pen fájllal azonos könyvtár</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>A térkép fájllal azonos könyvtár</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>A Purple Pen fájllal azonos könyvtár</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Másik könyvtár</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Könyvtár</value>

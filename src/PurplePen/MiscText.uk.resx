@@ -117,25 +117,503 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CtrlZ" xml:space="preserve">
+    <value>Ctrl+Z</value>
+  </data>
+  <data name="CtrlY" xml:space="preserve">
+    <value>Ctrl+Y</value>
+  </data>
+  <data name="Esc" xml:space="preserve">
+    <value>Esc</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Purple Pen</value>
+  </data>
+  <data name="NoSymbol" xml:space="preserve">
+    <value>Без знаку</value>
+  </data>
+  <data name="AllControls" xml:space="preserve">
+    <value>Всі КП</value>
+  </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Не вдалося завантажити '{0}' з наступних причин:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>Не вдалося зберегти '{0}' з наступних причин:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Не вдалося відкрити файл карти '{0}' з наступних причин:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>Не вдалося зчитати файл зображення '{0}'.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Не вдалося роздрукувати '{0}' з наступних причин:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Не вдалося створити '{0}' з наступних причин:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Не вдалося створити '{0}' з наступних причин:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Не вдалося зчитати файл карти з наступних причин: '{0}' Скористайтеся функцією Optimize/Repair у OCAD і збережіть файл. Це може усунути проблему.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Не вдалося створити файли OCAD з наступних причин:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Хочете зберегти, зроблені вами, зміни у '{0}'?</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Файл '{0}' вже існує у обраній папці. Натисніть кнопку "Назад" і виберіть іншу папку, або іншу назву змагань.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>Код КП '{0}' вже використовується іншим КП.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Кількість очків КП має бути цілим числом від 1 до 999.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Набір висоти на дистанції має бути числом від 0 до 9999, або не заповнються.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Навантаження дстанції учасниками має бути цілим числом від 0 до 999999, або не заповнюється.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Вернути</value>
+  </data>
+  <data name="Undo" xml:space="preserve">
+    <value>Відмінити</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Повторити</value>
+  </data>
+  <data name="Redo" xml:space="preserve">
+    <value>Повернути</value>
+  </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Очистити вибір</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>Скасува&amp;ти операцію</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>Скасувати операцію</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Введіть нову кількість очок</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Введіть новий код</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Введіть розмір об'єкта
+Використовуйте / для висоти на схилі
+Використовуйте | для двох об'єктів</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Введіть нову назву змагань
+Використовуйте | щоб відділити рядки
+(відображається на всіх дистанціях)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Введіть новий підзаголовок
+Використовуйте | щоб відділити рядки</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Введіть нову назву дистанції</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Введіть новий набір висоти у метрах</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Введіть нове значення умовного знаку
+(відображається на всіх дистанціях)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Введіть новий текст
+Використовуйте | щоб відділити рядки</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>КП {0} не задіяні у жодній з дистанцій. Бажаєте видалити їх із сукупності контрольних пунктів?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>КП {0} не задіяний у жодній з дистанцій. Бажаєте видалити його із сукупності контрольних пунктів?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>КП {0} використовується у наступних дистанціях: {1}. Ви все одно бажаєте його видалити?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Код КП має складатись із однієї, двох чи трьох букв або цифр.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Код КП не може містити пробілів</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Не слід використовувати нуль у якості кода КП.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Не слід використовувати у якості кода КП цифру, що виглядає як інша перевернута цифра.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>Код КП "{0}" використовується понад один раз.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Масштаб для друку має бути числом між 100 та 100 000.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Властивості дистанції</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Альбомна</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Книжкова</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Розмір сторінки замалий для друку будь якої із таблиць легенд.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Версія {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Версія {0} Purple Pen доступна для завантаження. (Наразі ви використовуєте версію {1}.)
+
+Бажаєте завантажити та встановити новішу версію?</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Не вдалося відкрити файл довідки '{0}'.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Збільшення</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>Не вдалося знайти файл карти "{0}".
+
+Імовірно файл карти було переміщено чи видалено, або було переміщено файл змагань Purple Pen (можливо на інший комп'ютер). Файл карти має бути присутнім під час відкриття файлу змагань Purple Pen. Коли ви пересилаєте файл з дистанціями Purple Pen іншій особі, переконайтеся що вона також має файл карти.
+
+Після натискання на OK, спробуйте знайти копію файла карти на вашому комп'ютері.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Всі КП використовуються у дистанції.</value>
+  </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Фініш</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Далі &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>КП {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Фініш</value>
+  </data>
+  <data name="Finish_Short" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Обов'язковий пункт переходу</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Перехід</value>
+  </data>
+  <data name="MandCrossing_Short" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Всі: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Ліва: {0}, Права: {1}, Верхня: {2}, Нижня: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Старт</value>
+  </data>
+  <data name="Start_Short" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>множина</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>однина</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Змінений текст вимагає знак "*" для указання на розміщення зміненого об'єкту.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>планування дистанцій для спортивного орієнтування</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Введіть текст, який ви хочете розмістити на карті. Після натискання на OK, перетягніть мишку до позиції де бажаєте розмістити текст.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Додати текст</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Введіть новий текст.</value>
+  </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Змінити текст</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Інша програма змінила файл карти "{0}". Зараз Purple Pen перезавантажить карту.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Змагання мають текстові легенди мовою {0}. Бажаєте змінити мову легенд КП на {1}?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Відкрти "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Необхідно закрити Purple Pen перед відкриттям створених файлів OCAD.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Жодна дистанція не відмічена для друку</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Зміна карти</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Заміна</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Частина {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Всі частини</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Частина {0} (з {1})</value>
   </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Скасувати</value>
   </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Контактна адреса електронної пошти</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Виникла помилка. Для того щоб допомогти нам її виправити, будь ласка введіть свою електронну адресу, додаткові деталі, та надішліть звіт про помилку.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Розкажіть нам що ви робили у програми. Це допоможе нам виправити помилку</value>
+  </data>
+  <data name="CrashSave" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Надіслати звіт</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Неможливо додати легенди на дистанцію зі зміною карти у варіанті відображення "Всі частини". Переключіться но одну із частин і виберіть "Додати легенди" знову.</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe не знайдено</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF converter не вдалося успішно зчитати PDF файл</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Не вдалося зчитати результат конвертації у PDF файла '{0}'</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Не вдалося створити PDF через наступні причини:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Задано користувачем</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Розмір карти з PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Скасовано користувачем</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Створення {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Друк сторінки {0} (із {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Файл карти "{0}" видалено. Будь ласка, спробуйте відновити файл і тоді натисніть "Ok".</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Схоже що .NET framework не встановлено належним чином на вашому комп'ютері. Будь ласка, відвідайте http://microsoft.com/net і встановіть останню версію .NET framework у вашу операційну систему Windows.</value>
+  </data>
   <data name="Black" xml:space="preserve">
     <value>Чорний</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Виберіть колір...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Власний колір</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Темно-синій</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Світло-синій</value>
   </data>
   <data name="Purple" xml:space="preserve">
     <value>Пурпуровий</value>
   </data>
+  <data name="Red" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Жовтий</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Налаштуйте зовнішній вигляд лінії. Після натискання OK, потягніть мишкою щоб намалювати сегмент лінії у бажаному місці.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Додати лінію</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Налаштуйте зовнішній вигляд прямокутника. Після натискання OK, потягніть мишкою щоб розмістити прямокутник у бажаному місці.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Додати прямокутник</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Змінити щовнішній вигляд лініх чи прямокутника.</value>
+  </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Змінити вигляд лінії</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Файл кари має бути у форматі OCAD для використання GPX файлів.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>Файл OCAD повинен мати визначену систему координат для використання GPX файлів.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>Файл OCAD повинен мати визначені глобальні координати для використання GPX файлів.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Не вдалося спроектувати точки; або система координат, чи глобальні координати на карті OCAD неправильні.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>Файл OCAD використовує систему координат, що не підтримується Purple Pen.</value>
   </data>
   <data name="AutomaticLength" xml:space="preserve">
     <value>Автоматично</value>
   </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Довжина дистанції має бути числом від 0,1 до 99,9, або не заповнюється і підраховується автоматично.</value>
+  </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Дублювати дистанцію</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Введіть довжину у км, або лишіть поле порожнім для автоматичного підрахунку</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Завершено друк "{0}". Натисніть OK щоб почати друк "{1}".</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Всі варіанти розсіювання</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Підходить для використання у естафеті з {0} учасників у команді.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Центральний КП петлі буде відвідано {0} разів. Існує {1} можливих варіанти проходження петель.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>КП з якого починається розвилка чи петля не може бути переміщений у нове місце на цій дистанції.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Забагато розсіювання у цій дистанції. кількість розгалужень розсіювання обмежена {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Неможливо додати розсіювання.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>На цьому КП вже існує розсіювання.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Для додавання розсіювання слід вибрати КП чи перегон.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Розсіювання не може застосовуватися на останньому КП.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Неможливо додати розсіювання при перегляді Всі КП.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Розсіювання не застосовується до дистанції за вибором.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Розсіювання не може бути застосовано на останньому КП. Спершу додайте фінішний КП.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' не є правильною кількістю етапів для гілки '{1}'</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Етап {0} має бути призначений для однієї з гілок {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Етап {0} призначено як на гілку '{1}' так і на гілку '{2}'</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Не вдалося зчитати карту через наступні причини: '{0}' Відкриття і збереження карти у останній версії OpenOrienteering Mapper може виправити проблему.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Виносний старт</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Виносний старт</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Підключена карта OCAD має видимі файли підложок. В OCAD 8 і нижче ці підложки можуть не відображатися через обмеження OCAD.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Через обмеження формату OCAD (у OCAD 10 і нижче) в експортованих файлах OCAD об’єкти зображень відображатимуться під дистанціями та забіленими областями. Будь ласка, перевірте файли OCAD, щоб переконатися, що зображення відображаються належним чином.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Не вдалося створити файли зображень із наступних причин:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Створити PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF файл|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Етап {0} ніколи не потрапить на гілку '{1}': для нього був призначений інший шлях у попередній розвилці.</value>
+  </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Налаштуйте вигляд еліпса. Після натискання на OK потягніть мишкою щоб розмістити еліпс у бажаному місці.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Додати еліпс</value>
   </data>
 </root>

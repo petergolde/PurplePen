@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Lisää uusi kartanottopaikka klikkaamalla hiiren vasenta painiketta</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Paina hiiren vasen painike pohjaan ja vedä venyttääksesi ylitys/alituspaikkaa</value>
+  </data>
 </root>

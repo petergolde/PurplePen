@@ -120,4 +120,25 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>Tamam</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Son görüntülenen etkinliği aç</value>
+  </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>Örnek bir etkinlik açın</value>
+  </data>
+  <data name="createNewRadioButton.Text" xml:space="preserve">
+    <value>Yeni etkinlik oluştur...</value>
+  </data>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>Mevcut bir etkinliği aç...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen ücretsiz bir yazılımdır ve kopyalanabilir ve paylaşılabilir. Purple Pen'in gelişimi sadece bağışlarınızla destekleniyor.</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Bağış yapın</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Purple Pen'e Hoş Geldiniz</value>
+  </data>
 </root>

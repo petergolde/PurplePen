@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Map printing scale:</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symbols</value>
   </data>
@@ -156,6 +153,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Code and score (145(30))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Score (30)</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Show points in:</value>
   </data>
@@ -174,11 +174,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Appearance</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>The following (optional) text will appear on the second line of the control description sheet:</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Class list / Secondary title</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>The following (optional) text will appear on the second line of the control description sheet:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Length:</value>

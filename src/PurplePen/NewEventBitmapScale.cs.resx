@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>Při použití souboru obrázku jako mapy musíte určit rozlišení obrázku a měřítko mapy. 
+
+Rozlišení obrázku udává, počet pixelů nebo bodů v obrázku pro každý palec na papírové mapě; obvykle nazývané body na palec nebo "dpi".
+</value>
+  </data>
   <data name="resolutionLabel.Text" xml:space="preserve">
     <value>Rozlišení obázku:</value>
   </data>

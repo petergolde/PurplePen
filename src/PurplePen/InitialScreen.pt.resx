@@ -123,6 +123,9 @@
   <data name="openLastRadioButton.Text" xml:space="preserve">
     <value>Abrir o último evento visualizado</value>
   </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>Abrir o evento exemplo</value>
+  </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
     <value>Criar novo evento...</value>
   </data>

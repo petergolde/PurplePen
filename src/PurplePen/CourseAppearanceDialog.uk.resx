@@ -129,6 +129,9 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Масштабувати розмаір елементів:</value>
   </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Автоматичний розмір розриву лінії:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>мм</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Використовувати ефект оверпрінту для кольорів з позначкою "overprint"</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Додатково</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Налаштувати вигляд</value>

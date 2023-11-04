@@ -306,4 +306,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Kartennorm auswählen</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Verlängern</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Auf Livelox veröffentlichen</value>
+  </data>
 </root>

@@ -299,7 +299,7 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>Jeder Posten wird in einer Bahn verwendet.</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Fertigstellen</value>
+    <value>&amp;Ziel</value>
   </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Weiter &gt;</value>
@@ -575,13 +575,13 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>Beim letzten Posten kann keine Variante hinzugefügt werden. Zuerst muss ein Zielposten hinzugefügt werden.</value>
   </data>
   <data name="BadLegNumber" xml:space="preserve">
-    <value>'{0}' ist keine gültige Etappennummer für die Verzweigung '{1}'</value>
+    <value>'{0}' ist keine gültige Teilstreckennummer für die Verzweigung '{1}'</value>
   </data>
   <data name="LegNotAssigned" xml:space="preserve">
-    <value>Etappe {0} sollte einer Verzweigung {1} zugewiesen sein.</value>
+    <value>Teilstrecke {0} sollte einer Verzweigung {1} zugewiesen sein.</value>
   </data>
   <data name="LegUsedTwice" xml:space="preserve">
-    <value>Etappe {0} ist Verzweigung '{1}' und Verzweigung '{2}' zugewiesen</value>
+    <value>Teilstrecke {0} ist Verzweigung '{1}' und Verzweigung '{2}' zugewiesen</value>
   </data>
   <data name="CannotReadMapOOM" xml:space="preserve">
     <value>Die Karte kann wegen folgendem Prpblem nicht geladen werden: '{0}' Die Karte in der neusten Version von OpenOrienteering Mapper öffnen und neu speichern, könnte das Problem beheben.</value>
@@ -611,7 +611,13 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
     <value>PDF-Datei|*.pdf</value>
   </data>
   <data name="LegAssignedOuterBranch" xml:space="preserve">
-    <value>Etappe {0} erreicht nie Verzweigung '{1}': Die Etappe wurde angewiesen in einer Gabelung eine andere Richtung zu gehen.</value>
+    <value>Teilstrecke {0} erreicht nie Verzweigung '{1}': Der Teilstrecke wurde an einer Gabelung eine andere Richtung zugewiesen.</value>
+  </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Das Aussehen der Ellipse festlegen. Nach Klicken  auf "OK" die Ellipse an die gewünschte Position ziehen.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Ellipse hinzufügen</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>

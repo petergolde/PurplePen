@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventDirectoryLabel.Text" xml:space="preserve">
+    <value>Parkur olay dosyanızı hangi klasöre (dizin) kaydetmek istiyorsunuz?</value>
+  </data>
+  <data name="useMapDirectory.Text" xml:space="preserve">
+    <value>Harita dosyası ile aynı klasörde.</value>
+  </data>
+  <data name="useOtherFolder.Text" xml:space="preserve">
+    <value>Seçtiğim başka bir klasörde.</value>
+  </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>Dosya Seç...</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Etkinlik dosyanız için klasörü seçin</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>Seçili Klasör</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Etkinlik Dosyası Konumu</value>
+  </data>
 </root>

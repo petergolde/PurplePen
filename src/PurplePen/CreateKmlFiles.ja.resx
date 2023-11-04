@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCADファイルを保存するフォルダを選択してください</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>出力</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>プレフィックス:</value>
   </data>
@@ -141,26 +144,20 @@
   <data name="filesCombo.Items1" xml:space="preserve">
     <value>1個 / コース</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>出力</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>フォルダを選択...</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>その他のフォルダ</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>地図ファイルと同じフォルダ</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Purple Pen ファイルと同じフォルダ</value>
   </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>地図ファイルと同じフォルダ</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>その他のフォルダ</value>
+  </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>フォルダ</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>OCADファイルを作成</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>ファイル形式:</value>

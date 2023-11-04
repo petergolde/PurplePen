@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Bruk venstre museknapp for å legge til spesielt symbol på kartet.</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Hold nede venstre museknapp for å strekke ut krysningspunktet</value>
+  </data>
 </root>

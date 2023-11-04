@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>Клікніть на "Завершити" щоб створити нові змагання. Ваш файл змагань буде збережено як:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>Коли ваші змагання створено, виберіть "Нова дистанція..." з меню Дистанції щоб створити ще одну дистанцію.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Створити змагання</value>
+  </data>
 </root>

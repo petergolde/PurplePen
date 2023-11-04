@@ -121,11 +121,11 @@
     <value>Telif Hakkı   Peter Golde e aittir</value>
   </data>
   <data name="freeLabel.Text" xml:space="preserve">
-    <value>Purple Pen ücretsiz bir yazılımdır kopyalanıp paylaşılabilir</value>
+    <value>Purple Pen ücretsiz bir yazılımdır kopyalanıp paylaşılabilir.</value>
   </data>
   <data name="disclaimerLabel.Text" xml:space="preserve">
     <value>BU YAZILIM, TESCİL HAKKI SAHİPLERİ  VE DİĞER KATKI VERENLER TARAFINDAN "OLDUĞU GİBİ" SAĞLANMAKTA VE HER TÜRLÜ DİREKT/DOLAYLI (HIZLI VE AMACA ÖZEL) GARANTİYİ İÇERMEKTEDİR. 
-ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILABİLİRLİĞİ VE KONDİSYONUNA(YAZILIMIN DURUMUNA) BAĞLI İLGİLİ ÖZEL GARANTİLER REDDEDİLMEKTEDİR</value>
+ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILABİLİRLİĞİ VE KONDİSYONUNA(YAZILIMIN DURUMUNA) BAĞLI İLGİLİ ÖZEL GARANTİLER REDDEDİLMEKTEDİR.</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Tamam</value>

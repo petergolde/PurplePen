@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Escala de impressão do mapa</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Símbolos</value>
   </data>
@@ -156,6 +153,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Código e Pontuação (145(30))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Score (30)</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Mostrar pontos em:</value>
   </data>
@@ -174,11 +174,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspecto</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>O texto seguinte irá aparecer na segunda linha da sinalética</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Lista dos escalões / Título secundário</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>O texto seguinte irá aparecer na segunda linha da sinalética</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Distância</value>

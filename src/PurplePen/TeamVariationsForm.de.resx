@@ -130,7 +130,7 @@
     <value>Druckvorschau...</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Anzahl der Etappen:</value>
+    <value>Anzahl der Teilstrecken:</value>
   </data>
   <data name="buttonCalculate.Text" xml:space="preserve">
     <value>Varianten Zuweisen</value>
@@ -139,7 +139,7 @@
     <value>Anzahl der Teams:</value>
   </data>
   <data name="fixedLegsLink.Text" xml:space="preserve">
-    <value>Fixe Verzweigungen für Etappen zuweisen...</value>
+    <value>Fixe Verzweigungen für Teilstrecken zuweisen...</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Team Nummer startet bei: </value>

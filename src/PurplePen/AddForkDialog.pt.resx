@@ -127,7 +127,7 @@
     <value>Loop</value>
   </data>
   <data name="labelNumberBranches.Text" xml:space="preserve">
-    <value>Número de ramos da bifurcação</value>
+    <value>Número de variantes</value>
   </data>
   <data name="comboBoxNumberBranches.Items" xml:space="preserve">
     <value>2</value>

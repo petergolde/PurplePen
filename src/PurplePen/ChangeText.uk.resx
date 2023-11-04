@@ -183,10 +183,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Зразок</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Текст</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Додати спеціальний текст</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Текст</value>
   </data>
 </root>

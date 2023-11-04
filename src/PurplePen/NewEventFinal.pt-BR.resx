@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventFinalLabel.Text" xml:space="preserve">
+    <value>Clique em "Concluir" para criar seu novo evento. Seu arquivo de evento será salvo como:</value>
+  </data>
+  <data name="afterEventCreatedLabel.Text" xml:space="preserve">
+    <value>Depois que seu evento for criado, selecione "Novo Percurso..." no menu Percurso para criar um ou mais percursos.</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Criar evento</value>
+  </data>
 </root>

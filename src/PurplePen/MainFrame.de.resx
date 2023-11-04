@@ -166,13 +166,19 @@
     <value>P&amp;DFs erstellen</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Route&amp;Gadget-Dateien erstellen …</value>
+    <value>RouteGadget Dateien erstellen...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Bahnprüfungs-Dateien erstellen</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Daten-&amp;Austauschdatei erstellen (IOF XML)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>G&amp;PX File erstellen...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>&amp;KML-Datei erstellen...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Postenbeschreibungen &amp;drucken...</value>
@@ -301,7 +307,7 @@
     <value>&amp;Posten</value>
   </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>&amp;Fertigstellen</value>
+    <value>&amp;Ziel</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Beschreibungen</value>
@@ -366,6 +372,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Rechteck</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Hinzufügen</value>
   </data>
@@ -388,13 +397,16 @@
     <value>Postenbeschreibungsnorm 2004</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>Postenbeschreibungsnorm 2018</value>
+    <value>Postenbeschreibungsnorm 2018/2024</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM2000 Kartennorm</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM2017 Kartennorm</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019 Kartenstandard</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOF Standards</value>
@@ -448,7 +460,7 @@
     <value>&amp;Lücke einfügen</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Lücke ent&amp;fernen</value>
+    <value>Lücke &amp;entfernen</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Text &amp;ändern</value>
@@ -459,20 +471,23 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Drehen</value>
   </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>&amp;Verlängern</value>
+  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Nicht ausgeflaggt</value>
   </data>
   <data name="entireFlaggingMenu.Text" xml:space="preserve">
-    <value>Gesamte Etappe ausgeflaggt</value>
+    <value>Gesamte Teilstrecke ausgeflaggt</value>
   </data>
   <data name="beginFlaggingMenu.Text" xml:space="preserve">
-    <value>Anfang der Etappe ausgeflaggt</value>
+    <value>Anfang der Teilstrecke ausgeflaggt</value>
   </data>
   <data name="endFlaggingMenu.Text" xml:space="preserve">
-    <value>Ende der Etappe ausgeflaggt</value>
+    <value>Ende der Teilstrecke ausgeflaggt</value>
   </data>
   <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>Etappe &amp;ausflaggen</value>
+    <value>Teilstrecke &amp;ausflaggen</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Anze&amp;ige besonderer Objekte...</value>
@@ -493,7 +508,7 @@
     <value>Bahn-Posten &amp;Querverweise</value>
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
-    <value>Posten- und Etappen&amp;auslastung</value>
+    <value>Auslastung der Posten und Teilstrecken</value>
   </data>
   <data name="reportMenu.Text" xml:space="preserve">
     <value>Be&amp;richte</value>
@@ -662,6 +677,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Rechteck</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ellipse</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Besonderes Objekt hinzufügen</value>

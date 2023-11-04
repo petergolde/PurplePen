@@ -141,9 +141,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Lage OCAD &amp;Filer...</value>
   </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Lag Route&amp;Gadget filer...</value>
-  </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Skriv ut postbeskrivelser</value>
   </data>
@@ -332,9 +329,6 @@
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Klipp linje</value>
-  </data>
-  <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Fjern klipp i linje</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Endre &amp;tekst</value>

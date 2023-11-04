@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Deletar</value>
+  </data>
+  <data name="unusedControlsLabel.Text" xml:space="preserve">
+    <value>Os controles a seguir estão na coleção "Matriz de Pontos de Controles", mas não são usados em nenhum percurso. Clique em Excluir para remover todos os controles marcados.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Controles não utilizados</value>
+  </data>
 </root>

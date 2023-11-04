@@ -123,16 +123,67 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Parkur</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Harita Değişimlerini Aynı Harita Üzerinde Yazdırın </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Renk Modeli:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Tek bir sayfaya yerleştir</value>
+  </data>
+  <data name="comboBoxMultiPage.Items1" xml:space="preserve">
+    <value>Birden fazla sayfaya yazdırma</value>
+  </data>
+  <data name="labelAppearanceInfo.Text" xml:space="preserve">
+    <value>Yazdırma alanı bir sayfaya sığmayacak kadar büyükse:</value>
+  </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Görünüm</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Dosya Seç...</value>
   </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen dosyasıyla aynı klasör</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Harita dosyası ile aynı klasör</value>
+  </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Diğer klasör</value>
   </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>İsim öneki:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Dosyalar:</value>
+  </data>
+  <data name="comboBoxFileFormat.Items" xml:space="preserve">
+    <value>Tüm parkurlar için bir tane</value>
+  </data>
+  <data name="comboBoxFileFormat.Items1" xml:space="preserve">
+    <value>Parkur için bir tane</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Parkur bölümü/varyasyonu başına bir adet</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Dosyalar</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>PDF dosyaları için bir klasör seçin</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>PDF dosyası oluştur</value>
   </data>
 </root>

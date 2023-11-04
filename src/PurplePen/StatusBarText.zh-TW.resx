@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>點擊滑鼠左鍵一次以設置新的取圖點</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>按住滑鼠左鍵並拖曳縮放十字標記來放大</value>
+  </data>
 </root>

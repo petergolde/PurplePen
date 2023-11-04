@@ -141,9 +141,6 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Ustvari OCAD &amp;Datoteke...</value>
   </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Ustvari Route&amp;Gadget Datoteke...</value>
-  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Ustvari podatkovno &amp;Datoteko za izmenjavo (IOF XML)...</value>
   </data>
@@ -338,9 +335,6 @@
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Dodaj &amp;Razmak</value>
-  </data>
-  <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Izbriši R&amp;azmak</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Izbriši &amp;Besedilo...</value>

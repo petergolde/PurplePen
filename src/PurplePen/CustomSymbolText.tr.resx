@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelChooseLanguage.Text" xml:space="preserve">
+    <value>Metinsel kontrol açıklamaları için kullanılan dili seçin:</value>
+  </data>
+  <data name="labelSymbolName.Text" xml:space="preserve">
+    <value>Sembol ad:</value>
+  </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>Özelleştirilmiş metin:</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>Metni değiştir...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>Standarda sıfırla</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>Standart metin:</value>
+  </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>Sembolik açıklamaların altında anlamı göster</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>Metinsel kontrol açıklamalarında kullanılan metni özelleştirmek için bir açıklama sembolüne tıklayın.</value>
+  </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Bunu yeni etkinlikler için varsayılan dil yap</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Açıklama Metinini Özelleştir</value>
   </data>

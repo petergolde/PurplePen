@@ -121,7 +121,7 @@
     <value>Ters okunan kodlara izin verme (Örnek, "69"/"89")</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
-    <value>Atanan Kontrol noktalarını yeniden adlandır.</value>
+    <value>Atanan Kontrol noktalarını yeniden adlandır</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
     <value>Bu ayarları yalnızca yeni oluşturulan denetime uygulayın</value>

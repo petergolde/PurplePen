@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelChooseLanguage.Text" xml:space="preserve">
+    <value>Escolha o idioma usado para o texto das descrições de controle:</value>
+  </data>
+  <data name="labelSymbolName.Text" xml:space="preserve">
+    <value>Nome do Símbolo</value>
+  </data>
+  <data name="labelCustomizedText.Text" xml:space="preserve">
+    <value>Personalizar texto:</value>
+  </data>
+  <data name="buttonChangeText.Text" xml:space="preserve">
+    <value>Alterar texto...</value>
+  </data>
+  <data name="buttonDefault.Text" xml:space="preserve">
+    <value>Redefinir para o padrão</value>
+  </data>
+  <data name="labelStandardText.Text" xml:space="preserve">
+    <value>Texto padrão:</value>
+  </data>
+  <data name="checkBoxShowKey.Text" xml:space="preserve">
+    <value>Mostrar significado abaixo das descrições</value>
+  </data>
+  <data name="labelCustomizeText.Text" xml:space="preserve">
+    <value>Clique em um símbolo de descrição para personalizar o texto usado nos textos das descrições de controle.</value>
+  </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Tornar este o idioma padrão para novos eventos</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Customizar Texto da Descrição</value>
+  </data>
 </root>

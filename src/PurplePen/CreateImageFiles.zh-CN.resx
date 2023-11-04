@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>选择一个ocad文件的文件夹</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>输出</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>文件格式：</value>
   </data>
@@ -186,20 +189,17 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>绿红黄黑标准颜色</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>输出</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>选择文件夹…</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>其他文件夹</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>紫笔文件相同的文件夹</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>与地图文件相同的文件夹</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>紫笔文件相同的文件夹</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>其他文件夹</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>文件夹</value>

@@ -117,7 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitmapScaleLabel.Text" xml:space="preserve">
+    <value>Ao usar um arquivo de imagem como mapa, você deve especificar a resolução da imagem e a escala do mapa.
+
+A resolução da imagem indica quantos pixels ou pontos estão na imagem para cada polegada no mapa de papel; geralmente denominado pontos por polegada ou "dpi".
+
+A escala do mapa indica a relação entre o mapa de papel e o mundo real.
+</value>
+  </data>
+  <data name="resolutionLabel.Text" xml:space="preserve">
+    <value>Resolução da imagem:</value>
+  </data>
   <data name="dpiLabel.Text" xml:space="preserve">
     <value>pontos por polegada</value>
+  </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Escala do Mapa:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Resolução de Bitmap</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Ao usar um arquivo PDF como mapa, você deve especificar a escala do mapa.
+
+A escala do mapa indica a relação entre o mapa de papel e o mundo real.
+</value>
   </data>
 </root>

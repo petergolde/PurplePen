@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventNumberingLabel.Text" xml:space="preserve">
+    <value>Нові КП нумеруються автоматично. Виберіть із якого номеру слід почати нумерацію.</value>
+  </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
     <value>Виключити коди КП, які можуть бути прочитані догори ногами (напр., "68"/"89")</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Початковий код:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Це налаштування можна буде змінити пізніше у меню Змагання/Автоматична нумерація)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Нумерація КП</value>
   </data>
 </root>

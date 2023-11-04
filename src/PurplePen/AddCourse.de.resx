@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Druckmaßstab:</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symbole</value>
   </data>
@@ -174,11 +171,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Darstellung</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Der folgende (optionale) Text, wird in der zweiten Zeile der Postenbeschreibung  angezeigt:</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Kategorie</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Der folgende (optionale) Text, wird in der zweiten Zeile der Postenbeschreibung  angezeigt:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Länge:</value>

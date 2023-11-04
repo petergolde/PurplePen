@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>Todos os Pontos de Controlo</value>
+    <value>Matriz de Pontos de Controlo</value>
   </data>
   <data name="radioButtonDescriptions.Text" xml:space="preserve">
     <value>Descrições</value>
@@ -135,6 +135,9 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Ficheiro Purple Pen|*.ppen</value>
   </data>
+  <data name="newEventMenu.Text" xml:space="preserve">
+    <value>&amp;Novo Evento...</value>
+  </data>
   <data name="openMenu.Text" xml:space="preserve">
     <value>&amp;Abrir...</value>
   </data>
@@ -147,8 +150,11 @@
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
     <value>Criar &amp;Ficheiros OCAD...</value>
   </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Criar Ficheiros de Ima&amp;gem...</value>
+  </data>
   <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
-    <value>&amp;Sinalética...</value>
+    <value>(&amp;D) Sinalética...</value>
   </data>
   <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
     <value>Cartão Co&amp;ntrolo</value>
@@ -160,13 +166,19 @@
     <value>Criar P&amp;DFs</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Criar Ficheiros Route&amp;Gadget...</value>
+    <value>Exportar para ficheiros RouteGadget...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportar para ficheiros Route Review</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Criar Data &amp;Interchange File (IOF XML)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>Criar Ficheiros G&amp;PX...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Exportar para ficheiro &amp;KML...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>Im&amp;primir Sinalética</value>
@@ -183,11 +195,17 @@
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>Es&amp;te Percurso</value>
   </data>
+  <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
+    <value>&amp;A Todos os Percursos</value>
+  </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Definir Á&amp;rea de Impressão</value>
   </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>Idioma do Programa</value>
+  </data>
+  <data name="exitMenu.Text" xml:space="preserve">
+    <value>&amp;Saír</value>
   </data>
   <data name="fileMenu.Text" xml:space="preserve">
     <value>&amp;Ficheiro</value>
@@ -267,8 +285,11 @@
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>Mostrar a Área de Imp&amp;ressão</value>
   </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Mostrar janela de Informação (&amp;Popup)</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>Todos os Controlos (&amp;All)</value>
+    <value>Matriz de Pontos de Controlo (&amp;All)</value>
   </data>
   <data name="otherCoursesMenu.Text" xml:space="preserve">
     <value>Outros Percursos</value>
@@ -289,10 +310,10 @@
     <value>Meta (&amp;F)</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
-    <value>Sinalética (&amp;D)</value>
+    <value>(&amp;D) Sinalética</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
-    <value>Troca de mapa no Posto de &amp;Controlo</value>
+    <value>Troca de mapa no Ponto de &amp;Controlo</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>Percurso Balizado para troca de Mapa (&amp;F)</value>
@@ -333,6 +354,9 @@
   <data name="addBoundaryMenu.Text" xml:space="preserve">
     <value>Limite Intransponível</value>
   </data>
+  <data name="addRegMarkMenu.Text" xml:space="preserve">
+    <value>Marca de Mira</value>
+  </data>
   <data name="whiteOutMenu.Text" xml:space="preserve">
     <value>Área Branca</value>
   </data>
@@ -347,6 +371,9 @@
   </data>
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Retângulo</value>
+  </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Elipse</value>
   </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Adicionar</value>
@@ -370,13 +397,16 @@
     <value>Sinalética Standard 2004</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>Sinalética Standard 2018</value>
+    <value>Sinalética Standard 2018/2024</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>Standard dos Mapas ISOM2000</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>Standard dos Mapas ISOM2017</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>Padrão de Mapa ISSprOM 2019</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOF &amp;Standards</value>
@@ -406,7 +436,7 @@
     <value>&amp;Ordem do Percurso...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
-    <value>Carregar (&amp;L) competidor...</value>
+    <value>(&amp;L) Densidade de Competidores...</value>
   </data>
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>&amp;Variantes da equipa (Estafeta)...</value>
@@ -423,11 +453,14 @@
   <data name="addBendMenu.Text" xml:space="preserve">
     <value>Adicionar Curva (&amp;B)</value>
   </data>
+  <data name="removeBendMenu.Text" xml:space="preserve">
+    <value>&amp;Eliminar Curva</value>
+  </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Adicionar Espaço (&amp;G)</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Eliminar Esp&amp;aço</value>
+    <value>Remover Es&amp;paço</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Alterar &amp;Texto...</value>
@@ -437,6 +470,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;odar</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>E&amp;stender</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Sem Balizado</value>
@@ -449,6 +485,9 @@
   </data>
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Fim de Percurso Balizado</value>
+  </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>Pernada Balizada</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Alterar Percursos Apresentados (y)</value>
@@ -466,7 +505,7 @@
     <value>Tamanho da Pernada (&amp;L)</value>
   </data>
   <data name="controlCrossrefMenu.Text" xml:space="preserve">
-    <value>Controlos Referência &amp;Cruzada</value>
+    <value>Referência &amp;Cruzada de Controlos</value>
   </data>
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Carregar Controlos e Pernadas (&amp;D)</value>
@@ -507,8 +546,17 @@
   <data name="courseSelectorTesterMenu.Text" xml:space="preserve">
     <value>Seletor do Teste dos Percursos</value>
   </data>
+  <data name="dotGridTesterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Teste da Grelha de Pontos</value>
+  </data>
+  <data name="dumpOCADFileMenu.Text" xml:space="preserve">
+    <value>Descartar Ficheiro OCAD</value>
+  </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Relatório de Teste</value>
+  </data>
+  <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Métrica da Fonte</value>
   </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Falha</value>
@@ -562,7 +610,7 @@
     <value>Criar Partida</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
-    <value>Adicionar Ponto de controlo</value>
+    <value>Adicionar Ponto de Controlo</value>
   </data>
   <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
     <value>Adicionar Controlo (Ctrl+A)</value>
@@ -612,6 +660,9 @@
   <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
     <value>Limite Intransponível</value>
   </data>
+  <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Marca de Mira</value>
+  </data>
   <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
     <value>Área Branca</value>
   </data>
@@ -626,6 +677,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Retângulo</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Elipse</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Adicionar Item Especial</value>
@@ -642,6 +696,12 @@
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Ampliação: 100%</value>
   </data>
+  <data name="locationDisplay.Text" xml:space="preserve">
+    <value>X:-999.99 Y:-999.99</value>
+  </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML versão 2.0.3|*.xml|IOF XML versão 3.0|*.xml</value>
+  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Gerar XML Interchange File</value>
   </data>
@@ -653,5 +713,8 @@
   </data>
   <data name="saveGpxFileDialog.Title" xml:space="preserve">
     <value>Criar ficheiro GPX</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Purple Pen</value>
   </data>
 </root>

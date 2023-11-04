@@ -120,4 +120,40 @@
   <data name="labelPaper.Text" xml:space="preserve">
     <value>Розмір:</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Товщина:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Висота:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Розмір аркуша ({0})</value>
+  </data>
+  <data name="radioButtonLandscape.Text" xml:space="preserve">
+    <value>Альбомна</value>
+  </data>
+  <data name="radioButtonPortrait.Text" xml:space="preserve">
+    <value>Книжкова</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Орієнтація</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ліве:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Верхнє:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Праве:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Нижнє:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Поля ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Параметри сторінки</value>
+  </data>
 </root>

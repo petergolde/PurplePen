@@ -219,6 +219,9 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>使用叠印效果的颜色标明“复印”</value>
   </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>高级选项</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>自定义外观</value>
   </data>

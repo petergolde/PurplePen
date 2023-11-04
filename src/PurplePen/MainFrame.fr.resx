@@ -162,9 +162,6 @@
   <data name="createPDFsMenu.Text" xml:space="preserve">
     <value>Créer des P&amp;DF</value>
   </data>
-  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Création des fichiers RouteGadget...</value>
-  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Créer Fichier &amp;Interchange XML...</value>
   </data>
@@ -437,9 +434,6 @@
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Insérer &amp;Intervalle</value>
-  </data>
-  <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Supprimer I&amp;ntervalle</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Modifier &amp;Texte...</value>

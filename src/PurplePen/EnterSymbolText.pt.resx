@@ -141,6 +141,12 @@
   <data name="labelGenderChooser.Text" xml:space="preserve">
     <value>Género:</value>
   </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>No caso de modificar o símbolo</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Mostrar a caixa de formulário</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Texto Personalizado do Símbolo</value>
   </data>

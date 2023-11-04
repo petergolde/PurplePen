@@ -120,6 +120,9 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Дистанції</value>
   </data>
+  <data name="namePrefixLabel.Text" xml:space="preserve">
+    <value>Префікс</value>
+  </data>
   <data name="waypointGroupBox.Text" xml:space="preserve">
     <value>Маршрутні точки</value>
   </data>

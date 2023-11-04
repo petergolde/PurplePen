@@ -117,17 +117,44 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Друкувати</value>
+  </data>
+  <data name="printerChange.Text" xml:space="preserve">
+    <value>Змінити принтер...</value>
+  </data>
+  <data name="printerName.Text" xml:space="preserve">
+    <value>Назва принтера</value>
+  </data>
+  <data name="printerLabel.Text" xml:space="preserve">
+    <value>Принтер:</value>
+  </data>
   <data name="printerGroup.Text" xml:space="preserve">
     <value>Вивід</value>
   </data>
+  <data name="previewButton.Text" xml:space="preserve">
+    <value>Попередній перегляд...</value>
+  </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Дистанції</value>
+  </data>
+  <data name="copiesLabel.Text" xml:space="preserve">
+    <value>Копій кожної дистанції:</value>
+  </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Призупиняти друк після кожної дистанції чи частини</value>
+  </data>
+  <data name="copiesGroupBox.Text" xml:space="preserve">
+    <value>Копії</value>
   </data>
   <data name="checkBoxMergeParts.Text" xml:space="preserve">
     <value>Надрукувати пункт зміни карт на цій самій карті </value>
   </data>
   <data name="labelColorModel.Text" xml:space="preserve">
     <value>Кольорова модель:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>Сумісна з OCAD</value>
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>RGB</value>
@@ -146,5 +173,8 @@
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
     <value>Вигляд</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Друкувати дистанції</value>
   </data>
 </root>

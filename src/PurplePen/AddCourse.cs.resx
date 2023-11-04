@@ -118,16 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Číslo první kontroly</value>
+    <value>Číslo první kontroly:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Popis zobrazení:</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Měřítko tisknuté mapy:</value>
-  </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
   </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symboly</value>
@@ -139,7 +136,7 @@
     <value>Symboly a text</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Popis kolečka kontroly</value>
+    <value>Popis kolečka kontroly:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>Pořadí (3)</value>
@@ -155,6 +152,9 @@
   </data>
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Kód a body (145(30))</value>
+  </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Body (30)</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Zobraz body v:</value>
@@ -172,13 +172,16 @@
     <value>(nezobrazovat)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Zobrazení</value>
+    <value>Vzhled</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Následující text (volitelný) se zobrazí na druhém řádku popisů kontrol:</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Seznam kategorií / podtitulek</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Následující text (volitelný) se zobrazí na druhém řádku popisů kontrol:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Délka:</value>
@@ -190,7 +193,7 @@
     <value>Typ trati:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Kategorie:</value>
+    <value>Název trati:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
     <value>Normální trať</value>

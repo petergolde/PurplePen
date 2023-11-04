@@ -294,4 +294,22 @@
   <data name="DeleteFork" xml:space="preserve">
     <value>Ayrım/Döngü Sil</value>
   </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Bayrak Takımı Varyasyonları</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Harita veriş noktası ekle</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Kontrol Tanımı Standardını Ayarla</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Harita Standardını Ayarla</value>
+  </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Uzat</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Livelox'ta yayınla</value>
+  </data>
 </root>

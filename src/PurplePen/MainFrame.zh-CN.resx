@@ -168,11 +168,17 @@
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>创建路径和文件的小工具…</value>
   </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>创建轨迹回放文件</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>创建数据交换文件（国际定联XML）…</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>创建GPX文件...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>创建&amp;KML文件</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>打印说明</value>
@@ -366,6 +372,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>椭圆</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>添加 (&amp;A)...</value>
   </data>
@@ -388,13 +397,16 @@
     <value>2004 检查点说明规范</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>2018 检查点说明规范</value>
+    <value>2018/2024 检查点说明规范</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM2000 制图规范</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM2017 制图规范</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019制图规范</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>国际定联标准</value>
@@ -458,6 +470,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>旋转</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>拉伸</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>没有下垂</value>
@@ -663,11 +678,14 @@
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>矩形</value>
   </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>椭圆</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>添加特殊项</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>添加快捷键（B型）</value>
+    <value>添加弯曲节点 (Ctrl+B)</value>
   </data>
   <data name="addGapToolStripButton.Text" xml:space="preserve">
     <value>toolstripbutton1</value>

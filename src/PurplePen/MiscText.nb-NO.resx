@@ -612,6 +612,12 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="LegAssignedOuterBranch" xml:space="preserve">
     <value>Strekk {0} når ikke avgreining '{1}': Den ble tilordnet en annen retning i gaflingen den inngår i.</value>
   </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Velg utseende til ellipsen. Dra musen for å plassere ellipsen etter å ha trykket OK.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Legg til ellipse</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
   </data>

@@ -121,7 +121,7 @@
     <value>Jede Variante einzeln</value>
   </data>
   <data name="comboBoxVariations.Items1" xml:space="preserve">
-    <value>Jede Staffeletappe einzeln</value>
+    <value>Jede Staffel-Teilstrecke einzeln</value>
   </data>
   <data name="comboBoxVariations.Items2" xml:space="preserve">
     <value>Alle Varianten kombiniert</value>
@@ -136,7 +136,7 @@
     <value>Eine Karte für jede mögliche Variante der Bahn.</value>
   </data>
   <data name="labelByLeg.Text" xml:space="preserve">
-    <value>Eine Karte für jede Etappe des ausgewählten Staffelteams.</value>
+    <value>Eine Karte für jede Teilstrecke des ausgewählten Staffelteams.</value>
   </data>
   <data name="labelByLegNotAvailable.Text" xml:space="preserve">
     <value>Sie müssen zuerst über "Staffelteam Varianten..." im Menü "Bahnen" die Staffelteams festlegen.</value>

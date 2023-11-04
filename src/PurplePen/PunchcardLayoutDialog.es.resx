@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Orden de casillas</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Tamaño</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Columnas:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Filas:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Tamaño</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Modelo de tarjeta de controles</value>

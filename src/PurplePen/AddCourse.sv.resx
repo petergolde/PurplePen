@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kartans utskriftsskala:</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symboler</value>
   </data>
@@ -156,6 +153,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Kodsiffra och poäng (145(30))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Poäng</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Visa poäng i:</value>
   </data>
@@ -174,11 +174,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Utseende</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Följande text kommer synas på andra raden av kontrolldefinitionen (valfritt).</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Klasslista / Undertitel</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Följande text kommer synas på andra raden av kontrolldefinitionen (valfritt).</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Längd:</value>

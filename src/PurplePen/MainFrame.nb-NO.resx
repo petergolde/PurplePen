@@ -166,13 +166,16 @@
     <value>Lag PDF-filer</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Lag Route&amp;Gadget filer...</value>
+    <value>Lag RouteGadget-filer</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Lag data &amp;Utvekslingsfil (IOF XML)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>Lag GPX fil...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Lag KML-fil</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Skriv ut postbeskrivelser</value>
@@ -366,6 +369,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Firkant</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Legg til</value>
   </data>
@@ -388,13 +394,16 @@
     <value>2004 beskrivelsesstandard</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>2018 beskrivelsesstandard</value>
+    <value>2018/2024 beskrivelsesstandard</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM2000 kartstandard</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM2017 kartstandard</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019 sprintkartnorm</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOF &amp;standarder</value>
@@ -448,7 +457,7 @@
     <value>Klipp linje</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Fjern klipp i linje</value>
+    <value>Fjern åpning</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Endre &amp;tekst</value>
@@ -662,6 +671,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Firkant</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ellipse</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Legg til spesielt symbol</value>

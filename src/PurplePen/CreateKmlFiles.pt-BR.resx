@@ -117,4 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Percursos</value>
+  </data>
+  <data name="createButton.Text" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Selecionar uma pasta para os arquivos OCD</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Saída</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Prefixo do arquivo:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Arquivos:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Um para todos os percursos</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>Um por percurso</value>
+  </data>
+  <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
+    <value>Selecionar pasta...</value>
+  </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Mesma pasta do arquivo Purple Pen</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Mesma pasta do arquivo de mapa</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Outra pasta</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Pasta (Diretório)</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Criar Arquivo KML</value>
+  </data>
 </root>

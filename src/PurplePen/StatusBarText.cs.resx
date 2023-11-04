@@ -117,6 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Levé tlačítko myši: výběr objektu; pravé tlačítko myši: pohyb mapy; rolovací kolečko: zvětšení/zmenšení mapy</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Levé tlačítko myši: pohyb/velikost obdélníku; pravé tlačítko myši: pohyb mapy; rolovací kolečko: zvětšení/zmenšení mapy</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Držte stisknuté levé tlačítko a táhněte myší pro přemístění vybraného objektu</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Držte stisknuté levé tlačítko a táhněte myší pro přemístění rohového bodu</value>
+  </data>
+  <data name="DraggingObject" xml:space="preserve">
+    <value>Přesuntě objekt na požadované místo a pusťte myš</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Přesuntě rohový bod na požadované místo a pusťte myš</value>
+  </data>
+  <data name="AddingControl" xml:space="preserve">
+    <value>Klikněte levým tlačítkem myši pro přidání nové kontroly</value>
+  </data>
+  <data name="AddingExistingControl" xml:space="preserve">
+    <value>Kliknutím levým tlačítkem myši přidáte kontrolu „{0}“ do trati</value>
+  </data>
   <data name="AddingStart" xml:space="preserve">
     <value>Klikni levým tlačítkem myši pro umístění nového startu.</value>
   </data>
@@ -174,6 +198,9 @@
   <data name="RotatingObject" xml:space="preserve">
     <value>Klikni levým tlačítkem myši ve chvíli, kdy bude průchod otočený ve správném úhlu.</value>
   </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Podržte levé tlačítko myši a tažením přidejte segment čáry; kliknutím levým tlačítkem myši dokončíte přidávání objektu</value>
+  </data>
   <data name="AddingText" xml:space="preserve">
     <value>Přidrž levé tlačítko myši a táhni pro vytvoření textu.</value>
   </data>
@@ -191,5 +218,14 @@
   </data>
   <data name="DraggingTopologyObject" xml:space="preserve">
     <value>Táhni číslem kontroly pro změnu pořadí v trati (přidrž shift pro duplikování)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Levým kliknutím myši přidáte do trati Místo výdeje map</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Levým kliknutím myši umístíte Místo výdeje map</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Podržte stisknuté levé tlačítko myši a tažením roztáhněte bod křížení.</value>
   </data>
 </root>

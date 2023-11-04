@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Ordine Casuțe</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Dimensiune</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Coloane:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Rânduri:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Dimensiune</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Planul Fișei de Compostare</value>

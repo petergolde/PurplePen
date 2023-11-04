@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AwayFromControl" xml:space="preserve">
-    <value>Kontrol dışı</value>
+    <value>kontrol dışı</value>
   </data>
   <data name="Climb" xml:space="preserve">
-    <value>Tırmanış</value>
+    <value>Tırmanma:</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
     <value>Rakip yükü:</value>
@@ -151,13 +151,13 @@
     <value>Özelleştirilmiş sembol açıklaması</value>
   </data>
   <data name="EntireLeg" xml:space="preserve">
-    <value>Tüm bacak</value>
+    <value>tüm bacak</value>
   </data>
   <data name="FinishFunnel" xml:space="preserve">
-    <value>Son huni</value>
+    <value>son huni</value>
   </data>
   <data name="Finish_Plural" xml:space="preserve">
-    <value>Bitirir</value>
+    <value>bitiriş</value>
   </data>
   <data name="Finish_Singular" xml:space="preserve">
     <value>bitiş</value>
@@ -166,7 +166,7 @@
     <value>İşaretleme:</value>
   </data>
   <data name="IntoControl" xml:space="preserve">
-    <value>Kontrol içinde</value>
+    <value>kontrol altında</value>
   </data>
   <data name="IntoFinishFunnel" xml:space="preserve">
     <value>son huniye girin</value>
@@ -181,16 +181,28 @@
     <value>Yer:</value>
   </data>
   <data name="MandCrossing_Plural" xml:space="preserve">
-    <value>Zorunlu geçiş noktaları</value>
+    <value>zorunlu geçiş noktaları</value>
   </data>
   <data name="MandCrossing_Singular" xml:space="preserve">
-    <value>Zorunlu geçiş noktası</value>
+    <value>zorunlu geçiş noktası</value>
   </data>
   <data name="None" xml:space="preserve">
     <value>none</value>
   </data>
+  <data name="SpecialName_Boundary" xml:space="preserve">
+    <value>Aşılmaz Sınır</value>
+  </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
     <value>Parkur Adı</value>
+  </data>
+  <data name="SpecialName_Dangerous" xml:space="preserve">
+    <value>Tehlikeli Alan</value>
+  </data>
+  <data name="SpecialName_Descriptions" xml:space="preserve">
+    <value>Kontrol Açıklamaları</value>
+  </data>
+  <data name="SpecialName_FirstAid" xml:space="preserve">
+    <value>İlk yardım Noktası</value>
   </data>
   <data name="SpecialName_Image" xml:space="preserve">
     <value>Resim</value>
@@ -201,14 +213,23 @@
   <data name="SpecialName_OOB" xml:space="preserve">
     <value>Sınırların dışında kalan alan</value>
   </data>
+  <data name="SpecialName_OptCrossing" xml:space="preserve">
+    <value>Opsiyonel Geçiş Noktası</value>
+  </data>
+  <data name="SpecialName_RegMark" xml:space="preserve">
+    <value>Kayıt İşareti</value>
+  </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Metin</value>
   </data>
+  <data name="SpecialName_Water" xml:space="preserve">
+    <value>Su Noktası</value>
+  </data>
   <data name="Start_Plural" xml:space="preserve">
-    <value>Başlama</value>
+    <value>başlamalar</value>
   </data>
   <data name="Start_Singular" xml:space="preserve">
-    <value>Başlangıç</value>
+    <value>başlama</value>
   </data>
   <data name="TextDescription" xml:space="preserve">
     <value>Metin açıklaması:</value>
@@ -226,7 +247,7 @@
     <value>{0} 'ın altında {0} içeren tüm derslerde görünüyor</value>
   </data>
   <data name="TextLine_BelowThisCourse" xml:space="preserve">
-    <value>{0} 'nın altında, yalnızca bu derste yer almaktadır.</value>
+    <value>{0} 'nın altında, yalnızca bu derste yer almaktadır</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
     <value>Toplam kontroller:</value>
@@ -240,11 +261,14 @@
   <data name="FileName" xml:space="preserve">
     <value>İsim:</value>
   </data>
+  <data name="SpecialName_WhiteOut" xml:space="preserve">
+    <value>Beyaz Dış Alan</value>
+  </data>
   <data name="MapExchange_Plural" xml:space="preserve">
-    <value>Harita değişimimleri</value>
+    <value>harita değişimleri</value>
   </data>
   <data name="MapExchange_Singular" xml:space="preserve">
-    <value>Harita değişimi</value>
+    <value>harita değişimi</value>
   </data>
   <data name="MapExchangeAtControl" xml:space="preserve">
     <value>{0} 'daki harita değişimi</value>
@@ -266,5 +290,11 @@
   </data>
   <data name="CalculatedLength" xml:space="preserve">
     <value>Hesaplanan Uzunluk:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>harita veriş noktaları ekle</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>harita veriş noktası ekle</value>
   </data>
 </root>

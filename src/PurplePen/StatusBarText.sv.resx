@@ -225,4 +225,7 @@
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Klicka för att placera en ny kartutdelningsplats</value>
   </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Håll ner vänster musknapp och dra för att sträcka ut övergångspunkten</value>
+  </data>
 </root>

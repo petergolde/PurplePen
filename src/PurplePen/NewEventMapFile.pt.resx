@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Para traçar seus percursos, você deve selecionar o ficheiro de mapa que você usará. 
+Normalmente, este é um ficheiro OCAD ou OpenOrienteering Mapper 
+(embora PDFs e ficheiros de imagem como JPEGs possam ser usados). 
+Clique no botão "Escolher..." para selecionar um ficheiro de mapa.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Escolher ficheiro do mapa...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Todos os tipos de ficheiros de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Selecionar Ficheiro de Mapa</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>O ficheiro de mapa foi carregado com sucesso. Se você enviar seu ficheiro Purple Pen para outra pessoa, ela também deverá ter o ficheiro de mapa.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Ficheiro do Mapa</value>

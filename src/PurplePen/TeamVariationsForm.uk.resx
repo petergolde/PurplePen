@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Експорт...</value>
+  </data>
+  <data name="buttonPrint.Text" xml:space="preserve">
+    <value>Друкувати...</value>
+  </data>
+  <data name="buttonPrintPreview.Text" xml:space="preserve">
+    <value>Перегляд друку…</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Кількість етапів:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Призначити варіанти розсіювання</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Кількість команд:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Номера команд починаються з: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Приховати коди розсіювання на карті</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Таблиця (CSV)|*.csv</value>
+  </data>
 </root>

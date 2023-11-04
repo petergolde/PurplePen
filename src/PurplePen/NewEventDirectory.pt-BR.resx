@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventDirectoryLabel.Text" xml:space="preserve">
+    <value>Em qual pasta (diretório) você deseja salvar seu arquivo de percurso de evento?</value>
+  </data>
+  <data name="useMapDirectory.Text" xml:space="preserve">
+    <value>Na mesma pasta que o arquivo de mapa.</value>
+  </data>
+  <data name="useOtherFolder.Text" xml:space="preserve">
+    <value>Em outra pasta que eu escolher.</value>
+  </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>Escolher Pasta...</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Selecione a pasta do seu arquivo de evento</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>Pasta Selecionada</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Localização do arquivo de evento</value>
+  </data>
 </root>

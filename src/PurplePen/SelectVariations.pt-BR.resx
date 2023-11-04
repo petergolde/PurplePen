@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Cada Variação Separadamente</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Cada pernada de Revezamento Separadamente</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Todas as Variações Combinadas</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Variações</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Exiba todas as dispersões juntas em um único mapa.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Um mapa para cada variação possível ao longo do percurso.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Um mapa para cada pernada nas equipes de revezamento que você escolher.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Você deve primeiro definir as equipes de revezamento selecionando "Variações de Equipe de Revezamento..." no menu Percurso.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Selecionar Variações Individualmente</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Este percurso tem {0} equipes de revezamento atribuídas. Use Variações de Equipe de Revezamento... no menu Percurso para alterar o número de equipes.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>para</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Selecione quais equipes imprimir/exportar:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Selecionar Variações</value>
+  </data>
 </root>

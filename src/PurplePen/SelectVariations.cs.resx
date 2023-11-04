@@ -138,8 +138,14 @@
   <data name="labelByLeg.Text" xml:space="preserve">
     <value>Jedna mapa pro každý úsek vybraných týmů</value>
   </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Nejdříve musíte nakonfigurovat týmy štafet v Varianty Štafet (v horní líště Tratě)</value>
+  </data>
   <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
     <value>Vybrat jednotlivé varianty</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>K této trati je přiřazeno {0} štafet. Chcete-li změnit počet týmů, použijte položku Varianty štafet v nabídce Trať.</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>do</value>

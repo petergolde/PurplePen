@@ -121,7 +121,7 @@
     <value>Název závodu</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
-    <value>Kategorie</value>
+    <value>Název trati</value>
   </data>
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Část trati</value>
@@ -154,7 +154,7 @@
     <value>Mapový soubor</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Zobrazení</value>
+    <value>Vzhled</value>
   </data>
   <data name="buttonChangeColor.Text" xml:space="preserve">
     <value>Změnit barvu...</value>
@@ -183,10 +183,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ukázka</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Text</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Vložit speciální text</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Text</value>
   </data>
 </root>

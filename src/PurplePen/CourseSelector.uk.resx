@@ -120,7 +120,10 @@
   <data name="selectAll.Text" xml:space="preserve">
     <value>Усі</value>
   </data>
+  <data name="selectNone.Text" xml:space="preserve">
+    <value>Немає</value>
+  </data>
   <data name="buttonChooseVariations.Text" xml:space="preserve">
-    <value>Вибаріть варіант</value>
+    <value>Виберіть варіант</value>
   </data>
 </root>

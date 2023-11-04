@@ -150,17 +150,20 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Вибрати папку...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Інша папка</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Та сама папка що і для файлу Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Та сама папка що і файл карти</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Та сама папка що і для файлу Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Інша папка</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Папка</value>
+  </data>
+  <data name="fileNamePrefixLabel.Text" xml:space="preserve">
+    <value>Префікс</value>
   </data>
   <data name="filesLabel.Text" xml:space="preserve">
     <value>Файли:</value>

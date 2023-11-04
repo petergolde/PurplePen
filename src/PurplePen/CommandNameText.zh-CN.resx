@@ -306,4 +306,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>设置制图规范</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>拉伸</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>发布到Livelox</value>
+  </data>
 </root>

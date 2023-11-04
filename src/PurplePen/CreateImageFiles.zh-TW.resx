@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>為OCAD檔案選擇一個資料夾</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>輸出</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>檔案格式：</value>
   </data>
@@ -186,20 +189,17 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK 色彩模式</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>輸出</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>選擇資料夾...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>其他資料夾</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>同Purple Pen檔案的資料夾</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>同地圖檔案的資料夾</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>同Purple Pen檔案的資料夾</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>其他資料夾</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>資料夾</value>

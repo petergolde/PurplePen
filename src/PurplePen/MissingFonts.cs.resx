@@ -123,6 +123,12 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Mapový soubor "{0}" používá fonty, které nejsou nainstalované ve vašem počítači. Text používající tyto fonty bude nakreslen a vytištěn výchozím fontem, což může způsobit, že text bude vypadat jinak, než zamýšlel návrhář mapy. 
+
+Chcete-li tento problém vyřešit, vyhledejte a nainstalujte níže uvedené fonty pomocí ovládacího panelu Windows a poté znovu spusťte Purple Pen.
+</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Chybějící fonty</value>
   </data>

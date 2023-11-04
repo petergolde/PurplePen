@@ -141,14 +141,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Select folder...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Other folder</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Same folder as Purple Pen file</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Same folder as map file</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Same folder as Purple Pen file</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Other folder</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Folder</value>

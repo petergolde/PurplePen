@@ -127,10 +127,10 @@
     <value>Konum:</value>
   </data>
   <data name="comboBoxPosition.Items" xml:space="preserve">
-    <value>Yukarıda</value>
+    <value>Yukarıda {0}</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>Altında</value>
+    <value>Altında {0}</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
     <value>Sadece Bu Parkur</value>

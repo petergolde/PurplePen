@@ -613,4 +613,10 @@
   <data name="LegAssignedOuterBranch" xml:space="preserve">
     <value>賽段 {0} 永遠不會到達分支“{1}”：它被分配到分叉中的不同路線。</value>
   </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>設定橢圓模式的顯示。點擊OK後，拖曳滑鼠至橢圓所在的位置。</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>新增橢圓</value>
+  </data>
 </root>

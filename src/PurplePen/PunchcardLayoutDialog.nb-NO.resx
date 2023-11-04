@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>Klipprutesortering</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>Kolonner:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>Rader:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>Størrelse</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Stemplingskort layout</value>

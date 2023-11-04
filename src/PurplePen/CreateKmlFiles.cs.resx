@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Vyberte složku pro soubory OCADu</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Výstup</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Předpona souboru:</value>
   </data>
@@ -141,20 +144,17 @@
   <data name="filesCombo.Items1" xml:space="preserve">
     <value>Co trať to soubor</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Výstup</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vybrat složku...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Jiná složka</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Stejná složka jako u souboru Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Stejná složka jako u mapového souboru</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Stejná složka jako u souboru Purple Pen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Jiná složka</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Složka</value>

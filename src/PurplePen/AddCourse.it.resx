@@ -126,9 +126,6 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Scala di stampa della mappa:</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
-  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Simboli</value>
   </data>
@@ -174,11 +171,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspetto</value>
   </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Il testo seguente (facoltativo) apparirà nella seconda linea del foglio della descrizione del controllo:</value>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Lista categorie/ Titolo secondario</value>
+  </data>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Il testo seguente (facoltativo) apparirà nella seconda linea del foglio della descrizione del controllo:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Lunghezza:</value>

@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Velg en mappe for OCAD filer</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Utdata</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Filnavnprefiks:</value>
   </data>
@@ -141,26 +144,23 @@
   <data name="filesCombo.Items1" xml:space="preserve">
     <value>En for hver løype</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Utdata</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Velg mappe...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Annen mappe</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samme mappe som Purple Pen filen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samme mappe som kartfila</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samme mappe som Purple Pen filen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annen mappe</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mappe</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Lag OCAD filer</value>
+    <value>Lag KML-fil</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Filformat:</value>

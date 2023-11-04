@@ -184,7 +184,7 @@
     <value>Klicken Sie mit der linken Maustaste auf eine Linie, um eine kleine Lücke einzufügen; halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um eine größere Lücke einzufügen.</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
-    <value>Klicken Sie mit der linken Maustaste auf eine Lücke in der Etappe, um sie zu entfernen</value>
+    <value>Klicken Sie mit der linken Maustaste auf eine Lücke in der Teilstrecke, um sie zu entfernen</value>
   </data>
   <data name="SizeRectangle" xml:space="preserve">
     <value>Halten Sie die linke Maustaste gedrückt und ziehen Sie sie, um die Größe des Objektes zu verändern</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="AddingMapIssue" xml:space="preserve">
     <value>Klicke mit linker Maustaste, um einen neuen Kartenabgabepunkt zu platzieren</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Die linke Maustaste gedrückt halten und die Verlängerung zu dem gewünschten Kreuzungspunkt ziehen.</value>
   </data>
 </root>

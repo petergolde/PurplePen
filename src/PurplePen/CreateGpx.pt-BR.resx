@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="coursesGroupBox.Text" xml:space="preserve">
+    <value>Percursos</value>
+  </data>
+  <data name="namePrefixLabel.Text" xml:space="preserve">
+    <value>Prefixo do nome:</value>
+  </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Pontos de referência</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>Um arquivo GPX contém coordenadas GPS para controles e pode ser carregado em um GPS ou smartphone para verificar a localização correta dos controles.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Criar Arquivo GPX</value>
+  </data>
 </root>

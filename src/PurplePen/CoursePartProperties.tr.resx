@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
+    <value>Bu parkur bölümünde bitiş çemberini göster</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Bu ayarlar, çok parçalı bir parkurun bu bölümünün görünümünü kontrol eder.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Parkur Bölümü Özellikleri</value>
+  </data>
 </root>

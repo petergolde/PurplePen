@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>O ficheiro de mapa "{0}" contém objectos ou símbolos que não são totalmente compatíveis com o Purple Pen e podem não ser impressos corretamente. Os objectos que podem não ser impressos corretamente estão listados abaixo.
+
+Para a impressão dos mapas da competição, sugere-se exportar os percursos para ficheiros OCAD (utilizar Ficheiro/Criar Ficheiros OCAD...) e imprimir os mapas do OCAD.
+</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>Avançar</value>
+  </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>O ficheiro de mapa não pode ser impresso com precisão</value>
   </data>
 </root>

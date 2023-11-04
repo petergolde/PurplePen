@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Sélectionner un dossier pour les fichiers OCAD</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Préfixe du nom de fichier :</value>
   </data>
@@ -141,26 +144,20 @@
   <data name="filesCombo.Items1" xml:space="preserve">
     <value>Un par circuit</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Sortie</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Sélectionner un dossier...</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Autre dossier</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Même dossier que la carte</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Même dossier que le fichier Purple Pen</value>
   </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Même dossier que la carte</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Autre dossier</value>
+  </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Dossier</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Créer des fichiers OCAD</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Format de fichier :</value>

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Abyste mohli navrhnout své tratě, musíte vybrat mapový soubor, který budete používat. Obvykle se jedná o soubor OCAD nebo OpenOrienteering Mapper (ačkoli místo toho lze použít soubory PDF a obrázky jako JPEG). Klepnutím na tlačítko "Vybrat..." vyberte soubor mapy.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Vybrat mapový soubor...</value>
   </data>

@@ -166,13 +166,19 @@
     <value>Salvesta P&amp;DF'id</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Salvesta Route&amp;Gadget failid...</value>
+    <value>Loo RouteGadget failid...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Loo raja analüüsi failid</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Tee IOF-XML rajakirjelduse fail...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>Salvesta G&amp;PX fail...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Salvesta &amp;KML fail...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Trüki legendid...</value>
@@ -366,6 +372,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Ristkülik</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Ellips</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Lisa</value>
   </data>
@@ -388,13 +397,16 @@
     <value>2004 a legendi standard</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>2018 a legendi standard</value>
+    <value>2018/2024 a legendi standard</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM2000 kaardi standard</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM2017 kaardi standard</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019 Kaardi standard</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOFi &amp;Standardid</value>
@@ -448,7 +460,7 @@
     <value>Lisa &amp;katkestus</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Eemalda K&amp;atkestus</value>
+    <value>Eemalda katkestus</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Muuda &amp;teksti</value>
@@ -458,6 +470,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Pööra</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>Venita</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Tähistuseta</value>
@@ -662,6 +677,9 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Ristkülik</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ellips</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Lisa erisümbol</value>

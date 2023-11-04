@@ -120,4 +120,25 @@
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="openLastRadioButton.Text" xml:space="preserve">
+    <value>Відкрити останній захід</value>
+  </data>
+  <data name="openSampleRadioButton.Text" xml:space="preserve">
+    <value>Відкрити зразок заходу</value>
+  </data>
+  <data name="createNewRadioButton.Text" xml:space="preserve">
+    <value>Створити новий захід...</value>
+  </data>
+  <data name="openExistingRadioButton.Text" xml:space="preserve">
+    <value>Відкрити існуючий захід...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen є безкоштовною програмою, яку дозволяється копіювати та поширювати. Розробка Purple Pen підтримується виключно завдяки пожертвам.</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Зробити пожертву</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Вітаємо у Purple Pen</value>
+  </data>
 </root>

@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>Bu etkinlik için eksik yazı karakteri için tekrar uyarma</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Tamam</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Harita dosyası "{0}", bilgisayarınızda yüklü olmayan yazı tiplerini kullanır. Bu yazı tiplerini kullanan metin, metnin harita tasarımcısının amaçladığından farklı görünmesine neden olabilecek varsayılan bir yazı tipiyle çizilecek ve yazdırılacaktır.
+
+Bu sorunu gidermek için Windows denetim masası ile aşağıda listelenen yazı tiplerini bulup yükleyin, ardından Purple Pen'i yeniden başlatın.
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Eksik Fontları Yoksay</value>
   </data>
 </root>

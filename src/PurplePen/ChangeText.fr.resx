@@ -183,10 +183,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Exemple</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Texte</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Insérer le texte prédéfini</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Texte</value>
   </data>
 </root>

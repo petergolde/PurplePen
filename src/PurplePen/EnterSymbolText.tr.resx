@@ -117,7 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="numberColumn.HeaderText" xml:space="preserve">
+    <value>Sayı</value>
+  </data>
+  <data name="genderColumn.HeaderText" xml:space="preserve">
+    <value>Cinsiyet</value>
+  </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Durum</value>
+  </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Metin</value>
+  </data>
+  <data name="checkBoxPlural.Text" xml:space="preserve">
+    <value>Çoğul formları göster</value>
+  </data>
+  <data name="checkBoxGender.Text" xml:space="preserve">
+    <value>Cinsiyet formlarını göster</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Sembol için özelleştirilmiş metni "Metin" sütununa girin.</value>
+  </data>
+  <data name="labelGenderChooser.Text" xml:space="preserve">
+    <value>Cinsiyet:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Değiştirilmiş sembol durumu:</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Durum formlarını göster</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Özelleştirilmiş Sembol Metni</value>
   </data>
 </root>

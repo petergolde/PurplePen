@@ -123,11 +123,14 @@
   <data name="freeLabel.Text" xml:space="preserve">
     <value>Purple Pen je svobodný software a může být kopírován a šířen.</value>
   </data>
+  <data name="disclaimerLabel.Text" xml:space="preserve">
+    <value>TENTO SOFTWARE JE POSKYTOVÁN DRŽITELI AUTORSKÝCH PRÁV A PŘISPĚVATELI "TAK, JAK JE", A JAKÉKOLI VÝSLOVNÉ NEBO PŘEDPOKLÁDANÉ ZÁRUKY, MIMO JINÉ VČETNĚ PŘEDPOKLÁDANÝCH ZÁRUK PRODEJNOSTI A VHODNOSTI PRO URČITÝ ÚČEL, JSOU VYLOUČENY.</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="creditsButton.Text" xml:space="preserve">
-    <value>Kredity</value>
+    <value>Poděkování</value>
   </data>
   <data name="licenseButton.Text" xml:space="preserve">
     <value>Zobrazit celou licenci</value>

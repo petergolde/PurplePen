@@ -150,14 +150,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Velg mappe...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Annen mappe</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Samme mappe som Purple Pen filen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Samme mappe som kartfila</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Samme mappe som Purple Pen filen</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Annen mappe</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Mappe</value>

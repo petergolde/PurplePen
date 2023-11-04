@@ -123,9 +123,6 @@
   <data name="NewCode.HeaderText" xml:space="preserve">
     <value>Новий код</value>
   </data>
-  <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>Для заміни коду одного чи кількох КП,клацніть на стовпець "Новий код" та введіть новий код. </value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Змінити коди КП</value>
   </data>

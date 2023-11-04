@@ -150,14 +150,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Ordner auswählen...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Anderer Ordner</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Selber Ordner wie Purple Pen-Datei</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Selber Ordner wie Kartendatei</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Selber Ordner wie Purple Pen-Datei</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Anderer Ordner</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Ordner</value>

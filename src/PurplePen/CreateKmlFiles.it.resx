@@ -129,6 +129,9 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Seleziona cartella per i file OCAD</value>
   </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Output</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Prefisso nome file:</value>
   </data>
@@ -141,26 +144,20 @@
   <data name="filesCombo.Items1" xml:space="preserve">
     <value>Uno per percorso</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Output</value>
-  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Seleziona cartella...</value>
-  </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Altra cartella</value>
-  </data>
-  <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Stessa cartella come file di mappa</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
     <value>Stessa cartella come file di Purple Pen</value>
   </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Stessa cartella come file di mappa</value>
+  </data>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Altra cartella</value>
+  </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Cartella</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Crea File OCAD</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Formato file:</value>

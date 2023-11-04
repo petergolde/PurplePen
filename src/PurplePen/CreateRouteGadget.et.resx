@@ -129,14 +129,14 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vali kaust...</value>
   </data>
-  <data name="otherDirectory.Text" xml:space="preserve">
-    <value>Teine kaust</value>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Kausta kus asub Purple Pen fail</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
     <value>Kausta kus asub kaardi fail</value>
   </data>
-  <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Kausta kus asub Purple Pen fail</value>
+  <data name="otherDirectory.Text" xml:space="preserve">
+    <value>Teine kaust</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Kaust</value>

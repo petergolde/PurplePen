@@ -172,7 +172,7 @@
     <value>Velikost řádky:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
-    <value>Zobrazení</value>
+    <value>Vzhled</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Zrušit</value>

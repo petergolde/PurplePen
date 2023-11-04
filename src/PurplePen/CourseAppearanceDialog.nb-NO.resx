@@ -219,6 +219,9 @@
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Bruk overtrykk for farger markert med "overtrykk".</value>
   </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Avansert</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpass utseende</value>
   </data>

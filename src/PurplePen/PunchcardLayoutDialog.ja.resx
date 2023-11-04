@@ -120,14 +120,14 @@
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
     <value>パンチボックスの並び順</value>
   </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>列数:</value>
   </data>
   <data name="rowsLabel.Text" xml:space="preserve">
     <value>行数:</value>
-  </data>
-  <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>サイズ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>コントロールカードのレイアウト</value>

@@ -148,7 +148,7 @@
     <value>Element</value>
   </data>
   <data name="ColumnHeader_Leg" xml:space="preserve">
-    <value>Etappe</value>
+    <value>Teilstrecke</value>
   </data>
   <data name="ColumnHeader_Length" xml:space="preserve">
     <value>Länge</value>
@@ -178,7 +178,7 @@
     <value>Bahn-Posten Bezüge für {0}</value>
   </data>
   <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
-    <value>Etappe geht in beide Richtungen</value>
+    <value>Teilstrecke geht in beide Richtungen</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Posten mit geringem Abstand</value>
@@ -280,7 +280,7 @@
     <value>Einige oder alle Bahnen haben keine Angabe zur Läuferanzahl. Die Angaben zur Auslastung unten können deshalb fehlerhaft sein. Um die Läuferauslastung festzulegen, wählen Sie bitte "Läuferanzahl" aus dem Menü "Bahnen".</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
-    <value>(In der folgenden Tabelle erscheinen nur Etappen, die von mehr als einer Bahn genutzt werden.)</value>
+    <value>(In der folgenden Tabelle erscheinen nur Teilstrecken, die von mehr als einer Bahn genutzt werden.)</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
     <value>Zusammenfassung der Läuferauslastung für {0}</value>
@@ -298,13 +298,13 @@
     <value>BEMERKUNG: </value>
   </data>
   <data name="RelayVariation_BranchWarning" xml:space="preserve">
-    <value>Warnung: Aufgrund der Anzahl der Etappen wird die Gabelung bei Posten {0} nicht gleichmäßig genutzt. {1} Etappe(n) nutzen Zweig {2}, und {3} Etappe(n) nutzen Zweig {4}. </value>
+    <value>Warnung: Aufgrund der Anzahl der Teilstrecken wird die Gabelung bei Posten {0} nicht gleichmäßig genutzt. {1} Teilstrecke(n) nutzen Zweig {2}, und {3} Teilstrecke(n) nutzen Zweig {4}. </value>
   </data>
   <data name="RelayVariation_LegHeader" xml:space="preserve">
-    <value>Etappe {0}</value>
+    <value>Teilstrecke {0}</value>
   </data>
   <data name="RelayVariation_NoTeams" xml:space="preserve">
-    <value>Bislang wurden keine Staffelteams festgelegt. Wählen sie die Anzahl der Teams und Etappen aus und klicken sie auf "Varianten zuweisen".</value>
+    <value>Bislang wurden keine Staffelteams festgelegt. Wählen sie die Anzahl der Teams und Teilstrecken aus und klicken sie auf "Varianten zuweisen".</value>
   </data>
   <data name="RelayVariation_TeamNumber" xml:space="preserve">
     <value>Team {0}</value>

@@ -138,6 +138,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Počet týmů:</value>
   </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Přiřadit povinné postupy k větvení..</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Čísla týmů začínají od: </value>
   </data>

@@ -129,7 +129,43 @@
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Dosya Seç...</value>
   </data>
+  <data name="coursesDirectory.Text" xml:space="preserve">
+    <value>Purple Pen dosyasıyla aynı klasör</value>
+  </data>
+  <data name="mapDirectory.Text" xml:space="preserve">
+    <value>Harita dosyası ile aynı klasör</value>
+  </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Diğer klasör</value>
+  </data>
+  <data name="folderGroupBox.Text" xml:space="preserve">
+    <value>Dosya</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>RouteGadget dosyalarının her ikisi için de ad girin (.xml veya .gif olmadan):</value>
+  </data>
+  <data name="nameGroupBox.Text" xml:space="preserve">
+    <value>Dosya Adı</value>
+  </data>
+  <data name="learnMoreLink.Text" xml:space="preserve">
+    <value>RouteGadget hakkında daha fazla bilgi edinin</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>RouteGadget, hem bir görüntü dosyası (.gif) hem de IOF XML dosyası (.xml) gerektirir. Bu dosyaların her ikisi için de adı ve klasörü seçin.</value>
+  </data>
+  <data name="comboBoxIofXml.Items" xml:space="preserve">
+    <value>2.0.3</value>
+  </data>
+  <data name="comboBoxIofXml.Items1" xml:space="preserve">
+    <value>3.0</value>
+  </data>
+  <data name="labelIofXml.Text" xml:space="preserve">
+    <value>IOF XML Versiyon:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>IOF XML</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>RouteGadget Dosyaları Oluşturun</value>
   </data>
 </root>

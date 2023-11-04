@@ -118,25 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>Digite o texto para colocar em uma linha separada de descrições de controle:</value>
+    <value>Digite o texto para colocar em uma linha separada da sinalética:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
-    <value>Percursos</value>
+    <value>Percursos:</value>
   </data>
   <data name="positionLabel.Text" xml:space="preserve">
-    <value>Posição</value>
+    <value>Posição:</value>
   </data>
   <data name="comboBoxPosition.Items" xml:space="preserve">
-    <value>Acima</value>
+    <value>Acima (0)</value>
   </data>
   <data name="comboBoxPosition.Items1" xml:space="preserve">
-    <value>Abaixo</value>
+    <value>Abaixo {0}</value>
   </data>
   <data name="comboBoxCourses.Items" xml:space="preserve">
     <value>Somente neste percurso</value>
   </data>
   <data name="comboBoxCourses.Items1" xml:space="preserve">
-    <value>Todos os percursos com</value>
+    <value>Todos os percursos com {0}</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Adicionar Linha de Texto</value>

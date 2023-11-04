@@ -144,10 +144,10 @@
   <data name="labelFontSizeMm.Text" xml:space="preserve">
     <value>mm</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>tekst</value>
-  </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Sett inn spesialtekst</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>tekst</value>
   </data>
 </root>

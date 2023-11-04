@@ -123,11 +123,17 @@
   <data name="buttonChooseFile.Text" xml:space="preserve">
     <value>&amp;Escolha o arquivo de mapa ...</value>
   </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Todos os formatos de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|arquivos OCAD(*.ocd)|*.ocd|arquivos Open Orienteering Mapper|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="labelDpi.Text" xml:space="preserve">
     <value>Resolução:</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Escala:</value>
+  </data>
+  <data name="labelOneTo.Text" xml:space="preserve">
+    <value>1 :</value>
   </data>
   <data name="labelDpi2.Text" xml:space="preserve">
     <value>pontos por polegada</value>

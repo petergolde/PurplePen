@@ -120,4 +120,49 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Cor:</value>
   </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Alterar Cor...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Estilo:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Único</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Duplo</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Tracejada</value>
+  </data>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Largura:</value>
+  </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Tamanho de Espaço:</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Tamanho de Traço:</value>
+  </data>
+  <data name="labelWidthMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelGapSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelDashSizeMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Raio de canto:</value>
+  </data>
+  <data name="labelRadiusMm.Text" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Exemplo</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Aparência</value>
+  </data>
 </root>

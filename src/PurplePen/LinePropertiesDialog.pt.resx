@@ -138,6 +138,9 @@
   <data name="labelWidth.Text" xml:space="preserve">
     <value>Largura:</value>
   </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Tamanho do afastamento:</value>
+  </data>
   <data name="labelDashSize.Text" xml:space="preserve">
     <value>Tamanho do traço:</value>
   </data>

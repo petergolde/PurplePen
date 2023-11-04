@@ -300,4 +300,10 @@
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Задати стандарт карти</value>
   </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Розтягнути</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Опублікувати в Livelox</value>
+  </data>
 </root>

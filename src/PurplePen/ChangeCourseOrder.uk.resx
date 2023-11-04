@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="moveDownButton.Text" xml:space="preserve">
-    <value>Перемістити вниз</value>
+    <value>Перемістити нижче</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Використовуйте кнопки "Перемістити вгору" та "Перемістити вниз" щоб змінити порядок дистанцій у інтерфейсі, звітах та при друці.</value>
+    <value>Використовуйте кнопки "Перемістити вище" та "Перемістити нижче" щоб змінити порядок дистанцій у інтерфейсі, звітах та при друці.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
-    <value>Перемістити вгору</value>
+    <value>Перемістити вище</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Порядок дистанцій</value>

@@ -166,16 +166,19 @@
     <value>Create P&amp;DFs</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Create Route&amp;Gadget Files...</value>
+    <value>Create RouteGadget Files...</value>
   </data>
-  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
-    <value>Publish to &amp;Livelox...</value>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create Route Review Files</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Create Data &amp;Interchange File (IOF XML)...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>Create G&amp;PX File...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Create &amp;KML File...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Print Descriptions...</value>
@@ -313,10 +316,10 @@
     <value>Map Exchange at &amp;Control Point</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
-    <value>&amp;Flagged Route to Map Exchange</value>
+    <value>Flagged &amp;Route to Map Exchange</value>
   </data>
   <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Map E&amp;xchange</value>
+    <value>Map Flip/E&amp;xchange</value>
   </data>
   <data name="addVariationMenu.Text" xml:space="preserve">
     <value>&amp;Variation...</value>
@@ -369,6 +372,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Add</value>
   </data>
@@ -391,13 +397,16 @@
     <value>2004 Description Standard</value>
   </data>
   <data name="descriptionStd2018Menu.Text" xml:space="preserve">
-    <value>2018 Description Standard</value>
+    <value>2018/2024 Description Standard</value>
   </data>
   <data name="mapStd2000Menu.Text" xml:space="preserve">
     <value>ISOM2000 Map Standard</value>
   </data>
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>ISOM2017 Map Standard</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>ISSprOM 2019 Map Standard</value>
   </data>
   <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
     <value>IOF &amp;Standards</value>
@@ -451,7 +460,7 @@
     <value>Add &amp;Gap</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Remove G&amp;ap</value>
+    <value>Remove Ga&amp;p</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Change &amp;Text...</value>
@@ -461,6 +470,9 @@
   </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otate</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>&amp;Stretch</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>No Taped Route</value>
@@ -616,7 +628,7 @@
     <value>Flagged Route to Map Exchange</value>
   </data>
   <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
-    <value>Add Map Exchange</value>
+    <value>Add Map Flip/Exchange</value>
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Add Variation</value>
@@ -666,6 +678,9 @@
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Add Special Item</value>
   </data>
@@ -701,6 +716,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>
+  </data>
+  <data name="publishToLiveloxMenu.Text" xml:space="preserve">
+    <value>Publish to &amp;Livelox...</value>
   </data>
   <data name="addSpecialItemMenu.Text" xml:space="preserve">
     <value>Add Special &amp;Item</value>

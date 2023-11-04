@@ -135,44 +135,345 @@
   <data name="AllControls" xml:space="preserve">
     <value>Tüm Hedefler</value>
   </data>
+  <data name="CannotLoadFile" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı '{0}' yüklenemiyor:</value>
+  </data>
+  <data name="CannotSaveFile" xml:space="preserve">
+    <value>'{0}' şu nedenle kaydedilemiyor:</value>
+  </data>
+  <data name="CannotLoadMapFile" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı '{0}' harita dosyası yüklenemiyor:</value>
+  </data>
+  <data name="CannotReadImageFile" xml:space="preserve">
+    <value>'{0}' resim dosyası okunamıyor.</value>
+  </data>
+  <data name="CannotPrint" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı '{0}' harita dosyası yüklenmiyor:</value>
+  </data>
+  <data name="CannotCreateFile" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı '{0}' harita dosyası yüklenmiyor:</value>
+  </data>
+  <data name="CannotCreateDirectory" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı '{0}' klasörü oluşturulamıyor:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Harita şu nedenden dolayı okunamıyor: '{0}' Optimize/Onar'ı kullanmak ve OCAD'de yeniden kaydetmek sorunları çözebilir.</value>
+  </data>
+  <data name="CannotCreateOcadFiles" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı OCAD dosyaları oluşturulamıyor:</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Aşağıdaki nedenlerden dolayı OCAD dosyaları oluşturulamıyor:</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>'{0}' dosyası belirtilen klasörde zaten var. "Geri" düğmesini tıklayın ve yeni bir klasör veya yeni bir etkinlik başlığı seçin.</value>
+  </data>
+  <data name="CodeInUse" xml:space="preserve">
+    <value>'{0}' kontrol kodu zaten başka bir kontrol tarafından kullanılıyor.</value>
+  </data>
+  <data name="BadScore" xml:space="preserve">
+    <value>Bir kontrol için noktalar 1-999 arasında bir tamsayı olmalıdır.</value>
+  </data>
+  <data name="BadClimb" xml:space="preserve">
+    <value>Bir parkur için tırmanış 0-9999 arasında veya boş olmalıdır.</value>
+  </data>
+  <data name="BadLoad" xml:space="preserve">
+    <value>Bir parkurun boyutu 0-999999 arasında bir tamsayı veya boş olmalıdır.</value>
+  </data>
+  <data name="UndoWithShortcut" xml:space="preserve">
+    <value>&amp;Geri al</value>
+  </data>
   <data name="Undo" xml:space="preserve">
     <value>Geri Al</value>
+  </data>
+  <data name="RedoWithShortcut" xml:space="preserve">
+    <value>&amp;Yinele</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Yinele</value>
   </data>
+  <data name="ClearSelectionWithShortcut" xml:space="preserve">
+    <value>&amp;Seçili olanı temizle</value>
+  </data>
+  <data name="CancelOperationWithShortcut" xml:space="preserve">
+    <value>İşlemi İptal Et</value>
+  </data>
+  <data name="CancelOperation" xml:space="preserve">
+    <value>İşlemi İptal Et</value>
+  </data>
+  <data name="EnterScore" xml:space="preserve">
+    <value>Yeni puan gir</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Yeni kod gir</value>
+  </data>
+  <data name="EnterDimensions" xml:space="preserve">
+    <value>Özellik boyutunu girin
+Yokuşta yükseklik için / kullanın
+Kullanım | iki özellik için</value>
+  </data>
+  <data name="EnterEventTitle" xml:space="preserve">
+    <value>Yeni etkinlik başlığı girin
+Kullanım | satırları ayırmak
+(tüm dersleri etkiler)</value>
+  </data>
+  <data name="EnterSecondaryTitle" xml:space="preserve">
+    <value>Yeni ikincil başlık girin
+Kullan | satırları ayırmak</value>
+  </data>
+  <data name="EnterCourseName" xml:space="preserve">
+    <value>Yeni parkur adı gir</value>
+  </data>
+  <data name="EnterClimb" xml:space="preserve">
+    <value>Metre cinsinden yeni tırmanışı girin</value>
+  </data>
+  <data name="EnterSymbolText" xml:space="preserve">
+    <value>Yeni sembol anlamını girin
+(tüm dersleri etkiler)</value>
+  </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Yeni metin girin
+Kullan | satırları ayırmak</value>
+  </data>
+  <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
+    <value>{0} kontrolleri artık hiçbir parkur tarafından kullanılmıyor. Bu kontrolleri kontrol koleksiyonundan silmek istiyor musunuz?</value>
+  </data>
+  <data name="DeleteControlFromControlsCollection" xml:space="preserve">
+    <value>Kontrol {0} artık hiçbir parkur tarafından kullanılmıyor. Bu kontrolü kontrol koleksiyonundan silmek istiyor musunuz?</value>
+  </data>
+  <data name="DeleteControlFromAllControls" xml:space="preserve">
+    <value>Kontrol {0} şu anda aşağıdaki parkurar tarafından kullanılmaktadır: {1}. Bu kontrolü yine de silmek istiyor musunuz?</value>
+  </data>
+  <data name="CodeBadLength" xml:space="preserve">
+    <value>Bir kontrol kodu bir, iki veya üç harf veya rakamdan oluşmalıdır.</value>
+  </data>
+  <data name="CodeContainsSpace" xml:space="preserve">
+    <value>Bir kontrol kodu boşluk içermemelidir.</value>
+  </data>
+  <data name="CodeBeginsWithZero" xml:space="preserve">
+    <value>Bir kontrol kodu sıfır ile başlamamalıdır.</value>
+  </data>
+  <data name="CodeCouldBeUpsideDown" xml:space="preserve">
+    <value>Bir kontrol kodu, ters çevrildiğinde başka bir sayı gibi görünmemelidir.</value>
+  </data>
+  <data name="DuplicateCode" xml:space="preserve">
+    <value>"{0}" kodu birden fazla kez kullanılır.</value>
+  </data>
+  <data name="BadScale" xml:space="preserve">
+    <value>Baskı ölçeği 100 ile 100.000 arasında bir sayı olmalıdır.</value>
+  </data>
+  <data name="CoursePropertiesTitle" xml:space="preserve">
+    <value>Parkur Özellikleri</value>
+  </data>
+  <data name="Landscape" xml:space="preserve">
+    <value>Düzenlemek</value>
+  </data>
+  <data name="Portrait" xml:space="preserve">
+    <value>Portre</value>
+  </data>
+  <data name="PageTooSmall" xml:space="preserve">
+    <value>Sayfa boyutu, herhangi bir açıklamanın yazdırılması için çok küçük.</value>
+  </data>
+  <data name="VersionLabel" xml:space="preserve">
+    <value>Versiyon {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Purple Pen'in {0} sürümü şimdi indirilebilir. (Şu anda {1} sürümünü çalıştırıyorsunuz.)
+
+En son sürümü indirip yüklemek ister misiniz?</value>
+  </data>
+  <data name="HelpFileNotFound" xml:space="preserve">
+    <value>Yardım dosyası '{0}' açılamadı.</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Yakınlaştır</value>
+  </data>
+  <data name="MissingMapFile" xml:space="preserve">
+    <value>"{0}" harita dosyası bulunamadı.
+
+Büyük olasılıkla harita dosyası taşınmış veya silinmiştir ya da Mor Kalem dosyası taşınmıştır (muhtemelen farklı bir bilgisayara). Purple Pen olay dosyası her yüklendiğinde harita dosyası mevcut olmalıdır. Purple Pen olay dosyasını başka bir kişiye gönderirseniz, o kişide de harita dosyasının bir kopyasının bulunduğundan emin olun.
+
+Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir kopyasını bulmaya çalışın.</value>
+  </data>
+  <data name="NoUnusedControls" xml:space="preserve">
+    <value>Tüm kontroller bir kursta kullanılır.</value>
+  </data>
   <data name="FinishButtonText" xml:space="preserve">
     <value>&amp;Bitiş</value>
+  </data>
+  <data name="NextButtonText" xml:space="preserve">
+    <value>&amp;Sonraki &gt;</value>
+  </data>
+  <data name="Control_Code" xml:space="preserve">
+    <value>Kontrol {0}</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Bitiş</value>
   </data>
   <data name="Finish_Short" xml:space="preserve">
     <value>F</value>
   </data>
+  <data name="MandCrossing_Long" xml:space="preserve">
+    <value>Zorunlu geçiş noktası</value>
+  </data>
+  <data name="MandCrossing_Medium" xml:space="preserve">
+    <value>Geçiş Noktası</value>
+  </data>
   <data name="MandCrossing_Short" xml:space="preserve">
     <value>C</value>
+  </data>
+  <data name="Margins_All" xml:space="preserve">
+    <value>Tüm: {0}</value>
+  </data>
+  <data name="Margins_LRTB" xml:space="preserve">
+    <value>Sol: {0}, Sağ: {1}, Üst: {2}, Alt: {3}</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Başlama</value>
   </data>
   <data name="Start_Short" xml:space="preserve">
     <value>S</value>
   </data>
+  <data name="Version_Alpha" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="Version_Beta" xml:space="preserve">
+    <value>Beta {0}</value>
+  </data>
+  <data name="Version_RC" xml:space="preserve">
+    <value>RC {0}</value>
+  </data>
+  <data name="Plural" xml:space="preserve">
+    <value>çoğul</value>
+  </data>
+  <data name="Singular" xml:space="preserve">
+    <value>tekil</value>
+  </data>
+  <data name="RequireStar" xml:space="preserve">
+    <value>Özelleştirilmiş metin, değiştirilen nesnenin nereye yerleştirildiğini belirtmek için bir "*" gerektirir.</value>
+  </data>
+  <data name="AppSubtitle" xml:space="preserve">
+    <value>oryantiring için parkur ayarı</value>
+  </data>
+  <data name="AddTextSpecialExplanation" xml:space="preserve">
+    <value>Harita üzerine yerleştirmek istediğiniz metni girin. Tamam düğmesine bastıktan sonra, metni istediğiniz konuma yerleştirmek için fareyi sürükleyin.</value>
+  </data>
+  <data name="AddTextSpecialTitle" xml:space="preserve">
+    <value>Metin ekle</value>
+  </data>
+  <data name="ChangeTextSpecialExplanation" xml:space="preserve">
+    <value>Yeni metni girin.</value>
+  </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Metni Değiştir</value>
+  </data>
+  <data name="MapFileChanged" xml:space="preserve">
+    <value>Başka bir program "{0}" harita dosyasını değiştirdi. Purple Pen şimdi haritayı yeniden yükleyecek.</value>
+  </data>
+  <data name="ChangeDescriptionLanguage" xml:space="preserve">
+    <value>Geçerli olay {0}'da metinsel kontrol açıklamalarına sahiptir. Kontrol açıklamalarının dilini {1} olarak değiştirmek ister misiniz?</value>
+  </data>
+  <data name="OpenLastEvent" xml:space="preserve">
+    <value>Açık "{0}"</value>
+  </data>
+  <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
+    <value>Oluşturulan OCAD dosyaları yüklenmeden önce Purple Pen kapatılmalıdır.</value>
+  </data>
+  <data name="NoCoursesSelected" xml:space="preserve">
+    <value>Yazdırmak için hiçbir parkur seçilmedi.</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>*** Çevrilen dilde Purple Pen için dokümantasyon içeren bir web sitesi varsa, bu öğenin çevirisi olarak URL'yi (http dahil) girin. Aksi takdirde olduğu gibi bırakın.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Harita değişimi</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Değiştirme</value>
   </data>
   <data name="MapExchange_Short" xml:space="preserve">
     <value>MX</value>
   </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Bölüm {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Tüm Bölümler</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Bölüm {0} (of {1})</value>
+  </data>
   <data name="CrashCancel" xml:space="preserve">
     <value>Vazgeç</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Kontak E-mail</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Bir hata oluştu. Sorunu çözmemize yardımcı olmak için lütfen e-posta adresinizi ve ek bilgilerinizi girin ve bize bir hata raporu gönderin.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Sorunu çözmemize yardımcı olmak için lütfen programda ne yaptığınızı bize bildirin</value>
   </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Kaydet</value>
   </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Rapor Gönder</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>"Tüm Parçalar" görüntüleniyorsa, harita değişimi olan bir rotaya açıklamalar eklenemez. Açıklama eklemek istediğiniz bölüme geçin ve ardından tekrar "Açıklama Ekle"yi seçin.</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>PdfConverter.exe bulunamadı</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>Pdfium PDF dönüştürücü, PDF dosyasını başarıyla okuyamadı</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>'{0}' dosyasından PDF dönüştürmenin sonucu okunamadı</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Aşağıdaki nedenden dolayı PDF oluşturulamıyor:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Kullanıcı Tanımlı</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>PDF'den harita boyutu</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Kullanıcı tarafından iptal edildi</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Oluşturuluyor {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>{0} sayfası yazdırılıyor (/{1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>"{0}" harita dosyası silindi. Lütfen harita dosyasını geri yüklemeyi deneyin ve ardından "Tamam"a basın.</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Bilgisayarınızdaki .NET çerçevesi doğru şekilde yüklenmiş görünmüyor. Lütfen http://microsoft.com/net adresini ziyaret edin ve Windows işletim sisteminiz için .NET çerçevesinin en son sürümünü yükleyin.</value>
+  </data>
   <data name="Black" xml:space="preserve">
     <value>Siyah</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Renk seç...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Ana Renk</value>
   </data>
   <data name="DarkBlue" xml:space="preserve">
     <value>Lacivert</value>
   </data>
   <data name="Green" xml:space="preserve">
     <value>Yeşil</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Lacivert</value>
   </data>
   <data name="Purple" xml:space="preserve">
     <value>Mor</value>
@@ -183,16 +484,139 @@
   <data name="Yellow" xml:space="preserve">
     <value>Sarı</value>
   </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Çizginin görünümünü ayarlayın. Tamam düğmesine bastıktan sonra, çizgi parçalarını istediğiniz konuma çizmek için fareyi sürükleyin.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Çizgi Ekle</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Dikdörtgenin görünümünü ayarlayın. Tamam düğmesine bastıktan sonra, dikdörtgeni istediğiniz konuma yerleştirmek için fareyi sürükleyin.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Dikdörtgen ekle</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Satır Görünümünü Değiştir</value>
+  </data>
   <data name="ChangeLineAppearanceTitle" xml:space="preserve">
     <value>Satır Görünümünü Değiştir</value>
   </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>GPX dosyalarını kullanmak için harita dosyası bir OCAD dosyası olmalıdır.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD dosyasının GPX dosyalarını kullanmak için tanımlanmış bir koordinat sistemine sahip olması gerekir.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>GPX dosyalarını kullanmak için OCAD dosyasında gerçek dünya koordinatları tanımlanmış olmalıdır.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Noktalar yeniden projelendirilemedi; OCAD haritasındaki koordinat sistemi veya gerçek dünya koordinatları yanlış.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCAD dosyası Purple Pen tarafından desteklenmeyen bir koordinat sistemi kullanır.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Otomarik</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Bir kursun uzunluğu 0,1 - 99,9 arasında bir sayı olmalı veya uzunluğun otomatik olarak hesaplanması için boş bırakılmalıdır.</value>
+  </data>
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Parkur Çoğalt</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Uzunluğu km cinsinden girin veya otomatik olarak hesaplanması için boş bırakın</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>"{0}" yazdırma işlemi tamamlandı. "{1}" yazdırmaya başlamak için OK düğmesine basın.</value>
   </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
   <data name="OpenOrienteeringMapper" xml:space="preserve">
     <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Tüm Varyasyonlar</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Takım başına {0} katılımcısı olan bayrak yarışları için uygun.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Loplar arasında {1} olası yol var. Merkezdeki lop hedefi {0} kez ziyaret edilecek.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>Çatalı ya da lopu başlatan hedef parkurda yeni bir yere sürüklenemez/ taşınamaz.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Bu parkurda çok fazla toplam varyasyon var. Ayırt edici varyasyon sayısı {0} a sınırlandırılmıştır.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Varyasyon eklenemez.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>bu hedefte bir varyasyon zaten mevcut.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Bir varyasyon eklemek için hedef ya da yarış ayağı seçilmeli.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Bir hedefi bitirmek için varyasyon eklenemez.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Tüm hedeflerin ön izlemesine bir varyasyon eklenemez.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Skor parkuruna varyasyon eklenemez.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Önce bitiş hedefi ekleyin. Son hedefe varyasyon eklenemez.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>'{0}' dalı '{1}' için geçerli bir yarış ayağı değildir</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Yarış ayağı {0} parkur dallarından {1} e atanmalı</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Yarış ayağı {0} parkur dallarından hem {1} e hem de {2} ye atanmalı</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Aşağıdaki sebep yüzünden haritayı okuyamıyor. '{0}' OpenOrienteering Mapper'ın son versiyonunda açmak ve tekrar kaydetmek sorunu çöze bilir.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Zamanlayıcı Başlatma</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Zamanlayıcı Başlatma</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>TS</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>OCAD altlık haritası görülebilir şablon dosyalara sahip. OCAD 8 ya da daha altında OCAD kısıtlamaları yüzünden bu şablonlar görünmeyebilir.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>OCAD 10 ve altındaki kısıtlamalar yüzünden, görsel nesneler parkurun altında görünecektir ve dışarı aktarılan OCAD dosyalarını beyaz gösterecektir. Lütfen istenilen görseli elde etmek için OCAD dosyalarını kontrol edin.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Aşağıdaki sebeplerden görsel dosya oluşturamaz:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>PDF oluştur</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF Dosyası|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Yarış ayağı {0} dal {1} e hiç ulaşmıyor. Var olan çatalda farklı bir yöne gitmesi için atanmış.</value>
+  </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Elipsin görünümünü ayarlayın. Tamam'a bastıktan sonra, elipsi istediğiniz konuma yerleştirmek için fareyi sürükleyin.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Elips Ekle</value>
   </data>
 </root>

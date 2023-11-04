@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDisplayFinish.Text" xml:space="preserve">
+    <value>Exibir círculo de chegada nesta parte do percurso</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Essas configurações controlam a aparência desta parte de um percurso de várias partes.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Propriedades de Parte de Percurso</value>
+  </data>
 </root>

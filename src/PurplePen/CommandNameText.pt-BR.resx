@@ -117,19 +117,199 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeSymbol" xml:space="preserve">
+    <value>Escolher o Símbolo</value>
+  </data>
+  <data name="ChangeCode" xml:space="preserve">
+    <value>Escolher Código de Controle</value>
+  </data>
+  <data name="ChangeControl" xml:space="preserve">
+    <value>Mudar Controle</value>
+  </data>
+  <data name="ChangeScore" xml:space="preserve">
+    <value>Mudar Pontos de Controle</value>
+  </data>
+  <data name="ChangeTitle" xml:space="preserve">
+    <value>Mudar Título</value>
+  </data>
+  <data name="ChangeClimb" xml:space="preserve">
+    <value>Alterar Desnível</value>
+  </data>
+  <data name="ChangeCourseName" xml:space="preserve">
+    <value>Mudar Nome do Percurso</value>
+  </data>
+  <data name="ChangeTextLine" xml:space="preserve">
+    <value>Mudar Linha do Texto</value>
+  </data>
+  <data name="ChangeScale" xml:space="preserve">
+    <value>Mudar Escala do Mapa</value>
+  </data>
+  <data name="MoveControl" xml:space="preserve">
+    <value>Mover Ponto de Controle</value>
+  </data>
+  <data name="MoveControlNumber" xml:space="preserve">
+    <value>Mover Número do Ponto</value>
+  </data>
+  <data name="MoveObject" xml:space="preserve">
+    <value>Mover Objeto</value>
+  </data>
+  <data name="DeleteControl" xml:space="preserve">
+    <value>Deletar Ponto de Controle</value>
+  </data>
+  <data name="DeleteObject" xml:space="preserve">
+    <value>Deletar Objeto</value>
+  </data>
+  <data name="DeleteTextLine" xml:space="preserve">
+    <value>Deletar Linha de Texto</value>
+  </data>
+  <data name="AddControl" xml:space="preserve">
+    <value>Adicionar Ponto de Controle</value>
+  </data>
+  <data name="AddStart" xml:space="preserve">
+    <value>Adicionar Partida</value>
+  </data>
+  <data name="AddFinish" xml:space="preserve">
+    <value>Adicionar Chegada</value>
+  </data>
+  <data name="AddCrossingPoint" xml:space="preserve">
+    <value>Adicionar Ponto de Passagem Obrigatório</value>
+  </data>
+  <data name="AddObject" xml:space="preserve">
+    <value>Adicionar Objeto</value>
+  </data>
+  <data name="DeleteCourse" xml:space="preserve">
+    <value>Deletar Pecurso</value>
+  </data>
   <data name="NewCourse" xml:space="preserve">
     <value>Novo Percurso</value>
   </data>
+  <data name="ChangeCourseProperties" xml:space="preserve">
+    <value>Alterar Propriedades do Percurso</value>
+  </data>
+  <data name="ChangeAllControlsProperties" xml:space="preserve">
+    <value>Alterar as propriedades da Matriz de Pontos de Controle</value>
+  </data>
+  <data name="NewEvent" xml:space="preserve">
+    <value>Criar Novo Evento</value>
+  </data>
+  <data name="SetLegFlagging" xml:space="preserve">
+    <value>Alterar Sinalização de Pernada</value>
+  </data>
+  <data name="ChangeCodes" xml:space="preserve">
+    <value>Mudar Códigos</value>
+  </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Alterar Cursos Exibidos</value>
+    <value>Alterar Percursos Exibidos</value>
+  </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Alterar Curvatura da Pernada</value>
+  </data>
+  <data name="AddBend" xml:space="preserve">
+    <value>Adicionar Curvatura</value>
+  </data>
+  <data name="AddCorner" xml:space="preserve">
+    <value>Adicionar Canto</value>
+  </data>
+  <data name="DeleteBend" xml:space="preserve">
+    <value>Remover Curvatura</value>
+  </data>
+  <data name="DeleteCorner" xml:space="preserve">
+    <value>Remover Canto</value>
+  </data>
+  <data name="AddGap" xml:space="preserve">
+    <value>Adicionar Espaço</value>
+  </data>
+  <data name="RemoveGap" xml:space="preserve">
+    <value>Remover Espaço</value>
+  </data>
+  <data name="MoveGap" xml:space="preserve">
+    <value>Mover Espaço</value>
+  </data>
+  <data name="Rotate" xml:space="preserve">
+    <value>Rotacionar</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
     <value>Numeração automática</value>
   </data>
+  <data name="ChangePunchPatterns" xml:space="preserve">
+    <value>Alterar Padrão de Picote</value>
+  </data>
+  <data name="ChangePunchcardFormat" xml:space="preserve">
+    <value>Mudar Layout de Cartão de Controle</value>
+  </data>
+  <data name="SetPrintArea" xml:space="preserve">
+    <value>Determinar Área de Impressão</value>
+  </data>
+  <data name="SetCourseLoad" xml:space="preserve">
+    <value>Alterar densidade de participantes</value>
+  </data>
+  <data name="SetCustomSymbolText" xml:space="preserve">
+    <value>Customizar Texto da Descrição</value>
+  </data>
+  <data name="ChangeCourseOrder" xml:space="preserve">
+    <value>Alterar Ordem do Percurso</value>
+  </data>
+  <data name="ChangeMapFile" xml:space="preserve">
+    <value>Alterar Arquivo de Mapa</value>
+  </data>
+  <data name="IgnoreMissingFonts" xml:space="preserve">
+    <value>Ignorar Fontes Desconhecidas</value>
+  </data>
   <data name="AddTextLine" xml:space="preserve">
     <value>Adicionar Linha de Texto</value>
   </data>
+  <data name="RemoveUnusedControls" xml:space="preserve">
+    <value>Remover Controles sem Uso</value>
+  </data>
+  <data name="SetDescriptionLanguage" xml:space="preserve">
+    <value>Alterar idioma da Descrição</value>
+  </data>
+  <data name="ChangeText" xml:space="preserve">
+    <value>Alterar Texto</value>
+  </data>
+  <data name="ChangeCourseAppearance" xml:space="preserve">
+    <value>Customizar Aparência do Percurso</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Adicionar troca de Mapa</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Deletar Troca de Mapa</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Alterar Propriedades de Parte do Percurso</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Alterar Aparência da Linha</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Duplicar Percurso</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Criar {0} &amp;Ficheiros/Arquivos</value>
+  </data>
   <data name="AddVariation" xml:space="preserve">
     <value>Adicionar Variação</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Deletar Variação/Volta</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Variações de Equipe de Revezamento</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Adicionar Ponto de Troca de Mapa</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Ajustar Padrão de Descrição dos Controles</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Ajustar Padrão do Mapa</value>
+  </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Alongar</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Publicado em Livelox</value>
   </data>
 </root>
