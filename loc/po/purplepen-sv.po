@@ -1743,7 +1743,7 @@ msgstr "&Kontroll"
 #: MainFrame.resx, addFinishMenu.Text
 #: MiscText.resx, FinishButtonText
 msgid "&Finish"
-msgstr "Slut&för"
+msgstr "&Mål"
 
 #: MainFrame.resx, addDescriptionsMenu.Text
 msgid "&Descriptions"
