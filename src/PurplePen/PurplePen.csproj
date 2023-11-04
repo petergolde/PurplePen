@@ -172,6 +172,7 @@
       <DependentUpon>ChangeText.cs</DependentUpon>
     </Compile>
     <Compile Include="CircleGap.cs" />
+    <Compile Include="SystemExtensions.cs" />
     <Compile Include="ColorChooserDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1500,6 +1501,7 @@
     <EmbeddedResource Include="CommandNameText.pl.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>CommandNameText.pl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandNameText.resx">
       <Generator>ResXFileCodeGenerator</Generator>

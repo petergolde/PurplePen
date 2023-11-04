@@ -719,11 +719,11 @@ namespace PurplePen
 
             switch (descriptionLine.kind) {
                 case DescriptionLineKind.Title:
-                    RenderSingleLineText(renderer, TITLE_FONT, StringAlignment.Center, (string) (descriptionLine.boxes[0]), 0, 0, fullWidth, 100, clipRect);
+                    RenderSingleLineText(renderer, TITLE_FONT, StringAlignment.Center, (string) (descriptionLine.textual), 0, 0, fullWidth, 100, clipRect);
                     break;
 
                 case DescriptionLineKind.SecondaryTitle:
-                    RenderSingleLineText(renderer, TITLE_FONT, StringAlignment.Center, (string) (descriptionLine.boxes[0]), 0, 0, fullWidth, 100, clipRect);
+                    RenderSingleLineText(renderer, TITLE_FONT, StringAlignment.Center, (string) (descriptionLine.textual), 0, 0, fullWidth, 100, clipRect);
                     break;
 
                 case DescriptionLineKind.Header2Box:
@@ -810,7 +810,7 @@ namespace PurplePen
                     break;
 
                 case DescriptionLineKind.Text:
-                    RenderWrappedText(renderer, TEXTLINE_FONT, StringAlignment.Near, (string) (descriptionLine.boxes[0]), 20, 0, fullWidth, 100, clipRect);
+                    RenderWrappedText(renderer, TEXTLINE_FONT, StringAlignment.Near, (string) (descriptionLine.textual), 20, 0, fullWidth, 100, clipRect);
                     break;
 
                 default:

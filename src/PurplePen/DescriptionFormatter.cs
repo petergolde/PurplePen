@@ -175,22 +175,16 @@ namespace PurplePen
         // Given the text, create descriptions line for a title line with that text. Lines are split by vertical bars.
         private DescriptionLine[] GetTitleLineFromText(DescriptionLineKind kind, string text)
         {
-            string[] texts = text.Split(new char[] { '|' });
-            int lineCount = texts.Length;
-
-            DescriptionLine[] lines = new DescriptionLine[lineCount];
-            for (int index = 0; index < lineCount; ++index) {
-                DescriptionLine line = new DescriptionLine();
-
-                line.kind = kind;
-                line.boxes = new object[1];
-                line.boxes[0] = texts[index];
-                line.textual = texts[index];
-
-                lines[index] = line;
-            }
-
-            return lines;
+            return text.Split(new char[] { '|' })
+                .ConvertAll(t =>
+                {
+                    DescriptionLine line = new DescriptionLine();
+                    line.kind = kind;
+                    line.boxes = new object[1];
+                    line.boxes[0] = t;
+                    line.textual = CourseFormatter.ExpandText(eventDB, courseView, t);
+                    return line;
+                });
         }
 
         // Create a description line for a normal header line: name, length, climb
@@ -274,23 +268,19 @@ namespace PurplePen
         // Given the text, create one or more text lines for that text. Lines are split by vertical bars.
         private DescriptionLine[] GetTextLineFromText(string text, Id<CourseControl> courseControlId, Id<ControlPoint> controlId, DescriptionLine.TextLineKind textLineKind)
         {
-            string[] texts = text.Split(new char[] { '|' });
-            int lineCount = texts.Length;
-
-            DescriptionLine[] lines = new DescriptionLine[lineCount];
-            for (int index = 0; index < lineCount; ++index) {
-                DescriptionLine line = new DescriptionLine();
-                line.kind = DescriptionLineKind.Text;
-                line.boxes = new object[1];
-                line.boxes[0] = texts[index];
-                line.textual = texts[index];
-                line.courseControlId = courseControlId;
-                line.controlId = controlId;
-                line.textLineKind = textLineKind;
-                lines[index] = line;
-            }
-
-            return lines;
+            return text.Split(new char[] { '|' })
+                .ConvertAll(t =>
+                {
+                    DescriptionLine line = new DescriptionLine();
+                    line.kind = DescriptionLineKind.Text;
+                    line.boxes = new object[1];
+                    line.boxes[0] = t;
+                    line.textual = CourseFormatter.ExpandText(eventDB, courseView, t);
+                    line.courseControlId = courseControlId;
+                    line.controlId = controlId;
+                    line.textLineKind = textLineKind;
+                    return line;
+                });
         }
 
         // Given some text, a text line for it to a list if the text is non-empty.
