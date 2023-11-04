@@ -743,6 +743,8 @@ Source: "{#BuildDir}\Samples\*"; DestDir: "{app}\Samples"; Flags: ignoreversion 
 Source: "{#BuildDir}\x64\*"; DestDir: "{app}\x64"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\x86\*"; DestDir: "{app}\x86"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\bg\*"; DestDir: "{app}\bg"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\cs\*"; DestDir: "{app}\cs"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\da\*"; DestDir: "{app}\da"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\de\*"; DestDir: "{app}\de"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\es\*"; DestDir: "{app}\es"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\et\*"; DestDir: "{app}\et"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -754,9 +756,14 @@ Source: "{#BuildDir}\nb-NO\*"; DestDir: "{app}\nb-NO"; Flags: ignoreversion recu
 Source: "{#BuildDir}\nl\*"; DestDir: "{app}\nl"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\nn-NO\*"; DestDir: "{app}\nn-NO"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\pl\*"; DestDir: "{app}\pl"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\pt-BR\*"; DestDir: "{app}\pt-BR"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\pt\*"; DestDir: "{app}\pt"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\ro\*"; DestDir: "{app}\ro"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\sv\*"; DestDir: "{app}\sv"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\tr\*"; DestDir: "{app}\tr"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\uk\*"; DestDir: "{app}\uk"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\zh-CN\*"; DestDir: "{app}\zh-CN"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\zh-TW\*"; DestDir: "{app}\zh-TW"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
 Source: "{#BuildDir}\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 

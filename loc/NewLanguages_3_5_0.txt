@@ -1,0 +1,7 @@
+cs - Czech
+da - Danish
+pt-BR - Portuguese (Brazil)
+pt - Portuguese
+tr - Turkish
+uk - Ukrainian
+zh-TW - Chinese (Traditional)

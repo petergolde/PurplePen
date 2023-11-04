@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace PurplePen
 {
@@ -42,8 +43,11 @@ namespace PurplePen
             foreach (string subdir in Directory.GetDirectories(baseDirectory)) {
                 string langName = Path.GetFileName(subdir);
 
-                if (IsValidCultureName(langName))
+                if (IsValidCultureName(langName)) {
+                    CultureInfo cultureInfo = CultureInfo.GetCultureInfo(langName);
                     languageListBox.Items.Add(CultureInfo.GetCultureInfo(langName));
+                    //Debug.WriteLine("Found language: " + langName + " - " + cultureInfo.NativeName + " / " + cultureInfo.EnglishName);
+                }
             }
 
             // Add english also.
