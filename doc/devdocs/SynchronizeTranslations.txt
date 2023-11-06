@@ -14,3 +14,6 @@ How to synchronize new translations for Purple Pen.
 
 7. One built and committed, do a push back to launchpad, which will reimport the translations, or manually
    upload them to launchpad.
+
+8. Go back to launchpad and check the import queue to make sure the translations were imported. Update ones
+   if needed.

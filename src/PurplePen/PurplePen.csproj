@@ -3304,6 +3304,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.sv.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.tr.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
@@ -3395,6 +3396,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.sv.resx">
       <DependentUpon>MiscText.resx</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MiscText.tr.resx" />
     <EmbeddedResource Include="MiscText.uk.resx" />
