@@ -821,6 +821,9 @@ namespace PurplePen.MapModel
         // Load a bitmap from the given path. 
         IGraphicsBitmap LoadBitmap(string path, bool isTemplate);
 
+        // Load a bitmap from bitmap data.
+        IGraphicsBitmap LoadBitmapFromData(byte[] data);
+
         // Load a map from the given path.
         Map LoadMap(string path, Map referencingMap);
 

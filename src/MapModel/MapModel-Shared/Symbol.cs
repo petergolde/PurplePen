@@ -1645,6 +1645,10 @@ namespace PurplePen.MapModel
         PointF location;
         public PointF Location { get { return location; } }
 
+        // If non-null, this is used as the bitmap data instead of loading from the file name.
+        private byte[] embeddedData; 
+        public byte[] EmbeddedData { get { return embeddedData; } } 
+
         private IFileLoader fileLoader;
 
         private readonly string fileName;
@@ -1680,19 +1684,29 @@ namespace PurplePen.MapModel
             get { return sortOrder; }
         }
 
-        public ImageBitmapSymbol(ImageSymDef def, string fileName, PointF location, float mmPerPixX, float mmPerPixY, bool isVisible, int sortOrder, IFileLoader fileLoader)
+        public ImageBitmapSymbol(ImageSymDef def, string fileName, PointF location, float mmPerPixX, float mmPerPixY, byte[] embeddedData, bool isVisible, int sortOrder, IFileLoader fileLoader)
         {
             this.def = def;
             this.isVisible = isVisible; this.sortOrder = sortOrder;
             this.fileName = fileName;
             this.location = location;
             this.mmPerPixX = mmPerPixX; this.mmPerPixY = mmPerPixY;
+            this.embeddedData = embeddedData;
             this.fileLoader = fileLoader;
 
             if (isVisible) {
-                if (fileLoader != null && (bitmap = fileLoader.LoadBitmap(fileName, false)) != null) {
+                // Try to load the bitmap.
+
+                if (embeddedData != null && fileLoader != null) {
+                    bitmap = fileLoader.LoadBitmapFromData(embeddedData);
+                }
+                else if (fileLoader != null) {
+                    bitmap = fileLoader.LoadBitmap(fileName, false);
+                }
+
+                if (bitmap != null) {
                     double width = bitmap.PixelWidth * mmPerPixX, height = bitmap.PixelHeight * mmPerPixY;
-                    boundingBox = new RectangleF((float)(location.X - width/2), (float)(location.Y - height/2), (float)width, (float)height);
+                    boundingBox = new RectangleF((float)(location.X - width / 2), (float)(location.Y - height / 2), (float)width, (float)height);
                 }
                 else {
                     this.isVisible = false;
@@ -1724,7 +1738,7 @@ namespace PurplePen.MapModel
         {
             return new ImageBitmapSymbol((ImageSymDef)newSymdef, fileName, Geometry.TransformPoint(location, transform), 
                 Geometry.TransformDistance(mmPerPixX, transform), Geometry.TransformDistance(mmPerPixY, transform),
-                isVisible, sortOrder, fileLoader);
+                embeddedData, isVisible, sortOrder, fileLoader);
         }
 
         public override RectLikeSymbol CloneDetached(SymPath newPath)
@@ -1740,7 +1754,7 @@ namespace PurplePen.MapModel
 
                 return new ImageBitmapSymbol(def, fileName, newLocation, 
                     newMmPerPixelWidth, newMmPerPixelHeight,
-                    isVisible, sortOrder, fileLoader);
+                    embeddedData, isVisible, sortOrder, fileLoader);
             }
         }
 

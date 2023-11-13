@@ -1209,6 +1209,22 @@ using System.Runtime.InteropServices;
             }
         }
 
+        public IGraphicsBitmap LoadBitmapFromData(byte[] data)
+        {
+            MemoryStream memStm = new MemoryStream(data);
+            Bitmap bitmap = null;
+
+            try {
+                bitmap = Image.FromStream(memStm) as Bitmap;
+            }
+            catch (Exception) { }
+
+            if (bitmap == null)
+                return null;
+
+            return new GDIPlus_Bitmap(bitmap);
+        }
+
         public FileKind CheckFileKind(string path)
         {
             string filePath = SearchForFile(path);

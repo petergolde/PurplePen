@@ -1814,16 +1814,16 @@ namespace PurplePen.MapModel
             return new ImageTextSymbol(symdef, lines, ColorFromCompressedCMYK(obj.Col), fontName, fontSize, location, angle, width, isVisible, sortOrder);
         }
 
-        ImageBitmapSymbol CreateImageBitmapObject(ImageSymDef symdef, string path, PointF location, float mmPerPixX, float mmPerPixY, bool isVisible, int sortOrder )
+        ImageBitmapSymbol CreateImageBitmapObject(ImageSymDef symdef, string path, PointF location, float mmPerPixX, float mmPerPixY, byte[] embeddedData, bool isVisible, int sortOrder )
         {
-            return new ImageBitmapSymbol(symdef, path, location, mmPerPixX, mmPerPixY, isVisible, sortOrder, map.FileLoader);
+            return new ImageBitmapSymbol(symdef, path, location, mmPerPixX, mmPerPixY, embeddedData, isVisible, sortOrder, map.FileLoader);
         }
 
         void CreateLayoutBitmaps(ImageSymDef symdef)
         {
             if (this.layoutBitmaps != null) {
                 foreach (LayoutBitmapInfo bitmapInfo in this.layoutBitmaps) {
-                    var sym = CreateImageBitmapObject(symdef, bitmapInfo.Path, bitmapInfo.Position, bitmapInfo.MmPerPixX, bitmapInfo.MmPerPixY, bitmapInfo.IsVisible, bitmapInfo.SortOrder);
+                    var sym = CreateImageBitmapObject(symdef, bitmapInfo.Path, bitmapInfo.Position, bitmapInfo.MmPerPixX, bitmapInfo.MmPerPixY, bitmapInfo.embeddedData, bitmapInfo.IsVisible, bitmapInfo.SortOrder);
                     if (sym != null) {
                         map.AddSymbol(sym);
                     }
@@ -2230,13 +2230,15 @@ namespace PurplePen.MapModel
             public readonly PointF Position;
             public readonly float MmPerPixX;
             public readonly float MmPerPixY;
+            public readonly byte[] embeddedData;
             
-            public LayoutBitmapInfo(string path, PointF position, float mmPerPixX, float mmPerPixY, bool isVisible, int sortOrder)
+            public LayoutBitmapInfo(string path, PointF position, float mmPerPixX, float mmPerPixY, byte[] embeddedData, bool isVisible, int sortOrder)
             {
                 this.Path = path;
                 this.Position = position;
                 this.MmPerPixX = mmPerPixX;
                 this.MmPerPixY = mmPerPixY;
+                this.embeddedData = embeddedData;
                 this.IsVisible = isVisible;
                 this.SortOrder = sortOrder;
             }
@@ -2261,7 +2263,15 @@ namespace PurplePen.MapModel
                     float y = (float)Math.Round(GetParamFloat(paramStr, 'y', 0), 2);
                     float pixelSizeX = GetParamFloat(paramStr, 'u', 0.1F);
                     float pixelSizeY = GetParamFloat(paramStr, 'v', 0.1F);
-                    bitmaps.Add(new LayoutBitmapInfo(paramStr.firstField, new PointF(x, y), pixelSizeX, pixelSizeY, vis, sortOrder));
+
+                    // Embedded bitmaps are stored as base64 strings with code 'F'.
+                    string embeddedDataBase64 = GetParamString(paramStr, 'F');
+                    byte[] embeddedData = null;
+                    if (embeddedDataBase64 != null) {
+                        embeddedData = Convert.FromBase64String(embeddedDataBase64);
+                    }
+
+                    bitmaps.Add(new LayoutBitmapInfo(paramStr.firstField, new PointF(x, y), pixelSizeX, pixelSizeY, embeddedData, vis, sortOrder));
                 }
                 else { 
                     dict[objIndex] = new LayoutObjectInfo(vis, sortOrder);

@@ -1,0 +1,4 @@
+﻿layoutbitmap_embed11.ocd
+layoutbitmap_embed11.png
+-235,85,15,-165
+600,600

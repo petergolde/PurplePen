@@ -3084,7 +3084,7 @@ namespace PurplePen
                 ImageSymDef layoutSymDef = (ImageSymDef)dict[CourseLayout.KeyLayout];
 
                 PointF center = Geometry.RectCenter(rect);
-                ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, true, specialId.id, imageLoader);
+                ImageBitmapSymbol symbol = new ImageBitmapSymbol(layoutSymDef, imageName, center, rect.Width / imageBitmap.Width, rect.Height / imageBitmap.Height, null, true, specialId.id, imageLoader);
                 map.AddSymbol(symbol);
             }
         }
@@ -3150,6 +3150,12 @@ namespace PurplePen
                     return new GDIPlus_Bitmap(imageBitmap);
                 else
                     return null;
+            }
+
+            public IGraphicsBitmap LoadBitmapFromData(byte[] data)
+            {
+                // Not needed for this implementation.
+                return null;
             }
 
             public Map LoadMap(string path, Map referencingMap)

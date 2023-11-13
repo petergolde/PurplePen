@@ -2035,6 +2035,9 @@ namespace PurplePen.MapModel {
                 else if (sym is ImageBitmapSymbol) {
                     paramString.firstField = ((ImageBitmapSymbol)sym).FileName;
                     numCodes = 6;
+                    if (((ImageBitmapSymbol)sym).EmbeddedData != null) {
+                        numCodes += 1;
+                    }
                 }
 
                 paramString.codes = new char[numCodes];
@@ -2054,6 +2057,10 @@ namespace PurplePen.MapModel {
                     paramString.values[4] = bmSym.MmPerPixX.ToString(CultureInfo.InvariantCulture);
                     paramString.codes[5] = 'v';
                     paramString.values[5] = bmSym.MmPerPixY.ToString(CultureInfo.InvariantCulture);
+                    if (bmSym.EmbeddedData != null) {
+                        paramString.codes[6] = 'F';
+                        paramString.values[6] = Convert.ToBase64String(bmSym.EmbeddedData);
+                    }
                 }
                 else {
                     paramString.codes[0] = 'r';

@@ -1025,6 +1025,12 @@ namespace PurplePen.MapModel.Tests
         }
 
         [Test]
+        public void LayoutEmbeddedBitmapObjects()
+        {
+            CheckTest("layoutbitmap_embed11.txt", true, true, 11, 12);
+        }
+
+        [Test]
         public void TemplateRendering()
         {
             CheckTest("template.txt", true, false, 9, 12);
