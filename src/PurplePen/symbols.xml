@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <!--
 Course setting symbol list
@@ -461,9 +461,9 @@ for the symbols.
     <name lang="zh-HK">Start</name>
     <text lang="zh-HK">起點</text>
     <polygon thickness="12.5" corners="sharp">
-      <point x="-56" y="65"/>
-      <point x="-56" y="-65"/>
-      <point x="57" y="0"/>
+      <point x="-56" y="65" />
+      <point x="-56" y="-65" />
+      <point x="57" y="0" />
     </polygon>
   </symbol>
 
@@ -518,13 +518,13 @@ for the symbols.
     <name lang="zh-HK">Northern</name>
     <text lang="zh-HK">北方的{0}</text>
     <lines thickness="12.5">
-      <point x="0" y="-65"/>
-      <point x="0" y="65"/>
+      <point x="0" y="-65" />
+      <point x="0" y="65" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="-30" y="35"/>
-      <point x="0" y="65"/>
-      <point x="30" y="35"/>
+      <point x="-30" y="35" />
+      <point x="0" y="65" />
+      <point x="30" y="35" />
     </lines>
   </symbol>
 
@@ -574,13 +574,13 @@ for the symbols.
     <name lang="zh-HK">North-eastern</name>
     <text lang="zh-HK">東北方的{0}</text>
     <lines thickness="12.5">
-      <point x="-55" y="-55"/>
-      <point x="55" y="55"/>
+      <point x="-55" y="-55" />
+      <point x="55" y="55" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="55" y="15"/>
-      <point x="55" y="55"/>
-      <point x="15" y="55"/>
+      <point x="55" y="15" />
+      <point x="55" y="55" />
+      <point x="15" y="55" />
     </lines>
   </symbol>
 
@@ -630,13 +630,13 @@ for the symbols.
     <name lang="zh-HK">Eastern</name>
     <text lang="zh-HK">東方的{0}</text>
     <lines thickness="12.5">
-      <point x="-65" y="0"/>
-      <point x="65" y="0"/>
+      <point x="-65" y="0" />
+      <point x="65" y="0" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="35" y="-30"/>
-      <point x="65" y="0"/>
-      <point x="35" y="30"/>
+      <point x="35" y="-30" />
+      <point x="65" y="0" />
+      <point x="35" y="30" />
     </lines>
   </symbol>
 
@@ -686,13 +686,13 @@ for the symbols.
     <name lang="zh-HK">South-eastern</name>
     <text lang="zh-HK">東南方的{0}</text>
     <lines thickness="12.5">
-      <point x="-55" y="55"/>
-      <point x="55" y="-55"/>
+      <point x="-55" y="55" />
+      <point x="55" y="-55" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="55" y="-15"/>
-      <point x="55" y="-55"/>
-      <point x="15" y="-55"/>
+      <point x="55" y="-15" />
+      <point x="55" y="-55" />
+      <point x="15" y="-55" />
     </lines>
   </symbol>
 
@@ -742,13 +742,13 @@ for the symbols.
     <name lang="zh-HK">Southern</name>
     <text lang="zh-HK">南方的{0}</text>
     <lines thickness="12.5">
-      <point x="0" y="-65"/>
-      <point x="0" y="65"/>
+      <point x="0" y="-65" />
+      <point x="0" y="65" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="-30" y="-35"/>
-      <point x="0" y="-65"/>
-      <point x="30" y="-35"/>
+      <point x="-30" y="-35" />
+      <point x="0" y="-65" />
+      <point x="30" y="-35" />
     </lines>
   </symbol>
 
@@ -798,13 +798,13 @@ for the symbols.
     <name lang="zh-HK">South-western</name>
     <text lang="zh-HK">西南方的{0}</text>
     <lines thickness="12.5">
-      <point x="55" y="55"/>
-      <point x="-55" y="-55"/>
+      <point x="55" y="55" />
+      <point x="-55" y="-55" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="-55" y="-15"/>
-      <point x="-55" y="-55"/>
-      <point x="-15" y="-55"/>
+      <point x="-55" y="-15" />
+      <point x="-55" y="-55" />
+      <point x="-15" y="-55" />
     </lines>
   </symbol>
 
@@ -854,13 +854,13 @@ for the symbols.
     <name lang="zh-HK">Western</name>
     <text lang="zh-HK">西方的{0}</text>
     <lines thickness="12.5">
-      <point x="-65" y="0"/>
-      <point x="65" y="0"/>
+      <point x="-65" y="0" />
+      <point x="65" y="0" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="-35" y="-30"/>
-      <point x="-65" y="0"/>
-      <point x="-35" y="30"/>
+      <point x="-35" y="-30" />
+      <point x="-65" y="0" />
+      <point x="-35" y="30" />
     </lines>
   </symbol>
 
@@ -910,13 +910,13 @@ for the symbols.
     <name lang="zh-HK">North-western</name>
     <text lang="zh-HK">西北方的{0}</text>
     <lines thickness="12.5">
-      <point x="55" y="-55"/>
-      <point x="-55" y="55"/>
+      <point x="55" y="-55" />
+      <point x="-55" y="55" />
     </lines>
     <lines thickness="12.5" corners="sharp">
-      <point x="-55" y="15"/>
-      <point x="-55" y="55"/>
-      <point x="-15" y="55"/>
+      <point x="-55" y="15" />
+      <point x="-55" y="55" />
+      <point x="-15" y="55" />
     </lines>
   </symbol>
 
@@ -968,15 +968,15 @@ for the symbols.
     <name lang="zh-HK">Upper</name>
     <text lang="zh-HK">上面的{0}</text>
     <filled-circle radius="20">
-      <point x="0" y="40"/>
+      <point x="0" y="40" />
     </filled-circle>
     <lines thickness="12.5" ends="round">
-      <point x="-60" y="40"/>
-      <point x="60" y="40"/>
+      <point x="-60" y="40" />
+      <point x="60" y="40" />
     </lines>
     <lines thickness="12.5" ends="round">
-      <point x="-60" y="-40"/>
-      <point x="60" y="-40"/>
+      <point x="-60" y="-40" />
+      <point x="60" y="-40" />
     </lines>
   </symbol>
 
@@ -1028,15 +1028,15 @@ for the symbols.
     <name lang="zh-HK">Lower</name>
     <text lang="zh-HK">下面的{0}</text>
     <filled-circle radius="20">
-      <point x="0" y="-40"/>
+      <point x="0" y="-40" />
     </filled-circle>
     <lines thickness="12.5" ends="round">
-      <point x="-60" y="40"/>
-      <point x="60" y="40"/>
+      <point x="-60" y="40" />
+      <point x="60" y="40" />
     </lines>
     <lines thickness="12.5" ends="round">
-      <point x="-60" y="-40"/>
-      <point x="60" y="-40"/>
+      <point x="-60" y="-40" />
+      <point x="60" y="-40" />
     </lines>
   </symbol>
 
@@ -1088,19 +1088,19 @@ for the symbols.
     <name lang="zh-HK">Middle</name>
     <text lang="zh-HK">中間的{0}</text>
     <filled-circle radius="20">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
     <lines thickness="12.5" ends="round">
-      <point x="-50" y="60"/>
-      <point x="-50" y="-60"/>
+      <point x="-50" y="60" />
+      <point x="-50" y="-60" />
     </lines>
     <lines thickness="12.5" ends="round">
-      <point x="50" y="60"/>
-      <point x="50" y="-60"/>
+      <point x="50" y="60" />
+      <point x="50" y="-60" />
     </lines>
     <lines thickness="12.5" ends="round">
-      <point x="0" y="60"/>
-      <point x="0" y="-60"/>
+      <point x="0" y="60" />
+      <point x="0" y="-60" />
     </lines>
   </symbol>
 
@@ -1167,25 +1167,25 @@ for the symbols.
     <name lang="zh-HK">Terrace</name>
     <text lang="zh-HK">台地</text>
     <beziers thickness="12.5">
-      <point x="-60" y="-70"/>
-      <point x="-50" y="-30"/>
-      <point x="-50" y="30"/>
-      <point x="-60" y="70"/>
+      <point x="-60" y="-70" />
+      <point x="-50" y="-30" />
+      <point x="-50" y="30" />
+      <point x="-60" y="70" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-32" y="-70"/>
-      <point x="-30" y="-60"/>
-      <point x="-30" y="-48"/>
-      <point x="0" y="-46"/>
-      <point x="30" y="-44"/>
-      <point x="50" y="-47"/>
-      <point x="50" y="0"/>
-      <point x="50" y="47"/>
-      <point x="30" y="44"/>
-      <point x="0" y="46"/>
-      <point x="-30" y="48"/>
-      <point x="-30" y="60"/>
-      <point x="-32" y="70"/>
+      <point x="-32" y="-70" />
+      <point x="-30" y="-60" />
+      <point x="-30" y="-48" />
+      <point x="0" y="-46" />
+      <point x="30" y="-44" />
+      <point x="50" y="-47" />
+      <point x="50" y="0" />
+      <point x="50" y="47" />
+      <point x="30" y="44" />
+      <point x="0" y="46" />
+      <point x="-30" y="48" />
+      <point x="-30" y="60" />
+      <point x="-32" y="70" />
     </beziers>
   </symbol>
 
@@ -1249,25 +1249,25 @@ for the symbols.
     <name lang="zh-HK">Spur</name>
     <text lang="zh-HK">山咀</text>
     <beziers thickness="12.5">
-      <point x="-70" y="-70"/>
-      <point x="-60" y="-30"/>
-      <point x="-60" y="30"/>
-      <point x="-70" y="70"/>
+      <point x="-70" y="-70" />
+      <point x="-60" y="-30" />
+      <point x="-60" y="30" />
+      <point x="-70" y="70" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-42" y="-70"/>
-      <point x="-37" y="-42"/>
-      <point x="-40" y="-23"/>
-      <point x="-10" y="-21"/>
-      <point x="20" y="-19"/>
-      <point x="70" y="-27"/>
-      <point x="70" y="0"/>
-      <point x="70" y="27"/>
-      <point x="20" y="19"/>
-      <point x="-10" y="21"/>
-      <point x="-40" y="23"/>
-      <point x="-37" y="42"/>
-      <point x="-42" y="70"/>
+      <point x="-42" y="-70" />
+      <point x="-37" y="-42" />
+      <point x="-40" y="-23" />
+      <point x="-10" y="-21" />
+      <point x="20" y="-19" />
+      <point x="70" y="-27" />
+      <point x="70" y="0" />
+      <point x="70" y="27" />
+      <point x="20" y="19" />
+      <point x="-10" y="21" />
+      <point x="-40" y="23" />
+      <point x="-37" y="42" />
+      <point x="-42" y="70" />
     </beziers>
   </symbol>
 
@@ -1331,19 +1331,19 @@ for the symbols.
     <name lang="zh-HK">Reentrant</name>
     <text lang="zh-HK">山窩</text>
     <beziers thickness="12.5">
-      <point x="-70" y="-70"/>
-      <point x="-42" y="-73"/>
-      <point x="-38" y="-40"/>
-      <point x="-36" y="-10"/>
-      <point x="-34" y="20"/>
-      <point x="-27" y="70"/>
-      <point x="0" y="70"/>
-      <point x="27" y="70"/>
-      <point x="34" y="20"/>
-      <point x="36" y="-10"/>
-      <point x="38" y="-40"/>
-      <point x="42" y="-73"/>
-      <point x="70" y="-70"/>
+      <point x="-70" y="-70" />
+      <point x="-42" y="-73" />
+      <point x="-38" y="-40" />
+      <point x="-36" y="-10" />
+      <point x="-34" y="20" />
+      <point x="-27" y="70" />
+      <point x="0" y="70" />
+      <point x="27" y="70" />
+      <point x="34" y="20" />
+      <point x="36" y="-10" />
+      <point x="38" y="-40" />
+      <point x="42" y="-73" />
+      <point x="70" y="-70" />
     </beziers>
   </symbol>
 
@@ -1407,26 +1407,26 @@ for the symbols.
     <name lang="zh-HK">Earth bank</name>
     <text lang="zh-HK">泥坡</text>
     <beziers thickness="12.5">
-      <point x="-70" y="20"/>
-      <point x="-30" y="-10"/>
-      <point x="30" y="-10"/>
-      <point x="70" y="20"/>
+      <point x="-70" y="20" />
+      <point x="-30" y="-10" />
+      <point x="30" y="-10" />
+      <point x="70" y="20" />
     </beziers>
     <lines thickness="12.5">
-      <point x="20" y="-5"/>
-      <point x="25" y="-29"/>
+      <point x="20" y="-5" />
+      <point x="25" y="-29" />
     </lines>
     <lines thickness="12.5">
-      <point x="-20" y="-5"/>
-      <point x="-25" y="-29"/>
+      <point x="-20" y="-5" />
+      <point x="-25" y="-29" />
     </lines>
     <lines thickness="12.5">
-      <point x="55" y="9"/>
-      <point x="65" y="-13"/>
+      <point x="55" y="9" />
+      <point x="65" y="-13" />
     </lines>
     <lines thickness="12.5">
-      <point x="-55" y="9"/>
-      <point x="-65" y="-13"/>
+      <point x="-55" y="9" />
+      <point x="-65" y="-13" />
     </lines>
   </symbol>
 
@@ -1489,29 +1489,29 @@ for the symbols.
     <name lang="zh-HK">Quarry</name>
     <text lang="zh-HK">採石地</text>
     <beziers thickness="12.5">
-      <point x="54" y="-60"/>
-      <point x="93" y="5"/>
-      <point x="52" y="64"/>
-      <point x="0" y="64"/>
-      <point x="-52" y="64"/>
-      <point x="-93" y="5"/>
-      <point x="-54" y="-60"/>
+      <point x="54" y="-60" />
+      <point x="93" y="5" />
+      <point x="52" y="64" />
+      <point x="0" y="64" />
+      <point x="-52" y="64" />
+      <point x="-93" y="5" />
+      <point x="-54" y="-60" />
     </beziers>
     <lines thickness="12.5">
-      <point x="40" y="48"/>
-      <point x="20" y="23"/>
+      <point x="40" y="48" />
+      <point x="20" y="23" />
     </lines>
     <lines thickness="12.5">
-      <point x="-40" y="48"/>
-      <point x="-20" y="23"/>
+      <point x="-40" y="48" />
+      <point x="-20" y="23" />
     </lines>
     <lines thickness="12.5">
-      <point x="66" y="-25"/>
-      <point x="40" y="-17.5"/>
+      <point x="66" y="-25" />
+      <point x="40" y="-17.5" />
     </lines>
     <lines thickness="12.5">
-      <point x="-66" y="-25"/>
-      <point x="-40" y="-17.5"/>
+      <point x="-66" y="-25" />
+      <point x="-40" y="-17.5" />
     </lines>
   </symbol>
 
@@ -1553,9 +1553,9 @@ for the symbols.
     <name lang="fr">Levée de terre</name>
     <text lang="fr" gender="féminin">levée de terre</text>
     <text lang="fr" plural="true" gender="féminin">levées de terre</text>
-    <name lang="it">Muro di terra</name>
-    <text lang="it" gender="maschile">muro di terra</text>
-    <text lang="it" plural="true" gender="maschile">muri di terra</text>
+    <name lang="it">Terrapieno</name>
+    <text lang="it" gender="maschile">terrapieno</text>
+    <text lang="it" plural="true" gender="maschile">terrapieni</text>
     <name lang="ja">土塁・堤防</name>
     <text lang="ja">土塁</text>
     <name lang="nb-NO">Jordvold</name>
@@ -1575,24 +1575,24 @@ for the symbols.
     <name lang="zh-HK">Earth wall</name>
     <text lang="zh-HK">土埂</text>
     <lines thickness="12.5">
-      <point x="-70" y="0"/>
-      <point x="70" y="0"/>
+      <point x="-70" y="0" />
+      <point x="70" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-48" y="17"/>
-      <point x="-48" y="-17"/>
+      <point x="-48" y="17" />
+      <point x="-48" y="-17" />
     </lines>
     <lines thickness="12.5">
-      <point x="-16" y="-25"/>
-      <point x="-16" y="25"/>
+      <point x="-16" y="-25" />
+      <point x="-16" y="25" />
     </lines>
     <lines thickness="12.5">
-      <point x="16" y="-25"/>
-      <point x="16" y="25"/>
+      <point x="16" y="-25" />
+      <point x="16" y="25" />
     </lines>
     <lines thickness="12.5">
-      <point x="48" y="17"/>
-      <point x="48" y="-17"/>
+      <point x="48" y="17" />
+      <point x="48" y="-17" />
     </lines>
   </symbol>
 
@@ -1656,9 +1656,9 @@ for the symbols.
     <name lang="zh-HK">Erosion gully</name>
     <text lang="zh-HK">沖溝</text>
     <lines thickness="12.5">
-      <point x="40" y="-70"/>
-      <point x="0" y="70"/>
-      <point x="-40" y="-70"/>
+      <point x="40" y="-70" />
+      <point x="0" y="70" />
+      <point x="-40" y="-70" />
     </lines>
   </symbol>
 
@@ -1722,27 +1722,27 @@ for the symbols.
     <name lang="zh-HK">Small erosion gully</name>
     <text lang="zh-HK">小乾溝</text>
     <filled-circle radius="7.5">
-      <point x="-40" y="40"/>
+      <point x="-40" y="40" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-20" y="20"/>
+      <point x="-20" y="20" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="20" y="-20"/>
+      <point x="20" y="-20" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="40" y="-40"/>
+      <point x="40" y="-40" />
     </filled-circle>
     <lines thickness="12.5">
-      <point x="-21" y="61"/>
-      <point x="61" y="-21"/>
+      <point x="-21" y="61" />
+      <point x="61" y="-21" />
     </lines>
     <lines thickness="12.5">
-      <point x="-61" y="21"/>
-      <point x="21" y="-61"/>
+      <point x="-61" y="21" />
+      <point x="21" y="-61" />
     </lines>
   </symbol>
 
@@ -1806,19 +1806,19 @@ for the symbols.
     <name lang="zh-HK">Hill</name>
     <text lang="zh-HK">山丘</text>
     <beziers thickness="12.5">
-      <point x="0" y="48.21"/>
-      <point x="40.71" y="48.21"/>
-      <point x="75" y="26.79"/>
-      <point x="75" y="0"/>
-      <point x="75" y="-26.79"/>
-      <point x="40.71" y="-48.21"/>
-      <point x="0" y="-48.21"/>
-      <point x="-40.71" y="-48.21"/>
-      <point x="-75" y="-26.79"/>
-      <point x="-75" y="0"/>
-      <point x="-75" y="26.79"/>
-      <point x="-40.71" y="48.21"/>
-      <point x="0" y="48.21"/>
+      <point x="0" y="48.21" />
+      <point x="40.71" y="48.21" />
+      <point x="75" y="26.79" />
+      <point x="75" y="0" />
+      <point x="75" y="-26.79" />
+      <point x="40.71" y="-48.21" />
+      <point x="0" y="-48.21" />
+      <point x="-40.71" y="-48.21" />
+      <point x="-75" y="-26.79" />
+      <point x="-75" y="0" />
+      <point x="-75" y="26.79" />
+      <point x="-40.71" y="48.21" />
+      <point x="0" y="48.21" />
     </beziers>
   </symbol>
 
@@ -1882,7 +1882,7 @@ for the symbols.
     <name lang="zh-HK">Knoll</name>
     <text lang="zh-HK">小丘</text>
     <filled-circle radius="23">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
   </symbol>
 
@@ -1946,7 +1946,7 @@ for the symbols.
     <name lang="zh-HK">Knoll</name>
     <text lang="zh-HK">小丘</text>
     <filled-circle radius="30">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
   </symbol>
 
@@ -2010,16 +2010,16 @@ for the symbols.
     <name lang="zh-HK">Saddle</name>
     <text lang="zh-HK">鞍部</text>
     <beziers thickness="12.5">
-      <point x="-40" y="-70"/>
-      <point x="-10" y="-30"/>
-      <point x="-10" y="30"/>
-      <point x="-40" y="70"/>
+      <point x="-40" y="-70" />
+      <point x="-10" y="-30" />
+      <point x="-10" y="30" />
+      <point x="-40" y="70" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="40" y="-70"/>
-      <point x="10" y="-30"/>
-      <point x="10" y="30"/>
-      <point x="40" y="70"/>
+      <point x="40" y="-70" />
+      <point x="10" y="-30" />
+      <point x="10" y="30" />
+      <point x="40" y="70" />
     </beziers>
   </symbol>
 
@@ -2083,27 +2083,27 @@ for the symbols.
     <name lang="zh-HK">Depression</name>
     <text lang="zh-HK">陷地</text>
     <beziers thickness="12.5">
-      <point x="0" y="48.21"/>
-      <point x="40.71" y="48.21"/>
-      <point x="75" y="26.79"/>
-      <point x="75" y="0"/>
-      <point x="75" y="-26.79"/>
-      <point x="40.71" y="-48.21"/>
-      <point x="0" y="-48.21"/>
-      <point x="-40.71" y="-48.21"/>
-      <point x="-75" y="-26.79"/>
-      <point x="-75" y="0"/>
-      <point x="-75" y="26.79"/>
-      <point x="-40.71" y="48.21"/>
-      <point x="0" y="48.21"/>
+      <point x="0" y="48.21" />
+      <point x="40.71" y="48.21" />
+      <point x="75" y="26.79" />
+      <point x="75" y="0" />
+      <point x="75" y="-26.79" />
+      <point x="40.71" y="-48.21" />
+      <point x="0" y="-48.21" />
+      <point x="-40.71" y="-48.21" />
+      <point x="-75" y="-26.79" />
+      <point x="-75" y="0" />
+      <point x="-75" y="26.79" />
+      <point x="-40.71" y="48.21" />
+      <point x="0" y="48.21" />
     </beziers>
     <lines thickness="12.5">
-      <point x="72" y="0"/>
-      <point x="30" y="0"/>
+      <point x="72" y="0" />
+      <point x="30" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-72" y="0"/>
-      <point x="-30" y="0"/>
+      <point x="-72" y="0" />
+      <point x="-30" y="0" />
     </lines>
   </symbol>
 
@@ -2169,13 +2169,13 @@ for the symbols.
     <name lang="zh-HK">Small depression</name>
     <text lang="zh-HK">小陷地</text>
     <beziers thickness="12.5">
-      <point x="-50" y="50"/>
-      <point x="-75" y="0"/>
-      <point x="-40" y="-45"/>
-      <point x="0" y="-45"/>
-      <point x="40" y="-45"/>
-      <point x="75" y="0"/>
-      <point x="50" y="50"/>
+      <point x="-50" y="50" />
+      <point x="-75" y="0" />
+      <point x="-40" y="-45" />
+      <point x="0" y="-45" />
+      <point x="40" y="-45" />
+      <point x="75" y="0" />
+      <point x="50" y="50" />
     </beziers>
   </symbol>
 
@@ -2239,9 +2239,9 @@ for the symbols.
     <name lang="zh-HK">Pit</name>
     <text lang="zh-HK">地洞</text>
     <lines thickness="12.5">
-      <point x="-50" y="50"/>
-      <point x="0" y="-50"/>
-      <point x="50" y="50"/>
+      <point x="-50" y="50" />
+      <point x="0" y="-50" />
+      <point x="50" y="50" />
     </lines>
   </symbol>
 
@@ -2303,31 +2303,31 @@ for the symbols.
     <name lang="zh-HK">Broken ground</name>
     <text lang="zh-HK">坎地</text>
     <beziers thickness="12.5">
-      <point x="-65" y="50"/>
-      <point x="-75" y="30"/>
-      <point x="-61" y="13"/>
-      <point x="-45" y="13"/>
-      <point x="-29" y="13"/>
-      <point x="-15" y="30"/>
-      <point x="-25" y="50"/>
+      <point x="-65" y="50" />
+      <point x="-75" y="30" />
+      <point x="-61" y="13" />
+      <point x="-45" y="13" />
+      <point x="-29" y="13" />
+      <point x="-15" y="30" />
+      <point x="-25" y="50" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="65" y="50"/>
-      <point x="75" y="30"/>
-      <point x="61" y="13"/>
-      <point x="45" y="13"/>
-      <point x="29" y="13"/>
-      <point x="15" y="30"/>
-      <point x="25" y="50"/>
+      <point x="65" y="50" />
+      <point x="75" y="30" />
+      <point x="61" y="13" />
+      <point x="45" y="13" />
+      <point x="29" y="13" />
+      <point x="15" y="30" />
+      <point x="25" y="50" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="20" y="-20"/>
-      <point x="30" y="-40"/>
-      <point x="16" y="-57"/>
-      <point x="0" y="-57"/>
-      <point x="-16" y="-57"/>
-      <point x="-30" y="-40"/>
-      <point x="-20" y="-20"/>
+      <point x="20" y="-20" />
+      <point x="30" y="-40" />
+      <point x="16" y="-57" />
+      <point x="0" y="-57" />
+      <point x="-16" y="-57" />
+      <point x="-30" y="-40" />
+      <point x="-20" y="-20" />
     </beziers>
   </symbol>
 
@@ -2391,20 +2391,20 @@ for the symbols.
     <name lang="zh-HK">Ant hill (termite mound)</name>
     <text lang="zh-HK">蟻丘</text>
     <lines thickness="12.5">
-      <point x="-70" y="0"/>
-      <point x="70" y="0"/>
+      <point x="-70" y="0" />
+      <point x="70" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="0" y="-70"/>
-      <point x="0" y="70"/>
+      <point x="0" y="-70" />
+      <point x="0" y="70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-49.5" y="-49.5"/>
-      <point x="49.5" y="49.5"/>
+      <point x="-49.5" y="-49.5" />
+      <point x="49.5" y="49.5" />
     </lines>
     <lines thickness="12.5">
-      <point x="-49.5" y="49.5"/>
-      <point x="49.5" y="-49.5"/>
+      <point x="-49.5" y="49.5" />
+      <point x="49.5" y="-49.5" />
     </lines>
   </symbol>
 
@@ -2446,9 +2446,9 @@ for the symbols.
     <name lang="fr">Falaise</name>
     <text lang="fr" gender="féminin">falaise</text>
     <text lang="fr" plural="true" gender="féminin">falaises</text>
-    <name lang="it">Parete di roccia</name>
-    <text lang="it" gender="femminile">parete di roccia</text>
-    <text lang="it" plural="true" gender="femminile">pareti di roccia</text>
+    <name lang="it">Parete rocciosa</name>
+    <text lang="it" gender="femminile">parete rocciosa</text>
+    <text lang="it" plural="true" gender="femminile">pareti rocciose</text>
     <name lang="ja">岩がけ・岩壁</name>
     <text lang="ja">岩がけ</text>
     <name lang="nb-NO">Skrent</name>
@@ -2468,18 +2468,18 @@ for the symbols.
     <name lang="zh-HK">Cliff</name>
     <text lang="zh-HK">崖壁</text>
     <lines thickness="12.5">
-      <point x="-70" y="-20"/>
-      <point x="-70" y="20"/>
-      <point x="70" y="20"/>
-      <point x="70" y="-20"/>
+      <point x="-70" y="-20" />
+      <point x="-70" y="20" />
+      <point x="70" y="20" />
+      <point x="70" y="-20" />
     </lines>
     <lines thickness="12.5">
-      <point x="-23.33" y="-20"/>
-      <point x="-23.33" y="15"/>
+      <point x="-23.33" y="-20" />
+      <point x="-23.33" y="15" />
     </lines>
     <lines thickness="12.5">
-      <point x="23.33" y="-20"/>
-      <point x="23.33" y="15"/>
+      <point x="23.33" y="-20" />
+      <point x="23.33" y="15" />
     </lines>
   </symbol>
 
@@ -2545,9 +2545,9 @@ for the symbols.
     <name lang="zh-HK">Rock pillar</name>
     <text lang="zh-HK">石柱</text>
     <filled-polygon>
-      <point x="0" y="70"/>
-      <point x="37" y="-70"/>
-      <point x="-37" y="-70"/>
+      <point x="0" y="70" />
+      <point x="37" y="-70" />
+      <point x="-37" y="-70" />
     </filled-polygon>
   </symbol>
 
@@ -2611,21 +2611,21 @@ for the symbols.
     <name lang="zh-HK">Cave</name>
     <text lang="zh-HK">山洞</text>
     <beziers thickness="12.5">
-      <point x="-25" y="70"/>
-      <point x="-10.4" y="55.4"/>
-      <point x="-1.4" y="35.6"/>
-      <point x="0" y="15"/>
+      <point x="-25" y="70" />
+      <point x="-10.4" y="55.4" />
+      <point x="-1.4" y="35.6" />
+      <point x="0" y="15" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-25" y="-70"/>
-      <point x="-10.4" y="-55.4"/>
-      <point x="-1.4" y="-35.6"/>
-      <point x="0" y="-15"/>
+      <point x="-25" y="-70" />
+      <point x="-10.4" y="-55.4" />
+      <point x="-1.4" y="-35.6" />
+      <point x="0" y="-15" />
     </beziers>
     <lines thickness="12.5">
-      <point x="50" y="30"/>
-      <point x="-50" y="0"/>
-      <point x="50" y="-30"/>
+      <point x="50" y="30" />
+      <point x="-50" y="0" />
+      <point x="50" y="-30" />
     </lines>
   </symbol>
 
@@ -2690,9 +2690,9 @@ for the symbols.
     <name lang="zh-HK">Boulder</name>
     <text lang="zh-HK">大石</text>
     <filled-polygon>
-      <point x="0" y="50"/>
-      <point x="57.73" y="-50"/>
-      <point x="-57.73" y="-50"/>
+      <point x="0" y="50" />
+      <point x="57.73" y="-50" />
+      <point x="-57.73" y="-50" />
     </filled-polygon>
   </symbol>
 
@@ -2733,9 +2733,9 @@ for the symbols.
     <name lang="fr">Zone rocheuse</name>
     <text lang="fr" gender="féminin">zone rocheuse</text>
     <text lang="fr" plural="true" gender="féminin">zones rocheuses</text>
-    <name lang="it">Zona sassosa</name>
-    <text lang="it" gender="femminile">zona sassosa</text>
-    <text lang="it" plural="true" gender="femminile">zone sassose</text>
+    <name lang="it">Zona di massi</name>
+    <text lang="it" gender="femminile">zona di massi</text>
+    <text lang="it" plural="true" gender="femminile">zone di massi</text>
     <name lang="ja">岩石地</name>
     <text lang="ja">岩石地</text>
     <name lang="nb-NO">Steinrøys</name>
@@ -2754,29 +2754,29 @@ for the symbols.
     <name lang="zh-HK">Boulder field</name>
     <text lang="zh-HK">群石地</text>
     <filled-polygon>
-      <point x="-72" y="-72"/>
-      <point x="-44.25" y="-24"/>
-      <point x="-16.5" y="-72"/>
+      <point x="-72" y="-72" />
+      <point x="-44.25" y="-24" />
+      <point x="-16.5" y="-72" />
     </filled-polygon>
     <filled-polygon>
-      <point x="72" y="-72"/>
-      <point x="44.25" y="-24"/>
-      <point x="16.5" y="-72"/>
+      <point x="72" y="-72" />
+      <point x="44.25" y="-24" />
+      <point x="16.5" y="-72" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-72" y="24"/>
-      <point x="-44.25" y="72"/>
-      <point x="-16.5" y="24"/>
+      <point x="-72" y="24" />
+      <point x="-44.25" y="72" />
+      <point x="-16.5" y="24" />
     </filled-polygon>
     <filled-polygon>
-      <point x="72" y="24"/>
-      <point x="44.25" y="72"/>
-      <point x="16.5" y="24"/>
+      <point x="72" y="24" />
+      <point x="44.25" y="72" />
+      <point x="16.5" y="24" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-27.75" y="-24"/>
-      <point x="0" y="24"/>
-      <point x="27.75" y="-24"/>
+      <point x="-27.75" y="-24" />
+      <point x="0" y="24" />
+      <point x="27.75" y="-24" />
     </filled-polygon>
   </symbol>
 
@@ -2840,14 +2840,14 @@ for the symbols.
     <name lang="zh-HK">Boulder cluster</name>
     <text lang="zh-HK">大石堆</text>
     <filled-polygon>
-      <point x="25.1" y="30"/>
-      <point x="69.3" y="-50"/>
-      <point x="-25.1" y="-50"/>
+      <point x="25.1" y="30" />
+      <point x="69.3" y="-50" />
+      <point x="-25.1" y="-50" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-25.1" y="50"/>
-      <point x="25.1" y="-30"/>
-      <point x="-69.3" y="-30"/>
+      <point x="-25.1" y="50" />
+      <point x="25.1" y="-30" />
+      <point x="-69.3" y="-30" />
     </filled-polygon>
   </symbol>
 
@@ -2910,79 +2910,79 @@ for the symbols.
     <name lang="zh-HK">Stony ground</name>
     <text lang="zh-HK">碎石地</text>
     <filled-circle radius="7.5">
-      <point x="-60" y="-60"/>
+      <point x="-60" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="-30"/>
+      <point x="-60" y="-30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="-0"/>
+      <point x="-60" y="-0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="30"/>
+      <point x="-60" y="30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="60"/>
+      <point x="-60" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-30" y="-60"/>
+      <point x="-30" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-30" y="-30"/>
+      <point x="-30" y="-30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-30" y="-0"/>
+      <point x="-30" y="-0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-30" y="30"/>
+      <point x="-30" y="30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-30" y="60"/>
+      <point x="-30" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-60"/>
+      <point x="0" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-30"/>
+      <point x="0" y="-30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-0"/>
+      <point x="0" y="-0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="30"/>
+      <point x="0" y="30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="60"/>
+      <point x="0" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="30" y="-60"/>
+      <point x="30" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="30" y="-30"/>
+      <point x="30" y="-30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="30" y="-0"/>
+      <point x="30" y="-0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="30" y="30"/>
+      <point x="30" y="30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="30" y="60"/>
+      <point x="30" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="-60"/>
+      <point x="60" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="-30"/>
+      <point x="60" y="-30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="-0"/>
+      <point x="60" y="-0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="30"/>
+      <point x="60" y="30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="60"/>
+      <point x="60" y="60" />
     </filled-circle>
   </symbol>
 
@@ -3045,36 +3045,36 @@ for the symbols.
     <name lang="zh-HK">Bare rock</name>
     <text lang="zh-HK">岩石地</text>
     <lines thickness="12.5">
-      <point x="-70" y="0"/>
-      <point x="-25" y="0"/>
+      <point x="-70" y="0" />
+      <point x="-25" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="0" y="-70"/>
-      <point x="0" y="-25"/>
+      <point x="0" y="-70" />
+      <point x="0" y="-25" />
     </lines>
     <lines thickness="12.5">
-      <point x="70" y="0"/>
-      <point x="25" y="0"/>
+      <point x="70" y="0" />
+      <point x="25" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="0" y="70"/>
-      <point x="0" y="25"/>
+      <point x="0" y="70" />
+      <point x="0" y="25" />
     </lines>
     <lines thickness="12.5">
-      <point x="-49.5" y="-49.5"/>
-      <point x="-17.68" y="-17.68"/>
+      <point x="-49.5" y="-49.5" />
+      <point x="-17.68" y="-17.68" />
     </lines>
     <lines thickness="12.5">
-      <point x="-49.5" y="49.5"/>
-      <point x="-17.68" y="17.68"/>
+      <point x="-49.5" y="49.5" />
+      <point x="-17.68" y="17.68" />
     </lines>
     <lines thickness="12.5">
-      <point x="49.5" y="-49.5"/>
-      <point x="17.68" y="-17.68"/>
+      <point x="49.5" y="-49.5" />
+      <point x="17.68" y="-17.68" />
     </lines>
     <lines thickness="12.5">
-      <point x="49.5" y="49.5"/>
-      <point x="17.68" y="17.68"/>
+      <point x="49.5" y="49.5" />
+      <point x="17.68" y="17.68" />
     </lines>
   </symbol>
 
@@ -3138,16 +3138,16 @@ for the symbols.
     <name lang="zh-HK">Narrow passage</name>
     <text lang="zh-HK">崖間狹路</text>
     <lines thickness="12.5">
-      <point x="-45" y="-70"/>
-      <point x="-20" y="-70"/>
-      <point x="-20" y="70"/>
-      <point x="-45" y="70"/>
+      <point x="-45" y="-70" />
+      <point x="-20" y="-70" />
+      <point x="-20" y="70" />
+      <point x="-45" y="70" />
     </lines>
     <lines thickness="12.5">
-      <point x="45" y="-70"/>
-      <point x="20" y="-70"/>
-      <point x="20" y="70"/>
-      <point x="45" y="70"/>
+      <point x="45" y="-70" />
+      <point x="20" y="-70" />
+      <point x="20" y="70" />
+      <point x="45" y="70" />
     </lines>
   </symbol>
 
@@ -3159,12 +3159,12 @@ for the symbols.
     <text lang="it" gender="femminile">trincea</text>
     <text lang="it" plural="true" gender="femminile">trincee</text>
     <lines thickness="12.5">
-      <point x="-65" y="50"/>
-      <point x="-35" y="50"/>
-      <point x="-35" y="-50"/>
-      <point x="35" y="-50"/>
-      <point x="35" y="50"/>
-      <point x="65" y="50"/>
+      <point x="-65" y="50" />
+      <point x="-35" y="50" />
+      <point x="-35" y="-50" />
+      <point x="35" y="-50" />
+      <point x="35" y="50" />
+      <point x="65" y="50" />
     </lines>
   </symbol>
 
@@ -3228,37 +3228,37 @@ for the symbols.
     <name lang="zh-HK">Lake</name>
     <text lang="zh-HK">湖</text>
     <beziers thickness="10">
-      <point x="-39" y="-10"/>
-      <point x="-39" y="-5"/>
-      <point x="-39" y="-5"/>
-      <point x="-39" y="0"/>
-      <point x="-39" y="20"/>
-      <point x="-13" y="20"/>
-      <point x="-13" y="0"/>
-      <point x="-13" y="-20"/>
-      <point x="13" y="-20"/>
-      <point x="13" y="0"/>
-      <point x="13" y="20"/>
-      <point x="39" y="20"/>
-      <point x="39" y="0"/>
-      <point x="39" y="-5"/>
-      <point x="39" y="-5"/>
-      <point x="39" y="-10"/>
+      <point x="-39" y="-10" />
+      <point x="-39" y="-5" />
+      <point x="-39" y="-5" />
+      <point x="-39" y="0" />
+      <point x="-39" y="20" />
+      <point x="-13" y="20" />
+      <point x="-13" y="0" />
+      <point x="-13" y="-20" />
+      <point x="13" y="-20" />
+      <point x="13" y="0" />
+      <point x="13" y="20" />
+      <point x="39" y="20" />
+      <point x="39" y="0" />
+      <point x="39" y="-5" />
+      <point x="39" y="-5" />
+      <point x="39" y="-10" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="0" y="48.21"/>
-      <point x="40.71" y="48.21"/>
-      <point x="75" y="26.79"/>
-      <point x="75" y="0"/>
-      <point x="75" y="-26.79"/>
-      <point x="40.71" y="-48.21"/>
-      <point x="0" y="-48.21"/>
-      <point x="-40.71" y="-48.21"/>
-      <point x="-75" y="-26.79"/>
-      <point x="-75" y="0"/>
-      <point x="-75" y="26.79"/>
-      <point x="-40.71" y="48.21"/>
-      <point x="0" y="48.21"/>
+      <point x="0" y="48.21" />
+      <point x="40.71" y="48.21" />
+      <point x="75" y="26.79" />
+      <point x="75" y="0" />
+      <point x="75" y="-26.79" />
+      <point x="40.71" y="-48.21" />
+      <point x="0" y="-48.21" />
+      <point x="-40.71" y="-48.21" />
+      <point x="-75" y="-26.79" />
+      <point x="-75" y="0" />
+      <point x="-75" y="26.79" />
+      <point x="-40.71" y="48.21" />
+      <point x="0" y="48.21" />
     </beziers>
   </symbol>
 
@@ -3323,37 +3323,37 @@ for the symbols.
     <name lang="zh-HK">Pond</name>
     <text lang="zh-HK">池塘</text>
     <beziers thickness="10">
-      <point x="-65" y="45"/>
-      <point x="-65" y="50"/>
-      <point x="-65" y="50"/>
-      <point x="-65" y="55"/>
-      <point x="-65" y="75"/>
-      <point x="-39" y="75"/>
-      <point x="-39" y="55"/>
-      <point x="-39" y="35"/>
-      <point x="-13" y="35"/>
-      <point x="-13" y="55"/>
-      <point x="-13" y="75"/>
-      <point x="13" y="75"/>
-      <point x="13" y="55"/>
-      <point x="13" y="35"/>
-      <point x="39" y="35"/>
-      <point x="39" y="55"/>
-      <point x="39" y="75"/>
-      <point x="65" y="75"/>
-      <point x="65" y="55"/>
-      <point x="65" y="50"/>
-      <point x="65" y="50"/>
-      <point x="65" y="45"/>
+      <point x="-65" y="45" />
+      <point x="-65" y="50" />
+      <point x="-65" y="50" />
+      <point x="-65" y="55" />
+      <point x="-65" y="75" />
+      <point x="-39" y="75" />
+      <point x="-39" y="55" />
+      <point x="-39" y="35" />
+      <point x="-13" y="35" />
+      <point x="-13" y="55" />
+      <point x="-13" y="75" />
+      <point x="13" y="75" />
+      <point x="13" y="55" />
+      <point x="13" y="35" />
+      <point x="39" y="35" />
+      <point x="39" y="55" />
+      <point x="39" y="75" />
+      <point x="65" y="75" />
+      <point x="65" y="55" />
+      <point x="65" y="50" />
+      <point x="65" y="50" />
+      <point x="65" y="45" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-40" y="10"/>
-      <point x="-60" y="-30"/>
-      <point x="-32" y="-66"/>
-      <point x="0" y="-66"/>
-      <point x="32" y="-66"/>
-      <point x="60" y="-30"/>
-      <point x="40" y="10"/>
+      <point x="-40" y="10" />
+      <point x="-60" y="-30" />
+      <point x="-32" y="-66" />
+      <point x="0" y="-66" />
+      <point x="32" y="-66" />
+      <point x="60" y="-30" />
+      <point x="40" y="10" />
     </beziers>
   </symbol>
 
@@ -3416,33 +3416,33 @@ for the symbols.
     <name lang="zh-HK">Water hole</name>
     <text lang="zh-HK">水洞</text>
     <beziers thickness="10">
-      <point x="-65" y="45"/>
-      <point x="-65" y="50"/>
-      <point x="-65" y="50"/>
-      <point x="-65" y="55"/>
-      <point x="-65" y="75"/>
-      <point x="-39" y="75"/>
-      <point x="-39" y="55"/>
-      <point x="-39" y="35"/>
-      <point x="-13" y="35"/>
-      <point x="-13" y="55"/>
-      <point x="-13" y="75"/>
-      <point x="13" y="75"/>
-      <point x="13" y="55"/>
-      <point x="13" y="35"/>
-      <point x="39" y="35"/>
-      <point x="39" y="55"/>
-      <point x="39" y="75"/>
-      <point x="65" y="75"/>
-      <point x="65" y="55"/>
-      <point x="65" y="50"/>
-      <point x="65" y="50"/>
-      <point x="65" y="45"/>
+      <point x="-65" y="45" />
+      <point x="-65" y="50" />
+      <point x="-65" y="50" />
+      <point x="-65" y="55" />
+      <point x="-65" y="75" />
+      <point x="-39" y="75" />
+      <point x="-39" y="55" />
+      <point x="-39" y="35" />
+      <point x="-13" y="35" />
+      <point x="-13" y="55" />
+      <point x="-13" y="75" />
+      <point x="13" y="75" />
+      <point x="13" y="55" />
+      <point x="13" y="35" />
+      <point x="39" y="35" />
+      <point x="39" y="55" />
+      <point x="39" y="75" />
+      <point x="65" y="75" />
+      <point x="65" y="55" />
+      <point x="65" y="50" />
+      <point x="65" y="50" />
+      <point x="65" y="45" />
     </beziers>
     <lines thickness="12.5">
-      <point x="-40" y="10"/>
-      <point x="0" y="-70"/>
-      <point x="40" y="10"/>
+      <point x="-40" y="10" />
+      <point x="0" y="-70" />
+      <point x="40" y="10" />
     </lines>
   </symbol>
 
@@ -3505,34 +3505,34 @@ for the symbols.
     <name lang="zh-HK">River, stream, water course</name>
     <text lang="zh-HK">河溪</text>
     <beziers thickness="12.5">
-      <point x="-60" y="80"/>
-      <point x="-65" y="75"/>
-      <point x="-65" y="75"/>
-      <point x="-70" y="70"/>
-      <point x="-90" y="50"/>
-      <point x="-70" y="30"/>
-      <point x="-50" y="50"/>
-      <point x="-30" y="70"/>
-      <point x="-10" y="50"/>
-      <point x="-30" y="30"/>
-      <point x="-50" y="10"/>
-      <point x="-30" y="-10"/>
-      <point x="-10" y="10"/>
-      <point x="10" y="30"/>
-      <point x="30" y="10"/>
-      <point x="10" y="-10"/>
-      <point x="-10" y="-30"/>
-      <point x="10" y="-50"/>
-      <point x="30" y="-30"/>
-      <point x="50" y="-10"/>
-      <point x="70" y="-30"/>
-      <point x="50" y="-50"/>
-      <point x="30" y="-70"/>
-      <point x="50" y="-90"/>
-      <point x="70" y="-70"/>
-      <point x="75" y="-65"/>
-      <point x="75" y="-65"/>
-      <point x="80" y="-60"/>
+      <point x="-60" y="80" />
+      <point x="-65" y="75" />
+      <point x="-65" y="75" />
+      <point x="-70" y="70" />
+      <point x="-90" y="50" />
+      <point x="-70" y="30" />
+      <point x="-50" y="50" />
+      <point x="-30" y="70" />
+      <point x="-10" y="50" />
+      <point x="-30" y="30" />
+      <point x="-50" y="10" />
+      <point x="-30" y="-10" />
+      <point x="-10" y="10" />
+      <point x="10" y="30" />
+      <point x="30" y="10" />
+      <point x="10" y="-10" />
+      <point x="-10" y="-30" />
+      <point x="10" y="-50" />
+      <point x="30" y="-30" />
+      <point x="50" y="-10" />
+      <point x="70" y="-30" />
+      <point x="50" y="-50" />
+      <point x="30" y="-70" />
+      <point x="50" y="-90" />
+      <point x="70" y="-70" />
+      <point x="75" y="-65" />
+      <point x="75" y="-65" />
+      <point x="80" y="-60" />
     </beziers>
   </symbol>
 
@@ -3596,58 +3596,58 @@ for the symbols.
     <name lang="zh-HK">Minor water channel, ditch</name>
     <text lang="zh-HK">小溝</text>
     <beziers thickness="10">
-      <point x="-48" y="64"/>
-      <point x="-52" y="60"/>
-      <point x="-52" y="60"/>
-      <point x="-56" y="56"/>
-      <point x="-72" y="40"/>
-      <point x="-56" y="24"/>
-      <point x="-40" y="40"/>
-      <point x="-24" y="56"/>
-      <point x="-8" y="40"/>
-      <point x="-24" y="24"/>
-      <point x="-40" y="8"/>
-      <point x="-24" y="-8"/>
-      <point x="-8" y="8"/>
-      <point x="8" y="24"/>
-      <point x="24" y="8"/>
-      <point x="8" y="-8"/>
-      <point x="-8" y="-24"/>
-      <point x="8" y="-40"/>
-      <point x="24" y="-24"/>
-      <point x="40" y="-8"/>
-      <point x="56" y="-24"/>
-      <point x="40" y="-40"/>
-      <point x="24" y="-56"/>
-      <point x="40" y="-72"/>
-      <point x="56" y="-56"/>
-      <point x="60" y="-52"/>
-      <point x="60" y="-52"/>
-      <point x="64" y="-48"/>
+      <point x="-48" y="64" />
+      <point x="-52" y="60" />
+      <point x="-52" y="60" />
+      <point x="-56" y="56" />
+      <point x="-72" y="40" />
+      <point x="-56" y="24" />
+      <point x="-40" y="40" />
+      <point x="-24" y="56" />
+      <point x="-8" y="40" />
+      <point x="-24" y="24" />
+      <point x="-40" y="8" />
+      <point x="-24" y="-8" />
+      <point x="-8" y="8" />
+      <point x="8" y="24" />
+      <point x="24" y="8" />
+      <point x="8" y="-8" />
+      <point x="-8" y="-24" />
+      <point x="8" y="-40" />
+      <point x="24" y="-24" />
+      <point x="40" y="-8" />
+      <point x="56" y="-24" />
+      <point x="40" y="-40" />
+      <point x="24" y="-56" />
+      <point x="40" y="-72" />
+      <point x="56" y="-56" />
+      <point x="60" y="-52" />
+      <point x="60" y="-52" />
+      <point x="64" y="-48" />
     </beziers>
     <lines thickness="10">
-      <point x="-32" y="80"/>
-      <point x="-5" y="53"/>
+      <point x="-32" y="80" />
+      <point x="-5" y="53" />
     </lines>
     <lines thickness="10">
-      <point x="10" y="38"/>
-      <point x="38" y="10"/>
+      <point x="10" y="38" />
+      <point x="38" y="10" />
     </lines>
     <lines thickness="10">
-      <point x="53" y="-5"/>
-      <point x="80" y="-32"/>
+      <point x="53" y="-5" />
+      <point x="80" y="-32" />
     </lines>
     <lines thickness="10">
-      <point x="-80" y="32"/>
-      <point x="-53" y="5"/>
+      <point x="-80" y="32" />
+      <point x="-53" y="5" />
     </lines>
     <lines thickness="10">
-      <point x="-38" y="-10"/>
-      <point x="-10" y="-38"/>
+      <point x="-38" y="-10" />
+      <point x="-10" y="-38" />
     </lines>
     <lines thickness="10">
-      <point x="5" y="-53"/>
-      <point x="32" y="-80"/>
+      <point x="5" y="-53" />
+      <point x="32" y="-80" />
     </lines>
   </symbol>
 
@@ -3689,9 +3689,9 @@ for the symbols.
     <name lang="fr">Marais étroit</name>
     <text lang="fr" gender="masculin">marais étroit</text>
     <text lang="fr" plural="true" gender="masculin">marais étroits</text>
-    <name lang="it">Striscia di palude</name>
-    <text lang="it" gender="femminile">striscia di palude</text>
-    <text lang="it" plural="true" gender="femminile">strisce di palude</text>
+    <name lang="it">Striscia paludosa</name>
+    <text lang="it" gender="femminile">striscia paludosa</text>
+    <text lang="it" plural="true" gender="femminile">strisce paludose</text>
     <name lang="ja">細い湿地</name>
     <text lang="ja">細い湿地</text>
     <name lang="nb-NO">Råsig</name>
@@ -3711,19 +3711,19 @@ for the symbols.
     <name lang="zh-HK">Narrow marsh</name>
     <text lang="zh-HK">狹窄沼澤</text>
     <filled-circle radius="7.5">
-      <point x="-50" y="50"/>
+      <point x="-50" y="50" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-25" y="25"/>
+      <point x="-25" y="25" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="25" y="-25"/>
+      <point x="25" y="-25" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="50" y="-50"/>
+      <point x="50" y="-50" />
     </filled-circle>
   </symbol>
 
@@ -3787,24 +3787,24 @@ for the symbols.
     <name lang="zh-HK">Marsh</name>
     <text lang="zh-HK">沼澤</text>
     <lines thickness="12.5">
-      <point x="-64" y="0"/>
-      <point x="64" y="0"/>
+      <point x="-64" y="0" />
+      <point x="64" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-48" y="32"/>
-      <point x="48" y="32"/>
+      <point x="-48" y="32" />
+      <point x="48" y="32" />
     </lines>
     <lines thickness="12.5">
-      <point x="-48" y="-32"/>
-      <point x="48" y="-32"/>
+      <point x="-48" y="-32" />
+      <point x="48" y="-32" />
     </lines>
     <lines thickness="12.5">
-      <point x="-32" y="64"/>
-      <point x="32" y="64"/>
+      <point x="-32" y="64" />
+      <point x="32" y="64" />
     </lines>
     <lines thickness="12.5">
-      <point x="-32" y="-64"/>
-      <point x="32" y="-64"/>
+      <point x="-32" y="-64" />
+      <point x="32" y="-64" />
     </lines>
   </symbol>
 
@@ -3866,58 +3866,58 @@ for the symbols.
     <name lang="zh-HK">Firm ground in marsh</name>
     <text lang="zh-HK">沼澤中的乾地</text>
     <filled-polygon>
-      <point x="70" y="70"/>
-      <point x="70" y="57.5"/>
-      <point x="-70" y="57.5"/>
-      <point x="-70" y="70"/>
+      <point x="70" y="70" />
+      <point x="70" y="57.5" />
+      <point x="-70" y="57.5" />
+      <point x="-70" y="70" />
     </filled-polygon>
     <filled-polygon>
-      <point x="70" y="38.125"/>
-      <point x="70" y="25.625"/>
-      <point x="36.991" y="25.625"/>
-      <point x="31.765" y="31.875"/>
-      <point x="23.906" y="38.125"/>
+      <point x="70" y="38.125" />
+      <point x="70" y="25.625" />
+      <point x="36.991" y="25.625" />
+      <point x="31.765" y="31.875" />
+      <point x="23.906" y="38.125" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-70" y="38.125"/>
-      <point x="-70" y="25.625"/>
-      <point x="-36.991" y="25.625"/>
-      <point x="-31.765" y="31.875"/>
-      <point x="-23.906" y="38.125"/>
+      <point x="-70" y="38.125" />
+      <point x="-70" y="25.625" />
+      <point x="-36.991" y="25.625" />
+      <point x="-31.765" y="31.875" />
+      <point x="-23.906" y="38.125" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-70" y="6.25"/>
-      <point x="-70" y="-6.25"/>
-      <point x="-44.564" y="-6.25"/>
-      <point x="-45" y="0"/>
-      <point x="-44.564" y="6.25"/>
+      <point x="-70" y="6.25" />
+      <point x="-70" y="-6.25" />
+      <point x="-44.564" y="-6.25" />
+      <point x="-45" y="0" />
+      <point x="-44.564" y="6.25" />
     </filled-polygon>
     <filled-polygon>
-      <point x="70" y="6.25"/>
-      <point x="70" y="-6.25"/>
-      <point x="44.564" y="-6.25"/>
-      <point x="45" y="0"/>
-      <point x="44.564" y="6.25"/>
+      <point x="70" y="6.25" />
+      <point x="70" y="-6.25" />
+      <point x="44.564" y="-6.25" />
+      <point x="45" y="0" />
+      <point x="44.564" y="6.25" />
     </filled-polygon>
     <filled-polygon>
-      <point x="70" y="-38.125"/>
-      <point x="70" y="-25.625"/>
-      <point x="36.991" y="-25.625"/>
-      <point x="31.765" y="-31.875"/>
-      <point x="23.906" y="-38.125"/>
+      <point x="70" y="-38.125" />
+      <point x="70" y="-25.625" />
+      <point x="36.991" y="-25.625" />
+      <point x="31.765" y="-31.875" />
+      <point x="23.906" y="-38.125" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-70" y="-38.125"/>
-      <point x="-70" y="-25.625"/>
-      <point x="-36.991" y="-25.625"/>
-      <point x="-31.765" y="-31.875"/>
-      <point x="-23.906" y="-38.125"/>
+      <point x="-70" y="-38.125" />
+      <point x="-70" y="-25.625" />
+      <point x="-36.991" y="-25.625" />
+      <point x="-31.765" y="-31.875" />
+      <point x="-23.906" y="-38.125" />
     </filled-polygon>
     <filled-polygon>
-      <point x="70" y="-70"/>
-      <point x="70" y="-57.5"/>
-      <point x="-70" y="-57.5"/>
-      <point x="-70" y="-70"/>
+      <point x="70" y="-70" />
+      <point x="70" y="-57.5" />
+      <point x="-70" y="-57.5" />
+      <point x="-70" y="-70" />
     </filled-polygon>
   </symbol>
 
@@ -3981,25 +3981,25 @@ for the symbols.
     <name lang="zh-HK">Well</name>
     <text lang="zh-HK">水井</text>
     <beziers thickness="10">
-      <point x="-39" y="-60"/>
-      <point x="-39" y="-55"/>
-      <point x="-39" y="-55"/>
-      <point x="-39" y="-50"/>
-      <point x="-39" y="-30"/>
-      <point x="-13" y="-30"/>
-      <point x="-13" y="-50"/>
-      <point x="-13" y="-70"/>
-      <point x="13" y="-70"/>
-      <point x="13" y="-50"/>
-      <point x="13" y="-30"/>
-      <point x="39" y="-30"/>
-      <point x="39" y="-50"/>
-      <point x="39" y="-55"/>
-      <point x="39" y="-55"/>
-      <point x="39" y="-60"/>
+      <point x="-39" y="-60" />
+      <point x="-39" y="-55" />
+      <point x="-39" y="-55" />
+      <point x="-39" y="-50" />
+      <point x="-39" y="-30" />
+      <point x="-13" y="-30" />
+      <point x="-13" y="-50" />
+      <point x="-13" y="-70" />
+      <point x="13" y="-70" />
+      <point x="13" y="-50" />
+      <point x="13" y="-30" />
+      <point x="39" y="-30" />
+      <point x="39" y="-50" />
+      <point x="39" y="-55" />
+      <point x="39" y="-55" />
+      <point x="39" y="-60" />
     </beziers>
     <circle thickness="12.5" radius="44">
-      <point x="0" y="25"/>
+      <point x="0" y="25" />
     </circle>
   </symbol>
 
@@ -4063,28 +4063,28 @@ for the symbols.
     <name lang="zh-HK">Spring</name>
     <text lang="zh-HK">水泉</text>
     <beziers thickness="12.5">
-      <point x="-35" y="35"/>
-      <point x="-28" y="26"/>
-      <point x="-10" y="5"/>
-      <point x="1" y="7"/>
-      <point x="26" y="10"/>
-      <point x="40" y="0"/>
-      <point x="20" y="-20"/>
-      <point x="0" y="-40"/>
-      <point x="20" y="-60"/>
-      <point x="40" y="-40"/>
-      <point x="60" y="-20"/>
-      <point x="80" y="-40"/>
-      <point x="60" y="-60"/>
-      <point x="55" y="-66"/>
-      <point x="55" y="-69"/>
-      <point x="55" y="-75"/>
+      <point x="-35" y="35" />
+      <point x="-28" y="26" />
+      <point x="-10" y="5" />
+      <point x="1" y="7" />
+      <point x="26" y="10" />
+      <point x="40" y="0" />
+      <point x="20" y="-20" />
+      <point x="0" y="-40" />
+      <point x="20" y="-60" />
+      <point x="40" y="-40" />
+      <point x="60" y="-20" />
+      <point x="80" y="-40" />
+      <point x="60" y="-60" />
+      <point x="55" y="-66" />
+      <point x="55" y="-69" />
+      <point x="55" y="-75" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-10" y="50"/>
-      <point x="-40" y="103"/>
-      <point x="-103" y="40"/>
-      <point x="-50" y="10"/>
+      <point x="-10" y="50" />
+      <point x="-40" y="103" />
+      <point x="-103" y="40" />
+      <point x="-50" y="10" />
     </beziers>
   </symbol>
 
@@ -4126,9 +4126,9 @@ for the symbols.
     <name lang="fr">Réservoir d'eau, citerne</name>
     <text lang="fr" gender="masculin">réservoir d'eau ou citerne</text>
     <text lang="fr" plural="true" gender="masculin">réservoirs d'eau ou citernes</text>
-    <name lang="it">Cisterna d'acqua</name>
-    <text lang="it" gender="femminile">cisterna d'acqua</text>
-    <text lang="it" plural="true" gender="femminile">cisterne d'acqua</text>
+    <name lang="it">Cisterna</name>
+    <text lang="it" gender="femminile">cisterna</text>
+    <text lang="it" plural="true" gender="femminile">cisterne</text>
     <name lang="ja">貯水槽</name>
     <text lang="ja">貯水槽</text>
     <name lang="nb-NO">Vanntank</name>
@@ -4147,34 +4147,34 @@ for the symbols.
     <name lang="zh-HK">Water tank, trough</name>
     <text lang="zh-HK">水箱</text>
     <beziers thickness="10">
-      <point x="-65" y="45"/>
-      <point x="-65" y="50"/>
-      <point x="-65" y="50"/>
-      <point x="-65" y="55"/>
-      <point x="-65" y="75"/>
-      <point x="-39" y="75"/>
-      <point x="-39" y="55"/>
-      <point x="-39" y="35"/>
-      <point x="-13" y="35"/>
-      <point x="-13" y="55"/>
-      <point x="-13" y="75"/>
-      <point x="13" y="75"/>
-      <point x="13" y="55"/>
-      <point x="13" y="35"/>
-      <point x="39" y="35"/>
-      <point x="39" y="55"/>
-      <point x="39" y="75"/>
-      <point x="65" y="75"/>
-      <point x="65" y="55"/>
-      <point x="65" y="50"/>
-      <point x="65" y="50"/>
-      <point x="65" y="45"/>
+      <point x="-65" y="45" />
+      <point x="-65" y="50" />
+      <point x="-65" y="50" />
+      <point x="-65" y="55" />
+      <point x="-65" y="75" />
+      <point x="-39" y="75" />
+      <point x="-39" y="55" />
+      <point x="-39" y="35" />
+      <point x="-13" y="35" />
+      <point x="-13" y="55" />
+      <point x="-13" y="75" />
+      <point x="13" y="75" />
+      <point x="13" y="55" />
+      <point x="13" y="35" />
+      <point x="39" y="35" />
+      <point x="39" y="55" />
+      <point x="39" y="75" />
+      <point x="65" y="75" />
+      <point x="65" y="55" />
+      <point x="65" y="50" />
+      <point x="65" y="50" />
+      <point x="65" y="45" />
     </beziers>
     <polygon thickness="12.5">
-      <point x="-50" y="10"/>
-      <point x="-50" y="-50"/>
-      <point x="50" y="-50"/>
-      <point x="50" y="10"/>
+      <point x="-50" y="10" />
+      <point x="-50" y="-50" />
+      <point x="50" y="-50" />
+      <point x="50" y="10" />
     </polygon>
   </symbol>
 
@@ -4236,10 +4236,10 @@ for the symbols.
     <name lang="zh-HK">Open land</name>
     <text lang="zh-HK">空曠地</text>
     <polygon thickness="12.5" corners="round">
-      <point x="0" y="66"/>
-      <point x="66" y="0"/>
-      <point x="0" y="-66"/>
-      <point x="-66" y="0"/>
+      <point x="0" y="66" />
+      <point x="66" y="0" />
+      <point x="0" y="-66" />
+      <point x="-66" y="0" />
     </polygon>
   </symbol>
 
@@ -4297,40 +4297,40 @@ for the symbols.
     <name lang="zh-HK">Semi-open land</name>
     <text lang="zh-HK">半空曠地</text>
     <filled-circle radius="7.5">
-      <point x="0" y="66"/>
+      <point x="0" y="66" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="22" y="44"/>
+      <point x="22" y="44" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="44" y="22"/>
+      <point x="44" y="22" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="66" y="0"/>
+      <point x="66" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="44" y="-22"/>
+      <point x="44" y="-22" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="22" y="-44"/>
+      <point x="22" y="-44" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-66"/>
+      <point x="0" y="-66" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-22" y="-44"/>
+      <point x="-22" y="-44" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-44" y="-22"/>
+      <point x="-44" y="-22" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-66" y="0"/>
+      <point x="-66" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-44" y="22"/>
+      <point x="-44" y="22" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-22" y="44"/>
+      <point x="-22" y="44" />
     </filled-circle>
   </symbol>
 
@@ -4390,11 +4390,11 @@ for the symbols.
     <name lang="zh-HK">Forest corner</name>
     <text lang="zh-HK">樹林角</text>
     <polygon thickness="12.5" corners="round">
-      <point x="0" y="0"/>
-      <point x="0" y="66"/>
-      <point x="-66" y="0"/>
-      <point x="0" y="-66"/>
-      <point x="66" y="0"/>
+      <point x="0" y="0" />
+      <point x="0" y="66" />
+      <point x="-66" y="0" />
+      <point x="0" y="-66" />
+      <point x="66" y="0" />
     </polygon>
   </symbol>
 
@@ -4458,40 +4458,40 @@ for the symbols.
     <name lang="zh-HK">Clearing</name>
     <text lang="zh-HK">林中空曠地</text>
     <filled-circle radius="7.5">
-      <point x="0" y="66"/>
+      <point x="0" y="66" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="33" y="57.16"/>
+      <point x="33" y="57.16" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="57.16" y="33"/>
+      <point x="57.16" y="33" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="66" y="0"/>
+      <point x="66" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="57.16" y="-33"/>
+      <point x="57.16" y="-33" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="33" y="-57.16"/>
+      <point x="33" y="-57.16" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-66"/>
+      <point x="0" y="-66" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-33" y="-57.16"/>
+      <point x="-33" y="-57.16" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-57.16" y="-33"/>
+      <point x="-57.16" y="-33" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-66" y="0"/>
+      <point x="-66" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-57.16" y="33"/>
+      <point x="-57.16" y="33" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-33" y="57.16"/>
+      <point x="-33" y="57.16" />
     </filled-circle>
   </symbol>
 
@@ -4554,28 +4554,28 @@ for the symbols.
     <name lang="zh-HK">Thicket</name>
     <text lang="zh-HK">密樹叢</text>
     <lines thickness="12.5">
-      <point x="21" y="71"/>
-      <point x="-71" y="-21"/>
+      <point x="21" y="71" />
+      <point x="-71" y="-21" />
     </lines>
     <lines thickness="12.5">
-      <point x="47" y="47"/>
-      <point x="-47" y="-47"/>
+      <point x="47" y="47" />
+      <point x="-47" y="-47" />
     </lines>
     <lines thickness="12.5">
-      <point x="71" y="21"/>
-      <point x="-21" y="-71"/>
+      <point x="71" y="21" />
+      <point x="-21" y="-71" />
     </lines>
     <lines thickness="12.5">
-      <point x="-21" y="71"/>
-      <point x="71" y="-21"/>
+      <point x="-21" y="71" />
+      <point x="71" y="-21" />
     </lines>
     <lines thickness="12.5">
-      <point x="-47" y="47"/>
-      <point x="47" y="-47"/>
+      <point x="-47" y="47" />
+      <point x="47" y="-47" />
     </lines>
     <lines thickness="12.5">
-      <point x="-71" y="21"/>
-      <point x="21" y="-71"/>
+      <point x="-71" y="21" />
+      <point x="21" y="-71" />
     </lines>
   </symbol>
 
@@ -4639,29 +4639,29 @@ for the symbols.
     <name lang="zh-HK">Hedge, Linear thicket</name>
     <text lang="zh-HK">密樹籬</text>
     <circle thickness="10" radius="17.5">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <circle thickness="10" radius="17.5">
-      <point x="47.5" y="47.5"/>
+      <point x="47.5" y="47.5" />
     </circle>
     <circle thickness="10" radius="17.5">
-      <point x="-47.5" y="-47.5"/>
+      <point x="-47.5" y="-47.5" />
     </circle>
     <lines thickness="12.5">
-      <point x="-75" y="-75"/>
-      <point x="-63" y="-63"/>
+      <point x="-75" y="-75" />
+      <point x="-63" y="-63" />
     </lines>
     <lines thickness="12.5">
-      <point x="75" y="75"/>
-      <point x="63" y="63"/>
+      <point x="75" y="75" />
+      <point x="63" y="63" />
     </lines>
     <lines thickness="12.5" ends="flat">
-      <point x="35" y="35"/>
-      <point x="12" y="12"/>
+      <point x="35" y="35" />
+      <point x="12" y="12" />
     </lines>
     <lines thickness="12.5" ends="flat">
-      <point x="-35" y="-35"/>
-      <point x="-12" y="-12"/>
+      <point x="-35" y="-35" />
+      <point x="-12" y="-12" />
     </lines>
   </symbol>
 
@@ -4724,31 +4724,31 @@ for the symbols.
     <name lang="zh-HK">Vegetation boundary</name>
     <text lang="zh-HK">植被分界</text>
     <filled-circle radius="7.5">
-      <point x="-50" y="60"/>
+      <point x="-50" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-25" y="45"/>
+      <point x="-25" y="45" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="30"/>
+      <point x="0" y="30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="25" y="15"/>
+      <point x="25" y="15" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="50" y="0"/>
+      <point x="50" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="25" y="-15"/>
+      <point x="25" y="-15" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-30"/>
+      <point x="0" y="-30" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-25" y="-45"/>
+      <point x="-25" y="-45" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-50" y="-60"/>
+      <point x="-50" y="-60" />
     </filled-circle>
   </symbol>
 
@@ -4790,9 +4790,9 @@ for the symbols.
     <name lang="fr">Bosquet</name>
     <text lang="fr" gender="masculin">bosquet</text>
     <text lang="fr" plural="true" gender="masculin">bosquets</text>
-    <name lang="it">Gruppo di alberi</name>
-    <text lang="it" gender="maschile">gruppo di alberi</text>
-    <text lang="it" plural="true" gender="maschile">gruppi di alberi</text>
+    <name lang="it">Boschetto</name>
+    <text lang="it" gender="maschile">boschetto</text>
+    <text lang="it" plural="true" gender="maschile">boschetti</text>
     <name lang="ja">小さな林</name>
     <text lang="ja">小さな林</text>
     <name lang="nb-NO">Treklynge</name>
@@ -4812,19 +4812,19 @@ for the symbols.
     <name lang="zh-HK">Copse</name>
     <text lang="zh-HK">樹叢</text>
     <lines thickness="12.5">
-      <point x="-23" y="-40"/>
-      <point x="-23" y="-70"/>
+      <point x="-23" y="-40" />
+      <point x="-23" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="23" y="-40"/>
-      <point x="23" y="-70"/>
+      <point x="23" y="-40" />
+      <point x="23" y="-70" />
     </lines>
     <polygon thickness="12.5">
-      <point x="-60" y="-35"/>
-      <point x="-23" y="70"/>
-      <point x="0" y="4.73"/>
-      <point x="23" y="70"/>
-      <point x="60" y="-35"/>
+      <point x="-60" y="-35" />
+      <point x="-23" y="70" />
+      <point x="0" y="4.73" />
+      <point x="23" y="70" />
+      <point x="60" y="-35" />
     </polygon>
   </symbol>
 
@@ -4888,13 +4888,13 @@ for the symbols.
     <name lang="zh-HK">Distinctive tree</name>
     <text lang="zh-HK">獨樹</text>
     <lines thickness="12.5">
-      <point x="0" y="-40"/>
-      <point x="0" y="-70"/>
+      <point x="0" y="-40" />
+      <point x="0" y="-70" />
     </lines>
     <polygon thickness="12.5">
-      <point x="0" y="70"/>
-      <point x="-37" y="-35"/>
-      <point x="37" y="-35"/>
+      <point x="0" y="70" />
+      <point x="-37" y="-35" />
+      <point x="37" y="-35" />
     </polygon>
   </symbol>
 
@@ -4958,15 +4958,15 @@ for the symbols.
     <name lang="zh-HK">Tree stump, Root stock</name>
     <text lang="zh-HK">樹根</text>
     <circle thickness="12.5" radius="60">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5" ends="flat">
-      <point x="42" y="42"/>
-      <point x="-42" y="-42"/>
+      <point x="42" y="42" />
+      <point x="-42" y="-42" />
     </lines>
     <lines thickness="12.5" ends="flat">
-      <point x="42" y="-42"/>
-      <point x="-42" y="42"/>
+      <point x="42" y="-42" />
+      <point x="-42" y="42" />
     </lines>
   </symbol>
 
@@ -5030,8 +5030,8 @@ for the symbols.
     <name lang="zh-HK">Road</name>
     <text lang="zh-HK">馬路</text>
     <lines thickness="15">
-      <point x="-73" y="-73"/>
-      <point x="73" y="73"/>
+      <point x="-73" y="-73" />
+      <point x="73" y="73" />
     </lines>
   </symbol>
 
@@ -5096,16 +5096,16 @@ for the symbols.
     <name lang="zh-HK">Track, Path</name>
     <text lang="zh-HK">小徑</text>
     <lines thickness="12.5">
-      <point x="-75" y="-75"/>
-      <point x="-39" y="-39"/>
+      <point x="-75" y="-75" />
+      <point x="-39" y="-39" />
     </lines>
     <lines thickness="12.5">
-      <point x="18" y="18"/>
-      <point x="-18" y="-18"/>
+      <point x="18" y="18" />
+      <point x="-18" y="-18" />
     </lines>
     <lines thickness="12.5">
-      <point x="75" y="75"/>
-      <point x="39" y="39"/>
+      <point x="75" y="75" />
+      <point x="39" y="39" />
     </lines>
   </symbol>
 
@@ -5168,40 +5168,40 @@ for the symbols.
     <name lang="zh-HK">Ride</name>
     <text lang="zh-HK">林中間隙</text>
     <filled-circle radius="7.5">
-      <point x="48" y="72"/>
+      <point x="48" y="72" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="24" y="48"/>
+      <point x="24" y="48" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="24"/>
+      <point x="0" y="24" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-24" y="0"/>
+      <point x="-24" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-48" y="-24"/>
+      <point x="-48" y="-24" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-72" y="-48"/>
+      <point x="-72" y="-48" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="72" y="48"/>
+      <point x="72" y="48" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="48" y="24"/>
+      <point x="48" y="24" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="24" y="0"/>
+      <point x="24" y="0" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="0" y="-24"/>
+      <point x="0" y="-24" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-24" y="-48"/>
+      <point x="-24" y="-48" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-48" y="-72"/>
+      <point x="-48" y="-72" />
     </filled-circle>
   </symbol>
 
@@ -5265,16 +5265,16 @@ for the symbols.
     <name lang="zh-HK">Bridge</name>
     <text lang="zh-HK">橋樑</text>
     <lines thickness="12.5">
-      <point x="20" y="70"/>
-      <point x="20" y="40"/>
-      <point x="-40" y="-20"/>
-      <point x="-70" y="-20"/>
+      <point x="20" y="70" />
+      <point x="20" y="40" />
+      <point x="-40" y="-20" />
+      <point x="-70" y="-20" />
     </lines>
     <lines thickness="12.5">
-      <point x="70" y="20"/>
-      <point x="40" y="20"/>
-      <point x="-20" y="-40"/>
-      <point x="-20" y="-70"/>
+      <point x="70" y="20" />
+      <point x="40" y="20" />
+      <point x="-20" y="-40" />
+      <point x="-20" y="-70" />
     </lines>
   </symbol>
 
@@ -5338,20 +5338,20 @@ for the symbols.
     <name lang="zh-HK">Power line</name>
     <text lang="zh-HK">電線</text>
     <lines thickness="12.5">
-      <point x="-75" y="-75"/>
-      <point x="75" y="75"/>
+      <point x="-75" y="-75" />
+      <point x="75" y="75" />
     </lines>
     <lines thickness="12.5">
-      <point x="17.5" y="57.5"/>
-      <point x="57.5" y="17.5"/>
+      <point x="17.5" y="57.5" />
+      <point x="57.5" y="17.5" />
     </lines>
     <lines thickness="12.5">
-      <point x="-17.5" y="-57.5"/>
-      <point x="-57.5" y="-17.5"/>
+      <point x="-17.5" y="-57.5" />
+      <point x="-57.5" y="-17.5" />
     </lines>
     <lines thickness="12.5">
-      <point x="-20" y="20"/>
-      <point x="20" y="-20"/>
+      <point x="-20" y="20" />
+      <point x="20" y="-20" />
     </lines>
   </symbol>
 
@@ -5393,9 +5393,9 @@ for the symbols.
     <name lang="fr">Pylône de ligne HT</name>
     <text lang="fr" gender="masculin">pylône de ligne HT</text>
     <text lang="fr" plural="true" gender="masculin">pylônes de ligne HT</text>
-    <name lang="it">Pilone di linea elettrica</name>
-    <text lang="it" gender="maschile">pilone di linea elettrica</text>
-    <text lang="it" plural="true" gender="maschile">piloni di linea elettrica</text>
+    <name lang="it">Pilone</name>
+    <text lang="it" gender="maschile">pilone</text>
+    <text lang="it" plural="true" gender="maschile">piloni</text>
     <name lang="ja">送電線の支柱・鉄塔</name>
     <text lang="ja">鉄塔</text>
     <name lang="nb-NO">Mast</name>
@@ -5415,23 +5415,23 @@ for the symbols.
     <name lang="zh-HK">Power line pylon</name>
     <text lang="zh-HK">電線桿</text>
     <circle thickness="10" radius="40">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="10">
-      <point x="-75" y="-75"/>
-      <point x="75" y="75"/>
+      <point x="-75" y="-75" />
+      <point x="75" y="75" />
     </lines>
     <lines thickness="10">
-      <point x="25" y="55"/>
-      <point x="55" y="25"/>
+      <point x="25" y="55" />
+      <point x="55" y="25" />
     </lines>
     <lines thickness="10">
-      <point x="-25" y="-55"/>
-      <point x="-55" y="-25"/>
+      <point x="-25" y="-55" />
+      <point x="-55" y="-25" />
     </lines>
     <lines thickness="10">
-      <point x="-15" y="15"/>
-      <point x="15" y="-15"/>
+      <point x="-15" y="15" />
+      <point x="15" y="-15" />
     </lines>
   </symbol>
 
@@ -5495,22 +5495,22 @@ for the symbols.
     <name lang="zh-HK">Tunnel</name>
     <text lang="zh-HK">隧道</text>
     <lines thickness="12.5">
-      <point x="-65" y="-30"/>
-      <point x="65" y="-30"/>
+      <point x="-65" y="-30" />
+      <point x="65" y="-30" />
     </lines>
     <lines thickness="12.5">
-      <point x="-65" y="30"/>
-      <point x="65" y="30"/>
+      <point x="-65" y="30" />
+      <point x="65" y="30" />
     </lines>
     <lines thickness="12.5">
-      <point x="-25" y="65"/>
-      <point x="0" y="30"/>
-      <point x="25" y="65"/>
+      <point x="-25" y="65" />
+      <point x="0" y="30" />
+      <point x="25" y="65" />
     </lines>
     <lines thickness="12.5">
-      <point x="-25" y="-65"/>
-      <point x="0" y="-30"/>
-      <point x="25" y="-65"/>
+      <point x="-25" y="-65" />
+      <point x="0" y="-30" />
+      <point x="25" y="-65" />
     </lines>
   </symbol>
 
@@ -5574,17 +5574,17 @@ for the symbols.
     <name lang="zh-HK">Stone wall</name>
     <text lang="zh-HK">石牆</text>
     <filled-circle radius="20">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
     <filled-circle radius="20">
-      <point x="45" y="45"/>
+      <point x="45" y="45" />
     </filled-circle>
     <filled-circle radius="20">
-      <point x="-45" y="-45"/>
+      <point x="-45" y="-45" />
     </filled-circle>
     <lines thickness="12.5">
-      <point x="-75" y="-75"/>
-      <point x="75" y="75"/>
+      <point x="-75" y="-75" />
+      <point x="75" y="75" />
     </lines>
   </symbol>
 
@@ -5648,24 +5648,24 @@ for the symbols.
     <name lang="zh-HK">Fence</name>
     <text lang="zh-HK">圍欄</text>
     <lines thickness="12.5">
-      <point x="50" y="70"/>
-      <point x="-50" y="-30"/>
+      <point x="50" y="70" />
+      <point x="-50" y="-30" />
     </lines>
     <lines thickness="12.5">
-      <point x="50" y="70"/>
-      <point x="50" y="30"/>
+      <point x="50" y="70" />
+      <point x="50" y="30" />
     </lines>
     <lines thickness="12.5">
-      <point x="16.67" y="36.67"/>
-      <point x="16.67" y="-3.33"/>
+      <point x="16.67" y="36.67" />
+      <point x="16.67" y="-3.33" />
     </lines>
     <lines thickness="12.5">
-      <point x="-16.67" y="3.33"/>
-      <point x="-16.67" y="-36.67"/>
+      <point x="-16.67" y="3.33" />
+      <point x="-16.67" y="-36.67" />
     </lines>
     <lines thickness="12.5">
-      <point x="-50" y="-30"/>
-      <point x="-50" y="-70"/>
+      <point x="-50" y="-30" />
+      <point x="-50" y="-70" />
     </lines>
   </symbol>
 
@@ -5728,20 +5728,20 @@ for the symbols.
     <name lang="zh-HK">Crossing point</name>
     <text lang="zh-HK">橫越點</text>
     <lines thickness="12.5">
-      <point x="-65" y="0"/>
-      <point x="-20" y="0"/>
+      <point x="-65" y="0" />
+      <point x="-20" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="65" y="0"/>
-      <point x="20" y="0"/>
+      <point x="65" y="0" />
+      <point x="20" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-20" y="70"/>
-      <point x="-20" y="-70"/>
+      <point x="-20" y="70" />
+      <point x="-20" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="20" y="70"/>
-      <point x="20" y="-70"/>
+      <point x="20" y="70" />
+      <point x="20" y="-70" />
     </lines>
   </symbol>
 
@@ -5805,10 +5805,10 @@ for the symbols.
     <name lang="zh-HK">Building</name>
     <text lang="zh-HK">建築物</text>
     <filled-polygon>
-      <point x="-50" y="-50"/>
-      <point x="-50" y="50"/>
-      <point x="50" y="50"/>
-      <point x="50" y="-50"/>
+      <point x="-50" y="-50" />
+      <point x="-50" y="50" />
+      <point x="50" y="50" />
+      <point x="50" y="-50" />
     </filled-polygon>
   </symbol>
 
@@ -5871,26 +5871,26 @@ for the symbols.
     <name lang="zh-HK">Paved area</name>
     <text lang="zh-HK">水泥地</text>
     <lines thickness="12.5">
-      <point x="-12" y="60"/>
-      <point x="-60" y="12"/>
+      <point x="-12" y="60" />
+      <point x="-60" y="12" />
     </lines>
     <lines thickness="12.5">
-      <point x="36" y="60"/>
-      <point x="-60" y="-36"/>
+      <point x="36" y="60" />
+      <point x="-60" y="-36" />
     </lines>
     <lines thickness="12.5">
-      <point x="-36" y="-60"/>
-      <point x="60" y="36"/>
+      <point x="-36" y="-60" />
+      <point x="60" y="36" />
     </lines>
     <lines thickness="12.5">
-      <point x="12" y="-60"/>
-      <point x="60" y="-12"/>
+      <point x="12" y="-60" />
+      <point x="60" y="-12" />
     </lines>
     <polygon thickness="12.5">
-      <point x="-60" y="-60"/>
-      <point x="-60" y="60"/>
-      <point x="60" y="60"/>
-      <point x="60" y="-60"/>
+      <point x="-60" y="-60" />
+      <point x="-60" y="60" />
+      <point x="60" y="60" />
+      <point x="60" y="-60" />
     </polygon>
   </symbol>
 
@@ -5954,24 +5954,24 @@ for the symbols.
     <name lang="zh-HK">Ruin</name>
     <text lang="zh-HK">破毀建築物</text>
     <lines thickness="12.5">
-      <point x="-60" y="15"/>
-      <point x="-60" y="60"/>
-      <point x="-15" y="60"/>
+      <point x="-60" y="15" />
+      <point x="-60" y="60" />
+      <point x="-15" y="60" />
     </lines>
     <lines thickness="12.5">
-      <point x="-60" y="-15"/>
-      <point x="-60" y="-60"/>
-      <point x="-15" y="-60"/>
+      <point x="-60" y="-15" />
+      <point x="-60" y="-60" />
+      <point x="-15" y="-60" />
     </lines>
     <lines thickness="12.5">
-      <point x="60" y="15"/>
-      <point x="60" y="60"/>
-      <point x="15" y="60"/>
+      <point x="60" y="15" />
+      <point x="60" y="60" />
+      <point x="15" y="60" />
     </lines>
     <lines thickness="12.5">
-      <point x="60" y="-15"/>
-      <point x="60" y="-60"/>
-      <point x="15" y="-60"/>
+      <point x="60" y="-15" />
+      <point x="60" y="-60" />
+      <point x="15" y="-60" />
     </lines>
   </symbol>
 
@@ -6035,23 +6035,23 @@ for the symbols.
     <name lang="zh-HK">Pipeline</name>
     <text lang="zh-HK">管道</text>
     <lines thickness="12.5">
-      <point x="70" y="70"/>
-      <point x="-57.5" y="-57.5"/>
+      <point x="70" y="70" />
+      <point x="-57.5" y="-57.5" />
     </lines>
     <lines thickness="12.5">
-      <point x="-70" y="-30"/>
-      <point x="-30" y="-30"/>
-      <point x="-30" y="-70"/>
+      <point x="-70" y="-30" />
+      <point x="-30" y="-30" />
+      <point x="-30" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-30" y="10"/>
-      <point x="10" y="10"/>
-      <point x="10" y="-30"/>
+      <point x="-30" y="10" />
+      <point x="10" y="10" />
+      <point x="10" y="-30" />
     </lines>
     <lines thickness="12.5">
-      <point x="10" y="50"/>
-      <point x="50" y="50"/>
-      <point x="50" y="10"/>
+      <point x="10" y="50" />
+      <point x="50" y="50" />
+      <point x="50" y="10" />
     </lines>
   </symbol>
 
@@ -6115,12 +6115,12 @@ for the symbols.
     <name lang="zh-HK">Tower</name>
     <text lang="zh-HK">塔架</text>
     <lines thickness="12.5">
-      <point x="-50" y="60"/>
-      <point x="50" y="60"/>
+      <point x="-50" y="60" />
+      <point x="50" y="60" />
     </lines>
     <lines thickness="12.5">
-      <point x="0" y="60"/>
-      <point x="0" y="-60"/>
+      <point x="0" y="60" />
+      <point x="0" y="-60" />
     </lines>
   </symbol>
 
@@ -6183,9 +6183,9 @@ for the symbols.
     <name lang="zh-HK">Shooting platform</name>
     <text lang="zh-HK">射擊台</text>
     <lines thickness="12.5">
-      <point x="30" y="60"/>
-      <point x="-30" y="60"/>
-      <point x="-30" y="-60"/>
+      <point x="30" y="60" />
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
     </lines>
   </symbol>
 
@@ -6249,10 +6249,10 @@ for the symbols.
     <name lang="zh-HK">Boundary stone, Cairn</name>
     <text lang="zh-HK">石標誌</text>
     <circle thickness="12.5" radius="60">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="20">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
   </symbol>
 
@@ -6316,23 +6316,23 @@ for the symbols.
     <name lang="zh-HK">Fodder rack</name>
     <text lang="zh-HK">飼料架</text>
     <lines thickness="12.5">
-      <point x="0" y="-65"/>
-      <point x="0" y="65"/>
+      <point x="0" y="-65" />
+      <point x="0" y="65" />
     </lines>
     <lines thickness="12.5">
-      <point x="-30" y="35"/>
-      <point x="0" y="65"/>
-      <point x="30" y="35"/>
+      <point x="-30" y="35" />
+      <point x="0" y="65" />
+      <point x="30" y="35" />
     </lines>
     <lines thickness="12.5">
-      <point x="-30" y="-65"/>
-      <point x="30" y="-65"/>
+      <point x="-30" y="-65" />
+      <point x="30" y="-65" />
     </lines>
   </symbol>
 
   <symbol kind="D" id="5.19">
     <name lang="bg">Останки от огнище</name>
-    <text lang="bg" gender="женски"/>
+    <text lang="bg" gender="женски" />
     <text lang="bg" plural="true" gender="женски">останки от огнище</text>
     <name lang="ca">Carbonera</name>
     <text lang="ca" gender="femení">carbonera</text>
@@ -6368,9 +6368,9 @@ for the symbols.
     <name lang="fr">Charbonnière</name>
     <text lang="fr" gender="féminin">charbonnière</text>
     <text lang="fr" plural="true" gender="féminin">charbonnières</text>
-    <name lang="it">Carbonaia</name>
-    <text lang="it" gender="femminile">carbonaia</text>
-    <text lang="it" plural="true" gender="femminile">carbonaie</text>
+    <name lang="it">Piazzola</name>
+    <text lang="it" gender="femminile">piazzola</text>
+    <text lang="it" plural="true" gender="femminile">piazzole</text>
     <name lang="ja">炭焼き窯跡・炭焼き場</name>
     <text lang="ja">炭焼き窯跡</text>
     <name lang="nb-NO">Kullmile</name>
@@ -6390,12 +6390,12 @@ for the symbols.
     <name lang="zh-HK">Charcoal burning ground</name>
     <text lang="zh-HK">炭灰地</text>
     <circle thickness="12.5" radius="68">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <polygon thickness="10">
-      <point x="0" y="68"/>
-      <point x="58.9" y="-34"/>
-      <point x="-58.9" y="-34"/>
+      <point x="0" y="68" />
+      <point x="58.9" y="-34" />
+      <point x="-58.9" y="-34" />
     </polygon>
   </symbol>
 
@@ -6459,13 +6459,13 @@ for the symbols.
     <name lang="zh-HK">Monument or statue</name>
     <text lang="zh-HK">紀念碑或塑像</text>
     <lines thickness="12.5">
-      <point x="-55" y="-60"/>
-      <point x="55" y="-60"/>
+      <point x="-55" y="-60" />
+      <point x="55" y="-60" />
     </lines>
     <lines thickness="12.5">
-      <point x="-35" y="-60"/>
-      <point x="0" y="60"/>
-      <point x="35" y="-60"/>
+      <point x="-35" y="-60" />
+      <point x="0" y="60" />
+      <point x="35" y="-60" />
     </lines>
   </symbol>
 
@@ -6507,9 +6507,9 @@ for the symbols.
     <name lang="fr">Passage couvert</name>
     <text lang="fr" gender="masculin">passage couvert</text>
     <text lang="fr" plural="true" gender="masculin">passages couverts</text>
-    <name lang="it">Passaggio coperto</name>
-    <text lang="it" gender="maschile">passaggio coperto</text>
-    <text lang="it" plural="true" gender="maschile">passaggi coperti</text>
+    <name lang="it">Portico</name>
+    <text lang="it" gender="maschile">portico</text>
+    <text lang="it" plural="true" gender="maschile">portici</text>
     <name lang="ja">建物の通過できる部分</name>
     <text lang="ja">建物の通過できる部分</text>
     <name lang="nb-NO">Overbygg</name>
@@ -6529,16 +6529,16 @@ for the symbols.
     <name lang="zh-HK">Building pass-through</name>
     <text lang="zh-HK">可通越建築物</text>
     <lines thickness="12.5">
-      <point x="-60" y="60"/>
-      <point x="60" y="60"/>
+      <point x="-60" y="60" />
+      <point x="60" y="60" />
     </lines>
     <lines thickness="12.5">
-      <point x="-40" y="60"/>
-      <point x="-40" y="-60"/>
+      <point x="-40" y="60" />
+      <point x="-40" y="-60" />
     </lines>
     <lines thickness="12.5">
-      <point x="40" y="60"/>
-      <point x="40" y="-60"/>
+      <point x="40" y="60" />
+      <point x="40" y="-60" />
     </lines>
   </symbol>
 
@@ -6601,14 +6601,14 @@ for the symbols.
     <name lang="zh-HK">Stairway</name>
     <text lang="zh-HK">樓梯</text>
     <lines thickness="12.5">
-      <point x="-70" y="-45"/>
-      <point x="-35" y="-45"/>
-      <point x="-35" y="-15"/>
-      <point x="0" y="-15"/>
-      <point x="0" y="15"/>
-      <point x="35" y="15"/>
-      <point x="35" y="45"/>
-      <point x="70" y="45"/>
+      <point x="-70" y="-45" />
+      <point x="-35" y="-45" />
+      <point x="-35" y="-15" />
+      <point x="0" y="-15" />
+      <point x="0" y="15" />
+      <point x="35" y="15" />
+      <point x="35" y="45" />
+      <point x="70" y="45" />
     </lines>
   </symbol>
 
@@ -6620,46 +6620,46 @@ for the symbols.
     <text lang="it" gender="femminile">aiuola</text>
     <text lang="it" plural="true" gender="femminile">aiuole</text>
     <beziers thickness="10">
-      <point x="0" y="-37"/>
-      <point x="-7.660444" y="-43.42788"/>
-      <point x="-19.01736" y="-53.69468"/>
-      <point x="-31.15262" y="-44.8779"/>
-      <point x="-43.28787" y="-36.06112"/>
-      <point x="-37.03304" y="-22.08743"/>
-      <point x="-33.28698" y="-12.81559"/>
-      <point x="-41.76746" y="-7.516402"/>
-      <point x="-55.04125" y="0.1120522"/>
-      <point x="-50.40599" y="14.3779"/>
-      <point x="-45.77074" y="28.64375"/>
-      <point x="-30.54812" y="27.01316"/>
-      <point x="-20.57248" y="26.3156"/>
-      <point x="-18.15326" y="36.01855"/>
-      <point x="-15" y="51"/>
-      <point x="9.301504E-07" y="51"/>
-      <point x="15" y="51"/>
-      <point x="18.15326" y="36.01855"/>
-      <point x="20.57248" y="26.3156"/>
-      <point x="30.54812" y="27.01316"/>
-      <point x="45.77074" y="28.64375"/>
-      <point x="50.40599" y="14.3779"/>
-      <point x="55.04125" y="0.1120543"/>
-      <point x="41.76746" y="-7.516402"/>
-      <point x="33.28698" y="-12.81559"/>
-      <point x="37.03304" y="-22.08743"/>
-      <point x="43.28787" y="-36.06112"/>
-      <point x="31.15262" y="-44.8779"/>
-      <point x="19.01736" y="-53.69468"/>
-      <point x="7.660444" y="-43.42788"/>
-      <point x="0" y="-37"/>
+      <point x="0" y="-37" />
+      <point x="-7.660444" y="-43.42788" />
+      <point x="-19.01736" y="-53.69468" />
+      <point x="-31.15262" y="-44.8779" />
+      <point x="-43.28787" y="-36.06112" />
+      <point x="-37.03304" y="-22.08743" />
+      <point x="-33.28698" y="-12.81559" />
+      <point x="-41.76746" y="-7.516402" />
+      <point x="-55.04125" y="0.1120522" />
+      <point x="-50.40599" y="14.3779" />
+      <point x="-45.77074" y="28.64375" />
+      <point x="-30.54812" y="27.01316" />
+      <point x="-20.57248" y="26.3156" />
+      <point x="-18.15326" y="36.01855" />
+      <point x="-15" y="51" />
+      <point x="9.301504E-07" y="51" />
+      <point x="15" y="51" />
+      <point x="18.15326" y="36.01855" />
+      <point x="20.57248" y="26.3156" />
+      <point x="30.54812" y="27.01316" />
+      <point x="45.77074" y="28.64375" />
+      <point x="50.40599" y="14.3779" />
+      <point x="55.04125" y="0.1120543" />
+      <point x="41.76746" y="-7.516402" />
+      <point x="33.28698" y="-12.81559" />
+      <point x="37.03304" y="-22.08743" />
+      <point x="43.28787" y="-36.06112" />
+      <point x="31.15262" y="-44.8779" />
+      <point x="19.01736" y="-53.69468" />
+      <point x="7.660444" y="-43.42788" />
+      <point x="0" y="-37" />
     </beziers>
     <filled-circle radius="12.5">
-      <point x="0" y="-2"/>
+      <point x="0" y="-2" />
     </filled-circle>
     <polygon thickness="12.5">
-      <point x="-70" y="-70"/>
-      <point x="-70" y="70"/>
-      <point x="70" y="70"/>
-      <point x="70" y="-70"/>
+      <point x="-70" y="-70" />
+      <point x="-70" y="70" />
+      <point x="70" y="70" />
+      <point x="70" y="-70" />
     </polygon>
   </symbol>
 
@@ -6711,38 +6711,38 @@ for the symbols.
     </lines>
  -->
     <lines thickness="10" ends="round">
-      <point x="-44.97" y="-67.76"/>
-      <point x="74.54" y="32.52"/>
+      <point x="-44.97" y="-67.76" />
+      <point x="74.54" y="32.52" />
     </lines>
     <lines thickness="10" ends="round">
-      <point x="-74.54" y="-32.52"/>
-      <point x="44.97" y="67.76"/>
-    </lines>
-
-    <lines thickness="10" ends="round">
-      <point x="14.47" y="-37.47"/>
-      <point x="-34.38" y="20.75"/>
-    </lines>
-    <lines thickness="10" ends="round">
-      <point x="-5.45" y="-54.18"/>
-      <point x="-54.30" y="4.04"/>
-    </lines>
-    <lines thickness="10" ends="round">
-      <point x="-25.37" y="-70.89"/>
-      <point x="-74.22" y="-12.67"/>
+      <point x="-74.54" y="-32.52" />
+      <point x="44.97" y="67.76" />
     </lines>
 
     <lines thickness="10" ends="round">
-      <point x="34.38" y="-20.75"/>
-      <point x="-14.47" y="37.47"/>
+      <point x="14.47" y="-37.47" />
+      <point x="-34.38" y="20.75" />
     </lines>
     <lines thickness="10" ends="round">
-      <point x="54.30" y="-4.04"/>
-      <point x="5.45" y="54.18"/>
+      <point x="-5.45" y="-54.18" />
+      <point x="-54.30" y="4.04" />
     </lines>
     <lines thickness="10" ends="round">
-      <point x="74.22" y="12.67"/>
-      <point x="25.37" y="70.89"/>
+      <point x="-25.37" y="-70.89" />
+      <point x="-74.22" y="-12.67" />
+    </lines>
+
+    <lines thickness="10" ends="round">
+      <point x="34.38" y="-20.75" />
+      <point x="-14.47" y="37.47" />
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="54.30" y="-4.04" />
+      <point x="5.45" y="54.18" />
+    </lines>
+    <lines thickness="10" ends="round">
+      <point x="74.22" y="12.67" />
+      <point x="25.37" y="70.89" />
     </lines>
 
   </symbol>
@@ -6804,12 +6804,12 @@ for the symbols.
     <name lang="zh-HK">Special item</name>
     <text lang="zh-HK">特別項目</text>
     <lines thickness="12.5">
-      <point x="45" y="45"/>
-      <point x="-45" y="-45"/>
+      <point x="45" y="45" />
+      <point x="-45" y="-45" />
     </lines>
     <lines thickness="12.5">
-      <point x="-45" y="45"/>
-      <point x="45" y="-45"/>
+      <point x="-45" y="45" />
+      <point x="45" y="-45" />
     </lines>
   </symbol>
 
@@ -6869,7 +6869,7 @@ for the symbols.
     <name lang="zh-HK">Special item</name>
     <text lang="zh-HK">特別項目</text>
     <circle thickness="12.5" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
   </symbol>
 
@@ -6942,10 +6942,10 @@ for the symbols.
     <name lang="zh-HK">Low</name>
     <text lang="zh-HK">低矮的{0}</text>
     <beziers thickness="12.5">
-      <point x="-70" y="-10"/>
-      <point x="-30" y="20"/>
-      <point x="30" y="20"/>
-      <point x="70" y="-10"/>
+      <point x="-70" y="-10" />
+      <point x="-30" y="20" />
+      <point x="30" y="20" />
+      <point x="70" y="-10" />
     </beziers>
   </symbol>
 
@@ -7014,10 +7014,10 @@ for the symbols.
     <name lang="zh-HK">Shallow</name>
     <text lang="zh-HK">淺{0}</text>
     <beziers thickness="12.5">
-      <point x="-70" y="10"/>
-      <point x="-30" y="-20"/>
-      <point x="30" y="-20"/>
-      <point x="70" y="10"/>
+      <point x="-70" y="10" />
+      <point x="-30" y="-20" />
+      <point x="30" y="-20" />
+      <point x="70" y="10" />
     </beziers>
   </symbol>
 
@@ -7088,19 +7088,19 @@ for the symbols.
     <name lang="zh-HK">Deep</name>
     <text lang="zh-HK">深{0}</text>
     <beziers thickness="12.5">
-      <point x="-70" y="70"/>
-      <point x="-35" y="72"/>
-      <point x="-30" y="50"/>
-      <point x="-30" y="10"/>
-      <point x="-30" y="-30"/>
-      <point x="-30" y="-70"/>
-      <point x="0" y="-70"/>
-      <point x="30" y="-70"/>
-      <point x="30" y="-30"/>
-      <point x="30" y="10"/>
-      <point x="30" y="50"/>
-      <point x="35" y="72"/>
-      <point x="70" y="70"/>
+      <point x="-70" y="70" />
+      <point x="-35" y="72" />
+      <point x="-30" y="50" />
+      <point x="-30" y="10" />
+      <point x="-30" y="-30" />
+      <point x="-30" y="-70" />
+      <point x="0" y="-70" />
+      <point x="30" y="-70" />
+      <point x="30" y="-30" />
+      <point x="30" y="10" />
+      <point x="30" y="50" />
+      <point x="35" y="72" />
+      <point x="70" y="70" />
     </beziers>
   </symbol>
 
@@ -7168,36 +7168,36 @@ for the symbols.
     <name lang="zh-HK">Overgrown</name>
     <text lang="zh-HK">密{0}</text>
     <lines thickness="10">
-      <point x="42" y="64"/>
-      <point x="42" y="-64"/>
+      <point x="42" y="64" />
+      <point x="42" y="-64" />
     </lines>
     <lines thickness="10">
-      <point x="14" y="64"/>
-      <point x="14" y="-64"/>
+      <point x="14" y="64" />
+      <point x="14" y="-64" />
     </lines>
     <lines thickness="10">
-      <point x="-14" y="64"/>
-      <point x="-14" y="-64"/>
+      <point x="-14" y="64" />
+      <point x="-14" y="-64" />
     </lines>
     <lines thickness="10">
-      <point x="-42" y="64"/>
-      <point x="-42" y="-64"/>
+      <point x="-42" y="64" />
+      <point x="-42" y="-64" />
     </lines>
     <lines thickness="10">
-      <point x="64" y="42"/>
-      <point x="-64" y="42"/>
+      <point x="64" y="42" />
+      <point x="-64" y="42" />
     </lines>
     <lines thickness="10">
-      <point x="64" y="14"/>
-      <point x="-64" y="14"/>
+      <point x="64" y="14" />
+      <point x="-64" y="14" />
     </lines>
     <lines thickness="10">
-      <point x="64" y="-14"/>
-      <point x="-64" y="-14"/>
+      <point x="64" y="-14" />
+      <point x="-64" y="-14" />
     </lines>
     <lines thickness="10">
-      <point x="64" y="-42"/>
-      <point x="-64" y="-42"/>
+      <point x="64" y="-42" />
+      <point x="-64" y="-42" />
     </lines>
   </symbol>
 
@@ -7265,40 +7265,40 @@ for the symbols.
     <name lang="zh-HK">Open</name>
     <text lang="zh-HK">開闊的{0}</text>
     <filled-circle radius="7.5">
-      <point x="-60" y="60"/>
+      <point x="-60" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-20" y="60"/>
+      <point x="-20" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="20" y="60"/>
+      <point x="20" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="60"/>
+      <point x="60" y="60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="20"/>
+      <point x="-60" y="20" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="-20"/>
+      <point x="-60" y="-20" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-60" y="-60"/>
+      <point x="-60" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="-20" y="-60"/>
+      <point x="-20" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="20" y="-60"/>
+      <point x="20" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="-60"/>
+      <point x="60" y="-60" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="-20"/>
+      <point x="60" y="-20" />
     </filled-circle>
     <filled-circle radius="7.5">
-      <point x="60" y="20"/>
+      <point x="60" y="20" />
     </filled-circle>
   </symbol>
 
@@ -7366,19 +7366,19 @@ for the symbols.
     <name lang="zh-HK">Rocky, stony</name>
     <text lang="zh-HK">多石的{0}</text>
     <filled-polygon>
-      <point x="-72" y="0"/>
-      <point x="-44.25" y="48"/>
-      <point x="-16.5" y="0"/>
+      <point x="-72" y="0" />
+      <point x="-44.25" y="48" />
+      <point x="-16.5" y="0" />
     </filled-polygon>
     <filled-polygon>
-      <point x="72" y="0"/>
-      <point x="44.25" y="48"/>
-      <point x="16.5" y="0"/>
+      <point x="72" y="0" />
+      <point x="44.25" y="48" />
+      <point x="16.5" y="0" />
     </filled-polygon>
     <filled-polygon>
-      <point x="-27.75" y="-48"/>
-      <point x="0" y="0"/>
-      <point x="27.75" y="-48"/>
+      <point x="-27.75" y="-48" />
+      <point x="0" y="0" />
+      <point x="27.75" y="-48" />
     </filled-polygon>
   </symbol>
 
@@ -7446,16 +7446,16 @@ for the symbols.
     <name lang="zh-HK">Marshy</name>
     <text lang="zh-HK">濕軟的{0}</text>
     <lines thickness="12.5">
-      <point x="30" y="35"/>
-      <point x="-30" y="35"/>
+      <point x="30" y="35" />
+      <point x="-30" y="35" />
     </lines>
     <lines thickness="12.5">
-      <point x="30" y="0"/>
-      <point x="-30" y="0"/>
+      <point x="30" y="0" />
+      <point x="-30" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="30" y="-35"/>
-      <point x="-30" y="-35"/>
+      <point x="30" y="-35" />
+      <point x="-30" y="-35" />
     </lines>
   </symbol>
 
@@ -7523,154 +7523,154 @@ for the symbols.
     <name lang="zh-HK">Sandy</name>
     <text lang="zh-HK">多沙的{0}</text>
     <filled-circle radius="5">
-      <point x="-15" y="-31"/>
+      <point x="-15" y="-31" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="48" y="2"/>
+      <point x="48" y="2" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-70" y="-31"/>
+      <point x="-70" y="-31" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="17" y="-46"/>
+      <point x="17" y="-46" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-34" y="13"/>
+      <point x="-34" y="13" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-24" y="30"/>
+      <point x="-24" y="30" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="28" y="44"/>
+      <point x="28" y="44" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-4" y="26"/>
+      <point x="-4" y="26" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="47" y="-45"/>
+      <point x="47" y="-45" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="38" y="19"/>
+      <point x="38" y="19" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="33" y="-64"/>
+      <point x="33" y="-64" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="62" y="41"/>
+      <point x="62" y="41" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-64" y="20"/>
+      <point x="-64" y="20" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-65" y="62"/>
+      <point x="-65" y="62" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="56" y="-25"/>
+      <point x="56" y="-25" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="69" y="-67"/>
+      <point x="69" y="-67" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-41" y="42"/>
+      <point x="-41" y="42" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-70" y="-65"/>
+      <point x="-70" y="-65" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="20" y="-7"/>
+      <point x="20" y="-7" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-39" y="-65"/>
+      <point x="-39" y="-65" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="56" y="63"/>
+      <point x="56" y="63" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-52" y="-48"/>
+      <point x="-52" y="-48" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-34" y="-6"/>
+      <point x="-34" y="-6" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-6" y="65"/>
+      <point x="-6" y="65" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-21" y="-69"/>
+      <point x="-21" y="-69" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="67" y="-49"/>
+      <point x="67" y="-49" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-51" y="-30"/>
+      <point x="-51" y="-30" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-2" y="0"/>
+      <point x="-2" y="0" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-61" y="-8"/>
+      <point x="-61" y="-8" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="19" y="69"/>
+      <point x="19" y="69" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="6" y="46"/>
+      <point x="6" y="46" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="0" y="-56"/>
+      <point x="0" y="-56" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="6" y="-25"/>
+      <point x="6" y="-25" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-25" y="-50"/>
+      <point x="-25" y="-50" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="19" y="28"/>
+      <point x="19" y="28" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="69" y="-12"/>
+      <point x="69" y="-12" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="66" y="19"/>
+      <point x="66" y="19" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-66" y="38"/>
+      <point x="-66" y="38" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-24" y="65"/>
+      <point x="-24" y="65" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="35" y="-21"/>
+      <point x="35" y="-21" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-33" y="-33"/>
+      <point x="-33" y="-33" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="51" y="-63"/>
+      <point x="51" y="-63" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="38" y="67"/>
+      <point x="38" y="67" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="14" y="-70"/>
+      <point x="14" y="-70" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-44" y="66"/>
+      <point x="-44" y="66" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="13" y="10"/>
+      <point x="13" y="10" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-14" y="47"/>
+      <point x="-14" y="47" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-17" y="-12"/>
+      <point x="-17" y="-12" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-16" y="12"/>
+      <point x="-16" y="12" />
     </filled-circle>
     <filled-circle radius="5">
-      <point x="-51" y="7"/>
+      <point x="-51" y="7" />
     </filled-circle>
   </symbol>
 
@@ -7730,19 +7730,19 @@ for the symbols.
     <name lang="zh-HK">Needle-leaved</name>
     <text lang="zh-HK">針葉{0}</text>
     <lines thickness="12.5">
-      <point x="-17" y="10"/>
-      <point x="-40" y="-35"/>
-      <point x="40" y="-35"/>
-      <point x="17" y="10"/>
+      <point x="-17" y="10" />
+      <point x="-40" y="-35" />
+      <point x="40" y="-35" />
+      <point x="17" y="10" />
     </lines>
     <lines thickness="12.5">
-      <point x="0" y="-40"/>
-      <point x="0" y="-70"/>
+      <point x="0" y="-40" />
+      <point x="0" y="-70" />
     </lines>
     <polygon thickness="12.5">
-      <point x="0" y="70"/>
-      <point x="-35" y="15"/>
-      <point x="35" y="15"/>
+      <point x="0" y="70" />
+      <point x="-35" y="15" />
+      <point x="35" y="15" />
     </polygon>
   </symbol>
 
@@ -7802,40 +7802,40 @@ for the symbols.
     <name lang="zh-HK">Broad-leaved</name>
     <text lang="zh-HK">落葉{0}</text>
     <beziers thickness="12.5">
-      <point x="0" y="-20"/>
-      <point x="15" y="-70"/>
-      <point x="71.45" y="-28.99"/>
-      <point x="28.53" y="0.73"/>
+      <point x="0" y="-20" />
+      <point x="15" y="-70" />
+      <point x="71.45" y="-28.99" />
+      <point x="28.53" y="0.73" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="28.53" y="0.73"/>
-      <point x="80.72" y="-0.46"/>
-      <point x="59.16" y="65.9"/>
-      <point x="17.63" y="34.27"/>
+      <point x="28.53" y="0.73" />
+      <point x="80.72" y="-0.46" />
+      <point x="59.16" y="65.9" />
+      <point x="17.63" y="34.27" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="17.63" y="34.27"/>
-      <point x="34.89" y="83.54"/>
-      <point x="-34.89" y="83.54"/>
-      <point x="-17.63" y="34.27"/>
+      <point x="17.63" y="34.27" />
+      <point x="34.89" y="83.54" />
+      <point x="-34.89" y="83.54" />
+      <point x="-17.63" y="34.27" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-17.63" y="34.27"/>
-      <point x="-59.16" y="65.9"/>
-      <point x="-80.72" y="-0.46"/>
-      <point x="-28.53" y="0.73"/>
+      <point x="-17.63" y="34.27" />
+      <point x="-59.16" y="65.9" />
+      <point x="-80.72" y="-0.46" />
+      <point x="-28.53" y="0.73" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-28.53" y="0.73"/>
-      <point x="-71.45" y="-28.99"/>
-      <point x="-15" y="-70"/>
-      <point x="0" y="-20"/>
+      <point x="-28.53" y="0.73" />
+      <point x="-71.45" y="-28.99" />
+      <point x="-15" y="-70" />
+      <point x="0" y="-20" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="0" y="-20"/>
-      <point x="0" y="-40"/>
-      <point x="0" y="-60"/>
-      <point x="7" y="-70"/>
+      <point x="0" y="-20" />
+      <point x="0" y="-40" />
+      <point x="0" y="-60" />
+      <point x="7" y="-70" />
     </beziers>
   </symbol>
 
@@ -7902,18 +7902,18 @@ for the symbols.
     <name lang="zh-HK">Ruined</name>
     <text lang="zh-HK">倒塌的{0}</text>
     <beziers thickness="12.5">
-      <point x="-60" y="-60"/>
-      <point x="-58" y="8"/>
-      <point x="-67" y="44"/>
-      <point x="-45" y="58"/>
-      <point x="-25" y="70"/>
-      <point x="18" y="20"/>
-      <point x="60" y="-30"/>
+      <point x="-60" y="-60" />
+      <point x="-58" y="8" />
+      <point x="-67" y="44" />
+      <point x="-45" y="58" />
+      <point x="-25" y="70" />
+      <point x="18" y="20" />
+      <point x="60" y="-30" />
     </beziers>
     <lines thickness="12.5">
-      <point x="20" y="-30"/>
-      <point x="60" y="-30"/>
-      <point x="60" y="10"/>
+      <point x="20" y="-30" />
+      <point x="60" y="-30" />
+      <point x="60" y="10" />
     </lines>
   </symbol>
 
@@ -7966,6 +7966,7 @@ for the symbols.
     <text lang="fr" gender="masculin">croisement entre {0} et {1}</text>
     <name lang="it">Incrocio</name>
     <text lang="it">incrocio di {0} e {1}</text>
+    <text lang="it" plural="true">incroci di {0} e {1}</text>
     <name lang="ja">交点</name>
     <text lang="ja">{0}と{1}の交点</text>
     <name lang="nb-NO">Kryss</name>
@@ -7984,12 +7985,12 @@ for the symbols.
     <name lang="zh-HK">Crossing</name>
     <text lang="zh-HK">{0}及{1}的交叉處</text>
     <lines thickness="12.5">
-      <point x="70" y="70"/>
-      <point x="-70" y="-70"/>
+      <point x="70" y="70" />
+      <point x="-70" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-70" y="70"/>
-      <point x="70" y="-70"/>
+      <point x="-70" y="70" />
+      <point x="70" y="-70" />
     </lines>
   </symbol>
 
@@ -8024,6 +8025,7 @@ for the symbols.
     <text lang="fr" gender="masculin">croisement de {1}</text>
     <name lang="it">Incrocio (oggetti uguali)</name>
     <text lang="it">incrocio di {1}</text>
+    <text lang="it" plural="true">incroci di {1}</text>
     <name lang="ja">(同種の特徴物の)交点</name>
     <text lang="ja">{0}の交点</text>
     <name lang="nb-NO">Kryss</name>
@@ -8072,8 +8074,9 @@ for the symbols.
     <text lang="fi">{0} ja {1} haara</text>
     <name lang="fr">Jonction</name>
     <text lang="fr" gender="féminin">jonction entre {0} et {1}</text>
-    <name lang="it">Bivio</name>
-    <text lang="it">bivio di {0} e {1}</text>
+    <name lang="it">Raccordo</name>
+    <text lang="it">raccordo di {0} e {1}</text>
+    <text lang="it" plural="true">raccordi di {0} e {1}</text>
     <name lang="ja">分岐</name>
     <text lang="ja">{0}と{1}の分岐</text>
     <name lang="nb-NO">Dele</name>
@@ -8093,12 +8096,12 @@ for the symbols.
     <name lang="zh-HK">Junction</name>
     <text lang="zh-HK">{0}及{1}的連接處</text>
     <lines thickness="12.5">
-      <point x="55" y="70"/>
-      <point x="-55" y="-70"/>
+      <point x="55" y="70" />
+      <point x="-55" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-55" y="70"/>
-      <point x="0" y="0"/>
+      <point x="-55" y="70" />
+      <point x="0" y="0" />
     </lines>
   </symbol>
 
@@ -8131,8 +8134,9 @@ for the symbols.
     <text lang="fi" plural="true">{0} haara</text>
     <name lang="fr">Jonction (mêmes symboles)</name>
     <text lang="fr" gender="féminin">jonction de {1}</text>
-    <name lang="it">Bivio (oggetti uguali)</name>
-    <text lang="it">bivio di {1}</text>
+    <name lang="it">Raccordo (oggetti uguali)</name>
+    <text lang="it">raccordo di {1}</text>
+    <text lang="it" plural="true">raccordi di {1}</text>
     <name lang="ja">(同種の特徴物の)分岐</name>
     <text lang="ja">{0}の分岐</text>
     <name lang="nb-NO">Junction (objects of same kind)</name>
@@ -8198,16 +8202,16 @@ for the symbols.
     <name lang="zh-HK">Bend</name>
     <text lang="zh-HK">{0}彎位</text>
     <beziers thickness="12.5">
-      <point x="35" y="70"/>
-      <point x="25" y="62.22"/>
-      <point x="-15" y="31.11"/>
-      <point x="-25" y="23.33"/>
-      <point x="-45" y="7.78"/>
-      <point x="-45" y="-7.78"/>
-      <point x="-25" y="-23.33"/>
-      <point x="-15" y="-31.11"/>
-      <point x="25" y="-62.22"/>
-      <point x="35" y="-70"/>
+      <point x="35" y="70" />
+      <point x="25" y="62.22" />
+      <point x="-15" y="31.11" />
+      <point x="-25" y="23.33" />
+      <point x="-45" y="7.78" />
+      <point x="-45" y="-7.78" />
+      <point x="-25" y="-23.33" />
+      <point x="-15" y="-31.11" />
+      <point x="25" y="-62.22" />
+      <point x="35" y="-70" />
     </beziers>
   </symbol>
 
@@ -8517,10 +8521,10 @@ for the symbols.
     <name lang="zh-HK">North side</name>
     <text lang="zh-HK">{0}北面</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="-20"/>
+      <point x="0" y="-20" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="0" y="65"/>
+      <point x="0" y="65" />
     </filled-circle>
   </symbol>
 
@@ -8565,10 +8569,10 @@ for the symbols.
     <name lang="zh-HK">North-east side</name>
     <text lang="zh-HK">{0}東北面</text>
     <circle thickness="10" radius="55">
-      <point x="-14.14" y="-14.14"/>
+      <point x="-14.14" y="-14.14" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="45.96" y="45.96"/>
+      <point x="45.96" y="45.96" />
     </filled-circle>
   </symbol>
 
@@ -8613,10 +8617,10 @@ for the symbols.
     <name lang="zh-HK">East side</name>
     <text lang="zh-HK">{0}東面</text>
     <circle thickness="10" radius="55">
-      <point x="-20" y="0"/>
+      <point x="-20" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="65" y="0"/>
+      <point x="65" y="0" />
     </filled-circle>
   </symbol>
 
@@ -8661,10 +8665,10 @@ for the symbols.
     <name lang="zh-HK">South-east side</name>
     <text lang="zh-HK">{0}東南面</text>
     <circle thickness="10" radius="55">
-      <point x="-14.14" y="14.14"/>
+      <point x="-14.14" y="14.14" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="45.96" y="-45.96"/>
+      <point x="45.96" y="-45.96" />
     </filled-circle>
   </symbol>
 
@@ -8709,10 +8713,10 @@ for the symbols.
     <name lang="zh-HK">South side</name>
     <text lang="zh-HK">{0}南面</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="20"/>
+      <point x="0" y="20" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="0" y="-65"/>
+      <point x="0" y="-65" />
     </filled-circle>
   </symbol>
 
@@ -8757,10 +8761,10 @@ for the symbols.
     <name lang="zh-HK">South-west side</name>
     <text lang="zh-HK">{0}西南面</text>
     <circle thickness="10" radius="55">
-      <point x="14.14" y="14.14"/>
+      <point x="14.14" y="14.14" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="-45.96" y="-45.96"/>
+      <point x="-45.96" y="-45.96" />
     </filled-circle>
   </symbol>
 
@@ -8805,10 +8809,10 @@ for the symbols.
     <name lang="zh-HK">West side</name>
     <text lang="zh-HK">{0}西面</text>
     <circle thickness="10" radius="55">
-      <point x="20" y="0"/>
+      <point x="20" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="-65" y="0"/>
+      <point x="-65" y="0" />
     </filled-circle>
   </symbol>
 
@@ -8853,10 +8857,10 @@ for the symbols.
     <name lang="zh-HK">North-west side</name>
     <text lang="zh-HK">{0}西北面</text>
     <circle thickness="10" radius="55">
-      <point x="14.14" y="-14.14"/>
+      <point x="14.14" y="-14.14" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="-45.96" y="45.96"/>
+      <point x="-45.96" y="45.96" />
     </filled-circle>
   </symbol>
 
@@ -8901,11 +8905,11 @@ for the symbols.
     <name lang="zh-HK">North edge</name>
     <text lang="zh-HK">{0}北邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="0" y="35"/>
-      <point x="0" y="75"/>
+      <point x="0" y="35" />
+      <point x="0" y="75" />
     </lines>
   </symbol>
 
@@ -8950,11 +8954,11 @@ for the symbols.
     <name lang="zh-HK">North-east edge</name>
     <text lang="zh-HK">{0}東北邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="24.75" y="24.75"/>
-      <point x="53.03" y="53.03"/>
+      <point x="24.75" y="24.75" />
+      <point x="53.03" y="53.03" />
     </lines>
   </symbol>
 
@@ -8999,11 +9003,11 @@ for the symbols.
     <name lang="zh-HK">East edge</name>
     <text lang="zh-HK">{0}東邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="35" y="0"/>
-      <point x="75" y="0"/>
+      <point x="35" y="0" />
+      <point x="75" y="0" />
     </lines>
   </symbol>
 
@@ -9048,11 +9052,11 @@ for the symbols.
     <name lang="zh-HK">South-east edge</name>
     <text lang="zh-HK">{0}東南邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="24.75" y="-24.75"/>
-      <point x="53.03" y="-53.03"/>
+      <point x="24.75" y="-24.75" />
+      <point x="53.03" y="-53.03" />
     </lines>
   </symbol>
 
@@ -9097,11 +9101,11 @@ for the symbols.
     <name lang="zh-HK">South edge</name>
     <text lang="zh-HK">{0}南邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="0" y="-35"/>
-      <point x="0" y="-75"/>
+      <point x="0" y="-35" />
+      <point x="0" y="-75" />
     </lines>
   </symbol>
 
@@ -9146,11 +9150,11 @@ for the symbols.
     <name lang="zh-HK">South-west edge</name>
     <text lang="zh-HK">{0}西南邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-24.75" y="-24.75"/>
-      <point x="-53.03" y="-53.03"/>
+      <point x="-24.75" y="-24.75" />
+      <point x="-53.03" y="-53.03" />
     </lines>
   </symbol>
 
@@ -9195,11 +9199,11 @@ for the symbols.
     <name lang="zh-HK">West edge</name>
     <text lang="zh-HK">{0}西邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-35" y="0"/>
-      <point x="-75" y="0"/>
+      <point x="-35" y="0" />
+      <point x="-75" y="0" />
     </lines>
   </symbol>
 
@@ -9244,11 +9248,11 @@ for the symbols.
     <name lang="zh-HK">North-west edge</name>
     <text lang="zh-HK">{0}西北邊緣</text>
     <circle thickness="10" radius="55">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-24.75" y="24.75"/>
-      <point x="-53.03" y="53.03"/>
+      <point x="-24.75" y="24.75" />
+      <point x="-53.03" y="53.03" />
     </lines>
   </symbol>
 
@@ -9293,10 +9297,10 @@ for the symbols.
     <name lang="zh-HK">North part</name>
     <text lang="zh-HK">{0}北部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="0" y="35"/>
+      <point x="0" y="35" />
     </filled-circle>
   </symbol>
 
@@ -9341,10 +9345,10 @@ for the symbols.
     <name lang="zh-HK">North-east part</name>
     <text lang="zh-HK">{0}東北部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="24.75" y="24.75"/>
+      <point x="24.75" y="24.75" />
     </filled-circle>
   </symbol>
 
@@ -9389,10 +9393,10 @@ for the symbols.
     <name lang="zh-HK">East part</name>
     <text lang="zh-HK">{0}東部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="35" y="0"/>
+      <point x="35" y="0" />
     </filled-circle>
   </symbol>
 
@@ -9437,10 +9441,10 @@ for the symbols.
     <name lang="zh-HK">South-east part</name>
     <text lang="zh-HK">{0}東南部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="24.75" y="-24.75"/>
+      <point x="24.75" y="-24.75" />
     </filled-circle>
   </symbol>
 
@@ -9485,10 +9489,10 @@ for the symbols.
     <name lang="zh-HK">South part</name>
     <text lang="zh-HK">{0}南部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="0" y="-35"/>
+      <point x="0" y="-35" />
     </filled-circle>
   </symbol>
 
@@ -9533,10 +9537,10 @@ for the symbols.
     <name lang="zh-HK">South-west part</name>
     <text lang="zh-HK">{0}西南部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="-24.75" y="-24.75"/>
+      <point x="-24.75" y="-24.75" />
     </filled-circle>
   </symbol>
 
@@ -9581,10 +9585,10 @@ for the symbols.
     <name lang="zh-HK">West part</name>
     <text lang="zh-HK">{0}西部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="-35" y="0"/>
+      <point x="-35" y="0" />
     </filled-circle>
   </symbol>
 
@@ -9629,10 +9633,10 @@ for the symbols.
     <name lang="zh-HK">North-west part</name>
     <text lang="zh-HK">{0}西北部</text>
     <circle thickness="10" radius="65">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </circle>
     <filled-circle radius="12.5">
-      <point x="-24.75" y="24.75"/>
+      <point x="-24.75" y="24.75" />
     </filled-circle>
   </symbol>
 
@@ -9677,12 +9681,12 @@ for the symbols.
     <name lang="zh-HK">North corner (inside)</name>
     <text lang="zh-HK">{0}北內角</text>
     <filled-circle radius="12.5">
-      <point x="0" y="12.5"/>
+      <point x="0" y="12.5" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-65" y="-15"/>
-      <point x="0" y="50"/>
-      <point x="65" y="-15"/>
+      <point x="-65" y="-15" />
+      <point x="0" y="50" />
+      <point x="65" y="-15" />
     </lines>
   </symbol>
 
@@ -9727,12 +9731,12 @@ for the symbols.
     <name lang="zh-HK">North-east corner (inside)</name>
     <text lang="zh-HK">{0}東北內角</text>
     <filled-circle radius="12.5">
-      <point x="8.84" y="8.84"/>
+      <point x="8.84" y="8.84" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-56.57" y="35.36"/>
-      <point x="35.36" y="35.36"/>
-      <point x="35.36" y="-56.57"/>
+      <point x="-56.57" y="35.36" />
+      <point x="35.36" y="35.36" />
+      <point x="35.36" y="-56.57" />
     </lines>
   </symbol>
 
@@ -9777,12 +9781,12 @@ for the symbols.
     <name lang="zh-HK">East corner (inside)</name>
     <text lang="zh-HK">{0}東內角</text>
     <filled-circle radius="12.5">
-      <point x="12.5" y="0"/>
+      <point x="12.5" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-15" y="-65"/>
-      <point x="50" y="0"/>
-      <point x="-15" y="65"/>
+      <point x="-15" y="-65" />
+      <point x="50" y="0" />
+      <point x="-15" y="65" />
     </lines>
   </symbol>
 
@@ -9827,12 +9831,12 @@ for the symbols.
     <name lang="zh-HK">South-east corner (inside)</name>
     <text lang="zh-HK">{0}東南內角</text>
     <filled-circle radius="12.5">
-      <point x="8.84" y="-8.84"/>
+      <point x="8.84" y="-8.84" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-56.57" y="-35.36"/>
-      <point x="35.36" y="-35.36"/>
-      <point x="35.36" y="56.57"/>
+      <point x="-56.57" y="-35.36" />
+      <point x="35.36" y="-35.36" />
+      <point x="35.36" y="56.57" />
     </lines>
   </symbol>
 
@@ -9877,12 +9881,12 @@ for the symbols.
     <name lang="zh-HK">South corner (inside)</name>
     <text lang="zh-HK">{0}南內角</text>
     <filled-circle radius="12.5">
-      <point x="0" y="-12.5"/>
+      <point x="0" y="-12.5" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-65" y="15"/>
-      <point x="0" y="-50"/>
-      <point x="65" y="15"/>
+      <point x="-65" y="15" />
+      <point x="0" y="-50" />
+      <point x="65" y="15" />
     </lines>
   </symbol>
 
@@ -9927,12 +9931,12 @@ for the symbols.
     <name lang="zh-HK">South-west corner (inside)</name>
     <text lang="zh-HK">{0}西南內角</text>
     <filled-circle radius="12.5">
-      <point x="-8.84" y="-8.84"/>
+      <point x="-8.84" y="-8.84" />
     </filled-circle>
     <lines thickness="10">
-      <point x="56.57" y="-35.36"/>
-      <point x="-35.36" y="-35.36"/>
-      <point x="-35.36" y="56.57"/>
+      <point x="56.57" y="-35.36" />
+      <point x="-35.36" y="-35.36" />
+      <point x="-35.36" y="56.57" />
     </lines>
   </symbol>
 
@@ -9977,12 +9981,12 @@ for the symbols.
     <name lang="zh-HK">West corner (inside)</name>
     <text lang="zh-HK">{0}西內角</text>
     <filled-circle radius="12.5">
-      <point x="-12.5" y="0"/>
+      <point x="-12.5" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="15" y="-65"/>
-      <point x="-50" y="0"/>
-      <point x="15" y="65"/>
+      <point x="15" y="-65" />
+      <point x="-50" y="0" />
+      <point x="15" y="65" />
     </lines>
   </symbol>
 
@@ -10027,12 +10031,12 @@ for the symbols.
     <name lang="zh-HK">North-west corner (inside)</name>
     <text lang="zh-HK">{0}西北內角</text>
     <filled-circle radius="12.5">
-      <point x="-8.84" y="8.84"/>
+      <point x="-8.84" y="8.84" />
     </filled-circle>
     <lines thickness="10">
-      <point x="56.57" y="35.36"/>
-      <point x="-35.36" y="35.36"/>
-      <point x="-35.36" y="-56.57"/>
+      <point x="56.57" y="35.36" />
+      <point x="-35.36" y="35.36" />
+      <point x="-35.36" y="-56.57" />
     </lines>
   </symbol>
 
@@ -10077,12 +10081,12 @@ for the symbols.
     <name lang="zh-HK">North corner (outside)</name>
     <text lang="zh-HK">{0}北外角</text>
     <filled-circle radius="12.5">
-      <point x="0" y="55"/>
+      <point x="0" y="55" />
     </filled-circle>
     <lines thickness="10">
-      <point x="65" y="-40"/>
-      <point x="0" y="25"/>
-      <point x="-65" y="-40"/>
+      <point x="65" y="-40" />
+      <point x="0" y="25" />
+      <point x="-65" y="-40" />
     </lines>
   </symbol>
 
@@ -10127,12 +10131,12 @@ for the symbols.
     <name lang="zh-HK">North-east corner (outside)</name>
     <text lang="zh-HK">{0}東北外角</text>
     <filled-circle radius="12.5">
-      <point x="43.89" y="43.89"/>
+      <point x="43.89" y="43.89" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-69.25" y="22.68"/>
-      <point x="22.68" y="22.68"/>
-      <point x="22.68" y="-69.25"/>
+      <point x="-69.25" y="22.68" />
+      <point x="22.68" y="22.68" />
+      <point x="22.68" y="-69.25" />
     </lines>
   </symbol>
 
@@ -10177,12 +10181,12 @@ for the symbols.
     <name lang="zh-HK">East corner (outside)</name>
     <text lang="zh-HK">{0}東外角</text>
     <filled-circle radius="12.5">
-      <point x="55" y="0"/>
+      <point x="55" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-40" y="-65"/>
-      <point x="25" y="0"/>
-      <point x="-40" y="65"/>
+      <point x="-40" y="-65" />
+      <point x="25" y="0" />
+      <point x="-40" y="65" />
     </lines>
   </symbol>
 
@@ -10227,12 +10231,12 @@ for the symbols.
     <name lang="zh-HK">South-east corner (outside)</name>
     <text lang="zh-HK">{0}東南外角</text>
     <filled-circle radius="12.5">
-      <point x="43.89" y="-43.89"/>
+      <point x="43.89" y="-43.89" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-69.25" y="-22.68"/>
-      <point x="22.68" y="-22.68"/>
-      <point x="22.68" y="69.25"/>
+      <point x="-69.25" y="-22.68" />
+      <point x="22.68" y="-22.68" />
+      <point x="22.68" y="69.25" />
     </lines>
   </symbol>
 
@@ -10277,12 +10281,12 @@ for the symbols.
     <name lang="zh-HK">South corner (outside)</name>
     <text lang="zh-HK">{0}南外角</text>
     <filled-circle radius="12.5">
-      <point x="0" y="-55"/>
+      <point x="0" y="-55" />
     </filled-circle>
     <lines thickness="10">
-      <point x="65" y="40"/>
-      <point x="0" y="-25"/>
-      <point x="-65" y="40"/>
+      <point x="65" y="40" />
+      <point x="0" y="-25" />
+      <point x="-65" y="40" />
     </lines>
   </symbol>
 
@@ -10327,12 +10331,12 @@ for the symbols.
     <name lang="zh-HK">South-west corner (outside)</name>
     <text lang="zh-HK">{0}西南外角</text>
     <filled-circle radius="12.5">
-      <point x="-43.89" y="-43.89"/>
+      <point x="-43.89" y="-43.89" />
     </filled-circle>
     <lines thickness="10">
-      <point x="69.25" y="-22.68"/>
-      <point x="-22.68" y="-22.68"/>
-      <point x="-22.68" y="69.25"/>
+      <point x="69.25" y="-22.68" />
+      <point x="-22.68" y="-22.68" />
+      <point x="-22.68" y="69.25" />
     </lines>
   </symbol>
 
@@ -10377,12 +10381,12 @@ for the symbols.
     <name lang="zh-HK">West corner (outside)</name>
     <text lang="zh-HK">{0}西外角</text>
     <filled-circle radius="12.5">
-      <point x="-55" y="0"/>
+      <point x="-55" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="40" y="-65"/>
-      <point x="-25" y="0"/>
-      <point x="40" y="65"/>
+      <point x="40" y="-65" />
+      <point x="-25" y="0" />
+      <point x="40" y="65" />
     </lines>
   </symbol>
 
@@ -10427,12 +10431,12 @@ for the symbols.
     <name lang="zh-HK">North-west corner (outside)</name>
     <text lang="zh-HK">{0}西北外角</text>
     <filled-circle radius="12.5">
-      <point x="-43.89" y="43.89"/>
+      <point x="-43.89" y="43.89" />
     </filled-circle>
     <lines thickness="10">
-      <point x="69.25" y="22.68"/>
-      <point x="-22.68" y="22.68"/>
-      <point x="-22.68" y="-69.25"/>
+      <point x="69.25" y="22.68" />
+      <point x="-22.68" y="22.68" />
+      <point x="-22.68" y="-69.25" />
     </lines>
   </symbol>
 
@@ -10477,12 +10481,12 @@ for the symbols.
     <name lang="zh-HK">North tip</name>
     <text lang="zh-HK">{0}北端</text>
     <filled-circle radius="12.5">
-      <point x="0" y="60"/>
+      <point x="0" y="60" />
     </filled-circle>
     <lines thickness="10">
-      <point x="30" y="-65"/>
-      <point x="0" y="30"/>
-      <point x="-30" y="-65"/>
+      <point x="30" y="-65" />
+      <point x="0" y="30" />
+      <point x="-30" y="-65" />
     </lines>
   </symbol>
 
@@ -10527,12 +10531,12 @@ for the symbols.
     <name lang="zh-HK">North-east tip</name>
     <text lang="zh-HK">{0}東北端</text>
     <filled-circle radius="12.5">
-      <point x="42.43" y="42.43"/>
+      <point x="42.43" y="42.43" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-67.18" y="-24.75"/>
-      <point x="21.21" y="21.21"/>
-      <point x="-24.75" y="-67.18"/>
+      <point x="-67.18" y="-24.75" />
+      <point x="21.21" y="21.21" />
+      <point x="-24.75" y="-67.18" />
     </lines>
   </symbol>
 
@@ -10577,12 +10581,12 @@ for the symbols.
     <name lang="zh-HK">East tip</name>
     <text lang="zh-HK">{0}東端</text>
     <filled-circle radius="12.5">
-      <point x="60" y="0"/>
+      <point x="60" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-65" y="30"/>
-      <point x="30" y="0"/>
-      <point x="-65" y="-30"/>
+      <point x="-65" y="30" />
+      <point x="30" y="0" />
+      <point x="-65" y="-30" />
     </lines>
   </symbol>
 
@@ -10627,12 +10631,12 @@ for the symbols.
     <name lang="zh-HK">South-east tip</name>
     <text lang="zh-HK">{0}東南端</text>
     <filled-circle radius="12.5">
-      <point x="42.43" y="-42.43"/>
+      <point x="42.43" y="-42.43" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-67.18" y="24.75"/>
-      <point x="21.21" y="-21.21"/>
-      <point x="-24.75" y="67.18"/>
+      <point x="-67.18" y="24.75" />
+      <point x="21.21" y="-21.21" />
+      <point x="-24.75" y="67.18" />
     </lines>
   </symbol>
 
@@ -10677,12 +10681,12 @@ for the symbols.
     <name lang="zh-HK">South tip</name>
     <text lang="zh-HK">{0}南端</text>
     <filled-circle radius="12.5">
-      <point x="0" y="-60"/>
+      <point x="0" y="-60" />
     </filled-circle>
     <lines thickness="10">
-      <point x="30" y="65"/>
-      <point x="0" y="-30"/>
-      <point x="-30" y="65"/>
+      <point x="30" y="65" />
+      <point x="0" y="-30" />
+      <point x="-30" y="65" />
     </lines>
   </symbol>
 
@@ -10727,12 +10731,12 @@ for the symbols.
     <name lang="zh-HK">South-west tip</name>
     <text lang="zh-HK">{0}西南端</text>
     <filled-circle radius="12.5">
-      <point x="-42.43" y="-42.43"/>
+      <point x="-42.43" y="-42.43" />
     </filled-circle>
     <lines thickness="10">
-      <point x="67.18" y="24.75"/>
-      <point x="-21.21" y="-21.21"/>
-      <point x="24.75" y="67.18"/>
+      <point x="67.18" y="24.75" />
+      <point x="-21.21" y="-21.21" />
+      <point x="24.75" y="67.18" />
     </lines>
   </symbol>
 
@@ -10777,12 +10781,12 @@ for the symbols.
     <name lang="zh-HK">West tip</name>
     <text lang="zh-HK">{0}西端</text>
     <filled-circle radius="12.5">
-      <point x="-60" y="0"/>
+      <point x="-60" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="65" y="30"/>
-      <point x="-30" y="0"/>
-      <point x="65" y="-30"/>
+      <point x="65" y="30" />
+      <point x="-30" y="0" />
+      <point x="65" y="-30" />
     </lines>
   </symbol>
 
@@ -10827,12 +10831,12 @@ for the symbols.
     <name lang="zh-HK">North-west tip</name>
     <text lang="zh-HK">{0}西北端</text>
     <filled-circle radius="12.5">
-      <point x="-42.43" y="42.43"/>
+      <point x="-42.43" y="42.43" />
     </filled-circle>
     <lines thickness="10">
-      <point x="67.18" y="-24.75"/>
-      <point x="-21.21" y="21.21"/>
-      <point x="24.75" y="-67.18"/>
+      <point x="67.18" y="-24.75" />
+      <point x="-21.21" y="21.21" />
+      <point x="24.75" y="-67.18" />
     </lines>
   </symbol>
 
@@ -10877,12 +10881,12 @@ for the symbols.
     <name lang="zh-HK">North end</name>
     <text lang="zh-HK">{0}北盡頭</text>
     <lines thickness="10">
-      <point x="0" y="-65"/>
-      <point x="0" y="65"/>
+      <point x="0" y="-65" />
+      <point x="0" y="65" />
     </lines>
     <lines thickness="10">
-      <point x="-25" y="65"/>
-      <point x="25" y="65"/>
+      <point x="-25" y="65" />
+      <point x="25" y="65" />
     </lines>
   </symbol>
 
@@ -10927,12 +10931,12 @@ for the symbols.
     <name lang="zh-HK">North-east end</name>
     <text lang="zh-HK">{0}東北盡頭</text>
     <lines thickness="10">
-      <point x="-45.96" y="-45.96"/>
-      <point x="45.96" y="45.96"/>
+      <point x="-45.96" y="-45.96" />
+      <point x="45.96" y="45.96" />
     </lines>
     <lines thickness="10">
-      <point x="28.28" y="63.64"/>
-      <point x="63.64" y="28.28"/>
+      <point x="28.28" y="63.64" />
+      <point x="63.64" y="28.28" />
     </lines>
   </symbol>
 
@@ -10977,12 +10981,12 @@ for the symbols.
     <name lang="zh-HK">East end</name>
     <text lang="zh-HK">{0}東盡頭</text>
     <lines thickness="10">
-      <point x="-65" y="0"/>
-      <point x="65" y="0"/>
+      <point x="-65" y="0" />
+      <point x="65" y="0" />
     </lines>
     <lines thickness="10">
-      <point x="65" y="-25"/>
-      <point x="65" y="25"/>
+      <point x="65" y="-25" />
+      <point x="65" y="25" />
     </lines>
   </symbol>
 
@@ -11027,12 +11031,12 @@ for the symbols.
     <name lang="zh-HK">South-east end</name>
     <text lang="zh-HK">{0}東南盡頭</text>
     <lines thickness="10">
-      <point x="-45.96" y="45.96"/>
-      <point x="45.96" y="-45.96"/>
+      <point x="-45.96" y="45.96" />
+      <point x="45.96" y="-45.96" />
     </lines>
     <lines thickness="10">
-      <point x="28.28" y="-63.64"/>
-      <point x="63.64" y="-28.28"/>
+      <point x="28.28" y="-63.64" />
+      <point x="63.64" y="-28.28" />
     </lines>
   </symbol>
 
@@ -11077,12 +11081,12 @@ for the symbols.
     <name lang="zh-HK">South end</name>
     <text lang="zh-HK">{0}南盡頭</text>
     <lines thickness="10">
-      <point x="0" y="-65"/>
-      <point x="0" y="65"/>
+      <point x="0" y="-65" />
+      <point x="0" y="65" />
     </lines>
     <lines thickness="10">
-      <point x="-25" y="-65"/>
-      <point x="25" y="-65"/>
+      <point x="-25" y="-65" />
+      <point x="25" y="-65" />
     </lines>
   </symbol>
 
@@ -11127,12 +11131,12 @@ for the symbols.
     <name lang="zh-HK">South-west end</name>
     <text lang="zh-HK">{0}西南盡頭</text>
     <lines thickness="10">
-      <point x="45.96" y="45.96"/>
-      <point x="-45.96" y="-45.96"/>
+      <point x="45.96" y="45.96" />
+      <point x="-45.96" y="-45.96" />
     </lines>
     <lines thickness="10">
-      <point x="-28.28" y="-63.64"/>
-      <point x="-63.64" y="-28.28"/>
+      <point x="-28.28" y="-63.64" />
+      <point x="-63.64" y="-28.28" />
     </lines>
   </symbol>
 
@@ -11177,12 +11181,12 @@ for the symbols.
     <name lang="zh-HK">West end</name>
     <text lang="zh-HK">{0}西盡頭</text>
     <lines thickness="10">
-      <point x="-65" y="0"/>
-      <point x="65" y="0"/>
+      <point x="-65" y="0" />
+      <point x="65" y="0" />
     </lines>
     <lines thickness="10">
-      <point x="-65" y="-25"/>
-      <point x="-65" y="25"/>
+      <point x="-65" y="-25" />
+      <point x="-65" y="25" />
     </lines>
   </symbol>
 
@@ -11227,12 +11231,12 @@ for the symbols.
     <name lang="zh-HK">North-west end</name>
     <text lang="zh-HK">{0}西北盡頭</text>
     <lines thickness="10">
-      <point x="45.96" y="-45.96"/>
-      <point x="-45.96" y="45.96"/>
+      <point x="45.96" y="-45.96" />
+      <point x="-45.96" y="45.96" />
     </lines>
     <lines thickness="10">
-      <point x="-28.28" y="63.64"/>
-      <point x="-63.64" y="28.28"/>
+      <point x="-28.28" y="63.64" />
+      <point x="-63.64" y="28.28" />
     </lines>
   </symbol>
 
@@ -11277,12 +11281,12 @@ for the symbols.
     <name lang="zh-HK">North foot</name>
     <text lang="zh-HK">{0}北面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="0" y="-30"/>
+      <point x="0" y="-30" />
     </circle>
     <lines thickness="10">
-      <point x="-10" y="80"/>
-      <point x="-10" y="40"/>
-      <point x="15" y="40"/>
+      <point x="-10" y="80" />
+      <point x="-10" y="40" />
+      <point x="15" y="40" />
     </lines>
   </symbol>
 
@@ -11327,12 +11331,12 @@ for the symbols.
     <name lang="zh-HK">North-east foot</name>
     <text lang="zh-HK">{0}東北面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="-20" y="-20"/>
+      <point x="-20" y="-20" />
     </circle>
     <lines thickness="10">
-      <point x="40" y="70"/>
-      <point x="40" y="30"/>
-      <point x="65" y="30"/>
+      <point x="40" y="70" />
+      <point x="40" y="30" />
+      <point x="65" y="30" />
     </lines>
   </symbol>
 
@@ -11377,12 +11381,12 @@ for the symbols.
     <name lang="zh-HK">East foot</name>
     <text lang="zh-HK">{0}東面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="-25" y="0"/>
+      <point x="-25" y="0" />
     </circle>
     <lines thickness="10">
-      <point x="50" y="20"/>
-      <point x="50" y="-20"/>
-      <point x="75" y="-20"/>
+      <point x="50" y="20" />
+      <point x="50" y="-20" />
+      <point x="75" y="-20" />
     </lines>
   </symbol>
 
@@ -11427,12 +11431,12 @@ for the symbols.
     <name lang="zh-HK">South-east foot</name>
     <text lang="zh-HK">{0}東南面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="-20" y="20"/>
+      <point x="-20" y="20" />
     </circle>
     <lines thickness="10">
-      <point x="40" y="-30"/>
-      <point x="40" y="-70"/>
-      <point x="65" y="-70"/>
+      <point x="40" y="-30" />
+      <point x="40" y="-70" />
+      <point x="65" y="-70" />
     </lines>
   </symbol>
 
@@ -11477,12 +11481,12 @@ for the symbols.
     <name lang="zh-HK">South foot</name>
     <text lang="zh-HK">{0}南面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="0" y="30"/>
+      <point x="0" y="30" />
     </circle>
     <lines thickness="10">
-      <point x="-10" y="-40"/>
-      <point x="-10" y="-80"/>
-      <point x="15" y="-80"/>
+      <point x="-10" y="-40" />
+      <point x="-10" y="-80" />
+      <point x="15" y="-80" />
     </lines>
   </symbol>
 
@@ -11527,12 +11531,12 @@ for the symbols.
     <name lang="zh-HK">South-west foot</name>
     <text lang="zh-HK">{0}西南面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="20" y="20"/>
+      <point x="20" y="20" />
     </circle>
     <lines thickness="10">
-      <point x="-65" y="-30"/>
-      <point x="-65" y="-70"/>
-      <point x="-40" y="-70"/>
+      <point x="-65" y="-30" />
+      <point x="-65" y="-70" />
+      <point x="-40" y="-70" />
     </lines>
   </symbol>
 
@@ -11577,12 +11581,12 @@ for the symbols.
     <name lang="zh-HK">West foot</name>
     <text lang="zh-HK">{0}西面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="25" y="0"/>
+      <point x="25" y="0" />
     </circle>
     <lines thickness="10">
-      <point x="-75" y="20"/>
-      <point x="-75" y="-20"/>
-      <point x="-50" y="-20"/>
+      <point x="-75" y="20" />
+      <point x="-75" y="-20" />
+      <point x="-50" y="-20" />
     </lines>
   </symbol>
 
@@ -11627,12 +11631,12 @@ for the symbols.
     <name lang="zh-HK">North-west foot</name>
     <text lang="zh-HK">{0}西北面腳下</text>
     <circle thickness="10" radius="50">
-      <point x="20" y="-20"/>
+      <point x="20" y="-20" />
     </circle>
     <lines thickness="10">
-      <point x="-65" y="70"/>
-      <point x="-65" y="30"/>
-      <point x="-40" y="30"/>
+      <point x="-65" y="70" />
+      <point x="-65" y="30" />
+      <point x="-40" y="30" />
     </lines>
   </symbol>
 
@@ -11680,16 +11684,16 @@ for the symbols.
     <name lang="zh-HK">Bend</name>
     <text lang="zh-HK">{0}彎位</text>
     <beziers thickness="10">
-      <point x="35" y="70"/>
-      <point x="25" y="62.22"/>
-      <point x="-15" y="31.11"/>
-      <point x="-25" y="23.33"/>
-      <point x="-45" y="7.78"/>
-      <point x="-45" y="-7.78"/>
-      <point x="-25" y="-23.33"/>
-      <point x="-15" y="-31.11"/>
-      <point x="25" y="-62.22"/>
-      <point x="35" y="-70"/>
+      <point x="35" y="70" />
+      <point x="25" y="62.22" />
+      <point x="-15" y="31.11" />
+      <point x="-25" y="23.33" />
+      <point x="-45" y="7.78" />
+      <point x="-45" y="-7.78" />
+      <point x="-25" y="-23.33" />
+      <point x="-15" y="-31.11" />
+      <point x="25" y="-62.22" />
+      <point x="35" y="-70" />
     </beziers>
   </symbol>
 
@@ -11734,15 +11738,15 @@ for the symbols.
     <name lang="zh-HK">Upper part</name>
     <text lang="zh-HK">{0}上部</text>
     <filled-circle radius="12.5">
-      <point x="0" y="52.5"/>
+      <point x="0" y="52.5" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-30" y="60"/>
-      <point x="-30" y="-60"/>
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
     </lines>
     <lines thickness="10">
-      <point x="30" y="60"/>
-      <point x="30" y="-60"/>
+      <point x="30" y="60" />
+      <point x="30" y="-60" />
     </lines>
   </symbol>
 
@@ -11787,15 +11791,15 @@ for the symbols.
     <name lang="zh-HK">Lower part</name>
     <text lang="zh-HK">{0}下部</text>
     <filled-circle radius="12.5">
-      <point x="0" y="-52.5"/>
+      <point x="0" y="-52.5" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-30" y="60"/>
-      <point x="-30" y="-60"/>
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
     </lines>
     <lines thickness="10">
-      <point x="30" y="60"/>
-      <point x="30" y="-60"/>
+      <point x="30" y="60" />
+      <point x="30" y="-60" />
     </lines>
   </symbol>
 
@@ -11840,13 +11844,13 @@ for the symbols.
     <name lang="zh-HK">Top</name>
     <text lang="zh-HK">{0}頂部</text>
     <filled-circle radius="12.5">
-      <point x="0" y="52.5"/>
+      <point x="0" y="52.5" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-28" y="-60"/>
-      <point x="-28" y="25"/>
-      <point x="28" y="25"/>
-      <point x="28" y="-60"/>
+      <point x="-28" y="-60" />
+      <point x="-28" y="25" />
+      <point x="28" y="25" />
+      <point x="28" y="-60" />
     </lines>
   </symbol>
 
@@ -11894,13 +11898,13 @@ for the symbols.
     <name lang="zh-HK">Beneath</name>
     <text lang="zh-HK">{0}底下</text>
     <filled-circle radius="12.5">
-      <point x="0" y="-22.5"/>
+      <point x="0" y="-22.5" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-50" y="-30"/>
-      <point x="-50" y="30"/>
-      <point x="50" y="30"/>
-      <point x="50" y="-30"/>
+      <point x="-50" y="-30" />
+      <point x="-50" y="30" />
+      <point x="50" y="30" />
+      <point x="50" y="-30" />
     </lines>
   </symbol>
 
@@ -11948,12 +11952,12 @@ for the symbols.
     <name lang="zh-HK">Foot</name>
     <text lang="zh-HK">{0}腳下</text>
     <filled-circle radius="12.5">
-      <point x="0" y="-30"/>
+      <point x="0" y="-30" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-30" y="60"/>
-      <point x="-30" y="-60"/>
-      <point x="30" y="-60"/>
+      <point x="-30" y="60" />
+      <point x="-30" y="-60" />
+      <point x="30" y="-60" />
     </lines>
   </symbol>
 
@@ -12010,15 +12014,15 @@ for the symbols.
     <name lang="zh-HK">Between</name>
     <text lang="zh-HK">{0}及{1}之間</text>
     <filled-circle radius="12.5">
-      <point x="0" y="0"/>
+      <point x="0" y="0" />
     </filled-circle>
     <lines thickness="10">
-      <point x="-60" y="40"/>
-      <point x="60" y="40"/>
+      <point x="-60" y="40" />
+      <point x="60" y="40" />
     </lines>
     <lines thickness="10">
-      <point x="-60" y="-40"/>
-      <point x="60" y="-40"/>
+      <point x="-60" y="-40" />
+      <point x="60" y="-40" />
     </lines>
   </symbol>
 
@@ -12105,18 +12109,18 @@ for the symbols.
     <name lang="zh-HK">First aid post</name>
     <text lang="zh-HK">急救站</text>
     <filled-polygon>
-      <point x="-20" y="60"/>
-      <point x="20" y="60"/>
-      <point x="20" y="20"/>
-      <point x="60" y="20"/>
-      <point x="60" y="-20"/>
-      <point x="20" y="-20"/>
-      <point x="20" y="-60"/>
-      <point x="-20" y="-60"/>
-      <point x="-20" y="-20"/>
-      <point x="-60" y="-20"/>
-      <point x="-60" y="20"/>
-      <point x="-20" y="20"/>
+      <point x="-20" y="60" />
+      <point x="20" y="60" />
+      <point x="20" y="20" />
+      <point x="60" y="20" />
+      <point x="60" y="-20" />
+      <point x="20" y="-20" />
+      <point x="20" y="-60" />
+      <point x="-20" y="-60" />
+      <point x="-20" y="-20" />
+      <point x="-60" y="-20" />
+      <point x="-60" y="20" />
+      <point x="-20" y="20" />
     </filled-polygon>
   </symbol>
 
@@ -12160,36 +12164,36 @@ for the symbols.
     <name lang="zh-HK">Refreshment point</name>
     <text lang="zh-HK">水站</text>
     <beziers thickness="12.5">
-      <point x="60" y="55"/>
-      <point x="60" y="63.3"/>
-      <point x="33.1" y="70"/>
-      <point x="0" y="70"/>
-      <point x="-33.1" y="70"/>
-      <point x="-60" y="63.3"/>
-      <point x="-60" y="55"/>
-      <point x="-60" y="46.7"/>
-      <point x="-33.1" y="40"/>
-      <point x="0" y="40"/>
-      <point x="33.1" y="40"/>
-      <point x="60" y="46.7"/>
-      <point x="60" y="55"/>
+      <point x="60" y="55" />
+      <point x="60" y="63.3" />
+      <point x="33.1" y="70" />
+      <point x="0" y="70" />
+      <point x="-33.1" y="70" />
+      <point x="-60" y="63.3" />
+      <point x="-60" y="55" />
+      <point x="-60" y="46.7" />
+      <point x="-33.1" y="40" />
+      <point x="0" y="40" />
+      <point x="33.1" y="40" />
+      <point x="60" y="46.7" />
+      <point x="60" y="55" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="40" y="-60"/>
-      <point x="40" y="-65.5"/>
-      <point x="22.05" y="-70"/>
-      <point x="0" y="-70"/>
-      <point x="-22.05" y="-70"/>
-      <point x="-40" y="-65.5"/>
-      <point x="-40" y="-60"/>
+      <point x="40" y="-60" />
+      <point x="40" y="-65.5" />
+      <point x="22.05" y="-70" />
+      <point x="0" y="-70" />
+      <point x="-22.05" y="-70" />
+      <point x="-40" y="-65.5" />
+      <point x="-40" y="-60" />
     </beziers>
     <lines thickness="12.5">
-      <point x="60" y="55"/>
-      <point x="40" y="-60"/>
+      <point x="60" y="55" />
+      <point x="40" y="-60" />
     </lines>
     <lines thickness="12.5">
-      <point x="-60" y="55"/>
-      <point x="-40" y="-60"/>
+      <point x="-60" y="55" />
+      <point x="-40" y="-60" />
     </lines>
   </symbol>
 
@@ -12233,10 +12237,10 @@ for the symbols.
     <name lang="zh-HK">Radio or TV control</name>
     <text lang="zh-HK">無線電控制點</text>
     <lines thickness="12.5">
-      <point x="40" y="70"/>
-      <point x="-30" y="0"/>
-      <point x="30" y="0"/>
-      <point x="-40" y="-70"/>
+      <point x="40" y="70" />
+      <point x="-30" y="0" />
+      <point x="30" y="0" />
+      <point x="-40" y="-70" />
     </lines>
   </symbol>
 
@@ -12280,21 +12284,21 @@ for the symbols.
     <name lang="zh-HK">Control check</name>
     <text lang="zh-HK">有工作人員檢查</text>
     <filled-circle radius="20">
-      <point x="0" y="53"/>
+      <point x="0" y="53" />
     </filled-circle>
     <lines thickness="12.5">
-      <point x="-35" y="-70"/>
-      <point x="0" y="-20"/>
-      <point x="35" y="-70"/>
+      <point x="-35" y="-70" />
+      <point x="0" y="-20" />
+      <point x="35" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-35" y="0"/>
-      <point x="0" y="20"/>
-      <point x="35" y="0"/>
+      <point x="-35" y="0" />
+      <point x="0" y="20" />
+      <point x="35" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="0" y="-20"/>
-      <point x="0" y="50"/>
+      <point x="0" y="-20" />
+      <point x="0" y="50" />
     </lines>
   </symbol>
 
@@ -12341,36 +12345,36 @@ for the symbols.
     <name lang="zh-HK">Taped route away from control</name>
     <text lang="zh-HK">隨 {0} 索帶離開控制點</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-625" y="0"/>
-      <point x="-510" y="0"/>
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
   </symbol>
 
@@ -12414,39 +12418,39 @@ for the symbols.
     <name lang="zh-HK">Taped route between controls</name>
     <text lang="zh-HK">隨 {0} 索帶前往下一個控制點</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <circle thickness="10" radius="70">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-625" y="0"/>
-      <point x="-510" y="0"/>
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
   </symbol>
 
@@ -12491,32 +12495,32 @@ for the symbols.
     <name lang="zh-HK">Mandatory crossing point or points</name>
     <text lang="zh-HK">強制橫越點</text>
     <beziers thickness="12.5">
-      <point x="-150" y="70"/>
-      <point x="-80" y="0"/>
-      <point x="80" y="0"/>
-      <point x="150" y="70"/>
+      <point x="-150" y="70" />
+      <point x="-80" y="0" />
+      <point x="80" y="0" />
+      <point x="150" y="70" />
     </beziers>
     <beziers thickness="12.5">
-      <point x="-150" y="-70"/>
-      <point x="-80" y="0"/>
-      <point x="80" y="0"/>
-      <point x="150" y="-70"/>
+      <point x="-150" y="-70" />
+      <point x="-80" y="0" />
+      <point x="80" y="0" />
+      <point x="150" y="-70" />
     </beziers>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <circle thickness="10" radius="70">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-555" y="70"/>
-      <point x="-625" y="0"/>
-      <point x="-555" y="-70"/>
+      <point x="-555" y="70" />
+      <point x="-625" y="0" />
+      <point x="-555" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
   </symbol>
 
@@ -12560,32 +12564,32 @@ for the symbols.
     <name lang="zh-HK">Mandatory passage</name>
     <text lang="zh-HK">強制通道</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <circle thickness="10" radius="70">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-555" y="70"/>
-      <point x="-625" y="0"/>
-      <point x="-555" y="-70"/>
+      <point x="-555" y="70" />
+      <point x="-625" y="0" />
+      <point x="-555" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-300" y="70"/>
-      <point x="-250" y="20"/>
-      <point x="250" y="20"/>
-      <point x="300" y="70"/>
+      <point x="-300" y="70" />
+      <point x="-250" y="20" />
+      <point x="250" y="20" />
+      <point x="300" y="70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-300" y="-70"/>
-      <point x="-250" y="-20"/>
-      <point x="250" y="-20"/>
-      <point x="300" y="-70"/>
+      <point x="-300" y="-70" />
+      <point x="-250" y="-20" />
+      <point x="250" y="-20" />
+      <point x="300" y="-70" />
     </lines>
   </symbol>
 
@@ -12633,41 +12637,41 @@ for the symbols.
     <name lang="zh-HK">Map exchange</name>
     <text lang="zh-HK">隨 {0} 索帶前往換圖處</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-625" y="0"/>
-      <point x="-510" y="0"/>
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
     <polygon thickness="10">
-      <point x="700" y="70"/>
-      <point x="760.6" y="-35"/>
-      <point x="639.4" y="-35"/>
+      <point x="700" y="70" />
+      <point x="760.6" y="-35" />
+      <point x="639.4" y="-35" />
     </polygon>
   </symbol>
 
@@ -12694,47 +12698,47 @@ for the symbols.
     <name lang="zh-HK">Map exchange at a control</name>
     <text lang="zh-HK">在控制點換圖</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-625" y="0"/>
-      <point x="-510" y="0"/>
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
     <polygon thickness="10">
-      <point x="700" y="70"/>
-      <point x="760.6" y="-35"/>
-      <point x="639.4" y="-35"/>
+      <point x="700" y="70" />
+      <point x="760.6" y="-35" />
+      <point x="639.4" y="-35" />
     </polygon>
   </symbol>
 
 
   <!-- Used for a map flip at a control. Introduced in Descriptions 2024 standard -->
-  <symbol kind="Y" id="15.6" standard="2018" >
+  <symbol kind="Y" id="15.6" standard="2018">
     <name lang="en">Map flip</name>
     <text lang="en">Flip map over</text>
 
@@ -12746,28 +12750,28 @@ for the symbols.
     </polygon>
 
     <filled-polygon>
-      <point x="125" y="58"/>
-      <point x="125" y="-6"/>
-      <point x="45" y="26"/>
+      <point x="125" y="58" />
+      <point x="125" y="-6" />
+      <point x="45" y="26" />
     </filled-polygon>
 
     <filled-beziers>
-      <point x="120" y="42"/>
-      <point x="120" y="32"/>
-      <point x="120" y="20"/>
-      <point x="120" y="10"/>
-      <point x="140" y="10"/>
-      <point x="190" y="3"/>
-      <point x="190" y="-21"/>
-      <point x="190" y="-42"/>
-      <point x="166" y="-52"/>
-      <point x="148" y="-58"/>
-      <point x="183" y="-58"/>
-      <point x="215" y="-40"/>
-      <point x="215" y="-10"/>
-      <point x="215" y="25"/>
-      <point x="145" y="42"/>
-      <point x="120" y="42"/>
+      <point x="120" y="42" />
+      <point x="120" y="32" />
+      <point x="120" y="20" />
+      <point x="120" y="10" />
+      <point x="140" y="10" />
+      <point x="190" y="3" />
+      <point x="190" y="-21" />
+      <point x="190" y="-42" />
+      <point x="166" y="-52" />
+      <point x="148" y="-58" />
+      <point x="183" y="-58" />
+      <point x="215" y="-40" />
+      <point x="215" y="-10" />
+      <point x="215" y="25" />
+      <point x="145" y="42" />
+      <point x="120" y="42" />
     </filled-beziers>
   </symbol>
   
@@ -12778,49 +12782,49 @@ for the symbols.
   <symbol kind="V" id="13.6">
     <name lang="en">Map issue point</name>
     <text lang="en">{0}to start</text>
-    <name lang="it">Partenza “svedese”</name>
+    <name lang="it">Partenza ???svedese???</name>
     <text lang="it">{0}fettucciati fino alla partenza</text>
     <lines thickness="12.5">
-      <point x="-760" y="-50"/>
-      <point x="-760" y="50"/>
+      <point x="-760" y="-50" />
+      <point x="-760" y="50" />
     </lines>
     <lines thickness="12.5">
-      <point x="-760" y="0"/>
-      <point x="-660" y="0"/>
+      <point x="-760" y="0" />
+      <point x="-660" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-630" y="0"/>
-      <point x="-510" y="0"/>
+      <point x="-630" y="0" />
+      <point x="-510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
     <polygon thickness="10">
-      <point x="700" y="70"/>
-      <point x="760.6" y="-35"/>
-      <point x="639.4" y="-35"/>
+      <point x="700" y="70" />
+      <point x="760.6" y="-35" />
+      <point x="639.4" y="-35" />
     </polygon>
   </symbol>
 
@@ -12852,7 +12856,7 @@ for the symbols.
     <name lang="fr">Parcours entièrement balisé</name>
     <text lang="fr">suivre le parcours balisé sur {0}jusqu'à l'arrivée</text>
     <name lang="it">Arrivo fettucciato</name>
-    <text lang="it">{0}fettucciati fino all'arrivo</text>
+    <text lang="it">{0}fettucciati fino all???arrivo</text>
     <name lang="ja">フィニッシュまで誘導</name>
     <text lang="ja">フィニッシュまで誘導 {0}</text>
     <name lang="nb-NO">Merket løype til mål</name>
@@ -12868,42 +12872,42 @@ for the symbols.
     <name lang="zh-HK">Taped route to finish</name>
     <text lang="zh-HK">隨 {0} 索帶前往終點</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <circle thickness="10" radius="70">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <circle thickness="10" radius="50">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-625" y="0"/>
-      <point x="-510" y="0"/>
+      <point x="-625" y="0" />
+      <point x="-510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
   </symbol>
 
@@ -12931,7 +12935,7 @@ for the symbols.
     <name lang="fr">Balisage convergent</name>
     <text lang="fr">{0}jusqu'à l'arrivée (balisage convergent)</text>
     <name lang="it">Arrivo con corridoio finale fettucciato</name>
-    <text lang="it">{0}con corridoio finale fettucciato fino all'arrivo</text>
+    <text lang="it">{0}con corridoio finale fettucciato fino all???arrivo</text>
     <name lang="ja">フィニッシュまで漏斗状誘導</name>
     <text lang="ja">フィニッシュまで漏斗状誘導 {0}</text>
     <name lang="nb-NO">oppfangende merking til mål</name>
@@ -12947,43 +12951,43 @@ for the symbols.
     <name lang="zh-HK">Navigate to finish funnel</name>
     <text lang="zh-HK">往終點索帶 {0}</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <circle thickness="10" radius="70">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <circle thickness="10" radius="50">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-550" y="70"/>
-      <point x="-480" y="0"/>
-      <point x="-550" y="-70"/>
+      <point x="-550" y="70" />
+      <point x="-480" y="0" />
+      <point x="-550" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="-480" y="0"/>
-      <point x="-360" y="0"/>
+      <point x="-480" y="0" />
+      <point x="-360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="-330" y="0"/>
-      <point x="-210" y="0"/>
+      <point x="-330" y="0" />
+      <point x="-210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="620" y="0"/>
-      <point x="510" y="0"/>
+      <point x="620" y="0" />
+      <point x="510" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="480" y="0"/>
-      <point x="360" y="0"/>
+      <point x="480" y="0" />
+      <point x="360" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="330" y="0"/>
-      <point x="210" y="0"/>
+      <point x="330" y="0" />
+      <point x="210" y="0" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
   </symbol>
 
@@ -13011,7 +13015,7 @@ for the symbols.
     <name lang="fr">Trajet non balisé</name>
     <text lang="fr">s'orienter sur {0}jusqu'à l'arrivée (trajet non balisé)</text>
     <name lang="it">Arrivo non fettucciato</name>
-    <text lang="it">{0}non fettucciati fino all'arrivo</text>
+    <text lang="it">{0}non fettucciati fino all???arrivo</text>
     <name lang="ja">フィニッシュまで誘導なし</name>
     <text lang="ja">フィニッシュまで誘導なし {0}</text>
     <name lang="nb-NO">Ingen merking til mål</name>
@@ -13027,23 +13031,23 @@ for the symbols.
     <name lang="zh-HK">Navigate to finish (no tapes)</name>
     <text lang="zh-HK">往終點 {0}</text>
     <circle thickness="10" radius="70">
-      <point x="-700" y="0"/>
+      <point x="-700" y="0" />
     </circle>
     <circle thickness="10" radius="70">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <circle thickness="10" radius="50">
-      <point x="700" y="0"/>
+      <point x="700" y="0" />
     </circle>
     <lines thickness="12.5">
-      <point x="-555" y="70"/>
-      <point x="-625" y="0"/>
-      <point x="-555" y="-70"/>
+      <point x="-555" y="70" />
+      <point x="-625" y="0" />
+      <point x="-555" y="-70" />
     </lines>
     <lines thickness="12.5">
-      <point x="555" y="70"/>
-      <point x="625" y="0"/>
-      <point x="555" y="-70"/>
+      <point x="555" y="70" />
+      <point x="625" y="0" />
+      <point x="555" y="-70" />
     </lines>
   </symbol>
 </symbols>
