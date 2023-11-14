@@ -1042,6 +1042,7 @@ String of type 1030
   ObjIndex=0
   firstField=
   code=d, value=0
+  code=l, value=0
 
 String of type 8
   ObjIndex=0

@@ -297,6 +297,7 @@ namespace PurplePen.MapModel
                         // Get the view parameters.
                         if (simpleStringParameters[OcadStringParam.ViewPar - OcadStringParam.FirstSingleParam] != null) {
                             map.HideTemplates = GetParamInt(simpleStringParameters[OcadStringParam.ViewPar - OcadStringParam.FirstSingleParam], 'd', 0) != 0;
+                            map.HideLayout = GetParamInt(simpleStringParameters[OcadStringParam.ViewPar - OcadStringParam.FirstSingleParam], 'l', 0) != 0;
                             if (version >= 11)
                                 map.UseEuclideanMetric = GetParamInt(simpleStringParameters[OcadStringParam.ViewPar - OcadStringParam.FirstSingleParam], 'p', 0) == 0;
                         }

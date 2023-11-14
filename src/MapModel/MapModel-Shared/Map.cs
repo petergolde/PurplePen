@@ -860,6 +860,7 @@ namespace PurplePen.MapModel
         List<TemplateInfo> templates;          // if non-null, information about the templates (top to bottom) associated with the map (templates are NOT rendered).
         List<LoadedTemplate> loadedTemplates;  // Corresponding loaded template, loaded on demand.
         bool templatesHidden = false;          // true to hide all templates.
+        bool layoutHidden = false;             // true to hide all layout objects.
         RealWorldCoords realWorldCoords = new RealWorldCoords();
         GpsReferenceInfo gpsReferenceInfo = new GpsReferenceInfo(false, 0, null);
         bool useEuclideanMetric = false;       // true -- use Euclidean metric (OCAD 11)
@@ -1398,6 +1399,25 @@ namespace PurplePen.MapModel
         {
             get { return UseEuclideanMetric ? (SymPath.DistanceMetric)SymPath.EuclidDistance : (SymPath.DistanceMetric) SymPath.BizzarroDistance; }
         }
+
+        public bool HideLayout {
+            get {
+                CheckReadable();
+                return layoutHidden;
+            }
+            set {
+                CheckWritable();
+                if (layoutHidden != value) {
+                    if (undoMgr != null)
+                        undoMgr.RecordAction(new ChangeHideTemplatesAction(this, layoutHidden, value));
+
+                    layoutHidden = value;
+                    SetDirty();
+                }
+            }
+        }
+
+
 
         // Get information about the templates associated with the map, top to bottom
         public IList<TemplateInfo> Templates
@@ -2130,10 +2150,12 @@ namespace PurplePen.MapModel
                         throwOnCancel();
                 }
 
-                // Draw the layout layer.
-                DrawColor(g, this.LayoutColor, rect, renderOpts, throwOnCancel);
-                if (throwOnCancel != null)
-                    throwOnCancel();
+                if (!layoutHidden) {
+                    // Draw the layout layer.
+                    DrawColor(g, this.LayoutColor, rect, renderOpts, throwOnCancel);
+                    if (throwOnCancel != null)
+                        throwOnCancel();
+                }
             }
 
             // Templates above the map (OOM case)
@@ -2480,7 +2502,21 @@ namespace PurplePen.MapModel
             }
         }
 
-        class ChangeGpsReferenceInfoAction: ChangeMapAction<GpsReferenceInfo>
+        class ChangeHideLayoutAction : ChangeMapAction<bool>
+        {
+            public ChangeHideLayoutAction(Map map, bool before, bool after)
+                : base(map, before, after)
+            {
+            }
+
+            protected override void Modify(bool from, bool to)
+            {
+                Debug.Assert(map.HideLayout == from);
+                map.HideLayout = to;
+            }
+        }
+
+        class ChangeGpsReferenceInfoAction : ChangeMapAction<GpsReferenceInfo>
         {
             public ChangeGpsReferenceInfoAction(Map map, GpsReferenceInfo before, GpsReferenceInfo after)
                 : base(map, before.Clone(), after.Clone())

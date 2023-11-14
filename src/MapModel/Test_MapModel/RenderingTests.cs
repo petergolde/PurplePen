@@ -1031,6 +1031,14 @@ namespace PurplePen.MapModel.Tests
         }
 
         [Test]
+        public void LayoutHidden()
+        {
+            CheckTest("hidden_layout.txt", true, true, 11, 12);
+        }
+
+
+
+        [Test]
         public void TemplateRendering()
         {
             CheckTest("template.txt", true, false, 9, 12);
