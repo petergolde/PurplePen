@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using System.Linq;
+using System.Diagnostics.Eventing.Reader;
 
 namespace PurplePen
 {
@@ -211,7 +213,12 @@ namespace PurplePen
             // Remove all language nodes from the current document.
             string xpath = string.Format("//*[@lang='{0}']", langId);
             foreach (XmlElement node in root.SelectNodes(xpath)) {
+                XmlNode previousSibling = node.PreviousSibling;
                 node.ParentNode.RemoveChild(node);
+
+                // Also remove whitespace before the node.
+                if (previousSibling.NodeType == XmlNodeType.Whitespace)
+                    previousSibling.ParentNode.RemoveChild(previousSibling);
             }
 
             // Copy nodes over
@@ -222,29 +229,82 @@ namespace PurplePen
             SaveXmlDocument();
         }
 
+        (XmlNode, bool) FindLanguageInsertionPoint(string lang)
+        {
+            XmlNodeList languageNodes = root.SelectNodes("/symbols/language");
+
+            XmlNode lastLanguageNodeBefore = languageNodes.Cast<XmlNode>().LastOrDefault(n => n.Attributes["lang"].Value.CompareTo(lang) < 0);
+            if (lastLanguageNodeBefore != null)
+                return (lastLanguageNodeBefore, false);
+
+            // No language nodes before. Put before first language node.
+            return (languageNodes.Item(0), true);
+        }
+
+
+        (XmlNode, bool) FindTextInsertionPoint(string id, string standard, string lang)
+        {
+            XmlNodeList allNameNodes, allTextNodes, matchingNameNodes, matchingTextNodes;
+
+            if (string.IsNullOrEmpty(standard)) {
+                allNameNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/name", id));
+                allTextNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/text", id));
+                matchingNameNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/name[@lang='{1}']", id, lang));
+                matchingTextNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/text[@lang='{1}']", id, lang));
+            }
+            else {
+                allNameNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}' and @standard='{1}']/name", id, standard));
+                allTextNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}' and @standard='{1}']/text", id, standard));
+                matchingNameNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}' and @standard='{1}']/name[@lang='{2}']", id, standard, lang));
+                matchingTextNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}' and @standard='{1}']/text[@lang='{2}']", id, standard, lang));
+            }
+
+            if (matchingTextNodes.Count > 0) {
+                return (matchingTextNodes.Item(matchingTextNodes.Count - 1), false);
+            }
+            else if (matchingNameNodes.Count > 0) {
+                return (matchingNameNodes.Item(matchingNameNodes.Count - 1), false);
+            }
+            else {
+                XmlNode lastTextNodeBefore = allTextNodes.Cast<XmlNode>().LastOrDefault(n => n.Attributes["lang"].Value.CompareTo(lang) < 0);
+                if (lastTextNodeBefore != null)
+                    return (lastTextNodeBefore, false);
+
+                // No text nodes before. Put before first name node.
+                return (allNameNodes.Item(0), true);
+            }
+            
+        }
+
         // Import another node, and insert in the correct place.
         void ImportAndInsertNode(XmlElement oldNode)
         {
             XmlElement newNode = (XmlElement) xmldoc.ImportNode(oldNode, true);
+            XmlElement oldParent = (XmlElement)oldNode.ParentNode;
 
             if (newNode.Name == "language") {
-                XmlNodeList languageNodes = root.SelectNodes("/symbols/language");
-                root.InsertAfter(newNode, languageNodes.Item(languageNodes.Count - 1));
-                root.InsertBefore(xmldoc.CreateTextNode("\r\n\t"), newNode);
+                (XmlNode insertionPoint, bool before) = FindLanguageInsertionPoint(newNode.GetAttribute("lang"));
+                if (before) {
+                    insertionPoint.ParentNode.InsertBefore(newNode, insertionPoint);
+                }
+                else {
+                    insertionPoint.ParentNode.InsertAfter(newNode, insertionPoint);
+                }
+                insertionPoint.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n  "), newNode);
             }
-            else if (newNode.Name == "name") {
-                string id = ((XmlElement) oldNode.ParentNode).GetAttribute("id");
-                XmlNodeList nameNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/name", id));
-                XmlNode last = nameNodes.Item(nameNodes.Count - 1);
-                last.ParentNode.InsertAfter(newNode, last);
-                last.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
-            }
-            else if (newNode.Name == "text") {
-                string id = ((XmlElement) oldNode.ParentNode).GetAttribute("id");
-                XmlNodeList textNodes = root.SelectNodes(string.Format("/symbols/symbol[@id='{0}']/text", id));
-                XmlNode last = textNodes.Item(textNodes.Count - 1);
-                last.ParentNode.InsertAfter(newNode, last);
-                last.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n\t\t"), newNode);
+            else if (newNode.Name == "name" || newNode.Name == "text") {
+                string id = oldParent.GetAttribute("id");
+                string standard = oldParent.GetAttribute("standard");
+
+                (XmlNode insertionPoint, bool before) = FindTextInsertionPoint(id, standard, newNode.GetAttribute("lang"));
+
+                if (before) {
+                    insertionPoint.ParentNode.InsertBefore(newNode, insertionPoint);
+                }
+                else {
+                    insertionPoint.ParentNode.InsertAfter(newNode, insertionPoint);
+                }
+                insertionPoint.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n    "), newNode);
             }
         }
 
