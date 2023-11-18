@@ -42,6 +42,17 @@ Does SkiaSharp have anything that can do the color dimming we
 use for the background map, or the Darken/merging we do for overlaying?
 I think so, there is a Darken blend mode we can use.
 
+### Fonts
+
+Look at "CrossCore fonts" -- see https://en.wikipedia.org/wiki/Croscore_fonts.
+These are open source fonts that are metrically compatible with Arial, Times New Roman, and Courier New,
+and Calibri and Cambria. So we can use these fonts for those. Other fonts people would
+have to upload as TTF files, and they are responsbile for licensing issues.
+
+Also look at this page for other fonts we could use (e.g., Gelasio, etc.): 
+https://wiki.archlinux.org/title/Metric-compatible_fonts#List%20of%20Metric-Compatible%20Fonts
+
+
 ## Thread safety/multi-document
 
 The core part of Purple Pen needs to handle multiple documents and 
@@ -56,6 +67,9 @@ no issue there.
 Is there a good way to test for multi-threading safety? I'm not sure. Should
 maybe generally search the source code for static variables. This makes me
 nervous.
+
+Could use a global lock for all of Purple Pen, but that would be bad for performance.
+That sounds ugly.
 
 ## PDF creation.
 
@@ -119,7 +133,7 @@ for that.
 
 ## Database usage
 
-Probably use MySQL + blob storage. Like ClueCorner did.
+Probably use MySQL or Postgres + blob storage. Like ClueCorner did.
 
 ## File handling and sharing
 
