@@ -286,11 +286,12 @@ namespace PurplePen
                 (XmlNode insertionPoint, bool before) = FindLanguageInsertionPoint(newNode.GetAttribute("lang"));
                 if (before) {
                     insertionPoint.ParentNode.InsertBefore(newNode, insertionPoint);
+                    insertionPoint.ParentNode.InsertAfter(xmldoc.CreateTextNode("\r\n  "), newNode);
                 }
                 else {
                     insertionPoint.ParentNode.InsertAfter(newNode, insertionPoint);
+                    insertionPoint.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n  "), newNode);
                 }
-                insertionPoint.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n  "), newNode);
             }
             else if (newNode.Name == "name" || newNode.Name == "text") {
                 string id = oldParent.GetAttribute("id");
@@ -300,11 +301,12 @@ namespace PurplePen
 
                 if (before) {
                     insertionPoint.ParentNode.InsertBefore(newNode, insertionPoint);
+                    insertionPoint.ParentNode.InsertAfter(xmldoc.CreateTextNode("\r\n    "), newNode);
                 }
                 else {
                     insertionPoint.ParentNode.InsertAfter(newNode, insertionPoint);
+                    insertionPoint.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n    "), newNode);
                 }
-                insertionPoint.ParentNode.InsertBefore(xmldoc.CreateTextNode("\r\n    "), newNode);
             }
         }
 

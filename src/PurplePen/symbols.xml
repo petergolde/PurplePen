@@ -3153,6 +3153,9 @@ for the symbols.
   </symbol>
 
   <symbol kind="D" id="2.10" standard="2018" replacement-id="1.7" size-is-depth="true">
+    <name lang="de">Steiniger Graben</name>
+    <text lang="de" plural="true" gender="maskulin">Steinige Gräben</text>
+    <text lang="de" gender="maskulin">Steiniger Graben</text>
     <name lang="en">Trench</name>
     <text lang="en">trench</text>
     <text lang="en" plural="true">trenches</text>
@@ -6617,6 +6620,9 @@ for the symbols.
   </symbol>
 
   <symbol kind="D" id="5.25" standard="2018">
+    <name lang="de">Blumenbeet / Verbotenes Gebiet</name>
+    <text lang="de" plural="true" gender="neutrum">Blumenbeete / Verbotene Gebiete</text>
+    <text lang="de" gender="neutrum">Blumenbeet / Verbotenes Gebiet</text>
     <name lang="en">Flower bed / Out of bounds area</name>
     <text lang="en">flower bed</text>
     <text lang="en" plural="true">flower beds</text>
@@ -12684,6 +12690,8 @@ for the symbols.
     <text lang="ca">canvi de mapa al control</text>
     <name lang="cs">Výměna mapy na kontrole</name>
     <text lang="cs">výměna mapy na kontrole</text>
+    <name lang="de">Kartenwechsel bei Posten</name>
+    <text lang="de">Kartenwechsel beim Posten</text>
     <name lang="en">Map exchange at a control</name>
     <text lang="en">map exchange at the control</text>
     <name lang="en-AU">Map exchange at a control</name>
@@ -12783,6 +12791,8 @@ for the symbols.
         {0} has the distance, plus a space. 
         -->
   <symbol kind="V" id="13.6">
+    <name lang="de">Kartenabgabepunkt</name>
+    <text lang="de">{0}zum Start</text>
     <name lang="en">Map issue point</name>
     <text lang="en">{0}to start</text>
     <name lang="it">Partenza ???svedese???</name>
