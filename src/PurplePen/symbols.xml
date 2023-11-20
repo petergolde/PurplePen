@@ -148,6 +148,7 @@ for the symbols.
   <language lang="ro" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">română</language>
   <language lang="sv" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">Svenska</language>
   <language lang="zh-HK" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">中文(香港特別行政區)</language>
+  <language lang="zh-TW" plural-nouns="true" plural-modifiers="false" gender-modifiers="false" case-modifers="false">繁體中文(臺灣)</language>
 
   <!-- Kind "@". These are not symbols at all, but just text that is used in constructing descriptions. -->
 
@@ -194,6 +195,8 @@ for the symbols.
     <text lang="sv">Alla kontroller</text>
     <name lang="zh-HK">All controls</name>
     <text lang="zh-HK">所有控制點</text>
+    <name lang="zh-TW">所有檢查點</name>
+    <text lang="zh-TW">所有檢查點</text>
   </symbol>
 
   <!-- Used for the course length, when no climb is present.
@@ -240,6 +243,8 @@ for the symbols.
     <text lang="sv">Längd {0}</text>
     <name lang="zh-HK">Course Length</name>
     <text lang="zh-HK">賽程長度 {0}</text>
+    <name lang="zh-TW">賽程長度</name>
+    <text lang="zh-TW">長度{0}</text>
   </symbol>
 
   <!-- Used for the course length and climb
@@ -287,6 +292,8 @@ for the symbols.
     <text lang="sv">Längd {0}, stigning {1}</text>
     <name lang="zh-HK">Course Length and Climb</name>
     <text lang="zh-HK">賽程長度 {0}, 攀升 {1}</text>
+    <name lang="zh-TW">賽程長度與爬高</name>
+    <text lang="zh-TW">長度 {0}, 爬高 {1}</text>
   </symbol>
 
   <!-- Used for the number of controls in score course or All Controls
@@ -333,6 +340,8 @@ for the symbols.
     <text lang="sv">{0} kontroller</text>
     <name lang="zh-HK">Number of Controls</name>
     <text lang="zh-HK">{0} 個控制點</text>
+    <name lang="zh-TW">檢查點數量</name>
+    <text lang="zh-TW">{0} 個檢查點</text>
   </symbol>
 
   <!-- Used for the total score in a score course
@@ -379,6 +388,8 @@ for the symbols.
     <text lang="sv">{0} poäng</text>
     <name lang="zh-HK">Number of Points</name>
     <text lang="zh-HK">{0} 分</text>
+    <name lang="zh-TW">積分值</name>
+    <text lang="zh-TW">{0}分</text>
   </symbol>
 
   <!-- Used when regular symbols are present in both column D and E, but no crossing/junction/between
@@ -427,6 +438,8 @@ for the symbols.
     <text lang="sv">{0} och {1}</text>
     <name lang="zh-HK">And</name>
     <text lang="zh-HK">{0} 及 {1}</text>
+    <name lang="zh-TW">和</name>
+    <text lang="zh-TW">{0} 和 {1}</text>
   </symbol>
 
   <!-- Kind "A". Symbols that go in column A (for example,
@@ -475,6 +488,8 @@ for the symbols.
     <text lang="sv">start</text>
     <name lang="zh-HK">Start</name>
     <text lang="zh-HK">起點</text>
+    <name lang="zh-TW">地圖起點</name>
+    <text lang="zh-TW">起點</text>
     <polygon thickness="12.5" corners="sharp">
       <point x="-56" y="65" />
       <point x="-56" y="-65" />
@@ -534,6 +549,8 @@ for the symbols.
     <text lang="sv">N {0}</text>
     <name lang="zh-HK">Northern</name>
     <text lang="zh-HK">北方的{0}</text>
+    <name lang="zh-TW">北方的</name>
+    <text lang="zh-TW">北方的 {0}</text>
     <lines thickness="12.5">
       <point x="0" y="-65" />
       <point x="0" y="65" />
@@ -592,6 +609,8 @@ for the symbols.
     <text lang="sv">NÖ {0}</text>
     <name lang="zh-HK">North-eastern</name>
     <text lang="zh-HK">東北方的{0}</text>
+    <name lang="zh-TW">東北方的</name>
+    <text lang="zh-TW">東北方的 {0}</text>
     <lines thickness="12.5">
       <point x="-55" y="-55" />
       <point x="55" y="55" />
@@ -650,6 +669,8 @@ for the symbols.
     <text lang="sv">Ö {0}</text>
     <name lang="zh-HK">Eastern</name>
     <text lang="zh-HK">東方的{0}</text>
+    <name lang="zh-TW">東方的</name>
+    <text lang="zh-TW">東方的 {0}</text>
     <lines thickness="12.5">
       <point x="-65" y="0" />
       <point x="65" y="0" />
@@ -708,6 +729,8 @@ for the symbols.
     <text lang="sv">SÖ {0}</text>
     <name lang="zh-HK">South-eastern</name>
     <text lang="zh-HK">東南方的{0}</text>
+    <name lang="zh-TW">東南方的</name>
+    <text lang="zh-TW">東南方的 {0}</text>
     <lines thickness="12.5">
       <point x="-55" y="55" />
       <point x="55" y="-55" />
@@ -766,6 +789,8 @@ for the symbols.
     <text lang="sv">S {0}</text>
     <name lang="zh-HK">Southern</name>
     <text lang="zh-HK">南方的{0}</text>
+    <name lang="zh-TW">南方的</name>
+    <text lang="zh-TW">南方的 {0}</text>
     <lines thickness="12.5">
       <point x="0" y="-65" />
       <point x="0" y="65" />
@@ -824,6 +849,8 @@ for the symbols.
     <text lang="sv">SV {0}</text>
     <name lang="zh-HK">South-western</name>
     <text lang="zh-HK">西南方的{0}</text>
+    <name lang="zh-TW">西南方的</name>
+    <text lang="zh-TW">西南方的 {0}</text>
     <lines thickness="12.5">
       <point x="55" y="55" />
       <point x="-55" y="-55" />
@@ -882,6 +909,8 @@ for the symbols.
     <text lang="sv">V {0}</text>
     <name lang="zh-HK">Western</name>
     <text lang="zh-HK">西方的{0}</text>
+    <name lang="zh-TW">西方的</name>
+    <text lang="zh-TW">西方的{0}</text>
     <lines thickness="12.5">
       <point x="-65" y="0" />
       <point x="65" y="0" />
@@ -940,6 +969,8 @@ for the symbols.
     <text lang="sv">NV {0}</text>
     <name lang="zh-HK">North-western</name>
     <text lang="zh-HK">西北方的{0}</text>
+    <name lang="zh-TW">西北方的</name>
+    <text lang="zh-TW">西北方的{0}</text>
     <lines thickness="12.5">
       <point x="55" y="-55" />
       <point x="-55" y="55" />
@@ -1000,6 +1031,8 @@ for the symbols.
     <text lang="sv">övre {0}</text>
     <name lang="zh-HK">Upper</name>
     <text lang="zh-HK">上面的{0}</text>
+    <name lang="zh-TW">較高處的</name>
+    <text lang="zh-TW">較高處的 {0}</text>
     <filled-circle radius="20">
       <point x="0" y="40" />
     </filled-circle>
@@ -1062,6 +1095,8 @@ for the symbols.
     <text lang="sv">nedre {0}</text>
     <name lang="zh-HK">Lower</name>
     <text lang="zh-HK">下面的{0}</text>
+    <name lang="zh-TW">較低處的</name>
+    <text lang="zh-TW">較低處的 {0}</text>
     <filled-circle radius="20">
       <point x="0" y="-40" />
     </filled-circle>
@@ -1124,6 +1159,8 @@ for the symbols.
     <text lang="sv">mellersta {0}</text>
     <name lang="zh-HK">Middle</name>
     <text lang="zh-HK">中間的{0}</text>
+    <name lang="zh-TW">中央的</name>
+    <text lang="zh-TW">中央的 {0}</text>
     <filled-circle radius="20">
       <point x="0" y="0" />
     </filled-circle>
@@ -1205,6 +1242,9 @@ for the symbols.
     <text lang="sv">terrassen</text>
     <name lang="zh-HK">Terrace</name>
     <text lang="zh-HK">台地</text>
+    <name lang="zh-TW">平台</name>
+    <text lang="zh-TW" plural="true">平台</text>
+    <text lang="zh-TW">平台</text>
     <beziers thickness="12.5">
       <point x="-60" y="-70" />
       <point x="-50" y="-30" />
@@ -1289,6 +1329,9 @@ for the symbols.
     <text lang="sv">näsan</text>
     <name lang="zh-HK">Spur</name>
     <text lang="zh-HK">山咀</text>
+    <name lang="zh-TW">山脊</name>
+    <text lang="zh-TW" plural="true">山脊</text>
+    <text lang="zh-TW">山脊</text>
     <beziers thickness="12.5">
       <point x="-70" y="-70" />
       <point x="-60" y="-30" />
@@ -1373,6 +1416,9 @@ for the symbols.
     <text lang="sv">sänkan</text>
     <name lang="zh-HK">Reentrant</name>
     <text lang="zh-HK">山窩</text>
+    <name lang="zh-TW">山谷</name>
+    <text lang="zh-TW" plural="true">山谷</text>
+    <text lang="zh-TW">山谷</text>
     <beziers thickness="12.5">
       <point x="-70" y="-70" />
       <point x="-42" y="-73" />
@@ -1451,6 +1497,9 @@ for the symbols.
     <text lang="sv">skärningen</text>
     <name lang="zh-HK">Earth bank</name>
     <text lang="zh-HK">泥坡</text>
+    <name lang="zh-TW">土坡</name>
+    <text lang="zh-TW" plural="true">土坡</text>
+    <text lang="zh-TW">土坡</text>
     <beziers thickness="12.5">
       <point x="-70" y="20" />
       <point x="-30" y="-10" />
@@ -1536,6 +1585,9 @@ for the symbols.
     <text lang="sv">grustaget/stenbrottet</text>
     <name lang="zh-HK">Quarry</name>
     <text lang="zh-HK">採石地</text>
+    <name lang="zh-TW">採石地</name>
+    <text lang="zh-TW" plural="true">採石地</text>
+    <text lang="zh-TW">採石地</text>
     <beziers thickness="12.5">
       <point x="54" y="-60" />
       <point x="93" y="5" />
@@ -1624,6 +1676,9 @@ for the symbols.
     <text lang="sv">jordvallen</text>
     <name lang="zh-HK">Earth wall</name>
     <text lang="zh-HK">土埂</text>
+    <name lang="zh-TW">土牆</name>
+    <text lang="zh-TW" plural="true">土牆</text>
+    <text lang="zh-TW">土牆</text>
     <lines thickness="12.5">
       <point x="-70" y="0" />
       <point x="70" y="0" />
@@ -1707,6 +1762,9 @@ for the symbols.
     <text lang="sv">fåran</text>
     <name lang="zh-HK">Erosion gully</name>
     <text lang="zh-HK">沖溝</text>
+    <name lang="zh-TW">沖溝</name>
+    <text lang="zh-TW" plural="true">沖溝</text>
+    <text lang="zh-TW">沖溝</text>
     <lines thickness="12.5">
       <point x="40" y="-70" />
       <point x="0" y="70" />
@@ -1775,6 +1833,9 @@ for the symbols.
     <text lang="sv">lilla fåran</text>
     <name lang="zh-HK">Small erosion gully</name>
     <text lang="zh-HK">小乾溝</text>
+    <name lang="zh-TW">小沖溝</name>
+    <text lang="zh-TW" plural="true">小沖溝</text>
+    <text lang="zh-TW">小沖溝</text>
     <filled-circle radius="7.5">
       <point x="-40" y="40" />
     </filled-circle>
@@ -1861,6 +1922,9 @@ for the symbols.
     <text lang="sv" plural="true">höjderna</text>
     <name lang="zh-HK">Hill</name>
     <text lang="zh-HK">山丘</text>
+    <name lang="zh-TW">小山</name>
+    <text lang="zh-TW" plural="true">小山</text>
+    <text lang="zh-TW">小山</text>
     <beziers thickness="12.5">
       <point x="0" y="48.21" />
       <point x="40.71" y="48.21" />
@@ -1939,6 +2003,9 @@ for the symbols.
     <text lang="sv" plural="true">punkthöjderna</text>
     <name lang="zh-HK">Knoll</name>
     <text lang="zh-HK">小丘</text>
+    <name lang="zh-TW">小丘</name>
+    <text lang="zh-TW" plural="true">小丘</text>
+    <text lang="zh-TW">小丘</text>
     <filled-circle radius="23">
       <point x="0" y="0" />
     </filled-circle>
@@ -2005,6 +2072,9 @@ for the symbols.
     <text lang="sv" plural="true">punkthöjderna</text>
     <name lang="zh-HK">Knoll</name>
     <text lang="zh-HK">小丘</text>
+    <name lang="zh-TW">小丘</name>
+    <text lang="zh-TW" plural="true">小丘</text>
+    <text lang="zh-TW">小丘</text>
     <filled-circle radius="30">
       <point x="0" y="0" />
     </filled-circle>
@@ -2071,6 +2141,9 @@ for the symbols.
     <text lang="sv">sadeln</text>
     <name lang="zh-HK">Saddle</name>
     <text lang="zh-HK">鞍部</text>
+    <name lang="zh-TW">鞍部</name>
+    <text lang="zh-TW" plural="true">鞍部</text>
+    <text lang="zh-TW">鞍部</text>
     <beziers thickness="12.5">
       <point x="-40" y="-70" />
       <point x="-10" y="-30" />
@@ -2146,6 +2219,9 @@ for the symbols.
     <text lang="sv" plural="true">groparna</text>
     <name lang="zh-HK">Depression</name>
     <text lang="zh-HK">陷地</text>
+    <name lang="zh-TW">窪地</name>
+    <text lang="zh-TW" plural="true">窪地</text>
+    <text lang="zh-TW">窪地</text>
     <beziers thickness="12.5">
       <point x="0" y="48.21" />
       <point x="40.71" y="48.21" />
@@ -2234,6 +2310,9 @@ for the symbols.
     <text lang="sv">lilla naturliga gropen</text>
     <name lang="zh-HK">Small depression</name>
     <text lang="zh-HK">小陷地</text>
+    <name lang="zh-TW">小窪地</name>
+    <text lang="zh-TW" plural="true">小窪地</text>
+    <text lang="zh-TW">小窪地</text>
     <beziers thickness="12.5">
       <point x="-50" y="50" />
       <point x="-75" y="0" />
@@ -2306,6 +2385,9 @@ for the symbols.
     <text lang="sv">lilla grävda gropen</text>
     <name lang="zh-HK">Pit</name>
     <text lang="zh-HK">地洞</text>
+    <name lang="zh-TW">地坑；坑洞</name>
+    <text lang="zh-TW" plural="true">坑洞</text>
+    <text lang="zh-TW">坑洞</text>
     <lines thickness="12.5">
       <point x="-50" y="50" />
       <point x="0" y="-50" />
@@ -2372,6 +2454,8 @@ for the symbols.
     <text lang="sv">småkuperad terräng</text>
     <name lang="zh-HK">Broken ground</name>
     <text lang="zh-HK">坎地</text>
+    <name lang="zh-TW">崎嶇地面</name>
+    <text lang="zh-TW">崎嶇地面</text>
     <beziers thickness="12.5">
       <point x="-65" y="50" />
       <point x="-75" y="30" />
@@ -2462,6 +2546,9 @@ for the symbols.
     <text lang="sv">myrstacken</text>
     <name lang="zh-HK">Ant hill (termite mound)</name>
     <text lang="zh-HK">蟻丘</text>
+    <name lang="zh-TW">蟻丘</name>
+    <text lang="zh-TW" plural="true">蟻丘群</text>
+    <text lang="zh-TW">蟻丘</text>
     <lines thickness="12.5">
       <point x="-70" y="0" />
       <point x="70" y="0" />
@@ -2541,6 +2628,8 @@ for the symbols.
     <text lang="sv">branten</text>
     <name lang="zh-HK">Cliff</name>
     <text lang="zh-HK">崖壁</text>
+    <name lang="zh-TW">陡壁、峭壁</name>
+    <text lang="zh-TW">陡壁</text>
     <lines thickness="12.5">
       <point x="-70" y="-20" />
       <point x="-70" y="20" />
@@ -2620,6 +2709,9 @@ for the symbols.
     <text lang="sv" plural="true">klipporna</text>
     <name lang="zh-HK">Rock pillar</name>
     <text lang="zh-HK">石柱</text>
+    <name lang="zh-TW">石柱</name>
+    <text lang="zh-TW" plural="true">石柱群</text>
+    <text lang="zh-TW">石柱</text>
     <filled-polygon>
       <point x="0" y="70" />
       <point x="37" y="-70" />
@@ -2688,6 +2780,8 @@ for the symbols.
     <text lang="sv" plural="true">grottorna</text>
     <name lang="zh-HK">Cave</name>
     <text lang="zh-HK">山洞</text>
+    <name lang="zh-TW">山洞</name>
+    <text lang="zh-TW">山洞</text>
     <beziers thickness="12.5">
       <point x="-25" y="70" />
       <point x="-10.4" y="55.4" />
@@ -2769,6 +2863,9 @@ for the symbols.
     <text lang="sv" plural="true">stenarna</text>
     <name lang="zh-HK">Boulder</name>
     <text lang="zh-HK">大石</text>
+    <name lang="zh-TW">石塊</name>
+    <text lang="zh-TW" plural="true">石塊</text>
+    <text lang="zh-TW">石塊</text>
     <filled-polygon>
       <point x="0" y="50" />
       <point x="57.73" y="-50" />
@@ -2835,6 +2932,8 @@ for the symbols.
     <text lang="sv">blockterrängen</text>
     <name lang="zh-HK">Boulder field</name>
     <text lang="zh-HK">群石地</text>
+    <name lang="zh-TW">石群</name>
+    <text lang="zh-TW">石群</text>
     <filled-polygon>
       <point x="-72" y="-72" />
       <point x="-44.25" y="-24" />
@@ -2923,6 +3022,8 @@ for the symbols.
     <text lang="sv" plural="true">stensamlingarna</text>
     <name lang="zh-HK">Boulder cluster</name>
     <text lang="zh-HK">大石堆</text>
+    <name lang="zh-TW">石堆</name>
+    <text lang="zh-TW">石堆</text>
     <filled-polygon>
       <point x="25.1" y="30" />
       <point x="69.3" y="-50" />
@@ -2995,6 +3096,8 @@ for the symbols.
     <text lang="sv">stenig mark</text>
     <name lang="zh-HK">Stony ground</name>
     <text lang="zh-HK">碎石地</text>
+    <name lang="zh-TW">碎石地</name>
+    <text lang="zh-TW">碎石地</text>
     <filled-circle radius="7.5">
       <point x="-60" y="-60" />
     </filled-circle>
@@ -3132,6 +3235,8 @@ for the symbols.
     <text lang="sv">berg i dagen</text>
     <name lang="zh-HK">Bare rock</name>
     <text lang="zh-HK">岩石地</text>
+    <name lang="zh-TW">裸岩地</name>
+    <text lang="zh-TW">裸岩地</text>
     <lines thickness="12.5">
       <point x="-70" y="0" />
       <point x="-25" y="0" />
@@ -3227,6 +3332,8 @@ for the symbols.
     <text lang="sv">trånga passagen</text>
     <name lang="zh-HK">Narrow passage</name>
     <text lang="zh-HK">崖間狹路</text>
+    <name lang="zh-TW">狹窄通道</name>
+    <text lang="zh-TW">狹窄通道</text>
     <lines thickness="12.5">
       <point x="-45" y="-70" />
       <point x="-20" y="-70" />
@@ -3251,6 +3358,9 @@ for the symbols.
     <name lang="it">Trincea</name>
     <text lang="it" gender="femminile">trincea</text>
     <text lang="it" plural="true" gender="femminile">trincee</text>
+    <name lang="zh-TW">Trench</name>
+    <text lang="zh-TW" plural="true">trenches</text>
+    <text lang="zh-TW">trench</text>
     <lines thickness="12.5">
       <point x="-65" y="50" />
       <point x="-35" y="50" />
@@ -3322,6 +3432,8 @@ for the symbols.
     <text lang="sv" plural="true">sjöarna</text>
     <name lang="zh-HK">Lake</name>
     <text lang="zh-HK">湖</text>
+    <name lang="zh-TW">湖泊</name>
+    <text lang="zh-TW">湖泊</text>
     <beziers thickness="10">
       <point x="-39" y="-10" />
       <point x="-39" y="-5" />
@@ -3419,6 +3531,8 @@ for the symbols.
     <text lang="sv" plural="true">gölarna</text>
     <name lang="zh-HK">Pond</name>
     <text lang="zh-HK">池塘</text>
+    <name lang="zh-TW">池塘</name>
+    <text lang="zh-TW">池塘</text>
     <beziers thickness="10">
       <point x="-65" y="45" />
       <point x="-65" y="50" />
@@ -3515,6 +3629,8 @@ for the symbols.
     <text lang="sv">vattenhålet</text>
     <name lang="zh-HK">Water hole</name>
     <text lang="zh-HK">水洞</text>
+    <name lang="zh-TW">水坑</name>
+    <text lang="zh-TW">水坑</text>
     <beziers thickness="10">
       <point x="-65" y="45" />
       <point x="-65" y="50" />
@@ -3607,6 +3723,8 @@ for the symbols.
     <text lang="sv">vattendraget</text>
     <name lang="zh-HK">River, stream, water course</name>
     <text lang="zh-HK">河溪</text>
+    <name lang="zh-TW">河川、溪流、水道</name>
+    <text lang="zh-TW">水道</text>
     <beziers thickness="12.5">
       <point x="-60" y="80" />
       <point x="-65" y="75" />
@@ -3700,6 +3818,8 @@ for the symbols.
     <text lang="sv">diket</text>
     <name lang="zh-HK">Minor water channel, ditch</name>
     <text lang="zh-HK">小溝</text>
+    <name lang="zh-TW">小水道；溝渠</name>
+    <text lang="zh-TW">小水道</text>
     <beziers thickness="10">
       <point x="-48" y="64" />
       <point x="-52" y="60" />
@@ -3817,6 +3937,8 @@ for the symbols.
     <text lang="sv">surdraget</text>
     <name lang="zh-HK">Narrow marsh</name>
     <text lang="zh-HK">狹窄沼澤</text>
+    <name lang="zh-TW">狹窄沼澤</name>
+    <text lang="zh-TW">狹窄沼澤</text>
     <filled-circle radius="7.5">
       <point x="-50" y="50" />
     </filled-circle>
@@ -3895,6 +4017,8 @@ for the symbols.
     <text lang="sv">sankmarken</text>
     <name lang="zh-HK">Marsh</name>
     <text lang="zh-HK">沼澤</text>
+    <name lang="zh-TW">沼澤</name>
+    <text lang="zh-TW">沼澤</text>
     <lines thickness="12.5">
       <point x="-64" y="0" />
       <point x="64" y="0" />
@@ -3976,6 +4100,8 @@ for the symbols.
     <text lang="sv">fastmark</text>
     <name lang="zh-HK">Firm ground in marsh</name>
     <text lang="zh-HK">沼澤中的乾地</text>
+    <name lang="zh-TW">沼澤中乾地</name>
+    <text lang="zh-TW">沼澤中乾地</text>
     <filled-polygon>
       <point x="70" y="70" />
       <point x="70" y="57.5" />
@@ -4093,6 +4219,8 @@ for the symbols.
     <text lang="sv" plural="true">brunnarna</text>
     <name lang="zh-HK">Well</name>
     <text lang="zh-HK">水井</text>
+    <name lang="zh-TW">水井</name>
+    <text lang="zh-TW">水井</text>
     <beziers thickness="10">
       <point x="-39" y="-60" />
       <point x="-39" y="-55" />
@@ -4177,6 +4305,8 @@ for the symbols.
     <text lang="sv" plural="true">källorna</text>
     <name lang="zh-HK">Spring</name>
     <text lang="zh-HK">水泉</text>
+    <name lang="zh-TW">泉源</name>
+    <text lang="zh-TW">泉源</text>
     <beziers thickness="12.5">
       <point x="-35" y="35" />
       <point x="-28" y="26" />
@@ -4263,6 +4393,8 @@ for the symbols.
     <text lang="sv">vattentank</text>
     <name lang="zh-HK">Water tank, trough</name>
     <text lang="zh-HK">水箱</text>
+    <name lang="zh-TW">水箱</name>
+    <text lang="zh-TW">水箱</text>
     <beziers thickness="10">
       <point x="-65" y="45" />
       <point x="-65" y="50" />
@@ -4354,6 +4486,8 @@ for the symbols.
     <text lang="sv">öppen mark</text>
     <name lang="zh-HK">Open land</name>
     <text lang="zh-HK">空曠地</text>
+    <name lang="zh-TW">空曠地</name>
+    <text lang="zh-TW">空曠地</text>
     <polygon thickness="12.5" corners="round">
       <point x="0" y="66" />
       <point x="66" y="0" />
@@ -4417,6 +4551,8 @@ for the symbols.
     <text lang="sv">halvöppen mark</text>
     <name lang="zh-HK">Semi-open land</name>
     <text lang="zh-HK">半空曠地</text>
+    <name lang="zh-TW">有零散樹木的空曠地</name>
+    <text lang="zh-TW">有零散樹木的空曠地</text>
     <filled-circle radius="7.5">
       <point x="0" y="66" />
     </filled-circle>
@@ -4512,6 +4648,8 @@ for the symbols.
     <text lang="sv">skogshörn</text>
     <name lang="zh-HK">Forest corner</name>
     <text lang="zh-HK">樹林角</text>
+    <name lang="zh-TW">樹林之角</name>
+    <text lang="zh-TW">樹林之角</text>
     <polygon thickness="12.5" corners="round">
       <point x="0" y="0" />
       <point x="0" y="66" />
@@ -4582,6 +4720,8 @@ for the symbols.
     <text lang="sv">gläntan</text>
     <name lang="zh-HK">Clearing</name>
     <text lang="zh-HK">林中空曠地</text>
+    <name lang="zh-TW">林中空地</name>
+    <text lang="zh-TW">林中空地</text>
     <filled-circle radius="7.5">
       <point x="0" y="66" />
     </filled-circle>
@@ -4680,6 +4820,8 @@ for the symbols.
     <text lang="sv">tät skog</text>
     <name lang="zh-HK">Thicket</name>
     <text lang="zh-HK">密樹叢</text>
+    <name lang="zh-TW">濃密植被</name>
+    <text lang="zh-TW">濃密植被</text>
     <lines thickness="12.5">
       <point x="21" y="71" />
       <point x="-71" y="-21" />
@@ -4767,6 +4909,8 @@ for the symbols.
     <text lang="sv" plural="true">häckarna</text>
     <name lang="zh-HK">Hedge, Linear thicket</name>
     <text lang="zh-HK">密樹籬</text>
+    <name lang="zh-TW">線性濃密植被</name>
+    <text lang="zh-TW">線性濃密植被</text>
     <circle thickness="10" radius="17.5">
       <point x="0" y="0" />
     </circle>
@@ -4854,6 +4998,8 @@ for the symbols.
     <text lang="sv">beståndsgräns</text>
     <name lang="zh-HK">Vegetation boundary</name>
     <text lang="zh-HK">植被分界</text>
+    <name lang="zh-TW">植被分界</name>
+    <text lang="zh-TW">植被分界</text>
     <filled-circle radius="7.5">
       <point x="-50" y="60" />
     </filled-circle>
@@ -4944,6 +5090,8 @@ for the symbols.
     <text lang="sv">dungen</text>
     <name lang="zh-HK">Copse</name>
     <text lang="zh-HK">樹叢</text>
+    <name lang="zh-TW">小片樹林</name>
+    <text lang="zh-TW">小片樹林</text>
     <lines thickness="12.5">
       <point x="-23" y="-40" />
       <point x="-23" y="-70" />
@@ -5022,6 +5170,8 @@ for the symbols.
     <text lang="sv">särpräglade trädet</text>
     <name lang="zh-HK">Distinctive tree</name>
     <text lang="zh-HK">獨樹</text>
+    <name lang="zh-TW">明顯的樹</name>
+    <text lang="zh-TW">明顯的樹</text>
     <lines thickness="12.5">
       <point x="0" y="-40" />
       <point x="0" y="-70" />
@@ -5094,6 +5244,8 @@ for the symbols.
     <text lang="sv">rotvältan/stubben</text>
     <name lang="zh-HK">Tree stump, Root stock</name>
     <text lang="zh-HK">樹根</text>
+    <name lang="zh-TW">樹樁；樹根</name>
+    <text lang="zh-TW">樹樁</text>
     <circle thickness="12.5" radius="60">
       <point x="0" y="0" />
     </circle>
@@ -5168,6 +5320,8 @@ for the symbols.
     <text lang="sv">vägen</text>
     <name lang="zh-HK">Road</name>
     <text lang="zh-HK">馬路</text>
+    <name lang="zh-TW">大路</name>
+    <text lang="zh-TW">大路</text>
     <lines thickness="15">
       <point x="-73" y="-73" />
       <point x="73" y="73" />
@@ -5236,6 +5390,8 @@ for the symbols.
     <text lang="sv">stigen</text>
     <name lang="zh-HK">Track, Path</name>
     <text lang="zh-HK">小徑</text>
+    <name lang="zh-TW">小徑</name>
+    <text lang="zh-TW">小徑</text>
     <lines thickness="12.5">
       <point x="-75" y="-75" />
       <point x="-39" y="-39" />
@@ -5310,6 +5466,8 @@ for the symbols.
     <text lang="sv">rågången</text>
     <name lang="zh-HK">Ride</name>
     <text lang="zh-HK">林中間隙</text>
+    <name lang="zh-TW">林中間隙</name>
+    <text lang="zh-TW">林中間隙</text>
     <filled-circle radius="7.5">
       <point x="48" y="72" />
     </filled-circle>
@@ -5409,6 +5567,8 @@ for the symbols.
     <text lang="sv">bron</text>
     <name lang="zh-HK">Bridge</name>
     <text lang="zh-HK">橋樑</text>
+    <name lang="zh-TW">橋</name>
+    <text lang="zh-TW">橋</text>
     <lines thickness="12.5">
       <point x="20" y="70" />
       <point x="20" y="40" />
@@ -5484,6 +5644,8 @@ for the symbols.
     <text lang="sv">kraftledningen</text>
     <name lang="zh-HK">Power line</name>
     <text lang="zh-HK">電線</text>
+    <name lang="zh-TW">電纜線</name>
+    <text lang="zh-TW">電纜線</text>
     <lines thickness="12.5">
       <point x="-75" y="-75" />
       <point x="75" y="75" />
@@ -5563,6 +5725,8 @@ for the symbols.
     <text lang="sv">kraftledningsstolpen</text>
     <name lang="zh-HK">Power line pylon</name>
     <text lang="zh-HK">電線桿</text>
+    <name lang="zh-TW">電纜線支架</name>
+    <text lang="zh-TW">電纜線支架</text>
     <circle thickness="10" radius="40">
       <point x="0" y="0" />
     </circle>
@@ -5645,6 +5809,8 @@ for the symbols.
     <text lang="sv">tunneln</text>
     <name lang="zh-HK">Tunnel</name>
     <text lang="zh-HK">隧道</text>
+    <name lang="zh-TW">隧道</name>
+    <text lang="zh-TW">隧道</text>
     <lines thickness="12.5">
       <point x="-65" y="-30" />
       <point x="65" y="-30" />
@@ -5726,6 +5892,8 @@ for the symbols.
     <text lang="sv">stenmuren</text>
     <name lang="zh-HK">Stone wall</name>
     <text lang="zh-HK">石牆</text>
+    <name lang="zh-TW">石牆</name>
+    <text lang="zh-TW">石牆</text>
     <filled-circle radius="20">
       <point x="0" y="0" />
     </filled-circle>
@@ -5802,6 +5970,8 @@ for the symbols.
     <text lang="sv">stängslet</text>
     <name lang="zh-HK">Fence</name>
     <text lang="zh-HK">圍欄</text>
+    <name lang="zh-TW">圍欄</name>
+    <text lang="zh-TW">圍欄</text>
     <lines thickness="12.5">
       <point x="50" y="70" />
       <point x="-50" y="-30" />
@@ -5884,6 +6054,8 @@ for the symbols.
     <text lang="sv">genomgången</text>
     <name lang="zh-HK">Crossing point</name>
     <text lang="zh-HK">橫越點</text>
+    <name lang="zh-TW">穿越點</name>
+    <text lang="zh-TW">穿越點</text>
     <lines thickness="12.5">
       <point x="-65" y="0" />
       <point x="-20" y="0" />
@@ -5963,6 +6135,8 @@ for the symbols.
     <text lang="sv" plural="true">byggnaderna</text>
     <name lang="zh-HK">Building</name>
     <text lang="zh-HK">建築物</text>
+    <name lang="zh-TW">建築物</name>
+    <text lang="zh-TW">建築物</text>
     <filled-polygon>
       <point x="-50" y="-50" />
       <point x="-50" y="50" />
@@ -6031,6 +6205,8 @@ for the symbols.
     <text lang="sv">asfalt/grusytan</text>
     <name lang="zh-HK">Paved area</name>
     <text lang="zh-HK">水泥地</text>
+    <name lang="zh-TW">人工鋪砌地面</name>
+    <text lang="zh-TW">人工鋪砌地面</text>
     <lines thickness="12.5">
       <point x="-12" y="60" />
       <point x="-60" y="12" />
@@ -6116,6 +6292,8 @@ for the symbols.
     <text lang="sv" plural="true">ruinerna</text>
     <name lang="zh-HK">Ruin</name>
     <text lang="zh-HK">破毀建築物</text>
+    <name lang="zh-TW">廢屋</name>
+    <text lang="zh-TW">廢屋</text>
     <lines thickness="12.5">
       <point x="-60" y="15" />
       <point x="-60" y="60" />
@@ -6199,6 +6377,8 @@ for the symbols.
     <text lang="sv">rörledningen</text>
     <name lang="zh-HK">Pipeline</name>
     <text lang="zh-HK">管道</text>
+    <name lang="zh-TW">管道; 雪車滑道或冰橇賽道</name>
+    <text lang="zh-TW">管道</text>
     <lines thickness="12.5">
       <point x="70" y="70" />
       <point x="-57.5" y="-57.5" />
@@ -6281,6 +6461,8 @@ for the symbols.
     <text lang="sv" plural="true">tornen</text>
     <name lang="zh-HK">Tower</name>
     <text lang="zh-HK">塔架</text>
+    <name lang="zh-TW">塔架或鐵塔</name>
+    <text lang="zh-TW">塔架</text>
     <lines thickness="12.5">
       <point x="-50" y="60" />
       <point x="50" y="60" />
@@ -6351,6 +6533,8 @@ for the symbols.
     <text lang="sv" plural="true">jakttornen</text>
     <name lang="zh-HK">Shooting platform</name>
     <text lang="zh-HK">射擊台</text>
+    <name lang="zh-TW">射擊台</name>
+    <text lang="zh-TW">射擊台</text>
     <lines thickness="12.5">
       <point x="30" y="60" />
       <point x="-30" y="60" />
@@ -6419,6 +6603,8 @@ for the symbols.
     <text lang="sv">röset</text>
     <name lang="zh-HK">Boundary stone, Cairn</name>
     <text lang="zh-HK">石標誌</text>
+    <name lang="zh-TW">界石；石標誌</name>
+    <text lang="zh-TW">石標誌</text>
     <circle thickness="12.5" radius="60">
       <point x="0" y="0" />
     </circle>
@@ -6488,6 +6674,8 @@ for the symbols.
     <text lang="sv" plural="true">foderhäckarna</text>
     <name lang="zh-HK">Fodder rack</name>
     <text lang="zh-HK">飼料架</text>
+    <name lang="zh-TW">飼料箱</name>
+    <text lang="zh-TW">飼料箱</text>
     <lines thickness="12.5">
       <point x="0" y="-65" />
       <point x="0" y="65" />
@@ -6564,6 +6752,8 @@ for the symbols.
     <text lang="sv">kolbottnen</text>
     <name lang="zh-HK">Charcoal burning ground</name>
     <text lang="zh-HK">炭灰地</text>
+    <name lang="zh-TW">炭灰地；斜坡平台</name>
+    <text lang="zh-TW">炭灰地</text>
     <circle thickness="12.5" radius="68">
       <point x="0" y="0" />
     </circle>
@@ -6635,6 +6825,9 @@ for the symbols.
     <text lang="sv">monumentet/statyn</text>
     <name lang="zh-HK">Monument or statue</name>
     <text lang="zh-HK">紀念碑或塑像</text>
+    <name lang="zh-TW">紀念碑或雕像</name>
+    <text lang="zh-TW" plural="true">紀念碑</text>
+    <text lang="zh-TW">紀念碑</text>
     <lines thickness="12.5">
       <point x="-55" y="-60" />
       <point x="55" y="-60" />
@@ -6707,6 +6900,8 @@ for the symbols.
     <text lang="sv">byggnadspassagen</text>
     <name lang="zh-HK">Building pass-through</name>
     <text lang="zh-HK">可通越建築物</text>
+    <name lang="zh-TW">可穿越建築物的通道</name>
+    <text lang="zh-TW">遮蓋</text>
     <lines thickness="12.5">
       <point x="-60" y="60" />
       <point x="60" y="60" />
@@ -6782,6 +6977,8 @@ for the symbols.
     <text lang="sv">trappan</text>
     <name lang="zh-HK">Stairway</name>
     <text lang="zh-HK">樓梯</text>
+    <name lang="zh-TW">階梯</name>
+    <text lang="zh-TW">階梯</text>
     <lines thickness="12.5">
       <point x="-70" y="-45" />
       <point x="-35" y="-45" />
@@ -6804,6 +7001,9 @@ for the symbols.
     <name lang="it">Aiuola</name>
     <text lang="it" gender="femminile">aiuola</text>
     <text lang="it" plural="true" gender="femminile">aiuole</text>
+    <name lang="zh-TW">Flower bed / Out of bounds area</name>
+    <text lang="zh-TW" plural="true">flower beds</text>
+    <text lang="zh-TW">flower bed</text>
     <beziers thickness="10">
       <point x="0" y="-37" />
       <point x="-7.660444" y="-43.42788" />
@@ -6990,6 +7190,8 @@ for the symbols.
     <text lang="sv">specialföremålet</text>
     <name lang="zh-HK">Special item</name>
     <text lang="zh-HK">特別項目</text>
+    <name lang="zh-TW">明顯的特徵；特定的項目</name>
+    <text lang="zh-TW">特定的項目</text>
     <lines thickness="12.5">
       <point x="45" y="45" />
       <point x="-45" y="-45" />
@@ -7057,6 +7259,8 @@ for the symbols.
     <text lang="sv">specialföremålet</text>
     <name lang="zh-HK">Special item</name>
     <text lang="zh-HK">特別項目</text>
+    <name lang="zh-TW">明顯的特徵；特定的項目</name>
+    <text lang="zh-TW">特定的項目</text>
     <circle thickness="12.5" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -7132,6 +7336,8 @@ for the symbols.
     <text lang="sv">{0}, låg</text>
     <name lang="zh-HK">Low</name>
     <text lang="zh-HK">低矮的{0}</text>
+    <name lang="zh-TW">低矮的</name>
+    <text lang="zh-TW">低矮的 {0}</text>
     <beziers thickness="12.5">
       <point x="-70" y="-10" />
       <point x="-30" y="20" />
@@ -7206,6 +7412,8 @@ for the symbols.
     <text lang="sv">{0}, flack</text>
     <name lang="zh-HK">Shallow</name>
     <text lang="zh-HK">淺{0}</text>
+    <name lang="zh-TW">淺的</name>
+    <text lang="zh-TW">淺的 {0}</text>
     <beziers thickness="12.5">
       <point x="-70" y="10" />
       <point x="-30" y="-20" />
@@ -7282,6 +7490,8 @@ for the symbols.
     <text lang="sv">{0}, djup</text>
     <name lang="zh-HK">Deep</name>
     <text lang="zh-HK">深{0}</text>
+    <name lang="zh-TW">深的</name>
+    <text lang="zh-TW">深的 {0}</text>
     <beziers thickness="12.5">
       <point x="-70" y="70" />
       <point x="-35" y="72" />
@@ -7364,6 +7574,8 @@ for the symbols.
     <text lang="sv">{0}, bevuxen</text>
     <name lang="zh-HK">Overgrown</name>
     <text lang="zh-HK">密{0}</text>
+    <name lang="zh-TW">雜草叢生的</name>
+    <text lang="zh-TW">雜草叢生的 {0}</text>
     <lines thickness="10">
       <point x="42" y="64" />
       <point x="42" y="-64" />
@@ -7463,6 +7675,8 @@ for the symbols.
     <text lang="sv">{0}, öppen</text>
     <name lang="zh-HK">Open</name>
     <text lang="zh-HK">開闊的{0}</text>
+    <name lang="zh-TW">空曠的</name>
+    <text lang="zh-TW">空曠的 {0}</text>
     <filled-circle radius="7.5">
       <point x="-60" y="60" />
     </filled-circle>
@@ -7566,6 +7780,8 @@ for the symbols.
     <text lang="sv">{0}, stenig</text>
     <name lang="zh-HK">Rocky, stony</name>
     <text lang="zh-HK">多石的{0}</text>
+    <name lang="zh-TW">岩石的、多石的</name>
+    <text lang="zh-TW">岩石的 {0}</text>
     <filled-polygon>
       <point x="-72" y="0" />
       <point x="-44.25" y="48" />
@@ -7648,6 +7864,8 @@ for the symbols.
     <text lang="sv">{0}, sank</text>
     <name lang="zh-HK">Marshy</name>
     <text lang="zh-HK">濕軟的{0}</text>
+    <name lang="zh-TW">沼澤化的</name>
+    <text lang="zh-TW">沼澤化的 {0}</text>
     <lines thickness="12.5">
       <point x="30" y="35" />
       <point x="-30" y="35" />
@@ -7727,6 +7945,8 @@ for the symbols.
     <text lang="sv">{0}, sandig</text>
     <name lang="zh-HK">Sandy</name>
     <text lang="zh-HK">多沙的{0}</text>
+    <name lang="zh-TW">多沙的</name>
+    <text lang="zh-TW">多沙的 {0}</text>
     <filled-circle radius="5">
       <point x="-15" y="-31" />
     </filled-circle>
@@ -7936,6 +8156,8 @@ for the symbols.
     <text lang="sv">{0}, barrträd</text>
     <name lang="zh-HK">Needle-leaved</name>
     <text lang="zh-HK">針葉{0}</text>
+    <name lang="zh-TW">針葉的</name>
+    <text lang="zh-TW">針葉的 {0}</text>
     <lines thickness="12.5">
       <point x="-17" y="10" />
       <point x="-40" y="-35" />
@@ -8010,6 +8232,8 @@ for the symbols.
     <text lang="sv">{0}, lövträd</text>
     <name lang="zh-HK">Broad-leaved</name>
     <text lang="zh-HK">落葉{0}</text>
+    <name lang="zh-TW">闊葉的</name>
+    <text lang="zh-TW">闊葉的 {0}</text>
     <beziers thickness="12.5">
       <point x="0" y="-20" />
       <point x="15" y="-70" />
@@ -8112,6 +8336,8 @@ for the symbols.
     <text lang="sv">{0}, raserad</text>
     <name lang="zh-HK">Ruined</name>
     <text lang="zh-HK">倒塌的{0}</text>
+    <name lang="zh-TW">倒塌毀壞的</name>
+    <text lang="zh-TW">倒塌毀壞的 {0}</text>
     <beziers thickness="12.5">
       <point x="-60" y="-60" />
       <point x="-58" y="8" />
@@ -8197,6 +8423,8 @@ for the symbols.
     <text lang="sv">korsningen mellan {0} och {1}</text>
     <name lang="zh-HK">Crossing</name>
     <text lang="zh-HK">{0}及{1}的交叉處</text>
+    <name lang="zh-TW">交會處</name>
+    <text lang="zh-TW">{0} 與 {1} 的交會處</text>
     <lines thickness="12.5">
       <point x="70" y="70" />
       <point x="-70" y="-70" />
@@ -8258,6 +8486,9 @@ for the symbols.
     <text lang="sv">korsningen mellan {1}</text>
     <name lang="zh-HK">Crossing (objects of same kind)</name>
     <text lang="zh-HK">兩{0}的交叉處</text>
+    <name lang="zh-TW">交會處 (相同特徵)</name>
+    <text lang="zh-TW" plural="true">{0} 的交會處</text>
+    <text lang="zh-TW">{0} 的交會處</text>
   </symbol>
 
   <symbol kind="F" id="10.2">
@@ -8310,6 +8541,9 @@ for the symbols.
     <text lang="sv">förgrening av {0} och {1}</text>
     <name lang="zh-HK">Junction</name>
     <text lang="zh-HK">{0}及{1}的連接處</text>
+    <name lang="zh-TW">連接處</name>
+    <text lang="zh-TW" plural="true">{0} 與 {1} 的連接處</text>
+    <text lang="zh-TW">{0} 與 {1} 的連接處</text>
     <lines thickness="12.5">
       <point x="55" y="70" />
       <point x="-55" y="-70" />
@@ -8371,6 +8605,9 @@ for the symbols.
     <text lang="sv">förgrening av {0}</text>
     <name lang="zh-HK">Junction (objects of same kind)</name>
     <text lang="zh-HK">兩{0}的連接處</text>
+    <name lang="zh-TW">連接處 (相同特徵)</name>
+    <text lang="zh-TW" plural="true">{0} 的連接處</text>
+    <text lang="zh-TW">{0} 的連接處</text>
   </symbol>
 
   <!-- Note that the Symbol ID keeps the 2004 id, even though it has now moved to column F. -->
@@ -8419,6 +8656,8 @@ for the symbols.
     <text lang="sv">{0}, kröken</text>
     <name lang="zh-HK">Bend</name>
     <text lang="zh-HK">{0}彎位</text>
+    <name lang="zh-TW">轉彎處</name>
+    <text lang="zh-TW">{0} 的轉彎處</text>
     <beziers thickness="12.5">
       <point x="35" y="70" />
       <point x="25" y="62.22" />
@@ -8481,6 +8720,8 @@ for the symbols.
     <text lang="sv">{0} hög</text>
     <name lang="zh-HK">Height of feature</name>
     <text lang="zh-HK">{0} 高</text>
+    <name lang="zh-TW">特徵物距離地面的高度</name>
+    <text lang="zh-TW">(高度{0} )</text>
   </symbol>
 
   <symbol kind="F" id="9.1deep">
@@ -8526,6 +8767,8 @@ for the symbols.
     <text lang="sv">{0} djup</text>
     <name lang="zh-HK">Depth of feature</name>
     <text lang="zh-HK">{0} 深</text>
+    <name lang="zh-TW">特徵物距離地面的深度</name>
+    <text lang="zh-TW">(深度{0} )</text>
   </symbol>
 
   <symbol kind="F" id="9.2">
@@ -8569,6 +8812,8 @@ for the symbols.
     <text lang="sv">{0} x {1}</text>
     <name lang="zh-HK">Size of feature</name>
     <text lang="zh-HK">{0} 乘 {1}</text>
+    <name lang="zh-TW">特徵物在水平面上的尺寸</name>
+    <text lang="zh-TW">(長 {0} 寬 {1})</text>
   </symbol>
 
   <symbol kind="F" id="9.3high">
@@ -8612,6 +8857,8 @@ for the symbols.
     <text lang="sv">{0}/{1} hög</text>
     <name lang="zh-HK">Height of feature on slope</name>
     <text lang="zh-HK">{0} 至 {1} 高</text>
+    <name lang="zh-TW">斜坡上特徵物的高度</name>
+    <text lang="zh-TW">(上端高度 {0} 下端高度 {1} )</text>
   </symbol>
 
   <symbol kind="F" id="9.3deep">
@@ -8655,6 +8902,8 @@ for the symbols.
     <text lang="sv">{0}/{1} djup</text>
     <name lang="zh-HK">Depth of feature on slope</name>
     <text lang="zh-HK">{0} 至 {1} 深</text>
+    <name lang="zh-TW">斜坡上特徵物的深度</name>
+    <text lang="zh-TW">(上端深度 {0} 下端深度 {1})</text>
   </symbol>
 
   <!-- Note that in the below, {0} and {1} are replaced with the 
@@ -8702,6 +8951,8 @@ for the symbols.
     <text lang="sv">{0} och {1}</text>
     <name lang="zh-HK">Size of two features</name>
     <text lang="zh-HK">{0} 及 {1}</text>
+    <name lang="zh-TW">兩個特徵物的高度</name>
+    <text lang="zh-TW">(高度)</text>
   </symbol>
 
   <!-- Kind "G". Symbols that go only in column G:
@@ -8752,6 +9003,8 @@ for the symbols.
     <text lang="sv">{0}, N sidan</text>
     <name lang="zh-HK">North side</name>
     <text lang="zh-HK">{0}北面</text>
+    <name lang="zh-TW">北面外</name>
+    <text lang="zh-TW">{0}的北面外</text>
     <circle thickness="10" radius="55">
       <point x="0" y="-20" />
     </circle>
@@ -8802,6 +9055,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ sidan</text>
     <name lang="zh-HK">North-east side</name>
     <text lang="zh-HK">{0}東北面</text>
+    <name lang="zh-TW">東北面外</name>
+    <text lang="zh-TW">{0}的東北面外</text>
     <circle thickness="10" radius="55">
       <point x="-14.14" y="-14.14" />
     </circle>
@@ -8852,6 +9107,8 @@ for the symbols.
     <text lang="sv">{0}, Ö sidan</text>
     <name lang="zh-HK">East side</name>
     <text lang="zh-HK">{0}東面</text>
+    <name lang="zh-TW">東面外</name>
+    <text lang="zh-TW">{0}的東面外</text>
     <circle thickness="10" radius="55">
       <point x="-20" y="0" />
     </circle>
@@ -8902,6 +9159,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ sidan</text>
     <name lang="zh-HK">South-east side</name>
     <text lang="zh-HK">{0}東南面</text>
+    <name lang="zh-TW">東南面外</name>
+    <text lang="zh-TW">{0}的東南面外</text>
     <circle thickness="10" radius="55">
       <point x="-14.14" y="14.14" />
     </circle>
@@ -8952,6 +9211,8 @@ for the symbols.
     <text lang="sv">{0}, S sidan</text>
     <name lang="zh-HK">South side</name>
     <text lang="zh-HK">{0}南面</text>
+    <name lang="zh-TW">南面外</name>
+    <text lang="zh-TW">{0}的南面外</text>
     <circle thickness="10" radius="55">
       <point x="0" y="20" />
     </circle>
@@ -9002,6 +9263,8 @@ for the symbols.
     <text lang="sv">{0}, SV sidan</text>
     <name lang="zh-HK">South-west side</name>
     <text lang="zh-HK">{0}西南面</text>
+    <name lang="zh-TW">西南面外</name>
+    <text lang="zh-TW">{0}的西南面外</text>
     <circle thickness="10" radius="55">
       <point x="14.14" y="14.14" />
     </circle>
@@ -9052,6 +9315,8 @@ for the symbols.
     <text lang="sv">{0}, V sidan</text>
     <name lang="zh-HK">West side</name>
     <text lang="zh-HK">{0}西面</text>
+    <name lang="zh-TW">西面外</name>
+    <text lang="zh-TW">{0}的西面外</text>
     <circle thickness="10" radius="55">
       <point x="20" y="0" />
     </circle>
@@ -9102,6 +9367,8 @@ for the symbols.
     <text lang="sv">{0}, NV sidan</text>
     <name lang="zh-HK">North-west side</name>
     <text lang="zh-HK">{0}西北面</text>
+    <name lang="zh-TW">西北面外</name>
+    <text lang="zh-TW">{0}的西北面外</text>
     <circle thickness="10" radius="55">
       <point x="14.14" y="-14.14" />
     </circle>
@@ -9152,6 +9419,8 @@ for the symbols.
     <text lang="sv">{0}, N kanten</text>
     <name lang="zh-HK">North edge</name>
     <text lang="zh-HK">{0}北邊緣</text>
+    <name lang="zh-TW">北邊緣</name>
+    <text lang="zh-TW">{0}的北邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9203,6 +9472,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ kanten</text>
     <name lang="zh-HK">North-east edge</name>
     <text lang="zh-HK">{0}東北邊緣</text>
+    <name lang="zh-TW">東北邊緣</name>
+    <text lang="zh-TW">{0}的東北邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9254,6 +9525,8 @@ for the symbols.
     <text lang="sv">{0}, Ö kanten</text>
     <name lang="zh-HK">East edge</name>
     <text lang="zh-HK">{0}東邊緣</text>
+    <name lang="zh-TW">東邊緣</name>
+    <text lang="zh-TW">{0}的東邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9305,6 +9578,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ kanten</text>
     <name lang="zh-HK">South-east edge</name>
     <text lang="zh-HK">{0}東南邊緣</text>
+    <name lang="zh-TW">東南邊緣</name>
+    <text lang="zh-TW">{0}的東南邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9356,6 +9631,8 @@ for the symbols.
     <text lang="sv">{0}, S kanten</text>
     <name lang="zh-HK">South edge</name>
     <text lang="zh-HK">{0}南邊緣</text>
+    <name lang="zh-TW">南邊緣</name>
+    <text lang="zh-TW">{0}的南邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9407,6 +9684,8 @@ for the symbols.
     <text lang="sv">{0}, SV kanten</text>
     <name lang="zh-HK">South-west edge</name>
     <text lang="zh-HK">{0}西南邊緣</text>
+    <name lang="zh-TW">西南邊緣</name>
+    <text lang="zh-TW">{0}的西南邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9458,6 +9737,8 @@ for the symbols.
     <text lang="sv">{0}, V kanten</text>
     <name lang="zh-HK">West edge</name>
     <text lang="zh-HK">{0}西邊緣</text>
+    <name lang="zh-TW">西邊緣</name>
+    <text lang="zh-TW">{0}的西邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9509,6 +9790,8 @@ for the symbols.
     <text lang="sv">{0}, NV kanten</text>
     <name lang="zh-HK">North-west edge</name>
     <text lang="zh-HK">{0}西北邊緣</text>
+    <name lang="zh-TW">西北邊緣</name>
+    <text lang="zh-TW">{0}的西北邊緣</text>
     <circle thickness="10" radius="55">
       <point x="0" y="0" />
     </circle>
@@ -9560,6 +9843,8 @@ for the symbols.
     <text lang="sv">{0}, N delen</text>
     <name lang="zh-HK">North part</name>
     <text lang="zh-HK">{0}北部</text>
+    <name lang="zh-TW">北部內</name>
+    <text lang="zh-TW"> {0}的北部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9610,6 +9895,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ delen</text>
     <name lang="zh-HK">North-east part</name>
     <text lang="zh-HK">{0}東北部</text>
+    <name lang="zh-TW">東北部內</name>
+    <text lang="zh-TW"> {0}的東北部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9660,6 +9947,8 @@ for the symbols.
     <text lang="sv">{0}, Ö delen</text>
     <name lang="zh-HK">East part</name>
     <text lang="zh-HK">{0}東部</text>
+    <name lang="zh-TW">東部內</name>
+    <text lang="zh-TW"> {0}的東部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9710,6 +9999,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ delen</text>
     <name lang="zh-HK">South-east part</name>
     <text lang="zh-HK">{0}東南部</text>
+    <name lang="zh-TW">東南部內</name>
+    <text lang="zh-TW"> {0}的東南部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9760,6 +10051,8 @@ for the symbols.
     <text lang="sv">{0}, S delen</text>
     <name lang="zh-HK">South part</name>
     <text lang="zh-HK">{0}南部</text>
+    <name lang="zh-TW">南部內</name>
+    <text lang="zh-TW"> {0}的南部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9810,6 +10103,8 @@ for the symbols.
     <text lang="sv">{0}, SV delen</text>
     <name lang="zh-HK">South-west part</name>
     <text lang="zh-HK">{0}西南部</text>
+    <name lang="zh-TW">西南部內</name>
+    <text lang="zh-TW"> {0}的西南部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9860,6 +10155,8 @@ for the symbols.
     <text lang="sv">{0}, V delen</text>
     <name lang="zh-HK">West part</name>
     <text lang="zh-HK">{0}西部</text>
+    <name lang="zh-TW">西部內</name>
+    <text lang="zh-TW"> {0}的西部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9910,6 +10207,8 @@ for the symbols.
     <text lang="sv">{0}, NV delen</text>
     <name lang="zh-HK">North-west part</name>
     <text lang="zh-HK">{0}西北部</text>
+    <name lang="zh-TW">西北部內</name>
+    <text lang="zh-TW"> {0}的西北部內</text>
     <circle thickness="10" radius="65">
       <point x="0" y="0" />
     </circle>
@@ -9960,6 +10259,8 @@ for the symbols.
     <text lang="sv">{0}, N hörnet (insidan)</text>
     <name lang="zh-HK">North corner (inside)</name>
     <text lang="zh-HK">{0}北內角</text>
+    <name lang="zh-TW">北角內</name>
+    <text lang="zh-TW">{0}的北角內</text>
     <filled-circle radius="12.5">
       <point x="0" y="12.5" />
     </filled-circle>
@@ -10012,6 +10313,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ hörnet (insidan)</text>
     <name lang="zh-HK">North-east corner (inside)</name>
     <text lang="zh-HK">{0}東北內角</text>
+    <name lang="zh-TW">東北角內</name>
+    <text lang="zh-TW">{0}的東北角內</text>
     <filled-circle radius="12.5">
       <point x="8.84" y="8.84" />
     </filled-circle>
@@ -10064,6 +10367,8 @@ for the symbols.
     <text lang="sv">{0}, Ö hörnet (insidan)</text>
     <name lang="zh-HK">East corner (inside)</name>
     <text lang="zh-HK">{0}東內角</text>
+    <name lang="zh-TW">東角內</name>
+    <text lang="zh-TW">{0}的東角內</text>
     <filled-circle radius="12.5">
       <point x="12.5" y="0" />
     </filled-circle>
@@ -10116,6 +10421,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ hörnet (insidan)</text>
     <name lang="zh-HK">South-east corner (inside)</name>
     <text lang="zh-HK">{0}東南內角</text>
+    <name lang="zh-TW">東南角內</name>
+    <text lang="zh-TW">{0}的東南角內</text>
     <filled-circle radius="12.5">
       <point x="8.84" y="-8.84" />
     </filled-circle>
@@ -10168,6 +10475,8 @@ for the symbols.
     <text lang="sv">{0}, S hörnet (insidan)</text>
     <name lang="zh-HK">South corner (inside)</name>
     <text lang="zh-HK">{0}南內角</text>
+    <name lang="zh-TW">南角內</name>
+    <text lang="zh-TW">{0}的南角內</text>
     <filled-circle radius="12.5">
       <point x="0" y="-12.5" />
     </filled-circle>
@@ -10220,6 +10529,8 @@ for the symbols.
     <text lang="sv">{0}, SV hörnet (insidan)</text>
     <name lang="zh-HK">South-west corner (inside)</name>
     <text lang="zh-HK">{0}西南內角</text>
+    <name lang="zh-TW">西南角內</name>
+    <text lang="zh-TW">{0}的西南角內</text>
     <filled-circle radius="12.5">
       <point x="-8.84" y="-8.84" />
     </filled-circle>
@@ -10272,6 +10583,8 @@ for the symbols.
     <text lang="sv">{0}, V hörnet (insidan)</text>
     <name lang="zh-HK">West corner (inside)</name>
     <text lang="zh-HK">{0}西內角</text>
+    <name lang="zh-TW">西角內</name>
+    <text lang="zh-TW">{0}的西角內</text>
     <filled-circle radius="12.5">
       <point x="-12.5" y="0" />
     </filled-circle>
@@ -10324,6 +10637,8 @@ for the symbols.
     <text lang="sv">{0}, NV hörnet (insidan)</text>
     <name lang="zh-HK">North-west corner (inside)</name>
     <text lang="zh-HK">{0}西北內角</text>
+    <name lang="zh-TW">西北角內</name>
+    <text lang="zh-TW">{0}的西北角內</text>
     <filled-circle radius="12.5">
       <point x="-8.84" y="8.84" />
     </filled-circle>
@@ -10376,6 +10691,8 @@ for the symbols.
     <text lang="sv">{0}, N hörnet (utsidan)</text>
     <name lang="zh-HK">North corner (outside)</name>
     <text lang="zh-HK">{0}北外角</text>
+    <name lang="zh-TW">北角外</name>
+    <text lang="zh-TW">{0}的北角外</text>
     <filled-circle radius="12.5">
       <point x="0" y="55" />
     </filled-circle>
@@ -10428,6 +10745,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ hörnet (utsidan)</text>
     <name lang="zh-HK">North-east corner (outside)</name>
     <text lang="zh-HK">{0}東北外角</text>
+    <name lang="zh-TW">東北角外</name>
+    <text lang="zh-TW">{0}的東北角外</text>
     <filled-circle radius="12.5">
       <point x="43.89" y="43.89" />
     </filled-circle>
@@ -10480,6 +10799,8 @@ for the symbols.
     <text lang="sv">{0}, Ö hörnet (utsidan)</text>
     <name lang="zh-HK">East corner (outside)</name>
     <text lang="zh-HK">{0}東外角</text>
+    <name lang="zh-TW">東角外</name>
+    <text lang="zh-TW">{0}的東角外</text>
     <filled-circle radius="12.5">
       <point x="55" y="0" />
     </filled-circle>
@@ -10532,6 +10853,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ hörnet (utsidan)</text>
     <name lang="zh-HK">South-east corner (outside)</name>
     <text lang="zh-HK">{0}東南外角</text>
+    <name lang="zh-TW">東南角外</name>
+    <text lang="zh-TW">{0}的東南角外</text>
     <filled-circle radius="12.5">
       <point x="43.89" y="-43.89" />
     </filled-circle>
@@ -10584,6 +10907,8 @@ for the symbols.
     <text lang="sv">{0}, S hörnet (utsidan)</text>
     <name lang="zh-HK">South corner (outside)</name>
     <text lang="zh-HK">{0}南外角</text>
+    <name lang="zh-TW">南角外</name>
+    <text lang="zh-TW">{0}的南角外</text>
     <filled-circle radius="12.5">
       <point x="0" y="-55" />
     </filled-circle>
@@ -10636,6 +10961,8 @@ for the symbols.
     <text lang="sv">{0}, SV hörnet (utsidan)</text>
     <name lang="zh-HK">South-west corner (outside)</name>
     <text lang="zh-HK">{0}西南外角</text>
+    <name lang="zh-TW">西南角外</name>
+    <text lang="zh-TW">{0}的西南角外</text>
     <filled-circle radius="12.5">
       <point x="-43.89" y="-43.89" />
     </filled-circle>
@@ -10688,6 +11015,8 @@ for the symbols.
     <text lang="sv">{0}, V hörnet (utsidan)</text>
     <name lang="zh-HK">West corner (outside)</name>
     <text lang="zh-HK">{0}西外角</text>
+    <name lang="zh-TW">西角外</name>
+    <text lang="zh-TW">{0}的西角外</text>
     <filled-circle radius="12.5">
       <point x="-55" y="0" />
     </filled-circle>
@@ -10740,6 +11069,8 @@ for the symbols.
     <text lang="sv">{0}, NV hörnet (utsidan)</text>
     <name lang="zh-HK">North-west corner (outside)</name>
     <text lang="zh-HK">{0}西北外角</text>
+    <name lang="zh-TW">西北角外</name>
+    <text lang="zh-TW">{0}的西北角外</text>
     <filled-circle radius="12.5">
       <point x="-43.89" y="43.89" />
     </filled-circle>
@@ -10792,6 +11123,8 @@ for the symbols.
     <text lang="sv">{0}, N spetsen</text>
     <name lang="zh-HK">North tip</name>
     <text lang="zh-HK">{0}北端</text>
+    <name lang="zh-TW">北端</name>
+    <text lang="zh-TW">{0}的北端</text>
     <filled-circle radius="12.5">
       <point x="0" y="60" />
     </filled-circle>
@@ -10844,6 +11177,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ spetsen</text>
     <name lang="zh-HK">North-east tip</name>
     <text lang="zh-HK">{0}東北端</text>
+    <name lang="zh-TW">東北端</name>
+    <text lang="zh-TW">{0}的東北端</text>
     <filled-circle radius="12.5">
       <point x="42.43" y="42.43" />
     </filled-circle>
@@ -10896,6 +11231,8 @@ for the symbols.
     <text lang="sv">{0}, Ö spetsen</text>
     <name lang="zh-HK">East tip</name>
     <text lang="zh-HK">{0}東端</text>
+    <name lang="zh-TW">東端</name>
+    <text lang="zh-TW">{0}的東端</text>
     <filled-circle radius="12.5">
       <point x="60" y="0" />
     </filled-circle>
@@ -10948,6 +11285,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ spetsen</text>
     <name lang="zh-HK">South-east tip</name>
     <text lang="zh-HK">{0}東南端</text>
+    <name lang="zh-TW">東南端</name>
+    <text lang="zh-TW">{0}的東南端</text>
     <filled-circle radius="12.5">
       <point x="42.43" y="-42.43" />
     </filled-circle>
@@ -11000,6 +11339,8 @@ for the symbols.
     <text lang="sv">{0}, S spetsen</text>
     <name lang="zh-HK">South tip</name>
     <text lang="zh-HK">{0}南端</text>
+    <name lang="zh-TW">南端</name>
+    <text lang="zh-TW">{0}的南端</text>
     <filled-circle radius="12.5">
       <point x="0" y="-60" />
     </filled-circle>
@@ -11052,6 +11393,8 @@ for the symbols.
     <text lang="sv">{0}, SV spetsen</text>
     <name lang="zh-HK">South-west tip</name>
     <text lang="zh-HK">{0}西南端</text>
+    <name lang="zh-TW">西南端</name>
+    <text lang="zh-TW">{0}的西南端</text>
     <filled-circle radius="12.5">
       <point x="-42.43" y="-42.43" />
     </filled-circle>
@@ -11104,6 +11447,8 @@ for the symbols.
     <text lang="sv">{0}, V spetsen</text>
     <name lang="zh-HK">West tip</name>
     <text lang="zh-HK">{0}西端</text>
+    <name lang="zh-TW">西端</name>
+    <text lang="zh-TW">{0}的西端</text>
     <filled-circle radius="12.5">
       <point x="-60" y="0" />
     </filled-circle>
@@ -11156,6 +11501,8 @@ for the symbols.
     <text lang="sv">{0}, NV spetsen</text>
     <name lang="zh-HK">North-west tip</name>
     <text lang="zh-HK">{0}西北端</text>
+    <name lang="zh-TW">西北端</name>
+    <text lang="zh-TW">{0}的西北端</text>
     <filled-circle radius="12.5">
       <point x="-42.43" y="42.43" />
     </filled-circle>
@@ -11208,6 +11555,8 @@ for the symbols.
     <text lang="sv">{0}, N slutet</text>
     <name lang="zh-HK">North end</name>
     <text lang="zh-HK">{0}北盡頭</text>
+    <name lang="zh-TW">北盡頭</name>
+    <text lang="zh-TW">{0}的北盡頭</text>
     <lines thickness="10">
       <point x="0" y="-65" />
       <point x="0" y="65" />
@@ -11260,6 +11609,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ slutet</text>
     <name lang="zh-HK">North-east end</name>
     <text lang="zh-HK">{0}東北盡頭</text>
+    <name lang="zh-TW">東北盡頭</name>
+    <text lang="zh-TW">{0}的東北盡頭</text>
     <lines thickness="10">
       <point x="-45.96" y="-45.96" />
       <point x="45.96" y="45.96" />
@@ -11312,6 +11663,8 @@ for the symbols.
     <text lang="sv">{0}, Ö slutet</text>
     <name lang="zh-HK">East end</name>
     <text lang="zh-HK">{0}東盡頭</text>
+    <name lang="zh-TW">東盡頭</name>
+    <text lang="zh-TW">{0}的東盡頭</text>
     <lines thickness="10">
       <point x="-65" y="0" />
       <point x="65" y="0" />
@@ -11364,6 +11717,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ slutet</text>
     <name lang="zh-HK">South-east end</name>
     <text lang="zh-HK">{0}東南盡頭</text>
+    <name lang="zh-TW">東南盡頭</name>
+    <text lang="zh-TW">{0}的東南盡頭</text>
     <lines thickness="10">
       <point x="-45.96" y="45.96" />
       <point x="45.96" y="-45.96" />
@@ -11416,6 +11771,8 @@ for the symbols.
     <text lang="sv">{0}, S slutet</text>
     <name lang="zh-HK">South end</name>
     <text lang="zh-HK">{0}南盡頭</text>
+    <name lang="zh-TW">南盡頭</name>
+    <text lang="zh-TW">{0}的南盡頭</text>
     <lines thickness="10">
       <point x="0" y="-65" />
       <point x="0" y="65" />
@@ -11468,6 +11825,8 @@ for the symbols.
     <text lang="sv">{0}, SV slutet</text>
     <name lang="zh-HK">South-west end</name>
     <text lang="zh-HK">{0}西南盡頭</text>
+    <name lang="zh-TW">西南盡頭</name>
+    <text lang="zh-TW">{0}的西南盡頭</text>
     <lines thickness="10">
       <point x="45.96" y="45.96" />
       <point x="-45.96" y="-45.96" />
@@ -11520,6 +11879,8 @@ for the symbols.
     <text lang="sv">{0}, V slutet</text>
     <name lang="zh-HK">West end</name>
     <text lang="zh-HK">{0}西盡頭</text>
+    <name lang="zh-TW">西盡頭</name>
+    <text lang="zh-TW">{0}的西盡頭</text>
     <lines thickness="10">
       <point x="-65" y="0" />
       <point x="65" y="0" />
@@ -11572,6 +11933,8 @@ for the symbols.
     <text lang="sv">{0}, NV slutet</text>
     <name lang="zh-HK">North-west end</name>
     <text lang="zh-HK">{0}西北盡頭</text>
+    <name lang="zh-TW">西北盡頭</name>
+    <text lang="zh-TW">{0}的西北盡頭</text>
     <lines thickness="10">
       <point x="45.96" y="-45.96" />
       <point x="-45.96" y="45.96" />
@@ -11624,6 +11987,8 @@ for the symbols.
     <text lang="sv">{0}, N foten</text>
     <name lang="zh-HK">North foot</name>
     <text lang="zh-HK">{0}北面腳下</text>
+    <name lang="zh-TW">北面腳下</name>
+    <text lang="zh-TW">{0}的北面腳下</text>
     <circle thickness="10" radius="50">
       <point x="0" y="-30" />
     </circle>
@@ -11676,6 +12041,8 @@ for the symbols.
     <text lang="sv">{0}, NÖ foten</text>
     <name lang="zh-HK">North-east foot</name>
     <text lang="zh-HK">{0}東北面腳下</text>
+    <name lang="zh-TW">東北面腳下</name>
+    <text lang="zh-TW">{0}的東北面腳下</text>
     <circle thickness="10" radius="50">
       <point x="-20" y="-20" />
     </circle>
@@ -11728,6 +12095,8 @@ for the symbols.
     <text lang="sv">{0}, Ö foten</text>
     <name lang="zh-HK">East foot</name>
     <text lang="zh-HK">{0}東面腳下</text>
+    <name lang="zh-TW">東面腳下</name>
+    <text lang="zh-TW">{0}的東面腳下</text>
     <circle thickness="10" radius="50">
       <point x="-25" y="0" />
     </circle>
@@ -11780,6 +12149,8 @@ for the symbols.
     <text lang="sv">{0}, SÖ foten</text>
     <name lang="zh-HK">South-east foot</name>
     <text lang="zh-HK">{0}東南面腳下</text>
+    <name lang="zh-TW">東南面腳下</name>
+    <text lang="zh-TW">{0}的東南面腳下</text>
     <circle thickness="10" radius="50">
       <point x="-20" y="20" />
     </circle>
@@ -11832,6 +12203,8 @@ for the symbols.
     <text lang="sv">{0}, S foten</text>
     <name lang="zh-HK">South foot</name>
     <text lang="zh-HK">{0}南面腳下</text>
+    <name lang="zh-TW">南面腳下</name>
+    <text lang="zh-TW">{0}的南面腳下</text>
     <circle thickness="10" radius="50">
       <point x="0" y="30" />
     </circle>
@@ -11884,6 +12257,8 @@ for the symbols.
     <text lang="sv">{0}, SV foten</text>
     <name lang="zh-HK">South-west foot</name>
     <text lang="zh-HK">{0}西南面腳下</text>
+    <name lang="zh-TW">西南面腳下</name>
+    <text lang="zh-TW">{0}的西南面腳下</text>
     <circle thickness="10" radius="50">
       <point x="20" y="20" />
     </circle>
@@ -11936,6 +12311,8 @@ for the symbols.
     <text lang="sv">{0}, V foten</text>
     <name lang="zh-HK">West foot</name>
     <text lang="zh-HK">{0}西面腳下</text>
+    <name lang="zh-TW">西面腳下</name>
+    <text lang="zh-TW">{0}的西面腳下</text>
     <circle thickness="10" radius="50">
       <point x="25" y="0" />
     </circle>
@@ -11988,6 +12365,8 @@ for the symbols.
     <text lang="sv">{0}, NV foten</text>
     <name lang="zh-HK">North-west foot</name>
     <text lang="zh-HK">{0}西北面腳下</text>
+    <name lang="zh-TW">西北面腳下</name>
+    <text lang="zh-TW">{0}的西北面腳下</text>
     <circle thickness="10" radius="50">
       <point x="20" y="-20" />
     </circle>
@@ -12043,6 +12422,8 @@ for the symbols.
     <text lang="sv">{0}, kröken</text>
     <name lang="zh-HK">Bend</name>
     <text lang="zh-HK">{0}彎位</text>
+    <name lang="zh-TW">轉彎處</name>
+    <text lang="zh-TW">{0} 的轉彎處</text>
     <beziers thickness="10">
       <point x="35" y="70" />
       <point x="25" y="62.22" />
@@ -12099,6 +12480,8 @@ for the symbols.
     <text lang="sv">{0}, övre delen</text>
     <name lang="zh-HK">Upper part</name>
     <text lang="zh-HK">{0}上部</text>
+    <name lang="zh-TW">較高處</name>
+    <text lang="zh-TW">{0}的較高處</text>
     <filled-circle radius="12.5">
       <point x="0" y="52.5" />
     </filled-circle>
@@ -12154,6 +12537,8 @@ for the symbols.
     <text lang="sv">{0}, nedre delen</text>
     <name lang="zh-HK">Lower part</name>
     <text lang="zh-HK">{0}下部</text>
+    <name lang="zh-TW">較低處</name>
+    <text lang="zh-TW">{0}的較低處</text>
     <filled-circle radius="12.5">
       <point x="0" y="-52.5" />
     </filled-circle>
@@ -12209,6 +12594,8 @@ for the symbols.
     <text lang="sv">{0}, uppe på</text>
     <name lang="zh-HK">Top</name>
     <text lang="zh-HK">{0}頂部</text>
+    <name lang="zh-TW">頂部</name>
+    <text lang="zh-TW">{0}的頂部</text>
     <filled-circle radius="12.5">
       <point x="0" y="52.5" />
     </filled-circle>
@@ -12265,6 +12652,8 @@ for the symbols.
     <text lang="sv">{0}, under</text>
     <name lang="zh-HK">Beneath</name>
     <text lang="zh-HK">{0}底下</text>
+    <name lang="zh-TW">底下</name>
+    <text lang="zh-TW">{0}的底下</text>
     <filled-circle radius="12.5">
       <point x="0" y="-22.5" />
     </filled-circle>
@@ -12321,6 +12710,8 @@ for the symbols.
     <text lang="sv">{0}, foten</text>
     <name lang="zh-HK">Foot</name>
     <text lang="zh-HK">{0}腳下</text>
+    <name lang="zh-TW">腳下（無指示方位）</name>
+    <text lang="zh-TW"> {0}的腳下</text>
     <filled-circle radius="12.5">
       <point x="0" y="-30" />
     </filled-circle>
@@ -12385,6 +12776,8 @@ for the symbols.
     <text lang="sv">mellan {0} och {1}</text>
     <name lang="zh-HK">Between</name>
     <text lang="zh-HK">{0}及{1}之間</text>
+    <name lang="zh-TW">兩者之間</name>
+    <text lang="zh-TW">在 {0} 與 {1}之間</text>
     <filled-circle radius="12.5">
       <point x="0" y="0" />
     </filled-circle>
@@ -12439,6 +12832,8 @@ for the symbols.
     <text lang="sv">mellan {1}</text>
     <name lang="zh-HK">Between (objects of same kind)</name>
     <text lang="zh-HK">兩{1}之間</text>
+    <name lang="zh-TW">兩者之間 (相同特徵)</name>
+    <text lang="zh-TW">在 {1}之間</text>
   </symbol>
 
   <!-- Kind "H". Symbols that go only in column H:
@@ -12484,6 +12879,8 @@ for the symbols.
     <text lang="sv">sjukvård</text>
     <name lang="zh-HK">First aid post</name>
     <text lang="zh-HK">急救站</text>
+    <name lang="zh-TW">急救站</name>
+    <text lang="zh-TW">急救站</text>
     <filled-polygon>
       <point x="-20" y="60" />
       <point x="20" y="60" />
@@ -12541,6 +12938,8 @@ for the symbols.
     <text lang="sv">vätska</text>
     <name lang="zh-HK">Refreshment point</name>
     <text lang="zh-HK">水站</text>
+    <name lang="zh-TW">補給點</name>
+    <text lang="zh-TW">補給點</text>
     <beziers thickness="12.5">
       <point x="60" y="55" />
       <point x="60" y="63.3" />
@@ -12616,6 +13015,8 @@ for the symbols.
     <text lang="sv">radio</text>
     <name lang="zh-HK">Radio or TV control</name>
     <text lang="zh-HK">無線電控制點</text>
+    <name lang="zh-TW">無線電或電視檢查點</name>
+    <text lang="zh-TW">無線電</text>
     <lines thickness="12.5">
       <point x="40" y="70" />
       <point x="-30" y="0" />
@@ -12665,6 +13066,8 @@ for the symbols.
     <text lang="sv">bemannad</text>
     <name lang="zh-HK">Control check</name>
     <text lang="zh-HK">有工作人員檢查</text>
+    <name lang="zh-TW">人員駐守的檢查點</name>
+    <text lang="zh-TW">人員駐守</text>
     <filled-circle radius="20">
       <point x="0" y="53" />
     </filled-circle>
@@ -12728,6 +13131,8 @@ for the symbols.
     <text lang="sv">följ snitsel, {0}bort från kontrollen</text>
     <name lang="zh-HK">Taped route away from control</name>
     <text lang="zh-HK">隨 {0} 索帶離開控制點</text>
+    <name lang="zh-TW">離開檢查點後，有指定路線</name>
+    <text lang="zh-TW">離開檢查點後，有 {0} (公尺) 長的指定路線</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -12803,6 +13208,8 @@ for the symbols.
     <text lang="sv">följ snitsel, {0}mellan kontrollerna</text>
     <name lang="zh-HK">Taped route between controls</name>
     <text lang="zh-HK">隨 {0} 索帶前往下一個控制點</text>
+    <name lang="zh-TW">兩檢查點之間，有指定路線</name>
+    <text lang="zh-TW">兩檢查點之間，有 {0} (公尺) 長的指定路線</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -12882,6 +13289,8 @@ for the symbols.
     <text lang="sv">obligatorisk passerpunkt</text>
     <name lang="zh-HK">Mandatory crossing point or points</name>
     <text lang="zh-HK">強制橫越點</text>
+    <name lang="zh-TW">強制選手必須通越的點</name>
+    <text lang="zh-TW">強制通越的點</text>
     <beziers thickness="12.5">
       <point x="-150" y="70" />
       <point x="-80" y="0" />
@@ -12953,6 +13362,8 @@ for the symbols.
     <text lang="sv">obligatorisk passage</text>
     <name lang="zh-HK">Mandatory passage</name>
     <text lang="zh-HK">強制通道</text>
+    <name lang="zh-TW">強制選手必須通越的通道</name>
+    <text lang="zh-TW">強制通越的通道</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -13028,6 +13439,8 @@ for the symbols.
     <text lang="sv">följ snitsel, {0}till kartbyte</text>
     <name lang="zh-HK">Map exchange</name>
     <text lang="zh-HK">隨 {0} 索帶前往換圖處</text>
+    <name lang="zh-TW">換圖區</name>
+    <text lang="zh-TW">沿著 {0} (公尺) 長的指定路線至換圖區</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -13093,6 +13506,8 @@ for the symbols.
     <text lang="sv">kartbyte vid kontrollen</text>
     <name lang="zh-HK">Map exchange at a control</name>
     <text lang="zh-HK">在控制點換圖</text>
+    <name lang="zh-TW">換圖區在檢查點</name>
+    <text lang="zh-TW">換圖區在檢查點</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -13184,6 +13599,8 @@ for the symbols.
     <text lang="it">{0}fettucciati fino alla partenza</text>
     <name lang="sv">Kartutdelningsplats</name>
     <text lang="sv">{0}till startpunkt</text>
+    <name lang="zh-TW">取圖點</name>
+    <text lang="zh-TW">{0} (公尺) 至地圖起點</text>
     <lines thickness="12.5">
       <point x="-760" y="-50" />
       <point x="-760" y="50" />
@@ -13273,6 +13690,8 @@ for the symbols.
     <text lang="sv">följ snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Taped route to finish</name>
     <text lang="zh-HK">隨 {0} 索帶前往終點</text>
+    <name lang="zh-TW">至終點為指定路線。</name>
+    <text lang="zh-TW">至終點，為{0} (公尺) 長的指定路線。</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -13354,6 +13773,8 @@ for the symbols.
     <text lang="sv">uppfångande snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Navigate to finish funnel</name>
     <text lang="zh-HK">往終點索帶 {0}</text>
+    <name lang="zh-TW">依指示匯集進入終點賽道</name>
+    <text lang="zh-TW">還有 {0} (公尺) 進入終點賽道</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
@@ -13436,6 +13857,8 @@ for the symbols.
     <text lang="sv">ingen snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Navigate to finish (no tapes)</name>
     <text lang="zh-HK">往終點 {0}</text>
+    <name lang="zh-TW">依前進方向指示進入終點 (無指定路線)。</name>
+    <text lang="zh-TW">還有 {0} (公尺) 到終點</text>
     <circle thickness="10" radius="70">
       <point x="-700" y="0" />
     </circle>
