@@ -139,6 +139,7 @@ for the symbols.
   <language lang="et" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">eesti</language>
   <language lang="fi" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">suomi</language>
   <language lang="fr" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculin,féminin">Français</language>
+  <language lang="hu" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">Magyar</language>
   <language lang="it" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="maschile,femminile">Italiano</language>
   <language lang="ja" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">日本語 (日本)</language>
   <language lang="nb-NO" plural-nouns="true" plural-modifiers="true" gender-modifiers="false">norsk, bokmål (Norge)</language>
@@ -175,6 +176,8 @@ for the symbols.
     <text lang="fi">Kaikki rastit</text>
     <name lang="fr">Tous Postes</name>
     <text lang="fr">Tous Postes</text>
+    <name lang="hu">Minden pont</name>
+    <text lang="hu">Minden pont</text>
     <name lang="it">Tutti i punti</name>
     <text lang="it">Tutti i punti</text>
     <name lang="ja">全コントロール</name>
@@ -219,6 +222,8 @@ for the symbols.
     <text lang="fi">Pituus {0}</text>
     <name lang="fr">Longueur du circuit</name>
     <text lang="fr">Longueur {0}</text>
+    <name lang="hu">Pálya hossza</name>
+    <text lang="hu">Hossz {0}</text>
     <name lang="it">Lunghezza del tracciato</name>
     <text lang="it">Lunghezza {0}</text>
     <name lang="ja">コースの距離</name>
@@ -264,6 +269,8 @@ for the symbols.
     <text lang="fi">Pituus {0}, nousu {1}</text>
     <name lang="fr">Longueur du circuit et Dénivelée</name>
     <text lang="fr">Longueur {0}, dénivelée {1}</text>
+    <name lang="hu">Pályahossz és emelkedés</name>
+    <text lang="hu">Hossz {0}, emelkedés {1}</text>
     <name lang="it">Lunghezza e dislivello del tracciato</name>
     <text lang="it">Lunghezza {0}, dislivello {1}</text>
     <name lang="ja">コースの距離と登高</name>
@@ -308,6 +315,8 @@ for the symbols.
     <text lang="fi">{0} rastia</text>
     <name lang="fr">Nombre de poste</name>
     <text lang="fr">{0} postes</text>
+    <name lang="hu">Ellenőrzőpontok száma</name>
+    <text lang="hu">{0} ellenörzőpont</text>
     <name lang="it">Numero di punti</name>
     <text lang="it">{0} punti</text>
     <name lang="ja">コントロール数</name>
@@ -352,6 +361,8 @@ for the symbols.
     <text lang="fi">{0} pistettä</text>
     <name lang="fr">Nombre de point</name>
     <text lang="fr">{0} points</text>
+    <name lang="hu">Pontok száma</name>
+    <text lang="hu">{0} pont</text>
     <name lang="it">Punteggio totale</name>
     <text lang="it">{0}</text>
     <name lang="ja">ポイント数</name>
@@ -398,6 +409,8 @@ for the symbols.
     <text lang="fi">{0} ja {1}</text>
     <name lang="fr">Et</name>
     <text lang="fr">{0} et {1}</text>
+    <name lang="hu">És</name>
+    <text lang="hu">{0} és {1}</text>
     <name lang="it">E</name>
     <text lang="it">{0} e {1}</text>
     <name lang="ja">と</name>
@@ -444,6 +457,8 @@ for the symbols.
     <text lang="fi">lähtö</text>
     <name lang="fr">Départ</name>
     <text lang="fr">départ </text>
+    <name lang="hu">Rajt</name>
+    <text lang="hu">rajt</text>
     <name lang="it">Partenza</name>
     <text lang="it">partenza</text>
     <name lang="ja">スタート</name>
@@ -499,6 +514,8 @@ for the symbols.
     <name lang="fr">Le plus au Nord</name>
     <text lang="fr" gender="féminin">{0}, la plus au Nord</text>
     <text lang="fr" gender="masculin">{0}, le plus au Nord</text>
+    <name lang="hu">Északi</name>
+    <text lang="hu">É {0}</text>
     <name lang="it">Più a nord</name>
     <text lang="it">{0} più a nord</text>
     <name lang="ja">北の</name>
@@ -555,6 +572,8 @@ for the symbols.
     <name lang="fr">Le plus au NE</name>
     <text lang="fr" gender="féminin">{0}, la plus au NE</text>
     <text lang="fr" gender="masculin">{0}, le plus au NE</text>
+    <name lang="hu">Észak-keleti</name>
+    <text lang="hu">ÉK {0}</text>
     <name lang="it">Più a nord-est</name>
     <text lang="it">{0} più a nord-est</text>
     <name lang="ja">北東の</name>
@@ -611,6 +630,8 @@ for the symbols.
     <name lang="fr">Le plus à l'Est</name>
     <text lang="fr" gender="féminin">{0}, la plus à l'Est</text>
     <text lang="fr" gender="masculin">{0}, le plus à l'Est</text>
+    <name lang="hu">Keleti</name>
+    <text lang="hu">K {0}</text>
     <name lang="it">Più a est</name>
     <text lang="it">{0} più a est</text>
     <name lang="ja">東の</name>
@@ -667,6 +688,8 @@ for the symbols.
     <name lang="fr">Le plus au SE</name>
     <text lang="fr" gender="féminin">{0}, la plus au SE</text>
     <text lang="fr" gender="masculin">{0}, le plus au SE</text>
+    <name lang="hu">Dél-keleti</name>
+    <text lang="hu">DK {0}</text>
     <name lang="it">Più a sud-est</name>
     <text lang="it">{0} più a sud-est</text>
     <name lang="ja">南東の</name>
@@ -723,6 +746,8 @@ for the symbols.
     <name lang="fr">Le plus au Sud</name>
     <text lang="fr" gender="féminin">{0}, la plus au Sud</text>
     <text lang="fr" gender="masculin">{0}, le plus au Sud</text>
+    <name lang="hu">Déli</name>
+    <text lang="hu">D {0}</text>
     <name lang="it">Più a sud</name>
     <text lang="it">{0} più a sud</text>
     <name lang="ja">南の</name>
@@ -779,6 +804,8 @@ for the symbols.
     <name lang="fr">Le plus au SO</name>
     <text lang="fr" gender="féminin">{0}, la plus au SO</text>
     <text lang="fr" gender="masculin">{0}, le plus au SO</text>
+    <name lang="hu">Dél-nyugati</name>
+    <text lang="hu">DNY {0}</text>
     <name lang="it">Più a sud-ovest</name>
     <text lang="it">{0} più a sud-ovest</text>
     <name lang="ja">南西の</name>
@@ -835,6 +862,8 @@ for the symbols.
     <name lang="fr">Le plus à l'Ouest</name>
     <text lang="fr" gender="féminin">{0}, la plus à l'Ouest</text>
     <text lang="fr" gender="masculin">{0}, le plus à l'Ouest</text>
+    <name lang="hu">Nyugati</name>
+    <text lang="hu">NY {0}</text>
     <name lang="it">Più a ovest</name>
     <text lang="it">{0} più a ovest</text>
     <name lang="ja">西の</name>
@@ -891,6 +920,8 @@ for the symbols.
     <name lang="fr">Le plus au NO</name>
     <text lang="fr" gender="féminin">{0}, la plus au NO</text>
     <text lang="fr" gender="masculin">{0}, le plus au NO</text>
+    <name lang="hu">Észak-nyugati</name>
+    <text lang="hu">ÉNY {0}</text>
     <name lang="it">Più a nord-ovest</name>
     <text lang="it">{0} più a nord-ovest</text>
     <name lang="ja">北西の</name>
@@ -949,6 +980,8 @@ for the symbols.
     <name lang="fr">Supérieur</name>
     <text lang="fr" gender="féminin">{0} supérieure</text>
     <text lang="fr" gender="masculin">{0} supérieur</text>
+    <name lang="hu">Felső</name>
+    <text lang="hu">felső {0}</text>
     <name lang="it">Superiore</name>
     <text lang="it">{0} superiore</text>
     <name lang="ja">上の</name>
@@ -1009,6 +1042,8 @@ for the symbols.
     <name lang="fr">Inférieur</name>
     <text lang="fr" gender="féminin">{0} inférieure</text>
     <text lang="fr" gender="masculin">{0} inférieur</text>
+    <name lang="hu">Alsó</name>
+    <text lang="hu">alsó {0}</text>
     <name lang="it">Inferiore</name>
     <text lang="it">{0} inferiore</text>
     <name lang="ja">下の</name>
@@ -1069,6 +1104,8 @@ for the symbols.
     <name lang="fr">Central</name>
     <text lang="fr" gender="féminin">{0} centrale</text>
     <text lang="fr" gender="masculin">{0} central</text>
+    <name lang="hu">Középső</name>
+    <text lang="hu">középső {0}</text>
     <name lang="it">Centrale</name>
     <text lang="it">{0} centrale</text>
     <name lang="ja">まん中の</name>
@@ -1145,6 +1182,8 @@ for the symbols.
     <name lang="fr">Terrasse</name>
     <text lang="fr" gender="féminin">terrasse</text>
     <text lang="fr" plural="true" gender="féminin">terrasses</text>
+    <name lang="hu">Pihenő</name>
+    <text lang="hu">pihenő</text>
     <name lang="it">Terrazzamento</name>
     <text lang="it" gender="maschile">terrazzamento</text>
     <text lang="it" plural="true" gender="maschile">terrazzamenti</text>
@@ -1227,6 +1266,8 @@ for the symbols.
     <name lang="fr">Éperon</name>
     <text lang="fr" gender="masculin">éperon</text>
     <text lang="fr" plural="true" gender="masculin">éperons</text>
+    <name lang="hu">Orr</name>
+    <text lang="hu">orr</text>
     <name lang="it">Naso</name>
     <text lang="it" gender="maschile">naso</text>
     <text lang="it" plural="true" gender="maschile">nasi</text>
@@ -1309,6 +1350,8 @@ for the symbols.
     <name lang="fr">Rentrant</name>
     <text lang="fr" gender="masculin">rentrant</text>
     <text lang="fr" plural="true" gender="masculin">rentrants</text>
+    <name lang="hu">Horpadás</name>
+    <text lang="hu">horpadás</text>
     <name lang="it">Avvallamento</name>
     <text lang="it" gender="maschile">avvallamento</text>
     <text lang="it" plural="true" gender="maschile">avvallamenti</text>
@@ -1385,6 +1428,8 @@ for the symbols.
     <name lang="fr">Talus raide</name>
     <text lang="fr" gender="masculin">talus raide</text>
     <text lang="fr" plural="true" gender="masculin">talus raides</text>
+    <name lang="hu">Földletörés</name>
+    <text lang="hu">földletörés</text>
     <name lang="it">Scarpata</name>
     <text lang="it" gender="femminile">scarpata</text>
     <text lang="it" plural="true" gender="femminile">scarpate</text>
@@ -1468,6 +1513,8 @@ for the symbols.
     <name lang="fr">Carrière</name>
     <text lang="fr" gender="féminin">carrière</text>
     <text lang="fr" plural="true" gender="féminin">carrières</text>
+    <name lang="hu">Bánya</name>
+    <text lang="hu">bánya</text>
     <name lang="it">Cava</name>
     <text lang="it" gender="femminile">cava</text>
     <text lang="it" plural="true" gender="femminile">cave</text>
@@ -1554,6 +1601,8 @@ for the symbols.
     <name lang="fr">Levée de terre</name>
     <text lang="fr" gender="féminin">levée de terre</text>
     <text lang="fr" plural="true" gender="féminin">levées de terre</text>
+    <name lang="hu">Töltés</name>
+    <text lang="hu">töltés</text>
     <name lang="it">Terrapieno</name>
     <text lang="it" gender="maschile">terrapieno</text>
     <text lang="it" plural="true" gender="maschile">terrapieni</text>
@@ -1635,6 +1684,8 @@ for the symbols.
     <name lang="fr">Ravine</name>
     <text lang="fr" gender="féminin">ravine</text>
     <text lang="fr" plural="true" gender="féminin">ravines</text>
+    <name lang="hu">Metsződés</name>
+    <text lang="hu">metsződés</text>
     <name lang="it">Fossa erosiva</name>
     <text lang="it" gender="femminile">fossa erosiva</text>
     <text lang="it" plural="true" gender="femminile">fosse erosive</text>
@@ -1701,6 +1752,8 @@ for the symbols.
     <name lang="fr">Fossé sec</name>
     <text lang="fr" gender="masculin">fossé sec</text>
     <text lang="fr" plural="true" gender="masculin">fossés secs</text>
+    <name lang="hu">Szárazárok</name>
+    <text lang="hu">szárazárok</text>
     <name lang="it">Canaletta</name>
     <text lang="it" gender="femminile">canaletta</text>
     <text lang="it" plural="true" gender="femminile">canalette</text>
@@ -1785,6 +1838,8 @@ for the symbols.
     <name lang="fr">Colline</name>
     <text lang="fr" gender="féminin">colline</text>
     <text lang="fr" plural="true" gender="féminin">collines</text>
+    <name lang="hu">Domb</name>
+    <text lang="hu">domb</text>
     <name lang="it">Collina</name>
     <text lang="it" gender="femminile">collina</text>
     <text lang="it" plural="true" gender="femminile">colline</text>
@@ -1861,6 +1916,8 @@ for the symbols.
     <name lang="fr">Butte</name>
     <text lang="fr" gender="féminin">butte</text>
     <text lang="fr" plural="true" gender="féminin">buttes</text>
+    <name lang="hu">Kis kúp</name>
+    <text lang="hu">kis kúp</text>
     <name lang="it">Cocuzzolo</name>
     <text lang="it" gender="maschile">cocuzzolo</text>
     <text lang="it" plural="true" gender="maschile">cocuzzoli</text>
@@ -1925,6 +1982,8 @@ for the symbols.
     <name lang="fr">Butte</name>
     <text lang="fr" gender="féminin">butte</text>
     <text lang="fr" plural="true" gender="féminin">buttes</text>
+    <name lang="hu">Kis kúp</name>
+    <text lang="hu">kis kúp</text>
     <name lang="it">Cocuzzolo</name>
     <text lang="it" gender="maschile">cocuzzolo</text>
     <text lang="it" plural="true" gender="maschile">cocuzzoli</text>
@@ -1989,6 +2048,8 @@ for the symbols.
     <name lang="fr">Col, passage</name>
     <text lang="fr" gender="masculin">col ou passage</text>
     <text lang="fr" plural="true" gender="masculin">cols ou passages</text>
+    <name lang="hu">Nyereg</name>
+    <text lang="hu">nyereg</text>
     <name lang="it">Sella</name>
     <text lang="it" gender="femminile">sella</text>
     <text lang="it" plural="true" gender="femminile">selle</text>
@@ -2062,6 +2123,8 @@ for the symbols.
     <name lang="fr">Dépression</name>
     <text lang="fr" gender="féminin">dépression</text>
     <text lang="fr" plural="true" gender="féminin">dépressions</text>
+    <name lang="hu">Mélyedés</name>
+    <text lang="hu">mélyedés</text>
     <name lang="it">Depressione</name>
     <text lang="it" gender="femminile">depressione</text>
     <text lang="it" plural="true" gender="femminile">depressioni</text>
@@ -2148,6 +2211,8 @@ for the symbols.
     <name lang="fr">Petite dépression</name>
     <text lang="fr" gender="féminin">petite dépression</text>
     <text lang="fr" plural="true" gender="féminin">petites dépressions</text>
+    <name lang="hu">Kis mélyedés</name>
+    <text lang="hu">kis mélyedés</text>
     <name lang="it">Piccola depressione</name>
     <text lang="it" gender="femminile">piccola depressione</text>
     <text lang="it" plural="true" gender="femminile">piccole depressioni</text>
@@ -2218,6 +2283,8 @@ for the symbols.
     <name lang="fr">Trou</name>
     <text lang="fr" gender="masculin">trou</text>
     <text lang="fr" plural="true" gender="masculin">trous</text>
+    <name lang="hu">Gödör</name>
+    <text lang="hu">gödör</text>
     <name lang="it">Buca</name>
     <text lang="it" gender="femminile">buca</text>
     <text lang="it" plural="true" gender="femminile">buche</text>
@@ -2283,6 +2350,8 @@ for the symbols.
     <name lang="fr">Terrain accidenté</name>
     <text lang="fr" gender="masculin">terrain accidenté</text>
     <text lang="fr" plural="true" gender="masculin">terrains accidentés</text>
+    <name lang="hu">Szabdalt terület</name>
+    <text lang="hu">szabdalt terület</text>
     <name lang="it">Terreno sconnesso</name>
     <text lang="it" gender="maschile">terreno sconnesso</text>
     <text lang="it" plural="true" gender="maschile">terreni sconnessi</text>
@@ -2370,6 +2439,8 @@ for the symbols.
     <name lang="fr">Fourmilière</name>
     <text lang="fr" gender="féminin">fourmilière</text>
     <text lang="fr" plural="true" gender="féminin">fourmilières</text>
+    <name lang="hu">Hangyaboly</name>
+    <text lang="hu">hangyaboly</text>
     <name lang="it">Formicaio</name>
     <text lang="it" gender="maschile">formicaio</text>
     <text lang="it" plural="true" gender="maschile">formicai</text>
@@ -2447,6 +2518,8 @@ for the symbols.
     <name lang="fr">Falaise</name>
     <text lang="fr" gender="féminin">falaise</text>
     <text lang="fr" plural="true" gender="féminin">falaises</text>
+    <name lang="hu">Sziklafal</name>
+    <text lang="hu">sziklafal</text>
     <name lang="it">Parete rocciosa</name>
     <text lang="it" gender="femminile">parete rocciosa</text>
     <text lang="it" plural="true" gender="femminile">pareti rocciose</text>
@@ -2524,6 +2597,8 @@ for the symbols.
     <name lang="fr">Aiguille rocheuse</name>
     <text lang="fr" gender="féminin">aiguille rocheuse</text>
     <text lang="fr" plural="true" gender="féminin">aiguilles rocheuses</text>
+    <name lang="hu">Rock pillar</name>
+    <text lang="hu">sziklatorony</text>
     <name lang="it">Spuntone di roccia</name>
     <text lang="it" gender="maschile">spuntone di roccia</text>
     <text lang="it" plural="true" gender="maschile">spuntoni di roccia</text>
@@ -2590,6 +2665,8 @@ for the symbols.
     <name lang="fr">Caverne</name>
     <text lang="fr" gender="féminin">caverne</text>
     <text lang="fr" plural="true" gender="féminin">cavernes</text>
+    <name lang="hu">Barlang</name>
+    <text lang="hu">barlang</text>
     <name lang="it">Caverna</name>
     <text lang="it" gender="femminile">caverna</text>
     <text lang="it" plural="true" gender="femminile">caverne</text>
@@ -2669,6 +2746,8 @@ for the symbols.
     <name lang="fr">Rocher, bloc</name>
     <text lang="fr" gender="masculin">rocher ou bloc</text>
     <text lang="fr" plural="true" gender="masculin">rochers ou blocs</text>
+    <name lang="hu">Sziklatömb</name>
+    <text lang="hu">sziklatömb</text>
     <name lang="it">Masso</name>
     <text lang="it" gender="maschile">masso</text>
     <text lang="it" plural="true" gender="maschile">massi</text>
@@ -2734,6 +2813,8 @@ for the symbols.
     <name lang="fr">Zone rocheuse</name>
     <text lang="fr" gender="féminin">zone rocheuse</text>
     <text lang="fr" plural="true" gender="féminin">zones rocheuses</text>
+    <name lang="hu">Szikla mező</name>
+    <text lang="hu">szikla mező</text>
     <name lang="it">Zona di massi</name>
     <text lang="it" gender="femminile">zona di massi</text>
     <text lang="it" plural="true" gender="femminile">zone di massi</text>
@@ -2819,6 +2900,8 @@ for the symbols.
     <name lang="fr">Tas de pierre</name>
     <text lang="fr" gender="masculin">tas de pierre</text>
     <text lang="fr" plural="true" gender="masculin">tas de pierre</text>
+    <name lang="hu">Szikla csoport</name>
+    <text lang="hu">szikla csoport</text>
     <name lang="it">Gruppo di massi</name>
     <text lang="it" gender="maschile">gruppo di massi</text>
     <text lang="it" plural="true" gender="maschile">gruppi di massi</text>
@@ -2890,6 +2973,8 @@ for the symbols.
     <name lang="fr">Pierrier</name>
     <text lang="fr" gender="masculin">pierrier</text>
     <text lang="fr" plural="true" gender="masculin">pierriers</text>
+    <name lang="hu">Kőmező</name>
+    <text lang="hu">kőmező</text>
     <name lang="it">Terreno sassoso</name>
     <text lang="it" gender="maschile">terreno sassoso</text>
     <text lang="it" plural="true" gender="maschile">terreni sassosi</text>
@@ -3025,6 +3110,8 @@ for the symbols.
     <name lang="fr">Affleurement rocheux</name>
     <text lang="fr" gender="masculin">affleurement rocheux</text>
     <text lang="fr" plural="true" gender="masculin">affleurements rocheux</text>
+    <name lang="hu">Csupasz szikla felszín</name>
+    <text lang="hu">csupasz szika felszín</text>
     <name lang="it">Roccia affiorante</name>
     <text lang="it" gender="femminile">roccia affiorante</text>
     <text lang="it" plural="true" gender="femminile">rocce affioranti</text>
@@ -3117,6 +3204,8 @@ for the symbols.
     <name lang="fr">Passage étroit (entre falaise)</name>
     <text lang="fr" gender="masculin">passage étroit</text>
     <text lang="fr" plural="true" gender="masculin">passages étroits</text>
+    <name lang="hu">Keskeny átjáró</name>
+    <text lang="hu">keskeny átjáró</text>
     <name lang="it">Passaggio stretto</name>
     <text lang="it" gender="maschile">passaggio stretto</text>
     <text lang="it" plural="true" gender="maschile">passaggi stretti</text>
@@ -3210,6 +3299,8 @@ for the symbols.
     <name lang="fr">Étang ou lac</name>
     <text lang="fr" gender="masculin">étang ou lac</text>
     <text lang="fr" plural="true" gender="masculin">étangs ou lacs</text>
+    <name lang="hu">Tó</name>
+    <text lang="hu">tó</text>
     <name lang="it">Lago</name>
     <text lang="it" gender="maschile">lago</text>
     <text lang="it" plural="true" gender="maschile">laghi</text>
@@ -3305,6 +3396,8 @@ for the symbols.
     <name lang="fr">Mare</name>
     <text lang="fr" gender="féminin">mare</text>
     <text lang="fr" plural="true" gender="féminin">mares</text>
+    <name lang="hu">Kis tó</name>
+    <text lang="hu">kis tó</text>
     <name lang="it">Stagno</name>
     <text lang="it" gender="maschile">stagno</text>
     <text lang="it" plural="true" gender="maschile">stagni</text>
@@ -3399,6 +3492,8 @@ for the symbols.
     <name lang="fr">Trou d'eau</name>
     <text lang="fr" gender="masculin">trou d'eau</text>
     <text lang="fr" plural="true" gender="masculin">trous d'eau</text>
+    <name lang="hu">Vizes gödör</name>
+    <text lang="hu">vizes gödör</text>
     <name lang="it">Buca d'acqua</name>
     <text lang="it" gender="femminile">buca d'acqua</text>
     <text lang="it" plural="true" gender="femminile">buche d'acqua</text>
@@ -3489,6 +3584,8 @@ for the symbols.
     <name lang="fr">Cours d'eau</name>
     <text lang="fr" gender="masculin">cours d'eau</text>
     <text lang="fr" plural="true" gender="masculin">cours d'eau</text>
+    <name lang="hu">Vízfolyás</name>
+    <text lang="hu">vízfolyás</text>
     <name lang="it">Ruscello</name>
     <text lang="it" gender="maschile">ruscello</text>
     <text lang="it" plural="true" gender="maschile">ruscelli</text>
@@ -3580,6 +3677,8 @@ for the symbols.
     <name lang="fr">Fossé ou rigole</name>
     <text lang="fr" gender="masculin">fossé ou rigole</text>
     <text lang="fr" plural="true" gender="masculin">fossés ou rigoles</text>
+    <name lang="hu">Vizes árok</name>
+    <text lang="hu">vizes árok</text>
     <name lang="it">Rigagnolo</name>
     <text lang="it" gender="maschile">rigagnolo</text>
     <text lang="it" plural="true" gender="maschile">rigagnoli</text>
@@ -3695,6 +3794,8 @@ for the symbols.
     <name lang="fr">Marais étroit</name>
     <text lang="fr" gender="masculin">marais étroit</text>
     <text lang="fr" plural="true" gender="masculin">marais étroits</text>
+    <name lang="hu">Keskeny mocsár</name>
+    <text lang="hu">keskeny mocsár</text>
     <name lang="it">Striscia paludosa</name>
     <text lang="it" gender="femminile">striscia paludosa</text>
     <text lang="it" plural="true" gender="femminile">strisce paludose</text>
@@ -3771,6 +3872,8 @@ for the symbols.
     <name lang="fr">Marais</name>
     <text lang="fr" gender="masculin">marais</text>
     <text lang="fr" plural="true" gender="masculin">marais</text>
+    <name lang="hu">Mocsár</name>
+    <text lang="hu">mocsár</text>
     <name lang="it">Palude</name>
     <text lang="it" gender="femminile">palude</text>
     <text lang="it" plural="true" gender="femminile">paludi</text>
@@ -3851,6 +3954,8 @@ for the symbols.
     <name lang="fr">Terrain ferme dans marais</name>
     <text lang="fr" gender="masculin">terrain ferme</text>
     <text lang="fr" plural="true" gender="masculin">terrains fermes</text>
+    <name lang="hu">Szilárd talaj a mocsárban</name>
+    <text lang="hu">szilárd talaj a mocsárban</text>
     <name lang="it">Terreno compatto circondato da palude</name>
     <text lang="it" gender="maschile">terreno compatto circondato da palude</text>
     <text lang="it" plural="true" gender="maschile">terreni compatti circondati da palude</text>
@@ -3965,6 +4070,8 @@ for the symbols.
     <name lang="fr">Puits</name>
     <text lang="fr" gender="masculin">puits</text>
     <text lang="fr" plural="true" gender="masculin">puits</text>
+    <name lang="hu">Kút</name>
+    <text lang="hu">kút</text>
     <name lang="it">Fontana</name>
     <text lang="it" gender="femminile">fontana</text>
     <text lang="it" plural="true" gender="femminile">fontane</text>
@@ -4047,6 +4154,8 @@ for the symbols.
     <name lang="fr">Source</name>
     <text lang="fr" gender="féminin">source</text>
     <text lang="fr" plural="true" gender="féminin">sources</text>
+    <name lang="hu">Forrás</name>
+    <text lang="hu">forrás</text>
     <name lang="it">Sorgente</name>
     <text lang="it" gender="femminile">sorgente</text>
     <text lang="it" plural="true" gender="femminile">sorgenti</text>
@@ -4132,6 +4241,8 @@ for the symbols.
     <name lang="fr">Réservoir d'eau, citerne</name>
     <text lang="fr" gender="masculin">réservoir d'eau ou citerne</text>
     <text lang="fr" plural="true" gender="masculin">réservoirs d'eau ou citernes</text>
+    <name lang="hu">Víztartály, vályú</name>
+    <text lang="hu">víztartály, vályú</text>
     <name lang="it">Cisterna</name>
     <text lang="it" gender="femminile">cisterna</text>
     <text lang="it" plural="true" gender="femminile">cisterne</text>
@@ -4221,6 +4332,8 @@ for the symbols.
     <name lang="fr">Champ</name>
     <text lang="fr" gender="masculin">champ</text>
     <text lang="fr" plural="true" gender="masculin">champs</text>
+    <name lang="hu">Nyílt terület</name>
+    <text lang="hu">nyílt terület</text>
     <name lang="it">Terreno aperto</name>
     <text lang="it" gender="maschile">terreno aperto</text>
     <text lang="it" plural="true" gender="maschile">terreni aperti</text>
@@ -4282,6 +4395,8 @@ for the symbols.
     <name lang="fr">Zone partiellement boisée</name>
     <text lang="fr" gender="féminin">zone partiellement boisée</text>
     <text lang="fr" plural="true" gender="féminin">zones partiellement boisées</text>
+    <name lang="hu">Nyílt terület elszórtan fákkal</name>
+    <text lang="hu">nyílt terület elszórtan fákkal</text>
     <name lang="it">Terreno semiaperto</name>
     <text lang="it" gender="maschile">terreno semiaperto</text>
     <text lang="it" plural="true" gender="maschile">terreni semiaperti</text>
@@ -4375,6 +4490,8 @@ for the symbols.
     <name lang="fr">Corne de forêt</name>
     <text lang="fr" gender="féminin">corne de forêt</text>
     <text lang="fr" plural="true" gender="féminin">cornes de forêt</text>
+    <name lang="hu">Erdő sarok</name>
+    <text lang="hu">erdő sarok</text>
     <name lang="it">Angolo di bosco</name>
     <text lang="it" gender="maschile">angolo di bosco</text>
     <text lang="it" plural="true" gender="maschile">angoli di bosco</text>
@@ -4442,6 +4559,8 @@ for the symbols.
     <name lang="fr">Clairière</name>
     <text lang="fr" gender="féminin">clairière</text>
     <text lang="fr" plural="true" gender="féminin">clairières</text>
+    <name lang="hu">Tisztás</name>
+    <text lang="hu">tisztás</text>
     <name lang="it">Radura</name>
     <text lang="it" gender="femminile">radura</text>
     <text lang="it" plural="true" gender="femminile">radure</text>
@@ -4539,6 +4658,8 @@ for the symbols.
     <name lang="fr">Fourré</name>
     <text lang="fr" gender="masculin">fourré</text>
     <text lang="fr" plural="true" gender="masculin">fourrés</text>
+    <name lang="hu">Bozót</name>
+    <text lang="hu">bozót</text>
     <name lang="it">Vegetazione fitta</name>
     <text lang="it" gender="femminile">vegetazione fitta</text>
     <text lang="it" plural="true" gender="femminile">vegetazioni fitte</text>
@@ -4623,6 +4744,8 @@ for the symbols.
     <name lang="fr">Haie</name>
     <text lang="fr" gender="féminin">haie</text>
     <text lang="fr" plural="true" gender="féminin">haies</text>
+    <name lang="hu">Bozótcsík</name>
+    <text lang="hu">bozótcsík</text>
     <name lang="it">Siepe</name>
     <text lang="it" gender="femminile">siepe</text>
     <text lang="it" plural="true" gender="femminile">siepi</text>
@@ -4709,6 +4832,8 @@ for the symbols.
     <name lang="fr">Limite de végétation</name>
     <text lang="fr" gender="féminin">limite de végétation</text>
     <text lang="fr" plural="true" gender="féminin">limites de végétation</text>
+    <name lang="hu">Jelleghatár</name>
+    <text lang="hu">jelleghatár</text>
     <name lang="it">Limite di vegetazione</name>
     <text lang="it" gender="maschile">limite di vegetazione</text>
     <text lang="it" plural="true" gender="maschile">limiti di vegetazione</text>
@@ -4796,6 +4921,8 @@ for the symbols.
     <name lang="fr">Bosquet</name>
     <text lang="fr" gender="masculin">bosquet</text>
     <text lang="fr" plural="true" gender="masculin">bosquets</text>
+    <name lang="hu">Facsoport</name>
+    <text lang="hu">facsoport</text>
     <name lang="it">Boschetto</name>
     <text lang="it" gender="maschile">boschetto</text>
     <text lang="it" plural="true" gender="maschile">boschetti</text>
@@ -4872,6 +4999,8 @@ for the symbols.
     <name lang="fr">Arbre remarquable</name>
     <text lang="fr" gender="masculin">arbre remarquable</text>
     <text lang="fr" plural="true" gender="masculin">arbres remarquables</text>
+    <name lang="hu">Jellegfa</name>
+    <text lang="hu">jellegfa</text>
     <name lang="it">Albero isolato</name>
     <text lang="it" gender="maschile">albero isolato</text>
     <text lang="it" plural="true" gender="maschile">alberi isolati</text>
@@ -4942,6 +5071,8 @@ for the symbols.
     <name lang="fr">Souche</name>
     <text lang="fr" gender="féminin">souche</text>
     <text lang="fr" plural="true" gender="féminin">souches</text>
+    <name lang="hu">Gyökér, fatönk</name>
+    <text lang="hu">gyökér, fatönk</text>
     <name lang="it">Radice capovolta</name>
     <text lang="it" gender="femminile">radice capovolta</text>
     <text lang="it" plural="true" gender="femminile">radici capovolte</text>
@@ -5014,6 +5145,8 @@ for the symbols.
     <name lang="fr">Route</name>
     <text lang="fr" gender="féminin">route</text>
     <text lang="fr" plural="true" gender="féminin">routes</text>
+    <name lang="hu">Út</name>
+    <text lang="hu">út</text>
     <name lang="it">Strada</name>
     <text lang="it" gender="femminile">strada</text>
     <text lang="it" plural="true" gender="femminile">strade</text>
@@ -5080,6 +5213,8 @@ for the symbols.
     <name lang="fr">Chemin, sentier</name>
     <text lang="fr" gender="masculin">chemin ou sentier</text>
     <text lang="fr" plural="true" gender="masculin">chemins ou sentiers</text>
+    <name lang="hu">Ösvény</name>
+    <text lang="hu">ösvény</text>
     <name lang="it">Sentiero</name>
     <text lang="it" gender="maschile">sentiero</text>
     <text lang="it" plural="true" gender="maschile">sentieri</text>
@@ -5152,6 +5287,8 @@ for the symbols.
     <name lang="fr">Layon étroit</name>
     <text lang="fr" gender="masculin">layon étroit</text>
     <text lang="fr" plural="true" gender="masculin">layons étroits</text>
+    <name lang="hu">Nyiladék</name>
+    <text lang="hu">nyiladék</text>
     <name lang="it">Taglio di bosco</name>
     <text lang="it" gender="maschile">taglio di bosco</text>
     <text lang="it" plural="true" gender="maschile">tagli di bosco</text>
@@ -5249,6 +5386,8 @@ for the symbols.
     <name lang="fr">Pont, passerelle</name>
     <text lang="fr" gender="masculin">pont</text>
     <text lang="fr" plural="true" gender="masculin">ponts</text>
+    <name lang="hu">Híd</name>
+    <text lang="hu">híd</text>
     <name lang="it">Ponte</name>
     <text lang="it" gender="maschile">ponte</text>
     <text lang="it" plural="true" gender="maschile">ponti</text>
@@ -5322,6 +5461,8 @@ for the symbols.
     <name lang="fr">Ligne à Haute Tension</name>
     <text lang="fr" gender="féminin">ligne à haute tension</text>
     <text lang="fr" plural="true" gender="féminin">lignes à haute tension</text>
+    <name lang="hu">Távvezeték</name>
+    <text lang="hu">távvezeték</text>
     <name lang="it">Linea elettrica</name>
     <text lang="it" gender="femminile">linea elettrica</text>
     <text lang="it" plural="true" gender="femminile">linee elettriche</text>
@@ -5399,6 +5540,8 @@ for the symbols.
     <name lang="fr">Pylône de ligne HT</name>
     <text lang="fr" gender="masculin">pylône de ligne HT</text>
     <text lang="fr" plural="true" gender="masculin">pylônes de ligne HT</text>
+    <name lang="hu">Távvezeték oszlop</name>
+    <text lang="hu">távvezeték oszlop</text>
     <name lang="it">Pilone</name>
     <text lang="it" gender="maschile">pilone</text>
     <text lang="it" plural="true" gender="maschile">piloni</text>
@@ -5479,6 +5622,8 @@ for the symbols.
     <name lang="fr">Tunnel</name>
     <text lang="fr" gender="masculin">tunnel</text>
     <text lang="fr" plural="true" gender="masculin">tunnels</text>
+    <name lang="hu">Alagút</name>
+    <text lang="hu">alagút</text>
     <name lang="it">Galleria</name>
     <text lang="it" gender="femminile">galleria</text>
     <text lang="it" plural="true" gender="femminile">gallerie</text>
@@ -5558,6 +5703,8 @@ for the symbols.
     <name lang="fr">Mur</name>
     <text lang="fr" gender="masculin">mur</text>
     <text lang="fr" plural="true" gender="masculin">murs</text>
+    <name lang="hu">Kőfal</name>
+    <text lang="hu">kőfal</text>
     <name lang="it">Muro</name>
     <text lang="it" gender="maschile">muro</text>
     <text lang="it" plural="true" gender="maschile">muri</text>
@@ -5632,6 +5779,8 @@ for the symbols.
     <name lang="fr">Clôture</name>
     <text lang="fr" gender="féminin">clôture</text>
     <text lang="fr" plural="true" gender="féminin">clôtures</text>
+    <name lang="hu">Kerítés</name>
+    <text lang="hu">kerítés</text>
     <name lang="it">Recinzione</name>
     <text lang="it" gender="femminile">recinzione</text>
     <text lang="it" plural="true" gender="femminile">recinzioni</text>
@@ -5712,6 +5861,8 @@ for the symbols.
     <name lang="fr">Passage</name>
     <text lang="fr" gender="masculin">passage</text>
     <text lang="fr" plural="true" gender="masculin">passages</text>
+    <name lang="hu">Átkelőhely</name>
+    <text lang="hu">átkelőhely</text>
     <name lang="it">Passaggio</name>
     <text lang="it" gender="maschile">passaggio</text>
     <text lang="it" plural="true" gender="maschile">passaggi</text>
@@ -5789,6 +5940,8 @@ for the symbols.
     <name lang="fr">Construction</name>
     <text lang="fr" gender="féminin">construction</text>
     <text lang="fr" plural="true" gender="féminin">constructions</text>
+    <name lang="hu">Épület</name>
+    <text lang="hu">épület</text>
     <name lang="it">Edificio</name>
     <text lang="it" gender="maschile">edificio</text>
     <text lang="it" plural="true" gender="maschile">edifici</text>
@@ -5855,6 +6008,8 @@ for the symbols.
     <name lang="fr">Zone pavée</name>
     <text lang="fr" gender="féminin">zone pavée</text>
     <text lang="fr" plural="true" gender="féminin">zones pavées</text>
+    <name lang="hu">Parkolóhely</name>
+    <text lang="hu">parkolóhely</text>
     <name lang="it">Area pavimentata</name>
     <text lang="it" gender="femminile">area pavimentata</text>
     <text lang="it" plural="true" gender="femminile">aree pavimentate</text>
@@ -5938,6 +6093,8 @@ for the symbols.
     <name lang="fr">Ruine</name>
     <text lang="fr" gender="féminin">ruine</text>
     <text lang="fr" plural="true" gender="féminin">ruines</text>
+    <name lang="hu">Rom</name>
+    <text lang="hu">rom</text>
     <name lang="it">Rudere</name>
     <text lang="it" gender="maschile">rudere</text>
     <text lang="it" plural="true" gender="maschile">ruderi</text>
@@ -6019,6 +6176,8 @@ for the symbols.
     <name lang="fr">Pipeline</name>
     <text lang="fr" gender="masculin">pipeline</text>
     <text lang="fr" plural="true" gender="masculin">pipelines</text>
+    <name lang="hu">Csővezeték</name>
+    <text lang="hu">csővezeték</text>
     <name lang="it">Tubazione</name>
     <text lang="it" gender="femminile">tubazione</text>
     <text lang="it" plural="true" gender="femminile">tubazioni</text>
@@ -6099,6 +6258,8 @@ for the symbols.
     <name lang="fr">Tour</name>
     <text lang="fr" gender="féminin">tour</text>
     <text lang="fr" plural="true" gender="féminin">tours</text>
+    <name lang="hu">Torony</name>
+    <text lang="hu">torony</text>
     <name lang="it">Torre</name>
     <text lang="it" gender="femminile">torre</text>
     <text lang="it" plural="true" gender="femminile">torri</text>
@@ -6167,6 +6328,8 @@ for the symbols.
     <name lang="fr">Poste d'observation</name>
     <text lang="fr" gender="masculin">poste d'observation</text>
     <text lang="fr" plural="true" gender="masculin">postes d'observation</text>
+    <name lang="hu">Magasles</name>
+    <text lang="hu">magasles</text>
     <name lang="it">Piattaforma d'osservazione</name>
     <text lang="it" gender="femminile">piattaforma d'osservazione</text>
     <text lang="it" plural="true" gender="femminile">piattaforme d'osservazione</text>
@@ -6233,6 +6396,8 @@ for the symbols.
     <name lang="fr">Borne</name>
     <text lang="fr" gender="féminin">borne</text>
     <text lang="fr" plural="true" gender="féminin">bornes</text>
+    <name lang="hu">Határjel</name>
+    <text lang="hu">határjel</text>
     <name lang="it">Cippo</name>
     <text lang="it" gender="maschile">cippo</text>
     <text lang="it" plural="true" gender="maschile">cippi</text>
@@ -6300,6 +6465,8 @@ for the symbols.
     <name lang="fr">Mangeoire</name>
     <text lang="fr" gender="féminin">mangeoire</text>
     <text lang="fr" plural="true" gender="féminin">mangeoires</text>
+    <name lang="hu">Vadetető</name>
+    <text lang="hu">vadetető</text>
     <name lang="it">Mangiatoia</name>
     <text lang="it" gender="femminile">mangiatoia</text>
     <text lang="it" plural="true" gender="femminile">mangiatoie</text>
@@ -6374,6 +6541,8 @@ for the symbols.
     <name lang="fr">Charbonnière</name>
     <text lang="fr" gender="féminin">charbonnière</text>
     <text lang="fr" plural="true" gender="féminin">charbonnières</text>
+    <name lang="hu">Szénégető hely</name>
+    <text lang="hu">szénégető hely</text>
     <name lang="it">Piazzola</name>
     <text lang="it" gender="femminile">piazzola</text>
     <text lang="it" plural="true" gender="femminile">piazzole</text>
@@ -6443,6 +6612,8 @@ for the symbols.
     <name lang="fr">Monument ou statue</name>
     <text lang="fr" gender="masculin">monument ou statue</text>
     <text lang="fr" plural="true" gender="masculin">monuments ou statues</text>
+    <name lang="hu">Emlékmű, szobor</name>
+    <text lang="hu">emlékmű, szobor</text>
     <name lang="it">Monumento</name>
     <text lang="it" gender="maschile">monumento</text>
     <text lang="it" plural="true" gender="maschile">monumenti</text>
@@ -6513,6 +6684,8 @@ for the symbols.
     <name lang="fr">Passage couvert</name>
     <text lang="fr" gender="masculin">passage couvert</text>
     <text lang="fr" plural="true" gender="masculin">passages couverts</text>
+    <name lang="hu">Átjáró</name>
+    <text lang="hu">átjáró</text>
     <name lang="it">Portico</name>
     <text lang="it" gender="maschile">portico</text>
     <text lang="it" plural="true" gender="maschile">portici</text>
@@ -6586,6 +6759,8 @@ for the symbols.
     <name lang="fr">Escalier</name>
     <text lang="fr" gender="masculin">escalier</text>
     <text lang="fr" plural="true" gender="masculin">escaliers</text>
+    <name lang="hu">Lépcső</name>
+    <text lang="hu">lépcső</text>
     <name lang="it">Scalinata</name>
     <text lang="it" gender="femminile">scalinata</text>
     <text lang="it" plural="true" gender="femminile">scalinate</text>
@@ -6792,6 +6967,8 @@ for the symbols.
     <name lang="fr">Objet particulier devant être défini au préalable</name>
     <text lang="fr" gender="masculin">objet particulier</text>
     <text lang="fr" plural="true" gender="masculin">objets particuliers</text>
+    <name lang="hu">Különleges terptárgy</name>
+    <text lang="hu">különleges terptárgy</text>
     <name lang="it">Oggetto particolare</name>
     <text lang="it" gender="maschile">oggetto particolare</text>
     <text lang="it" plural="true" gender="maschile">oggetti particolari</text>
@@ -6857,6 +7034,8 @@ for the symbols.
     <name lang="fr">Objet particulier devant être défini au préalable</name>
     <text lang="fr" gender="masculin">objet particulier</text>
     <text lang="fr" plural="true" gender="masculin">objets particuliers</text>
+    <name lang="hu">Különleges terptárgy</name>
+    <text lang="hu">különleges terptárgy</text>
     <name lang="it">Oggetto particolare</name>
     <text lang="it" gender="maschile">oggetto particolare</text>
     <text lang="it" plural="true" gender="maschile">oggetti particolari</text>
@@ -6929,6 +7108,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} aplati</text>
     <text lang="fr" plural="true" gender="féminin">{0} aplaties</text>
     <text lang="fr" plural="true" gender="masculin">{0} aplatis</text>
+    <name lang="hu">Alacsony</name>
+    <text lang="hu">alacsony {0}</text>
     <name lang="it">Basso</name>
     <text lang="it" gender="maschile">{0} basso</text>
     <text lang="it" gender="femminile">{0} bassa</text>
@@ -7001,6 +7182,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} évasé</text>
     <text lang="fr" plural="true" gender="féminin">{0} évasées</text>
     <text lang="fr" plural="true" gender="masculin">{0} évasés</text>
+    <name lang="hu">Lapos</name>
+    <text lang="hu">lapos {0}</text>
     <name lang="it">Poco profondo</name>
     <text lang="it" gender="maschile">{0} poco profondo</text>
     <text lang="it" gender="femminile">{0} poco profonda</text>
@@ -7075,6 +7258,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} profond</text>
     <text lang="fr" plural="true" gender="féminin">{0} profondes</text>
     <text lang="fr" plural="true" gender="masculin">{0} profonds</text>
+    <name lang="hu">Mély</name>
+    <text lang="hu">mély {0}</text>
     <name lang="it">Profondo</name>
     <text lang="it" gender="maschile">{0} profondo</text>
     <text lang="it" gender="femminile">{0} profonda</text>
@@ -7155,6 +7340,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} couvert de végétation</text>
     <text lang="fr" plural="true" gender="féminin">{0} couvertes de végétation</text>
     <text lang="fr" plural="true" gender="masculin">{0} couverts de végétation</text>
+    <name lang="hu">Benőtt</name>
+    <text lang="hu">benőtt {0}</text>
     <name lang="it">Coperto di vegetazione</name>
     <text lang="it" gender="maschile">{0} coperto di vegetazione</text>
     <text lang="it" gender="femminile">{0} coperta di vegetazione</text>
@@ -7252,6 +7439,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} dégagé</text>
     <text lang="fr" plural="true" gender="féminin">{0} dégagées</text>
     <text lang="fr" plural="true" gender="masculin">{0} dégagés</text>
+    <name lang="hu">Nyílt</name>
+    <text lang="hu">nyílt {0}</text>
     <name lang="it">Aperto</name>
     <text lang="it" gender="maschile">{0} aperto</text>
     <text lang="it" gender="femminile">{0} aperta</text>
@@ -7353,6 +7542,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} rocailleux</text>
     <text lang="fr" plural="true" gender="féminin">{0} rocailleuses</text>
     <text lang="fr" plural="true" gender="masculin">{0} rocailleux</text>
+    <name lang="hu">Sziklás, köves</name>
+    <text lang="hu">sziklás, kövesy {0}</text>
     <name lang="it">Roccioso</name>
     <text lang="it" gender="maschile">{0} roccioso</text>
     <text lang="it" gender="femminile">{0} rocciosa</text>
@@ -7433,6 +7624,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} marécageux</text>
     <text lang="fr" plural="true" gender="féminin">{0} marécageuses</text>
     <text lang="fr" plural="true" gender="masculin">{0} marécageux</text>
+    <name lang="hu">Marshy</name>
+    <text lang="hu">mocsaras {0}</text>
     <name lang="it">Paludoso</name>
     <text lang="it" gender="maschile">{0} paludoso</text>
     <text lang="it" gender="femminile">{0} paludosa</text>
@@ -7510,6 +7703,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} sablonneux</text>
     <text lang="fr" plural="true" gender="féminin">{0} sablonneuses</text>
     <text lang="fr" plural="true" gender="masculin">{0} sablonneux</text>
+    <name lang="hu">Homokos</name>
+    <text lang="hu">homokos {0}</text>
     <name lang="it">Sabbioso</name>
     <text lang="it" gender="maschile">{0} sabbioso</text>
     <text lang="it" gender="femminile">{0} sabbiosa</text>
@@ -7718,6 +7913,8 @@ for the symbols.
     <name lang="fr">Conifère</name>
     <text lang="fr">{0}, conifère</text>
     <text lang="fr" plural="true">{0}, conifères</text>
+    <name lang="hu">Tűlevelű</name>
+    <text lang="hu">tűlevelű {0}</text>
     <name lang="it">Di specie aghifoglia</name>
     <text lang="it">{0} di specie aghifoglia</text>
     <name lang="ja">針葉樹の</name>
@@ -7790,6 +7987,8 @@ for the symbols.
     <name lang="fr">Feuillu</name>
     <text lang="fr">{0}, feuillu</text>
     <text lang="fr" plural="true">{0}, feuillus</text>
+    <name lang="hu">Lombos</name>
+    <text lang="hu">lombos {0}</text>
     <name lang="it">Di specie latifoglia</name>
     <text lang="it">{0} di specie latifoglia</text>
     <name lang="ja">広葉樹の</name>
@@ -7890,6 +8089,8 @@ for the symbols.
     <text lang="fr" gender="masculin">{0} ruiné ou tombé</text>
     <text lang="fr" plural="true" gender="féminin">{0} ruinées ou tombées</text>
     <text lang="fr" plural="true" gender="masculin">{0} ruinés ou tombés</text>
+    <name lang="hu">Romos</name>
+    <text lang="hu">romos {0}</text>
     <name lang="it">Fatiscente</name>
     <text lang="it">{0} fatiscente</text>
     <name lang="ja">倒れた・壊れた</name>
@@ -7974,6 +8175,8 @@ for the symbols.
     <text lang="fi">{0} ja  {1} risteys</text>
     <name lang="fr">Croisement</name>
     <text lang="fr" gender="masculin">croisement entre {0} et {1}</text>
+    <name lang="hu">Kereszteződés</name>
+    <text lang="hu">{0} és {1} kereszteződése</text>
     <name lang="it">Incrocio</name>
     <text lang="it">incrocio di {0} e {1}</text>
     <text lang="it" plural="true">incroci di {0} e {1}</text>
@@ -8033,6 +8236,8 @@ for the symbols.
     <text lang="fi">{1} risteys</text>
     <name lang="fr">Croisement (mêmes symboles)</name>
     <text lang="fr" gender="masculin">croisement de {1}</text>
+    <name lang="hu">Kereszteződés (azonos objektumok)</name>
+    <text lang="hu">{0} kereszteződés</text>
     <name lang="it">Incrocio (oggetti uguali)</name>
     <text lang="it">incrocio di {1}</text>
     <text lang="it" plural="true">incroci di {1}</text>
@@ -8083,6 +8288,8 @@ for the symbols.
     <text lang="fi">{0} ja {1} haara</text>
     <name lang="fr">Jonction</name>
     <text lang="fr" gender="féminin">jonction entre {0} et {1}</text>
+    <name lang="hu">Elágazás</name>
+    <text lang="hu">{0} és {1} elágazása</text>
     <name lang="it">Raccordo</name>
     <text lang="it">raccordo di {0} e {1}</text>
     <text lang="it" plural="true">raccordi di {0} e {1}</text>
@@ -8142,6 +8349,8 @@ for the symbols.
     <text lang="fi" plural="true">{0} haara</text>
     <name lang="fr">Jonction (mêmes symboles)</name>
     <text lang="fr" gender="féminin">jonction de {1}</text>
+    <name lang="hu">Elágazás (azonos objektumok)</name>
+    <text lang="hu">{0} elágazás</text>
     <name lang="it">Raccordo (oggetti uguali)</name>
     <text lang="it">raccordo di {1}</text>
     <text lang="it" plural="true">raccordi di {1}</text>
@@ -8192,6 +8401,8 @@ for the symbols.
     <text lang="fi">{0} mutka</text>
     <name lang="fr">Coude</name>
     <text lang="fr">{0}, au coude</text>
+    <name lang="hu">Kanyar</name>
+    <text lang="hu">{0} kanyar</text>
     <name lang="it">Curva</name>
     <text lang="it">curva di {0}</text>
     <name lang="ja">曲がり</name>
@@ -8252,6 +8463,8 @@ for the symbols.
     <text lang="fi">{0} korkea</text>
     <name lang="fr">Hauteur en mètre</name>
     <text lang="fr">hauteur {0}</text>
+    <name lang="hu">Magassága</name>
+    <text lang="hu">{0} magas</text>
     <name lang="it">Altezza</name>
     <text lang="it">di altezza {0}</text>
     <name lang="ja">高さ</name>
@@ -8295,6 +8508,8 @@ for the symbols.
     <text lang="fi">{0} syvä</text>
     <name lang="fr">Profondeur en mètre</name>
     <text lang="fr">profondeur {0}</text>
+    <name lang="hu">Mélysége</name>
+    <text lang="hu">{0} mély</text>
     <name lang="it">Profondità</name>
     <text lang="it">di profondità {0}</text>
     <name lang="ja">深さ</name>
@@ -8336,6 +8551,8 @@ for the symbols.
     <text lang="fi">{0} x {1}</text>
     <name lang="fr">Dimension en mètre</name>
     <text lang="fr">{0} x {1}</text>
+    <name lang="hu">Mérete</name>
+    <text lang="hu">{0} x {1}</text>
     <name lang="it">Estensione</name>
     <text lang="it">di estensione {0} per {1}</text>
     <name lang="ja">大きさ</name>
@@ -8377,6 +8594,8 @@ for the symbols.
     <text lang="fi">{0}/{1} korkea</text>
     <name lang="fr">Hauteur d'un élément sur une pente</name>
     <text lang="fr">de {0} à {1} de haut</text>
+    <name lang="hu">Magassága lejtőn</name>
+    <text lang="hu">{0} - {1} magas</text>
     <name lang="it">Altezza su pendio</name>
     <text lang="it">di altezza da {0} a {1}</text>
     <name lang="ja">傾斜上の高さ</name>
@@ -8418,6 +8637,8 @@ for the symbols.
     <text lang="fi">{0}/{1} syvä</text>
     <name lang="fr">Profondeur d'un élément sur une pente</name>
     <text lang="fr">de {0} à {1} de profondeur</text>
+    <name lang="hu">Mélysége lejtőn</name>
+    <text lang="hu">{0} - {1} mély</text>
     <name lang="it">Profondità su pendio</name>
     <text lang="it">di profondità da {0} a {1}</text>
     <name lang="ja">傾斜上の深さ</name>
@@ -8463,6 +8684,8 @@ for the symbols.
     <text lang="fi">{0} ja {1}</text>
     <name lang="fr">Hauteur de deux éléments</name>
     <text lang="fr">{0} et {1}</text>
+    <name lang="hu">Két tárgy mérete</name>
+    <text lang="hu">{0} és {1}</text>
     <name lang="it">Rispettivamente</name>
     <text lang="it">rispettivamente {0} e {1}</text>
     <name lang="ja">ふたつの特徴物の高さ</name>
@@ -8511,6 +8734,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoissivu</text>
     <name lang="fr">Côté Nord</name>
     <text lang="fr">{0}, côté Nord</text>
+    <name lang="hu">Északi oldal</name>
+    <text lang="hu">{0} É-i oldala</text>
     <name lang="it">Lato nord</name>
     <text lang="it">{0}, lato nord</text>
     <name lang="ja">北側</name>
@@ -8559,6 +8784,8 @@ for the symbols.
     <text lang="fi">{0}, koillissivu</text>
     <name lang="fr">Côté NE</name>
     <text lang="fr">{0}, côté NE</text>
+    <name lang="hu">Észak-keleti oldal</name>
+    <text lang="hu">{0} ÉK-i oldala</text>
     <name lang="it">Lato nord-est</name>
     <text lang="it">{0}, lato nord-est</text>
     <name lang="ja">北東側</name>
@@ -8607,6 +8834,8 @@ for the symbols.
     <text lang="fi">{0}, itäsivu</text>
     <name lang="fr">Côté Est</name>
     <text lang="fr">{0}, côté Est</text>
+    <name lang="hu">Keleti oldal</name>
+    <text lang="hu">{0} K-i oldala</text>
     <name lang="it">Lato est</name>
     <text lang="it">{0}, lato est</text>
     <name lang="ja">東側</name>
@@ -8655,6 +8884,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoissivu</text>
     <name lang="fr">Côté SE</name>
     <text lang="fr">{0}, côté SE</text>
+    <name lang="hu">Dél-keleti oldal</name>
+    <text lang="hu">{0} DK-i oldala</text>
     <name lang="it">Lato sud-est</name>
     <text lang="it">{0}, lato sud-est</text>
     <name lang="ja">南東側</name>
@@ -8703,6 +8934,8 @@ for the symbols.
     <text lang="fi">{0}, eteläsivu</text>
     <name lang="fr">Côté Sud</name>
     <text lang="fr">{0}, côté Sud</text>
+    <name lang="hu">Déli oldal</name>
+    <text lang="hu">{0} D-i oldala</text>
     <name lang="it">Lato sud</name>
     <text lang="it">{0}, lato sud</text>
     <name lang="ja">南側</name>
@@ -8751,6 +8984,8 @@ for the symbols.
     <text lang="fi">{0}, lounaissivu</text>
     <name lang="fr">Côté SO</name>
     <text lang="fr">{0}, côté SO</text>
+    <name lang="hu">Dél-nyudati oldal</name>
+    <text lang="hu">{0} DNY-i oldala</text>
     <name lang="it">Lato sud-ovest</name>
     <text lang="it">{0}, lato sud-ovest</text>
     <name lang="ja">南西側</name>
@@ -8799,6 +9034,8 @@ for the symbols.
     <text lang="fi">{0}, länsisivu</text>
     <name lang="fr">Côté Ouest</name>
     <text lang="fr">{0}, côté Ouest</text>
+    <name lang="hu">Nyugati oldal</name>
+    <text lang="hu">{0} NY-i oldala</text>
     <name lang="it">Lato ovest</name>
     <text lang="it">{0}, lato ovest</text>
     <name lang="ja">西側</name>
@@ -8847,6 +9084,8 @@ for the symbols.
     <text lang="fi">{0}, luoteissivu</text>
     <name lang="fr">Côté NO</name>
     <text lang="fr">{0}, côté NO</text>
+    <name lang="hu">Észak-nyugati oldal</name>
+    <text lang="hu">{0} ÉNY-i oldala</text>
     <name lang="it">Lato nord-ovest</name>
     <text lang="it">{0}, lato nord-ovest</text>
     <name lang="ja">北西側</name>
@@ -8895,6 +9134,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoisreuna</text>
     <name lang="fr">Bord Nord</name>
     <text lang="fr">{0}, bord Nord</text>
+    <name lang="hu">Északi széle</name>
+    <text lang="hu">{0} É-i széle</text>
     <name lang="it">Margine nord</name>
     <text lang="it">{0}, margine nord</text>
     <name lang="ja">北のふち</name>
@@ -8944,6 +9185,8 @@ for the symbols.
     <text lang="fi">{0}, koillisreuna</text>
     <name lang="fr">Bord NE</name>
     <text lang="fr">{0}, bord NE</text>
+    <name lang="hu">Észak-keleti széle</name>
+    <text lang="hu">{0} ÉK-i széle</text>
     <name lang="it">Margine nord-est</name>
     <text lang="it">{0}, margine nord-est</text>
     <name lang="ja">北東のふち</name>
@@ -8993,6 +9236,8 @@ for the symbols.
     <text lang="fi">{0}, itäreuna</text>
     <name lang="fr">Bord Est</name>
     <text lang="fr">{0}, bord Est</text>
+    <name lang="hu">Keleti széle</name>
+    <text lang="hu">{0} K-i széle</text>
     <name lang="it">Margine est</name>
     <text lang="it">{0}, margine est</text>
     <name lang="ja">東のふち</name>
@@ -9042,6 +9287,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoisreuna</text>
     <name lang="fr">Bord SE</name>
     <text lang="fr">{0}, bord SE</text>
+    <name lang="hu">Dél-keleti széle</name>
+    <text lang="hu">{0} DK-i széle</text>
     <name lang="it">Margine sud-est</name>
     <text lang="it">{0}, margine sud-est</text>
     <name lang="ja">南東のふち</name>
@@ -9091,6 +9338,8 @@ for the symbols.
     <text lang="fi">{0}, eteläreuna</text>
     <name lang="fr">Bord Sud</name>
     <text lang="fr">{0}, bord Sud</text>
+    <name lang="hu">Déli széle</name>
+    <text lang="hu">{0} D-i széle</text>
     <name lang="it">Margine sud</name>
     <text lang="it">{0}, margine sud</text>
     <name lang="ja">南のふち</name>
@@ -9140,6 +9389,8 @@ for the symbols.
     <text lang="fi">{0}, lounaisreuna</text>
     <name lang="fr">Bord SO</name>
     <text lang="fr">{0}, bord SO</text>
+    <name lang="hu">Dél-nyugati széle</name>
+    <text lang="hu">{0} DNY-i széle</text>
     <name lang="it">Margine sud-ovest</name>
     <text lang="it">{0}, margine sud-ovest</text>
     <name lang="ja">南西のふち</name>
@@ -9189,6 +9440,8 @@ for the symbols.
     <text lang="fi">{0}, länsireuna</text>
     <name lang="fr">Bord Ouest</name>
     <text lang="fr">{0}, bord Ouest</text>
+    <name lang="hu">Nyugati széle</name>
+    <text lang="hu">{0} NY-i széle</text>
     <name lang="it">Margine ovest</name>
     <text lang="it">{0}, margine ovest</text>
     <name lang="ja">西のふち</name>
@@ -9238,6 +9491,8 @@ for the symbols.
     <text lang="fi">{0}, luoteisreuna</text>
     <name lang="fr">Bord NO</name>
     <text lang="fr">{0}, Bord NO</text>
+    <name lang="hu">Észak-nyugati széle</name>
+    <text lang="hu">{0} ÉNY-i széle</text>
     <name lang="it">Margine nord-ovest</name>
     <text lang="it">{0}, margine nord-ovest</text>
     <name lang="ja">北西のふち</name>
@@ -9287,6 +9542,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoisosa</text>
     <name lang="fr">Partie Nord</name>
     <text lang="fr">{0}, partie Nord</text>
+    <name lang="hu">Északi részén</name>
+    <text lang="hu">{0} É-i részén</text>
     <name lang="it">Parte nord</name>
     <text lang="it">{0}, parte nord</text>
     <name lang="ja">北の部分</name>
@@ -9335,6 +9592,8 @@ for the symbols.
     <text lang="fi">{0}, koillisosa</text>
     <name lang="fr">Partie NE</name>
     <text lang="fr">{0}, partie NE</text>
+    <name lang="hu">Észak-keleti részén</name>
+    <text lang="hu">{0} ÉK-i részén</text>
     <name lang="it">Parte nord-est</name>
     <text lang="it">{0}, parte nord-est</text>
     <name lang="ja">北東の部分</name>
@@ -9383,6 +9642,8 @@ for the symbols.
     <text lang="fi">{0}, itäosa</text>
     <name lang="fr">Partie Est</name>
     <text lang="fr">{0}, partie Est</text>
+    <name lang="hu">Keleti részén</name>
+    <text lang="hu">{0} K-i részén</text>
     <name lang="it">Parte est</name>
     <text lang="it">{0}, parte est</text>
     <name lang="ja">東の部分</name>
@@ -9431,6 +9692,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoisosa</text>
     <name lang="fr">Partie SE</name>
     <text lang="fr">{0}, partie SE</text>
+    <name lang="hu">Dél-keleti részén</name>
+    <text lang="hu">{0} DK-i részén</text>
     <name lang="it">Parte sud-est</name>
     <text lang="it">{0}, parte sud-est</text>
     <name lang="ja">南東の部分</name>
@@ -9479,6 +9742,8 @@ for the symbols.
     <text lang="fi">{0}, eteläosa</text>
     <name lang="fr">Partie Sud</name>
     <text lang="fr">{0}, partie Sud</text>
+    <name lang="hu">Déli részén</name>
+    <text lang="hu">{0} D-i részén</text>
     <name lang="it">Parte sud</name>
     <text lang="it">{0}, parte sud</text>
     <name lang="ja">南の部分</name>
@@ -9527,6 +9792,8 @@ for the symbols.
     <text lang="fi">{0}, lounaisosa</text>
     <name lang="fr">Partie SO</name>
     <text lang="fr">{0}, partie SO</text>
+    <name lang="hu">Dél-nyugati részén</name>
+    <text lang="hu">{0} DNY-i részén</text>
     <name lang="it">Parte sud-ovest</name>
     <text lang="it">{0}, parte sud-ovest</text>
     <name lang="ja">南西の部分</name>
@@ -9575,6 +9842,8 @@ for the symbols.
     <text lang="fi">{0}, länsiosa</text>
     <name lang="fr">Partie Ouest</name>
     <text lang="fr">{0}, partie Ouest</text>
+    <name lang="hu">Nyugati részén</name>
+    <text lang="hu">{0} NY-i részén</text>
     <name lang="it">Parte ovest</name>
     <text lang="it">{0}, parte ovest</text>
     <name lang="ja">西の部分</name>
@@ -9623,6 +9892,8 @@ for the symbols.
     <text lang="fi">{0}, luoteisosa</text>
     <name lang="fr">Partie NO</name>
     <text lang="fr">{0}, partie NO</text>
+    <name lang="hu">Észak-nyugati részén</name>
+    <text lang="hu">{0} ÉNY-i részén</text>
     <name lang="it">Parte nord-ovest</name>
     <text lang="it">{0}, parte nord-ovest</text>
     <name lang="ja">北西の部分</name>
@@ -9671,6 +9942,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoiskulma (sisäpuolella)</text>
     <name lang="fr">Angle Nord (intérieur)</name>
     <text lang="fr">{0}, angle Nord (intérieur)</text>
+    <name lang="hu">Északi sarkán belül</name>
+    <text lang="hu">{0} É-i sarkán belül</text>
     <name lang="it">Angolo nord interno</name>
     <text lang="it">{0}, angolo nord interno</text>
     <name lang="ja">北の角(内側)</name>
@@ -9721,6 +9994,8 @@ for the symbols.
     <text lang="fi">{0}, koilliskulma (sisäpuolella)</text>
     <name lang="fr">Angle NE (intérieur)</name>
     <text lang="fr">{0}, angle NE (intérieur)</text>
+    <name lang="hu">Észak-keleti sarkán belül</name>
+    <text lang="hu">{0} ÉK-i sarkán belül</text>
     <name lang="it">Angolo nord-est interno</name>
     <text lang="it">{0}, angolo nord-est interno</text>
     <name lang="ja">北東の角(内側)</name>
@@ -9771,6 +10046,8 @@ for the symbols.
     <text lang="fi">{0}, itäkulma (sisäpuolella)</text>
     <name lang="fr">Angle Est (intérieur)</name>
     <text lang="fr">{0}, angle Est (intérieur)</text>
+    <name lang="hu">Keleti sarkán belül</name>
+    <text lang="hu">{0} K-i sarkán belül</text>
     <name lang="it">Angolo est interno</name>
     <text lang="it">{0}, angolo est interno</text>
     <name lang="ja">東の角(内側)</name>
@@ -9821,6 +10098,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoiskulma (sisäpuolella)</text>
     <name lang="fr">Angle SE (intérieur)</name>
     <text lang="fr">{0}, angle SE (intérieur)</text>
+    <name lang="hu">Dél-keleti sarkán belül</name>
+    <text lang="hu">{0} DK-i sarkán belül</text>
     <name lang="it">Angolo sud-est interno</name>
     <text lang="it">{0}, angolo sud-est interno</text>
     <name lang="ja">南東の角(内側)</name>
@@ -9871,6 +10150,8 @@ for the symbols.
     <text lang="fi">{0}, eteläkulma (sisäpuolella)</text>
     <name lang="fr">Angle Sud (intérieur)</name>
     <text lang="fr">{0}, angle Sud (intérieur)</text>
+    <name lang="hu">Déli sarkán belül</name>
+    <text lang="hu">{0} D-i sarkán belül</text>
     <name lang="it">Angolo sud interno</name>
     <text lang="it">{0}, angolo sud interno</text>
     <name lang="ja">南の角(内側)</name>
@@ -9921,6 +10202,8 @@ for the symbols.
     <text lang="fi">{0}, lounaiskulma (sisäpuolella)</text>
     <name lang="fr">Angle SO (intérieur)</name>
     <text lang="fr">{0}, angle SO (intérieur)</text>
+    <name lang="hu">Dél-nyugati sarkán belül</name>
+    <text lang="hu">{0} DNY-i sarkán belül</text>
     <name lang="it">Angolo sud-ovest interno</name>
     <text lang="it">{0}, angolo sud-ovest interno</text>
     <name lang="ja">南西の角(内側)</name>
@@ -9971,6 +10254,8 @@ for the symbols.
     <text lang="fi">{0}, länsikulma (sisäpuolella)</text>
     <name lang="fr">Angle Ouest (intérieur)</name>
     <text lang="fr">{0}, angle Ouest (intérieur)</text>
+    <name lang="hu">Nyugati sarkán belül</name>
+    <text lang="hu">{0} NY-i sarkán belül</text>
     <name lang="it">Angolo ovest interno</name>
     <text lang="it">{0}, angolo ovest interno</text>
     <name lang="ja">西の角(内側)</name>
@@ -10021,6 +10306,8 @@ for the symbols.
     <text lang="fi">{0}, luoteiskulma (sisäpuolella)</text>
     <name lang="fr">Angle NO (intérieur)</name>
     <text lang="fr">{0}, angle NO (intérieur)</text>
+    <name lang="hu">Észak-nyugati sarkán belül</name>
+    <text lang="hu">{0} ÉNY-i sarkán belül</text>
     <name lang="it">Angolo nord-ovest interno</name>
     <text lang="it">{0}, angolo nord-ovest interno</text>
     <name lang="ja">北西の角(内側)</name>
@@ -10071,6 +10358,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoiskulma (ulkopuolella)</text>
     <name lang="fr">Angle Nord (extérieur)</name>
     <text lang="fr">{0}, angle Nord (extérieur)</text>
+    <name lang="hu">Északi sarkán kívül</name>
+    <text lang="hu">{0} É-i sarkán kívül</text>
     <name lang="it">Angolo nord esterno</name>
     <text lang="it">{0}, angolo nord esterno</text>
     <name lang="ja">北の角(外側)</name>
@@ -10121,6 +10410,8 @@ for the symbols.
     <text lang="fi">{0}, koilliskulma (ulkopuolella)</text>
     <name lang="fr">Angle NE (extérieur)</name>
     <text lang="fr">{0}, angle NE (extérieur)</text>
+    <name lang="hu">Észak-keleti sarkán kívül</name>
+    <text lang="hu">{0} ÉK-i sarkán kívül</text>
     <name lang="it">Angolo nord-est esterno</name>
     <text lang="it">{0}, angolo nord-est esterno</text>
     <name lang="ja">北東の角(外側)</name>
@@ -10171,6 +10462,8 @@ for the symbols.
     <text lang="fi">{0}, itäkulma (ulkopuolella)</text>
     <name lang="fr">Angle Est (extérieur)</name>
     <text lang="fr">{0}, angle Est (extérieur)</text>
+    <name lang="hu">Keleti sarkán kívül</name>
+    <text lang="hu">{0} K-i sarkán kívül</text>
     <name lang="it">Angolo est esterno</name>
     <text lang="it">{0}, angolo est esterno</text>
     <name lang="ja">東の角(外側)</name>
@@ -10221,6 +10514,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoiskulma (ulkopuolella)</text>
     <name lang="fr">Angle SE (extérieur)</name>
     <text lang="fr">{0}, angle SE (extérieur)</text>
+    <name lang="hu">Dél-keleti sarkán kívül</name>
+    <text lang="hu">{0} DK-i sarkán kívül</text>
     <name lang="it">Angolo sud-est esterno</name>
     <text lang="it">{0}, angolo sud-est esterno</text>
     <name lang="ja">南東の角(外側)</name>
@@ -10271,6 +10566,8 @@ for the symbols.
     <text lang="fi">{0}, eteläkulma (ulkopuolella)</text>
     <name lang="fr">Angle Sud (extérieur)</name>
     <text lang="fr">{0}, angle Sud (extérieur)</text>
+    <name lang="hu">Déli sarkán kívül</name>
+    <text lang="hu">{0} D-i sarkán kívül</text>
     <name lang="it">Angolo sud esterno</name>
     <text lang="it">{0}, angolo sud esterno</text>
     <name lang="ja">南の角(外側)</name>
@@ -10321,6 +10618,8 @@ for the symbols.
     <text lang="fi">{0}, lounaiskulma (ulkopuolella)</text>
     <name lang="fr">Angle SO (extérieur)</name>
     <text lang="fr">{0}, angle SO (extérieur)</text>
+    <name lang="hu">Dél-nyugati sarkán kívül</name>
+    <text lang="hu">{0} DNY-i sarkán kívül</text>
     <name lang="it">Angolo sud-ovest esterno</name>
     <text lang="it">{0}, angolo sud-ovest esterno</text>
     <name lang="ja">南西の角(外側)</name>
@@ -10371,6 +10670,8 @@ for the symbols.
     <text lang="fi">{0}, länsikulma (ulkopuolella)</text>
     <name lang="fr">Angle Ouest (extérieur)</name>
     <text lang="fr">{0}, angle Ouest (extérieur)</text>
+    <name lang="hu">Nyugati sarkán kívül</name>
+    <text lang="hu">{0} NY-i sarkán kívül</text>
     <name lang="it">Angolo ovest esterno</name>
     <text lang="it">{0}, angolo ovest esterno</text>
     <name lang="ja">西の角(外側)</name>
@@ -10421,6 +10722,8 @@ for the symbols.
     <text lang="fi">{0}, luoteiskulma (ulkopuolella)</text>
     <name lang="fr">Angle NO(extérieur)</name>
     <text lang="fr">{0}, angle NO (extérieur)</text>
+    <name lang="hu">Észak-nyugati sarkán kívül</name>
+    <text lang="hu">{0} ÉNY-i sarkán kívül</text>
     <name lang="it">Angolo nord-ovest esterno</name>
     <text lang="it">{0}, angolo nord-ovest esterno</text>
     <name lang="ja">北西の角(外側)</name>
@@ -10471,6 +10774,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoiskärki</text>
     <name lang="fr">Pointe Nord</name>
     <text lang="fr">{0}, pointe Nord</text>
+    <name lang="hu">Északi csücske</name>
+    <text lang="hu">{0} É-i csücske</text>
     <name lang="it">Punta nord</name>
     <text lang="it">{0}, punta nord</text>
     <name lang="ja">北の突端</name>
@@ -10521,6 +10826,8 @@ for the symbols.
     <text lang="fi">{0}, koilliskärki</text>
     <name lang="fr">Pointe NE</name>
     <text lang="fr">{0}, pointe NE</text>
+    <name lang="hu">Észak-keleti csücske</name>
+    <text lang="hu">{0} ÉK-i csücske</text>
     <name lang="it">Punta nord-est</name>
     <text lang="it">{0}, punta nord-est</text>
     <name lang="ja">北東の突端</name>
@@ -10571,6 +10878,8 @@ for the symbols.
     <text lang="fi">{0}, itäkärki</text>
     <name lang="fr">Pointe Est</name>
     <text lang="fr">{0}, pointe Est</text>
+    <name lang="hu">Keleti csücske</name>
+    <text lang="hu">{0} K-i csücske</text>
     <name lang="it">Punta est</name>
     <text lang="it">{0}, punta est</text>
     <name lang="ja">東の突端</name>
@@ -10621,6 +10930,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoiskärki</text>
     <name lang="fr">Pointe SE</name>
     <text lang="fr">{0}, pointe SE</text>
+    <name lang="hu">Dél-keleti csücske</name>
+    <text lang="hu">{0} DK-i csücske</text>
     <name lang="it">Punta sud-est</name>
     <text lang="it">{0}, punta sud-est</text>
     <name lang="ja">南東の突端</name>
@@ -10671,6 +10982,8 @@ for the symbols.
     <text lang="fi">{0}, eteläkärki</text>
     <name lang="fr">Pointe Sud</name>
     <text lang="fr">{0}, pointe Sud</text>
+    <name lang="hu">Déli csücske</name>
+    <text lang="hu">{0} D-i csücske</text>
     <name lang="it">Punta sud</name>
     <text lang="it">{0}, punta sud</text>
     <name lang="ja">南の突端</name>
@@ -10721,6 +11034,8 @@ for the symbols.
     <text lang="fi">{0}, lounaiskärki</text>
     <name lang="fr">Pointe SO</name>
     <text lang="fr">{0}, pointe SO</text>
+    <name lang="hu">Dél-nyugati csücske</name>
+    <text lang="hu">{0} DNY-i csücske</text>
     <name lang="it">Punta sud-ovest</name>
     <text lang="it">{0}, punta sud-ovest</text>
     <name lang="ja">南西の突端</name>
@@ -10771,6 +11086,8 @@ for the symbols.
     <text lang="fi">{0}, länsikärki</text>
     <name lang="fr">Pointe Ouest</name>
     <text lang="fr">{0}, pointe Ouest</text>
+    <name lang="hu">Nyugati csücske</name>
+    <text lang="hu">{0} NY-i csücske</text>
     <name lang="it">Punta ovest</name>
     <text lang="it">{0}, punta ovest</text>
     <name lang="ja">西の突端</name>
@@ -10821,6 +11138,8 @@ for the symbols.
     <text lang="fi">{0}, luoteiskärki</text>
     <name lang="fr">Pointe NO</name>
     <text lang="fr">{0}, pointe NO</text>
+    <name lang="hu">Észak-nyugati csücske</name>
+    <text lang="hu">{0} ÉNY-i csücske</text>
     <name lang="it">Punta nord-ovest</name>
     <text lang="it">{0}, punta nord-ovest</text>
     <name lang="ja">北西の突端</name>
@@ -10871,6 +11190,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoispää</text>
     <name lang="fr">Extrémité Nord</name>
     <text lang="fr">{0}, extrémité Nord</text>
+    <name lang="hu">Északi vége</name>
+    <text lang="hu">{0} É-i vége</text>
     <name lang="it">Termine nord</name>
     <text lang="it">{0}, termine nord</text>
     <name lang="ja">北の終わり</name>
@@ -10921,6 +11242,8 @@ for the symbols.
     <text lang="fi">{0}, koillispää</text>
     <name lang="fr">Extrémité NE</name>
     <text lang="fr">{0}, extrémité NE</text>
+    <name lang="hu">Észak-keleti vége</name>
+    <text lang="hu">{0} ÉK-i vége</text>
     <name lang="it">Termine nord-est</name>
     <text lang="it">{0}, termine nord-est</text>
     <name lang="ja">北東の終わり</name>
@@ -10971,6 +11294,8 @@ for the symbols.
     <text lang="fi">{0}, itäpää</text>
     <name lang="fr">Extrémité Est</name>
     <text lang="fr">{0}, extrémité Est</text>
+    <name lang="hu">Keleti vége</name>
+    <text lang="hu">{0} K-i vége</text>
     <name lang="it">Termine est</name>
     <text lang="it">{0}, termine est</text>
     <name lang="ja">東の終わり</name>
@@ -11021,6 +11346,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoispää</text>
     <name lang="fr">Extrémité SE</name>
     <text lang="fr">{0}, extrémité SE</text>
+    <name lang="hu">Dél-keleti vége</name>
+    <text lang="hu">{0} DK-i vége</text>
     <name lang="it">Termine sud-est</name>
     <text lang="it">{0}, termine sud-est</text>
     <name lang="ja">南東の終わり</name>
@@ -11071,6 +11398,8 @@ for the symbols.
     <text lang="fi">{0}, eteläpää</text>
     <name lang="fr">Extrémité Sud</name>
     <text lang="fr">{0}, extrémité Sud</text>
+    <name lang="hu">Déli vége</name>
+    <text lang="hu">{0} D-i vége</text>
     <name lang="it">Termine sud</name>
     <text lang="it">{0}, termine sud</text>
     <name lang="ja">南の終わり</name>
@@ -11121,6 +11450,8 @@ for the symbols.
     <text lang="fi">{0}, lounaispää</text>
     <name lang="fr">Extrémité SO</name>
     <text lang="fr">{0}, extrémité SO</text>
+    <name lang="hu">Dél-nyugati vége</name>
+    <text lang="hu">{0} DNY-i vége</text>
     <name lang="it">Termine sud-ovest</name>
     <text lang="it">{0}, termine sud-ovest</text>
     <name lang="ja">南西の終わり</name>
@@ -11171,6 +11502,8 @@ for the symbols.
     <text lang="fi">{0}, länsipää</text>
     <name lang="fr">Extrémité Ouest</name>
     <text lang="fr">{0}, extrémité Ouest</text>
+    <name lang="hu">Nyugati vége</name>
+    <text lang="hu">{0} NY-i vége</text>
     <name lang="it">Termine ovest</name>
     <text lang="it">{0}, termine ovest</text>
     <name lang="ja">西の終わり</name>
@@ -11221,6 +11554,8 @@ for the symbols.
     <text lang="fi">{0}, luoteispää</text>
     <name lang="fr">Extrémité NO</name>
     <text lang="fr">{0}, extrémité NO</text>
+    <name lang="hu">Észak-nyugati vége</name>
+    <text lang="hu">{0} ÉNY-i vége</text>
     <name lang="it">Termine nord-ovest</name>
     <text lang="it">{0}, termine nord-ovest</text>
     <name lang="ja">北西の終わり</name>
@@ -11271,6 +11606,8 @@ for the symbols.
     <text lang="fi">{0}, pohjoisjuuri</text>
     <name lang="fr">Pied Nord</name>
     <text lang="fr">{0}, pied Nord</text>
+    <name lang="hu">Északi lába</name>
+    <text lang="hu">{0} É-i lába</text>
     <name lang="it">Piede nord</name>
     <text lang="it">{0}, piede nord</text>
     <name lang="ja">北の根元</name>
@@ -11321,6 +11658,8 @@ for the symbols.
     <text lang="fi">{0}, koillisjuuri</text>
     <name lang="fr">Pied NE</name>
     <text lang="fr">{0}, pied NE</text>
+    <name lang="hu">Észak-keleti lába</name>
+    <text lang="hu">{0} ÉK-i lába</text>
     <name lang="it">Piede nord-est</name>
     <text lang="it">{0}, piede nord-est</text>
     <name lang="ja">北東の根元</name>
@@ -11371,6 +11710,8 @@ for the symbols.
     <text lang="fi">{0}, itäjuuri</text>
     <name lang="fr">Pied Est</name>
     <text lang="fr">{0}, pied Est</text>
+    <name lang="hu">Keleti lába</name>
+    <text lang="hu">{0} K-i lába</text>
     <name lang="it">Piede est</name>
     <text lang="it">{0}, piede est</text>
     <name lang="ja">東の根元</name>
@@ -11421,6 +11762,8 @@ for the symbols.
     <text lang="fi">{0}, kaakkoisjuuri</text>
     <name lang="fr">Pied SE</name>
     <text lang="fr">{0}, pied SE</text>
+    <name lang="hu">Dél-keleti lába</name>
+    <text lang="hu">{0} DK-i lába</text>
     <name lang="it">Piede sud-est</name>
     <text lang="it">{0}, piede sud-est</text>
     <name lang="ja">南東の根元</name>
@@ -11471,6 +11814,8 @@ for the symbols.
     <text lang="fi">{0}, eteläjuuri</text>
     <name lang="fr">Pied Sud</name>
     <text lang="fr">{0}, pied Sud</text>
+    <name lang="hu">Déli lába</name>
+    <text lang="hu">{0} D-i lába</text>
     <name lang="it">Piede sud</name>
     <text lang="it">{0}, piede sud</text>
     <name lang="ja">南の根元</name>
@@ -11521,6 +11866,8 @@ for the symbols.
     <text lang="fi">{0}, lounaisjuuri</text>
     <name lang="fr">Pied SO</name>
     <text lang="fr">{0}, pied SO</text>
+    <name lang="hu">Dél-nyugati lába</name>
+    <text lang="hu">{0} DNY-i lába</text>
     <name lang="it">Piede sud-ovest</name>
     <text lang="it">{0}, piede sud-ovest</text>
     <name lang="ja">南西の根元</name>
@@ -11571,6 +11918,8 @@ for the symbols.
     <text lang="fi">{0}, länsijuuri</text>
     <name lang="fr">Pied Ouest</name>
     <text lang="fr">{0}, pied Ouest</text>
+    <name lang="hu">Nyugati lába</name>
+    <text lang="hu">{0} NY-i lába</text>
     <name lang="it">Piede ovest</name>
     <text lang="it">{0}, piede ovest</text>
     <name lang="ja">西の根元</name>
@@ -11621,6 +11970,8 @@ for the symbols.
     <text lang="fi">{0}, luoteisjuuri</text>
     <name lang="fr">Pied NO</name>
     <text lang="fr">{0}, pied NO</text>
+    <name lang="hu">Észak-nyugati lába</name>
+    <text lang="hu">{0} ÉNY-i lába</text>
     <name lang="it">Piede nord-ovest</name>
     <text lang="it">{0}, piede nord-ovest</text>
     <name lang="ja">北西の根元</name>
@@ -11674,6 +12025,8 @@ for the symbols.
     <text lang="fi">{0} mutka</text>
     <name lang="fr">Coude</name>
     <text lang="fr">{0}, au coude</text>
+    <name lang="hu">Kanyar</name>
+    <text lang="hu">{0} kanyar</text>
     <name lang="it">Curva</name>
     <text lang="it">curva di {0}</text>
     <name lang="ja">曲がり</name>
@@ -11728,6 +12081,8 @@ for the symbols.
     <text lang="fi">{0}, yläosa</text>
     <name lang="fr">Partie amont</name>
     <text lang="fr">{0}, partie amont</text>
+    <name lang="hu">Felső részén</name>
+    <text lang="hu">{0} felső részén</text>
     <name lang="it">Parte alta</name>
     <text lang="it">{0}, parte alta</text>
     <name lang="ja">上の部分</name>
@@ -11781,6 +12136,8 @@ for the symbols.
     <text lang="fi">{0}, alaosa</text>
     <name lang="fr">Partie aval</name>
     <text lang="fr">{0}, partie aval</text>
+    <name lang="hu">Alsó részén</name>
+    <text lang="hu">{0} alsó részén</text>
     <name lang="it">Parte bassa</name>
     <text lang="it">{0}, parte bassa</text>
     <name lang="ja">下の部分</name>
@@ -11834,6 +12191,8 @@ for the symbols.
     <text lang="fi">{0}, päällä</text>
     <name lang="fr">Sur</name>
     <text lang="fr">sur {0}</text>
+    <name lang="hu">Tetején</name>
+    <text lang="hu">{0} tetején</text>
     <name lang="it">In cima</name>
     <text lang="it">{0}, in cima</text>
     <name lang="ja">上</name>
@@ -11888,6 +12247,8 @@ for the symbols.
     <text lang="fi">{0}, alla</text>
     <name lang="fr">Sous</name>
     <text lang="fr">sous {0}</text>
+    <name lang="hu">Alatt</name>
+    <text lang="hu">{0} alatt</text>
     <name lang="it">Sotto</name>
     <text lang="it">{0}, sotto</text>
     <name lang="ja">下</name>
@@ -11942,6 +12303,8 @@ for the symbols.
     <text lang="fi">{0}, juurella</text>
     <name lang="fr">Au pied</name>
     <text lang="fr">{0}, au pied</text>
+    <name lang="hu">Lába</name>
+    <text lang="hu">{0} lába</text>
     <name lang="it">Piede</name>
     <text lang="it">{0}, piede</text>
     <name lang="ja">根元</name>
@@ -12004,6 +12367,8 @@ for the symbols.
     <text lang="fi">{0} ja {1}, välissä</text>
     <name lang="fr">Entre</name>
     <text lang="fr">entre {0} et {1}</text>
+    <name lang="hu">Között</name>
+    <text lang="hu">{0} és {1} között</text>
     <name lang="it">Tra</name>
     <text lang="it">tra {0} e {1}</text>
     <name lang="ja">間</name>
@@ -12056,6 +12421,8 @@ for the symbols.
     <text lang="fi">{1} välissä</text>
     <name lang="fr">Entre (objets de même symbole)</name>
     <text lang="fr">entre les {1}</text>
+    <name lang="hu">Között (azonos objektumok)</name>
+    <text lang="hu">két {1} között</text>
     <name lang="it">Tra (oggetti uguali)</name>
     <text lang="it">tra {1}</text>
     <name lang="ja">(同種の特徴物の)間</name>
@@ -12099,6 +12466,8 @@ for the symbols.
     <text lang="fi">ensiapu</text>
     <name lang="fr">Secours</name>
     <text lang="fr">secours</text>
+    <name lang="hu">Elsősegély hely</name>
+    <text lang="hu">elsősegély hely</text>
     <name lang="it">Assistenza medica</name>
     <text lang="it">assistenza medica</text>
     <name lang="ja">救護所が併設されたコントロール</name>
@@ -12154,6 +12523,8 @@ for the symbols.
     <text lang="fi">juoma</text>
     <name lang="fr">Ravitaillement</name>
     <text lang="fr">ravitaillement</text>
+    <name lang="hu">Frissítő pont</name>
+    <text lang="hu">frissítő pont</text>
     <name lang="it">Ristoro</name>
     <text lang="it">ristoro</text>
     <name lang="ja">給水所が併設されたコントロール</name>
@@ -12227,6 +12598,8 @@ for the symbols.
     <text lang="fi">radio</text>
     <name lang="fr">Radio ou TV (transmission)</name>
     <text lang="fr">radio ou TV</text>
+    <name lang="hu">Rádiós vagy TV-s pont</name>
+    <text lang="hu">rádiós vagy TV-s pont</text>
     <name lang="it">Controllo radio</name>
     <text lang="it">controllo radio</text>
     <name lang="ja">無線またはTVのあるコントロール</name>
@@ -12274,6 +12647,8 @@ for the symbols.
     <text lang="fi">miehitetty</text>
     <name lang="fr">Contrôleur</name>
     <text lang="fr">contrôleur</text>
+    <name lang="hu">Karton ellenőrzés</name>
+    <text lang="hu">karton ellenőrzés</text>
     <name lang="it">Presidio</name>
     <text lang="it">presidio</text>
     <name lang="ja">コントロールチェック</name>
@@ -12335,6 +12710,8 @@ for the symbols.
     <text lang="fi">seuraa viitoitusta rastilta eteenpäin {0}</text>
     <name lang="fr">Parcours balisé après le poste</name>
     <text lang="fr">suivre le parcours balisé sur {0}après le poste</text>
+    <name lang="hu">Szalagozás ellenörzőponttól</name>
+    <text lang="hu">kövesd a szalagozást az ellenőrző ponttól, hossza {0}</text>
     <name lang="it">Percorso fettucciato in uscita dal punto</name>
     <text lang="it">{0}fettucciati in uscita dal punto</text>
     <name lang="ja">コントロールから誘導</name>
@@ -12408,6 +12785,8 @@ for the symbols.
     <text lang="fi">seuraa viitoitusta seuraavalle rastille {0}</text>
     <name lang="fr">Parcours balisé entre deux postes</name>
     <text lang="fr">suivre le parcours balisé sur {0}entre les 2 postes</text>
+    <name lang="hu">Szalagozás két ellenőrző pont között</name>
+    <text lang="hu">kövesd a szalagozást a két ellenőrző pont között, hossza {0}</text>
     <name lang="it">Percorso fettucciato tra i punti</name>
     <text lang="it">{0}fettucciati tra i punti</text>
     <name lang="ja">コントロール間の誘導</name>
@@ -12485,6 +12864,8 @@ for the symbols.
     <text lang="fi">pakollinen ylitys/alituspaikka tai pakolliset ylitys/alituspaikat</text>
     <name lang="fr">Point de passage obligatoire</name>
     <text lang="fr">point de passage obligatoire</text>
+    <name lang="hu">Kötelező átkelőhely</name>
+    <text lang="hu">kötelező átkelőhely</text>
     <name lang="it">Passaggio obbligato</name>
     <text lang="it">passaggio obbligato</text>
     <name lang="ja">横断地点</name>
@@ -12554,6 +12935,8 @@ for the symbols.
     <text lang="fi">pakollinen reitti läpi kielletyn alueen</text>
     <name lang="fr">Passage obligatoire dans une zone interdite</name>
     <text lang="fr">passage obligatoire à travers une zone interdite</text>
+    <name lang="hu">Kötelező útvonal</name>
+    <text lang="hu">kötelező útvonal zárt területen keresztül</text>
     <name lang="it">Tratto obbligato in zona vietata</name>
     <text lang="it">tratto obbligato in zona vietata</text>
     <name lang="ja">立入禁止区域の中の横断部分</name>
@@ -12627,6 +13010,8 @@ for the symbols.
     <text lang="fi">seuraa viitoitusta {0} kartanvaihtopaikalle</text>
     <name lang="fr">Parcours balisé jusqu'au changement de carte</name>
     <text lang="fr">suivre le parcours balisé sur {0}jusqu'au changement de carte</text>
+    <name lang="hu">Térképcsere</name>
+    <text lang="hu">kövesd a szalagozást a térképcseréig, hossza {0}</text>
     <name lang="it">Percorso fettucciato fino al cambio carta</name>
     <text lang="it">{0}fettucciati fino al cambio carta</text>
     <name lang="ja">地図交換所まで誘導</name>
@@ -12870,6 +13255,8 @@ for the symbols.
     <text lang="fi">seuraa rastilta lähtevää viitoitusta {0} maaliin </text>
     <name lang="fr">Parcours entièrement balisé</name>
     <text lang="fr">suivre le parcours balisé sur {0}jusqu'à l'arrivée</text>
+    <name lang="hu">Szalagozás a célig</name>
+    <text lang="hu">{0} az utolsó ponttól a célig, végig kötelező szalagozással</text>
     <name lang="it">Arrivo fettucciato</name>
     <text lang="it">{0}fettucciati fino all???arrivo</text>
     <name lang="ja">フィニッシュまで誘導</name>
@@ -12949,6 +13336,8 @@ for the symbols.
     <text lang="fi">suunnista {0} maaliin, kokoava viitoitus</text>
     <name lang="fr">Balisage convergent</name>
     <text lang="fr">{0}jusqu'à l'arrivée (balisage convergent)</text>
+    <name lang="hu">Célfolyosó</name>
+    <text lang="hu">{0} az utolsó ponttól a célig, a befutó elejét meg kell keresni, innentől kötelező útvonal</text>
     <name lang="it">Arrivo con corridoio finale fettucciato</name>
     <text lang="it">{0}con corridoio finale fettucciato fino all???arrivo</text>
     <name lang="ja">フィニッシュまで漏斗状誘導</name>
@@ -13029,6 +13418,8 @@ for the symbols.
     <text lang="fi">suunnista {0} maaliin (ei viitoitusta)</text>
     <name lang="fr">Trajet non balisé</name>
     <text lang="fr">s'orienter sur {0}jusqu'à l'arrivée (trajet non balisé)</text>
+    <name lang="hu">Célkeresés (nincs szalag)</name>
+    <text lang="hu">{0} az utolsó ponttól a célig, nincs szalagozás, a cél tájékozódási feladat</text>
     <name lang="it">Arrivo non fettucciato</name>
     <text lang="it">{0}non fettucciati fino all???arrivo</text>
     <name lang="ja">フィニッシュまで誘導なし</name>
