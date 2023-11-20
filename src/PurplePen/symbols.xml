@@ -384,8 +384,8 @@ for the symbols.
     <text lang="pl">{0} punktów</text>
     <name lang="ro">Numărul de Puncte</name>
     <text lang="ro">{0} puncte</text>
-    <name lang="sv">Antal punkter</name>
-    <text lang="sv">{0} punkter</text>
+    <name lang="sv">Antal poäng</name>
+    <text lang="sv">{0} poäng</text>
     <name lang="zh-HK">Number of Points</name>
     <text lang="zh-HK">{0} 分</text>
     <name lang="zh-TW">積分值</name>
@@ -546,7 +546,7 @@ for the symbols.
     <name lang="ro">Nordic</name>
     <text lang="ro">N {0}</text>
     <name lang="sv">Norra</name>
-    <text lang="sv">Norra {0}</text>
+    <text lang="sv">N {0}</text>
     <name lang="zh-HK">Northern</name>
     <text lang="zh-HK">北方的{0}</text>
     <name lang="zh-TW">北方的</name>
@@ -606,7 +606,7 @@ for the symbols.
     <name lang="ro">Nord-estic</name>
     <text lang="ro">NE {0}</text>
     <name lang="sv">Nordöstra</name>
-    <text lang="sv">Nordöstra {0}</text>
+    <text lang="sv">NÖ {0}</text>
     <name lang="zh-HK">North-eastern</name>
     <text lang="zh-HK">東北方的{0}</text>
     <name lang="zh-TW">東北方的</name>
@@ -666,7 +666,7 @@ for the symbols.
     <name lang="ro">Estic</name>
     <text lang="ro">E {0}</text>
     <name lang="sv">Östra</name>
-    <text lang="sv">Östra {0}</text>
+    <text lang="sv">Ö {0}</text>
     <name lang="zh-HK">Eastern</name>
     <text lang="zh-HK">東方的{0}</text>
     <name lang="zh-TW">東方的</name>
@@ -726,7 +726,7 @@ for the symbols.
     <name lang="ro">Sud-estic</name>
     <text lang="ro">SE {0}</text>
     <name lang="sv">Sydöstra</name>
-    <text lang="sv">Sydöstra {0}</text>
+    <text lang="sv">SÖ {0}</text>
     <name lang="zh-HK">South-eastern</name>
     <text lang="zh-HK">東南方的{0}</text>
     <name lang="zh-TW">東南方的</name>
@@ -786,7 +786,7 @@ for the symbols.
     <name lang="ro">Sudic</name>
     <text lang="ro">S {0}</text>
     <name lang="sv">Södra</name>
-    <text lang="sv">Södra {0}</text>
+    <text lang="sv">S {0}</text>
     <name lang="zh-HK">Southern</name>
     <text lang="zh-HK">南方的{0}</text>
     <name lang="zh-TW">南方的</name>
@@ -846,7 +846,7 @@ for the symbols.
     <name lang="ro">Sud-vestic</name>
     <text lang="ro">SW {0}</text>
     <name lang="sv">Sydvästra</name>
-    <text lang="sv">Sydvästra {0}</text>
+    <text lang="sv">SV {0}</text>
     <name lang="zh-HK">South-western</name>
     <text lang="zh-HK">西南方的{0}</text>
     <name lang="zh-TW">西南方的</name>
@@ -906,7 +906,7 @@ for the symbols.
     <name lang="ro">Vestic</name>
     <text lang="ro">W {0}</text>
     <name lang="sv">Västra</name>
-    <text lang="sv">Västra {0}</text>
+    <text lang="sv">V {0}</text>
     <name lang="zh-HK">Western</name>
     <text lang="zh-HK">西方的{0}</text>
     <name lang="zh-TW">西方的</name>
@@ -966,7 +966,7 @@ for the symbols.
     <name lang="ro">Nord-vestic</name>
     <text lang="ro">NW {0}</text>
     <name lang="sv">Nordvästra</name>
-    <text lang="sv">Nordvästra {0}</text>
+    <text lang="sv">NV {0}</text>
     <name lang="zh-HK">North-western</name>
     <text lang="zh-HK">西北方的{0}</text>
     <name lang="zh-TW">西北方的</name>
@@ -1238,8 +1238,8 @@ for the symbols.
     <name lang="ro">Terasa</name>
     <text lang="ro">terasă</text>
     <name lang="sv">Terrass</name>
+    <text lang="sv" plural="true">terrasserna</text>
     <text lang="sv">terrassen</text>
-    <text lang="sv" plural="true">terrasser</text>
     <name lang="zh-HK">Terrace</name>
     <text lang="zh-HK">台地</text>
     <name lang="zh-TW">平台</name>
@@ -1325,8 +1325,8 @@ for the symbols.
     <name lang="ro">Pinten</name>
     <text lang="ro">pinten</text>
     <name lang="sv">Näsa</name>
-    <text lang="sv">näsan</text>
     <text lang="sv" plural="true">näsorna</text>
+    <text lang="sv">näsan</text>
     <name lang="zh-HK">Spur</name>
     <text lang="zh-HK">山咀</text>
     <name lang="zh-TW">山脊</name>
@@ -1412,8 +1412,8 @@ for the symbols.
     <name lang="ro">Vâlcel</name>
     <text lang="ro">vâlcel</text>
     <name lang="sv">Sänka</name>
-    <text lang="sv">sänkan</text>
     <text lang="sv" plural="true">sänkorna</text>
+    <text lang="sv">sänkan</text>
     <name lang="zh-HK">Reentrant</name>
     <text lang="zh-HK">山窩</text>
     <name lang="zh-TW">山谷</name>
@@ -1493,8 +1493,8 @@ for the symbols.
     <name lang="ro">Ruptură de teren</name>
     <text lang="ro">ruptură de teren</text>
     <name lang="sv">Skärning</name>
-    <text lang="sv">skärning</text>
-    <text lang="sv" plural="true">skärningar</text>
+    <text lang="sv" plural="true">skärningarna</text>
+    <text lang="sv">skärningen</text>
     <name lang="zh-HK">Earth bank</name>
     <text lang="zh-HK">泥坡</text>
     <name lang="zh-TW">土坡</name>
@@ -1581,7 +1581,8 @@ for the symbols.
     <name lang="ro">Carieră</name>
     <text lang="ro">carieră</text>
     <name lang="sv">Grustag/stenbrott</name>
-    <text lang="sv">grustag/stenbrott</text>
+    <text lang="sv" plural="true">grustagen/stenbrotten</text>
+    <text lang="sv">grustaget/stenbrottet</text>
     <name lang="zh-HK">Quarry</name>
     <text lang="zh-HK">採石地</text>
     <name lang="zh-TW">採石地</name>
@@ -1671,8 +1672,8 @@ for the symbols.
     <name lang="ro">Zid de pământ</name>
     <text lang="ro">zid de pământ</text>
     <name lang="sv">Jordvall</name>
+    <text lang="sv" plural="true">jordvallarna</text>
     <text lang="sv">jordvallen</text>
-    <text lang="sv" plural="true">jordvallar</text>
     <name lang="zh-HK">Earth wall</name>
     <text lang="zh-HK">土埂</text>
     <name lang="zh-TW">土牆</name>
@@ -1757,8 +1758,8 @@ for the symbols.
     <name lang="ro">Viroagă</name>
     <text lang="ro">viroagă</text>
     <name lang="sv">Fåra</name>
+    <text lang="sv" plural="true">fårorna</text>
     <text lang="sv">fåran</text>
-    <text lang="sv" plural="true">fåror</text>
     <name lang="zh-HK">Erosion gully</name>
     <text lang="zh-HK">沖溝</text>
     <name lang="zh-TW">沖溝</name>
@@ -1828,8 +1829,8 @@ for the symbols.
     <name lang="ro">Viroagă mica</name>
     <text lang="ro">viroagă mică</text>
     <name lang="sv">Liten fåra</name>
-    <text lang="sv">liten fåra</text>
-    <text lang="sv" plural="true">små fåror</text>
+    <text lang="sv" plural="true">små fårorna</text>
+    <text lang="sv">lilla fåran</text>
     <name lang="zh-HK">Small erosion gully</name>
     <text lang="zh-HK">小乾溝</text>
     <name lang="zh-TW">小沖溝</name>
@@ -2136,8 +2137,8 @@ for the symbols.
     <name lang="ro">Șa</name>
     <text lang="ro">șa</text>
     <name lang="sv">Sadel</name>
-    <text lang="sv">sadeln</text>
     <text lang="sv" plural="true">sadlarna</text>
+    <text lang="sv">sadeln</text>
     <name lang="zh-HK">Saddle</name>
     <text lang="zh-HK">鞍部</text>
     <name lang="zh-TW">鞍部</name>
@@ -2305,8 +2306,8 @@ for the symbols.
     <name lang="ro">Groapă mică</name>
     <text lang="ro">groapă mică</text>
     <name lang="sv">Liten naturlig grop</name>
-    <text lang="sv">liten naturlig grop</text>
-    <text lang="sv" plural="true">små naturliga gropar</text>
+    <text lang="sv" plural="true">små naturliga groparna</text>
+    <text lang="sv">lilla naturliga gropen</text>
     <name lang="zh-HK">Small depression</name>
     <text lang="zh-HK">小陷地</text>
     <name lang="zh-TW">小窪地</name>
@@ -2380,8 +2381,8 @@ for the symbols.
     <name lang="ro">Groapă mare</name>
     <text lang="ro">groapă mare</text>
     <name lang="sv">Liten grävd grop</name>
-    <text lang="sv">liten grävd grop</text>
-    <text lang="sv" plural="true">små grävda gropar</text>
+    <text lang="sv" plural="true">små grävda groparna</text>
+    <text lang="sv">lilla grävda gropen</text>
     <name lang="zh-HK">Pit</name>
     <text lang="zh-HK">地洞</text>
     <name lang="zh-TW">地坑；坑洞</name>
@@ -2541,8 +2542,8 @@ for the symbols.
     <name lang="ro">Mușuroi</name>
     <text lang="ro">mușuroi</text>
     <name lang="sv">Myrstack</name>
+    <text lang="sv" plural="true">myrstackarna</text>
     <text lang="sv">myrstacken</text>
-    <text lang="sv" plural="true">myrstackar</text>
     <name lang="zh-HK">Ant hill (termite mound)</name>
     <text lang="zh-HK">蟻丘</text>
     <name lang="zh-TW">蟻丘</name>
@@ -2623,8 +2624,8 @@ for the symbols.
     <name lang="ro">Margine stâncoasă</name>
     <text lang="ro">margine stâncoasă</text>
     <name lang="sv">Brant</name>
-    <text lang="sv">branten</text>
     <text lang="sv" plural="true">branterna</text>
+    <text lang="sv">branten</text>
     <name lang="zh-HK">Cliff</name>
     <text lang="zh-HK">崖壁</text>
     <name lang="zh-TW">陡壁、峭壁</name>
@@ -3327,8 +3328,8 @@ for the symbols.
     <name lang="ro">Pasaj îngust</name>
     <text lang="ro">pasaj îngust</text>
     <name lang="sv">Trång passage</name>
-    <text lang="sv">trång passage</text>
-    <text lang="sv" plural="true">trånga passager</text>
+    <text lang="sv" plural="true">trånga passagerna</text>
+    <text lang="sv">trånga passagen</text>
     <name lang="zh-HK">Narrow passage</name>
     <text lang="zh-HK">崖間狹路</text>
     <name lang="zh-TW">狹窄通道</name>
@@ -3624,7 +3625,8 @@ for the symbols.
     <name lang="ro">Groapă cu apă</name>
     <text lang="ro">groapă cu apă</text>
     <name lang="sv">Vattenhål</name>
-    <text lang="sv">vattenhålen</text>
+    <text lang="sv" plural="true">vattenhålen</text>
+    <text lang="sv">vattenhålet</text>
     <name lang="zh-HK">Water hole</name>
     <text lang="zh-HK">水洞</text>
     <name lang="zh-TW">水坑</name>
@@ -3716,8 +3718,9 @@ for the symbols.
     <text lang="pl" plural="true" gender="męski">strumienie</text>
     <name lang="ro">Râu, fir, curs de apă</name>
     <text lang="ro">fir</text>
-    <name lang="sv">Älv, Å, Vattendrag</name>
-    <text lang="sv">vattendrag</text>
+    <name lang="sv">Vattendrag, å/bäck</name>
+    <text lang="sv" plural="true">vattendragen</text>
+    <text lang="sv">vattendraget</text>
     <name lang="zh-HK">River, stream, water course</name>
     <text lang="zh-HK">河溪</text>
     <name lang="zh-TW">河川、溪流、水道</name>
@@ -3811,8 +3814,8 @@ for the symbols.
     <name lang="ro">Canal mic de apă, șanț</name>
     <text lang="ro">șanț</text>
     <name lang="sv">Mindre vattendrag, dike</name>
-    <text lang="sv">dike</text>
-    <text lang="sv" plural="true">diken</text>
+    <text lang="sv" plural="true">dikena</text>
+    <text lang="sv">diket</text>
     <name lang="zh-HK">Minor water channel, ditch</name>
     <text lang="zh-HK">小溝</text>
     <name lang="zh-TW">小水道；溝渠</name>
@@ -3929,9 +3932,9 @@ for the symbols.
     <text lang="pl" plural="true" gender="nijaki">wąskie bagna</text>
     <name lang="ro">Mlaștina ingustă</name>
     <text lang="ro">mlaștina ingustă</text>
-    <name lang="sv">Smal sankmark</name>
-    <text lang="sv">smal sankmark</text>
-    <text lang="sv" plural="true">smala sankmarker</text>
+    <name lang="sv">Surdrag</name>
+    <text lang="sv" plural="true">surdragen</text>
+    <text lang="sv">surdraget</text>
     <name lang="zh-HK">Narrow marsh</name>
     <text lang="zh-HK">狹窄沼澤</text>
     <name lang="zh-TW">狹窄沼澤</name>
@@ -4010,8 +4013,8 @@ for the symbols.
     <name lang="ro">Mlaștină</name>
     <text lang="ro">mlaștină</text>
     <name lang="sv">Sankmark</name>
+    <text lang="sv" plural="true">sankmarkerna</text>
     <text lang="sv">sankmarken</text>
-    <text lang="sv" plural="true">sankmarker</text>
     <name lang="zh-HK">Marsh</name>
     <text lang="zh-HK">沼澤</text>
     <name lang="zh-TW">沼澤</name>
@@ -4713,8 +4716,8 @@ for the symbols.
     <name lang="ro">Defrișare</name>
     <text lang="ro">defrișare</text>
     <name lang="sv">Glänta</name>
-    <text lang="sv">gläntan</text>
     <text lang="sv" plural="true">gläntorna</text>
+    <text lang="sv">gläntan</text>
     <name lang="zh-HK">Clearing</name>
     <text lang="zh-HK">林中空曠地</text>
     <name lang="zh-TW">林中空地</name>
@@ -5083,8 +5086,8 @@ for the symbols.
     <name lang="ro">Crâng</name>
     <text lang="ro">crâng</text>
     <name lang="sv">Dunge</name>
-    <text lang="sv">dunge</text>
-    <text lang="sv" plural="true">dungar</text>
+    <text lang="sv" plural="true">dungarna</text>
+    <text lang="sv">dungen</text>
     <name lang="zh-HK">Copse</name>
     <text lang="zh-HK">樹叢</text>
     <name lang="zh-TW">小片樹林</name>
@@ -5162,9 +5165,9 @@ for the symbols.
     <text lang="pl" plural="true" gender="nijaki">samotne drzewa</text>
     <name lang="ro">Copac distinctiv</name>
     <text lang="ro">copac distinctiv</text>
-    <name lang="sv">Särpräglad träd</name>
-    <text lang="sv">Särpräglat träd</text>
-    <text lang="sv" plural="true">särpräglade träd</text>
+    <name lang="sv">Särpräglat träd</name>
+    <text lang="sv" plural="true">särpräglade träden</text>
+    <text lang="sv">särpräglade trädet</text>
     <name lang="zh-HK">Distinctive tree</name>
     <text lang="zh-HK">獨樹</text>
     <name lang="zh-TW">明顯的樹</name>
@@ -5236,9 +5239,9 @@ for the symbols.
     <text lang="pl" plural="true" gender="męski">wykroty</text>
     <name lang="ro">Buturugă</name>
     <text lang="ro">buturugă</text>
-    <name lang="sv">Rotvälta, stubbe</name>
-    <text lang="sv">rotvälta/stubbe</text>
-    <text lang="sv" plural="true">rotvältor</text>
+    <name lang="sv">Rotvälta/stubbe</name>
+    <text lang="sv" plural="true">rotvältorna/stubbarna</text>
+    <text lang="sv">rotvältan/stubben</text>
     <name lang="zh-HK">Tree stump, Root stock</name>
     <text lang="zh-HK">樹根</text>
     <name lang="zh-TW">樹樁；樹根</name>
@@ -5313,8 +5316,8 @@ for the symbols.
     <name lang="ro">Drum</name>
     <text lang="ro">drum</text>
     <name lang="sv">Väg</name>
-    <text lang="sv">väg</text>
-    <text lang="sv" plural="true">vägar</text>
+    <text lang="sv" plural="true">vägarna</text>
+    <text lang="sv">vägen</text>
     <name lang="zh-HK">Road</name>
     <text lang="zh-HK">馬路</text>
     <name lang="zh-TW">大路</name>
@@ -5383,8 +5386,8 @@ for the symbols.
     <name lang="ro">Potecă</name>
     <text lang="ro">potecă</text>
     <name lang="sv">Stig</name>
-    <text lang="sv">stig</text>
-    <text lang="sv" plural="true">stigar</text>
+    <text lang="sv" plural="true">stigarna</text>
+    <text lang="sv">stigen</text>
     <name lang="zh-HK">Track, Path</name>
     <text lang="zh-HK">小徑</text>
     <name lang="zh-TW">小徑</name>
@@ -5459,8 +5462,8 @@ for the symbols.
     <name lang="ro">Defrișare</name>
     <text lang="ro">defrișare</text>
     <name lang="sv">Rågång</name>
-    <text lang="sv">rågång</text>
-    <text lang="sv" plural="true">rågångar</text>
+    <text lang="sv" plural="true">rågångarna</text>
+    <text lang="sv">rågången</text>
     <name lang="zh-HK">Ride</name>
     <text lang="zh-HK">林中間隙</text>
     <name lang="zh-TW">林中間隙</name>
@@ -5560,8 +5563,8 @@ for the symbols.
     <name lang="ro">Pod</name>
     <text lang="ro">pod</text>
     <name lang="sv">Bro</name>
-    <text lang="sv">bro</text>
-    <text lang="sv" plural="true">broar</text>
+    <text lang="sv" plural="true">broarna</text>
+    <text lang="sv">bron</text>
     <name lang="zh-HK">Bridge</name>
     <text lang="zh-HK">橋樑</text>
     <name lang="zh-TW">橋</name>
@@ -5637,8 +5640,8 @@ for the symbols.
     <name lang="ro">Linie de curent</name>
     <text lang="ro">linie de curent</text>
     <name lang="sv">Kraftledning</name>
-    <text lang="sv">kraftledning</text>
-    <text lang="sv" plural="true">kraftledningar</text>
+    <text lang="sv" plural="true">kraftledningarna</text>
+    <text lang="sv">kraftledningen</text>
     <name lang="zh-HK">Power line</name>
     <text lang="zh-HK">電線</text>
     <name lang="zh-TW">電纜線</name>
@@ -5718,8 +5721,8 @@ for the symbols.
     <name lang="ro">Stâlp de curent</name>
     <text lang="ro">stâlp de curent</text>
     <name lang="sv">Kraftledningsstolpe</name>
-    <text lang="sv">kraftledningsstolpe</text>
-    <text lang="sv" plural="true">kraftledningsstolpar</text>
+    <text lang="sv" plural="true">kraftledningsstolparna</text>
+    <text lang="sv">kraftledningsstolpen</text>
     <name lang="zh-HK">Power line pylon</name>
     <text lang="zh-HK">電線桿</text>
     <name lang="zh-TW">電纜線支架</name>
@@ -5802,8 +5805,8 @@ for the symbols.
     <name lang="ro">Tunel</name>
     <text lang="ro">tunel</text>
     <name lang="sv">Tunnel</name>
-    <text lang="sv">tunnel</text>
-    <text lang="sv" plural="true">tunnlar</text>
+    <text lang="sv" plural="true">tunnlarna</text>
+    <text lang="sv">tunneln</text>
     <name lang="zh-HK">Tunnel</name>
     <text lang="zh-HK">隧道</text>
     <name lang="zh-TW">隧道</name>
@@ -5885,8 +5888,8 @@ for the symbols.
     <name lang="ro">Zid piatră</name>
     <text lang="ro">zid piatră</text>
     <name lang="sv">Stenmur</name>
-    <text lang="sv">stenmur</text>
-    <text lang="sv" plural="true">stenmurar</text>
+    <text lang="sv" plural="true">stenmurarna</text>
+    <text lang="sv">stenmuren</text>
     <name lang="zh-HK">Stone wall</name>
     <text lang="zh-HK">石牆</text>
     <name lang="zh-TW">石牆</name>
@@ -5963,8 +5966,8 @@ for the symbols.
     <name lang="ro">Gard</name>
     <text lang="ro">gard</text>
     <name lang="sv">Stängsel</name>
-    <text lang="sv">stängsel</text>
-    <text lang="sv" plural="true">stängsel</text>
+    <text lang="sv" plural="true">stängslen</text>
+    <text lang="sv">stängslet</text>
     <name lang="zh-HK">Fence</name>
     <text lang="zh-HK">圍欄</text>
     <name lang="zh-TW">圍欄</name>
@@ -6047,8 +6050,8 @@ for the symbols.
     <name lang="ro">Punct de trecere</name>
     <text lang="ro">punct de trecere</text>
     <name lang="sv">Genomgång</name>
-    <text lang="sv">genomgång</text>
-    <text lang="sv" plural="true">genomgångar</text>
+    <text lang="sv" plural="true">genomgångarna</text>
+    <text lang="sv">genomgången</text>
     <name lang="zh-HK">Crossing point</name>
     <text lang="zh-HK">橫越點</text>
     <name lang="zh-TW">穿越點</name>
@@ -6197,9 +6200,9 @@ for the symbols.
     <text lang="pl" plural="true" gender="męski">obszary utwardzone</text>
     <name lang="ro">Zonă pavată</name>
     <text lang="ro">zonă pavată</text>
-    <name lang="sv">Asfalt/grusyta</name>
-    <text lang="sv">asfalt/grusyta</text>
-    <text lang="sv" plural="true">asfalt/grusytor</text>
+    <name lang="sv">Asfalt- eller grusyta</name>
+    <text lang="sv" plural="true">asfalt/grusytorna</text>
+    <text lang="sv">asfalt/grusytan</text>
     <name lang="zh-HK">Paved area</name>
     <text lang="zh-HK">水泥地</text>
     <name lang="zh-TW">人工鋪砌地面</name>
@@ -6370,8 +6373,8 @@ for the symbols.
     <name lang="ro">Conductă</name>
     <text lang="ro">conductă</text>
     <name lang="sv">Rörledning</name>
-    <text lang="sv">rörledning</text>
-    <text lang="sv" plural="true">rörledningar</text>
+    <text lang="sv" plural="true">rörledningarna</text>
+    <text lang="sv">rörledningen</text>
     <name lang="zh-HK">Pipeline</name>
     <text lang="zh-HK">管道</text>
     <name lang="zh-TW">管道; 雪車滑道或冰橇賽道</name>
@@ -6596,8 +6599,8 @@ for the symbols.
     <name lang="ro">Bornă</name>
     <text lang="ro">bornă</text>
     <name lang="sv">Röse</name>
+    <text lang="sv" plural="true">rösena</text>
     <text lang="sv">röset</text>
-    <text lang="sv" plural="true">rösen</text>
     <name lang="zh-HK">Boundary stone, Cairn</name>
     <text lang="zh-HK">石標誌</text>
     <name lang="zh-TW">界石；石標誌</name>
@@ -6745,8 +6748,8 @@ for the symbols.
     <name lang="ro">Pământ cu cărbune ars</name>
     <text lang="ro">pământ cu cărbune ars</text>
     <name lang="sv">Kolbotten</name>
-    <text lang="sv">kolbotten</text>
-    <text lang="sv" plural="true">kolbottnar</text>
+    <text lang="sv" plural="true">kolbottnarna</text>
+    <text lang="sv">kolbottnen</text>
     <name lang="zh-HK">Charcoal burning ground</name>
     <text lang="zh-HK">炭灰地</text>
     <name lang="zh-TW">炭灰地；斜坡平台</name>
@@ -6818,8 +6821,8 @@ for the symbols.
     <name lang="ro">Monument sau statuie</name>
     <text lang="ro">statuie</text>
     <name lang="sv">Monument/staty</name>
-    <text lang="sv">monument/staty</text>
-    <text lang="sv" plural="true">statyer</text>
+    <text lang="sv" plural="true">monumenten/statyerna</text>
+    <text lang="sv">monumentet/statyn</text>
     <name lang="zh-HK">Monument or statue</name>
     <text lang="zh-HK">紀念碑或塑像</text>
     <name lang="zh-TW">紀念碑或雕像</name>
@@ -6893,8 +6896,8 @@ for the symbols.
     <name lang="ro">Trecere</name>
     <text lang="ro">trecere</text>
     <name lang="sv">Passage under byggnad</name>
-    <text lang="sv">passage under byggnad</text>
-    <text lang="sv" plural="true">passager under byggnad</text>
+    <text lang="sv" plural="true">byggnadspassagerna</text>
+    <text lang="sv">byggnadspassagen</text>
     <name lang="zh-HK">Building pass-through</name>
     <text lang="zh-HK">可通越建築物</text>
     <name lang="zh-TW">可穿越建築物的通道</name>
@@ -6969,8 +6972,9 @@ for the symbols.
     <text lang="pl" plural="true" gender="nijaki">schody</text>
     <name lang="ro">Scări</name>
     <text lang="ro">scări</text>
-    <name lang="sv">Trappor</name>
-    <text lang="sv">trappor</text>
+    <name lang="sv">Trappa</name>
+    <text lang="sv" plural="true">trapporna</text>
+    <text lang="sv">trappan</text>
     <name lang="zh-HK">Stairway</name>
     <text lang="zh-HK">樓梯</text>
     <name lang="zh-TW">階梯</name>
@@ -7182,8 +7186,8 @@ for the symbols.
     <name lang="ro">Reper special</name>
     <text lang="ro">reper special</text>
     <name lang="sv">Speciellt föremål</name>
-    <text lang="sv">speciellt föremål</text>
-    <text lang="sv" plural="true">speciella föremål</text>
+    <text lang="sv" plural="true">specialföremålen</text>
+    <text lang="sv">specialföremålet</text>
     <name lang="zh-HK">Special item</name>
     <text lang="zh-HK">特別項目</text>
     <name lang="zh-TW">明顯的特徵；特定的項目</name>
@@ -7251,8 +7255,8 @@ for the symbols.
     <name lang="ro">Reper special</name>
     <text lang="ro">reper special</text>
     <name lang="sv">Speciellt föremål</name>
-    <text lang="sv">Speciellt föremål</text>
-    <text lang="sv" plural="true">speciella föremål</text>
+    <text lang="sv" plural="true">specialföremålen</text>
+    <text lang="sv">specialföremålet</text>
     <name lang="zh-HK">Special item</name>
     <text lang="zh-HK">特別項目</text>
     <name lang="zh-TW">明顯的特徵；特定的項目</name>
@@ -8149,7 +8153,7 @@ for the symbols.
     <name lang="ro">Ace de brad</name>
     <text lang="ro">ace-brad {0}</text>
     <name lang="sv">Barrträd</name>
-    <text lang="sv">{0}, barrträd </text>
+    <text lang="sv">{0}, barrträd</text>
     <name lang="zh-HK">Needle-leaved</name>
     <text lang="zh-HK">針葉{0}</text>
     <name lang="zh-TW">針葉的</name>
@@ -8225,7 +8229,7 @@ for the symbols.
     <name lang="ro">Frunze-late</name>
     <text lang="ro">frunze late {0}</text>
     <name lang="sv">Lövträd</name>
-    <text lang="sv">{0}, lövträd </text>
+    <text lang="sv">{0}, lövträd</text>
     <name lang="zh-HK">Broad-leaved</name>
     <text lang="zh-HK">落葉{0}</text>
     <name lang="zh-TW">闊葉的</name>
@@ -8329,7 +8333,7 @@ for the symbols.
     <name lang="ro">Dărăpănat</name>
     <text lang="ro">dărăpănat {0}</text>
     <name lang="sv">Raserad</name>
-    <text lang="sv">{0}, raserad </text>
+    <text lang="sv">{0}, raserad</text>
     <name lang="zh-HK">Ruined</name>
     <text lang="zh-HK">倒塌的{0}</text>
     <name lang="zh-TW">倒塌毀壞的</name>
@@ -8416,7 +8420,7 @@ for the symbols.
     <name lang="ro">Intersecţie</name>
     <text lang="ro">intersecţia dintre {0} și {1}</text>
     <name lang="sv">Korsning</name>
-    <text lang="sv">{0} korsar {1}</text>
+    <text lang="sv">korsningen mellan {0} och {1}</text>
     <name lang="zh-HK">Crossing</name>
     <text lang="zh-HK">{0}及{1}的交叉處</text>
     <name lang="zh-TW">交會處</name>
@@ -8479,8 +8483,7 @@ for the symbols.
     <name lang="ro">Intersecţie (obiecte de același tip)</name>
     <text lang="ro">intersecţie de {0}</text>
     <name lang="sv">Korsning (samma symbol)</name>
-    <text lang="sv">{0}korsning</text>
-    <text lang="sv" plural="true">{0}korsningar</text>
+    <text lang="sv">korsningen mellan {1}</text>
     <name lang="zh-HK">Crossing (objects of same kind)</name>
     <text lang="zh-HK">兩{0}的交叉處</text>
     <name lang="zh-TW">交會處 (相同特徵)</name>
@@ -8535,8 +8538,7 @@ for the symbols.
     <name lang="ro">Bifurcație</name>
     <text lang="ro">bifurcație dintre {0} și {1}</text>
     <name lang="sv">Förgrening</name>
-    <text lang="sv">{0}/{1} förgrening</text>
-    <text lang="sv" plural="true">{0}/{1} förgreningar</text>
+    <text lang="sv">förgrening av {0} och {1}</text>
     <name lang="zh-HK">Junction</name>
     <text lang="zh-HK">{0}及{1}的連接處</text>
     <name lang="zh-TW">連接處</name>
@@ -8600,8 +8602,7 @@ for the symbols.
     <name lang="ro">Bifurcație (obiecte de același tip)</name>
     <text lang="ro">bifurcație de {0}</text>
     <name lang="sv">Förgrening (samma symbol)</name>
-    <text lang="sv">{0}förgrening</text>
-    <text lang="sv" plural="true">{0}förgreningar</text>
+    <text lang="sv">förgrening av {0}</text>
     <name lang="zh-HK">Junction (objects of same kind)</name>
     <text lang="zh-HK">兩{0}的連接處</text>
     <name lang="zh-TW">連接處 (相同特徵)</name>
@@ -8651,7 +8652,7 @@ for the symbols.
     <text lang="pl">zakręt {0}</text>
     <name lang="ro">Cotitură</name>
     <text lang="ro">cotitură de {0}</text>
-    <name lang="sv">Krök</name>
+    <name lang="sv">Kröken</name>
     <text lang="sv">{0}, kröken</text>
     <name lang="zh-HK">Bend</name>
     <text lang="zh-HK">{0}彎位</text>
@@ -8999,7 +9000,7 @@ for the symbols.
     <name lang="ro">Partea nordică</name>
     <text lang="ro">{0} partea nordică</text>
     <name lang="sv">Norra sidan</name>
-    <text lang="sv">{0}, Norra sidan </text>
+    <text lang="sv">{0}, N sidan</text>
     <name lang="zh-HK">North side</name>
     <text lang="zh-HK">{0}北面</text>
     <name lang="zh-TW">北面外</name>
@@ -9051,7 +9052,7 @@ for the symbols.
     <name lang="ro">Partea nord estică</name>
     <text lang="ro">{0} partea nord estică</text>
     <name lang="sv">Nordöstra sidan</name>
-    <text lang="sv">{0}, Nordöstra sidan </text>
+    <text lang="sv">{0}, NÖ sidan</text>
     <name lang="zh-HK">North-east side</name>
     <text lang="zh-HK">{0}東北面</text>
     <name lang="zh-TW">東北面外</name>
@@ -9103,7 +9104,7 @@ for the symbols.
     <name lang="ro">Partea estică</name>
     <text lang="ro">{0} partea estică</text>
     <name lang="sv">Östra sidan</name>
-    <text lang="sv">{0}, Östra sidan</text>
+    <text lang="sv">{0}, Ö sidan</text>
     <name lang="zh-HK">East side</name>
     <text lang="zh-HK">{0}東面</text>
     <name lang="zh-TW">東面外</name>
@@ -9155,7 +9156,7 @@ for the symbols.
     <name lang="ro">Partea sud estică</name>
     <text lang="ro">{0} partea sud estică</text>
     <name lang="sv">Sydöstra sidan</name>
-    <text lang="sv">{0}, Sydöstra sidan</text>
+    <text lang="sv">{0}, SÖ sidan</text>
     <name lang="zh-HK">South-east side</name>
     <text lang="zh-HK">{0}東南面</text>
     <name lang="zh-TW">東南面外</name>
@@ -9207,7 +9208,7 @@ for the symbols.
     <name lang="ro">Partea sudică</name>
     <text lang="ro">{0} partea sudică</text>
     <name lang="sv">Södra sidan</name>
-    <text lang="sv">{0}, Södra sidan</text>
+    <text lang="sv">{0}, S sidan</text>
     <name lang="zh-HK">South side</name>
     <text lang="zh-HK">{0}南面</text>
     <name lang="zh-TW">南面外</name>
@@ -9259,7 +9260,7 @@ for the symbols.
     <name lang="ro">Partea sud-vestică</name>
     <text lang="ro">{0} partea sud vestică</text>
     <name lang="sv">Sydvästra sidan</name>
-    <text lang="sv">{0}, Sydvästra sidan</text>
+    <text lang="sv">{0}, SV sidan</text>
     <name lang="zh-HK">South-west side</name>
     <text lang="zh-HK">{0}西南面</text>
     <name lang="zh-TW">西南面外</name>
@@ -9311,7 +9312,7 @@ for the symbols.
     <name lang="ro">Partea vestică</name>
     <text lang="ro">{0} partea vestică</text>
     <name lang="sv">Västra sidan</name>
-    <text lang="sv">{0}, Västra sidan</text>
+    <text lang="sv">{0}, V sidan</text>
     <name lang="zh-HK">West side</name>
     <text lang="zh-HK">{0}西面</text>
     <name lang="zh-TW">西面外</name>
@@ -9363,7 +9364,7 @@ for the symbols.
     <name lang="ro">Partea nord-vestică</name>
     <text lang="ro">{0} partea nord-vestică</text>
     <name lang="sv">Nordvästra sidan</name>
-    <text lang="sv">{0}, Nordvästra sidan</text>
+    <text lang="sv">{0}, NV sidan</text>
     <name lang="zh-HK">North-west side</name>
     <text lang="zh-HK">{0}西北面</text>
     <name lang="zh-TW">西北面外</name>
@@ -9415,7 +9416,7 @@ for the symbols.
     <name lang="ro">Marginea nordică</name>
     <text lang="ro">{0} marginea nordică</text>
     <name lang="sv">Norra kanten</name>
-    <text lang="sv">{0}, Norra kanten</text>
+    <text lang="sv">{0}, N kanten</text>
     <name lang="zh-HK">North edge</name>
     <text lang="zh-HK">{0}北邊緣</text>
     <name lang="zh-TW">北邊緣</name>
@@ -9468,7 +9469,7 @@ for the symbols.
     <name lang="ro">Marginea nord-estică</name>
     <text lang="ro">{0} marginea nord-estică</text>
     <name lang="sv">Nordöstra kanten</name>
-    <text lang="sv">{0}, Nordöstra kanten</text>
+    <text lang="sv">{0}, NÖ kanten</text>
     <name lang="zh-HK">North-east edge</name>
     <text lang="zh-HK">{0}東北邊緣</text>
     <name lang="zh-TW">東北邊緣</name>
@@ -9521,7 +9522,7 @@ for the symbols.
     <name lang="ro">Marginea estică</name>
     <text lang="ro">{0} marginea estică</text>
     <name lang="sv">Östra kanten</name>
-    <text lang="sv">{0}, Östra kanten</text>
+    <text lang="sv">{0}, Ö kanten</text>
     <name lang="zh-HK">East edge</name>
     <text lang="zh-HK">{0}東邊緣</text>
     <name lang="zh-TW">東邊緣</name>
@@ -9574,7 +9575,7 @@ for the symbols.
     <name lang="ro">Marginea sud-estică</name>
     <text lang="ro">{0} marginea sud-estică</text>
     <name lang="sv">Sydöstra kanten</name>
-    <text lang="sv">{0}, Sydöstra kanten</text>
+    <text lang="sv">{0}, SÖ kanten</text>
     <name lang="zh-HK">South-east edge</name>
     <text lang="zh-HK">{0}東南邊緣</text>
     <name lang="zh-TW">東南邊緣</name>
@@ -9627,7 +9628,7 @@ for the symbols.
     <name lang="ro">marginea sudică</name>
     <text lang="ro">{0} marginea sudică</text>
     <name lang="sv">Södra kanten</name>
-    <text lang="sv">{0}, Södra kanten</text>
+    <text lang="sv">{0}, S kanten</text>
     <name lang="zh-HK">South edge</name>
     <text lang="zh-HK">{0}南邊緣</text>
     <name lang="zh-TW">南邊緣</name>
@@ -9680,7 +9681,7 @@ for the symbols.
     <name lang="ro">marginea sud-vestică</name>
     <text lang="ro">{0} marginea sud-vestică</text>
     <name lang="sv">Sydvästra kanten</name>
-    <text lang="sv">{0}, Sydvästra kanten</text>
+    <text lang="sv">{0}, SV kanten</text>
     <name lang="zh-HK">South-west edge</name>
     <text lang="zh-HK">{0}西南邊緣</text>
     <name lang="zh-TW">西南邊緣</name>
@@ -9733,7 +9734,7 @@ for the symbols.
     <name lang="ro">marginea vestică</name>
     <text lang="ro">{0} marginea vestică</text>
     <name lang="sv">Västra kanten</name>
-    <text lang="sv">{0}, Västra kanten </text>
+    <text lang="sv">{0}, V kanten</text>
     <name lang="zh-HK">West edge</name>
     <text lang="zh-HK">{0}西邊緣</text>
     <name lang="zh-TW">西邊緣</name>
@@ -9786,7 +9787,7 @@ for the symbols.
     <name lang="ro">Marginea nord-vestică</name>
     <text lang="ro">{0} marginea nord-vestică</text>
     <name lang="sv">Nordvästra kanten</name>
-    <text lang="sv">{0}, Nordvästra kanten</text>
+    <text lang="sv">{0}, NV kanten</text>
     <name lang="zh-HK">North-west edge</name>
     <text lang="zh-HK">{0}西北邊緣</text>
     <name lang="zh-TW">西北邊緣</name>
@@ -9839,7 +9840,7 @@ for the symbols.
     <name lang="ro">Partea nordică interior</name>
     <text lang="ro">{0} partea nordică interior</text>
     <name lang="sv">Norra delen</name>
-    <text lang="sv">{0}, Norra delen </text>
+    <text lang="sv">{0}, N delen</text>
     <name lang="zh-HK">North part</name>
     <text lang="zh-HK">{0}北部</text>
     <name lang="zh-TW">北部內</name>
@@ -9891,7 +9892,7 @@ for the symbols.
     <name lang="ro">Partea nord-estică interior</name>
     <text lang="ro">{0} partea nord-estică interior</text>
     <name lang="sv">Nordöstra delen</name>
-    <text lang="sv">{0}, Nordöstra delen</text>
+    <text lang="sv">{0}, NÖ delen</text>
     <name lang="zh-HK">North-east part</name>
     <text lang="zh-HK">{0}東北部</text>
     <name lang="zh-TW">東北部內</name>
@@ -9943,7 +9944,7 @@ for the symbols.
     <name lang="ro">Partea estică interior</name>
     <text lang="ro">{0} partea estică interior</text>
     <name lang="sv">Östra delen</name>
-    <text lang="sv">{0}, Östra delen </text>
+    <text lang="sv">{0}, Ö delen</text>
     <name lang="zh-HK">East part</name>
     <text lang="zh-HK">{0}東部</text>
     <name lang="zh-TW">東部內</name>
@@ -9995,7 +9996,7 @@ for the symbols.
     <name lang="ro">Partea sud-estică interior</name>
     <text lang="ro">{0} partea sud-estică interior</text>
     <name lang="sv">Sydöstra delen</name>
-    <text lang="sv">{0}, Sydöstra delen</text>
+    <text lang="sv">{0}, SÖ delen</text>
     <name lang="zh-HK">South-east part</name>
     <text lang="zh-HK">{0}東南部</text>
     <name lang="zh-TW">東南部內</name>
@@ -10047,7 +10048,7 @@ for the symbols.
     <name lang="ro">Partea sudică interior</name>
     <text lang="ro">{0} partea sudică interior</text>
     <name lang="sv">Södra delen</name>
-    <text lang="sv">{0}, Södra delen</text>
+    <text lang="sv">{0}, S delen</text>
     <name lang="zh-HK">South part</name>
     <text lang="zh-HK">{0}南部</text>
     <name lang="zh-TW">南部內</name>
@@ -10099,7 +10100,7 @@ for the symbols.
     <name lang="ro">Partea sud-vestică interior</name>
     <text lang="ro">{0} partea sud-vestică interior</text>
     <name lang="sv">Sydvästra delen</name>
-    <text lang="sv">{0}, Sydvästra delen</text>
+    <text lang="sv">{0}, SV delen</text>
     <name lang="zh-HK">South-west part</name>
     <text lang="zh-HK">{0}西南部</text>
     <name lang="zh-TW">西南部內</name>
@@ -10151,7 +10152,7 @@ for the symbols.
     <name lang="ro">Partea vestică interior</name>
     <text lang="ro">{0} partea vestică interior</text>
     <name lang="sv">Västra delen</name>
-    <text lang="sv">{0}, Västra delen</text>
+    <text lang="sv">{0}, V delen</text>
     <name lang="zh-HK">West part</name>
     <text lang="zh-HK">{0}西部</text>
     <name lang="zh-TW">西部內</name>
@@ -10203,7 +10204,7 @@ for the symbols.
     <name lang="ro">Partea nord-vestică interior</name>
     <text lang="ro">{0} partea nord-vestică interior</text>
     <name lang="sv">Nordvästra delen</name>
-    <text lang="sv">{0}, Nordvästra delen</text>
+    <text lang="sv">{0}, NV delen</text>
     <name lang="zh-HK">North-west part</name>
     <text lang="zh-HK">{0}西北部</text>
     <name lang="zh-TW">西北部內</name>
@@ -10255,7 +10256,7 @@ for the symbols.
     <name lang="ro">Colț nord interior</name>
     <text lang="ro">{0} colț nord interior</text>
     <name lang="sv">Norra hörnet (insidan)</name>
-    <text lang="sv">{0}, Norra hörnet (insidan)</text>
+    <text lang="sv">{0}, N hörnet (insidan)</text>
     <name lang="zh-HK">North corner (inside)</name>
     <text lang="zh-HK">{0}北內角</text>
     <name lang="zh-TW">北角內</name>
@@ -10309,7 +10310,7 @@ for the symbols.
     <name lang="ro">colț nord-est interior</name>
     <text lang="ro">{0} colț nord-est interior</text>
     <name lang="sv">Nordöstra hörnet (insidan)</name>
-    <text lang="sv">{0}, Nordöstra hörnet (insidan)</text>
+    <text lang="sv">{0}, NÖ hörnet (insidan)</text>
     <name lang="zh-HK">North-east corner (inside)</name>
     <text lang="zh-HK">{0}東北內角</text>
     <name lang="zh-TW">東北角內</name>
@@ -10363,7 +10364,7 @@ for the symbols.
     <name lang="ro">Colț est interior</name>
     <text lang="ro">{0} colț est interior</text>
     <name lang="sv">Östra hörnet (insidan)</name>
-    <text lang="sv">{0}, Östra hörnet (insidan)</text>
+    <text lang="sv">{0}, Ö hörnet (insidan)</text>
     <name lang="zh-HK">East corner (inside)</name>
     <text lang="zh-HK">{0}東內角</text>
     <name lang="zh-TW">東角內</name>
@@ -10417,7 +10418,7 @@ for the symbols.
     <name lang="ro">Colț sud-est interior</name>
     <text lang="ro">{0} colț sud-est interior</text>
     <name lang="sv">Sydöstra hörnet (insidan)</name>
-    <text lang="sv">{0}, Sydöstra hörnet (insidan)</text>
+    <text lang="sv">{0}, SÖ hörnet (insidan)</text>
     <name lang="zh-HK">South-east corner (inside)</name>
     <text lang="zh-HK">{0}東南內角</text>
     <name lang="zh-TW">東南角內</name>
@@ -10471,7 +10472,7 @@ for the symbols.
     <name lang="ro">Colț sud interior</name>
     <text lang="ro">{0} colț sud interior</text>
     <name lang="sv">Södra hörnet (insidan)</name>
-    <text lang="sv">{0}, Södra hörnet (insidan)</text>
+    <text lang="sv">{0}, S hörnet (insidan)</text>
     <name lang="zh-HK">South corner (inside)</name>
     <text lang="zh-HK">{0}南內角</text>
     <name lang="zh-TW">南角內</name>
@@ -10525,7 +10526,7 @@ for the symbols.
     <name lang="ro">Colț sud-vest interior</name>
     <text lang="ro">{0} colț sud-vest interior</text>
     <name lang="sv">Sydvästra hörnet (insidan)</name>
-    <text lang="sv">{0}, Sydvästra hörnet (insidan)</text>
+    <text lang="sv">{0}, SV hörnet (insidan)</text>
     <name lang="zh-HK">South-west corner (inside)</name>
     <text lang="zh-HK">{0}西南內角</text>
     <name lang="zh-TW">西南角內</name>
@@ -10579,7 +10580,7 @@ for the symbols.
     <name lang="ro">Colț vest interior</name>
     <text lang="ro">{0} colț vest interior</text>
     <name lang="sv">Västra hörnet (insidan)</name>
-    <text lang="sv">{0}, Västra hörnet (insidan)</text>
+    <text lang="sv">{0}, V hörnet (insidan)</text>
     <name lang="zh-HK">West corner (inside)</name>
     <text lang="zh-HK">{0}西內角</text>
     <name lang="zh-TW">西角內</name>
@@ -10633,7 +10634,7 @@ for the symbols.
     <name lang="ro">Colț nord-vest interior</name>
     <text lang="ro">{0} colț nord-vest interior</text>
     <name lang="sv">Nordvästra hörnet (insidan)</name>
-    <text lang="sv">{0}, Nordvästra hörnet (insidan)</text>
+    <text lang="sv">{0}, NV hörnet (insidan)</text>
     <name lang="zh-HK">North-west corner (inside)</name>
     <text lang="zh-HK">{0}西北內角</text>
     <name lang="zh-TW">西北角內</name>
@@ -10687,7 +10688,7 @@ for the symbols.
     <name lang="ro">Colț exterior nordic</name>
     <text lang="ro">{0} colț exterior nordic</text>
     <name lang="sv">Norra hörnet (utsidan)</name>
-    <text lang="sv">{0}, Norra hörnet (utsidan)</text>
+    <text lang="sv">{0}, N hörnet (utsidan)</text>
     <name lang="zh-HK">North corner (outside)</name>
     <text lang="zh-HK">{0}北外角</text>
     <name lang="zh-TW">北角外</name>
@@ -10741,7 +10742,7 @@ for the symbols.
     <name lang="ro">Colț exterior nord-estic</name>
     <text lang="ro">{0} colț exterior nord-estic</text>
     <name lang="sv">Nordöstra hörnet (utsidan)</name>
-    <text lang="sv">{0}, Nordöstra hörnet (utsidan)</text>
+    <text lang="sv">{0}, NÖ hörnet (utsidan)</text>
     <name lang="zh-HK">North-east corner (outside)</name>
     <text lang="zh-HK">{0}東北外角</text>
     <name lang="zh-TW">東北角外</name>
@@ -10795,7 +10796,7 @@ for the symbols.
     <name lang="ro">Colț exterior estic</name>
     <text lang="ro">{0} colț exterior estic</text>
     <name lang="sv">Östra hörnet (utsidan)</name>
-    <text lang="sv">{0}, Östra hörnet (utsidan)</text>
+    <text lang="sv">{0}, Ö hörnet (utsidan)</text>
     <name lang="zh-HK">East corner (outside)</name>
     <text lang="zh-HK">{0}東外角</text>
     <name lang="zh-TW">東角外</name>
@@ -10849,7 +10850,7 @@ for the symbols.
     <name lang="ro">Colț exterior sud-estic</name>
     <text lang="ro">{0} colț exterior sud-estic</text>
     <name lang="sv">Sydöstra hörnet (utsidan)</name>
-    <text lang="sv">{0}, Sydöstra hörnet (utsidan)</text>
+    <text lang="sv">{0}, SÖ hörnet (utsidan)</text>
     <name lang="zh-HK">South-east corner (outside)</name>
     <text lang="zh-HK">{0}東南外角</text>
     <name lang="zh-TW">東南角外</name>
@@ -10903,7 +10904,7 @@ for the symbols.
     <name lang="ro">Colț exterior sudic</name>
     <text lang="ro">{0} colț exterior sudic</text>
     <name lang="sv">Södra hörnet (utsidan)</name>
-    <text lang="sv">{0}, Södra hörnet (utsidan)</text>
+    <text lang="sv">{0}, S hörnet (utsidan)</text>
     <name lang="zh-HK">South corner (outside)</name>
     <text lang="zh-HK">{0}南外角</text>
     <name lang="zh-TW">南角外</name>
@@ -10957,7 +10958,7 @@ for the symbols.
     <name lang="ro">Colț exterior sud-vestic</name>
     <text lang="ro">{0} colț exterior sud-vestic</text>
     <name lang="sv">Sydvästra hörnet (utsidan)</name>
-    <text lang="sv">{0}, Sydvästra hörnet (utsidan)</text>
+    <text lang="sv">{0}, SV hörnet (utsidan)</text>
     <name lang="zh-HK">South-west corner (outside)</name>
     <text lang="zh-HK">{0}西南外角</text>
     <name lang="zh-TW">西南角外</name>
@@ -11011,7 +11012,7 @@ for the symbols.
     <name lang="ro">Colț exterior vestic</name>
     <text lang="ro">{0} colț exterior vestic</text>
     <name lang="sv">Västra hörnet (utsidan) </name>
-    <text lang="sv">{0}, Västra hörnet (utsidan)</text>
+    <text lang="sv">{0}, V hörnet (utsidan)</text>
     <name lang="zh-HK">West corner (outside)</name>
     <text lang="zh-HK">{0}西外角</text>
     <name lang="zh-TW">西角外</name>
@@ -11065,7 +11066,7 @@ for the symbols.
     <name lang="ro">Colț exterior nord-vestic</name>
     <text lang="ro">{0} colț exterior nord-vestic</text>
     <name lang="sv">Nordvästra hörnet (utsidan) </name>
-    <text lang="sv">{0}, Nordvästra hörnet (utsidan) </text>
+    <text lang="sv">{0}, NV hörnet (utsidan)</text>
     <name lang="zh-HK">North-west corner (outside)</name>
     <text lang="zh-HK">{0}西北外角</text>
     <name lang="zh-TW">西北角外</name>
@@ -11119,7 +11120,7 @@ for the symbols.
     <name lang="ro">Vârf nordic</name>
     <text lang="ro">{0} vârf nordic</text>
     <name lang="sv">Norra spetsen</name>
-    <text lang="sv">{0}, Norra spetsen</text>
+    <text lang="sv">{0}, N spetsen</text>
     <name lang="zh-HK">North tip</name>
     <text lang="zh-HK">{0}北端</text>
     <name lang="zh-TW">北端</name>
@@ -11173,7 +11174,7 @@ for the symbols.
     <name lang="ro">Vârf nord-estic</name>
     <text lang="ro">{0} vârf nord-estic</text>
     <name lang="sv">Nordöstra spetsen</name>
-    <text lang="sv">{0}, Nordöstra spetsen</text>
+    <text lang="sv">{0}, NÖ spetsen</text>
     <name lang="zh-HK">North-east tip</name>
     <text lang="zh-HK">{0}東北端</text>
     <name lang="zh-TW">東北端</name>
@@ -11227,7 +11228,7 @@ for the symbols.
     <name lang="ro">Vârf estic</name>
     <text lang="ro">{0} vârf estic</text>
     <name lang="sv">Östra spetsen</name>
-    <text lang="sv">{0}, Östra spetsen</text>
+    <text lang="sv">{0}, Ö spetsen</text>
     <name lang="zh-HK">East tip</name>
     <text lang="zh-HK">{0}東端</text>
     <name lang="zh-TW">東端</name>
@@ -11281,7 +11282,7 @@ for the symbols.
     <name lang="ro">Vârf sud-estic</name>
     <text lang="ro">{0} vârf sud-estic</text>
     <name lang="sv">Sydöstra spetsen</name>
-    <text lang="sv">{0}, Sydöstra spetsen</text>
+    <text lang="sv">{0}, SÖ spetsen</text>
     <name lang="zh-HK">South-east tip</name>
     <text lang="zh-HK">{0}東南端</text>
     <name lang="zh-TW">東南端</name>
@@ -11335,7 +11336,7 @@ for the symbols.
     <name lang="ro">Vârf sudic</name>
     <text lang="ro">{0} vârf sudic</text>
     <name lang="sv">Södra spetsen</name>
-    <text lang="sv">{0}, Södra spetsen</text>
+    <text lang="sv">{0}, S spetsen</text>
     <name lang="zh-HK">South tip</name>
     <text lang="zh-HK">{0}南端</text>
     <name lang="zh-TW">南端</name>
@@ -11389,7 +11390,7 @@ for the symbols.
     <name lang="ro">Vârf sud-vestic</name>
     <text lang="ro">{0} vârf sud-vestic</text>
     <name lang="sv">Sydvästra spetsen</name>
-    <text lang="sv">{0}, Sydvästra spetsen</text>
+    <text lang="sv">{0}, SV spetsen</text>
     <name lang="zh-HK">South-west tip</name>
     <text lang="zh-HK">{0}西南端</text>
     <name lang="zh-TW">西南端</name>
@@ -11443,7 +11444,7 @@ for the symbols.
     <name lang="ro">Vârf vestic</name>
     <text lang="ro">{0} vârf vestic</text>
     <name lang="sv">Västra spetsen</name>
-    <text lang="sv">{0}, Västra spetsen</text>
+    <text lang="sv">{0}, V spetsen</text>
     <name lang="zh-HK">West tip</name>
     <text lang="zh-HK">{0}西端</text>
     <name lang="zh-TW">西端</name>
@@ -11497,7 +11498,7 @@ for the symbols.
     <name lang="ro">Vârf nord-vestic</name>
     <text lang="ro">{0} vârf nord-vestic</text>
     <name lang="sv">Nordvästra spetsen</name>
-    <text lang="sv">{0}, Nordvästra spetsen</text>
+    <text lang="sv">{0}, NV spetsen</text>
     <name lang="zh-HK">North-west tip</name>
     <text lang="zh-HK">{0}西北端</text>
     <name lang="zh-TW">西北端</name>
@@ -11551,7 +11552,7 @@ for the symbols.
     <name lang="ro">Capăt nordic</name>
     <text lang="ro">{0} capăt nordic</text>
     <name lang="sv">Norra slutet</name>
-    <text lang="sv">{0}, Norra slutet</text>
+    <text lang="sv">{0}, N slutet</text>
     <name lang="zh-HK">North end</name>
     <text lang="zh-HK">{0}北盡頭</text>
     <name lang="zh-TW">北盡頭</name>
@@ -11605,7 +11606,7 @@ for the symbols.
     <name lang="ro">Capăt nord-estic</name>
     <text lang="ro">{0} capăt nord-estic</text>
     <name lang="sv">Nordöstra slutet</name>
-    <text lang="sv">{0}, Nordöstra slutet</text>
+    <text lang="sv">{0}, NÖ slutet</text>
     <name lang="zh-HK">North-east end</name>
     <text lang="zh-HK">{0}東北盡頭</text>
     <name lang="zh-TW">東北盡頭</name>
@@ -11659,7 +11660,7 @@ for the symbols.
     <name lang="ro">Capăt estic</name>
     <text lang="ro">{0} capăt estic</text>
     <name lang="sv">Östra slutet</name>
-    <text lang="sv">{0}, Östra slutet</text>
+    <text lang="sv">{0}, Ö slutet</text>
     <name lang="zh-HK">East end</name>
     <text lang="zh-HK">{0}東盡頭</text>
     <name lang="zh-TW">東盡頭</name>
@@ -11713,7 +11714,7 @@ for the symbols.
     <name lang="ro">Capăt sud-estic</name>
     <text lang="ro">{0} capăt sud-estic</text>
     <name lang="sv">Sydöstra slutet</name>
-    <text lang="sv">{0}, Sydöstra slutet</text>
+    <text lang="sv">{0}, SÖ slutet</text>
     <name lang="zh-HK">South-east end</name>
     <text lang="zh-HK">{0}東南盡頭</text>
     <name lang="zh-TW">東南盡頭</name>
@@ -11767,7 +11768,7 @@ for the symbols.
     <name lang="ro">Capăt sudic</name>
     <text lang="ro">{0} capăt sudic</text>
     <name lang="sv">Södra slutet</name>
-    <text lang="sv">{0}, Södra slutet</text>
+    <text lang="sv">{0}, S slutet</text>
     <name lang="zh-HK">South end</name>
     <text lang="zh-HK">{0}南盡頭</text>
     <name lang="zh-TW">南盡頭</name>
@@ -11821,7 +11822,7 @@ for the symbols.
     <name lang="ro">Capăt sud-vestic</name>
     <text lang="ro">{0} capăt sud-vestic</text>
     <name lang="sv">Sydvästra slutet</name>
-    <text lang="sv">{0}, Sydvästra slutet</text>
+    <text lang="sv">{0}, SV slutet</text>
     <name lang="zh-HK">South-west end</name>
     <text lang="zh-HK">{0}西南盡頭</text>
     <name lang="zh-TW">西南盡頭</name>
@@ -11875,7 +11876,7 @@ for the symbols.
     <name lang="ro">Capăt vestic</name>
     <text lang="ro">{0} capăt vestic</text>
     <name lang="sv">Västra slutet</name>
-    <text lang="sv">{0}, Västra slutet</text>
+    <text lang="sv">{0}, V slutet</text>
     <name lang="zh-HK">West end</name>
     <text lang="zh-HK">{0}西盡頭</text>
     <name lang="zh-TW">西盡頭</name>
@@ -11929,7 +11930,7 @@ for the symbols.
     <name lang="ro">Capăt nord-vestic</name>
     <text lang="ro">{0} capăt nord-vestic</text>
     <name lang="sv">Nordvästra slutet</name>
-    <text lang="sv">{0}, Nordvästra slutet</text>
+    <text lang="sv">{0}, NV slutet</text>
     <name lang="zh-HK">North-west end</name>
     <text lang="zh-HK">{0}西北盡頭</text>
     <name lang="zh-TW">西北盡頭</name>
@@ -11983,7 +11984,7 @@ for the symbols.
     <name lang="ro">Piciorul nordic</name>
     <text lang="ro">{0} piciorul nordic</text>
     <name lang="sv">Norra foten</name>
-    <text lang="sv">{0}, Norra foten</text>
+    <text lang="sv">{0}, N foten</text>
     <name lang="zh-HK">North foot</name>
     <text lang="zh-HK">{0}北面腳下</text>
     <name lang="zh-TW">北面腳下</name>
@@ -12037,7 +12038,7 @@ for the symbols.
     <name lang="ro">Piciorul nord-estic</name>
     <text lang="ro">{0} piciorul nord-estic</text>
     <name lang="sv">Nordöstra foten</name>
-    <text lang="sv">{0}, Nordöstra foten</text>
+    <text lang="sv">{0}, NÖ foten</text>
     <name lang="zh-HK">North-east foot</name>
     <text lang="zh-HK">{0}東北面腳下</text>
     <name lang="zh-TW">東北面腳下</name>
@@ -12091,7 +12092,7 @@ for the symbols.
     <name lang="ro">Piciorul estic</name>
     <text lang="ro">{0} piciorul estic</text>
     <name lang="sv">Östra foten</name>
-    <text lang="sv">{0}, Östra foten</text>
+    <text lang="sv">{0}, Ö foten</text>
     <name lang="zh-HK">East foot</name>
     <text lang="zh-HK">{0}東面腳下</text>
     <name lang="zh-TW">東面腳下</name>
@@ -12145,7 +12146,7 @@ for the symbols.
     <name lang="ro">Piciorul sud-estic</name>
     <text lang="ro">{0} piciorul sud-estic</text>
     <name lang="sv">Sydöstra foten</name>
-    <text lang="sv">{0}, Sydöstra foten</text>
+    <text lang="sv">{0}, SÖ foten</text>
     <name lang="zh-HK">South-east foot</name>
     <text lang="zh-HK">{0}東南面腳下</text>
     <name lang="zh-TW">東南面腳下</name>
@@ -12199,7 +12200,7 @@ for the symbols.
     <name lang="ro">Piciorul sudic</name>
     <text lang="ro">{0} piciorul sudic</text>
     <name lang="sv">Södra foten</name>
-    <text lang="sv">{0}, Södra foten</text>
+    <text lang="sv">{0}, S foten</text>
     <name lang="zh-HK">South foot</name>
     <text lang="zh-HK">{0}南面腳下</text>
     <name lang="zh-TW">南面腳下</name>
@@ -12253,7 +12254,7 @@ for the symbols.
     <name lang="ro">Piciorul sud-vestic</name>
     <text lang="ro">{0} piciorul sud-vestic</text>
     <name lang="sv">Sydvästra foten</name>
-    <text lang="sv">{0}, Sydvästra foten</text>
+    <text lang="sv">{0}, SV foten</text>
     <name lang="zh-HK">South-west foot</name>
     <text lang="zh-HK">{0}西南面腳下</text>
     <name lang="zh-TW">西南面腳下</name>
@@ -12307,7 +12308,7 @@ for the symbols.
     <name lang="ro">Piciorul vestic</name>
     <text lang="ro">{0} piciorul vestic</text>
     <name lang="sv">Västra foten</name>
-    <text lang="sv">{0}, Västra foten</text>
+    <text lang="sv">{0}, V foten</text>
     <name lang="zh-HK">West foot</name>
     <text lang="zh-HK">{0}西面腳下</text>
     <name lang="zh-TW">西面腳下</name>
@@ -12361,7 +12362,7 @@ for the symbols.
     <name lang="ro">Piciorul nord-vestic</name>
     <text lang="ro">{0} piciorul nord-vestic</text>
     <name lang="sv">Nordvästra foten</name>
-    <text lang="sv">{0}, Nordvästra foten</text>
+    <text lang="sv">{0}, NV foten</text>
     <name lang="zh-HK">North-west foot</name>
     <text lang="zh-HK">{0}西北面腳下</text>
     <name lang="zh-TW">西北面腳下</name>
@@ -12417,7 +12418,7 @@ for the symbols.
     <text lang="pl">zakręt {0}</text>
     <name lang="ro">Cotitură</name>
     <text lang="ro">cotitură de {0}</text>
-    <name lang="sv">Krök</name>
+    <name lang="sv">Kröken</name>
     <text lang="sv">{0}, kröken</text>
     <name lang="zh-HK">Bend</name>
     <text lang="zh-HK">{0}彎位</text>
@@ -12533,7 +12534,7 @@ for the symbols.
     <name lang="ro">Partea inferioară</name>
     <text lang="ro">partea inferioară {0}</text>
     <name lang="sv">Nedre delen</name>
-    <text lang="sv">{0}, Nedre delen</text>
+    <text lang="sv">{0}, nedre delen</text>
     <name lang="zh-HK">Lower part</name>
     <text lang="zh-HK">{0}下部</text>
     <name lang="zh-TW">較低處</name>
@@ -12875,7 +12876,7 @@ for the symbols.
     <name lang="ro">Punct de prim ajutor</name>
     <text lang="ro">punct de prim ajutor</text>
     <name lang="sv">Sjukvård</name>
-    <text lang="sv">Sjukvård</text>
+    <text lang="sv">sjukvård</text>
     <name lang="zh-HK">First aid post</name>
     <text lang="zh-HK">急救站</text>
     <name lang="zh-TW">急救站</name>
@@ -12934,7 +12935,7 @@ for the symbols.
     <name lang="ro">Punct de reînvigorare</name>
     <text lang="ro">apă</text>
     <name lang="sv">Vätska</name>
-    <text lang="sv">Vätska</text>
+    <text lang="sv">vätska</text>
     <name lang="zh-HK">Refreshment point</name>
     <text lang="zh-HK">水站</text>
     <name lang="zh-TW">補給點</name>
@@ -13010,7 +13011,7 @@ for the symbols.
     <text lang="pl">punkt z radiokontrolą lub TV</text>
     <name lang="ro">Punct radio sau TV</name>
     <text lang="ro">radio-tv</text>
-    <name lang="sv">Radio eller TV kontroll</name>
+    <name lang="sv">Radio- eller TV-kontroll</name>
     <text lang="sv">radio</text>
     <name lang="zh-HK">Radio or TV control</name>
     <text lang="zh-HK">無線電控制點</text>
@@ -13127,7 +13128,7 @@ for the symbols.
     <name lang="ro">Urmează ruta cu banda departe de control</name>
     <text lang="ro">urmează ruta cu banda {0} departe de control</text>
     <name lang="sv">Snitsel bort från kontroll</name>
-    <text lang="sv">följ snitsel {0}bort från kontrollen</text>
+    <text lang="sv">följ snitsel, {0}bort från kontrollen</text>
     <name lang="zh-HK">Taped route away from control</name>
     <text lang="zh-HK">隨 {0} 索帶離開控制點</text>
     <name lang="zh-TW">離開檢查點後，有指定路線</name>
@@ -13204,7 +13205,7 @@ for the symbols.
     <name lang="ro">Bandă între punctele de control</name>
     <text lang="ro">urmează banda {0} între punctele de control</text>
     <name lang="sv">Snitsel mellan kontroller</name>
-    <text lang="sv">följ snitsel {0}mellan kontrollerna</text>
+    <text lang="sv">följ snitsel, {0}mellan kontrollerna</text>
     <name lang="zh-HK">Taped route between controls</name>
     <text lang="zh-HK">隨 {0} 索帶前往下一個控制點</text>
     <name lang="zh-TW">兩檢查點之間，有指定路線</name>
@@ -13435,7 +13436,7 @@ for the symbols.
     <name lang="ro">Schimb de hartă</name>
     <text lang="ro">urmează banda {0} pentru schimb de hartă</text>
     <name lang="sv">Kartbyte</name>
-    <text lang="sv">följ snitsel {0}till kartbyte</text>
+    <text lang="sv">följ snitsel, {0}till kartbyte</text>
     <name lang="zh-HK">Map exchange</name>
     <text lang="zh-HK">隨 {0} 索帶前往換圖處</text>
     <name lang="zh-TW">換圖區</name>
@@ -13501,6 +13502,8 @@ for the symbols.
     <text lang="ja">コントロールで地図交換</text>
     <name lang="pl">Map exchange at a control</name>
     <text lang="pl">zmiana mapy na PK</text>
+    <name lang="sv">Kartbyte vid kontroll</name>
+    <text lang="sv">kartbyte vid kontrollen</text>
     <name lang="zh-HK">Map exchange at a control</name>
     <text lang="zh-HK">在控制點換圖</text>
     <name lang="zh-TW">換圖區在檢查點</name>
@@ -13594,6 +13597,8 @@ for the symbols.
     <text lang="en">{0}to start</text>
     <name lang="it">Partenza ???svedese???</name>
     <text lang="it">{0}fettucciati fino alla partenza</text>
+    <name lang="sv">Kartutdelningsplats</name>
+    <text lang="sv">{0}till startpunkt</text>
     <name lang="zh-TW">取圖點</name>
     <text lang="zh-TW">{0} (公尺) 至地圖起點</text>
     <lines thickness="12.5">
@@ -13682,7 +13687,7 @@ for the symbols.
     <name lang="ro">Bandă până la sosire</name>
     <text lang="ro">urmează banda {0} până la sosire</text>
     <name lang="sv">Snitsel till mål</name>
-    <text lang="sv">följ snitsel {0}till mål</text>
+    <text lang="sv">följ snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Taped route to finish</name>
     <text lang="zh-HK">隨 {0} 索帶前往終點</text>
     <name lang="zh-TW">至終點為指定路線。</name>
@@ -13764,8 +13769,8 @@ for the symbols.
     <text lang="pl">nawiguj {0}do tunelu dobiegowego przed metą</text>
     <name lang="ro">Parcurgere până la pâlnia de sosire</name>
     <text lang="ro">parcurgere {0} până la pâlnia de sosire</text>
-    <name lang="sv">uppfångande snitsel till mål</name>
-    <text lang="sv">uppfångande snitsel, {0} från sista kontrollen till mål</text>
+    <name lang="sv">Uppfångande snitsel till mål</name>
+    <text lang="sv">uppfångande snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Navigate to finish funnel</name>
     <text lang="zh-HK">往終點索帶 {0}</text>
     <name lang="zh-TW">依指示匯集進入終點賽道</name>
@@ -13849,7 +13854,7 @@ for the symbols.
     <name lang="ro">Parcurgere până la sosire (fără bandă)</name>
     <text lang="ro">parcurgere {0} până la sosire</text>
     <name lang="sv">Ingen snitsel till mål</name>
-    <text lang="sv">ingen snitsel {0}till mål</text>
+    <text lang="sv">ingen snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Navigate to finish (no tapes)</name>
     <text lang="zh-HK">往終點 {0}</text>
     <name lang="zh-TW">依前進方向指示進入終點 (無指定路線)。</name>
