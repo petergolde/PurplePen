@@ -38,21 +38,28 @@ namespace PurplePen
 
         protected override void OnHandleCreated(EventArgs e)
         {
-            base.OnHandleCreated(e);
+            try {
+                base.OnHandleCreated(e);
 
-            int realDpi = GetDpiForWindow(this.Handle);
-            double scaleFactor = (double)realDpi / (double)this.DeviceDpi;
+                int realDpi = GetDpiForWindow(this.Handle);
+                double scaleFactor = (double)realDpi / (double)this.DeviceDpi;
 
-            int newWidth = (int)(this.Size.Width * scaleFactor);
-            int newHeight = (int)(this.Size.Height * scaleFactor);
+                int newWidth = (int)(this.Size.Width * scaleFactor);
+                int newHeight = (int)(this.Size.Height * scaleFactor);
 
-            int dpiLeft = this.Location.X + ((this.Size.Width - newWidth) / 2);
-            int dpiTop = this.Location.Y + ((this.Size.Height - newHeight) / 2); ;
-            int dpiRight = dpiLeft + newWidth;
-            int dpiBottom = dpiTop + newHeight;
+                int dpiLeft = this.Location.X + ((this.Size.Width - newWidth) / 2);
+                int dpiTop = this.Location.Y + ((this.Size.Height - newHeight) / 2); ;
+                int dpiRight = dpiLeft + newWidth;
+                int dpiBottom = dpiTop + newHeight;
 
-            RECT rect = new RECT() { left = dpiLeft, top = dpiTop, right = dpiRight, bottom = dpiBottom };
-            SendMessage(this.Handle, WM_DPICHANGED, MakeLParam(realDpi, realDpi), ref rect);
+                RECT rect = new RECT() { left = dpiLeft, top = dpiTop, right = dpiRight, bottom = dpiBottom };
+                SendMessage(this.Handle, WM_DPICHANGED, MakeLParam(realDpi, realDpi), ref rect);
+            }
+            catch {
+                // This doesn't work on Windows 7, because GetDpiForWindow is an API that doesn't exist on Windows 7.
+                // Ignore all exceptions here anyway, because if this fails, we just get the wrong DPI.
+            }
+
         }
     }
 }
