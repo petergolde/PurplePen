@@ -119,13 +119,15 @@
         <section id="download" class="wrapper style2 spotlights">
             <div class="inner">
                 <h2>Download</h2>
-                <a href="downloads/purplepen-341.exe" class="button scrolly">Download current version (3.4.0)</a>
+                <a href="downloads/purplepen-341.exe" class="button scrolly">Download current version (3.4.1)</a>
                 <br>
                 <p>Click the button above to download the latest released version of Purple Pen. Run it to install Purple Pen on your computer.</p>
                 <h4>Requirements:</h2>
-                <p>Purple Pen requires Windows XP SP3, Windows Vista SP2, Windows 7, Windows 8, or Windows 10. It requires the .NET Framework to run (2.0 for versions 1.x, 4.0 Client for versions 2.0 and later). If you do not have this installed on your machine, the installer will automatically download and install it onto your machine. If you wish to install on a machine that is not connected to the internet, you can manually <a href="https://www.microsoft.com/net/download">
-download, copy, and install the Microsoft .NET Framework from here</a>.</p>
+                <p>Purple Pen requires Windows 7 (SP1), or Windows 10 or 11. It requires the .NET Framework to run (2.0 for versions 1.x, 4.0 Client for versions 2.0 and later, 4.8 for versions 3.0 and later). 
+                    If you do not have this installed on your machine, the installer will automatically download and install it onto your machine. 
+                </p>
                 <p>On Mac, a Windows emulator such as Parallels or VirtualBox is required. <a href="virtualbox.htm">See here</a> for more information.</p>
+                <p>For versions 3.5.0 and later, Windows SmartScreen may warn you about downloading or running the installer. <a href="./smartscreen/smartscreen.html">Click here for instructions in this case.</a></p>
                 <a href="#preventScrollyError" id="toggleVersionButton" class="button scrolly">Show all downloads</a>
                 <br>
                 <br>
@@ -134,6 +136,12 @@ download, copy, and install the Microsoft .NET Framework from here</a>.</p>
                         <tr>
                             <td class="style3">Version</td>
                             <td class="style3">File Name</td>
+                        </tr>
+                        <tr>
+                            <td class="style2">Purple Pen 3.5.0 beta 1</td>
+                            <td class="style2">
+                                <a href="downloads/purplepen-350-beta1.exe">purplepen-350-beta1.exe</a>
+                            </td>
                         </tr>
                         <tr>
                             <td class="style2">Purple Pen 3.4.1</td>
@@ -763,10 +771,35 @@ information about translating Purple Pen here</a>.</p>
             <div class="inner">
                 <h2>Changelog</h2>
                 <br>
+                <h4>Dec 3, 2023</h4>
+                <p>
+                    3.5.0 Beta 1 release. Adds the following new features:
+                </p>
+                <ul>
+                    <li>
+                        Run in full resolution on high resolution displays. When running on screens with a resolution about 120 dpi, Purple Pen will
+                        use the full resolution of the display, instead of being scaled (which results in a slight fuzziness).
+                    </li>
+                    <li>
+                        New feature: Event/Move all controls. Allows moving all the controls (and other course features) to handle offsets,
+                        rotations, or scaling of the underlying map file.
+                    </li>
+                    <li>
+                        Correctly handle UTM zones from OpenOrienteering Mapper without a 'N' or 'S' suffix.
+                    </li>
+                    <li>
+                        New description symbols from the IOF Control Descriptions Standard 2024. Adds Railway and Map Flip. Because the
+                        2024 standard is the same as the 2018 except the two new symbols, the 2024 standard is merged with the 2018 standard
+                        when selecting which control standard to use.
+                    </li>
+                    <li>
+                        Added program translation for Czech, Danish, Portuguese, Turkish, Ukrainian, and Traditional Chinese.
+                    </li>
+                </ul>
                 <h4>Sept 16, 2022</h4>
                 <p>
                     Version 3.4.1 has been released. Fixed regression with PDFs and missing control descriptions, regression
-                    with control number blending, and updated Out Of Bounds for ISSprOM-2019-2. 
+                    with control number blending, and updated Out Of Bounds for ISSprOM-2019-2.
                 </p>
                 <h4>Sept 15, 2022</h4>
                 <p>

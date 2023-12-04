@@ -15,6 +15,39 @@
 <body>
 
     <h1>Purple Pen Change Summary</h1>
+
+    <h2>Changes in 3.5.0 Beta 2</h2>
+    <h3>New/Changed Features</h3>
+    <ul>
+        <li>
+            Run in full resolution on high resolution displays. When running on screens with a resolution about 120 dpi, Purple Pen will
+            use the full resolution of the display, instead of being scaled (which results in a slight fuzziness).
+        </li>
+        <li>
+            New feature: Event/Move all controls. Allows moving all the controls (and other course features) to handle offsets,
+            rotations, or scaling of the underlying map file.
+        </li>
+        <li>
+            New description symbols from the IOF Control Descriptions Standard 2024. Adds Railway and Map Flip. Because the
+            2024 standard is the same as the 2018 except the two new symbols, the 2024 standard is merged with the 2018 standard
+            when selecting which control standard to use.
+        </li>
+        <li>
+            Added program translation for Czech, Danish, Portuguese, Turkish, Ukrainian, and Traditional Chinese.
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            Fix in importing UTM zones from OpenOrienteering Mapper files, if they did not
+            contain a 'N' or 'S' at the end of the zone.
+        </li>
+        <li>
+            Correctly handle embedded layout images and hidden layouts in OCAD files.
+        </li>
+    </ul>
+
+
     <h2>Changes in 3.4.1</h2>
     <h3>Bug Fixes</h3>
     <ul>
