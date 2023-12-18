@@ -1320,14 +1320,14 @@ namespace PurplePen
         {
         }
 
-        private float Diameter {
+        protected float Diameter {
             get {
                 return (appearance.mapStandard == "2017" ? NormalCourseAppearance.controlOutsideDiameter2017
                                                          : (appearance.mapStandard == "Spr2019" ? NormalCourseAppearance.controlOutsideDiameterSpr2019 : NormalCourseAppearance.controlOutsideDiameter2000)) * courseObjRatio * appearance.controlCircleSize;
             }
         }
 
-        private float LineThickness {
+        protected float LineThickness {
             get {
                 return NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth;
             }
@@ -1395,6 +1395,116 @@ namespace PurplePen
             HighlightCrossHair(g, xformWorldToPixel, brush);
         }
     }
+
+    // A control circle with a triangle inside, for after map exchange/flip
+    class ExchangeStartCourseObj : ControlCourseObj
+    {
+        public ExchangeStartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, PointF location)
+            : base(controlId, courseControlId, courseObjRatio, appearance, gaps, location)
+        {
+            this.orientation = orientation;
+        }
+        public override string ToString()
+        {
+            string result = base.ToString();
+            result += string.Format("  orientation:{0:0.##}", orientation);
+            return result;
+        }
+
+        // The triangle corners, assuming circle is centered at 0,0, optionally including the first at the end again.
+        private PointF[] TriangleCorners(bool duplicateFirst)
+        {
+            Matrix matrixRotate120 = new Matrix();
+            matrixRotate120.Rotate(120);
+
+            PointF first = new PointF(0, Diameter / 2.0F - LineThickness / 2.0F);
+            PointF second = Geometry.TransformPoint(first, matrixRotate120);
+            PointF third = Geometry.TransformPoint(second, matrixRotate120);
+            if (duplicateFirst)
+                return new PointF[] { first, second, third, first };
+            else 
+                return new PointF[] { first, second, third };
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        {
+            Glyph glyph = new Glyph();
+            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
+            if (appearance.centerDotDiameter > 0.0F) {
+                glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * courseObjRatio);
+            }
+
+            PointF[] triangleCorners = TriangleCorners(true);   
+            glyph.AddLine(symColor, new SymPath(triangleCorners, new PointKind[] { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal }), LineThickness, LineJoin.Round, LineCap.Flat);
+            
+            glyph.ConstructionComplete();
+
+            PointSymDef symdef = new PointSymDef("Continuing point", "716", glyph, false);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Control_OcadToolbox);
+            map.AddSymdef(symdef);
+            return symdef;
+        }
+
+        // Draw the highlight. Everything must be drawn in pixel coords so fast erase works correctly.
+        public override void Highlight(Graphics g, Matrix xformWorldToPixel, Brush brush, bool erasing)
+        {
+            // Transform the thickness to pixel coords.
+            float thickness = TransformDistance(LineThickness, xformWorldToPixel);
+
+            // Transform the ellipse to pixel coords. Points array is 0=location, 1=upper-left corner, 2 = lower-right corner
+            float radius = (Diameter - LineThickness) / 2F;
+            PointF[] pts = { location, new PointF(location.X - radius, location.Y - radius), new PointF(location.X + radius, location.Y + radius) };
+            xformWorldToPixel.TransformPoints(pts);
+
+            PointF[] triangleCorners = TriangleCorners(false);
+            triangleCorners = OffsetCoords(RotateCoords(triangleCorners, orientation), location.X, location.Y);
+            xformWorldToPixel.TransformPoints(triangleCorners);
+
+            // Draw the control circle.
+            using (Pen pen = new Pen(brush, thickness))
+            using (Pen trianglePen = new Pen(brush, thickness)) {
+                RectangleF rect = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
+                CircleGap[] gapsToDraw = CircleGap.RotateGaps(gaps, orientation);
+
+                trianglePen.LineJoin = LineJoin.Round;
+
+                try {
+                    if (gapsToDraw == null)
+                        g.DrawEllipse(pen, rect);
+                    else {
+                        float[] arcStartSweeps = CircleGap.ArcStartSweeps(gapsToDraw);
+                        for (int i = 0; i < arcStartSweeps.Length; i += 2) {
+                            float startArc = arcStartSweeps[i];
+                            float sweepArc = arcStartSweeps[i + 1];
+                            g.DrawArc(pen, rect, startArc, sweepArc);
+                        }
+                    }
+
+                    // No center dot for highlighting (crosshair instead)
+
+                    // Triangle.
+                    g.DrawPolygon(trianglePen, triangleCorners);
+                }
+                catch (Exception) {
+                    // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
+                    // Just ignore it; there's nothing else to do. See bug #1997301.
+                }
+            }
+
+            // Draw the cross-hair.
+            HighlightCrossHair(g, xformWorldToPixel, brush);
+        }
+
+        public override PointF[] GetHandles()
+        {
+            if (gaps == null)
+                return null;
+            else
+                return CircleGap.GapStartStopPoints(location, ApparentRadius, CircleGap.RotateGaps(movableGaps, orientation));
+        }
+
+    }
+
 
     // Start triangle
     class StartCourseObj : PointCourseObj

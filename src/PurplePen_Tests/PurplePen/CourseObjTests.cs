@@ -51,6 +51,7 @@ namespace PurplePen.Tests
     public class CourseObjTests: TestFixtureBase
     {
         CourseAppearance specialAppearance;
+        CourseAppearance specialAppearance2;
 
         public CourseObjTests()
         {
@@ -64,6 +65,17 @@ namespace PurplePen.Tests
             specialAppearance.numberOutlineWidth = 0.13F;
             specialAppearance.autoLegGapSize = 0.0F;
             specialAppearance.descriptionsPurple = true;
+
+            specialAppearance2 = new CourseAppearance();
+            specialAppearance2.controlCircleSize = 0.666667F;  // 4mm control circle
+            specialAppearance2.centerDotDiameter = 0.75F; // 0.75 mm center dot
+            specialAppearance2.lineWidth = 1.2F; // 1mm lines
+            specialAppearance2.numberHeight = 1.75F; // 7mm numbers.
+            specialAppearance2.numberBold = true;
+            specialAppearance2.numberOutlineWidth = 0.13F;
+            specialAppearance2.autoLegGapSize = 0.0F;
+            specialAppearance2.descriptionsPurple = true;
+
         }
 
         // Draw a grid on the graphics
@@ -257,6 +269,63 @@ namespace PurplePen.Tests
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0, 0));
             SingleObject(courseobj, "control_circle_gaps_special");
         }
+
+        [TestMethod]
+        public void ExchangeStart()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start");
+        }
+
+        [TestMethod]
+        public void ExchangeStart2017()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, null, 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_2017");
+        }
+
+        [TestMethod]
+        public void ExchangeStartSpr2019()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_spr2019");
+        }
+
+        [TestMethod]
+        public void ExchangeStartSpecial()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance2, null, 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_special");
+        }
+
+        [TestMethod]
+        public void ExchangeStartGaps()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0x000F83FF), 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_gaps");
+        }
+
+        [TestMethod]
+        public void ExchangeStartGaps2017()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, CircleGap.ComputeCircleGaps(0x000F83FF), 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_gaps_2017");
+        }
+
+        [TestMethod]
+        public void ExchangeStartGapsSpr2019()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, CircleGap.ComputeCircleGaps(0x000F83FF), 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_gaps_spr2019");
+        }
+
+        [TestMethod]
+        public void ExchangeStartGapsSpecial()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance2, CircleGap.ComputeCircleGaps(0x000F83FF), 20, new PointF(0, 0));
+            SingleObject(courseobj, "exchange_start_gaps_special");
+        }
+
 
         [TestMethod]
         public void Finish()
@@ -877,6 +946,41 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ExchangeStartDistance()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, 20, new PointF(1, 1));
+            Assert.AreEqual(2.0, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 0.5F, defaultCourseAppearance, null, 20, new PointF(1, 1));
+            Assert.AreEqual(3.5, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+        [TestMethod]
+        public void ExchangeStartDistance2017()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, null, 20, new PointF(1, 1));
+            Assert.AreEqual(2.325F, courseobj.DistanceFromPoint(new PointF(4, -3)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 0.5F, std2017CourseAppearance, null, 20, new PointF(1, 1));
+            Assert.AreEqual(3.6625F, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.0001F);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+        [TestMethod]
+        public void ExchangeStartDistanceSpr2019()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, 20, new PointF(1, 1));
+            Assert.AreEqual(1.825, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.001);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.5F, -0.5F)));
+            courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 0.5F, stdSpr2019CourseAppearance, null, 20, new PointF(1, 1));
+            Assert.AreEqual(3.4125, courseobj.DistanceFromPoint(new PointF(4, -3)), 0.001);
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(1.2F, -0.3F)));
+        }
+
+
+
+        [TestMethod]
         public void FinishDistance()
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, new PointF(1, 1), CrossHairOptions.HighlightCrossHair);
@@ -1136,6 +1240,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ExchangeStartDump()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(12), CourseControlId(33), 1.5F, defaultCourseAppearance, new CircleGap[] { new CircleGap(-10, 30) }, 20, new PointF(1, 1.5F));
+            AssertDump(courseobj, @"ExchangeStart:  control:12  course-control:33  scale:1.5  location:(1,1.5)  gaps:-10:30  orientation:20");
+        }
+
+        [TestMethod]
         public void FinishDump()
         {
             CourseObj courseobj = new FinishCourseObj(ControlId(11), CourseControlId(0), 1.0F, defaultCourseAppearance, new CircleGap[]{new CircleGap(-10, 40), new CircleGap(90, 270)}, new PointF(-1, 0), CrossHairOptions.HighlightCrossHair);
@@ -1346,6 +1457,41 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), new PointF(0.5F, 0.5F));
             SingleObjectHighlight(courseobj, "control_circle_gaps_highlight");
+        }
+
+        [TestMethod]
+        public void ExchangeStartHighlight()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "exchange_start_highlight");
+        }
+
+        [TestMethod]
+        public void ExchangeStartHighlight2017()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "exchange_start_highlight_2017");
+        }
+
+        [TestMethod]
+        public void ExchangeStartHighlightSpr2019()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "exchange_start_highlight_spr2019");
+        }
+
+        [TestMethod]
+        public void ExchangeStartHighlightSpecial()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, specialAppearance2, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "exchange_start_highlight_special");
+        }
+
+        [TestMethod]
+        public void ExchangeStartGapsHighlight()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, CircleGap.ComputeCircleGaps(0xF0FF83FF), 20, new PointF(0.5F, 0.5F));
+            SingleObjectHighlight(courseobj, "exchange_start_gaps_highlight");
         }
 
         [TestMethod]
@@ -1936,6 +2082,27 @@ namespace PurplePen.Tests
         {
             CourseObj courseobj = new ControlCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, new PointF(0.5F, 0.5F));
             SingleObjectOffset(courseobj, "control_circle_offset_spr2019");
+        }
+
+        [TestMethod]
+        public void ExchangeStartOffset()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectOffset(courseobj, "exchange_start_offset");
+        }
+
+        [TestMethod]
+        public void ExchangeStartOffset2017()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, std2017CourseAppearance, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectOffset(courseobj, "exchange_start_offset_2017");
+        }
+
+        [TestMethod]
+        public void ExchangeStartOffsetSpr2019()
+        {
+            CourseObj courseobj = new ExchangeStartCourseObj(ControlId(0), CourseControlId(0), 1.0F, stdSpr2019CourseAppearance, null, 20, new PointF(0.5F, 0.5F));
+            SingleObjectOffset(courseobj, "exchange_start_offset_spr2019");
         }
 
         [TestMethod]
