@@ -112,7 +112,7 @@ namespace PurplePen
 
             // Begin dragging out the image.
             startLocation = location;
-            startingObj = createCourseObj(new RectangleF(location.X, location.Y, 0.001F, 0.001F * aspectRatio));
+            startingObj = createCourseObj(new RectangleF(location.X, location.Y, 0.1F, 0.1F * aspectRatio));
             handleDragging = location;
             DragTo(location);
             displayUpdateNeeded = true;
@@ -133,7 +133,8 @@ namespace PurplePen
                 return;
 
             // User just clicked. Create rectangle of a default size.
-            CreateImageSpecial(new RectangleF(location, new SizeF(20F, 20F * aspectRatio)));
+            SizeF newSize = aspectRatio < 1 ? new SizeF(60F, 60F * aspectRatio) : new SizeF(60F / aspectRatio, 60F);
+            CreateImageSpecial(new RectangleF(location, newSize));
             displayUpdateNeeded = true;
         }
 

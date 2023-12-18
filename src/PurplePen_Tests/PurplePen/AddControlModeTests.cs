@@ -881,7 +881,7 @@ namespace PurplePen.Tests
                     ++countDescriptions;
                     Assert.AreEqual(23, special.locations[0].X);
                     Assert.AreEqual(37, special.locations[0].Y);
-                    Assert.AreEqual(24.605F, special.locations[1].X, 0.01F);
+                    Assert.AreEqual(24.5235F, special.locations[1].X, 0.01F);
                     Assert.AreEqual(37, special.locations[1].Y);
                     Assert.IsFalse(special.allCourses);
                     Assert.AreEqual(1, special.courses.Length);
@@ -1387,10 +1387,10 @@ namespace PurplePen.Tests
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             ImageCourseObj obj = (ImageCourseObj)highlights[0];
-            Assert.AreEqual(23F, obj.GetHighlightBounds().Left, 0.01F);
-            Assert.AreEqual(37F, obj.GetHighlightBounds().Bottom, 0.01F);
-            Assert.AreEqual(74F, obj.GetHighlightBounds().Right, 0.01F);
-            Assert.AreEqual(-41.83279F, obj.GetHighlightBounds().Top, 0.01F);
+            Assert.AreEqual(23.1F, obj.GetHighlightBounds().Left, 0.01F);
+            Assert.AreEqual(37.154F, obj.GetHighlightBounds().Bottom, 0.01F);
+            Assert.AreEqual(39.39579F, obj.GetHighlightBounds().Right, 0.01F);
+            Assert.AreEqual(12F, obj.GetHighlightBounds().Top, 0.01F);
             Assert.AreEqual("mrsneeze.jpg", obj.imageName);
             Assert.IsNotNull(obj.imageBitmap);
 
@@ -1404,10 +1404,10 @@ namespace PurplePen.Tests
             foreach (Special special in eventDB.AllSpecials) {
                 if (special.kind == SpecialKind.Image) {
                     ++countImageSpecials;
-                    Assert.AreEqual(23F, special.locations[0].X, 0.01F);
-                    Assert.AreEqual(37F, special.locations[0].Y, 0.01F);
-                    Assert.AreEqual(76F, special.locations[1].X, 0.01F);
-                    Assert.AreEqual(-44.92439F, special.locations[1].Y, 0.01F);
+                    Assert.AreEqual(23.1F, special.locations[0].X, 0.01F);
+                    Assert.AreEqual(37.154F, special.locations[0].Y, 0.01F);
+                    Assert.AreEqual(40.04362F, special.locations[1].X, 0.01F);
+                    Assert.AreEqual(11F, special.locations[1].Y, 0.01F);
                     Assert.IsTrue(special.allCourses);
                     Assert.AreEqual("mrsneeze.jpg", special.text);
                 }

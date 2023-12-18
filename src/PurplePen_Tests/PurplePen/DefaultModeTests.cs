@@ -681,7 +681,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-143.5,Y=-35.5,Width=133.1361,Height=32.1} columns:3",
+            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-143.5,Y=-35.5,Width=93.5,Height=22.54348} columns:3",
                                         highlights[0].ToString());
             // Check the status text
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
@@ -691,21 +691,21 @@ namespace PurplePen.Tests
 
             // Finish dragging the size point
             controller.LeftButtonEndDrag(Pane.Map, new PointF(-105F, -47F), new PointF(-9F, 50.0F), 0.3F);
-            ui.MouseMoved(-105F, -47F, 0.3F);
+            ui.MouseMoved(-105F, -48.4F, 0.3F);
             Assert.AreEqual(StatusBarText.SizeRectangle, controller.StatusText);
 
             // Check the highlights
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-46.71266,Width=53.80825,Height=12.97353} columns:3",
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-48.47353,Width=53.80825,Height=12.97353} columns:3",
                                         highlights[0].ToString());
             Assert.AreEqual(8, highlights[0].specialId.id);
 
             // Make sure the description is now sized.
             PointF[] newLocations = eventDB.GetSpecial(SpecialId(8)).locations;
-            Assert.AreEqual(new PointF(-105F, -33.7391319F), newLocations[0]);
+            Assert.AreEqual(new PointF(-105F, -35.5F), newLocations[0]);
             Assert.AreEqual(-102.873F, newLocations[1].X, 0.001);
-            Assert.AreEqual(-33.739F, newLocations[1].Y, 0.001);
+            Assert.AreEqual(-35.5F, newLocations[1].Y, 0.001);
 
             // Should be 3 columns.
             Assert.AreEqual(3, eventDB.GetSpecial(SpecialId(8)).numColumns);

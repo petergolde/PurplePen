@@ -901,6 +901,13 @@ namespace PurplePen
 
             RectangleF newRect = Geometry.RectFromPoints(left, top, right, bottom);
 
+            if (left > right) {
+                Util.Swap(ref changeLeft, ref changeRight);
+            }
+            if (top > bottom) {
+                Util.Swap(ref changeTop, ref changeBottom);
+            }
+
             // Update the rectangle.
             RectangleUpdating(ref newRect, false, changeLeft, changeTop, changeRight, changeBottom);
             rect = newRect;
@@ -971,12 +978,11 @@ namespace PurplePen
                     aspectAdjustWidth = true;
 
                 // Update the coordinates to preserve aspect.
-                float newAspect = (bottom != top) ? Math.Abs(right - left) / Math.Abs(bottom - top) : 1;
                 if (!aspectAdjustWidth && !aspectAdjustHeight) {
                     // Determine if width or height aspect should be adjusted.
-                    if (newAspect < aspect)
+                    if (Math.Abs(aspect) < 1)
                         aspectAdjustWidth = true;
-                    else if (newAspect > aspect)
+                    else 
                         aspectAdjustHeight = true;
                 }
 

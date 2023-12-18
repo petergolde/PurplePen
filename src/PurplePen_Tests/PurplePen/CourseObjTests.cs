@@ -2492,7 +2492,7 @@ namespace PurplePen.Tests
             float ratio = rect.Width / rect.Height;
             float left = rect.Left, right = rect.Right, top = rect.Bottom, bottom = rect.Top;  // top,bottom inverted due to coord system.
 
-            MoveRectangleHandle(courseObj, new PointF(right, bottom), new PointF(right + 3, bottom - 2), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
+            MoveRectangleHandle(courseObj, new PointF(right, bottom), new PointF(right + 3, bottom - 2), RectangleF.FromLTRB(left, bottom - 2, right + 2 * ratio, top));
             courseObj = CreateImageCourseObj();
             MoveRectangleHandle(courseObj, new PointF(right, (bottom + top) / 2), new PointF(right + 3, 17), RectangleF.FromLTRB(left, bottom - 3 / ratio, right + 3, top));
         }

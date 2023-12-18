@@ -3730,7 +3730,7 @@ namespace PurplePen
             return CourseFormatter.ExpandText(eventDB, selectionMgr.ActiveCourseView, text);
         }
 
-        // Start the mode to add text to a course
+        // Start the mode to add image to a course
         public void BeginAddImageSpecialMode(string fileName)
         {
             Bitmap imageBitmap = null;
