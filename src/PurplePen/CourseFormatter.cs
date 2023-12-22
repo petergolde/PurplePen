@@ -157,7 +157,7 @@ namespace PurplePen
             // Add any additional controls
             foreach (Id<CourseControl> extraCourseControl in courseView.ExtraCourseControls) {
                 courseLayout.AddCourseObject(CreateCourseObject(eventDB, courseView.Kind, courseObjRatio, appearance, courseView.CircleGapScale(appearance),
-                                                                eventDB.GetCourseControl(extraCourseControl).control, extraCourseControl, double.NaN));
+                                                                eventDB.GetCourseControl(extraCourseControl).control, extraCourseControl, false, double.NaN));
             }
 
             // No go through each control again and add an automatically placed number/code to each. We do this last so that the placement
@@ -636,11 +636,11 @@ namespace PurplePen
         // AngleOut is the direction IN RADIANs leaving the control.
         static CourseObj CreateCourseObject(EventDB eventDB, CourseView.CourseViewKind courseKind, float courseObjRatio, CourseAppearance appearance, float printScale, CourseView.ControlView controlView, double angleOut)
         {
-            return CreateCourseObject(eventDB, courseKind, courseObjRatio, appearance, printScale, controlView.controlId, controlView.courseControlIds[0], angleOut);
+            return CreateCourseObject(eventDB, courseKind, courseObjRatio, appearance, printScale, controlView.controlId, controlView.courseControlIds[0], controlView.exchangeStart, angleOut);
         }
 
         static CourseObj CreateCourseObject(EventDB eventDB, CourseView.CourseViewKind courseKind, float courseObjRatio, CourseAppearance appearance, float scaleForCircleGaps, 
-                                            Id<ControlPoint> controlId, Id<CourseControl> courseControlId, double angleOut)
+                                            Id<ControlPoint> controlId, Id<CourseControl> courseControlId, bool exchangeStart, double angleOut)
         {
             ControlPoint control = eventDB.GetControl(controlId);
             CircleGap[] gaps = QueryEvent.GetControlGaps(eventDB, controlId, scaleForCircleGaps);
@@ -675,7 +675,15 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.Normal:
-                courseObj = new ControlCourseObj(controlId, courseControlId, courseObjRatio, appearance, gaps, control.location);
+                // && false is there to disable map exchange start course objects for now until IOF puts them in the standard.
+                if (exchangeStart && appearance.mapStandard != "2000" && false) {
+                    // This is a map exchange at a control (exchange or flip). Use the map exchange start course object.
+                    courseObj = new ExchangeStartCourseObj(controlId, courseControlId, courseObjRatio, appearance, gaps, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
+                }
+                else {
+                    courseObj = new ControlCourseObj(controlId, courseControlId, courseObjRatio, appearance, gaps, control.location);
+                }
+
                 break;
 
             case ControlPointKind.CrossingPoint:

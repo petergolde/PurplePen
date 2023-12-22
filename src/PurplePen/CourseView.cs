@@ -69,6 +69,7 @@ namespace PurplePen
             public float[] legLength;           // Length of the leg
             public int joinIndex;               // If multiple legs, this is the index where they join together again.
             public bool hiddenControl;          // If true, hide this control on map, but not legs to it (used for map exchanges)
+            public bool exchangeStart;          // If true, this is a start control after a map exchange/flip.
         };
 
         // A description that is being viewed.
@@ -858,6 +859,11 @@ namespace PurplePen
                     controlView.hiddenControl = true;
                 }
 
+                // Make the exchanges at control be viewed as exchange starts.
+                if (courseControl.exchange && courseControlId != lastCourseControl) {
+                    controlView.exchangeStart = true;
+                }
+
                 // Set the legTo array with the next courseControlID. This is later updated
                 // to the indices.
                 if (index < courseControls.Count - 1 && courseControlId != lastCourseControl) {
@@ -946,6 +952,10 @@ namespace PurplePen
                             controlView.legTo = new int[1] { courseControl.nextCourseControl.id };   // legTo initially holds course control ids, later changed.
                         controlView.joinIndex = -1;
                     }
+
+                    if (courseControl.exchange) {
+                        controlView.exchangeStart = true;
+                    }   
 
                     // Add the controlview.
                     courseView.controlViews.Add(controlView);

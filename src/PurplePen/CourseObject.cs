@@ -1397,6 +1397,8 @@ namespace PurplePen
     }
 
     // A control circle with a triangle inside, for after map exchange/flip
+    // Important note: the orientation is the orientation of the triangle, but does not affect
+    // the circle gaps. We need to override the AddToMap method to counter-rotate the gaps.
     class ExchangeStartCourseObj : ControlCourseObj
     {
         public ExchangeStartCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, CircleGap[] gaps, float orientation, PointF location)
@@ -1404,6 +1406,7 @@ namespace PurplePen
         {
             this.orientation = orientation;
         }
+
         public override string ToString()
         {
             string result = base.ToString();
@@ -1464,7 +1467,7 @@ namespace PurplePen
             using (Pen pen = new Pen(brush, thickness))
             using (Pen trianglePen = new Pen(brush, thickness)) {
                 RectangleF rect = RectangleF.FromLTRB(pts[1].X, pts[2].Y, pts[2].X, pts[1].Y);
-                CircleGap[] gapsToDraw = CircleGap.RotateGaps(gaps, orientation);
+                CircleGap[] gapsToDraw = CircleGap.SimplifyGaps(gaps);
 
                 trianglePen.LineJoin = LineJoin.Round;
 
@@ -1495,13 +1498,13 @@ namespace PurplePen
             HighlightCrossHair(g, xformWorldToPixel, brush);
         }
 
-        public override PointF[] GetHandles()
+        protected override void AddToMap(Map map, SymDef symdef)
         {
-            if (gaps == null)
-                return null;
-            else
-                return CircleGap.GapStartStopPoints(location, ApparentRadius, CircleGap.RotateGaps(movableGaps, orientation));
+            // We don't want the gaps to rotate with the triangle, so we rotate them the opposite way.
+            PointSymbol sym = new PointSymbol((PointSymDef)symdef, location, orientation, CircleGap.StartsAndStops(CircleGap.RotateGaps(gaps, -orientation)));
+            map.AddSymbol(sym);
         }
+
 
     }
 
