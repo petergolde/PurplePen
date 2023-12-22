@@ -33,10 +33,10 @@
       <Value Profile="(Default)">2017</Value>
     </Setting>
     <Setting Name="NewEventDescriptionStandard" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2004</Value>
+      <Value Profile="(Default)">2018</Value>
     </Setting>
     <Setting Name="LiveloxSettings" Type="System.String" Scope="User">
-      <Value Profile="(Default)"/>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>
