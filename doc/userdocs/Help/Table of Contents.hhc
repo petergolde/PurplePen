@@ -381,6 +381,10 @@
 				<param name="Local" value="EventRemoveUnusedControls.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Move All Controls...">
+				<param name="Local" value="EventMoveAllControls.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Punch Patterns...">
 				<param name="Local" value="ControlsPunchPatterns.htm">
 				</OBJECT>
@@ -471,6 +475,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Rotate">
 				<param name="Local" value="EditRotate.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Stretch">
+				<param name="Local" value="ItemStretch.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Leg Flagging">

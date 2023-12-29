@@ -65,6 +65,7 @@ EditRemoveGap.htm
 EditAddGap.htm
 EditChangeDisplayedCourses.htm
 EditRotate.htm
+ItemStretch.htm
 EditAddRegistrationMark.htm
 EditAddUncrossableBoundary.htm
 EditAddForbiddenRouteMarking.htm
@@ -141,5 +142,6 @@ VariationFixedBranches.htm
 ViewAdditionalCourses.htm
 ViewClearAdditionalCourses.htm
 EditAddTimedStart.htm
+EventMoveAllControls.htm
 [INFOTYPES]
 

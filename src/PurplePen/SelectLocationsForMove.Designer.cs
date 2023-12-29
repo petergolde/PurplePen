@@ -204,6 +204,7 @@
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonCancel);
+            this.HelpTopic = "EventMoveAllControls.htm";
             this.Name = "SelectLocationsForMove";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SelectLocationsForMove_FormClosing);
             this.Load += new System.EventHandler(this.SelectLocationsForMove_Load);

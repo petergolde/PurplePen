@@ -766,6 +766,6 @@
     <value>SelectLocationsForMove</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.BaseDialog, PurplePen, Version=3.5.0.100, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.BaseDialog, PurplePen, Version=3.5.0.210, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
