@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="boxOrderGroupBox.Text" xml:space="preserve">
-    <value>箱订单</value>
+    <value>表格排列方式</value>
   </data>
   <data name="sizeGroupBox.Text" xml:space="preserve">
-    <value>配置</value>
+    <value>尺寸</value>
   </data>
   <data name="columnsLabel.Text" xml:space="preserve">
     <value>列数：</value>
@@ -130,6 +130,6 @@
     <value>排:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>穿孔卡片布局</value>
+    <value>机械打卡纸布局</value>
   </data>
 </root>

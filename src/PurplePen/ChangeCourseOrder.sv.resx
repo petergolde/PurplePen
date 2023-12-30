@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="moveDownButton.Text" xml:space="preserve">
-    <value>Flytta ned</value>
+    <value>Flytta ner</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
     <value>Använd knapparna "Flytta upp" respektive "Flytta ner" för att ändra ordningen som banor är listade i användargränssnittet, på rapporter och vid utskrift.</value>

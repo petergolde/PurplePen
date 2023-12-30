@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2023-11-03 16:47-07:00\n"
+"POT-Creation-Date: 2023-12-29 20:29-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -717,11 +717,11 @@ msgstr "旋转"
 
 #: CommandNameText.resx, ChangePunchPatterns
 msgid "Change Punch Patterns"
-msgstr "更改机械打卡器"
+msgstr "更改机械打卡器针脚排列"
 
 #: CommandNameText.resx, ChangePunchcardFormat
 msgid "Change Punch Card Layout"
-msgstr "更改机械打卡布局"
+msgstr "更改机械打卡纸布局"
 
 #: CommandNameText.resx, SetPrintArea
 #: SetPrintAreaDialog.resx, $this.Text
@@ -825,11 +825,11 @@ msgstr "发布到Livelox"
 #: MoveAllControls.resx, $this.Text
 #: SelectLocationsForMove.resx, $this.Text
 msgid "Move All Controls"
-msgstr ""
+msgstr "移动所有点标"
 
 #: CommandNameText.resx, AddMapFlip
 msgid "Add Map Flip"
-msgstr ""
+msgstr "添加地图切换"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -1724,7 +1724,7 @@ msgstr "说明"
 
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
-msgstr ""
+msgstr "在这个检查点进行地图切换（&F）"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1855,11 +1855,11 @@ msgstr "删除未使用的检查点…"
 
 #: MainFrame.resx, moveAllControlsMenu.Text
 msgid "Mo&ve All Controls..."
-msgstr ""
+msgstr "移动所有检查点（&v）"
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
-msgstr "与冲击模式…"
+msgstr "&机械打卡器针脚排列..."
 
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
@@ -2079,7 +2079,7 @@ msgstr "字体度量"
 
 #: MainFrame.resx, missingTranslationsMenuItem.Text
 msgid "Missing Description Translations"
-msgstr ""
+msgstr "缺少检查点说明的翻译"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2158,7 +2158,7 @@ msgstr "添加检查点说明"
 
 #: MainFrame.resx, mapFlipMenuItem.Text
 msgid "Map Flip at Control Point"
-msgstr ""
+msgstr "在这个检查点进行地图切换"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
@@ -2917,23 +2917,23 @@ msgstr "缺少字体"
 
 #: MoveAllControls.resx, labelDescription.Text
 msgid "Which way would you like to move all controls on the map?"
-msgstr ""
+msgstr "以何种方式移动地图上所有检查点？"
 
 #: MoveAllControls.resx, radioButtonMove.Text
 msgid "Move Only"
-msgstr ""
+msgstr "只是移动"
 
 #: MoveAllControls.resx, radioButtonMoveAndScale.Text
 msgid "Move and Scale"
-msgstr ""
+msgstr "移动并缩放"
 
 #: MoveAllControls.resx, radioButtonMoveAndRotate.Text
 msgid "Move and Rotate"
-msgstr ""
+msgstr "移动并旋转"
 
 #: MoveAllControls.resx, radioButtonMoveRotateScale.Text
 msgid "Move, Scale, and Rotate"
-msgstr ""
+msgstr "移动、缩放和选择"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3340,7 +3340,7 @@ msgstr "页面设置"
 #: PrintPunches.resx, punchCardLayoutButton.Text
 #: PunchPatternDialog.resx, formatButton.Text
 msgid "Punch Card Layout..."
-msgstr "穿孔卡片布局…"
+msgstr "机械打卡纸布局..."
 
 #: PrintPunches.resx, punchBoxSizeLabel.Text
 msgid "Punch box size:"
@@ -3352,15 +3352,15 @@ msgstr "副本:"
 
 #: PrintPunches.resx, $this.Text
 msgid "Print Punch Cards"
-msgstr "打印穿孔卡片"
+msgstr "打印机械打卡纸"
 
 #: PunchcardLayoutDialog.resx, boxOrderGroupBox.Text
 msgid "Box Order"
-msgstr "箱订单"
+msgstr "表格排列方式"
 
 #: PunchcardLayoutDialog.resx, sizeGroupBox.Text
 msgid "Size"
-msgstr "配置"
+msgstr "尺寸"
 
 #: PunchcardLayoutDialog.resx, columnsLabel.Text
 msgid "Columns:"
@@ -3372,13 +3372,13 @@ msgstr "排:"
 
 #: PunchcardLayoutDialog.resx, $this.Text
 msgid "Punch Card Layout"
-msgstr "穿孔卡片布局"
+msgstr "机械打卡纸布局"
 
 #: PunchPatternDialog.resx, punchPatternsLabel.Text
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr "单击左侧列表中的检查点编号，并在右侧设计打卡图案。红色编号表示没有设计打卡图案的检查点。"
+msgstr "单击左侧列表中的检查点编号，并在右侧设计机械打卡器针脚排列。红色的检查点编号表示还没有设计机械打卡器针脚排列的检查点。"
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
@@ -3526,11 +3526,11 @@ msgstr "线路应该有预期的参赛者通过量"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
-msgstr "没有定义的穿孔模式"
+msgstr "没有设定的机械打卡器针脚排列"
 
 #: ReportText.resx, EventAudit_MissingPunchPatterns
 msgid "Missing Punch Patterns"
-msgstr "失踪的穿孔模式"
+msgstr "缺少机械打卡器针脚排列"
 
 #: ReportText.resx, EventAudit_MissingScore
 msgid "Score course should have score set for all controls or no "
@@ -3850,7 +3850,7 @@ msgstr "地图关键点"
 
 #: SelectionDescriptionText.resx, MapFlipAtControl
 msgid "Map flip at {0}"
-msgstr ""
+msgstr "在{0}进行地图切换"
 
 #: SelectLocationsForMove.resx, labelArrowFirstControl.Text
 #: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
@@ -3858,47 +3858,47 @@ msgstr ""
 #: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
 #: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: SelectLocationsForMove.resx, labelFirstControl.Text
 msgid "Select first control or registration mark to move"
-msgstr ""
+msgstr "选择第一个检查点或者需要移动的标记"
 
 #: SelectLocationsForMove.resx, labelSecondNewLocation.Text
 msgid "Choose new location for second control/mark"
-msgstr ""
+msgstr "选择第二个检查点或者标记的新位置"
 
 #: SelectLocationsForMove.resx, labelConfirmLocations.Text
 msgid "Confirm new locations"
-msgstr ""
+msgstr "确认新位置"
 
 #: SelectLocationsForMove.resx, labelRotation.Text
 msgid "Rotation:"
-msgstr ""
+msgstr "旋转："
 
 #: SelectLocationsForMove.resx, labelYOffset.Text
 msgid "Y Offset:"
-msgstr ""
+msgstr "Y轴偏移："
 
 #: SelectLocationsForMove.resx, labelXOffset.Text
 msgid "X Offset:"
-msgstr ""
+msgstr "X轴偏移："
 
 #: SelectLocationsForMove.resx, labelSecondControl.Text
 msgid "Select second control or registration mark to move"
-msgstr ""
+msgstr "选择第二个检查点或者标记进行移动"
 
 #: SelectLocationsForMove.resx, labelFirstNewLocation.Text
 msgid "Choose new location for first control/mark"
-msgstr ""
+msgstr "选择第一个检查点或者标记的新位置"
 
 #: SelectLocationsForMove.resx, buttonBack.Text
 msgid "Back"
-msgstr ""
+msgstr "返回"
 
 #: SelectLocationsForMove.resx, buttonConfirm.Text
 msgid "Confirm"
-msgstr ""
+msgstr "确认"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
@@ -4154,12 +4154,12 @@ msgstr "在交点按住鼠标左键并拖动拉伸"
 #: StatusBarText.resx, ControlForMoveAllControls
 msgid "Click the left mouse button on a control or registration "
 "mark to move to a new location"
-msgstr ""
+msgstr "在检查点或者标记处按住鼠标左键，移动到新位置"
 
 #: StatusBarText.resx, NewLocationForMoveAllControls
 msgid "Click the left mouse button on the new location for the "
 "control or registration mark"
-msgstr ""
+msgstr "在检查点或者标记的新位置，点击鼠标左键"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."

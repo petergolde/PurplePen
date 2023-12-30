@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="formatButton.Text" xml:space="preserve">
-    <value>穿孔卡片布局…</value>
+    <value>机械打卡纸布局...</value>
   </data>
   <data name="punchPatternsLabel.Text" xml:space="preserve">
-    <value>单击左侧列表中的检查点编号，并在右侧设计打卡图案。红色编号表示没有设计打卡图案的检查点。</value>
+    <value>单击左侧列表中的检查点编号，并在右侧设计机械打卡器针脚排列。红色的检查点编号表示还没有设计机械打卡器针脚排列的检查点。</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>冲床模式</value>

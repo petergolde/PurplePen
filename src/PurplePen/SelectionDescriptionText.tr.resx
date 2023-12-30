@@ -124,7 +124,7 @@
     <value>Tırmanma:</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
-    <value>Rakip yükü:</value>
+    <value>Yarışmacı yükü:</value>
   </data>
   <data name="ControlsInUse" xml:space="preserve">
     <value>Kullanımdaki kontroller:</value>
@@ -296,5 +296,8 @@
   </data>
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>harita veriş noktası ekle</value>
+  </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>{0} konumunda harita çevirme</value>
   </data>
 </root>

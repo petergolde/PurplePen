@@ -211,10 +211,10 @@
     <value>线路应该有预期的参赛者通过量</value>
   </data>
   <data name="EventAudit_MissingPunch" xml:space="preserve">
-    <value>没有定义的穿孔模式</value>
+    <value>没有设定的机械打卡器针脚排列</value>
   </data>
   <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
-    <value>失踪的穿孔模式</value>
+    <value>缺少机械打卡器针脚排列</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
     <value>积分赛线路应设置所有检查点或无检查点的分数</value>

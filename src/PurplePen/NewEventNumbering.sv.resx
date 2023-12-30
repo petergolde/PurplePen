@@ -121,7 +121,7 @@
     <value>Nya kontroller numreras automatiskt. Välj första kodsiffra att börja numreringen med.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Tillåt inte kodsiffror som kan läsas upp-och-ned (t.ex. "68" och "89")</value>
+    <value>Tillåt inte kodsiffror som kan läsas upp och ner (t.ex. "68" och "89")</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Börja med kodsiffra:</value>

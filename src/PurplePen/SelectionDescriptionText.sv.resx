@@ -297,4 +297,7 @@
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>kartutdelningsplats</value>
   </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Kartvändning vid {0}</value>
+  </data>
 </root>

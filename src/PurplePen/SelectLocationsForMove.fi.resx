@@ -120,7 +120,16 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Peruuta</value>
   </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Vahvista uudet sijainnit</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Mittakaava:</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Takaisin</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Vahvista</value>
   </data>
 </root>

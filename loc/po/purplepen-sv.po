@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2023-11-03 16:47-07:00\n"
+"POT-Creation-Date: 2023-12-29 20:29-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -321,7 +321,7 @@ msgstr "Inställningar Alla Kontroller"
 #: NewEventNumbering.resx, disallowInvertibleCheckBox.Text
 msgid "Disallow codes that could be read upside-down (e.g., "
 "\"68\"/\"89\")"
-msgstr "Tillåt inte kodsiffror som kan läsas upp-och-ned (t.ex. "
+msgstr "Tillåt inte kodsiffror som kan läsas upp och ner (t.ex. "
 "\"68\" och \"89\")"
 
 #: AutoNumbering.resx, renumberExistingRadioButton.Text
@@ -373,7 +373,7 @@ msgstr "Ändra kodsiffror"
 
 #: ChangeCourseOrder.resx, moveDownButton.Text
 msgid "Move down"
-msgstr "Flytta ned"
+msgstr "Flytta ner"
 
 #: ChangeCourseOrder.resx, courseOrderLabel.Text
 msgid "Use the \"Move Up\" and \"Move Down\" buttons to change the "
@@ -840,11 +840,11 @@ msgstr "Publicera till LiveLox"
 #: MoveAllControls.resx, $this.Text
 #: SelectLocationsForMove.resx, $this.Text
 msgid "Move All Controls"
-msgstr ""
+msgstr "Flytta alla kontroller"
 
 #: CommandNameText.resx, AddMapFlip
 msgid "Add Map Flip"
-msgstr ""
+msgstr "Lägg till kartvändning"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -1339,7 +1339,7 @@ msgstr "Använd som standardspråk för nya tävlingar"
 
 #: DownloadProgressDialog.resx, $this.Text
 msgid "Downloading"
-msgstr "Laddar ned"
+msgstr "Laddar ner"
 
 #: EnterSymbolText.resx, numberColumn.HeaderText
 msgid "Number"
@@ -1751,7 +1751,7 @@ msgstr "&Definition"
 
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
-msgstr ""
+msgstr "Kartvändning vid kontrollpunkt"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1882,7 +1882,7 @@ msgstr "Ta bort &oanvända kontroller..."
 
 #: MainFrame.resx, moveAllControlsMenu.Text
 msgid "Mo&ve All Controls..."
-msgstr ""
+msgstr "Flytta alla kontroller..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
@@ -2106,7 +2106,7 @@ msgstr "Typsnittsmått"
 
 #: MainFrame.resx, missingTranslationsMenuItem.Text
 msgid "Missing Description Translations"
-msgstr ""
+msgstr "Saknade beskrivningsöversättningar"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2185,7 +2185,7 @@ msgstr "Lägg till kontrollbeskrivning"
 
 #: MainFrame.resx, mapFlipMenuItem.Text
 msgid "Map Flip at Control Point"
-msgstr ""
+msgstr "Kartvändning vid kontrollpunkt"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
@@ -2705,7 +2705,7 @@ msgstr "Kan inte skapa PDF av följande orsaker:"
 
 #: MiscText.resx, UserDefined
 msgid "User Defined"
-msgstr "Användardefinierad"
+msgstr "Egendefinierad"
 
 #: MiscText.resx, PdfMapSize
 msgid "Map size from PDF"
@@ -2964,9 +2964,7 @@ msgstr "PDF-fil|*.pdf"
 msgid "Leg {0} never reaches branch '{1}': it was assigned to go "
 "a different way in a containing fork."
 msgstr "Sträcka {0} når aldrig gaffling '{1}': den är ritad att gå "
-"en annan väg i en yttre gaffling.\r\n"
-"Leg {0} never reaches branch '{1}': it was assigned to go "
-"a different way in a containing fork."
+"en annan väg i en yttre gaffling."
 
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
@@ -3008,23 +3006,23 @@ msgstr "Typsnitt saknas"
 
 #: MoveAllControls.resx, labelDescription.Text
 msgid "Which way would you like to move all controls on the map?"
-msgstr ""
+msgstr "På vilket sätt vill du flytta alla kontroller på kartan?"
 
 #: MoveAllControls.resx, radioButtonMove.Text
 msgid "Move Only"
-msgstr ""
+msgstr "Enbart flytta"
 
 #: MoveAllControls.resx, radioButtonMoveAndScale.Text
 msgid "Move and Scale"
-msgstr ""
+msgstr "Flytta och skala"
 
 #: MoveAllControls.resx, radioButtonMoveAndRotate.Text
 msgid "Move and Rotate"
-msgstr ""
+msgstr "Flytta och rotera"
 
 #: MoveAllControls.resx, radioButtonMoveRotateScale.Text
 msgid "Move, Scale, and Rotate"
-msgstr ""
+msgstr "Flytta, skala och rotera"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3506,9 +3504,9 @@ msgstr "Stämpelkort layout"
 msgid "Click on a control code in the left-side list, and design "
 "the punch pattern in the right side. Red codes indicate "
 "controls that have no punch pattern defined."
-msgstr "Klicka på en kontrollkod i listan på vänstra sidan och "
-"designa stämpelmönstret på högra sidan. Röda koder anger "
-"kontroller som inte har något definierat stämpelmönster."
+msgstr "Klicka på en kontrollkod i listan till vänster och designa "
+"stämpelmallen till höger. Röda koder anger kontroller som "
+"saknar en definierad stämpelmall."
 
 #: PunchPatternDialog.resx, $this.Text
 msgid "Punch Patterns"
@@ -4000,7 +3998,7 @@ msgstr "kartutdelningsplats"
 
 #: SelectionDescriptionText.resx, MapFlipAtControl
 msgid "Map flip at {0}"
-msgstr ""
+msgstr "Kartvändning vid {0}"
 
 #: SelectLocationsForMove.resx, labelArrowFirstControl.Text
 #: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
@@ -4008,47 +4006,47 @@ msgstr ""
 #: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
 #: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: SelectLocationsForMove.resx, labelFirstControl.Text
 msgid "Select first control or registration mark to move"
-msgstr ""
+msgstr "Välj första kontroll eller passmärke att flytta"
 
 #: SelectLocationsForMove.resx, labelSecondNewLocation.Text
 msgid "Choose new location for second control/mark"
-msgstr ""
+msgstr "Välj ny position för andra kontroll/passmärke"
 
 #: SelectLocationsForMove.resx, labelConfirmLocations.Text
 msgid "Confirm new locations"
-msgstr ""
+msgstr "Bekräfta nya positioner"
 
 #: SelectLocationsForMove.resx, labelRotation.Text
 msgid "Rotation:"
-msgstr ""
+msgstr "Rotation:"
 
 #: SelectLocationsForMove.resx, labelYOffset.Text
 msgid "Y Offset:"
-msgstr ""
+msgstr "Y-offset:"
 
 #: SelectLocationsForMove.resx, labelXOffset.Text
 msgid "X Offset:"
-msgstr ""
+msgstr "X-offset:"
 
 #: SelectLocationsForMove.resx, labelSecondControl.Text
 msgid "Select second control or registration mark to move"
-msgstr ""
+msgstr "Välj andra kontroll eller passmärke att flytta"
 
 #: SelectLocationsForMove.resx, labelFirstNewLocation.Text
 msgid "Choose new location for first control/mark"
-msgstr ""
+msgstr "Välj ny position för första kontroll/passmärke"
 
 #: SelectLocationsForMove.resx, buttonBack.Text
 msgid "Back"
-msgstr ""
+msgstr "Bakåt"
 
 #: SelectLocationsForMove.resx, buttonConfirm.Text
 msgid "Confirm"
-msgstr ""
+msgstr "Bekräfta"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
@@ -4318,12 +4316,13 @@ msgstr "Håll ner vänster musknapp och dra för att sträcka ut "
 #: StatusBarText.resx, ControlForMoveAllControls
 msgid "Click the left mouse button on a control or registration "
 "mark to move to a new location"
-msgstr ""
+msgstr "Klicka på en kontroll eller passmärke för att flytta till "
+"ny position"
 
 #: StatusBarText.resx, NewLocationForMoveAllControls
 msgid "Click the left mouse button on the new location for the "
 "control or registration mark"
-msgstr ""
+msgstr "Klicka på den nya positionen för kontrollen/passmärket"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."

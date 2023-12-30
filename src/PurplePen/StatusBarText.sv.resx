@@ -228,4 +228,10 @@
   <data name="StretchingObject" xml:space="preserve">
     <value>Håll ner vänster musknapp och dra för att sträcka ut övergångspunkten</value>
   </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Klicka på en kontroll eller passmärke för att flytta till ny position</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Klicka på den nya positionen för kontrollen/passmärket</value>
+  </data>
 </root>

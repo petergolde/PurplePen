@@ -312,4 +312,7 @@
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
     <value>Julkaise Liveloxissa</value>
   </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Lisää kartankääntö</value>
+  </data>
 </root>

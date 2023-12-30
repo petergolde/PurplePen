@@ -228,4 +228,10 @@
   <data name="StretchingObject" xml:space="preserve">
     <value>Geçiş noktasını uzatmak için farenin sol tuşuna basılı tatarak sürükleyin</value>
   </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Yeni bir konuma taşımak için bir kontrol veya kayıt işaretinin üzerinde sol fare düğmesine tıklayın</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Kontrol veya kayıt işaretinin yeni konumu üzerinde farenin sol tuşuna tıklayın</value>
+  </data>
 </root>

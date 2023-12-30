@@ -297,4 +297,7 @@
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>地图关键点</value>
   </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>在{0}进行地图切换</value>
+  </data>
 </root>

@@ -133,7 +133,7 @@
     <value>Sembol Yok</value>
   </data>
   <data name="AllControls" xml:space="preserve">
-    <value>Tüm Hedefler</value>
+    <value>Tüm hedefler</value>
   </data>
   <data name="CannotLoadFile" xml:space="preserve">
     <value>Aşağıdaki nedenden dolayı '{0}' yüklenemiyor:</value>
@@ -353,7 +353,7 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
     <value>Özelleştirilmiş metin, değiştirilen nesnenin nereye yerleştirildiğini belirtmek için bir "*" gerektirir.</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
-    <value>oryantiring için parkur ayarı</value>
+    <value>Oryantiring için parkur planlama</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
     <value>Harita üzerine yerleştirmek istediğiniz metni girin. Tamam düğmesine bastıktan sonra, metni istediğiniz konuma yerleştirmek için fareyi sürükleyin.</value>

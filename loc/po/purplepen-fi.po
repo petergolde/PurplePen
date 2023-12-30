@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2023-11-03 16:44-07:00\n"
+"POT-Creation-Date: 2023-12-29 20:28-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -844,7 +844,7 @@ msgstr ""
 
 #: CommandNameText.resx, AddMapFlip
 msgid "Add Map Flip"
-msgstr ""
+msgstr "Lisää kartankääntö"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -2186,7 +2186,7 @@ msgstr "Lisää rastinmääritteet"
 
 #: MainFrame.resx, mapFlipMenuItem.Text
 msgid "Map Flip at Control Point"
-msgstr ""
+msgstr "Kartankääntö rastilla"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
@@ -4023,7 +4023,7 @@ msgstr ""
 
 #: SelectLocationsForMove.resx, labelConfirmLocations.Text
 msgid "Confirm new locations"
-msgstr ""
+msgstr "Vahvista uudet sijainnit"
 
 #: SelectLocationsForMove.resx, labelRotation.Text
 msgid "Rotation:"
@@ -4047,11 +4047,11 @@ msgstr ""
 
 #: SelectLocationsForMove.resx, buttonBack.Text
 msgid "Back"
-msgstr ""
+msgstr "Takaisin"
 
 #: SelectLocationsForMove.resx, buttonConfirm.Text
 msgid "Confirm"
-msgstr ""
+msgstr "Vahvista"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"

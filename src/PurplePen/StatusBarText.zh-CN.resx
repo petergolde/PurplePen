@@ -228,4 +228,10 @@
   <data name="StretchingObject" xml:space="preserve">
     <value>在交点按住鼠标左键并拖动拉伸</value>
   </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>在检查点或者标记处按住鼠标左键，移动到新位置</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>在检查点或者标记的新位置，点击鼠标左键</value>
+  </data>
 </root>

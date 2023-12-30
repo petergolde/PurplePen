@@ -121,7 +121,7 @@
     <value>Parkur Adı</value>
   </data>
   <data name="Load.HeaderText" xml:space="preserve">
-    <value>Rakip Yükü</value>
+    <value>Yarışmacı Yükü</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
     <value>İkinci sütuna tıklayıp bir sayı yazarak her kparkurdaki yarışmacı sayısını ayarlayın.</value>

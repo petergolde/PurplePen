@@ -312,6 +312,9 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp; Açıklamalar</value>
   </data>
+  <data name="addMapFlipMenuItem.Text" xml:space="preserve">
+    <value>Harita &amp;Kontrol Noktasında Çevir</value>
+  </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>&amp;Kontrol Noktasında Harita Değişimi</value>
   </data>
@@ -389,6 +392,9 @@
   </data>
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>Kullanılmayan Kontrolleri Kaldır...</value>
+  </data>
+  <data name="moveAllControlsMenu.Text" xml:space="preserve">
+    <value>Tüm Noktaları Ta&amp;şı...</value>
   </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>Zımba Desenleri...</value>
@@ -493,7 +499,7 @@
     <value>Görüntülenen Parkurları Değiştir...</value>
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Öğe</value>
+    <value>&amp;Nesne</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Parkur &amp; Özet</value>
@@ -558,6 +564,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Metrik Yazı Tipi</value>
   </data>
+  <data name="missingTranslationsMenuItem.Text" xml:space="preserve">
+    <value>Açıklama Çevirileri Eksik</value>
+  </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Çarpışmak</value>
   </data>
@@ -621,6 +630,9 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Açıklama Ekle</value>
   </data>
+  <data name="mapFlipMenuItem.Text" xml:space="preserve">
+    <value>Kontrol Noktasında Harita Çevirme</value>
+  </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Kontrol Noktasında Harita Değişimi</value>
   </data>
@@ -682,7 +694,7 @@
     <value>Elips</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Özel Öğe Ekle</value>
+    <value>Özel Nesne Ekle</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
     <value>Add Bend (Ctrl+B)</value>

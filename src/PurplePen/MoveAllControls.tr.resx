@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>Haritadaki tüm kontrolleri hangi yöne taşımak istersiniz?</value>
+  </data>
+  <data name="radioButtonMove.Text" xml:space="preserve">
+    <value>Yalnızca Taşı</value>
+  </data>
+  <data name="radioButtonMoveAndScale.Text" xml:space="preserve">
+    <value>Taşı ve Ölçeklendir</value>
+  </data>
+  <data name="radioButtonMoveAndRotate.Text" xml:space="preserve">
+    <value>Taşı ve Döndür</value>
+  </data>
+  <data name="radioButtonMoveRotateScale.Text" xml:space="preserve">
+    <value>Taşı, Ölçeklendir ve Döndür</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tüm Kontol Noktalarını Taşı</value>
+  </data>
 </root>

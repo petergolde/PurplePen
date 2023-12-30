@@ -312,6 +312,9 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>说明</value>
   </data>
+  <data name="addMapFlipMenuItem.Text" xml:space="preserve">
+    <value>在这个检查点进行地图切换（&amp;F）</value>
+  </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>在检查点换图</value>
   </data>
@@ -390,8 +393,11 @@
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>删除未使用的检查点…</value>
   </data>
+  <data name="moveAllControlsMenu.Text" xml:space="preserve">
+    <value>移动所有检查点（&amp;v）</value>
+  </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
-    <value>与冲击模式…</value>
+    <value>&amp;机械打卡器针脚排列...</value>
   </data>
   <data name="descriptionStd2004Menu.Text" xml:space="preserve">
     <value>2004 检查点说明规范</value>
@@ -558,6 +564,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>字体度量</value>
   </data>
+  <data name="missingTranslationsMenuItem.Text" xml:space="preserve">
+    <value>缺少检查点说明的翻译</value>
+  </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>崩溃</value>
   </data>
@@ -620,6 +629,9 @@
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>添加检查点说明</value>
+  </data>
+  <data name="mapFlipMenuItem.Text" xml:space="preserve">
+    <value>在这个检查点进行地图切换</value>
   </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>在检查点换图</value>

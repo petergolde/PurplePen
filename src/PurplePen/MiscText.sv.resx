@@ -437,7 +437,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>Kan inte skapa PDF av följande orsaker:</value>
   </data>
   <data name="UserDefined" xml:space="preserve">
-    <value>Användardefinierad</value>
+    <value>Egendefinierad</value>
   </data>
   <data name="PdfMapSize" xml:space="preserve">
     <value>Kartstorlek från PDF</value>
@@ -611,8 +611,7 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
     <value>PDF-fil|*.pdf</value>
   </data>
   <data name="LegAssignedOuterBranch" xml:space="preserve">
-    <value>Sträcka {0} når aldrig gaffling '{1}': den är ritad att gå en annan väg i en yttre gaffling.
-Leg {0} never reaches branch '{1}': it was assigned to go a different way in a containing fork.</value>
+    <value>Sträcka {0} når aldrig gaffling '{1}': den är ritad att gå en annan väg i en yttre gaffling.</value>
   </data>
   <data name="AddEllipseExplanation" xml:space="preserve">
     <value>Ställ in utseendet på ellipsen. Efter att ha tryckt på OK, dra musen för att placera ellipsen på önskad plats.</value>

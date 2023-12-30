@@ -120,7 +120,55 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>选择第一个检查点或者需要移动的标记</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>选择第二个检查点或者标记的新位置</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>确认新位置</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>旋转：</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>比例</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Y轴偏移：</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>X轴偏移：</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>选择第二个检查点或者标记进行移动</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>选择第一个检查点或者标记的新位置</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>移动所有点标</value>
   </data>
 </root>

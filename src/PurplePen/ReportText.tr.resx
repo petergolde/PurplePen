@@ -145,7 +145,7 @@
     <value>Mesafe</value>
   </data>
   <data name="ColumnHeader_Item" xml:space="preserve">
-    <value>Öğe</value>
+    <value>Nesne</value>
   </data>
   <data name="ColumnHeader_Leg" xml:space="preserve">
     <value>Ayak</value>
@@ -205,10 +205,10 @@
     <value>Düzenli parkurlarda bitiş çemberi olmalıdır</value>
   </data>
   <data name="EventAudit_MissingItems" xml:space="preserve">
-    <value>Derslerde Eksik Öğeler</value>
+    <value>Parkurlarda Eksik Nesneler</value>
   </data>
   <data name="EventAudit_MissingLoad" xml:space="preserve">
-    <value>Kursun rakip yükünü beklemesi gerekirdi</value>
+    <value>Kursun yarışmacı yükünü beklemesi gerekirdi</value>
   </data>
   <data name="EventAudit_MissingPunch" xml:space="preserve">
     <value>Tanımlama kalıbı yok</value>
@@ -283,7 +283,7 @@
     <value>(Sadece birden fazla ders tarafından kullanılan bacaklar aşağıdaki tabloda görünür)</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
-    <value>{0} için Rakip Yükü Özeti</value>
+    <value>{0} için Yarışmacı Yükü Özeti</value>
   </data>
   <data name="Load_VariationsExist" xml:space="preserve">
     <value>Bir veya daha fazla parkurun varyasyonları vardır. Yük sayıları, rakiplerin çatallar arasında eşit olarak dağıldığı varsayılarak hesaplanacaktır.</value>

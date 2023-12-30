@@ -312,4 +312,10 @@
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
     <value>Livelox'ta yayınla</value>
   </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Tüm Kontol Noktalarını Taşı</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Harita Değişimi Ekle</value>
+  </data>
 </root>

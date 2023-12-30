@@ -120,7 +120,55 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Avbryt</value>
   </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Välj första kontroll eller passmärke att flytta</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>Välj ny position för andra kontroll/passmärke</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Bekräfta nya positioner</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>Rotation:</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Skala:</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Y-offset:</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>X-offset:</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>Välj andra kontroll eller passmärke att flytta</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>Välj ny position för första kontroll/passmärke</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Bakåt</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Bekräfta</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Flytta alla kontroller</value>
   </data>
 </root>

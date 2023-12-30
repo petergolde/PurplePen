@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Purple Pen 3.5.0\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2023-11-03 16:47-07:00\n"
+"POT-Creation-Date: 2023-12-29 20:29-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -841,11 +841,11 @@ msgstr "Livelox'ta yayınla"
 #: MoveAllControls.resx, $this.Text
 #: SelectLocationsForMove.resx, $this.Text
 msgid "Move All Controls"
-msgstr ""
+msgstr "Tüm Kontol Noktalarını Taşı"
 
 #: CommandNameText.resx, AddMapFlip
 msgid "Add Map Flip"
-msgstr ""
+msgstr "Harita Değişimi Ekle"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -901,7 +901,7 @@ msgstr "IOF standart boyutlarını kullan"
 
 #: CourseAppearanceDialog.resx, groupBoxSizes.Text
 msgid "Item Sizes"
-msgstr "Kalem Boyutu"
+msgstr "Nesne Boyutu"
 
 #: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
 msgid "Blend purple with underlying map colors"
@@ -945,7 +945,7 @@ msgstr "Görünüşü özelleştirme"
 
 #: CourseLoad.resx, Load.HeaderText
 msgid "Competitor Load"
-msgstr "Rakip Yükü"
+msgstr "Yarışmacı Yükü"
 
 #: CourseLoad.resx, courseLoadLabel.Text
 msgid "Set the number of competitors on each course by clicking "
@@ -1753,7 +1753,7 @@ msgstr "& Açıklamalar"
 
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
-msgstr ""
+msgstr "Harita &Kontrol Noktasında Çevir"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1884,7 +1884,7 @@ msgstr "Kullanılmayan Kontrolleri Kaldır..."
 
 #: MainFrame.resx, moveAllControlsMenu.Text
 msgid "Mo&ve All Controls..."
-msgstr ""
+msgstr "Tüm Noktaları Ta&şı..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
@@ -2020,7 +2020,7 @@ msgstr "Görüntülenen Parkurları Değiştir..."
 
 #: MainFrame.resx, itemMenu.Text
 msgid "&Item"
-msgstr "&Öğe"
+msgstr "&Nesne"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2108,7 +2108,7 @@ msgstr "Metrik Yazı Tipi"
 
 #: MainFrame.resx, missingTranslationsMenuItem.Text
 msgid "Missing Description Translations"
-msgstr ""
+msgstr "Açıklama Çevirileri Eksik"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2187,7 +2187,7 @@ msgstr "Açıklama Ekle"
 
 #: MainFrame.resx, mapFlipMenuItem.Text
 msgid "Map Flip at Control Point"
-msgstr ""
+msgstr "Kontrol Noktasında Harita Çevirme"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
@@ -2203,7 +2203,7 @@ msgstr "Harita Değişimi Ekle"
 
 #: MainFrame.resx, specialItemToolStripMenu.Text
 msgid "Add Special Item"
-msgstr "Özel Öğe Ekle"
+msgstr "Özel Nesne Ekle"
 
 #: MainFrame.resx, addBendToolStripButton.ToolTipText
 msgid "Add Bend (Ctrl+B)"
@@ -2264,7 +2264,7 @@ msgstr "Sembol Yok"
 
 #: MiscText.resx, AllControls
 msgid "All controls"
-msgstr "Tüm Hedefler"
+msgstr "Tüm hedefler"
 
 #: MiscText.resx, CannotLoadFile
 msgid "Cannot load '{0}' for the following reason:"
@@ -2586,7 +2586,7 @@ msgstr "Özelleştirilmiş metin, değiştirilen nesnenin nereye "
 
 #: MiscText.resx, AppSubtitle
 msgid "course setting for orienteering"
-msgstr "oryantiring için parkur ayarı"
+msgstr "Oryantiring için parkur planlama"
 
 #: MiscText.resx, AddTextSpecialExplanation
 msgid "Enter the text you wish to place on the map. After "
@@ -3016,23 +3016,23 @@ msgstr "Eksik Fontları Yoksay"
 
 #: MoveAllControls.resx, labelDescription.Text
 msgid "Which way would you like to move all controls on the map?"
-msgstr ""
+msgstr "Haritadaki tüm kontrolleri hangi yöne taşımak istersiniz?"
 
 #: MoveAllControls.resx, radioButtonMove.Text
 msgid "Move Only"
-msgstr ""
+msgstr "Yalnızca Taşı"
 
 #: MoveAllControls.resx, radioButtonMoveAndScale.Text
 msgid "Move and Scale"
-msgstr ""
+msgstr "Taşı ve Ölçeklendir"
 
 #: MoveAllControls.resx, radioButtonMoveAndRotate.Text
 msgid "Move and Rotate"
-msgstr ""
+msgstr "Taşı ve Döndür"
 
 #: MoveAllControls.resx, radioButtonMoveRotateScale.Text
 msgid "Move, Scale, and Rotate"
-msgstr ""
+msgstr "Taşı, Ölçeklendir ve Döndür"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3577,7 +3577,7 @@ msgstr "Mesafe"
 
 #: ReportText.resx, ColumnHeader_Item
 msgid "Item"
-msgstr "Öğe"
+msgstr "Nesne"
 
 #: ReportText.resx, ColumnHeader_Leg
 msgid "Leg"
@@ -3667,11 +3667,11 @@ msgstr "Düzenli parkurlarda bitiş çemberi olmalıdır"
 
 #: ReportText.resx, EventAudit_MissingItems
 msgid "Missing Items in Courses"
-msgstr "Derslerde Eksik Öğeler"
+msgstr "Parkurlarda Eksik Nesneler"
 
 #: ReportText.resx, EventAudit_MissingLoad
 msgid "Course should have expected competitor load"
-msgstr "Kursun rakip yükünü beklemesi gerekirdi"
+msgstr "Kursun yarışmacı yükünü beklemesi gerekirdi"
 
 #: ReportText.resx, EventAudit_MissingPunch
 msgid "No punch pattern defined"
@@ -3786,7 +3786,7 @@ msgstr "(Sadece birden fazla ders tarafından kullanılan bacaklar "
 
 #: ReportText.resx, Load_Title
 msgid "Competitor Load Summary for {0}"
-msgstr "{0} için Rakip Yükü Özeti"
+msgstr "{0} için Yarışmacı Yükü Özeti"
 
 #: ReportText.resx, Load_VariationsExist
 msgid "One or more courses has variations. Load numbers will be "
@@ -3841,7 +3841,7 @@ msgstr "kontrol dışı"
 
 #: SelectionDescriptionText.resx, CompetitorLoad
 msgid "Competitor load:"
-msgstr "Rakip yükü:"
+msgstr "Yarışmacı yükü:"
 
 #: SelectionDescriptionText.resx, ControlsInUse
 msgid "Controls in use:"
@@ -4013,7 +4013,7 @@ msgstr "harita veriş noktası ekle"
 
 #: SelectionDescriptionText.resx, MapFlipAtControl
 msgid "Map flip at {0}"
-msgstr ""
+msgstr "{0} konumunda harita çevirme"
 
 #: SelectLocationsForMove.resx, labelArrowFirstControl.Text
 #: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
@@ -4021,47 +4021,47 @@ msgstr ""
 #: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
 #: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
 msgid "è"
-msgstr ""
+msgstr "é"
 
 #: SelectLocationsForMove.resx, labelFirstControl.Text
 msgid "Select first control or registration mark to move"
-msgstr ""
+msgstr "Taşınacak ilk kontrolü veya kayıt işaretini seçin"
 
 #: SelectLocationsForMove.resx, labelSecondNewLocation.Text
 msgid "Choose new location for second control/mark"
-msgstr ""
+msgstr "İkinci kontrol/işaret için yeni konum seçin"
 
 #: SelectLocationsForMove.resx, labelConfirmLocations.Text
 msgid "Confirm new locations"
-msgstr ""
+msgstr "Yeni konumları onaylayın"
 
 #: SelectLocationsForMove.resx, labelRotation.Text
 msgid "Rotation:"
-msgstr ""
+msgstr "Çevirme"
 
 #: SelectLocationsForMove.resx, labelYOffset.Text
 msgid "Y Offset:"
-msgstr ""
+msgstr "Y Ofset:"
 
 #: SelectLocationsForMove.resx, labelXOffset.Text
 msgid "X Offset:"
-msgstr ""
+msgstr "X Ofset:"
 
 #: SelectLocationsForMove.resx, labelSecondControl.Text
 msgid "Select second control or registration mark to move"
-msgstr ""
+msgstr "Taşınacak ikinci kontrolü veya kayıt işaretini seçin"
 
 #: SelectLocationsForMove.resx, labelFirstNewLocation.Text
 msgid "Choose new location for first control/mark"
-msgstr ""
+msgstr "İlk kontrol/hedef için yeni konum seçin"
 
 #: SelectLocationsForMove.resx, buttonBack.Text
 msgid "Back"
-msgstr ""
+msgstr "Geri Dön"
 
 #: SelectLocationsForMove.resx, buttonConfirm.Text
 msgid "Confirm"
-msgstr ""
+msgstr "Onaylamak"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
@@ -4353,12 +4353,14 @@ msgstr "Geçiş noktasını uzatmak için farenin sol tuşuna basılı "
 #: StatusBarText.resx, ControlForMoveAllControls
 msgid "Click the left mouse button on a control or registration "
 "mark to move to a new location"
-msgstr ""
+msgstr "Yeni bir konuma taşımak için bir kontrol veya kayıt "
+"işaretinin üzerinde sol fare düğmesine tıklayın"
 
 #: StatusBarText.resx, NewLocationForMoveAllControls
 msgid "Click the left mouse button on the new location for the "
 "control or registration mark"
-msgstr ""
+msgstr "Kontrol veya kayıt işaretinin yeni konumu üzerinde farenin "
+"sol tuşuna tıklayın"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."

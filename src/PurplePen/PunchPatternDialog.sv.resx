@@ -121,7 +121,7 @@
     <value>Stämpelkort layout...</value>
   </data>
   <data name="punchPatternsLabel.Text" xml:space="preserve">
-    <value>Klicka på en kontrollkod i listan på vänstra sidan och designa stämpelmönstret på högra sidan. Röda koder anger kontroller som inte har något definierat stämpelmönster.</value>
+    <value>Klicka på en kontrollkod i listan till vänster och designa stämpelmallen till höger. Röda koder anger kontroller som saknar en definierad stämpelmall.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Stämpelmönster</value>

@@ -178,7 +178,7 @@
     <value>IOF standart boyutlarını kullan</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Kalem Boyutu</value>
+    <value>Nesne Boyutu</value>
   </data>
   <data name="checkBoxBlendPurple.Text" xml:space="preserve">
     <value>Mor ile temel harita renklerini karıştırın</value>

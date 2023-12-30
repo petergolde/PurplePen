@@ -232,10 +232,10 @@
     <value>自动编号</value>
   </data>
   <data name="ChangePunchPatterns" xml:space="preserve">
-    <value>更改机械打卡器</value>
+    <value>更改机械打卡器针脚排列</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>更改机械打卡布局</value>
+    <value>更改机械打卡纸布局</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>设置打印区域</value>
@@ -311,5 +311,11 @@
   </data>
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
     <value>发布到Livelox</value>
+  </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>移动所有点标</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>添加地图切换</value>
   </data>
 </root>

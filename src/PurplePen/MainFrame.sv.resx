@@ -307,10 +307,13 @@
     <value>&amp;Kontroll</value>
   </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>&amp;Mål</value>
+    <value>Slut&amp;för</value>
   </data>
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Definition</value>
+  </data>
+  <data name="addMapFlipMenuItem.Text" xml:space="preserve">
+    <value>Kartvändning vid kontrollpunkt</value>
   </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Kartbyte vid &amp;kontrollpunkt</value>
@@ -389,6 +392,9 @@
   </data>
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>Ta bort &amp;oanvända kontroller...</value>
+  </data>
+  <data name="moveAllControlsMenu.Text" xml:space="preserve">
+    <value>Flytta alla kontroller...</value>
   </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>Stämpel&amp;mönster...</value>
@@ -558,6 +564,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Typsnittsmått</value>
   </data>
+  <data name="missingTranslationsMenuItem.Text" xml:space="preserve">
+    <value>Saknade beskrivningsöversättningar</value>
+  </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Krasch</value>
   </data>
@@ -620,6 +629,9 @@
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lägg till kontrollbeskrivning</value>
+  </data>
+  <data name="mapFlipMenuItem.Text" xml:space="preserve">
+    <value>Kartvändning vid kontrollpunkt</value>
   </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Kartbyte vid kontrollpunkt</value>

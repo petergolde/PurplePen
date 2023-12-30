@@ -120,7 +120,55 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Vazgeç</value>
   </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>é</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>é</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>é</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>é</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>é</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Taşınacak ilk kontrolü veya kayıt işaretini seçin</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>İkinci kontrol/işaret için yeni konum seçin</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Yeni konumları onaylayın</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>Çevirme</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Ölçek:</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Y Ofset:</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>X Ofset:</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>Taşınacak ikinci kontrolü veya kayıt işaretini seçin</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>İlk kontrol/hedef için yeni konum seçin</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Geri Dön</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Onaylamak</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Tüm Kontol Noktalarını Taşı</value>
   </data>
 </root>

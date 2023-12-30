@@ -621,6 +621,9 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Lisää rastinmääritteet</value>
   </data>
+  <data name="mapFlipMenuItem.Text" xml:space="preserve">
+    <value>Kartankääntö rastilla</value>
+  </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Kartanvaihto rastilla</value>
   </data>
