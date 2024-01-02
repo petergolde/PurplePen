@@ -10,5 +10,5 @@ Unistall previous version - https://learn.microsoft.com/en-us/windows/apps/deskt
 Notify users when new version is available: https://learn.microsoft.com/en-us/windows/msix/store-developer-package-update
    Disable current auto-update and use this instead.
 
-
+Update images with better ones.
 
