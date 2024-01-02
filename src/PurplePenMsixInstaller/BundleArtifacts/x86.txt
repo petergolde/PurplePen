@@ -1,0 +1,1 @@
+MainPackage=C:\Users\peter\Documents\Programs\PurplePen\src\PurplePenMsixInstaller\bin\x86\Release\PurplePenMsixInstaller_1.0.4.0_x86.msix

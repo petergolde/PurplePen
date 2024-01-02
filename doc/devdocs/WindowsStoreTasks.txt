@@ -1,0 +1,14 @@
+Things to deal with for Windows Store packaging:
+
+Help file - build needs to put help file in the correct place. 
+
+Fonts - need to install fonts; requires manifest and contacting support. https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions#fonts
+Redirect existing shortcuts - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions
+File associations - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/integrate-packaged-app-with-file-explorer
+Unistall previous version - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-distribute
+
+Notify users when new version is available: https://learn.microsoft.com/en-us/windows/msix/store-developer-package-update
+   Disable current auto-update and use this instead.
+
+
+
