@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Graphics2DStd</AssemblyName>
+    <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
 
   <Import Project="..\Graphics2D-Shared\Graphics2D-Shared.projitems" Label="Shared" />

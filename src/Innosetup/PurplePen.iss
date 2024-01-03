@@ -726,6 +726,7 @@ Source: "{#BuildDir}\DotSpatial.Projections.dll"; DestDir: "{app}"; Flags: ignor
 Source: "{#BuildDir}\GDIPlusNative.dll"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\GDIPlusNative64.dll"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\Graphics2D.dll"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "{#BuildDir}\ICSharpCode.SharpZipLib.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BuildDir}\Map_GDIPlus.dll"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\Map_PDF.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BuildDir}\Map_WPF.dll"; DestDir: "{app}"; Flags: ignoreversion

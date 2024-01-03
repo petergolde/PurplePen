@@ -16,5 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.txt" />
+    <None Include="Output\.gitkeep" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@ bin
 obj
 Debug
 Release
+StorePkg
 x64/
 build/
 *_temp.*
@@ -39,15 +40,12 @@ src/PPenDXCore.Solution
 src/SetupIS/SetupIS
 .bzr/
 
+**/.vs
 Thumbs.db
-src/.vs/
-src/Tools/SymbolImages/.vs
 *.opendb
 *.db
-src/Tools/SignHelper/.vs/
 src/Innosetup/output/
-src/Tools/TranslateTool/.vs/
-/.vs
+
 
 # Visual C++ cache files
 ipch/
