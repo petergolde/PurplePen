@@ -644,7 +644,7 @@ end;
 
 #define MyAppSetupName 'Purple Pen'
 #define MyAppName "Purple Pen"
-#define MyAppVersion "3.5.0.500"
+#define MyAppVersion "3.5.1.100"
 #define MyAppPublisher "Golde Software"
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
@@ -803,10 +803,10 @@ Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [Registry]
-Root: HKCR; SubKey: ".ppen"; ValueType: string; ValueData: "Purple Pen Files"; Flags: uninsdeletekey
-Root: HKCR; SubKey: "Purple Pen Files"; ValueType: string; ValueData: "Purple Pen Event File"; Flags: uninsdeletekey
-Root: HKCR; SubKey: "Purple Pen Files\Shell\Open\Command"; ValueType: string; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
-Root: HKCR; Subkey: "Purple Pen Files\DefaultIcon"; ValueType: string; ValueData: "{app}\{#MyAppExeName},0"; Flags: uninsdeletevalue
+Root: HKCR; SubKey: ".ppen"; ValueType: string; ValueData: "PurplePen.PurplePenEvent"; Flags: uninsdeletekey
+Root: HKCR; SubKey: "PurplePen.PurplePenEvent"; ValueType: string; ValueData: "Purple Pen Event File"; Flags: uninsdeletekey
+Root: HKCR; SubKey: "PurplePen.PurplePenEvent\Shell\Open\Command"; ValueType: string; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
+Root: HKCR; Subkey: "PurplePen.PurplePenEvent\DefaultIcon"; ValueType: string; ValueData: "{app}\{#MyAppExeName},0"; Flags: uninsdeletevalue
 
 [CustomMessages]
 DependenciesDir=MyProgramDependencies
