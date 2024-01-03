@@ -49,6 +49,11 @@ namespace PurplePen
 
             this.versionLabel.Text = string.Format(MiscText.VersionLabel, Util.PrettyVersionString(VersionNumber.Current));
             this.bitnessLabel.Text = Environment.Is64BitProcess ? "64-bit" : "32-bit";
+#if MSSTORE
+            this.bitnessLabel.Text += " (Windows Store)";
+#else
+            this.bitnessLabel.Text += " (Standalone Setup)";
+#endif
         }
 
         private void licenseButton_Click(object sender, EventArgs e)

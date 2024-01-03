@@ -105,3 +105,5 @@ src/.vs/
 /src/TestFiles/punchcards/descpdf1.pdf
 /src/TestFiles/punchcards/descpdf2.pdf
 /src/PurplePenMsixInstaller/AppPackages
+/src/PurplePenMsixInstaller/BundleArtifacts/x64.txt
+/src/PurplePenMsixInstaller/BundleArtifacts/x86.txt
