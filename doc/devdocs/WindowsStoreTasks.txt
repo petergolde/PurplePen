@@ -5,11 +5,13 @@ DONE Help file - build needs to put help file in the correct place.
 Fonts - need to install fonts; requires manifest and contacting support. https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions#fonts
 DONE Redirect existing shortcuts - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-extensions
 DONE File associations - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/integrate-packaged-app-with-file-explorer
-  -- Prog Id redirection doesn't seem to work. 
-Unistall previous version - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-distribute
+  -- Prog Id redirection doesn't seem to work, but implemented anyway. 
+DONE Uninstall previous version - https://learn.microsoft.com/en-us/windows/apps/desktop/modernize/desktop-to-uwp-distribute
 
-Notify users when new version is available: https://learn.microsoft.com/en-us/windows/msix/store-developer-package-update
-   Disable current auto-update and use this instead.
+CODED/UNTESTED Notify users when new version is available: https://learn.microsoft.com/en-us/windows/msix/store-developer-package-update
+DONE Disable current auto-update and use this instead.
+
+Non-store version should direct people to store version if on Windows 10 of late enough version and an update is available.
 
 Update images with better ones.
 

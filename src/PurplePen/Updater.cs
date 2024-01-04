@@ -40,11 +40,26 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using Windows.Foundation;
+using Windows.Services.Store;
+
 
 namespace PurplePen
 {
+#if MSSTORE
+    // It seems like I should be able to reference something to get this, but I can't figure it out and this seems to work.
+    [ComImport]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
+    internal interface IInitializeWithWindow
+    {
+        void Initialize(IntPtr hwnd);
+    }
+#endif
+
     // Check for new updates, download and run the installer.
     static class Updater
     {
@@ -54,6 +69,9 @@ namespace PurplePen
         private const string latestVersionName = "latest_version.txt";
         private const string latestPreleaseName = "latest_prerelease_version.txt";
 
+        // Key for our uninstaller in the registry. Used to see if we should uninstall the standalone version.
+        private const string uninstallKey = "{347D1E62-7134-4827-9679-4952BEC91C95}_is1";  
+
         // Directly inside temp directory to store downloaded versions.
         private const string directoryName = "PurplePen";
 
@@ -62,10 +80,19 @@ namespace PurplePen
 
         private class CheckResults
         {
+#if MSSTORE
+            // These are for the store version.
+            public string UninstallProgramName;       // If non-null, name of program to uninstall.
+            public string UninstallProgramArguments;  // If non-null, arguments to uninstall program.
+            public bool NewStoreVersionAvailable;     // True if a new store version is available.
+#else
+            // These are for the non-store version.
             public string CurrentVersion;
             public string CurrentFileName;
+            public string CurrentStoreDownloadUrl;
             public string PrereleaseVersion;
             public string PrereleaseFileName;
+#endif
         }
 
         // If non-null, controller to check to see if we can save.
@@ -82,6 +109,56 @@ namespace PurplePen
             }
         }
 
+#if MSSTORE
+        // Set the window on the store context, so that the store can show UI.
+        private static void SetWindowOnStoreContext(StoreContext storeContext)
+        {
+            Form mainForm = Application.OpenForms.Cast<Form>().First(x => x.Visible && x.Enabled);
+            ((IInitializeWithWindow)(object)storeContext).Initialize(mainForm.Handle);
+        }
+
+        // Ask user whether to uninstall the standalone version, return true if user wants to.
+        private static bool AskToUninstallOldVersion()
+        {
+            // Ask to see if user wants to update.
+            string message = string.Format(MiscText.UninstallNonStoreVersion);
+            DialogResult answer = MessageBox.Show(message, MiscText.AppTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (answer != DialogResult.Yes) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        private static string TrimMatchingQuotes(string input)
+        {
+            if ((input.Length >= 2) &&
+                (input[0] == '"') && (input[input.Length - 1] == '"'))
+                return input.Substring(1, input.Length - 2);
+
+            return input;
+        }
+
+        private static string[] SplitCommandLine(string s)
+        {
+            bool inQuotes = false;
+
+            for (int i = 0; i < s.Length; i++) {
+                if (s[i] == '"') {
+                    inQuotes = !inQuotes;
+                }
+
+                if (!inQuotes && s[i] == ' ') {
+                    return new string[] { TrimMatchingQuotes(s.Substring(0, i)), s.Substring(i + 1) };
+                }
+            }
+
+            return new string[] { TrimMatchingQuotes(s), "" };
+        }
+#endif
+
+#if !MSSTORE
         private static void AskToDownload(string versionNumber, string fileName)
         {
             // Ask to see if user wants to update.
@@ -200,19 +277,51 @@ namespace PurplePen
             }
             catch (IOException) { }
         }
+#endif
 
         static void versionCheckWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             // The version check has completed. The result is either null, or the version string of the new version.
             if (!e.Cancelled && e.Error == null && e.Result != null) {
                 CheckResults results = (CheckResults)e.Result;
+
+#if MSSTORE
+                if (results.NewStoreVersionAvailable) {
+                    StoreContext storeContext = StoreContext.GetDefault();
+                    SetWindowOnStoreContext(storeContext);
+
+                    IReadOnlyList<StorePackageUpdate> updates = storeContext.GetAppAndOptionalStorePackageUpdatesAsync().GetResults();
+                    IAsyncOperationWithProgress<StorePackageUpdateResult, StorePackageUpdateStatus> downloadOperation =
+                        storeContext.RequestDownloadAndInstallStorePackageUpdatesAsync(updates);
+                    StorePackageUpdateResult result = downloadOperation.AsTask().Result;
+                }
+
+                if (results.UninstallProgramName != null) {
+                    bool uninstall = AskToUninstallOldVersion();
+
+                    if (uninstall) {
+                        // Uninstall the standalone version.
+                        Process process = new Process();
+                        ProcessStartInfo startInfo = new ProcessStartInfo();
+                        process.StartInfo.FileName = results.UninstallProgramName;
+                        process.StartInfo.Arguments = results.UninstallProgramArguments;
+                        try {
+                            process.Start();
+                            process.WaitForExit();
+                        }
+                        catch (Exception) {
+                            // Ignore errors.
+                        }
+                    }
+                }
+#else
                 if (results.CurrentVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.CurrentVersion) < 0) {
                     AskToDownload(results.CurrentVersion, results.CurrentFileName);
                 }
-                if (results.PrereleaseVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.PrereleaseVersion) < 0 && Util.SameExceptRevision(VersionNumber.Current, results.PrereleaseVersion)) {
+                else if (results.PrereleaseVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.PrereleaseVersion) < 0 && Util.SameExceptRevision(VersionNumber.Current, results.PrereleaseVersion)) {
                     AskToDownload(results.PrereleaseVersion, results.PrereleaseFileName);
                 }
-                
+#endif
             }
 
             versionCheckWorker.Dispose();
@@ -221,12 +330,49 @@ namespace PurplePen
 
         static void versionCheckWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            WebClient client = new WebClient();
+
+#if MSSTORE
+            // For the store version, we don't check a file for updates. 
+            // We do two other things:
+            //   1. Check if a new store version is available
+            //   2. Check if the standalone version is installed, so we could uninstall it.
+            CheckResults results = new CheckResults();
+
+            try {
+                StoreContext storeContext = StoreContext.GetDefault();
+                IReadOnlyList<StorePackageUpdate> updates = storeContext.GetAppAndOptionalStorePackageUpdatesAsync().GetResults();
+
+                results.NewStoreVersionAvailable = (updates.Count > 0); // UNDONE: Check if a new store version is available.
+            }
+            catch {
+                results.NewStoreVersionAvailable = false;
+            }
+
+            //Tou can find your uninstall string at one of these two locations.
+            String uninstallString = (String)Microsoft.Win32.Registry.GetValue
+                (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\" + uninstallKey, "UninstallString", null);
+            if (uninstallString == null) {
+                uninstallString = (String)Microsoft.Win32.Registry.GetValue
+                (@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\" + uninstallKey, "UninstallString", null);
+            }
+
+            //Detect if the previous version of the Desktop application is installed.
+            if (uninstallString != null) {
+                string[] uninstallArgs = SplitCommandLine(uninstallString);
+                results.UninstallProgramName = uninstallArgs[0];
+                if (uninstallArgs.Length > 1) {
+                    results.UninstallProgramArguments = uninstallArgs[1];
+                }
+            }
+#else
+            // FOr the non-store version, we check for updates by downloading a file from the server.
+
             DeletePreviouslyDownloadedFiles();
 
             // We need to check to see if a new version is available. We do this in the background.
             // If a new version is available, the version number is returned as the result of the background
             // processing. If no new version is available, null is returned.
-            WebClient client = new WebClient();
             CheckResults results = new CheckResults();
 
             // Download latest version.
@@ -254,10 +400,12 @@ namespace PurplePen
                 string[] lines = latestVersion.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 string version = lines.Length > 0 ? lines[0] : null;
                 string filename = lines.Length > 1 ? lines[1] : null;
+                string storeDownloadUrl = lines.Length > 2 ? lines[2] : null;
 
                 if (!string.IsNullOrEmpty(version) && !string.IsNullOrEmpty(filename)) {
                     results.CurrentVersion = version;
                     results.CurrentFileName = filename;
+                    results.CurrentStoreDownloadUrl = storeDownloadUrl;
                 }
             }
 
@@ -272,14 +420,20 @@ namespace PurplePen
                     results.PrereleaseFileName = filename;
                 }
             }
+#endif
 
             // Collect anonymous statistics, so we can know number of time the program is invoked, and from where, which version and language people are using.
             string uiLanguage = Settings.Default.UILanguage;
             if (string.IsNullOrEmpty(uiLanguage))
                 uiLanguage = CultureInfo.CurrentUICulture.Name;
 
+            string versionString = VersionNumber.Current;
+#if MSSTORE
+            versionString += "S";   // Add S to indicate store version.
+#endif
+
             string status = string.Format("{{\"Version\":\"{0}\", \"Locale\":\"{1}\", \"TimeZone\":\"{2}\", \"UILang\":\"{3}\", \"ClientId\":\"{4}\", \"OSVersion\":\"{5}\"}}",
-                JsonEncode(VersionNumber.Current),
+                JsonEncode(versionString),
                 JsonEncode(CultureInfo.CurrentCulture.Name),
                 JsonEncode(TimeZone.CurrentTimeZone.StandardName),
                 JsonEncode(uiLanguage),

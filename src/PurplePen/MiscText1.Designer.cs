@@ -1424,6 +1424,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An older version of Purple Pen is still installed. To prevent confusion caused by having two versions of Purple Pen installed, it is strongly recommended that the older version be removed. Remove it now?.
+        /// </summary>
+        internal static string UninstallNonStoreVersion {
+            get {
+                return ResourceManager.GetString("UninstallNonStoreVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Defined.
         /// </summary>
         internal static string UserDefined {

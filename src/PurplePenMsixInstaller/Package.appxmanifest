@@ -10,7 +10,7 @@
 
   <Identity
     Publisher="CN=Peter Golde Test Certificate"
-    Version="1.0.8.0"  Name="45613PurplePen.PurplePen"/>
+    Version="1.0.10.0"  Name="45613PurplePen.PurplePen"/>
 
   <Properties>
     <DisplayName>Purple Pen</DisplayName>
