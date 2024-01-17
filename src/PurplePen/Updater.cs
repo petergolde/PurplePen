@@ -70,7 +70,7 @@ namespace PurplePen
         private const string latestPreleaseName = "latest_prerelease_version.txt";
 
         // Key for our uninstaller in the registry. Used to see if we should uninstall the standalone version.
-        private const string uninstallKey = "{347D1E62-7134-4827-9679-4952BEC91C95}_is1";  
+        private const string uninstallKey = "{347D1E62-7134-4827-9679-4952BEC91C95}_is1";
 
         // Directly inside temp directory to store downloaded versions.
         private const string directoryName = "PurplePen";
@@ -288,12 +288,16 @@ namespace PurplePen
 #if MSSTORE
                 if (results.NewStoreVersionAvailable) {
                     StoreContext storeContext = StoreContext.GetDefault();
-                    SetWindowOnStoreContext(storeContext);
 
-                    IReadOnlyList<StorePackageUpdate> updates = storeContext.GetAppAndOptionalStorePackageUpdatesAsync().GetResults();
+                    /* Can't test this until we have a real version in the store. */
+#if false
+                    // Should we do a message box first to ask user if they want to update? Not sure what this message looks like.
+                    IReadOnlyList<StorePackageUpdate> updates = storeContext.GetAppAndOptionalStorePackageUpdatesAsync().AsTask().Result;
+                    SetWindowOnStoreContext(storeContext);
                     IAsyncOperationWithProgress<StorePackageUpdateResult, StorePackageUpdateStatus> downloadOperation =
-                        storeContext.RequestDownloadAndInstallStorePackageUpdatesAsync(updates);
+                            storeContext.RequestDownloadAndInstallStorePackageUpdatesAsync(updates);
                     StorePackageUpdateResult result = downloadOperation.AsTask().Result;
+#endif
                 }
 
                 if (results.UninstallProgramName != null) {
@@ -315,7 +319,7 @@ namespace PurplePen
                     }
                 }
 #else
-                if (results.CurrentVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.CurrentVersion) < 0) {
+                    if (results.CurrentVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.CurrentVersion) < 0) {
                     AskToDownload(results.CurrentVersion, results.CurrentFileName);
                 }
                 else if (results.PrereleaseVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.PrereleaseVersion) < 0 && Util.SameExceptRevision(VersionNumber.Current, results.PrereleaseVersion)) {
@@ -339,11 +343,15 @@ namespace PurplePen
             //   2. Check if the standalone version is installed, so we could uninstall it.
             CheckResults results = new CheckResults();
 
+            results.NewStoreVersionAvailable = false;
             try {
+#if false
+                // Can't test this until we have a real version in the store.
                 StoreContext storeContext = StoreContext.GetDefault();
                 IReadOnlyList<StorePackageUpdate> updates = storeContext.GetAppAndOptionalStorePackageUpdatesAsync().GetResults();
 
                 results.NewStoreVersionAvailable = (updates.Count > 0); // UNDONE: Check if a new store version is available.
+#endif
             }
             catch {
                 results.NewStoreVersionAvailable = false;
@@ -366,9 +374,9 @@ namespace PurplePen
                 }
             }
 #else
-            // FOr the non-store version, we check for updates by downloading a file from the server.
+                // FOr the non-store version, we check for updates by downloading a file from the server.
 
-            DeletePreviouslyDownloadedFiles();
+                DeletePreviouslyDownloadedFiles();
 
             // We need to check to see if a new version is available. We do this in the background.
             // If a new version is available, the version number is returned as the result of the background
