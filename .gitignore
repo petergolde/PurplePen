@@ -107,3 +107,5 @@ src/.vs/
 /src/PurplePenMsixInstaller/AppPackages
 /src/PurplePenMsixInstaller/BundleArtifacts/x64.txt
 /src/PurplePenMsixInstaller/BundleArtifacts/x86.txt
+/src/PurplePenMsixInstaller/BundleArtifacts/Upload/x64.txt
+/src/PurplePenMsixInstaller/BundleArtifacts/Upload/x86.txt
