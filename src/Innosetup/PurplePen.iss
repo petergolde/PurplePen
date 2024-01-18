@@ -645,7 +645,7 @@ end;
 #define MyAppSetupName 'Purple Pen'
 #define MyAppName "Purple Pen"
 #define MyAppVersion "3.5.1.100"
-#define MyAppPublisher "Golde Software"
+#define MyAppPublisher "Purple Pen Software"
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
 #define BuildDir "..\PurplePen\bin\Release"
