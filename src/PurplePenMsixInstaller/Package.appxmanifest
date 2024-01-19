@@ -11,7 +11,7 @@
 
   <Identity
     Publisher="CN=Peter Golde Test Certificate"
-    Version="1.0.17.0"  Name="45613PurplePen.PurplePen"/>
+    Version="1.0.20.0"  Name="45613PurplePen.PurplePen"/>
 
   <Properties>
     <DisplayName>Purple Pen</DisplayName>
