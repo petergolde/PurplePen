@@ -11,7 +11,7 @@
 
   <Identity
     Publisher="CN=Peter Golde Test Certificate"
-    Version="1.0.20.0"  Name="45613PurplePen.PurplePen"/>
+    Version="1.0.21.0"  Name="45613PurplePen.PurplePen"/>
 
   <Properties>
     <DisplayName>Purple Pen</DisplayName>
@@ -96,29 +96,6 @@
           </uap3:FileTypeAssociation>
         </uap:Extension>
 
-        <uap4:Extension Category="windows.sharedFonts">
-          <uap4:SharedFonts>
-            <uap4:Font File="PurplePen\fonts\Roboto-Regular.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-Bold.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-Italic.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-BoldItalic.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-Black.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-BlackItalic.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-Light.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-LightItalic.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-Medium.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-MediumItalic.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-Thin.ttf" />
-            <uap4:Font File="PurplePen\fonts\Roboto-ThinItalic.ttf" />
-            <uap4:Font File="PurplePen\fonts\RobotoCondensed-Regular.ttf" />
-            <uap4:Font File="PurplePen\fonts\RobotoCondensed-Bold.ttf" />
-            <uap4:Font File="PurplePen\fonts\RobotoCondensed-Italic.ttf" />
-            <uap4:Font File="PurplePen\fonts\RobotoCondensed-BoldItalic.ttf" />
-            <uap4:Font File="PurplePen\fonts\RobotoCondensed-Light.ttf" />
-            <uap4:Font File="PurplePen\fonts\RobotoCondensed-LightItalic.ttf" />
-          </uap4:SharedFonts>
-        </uap4:Extension>
-        
       </Extensions>
     </Application>
   </Applications>
