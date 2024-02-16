@@ -675,8 +675,8 @@ namespace PurplePen
                 break;
 
             case ControlPointKind.Normal:
-                // && false is there to disable map exchange start course objects for now until IOF puts them in the standard.
-                if (exchangeStart && appearance.mapStandard != "2000" && false) {
+                // If it's an exchange start, use the triangle in a circle symbol.
+                if (exchangeStart && appearance.mapStandard != "2000") {
                     // This is a map exchange at a control (exchange or flip). Use the map exchange start course object.
                     courseObj = new ExchangeStartCourseObj(controlId, courseControlId, courseObjRatio, appearance, gaps, double.IsNaN(angleOut) ? 0 : (float)Geometry.RadiansToDegrees(angleOut), control.location);
                 }

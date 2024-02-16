@@ -119,6 +119,30 @@ namespace PurplePen.Tests
             CheckCourse(filename, courseDesignator, addAllControls, testName + "_special", rect, specialAppearance);
         }
 
+        // Do CheckCourse for normal and special appearances, ISOM 2017.
+        void CheckCourseBothAppearances2017(string filename, CourseDesignator courseDesignator, bool addAllControls, string testName, RectangleF rect)
+        {
+            CourseAppearance specialAppearance;
+
+            // Special appearance to test the usage of CourseAppearance.
+            specialAppearance = new CourseAppearance();
+            specialAppearance.mapStandard = "2017";
+            specialAppearance.controlCircleSize = 1.6F;  //big control circle
+            specialAppearance.lineWidth = 0.2F; // thin lines
+            specialAppearance.numberHeight = 2F; // really big numbers.
+            specialAppearance.numberBold = true; // bold numbers
+            specialAppearance.numberOutlineWidth = 0.13F;
+            specialAppearance.autoLegGapSize = 0.0F;
+            specialAppearance.useDefaultPurple = false;
+            specialAppearance.purpleC = 0.32F;
+            specialAppearance.purpleY = 1.00F;
+            specialAppearance.purpleM = 0;
+            specialAppearance.purpleK = 0.30F;
+
+            CheckCourse(filename, courseDesignator, addAllControls, testName + "_2017", rect, std2017CourseAppearance);
+            CheckCourse(filename, courseDesignator, addAllControls, testName + "_2017_special", rect, specialAppearance);
+        }
+
 
         [TestMethod]
         public void StartTriangle()
@@ -305,6 +329,16 @@ namespace PurplePen.Tests
             CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 1), false, "exch_part2", new RectangleF(-45, -60, 190, 190));
             CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 2), false, "exch_part3", new RectangleF(-45, -60, 190, 190));
             CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 3), false, "exch_part4", new RectangleF(-45, -60, 190, 190));
+        }
+
+        [TestMethod]
+        public void MapExchange2017()
+        {
+            CheckCourseBothAppearances2017("courserenderer\\mapexchange2.ppen", Designator(6), false, "exch_allparts", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances2017("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 0), false, "exch_part1", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances2017("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 1), false, "exch_part2", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances2017("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 2), false, "exch_part3", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances2017("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(6), 3), false, "exch_part4", new RectangleF(-45, -60, 190, 190));
         }
 
         [TestMethod]

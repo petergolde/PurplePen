@@ -102,6 +102,7 @@ namespace PurplePen.Tests
 
             eventDB.Load(TestUtil.GetTestFile(testFileName));
             eventDB.Validate();
+            symbolDB.Standard = eventDB.GetEvent().descriptionStandard;
 
             CourseView courseView;
             courseView = CourseView.CreateViewingCourseView(eventDB, courseDesignator);
@@ -446,7 +447,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void MapExchangeFullDescription()
         {
-            TestCourseFormatter("descformatter\\mapexchange1.ppen", CourseId(6), true, 
+            TestCourseFormatter("descformatter\\mapexchange1.ppen", CourseId(6), true,
 @"      | Marymoor WIOL 2                               |   [Marymoor WIOL 2]
       |Course 5         |5.0 km           |           |   [Length 5.0 km]
 (  1) |start|     |     |  4.4|     |     |     |     |   [Start: clearing]
@@ -465,7 +466,7 @@ namespace PurplePen.Tests
 ( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
 ( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
 ( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
-( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 43) |                 15.6:                         |   [Flip map over]
 ( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
 ( 54) |          13.5control: 0 m                     |   [Map exchange at the control]
 ( 41) |   15|   41|     |  4.5|     |     |11.2NW|     |   [NW edge of thicket]
@@ -506,7 +507,7 @@ namespace PurplePen.Tests
 ( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
 ( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
 ( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
-( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 43) |                 15.6:                         |   [Flip map over]
 ");
         }
 
@@ -561,7 +562,7 @@ namespace PurplePen.Tests
 ( 36) |   11|   36|     |  4.9|     |     |     |     |   [Lone tree]
 ( 39) |   12|   39|     |  4.8|     |     |11.6S|     |   [S tip of copse]
 ( 43) |   13|   43| 0.1E|  3.5|  4.5| 10.1|     |     |   [E ditch and thicket crossing]
-( 43) |          13.5control: 0 m                     |   [Map exchange at the control]
+( 43) |                 15.6:                         |   [Flip map over]
 ( 43) |                 13.2: 400 m                   |   [Follow tapes 400 m between controls]
 ( 54) |   14|   54|     |  3.5|  4.5| 10.1|11.2NW|     |   [NW edge of ditch and thicket crossing]
 ( 54) |          13.5control: 0 m                     |   [Map exchange at the control]

@@ -69,6 +69,8 @@ namespace PurplePen.Tests
                     writer.Write(",{0,3}", controlView.courseControlIds[j]);
                 if (controlView.hiddenControl)
                     writer.Write(" hidden");
+                if (controlView.exchangeStart)
+                    writer.Write(" exchangeStart");
                 writer.WriteLine();
 
                 if (controlView.legTo != null) {
@@ -617,7 +619,7 @@ Total Length=5002.4  Part Length=2643.7  Total Climb=-1  ScoreColumn=-1  Total S
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=1
 Total Length=5002.4  Part Length=1195.6  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=4
- 0: [ 0] Ids: 35,611
+ 0: [ 0] Ids: 35,611 exchangeStart
     Legs: (Next:1,Id:4,length:128.02)  
  1: [10] Ids: 37,612
     Legs: (Next:2,Id:0,length:298.39)  
@@ -636,7 +638,7 @@ Total Length=5002.4  Part Length=1195.6  Total Climb=-1  ScoreColumn=-1  Total S
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=2
 Total Length=5002.4  Part Length=401.22  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=2
- 0: [13] Ids: 43,615
+ 0: [13] Ids: 43,615 exchangeStart
     Legs: (Next:1,Id:2,length:401.22)  
  1: [14] Ids: 54,616
 Extra course control 620
@@ -650,7 +652,7 @@ Extra course control 620
             expected =
 @"Name='Course 5', Kind='Normal', CourseId=6, Part=3
 Total Length=5002.4  Part Length=761.76  Total Climb=-1  ScoreColumn=-1  Total Score=0  Total Controls=4
- 0: [14] Ids: 54,616
+ 0: [14] Ids: 54,616 exchangeStart
     Legs: (Next:1,Id:3,length:257.78)  
  1: [15] Ids: 41,617
     Legs: (Next:2,Id:0,length:227.2)  
