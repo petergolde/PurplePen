@@ -190,4 +190,7 @@
   <data name="Livelox64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Livelox64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ExchangeStart_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ExchangeStart_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

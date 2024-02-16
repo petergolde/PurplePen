@@ -1443,7 +1443,7 @@ namespace PurplePen
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Continuing point", "716", glyph, false);
-            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Control_OcadToolbox);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.ExchangeStart_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
         }
