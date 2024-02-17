@@ -2730,9 +2730,11 @@ namespace PurplePen
         public PointF centerPoint;
 
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlNumberFont.Name,
-                   appearance.numberBold ? NormalCourseAppearance.controlNumberFontBold.Style : NormalCourseAppearance.controlNumberFont.Style, SpecialColor.Purple,
-                   NormalCourseAppearance.controlNumberFont.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, 
+                   appearance.numberRoboto ? NormalCourseAppearance.controlNumberFontRoboto.Name : NormalCourseAppearance.controlNumberFontArial.Name,
+                   appearance.numberBold ? NormalCourseAppearance.controlNumberFontRobotoBold.Style : NormalCourseAppearance.controlNumberFontRoboto.Style, 
+                   SpecialColor.Purple,
+                   NormalCourseAppearance.controlNumberFontRoboto.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;

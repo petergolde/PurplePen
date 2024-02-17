@@ -457,16 +457,22 @@
     <value>10</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Regular</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Bold</value>
+    <value>Arial Bold</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items2" xml:space="preserve">
+    <value>Roboto</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items3" xml:space="preserve">
+    <value>Roboto Bold</value>
   </data>
   <data name="comboBoxControlNumberStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 154</value>
+    <value>170, 154</value>
   </data>
   <data name="comboBoxControlNumberStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 21</value>
+    <value>137, 21</value>
   </data>
   <data name="comboBoxControlNumberStyle.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1306,6 +1312,6 @@
     <value>CourseAppearanceDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.3.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.OkCancelDialog, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

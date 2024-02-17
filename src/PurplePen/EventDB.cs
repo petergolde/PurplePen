@@ -2360,6 +2360,7 @@ namespace PurplePen
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
         public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
+        public bool numberRoboto = false;               // Use Roboto font for numbers?
         public float numberOutlineWidth = 0.0F;             // Width of outline
         public float autoLegGapSize = 3.5F;             // Size in mm of automatic gap in legs.
 
@@ -2433,6 +2434,8 @@ namespace PurplePen
             if (numberHeight != other.numberHeight)
                 return false;
             if (numberBold != other.numberBold)
+                return false;
+            if (numberRoboto != other.numberRoboto)
                 return false;
             if (numberOutlineWidth != other.numberOutlineWidth)
                 return false;
@@ -2812,6 +2815,7 @@ namespace PurplePen
             xmloutput.WriteAttributeString("scale-sizes-circle-gaps", XmlConvert.ToString(true));  // mark that circle gaps scales have taken scaling into account.
             if (courseAppearance.numberBold)
                 xmloutput.WriteAttributeString("number-bold", XmlConvert.ToString(courseAppearance.numberBold));
+            xmloutput.WriteAttributeString("number-font", courseAppearance.numberRoboto ? "Roboto" : "Arial");
             if (courseAppearance.numberOutlineWidth > 0)
                 xmloutput.WriteAttributeString("number-outline-width", XmlConvert.ToString(courseAppearance.numberOutlineWidth));
             xmloutput.WriteAttributeString("auto-leg-gap-size", XmlConvert.ToString(courseAppearance.autoLegGapSize));
@@ -2941,6 +2945,8 @@ namespace PurplePen
                         courseAppearance.itemScaling = (ItemScaling) Enum.Parse(typeof(ItemScaling), xmlinput.GetAttributeString("scale-sizes", "None"));
                         itemScalingAppliedToCircleGaps = xmlinput.GetAttributeBool("scale-sizes-circle-gaps", false);
                         courseAppearance.numberBold = xmlinput.GetAttributeBool("number-bold", false);
+                        string numberFont = xmlinput.GetAttributeString("number-font", "Roboto");
+                        courseAppearance.numberRoboto = (numberFont == "Roboto");
                         courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
                         courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
                         courseAppearance.purpleColorBlend = xmlinput.GetAttributeBool("blend-purple", false);

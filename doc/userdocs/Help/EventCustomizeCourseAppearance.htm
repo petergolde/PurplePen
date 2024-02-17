@@ -34,7 +34,15 @@ circles, start triangle, and the finish circle. The IOF standard is 0.35 mm.</p>
     <p><strong>Center dot diameter</strong>: If set to something higher than 0.00m (the IOF standard), places a dot of the indicated diameter in the center of the control circle. Although not typically used, it is useful for certain types of maps.</p>
 <p><strong>Control number height</strong>: Sets the height of digits used for 
 control numbers. The IOF standard is 4.0 mm.</p>
-    <p><strong>Control number style</strong>: Determines if the control number is regular or boldface. The IOF standard is regular.</p>
+    <p><strong>Control number style</strong>: Determines the style of the control number. There are four possible styles:
+       <ul>
+           <li><strong>Arial</strong> &mdash; Unbolded in the Arial font. This is the default, and the IOF standard defined in ISOM 2017.</li>
+           <li><strong>Arial Bold</strong> &mdash; Boldface in the Arial font. </li>
+           <li><strong>Roboto</strong> &mdash; Unbolded in the Roboto font. Although not the IOF standard, the Roboto font is more modern looking, better distinguishes digits such as 8 and 9, 5 and 6, and 
+               matches the font used in the control descriptions.</li>
+           <li><strong>Roboto Bold</strong> &mdash; Boldface in the Roboto font. </li>
+       </ul>
+    </p>
     <p><strong>White outline around numbers</strong>: If greater than zero, a white outline of the given width is placed around numbers to make them more visible against colored or complex backgrounds.
     A value between 0.1mm and 0.4mm usually works best.</p>
     <p><strong>Automatic leg gap size</strong>: If greater than zero, controls how much of a gap to automatically place when one leg crosses another leg. Set this to zero to disable placing automatic gaps in legs.</p>
@@ -62,7 +70,7 @@ each pigment used to create the purple color, from 0 to 100.</p>
     that have the "overprint" check mark applied to them. (In Open Orienteering Mapper, the option is called "knockout" and behaves in the reverse way). 
     Since OCAD does not display this result on screen, and its effect on printing is inconsistent, enabling this option
     may produce bad results with some maps. Purple Pen uses this option for screen display, printing, and PDF export. Turn this option on only if you are sure that 
-    the color table of your map is correctly created.</p>
+    the color table of your map is correctly created. Note that the IOF no longer recommends overprinting or blending colors when printing.</p>
 <p>&nbsp;</p>
 <p><strong>Note:</strong> the sizes of control circles and other feature are 
 calculated based on the scale the map will be printed at. If the circles appear 

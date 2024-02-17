@@ -58,7 +58,25 @@ namespace PurplePen
                     result.numberHeight = ((float) upDownNumberHeight.Value) / NormalCourseAppearance.nominalControlNumberHeight;
                 }
 
-                result.numberBold = (comboBoxControlNumberStyle.SelectedIndex == 1);
+                switch (comboBoxControlNumberStyle.SelectedIndex) {
+                case 0: 
+                    result.numberBold = false;
+                    result.numberRoboto = false; 
+                    break;
+                case 1: 
+                    result.numberBold = true; 
+                    result.numberRoboto = false;
+                    break;
+                case 2: 
+                    result.numberBold = false; 
+                    result.numberRoboto = true;
+                    break;
+                case 3: 
+                    result.numberBold = true; 
+                    result.numberRoboto = true;
+                    break;
+                }
+
                 result.numberOutlineWidth = ((float) upDownOutlineWidth.Value);
                 result.autoLegGapSize = ((float) upDownLegGapSize.Value);
                 switch (comboBoxScaleItemSizes.SelectedIndex) {
@@ -93,10 +111,14 @@ namespace PurplePen
                 upDownLineWidth.Value = (decimal) (NormalCourseAppearance.lineThickness * value.lineWidth);
                 upDownCenterDot.Value = (decimal)value.centerDotDiameter;
                 upDownNumberHeight.Value = (decimal) (NormalCourseAppearance.nominalControlNumberHeight * value.numberHeight);
-                if (value.numberBold)
-                    comboBoxControlNumberStyle.SelectedIndex = 1;
-                else
+                if (!value.numberBold && !value.numberRoboto)
                     comboBoxControlNumberStyle.SelectedIndex = 0;
+                else if (value.numberBold && !value.numberRoboto)
+                    comboBoxControlNumberStyle.SelectedIndex = 1;
+                else if (!value.numberBold && value.numberRoboto)
+                    comboBoxControlNumberStyle.SelectedIndex = 2;
+                else if (value.numberBold && value.numberRoboto)
+                    comboBoxControlNumberStyle.SelectedIndex = 3;
 
                 upDownOutlineWidth.Value = (decimal) value.numberOutlineWidth;
                 upDownLegGapSize.Value = (decimal) value.autoLegGapSize;
@@ -109,7 +131,7 @@ namespace PurplePen
                         comboBoxScaleItemSizes.SelectedIndex = 2; break;
                 }
 
-                checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.centerDotDiameter == 0.0F && value.numberBold == false);
+                checkBoxStandardSizes.Checked = (value.controlCircleSize == 1.0F && value.lineWidth == 1.0F && value.numberHeight == 1.0F && value.centerDotDiameter == 0.0F);
 
                 SetCurrentCMYK(value.purpleC, value.purpleM, value.purpleY, value.purpleK);
 
@@ -253,13 +275,18 @@ namespace PurplePen
                 grTarget.PopTransform();
 
                 // Calculate control number position
-                bool bold = NormalCourseAppearance.controlNumberFont.Bold;
-                bool italic = NormalCourseAppearance.controlNumberFont.Italic;
-                if (comboBoxControlNumberStyle.SelectedIndex == 1)
-                    bold = true;
+                bool bold = false;
+                bool italic = false;
+                string controlNumberFontName = "Arial";
+                switch (comboBoxControlNumberStyle.SelectedIndex) {
+                    case 0: bold = false; controlNumberFontName = "Arial"; break;
+                    case 1: bold = true; controlNumberFontName = "Arial"; break;
+                    case 2: bold = false; controlNumberFontName = "Roboto"; break;
+                    case 3: bold = true; controlNumberFontName = "Roboto"; break;
+                }   
 
                 object font = new object();
-                grTarget.CreateFont(font, NormalCourseAppearance.controlNumberFont.Name, NormalCourseAppearance.controlNumberHeightFactor * numberHeight, Util.GetTextEffects(bold, italic));
+                grTarget.CreateFont(font, controlNumberFontName, NormalCourseAppearance.controlNumberHeightFactor * numberHeight, Util.GetTextEffects(bold, italic));
 
                 string controlNumberText = "13";
                 PointF controlNumberLocation = new PointF(centerCircle.X + circleDiameter / 2 + NormalCourseAppearance.controlNumberCircleDistance, centerCircle.Y - numberHeight * 0.75F);

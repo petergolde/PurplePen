@@ -244,7 +244,9 @@
             this.comboBoxControlNumberStyle.FormattingEnabled = true;
             this.comboBoxControlNumberStyle.Items.AddRange(new object[] {
             resources.GetString("comboBoxControlNumberStyle.Items"),
-            resources.GetString("comboBoxControlNumberStyle.Items1")});
+            resources.GetString("comboBoxControlNumberStyle.Items1"),
+            resources.GetString("comboBoxControlNumberStyle.Items2"),
+            resources.GetString("comboBoxControlNumberStyle.Items3")});
             resources.ApplyResources(this.comboBoxControlNumberStyle, "comboBoxControlNumberStyle");
             this.comboBoxControlNumberStyle.Name = "comboBoxControlNumberStyle";
             this.comboBoxControlNumberStyle.SelectedIndexChanged += new System.EventHandler(this.comboBoxControlNumberStyle_SelectedIndexChanged);

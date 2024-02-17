@@ -279,8 +279,10 @@ namespace PurplePen
         // An Em Height of 5.57 yields the IOF specified 4mm for the height of a digit.
         public const float nominalControlNumberHeight = 4.0F;          // nominal height from top to bottom of a digit
         public const float controlNumberHeightFactor = 5.57F / 4.0F;  // scale factor from control number height to font EM size
-        public static readonly FontDesc controlNumberFont = new FontDesc("Roboto", false, false, controlNumberHeightFactor * nominalControlNumberHeight);
-        public static readonly FontDesc controlNumberFontBold = new FontDesc("Roboto", true, false, controlNumberHeightFactor * nominalControlNumberHeight);
+        public static readonly FontDesc controlNumberFontArial = new FontDesc("Arial", false, false, controlNumberHeightFactor * nominalControlNumberHeight);
+        public static readonly FontDesc controlNumberFontArialBold = new FontDesc("Arial", true, false, controlNumberHeightFactor * nominalControlNumberHeight);
+        public static readonly FontDesc controlNumberFontRoboto = new FontDesc("Roboto", false, false, controlNumberHeightFactor * nominalControlNumberHeight);
+        public static readonly FontDesc controlNumberFontRobotoBold = new FontDesc("Roboto", true, false, controlNumberHeightFactor * nominalControlNumberHeight);
 
         public const float controlNumberCircleDistance = 1.825F;   // default distance of control number from edge of control circle
 

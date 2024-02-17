@@ -512,6 +512,7 @@ namespace PurplePen.Tests
             e.allControlsDescKind = DescriptionKind.Text;
             e.descriptionLangId = "bg";
             e.courseAppearance.useOcadOverprint = true;
+            e.courseAppearance.numberRoboto = true;
             e.courseAppearance.itemScaling = ItemScaling.RelativeTo15000;
 
             undomgr.BeginCommand(198, "change event");
