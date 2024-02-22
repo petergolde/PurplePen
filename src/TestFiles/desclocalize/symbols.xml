@@ -30,7 +30,7 @@ for the symbols.
    plural-modifiers - true/false if the language uses plural forms of modifiers that modify plural nouns (default: false)
    gender-modifiers - true/false if the language uses gendered forms of modifiers depending on the 
                           gender of the object being modified (default: false)
-   genders - list of genders, seperated by commas, if gender-modifiers is true
+   genders - list of genders, separated by commas, if gender-modifiers is true
    
    
 

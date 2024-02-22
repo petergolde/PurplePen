@@ -642,7 +642,7 @@ namespace PurplePen.MapModel
             this.horizAlignment = horizAlignment;
             this.vertAlignment = vertAlignment;
 
-            // We break the text into lines seperated by paragraph marks. We also ignore an initial
+            // We break the text into lines separated by paragraph marks. We also ignore an initial
             // newline for OCAD compatibility. We can't just remove that on import, or else roundtripping
             // an object with two initial newlines wouldn't work.
             if (width > 0) {

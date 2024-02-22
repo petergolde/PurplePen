@@ -1914,7 +1914,7 @@ namespace PurplePen.MapModel
         // 3. holes when none are allowed.
         // If holes are allowed, counts how many there are.
         // Also returns if there are any cutout flags.
-        // CONDIER: we should somehow log these errors and show them to the user.
+        // CONSIDER: we should somehow log these errors and show them to the user.
 #if TEST
         internal
 #endif 

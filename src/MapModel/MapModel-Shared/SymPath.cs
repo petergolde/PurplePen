@@ -631,7 +631,7 @@ namespace PurplePen.MapModel
             return Math.Sqrt(delta1 * delta1 + delta2 * delta2);
         }
 
-        // Determines the Bizzarro distance between two points. This should be just the Pythagorian formula, but
+        // Determines the Bizzarro distance between two points. This should be just the Pythagorean formula, but
         // for unknown reasons OCAD uses this metric for text along a path, and for dashes along a path. It makes no sense AT ALL.
         internal static double BizzarroDistance(PointF point1, PointF point2)
         {
@@ -1848,7 +1848,7 @@ namespace PurplePen.MapModel
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < kinds.Length; i++) {
                 if (i != 0)
-                    builder.Append("--");          // seperate points with two dashes.
+                    builder.Append("--");          // separate points with two dashes.
 
                 switch (kinds[i]) {
                 case PointKind.Normal: builder.Append('N'); break;
