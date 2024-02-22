@@ -50,7 +50,7 @@ namespace PdfSharp.Pdf.Internal
     {
     }
 
-    public void AttatchDocument(PdfDocument.DocumentHandle handle)
+    public void AttachDocument(PdfDocument.DocumentHandle handle)
     {
       lock (this.documentHandles)
       {
