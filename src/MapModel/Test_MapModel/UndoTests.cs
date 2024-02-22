@@ -225,7 +225,7 @@ namespace PurplePen.MapModel.Tests
                 Assert.IsFalse(map.HideTemplates);
             }
 
-            using (map.UndoableWrite("Hiden Templates")) {
+            using (map.UndoableWrite("Hide Templates")) {
                 map.HideTemplates = true;
             }
 
