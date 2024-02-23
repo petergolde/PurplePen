@@ -458,7 +458,7 @@ namespace PdfSharp.Pdf
               // Is this an indirect reference to an object that not exists?
               //if (iref.Document == null)
               //{
-              //  Debug.WriteLine("Dead object dedected: " + iref.ObjectID.ToString());
+              //  Debug.WriteLine("Dead object detected: " + iref.ObjectID.ToString());
               //  PdfReference dead = DeadObject;
               //  iref.ObjectID = dead.ObjectID;
               //  iref.Document = this.document;

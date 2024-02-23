@@ -170,7 +170,7 @@
         <CourseName>A</CourseName>
         <CourseFamily>Open long</CourseFamily>
       </TeamMemberCourseAssignment>
-      <!-- Team members on leg 2 (which is run by three parallel team memebrs) are assigned the course C of course family Open short -->
+      <!-- Team members on leg 2 (which is run by three parallel team members) are assigned the course C of course family Open short -->
       <TeamMemberCourseAssignment>
         <Leg>2</Leg>
         <LegOrder>1</LegOrder>

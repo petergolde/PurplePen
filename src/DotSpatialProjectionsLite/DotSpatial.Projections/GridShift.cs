@@ -291,7 +291,7 @@ namespace DotSpatial.Projections
         /// <param name="iPhi">The cell index in the phi direction</param>
         /// <param name="iLam">The cell index in the lambda direction</param>
         /// <param name="table">The Table with the values</param>
-        /// <returns>A PhiLam that has the shift coefficeints.</returns>
+        /// <returns>A PhiLam that has the shift coefficients.</returns>
         private static PhiLam GetValue(int iPhi, int iLam, NadTable table)
         {
             if (iPhi < 0) iPhi = 0;

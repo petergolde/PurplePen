@@ -191,7 +191,7 @@ namespace PdfSharp.Drawing.Pdf
               string pattern = pdf.ToString();
 
               // BUG: drice2@ageone.de reported a realizing problem
-              // HACK: I romove the if clause
+              // HACK: I removed the if clause
               //if (this.realizedDashPattern != pattern)
               {
                 this.realizedDashPattern = pattern;

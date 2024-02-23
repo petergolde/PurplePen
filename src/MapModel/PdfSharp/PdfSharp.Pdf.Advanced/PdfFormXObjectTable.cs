@@ -48,7 +48,7 @@ namespace PdfSharp.Pdf.Advanced
     // or PdfImageTable this class holds no PdfFormXObject objects. Actually it holds instances of
     // the class ImportedObjectTable, one for each external document. The PdfFormXObject instances
     // are not cached, because they hold a transformation matrix that make them unique. If the user
-    // wants to use a particual page of a PdfFormXObject more than once, he must reuse the object
+    // wants to use a particular page of a PdfFormXObject more than once, he must reuse the object
     // before he changes the PageNumber or the transformation matrix. In other words this class
     // caches the indirect objects of an external form, not the form itself.
 

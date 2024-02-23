@@ -412,7 +412,7 @@ The symbol is orientated to north.
 Minimum area: 3 mm x 3 mm (footprint 45 m x 45 m).</description><combined_symbol parts="2"><part symbol="74"/><part symbol="94"/></combined_symbol></symbol>
 <symbol type="4" id="94" code="412.1" name="Cultivated land (black pattern)"><description>Cultivated land. This symbol must be used together with another symbol:
 - For land used for growing crops, combine with symbol Open land (401).
-- For agroforrestry, use with symbol Forest (405) or Open land with scattered trees (402).
+- For agroforestry, use with symbol Forest (405) or Open land with scattered trees (402).
 Runnability may vary according to the type of crops or trees, and the time of year.
 Since the runnability may vary, such areas should be avoided when setting courses.
 The symbol is orientated to north.

@@ -1902,7 +1902,7 @@ namespace PdfSharp.Drawing
         { 
             if (_initializationState == InitializationState.IsInitialized)
             { 
-                // Cannont initialize a GlyphRun this is completely initialized. 
+                // Cannot initialize a GlyphRun this is completely initialized. 
                 throw new InvalidOperationException(SR.Get(SRID.OnlyOneInitialization));
             } 
 
@@ -2228,7 +2228,7 @@ namespace PdfSharp.Drawing
         private SecurityCriticalDataClass<Uri> _originalUri; 
  
         /// <SecurityNote>
-        /// Critical - as this object controls the Demand that'll be made before accessssing the 
+        /// Critical - as this object controls the Demand that'll be made before accesssing the 
         ///            security sensitive contents of the font file.  This also only Critical
         ///            for set.  This should be correctly whenever _originalUri is set.
         ///

@@ -84,7 +84,7 @@ namespace TestingUtils
         // Top and Bottom reversed, to correspond to the convention that Top <= Bottom.
         void CalculateWorldTransform()
         {
-            // Get size, midpoint of the casvas in pixel coords.
+            // Get size, midpoint of the canvas in pixel coords.
             Size sizeInPixels = canvas.ClientSize;
             PointF midpoint = new PointF(sizeInPixels.Width / 2.0F, sizeInPixels.Height / 2.0F);
 

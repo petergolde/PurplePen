@@ -628,7 +628,7 @@ namespace PdfSharp.Pdf.Content.Objects  // TODO: split into single files
 
           default:
 #if true_
-            // not absolut necessary to use octal encoding for characters less than blank
+            // not absolutely necessary to use octal encoding for characters less than blank
             if (ch < ' ')
             {
               s.Append("\\");

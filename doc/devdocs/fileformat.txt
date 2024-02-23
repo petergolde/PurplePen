@@ -2,7 +2,7 @@ MapEdit file format specification.
 
 geode - top node of the document
   Attributes:
-    format: (int) full version of the format. Changes in this are totally uncompatible
+    format: (int) full version of the format. Changes in this are totally incompatible
     revision: (int) revision of the format. Indicates the version of nodes and attributes 
               in the file format. When reading a version with a revision > one you
               know, warn the user and ignore stuff you don't understand
@@ -40,7 +40,7 @@ symboldefs: contains all the symbol definitions in the map
 
 symboldef:
   Attributes:
-     id - id of the symbol definiton [required]
+     id - id of the symbol definition [required]
      name - name of the symbol definition [optional: def empty]
      isom-number - number of the symbol for ISOM/OCAD [required]
      type - type is "point", "line", "area", "text" [required]
@@ -92,7 +92,7 @@ dashes:
      
 shorten:
    Attributes:
-     beginning-length - lenght of beginning shortening [required]
+     beginning-length - length of beginning shortening [required]
      end-length - length of end shortening [required]
      pointed-ends - draw pointed ends? [required]
      
@@ -107,7 +107,7 @@ linesymbol:
     Attributes:
       location -(required) where on line glyph appears ("begin", "end", ...)
       number - (optional) number of glyphs at each point [ default: 1]
-      spacing - (optional, if number > 1) spacing of mulptiple glyphs [
+      spacing - (optional, if number > 1) spacing of multiple glyphs [
       spaced-distance - (if location=="spaced") spacing along line
       spaced-end-distance - (if location=="spaced") spacing from end of line
       spaced-minimum - (if location=="spaced") minimum number of symbols [optional, default = 1]

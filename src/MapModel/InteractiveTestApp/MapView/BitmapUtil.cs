@@ -181,7 +181,7 @@ namespace InteractiveTestApp.MapView
 			}
 		}
 
-        // Take a bitmap and lighten it by a given percentage. 0.0 takes it all the way to white, 1.0 leaves it unchanched, 0.5 lightens
+        // Take a bitmap and lighten it by a given percentage. 0.0 takes it all the way to white, 1.0 leaves it unchanged, 0.5 lightens
         // it by half.
         public static void LightenBitmap(Bitmap bm, double lightenFactor)
         {

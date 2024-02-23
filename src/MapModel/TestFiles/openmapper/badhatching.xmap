@@ -482,7 +482,7 @@
                     <pattern type="1" angle="0" rotatable="true" line_spacing="0" line_offset="0" offset_along_line="0" color="-1" line_width="0"/>
                 </area_symbol>
             </symbol>
-            <symbol type="2" id="35" code="526.4" name="Builing outline (not passable)">
+            <symbol type="2" id="35" code="526.4" name="Building outline (not passable)">
                 <line_symbol color="4" line_width="140" minimum_length="0" join_style="1" cap_style="0" start_offset="0" end_offset="0" segment_length="0" end_length="0" show_at_least_one_symbol="true" minimum_mid_symbol_count="0" minimum_mid_symbol_count_when_closed="0" dash_length="4000" break_length="1000" dashes_in_group="1" in_group_break_length="500" mid_symbols_per_spot="1" mid_symbol_distance="0"/>
 <icon src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMUlEQVQ4jWP8////fwYaACZaGDpq8KjBw8VgRgYGhqGV81hoVFQMwcgbNXjUYDoaDACmNwglSfmmuwAAAABJRU5ErkJggg=="/>
             </symbol>

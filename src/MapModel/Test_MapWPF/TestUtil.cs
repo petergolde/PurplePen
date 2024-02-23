@@ -61,7 +61,7 @@ namespace TestingUtils
             return Path.GetFullPath(Path.Combine(GetTestFileDirectory(), basename));
         }
 
-        public static string GetBitnessSpecificFileName(string path, bool is64, bool checkExistance)
+        public static string GetBitnessSpecificFileName(string path, bool is64, bool checkExistence)
         {
             string dir = Path.GetDirectoryName(path);
             string file = Path.GetFileNameWithoutExtension(path);
@@ -75,15 +75,15 @@ namespace TestingUtils
                 specificPath = Path.Combine(dir, file + "-32bit" + ext);
             }
 
-            if (!checkExistance || File.Exists(specificPath))
+            if (!checkExistence || File.Exists(specificPath))
                 return specificPath;
             else
                 return path;
         }
 
-        public static string GetBitnessSpecificFileName(string path, bool checkExistance)
+        public static string GetBitnessSpecificFileName(string path, bool checkExistence)
         {
-            return GetBitnessSpecificFileName(path, Environment.Is64BitProcess, checkExistance);
+            return GetBitnessSpecificFileName(path, Environment.Is64BitProcess, checkExistence);
         }
 
 

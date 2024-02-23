@@ -161,7 +161,7 @@ namespace PdfSharp.Pdf.Filters
             throw new ArgumentException("Illegal character.", "data");
           break;
         }
-        // ingnore unknown character
+        // ignore unknown character
       }
       // Loop not ended with break?
       if (idx == length)

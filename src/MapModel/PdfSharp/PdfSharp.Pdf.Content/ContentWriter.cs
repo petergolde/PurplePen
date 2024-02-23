@@ -415,7 +415,7 @@ namespace PdfSharp.Pdf.Content
         WriteRaw(" >>\nstream\n");
 
       if (omitStream)
-        WriteRaw("  «...stream content omitted...»\n");  // useful for debugging only
+        WriteRaw("  Â«...stream content omitted...Â»\n");  // useful for debugging only
       else
       {
         byte[] bytes = value.Stream.Value;
@@ -497,7 +497,7 @@ namespace PdfSharp.Pdf.Content
 
     public void WriteRaw(char ch)
     {
-      Debug.Assert((int)ch < 256, "Raw character greater than 255 dedected.");
+      Debug.Assert((int)ch < 256, "Raw character greater than 255 detected.");
       //AppendBlank(ch);
       this.stream.WriteByte((byte)ch);
       this.lastCat = GetCategory(ch);

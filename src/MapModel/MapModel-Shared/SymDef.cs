@@ -124,7 +124,7 @@ namespace PurplePen.MapModel
             symbols.Add(sym);
         }
 
-        // A symbol with the symdef is removed from the map. Remove from the list of symbosl with this symdef.
+        // A symbol with the symdef is removed from the map. Remove from the list of symbols with this symdef.
         internal void RemoveSymbol(Symbol sym)
         {
             Debug.Assert(sym.Definition == this);
@@ -1424,7 +1424,7 @@ namespace PurplePen.MapModel
             if (!hasZeroLengthGaps)
                 return distancesAndGaps;       // no gaps to remove.
 
-            // Remove gaps and coellesce distances.
+            // Remove gaps and coalesce distances.
             List<float> list = new List<float>(distancesAndGaps);
             for (int i = distancesAndGaps.Length - 2; i >= 1; i -= 2) {
                 if (list[i] == 0) {
@@ -2866,7 +2866,7 @@ namespace PurplePen.MapModel
 
         public void SetFont(string fontName, float fontSize, TextEffects effects, SymColor fontColor, float lineSpacing, float paraSpacing, 
                             float firstIndent, float restIndent, float[] tabs, float charSpacing, float wordSpacing, 
-                            TextSymDefHorizAlignment defaulHorizAlign, TextSymDefVertAlignment defaultVertAlign)
+                            TextSymDefHorizAlignment defaultHorizAlign, TextSymDefVertAlignment defaultVertAlign)
         {
             CheckModifiable();
             this.fontName = fontName;
@@ -2879,7 +2879,7 @@ namespace PurplePen.MapModel
             this.restIndent = restIndent;
             this.charSpacing = charSpacing;
             this.wordSpacing = wordSpacing;
-            this.defaultHorizAlign = defaulHorizAlign;
+            this.defaultHorizAlign = defaultHorizAlign;
             this.defaultVertAlign = defaultVertAlign;
             this.tabs = tabs;
         }
@@ -3198,7 +3198,7 @@ namespace PurplePen.MapModel
                 // We're currently in a reversed coordinate space;  re-reverse it.
                 Matrix matrix = new Matrix();
                 matrix.Translate(centerPoint.X, centerPoint.Y);
-                matrix.Scale(1, -1);      // Reverse Y so text is correct way aroun
+                matrix.Scale(1, -1);      // Reverse Y so text is correct way around
                 g.PushTransform(matrix);
 
                 try {
@@ -3666,7 +3666,7 @@ namespace PurplePen.MapModel
 
             SizeF size = new SizeF(fullWidth, height);
 
-            // The rectangle, unrotated. First adjust horizonal alignment.
+            // The rectangle, unrotated. First adjust horizontal alignment.
             RectangleF rect;
             if (fontAlign == TextSymDefHorizAlignment.Left || fontAlign == TextSymDefHorizAlignment.Justified)
                 rect = new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height);  // indents only used for left aligned and justified text.
@@ -4156,7 +4156,7 @@ namespace PurplePen.MapModel
         // Calculate bounds of text along a path with this symbol.
         internal RectangleF CalcBounds(SymPath path, string text)
         {
-            // This doesn't take into account the text at all -- just the line. It is probably good enought. We could do better 
+            // This doesn't take into account the text at all -- just the line. It is probably good enough. We could do better 
             // with a bunch of work by calling GetLineTextGraphemePlacement() and unioning the bounds of each grapheme.
             // But not that necessary.
 
@@ -4179,7 +4179,7 @@ namespace PurplePen.MapModel
         // baseline, starting at the start point. The end point is used as the start of the next character. If there are bends, 
         // of course, the character won't end right at that end point, but we ignore that.
         //
-        // THe weirdness is this: instead of measuring distance along the path correctly with the Pythagorian formula, a
+        // THe weirdness is this: instead of measuring distance along the path correctly with the Pythagorean formula, a
         // strange alternate metric of dx + 1/2 dy is used, where dx is the larger ordinate delta and dy is the smaller ordinate
         // delta. Thus, text along diagonals is squished together more than it should be. I have no explanation as to why
         // this might work but it reproduces what OCAD does. See the function "BizzarroDistance" in SymPath.

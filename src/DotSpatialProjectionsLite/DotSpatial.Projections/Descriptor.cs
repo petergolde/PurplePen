@@ -235,7 +235,7 @@ namespace DotSpatial.Projections
         /// <summary>
         /// This allows overrideable behavior that can replace or extend the basic behavior,
         /// which is to call Randomize on any public properties that are listed as randomizeable.
-        /// This does nothing to normal properties or non public members and needs to be overriden
+        /// This does nothing to normal properties or non public members and needs to be overridden
         /// to provide the special case functionality for sub-classes.
         /// </summary>
         /// <param name="generator">The random number generator to be used during randomization</param>
