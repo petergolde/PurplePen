@@ -271,15 +271,16 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else {
+                    // WIP - there was a bug here before, and bold and not bold were reversed!!!
                     FontDesc fontDesc = NormalCourseAppearance.controlNumberFontArial;
                     if (!appearance.numberBold && !appearance.numberRoboto)
-                        fontDesc = NormalCourseAppearance.controlNumberFontArial;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontArial -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
                     else if (appearance.numberBold && !appearance.numberRoboto)
-                        fontDesc = NormalCourseAppearance.controlNumberFontArialBold;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontArialBold -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
                     else if (!appearance.numberBold && appearance.numberRoboto)
-                        fontDesc = NormalCourseAppearance.controlNumberFontRoboto;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontRoboto -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
                     else if (appearance.numberBold && appearance.numberRoboto)
-                        fontDesc = NormalCourseAppearance.controlNumberFontRobotoBold;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontRobotoBold -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
 
                     float textDistance = ((appearance.ControlCircleOutsideDiameter / 2F) + (NormalCourseAppearance.controlNumberCircleDistance * appearance.controlCircleSize)) * courseObjRatio;
                     textCenterLocation = GetTextLocation(controlLocation, textDistance, text, fontDesc, courseObjRatio * appearance.numberHeight, existingObjects);

@@ -387,6 +387,39 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void PdfCreation3()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create3");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            settings.ColorModel = ColorModel.RGB;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberBold = true; // bold numbers.
+            appearance.numberRoboto = true; // bold numbers.
+            appearance.numberOutlineWidth = 0.13F;
+            appearance.useDefaultPurple = false;
+            appearance.purpleColorBlend = true;
+            appearance.autoLegGapSize = 0.0F;
+            appearance.purpleC = 0.32F;
+            appearance.purpleY = 1.00F;
+            appearance.purpleM = 0;
+            appearance.purpleK = 0.30F;
+
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("controller\\pdf_create3\\Course 1.pdf"), TestUtil.GetTestFile("controller\\pdf_create3\\Course 2.pdf"), TestUtil.GetTestFile("controller\\pdf_create3\\All controls.pdf") },
+                new string[] { TestUtil.GetTestFile("controller\\pdf_create3\\test3_Course 1_page%d_baseline.png"), TestUtil.GetTestFile("controller\\pdf_create3\\test3_Course 2_page%d_baseline.png"), TestUtil.GetTestFile("controller\\pdf_create3\\test3_All controls_page%d_baseline.png") });
+
+        }
+
+
+        [TestMethod]
         public void PdfCreation4()
         {
             CoursePdfSettings settings = new CoursePdfSettings();
@@ -399,6 +432,7 @@ namespace PurplePen.Tests
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
+            appearance.numberRoboto = true;
 
             Directory.CreateDirectory(settings.outputDirectory);
 

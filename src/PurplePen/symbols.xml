@@ -14149,7 +14149,7 @@ for the symbols.
     <name lang="hu">Szalagozás a célig</name>
     <text lang="hu">{0} az utolsó ponttól a célig, végig kötelező szalagozással</text>
     <name lang="it">Arrivo fettucciato</name>
-    <text lang="it">{0}fettucciati fino all???arrivo</text>
+    <text lang="it">{0}fettucciati fino all'arrivo</text>
     <name lang="ja">フィニッシュまで誘導</name>
     <text lang="ja">フィニッシュまで誘導 {0}</text>
     <name lang="nb-NO">Merket løype til mål</name>
@@ -14234,7 +14234,7 @@ for the symbols.
     <name lang="hu">Célfolyosó</name>
     <text lang="hu">{0} az utolsó ponttól a célig, a befutó elejét meg kell keresni, innentől kötelező útvonal</text>
     <name lang="it">Arrivo con corridoio finale fettucciato</name>
-    <text lang="it">{0}con corridoio finale fettucciato fino all???arrivo</text>
+    <text lang="it">{0}con corridoio finale fettucciato fino all'arrivo</text>
     <name lang="ja">フィニッシュまで漏斗状誘導</name>
     <text lang="ja">フィニッシュまで漏斗状誘導 {0}</text>
     <name lang="nb-NO">oppfangende merking til mål</name>
@@ -14320,7 +14320,7 @@ for the symbols.
     <name lang="hu">Célkeresés (nincs szalag)</name>
     <text lang="hu">{0} az utolsó ponttól a célig, nincs szalagozás, a cél tájékozódási feladat</text>
     <name lang="it">Arrivo non fettucciato</name>
-    <text lang="it">{0}non fettucciati fino all???arrivo</text>
+    <text lang="it">{0}non fettucciati fino all'arrivo</text>
     <name lang="ja">フィニッシュまで誘導なし</name>
     <text lang="ja">フィニッシュまで誘導なし {0}</text>
     <name lang="nb-NO">Ingen merking til mål</name>
