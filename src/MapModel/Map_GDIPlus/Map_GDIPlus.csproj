@@ -71,7 +71,7 @@
       <Link>GDIPlusNative.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\x64\Release\GDIPlusNative64.dll">
+    <Content Include="..\..\x64\$(Configuration)\GDIPlusNative64.dll">
       <Link>GDIPlusNative64.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

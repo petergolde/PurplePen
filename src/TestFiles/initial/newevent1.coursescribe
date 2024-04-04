@@ -1,7 +1,7 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>My New Event</title>
-    <map kind="OCAD" scale="10000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\TestFiles\initial\marymoor.ocd">marymoor.ocd</map>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false" absolute-path="D:\Repos\Main\PurplePen\src\TestFiles\initial\marymoor.ocd">marymoor.ocd</map>
     <standards map="2017" description="2018" />
     <all-controls print-scale="7500" description-kind="symbols" />
     <print-area automatic="true" restrict-to-page-size="true" left="0" top="0" right="0" bottom="0" page-width="850" page-height="1100" page-margins="0" page-landscape="true" />
