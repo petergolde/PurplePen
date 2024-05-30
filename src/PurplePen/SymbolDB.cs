@@ -341,8 +341,20 @@ namespace PurplePen
         {
             if (name.ContainsKey(language))
                 return name[language];
-            else
-                return null;
+
+            // Try with just the language conde.
+            if (language.Contains("-")) {
+                language = language.Substring(0, language.IndexOf('-'));
+
+                if (name.ContainsKey(language))
+                    return name[language];
+            }
+
+            // Try with english.
+            if (name.ContainsKey("en"))
+                return name["en"];
+
+            return null;
         }
 
         // Is this symbol used by the given standard?

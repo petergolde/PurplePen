@@ -288,7 +288,7 @@ namespace PurplePen.Tests
 
             List<SymbolLanguage> languages = new List<SymbolLanguage>(symbolDB.AllLanguages);
 
-            Assert.AreEqual(2, languages.Count);
+            Assert.AreEqual(5, languages.Count);
 
             Assert.AreEqual("en", languages[0].LangId);
             Assert.AreEqual("English", languages[0].Name);
@@ -296,12 +296,12 @@ namespace PurplePen.Tests
             Assert.AreEqual(true, languages[0].PluralNouns);
             Assert.AreEqual(false, languages[0].GenderModifiers);
 
-            Assert.AreEqual("bg", languages[1].LangId);
-            Assert.AreEqual("Bulgarish", languages[1].Name);
-            Assert.AreEqual(true, languages[1].PluralModifiers);
-            Assert.AreEqual(true, languages[1].PluralNouns);
-            Assert.AreEqual(true, languages[1].GenderModifiers);
-            CollectionAssert.AreEqual(new string[] { "masculine", "feminine" }, languages[1].Genders);
+            Assert.AreEqual("bg", languages[3].LangId);
+            Assert.AreEqual("Bulgarish", languages[3].Name);
+            Assert.AreEqual(true, languages[3].PluralModifiers);
+            Assert.AreEqual(true, languages[3].PluralNouns);
+            Assert.AreEqual(true, languages[3].GenderModifiers);
+            CollectionAssert.AreEqual(new string[] { "masculine", "feminine" }, languages[3].Genders);
         }
 
         [TestMethod]
@@ -309,8 +309,12 @@ namespace PurplePen.Tests
         {
             SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("symbols\\intl_symbols.xml"));
             Assert.IsTrue(symbolDB.HasLanguage("en"));
+            Assert.IsTrue(symbolDB.HasLanguage("en-GB"));
+            Assert.IsTrue(symbolDB.HasLanguage("en-AU"));
             Assert.IsTrue(symbolDB.HasLanguage("bg"));
+            Assert.IsTrue(symbolDB.HasLanguage("bg-QP"));
             Assert.IsFalse(symbolDB.HasLanguage("az"));
+            Assert.IsFalse(symbolDB.HasLanguage("en-CA"));
         }
 
         [TestMethod]
@@ -330,6 +334,21 @@ namespace PurplePen.Tests
 
             Assert.AreEqual("pit", pitSymbol.GetText("xx"));
             Assert.AreEqual("pits", pitSymbol.GetPluralText("xx"));
+        }
+
+        [TestMethod]
+        public void LanguageNames()
+        {
+            SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("symbols\\intl_symbols.xml"));
+            Symbol trenchSymbols = symbolDB["2.10"];
+
+            // Should fall back by main language, then English
+            Assert.AreEqual("Trench", trenchSymbols.GetName("en"));
+            Assert.AreEqual("Trench", trenchSymbols.GetName("en-AU"));
+            Assert.AreEqual("Trench", trenchSymbols.GetName("en-GB"));
+            Assert.AreEqual("Trench", trenchSymbols.GetName("fr"));
+            Assert.AreEqual("Trincea", trenchSymbols.GetName("bg"));
+            Assert.AreEqual("Trincea", trenchSymbols.GetName("bg-QP"));
         }
 
 

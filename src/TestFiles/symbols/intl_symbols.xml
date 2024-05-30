@@ -110,7 +110,10 @@ for the symbols.
 	<!-- Languages. Lists of the languages available for descriptions. -->
 
 	<language lang="en" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English</language>
+	<language lang="en-AU" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English (Australia)</language>
+	<language lang="en-GB" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">English (United Kingdom)</language>
 	<language lang="bg" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine">Bulgarish</language>
+	<language lang="bg-QP" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="masculine,feminine">Bulgarish (Goofy)</language>
 
 
 	<!-- Kind "@". These are not symbols at all, but just text that is used in contructing descriptions. -->
@@ -969,6 +972,24 @@ for the symbols.
 			<point x="45" y ="70"/>
 		</lines>
 	</symbol>
+
+	<symbol kind="D" id="2.10" size-is-depth="true">
+		<name lang="en">Trench</name>
+		<text lang="en">trench</text>
+		<text lang="en" plural="true">trenches</text>
+		<name lang="bg">Trincea</name>
+		<text lang="bg" gender="femminile">trincea</text>
+		<text lang="bg" plural="true" gender="femminile">trincee</text>
+		<lines thickness="12.5">
+			<point x="-65" y="50" />
+			<point x="-35" y="50" />
+			<point x="-35" y="-50" />
+			<point x="35" y="-50" />
+			<point x="35" y="50" />
+			<point x="65" y="50" />
+		</lines>
+	</symbol>
+
 
 	<symbol kind="D" id="3.1">
 		<name lang="en">Lake</name>
