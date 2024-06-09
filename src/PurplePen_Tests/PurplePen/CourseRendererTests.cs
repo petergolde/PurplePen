@@ -107,6 +107,7 @@ namespace PurplePen.Tests
             specialAppearance.lineWidth = 0.2F; // thin lines
             specialAppearance.numberHeight = 2F; // really big numbers.
             specialAppearance.numberBold = true; // bold numbers
+            specialAppearance.numberRoboto = false; // Arial numbers.
             specialAppearance.numberOutlineWidth = 0.13F;
             specialAppearance.autoLegGapSize = 0.0F;
             specialAppearance.useDefaultPurple = false;

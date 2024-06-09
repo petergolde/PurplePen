@@ -179,6 +179,28 @@ namespace PurplePen.Tests
                                TestUtil.GetTestFile("bitmapcreate\\create4\\Course 2_baseline.png")});
         }
 
+        [TestMethod]
+        public void BitmapCreation5()
+        {
+            BitmapCreationSettings settings = new BitmapCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("bitmapcreate\\create5");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2) };
+            settings.Dpi = 300;
+            settings.ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Jpeg;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberRoboto = false;
+
+            CreateBitmapFiles(TestUtil.GetTestFile("bitmapcreate\\StEd.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\create5\\Course 1.jpg"),
+                               TestUtil.GetTestFile("bitmapcreate\\create5\\Course 2.jpg")},
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\create5\\Course 1_baseline.png"),
+                               TestUtil.GetTestFile("bitmapcreate\\create5\\Course 2_baseline.png")});
+        }
+
 
 
     }

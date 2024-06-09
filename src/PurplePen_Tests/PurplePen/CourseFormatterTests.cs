@@ -64,7 +64,7 @@ namespace PurplePen.Tests
             // Create the course
             courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
             course = new CourseLayout();
-            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, layer);
+            CourseFormatter.FormatCourseToLayout(symbolDB, courseView, eventDB.GetEvent().courseAppearance, course, layer);
 
             // Dump it to a string.
             StringWriter writer = new StringWriter();
@@ -185,6 +185,77 @@ ControlNumber:  control:38  course-control:314  scale:1  text:13  top-left:(52.1
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
+
+        [TestMethod]
+        public void RegularCourseArial()
+        {
+            CheckCourse("courseformat\\marymoor1-Arial.coursescribe", CourseId(3), CourseLayer.MainCourse, @"
+FirstAid:       special:1  scale:1  location:(14.5,31.2)
+Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
+Boundary:       special:3  scale:1  path:N(11,2)--N(0,-7)--N(-12,-3)
+OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
+BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-35.5,Width=40.5,Height=85.5}
+Start:          control:1  course-control:301  scale:1  location:(56.8,-8.7)  orientation:162.99
+Leg:            control:1  course-control:301  scale:1  course-control2:302  path:N(55.62,-12.56)--N(52.03,-24.3)
+Control:        control:59  course-control:302  scale:1  location:(51.2,-27)  gaps:
+Leg:            control:59  course-control:302  scale:1  course-control2:303  path:N(48.83,-25.46)--N(28.17,-12.04)
+Control:        control:53  course-control:303  scale:1  location:(25.8,-10.5)  gaps:
+Leg:            control:53  course-control:303  scale:1  course-control2:304  path:N(26.17,-7.7)--N(27.63,3.4)
+Control:        control:41  course-control:304  scale:1  location:(28,6.2)  gaps:
+Leg:            control:41  course-control:304  scale:1  course-control2:305  path:N(25.2,6.6)--N(2.1,9.9)
+Control:        control:72  course-control:305  scale:1  location:(-0.7,10.3)  gaps:
+Leg:            control:72  course-control:305  scale:1  course-control2:306  path:N(-0.27,13.09)--N(2.08,28.53)
+Control:        control:47  course-control:306  scale:1  location:(2.51,31.32)  gaps:
+ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(5.96,27.43)
+                font-name:Arial  font-style:Regular  font-height:5.57
+Leg:            control:47  course-control:306  scale:1  course-control2:307  path:N(5.16,30.34)--N(37.45,18.38)
+Control:        control:71  course-control:307  scale:1  location:(40.1,17.4)  gaps:
+Leg:            control:71  course-control:307  scale:1  course-control2:308  path:N(42.92,17.55)--N(71.88,19.05)
+Control:        control:77  course-control:308  scale:1  location:(74.7,19.2)  gaps:
+Leg:            control:77  course-control:308  scale:1  course-control2:309  path:N(77.26,20.39)--N(91.34,26.91)
+Control:        control:78  course-control:309  scale:1  location:(93.9,28.1)  gaps:
+Leg:            control:78  course-control:309  scale:1  course-control2:310  path:N(91.53,29.63)--N(86.37,32.97)
+Control:        control:43  course-control:310  scale:1  location:(84,34.5)  gaps:
+Leg:            control:43  course-control:310  scale:1  course-control2:311  path:N(81.6,33)--N(74.4,28.5)
+Control:        control:75  course-control:311  scale:1  location:(72,27)  gaps:
+Leg:            control:75  course-control:311  scale:1  course-control2:312  path:N(69.19,26.76)--N(58.71,25.84)
+Control:        control:45  course-control:312  scale:1  location:(55.9,25.6)  gaps:
+Leg:            control:45  course-control:312  scale:1  course-control2:313  path:N(54.21,23.33)--N(43.59,9.07)  gaps: (s:4.99,l:3.5)
+Control:        control:80  course-control:313  scale:1  location:(41.9,6.8)  gaps:
+Leg:            control:80  course-control:313  scale:1  course-control2:314  path:N(44.46,5.61)--N(47.74,4.09)
+Control:        control:38  course-control:314  scale:1  location:(50.3,2.9)  gaps:
+Leg:            control:38  course-control:314  scale:1  course-control2:315  path:N(51.58,0.38)--N(51.69,0.16)
+Finish:         control:2  course-control:315  scale:1  location:(53.2,-2.8)  gaps:
+ControlNumber:  control:59  course-control:302  scale:1  text:1  top-left:(51.93,-30.59)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:53  course-control:303  scale:1  text:2  top-left:(18.15,-10.91)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:41  course-control:304  scale:1  text:3  top-left:(28.26,16.06)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:72  course-control:305  scale:1  text:4  top-left:(3.2,18.19)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:71  course-control:307  scale:1  text:6  top-left:(40.36,27.26)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:77  course-control:308  scale:1  text:7  top-left:(75.43,15.61)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:78  course-control:309  scale:1  text:8  top-left:(98.59,28.14)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:43  course-control:310  scale:1  text:9  top-left:(82.89,44.37)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:75  course-control:311  scale:1  text:10  top-left:(68.01,36.87)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:45  course-control:312  scale:1  text:11  top-left:(45.23,32.45)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:80  course-control:313  scale:1  text:12  top-left:(35.47,3.16)
+                font-name:Arial  font-style:Regular  font-height:5.57
+ControlNumber:  control:38  course-control:314  scale:1  text:13  top-left:(52.11,12.41)
+                font-name:Arial  font-style:Regular  font-height:5.57
+");
+        }
+
+
 
         [TestMethod]
         public void ControlGaps()
@@ -661,7 +732,131 @@ Code:           layer:12  control:80  scale:1  text:80  top-left:(34.35,10.77)
                 font-name:Roboto Condensed  font-style:Bold  font-height:4.18
 ");
         }
-	
+
+        [TestMethod]
+        public void AllControlsArial()
+        {
+            CheckCourse("courseformat\\marymoor1-Arial.coursescribe", CourseId(0), CourseLayer.AllControls, @"
+FirstAid:       layer:12  special:1  scale:1  location:(14.5,31.2)
+OOB:            layer:12  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
+BasicText:      layer:12  special:7  scale:1  text:All controls  top-left:(45,40)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.201138  rect:(45,40)-(70,34)
+Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-150.5,Width=40.5,Height=200.5}
+Start:          layer:12  control:1  scale:1  location:(56.8,-8.7)  orientation:0
+Control:        layer:12  control:35  scale:1  location:(115.6,-11.8)  gaps:
+Control:        layer:12  control:36  scale:1  location:(128.4,6.1)  gaps:
+Control:        layer:12  control:37  scale:1  location:(121.8,-23)  gaps:
+Control:        layer:12  control:38  scale:1  location:(50.3,2.9)  gaps:
+Control:        layer:12  control:39  scale:1  location:(129.2,37.7)  gaps:
+Control:        layer:12  control:40  scale:1  location:(124.2,29.5)  gaps:
+Control:        layer:12  control:41  scale:1  location:(28,6.2)  gaps:
+Control:        layer:12  control:42  scale:1  location:(38.4,-14)  gaps:
+Control:        layer:12  control:43  scale:1  location:(84,34.5)  gaps:
+Control:        layer:12  control:44  scale:1  location:(37.6,-22.8)  gaps:
+Control:        layer:12  control:45  scale:1  location:(55.9,25.6)  gaps:
+Control:        layer:12  control:46  scale:1  location:(-9.2,8.3)  gaps:
+Control:        layer:12  control:47  scale:1  location:(2.51,31.32)  gaps:
+Control:        layer:12  control:48  scale:1  location:(21.5,40.2)  gaps:
+Control:        layer:12  control:49  scale:1  location:(22,-20.8)  gaps:
+Control:        layer:12  control:50  scale:1  location:(45.2,22.8)  gaps:
+Control:        layer:12  control:51  scale:1  location:(16.4,-11.9)  gaps:
+Control:        layer:12  control:52  scale:1  location:(43,-11.1)  gaps:
+Control:        layer:12  control:53  scale:1  location:(25.8,-10.5)  gaps:
+Control:        layer:12  control:54  scale:1  location:(53.7,8.2)  gaps:
+Control:        layer:12  control:55  scale:1  location:(51.2,10.5)  gaps:
+Control:        layer:12  control:56  scale:1  location:(81.3,24)  gaps:
+Control:        layer:12  control:57  scale:1  location:(90,19.3)  gaps:
+Control:        layer:12  control:58  scale:1  location:(20.3,-4)  gaps:
+Control:        layer:12  control:59  scale:1  location:(51.2,-27)  gaps:
+Control:        layer:12  control:70  scale:1  location:(21.3,11.8)  gaps:
+Control:        layer:12  control:71  scale:1  location:(40.1,17.4)  gaps:
+Control:        layer:12  control:72  scale:1  location:(-0.7,10.3)  gaps:
+Control:        layer:12  control:73  scale:1  location:(57.4,-13.8)  gaps:
+Control:        layer:12  control:74  scale:1  location:(61.2,-18.8)  gaps:
+Control:        layer:12  control:75  scale:1  location:(72,27)  gaps:
+Control:        layer:12  control:76  scale:1  location:(5.6,-5.7)  gaps:
+Control:        layer:12  control:77  scale:1  location:(74.7,19.2)  gaps:
+Control:        layer:12  control:78  scale:1  location:(93.9,28.1)  gaps:
+Control:        layer:12  control:79  scale:1  location:(119.8,8.6)  gaps:
+Control:        layer:12  control:80  scale:1  location:(41.9,6.8)  gaps:
+Finish:         layer:12  control:2  scale:1  location:(53.2,-2.8)  gaps:
+Code:           layer:12  control:35  scale:1  text:35  top-left:(109.69,-4.96)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:36  scale:1  text:36  top-left:(131.53,6.02)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:37  scale:1  text:37  top-left:(123.48,-24.82)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:38  scale:1  text:38  top-left:(43.09,2.47)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:39  scale:1  text:39  top-left:(131.5,44.08)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:40  scale:1  text:40  top-left:(117.67,28.14)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:41  scale:1  text:41  top-left:(28.62,3.98)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:42  scale:1  text:42  top-left:(32.49,-7.16)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:43  scale:1  text:43  top-left:(81.26,41.8)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:44  scale:1  text:44  top-left:(33.13,-25.07)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:45  scale:1  text:45  top-left:(57.58,23.78)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:46  scale:1  text:46  top-left:(-8.96,15.59)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:47  scale:1  text:47  top-left:(0.08,29.04)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:48  scale:1  text:48  top-left:(23.8,46.58)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:49  scale:1  text:49  top-left:(19.57,-23.08)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:50  scale:1  text:50  top-left:(40.35,30.04)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:51  scale:1  text:51  top-left:(9.87,-13.26)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:52  scale:1  text:52  top-left:(45.56,-12.18)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:53  scale:1  text:53  top-left:(26.42,-12.72)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:54  scale:1  text:54  top-left:(56.83,8.12)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:55  scale:1  text:55  top-left:(46.35,17.74)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:56  scale:1  text:56  top-left:(84.28,29.45)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:57  scale:1  text:57  top-left:(90.62,17.08)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:58  scale:1  text:58  top-left:(16.56,3.3)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:59  scale:1  text:59  top-left:(48.77,-29.28)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:70  scale:1  text:70  top-left:(14.51,17.89)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:71  scale:1  text:71  top-left:(32.55,19.19)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:72  scale:1  text:72  top-left:(0.64,17.31)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:73  scale:1  text:73  top-left:(51.83,-15.8)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:74  scale:1  text:74  top-left:(63.76,-19.88)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:75  scale:1  text:75  top-left:(73.34,34.01)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:76  scale:1  text:76  top-left:(2.2,-7.98)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:77  scale:1  text:77  top-left:(70.23,16.93)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:78  scale:1  text:78  top-left:(97.2,32.45)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:79  scale:1  text:79  top-left:(112.44,13.69)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+Code:           layer:12  control:80  scale:1  text:80  top-left:(34.35,10.77)
+                font-name:Roboto Condensed  font-style:Bold  font-height:4.18
+");
+        }
+
+
+
         [TestMethod]
         public void Text()
         {

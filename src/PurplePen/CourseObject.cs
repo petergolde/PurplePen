@@ -2731,7 +2731,7 @@ namespace PurplePen
 
         public ControlNumberCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, 
-                   appearance.numberRoboto ? NormalCourseAppearance.controlNumberFontRoboto.Name : /* NormalCourseAppearance.controlNumberFontArial.Name -- WIP */ NormalCourseAppearance.controlNumberFontRoboto.Name,
+                   appearance.numberRoboto ? NormalCourseAppearance.controlNumberFontRoboto.Name : NormalCourseAppearance.controlNumberFontArial.Name,
                    appearance.numberBold ? NormalCourseAppearance.controlNumberFontRobotoBold.Style : NormalCourseAppearance.controlNumberFontRoboto.Style, 
                    SpecialColor.Purple,
                    NormalCourseAppearance.controlNumberFontRoboto.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)

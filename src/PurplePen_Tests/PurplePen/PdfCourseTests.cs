@@ -400,7 +400,7 @@ namespace PurplePen.Tests
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.numberBold = true; // bold numbers.
-            appearance.numberRoboto = true; // Roboto font
+            appearance.numberRoboto = false; // Arial font
             appearance.numberOutlineWidth = 0.13F;
             appearance.useDefaultPurple = false;
             appearance.purpleColorBlend = true;
@@ -432,7 +432,7 @@ namespace PurplePen.Tests
 
             CourseAppearance appearance = new CourseAppearance();
             appearance.purpleColorBlend = true;
-            appearance.numberRoboto = true;
+            appearance.numberRoboto = false;
 
             Directory.CreateDirectory(settings.outputDirectory);
 

@@ -207,6 +207,22 @@ namespace PurplePen.Tests
             CoursePrintingTest("courseprinting\\noblend", coursePrintSettings, appearance);
         }
 
+
+        [TestMethod]
+        public void PrintCoursesArial()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberRoboto = false;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            CoursePrintingTest("courseprinting\\arial", coursePrintSettings, appearance);
+        }
+
         [TestMethod]
         public void PrintCourses2()
         {

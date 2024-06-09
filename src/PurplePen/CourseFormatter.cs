@@ -274,13 +274,13 @@ namespace PurplePen
                     // WIP - allow Arial as well as Roboto as the control number font.
                     FontDesc fontDesc = NormalCourseAppearance.controlNumberFontArial;
                     if (!appearance.numberBold && !appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontArial -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
+                        fontDesc = NormalCourseAppearance.controlNumberFontArial;
                     else if (appearance.numberBold && !appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontArialBold -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
+                        fontDesc = NormalCourseAppearance.controlNumberFontArialBold;
                     else if (!appearance.numberBold && appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontRoboto -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
+                        fontDesc = NormalCourseAppearance.controlNumberFontRoboto;
                     else if (appearance.numberBold && appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontRobotoBold -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
+                        fontDesc = NormalCourseAppearance.controlNumberFontRobotoBold;
 
                     float textDistance = ((appearance.ControlCircleOutsideDiameter / 2F) + (NormalCourseAppearance.controlNumberCircleDistance * appearance.controlCircleSize)) * courseObjRatio;
                     textCenterLocation = GetTextLocation(controlLocation, textDistance, text, fontDesc, courseObjRatio * appearance.numberHeight, existingObjects);
