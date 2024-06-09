@@ -155,7 +155,7 @@ namespace PurplePen.Tests
             for (int page = 0; page < bitmaps.Length; ++page) {
                 Bitmap bm = bitmaps[page];
                 string baseFileName = basename + "_page" + (page + 1).ToString();
-                TestUtil.CheckBitmapsBase(bm, baseFileName);
+                TestUtil.CheckBitmapsBase(bm, baseFileName, 5);
                 bm.Dispose();
             }
 

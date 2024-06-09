@@ -406,7 +406,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(6,26.68)
+            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(6.01,26.67)
                 font-name:Roboto  font-style:Regular  font-height:5.57", highlights[0].ToString());
             // Check the status text
             Assert.AreEqual(StatusBarText.DraggingObject, controller.StatusText);
@@ -420,7 +420,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(7.6,33.48)
+            Assert.AreEqual(@"ControlNumber:  control:47  course-control:306  scale:1  text:5  top-left:(7.61,33.47)
                 font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
             Assert.IsInstanceOfType(   highlights[0],   typeof(ControlCourseObj));
@@ -430,7 +430,7 @@ namespace PurplePen.Tests
             CourseControl courseControl = eventDB.GetCourseControl(CourseControlId(306));
             Assert.AreEqual(true, courseControl.customNumberPlacement);
             Assert.AreEqual(6.65F, courseControl.numberDeltaX, 0.01F);
-            Assert.AreEqual(-1.18F, courseControl.numberDeltaY, 0.01F);
+            Assert.AreEqual(-1.19F, courseControl.numberDeltaY, 0.01F);
         }
 	
 

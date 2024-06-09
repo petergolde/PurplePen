@@ -26,7 +26,7 @@ Setup structure:
   TempOffset=(0.00,0.00), TemplateFileName=
   TemplateEnabled=0, TempResol=0, rTempAng=0
   Res1=(0.00,0.00), Res2=0
-  PrLowerLeft=(-28.36,-70.14), PrUpperRight=(167.22,80.99)
+  PrLowerLeft=(-28.35,-70.14), PrUpperRight=(167.23,81.00)
   PrGrid=0, PrGridColor=0, PrOverlapX=0, PrOverlapY=0
   PrintScale=7000, PrIntensity=0, prLineWidth=0, PrReserved=0
   PrStdFonts=0, PrReserved2=0, PrReserved3=0
@@ -4176,8 +4176,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=1
-    (64.13,-23.25) (64.13,-24.23) (66.32,-24.23) (66.32,-19.35) 
-    (64.13,-19.35) 
+    (64.11,-23.24) (64.11,-24.21) (66.30,-24.21) (66.30,-19.34) 
+    (64.11,-19.34) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4186,8 +4186,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=2
-    (34.26,-28.71) (34.26,-29.69) (36.45,-29.69) (36.45,-24.82) 
-    (34.26,-24.82) 
+    (34.27,-28.71) (34.27,-29.68) (36.45,-29.68) (36.45,-24.81) 
+    (34.27,-24.81) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4196,7 +4196,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=3
-    (26.95,-7.32) (26.95,-8.29) (29.14,-8.29) (29.14,-3.42) 
+    (26.95,-7.32) (26.95,-8.30) (29.13,-8.30) (29.13,-3.42) 
     (26.95,-3.42) 
 
 Index entry Sym=703.0
@@ -4206,7 +4206,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=4
-    (1.38,-11.14) (1.38,-12.12) (3.57,-12.12) (3.57,-7.24) (1.38,-7.24) 
+    (1.38,-11.13) (1.38,-12.11) (3.57,-12.11) (3.57,-7.23) (1.38,-7.23) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4215,8 +4215,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=5
-    (-5.82,12.02) (-5.82,11.05) (-3.63,11.05) (-3.63,15.92) 
-    (-5.82,15.92) 
+    (-5.80,12.01) (-5.80,11.04) (-3.61,11.04) (-3.61,15.91) 
+    (-5.80,15.91) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4225,7 +4225,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=6
-    (21.80,5.73) (21.80,4.75) (23.99,4.75) (23.99,9.63) (21.80,9.63) 
+    (21.80,5.73) (21.80,4.76) (23.99,4.76) (23.99,9.63) (21.80,9.63) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4244,8 +4244,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=8
-    (74.74,29.00) (74.74,28.03) (76.93,28.03) (76.93,32.90) 
-    (74.74,32.90) 
+    (74.73,28.99) (74.73,28.01) (76.92,28.01) (76.92,32.89) 
+    (74.73,32.89) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4254,8 +4254,8 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=9
-    (46.08,12.22) (46.08,11.25) (48.27,11.25) (48.27,16.12) 
-    (46.08,16.12) 
+    (46.10,12.21) (46.10,11.24) (48.29,11.24) (48.29,16.11) 
+    (46.10,16.11) 
 
 Index entry Sym=703.0
 Object Sym=703 Otp=4
@@ -4264,7 +4264,7 @@ Object Sym=703 Otp=4
   Col=0 (0x0)
   LineWidth=0  DiamFlags=0
   Text=10
-    (42.54,-0.36) (42.54,-1.33) (46.92,-1.33) (46.92,3.54) (42.54,3.54) 
+    (42.58,-0.34) (42.58,-1.32) (46.96,-1.32) (46.96,3.56) (42.58,3.56) 
 
 String of type 8
   ObjIndex=0

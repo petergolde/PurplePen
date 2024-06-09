@@ -94,7 +94,7 @@ BasicText:      special:7  scale:1  text:SingleControl  top-left:(45,40)
                 font-name:Times New Roman  font-style:Bold, Italic  font-height:4.32542  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=34.5,Width=40.5,Height=15.5}
 Control:        control:36  course-control:701  scale:1  location:(128.4,6.1)  gaps:
-ControlNumber:  control:36  course-control:701  scale:1  text:36  top-left:(132.69,13.73)
+ControlNumber:  control:36  course-control:701  scale:1  text:36  top-left:(132.64,13.7)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -112,7 +112,7 @@ Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=29.5,Width=40.5,Heigh
 Start:          layer:12  control:1  course-control:801  scale:1  location:(56.8,-8.7)  orientation:82.66
 Leg:            layer:12  control:1  course-control:801  scale:1  course-control2:802  path:N(52.79,-8.18)--N(23.1,-4.36)
 Control:        layer:12  control:58  course-control:802  scale:1  location:(20.3,-4)  gaps:
-ControlNumber:  layer:12  control:58  course-control:802  scale:1  text:1  top-left:(12.59,-4.21)
+ControlNumber:  layer:12  control:58  course-control:802  scale:1  text:1  top-left:(12.61,-4.19)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -161,27 +161,27 @@ Leg:            control:38  course-control:314  scale:1  course-control2:315  pa
 Finish:         control:2  course-control:315  scale:1  location:(53.2,-2.8)  gaps:
 ControlNumber:  control:59  course-control:302  scale:1  text:1  top-left:(51.92,-30.38)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:53  course-control:303  scale:1  text:2  top-left:(18.09,-10.71)
+ControlNumber:  control:53  course-control:303  scale:1  text:2  top-left:(18.11,-10.69)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:41  course-control:304  scale:1  text:3  top-left:(28.25,16.31)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:72  course-control:305  scale:1  text:4  top-left:(3.22,18.45)
+ControlNumber:  control:72  course-control:305  scale:1  text:4  top-left:(3.2,18.43)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:71  course-control:307  scale:1  text:6  top-left:(40.35,27.51)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:77  course-control:308  scale:1  text:7  top-left:(75.42,15.82)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:78  course-control:309  scale:1  text:8  top-left:(98.62,28.34)
+ControlNumber:  control:78  course-control:309  scale:1  text:8  top-left:(98.59,28.36)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:43  course-control:310  scale:1  text:9  top-left:(82.88,44.62)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:311  scale:1  text:10  top-left:(67.98,37.12)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:45  course-control:312  scale:1  text:11  top-left:(45.11,32.72)
+ControlNumber:  control:45  course-control:312  scale:1  text:11  top-left:(45.17,32.69)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:80  course-control:313  scale:1  text:12  top-left:(35.43,3.37)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:38  course-control:314  scale:1  text:13  top-left:(52.12,12.69)
+ControlNumber:  control:38  course-control:314  scale:1  text:13  top-left:(52.1,12.67)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -218,25 +218,25 @@ Leg:            control:55  course-control:110  scale:1  course-control2:111  pa
 Control:        control:38  course-control:111  scale:1  location:(50.3,2.9)  gaps:
 Leg:            control:38  course-control:111  scale:1  course-control2:112  path:N(51.58,0.38)--N(51.69,0.16)
 Finish:         control:2  course-control:112  scale:1  location:(53.2,-2.8)  gaps:
-ControlNumber:  control:73  course-control:102  scale:1  text:1  top-left:(59.48,-16.78)
+ControlNumber:  control:73  course-control:102  scale:1  text:1  top-left:(59.48,-16.76)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:44  course-control:103  scale:1  text:2  top-left:(36.93,-26.23)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:49  course-control:104  scale:1  text:3  top-left:(18.62,-24.23)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:53  course-control:105  scale:1  text:4  top-left:(30.65,-4.98)
+ControlNumber:  control:53  course-control:105  scale:1  text:4  top-left:(30.62,-4.99)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:58  course-control:106  scale:1  text:5  top-left:(24.22,4.15)
+ControlNumber:  control:58  course-control:106  scale:1  text:5  top-left:(23.19,5.15)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:76  course-control:107  scale:1  text:6  top-left:(10.19,1.19)
+ControlNumber:  control:76  course-control:107  scale:1  text:6  top-left:(10.16,1.18)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:70  course-control:108  scale:1  text:7  top-left:(20.18,21.92)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:71  course-control:109  scale:1  text:8  top-left:(40.35,27.51)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:55  course-control:110  scale:1  text:9  top-left:(55.79,17.39)
+ControlNumber:  control:55  course-control:110  scale:1  text:9  top-left:(55.76,17.38)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:38  course-control:111  scale:1  text:10  top-left:(39.15,6.77)
+ControlNumber:  control:38  course-control:111  scale:1  text:10  top-left:(39.22,6.76)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
 
@@ -260,11 +260,11 @@ Leg:            control:71  course-control:919  scale:0.5  course-control2:917  
 Finish:         control:2  course-control:917  scale:0.5  location:(53.2,-2.8)  gaps:
 ControlNumber:  control:44  course-control:920  scale:1  text:1  top-left:(37.96,-24.49)
                 font-name:Roboto  font-style:Regular  font-height:2.785
-ControlNumber:  control:49  course-control:921  scale:1  text:2  top-left:(18.48,-21.53)
+ControlNumber:  control:49  course-control:921  scale:1  text:2  top-left:(18.49,-21.52)
                 font-name:Roboto  font-style:Regular  font-height:2.785
-ControlNumber:  control:41  course-control:918  scale:1  text:3  top-left:(24.34,10.08)
+ControlNumber:  control:41  course-control:918  scale:1  text:3  top-left:(24.36,10.07)
                 font-name:Roboto  font-style:Regular  font-height:2.785
-ControlNumber:  control:71  course-control:919  scale:1  text:4  top-left:(40.23,22.46)
+ControlNumber:  control:71  course-control:919  scale:1  text:4  top-left:(40.22,22.46)
                 font-name:Roboto  font-style:Regular  font-height:2.785
 ");
         }
@@ -296,29 +296,29 @@ Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
-ControlNumber:  control:38  course-control:908  scale:1  text:38  top-left:(39.15,6.77)
+ControlNumber:  control:38  course-control:908  scale:1  text:38  top-left:(39.22,6.76)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:41  course-control:914  scale:1  text:41  top-left:(24.43,2.77)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:52  course-control:910  scale:1  text:52  top-left:(31.85,-8.81)
+ControlNumber:  control:52  course-control:910  scale:1  text:52  top-left:(31.92,-7.24)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:54  course-control:907  scale:1  text:54  top-left:(58.59,9.39)
+ControlNumber:  control:54  course-control:907  scale:1  text:54  top-left:(58.52,9.41)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:55  course-control:906  scale:1  text:55  top-left:(47.18,20.62)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:56  course-control:903  scale:1  text:56  top-left:(83.62,21.13)
+ControlNumber:  control:56  course-control:903  scale:1  text:56  top-left:(83.6,21.15)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:70  course-control:913  scale:1  text:70  top-left:(10.51,18.92)
+ControlNumber:  control:70  course-control:913  scale:1  text:70  top-left:(10.57,18.89)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:71  course-control:909  scale:1  text:71  top-left:(30.2,25.94)
+ControlNumber:  control:71  course-control:909  scale:1  text:71  top-left:(30.24,25.9)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:73  course-control:911  scale:1  text:73  top-left:(59.72,-16.67)
+ControlNumber:  control:73  course-control:911  scale:1  text:73  top-left:(59.7,-16.65)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:902  scale:1  text:75  top-left:(66.57,37.12)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:77  course-control:905  scale:1  text:77  top-left:(71.13,15.77)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:78  course-control:904  scale:1  text:78  top-left:(97.14,37.03)
+ControlNumber:  control:78  course-control:904  scale:1  text:78  top-left:(97.11,37)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -349,29 +349,29 @@ Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
-ControlNumber:  control:38  course-control:908  scale:1  text:1  top-left:(42.31,6.66)
+ControlNumber:  control:38  course-control:908  scale:1  text:1  top-left:(42.35,6.66)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:41  course-control:914  scale:1  text:2  top-left:(28.72,2.82)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:52  course-control:910  scale:1  text:4  top-left:(35.01,-7.34)
+ControlNumber:  control:52  course-control:910  scale:1  text:4  top-left:(35.05,-7.34)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:54  course-control:907  scale:1  text:5  top-left:(58.42,8.44)
+ControlNumber:  control:54  course-control:907  scale:1  text:5  top-left:(58.39,8.46)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:55  course-control:906  scale:1  text:6  top-left:(48.74,20.62)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:56  course-control:903  scale:1  text:7  top-left:(84.58,21.82)
+ControlNumber:  control:56  course-control:903  scale:1  text:7  top-left:(84.56,21.84)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:70  course-control:913  scale:1  text:8  top-left:(13.99,19.55)
+ControlNumber:  control:70  course-control:913  scale:1  text:8  top-left:(14.01,19.54)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:71  course-control:909  scale:1  text:9  top-left:(33.69,26.26)
+ControlNumber:  control:71  course-control:909  scale:1  text:9  top-left:(33.71,26.25)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:73  course-control:911  scale:1  text:10  top-left:(59.72,-16.67)
+ControlNumber:  control:73  course-control:911  scale:1  text:10  top-left:(59.7,-16.65)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:902  scale:1  text:11  top-left:(66.57,37.12)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:77  course-control:905  scale:1  text:12  top-left:(69.76,15.77)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:78  course-control:904  scale:1  text:13  top-left:(97.14,37.03)
+ControlNumber:  control:78  course-control:904  scale:1  text:13  top-left:(97.11,37)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -402,29 +402,29 @@ Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
-ControlNumber:  control:38  course-control:908  scale:1  text:1-38  top-left:(34.14,6.94)
+ControlNumber:  control:38  course-control:908  scale:1  text:1-38  top-left:(34.56,6.92)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:41  course-control:914  scale:1  text:2-41  top-left:(19.2,2.77)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:52  course-control:910  scale:1  text:4-52  top-left:(26.84,-9.17)
+ControlNumber:  control:52  course-control:910  scale:1  text:4-52  top-left:(27.26,-9.11)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:54  course-control:907  scale:1  text:5-54  top-left:(58.94,10.84)
+ControlNumber:  control:54  course-control:907  scale:1  text:5-54  top-left:(58.53,10.87)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:55  course-control:906  scale:1  text:6-55  top-left:(44.85,20.62)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:56  course-control:903  scale:1  text:7-56  top-left:(81.78,20.57)
+ControlNumber:  control:56  course-control:903  scale:1  text:7-56  top-left:(81.76,20.59)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:70  course-control:913  scale:1  text:8-70  top-left:(6.08,19.95)
+ControlNumber:  control:70  course-control:913  scale:1  text:8-70  top-left:(6.39,19.8)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:71  course-control:909  scale:1  text:9-71  top-left:(26.53,26.97)
+ControlNumber:  control:71  course-control:909  scale:1  text:9-71  top-left:(26.7,26.83)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:73  course-control:911  scale:1  text:10-73  top-left:(61.26,-15.82)
+ControlNumber:  control:73  course-control:911  scale:1  text:10-73  top-left:(60.95,-15.67)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:902  scale:1  text:11-75  top-left:(62.68,37.12)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:77  course-control:905  scale:1  text:12-77  top-left:(55.56,25.79)
+ControlNumber:  control:77  course-control:905  scale:1  text:12-77  top-left:(55.98,25.68)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:78  course-control:904  scale:1  text:13-78  top-left:(97.11,37.35)
+ControlNumber:  control:78  course-control:904  scale:1  text:13-78  top-left:(96.86,37.21)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -456,29 +456,29 @@ Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  g
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
-ControlNumber:  control:41  course-control:914  scale:1  text:1  top-left:(31.28,4.02)
+ControlNumber:  control:41  course-control:914  scale:1  text:1  top-left:(31.26,4.04)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:38  course-control:908  scale:1  text:3(5)  top-left:(36.03,10.79)
+ControlNumber:  control:38  course-control:908  scale:1  text:3(5)  top-left:(36.11,10.75)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:78  course-control:904  scale:1  text:4(5)  top-left:(98.63,34.76)
+ControlNumber:  control:78  course-control:904  scale:1  text:4(5)  top-left:(98.54,34.73)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:902  scale:1  text:5(10)  top-left:(63.09,37.12)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:77  course-control:905  scale:1  text:6(10)  top-left:(60.46,15.85)
+ControlNumber:  control:77  course-control:905  scale:1  text:6(10)  top-left:(60.48,15.87)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:73  course-control:911  scale:1  text:7(15)  top-left:(61.18,-15.58)
+ControlNumber:  control:73  course-control:911  scale:1  text:7(15)  top-left:(61.08,-15.53)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:70  course-control:913  scale:1  text:8(20)  top-left:(4.3,20.27)
+ControlNumber:  control:70  course-control:913  scale:1  text:8(20)  top-left:(4.4,20.22)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:71  course-control:909  scale:1  text:9(20)  top-left:(27.55,27.52)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:54  course-control:907  scale:1  text:10(25)  top-left:(54.33,4.79)
+ControlNumber:  control:54  course-control:907  scale:1  text:10(25)  top-left:(54.3,4.81)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:55  course-control:906  scale:1  text:11(25)  top-left:(42.13,20.62)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:56  course-control:903  scale:1  text:12(25)  top-left:(79.07,20.57)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:52  course-control:910  scale:1  text:13(30)  top-left:(21.65,-9.49)
+ControlNumber:  control:52  course-control:910  scale:1  text:13(30)  top-left:(21.82,-9.47)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -511,29 +511,29 @@ Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  g
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
-ControlNumber:  control:41  course-control:914  scale:1  text:41  top-left:(31.64,4.35)
+ControlNumber:  control:41  course-control:914  scale:1  text:41  top-left:(31.6,4.38)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:38  course-control:908  scale:1  text:38(5)  top-left:(55.27,5.48)
+ControlNumber:  control:38  course-control:908  scale:1  text:38(5)  top-left:(55.13,5.49)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:78  course-control:904  scale:1  text:78(5)  top-left:(98.5,35.25)
+ControlNumber:  control:78  course-control:904  scale:1  text:78(5)  top-left:(98.37,35.2)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:902  scale:1  text:75(10)  top-left:(61.52,37.12)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:77  course-control:905  scale:1  text:77(10)  top-left:(53.35,20.81)
+ControlNumber:  control:77  course-control:905  scale:1  text:77(10)  top-left:(53.52,20.83)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:73  course-control:911  scale:1  text:73(15)  top-left:(60.68,-16.1)
+ControlNumber:  control:73  course-control:911  scale:1  text:73(15)  top-left:(60.56,-16.05)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:70  course-control:913  scale:1  text:70(20)  top-left:(1.67,20.79)
+ControlNumber:  control:70  course-control:913  scale:1  text:70(20)  top-left:(1.78,20.73)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:71  course-control:909  scale:1  text:71(20)  top-left:(25.98,27.52)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:54  course-control:907  scale:1  text:54(25)  top-left:(32.35,12.41)
+ControlNumber:  control:54  course-control:907  scale:1  text:54(25)  top-left:(32.52,12.39)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:55  course-control:906  scale:1  text:55(25)  top-left:(40.72,20.62)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:56  course-control:903  scale:1  text:56(25)  top-left:(79.07,20.57)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:52  course-control:910  scale:1  text:52(30)  top-left:(21.65,-9.49)
+ControlNumber:  control:52  course-control:910  scale:1  text:52(30)  top-left:(21.82,-9.47)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ");
         }
@@ -696,9 +696,9 @@ Leg:            control:5  course-control:5  scale:1  course-control2:6  path:N(
 Finish:         control:6  course-control:6  scale:1  location:(96,17.5)  gaps:
 ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(35.69,-25.83)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:3  course-control:3  scale:1  text:2  top-left:(0.22,8.66)
+ControlNumber:  control:3  course-control:3  scale:1  text:2  top-left:(0.25,8.68)
                 font-name:Roboto  font-style:Regular  font-height:5.57
-ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(19.89,50.56)
+ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(19.9,50.55)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57.32)
                 font-name:Roboto  font-style:Regular  font-height:5.57

@@ -113,7 +113,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:260.707031:290.707031",
                                         highlights[0].ToString());
-            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.3,51.07)
+            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.31,51.06)
                 font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
 
@@ -170,7 +170,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(2, highlights.Length);
             Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:252.6131:316.040161",
                                         highlights[0].ToString());
-            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.3,51.07)
+            Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.31,51.06)
                 font-name:Roboto  font-style:Regular  font-height:5.57",
                                         highlights[1].ToString());
 

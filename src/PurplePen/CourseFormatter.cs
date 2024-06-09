@@ -271,16 +271,16 @@ namespace PurplePen
                     textCenterLocation = new PointF(controlLocation.X + courseControl.numberDeltaX, controlLocation.Y + courseControl.numberDeltaY);
                 }
                 else {
-                    // WIP - there was a bug here before, and bold and not bold were reversed!!!
+                    // WIP - allow Arial as well as Roboto as the control number font.
                     FontDesc fontDesc = NormalCourseAppearance.controlNumberFontArial;
                     if (!appearance.numberBold && !appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontArial -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontArial -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
                     else if (appearance.numberBold && !appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontArialBold -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontArialBold -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
                     else if (!appearance.numberBold && appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontRoboto -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontRoboto -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
                     else if (appearance.numberBold && appearance.numberRoboto)
-                        fontDesc = /* NormalCourseAppearance.controlNumberFontRobotoBold -- WIP */ NormalCourseAppearance.controlNumberFontRoboto;
+                        fontDesc = /* NormalCourseAppearance.controlNumberFontRobotoBold -- WIP */ NormalCourseAppearance.controlNumberFontRobotoBold;
 
                     float textDistance = ((appearance.ControlCircleOutsideDiameter / 2F) + (NormalCourseAppearance.controlNumberCircleDistance * appearance.controlCircleSize)) * courseObjRatio;
                     textCenterLocation = GetTextLocation(controlLocation, textDistance, text, fontDesc, courseObjRatio * appearance.numberHeight, existingObjects);
