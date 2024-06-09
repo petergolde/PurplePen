@@ -43,10 +43,11 @@ using System.Diagnostics;
 using NUnit.Framework;
 using TestingUtils;
 using PurplePen.MapModel;
+using System.Net;
 
 namespace Map_PDF.Tests
 {
-    [TestFixture]
+    [TestFixture, Parallelizable(ParallelScope.Children)]
     public class Rendering 
     {
 
@@ -141,9 +142,9 @@ namespace Map_PDF.Tests
             mapFileName = Path.Combine(directoryName, mapFileName);
             pngFileName = Path.Combine(directoryName, pngFileName);
             tempPdfFileName = Path.Combine(directoryName,
-                                         Path.GetFileNameWithoutExtension(mapFileName) + "_temp.pdf");
+                                         Path.GetFileNameWithoutExtension(pngFileName) + "_temp.pdf");
             ocadFileName = Path.Combine(directoryName,
-                                         Path.GetFileNameWithoutExtension(mapFileName) + "_temp.ocd");
+                                         Path.GetFileNameWithoutExtension(pngFileName) + "_temp.ocd");
 
             File.Delete(ocadFileName);
 

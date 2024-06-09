@@ -2360,7 +2360,7 @@ namespace PurplePen
         public float numberHeight = 1.0F;                // ratio to apply to the size of control numbers
         public float centerDotDiameter = 0.0F;            // center dot diameter, or 0 for no center dot.
         public bool numberBold = false;                 // Is the number bolded?
-        public bool numberRoboto = false;               // Use Roboto font for numbers?
+        public bool numberRoboto = true;               // Use Roboto font for numbers?
         public float numberOutlineWidth = 0.0F;             // Width of outline
         public float autoLegGapSize = 3.5F;             // Size in mm of automatic gap in legs.
 
