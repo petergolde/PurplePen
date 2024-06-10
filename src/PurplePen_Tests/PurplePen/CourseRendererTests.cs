@@ -99,7 +99,7 @@ namespace PurplePen.Tests
         // Do CheckCourse for normal and special appearances.
         void CheckCourseBothAppearances(string filename, CourseDesignator courseDesignator, bool addAllControls, string testName, RectangleF rect)
         {
-            CourseAppearance specialAppearance;
+            CourseAppearance specialAppearance, appearanceArial2000;
 
             // Special appearance to test the usage of CourseAppearance.
             specialAppearance = new CourseAppearance();
@@ -116,7 +116,12 @@ namespace PurplePen.Tests
             specialAppearance.purpleM = 0;
             specialAppearance.purpleK = 0.30F;
 
-            CheckCourse(filename, courseDesignator, addAllControls, testName, rect, defaultCourseAppearance);
+            appearanceArial2000 = new CourseAppearance();
+            appearanceArial2000.mapStandard = "2000";
+            appearanceArial2000.numberRoboto = false; // Arial numbers
+
+            CheckCourse(filename, courseDesignator, addAllControls, testName, rect, std2017CourseAppearance);
+            CheckCourse(filename, courseDesignator, addAllControls, testName + "_arial2000", rect, appearanceArial2000);
             CheckCourse(filename, courseDesignator, addAllControls, testName + "_special", rect, specialAppearance);
         }
 
