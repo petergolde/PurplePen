@@ -126,6 +126,9 @@
   <data name="coursePartMenuItem.Text" xml:space="preserve">
     <value>Parte del Percorso</value>
   </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Variante Percorso</value>
+  </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Lunghezza Percorso</value>
   </data>

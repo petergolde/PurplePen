@@ -127,10 +127,10 @@
     <value>мм</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Обикновен</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Получер</value>
+    <value>Arial Получер</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Стил на изписване на номера на КТ:</value>

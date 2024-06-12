@@ -123,4 +123,7 @@
   <data name="selectNone.Text" xml:space="preserve">
     <value>Niente</value>
   </data>
+  <data name="buttonChooseVariations.Text" xml:space="preserve">
+    <value>Scegli varianti...</value>
+  </data>
 </root>

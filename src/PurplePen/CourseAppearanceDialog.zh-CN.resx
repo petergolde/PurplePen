@@ -148,10 +148,10 @@
     <value>中心点直径：</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>常规</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>加粗</value>
+    <value>Arial 加粗</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>检查点编号样式：</value>

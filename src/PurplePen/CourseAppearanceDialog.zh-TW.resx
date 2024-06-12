@@ -148,10 +148,10 @@
     <value>圓心圓點的直徑</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>尺規</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>粗體</value>
+    <value>Arial 粗體</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>檢查點序號類型：</value>

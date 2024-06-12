@@ -153,6 +153,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Codice e punteggio (145(30))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Punti (30)</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Mostra punti in</value>
   </data>

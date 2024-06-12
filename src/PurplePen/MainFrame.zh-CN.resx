@@ -135,6 +135,9 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>紫笔文件|*.ppen</value>
   </data>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>文件</value>
+  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;新的赛事</value>
   </data>
@@ -153,6 +156,9 @@
   <data name="createImageFilesMenu.Text" xml:space="preserve">
     <value>创建图像文件...</value>
   </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>创建PDF文件</value>
+  </data>
   <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
     <value>说明</value>
   </data>
@@ -162,14 +168,11 @@
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
     <value>线路...</value>
   </data>
-  <data name="createPDFsMenu.Text" xml:space="preserve">
-    <value>创建PDF文件</value>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>创建轨迹回放文件</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>创建路径和文件的小工具…</value>
-  </data>
-  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>创建轨迹回放文件</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>创建数据交换文件（国际定联XML）…</value>
@@ -189,6 +192,9 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>打印线路...</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>设置打印范围</value>
+  </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>这部分只</value>
   </data>
@@ -198,17 +204,14 @@
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>全部线路</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>设置打印范围</value>
-  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>程序语言</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>退出</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>文件</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>修改</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>清除选择</value>
@@ -222,14 +225,17 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>删除</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>修改</value>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>视图</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>全部线路</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>整个地图</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>与缩放</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -252,8 +258,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>与缩放</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>地图与强度</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>非常低(&amp;V)</value>
@@ -270,17 +276,14 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>完全信任密钥(&amp;F)</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>地图与强度</value>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>地图质量</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>低</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>高</value>
-  </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>地图质量</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>显示打印区域</value>
@@ -297,8 +300,8 @@
   <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
     <value>删除其他线路</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>视图</value>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>添加 (&amp;A)...</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>开始(&amp;S)</value>
@@ -312,6 +315,9 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>说明</value>
   </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>换图</value>
+  </data>
   <data name="addMapFlipMenuItem.Text" xml:space="preserve">
     <value>在这个检查点进行地图切换（&amp;F）</value>
   </data>
@@ -320,9 +326,6 @@
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>已标记到达换图的线路</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>换图</value>
   </data>
   <data name="addVariationMenu.Text" xml:space="preserve">
     <value>分支</value>
@@ -378,8 +381,8 @@
   <data name="addEllipseMenu.Text" xml:space="preserve">
     <value>椭圆</value>
   </data>
-  <data name="addMenu.Text" xml:space="preserve">
-    <value>添加 (&amp;A)...</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>赛事</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>与地图文件…</value>
@@ -399,6 +402,9 @@
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;机械打卡器针脚排列...</value>
   </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>国际定联标准</value>
+  </data>
   <data name="descriptionStd2004Menu.Text" xml:space="preserve">
     <value>2004 检查点说明规范</value>
   </data>
@@ -414,17 +420,14 @@
   <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
     <value>ISSprOM 2019制图规范</value>
   </data>
-  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
-    <value>国际定联标准</value>
-  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>自定义说明文本</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>个性化外观</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>赛事</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>线路</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>添加线路...</value>
@@ -447,8 +450,8 @@
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>接力队分支…</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>线路</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>项目</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>删除</value>
@@ -480,6 +483,9 @@
   <data name="stretchMenu.Text" xml:space="preserve">
     <value>拉伸</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>路段标记</value>
+  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>没有下垂</value>
   </data>
@@ -492,14 +498,11 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>课程结束的标记</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>路段标记</value>
-  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>更改显示的线路...</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>项目</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>报表(&amp;R)</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>线路概要信息</value>
@@ -516,8 +519,8 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>检查点和路段通过量</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>报表(&amp;R)</value>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>帮助(&amp;H)</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>紫笔使用手册</value>
@@ -536,6 +539,9 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>关于紫笔</value>
+  </data>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>调试</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>符号浏览器</value>
@@ -570,8 +576,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>崩溃</value>
   </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>调试</value>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>翻译说明文本</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>添加说明语言……</value>
@@ -581,12 +587,6 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>合并XML符号…</value>
-  </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>翻译说明文本</value>
-  </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>帮助(&amp;H)</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>打开</value>
@@ -645,6 +645,18 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>添加分支</value>
   </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>添加特殊项</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>添加弯曲节点 (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolstripbutton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>添加间隔 (Ctrl+G)</value>
+  </data>
   <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
     <value>计时起始位置</value>
   </data>
@@ -692,18 +704,6 @@
   </data>
   <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
     <value>椭圆</value>
-  </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>添加特殊项</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>添加弯曲节点 (Ctrl+B)</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>toolstripbutton1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>添加间隔 (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>缩放：100%</value>

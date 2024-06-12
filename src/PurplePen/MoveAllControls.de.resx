@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>In welche Richtung möchten Sie alle Steuerelemente auf der Karte bewegen?</value>
+  </data>
+  <data name="radioButtonMove.Text" xml:space="preserve">
+    <value>Nur bewegen</value>
+  </data>
+  <data name="radioButtonMoveAndScale.Text" xml:space="preserve">
+    <value>Bewegen und Skalieren</value>
+  </data>
+  <data name="radioButtonMoveAndRotate.Text" xml:space="preserve">
+    <value>Bewegen und Drehen</value>
+  </data>
+  <data name="radioButtonMoveRotateScale.Text" xml:space="preserve">
+    <value>Verschieben, Skalieren und Drehen</value>
+  </data>
 </root>

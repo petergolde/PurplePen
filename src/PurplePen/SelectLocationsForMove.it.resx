@@ -123,4 +123,7 @@
   <data name="labelScale.Text" xml:space="preserve">
     <value>Scala:</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Muovi tutti i controlli</value>
+  </data>
 </root>

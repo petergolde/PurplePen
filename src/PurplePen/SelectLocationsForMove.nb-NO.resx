@@ -120,7 +120,55 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Avbryt</value>
   </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Velg første post eller registreringsmerke for å flytte</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>Velg ny lokasjon for andre post/merke</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Bekreft nye lokasjoner</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>Rotering</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Målestokk:</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Y Akse</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>X Akse</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>Velg andre post eller registreringsmerke for å flytte</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>Velg ny lokasjon for første post/merke</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Forrige</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Bekreft</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Flytt Alle Poster</value>
   </data>
 </root>

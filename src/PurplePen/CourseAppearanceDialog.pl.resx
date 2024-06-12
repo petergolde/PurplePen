@@ -136,10 +136,10 @@
     <value>Średnica centralnej kropki:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Zwykłe</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Pogrubione</value>
+    <value>Arial Pogrubione</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Styl numeracji punktu:</value>

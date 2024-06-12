@@ -148,10 +148,10 @@
     <value>Keskpunkti diameeter</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Tavaline</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Paks</value>
+    <value>Arial Paks</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>KP numbri stiil:</value>

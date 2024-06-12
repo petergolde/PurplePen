@@ -148,10 +148,10 @@
     <value>Діаметер ценральної точки:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Звичайний</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Жирний</value>
+    <value>Arial Жирний</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Стиль номера КП:</value>

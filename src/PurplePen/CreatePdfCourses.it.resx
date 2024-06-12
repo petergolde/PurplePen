@@ -135,6 +135,9 @@
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
   </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Ritaglia su una singola pagina</value>
+  </data>
   <data name="comboBoxMultiPage.Items1" xml:space="preserve">
     <value>Stampa su piu' pagine</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="comboBoxFileFormat.Items1" xml:space="preserve">
     <value>Uno per percorso</value>
+  </data>
+  <data name="comboBoxFileFormat.Items2" xml:space="preserve">
+    <value>Uno per parte percorso/variante</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
     <value>Files</value>

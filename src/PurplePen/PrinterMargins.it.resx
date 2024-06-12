@@ -120,4 +120,7 @@
   <data name="labelPaper.Text" xml:space="preserve">
     <value>Dimensione:</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Larghezza:</value>
+  </data>
 </root>

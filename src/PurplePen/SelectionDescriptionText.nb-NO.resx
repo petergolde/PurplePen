@@ -297,4 +297,7 @@
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>spesielt symbol</value>
   </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Kartsnu på {0}</value>
+  </data>
 </root>

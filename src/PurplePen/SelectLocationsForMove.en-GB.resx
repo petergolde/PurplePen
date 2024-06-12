@@ -120,7 +120,55 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Select first control or registration mark to move</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>Choose new location for second control/mark</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Confirm new locations</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>Rotation:</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Scale:</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Y Offset:</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>X Offset:</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>Select second control or registration mark to move</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>Choose new location for first control/mark</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Move All Controls</value>
   </data>
 </root>

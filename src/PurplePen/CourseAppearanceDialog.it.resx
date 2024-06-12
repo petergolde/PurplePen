@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Non scalare</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Relativa alla scala della mappa</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Relativo a 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Scala dimensioni oggetto:</value>
+  </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Dimensione automatica spazio frazione:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>mm</value>
   </data>
@@ -133,10 +148,10 @@
     <value>Diametro punto centrale</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Normale</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Grassetto</value>
+    <value>Arial Grassetto</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stile Numero del Controllo</value>
@@ -164,6 +179,9 @@
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Dimensioni Oggetto</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Mescola il viola con i colori della mappa sottostante</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Nero:</value>
@@ -197,6 +215,12 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Descrizioni Controllo</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Usa l'effetto sovrastampa sui colori segnati come "sovrastampa"</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Avanzate</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personalizza stile</value>

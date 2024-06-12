@@ -201,6 +201,9 @@
   <data name="ChangeDisplayedCourses" xml:space="preserve">
     <value>Cambia Percorsi Visualizzati</value>
   </data>
+  <data name="MoveBend" xml:space="preserve">
+    <value>Muovi piegatura tratta</value>
+  </data>
   <data name="AddBend" xml:space="preserve">
     <value>Aggiungi Curva</value>
   </data>
@@ -273,13 +276,40 @@
   <data name="DeleteMapExchangeAtControl" xml:space="preserve">
     <value>Cancella Cambio Carta</value>
   </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Cambio proprietà parte percorso</value>
+  </data>
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Cambia Stile Linea</value>
   </data>
   <data name="DuplicateCourse" xml:space="preserve">
     <value>Duplica percorso</value>
   </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Crea {0} %File</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Aggiungi Variante</value>
+  </data>
   <data name="DeleteFork" xml:space="preserve">
     <value>Elimina Fork/Loop</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Variazioni staffetta</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Imposta descrizione punto di controllo standard</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Imposta mappa standard</value>
+  </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Espandi</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Pubblica su Livelox</value>
+  </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Muovi tutti i controlli</value>
   </data>
 </root>

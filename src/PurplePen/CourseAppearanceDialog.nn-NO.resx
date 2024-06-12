@@ -127,10 +127,10 @@
     <value>mm</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Vanleg</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Feit</value>
+    <value>Arial Feit</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Postbeskrivelsens utsjånad</value>

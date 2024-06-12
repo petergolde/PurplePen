@@ -148,10 +148,10 @@
     <value>Keskuspisteen halkaisija:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Normaali</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Lihavoitu</value>
+    <value>Arial Lihavoitu</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Rastinumeron tyyli:</value>

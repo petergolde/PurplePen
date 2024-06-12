@@ -297,4 +297,7 @@
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>kartanottopaikka</value>
   </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Kartankääntö ({0})</value>
+  </data>
 </root>

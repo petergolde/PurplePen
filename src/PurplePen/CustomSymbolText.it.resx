@@ -141,6 +141,9 @@
   <data name="labelCustomizeText.Text" xml:space="preserve">
     <value>Clicca sulla descrizione dei simboli per personalizzare il testo usato nella descrizione.</value>
   </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Imposta come lingua di default per nuovi eventi</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personalizza il testo descrittivo</value>
   </data>

@@ -148,10 +148,10 @@
     <value>Mittelpunktdurchmesser:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Normal</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Fett</value>
+    <value>Arial Fett</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stil der Postennummern:</value>

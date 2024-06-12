@@ -41,7 +41,7 @@ namespace PurplePen.MapModel
     // Contains the current version number.
     public static class VersionNumber
     {
-        public const string Current = "3.5.0.500";
+        public const string Current = "3.5.1.500";
 
         // The last component encodes the Alpha/Beta/RC/Stable notion.
         // 110 is Alpha 1, 220 is Beta 2, 500 is stable release

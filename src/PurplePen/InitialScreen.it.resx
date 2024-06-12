@@ -132,6 +132,12 @@
   <data name="openExistingRadioButton.Text" xml:space="preserve">
     <value>Apri un evento esistente</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen è un software gratuito e può essere copiato e condiviso. Lo sviluppo di Purple Pen è supportato solo dalle tue donazioni.</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Fai una donazione</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Benvenuto in Purple Pen</value>
   </data>

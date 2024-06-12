@@ -135,6 +135,9 @@
   <data name="NoUnusedControls" xml:space="preserve">
     <value>tutti i controlli sono usati in un percorso.</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Arrivo</value>
+  </data>
   <data name="ChangeTextTitle" xml:space="preserve">
     <value>Cambia Testo</value>
   </data>

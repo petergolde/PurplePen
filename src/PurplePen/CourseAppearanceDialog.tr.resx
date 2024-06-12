@@ -148,10 +148,10 @@
     <value>Merkez nokta çapı:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Düzenli</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Kalın</value>
+    <value>Arial Kalın</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Kontrol numarası stili:</value>

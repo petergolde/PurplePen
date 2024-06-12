@@ -130,10 +130,10 @@
     <value>Premer točke v sredi</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Običajno</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Krepko</value>
+    <value>Arial Krepko</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stil zaporedne številke</value>

@@ -312,4 +312,10 @@
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
     <value>Publiser til Livelox</value>
   </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Flytt Alle Poster</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Legg Til Kartsnu</value>
+  </data>
 </root>

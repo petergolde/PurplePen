@@ -127,10 +127,10 @@
     <value>mm</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Normal</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Îngroșat</value>
+    <value>Arial Îngroșat</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stil numerotare post:</value>

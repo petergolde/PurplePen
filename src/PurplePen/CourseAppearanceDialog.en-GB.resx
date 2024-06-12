@@ -148,10 +148,10 @@
     <value>Center dot diameter:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Regular</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Bold</value>
+    <value>Arial Bold</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Control number style:</value>

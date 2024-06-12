@@ -148,10 +148,10 @@
     <value>Diâmetro do ponto central:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Comum</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Negrito</value>
+    <value>Arial Negrito</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Estilo do número do ponto</value>

@@ -228,4 +228,10 @@
   <data name="StretchingObject" xml:space="preserve">
     <value>Hold nede venstre museknapp for å strekke ut krysningspunktet</value>
   </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Klikk venstre museknapp på en post eller registreringsmerke for å flytte til ny lokasjon</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Klikk venstre museknapp på en ny lokasjon for posten eller registreringsmerke</value>
+  </data>
 </root>

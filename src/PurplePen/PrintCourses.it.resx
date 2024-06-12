@@ -138,6 +138,9 @@
   <data name="comboBoxColorModel.Items2" xml:space="preserve">
     <value>CMYK</value>
   </data>
+  <data name="comboBoxMultiPage.Items" xml:space="preserve">
+    <value>Ritaglia su una singola pagina</value>
+  </data>
   <data name="comboBoxMultiPage.Items1" xml:space="preserve">
     <value>Stampa su piu' pagine</value>
   </data>

@@ -148,10 +148,10 @@
     <value>Centerpunkt diameter:</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
-    <value>Almindelig</value>
+    <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Fed</value>
+    <value>Arial Fed</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Kontrolnummer stil:</value>

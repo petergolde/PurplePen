@@ -180,6 +180,9 @@
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Si</value>
   </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Modello colore:</value>
+  </data>
   <data name="comboBoxColorModel.Items" xml:space="preserve">
     <value>RGB</value>
   </data>
