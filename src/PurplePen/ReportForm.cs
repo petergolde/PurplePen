@@ -89,6 +89,12 @@ body {
 	font-size: 12pt;
 }
 
+@media print {
+    thead { 
+        display: table-header-group; 
+    }
+}
+
 th {
 	font-weight: bold;
 	border-style: none none solid none;

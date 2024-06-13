@@ -190,6 +190,30 @@ namespace PurplePen
             xmlTextWriter.WriteEndElement();
         }
 
+        // Write thead tag.
+        void BeginTableHead()
+        {
+            xmlTextWriter.WriteStartElement("thead");
+        }
+
+        // End thead element
+        void EndTableHead()
+        {
+            xmlTextWriter.WriteFullEndElement();
+        }
+
+        // Write tbody tag.
+        void BeginTableBody()
+        {
+            xmlTextWriter.WriteStartElement("tbody");
+        }
+
+        // End tbody element
+        void EndTableBody()
+        {
+            xmlTextWriter.WriteFullEndElement();
+        }
+
         void BeginTableRow(string kind)
         {
             xmlTextWriter.WriteStartElement("tr");
@@ -258,12 +282,14 @@ namespace PurplePen
 
         void WriteTableHeaderRow(params string[] cells)
         {
+            BeginTableHead();
             BeginTableRow();
 
             foreach (string cell in cells)
                 WriteTableHeaderCell(cell);
 
             EndTableRow();
+            EndTableHead();
         }
 
         public string CreateCourseSummaryReport(EventDB eventDB)
@@ -276,6 +302,8 @@ namespace PurplePen
             // Table of all courses.
             BeginTable("", 4, "leftalign", "rightalign", "rightalign", "rightalign");
             WriteTableHeaderRow(ReportText.ColumnHeader_Course, ReportText.ColumnHeader_Controls, ReportText.ColumnHeader_Length, ReportText.ColumnHeader_Climb);
+
+            BeginTableBody();
 
             // Enumerate all courses.
             Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB);
@@ -290,6 +318,9 @@ namespace PurplePen
                     }
                 }
             }
+
+            EndTableBody();
+
             EndTable();
 
             return FinishReport();
@@ -444,6 +475,8 @@ namespace PurplePen
                 WriteTableHeaderRow(ReportText.ColumnHeader_Control, ReportText.ColumnHeader_NumberOfCourses, ReportText.ColumnHeader_Load);
             }
 
+            BeginTableBody();
+
             foreach (ControlLoadInfo loadInfo in loadInfos) {
                 string loadString = loadInfo.load >= 0 ? Convert.ToString(loadInfo.load) : "";
                 string visitString = loadInfo.visits >= 0 ? Convert.ToString(loadInfo.visits) : "";
@@ -456,6 +489,7 @@ namespace PurplePen
                 }
             }
 
+            EndTableBody();
             EndTable();
         }
 
@@ -514,12 +548,15 @@ namespace PurplePen
             BeginTable("", 3, "leftalign", "rightalign", "rightalign");
             WriteTableHeaderRow(ReportText.ColumnHeader_Leg, ReportText.ColumnHeader_NumberOfCourses, ReportText.ColumnHeader_Load);
 
+            BeginTableBody();
+
             foreach (LegLoadInfo loadInfo in loadInfoList) {
                 WriteTableRow(loadInfo.text,
                                         Convert.ToString(loadInfo.numCourses),
                                         loadInfo.load >= 0 ? Convert.ToString(loadInfo.load) : "");
             }
 
+            EndTableBody();
             EndTable();
         }
 
@@ -542,13 +579,16 @@ namespace PurplePen
             BeginTable("", classes.Length, classes);
 
             // Write the header row.
+            BeginTableHead();
             BeginTableRow();
             WriteTableHeaderCell(ReportText.ColumnHeader_Control);
             for (int i = 0; i < coursesToXref.Length; ++i)
                 WriteTableHeaderCell(eventDB.GetCourse(coursesToXref[i]).name);
             EndTableRow();
+            EndTableHead();
 
             // Write the cross-reference rows. Table rule after every 3rd line
+            BeginTableBody();
             for (int row = 0; row < controlsToXref.Length; ++row) {
                 bool tablerule = (row % 3 == 2);
                 BeginTableRow();
@@ -557,6 +597,7 @@ namespace PurplePen
                     WriteTableCell(tablerule ? "tablerule" : "", xref[row, col]);
                 EndTableRow();
             }
+            EndTableBody();
 
             EndTable();
 
@@ -685,6 +726,8 @@ namespace PurplePen
             BeginTable("", 3, "leftalign", "leftalign", "rightalign");
             WriteTableHeaderRow(ReportText.ColumnHeader_Leg, ReportText.ColumnHeader_Controls, ReportText.ColumnHeader_Length);
 
+            BeginTableBody();
+
             int legNumber = 1;
             float totalLength = 0;
 
@@ -712,6 +755,8 @@ namespace PurplePen
                 WriteTableCell(string.Format("{0} m", Convert.ToString(Math.Round(totalLength / (float) (legNumber - 1)))));
                 EndTableRow();
             }
+
+            EndTableBody();
 
             EndTable();
         }
@@ -1161,9 +1206,13 @@ namespace PurplePen
                 WriteH2(ReportText.EventAudit_MissingItems);
                 BeginTable("", 3, "leftalign", "leftalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_Course, ReportText.ColumnHeader_Item, ReportText.ColumnHeader_Reason);
+
+                BeginTableBody();
                 foreach (MissingThing thing in missingCourseThings) {
                     WriteTableRow(eventDB.GetCourse(thing.courseId).name, thing.what, thing.why);
                 }
+                EndTableBody();
+
                 EndTable();
             }
 
@@ -1203,6 +1252,8 @@ namespace PurplePen
                 BeginTable("", 3, "leftalign", "rightalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_ControlCodes, ReportText.ColumnHeader_Distance, ReportText.ColumnHeader_SameSymbol);
 
+                BeginTableBody();
+
                 foreach (NearbyControls nearby in nearbyList) {
                     string code1 = eventDB.GetControl(nearby.controlId1).code;
                     string code2 = eventDB.GetControl(nearby.controlId2).code;
@@ -1216,6 +1267,7 @@ namespace PurplePen
                     WriteTableRow(string.Format("{0}, {1}", code1, code2), string.Format("{0} m", Math.Round(nearby.distance)), nearby.sameSymbol ? ReportText.EventAudit_Yes : ReportText.EventAudit_No);
                 }
 
+                EndTableBody();
                 EndTable();
             }
 
@@ -1227,6 +1279,8 @@ namespace PurplePen
                 WriteH2(ReportText.EventAudit_BothDirectionsLegs);
                 BeginTable("", 2, "leftalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_Leg, ReportText.ColumnHeader_Courses);
+
+                BeginTableBody();
 
                 bool first = true;
                 foreach (BothDirectionsLeg bothDirectionsLeg in bothDirectionsLegs) {
@@ -1246,6 +1300,7 @@ namespace PurplePen
                     first = false;
                 }
 
+                EndTableBody();
                 EndTable();
             }
 
@@ -1260,10 +1315,14 @@ namespace PurplePen
                 EndPara();
                 BeginTable("", 2, "leftalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_Code, ReportText.ColumnHeader_Location);
+
+                BeginTableBody();
                 foreach (Id<ControlPoint> controlId in unusedControls) {
                     ControlPoint control = eventDB.GetControl(controlId);
                     WriteTableRow(Util.ControlPointName(eventDB, controlId, NameStyle.Medium), string.Format("({0}, {1})", Math.Round(control.location.X), Math.Round(control.location.Y)));
                 }
+                EndTableBody();
+
                 EndTable();
             }
 
@@ -1275,9 +1334,11 @@ namespace PurplePen
                 WriteH2(ReportText.EventAudit_MissingBoxes);
                 BeginTable("", 3, "leftalign", "leftalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_Code, ReportText.ColumnHeader_Column, ReportText.ColumnHeader_Reason);
+                BeginTableBody();
                 foreach (MissingThing thing in missingBoxes) {
                     WriteTableRow(Util.ControlPointName(eventDB, thing.controlId, NameStyle.Medium), thing.what, thing.why);
                 }
+                EndTableBody();
                 EndTable();
             }
 
@@ -1289,9 +1350,11 @@ namespace PurplePen
                 WriteH2(ReportText.EventAudit_MissingPunchPatterns);
                 BeginTable("", 2, "leftalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_Code, ReportText.ColumnHeader_Reason);
+                BeginTableBody();
                 foreach (MissingThing thing in missingPunches) {
                     WriteTableRow(Util.ControlPointName(eventDB, thing.controlId, NameStyle.Medium), thing.what);
                 }
+                EndTableBody();
                 EndTable();
             }
 
@@ -1303,9 +1366,11 @@ namespace PurplePen
                 WriteH2(ReportText.EventAudit_MissingScores);
                 BeginTable("", 3, "leftalign", "leftalign", "leftalign");
                 WriteTableHeaderRow(ReportText.ColumnHeader_Course, ReportText.ColumnHeader_Control, ReportText.ColumnHeader_Reason);
+                BeginTableBody();
                 foreach (MissingThing thing in missingScores) {
                     WriteTableRow(eventDB.GetCourse(thing.courseId).name, Util.ControlPointName(eventDB, thing.controlId, NameStyle.Medium), thing.what);
                 }
+                EndTableBody();
                 EndTable();
             }
 
@@ -1342,12 +1407,15 @@ namespace PurplePen
             BeginTable("", classes.Length, classes);
 
             // Write the header row.
+            BeginTableHead();
             BeginTableRow();
             WriteTableHeaderCell("");
             for (int i = 1; i <= relayVariations.NumberOfLegs; ++i)
                 WriteTableHeaderCell(string.Format(ReportText.RelayVariation_LegHeader, i));
             EndTableRow();
+            EndTableHead();
 
+            BeginTableBody();
             // Write the relay variation rows. Table rule after every 3rd line
             for (int teamNumber = relayVariations.FirstTeamNumber; teamNumber <= relayVariations.LastTeamNumber; ++teamNumber) {
                 bool tablerule = (teamNumber % 3 == 0);
@@ -1357,6 +1425,7 @@ namespace PurplePen
                     WriteTableCell(tablerule ? "tablerule" : "", relayVariations.GetVariation(teamNumber, legNumber).CodeString);
                 EndTableRow();
             }
+            EndTableBody();
 
             EndTable();
 
@@ -1402,6 +1471,7 @@ namespace PurplePen
 
             BeginTable(3);
             WriteTableHeaderRow("Column 1", "Column 2", "Column 3");
+            BeginTableBody();
             WriteTableRow("row1col1", "row1col2", "row1col3");
             WriteTableRow("", "row2col2", "row2col3");
             BeginTableRow();
@@ -1413,9 +1483,11 @@ namespace PurplePen
             WriteSpannedTableCell(2, "row3col1and2");
             WriteTableCell("row3col3");
             EndTableRow();
+            EndTableBody();
             EndTable();
 
             BeginTable("tableClass", 4, "col1Class", "col2Class");
+            BeginTableHead();
             BeginTableRow();
             WriteTableHeaderCell(null);
             WriteTableHeaderCell("myklass", "row1col2");
@@ -1423,6 +1495,9 @@ namespace PurplePen
             WriteTableHeaderCell("");
             WriteTableHeaderCell("anotherclass", "row1col5");
             EndTableRow();
+            EndTableHead();
+
+            BeginTableBody();
             BeginTableRow();
             WriteTableCell("row2col1");
             WriteTableCell("myklass", "row2col2");
@@ -1430,6 +1505,8 @@ namespace PurplePen
             WriteTableCell("");
             WriteTableCell("row2col5");
             EndTableRow();
+            EndTableBody();
+
             EndTable();
 
             return FinishReport();
