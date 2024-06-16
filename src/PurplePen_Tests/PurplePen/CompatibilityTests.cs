@@ -121,6 +121,7 @@ namespace PurplePen.Tests
             course = eventDB.GetCourse(CourseId(6));
             Assert.AreEqual(ControlLabelKind.Code, course.labelKind);
             Assert.AreEqual(0, course.scoreColumn);
+            Assert.IsFalse(course.hideFromReports);
         }
 
         [TestMethod]

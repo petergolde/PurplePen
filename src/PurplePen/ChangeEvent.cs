@@ -456,7 +456,9 @@ namespace PurplePen
         }
 
         // Change the attributes of a course.
-        public static void ChangeCourseProperties(EventDB eventDB, Id<Course> courseId, CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public static void ChangeCourseProperties(EventDB eventDB, Id<Course> courseId, CourseKind courseKind, string courseName, 
+                                                  ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, 
+                                                  float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool hideFromReports)
         {
             Course course = eventDB.GetCourse(courseId);
 
@@ -471,6 +473,7 @@ namespace PurplePen
             course.overrideCourseLength = length;
             course.descKind = descriptionKind;
             course.firstControlOrdinal = firstControlOrdinal;
+            course.hideFromReports = hideFromReports;
 
             eventDB.ReplaceCourse(courseId, course);
         }
@@ -1043,7 +1046,7 @@ namespace PurplePen
         public static void RemoveControl(EventDB eventDB, Id<ControlPoint> controlId)
         {
             // Find all of the courses/course-controls that are this control.
-            foreach (Id<Course> courseId in QueryEvent.CoursesUsingControl(eventDB, controlId)) {
+            foreach (Id<Course> courseId in QueryEvent.CoursesUsingControl(eventDB, controlId, true)) {
                 Id<CourseControl> courseControlId;
                 do {
                     // Remove one course control could remove multiple, so only remove first of the course controls that use that control, then
@@ -1504,7 +1507,9 @@ namespace PurplePen
 
         // Create a new course with the given attributes. The course sorts after all existing courses.
         // If addStartAndFinish is true, then if exact one start control exists, it is added. If exactly one finish control exists, it is added.
-        public static Id<Course> CreateCourse(EventDB eventDB, CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool addStartAndFinish)
+        public static Id<Course> CreateCourse(EventDB eventDB, CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, 
+                                              string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, 
+                                              int firstControlOrdinal, bool addStartAndFinish, bool hideFromReports)
         {
             // Find max sort order in use.
             int maxSortOrder = 0;
@@ -1523,6 +1528,7 @@ namespace PurplePen
             newCourse.scoreColumn = scoreColumn;
             newCourse.firstControlOrdinal = firstControlOrdinal;
             newCourse.printArea = printArea;
+            newCourse.hideFromReports = hideFromReports;
 
             Id<Course> newCourseId = eventDB.AddCourse(newCourse);
 
@@ -1640,7 +1646,7 @@ namespace PurplePen
         private static void UpdateDescriptionCourses(EventDB eventDB, Id<Special> descriptionId)
         {
             // Which courses to remove?
-            CourseDesignator[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId);
+            CourseDesignator[] coursesToRemove = QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionId, true);
 
             // Find all descriptions to change.
             List<Id<Special>> allDescriptionIds = new List<Id<Special>>();
@@ -1652,7 +1658,7 @@ namespace PurplePen
             foreach (Id<Special> descriptionToChange in allDescriptionIds) {
                 // Remove any courses that overlap with the courses the given description has..
                 bool changes = false;          // track if any changes made.
-                List<CourseDesignator> courses = new List<CourseDesignator>(QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionToChange));
+                List<CourseDesignator> courses = new List<CourseDesignator>(QueryEvent.GetSpecialDisplayedCourses(eventDB, descriptionToChange, true));
                 for (int courseIndex = 0; courseIndex < courses.Count; ++courseIndex) {
                     foreach (CourseDesignator courseToRemove in coursesToRemove) {
                         if (courseIndex >= 0 && courseIndex < courses.Count) {

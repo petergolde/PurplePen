@@ -93,7 +93,7 @@ namespace PurplePen.DebugUI
             descriptionRenderer = new DescriptionRenderer(symbolDB);
 
             listBoxCourses.Items.Add(new CourseItem(eventDB, Id<Course>.None));
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 listBoxCourses.Items.Add(new CourseItem(eventDB, courseId));
             }
 

@@ -875,6 +875,7 @@ namespace PurplePen
         public int load;                 // Competitor load, or negative for no load set.
         public int firstControlOrdinal;  // Ordinal number of first control (usually 1 for a normal course.)
         public int scoreColumn;         // column for score, or -1 for none (must be -1 for a non-score course)
+        public bool hideFromReports;    // true for "provisional" courses that should not be included in reports.
         public DescriptionKind descKind;// Kind of description to print
         public PrintArea printArea;  // print area, or empty if no defined print area.
         public Dictionary<int, PrintArea> partPrintAreas; // print area of parts.
@@ -903,6 +904,7 @@ namespace PurplePen
             this.firstControlOrdinal = 1;
             this.scoreColumn = -1;
             this.printArea = PrintArea.DefaultPrintArea;
+            this.hideFromReports = false;
         }
 
         public void Validate(Id<Course> id, EventDB.ValidateInfo validateInfo)
@@ -1026,6 +1028,9 @@ namespace PurplePen
                 return false;
             if (other.partPrintAreas.Count != this.partPrintAreas.Count)
                 return false;
+            if (other.hideFromReports != this.hideFromReports)
+                return false;
+
             foreach (KeyValuePair<int, PrintArea> kvp in this.partPrintAreas) {
                 PrintArea area;
                 if (!other.partPrintAreas.TryGetValue(kvp.Key, out area) || !area.Equals(kvp.Value))
@@ -1100,6 +1105,7 @@ namespace PurplePen
                         if (kind == CourseKind.Score) 
                             scoreColumn = EventDBUtil.ReadScoreColumnAttribute(xmlinput);
                         descKind = EventDBUtil.ReadDescriptionKindAttribute(xmlinput);
+                        hideFromReports = xmlinput.GetAttributeBool("hide-from-reports", false);
 
                         float len = xmlinput.GetAttributeFloat("course-length", -1F);
                         if (len > 0)
@@ -1231,6 +1237,7 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("load", XmlConvert.ToString(load));
             if (overrideCourseLength.HasValue)
                 xmloutput.WriteAttributeString("course-length", XmlConvert.ToString(overrideCourseLength.Value));
+            xmloutput.WriteAttributeString("hide-from-reports", XmlConvert.ToString(hideFromReports));
 
             if (kind == CourseKind.Score) 
                 EventDBUtil.WriteScoreColumnAttribute(xmloutput, scoreColumn);

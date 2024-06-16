@@ -912,7 +912,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
             eventDB.Load(TestUtil.GetTestFile("courseformat\\marymoor1.coursescribe"));
             eventDB.Validate();
 
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(courseId));
                 course = new CourseLayout();
                 CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);

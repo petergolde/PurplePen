@@ -7,7 +7,7 @@
   </event>
   <course id="1" kind="normal">
     <name>Banana</name>
-    <options print-scale="15000" description-kind="symbols" />
+    <options print-scale="15000" description-kind="symbols" hide-from-reports="false"/>
   </course>
   <course id="2" kind="score">
     <name>alpha dude</name>
@@ -19,6 +19,6 @@
   </course>
   <course id="4" kind="normal">
     <name>Mr. B</name>
-    <options print-scale="15000" description-kind="symbols" />
+    <options print-scale="15000" description-kind="symbols" hide-from-reports="true"/>
   </course>
 </course-scribe-event>

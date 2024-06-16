@@ -282,6 +282,15 @@ namespace PurplePen
             }
         }
 
+        public bool HideFromReports {
+            get {
+                return hideFromReportsCheckBox.Checked;
+            }
+            set {
+                hideFromReportsCheckBox.Checked = value;
+            }
+        }
+
         // Initialize the available print scales from the map scale.
         public void InitializePrintScales(float mapScale)
         {

@@ -63,7 +63,7 @@ namespace PurplePen.Tests
             eventDB.Load(TestUtil.GetTestFile("descformatter\\sampleevent1.coursescribe"));
             eventDB.Validate();
 
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 CourseDesignator designator;
                 if (QueryEvent.HasVariations(eventDB, courseId)) {
                     var variationInfo = QueryEvent.GetAllVariations(eventDB, courseId).First();

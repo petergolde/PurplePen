@@ -93,6 +93,7 @@ namespace PurplePen
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.lengthTextBox = new System.Windows.Forms.TextBox();
             this.kmSuffix = new System.Windows.Forms.Label();
+            this.hideFromReportsCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -273,6 +274,7 @@ namespace PurplePen
             this.tableLayoutPanel1.Controls.Add(this.courseKindCombo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.hideFromReportsCheckBox, 0, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // lengthLabel
@@ -346,6 +348,13 @@ namespace PurplePen
             resources.ApplyResources(this.kmSuffix, "kmSuffix");
             this.kmSuffix.Name = "kmSuffix";
             // 
+            // hideFromReportsCheckBox
+            // 
+            resources.ApplyResources(this.hideFromReportsCheckBox, "hideFromReportsCheckBox");
+            this.tableLayoutPanel1.SetColumnSpan(this.hideFromReportsCheckBox, 2);
+            this.hideFromReportsCheckBox.Name = "hideFromReportsCheckBox";
+            this.hideFromReportsCheckBox.UseVisualStyleBackColor = true;
+            // 
             // AddCourse
             // 
             resources.ApplyResources(this, "$this");
@@ -413,5 +422,6 @@ namespace PurplePen
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.TextBox lengthTextBox;
         private System.Windows.Forms.Label kmSuffix;
+        private System.Windows.Forms.CheckBox hideFromReportsCheckBox;
     }
 }

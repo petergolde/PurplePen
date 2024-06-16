@@ -1441,7 +1441,7 @@ namespace PurplePen
             // If the dialog completed successfully, then add the course.
             if (result == DialogResult.OK) {
                 controller.NewCourse(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.ControlLabelKind, addCourseDialog.ScoreColumn, addCourseDialog.SecondaryTitle,
-                    addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.Length, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
+                    addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.Length, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal, addCourseDialog.HideFromReports);
             }
         }
 
@@ -1456,7 +1456,8 @@ namespace PurplePen
             int firstControlOrdinal;
             ControlLabelKind labelKind;
             int scoreColumn;
-            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal);
+            bool hideFromReports;
+            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal, out hideFromReports);
 
             // Initialize the dialog
             addCourseDialog.InitializePrintScales(controller.MapScale);
@@ -1470,6 +1471,7 @@ namespace PurplePen
             addCourseDialog.FirstControlOrdinal = firstControlOrdinal;
             addCourseDialog.ControlLabelKind = labelKind;
             addCourseDialog.ScoreColumn = scoreColumn;
+            addCourseDialog.HideFromReports = hideFromReports;
 
         }
         private void duplicateCourseMenu_Click(object sender, EventArgs e)
@@ -1489,7 +1491,7 @@ namespace PurplePen
                 // If the dialog completed successfully, then add the course.
                 if (result == DialogResult.OK) {
                     controller.DuplicateCurrentCourse(addCourseDialog.CourseName, addCourseDialog.ControlLabelKind, addCourseDialog.ScoreColumn, addCourseDialog.SecondaryTitle,
-                                                      addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.Length, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
+                                                      addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.Length, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal, addCourseDialog.HideFromReports);
                 }
 
             }
@@ -1512,7 +1514,7 @@ namespace PurplePen
                 // If the dialog completed successfully, then change the course.
                 if (result == DialogResult.OK) {
                     controller.ChangeCurrentCourseProperties(addCourseDialog.CourseKind, addCourseDialog.CourseName, addCourseDialog.ControlLabelKind, addCourseDialog.ScoreColumn, addCourseDialog.SecondaryTitle,
-                        addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.Length, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal);
+                        addCourseDialog.PrintScale, addCourseDialog.Climb, addCourseDialog.Length, addCourseDialog.DescKind, addCourseDialog.FirstControlOrdinal, addCourseDialog.HideFromReports);
                 }
             }
             else {

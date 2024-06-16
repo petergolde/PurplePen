@@ -194,7 +194,7 @@ Invalid control point kind 'norfmal''
             undomgr.BeginCommand(771, "hi");
             ChangeEvent.AddControlPoint(eventDB, ControlPointKind.Start, null, new PointF(10, 10), 0);
             ChangeEvent.AddControlPoint(eventDB, ControlPointKind.Normal, "31", new PointF(20, 7), 0);
-            ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "Course 1", ControlLabelKind.Sequence, -1, null, 10000, -1, null, DescriptionKind.Symbols, 1, true);
+            ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "Course 1", ControlLabelKind.Sequence, -1, null, 10000, -1, null, DescriptionKind.Symbols, 1, true, hideFromReports: true);
             undomgr.EndCommand(771);
             eventDB.Validate();
         }
@@ -261,7 +261,7 @@ Invalid control point kind 'norfmal''
             undomgr.BeginCommand(771, "hi");
             ChangeEvent.AddControlPoint(eventDB, ControlPointKind.Start, null, new PointF(10, 10), 0);
             ChangeEvent.AddControlPoint(eventDB, ControlPointKind.Normal, "31", new PointF(20, 7), 0);
-            ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "Course 1", ControlLabelKind.Sequence, -1, null, 10000, -1, null, DescriptionKind.Symbols, 1, true);
+            ChangeEvent.CreateCourse(eventDB, CourseKind.Normal, "Course 1", ControlLabelKind.Sequence, -1, null, 10000, -1, null, DescriptionKind.Symbols, 1, addStartAndFinish: true, hideFromReports: false);
             undomgr.EndCommand(771);
             eventDB.Validate();
         }
@@ -1437,7 +1437,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             bool success = controller.LoadInitialFile(TestUtil.GetTestFile("controller\\marymoor.coursescribe"), true);
             Assert.IsTrue(success);
 
-            controller.NewCourse(CourseKind.Normal, "My New Course", ControlLabelKind.SequenceAndCode, 1, "Secondary Title", 15000, 25, null, DescriptionKind.Symbols, 3);
+            controller.NewCourse(CourseKind.Normal, "My New Course", ControlLabelKind.SequenceAndCode, 1, "Secondary Title", 15000, 25, null, DescriptionKind.Symbols, 3, true);
             Assert.AreEqual("My New Course", controller.GetTabNames()[controller.ActiveTab]);
             Id<Course> newCourse = controller.GetSelectionMgr().Selection.ActiveCourseDesignator.CourseId;
 
@@ -1451,6 +1451,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             Assert.AreEqual(3, course.firstControlOrdinal);
             Assert.AreEqual(ControlLabelKind.SequenceAndCode, course.labelKind);
             Assert.AreEqual(1, course.scoreColumn);
+            Assert.IsTrue(course.hideFromReports);
             Assert.AreEqual(1, eventDB.GetCourseControl(course.firstCourseControl).control.id);
             Assert.AreEqual(2, eventDB.GetCourseControl(eventDB.GetCourseControl(course.firstCourseControl).nextCourseControl).control.id);
         }
@@ -1477,8 +1478,9 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             int firstControlOrdinal;
             ControlLabelKind labelKind;
             int scoreColumn;
+            bool hideFromReports;
 
-            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal);
+            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal, out hideFromReports);
             Assert.AreEqual(CourseKind.Normal, courseKind);
             Assert.AreEqual("Course 3", courseName);
             Assert.AreEqual(null, secondaryTitle);
@@ -1489,11 +1491,12 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             Assert.AreEqual(1, firstControlOrdinal);
             Assert.AreEqual(-1, scoreColumn);
             Assert.AreEqual(ControlLabelKind.Sequence, labelKind);
+            Assert.IsFalse(hideFromReports);
 
-            controller.ChangeCurrentCourseProperties(CourseKind.Score, "Xavier", ControlLabelKind.Code, 1, "super hard", 5000, 55, 7600F, DescriptionKind.SymbolsAndText, 12);
+            controller.ChangeCurrentCourseProperties(CourseKind.Score, "Xavier", ControlLabelKind.Code, 1, "super hard", 5000, 55, 7600F, DescriptionKind.SymbolsAndText, 12, hideFromReports: true);
 
             Assert.AreEqual(3, controller.ActiveTab);   // changing name does not change the sort order.
-            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal);
+            controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal, out hideFromReports);
             Assert.AreEqual(CourseKind.Score, courseKind);
             Assert.AreEqual("Xavier", courseName);
             Assert.AreEqual(ControlLabelKind.Code, labelKind);
@@ -1504,6 +1507,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             Assert.AreEqual(DescriptionKind.SymbolsAndText, descKind);
             Assert.AreEqual(12, firstControlOrdinal);
             Assert.AreEqual(1, scoreColumn);
+            Assert.IsTrue(hideFromReports);
         }
 
         [TestMethod]

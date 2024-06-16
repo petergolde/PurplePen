@@ -141,7 +141,7 @@ namespace PurplePen
 
             StringBuilder builder = new StringBuilder();
 
-            Id<Course>[] sortedCourseIds = QueryEvent.SortedCourseIds(eventDB);
+            Id<Course>[] sortedCourseIds = QueryEvent.SortedCourseIds(eventDB, false);
             List<string> courseNames = new List<string>();
 
             if (courseIds.Contains(new Id<Course>(0))) {
@@ -246,7 +246,7 @@ namespace PurplePen
 
             // Which courses is it used in?
             list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.UsedIn : SelectionDescriptionText.UsedInCourses)));
-            Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, controlId);
+            Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, controlId, false);
             list.Add(new TextPart(descKind == DescKind.Tooltip ? TextFormat.SameLine : TextFormat.NewLine, CourseListText(eventDB, coursesUsingControl)));
 
             // What is the competitor load?
@@ -406,13 +406,13 @@ namespace PurplePen
             // Count controls in use.
             list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.ControlsInUse));
             list.Add(new TextPart(TextFormat.NewLine, CountControls(activeCourseView, delegate(Id<ControlPoint> controlId) { 
-                return QueryEvent.CoursesUsingControl(eventDB, controlId).Length > 0;
+                return QueryEvent.CoursesUsingControl(eventDB, controlId, false).Length > 0;
             })));
 
             // Count controls not in use.
             list.Add(new TextPart(TextFormat.Header, SelectionDescriptionText.ControlsNotInUse));
             list.Add(new TextPart(TextFormat.NewLine, CountControls(activeCourseView, delegate(Id<ControlPoint> controlId) { 
-                return QueryEvent.CoursesUsingControl(eventDB, controlId).Length == 0;
+                return QueryEvent.CoursesUsingControl(eventDB, controlId, false).Length == 0;
             })));
 
             return list.ToArray();
@@ -464,7 +464,7 @@ namespace PurplePen
 
             // Which courses
             list.Add(new TextPart(TextFormat.Header, (descKind == DescKind.Tooltip ? SelectionDescriptionText.UsedIn : SelectionDescriptionText.UsedInCourses)));
-            Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingLeg(eventDB, controlId1, controlId2);
+            Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingLeg(eventDB, controlId1, controlId2, false);
             list.Add(new TextPart(descKind == DescKind.Tooltip ? TextFormat.SameLine : TextFormat.NewLine, CourseListText(eventDB, coursesUsingControl)));
 
             // What is the competitor load?

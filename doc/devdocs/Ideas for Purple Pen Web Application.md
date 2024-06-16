@@ -77,6 +77,10 @@ There is a version of PdfSharp that works on .NET Core.
 
 https://github.com/ststeiger/PdfSharpCore
 
+or
+
+https://docs.pdfsharp.net/
+
 One thing I think it is missing is TextOutline. We should be able to make
 that work using SkiaSharp, in particular SkPaint.GetTextPath, then enumerating
 the resulting path. Hopefully there are no conics, but I don't think
@@ -93,9 +97,16 @@ to be per document, or have a way to clear the font resolver and the GlyphTypefa
 all of PDF generation. Or maybe there is a FontLoader (created from an IFontResolver) that
 can be used to load and cache fonts.
 
+Also, there are parts of using PdfSharp that rely on GDI+ for positioning characters in text.
+Look at PdfGraphicsTarget.DrawText and how it measures text. May be able to work around this again
+with SkiaSharp. Look at SKFont.GetGlyphPositions and similar.
+
+
 Other parts of PdfSharpCore might not be multi-threading sufficient, though it looks pretty good.
 
 Also would be nice to add support for SkiaSharp.
+
+
 
 ## PDF reading
 

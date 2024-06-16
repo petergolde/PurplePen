@@ -417,7 +417,7 @@ namespace PurplePen
 
             List<Id<Course>> list = new List<Id<Course>>();
 
-            foreach (Id<Course> containingCourseId in SortedCourseIds(eventDB)) {
+            foreach (Id<Course> containingCourseId in SortedCourseIds(eventDB, true)) {
                 if (containingCourseId != courseId &&
                     CourseUsesControl(eventDB, new CourseDesignator(containingCourseId), controlId)) {
                     list.Add(containingCourseId);
@@ -432,11 +432,11 @@ namespace PurplePen
 
         // Find which courses are using a particular control. If none, return an 
         // empty array.
-        public static Id<Course>[] CoursesUsingControl(EventDB eventDB, Id<ControlPoint> controlId)
+        public static Id<Course>[] CoursesUsingControl(EventDB eventDB, Id<ControlPoint> controlId, bool includeHiddenCourses)
         {
             List<Id<Course>> list = new List<Id<Course>>();
 
-            foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in SortedCourseIds(eventDB, includeHiddenCourses)) {
                 if (CourseUsesControl(eventDB, new CourseDesignator(courseId), controlId))
                     list.Add(courseId);
             }
@@ -446,11 +446,11 @@ namespace PurplePen
 
         // Find which courses are using a particular leg. If none, return an 
         // empty array.
-        public static Id<Course>[] CoursesUsingLeg(EventDB eventDB, Id<ControlPoint> control1, Id<ControlPoint> control2)
+        public static Id<Course>[] CoursesUsingLeg(EventDB eventDB, Id<ControlPoint> control1, Id<ControlPoint> control2, bool includeHiddenCourses)
         {
             List<Id<Course>> list = new List<Id<Course>>();
 
-            foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in SortedCourseIds(eventDB, includeHiddenCourses)) {
                 foreach (LegInfo leg in EnumLegs(eventDB, new CourseDesignator(courseId))) {
                     if (eventDB.GetCourseControl(leg.courseControlId1).control == control1 &&
                         eventDB.GetCourseControl(leg.courseControlId2).control == control2) {
@@ -761,7 +761,7 @@ namespace PurplePen
         // What is the control load for this control. Return -1 if not used in any courses that have a load set for them.
         public static int GetControlLoad(EventDB eventDB, Id<ControlPoint> controlId)
         {
-            Id<Course>[] courses = CoursesUsingControl(eventDB, controlId);
+            Id<Course>[] courses = CoursesUsingControl(eventDB, controlId, false);
             return ComputeLoad(eventDB, controlId, courses);
         }
 
@@ -769,14 +769,14 @@ namespace PurplePen
         // Counts multiple visits with multiplicity.
         public static int GetControlVisitLoad(EventDB eventDB, Id<ControlPoint> controlId)
         {
-            Id<Course>[] courses = CoursesUsingControl(eventDB, controlId);
+            Id<Course>[] courses = CoursesUsingControl(eventDB, controlId, false);
             return ComputeVisits(eventDB, controlId, courses);
         }
 
         // What is the load for this leg. Return -1 if not used in any courses that have a load set for them.
         public static int GetLegLoad(EventDB eventDB, Id<ControlPoint> control1, Id<ControlPoint> control2)
         {
-            Id<Course>[] courses = CoursesUsingLeg(eventDB, control1, control2);
+            Id<Course>[] courses = CoursesUsingLeg(eventDB, control1, control2, false);
             return ComputeLoad(eventDB, control1, control2, courses);
         }
 
@@ -791,12 +791,12 @@ namespace PurplePen
         }
 
         // Figure out all unused controls.
-        public static List<Id<ControlPoint>> ControlsUnusedInCourses(EventDB eventDB)
+        public static List<Id<ControlPoint>> ControlsUnusedInCourses(EventDB eventDB, bool includeHiddenCourses)
         {
             List<Id<ControlPoint>> unusedControls = new List<Id<ControlPoint>>();
 
             foreach (Id<ControlPoint> controlId in eventDB.AllControlPointIds) {
-                if (CoursesUsingControl(eventDB, controlId).Length == 0)
+                if (CoursesUsingControl(eventDB, controlId, includeHiddenCourses).Length == 0)
                     unusedControls.Add(controlId);
             }
 
@@ -850,7 +850,7 @@ namespace PurplePen
         public static bool AllCoursesHaveLoads(EventDB eventDB)
         {
             foreach (Course course in eventDB.AllCourses) {
-                if (course.load < 0)
+                if (!course.hideFromReports && course.load < 0)
                     return false;
             }
 
@@ -861,7 +861,7 @@ namespace PurplePen
         public static bool AnyCoursesHaveLoads(EventDB eventDB)
         {
             foreach (Course course in eventDB.AllCourses) {
-                if (course.load >= 0)
+                if (!course.hideFromReports && course.load >= 0)
                     return true;
             }
 
@@ -1290,14 +1290,14 @@ namespace PurplePen
         }
 
         // Get the set of courses that a special is displayed on.
-        public static CourseDesignator[] GetSpecialDisplayedCourses(EventDB eventDB, Id<Special> specialId)
+        public static CourseDesignator[] GetSpecialDisplayedCourses(EventDB eventDB, Id<Special> specialId, bool includeHiddenCourses)
         {
             Special special = eventDB.GetSpecial(specialId);
 
             if (special.allCourses) {
                 // special is on all courses. Return an array with all courses in it.
                 List<CourseDesignator> list = new List<CourseDesignator>();
-                foreach (Id<Course> courseId in SortedCourseIds(eventDB)) {
+                foreach (Id<Course> courseId in SortedCourseIds(eventDB, includeHiddenCourses)) {
                     list.Add(new CourseDesignator(courseId));
                 }
 
@@ -1328,11 +1328,14 @@ namespace PurplePen
         }
 
         // Get all course IDs, in the correct sorted order.
-        public static Id<Course>[] SortedCourseIds(EventDB eventDB)
+        // If includeHiddenCourses is true, all courses are returned
+        // If includeHiddenCourses is false, only courses where "hide from reports" is unchecked (false) are included.
+        public static Id<Course>[] SortedCourseIds(EventDB eventDB, bool includeHiddenCourses)
         {
             List<Id<Course>> allCourseIds = new List<Id<Course>>();
             foreach (Id<Course> courseId in eventDB.AllCourseIds) {
-                allCourseIds.Add(courseId);
+                if (includeHiddenCourses || !eventDB.GetCourse(courseId).hideFromReports)
+                    allCourseIds.Add(courseId);
             }
 
             // Sort by sortOrder field on the Course objects.

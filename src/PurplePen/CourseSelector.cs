@@ -102,7 +102,7 @@ namespace PurplePen
 
                 // Check to see if any course has variations.
                 eventHasVariations = false;
-                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                     if (QueryEvent.HasVariations(eventDB, courseId))
                         eventHasVariations = true;
                 }
@@ -217,7 +217,7 @@ namespace PurplePen
         {
             get {
                 Dictionary<Id<Course>, VariationChoices> result = new Dictionary<Id<Course>, VariationChoices>();
-                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                     VariationChoices variationChoices;
                     // Create dictionary with all courses, getting default for ones that were not changed.
                     if (variationChoicesPerCourse.TryGetValue(courseId, out variationChoices)) {
@@ -262,7 +262,7 @@ namespace PurplePen
                     courseTreeView.Nodes.Add(new TreeNode(MiscText.AllControls) {Tag = CourseDesignator.AllControls});
                 }
 
-                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+                foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                     TreeNode[] parts = null;
 
                     // If the course has parts, get all the parts.

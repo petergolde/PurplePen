@@ -1637,7 +1637,7 @@ namespace PurplePen
             Debug.Assert(selection.ActiveCourseDesignator.IsAllControls);
 
             // If the control is used by any courses, ask the user if he is sure.
-            Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl);
+            Id<Course>[] coursesUsingControl = QueryEvent.CoursesUsingControl(eventDB, selection.SelectedControl, true);
             if (coursesUsingControl.Length > 0) {
                 string controlName = "\"" + Util.ControlPointName(eventDB, selection.SelectedControl, NameStyle.Medium) + "\"";
                 string courseNames = QueryEvent.CourseList(eventDB, coursesUsingControl);
@@ -1695,7 +1695,7 @@ namespace PurplePen
             List<Id<ControlPoint>> orphanedControls = new List<Id<ControlPoint>>();
             string orphanedControlsText = "";
             foreach (Id<ControlPoint> controlId in possibleOrphans) {
-                if (QueryEvent.CoursesUsingControl(eventDB, controlId).Length == 0 && !orphanedControls.Contains(controlId)) {
+                if (QueryEvent.CoursesUsingControl(eventDB, controlId, true).Length == 0 && !orphanedControls.Contains(controlId)) {
                     orphanedControls.Add(controlId);
                     if (orphanedControlsText != "")
                         orphanedControlsText += ", ";
@@ -1722,7 +1722,7 @@ namespace PurplePen
 
         // Duplicate the current course, with new properties. Duplicates all the course controls.
         // The course kind cannot be changed.
-        public void DuplicateCurrentCourse(string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public void DuplicateCurrentCourse(string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool hideFromReports)
         {
             Id<Course> currentCourseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             Course currentCourse = eventDB.GetCourse(currentCourseId);
@@ -1733,7 +1733,7 @@ namespace PurplePen
             Id<Course> newCourseId = ChangeEvent.DuplicateCourse(eventDB, currentCourseId, name);
 
             // Change properties as desired.
-            ChangeEvent.ChangeCourseProperties(eventDB, newCourseId, currentCourse.kind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal);
+            ChangeEvent.ChangeCourseProperties(eventDB, newCourseId, currentCourse.kind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal, hideFromReports);
             
             // Show the new (duplicated) course (with same part as before).
             CourseDesignator newCourseDesignator;
@@ -1747,10 +1747,10 @@ namespace PurplePen
         }
 
         // Add a new course. If a unique start or finish control is found, it is added.
-        public void NewCourse(CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public void NewCourse(CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool hideFromReports)
         {
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
-            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal, true);
+            Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal, addStartAndFinish: true, hideFromReports: hideFromReports);
             selectionMgr.SelectCourseView(new CourseDesignator(newCourse));
             undoMgr.EndCommand(713);
         }
@@ -1762,7 +1762,7 @@ namespace PurplePen
         }
 
         // Get the properties of the current course?
-        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out ControlLabelKind labelKind, out int scoreColumn, out string secondaryTitle, out float printScale, out float climb, out float? length, out DescriptionKind descKind, out int firstControlOrdinal)
+        public void GetCurrentCourseProperties(out CourseKind courseKind, out string courseName, out ControlLabelKind labelKind, out int scoreColumn, out string secondaryTitle, out float printScale, out float climb, out float? length, out DescriptionKind descKind, out int firstControlOrdinal, out bool hideFromReports)
         {
             Course course = eventDB.GetCourse(selectionMgr.Selection.ActiveCourseDesignator.CourseId);
             courseKind = course.kind;
@@ -1775,13 +1775,14 @@ namespace PurplePen
             descKind = course.descKind;
             firstControlOrdinal = course.firstControlOrdinal;
             scoreColumn = course.scoreColumn;
+            hideFromReports = course.hideFromReports;
         }
 
         // Change the properties of the current course.
-        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal)
+        public void ChangeCurrentCourseProperties(CourseKind courseKind, string courseName, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool hideFromReports)
         {
             undoMgr.BeginCommand(888, CommandNameText.ChangeCourseProperties);
-            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal);
+            ChangeEvent.ChangeCourseProperties(eventDB, selectionMgr.Selection.ActiveCourseDesignator.CourseId, courseKind, courseName, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal, hideFromReports);
             undoMgr.EndCommand(888);
         }
 
@@ -1999,7 +2000,7 @@ namespace PurplePen
                 undoMgr.BeginCommand(1127, CommandNameText.SetPrintArea);
                 if (printAreaKind == PrintAreaKind.AllCourses) {
                     ChangeEvent.ChangePrintArea(eventDB, CourseDesignator.AllControls, true, printArea);    // all controls
-                    Id<Course>[] courses = QueryEvent.SortedCourseIds(eventDB);
+                    Id<Course>[] courses = QueryEvent.SortedCourseIds(eventDB, true);
                     foreach (Id<Course> courseId in courses) {
                         ChangeEvent.ChangePrintArea(eventDB, new CourseDesignator(courseId), true, printArea);  
                     }
@@ -2025,7 +2026,7 @@ namespace PurplePen
 
             UpdateAutomaticPrintArea(CourseDesignator.AllControls);
 
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 CourseDesignator designator = new CourseDesignator(courseId);
                 UpdateAutomaticPrintArea(designator);
                 int parts = QueryEvent.CountCourseParts(eventDB, designator, true);
@@ -2588,7 +2589,7 @@ namespace PurplePen
         // Get list of controls for the remove unused controls dialog. A list of keyvaluepairs, where key is the control id, and value is the string to represent it.
         public List<KeyValuePair<Id<ControlPoint>, string>> GetUnusedControls()
         {
-            List<KeyValuePair<Id<ControlPoint>, string>> list = QueryEvent.ControlsUnusedInCourses(eventDB).ConvertAll(id => new KeyValuePair<Id<ControlPoint>,string>(id, Util.ControlPointName(eventDB, id, NameStyle.Medium)));
+            List<KeyValuePair<Id<ControlPoint>, string>> list = QueryEvent.ControlsUnusedInCourses(eventDB, true).ConvertAll(id => new KeyValuePair<Id<ControlPoint>,string>(id, Util.ControlPointName(eventDB, id, NameStyle.Medium)));
 
             list.Sort((pair1, pair2) => QueryEvent.CompareControlIds(eventDB, pair1.Key, pair2.Key));
             return list;
@@ -2614,7 +2615,7 @@ namespace PurplePen
 
             // Set of displayed courses can be changed only for a special.
             if (selection.SelectionKind == SelectionMgr.SelectionKind.Special) {
-                displayedCourses = QueryEvent.GetSpecialDisplayedCourses(eventDB, selection.SelectedSpecial);
+                displayedCourses = QueryEvent.GetSpecialDisplayedCourses(eventDB, selection.SelectedSpecial, true);
                 showAllControls = true;
                 return CommandStatus.Enabled;
             }
@@ -2929,8 +2930,9 @@ namespace PurplePen
         {
             List<CourseLoadInfo> loadList = new List<CourseLoadInfo>();
 
-            // Get loads for each course.
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            // Get loads for each course. Ignore courses that should be ignore in reports,
+            // because loads are all about reports.
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, false)) {
                 Course course = eventDB.GetCourse(courseId);
                 CourseLoadInfo courseLoad = new CourseLoadInfo();
                 courseLoad.courseId = courseId;
@@ -2967,7 +2969,7 @@ namespace PurplePen
             List<CourseOrderInfo> orderList = new List<CourseOrderInfo>();
 
             // Get loads for each course.
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 Course course = eventDB.GetCourse(courseId);
                 CourseOrderInfo courseOrder = new CourseOrderInfo();
                 courseOrder.courseId = courseId;

@@ -306,7 +306,7 @@ namespace PurplePen
             BeginTableBody();
 
             // Enumerate all courses.
-            Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB);
+            Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB, false);
 
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
@@ -435,7 +435,7 @@ namespace PurplePen
 
                 loadInfo.controlId = controlId;
                 loadInfo.controlName = Util.ControlPointName(eventDB, controlId, NameStyle.Medium);
-                loadInfo.numCourses = QueryEvent.CoursesUsingControl(eventDB, controlId).Length;
+                loadInfo.numCourses = QueryEvent.CoursesUsingControl(eventDB, controlId, false).Length;
                 loadInfo.load = QueryEvent.GetControlLoad(eventDB, controlId);
                 loadInfo.visits = QueryEvent.GetControlVisitLoad(eventDB, controlId);
 
@@ -519,7 +519,7 @@ namespace PurplePen
                         loadInfo.controlId1 = controlId1;
                         loadInfo.controlId2 = controlId2;
                         loadInfo.text = string.Format("{0}\u2013{1}", Util.ControlPointName(eventDB, controlId1, NameStyle.Medium), Util.ControlPointName(eventDB, controlId2, NameStyle.Medium));
-                        loadInfo.numCourses = QueryEvent.CoursesUsingLeg(eventDB, controlId1, controlId2).Length;
+                        loadInfo.numCourses = QueryEvent.CoursesUsingLeg(eventDB, controlId1, controlId2, false).Length;
                         loadInfo.load = QueryEvent.GetLegLoad(eventDB, controlId1, controlId2);
 
                         loadInfos.Add(key, loadInfo);
@@ -568,7 +568,7 @@ namespace PurplePen
             WriteH1(string.Format(ReportText.CrossRef_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             Id<ControlPoint>[] controlsToXref = GetControlIdsToXref(eventDB);
-            Id<Course>[] coursesToXref = QueryEvent.SortedCourseIds(eventDB);
+            Id<Course>[] coursesToXref = QueryEvent.SortedCourseIds(eventDB, false);
             string[,] xref = CreateXref(eventDB, controlsToXref, coursesToXref);
 
             string[] classes = new string[coursesToXref.Length + 1];
@@ -769,7 +769,7 @@ namespace PurplePen
             WriteH1(string.Format(ReportText.LegLength_Title, QueryEvent.GetEventTitle(eventDB, " ")));
 
             // Enumerate all courses.
-            Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB);
+            Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB, false);
 
             // Write row for each course.
             foreach (Id<Course> courseId in courseIds) {
@@ -853,7 +853,7 @@ namespace PurplePen
         // Get list of unused controls, sorted
         List<Id<ControlPoint>> SortedUnusedControls(EventDB eventDB)
         {
-            List<Id<ControlPoint>> unusedControls = QueryEvent.ControlsUnusedInCourses(eventDB);
+            List<Id<ControlPoint>> unusedControls = QueryEvent.ControlsUnusedInCourses(eventDB, false);
             unusedControls.Sort((id1, id2) => QueryEvent.CompareControlIds(eventDB, id1, id2));
 
             return unusedControls;
@@ -927,7 +927,7 @@ namespace PurplePen
 
             bool checkLoad = QueryEvent.AnyCoursesHaveLoads(eventDB);       // only check load if some courses have it.
 
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, false)) {
                 Course course = eventDB.GetCourse(courseId);
                 if (course.kind == CourseKind.Normal)
                     AddMissingThingsInRegularCourse(eventDB, courseId, list);
@@ -1018,7 +1018,7 @@ namespace PurplePen
         {
             List<MissingThing> missingScores = new List<MissingThing>();
 
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, false)) {
                 Course course = eventDB.GetCourse(courseId);
                 bool anyScores = false;
                 List<MissingThing> missingScoresThisCourse = new List<MissingThing>();
@@ -1064,7 +1064,7 @@ namespace PurplePen
         {
             List<RepeatControl> result = new List<RepeatControl>();
 
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, false)) {
                 foreach (CourseDesignator designator in AllDesignatorsForCourse(eventDB, courseId)) {
                     List<Id<CourseControl>> courseControls = QueryEvent.EnumCourseControlIds(eventDB, designator).ToList();
                     bool score = eventDB.GetCourse(courseId).kind == CourseKind.Score;
@@ -1146,7 +1146,7 @@ namespace PurplePen
             Dictionary<CourseLeg, List<Id<Course>>> forwardLegs = new Dictionary<CourseLeg, List<Id<Course>>>();
 
             // Accumulate all the legs in the event into the above dictionaries.
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, false)) {
                 if (eventDB.GetCourse(courseId).kind == CourseKind.Score)
                     continue;
 

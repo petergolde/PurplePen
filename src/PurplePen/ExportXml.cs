@@ -136,7 +136,7 @@ namespace PurplePen
 
             // Sport Software requires that the courses be numbers started at 0.
             int courseNumber = 0;
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 if (WriteCourse(courseId, courseNumber))
                     ++courseNumber;
             }
@@ -146,7 +146,7 @@ namespace PurplePen
 
         void WriteTeamAssignments()
         {
-            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB)) {
+            foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
                 if (QueryEvent.HasVariations(eventDB, courseId)) {
                     Course course = eventDB.GetCourse(courseId);
                     if (course.relaySettings.relayTeams > 0) {

@@ -561,7 +561,7 @@ namespace PurplePen
             List<KeyValuePair<Id<Course>,string>> courseViewPairs = new List<KeyValuePair<Id<Course>,string>>(); // Holds the list of course views and names, for sorting. Does NOT include all controls.
 
             // Get all the pairs of course ids in sorted order.
-            Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB);
+            Id<Course>[] courseIds = QueryEvent.SortedCourseIds(eventDB, true);
 
             // Copy to the names and ids arrays, adding in All Controls as the first element.
             courseViewNames = new string[courseIds.Length + 1];

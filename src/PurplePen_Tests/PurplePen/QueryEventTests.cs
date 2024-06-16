@@ -87,10 +87,10 @@ namespace PurplePen.Tests
 
             Id<Course>[] result;
 
-            result = QueryEvent.CoursesUsingControl(eventDB, ControlId(23));
+            result = QueryEvent.CoursesUsingControl(eventDB, ControlId(23), true);
             Assert.AreEqual(0, result.Length);
 
-            result = QueryEvent.CoursesUsingControl(eventDB, ControlId(6));
+            result = QueryEvent.CoursesUsingControl(eventDB, ControlId(6), true);
             TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(1), CourseId(4), CourseId(3), CourseId(5), CourseId(6) });
         }
 
@@ -124,7 +124,7 @@ namespace PurplePen.Tests
             Setup("queryevent\\marymoor5.ppen");
             Id<ControlPoint>[] expected = { ControlId(83), ControlId(88), ControlId(87), ControlId(82), ControlId(81), ControlId(84) };
 
-            List<Id<ControlPoint>> result = QueryEvent.ControlsUnusedInCourses(eventDB);
+            List<Id<ControlPoint>> result = QueryEvent.ControlsUnusedInCourses(eventDB, true);
 
             CollectionAssert.AreEquivalent(expected, result);
         }
@@ -136,13 +136,13 @@ namespace PurplePen.Tests
 
             Id<Course>[] result;
 
-            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(44), ControlId(70));
+            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(44), ControlId(70), true);
             TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { });
 
-            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(72), ControlId(70));
+            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(72), ControlId(70), true);
             TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(2) });
 
-            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(48), ControlId(50));
+            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(48), ControlId(50), true);
             TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(4), CourseId(6) });
         }
 
@@ -153,7 +153,7 @@ namespace PurplePen.Tests
 
             Id<Course>[] result;
 
-            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(1), ControlId(11));
+            result = QueryEvent.CoursesUsingLeg(eventDB, ControlId(1), ControlId(11), true);
             TestUtil.TestEnumerableAnyOrder(result, new Id<Course>[] { CourseId(4) });  // should not include score courses!
         }
 
@@ -1284,10 +1284,10 @@ namespace PurplePen.Tests
 
             Setup("queryevent\\specials.ppen");
 
-            result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(7));
+            result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(7), true);
             TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(0), Designator(1), Designator(2), Designator(3), Designator(4), Designator(5), Designator(6), Designator(7), Designator(8), Designator(9), Designator(10) });
 
-            result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(2));
+            result = QueryEvent.GetSpecialDisplayedCourses(eventDB, SpecialId(2), true);
             TestUtil.TestEnumerableAnyOrder(result, new CourseDesignator[] { Designator(1), Designator(2), Designator(3), Designator(9) });
         }
 
@@ -1670,7 +1670,7 @@ namespace PurplePen.Tests
         {
             Setup("queryevent\\coursenames.ppen");
 
-            Id<Course>[] sortedCourseIds = QueryEvent.SortedCourseIds(eventDB);
+            Id<Course>[] sortedCourseIds = QueryEvent.SortedCourseIds(eventDB, true);
 
             Assert.AreEqual(4, sortedCourseIds.Length);
             Assert.AreEqual(CourseId(2), sortedCourseIds[0]);
@@ -1681,6 +1681,17 @@ namespace PurplePen.Tests
             Assert.AreEqual("Mr. B", eventDB.GetCourse(sortedCourseIds[2]).name);
             Assert.AreEqual(CourseId(3), sortedCourseIds[3]);
             Assert.AreEqual("smedly", eventDB.GetCourse(sortedCourseIds[3]).name);
+
+            sortedCourseIds = QueryEvent.SortedCourseIds(eventDB, false);
+
+            Assert.AreEqual(3, sortedCourseIds.Length);
+            Assert.AreEqual(CourseId(2), sortedCourseIds[0]);
+            Assert.AreEqual("alpha dude", eventDB.GetCourse(sortedCourseIds[0]).name);
+            Assert.AreEqual(CourseId(1), sortedCourseIds[1]);
+            Assert.AreEqual("Banana", eventDB.GetCourse(sortedCourseIds[1]).name);
+            Assert.AreEqual(CourseId(3), sortedCourseIds[2]);
+            Assert.AreEqual("smedly", eventDB.GetCourse(sortedCourseIds[2]).name);
+
         }
 
         [TestMethod]
