@@ -250,7 +250,7 @@ namespace PurplePen.MapModel
             }
         }
         
-        // Format a number with a certain number of significant digits, chosing the correct suffix based on the magnitude of the number.
+        // Format a number with a certain number of significant digits, choosing the correct suffix based on the magnitude of the number.
         public static string FormatNumberWithSuffix(double number, int sigDigits, string micro, string milli, string unit, string kilo, string mega) {
             string suffix;
             Debug.Assert(unit != null);

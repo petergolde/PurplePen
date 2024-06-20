@@ -869,7 +869,7 @@ namespace PdfSharp.Pdf
         PdfArray array;
         if (oldArray == null)
         {
-          // Use contstructor with signature 'Ctor(PdfDocument owner)'.
+          // Use constructor with signature 'Ctor(PdfDocument owner)'.
           ctorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
             null, new Type[] { typeof(PdfDocument) }, null);
           Debug.Assert(ctorInfo != null, "No appropriate constructor found for type: " + type.Name);
@@ -877,7 +877,7 @@ namespace PdfSharp.Pdf
         }
         else
         {
-          // Use contstructor with signature 'Ctor(PdfDictionary dict)'.
+          // Use constructor with signature 'Ctor(PdfDictionary dict)'.
           ctorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
             null, new Type[] { typeof(PdfArray) }, null);
           Debug.Assert(ctorInfo != null, "No appropriate constructor found for type: " + type.Name);
@@ -892,7 +892,7 @@ namespace PdfSharp.Pdf
         PdfDictionary dict;
         if (oldDictionary == null)
         {
-          // Use contstructor with signature 'Ctor(PdfDocument owner)'.
+          // Use constructor with signature 'Ctor(PdfDocument owner)'.
           ctorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
             null, new Type[] { typeof(PdfDocument) }, null);
           Debug.Assert(ctorInfo != null, "No appropriate constructor found for type: " + type.Name);
@@ -900,7 +900,7 @@ namespace PdfSharp.Pdf
         }
         else
         {
-          // Use contstructor with signature 'Ctor(PdfDictionary dict)'.
+          // Use constructor with signature 'Ctor(PdfDictionary dict)'.
           ctorInfo = type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
             null, new Type[] { typeof(PdfDictionary) }, null);
           Debug.Assert(ctorInfo != null, "No appropriate constructor found for type: " + type.Name);

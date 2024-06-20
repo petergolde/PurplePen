@@ -237,7 +237,7 @@ namespace PdfSharp.Drawing
       System.Windows.Media.FontFamily fontFamily = new System.Windows.Media.FontFamily(familyName);
 #endif
 
-      // Check whether font data realy exists
+      // Check whether font data really exists
 #if DEBUG && !SILVERLIGHT
       ICollection<Typeface> list = fontFamily.GetTypefaces();
       foreach (Typeface typeFace in list)

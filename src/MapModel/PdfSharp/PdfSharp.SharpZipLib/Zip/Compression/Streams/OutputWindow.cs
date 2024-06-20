@@ -160,7 +160,7 @@ namespace PdfSharp.SharpZipLib.Zip.Compression.Streams
     /// <param name="offset">offset of start in source dictionary</param>
     /// <param name="len">length of dictionary</param>
     /// <exception cref="InvalidOperationException">
-    /// If window isnt empty
+    /// If window isn't empty
     /// </exception>
     public void CopyDict(byte[] dict, int offset, int len)
     {

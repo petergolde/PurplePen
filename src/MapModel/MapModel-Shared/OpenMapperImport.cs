@@ -1412,14 +1412,14 @@ namespace PurplePen.MapModel
                 }
                 catch (Exception) {
                     // An argument exception occurs in the template info has bad characters. Other weird exceptions are possible.
-                    // Just use the absoluate or relative name in this case.
+                    // Just use the absolute or relative name in this case.
                     absoluteFileName = string.IsNullOrWhiteSpace(openMapperTemplate.path) ? openMapperTemplate.relPath : openMapperTemplate.path;
                 }
             }
 
             if (openMapperTemplate.georef) {
-                // CONSIDER: This isn't correct if the template is georeferenced with a different coordindate system than the map.
-                // Probaly should check crs_spec, and do something (what??) if the coordinate systems are different.
+                // CONSIDER: This isn't correct if the template is georeferenced with a different coordinate system than the map.
+                // Probably should check crs_spec, and do something (what??) if the coordinate systems are different.
                 float[] worldFileParameters = ReadWorldFile(absoluteFileName);
                 if (worldFileParameters != null) {
                     Size pixelSize = BitmapPixelSize(absoluteFileName);

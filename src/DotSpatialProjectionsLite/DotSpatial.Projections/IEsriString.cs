@@ -36,7 +36,7 @@ namespace DotSpatial.Projections
         string ToEsriString();
 
         /// <summary>
-        /// This reads the string and attempts to parse the relavent values.
+        /// This reads the string and attempts to parse the relevant values.
         /// </summary>
         /// <param name="esriString">The string to read</param>
         void ParseEsriString(string esriString);

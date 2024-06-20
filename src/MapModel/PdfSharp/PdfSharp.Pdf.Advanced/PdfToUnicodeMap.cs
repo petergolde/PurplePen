@@ -75,7 +75,7 @@ namespace PdfSharp.Pdf.Advanced
     {
       base.PrepareForSave();
 
-      // This code comes literaly from PDF Reference
+      // This code comes literally from PDF Reference
       string prefix =
         "/CIDInit /ProcSet findresource begin\n" +
         "12 dict begin\n" +

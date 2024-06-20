@@ -58,7 +58,7 @@ namespace PurplePen.MapModel.DebugCode
             this.level = level;
         }
 
-        // Set the test directory to prevent absolute path probelsm.
+        // Set the test directory to prevent absolute path probelms.
         public OcadDump(string testDirectory)
         {
             this.testDirectory = testDirectory;

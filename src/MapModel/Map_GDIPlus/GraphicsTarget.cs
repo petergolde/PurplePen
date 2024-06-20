@@ -506,7 +506,7 @@ using System.Runtime.InteropServices;
         // Draw text with upper-left corner of text at the given locations.
         public void DrawText(string text, object fontKey, object brushKey, PointF upperLeft)
         {
-            // Occasonal GDI+ throws an exception if the font size is super small.
+            // Occasional GDI+ throws an exception if the font size is super small.
             try {
                 Graphics.DrawString(text, GetFont(fontKey), GetBrush(brushKey), upperLeft, stringFormat);
             }

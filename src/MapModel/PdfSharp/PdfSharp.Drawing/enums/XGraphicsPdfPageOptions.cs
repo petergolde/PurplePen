@@ -51,7 +51,7 @@ namespace PdfSharp.Drawing
 
 #if MIGRADOC
     /// <summary>
-    /// Just a flag to aktivate an internal hack.
+    /// Just a flag to activate an internal hack.
     /// </summary>
     PDFlibHack = 0xF000,
 #endif

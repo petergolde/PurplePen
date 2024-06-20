@@ -634,7 +634,7 @@ Objects are stored as a TElement structure.
                                         // graphic object: color number
 					// image object: CYMK color of object
     LineWidth: SmallInt;                // line with for image and graphic object
-    DiamFlags: SmallInt;                // flages: LineStyle by lines
+    DiamFlags: SmallInt;                // flags: LineStyle by lines
     Res2: double;                       // not used
 
     Mark: Byte;                         // Internal used
@@ -700,7 +700,7 @@ si_CoursePar = 1031
   // b = background for control descriptions
   // c = numbering (0=number, 1=number and code, 2=code only)
   // d = control descriptions for all controls
-  // e = event titel
+  // e = event title
   // f = control frequencies (0 = number and frequencies, 1 = frequencies only)
   // i = maximum rows in control description [integer]
   // l = distance to connection line
@@ -910,7 +910,7 @@ si_OimPar = 1025 (OCAD Internet Maps )
   // i = Overview height
   // m = Do not create tiles
   // r = Zoom range
-  // s = Select lable
+  // s = Select label
   // v = Overview width
   // w = Width
   // z = Zoom levels
@@ -1012,7 +1012,7 @@ si_SpotColor[list] = 10 (spot colors)
   // y = yellow
   // k = black
 
-si_FileInfo[list] = 11 (file informations)
+si_FileInfo[list] = 11 (file information)
 ------------------------------------------
   // First = text
 
@@ -1121,7 +1121,7 @@ si_ScalePar = 1039 (scales settings)
   // b = additional local horizontal offset in m
   // c = additional local vertical offset in m
   // d = grid distance for real world  in m
-  // g = grid distance for paper coordiantes in mm
+  // g = grid distance for paper coordinates in mm
   // i = grid and zone
   // m = map scale
   // r = real world cord (0=paper, 1=real world)

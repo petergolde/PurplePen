@@ -67,7 +67,7 @@ namespace PdfSharp.Pdf
     /// </summary>
     public PdfDocument()
     {
-      //PdfDocument.Gob.AttatchDocument(this.Handle);
+      //PdfDocument.Gob.AttachDocument(this.Handle);
 
       this.creation = DateTime.Now;
       this.state = DocumentState.Created;
@@ -83,7 +83,7 @@ namespace PdfSharp.Pdf
     /// </summary>
     public PdfDocument(string filename)
     {
-      //PdfDocument.Gob.AttatchDocument(this.Handle);
+      //PdfDocument.Gob.AttachDocument(this.Handle);
 
       this.creation = DateTime.Now;
       this.state = DocumentState.Created;
@@ -100,7 +100,7 @@ namespace PdfSharp.Pdf
     /// </summary>
     public PdfDocument(Stream outputStream)
     {
-      //PdfDocument.Gob.AttatchDocument(this.Handle);
+      //PdfDocument.Gob.AttachDocument(this.Handle);
 
       this.creation = DateTime.Now;
       this.state = DocumentState.Created;
@@ -112,7 +112,7 @@ namespace PdfSharp.Pdf
 
     internal PdfDocument(Lexer lexer)
     {
-      //PdfDocument.Gob.AttatchDocument(this.Handle);
+      //PdfDocument.Gob.AttachDocument(this.Handle);
 
       this.creation = DateTime.Now;
       this.state = DocumentState.Imported;

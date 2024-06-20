@@ -520,7 +520,7 @@ namespace PurplePen.MapModel {
 
         short OcadTextAlignment(TextSymDefHorizAlignment horizAlign, TextSymDefVertAlignment vertAlign) {
             if (version <= 9) {
-                // TODO: If we are saving a non-defalt vertical alginemtn in OCAD 9 or before, what is correct behavior?
+                // TODO: If we are saving a non-defalt vertical alignment in OCAD 9 or before, what is correct behavior?
                 // TODO: probably to adjust the coordinates on save. Also should have a way that the user knows what is happening.
                 switch (horizAlign) {
                     case TextSymDefHorizAlignment.Left: return 0;

@@ -8,7 +8,7 @@ using System.Threading;
 namespace CrashReporterDotNET
 {
     /// <summary>
-    /// Set SMTP server details and receiver email fieds of this class instance to send crash reports directly in your inbox.
+    /// Set SMTP server details and receiver email fields of this class instance to send crash reports directly in your inbox.
     /// </summary>
     public class ReportCrash
     {
