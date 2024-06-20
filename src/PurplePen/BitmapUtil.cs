@@ -64,7 +64,7 @@ namespace PurplePen
             bitmap.Save(fileName, tiffEncoder, encoderParameters);
         }
 
-        public static void SaveBitmap(Bitmap bitmap, string fileName, ImageFormat imageFormat)
+        public static void SaveBitmap(Bitmap bitmap, string fileName, ImageFormat imageFormat, int quality=80)
         {
             if (imageFormat.Equals(ImageFormat.Gif)) {
                 SaveGif(bitmap, fileName);
@@ -73,7 +73,7 @@ namespace PurplePen
                 SaveTIFF(bitmap, fileName);
             }
             else if (imageFormat.Equals(ImageFormat.Jpeg)) {
-                SaveJpeg(bitmap, fileName, 80);
+                SaveJpeg(bitmap, fileName, quality);
             }
             else {
                 bitmap.Save(fileName, imageFormat);
