@@ -153,7 +153,7 @@ namespace PurplePen
             }
         }
 
-        // Create a single PDF file
+        // Create a single bitmap file
         void CreateOneBitmap(string fileName, CourseDesignator courseDesignator)
         {
             RectangleF mapRectangle = controller.GetCurrentPrintAreaRectangle(courseDesignator);
@@ -178,7 +178,7 @@ namespace PurplePen
             mapDisplay.SetPrintArea(null);
 
             ExportBitmap exportBitmap = new ExportBitmap(mapDisplay);
-            exportBitmap.CreateBitmap(fileName, mapRectangle, GetImageFormat(), bitmapCreationSettings.Dpi,
+            exportBitmap.CreateBitmap(fileName, mapRectangle, GetImageFormat(), bitmapCreationSettings.Dpi / courseView.ScaleRatio,
                                       bitmapCreationSettings.WorldFile ? mapDisplay.CoordinateMapper : null);
         }
     }
