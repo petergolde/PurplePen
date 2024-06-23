@@ -2,11 +2,12 @@
   <event id="1">
     <title>variations</title>
     <map kind="none" scale="10000" />
+    <standards map="2000" description="2004" />
     <all-controls print-scale="10000" description-kind="symbols" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="137.397339" right="329.797" bottom="-129.302673" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30249" top="137.499435" right="329.797516" bottom="-129.200577" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <numbering start="31" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" number-font="Roboto" auto-leg-gap-size="3.5" blend-purple="true" />
     <descriptions lang="en" color="black" />
     <ocad overprint-colors="false" />
   </event>
@@ -115,15 +116,22 @@
     <name>Butterfly</name>
     <labels label-kind="sequence" />
     <first course-control="119" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-156.613708" top="126.955292" right="262.4863" bottom="-139.74472" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
-    <options print-scale="10000" load="100" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-156.596741" top="126.952606" right="262.503265" bottom="-139.7474" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" load="100" hide-from-reports="false" description-kind="symbols" />
   </course>
-  <course id="10" kind="normal" order="2">
+  <course id="10" kind="normal" order="3">
     <name>Relay</name>
     <labels label-kind="sequence" />
     <first course-control="130" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.17147" top="125.814957" right="330.928528" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
-    <options print-scale="10000" load="180" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.17147" top="125.814453" right="330.928528" bottom="-140.885559" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" load="180" hide-from-reports="false" description-kind="symbols" />
+  </course>
+  <course id="11" kind="normal" order="2">
+    <name>Dup Butterfly</name>
+    <labels label-kind="sequence" />
+    <first course-control="145" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-156.596741" top="126.952606" right="262.503265" bottom="-139.7474" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" load="100" hide-from-reports="true" description-kind="symbols" />
   </course>
   <course-control id="126" control="17">
     <next course-control="127" />
@@ -206,4 +214,32 @@
   <course-control id="143" control="22">
     <next course-control="144" />
   </course-control>
+  <course-control id="145" control="1">
+    <next course-control="146" />
+  </course-control>
+  <course-control id="146" control="4">
+    <next course-control="147" />
+  </course-control>
+  <course-control id="147" control="12">
+    <next course-control="148" />
+  </course-control>
+  <course-control id="148" control="14">
+    <next course-control="149" />
+  </course-control>
+  <course-control id="149" control="4">
+    <next course-control="150" />
+  </course-control>
+  <course-control id="150" control="18">
+    <next course-control="152" />
+  </course-control>
+  <course-control id="152" control="19">
+    <next course-control="153" />
+  </course-control>
+  <course-control id="153" control="4">
+    <next course-control="154" />
+  </course-control>
+  <course-control id="154" control="20">
+    <next course-control="155" />
+  </course-control>
+  <course-control id="155" control="26" />
 </course-scribe-event>

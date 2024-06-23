@@ -2,11 +2,12 @@
   <event id="1">
     <title>Dup Controls</title>
     <map kind="none" scale="10000" />
+    <standards map="2000" description="2004" />
     <all-controls print-scale="10000" description-kind="symbols" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="137.397339" right="329.797" bottom="-129.302673" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-89.30249" top="125.814453" right="329.797516" bottom="-140.885559" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <numbering start="31" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance auto-leg-gap-size="3.5" blend-purple="true" />
+    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" number-font="Roboto" auto-leg-gap-size="3.5" blend-purple="true" />
     <descriptions lang="en" color="black" />
     <ocad overprint-colors="false" />
   </event>
@@ -113,22 +114,43 @@
     <name>Butterfly</name>
     <labels label-kind="sequence" />
     <first course-control="119" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-156.613708" top="126.955292" right="262.4863" bottom="-139.74472" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
-    <options print-scale="10000" climb="60" load="100" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-156.596741" top="126.952606" right="262.503265" bottom="-139.7474" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="60" load="100" hide-from-reports="false" description-kind="symbols" />
   </course>
-  <course id="10" kind="normal" order="2">
+  <course id="10" kind="normal" order="3">
     <name>Relay</name>
     <labels label-kind="sequence" />
     <first course-control="130" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-88.17147" top="125.814957" right="330.928528" bottom="-140.885056" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
-    <options print-scale="10000" climb="45" load="180" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.17147" top="125.814453" right="330.928528" bottom="-140.885559" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="45" load="180" hide-from-reports="false" description-kind="symbols" />
   </course>
-  <course id="11" kind="score" order="3">
+  <course id="11" kind="score" order="5">
     <name>Score</name>
     <labels label-kind="sequence" />
     <first course-control="148" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-89.30301" top="137.397339" right="329.797" bottom="-129.302673" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
-    <options print-scale="10000" load="50" score-column="H" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-116.902809" top="138.499878" right="302.1972" bottom="-128.200134" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" load="50" hide-from-reports="false" score-column="H" description-kind="symbols" />
+  </course>
+  <course id="12" kind="normal" order="2">
+    <name>Dup Butterfly</name>
+    <labels label-kind="sequence" />
+    <first course-control="160" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-156.596741" top="126.952606" right="262.503265" bottom="-139.7474" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="60" load="100" hide-from-reports="true" description-kind="symbols" />
+  </course>
+  <course id="13" kind="normal" order="4">
+    <name>Dup Relay</name>
+    <labels label-kind="sequence" />
+    <first course-control="172" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-88.17147" top="125.814453" right="330.928528" bottom="-140.885559" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" climb="45" load="180" hide-from-reports="true" description-kind="symbols" />
+  </course>
+  <course id="14" kind="score" order="6">
+    <name>Dup Score</name>
+    <labels label-kind="sequence" />
+    <first course-control="183" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-116.902809" top="138.499878" right="302.1972" bottom="-128.200134" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" load="50" hide-from-reports="true" score-column="H" description-kind="symbols" />
   </course>
   <course-control id="126" control="17">
     <next course-control="127" />
@@ -242,4 +264,116 @@
   <course-control id="159" control="3" points="5">
     <next course-control="149" />
   </course-control>
+  <course-control id="160" control="1">
+    <next course-control="161" />
+  </course-control>
+  <course-control id="161" control="4">
+    <next course-control="162" />
+  </course-control>
+  <course-control id="162" control="12">
+    <next course-control="163" />
+  </course-control>
+  <course-control id="163" control="14">
+    <next course-control="164" />
+  </course-control>
+  <course-control id="164" control="4">
+    <next course-control="165" />
+  </course-control>
+  <course-control id="165" control="4">
+    <next course-control="166" />
+  </course-control>
+  <course-control id="166" control="4">
+    <next course-control="167" />
+  </course-control>
+  <course-control id="167" control="18">
+    <next course-control="168" />
+  </course-control>
+  <course-control id="168" control="17">
+    <next course-control="169" />
+  </course-control>
+  <course-control id="169" control="19">
+    <next course-control="170" />
+  </course-control>
+  <course-control id="170" control="20">
+    <next course-control="171" />
+  </course-control>
+  <course-control id="171" control="26" />
+  <course-control id="172" control="27">
+    <next course-control="175" />
+  </course-control>
+  <course-control id="173" control="21" variation="fork" variation-end="181">
+    <next course-control="174" />
+    <variation course-control="175" />
+    <variation course-control="173" />
+  </course-control>
+  <course-control id="174" control="10">
+    <next course-control="181" />
+  </course-control>
+  <course-control id="175" control="21" variation="fork" variation-end="181">
+    <next course-control="180" />
+    <variation course-control="175" />
+    <variation course-control="173" />
+  </course-control>
+  <course-control id="176" control="7" variation="loop" variation-end="180">
+    <next course-control="177" />
+    <variation course-control="180" />
+    <variation course-control="176" />
+    <variation course-control="179" />
+  </course-control>
+  <course-control id="177" control="8">
+    <next course-control="178" />
+  </course-control>
+  <course-control id="178" control="9">
+    <next course-control="180" />
+  </course-control>
+  <course-control id="179" control="7" variation="loop" variation-end="180">
+    <next course-control="180" />
+    <variation course-control="180" />
+    <variation course-control="176" />
+    <variation course-control="179" />
+  </course-control>
+  <course-control id="180" control="7" variation="loop" variation-end="180">
+    <next course-control="181" />
+    <variation course-control="180" />
+    <variation course-control="176" />
+    <variation course-control="179" />
+  </course-control>
+  <course-control id="181" control="28">
+    <next course-control="182" />
+  </course-control>
+  <course-control id="182" control="11" />
+  <course-control id="183" control="27">
+    <next course-control="184" />
+  </course-control>
+  <course-control id="184" control="15" points="4">
+    <next course-control="185" />
+  </course-control>
+  <course-control id="185" control="7" points="1">
+    <next course-control="186" />
+  </course-control>
+  <course-control id="186" control="14" points="3">
+    <next course-control="187" />
+  </course-control>
+  <course-control id="187" control="29" points="3">
+    <next course-control="188" />
+  </course-control>
+  <course-control id="188" control="15" points="2">
+    <next course-control="189" />
+  </course-control>
+  <course-control id="189" control="12" points="5">
+    <next course-control="190" />
+  </course-control>
+  <course-control id="190" control="12" points="3">
+    <next course-control="191" />
+  </course-control>
+  <course-control id="191" control="22" points="2">
+    <next course-control="192" />
+  </course-control>
+  <course-control id="192" control="17" points="4">
+    <next course-control="193" />
+  </course-control>
+  <course-control id="193" control="3" points="5">
+    <next course-control="194" />
+  </course-control>
+  <course-control id="194" control="26" />
 </course-scribe-event>

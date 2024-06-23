@@ -277,6 +277,11 @@ namespace PurplePen.Tests
         <td>1</td>
         <td />
       </tr>
+      <tr>
+        <td>32</td>
+        <td>0</td>
+        <td />
+      </tr>
     </tbody>
   </table>
   <h2>Leg load</h2>
