@@ -10,13 +10,13 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Publisher="CN=Peter Golde Test Certificate"
-    Version="1.0.21.0"  Name="45613PurplePen.PurplePen"/>
+    Publisher="CN=peter"
+    Version="1.0.3.0"  Name="45613PurplePen.PurplePen"/>
 
   <Properties>
     <DisplayName>Purple Pen</DisplayName>
-    <PublisherDisplayName>Purple Pen</PublisherDisplayName>
-    <Logo>Images\StoreLogo.png</Logo>
+    <PublisherDisplayName>Purple Pen Course Designing</PublisherDisplayName>
+    <Logo>Images\StoreLogo.scale-400.png</Logo>
   </Properties>
 
   <Dependencies>
@@ -58,7 +58,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="Purple Pen"
+        DisplayName="Purple Pen Course Designing"
         Description="Purple Pen - Simple, versatile, and free course setting software for orienteering."
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"

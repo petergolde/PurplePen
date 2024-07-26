@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StoreAssociation xmlns="http://schemas.microsoft.com/appx/2010/storeassociation">
   <Publisher>CN=C61EB180-1ECA-4AAF-AEF7-BFE0F2F06B3C</Publisher>
-  <PublisherDisplayName>Purple Pen</PublisherDisplayName>
+  <PublisherDisplayName>Purple Pen Course Designing</PublisherDisplayName>
   <DeveloperAccountType>MSA</DeveloperAccountType>
   <GeneratePackageHash>http://www.w3.org/2001/04/xmlenc#sha256</GeneratePackageHash>
   <SupportedLocales>
