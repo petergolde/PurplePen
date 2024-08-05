@@ -1,0 +1,2 @@
+MainPackage=D:\Repos\Main\PurplePen\src\MsixInstaller\bin\x86\Debug\MsixInstaller_1.0.10.0_x86_Debug.msix
+SymbolPackage=D:\Repos\Main\PurplePen\src\MsixInstaller\obj\x86\Debug\Symbols\MsixInstaller_1.0.10.0_x86_Debug.appxsym

@@ -1440,6 +1440,19 @@ namespace PurplePen
             return creation.OverwrittenFiles();
         }
 
+        // Check if the system needs to have Roboto fonts installed on it.
+        public bool ShouldInstallRobotoFonts()
+        {
+            // Install Roboto fonts if they are not installed. (Hence the not).
+            return !FontInstallation.AreRobotoFontsInstalledOnSystem();
+        }
+
+        // Install the Roboto fonts. Return true if succeeded, return false if didn't.
+        public bool InstallRobotoFonts()
+        {
+            return FontInstallation.RunRobotoFontInstaller();
+        }
+
         // Create KML files.
         // Returns success or failure; any errors are already reported to the user.
         // If mapDirectory or fileDirectory is set, the outputDirectory fields is filled in.

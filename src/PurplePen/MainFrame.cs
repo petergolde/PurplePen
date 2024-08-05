@@ -2553,6 +2553,8 @@ namespace PurplePen
 
         private void createOcadFilesMenu_Click(object sender, EventArgs e)
         {
+            bool success = false;
+
             MapFileFormatKind restrictToKind;  // restrict to outputting this kind of map.
             if (mapDisplay.MapType == MapType.OCAD) {
                 restrictToKind = mapDisplay.MapVersion.kind;
@@ -2615,7 +2617,7 @@ namespace PurplePen
 
                 // Save settings persisted between invocations of this dialog.
                 ocadCreationSettingsPrevious = createOcadFilesDialog.OcadCreationSettings;
-                controller.CreateOcadFiles(createOcadFilesDialog.OcadCreationSettings);
+                success = controller.CreateOcadFiles(createOcadFilesDialog.OcadCreationSettings);
 
                 // PP keeps bitmaps in memory and locks them. Tell the user to close PP.
                 if (mapDisplay.MapType == MapType.Bitmap)
@@ -2626,6 +2628,18 @@ namespace PurplePen
 
             // And the dialog is done.
             createOcadFilesDialog.Dispose();
+
+            // The Windows Store version doesn't install Roboto fonts into the system. So we may need to tell the user to install them.
+            // Check if they need to be installed, ask the user, and if they say yes, install the fonts.
+            if (success) {
+                if (controller.ShouldInstallRobotoFonts()) {
+                    if (YesNoQuestion(MiscText.AskInstallRobotoFonts, true)) {
+                        bool installSucceeded = controller.InstallRobotoFonts();
+                        if (!installSucceeded)
+                            ErrorMessage(MiscText.RobotoFontsInstallFailed);
+                    }
+                }
+            }
         }
 
         private void createKmlFilesMenu_Click(object sender, EventArgs e)

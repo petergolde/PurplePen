@@ -330,6 +330,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExportKml.cs" />
+    <Compile Include="FontInstallation.cs" />
     <Compile Include="Livelox\ApiContracts\ApiError.cs" />
     <Compile Include="Livelox\ApiContracts\Country.cs" />
     <Compile Include="Livelox\ApiContracts\Event.cs" />

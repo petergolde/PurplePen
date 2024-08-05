@@ -178,6 +178,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In order for OCAD or OpenOrienteering Mapper to correctly display the control descriptions, the &quot;Roboto&quot; and &quot;Roboto Condensed&quot; fonts must be installed on your system. Would you like to install those fonts now (strongly recommended)?.
+        /// </summary>
+        internal static string AskInstallRobotoFonts {
+            get {
+                return ResourceManager.GetString("AskInstallRobotoFonts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Automatic.
         /// </summary>
         internal static string AutomaticLength {
@@ -1348,6 +1357,15 @@ namespace PurplePen {
         internal static string RequireStar {
             get {
                 return ResourceManager.GetString("RequireStar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installing Roboto Fonts failed..
+        /// </summary>
+        internal static string RobotoFontsInstallFailed {
+            get {
+                return ResourceManager.GetString("RobotoFontsInstallFailed", resourceCulture);
             }
         }
         
