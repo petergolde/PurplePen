@@ -117,8 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DefaultStatus" xml:space="preserve">
+    <value>Tasto sinistro del mouse: seleziona oggetto; Tasto destro del mouse: sposta la mappa; Rotella di scorrimento: zoom avanti/indietro</value>
+  </data>
+  <data name="DefaultRectangle" xml:space="preserve">
+    <value>Tasto sinistro del mouse: sposta/ridimensiona il rettangolo; Tasto destro del mouse: sposta la mappa; Rotella di scorrimento: zoom avanti/indietro</value>
+  </data>
+  <data name="DragObject" xml:space="preserve">
+    <value>Tieni premuto il pulsante sinistro del mouse e trascina per spostare l'oggetto selezionato</value>
+  </data>
+  <data name="DragCorner" xml:space="preserve">
+    <value>Tieni premuto il pulsante sinistro del mouse e trascina l'angolo per spostarlo</value>
+  </data>
   <data name="DraggingObject" xml:space="preserve">
     <value>Muovi oggetto nella posizione desiderata e rilascia il pulsante del mouse</value>
+  </data>
+  <data name="DraggingCorner" xml:space="preserve">
+    <value>Sposta l'angolo nella posizione desiderata e rilascia il pulsante del mouse</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
     <value>Clicca il pulsante sinistro del mouse per posizionare un nuovo controllo</value>
@@ -137,5 +152,86 @@
   </data>
   <data name="AddingExistingFinish" xml:space="preserve">
     <value>Clicca il pulsante sinistro del mouse per aggiungere un arrivo esistente al percorso</value>
+  </data>
+  <data name="AddingCrossingPoint" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per posizionare un nuovo punto di passaggio obbligatorio</value>
+  </data>
+  <data name="AddingExistingCrossingPoint" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per aggiungere un punto di attraversamento obbligatorio esistente al percorso</value>
+  </data>
+  <data name="AddingObject" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per posizionare il nuovo oggetto</value>
+  </data>
+  <data name="AddingBend" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse nella posizione della piega</value>
+  </data>
+  <data name="AddingCorner" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per aggiungere un nuovo angolo</value>
+  </data>
+  <data name="DeletingBend" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse su una piega per rimuoverla</value>
+  </data>
+  <data name="DeletingCorner" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse su un angolo per rimuoverlo</value>
+  </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse sul cerchio di controllo per aggiungere un piccolo spazio; tenere premuto il pulsante sinistro del mouse e trascinare per creare un ampio spazio</value>
+  </data>
+  <data name="RemovingControlGap" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse su uno spazio vuoto nel cerchio di controllo per rimuoverlo</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per creare un piccolo spazio; tenere premuto il pulsante sinistro del mouse e trascinare per creare un ampio spazio nella frazione</value>
+  </data>
+  <data name="RemovingLegGap" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse su uno spazio vuoto nella frazione per rimuoverlo</value>
+  </data>
+  <data name="SizeRectangle" xml:space="preserve">
+    <value>Tenere premuto il pulsante sinistro del mouse e trascinare per ridimensionare l'oggetto selezionato</value>
+  </data>
+  <data name="SizingRectangle" xml:space="preserve">
+    <value>Spostare i bordi nella posizione desiderata e rilasciare il pulsante del mouse</value>
+  </data>
+  <data name="AddingDescription" xml:space="preserve">
+    <value>Tieni premuto il pulsante sinistro del mouse e trascina per creare le descrizioni dei controlli</value>
+  </data>
+  <data name="RotatingObject" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse quando la croce viene ruotata all'angolo corretto</value>
+  </data>
+  <data name="AddingLineArea" xml:space="preserve">
+    <value>Tieni premuto il pulsante sinistro del mouse e trascina per aggiungere un segmento di linea; fare clic con il pulsante sinistro del mouse per completare l'aggiunta dell'oggetto</value>
+  </data>
+  <data name="AddingText" xml:space="preserve">
+    <value>Tieni premuto il pulsante sinistro del mouse e trascina per creare il testo</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per posizionare un nuovo cambio mappa</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per posizionare un nuovo scambio di mappe</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per aggiungere lo scambio di mappe al controllo "{0}" </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Tieni premuto il pulsante sinistro del mouse e trascina per creare l'oggetto</value>
+  </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Trascina il numero di controllo per riordinarlo nel percorso (tieni premuto Maiusc per duplicare)</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per aggiungere al percorso il punto consegna mappa esistente</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Fare clic sul pulsante sinistro del mouse per posizionare un nuovo punto consegna mappa</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Tenere premuto il pulsante sinistro del mouse e trascinare per allungare l'area</value>
+  </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse su un controllo o un contrassegno per spostarsi in una nuova posizione</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Fare clic con il pulsante sinistro del mouse sulla nuova posizione per il controllo o contrassegno</value>
   </data>
 </root>

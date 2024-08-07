@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Měřítko tisknuté mapy:</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symboly</value>
   </data>
@@ -174,14 +177,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Vzhled</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Následující text (volitelný) se zobrazí na druhém řádku popisů kontrol:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Seznam kategorií / podtitulek</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Následující text (volitelný) se zobrazí na druhém řádku popisů kontrol:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Délka:</value>

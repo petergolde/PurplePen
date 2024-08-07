@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Scara de tipărire a hărții:</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Simboluri</value>
   </data>
@@ -165,14 +168,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspect</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Următorul text (opțional) va apărea în a doua linie a tabelului de descriere al posturilor</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Categorie / Titlu secundar</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Următorul text (opțional) va apărea în a doua linie a tabelului de descriere al posturilor</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Lungime:</value>

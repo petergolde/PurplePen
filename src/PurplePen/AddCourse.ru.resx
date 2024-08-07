@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Маштаб карты для печати</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Символы</value>
   </data>
@@ -164,9 +167,6 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Оформление</value>
-  </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Длина:</value>

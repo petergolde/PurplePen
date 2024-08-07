@@ -165,4 +165,7 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>IOF XML</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Crea file RouteGadget</value>
+  </data>
 </root>

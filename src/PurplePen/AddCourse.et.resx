@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Trükikaardi mastaap :</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Sümbolid</value>
   </data>
@@ -174,14 +177,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Välimus</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Järgnev (täiendav) tekst lisatakse legendi teisele reale:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Klasside nimekiri / Teine pealkiri</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Järgnev (täiendav) tekst lisatakse legendi teisele reale:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Pikkus:</value>

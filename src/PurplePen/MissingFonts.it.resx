@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="checkBoxDontWarnAgain.Text" xml:space="preserve">
+    <value>Non avvisare nuovamente per la mancanza di caratteri in questo evento</value>
+  </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="labelWarning.Text" xml:space="preserve">
+    <value>Il file mappa "{0}" utilizza caratteri che non sono installati sul tuo computer. Il testo che utilizza questi caratteri verrà disegnato e stampato con un carattere predefinito, il che potrebbe far sì che il testo venga visualizzato in modo diverso rispetto a quanto previsto dal creatore della mappa.
+
+Per risolvere questo problema, trova e installa i caratteri elencati di seguito tramite il pannello di controllo di Windows, in seguito riavvia Purple Pen.
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Caratteri Mancanti</value>
   </data>
 </root>

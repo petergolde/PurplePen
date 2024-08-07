@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonClose.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
   <data name="buttonExport.Text" xml:space="preserve">
     <value>Esporta...</value>
   </data>
+  <data name="buttonPrint.Text" xml:space="preserve">
+    <value>Stampa...</value>
+  </data>
+  <data name="buttonPrintPreview.Text" xml:space="preserve">
+    <value>Anteprima di stampa...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Numero do Frazioni</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Assegna Variazioni</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Numero delle Squadre:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Assegna frazioni fisse ai rami...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>I numeri delle squadre iniziano da: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Nascondi nome variazione sulla mappa</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0 (*.xml)|*.xml|Spreadsheet (*.csv)|*.csv</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Variazioni staffetta</value>

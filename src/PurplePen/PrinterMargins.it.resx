@@ -123,4 +123,37 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Larghezza:</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Altezza:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Dimensione Pagina ({0})</value>
+  </data>
+  <data name="radioButtonLandscape.Text" xml:space="preserve">
+    <value>Orizzontale</value>
+  </data>
+  <data name="radioButtonPortrait.Text" xml:space="preserve">
+    <value>Verticale</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Orientamento</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sinistra:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Alto:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Destra:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Basso:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Margini ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Impostazioni Pagina</value>
+  </data>
 </root>

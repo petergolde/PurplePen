@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>地图打印比例：</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>符号</value>
   </data>
@@ -174,14 +177,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>界面</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
-  </data>
-  <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>类列表/次级标题</value>
-  </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
     <value>以下（可选）的文本将出现在检查点说明表的第二行：</value>
+  </data>
+  <data name="secondaryTitleGroup.Text" xml:space="preserve">
+    <value>组别列表/次级标题</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>长度：</value>

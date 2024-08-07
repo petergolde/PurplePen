@@ -297,6 +297,9 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Variazioni staffetta</value>
   </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Aggiungi Punto Consegna mappa</value>
+  </data>
   <data name="ChangeDescriptionStandard" xml:space="preserve">
     <value>Imposta descrizione punto di controllo standard</value>
   </data>
@@ -311,5 +314,8 @@
   </data>
   <data name="MoveAllControls" xml:space="preserve">
     <value>Muovi tutti i controlli</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Aggiungi Rotazione Mappa</value>
   </data>
 </root>

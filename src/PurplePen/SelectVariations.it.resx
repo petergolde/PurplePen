@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Ogni variazione separatamente</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Ogni Frazione Staffetta Separatamente</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Tutte le combinazioni</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Varianti:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Visualizza tutte le biforcazioni insieme su un'unica mappa.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Una mappa per ogni possibile variazione durante il percorso.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Una mappa per ogni frazione di una staffetta da te scelta.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>È necessario innanzitutto definire le staffette selezionando le variazioni di staffetta... dal menu percorso.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Seleziona variazioni individuali</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>A questo percorso sono assegnate {0} staffette. Utilizza variazioni staffette... dal menu percorso per modificare il numero di staffette.</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>a</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Selezionare quale squadra stampare/esportare:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Scegli Variazioni</value>
   </data>
 </root>

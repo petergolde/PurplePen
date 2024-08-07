@@ -619,6 +619,9 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="AddEllipseTitle" xml:space="preserve">
     <value>Add Ellipse</value>
   </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>An older version of Purple Pen is still installed. To prevent confusion caused by having two versions of Purple Pen installed, it is strongly recommended that the older version be removed. Remove it now?</value>
+  </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>A control code should be 31 or higher.</value>
   </data>

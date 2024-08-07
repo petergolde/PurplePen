@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Масштаб друку карти:</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Піктограми</value>
   </data>
@@ -174,14 +177,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Вигляд</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Цей текст (опціонально) буде показано у другому рядку таблиці легенд:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Клас / Додаткова назва</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Цей текст (опціонально) буде показано у другому рядку таблиці легенд:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Довжина:</value>

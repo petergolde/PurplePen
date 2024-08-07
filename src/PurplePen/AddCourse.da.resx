@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Kort udskrivnings scala:</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1: </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symboler</value>
   </data>
@@ -168,14 +171,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Udseende</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1: </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Den følgende (valgfrie) tekst vil fremtræde på den anden linje af kontrolbeskrivelses siden:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Klasse liste / Sekundær titel</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Den følgende (valgfrie) tekst vil fremtræde på den anden linje af kontrolbeskrivelses siden:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Længde:</value>

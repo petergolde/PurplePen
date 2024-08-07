@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="formatButton.Text" xml:space="preserve">
+    <value>Layout cartellino...</value>
+  </data>
+  <data name="punchPatternsLabel.Text" xml:space="preserve">
+    <value>Fare clic su un codice di controllo nell'elenco a sinistra e disegnare il modello di punzonatura sul lato destro. I codici rossi indicano i controlli per cui non è definito uno schema di punzonatura.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Schema Punzonatura</value>
+  </data>
 </root>

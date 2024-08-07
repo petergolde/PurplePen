@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Tulostusmittakaava:</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Symbolit</value>
   </data>
@@ -174,14 +177,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Ulkoasu</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Seuraava (vapaaehtoinen) teksti tulee rastinmääritteiden toiselle riville:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Sarjalista / Alaotsikko</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Seuraava (vapaaehtoinen) teksti tulee rastinmääritteiden toiselle riville:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Pituus:</value>

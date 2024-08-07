@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventTitleLabel.Text" xml:space="preserve">
+    <value>Il titolo dell'evento verrà visualizzato sulla prima riga di ogni descrizione punti. Viene utilizzato anche come nome file per archiviare l'evento su disco.
+
+Per adattarsi alla descrizione punti, dovrebbe contenere meno di 25 caratteri. Esempio di titoli validi per eventi sono "US Champs Day 1" o "Riverview Park, 4/12/06".</value>
+  </data>
+  <data name="eventTitleLabel.Text" xml:space="preserve">
+    <value>Titolo Evento:</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Titolo Evento</value>
   </data>

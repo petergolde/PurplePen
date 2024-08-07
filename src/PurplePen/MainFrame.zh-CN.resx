@@ -127,7 +127,7 @@
     <value>序列</value>
   </data>
   <data name="mapViewerTopology.Text" xml:space="preserve">
-    <value>mapviewertopology</value>
+    <value>地图视图</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>紫笔文件|*.ppen|所有文件|*.*</value>
@@ -136,13 +136,13 @@
     <value>紫笔文件|*.ppen</value>
   </data>
   <data name="fileMenu.Text" xml:space="preserve">
-    <value>文件</value>
+    <value>文件(&amp;F)</value>
   </data>
   <data name="newEventMenu.Text" xml:space="preserve">
-    <value>&amp;新的赛事</value>
+    <value>新的赛事(&amp;N)</value>
   </data>
   <data name="openMenu.Text" xml:space="preserve">
-    <value>&amp;打开</value>
+    <value>打开(&amp;O)</value>
   </data>
   <data name="saveMenu.Text" xml:space="preserve">
     <value>保存(&amp;S)</value>
@@ -229,13 +229,13 @@
     <value>视图</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
-    <value>全部线路</value>
+    <value>整个线路</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>整个地图</value>
   </data>
   <data name="zoomMenu.Text" xml:space="preserve">
-    <value>与缩放</value>
+    <value>缩放</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -262,19 +262,19 @@
     <value>地图与强度</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>非常低(&amp;V)</value>
+    <value>非常低</value>
   </data>
   <data name="lowIntensityMenu.Text" xml:space="preserve">
     <value>低</value>
   </data>
   <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>中等(&amp;M)</value>
+    <value>中</value>
   </data>
   <data name="highIntensityMenu.Text" xml:space="preserve">
     <value>高</value>
   </data>
   <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>完全信任密钥(&amp;F)</value>
+    <value>不透明</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>地图质量</value>
@@ -289,7 +289,7 @@
     <value>显示打印区域</value>
   </data>
   <data name="showPopupsMenu.Text" xml:space="preserve">
-    <value>表演和弹出信息</value>
+    <value>显示和弹出信息</value>
   </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>所有的检查点</value>
@@ -304,7 +304,7 @@
     <value>添加 (&amp;A)...</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
-    <value>开始(&amp;S)</value>
+    <value>起点</value>
   </data>
   <data name="addControlMenu.Text" xml:space="preserve">
     <value>检查点</value>
@@ -331,7 +331,7 @@
     <value>分支</value>
   </data>
   <data name="addTextLineMenu.Text" xml:space="preserve">
-    <value>文字和线。</value>
+    <value>添加文本和线</value>
   </data>
   <data name="addMapIssueMenu.Text" xml:space="preserve">
     <value>计时起始位置</value>
@@ -358,13 +358,13 @@
     <value>禁止的路标</value>
   </data>
   <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>跨越边界</value>
+    <value>不可通过边界</value>
   </data>
   <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>登记马克</value>
+    <value>注册标记</value>
   </data>
   <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>白色区域</value>
+    <value>白色外部区域</value>
   </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>文本</value>
@@ -373,7 +373,7 @@
     <value>图像</value>
   </data>
   <data name="addLineMenu.Text" xml:space="preserve">
-    <value>线</value>
+    <value>直线</value>
   </data>
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>矩形</value>
@@ -385,7 +385,7 @@
     <value>赛事</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
-    <value>与地图文件…</value>
+    <value>地图文件</value>
   </data>
   <data name="changeCodesMenu.Text" xml:space="preserve">
     <value>变更检查点编号</value>
@@ -436,10 +436,10 @@
     <value>删除线路</value>
   </data>
   <data name="duplicateCourseMenu.Text" xml:space="preserve">
-    <value>重复线路...</value>
+    <value>复制线路…</value>
   </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
-    <value>属性(&amp;P)...</value>
+    <value>属性</value>
   </data>
   <data name="courseOrderMenu.Text" xml:space="preserve">
     <value>线路顺序</value>
@@ -483,20 +483,17 @@
   <data name="stretchMenu.Text" xml:space="preserve">
     <value>拉伸</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>路段标记</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
-    <value>没有下垂</value>
+    <value>无标记</value>
   </data>
   <data name="entireFlaggingMenu.Text" xml:space="preserve">
-    <value>整个课程标记</value>
+    <value>整个路段标记</value>
   </data>
   <data name="beginFlaggingMenu.Text" xml:space="preserve">
-    <value>学院将开始标记</value>
+    <value>路段起始标记</value>
   </data>
   <data name="endFlaggingMenu.Text" xml:space="preserve">
-    <value>课程结束的标记</value>
+    <value>路段末尾标记</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>更改显示的线路...</value>
@@ -682,13 +679,13 @@
     <value>禁止的路标</value>
   </data>
   <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
-    <value>跨越边界</value>
+    <value>不可通过边界</value>
   </data>
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
-    <value>登记马克</value>
+    <value>注册标记</value>
   </data>
   <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
-    <value>白色区域</value>
+    <value>白色外部区域</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>文本</value>
@@ -697,7 +694,7 @@
     <value>图像</value>
   </data>
   <data name="lineToolStripMenuItem.Text" xml:space="preserve">
-    <value>线</value>
+    <value>直线</value>
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>矩形</value>

@@ -120,8 +120,53 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Annulla</value>
   </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Selezionare prima un controllo o un contrassegno da spostare</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>Scegli la nuova posizione per il secondo controllo/contrassegno</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Conferma nuove posizioni</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>Rotazione:</value>
+  </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Scala:</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Spostamento Y:</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>Spostamento X:</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>Selezionare il secondo controllo o contrassegno da spostare</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>Scegli la nuova posizione per il primo controllo/contrassegno</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Conferma</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muovi tutti i controlli</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.1\n"
+"Project-Id-Version: Purple Pen 3.5.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-06-10 17:35-07:00\n"
+"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -64,6 +64,11 @@ msgstr "说明表外观："
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
 msgstr "地图打印比例："
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
@@ -146,19 +151,14 @@ msgstr "（不显示）"
 msgid "Appearance"
 msgstr "界面"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1 : "
-
-#: AddCourse.resx, secondaryTitleGroup.Text
-msgid "Class list / Secondary title"
-msgstr "类列表/次级标题"
-
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
 msgstr "以下（可选）的文本将出现在检查点说明表的第二行："
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "组别列表/次级标题"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -193,6 +193,10 @@ msgstr "米"
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
 msgstr "千米"
+
+#: AddCourse.resx, hideFromReportsCheckBox.Text
+msgid "Do not include in reports"
+msgstr ""
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -1482,7 +1486,7 @@ msgstr "序列"
 
 #: MainFrame.resx, mapViewerTopology.Text
 msgid "mapViewerTopology"
-msgstr "mapviewertopology"
+msgstr "地图视图"
 
 #: MainFrame.resx, openFileDialog.Filter
 msgid "Purple Pen files|*.ppen|All files|*.*"
@@ -1494,15 +1498,15 @@ msgstr "紫笔文件|*.ppen"
 
 #: MainFrame.resx, fileMenu.Text
 msgid "&File"
-msgstr "文件"
+msgstr "文件(&F)"
 
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
-msgstr "&新的赛事"
+msgstr "新的赛事(&N)"
 
 #: MainFrame.resx, openMenu.Text
 msgid "&Open..."
-msgstr "&打开"
+msgstr "打开(&O)"
 
 #: MainFrame.resx, saveMenu.Text
 msgid "&Save"
@@ -1622,7 +1626,7 @@ msgstr "视图"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
-msgstr "全部线路"
+msgstr "整个线路"
 
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
@@ -1630,7 +1634,7 @@ msgstr "整个地图"
 
 #: MainFrame.resx, zoomMenu.Text
 msgid "&Zoom"
-msgstr "与缩放"
+msgstr "缩放"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1666,7 +1670,7 @@ msgstr "地图与强度"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
-msgstr "非常低(&V)"
+msgstr "非常低"
 
 #: MainFrame.resx, lowIntensityMenu.Text
 msgid "&Low"
@@ -1674,7 +1678,7 @@ msgstr "低"
 
 #: MainFrame.resx, mediumIntensityMenu.Text
 msgid "&Medium"
-msgstr "中等(&M)"
+msgstr "中"
 
 #: MainFrame.resx, highIntensityMenu.Text
 msgid "&High"
@@ -1682,7 +1686,7 @@ msgstr "高"
 
 #: MainFrame.resx, fullIntensityMenu.Text
 msgid "&Full"
-msgstr "完全信任密钥(&F)"
+msgstr "不透明"
 
 #: MainFrame.resx, mapQualityMenu.Text
 msgid "Map &Quality"
@@ -1702,7 +1706,7 @@ msgstr "显示打印区域"
 
 #: MainFrame.resx, showPopupsMenu.Text
 msgid "Show &Popup Information"
-msgstr "表演和弹出信息"
+msgstr "显示和弹出信息"
 
 #: MainFrame.resx, allControlsMenu.Text
 msgid "&All Controls"
@@ -1722,7 +1726,7 @@ msgstr "添加 (&A)..."
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
-msgstr "开始(&S)"
+msgstr "起点"
 
 #: MainFrame.resx, addControlMenu.Text
 msgid "&Control"
@@ -1759,7 +1763,7 @@ msgstr "分支"
 
 #: MainFrame.resx, addTextLineMenu.Text
 msgid "Text &Line..."
-msgstr "文字和线。"
+msgstr "添加文本和线"
 
 #: MainFrame.resx, addMapIssueMenu.Text
 #: MainFrame.resx, mapIssuePointToolStripMenuItem.Text
@@ -1811,19 +1815,19 @@ msgstr "禁止的路标"
 #: MainFrame.resx, boundaryToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Boundary
 msgid "Uncrossable Boundary"
-msgstr "跨越边界"
+msgstr "不可通过边界"
 
 #: MainFrame.resx, addRegMarkMenu.Text
 #: MainFrame.resx, registrationMarkToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_RegMark
 msgid "Registration Mark"
-msgstr "登记马克"
+msgstr "注册标记"
 
 #: MainFrame.resx, whiteOutMenu.Text
 #: MainFrame.resx, whiteOutToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_WhiteOut
 msgid "White Out Area"
-msgstr "白色区域"
+msgstr "白色外部区域"
 
 #: MainFrame.resx, addImageMenu.Text
 #: MainFrame.resx, imageToolStripMenuItem.Text
@@ -1835,7 +1839,7 @@ msgstr "图像"
 #: MainFrame.resx, lineToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Line
 msgid "Line"
-msgstr "线"
+msgstr "直线"
 
 #: MainFrame.resx, addRectangleMenu.Text
 #: MainFrame.resx, rectangleToolStripMenuItem.Text
@@ -1854,7 +1858,7 @@ msgstr "赛事"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
-msgstr "与地图文件…"
+msgstr "地图文件"
 
 #: MainFrame.resx, changeCodesMenu.Text
 msgid "Change Control &Codes..."
@@ -1922,11 +1926,11 @@ msgstr "删除线路"
 
 #: MainFrame.resx, duplicateCourseMenu.Text
 msgid "D&uplicate Course..."
-msgstr "重复线路..."
+msgstr "复制线路…"
 
 #: MainFrame.resx, propertiesMenu.Text
 msgid "&Properties..."
-msgstr "属性(&P)..."
+msgstr "属性"
 
 #: MainFrame.resx, courseOrderMenu.Text
 msgid "Course &Order..."
@@ -1982,23 +1986,23 @@ msgstr "拉伸"
 
 #: MainFrame.resx, legFlaggingMenu.Text
 msgid "&Leg Flagging"
-msgstr "路段标记"
+msgstr ""
 
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
-msgstr "没有下垂"
+msgstr "无标记"
 
 #: MainFrame.resx, entireFlaggingMenu.Text
 msgid "Entire Leg Flagged"
-msgstr "整个课程标记"
+msgstr "整个路段标记"
 
 #: MainFrame.resx, beginFlaggingMenu.Text
 msgid "Beginning of Leg Flagged"
-msgstr "学院将开始标记"
+msgstr "路段起始标记"
 
 #: MainFrame.resx, endFlaggingMenu.Text
 msgid "End of Leg Flagged"
-msgstr "课程结束的标记"
+msgstr "路段末尾标记"
 
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
@@ -2909,6 +2913,17 @@ msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
+msgstr ""
+
+#: MiscText.resx, AskInstallRobotoFonts
+msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
+"display the control descriptions, the \"Roboto\" and \"Roboto "
+"Condensed\" fonts must be installed on your system. Would "
+"you like to install those fonts now (strongly recommended)?"
+msgstr ""
+
+#: MiscText.resx, RobotoFontsInstallFailed
+msgid "Installing Roboto Fonts failed."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

@@ -117,19 +117,199 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ColumnHeader_Climb" xml:space="preserve">
+    <value>Dislivello</value>
+  </data>
+  <data name="ColumnHeader_Code" xml:space="preserve">
+    <value>Codice</value>
+  </data>
+  <data name="ColumnHeader_Column" xml:space="preserve">
+    <value>Colonna</value>
+  </data>
+  <data name="ColumnHeader_Control" xml:space="preserve">
+    <value>Controllo</value>
+  </data>
+  <data name="ColumnHeader_ControlCodes" xml:space="preserve">
+    <value>Codici controlli</value>
+  </data>
+  <data name="ColumnHeader_Controls" xml:space="preserve">
+    <value>Controlli</value>
+  </data>
   <data name="ColumnHeader_Course" xml:space="preserve">
     <value>percorso</value>
   </data>
   <data name="ColumnHeader_Courses" xml:space="preserve">
     <value>Percorsi</value>
   </data>
+  <data name="ColumnHeader_Distance" xml:space="preserve">
+    <value>Distanza</value>
+  </data>
+  <data name="ColumnHeader_Item" xml:space="preserve">
+    <value>Oggetto</value>
+  </data>
+  <data name="ColumnHeader_Leg" xml:space="preserve">
+    <value>Frazione</value>
+  </data>
+  <data name="ColumnHeader_Length" xml:space="preserve">
+    <value>Lunghezza</value>
+  </data>
+  <data name="ColumnHeader_Load" xml:space="preserve">
+    <value>Carica</value>
+  </data>
+  <data name="ColumnHeader_Location" xml:space="preserve">
+    <value>Posizione</value>
+  </data>
   <data name="ColumnHeader_NumberOfCourses" xml:space="preserve">
     <value># Percorsi</value>
+  </data>
+  <data name="ColumnHeader_Reason" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="ColumnHeader_SameSymbol" xml:space="preserve">
+    <value>Stesso simbolo?</value>
+  </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Visite</value>
+  </data>
+  <data name="CourseSummary_Title" xml:space="preserve">
+    <value>Riassunto percorso per {0}</value>
+  </data>
+  <data name="CrossRef_Title" xml:space="preserve">
+    <value>Controllo Incroci  per {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Le frazioni corrono in entrambe le direzioni</value>
+  </data>
+  <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
+    <value>Controlli ravvicinati</value>
+  </data>
+  <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
+    <value>La tabella seguente mostra tutte le coppie di controlli che si trovano entro {0} metri l'una dall'altra. La stessa colonna dei simboli mostra se i due controlli hanno lo stesso simbolo primario (colonna D).</value>
+  </data>
+  <data name="EventAudit_MissingBoxes" xml:space="preserve">
+    <value>Rettangoli Descrizioni Mancanti</value>
+  </data>
+  <data name="EventAudit_MissingClimb" xml:space="preserve">
+    <value>Normalmente i percorsi dovrebbero indicare il dislivello</value>
+  </data>
+  <data name="EventAudit_MissingD" xml:space="preserve">
+    <value>Tutti i controlli devono avere il simbolo principale nella colonna D</value>
+  </data>
+  <data name="EventAudit_MissingEBetween" xml:space="preserve">
+    <value>Quando "tra" è nella colonna G, due simboli devono essere inseriti nelle colonne D ed E</value>
+  </data>
+  <data name="EventAudit_MissingEJunction" xml:space="preserve">
+    <value>Quando "giunzione" o "incrocio" sono nella colonna F, due simboli devono essere visualizzati nelle colonne D ed E</value>
+  </data>
+  <data name="EventAudit_MissingFinish" xml:space="preserve">
+    <value>Normalmente i percorsi dovrebbero avere un controllo finish</value>
+  </data>
+  <data name="EventAudit_MissingItems" xml:space="preserve">
+    <value>Oggetti mancanti nei percorsi</value>
+  </data>
+  <data name="EventAudit_MissingLoad" xml:space="preserve">
+    <value>Il percorso avrebbe dovuto prevedere il carico atleti</value>
+  </data>
+  <data name="EventAudit_MissingPunch" xml:space="preserve">
+    <value>Nessuno schema di punzonatura definito</value>
+  </data>
+  <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
+    <value>Schema Punzonatura Mancante</value>
+  </data>
+  <data name="EventAudit_MissingScore" xml:space="preserve">
+    <value>Il punteggio del percorso dovrebbe avere un punteggio impostato per tutti i controlli o per nessuno.</value>
+  </data>
+  <data name="EventAudit_MissingScores" xml:space="preserve">
+    <value>Punteggio Mancante</value>
+  </data>
+  <data name="EventAudit_MissingStart" xml:space="preserve">
+    <value>I percorsi normalmente dovrebbero avere un triangolo di partenza</value>
+  </data>
+  <data name="EventAudit_MissingStartScore" xml:space="preserve">
+    <value>I percorsi normalmente dovrebbero avere un triangolo di partenza</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="EventAudit_NoProblems" xml:space="preserve">
+    <value>Nessun problema trovato.</value>
+  </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Il percorso "{0}" contiene il controllo "{1}" due volte in una riga.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Controlli Ripetuti</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Il percorso score "{0}" contiene il controllo "{1}" due volte. </value>
+  </data>
+  <data name="EventAudit_Title" xml:space="preserve">
+    <value>Verifica evento per {0}</value>
+  </data>
+  <data name="EventAudit_UnusedControls" xml:space="preserve">
+    <value>Controlli non usati</value>
+  </data>
+  <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
+    <value>I seguenti controlli sono presenti nella lista "Tutti i controlli" ma non vengono utilizzati in nessun percorso. Per rimuoverli, utilizzare il comando "Rimuovi controlli inutilizzati" nel menu "Evento". Tali controlli non verranno considerati nella presente relazione.</value>
+  </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Si</value>
+  </data>
+  <data name="LegLength_Average" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} controlli, {2}, {3} m dislivello)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} controlli, {2})</value>
+  </data>
+  <data name="LegLength_Title" xml:space="preserve">
+    <value>Rapporto sulla lunghezza delle frazioni per {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Alcuni controlli vengono visitati più volte nello stesso percorso. Il secondo numero conta i passaggi sul controllo singolarmente.</value>
+  </data>
+  <data name="Load_ControlLoadSection" xml:space="preserve">
+    <value>Controllo Passaggi</value>
+  </data>
+  <data name="Load_LegLoadSection" xml:space="preserve">
+    <value>Utilizzo Frazioni</value>
+  </data>
+  <data name="Load_MissingLoads" xml:space="preserve">
+    <value>Per alcuni o tutti i percorsi non sono impostati i numeri dei concorrenti. Per questo motivo i passaggi elencati di seguito potrebbero essere errati o mancanti. Per impostare il numero dei concorrenti, seleziona "Numeri Concorrenti" dal menu "Percorso".</value>
+  </data>
+  <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
+    <value>(nella tabella seguente compaiono solo le frazioni utilizzate da più di un percorso)</value>
+  </data>
+  <data name="Load_Title" xml:space="preserve">
+    <value>Riepilogo Passaggi Concorrenti per {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Uno o più percorsi presentano variazioni. I passaggi verranno calcolati presupponendo che i concorrenti siano distribuiti uniformemente tra le varie varianti.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} visite)</value>
+  </data>
+  <data name="Load_Warning" xml:space="preserve">
+    <value>ATTENZIONE:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>NOTE: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Attenzione: a causa del numero di frazioni specificato, la biforcazionea al controllo {0} non verrà utilizzata in modo uniforme. {1} frazione(i) utilizzerà il ramo(i) {2}, mentre {3} la frazione(i) utilizzerà il(i) ramo(i) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Frazione {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Nessuna staffetta è stata ancora definita. Seleziona il numero desiderato di staffette e frazioni e premi il pulsante "Assegna varianti".</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Squadra {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Assegnazioni Staffette per {0}</value>
   </data>
 </root>

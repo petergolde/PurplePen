@@ -117,4 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventDirectoryLabel.Text" xml:space="preserve">
+    <value>In quale cartella (directory) vuoi salvare il file dell'evento?</value>
+  </data>
+  <data name="useMapDirectory.Text" xml:space="preserve">
+    <value>Nella stessa cartella del file della mappa</value>
+  </data>
+  <data name="useOtherFolder.Text" xml:space="preserve">
+    <value>In un altra cartella da scegliere</value>
+  </data>
+  <data name="chooseFolder.Text" xml:space="preserve">
+    <value>Scegli Cartella...</value>
+  </data>
+  <data name="folderBrowserDialog.Description" xml:space="preserve">
+    <value>Seleziona la cartella per il file dell'evento</value>
+  </data>
+  <data name="directoryDisplay.Text" xml:space="preserve">
+    <value>Cartella selezionata</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Posizione File Evento</value>
+  </data>
 </root>

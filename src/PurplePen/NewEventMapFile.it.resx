@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>Per progettare i tuoi percorsi, devi selezionare il file mappa che utilizzerai. In genere si tratta di un file OCAD o OpenOrienteering Mapper (sebbene sia possibile utilizzare PDF e file di immagine come JPEG). Fare clic sul pulsante "Scegli..." per selezionare un file mappa.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
     <value>&amp;Scegli file mappa...</value>
   </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
     <value>Tutti i file mappa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
+  <data name="mapFileDisplay.Text" xml:space="preserve">
+    <value>Seleziona File Mappa</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Il file della mappa è stato caricato con successo. Se invii il tuo file Purple Pen a qualcun altro, anche lui deve avere il file della mappa.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>File Mappa</value>

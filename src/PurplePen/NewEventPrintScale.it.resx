@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventPrintScaleLabel.Text" xml:space="preserve">
+    <value>Quale scala utilizzerai per stampare i tuoi percorsi? Nella maggior parte dei casi, si utilizzerà la scala esistente della mappa.
+
+</value>
+  </data>
+  <data name="mapScaleLabel.Text" xml:space="preserve">
+    <value>Scala mappa:</value>
+  </data>
+  <data name="defaultPrintScaleLabel.Text" xml:space="preserve">
+    <value>Scala di stam&amp;pa di default:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Puoi modificare la scala di stampa in un secondo momento per qualsiasi percorso selezionando Pecorso--&gt;Proprietà)</value>
+  </data>
+  <data name="oneToPrefixLabel1.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
+  <data name="oneToPrefixLabel2.Text" xml:space="preserve">
+    <value>1:</value>
+  </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Scala di Stampa</value>
   </data>

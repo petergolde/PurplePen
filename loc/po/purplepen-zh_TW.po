@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.1\n"
+"Project-Id-Version: Purple Pen 3.5.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-06-10 17:35-07:00\n"
+"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -65,6 +65,11 @@ msgstr "說明內容表示方式"
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
 msgstr "地圖列印比例尺"
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
@@ -147,19 +152,14 @@ msgstr "(不顯示)"
 msgid "Appearance"
 msgstr "外觀"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1 : "
-
-#: AddCourse.resx, secondaryTitleGroup.Text
-msgid "Class list / Secondary title"
-msgstr "組別列表/次要標題"
-
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
 msgstr "以下文字（選填）將出現在檢查點說明表的第二列："
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "組別列表/次要標題"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -194,6 +194,10 @@ msgstr "公尺"
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
 msgstr "公里"
+
+#: AddCourse.resx, hideFromReportsCheckBox.Text
+msgid "Do not include in reports"
+msgstr ""
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -2914,6 +2918,17 @@ msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
+msgstr ""
+
+#: MiscText.resx, AskInstallRobotoFonts
+msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
+"display the control descriptions, the \"Roboto\" and \"Roboto "
+"Condensed\" fonts must be installed on your system. Would "
+"you like to install those fonts now (strongly recommended)?"
+msgstr ""
+
+#: MiscText.resx, RobotoFontsInstallFailed
+msgid "Installing Roboto Fonts failed."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

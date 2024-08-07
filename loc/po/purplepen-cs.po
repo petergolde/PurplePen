@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.1\n"
+"Project-Id-Version: Purple Pen 3.5.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-06-10 17:31-07:00\n"
+"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -69,6 +69,11 @@ msgstr "Popis zobrazení:"
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
 msgstr "Měřítko tisknuté mapy:"
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
@@ -151,20 +156,15 @@ msgstr "(nezobrazovat)"
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1 : "
-
-#: AddCourse.resx, secondaryTitleGroup.Text
-msgid "Class list / Secondary title"
-msgstr "Seznam kategorií / podtitulek"
-
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
 msgstr "Následující text (volitelný) se zobrazí na druhém řádku "
 "popisů kontrol:"
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Seznam kategorií / podtitulek"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -199,6 +199,10 @@ msgstr "metry"
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
 msgstr "km"
+
+#: AddCourse.resx, hideFromReportsCheckBox.Text
+msgid "Do not include in reports"
+msgstr ""
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -2980,6 +2984,17 @@ msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
+msgstr ""
+
+#: MiscText.resx, AskInstallRobotoFonts
+msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
+"display the control descriptions, the \"Roboto\" and \"Roboto "
+"Condensed\" fonts must be installed on your system. Would "
+"you like to install those fonts now (strongly recommended)?"
+msgstr ""
+
+#: MiscText.resx, RobotoFontsInstallFailed
+msgid "Installing Roboto Fonts failed."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

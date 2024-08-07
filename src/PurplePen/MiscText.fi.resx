@@ -619,6 +619,9 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="AddEllipseTitle" xml:space="preserve">
     <value>Lisää ellipsi</value>
   </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>Purple Pen -ohjelman vanhempi versio on edelleen asennettuna. Kahden version aiheuttamien sekaannusten välttämiseksi on erittäin suositeltavaa poistaa vanhempi versio. Poistetaanko se nyt?</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
   </data>

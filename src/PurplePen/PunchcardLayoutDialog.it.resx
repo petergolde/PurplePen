@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="boxOrderGroupBox.Text" xml:space="preserve">
+    <value>Ordine Rettangoli</value>
+  </data>
+  <data name="sizeGroupBox.Text" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="columnsLabel.Text" xml:space="preserve">
+    <value>Colonne:</value>
+  </data>
+  <data name="rowsLabel.Text" xml:space="preserve">
+    <value>Righe:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Layout Cartellino</value>
+  </data>
 </root>

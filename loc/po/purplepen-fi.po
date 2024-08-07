@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.1\n"
+"Project-Id-Version: Purple Pen 3.5.2\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-06-10 17:32-07:00\n"
+"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -69,6 +69,11 @@ msgstr "Rastinmääritteet:"
 #: AllControlsProperties.resx, printingScaleLabel.Text
 msgid "Map printing scale:"
 msgstr "Tulostusmittakaava:"
+
+#: AddCourse.resx, oneToPrefixLabel.Text
+#: AllControlsProperties.resx, oneToPrefix.Text
+msgid "1 : "
+msgstr "1 : "
 
 #: AddCourse.resx, descKindCombo.Items
 #: AllControlsProperties.resx, descKindCombo.Items
@@ -151,20 +156,15 @@ msgstr "(älä näytä)"
 msgid "Appearance"
 msgstr "Ulkoasu"
 
-#: AddCourse.resx, oneToPrefixLabel.Text
-#: AllControlsProperties.resx, oneToPrefix.Text
-msgid "1 : "
-msgstr "1 : "
-
-#: AddCourse.resx, secondaryTitleGroup.Text
-msgid "Class list / Secondary title"
-msgstr "Sarjalista / Alaotsikko"
-
 #: AddCourse.resx, secondaryTitleDescription.Text
 msgid "The following (optional) text will appear on the second "
 "line of the control description sheet:"
 msgstr "Seuraava (vapaaehtoinen) teksti tulee rastinmääritteiden "
 "toiselle riville:"
+
+#: AddCourse.resx, secondaryTitleGroup.Text
+msgid "Class list / Secondary title"
+msgstr "Sarjalista / Alaotsikko"
 
 #: AddCourse.resx, lengthLabel.Text
 #: SelectionDescriptionText.resx, Length
@@ -199,6 +199,10 @@ msgstr "metriä"
 #: AddCourse.resx, kmSuffix.Text
 msgid "km"
 msgstr "km"
+
+#: AddCourse.resx, hideFromReportsCheckBox.Text
+msgid "Do not include in reports"
+msgstr ""
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -879,15 +883,15 @@ msgstr "Arial"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items1
 msgid "Arial Bold"
-msgstr "Arial Lihavoitu"
+msgstr "Arial lihavoitu"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items2
 msgid "Roboto"
-msgstr ""
+msgstr "Roboto"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items3
 msgid "Roboto Bold"
-msgstr ""
+msgstr "Roboto lihavoitu"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -2126,7 +2130,7 @@ msgstr "Font Metrics"
 
 #: MainFrame.resx, missingTranslationsMenuItem.Text
 msgid "Missing Description Translations"
-msgstr ""
+msgstr "Puuttuvat rastinmääritekäännökset"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2996,6 +3000,20 @@ msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
+msgstr "Purple Pen -ohjelman vanhempi versio on edelleen "
+"asennettuna. Kahden version aiheuttamien sekaannusten "
+"välttämiseksi on erittäin suositeltavaa poistaa vanhempi "
+"versio. Poistetaanko se nyt?"
+
+#: MiscText.resx, AskInstallRobotoFonts
+msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
+"display the control descriptions, the \"Roboto\" and \"Roboto "
+"Condensed\" fonts must be installed on your system. Would "
+"you like to install those fonts now (strongly recommended)?"
+msgstr ""
+
+#: MiscText.resx, RobotoFontsInstallFailed
+msgid "Installing Roboto Fonts failed."
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
@@ -4029,15 +4047,15 @@ msgstr "Kartankääntö ({0})"
 #: SelectLocationsForMove.resx, labelArrowSecondNewLocation.Text
 #: SelectLocationsForMove.resx, labelArrowConfirmLocations.Text
 msgid "è"
-msgstr ""
+msgstr "è"
 
 #: SelectLocationsForMove.resx, labelFirstControl.Text
 msgid "Select first control or registration mark to move"
-msgstr ""
+msgstr "Valitse ensimmäinen siirrettävä rasti tai kohdistusmerkki"
 
 #: SelectLocationsForMove.resx, labelSecondNewLocation.Text
 msgid "Choose new location for second control/mark"
-msgstr ""
+msgstr "Valitse uusi sijainti toiselle rastille/kohdistusmerkille"
 
 #: SelectLocationsForMove.resx, labelConfirmLocations.Text
 msgid "Confirm new locations"
@@ -4057,11 +4075,12 @@ msgstr "X-poikkeama:"
 
 #: SelectLocationsForMove.resx, labelSecondControl.Text
 msgid "Select second control or registration mark to move"
-msgstr ""
+msgstr "Valitse toinen siirrettävä rasti tai kohdistusmerkki"
 
 #: SelectLocationsForMove.resx, labelFirstNewLocation.Text
 msgid "Choose new location for first control/mark"
-msgstr ""
+msgstr "Valitse uusi sijainti ensimmäiselle "
+"rastille/kohdistusmerkille"
 
 #: SelectLocationsForMove.resx, buttonBack.Text
 msgid "Back"
@@ -4360,12 +4379,14 @@ msgstr "Paina hiiren vasen painike pohjaan ja vedä venyttääksesi "
 #: StatusBarText.resx, ControlForMoveAllControls
 msgid "Click the left mouse button on a control or registration "
 "mark to move to a new location"
-msgstr ""
+msgstr "Klikkaa hiiren vasenta painiketta rastin tai "
+"kohdistusmerkin kohdalla siirtääksesi sen uuteen sijaintiin"
 
 #: StatusBarText.resx, NewLocationForMoveAllControls
 msgid "Click the left mouse button on the new location for the "
 "control or registration mark"
-msgstr ""
+msgstr "Klikkaa hiiren vasenta painiketta rastin tai "
+"kohdistusmerkin uudessa sijainnissa"
 
 #: TeamVariationsForm.resx, buttonExport.Text
 msgid "Export..."

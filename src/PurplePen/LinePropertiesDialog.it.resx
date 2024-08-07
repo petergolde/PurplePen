@@ -139,7 +139,7 @@
     <value>Larghezza:</value>
   </data>
   <data name="labelGapSize.Text" xml:space="preserve">
-    <value>Dim. Vuoto:</value>
+    <value>Dim. Tratto Vuoto:</value>
   </data>
   <data name="labelDashSize.Text" xml:space="preserve">
     <value>Dim. Tratto:</value>

@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="confirmReplaceLabel.Text" xml:space="preserve">
+    <value>I seguenti file esistono già. Se continui, verranno sostituiti.</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>Sostituisci</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Annulla</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Conferma Sostituzione File</value>
   </data>
 </root>

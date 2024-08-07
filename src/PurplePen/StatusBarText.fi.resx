@@ -228,4 +228,10 @@
   <data name="StretchingObject" xml:space="preserve">
     <value>Paina hiiren vasen painike pohjaan ja vedä venyttääksesi ylitys/alituspaikkaa</value>
   </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Klikkaa hiiren vasenta painiketta rastin tai kohdistusmerkin kohdalla siirtääksesi sen uuteen sijaintiin</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Klikkaa hiiren vasenta painiketta rastin tai kohdistusmerkin uudessa sijainnissa</value>
+  </data>
 </root>

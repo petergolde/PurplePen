@@ -153,6 +153,12 @@
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
     <value>Arial Grassetto</value>
   </data>
+  <data name="comboBoxControlNumberStyle.Items2" xml:space="preserve">
+    <value>Roboto</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items3" xml:space="preserve">
+    <value>Roboto Bold</value>
+  </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stile Numero del Controllo</value>
   </data>

@@ -123,6 +123,9 @@
   <data name="cancelButton.Text" xml:space="preserve">
     <value>Annulla</value>
   </data>
+  <data name="setPrintAreaLabel.Text" xml:space="preserve">
+    <value>Imposta l'area di stampa desiderata trascinandola con il mouse.</value>
+  </data>
   <data name="groupBoxPaperSize.Text" xml:space="preserve">
     <value>Dimensione foglio</value>
   </data>

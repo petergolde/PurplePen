@@ -570,6 +570,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Font Metrics</value>
   </data>
+  <data name="missingTranslationsMenuItem.Text" xml:space="preserve">
+    <value>Puuttuvat rastinmääritekäännökset</value>
+  </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Kaatuminen</value>
   </data>

@@ -190,7 +190,7 @@
     <value>无</value>
   </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
-    <value>跨越边界</value>
+    <value>不可通过边界</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
     <value>线路名称</value>
@@ -217,7 +217,7 @@
     <value>可选通过点</value>
   </data>
   <data name="SpecialName_RegMark" xml:space="preserve">
-    <value>登记马克</value>
+    <value>注册标记</value>
   </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>文本</value>
@@ -262,7 +262,7 @@
     <value>名称：</value>
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
-    <value>白色区域</value>
+    <value>白色外部区域</value>
   </data>
   <data name="MapExchange_Plural" xml:space="preserve">
     <value>换图</value>
@@ -283,7 +283,7 @@
     <value>线路{0}，部分{1}</value>
   </data>
   <data name="SpecialName_Line" xml:space="preserve">
-    <value>线</value>
+    <value>直线</value>
   </data>
   <data name="SpecialName_Rectangle" xml:space="preserve">
     <value>矩形</value>

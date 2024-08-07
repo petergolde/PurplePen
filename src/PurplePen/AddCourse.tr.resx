@@ -126,6 +126,9 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Harita Baskı Ölçeği:</value>
   </data>
+  <data name="oneToPrefixLabel.Text" xml:space="preserve">
+    <value>1 : </value>
+  </data>
   <data name="descKindCombo.Items" xml:space="preserve">
     <value>Semboller</value>
   </data>
@@ -174,14 +177,11 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Görünüm</value>
   </data>
-  <data name="oneToPrefixLabel.Text" xml:space="preserve">
-    <value>1 : </value>
+  <data name="secondaryTitleDescription.Text" xml:space="preserve">
+    <value>Aşağıdaki metin (isteğe bağlı olarak), kontrol açılma sayfasının ikinci satırında görünür:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
     <value>Sınıf Listesi/ İkinci Başlık</value>
-  </data>
-  <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Aşağıdaki metin (isteğe bağlı olarak), kontrol açılma sayfasının ikinci satırında görünür:</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Uzunluk:</value>
