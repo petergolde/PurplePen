@@ -59,23 +59,36 @@ namespace PurplePen
         // tell if the user installed it).
         public static bool RunRobotoFontInstaller()
         {
-            string pathname = Util.GetFileInAppDirectory("Roboto Font Installer.exe");
-            if (!File.Exists(pathname)) {
+            string pathnameInAppDir = Util.GetFileInAppDirectory("Roboto Font Installer.exe");
+            if (!File.Exists(pathnameInAppDir)) {
                 return false;
             }
 
-            Process process = new Process();
-            process.StartInfo.FileName = pathname;
-            process.StartInfo.Arguments = "";
-            process.StartInfo.UseShellExecute = false;
+            // Copy the installer to a temporary directory and run it from there.
+            // This is required when running in the Windows Store version, because the
+            // installer fails if the installer is in the app directory.
+            string basename = Path.GetFileName(pathnameInAppDir);
+            string tempDirectory = Path.GetTempPath();
+            string pathnameInTempDirectory = Path.Combine(tempDirectory, basename);
+            File.Copy(pathnameInAppDir, pathnameInTempDirectory, true);
+
             try {
-                process.Start();
-                process.WaitForExit();
-                robotoFontsInstalled = true;
-                return true;
+                Process process = new Process();
+                process.StartInfo.FileName = pathnameInTempDirectory;
+                process.StartInfo.Arguments = "";
+                process.StartInfo.UseShellExecute = false;
+                try {
+                    process.Start();
+                    process.WaitForExit();
+                    robotoFontsInstalled = true;
+                    return true;
+                }
+                catch (Exception) {
+                    return false;
+                }
             }
-            catch (Exception) {
-                return false;
+            finally {
+                File.Delete(pathnameInTempDirectory);
             }
         }
     }
