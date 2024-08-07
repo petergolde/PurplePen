@@ -3,13 +3,16 @@
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3" 
+  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
   IgnorableNamespaces="uap rescap">
 
   <Identity
     Name="45613PurplePen.PurplePenforOrienteering"
     Publisher="CN=C61EB180-1ECA-4AAF-AEF7-BFE0F2F06B3C"
-    Version="1.0.14.0" />
+    Version="3.51.13.0" />
 
   <Properties>
     <DisplayName>Purple Pen for Orienteering</DisplayName>
@@ -31,7 +34,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="Purple Pen for Orienteering"
+        DisplayName="Purple Pen"
         Description="MsftStoreInstaller"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
@@ -39,6 +42,33 @@
         <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png"  Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png"/>
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
+
+      <Extensions>
+        <rescap3:Extension Category="windows.desktopAppMigration">
+          <rescap3:DesktopAppMigration>
+            <rescap3:DesktopApp AumId="45613PurplePen.PurplePenforOrienteering_cqdesrqke8712!App" />
+            <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\Purple Pen.lnk" />
+            <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\Purple Pen.lnk" />
+            <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Purple Pen.lnk"/>
+            <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\Purple Pen.lnk"/>
+          </rescap3:DesktopAppMigration>
+        </rescap3:Extension>
+
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="purple_pen" Parameters="&quot;%1&quot;">
+            <rescap3:MigrationProgIds>
+              <rescap3:MigrationProgId>PurplePen.PurplePenEvent</rescap3:MigrationProgId>
+            </rescap3:MigrationProgIds>
+            <uap:SupportedFileTypes>
+              <uap:FileType>.ppen</uap:FileType>
+            </uap:SupportedFileTypes>
+            <uap:DisplayName>Purple Pen Event File</uap:DisplayName>
+            <uap:InfoTip>Event File for the Purple Pen course setting program</uap:InfoTip>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+
+      </Extensions>
+
     </Application>
   </Applications>
 

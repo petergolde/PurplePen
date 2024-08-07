@@ -6287,6 +6287,10 @@
       <Link>Samples\SampleMap.ocd</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="..\Help\output\Purple Pen Help.chm">
+      <Link>Purple Pen Help.chm</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -6358,6 +6362,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Images\LineSpecial_OcadToolbox.png" />
+    <Content Include="..\FontInstaller\output\Roboto Font Installer.exe">
+      <Link>Roboto Font Installer.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\MapModel\GdiPlusNative\$(Configuration)\GDIPlusNative.dll">
       <Link>GDIPlusNative.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -1,2 +1,2 @@
-MainPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x86\Debug\MsftStoreInstaller_1.0.14.0_x86_Debug.msix
-SymbolPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\obj\x86\Debug\Symbols\MsftStoreInstaller_1.0.14.0_x86_Debug.appxsym
+MainPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x86\Debug\MsftStoreInstaller_3.51.13.0_x86_Debug.msix
+SymbolPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\obj\x86\Debug\Symbols\MsftStoreInstaller_3.51.13.0_x86_Debug.appxsym

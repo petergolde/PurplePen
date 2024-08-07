@@ -110,3 +110,4 @@ src/.vs/
 /src/PurplePenMsixInstaller/BundleArtifacts/Upload/x64.txt
 /src/PurplePenMsixInstaller/BundleArtifacts/Upload/x86.txt
 src/MsixInstaller/AppPackages/
+src/MsftStoreInstaller/AppPackages/

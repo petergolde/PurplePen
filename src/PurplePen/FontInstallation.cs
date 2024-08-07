@@ -65,9 +65,9 @@ namespace PurplePen
             }
 
             Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
             process.StartInfo.FileName = pathname;
             process.StartInfo.Arguments = "";
+            process.StartInfo.UseShellExecute = false;
             try {
                 process.Start();
                 process.WaitForExit();
