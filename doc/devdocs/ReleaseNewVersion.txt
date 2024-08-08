@@ -24,9 +24,9 @@ Releasing a new version of Purple Pen.
 
 10. Copy and rename src\InnoSetup\output\purplepen-setup.exe and place in http://purplepen.golde.org/downloads
 
-11. Update Home and Download page to link to new download. (Both the Download Now button and the list of all versions).
+11. Update Home and Download sections to link to new download. (Both the Download Now button and the list of all versions).
 
-12. Update News page with news about the new version.
+12. Update News section with info about the new download.
 
 13. Upload a new change list document.
 
@@ -36,7 +36,24 @@ Releasing a new version of Purple Pen.
 
    a) In MsftStoreInstaller project, right click on the project and select "Publish->Create App Packages". 
    b) Pick Microsoft Store as the target
-   c) 
+   c) Changed version with second version number as second and third together (e.g., 3.5.1 should be 3.51.0.0). 
+      Set auto-increment to checked.
+      Generate App Bundle to "Always"
+      Architectures:
+         x86 -> StorePkg(Win32)
+         x64 -> StorePkg(x64)
+         ARM and ARM64 unchecked
+      Check Public Symbols on
+      Check Generate Artifacts for App Certifications
+   d) Go to Partner Center at   https://partner.microsoft.com/en-us/dashboard/home
+   e) Click on "Apps and Games" and select "Purple Pen for Orienteering"
+   f) Click "Start Update"
+   g) Click on "Packages"
+   h) Browse for packages, and go to: D:\Repos\Main\PurplePen\src\MsftStoreInstaller\AppPackages
+        In the newest directory, select the MSIXBUNDLE file.
+   i) After it uploads and is validated, click "Save" at the bottom of the page.
+   j) On the main page, click "Submit for Certification".
+   You will get an email when the submission is live in the store.
     
 
 
