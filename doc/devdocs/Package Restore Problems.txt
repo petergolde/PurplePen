@@ -1,0 +1,5 @@
+Something is sometimes wrong with package restore in Purple Pen project.
+
+For now, if you can't build, you can do this:
+
+"C:\Program Files\NuGet\nuget" restore PPen.sln
