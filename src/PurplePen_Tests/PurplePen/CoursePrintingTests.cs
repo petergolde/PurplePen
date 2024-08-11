@@ -201,7 +201,7 @@ namespace PurplePen.Tests
             coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = false;
+            appearance.purpleColorBlend = PurpleColorBlend.None;
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\noblend", coursePrintSettings, appearance);
@@ -308,7 +308,7 @@ namespace PurplePen.Tests
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
             appearance.useOcadOverprint = true;
 
             CoursePrintingTest("courseprinting\\overprint", coursePrintSettings, appearance, 200);

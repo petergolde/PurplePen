@@ -85,7 +85,7 @@ namespace PurplePen
                     case 2: result.itemScaling = ItemScaling.RelativeTo15000; break;
                 }
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
-                result.purpleColorBlend = checkBoxBlendPurple.Checked;
+                result.purpleColorBlend = checkBoxBlendPurple.Checked ? PurpleColorBlend.Blend : PurpleColorBlend.None;
                 result.purpleC = (float) (upDownCyan.Value / 100);
                 result.purpleM = (float) (upDownMagenta.Value / 100);
                 result.purpleY = (float) (upDownYellow.Value / 100);
@@ -136,7 +136,7 @@ namespace PurplePen
                 SetCurrentCMYK(value.purpleC, value.purpleM, value.purpleY, value.purpleK);
 
                 checkBoxDefaultPurple.Checked = value.useDefaultPurple;
-                checkBoxBlendPurple.Checked = value.purpleColorBlend;
+                checkBoxBlendPurple.Checked = (value.purpleColorBlend != PurpleColorBlend.None);
 
                 comboBoxDescriptionColor.SelectedIndex = (value.descriptionsPurple ? 1 : 0);
 

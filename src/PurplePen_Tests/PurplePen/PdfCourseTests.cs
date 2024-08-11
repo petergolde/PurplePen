@@ -345,7 +345,7 @@ namespace PurplePen.Tests
             settings.PrintMapExchangesOnOneMap = false;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = false;
+            appearance.purpleColorBlend = PurpleColorBlend.None;
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create1\\Marymoor WIOL 2.pdf") },
@@ -371,7 +371,7 @@ namespace PurplePen.Tests
             appearance.numberBold = true; // bold numbers.
             appearance.numberOutlineWidth = 0.13F;
             appearance.useDefaultPurple = false;
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
             appearance.autoLegGapSize = 0.0F;
             appearance.purpleC = 0.32F;
             appearance.purpleY = 1.00F;
@@ -403,7 +403,7 @@ namespace PurplePen.Tests
             appearance.numberRoboto = false; // Arial font
             appearance.numberOutlineWidth = 0.13F;
             appearance.useDefaultPurple = false;
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
             appearance.autoLegGapSize = 0.0F;
             appearance.purpleC = 0.32F;
             appearance.purpleY = 1.00F;
@@ -431,7 +431,7 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
             appearance.numberRoboto = false;
 
             Directory.CreateDirectory(settings.outputDirectory);
@@ -493,7 +493,7 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create5\\Short.pdf") },
@@ -513,7 +513,7 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create8\\Short.pdf") },
@@ -533,7 +533,7 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create6\\Short.pdf"),
@@ -559,7 +559,7 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\St Pauls Week 4.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create9\\All Controls.pdf"),
@@ -586,7 +586,7 @@ namespace PurplePen.Tests
             settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Lincoln Park PDF RGB.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("pdfcourse\\pdf_create7\\Short.pdf"),
@@ -631,7 +631,7 @@ namespace PurplePen.Tests
             settings.PrintMapExchangesOnOneMap = false;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Overprint test.ppen"), settings, appearance,
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create_overprint\\Overprint test.pdf") },
@@ -651,7 +651,7 @@ namespace PurplePen.Tests
             settings.PrintMapExchangesOnOneMap = false;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lincoln Park PrintAreas 2.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("controller\\pdf_area\\All controls.pdf"),
@@ -679,7 +679,7 @@ namespace PurplePen.Tests
             settings.PrintMapExchangesOnOneMap = false;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\PDF rescale test.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("pdfcourse\\Scaled.pdf"),
@@ -701,7 +701,7 @@ namespace PurplePen.Tests
             settings.PrintMapExchangesOnOneMap = false;
 
             CourseAppearance appearance = new CourseAppearance();
-            appearance.purpleColorBlend = true;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Bad PDF Test.ppen"), settings, appearance,
                 new string[] { TestUtil.GetTestFile("controller\\pdf_badistream\\Long.pdf") },

@@ -2359,6 +2359,9 @@ namespace PurplePen
     // The type of item scaling
     public enum ItemScaling { None, RelativeToMap, RelativeTo15000}
 
+    // The type of blending for purple colors.
+    public enum PurpleColorBlend { None, Blend, UpperLowerPurple }
+
     // Describes appearance of the courses.
     public class CourseAppearance
     {
@@ -2371,7 +2374,9 @@ namespace PurplePen
         public float numberOutlineWidth = 0.0F;             // Width of outline
         public float autoLegGapSize = 3.5F;             // Size in mm of automatic gap in legs.
 
-        public bool purpleColorBlend = true;        // if true, overprint (blend) purple color on map.
+        public PurpleColorBlend purpleColorBlend = PurpleColorBlend.Blend;        // What type of blending for purple color
+        public int mapLayerForLowerPurple = 0;        // The map layer to use for the lower purple color (lower purple is drawing immediately above this layer). Only used for PurpleColorBlend.UpperLowerPurple.
+
         public bool useDefaultPurple = true;        // if true, use the default purple color (which usually comes from the underlying map)
         public float purpleC, purpleM, purpleY, purpleK;   // CMYK coloir of the purple color to use if "useDefaultPurple" is false
 
@@ -2451,6 +2456,8 @@ namespace PurplePen
             if (useDefaultPurple != other.useDefaultPurple)
                 return false;
             if (purpleColorBlend != other.purpleColorBlend)
+                return false;
+            if (purpleColorBlend == PurpleColorBlend.UpperLowerPurple && mapLayerForLowerPurple != other.mapLayerForLowerPurple)
                 return false;
             if (useDefaultPurple == false) {
                 // The specific purple colors are not used if useDefaultPurple is false.
@@ -2832,7 +2839,17 @@ namespace PurplePen
                 xmloutput.WriteAttributeString("purple-yellow", XmlConvert.ToString(courseAppearance.purpleY));
                 xmloutput.WriteAttributeString("purple-black", XmlConvert.ToString(courseAppearance.purpleK));
             }
-            xmloutput.WriteAttributeString("blend-purple", XmlConvert.ToString(courseAppearance.purpleColorBlend));
+
+            if (courseAppearance.purpleColorBlend == PurpleColorBlend.None) {
+                xmloutput.WriteAttributeString("blend-purple", "false");
+            }
+            else if (courseAppearance.purpleColorBlend == PurpleColorBlend.Blend) {
+                xmloutput.WriteAttributeString("blend-purple", "true");
+            }
+            else if (courseAppearance.purpleColorBlend == PurpleColorBlend.UpperLowerPurple) {
+                xmloutput.WriteAttributeString("blend-purple", "layer");
+                xmloutput.WriteAttributeString("lower-purple-layer", XmlConvert.ToString(courseAppearance.mapLayerForLowerPurple));
+            }
 
             xmloutput.WriteEndElement();
 
@@ -2866,7 +2883,7 @@ namespace PurplePen
         {
             firstControlCode = 31;
             disallowInvertibleCodes = true;
-            courseAppearance.purpleColorBlend = false; // default for existing events is false, true for new events.
+            courseAppearance.purpleColorBlend = PurpleColorBlend.None; // default for existing events is no blending, blending for new events.
             printArea = null;  // Will be set at end if not loaded.
 
             bool first = true;
@@ -2956,7 +2973,19 @@ namespace PurplePen
                         courseAppearance.numberRoboto = (numberFont == "Roboto");
                         courseAppearance.numberOutlineWidth = xmlinput.GetAttributeFloat("number-outline-width", 0.0F);
                         courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
-                        courseAppearance.purpleColorBlend = xmlinput.GetAttributeBool("blend-purple", false);
+
+                        string blendPurpleText = xmlinput.GetAttributeString("blend-purple", "false");
+                        if (blendPurpleText == "true")
+                            courseAppearance.purpleColorBlend = PurpleColorBlend.Blend;
+                        else if (blendPurpleText == "layer") {
+                            courseAppearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+                            courseAppearance.mapLayerForLowerPurple = xmlinput.GetAttributeInt("lower-purple-layer", 0);
+                        }
+                        else {
+                            courseAppearance.purpleColorBlend = PurpleColorBlend.None;
+                        }
+
+                        
                         courseAppearance.purpleC = xmlinput.GetAttributeFloat("purple-cyan", -1F);
                         courseAppearance.purpleM = xmlinput.GetAttributeFloat("purple-magenta", -1F);
                         courseAppearance.purpleY = xmlinput.GetAttributeFloat("purple-yellow", -1F);

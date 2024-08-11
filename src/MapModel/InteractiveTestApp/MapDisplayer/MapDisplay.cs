@@ -183,6 +183,9 @@ namespace InteractiveTestApp.MapDisplayer
 
 
         // Colors in the map, or empty list if no map or bitmap map.
+        // The lowest index being the lowest colors,
+        // and the highest index being the top-most color.
+
         public List<SymColor> GetMapColors()
         {
             if (mapType == MapType.OCAD && map != null) {

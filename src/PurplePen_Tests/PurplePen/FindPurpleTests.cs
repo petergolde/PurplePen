@@ -61,6 +61,14 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void IsBlack()
+        {
+            Assert.IsTrue(FindPurple.IsPurple(0, 0, 0, 1));
+            Assert.IsTrue(FindPurple.IsPurple(0.04F, 0F, 0.01F, 0.98F));
+            Assert.IsFalse(FindPurple.IsPurple(0.5F, 0.4F, 0, 0.5F));
+        }
+
+        [TestMethod]
         public void FindPurpleByName()
         {
             Map map = new Map(new GDIPlus_TextMetrics(), null);

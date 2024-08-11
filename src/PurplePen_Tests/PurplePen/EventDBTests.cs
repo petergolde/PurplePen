@@ -458,6 +458,7 @@ namespace PurplePen.Tests
             e.punchcardFormat.boxesDown = 5;
             e.punchcardFormat.leftToRight = false;
             e.punchcardFormat.topToBottom = true;
+            e.courseAppearance.purpleColorBlend = PurpleColorBlend.None;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);
@@ -482,7 +483,7 @@ namespace PurplePen.Tests
             e.notes = null;
             e.mapType = MapType.None;
             e.mapFileName = null;
-            e.courseAppearance.purpleColorBlend = true;
+            e.courseAppearance.purpleColorBlend = PurpleColorBlend.Blend;
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);
@@ -514,6 +515,9 @@ namespace PurplePen.Tests
             e.courseAppearance.useOcadOverprint = true;
             e.courseAppearance.numberRoboto = false;
             e.courseAppearance.itemScaling = ItemScaling.RelativeTo15000;
+            e.courseAppearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            e.courseAppearance.mapLayerForLowerPurple = 17;
+
 
             undomgr.BeginCommand(198, "change event");
             eventDB.ChangeEvent(e);

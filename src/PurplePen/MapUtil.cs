@@ -41,6 +41,7 @@ using PurplePen.Graphics2D;
 using ColorConverter = PurplePen.Graphics2D.ColorConverter;
 using System.Drawing.Printing;
 using System.Globalization;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PurplePen
 {
@@ -286,6 +287,34 @@ namespace PurplePen
             return (h >= 0.70 && h <= 0.95 && v >= 0.20);
         }
 
+
+        // Determine if a color is black.
+        public static bool IsBlack(float cyan, float magenta, float yellow, float black)
+        {
+            return (black > 0.95f);
+        }
+
+        // Search all colors for one that is closest to pure magenta.
+        public static SymColor FindClosedToMagenta(List<SymColor> colors)
+        {
+            float c, m, y, k;
+            double distance, minDistance = 1000;
+            SymColor bestColor = null;
+
+            foreach (SymColor color in colors) {
+                color.GetCMYK(out c, out m, out y, out k);
+                if (IsPurple(c, m, y, k)) {
+                    distance = c * c + (m - 1) * (m - 1) + (y * y) + (k * k);
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        bestColor = color;
+                    }
+                }
+            }
+
+            return bestColor;
+        }
+
         // Search all the colors for a color called "Purple".
         public static bool FindPurpleColor(List<SymColor> colors, out short ocadId, out float cyan, out float magenta, out float yellow, out float black)
         {
@@ -304,18 +333,7 @@ namespace PurplePen
             }
 
             // Search all colors for one that is closest to pure magenta.
-            double distance, minDistance = 1000;
-            SymColor bestColor = null;
-            foreach (SymColor color in colors) {
-                color.GetCMYK(out c, out m, out y, out k);
-                if (IsPurple(c, m, y, k)) {
-                    distance = c * c + (m - 1) * (m - 1) + (y * y) + (k * k);
-                    if (distance < minDistance) {
-                        minDistance = distance;
-                        bestColor = color;
-                    }
-                }
-            }
+            SymColor bestColor = FindClosedToMagenta(colors);
 
             if (bestColor != null) {
                 bestColor.GetCMYK(out c, out m, out y, out k);
@@ -330,11 +348,48 @@ namespace PurplePen
             return false;
         }
 
+        // Return the ocadId of the best lower purple color. We choose
+        // the next purple color below the top-most black color. If there isn't one,
+        // we return the color below the top-most black, or just the top color if there is no black.
+        public static int FindLowerPurple(List<SymColor> colors)
+        {
+            int blackIndex = -1;
+
+            // First, find the top-most black.
+            for (int i = colors.Count - 1; i >= 0; --i) {
+                float c, m, y, k;
+                colors[i].GetCMYK(out c, out m, out y, out k);
+                if (IsBlack(c, m, y, k)) {
+                    blackIndex = i;
+                    break;
+                }
+            }
+
+            // Find the next purple color below the black.
+            if (blackIndex > 0) {
+                for (int i = blackIndex - 1; i >= 0; --i) {
+                    float c, m, y, k;
+                    colors[i].GetCMYK(out c, out m, out y, out k);
+                    if (IsPurple(c, m, y, k))
+                        return colors[i].OcadId;
+                }
+
+                // If there is no purple below the black, return the color 
+                // just below the black.
+                return colors[blackIndex - 1].OcadId;
+            }
+            else {
+                // If there is no black (or black is the bottom color), return the
+                // top.
+                return colors[colors.Count - 1].OcadId;
+            }
+        }
+
         // Get the purple color to use for display, taking into account the user preferences in courseAppearance, the map loaded into the mapDisplay, 
         // and the default purple if none of those provide a color. MapDisplay and courseAppearance can be null, in which case they won't be used.
         public static void GetPurpleColor(MapDisplay mapDisplay, CourseAppearance courseAppearance, out short ocadId, out float cyan, out float magenta, out float yellow, out float black, out bool overprint)
         {
-            overprint = (courseAppearance == null) ? true : courseAppearance.purpleColorBlend;
+            overprint = (courseAppearance == null) ? true : (courseAppearance.purpleColorBlend == PurpleColorBlend.Blend);
 
             if (courseAppearance != null && !courseAppearance.useDefaultPurple) {
                 // Use the purple from the course display.

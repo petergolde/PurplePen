@@ -1280,13 +1280,16 @@ namespace PurplePen
         {
             get
             {
+                /* 
                 // Windows XP -> must rasterize because print drivers don't work well.
                 // Bitmap/PDF maps should rasterize because they are already bitmaps so more efficient to.
                 // Purple color blend requires rasterization to work properly.
                 return (Environment.OSVersion.Version.Major <= 5 ||
                         MapType != MapType.OCAD ||
-                        eventDB.GetEvent().courseAppearance.purpleColorBlend ||
+                        (eventDB.GetEvent().courseAppearance.purpleColorBlend == PurpleColorBlend.Blend)||
                         eventDB.GetEvent().courseAppearance.useOcadOverprint);
+                */
+                return true;  // We always rasterize now.
             }
         }
 

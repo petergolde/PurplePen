@@ -1238,6 +1238,8 @@ namespace PurplePen.MapModel
             }
         }
 
+        // Return all the colors, with the lowest index being the lowest colors,
+        // and the highest index being the top-most color.
         public ICollection<SymColor> AllColors {
             get {
                 CheckReadable();
