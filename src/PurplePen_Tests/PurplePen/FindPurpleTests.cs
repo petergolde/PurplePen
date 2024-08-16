@@ -43,6 +43,7 @@ using PurplePen.MapModel;
 
 using TestingUtils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 
 namespace PurplePen.Tests
@@ -50,6 +51,17 @@ namespace PurplePen.Tests
     [TestClass]
     public class FindPurpleTests: TestFixtureBase
     {
+        TestUI ui;
+        Controller controller;
+
+        public void Setup(string filename)
+        {
+            ui = TestUI.Create();
+            controller = ui.controller;
+            bool success = controller.LoadInitialFile(TestUtil.GetTestFile(filename), true);
+            Assert.IsTrue(success);
+        }
+
         [TestMethod]
         public void IsPurple()
         {
@@ -58,15 +70,19 @@ namespace PurplePen.Tests
             Assert.IsFalse(FindPurple.IsPurple(0.95F, 0.30F, 0, 0));
             Assert.IsFalse(FindPurple.IsPurple(0, 1F, 0, 0.9F));
             Assert.IsFalse(FindPurple.IsPurple(0, 0F, 0, 0));
+            Assert.IsTrue(FindPurple.IsPurple(0.35F, 0.85F, 0, 0));
+            Assert.IsFalse(FindPurple.IsPurple(0.18F, 0.43F, 0, 0));
         }
 
         [TestMethod]
-        public void IsBlack()
+        public void IsSolidGreen()
         {
-            Assert.IsTrue(FindPurple.IsPurple(0, 0, 0, 1));
-            Assert.IsTrue(FindPurple.IsPurple(0.04F, 0F, 0.01F, 0.98F));
-            Assert.IsFalse(FindPurple.IsPurple(0.5F, 0.4F, 0, 0.5F));
+            Assert.IsTrue(FindPurple.IsSolidGreen(0.76F, 0, 0.91F, 0));
+            Assert.IsTrue(FindPurple.IsSolidGreen(0.91F, 0, 0.83F, 0));
+            Assert.IsFalse(FindPurple.IsSolidGreen(0.46F, 0, 0.55F, 0));
         }
+
+
 
         [TestMethod]
         public void FindPurpleByName()
@@ -137,6 +153,55 @@ namespace PurplePen.Tests
 
             Assert.IsFalse(FindPurple.FindPurpleColor(colorList, out ocadId, out c, out m, out y, out k));
         }
+
+        [TestMethod]
+        public void OCAD_ISOM()
+        {
+            Setup("findpurple\\OCAD_ISOM_Blank.ppen");
+            List<SymColor> colors = controller.MapDisplay.GetMapColors();
+
+            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            Assert.AreEqual(52, lowerPurpleId);
+            SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual("Lower purple for course planning", color.Name);
+        }
+
+        [TestMethod]
+        public void OCAD_ISSprOM()
+        {
+            Setup("findpurple\\OCAD_ISSprOM_Blank.ppen");
+            List<SymColor> colors = controller.MapDisplay.GetMapColors();
+
+            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            Assert.AreEqual(52, lowerPurpleId);
+            SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual("Lower purple for course planning", color.Name);
+        }
+
+        [TestMethod]
+        public void OOM_ISOM()
+        {
+            Setup("findpurple\\OOM_ISOM_Blank.ppen");
+            List<SymColor> colors = controller.MapDisplay.GetMapColors();
+
+            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            Assert.AreEqual(7, lowerPurpleId);
+            SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual("Purple for track symbols", color.Name);
+        }
+
+        [TestMethod]
+        public void OOM_ISSprOM()
+        {
+            Setup("findpurple\\OOM_ISSprOM_Blank.ppen");
+            List<SymColor> colors = controller.MapDisplay.GetMapColors();
+
+            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            Assert.AreEqual(5, lowerPurpleId);
+            SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual("Purple for track symbols", color.Name);
+        }
+
     }
 }
 

@@ -284,7 +284,15 @@ namespace PurplePen
         {
             float h, s, v;
             ColorConverter.CmykToHsv(cyan, magenta, yellow, black, out h, out s, out v);
-            return (h >= 0.70 && h <= 0.95 && v >= 0.20);
+            return (h >= 0.70 && h <= 0.95 && s >= 0.5 && v >= 0.50);
+        }
+
+        // Determine if a color is actually close to 100% green.
+        public static bool IsSolidGreen(float cyan, float magenta, float yellow, float black)
+        {
+            float h, s, v;
+            ColorConverter.CmykToHsv(cyan, magenta, yellow, black, out h, out s, out v);
+            return (h >= 0.20 && h <= 0.45 && s >= 0.7 && v >= 0.50);
         }
 
 
@@ -349,25 +357,25 @@ namespace PurplePen
         }
 
         // Return the ocadId of the best lower purple color. We choose
-        // the next purple color below the top-most black color. If there isn't one,
-        // we return the color below the top-most black, or just the top color if there is no black.
+        // the next purple color below the top-most solid green color. If there isn't one,
+        // we return the color below the top-most solid green, or just the top color if there is no solid gree.
         public static int FindLowerPurple(List<SymColor> colors)
         {
-            int blackIndex = -1;
+            int greenIndex = -1;
 
-            // First, find the top-most black.
+            // First, find the top-most solid green.
             for (int i = colors.Count - 1; i >= 0; --i) {
                 float c, m, y, k;
                 colors[i].GetCMYK(out c, out m, out y, out k);
-                if (IsBlack(c, m, y, k)) {
-                    blackIndex = i;
+                if (IsSolidGreen(c, m, y, k)) {
+                    greenIndex = i;
                     break;
                 }
             }
 
-            // Find the next purple color below the black.
-            if (blackIndex > 0) {
-                for (int i = blackIndex - 1; i >= 0; --i) {
+            // Find the next purple color below the solid green.
+            if (greenIndex > 0) {
+                for (int i = greenIndex - 1; i >= 0; --i) {
                     float c, m, y, k;
                     colors[i].GetCMYK(out c, out m, out y, out k);
                     if (IsPurple(c, m, y, k))
@@ -376,7 +384,7 @@ namespace PurplePen
 
                 // If there is no purple below the black, return the color 
                 // just below the black.
-                return colors[blackIndex - 1].OcadId;
+                return colors[greenIndex - 1].OcadId;
             }
             else {
                 // If there is no black (or black is the bottom color), return the
