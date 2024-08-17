@@ -19,6 +19,8 @@ namespace PurplePen
         float defaultPurpleC, defaultPurpleM, defaultPurpleY, defaultPurpleK;
         string mapStandard;
 
+        List<Pair<int, string>> underlyingMapLayers = new List<Pair<int, string>>();
+
         public CourseAppearanceDialog()
         {
             InitializeComponent();
@@ -27,10 +29,31 @@ namespace PurplePen
         public bool UsesOcadMap 
         {
             get { return groupBoxOcadMap.Enabled;}
-            set { groupBoxOcadMap.Enabled = checkBoxOverprint.Enabled = value;}
+            set { 
+                groupBoxOcadMap.Enabled = checkBoxOverprint.Enabled = value;
+
+                if (!value && comboBoxMapLayers.Items.Count == 3) {
+                    // Remove the layer option
+                    // if we are not using an OCAD map. 
+                    if (comboBoxBlendPurple.SelectedIndex == 2) {
+                        comboBoxBlendPurple.SelectedIndex = 1;
+                    }
+                    comboBoxBlendPurple.Items.RemoveAt(2);
+                }
+            }
         }
 
+        public void SetMapLayers(List<Pair<int, string>> mapLayers)
+        {
+            underlyingMapLayers = mapLayers;
 
+            if (underlyingMapLayers.Count > 0) {
+                // Put the layer option in the drop-down list of layers.
+                for (int i = 0; i < underlyingMapLayers.Count; ++i) {
+                    comboBoxMapLayers.Items.Add(underlyingMapLayers[i].Second);
+                }
+            }
+        }
 
         // Set/Get the CourseAppearance this dialog sets.
         public CourseAppearance CourseAppearance
@@ -84,8 +107,16 @@ namespace PurplePen
                     case 1: result.itemScaling = ItemScaling.RelativeToMap; break;
                     case 2: result.itemScaling = ItemScaling.RelativeTo15000; break;
                 }
+
+                switch (comboBoxBlendPurple.SelectedIndex) {
+                default:
+                case 0: result.purpleColorBlend = PurpleColorBlend.None; break;
+                case 1: result.purpleColorBlend = PurpleColorBlend.Blend; break;
+                case 2: result.purpleColorBlend = PurpleColorBlend.UpperLowerPurple; break;
+                }
+
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
-                result.purpleColorBlend = checkBoxBlendPurple.Checked ? PurpleColorBlend.Blend : PurpleColorBlend.None;
+
                 result.purpleC = (float) (upDownCyan.Value / 100);
                 result.purpleM = (float) (upDownMagenta.Value / 100);
                 result.purpleY = (float) (upDownYellow.Value / 100);
@@ -136,11 +167,21 @@ namespace PurplePen
                 SetCurrentCMYK(value.purpleC, value.purpleM, value.purpleY, value.purpleK);
 
                 checkBoxDefaultPurple.Checked = value.useDefaultPurple;
-                checkBoxBlendPurple.Checked = (value.purpleColorBlend != PurpleColorBlend.None);
+
+                switch (value.purpleColorBlend) {
+                case PurpleColorBlend.None: comboBoxBlendPurple.SelectedIndex = 0; break;
+                case PurpleColorBlend.Blend: comboBoxBlendPurple.SelectedIndex = 1; break;
+                case PurpleColorBlend.UpperLowerPurple: comboBoxBlendPurple.SelectedIndex = 2; break;
+                }
 
                 comboBoxDescriptionColor.SelectedIndex = (value.descriptionsPurple ? 1 : 0);
 
                 checkBoxOverprint.Checked = value.useOcadOverprint;
+
+                // Set the correct index for lower purple in the combo box.
+                int lowerPurpleIndex = underlyingMapLayers.FindIndex(pair => pair.First == value.mapLayerForLowerPurple);
+                if (lowerPurpleIndex >= 0)
+                    comboBoxMapLayers.SelectedIndex = lowerPurpleIndex;
 
                 UpdatePreview();
             }
@@ -208,6 +249,29 @@ namespace PurplePen
             }
         }
 
+        private void DrawBlackPartsOfPreview(IGraphicsTarget grTarget)
+        {
+            // Draw road
+            object roadPen = new object();
+            grTarget.CreatePen(roadPen, CmykColor.FromCmyk(0, 0, 0, 1), 0.35F, LineCap.Flat, LineJoin.Round, 5F);
+            PointF[] roadPts = { new PointF(28.3F, 8.7F), new PointF(28.7F, 6.7F), new PointF(30.8F, 6.3F), new PointF(33.1F, 5.9F),
+                                       new PointF(34.4F, 6.3F), new PointF(36.5F, 5.4F), new PointF(38.9F, 4.3F), new PointF(38.4F, 1.1F), new PointF(37.6F, -0.5F)};
+            GraphicsPathPart roadPathStart = new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] { new PointF(27.8F, 10.5F) });
+            GraphicsPathPart roadPathPart = new GraphicsPathPart(GraphicsPathPartKind.Beziers, roadPts);
+            grTarget.DrawPath(roadPen, new List<GraphicsPathPart> { roadPathStart, roadPathPart });
+
+            // Draw boulder cluster.
+            object boulderBrush = new object();
+            grTarget.CreateSolidBrush(boulderBrush, CmykColor.FromCmyk(0, 0, 0, 1));
+            PointF[] boulderPts = { new PointF(0, -0.4F), new PointF(0.4F, 0.3F), new PointF(-0.4F, 0.3F) };
+            Matrix xformBoulder = new Matrix();
+            xformBoulder.Translate(18, 5.1F);
+            grTarget.PushTransform(xformBoulder);
+            grTarget.FillPolygon(boulderBrush, boulderPts, FillMode.Alternate);
+            grTarget.PopTransform();
+
+        }
+
         private void pictureBoxPreview_Paint(object sender, PaintEventArgs e)
         {
             // Get the graphics, size to 10 mm high.
@@ -255,24 +319,11 @@ namespace PurplePen
                 // Draw light green background.
                 grTarget.FillEllipse(lightGreenBrush, new PointF(44F, -5), 6F, 25);
 
-                // Draw road
-                object roadPen = new object();
-                grTarget.CreatePen(roadPen, CmykColor.FromCmyk(0, 0, 0, 1), 0.35F, LineCap.Flat, LineJoin.Round, 5F);
-                PointF[] roadPts = { new PointF(28.3F, 8.7F), new PointF(28.7F, 6.7F), new PointF(30.8F, 6.3F), new PointF(33.1F, 5.9F), 
-                                       new PointF(34.4F, 6.3F), new PointF(36.5F, 5.4F), new PointF(38.9F, 4.3F), new PointF(38.4F, 1.1F), new PointF(37.6F, -0.5F)};
-                GraphicsPathPart roadPathStart = new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] { new PointF(27.8F, 10.5F) });
-                GraphicsPathPart roadPathPart = new GraphicsPathPart(GraphicsPathPartKind.Beziers, roadPts);
-                grTarget.DrawPath(roadPen, new List<GraphicsPathPart> { roadPathStart, roadPathPart });
-
-                // Draw boulder cluster.
-                object boulderBrush = new object();
-                grTarget.CreateSolidBrush(boulderBrush, CmykColor.FromCmyk(0, 0, 0, 1));
-                PointF[] boulderPts = {new PointF(0, -0.4F), new PointF(0.4F, 0.3F), new PointF(-0.4F, 0.3F)};
-                Matrix xformBoulder = new Matrix();
-                xformBoulder.Translate(18, 5.1F);
-                grTarget.PushTransform(xformBoulder);
-                grTarget.FillPolygon(boulderBrush, boulderPts, FillMode.Alternate);
-                grTarget.PopTransform();
+                // Draw the black parts of the preview if we are not using the layer option. In the layer option, we
+                // draw the black parts after the purple parts.
+                if (comboBoxBlendPurple.SelectedIndex != 2){
+                    DrawBlackPartsOfPreview(grTarget);
+                }
 
                 // Calculate control number position
                 bool bold = false;
@@ -301,7 +352,7 @@ namespace PurplePen
                     grTarget.DrawTextOutline(controlNumberText, font, whitePen, controlNumberLocation);
                 }
 
-                if (checkBoxBlendPurple.Checked)
+                if (comboBoxBlendPurple.SelectedIndex == 1)
                     grTarget.PushBlending(BlendMode.Darken);
 
                 // Draw control circle
@@ -337,7 +388,13 @@ namespace PurplePen
                 // Draw control number.
                 grTarget.DrawText(controlNumberText, font, brush, controlNumberLocation);
 
-                if (checkBoxBlendPurple.Checked)
+                // Draw the black parts of the preview if we using the layer option. In the layer option, we
+                // draw the black parts after the purple parts.
+                if (comboBoxBlendPurple.SelectedIndex == 2) {
+                    DrawBlackPartsOfPreview(grTarget);
+                }
+
+                if (comboBoxBlendPurple.SelectedIndex == 1)
                     grTarget.PopBlending();
 
                 grTarget.PopAntiAliasing();
@@ -358,19 +415,22 @@ namespace PurplePen
             UpdatePreview();
         }
 
-        private void upDownOutlineWidth_ValueChanged(object sender, EventArgs e)
+        private void comboBoxBlendPurple_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bool showChooseLayer = (comboBoxBlendPurple.SelectedIndex == 2);
+            labelChooseLayer.Visible = showChooseLayer;
+            comboBoxMapLayers.Visible = showChooseLayer;
+
             UpdatePreview();
         }
 
-        private void checkBoxBlendPurple_CheckedChanged(object sender, EventArgs e)
+        private void upDownOutlineWidth_ValueChanged(object sender, EventArgs e)
         {
             UpdatePreview();
         }
 
         private void CourseAppearanceDialog_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -53,7 +53,10 @@
             this.upDownControlCircle = new System.Windows.Forms.NumericUpDown();
             this.checkBoxStandardSizes = new System.Windows.Forms.CheckBox();
             this.groupBoxPurple = new System.Windows.Forms.GroupBox();
-            this.checkBoxBlendPurple = new System.Windows.Forms.CheckBox();
+            this.comboBoxMapLayers = new System.Windows.Forms.ComboBox();
+            this.labelChooseLayer = new System.Windows.Forms.Label();
+            this.comboBoxBlendPurple = new System.Windows.Forms.ComboBox();
+            this.labelBlendPurple = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.upDownBlack = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -377,7 +380,10 @@
             // groupBoxPurple
             // 
             resources.ApplyResources(this.groupBoxPurple, "groupBoxPurple");
-            this.groupBoxPurple.Controls.Add(this.checkBoxBlendPurple);
+            this.groupBoxPurple.Controls.Add(this.comboBoxMapLayers);
+            this.groupBoxPurple.Controls.Add(this.labelChooseLayer);
+            this.groupBoxPurple.Controls.Add(this.comboBoxBlendPurple);
+            this.groupBoxPurple.Controls.Add(this.labelBlendPurple);
             this.groupBoxPurple.Controls.Add(this.label5);
             this.groupBoxPurple.Controls.Add(this.upDownBlack);
             this.groupBoxPurple.Controls.Add(this.label6);
@@ -390,12 +396,34 @@
             this.groupBoxPurple.Name = "groupBoxPurple";
             this.groupBoxPurple.TabStop = false;
             // 
-            // checkBoxBlendPurple
+            // comboBoxMapLayers
             // 
-            resources.ApplyResources(this.checkBoxBlendPurple, "checkBoxBlendPurple");
-            this.checkBoxBlendPurple.Name = "checkBoxBlendPurple";
-            this.checkBoxBlendPurple.UseVisualStyleBackColor = true;
-            this.checkBoxBlendPurple.CheckedChanged += new System.EventHandler(this.checkBoxBlendPurple_CheckedChanged);
+            this.comboBoxMapLayers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMapLayers.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBoxMapLayers, "comboBoxMapLayers");
+            this.comboBoxMapLayers.Name = "comboBoxMapLayers";
+            // 
+            // labelChooseLayer
+            // 
+            resources.ApplyResources(this.labelChooseLayer, "labelChooseLayer");
+            this.labelChooseLayer.Name = "labelChooseLayer";
+            // 
+            // comboBoxBlendPurple
+            // 
+            resources.ApplyResources(this.comboBoxBlendPurple, "comboBoxBlendPurple");
+            this.comboBoxBlendPurple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBlendPurple.FormattingEnabled = true;
+            this.comboBoxBlendPurple.Items.AddRange(new object[] {
+            resources.GetString("comboBoxBlendPurple.Items"),
+            resources.GetString("comboBoxBlendPurple.Items1"),
+            resources.GetString("comboBoxBlendPurple.Items2")});
+            this.comboBoxBlendPurple.Name = "comboBoxBlendPurple";
+            this.comboBoxBlendPurple.SelectedIndexChanged += new System.EventHandler(this.comboBoxBlendPurple_SelectedIndexChanged);
+            // 
+            // labelBlendPurple
+            // 
+            resources.ApplyResources(this.labelBlendPurple, "labelBlendPurple");
+            this.labelBlendPurple.Name = "labelBlendPurple";
             // 
             // label5
             // 
@@ -591,10 +619,13 @@
         private System.Windows.Forms.Label labelAutoGapSize;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown upDownLegGapSize;
-        private System.Windows.Forms.CheckBox checkBoxBlendPurple;
         private System.Windows.Forms.GroupBox groupBoxOcadMap;
         private System.Windows.Forms.CheckBox checkBoxOverprint;
         private System.Windows.Forms.ComboBox comboBoxScaleItemSizes;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBoxMapLayers;
+        private System.Windows.Forms.Label labelChooseLayer;
+        private System.Windows.Forms.ComboBox comboBoxBlendPurple;
+        private System.Windows.Forms.Label labelBlendPurple;
     }
 }

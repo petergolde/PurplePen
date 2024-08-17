@@ -296,10 +296,10 @@ namespace PurplePen
         }
 
 
-        // Determine if a color is black.
+        // Determine if a color is black. Not all 4 colors, but only black.
         public static bool IsBlack(float cyan, float magenta, float yellow, float black)
         {
-            return (black > 0.95f);
+            return (black > 0.95f && cyan < 0.05F && yellow < 0.05F && cyan < 0.05F);
         }
 
         // Search all colors for one that is closest to pure magenta.
@@ -357,11 +357,12 @@ namespace PurplePen
         }
 
         // Return the ocadId of the best lower purple color. We choose
-        // the next purple color below the top-most solid green color. If there isn't one,
-        // we return the color below the top-most solid green, or just the top color if there is no solid gree.
+        // the next purple color below the top-most solid green color and black color. If there isn't one,
+        // we return the color below the top-most solid green/black.
         public static int FindLowerPurple(List<SymColor> colors)
         {
             int greenIndex = -1;
+            int blackIndex = -1;
 
             // First, find the top-most solid green.
             for (int i = colors.Count - 1; i >= 0; --i) {
@@ -373,9 +374,29 @@ namespace PurplePen
                 }
             }
 
-            // Find the next purple color below the solid green.
-            if (greenIndex > 0) {
-                for (int i = greenIndex - 1; i >= 0; --i) {
+            // First, find the top-most black.
+            for (int i = colors.Count - 1; i >= 0; --i) {
+                float c, m, y, k;
+                colors[i].GetCMYK(out c, out m, out y, out k);
+                if (IsBlack(c, m, y, k)) {
+                    blackIndex = i;
+                    break;
+                }
+            }
+
+            int bottomOfBlackAndGreen;
+            if (blackIndex >= 0 && greenIndex >= 0) 
+                bottomOfBlackAndGreen = Math.Min(blackIndex, greenIndex);
+            else if (blackIndex >= 0)
+                bottomOfBlackAndGreen = blackIndex;
+            else if (greenIndex >= 0)
+                bottomOfBlackAndGreen = greenIndex;
+            else
+                bottomOfBlackAndGreen = -1;
+
+            // Find the next purple color below the solid green and black.
+            if (bottomOfBlackAndGreen > 0) {
+                for (int i = bottomOfBlackAndGreen - 1; i >= 0; --i) {
                     float c, m, y, k;
                     colors[i].GetCMYK(out c, out m, out y, out k);
                     if (IsPurple(c, m, y, k))
@@ -384,7 +405,7 @@ namespace PurplePen
 
                 // If there is no purple below the black, return the color 
                 // just below the black.
-                return colors[greenIndex - 1].OcadId;
+                return colors[bottomOfBlackAndGreen - 1].OcadId;
             }
             else {
                 // If there is no black (or black is the bottom color), return the

@@ -3284,6 +3284,33 @@ namespace PurplePen
             undoMgr.EndCommand(318);
         }
 
+        // Get the map colors for the underlying map, from top to bottom, as a pair
+        // of OCAD ID, name. Used for the Course Appearance dialog. If the underlying map isn't
+        // an OCAD or OOM file, returns an empty list.
+        public List<Pair<int, string>> GetUnderlyingMapColors()
+        {
+            if (mapDisplay == null)
+                return new List<Pair<int, string>>();
+
+            List<Pair<int, string>> result = new List<Pair<int, string>>();
+
+            // This gets the map colors from the underlying map. They are in reverse order.
+            List<SymColor> symColors = mapDisplay.GetMapColors();
+
+            for (int i = symColors.Count - 1; i >= 0; --i) {
+                result.Add(new Pair<int, string>(symColors[i].OcadId, symColors[i].Name));
+            }
+
+            return result;
+        }
+
+        // Get the default layer for lower purple.
+        public int GetDefaultLowerPurpleLayer()
+        {
+            List<SymColor> symColors = mapDisplay.GetMapColors();
+            return FindPurple.FindLowerPurple(symColors);
+        }
+
         public bool OcadOverprintEffect
         {
             get { return GetCourseAppearance().useOcadOverprint; }

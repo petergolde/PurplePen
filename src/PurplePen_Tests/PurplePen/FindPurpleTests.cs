@@ -155,6 +155,20 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void SampleMap()
+        {
+            Setup("findpurple\\Sample Event.ppen");
+            List<SymColor> colors = controller.MapDisplay.GetMapColors();
+
+            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            Assert.AreEqual(102, lowerPurpleId);
+            SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual("White for road under construct.", color.Name);
+        }
+
+
+
+        [TestMethod]
         public void OCAD_ISOM()
         {
             Setup("findpurple\\OCAD_ISOM_Blank.ppen");

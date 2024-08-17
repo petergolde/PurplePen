@@ -2152,9 +2152,15 @@ namespace PurplePen
             FindPurple.GetPurpleColor(mapDisplay, null, out ocadId, out c, out m, out y, out k, out purpleOverprint);
             dialog.SetDefaultPurple(c, m, y, k);
             dialog.UsesOcadMap = (mapDisplay.MapType == MapType.OCAD);
- 
+            dialog.SetMapLayers(controller.GetUnderlyingMapColors());
+
             // Set the course appearance into the dialog
-            dialog.CourseAppearance = controller.GetCourseAppearance();
+            CourseAppearance appearance = controller.GetCourseAppearance();
+            if (dialog.UsesOcadMap && appearance.purpleColorBlend != PurpleColorBlend.UpperLowerPurple) {
+                // Set the default lower purple layer anyway, so that it is chosen by default when the user changes the blend.
+                appearance.mapLayerForLowerPurple = controller.GetDefaultLowerPurpleLayer();
+            }
+            dialog.CourseAppearance = appearance;
 
             // Show the dialog.
             if (dialog.ShowDialog(this) == DialogResult.OK) {
