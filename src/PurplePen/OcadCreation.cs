@@ -41,6 +41,7 @@ using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using System.Drawing.Imaging;
 using System.Diagnostics;
+using Windows.UI.Xaml.Controls;
 
 namespace PurplePen
 {
@@ -157,6 +158,9 @@ namespace PurplePen
             courseLayout.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
             courseLayout.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName,
                 creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black, creationSettings.purpleOverprint);
+            courseLayout.SetLowerLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.lowerPurpleOcadId, NormalCourseAppearance.lowerPurpleColorName,
+                creationSettings.cyan, creationSettings.magenta, creationSettings.yellow, creationSettings.black, creationSettings.purpleOverprint);
+
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, courseAppearance, courseLayout, CourseLayer.MainCourse);
 
             return courseLayout;

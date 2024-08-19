@@ -175,6 +175,7 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
             course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
+            course.SetLowerLayerColor(CourseLayer.MainCourse, 13, "Lower purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Create the all controls course again
@@ -182,6 +183,7 @@ namespace PurplePen.Tests
             course2 = new CourseLayout();
             course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
             course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
+            course2.SetLowerLayerColor(CourseLayer.MainCourse, 13, "Lower purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, defaultCourseAppearance, course2, CourseLayer.MainCourse);
 
             // Make sure that they are equal.
@@ -206,6 +208,7 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             course.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
             course.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
+            course.SetLowerLayerColor(CourseLayer.MainCourse, 13, "Lower purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, CourseLayer.MainCourse);
 
             // Create it again
@@ -213,6 +216,7 @@ namespace PurplePen.Tests
             course2 = new CourseLayout();
             course2.SetLayerColor(CourseLayer.Descriptions, 0, "Black", 0, 0, 0, 1F, false);
             course2.SetLayerColor(CourseLayer.MainCourse, 12, "Purple", 0.2F, 1, 0, 0.1F, false);
+            course2.SetLowerLayerColor(CourseLayer.MainCourse, 13, "Lower purple", 0.2F, 1, 0, 0.1F, false);
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView2, defaultCourseAppearance, course2, CourseLayer.MainCourse);
 
             // Make sure that they are equal.

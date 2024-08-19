@@ -64,6 +64,7 @@ namespace PurplePen
 
         public const int LAYERCOUNT = (int) CourseLayer.Count;
         public const int EXTRACOURSECOUNT = 10;
+
         short[] ocadColorId = new short[LAYERCOUNT];
         string[] colorName = new string[LAYERCOUNT];
         float[] colorC = new float[LAYERCOUNT];
@@ -71,6 +72,16 @@ namespace PurplePen
         float[] colorY = new float[LAYERCOUNT];
         float[] colorK = new float[LAYERCOUNT];
         bool[] colorOverprint = new bool[LAYERCOUNT];
+
+        // Similar, but for the "lower" version of the layer. This is used when doing upper/lower purple style blending.
+        short[] lower_ocadColorId = new short[LAYERCOUNT];
+        string[] lower_colorName = new string[LAYERCOUNT];
+        float[] lower_colorC = new float[LAYERCOUNT];
+        float[] lower_colorM = new float[LAYERCOUNT];
+        float[] lower_colorY = new float[LAYERCOUNT];
+        float[] lower_colorK = new float[LAYERCOUNT];
+        bool[] lower_colorOverprint = new bool[LAYERCOUNT];
+
 
         public static readonly object KeyWhiteOut = "WhiteOutKey";   // key to get the "white out" symdef.
         public static readonly object KeyLayout = "LayoutKey";   // key to get the "layout" symdef.
@@ -87,6 +98,18 @@ namespace PurplePen
             this.colorK[(int) layer] = colorK;
             this.colorOverprint[(int)layer] = overprint;
         }
+
+        public void SetLowerLayerColor(CourseLayer layer, short ocadColorId, string colorName, float colorC, float colorM, float colorY, float colorK, bool overprint)
+        {
+            this.lower_ocadColorId[(int)layer] = ocadColorId;
+            this.lower_colorName[(int)layer] = colorName;
+            this.lower_colorC[(int)layer] = colorC;
+            this.lower_colorM[(int)layer] = colorM;
+            this.lower_colorY[(int)layer] = colorY;
+            this.lower_colorK[(int)layer] = colorK;
+            this.lower_colorOverprint[(int)layer] = overprint;
+        }
+
 
         // Index to get a course objects.
         public CourseObj this[int i] {
@@ -127,11 +150,23 @@ namespace PurplePen
                 return map;
 
             SymColor[] colors = new SymColor[LAYERCOUNT];
+            SymColor[] lower_colors = new SymColor[LAYERCOUNT];
 
             using (map.Write()) {
                 // Create dictionary for holding Symdef state
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
                 Dictionary<SpecialColor, SymColor> customColors = new Dictionary<SpecialColor, SymColor>();
+
+                if (mapRenderOptions.LowerColorsBelowWhiteOut) {
+                    // Create the colors for the "lower" colors, that go below the white-out layer.
+                    for (int layerIndex = LAYERCOUNT - 1; layerIndex >= 0; --layerIndex) {
+                        if (lower_colorName[layerIndex] != null) {
+                            // Create the symColor for rendering.
+                            lower_colors[layerIndex] = map.AddColor(lower_colorName[layerIndex], lower_ocadColorId[layerIndex],
+                                                              lower_colorC[layerIndex], lower_colorM[layerIndex], lower_colorY[layerIndex], lower_colorK[layerIndex], lower_colorOverprint[layerIndex]);
+                        }
+                    }
+                }
 
                 // Create white color and white-out symdef.
                 SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0, false);
@@ -165,6 +200,12 @@ namespace PurplePen
                         colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
                                                           colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], colorOverprint[layerIndex]);
                     }
+
+                    if (!mapRenderOptions.LowerColorsBelowWhiteOut && lower_colorName[layerIndex] != null) {
+                        // Create the lower symColor for rendering.
+                        lower_colors[layerIndex] = map.AddColor(lower_colorName[layerIndex], lower_ocadColorId[layerIndex],
+                                                          lower_colorC[layerIndex], lower_colorM[layerIndex], lower_colorY[layerIndex], lower_colorK[layerIndex], lower_colorOverprint[layerIndex]);
+                    }
                 }
 
                 foreach (CourseObj courseObject in this) {
@@ -175,11 +216,17 @@ namespace PurplePen
                     }
 
                     SymColor color = colors[layerIndex];
+                    SymColor lower_color;
+
+                    if (lower_colors[layerIndex] != null)
+                        lower_color = lower_colors[layerIndex];
+                    else
+                        lower_color = color;  // Just use the regular color if a "lower" color wasn't defined.
 
                     if (courseObject.CustomColor != null && courseObject.CustomColor.Kind == SpecialColor.ColorKind.Custom)
                         color = customColors[courseObject.CustomColor];
 
-                    courseObject.AddToMap(map, color, mapRenderOptions, dict);
+                    courseObject.AddToMap(map, color, lower_color, mapRenderOptions, dict);
                 }
             }
 
@@ -294,6 +341,10 @@ namespace PurplePen
         {
             // If true, images are rendered as templates instead of to the layout layer. Compatible with exporting to OCAD 6-10.
             public bool RenderImagesAsTemplates = false;
+
+            // If true, the lower colors are rendered below the white-out layer (how things should be for upper/lower purple blending mode.
+            // If false, the lower colors are rendered immediately below their upper counterparts (and above the white-out layer).
+            public bool LowerColorsBelowWhiteOut = false;
         }
     }
 }

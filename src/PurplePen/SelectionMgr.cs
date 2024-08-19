@@ -621,7 +621,9 @@ namespace PurplePen
             activeCourse = new CourseLayout();
             activeCourse.SetLayerColor(CourseLayer.Descriptions, NormalCourseAppearance.blackColorOcadId, NormalCourseAppearance.blackColorName, NormalCourseAppearance.blackColorC, NormalCourseAppearance.blackColorM, NormalCourseAppearance.blackColorY, NormalCourseAppearance.blackColorK, false);
             activeCourse.SetLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.courseOcadId, NormalCourseAppearance.courseColorName, purpleC, purpleM, purpleY, purpleK, 
-                                       (purpleOverprint && (extraCourses == null || extraCourses.Count == 0))); 
+                                       (purpleOverprint && (extraCourses == null || extraCourses.Count == 0)));
+            activeCourse.SetLowerLayerColor(CourseLayer.MainCourse, NormalCourseAppearance.lowerPurpleOcadId, NormalCourseAppearance.lowerPurpleColorName, purpleC, purpleM, purpleY, purpleK,
+                                       (purpleOverprint && (extraCourses == null || extraCourses.Count == 0)));
             CourseFormatter.FormatCourseToLayout(symbolDB, activeCourseView, appearance, activeCourse, CourseLayer.MainCourse);
 
             if (showAllControls && !activeCourseDesignator.IsAllControls) {
@@ -631,6 +633,8 @@ namespace PurplePen
 
                 // Add it to the CourseLayout.
                 activeCourse.SetLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsOcadId, NormalCourseAppearance.allControlsColorName,
+                    NormalCourseAppearance.allControlsColorC, NormalCourseAppearance.allControlsColorM, NormalCourseAppearance.allControlsColorY, NormalCourseAppearance.allControlsColorK, purpleOverprint);
+                activeCourse.SetLowerLayerColor(CourseLayer.AllControls, NormalCourseAppearance.allControlsLowerPurpleOcadId, NormalCourseAppearance.allControlsColorName,
                     NormalCourseAppearance.allControlsColorC, NormalCourseAppearance.allControlsColorM, NormalCourseAppearance.allControlsColorY, NormalCourseAppearance.allControlsColorK, purpleOverprint);
                 CourseFormatter.FormatCourseToLayout(symbolDB, allControlsView, appearance, activeCourse, CourseLayer.AllControls);
             }
@@ -666,6 +670,14 @@ namespace PurplePen
                                               NormalCourseAppearance.extraCourseY[extraCourseIndex],
                                               NormalCourseAppearance.extraCourseK[extraCourseIndex],
                                               false);
+            courseLayout.SetLowerLayerColor(layer, (short)(NormalCourseAppearance.extraCourseOcadId + extraCourseIndex + CourseLayout.EXTRACOURSECOUNT),
+                                              string.Format(NormalCourseAppearance.allControlsColorName, extraCourseIndex + 1),
+                                              NormalCourseAppearance.extraCourseC[extraCourseIndex],
+                                              NormalCourseAppearance.extraCourseM[extraCourseIndex],
+                                              NormalCourseAppearance.extraCourseY[extraCourseIndex],
+                                              NormalCourseAppearance.extraCourseK[extraCourseIndex],
+                                              false);
+
 
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, courseLayout, layer,
                 new CourseFormatterOptions() { showControlNumbers = false });

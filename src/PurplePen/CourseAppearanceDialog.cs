@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
@@ -115,6 +116,14 @@ namespace PurplePen
                 case 2: result.purpleColorBlend = PurpleColorBlend.UpperLowerPurple; break;
                 }
 
+                int purpleLayerIndex = comboBoxMapLayers.SelectedIndex;
+                if (purpleLayerIndex >= 0 && purpleLayerIndex < underlyingMapLayers.Count) {
+                    result.mapLayerForLowerPurple = underlyingMapLayers[comboBoxMapLayers.SelectedIndex].First;
+                }
+                else {
+                    result.mapLayerForLowerPurple = -1;
+                }
+
                 result.useDefaultPurple = checkBoxDefaultPurple.Checked;
 
                 result.purpleC = (float) (upDownCyan.Value / 100);
@@ -173,6 +182,12 @@ namespace PurplePen
                 case PurpleColorBlend.Blend: comboBoxBlendPurple.SelectedIndex = 1; break;
                 case PurpleColorBlend.UpperLowerPurple: comboBoxBlendPurple.SelectedIndex = 2; break;
                 }
+
+                int purpleLayerIndex = underlyingMapLayers.FindIndex(pair => pair.First == value.mapLayerForLowerPurple);
+                if (purpleLayerIndex >= 0) {
+                    comboBoxMapLayers.SelectedIndex = purpleLayerIndex;
+                }
+
 
                 comboBoxDescriptionColor.SelectedIndex = (value.descriptionsPurple ? 1 : 0);
 

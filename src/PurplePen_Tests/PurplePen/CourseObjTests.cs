@@ -130,7 +130,8 @@ namespace PurplePen.Tests
                         break;
                 }
 
-                courseobj.AddToMap(map, symColor, mapRenderOptions, dict);
+                // TODO: Need to figure out how lower purple should be handled here.
+                courseobj.AddToMap(map, symColor, symColor, mapRenderOptions, dict);
 
                 // Make drop targets visible for debugging.
                 foreach (SymDef symdef in map.AllSymdefs) {

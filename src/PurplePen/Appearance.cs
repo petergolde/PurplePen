@@ -309,7 +309,9 @@ namespace PurplePen
         // The color to use in the map display for the course (purple).
         // Taken from ISOM 2017 Appendix 1 – CMYK Printing and Colour Definitions
         public const string courseColorName = "Purple";
+        public const string lowerPurpleColorName = "Lower purple";
         public const short courseOcadId = 11;
+        public const short lowerPurpleOcadId = 12;
         public const float courseColorC = 0.35F;
         public const float courseColorM = 0.85F;
         public const float courseColorY = 0F;
@@ -318,6 +320,7 @@ namespace PurplePen
         // The color to use in the map display for all other controls (low intensity purple).
         public const string allControlsColorName = "Light Purple";
         public const short allControlsOcadId = 34;
+        public const short allControlsLowerPurpleOcadId = 35;
         public const float allControlsColorC = 0.0F;
         public const float allControlsColorM = 0.5F;
         public const float allControlsColorY = 0F;

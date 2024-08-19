@@ -75,12 +75,13 @@ namespace PurplePen
 
         // Add the given course object to the map, creating a SymDef if needed. The passed dictionary
         // should have the same lifetime as the map and is used to store symdefs.
-        public virtual void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
+        // The lower_color is the color to use if this object uses "lower purple" instead of "purple". It may be the same as the regular color.
+        public virtual void AddToMap(Map map, SymColor symColor, SymColor lower_symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             object key = new Pair<short, object>(symColor.OcadId, SymDefKey());
 
             if (!dict.ContainsKey(key))
-                dict[key] = CreateSymDef(map, symColor);
+                dict[key] = CreateSymDef(map, symColor, lower_symColor);
 
             AddToMap(map, dict[key]);
         }
@@ -134,7 +135,7 @@ namespace PurplePen
         }
 
         // Create the SymDef for this symbol kind. Only called once for each "key"
-        protected abstract SymDef CreateSymDef(Map map, SymColor symColor);
+        protected abstract SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor);
 
         // If returns non-null, indicates the color of the object. Null means use default for the layer it is in.
         public virtual SpecialColor CustomColor {
@@ -945,7 +946,7 @@ namespace PurplePen
             throw new NotImplementedException("Must be overridden");
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             throw new NotImplementedException("Must be overridden");
         }
@@ -1107,12 +1108,12 @@ namespace PurplePen
             return key;
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             throw new NotImplementedException("Should not be called.");
         }
 
-        protected virtual SymDef CreateSymDef(Map map, SymColor symColor, SymColor whiteColor)
+        protected virtual SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor, SymColor whiteColor)
         {
             // Find a free id.
             string symbolId = map.GetFreeSymbolId(OcadIdIntegerPart);
@@ -1134,13 +1135,13 @@ namespace PurplePen
             return symdef;
         }
 
-        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, SymColor lower_symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             object key = new Pair<short, object>(symColor.OcadId, SymDefKey());
 
             if (!dict.ContainsKey(key)) {
                 SymColor whiteColor = ((AreaSymDef)dict[CourseLayout.KeyWhiteOut]).FillColor;
-                dict[key] = CreateSymDef(map, symColor, whiteColor);
+                dict[key] = CreateSymDef(map, symColor, lower_symColor, whiteColor);
             }
 
             AddToMap(map, dict[key]);
@@ -1333,11 +1334,12 @@ namespace PurplePen
             }
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
+            glyph.AddCircle(lower_symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
             if (appearance.centerDotDiameter > 0.0F) {
+                // The center dot is drawn in the upper purple color.
                 glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * courseObjRatio);
             }
             glyph.ConstructionComplete();
@@ -1429,16 +1431,17 @@ namespace PurplePen
                 return new PointF[] { first, second, third };
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
+            glyph.AddCircle(lower_symColor, new PointF(0.0F, 0.0F), LineThickness, Diameter);
             if (appearance.centerDotDiameter > 0.0F) {
+                // The center dot is drawn in the upper purple color.
                 glyph.AddFilledCircle(symColor, new PointF(0.0F, 0.0F), appearance.centerDotDiameter * courseObjRatio);
             }
 
             PointF[] triangleCorners = TriangleCorners(true);   
-            glyph.AddLine(symColor, new SymPath(triangleCorners, new PointKind[] { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal }), LineThickness, LineJoin.Round, LineCap.Flat);
+            glyph.AddLine(lower_symColor, new SymPath(triangleCorners, new PointKind[] { PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal }), LineThickness, LineJoin.Round, LineCap.Flat);
             
             glyph.ConstructionComplete();
 
@@ -1527,7 +1530,7 @@ namespace PurplePen
             this.crossHairOptions = crossHairOptions;
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             PointF[] coords = (appearance.mapStandard == "2017") ? coords2017 : coords2000;
 
@@ -1536,7 +1539,7 @@ namespace PurplePen
             SymPath path = new SymPath(pts, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddLine(symColor, path, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(lower_symColor, path, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Start", "701", glyph, true);
@@ -1610,7 +1613,7 @@ namespace PurplePen
             }
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             PointKind[] kinds = { PointKind.Normal, PointKind.Normal };
             PointF[] pts = ScaleCoords((PointF[])coords.Clone());
@@ -1619,6 +1622,8 @@ namespace PurplePen
             SymPath pathTail = new SymPath(ptsTail, kinds);
 
             Glyph glyph = new Glyph();
+
+            // Map issue point is in "upper purple".
             if (renderStyle != RenderStyle.Nothing) {
                 glyph.AddLine(symColor, path, NormalCourseAppearance.mapIssueWidth * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
                 if (renderStyle == RenderStyle.WithTail)
@@ -1715,11 +1720,11 @@ namespace PurplePen
 
 
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, InsideDiameter);
-            glyph.AddCircle(symColor, new PointF(0.0F, 0.0F), LineThickness, OutsideDiameter);
+            glyph.AddCircle(lower_symColor, new PointF(0.0F, 0.0F), LineThickness, InsideDiameter);
+            glyph.AddCircle(lower_symColor, new PointF(0.0F, 0.0F), LineThickness, OutsideDiameter);
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("Finish", "706", glyph, false);
@@ -1804,7 +1809,7 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             PointKind[] kinds = {
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,
@@ -1816,7 +1821,7 @@ namespace PurplePen
             SymPath path = new SymPath(coords, kinds);
 
             Glyph glyph = new Glyph();
-            glyph.AddArea(symColor, new SymPathWithHoles(path, null));
+            glyph.AddArea(lower_symColor, new SymPathWithHoles(path, null));
             glyph.ConstructionComplete();
 
             PointSymDef symdef = new PointSymDef("First aid post", "712", glyph, false);
@@ -1911,7 +1916,7 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
 
@@ -1922,16 +1927,16 @@ namespace PurplePen
             float lineWidth = (appearance.mapStandard == "2000") ? NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth : thickness2017 * courseObjRatio;
 
             SymPath path = new SymPath(ScaleCoords((PointF[])coords1.Clone()), kinds1);
-            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(lower_symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[])coords2.Clone()), kinds2);
-            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(lower_symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[])coords3.Clone()), kinds3);
-            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(lower_symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             path = new SymPath(ScaleCoords((PointF[])coords4.Clone()), kinds4);
-            glyph.AddLine(symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
+            glyph.AddLine(lower_symColor, path, lineWidth, LineJoin.Round, LineCap.Round);
 
             glyph.ConstructionComplete();
 
@@ -2054,14 +2059,14 @@ namespace PurplePen
             }
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
             SymPath path1, path2;
 
             GetPaths(out path1, out path2);
-            glyph.AddLine(symColor, path1, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
-            glyph.AddLine(symColor, path2, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(lower_symColor, path1, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
+            glyph.AddLine(lower_symColor, path2, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
 
             glyph.ConstructionComplete();
 
@@ -2144,9 +2149,11 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
+
+            // Registration mark in "upper purple".
 
             SymPath path = new SymPath(ScaleCoords((PointF[])coords1.Clone()), kinds1);
             glyph.AddLine(symColor, path, lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
@@ -2203,12 +2210,14 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Glyph glyph = new Glyph();
 
             // Note: the line thickness of forbidden marks do NOT scale with the Line Thickness in the Course Appearance. This is by design,
             // otherwise it would look kind of weird. The scale with the control circle size instead to maintain the ratio.
+
+            // Forbidden route uses "upper purple".
 
             SymPath path = new SymPath(ScaleCoords((PointF[])coords1.Clone()), kinds1);
             glyph.AddLine(symColor, path, 0.35F * courseObjRatio * appearance.controlCircleSize, LineJoin.Miter, LineCap.Flat);
@@ -2260,9 +2269,9 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
-            LineSymDef symdef = new LineSymDef("Line", "704", symColor, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Line", "704", lower_symColor, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2281,8 +2290,10 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
+            // Marked route uses "upper purple".
+
             LineSymDef symdef = new LineSymDef("Marked route", "705", symColor, NormalCourseAppearance.lineThickness * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
 
             LineSymDef.DashInfo dashes = new LineSymDef.DashInfo();
@@ -2311,9 +2322,9 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
-            LineSymDef symdef = new LineSymDef("Line", "704", symColor, LineThickness * courseObjRatio, LineJoin.Round, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Line", "704", lower_symColor, LineThickness * courseObjRatio, LineJoin.Round, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2337,9 +2348,9 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
-            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", symColor, (appearance.mapStandard == "Spr2019" ? 1.0F : 0.7F) * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", lower_symColor, (appearance.mapStandard == "Spr2019" ? 1.0F : 0.7F) * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2413,7 +2424,7 @@ namespace PurplePen
             return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode();
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Bevel, LineCap.Flat);
         }
@@ -2588,7 +2599,7 @@ namespace PurplePen
             }
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Miter, LineCap.Flat);
         }
@@ -2626,8 +2637,10 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
+            // OOB in "upper purple"
+
             AreaSymDef symdef = new AreaSymDef("Out-of-bounds area", "709", null, null);
             if (appearance.mapStandard == "2000") {
                 AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
@@ -2669,8 +2682,10 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
+            // Dangerous area in "upper purple"
+
             AreaSymDef symdef = new AreaSymDef("Dangerous area", "710", null, null);
             AreaSymDef.HatchInfo hatchInfo = new AreaSymDef.HatchInfo();
             hatchInfo.hatchColor = symColor;
@@ -2696,7 +2711,7 @@ namespace PurplePen
         }
     }
 
-    // A dangerous area
+    // A white-out area.
     class WhiteOutCourseObj : AreaCourseObj
     {
         public WhiteOutCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts)
@@ -2704,13 +2719,13 @@ namespace PurplePen
         {
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             Debug.Fail("should never be called");
             return null;
         }
 
-        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, SymColor lower_symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             AddToMap(map, dict[CourseLayout.KeyWhiteOut]);
         }
@@ -3051,13 +3066,13 @@ namespace PurplePen
         }
 
         // Add the description to the map. Uses the map rendering functionality in the renderer.
-        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, SymColor lower_symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             renderer.RenderToMap(map, symColor, new PointF(rect.Left, rect.Bottom), dict);
         }
 
         // This override is not needed because we are not using the base implemention of AddToMap.
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             throw new NotSupportedException("not supported");
         }
@@ -3182,7 +3197,7 @@ namespace PurplePen
             this.imageLoader = new ImageLoader(imageName, imageBitmap);
         }
 
-        public override void AddToMap(Map map, SymColor symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
+        public override void AddToMap(Map map, SymColor symColor, SymColor lower_symColor, CourseLayout.MapRenderOptions mapRenderOptions, Dictionary<object, SymDef> dict)
         {
             if (mapRenderOptions.RenderImagesAsTemplates) {
                 IList<TemplateInfo> currentTemplates = map.Templates;
@@ -3234,7 +3249,7 @@ namespace PurplePen
             throw new NotImplementedException();
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             // Shouldn't be called.
             throw new NotImplementedException();
@@ -3335,7 +3350,7 @@ namespace PurplePen
             get { return legInsertionLoc; }
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             PointKind[] kinds = {
                 PointKind.Normal, PointKind.Normal, PointKind.Normal, PointKind.Normal,

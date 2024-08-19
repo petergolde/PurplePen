@@ -1264,7 +1264,7 @@ Symbol definition for '701.0'
   Size=624, Otp=1, SymTp=0, Flags=1
     Status=0, Tool=0
   CsMode=0, CsObjType=0, CsCdFlags=0
-  ColorsUsed=11 
+  ColorsUsed=12 
   Icon=
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
@@ -1291,7 +1291,7 @@ Symbol definition for '701.0'
   DataSize=6
   Reserved=0
   SymbolElement of type 1 -- line
-    stFlags=4  stColor=11  stLineWidth=35  
+    stFlags=4  stColor=12  stLineWidth=35  
     (0.00,4.04) (3.50,-2.02) (-3.50,-2.02) (0.00,4.04) 
 
 Symbol definition for '704.0'
@@ -1299,7 +1299,7 @@ Symbol definition for '704.0'
   Size=648, Otp=2, SymTp=0, Flags=0
     Status=0, Tool=0
   CsMode=0, CsObjType=0, CsCdFlags=0
-  ColorsUsed=11 
+  ColorsUsed=12 
   Icon=
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
@@ -1323,7 +1323,7 @@ Symbol definition for '704.0'
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  LineColor=11, LineWidth=35, LineEnds=0
+  LineColor=12, LineWidth=35, LineEnds=0
   DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
   MainGap=0, SecGap=0, EndGap=0
   MinSym=0, nPrimSym=0, PrimSymDist=0
@@ -1342,7 +1342,7 @@ Symbol definition for '702.0'
   Size=600, Otp=1, SymTp=0, Flags=0
     Status=0, Tool=0
   CsMode=0, CsObjType=0, CsCdFlags=0
-  ColorsUsed=11 
+  ColorsUsed=12 
   Icon=
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
@@ -1369,7 +1369,7 @@ Symbol definition for '702.0'
   DataSize=3
   Reserved=0
   SymbolElement of type 3 -- circle
-    stColor=11  stLineWidth=35  stDiameter=565
+    stColor=12  stLineWidth=35  stDiameter=565
     (0.00,0.00) 
 
 Symbol definition for '706.0'
@@ -1377,7 +1377,7 @@ Symbol definition for '706.0'
   Size=624, Otp=1, SymTp=0, Flags=0
     Status=0, Tool=0
   CsMode=0, CsObjType=0, CsCdFlags=0
-  ColorsUsed=11 
+  ColorsUsed=12 
   Icon=
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
@@ -1404,10 +1404,10 @@ Symbol definition for '706.0'
   DataSize=6
   Reserved=0
   SymbolElement of type 3 -- circle
-    stColor=11  stLineWidth=35  stDiameter=465
+    stColor=12  stLineWidth=35  stDiameter=465
     (0.00,0.00) 
   SymbolElement of type 3 -- circle
-    stColor=11  stLineWidth=35  stDiameter=665
+    stColor=12  stLineWidth=35  stDiameter=665
     (0.00,0.00) 
 
 Symbol definition for '703.0'
@@ -3479,7 +3479,7 @@ Object Sym=81000.7 Otp=5
 
 Index entry Sym=70100.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70100 Otp=1
   nItem=1, nText=0
   Ang=999
@@ -3489,7 +3489,7 @@ Object Sym=70100 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3499,7 +3499,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3509,7 +3509,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3519,7 +3519,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3529,7 +3529,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3539,7 +3539,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3549,7 +3549,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3559,7 +3559,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3569,7 +3569,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3579,7 +3579,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3589,7 +3589,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3599,7 +3599,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3609,7 +3609,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3619,7 +3619,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3629,7 +3629,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3639,7 +3639,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3649,7 +3649,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3659,7 +3659,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3669,7 +3669,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3679,7 +3679,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3689,7 +3689,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3699,7 +3699,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3709,7 +3709,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3719,7 +3719,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70200.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70200 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3729,7 +3729,7 @@ Object Sym=70200 Otp=1
 
 Index entry Sym=70400.0
   ObjType=2  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70400 Otp=2
   nItem=2, nText=0
   Ang=0
@@ -3739,7 +3739,7 @@ Object Sym=70400 Otp=2
 
 Index entry Sym=70600.0
   ObjType=1  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70600 Otp=1
   nItem=1, nText=0
   Ang=0
@@ -3886,6 +3886,16 @@ Object Sym=70300 Otp=4
   LineWidth=0  DiamFlags=0
   Text=12
     (54.54,5.20) (54.54,3.81) (60.80,3.81) (60.80,10.77) (54.54,10.77) 
+
+String of type 9
+  ObjIndex=0
+  firstField=Lower purple
+  code=n, value=12
+  code=c, value=15
+  code=m, value=90
+  code=y, value=0
+  code=k, value=25
+  code=o, value=0
 
 String of type 9
   ObjIndex=0

@@ -307,7 +307,7 @@ namespace PurplePen
             throw new NotSupportedException("The method or operation is not supported.");
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
             throw new NotSupportedException ("never needed, so intentionally unimplemented"); 
         }
