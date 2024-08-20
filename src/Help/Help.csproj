@@ -1,0 +1,34 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <ProjectGuid>{D405472A-56E1-4153-ACB7-677B8E6D5171}</ProjectGuid>
+    <!-- Define the output file -->
+    <OutputFile>.\output\Purple Pen Help.chm</OutputFile>
+    <!-- Define the help compiler executable -->
+    <HelpCompiler>c:\program files (x86)\html help workshop\hhc.exe</HelpCompiler>
+    <!-- Define the help project file -->
+    <HelpProjectFile>..\..\doc\userdocs\help\Purple Pen Help.hhp</HelpProjectFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 
+      Define the input files for the compilation. If any of these change, the help
+      file will be rebuilt. Otherwise it will not be rebuilt.
+    -->
+    <InputFile Include="$(HelpProjectFile)" />
+    <InputFile Include="..\..\doc\userdocs\help\*.htm" />
+    <InputFile Include="..\..\doc\userdocs\help\*.css" />
+    <InputFile Include="..\..\doc\userdocs\help\*.png" />
+    <InputFile Include="..\..\doc\userdocs\help\*.gif" />
+    <InputFile Include="..\..\doc\userdocs\help\*.dwt" />
+    <InputFile Include="..\..\doc\userdocs\help\*.hhc" />
+  </ItemGroup>
+  <Target Name="Build" Inputs="@(InputFile)" Outputs="$(OutputFile)">
+    <Message Text="Building help file -- output file is $(OutputFile)" />
+    <Exec Command="&quot;$(HelpCompiler)&quot; &quot;$(HelpProjectFile)&quot;" IgnoreExitCode="true" />
+  </Target>
+  <Target Name="Clean">
+    <Message Text="Cleaning help file" />
+    <Delete Files="$(OutputFile)" />
+  </Target>
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+</Project>
