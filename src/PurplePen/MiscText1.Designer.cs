@@ -1004,6 +1004,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lower Purple.
+        /// </summary>
+        internal static string LowerPurple {
+            get {
+                return ResourceManager.GetString("LowerPurple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mandatory crossing point.
         /// </summary>
         internal static string MandCrossing_Long {

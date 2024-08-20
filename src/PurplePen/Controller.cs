@@ -2801,7 +2801,7 @@ namespace PurplePen
                 fontName = "Arial";
                 fontBold = false;
                 fontItalic = false;
-                specialColor = SpecialColor.Purple;
+                specialColor = SpecialColor.UpperPurple;
                 fontHeight = -1;
                 return false;
             }
@@ -2877,7 +2877,7 @@ namespace PurplePen
             }
             else {
                 showRadius = false;
-                color = SpecialColor.Purple;
+                color = SpecialColor.UpperPurple;
                 lineKind = LineKind.Single;
                 lineWidth = 0;
                 gapSize = 0;

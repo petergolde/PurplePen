@@ -2748,7 +2748,7 @@ namespace PurplePen
             : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, 
                    appearance.numberRoboto ? NormalCourseAppearance.controlNumberFontRoboto.Name : NormalCourseAppearance.controlNumberFontArial.Name,
                    appearance.numberBold ? NormalCourseAppearance.controlNumberFontRobotoBold.Style : NormalCourseAppearance.controlNumberFontRoboto.Style, 
-                   SpecialColor.Purple,
+                   ColorOfControlNumber(appearance),
                    NormalCourseAppearance.controlNumberFontRoboto.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
@@ -2763,6 +2763,22 @@ namespace PurplePen
         protected override int OcadIdIntegerPart {
             get { return 703; }
         }
+
+        // Determine if the control number should be in the upper or lower color.
+        // Sprint standard says always use upper purple. Non-sprint standards uses lower purple,
+        // but if there is an outline, only upper purple will work.
+        internal static SpecialColor ColorOfControlNumber(CourseAppearance appearance)
+        {
+            if (appearance.mapStandard == "Spr2019") {
+                return SpecialColor.UpperPurple;
+            }
+            else if (appearance.numberOutlineWidth > 0) {
+                return SpecialColor.UpperPurple;
+            }
+            else {
+                return SpecialColor.LowerPurple;
+            }
+        }
     }
 
     // A control code
@@ -2771,8 +2787,9 @@ namespace PurplePen
         public PointF centerPoint;
 
         public CodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, SpecialColor.Purple,
-            NormalCourseAppearance.controlCodeFont.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.controlCodeFont.Name, NormalCourseAppearance.controlCodeFont.Style, 
+                  ControlNumberCourseObj.ColorOfControlNumber(appearance),
+                  NormalCourseAppearance.controlCodeFont.EmHeight * courseObjRatio * appearance.numberHeight, courseObjRatio * appearance.numberOutlineWidth)
         {
             // Update the top left coord so the text is centered on centerPoint.
             this.centerPoint = centerPoint;
@@ -2794,7 +2811,7 @@ namespace PurplePen
         public PointF centerPoint;
 
         public VariationCodeCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, float courseObjRatio, CourseAppearance appearance, string text, PointF centerPoint)
-            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.variationCodeFont.Name, NormalCourseAppearance.variationCodeFont.Style, SpecialColor.Purple,
+            : base(controlId, courseControlId, Id<Special>.None, text, centerPoint, NormalCourseAppearance.variationCodeFont.Name, NormalCourseAppearance.variationCodeFont.Style, SpecialColor.LowerPurple,
             NormalCourseAppearance.variationCodeFont.EmHeight * courseObjRatio, 0)
         {
             // Update the top left coord so the text is centered on centerPoint.

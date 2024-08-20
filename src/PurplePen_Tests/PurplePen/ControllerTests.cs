@@ -2564,7 +2564,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             controller.GetSelectionMgr().SelectSpecial(SpecialId(2));
 
             controller.GetLineSpecialProperties(SpecialKind.Line, true, out color, out lineKind, out lineWidth, out gapSize, out dashSize, out cornerRadius);
-            Assert.AreEqual(SpecialColor.Purple, color);
+            Assert.AreEqual(SpecialColor.UpperPurple, color);
             Assert.AreEqual(LineKind.Single, lineKind);
             Assert.AreEqual(0.4F, lineWidth);
             Assert.AreEqual(0.2F, gapSize);

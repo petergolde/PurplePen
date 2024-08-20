@@ -187,7 +187,7 @@ namespace PurplePen
             Color lineColor;
             if (lineSpecialColor.Kind == SpecialColor.ColorKind.Black)
                 lineColor = System.Drawing.Color.Black;
-            else if (lineSpecialColor.Kind == SpecialColor.ColorKind.Purple)
+            else if (lineSpecialColor.Kind == SpecialColor.ColorKind.UpperPurple || lineSpecialColor.Kind == SpecialColor.ColorKind.LowerPurple)
                 lineColor = purpleColor;
             else
                 lineColor = SwopColorConverter.CmykToRgbColor(lineSpecialColor.CustomColor);

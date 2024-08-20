@@ -1571,13 +1571,14 @@ namespace PurplePen
     // Color of a special item: Black, Purple, White, or Custom.
     public class SpecialColor
     {
-        public enum ColorKind { Black, Purple, Custom }
+        public enum ColorKind { Black, UpperPurple, LowerPurple, Custom }
 
         public readonly ColorKind Kind;
         public readonly CmykColor CustomColor;
 
         public readonly static SpecialColor Black = new SpecialColor(ColorKind.Black);
-        public readonly static SpecialColor Purple = new SpecialColor(ColorKind.Purple);
+        public readonly static SpecialColor UpperPurple = new SpecialColor(ColorKind.UpperPurple);
+        public readonly static SpecialColor LowerPurple = new SpecialColor(ColorKind.LowerPurple);
 
         public SpecialColor(ColorKind colorKind)
         {
@@ -1601,7 +1602,8 @@ namespace PurplePen
         {
             switch (Kind) {
                 case ColorKind.Black: return "black";
-                case ColorKind.Purple: return "purple";
+                case ColorKind.UpperPurple: return "purple";
+                case ColorKind.LowerPurple: return "lower-purple";
                 case ColorKind.Custom: return string.Format(CultureInfo.InvariantCulture, "{0:F},{1:F},{2:F},{3:F}", CustomColor.Cyan, CustomColor.Magenta, CustomColor.Yellow, CustomColor.Black);
                 default: return base.ToString();
             }
@@ -1612,7 +1614,9 @@ namespace PurplePen
             if (s == "black")
                 return SpecialColor.Black;
             else if (s == "purple")
-                return SpecialColor.Purple;
+                return SpecialColor.UpperPurple;
+            else if (s == "lower-purple")
+                return SpecialColor.LowerPurple;
             else {
                 float c, m, y, k;
                 string[] colors = s.Split(',');
@@ -1895,7 +1899,7 @@ namespace PurplePen
             List<PointF> locationList = new List<PointF>();
 
             if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse)
-                color = SpecialColor.Purple;  // default color is purple.
+                color = SpecialColor.UpperPurple;  // default color is upper purple.
 
             bool first = true;
             while (xmlinput.FindSubElement(first, "text", "font", "location", "appearance", "courses", "image-data")) {
@@ -1934,7 +1938,7 @@ namespace PurplePen
                     numColumns = xmlinput.GetAttributeInt("columns", 1);
 
                     if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse) {
-                        color = xmlinput.GetAttributeColor("color", SpecialColor.Purple);
+                        color = xmlinput.GetAttributeColor("color", SpecialColor.UpperPurple);
                     }
 
                     string lineKindValue = xmlinput.GetAttributeString("line-kind", "");

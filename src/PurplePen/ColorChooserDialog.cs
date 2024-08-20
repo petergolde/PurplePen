@@ -100,7 +100,7 @@ namespace PurplePen
                 SpecialColor color = this.Color;
                 if (color.Kind == SpecialColor.ColorKind.Black)
                     return CmykColor.FromCmyk(0, 0, 0, 1);
-                else if (color.Kind == SpecialColor.ColorKind.Purple)
+                else if (color.Kind == SpecialColor.ColorKind.UpperPurple || color.Kind == SpecialColor.ColorKind.LowerPurple)
                     return purpleColor;
                 else
                     return color.CustomColor;
@@ -110,7 +110,8 @@ namespace PurplePen
         private void InitColors(CmykColor purpleColor)
         {
             comboBox.Items.Add(new ColorAndText(MiscText.Black, SpecialColor.Black, CmykColor.FromCmyk(0, 0, 0, 1)));
-            comboBox.Items.Add(new ColorAndText(MiscText.Purple, SpecialColor.Purple, purpleColor));
+            comboBox.Items.Add(new ColorAndText(MiscText.Purple, SpecialColor.UpperPurple, purpleColor));
+            comboBox.Items.Add(new ColorAndText(MiscText.LowerPurple, SpecialColor.LowerPurple, purpleColor));
             comboBox.Items.Add(new ColorAndText(MiscText.Red, CmykColor.FromCmyk(0, 1, 1, 0)));
             comboBox.Items.Add(new ColorAndText(MiscText.Yellow, CmykColor.FromCmyk(0, 0, 1, 0)));
             comboBox.Items.Add(new ColorAndText(MiscText.Green, CmykColor.FromCmyk(1, 0, 1, 0)));

@@ -116,13 +116,14 @@ namespace PurplePen.Tests
                 dict[CourseLayout.KeyLayout] = layoutSymDef;
 
                 SymColor symColor = null;
-                SpecialColor specialColor = courseobj.CustomColor ?? SpecialColor.Purple;
+                SpecialColor specialColor = courseobj.CustomColor ?? SpecialColor.UpperPurple;
                 switch (specialColor.Kind) {
                     case SpecialColor.ColorKind.Black:
                         symColor = map.AddColor("Black", 1, 0, 0, 0, 1F, false);
                         break;
-                    case SpecialColor.ColorKind.Purple:
-                        symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F, false);
+                    case SpecialColor.ColorKind.UpperPurple:
+                    case SpecialColor.ColorKind.LowerPurple:
+                    symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F, false);
                         break;
                     case SpecialColor.ColorKind.Custom:
                         CmykColor cmyk = specialColor.CustomColor;
@@ -723,8 +724,15 @@ namespace PurplePen.Tests
         [TestMethod]
         public void LineSpecial3()
         {
-            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObject(courseobj, "line3", false);
+        }
+
+        [TestMethod]
+        public void LineSpecial4()
+        {
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.LowerPurple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            SingleObject(courseobj, "line4", false);
         }
 
         [TestMethod]
@@ -744,8 +752,15 @@ namespace PurplePen.Tests
         [TestMethod]
         public void RectSpecial3()
         {
-            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
             SingleObject(courseobj, "rect3", false);
+        }
+
+        [TestMethod]
+        public void RectSpecial4()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.LowerPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObject(courseobj, "rect4", false);
         }
 
         [TestMethod]
@@ -765,8 +780,15 @@ namespace PurplePen.Tests
         [TestMethod]
         public void EllipseSpecial3()
         {
-            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
             SingleObject(courseobj, "ellipse3", false);
+        }
+
+        [TestMethod]
+        public void EllipseSpecial4()
+        {
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.LowerPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            SingleObject(courseobj, "ellipse4", false);
         }
 
         [TestMethod]
@@ -808,7 +830,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void Text()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, -1);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "Fly", new RectangleF(-4, -2, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.UpperPurple, -1);
             CheckRenderBitmap(courseobj, "text");
         }
 
@@ -836,21 +858,21 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextFixedHeight1()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "012", new RectangleF(-4, -2.4F, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, 2F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "012", new RectangleF(-4, -2.4F, 8, 6), "Times New Roman", FontStyle.Italic, SpecialColor.LowerPurple, 2F);
             CheckRenderBitmap(courseobj, "textfixedheight1");
         }
 
         [TestMethod]
         public void TextFixedHeight2()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.UpperPurple, 1F);
             CheckRenderBitmap(courseobj, "textfixedheight2");
         }
 
         [TestMethod]
         public void TextFixedHeightMissingFont()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Blazing", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Blazing", FontStyle.Bold, SpecialColor.LowerPurple, 1F);
             CheckRenderBitmap(courseobj, "textfixedheightmissingfont");
         }
 
@@ -1824,7 +1846,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void LineSpecialHighlight3()
         {
-            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObjectHighlight(courseobj, "line_highlight3", false);
         }
 
@@ -1845,7 +1867,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void RectSpecialHighlight3()
         {
-            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.LowerPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
             SingleObjectHighlight(courseobj, "rect_highlight3", false);
         }
 
@@ -1866,7 +1888,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void EllipseSpecialHighlight3()
         {
-            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
             SingleObjectHighlight(courseobj, "ellipse_highlight3", false);
         }
 
@@ -1960,7 +1982,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextHighlight()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 7, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, -1);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 7, 6), "Times New Roman", FontStyle.Italic, SpecialColor.UpperPurple, -1);
             CheckHighlightBitmap(courseobj, "text_highlight");
         }
 
@@ -1981,21 +2003,21 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextFixedHeightHighlight()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.LowerPurple, 1F);
             CheckHighlightBitmap(courseobj, "textfixedheight_highlight");
         }
 
         [TestMethod]
         public void TextFixedHeightHighlight2()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "123", new RectangleF(-3, -2.7F, 7, 5), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, 1F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "123", new RectangleF(-3, -2.7F, 7, 5), "Times New Roman", FontStyle.Italic, SpecialColor.UpperPurple, 1F);
             CheckHighlightBitmap(courseobj, "textfixedheight2_highlight");
         }
 
         [TestMethod]
         public void TextFixedHeightHighlightMissingFont()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Blazing", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Blazing", FontStyle.Bold, SpecialColor.LowerPurple, 1F);
             CheckHighlightBitmap(courseobj, "textfixedheightmissingfont_highlight");
         }
 
@@ -2249,7 +2271,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void LineSpecialOffset3()
         {
-            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.Purple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
+            CourseObj courseobj = new LineSpecialCourseObj(SpecialId(0), defaultCourseAppearance, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 0.7F, 0, new SymPath(new PointF[4] { new PointF(-3.0F, -2.0F), new PointF(-1.0F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F) }));
             SingleObjectOffset(courseobj, "line3_offset", false);
         }
 
@@ -2270,7 +2292,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void RectSpecialOffset3()
         {
-            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, false, SpecialColor.LowerPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
             SingleObjectOffset(courseobj, "rect3_offset", false);
         }
 
@@ -2291,7 +2313,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void EllipseSpecialOffset3()
         {
-            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.Purple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
+            CourseObj courseobj = new RectSpecialCourseObj(SpecialId(0), defaultCourseAppearance, true, SpecialColor.UpperPurple, LineKind.Double, 0.4F, 1F, 0.7F, 0, Geometry.RectFromPoints(-2.0F, -2.0F, 2.5F, 1.5F));
             SingleObjectOffset(courseobj, "ellipse3_offset", false);
         }
 
@@ -2337,7 +2359,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextOffset()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 6.5F, 6), "Times New Roman", FontStyle.Italic, SpecialColor.Purple, -1);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "sly", new RectangleF(-3.5F, -2.5F, 6.5F, 6), "Times New Roman", FontStyle.Italic, SpecialColor.LowerPurple, -1);
             CheckOffsetBitmap(courseobj, "text_offset");
         }
 
@@ -2351,7 +2373,7 @@ namespace PurplePen.Tests
         [TestMethod]
         public void TextFixedHeightOffset()
         {
-            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.Purple, 1F);
+            CourseObj courseobj = new BasicTextCourseObj(SpecialId(0), "\u00c2012y345", new RectangleF(-3, -2.7F, 7, 5), "Roboto Condensed", FontStyle.Bold, SpecialColor.UpperPurple, 1F);
             CheckOffsetBitmap(courseobj, "textfixedheight_offset");
         }
 

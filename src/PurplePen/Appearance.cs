@@ -342,11 +342,11 @@ namespace PurplePen
         // The font used for text specials.
         public static string fontNameTextSpecial = "Roboto";
         public static FontStyle fontStyleTextSpecial = FontStyle.Bold;
-        public static SpecialColor fontColorTextSpecial = SpecialColor.Purple;
+        public static SpecialColor fontColorTextSpecial = SpecialColor.UpperPurple;
         public static float emHeightDefaultTextSpecial = 6F;    // default size when click instead of drag.
 
         // Default options for line specials.
-        public static SpecialColor lineSpecialColor = SpecialColor.Purple;
+        public static SpecialColor lineSpecialColor = SpecialColor.UpperPurple;
         public static LineKind lineSpecialKind = LineKind.Single;
         public const float lineSpecialWidth = 0.35F;
         public const float lineSpecialGapSize = 0.50F;

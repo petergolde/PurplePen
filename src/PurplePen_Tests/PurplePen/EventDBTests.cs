@@ -653,7 +653,7 @@ namespace PurplePen.Tests
             sp7.fontBold = false;
             sp7.fontItalic = true;
             sp7.text = "$(CourseName)";
-            sp7.color = SpecialColor.Purple;
+            sp7.color = SpecialColor.UpperPurple;
             sp8 = new Special(SpecialKind.WhiteOut, new PointF[4] { new PointF(13, 17), new PointF(21, 12), new PointF(10, -1), new PointF(-2, 7) });
             sp9 = new Special(SpecialKind.Image, new PointF[2] { new PointF(18, 17), new PointF(28, 15) });
             sp9.imageBitmap = (Bitmap)Image.FromFile(TestUtil.GetTestFile("eventDB\\testimage.jpg"));
@@ -668,13 +668,13 @@ namespace PurplePen.Tests
             sp11.lineWidth = 0.1F;
             sp11.gapSize = 0.15F;
             sp12 = new Special(SpecialKind.Line, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
-            sp12.color = SpecialColor.Purple;
+            sp12.color = SpecialColor.LowerPurple;
             sp12.lineKind = LineKind.Dashed;
             sp12.lineWidth = 0.1F;
             sp12.gapSize = 0.15F;
             sp12.dashSize = 0.44F;
             sp13 = new Special(SpecialKind.Rectangle, new PointF[2] { new PointF(8, 7), new PointF(1, 2) });
-            sp13.color = SpecialColor.Purple;
+            sp13.color = SpecialColor.UpperPurple;
             sp13.lineKind = LineKind.Single;
             sp13.lineWidth = 0.1F;
             sp13.cornerRadius = 0.23F;
@@ -682,6 +682,7 @@ namespace PurplePen.Tests
             sp14.color = new SpecialColor(CmykColor.FromCmyk(0.8F, 0.3F, 0.2F, 0.1F));
             sp14.lineKind = LineKind.Double;
             sp14.lineWidth = 0.25F;
+
 
             eventDB.AddSpecial(sp1);
             eventDB.AddSpecial(sp2);
