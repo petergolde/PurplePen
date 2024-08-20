@@ -81,11 +81,11 @@
   <ItemGroup>
     <Content Include="..\Libraries\Pdfium\x64\pdfium.dll">
       <Link>x64\pdfium.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Libraries\Pdfium\x86\pdfium.dll">
       <Link>x86\pdfium.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

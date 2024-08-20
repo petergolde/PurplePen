@@ -1,0 +1,34 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <ProjectGuid>{699739ca-2c69-4b80-b69f-3e351da2ba1f}</ProjectGuid>
+
+    <!-- Define the output file -->
+    <OutputFile>.\output\Roboto Font Installer.exe</OutputFile>
+    <!-- Define the help compiler executable -->
+    <InnoCompiler>C:\Program Files (x86)\Inno Setup 6\iscc.exe</InnoCompiler>
+    <!-- Define the help project file -->
+    <InnoProjectFile>FontInstaller.iss</InnoProjectFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 
+      Define the input files for the compilation. If any of these change, the setup
+      file will be rebuilt. Otherwise it will not be rebuilt.
+    -->
+    <InputFile Include="$(InnoProjectFile)" />
+    <InputFile Include="..\RobotoFont\*.ttf" />
+  </ItemGroup>
+
+  <Target Name="Build" Inputs="@(InputFile)" Outputs="$(OutputFile)">
+    <Message Text="Building font installer file -- output file is $(OutputFile)" />
+    <Exec Command="&quot;$(InnoCompiler)&quot; &quot;$(InnoProjectFile)&quot;" />
+  </Target>
+
+  <Target Name="Clean">
+    <Message Text="Cleaning font setup file" />
+    <Delete Files="$(OutputFile)" />
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  </Target>
+</Project>
