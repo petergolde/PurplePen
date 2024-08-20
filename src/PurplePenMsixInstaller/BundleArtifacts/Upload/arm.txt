@@ -1,6 +1,0 @@
-MainPackage=D:\Repos\Main\PurplePen\src\PurplePenMsixInstaller\bin\ARM\Release\Upload\PurplePenMsixInstaller_1.0.23.0_ARM.msix
-SymbolPackage=D:\Repos\Main\PurplePen\src\PurplePenMsixInstaller\bin\ARM\Release\Upload\PurplePenMsixInstaller_1.0.23.0\PurplePenMsixInstaller_1.0.23.0_ARM.appxsym
-ResourcePack=D:\Repos\Main\PurplePen\src\PurplePenMsixInstaller\bin\ARM\Release\Upload\PurplePenMsixInstaller_1.0.23.0_scale-100.msix
-ResourcePack=D:\Repos\Main\PurplePen\src\PurplePenMsixInstaller\bin\ARM\Release\Upload\PurplePenMsixInstaller_1.0.23.0_scale-125.msix
-ResourcePack=D:\Repos\Main\PurplePen\src\PurplePenMsixInstaller\bin\ARM\Release\Upload\PurplePenMsixInstaller_1.0.23.0_scale-150.msix
-ResourcePack=D:\Repos\Main\PurplePen\src\PurplePenMsixInstaller\bin\ARM\Release\Upload\PurplePenMsixInstaller_1.0.23.0_scale-400.msix
