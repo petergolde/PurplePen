@@ -90,10 +90,14 @@ namespace PurplePen.MapModel.Tests
         {
             Bitmap result;
 
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.blendOverprintedColors = false;
+
             if (antiAlias)
-                result = Rendering.RenderAntiAliasBitmap(map, size, area, true, false, 1.0F);
+                result = Rendering.RenderAntiAliasBitmap(map, size, area, renderOpts, 1.0F);
             else
-                result = Rendering.RenderBitmap(map, size, area, true, false, 1.0F);
+                result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
             TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
         }
@@ -110,7 +114,11 @@ namespace PurplePen.MapModel.Tests
             }
             size = new Size((int)Math.Round(area.Width / ratio), (int)Math.Round(area.Height / ratio));
 
-            Bitmap result = Rendering.RenderBitmap(map, size, area, true, false, 1.0F);
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.blendOverprintedColors = false;
+
+            Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
             TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
         }
@@ -127,7 +135,11 @@ namespace PurplePen.MapModel.Tests
             }
             size = new Size((int)Math.Round(area.Width / ratio), (int)Math.Round(area.Height / ratio));
 
-            Bitmap result = Rendering.RenderBitmap(map, size, area, true, true, 1.0F);
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.blendOverprintedColors = true;
+
+            Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
             TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
         }
@@ -184,7 +196,11 @@ namespace PurplePen.MapModel.Tests
             }
             size = new Size((int)Math.Round(area.Width / ratio), (int)Math.Round(area.Height / ratio));
 
-            Bitmap result = Rendering.RenderBitmap(map, size, area, false, false, 1.0F);
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = false;
+            renderOpts.blendOverprintedColors = false;
+
+            Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
             TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
         }

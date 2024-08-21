@@ -240,14 +240,11 @@ namespace PurplePen.MapModel.Tests
 
 
 
-        public static Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps, bool useOverprinting, float intensity)
+        public static Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOpts, float intensity)
         {
             var grTarget = new GDIPlus_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, false, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
             using (grTarget) {
-                RenderOptions renderOpts = new RenderOptions();
-                renderOpts.usePatternBitmaps = usePatternBitmaps;
                 renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
-                renderOpts.blendOverprintedColors = useOverprinting;
                 renderOpts.minResolution = mapArea.Width / (float)bitmapSize.Width;
                 
                 using (map.Read())
@@ -258,15 +255,12 @@ namespace PurplePen.MapModel.Tests
 
         }
 
-        public static Bitmap RenderAntiAliasBitmap(Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps, bool useOverprinting, float intensity)
+        public static Bitmap RenderAntiAliasBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOpts, float intensity)
         {
             var grTarget = new GDIPlus_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, false, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
             grTarget.PushAntiAliasing(true);
             using (grTarget) {
-                RenderOptions renderOpts = new RenderOptions();
-                renderOpts.usePatternBitmaps = usePatternBitmaps;
                 renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
-                renderOpts.blendOverprintedColors = useOverprinting;
                 renderOpts.minResolution = mapArea.Width / (float)bitmapSize.Width;
 
                 using (map.Read())
@@ -278,7 +272,7 @@ namespace PurplePen.MapModel.Tests
         }
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
         // a difference bitmap is written out.
-        static bool VerifyTestFile(string filename, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, int minOcadVersion, int maxOcadVersion)
+        static bool VerifyTestFile(string filename, RenderOptions renderOptions, bool testLightenedColor, bool roundtripToOcadFile, int minOcadVersion, int maxOcadVersion)
         {
 
             string pngFileName;
@@ -323,7 +317,7 @@ namespace PurplePen.MapModel.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, 1.0F);
+            Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, 1.0F);
 
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
@@ -332,7 +326,7 @@ namespace PurplePen.MapModel.Tests
 
             if (testLightenedColor) {
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Bitmap bitmapLight = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, 0.4F);
+                Bitmap bitmapLight = RenderBitmap(map, size, mapArea, renderOptions, 0.4F);
                 TestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName);
             }
 
@@ -349,7 +343,7 @@ namespace PurplePen.MapModel.Tests
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
-                    bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, 1.0F);
+                    bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, 1.0F);
 
                     TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
 
@@ -365,7 +359,11 @@ namespace PurplePen.MapModel.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderAntiAliasBitmap(map, size, mapArea, true, false, 1.0F);
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.blendOverprintedColors = false;
+
+            Bitmap bitmapNew = RenderAntiAliasBitmap(map, size, mapArea, renderOpts, 1.0F);
 
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
@@ -374,23 +372,46 @@ namespace PurplePen.MapModel.Tests
 
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.blendOverprintedColors = false;
             string fullname = TestUtil.GetTestFile("rendering\\" + filename);
-            bool ok = VerifyTestFile(fullname, true, false, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            bool ok = VerifyTestFile(fullname, renderOpts, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
         void CheckTestNoPatternBitmaps(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion) {
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = false;
+            renderOpts.blendOverprintedColors = false;
             string fullname = TestUtil.GetTestFile("rendering\\" + filename);
-            bool ok = VerifyTestFile(fullname, false, false, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            bool ok = VerifyTestFile(fullname, renderOpts, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
         void CheckTestOverprinting(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = false;
+            renderOpts.blendOverprintedColors = true;
             string fullname = TestUtil.GetTestFile("rendering\\" + filename);
-            bool ok = VerifyTestFile(fullname, false, true, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            bool ok = VerifyTestFile(fullname, renderOpts, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
+
+        void CheckTestLayers(string filename, int? startLayer, int? stopLayer, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
+        {
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.blendOverprintedColors = false;
+            renderOpts.colorBeginDrawExclusive = startLayer;
+            renderOpts.colorEndDrawInclusive = stopLayer;
+
+            string fullname = TestUtil.GetTestFile("rendering\\" + filename);
+            bool ok = VerifyTestFile(fullname, renderOpts, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
+        }
+
 
         [Test]
         public void TimeTeanWest()
@@ -1203,6 +1224,20 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTest("RobotoTest.txt", false, false, 9, 12);
         }
+
+        [Test]
+        public void Marymoor11LowerLayers()
+        {
+            CheckTestLayers("marymoor11_lowerlayers.txt", null, 7, false, false, 11, 12);
+        }
+
+        [Test]
+        public void Marymoor11UpperLayers()
+        {
+            CheckTestLayers("marymoor11_upperlayers.txt", 7, null, false, false, 11, 12);
+        }
+
+
     }
 
 }

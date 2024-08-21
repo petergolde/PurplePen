@@ -1,0 +1,4 @@
+﻿marymoor OCAD11.ocd
+marymoor11_lowerlayers.png
+2.2565074,58.02327,140.754044,-24.783926
+1236,739

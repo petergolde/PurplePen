@@ -2130,9 +2130,17 @@ namespace PurplePen.MapModel
             //TraceLine("Begin drawing rectangle ({0},{1})-({2},{3})", rect.Left, rect.Top, rect.Right, rect.Bottom);
             Debug.Indent();
 
+            // Are we drawing colors starting at the bottom?
+            bool currentlyDrawing = true;
+            if (renderOpts.colorBeginDrawExclusive != null) {
+                currentlyDrawing = false;
+            }
+
             // Templates below the map (usual OCAD case)
-            if ((renderOpts.renderTemplates == RenderTemplateOption.MapAndTemplates || renderOpts.renderTemplates == RenderTemplateOption.TemplatesOnly) &&
-                this.AnyVisibleTemplates) {
+            if (currentlyDrawing && 
+                (renderOpts.renderTemplates == RenderTemplateOption.MapAndTemplates || renderOpts.renderTemplates == RenderTemplateOption.TemplatesOnly) &&
+                this.AnyVisibleTemplates) 
+            {
                 DrawTemplates(g, rect, renderOpts, throwOnCancel, false, templateRecursionCount);
             }
 
@@ -2141,18 +2149,30 @@ namespace PurplePen.MapModel
                     GraphicsUtil.CreateSolidPen(g, boundsPenKey, CmykColor.FromRgba(1.0F, 0, 0, 0.392157F), 0.01F, LineStyle.Mitered);
 
                 // Draw the image layer.
-                DrawColor(g, this.ImageColor, rect, renderOpts, throwOnCancel);
-                if (throwOnCancel != null)
-                    throwOnCancel();
-
-                // Draw each color separately, to get correct layering.
-                foreach (SymColor curColor in colors) {
-                    DrawColor(g, curColor, rect, renderOpts, throwOnCancel);
+                if (currentlyDrawing) {
+                    DrawColor(g, this.ImageColor, rect, renderOpts, throwOnCancel);
                     if (throwOnCancel != null)
                         throwOnCancel();
                 }
 
-                if (!layoutHidden) {
+                // Draw each color separately, to get correct layering.
+                foreach (SymColor curColor in colors) {
+                    if (currentlyDrawing) {
+                        DrawColor(g, curColor, rect, renderOpts, throwOnCancel);
+                        if (throwOnCancel != null)
+                            throwOnCancel();
+                    }
+
+                    // Update the currentlyDrawing flag.
+                    if (!currentlyDrawing && renderOpts.colorBeginDrawExclusive == curColor.OcadId) {
+                        currentlyDrawing = true;
+                    }
+                    if (currentlyDrawing && renderOpts.colorEndDrawInclusive == curColor.OcadId) {
+                        currentlyDrawing = false;
+                    }
+                }
+
+                if (currentlyDrawing && !layoutHidden) {
                     // Draw the layout layer.
                     DrawColor(g, this.LayoutColor, rect, renderOpts, throwOnCancel);
                     if (throwOnCancel != null)
@@ -2161,8 +2181,10 @@ namespace PurplePen.MapModel
             }
 
             // Templates above the map (OOM case)
-            if ((renderOpts.renderTemplates == RenderTemplateOption.MapAndTemplates || renderOpts.renderTemplates == RenderTemplateOption.TemplatesOnly) &&
-                this.AnyVisibleTemplates) {
+            if (currentlyDrawing && 
+                (renderOpts.renderTemplates == RenderTemplateOption.MapAndTemplates || renderOpts.renderTemplates == RenderTemplateOption.TemplatesOnly) &&
+                this.AnyVisibleTemplates) 
+            {
                 DrawTemplates(g, rect, renderOpts, throwOnCancel, true, templateRecursionCount);
             }
 
@@ -2688,6 +2710,10 @@ namespace PurplePen.MapModel
         public RenderTemplateOption renderTemplates; // how templates (either OCAD or bitmap) will be displayed. Recursively applies to OCAD templates.
         public bool blendOverprintedColors; // if true, then use BlendMode.Darken to blend colors that have Overprint flag set to true.
                                             // if false, then Overprint flag is ignored.
+
+        // These options allow drawing just some colors (layers) of the maps.
+        public int? colorBeginDrawExclusive; // If null, start drawing at the bottom, otherwise draw beginning after this color.
+        public int? colorEndDrawInclusive;   // If null, draw to top, otherwise end after drawing this color.
 
         // debug options.
         public bool showSymbolBounds;      // Show the bounds of symbols.
