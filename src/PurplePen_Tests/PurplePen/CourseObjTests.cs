@@ -116,23 +116,28 @@ namespace PurplePen.Tests
                 dict[CourseLayout.KeyLayout] = layoutSymDef;
 
                 SymColor symColor = null;
-                SpecialColor specialColor = courseobj.CustomColor ?? SpecialColor.UpperPurple;
-                switch (specialColor.Kind) {
+                SymColor lowerSymColor = null;
+
+                if (courseobj.CustomColor == null || courseobj.CustomColor.Kind == SpecialColor.ColorKind.LowerPurple || courseobj.CustomColor.Kind == SpecialColor.ColorKind.UpperPurple) {
+                    lowerSymColor = map.AddColor("Lower Purple", 11, 0.045F, 0.59F, 0, 0.255F, false);
+                    symColor = map.AddColor("Purple", 12, 0.0F, 1F, 0, 0F, false);
+                }
+                else {
+                    switch (courseobj.CustomColor.Kind) {
                     case SpecialColor.ColorKind.Black:
                         symColor = map.AddColor("Black", 1, 0, 0, 0, 1F, false);
                         break;
-                    case SpecialColor.ColorKind.UpperPurple:
-                    case SpecialColor.ColorKind.LowerPurple:
-                    symColor = map.AddColor("Purple", 11, 0.045F, 0.59F, 0, 0.255F, false);
-                        break;
+
                     case SpecialColor.ColorKind.Custom:
-                        CmykColor cmyk = specialColor.CustomColor;
+                        CmykColor cmyk = courseobj.CustomColor.CustomColor;
                         symColor = map.AddColor("Custom", 61, cmyk.Cyan, cmyk.Magenta, cmyk.Yellow, cmyk.Black, false);
                         break;
+                    }
+
+                    lowerSymColor = symColor;
                 }
 
-                // TODO: Need to figure out how lower purple should be handled here.
-                courseobj.AddToMap(map, symColor, symColor, mapRenderOptions, dict);
+                courseobj.AddToMap(map, symColor, lowerSymColor, mapRenderOptions, dict);
 
                 // Make drop targets visible for debugging.
                 foreach (SymDef symdef in map.AllSymdefs) {
