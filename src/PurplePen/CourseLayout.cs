@@ -39,6 +39,7 @@ using System.Drawing;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
+using Windows.ApplicationModel.Contacts;
 
 namespace PurplePen
 {
@@ -64,6 +65,8 @@ namespace PurplePen
 
         public const int LAYERCOUNT = (int) CourseLayer.Count;
         public const int EXTRACOURSECOUNT = 10;
+
+        public const short WHITEOUT_COLOR_OCADID = 44;
 
         short[] ocadColorId = new short[LAYERCOUNT];
         string[] colorName = new string[LAYERCOUNT];
@@ -169,7 +172,7 @@ namespace PurplePen
                 }
 
                 // Create white color and white-out symdef.
-                SymColor white = map.AddColorBottom("White", 44, 0, 0, 0, 0, false);
+                SymColor white = map.AddColor("White", WHITEOUT_COLOR_OCADID, 0, 0, 0, 0, false);
                 AreaSymDef whiteArea = new AreaSymDef("White out", "890", white, null);
                 whiteArea.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.WhiteOut_OcadToolbox);
                 map.AddSymdef(whiteArea);

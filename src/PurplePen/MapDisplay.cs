@@ -43,6 +43,7 @@ using PurplePen.MapView;
 using ColorMatrix = PurplePen.MapModel.ColorMatrix;
 using PurplePen.Graphics2D;
 using System.IO;
+using System.Linq;
 
 
 namespace PurplePen
@@ -74,6 +75,8 @@ namespace PurplePen
         bool antialiased = false;        // anti-alias (high quality) the map display?
         bool ocadOverprintEffect = false; // overprint effect for colors in the OCAD map (not the purple of the course on top).
         bool showBounds = false;       // show symbols bounds (for testing)
+
+        int? lowerPurpleMapLayer;      // If non-null, place the lower purple of the map just above this OCAD ID color.
 
         RectangleF? printArea;          // print area to display, or null for none.
 
@@ -358,7 +361,21 @@ namespace PurplePen
                 }
             }
         }
-        
+
+        // If non-null, place the lower purple of the map just above this OCAD ID color.
+        public int? LowerPurpleMapLayer {
+            get {
+                return lowerPurpleMapLayer;
+            }
+            set {
+                if (lowerPurpleMapLayer != value) {
+                    lowerPurpleMapLayer = value;
+                    RaiseChanged(null);
+                }
+            }
+        }
+
+
         // Are we printing?
         public bool Printing { get; set; }
 
@@ -464,11 +481,15 @@ namespace PurplePen
         public void SetCourse(CourseLayout newCourse)
         {
             if (! object.Equals(course, newCourse)) {
+                // The ordering of layers depends on whether we have a lower purple map layer.
+                CourseLayout.MapRenderOptions renderOptions = new CourseLayout.MapRenderOptions();
+                renderOptions.LowerColorsBelowWhiteOut = (LowerPurpleMapLayer != null);
+
                 course = newCourse;
                 if (course == null)
                     courseMap = null;
                 else
-                    courseMap = course.RenderToMap(new CourseLayout.MapRenderOptions());
+                    courseMap = course.RenderToMap(renderOptions);
 
                 RaiseChanged(null);
             }
@@ -601,11 +622,27 @@ namespace PurplePen
             DrawHelper(grTarget, grTarget, grTarget, visRect, minResolution);
         }
 
+        private short? ColorIdBelow(Map map, short colorId)
+        {
+            using (map.Read()) {
+                List<SymColor> allColors = map.AllColors.ToList();
+                int index = allColors.FindIndex(sc => sc.OcadId == colorId);
+                return (index > 0) ? allColors[index - 1].OcadId : (short?)null;
+            }
+        }
+
         // Draw the map and course onto a graphics. A helper for the other two draw methods.
         private void DrawHelper(IGraphicsTarget grTargetOcadMap, IGraphicsTarget grTargetBitmapMap, IGraphicsTarget grTargetCourses, RectangleF visRect, float minResolution)
         {
             RenderOptions renderOptions = new RenderOptions();
             renderOptions.minResolution = minResolution;
+            short? colorIdBelowWhiteOut = null;
+
+            // Get the color ID of the color just below the white-out color, which is where we divide between lower purple
+            // and upper purple.
+            if (LowerPurpleMapLayer != null && courseMap != null) {
+                colorIdBelowWhiteOut = ColorIdBelow(courseMap, CourseLayout.WHITEOUT_COLOR_OCADID);
+            }
 
             if (Printing)
                 renderOptions.usePatternBitmaps = false;   // don't use pattern bitmaps when printing, they cause some problems in some printer drivers and we want best quality.
@@ -616,12 +653,19 @@ namespace PurplePen
 
             renderOptions.showSymbolBounds = showBounds;
             renderOptions.renderTemplates = RenderTemplateOption.MapAndTemplates;
-            renderOptions.blendOverprintedColors = ocadOverprintEffect; 
+            renderOptions.blendOverprintedColors = ocadOverprintEffect;
 
             // First draw the real map.
             switch (mapType) {
             case MapType.OCAD:
                 grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+
+                if (LowerPurpleMapLayer != null) {
+                    // Only draw the part below lower purple.
+                    renderOptions.colorBeginDrawExclusive = null;
+                    renderOptions.colorEndDrawInclusive = LowerPurpleMapLayer;
+                }
+
                 DrawOcadMap(grTargetOcadMap, visRect, renderOptions);
                 grTargetOcadMap.PopAntiAliasing();
                 break;
@@ -638,12 +682,45 @@ namespace PurplePen
             }
 
             // Now draw the courseMap on top.
+            if (LowerPurpleMapLayer != null) {
+                // Only draw the part below the white-out layer, which is all of the lower purple.
+                renderOptions.colorBeginDrawExclusive = null;
+                renderOptions.colorEndDrawInclusive = colorIdBelowWhiteOut;
+            }
+
+            DrawCourseMap(grTargetCourses, visRect, renderOptions);
+
+            if (LowerPurpleMapLayer != null) {
+                // Draw the part of the map above the lower purple.
+                grTargetOcadMap.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+
+                if (LowerPurpleMapLayer != null) {
+                    // Only draw the part below lower purple.
+                    renderOptions.colorBeginDrawExclusive = LowerPurpleMapLayer;
+                    renderOptions.colorEndDrawInclusive = null;
+                }
+
+                DrawOcadMap(grTargetOcadMap, visRect, renderOptions);
+                grTargetOcadMap.PopAntiAliasing();
+
+                // Draw the rest of the course map on top.
+                renderOptions.colorBeginDrawExclusive = colorIdBelowWhiteOut;
+                renderOptions.colorEndDrawInclusive = null;
+                DrawCourseMap(grTargetCourses, visRect, renderOptions);
+            }
+
+            DrawPrintAreaOutline(grTargetCourses, visRect);
+        }
+
+        private void DrawCourseMap(IGraphicsTarget grTargetCourses, RectangleF visRect, RenderOptions renderOptions)
+        {
             if (Printing)
                 grTargetCourses.PushAntiAliasing(false);
             else
                 grTargetCourses.PushAntiAliasing(true);   // always anti-alias the course unless printing
 
             // Always turn blending on.
+            bool saveBlendOverprintedColors = renderOptions.blendOverprintedColors;
             renderOptions.blendOverprintedColors = true;
 
             if (courseMap != null) {
@@ -651,8 +728,15 @@ namespace PurplePen
                     courseMap.Draw(grTargetCourses, visRect, renderOptions, null);
             }
 
-            grTargetCourses.PopAntiAliasing();
+            // Restore old blending setting.
+            renderOptions.blendOverprintedColors = saveBlendOverprintedColors;
 
+            grTargetCourses.PopAntiAliasing();
+        }
+
+        // Draw a gray outline to show the print area.
+        private void DrawPrintAreaOutline(IGraphicsTarget grTargetCourses, RectangleF visRect)
+        {
             grTargetCourses.PushAntiAliasing(false);
 
             if (printArea.HasValue && !printArea.Value.Contains(visRect)) {

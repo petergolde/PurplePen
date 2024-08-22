@@ -336,6 +336,10 @@ namespace PurplePen
             if (mapDisplay.OcadOverprintEffect != controller.OcadOverprintEffect) {
                 mapDisplay.OcadOverprintEffect = controller.OcadOverprintEffect;
             }
+
+            if (mapDisplay.LowerPurpleMapLayer != controller.LowerPurpleMapLayer) {
+               mapDisplay.LowerPurpleMapLayer = controller.LowerPurpleMapLayer;
+            }
         }
 
         // Check for missing fonts in the map file, and warn about them. Only do if the window is visible, of course.

@@ -1310,7 +1310,7 @@ Symbol definition for '703.0'
   Size=812, Otp=4, SymTp=0, Flags=0
     Status=0, Tool=0
   CsMode=0, CsObjType=0, CsCdFlags=0
-  ColorsUsed=11 
+  ColorsUsed=12 
   Icon=
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
@@ -1334,7 +1334,7 @@ Symbol definition for '703.0'
     7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
     7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
-  FontName=Roboto, FontColor=11, FontSize=158
+  FontName=Roboto, FontColor=12, FontSize=158
   Weight=400, Italic=False, CharSpace=0, WordSpace=100
   Alignment=0, LineSpace=100, ParaSpace=0
   IndentFirst=0, IndentOther=0
@@ -3199,7 +3199,7 @@ Object Sym=70500 Otp=2
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3211,7 +3211,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3223,7 +3223,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3235,7 +3235,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3247,7 +3247,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3259,7 +3259,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3271,7 +3271,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3283,7 +3283,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0
@@ -3294,7 +3294,7 @@ Object Sym=70300 Otp=4
 
 Index entry Sym=70300.0
   ObjType=4  Rex=0  Status=1
-  ViewType=0  Color=11  ImpLayer=0
+  ViewType=0  Color=12  ImpLayer=0
 Object Sym=70300 Otp=4
   nItem=5, nText=1
   Ang=0

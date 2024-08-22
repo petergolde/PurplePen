@@ -3316,6 +3316,19 @@ namespace PurplePen
             get { return GetCourseAppearance().useOcadOverprint; }
         }
 
+        // Map layer of lower purple if using upper/lower purple blending method.
+        public int? LowerPurpleMapLayer {
+            get {
+                CourseAppearance appearance = GetCourseAppearance();
+                if (appearance.purpleColorBlend == PurpleColorBlend.UpperLowerPurple) {
+                    return appearance.mapLayerForLowerPurple;
+                }
+                else {
+                    return null;
+                }
+            }
+        }
+
         // Get the auto-number values.
         public void GetAutoNumbering(out int firstCode, out bool disallowInvertibleCodes)
         {

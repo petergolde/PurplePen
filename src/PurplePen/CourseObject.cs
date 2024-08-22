@@ -1113,13 +1113,14 @@ namespace PurplePen
             throw new NotImplementedException("Should not be called.");
         }
 
-        protected virtual SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor, SymColor whiteColor)
+        protected virtual SymDef CreateSymDef(Map map, SymColor upper_symColor, SymColor lower_symColor, SymColor whiteColor)
         {
+            SymColor symbolColor = (fontColor.Kind == SpecialColor.ColorKind.LowerPurple) ? lower_symColor : upper_symColor;
             // Find a free id.
             string symbolId = map.GetFreeSymbolId(OcadIdIntegerPart);
 
             TextSymDef symdef = new TextSymDef(SymDefName, symbolId, TextSymDef.PreferredSymbolKind.NormalText, null);
-            symdef.SetFont(fontName, emHeight, Util.GetTextEffects(fontStyle), symColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
+            symdef.SetFont(fontName, emHeight, Util.GetTextEffects(fontStyle), symbolColor, emHeight, 0, 0, 0, null, 0, 1F, TextSymDefHorizAlignment.Left, TextSymDefVertAlignment.TopAscent);
             if (outlineWidth > 0) {
                 TextSymDef.Framing framing = new TextSymDef.Framing() {
                     framingColor = whiteColor,
@@ -2424,9 +2425,11 @@ namespace PurplePen
             return base.GetHashCode() + color.GetHashCode() + lineKind.GetHashCode() + lineWidth.GetHashCode() + gapSize.GetHashCode() + dashSize.GetHashCode();
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor upper_symColor, SymColor lower_symColor)
         {
-            return CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Bevel, LineCap.Flat);
+            SymColor symbolColor = (color.Kind == SpecialColor.ColorKind.LowerPurple) ? lower_symColor : upper_symColor;
+
+            return CreateLineSpecialSymDef(map, symbolColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Bevel, LineCap.Flat);
         }
 
         // This is used by both line and rectangle specials.
@@ -2599,9 +2602,11 @@ namespace PurplePen
             }
         }
 
-        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
+        protected override SymDef CreateSymDef(Map map, SymColor upper_symColor, SymColor lower_symColor)
         {
-            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Miter, LineCap.Flat);
+            SymColor symbolColor = (color.Kind == SpecialColor.ColorKind.LowerPurple) ? lower_symColor : upper_symColor;
+
+            return LineSpecialCourseObj.CreateLineSpecialSymDef(map, symbolColor, lineKind, lineWidth, gapSize, dashSize, LineJoin.Miter, LineCap.Flat);
         }
 
         protected override void AddToMap(Map map, SymDef symdef)
