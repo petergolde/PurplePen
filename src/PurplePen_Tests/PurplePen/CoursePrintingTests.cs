@@ -146,6 +146,10 @@ namespace PurplePen.Tests
             if (controller.MapType == MapType.Bitmap)
                 mapDisplay.Dpi = controller.MapDpi;
             mapDisplay.OcadOverprintEffect = appearance.useOcadOverprint;
+            if (appearance.purpleColorBlend == PurpleColorBlend.UpperLowerPurple) {
+                mapDisplay.LowerPurpleMapLayer = appearance.mapLayerForLowerPurple;
+            }
+
 
             // Get the pages of the printing.
             CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.CloneToFullIntensity(), coursePrintSettings, appearance);
@@ -205,6 +209,72 @@ namespace PurplePen.Tests
 
             coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
             CoursePrintingTest("courseprinting\\noblend", coursePrintSettings, appearance);
+        }
+
+        [TestMethod]
+        public void LordHillNoBlend()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.mapStandard = "2017";
+            appearance.purpleColorBlend = PurpleColorBlend.None;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(8) };
+            CoursePrintingTest("courseprinting\\lordhill_noblend", coursePrintSettings, appearance);
+        }
+
+        [TestMethod]
+        public void LordHillUpperLowerPurple()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.mapStandard = "2017";
+            appearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            appearance.mapLayerForLowerPurple = 10;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(8) };
+            CoursePrintingTest("courseprinting\\lordhill_lowpurple", coursePrintSettings, appearance);
+        }
+
+        [TestMethod]
+        public void LordHillSprintUpperLowerPurple()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.mapStandard = "Spr2019";
+            appearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            appearance.mapLayerForLowerPurple = 10;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(8) };
+            CoursePrintingTest("courseprinting\\lordhill_sprintlowpurple", coursePrintSettings, appearance);
+        }
+
+        [TestMethod]
+        public void LordHillBlendPurple()
+        {
+            controller.LoadInitialFile(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), true);
+            CoursePrintSettings coursePrintSettings = new CoursePrintSettings();
+            coursePrintSettings.CropLargePrintArea = false;
+            coursePrintSettings.PrintingColorModel = ColorModel.CMYK;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.mapStandard = "2017";
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+
+            coursePrintSettings.CourseIds = new Id<Course>[] { CourseId(8) };
+            CoursePrintingTest("courseprinting\\lordhill_blend", coursePrintSettings, appearance);
         }
 
 

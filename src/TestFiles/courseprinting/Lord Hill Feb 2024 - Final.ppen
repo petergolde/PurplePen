@@ -1,13 +1,13 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>Lord Hill - Winter Series 2023-2024</title>
-    <map kind="OCAD" scale="10000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\OneDrive\Orienteering\Lord Hill 2024\LordHill_ver16_2024Jan_scaled.omap">C:\Users\peter\OneDrive\Orienteering\Lord Hill 2024\LordHill_ver16_2024Jan_scaled.omap</map>
+    <map kind="OCAD" scale="10000" ignore-missing-fonts="false" absolute-path="D:\Repos\Main\PurplePen\src\TestFiles\courseprinting\LordHill_ver16_2024Jan_scaled.omap">LordHill_ver16_2024Jan_scaled.omap</map>
     <standards map="2017" description="2018" />
     <all-controls print-scale="7500" description-kind="symbols" />
     <print-area automatic="false" restrict-to-page-size="true" left="-123.347633" top="-63.7183075" right="190.977386" bottom="-263.743317" page-width="1100" page-height="1700" page-margins="25" page-landscape="true" />
     <numbering start="101" disallow-invertible="false" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" number-font="Roboto" auto-leg-gap-size="3.5" purple-cyan="0" purple-magenta="1" purple-yellow="0" purple-black="0" blend-purple="layer" lower-purple-layer="10" />
+    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" number-font="Roboto" auto-leg-gap-size="3.5" purple-cyan="0" purple-magenta="1" purple-yellow="0" purple-black="0" blend-purple="false" />
     <descriptions lang="en" color="black" />
     <ocad overprint-colors="false" />
     <custom-symbol-text iof-2004-ref="4.10" show-key="false">
@@ -446,7 +446,7 @@
     <secondary-title>JV Male, College JV</secondary-title>
     <labels label-kind="sequence" />
     <first course-control="112" />
-    <print-area automatic="false" restrict-to-page-size="true" left="-60.1639557" top="-92.213" right="139.861053" bottom="-244.613" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
+    <print-area automatic="false" restrict-to-page-size="false" left="22.58826" top="-145.2456" right="132.742569" bottom="-235.003052" page-width="850" page-height="1100" page-margins="25" page-landscape="true" />
     <options print-scale="7500" climb="140" hide-from-reports="false" description-kind="symbols" />
   </course>
   <course id="9" kind="normal" order="8">
@@ -1782,8 +1782,8 @@
   </special-object>
   <special-object id="30" kind="out-of-bounds">
     <location x="80.34305" y="-171.126678" />
-    <location x="84.8596" y="-175.329575" />
-    <location x="88.18428" y="-172.506729" />
+    <location x="86.30238" y="-178.967911" />
+    <location x="91.69715" y="-174.9532" />
     <location x="85.48689" y="-169.432968" />
     <location x="81.91129" y="-169.746613" />
     <courses all="true" />

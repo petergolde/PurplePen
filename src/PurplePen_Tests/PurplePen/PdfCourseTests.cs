@@ -36,6 +36,8 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             controller.SetCourseAppearance(appearance);
+            if (controller.LowerPurpleMapLayer != null)
+                controller.MapDisplay.LowerPurpleMapLayer = controller.LowerPurpleMapLayer;
 
             for (int i = 0; i < expectedFiles.Length; ++i) {
                 File.Delete(expectedFiles[i]);
@@ -479,6 +481,101 @@ namespace PurplePen.Tests
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create9\\Long.pdf") },
                 new string[1] { TestUtil.GetTestFile("controller\\pdf_create9\\Long_expected.png") });
         }
+
+        [TestMethod]
+        public void PdfCreationBlendNone()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create_blend\\none");
+            settings.CourseIds = new Id<Course>[1] { CourseId(8) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.itemScaling = ItemScaling.None;
+            appearance.mapStandard = "2017";
+            appearance.purpleColorBlend = PurpleColorBlend.None;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\none\\Course 5.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\none\\Course 5_expected.png") });
+        }
+
+        [TestMethod]
+        public void PdfCreationBlend()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create_blend\\blend");
+            settings.CourseIds = new Id<Course>[1] { CourseId(8) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.itemScaling = ItemScaling.None;
+            appearance.mapStandard = "2017";
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\blend\\Course 5.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\blend\\Course 5_expected.png") });
+        }
+
+        [TestMethod]
+        public void PdfCreationLayer()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create_blend\\layer");
+            settings.CourseIds = new Id<Course>[1] { CourseId(8) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.itemScaling = ItemScaling.None;
+            appearance.mapStandard = "2017";
+            appearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            appearance.mapLayerForLowerPurple = 10;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\layer\\Course 5.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\layer\\Course 5_expected.png") });
+        }
+
+        [TestMethod]
+        public void PdfCreationLayerSprint()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create_blend\\layersprint");
+            settings.CourseIds = new Id<Course>[1] { CourseId(8) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.itemScaling = ItemScaling.None;
+            appearance.mapStandard = "Spr2019";
+            appearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            appearance.mapLayerForLowerPurple = 10;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\layersprint\\Course 5.pdf") },
+                new string[1] { TestUtil.GetTestFile("controller\\pdf_create_blend\\layersprint\\Course 5_expected.png") });
+        }
+
 
 
         [TestMethod]

@@ -46,6 +46,8 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             controller.SetCourseAppearance(appearance);
+            if (controller.LowerPurpleMapLayer != null)
+                controller.MapDisplay.LowerPurpleMapLayer = controller.LowerPurpleMapLayer;
 
             for (int i = 0; i < expectedBitmapNames.Length; ++i) {
                 File.Delete(expectedBitmapNames[i]);
@@ -199,6 +201,97 @@ namespace PurplePen.Tests
                                TestUtil.GetTestFile("bitmapcreate\\create5\\Course 2.jpg")},
                 new string[] { TestUtil.GetTestFile("bitmapcreate\\create5\\Course 1_baseline.png"),
                                TestUtil.GetTestFile("bitmapcreate\\create5\\Course 2_baseline.png")});
+        }
+
+        [TestMethod]
+        public void BitmapCreationBlendNone()
+        {
+            BitmapCreationSettings settings = new BitmapCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("bitmapcreate\\blend\\none");
+            settings.CourseIds = new Id<Course>[] { CourseId(8) };
+            settings.Dpi = 300;
+            settings.ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberRoboto = false;
+            appearance.purpleColorBlend = PurpleColorBlend.None;
+            appearance.itemScaling = ItemScaling.None;
+
+            CreateBitmapFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\none\\Course 5.png"),},
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\none\\Course 5_baseline.png")});
+        }
+
+        [TestMethod]
+        public void BitmapCreationBlend()
+        {
+            BitmapCreationSettings settings = new BitmapCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("bitmapcreate\\blend\\blend");
+            settings.CourseIds = new Id<Course>[] { CourseId(8) };
+            settings.Dpi = 300;
+            settings.ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberRoboto = false;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+            appearance.itemScaling = ItemScaling.None;
+
+            CreateBitmapFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\blend\\Course 5.png"), },
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\blend\\Course 5_baseline.png") });
+        }
+
+        [TestMethod]
+        public void BitmapCreationBlendLayer()
+        {
+            BitmapCreationSettings settings = new BitmapCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("bitmapcreate\\blend\\layer");
+            settings.CourseIds = new Id<Course>[] { CourseId(8) };
+            settings.Dpi = 300;
+            settings.ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberRoboto = false;
+            appearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            appearance.mapLayerForLowerPurple = 10;
+            appearance.itemScaling = ItemScaling.None;
+
+            CreateBitmapFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\layer\\Course 5.png"), },
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\layer\\Course 5_baseline.png") });
+        }
+
+        [TestMethod]
+        public void BitmapCreationBlendLayerSprint()
+        {
+            BitmapCreationSettings settings = new BitmapCreationSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("bitmapcreate\\blend\\layersprint");
+            settings.CourseIds = new Id<Course>[] { CourseId(8) };
+            settings.Dpi = 300;
+            settings.ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
+
+            Directory.CreateDirectory(settings.outputDirectory);
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.mapStandard = "Spr2019";
+            appearance.numberRoboto = false;
+            appearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+            appearance.mapLayerForLowerPurple = 10;
+            appearance.itemScaling = ItemScaling.None;
+
+            CreateBitmapFiles(TestUtil.GetTestFile("courseprinting\\Lord Hill Feb 2024 - Final.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\layersprint\\Course 5.png"), },
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\blend\\layersprint\\Course 5_baseline.png") });
         }
 
 
