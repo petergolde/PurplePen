@@ -2849,9 +2849,11 @@ namespace PurplePen
             }
             else if (courseAppearance.purpleColorBlend == PurpleColorBlend.Blend) {
                 xmloutput.WriteAttributeString("blend-purple", "true");
+                xmloutput.WriteAttributeString("blend-style", "blend");
             }
             else if (courseAppearance.purpleColorBlend == PurpleColorBlend.UpperLowerPurple) {
-                xmloutput.WriteAttributeString("blend-purple", "layer");
+                xmloutput.WriteAttributeString("blend-purple", "true");
+                xmloutput.WriteAttributeString("blend-style", "layer");
                 xmloutput.WriteAttributeString("lower-purple-layer", XmlConvert.ToString(courseAppearance.mapLayerForLowerPurple));
             }
 
@@ -2979,14 +2981,16 @@ namespace PurplePen
                         courseAppearance.autoLegGapSize = xmlinput.GetAttributeFloat("auto-leg-gap-size", 3.5F);  // default value
 
                         string blendPurpleText = xmlinput.GetAttributeString("blend-purple", "false");
-                        if (blendPurpleText == "true")
-                            courseAppearance.purpleColorBlend = PurpleColorBlend.Blend;
-                        else if (blendPurpleText == "layer") {
-                            courseAppearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
-                            courseAppearance.mapLayerForLowerPurple = xmlinput.GetAttributeInt("lower-purple-layer", 0);
-                        }
-                        else {
+                        string blendPurpleStyle = xmlinput.GetAttributeString("blend-style", "blend");
+                        if (blendPurpleText == "false") {
                             courseAppearance.purpleColorBlend = PurpleColorBlend.None;
+                        }
+                        else if (blendPurpleText == "true") {
+                            courseAppearance.purpleColorBlend = PurpleColorBlend.Blend;
+                            if (blendPurpleStyle == "layer") {
+                                courseAppearance.purpleColorBlend = PurpleColorBlend.UpperLowerPurple;
+                                courseAppearance.mapLayerForLowerPurple = xmlinput.GetAttributeInt("lower-purple-layer", 0);
+                            }
                         }
 
                         

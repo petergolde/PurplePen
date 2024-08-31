@@ -188,9 +188,9 @@ namespace PurplePen
 
             DownloadProgressDialog downloadProgressDialog = new DownloadProgressDialog();
             client.DownloadProgressChanged += (sender, e) => { downloadProgressDialog.SetProgress(e.ProgressPercentage); };
-            client.DownloadFileCompleted += (sender, e) => { 
+            client.DownloadFileCompleted += (sender, e) => {
                 completed = true;
-                downloadProgressDialog.DialogResult = DialogResult.OK; 
+                downloadProgressDialog.DialogResult = DialogResult.OK;
             };
 
             client.DownloadFileAsync(downloadFrom, downloadedFile);
@@ -270,8 +270,7 @@ namespace PurplePen
                         try {
                             File.Delete(file);
                         }
-                        catch (Exception) 
-                        { }
+                        catch (Exception) { }
                     }
                 }
             }
@@ -319,7 +318,7 @@ namespace PurplePen
                     }
                 }
 #else
-                    if (results.CurrentVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.CurrentVersion) < 0) {
+                if (results.CurrentVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.CurrentVersion) < 0) {
                     AskToDownload(results.CurrentVersion, results.CurrentFileName);
                 }
                 else if (results.PrereleaseVersion != null && Util.CompareVersionStrings(VersionNumber.Current, results.PrereleaseVersion) < 0 && Util.SameExceptRevision(VersionNumber.Current, results.PrereleaseVersion)) {
@@ -374,9 +373,9 @@ namespace PurplePen
                 }
             }
 #else
-                // FOr the non-store version, we check for updates by downloading a file from the server.
+            // FOr the non-store version, we check for updates by downloading a file from the server.
 
-                DeletePreviouslyDownloadedFiles();
+            DeletePreviouslyDownloadedFiles();
 
             // We need to check to see if a new version is available. We do this in the background.
             // If a new version is available, the version number is returned as the result of the background
@@ -394,7 +393,7 @@ namespace PurplePen
             }
 
             // Only check latest prerelease if this is a pre-release.
-            if (Util.IsPrerelease(VersionNumber.Current)) { 
+            if (Util.IsPrerelease(VersionNumber.Current)) {
                 try {
                     latestPrerelease = client.DownloadString(downloadLocation + latestPreleaseName);
                 }
