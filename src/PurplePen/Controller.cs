@@ -215,6 +215,11 @@ namespace PurplePen
             ev.mapScale = scale;
             ev.mapDpi = dpi;
             ev.ignoreMissingFonts = false;            // don't ignore missing fonts on first load of map.
+
+            // Only OCAD/OOM maps support upper/lower purple blending style.
+            if (mapType != MapType.OCAD && ev.courseAppearance.purpleColorBlend == PurpleColorBlend.UpperLowerPurple)
+                ev.courseAppearance.purpleColorBlend = PurpleColorBlend.Blend;
+
             eventDB.ChangeEvent(ev);
 
             undoMgr.EndCommand(792);
