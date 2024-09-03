@@ -275,10 +275,6 @@ namespace PurplePen
 
     static class FindPurple
     {
-        // All the names called purple in different languages.
-        private static string[] purpleNames = 
-            { "Purple" };
-
         // Determine if a color is actually some shade of purple.
         public static bool IsPurple(float cyan, float magenta, float yellow, float black)
         {
@@ -302,17 +298,18 @@ namespace PurplePen
             return (black > 0.95f && cyan < 0.05F && yellow < 0.05F && cyan < 0.05F);
         }
 
-        // Search all colors for one that is closest to pure magenta.
-        public static SymColor FindClosedToMagenta(List<SymColor> colors)
+        // Search all colors for one that is closest to the IO purple color.
+        public static SymColor FindClosestToIofPurple(List<SymColor> colors)
         {
             float c, m, y, k;
+            float cIOF = NormalCourseAppearance.courseColorC, mIOF = NormalCourseAppearance.courseColorM, yIOF = NormalCourseAppearance.courseColorY, kIOF = NormalCourseAppearance.courseColorK;
             double distance, minDistance = 1000;
             SymColor bestColor = null;
 
             foreach (SymColor color in colors) {
                 color.GetCMYK(out c, out m, out y, out k);
                 if (IsPurple(c, m, y, k)) {
-                    distance = c * c + (m - 1) * (m - 1) + (y * y) + (k * k);
+                    distance = ((c - cIOF) * (c - cIOF)) + ((m - mIOF) * (m - mIOF)) + ((y - yIOF) * (y - yIOF)) + ((k - kIOF) * (k - kIOF));
                     if (distance < minDistance) {
                         minDistance = distance;
                         bestColor = color;
@@ -323,25 +320,13 @@ namespace PurplePen
             return bestColor;
         }
 
-        // Search all the colors for a color called "Purple".
+        // Find the best purple color.
         public static bool FindPurpleColor(List<SymColor> colors, out short ocadId, out float cyan, out float magenta, out float yellow, out float black)
         {
             float c, m, y, k;
 
-            // Search all colors for one names "Purple" (in any language).
-            foreach (SymColor color in colors) {
-                if (Array.IndexOf(purpleNames, color.Name) >= 0) {
-                    color.GetCMYK(out c, out m, out y, out k);
-                    if (IsPurple(c, m, y, k)) {
-                        ocadId = color.OcadId;
-                        cyan = c; magenta = m; yellow = y; black = k;
-                        return true;
-                    }
-                }
-            }
-
-            // Search all colors for one that is closest to pure magenta.
-            SymColor bestColor = FindClosedToMagenta(colors);
+            // Search all colors for one that is closest to IOF definition of purple.
+            SymColor bestColor = FindClosestToIofPurple(colors);
 
             if (bestColor != null) {
                 bestColor.GetCMYK(out c, out m, out y, out k);
@@ -357,62 +342,102 @@ namespace PurplePen
         }
 
         // Return the ocadId of the best lower purple color. We choose
-        // the next purple color below the top-most solid green color and black color. If there isn't one,
+        // the next purple color below the top-most black color. If there isn't one,
         // we return the color below the top-most solid green/black.
-        public static int FindLowerPurple(List<SymColor> colors)
+        //
+        // Returns the best OCAD ID, and a bool indicating whether the color is a lower purple
+        // we found as expected.
+        public static (int, bool) FindLowerPurpleHelper(List<SymColor> colors)
         {
-            int greenIndex = -1;
-            int blackIndex = -1;
+            bool foundPurple;
+            float cPurple, mPurple, yPurple, kPurple;
 
-            // First, find the top-most solid green.
-            for (int i = colors.Count - 1; i >= 0; --i) {
-                float c, m, y, k;
-                colors[i].GetCMYK(out c, out m, out y, out k);
-                if (IsSolidGreen(c, m, y, k)) {
-                    greenIndex = i;
-                    break;
+            // Get the best purple in the colors.
+            foundPurple = FindPurpleColor(colors, out short _, out cPurple, out mPurple, out yPurple, out kPurple);
+
+            if (foundPurple) {
+                // Start at half way up the color chart, and find the lowest color that exactly matches the given purple.
+                for (int i = colors.Count / 2; i < colors.Count; ++i) {
+                    float c, m, y, k;
+                    colors[i].GetCMYK(out c, out m, out y, out k);
+                    if (c == cPurple && m == mPurple && y == yPurple && k == kPurple) {
+                        // There must be a black, then another purple above this.
+                        for (int j = i + 1; j < colors.Count; ++j) {
+                            float c2, m2, y2, k2;
+                            colors[j].GetCMYK(out c2, out m2, out y2, out k2);
+                            if (IsBlack(c2, m2, y2, k2)) {
+                                for (int l = j + 1; l < colors.Count; ++l) {
+                                    float c3, m3, y3, k3;
+                                    colors[l].GetCMYK(out c3, out m3, out y3, out k3);
+                                    if (c3 == cPurple && m3 == mPurple && y3 == yPurple && k3 == kPurple) {
+                                        return (colors[i].OcadId, true); // Return first purple found.
+                                    }
+                                }
+                            }
+                        }
+
+                        break;
+                    }
                 }
             }
 
-            // First, find the top-most black.
+            // If that didn't work, we start at the top and find the top-most black, then solid green.
+            int topGreenIndex = -1;
+            int topBlackIndex = -1;
+
             for (int i = colors.Count - 1; i >= 0; --i) {
                 float c, m, y, k;
                 colors[i].GetCMYK(out c, out m, out y, out k);
                 if (IsBlack(c, m, y, k)) {
-                    blackIndex = i;
+                    topBlackIndex = i;
                     break;
                 }
             }
 
-            int bottomOfBlackAndGreen;
-            if (blackIndex >= 0 && greenIndex >= 0) 
-                bottomOfBlackAndGreen = Math.Min(blackIndex, greenIndex);
-            else if (blackIndex >= 0)
-                bottomOfBlackAndGreen = blackIndex;
-            else if (greenIndex >= 0)
-                bottomOfBlackAndGreen = greenIndex;
-            else
-                bottomOfBlackAndGreen = -1;
-
-            // Find the next purple color below the solid green and black.
-            if (bottomOfBlackAndGreen > 0) {
-                for (int i = bottomOfBlackAndGreen - 1; i >= 0; --i) {
+            if (topBlackIndex > 0) { 
+                for (int i = topBlackIndex - 1; i >= 0; --i) {
                     float c, m, y, k;
                     colors[i].GetCMYK(out c, out m, out y, out k);
-                    if (IsPurple(c, m, y, k))
-                        return colors[i].OcadId;
+                    if (IsSolidGreen(c, m, y, k)) {
+                        topGreenIndex = i;
+                        break;
+                    }
                 }
+            }
 
-                // If there is no purple below the black, return the color 
-                // just below the black.
-                return colors[bottomOfBlackAndGreen - 1].OcadId;
+            // Return the color just below that green.
+            if (topGreenIndex > 0)
+                return (colors[topGreenIndex - 1].OcadId, false);
+
+            // Otherwise, just return top color.
+            return (colors[colors.Count - 1].OcadId, false);
+        }
+
+        // Retur the OCAD ID of the best place to put lower purple than can be found. She always
+        // be comfirmed by the user, because in some cases it might not be great.
+        public static int FindBestLowerPurpleLayer(List<SymColor> colors)
+        {
+            int ocadID;
+            (ocadID, _) = FindLowerPurpleHelper(colors);
+            return ocadID;
+        }
+
+        // Find the lower purple layer if it exists, otherwise returns NULL. Will always
+        // be a purple color.
+        public static int? FindLowerPurpleIfPresent(List<SymColor> colors)
+        {
+            int ocadID;
+            bool goodPurple;
+            (ocadID, goodPurple) = FindLowerPurpleHelper(colors);
+
+            if (goodPurple) {
+                return ocadID;
             }
             else {
-                // If there is no black (or black is the bottom color), return the
-                // top.
-                return colors[colors.Count - 1].OcadId;
+                return null;
             }
         }
+
 
         // Get the purple color to use for display, taking into account the user preferences in courseAppearance, the map loaded into the mapDisplay, 
         // and the default purple if none of those provide a color. MapDisplay and courseAppearance can be null, in which case they won't be used.

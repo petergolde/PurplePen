@@ -3313,7 +3313,7 @@ namespace PurplePen
         public int GetDefaultLowerPurpleLayer()
         {
             List<SymColor> symColors = mapDisplay.GetMapColors();
-            return FindPurple.FindLowerPurple(symColors);
+            return FindPurple.FindBestLowerPurpleLayer(symColors);
         }
 
         public bool OcadOverprintEffect

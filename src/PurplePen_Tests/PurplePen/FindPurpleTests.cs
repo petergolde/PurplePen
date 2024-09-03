@@ -85,32 +85,6 @@ namespace PurplePen.Tests
 
 
         [TestMethod]
-        public void FindPurpleByName()
-        {
-            Map map = new Map(new GDIPlus_TextMetrics(), null);
-            using (map.Write()) {
-                map.AddColor("Purple 50%", 14, 0, 0.5F, 0, 0, false);
-                map.AddColor("Purple", 11, 0.2F, 1F, 0.1F, 0.08F, false);
-                map.AddColor("Blue", 12, 0.95F, 0.35F, 0, 0, false);
-                map.AddColor("Purplatci", 18, 0, 1F, 0, 0, false);
-                map.AddColor("Black", 88, 0, 0, 0, 1F, false);
-            }
-
-            short ocadId;
-            float c, m, y, k;
-            List<SymColor> colorList;
-            using (map.Read())
-                colorList = new List<SymColor>(map.AllColors);
-
-            Assert.IsTrue(FindPurple.FindPurpleColor(colorList, out ocadId, out c, out m, out y, out k));
-            Assert.AreEqual(11, ocadId);
-            Assert.AreEqual(0.2F, c);
-            Assert.AreEqual(1F, m);
-            Assert.AreEqual(0.1F, y);
-            Assert.AreEqual(0.08F, k);
-        }
-
-        [TestMethod]
         public void FindPurpleByValue()
         {
             Map map = new Map(new GDIPlus_TextMetrics(), null);
@@ -160,10 +134,10 @@ namespace PurplePen.Tests
             Setup("findpurple\\Sample Event.ppen");
             List<SymColor> colors = controller.MapDisplay.GetMapColors();
 
-            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
-            Assert.AreEqual(102, lowerPurpleId);
+            int lowerPurpleId = FindPurple.FindBestLowerPurpleLayer(colors);
             SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
-            Assert.AreEqual("White for road under construct.", color.Name);
+            Assert.AreEqual(114, lowerPurpleId);
+            Assert.AreEqual("Green 60%", color.Name);
         }
 
 
@@ -174,9 +148,9 @@ namespace PurplePen.Tests
             Setup("findpurple\\OCAD_ISOM_Blank.ppen");
             List<SymColor> colors = controller.MapDisplay.GetMapColors();
 
-            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
-            Assert.AreEqual(52, lowerPurpleId);
+            int lowerPurpleId = FindPurple.FindBestLowerPurpleLayer(colors);
             SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual(52, lowerPurpleId);
             Assert.AreEqual("Lower purple for course planning", color.Name);
         }
 
@@ -186,9 +160,9 @@ namespace PurplePen.Tests
             Setup("findpurple\\OCAD_ISSprOM_Blank.ppen");
             List<SymColor> colors = controller.MapDisplay.GetMapColors();
 
-            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
-            Assert.AreEqual(52, lowerPurpleId);
+            int lowerPurpleId = FindPurple.FindBestLowerPurpleLayer(colors);
             SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
+            Assert.AreEqual(52, lowerPurpleId);
             Assert.AreEqual("Lower purple for course planning", color.Name);
         }
 
@@ -198,7 +172,7 @@ namespace PurplePen.Tests
             Setup("findpurple\\OOM_ISOM_Blank.ppen");
             List<SymColor> colors = controller.MapDisplay.GetMapColors();
 
-            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            int lowerPurpleId = FindPurple.FindBestLowerPurpleLayer(colors);
             Assert.AreEqual(7, lowerPurpleId);
             SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
             Assert.AreEqual("Purple for track symbols", color.Name);
@@ -210,7 +184,7 @@ namespace PurplePen.Tests
             Setup("findpurple\\OOM_ISSprOM_Blank.ppen");
             List<SymColor> colors = controller.MapDisplay.GetMapColors();
 
-            int lowerPurpleId = FindPurple.FindLowerPurple(colors);
+            int lowerPurpleId = FindPurple.FindBestLowerPurpleLayer(colors);
             Assert.AreEqual(5, lowerPurpleId);
             SymColor color = colors.Single(sc => sc.OcadId == lowerPurpleId);
             Assert.AreEqual("Purple for track symbols", color.Name);
