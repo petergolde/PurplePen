@@ -71,10 +71,11 @@ namespace PurplePen
 
         // Validate the map file to make sure it is readable. If OK, return true and set the scale.
         // If not OK, return false and set the error message. 
-        public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out Size bitmapSize, out RectangleF mapBounds, out MapType mapType, out string errorMessageText)
+        public static bool ValidateMapFile(string mapFileName, out float scale, out float dpi, out Size bitmapSize, out RectangleF mapBounds, out MapType mapType, out int? lowerPurpleLayer, out string errorMessageText)
         {
             scale = 0; dpi = 0;
             mapType = MapType.None;
+            lowerPurpleLayer = null;
             bitmapSize = new Size();
             string fileExtension = Path.GetExtension(mapFileName);
 
@@ -134,6 +135,7 @@ namespace PurplePen
             {
                 scale = map.MapScale;
                 mapBounds = map.Bounds;
+                lowerPurpleLayer = FindPurple.FindLowerPurpleIfPresent(new List<SymColor>(map.AllColors));
             }
 
             errorMessageText = "";
@@ -256,7 +258,7 @@ namespace PurplePen
             string errorMessageText;
 
             // If this failes, mapBounds will be empty rectangle, which is what we want to pass to GetDefaultPageSize;
-            ValidateMapFile(mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            ValidateMapFile(mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out int? _, out errorMessageText);
 
             PrintArea printArea = new PrintArea();
             printArea.autoPrintArea = true;

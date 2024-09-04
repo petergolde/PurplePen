@@ -73,15 +73,17 @@ namespace PurplePen
                 float dpi;  // not used here.
                 float mapScale;
                 MapType mapType;
+                int? lowerPurpleMapLayer;
                 Size bitmapSize;
                 RectangleF mapBounds;
-                if (MapUtil.ValidateMapFile(containingWizard.MapFileName, out mapScale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText)) 
+                if (MapUtil.ValidateMapFile(containingWizard.MapFileName, out mapScale, out dpi, out bitmapSize, out mapBounds, out mapType, out lowerPurpleMapLayer, out errorMessageText)) 
                 {
                     // map file is OK.
                     containingWizard.MapScale = mapScale;
                     containingWizard.MapType = mapType;
                     containingWizard.BitmapSize = bitmapSize;
                     containingWizard.mapBounds = mapBounds;
+                    containingWizard.LowerPurpleMapLayer = lowerPurpleMapLayer;
                     errorDisplayPanel.Visible = false;
                     infoDisplayPanel.Visible = true;
                     ((Control)ParentForm.AcceptButton).Focus();

@@ -166,6 +166,8 @@ Invalid control point kind 'norfmal''
             info.descriptionStandard = "2018";
             info.mapStandard = "2017";
             info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
+            info.blend = PurpleColorBlend.Blend;
+            info.lowerPurpleLayer = null;
 
             bool success = controller.InitialNewEvent(info);
             Assert.IsTrue(success);
@@ -187,6 +189,7 @@ Invalid control point kind 'norfmal''
             Assert.AreEqual("de", e.descriptionLangId);
             Assert.AreEqual("2018", e.descriptionStandard);
             Assert.AreEqual("2017", e.courseAppearance.mapStandard);
+            Assert.AreEqual(PurpleColorBlend.Blend, e.courseAppearance.purpleColorBlend);
             Assert.IsFalse(controller.IsDirty);
 
             // Make sure we can add a new control and a new course.
@@ -226,6 +229,8 @@ Invalid control point kind 'norfmal''
             info.descriptionStandard = "2018";
             info.mapStandard = "2017";
             info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
+            info.blend = PurpleColorBlend.Blend;
+            info.lowerPurpleLayer = null;
 
             success = controller.TryCloseFile();
             Assert.IsTrue(success);
@@ -284,6 +289,8 @@ Invalid control point kind 'norfmal''
             info.descriptionStandard = "2018";
             info.mapStandard = "2017";
             info.printArea = MapUtil.GetDefaultPrintArea(info.mapFileName, info.allControlsPrintScale / info.scale);
+            info.blend = PurpleColorBlend.Blend;
+            info.lowerPurpleLayer = null;
 
             bool success = controller.InitialNewEvent(info);
             Assert.IsFalse(success);

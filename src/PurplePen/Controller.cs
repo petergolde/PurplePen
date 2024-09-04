@@ -507,6 +507,8 @@ namespace PurplePen
             public PrintArea printArea;        // default print area.
             public string descriptionStandard; // description IOF standard
             public string mapStandard;         // map IOF standard
+            public PurpleColorBlend blend;     // purple color blend
+            public int? lowerPurpleLayer;      // lower purple layer for upper/lower purple blending.
         }
 
         // Create a new event. Should only be called before any file has been loaded.
@@ -530,6 +532,11 @@ namespace PurplePen
             ev.printArea = info.printArea;
             ev.descriptionStandard = info.descriptionStandard;
             ev.courseAppearance.mapStandard = info.mapStandard;
+            ev.courseAppearance.purpleColorBlend = info.blend;
+            if (info.lowerPurpleLayer.HasValue) { 
+                ev.courseAppearance.mapLayerForLowerPurple = info.lowerPurpleLayer.Value;
+            }
+
             if (info.mapStandard == "2000") {
                 ev.courseAppearance.itemScaling = ItemScaling.None;
             }

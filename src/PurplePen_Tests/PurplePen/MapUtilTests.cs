@@ -58,9 +58,10 @@ namespace PurplePen.Tests
             RectangleF mapBounds;
             MapType mapType;
             string errorMessageText;
+            int? lowerPurpleLayer;
             bool result;
 
-            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("mapdisplay\\SampleEvent.ocd"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("mapdisplay\\SampleEvent.ocd"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out lowerPurpleLayer, out errorMessageText);
             Assert.IsTrue(result);
             Assert.AreEqual(MapType.OCAD, mapType);
             Assert.AreEqual(15000, scale);
@@ -68,8 +69,9 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.01F, mapBounds.Top, 0.01F);
             Assert.AreEqual(200.07F, mapBounds.Width, 0.01F);
             Assert.AreEqual(267.79F, mapBounds.Height, 0.01F);
+            Assert.IsNull(lowerPurpleLayer);
 
-            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("mapdisplay\\overprint.ocd"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("mapdisplay\\overprint.ocd"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out lowerPurpleLayer, out errorMessageText);
             Assert.IsTrue(result);
             Assert.AreEqual(MapType.OCAD, mapType);
             Assert.AreEqual(10000, scale);
@@ -77,6 +79,17 @@ namespace PurplePen.Tests
             Assert.AreEqual(169.43F, mapBounds.Top, 0.01F);
             Assert.AreEqual(112.77F, mapBounds.Right, 0.01F);
             Assert.AreEqual(214.96F, mapBounds.Bottom, 0.01F);
+            Assert.IsNull(lowerPurpleLayer);
+
+            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("courseprinting\\LordHill_ver16_2024Jan_scaled.omap"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out lowerPurpleLayer, out errorMessageText);
+            Assert.IsTrue(result);
+            Assert.AreEqual(MapType.OCAD, mapType);
+            Assert.AreEqual(10000, scale);
+            Assert.AreEqual(-303.74F, mapBounds.Left, 0.01F);
+            Assert.AreEqual(-406.05F, mapBounds.Top, 0.01F);
+            Assert.AreEqual(395.76F, mapBounds.Right, 0.01F);
+            Assert.AreEqual(133.40F, mapBounds.Bottom, 0.01F);
+            Assert.AreEqual(10, lowerPurpleLayer);
 
         }
 
@@ -88,9 +101,10 @@ namespace PurplePen.Tests
             RectangleF mapBounds;
             MapType mapType;
             string errorMessageText;
+            int? lowerPurpleLayer;
             bool result;
 
-            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("mapdisplay\\SampleEvent.jpg"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("mapdisplay\\SampleEvent.jpg"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out lowerPurpleLayer, out errorMessageText);
             Assert.IsTrue(result);
             Assert.AreEqual(MapType.Bitmap, mapType);
             Assert.AreEqual(96, dpi, 0.1F);
@@ -98,6 +112,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0F, mapBounds.Top, 0.01F);
             Assert.AreEqual(628.39F, mapBounds.Width, 0.01F);
             Assert.AreEqual(841.11F, mapBounds.Height, 0.01F);
+            Assert.IsNull(lowerPurpleLayer);
         }
 
 
@@ -109,9 +124,10 @@ namespace PurplePen.Tests
             RectangleF mapBounds;
             MapType mapType;
             string errorMessageText;
+            int? lowerPurpleLayer;
             bool result;
 
-            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("pdfmaps\\Potholes.pdf"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            result = MapUtil.ValidateMapFile(TestUtil.GetTestFile("pdfmaps\\Potholes.pdf"), out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out lowerPurpleLayer, out errorMessageText);
             Assert.IsTrue(result);
             Assert.AreEqual(MapType.PDF, mapType);
             Assert.AreEqual(600, dpi, 0.1F);
@@ -119,6 +135,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0F, mapBounds.Top, 0.01F);
             Assert.AreEqual(215.9F, mapBounds.Width, 0.01F);
             Assert.AreEqual(279.4F, mapBounds.Height, 0.01F);
+            Assert.IsNull(lowerPurpleLayer);
         }
 
         [TestMethod]

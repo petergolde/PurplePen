@@ -3475,7 +3475,7 @@ namespace PurplePen
             string errorMessageText;
 
             // If this failes, mapBounds will be empty rectangle, which is what we want to pass to GetDefaultPageSize;
-            MapUtil.ValidateMapFile(eventDB.mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out errorMessageText);
+            MapUtil.ValidateMapFile(eventDB.mapFileName, out scale, out dpi, out bitmapSize, out mapBounds, out mapType, out int? _, out errorMessageText);
 
             eventDB.printArea.UpdateUnknownPageSize(mapBounds, mapScale);
 

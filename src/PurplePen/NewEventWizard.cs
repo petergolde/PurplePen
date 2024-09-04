@@ -64,6 +64,7 @@ namespace PurplePen
         internal float DefaultPrintScale;
         internal string MapFileName;
         internal Size BitmapSize;
+        internal int? LowerPurpleMapLayer;
         internal RectangleF mapBounds;
 
         Controller.CreateEventInfo createEventInfo;
@@ -241,6 +242,15 @@ namespace PurplePen
                 createEventInfo.mapStandard = "2000";
             }
             createEventInfo.descriptionStandard = standardsPage.radioButtonDescriptions2018.Checked ? "2018" : "2004";
+
+            // Set default blending for purple color.
+            if (createEventInfo.mapType == MapType.OCAD && LowerPurpleMapLayer != null) {
+                createEventInfo.blend = PurpleColorBlend.UpperLowerPurple;
+                createEventInfo.lowerPurpleLayer = LowerPurpleMapLayer;
+            }
+            else {
+                createEventInfo.blend = PurpleColorBlend.Blend;
+            }
 
             PrintArea printArea = new PrintArea();
             printArea.autoPrintArea = true;
