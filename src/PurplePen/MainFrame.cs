@@ -154,6 +154,7 @@ namespace PurplePen
             addDescriptionsMenu.Image = descriptionsToolStripMenuItem.Image;
             oobImage = addOutOfBoundsMenu.Image = outOfBoundsToolStripMenuItem.Image;
             dangerousImage = addDangerousMenu.Image = dangerousToolStripMenuItem.Image;
+            addConstructionMenu.Image = constructionToolStripMenuItem.Image;
             addBoundaryMenu.Image = boundaryToolStripMenuItem.Image;
             addTextMenu.Image = textToolStripMenuItem.Image;
             addImageMenu.Image = imageToolStripMenuItem.Image;
@@ -1632,6 +1633,12 @@ namespace PurplePen
         {
             controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Dangerous, true);
         }
+
+        private void addConstructionMenu_Click(object sender, EventArgs e)
+        {
+            controller.BeginAddLineOrAreaSpecialMode(SpecialKind.Construction, true);
+        }
+
 
         private void addBoundaryMenu_Click(object sender, EventArgs e)
         {

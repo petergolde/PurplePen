@@ -117,51 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>courseTabs</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="courseTabs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="courseTabs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 49</value>
-  </data>
-  <data name="courseTabs.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="courseTabs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="courseTabs.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;courseTabs.Name" xml:space="preserve">
-    <value>courseTabs</value>
-  </data>
-  <data name="&gt;&gt;courseTabs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;courseTabs.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;courseTabs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -171,6 +131,7 @@
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>950, 0</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -188,6 +149,33 @@
   </data>
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="courseTabs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="courseTabs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 49</value>
+  </data>
+  <data name="courseTabs.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="courseTabs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>958, 20</value>
+  </data>
+  <data name="courseTabs.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;courseTabs.Name" xml:space="preserve">
+    <value>courseTabs</value>
+  </data>
+  <data name="&gt;&gt;courseTabs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;courseTabs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;courseTabs.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="splitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -213,6 +201,39 @@
   <data name="leftColumnPanel.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="radioButtonDescriptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="radioButtonDescriptions.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="radioButtonDescriptions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonDescriptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="radioButtonDescriptions.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 246</value>
+  </data>
+  <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 0, 3</value>
+  </data>
+  <data name="radioButtonDescriptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="radioButtonDescriptions.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="radioButtonDescriptions.Text" xml:space="preserve">
+    <value>Descriptions</value>
+  </data>
+  <data name="radioButtonDescriptions.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;radioButtonDescriptions.Name" xml:space="preserve">
     <value>radioButtonDescriptions</value>
   </data>
@@ -225,6 +246,39 @@
   <data name="&gt;&gt;radioButtonDescriptions.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="radioButtonTopology.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="radioButtonTopology.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+    <value>Button</value>
+  </data>
+  <data name="radioButtonTopology.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioButtonTopology.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="radioButtonTopology.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 246</value>
+  </data>
+  <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 3, 3, 3</value>
+  </data>
+  <data name="radioButtonTopology.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 23</value>
+  </data>
+  <data name="radioButtonTopology.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="radioButtonTopology.Text" xml:space="preserve">
+    <value>Ordering</value>
+  </data>
+  <data name="radioButtonTopology.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
   <data name="&gt;&gt;radioButtonTopology.Name" xml:space="preserve">
     <value>radioButtonTopology</value>
   </data>
@@ -236,6 +290,153 @@
   </data>
   <data name="&gt;&gt;radioButtonTopology.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="mapViewerTopology.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="mapViewerTopology.CenterPoint" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuAAAl7kL
+</value>
+  </data>
+  <data name="mapViewerTopology.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mapViewerTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 241</value>
+  </data>
+  <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>mapViewerTopology</value>
+  </data>
+  <data name="mapViewerTopology.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
+        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAI/H8wYoP/8EQ8XxC
+        8A5/Qgs=
+</value>
+  </data>
+  <data name="&gt;&gt;mapViewerTopology.Name" xml:space="preserve">
+    <value>mapViewerTopology</value>
+  </data>
+  <data name="&gt;&gt;mapViewerTopology.Type" xml:space="preserve">
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=3.5.2.500, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mapViewerTopology.Parent" xml:space="preserve">
+    <value>panelTopology</value>
+  </data>
+  <data name="&gt;&gt;mapViewerTopology.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="topologyScrollBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Right</value>
+  </data>
+  <data name="topologyScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="topologyScrollBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 0</value>
+  </data>
+  <data name="topologyScrollBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 241</value>
+  </data>
+  <data name="topologyScrollBar.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;topologyScrollBar.Name" xml:space="preserve">
+    <value>topologyScrollBar</value>
+  </data>
+  <data name="&gt;&gt;topologyScrollBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;topologyScrollBar.Parent" xml:space="preserve">
+    <value>panelTopology</value>
+  </data>
+  <data name="&gt;&gt;topologyScrollBar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelTopology.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelTopology.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelTopology.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 243</value>
+  </data>
+  <data name="panelTopology.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="panelTopology.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelTopology.Name" xml:space="preserve">
+    <value>panelTopology</value>
+  </data>
+  <data name="&gt;&gt;panelTopology.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelTopology.Parent" xml:space="preserve">
+    <value>panelDescriptionAndTopology</value>
+  </data>
+  <data name="&gt;&gt;panelTopology.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="descriptionControl.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="descriptionControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="descriptionControl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="descriptionControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="descriptionControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 243</value>
+  </data>
+  <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;descriptionControl.Name" xml:space="preserve">
+    <value>descriptionControl</value>
+  </data>
+  <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
+    <value>PurplePen.DescriptionControl, PurplePen, Version=3.5.2.500, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
+    <value>panelDescriptionAndTopology</value>
+  </data>
+  <data name="&gt;&gt;descriptionControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelDescriptionAndTopology.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelDescriptionAndTopology.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelDescriptionAndTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 243</value>
+  </data>
+  <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;panelDescriptionAndTopology.Name" xml:space="preserve">
     <value>panelDescriptionAndTopology</value>
@@ -259,7 +460,7 @@
     <value>2</value>
   </data>
   <data name="leftColumnPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 269</value>
+    <value>256, 272</value>
   </data>
   <data name="leftColumnPanel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -307,7 +508,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="selectionPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 99</value>
+    <value>256, 96</value>
   </data>
   <data name="selectionPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -343,7 +544,7 @@
     <value>256, 371</value>
   </data>
   <data name="splitDescription.SplitterDistance" type="System.Int32, mscorlib">
-    <value>269</value>
+    <value>272</value>
   </data>
   <data name="splitDescription.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -379,7 +580,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAAvLkL
+        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAYuQAA1LkL
 </value>
   </data>
   <data name="mapViewer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -401,7 +602,7 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAAaezwi/dKcLupjND
+        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAAaezwjvdKcLupjND
         ztypQgs=
 </value>
   </data>
@@ -409,7 +610,7 @@
     <value>mapViewer</value>
   </data>
   <data name="&gt;&gt;mapViewer.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.MapView.MapViewer, PurplePen, Version=3.5.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;mapViewer.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -419,6 +620,9 @@
   </data>
   <data name="horizScroll.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
+  </data>
+  <data name="horizScroll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="horizScroll.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 351</value>
@@ -443,6 +647,9 @@
   </data>
   <data name="vertScroll.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
+  </data>
+  <data name="vertScroll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="vertScroll.Location" type="System.Drawing.Point, System.Drawing">
     <value>679, 30</value>
@@ -487,7 +694,7 @@
     <value>coursePartBanner</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Type" xml:space="preserve">
-    <value>PurplePen.CoursePartBanner, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.CoursePartBanner, PurplePen, Version=3.5.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;coursePartBanner.Parent" xml:space="preserve">
     <value>splitContainer.Panel2</value>
@@ -531,297 +738,6 @@
   <data name="&gt;&gt;splitContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="radioButtonDescriptions.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="radioButtonDescriptions.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="radioButtonDescriptions.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonDescriptions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="radioButtonDescriptions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 243</value>
-  </data>
-  <data name="radioButtonDescriptions.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 0, 3</value>
-  </data>
-  <data name="radioButtonDescriptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
-  </data>
-  <data name="radioButtonDescriptions.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="radioButtonDescriptions.Text" xml:space="preserve">
-    <value>Descriptions</value>
-  </data>
-  <data name="radioButtonDescriptions.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDescriptions.Name" xml:space="preserve">
-    <value>radioButtonDescriptions</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDescriptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDescriptions.Parent" xml:space="preserve">
-    <value>leftColumnPanel</value>
-  </data>
-  <data name="&gt;&gt;radioButtonDescriptions.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="radioButtonTopology.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="radioButtonTopology.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
-    <value>Button</value>
-  </data>
-  <data name="radioButtonTopology.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radioButtonTopology.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="radioButtonTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 243</value>
-  </data>
-  <data name="radioButtonTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 3, 3, 3</value>
-  </data>
-  <data name="radioButtonTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 23</value>
-  </data>
-  <data name="radioButtonTopology.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="radioButtonTopology.Text" xml:space="preserve">
-    <value>Ordering</value>
-  </data>
-  <data name="radioButtonTopology.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTopology.Name" xml:space="preserve">
-    <value>radioButtonTopology</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTopology.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTopology.Parent" xml:space="preserve">
-    <value>leftColumnPanel</value>
-  </data>
-  <data name="&gt;&gt;radioButtonTopology.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.Name" xml:space="preserve">
-    <value>panelTopology</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.Parent" xml:space="preserve">
-    <value>panelDescriptionAndTopology</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.Name" xml:space="preserve">
-    <value>descriptionControl</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
-    <value>panelDescriptionAndTopology</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelDescriptionAndTopology.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelDescriptionAndTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelDescriptionAndTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="panelDescriptionAndTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 240</value>
-  </data>
-  <data name="panelDescriptionAndTopology.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panelDescriptionAndTopology.Name" xml:space="preserve">
-    <value>panelDescriptionAndTopology</value>
-  </data>
-  <data name="&gt;&gt;panelDescriptionAndTopology.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelDescriptionAndTopology.Parent" xml:space="preserve">
-    <value>leftColumnPanel</value>
-  </data>
-  <data name="&gt;&gt;panelDescriptionAndTopology.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.Name" xml:space="preserve">
-    <value>mapViewerTopology</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.Parent" xml:space="preserve">
-    <value>panelTopology</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.Name" xml:space="preserve">
-    <value>topologyScrollBar</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.Parent" xml:space="preserve">
-    <value>panelTopology</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelTopology.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 240</value>
-  </data>
-  <data name="panelTopology.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="panelTopology.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.Name" xml:space="preserve">
-    <value>panelTopology</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.Parent" xml:space="preserve">
-    <value>panelDescriptionAndTopology</value>
-  </data>
-  <data name="&gt;&gt;panelTopology.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="mapViewerTopology.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="mapViewerTopology.CenterPoint" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
-        d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAADgtwAAirkL
-</value>
-  </data>
-  <data name="mapViewerTopology.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mapViewerTopology.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="mapViewerTopology.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 238</value>
-  </data>
-  <data name="mapViewerTopology.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="mapViewerTopology.Text" xml:space="preserve">
-    <value>mapViewerTopology</value>
-  </data>
-  <data name="mapViewerTopology.Viewport" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
-        dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABlTeXN0ZW0uRHJh
-        d2luZy5SZWN0YW5nbGVGBAAAAAF4AXkFd2lkdGgGaGVpZ2h0AAAAAAsLCwsCAAAAIPH8wbLi+8EQ8XxC
-        JOJ7Qgs=
-</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.Name" xml:space="preserve">
-    <value>mapViewerTopology</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.Type" xml:space="preserve">
-    <value>PurplePen.MapView.MapViewer, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.Parent" xml:space="preserve">
-    <value>panelTopology</value>
-  </data>
-  <data name="&gt;&gt;mapViewerTopology.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="topologyScrollBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Right</value>
-  </data>
-  <data name="topologyScrollBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="topologyScrollBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 0</value>
-  </data>
-  <data name="topologyScrollBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 238</value>
-  </data>
-  <data name="topologyScrollBar.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.Name" xml:space="preserve">
-    <value>topologyScrollBar</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.VScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.Parent" xml:space="preserve">
-    <value>panelTopology</value>
-  </data>
-  <data name="&gt;&gt;topologyScrollBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="descriptionControl.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="descriptionControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="descriptionControl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="descriptionControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="descriptionControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="descriptionControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 240</value>
-  </data>
-  <data name="descriptionControl.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.Name" xml:space="preserve">
-    <value>descriptionControl</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.Type" xml:space="preserve">
-    <value>PurplePen.DescriptionControl, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.Parent" xml:space="preserve">
-    <value>panelDescriptionAndTopology</value>
-  </data>
-  <data name="&gt;&gt;descriptionControl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>120, 17</value>
   </metadata>
@@ -837,33 +753,6 @@
   <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
   </metadata>
-  <data name="mainMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 24</value>
-  </data>
-  <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
-    <value>mainMenu</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="fileMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;File</value>
-  </data>
   <data name="newEventMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
   </data>
@@ -912,12 +801,6 @@
   <data name="createImageFilesMenu.Text" xml:space="preserve">
     <value>Create Ima&amp;ge Files...</value>
   </data>
-  <data name="createPDFsMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="createPDFsMenu.Text" xml:space="preserve">
-    <value>Create P&amp;DFs</value>
-  </data>
   <data name="createDescriptionPdfMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 22</value>
   </data>
@@ -936,17 +819,23 @@
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
     <value>&amp;Courses...</value>
   </data>
-  <data name="createRouteReviewFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="createPDFsMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
   </data>
-  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Create Route Review Files</value>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Create P&amp;DFs</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 22</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Create RouteGadget Files...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create Route Review Files</value>
   </data>
   <data name="createXmlMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
@@ -990,12 +879,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Print &amp;Courses...</value>
   </data>
-  <data name="setPrintAreaMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Set Print A&amp;rea</value>
-  </data>
   <data name="printAreaThisPartMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 22</value>
   </data>
@@ -1013,6 +896,12 @@
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;All Courses</value>
+  </data>
+  <data name="setPrintAreaMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Set Print A&amp;rea</value>
   </data>
   <data name="toolStripSeparator24.Size" type="System.Drawing.Size, System.Drawing">
     <value>284, 6</value>
@@ -1032,11 +921,11 @@
   <data name="exitMenu.Text" xml:space="preserve">
     <value>E&amp;xit</value>
   </data>
-  <data name="editMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
+  <data name="fileMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;File</value>
   </data>
   <data name="cancelMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -1077,11 +966,11 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Delete</value>
   </data>
-  <data name="viewMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="editMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;View</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
   </data>
   <data name="entireCourseMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
@@ -1100,12 +989,6 @@
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Entire &amp;Map</value>
-  </data>
-  <data name="zoomMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 22</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
   </data>
   <data name="zoom50Menu.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 22</value>
@@ -1149,14 +1032,14 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="allControlsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 6</value>
-  </data>
-  <data name="mapIntensityMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="zoomMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Map &amp;Intensity</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
+  </data>
+  <data name="allControlsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 6</value>
   </data>
   <data name="veryLowIntensityMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
@@ -1188,11 +1071,11 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Full</value>
   </data>
-  <data name="mapQualityMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="mapIntensityMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Map &amp;Quality</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Map &amp;Intensity</value>
   </data>
   <data name="normalQualityMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 22</value>
@@ -1205,6 +1088,12 @@
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>High</value>
+  </data>
+  <data name="mapQualityMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 22</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Map &amp;Quality</value>
   </data>
   <data name="showPrintAreaMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 22</value>
@@ -1248,11 +1137,11 @@
   <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
     <value>Clear Other Courses</value>
   </data>
-  <data name="addMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
+  <data name="viewMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
   </data>
-  <data name="addMenu.Text" xml:space="preserve">
-    <value>&amp;Add</value>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;View</value>
   </data>
   <data name="addStartMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1281,12 +1170,6 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Descriptions</value>
   </data>
-  <data name="addMapExchangeMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Map Flip/E&amp;xchange</value>
-  </data>
   <data name="addMapFlipMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>245, 22</value>
   </data>
@@ -1304,6 +1187,12 @@
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>Flagged &amp;Route to Map Exchange</value>
+  </data>
+  <data name="addMapExchangeMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Map Flip/E&amp;xchange</value>
   </data>
   <data name="addVariationMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1349,6 +1238,12 @@
   </data>
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Dangerous Area</value>
+  </data>
+  <data name="addConstructionMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="addConstructionMenu.Text" xml:space="preserve">
+    <value>Temporary Construction</value>
   </data>
   <data name="addWaterMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1419,11 +1314,11 @@
   <data name="addEllipseMenu.Text" xml:space="preserve">
     <value>Ellipse</value>
   </data>
-  <data name="eventMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+  <data name="addMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 20</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Eve&amp;nt</value>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Add</value>
   </data>
   <data name="changeMapFileMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
@@ -1470,12 +1365,6 @@
   <data name="toolStripSeparator21.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 6</value>
   </data>
-  <data name="iOFStandardsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
-    <value>IOF &amp;Standards</value>
-  </data>
   <data name="descriptionStd2004Menu.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 22</value>
   </data>
@@ -1509,6 +1398,12 @@
   <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
     <value>ISSprOM 2019 Map Standard</value>
   </data>
+  <data name="iOFStandardsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF &amp;Standards</value>
+  </data>
   <data name="customizeDescriptionsMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
@@ -1521,11 +1416,11 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Customize &amp;Appearance...</value>
   </data>
-  <data name="courseMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
+  <data name="eventMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Course</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Eve&amp;nt</value>
   </data>
   <data name="addCourseMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 22</value>
@@ -1575,11 +1470,11 @@
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>Relay Team &amp;Variations...</value>
   </data>
-  <data name="itemMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
+  <data name="courseMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Item</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Course</value>
   </data>
   <data name="deleteItemMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Del</value>
@@ -1656,12 +1551,6 @@
   <data name="stretchMenu.Text" xml:space="preserve">
     <value>&amp;Stretch</value>
   </data>
-  <data name="legFlaggingMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Leg Flagging</value>
-  </data>
   <data name="noFlaggingMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -1686,6 +1575,12 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>End of Leg Flagged</value>
   </data>
+  <data name="legFlaggingMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 22</value>
+  </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Leg Flagging</value>
+  </data>
   <data name="toolStripSeparator19.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 6</value>
   </data>
@@ -1695,11 +1590,11 @@
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Change Displa&amp;yed Courses...</value>
   </data>
-  <data name="reportMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+  <data name="itemMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Reports</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Item</value>
   </data>
   <data name="courseSummaryMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 22</value>
@@ -1731,11 +1626,11 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Control and Leg Loa&amp;d</value>
   </data>
-  <data name="helpMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="reportMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Help</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Reports</value>
   </data>
   <data name="helpContentsMenu.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
@@ -1781,12 +1676,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;About Purple Pen</value>
-  </data>
-  <data name="debugMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 22</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Debug</value>
   </data>
   <data name="symbolBrowserMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
@@ -1854,11 +1743,11 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Crash</value>
   </data>
-  <data name="translateMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="debugMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Translate Description Text</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Debug</value>
   </data>
   <data name="addDescriptionLanguageMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 22</value>
@@ -1877,6 +1766,39 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Merge Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 22</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Translate Description Text</value>
+  </data>
+  <data name="helpMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="mainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>958, 24</value>
+  </data>
+  <data name="mainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
+    <value>mainMenu</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <metadata name="toolbar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 24</value>
@@ -2045,13 +1967,13 @@
   <data name="addControlToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFJSURBVDhPjZJNSsNQFIXTtKDoQDcgzoRCddCZBXEnrkA3
-        EOgGugCtoBMdlA6cuKJCFXFQ6KAI1Zr4ndcTaEjaeuAj75177vtJEq1TFmWNNEqPBOO67e2i4RxeaJry
-        TM0EBtB2rCwaYgI9WDDOBOM3eF+Zf0PXLUVR6Dn0C31oMo8F41N4gvxEiduWwtCxF6DmK9sFsVCN2rU3
-        mUPLpbCA7qzCva1KeZGhs4+52YCpzWYwN4hMx9lxbhyD7vVBIQ7mBpHbgRnoZR/K0LfWAp//WYDMLtkv
-        +GF8IKPOZMJTxzpzbq3IXDo7shXMgc1nnjXbJVHTJ3119s52WKAN+kl0FX2q0iJuTtysK5y4tBRGF1IH
-        htABvTBxAfnO2uTGbUVRSGCuoMN627OVuXaubs5FoAUPMAZdS3/dCG6heOxtomGfnfc8rVAU/QHL1VJO
-        BNvn9QAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFfSURBVDhPjZLPSgJhFMU/R8GoRb2AtAsEa+FOIXqTnqBe
+        QPAFeoD+QG1qIS7a9ESCRbQQXIjgpE6/M54Bh/FPBw7fveeee+98MxO2IQlJZRmWNZG4bHk/aGgtwuKd
+        pnEc4qU5QutRa9pWBA0RpjvMc+JEJP6EX2t5zJCuW/JQs00L4keMdfJIJD5He6WWPhF5x20rILQozNVM
+        fG05BwaVqN14yYy44VK6XXdOOJ8sbYSG4Onb+5KJFTiWyNR6Ku4Anra8PMUwE051L/hNIUrFHcBfxTuB
+        etknEmoe8POfAXgO8E7hL/GxhDLJiFNXuLBvK/BcyUvPwFL6EnsSOd84S5YLoKZ/5cPeB8vp1CYTY6hv
+        rE9VGKJmah0145sSn7m0AkJXAzy9T96GVfMy2+wlt27Lg0IHw0xGm/W2J2u5Nm9uzoChwbZnzEOoa83g
+        AO2eWv6x94GGIzYfOt2AEP4AKtlRAvskvEQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="addControlToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2132,7 +2054,7 @@
   <data name="mapExchangeControlToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAWVJREFUOE910ksrRkEYwPHXvVhgZyM7pbCws/AVSPkUot6FlYi1D0CKDUUWNj6B
+        vgAADr4B6kKxwAAAAWVJREFUOE910ksrRkEYwPHXvVhgZyM7pbCws/AVSPkUot6FlYi1D0CKDUUWNj6B
         haU1spBcklAWUq7H/z/NmUaOnn6dmXOeeeZyplb8H83ojZrCm4rImilGsY9nfEdP2MUIfkXWLBqxgi8U
         0Q1us/47FpEia4bBZaKO0Q0LD2EL5YrmESI+wrI/4exXsICJ95hBCxpi229vGEQq4J79sI4lOPgyPnWK
         CVhkD+ZuIhTwtD0wXw6gLOBzEmexr0PMwdxrhAJ98OMd3G9ewHD5s3iAA0tuucsE/7MD3G9VAVc4Db/n
@@ -2187,10 +2109,11 @@
   <data name="addVariationToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC8SURBVDhPrVMxDsIwDMzWgSeUjmz8j18g+kEmZrayNeUu
-        HBEYmxSJk06yz2enidzkIafczWk+gVdxpKZyG2xGwwJuwYExNZXb4KlsVsovGqgpbeMfA3hne4VR5TbQ
-        wEc8gzdwAi/UVG4D5j1PVcq8xqvABvCgtGD1EBh7z/zLAD7YUekb3CEQy9axqGbGO5UroG2M77GdL+LX
-        rQt9T1E+5qWotCL0hQWD0Ke72E/72LrQh8A+ovvr+r7c3QH2exQT1vwqzwAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADDSURBVDhPpVMxDsIwELstA0+Ajmz8r79A9INMzGwgtVUD
+        djBRCUlThKWTzj7fJamuloM37yabTr31VwbyjprKdbAZDQ/EDtEwp6ZyHTyVzaK8UUNNtI6/B+jN6RM6
+        letAgxttPOPUO+I22HChpnIdMB94qih5zFeBDYhWNGD1EBi3OfMvA/jBjqIfyA6BGLaORTUz36scAW2T
+        +F7bORMXt67oe4vykYeiaETRVywkKPr0lvRqX1tX9CFJP2L21837vHsCCHkTydKcsjMAAAAASUVORK5C
+        YII=
 </value>
   </data>
   <data name="addVariationToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2201,90 +2124,6 @@
   </data>
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Add Variation</value>
-  </data>
-  <data name="specialItemToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVDhPtZK/DsFQHIVvQpNGYjCYxGYgfQoTsXTwCkzd
-        DGIWr2D3AsQgBokXsEusFm/AJK3vyomIlraDLzm5ved3zu2f1PyF0IRlNEJrtI9MtGD1Nf4NwRY6U4o+
-        hb9kLSgah2GR0EnhI2pw7bAOUSg/UDwOw44NKdiV/YT9Qf5WVhyGbXRH9ilej8p1Ce+iA1aykyFQJehq
-        a8su3kblEPU0Skfl3Vt5rFE2KMxVtq81kJ0Nivbr33TAVHZ2KFZsWWrKzgfFCXefaZsfyj4KOMiRlR2K
-        Hkr/+75BqY6u9hDUl50PijXkaZuAMQ+M98rvwerORQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="specialItemToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Transparent</value>
-  </data>
-  <data name="specialItemToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
-  </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Add Special Item</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="addBendToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAETSURBVDhP3ZLNSsNAFIUDVkW6UhC6EmnfoQi69x30BXwE
-        FwXxHdwIrisuuq+P0GTyp23aQotiU2hqp0TID2SYHsk0ECtVYlfSD2YxZ8493Jk70prDKINv+Ei22QEH
-        3u/G0Asa1LwCej/JHuIpHqyjJpSNRrpyDQyvbWCGn4PYhOH14gXK5rzIPNBBHyicmxHIliy0/nkPPOSL
-        IeAzjG8d6PuqMJEdGYPLN3AvNbp1F9ouEeftkxaYE6UhVjltt3vaQdgJl7YZPAcwi4bwPZUMBM1g7osF
-        81DHtEaXFn4lGkWwjlsiRNsj+Hh0IdmVAbj/7V6/EL9B/6wnQsi2nLlugXgawytbTCeRVoNW//A//iuS
-        9AkIx8+0YKCeugAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="addBendToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>White</value>
-  </data>
-  <data name="addBendToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Add Bend (Ctrl+B)</value>
-  </data>
-  <data name="addGapToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACsSURBVDhPYxgF5IM/737/f7vizX8olzD4/+///6/nv/5/
-        1v70/3W7a//PsJ/6f5r5JHEGgDRf1rwI1gDDZzhP/b/hch3VAJDCbxe//v/95jeGyXfCbv+/KH/+/4P0
-        e//frX/3/8+nPxA1IAZI4H7qvf8X5c6DTX855QWGAXAN6OAMB8QvMAwy5MXE59gVYwOgwLhufw0cOF8v
-        fP0P8gZUijgAig4ocxSQBRgYALVyhrVRELDDAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="addGapToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>White</value>
-  </data>
-  <data name="addGapToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Add Gap (Ctrl+G)</value>
-  </data>
-  <data name="toolbar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="toolbar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 25</value>
-  </data>
-  <data name="toolbar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;toolbar.Name" xml:space="preserve">
-    <value>toolbar</value>
-  </data>
-  <data name="&gt;&gt;toolbar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolbar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolbar.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="mapIssuePointToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2371,6 +2210,12 @@
   </data>
   <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
     <value>Dangerous Area</value>
+  </data>
+  <data name="constructionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
+  </data>
+  <data name="constructionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Temporary Construction</value>
   </data>
   <data name="waterLocationToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2562,35 +2407,96 @@
   <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
     <value>Ellipse</value>
   </data>
+  <data name="specialItemToolStripMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEHSURBVDhPtZGxSgNBFEUfJAuLkCKFlaRLoeQrrCI2KfyF
+        pNouRUgt/oK9P6BYhBSCP2Av2Nr4B1rszu7mvHARcRedLXLhMTP3vXN3JrGDqLJqQC1LKx+p59rqO84z
+        tf8Wg2e55e9A9e8i7J61p9GmaPYLK958mPWVsDH7hHVBaOU++0zjTdGc+pAGL2TvFSy8uM8ttrKaAjrn
+        S0G3+L4q+yP8DwU8yG4XIccMpjo6nAJtHPZn0L9U638JfvoBr9SKE/Ct4AA8lx0nwATwywMIupYdL8Ch
+        w6pT2d0EuObrNzp2F++eURlBiax4AU78l/cneIjseAGNCPjU33clu5sAT/wmOrbIbAdsmsptmpbuBwAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="specialItemToolStripMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Transparent</value>
+  </data>
+  <data name="specialItemToolStripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 22</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Add Special Item</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="addBendToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAETSURBVDhP3ZLNSsNAFIUDVkW6UhC6EmnfoQi69x30BXwE
+        FwXxHdwIrisuuq+P0GTyp23aQotiU2hqp0TID2SYHsk0ECtVYlfSD2YxZ8493Jk70prDKINv+Ei22QEH
+        3u/G0Asa1LwCej/JHuIpHqyjJpSNRrpyDQyvbWCGn4PYhOH14gXK5rzIPNBBHyicmxHIliy0/nkPPOSL
+        IeAzjG8d6PuqMJEdGYPLN3AvNbp1F9ouEeftkxaYE6UhVjltt3vaQdgJl7YZPAcwi4bwPZUMBM1g7osF
+        81DHtEaXFn4lGkWwjlsiRNsj+Hh0IdmVAbj/7V6/EL9B/6wnQsi2nLlugXgawytbTCeRVoNW//A//iuS
+        9AkIx8+0YKCeugAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="addBendToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="addBendToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Add Bend (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACsSURBVDhPYxgF5IM/737/f7vizX8olzD4/+///6/nv/5/
+        1v70/3W7a//PsJ/6f5r5JHEGgDRf1rwI1gDDZzhP/b/hch3VAJDCbxe//v/95jeGyXfCbv+/KH/+/4P0
+        e//frX/3/8+nPxA1IAZI4H7qvf8X5c6DTX855QWGAXAN6OAMB8QvMAwy5MXE59gVYwOgwLhufw0cOF8v
+        fP0P8gZUijgAig4ocxSQBRgYALVyhrVRELDDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="addGapToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="addGapToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Add Gap (Ctrl+G)</value>
+  </data>
+  <data name="toolbar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="toolbar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>958, 25</value>
+  </data>
+  <data name="toolbar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;toolbar.Name" xml:space="preserve">
+    <value>toolbar</value>
+  </data>
+  <data name="&gt;&gt;toolbar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolbar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolbar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="statusBar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>762, 17</value>
   </metadata>
   <data name="statusBar.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="statusBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 440</value>
-  </data>
-  <data name="statusBar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>1, 0, 13, 0</value>
-  </data>
-  <data name="statusBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 26</value>
-  </data>
-  <data name="statusBar.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;statusBar.Name" xml:space="preserve">
-    <value>statusBar</value>
-  </data>
-  <data name="&gt;&gt;statusBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusBar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;statusBar.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>651, 21</value>
@@ -2621,6 +2527,30 @@
   </data>
   <data name="locationDisplay.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="statusBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 440</value>
+  </data>
+  <data name="statusBar.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 13, 0</value>
+  </data>
+  <data name="statusBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>958, 26</value>
+  </data>
+  <data name="statusBar.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;statusBar.Name" xml:space="preserve">
+    <value>statusBar</value>
+  </data>
+  <data name="&gt;&gt;statusBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusBar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;statusBar.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="saveXmlFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>522, 17</value>
@@ -3234,6 +3164,12 @@
     <value>addDangerousMenu</value>
   </data>
   <data name="&gt;&gt;addDangerousMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addConstructionMenu.Name" xml:space="preserve">
+    <value>addConstructionMenu</value>
+  </data>
+  <data name="&gt;&gt;addConstructionMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;addWaterMenu.Name" xml:space="preserve">
@@ -3932,6 +3868,12 @@
   <data name="&gt;&gt;dangerousToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;constructionToolStripMenuItem.Name" xml:space="preserve">
+    <value>constructionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;constructionToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;waterLocationToolStripMenuItem.Name" xml:space="preserve">
     <value>waterLocationToolStripMenuItem</value>
   </data>
@@ -4044,7 +3986,7 @@
     <value>zoomTracker</value>
   </data>
   <data name="&gt;&gt;zoomTracker.Type" xml:space="preserve">
-    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.ToolStripTrackBar, PurplePen, Version=3.5.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;locationDisplay.Name" xml:space="preserve">
     <value>locationDisplay</value>
@@ -4080,6 +4022,6 @@
     <value>MainFrame</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>PurplePen.DpiFixedForm, PurplePen, Version=3.5.0.500, Culture=neutral, PublicKeyToken=null</value>
+    <value>PurplePen.DpiFixedForm, PurplePen, Version=3.5.2.500, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -63,6 +63,36 @@ namespace PurplePen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Construction_OcadToolbox {
+            get {
+                object obj = ResourceManager.GetObject("Construction_OcadToolbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConstructionBoundary_OcadToolbox {
+            get {
+                object obj = ResourceManager.GetObject("ConstructionBoundary_OcadToolbox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ConstructionTransparent {
+            get {
+                object obj = ResourceManager.GetObject("ConstructionTransparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Control_OcadToolbox {
             get {
                 object obj = ResourceManager.GetObject("Control_OcadToolbox", resourceCulture);

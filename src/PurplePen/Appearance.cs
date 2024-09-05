@@ -312,6 +312,8 @@ namespace PurplePen
         public const string lowerPurpleColorName = "Lower purple";
         public const short courseOcadId = 11;
         public const short lowerPurpleOcadId = 12;
+        public const string purple50ColorName = "50% purple";
+        public const short purple50OcadId = 13;  // 50% purple
         public const float courseColorC = 0.35F;
         public const float courseColorM = 0.85F;
         public const float courseColorY = 0F;

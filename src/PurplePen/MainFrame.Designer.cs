@@ -164,6 +164,7 @@ namespace PurplePen
             this.addOptCrossingMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addOutOfBoundsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addDangerousMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.addConstructionMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addWaterMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addFirstAidMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.addForbiddenMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -281,6 +282,7 @@ namespace PurplePen
             this.optionalCrossingPointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outOfBoundsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dangerousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.constructionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.waterLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.firstAidLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forbiddenRouteMarkingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1004,6 +1006,7 @@ namespace PurplePen
             this.addOptCrossingMenu,
             this.addOutOfBoundsMenu,
             this.addDangerousMenu,
+            this.addConstructionMenu,
             this.addWaterMenu,
             this.addFirstAidMenu,
             this.addForbiddenMenu,
@@ -1116,6 +1119,12 @@ namespace PurplePen
             this.addDangerousMenu.Name = "addDangerousMenu";
             resources.ApplyResources(this.addDangerousMenu, "addDangerousMenu");
             this.addDangerousMenu.Click += new System.EventHandler(this.addDangerousMenu_Click);
+            // 
+            // addConstructionMenu
+            // 
+            this.addConstructionMenu.Name = "addConstructionMenu";
+            resources.ApplyResources(this.addConstructionMenu, "addConstructionMenu");
+            this.addConstructionMenu.Click += new System.EventHandler(this.addConstructionMenu_Click);
             // 
             // addWaterMenu
             // 
@@ -1884,6 +1893,7 @@ namespace PurplePen
             this.optionalCrossingPointToolStripMenuItem,
             this.outOfBoundsToolStripMenuItem,
             this.dangerousToolStripMenuItem,
+            this.constructionToolStripMenuItem,
             this.waterLocationToolStripMenuItem,
             this.firstAidLocationToolStripMenuItem,
             this.forbiddenRouteMarkingToolStripMenuItem,
@@ -1928,6 +1938,13 @@ namespace PurplePen
             resources.ApplyResources(this.dangerousToolStripMenuItem, "dangerousToolStripMenuItem");
             this.dangerousToolStripMenuItem.Name = "dangerousToolStripMenuItem";
             this.dangerousToolStripMenuItem.Click += new System.EventHandler(this.addDangerousMenu_Click);
+            // 
+            // constructionToolStripMenuItem
+            // 
+            this.constructionToolStripMenuItem.Image = global::PurplePen.Properties.Resources.ConstructionTransparent;
+            this.constructionToolStripMenuItem.Name = "constructionToolStripMenuItem";
+            resources.ApplyResources(this.constructionToolStripMenuItem, "constructionToolStripMenuItem");
+            this.constructionToolStripMenuItem.Click += new System.EventHandler(this.addConstructionMenu_Click);
             // 
             // waterLocationToolStripMenuItem
             // 
@@ -2368,5 +2385,7 @@ namespace PurplePen
         private System.Windows.Forms.ToolStripMenuItem addMapFlipMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mapFlipMenuItem;
         private System.Windows.Forms.ToolStripMenuItem missingTranslationsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem constructionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addConstructionMenu;
     }
 }

@@ -578,6 +578,8 @@ namespace PurplePen
                 courseObj = new OOBCourseObj(specialId, courseObjRatio, appearance, special.locations); break;
             case SpecialKind.Dangerous:
                 courseObj = new DangerousCourseObj(specialId, courseObjRatio, appearance, special.locations); break;
+            case SpecialKind.Construction:
+                courseObj = new TempConstructionCourseObj(specialId, courseObjRatio, appearance, special.locations); break;
             case SpecialKind.WhiteOut:
                 courseObj = new WhiteOutCourseObj(specialId, courseObjRatio, appearance, special.locations); break;
 

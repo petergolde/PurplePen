@@ -1562,7 +1562,8 @@ namespace PurplePen
         Image,                           // A bitmap image.
         Line,                            // A line.
         Rectangle,                       // A rectangle.
-        Ellipse                         // An ellipse/circle
+        Ellipse,                         // An ellipse/circle
+        Construction,                    // Temporary construction area
     }
 
     // Kinds of a line. Note: order must match combo box order in line properties dialog.
@@ -1709,6 +1710,7 @@ namespace PurplePen
 
             case SpecialKind.OOB:
             case SpecialKind.Dangerous:
+            case SpecialKind.Construction:
             case SpecialKind.WhiteOut:
                 if (locations.Length < 2)
                     throw new ApplicationException(string.Format("Special line object {0} should have 3 or more coordinates", id));
@@ -1742,7 +1744,7 @@ namespace PurplePen
                     throw new ApplicationException(string.Format("Text object {0} should have non-null color", id));
             }
 
-            if (kind == SpecialKind.Dangerous) {
+            if (kind == SpecialKind.Descriptions) {
                 if (numColumns < 1 || numColumns > 100)
                     throw new ApplicationException(string.Format("Description object {0} should have 1-100 columns", id));
             }
@@ -1875,6 +1877,7 @@ namespace PurplePen
             case "boundary": kind = SpecialKind.Boundary; break;
             case "out-of-bounds": kind = SpecialKind.OOB; break;
             case "dangerous-area": kind = SpecialKind.Dangerous; break;
+            case "temporary-construction": kind = SpecialKind.Construction; break;  
             case "white-out": kind = SpecialKind.WhiteOut; break;
             case "text": kind = SpecialKind.Text; break;
             case "descriptions": kind = SpecialKind.Descriptions; break;
@@ -2009,6 +2012,7 @@ namespace PurplePen
             case SpecialKind.Boundary: kindText = "boundary"; break;
             case SpecialKind.OOB: kindText = "out-of-bounds"; break;
             case SpecialKind.Dangerous: kindText = "dangerous-area"; break;
+            case SpecialKind.Construction: kindText = "temporary-construction"; break;
             case SpecialKind.WhiteOut: kindText = "white-out"; break;
             case SpecialKind.Text: kindText = "text"; break;
             case SpecialKind.Descriptions: kindText = "descriptions"; break;

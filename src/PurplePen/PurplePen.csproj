@@ -6394,6 +6394,9 @@
     </Content>
     <None Include="Images\MapIssue_OcadToolbox.png" />
     <None Include="Images\ExchangeStart_OcadToolbox.png" />
+    <None Include="Images\Construction_OcadToolbox.png" />
+    <None Include="Images\ConstructionBoundary_OcadToolbox.png" />
+    <None Include="Images\ConstructionTransparent.png" />
     <Content Include="Images\Livelox64x64.png" />
     <None Include="Resources\ExchangeStart_OcadToolbox.png" />
     <Content Include="USWebCoatedSWOP.icc">

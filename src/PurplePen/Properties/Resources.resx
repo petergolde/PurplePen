@@ -118,79 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Registration_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Registration_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Finish_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Finish_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crossing_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Crossing_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UpArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\UpArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DownArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\DownArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Portrait.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FirstAid_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\FirstAid_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Water_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Water_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Dangerous_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Dangerous_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Number_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Number_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LineSpecial_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\LineSpecial_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WhiteOut_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\WhiteOut_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Start_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Start_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Control_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Control_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Line_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Line_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DescText_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\DescText_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="DescLine_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\DescLine_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Forbidden_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Forbidden_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DashedLine_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\DashedLine_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MenuDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\MenuDown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OOB_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\OOB_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Landscape.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MapIssue_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\MapIssue_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Livelox64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Livelox64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Crossing_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Crossing_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Start_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Start_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Water_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Water_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Line_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dangerous_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Dangerous_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UpArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\UpArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConstructionBoundary_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ConstructionBoundary_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Finish_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Finish_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FirstAid_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\FirstAid_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forbidden_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Forbidden_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhiteOut_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WhiteOut_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Landscape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landscape.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DashedLine_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\DashedLine_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Control_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Control_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\DownArrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Registration_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Registration_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OOB_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\OOB_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ExchangeStart_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\ExchangeStart_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Construction_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Construction_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Number_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Number_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DescText_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\DescText_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Portrait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Portrait.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LineSpecial_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\LineSpecial_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MenuDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MenuDown.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MapIssue_OcadToolbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\MapIssue_OcadToolbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ConstructionTransparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ConstructionTransparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -44,6 +44,7 @@ using PurplePen.MapView;
 using PurplePen.Graphics2D;
 using System.Runtime.InteropServices;
 using System.Drawing.Text;
+using System.Linq;
 
 namespace PurplePen
 {
@@ -2164,7 +2165,7 @@ namespace PurplePen
 
             glyph.ConstructionComplete();
 
-            PointSymDef symdef = new PointSymDef("Registration mark", "714", glyph, false);
+            PointSymDef symdef = new PointSymDef("Registration mark", "717", glyph, false);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Registration_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2268,7 +2269,7 @@ namespace PurplePen
         public LegCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<CourseControl> courseControlId2, float courseObjRatio, CourseAppearance appearance, SymPath path, LegGap[] gaps)
             : base(controlId, courseControlId, courseControlId2, Id<Special>.None, courseObjRatio, appearance, NormalCourseAppearance.lineThickness * appearance.lineWidth, path, gaps)
         {
-        }
+        }           
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
@@ -2351,7 +2352,7 @@ namespace PurplePen
 
         protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
         {
-            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", lower_symColor, (appearance.mapStandard == "Spr2019" ? 1.0F : 0.7F) * courseObjRatio * appearance.lineWidth, LineJoin.Bevel, LineCap.Flat);
+            LineSymDef symdef = new LineSymDef("Uncrossable boundary", "707", lower_symColor, (appearance.mapStandard == "Spr2019" ? 1.0F : 0.7F) * courseObjRatio * appearance.lineWidth, LineJoin.Miter, LineCap.Flat);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Line_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
@@ -2698,13 +2699,9 @@ namespace PurplePen
                 hatchInfo.hatchSpacing = 0.6F * courseObjRatio;
                 hatchInfo.hatchWidth = 0.25F * courseObjRatio;
             }
-            else if (appearance.mapStandard == "Spr2019") {
+            else  {
                 hatchInfo.hatchSpacing = 1.2F * courseObjRatio;
                 hatchInfo.hatchWidth = 0.2F * courseObjRatio;
-            }
-            else {
-                hatchInfo.hatchSpacing = 0.8F * courseObjRatio;
-                hatchInfo.hatchWidth = 0.25F * courseObjRatio;
             }
             hatchInfo.hatchAngle = 45;
             symdef.AddHatching(hatchInfo);
@@ -2713,6 +2710,51 @@ namespace PurplePen
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Dangerous_OcadToolbox);
             map.AddSymdef(symdef);
             return symdef;
+        }
+    }
+
+    class TempConstructionCourseObj: AreaCourseObj
+    {
+        public TempConstructionCourseObj(Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts)
+            : base(Id<ControlPoint>.None, Id<CourseControl>.None, specialId, courseObjRatio, appearance, pts)
+        {
+        }
+
+        protected override SymDef CreateSymDef(Map map, SymColor symColor, SymColor lower_symColor)
+        {
+            // Boundary is in "upper purple, and area is 50% purple at the same level as upper purple.
+            SymColor purple50 = GetPurple50Percent(map, symColor);
+
+            // Add 0.1mm border.
+            LineSymDef symdefBorder = new LineSymDef("Temporary construction border", "714.1", symColor, 0.1F * courseObjRatio, LineJoin.Miter, LineCap.Flat);
+            symdefBorder.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.ConstructionBoundary_OcadToolbox);
+            map.AddSymdef(symdefBorder);
+
+            AreaSymDef symdef = new AreaSymDef("Temporary construction", "714", purple50, symdefBorder);
+            symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.Construction_OcadToolbox);
+            map.AddSymdef(symdef);
+            return symdef;
+        }
+
+        // Given the upper purple color, return a color that is 50% purple. 
+        // Returns existing color, or creates a new one if needed.
+        private SymColor GetPurple50Percent(Map map, SymColor purpleColor)
+        {
+            SymColor purple50;
+
+            List<SymColor> mapColors = map.AllColors.ToList();
+            purple50 = mapColors.FirstOrDefault(color => color.Name == NormalCourseAppearance.purple50ColorName);
+
+            if (purple50 == null) {
+                // Create a new 50% purple color, directly below the purple color, with 50% of the CMYK values.
+
+                float c, m, y, k;
+                purpleColor.GetCMYK(out c, out m, out y, out k);
+                int purpleIndex = mapColors.IndexOf(purpleColor);
+                purple50 = map.AddColorAtIndex(purpleIndex, NormalCourseAppearance.purple50ColorName, NormalCourseAppearance.purple50OcadId, c / 2F, m / 2F, y / 2F, k / 2F, false);
+            }
+
+            return purple50;
         }
     }
 
