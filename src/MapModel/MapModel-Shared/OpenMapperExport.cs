@@ -258,8 +258,12 @@ namespace PurplePen.MapModel
             xmlWriter.WriteStartElement("symbols");
             xmlWriter.WriteAttributeString("count", XmlConvert.ToString(count));
 
+            // Must get IDs of all first. For example, for references to border symbols of areas.
             for (int i = 0; i < symdefs.Length; ++i) {
                 mapSymdefToId[symdefs[i]] = i;
+            }
+
+            for (int i = 0; i < symdefs.Length; ++i) {
                 WriteSymbolElement(symdefs[i], i);
             }
 
@@ -279,6 +283,14 @@ namespace PurplePen.MapModel
 
         private void WriteSymbolElement(SymDef symDef, int id)
         {
+            if (symDef is AreaSymDef && ((AreaSymDef)symDef).BorderSymdef != null) {
+                // An area symbol with a border must be written as a combo symbol in OOM.
+                // Although this can never occur when reading an OOM file, it can occur when 
+                // writing the Purple Pen map symbol of temporary construction.
+                WriteAreaWithBorderSymbolElement((AreaSymDef)symDef, id);
+                return;
+            }
+
             xmlWriter.WriteStartElement("symbol");
 
             xmlWriter.WriteAttributeString("type", XmlConvert.ToString(GetSymbolType(symDef)));
@@ -313,6 +325,45 @@ namespace PurplePen.MapModel
             }
 
             xmlWriter.WriteEndElement();
+        }
+
+        private void WriteAreaWithBorderSymbolElement(AreaSymDef symDef, int id)
+        {
+            Debug.Assert(symDef.BorderSymdef != null);
+            LineSymDef borderSymDef = symDef.BorderSymdef;
+            
+            int borderSymDefId = IdFromSymDef(borderSymDef);
+
+            xmlWriter.WriteStartElement("symbol");
+
+            xmlWriter.WriteAttributeString("type", XmlConvert.ToString(16));  // Combo symbol.
+            xmlWriter.WriteAttributeString("id", XmlConvert.ToString(id));
+            xmlWriter.WriteAttributeString("code", symDef.SymbolId);
+            xmlWriter.WriteAttributeString("name", symDef.Name);
+
+            xmlWriter.WriteStartElement("combined_symbol");
+
+            // First part is the main symbol.
+            xmlWriter.WriteStartElement("part");
+            xmlWriter.WriteAttributeString("private", XmlConvert.ToString(true));
+
+            xmlWriter.WriteStartElement("symbol");
+            xmlWriter.WriteAttributeString("type", XmlConvert.ToString(GetSymbolType(symDef)));  // Area symbol
+            xmlWriter.WriteAttributeString("code", symDef.SymbolId);
+            xmlWriter.WriteAttributeString("name", symDef.Name);
+
+            WriteAreaSymbolElement(symDef);
+
+            xmlWriter.WriteEndElement(); // </symbol>
+            xmlWriter.WriteEndElement(); // </part>
+
+            // Second part is the border symbol.
+            xmlWriter.WriteStartElement("part");
+            xmlWriter.WriteAttributeString("symbol", XmlConvert.ToString(borderSymDefId));
+            xmlWriter.WriteEndElement(); // </part>
+
+            xmlWriter.WriteEndElement(); // </combined_symbol>
+            xmlWriter.WriteEndElement(); // </symbol>
         }
 
         private int GetSymbolType(SymDef symDef)

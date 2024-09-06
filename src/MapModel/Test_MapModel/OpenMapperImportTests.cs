@@ -144,11 +144,8 @@ namespace PurplePen.MapModel.Tests
             TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
         }
 
-        void VerifyRenderingAndRoundtrip(string basename, RectangleF area, string baseline, int version = 6)
+        private void RoundTrip(string basename, RectangleF area, string baseline, int version, Map map)
         {
-            Map map = LoadMap(basename);
-            VerifyRendering(map, area, baseline);
-
             Map newMap = RoundTripMap(map, basename, version);
 
             // Can use a separate baseline for the round trip part.
@@ -160,6 +157,26 @@ namespace PurplePen.MapModel.Tests
             else {
                 VerifyRendering(newMap, area, baseline);
             }
+        }
+
+
+        void VerifyRenderingAndRoundtrip(string basename, RectangleF area, string baseline, int version = 6)
+        {
+            Map map = LoadMap(basename);
+            VerifyRendering(map, area, baseline);
+
+            RoundTrip(basename, area, baseline, version, map);
+
+            //File.Delete(GetTempPath(basename));
+        }
+
+        void VerifyRenderingOcadAndRoundtrip(string ocadName, RectangleF area, string baseline, int version = 6)
+        {
+            Map map = LoadMap(ocadName);
+            VerifyRendering(map, area, baseline);
+
+            RoundTrip(Path.ChangeExtension(ocadName, ".xmap"), area, baseline, version, map);
+            RoundTrip(Path.ChangeExtension(ocadName, ".omap"), area, baseline, version, map);
 
             //File.Delete(GetTempPath(basename));
         }
@@ -906,6 +923,13 @@ namespace PurplePen.MapModel.Tests
         {
             RectangleF rect = RectangleF.FromLTRB(-19.37F, -12.27F, 18.86F, 9.87F);
             VerifyRenderingAndRoundtripOverprint("overprinting.omap", rect, "overprinting.png", 9);
+        }
+
+        [Test]
+        public void OcadBorderedAreas()
+        {
+            RectangleF rect = RectangleF.FromLTRB(-6.14393663F, -7.31703424F, 11.7064838F, 5.76173735F);
+            VerifyRenderingOcadAndRoundtrip("borderedarea9.ocd", rect, "borderedarea9.png", 9);
         }
 
     }
