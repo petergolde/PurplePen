@@ -1377,7 +1377,7 @@ namespace PdfSharp.Drawing
     /// </summary>
     internal static class MatrixHelper
     {
-      // Fast mutiplication taking matrix type into account. Reflectored from WPF.
+      // Fast multiplication taking matrix type into account. Reflectored from WPF.
       internal static void MultiplyMatrix(ref XMatrix matrix1, ref XMatrix matrix2)
       {
         XMatrixTypes type1 = matrix1.type;

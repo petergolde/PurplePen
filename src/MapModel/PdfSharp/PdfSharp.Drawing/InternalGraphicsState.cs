@@ -58,7 +58,7 @@ namespace PdfSharp.Drawing
   //
   // * When no clip path is defined, you can set or intersect a new path.
   //
-  // * When a clip path is already defined, you can always intersect with a new one (wich leads in general
+  // * When a clip path is already defined, you can always intersect with a new one (which leads in general
   //   to a smaller clip region).
   //
   // * When a clip path is already defined, you can only reset it to the empty region (ResetClip) when

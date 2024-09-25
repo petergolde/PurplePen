@@ -81,7 +81,7 @@ namespace PurplePen.MapModel
         internal delegate double DistanceMetric(PointF pt1, PointF pt2);    
 
         // Create a path from points, point kinds, and start stop flags.
-        // The start/stop flags works like this - each bit position is seperate (so up to 8 different sets).
+        // The start/stop flags works like this - each bit position is separate (so up to 8 different sets).
         // A 1 bits in startStopFlags[k] means the segment from points[k] to points[k+1] is NOT present.
         public SymPath(PointF[] points, PointKind[] kinds, byte[] startStopFlags)
         {
@@ -631,7 +631,7 @@ namespace PurplePen.MapModel
             return Math.Sqrt(delta1 * delta1 + delta2 * delta2);
         }
 
-        // Determines the Bizzarro distance between two points. This should be just the Pythagorian formula, but
+        // Determines the Bizzarro distance between two points. This should be just the Pythagorean formula, but
         // for unknown reasons OCAD uses this metric for text along a path, and for dashes along a path. It makes no sense AT ALL.
         internal static double BizzarroDistance(PointF point1, PointF point2)
         {
@@ -984,7 +984,7 @@ namespace PurplePen.MapModel
         }
 
         // Get the location of corner or dash points, and the perpendicular angles (on the right side) at those points, and the angle the path makes at those corners.
-        // 0 degress is positive X (to the right), and 90 degrees is positive Y (up).
+        // 0 degrees is positive X (to the right), and 90 degrees is positive Y (up).
         // if "ignoreEnds" is true, never return an ends point.
         public PointF[] FindCornerOrDashPoints(PointKind pointKind, bool ignoreEnds, out float[] perpAngles, out float[] subtendedAngles) {
             int first = 0, end = points.Length;
@@ -1099,7 +1099,7 @@ namespace PurplePen.MapModel
         }
 
         // Determine the distance of a point from this path (by Euclidean metric always!), 
-        // The closest point on it (this is metric indipendent)
+        // The closest point on it (this is metric independent)
         // and the distance along the path to that point (via specified metric).
         private float DistanceFromPoint(PointF testPoint, DistanceMetric metric, out PointF closestPoint, out float distanceAlongPath) {
             float currentDistance = 0;
@@ -1191,7 +1191,7 @@ namespace PurplePen.MapModel
 
         // Determine if this sympath intersections another, and returns the intersection points.
         // Could be VERY SLOW if either symbol has beziers or a lot of line segments. Could be made faster
-        // for these cases, but I'm currently only using it for very simple paths (<5 segements each).
+        // for these cases, but I'm currently only using it for very simple paths (<5 segments each).
         public bool Intersects(SymPath other, out PointF[] intersectionPoints)
         {
             bool intersects = false;
@@ -1848,7 +1848,7 @@ namespace PurplePen.MapModel
             StringBuilder builder = new StringBuilder();
             for (int i = 0; i < kinds.Length; i++) {
                 if (i != 0)
-                    builder.Append("--");          // seperate points with two dashes.
+                    builder.Append("--");          // separate points with two dashes.
 
                 switch (kinds[i]) {
                 case PointKind.Normal: builder.Append('N'); break;

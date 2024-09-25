@@ -275,7 +275,7 @@ namespace PurplePen.MapModel
         PointF location;
         public PointF Location {get { return location; }}
 
-        float rotation;  // angle in dgrees symbol is rotated.
+        float rotation;  // angle in degrees symbol is rotated.
         public float Rotation {get { return rotation; }}
 
         float[] gaps;     // sorted array of start/end angles for gaps in circles; null for none.
@@ -642,7 +642,7 @@ namespace PurplePen.MapModel
             this.horizAlignment = horizAlignment;
             this.vertAlignment = vertAlignment;
 
-            // We break the text into lines seperated by paragraph marks. We also ignore an initial
+            // We break the text into lines separated by paragraph marks. We also ignore an initial
             // newline for OCAD compatibility. We can't just remove that on import, or else roundtripping
             // an object with two initial newlines wouldn't work.
             if (width > 0) {
@@ -1097,7 +1097,7 @@ namespace PurplePen.MapModel
         }
     }
 
-    // This is an line object creating by a import graphcs  -- it draws into the image layer, below all colors.
+    // This is an line object creating by a import graphics  -- it draws into the image layer, below all colors.
     public class ImageLineSymbol: LineLikeSymbol
     {
         ImageSymDef def;

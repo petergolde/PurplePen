@@ -637,7 +637,7 @@ namespace PurplePen
             return xrefString;
         }
 
-        // Convert set of ordinals to command seperated string. negative goes to "*".
+        // Convert set of ordinals to command separated string. negative goes to "*".
         private string XrefString(SortedSet<int> set)
         {
             if (set == null || set.Count == 0)

@@ -1013,7 +1013,7 @@ of the file and adjust SetupPos and SetupSize.
                                {Last 8 Zoom magnification for use
                                in the Zoom out command. TZoomRec
                                is explained below.}
-    nZoomHist: longint;        {number of magnificiations in
+    nZoomHist: longint;        {number of magnifications in
                                ZoomHist}
 
                                {OCAD 6: the setup ends here

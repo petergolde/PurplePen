@@ -29,7 +29,7 @@
 
 using System;
 
-#if under_constructioin
+#if under_construction
 namespace PdfSharp.Drawing.Shapes
 {
   public sealed class Ellipse : Shape

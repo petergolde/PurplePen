@@ -282,7 +282,7 @@ namespace PurplePen.Graphics2D
             return new RectangleF(center.X - size.Width / 2, center.Y - size.Height / 2, size.Width, size.Height);
         }
 
-        // Determine distance of a point from a rectange. If in the interior of the rectangle, distance is zero.
+        // Determine distance of a point from a rectangle. If in the interior of the rectangle, distance is zero.
         public static float DistanceFromRectangle(RectangleF rect, PointF point)
         {
             float distX = 0, distY = 0;

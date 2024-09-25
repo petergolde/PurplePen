@@ -760,7 +760,7 @@
       <xsd:element name="Service" type="Service" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            The services available for the event, e.g. accomodation and transport.
+            The services available for the event, e.g. accommodation and transport.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -940,7 +940,7 @@
       <xsd:element name="Service" type="Service" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            The services available for the race, e.g. accomodation and transport.
+            The services available for the race, e.g. accommodation and transport.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -1411,7 +1411,7 @@
       <xsd:element name="Status" type="RaceClassStatus" minOccurs="0">
         <xsd:annotation>
           <xsd:documentation>
-            The status of the race, e.g. if results should be considered invalid due to misplaced constrols.
+            The status of the race, e.g. if results should be considered invalid due to misplaced controls.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -1741,7 +1741,7 @@
       <xsd:element name="AssignedFee" type="AssignedFee" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
           <xsd:documentation>
-            The fees that the team as a whole has to pay when entering the event. In a multi-race event, there is usually one element for each race. If there are differentated fees for the team members, specify them in the TeamEntryPerson elements.
+            The fees that the team as a whole has to pay when entering the event. In a multi-race event, there is usually one element for each race. If there are differentiated fees for the team members, specify them in the TeamEntryPerson elements.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:element>
@@ -2715,7 +2715,7 @@
                     <xsd:enumeration value="Leg">
                       <xsd:annotation>
                         <xsd:documentation>
-                          The time behind refers to the best time of the competitors that are taking part on the same leg as this team member, independly of the course assigned.
+                          The time behind refers to the best time of the competitors that are taking part on the same leg as this team member, independently of the course assigned.
                         </xsd:documentation>
                       </xsd:annotation>
                     </xsd:enumeration>
@@ -2748,7 +2748,7 @@
                     <xsd:enumeration value="Leg">
                       <xsd:annotation>
                         <xsd:documentation>
-                          The position refers to all competitors that are taking part on the same leg as this team member, independly of the course assigned.
+                          The position refers to all competitors that are taking part on the same leg as this team member, independently of the course assigned.
                         </xsd:documentation>
                       </xsd:annotation>
                     </xsd:enumeration>
@@ -3093,7 +3093,7 @@
           <xsd:enumeration value="OK">
             <xsd:annotation>
               <xsd:documentation>
-                Control belongs to the course and has been punched (either by electronical punching or pin punching). If the time is not available or invalid, omit the Time element.
+                Control belongs to the course and has been punched (either by electronic punching or pin punching). If the time is not available or invalid, omit the Time element.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:enumeration>
@@ -3157,7 +3157,7 @@
 
         Seconds delta storage mode
         --------------------------
-        The following byte is an unsigned 8-bit integer defining the waypoint's time as the number of seconds to add to the last waypoint's time. This storage mody can only be used when the difference to the last waypoint's time is an integer value.
+        The following byte is an unsigned 8-bit integer defining the waypoint's time as the number of seconds to add to the last waypoint's time. This storage mode can only be used when the difference to the last waypoint's time is an integer value.
 
         Consequently:
         - seconds delta storage mode is used when the waypoint's time is less than 256 seconds later than the last waypoint's time, and the difference between the times is an integer value.
@@ -4005,7 +4005,7 @@
   <xsd:complexType name="Service">
     <xsd:annotation>
       <xsd:documentation>
-        Defines a general purpose service request, e.g. for rental card or accomodation.
+        Defines a general purpose service request, e.g. for rental card or accommodation.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>

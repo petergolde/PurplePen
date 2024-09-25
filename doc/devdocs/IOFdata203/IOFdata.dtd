@@ -34,7 +34,7 @@
 
 	 Authors:
 	 	Stefan Nordmark, SWE
-	 	Kell Sønnichsen, DEN
+	 	Kell SÃ¸nnichsen, DEN
 	 	Finn Arildsen, DEN
 	 	
 	 Date:
@@ -227,7 +227,7 @@
 	 - classes
 	 - races (i.e. event "days")
 	 - entry data (where to deliver entries)
-	 - services (e.g. accomodation)
+	 - services (e.g. accommodation)
 	 - web site information
 	 - accounts for fees
 -->
@@ -262,7 +262,7 @@
 
 <!-- Event Class
 	 A Class extended with event specific information, e.g. whether
-	 the class is transfered to another class due to lack of entries.
+	 the class is transferred to another class due to lack of entries.
 -->
 
 <!ELEMENT EventClass ((ClassId|Class), (((ClassRaceInfo,
@@ -932,7 +932,7 @@
 	 ##########
 	 
 	 The following elements are used for non-orienteering purposes,
-	 i.e. accomodation, payment, addresses, press, dates etc.
+	 i.e. accommodation, payment, addresses, press, dates etc.
 	 
 	 Also different "general purpose" elements, e.g. date and time.
 	 
@@ -1019,7 +1019,7 @@
 
 
 <!-- Service
-	 A general purpose service request, e.g. for accomodation.
+	 A general purpose service request, e.g. for accommodation.
 -->
 
 <!ELEMENT Service (ServiceId, Name, Amount, Comment?, MaxNumber?,

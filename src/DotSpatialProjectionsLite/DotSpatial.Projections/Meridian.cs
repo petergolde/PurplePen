@@ -186,56 +186,56 @@ namespace DotSpatial.Projections
 
         private void FindNameByValue(double pmv)
         {
-            const double precison = .0000001;
-            if (Math.Abs(pmv) < precison)
+            const double precision = .0000001;
+            if (Math.Abs(pmv) < precision)
             {
                 AssignMeridian(Proj4Meridian.Greenwich);
             }
-            else if (Math.Abs(pmv - -9.131906111) < precison)
+            else if (Math.Abs(pmv - -9.131906111) < precision)
             {
                 AssignMeridian(Proj4Meridian.Lisbon);
             }
-            else if (Math.Abs(pmv - 2.337229167) < precison)
+            else if (Math.Abs(pmv - 2.337229167) < precision)
             {
                 AssignMeridian(Proj4Meridian.Paris);
             }
-            else if (Math.Abs(pmv - -74.08091667) < precison)
+            else if (Math.Abs(pmv - -74.08091667) < precision)
             {
                 AssignMeridian(Proj4Meridian.Bogota);
             }
-            else if (Math.Abs(pmv - -3.687938889) < precison)
+            else if (Math.Abs(pmv - -3.687938889) < precision)
             {
                 AssignMeridian(Proj4Meridian.Madrid);
             }
-            else if (Math.Abs(pmv - 12.45233333) < precison)
+            else if (Math.Abs(pmv - 12.45233333) < precision)
             {
                 AssignMeridian(Proj4Meridian.Rome);
             }
-            else if (Math.Abs(pmv - 7.439583333) < precison)
+            else if (Math.Abs(pmv - 7.439583333) < precision)
             {
                 AssignMeridian(Proj4Meridian.Bern);
             }
-            else if (Math.Abs(pmv - 106.8077194) < precison)
+            else if (Math.Abs(pmv - 106.8077194) < precision)
             {
                 AssignMeridian(Proj4Meridian.Jakarta);
             }
-            else if (Math.Abs(pmv - -17.66666667) < precison)
+            else if (Math.Abs(pmv - -17.66666667) < precision)
             {
                 AssignMeridian(Proj4Meridian.Ferro);
             }
-            else if (Math.Abs(pmv - 4.367975) < precison)
+            else if (Math.Abs(pmv - 4.367975) < precision)
             {
                 AssignMeridian(Proj4Meridian.Brussels);
             }
-            else if (Math.Abs(pmv - 18.05827778) < precison)
+            else if (Math.Abs(pmv - 18.05827778) < precision)
             {
                 AssignMeridian(Proj4Meridian.Stockholm);
             }
-            else if (Math.Abs(pmv - 23.7163375) < precison)
+            else if (Math.Abs(pmv - 23.7163375) < precision)
             {
                 AssignMeridian(Proj4Meridian.Athens);
             }
-            else if (Math.Abs(pmv - 10.72291667) < precison)
+            else if (Math.Abs(pmv - 10.72291667) < precision)
             {
                 AssignMeridian(Proj4Meridian.Oslo);
             }

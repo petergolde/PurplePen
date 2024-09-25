@@ -170,7 +170,7 @@ namespace PdfSharp.SharpZipLib.Zip.Compression
         {
           throw new SharpZipBaseException("!Empty");
         }
-        //Console.WriteLine("checkEmpty suceeded!");
+        //Console.WriteLine("checkEmpty succeeded!");
       }
 
       /// <summary>

@@ -221,7 +221,7 @@ namespace PurplePen
             }
         }
 
-        // Change the event title. Seperate lines with "|".
+        // Change the event title. separate lines with "|".
         public static void ChangeEventTitle(EventDB eventDB, string newTitle)
         {
             Event e = eventDB.GetEvent();

@@ -793,7 +793,7 @@ si_DataSet[list] = 4 (dataset)
   // l = length unit
   // a = area unit
   // c = decimals
-  // h = horizontal coordiante
+  // h = horizontal coordinate
   // v = vertical coordinate
 
 si_DbObject[list] = 5 (object linked to a database)
@@ -847,7 +847,7 @@ si_OimPar = 1025 (OCAD Internet Maps )
   // i = Overview height
   // m = Do not create tiles
   // r = Zoom range
-  // s = Select lable
+  // s = Select label
   // v = Overview width
   // w = Width
   // z = Zoom levels
@@ -901,7 +901,7 @@ si_TilesPar = 1033
 
 Parameter Strings - Misc
 =============================================================================================
-si_FileInfo[list] = 11 (file informations)
+si_FileInfo[list] = 11 (file information)
 ------------------------------------------
   // First = text
 
@@ -964,7 +964,7 @@ si_ScalePar = 1039 (scales settings)
 ------------------------------------
   // a = real world angle
   // d = grid distance for real world  in m
-  // g = grid distance for paper coordiantes in mm
+  // g = grid distance for paper coordinates in mm
   // i = grid and zone
   // m = map scale
   // r = real world cord (0=paper, 1=real world)

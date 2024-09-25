@@ -19238,7 +19238,7 @@ Index entry Sym=81100.0
 Object Sym=81100 Otp=4
   nItem=5, nText=16
   Ang=3600
-  Text=contour (5 m), index conture (25 m), form line
+  Text=contour (5 m), index contour (25 m), form line
     (-124.09,27.44) (-124.09,27.10) (-92.25,27.10) (-92.25,29.06) 
     (-124.09,29.06) 
 

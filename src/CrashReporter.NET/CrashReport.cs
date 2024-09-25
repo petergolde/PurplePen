@@ -314,7 +314,7 @@ namespace CrashReporterDotNET
             labelMessage.Text = _reportCrash.TextMessage;
             buttonSendReport.Text = _reportCrash.TextSend;
             buttonSave.Text = _reportCrash.TextSave;
-            buttonCacel.Text = _reportCrash.TextCancel;
+            buttonCancel.Text = _reportCrash.TextCancel;
         }
 
         private void ButtonSaveClick(object sender, EventArgs e)
