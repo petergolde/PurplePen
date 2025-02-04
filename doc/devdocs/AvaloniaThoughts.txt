@@ -1,0 +1,60 @@
+Thoughts on porting to Avalonia and how to do it, and pain points.
+
+Change rendering to use skiasharp for maps.
+Change rendering to use skiasharp for the control description sheet and the symbols within.
+Create a new PurplePen Core project to hold code that is not windows specific.
+Slowly move code from the old project to the new project. Still need to reference System.Drawing, but
+  use specific using statements to only reference PointF, SizeF, RectangleF, Matrix. Maybe once this
+  is largely complete, use our own PointF etc. that have conversions to/from the Skia and Avalonia types.
+At some point, move to .NET 8. This requires dropping Windows 7 support, but that is probably OK.
+
+That we can create a new Avalonia project that references the PurplePen Core project, and slowly
+build that up. As this progressing, factor out more code that can be common. May need to use shared
+projects to reference the different versions of PointF/SizeF/Matrix/etc. 
+
+Pain points:
+   PdfSharp as currently written is not cross platform. There may be a cross platform port.
+		https://github.com/ststeiger/PdfSharpCore or https://docs.pdfsharp.net/  May be others.
+	    One thing I think it is missing is TextOutline. We should be able to make
+		that work using SkiaSharp, in particular SkPaint.GetTextPath, then enumerating
+		the resulting path. Hopefully there are no conics, but I don't think
+		that there should be.
+
+		Here's pages that describes converting a quadratic Bezier to a cubic:
+
+		https://fontforge.org/docs/techref/bezier.html
+
+		https://stackoverflow.com/questions/3162645/convert-a-quadratic-bezier-to-a-cubic-one
+
+		One issue is the global FontResolver in PdfSharpCore. This may need to be changed
+		to be per document, or have a way to clear the font resolver and the GlyphTypefaceCache if we single-thread 
+		all of PDF generation. Or maybe there is a FontLoader (created from an IFontResolver) that
+		can be used to load and cache fonts.
+
+		Also, there are parts of using PdfSharp that rely on GDI+ for positioning characters in text.
+		Look at PdfGraphicsTarget.DrawText and how it measures text. May be able to work around this again
+		with SkiaSharp. Look at SKFont.GetGlyphPositions and similar.
+
+   Reports use Web Browser control for rendering and printing. There is an HTML renderers
+   for Avalonia which should be good enough for reports, but printing will be difficult. Maybe can print
+   by launching a browser and printing from there. This should be doable.
+
+   Generally printing is hard. On mac and linux print by creating a PDF and that launching a command
+   line app that prints a pdf. The lp can be used. Need to figure out a way to determine which printers
+   can be used.
+
+   Localization is somewhat tricky in Avalonia. There are resources for this.
+
+   The popup menu for selecting a symbol will need to be written from scratch. 
+
+   On Mac can't use the Mac app store due to sandboxing. Sandboxing is a problem because map files
+   use linked templates, and purple pen files link to map files.
+
+   Fonts: I think we are OK on Mac, but on Linux may need additional fonts. 
+   Look at "CrossCore fonts" -- see https://en.wikipedia.org/wiki/Croscore_fonts.
+   These are open source fonts that are metrically compatible with Arial, Times New Roman, and Courier New,
+   and Calibri and Cambria. So we can use these fonts for those. Other fonts people would
+   have to use separately. May want a specific way to import fonts into a Purple Pen project..
+
+   Reading PDFs. Needing PdiumSharp. There are a bunch of versions on GitHub. Need to look
+   them over to see which is best. Probably still package as an EXE. Use similar caching strategy as before.

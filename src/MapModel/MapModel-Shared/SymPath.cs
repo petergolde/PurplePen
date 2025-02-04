@@ -57,18 +57,20 @@ namespace PurplePen.MapModel
         PointKind[] kinds; // the point kinds for each point, always the same length as points.
         byte[] startStopFlags; // flags that indicate start/stop points, which can be used to get sub-paths. Each bit can control a different set. Can be null.
 
-        PointF[] flatpoints;   // points in the flattened path (no beziers)
-        PointKind[] flatkinds; // points kinds in the flattened path
-        byte[] flatStartStop; // start/stop points in the flattened path.
+        // These are volatile, to support multi-threaded access and correct synchronization
+        // in GetFlattenedPoints().
+        volatile PointF[] flatpoints;   // points in the flattened path (no beziers)
+        volatile PointKind[] flatkinds; // points kinds in the flattened path
+        volatile byte[] flatStartStop; // start/stop points in the flattened path.
 
         bool lastPointSynthesized; // If true, the last point was added to close the curve when imported. Used for re-exporting to get round-trip.
         bool anyBeziers;    // Are there any beziers in this path
         // bool allBeziers;    // Are there all beziers in this path
         bool isClosedCurve; // true if end point is the same as start point (closed curve)
         bool isZeroLength;  // true if all points are the same.
-        float pathLength = -1;  // -1 means not computed yet.
-        float bizzarroLength = -1;  // -1 means not computed yet.
-        float maxMiter = 0;  // 0 means not computed yet.
+        volatile float pathLength = -1;  // -1 means not computed yet.
+        volatile float bizzarroLength = -1;  // -1 means not computed yet.
+        volatile float maxMiter = 0;  // 0 means not computed yet.
 
         const float FLATTENAMOUNT = 0.01F;
 
@@ -570,12 +572,13 @@ namespace PurplePen.MapModel
 
         // Fill in the flatpoints and flatkinds fields with the flattened path. A 
         // flattened path simply has no Beziers.
-        void GetFlattenedPoints() {
+        void GetFlattenedPoints()
+        {
             if (flatpoints == null) {
-                if (! anyBeziers) {
-                    flatpoints = points;
+                if (!anyBeziers) {
                     flatkinds = kinds;
                     flatStartStop = startStopFlags;
+                    flatpoints = points;  // Must be last for correct threading syncronization!
                 }
                 else {
                     List<PointF> newPoints = new List<PointF>();
@@ -594,10 +597,10 @@ namespace PurplePen.MapModel
                             newStartStop.Add(startStop);
                         }
 
-                        if (iStart+1 < points.Length && kinds[iStart+1] == PointKind.BezierControl) {
+                        if (iStart + 1 < points.Length && kinds[iStart + 1] == PointKind.BezierControl) {
                             // Get a bezier and convert it to lines.
                             newPoints.RemoveAt(newPoints.Count - 1);
-                            Bezier bez = new Bezier(points[iStart], points[iStart+1], points[iStart+2], points[iStart+3]);
+                            Bezier bez = new Bezier(points[iStart], points[iStart + 1], points[iStart + 2], points[iStart + 3]);
                             bez.Flatten(FLATTENAMOUNT, newPoints);
                             newPoints.RemoveAt(newPoints.Count - 1);
 
@@ -614,12 +617,12 @@ namespace PurplePen.MapModel
                         }
                     }
 
-                    flatpoints = newPoints.ToArray();
                     flatkinds = newKinds.ToArray();
                     if (newStartStop != null)
                         flatStartStop = newStartStop.ToArray();
                     else
                         flatStartStop = null;
+                    flatpoints = newPoints.ToArray(); // Must be last for correct thread synchronization!
                 }
             }
         }
