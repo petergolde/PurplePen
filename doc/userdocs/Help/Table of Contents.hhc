@@ -319,6 +319,10 @@
 				<param name="Local" value="EditAddDangerousArea.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Temporary Construction">
+				<param name="Local" value="EditAddConstruction.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Water Location">
 				<param name="Local" value="EditAddWaterLocation.htm">
 				</OBJECT>
@@ -357,6 +361,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Rectangle">
 				<param name="Local" value="EditAddRectangle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Ellipse">
+				<param name="Local" value="EditAddEllipse.htm">
 				</OBJECT>
 		</UL>
 		<LI> <OBJECT type="text/sitemap">
