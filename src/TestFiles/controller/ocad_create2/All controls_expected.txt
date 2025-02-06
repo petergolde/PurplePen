@@ -989,8 +989,8 @@ Object Sym=72000 Otp=4
 
 String of type 9
   ObjIndex=0
-  firstField=Lower purple
-  code=n, value=12
+  firstField=Purple
+  code=n, value=11
   code=c, value=15
   code=m, value=90
   code=y, value=0
@@ -999,8 +999,8 @@ String of type 9
 
 String of type 9
   ObjIndex=0
-  firstField=Purple
-  code=n, value=11
+  firstField=Lower purple
+  code=n, value=12
   code=c, value=15
   code=m, value=90
   code=y, value=0

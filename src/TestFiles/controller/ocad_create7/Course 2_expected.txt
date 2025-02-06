@@ -11,8 +11,8 @@ Symbol header:
   BlackFreq=1500; BlackAng=450
   Reserved1=0x0 Reserved2=0x0
 
-Color #12:   name:  Lower purple  overprint: 0  value:  Cy=0 Mg=200 Yl=200 Bk=60
 Color #11:   name:  Purple  overprint: 0  value:  Cy=0 Mg=200 Yl=200 Bk=60
+Color #12:   name:  Lower purple  overprint: 0  value:  Cy=0 Mg=200 Yl=200 Bk=60
 Color #0:   name:  Black  overprint: 0  value:  Cy=0 Mg=0 Yl=0 Bk=200
 Color #44:   name:  White  overprint: 0  value:  Cy=0 Mg=0 Yl=0 Bk=0
 

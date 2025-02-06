@@ -198,16 +198,16 @@ namespace PurplePen
 
                 // Create colors for the regular colors in the correct order (lower on top).
                 for (int layerIndex = LAYERCOUNT-1; layerIndex >= 0; --layerIndex) {
-                    if (colorName[layerIndex] != null) {
-                        // Create the symColor for rendering.
-                        colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
-                                                          colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], colorOverprint[layerIndex]);
-                    }
-
                     if (!mapRenderOptions.LowerColorsBelowWhiteOut && lower_colorName[layerIndex] != null) {
                         // Create the lower symColor for rendering.
                         lower_colors[layerIndex] = map.AddColor(lower_colorName[layerIndex], lower_ocadColorId[layerIndex],
                                                           lower_colorC[layerIndex], lower_colorM[layerIndex], lower_colorY[layerIndex], lower_colorK[layerIndex], lower_colorOverprint[layerIndex]);
+                    }
+
+                    if (colorName[layerIndex] != null) {
+                        // Create the symColor for rendering.
+                        colors[layerIndex] = map.AddColor(colorName[layerIndex], ocadColorId[layerIndex],
+                                                          colorC[layerIndex], colorM[layerIndex], colorY[layerIndex], colorK[layerIndex], colorOverprint[layerIndex]);
                     }
                 }
 

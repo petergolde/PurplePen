@@ -2746,12 +2746,13 @@ namespace PurplePen
             purple50 = mapColors.FirstOrDefault(color => color.Name == NormalCourseAppearance.purple50ColorName);
 
             if (purple50 == null) {
-                // Create a new 50% purple color, directly below the purple color, with 50% of the CMYK values.
+                // Create a new 50% purple color, directly below the purple color, with 50% of the CMYK values,
+                // and the same overprint setting.
 
                 float c, m, y, k;
                 purpleColor.GetCMYK(out c, out m, out y, out k);
                 int purpleIndex = mapColors.IndexOf(purpleColor);
-                purple50 = map.AddColorAtIndex(purpleIndex, NormalCourseAppearance.purple50ColorName, NormalCourseAppearance.purple50OcadId, c / 2F, m / 2F, y / 2F, k / 2F, false);
+                purple50 = map.AddColorAtIndex(purpleIndex, NormalCourseAppearance.purple50ColorName, NormalCourseAppearance.purple50OcadId, c / 2F, m / 2F, y / 2F, k / 2F, purpleColor.OverPrint);
             }
 
             return purple50;
