@@ -2893,7 +2893,7 @@ namespace PurplePen
 
         private void supportWebSiteMenu_Click(object sender, EventArgs e)
         {
-            Util.GoToWebPage("http://purple-pen.org/support.htm");
+            Util.GoToWebPage("http://purple-pen.org#support");
         }
 
         private void mainWebSiteToolMenu_Click(object sender, EventArgs e)
@@ -2903,7 +2903,7 @@ namespace PurplePen
 
         private void donateWebSiteMenu_Click(object sender, EventArgs e)
         {
-            Util.GoToWebPage("http://purple-pen.org/donate.htm");
+            Util.GoToWebPage("http://purple-pen.org#donate");
         }
 
         private void courseSummaryMenu_Click(object sender, EventArgs e)
