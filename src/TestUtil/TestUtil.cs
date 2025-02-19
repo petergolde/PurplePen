@@ -56,11 +56,27 @@ namespace TestingUtils
             return Path.GetFullPath(Path.Combine(callingPath, @"..\..\..\TestFiles"));
         }
 
+        // Get the tool file direction
+        public static string GetToolsFileDirectory()
+        {
+            Uri uri = new Uri(typeof(TestUtil).Assembly.CodeBase);
+            string callingPath = Path.GetDirectoryName(uri.LocalPath);
+            return Path.GetFullPath(Path.Combine(callingPath, @"..\..\..\tools"));
+        }
+
+
         // Get a file from the test file directory.
         public static string GetTestFile(string basename)
         {
             return Path.GetFullPath(Path.Combine(GetTestFileDirectory(), basename));
         }
+
+        // Get a exe name from the Tools.
+        public static string GetToolFullPath(string toolName)
+        {
+            return Path.GetFullPath(Path.Combine(GetToolsFileDirectory(), toolName));
+        }
+
 
         public static string GetBitnessSpecificFileName(string path, bool is64, bool checkExistance)
         {
@@ -90,7 +106,7 @@ namespace TestingUtils
         // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
         // The difference bitmap has "colorSame" background, and the bits from the second bitmap where differences are.
         // Used as helper from CompareBitmaps if a difference is detected.
-        private static Bitmap DifferenceBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent, int maxPixelDifference)
+        public static Bitmap DifferenceBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent, int maxPixelDifference = 0)
         {
             int width = bm1.Width, height = bm1.Height;
 
@@ -399,6 +415,16 @@ namespace TestingUtils
                 Assert.AreEqual(expected, actual, s);
             }
         }
+
+        // Append some text to the filename part of a path, before the extension.
+        public static string AppendToPathName(string path, string append)
+        {
+            string extension = Path.GetExtension(path);
+            string withoutExtension = Path.ChangeExtension(path, null);
+            return Path.ChangeExtension(withoutExtension + append, extension);
+        }
+
+
 
         public static void WriteStringDifference(string s1, string s2)
         {

@@ -111,3 +111,4 @@ src/.vs/
 /src/PurplePenMsixInstaller/BundleArtifacts/Upload/x86.txt
 src/MsixInstaller/AppPackages/
 src/MsftStoreInstaller/AppPackages/
+/src/FontInstaller/output/Roboto Font Installer.exe

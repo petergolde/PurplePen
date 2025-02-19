@@ -94,23 +94,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicTests.cs" />
-    <Compile Include="BitmapCompareDialog2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BitmapCompareDialog2.designer.cs">
-      <DependentUpon>BitmapCompareDialog2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BitmapViewer.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BitmapViewer.designer.cs">
-      <DependentUpon>BitmapViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderingTests.cs" />
-    <Compile Include="TestUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj">
+      <Project>{d50b6e2b-5e20-410d-b033-debb6b695e77}</Project>
+      <Name>TestUtil</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj">
       <Project>{EF01E0B6-D7E7-4A4C-970A-29D677D59233}</Project>
       <Name>Graphics2D</Name>
@@ -127,14 +118,6 @@
       <Project>{6D375500-20E2-428A-BBCD-73BBE0F5F503}</Project>
       <Name>Map_WPF</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="BitmapCompareDialog2.resx">
-      <DependentUpon>BitmapCompareDialog2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BitmapViewer.resx">
-      <DependentUpon>BitmapViewer.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

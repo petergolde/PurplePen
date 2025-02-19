@@ -28,6 +28,8 @@ namespace TestWpfMap
     {
         private TestContext testContextInstance;
 
+        private const int MAX_PIXEL_DIFFERENCE = 20;
+
         /// <summary>
         ///Gets or sets the test context which provides
         ///information about and functionality for the current test run.
@@ -223,7 +225,7 @@ namespace TestWpfMap
 
 
             WritePng(bitmapNew, newBitmapName);
-            TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
+            TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName, MAX_PIXEL_DIFFERENCE);
 
             if (testLightenedColor) {
                 using (map.Write()) {
@@ -240,7 +242,7 @@ namespace TestWpfMap
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
                 BitmapSource bitmapLight = RenderBitmap(map, bmWidth, bmHeight, mapArea);
                 WritePng(bitmapLight, newBitmapName);
-                TestUtil.CompareBitmapBaseline(newBitmapName, lightenedPngFileName);
+                TestUtil.CompareBitmapBaseline(newBitmapName, lightenedPngFileName, MAX_PIXEL_DIFFERENCE);
             }
 
             if (roundtripToOcadFile) {
@@ -258,7 +260,7 @@ namespace TestWpfMap
                     // Draw into a new bitmap.
                     bitmapNew = RenderBitmap(map, bmWidth, bmHeight, mapArea);
                     WritePng(bitmapNew, newBitmapName);
-                    TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
+                    TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName, MAX_PIXEL_DIFFERENCE);
 
                     File.Delete(ocadFileName);
                 }

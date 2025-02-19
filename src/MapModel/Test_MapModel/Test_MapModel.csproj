@@ -82,6 +82,10 @@
     <Compile Include="UndoTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj">
+      <Project>{d50b6e2b-5e20-410d-b033-debb6b695e77}</Project>
+      <Name>TestUtil</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj">
       <Project>{EF01E0B6-D7E7-4A4C-970A-29D677D59233}</Project>
       <Name>Graphics2D</Name>
@@ -93,10 +97,6 @@
     <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
       <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
       <Name>Map_GDIPlus</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestUtil\TestUtil.csproj">
-      <Project>{D50B6E2B-5E20-410D-B033-DEBB6B695E77}</Project>
-      <Name>TestUtil</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

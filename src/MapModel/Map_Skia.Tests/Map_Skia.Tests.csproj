@@ -79,6 +79,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj">
+      <Project>{d50b6e2b-5e20-410d-b033-debb6b695e77}</Project>
+      <Name>TestUtil</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Graphics2DStd\Graphics2DStd.csproj">
       <Project>{ce3bccf5-367b-42ca-b4e1-5b20a83c9b94}</Project>
       <Name>Graphics2DStd</Name>
@@ -100,10 +104,6 @@
     <ProjectReference Include="..\Map_SkiaStd\Map_SkiaStd.csproj">
       <Project>{40d651ec-bbb1-48a6-abd3-f2906415230e}</Project>
       <Name>Map_SkiaStd</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestUtil\TestUtil.csproj">
-      <Project>{d50b6e2b-5e20-410d-b033-debb6b695e77}</Project>
-      <Name>TestUtil</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
