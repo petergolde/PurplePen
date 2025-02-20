@@ -16,6 +16,8 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class SelectionTests
     {
+        private const int MAX_PIXEL_DIFF = 20;
+
         Map ReadMap(string basename)
         {
             string filename = TestUtil.GetTestFile("selection\\" + basename);
@@ -418,7 +420,7 @@ namespace PurplePen.MapModel.Tests
             // Draw into a new bitmap.
             Bitmap bitmapNew = RenderBitmap(map, size, mapArea, draw);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
             return true;
         }

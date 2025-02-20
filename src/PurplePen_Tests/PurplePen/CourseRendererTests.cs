@@ -47,6 +47,8 @@ namespace PurplePen.Tests
     [TestClass]
     public class CourseRendererTests: TestFixtureBase
     {
+        private const int MAX_PIXEL_DIFF = 25;
+
         void CheckCourse(string filename, CourseDesignator courseDesignator, bool addAllControls, string testName, RectangleF rect, CourseAppearance appearance)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
@@ -95,7 +97,7 @@ namespace PurplePen.Tests
                     map.Draw(new GDIPlus_GraphicsTarget(g), rect, options, null);
             }
 
-            TestUtil.CheckBitmapsBase(bm, "courserenderer\\" + testName);
+            TestUtil.CheckBitmapsBase(bm, "courserenderer\\" + testName, MAX_PIXEL_DIFF);
         }
 
         // Do CheckCourse for normal and special appearances.

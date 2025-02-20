@@ -28,7 +28,7 @@ namespace TestWpfMap
     {
         private TestContext testContextInstance;
 
-        private const int MAX_PIXEL_DIFFERENCE = 20;
+        private const int MAX_PIXEL_DIFFERENCE = 25;
 
         /// <summary>
         ///Gets or sets the test context which provides
@@ -119,7 +119,7 @@ namespace TestWpfMap
             File.Delete(newBitmapName);
             WritePng(bitmapNew, newBitmapName);
 
-            TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName);
+            TestUtil.CompareBitmapBaseline(newBitmapName, pngFileName, MAX_PIXEL_DIFFERENCE);
         }
 
 

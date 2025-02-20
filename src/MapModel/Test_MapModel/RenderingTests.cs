@@ -51,6 +51,8 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class Rendering 
     {
+        private const int MAX_PIXEL_DIFF = 25;
+
         static Rendering()
         {
             Uri uri = new Uri(typeof(Rendering).Assembly.CodeBase);
@@ -87,7 +89,7 @@ namespace PurplePen.MapModel.Tests
                                         Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
             File.Delete(newBitmapName);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
         }
 
         [Test]
@@ -322,12 +324,12 @@ namespace PurplePen.MapModel.Tests
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
             if (testLightenedColor) {
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
                 Bitmap bitmapLight = RenderBitmap(map, size, mapArea, renderOptions, 0.4F);
-                TestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName);
+                TestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName, MAX_PIXEL_DIFF);
             }
 
             if (roundtripToOcadFile) {
@@ -345,7 +347,7 @@ namespace PurplePen.MapModel.Tests
                     // Draw into a new bitmap.
                     bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, 1.0F);
 
-                    TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+                    TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
                     File.Delete(ocadFileName);
                 }

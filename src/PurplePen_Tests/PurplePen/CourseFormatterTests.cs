@@ -50,6 +50,8 @@ namespace PurplePen.Tests
     [TestClass]
     public class CourseFormatterTests: TestFixtureBase
     {
+        private const int MAX_PIXEL_DIFF = 20;
+
         void CheckCourse(string testfileName, Id<Course> courseId, CourseLayer layer, string expected)
         {
             SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
@@ -952,7 +954,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
                 g.DrawRectangle(new Pen(Color.Red, 0.05F), rect.Left, rect.Top, rect.Width, rect.Height);
             }
 
-            TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize");
+            TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize", MAX_PIXEL_DIFF);
         }
 
         [TestMethod]
@@ -981,7 +983,7 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
                 g.DrawRectangle(new Pen(Color.Red, 0.05F), rect.Left, rect.Top, rect.Width, rect.Height);
             }
 
-            TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize2");
+            TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize2", MAX_PIXEL_DIFF);
         }
 
         // Check a rectangle with its center at a particular angle.

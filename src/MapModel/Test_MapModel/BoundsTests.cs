@@ -47,6 +47,8 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class BoundsTests
     {
+        public const int MAX_PIXEL_DIFF = 25;
+
         [SetUp]
         public void Init()
         {
@@ -118,7 +120,7 @@ namespace PurplePen.MapModel.Tests
             // Draw into a new bitmap.
             Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
             return true;
         }

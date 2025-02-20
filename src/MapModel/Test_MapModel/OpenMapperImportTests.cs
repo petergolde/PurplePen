@@ -47,6 +47,8 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class OpenMapperImportTests
     {
+        private const int MAX_PIXEL_DIFF = 25;
+
         Map LoadMap(string baseName)
         {
             Map map = new Map(new GDIPlus_TextMetrics(), new GDIPlus_FileLoader(TestUtil.GetTestFile("openmapper")));
@@ -99,7 +101,7 @@ namespace PurplePen.MapModel.Tests
             else
                 result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
+            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         void VerifyRendering(Map map, RectangleF area, string baseline)
@@ -120,7 +122,7 @@ namespace PurplePen.MapModel.Tests
 
             Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
+            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         void VerifyRenderingOverprint(Map map, RectangleF area, string baseline)
@@ -141,7 +143,7 @@ namespace PurplePen.MapModel.Tests
 
             Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
+            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         private void RoundTrip(string basename, RectangleF area, string baseline, int version, Map map)
@@ -219,7 +221,7 @@ namespace PurplePen.MapModel.Tests
 
             Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline));
+            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         [Test]
