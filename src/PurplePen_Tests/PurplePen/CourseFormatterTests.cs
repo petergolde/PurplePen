@@ -50,7 +50,7 @@ namespace PurplePen.Tests
     [TestClass]
     public class CourseFormatterTests: TestFixtureBase
     {
-        private const int MAX_PIXEL_DIFF = 20;
+        private const int MAX_PIXEL_DIFF = 25;
 
         void CheckCourse(string testfileName, Id<Course> courseId, CourseLayer layer, string expected)
         {

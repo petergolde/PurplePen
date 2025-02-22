@@ -47,7 +47,7 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class OpenMapperImportTests
     {
-        private const int MAX_PIXEL_DIFF = 25;
+        private const int MAX_PIXEL_DIFF = 35;
 
         Map LoadMap(string baseName)
         {

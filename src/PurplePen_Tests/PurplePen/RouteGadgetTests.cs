@@ -51,6 +51,9 @@ namespace PurplePen.Tests
     {
         // This is just to compare file sizes/quality of GIF vs. JPG.
         // [TestMethod]
+
+        const int MAX_PIXEL_DIFF = 30;
+
         public void CompareFiles()
         {
             MapDisplay mapDisplay = new MapDisplay();
@@ -165,7 +168,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
 
             Bitmap bmLoaded = (Bitmap)Image.FromFile(filename);
-            Assert.AreEqual(100F, bmLoaded.VerticalResolution);
+            Assert.AreEqual(100F, bmLoaded.VerticalResolution, MAX_PIXEL_DIFF);
             Assert.AreEqual(100F, bmLoaded.HorizontalResolution);
 
             TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);

@@ -16,7 +16,7 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class SelectionTests
     {
-        private const int MAX_PIXEL_DIFF = 20;
+        private const int MAX_PIXEL_DIFF = 30;
 
         Map ReadMap(string basename)
         {

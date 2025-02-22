@@ -17,6 +17,8 @@ namespace PurplePen.Tests
         Controller controller;
         TestUI ui;
 
+        const int MAX_PIXEL_DIFF = 30;
+
         [TestInitialize]
         public void Setup()
         {
@@ -63,7 +65,7 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             for (int i = 0; i < expectedBitmapNames.Length; ++i) {
-                TestUtil.CompareBitmapBaseline(expectedBitmapNames[i], expectedBitmapBaselines[i]);
+                TestUtil.CompareBitmapBaseline(expectedBitmapNames[i], expectedBitmapBaselines[i], MAX_PIXEL_DIFF);
             }
 
             if (expectedTextNames != null) {

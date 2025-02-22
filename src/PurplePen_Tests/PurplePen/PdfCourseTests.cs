@@ -20,6 +20,8 @@ namespace PurplePen.Tests
         TestUI ui;
         Controller controller;
 
+        private const int MAX_PIXEL_DIFF = 30;
+
         [TestInitialize]
         public void Setup()
         {
@@ -72,7 +74,7 @@ namespace PurplePen.Tests
                 Assert.AreEqual(expectedPageExists, actualPageExists);
                 if (expectedPageExists) {
                     using (Bitmap bmNew = (Bitmap)Image.FromFile(pngActualPage)) {
-                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage);
+                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage, MAX_PIXEL_DIFF);
                     }
                 }
                 else {

@@ -631,7 +631,7 @@ namespace PurplePen
     abstract class AreaCourseObj : CourseObj
     {
         // NOTE: if new fields are added, update Equals implementation.
-        SymPathWithHoles path;                // closed path with the area to fill
+        protected SymPathWithHoles path;                // closed path with the area to fill
 
         protected AreaCourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance, PointF[] pts) :
            base(controlId, courseControlId, specialId, courseObjRatio, appearance)
@@ -2756,6 +2756,15 @@ namespace PurplePen
             }
 
             return purple50;
+        }
+
+        public override RectangleF GetHighlightBounds()
+        {
+            float thickness = 0.1F * courseObjRatio;
+
+            RectangleF bounds = path.BoundingBox;
+            bounds.Inflate(thickness * 5, thickness * 5);
+            return bounds;
         }
     }
 

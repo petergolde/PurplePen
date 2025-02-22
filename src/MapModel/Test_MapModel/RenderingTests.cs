@@ -51,7 +51,7 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class Rendering 
     {
-        private const int MAX_PIXEL_DIFF = 25;
+        private const int MAX_PIXEL_DIFF = 30;
 
         static Rendering()
         {

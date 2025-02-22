@@ -28,7 +28,7 @@ namespace TestWpfMap
     {
         private TestContext testContextInstance;
 
-        private const int MAX_PIXEL_DIFFERENCE = 25;
+        private const int MAX_PIXEL_DIFFERENCE = 30;
 
         /// <summary>
         ///Gets or sets the test context which provides

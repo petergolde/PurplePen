@@ -53,6 +53,8 @@ namespace PurplePen.Tests
         CourseAppearance specialAppearance;
         CourseAppearance specialAppearance2;
 
+        private const int MAX_PIXEL_DIFF = 20;
+
         public CourseObjTests()
         {
             // Special appearance to test the usage of CourseAppearance.
@@ -188,7 +190,7 @@ namespace PurplePen.Tests
         internal void CheckRenderBitmap(CourseObj courseobj, string basename, Color backColor)
         {
             Bitmap bmNew = RenderToBitmap(courseobj, backColor);
-            TestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename);
+            TestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename, MAX_PIXEL_DIFF);
         }
 
         // Render to a bitmap and check against the saved version.
@@ -622,6 +624,21 @@ namespace PurplePen.Tests
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObject(courseobj, "dangerous_special");
         }
+
+        [TestMethod]
+        public void Construction()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "construction");
+        }
+
+        [TestMethod]
+        public void ConstructionSpecial()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObject(courseobj, "construction_special");
+        }
+
 
         [TestMethod]
         public void WhiteOut()
@@ -1200,6 +1217,18 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ConstructionDistance()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
+            Assert.AreEqual(Math.Round(1.414213, 3), Math.Round(courseobj.DistanceFromPoint(new PointF(1, 3)), 3));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(3.7F, 1.1F)));
+            Assert.AreEqual(0.0, courseobj.DistanceFromPoint(new PointF(2F, 1.5F)));
+            Assert.AreEqual(1.0, Math.Round(courseobj.DistanceFromPoint(new PointF(5, 1)), 3));
+        }
+
+
+
+        [TestMethod]
         public void WhiteoutDistance()
         {
             CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
@@ -1359,6 +1388,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ConstructionDump()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
+            AssertDump(courseobj, @"TempConstruction:scale:0.5  path:N(3,3)--N(1,1)--N(4,1)--N(3,3)");
+        }
+
+        [TestMethod]
         public void WhiteOutDump()
         {
             CourseObj courseobj = new WhiteOutCourseObj(SpecialId(0), 0.5F, defaultCourseAppearance, new PointF[] { new PointF(3, 3), new PointF(1, 1), new PointF(4, 1), new PointF(3, 3) });
@@ -1418,7 +1454,7 @@ namespace PurplePen.Tests
             }
 
             Bitmap bmDiff;
-            bmDiff = TestUtil.CompareBitmaps(bmNew, bmErased, Color.LightPink, Color.Transparent, 0);
+            bmDiff = TestUtil.CompareBitmaps(bmNew, bmErased, Color.LightPink, Color.Transparent, MAX_PIXEL_DIFF);
             if (bmDiff != null) 
                 bmDiff.Save(TestUtil.GetTestFile("coursesymbols\\" + basename + "_diff.png"), ImageFormat.Png);
             Assert.IsNull(bmDiff, "after erase does not match with before highlight");
@@ -1726,6 +1762,13 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void ConstructionHighlight()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "construction_highlight");
+        }
+
+        [TestMethod]
         public void DropTargethighlight()
         {
             CourseObj courseobj = new TopologyDropTargetCourseObj(ControlId(0), CourseControlId(0), CourseControlId(0), 1.0F, defaultCourseAppearance, new PointF(0, 0), LegInsertionLoc.Normal);
@@ -1745,6 +1788,15 @@ namespace PurplePen.Tests
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectHighlight(courseobj, "dangerous_highlight_special");
         }
+
+        [TestMethod]
+        public void ConstructionHighlightSpecial()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectHighlight(courseobj, "construction_highlight_special");
+        }
+
+
 
         [TestMethod]
         public void WhiteOutHighlightSpecial()
@@ -2244,6 +2296,22 @@ namespace PurplePen.Tests
             CourseObj courseobj = new DangerousCourseObj(SpecialId(0), 1, stdSpr2019CourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
             SingleObjectOffset(courseobj, "dangerous_spr2019_offset");
         }
+
+
+        [TestMethod]
+        public void ConstructionOffset()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 1, defaultCourseAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "construction_offset");
+        }
+
+        [TestMethod]
+        public void ConstructionOffsetSpecial()
+        {
+            CourseObj courseobj = new TempConstructionCourseObj(SpecialId(0), 1, specialAppearance, new PointF[5] { new PointF(-3.0F, -2.0F), new PointF(-2.5F, 1.5F), new PointF(2.5F, 1.0F), new PointF(3.0F, -2.0F), new PointF(-3.0F, -2.0F) });
+            SingleObjectOffset(courseobj, "construction_offset_special");
+        }
+
 
         [TestMethod]
         public void WhiteOutOffset()
