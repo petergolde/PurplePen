@@ -125,6 +125,12 @@ namespace PurplePen
             // Dpi
             comboBoxDpi.Text = settings.Dpi.ToString();
 
+            // Image quality
+            imageQualityUpDown.Value = settings.Quality;
+
+            // Auto rotate
+            autoRotateCheckBox.Checked = settings.AutoRotate;
+
             // Color model.
             if (settings.ColorModel == ColorModel.CMYK)
                 comboBoxColorModel.SelectedIndex = 1;
@@ -177,6 +183,12 @@ namespace PurplePen
                 settings.Dpi = 200; // couldn't parse, just use default
             }
 
+            // Image quality
+            settings.Quality = (int)imageQualityUpDown.Value;
+
+            // Auto rotate
+            settings.AutoRotate = autoRotateCheckBox.Checked;
+
             // Color model.
             settings.ColorModel = (comboBoxColorModel.SelectedIndex == 1) ? ColorModel.CMYK : ColorModel.RGB;
 
@@ -211,5 +223,6 @@ namespace PurplePen
         {
 
         }
+
     }
 }
