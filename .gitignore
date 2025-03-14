@@ -112,3 +112,4 @@ src/.vs/
 src/MsixInstaller/AppPackages/
 src/MsftStoreInstaller/AppPackages/
 /src/FontInstaller/output/Roboto Font Installer.exe
+loc/po/tar/
