@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Розмір елементів</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Змішувати пурпуровий з нижніми кольорами карти</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Немає</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Чорний:</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Налаштувати вигляд</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Змішувати пурпуровий з нижніми кольорами карти</value>
   </data>
 </root>

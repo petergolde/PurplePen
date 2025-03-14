@@ -124,7 +124,7 @@
     <value>Cambia Codice Del Controllo</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Cambia Controllo</value>
+    <value>Cambia punto</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
     <value>Cambia Punti Di Controllo</value>
@@ -145,16 +145,16 @@
     <value>Aggiorna Scala della Mappa</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
-    <value>Muovi Controllo</value>
+    <value>Muovi punto</value>
   </data>
   <data name="MoveControlNumber" xml:space="preserve">
-    <value>Muovi Numero del Controllo</value>
+    <value>muovi il numero del punto</value>
   </data>
   <data name="MoveObject" xml:space="preserve">
     <value>Muovi Oggetto</value>
   </data>
   <data name="DeleteControl" xml:space="preserve">
-    <value>Elimina Controllo</value>
+    <value>Elimina punto</value>
   </data>
   <data name="DeleteObject" xml:space="preserve">
     <value>Elimina Oggetto</value>
@@ -163,16 +163,16 @@
     <value>Elimina Linea Di Testo</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Aggiungi Controllo</value>
+    <value>Aggiungi punto</value>
   </data>
   <data name="AddStart" xml:space="preserve">
     <value>Aggiungi Partenza</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
-    <value>Aggiungi Fine</value>
+    <value>Aggiungi finish</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
-    <value>Aggiungi punto di incrocio obbligatorio</value>
+    <value>Aggiungi punto di passaggio obbligato</value>
   </data>
   <data name="AddObject" xml:space="preserve">
     <value>Aggiungi Oggetto</value>
@@ -181,19 +181,19 @@
     <value>Elimina Percorso</value>
   </data>
   <data name="NewCourse" xml:space="preserve">
-    <value>Nuovo Percorso</value>
+    <value>Nuovo percorso</value>
   </data>
   <data name="ChangeCourseProperties" xml:space="preserve">
     <value>Cambia Proprietà del Percorso</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Cambia Le Proprietà Di Tutti i Controlli</value>
+    <value>Cambia le proprietà della tutti i punti</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
     <value>Crea Nuovo Evento</value>
   </data>
   <data name="SetLegFlagging" xml:space="preserve">
-    <value>Cambia segnalazione della gamba</value>
+    <value>Cambia segnalazione della tratta</value>
   </data>
   <data name="ChangeCodes" xml:space="preserve">
     <value>Cambia Codici</value>
@@ -202,7 +202,7 @@
     <value>Cambia Percorsi Visualizzati</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
-    <value>Muovi piegatura tratta</value>
+    <value>muovi curva della tratta</value>
   </data>
   <data name="AddBend" xml:space="preserve">
     <value>Aggiungi Curva</value>
@@ -217,16 +217,16 @@
     <value>Rimuovi Angolo</value>
   </data>
   <data name="AddGap" xml:space="preserve">
-    <value>Aggiungi Varco</value>
+    <value>Aggiungi taglio</value>
   </data>
   <data name="RemoveGap" xml:space="preserve">
-    <value>Rimuovi Varco</value>
+    <value>Rimuovi taglio</value>
   </data>
   <data name="MoveGap" xml:space="preserve">
-    <value>Muovi Varco</value>
+    <value>Muovi taglio</value>
   </data>
   <data name="Rotate" xml:space="preserve">
-    <value>Rotazione</value>
+    <value>Ruota</value>
   </data>
   <data name="AutoNumbering" xml:space="preserve">
     <value>Numerazione Automatica</value>
@@ -235,7 +235,7 @@
     <value>Cambia Punzonature</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Cambia Schema Punzonature Cartellino</value>
+    <value>Cambia Schema Punzonature delCartellino</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
     <value>Imposta Area Di Stampa</value>
@@ -253,16 +253,16 @@
     <value>Cambia il file mappa</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Ignora i tipi di carattere non trovati</value>
+    <value>Ignora i font non trovati</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
-    <value>Aggiungi Linea Di Testo</value>
+    <value>Aggiungi una casella di testo</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
-    <value>Rimuovi i controlli inutilizzati</value>
+    <value>rimuovi punti non utilizzati in un percorso</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>Modifica il linguaggio della descrizione</value>
+    <value>Modifica la lingua della descrizione punto</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
     <value>Cambia Testo</value>
@@ -277,7 +277,7 @@
     <value>Cancella Cambio Carta</value>
   </data>
   <data name="ChangePartProperties" xml:space="preserve">
-    <value>Cambio proprietà parte percorso</value>
+    <value>Cambia proprietà parte del percorso</value>
   </data>
   <data name="ChangeLineAppearance" xml:space="preserve">
     <value>Cambia Stile Linea</value>
@@ -286,13 +286,13 @@
     <value>Duplica percorso</value>
   </data>
   <data name="CreateMapFiles" xml:space="preserve">
-    <value>Crea {0} %File</value>
+    <value>Crea {0} &amp;File</value>
   </data>
   <data name="AddVariation" xml:space="preserve">
-    <value>Aggiungi Variante</value>
+    <value>aggiungi variazione</value>
   </data>
   <data name="DeleteFork" xml:space="preserve">
-    <value>Elimina Fork/Loop</value>
+    <value>Elimina Variazione/Loop</value>
   </data>
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Variazioni staffetta</value>
@@ -301,10 +301,10 @@
     <value>Aggiungi Punto Consegna mappa</value>
   </data>
   <data name="ChangeDescriptionStandard" xml:space="preserve">
-    <value>Imposta descrizione punto di controllo standard</value>
+    <value>Imposta standard della descrizione punto</value>
   </data>
   <data name="ChangeMapStandard" xml:space="preserve">
-    <value>Imposta mappa standard</value>
+    <value>Imposta standard della mappa</value>
   </data>
   <data name="Stretch" xml:space="preserve">
     <value>Espandi</value>
@@ -313,9 +313,9 @@
     <value>Pubblica su Livelox</value>
   </data>
   <data name="MoveAllControls" xml:space="preserve">
-    <value>Muovi tutti i controlli</value>
+    <value>Muovi Tutti i punti</value>
   </data>
   <data name="AddMapFlip" xml:space="preserve">
-    <value>Aggiungi Rotazione Mappa</value>
+    <value>Aggiungi rotazione mappa</value>
   </data>
 </root>

@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Elem méretek</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Keverje a lila színt a térkép alapszínével</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Egyik sem</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Fekete:</value>
@@ -221,5 +221,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pályakép testreszabása</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Keverje a lila színt a térkép alapszínével</value>
   </data>
 </root>

@@ -135,9 +135,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen dosyası|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Dosya</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Yeni etkinlik...</value>
   </data>
@@ -156,9 +153,6 @@
   <data name="createImageFilesMenu.Text" xml:space="preserve">
     <value>Ima&amp;ge Dosyası Oluştur...</value>
   </data>
-  <data name="createPDFsMenu.Text" xml:space="preserve">
-    <value>P&amp;DF ler oluştur</value>
-  </data>
   <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
     <value>&amp;Açıklamalar...</value>
   </data>
@@ -168,11 +162,14 @@
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
     <value>&amp;Parkurlar...</value>
   </data>
-  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rota İnceleme Dosyaları Oluşturun</value>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>P&amp;DF ler oluştur</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>RouteGadget Dosyaları Oluşturun...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rota İnceleme Dosyaları Oluşturun</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Veri ve Değişim Dosyası Oluştur (IOF XML)...</value>
@@ -192,9 +189,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Yazdır &amp; Parkurları...</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Yazdırma Alanını&amp; Ayarla</value>
-  </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>&amp;Yalnızca bu bölümü</value>
   </data>
@@ -204,14 +198,17 @@
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Tüm Parkurlar</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Yazdırma Alanını&amp; Ayarla</value>
+  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>Program &amp;Dili...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>E&amp;xit</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Düzenle</value>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Dosya</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Seçili olanı temizle</value>
@@ -225,17 +222,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Sil</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Görünüm</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Düzenle</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Bütün &amp;Parkur</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Bütün &amp;Harita</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Yaklaştır</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -258,8 +252,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Harita &amp;Yoğunluk</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Yaklaştır</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Çok düşük</value>
@@ -276,14 +270,17 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Tam</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>Harita &amp;Kalite</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Harita &amp;Yoğunluk</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Düşük</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Yüksek</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>Harita &amp;Kalite</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>Baskı &amp;Alanını Göster</value>
@@ -300,8 +297,8 @@
   <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
     <value>Diğer Parkurları Temizle</value>
   </data>
-  <data name="addMenu.Text" xml:space="preserve">
-    <value>&amp;Ekle</value>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Görünüm</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>&amp;Başlama</value>
@@ -315,9 +312,6 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp; Açıklamalar</value>
   </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Harita &amp;Değişimi</value>
-  </data>
   <data name="addMapFlipMenuItem.Text" xml:space="preserve">
     <value>Harita &amp;Kontrol Noktasında Çevir</value>
   </data>
@@ -326,6 +320,9 @@
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>Harita Değişimine Yönelik İşaretli Rota</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Harita &amp;Değişimi</value>
   </data>
   <data name="addVariationMenu.Text" xml:space="preserve">
     <value>&amp;Varyasyon...</value>
@@ -381,8 +378,8 @@
   <data name="addEllipseMenu.Text" xml:space="preserve">
     <value>Elips</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Etkinlik</value>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Ekle</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp; Harita Dosyası ...</value>
@@ -402,9 +399,6 @@
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>Zımba Desenleri...</value>
   </data>
-  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
-    <value>IOF &amp;Standartları</value>
-  </data>
   <data name="descriptionStd2004Menu.Text" xml:space="preserve">
     <value>2004 Tanım Satandardı</value>
   </data>
@@ -420,14 +414,17 @@
   <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
     <value>ISSprOM 2019 Harita Standardı</value>
   </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF &amp;Standartları</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Açıklama Metnini Özelleştir...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>&amp;Görünüşü özelleştirme...</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Parkur</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Etkinlik</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Parkur ekle...</value>
@@ -450,8 +447,8 @@
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>Röle Takımı &amp; Varyasyonlar...</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Nesne</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Parkur</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Sil</value>
@@ -483,9 +480,6 @@
   <data name="stretchMenu.Text" xml:space="preserve">
     <value>Uzat</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Bacak İşaretleme</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>İşaretleme Yok</value>
   </data>
@@ -498,11 +492,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Bacak Sonu İşaretlendi</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Bacak İşaretleme</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Görüntülenen Parkurları Değiştir...</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Rapor</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Nesne</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Parkur &amp; Özet</value>
@@ -519,8 +516,8 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Kontrol ve Bacak Yükleme</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Yardım</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Rapor</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Yardım</value>
@@ -539,9 +536,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Purple Pen Hakkında</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Hata ayıklama</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Sembol Tarayıcı</value>
@@ -576,8 +570,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Çarpışmak</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Açıklama Metni Çevirisi</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Hata ayıklama</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Tanım Dili Ekle...</value>
@@ -587,6 +581,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Sembolleri Birleştir.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Açıklama Metni Çevirisi</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Yardım</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Aç</value>
@@ -645,18 +645,6 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Varyasyon Ekle</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Özel Nesne Ekle</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Add Bend (Ctrl+B)</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Add Gap (Ctrl+G)</value>
-  </data>
   <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Zamanlayıcı Başlatma</value>
   </data>
@@ -704,6 +692,18 @@
   </data>
   <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
     <value>Elips</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Özel Nesne Ekle</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Add Bend (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Add Gap (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Zoom: 100%</value>

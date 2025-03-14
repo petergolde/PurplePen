@@ -193,7 +193,7 @@
     <value>Normalmente i percorsi dovrebbero indicare il dislivello</value>
   </data>
   <data name="EventAudit_MissingD" xml:space="preserve">
-    <value>Tutti i controlli devono avere il simbolo principale nella colonna D</value>
+    <value>Tutti i punti devono avere il simbolo principale nella colonna D</value>
   </data>
   <data name="EventAudit_MissingEBetween" xml:space="preserve">
     <value>Quando "tra" è nella colonna G, due simboli devono essere inseriti nelle colonne D ed E</value>
@@ -217,7 +217,7 @@
     <value>Schema Punzonatura Mancante</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
-    <value>Il punteggio del percorso dovrebbe avere un punteggio impostato per tutti i controlli o per nessuno.</value>
+    <value>Il punteggio del percorso dovrebbe avere un punteggio impostato per tutti i punti o per nessuno.</value>
   </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
     <value>Punteggio Mancante</value>
@@ -250,7 +250,7 @@
     <value>Controlli non usati</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>I seguenti controlli sono presenti nella lista "Tutti i controlli" ma non vengono utilizzati in nessun percorso. Per rimuoverli, utilizzare il comando "Rimuovi controlli inutilizzati" nel menu "Evento". Tali controlli non verranno considerati nella presente relazione.</value>
+    <value>I seguenti punti sono presenti nella lista "Tutti i punti" ma non vengono utilizzati in nessun percorso. Per rimuoverli, utilizzare il comando "Rimuovi controlli inutilizzati" nel menu "Evento". Tali controlli non verranno considerati nella presente relazione.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Si</value>

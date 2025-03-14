@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -918,9 +918,27 @@ msgstr "IOF standart boyutlarını kullan"
 msgid "Item Sizes"
 msgstr "Nesne Boyutu"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
-msgstr "Mor ile temel harita renklerini karıştırın"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Yok"
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -1001,11 +1019,6 @@ msgstr "Parkur Bölümü Özellikleri"
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
 msgstr "Tamamı"
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
-msgstr "Yok"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
@@ -1525,10 +1538,6 @@ msgstr "Purple Pen dosyası|*.ppen|Tüm dosyalar|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen dosyası|*.ppen"
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Dosya"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Yeni etkinlik..."
@@ -1553,10 +1562,6 @@ msgstr "OCAD ve Dosyalar Oluştur ..."
 msgid "Create Ima&ge Files..."
 msgstr "Ima&ge Dosyası Oluştur..."
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr "P&DF ler oluştur"
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr "&Açıklamalar..."
@@ -1569,13 +1574,17 @@ msgstr "Delme Kartları Yazdır..."
 msgid "&Courses..."
 msgstr "&Parkurlar..."
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
-msgstr "Rota İnceleme Dosyaları Oluşturun"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr "P&DF ler oluştur"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
 msgstr "RouteGadget Dosyaları Oluşturun..."
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr "Rota İnceleme Dosyaları Oluşturun"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1601,10 +1610,6 @@ msgstr "Delme Kartları Yazdır..."
 msgid "Print &Courses..."
 msgstr "Yazdır & Parkurları..."
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Yazdırma Alanını& Ayarla"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr "&Yalnızca bu bölümü"
@@ -1617,6 +1622,10 @@ msgstr "&Bu Parkuru"
 msgid "&All Courses"
 msgstr "&Tüm Parkurlar"
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Yazdırma Alanını& Ayarla"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr "Program &Dili..."
@@ -1625,9 +1634,9 @@ msgstr "Program &Dili..."
 msgid "E&xit"
 msgstr "E&xit"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Düzenle"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Dosya"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1649,9 +1658,9 @@ msgstr "&Yinele"
 msgid "&Delete"
 msgstr "&Sil"
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Görünüm"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Düzenle"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
@@ -1660,10 +1669,6 @@ msgstr "Bütün &Parkur"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "Bütün &Harita"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Yaklaştır"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1693,9 +1698,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "Harita &Yoğunluk"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Yaklaştır"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1717,9 +1722,9 @@ msgstr "& Yüksek"
 msgid "&Full"
 msgstr "&Tam"
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "Harita &Kalite"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Harita &Yoğunluk"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1728,6 +1733,10 @@ msgstr "Düşük"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "Yüksek"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Harita &Kalite"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1749,9 +1758,9 @@ msgstr "Diğer Parkurlar..."
 msgid "Clear Other Courses"
 msgstr "Diğer Parkurları Temizle"
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
-msgstr "&Ekle"
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Görünüm"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
@@ -1770,10 +1779,6 @@ msgstr "&Bitiş"
 msgid "&Descriptions"
 msgstr "& Açıklamalar"
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr "Harita &Değişimi"
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr "Harita &Kontrol Noktasında Çevir"
@@ -1785,6 +1790,10 @@ msgstr "&Kontrol Noktasında Harita Değişimi"
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
 msgstr "Harita Değişimine Yönelik İşaretli Rota"
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
+msgstr "Harita &Değişimi"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1822,6 +1831,11 @@ msgstr "Sınır Dışı Alan"
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
 msgstr "Tehlikeli Alan"
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
+msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1881,9 +1895,9 @@ msgstr "Dikdörtgen"
 msgid "Ellipse"
 msgstr "Elips"
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Etkinlik"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr "&Ekle"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1909,10 +1923,6 @@ msgstr "Tüm Noktaları Ta&şı..."
 msgid "&Punch Patterns..."
 msgstr "Zımba Desenleri..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr "IOF &Standartları"
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr "2004 Tanım Satandardı"
@@ -1933,6 +1943,10 @@ msgstr "ISOM2017 Harita Standardı"
 msgid "ISSprOM 2019 Map Standard"
 msgstr "ISSprOM 2019 Harita Standardı"
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr "IOF &Standartları"
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "&Açıklama Metnini Özelleştir..."
@@ -1941,9 +1955,9 @@ msgstr "&Açıklama Metnini Özelleştir..."
 msgid "Customize &Appearance..."
 msgstr "&Görünüşü özelleştirme..."
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Parkur"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Etkinlik"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1973,9 +1987,9 @@ msgstr "Rakip &Yükle..."
 msgid "Relay Team &Variations..."
 msgstr "Röle Takımı & Varyasyonlar..."
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Nesne"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Parkur"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -2013,10 +2027,6 @@ msgstr "Döndür"
 msgid "&Stretch"
 msgstr "Uzat"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "&Bacak İşaretleme"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "İşaretleme Yok"
@@ -2033,13 +2043,17 @@ msgstr "Bacak Bayraklı Başlangıcı"
 msgid "End of Leg Flagged"
 msgstr "Bacak Sonu İşaretlendi"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Bacak İşaretleme"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Görüntülenen Parkurları Değiştir..."
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Rapor"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Nesne"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2061,9 +2075,9 @@ msgstr "Kontrol &Çapraz referans"
 msgid "Control and Leg Loa&d"
 msgstr "Kontrol ve Bacak Yükleme"
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Yardım"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapor"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2088,10 +2102,6 @@ msgstr "Bağış Yap"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Purple Pen Hakkında"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Hata ayıklama"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -2137,9 +2147,9 @@ msgstr "Açıklama Çevirileri Eksik"
 msgid "Crash"
 msgstr "Çarpışmak"
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Açıklama Metni Çevirisi"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Hata ayıklama"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -2152,6 +2162,14 @@ msgstr "Çevrilmiş Metinleri Ekle..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Sembolleri Birleştir.xml..."
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Açıklama Metni Çevirisi"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Yardım"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -3018,6 +3036,10 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr ""
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Velikosti položek</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Míchat purpurovou s barvami mapy</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Žádný</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Černá:</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Upravit vzhled</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Míchat purpurovou s barvami mapy</value>
   </data>
 </root>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -902,9 +902,27 @@ msgstr "使用国际定联标准尺寸"
 msgid "Item Sizes"
 msgstr "物体尺寸"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
-msgstr "混合紫色的底层地图的颜色"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "无"
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -982,11 +1000,6 @@ msgstr "部分线路属性"
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
 msgstr "全部"
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
-msgstr "无"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
@@ -1496,10 +1509,6 @@ msgstr "紫笔文件|*.ppen|所有文件|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "紫笔文件|*.ppen"
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "文件(&F)"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "新的赛事(&N)"
@@ -1524,10 +1533,6 @@ msgstr "创建ocad文件..."
 msgid "Create Ima&ge Files..."
 msgstr "创建图像文件..."
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr "创建PDF文件"
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr "说明"
@@ -1540,13 +1545,17 @@ msgstr "打卡纸..."
 msgid "&Courses..."
 msgstr "线路..."
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
-msgstr "创建轨迹回放文件"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr "创建PDF文件"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
 msgstr "创建路径和文件的小工具…"
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr "创建轨迹回放文件"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1572,10 +1581,6 @@ msgstr "打印打卡纸..."
 msgid "Print &Courses..."
 msgstr "打印线路..."
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "设置打印范围"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr "这部分只"
@@ -1588,6 +1593,10 @@ msgstr "这条线路"
 msgid "&All Courses"
 msgstr "全部线路"
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "设置打印范围"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr "程序语言"
@@ -1596,9 +1605,9 @@ msgstr "程序语言"
 msgid "E&xit"
 msgstr "退出"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "修改"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "文件(&F)"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1620,9 +1629,9 @@ msgstr "重做"
 msgid "&Delete"
 msgstr "删除"
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "视图"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "修改"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
@@ -1631,10 +1640,6 @@ msgstr "整个线路"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "整个地图"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "缩放"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1664,9 +1669,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "地图与强度"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "缩放"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1688,9 +1693,9 @@ msgstr "高"
 msgid "&Full"
 msgstr "不透明"
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "地图质量"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "地图与强度"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1699,6 +1704,10 @@ msgstr "低"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "高"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "地图质量"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1720,9 +1729,9 @@ msgstr "其他线路..."
 msgid "Clear Other Courses"
 msgstr "删除其他线路"
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
-msgstr "添加 (&A)..."
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "视图"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
@@ -1741,10 +1750,6 @@ msgstr "完成(&F)"
 msgid "&Descriptions"
 msgstr "说明"
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr "换图"
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr "在这个检查点进行地图切换（&F）"
@@ -1756,6 +1761,10 @@ msgstr "在检查点换图"
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
 msgstr "已标记到达换图的线路"
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
+msgstr "换图"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1793,6 +1802,11 @@ msgstr "禁区"
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
 msgstr "危险路段"
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
+msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1852,9 +1866,9 @@ msgstr "矩形"
 msgid "Ellipse"
 msgstr "椭圆"
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "赛事"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr "添加 (&A)..."
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1880,10 +1894,6 @@ msgstr "移动所有检查点（&v）"
 msgid "&Punch Patterns..."
 msgstr "&机械打卡器针脚排列..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr "国际定联标准"
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr "2004 检查点说明规范"
@@ -1904,6 +1914,10 @@ msgstr "ISOM2017 制图规范"
 msgid "ISSprOM 2019 Map Standard"
 msgstr "ISSprOM 2019制图规范"
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr "国际定联标准"
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "自定义说明文本"
@@ -1912,9 +1926,9 @@ msgstr "自定义说明文本"
 msgid "Customize &Appearance..."
 msgstr "个性化外观"
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "线路"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "赛事"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1944,9 +1958,9 @@ msgstr "竞争对手和负载…"
 msgid "Relay Team &Variations..."
 msgstr "接力队分支…"
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "项目"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "线路"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1984,10 +1998,6 @@ msgstr "旋转"
 msgid "&Stretch"
 msgstr "拉伸"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr ""
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "无标记"
@@ -2004,13 +2014,17 @@ msgstr "路段起始标记"
 msgid "End of Leg Flagged"
 msgstr "路段末尾标记"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr ""
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "更改显示的线路..."
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "报表(&R)"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "项目"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2032,9 +2046,9 @@ msgstr "检查点对照表"
 msgid "Control and Leg Loa&d"
 msgstr "检查点和路段通过量"
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "帮助(&H)"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "报表(&R)"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2059,10 +2073,6 @@ msgstr "进行捐赠"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "关于紫笔"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "调试"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -2108,9 +2118,9 @@ msgstr "缺少检查点说明的翻译"
 msgid "Crash"
 msgstr "崩溃"
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "翻译说明文本"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "调试"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -2123,6 +2133,14 @@ msgstr "添加文本的翻译…"
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "合并XML符号…"
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "翻译说明文本"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "帮助(&H)"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2924,6 +2942,10 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr ""
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

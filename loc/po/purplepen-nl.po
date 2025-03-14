@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -916,9 +916,27 @@ msgstr "Gebruik standaard IOF afmetingen"
 msgid "Item Sizes"
 msgstr "Afmetingen van items"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
-msgstr "Meng paars met onderliggende kaartkleuren"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -996,11 +1014,6 @@ msgstr ""
 
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
-msgstr ""
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
 msgstr ""
 
 #: CourseSelector.resx, buttonChooseVariations.Text
@@ -1515,10 +1528,6 @@ msgstr ""
 msgid "Purple Pen file|*.ppen"
 msgstr ""
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr ""
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr ""
@@ -1543,10 +1552,6 @@ msgstr "Creëer OCAD &bestanden..."
 msgid "Create Ima&ge Files..."
 msgstr ""
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr ""
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr ""
@@ -1559,13 +1564,17 @@ msgstr ""
 msgid "&Courses..."
 msgstr "Creëer PDF's..."
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
 msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
 msgstr "Creëer Route&Gadget bestanden..."
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1591,10 +1600,6 @@ msgstr ""
 msgid "Print &Courses..."
 msgstr "&Routes afdrukken..."
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Afdruk&gebied instellen"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr ""
@@ -1607,6 +1612,10 @@ msgstr ""
 msgid "&All Courses"
 msgstr ""
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Afdruk&gebied instellen"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr ""
@@ -1615,8 +1624,8 @@ msgstr ""
 msgid "E&xit"
 msgstr ""
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
 msgstr ""
 
 #: MainFrame.resx, cancelMenu.Text
@@ -1639,8 +1648,8 @@ msgstr ""
 msgid "&Delete"
 msgstr ""
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
 msgstr ""
 
 #: MainFrame.resx, entireCourseMenu.Text
@@ -1650,10 +1659,6 @@ msgstr ""
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr ""
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Zoom"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1683,9 +1688,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr ""
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zoom"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1707,8 +1712,8 @@ msgstr ""
 msgid "&Full"
 msgstr ""
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
 msgstr ""
 
 #: MainFrame.resx, normalQualityMenu.Text
@@ -1718,6 +1723,10 @@ msgstr "Laag"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "Hoog"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr ""
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1739,8 +1748,8 @@ msgstr ""
 msgid "Clear Other Courses"
 msgstr ""
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
 msgstr ""
 
 #: MainFrame.resx, addStartMenu.Text
@@ -1760,10 +1769,6 @@ msgstr ""
 msgid "&Descriptions"
 msgstr ""
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr ""
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr ""
@@ -1774,6 +1779,10 @@ msgstr ""
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
+msgstr ""
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
 msgstr ""
 
 #: MainFrame.resx, addVariationMenu.Text
@@ -1811,6 +1820,11 @@ msgstr ""
 #: MainFrame.resx, dangerousToolStripMenuItem.Text
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
+msgstr ""
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
 msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
@@ -1871,8 +1885,8 @@ msgstr "Rechthoek"
 msgid "Ellipse"
 msgstr ""
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
 msgstr ""
 
 #: MainFrame.resx, changeMapFileMenu.Text
@@ -1899,10 +1913,6 @@ msgstr ""
 msgid "&Punch Patterns..."
 msgstr ""
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr ""
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr ""
@@ -1923,6 +1933,10 @@ msgstr ""
 msgid "ISSprOM 2019 Map Standard"
 msgstr ""
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr ""
@@ -1931,8 +1945,8 @@ msgstr ""
 msgid "Customize &Appearance..."
 msgstr ""
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
 msgstr ""
 
 #: MainFrame.resx, addCourseMenu.Text
@@ -1963,8 +1977,8 @@ msgstr ""
 msgid "Relay Team &Variations..."
 msgstr ""
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
 msgstr ""
 
 #: MainFrame.resx, deleteForkMenu.Text
@@ -2003,10 +2017,6 @@ msgstr "&Draai"
 msgid "&Stretch"
 msgstr ""
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr ""
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr ""
@@ -2023,12 +2033,16 @@ msgstr ""
 msgid "End of Leg Flagged"
 msgstr ""
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr ""
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr ""
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
 msgstr ""
 
 #: MainFrame.resx, courseSummaryMenu.Text
@@ -2051,9 +2065,9 @@ msgstr ""
 msgid "Control and Leg Loa&d"
 msgstr ""
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Help"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr ""
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2077,10 +2091,6 @@ msgstr ""
 
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
-msgstr ""
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
 msgstr ""
 
 #: MainFrame.resx, symbolBrowserMenu.Text
@@ -2127,8 +2137,8 @@ msgstr ""
 msgid "Crash"
 msgstr ""
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
 msgstr ""
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
@@ -2142,6 +2152,14 @@ msgstr ""
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr ""
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr ""
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Help"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2930,6 +2948,10 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr ""
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

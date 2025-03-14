@@ -121,13 +121,13 @@
     <value>Che tipo di variazioni vorresti aggiungere?</value>
   </data>
   <data name="radioButtonFork.Text" xml:space="preserve">
-    <value>Fork</value>
+    <value>Variazione</value>
   </data>
   <data name="radioButtonLoop.Text" xml:space="preserve">
     <value>Loop</value>
   </data>
   <data name="labelNumberBranches.Text" xml:space="preserve">
-    <value>Numero di rami:</value>
+    <value>Numero di variazioni</value>
   </data>
   <data name="comboBoxNumberBranches.Items" xml:space="preserve">
     <value>2</value>
@@ -160,9 +160,9 @@
     <value>Numero di loop</value>
   </data>
   <data name="labelSummary.Text" xml:space="preserve">
-    <value>Il controllo farfalla verrà visitato 4 volte. Ci sono 24 differenti modi di passaggio nella farfalla.</value>
+    <value>La farfalla di punti verrà visitato 4 volte. Ci sono 24 differenti modi di passaggio nella farfalla.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Aggiungi Variante</value>
+    <value>aggiungi variazione</value>
   </data>
 </root>

@@ -186,8 +186,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Kohteiden mitat</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Läpinäkyvä violetti</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Ei mikään</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Musta:</value>
@@ -230,6 +230,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Muokkaa ulkoasua</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Läpinäkyvä violetti</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Värinvalitsin...</value>

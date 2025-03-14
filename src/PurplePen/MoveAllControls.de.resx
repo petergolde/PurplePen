@@ -132,4 +132,7 @@
   <data name="radioButtonMoveRotateScale.Text" xml:space="preserve">
     <value>Verschieben, Skalieren und Drehen</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Alle Bedienelemente verschieben</value>
+  </data>
 </root>

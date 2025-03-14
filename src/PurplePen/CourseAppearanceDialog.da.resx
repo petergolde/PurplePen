@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Varestørrelser</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Bland lilla med underliggende kortfarver</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Ingen</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Sort:</value>
@@ -221,5 +221,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpas udseende</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Bland lilla med underliggende kortfarver</value>
   </data>
 </root>

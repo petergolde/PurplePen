@@ -153,6 +153,12 @@
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
     <value>Arial Fett</value>
   </data>
+  <data name="comboBoxControlNumberStyle.Items2" xml:space="preserve">
+    <value>Roboto</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items3" xml:space="preserve">
+    <value>Roboto Bold</value>
+  </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Stil der Postennummern:</value>
   </data>
@@ -180,8 +186,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Maße der Bahnobjekte</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Violett mit darunterliegenden Farben mischen</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Keine</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Schwarz:</value>
@@ -224,6 +230,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Aussehen anpassen</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Violett mit darunterliegenden Farben mischen</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Farbauswahl...</value>

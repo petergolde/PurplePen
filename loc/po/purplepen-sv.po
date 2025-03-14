@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -202,7 +202,7 @@ msgstr "km"
 
 #: AddCourse.resx, hideFromReportsCheckBox.Text
 msgid "Do not include in reports"
-msgstr ""
+msgstr "Ta inte med i rapporter"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -887,11 +887,11 @@ msgstr "Arial Fet"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items2
 msgid "Roboto"
-msgstr ""
+msgstr "Roboto"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items3
 msgid "Roboto Bold"
-msgstr ""
+msgstr "Roboto Bold"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -917,9 +917,27 @@ msgstr "Använd IOF-normens storlek"
 msgid "Item Sizes"
 msgstr "Objektstorlek"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
-msgstr "Smält samman lila med underliggande kartfärger"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Ingen"
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -999,11 +1017,6 @@ msgstr "Egenskaper för del av bana"
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
 msgstr "Alla"
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
-msgstr "Ingen"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
@@ -1523,10 +1536,6 @@ msgstr "Purple Pen-filer|*.ppen|Alla filer|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen-fil|*.ppen"
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Arkiv"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Ny tävling..."
@@ -1551,10 +1560,6 @@ msgstr "Skapa OCAD-&filer..."
 msgid "Create Ima&ge Files..."
 msgstr "Skapa &bildfiler..."
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr "Skapa P&DFer"
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr "&Kontrollbeskrivningar..."
@@ -1567,13 +1572,17 @@ msgstr "Stä&mpelkort..."
 msgid "&Courses..."
 msgstr "&Banor..."
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
-msgstr "Skapa bangranskningsfiler"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr "Skapa P&DFer"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
 msgstr "Skapa RouteGadget-filer..."
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr "Skapa bangranskningsfiler"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1599,10 +1608,6 @@ msgstr "Skriv ut stämpelkort..."
 msgid "Print &Courses..."
 msgstr "Skriv ut banor..."
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Välj &utskriftsområde"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr "Endast denna del"
@@ -1615,6 +1620,10 @@ msgstr "&Denna bana"
 msgid "&All Courses"
 msgstr "&Alla banor"
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Välj &utskriftsområde"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr "S&pråk..."
@@ -1623,9 +1632,9 @@ msgstr "S&pråk..."
 msgid "E&xit"
 msgstr "&Avsluta"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Redigera"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Arkiv"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1647,9 +1656,9 @@ msgstr "&Gör om"
 msgid "&Delete"
 msgstr "&Ta bort"
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Visa"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Redigera"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
@@ -1658,10 +1667,6 @@ msgstr "Hela &banan"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "Hela &kartan"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Zooma"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1691,9 +1696,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "Kart&intensitet"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zooma"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1715,9 +1720,9 @@ msgstr "&Hög"
 msgid "&Full"
 msgstr "&Full"
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "&Kartkvalitet"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Kart&intensitet"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1726,6 +1731,10 @@ msgstr "Låg"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "Hög"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "&Kartkvalitet"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1747,9 +1756,9 @@ msgstr "Andra banor..."
 msgid "Clear Other Courses"
 msgstr "Rensa andra banor"
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
-msgstr "&Lägg till"
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Visa"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
@@ -1768,10 +1777,6 @@ msgstr "Slut&för"
 msgid "&Descriptions"
 msgstr "&Definition"
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr "Kart&byte"
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr "Kartvändning vid kontrollpunkt"
@@ -1783,6 +1788,10 @@ msgstr "Kartbyte vid &kontrollpunkt"
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
 msgstr "&Markerad sträcka till kartbyte"
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
+msgstr "Kart&byte"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1820,6 +1829,11 @@ msgstr "Förbjudet område"
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
 msgstr "Farligt område"
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
+msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1879,9 +1893,9 @@ msgstr "Rektangel"
 msgid "Ellipse"
 msgstr "Ellips"
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Tävling"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr "&Lägg till"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1907,10 +1921,6 @@ msgstr "Flytta alla kontroller..."
 msgid "&Punch Patterns..."
 msgstr "Stämpel&mönster..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr "IOF-&normer"
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr "2004 års norm för kontrollbeskrivning"
@@ -1931,6 +1941,10 @@ msgstr "ISOM2017 kartnorm"
 msgid "ISSprOM 2019 Map Standard"
 msgstr "ISSprOM 2019 kartnorm"
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr "IOF-&normer"
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Anpassa &beskrivningstext..."
@@ -1939,9 +1953,9 @@ msgstr "Anpassa &beskrivningstext..."
 msgid "Customize &Appearance..."
 msgstr "Anpassa &utseende..."
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Banor"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Tävling"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1971,9 +1985,9 @@ msgstr "Löpar&belastning..."
 msgid "Relay Team &Variations..."
 msgstr "Stafettgafflingar..."
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Objekt"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Banor"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -2011,10 +2025,6 @@ msgstr "R&otera"
 msgid "&Stretch"
 msgstr "&Sträck ut"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "&Snitslad sträcka"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Inga snitslar"
@@ -2031,13 +2041,17 @@ msgstr "Början av sträckan snitslad"
 msgid "End of Leg Flagged"
 msgstr "Slutet av sträckan snitslad"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Snitslad sträcka"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Ändra visade banor..."
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Rapporter"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Objekt"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2059,9 +2073,9 @@ msgstr "Kontrollsammanställning"
 msgid "Control and Leg Loa&d"
 msgstr "Kontroll- och sträck&belastning"
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Hjälp"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapporter"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2086,10 +2100,6 @@ msgstr "Ge ett bidrag"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Om Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Felsökning"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -2135,9 +2145,9 @@ msgstr "Saknade beskrivningsöversättningar"
 msgid "Crash"
 msgstr "Krasch"
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Översätt kontrollbeskrivning"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Felsökning"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -2150,6 +2160,14 @@ msgstr "Lägg till översatta texter..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Sammanfoga Symbols.xml..."
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Översätt kontrollbeskrivning"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Hjälp"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2996,17 +3014,28 @@ msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
-msgstr ""
+msgstr "En äldre version av Purple Pen är fortfarande installerad. "
+"För att förhindra förvirring orsakad av att ha två "
+"versioner av Purple Pen installerade, rekommenderas starkt "
+"att den äldre versionen tas bort. Ta bort den nu?"
 
 #: MiscText.resx, AskInstallRobotoFonts
 msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
 "display the control descriptions, the \"Roboto\" and \"Roboto "
 "Condensed\" fonts must be installed on your system. Would "
 "you like to install those fonts now (strongly recommended)?"
-msgstr ""
+msgstr "För att OCAD eller OpenOrienteering Mapper ska kunna visa "
+"kontrollbeskrivningarna korrekt måste teckensnitten "
+"\"Roboto\" och \"Roboto Condensed\" vara installerade på ditt "
+"system. Vill du installera dessa teckensnitt nu "
+"(rekommenderas starkt)?"
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr "Installationen av Roboto Fonts misslyckades."
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

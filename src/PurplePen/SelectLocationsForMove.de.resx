@@ -135,6 +135,12 @@
   <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
     <value>è</value>
   </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Wählen Sie das erste Kontrollfeld oder die Registrierungsmarke, um zu bewegen</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>Wählen Sie einen neuen Ort für die zweite Kontrolle/Markierung</value>
+  </data>
   <data name="labelConfirmLocations.Text" xml:space="preserve">
     <value>Neue Standorte bestätigen</value>
   </data>
@@ -155,5 +161,8 @@
   </data>
   <data name="buttonConfirm.Text" xml:space="preserve">
     <value>Bestätigen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Alle Bedienelemente verschieben</value>
   </data>
 </root>

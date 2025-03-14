@@ -121,7 +121,7 @@
     <value>Visualizza cerchio arrivo su questa parte percorso</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Queste impostazioni controllo come appare questa parte di un percorso multi-parte.</value>
+    <value>Queste impostazioni controllano l'aspetto di questa parte di un corso a più parti.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Proprietà Parte Percorso</value>

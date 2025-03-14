@@ -121,7 +121,7 @@
     <value>I controlli appena creati vengono numerati automaticamente. Scegli il numero di controllo iniziale da utilizzare.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Disabilita i codici che possono essere letti rovesciati (per esempio, "68"/"89")</value>
+    <value>Disabilita i codici che possono essere letti al contrario (per esempio, "68"/"89")</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Codice di partenza:</value>

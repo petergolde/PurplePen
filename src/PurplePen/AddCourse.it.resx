@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="firstControlLabel.Text" xml:space="preserve">
-    <value>Numero del Primo Controllo</value>
+    <value>Numero primo punto</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
     <value>Aspetto della descrizione:</value>
@@ -139,13 +139,13 @@
     <value>Simboli e testo.</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Etichetta del cerchio del controllo</value>
+    <value>Etichetta del centro del punto</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
     <value>Numero di sequenza (3)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
-    <value>Codice Controllo (145)</value>
+    <value>Codice di controllo (145)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
     <value>Sequenza e codice (3-145)</value>
@@ -172,16 +172,16 @@
     <value>Colonna H</value>
   </data>
   <data name="scoreColumnCombo.Items3" xml:space="preserve">
-    <value>(non visualizza)</value>
+    <value>(non visualizzare)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Aspetto</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Il testo seguente (facoltativo) apparirà nella seconda linea del foglio della descrizione del controllo:</value>
+    <value>Il testo seguente (Facoltativo) apparirà nella seconda riga della descrizione punto</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Lista categorie/ Titolo secondario</value>
+    <value>Lista categorie / Titolo secondario</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Lunghezza:</value>
@@ -190,16 +190,16 @@
     <value>Dislivello</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Tipo percorso</value>
+    <value>Tipo di percorso:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Nome Percorso</value>
+    <value>Nome del percorso</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>Percorso Normale</value>
+    <value>Percorso normale</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
-    <value>Percorso a Punteggio</value>
+    <value>percorso a sequenza libera</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
     <value>metri</value>
@@ -207,7 +207,10 @@
   <data name="kmSuffix.Text" xml:space="preserve">
     <value>km</value>
   </data>
+  <data name="hideFromReportsCheckBox.Text" xml:space="preserve">
+    <value>Non includere nei rapporti</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Nuovo Percorso</value>
+    <value>Nuovo percorso</value>
   </data>
 </root>

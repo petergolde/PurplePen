@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Suurused</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Sulata lilla alusvärvidesse</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Pole</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Must:</value>
@@ -224,6 +224,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Kohanda väljanägemist</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Sulata lilla alusvärvidesse</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Värvi valik...</value>

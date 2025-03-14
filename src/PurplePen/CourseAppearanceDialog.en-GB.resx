@@ -186,8 +186,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Item Sizes</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Blend purple with underlying map colours</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>None</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Black:</value>
@@ -230,6 +230,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Customise Appearance</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Blend purple with underlying map colours</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Colour Chooser...</value>

@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Nesne Boyutu</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Mor ile temel harita renklerini karıştırın</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Yok</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Siyah:</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Görünüşü özelleştirme</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Mor ile temel harita renklerini karıştırın</value>
   </data>
 </root>

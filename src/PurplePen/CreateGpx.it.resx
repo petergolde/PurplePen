@@ -127,7 +127,7 @@
     <value>Punti di passaggio</value>
   </data>
   <data name="headerLabel.Text" xml:space="preserve">
-    <value>Un file GPX contiene le coordinate GPS per i controlli e può essere caricato su un dispositivo GPS o uno smartphone per verificare la corretta posizione dei controlli.</value>
+    <value>Un file GPX contiene le coordinate GPS per i punti  e può essere caricato su un dispositivo GPS o uno smartphone per verificare la corretta posizione dei controlli.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crea file GPX</value>

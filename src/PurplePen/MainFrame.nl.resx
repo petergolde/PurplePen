@@ -162,9 +162,6 @@
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
     <value>Afdruk&amp;gebied instellen</value>
   </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
-  </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
   </data>
@@ -185,6 +182,9 @@
   </data>
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
+  </data>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Laag</value>

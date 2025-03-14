@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>物体尺寸</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>混合紫色的底层地图的颜色</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>无</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>黑色：</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>自定义外观</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>混合紫色的底层地图的颜色</value>
   </data>
 </root>

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="selectAll.Text" xml:space="preserve">
-    <value>Tutto</value>
+    <value>Tutti</value>
   </data>
   <data name="selectNone.Text" xml:space="preserve">
-    <value>Niente</value>
+    <value>Nessuno</value>
   </data>
   <data name="buttonChooseVariations.Text" xml:space="preserve">
     <value>Scegli varianti...</value>

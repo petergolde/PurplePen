@@ -162,6 +162,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Velikosti objektov</value>
   </data>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Brez</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Črna:</value>
   </data>

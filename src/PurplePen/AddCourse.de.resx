@@ -156,6 +156,9 @@
   <data name="labelKindCombo.Items4" xml:space="preserve">
     <value>Kontrollcode und Punktzahl (61(30))</value>
   </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Bewertung (30)</value>
+  </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
     <value>Zeige Punkte in:</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="kmSuffix.Text" xml:space="preserve">
     <value>km</value>
+  </data>
+  <data name="hideFromReportsCheckBox.Text" xml:space="preserve">
+    <value>Nicht in Berichte einschließen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Neue Bahn</value>

@@ -312,4 +312,10 @@
   <data name="SetLiveloxImportableEventId" xml:space="preserve">
     <value>Auf Livelox veröffentlichen</value>
   </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Alle Bedienelemente verschieben</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Karte hinzufügen Flip</value>
+  </data>
 </root>

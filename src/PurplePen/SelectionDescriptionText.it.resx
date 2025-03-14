@@ -142,7 +142,7 @@
     <value>Tutti i percorsi</value>
   </data>
   <data name="CourseList_None" xml:space="preserve">
-    <value>Niente</value>
+    <value>Nessuno</value>
   </data>
   <data name="CourseName" xml:space="preserve">
     <value>Percorso "{0}"</value>
@@ -199,7 +199,7 @@
     <value>Area Pericolosa</value>
   </data>
   <data name="SpecialName_Descriptions" xml:space="preserve">
-    <value>Descrizioni Controllo</value>
+    <value>Descrizione punto</value>
   </data>
   <data name="SpecialName_FirstAid" xml:space="preserve">
     <value>Posizione Del Primo Soccorso</value>

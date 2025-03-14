@@ -139,9 +139,9 @@
     <value>Aspetto</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>Queste impostazioni controllano come sono stampate la mappa e le descrizioni per Tutti i Controlli.</value>
+    <value>Queste impostazioni controllano come sono stampate la mappa e le descrizioni per Tutti i Punti.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Proprietà di Tutti i Controlli</value>
+    <value>Proprietà della tutti i punti</value>
   </data>
 </root>

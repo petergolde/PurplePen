@@ -159,6 +159,9 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Objektets størrelse</value>
   </data>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Svart:</value>
   </data>

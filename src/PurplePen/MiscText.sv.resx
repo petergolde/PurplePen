@@ -619,6 +619,15 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="AddEllipseTitle" xml:space="preserve">
     <value>Lägg till ellips</value>
   </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>En äldre version av Purple Pen är fortfarande installerad. För att förhindra förvirring orsakad av att ha två versioner av Purple Pen installerade, rekommenderas starkt att den äldre versionen tas bort. Ta bort den nu?</value>
+  </data>
+  <data name="AskInstallRobotoFonts" xml:space="preserve">
+    <value>För att OCAD eller OpenOrienteering Mapper ska kunna visa kontrollbeskrivningarna korrekt måste teckensnitten "Roboto" och "Roboto Condensed" vara installerade på ditt system. Vill du installera dessa teckensnitt nu (rekommenderas starkt)?</value>
+  </data>
+  <data name="RobotoFontsInstallFailed" xml:space="preserve">
+    <value>Installationen av Roboto Fonts misslyckades.</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
   </data>

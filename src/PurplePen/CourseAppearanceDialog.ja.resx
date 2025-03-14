@@ -168,8 +168,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>アイテムサイズ</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>パープルを地図の色とブレンドする</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>全解除</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>ブラック:</value>
@@ -209,5 +209,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>外観をカスタマイズ</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>パープルを地図の色とブレンドする</value>
   </data>
 </root>

@@ -135,9 +135,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen ファイル|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>ファイル(&amp;F)</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>新規イベント(&amp;N)...</value>
   </data>
@@ -168,9 +165,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>コースを印刷(&amp;C)</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>印刷領域を設定(&amp;R)</value>
-  </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>現在のパートのみ(&amp;P)</value>
   </data>
@@ -180,14 +174,17 @@
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>全てのコース(&amp;T)</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>印刷領域を設定(&amp;R)</value>
+  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>言語設定(&amp;L)...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>終了(&amp;X)</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>編集(&amp;E)</value>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>ファイル(&amp;F)</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>選択をクリア(&amp;C)</value>
@@ -201,17 +198,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>削除(&amp;D)</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>表示(&amp;V)</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>編集(&amp;E)</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>コース全体を表示(&amp;C)</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>地図全体を表示(&amp;M)</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>ズーム(&amp;Z)</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -234,8 +228,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>地図の画像強度(&amp;I)</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>ズーム(&amp;Z)</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>最低(&amp;V)</value>
@@ -252,14 +246,17 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>フル(&amp;F)</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>地図の画質(&amp;Q)</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>地図の画像強度(&amp;I)</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>低</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>高</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>地図の画質(&amp;Q)</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>印刷領域を表示(&amp;P)</value>
@@ -270,8 +267,8 @@
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>全コントロール(&amp;A)</value>
   </data>
-  <data name="addMenu.Text" xml:space="preserve">
-    <value>追加(&amp;A)</value>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>表示(&amp;V)</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>スタート(&amp;S)</value>
@@ -285,14 +282,14 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>ディスクリプション(&amp;D)</value>
   </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>地図交換(&amp;X)</value>
-  </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>コントロールの場所で地図交換</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>地図交換所までテープ誘導(&amp;F)</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>地図交換(&amp;X)</value>
   </data>
   <data name="addVariationMenu.Text" xml:space="preserve">
     <value>バリエーション(&amp;V)...</value>
@@ -342,8 +339,8 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>長方形</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>イベント(&amp;N)</value>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>追加(&amp;A)</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>地図ファイル(&amp;M)...</value>
@@ -366,8 +363,8 @@
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>外観をカスタマイズ(&amp;A)</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>コース(&amp;C)</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>イベント(&amp;N)</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>コースを追加(&amp;A)...</value>
@@ -390,8 +387,8 @@
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>リレーチームバリエーション(&amp;V)...</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>アイテム(&amp;I)</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>コース(&amp;C)</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>削除(&amp;D)</value>
@@ -417,9 +414,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>回転(&amp;R)</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>テープ誘導(&amp;L)</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>テープ誘導なし</value>
   </data>
@@ -432,11 +426,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>レッグ後半でテープ誘導</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>テープ誘導(&amp;L)</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>表示するコースの変更(&amp;Y)...</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>レポート(&amp;R)</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>アイテム(&amp;I)</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>コースの概要(&amp;S)</value>
@@ -453,8 +450,8 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>コントロールおよびレッグごとの走行人数(&amp;D)</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>ヘルプ (&amp;H)</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>レポート(&amp;R)</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen のヘルプ(&amp;H)</value>
@@ -473,9 +470,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>Purple Pen について(&amp;A)</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>デバッグ</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>記号ブラウザ</value>
@@ -507,8 +501,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>クラッシュ</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>ディスクリプションのテキストを翻訳する(&amp;T)</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>デバッグ</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>ディスクリプション言語の追加...</value>
@@ -518,6 +512,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Symbols.xml をマージ...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>ディスクリプションのテキストを翻訳する(&amp;T)</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>ヘルプ (&amp;H)</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>開く</value>
@@ -573,18 +573,6 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>バリエーションを追加</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>特殊なコース記号を追加</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>曲げ点を追加(Ctrl+B)</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>切れ目を追加(Ctrl+G)</value>
-  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>必須の横断地点</value>
   </data>
@@ -626,6 +614,18 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>長方形</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>特殊なコース記号を追加</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>曲げ点を追加(Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>切れ目を追加(Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>ズーム: 100%</value>

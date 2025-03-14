@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Objektets størrelse</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Bland purpur med underliggende kartfarger</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Ingen</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Svart:</value>
@@ -224,6 +224,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Tilpass utseende</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Bland purpur med underliggende kartfarger</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Fargevelger...</value>

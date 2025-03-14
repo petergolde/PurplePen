@@ -297,4 +297,7 @@
   <data name="MapIssue_Singular" xml:space="preserve">
     <value>Kartenabgabepunkt</value>
   </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Kartenumschlag bei {0}</value>
+  </data>
 </root>

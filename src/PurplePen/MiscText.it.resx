@@ -295,7 +295,7 @@ Molto probabilmente, il file della mappa è stato spostato o eliminato oppure il
 Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo computer.</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
-    <value>tutti i controlli sono usati in un percorso.</value>
+    <value>tutti i punti sono usati in un percorso.</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
     <value>&amp;Arrivo</value>
@@ -380,6 +380,9 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
   </data>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Nessun percorso è stato selezionato in stampa</value>
+  </data>
+  <data name="TranslatedHelpWebSite" xml:space="preserve">
+    <value>Se esiste un sito web nella lingua tradotta che contiene la documentazione per Purple Pen, inserire l'URL (compreso http) come traduzione di questo elemento. Altrimenti lascialo stare.</value>
   </data>
   <data name="MapExchange_Long" xml:space="preserve">
     <value>Cambio Mappa</value>
@@ -562,7 +565,7 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
     <value>Non è possibile aggiungere una variante al controllo finish.</value>
   </data>
   <data name="VariationNotInAllControls" xml:space="preserve">
-    <value>Non è possibile aggiungere una variante nella vista 'Tutti i Controlli'</value>
+    <value>Non è possibile aggiungere una variante nella vista 'Tutti i punti'</value>
   </data>
   <data name="VariationNotInScoreCourse" xml:space="preserve">
     <value>Non è possibile aggiungere una variante in un percorso 'Score'</value>
@@ -617,5 +620,11 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
   </data>
   <data name="UninstallNonStoreVersion" xml:space="preserve">
     <value>C'è installata una versione precedente di Purple Pen. Per evitare confusione causata dall'installazione di due versioni di Purple Pen, si consiglia di rimuovere la versione precedente. Rimuoverlo adesso?</value>
+  </data>
+  <data name="AskInstallRobotoFonts" xml:space="preserve">
+    <value>Affinché OCAD o OpenOrienteering Mapper visualizzino correttamente le descrizioni dei punti di controllo, i font "Roboto" e "Roboto Condensed" devono essere installati sul sistema. Vuoi installare questi font ora (fortemente consigliato)?</value>
+  </data>
+  <data name="RobotoFontsInstallFailed" xml:space="preserve">
+    <value>Installazione di Roboto Fonts fallita</value>
   </data>
 </root>

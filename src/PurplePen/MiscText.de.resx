@@ -619,6 +619,15 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="AddEllipseTitle" xml:space="preserve">
     <value>Ellipse hinzufügen</value>
   </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>Eine ältere Version von Purple Pen ist noch installiert. Um Verwirrung durch zwei installierte Versionen von Purple Pen zu vermeiden, wird dringend empfohlen, die ältere Version zu entfernen. Entfernen Sie es jetzt?</value>
+  </data>
+  <data name="AskInstallRobotoFonts" xml:space="preserve">
+    <value>Damit OCAD oder OpenOrienteering Mapper die Steuerungsbeschreibungen korrekt anzeigen kann, müssen die Schriften "Roboto" und "Roboto Condensed" auf Ihrem System installiert sein. Möchten Sie diese Schriftarten jetzt installieren (dringend empfohlen)?</value>
+  </data>
+  <data name="RobotoFontsInstallFailed" xml:space="preserve">
+    <value>Die Installation von Roboto Fonts ist fehlgeschlagen.</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>
   </data>

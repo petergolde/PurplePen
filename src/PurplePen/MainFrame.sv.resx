@@ -135,9 +135,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen-fil|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Arkiv</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Ny tävling...</value>
   </data>
@@ -156,9 +153,6 @@
   <data name="createImageFilesMenu.Text" xml:space="preserve">
     <value>Skapa &amp;bildfiler...</value>
   </data>
-  <data name="createPDFsMenu.Text" xml:space="preserve">
-    <value>Skapa P&amp;DFer</value>
-  </data>
   <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
     <value>&amp;Kontrollbeskrivningar...</value>
   </data>
@@ -168,11 +162,14 @@
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
     <value>&amp;Banor...</value>
   </data>
-  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Skapa bangranskningsfiler</value>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Skapa P&amp;DFer</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
     <value>Skapa RouteGadget-filer...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Skapa bangranskningsfiler</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Skapa data&amp;utbytesfil (IOF XML)...</value>
@@ -192,9 +189,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Skriv ut banor...</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Välj &amp;utskriftsområde</value>
-  </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>Endast denna del</value>
   </data>
@@ -204,14 +198,17 @@
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Alla banor</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Välj &amp;utskriftsområde</value>
+  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>S&amp;pråk...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Avsluta</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Redigera</value>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Arkiv</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Töm val</value>
@@ -225,17 +222,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Ta bort</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Visa</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Redigera</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Hela &amp;banan</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Hela &amp;kartan</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zooma</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -258,8 +252,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Kart&amp;intensitet</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zooma</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Mycket låg</value>
@@ -276,14 +270,17 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Full</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Kartkvalitet</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Kart&amp;intensitet</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Låg</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Hög</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Kartkvalitet</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>Visa utsk&amp;riftsområde</value>
@@ -300,8 +297,8 @@
   <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
     <value>Rensa andra banor</value>
   </data>
-  <data name="addMenu.Text" xml:space="preserve">
-    <value>&amp;Lägg till</value>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Visa</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>&amp;Start</value>
@@ -315,9 +312,6 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Definition</value>
   </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>Kart&amp;byte</value>
-  </data>
   <data name="addMapFlipMenuItem.Text" xml:space="preserve">
     <value>Kartvändning vid kontrollpunkt</value>
   </data>
@@ -326,6 +320,9 @@
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>&amp;Markerad sträcka till kartbyte</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Kart&amp;byte</value>
   </data>
   <data name="addVariationMenu.Text" xml:space="preserve">
     <value>Spridningsmetod...</value>
@@ -381,8 +378,8 @@
   <data name="addEllipseMenu.Text" xml:space="preserve">
     <value>Ellips</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Tävling</value>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Lägg till</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Kartfil...</value>
@@ -402,9 +399,6 @@
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>Stämpel&amp;mönster...</value>
   </data>
-  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
-    <value>IOF-&amp;normer</value>
-  </data>
   <data name="descriptionStd2004Menu.Text" xml:space="preserve">
     <value>2004 års norm för kontrollbeskrivning</value>
   </data>
@@ -420,14 +414,17 @@
   <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
     <value>ISSprOM 2019 kartnorm</value>
   </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF-&amp;normer</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Anpassa &amp;beskrivningstext...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Anpassa &amp;utseende...</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Banor</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Tävling</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Lägg till bana...</value>
@@ -450,8 +447,8 @@
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>Stafettgafflingar...</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Objekt</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Banor</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Ta bort</value>
@@ -483,9 +480,6 @@
   <data name="stretchMenu.Text" xml:space="preserve">
     <value>&amp;Sträck ut</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Snitslad sträcka</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Inga snitslar</value>
   </data>
@@ -498,11 +492,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Slutet av sträckan snitslad</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Snitslad sträcka</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Ändra visade banor...</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Rapporter</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Objekt</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>Bansammanställning</value>
@@ -519,8 +516,8 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Kontroll- och sträck&amp;belastning</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Hjälp</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Rapporter</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Hjälp</value>
@@ -539,9 +536,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;Om Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Felsökning</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Symbolbläddrare</value>
@@ -576,8 +570,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Krasch</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Översätt kontrollbeskrivning</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Felsökning</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Lägg till språk för kontrollbeskrivning...</value>
@@ -587,6 +581,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Sammanfoga Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Översätt kontrollbeskrivning</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Hjälp</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Öppna</value>
@@ -645,18 +645,6 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Lägg till spridningsmetod</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Lägg till specialsymbol</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Lägg till böj</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>verktygsomradeknapp1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Skapa gap i figur (Ctrl+G)</value>
-  </data>
   <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Tidsstart</value>
   </data>
@@ -704,6 +692,18 @@
   </data>
   <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
     <value>Ellips</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Lägg till specialsymbol</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Lägg till böj</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>verktygsomradeknapp1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Skapa gap i figur (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Zoom: 100%</value>

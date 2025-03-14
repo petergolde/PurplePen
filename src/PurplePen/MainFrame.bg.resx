@@ -126,9 +126,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Purple Pen файл|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Файл</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Ново състезание...</value>
   </data>
@@ -156,14 +153,14 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>Печат на &amp;маршрутите...</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Задай &amp;зона за печат</value>
-  </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Този маршрут</value>
   </data>
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Всички маршрути</value>
+  </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>Задай &amp;зона за печат</value>
   </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>&amp;Език на програмата...</value>
@@ -171,8 +168,8 @@
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Изход</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Редактиране</value>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Файл</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Изчисти избраното</value>
@@ -186,17 +183,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Изтрий</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Изглед</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Редактиране</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Целия &amp;маршрут</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>Цялата &amp;карта</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Увеличи</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -219,8 +213,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Наситеност на картата</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Увеличи</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Много ниска</value>
@@ -237,8 +231,8 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Пълна</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Качество на картата</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>&amp;Наситеност на картата</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Ниско</value>
@@ -246,8 +240,14 @@
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Високо</value>
   </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Качество на картата</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
     <value>&amp;Всички контролни точки</value>
+  </data>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Изглед</value>
   </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
     <value>&amp;Край</value>
@@ -285,9 +285,6 @@
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Текст</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Състезание</value>
-  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Файл на картата...</value>
   </data>
@@ -306,8 +303,8 @@
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>Персонализирай &amp;текста на описанията</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Маршрут</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>&amp;Състезание</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Добави маршрут...</value>
@@ -321,8 +318,8 @@
   <data name="courseLoadMenu.Text" xml:space="preserve">
     <value>&amp;Брой състезатели на маршрут...</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Елементи</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Маршрут</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Изтрий</value>
@@ -345,9 +342,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Завърти</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Маркировка</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Без маркировка</value>
   </data>
@@ -360,11 +354,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Край на отсечка с маркировка</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Маркировка</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>Промени &amp;показаните маршрути...</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Справки</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Елементи</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Обобщение на маршрутите</value>
@@ -381,8 +378,8 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>&amp;Натовареност на КТ и отсечките</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>&amp;Помощ</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Справки</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>Purple Pen &amp;Помощ</value>
@@ -398,9 +395,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;За програмата Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Откриване на грешки</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Търсачка на символи</value>
@@ -429,8 +423,8 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Елементи на шрифта</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Преведи текста на описанията на контролните точки</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Откриване на грешки</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Добави език на описанията на КТ...</value>
@@ -440,6 +434,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Обедини файла Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Преведи текста на описанията на контролните точки</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>&amp;Помощ</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Отвори</value>
@@ -483,18 +483,6 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Добави описания на КТ</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Добави специален елемент</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Добави извивка (Ctrl+B)</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Добави прекъсване (Ctrl+G)</value>
-  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
     <value>Задължително място за преминаване</value>
   </data>
@@ -527,6 +515,18 @@
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Текст</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Добави специален елемент</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Добави извивка (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Добави прекъсване (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Увеличи: 100%</value>

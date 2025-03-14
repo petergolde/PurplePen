@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -911,9 +911,27 @@ msgstr "Kasuta IOF standard suuruseid"
 msgid "Item Sizes"
 msgstr "Suurused"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
-msgstr "Sulata lilla alusvärvidesse"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Pole"
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -992,11 +1010,6 @@ msgstr "Raja osa omadused"
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
 msgstr "Kõik"
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
-msgstr "Pole"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
@@ -1515,10 +1528,6 @@ msgstr "Purple Pen failid|*.ppen|Kõik failid|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen fail|*.ppen"
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Fail"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "&Uus võistlus..."
@@ -1543,10 +1552,6 @@ msgstr "Tee OCADi &failid..."
 msgid "Create Ima&ge Files..."
 msgstr "Salvesta pil&difaild ..."
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr "Salvesta P&DF'id"
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr "&Legendid..."
@@ -1559,13 +1564,17 @@ msgstr "Kompostri kaardid..."
 msgid "&Courses..."
 msgstr "&Rajad..."
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
-msgstr "Loo raja analüüsi failid"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr "Salvesta P&DF'id"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
 msgstr "Loo RouteGadget failid..."
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr "Loo raja analüüsi failid"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1591,10 +1600,6 @@ msgstr "Trüki kompostri kaardid"
 msgid "Print &Courses..."
 msgstr "Trüki &Rajad"
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Määra trüki&ala"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr "See &osa ainult"
@@ -1607,6 +1612,10 @@ msgstr "See &rada"
 msgid "&All Courses"
 msgstr "&Kõik rajad"
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Määra trüki&ala"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr "Programm &Keel"
@@ -1615,9 +1624,9 @@ msgstr "Programm &Keel"
 msgid "E&xit"
 msgstr "V&älju"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Muuda"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Fail"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1639,9 +1648,9 @@ msgstr "&Tee uuesti"
 msgid "&Delete"
 msgstr "&Kustuta"
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Vaade"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Muuda"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
@@ -1650,10 +1659,6 @@ msgstr "Kogu &rada"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "Kogu &kaart"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Suurendus"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1683,9 +1688,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "Kaardi &intensiivsus"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Suurendus"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1707,9 +1712,9 @@ msgstr "&Kõrge"
 msgid "&Full"
 msgstr "&Täielik"
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "Kaardi &kvaliteet"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "Kaardi &intensiivsus"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1718,6 +1723,10 @@ msgstr "Madal"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "Kõrge"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "Kaardi &kvaliteet"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1739,9 +1748,9 @@ msgstr "Teised rajad..."
 msgid "Clear Other Courses"
 msgstr "Puhasta teised rajad"
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
-msgstr "&Lisa"
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Vaade"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
@@ -1760,10 +1769,6 @@ msgstr "&Finiš"
 msgid "&Descriptions"
 msgstr "&Legendid"
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr "Kaardivahetus"
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr ""
@@ -1775,6 +1780,10 @@ msgstr "Kaardivahetus on &kontrollpunktis"
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
 msgstr "&Märgitud rada kaardivahetusse"
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
+msgstr "Kaardivahetus"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1812,6 +1821,11 @@ msgstr "Keeluala"
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
 msgstr "Ohtlik ala"
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
+msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1871,9 +1885,9 @@ msgstr "Ristkülik"
 msgid "Ellipse"
 msgstr "Ellips"
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Võ&istlus"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr "&Lisa"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1899,10 +1913,6 @@ msgstr ""
 msgid "&Punch Patterns..."
 msgstr "&Kompostri jäljendid..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr "IOFi &Standardid"
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr "2004 a legendi standard"
@@ -1923,6 +1933,10 @@ msgstr "ISOM2017 kaardi standard"
 msgid "ISSprOM 2019 Map Standard"
 msgstr "ISSprOM 2019 Kaardi standard"
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr "IOFi &Standardid"
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Muuda &selgituse teksti"
@@ -1931,9 +1945,9 @@ msgstr "Muuda &selgituse teksti"
 msgid "Customize &Appearance..."
 msgstr "Muuda &väljanägemist"
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Rada"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Võ&istlus"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1963,9 +1977,9 @@ msgstr "Osalejate &arv..."
 msgid "Relay Team &Variations..."
 msgstr "Teate võistkonna &variandid..."
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "Sümbol"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Rada"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -2003,10 +2017,6 @@ msgstr "&Pööra"
 msgid "&Stretch"
 msgstr "Venita"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "&Tähistatud etapp"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Tähistuseta"
@@ -2023,13 +2033,17 @@ msgstr "Etapi algus on tähistatud"
 msgid "End of Leg Flagged"
 msgstr "Etapi lõpp on tähistatud"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "&Tähistatud etapp"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Muuda valitud radade..."
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Aruanded"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "Sümbol"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2051,9 +2065,9 @@ msgstr "KPde &risttabel"
 msgid "Control and Leg Loa&d"
 msgstr "KPde ja etappide koormused"
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Abi"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Aruanded"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2078,10 +2092,6 @@ msgstr "Tee &annetus"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Programmist Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Silumine"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -2127,9 +2137,9 @@ msgstr ""
 msgid "Crash"
 msgstr "Krahh"
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Tõlgi legendi tekst"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Silumine"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -2142,6 +2152,14 @@ msgstr "Lisa tõlgitud tekst"
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Liida Symbols.xml..."
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Tõlgi legendi tekst"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Abi"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2987,6 +3005,10 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr ""
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

@@ -168,9 +168,6 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Afmetingen van items</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Meng paars met onderliggende kaartkleuren</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Zwart (K):</value>
   </data>
@@ -209,5 +206,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Weergave aangepassen</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Meng paars met onderliggende kaartkleuren</value>
   </data>
 </root>

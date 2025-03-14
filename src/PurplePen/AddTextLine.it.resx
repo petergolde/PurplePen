@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textLineLabel.Text" xml:space="preserve">
-    <value>Inserisci il testo da mettere su una linea separata nelle descrizioni del controllo:</value>
+    <value>Inserisci il testo da mettere su una riga separata nelle descrizioni punto:</value>
   </data>
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>Percorsi:</value>
@@ -139,6 +139,6 @@
     <value>Tutti i percorsi con {0}</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Aggiungi Linea Di Testo</value>
+    <value>Aggiungi una casella di testo</value>
   </data>
 </root>

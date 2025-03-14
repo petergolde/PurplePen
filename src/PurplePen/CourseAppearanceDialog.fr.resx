@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Tailles des objets</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>Fondre le magenta avec les couleurs de la carte</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>Aucun</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Noir :</value>
@@ -221,6 +221,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personnaliser l'apparence</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>Fondre le magenta avec les couleurs de la carte</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Sélecteur de couleur...</value>

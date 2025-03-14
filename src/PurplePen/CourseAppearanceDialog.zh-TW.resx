@@ -180,8 +180,8 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>物件大小</value>
   </data>
-  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
-    <value>讓紫紅色與下方的地圖顏色混合</value>
+  <data name="comboBoxBlendPurple.Items" xml:space="preserve">
+    <value>無</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>黑色：</value>
@@ -224,5 +224,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>自定的外觀</value>
+  </data>
+  <data name="checkBoxBlendPurple.Text" xml:space="preserve">
+    <value>讓紫紅色與下方的地圖顏色混合</value>
   </data>
 </root>

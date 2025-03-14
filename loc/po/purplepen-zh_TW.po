@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -903,9 +903,27 @@ msgstr "採用IOF標準尺寸"
 msgid "Item Sizes"
 msgstr "物件大小"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
-msgstr "讓紫紅色與下方的地圖顏色混合"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "無"
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
+msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -983,11 +1001,6 @@ msgstr "賽程部分的設定調整"
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
 msgstr "所有的"
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
-msgstr "無"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
@@ -1497,10 +1510,6 @@ msgstr "Purple Pen 檔案|*.ppen|All files|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Purple Pen 檔案|*.ppen"
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "檔案(&F)"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "新增賽事(&N)..."
@@ -1525,10 +1534,6 @@ msgstr "建立OCAD &檔案(&F)..."
 msgid "Create Ima&ge Files..."
 msgstr "建立圖片檔案..."
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr "建立PDFs(&D)"
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr "檢查點說明(&D)..."
@@ -1541,13 +1546,17 @@ msgstr "核對卡(&n)..."
 msgid "&Courses..."
 msgstr "賽程(&C)..."
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
-msgstr "建立路線審查檔案"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
+msgstr "建立PDFs(&D)"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
 msgstr "建立 RouteGadget 檔案(&G)..."
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
+msgstr "建立路線審查檔案"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1573,10 +1582,6 @@ msgstr "列印核對卡(&n)..."
 msgid "Print &Courses..."
 msgstr "列印賽程(&C)..."
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "設定列印範圍"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr "只有此部分(&P)"
@@ -1589,6 +1594,10 @@ msgstr "此賽程(&T)"
 msgid "&All Courses"
 msgstr "所有賽程(&A)"
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "設定列印範圍"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr "程式語言..."
@@ -1597,9 +1606,9 @@ msgstr "程式語言..."
 msgid "E&xit"
 msgstr "離開(&x)"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "編輯(&E)"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "檔案(&F)"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1621,9 +1630,9 @@ msgstr "取消復原(&R)"
 msgid "&Delete"
 msgstr "刪除(&D)"
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "檢視"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "編輯(&E)"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
@@ -1632,10 +1641,6 @@ msgstr "整個賽程"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "整個地圖"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "縮放(&Z)"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1665,9 +1670,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "地圖明暗度"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "縮放(&Z)"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1689,9 +1694,9 @@ msgstr "高(&H)"
 msgid "&Full"
 msgstr "完整的(&F)"
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "地圖品質(&Q)"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "地圖明暗度"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1700,6 +1705,10 @@ msgstr "低"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "高"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "地圖品質(&Q)"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1721,9 +1730,9 @@ msgstr "其他賽程..."
 msgid "Clear Other Courses"
 msgstr "清除其他賽程"
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
-msgstr "新增"
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "檢視"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
@@ -1742,10 +1751,6 @@ msgstr "終點"
 msgid "&Descriptions"
 msgstr "檢查點說明"
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr "換圖區"
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr ""
@@ -1757,6 +1762,10 @@ msgstr "在檢查點換地圖"
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
 msgstr "指定路線至換圖區"
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
+msgstr "換圖區"
 
 #: MainFrame.resx, addVariationMenu.Text
 msgid "&Variation..."
@@ -1794,6 +1803,11 @@ msgstr "禁制區域"
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
 msgstr "危險區域"
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
+msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1853,9 +1867,9 @@ msgstr "矩形"
 msgid "Ellipse"
 msgstr "橢圓模式"
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "賽事"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr "新增"
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1881,10 +1895,6 @@ msgstr ""
 msgid "&Punch Patterns..."
 msgstr "打孔器圖案..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr "IOF 規範"
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr "2004檢查點說明規範"
@@ -1905,6 +1915,10 @@ msgstr "ISOM 2017地圖繪製規範"
 msgid "ISSprOM 2019 Map Standard"
 msgstr "ISSprOM 2019繪圖標準"
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr "IOF 規範"
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "自行定義的檢查點說明文字"
@@ -1913,9 +1927,9 @@ msgstr "自行定義的檢查點說明文字"
 msgid "Customize &Appearance..."
 msgstr "自行定義外觀..."
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "賽程"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "賽事"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1945,9 +1959,9 @@ msgstr "選手負荷量..."
 msgid "Relay Team &Variations..."
 msgstr "接力隊伍的分散變化..."
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "項目"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "賽程"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1985,10 +1999,6 @@ msgstr "旋轉"
 msgid "&Stretch"
 msgstr "放大"
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "賽段標記"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "沒有標記"
@@ -2005,13 +2015,17 @@ msgstr "賽段開始標記"
 msgid "End of Leg Flagged"
 msgstr "已標記的賽段末端"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "賽段標記"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "變更顯示的賽程 ..."
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "報告"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "項目"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2033,9 +2047,9 @@ msgstr "檢查點對照"
 msgid "Control and Leg Loa&d"
 msgstr "檢查點與賽段載入"
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "說明"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "報告"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2060,10 +2074,6 @@ msgstr "捐贈"
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "關於Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "偵錯"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -2109,9 +2119,9 @@ msgstr ""
 msgid "Crash"
 msgstr "當機"
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "翻譯說明的文字"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "偵錯"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -2124,6 +2134,14 @@ msgstr "新增翻譯的文字..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "合併符號.xml..."
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "翻譯說明的文字"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "說明"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2929,6 +2947,10 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr ""
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

@@ -121,7 +121,7 @@
     <value>Elimina</value>
   </data>
   <data name="unusedControlsLabel.Text" xml:space="preserve">
-    <value>I seguenti controlli si trovano nella raccolta 'Tutti i controlli', ma non vengono utilizzati in nessun percorso. Fare clic su Elimina per rimuovere tutti i controlli selezionati.</value>
+    <value>I seguenti punti si trovano nella raccolta 'Tutti i punti', ma non vengono utilizzati in nessun percorso. Fare clic su Elimina per rimuovere tutti i punti selezionati.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Controlli non usati</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.2\n"
+"Project-Id-Version: Purple Pen 3.5.3\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2024-08-07 14:18-07:00\n"
+"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -911,8 +911,26 @@ msgstr "Utilizează standardele de dimensiune IOF"
 msgid "Item Sizes"
 msgstr "Dimensiuni Element"
 
-#: CourseAppearanceDialog.resx, checkBoxBlendPurple.Text
-msgid "Blend purple with underlying map colors"
+#: CourseAppearanceDialog.resx, labelChooseLayer.Text
+msgid "Above map layer:"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
+#: CourseSelector.resx, selectNone.Text
+#: SelectionDescriptionText.resx, CourseList_None
+msgid "None"
+msgstr "Nimic"
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
+msgid "Blend"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
+msgid "Layer"
+msgstr ""
+
+#: CourseAppearanceDialog.resx, labelBlendPurple.Text
+msgid "Blend purple with underlying map colors:"
 msgstr ""
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
@@ -992,11 +1010,6 @@ msgstr ""
 #: CourseSelector.resx, selectAll.Text
 msgid "All"
 msgstr "Toate"
-
-#: CourseSelector.resx, selectNone.Text
-#: SelectionDescriptionText.resx, CourseList_None
-msgid "None"
-msgstr "Nimic"
 
 #: CourseSelector.resx, buttonChooseVariations.Text
 msgid "Choose Variations..."
@@ -1511,10 +1524,6 @@ msgstr "Fișiere Purple Pen|*.ppen|Toate fișierele|*.*"
 msgid "Purple Pen file|*.ppen"
 msgstr "Fișier Purple Pen|*.ppen"
 
-#: MainFrame.resx, fileMenu.Text
-msgid "&File"
-msgstr "&Fişier"
-
 #: MainFrame.resx, newEventMenu.Text
 msgid "&New Event..."
 msgstr "Evniment &Nou..."
@@ -1539,10 +1548,6 @@ msgstr "Creare Fișiere &OCAD..."
 msgid "Create Ima&ge Files..."
 msgstr ""
 
-#: MainFrame.resx, createPDFsMenu.Text
-msgid "Create P&DFs"
-msgstr ""
-
 #: MainFrame.resx, createDescriptionPdfMenu.Text
 msgid "&Descriptions..."
 msgstr ""
@@ -1555,12 +1560,16 @@ msgstr ""
 msgid "&Courses..."
 msgstr ""
 
-#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
-msgid "Create Route Review Files"
+#: MainFrame.resx, createPDFsMenu.Text
+msgid "Create P&DFs"
 msgstr ""
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
+msgstr ""
+
+#: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
+msgid "Create Route Review Files"
 msgstr ""
 
 #: MainFrame.resx, createXmlMenu.Text
@@ -1587,10 +1596,6 @@ msgstr "Tipărire Fișe de &Control..."
 msgid "Print &Courses..."
 msgstr "Tipărire &Trasee..."
 
-#: MainFrame.resx, setPrintAreaMenu.Text
-msgid "Set Print A&rea"
-msgstr "Setare &Zonă de Tipărire"
-
 #: MainFrame.resx, printAreaThisPartMenu.Text
 msgid "This &Part Only"
 msgstr ""
@@ -1603,6 +1608,10 @@ msgstr "&Acest Traseu"
 msgid "&All Courses"
 msgstr "&Toate Traseele"
 
+#: MainFrame.resx, setPrintAreaMenu.Text
+msgid "Set Print A&rea"
+msgstr "Setare &Zonă de Tipărire"
+
 #: MainFrame.resx, programLanguageMenu.Text
 msgid "Program &Language..."
 msgstr "&Limba programului..."
@@ -1611,9 +1620,9 @@ msgstr "&Limba programului..."
 msgid "E&xit"
 msgstr "&Ieșire"
 
-#: MainFrame.resx, editMenu.Text
-msgid "&Edit"
-msgstr "&Editare"
+#: MainFrame.resx, fileMenu.Text
+msgid "&File"
+msgstr "&Fişier"
 
 #: MainFrame.resx, cancelMenu.Text
 #: MiscText.resx, ClearSelectionWithShortcut
@@ -1635,9 +1644,9 @@ msgstr "&Refacere"
 msgid "&Delete"
 msgstr "&Ștergere"
 
-#: MainFrame.resx, viewMenu.Text
-msgid "&View"
-msgstr "&Vizualizare"
+#: MainFrame.resx, editMenu.Text
+msgid "&Edit"
+msgstr "&Editare"
 
 #: MainFrame.resx, entireCourseMenu.Text
 msgid "Entire &Course"
@@ -1646,10 +1655,6 @@ msgstr "Tot &Traseul"
 #: MainFrame.resx, entireMapMenu.Text
 msgid "Entire &Map"
 msgstr "Toată &Harta"
-
-#: MainFrame.resx, zoomMenu.Text
-msgid "&Zoom"
-msgstr "&Zoom"
 
 #: MainFrame.resx, zoom50Menu.Text
 msgid "50%"
@@ -1679,9 +1684,9 @@ msgstr "500%"
 msgid "1000%"
 msgstr "1000%"
 
-#: MainFrame.resx, mapIntensityMenu.Text
-msgid "Map &Intensity"
-msgstr "&Intensitate Hartă"
+#: MainFrame.resx, zoomMenu.Text
+msgid "&Zoom"
+msgstr "&Zoom"
 
 #: MainFrame.resx, veryLowIntensityMenu.Text
 msgid "&Very Low"
@@ -1703,9 +1708,9 @@ msgstr "&Ridicată"
 msgid "&Full"
 msgstr "&Maximă"
 
-#: MainFrame.resx, mapQualityMenu.Text
-msgid "Map &Quality"
-msgstr "&Calitate hartă"
+#: MainFrame.resx, mapIntensityMenu.Text
+msgid "Map &Intensity"
+msgstr "&Intensitate Hartă"
 
 #: MainFrame.resx, normalQualityMenu.Text
 msgid "Low"
@@ -1714,6 +1719,10 @@ msgstr "Scăzută"
 #: MainFrame.resx, highQualityMenu.Text
 msgid "High"
 msgstr "Ridicată"
+
+#: MainFrame.resx, mapQualityMenu.Text
+msgid "Map &Quality"
+msgstr "&Calitate hartă"
 
 #: MainFrame.resx, showPrintAreaMenu.Text
 msgid "Show P&rint Area"
@@ -1735,9 +1744,9 @@ msgstr ""
 msgid "Clear Other Courses"
 msgstr ""
 
-#: MainFrame.resx, addMenu.Text
-msgid "&Add"
-msgstr ""
+#: MainFrame.resx, viewMenu.Text
+msgid "&View"
+msgstr "&Vizualizare"
 
 #: MainFrame.resx, addStartMenu.Text
 msgid "&Start"
@@ -1756,10 +1765,6 @@ msgstr "&Finalizare"
 msgid "&Descriptions"
 msgstr ""
 
-#: MainFrame.resx, addMapExchangeMenu.Text
-msgid "Map Flip/E&xchange"
-msgstr ""
-
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
 msgstr ""
@@ -1770,6 +1775,10 @@ msgstr ""
 
 #: MainFrame.resx, mapExchangeSeparateMenuItem.Text
 msgid "Flagged &Route to Map Exchange"
+msgstr ""
+
+#: MainFrame.resx, addMapExchangeMenu.Text
+msgid "Map Flip/E&xchange"
 msgstr ""
 
 #: MainFrame.resx, addVariationMenu.Text
@@ -1808,6 +1817,11 @@ msgstr "Zonă Înafara Limitelor"
 #: SelectionDescriptionText.resx, SpecialName_Dangerous
 msgid "Dangerous Area"
 msgstr "Zonă Periculoasă"
+
+#: MainFrame.resx, addConstructionMenu.Text
+#: MainFrame.resx, constructionToolStripMenuItem.Text
+msgid "Temporary Construction"
+msgstr ""
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1867,9 +1881,9 @@ msgstr ""
 msgid "Ellipse"
 msgstr ""
 
-#: MainFrame.resx, eventMenu.Text
-msgid "Eve&nt"
-msgstr "Eve&niment"
+#: MainFrame.resx, addMenu.Text
+msgid "&Add"
+msgstr ""
 
 #: MainFrame.resx, changeMapFileMenu.Text
 msgid "&Map File..."
@@ -1895,10 +1909,6 @@ msgstr ""
 msgid "&Punch Patterns..."
 msgstr "Modele de Compostare..."
 
-#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
-msgid "IOF &Standards"
-msgstr ""
-
 #: MainFrame.resx, descriptionStd2004Menu.Text
 msgid "2004 Description Standard"
 msgstr ""
@@ -1919,6 +1929,10 @@ msgstr ""
 msgid "ISSprOM 2019 Map Standard"
 msgstr ""
 
+#: MainFrame.resx, iOFStandardsToolStripMenuItem.Text
+msgid "IOF &Standards"
+msgstr ""
+
 #: MainFrame.resx, customizeDescriptionsMenu.Text
 msgid "Customize &Description Text..."
 msgstr "Personalizare Text &Descriere..."
@@ -1927,9 +1941,9 @@ msgstr "Personalizare Text &Descriere..."
 msgid "Customize &Appearance..."
 msgstr ""
 
-#: MainFrame.resx, courseMenu.Text
-msgid "&Course"
-msgstr "&Traseu"
+#: MainFrame.resx, eventMenu.Text
+msgid "Eve&nt"
+msgstr "Eve&niment"
 
 #: MainFrame.resx, addCourseMenu.Text
 msgid "&Add Course..."
@@ -1959,9 +1973,9 @@ msgstr "&Încărcare Participanți..."
 msgid "Relay Team &Variations..."
 msgstr ""
 
-#: MainFrame.resx, itemMenu.Text
-msgid "&Item"
-msgstr "&Element"
+#: MainFrame.resx, courseMenu.Text
+msgid "&Course"
+msgstr "&Traseu"
 
 #: MainFrame.resx, deleteForkMenu.Text
 msgid "Delete For&k/Loop"
@@ -1999,10 +2013,6 @@ msgstr "&Rotire"
 msgid "&Stretch"
 msgstr ""
 
-#: MainFrame.resx, legFlaggingMenu.Text
-msgid "&Leg Flagging"
-msgstr "Semnalizare &Secțiune"
-
 #: MainFrame.resx, noFlaggingMenu.Text
 msgid "No Flagging"
 msgstr "Fără Semnalizare"
@@ -2019,13 +2029,17 @@ msgstr "Semnalizare doar Început de Secțiune"
 msgid "End of Leg Flagged"
 msgstr "Semnalizare doar Sfârșit de Secțiune"
 
+#: MainFrame.resx, legFlaggingMenu.Text
+msgid "&Leg Flagging"
+msgstr "Semnalizare &Secțiune"
+
 #: MainFrame.resx, changeDisplayedCoursesMenu.Text
 msgid "Change Displa&yed Courses..."
 msgstr "Schimbare Trasee Afișate..."
 
-#: MainFrame.resx, reportMenu.Text
-msgid "&Reports"
-msgstr "&Rapoarte"
+#: MainFrame.resx, itemMenu.Text
+msgid "&Item"
+msgstr "&Element"
 
 #: MainFrame.resx, courseSummaryMenu.Text
 msgid "Course &Summary"
@@ -2047,9 +2061,9 @@ msgstr "Referințe Încrucișate Posturi"
 msgid "Control and Leg Loa&d"
 msgstr "&Încărcare Post de control si Secțiune"
 
-#: MainFrame.resx, helpMenu.Text
-msgid "&Help"
-msgstr "&Asistență"
+#: MainFrame.resx, reportMenu.Text
+msgid "&Reports"
+msgstr "&Rapoarte"
 
 #: MainFrame.resx, helpContentsMenu.Text
 msgid "Purple Pen &Help"
@@ -2074,10 +2088,6 @@ msgstr ""
 #: MainFrame.resx, aboutMenu.Text
 msgid "&About Purple Pen"
 msgstr "&Despre Purple Pen"
-
-#: MainFrame.resx, debugMenu.Text
-msgid "Debug"
-msgstr "Depanare"
 
 #: MainFrame.resx, symbolBrowserMenu.Text
 msgid "Symbol Browser"
@@ -2123,9 +2133,9 @@ msgstr ""
 msgid "Crash"
 msgstr ""
 
-#: MainFrame.resx, translateMenu.Text
-msgid "&Translate Description Text"
-msgstr "&Traducere text descriere"
+#: MainFrame.resx, debugMenu.Text
+msgid "Debug"
+msgstr "Depanare"
 
 #: MainFrame.resx, addDescriptionLanguageMenu.Text
 msgid "Add Description Language..."
@@ -2138,6 +2148,14 @@ msgstr "Adăugare Texte Traduse..."
 #: MainFrame.resx, mergeSymbolsMenu.Text
 msgid "Merge Symbols.xml..."
 msgstr "Îmbină Symbol.xml..."
+
+#: MainFrame.resx, translateMenu.Text
+msgid "&Translate Description Text"
+msgstr "&Traducere text descriere"
+
+#: MainFrame.resx, helpMenu.Text
+msgid "&Help"
+msgstr "&Asistență"
 
 #: MainFrame.resx, openToolStripButton.Text
 msgid "Open"
@@ -2959,6 +2977,10 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
+msgstr ""
+
+#: MiscText.resx, LowerPurple
+msgid "Lower Purple"
 msgstr ""
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text

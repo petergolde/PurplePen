@@ -193,10 +193,10 @@
     <value>Seleziona cartella...</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Stessa cartella come file di Purple Pen</value>
+    <value>Stessa cartella del file Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Stessa cartella come file di mappa</value>
+    <value>Stessa cartella del file di mappa</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Altra cartella</value>

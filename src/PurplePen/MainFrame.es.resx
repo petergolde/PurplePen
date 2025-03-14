@@ -135,9 +135,6 @@
   <data name="saveFileDialog.Filter" xml:space="preserve">
     <value>Archivo Purple Pen|*.ppen</value>
   </data>
-  <data name="fileMenu.Text" xml:space="preserve">
-    <value>&amp;Archivo</value>
-  </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>Evento &amp;nuevo…</value>
   </data>
@@ -156,9 +153,6 @@
   <data name="createImageFilesMenu.Text" xml:space="preserve">
     <value>Crear archivos de &amp;imagen...</value>
   </data>
-  <data name="createPDFsMenu.Text" xml:space="preserve">
-    <value>Crear &amp;PDF...</value>
-  </data>
   <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
     <value>&amp;Descripciones...</value>
   </data>
@@ -167,6 +161,9 @@
   </data>
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
     <value>&amp;Recorridos...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Crear &amp;PDF...</value>
   </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Crear archivos de &amp;intercambio de datos (IOF XML)...</value>
@@ -183,9 +180,6 @@
   <data name="printCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Imprimir recorridos...</value>
   </data>
-  <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>&amp;Definir área de impresión</value>
-  </data>
   <data name="printAreaThisPartMenu.Text" xml:space="preserve">
     <value>Solo esta &amp;sección</value>
   </data>
@@ -195,14 +189,17 @@
   <data name="printAreaAllCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Todos los recorridos</value>
   </data>
+  <data name="setPrintAreaMenu.Text" xml:space="preserve">
+    <value>&amp;Definir área de impresión</value>
+  </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
     <value>&amp;Lenguaje del programa...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Salir</value>
   </data>
-  <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Editar</value>
+  <data name="fileMenu.Text" xml:space="preserve">
+    <value>&amp;Archivo</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
     <value>&amp;Borrar selección</value>
@@ -216,17 +213,14 @@
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Borrar</value>
   </data>
-  <data name="viewMenu.Text" xml:space="preserve">
-    <value>&amp;Vista</value>
+  <data name="editMenu.Text" xml:space="preserve">
+    <value>&amp;Editar</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>&amp;Recorrido al completo</value>
   </data>
   <data name="entireMapMenu.Text" xml:space="preserve">
     <value>&amp;Mapa al completo</value>
-  </data>
-  <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Zoom</value>
   </data>
   <data name="zoom50Menu.Text" xml:space="preserve">
     <value>50%</value>
@@ -249,8 +243,8 @@
   <data name="zoom1000Menu.Text" xml:space="preserve">
     <value>1000%</value>
   </data>
-  <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>Intensidad de mapa</value>
+  <data name="zoomMenu.Text" xml:space="preserve">
+    <value>&amp;Zoom</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Muy baja</value>
@@ -267,14 +261,17 @@
   <data name="fullIntensityMenu.Text" xml:space="preserve">
     <value>&amp;Total</value>
   </data>
-  <data name="mapQualityMenu.Text" xml:space="preserve">
-    <value>&amp;Calidad del mapa</value>
+  <data name="mapIntensityMenu.Text" xml:space="preserve">
+    <value>Intensidad de mapa</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
     <value>Baja</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
     <value>Alta</value>
+  </data>
+  <data name="mapQualityMenu.Text" xml:space="preserve">
+    <value>&amp;Calidad del mapa</value>
   </data>
   <data name="showPrintAreaMenu.Text" xml:space="preserve">
     <value>Mostrar área de &amp;impresión</value>
@@ -291,8 +288,8 @@
   <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
     <value>Limpiar los otros recorridos</value>
   </data>
-  <data name="addMenu.Text" xml:space="preserve">
-    <value>&amp;Añadir</value>
+  <data name="viewMenu.Text" xml:space="preserve">
+    <value>&amp;Vista</value>
   </data>
   <data name="addStartMenu.Text" xml:space="preserve">
     <value>&amp;Salida</value>
@@ -306,14 +303,14 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Descripciones</value>
   </data>
-  <data name="addMapExchangeMenu.Text" xml:space="preserve">
-    <value>&amp;Intercambio de mapas</value>
-  </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Intercambio de mapas en &amp;punto de control</value>
   </data>
   <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
     <value>Ruta &amp;marcada a un intercambio de mapa</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>&amp;Intercambio de mapas</value>
   </data>
   <data name="addVariationMenu.Text" xml:space="preserve">
     <value>&amp;Variante...</value>
@@ -366,8 +363,8 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Rectángulo</value>
   </data>
-  <data name="eventMenu.Text" xml:space="preserve">
-    <value>Eve&amp;nto</value>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Añadir</value>
   </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
     <value>&amp;Archivo del mapa...</value>
@@ -384,9 +381,6 @@
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;Patrones de perforación...</value>
   </data>
-  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Estándares IOF</value>
-  </data>
   <data name="descriptionStd2004Menu.Text" xml:space="preserve">
     <value>Estándar de descripciones de 2004</value>
   </data>
@@ -399,14 +393,17 @@
   <data name="mapStd2017Menu.Text" xml:space="preserve">
     <value>Estándar de mapa ISOM2017</value>
   </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Estándares IOF</value>
+  </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Personalizar texto de descripciones...</value>
   </data>
   <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
     <value>Personalizar la &amp;apariencia...</value>
   </data>
-  <data name="courseMenu.Text" xml:space="preserve">
-    <value>&amp;Recorrido</value>
+  <data name="eventMenu.Text" xml:space="preserve">
+    <value>Eve&amp;nto</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Añadir recorrido</value>
@@ -429,8 +426,8 @@
   <data name="courseVariationReportMenu.Text" xml:space="preserve">
     <value>&amp;Variantes para equipos de relevos...</value>
   </data>
-  <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Elementos</value>
+  <data name="courseMenu.Text" xml:space="preserve">
+    <value>&amp;Recorrido</value>
   </data>
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Borrar</value>
@@ -456,9 +453,6 @@
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>R&amp;otar</value>
   </data>
-  <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Tramo balizado</value>
-  </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Sin balizado</value>
   </data>
@@ -471,11 +465,14 @@
   <data name="endFlaggingMenu.Text" xml:space="preserve">
     <value>Balizado al final</value>
   </data>
+  <data name="legFlaggingMenu.Text" xml:space="preserve">
+    <value>&amp;Tramo balizado</value>
+  </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
     <value>&amp;Cambiar rutas en que aparece...</value>
   </data>
-  <data name="reportMenu.Text" xml:space="preserve">
-    <value>&amp;Informes</value>
+  <data name="itemMenu.Text" xml:space="preserve">
+    <value>&amp;Elementos</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
     <value>&amp;Resumen por recorridos</value>
@@ -492,8 +489,8 @@
   <data name="controlAndLegLoadMenu.Text" xml:space="preserve">
     <value>Densidad de competidores por controles y &amp;tramos</value>
   </data>
-  <data name="helpMenu.Text" xml:space="preserve">
-    <value>Ay&amp;uda</value>
+  <data name="reportMenu.Text" xml:space="preserve">
+    <value>&amp;Informes</value>
   </data>
   <data name="helpContentsMenu.Text" xml:space="preserve">
     <value>&amp;Ayuda de Purple Pen</value>
@@ -512,9 +509,6 @@
   </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>A&amp;cerca de Purple Pen</value>
-  </data>
-  <data name="debugMenu.Text" xml:space="preserve">
-    <value>Depurar</value>
   </data>
   <data name="symbolBrowserMenu.Text" xml:space="preserve">
     <value>Navegador de símbolos</value>
@@ -546,8 +540,8 @@
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Cierre inesperado</value>
   </data>
-  <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Traducir textos de la descripción</value>
+  <data name="debugMenu.Text" xml:space="preserve">
+    <value>Depurar</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
     <value>Añadir idioma de descripción...</value>
@@ -557,6 +551,12 @@
   </data>
   <data name="mergeSymbolsMenu.Text" xml:space="preserve">
     <value>Mezclar Symbols.xml...</value>
+  </data>
+  <data name="translateMenu.Text" xml:space="preserve">
+    <value>&amp;Traducir textos de la descripción</value>
+  </data>
+  <data name="helpMenu.Text" xml:space="preserve">
+    <value>Ay&amp;uda</value>
   </data>
   <data name="openToolStripButton.Text" xml:space="preserve">
     <value>Abrir</value>
@@ -612,18 +612,6 @@
   <data name="addVariationToolStripButton.Text" xml:space="preserve">
     <value>Añadir variante</value>
   </data>
-  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
-    <value>Añadir elemento especial</value>
-  </data>
-  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Añadir ángulo (Ctrl+B)</value>
-  </data>
-  <data name="addGapToolStripButton.Text" xml:space="preserve">
-    <value>toolStripButton1</value>
-  </data>
-  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Añadir recorte (Ctrl+G)</value>
-  </data>
   <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
     <value>Punto de inicio cronometrado</value>
   </data>
@@ -668,6 +656,18 @@
   </data>
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Rectángulo</value>
+  </data>
+  <data name="specialItemToolStripMenu.Text" xml:space="preserve">
+    <value>Añadir elemento especial</value>
+  </data>
+  <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Añadir ángulo (Ctrl+B)</value>
+  </data>
+  <data name="addGapToolStripButton.Text" xml:space="preserve">
+    <value>toolStripButton1</value>
+  </data>
+  <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
+    <value>Añadir recorte (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Zoom: 100%</value>
