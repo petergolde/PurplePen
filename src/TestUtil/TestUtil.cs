@@ -42,6 +42,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace TestingUtils
 {
@@ -119,10 +120,12 @@ namespace TestingUtils
             }
 
             bool different = false;
+            double maxColorDiff = 0.0;
             for (int x = 0; x < width; ++x)
                 for (int y = 0; y < height; ++y) {
                     Color color1 = bm1.GetPixel(x, y);
                     Color color2 = bm2.GetPixel(x, y);
+                    
                     if (color1 != color2 && (maxPixelDifference == 0 || !SimilarColors(color1, color2, maxPixelDifference))) {
                         if (colorDifferent == Color.Transparent)
                             diff.SetPixel(x, y, color2);
@@ -134,7 +137,13 @@ namespace TestingUtils
                         if (colorSame == Color.Transparent)
                             diff.SetPixel(x, y, color2);
                     }
+
+                    if (color1 != color2) {
+                        maxColorDiff = Math.Max(maxColorDiff, ColorDifference(color1, color2));
+                    }
                 }
+
+            Console.WriteLine("Max color difference: " + maxColorDiff);
 
             if (different)
                 return diff;
@@ -150,6 +159,37 @@ namespace TestingUtils
                 Math.Abs(color1.G - color2.G) <= maxPixelDifference &&
                 Math.Abs(color1.B - color2.B) <= maxPixelDifference &&
                 Math.Abs(color1.A - color2.A) <= maxPixelDifference);
+
+            //return ColorDifference(color1, color2) < maxPixelDifference;
+        }
+
+        // Returns a perceptual color difference value. 0 is the same, around 750 is the max difference.
+        public static double ColorDifference(Color color1, Color color2)
+        {
+            if (color1 == color2)
+                return 0.0;
+
+            // Compute the average red value.
+            double rAvg = (color1.R + color2.R) / 2.0;
+
+            // Compute differences for each channel.
+            double deltaR = color1.R - color2.R;
+            double deltaG = color1.G - color2.G;
+            double deltaB = color1.B - color2.B;
+
+            // Compute weighted factors for red, green, and blue.
+            double weightR = 2 + (rAvg / 256.0);
+            double weightG = 4;
+            double weightB = 2 + ((255 - rAvg) / 256.0);
+
+            // Calculate the weighted Euclidean distance.
+            double difference = Math.Sqrt(
+                weightR * deltaR * deltaR +
+                weightG * deltaG * deltaG +
+                weightB * deltaB * deltaB
+            );
+
+            return difference;
         }
 
         // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.

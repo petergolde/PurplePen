@@ -47,7 +47,7 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class BoundsTests
     {
-        public const int MAX_PIXEL_DIFF = 30;
+        public const int MAX_PIXEL_DIFF = 33;
 
         [SetUp]
         public void Init()

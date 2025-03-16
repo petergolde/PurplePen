@@ -12,11 +12,11 @@ Releasing a new version of Purple Pen.
 
 5. Update version number in GDIPlusNative project resource file.
 
-6. Build MapModel (Debug and Release), and copy new versions over with copy_mapmodel.bat
+6. UNNEEDED NOW Build MapModel (Debug and Release), and copy new versions over with copy_mapmodel.bat
 
-7. Build DotSpatialProjects (Debug and Release) and copy new versions over with batch file.
+7. UNNEEDED NOW Build DotSpatialProjects (Debug and Release) and copy new versions over with batch file.
 
-7 1/2. Build PdfiumViewer (Debug and Release) and copy new versions over with batch file.
+7 1/2. UNNEEDED NOW Build PdfiumViewer (Debug and Release) and copy new versions over with batch file.
 
 8. In solution explorer, in InnoSetup, edit PurplePen.iss. Change "MyAppVersion" to new version number.
 
@@ -45,7 +45,7 @@ Releasing a new version of Purple Pen.
          ARM and ARM64 unchecked
       Check Public Symbols on
       Check Generate Artifacts for App Certifications
-   d) Go to Partner Center at   https://partner.microsoft.com/en-us/dashboard/home
+   d) Go to Partner Center at   https://partner.microsoft.com/en-us/dashboard/home with login "developer@purple-pen.org"
    e) Click on "Apps and Games" and select "Purple Pen for Orienteering"
    f) Click "Start Update"
    g) Click on "Packages"
