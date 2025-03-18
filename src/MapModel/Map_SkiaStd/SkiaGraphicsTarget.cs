@@ -607,7 +607,7 @@ namespace PurplePen.MapModel
         {
             float[] elements = source.Elements;
 
-            SKMatrix mat = SKMatrix.MakeIdentity();
+            SKMatrix mat = SKMatrix.CreateIdentity();
             mat.ScaleX = elements[0];
             mat.SkewY = elements[1];
             mat.SkewX = elements[2];
