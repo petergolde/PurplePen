@@ -1609,12 +1609,12 @@ namespace PurplePen
                 case ColorKind.Black: return "black";
                 case ColorKind.UpperPurple: return "purple";
                 case ColorKind.LowerPurple: return "lower-purple";
-                case ColorKind.Custom: return string.Format(CultureInfo.InvariantCulture, "{0:F},{1:F},{2:F},{3:F}", CustomColor.Cyan, CustomColor.Magenta, CustomColor.Yellow, CustomColor.Black) + (Overprint ? " overprint" : "");
+                case ColorKind.Custom: return string.Format(CultureInfo.InvariantCulture, "{0:F},{1:F},{2:F},{3:F}", CustomColor.Cyan, CustomColor.Magenta, CustomColor.Yellow, CustomColor.Black);
                 default: return base.ToString();
             }
         }
 
-        public static SpecialColor Parse(string s)
+        public static SpecialColor Parse(string s, bool overprint)
         {
             if (s == "black")
                 return SpecialColor.Black;
@@ -1624,9 +1624,6 @@ namespace PurplePen
                 return SpecialColor.LowerPurple;
             else {
                 float c, m, y, k;
-                bool overprint = s.EndsWith(" overprint");
-                if (overprint)
-                    s = s.Substring(0, s.Length - 10);
                 string[] colors = s.Split(',');
                 if (colors.Length != 4)
                     throw new FormatException();
@@ -1948,7 +1945,8 @@ namespace PurplePen
                     numColumns = xmlinput.GetAttributeInt("columns", 1);
 
                     if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse) {
-                        color = xmlinput.GetAttributeColor("color", SpecialColor.UpperPurple);
+                        bool overprint = xmlinput.GetAttributeBool("overprint", false);
+                        color = xmlinput.GetAttributeColor("color", SpecialColor.UpperPurple, overprint);
                     }
 
                     string lineKindValue = xmlinput.GetAttributeString("line-kind", "");
@@ -2084,6 +2082,7 @@ namespace PurplePen
                     case LineKind.Dashed: xmloutput.WriteAttributeString("line-kind", "dashed"); break;
                 }
                 xmloutput.WriteAttributeString("color", color.ToString());
+                xmloutput.WriteAttributeString("overprint", color.Overprint.ToString().ToLower());
                 xmloutput.WriteAttributeString("line-width", XmlConvert.ToString(lineWidth));
                 if (lineKind == LineKind.Double || lineKind == LineKind.Dashed)
                     xmloutput.WriteAttributeString("gap-size", XmlConvert.ToString(gapSize));

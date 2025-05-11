@@ -249,14 +249,14 @@ namespace PurplePen
             return XmlConvert.ToBoolean(value);
         }
 
-        public SpecialColor GetAttributeColor(string name, SpecialColor defValue)
+        public SpecialColor GetAttributeColor(string name, SpecialColor defValue, bool overprint)
         {
             string value = Reader.GetAttribute(name);
             if (value == null || value == string.Empty)
                 return defValue;
             else {
                 try {
-                    return SpecialColor.Parse(value);
+                    return SpecialColor.Parse(value, overprint);
                 }
                 catch (FormatException) {
                     BadXml("Bad format for color attribute '{0}'", name);
