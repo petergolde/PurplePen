@@ -1578,25 +1578,25 @@ namespace PurplePen
         public readonly CmykColor CustomColor;
         public readonly bool Overprint;
 
-        public readonly static SpecialColor Black = new SpecialColor(ColorKind.Black, false);
-        public readonly static SpecialColor UpperPurple = new SpecialColor(ColorKind.UpperPurple, false);
-        public readonly static SpecialColor LowerPurple = new SpecialColor(ColorKind.LowerPurple, false);
+        public readonly static SpecialColor Black = new SpecialColor(ColorKind.Black);
+        public readonly static SpecialColor UpperPurple = new SpecialColor(ColorKind.UpperPurple);
+        public readonly static SpecialColor LowerPurple = new SpecialColor(ColorKind.LowerPurple);
 
-        public SpecialColor(ColorKind colorKind, bool overprint)
+        public SpecialColor(ColorKind colorKind, bool overprint = false)
         {
             Debug.Assert(colorKind != ColorKind.Custom);
             this.Kind = colorKind;
             this.Overprint = overprint;
         }
 
-        public SpecialColor(float cyan, float magenta, float yellow, float black, bool overprint)
+        public SpecialColor(float cyan, float magenta, float yellow, float black, bool overprint = false)
         {
             this.Kind = ColorKind.Custom;
             this.CustomColor = CmykColor.FromCmyk(cyan, magenta, yellow, black);
             this.Overprint = overprint;
         }
 
-        public SpecialColor(CmykColor color, bool overprint)
+        public SpecialColor(CmykColor color, bool overprint = false)
         {
             this.Kind = ColorKind.Custom;
             this.CustomColor = color;
