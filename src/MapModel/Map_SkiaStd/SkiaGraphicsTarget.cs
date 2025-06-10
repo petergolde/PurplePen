@@ -58,12 +58,14 @@ namespace PurplePen.MapModel
 {
     using PurplePen.Graphics2D;
     using SkiaSharp;
+    using System.Drawing;
 
     // A GraphicsTarget encapsulates an SKCanvas
     public class Skia_GraphicsTarget: IGraphicsTarget
     {
         private SKCanvas canvas;
         private SkiaColorConverter colorConverter;
+        private float intensity;    // color intensity level, 1.0F is full intensity (no lightening)
         private int pushLevel;      // How many pushes have we done?
         private Dictionary<object, SKPaint> penMap = new Dictionary<object, SKPaint>(new IdentityComparer<object>());
         private Dictionary<object, SKPaint> brushMap = new Dictionary<object, SKPaint>(new IdentityComparer<object>());
@@ -78,23 +80,28 @@ namespace PurplePen.MapModel
             pushLevel = 0;
             this.colorConverter = colorConverter ?? new SkiaColorConverter();
             this.antiAlias = false;
-
-            // TODO: handle intensity
+            this.intensity = intensity;
         }
 
         public Skia_GraphicsTarget(SKCanvas canvas) : this(canvas, null)
         {
         }
 
-        //public WPF_ColorConverter ColorConverter
-        //{
-        //    get { return colorConverter; }
-        //}
-
         public SKCanvas Canvas
         {
             get { return canvas; }
         }
+
+        private SKColor ConvertColor(CmykColor cmykColor)
+        {
+            if (intensity < 1.0F) {
+                cmykColor = CmykColor.FromCmyka(cmykColor.Cyan * intensity, cmykColor.Magenta * intensity, cmykColor.Yellow * intensity, cmykColor.Black * intensity, cmykColor.Alpha);
+            }
+
+            return colorConverter.ToColor(cmykColor);
+        }
+
+
 
         public void CreateSolidBrush(object brushKey, CmykColor color)
         {
@@ -102,7 +109,7 @@ namespace PurplePen.MapModel
                 throw new InvalidOperationException("Key already has a brush created for it");
 
             SKPaint paint = new SKPaint();
-            paint.Color = colorConverter.ToColor(color);
+            paint.Color = ConvertColor(color);
             paint.IsStroke = false;
             brushMap.Add(brushKey, paint);
         }
@@ -151,7 +158,7 @@ namespace PurplePen.MapModel
         public void CreatePen(object penKey, CmykColor color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
         {
             SKPaint paint = new SKPaint();
-            paint.Color = colorConverter.ToColor(color);
+            paint.Color = ConvertColor(color);
             CreatePenCore(penKey, paint, width, caps, join, miterLimit);
         }
 
@@ -453,6 +460,9 @@ namespace PurplePen.MapModel
                 paint.TextSize = font.EmHeight;
                 paint.TextAlign = SKTextAlign.Left;
                 paint.IsAntialias = antiAlias;
+                paint.LcdRenderText = false;
+                paint.SubpixelText = false;
+
                 // paint.UnderlineText = font.Underline;  // TODO: Underline not yet supported.
                 canvas.DrawText(text, upperLeft.X, upperLeft.Y + font.Ascent, paint);
             }
@@ -500,6 +510,10 @@ namespace PurplePen.MapModel
                 }
                 paint.FilterQuality = filterQuality;
                 paint.IsAntialias = true;
+
+                if (intensity < 1.0F) {
+                    paint.ColorFilter = SKColorFilter.CreateLighting((SKColor) new SKColorF(intensity, intensity, intensity), (SKColor) new SKColorF(1.0F - intensity, 1.0F - intensity, 1.0F - intensity));
+                }
 
                 if (bm is Skia_Image) {
                     SKImage image = ((Skia_Image)bm).Image;
@@ -640,7 +654,8 @@ namespace PurplePen.MapModel
                 this.angle = angle;
                 this.bitmap = bitmap;
                 this.colorConverter = owningTarget.colorConverter;
-                // TODO: Copy intensity
+                this.intensity = owningTarget.intensity;
+                this.antiAlias = true;
             }
 
             public void FinishBrush(object brushKey)
@@ -667,6 +682,8 @@ namespace PurplePen.MapModel
                     // Create an SKPaint with that shader.
                     SKPaint paint = new SKPaint();
                     paint.Shader = shader;
+                    paint.IsAntialias = true;
+                    paint.FilterQuality = SKFilterQuality.High;
 
                     owningTarget.brushMap.Add(brushKey, paint);
                 }
@@ -687,7 +704,13 @@ namespace PurplePen.MapModel
 		public SkiaFont(string familyName, float emHeight, TextEffects effects)
 		{
 			this.emHeight = emHeight;
-            this.typeface = SKTypeface.FromFamilyName(familyName, GetSKFontStyleWeight(effects), SKFontStyleWidth.Normal, GetSKFontStyleSlant(effects));
+            if (familyName == "Arial Narrow") {
+                // Special case for Arial Narrow. Use "Arial" with a condensed style instead.
+                this.typeface = SKTypeface.FromFamilyName("Arial", GetSKFontStyleWeight(effects), SKFontStyleWidth.Condensed, GetSKFontStyleSlant(effects));
+            }
+            else {
+                this.typeface = SKTypeface.FromFamilyName(familyName, GetSKFontStyleWeight(effects), SKFontStyleWidth.Normal, GetSKFontStyleSlant(effects));
+            }
             this.underline = ((effects & TextEffects.Underline) != 0);
 		}
 

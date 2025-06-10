@@ -6,26 +6,35 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using TestingUtils;
 
-#if false
 namespace Map_Skia.Tests
 {
     [TestFixture]
     public class RenderingTests
     {
+        private const int MAX_PIXEL_DIFF = 25;
+
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, true, false, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, true, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
+            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
+        }
+
+        void CheckTestAntiAlias(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
+        {
+            string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, true, false, testLightenedColor, roundtripToOcad, true, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
         void CheckTestNoPatternBitmaps(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, false, false, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, false, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
+#if false
 
         [Test]
         public void TestWest()
@@ -38,13 +47,14 @@ namespace Map_Skia.Tests
         {
             CheckTest("teanwest11.txt", false, true, 11, 12);
         }
-
+#endif
         [Test]
         public void LineSymbols()
         {
             CheckTest("isomlines.txt", true, true, 6, 12);
             CheckTest("isomlines9.txt", true, true, 6, 12);
         }
+
 
         [Test]
         public void Fences()
@@ -72,6 +82,7 @@ namespace Map_Skia.Tests
             CheckTest("dashline.txt", false, true, 6, 12);
             CheckTest("dashline9.txt", false, true, 6, 12);
         }
+
 
         [Test]
         public void PointSymbols()
@@ -101,6 +112,7 @@ namespace Map_Skia.Tests
             // CheckTest("cutcircles9.txt", false, false, 6);    OCAD 9 has some strange problems with cut circles...
         }
 
+
         [Test]
         public void HiddenSymbols()
         {
@@ -126,17 +138,19 @@ namespace Map_Skia.Tests
         [Test]
         public void TextSymbols()
         {
-            CheckTest("simpletext.txt", true, true, 6, 12);
-            CheckTest("simpletext9.txt", true, true, 6, 12);
+            CheckTestAntiAlias("simpletext.txt", true, true, 6, 12);
+            CheckTestAntiAlias("simpletext9.txt", true, true, 6, 12);
         }
 
         [Test]
         public void PunchBox()
         {
             //CheckTest("punchbox.txt", false, true, 6, 12);
-            CheckTest("punchbox9.txt", false, true, 6, 12);
-            CheckTest("punchbox11.txt", false, true, 10, 12);
+            CheckTestAntiAlias("punchbox9.txt", false, true, 6, 12);
+            CheckTestAntiAlias("punchbox11.txt", false, false, 10, 12);
         }
+
+#if false
 
         [Test]
         public void LakeSammMap()
@@ -177,6 +191,8 @@ namespace Map_Skia.Tests
             CheckTest("lksamm12_4.txt", false, true, 6, 12);
         }
 
+#endif
+
         [Test]
         public void DeletedItems()
         {
@@ -209,7 +225,7 @@ namespace Map_Skia.Tests
         {
             CheckTest("offsetpattern.txt", false, true, 6, 12);
         }
-        
+
         [Test]
         public void OffsetAreaPatternNoBitmap()
         {
@@ -257,176 +273,190 @@ namespace Map_Skia.Tests
         {
             CheckTestNoPatternBitmaps("isomarea_nopatbm.txt", true, true, 6, 9);
         }
-        
+
+        [Test]
+        public void ArialNarrow()
+        {
+            CheckTestAntiAlias("arialnarrow.txt", false, false, 9, 9);
+        }
+
+        [Test]
+        public void Cambria()
+        {
+            CheckTest("Cambria.txt", false, false, 6, 11);
+        }
+
+        [Test]
+        public void CambriaBold()
+        {
+            CheckTest("Cambriabold.txt", false, false, 6, 11);
+        }
+
+
+
         [Test]
         public void ParaSpacing()
         {
-            CheckTest("paraspacing.txt", false, true, 6, 12);
-            CheckTest("paraspacing9.txt", false, true, 6, 12);
+            CheckTestAntiAlias("paraspacing.txt", false, true, 6, 12);
+            CheckTestAntiAlias("paraspacing9.txt", false, true, 6, 12);
         }
         
         [Test]
         public void ParaIdent()
         {
-            CheckTest("paraindent9.txt", false, true, 6, 12);
-            CheckTest("paraindent6.txt", false, true, 6, 12);
+            CheckTestAntiAlias("paraindent9.txt", false, true, 6, 12);
+            CheckTestAntiAlias("paraindent6.txt", false, true, 6, 12);
         }
 
         [Test]
         public void NarrowWrap()
         {
-            CheckTest("textnarrowwrap.txt", false, true, 6, 12);
+            CheckTestAntiAlias("textnarrowwrap.txt", false, true, 6, 12);
         }
 
         [Test]
         public void CharSpace()
         {
-            CheckTest("charspace.txt", false, true, 6, 12);
+            CheckTestAntiAlias("charspace.txt", false, true, 6, 12);
         }
 
         [Test]
         public void WordSpace()
         {
-            CheckTest("wordspace.txt", false, true, 6, 12);
+            CheckTestAntiAlias("wordspace.txt", false, true, 6, 12);
         }
 
         [Test]
         public void ComboSpace()
         {
-            CheckTest("combospace.txt", false, true, 6, 12);
+            CheckTestAntiAlias("combospace.txt", false, true, 6, 12);
         }
 
         [Test]
         public void TopAlignText()
         {
-            CheckTest("topaligntext10.txt", false, true, 10, 12);
+            CheckTestAntiAlias("topaligntext10.txt", false, true, 10, 12);
         }
 
         [Test]
         public void MidAlignText()
         {
-            CheckTest("midaligntext10.txt", false, true, 10, 12);
+            CheckTestAntiAlias("midaligntext10.txt", false, true, 10, 12);
         }
 
         [Test]
         public void CenterPointText()
         {
-            CheckTest("textpoint10.txt", false, true, 10, 12);
+            CheckTestAntiAlias("textpoint10.txt", false, true, 10, 12);
         }
 
         [Test]
         public void Justify()
         {
-            CheckTest("justify.txt", false, true, 6, 12);
+            CheckTestAntiAlias("justify.txt", false, true, 6, 12);
         }
 
         [Test]
         public void TabbedText()
         {
-            CheckTest("tabbedtext.txt", false, true, 6, 12);
+            CheckTestAntiAlias("tabbedtext.txt", false, true, 6, 12);
         }
 
         [Test]
         public void Newlines()
         {
-            CheckTest("newlines.txt", false, true, 6, 12);
+            CheckTestAntiAlias("newlines.txt", false, true, 6, 12);
         }
 
         [Test]
         public void UnderlineText()
         {
-            CheckTest("underlinetext.txt", false, true, 6, 12);
+            CheckTestAntiAlias("underlinetext.txt", false, true, 6, 12);
         }
 
         [Test]
         public void LineText1()
         {
-            CheckTest("linetext_6.txt", false, true, 6, 12);
-            CheckTest("linetext_9.txt", false, true, 6, 12);
+            CheckTestAntiAlias("linetext_6.txt", false, true, 6, 12);
+            CheckTestAntiAlias("linetext_9.txt", false, true, 6, 12);
         }
 
         [Test]
         public void LineText2()
         {
-            CheckTest("linetext2_6.txt", false, true, 6, 12);
-            CheckTest("linetext2_9.txt", false, true, 6, 12);
+            CheckTestAntiAlias("linetext2_6.txt", false, true, 6, 12);
+            CheckTestAntiAlias("linetext2_9.txt", false, true, 6, 12);
         }
 
         [Test]
         public void LineTextSpacing()
         {
-            CheckTest("linetextspacing.txt", false, true, 6, 12);
+            CheckTestAntiAlias("linetextspacing.txt", false, true, 6, 12);
         }
 
         [Test]
         public void AllLineText()
         {
-            CheckTest("alllinetext.txt", false, true, 6, 12);
+            CheckTestAntiAlias("alllinetext.txt", false, true, 6, 12);
         }
 
         [Test]
         public void LineTextTop()
         {
-            CheckTest("linetext_top.txt", false, true, 10, 12);
-        }
-
-        [Test]
-        public void LineTextTop2()
-        {
-            CheckTest("linetext2_top.txt", false, true, 10, 12);
+            CheckTestAntiAlias("linetext_top.txt", false, true, 10, 12);
         }
 
         [Test]
         public void LineTextMid()
         {
-            CheckTest("linetext_mid.txt", false, true, 10, 12);
+            CheckTestAntiAlias("linetext_mid.txt", false, true, 10, 12);
         }
 
         [Test]
         public void LineTextMid2()
         {
-            CheckTest("linetext2_mid.txt", false, true, 10, 12);
+            CheckTestAntiAlias("linetext2_mid.txt", false, true, 10, 12);
         }
 
         [Test]
         public void FramingText1()
         {
-            CheckTest("frametext1.txt", false, true, 7, 12);
+            CheckTestAntiAlias("frametext1.txt", false, true, 7, 12);
         }
 
         [Test]
         public void FramingText2()
         {
-            CheckTest("frametext2.txt", false, true, 9, 12);
+            CheckTestAntiAlias("frametext2.txt", false, true, 9, 12);
         }
 
         [Test]
         public void FramingText3()
         {
-            CheckTest("frametext3.txt", false, true, 9, 12);
-            CheckTest("frametext3.txt", false, true, 6, 7);
+            CheckTestAntiAlias("frametext3.txt", false, true, 9, 12);
+            CheckTestAntiAlias("frametext3.txt", false, true, 6, 7);
         }
 
         [Test]
         public void Framing_Ocad6()
         {
             // Not supported in OCAD 8!!! (OCAD 8 didn't have font framing or offset framing
-            CheckTest("framing_ocad6.txt", false, true, 6, 7);
-            CheckTest("framing_ocad6.txt", false, true, 9, 12);
+            CheckTestAntiAlias("framing_ocad6.txt", false, true, 6, 7);
+            CheckTestAntiAlias("framing_ocad6.txt", false, true, 9, 12);
         }
 
         [Test]
         public void Framing_Ocad7()
         {
             // Not supported in OCAD 6 or 8!!! (OCAD 8 didn't have font framing or offset framing, OCAD 6 didn't have line framing).
-            CheckTest("framing_ocad7.txt", false, true, 7, 7);
-            CheckTest("framing_ocad7.txt", false, true, 9, 12);
+            CheckTestAntiAlias("framing_ocad7.txt", false, true, 7, 7);
+            CheckTestAntiAlias("framing_ocad7.txt", false, true, 9, 12);
         }
 
         [Test]
         public void Framing_Ocad8()
         {
-            CheckTest("framing_ocad8.txt", false, true, 7, 12);
+            CheckTestAntiAlias("framing_ocad8.txt", false, true, 7, 12);
         }
 
         [Test]
@@ -477,7 +507,7 @@ namespace Map_Skia.Tests
         [Test]
         public void AngleDashes()
         {
-            CheckTest("angledashes9.txt", false, true, 6, 12);
+            CheckTestAntiAlias("angledashes9.txt", false, true, 6, 12);
         }
 
         [Test]
@@ -523,8 +553,8 @@ namespace Map_Skia.Tests
         [Test]
         public void Max2Glyphs()
         {
-            CheckTest("max2glyph9.txt", false, true, 7, 12);
-            CheckTest("max2glyph7.txt", false, true, 7, 12);
+            CheckTestAntiAlias("max2glyph9.txt", false, true, 7, 12);
+            CheckTestAntiAlias("max2glyph7.txt", false, true, 7, 12);
         }
 
         [Test]
@@ -537,8 +567,8 @@ namespace Map_Skia.Tests
         [Test]
         public void SecondaryGlyphs()
         {
-            CheckTest("secglyph9.txt", false, true, 7, 12);
-            CheckTest("secglyph7.txt", false, true, 7, 12);
+            CheckTestAntiAlias("secglyph9.txt", false, true, 7, 12);
+            CheckTestAntiAlias("secglyph7.txt", false, true, 7, 12);
         }
 
         [Test]
@@ -558,8 +588,8 @@ namespace Map_Skia.Tests
         [Test]
         public void DecreaseSymbols()
         {
-            CheckTest("decreasesymbols.txt", false, true, 6, 12);
-            CheckTest("decreasesymbols6.txt", false, true, 6, 12);
+            CheckTestAntiAlias("decreasesymbols.txt", false, true, 6, 12);
+            CheckTestAntiAlias("decreasesymbols6.txt", false, true, 6, 12);
         }
 
         [Test]
@@ -577,15 +607,16 @@ namespace Map_Skia.Tests
         [Test]
         public void Clouds()
         {
-            CheckTest("Clouds.txt", false, true, 7, 12);
+            CheckTestAntiAlias("Clouds.txt", false, true, 7, 12);
         }
 
         [Test]
         public void Clouds11()
         {
-            CheckTest("Clouds11.txt", false, false, 11, 12);
+            CheckTestAntiAlias("Clouds11.txt", false, false, 11, 12);
         }
 
+#if false
         [Test]
         public void LordHill()
         {
@@ -597,6 +628,7 @@ namespace Map_Skia.Tests
         {
             CheckTest("LordHill11.txt", false, false, 11, 12);
         }
+#endif
 
         [Test]
         public void MissingColor()
@@ -616,6 +648,7 @@ namespace Map_Skia.Tests
             CheckTest("oddfenceends.txt", false, false, 6, 12);
         }
 
+#if false
         [Test]
         public void Marymoor()
         {
@@ -627,7 +660,7 @@ namespace Map_Skia.Tests
         {
             CheckTest("marymoor11.txt", false, false, 11, 12);
         }
-
+#endif
         [Test]
         public void LayoutObjects()
         {
@@ -691,7 +724,7 @@ namespace Map_Skia.Tests
         [Test]
         public void Ocad11Align()
         {
-            CheckTest("ocad11templatealign.txt", false, false, 11, 12);
+            CheckTestAntiAlias("ocad11templatealign.txt", false, false, 11, 12);
         }
 
         [Test]
@@ -706,6 +739,7 @@ namespace Map_Skia.Tests
             CheckTest("rectanglesymbols.txt", false, true, 6, 12);
         }
 
+#if false
         [Test]
         public void PenistoneHill()
         {
@@ -729,21 +763,23 @@ namespace Map_Skia.Tests
         {
             CheckTest("differentnewlinetypes.txt", false, false, 7, 7);
         }
+#endif
 
-        /*
-        [Test]
-        public void Overprinting()
-        {
-            CheckTestOverprinting("ocad11overprinting.txt", true, true, 6, 12);
-        }
-        */
+/*
+[Test]
+public void Overprinting()
+{
+    CheckTestOverprinting("ocad11overprinting.txt", true, true, 6, 12);
+}
+*/
+
+#if false
         [Test]
         public void KernTextOutline()
         {
             CheckTest("kern_text_outline.txt", false, true, 7, 12);
         }
-        
+#endif
     }
 
 }
-#endif

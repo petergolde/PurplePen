@@ -57,11 +57,11 @@ namespace Map_Skia.Tests
             TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
         }
 
-        static Skia_Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps, bool useOverprinting, float intensity)
+        static Skia_Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps, bool useOverprinting, bool antiAlias, float intensity)
         {
             var grTarget = new Skia_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, false, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
             using (grTarget) {
-                grTarget.PushAntiAliasing(false);
+                grTarget.PushAntiAliasing(antiAlias);
 
                 RenderOptions renderOpts = new RenderOptions();
                 renderOpts.usePatternBitmaps = usePatternBitmaps;
@@ -84,17 +84,17 @@ namespace Map_Skia.Tests
             return new Bitmap(bitmap.Width, bitmap.Height, bitmap.RowBytes, bitmap.AlphaType == SKAlphaType.Opaque ? PixelFormat.Format32bppRgb : PixelFormat.Format32bppPArgb, pixels);
         }
 
-        static void CompareBitmapBaseline(Skia_Bitmap skiaBitmapNew, string baselineFileName)
+        static void CompareBitmapBaseline(Skia_Bitmap skiaBitmapNew, string baselineFileName, int maxPixelDiff)
         {
             SKBitmap skBitmap = skiaBitmapNew.Bitmap;
             Bitmap bitmapNew = BitmapFromLockedSkiaBitmap(skBitmap);
-            TestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
+            TestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName, maxPixelDiff);
             bitmapNew.Dispose();
         }
 
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
         // a difference bitmap is written out.
-        public static bool VerifyTestFile(string filename, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, int minOcadVersion, int maxOcadVersion)
+        public static bool VerifyTestFile(string filename, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, bool antiAlias, int minOcadVersion, int maxOcadVersion, int maxPixelDiff)
         {
 
             string pngFileName;
@@ -139,16 +139,16 @@ namespace Map_Skia.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, 1.0F);
+            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, antiAlias, 1.0F);
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
 
-            CompareBitmapBaseline(bitmapNew, pngFileName);
+            CompareBitmapBaseline(bitmapNew, pngFileName, maxPixelDiff);
 
             if (testLightenedColor) {
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Skia_Bitmap bitmapLight = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, 0.4F);
-                CompareBitmapBaseline(bitmapLight, lightenedPngFileName);
+                Skia_Bitmap bitmapLight = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, antiAlias, 0.4F);
+                CompareBitmapBaseline(bitmapLight, lightenedPngFileName, maxPixelDiff);
                 bitmapLight.Dispose();
             }
 
@@ -162,9 +162,9 @@ namespace Map_Skia.Tests
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
-                    bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, 1.0F);
+                    bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, antiAlias, 1.0F);
 
-                    CompareBitmapBaseline(bitmapNew, pngFileName);
+                    CompareBitmapBaseline(bitmapNew, pngFileName, maxPixelDiff);
 
                     File.Delete(ocadFileName);
                 }
@@ -181,7 +181,7 @@ namespace Map_Skia.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, true, false, 1.0F);
+            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, true, false, true, 1.0F);
 
             sw.Stop();
             Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);

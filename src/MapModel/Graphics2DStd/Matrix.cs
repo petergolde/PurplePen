@@ -187,7 +187,7 @@ namespace System.Drawing.Drawing2D
             }
         }
 
-        public void Shear(float shearX, float shearY) => Scale(shearX, shearY, MatrixOrder.Prepend);
+        public void Shear(float shearX, float shearY) => Shear(shearX, shearY, MatrixOrder.Prepend);
 
         public void Shear(float shearX, float shearY, MatrixOrder order)
         {

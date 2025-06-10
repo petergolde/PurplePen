@@ -24,13 +24,12 @@ namespace PurplePen.MapModel
 
             // Copy to bytes, so the main bitmap file isn't locked and OCAD can read it.
             byte[] data = File.ReadAllBytes(filePath);
-            SKBitmap skBitmap = SKBitmap.Decode(data, new SKImageInfo(0, 0, SKImageInfo.PlatformColorType, SKAlphaType.Premul));
-            return new Skia_Bitmap(skBitmap);
+            return LoadBitmapFromData(data);
         }
 
         public IGraphicsBitmap LoadBitmapFromData(byte[] data)
         {
-            SKBitmap skBitmap = SKBitmap.Decode(data, new SKImageInfo(0, 0, SKImageInfo.PlatformColorType, SKAlphaType.Premul));
+            SKBitmap skBitmap = SKBitmap.Decode(data);
             return new Skia_Bitmap(skBitmap);
         }
 
