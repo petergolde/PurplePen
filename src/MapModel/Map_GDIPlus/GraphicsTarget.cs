@@ -1084,6 +1084,7 @@ using System.Runtime.InteropServices;
             if (hiResGraphics == null) {
                 hiResGraphics = Graphics.FromImage(new Bitmap(1, 1));
                 hiResGraphics.ScaleTransform(10F, -10F);
+                hiResGraphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             }
             return hiResGraphics;
         }

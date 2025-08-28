@@ -58,6 +58,7 @@ namespace PurplePen.MapModel
 {
     using PurplePen.Graphics2D;
     using SkiaSharp;
+    using SkiaSharp.HarfBuzz;
     using System.Drawing;
 
     // A GraphicsTarget encapsulates an SKCanvas
@@ -464,7 +465,7 @@ namespace PurplePen.MapModel
                 paint.SubpixelText = false;
 
                 // paint.UnderlineText = font.Underline;  // TODO: Underline not yet supported.
-                canvas.DrawText(text, upperLeft.X, upperLeft.Y + font.Ascent, paint);
+                canvas.DrawShapedText(font.Shaper, text, upperLeft.X, upperLeft.Y + font.Ascent, paint);
             }
             float emHeight = font.EmHeight;
         }
@@ -487,7 +488,7 @@ namespace PurplePen.MapModel
                 paint.StrokeJoin = penPaint.StrokeJoin;
                 paint.StrokeCap = penPaint.StrokeCap;
                 paint.StrokeMiter = penPaint.StrokeMiter;
-                canvas.DrawText(text, upperLeft.X, upperLeft.Y + font.Ascent, paint);
+                canvas.DrawShapedText(font.Shaper, text, upperLeft.X, upperLeft.Y + font.Ascent, paint);
             }
         }
 
@@ -695,6 +696,7 @@ namespace PurplePen.MapModel
     public class SkiaFont: ITextFaceMetrics
     {
 		private SKTypeface typeface;
+        private SKShaper shaper;
 		private float emHeight;
         private SKFontMetrics fontMetrics;
         private bool fontMetricsObtained;
@@ -711,6 +713,7 @@ namespace PurplePen.MapModel
             else {
                 this.typeface = SKTypeface.FromFamilyName(familyName, GetSKFontStyleWeight(effects), SKFontStyleWidth.Normal, GetSKFontStyleSlant(effects));
             }
+            this.shaper = new SKShaper(typeface);
             this.underline = ((effects & TextEffects.Underline) != 0);
 		}
 
@@ -718,6 +721,10 @@ namespace PurplePen.MapModel
 		{
 			get { return typeface; }
 		}
+
+        public SKShaper Shaper {
+            get { return shaper; }
+        }
 
 		public float EmHeight
 		{
@@ -794,6 +801,10 @@ namespace PurplePen.MapModel
                 typeface.Dispose();
                 typeface = null; 
             }
+            if (shaper != null) {
+                shaper.Dispose();
+                shaper = null;
+            }
 		}
 
         public static SKFontStyleWeight GetSKFontStyleWeight(TextEffects effects)
@@ -820,7 +831,6 @@ namespace PurplePen.MapModel
             }
         }
 
-
         public float GetTextWidth(string text)
         {
             using (SKPaint paint = new SKPaint()) {
@@ -828,7 +838,15 @@ namespace PurplePen.MapModel
                 paint.Typeface = typeface;
                 paint.TextSize = emHeight;
                 paint.TextEncoding = SKTextEncoding.Utf16;
+
                 return paint.MeasureText(text);
+                
+                // It feels like we should use the shaper, to take kerning into account.
+                // But this doesn't work correctly, and fails the "KernTextOutline" test. 
+                // I'm confused a bit what is going on. Maybe the GDI+ version was wrong? But
+                // seems better to keep the old behavior, especially to match PDF rendering.
+                SKShaper.Result shapeResult = shaper.Shape(text, paint);
+                return shapeResult.Width;
             }
         }
 
@@ -842,7 +860,8 @@ namespace PurplePen.MapModel
                 paint.TextSize = emHeight * 100;
                 paint.TextEncoding = SKTextEncoding.Utf16;
                 paint.MeasureText(text, ref rect);
-                return new SizeF((rect.Right - rect.Left) / 100F, Math.Max((rect.Bottom - rect.Top) / 100, Ascent + Descent));
+                float width = GetTextWidth(text);
+                return new SizeF(width, Math.Max((rect.Bottom - rect.Top) / 100, Ascent + Descent));
             }
         }
 

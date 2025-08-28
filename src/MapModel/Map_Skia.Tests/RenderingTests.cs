@@ -773,13 +773,11 @@ public void Overprinting()
 }
 */
 
-#if false
         [Test]
         public void KernTextOutline()
         {
             CheckTest("kern_text_outline.txt", false, true, 7, 12);
         }
-#endif
     }
 
 }
