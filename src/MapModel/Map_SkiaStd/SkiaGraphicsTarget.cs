@@ -839,12 +839,8 @@ namespace PurplePen.MapModel
                 paint.TextSize = emHeight;
                 paint.TextEncoding = SKTextEncoding.Utf16;
 
-                return paint.MeasureText(text);
-                
-                // It feels like we should use the shaper, to take kerning into account.
-                // But this doesn't work correctly, and fails the "KernTextOutline" test. 
-                // I'm confused a bit what is going on. Maybe the GDI+ version was wrong? But
-                // seems better to keep the old behavior, especially to match PDF rendering.
+                // We need to use the shaper, to take kerning into account.
+
                 SKShaper.Result shapeResult = shaper.Shape(text, paint);
                 return shapeResult.Width;
             }

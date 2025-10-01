@@ -2260,10 +2260,17 @@ namespace PurplePen.MapModel
             LoadTemplates();
 
             if (loadedTemplates != null) {
+
+                // Don't draw partial colors, draw all colors.
+                // Otherwise use all the same render options.
+                RenderOptions renderOptsNew = renderOpts.Clone();
+                renderOptsNew.colorBeginDrawExclusive = null;
+                renderOptsNew.colorEndDrawInclusive = null;
+
                 // Draw from bottom to top.
                 for (int i = loadedTemplates.Count - 1; i >= 0; --i) {
                     if (loadedTemplates[i] != null && loadedTemplates[i].DrawAboveMap == aboveMap)
-                        loadedTemplates[i].Draw(g, rect, renderOpts, throwOnCancel, templateRecursionCount);
+                        loadedTemplates[i].Draw(g, rect, renderOptsNew, throwOnCancel, templateRecursionCount);
 
                     if (throwOnCancel != null)
                         throwOnCancel();
@@ -2717,6 +2724,11 @@ namespace PurplePen.MapModel
 
         // debug options.
         public bool showSymbolBounds;      // Show the bounds of symbols.
+
+        public RenderOptions Clone()
+        {
+            return (RenderOptions) base.MemberwiseClone();
+        }
     }
 
     // This class describes highlighting options.

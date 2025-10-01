@@ -32,7 +32,7 @@ namespace Map_Skia.Tests
             Assert.AreEqual(gdiFontMetrics.EmHeight, skiaFontMetrics.EmHeight);
             Assert.AreEqual(gdiFontMetrics.SpaceWidth, skiaFontMetrics.SpaceWidth);
             Assert.AreEqual(gdiFontMetrics.RecommendedLineSpacing, skiaFontMetrics.RecommendedLineSpacing);
-            Assert.AreEqual(gdiFontMetrics.GetTextWidth("BananaPhone is great"), skiaFontMetrics.GetTextWidth("BananaPhone is great"));
+            Assert.AreEqual(gdiFontMetrics.GetTextWidth("BananaPhone is great"), skiaFontMetrics.GetTextWidth("BananaPhone is great"), 0.05);
 
             SizeF gdiSize = gdiFontMetrics.GetTextSize("BananaPhone is great");
             SizeF skiaSize = skiaFontMetrics.GetTextSize("BananaPhone is great");

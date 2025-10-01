@@ -153,6 +153,17 @@ namespace TestingUtils
             }
         }
 
+        public static string EnvVar(string variableName)
+        {
+            return Environment.GetEnvironmentVariable(variableName);
+        }
+
+        public static bool SilentRun {
+            get {
+                return bool.Parse(EnvVar("TEST_SILENTRUN") ?? "False");
+            }
+        }
+
         private static bool SimilarColors(Color color1, Color color2, int maxPixelDifference)
         {
             return (Math.Abs(color1.R - color2.R) <= maxPixelDifference &&
@@ -320,21 +331,22 @@ namespace TestingUtils
 
             // Show the dialog.
             if (different) {
-/*                BitmapCompareDialog dialog = new BitmapCompareDialog();
-                dialog.BaselineFilename = baselineFile;
-                dialog.NewBitmap = bmNew;
- */
-                string tempNewFile = Path.Combine(Path.GetDirectoryName(baselineFile), Path.GetFileNameWithoutExtension(baselineFile) + "_tempnew.png");
-                bmNew.Save(tempNewFile, ImageFormat.Png);
+                if (SilentRun) {
+                    fail = true;
+                }
+                else {
+                    string tempNewFile = Path.Combine(Path.GetDirectoryName(baselineFile), Path.GetFileNameWithoutExtension(baselineFile) + "_tempnew.png");
+                    bmNew.Save(tempNewFile, ImageFormat.Png);
 
-                BitmapCompareDialog2 dialog = new BitmapCompareDialog2();
-                dialog.MaxPixelDifference = maxPixelDifference;
-                dialog.BaselineFilename = baselineFile;
-                dialog.NewFilename = tempNewFile;
-                if (dialog.ShowDialog() == DialogResult.Cancel)
-                    fail = true;        // Should fail the test.
+                    BitmapCompareDialog2 dialog = new BitmapCompareDialog2();
+                    dialog.MaxPixelDifference = maxPixelDifference;
+                    dialog.BaselineFilename = baselineFile;
+                    dialog.NewFilename = tempNewFile;
+                    if (dialog.ShowDialog() == DialogResult.Cancel)
+                        fail = true;        // Should fail the test.
 
-                File.Delete(tempNewFile);
+                    File.Delete(tempNewFile);
+                }
             }
             else
                 bmNew.Dispose();

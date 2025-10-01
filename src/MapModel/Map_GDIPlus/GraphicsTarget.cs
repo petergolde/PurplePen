@@ -1068,11 +1068,20 @@ using System.Runtime.InteropServices;
 
         public float  GetTextWidth(string text)
         {
-            return GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat).Width;
+            // This isn't actually the best way to measure text width, since it doesn't take kerning into account.
+            // We should use MeasureCharacterRanges instead, but since we are switching to SkiaSharp very soon, I'm
+            // not going to potentially change behavior now.
+
+            float width = GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat).Width;
+            return width;
         }
 
         public SizeF  GetTextSize(string text)
         {
+            // This isn't actually the best way to measure text width, since it doesn't take kerning into account.
+            // We should use MeasureCharacterRanges instead, but since we are switching to SkiaSharp very soon, I'm
+            // not going to potentially change behavior now.
+
             return GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat);
         }
 

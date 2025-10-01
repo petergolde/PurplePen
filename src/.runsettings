@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <!-- Per-run environment variables -->
+    <EnvironmentVariables>
+      <!-- If True, this run should not pop up any UI, but just fail instead. -->
+      <TEST_SILENTRUN>True</TEST_SILENTRUN>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
