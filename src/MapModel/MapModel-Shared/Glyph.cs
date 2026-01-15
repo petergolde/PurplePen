@@ -354,6 +354,13 @@ namespace PurplePen.MapModel
             }
         }
 
+        public bool IsEmpty {
+            get {
+                CheckConstructed();
+                return parts.Length == 0;
+            }
+        }
+
         internal bool HasColor(SymColor color) {
             Debug.Assert(constructed);
             Debug.Assert(color != null);

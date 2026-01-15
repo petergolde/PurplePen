@@ -970,7 +970,7 @@ namespace PurplePen.MapModel
                             symdef.AddHatching(hatchInfo);
                         }
                     }
-                    else {
+                    else if (patternGlyph != null) {
                         // pattern.
                         AreaSymDef.PatternInfo patternInfo;
                         patternInfo.offsetRows = false;
@@ -1211,6 +1211,7 @@ namespace PurplePen.MapModel
         }
 
         // When positioned on element that contains the "symbol" node.
+        // May return null if the glyph has nothing in it.
         Glyph ReadSymbolGlyphInsideCurrent()
         {
             Glyph glyph = null;
@@ -1225,6 +1226,7 @@ namespace PurplePen.MapModel
         }
 
         // When positioned on a "symbol" node outside a glyph.
+        // May return null if the glyph has nothing in it, or there is no symbol.
         Glyph ReadSymbolGlyph()
         {
             xmlInput.CheckElement("symbol");
@@ -1241,10 +1243,16 @@ namespace PurplePen.MapModel
         }
 
         // When positions on "point_symbol" node
+        // May return null if the glyph has nothing in it.
         Glyph ReadGlyph()
         {
             bool isRotatable;
-            return ReadGlyph(out isRotatable);
+            Glyph glyph = ReadGlyph(out isRotatable);
+
+            if (glyph.IsEmpty) {
+                return null;
+            }
+            return glyph;
         }
 
         Glyph ReadGlyph(out bool isRotatable)
@@ -1264,6 +1272,7 @@ namespace PurplePen.MapModel
             }
 
             glyph.ConstructionComplete();
+
             return glyph;
         }
 
