@@ -35,6 +35,19 @@ namespace PurplePen
             }
         }
 
+        public bool Overprint
+        {
+            get
+            {
+                return checkBoxOverprint.Checked;
+            }
+            set
+            {
+                checkBoxOverprint.Checked = value;
+            }
+        }
+
+
         private void pictureBoxPreview_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.Clear(SwopColorConverter.CmykToRgbColor(Color));
@@ -88,7 +101,7 @@ namespace PurplePen
                 }
 
                 if (index == comboBox.Items.Count - 1)
-                    comboBox.Items[index] = new ColorAndText(MiscText.CustomColor, value.CustomColor);
+                    comboBox.Items[index] = new ColorAndText(MiscText.CustomColor, value.CustomColor, value.Overprint);
                 comboBox.SelectedIndex = index;
             }
         }
@@ -112,11 +125,11 @@ namespace PurplePen
             comboBox.Items.Add(new ColorAndText(MiscText.Black, SpecialColor.Black, CmykColor.FromCmyk(0, 0, 0, 1)));
             comboBox.Items.Add(new ColorAndText(MiscText.Purple, SpecialColor.UpperPurple, purpleColor));
             comboBox.Items.Add(new ColorAndText(MiscText.LowerPurple, SpecialColor.LowerPurple, purpleColor));
-            comboBox.Items.Add(new ColorAndText(MiscText.Red, CmykColor.FromCmyk(0, 1, 1, 0)));
-            comboBox.Items.Add(new ColorAndText(MiscText.Yellow, CmykColor.FromCmyk(0, 0, 1, 0)));
-            comboBox.Items.Add(new ColorAndText(MiscText.Green, CmykColor.FromCmyk(1, 0, 1, 0)));
-            comboBox.Items.Add(new ColorAndText(MiscText.LightBlue, CmykColor.FromCmyk(1, 0, 0, 0)));
-            comboBox.Items.Add(new ColorAndText(MiscText.DarkBlue, CmykColor.FromCmyk(1, 1, 0, 0)));
+            comboBox.Items.Add(new ColorAndText(MiscText.Red, CmykColor.FromCmyk(0, 1, 1, 0), false));
+            comboBox.Items.Add(new ColorAndText(MiscText.Yellow, CmykColor.FromCmyk(0, 0, 1, 0), false));
+            comboBox.Items.Add(new ColorAndText(MiscText.Green, CmykColor.FromCmyk(1, 0, 1, 0), false));
+            comboBox.Items.Add(new ColorAndText(MiscText.LightBlue, CmykColor.FromCmyk(1, 0, 0, 0), false));
+            comboBox.Items.Add(new ColorAndText(MiscText.DarkBlue, CmykColor.FromCmyk(1, 1, 0, 0), false));
             comboBox.Items.Add(new ColorAndText(MiscText.CustomColor, null, null));
         }
 
@@ -165,7 +178,7 @@ namespace PurplePen
         {
             if (((ColorAndText)comboBox.SelectedItem).SpecialColor == null) {
                 // The "Custom Color" item was selected, but no color is in it.
-                CustomizeColor(CmykColor.FromCmyk(0, 0, 0, 0));
+                CustomizeColor(CmykColor.FromCmyk(0, 0, 0, 0), false);
             }
 
 
@@ -174,16 +187,17 @@ namespace PurplePen
 
         void button_Click(object sender, EventArgs e)
         {
-            CustomizeColor(Color.CustomColor ?? CmykColor.FromCmyk(0, 0, 0, 0));
+            CustomizeColor(Color.CustomColor ?? CmykColor.FromCmyk(0, 0, 0, 0), Color.Overprint);
         }
 
-        private void CustomizeColor(CmykColor color)
+        private void CustomizeColor(CmykColor color, bool overprint)
         {
             ColorChooserDialog colorChooserDialog = new ColorChooserDialog();
             colorChooserDialog.Color = color;
+            colorChooserDialog.Overprint = overprint;
 
             if (colorChooserDialog.ShowDialog() == DialogResult.OK) {
-                Color = new SpecialColor(colorChooserDialog.Color);
+                Color = new SpecialColor(colorChooserDialog.Color, colorChooserDialog.Overprint);
             }
 
             colorChooserDialog.Dispose();
@@ -205,10 +219,10 @@ namespace PurplePen
                 this.Color = color;
             }
 
-            public ColorAndText(string text, CmykColor color)
+            public ColorAndText(string text, CmykColor color, bool overprint)
             {
                 this.Text = text;
-                this.SpecialColor = new SpecialColor(color);
+                this.SpecialColor = new SpecialColor(color, overprint);
                 this.Color = color;
             }
 

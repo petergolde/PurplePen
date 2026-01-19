@@ -170,6 +170,8 @@ namespace PurplePen
 
         private void pictureBoxPreview_Paint(object sender, PaintEventArgs e)
         {
+            Console.WriteLine("pictureBoxPreview_Paint", this.Color.ToString());
+
             // Get the graphics, size to 10 mm high.
             float scale = 10.0F / pictureBoxPreview.ClientSize.Height;
             Graphics g = e.Graphics;
