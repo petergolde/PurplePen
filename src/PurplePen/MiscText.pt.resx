@@ -427,9 +427,6 @@ Deseja alterar o idioma da sinalética para {1}?</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Enviar Relatório</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Descrições não podem ser adicionadas a um percurso com troca de mapas se "Todas as Partes" estiver sendo exibida. Alterne para a parte à qual deseja adicionar descrições e, em seguida, escolha "Adicionar Descrições" novamente.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe não encontrado</value>
   </data>

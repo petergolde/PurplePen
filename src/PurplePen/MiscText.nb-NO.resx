@@ -420,9 +420,6 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Send Rapport</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Postbeskrivelsene er kanskje ikke lagt til ved kart bytte hvis "Alle deler" er vist. Bytt til den delen du vil legge til postbeskrivelsen og velg "Legg til beskrivelser" igjen.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>"PdfConverter.exe" ikke funnet</value>
   </data>

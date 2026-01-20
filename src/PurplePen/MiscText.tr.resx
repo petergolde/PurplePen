@@ -421,9 +421,6 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="CrashSend" xml:space="preserve">
     <value>Rapor Gönder</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>"Tüm Parçalar" görüntüleniyorsa, harita değişimi olan bir rotaya açıklamalar eklenemez. Açıklama eklemek istediğiniz bölüme geçin ve ardından tekrar "Açıklama Ekle"yi seçin.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe bulunamadı</value>
   </data>

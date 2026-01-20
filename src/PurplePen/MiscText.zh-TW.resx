@@ -421,9 +421,6 @@
   <data name="CrashSend" xml:space="preserve">
     <value>發送報告</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>如果顯示“整個”，檢查點說明可能無法通過更換地圖增加到賽程中。 你要增加檢查點說明的，切換到部分，然後再次選擇“增加檢查點說明”。</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe 找不到</value>
   </data>

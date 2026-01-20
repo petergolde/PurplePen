@@ -352,6 +352,16 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void MapExchangeDifferentDescriptions()
+        {
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", Designator(7), false, "exch_allparts_diff_desc", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(7), 0), false, "diff_desc_exch_part1", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(7), 1), false, "diff_desc_exch_part2", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(7), 2), false, "diff_desc_exch_part3", new RectangleF(-45, -60, 190, 190));
+            CheckCourseBothAppearances("courserenderer\\mapexchange2.ppen", new CourseDesignator(CourseId(7), 3), false, "diff_desc_exch_part4", new RectangleF(-45, -60, 190, 190));
+        }
+
+        [TestMethod]
         public void Butterfly1()
         {
             CheckCourseBothAppearances("courserenderer\\butterfly.ppen", Designator(7), false, "butterfly1", new RectangleF(-45, -60, 190, 190));

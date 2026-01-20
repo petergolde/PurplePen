@@ -421,9 +421,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Lähetä raportti</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos radan "Kaikki osat" on näkyvissä. Vaihda näkyviin radan osa, jolle haluat lisätä rastinmääritteet ja valitse "Lisää rastinmääritteet" uudelleen.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe ei löytynyt</value>
   </data>

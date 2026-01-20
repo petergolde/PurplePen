@@ -3764,21 +3764,6 @@ namespace PurplePen
                            rect => ChangeEvent.AddRectangleSpecial(eventDB, rect, isEllipse, color, lineKind, lineWidth, gapSize, dashSize, cornerRadius)));
         }
 
-        // Can we add descriptions. The only reason we can't is all parts of a multi-part. If other reasons
-        // come about we would need to return why because this is used to trigger a message.
-        public bool CanAddDescriptions()
-        {
-            CourseDesignator currentCourse = selectionMgr.Selection.ActiveCourseDesignator;
-
-            // All controls or a single part or a 1-part course can add descriptions. All parts of multi-part cannot.
-            if (currentCourse.IsAllControls || ! currentCourse.AllParts)
-                return true;
-            if (! QueryEvent.HasAnyMapExchanges(eventDB, currentCourse.CourseId))
-                return true;
-
-            return false;
-        }
-
         // Start the mode to add a control description block to a course
         public void BeginAddDescriptionMode()
         {

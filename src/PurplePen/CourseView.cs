@@ -615,20 +615,15 @@ namespace PurplePen
         // If descriptionSpecialOnly is true, then only description sheet specials are added.
         private void AddSpecials(CourseDesignator courseDesignator, CourseViewOptions options)
         {
-            bool multiPart = courseDesignator.IsNotAllControls && courseDesignator.AllParts && 
-                (QueryEvent.CountCourseParts(eventDB, courseDesignator) > 1 || (!courseDesignator.IsVariation && QueryEvent.HasAnyMapExchanges(eventDB, courseDesignator.CourseId)));
-
             foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
                 SpecialKind specialKind = eventDB.GetSpecial(specialId).kind;
 
                 if (ShouldAddSpecial(specialKind, options)) {
                     if (specialKind == SpecialKind.Descriptions) {
-                        // Descriptions are added differently. It's not entirely clear the best way to handle descriptions
-                        // for all-parts of a multi-part course. For now, we don't put any descriptions on.
-                        if (!multiPart) {
-                            if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
-                                descriptionViews.Add(new DescriptionView(specialId, courseDesignator));
-                        }
+                        // Descriptions can now be associated with all parts of a multi-part course.
+                        // When a description has "all parts", it appears on each individual part as well as when viewing all parts together.
+                        if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))
+                            descriptionViews.Add(new DescriptionView(specialId, courseDesignator));
                     }
                     else {
                         if (QueryEvent.CourseContainsSpecial(eventDB, courseDesignator, specialId))

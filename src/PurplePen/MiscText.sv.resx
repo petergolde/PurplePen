@@ -421,9 +421,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Skicka rapport</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Kontrollbeskrivningar kan inte läggas till i en bana med kartbyte om "Alla delar" visas. Växla över till den delen som du vill lägga till beskrivningen till och välj "Lägg till kontrollbeskrivning" igen.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe hittades inte</value>
   </data>

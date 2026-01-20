@@ -418,9 +418,6 @@ Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value
   <data name="CrashSend" xml:space="preserve">
     <value>Send rapport</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Beskrivelse må ikke tilføjes et kursus med en kortudveksling hvis *Alle dele* bliver vist. Skift til den del du ønsker at tilføje, og vælg så "Tilføj beskrivelser" igen.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe blev ikke fundet</value>
   </data>

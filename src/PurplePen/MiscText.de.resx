@@ -421,9 +421,6 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="CrashSend" xml:space="preserve">
     <value>Bericht senden</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Postenbeschreibungen können zu einer Bahn mit Kartenwechsel nicht hinzugefügt werden, wenn "Alle Teilstrecken" angezeigt werden. Wenn Sie Postenbeschreibungen hinzufügen wollen, wechseln Sie bitte auf die gewünschte Teilstrecke und wählen dann "Postenbeschreibung hinzufügen" nochmals aus.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe nicht gefunden</value>
   </data>
