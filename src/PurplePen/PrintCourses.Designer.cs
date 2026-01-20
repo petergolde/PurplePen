@@ -206,7 +206,7 @@ namespace PurplePen
             // 
             // printDialog
             // 
-            this.printDialog.UseEXDialog = true;
+            this.printDialog.AllowPrintToFile = false;
             // 
             // groupBoxAppearance
             // 

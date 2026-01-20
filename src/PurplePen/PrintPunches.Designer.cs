@@ -317,7 +317,8 @@ namespace PurplePen
             // 
             // printDialog
             // 
-            this.printDialog.UseEXDialog = true;
+            this.printDialog.UseEXDialog = false;
+            this.printDialog.AllowPrintToFile = false;
             // 
             // PrintPunches
             // 
