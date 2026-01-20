@@ -418,9 +418,6 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="CrashSend" xml:space="preserve">
     <value>Enviar el informe</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>No se pueden añadir descripciones a un recorrido con cambio de mapas si se están mostrando «Todas las secciones». Seleccione la sección oportuna e indique «Añadir descripciones» entonces.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>No se ha encontrado PdfConverter.exe not</value>
   </data>

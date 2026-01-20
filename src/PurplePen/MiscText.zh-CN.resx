@@ -420,9 +420,6 @@
   <data name="CrashSend" xml:space="preserve">
     <value>发送报告</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>如果正在显示“所有部分”，则不能将检查点说明添加到带有换图的线路中。切换到要添加检查点说明的部分，然后再次选择“添加检查点说明”。</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>pdfconverter.exe没有发现</value>
   </data>

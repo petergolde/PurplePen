@@ -8,7 +8,7 @@
     <print-area automatic="true" restrict-to-page-size="true" left="-52.7778931" top="145.245163" right="163.122116" bottom="-134.154831" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
-    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" auto-leg-gap-size="3.5" blend-purple="false" />
+    <course-appearance scale-sizes="None" scale-sizes-circle-gaps="true" number-font="Roboto" auto-leg-gap-size="3.5" blend-purple="false" />
     <descriptions lang="en" color="black" />
     <ocad overprint-colors="false" />
   </event>
@@ -283,43 +283,53 @@
     <name>Course 1</name>
     <labels label-kind="sequence" />
     <first course-control="101" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-76.75554" top="136.999054" right="139.14447" bottom="-142.40094" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="10000" description-kind="symbols-and-text" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-76.7527" top="136.9985" right="139.147308" bottom="-142.401489" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols-and-text" />
   </course>
   <course id="2" kind="normal" order="2">
     <name>Course 2</name>
     <labels label-kind="sequence" />
     <first course-control="201" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-72.42474" top="140.994324" right="143.475266" bottom="-138.40567" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="10000" description-kind="symbols-and-text" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-72.42337" top="140.990234" right="143.476639" bottom="-138.40976" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols-and-text" />
   </course>
   <course id="3" kind="normal" order="3">
     <name>Course 3</name>
     <labels label-kind="sequence" />
     <first course-control="301" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-60.97696" top="143.468689" right="154.92305" bottom="-135.9313" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="10000" climb="37" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-60.981842" top="143.470871" right="154.918167" bottom="-135.929123" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" climb="37" hide-from-reports="false" description-kind="symbols" />
   </course>
   <course id="4" kind="normal" order="4">
     <name>Course 4B</name>
     <labels label-kind="sequence" />
     <first course-control="401" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-48.9675446" top="152.799988" right="166.932465" bottom="-126.600006" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-48.96086" top="152.799988" right="166.939148" bottom="-126.600006" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols" />
   </course>
   <course id="5" kind="normal" order="5">
     <name>Course 4G</name>
     <labels label-kind="sequence" />
     <first course-control="501" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-42.46805" top="154.25" right="173.431961" bottom="-125.149994" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-42.4631653" top="154.25" right="173.436844" bottom="-125.149994" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols" />
   </course>
   <course id="6" kind="normal" order="6">
     <name>Course 5</name>
     <labels label-kind="sequence" />
     <first course-control="601" />
-    <print-area automatic="true" restrict-to-page-size="true" left="-46.7690735" top="146.507309" right="169.130936" bottom="-132.892685" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
-    <options print-scale="10000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-58.1504631" top="149.575363" right="157.749542" bottom="-129.824631" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols" />
+    <part-options part="1" show-finish="false" />
+    <part-options part="2" show-finish="true" />
+    <part-options part="3" show-finish="false" />
+  </course>
+  <course id="7" kind="normal" order="7">
+    <name>Course 6</name>
+    <labels label-kind="sequence" />
+    <first course-control="623" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-58.1504631" top="149.575363" right="157.749542" bottom="-129.824631" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols" />
     <part-options part="1" show-finish="false" />
     <part-options part="2" show-finish="true" />
     <part-options part="3" show-finish="false" />
@@ -582,6 +592,64 @@
   <course-control id="622" control="86">
     <next course-control="410" />
   </course-control>
+  <course-control id="623" control="1">
+    <next course-control="624" />
+  </course-control>
+  <course-control id="624" control="59">
+    <next course-control="625" />
+  </course-control>
+  <course-control id="625" control="51">
+    <next course-control="626" />
+  </course-control>
+  <course-control id="626" control="46">
+    <next course-control="627" />
+  </course-control>
+  <course-control id="627" control="47">
+    <next course-control="628" />
+  </course-control>
+  <course-control id="628" control="48">
+    <next course-control="629" />
+  </course-control>
+  <course-control id="629" control="50">
+    <next course-control="630" />
+  </course-control>
+  <course-control id="630" control="56">
+    <next course-control="631" />
+  </course-control>
+  <course-control id="631" control="57">
+    <next course-control="632" />
+  </course-control>
+  <course-control id="632" control="79">
+    <next course-control="633" />
+  </course-control>
+  <course-control id="633" control="35" map-exchange="true">
+    <next course-control="634" />
+  </course-control>
+  <course-control id="634" control="37">
+    <next course-control="635" />
+  </course-control>
+  <course-control id="635" control="36">
+    <next course-control="636" />
+  </course-control>
+  <course-control id="636" control="39">
+    <next course-control="637" />
+  </course-control>
+  <course-control id="637" control="43" map-exchange="true">
+    <next course-control="638" />
+  </course-control>
+  <course-control id="638" control="54" map-exchange="true">
+    <next course-control="639" />
+  </course-control>
+  <course-control id="639" control="41">
+    <next course-control="640" />
+  </course-control>
+  <course-control id="640" control="42">
+    <next course-control="641" />
+  </course-control>
+  <course-control id="641" control="38">
+    <next course-control="642" />
+  </course-control>
+  <course-control id="642" control="2" />
   <leg id="1" start-control="79" end-control="35">
     <flagging kind="all" />
     <bends>
@@ -614,6 +682,20 @@
     <location x="-36.6154823" y="56.1162224" />
     <courses>
       <course course="6" />
+    </courses>
+  </special-object>
+  <special-object id="3" kind="descriptions">
+    <location x="2.1164856" y="24.5532761" />
+    <location x="6.29167175" y="24.5532761" />
+    <courses>
+      <course course="7" part="1" />
+    </courses>
+  </special-object>
+  <special-object id="4" kind="descriptions">
+    <location x="67.5214844" y="12.0649414" />
+    <location x="71.47774" y="12.0649414" />
+    <courses>
+      <course course="7" part="3" />
     </courses>
   </special-object>
 </course-scribe-event>

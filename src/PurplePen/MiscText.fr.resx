@@ -418,9 +418,6 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="CrashSend" xml:space="preserve">
     <value>Envoyer le Rapport</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Les Définitions ne peuvent pas être ajoutées à un circuit comportant un échange de carte si "Toutes les Parties" est affiché. Basculez sur la partie pour laquelle vous souhaitez ajoutez les définitions, puis choisissez de nouveau l'option "Ajouter Définitions".</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe non trouvé</value>
   </data>

@@ -426,9 +426,6 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Send Report</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Descriptions may not be added to a course with a map exchange if "All Parts" is being displayed. Switch to the part you wish to add descriptions to, and then choose "Add Descriptions" again.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe not found</value>
   </data>

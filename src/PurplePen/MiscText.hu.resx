@@ -421,9 +421,6 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="CrashSend" xml:space="preserve">
     <value>Jelentés küldése</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>A pontleírás lehet, hogy nem tartalmazza a térképcserét ha "Minden rész" van megjelenítve.  Váltson a megfelelő részre és használja az "Új pontleírás"-t újra.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>A PdfConverter.exe nem található</value>
   </data>

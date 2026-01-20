@@ -1604,10 +1604,7 @@ namespace PurplePen
 
         private void addDescriptionsMenu_Click(object sender, EventArgs e)
         {
-            if (controller.CanAddDescriptions())
-                controller.BeginAddDescriptionMode();
-            else
-                InfoMessage(MiscText.CannotAddDescriptionsToAllParts);
+            controller.BeginAddDescriptionMode();
         }
 
         private void addMapIssueMenu_Click(object sender, EventArgs e)

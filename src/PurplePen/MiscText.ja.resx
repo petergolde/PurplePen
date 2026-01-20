@@ -418,9 +418,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="CrashSend" xml:space="preserve">
     <value>レポート送信</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>[すべてのパート] を表示している場合ディスクリプションを配置できません。ディスクリプションを配置するコースパートに表示を切り換えてから、[ディスクリプションを配置]を選択してください。</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe が見つかりません</value>
   </data>

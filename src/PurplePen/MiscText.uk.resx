@@ -418,9 +418,6 @@
   <data name="CrashSend" xml:space="preserve">
     <value>Надіслати звіт</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Неможливо додати легенди на дистанцію зі зміною карти у варіанті відображення "Всі частини". Переключіться но одну із частин і виберіть "Додати легенди" знову.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe не знайдено</value>
   </data>

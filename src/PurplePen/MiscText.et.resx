@@ -419,9 +419,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Saada aruanne</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Raja legend võib jääda lisamata kaardile, kui on kaardivahetus ja "Kõik osad" on valitud. Vali rajaosa kuhu tahad lisada legende ja vali "Lisa legendid" uuesti.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe ei leitud</value>
   </data>

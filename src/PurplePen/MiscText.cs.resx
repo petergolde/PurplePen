@@ -421,9 +421,6 @@ OK - zkus soubor s mapou najít.</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Odeslat hlášení</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Popisy nemohou být přidány do tratě se změnou mapy, pokud jsou zobrazeny "Všechny části". Zvolte část, které chcete přidat popisy, a poté znovu zvolte "Přidat popisy"</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe nenalezen</value>
   </data>

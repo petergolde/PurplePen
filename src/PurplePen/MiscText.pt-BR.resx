@@ -426,9 +426,6 @@ O Purple Pen agora recarregará o mapa.</value>
   <data name="CrashSend" xml:space="preserve">
     <value>Enviar Relatório</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>A sinalética não podem ser adicionada a um percurso com troca de mapas se "Todas as Partes" estiver sendo exibida. Alterne para a parte à qual deseja adicionar a sinalética e, em seguida, escolha "Adicionar Sinalética" novamente.</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe não encontrado</value>
   </data>

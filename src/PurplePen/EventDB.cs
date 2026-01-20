@@ -1783,8 +1783,18 @@ namespace PurplePen
                         // mark off courses that use this description block.
                         if (validateInfo.usedDescriptionCourses.ContainsKey(courseDesignator))
                             throw new ApplicationException(string.Format("{0} has multiple descriptions (special {1})", courseDesignator, id));
+
+                        // Enforce constraint: cannot mix AllParts and specific parts for descriptions on the same course
                         if (! courseDesignator.AllParts && validateInfo.usedDescriptionCourses.ContainsKey(new CourseDesignator(courseDesignator.CourseId)))
                             throw new ApplicationException(string.Format("{0} has conflict with all parts description (special {1})", courseDesignator, id));
+                        if (courseDesignator.AllParts) {
+                            // Check if any specific parts of this course already have descriptions
+                            foreach (CourseDesignator usedCourse in validateInfo.usedDescriptionCourses.Keys) {
+                                if (usedCourse.CourseId == courseDesignator.CourseId && !usedCourse.AllParts)
+                                    throw new ApplicationException(string.Format("{0} has conflict with part-specific description (special {1})", courseDesignator, id));
+                            }
+                        }
+
                         validateInfo.usedDescriptionCourses[courseDesignator] = true;
                     }
                 }
