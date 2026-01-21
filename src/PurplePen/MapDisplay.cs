@@ -234,6 +234,18 @@ namespace PurplePen
         }
 
 
+        public List<string> GetReferencedFiles()
+        {
+             if (mapType == MapType.OCAD && map != null) {
+                using (map.Read()) {
+                    return map.GetReferencedFiles(1);
+                }
+            }
+            else {
+                return new List<string>();
+            }
+        }
+
         // Colors in the map, or empty list if no map or bitmap map.
         public List<SymColor> GetMapColors()
         {

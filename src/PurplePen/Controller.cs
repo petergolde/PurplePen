@@ -59,6 +59,7 @@ namespace PurplePen
         MapDisplay mapDisplay = new MapDisplay();  // The map display being used.
         string mapCantLoad;       // If non-null, means the map with this name didn't load last time we tried to load it.
         DateTime mapFileLastWrite;        // last write time of the map file, if any.
+        Dictionary<string, DateTime> referencedFileTimestamps = new Dictionary<string, DateTime>();  // Last write time of any referenced files.
 
         ICommandMode currentMode;     // current command mode.
         ICommandMode defaultMode;     // default command mode (we return to this after a command finishes).
@@ -253,12 +254,21 @@ namespace PurplePen
                     if (!File.Exists(MapFileName))
                         mapDisplay.SetMapFile(MapType.None, null);
                     else if (mapDisplay.FileName != MapFileName || mapDisplay.MapType != MapType)
-                        mapDisplay.SetMapFile(MapType, MapFileName); 
+                        mapDisplay.SetMapFile(MapType, MapFileName);
                 },
                 MiscText.CannotLoadMapFile, MapFileName);
 
-            if (MapFileName != null)
+            if (MapFileName != null) {
                 mapFileLastWrite = File.GetLastWriteTime(MapFileName);
+                referencedFileTimestamps.Clear();
+                foreach (string file in mapDisplay.GetReferencedFiles()) {
+                    try {
+                        if (File.Exists(file))
+                            referencedFileTimestamps[file] = File.GetLastWriteTime(file);
+                    }
+                    catch (IOException) { }
+                }
+            }
 
             if (success) {
                 mapCantLoad = null;
@@ -315,6 +325,28 @@ namespace PurplePen
         public void CheckForChangedMapFile()
         {
             if (!inChangeMapFileCheck && mapDisplay != null && MapFileName != null) {
+                if (!File.Exists(MapFileName)) {
+                    // The map file has been deleted. 
+
+                    inChangeMapFileCheck = true;
+
+                    try {
+                        // Map file no longer exists.
+                        ui.InfoMessage(string.Format(MiscText.MapFileDeleted, MapFileName));
+                        if (File.Exists(MapFileName))
+                            mapDisplay.SetMapFile(MapType, MapFileName);
+                        NewMapFileLoaded(true);
+                        return;
+                    }
+                    finally {
+                        inChangeMapFileCheck = false;
+                    }
+                }
+
+                // This will be set to the name of a referenced file that has changed, if any.
+                // Could be the map file itself, or a file that it references.
+                string changedReferencedFile = null;
+
                 DateTime lastWriteTime;
                 try {
                     lastWriteTime = File.GetLastWriteTime(MapFileName);
@@ -323,35 +355,52 @@ namespace PurplePen
                     return;
                 }
 
-                if (mapFileLastWrite != lastWriteTime) {
+                if (lastWriteTime != mapFileLastWrite) {
+                    changedReferencedFile = MapFileName;
+                }
+                else {
+                    // Check referenced files, to see if any have changed.
+                    foreach (KeyValuePair<string, DateTime> kvp in referencedFileTimestamps) {
+                        string path = kvp.Key;
+                        DateTime recordedTime = kvp.Value;
+
+                        if (!File.Exists(path)) {
+                            changedReferencedFile = path;
+                            break;
+                        }
+                        try {
+                            DateTime currentWriteTime = File.GetLastWriteTime(path);
+                            if (currentWriteTime != recordedTime) {
+                                changedReferencedFile = path;
+                                break;
+                            }
+                        }
+                        catch (IOException) {
+                            // ignore
+                        }
+                    }
+                }
+
+                // If a file has changed, notify the user and reload the main map.
+                if (changedReferencedFile != null) {
                     inChangeMapFileCheck = true;
 
                     try {
-                        if (File.Exists(MapFileName)) {
-                            ui.InfoMessage(string.Format(MiscText.MapFileChanged, MapFileName));
+                        ui.InfoMessage(string.Format(MiscText.MapFileChanged, changedReferencedFile));
 
-                            bool success = HandleExceptions(
-                                delegate {
-                                    mapDisplay.SetMapFile(MapType, MapFileName);
-                                },
-                                MiscText.CannotLoadMapFile, MapFileName);
-
-                            NewMapFileLoaded(false);
-                        }
-                        else {
-                            // Map file no longer exists.
-                            ui.InfoMessage(string.Format(MiscText.MapFileDeleted, MapFileName));
-                            if (File.Exists(MapFileName))
+                        bool success = HandleExceptions(
+                            delegate {
                                 mapDisplay.SetMapFile(MapType, MapFileName);
-                            NewMapFileLoaded(true);
-                        }
+                            },
+                            MiscText.CannotLoadMapFile, MapFileName);
+
+                        NewMapFileLoaded(false);
                     }
                     finally {
                         inChangeMapFileCheck = false;
                     }
                 }
             }
-            
         }
 
         // Once each time the map file is loaded, and if the event is not set to disallow it, return a list of missing fonts. Once this 

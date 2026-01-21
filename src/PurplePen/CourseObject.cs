@@ -3373,6 +3373,15 @@ namespace PurplePen
                 return null;
             }
 
+            public string SearchForFile(string path)
+            {
+                if (string.Equals(path, imageName, StringComparison.InvariantCultureIgnoreCase)) {
+                    return Path.GetFullPath(path);
+                }
+                else {
+                    return null;
+                }
+            }
         }
     }
 

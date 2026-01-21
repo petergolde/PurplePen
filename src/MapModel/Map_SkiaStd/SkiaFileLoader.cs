@@ -67,7 +67,7 @@ namespace PurplePen.MapModel
             return newMap;
         }
 
-        private string SearchForFile(string path)
+        public string SearchForFile(string path)
         {
             try {
                 if (File.Exists(path))

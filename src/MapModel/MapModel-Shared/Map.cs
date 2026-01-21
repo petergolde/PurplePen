@@ -340,6 +340,11 @@ namespace PurplePen.MapModel
         public abstract void Draw(IGraphicsTarget g, RectangleF rect, RenderOptions renderOpts, Operation throwOnCancel, int templateRecursionCount);
         public abstract void Dispose();
         public abstract TemplateLoadInfo GetTemplateLoadInfo();
+        public virtual List<string> GetReferencedFiles(int templateRecursionCount)
+        {
+            // Default implementation has no referenced files, so do nothing.
+            return new List<string>();
+        }
 
         public static LoadedTemplate Create(Map owningMap, TemplateInfo templateInfo)
         {
@@ -527,6 +532,13 @@ namespace PurplePen.MapModel
         public override TemplateLoadInfo GetTemplateLoadInfo()
         {
             return new TemplateLoadInfo(LoadingError.None);
+        }
+
+        public override List<string> GetReferencedFiles(int templateRecursionCount)
+        {
+            using (map.Read()) {
+                return map.GetReferencedFiles(templateRecursionCount);
+            }
         }
 
         // Check to see if real world coords dictate a different map alignment.
@@ -826,6 +838,9 @@ namespace PurplePen.MapModel
 
         // Load a map from the given path.
         Map LoadMap(string path, Map referencingMap);
+
+        // Search for a file, returning the full path if found, or null if not.
+        string SearchForFile(string path);
 
     }
 
@@ -1222,6 +1237,54 @@ namespace PurplePen.MapModel
         public IFileLoader FileLoader
         {
             get { return fileLoader; }
+        }
+
+        // Get a list of full paths of all referenced files (map templates, bitmap templates, or image external bitmaps).
+        // Recursively gets files referenced by map templates also.
+        public List<string> GetReferencedFiles(int templateRecursionCount)
+        {
+            HashSet<string> files = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+            GetReferencedFilesRecursive(files, templateRecursionCount);
+            return files.ToList();
+        }
+
+        private void GetReferencedFilesRecursive(HashSet<string> files, int templateRecursionCount)
+        {
+            // Don't recurse more than 15 levels. Prevents unbounded recursion when template directly or indirectly has itself as a template.
+            if (templateRecursionCount > 15)
+                return;
+            templateRecursionCount += 1;
+
+            CheckReadable();
+            this.LoadTemplates();
+
+            // Templates
+            foreach (TemplateInfo templateInfo in this.Templates) {
+                if (!string.IsNullOrEmpty(templateInfo.absoluteFileName)) {
+                    string fullPath = this.FileLoader.SearchForFile(templateInfo.absoluteFileName);
+                    if (fullPath != null)
+                            files.Add(fullPath);
+                }
+            }
+
+            // Recursively add any files referenced by loaded templates.
+            if (this.loadedTemplates != null) {
+                foreach (LoadedTemplate loadedTemplate in this.loadedTemplates) {
+                    files.UnionWith(loadedTemplate.GetReferencedFiles(templateRecursionCount));
+                }
+            }
+
+            // Symbols: ImageBitmapSymbols can reference external images.
+            foreach (Symbol symbol in this.AllSymbols) {
+                if (symbol is ImageBitmapSymbol) {
+                    ImageBitmapSymbol bitmapSymbol = (ImageBitmapSymbol) symbol;
+                    if (!string.IsNullOrEmpty(bitmapSymbol.FileName)) {
+                            string fullPath = this.FileLoader.SearchForFile(bitmapSymbol.FileName);
+                            if (fullPath != null)
+                                files.Add(fullPath);
+                    }
+                }
+            }
         }
 
         public ICollection<SymDef> AllSymdefs {
