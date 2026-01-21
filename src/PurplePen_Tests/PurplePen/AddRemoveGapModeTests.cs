@@ -213,7 +213,7 @@ namespace PurplePen.Tests
 
             // Click to add a gap.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(42.0F, -32F), 0.3F);
-            Assert.AreEqual(MapViewer.DragAction.None, dragAction);
+            Assert.AreEqual(MapViewer.DragAction.SuppressClick, dragAction);
 
             // Check the status text
             ui.MouseMoved(42.0F, -32F, 0.1F);
@@ -270,7 +270,7 @@ namespace PurplePen.Tests
 
             // Click to remove the gap.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(70, -13), 0.3F);
-            Assert.AreEqual(MapViewer.DragAction.None, dragAction);
+            Assert.AreEqual(MapViewer.DragAction.SuppressClick, dragAction);
 
             // Check the status text
             ui.MouseMoved(70, -13, 0.1F);

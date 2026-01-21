@@ -63,6 +63,7 @@ namespace PurplePen.MapView
         bool[] mouseDown = new bool[CountMouseButtons];			// state of mouse buttons
         bool[] canDrag = new bool[CountMouseButtons];			// is a drag allowed with this button?
         bool[] mouseDrag = new bool[CountMouseButtons];			// is a drag in progress with this button?
+        bool[] suppressClick = new bool[CountMouseButtons];     // if true, suppress a click event on mouse up.
         PointF[] downPos = new PointF[CountMouseButtons];		// position mouse button went down, in world coordinates
         int[] downTime = new int[CountMouseButtons];			// time mouse button went down, from Environment.TickCount
 
@@ -92,7 +93,7 @@ namespace PurplePen.MapView
         Point lastDragScrollPoint;								// last point we dragged to
 
         // Events that we raise
-        public enum DragAction { None, MapDrag, ImmediateDrag, DelayedDrag };
+        public enum DragAction { None, SuppressClick, MapDrag, ImmediateDrag, DelayedDrag };
         public delegate void PointerEventHandler(object sender, bool inViewport, PointF location);
         public delegate DragAction MouseEventHandler(object sender, MouseAction action, int buttonNumber, bool[] whichButtonsDown, PointF location, PointF locationStart);
         public event EventHandler OnViewportChange;
@@ -757,6 +758,7 @@ namespace PurplePen.MapView
             mouseDown[buttonNumber] = true;
             mouseDrag[buttonNumber] = false;
             canDrag[buttonNumber] = false;
+            suppressClick[buttonNumber] = false;
             downPos[buttonNumber] = worldMouse;
             downTime[buttonNumber] = Environment.TickCount;
 
@@ -772,6 +774,11 @@ namespace PurplePen.MapView
                     // Map dragging has been requested.
                     BeginMapDragging(new Point(xViewport, yViewport), (buttonNumber == LeftMouseButton) ? MouseButtons.Left : MouseButtons.Right);
                 }
+
+                if (dragAction == DragAction.SuppressClick) {
+                    // Do not create a click action on mouse up.
+                    suppressClick[buttonNumber] = true;
+                }
             }
 
             return;
@@ -783,7 +790,7 @@ namespace PurplePen.MapView
             bool wasDrag = mouseDrag[buttonNumber];
             bool wasClick = false;
 
-            if (wasDown && !wasDrag &&
+            if (wasDown && !wasDrag && !suppressClick[buttonNumber] &&
                 WorldToPixelDistance(Util.DistanceF(worldMouse, downPos[buttonNumber])) <= MaxClickDistance &&
                 Environment.TickCount - downTime[buttonNumber] <= MaxClickTime) {
                 wasClick = true;
@@ -792,6 +799,7 @@ namespace PurplePen.MapView
 
             mouseDown[buttonNumber] = false;
             mouseDrag[buttonNumber] = false;
+            suppressClick[buttonNumber] = false;
 
             if (OnMouseEvent != null) {
                 if (wasDrag)

@@ -184,7 +184,7 @@ namespace PurplePen
             // Create the new corner
             controller.RemoveControlGap(location);
             controller.DefaultCommandMode();
-            return MapViewer.DragAction.None;
+            return MapViewer.DragAction.SuppressClick;
         }
     }
 
@@ -233,7 +233,7 @@ namespace PurplePen
             // Remove the gap
             controller.RemoveLegGap(location);
             controller.DefaultCommandMode();
-            return MapViewer.DragAction.None;
+            return MapViewer.DragAction.SuppressClick;
         }
     }
 

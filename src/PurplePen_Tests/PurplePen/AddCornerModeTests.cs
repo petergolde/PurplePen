@@ -100,7 +100,7 @@ namespace PurplePen.Tests
 
             // Click to add a bend.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(12.2F, 14.4F), 0.3F);
-            Assert.AreEqual(MapViewer.DragAction.None, dragAction);
+            Assert.AreEqual(MapViewer.DragAction.SuppressClick, dragAction);
 
 
             // Check the status text
@@ -158,7 +158,7 @@ namespace PurplePen.Tests
 
             // Click to add a corner.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(-4,7), 0.3F);
-            Assert.AreEqual(MapViewer.DragAction.None, dragAction);
+            Assert.AreEqual(MapViewer.DragAction.SuppressClick, dragAction);
 
 
             // Check the status text
@@ -217,7 +217,7 @@ namespace PurplePen.Tests
 
             // Click to delete a corner.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(3.1F, 7.2F), 0.3F);
-            Assert.AreEqual(MapViewer.DragAction.None, dragAction);
+            Assert.AreEqual(MapViewer.DragAction.SuppressClick, dragAction);
 
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -272,7 +272,7 @@ namespace PurplePen.Tests
 
             // Click to remove the bend.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(12.1F, 19.8F), 0.3F);
-            Assert.AreEqual(MapViewer.DragAction.None, dragAction);
+            Assert.AreEqual(MapViewer.DragAction.SuppressClick, dragAction);
 
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);

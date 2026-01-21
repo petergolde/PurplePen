@@ -91,7 +91,7 @@ namespace PurplePen
             // Create the new corner
             controller.AddCorner(location);
             controller.DefaultCommandMode();
-            return MapViewer.DragAction.None;
+            return MapViewer.DragAction.SuppressClick;
         }
     }
 
@@ -164,7 +164,7 @@ namespace PurplePen
                 controller.DefaultCommandMode();
             }
 
-            return MapViewer.DragAction.None;
+            return MapViewer.DragAction.SuppressClick;
         }
     }
 }
