@@ -317,13 +317,64 @@ namespace PurplePen
         private static Cursor moveHandleCursor;
         private static Cursor deleteHandleCursor;
 
+        // Windows API for loading a cursor from file. The Cursor constructor does not work
+        // correctly with .cur files that have 32-bit color with alpha transparency.
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        private static extern IntPtr LoadCursorFromFile(string path);
+
+        /// <summary>
+        /// Loads a cursor from a Stream (e.g., embedded resource stream), preserving 32-bit color and alpha transparency.
+        /// </summary>
+        /// <param name="cursorStream">The stream containing the cursor data.</param>
+        /// <returns>A standard Windows Forms Cursor object.</returns>
+        public static Cursor LoadCursorFromResource(Stream cursorStream)
+        {
+            if (cursorStream == null)
+                throw new ArgumentNullException(nameof(cursorStream));
+
+            // 1. Create a temporary file path with .cur extension
+            string tempPath = Path.GetTempFileName();
+            string tempCursorPath = Path.ChangeExtension(tempPath, ".cur");
+
+            // Cleanup the initial temp file created by GetTempFileName if it differs from our new path
+            if (File.Exists(tempPath) && tempPath != tempCursorPath)
+                File.Delete(tempPath);
+
+            try {
+                // 2. Write the stream data to the temporary file
+                using (FileStream fs = new FileStream(tempCursorPath, FileMode.Create, FileAccess.Write)) {
+                    // Reset stream position if possible, just in case
+                    if (cursorStream.CanSeek) {
+                        cursorStream.Position = 0;
+                    }
+                    cursorStream.CopyTo(fs);
+                }
+
+                // 3. Load the cursor from the temp file using the P/Invoke method
+                IntPtr hCursor = LoadCursorFromFile(tempCursorPath);
+
+                if (hCursor == IntPtr.Zero) {
+                    throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+                }
+
+                // 4. Create the managed Cursor object
+                return new Cursor(hCursor);
+            }
+            finally {
+                // 5. Clean up: Delete the temp file immediately
+                if (File.Exists(tempCursorPath)) {
+                    File.Delete(tempCursorPath);
+                }
+            }
+        }
+
         // Load the MoveHandle cursor.
         public static Cursor MoveHandleCursor
         {
             get
             {
                 if (moveHandleCursor == null) {
-                    moveHandleCursor = new Cursor(typeof(Util).Assembly.GetManifestResourceStream("PurplePen.Images.MoveHandle.cur"));
+                    moveHandleCursor = LoadCursorFromResource(typeof(Util).Assembly.GetManifestResourceStream("PurplePen.Images.MoveHandle.cur"));
                 }
                 return moveHandleCursor;
             }
@@ -335,7 +386,7 @@ namespace PurplePen
             get
             {
                 if (deleteHandleCursor == null) {
-                    deleteHandleCursor = new Cursor(typeof(Util).Assembly.GetManifestResourceStream("PurplePen.Images.DeleteHandle.cur"));
+                    deleteHandleCursor = LoadCursorFromResource(typeof(Util).Assembly.GetManifestResourceStream("PurplePen.Images.DeleteHandle.cur"));
                 }
                 return deleteHandleCursor;
             }
