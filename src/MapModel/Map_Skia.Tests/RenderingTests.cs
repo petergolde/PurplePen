@@ -8,7 +8,7 @@ using TestingUtils;
 
 namespace Map_Skia.Tests
 {
-    [TestFixture]
+    [TestFixture, Parallelizable(ParallelScope.Children)]
     public class RenderingTests
     {
         private const int MAX_PIXEL_DIFF = 25;
@@ -226,7 +226,7 @@ namespace Map_Skia.Tests
             CheckTest("offsetpattern.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void OffsetAreaPatternNoBitmap()
         {
             CheckTestNoPatternBitmaps("offsetpattern_nopatbm.txt", false, true, 6, 12);
@@ -244,13 +244,13 @@ namespace Map_Skia.Tests
             CheckTest("offsetpatternrot2.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void OffsetAreaPatternRotatedNoBitmap()
         {
             CheckTestNoPatternBitmaps("offsetpatternrot_nopatbm.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void OffsetAreaPatternRotated2NoBitmap()
         {
             CheckTestNoPatternBitmaps("offsetpatternrot2_nopatbm.txt", false, true, 6, 12);
@@ -268,7 +268,7 @@ namespace Map_Skia.Tests
             CheckTestNoPatternBitmaps("isomareabug_nopatbm.txt", false, false, 9, 9);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void AreaSymbolsNoBitmap()
         {
             CheckTestNoPatternBitmaps("isomarea_nopatbm.txt", true, true, 6, 9);

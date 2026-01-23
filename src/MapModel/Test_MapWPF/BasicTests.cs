@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
 
 namespace TestWpfMap
 {
     using System.Diagnostics;
     using System.Drawing;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using PurplePen.Graphics2D;
     using PurplePen.MapModel;
 
-    [TestFixture]
+    [TestClass]
     public class BasicTests
     {
-        [Test]
+        [TestMethod]
         public void WpfFontMetrics()
         {
             GDIPlus_TextMetrics gdiMetrics = new GDIPlus_TextMetrics();

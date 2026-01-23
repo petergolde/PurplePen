@@ -7,7 +7,6 @@ using System.Windows;
 using System.Diagnostics;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-//using NUnit.Framework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using PurplePen.MapModel;
@@ -296,14 +295,14 @@ namespace TestWpfMap
         {
             string fullname = TestUtil.GetTestFile("wpfrender\\" + filename);
             bool ok = VerifyTestFile(fullname, true, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
-            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
+            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename));
         }
 
         void CheckTestNoPatternBitmaps(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("wpfrender\\" + filename);
             bool ok = VerifyTestFile(fullname, false, testLightenedColor, roundtripToOcad, minOcadVersion, maxOcadVersion);
-            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
+            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename));
         }
 
         [TestMethod]

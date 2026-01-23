@@ -255,23 +255,30 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException), "Type \"PurplePen.Tests.PairTests+Unorderable\" does not implement IComparable<PurplePen.Tests.PairTests+Unorderable> or IComparable.")]
         public void UncomparableFirst()
         {
             Pair<Unorderable, int> pair1, pair2;
             pair1 = new Pair<Unorderable, int>(new Unorderable(), 5);
             pair2 = new Pair<Unorderable, int>(new Unorderable(), 7);
-            int compare = pair1.CompareTo(pair2);
+
+            Exception ex = Assert.Throws<NotSupportedException>(() => {
+                int compare = pair1.CompareTo(pair2);
+            });
+            Assert.AreEqual("Type \"PurplePen.Tests.PairTests+Unorderable\" does not implement IComparable<PurplePen.Tests.PairTests+Unorderable> or IComparable.", ex.Message);
+
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException), "Type \"PurplePen.Tests.PairTests+Unorderable\" does not implement IComparable<PurplePen.Tests.PairTests+Unorderable> or IComparable.")]
         public void UncomparableSecond()
         {
             Pair<int, Unorderable> pair1, pair2;
             pair1 = new Pair<int, Unorderable>(3, new Unorderable());
             pair2 = new Pair<int, Unorderable>(3, new Unorderable());
-            int compare = pair1.CompareTo(pair2);
+
+            Exception ex = Assert.Throws<NotSupportedException>(() => {
+                int compare = pair1.CompareTo(pair2);
+            });
+            Assert.AreEqual("Type \"PurplePen.Tests.PairTests+Unorderable\" does not implement IComparable<PurplePen.Tests.PairTests+Unorderable> or IComparable.", ex.Message);
         }
 
         [TestMethod]

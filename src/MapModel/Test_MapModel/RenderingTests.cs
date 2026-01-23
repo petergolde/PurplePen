@@ -42,13 +42,12 @@ using System.IO;
 using System.Diagnostics;
 using NUnit.Framework;
 using TestingUtils;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PurplePen.MapModel.Tests
 {
     using PurplePen.Graphics2D;
 
-    [TestFixture]
+    [TestFixture, Parallelizable(ParallelScope.Children)]
     public class Rendering 
     {
         private const int MAX_PIXEL_DIFF = 30;
@@ -497,7 +496,7 @@ namespace PurplePen.MapModel.Tests
             CheckTest("isompoints_2018.txt", false, true, 2018, 2018);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void AreaSymbols()
         {
             CheckTest("isomarea.txt", true, true, 6, 12);
@@ -622,7 +621,7 @@ namespace PurplePen.MapModel.Tests
             CheckTest("zeroglyph6.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void OffsetAreaPattern() {
             CheckTest("offsetpattern.txt", false, true, 6, 12);
         }
@@ -632,7 +631,7 @@ namespace PurplePen.MapModel.Tests
             CheckTestNoPatternBitmaps("offsetpattern_nopatbm.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void OffsetAreaPatternRotated() {
             CheckTest("offsetpatternrot.txt", false, true, 6, 12);
         }
@@ -647,7 +646,7 @@ namespace PurplePen.MapModel.Tests
             CheckTestNoPatternBitmaps("offsetpatternrot_nopatbm.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void OffsetAreaPatternRotated2NoBitmap() {
             CheckTestNoPatternBitmaps("offsetpatternrot2_nopatbm.txt", false, true, 6, 12);
         }
@@ -771,7 +770,7 @@ namespace PurplePen.MapModel.Tests
             CheckTest("alllinetext.txt", false, true, 6, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void LineTextTop() {
             CheckTest("linetext_top.txt", false, true, 10, 12);
         }
@@ -1061,7 +1060,7 @@ namespace PurplePen.MapModel.Tests
 
 
 
-        [Test]
+        [Test, NonParallelizable]
         public void TemplateRendering()
         {
             CheckTest("template.txt", true, false, 9, 12);
@@ -1085,7 +1084,7 @@ namespace PurplePen.MapModel.Tests
             CheckTest("templatehide.txt", true, false, 9, 12);
         }
 
-        [Test]
+        [Test, NonParallelizable]
         public void TemplateFraction1()
         {
             CheckTest("template_fraction1.txt", false, true, 9, 12);

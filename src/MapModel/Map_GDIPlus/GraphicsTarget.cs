@@ -32,20 +32,20 @@
  * OF SUCH DAMAGE.
  */
 
+using PurplePen.MapModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-using PurplePen.MapModel;
-
 namespace PurplePen.MapModel
 {
     using PurplePen.Graphics2D;
-    using System.IO;
     using System.Drawing.Imaging;
+    using System.IO;
 using System.Runtime.InteropServices;
+    using System.Threading;
 
     // A GraphicsTarget encapsulates either a Graphics (for WinForms) or a DrawingContext (for WPF)
     public class GDIPlus_GraphicsTarget: IGraphicsTarget
@@ -1085,17 +1085,18 @@ using System.Runtime.InteropServices;
             return GetHiresGraphics().MeasureString(text, font, new PointF(0, 0), stringFormat);
         }
 
-        [ThreadStatic]
-        static Graphics hiResGraphics = null;
+        private static ThreadLocal<Graphics> hiresGraphics = new ThreadLocal<Graphics>(() => {
+            Graphics g = Graphics.FromImage(new Bitmap(1, 1));
+            g.ScaleTransform(10F, -10F);
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            return g;
+        });
 
-        private static Graphics GetHiresGraphics()
+        // Returns a graphics scaled with negative Y and hi-resolution (50 units/pixel or so).
+        // Instances are per-thread, so that tests that use this can run in parallel.
+        public static Graphics GetHiresGraphics()
         {
-            if (hiResGraphics == null) {
-                hiResGraphics = Graphics.FromImage(new Bitmap(1, 1));
-                hiResGraphics.ScaleTransform(10F, -10F);
-                hiResGraphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            }
-            return hiResGraphics;
+            return hiresGraphics.Value;
         }
 
         public void  Dispose()

@@ -32,27 +32,26 @@
  * OF SUCH DAMAGE.
  */
 
+using PdfSharp.Drawing;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-
-using SysDraw = System.Drawing;
+using System.Threading;
+using Bitmap = System.Drawing.Bitmap;
+using FillMode = System.Drawing.Drawing2D.FillMode;
+using LineCap = System.Drawing.Drawing2D.LineCap;
+using LineJoin = System.Drawing.Drawing2D.LineJoin;
+using Matrix = System.Drawing.Drawing2D.Matrix;
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using FillMode = System.Drawing.Drawing2D.FillMode;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using LineCap = System.Drawing.Drawing2D.LineCap;
-using Bitmap = System.Drawing.Bitmap;
-using StringFormat = System.Drawing.StringFormat;
 using StringAlignment = System.Drawing.StringAlignment;
+using StringFormat = System.Drawing.StringFormat;
 using StringFormatFlags = System.Drawing.StringFormatFlags;
-
-using PurplePen.MapModel;
-using PurplePen.Graphics2D;
-using PdfSharp.Drawing;
+using SysDraw = System.Drawing;
 
 // TODO: Needs more work to handle CMYK color space!
 
@@ -500,18 +499,18 @@ namespace PurplePen.MapModel
             return glyphs;
         }
 
-        [ThreadStatic]
-        static System.Drawing.Graphics hiResGraphics = null;
+        private static ThreadLocal<System.Drawing.Graphics> hiresGraphics = new ThreadLocal<System.Drawing.Graphics>(() => {
+            System.Drawing.Graphics g = System.Drawing.Graphics.FromHwnd(IntPtr.Zero);
+            g.ScaleTransform(50F, -50F);
+            return g;
+        });
 
-        private static System.Drawing.Graphics GetHiresGraphics()
+        // Returns a graphics scaled with negative Y and hi-resolution (50 units/pixel or so).
+        // Instances are per-thread, so that tests that use this can run in parallel.
+        public static System.Drawing.Graphics GetHiresGraphics()
         {
-            if (hiResGraphics == null) {
-                hiResGraphics = System.Drawing.Graphics.FromHwnd(IntPtr.Zero);
-                hiResGraphics.ScaleTransform(50F, -50F);
-            }
-            return hiResGraphics;
+            return hiresGraphics.Value;
         }
-
 
         // Draw text outline with upper-left corner of text at the given locations.
         public void DrawTextOutline(string text, object fontKey, object penKey, PointF upperLeft)

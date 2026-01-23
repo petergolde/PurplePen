@@ -1,6 +1,8 @@
-﻿using System.Reflection;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using ExecutionScope = Microsoft.VisualStudio.TestTools.UnitTesting.ExecutionScope;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -33,3 +35,7 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+
+// Parallel test execution
+[assembly: Parallelize(Scope = ExecutionScope.ClassLevel)]
