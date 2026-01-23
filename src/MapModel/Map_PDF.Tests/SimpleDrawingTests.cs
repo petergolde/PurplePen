@@ -14,7 +14,7 @@ using System.IO;
 
 namespace Map_PDF.Tests
 {
-    [TestFixture]
+    [TestFixture, Parallelizable(ParallelScope.Children)]
     public class SimpleDrawingTests
     {
         void CreatePdf(string testName, bool useCmyk, Action<IGraphicsTarget> draw)

@@ -42,7 +42,6 @@ using System.IO;
 using System.Diagnostics;
 using NUnit.Framework;
 using TestingUtils;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PurplePen.MapModel.Tests
 {

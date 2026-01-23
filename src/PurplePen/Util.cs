@@ -47,6 +47,7 @@ using System.Windows.Forms;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using System.Drawing.Imaging;
+using System.Threading;
 
 namespace PurplePen
 {
@@ -253,18 +254,18 @@ namespace PurplePen
             return Rectangle.FromLTRB((int)Math.Round(rect.Left), (int)Math.Round(rect.Top), (int)Math.Round(rect.Right), (int)Math.Round(rect.Bottom));
         }
 
-        private static Graphics hiresGraphics;
+        private static ThreadLocal<Graphics> hiresGraphics = new ThreadLocal<Graphics>(() => {
+            Graphics g = Graphics.FromHwnd(IntPtr.Zero);
+            g.ScaleTransform(50F, -50F);
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            return g;
+        });
 
         // Returns a graphics scaled with negative Y and hi-resolution (50 units/pixel or so).
+        // Instances are per-thread, so that tests that use this can run in parallel.
         public static Graphics GetHiresGraphics()
         {
-            if (hiresGraphics == null) {
-                hiresGraphics = Graphics.FromHwnd(IntPtr.Zero);
-                hiresGraphics.ScaleTransform(50F, -50F);
-                hiresGraphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            }
-
-            return hiresGraphics;
+            return hiresGraphics.Value;
         }
 
         // Go to a given web page.
