@@ -424,9 +424,9 @@ String of type 8
   firstField=[[TESTDIR]]\controller\ocad_create10\Lincoln-CMYK.gif
   code=r, value=1
   code=s, value=1
-  code=x, value=107.9502
-  code=y, value=139.7002
+  code=x, value=107.95
+  code=y, value=139.7
   code=a, value=0
-  code=u, value=0.04233342
-  code=v, value=0.04233342
+  code=u, value=0.04233333
+  code=v, value=0.04233333
 

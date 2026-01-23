@@ -105,7 +105,7 @@ namespace PurplePen
                     try {
                         Bitmap bitmap = (Bitmap) Image.FromFile(mapFileName);
                         bitmapSize = bitmap.Size;
-                        dpi = bitmap.HorizontalResolution;
+                        dpi = (float) Math.Round(bitmap.HorizontalResolution, 1);  // Round to 1 decimal place, because images don't store DPI exactly, but close to a standard round number, so fix.
                         bitmap.Dispose();
                         mapType = MapType.Bitmap;
                         mapBounds = new RectangleF(0, 0, (float)bitmapSize.Width / dpi * 25.4F, (float)bitmapSize.Height / dpi * 25.4F);
@@ -174,7 +174,7 @@ namespace PurplePen
             // Make sure resulting image file can be read.
             try {
                 Bitmap bitmap = (Bitmap)Image.FromFile(mapFile.PngFileName);
-                dpi = bitmap.HorizontalResolution;
+                dpi = (float) Math.Round(bitmap.HorizontalResolution, 1); // Should be always 600, anyway, round because PNG store resolution inaccurately.
                 bitmapSize = bitmap.Size;
                 bitmap.Dispose();
                 errorMessageText = "";
@@ -225,9 +225,10 @@ namespace PurplePen
                 int bestIndex = -1;
 
                 // Scan through all paper indexes to find the smallest paper that fits the area.
+                // The -1 in the comparisons allows for minor (0.01 inch) rounding errors.
                 for (int i = firstIndex; i < endIndex; ++i) {
-                    if (StandardPaperSizes[i].Width > printAreaWidth && StandardPaperSizes[i].Height > printAreaHeight &&
-                        (bestIndex == -1 || StandardPaperSizes[i].Width < StandardPaperSizes[bestIndex].Width))
+                    if (StandardPaperSizes[i].Width >= printAreaWidth - 1 && StandardPaperSizes[i].Height >= printAreaHeight - 1 &&
+                                            (bestIndex == -1 || StandardPaperSizes[i].Width < StandardPaperSizes[bestIndex].Width))
                         bestIndex = i;
                 }
                 if (bestIndex < 0)

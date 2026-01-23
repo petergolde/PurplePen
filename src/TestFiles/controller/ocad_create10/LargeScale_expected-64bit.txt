@@ -408,10 +408,10 @@ String of type 1026
   firstField=
   code=a, value=8000
   code=r, value=1
-  code=L, value=-54.6098
-  code=B, value=-73.65979
-  code=R, value=270.5102
-  code=T, value=353.0602
+  code=L, value=-54.61002
+  code=B, value=-73.66006
+  code=R, value=270.51
+  code=T, value=353.06
 
 String of type 1030
   ObjIndex=0
@@ -424,9 +424,9 @@ String of type 8
   firstField=[[TESTDIR]]\controller\ocad_create10\Lincoln-CMYK.gif
   code=r, value=1
   code=s, value=1
-  code=x, value=107.9502
-  code=y, value=139.7002
+  code=x, value=107.95
+  code=y, value=139.7
   code=a, value=0
-  code=u, value=0.04233342
-  code=v, value=0.04233342
+  code=u, value=0.04233333
+  code=v, value=0.04233333
 

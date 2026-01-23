@@ -367,10 +367,16 @@ namespace PurplePen
         public float ScaleRatio
         {
             get {
-                if (printScale == 0 || mapScale == 0)
+                if (printScale == 0 || mapScale == 0) {
                     return 1;
-                else
-                    return printScale / mapScale;
+                }
+                else {
+                    float ratio = printScale / mapScale;
+                    if (ratio > 0.99999F && ratio < 1.00001F)
+                        ratio = 1.0F; // In case of rounding errors.
+                    
+                    return ratio;
+                }
             }
         }
 
@@ -728,19 +734,17 @@ namespace PurplePen
 
             courseView.Finish();
 
-            if (options.showNonDescriptionSpecials) {
-                // Add specials only if in all courses or the all controls course specifically. Descriptions are added only if "addDescription" is true
-                foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
-                    Special special = eventDB.GetSpecial(specialId);
+            // Add specials only if in all courses or the all controls course specifically. Descriptions are added only if "addDescription" is true
+            foreach (Id<Special> specialId in eventDB.AllSpecialIds) {
+                Special special = eventDB.GetSpecial(specialId);
 
-                    if (special.kind == SpecialKind.Descriptions) {
-                        if (options.showDescriptionSpecials && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
-                            courseView.descriptionViews.Add(new DescriptionView(specialId, CourseDesignator.AllControls));
-                    }
-                    else {
-                        if (QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
-                            courseView.specialIds.Add(specialId);
-                    }
+                if (special.kind == SpecialKind.Descriptions) {
+                    if (options.showDescriptionSpecials && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
+                        courseView.descriptionViews.Add(new DescriptionView(specialId, CourseDesignator.AllControls));
+                }
+                else {
+                    if (options.showNonDescriptionSpecials && QueryEvent.CourseContainsSpecial(eventDB, CourseDesignator.AllControls, specialId))
+                        courseView.specialIds.Add(specialId);
                 }
             }
 

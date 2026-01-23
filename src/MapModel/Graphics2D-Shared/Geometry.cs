@@ -337,6 +337,15 @@ namespace PurplePen.Graphics2D
             return (float) (Math.Floor((x - origin) / pixelSize) * pixelSize + origin);
         }
 
+        // Determine if two rectangles are similar within a given tolerance.
+        public static bool SimilarRectangles(RectangleF r1, RectangleF r2, float tolerance)
+        {
+            return (Math.Abs(r1.Left - r2.Left) <= tolerance &&
+                    Math.Abs(r1.Right - r2.Right) <= tolerance &&
+                    Math.Abs(r1.Top - r2.Top) <= tolerance &&
+                    Math.Abs(r1.Bottom - r2.Bottom) <= tolerance);
+        }
+
         // Find two control points around p2.
         public static void FindControlPoints(PointF p1, PointF p2, PointF p3, out PointF c1, out PointF c2)
         {

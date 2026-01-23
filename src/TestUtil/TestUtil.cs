@@ -446,14 +446,19 @@ namespace TestingUtils
 
             if (!File.Exists(baseline) || !CompareTextFiles(newFile, baseline, exceptionMap)) 
             {
-                TextFileCompareDialog dialog = new TextFileCompareDialog();
-                dialog.BaselineFilename = baseline;
-                dialog.NewFilename = newFile;
-                DialogResult result = dialog.ShowDialog();
-                dialog.Dispose();
-
-                if (result == DialogResult.Cancel)
+                if (SilentRun) {
                     Assert.Fail(string.Format("{0} and {1} do not compare", newFile, baseline));
+                }
+                else {
+                    TextFileCompareDialog dialog = new TextFileCompareDialog();
+                    dialog.BaselineFilename = baseline;
+                    dialog.NewFilename = newFile;
+                    DialogResult result = dialog.ShowDialog();
+                    dialog.Dispose();
+
+                    if (result == DialogResult.Cancel)
+                        Assert.Fail(string.Format("{0} and {1} do not compare", newFile, baseline));
+                }
             }
         }
 
