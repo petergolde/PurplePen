@@ -50,14 +50,14 @@ namespace Map_PDF.Tests
             File.Delete(pngFileName);
         }
 
-        void CreatePdfUsingCopiedPartialPage(string testName, string importedPdf, int importedPage, RectangleF sourceRectangleInInches, Action<IGraphicsTarget> draw)
+        void CreatePdfUsingCopiedPartialPage(string testName, string importedPdf, int importedPage, SizeF paperSize, RectangleF sourceRectangleInInches, RectangleF destRectangleInInches, Action<IGraphicsTarget> draw)
         {
             string pdfFileName = TestUtil.GetTestFile("pdfrender\\" + testName) + "_temp.pdf";
             string pngFileName = TestUtil.GetTestFile("pdfrender\\" + testName) + "_converted.png";
             string baselineFileName = TestUtil.GetTestFile("pdfrender\\" + testName) + ".png";
 
             PdfCreation.CreatePdfAndPngUsingCopiedPartialPage(pdfFileName, pngFileName, importedPdf, importedPage, 
-                                                              new SizeF(8.5F, 11F), sourceRectangleInInches, draw);
+                                                              paperSize, sourceRectangleInInches, destRectangleInInches, draw);
 
             // Load PNG
             using (Bitmap bitmapNew = (Bitmap)(Image.FromFile(pngFileName))) {
@@ -488,12 +488,16 @@ namespace Map_PDF.Tests
             );
         }
 
+        SizeF letterSize = new SizeF(8.5F, 11.0F);
+
         [Test]
         public void CopiedPartialPageRGB()
         {
             CreatePdfUsingCopiedPartialPage("copypartialpagergb",
-                TestUtil.GetTestFile("pdfrender\\Lincoln-RGB.pdf"), 0, 
+                TestUtil.GetTestFile("pdfrender\\Lincoln-RGB.pdf"), 0,
+                letterSize,
                 RectangleF.FromLTRB(2, 3, 7, 8),
+                new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
                     grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
@@ -530,7 +534,9 @@ namespace Map_PDF.Tests
         {
             CreatePdfUsingCopiedPartialPage("copypartialpagecmyk",
                 TestUtil.GetTestFile("pdfrender\\Lincoln-CMYK.pdf"), 0,
+                letterSize,
                 RectangleF.FromLTRB(2, 3, 7, 8),
+                new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
                     grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
@@ -551,7 +557,47 @@ namespace Map_PDF.Tests
         {
             CreatePdfUsingCopiedPartialPage("copypartialpage2",
                 TestUtil.GetTestFile("pdfrender\\CleElum.pdf"), 0,
-                RectangleF.FromLTRB(0, 1, 7, 4),
+                letterSize,
+                new RectangleF(9.05F, 5.42F, 4.91F, 3.64F),
+                new RectangleF(new PointF(0, 0), letterSize),
+                grTarget => {
+                    object penKey1 = new object();
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
+                    grTarget.DrawLine(penKey1, new PointF(100, 100), new PointF(600, 150));
+
+                    object penKey2 = new object();
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.DrawLine(penKey2, new PointF(100, 200), new PointF(600, 250));
+
+                    object penKey3 = new object();
+                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCap.Square, LineJoin.Miter, 2);
+                    grTarget.DrawLine(penKey3, new PointF(100, 300), new PointF(600, 350));
+
+                    grTarget.DrawPolyline(penKey1, new PointF[] { new PointF(150, 400), new PointF(150, 450), new PointF(400, 400), new PointF(300, 500) });
+
+                    grTarget.DrawPolyline(penKey2, new PointF[] { new PointF(150, 500), new PointF(150, 550), new PointF(400, 500), new PointF(300, 600) });
+
+                    grTarget.DrawPolyline(penKey3, new PointF[] { new PointF(120, 700), new PointF(150, 750), new PointF(400, 700), new PointF(300, 800) });
+
+                    grTarget.DrawPolygon(penKey1, new PointF[] { new PointF(500, 400), new PointF(700, 500), new PointF(650, 600), new PointF(535, 520) });
+
+                    grTarget.DrawPolygon(penKey2, new PointF[] { new PointF(500, 600), new PointF(700, 700), new PointF(650, 800), new PointF(535, 720) });
+
+                    grTarget.DrawPolygon(penKey3, new PointF[] { new PointF(500, 800), new PointF(700, 900), new PointF(650, 1000), new PointF(535, 920) });
+
+
+                }
+            );
+        }
+
+        [Test]
+        public void CopiedPartialPage4()
+        {
+            CreatePdfUsingCopiedPartialPage("copypartialpage4",
+                TestUtil.GetTestFile("pdfrender\\CleElum.pdf"), 0,
+                letterSize,
+                new RectangleF(9.05F, 5.42F, 4.91F, 3.64F),
+                new RectangleF(new PointF(1, 2), new SizeF(5, 4.5F)),
                 grTarget => {
                     object penKey1 = new object();
                     grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
@@ -589,7 +635,9 @@ namespace Map_PDF.Tests
         {
             CreatePdfUsingCopiedPartialPage("copypartialpage3",
                 TestUtil.GetTestFile("pdfrender\\tengesdalslia.pdf"), 0,
+                letterSize,
                 RectangleF.FromLTRB(2, 3, 7, 8),
+                new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
                     grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
@@ -604,5 +652,29 @@ namespace Map_PDF.Tests
                 }
             );
         }
+
+        [Test]
+        public void CopiedPartialPage5()
+        {
+            CreatePdfUsingCopiedPartialPage("copypartialpage5",
+                TestUtil.GetTestFile("pdfrender\\tengesdalslia.pdf"), 0,
+                letterSize,
+                RectangleF.FromLTRB(2, 3, 7, 8),
+                new RectangleF(new PointF(1, 1.5F), new SizeF(7, 8)),
+                grTarget => {
+                    object penKey1 = new object();
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+
+                    grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
+                    grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
+                    grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
+
+                    object penKey2 = new object();
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 150, 100 + 700, 150 + 800));
+                }
+            );
+        }
+
     }
 }

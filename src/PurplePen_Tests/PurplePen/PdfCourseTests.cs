@@ -788,6 +788,60 @@ namespace PurplePen.Tests
         }
 
         [TestMethod]
+        public void PrintAreaAndScaling1()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\printareascaling1");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\UWLetter.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course A.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course B.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course C.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course D.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course E.pdf"),
+                },
+                new string[] { TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course A.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course B.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course C.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course D.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling1\\Course E.png"),
+                });
+        }
+
+        [TestMethod]
+        public void PrintAreaAndScaling2()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\printareascaling2");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\Tengle.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("pdfcourse\\printareascaling2\\Course 1.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling2\\Course 2.pdf"),
+                },
+                new string[] { TestUtil.GetTestFile("pdfcourse\\printareascaling2\\Course 1.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling2\\Course 2.png"),
+                });
+        }
+
+        [TestMethod]
         public void PdfBadIStreamFallback()
         {
             CoursePdfSettings settings = new CoursePdfSettings();

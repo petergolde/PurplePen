@@ -1,0 +1,91 @@
+﻿<course-scribe-event>
+  <event id="1">
+    <title>Tengle</title>
+    <map kind="PDF" scale="15000" absolute-path="C:\Users\peter\Documents\temp\pdfcropping\tengesdalslia.pdf">tengesdalslia.pdf</map>
+    <standards map="2017" description="2018" />
+    <all-controls print-scale="15000" description-kind="symbols" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-1.52587891E-05" top="242.823975" right="384.047974" bottom="-3.05175781E-05" page-width="956" page-height="1512" page-margins="0" page-landscape="true" />
+    <numbering start="31" disallow-invertible="false" />
+    <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />
+    <course-appearance scale-sizes="RelativeTo15000" scale-sizes-circle-gaps="true" number-font="Roboto" auto-leg-gap-size="3.5" blend-purple="true" blend-style="blend" />
+    <descriptions lang="en" color="black" />
+    <ocad overprint-colors="false" />
+  </event>
+  <control id="1" kind="start">
+    <location x="186.705231" y="135.809372" />
+  </control>
+  <control id="2" kind="normal">
+    <code>31</code>
+    <location x="159.665421" y="150.402008" />
+  </control>
+  <control id="3" kind="normal">
+    <code>32</code>
+    <location x="73.59289" y="184.9741" />
+  </control>
+  <control id="4" kind="normal">
+    <code>33</code>
+    <location x="124.488113" y="204.323456" />
+  </control>
+  <control id="5" kind="normal">
+    <code>34</code>
+    <location x="157.592941" y="207.808182" />
+  </control>
+  <control id="6" kind="finish">
+    <location x="188.5886" y="177.637848" />
+    <description box="all" iof-2004-ref="14.3" />
+  </control>
+  <course id="1" kind="normal" order="1">
+    <name>Course 1</name>
+    <labels label-kind="sequence" />
+    <first course-control="1" />
+    <print-area automatic="true" restrict-to-page-size="true" left="-1.52587891E-05" top="242.823975" right="384.047974" bottom="-3.05175781E-05" page-width="956" page-height="1512" page-margins="0" page-landscape="true" />
+    <options print-scale="15000" hide-from-reports="false" description-kind="symbols" />
+  </course>
+  <course id="2" kind="normal" order="2">
+    <name>Course 2</name>
+    <labels label-kind="sequence" />
+    <first course-control="7" />
+    <print-area automatic="false" restrict-to-page-size="true" left="44.6310272" top="224.550842" right="234.115036" bottom="92.97883" page-width="827" page-height="1169" page-margins="25" page-landscape="true" />
+    <options print-scale="10000" hide-from-reports="false" description-kind="symbols" />
+  </course>
+  <course-control id="1" control="1">
+    <next course-control="2" />
+  </course-control>
+  <course-control id="2" control="2">
+    <next course-control="3" />
+  </course-control>
+  <course-control id="3" control="3">
+    <next course-control="4" />
+  </course-control>
+  <course-control id="4" control="4">
+    <next course-control="5" />
+  </course-control>
+  <course-control id="5" control="5">
+    <next course-control="6" />
+  </course-control>
+  <course-control id="6" control="6" />
+  <course-control id="7" control="1">
+    <next course-control="8" />
+  </course-control>
+  <course-control id="8" control="2">
+    <next course-control="9" />
+  </course-control>
+  <course-control id="9" control="3">
+    <next course-control="10" />
+  </course-control>
+  <course-control id="10" control="4">
+    <next course-control="11" />
+  </course-control>
+  <course-control id="11" control="5">
+    <next course-control="12" />
+  </course-control>
+  <course-control id="12" control="6" />
+  <special-object id="1" kind="registration-mark">
+    <location x="21.43841" y="224.48407" />
+    <courses all="true" />
+  </special-object>
+  <special-object id="2" kind="registration-mark">
+    <location x="224.192719" y="209.1395" />
+    <courses all="true" />
+  </special-object>
+</course-scribe-event>

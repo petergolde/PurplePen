@@ -47,7 +47,7 @@ namespace Map_PDF.Tests
 
             // Create PDF at 100 pixel per inch.
             PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(pdfFileName), false);
-            IGraphicsTarget graphicsTarget = pdfWriter.BeginCopiedPage(importer, 0);
+            IGraphicsTarget graphicsTarget = pdfWriter.BeginCopiedPage(importer, pageImport);
             draw(graphicsTarget);
             pdfWriter.EndPage(graphicsTarget);
             pdfWriter.Save(pdfFileName);
@@ -61,7 +61,8 @@ namespace Map_PDF.Tests
 
         }
 
-        public static void CreatePdfAndPngUsingCopiedPartialPage(string pdfFileName, string pngFileName, string pdfImport, int pageImport, SizeF sizeInInches, RectangleF partialPageInInches, Action<IGraphicsTarget> draw)
+        public static void CreatePdfAndPngUsingCopiedPartialPage(string pdfFileName, string pngFileName, string pdfImport, int pageImport, 
+                                                                 SizeF sizeInInches, RectangleF partialPageInInches, RectangleF destRectangleInInches, Action<IGraphicsTarget> draw)
         {
             File.Delete(pdfFileName);
             File.Delete(pngFileName);
@@ -71,7 +72,7 @@ namespace Map_PDF.Tests
 
             // Create PDF at 100 pixel per inch.
             PdfWriter pdfWriter = new PdfWriter(Path.GetFileNameWithoutExtension(pdfFileName), false);
-            IGraphicsTarget graphicsTarget = pdfWriter.BeginCopiedPartialPage(importer, 0, sizeInInches, partialPageInInches);
+            IGraphicsTarget graphicsTarget = pdfWriter.BeginCopiedPartialPage(importer, pageImport, sizeInInches, partialPageInInches, destRectangleInInches);
             draw(graphicsTarget);
             pdfWriter.EndPage(graphicsTarget);
             pdfWriter.Save(pdfFileName);

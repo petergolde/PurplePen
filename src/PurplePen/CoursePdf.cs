@@ -222,24 +222,22 @@ namespace PurplePen
                     pdfImporter = new PdfImporter(sourcePdfMapFileName);
 
                     float scaleRatio = CourseView.CreatePrintingCourseView(eventDB, page.courseDesignator).ScaleRatio;
-                    Matrix transform = Geometry.CreateInvertedRectangleTransform(page.printRectangle, page.mapRectangle);
-                    RectangleF printedPortionInMapCoords = Geometry.TransformRectangle(transform, new RectangleF(0, 0, paperSize.Width * 100F, paperSize.Height * 100F));
-                    RectangleF printedPortionInInches = new RectangleF(
-                        Geometry.InchesFromMm(printedPortionInMapCoords.Left),
-                        Geometry.InchesFromMm(mapBounds.Height - printedPortionInMapCoords.Bottom),
-                        Geometry.InchesFromMm(printedPortionInMapCoords.Width),
-                        Geometry.InchesFromMm(printedPortionInMapCoords.Height));
+                    RectangleF sourcePortionInInches = new RectangleF(
+                        Geometry.InchesFromMm(page.mapRectangle.Left),
+                        Geometry.InchesFromMm(mapBounds.Height - page.mapRectangle.Bottom),
+                        Geometry.InchesFromMm(page.mapRectangle.Width),
+                        Geometry.InchesFromMm(page.mapRectangle.Height));
                     RectangleF cropRectangleInInches = new RectangleF(page.printRectangle.Left / 100F, page.printRectangle.Top / 100F,
                                                                     page.printRectangle.Width / 100F, page.printRectangle.Height / 100F);
 
                     if (scaleRatio == 1.0 && Geometry.SimilarRectangles(cropRectangleInInches, new RectangleF(0, 0, paperSize.Width, paperSize.Height), 0.01F) &&
                         Geometry.SimilarRectangles(page.mapRectangle, mapBounds, 0.01F)) 
                     {
-                        // If we're doing a PDF at scale 1, and ther print area is the same as the page size, we just copy the page directly.
+                        // If we're doing a PDF at scale 1, no cropping, and the print area is the same as the page size, we just copy the page directly.
                         grTarget = pdfWriter.BeginCopiedPage(pdfImporter, 0);
                     }
                     else {
-                        grTarget = pdfWriter.BeginCopiedPartialPage(pdfImporter, 0, paperSize, printedPortionInInches, cropRectangleInInches);
+                        grTarget = pdfWriter.BeginCopiedPartialPage(pdfImporter, 0, paperSize, sourcePortionInInches, cropRectangleInInches);
                     }
 
                     // Don't draw the map normally.

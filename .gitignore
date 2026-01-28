@@ -58,6 +58,7 @@ ipch/
 *_temp.*
 *_diff.png
 *_new.png
+*_tempnew.png
 *.crunchproject.local.xml
 src/TestResults
 src/tools/TranslateTool/TestResults
@@ -75,7 +76,6 @@ doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
 src/PPenDXCore.Solution
 *.DS_Store
-src/TestFiles/rendering/startendglyph9_tempnew.png
 *.VC.opendb
 *.VC.db
 src/packages/
