@@ -147,6 +147,7 @@ for the symbols.
   <language lang="pl" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" genders="męski,żeński,nijaki">polski</language>
   <language lang="pt-BR" plural-nouns="true" plural-modifiers="false" gender-modifiers="true" case-modifers="false" genders="masculino,feminino">português (Brasil)</language>
   <language lang="ro" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">română</language>
+  <language lang="sk" plural-nouns="true" plural-modifiers="true" gender-modifiers="true" case-modifers="true" genders="masculine,feminine,neuter" cases="genitive,genitivePlural,instrumental,instrumentalPlural">slovenčina</language>
   <language lang="sv" plural-nouns="true" plural-modifiers="false" gender-modifiers="false">Svenska</language>
   <language lang="zh-HK" plural-nouns="false" plural-modifiers="false" gender-modifiers="false">中文(香港特別行政區)</language>
   <language lang="zh-TW" plural-nouns="true" plural-modifiers="false" gender-modifiers="false" case-modifers="false">繁體中文(臺灣)</language>
@@ -194,6 +195,8 @@ for the symbols.
     <text lang="pt-BR">Sinalética</text>
     <name lang="ro">Toate posturile</name>
     <text lang="ro">Toate posturile</text>
+    <name lang="sk">Všetky kontroly</name>
+    <text lang="sk">Všetky kontroly</text>
     <name lang="sv">Alla kontroller</name>
     <text lang="sv">Alla kontroller</text>
     <name lang="zh-HK">All controls</name>
@@ -244,6 +247,8 @@ for the symbols.
     <text lang="pt-BR">Distância {0}</text>
     <name lang="ro">Lungime traseu</name>
     <text lang="ro">Lungime {0}</text>
+    <name lang="sk">Dĺžka</name>
+    <text lang="sk">Dĺžka {0}</text>
     <name lang="sv">Banlängd</name>
     <text lang="sv">Längd {0}</text>
     <name lang="zh-HK">Course Length</name>
@@ -295,6 +300,8 @@ for the symbols.
     <text lang="pt-BR">Distância {0}, Desnível {1}</text>
     <name lang="ro">Lungimea și diferența de nivel</name>
     <text lang="ro">Lungime {0}, diferență de nivel {1}</text>
+    <name lang="sk">Dĺžka a prevýšenie</name>
+    <text lang="sk">Dĺžka {0}, Prevýšenie {1}</text>
     <name lang="sv">Banlängd och stigning</name>
     <text lang="sv">Längd {0}, stigning {1}</text>
     <name lang="zh-HK">Course Length and Climb</name>
@@ -345,6 +352,8 @@ for the symbols.
     <text lang="pt-BR">{0} Código de Controles</text>
     <name lang="ro">Numărul de posturi</name>
     <text lang="ro">{0} posturi</text>
+    <name lang="sk">Počet kontrol</name>
+    <text lang="sk">{0} kontrol</text>
     <name lang="sv">Antal kontroller</name>
     <text lang="sv">{0} kontroller</text>
     <name lang="zh-HK">Number of Controls</name>
@@ -395,6 +404,8 @@ for the symbols.
     <text lang="pt-BR">{0} Número de Pontos</text>
     <name lang="ro">Numărul de Puncte</name>
     <text lang="ro">{0} puncte</text>
+    <name lang="sk">Body</name>
+    <text lang="sk">{0} bodov</text>
     <name lang="sv">Antal poäng</name>
     <text lang="sv">{0} poäng</text>
     <name lang="zh-HK">Number of Points</name>
@@ -447,6 +458,8 @@ for the symbols.
     <text lang="pt-BR">{0} e {1}</text>
     <name lang="ro">Și</name>
     <text lang="ro">{0} și {1}</text>
+    <name lang="sk">a</name>
+    <text lang="sk">{0} a {1}</text>
     <name lang="sv">Och</name>
     <text lang="sv">{0} och {1}</text>
     <name lang="zh-HK">And</name>
@@ -499,6 +512,8 @@ for the symbols.
     <text lang="pt-BR">Partida</text>
     <name lang="ro">Start</name>
     <text lang="ro">start</text>
+    <name lang="sk">Štart</name>
+    <text lang="sk">štart</text>
     <name lang="sv">Start</name>
     <text lang="sv">start</text>
     <name lang="zh-HK">Start</name>
@@ -562,6 +577,8 @@ for the symbols.
     <text lang="pt-BR">{0} do Norte</text>
     <name lang="ro">Nordic</name>
     <text lang="ro">N {0}</text>
+    <name lang="sk">Severný</name>
+    <text lang="sk">S {0}</text>
     <name lang="sv">Norra</name>
     <text lang="sv">N {0}</text>
     <name lang="zh-HK">Northern</name>
@@ -624,6 +641,8 @@ for the symbols.
     <text lang="pt-BR">{0} de Nordeste</text>
     <name lang="ro">Nord-estic</name>
     <text lang="ro">NE {0}</text>
+    <name lang="sk">Severovýchodný</name>
+    <text lang="sk">SV {0}</text>
     <name lang="sv">Nordöstra</name>
     <text lang="sv">NÖ {0}</text>
     <name lang="zh-HK">North-eastern</name>
@@ -686,6 +705,8 @@ for the symbols.
     <text lang="pt-BR">{0} de Leste</text>
     <name lang="ro">Estic</name>
     <text lang="ro">E {0}</text>
+    <name lang="sk">Východný</name>
+    <text lang="sk">V {0}</text>
     <name lang="sv">Östra</name>
     <text lang="sv">Ö {0}</text>
     <name lang="zh-HK">Eastern</name>
@@ -748,6 +769,8 @@ for the symbols.
     <text lang="pt-BR">{0} de Sudeste</text>
     <name lang="ro">Sud-estic</name>
     <text lang="ro">SE {0}</text>
+    <name lang="sk">Juhovýchodný</name>
+    <text lang="sk">JV {0}</text>
     <name lang="sv">Sydöstra</name>
     <text lang="sv">SÖ {0}</text>
     <name lang="zh-HK">South-eastern</name>
@@ -810,6 +833,8 @@ for the symbols.
     <text lang="pt-BR">{0} do Sul</text>
     <name lang="ro">Sudic</name>
     <text lang="ro">S {0}</text>
+    <name lang="sk">Južný</name>
+    <text lang="sk">J {0}</text>
     <name lang="sv">Södra</name>
     <text lang="sv">S {0}</text>
     <name lang="zh-HK">Southern</name>
@@ -872,6 +897,8 @@ for the symbols.
     <text lang="pt-BR">{0} de Sudoeste</text>
     <name lang="ro">Sud-vestic</name>
     <text lang="ro">SW {0}</text>
+    <name lang="sk">Juhozápadný</name>
+    <text lang="sk">JZ {0}</text>
     <name lang="sv">Sydvästra</name>
     <text lang="sv">SV {0}</text>
     <name lang="zh-HK">South-western</name>
@@ -934,6 +961,8 @@ for the symbols.
     <text lang="pt-BR">{0} de Oeste</text>
     <name lang="ro">Vestic</name>
     <text lang="ro">W {0}</text>
+    <name lang="sk">Západný</name>
+    <text lang="sk">Z {0}</text>
     <name lang="sv">Västra</name>
     <text lang="sv">V {0}</text>
     <name lang="zh-HK">Western</name>
@@ -996,6 +1025,8 @@ for the symbols.
     <text lang="pt-BR">{0} de Noroeste</text>
     <name lang="ro">Nord-vestic</name>
     <text lang="ro">NW {0}</text>
+    <name lang="sk">Severozápadný</name>
+    <text lang="sk">SZ {0}</text>
     <name lang="sv">Nordvästra</name>
     <text lang="sv">NV {0}</text>
     <name lang="zh-HK">North-western</name>
@@ -1060,6 +1091,11 @@ for the symbols.
     <text lang="pt-BR">{0} de cima</text>
     <name lang="ro">Superior</name>
     <text lang="ro">superior {0}</text>
+    <name lang="sk">Horný</name>
+    <text lang="sk" gender="neuter">horné {0}</text>
+    <text lang="sk" gender="feminine">horná {0}</text>
+    <text lang="sk" gender="masculine">horný {0}</text>
+    <text lang="sk" plural="true">horné {0}</text>
     <name lang="sv">Övre</name>
     <text lang="sv">övre {0}</text>
     <name lang="zh-HK">Upper</name>
@@ -1126,6 +1162,11 @@ for the symbols.
     <text lang="pt-BR">{0} de baixo</text>
     <name lang="ro">Inferior</name>
     <text lang="ro">inferior {0}</text>
+    <name lang="sk">Dolné</name>
+    <text lang="sk" gender="neuter">dolné {0}</text>
+    <text lang="sk" gender="feminine">dolná {0}</text>
+    <text lang="sk" gender="masculine">dolný {0}</text>
+    <text lang="sk" plural="true">dolné {0}</text>
     <name lang="sv">Nedre</name>
     <text lang="sv">nedre {0}</text>
     <name lang="zh-HK">Lower</name>
@@ -1192,6 +1233,11 @@ for the symbols.
     <text lang="pt-BR">{0} do meio </text>
     <name lang="ro">Mijloc</name>
     <text lang="ro">mijloc {0}</text>
+    <name lang="sk">Stredný</name>
+    <text lang="sk" gender="neuter">stredné {0}</text>
+    <text lang="sk" gender="feminine">stredná {0}</text>
+    <text lang="sk" gender="masculine">stredný {0}</text>
+    <text lang="sk" plural="true">stredné {0}</text>
     <name lang="sv">Mellersta</name>
     <text lang="sv">mellersta {0}</text>
     <name lang="zh-HK">Middle</name>
@@ -1277,6 +1323,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Platôs</text>
     <name lang="ro">Terasa</name>
     <text lang="ro">terasă</text>
+    <name lang="sk">Terasa</name>
+    <text lang="sk" gender="feminine">terasa</text>
+    <text lang="sk" gender="feminine" case="genitive">terasy</text>
+    <text lang="sk" gender="feminine" case="instrumental">terasou</text>
+    <text lang="sk" plural="true" gender="feminine">terasy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">terás</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">terasami</text>
     <name lang="sv">Terrass</name>
     <text lang="sv" plural="true">terrasserna</text>
     <text lang="sv">terrassen</text>
@@ -1367,6 +1420,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Esporões</text>
     <name lang="ro">Pinten</name>
     <text lang="ro">pinten</text>
+    <name lang="sk">Hrebienok</name>
+    <text lang="sk" gender="masculine">hrebienok</text>
+    <text lang="sk" gender="masculine" case="genitive">hrebienka</text>
+    <text lang="sk" gender="masculine" case="instrumental">hrebienkom</text>
+    <text lang="sk" plural="true" gender="masculine">hrebienky</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">hrebienok</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">hrebienkami</text>
     <name lang="sv">Näsa</name>
     <text lang="sv" plural="true">näsorna</text>
     <text lang="sv">näsan</text>
@@ -1457,6 +1517,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Talvegues</text>
     <name lang="ro">Vâlcel</name>
     <text lang="ro">vâlcel</text>
+    <name lang="sk">Údolíčko</name>
+    <text lang="sk" gender="neuter">údolíčko</text>
+    <text lang="sk" gender="neuter" case="genitive">údolíčka</text>
+    <text lang="sk" gender="neuter" case="instrumental">údolíčkom</text>
+    <text lang="sk" plural="true" gender="neuter">údolíčka</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">údolíčok</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">údolíčkami</text>
     <name lang="sv">Sänka</name>
     <text lang="sv" plural="true">sänkorna</text>
     <text lang="sv">sänkan</text>
@@ -1541,6 +1608,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Barrancos</text>
     <name lang="ro">Ruptură de teren</name>
     <text lang="ro">ruptură de teren</text>
+    <name lang="sk">Zemný zráz</name>
+    <text lang="sk" gender="masculine">zemný zráz</text>
+    <text lang="sk" gender="masculine" case="genitive">zemného zrázu</text>
+    <text lang="sk" gender="masculine" case="instrumental">zemným zrázom</text>
+    <text lang="sk" plural="true" gender="masculine">zemné zrázy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">zemných zrázov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">zemnými zrázmi</text>
     <name lang="sv">Skärning</name>
     <text lang="sv" plural="true">skärningarna</text>
     <text lang="sv">skärningen</text>
@@ -1632,6 +1706,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Pedreiras</text>
     <name lang="ro">Carieră</name>
     <text lang="ro">carieră</text>
+    <name lang="sk">Lom</name>
+    <text lang="sk" gender="masculine">lom</text>
+    <text lang="sk" gender="masculine" case="genitive">lomu</text>
+    <text lang="sk" gender="masculine" case="instrumental">lomom</text>
+    <text lang="sk" plural="true" gender="masculine">lomy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">lomov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">lomami</text>
     <name lang="sv">Grustag/stenbrott</name>
     <text lang="sv" plural="true">grustagen/stenbrotten</text>
     <text lang="sv">grustaget/stenbrottet</text>
@@ -1726,6 +1807,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Taludes</text>
     <name lang="ro">Zid de pământ</name>
     <text lang="ro">zid de pământ</text>
+    <name lang="sk">Násyp</name>
+    <text lang="sk" gender="masculine">násyp</text>
+    <text lang="sk" gender="masculine" case="genitive">násypu</text>
+    <text lang="sk" gender="masculine" case="instrumental">násypom</text>
+    <text lang="sk" plural="true" gender="masculine">násypy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">násypov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">násypmi</text>
     <name lang="sv">Jordvall</name>
     <text lang="sv" plural="true">jordvallarna</text>
     <text lang="sv">jordvallen</text>
@@ -1815,6 +1903,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Erosões</text>
     <name lang="ro">Viroagă</name>
     <text lang="ro">viroagă</text>
+    <name lang="sk">Ryha</name>
+    <text lang="sk" gender="feminine">ryha</text>
+    <text lang="sk" gender="feminine" case="genitive">ryhy</text>
+    <text lang="sk" gender="feminine" case="instrumental">ryhou</text>
+    <text lang="sk" plural="true" gender="feminine">ryhy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">rýh</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">ryhami</text>
     <name lang="sv">Fåra</name>
     <text lang="sv" plural="true">fårorna</text>
     <text lang="sv">fåran</text>
@@ -1889,6 +1984,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Valas secas</text>
     <name lang="ro">Viroagă mica</name>
     <text lang="ro">viroagă mică</text>
+    <name lang="sk">Plytká ryha</name>
+    <text lang="sk" gender="feminine">plytká ryha</text>
+    <text lang="sk" gender="feminine" case="genitive">plytkej ryhy</text>
+    <text lang="sk" gender="feminine" case="instrumental">plytkou ryhou</text>
+    <text lang="sk" plural="true" gender="feminine">plytké ryhy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">plytkých rýh</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">plytkými ryhami</text>
     <name lang="sv">Liten fåra</name>
     <text lang="sv" plural="true">små fårorna</text>
     <text lang="sv">lilla fåran</text>
@@ -1981,6 +2083,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Colinas</text>
     <name lang="ro">Mamelon</name>
     <text lang="ro">mamelon</text>
+    <name lang="sk">Kopa</name>
+    <text lang="sk" gender="feminine">kopa</text>
+    <text lang="sk" gender="feminine" case="genitive">kopy</text>
+    <text lang="sk" gender="feminine" case="instrumental">kopou</text>
+    <text lang="sk" plural="true" gender="feminine">kopy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">kôp</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">kopami</text>
     <name lang="sv">Höjd</name>
     <text lang="sv">höjden</text>
     <text lang="sv" plural="true">höjderna</text>
@@ -2065,6 +2174,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Montículos</text>
     <name lang="ro">Movilă</name>
     <text lang="ro">movilă</text>
+    <name lang="sk">Kôpka</name>
+    <text lang="sk" gender="feminine">kôpka</text>
+    <text lang="sk" gender="feminine" case="genitive">kôpky</text>
+    <text lang="sk" gender="feminine" case="instrumental">kôpkou</text>
+    <text lang="sk" plural="true" gender="feminine">kôpky</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">kôpok</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">kôpkami</text>
     <name lang="sv">Punkthöjd</name>
     <text lang="sv">punkthöjden</text>
     <text lang="sv" plural="true">punkthöjderna</text>
@@ -2137,6 +2253,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Montículos</text>
     <name lang="ro">Movilă</name>
     <text lang="ro">movilă</text>
+    <name lang="sk">Kôpka</name>
+    <text lang="sk" gender="feminine">kôpka</text>
+    <text lang="sk" gender="feminine" case="genitive">kôpky</text>
+    <text lang="sk" gender="feminine" case="instrumental">kôpkou</text>
+    <text lang="sk" plural="true" gender="feminine">kôpky</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">kôpok</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">kôpkami</text>
     <name lang="sv">Punkthöjd</name>
     <text lang="sv">punkthöjden</text>
     <text lang="sv" plural="true">punkthöjderna</text>
@@ -2209,6 +2332,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Colos</text>
     <name lang="ro">Șa</name>
     <text lang="ro">șa</text>
+    <name lang="sk">Sedlo</name>
+    <text lang="sk" gender="neuter">sedlo</text>
+    <text lang="sk" gender="neuter" case="genitive">sedla</text>
+    <text lang="sk" gender="neuter" case="instrumental">sedlom</text>
+    <text lang="sk" plural="true" gender="neuter">sedlá</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">sediel</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">sedlami</text>
     <name lang="sv">Sadel</name>
     <text lang="sv" plural="true">sadlarna</text>
     <text lang="sv">sadeln</text>
@@ -2290,6 +2420,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Depressões</text>
     <name lang="ro">Găvan</name>
     <text lang="ro">găvan</text>
+    <name lang="sk">Priehlbeň</name>
+    <text lang="sk" gender="feminine">priehlbeň</text>
+    <text lang="sk" gender="feminine" case="genitive">priehlbne</text>
+    <text lang="sk" gender="feminine" case="instrumental">priehlbňou</text>
+    <text lang="sk" plural="true" gender="feminine">priehlbne</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">priehlbní</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">priehlbňami</text>
     <name lang="sv">Grop</name>
     <text lang="sv">gropen</text>
     <text lang="sv" plural="true">groparna</text>
@@ -2384,6 +2521,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Pequenas depressões</text>
     <name lang="ro">Groapă mică</name>
     <text lang="ro">groapă mică</text>
+    <name lang="sk">Malá priehlbeň</name>
+    <text lang="sk" gender="feminine">malá priehlbeň</text>
+    <text lang="sk" gender="feminine" case="genitive">malej priehlbne</text>
+    <text lang="sk" gender="feminine" case="instrumental">malou priehlbňou</text>
+    <text lang="sk" plural="true" gender="feminine">malé priehlbne</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">malých priehlbní</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">malými priehlbňami</text>
     <name lang="sv">Liten naturlig grop</name>
     <text lang="sv" plural="true">små naturliga groparna</text>
     <text lang="sv">lilla naturliga gropen</text>
@@ -2462,6 +2606,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Buracos</text>
     <name lang="ro">Groapă mare</name>
     <text lang="ro">groapă mare</text>
+    <name lang="sk">Jama</name>
+    <text lang="sk" gender="feminine">jama</text>
+    <text lang="sk" gender="feminine" case="genitive">jamy</text>
+    <text lang="sk" gender="feminine" case="instrumental">jamou</text>
+    <text lang="sk" plural="true" gender="feminine">jamy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">jám</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">jamami</text>
     <name lang="sv">Liten grävd grop</name>
     <text lang="sv" plural="true">små grävda groparna</text>
     <text lang="sv">lilla grävda gropen</text>
@@ -2534,6 +2685,13 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">Terreno acidentado</text>
     <name lang="ro">Teren frământat</name>
     <text lang="ro">teren frământat</text>
+    <name lang="sk">Rozbitý povrch</name>
+    <text lang="sk" gender="masculine">rozbitý povrch</text>
+    <text lang="sk" gender="masculine" case="genitive">rozbitého povrchu</text>
+    <text lang="sk" gender="masculine" case="instrumental">rozbitým povrchom</text>
+    <text lang="sk" plural="true" gender="masculine">rozbité povrchy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">rozbitých povrchov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">rozbitými povrchmi</text>
     <name lang="sv">Småkuperad terräng</name>
     <text lang="sv">småkuperad terräng</text>
     <name lang="zh-HK">Broken ground</name>
@@ -2628,6 +2786,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Cupinzeiros</text>
     <name lang="ro">Mușuroi</name>
     <text lang="ro">mușuroi</text>
+    <name lang="sk">Mravenisko</name>
+    <text lang="sk" gender="neuter">mravenisko</text>
+    <text lang="sk" gender="neuter" case="genitive">mraveniska</text>
+    <text lang="sk" gender="neuter" case="instrumental">mraveniskom</text>
+    <text lang="sk" plural="true" gender="neuter">mraveniská</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">mravenísk</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">mraveniskami</text>
     <name lang="sv">Myrstack</name>
     <text lang="sv" plural="true">myrstackarna</text>
     <text lang="sv">myrstacken</text>
@@ -2713,6 +2878,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Penhascos</text>
     <name lang="ro">Margine stâncoasă</name>
     <text lang="ro">margine stâncoasă</text>
+    <name lang="sk">Skalný zráz/skalná stena</name>
+    <text lang="sk" gender="masculine">skalný zráz</text>
+    <text lang="sk" gender="masculine" case="genitive">skalného zrázu</text>
+    <text lang="sk" gender="masculine" case="instrumental">skalným zrázom</text>
+    <text lang="sk" plural="true" gender="masculine">skalné zrázy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">skalných zrázov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">skalnými zrázmi</text>
     <name lang="sv">Brant</name>
     <text lang="sv" plural="true">branterna</text>
     <text lang="sv">branten</text>
@@ -2797,6 +2969,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Rochas altas</text>
     <name lang="ro">Stâlp piatră</name>
     <text lang="ro">stâlp piatră</text>
+    <name lang="sk">Skalná veža</name>
+    <text lang="sk" gender="feminine">sklaná veža</text>
+    <text lang="sk" gender="feminine" case="genitive">sklanej veže</text>
+    <text lang="sk" gender="feminine" case="instrumental">sklanou vežou</text>
+    <text lang="sk" plural="true" gender="feminine">sklané veže</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">sklaných veží</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">sklanými vežami</text>
     <name lang="sv">Klippa</name>
     <text lang="sv">klippan</text>
     <text lang="sv" plural="true">klipporna</text>
@@ -2871,6 +3050,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Cavernas</text>
     <name lang="ro">Peșteră</name>
     <text lang="ro">peșteră</text>
+    <name lang="sk">Jaskyňa</name>
+    <text lang="sk" gender="feminine">jaskyňa</text>
+    <text lang="sk" gender="feminine" case="genitive">jaskyne</text>
+    <text lang="sk" gender="feminine" case="instrumental">jaskyňou</text>
+    <text lang="sk" plural="true" gender="feminine">jaskyne</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">jaskýň</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">jaskyňami</text>
     <name lang="sv">Grotta</name>
     <text lang="sv">grottan</text>
     <text lang="sv" plural="true">grottorna</text>
@@ -2957,6 +3143,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Pedras</text>
     <name lang="ro">Bolovan</name>
     <text lang="ro">bolovan</text>
+    <name lang="sk">Balvan</name>
+    <text lang="sk" gender="masculine">balvan</text>
+    <text lang="sk" gender="masculine" case="genitive">balvana</text>
+    <text lang="sk" gender="masculine" case="instrumental">balvanom</text>
+    <text lang="sk" plural="true" gender="masculine">balvany</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">balvanov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">balvanmi</text>
     <name lang="sv">Sten</name>
     <text lang="sv">stenen</text>
     <text lang="sv" plural="true">stenarna</text>
@@ -3029,6 +3222,19 @@ for the symbols.
     <text lang="pt-BR" gender="feminino">Área de pedras</text>
     <name lang="ro">Teren bolovănos</name>
     <text lang="ro">teren bolovănos</text>
+    <name lang="sk">Kamenné pole</name>
+    <text lang="sk" gender="neuter">kamenné pole</text>
+    <text lang="sk" gender="neuter" case="genitive">kamenného pola</text>
+    <text lang="sk" gender="neuter" case="dative">kamennému polu</text>
+    <text lang="sk" gender="neuter" case="accusative">kamenné pole</text>
+    <text lang="sk" gender="neuter" case="locative">kamennom poli</text>
+    <text lang="sk" gender="neuter" case="instrumental">kamenným polom</text>
+    <text lang="sk" plural="true" gender="neuter">kamenné polia</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">kamenným polí</text>
+    <text lang="sk" gender="neuter" case="dativePlural">kamenným poliam</text>
+    <text lang="sk" gender="neuter" case="accusativePlural">kamenné polia</text>
+    <text lang="sk" gender="neuter" case="locativePlural">kamenných poliach</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">kamennými poliami</text>
     <name lang="sv">Blockterräng</name>
     <text lang="sv">blockterrängen</text>
     <name lang="zh-HK">Boulder field</name>
@@ -3121,6 +3327,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Montes de pedras</text>
     <name lang="ro">Adunătură de bolovani</name>
     <text lang="ro">adunătură de bolovani</text>
+    <name lang="sk">Zhluk balvanov</name>
+    <text lang="sk" gender="masculine">zhluk balvanov</text>
+    <text lang="sk" gender="masculine" case="genitive">zhluku balvanov</text>
+    <text lang="sk" gender="masculine" case="instrumental">zhlukom balvanov</text>
+    <text lang="sk" plural="true" gender="masculine">zhluky balvanov</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">zhlukov balvanov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">zhlukmi balvanov</text>
     <name lang="sv">Stensamling</name>
     <text lang="sv">stensamlingen</text>
     <text lang="sv" plural="true">stensamlingarna</text>
@@ -3199,6 +3412,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Terrenos pedregosos</text>
     <name lang="ro">teren pietros</name>
     <text lang="ro">teren pietros</text>
+    <name lang="sk">Kamenistý povrch</name>
+    <text lang="sk" gender="masculine">kamenistý povrch</text>
+    <text lang="sk" gender="masculine" case="genitive">kamenistého povrchu</text>
+    <text lang="sk" gender="masculine" case="instrumental">kamenistým povrchom</text>
+    <text lang="sk" plural="true" gender="masculine">kamenisté povrchy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">kamenistých povrchov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">kamenistými povrchmi</text>
     <name lang="sv">Stenig mark</name>
     <text lang="sv">stenig mark</text>
     <name lang="zh-HK">Stony ground</name>
@@ -3341,6 +3561,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Afloramentos rochosos</text>
     <name lang="ro">Stâncă</name>
     <text lang="ro">stâncă</text>
+    <name lang="sk">Holá skala</name>
+    <text lang="sk" gender="feminine">holá skala</text>
+    <text lang="sk" gender="feminine" case="genitive">holej skaly</text>
+    <text lang="sk" gender="feminine" case="instrumental">holou skalou</text>
+    <text lang="sk" plural="true" gender="feminine">holé skaly</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">holých skál</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">holými skalami</text>
     <name lang="sv">Berg i dagen</name>
     <text lang="sv">berg i dagen</text>
     <name lang="zh-HK">Bare rock</name>
@@ -3440,6 +3667,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Passagens estreitas</text>
     <name lang="ro">Pasaj îngust</name>
     <text lang="ro">pasaj îngust</text>
+    <name lang="sk">Úzky priechod</name>
+    <text lang="sk" gender="masculine">úzky priechod</text>
+    <text lang="sk" gender="masculine" case="genitive">úzkeho priechodu</text>
+    <text lang="sk" gender="masculine" case="instrumental">úzkym priechodom</text>
+    <text lang="sk" plural="true" gender="masculine">úzke priechody</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">úzkych priechodov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">úzkymi priechodmi</text>
     <name lang="sv">Trång passage</name>
     <text lang="sv" plural="true">trånga passagerna</text>
     <text lang="sv">trånga passagen</text>
@@ -3474,6 +3708,13 @@ for the symbols.
     <name lang="pt-BR">Trincheira</name>
     <text lang="pt-BR" gender="feminino">Trincheira</text>
     <text lang="pt-BR" plural="true" gender="feminino">Trincheiras</text>
+    <name lang="sk">Zákop</name>
+    <text lang="sk" gender="masculine">zákop</text>
+    <text lang="sk" gender="masculine" case="genitive">zákopu</text>
+    <text lang="sk" gender="masculine" case="instrumental">zákopom</text>
+    <text lang="sk" plural="true" gender="masculine">zákopy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">zákopov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">zákopmi</text>
     <name lang="zh-TW">Trench</name>
     <text lang="zh-TW" plural="true">trenches</text>
     <text lang="zh-TW">trench</text>
@@ -3546,6 +3787,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Lagos</text>
     <name lang="ro">Lac</name>
     <text lang="ro">lac</text>
+    <name lang="sk">Jazero</name>
+    <text lang="sk" gender="neuter">jazero</text>
+    <text lang="sk" gender="neuter" case="genitive">jazera</text>
+    <text lang="sk" gender="neuter" case="instrumental">jazerom</text>
+    <text lang="sk" plural="true" gender="neuter">jazerá</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">jazier</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">jazerami</text>
     <name lang="sv">Sjö</name>
     <text lang="sv">sjön</text>
     <text lang="sv" plural="true">sjöarna</text>
@@ -3648,6 +3896,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Pequenos Lagos</text>
     <name lang="ro">Baltă</name>
     <text lang="ro">baltă</text>
+    <name lang="sk">Jazierko</name>
+    <text lang="sk" gender="neuter">jazierko</text>
+    <text lang="sk" gender="neuter" case="genitive">jazierka</text>
+    <text lang="sk" gender="neuter" case="instrumental">jazierkom</text>
+    <text lang="sk" plural="true" gender="neuter">jazierka</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">jazierok</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">jazierkami</text>
     <name lang="sv">Göl</name>
     <text lang="sv">gölen</text>
     <text lang="sv" plural="true">gölarna</text>
@@ -3749,6 +4004,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Buracos com água</text>
     <name lang="ro">Groapă cu apă</name>
     <text lang="ro">groapă cu apă</text>
+    <name lang="sk">Jama s vodou</name>
+    <text lang="sk" gender="feminine">jama s vodou</text>
+    <text lang="sk" gender="feminine" case="genitive">jamy s vodou</text>
+    <text lang="sk" gender="feminine" case="instrumental">jomou s vodou</text>
+    <text lang="sk" plural="true" gender="feminine">jamy s vodou</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">jám s vodou</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">jamami s vodou</text>
     <name lang="sv">Vattenhål</name>
     <text lang="sv" plural="true">vattenhålen</text>
     <text lang="sv">vattenhålet</text>
@@ -3846,6 +4108,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Rios</text>
     <name lang="ro">Râu, fir, curs de apă</name>
     <text lang="ro">fir</text>
+    <name lang="sk">Vodný tok</name>
+    <text lang="sk" gender="masculine">vodný tok</text>
+    <text lang="sk" gender="masculine" case="genitive">vodného toku</text>
+    <text lang="sk" gender="masculine" case="instrumental">vodným tokom</text>
+    <text lang="sk" plural="true" gender="masculine">vodné toky</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">vodných tokov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">vodnými tokmi</text>
     <name lang="sv">Vattendrag, å/bäck</name>
     <text lang="sv" plural="true">vattendragen</text>
     <text lang="sv">vattendraget</text>
@@ -3944,6 +4213,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Canais</text>
     <name lang="ro">Canal mic de apă, șanț</name>
     <text lang="ro">șanț</text>
+    <name lang="sk">Vodný kanál</name>
+    <text lang="sk" gender="masculine">vodný kanál</text>
+    <text lang="sk" gender="masculine" case="genitive">vodného kanálu</text>
+    <text lang="sk" gender="masculine" case="instrumental">vodným kanálom</text>
+    <text lang="sk" plural="true" gender="masculine">vodné kanály</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">vodných kanálov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">vodnými kanálmi</text>
     <name lang="sv">Mindre vattendrag, dike</name>
     <text lang="sv" plural="true">dikena</text>
     <text lang="sv">diket</text>
@@ -4066,6 +4342,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Charcos estreitos</text>
     <name lang="ro">Mlaștina ingustă</name>
     <text lang="ro">mlaștina ingustă</text>
+    <name lang="sk">Úzka mokraď</name>
+    <text lang="sk" gender="feminine">úzka mokraď</text>
+    <text lang="sk" gender="feminine" case="genitive">úzkej mokrade</text>
+    <text lang="sk" gender="feminine" case="instrumental">úzkou mokraďou</text>
+    <text lang="sk" plural="true" gender="feminine">úzke mokrade</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">úzkych mokradí</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">úzkymi mokraďami</text>
     <name lang="sv">Surdrag</name>
     <text lang="sv" plural="true">surdragen</text>
     <text lang="sv">surdraget</text>
@@ -4149,6 +4432,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Charcos</text>
     <name lang="ro">Mlaștină</name>
     <text lang="ro">mlaștină</text>
+    <name lang="sk">Močiar</name>
+    <text lang="sk" gender="masculine">močiar</text>
+    <text lang="sk" gender="masculine" case="genitive">močiara</text>
+    <text lang="sk" gender="masculine" case="instrumental">močiarom</text>
+    <text lang="sk" plural="true" gender="masculine">močiare</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">močiarov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">močiarmi</text>
     <name lang="sv">Sankmark</name>
     <text lang="sv" plural="true">sankmarkerna</text>
     <text lang="sv">sankmarken</text>
@@ -4236,6 +4526,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Terras firmes no charco</text>
     <name lang="ro">Teren stabil în mlaștină</name>
     <text lang="ro">teren stabil în mlaștină</text>
+    <name lang="sk">Pevná zem v močiari</name>
+    <text lang="sk" gender="feminine">pevná zem v močiari</text>
+    <text lang="sk" gender="feminine" case="genitive">pevnej zeme v močiari</text>
+    <text lang="sk" gender="feminine" case="instrumental">pevnou zemou v močiari</text>
+    <text lang="sk" plural="true" gender="feminine">pevné zeme v močiari</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">pevných zemí v močiari</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">pevnými zemami v močiari</text>
     <name lang="sv">Fastmark i sankmark</name>
     <text lang="sv">fastmark</text>
     <name lang="zh-HK">Firm ground in marsh</name>
@@ -4357,6 +4654,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Poços</text>
     <name lang="ro">Fântână</name>
     <text lang="ro">fântână</text>
+    <name lang="sk">Studňa</name>
+    <text lang="sk" gender="feminine">studňa</text>
+    <text lang="sk" gender="feminine" case="genitive">studne</text>
+    <text lang="sk" gender="feminine" case="instrumental">studňou</text>
+    <text lang="sk" plural="true" gender="feminine">studne</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">studní</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">studňami</text>
     <name lang="sv">Brunn</name>
     <text lang="sv">brunnen</text>
     <text lang="sv" plural="true">brunnarna</text>
@@ -4446,6 +4750,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Nascentes</text>
     <name lang="ro">Izvor</name>
     <text lang="ro">izvor</text>
+    <name lang="sk">Prameň</name>
+    <text lang="sk" gender="masculine">prameň</text>
+    <text lang="sk" gender="masculine" case="genitive">prameňa</text>
+    <text lang="sk" gender="masculine" case="instrumental">prameňom</text>
+    <text lang="sk" plural="true" gender="masculine">pramene</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">prameňov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">prameňmi</text>
     <name lang="sv">Källa</name>
     <text lang="sv">källan</text>
     <text lang="sv" plural="true">källorna</text>
@@ -4538,6 +4849,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Tanques com água</text>
     <name lang="ro">Rezervor de apă</name>
     <text lang="ro">rezervor de apă</text>
+    <name lang="sk">Vodná nádrž</name>
+    <text lang="sk" gender="feminine">vodná nádrž</text>
+    <text lang="sk" gender="feminine" case="genitive">vodnej nádrže</text>
+    <text lang="sk" gender="feminine" case="instrumental">vodnou nádržou</text>
+    <text lang="sk" plural="true" gender="feminine">vodné nádrže</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">vodných nádrží</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">vodnými nádržami</text>
     <name lang="sv">Vattentank</name>
     <text lang="sv">vattentank</text>
     <name lang="zh-HK">Water tank, trough</name>
@@ -4634,6 +4952,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Áreas abertas</text>
     <name lang="ro">Teren deschis</name>
     <text lang="ro">teren deschis</text>
+    <name lang="sk">Otvorená krajina</name>
+    <text lang="sk" gender="feminine">otvorená krajina</text>
+    <text lang="sk" gender="feminine" case="genitive">otvorenej krajiny</text>
+    <text lang="sk" gender="feminine" case="instrumental">otvorenou krajinou</text>
+    <text lang="sk" plural="true" gender="feminine">otvorené krajiny</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">otvorených krajín</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">otvorenými krajinami</text>
     <name lang="sv">Öppen mark</name>
     <text lang="sv">öppen mark</text>
     <name lang="zh-HK">Open land</name>
@@ -4702,6 +5027,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Áreas semi-abertas</text>
     <name lang="ro">Teren semideschis</name>
     <text lang="ro">teren semideschis</text>
+    <name lang="sk">Polotvorená krajina</name>
+    <text lang="sk" gender="feminine">polootvorená krajina</text>
+    <text lang="sk" gender="feminine" case="genitive">polootvorenej krajiny</text>
+    <text lang="sk" gender="feminine" case="instrumental">polootvorenou krajinou</text>
+    <text lang="sk" plural="true" gender="feminine">polootvorené krajiny</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">polootvorených krajín</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">polootvorenými krajinami</text>
     <name lang="sv">Halvöppen mark</name>
     <text lang="sv">halvöppen mark</text>
     <name lang="zh-HK">Semi-open land</name>
@@ -4802,6 +5134,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Cantos de vegetação</text>
     <name lang="ro">Colț pădure</name>
     <text lang="ro">colț pădure</text>
+    <name lang="sk">Roh lesa</name>
+    <text lang="sk" gender="masculine">roh lesa</text>
+    <text lang="sk" gender="masculine" case="genitive">rohu lesa</text>
+    <text lang="sk" gender="masculine" case="instrumental">rohom lesa</text>
+    <text lang="sk" plural="true" gender="masculine">rohy lesa</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">rohov lesa</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">rohmi lesa</text>
     <name lang="sv">Skogshörn</name>
     <text lang="sv">skogshörn</text>
     <name lang="zh-HK">Forest corner</name>
@@ -4876,6 +5215,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Clareiras</text>
     <name lang="ro">Defrișare</name>
     <text lang="ro">defrișare</text>
+    <name lang="sk">Čistinka</name>
+    <text lang="sk" gender="feminine">čistinka</text>
+    <text lang="sk" gender="feminine" case="genitive">čistinky</text>
+    <text lang="sk" gender="feminine" case="instrumental">čistinkou</text>
+    <text lang="sk" plural="true" gender="feminine">čistinky</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">čistiniek</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">čistinkami</text>
     <name lang="sv">Glänta</name>
     <text lang="sv" plural="true">gläntorna</text>
     <text lang="sv">gläntan</text>
@@ -4980,6 +5326,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Moitas</text>
     <name lang="ro">Desiș</name>
     <text lang="ro">desiș</text>
+    <name lang="sk">Húština</name>
+    <text lang="sk" gender="feminine">húština</text>
+    <text lang="sk" gender="feminine" case="genitive">húštiny</text>
+    <text lang="sk" gender="feminine" case="instrumental">húštinou</text>
+    <text lang="sk" plural="true" gender="feminine">húštiny</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">húštin</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">húštinami</text>
     <name lang="sv">Tät skog</name>
     <text lang="sv">tät skog</text>
     <name lang="zh-HK">Thicket</name>
@@ -5071,6 +5424,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Linhas de vegetação</text>
     <name lang="ro">Acoperire, desiș linear</name>
     <text lang="ro">acoperire</text>
+    <name lang="sk">Živý plot</name>
+    <text lang="sk" gender="masculine">živý plot</text>
+    <text lang="sk" gender="masculine" case="genitive">živého plota</text>
+    <text lang="sk" gender="masculine" case="instrumental">živým plotom</text>
+    <text lang="sk" plural="true" gender="masculine">živé ploty</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">živých plotov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">živými plotmi</text>
     <name lang="sv">Häck</name>
     <text lang="sv">häcken</text>
     <text lang="sv" plural="true">häckarna</text>
@@ -5164,6 +5524,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Limites de vegetação</text>
     <name lang="ro">Limită de vegetație</name>
     <text lang="ro">limită de vegetație</text>
+    <name lang="sk">Hranica porastu</name>
+    <text lang="sk" gender="feminine">hranica porastu</text>
+    <text lang="sk" gender="feminine" case="genitive">hranice porastu</text>
+    <text lang="sk" gender="feminine" case="instrumental">hranicou porastu</text>
+    <text lang="sk" plural="true" gender="feminine">hranice porastu</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">hraníc porastu</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">hranicami porastu</text>
     <name lang="sv">Beståndsgräns</name>
     <text lang="sv">beståndsgräns</text>
     <name lang="zh-HK">Vegetation boundary</name>
@@ -5258,6 +5625,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Pequenos bosques</text>
     <name lang="ro">Crâng</name>
     <text lang="ro">crâng</text>
+    <name lang="sk">Zhluk stromov</name>
+    <text lang="sk" gender="masculine">zhluk stromov</text>
+    <text lang="sk" gender="masculine" case="genitive">zhluku stromov</text>
+    <text lang="sk" gender="masculine" case="instrumental">zhlukom stromov</text>
+    <text lang="sk" plural="true" gender="masculine">zhluky stromov</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">zhlukov stromov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">zhlukmi stromov</text>
     <name lang="sv">Dunge</name>
     <text lang="sv" plural="true">dungarna</text>
     <text lang="sv">dungen</text>
@@ -5341,6 +5715,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Árvores distintas</text>
     <name lang="ro">Copac distinctiv</name>
     <text lang="ro">copac distinctiv</text>
+    <name lang="sk">Výrazný strom</name>
+    <text lang="sk" gender="masculine">výrazný strom</text>
+    <text lang="sk" gender="masculine" case="genitive">výrazného stroma</text>
+    <text lang="sk" gender="masculine" case="instrumental">výrazným stromom</text>
+    <text lang="sk" plural="true" gender="masculine">výrazné stromy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">výrazných stromov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">výraznými stromami</text>
     <name lang="sv">Särpräglat träd</name>
     <text lang="sv" plural="true">särpräglade träden</text>
     <text lang="sv">särpräglade trädet</text>
@@ -5418,6 +5799,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Tocos</text>
     <name lang="ro">Buturugă</name>
     <text lang="ro">buturugă</text>
+    <name lang="sk">Vývrat</name>
+    <text lang="sk" gender="masculine">vývrat</text>
+    <text lang="sk" gender="masculine" case="genitive">vývratu</text>
+    <text lang="sk" gender="masculine" case="instrumental">vývratom</text>
+    <text lang="sk" plural="true" gender="masculine">vývraty</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">vývratov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">vývratmi</text>
     <name lang="sv">Rotvälta/stubbe</name>
     <text lang="sv" plural="true">rotvältorna/stubbarna</text>
     <text lang="sv">rotvältan/stubben</text>
@@ -5497,6 +5885,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Estradas</text>
     <name lang="ro">Drum</name>
     <text lang="ro">drum</text>
+    <name lang="sk">Cesta</name>
+    <text lang="sk" gender="feminine">cesta</text>
+    <text lang="sk" gender="feminine" case="genitive">cesty</text>
+    <text lang="sk" gender="feminine" case="instrumental">cestou</text>
+    <text lang="sk" plural="true" gender="feminine">cesty</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">ciest</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">cestami</text>
     <name lang="sv">Väg</name>
     <text lang="sv" plural="true">vägarna</text>
     <text lang="sv">vägen</text>
@@ -5570,6 +5965,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Trilhas</text>
     <name lang="ro">Potecă</name>
     <text lang="ro">potecă</text>
+    <name lang="sk">Chodník</name>
+    <text lang="sk" gender="masculine">chodník</text>
+    <text lang="sk" gender="masculine" case="genitive">chodníka</text>
+    <text lang="sk" gender="masculine" case="instrumental">chodníkom</text>
+    <text lang="sk" plural="true" gender="masculine">chodníky</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">chodníkov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">chodníkmi</text>
     <name lang="sv">Stig</name>
     <text lang="sv" plural="true">stigarna</text>
     <text lang="sv">stigen</text>
@@ -5649,6 +6051,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Picadas</text>
     <name lang="ro">Defrișare</name>
     <text lang="ro">defrișare</text>
+    <name lang="sk">Priesek</name>
+    <text lang="sk" gender="masculine">priesek</text>
+    <text lang="sk" gender="masculine" case="genitive">prieseku</text>
+    <text lang="sk" gender="masculine" case="instrumental">priesekom</text>
+    <text lang="sk" plural="true" gender="masculine">prieseky</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">priesekov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">priesekmi</text>
     <name lang="sv">Rågång</name>
     <text lang="sv" plural="true">rågångarna</text>
     <text lang="sv">rågången</text>
@@ -5753,6 +6162,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Pontes</text>
     <name lang="ro">Pod</name>
     <text lang="ro">pod</text>
+    <name lang="sk">Most</name>
+    <text lang="sk" gender="masculine">most</text>
+    <text lang="sk" gender="masculine" case="genitive">mosta</text>
+    <text lang="sk" gender="masculine" case="instrumental">mostom</text>
+    <text lang="sk" plural="true" gender="masculine">mosty</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">mostov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">mostmi</text>
     <name lang="sv">Bro</name>
     <text lang="sv" plural="true">broarna</text>
     <text lang="sv">bron</text>
@@ -5833,6 +6249,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Redes Elétricas</text>
     <name lang="ro">Linie de curent</name>
     <text lang="ro">linie de curent</text>
+    <name lang="sk">Vedenie</name>
+    <text lang="sk" gender="neuter">vedenie</text>
+    <text lang="sk" gender="neuter" case="genitive">vedenia</text>
+    <text lang="sk" gender="neuter" case="instrumental">vedením</text>
+    <text lang="sk" plural="true" gender="neuter">vedenia</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">vedení</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">vedeniami</text>
     <name lang="sv">Kraftledning</name>
     <text lang="sv" plural="true">kraftledningarna</text>
     <text lang="sv">kraftledningen</text>
@@ -5917,6 +6340,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Postes</text>
     <name lang="ro">Stâlp de curent</name>
     <text lang="ro">stâlp de curent</text>
+    <name lang="sk">Stĺp vedenia</name>
+    <text lang="sk" gender="masculine">stĺp vedenia</text>
+    <text lang="sk" gender="masculine" case="genitive">stĺpa vedenia</text>
+    <text lang="sk" gender="masculine" case="instrumental">stĺpom vedenia</text>
+    <text lang="sk" plural="true" gender="masculine">stĺpy vedenia</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">stĺpov vedenia</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">stĺpmi vedenia</text>
     <name lang="sv">Kraftledningsstolpe</name>
     <text lang="sv" plural="true">kraftledningsstolparna</text>
     <text lang="sv">kraftledningsstolpen</text>
@@ -6004,6 +6434,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Túneis</text>
     <name lang="ro">Tunel</name>
     <text lang="ro">tunel</text>
+    <name lang="sk">Tunel</name>
+    <text lang="sk" gender="masculine">tunel</text>
+    <text lang="sk" gender="masculine" case="genitive">tunela</text>
+    <text lang="sk" gender="masculine" case="instrumental">tunelom</text>
+    <text lang="sk" plural="true" gender="masculine">tunely</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">tunelov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">tunelmi</text>
     <name lang="sv">Tunnel</name>
     <text lang="sv" plural="true">tunnlarna</text>
     <text lang="sv">tunneln</text>
@@ -6090,6 +6527,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Muros</text>
     <name lang="ro">Zid piatră</name>
     <text lang="ro">zid piatră</text>
+    <name lang="sk">Kamenný múr</name>
+    <text lang="sk" gender="masculine">kamenný múr</text>
+    <text lang="sk" gender="masculine" case="genitive">kamenného múra</text>
+    <text lang="sk" gender="masculine" case="instrumental">kamenným múrom</text>
+    <text lang="sk" plural="true" gender="masculine">kamenné múry</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">kamenných múrov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">kamennými múrmi</text>
     <name lang="sv">Stenmur</name>
     <text lang="sv" plural="true">stenmurarna</text>
     <text lang="sv">stenmuren</text>
@@ -6171,6 +6615,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Cercas</text>
     <name lang="ro">Gard</name>
     <text lang="ro">gard</text>
+    <name lang="sk">Plot</name>
+    <text lang="sk" gender="masculine">plot</text>
+    <text lang="sk" gender="masculine" case="genitive">plota</text>
+    <text lang="sk" gender="masculine" case="instrumental">plotom</text>
+    <text lang="sk" plural="true" gender="masculine">ploty</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">plotov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">plotmi</text>
     <name lang="sv">Stängsel</name>
     <text lang="sv" plural="true">stängslen</text>
     <text lang="sv">stängslet</text>
@@ -6258,6 +6709,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Pontos de passagem</text>
     <name lang="ro">Punct de trecere</name>
     <text lang="ro">punct de trecere</text>
+    <name lang="sk">Priechod</name>
+    <text lang="sk" gender="masculine">priechod</text>
+    <text lang="sk" gender="masculine" case="genitive">priechodu</text>
+    <text lang="sk" gender="masculine" case="instrumental">priechodom</text>
+    <text lang="sk" plural="true" gender="masculine">priechody</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">priechodov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">priechodmi</text>
     <name lang="sv">Genomgång</name>
     <text lang="sv" plural="true">genomgångarna</text>
     <text lang="sv">genomgången</text>
@@ -6342,6 +6800,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Edificações</text>
     <name lang="ro">Clădire</name>
     <text lang="ro">clădire</text>
+    <name lang="sk">Budova</name>
+    <text lang="sk" gender="feminine">budova</text>
+    <text lang="sk" gender="feminine" case="genitive">budovy</text>
+    <text lang="sk" gender="feminine" case="instrumental">budovou</text>
+    <text lang="sk" plural="true" gender="feminine">budovy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">budov</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">budovami</text>
     <name lang="sv">Byggnad</name>
     <text lang="sv">byggnaden</text>
     <text lang="sv" plural="true">byggnaderna</text>
@@ -6415,6 +6880,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Áreas Pavimentadas</text>
     <name lang="ro">Zonă pavată</name>
     <text lang="ro">zonă pavată</text>
+    <name lang="sk">Spevnená plocha</name>
+    <text lang="sk" gender="feminine">plocha</text>
+    <text lang="sk" gender="feminine" case="genitive">plochy</text>
+    <text lang="sk" gender="feminine" case="instrumental">plochou</text>
+    <text lang="sk" plural="true" gender="feminine">plochy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">plôch</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">plochami</text>
     <name lang="sv">Asfalt- eller grusyta</name>
     <text lang="sv" plural="true">asfalt/grusytorna</text>
     <text lang="sv">asfalt/grusytan</text>
@@ -6505,6 +6977,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Ruínas</text>
     <name lang="ro">Ruine</name>
     <text lang="ro">ruine</text>
+    <name lang="sk">Zrúcanina</name>
+    <text lang="sk" gender="feminine">zrúcanina</text>
+    <text lang="sk" gender="feminine" case="genitive">zrúcaniny</text>
+    <text lang="sk" gender="feminine" case="instrumental">zrúcaninou</text>
+    <text lang="sk" plural="true" gender="feminine">zrúcaniny</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">zrúcanín</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">zrúcaninami</text>
     <name lang="sv">Ruin</name>
     <text lang="sv">ruinen</text>
     <text lang="sv" plural="true">ruinerna</text>
@@ -6593,6 +7072,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Tubulações</text>
     <name lang="ro">Conductă</name>
     <text lang="ro">conductă</text>
+    <name lang="sk">Potrubie</name>
+    <text lang="sk" gender="neuter">potrubie</text>
+    <text lang="sk" gender="neuter" case="genitive">potrubia</text>
+    <text lang="sk" gender="neuter" case="instrumental">potrubím</text>
+    <text lang="sk" plural="true" gender="neuter">potrubia</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">potrubí</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">potrubiami</text>
     <name lang="sv">Rörledning</name>
     <text lang="sv" plural="true">rörledningarna</text>
     <text lang="sv">rörledningen</text>
@@ -6680,6 +7166,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Torres</text>
     <name lang="ro">Turn</name>
     <text lang="ro">turn</text>
+    <name lang="sk">Veža</name>
+    <text lang="sk" gender="feminine">veža</text>
+    <text lang="sk" gender="feminine" case="genitive">vežy</text>
+    <text lang="sk" gender="feminine" case="instrumental">vežou</text>
+    <text lang="sk" plural="true" gender="feminine">vežy</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">veží</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">vežami</text>
     <name lang="sv">Torn</name>
     <text lang="sv">tornet</text>
     <text lang="sv" plural="true">tornen</text>
@@ -6755,6 +7248,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Plataformas</text>
     <name lang="ro">Platformă de vânătoare</name>
     <text lang="ro">platformă de vânătoare</text>
+    <name lang="sk">Posed</name>
+    <text lang="sk" gender="masculine">posed</text>
+    <text lang="sk" gender="masculine" case="genitive">posedu</text>
+    <text lang="sk" gender="masculine" case="instrumental">posedom</text>
+    <text lang="sk" plural="true" gender="masculine">posedy</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">posedov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">posedmi</text>
     <name lang="sv">Jakttorn</name>
     <text lang="sv">jakttornet</text>
     <text lang="sv" plural="true">jakttornen</text>
@@ -6828,6 +7328,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Marcos</text>
     <name lang="ro">Bornă</name>
     <text lang="ro">bornă</text>
+    <name lang="sk">Hraničný kameň</name>
+    <text lang="sk" gender="masculine">hraničný kameň</text>
+    <text lang="sk" gender="masculine" case="genitive">hraničného kameňa</text>
+    <text lang="sk" gender="masculine" case="instrumental">hraničným kameňom</text>
+    <text lang="sk" plural="true" gender="masculine">hraničné kamene</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">hraničných kameňov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">hraničnými kameňmi</text>
     <name lang="sv">Röse</name>
     <text lang="sv" plural="true">rösena</text>
     <text lang="sv">röset</text>
@@ -6902,6 +7409,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Manjedouras</text>
     <name lang="ro">Iesle/Hrănitoare</name>
     <text lang="ro">iesle/hrănitoare</text>
+    <name lang="sk">Krmelec</name>
+    <text lang="sk" gender="masculine">krmelec</text>
+    <text lang="sk" gender="masculine" case="genitive">krmeleca</text>
+    <text lang="sk" gender="masculine" case="instrumental">krmelecom</text>
+    <text lang="sk" plural="true" gender="masculine">krmelce</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">krmelecov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">krmelecami</text>
     <name lang="sv">Foderhäck</name>
     <text lang="sv">foderhäcken</text>
     <text lang="sv" plural="true">foderhäckarna</text>
@@ -6983,6 +7497,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Fornos de carvão</text>
     <name lang="ro">Pământ cu cărbune ars</name>
     <text lang="ro">pământ cu cărbune ars</text>
+    <name lang="sk">Plošinka</name>
+    <text lang="sk" gender="feminine">plošinka</text>
+    <text lang="sk" gender="feminine" case="genitive">plošinky</text>
+    <text lang="sk" gender="feminine" case="instrumental">plošinkou</text>
+    <text lang="sk" plural="true" gender="feminine">plošinky</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">plošiniek</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">plošinkami</text>
     <name lang="sv">Kolbotten</name>
     <text lang="sv" plural="true">kolbottnarna</text>
     <text lang="sv">kolbottnen</text>
@@ -7059,6 +7580,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Monumentos</text>
     <name lang="ro">Monument sau statuie</name>
     <text lang="ro">statuie</text>
+    <name lang="sk">Pomník</name>
+    <text lang="sk" gender="masculine">pomník</text>
+    <text lang="sk" gender="masculine" case="genitive">pomníka</text>
+    <text lang="sk" gender="masculine" case="instrumental">pomníkom</text>
+    <text lang="sk" plural="true" gender="masculine">pomníky</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">pomníkov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">pomníkmi</text>
     <name lang="sv">Monument/staty</name>
     <text lang="sv" plural="true">monumenten/statyerna</text>
     <text lang="sv">monumentet/statyn</text>
@@ -7137,6 +7665,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Coberturas com passagem</text>
     <name lang="ro">Trecere</name>
     <text lang="ro">trecere</text>
+    <name lang="sk">Pasáž</name>
+    <text lang="sk" gender="feminine">pasáž</text>
+    <text lang="sk" gender="feminine" case="genitive">pasáže</text>
+    <text lang="sk" gender="feminine" case="instrumental">pasážou</text>
+    <text lang="sk" plural="true" gender="feminine">pasáže</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">pasáži</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">pasážami</text>
     <name lang="sv">Passage under byggnad</name>
     <text lang="sv" plural="true">byggnadspassagerna</text>
     <text lang="sv">byggnadspassagen</text>
@@ -7217,6 +7752,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="feminino">Escadarias</text>
     <name lang="ro">Scări</name>
     <text lang="ro">scări</text>
+    <name lang="sk">Schodisko</name>
+    <text lang="sk" gender="neuter">schodisko</text>
+    <text lang="sk" gender="neuter" case="genitive">schodiska</text>
+    <text lang="sk" gender="neuter" case="instrumental">schodiskom</text>
+    <text lang="sk" plural="true" gender="neuter">schodiská</text>
+    <text lang="sk" gender="neuter" case="genitivePlural">schodísk</text>
+    <text lang="sk" gender="neuter" case="instrumentalPlural">schodiskami</text>
     <name lang="sv">Trappa</name>
     <text lang="sv" plural="true">trapporna</text>
     <text lang="sv">trappan</text>
@@ -7249,6 +7791,13 @@ for the symbols.
     <name lang="pt-BR">Área proibida de jardim</name>
     <text lang="pt-BR" plural="true" gender="feminino">Áreas proibidas de jardim</text>
     <text lang="pt-BR" gender="feminino">Área proibida de jardim</text>
+    <name lang="sk">Zakázaný priestor</name>
+    <text lang="sk" gender="masculine">zakázaný priestor</text>
+    <text lang="sk" gender="masculine" case="genitive">zakázaného priestoru</text>
+    <text lang="sk" gender="masculine" case="instrumental">zakázaným priestorom</text>
+    <text lang="sk" plural="true" gender="masculine">zakázané priestory</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">zakázaných priestorov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">zakázanými priestormi</text>
     <name lang="zh-TW">Flower bed / Out of bounds area</name>
     <text lang="zh-TW" plural="true">flower beds</text>
     <text lang="zh-TW">flower bed</text>
@@ -7304,6 +7853,13 @@ for the symbols.
     <text lang="en-GB" plural="true">railway tracks</text>
     <text lang="en-AU">railway track</text>
     <text lang="en-AU" plural="true">railway tracks</text>
+    <name lang="sk">Železnica</name>
+    <text lang="sk" gender="feminine">železnica</text>
+    <text lang="sk" gender="feminine" case="genitive">železnice</text>
+    <text lang="sk" gender="feminine" case="instrumental">železnicou</text>
+    <text lang="sk" plural="true" gender="feminine">železnice</text>
+    <text lang="sk" gender="feminine" case="genitivePlural">železníc</text>
+    <text lang="sk" gender="feminine" case="instrumentalPlural">železnicami</text>
 
     <!--
     Rotate the following by 40 degress counter-clockwise.
@@ -7436,6 +7992,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Objetos especiais</text>
     <name lang="ro">Reper special</name>
     <text lang="ro">reper special</text>
+    <name lang="sk">Zvláštny objekt</name>
+    <text lang="sk" gender="masculine">objekt</text>
+    <text lang="sk" gender="masculine" case="genitive">objektu</text>
+    <text lang="sk" gender="masculine" case="instrumental">objektom</text>
+    <text lang="sk" plural="true" gender="masculine">objekty</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">objektov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">objektmi</text>
     <name lang="sv">Speciellt föremål</name>
     <text lang="sv" plural="true">specialföremålen</text>
     <text lang="sv">specialföremålet</text>
@@ -7508,6 +8071,13 @@ for the symbols.
     <text lang="pt-BR" plural="true" gender="masculino">Objetos especiais</text>
     <name lang="ro">Reper special</name>
     <text lang="ro">reper special</text>
+    <name lang="sk">Zvláštny objekt</name>
+    <text lang="sk" gender="masculine">objekt</text>
+    <text lang="sk" gender="masculine" case="genitive">objektu</text>
+    <text lang="sk" gender="masculine" case="instrumental">objektom</text>
+    <text lang="sk" plural="true" gender="masculine">objekty</text>
+    <text lang="sk" gender="masculine" case="genitivePlural">objektov</text>
+    <text lang="sk" gender="masculine" case="instrumentalPlural">objektmi</text>
     <name lang="sv">Speciellt föremål</name>
     <text lang="sv" plural="true">specialföremålen</text>
     <text lang="sv">specialföremålet</text>
@@ -7589,6 +8159,14 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} baixo</text>
     <name lang="ro">Jos</name>
     <text lang="ro">jos {0}</text>
+    <name lang="sk">Nízky</name>
+    <text lang="sk" gender="masculine">nízky {0}</text>
+    <text lang="sk" gender="feminine">nízka {0}</text>
+    <text lang="sk" gender="neuter">nízke {0}</text>
+    <text lang="sk" gender="feminine" case="genitive">nízkej {0}</text>
+    <text lang="sk" gender="feminine" case="instrumental">nízkou {0}</text>
+    <text lang="sk" plural="true">nízke {0}</text>
+    <text lang="sk" plural="true" case="instrumentalPlural">nízkymi {0}</text>
     <name lang="sv">Låg</name>
     <text lang="sv">{0}, låg</text>
     <name lang="zh-HK">Low</name>
@@ -7668,6 +8246,12 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} raso</text>
     <name lang="ro">Puțin adânc</name>
     <text lang="ro">puțin adânc {0}</text>
+    <name lang="sk">Plytký</name>
+    <text lang="sk" gender="masculine">plytký {0}</text>
+    <text lang="sk" gender="feminine">plytká {0}</text>
+    <text lang="sk" case="genitive" gender="feminine">plytkej {0}</text>
+    <text lang="sk" gender="neuter">plytké {0}</text>
+    <text lang="sk" plural="true">plytké {0}</text>
     <name lang="sv">Flack</name>
     <text lang="sv">{0}, flack</text>
     <name lang="zh-HK">Shallow</name>
@@ -7749,6 +8333,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} fundo</text>
     <name lang="ro">Adânc</name>
     <text lang="ro">adânc {0}</text>
+    <name lang="sk">Hlboký</name>
+    <text lang="sk" gender="masculine">hlboký {0}</text>
+    <text lang="sk" gender="feminine">hlboká {0}</text>
+    <text lang="sk" gender="neuter">hlboké {0}</text>
+    <text lang="sk" plural="true">hlboké {0}</text>
     <name lang="sv">Djup</name>
     <text lang="sv">{0}, djup</text>
     <name lang="zh-HK">Deep</name>
@@ -7836,6 +8425,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} coberto de vegetação</text>
     <name lang="ro">Super crescut</name>
     <text lang="ro">super crescut {0}</text>
+    <name lang="sk">Zarastený</name>
+    <text lang="sk" gender="masculine">zarastený {0}</text>
+    <text lang="sk" gender="feminine">zarastená {0}</text>
+    <text lang="sk" gender="neuter">zarastené {0}</text>
+    <text lang="sk" plural="true">zarastené {0}</text>
     <name lang="sv">Bevuxen</name>
     <text lang="sv">{0}, bevuxen</text>
     <name lang="zh-HK">Overgrown</name>
@@ -7940,6 +8534,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} aberto</text>
     <name lang="ro">Deschis</name>
     <text lang="ro">deschis {0}</text>
+    <name lang="sk">Otvorený</name>
+    <text lang="sk" gender="masculine">otvorený {0}</text>
+    <text lang="sk" gender="feminine">otvorená {0}</text>
+    <text lang="sk" gender="neuter">otvorené {0}</text>
+    <text lang="sk" plural="true">otvorené {0}</text>
     <name lang="sv">Öppen</name>
     <text lang="sv">{0}, öppen</text>
     <name lang="zh-HK">Open</name>
@@ -8048,6 +8647,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">rochoso {0}</text>
     <name lang="ro">Stâncos</name>
     <text lang="ro">stâncos {0}</text>
+    <name lang="sk">Skalnatý</name>
+    <text lang="sk" gender="masculine">skalnatý {0}</text>
+    <text lang="sk" gender="feminine">skalnatá {0}</text>
+    <text lang="sk" gender="neuter">skalnaté {0}</text>
+    <text lang="sk" plural="true">skalnaté {0}</text>
     <name lang="sv">Stenig</name>
     <text lang="sv">{0}, stenig</text>
     <name lang="zh-HK">Rocky, stony</name>
@@ -8135,6 +8739,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} pantanoso</text>
     <name lang="ro">Mlăștinos</name>
     <text lang="ro">mlăștinos {0}</text>
+    <name lang="sk">Močaristý</name>
+    <text lang="sk" gender="masculine">močaristý {0}</text>
+    <text lang="sk" gender="feminine">močaristá {0}</text>
+    <text lang="sk" gender="neuter">močaristé {0}</text>
+    <text lang="sk" plural="true">močaristé {0}</text>
     <name lang="sv">Sank</name>
     <text lang="sv">{0}, sank</text>
     <name lang="zh-HK">Marshy</name>
@@ -8219,6 +8828,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">arenoso {0}</text>
     <name lang="ro">Nisipos</name>
     <text lang="ro">nisipos {0}</text>
+    <name lang="sk">Piesčitý</name>
+    <text lang="sk" gender="masculine">piesčitý {0}</text>
+    <text lang="sk" gender="feminine">piesčitá {0}</text>
+    <text lang="sk" gender="neuter">piesčité {0}</text>
+    <text lang="sk" plural="true">piesčité {0}</text>
     <name lang="sv">Sandig</name>
     <text lang="sv">{0}, sandig</text>
     <name lang="zh-HK">Sandy</name>
@@ -8432,6 +9046,11 @@ for the symbols.
     <text lang="pt-BR">{0}, pinheiro</text>
     <name lang="ro">Ace de brad</name>
     <text lang="ro">ace-brad {0}</text>
+    <name lang="sk">Ihličnatý</name>
+    <text lang="sk" gender="masculine">ihličnatý {0}</text>
+    <text lang="sk" gender="feminine">ihličnatá {0}</text>
+    <text lang="sk" gender="neuter">ihličnaté {0}</text>
+    <text lang="sk" plural="true">ihličnaté {0}</text>
     <name lang="sv">Barrträd</name>
     <text lang="sv">{0}, barrträd</text>
     <name lang="zh-HK">Needle-leaved</name>
@@ -8510,6 +9129,11 @@ for the symbols.
     <text lang="pt-BR">{0}, copa larga</text>
     <name lang="ro">Frunze-late</name>
     <text lang="ro">frunze late {0}</text>
+    <name lang="sk">Listnatý</name>
+    <text lang="sk" gender="masculine">listnatý {0}</text>
+    <text lang="sk" gender="feminine">listnatá {0}</text>
+    <text lang="sk" gender="neuter">listnaté {0}</text>
+    <text lang="sk" plural="true">listnaté {0}</text>
     <name lang="sv">Lövträd</name>
     <text lang="sv">{0}, lövträd</text>
     <name lang="zh-HK">Broad-leaved</name>
@@ -8617,6 +9241,11 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">{0} caído</text>
     <name lang="ro">Dărăpănat</name>
     <text lang="ro">dărăpănat {0}</text>
+    <name lang="sk">Rozpadnutý</name>
+    <text lang="sk" gender="masculine">rozpadnutý {0}</text>
+    <text lang="sk" gender="feminine">rozpadnutá {0}</text>
+    <text lang="sk" gender="neuter">rozpadnuté {0}</text>
+    <text lang="sk" plural="true">rozpadnuté {0}</text>
     <name lang="sv">Raserad</name>
     <text lang="sv">{0}, raserad</text>
     <name lang="zh-HK">Ruined</name>
@@ -8706,6 +9335,8 @@ for the symbols.
     <text lang="pt-BR">cruzamento de {0} e {1}</text>
     <name lang="ro">Intersecţie</name>
     <text lang="ro">intersecţia dintre {0} și {1}</text>
+    <name lang="sk">Križovatka</name>
+    <text lang="sk" gender="feminine" modified-case="genitive">križovatka {0} a {1}</text>
     <name lang="sv">Korsning</name>
     <text lang="sv">korsningen mellan {0} och {1}</text>
     <name lang="zh-HK">Crossing</name>
@@ -8771,6 +9402,8 @@ for the symbols.
     <text lang="pt-BR">cruzamento de {0}</text>
     <name lang="ro">Intersecţie (obiecte de același tip)</name>
     <text lang="ro">intersecţie de {0}</text>
+    <name lang="sk">Križovatka (rovnaké objekty)</name>
+    <text lang="sk" plural="false" gender="feminine" modified-case="genitivePlural">križovatka {0}</text>
     <name lang="sv">Korsning (samma symbol)</name>
     <text lang="sv">korsningen mellan {1}</text>
     <name lang="zh-HK">Crossing (objects of same kind)</name>
@@ -8828,6 +9461,8 @@ for the symbols.
     <text lang="pt-BR">junção de {0} e {1}</text>
     <name lang="ro">Bifurcație</name>
     <text lang="ro">bifurcație dintre {0} și {1}</text>
+    <name lang="sk">Vidlica</name>
+    <text lang="sk" gender="feminine" modified-case="genitive">vidlica {0} a {1}</text>
     <name lang="sv">Förgrening</name>
     <text lang="sv">förgrening av {0} och {1}</text>
     <name lang="zh-HK">Junction</name>
@@ -8894,6 +9529,8 @@ for the symbols.
     <text lang="pt-BR">junção de {0}</text>
     <name lang="ro">Bifurcație (obiecte de același tip)</name>
     <text lang="ro">bifurcație de {0}</text>
+    <name lang="sk">Vidlica (rovnakých objektov)</name>
+    <text lang="sk" plural="false" gender="feminine" modified-case="genitivePlural">vidlica {0}</text>
     <name lang="sv">Förgrening (samma symbol)</name>
     <text lang="sv">förgrening av {0}</text>
     <name lang="zh-HK">Junction (objects of same kind)</name>
@@ -8947,6 +9584,8 @@ for the symbols.
     <text lang="pt-BR">{0}, na curva</text>
     <name lang="ro">Cotitură</name>
     <text lang="ro">cotitură de {0}</text>
+    <name lang="sk">Ohyb</name>
+    <text lang="sk">ohyb - {0}</text>
     <name lang="sv">Kröken</name>
     <text lang="sv">{0}, kröken</text>
     <name lang="zh-HK">Bend</name>
@@ -9013,6 +9652,10 @@ for the symbols.
     <text lang="pt-BR">{0} de altura</text>
     <name lang="ro">Înălțimea reperului</name>
     <text lang="ro">{0} înălțime</text>
+    <name lang="sk">Výška</name>
+    <text lang="sk" gender="masculine">{0} vysoký</text>
+    <text lang="sk" gender="feminine">{0} vysoká</text>
+    <text lang="sk" gender="neuter">{0} vysoké</text>
     <name lang="sv">Höjd</name>
     <text lang="sv">{0} hög</text>
     <name lang="zh-HK">Height of feature</name>
@@ -9062,6 +9705,10 @@ for the symbols.
     <text lang="pt-BR">{0} de profundidade</text>
     <name lang="ro">Adâncimea reperului</name>
     <text lang="ro">{0} adâncime</text>
+    <name lang="sk">Hĺbka</name>
+    <text lang="sk" gender="masculine">{0} hlboký</text>
+    <text lang="sk" gender="feminine">{0} hlboká</text>
+    <text lang="sk" gender="neuter">{0} hlboké</text>
     <name lang="sv">Djup</name>
     <text lang="sv">{0} djup</text>
     <name lang="zh-HK">Depth of feature</name>
@@ -9109,6 +9756,8 @@ for the symbols.
     <text lang="pt-BR">de {0} por {1}</text>
     <name lang="ro">Dimensiunea reperului</name>
     <text lang="ro">{0} pe {1}</text>
+    <name lang="sk">Rozměry</name>
+    <text lang="sk">{0} x {1}</text>
     <name lang="sv">Storlek</name>
     <text lang="sv">{0} x {1}</text>
     <name lang="zh-HK">Size of feature</name>
@@ -9156,6 +9805,8 @@ for the symbols.
     <text lang="pt-BR">de {0} a {1} de altura</text>
     <name lang="ro">Înălțimea pantei</name>
     <text lang="ro">{0} pâna la {1} pantă</text>
+    <name lang="sk">Výška na svahu</name>
+    <text lang="sk">{0} / {1} výšky</text>
     <name lang="sv">Höjd i sluttning</name>
     <text lang="sv">{0}/{1} hög</text>
     <name lang="zh-HK">Height of feature on slope</name>
@@ -9203,6 +9854,8 @@ for the symbols.
     <text lang="pt-BR">de {0} a {1} de largura</text>
     <name lang="ro">Adâncimea pantei</name>
     <text lang="ro">{0} până la {1} pantă de adâncime</text>
+    <name lang="sk">Hĺbka vo svahu</name>
+    <text lang="sk">{0} / {1} hloubky</text>
     <name lang="sv">Djup i en sluttning</name>
     <text lang="sv">{0}/{1} djup</text>
     <name lang="zh-HK">Depth of feature on slope</name>
@@ -9254,6 +9907,7 @@ for the symbols.
     <text lang="pt-BR">{0} e {1}</text>
     <name lang="ro">Dimensiunea a două repere</name>
     <text lang="ro">{0} și {1}</text>
+    <name lang="sk">Výšky dvoch objektov</name>
     <name lang="sv">Höjden på två föremål</name>
     <text lang="sv">{0} och {1}</text>
     <name lang="zh-HK">Size of two features</name>
@@ -9308,6 +9962,8 @@ for the symbols.
     <text lang="pt-BR">{0}, Lado Norte</text>
     <name lang="ro">Partea nordică</name>
     <text lang="ro">{0} partea nordică</text>
+    <name lang="sk">Severná strana</name>
+    <text lang="sk">{0}, S strana</text>
     <name lang="sv">Norra sidan</name>
     <text lang="sv">{0}, N sidan</text>
     <name lang="zh-HK">North side</name>
@@ -9362,6 +10018,8 @@ for the symbols.
     <text lang="pt-BR">{0}, Lado Nordeste</text>
     <name lang="ro">Partea nord estică</name>
     <text lang="ro">{0} partea nord estică</text>
+    <name lang="sk">Severovýchodná strana</name>
+    <text lang="sk">{0}, SV strana</text>
     <name lang="sv">Nordöstra sidan</name>
     <text lang="sv">{0}, NÖ sidan</text>
     <name lang="zh-HK">North-east side</name>
@@ -9416,6 +10074,8 @@ for the symbols.
     <text lang="pt-BR">{0}; Lado Leste</text>
     <name lang="ro">Partea estică</name>
     <text lang="ro">{0} partea estică</text>
+    <name lang="sk">Východná strana</name>
+    <text lang="sk">{0}, V strana</text>
     <name lang="sv">Östra sidan</name>
     <text lang="sv">{0}, Ö sidan</text>
     <name lang="zh-HK">East side</name>
@@ -9470,6 +10130,8 @@ for the symbols.
     <text lang="pt-BR">{0}; Lado Sudeste</text>
     <name lang="ro">Partea sud estică</name>
     <text lang="ro">{0} partea sud estică</text>
+    <name lang="sk">Juhovýchodná strana</name>
+    <text lang="sk">{0}, JV strana</text>
     <name lang="sv">Sydöstra sidan</name>
     <text lang="sv">{0}, SÖ sidan</text>
     <name lang="zh-HK">South-east side</name>
@@ -9524,6 +10186,8 @@ for the symbols.
     <text lang="pt-BR">{0}; Lado Sul</text>
     <name lang="ro">Partea sudică</name>
     <text lang="ro">{0} partea sudică</text>
+    <name lang="sk">Južná strana</name>
+    <text lang="sk">{0}, J strana</text>
     <name lang="sv">Södra sidan</name>
     <text lang="sv">{0}, S sidan</text>
     <name lang="zh-HK">South side</name>
@@ -9578,6 +10242,8 @@ for the symbols.
     <text lang="pt-BR">{0}; Lado Sudoeste</text>
     <name lang="ro">Partea sud-vestică</name>
     <text lang="ro">{0} partea sud vestică</text>
+    <name lang="sk">Juhozápadná strana</name>
+    <text lang="sk">{0}, JZ strana</text>
     <name lang="sv">Sydvästra sidan</name>
     <text lang="sv">{0}, SV sidan</text>
     <name lang="zh-HK">South-west side</name>
@@ -9632,6 +10298,8 @@ for the symbols.
     <text lang="pt-BR">{0}; Lado Oeste</text>
     <name lang="ro">Partea vestică</name>
     <text lang="ro">{0} partea vestică</text>
+    <name lang="sk">Západná strana</name>
+    <text lang="sk">{0}, Z strana</text>
     <name lang="sv">Västra sidan</name>
     <text lang="sv">{0}, V sidan</text>
     <name lang="zh-HK">West side</name>
@@ -9685,6 +10353,8 @@ for the symbols.
     <name lang="pt-BR">Lado Noroeste</name>
     <name lang="ro">Partea nord-vestică</name>
     <text lang="ro">{0} partea nord-vestică</text>
+    <name lang="sk">Severozápadná strana</name>
+    <text lang="sk">{0}, SZ strana</text>
     <name lang="sv">Nordvästra sidan</name>
     <text lang="sv">{0}, NV sidan</text>
     <name lang="zh-HK">North-west side</name>
@@ -9739,6 +10409,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda Norte</text>
     <name lang="ro">Marginea nordică</name>
     <text lang="ro">{0} marginea nordică</text>
+    <name lang="sk">Severný okraj</name>
+    <text lang="sk">{0}, S okraj</text>
     <name lang="sv">Norra kanten</name>
     <text lang="sv">{0}, N kanten</text>
     <name lang="zh-HK">North edge</name>
@@ -9794,6 +10466,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda NE</text>
     <name lang="ro">Marginea nord-estică</name>
     <text lang="ro">{0} marginea nord-estică</text>
+    <name lang="sk">Severovýchodný okraj</name>
+    <text lang="sk">{0}, SV okraj</text>
     <name lang="sv">Nordöstra kanten</name>
     <text lang="sv">{0}, NÖ kanten</text>
     <name lang="zh-HK">North-east edge</name>
@@ -9849,6 +10523,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda Leste</text>
     <name lang="ro">Marginea estică</name>
     <text lang="ro">{0} marginea estică</text>
+    <name lang="sk">Východný okraj</name>
+    <text lang="sk">{0}, V okraj</text>
     <name lang="sv">Östra kanten</name>
     <text lang="sv">{0}, Ö kanten</text>
     <name lang="zh-HK">East edge</name>
@@ -9904,6 +10580,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda SE</text>
     <name lang="ro">Marginea sud-estică</name>
     <text lang="ro">{0} marginea sud-estică</text>
+    <name lang="sk">Juhovýchodný okraj</name>
+    <text lang="sk">{0}, JV okraj</text>
     <name lang="sv">Sydöstra kanten</name>
     <text lang="sv">{0}, SÖ kanten</text>
     <name lang="zh-HK">South-east edge</name>
@@ -9959,6 +10637,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda Sul</text>
     <name lang="ro">marginea sudică</name>
     <text lang="ro">{0} marginea sudică</text>
+    <name lang="sk">Južný okraj</name>
+    <text lang="sk">{0}, J okraj</text>
     <name lang="sv">Södra kanten</name>
     <text lang="sv">{0}, S kanten</text>
     <name lang="zh-HK">South edge</name>
@@ -10014,6 +10694,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda SO</text>
     <name lang="ro">marginea sud-vestică</name>
     <text lang="ro">{0} marginea sud-vestică</text>
+    <name lang="sk">Juhozápadný okraj</name>
+    <text lang="sk">{0}, JZ okraj</text>
     <name lang="sv">Sydvästra kanten</name>
     <text lang="sv">{0}, SV kanten</text>
     <name lang="zh-HK">South-west edge</name>
@@ -10069,6 +10751,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda Oeste</text>
     <name lang="ro">marginea vestică</name>
     <text lang="ro">{0} marginea vestică</text>
+    <name lang="sk">Západný okraj</name>
+    <text lang="sk">{0}, Z okraj</text>
     <name lang="sv">Västra kanten</name>
     <text lang="sv">{0}, V kanten</text>
     <name lang="zh-HK">West edge</name>
@@ -10124,6 +10808,8 @@ for the symbols.
     <text lang="pt-BR">{0} na borda NO</text>
     <name lang="ro">Marginea nord-vestică</name>
     <text lang="ro">{0} marginea nord-vestică</text>
+    <name lang="sk">Severozápadný okraj</name>
+    <text lang="sk">{0}, SZ okraj</text>
     <name lang="sv">Nordvästra kanten</name>
     <text lang="sv">{0}, NV kanten</text>
     <name lang="zh-HK">North-west edge</name>
@@ -10179,6 +10865,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte Norte</text>
     <name lang="ro">Partea nordică interior</name>
     <text lang="ro">{0} partea nordică interior</text>
+    <name lang="sk">Severná časť</name>
+    <text lang="sk">{0}, S časť</text>
     <name lang="sv">Norra delen</name>
     <text lang="sv">{0}, N delen</text>
     <name lang="zh-HK">North part</name>
@@ -10233,6 +10921,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte NE</text>
     <name lang="ro">Partea nord-estică interior</name>
     <text lang="ro">{0} partea nord-estică interior</text>
+    <name lang="sk">Severovýchodná časť</name>
+    <text lang="sk">{0}, SV časť</text>
     <name lang="sv">Nordöstra delen</name>
     <text lang="sv">{0}, NÖ delen</text>
     <name lang="zh-HK">North-east part</name>
@@ -10287,6 +10977,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte Leste</text>
     <name lang="ro">Partea estică interior</name>
     <text lang="ro">{0} partea estică interior</text>
+    <name lang="sk">Východná časť</name>
+    <text lang="sk">{0}, V časť</text>
     <name lang="sv">Östra delen</name>
     <text lang="sv">{0}, Ö delen</text>
     <name lang="zh-HK">East part</name>
@@ -10341,6 +11033,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte SE</text>
     <name lang="ro">Partea sud-estică interior</name>
     <text lang="ro">{0} partea sud-estică interior</text>
+    <name lang="sk">Juhovýchodná časť</name>
+    <text lang="sk">{0}, JV časť</text>
     <name lang="sv">Sydöstra delen</name>
     <text lang="sv">{0}, SÖ delen</text>
     <name lang="zh-HK">South-east part</name>
@@ -10395,6 +11089,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte Sul</text>
     <name lang="ro">Partea sudică interior</name>
     <text lang="ro">{0} partea sudică interior</text>
+    <name lang="sk">Južná časť</name>
+    <text lang="sk">{0}, J časť</text>
     <name lang="sv">Södra delen</name>
     <text lang="sv">{0}, S delen</text>
     <name lang="zh-HK">South part</name>
@@ -10449,6 +11145,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte SO</text>
     <name lang="ro">Partea sud-vestică interior</name>
     <text lang="ro">{0} partea sud-vestică interior</text>
+    <name lang="sk">Juhozápadná časť</name>
+    <text lang="sk">{0}, JZ časť</text>
     <name lang="sv">Sydvästra delen</name>
     <text lang="sv">{0}, SV delen</text>
     <name lang="zh-HK">South-west part</name>
@@ -10503,6 +11201,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte Oeste</text>
     <name lang="ro">Partea vestică interior</name>
     <text lang="ro">{0} partea vestică interior</text>
+    <name lang="sk">Západná časť</name>
+    <text lang="sk">{0}, Z časť</text>
     <name lang="sv">Västra delen</name>
     <text lang="sv">{0}, V delen</text>
     <name lang="zh-HK">West part</name>
@@ -10557,6 +11257,8 @@ for the symbols.
     <text lang="pt-BR">{0} na parte NO</text>
     <name lang="ro">Partea nord-vestică interior</name>
     <text lang="ro">{0} partea nord-vestică interior</text>
+    <name lang="sk">Severozápadná časť</name>
+    <text lang="sk">{0}, SZ časť</text>
     <name lang="sv">Nordvästra delen</name>
     <text lang="sv">{0}, NV delen</text>
     <name lang="zh-HK">North-west part</name>
@@ -10611,6 +11313,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) Norte</text>
     <name lang="ro">Colț nord interior</name>
     <text lang="ro">{0} colț nord interior</text>
+    <name lang="sk">Severný vnútorný roh</name>
+    <text lang="sk">{0}, S vnútorný roh</text>
     <name lang="sv">Norra hörnet (insidan)</name>
     <text lang="sv">{0}, N hörnet (insidan)</text>
     <name lang="zh-HK">North corner (inside)</name>
@@ -10667,6 +11371,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) Nordeste </text>
     <name lang="ro">colț nord-est interior</name>
     <text lang="ro">{0} colț nord-est interior</text>
+    <name lang="sk">Severovýchodný vnútorný roh</name>
+    <text lang="sk">{0}, SV vnútorný roh</text>
     <name lang="sv">Nordöstra hörnet (insidan)</name>
     <text lang="sv">{0}, NÖ hörnet (insidan)</text>
     <name lang="zh-HK">North-east corner (inside)</name>
@@ -10723,6 +11429,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) Leste</text>
     <name lang="ro">Colț est interior</name>
     <text lang="ro">{0} colț est interior</text>
+    <name lang="sk">Východný vnútorný roh</name>
+    <text lang="sk">{0}, V vnútorný roh</text>
     <name lang="sv">Östra hörnet (insidan)</name>
     <text lang="sv">{0}, Ö hörnet (insidan)</text>
     <name lang="zh-HK">East corner (inside)</name>
@@ -10779,6 +11487,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) SE</text>
     <name lang="ro">Colț sud-est interior</name>
     <text lang="ro">{0} colț sud-est interior</text>
+    <name lang="sk">Juhovýchodný vnútorný roh</name>
+    <text lang="sk">{0}, JV vnútorný roh</text>
     <name lang="sv">Sydöstra hörnet (insidan)</name>
     <text lang="sv">{0}, SÖ hörnet (insidan)</text>
     <name lang="zh-HK">South-east corner (inside)</name>
@@ -10835,6 +11545,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) Sul</text>
     <name lang="ro">Colț sud interior</name>
     <text lang="ro">{0} colț sud interior</text>
+    <name lang="sk">Južný vnútorný roh</name>
+    <text lang="sk">{0}, J vnútorný roh</text>
     <name lang="sv">Södra hörnet (insidan)</name>
     <text lang="sv">{0}, S hörnet (insidan)</text>
     <name lang="zh-HK">South corner (inside)</name>
@@ -10891,6 +11603,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) SO</text>
     <name lang="ro">Colț sud-vest interior</name>
     <text lang="ro">{0} colț sud-vest interior</text>
+    <name lang="sk">Juhozápadný vnútorný roh</name>
+    <text lang="sk">{0}, JZ vnútorný roh</text>
     <name lang="sv">Sydvästra hörnet (insidan)</name>
     <text lang="sv">{0}, SV hörnet (insidan)</text>
     <name lang="zh-HK">South-west corner (inside)</name>
@@ -10947,6 +11661,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) Oeste</text>
     <name lang="ro">Colț vest interior</name>
     <text lang="ro">{0} colț vest interior</text>
+    <name lang="sk">Západný vnútorný roh</name>
+    <text lang="sk">{0}, Z vnútorný roh</text>
     <name lang="sv">Västra hörnet (insidan)</name>
     <text lang="sv">{0}, V hörnet (insidan)</text>
     <name lang="zh-HK">West corner (inside)</name>
@@ -11003,6 +11719,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (interno) NO</text>
     <name lang="ro">Colț nord-vest interior</name>
     <text lang="ro">{0} colț nord-vest interior</text>
+    <name lang="sk">Severozápadný vnútorný roh</name>
+    <text lang="sk">{0}, SZ vnútorný roh</text>
     <name lang="sv">Nordvästra hörnet (insidan)</name>
     <text lang="sv">{0}, NV hörnet (insidan)</text>
     <name lang="zh-HK">North-west corner (inside)</name>
@@ -11059,6 +11777,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) Norte</text>
     <name lang="ro">Colț exterior nordic</name>
     <text lang="ro">{0} colț exterior nordic</text>
+    <name lang="sk">Severný vonkajší roh</name>
+    <text lang="sk">{0}, S vonkajší roh</text>
     <name lang="sv">Norra hörnet (utsidan)</name>
     <text lang="sv">{0}, N hörnet (utsidan)</text>
     <name lang="zh-HK">North corner (outside)</name>
@@ -11115,6 +11835,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) NE</text>
     <name lang="ro">Colț exterior nord-estic</name>
     <text lang="ro">{0} colț exterior nord-estic</text>
+    <name lang="sk">Severovýchodný vonkajší roh</name>
+    <text lang="sk">{0}, SV vonkajší roh</text>
     <name lang="sv">Nordöstra hörnet (utsidan)</name>
     <text lang="sv">{0}, NÖ hörnet (utsidan)</text>
     <name lang="zh-HK">North-east corner (outside)</name>
@@ -11171,6 +11893,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) Leste</text>
     <name lang="ro">Colț exterior estic</name>
     <text lang="ro">{0} colț exterior estic</text>
+    <name lang="sk">Východný vonkajší roh</name>
+    <text lang="sk">{0}, V vonkajší roh</text>
     <name lang="sv">Östra hörnet (utsidan)</name>
     <text lang="sv">{0}, Ö hörnet (utsidan)</text>
     <name lang="zh-HK">East corner (outside)</name>
@@ -11227,6 +11951,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) SE</text>
     <name lang="ro">Colț exterior sud-estic</name>
     <text lang="ro">{0} colț exterior sud-estic</text>
+    <name lang="sk">Juhovýchodný vonkajší roh</name>
+    <text lang="sk">{0}, JV vonkajší roh</text>
     <name lang="sv">Sydöstra hörnet (utsidan)</name>
     <text lang="sv">{0}, SÖ hörnet (utsidan)</text>
     <name lang="zh-HK">South-east corner (outside)</name>
@@ -11283,6 +12009,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) Sul</text>
     <name lang="ro">Colț exterior sudic</name>
     <text lang="ro">{0} colț exterior sudic</text>
+    <name lang="sk">Južný vonkajší roh</name>
+    <text lang="sk">{0}, J vonkajší roh</text>
     <name lang="sv">Södra hörnet (utsidan)</name>
     <text lang="sv">{0}, S hörnet (utsidan)</text>
     <name lang="zh-HK">South corner (outside)</name>
@@ -11339,6 +12067,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) SO</text>
     <name lang="ro">Colț exterior sud-vestic</name>
     <text lang="ro">{0} colț exterior sud-vestic</text>
+    <name lang="sk">Juhozápadný vonkajší roh</name>
+    <text lang="sk">{0}, JZ vonkajší roh</text>
     <name lang="sv">Sydvästra hörnet (utsidan)</name>
     <text lang="sv">{0}, SV hörnet (utsidan)</text>
     <name lang="zh-HK">South-west corner (outside)</name>
@@ -11395,6 +12125,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) Oeste</text>
     <name lang="ro">Colț exterior vestic</name>
     <text lang="ro">{0} colț exterior vestic</text>
+    <name lang="sk">Západný vonkajší roh</name>
+    <text lang="sk">{0}, Z vonkajší roh</text>
     <name lang="sv">Västra hörnet (utsidan) </name>
     <text lang="sv">{0}, V hörnet (utsidan)</text>
     <name lang="zh-HK">West corner (outside)</name>
@@ -11451,6 +12183,8 @@ for the symbols.
     <text lang="pt-BR">{0}, canto (externo) NO</text>
     <name lang="ro">Colț exterior nord-vestic</name>
     <text lang="ro">{0} colț exterior nord-vestic</text>
+    <name lang="sk">Severozápadný vonkajší roh</name>
+    <text lang="sk">{0}, SZ vonkajší roh</text>
     <name lang="sv">Nordvästra hörnet (utsidan) </name>
     <text lang="sv">{0}, NV hörnet (utsidan)</text>
     <name lang="zh-HK">North-west corner (outside)</name>
@@ -11507,6 +12241,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta Norte</text>
     <name lang="ro">Vârf nordic</name>
     <text lang="ro">{0} vârf nordic</text>
+    <name lang="sk">Severný výbežok</name>
+    <text lang="sk">{0}, S výbežok</text>
     <name lang="sv">Norra spetsen</name>
     <text lang="sv">{0}, N spetsen</text>
     <name lang="zh-HK">North tip</name>
@@ -11563,6 +12299,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta NE</text>
     <name lang="ro">Vârf nord-estic</name>
     <text lang="ro">{0} vârf nord-estic</text>
+    <name lang="sk">Severovýchodný výbežok</name>
+    <text lang="sk">{0}, SV výbežok</text>
     <name lang="sv">Nordöstra spetsen</name>
     <text lang="sv">{0}, NÖ spetsen</text>
     <name lang="zh-HK">North-east tip</name>
@@ -11619,6 +12357,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta Leste</text>
     <name lang="ro">Vârf estic</name>
     <text lang="ro">{0} vârf estic</text>
+    <name lang="sk">Východný výbežok</name>
+    <text lang="sk">{0}, V výbežok</text>
     <name lang="sv">Östra spetsen</name>
     <text lang="sv">{0}, Ö spetsen</text>
     <name lang="zh-HK">East tip</name>
@@ -11675,6 +12415,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta SE</text>
     <name lang="ro">Vârf sud-estic</name>
     <text lang="ro">{0} vârf sud-estic</text>
+    <name lang="sk">Juhovýchodný výbežok</name>
+    <text lang="sk">{0}, JV výbežok</text>
     <name lang="sv">Sydöstra spetsen</name>
     <text lang="sv">{0}, SÖ spetsen</text>
     <name lang="zh-HK">South-east tip</name>
@@ -11731,6 +12473,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta Sul</text>
     <name lang="ro">Vârf sudic</name>
     <text lang="ro">{0} vârf sudic</text>
+    <name lang="sk">Južný výbežok</name>
+    <text lang="sk">{0}, J výbežok</text>
     <name lang="sv">Södra spetsen</name>
     <text lang="sv">{0}, S spetsen</text>
     <name lang="zh-HK">South tip</name>
@@ -11787,6 +12531,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta Sul</text>
     <name lang="ro">Vârf sud-vestic</name>
     <text lang="ro">{0} vârf sud-vestic</text>
+    <name lang="sk">Juhozápadný výbežok</name>
+    <text lang="sk">{0}, JZ výbežok</text>
     <name lang="sv">Sydvästra spetsen</name>
     <text lang="sv">{0}, SV spetsen</text>
     <name lang="zh-HK">South-west tip</name>
@@ -11843,6 +12589,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta Oeste</text>
     <name lang="ro">Vârf vestic</name>
     <text lang="ro">{0} vârf vestic</text>
+    <name lang="sk">Západný výbežok</name>
+    <text lang="sk">{0}, Z výbežok</text>
     <name lang="sv">Västra spetsen</name>
     <text lang="sv">{0}, V spetsen</text>
     <name lang="zh-HK">West tip</name>
@@ -11899,6 +12647,8 @@ for the symbols.
     <text lang="pt-BR">{0}, ponta NO</text>
     <name lang="ro">Vârf nord-vestic</name>
     <text lang="ro">{0} vârf nord-vestic</text>
+    <name lang="sk">Severozápadný výbežok</name>
+    <text lang="sk">{0}, SZ výbežok</text>
     <name lang="sv">Nordvästra spetsen</name>
     <text lang="sv">{0}, NV spetsen</text>
     <name lang="zh-HK">North-west tip</name>
@@ -11955,6 +12705,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade Norte</text>
     <name lang="ro">Capăt nordic</name>
     <text lang="ro">{0} capăt nordic</text>
+    <name lang="sk">Severný koniec</name>
+    <text lang="sk">{0}, S koniec</text>
     <name lang="sv">Norra slutet</name>
     <text lang="sv">{0}, N slutet</text>
     <name lang="zh-HK">North end</name>
@@ -12011,6 +12763,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade NE</text>
     <name lang="ro">Capăt nord-estic</name>
     <text lang="ro">{0} capăt nord-estic</text>
+    <name lang="sk">Severovýchodný koniec</name>
+    <text lang="sk">{0}, SV koniec</text>
     <name lang="sv">Nordöstra slutet</name>
     <text lang="sv">{0}, NÖ slutet</text>
     <name lang="zh-HK">North-east end</name>
@@ -12067,6 +12821,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade Leste</text>
     <name lang="ro">Capăt estic</name>
     <text lang="ro">{0} capăt estic</text>
+    <name lang="sk">Východný koniec</name>
+    <text lang="sk">{0}, V koniec</text>
     <name lang="sv">Östra slutet</name>
     <text lang="sv">{0}, Ö slutet</text>
     <name lang="zh-HK">East end</name>
@@ -12123,6 +12879,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade SE</text>
     <name lang="ro">Capăt sud-estic</name>
     <text lang="ro">{0} capăt sud-estic</text>
+    <name lang="sk">Juhovýchodný koniec</name>
+    <text lang="sk">{0}, JV koniec</text>
     <name lang="sv">Sydöstra slutet</name>
     <text lang="sv">{0}, SÖ slutet</text>
     <name lang="zh-HK">South-east end</name>
@@ -12179,6 +12937,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade Sul</text>
     <name lang="ro">Capăt sudic</name>
     <text lang="ro">{0} capăt sudic</text>
+    <name lang="sk">Južný koniec</name>
+    <text lang="sk">{0}, J koniec</text>
     <name lang="sv">Södra slutet</name>
     <text lang="sv">{0}, S slutet</text>
     <name lang="zh-HK">South end</name>
@@ -12235,6 +12995,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade SO</text>
     <name lang="ro">Capăt sud-vestic</name>
     <text lang="ro">{0} capăt sud-vestic</text>
+    <name lang="sk">Juhozápadný koniec</name>
+    <text lang="sk">{0}, JZ koniec</text>
     <name lang="sv">Sydvästra slutet</name>
     <text lang="sv">{0}, SV slutet</text>
     <name lang="zh-HK">South-west end</name>
@@ -12291,6 +13053,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade Oeste</text>
     <name lang="ro">Capăt vestic</name>
     <text lang="ro">{0} capăt vestic</text>
+    <name lang="sk">Západný koniec</name>
+    <text lang="sk">{0}, Z koniec</text>
     <name lang="sv">Västra slutet</name>
     <text lang="sv">{0}, V slutet</text>
     <name lang="zh-HK">West end</name>
@@ -12347,6 +13111,8 @@ for the symbols.
     <text lang="pt-BR">{0}, extremidade NO</text>
     <name lang="ro">Capăt nord-vestic</name>
     <text lang="ro">{0} capăt nord-vestic</text>
+    <name lang="sk">Severozápadný koniec</name>
+    <text lang="sk">{0}, SZ koniec</text>
     <name lang="sv">Nordvästra slutet</name>
     <text lang="sv">{0}, NV slutet</text>
     <name lang="zh-HK">North-west end</name>
@@ -12403,6 +13169,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base Norte</text>
     <name lang="ro">Piciorul nordic</name>
     <text lang="ro">{0} piciorul nordic</text>
+    <name lang="sk">Severná päta</name>
+    <text lang="sk">{0}, S päta</text>
     <name lang="sv">Norra foten</name>
     <text lang="sv">{0}, N foten</text>
     <name lang="zh-HK">North foot</name>
@@ -12459,6 +13227,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base NE</text>
     <name lang="ro">Piciorul nord-estic</name>
     <text lang="ro">{0} piciorul nord-estic</text>
+    <name lang="sk">Severovýchodná päta</name>
+    <text lang="sk">{0}, SV päta</text>
     <name lang="sv">Nordöstra foten</name>
     <text lang="sv">{0}, NÖ foten</text>
     <name lang="zh-HK">North-east foot</name>
@@ -12515,6 +13285,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base Leste</text>
     <name lang="ro">Piciorul estic</name>
     <text lang="ro">{0} piciorul estic</text>
+    <name lang="sk">Východná päta</name>
+    <text lang="sk">{0}, V päta</text>
     <name lang="sv">Östra foten</name>
     <text lang="sv">{0}, Ö foten</text>
     <name lang="zh-HK">East foot</name>
@@ -12571,6 +13343,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base SE</text>
     <name lang="ro">Piciorul sud-estic</name>
     <text lang="ro">{0} piciorul sud-estic</text>
+    <name lang="sk">Jihovýchodná päta</name>
+    <text lang="sk">{0}, JV päta</text>
     <name lang="sv">Sydöstra foten</name>
     <text lang="sv">{0}, SÖ foten</text>
     <name lang="zh-HK">South-east foot</name>
@@ -12627,6 +13401,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base Sul</text>
     <name lang="ro">Piciorul sudic</name>
     <text lang="ro">{0} piciorul sudic</text>
+    <name lang="sk">Južná päta</name>
+    <text lang="sk">{0}, J päta</text>
     <name lang="sv">Södra foten</name>
     <text lang="sv">{0}, S foten</text>
     <name lang="zh-HK">South foot</name>
@@ -12683,6 +13459,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base SO</text>
     <name lang="ro">Piciorul sud-vestic</name>
     <text lang="ro">{0} piciorul sud-vestic</text>
+    <name lang="sk">Juhozápadná päta</name>
+    <text lang="sk">{0}, JZ päta</text>
     <name lang="sv">Sydvästra foten</name>
     <text lang="sv">{0}, SV foten</text>
     <name lang="zh-HK">South-west foot</name>
@@ -12739,6 +13517,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base Oeste</text>
     <name lang="ro">Piciorul vestic</name>
     <text lang="ro">{0} piciorul vestic</text>
+    <name lang="sk">Západná päta</name>
+    <text lang="sk">{0}, Z päta</text>
     <name lang="sv">Västra foten</name>
     <text lang="sv">{0}, V foten</text>
     <name lang="zh-HK">West foot</name>
@@ -12795,6 +13575,8 @@ for the symbols.
     <text lang="pt-BR">{0}, base NO</text>
     <name lang="ro">Piciorul nord-vestic</name>
     <text lang="ro">{0} piciorul nord-vestic</text>
+    <name lang="sk">Severozápadná päta</name>
+    <text lang="sk">{0}, SZ päta</text>
     <name lang="sv">Nordvästra foten</name>
     <text lang="sv">{0}, NV foten</text>
     <name lang="zh-HK">North-west foot</name>
@@ -12854,6 +13636,8 @@ for the symbols.
     <text lang="pt-BR">Curva de {0}</text>
     <name lang="ro">Cotitură</name>
     <text lang="ro">cotitură de {0}</text>
+    <name lang="sk">Ohyb</name>
+    <text lang="sk">, ohyb</text>
     <name lang="sv">Kröken</name>
     <text lang="sv">{0}, kröken</text>
     <name lang="zh-HK">Bend</name>
@@ -12914,6 +13698,8 @@ for the symbols.
     <text lang="pt-BR">{0}, parte superior</text>
     <name lang="ro">Partea superioară</name>
     <text lang="ro">partea superioară {0}</text>
+    <name lang="sk">Horná časť</name>
+    <text lang="sk">{0}, horná časť</text>
     <name lang="sv">Övre delen</name>
     <text lang="sv">{0}, övre delen</text>
     <name lang="zh-HK">Upper part</name>
@@ -12973,6 +13759,8 @@ for the symbols.
     <text lang="pt-BR">{0}, parte inferior</text>
     <name lang="ro">Partea inferioară</name>
     <text lang="ro">partea inferioară {0}</text>
+    <name lang="sk">Dolná časť</name>
+    <text lang="sk">{0}, dolná časť</text>
     <name lang="sv">Nedre delen</name>
     <text lang="sv">{0}, nedre delen</text>
     <name lang="zh-HK">Lower part</name>
@@ -13032,6 +13820,8 @@ for the symbols.
     <text lang="pt-BR">topo de {0}</text>
     <name lang="ro">În vârful</name>
     <text lang="ro">în vârful {0}</text>
+    <name lang="sk">Navrchu</name>
+    <text lang="sk">{0}, navrchu</text>
     <name lang="sv">Uppe på</name>
     <text lang="sv">{0}, uppe på</text>
     <name lang="zh-HK">Top</name>
@@ -13093,6 +13883,10 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">Debaixo do {0}</text>
     <name lang="ro">Sub</name>
     <text lang="ro">sub {0}</text>
+    <name lang="sk">Pod</name>
+    <text lang="sk" gender="masculine">{0}, pod ním</text>
+    <text lang="sk" gender="feminine">{0}, pod ňou</text>
+    <text lang="sk" gender="neuter">{0}, pod ním</text>
     <name lang="sv">Under</name>
     <text lang="sv">{0}, under</text>
     <name lang="zh-HK">Beneath</name>
@@ -13154,6 +13948,8 @@ for the symbols.
     <text lang="pt-BR" gender="masculino">ao pé do {0}</text>
     <name lang="ro">La piciorul</name>
     <text lang="ro">La piciorul {0}</text>
+    <name lang="sk">Päta</name>
+    <text lang="sk">{0}, päta</text>
     <name lang="sv">Foten</name>
     <text lang="sv">{0}, foten</text>
     <name lang="zh-HK">Foot</name>
@@ -13222,6 +14018,8 @@ for the symbols.
     <text lang="pt-BR">Entre {0} e {1}</text>
     <name lang="ro">Între</name>
     <text lang="ro">Între {0} și {1}</text>
+    <name lang="sk">Medzi</name>
+    <text lang="sk" modified-case="instrumental">medzi {0} a {1}</text>
     <name lang="sv">Mellan</name>
     <text lang="sv">mellan {0} och {1}</text>
     <name lang="zh-HK">Between</name>
@@ -13280,6 +14078,8 @@ for the symbols.
     <text lang="pt-BR">entre {1}</text>
     <name lang="ro">Între (obiecte de același tio)</name>
     <text lang="ro">între {1}</text>
+    <name lang="sk">Medzi (rovnaké objekty)</name>
+    <text lang="sk" plural="false" modified-case="instrumentalPlural">medzi {0}</text>
     <name lang="sv">Mellan (samma symbol)</name>
     <text lang="sv">mellan {1}</text>
     <name lang="zh-HK">Between (objects of same kind)</name>
@@ -13329,6 +14129,8 @@ for the symbols.
     <text lang="pt-BR">Primeiros Socorros</text>
     <name lang="ro">Punct de prim ajutor</name>
     <text lang="ro">punct de prim ajutor</text>
+    <name lang="sk">Prvá pomoc</name>
+    <text lang="sk">prvá pomoc</text>
     <name lang="sv">Sjukvård</name>
     <text lang="sv">sjukvård</text>
     <name lang="zh-HK">First aid post</name>
@@ -13390,6 +14192,8 @@ for the symbols.
     <text lang="pt-BR">Posto d'água</text>
     <name lang="ro">Punct de reînvigorare</name>
     <text lang="ro">apă</text>
+    <name lang="sk">Občerstvenie</name>
+    <text lang="sk">občerstvenie</text>
     <name lang="sv">Vätska</name>
     <text lang="sv">vätska</text>
     <name lang="zh-HK">Refreshment point</name>
@@ -13469,6 +14273,8 @@ for the symbols.
     <text lang="pt-BR">Radio ou TV</text>
     <name lang="ro">Punct radio sau TV</name>
     <text lang="ro">radio-tv</text>
+    <name lang="sk">Rádiokontrola alebo TV kontrola</name>
+    <text lang="sk">rádio/TV</text>
     <name lang="sv">Radio- eller TV-kontroll</name>
     <text lang="sv">radio</text>
     <name lang="zh-HK">Radio or TV control</name>
@@ -13522,6 +14328,8 @@ for the symbols.
     <text lang="pt-BR">Controlador</text>
     <name lang="ro">Punct de control</name>
     <text lang="ro">cu arbitru</text>
+    <name lang="sk">Kontrola preukazov</name>
+    <text lang="sk">rozhodca</text>
     <name lang="sv">Bemannad kontroll</name>
     <text lang="sv">bemannad</text>
     <name lang="zh-HK">Control check</name>
@@ -13589,6 +14397,8 @@ for the symbols.
     <text lang="pt-BR">seguir balizamento {0} depois do ponto</text>
     <name lang="ro">Urmează ruta cu banda departe de control</name>
     <text lang="ro">urmează ruta cu banda {0} departe de control</text>
+    <name lang="sk">Značený úsek</name>
+    <text lang="sk">dodržte značený úsek {0}od kontroly</text>
     <name lang="sv">Snitsel bort från kontroll</name>
     <text lang="sv">följ snitsel, {0}bort från kontrollen</text>
     <name lang="zh-HK">Taped route away from control</name>
@@ -13668,6 +14478,8 @@ for the symbols.
     <text lang="pt-BR">seguir balizamento {0} entre controles</text>
     <name lang="ro">Bandă între punctele de control</name>
     <text lang="ro">urmează banda {0} între punctele de control</text>
+    <name lang="sk">Značené mezi kontrolami</name>
+    <text lang="sk">dodržte značený úsek {0}medzi kontrolami</text>
     <name lang="sv">Snitsel mellan kontroller</name>
     <text lang="sv">följ snitsel, {0}mellan kontrollerna</text>
     <name lang="zh-HK">Taped route between controls</name>
@@ -13751,6 +14563,8 @@ for the symbols.
     <text lang="pt-BR">Ponto de passagem obrigatória</text>
     <name lang="ro">Punct(e) de trecere obligatoriu(ii)</name>
     <text lang="ro">punct de trecere obligatoriu</text>
+    <name lang="sk">Povinný prechod</name>
+    <text lang="sk">povinný prechod</text>
     <name lang="sv">Obligatorisk passerpunkt</name>
     <text lang="sv">obligatorisk passerpunkt</text>
     <name lang="zh-HK">Mandatory crossing point or points</name>
@@ -13826,6 +14640,8 @@ for the symbols.
     <text lang="pt-BR">Passagem Obrigatória</text>
     <name lang="ro">Pasaj obligatoriu</name>
     <text lang="ro">pasaj obligatoriu</text>
+    <name lang="sk">Povinný úsek cez zakázanú oblasť</name>
+    <text lang="sk">povinný úsek cez zakázanú oblasť</text>
     <name lang="sv">Obligatorisk passage</name>
     <text lang="sv">obligatorisk passage</text>
     <name lang="zh-HK">Mandatory passage</name>
@@ -13905,6 +14721,8 @@ for the symbols.
     <text lang="pt-BR">seguir balizado {0} para troca de mapa</text>
     <name lang="ro">Schimb de hartă</name>
     <text lang="ro">urmează banda {0} pentru schimb de hartă</text>
+    <name lang="sk">Výmena mapy</name>
+    <text lang="sk">dodržte značený úsek {0}k výmene mapy</text>
     <name lang="sv">Kartbyte</name>
     <text lang="sv">följ snitsel, {0}till kartbyte</text>
     <name lang="zh-HK">Map exchange</name>
@@ -13974,6 +14792,8 @@ for the symbols.
     <text lang="pl">zmiana mapy na PK</text>
     <name lang="pt-BR">Troca de Mapa no controle</name>
     <text lang="pt-BR">Troca de mapa no controle</text>
+    <name lang="sk">Výmena mapy na kontrole</name>
+    <text lang="sk">vymeňte mapu na kontrole</text>
     <name lang="sv">Kartbyte vid kontroll</name>
     <text lang="sv">kartbyte vid kontrollen</text>
     <name lang="zh-HK">Map exchange at a control</name>
@@ -14024,6 +14844,8 @@ for the symbols.
   <symbol kind="Y" id="15.6" standard="2018">
     <name lang="en">Map flip</name>
     <text lang="en">Flip map over</text>
+    <name lang="sk">Otočenie mapy</name>
+    <text lang="sk">otočte mapu</text>
 
     <polygon thickness="12.5">
       <point x="-140" y="-70"></point>
@@ -14071,6 +14893,8 @@ for the symbols.
     <text lang="it">{0}fettucciati fino alla partenza</text>
     <name lang="pt-BR">Ponto de entrega de mapa</name>
     <text lang="pt-BR">{0} para Partida</text>
+    <name lang="sk">Výdaj máp</name>
+    <text lang="sk">presun {0}ku štartu</text>
     <name lang="sv">Kartutdelningsplats</name>
     <text lang="sv">{0}till startpunkt</text>
     <name lang="zh-TW">取圖點</name>
@@ -14162,6 +14986,8 @@ for the symbols.
     <text lang="pt-BR">seguir balizamento {0} para chegada</text>
     <name lang="ro">Bandă până la sosire</name>
     <text lang="ro">urmează banda {0} până la sosire</text>
+    <name lang="sk">Značený úsek do cieľa</name>
+    <text lang="sk">dodržte značený úsek {0}do cieľa</text>
     <name lang="sv">Snitsel till mål</name>
     <text lang="sv">följ snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Taped route to finish</name>
@@ -14247,6 +15073,8 @@ for the symbols.
     <text lang="pt-BR">Navegar para funil de chegada e seguir {0} balizados</text>
     <name lang="ro">Parcurgere până la pâlnia de sosire</name>
     <text lang="ro">parcurgere {0} până la pâlnia de sosire</text>
+    <name lang="sk">Cieľový lievik</name>
+    <text lang="sk">navigujte sa {0}do cieľového lievika, potom dodržte značenie</text>
     <name lang="sv">Uppfångande snitsel till mål</name>
     <text lang="sv">uppfångande snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Navigate to finish funnel</name>
@@ -14333,6 +15161,8 @@ for the symbols.
     <text lang="pt-BR">Navegar {0} até a chegada (sem balizamento)</text>
     <name lang="ro">Parcurgere până la sosire (fără bandă)</name>
     <text lang="ro">parcurgere {0} până la sosire</text>
+    <name lang="sk">Neoznačený úsek do cieľa</name>
+    <text lang="sk">neoznačený úsek {0}do cieľa</text>
     <name lang="sv">Ingen snitsel till mål</name>
     <text lang="sv">ingen snitsel, {0}från sista kontrollen till mål</text>
     <name lang="zh-HK">Navigate to finish (no tapes)</name>
