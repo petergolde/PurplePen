@@ -201,6 +201,31 @@ namespace PurplePen
             return icon;
         }
 
+        // Given a print area rectangle, get the exact size needed to print it at the given scale ratio. Because there tend to be rounding errors
+        // around the range of about 1/100 of a inch due to quantization, we check standard paper sizes to see if one is very very close.
+        public static void GetExactPageSize(RectangleF printAreaRectangle, float printScaleRatio, out int pageWidth, out int pageHeight, out bool landscape)
+        {
+            const float standardSizeTolerance = 1F; // tolerance for matching standard paper sizes, in hundredths of an inch.
+            landscape = printAreaRectangle.Width > printAreaRectangle.Height;
+
+            // Get needed page width and height in 1/100 of inch.
+            float printAreaWidth = (landscape ? printAreaRectangle.Height : printAreaRectangle.Width) / printScaleRatio * 100 / 25.4F;
+            float printAreaHeight = (landscape ? printAreaRectangle.Width : printAreaRectangle.Height) / printScaleRatio * 100 / 25.4F;
+
+            // See if we are very close to a standard paper size.
+            foreach (PaperSize paperSize in StandardPaperSizes) {
+                if (Math.Abs(paperSize.Width - printAreaWidth) < standardSizeTolerance && Math.Abs(paperSize.Height - printAreaHeight) < standardSizeTolerance) {
+                    pageWidth = paperSize.Width;
+                    pageHeight = paperSize.Height;
+                    return;
+                }
+            }
+
+            // Not close to a standard size, use exact size.
+            pageWidth = (int) Math.Round(printAreaWidth);
+            pageHeight = (int) Math.Round(printAreaHeight);
+        }
+
         // Given a print area rectangle, find the best default page size that encloses it, using either the default
         // metric or english paper sizes. If the rectangle is empty, return default page.
         public static void GetDefaultPageSize(RectangleF printAreaRectangle, float printScaleRatio, out int pageWidth, out int pageHeight, out int pageMargin, out bool landscape)
