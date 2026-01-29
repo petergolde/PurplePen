@@ -422,6 +422,40 @@ namespace PurplePen.Tests
 
         }
 
+        [TestMethod]
+        public void PdfCreation3NoBaseMap()
+        {
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("controller\\pdf_create3_nobasemap");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+            settings.ColorModel = ColorModel.RGB;
+            settings.CropLargePrintArea = false;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.PrintMapExchangesOnOneMap = false;
+            settings.DontPrintBaseMap = true;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.numberBold = true; // bold numbers.
+            appearance.numberRoboto = false; // Arial font
+            appearance.numberOutlineWidth = 0.13F;
+            appearance.useDefaultPurple = false;
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+            appearance.autoLegGapSize = 0.0F;
+            appearance.purpleC = 0.32F;
+            appearance.purpleY = 1.00F;
+            appearance.purpleM = 0;
+            appearance.purpleK = 0.30F;
+
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(0) };
+
+            CreatePdfFiles(TestUtil.GetTestFile("courseprinting\\marymoor.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("controller\\pdf_create3_nobasemap\\Course 1.pdf"), TestUtil.GetTestFile("controller\\pdf_create3_nobasemap\\Course 2.pdf"), TestUtil.GetTestFile("controller\\pdf_create3_nobasemap\\All controls.pdf") },
+                new string[] { TestUtil.GetTestFile("controller\\pdf_create3_nobasemap\\test3_Course 1_page%d_baseline.png"), TestUtil.GetTestFile("controller\\pdf_create3_nobasemap\\test3_Course 2_page%d_baseline.png"), TestUtil.GetTestFile("controller\\pdf_create3_nobasemap\\test3_All controls_page%d_baseline.png") });
+
+        }
+
+
 
         [TestMethod]
         public void PdfCreation4()
@@ -840,6 +874,41 @@ namespace PurplePen.Tests
                                TestUtil.GetTestFile("pdfcourse\\printareascaling2\\Course 2.png"),
                 });
         }
+
+        [TestMethod]
+        public void PrintAreaAndScaling3()
+        {
+            // Test DontPrintBaseMap setting.
+
+            CoursePdfSettings settings = new CoursePdfSettings();
+            settings.mapDirectory = settings.fileDirectory = false;
+            settings.outputDirectory = TestUtil.GetTestFile("pdfcourse\\printareascaling3");
+            settings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3), CourseId(4), CourseId(5) };
+            settings.ColorModel = ColorModel.CMYK;
+            settings.CropLargePrintArea = true;
+            settings.FileCreation = CoursePdfSettings.PdfFileCreation.FilePerCourse;
+            settings.DontPrintBaseMap = true;
+            settings.PrintMapExchangesOnOneMap = false;
+
+            CourseAppearance appearance = new CourseAppearance();
+            appearance.purpleColorBlend = PurpleColorBlend.Blend;
+
+            CreatePdfFiles(TestUtil.GetTestFile("pdfcourse\\UWLetter.ppen"), settings, appearance,
+                new string[] { TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course A.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course B.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course C.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course D.pdf"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course E.pdf"),
+                },
+                new string[] { TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course A.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course B.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course C.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course D.png"),
+                               TestUtil.GetTestFile("pdfcourse\\printareascaling3\\Course E.png"),
+                });
+        }
+
+
 
         [TestMethod]
         public void PdfBadIStreamFallback()

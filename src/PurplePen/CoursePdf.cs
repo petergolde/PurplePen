@@ -216,7 +216,14 @@ namespace PurplePen
                 IGraphicsTarget grTarget;
                 PdfImporter pdfImporter = null;
 
-                if (IsPdfMap) {
+                if (coursePdfSettings.DontPrintBaseMap) {
+                    // Don't print the base map, just the course.
+                    mapDisplay.SetMapFile(MapType.None, null);
+                    grTarget = pdfWriter.BeginPage(paperSize);
+                }
+                else if (IsPdfMap) {
+                    // Import the base map from the PDF map file, so that it is vector, not raster.
+
                     // We need to re-obtain a PdfImporter every time, or else very strange bugs start to crop up.
 
                     pdfImporter = new PdfImporter(sourcePdfMapFileName);
@@ -240,7 +247,7 @@ namespace PurplePen
                         grTarget = pdfWriter.BeginCopiedPartialPage(pdfImporter, 0, paperSize, sourcePortionInInches, cropRectangleInInches);
                     }
 
-                    // Don't draw the map normally.
+                    // Don't draw the map normally, which would case the rasterized map to be drawn over the PDF map.
                     mapDisplay.SetMapFile(MapType.None, null);
                 }
                 else {
@@ -344,7 +351,7 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
 
-        public bool IgnorePrintAreaForPdfBaseMap = false;    // If true, and base map is a PDF, and scaleRatio is 1.0, then ignore print area and use the base map size. Like we used to do.
+        public bool DontPrintBaseMap = false;    // If true, the base map is not rendered, just the course.
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
         public bool PrintMapExchangesOnOneMap = false;
         public PdfFileCreation FileCreation = PdfFileCreation.FilePerCourse; 

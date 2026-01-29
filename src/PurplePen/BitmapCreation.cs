@@ -156,6 +156,8 @@ namespace PurplePen
         // Create a single PDF file
         void CreateOneBitmap(string fileName, CourseDesignator courseDesignator)
         {
+            MapDisplay currentMapDisplay = mapDisplay.Clone();
+
             RectangleF mapRectangle = controller.GetCurrentPrintAreaRectangle(courseDesignator);
 
             // Get the course view for the course we are printing.
@@ -165,7 +167,7 @@ namespace PurplePen
             short ocadId;
             float purpleC, purpleM, purpleY, purpleK;
             bool purpleOverprint;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out purpleC, out purpleM, out purpleY, out purpleK, out purpleOverprint);
+            FindPurple.GetPurpleColor(currentMapDisplay, appearance, out ocadId, out purpleC, out purpleM, out purpleY, out purpleK, out purpleOverprint);
 
             // Create a course layout from the view.
             CourseLayout layout = new CourseLayout();
@@ -175,12 +177,18 @@ namespace PurplePen
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, appearance, layout, CourseLayer.MainCourse);
 
             // Set the course layout into the map display
-            mapDisplay.SetCourse(layout);
-            mapDisplay.SetPrintArea(null);
+            currentMapDisplay.SetCourse(layout);
+            currentMapDisplay.SetPrintArea(null);
 
-            ExportBitmap exportBitmap = new ExportBitmap(mapDisplay);
-            exportBitmap.CreateBitmap(fileName, mapRectangle, GetImageFormat(), bitmapCreationSettings.Dpi,
-                                      bitmapCreationSettings.WorldFile ? mapDisplay.CoordinateMapper : null);
+            CoordinateMapper coordinateMapper = bitmapCreationSettings.WorldFile ? currentMapDisplay.CoordinateMapper : null;
+
+            if (bitmapCreationSettings.DontPrintBaseMap) {
+                // Remove the base map.
+                currentMapDisplay.SetMapFile(MapType.None, null);
+            }
+
+            ExportBitmap exportBitmap = new ExportBitmap(currentMapDisplay);
+            exportBitmap.CreateBitmap(fileName, mapRectangle, GetImageFormat(), bitmapCreationSettings.Dpi, coordinateMapper);
         }
     }
 
@@ -190,6 +198,7 @@ namespace PurplePen
         public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
         public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
 
+        public bool DontPrintBaseMap = false;    // If true, the base map is not rendered, just the course.
         public bool PrintMapExchangesOnOneMap = false;
         public BitmapKind ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
         public float Dpi;

@@ -69,14 +69,17 @@ namespace PurplePen
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelColorModel = new System.Windows.Forms.Label();
             this.comboBoxColorModel = new System.Windows.Forms.ComboBox();
+            this.labelPrintBaseMap = new System.Windows.Forms.Label();
+            this.comboBoxPrintBaseMap = new System.Windows.Forms.ComboBox();
             this.comboBoxMultiPage = new System.Windows.Forms.ComboBox();
             this.labelAppearanceInfo = new System.Windows.Forms.Label();
             this.folderGroupBox = new System.Windows.Forms.GroupBox();
-            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.selectOtherDirectoryButton = new System.Windows.Forms.Button();
-            this.otherDirectory = new System.Windows.Forms.RadioButton();
-            this.mapDirectory = new System.Windows.Forms.RadioButton();
             this.coursesDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectoryTextBox = new System.Windows.Forms.TextBox();
+            this.mapDirectory = new System.Windows.Forms.RadioButton();
+            this.otherDirectory = new System.Windows.Forms.RadioButton();
             this.outputGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.fileNamePrefixLabel = new System.Windows.Forms.Label();
@@ -84,14 +87,13 @@ namespace PurplePen
             this.filesLabel = new System.Windows.Forms.Label();
             this.comboBoxFileFormat = new System.Windows.Forms.ComboBox();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.coursesGroupBox.SuspendLayout();
             this.groupBoxAppearance.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.folderGroupBox.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.outputGroupBox.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // okButton
@@ -105,15 +107,15 @@ namespace PurplePen
             // 
             // coursesGroupBox
             // 
-            this.coursesGroupBox.Controls.Add(this.courseSelector);
             resources.ApplyResources(this.coursesGroupBox, "coursesGroupBox");
+            this.coursesGroupBox.Controls.Add(this.courseSelector);
             this.coursesGroupBox.Name = "coursesGroupBox";
             this.coursesGroupBox.TabStop = false;
             // 
             // courseSelector
             // 
-            this.courseSelector.Filter = null;
             resources.ApplyResources(this.courseSelector, "courseSelector");
+            this.courseSelector.Filter = null;
             this.courseSelector.Name = "courseSelector";
             this.courseSelector.ShowAllControls = true;
             this.courseSelector.ShowCourseParts = false;
@@ -121,11 +123,11 @@ namespace PurplePen
             // 
             // groupBoxAppearance
             // 
+            resources.ApplyResources(this.groupBoxAppearance, "groupBoxAppearance");
             this.groupBoxAppearance.Controls.Add(this.checkBoxMergeParts);
             this.groupBoxAppearance.Controls.Add(this.tableLayoutPanel4);
             this.groupBoxAppearance.Controls.Add(this.comboBoxMultiPage);
             this.groupBoxAppearance.Controls.Add(this.labelAppearanceInfo);
-            resources.ApplyResources(this.groupBoxAppearance, "groupBoxAppearance");
             this.groupBoxAppearance.Name = "groupBoxAppearance";
             this.groupBoxAppearance.TabStop = false;
             // 
@@ -138,8 +140,10 @@ namespace PurplePen
             // tableLayoutPanel4
             // 
             resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
-            this.tableLayoutPanel4.Controls.Add(this.labelColorModel, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.comboBoxColorModel, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.labelColorModel, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxColorModel, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.labelPrintBaseMap, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboBoxPrintBaseMap, 1, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             // 
             // labelColorModel
@@ -156,6 +160,21 @@ namespace PurplePen
             resources.GetString("comboBoxColorModel.Items"),
             resources.GetString("comboBoxColorModel.Items1")});
             this.comboBoxColorModel.Name = "comboBoxColorModel";
+            // 
+            // labelPrintBaseMap
+            // 
+            resources.ApplyResources(this.labelPrintBaseMap, "labelPrintBaseMap");
+            this.labelPrintBaseMap.Name = "labelPrintBaseMap";
+            // 
+            // comboBoxPrintBaseMap
+            // 
+            resources.ApplyResources(this.comboBoxPrintBaseMap, "comboBoxPrintBaseMap");
+            this.comboBoxPrintBaseMap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPrintBaseMap.FormattingEnabled = true;
+            this.comboBoxPrintBaseMap.Items.AddRange(new object[] {
+            resources.GetString("comboBoxPrintBaseMap.Items"),
+            resources.GetString("comboBoxPrintBaseMap.Items1")});
+            this.comboBoxPrintBaseMap.Name = "comboBoxPrintBaseMap";
             // 
             // comboBoxMultiPage
             // 
@@ -174,15 +193,20 @@ namespace PurplePen
             // 
             // folderGroupBox
             // 
-            this.folderGroupBox.Controls.Add(this.tableLayoutPanel1);
             resources.ApplyResources(this.folderGroupBox, "folderGroupBox");
+            this.folderGroupBox.Controls.Add(this.tableLayoutPanel1);
             this.folderGroupBox.Name = "folderGroupBox";
             this.folderGroupBox.TabStop = false;
             // 
-            // otherDirectoryTextBox
+            // tableLayoutPanel1
             // 
-            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
-            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.selectOtherDirectoryButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.coursesDirectory, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.otherDirectoryTextBox, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.mapDirectory, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.otherDirectory, 0, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // selectOtherDirectoryButton
             // 
@@ -190,6 +214,25 @@ namespace PurplePen
             this.selectOtherDirectoryButton.Name = "selectOtherDirectoryButton";
             this.selectOtherDirectoryButton.UseVisualStyleBackColor = true;
             this.selectOtherDirectoryButton.Click += new System.EventHandler(this.selectOtherDirectoryButton_Click);
+            // 
+            // coursesDirectory
+            // 
+            resources.ApplyResources(this.coursesDirectory, "coursesDirectory");
+            this.coursesDirectory.Name = "coursesDirectory";
+            this.coursesDirectory.TabStop = true;
+            this.coursesDirectory.UseVisualStyleBackColor = true;
+            // 
+            // otherDirectoryTextBox
+            // 
+            resources.ApplyResources(this.otherDirectoryTextBox, "otherDirectoryTextBox");
+            this.otherDirectoryTextBox.Name = "otherDirectoryTextBox";
+            // 
+            // mapDirectory
+            // 
+            resources.ApplyResources(this.mapDirectory, "mapDirectory");
+            this.mapDirectory.Name = "mapDirectory";
+            this.mapDirectory.TabStop = true;
+            this.mapDirectory.UseVisualStyleBackColor = true;
             // 
             // otherDirectory
             // 
@@ -199,24 +242,10 @@ namespace PurplePen
             this.otherDirectory.UseVisualStyleBackColor = true;
             this.otherDirectory.CheckedChanged += new System.EventHandler(this.otherDirectory_CheckedChanged);
             // 
-            // mapDirectory
-            // 
-            resources.ApplyResources(this.mapDirectory, "mapDirectory");
-            this.mapDirectory.Name = "mapDirectory";
-            this.mapDirectory.TabStop = true;
-            this.mapDirectory.UseVisualStyleBackColor = true;
-            // 
-            // coursesDirectory
-            // 
-            resources.ApplyResources(this.coursesDirectory, "coursesDirectory");
-            this.coursesDirectory.Name = "coursesDirectory";
-            this.coursesDirectory.TabStop = true;
-            this.coursesDirectory.UseVisualStyleBackColor = true;
-            // 
             // outputGroupBox
             // 
-            this.outputGroupBox.Controls.Add(this.tableLayoutPanel2);
             resources.ApplyResources(this.outputGroupBox, "outputGroupBox");
+            this.outputGroupBox.Controls.Add(this.tableLayoutPanel2);
             this.outputGroupBox.Name = "outputGroupBox";
             this.outputGroupBox.TabStop = false;
             // 
@@ -260,16 +289,6 @@ namespace PurplePen
             // 
             resources.ApplyResources(this.folderBrowserDialog, "folderBrowserDialog");
             // 
-            // tableLayoutPanel1
-            // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.selectOtherDirectoryButton, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.coursesDirectory, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.otherDirectoryTextBox, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.mapDirectory, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.otherDirectory, 0, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
             // CreatePdfCourses
             // 
             resources.ApplyResources(this, "$this");
@@ -291,11 +310,11 @@ namespace PurplePen
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.folderGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.outputGroupBox.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -324,5 +343,7 @@ namespace PurplePen
         private System.Windows.Forms.ComboBox comboBoxFileFormat;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label labelPrintBaseMap;
+        private System.Windows.Forms.ComboBox comboBoxPrintBaseMap;
     }
 }

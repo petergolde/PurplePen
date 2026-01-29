@@ -88,6 +88,7 @@ namespace PurplePen
                 courseSelector.AllCoursesSelected = true;
             courseSelector.VariationChoicesPerCourse = settings.VariationChoicesPerCourse;
 
+            comboBoxPrintBaseMap.SelectedIndex = settings.DontPrintBaseMap ? 1 : 0;
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.ColorModel - 1;
             checkBoxMergeParts.Checked = settings.PrintMapExchangesOnOneMap;
@@ -125,6 +126,7 @@ namespace PurplePen
             settings.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
 
             // Appearance 
+            settings.DontPrintBaseMap = (comboBoxPrintBaseMap.SelectedIndex == 1);
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);
             settings.PrintMapExchangesOnOneMap = checkBoxMergeParts.Checked;
             settings.ColorModel = (ColorModel)(comboBoxColorModel.SelectedIndex + 1);
