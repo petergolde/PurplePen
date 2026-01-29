@@ -40,14 +40,24 @@
         <strong>DPI</strong>: This number of dots per inch in the bitmap. The higher the number, the more detail is shown,
         and the larger the image file will be.
     </p>
+    <p>
+        <strong>Include</strong>: Controls whether the course and map is in the resulting PDF, or just the course.
+    </p>
+    <ul>
+        <li><strong>Course and Map</strong>: (the default) The underlying map and the course are in the resulting PDF.</li>
+        <li><strong>Course Only</strong>: Only the course itself is ouput to the PDF. Useful when overprinting onto existing maps, or uploading to certain course sharing web sites.</li>
+    </ul>
+
     <p><strong>Color Model</strong>: Determines how the colors on the map are converted into colors on the printer:</p>
     <ul>
         <li><strong>RGB</strong>: Translates the Cyan-Magenta-Yellow-Black colors in the map to Red-Green-Blue colors using a simple formula. The colors in the image will typically not match the intended colors exactly.</li>
         <li><strong>CMYK</strong>: The default. Keeps the Cyan-Magenta-Yellow-Black colors as true as possible, using a standard color profile of CMYK colors. This generally produces the most accurate rendition of the intended colors.</li>
     </ul>
-    <p><strong>World file:</strong> This is enabled if the base map file is an OCAD or OOM file with real world coordinates defined.
+    <p>
+        <strong>World file:</strong> This is enabled if the base map file is an OCAD or OOM file with real world coordinates defined.
         Set this to Yes to create a .PGW, .JGW, or .GFW world file that defines the relationship between the image
-        file and the real world coordinate system.</p>
+        file and the real world coordinate system.
+    </p>
     <p>
         <strong>File name prefix</strong>: If something is typed in here, it is
         prefixed onto the file name of each output file. For example, if you type
