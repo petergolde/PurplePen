@@ -124,9 +124,9 @@
     <value>Нова сигнатура</value>
   </data>
   <data name="changeControlCodesLabel.Text" xml:space="preserve">
-    <value>За да промените сигнатурата на една или повече КТ, кликнете в колоната "Нова сигнатура" и я въведете. </value>
+    <value>За да промениш сигнатурата на една или повече КТ, щракни в колоната „Нова сигнатура“ и въведи новата стойност. </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Промени сигнатурите на КТ</value>
+    <value>Промяна на сигнатурите на КТ</value>
   </data>
 </root>

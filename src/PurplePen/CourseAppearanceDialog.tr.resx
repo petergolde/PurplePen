@@ -153,6 +153,12 @@
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
     <value>Arial Kalın</value>
   </data>
+  <data name="comboBoxControlNumberStyle.Items2" xml:space="preserve">
+    <value>Roboto</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items3" xml:space="preserve">
+    <value>Roboto Bold</value>
+  </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Kontrol numarası stili:</value>
   </data>
@@ -180,8 +186,20 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Nesne Boyutu</value>
   </data>
+  <data name="labelChooseLayer.Text" xml:space="preserve">
+    <value>Harita katmanının üzerinde:</value>
+  </data>
   <data name="comboBoxBlendPurple.Items" xml:space="preserve">
     <value>Yok</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items1" xml:space="preserve">
+    <value>Harmanlamak</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items2" xml:space="preserve">
+    <value>Katman</value>
+  </data>
+  <data name="labelBlendPurple.Text" xml:space="preserve">
+    <value>Mor rengi alttaki harita renkleriyle harmanlayın:</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Siyah:</value>

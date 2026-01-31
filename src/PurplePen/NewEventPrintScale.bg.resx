@@ -129,12 +129,15 @@
     <value>&amp;Мащаб на печата по подразбиране:</value>
   </data>
   <data name="changeLaterLabel.Text" xml:space="preserve">
-    <value>(По-късно можете да променяте мащаба на печат за който и да е маршрут, като изберете Маршрут/Данни.)</value>
+    <value>(По-късно можете да променяте мащаба на печат за който и да е маршрут, като изберете Маршрут/Свойства.)</value>
   </data>
   <data name="oneToPrefixLabel1.Text" xml:space="preserve">
     <value>1:</value>
   </data>
   <data name="oneToPrefixLabel2.Text" xml:space="preserve">
     <value>1:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Мащаб за печат</value>
   </data>
 </root>

@@ -136,61 +136,64 @@
     <value>Всички контролни точки</value>
   </data>
   <data name="CannotLoadFile" xml:space="preserve">
-    <value>Не може да зареди '{0}' поради следната причина:</value>
+    <value>Не може да се зареди '{0}' поради следната причина:</value>
   </data>
   <data name="CannotSaveFile" xml:space="preserve">
-    <value>Не може да запише '{0}' поради следната причина:</value>
+    <value>Не може да се запише '{0}' поради следната причина:</value>
   </data>
   <data name="CannotLoadMapFile" xml:space="preserve">
-    <value>Не може да зареди картовия файл '{0}' поради следната причина:</value>
+    <value>Не може да се зареди картният файл '{0}' поради следната причина:</value>
   </data>
   <data name="CannotReadImageFile" xml:space="preserve">
-    <value>Не може да прочете графичен файл '{0}'.</value>
+    <value>Не може да се прочете файлът с изображение '{0}'.</value>
   </data>
   <data name="CannotPrint" xml:space="preserve">
-    <value>Не може да отпечата '{0}' поради следната причина:</value>
+    <value>Не може да се отпечата '{0}' поради следната причина:</value>
   </data>
   <data name="CannotCreateFile" xml:space="preserve">
-    <value>Не може да създаде '{0}' поради следната причина:</value>
+    <value>Не може да се създаде '{0}' поради следната причина:</value>
   </data>
   <data name="CannotCreateDirectory" xml:space="preserve">
-    <value>Не може да създаде папка '{0}' поради следната причина:</value>
+    <value>Не може да се създаде папка '{0}' поради следната причина:</value>
+  </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>Не може да се прочете картата поради следната причина: '{0}'. Използването на функцията „Optimize/Repair“ и повторното записване в OCAD може да реши проблема.</value>
   </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
-    <value>Не може да създаде файлове за OCAD поради следната причина:</value>
+    <value>Не може да се създадат файлове за OCAD поради следната причина:</value>
   </data>
   <data name="SaveChanges" xml:space="preserve">
-    <value>Искате ли да запишете промените направени в '{0}'?</value>
+    <value>Искате ли да запишете направените промени в '{0}'?</value>
   </data>
   <data name="FileAlreadyExists" xml:space="preserve">
-    <value>Файлът '{0}' вече съществува в указаната папка. Натисни бутона "Обратно" и избери нова папка или ново име на състезанието.</value>
+    <value>Файлът '{0}' вече съществува в указаната папка. Натиснете бутона „Назад“ и изберете нова папка или ново име на състезанието.</value>
   </data>
   <data name="CodeInUse" xml:space="preserve">
-    <value>Сигнатурата '{0}' вече е използвана от друга контролна точка.</value>
+    <value>Сигнатурата '{0}' вече се използва от друга контролна точка.</value>
   </data>
   <data name="BadScore" xml:space="preserve">
-    <value>Стойностите на КТ трябва да са цяло число от 1 до 999.</value>
+    <value>Точките за КТ трябва да са цяло число от 1 до 999.</value>
   </data>
   <data name="BadClimb" xml:space="preserve">
-    <value>Сборното изкачване на маршрут трябва да е число от 0 до 9999 или празно поле.</value>
+    <value>Изкачването за маршрут трябва да е число от 0 до 9999 или празно поле.</value>
   </data>
   <data name="BadLoad" xml:space="preserve">
-    <value>Натовареността със състезатели на даден маршрут трябва да е число от 0 до 999999 или празно поле.</value>
+    <value>Натоварването на маршрута трябва да е цяло число от 0 до 999999 или празно поле.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Отмени</value>
+    <value>&amp;Undo</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Отмени</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Възстанови</value>
+    <value>&amp;Повтори</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Възстанови</value>
   </data>
   <data name="ClearSelectionWithShortcut" xml:space="preserve">
-    <value>&amp;Изчисти избраното</value>
+    <value>&amp;Изчисти избора</value>
   </data>
   <data name="CancelOperationWithShortcut" xml:space="preserve">
     <value>&amp;Прекрати действието</value>
@@ -199,64 +202,68 @@
     <value>Прекрати действието</value>
   </data>
   <data name="EnterScore" xml:space="preserve">
-    <value>Въведи нов маршрут</value>
+    <value>Въведи нов брой точки</value>
   </data>
   <data name="EnterCode" xml:space="preserve">
     <value>Въведи нова сигнатура</value>
   </data>
   <data name="EnterDimensions" xml:space="preserve">
     <value>Въведи размер на обекта
-Използвай / за височина на склон
+Използвай / за височина по склон
 Използвай | за два обекта</value>
   </data>
   <data name="EnterEventTitle" xml:space="preserve">
-    <value>Въведи ново име на състезанието
-Използвай | за разделяне на редовете
+    <value>Въведи ново заглавие на състезанието
+Използвай | за разделяне на редове
 (ще се приложи върху всички маршрути)</value>
   </data>
   <data name="EnterSecondaryTitle" xml:space="preserve">
     <value>Въведи ново подзаглавие
-Използвай | за разделяне на редовете</value>
+Използвай | за разделяне на редове</value>
   </data>
   <data name="EnterCourseName" xml:space="preserve">
-    <value>Въведи нов номер (име) на маршрута</value>
+    <value>Въведи ново име на маршрута</value>
   </data>
   <data name="EnterClimb" xml:space="preserve">
-    <value>Въведи ново сборно изкачване в метри</value>
+    <value>Въведи ново изкачване (в метри)</value>
   </data>
   <data name="EnterSymbolText" xml:space="preserve">
     <value>Въведи ново значение на символа
 (ще се приложи върху всички маршрути)</value>
   </data>
+  <data name="EnterTextLine" xml:space="preserve">
+    <value>Въведи нов текст
+Използвай | за разделяне на редове</value>
+  </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
-    <value>Контролните точки {0} повече не са използвани от никой от маршрутите. Искате ли да ги изтриете от сбирката с всички контролни точки?</value>
+    <value>Контролните точки {0} вече не се използват от нито един маршрут. Искате ли да ги изтриете от набора с всички контролни точки?</value>
   </data>
   <data name="DeleteControlFromControlsCollection" xml:space="preserve">
-    <value>Контролна точка {0} повече не се използва от никой от маршрутите. Искате ли да я изтриете от сбирката с всички контролни точки?</value>
+    <value>Контролната точка {0} вече не се използва от нито един маршрут. Искате ли да я изтриете от набора с всички контролни точки?</value>
   </data>
   <data name="DeleteControlFromAllControls" xml:space="preserve">
-    <value>Контролна точка {0} е използвана в следните маршрути: {1}. Искате ли все пак да я изтриете?</value>
+    <value>Контролната точка {0} се използва в следните маршрути: {1}. Искате ли все пак да я изтриете?</value>
   </data>
   <data name="CodeBadLength" xml:space="preserve">
-    <value>Сигнатурата трябва да се състои от една, две или три букви или цифри.</value>
+    <value>Сигнатурата трябва да съдържа една, две или три букви или цифри.</value>
   </data>
   <data name="CodeContainsSpace" xml:space="preserve">
-    <value>В сигнатурата не трябва да има празно пространство.</value>
+    <value>Сигнатурата не трябва да съдържа интервал.</value>
   </data>
   <data name="CodeBeginsWithZero" xml:space="preserve">
     <value>Сигнатурата не трябва да започва с нула.</value>
   </data>
   <data name="CodeCouldBeUpsideDown" xml:space="preserve">
-    <value>Сигнатурата не трябва да прилича на друго число, ако се обърне обратно.</value>
+    <value>Сигнатурата не трябва да изглежда като друго число, ако се обърне наопаки.</value>
   </data>
   <data name="DuplicateCode" xml:space="preserve">
-    <value>Сигнатурата "{0}" е използвана повече от един път.</value>
+    <value>Сигнатурата „{0}“ е използвана повече от веднъж.</value>
   </data>
   <data name="BadScale" xml:space="preserve">
-    <value>Мащабът на печат трябва да е число между 100 и 100,000.</value>
+    <value>Мащабът на печат трябва да бъде число между 100 и 100 000.</value>
   </data>
   <data name="CoursePropertiesTitle" xml:space="preserve">
-    <value>Данни за маршрута</value>
+    <value>Свойства на маршрута</value>
   </data>
   <data name="Landscape" xml:space="preserve">
     <value>Хоризонтално</value>
@@ -265,29 +272,34 @@
     <value>Вертикално</value>
   </data>
   <data name="PageTooSmall" xml:space="preserve">
-    <value>Размерът на страницата е твърде малък за отпечатване на описанията.</value>
+    <value>Размерът на страницата е твърде малък, за да се отпечатат описанията.</value>
   </data>
   <data name="VersionLabel" xml:space="preserve">
     <value>Версия {0}</value>
+  </data>
+  <data name="NewerVersionAvailable" xml:space="preserve">
+    <value>Налична е нова версия {0} на Purple Pen. (В момента използвате версия {1}).
+
+Желаете ли да изтеглите и инсталирате последната версия?</value>
   </data>
   <data name="HelpFileNotFound" xml:space="preserve">
     <value>Помощният файл '{0}' не може да бъде отворен.</value>
   </data>
   <data name="Zoom" xml:space="preserve">
-    <value>Увеличи</value>
+    <value>Мащаб</value>
   </data>
   <data name="MissingMapFile" xml:space="preserve">
-    <value>Картовият файл "{0}" не може да бъде открит.
+    <value>Картният файл "{0}" не може да бъде открит.
 
-Най-вероятно картовият файл е бил преместен или изтрит, или Purple Pen файлът е бил преместен (може би на друг компютър). Картовият файл трябва да е наличен всеки път, когато Purple Pen файлът за съответното състезание се зарежда. Ако изпратите Purple Pen файла със състезанието на друг човек, уверете се, че той също притежава копие от картовия файл.
+Най-вероятно файлът е бил преместен или изтрит, или Purple Pen файлът е бил преместен (възможно е на друг компютър). Картният файл трябва да е наличен винаги, когато се зарежда Purple Pen файлът на състезанието. Ако изпратите Purple Pen файла на друг човек, уверете се, че той също има копие на картния файл.
 
-След като натиснете Да, пробвайте да намерите копие от картовия файл на вашия компютър.</value>
+След като натиснете OK, опитайте да намерите копие на картния файл на вашия компютър.</value>
   </data>
   <data name="NoUnusedControls" xml:space="preserve">
-    <value>Всички контролни точки са използвани в маршрут.</value>
+    <value>Всички контролни точки се използват в маршрут.</value>
   </data>
   <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Край</value>
+    <value>&amp;Финал</value>
   </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Напред &gt;</value>
@@ -299,10 +311,10 @@
     <value>Финал</value>
   </data>
   <data name="Finish_Short" xml:space="preserve">
-    <value>F</value>
+    <value>Ф</value>
   </data>
   <data name="MandCrossing_Long" xml:space="preserve">
-    <value>Задължително място/точка за преминаване</value>
+    <value>Задължителна точка за преминаване</value>
   </data>
   <data name="MandCrossing_Medium" xml:space="preserve">
     <value>Пресичане</value>
@@ -314,7 +326,7 @@
     <value>Всички: {0}</value>
   </data>
   <data name="Margins_LRTB" xml:space="preserve">
-    <value>Отляво: {0}, Отдясно: {1}, Отгоре: {2}, Отдолу: {3}</value>
+    <value>Ляв: {0}, Десен: {1}, Горен: {2}, Долен: {3}</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Старт</value>
@@ -338,45 +350,282 @@
     <value>ед. ч.</value>
   </data>
   <data name="RequireStar" xml:space="preserve">
-    <value>Персонализираният текст изисква "*", за да се посочи къде е преместен промененият обект.</value>
+    <value>Персонализираният текст изисква „*“, за да се обозначи мястото, където е поставен промененият обект.</value>
   </data>
   <data name="AppSubtitle" xml:space="preserve">
-    <value>програма за чертаене на маршрути по ориентиране</value>
+    <value>създаване на маршрути за спортно ориентиране</value>
   </data>
   <data name="AddTextSpecialExplanation" xml:space="preserve">
-    <value>Въведете текста, който искате да поставите на картата. След като натиснете Да, плъзнете мишката, за да поставите текста на желаното място.</value>
+    <value>Въведете текста, който искате да поставите на картата. След като натиснете OK, плъзнете мишката, за да го позиционирате на желаното място.</value>
   </data>
   <data name="AddTextSpecialTitle" xml:space="preserve">
     <value>Добави текст</value>
   </data>
   <data name="ChangeTextSpecialExplanation" xml:space="preserve">
-    <value>Въведи новия текст.</value>
+    <value>Въведете новия текст.</value>
   </data>
   <data name="ChangeTextTitle" xml:space="preserve">
-    <value>Промени текст</value>
+    <value>Промени текста</value>
   </data>
   <data name="MapFileChanged" xml:space="preserve">
-    <value>Друга програма е променила картовия файл "{0}". Purple Pen ще презареди картата.</value>
+    <value>Друга програма е променила картния файл „{0}“. Purple Pen ще презареди картата.</value>
   </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
-    <value>Текущото състезание има текстови описания на контролните точки в {0}. Искате ли да промените езика на описанията на {1}?</value>
+    <value>Текущото състезание има текстови описания на контролните точки на {0}. Искате ли да промените езика на описанията на {1}?</value>
   </data>
   <data name="OpenLastEvent" xml:space="preserve">
-    <value>Отвори "{0}"</value>
+    <value>Отвори „{0}“</value>
   </data>
   <data name="ClosePPBeforeLoadingOCAD" xml:space="preserve">
-    <value>Purple Pen трябва да се затвори преди да се заредят създадените файлове за OCAD.</value>
+    <value>Purple Pen трябва да бъде затворен, преди да се заредят създадените OCAD файлове.</value>
   </data>
   <data name="NoCoursesSelected" xml:space="preserve">
     <value>Няма избрани маршрути за печат.</value>
   </data>
   <data name="TranslatedHelpWebSite" xml:space="preserve">
-    <value>*** Ако на езика, на който се превежда, съществува уебсайт, съдържащ документация за Purple Pen, въведете адреса URL (включително http), както и преведеното наименование на този документ, в противен случай оставете празно.</value>
+    <value>*** Ако съществува уебсайт на преведения език с документация за Purple Pen, въведете неговия URL адрес (включително http) като превод на този елемент. В противен случай оставете празно.</value>
+  </data>
+  <data name="MapExchange_Long" xml:space="preserve">
+    <value>Смяна на карта</value>
+  </data>
+  <data name="MapExchange_Medium" xml:space="preserve">
+    <value>Смяна</value>
+  </data>
+  <data name="MapExchange_Short" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="PartN" xml:space="preserve">
+    <value>Част {0}</value>
+  </data>
+  <data name="AllParts" xml:space="preserve">
+    <value>Всички части</value>
+  </data>
+  <data name="PartXOfY" xml:space="preserve">
+    <value>Част {0} (от {1})</value>
   </data>
   <data name="CrashCancel" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
+  </data>
+  <data name="CrashEmail" xml:space="preserve">
+    <value>Имейл за контакт</value>
+  </data>
+  <data name="CrashIntro" xml:space="preserve">
+    <value>Възникна грешка. За да ни помогнете да я отстраним, въведете своя имейл адрес и допълнителна информация, след което изпратете доклад за грешката.</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>Моля, опишете какво правехте в програмата, за да ни помогнете да открием причината за грешката.</value>
   </data>
   <data name="CrashSave" xml:space="preserve">
     <value>Запиши</value>
+  </data>
+  <data name="CrashSend" xml:space="preserve">
+    <value>Изпрати доклад</value>
+  </data>
+  <data name="PdfConverterNotFound" xml:space="preserve">
+    <value>Файлът PdfConverter.exe не е открит</value>
+  </data>
+  <data name="PdfConversionFailed" xml:space="preserve">
+    <value>PDF конверторът (Pdfium) не успя да прочете PDF файла успешно</value>
+  </data>
+  <data name="PdfResultNotReadable" xml:space="preserve">
+    <value>Не може да се прочете резултатът от конвертирането на PDF файла „{0}“</value>
+  </data>
+  <data name="CannotCreatePdfs" xml:space="preserve">
+    <value>Не може да се създадат PDF файлове поради следната причина:</value>
+  </data>
+  <data name="UserDefined" xml:space="preserve">
+    <value>Потребителски</value>
+  </data>
+  <data name="PdfMapSize" xml:space="preserve">
+    <value>Размер на картата от PDF</value>
+  </data>
+  <data name="CancelledByUser" xml:space="preserve">
+    <value>Отменено от потребителя</value>
+  </data>
+  <data name="CreatingFile" xml:space="preserve">
+    <value>Създава се {0}...</value>
+  </data>
+  <data name="PrintingPage" xml:space="preserve">
+    <value>Печат на страница {0} (от {1})</value>
+  </data>
+  <data name="MapFileDeleted" xml:space="preserve">
+    <value>Картният файл „{0}“ е изтрит. Опитайте да го възстановите и след това натиснете „OK“.</value>
+  </data>
+  <data name="BadDotNetFramework" xml:space="preserve">
+    <value>Изглежда, че .NET Framework на вашия компютър не е инсталиран правилно. Посетете http://microsoft.com/net и инсталирайте най-новата версия на .NET Framework за вашата операционна система Windows.</value>
+  </data>
+  <data name="Black" xml:space="preserve">
+    <value>Черен</value>
+  </data>
+  <data name="ChooseOtherColor" xml:space="preserve">
+    <value>Изберете цвят...</value>
+  </data>
+  <data name="CustomColor" xml:space="preserve">
+    <value>Потребителски цвят</value>
+  </data>
+  <data name="DarkBlue" xml:space="preserve">
+    <value>Тъмносин</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Зелен</value>
+  </data>
+  <data name="LightBlue" xml:space="preserve">
+    <value>Светлосин</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Пурпурен</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Червен</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Жълт</value>
+  </data>
+  <data name="AddLineExplanation" xml:space="preserve">
+    <value>Задайте вида на линията. След като натиснете OK, плъзнете мишката, за да начертаете сегментите на линията на желаното място.</value>
+  </data>
+  <data name="AddLineTitle" xml:space="preserve">
+    <value>Добави линия</value>
+  </data>
+  <data name="AddRectangleExplanation" xml:space="preserve">
+    <value>Задайте вида на правоъгълника. След като натиснете OK, плъзнете мишката, за да го поставите на желаното място.</value>
+  </data>
+  <data name="AddRectangleTitle" xml:space="preserve">
+    <value>Добави правоъгълник</value>
+  </data>
+  <data name="ChangeLineAppearanceExplanation" xml:space="preserve">
+    <value>Променете вида на линията или правоъгълника.</value>
+  </data>
+  <data name="ChangeLineAppearanceTitle" xml:space="preserve">
+    <value>Промени изгледа на линията</value>
+  </data>
+  <data name="GpxMustBeOcadMap" xml:space="preserve">
+    <value>Картният файл трябва да бъде във формат OCAD, за да се използват GPX файлове.</value>
+  </data>
+  <data name="GpxMustHaveCoordSystem" xml:space="preserve">
+    <value>OCAD файлът трябва да има зададена координатна система, за да използва GPX файлове.</value>
+  </data>
+  <data name="GpxMustHaveRealWorldCoord" xml:space="preserve">
+    <value>OCAD файлът трябва да има реални координати на терена, за да използва GPX файлове.</value>
+  </data>
+  <data name="GpxReprojectFailure" xml:space="preserve">
+    <value>Не може да се преобразуват координатите; координатната система или реалните географски координати в OCAD картата са некоректни.</value>
+  </data>
+  <data name="GpxUnsupportedCoordSystem" xml:space="preserve">
+    <value>OCAD файлът използва координатна система, която не се поддържа от Purple Pen.</value>
+  </data>
+  <data name="AutomaticLength" xml:space="preserve">
+    <value>Автоматично</value>
+  </data>
+  <data name="BadLength" xml:space="preserve">
+    <value>Дължината на маршрута трябва да бъде число между 0.1 и 99.9 km, или празно поле за автоматично изчисляване.</value>
+  </data>
+  <data name="DuplicateCourseTitle" xml:space="preserve">
+    <value>Дублирай маршрута</value>
+  </data>
+  <data name="EnterLength" xml:space="preserve">
+    <value>Въведете дължината в km или оставете празно за автоматично изчисляване.</value>
+  </data>
+  <data name="PausePrinting" xml:space="preserve">
+    <value>Печатът на „{0}“ е завършен. Натиснете OK, за да започне печатът на „{1}“.</value>
+  </data>
+  <data name="OCAD" xml:space="preserve">
+    <value>OCAD</value>
+  </data>
+  <data name="OpenOrienteeringMapper" xml:space="preserve">
+    <value>OOM</value>
+  </data>
+  <data name="AllVariations" xml:space="preserve">
+    <value>Всички варианти</value>
+  </data>
+  <data name="ForkSummary" xml:space="preserve">
+    <value>Подходящо за щафети с {0} участници в отбор.</value>
+  </data>
+  <data name="LoopSummary" xml:space="preserve">
+    <value>Централната контролна точка в цикъла ще бъде посетена {0} пъти. Възможни са {1} различни маршрута през цикъла.</value>
+  </data>
+  <data name="CantRearrangeSplitControl" xml:space="preserve">
+    <value>Контролна точка, която започва разклонение или цикъл, не може да бъде преместена на друго място в маршрута.</value>
+  </data>
+  <data name="TooManyVariations" xml:space="preserve">
+    <value>Твърде много варианти в този маршрут. Броят на уникалните варианти е ограничен до {0}.</value>
+  </data>
+  <data name="CannotAddVariation" xml:space="preserve">
+    <value>Не може да се добави вариант.</value>
+  </data>
+  <data name="VariationAlreadyExists" xml:space="preserve">
+    <value>Вече съществува вариант при тази контролна точка.</value>
+  </data>
+  <data name="VariationMustSelectControl" xml:space="preserve">
+    <value>Трябва да изберете контролна точка или отсечка, за да добавите вариант.</value>
+  </data>
+  <data name="VariationNotFinish" xml:space="preserve">
+    <value>Не може да се добави вариант към финалната точка.</value>
+  </data>
+  <data name="VariationNotInAllControls" xml:space="preserve">
+    <value>Не може да се добави вариант в изгледа „Всички КТ“.</value>
+  </data>
+  <data name="VariationNotInScoreCourse" xml:space="preserve">
+    <value>Не може да се добави вариант към маршрут по точки.</value>
+  </data>
+  <data name="VariationNotLastControl" xml:space="preserve">
+    <value>Не може да се добави вариант към последната контролна точка. Първо добавете финална точка.</value>
+  </data>
+  <data name="BadLegNumber" xml:space="preserve">
+    <value>„{0}“ не е валиден номер на отсечка за разклонение „{1}“</value>
+  </data>
+  <data name="LegNotAssigned" xml:space="preserve">
+    <value>Отсечката {0} трябва да бъде зададена към едно от разклоненията {1}</value>
+  </data>
+  <data name="LegUsedTwice" xml:space="preserve">
+    <value>Отсечката {0} е зададена както на разклонение „{1}“, така и на „{2}“</value>
+  </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>Картата не може да бъде прочетена поради следната причина: „{0}“. Отварянето и повторното ѝ записване в последната версия на OpenOrienteering Mapper може да реши проблема.</value>
+  </data>
+  <data name="MapIssue_Long" xml:space="preserve">
+    <value>Стартиране с време</value>
+  </data>
+  <data name="MapIssue_Medium" xml:space="preserve">
+    <value>Стартиране с време</value>
+  </data>
+  <data name="MapIssue_Short" xml:space="preserve">
+    <value>Карта - вземане</value>
+  </data>
+  <data name="BaseMapHasVisibleTemplatesThatMayNotAppear" xml:space="preserve">
+    <value>Основната OCAD карта има видими шаблонни файлове. В OCAD 8 и по-стари версии тези шаблони може да не се визуализират поради ограничения в OCAD.</value>
+  </data>
+  <data name="ImagesMayAppearBadlyLayeredInOcad10Below" xml:space="preserve">
+    <value>Поради ограничения във формата на OCAD (в OCAD 10 и по-стари версии), графичните обекти може да се появят под маршрутите и белите маски в експортираните OCAD файлове. Проверете файловете, за да се уверите, че изображенията изглеждат коректно.</value>
+  </data>
+  <data name="CannotCreateImageFiles" xml:space="preserve">
+    <value>Не може да се създадат файлове с изображения поради следната причина:</value>
+  </data>
+  <data name="CreatePdf" xml:space="preserve">
+    <value>Създай PDF</value>
+  </data>
+  <data name="PdfFilter" xml:space="preserve">
+    <value>PDF файл|*.pdf</value>
+  </data>
+  <data name="LegAssignedOuterBranch" xml:space="preserve">
+    <value>Отсечката {0} никога не достига разклонение „{1}“ – тя е зададена по друг път в рамките на по-високо разклонение.</value>
+  </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Задайте вида на елипсата. След като натиснете OK, плъзнете мишката, за да поставите елипсата на желаното място.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Добави елипса</value>
+  </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>На компютъра все още е инсталирана по-стара версия на Purple Pen. За да избегнете объркване при наличието на две версии, силно се препоръчва старата версия да бъде деинсталирана. Искате ли да я премахнете сега?</value>
+  </data>
+  <data name="AskInstallRobotoFonts" xml:space="preserve">
+    <value>За да могат OCAD и OpenOrienteering Mapper да показват правилно описанията на контролните точки, трябва да бъдат инсталирани шрифтовете „Roboto“ и „Roboto Condensed“. Желаете ли да ги инсталирате сега (силно препоръчително)?</value>
+  </data>
+  <data name="RobotoFontsInstallFailed" xml:space="preserve">
+    <value>Инсталирането на шрифтовете Roboto не бе успешно.</value>
+  </data>
+  <data name="LowerPurple" xml:space="preserve">
+    <value>Спусни пурпурния слой</value>
   </data>
 </root>

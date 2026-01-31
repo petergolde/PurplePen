@@ -129,14 +129,14 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Izberi mapo za OCAD datoteke</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Izhod</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Format datoteke:</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
     <value>Pripona imena datoteke:</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Izhod</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Izberi mapo...</value>

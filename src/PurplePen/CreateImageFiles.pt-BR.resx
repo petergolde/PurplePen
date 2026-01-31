@@ -129,9 +129,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Selecionar uma pasta para os arquivos OCD</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Saída</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Formato do arquivo:</value>
   </data>
@@ -188,6 +185,9 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Saída</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Selecionar pasta...</value>

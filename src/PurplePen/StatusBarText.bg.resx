@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultStatus" xml:space="preserve">
-    <value>Ляв бутон на мишката: Избери обект. Десен бутон на мишката: Премести картата. Завъртане на колелото на мишката: Увеличи/Намали.</value>
+    <value>Ляв бутон на мишката: избери обект;   десен бутон: премести картата;   колело: увеличи/намали.</value>
   </data>
   <data name="DefaultRectangle" xml:space="preserve">
-    <value>Ляв бутон на мишката: Придвижи/Оразмери правоъгълника. Десен бутон на мишката: Премести картата. Завъртане на колелото на мишката: Увеличи/Намали.</value>
+    <value>Ляв бутон: премести/промени размера на правоъгълника;   десен бутон: премести картата;   колело: увеличи/намали.</value>
   </data>
   <data name="DragObject" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и я плъзнете, за да преместите избрания обект.</value>
+    <value>Задръжте левия бутон на мишката и плъзнете, за да преместите избрания обект.</value>
   </data>
   <data name="DragCorner" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и изтеглете върха на ъгъла, за да го преместите.</value>
+    <value>Задръжте левия бутон на мишката и плъзнете върха на ъгъла, за да го преместите.</value>
   </data>
   <data name="DraggingObject" xml:space="preserve">
-    <value>Преместете обекта до желаното местоположение и освободете бутона на мишката.</value>
+    <value>Преместете обекта до желаното местоположение и отпуснете бутона на мишката.</value>
   </data>
   <data name="DraggingCorner" xml:space="preserve">
-    <value>Преместете върха на ъгъла до желаното местоположение и освободете бутона на мишката.</value>
+    <value>Преместете върха на ъгъла до желаното местоположение и отпуснете бутона на мишката.</value>
   </data>
   <data name="AddingControl" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката, за да поставите нова контролна точка.</value>
   </data>
   <data name="AddingExistingControl" xml:space="preserve">
-    <value>Кликнете с левия бутон на мишката, за да добавите контролна точка "{0}" към маршрута.</value>
+    <value>Кликнете с левия бутон на мишката, за да добавите съществуваща контролна точка „{0}“ към маршрута.</value>
   </data>
   <data name="AddingStart" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката, за да поставите нов старт.</value>
@@ -154,48 +154,84 @@
     <value>Кликнете с левия бутон на мишката, за да добавите съществуващ финал към маршрута.</value>
   </data>
   <data name="AddingCrossingPoint" xml:space="preserve">
-    <value>Кликнете с левия бутон на мишката, за да добавите ново задължително място за преминаване.</value>
+    <value>Кликнете с левия бутон на мишката, за да поставите ново задължително място за преминаване.</value>
   </data>
   <data name="AddingExistingCrossingPoint" xml:space="preserve">
-    <value>Кликнете с левия бутон на мишката, за да добавите съществуващо задължително място за преминаване.</value>
+    <value>Кликнете с левия бутон на мишката, за да добавите съществуващо задължително място за преминаване към маршрута.</value>
   </data>
   <data name="AddingObject" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката, за да поставите нов обект.</value>
   </data>
   <data name="AddingBend" xml:space="preserve">
-    <value>Кликнете с левия бутон на мишката, където е мястото на извивката.</value>
+    <value>Кликнете с левия бутон на мишката, за да поставите извивка.</value>
   </data>
   <data name="AddingCorner" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката, за да добавите нов ъгъл.</value>
   </data>
   <data name="DeletingBend" xml:space="preserve">
-    <value>Кликнете с левия бутон на мишката на мястото на извивката, за да я премахнете.</value>
+    <value>Кликнете с левия бутон на мишката върху извивката, за да я премахнете.</value>
   </data>
   <data name="DeletingCorner" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката върху ъгъл, за да го премахнете.</value>
   </data>
+  <data name="AddingControlGap" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката върху кръга на контролната точка, за да добавите малко прекъсване; задръжте бутона и плъзнете, за да създадете по-голямо прекъсване.</value>
+  </data>
   <data name="RemovingControlGap" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката върху прекъсването на окръжността на КТ, за да го премахнете.</value>
+  </data>
+  <data name="AddingLegGap" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката, за да създадете малко прекъсване; задръжте бутона и плъзнете, за да направите по-голямо прекъсване в отсечката.</value>
   </data>
   <data name="RemovingLegGap" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката върху прекъсването на отсечката, за да го премахнете.</value>
   </data>
   <data name="SizeRectangle" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и плъзнете, за да оразмерите избрания обект.</value>
+    <value>Задръжте левия бутон на мишката и плъзнете, за да промените размера на избрания обект.</value>
   </data>
   <data name="SizingRectangle" xml:space="preserve">
-    <value>Преместете ъгъла (ъглите) до желаното място и освободете бутона на мишката.</value>
+    <value>Преместете ръба (ръбовете) до желаното място и отпуснете бутона на мишката.</value>
   </data>
   <data name="AddingDescription" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и плъзнете, за да създадете описание на КТ.</value>
+    <value>Задръжте левия бутон на мишката и плъзнете, за да създадете описания на КТ.</value>
   </data>
   <data name="RotatingObject" xml:space="preserve">
     <value>Кликнете с левия бутон на мишката, когато мястото за преминаване е завъртяно под правилен ъгъл.</value>
   </data>
   <data name="AddingLineArea" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и дръпнете, за да добавите линеен сегмент. Кликнете с левия бутон на мишката, за да прекратите добавяне на обект.</value>
+    <value>Задръжте левия бутон на мишката и плъзнете, за да добавите линеен сегмент; кликнете с левия бутон, за да приключите добавянето на обекта.</value>
   </data>
   <data name="AddingText" xml:space="preserve">
-    <value>Задръжте левия бутон на мишката и дръпнете, за да създадете текстово поле.</value>
+    <value>Задръжте левия бутон на мишката и плъзнете, за да създадете текстово поле.</value>
+  </data>
+  <data name="AddingExistingMapExchange" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката, за да добавите съществуваща смяна на карта към маршрута.</value>
+  </data>
+  <data name="AddingMapExchange" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката, за да поставите нова смяна на карта.</value>
+  </data>
+  <data name="AddingMapExchangeToControl" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката, за да добавите смяна на карта при КТ „{0}“. </value>
+  </data>
+  <data name="AddingRectangle" xml:space="preserve">
+    <value>Задръжте левия бутон на мишката и плъзнете, за да създадете обект.</value>
+  </data>
+  <data name="DraggingTopologyObject" xml:space="preserve">
+    <value>Плъзнете номера на контролната точка, за да промените реда ѝ в маршрута (задръжте Shift, за да я дублирате).</value>
+  </data>
+  <data name="AddingExistingMapIssue" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката, за да добавите съществуваща точка за раздаване на карти към маршрута.</value>
+  </data>
+  <data name="AddingMapIssue" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката, за да поставите нова точка за раздаване на карти.</value>
+  </data>
+  <data name="StretchingObject" xml:space="preserve">
+    <value>Задръжте левия бутон на мишката и плъзнете, за да разтегнете мястото за преминаване.</value>
+  </data>
+  <data name="ControlForMoveAllControls" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката върху контролна точка или репер, за да я преместите на ново място.</value>
+  </data>
+  <data name="NewLocationForMoveAllControls" xml:space="preserve">
+    <value>Кликнете с левия бутон на мишката върху новото местоположение на контролната точка или репера.</value>
   </data>
 </root>

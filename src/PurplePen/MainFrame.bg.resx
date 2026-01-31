@@ -120,11 +120,20 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Всички КТ</value>
   </data>
+  <data name="radioButtonDescriptions.Text" xml:space="preserve">
+    <value>Описания</value>
+  </data>
+  <data name="radioButtonTopology.Text" xml:space="preserve">
+    <value>Подреждане</value>
+  </data>
+  <data name="mapViewerTopology.Text" xml:space="preserve">
+    <value>Топология на картния изглед</value>
+  </data>
   <data name="openFileDialog.Filter" xml:space="preserve">
-    <value>Purple Pen файлове|*.ppen|All files|*.*</value>
+    <value>Файлове на Purple Pen|.ppen|Всички файлове|.*</value>
   </data>
   <data name="saveFileDialog.Filter" xml:space="preserve">
-    <value>Purple Pen файл|*.ppen</value>
+    <value>Файл на Purple Pen|*.ppen</value>
   </data>
   <data name="newEventMenu.Text" xml:space="preserve">
     <value>&amp;Ново състезание...</value>
@@ -139,19 +148,49 @@
     <value>Запиши &amp;като...</value>
   </data>
   <data name="createOcadFilesMenu.Text" xml:space="preserve">
-    <value>Create &amp;файлове за OCAD...</value>
+    <value>Създай OCAD &amp;файлове...</value>
+  </data>
+  <data name="createImageFilesMenu.Text" xml:space="preserve">
+    <value>Създай &amp;файлове с изображения...</value>
+  </data>
+  <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
+    <value>&amp;Описания...</value>
+  </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>Ко&amp;нтролни картони...</value>
+  </data>
+  <data name="createCoursePdfMenu.Text" xml:space="preserve">
+    <value>&amp;Маршрути...</value>
+  </data>
+  <data name="createPDFsMenu.Text" xml:space="preserve">
+    <value>Create P&amp;DFs</value>
   </data>
   <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
-    <value>Create файлове за Route&amp;Gadget...</value>
+    <value>Създай RouteGadget файлове...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Създай файлове за Route Review</value>
+  </data>
+  <data name="createXmlMenu.Text" xml:space="preserve">
+    <value>Създай &amp;файл за обмен на данни (IOF XML)...</value>
+  </data>
+  <data name="createGPXFileMenu.Text" xml:space="preserve">
+    <value>Създай G&amp;PX файл...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Създай &amp;KML файл...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
-    <value>&amp;Печат на описанията на КТ...</value>
+    <value>&amp;Отпечатай описания...</value>
   </data>
   <data name="printPunchCardsMenu.Text" xml:space="preserve">
-    <value>Отпечатай &amp;състезателни картони за съдиите...</value>
+    <value>Отпечатай ко&amp;нтролни картони...</value>
   </data>
   <data name="printCoursesMenu.Text" xml:space="preserve">
-    <value>Печат на &amp;маршрутите...</value>
+    <value>Отпечатай &amp;маршрути...</value>
+  </data>
+  <data name="printAreaThisPartMenu.Text" xml:space="preserve">
+    <value>Само тази &amp;част</value>
   </data>
   <data name="printAreaThisCourseMenu.Text" xml:space="preserve">
     <value>&amp;Този маршрут</value>
@@ -160,10 +199,10 @@
     <value>&amp;Всички маршрути</value>
   </data>
   <data name="setPrintAreaMenu.Text" xml:space="preserve">
-    <value>Задай &amp;зона за печат</value>
+    <value>Задай област за пе&amp;чат</value>
   </data>
   <data name="programLanguageMenu.Text" xml:space="preserve">
-    <value>&amp;Език на програмата...</value>
+    <value>Език на &amp;програмата...</value>
   </data>
   <data name="exitMenu.Text" xml:space="preserve">
     <value>&amp;Изход</value>
@@ -172,19 +211,19 @@
     <value>&amp;Файл</value>
   </data>
   <data name="cancelMenu.Text" xml:space="preserve">
-    <value>&amp;Изчисти избраното</value>
+    <value>&amp;Изчисти избора</value>
   </data>
   <data name="undoMenu.Text" xml:space="preserve">
-    <value>&amp;Отмени</value>
+    <value>&amp;Undo</value>
   </data>
   <data name="redoMenu.Text" xml:space="preserve">
-    <value>&amp;Възстанови</value>
+    <value>&amp;Повтори</value>
   </data>
   <data name="deleteMenu.Text" xml:space="preserve">
     <value>&amp;Изтрий</value>
   </data>
   <data name="editMenu.Text" xml:space="preserve">
-    <value>&amp;Редактиране</value>
+    <value>&amp;Редакция</value>
   </data>
   <data name="entireCourseMenu.Text" xml:space="preserve">
     <value>Целия &amp;маршрут</value>
@@ -214,79 +253,139 @@
     <value>1000%</value>
   </data>
   <data name="zoomMenu.Text" xml:space="preserve">
-    <value>&amp;Увеличи</value>
+    <value>&amp;Мащаб</value>
   </data>
   <data name="veryLowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Много ниска</value>
+    <value>&amp;Много нисък</value>
   </data>
   <data name="lowIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Ниска</value>
+    <value>&amp;Нисък</value>
   </data>
   <data name="mediumIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Средна</value>
+    <value>&amp;Среден</value>
   </data>
   <data name="highIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Висока</value>
+    <value>&amp;Висок</value>
   </data>
   <data name="fullIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Пълна</value>
+    <value>&amp;Пълен</value>
   </data>
   <data name="mapIntensityMenu.Text" xml:space="preserve">
-    <value>&amp;Наситеност на картата</value>
+    <value>&amp;Интензитет на картата</value>
   </data>
   <data name="normalQualityMenu.Text" xml:space="preserve">
-    <value>Ниско</value>
+    <value>Нисък</value>
   </data>
   <data name="highQualityMenu.Text" xml:space="preserve">
-    <value>Високо</value>
+    <value>Висок</value>
   </data>
   <data name="mapQualityMenu.Text" xml:space="preserve">
     <value>&amp;Качество на картата</value>
   </data>
+  <data name="showPrintAreaMenu.Text" xml:space="preserve">
+    <value>Показвай областта за пе&amp;чат</value>
+  </data>
+  <data name="showPopupsMenu.Text" xml:space="preserve">
+    <value>Показвай изскачаща &amp;информация</value>
+  </data>
   <data name="allControlsMenu.Text" xml:space="preserve">
-    <value>&amp;Всички контролни точки</value>
+    <value>&amp;Всички КТ</value>
+  </data>
+  <data name="otherCoursesMenu.Text" xml:space="preserve">
+    <value>Други маршрути...</value>
+  </data>
+  <data name="clearOtherCoursesMenu.Text" xml:space="preserve">
+    <value>Изчисти другите маршрути</value>
   </data>
   <data name="viewMenu.Text" xml:space="preserve">
     <value>&amp;Изглед</value>
   </data>
+  <data name="addStartMenu.Text" xml:space="preserve">
+    <value>&amp;Старт</value>
+  </data>
+  <data name="addControlMenu.Text" xml:space="preserve">
+    <value>&amp;КТ</value>
+  </data>
   <data name="addFinishMenu.Text" xml:space="preserve">
-    <value>&amp;Край</value>
+    <value>&amp;Финал</value>
+  </data>
+  <data name="addDescriptionsMenu.Text" xml:space="preserve">
+    <value>&amp;Описания</value>
+  </data>
+  <data name="addMapFlipMenuItem.Text" xml:space="preserve">
+    <value>Обръщане на &amp;картата при КТ</value>
+  </data>
+  <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
+    <value>Смяна на &amp;карта при КТ</value>
+  </data>
+  <data name="mapExchangeSeparateMenuItem.Text" xml:space="preserve">
+    <value>Маркиран &amp;маршрут до смяната на карта</value>
+  </data>
+  <data name="addMapExchangeMenu.Text" xml:space="preserve">
+    <value>Обръщане/с&amp;мяна на карта</value>
+  </data>
+  <data name="addVariationMenu.Text" xml:space="preserve">
+    <value>&amp;Вариант...</value>
+  </data>
+  <data name="addTextLineMenu.Text" xml:space="preserve">
+    <value>Текстов &amp;ред...</value>
+  </data>
+  <data name="addMapIssueMenu.Text" xml:space="preserve">
+    <value>Стартиране с време</value>
   </data>
   <data name="addMandatoryCrossingMenu.Text" xml:space="preserve">
-    <value>Задължително място за преминаване</value>
+    <value>Задължителна точка за преминаване</value>
   </data>
   <data name="addOptCrossingMenu.Text" xml:space="preserve">
-    <value>Препоръчително място за преминаване</value>
+    <value>Незадължителна точка за преминаване</value>
   </data>
   <data name="addOutOfBoundsMenu.Text" xml:space="preserve">
-    <value>Забранен район</value>
+    <value>Забранена зона</value>
   </data>
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Опасна зона</value>
   </data>
+  <data name="addConstructionMenu.Text" xml:space="preserve">
+    <value>Временен строеж</value>
+  </data>
   <data name="addWaterMenu.Text" xml:space="preserve">
-    <value>Подкрепителен пункт</value>
+    <value>Място за вода</value>
   </data>
   <data name="addFirstAidMenu.Text" xml:space="preserve">
-    <value>Медицински пункт</value>
+    <value>Място за първа помощ</value>
   </data>
   <data name="addForbiddenMenu.Text" xml:space="preserve">
-    <value>Маркиране на забранен път</value>
+    <value>Маркировка на забранен маршрут</value>
   </data>
   <data name="addBoundaryMenu.Text" xml:space="preserve">
-    <value>Органичителна линия</value>
+    <value>Непреминаема граница</value>
   </data>
   <data name="addRegMarkMenu.Text" xml:space="preserve">
-    <value>Пасер</value>
+    <value>Маркер за съвпадение на слоеве</value>
   </data>
   <data name="whiteOutMenu.Text" xml:space="preserve">
-    <value>Празно пространство</value>
+    <value>Зона с бял фон</value>
   </data>
   <data name="addTextMenu.Text" xml:space="preserve">
     <value>Текст</value>
   </data>
+  <data name="addImageMenu.Text" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="addLineMenu.Text" xml:space="preserve">
+    <value>Линия</value>
+  </data>
+  <data name="addRectangleMenu.Text" xml:space="preserve">
+    <value>Правоъгълник</value>
+  </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Елипса</value>
+  </data>
+  <data name="addMenu.Text" xml:space="preserve">
+    <value>&amp;Добави</value>
+  </data>
   <data name="changeMapFileMenu.Text" xml:space="preserve">
-    <value>&amp;Файл на картата...</value>
+    <value>&amp;Картен файл...</value>
   </data>
   <data name="changeCodesMenu.Text" xml:space="preserve">
     <value>Промени &amp;сигнатурите на КТ...</value>
@@ -297,26 +396,59 @@
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>Премахни &amp;неизползваните КТ...</value>
   </data>
+  <data name="moveAllControlsMenu.Text" xml:space="preserve">
+    <value>&amp;Премести всички КТ...</value>
+  </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
-    <value>&amp;Отпечатъци на перфораторите...</value>
+    <value>&amp;Перфорации...</value>
+  </data>
+  <data name="descriptionStd2004Menu.Text" xml:space="preserve">
+    <value>Стандарт за описания от 2004</value>
+  </data>
+  <data name="descriptionStd2018Menu.Text" xml:space="preserve">
+    <value>Стандарт за описания от 2018/2024</value>
+  </data>
+  <data name="mapStd2000Menu.Text" xml:space="preserve">
+    <value>Картен стандарт ISOM2000</value>
+  </data>
+  <data name="mapStd2017Menu.Text" xml:space="preserve">
+    <value>Картен стандарт ISOM2017</value>
+  </data>
+  <data name="mapStdSpr2019Menu.Text" xml:space="preserve">
+    <value>Картен стандарт ISSprOM 2019</value>
+  </data>
+  <data name="iOFStandardsToolStripMenuItem.Text" xml:space="preserve">
+    <value>IOF &amp;стандарти</value>
   </data>
   <data name="customizeDescriptionsMenu.Text" xml:space="preserve">
-    <value>Персонализирай &amp;текста на описанията</value>
+    <value>Персонализирай &amp;текста на описанията...</value>
+  </data>
+  <data name="customizeCourseAppearanceMenu.Text" xml:space="preserve">
+    <value>Персонализирай &amp;изгледа...</value>
   </data>
   <data name="eventMenu.Text" xml:space="preserve">
-    <value>&amp;Състезание</value>
+    <value>Състе&amp;зание</value>
   </data>
   <data name="addCourseMenu.Text" xml:space="preserve">
     <value>&amp;Добави маршрут...</value>
   </data>
   <data name="deleteCourseMenu.Text" xml:space="preserve">
-    <value>&amp;Изтрий маршрут</value>
+    <value>&amp;Изтрий маршрута</value>
+  </data>
+  <data name="duplicateCourseMenu.Text" xml:space="preserve">
+    <value>Д&amp;ублирай маршрута...</value>
   </data>
   <data name="propertiesMenu.Text" xml:space="preserve">
-    <value>&amp;Информация...</value>
+    <value>&amp;Свойства...</value>
+  </data>
+  <data name="courseOrderMenu.Text" xml:space="preserve">
+    <value>Ред на &amp;маршрутите...</value>
   </data>
   <data name="courseLoadMenu.Text" xml:space="preserve">
-    <value>&amp;Брой състезатели на маршрут...</value>
+    <value>Разпределение на &amp;състезателите...</value>
+  </data>
+  <data name="courseVariationReportMenu.Text" xml:space="preserve">
+    <value>Варианти на щафетния &amp;отбор...</value>
   </data>
   <data name="courseMenu.Text" xml:space="preserve">
     <value>&amp;Маршрут</value>
@@ -324,53 +456,62 @@
   <data name="deleteItemMenu.Text" xml:space="preserve">
     <value>&amp;Изтрий</value>
   </data>
+  <data name="deleteForkMenu.Text" xml:space="preserve">
+    <value>Изтрий раз&amp;клонението/обиколката</value>
+  </data>
   <data name="addBendMenu.Text" xml:space="preserve">
-    <value>Добави &amp;извивка</value>
+    <value>Добави &amp;пречупване</value>
   </data>
   <data name="removeBendMenu.Text" xml:space="preserve">
-    <value>Премахни &amp;извивка</value>
+    <value>Премахни пр&amp;ечупването</value>
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
     <value>Добави &amp;прекъсване</value>
   </data>
   <data name="removeGapMenu.Text" xml:space="preserve">
-    <value>Премахни &amp;прекъсване</value>
+    <value>Премахни пр&amp;екъсването</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Промени &amp;текста...</value>
   </data>
+  <data name="changeLineAppearanceMenu.Text" xml:space="preserve">
+    <value>Промени &amp;изгледа на линията...</value>
+  </data>
   <data name="rotateMenu.Text" xml:space="preserve">
     <value>&amp;Завърти</value>
+  </data>
+  <data name="stretchMenu.Text" xml:space="preserve">
+    <value>&amp;Разтегни</value>
   </data>
   <data name="noFlaggingMenu.Text" xml:space="preserve">
     <value>Без маркировка</value>
   </data>
   <data name="entireFlaggingMenu.Text" xml:space="preserve">
-    <value>Цяла отсечка с маркировка</value>
+    <value>Цялата отсечка е маркирана</value>
   </data>
   <data name="beginFlaggingMenu.Text" xml:space="preserve">
-    <value>Начало на отсечка с маркировка</value>
+    <value>Началото на отсечката е маркиран</value>
   </data>
   <data name="endFlaggingMenu.Text" xml:space="preserve">
-    <value>Край на отсечка с маркировка</value>
+    <value>Краят на отсечката е маркиран</value>
   </data>
   <data name="legFlaggingMenu.Text" xml:space="preserve">
-    <value>&amp;Маркировка</value>
+    <value>Маркировка на &amp;отсечката</value>
   </data>
   <data name="changeDisplayedCoursesMenu.Text" xml:space="preserve">
-    <value>Промени &amp;показаните маршрути...</value>
+    <value>Промени по&amp;казваните маршрути...</value>
   </data>
   <data name="itemMenu.Text" xml:space="preserve">
-    <value>&amp;Елементи</value>
+    <value>&amp;Елемент</value>
   </data>
   <data name="courseSummaryMenu.Text" xml:space="preserve">
-    <value>&amp;Обобщение на маршрутите</value>
+    <value>&amp;Обобщение на маршрута</value>
   </data>
   <data name="eventAuditMenu.Text" xml:space="preserve">
-    <value>&amp;Проверка на състезанието</value>
+    <value>&amp;Одит на състезанието</value>
   </data>
   <data name="legLengthsMenu.Text" xml:space="preserve">
-    <value>&amp;Дължини на отсечките</value>
+    <value>Дължини на &amp;отсечките</value>
   </data>
   <data name="controlCrossrefMenu.Text" xml:space="preserve">
     <value>&amp;Обобщение на КТ по маршрути</value>
@@ -393,6 +534,9 @@
   <data name="supportWebSiteMenu.Text" xml:space="preserve">
     <value>&amp;Поддръжка/Докладване за грешки</value>
   </data>
+  <data name="donateWebSiteMenu.Text" xml:space="preserve">
+    <value>Направи &amp;дарение</value>
+  </data>
   <data name="aboutMenu.Text" xml:space="preserve">
     <value>&amp;За програмата Purple Pen</value>
   </data>
@@ -403,31 +547,37 @@
     <value>Търсачка на описания на КТ</value>
   </data>
   <data name="controlTesterMenu.Text" xml:space="preserve">
-    <value>Тестер за контролни точки</value>
+    <value>Тестер за КТ</value>
   </data>
   <data name="mapTesterMenu.Text" xml:space="preserve">
     <value>Тестер за картата</value>
   </data>
   <data name="courseSelectorTesterMenu.Text" xml:space="preserve">
-    <value>Тестер за подбор на маршрут</value>
+    <value>Тестер за избор на маршрут</value>
   </data>
   <data name="dotGridTesterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Тестер на пикселната решетка</value>
+    <value>Тестер на точковата решетка</value>
   </data>
   <data name="dumpOCADFileMenu.Text" xml:space="preserve">
-    <value>Изхвърли OCAD файла</value>
+    <value>Извлечи данни от OCAD файл</value>
   </data>
   <data name="reportTesterToolStripMenuItem.Text" xml:space="preserve">
     <value>Тестер за справки</value>
   </data>
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Елементи на шрифта</value>
+    <value>Параметри на шрифта</value>
+  </data>
+  <data name="missingTranslationsMenuItem.Text" xml:space="preserve">
+    <value>Липсващи преводи на описания</value>
+  </data>
+  <data name="crashToolStripMenuItem.Text" xml:space="preserve">
+    <value>Грешка / срив</value>
   </data>
   <data name="debugMenu.Text" xml:space="preserve">
     <value>Откриване на грешки</value>
   </data>
   <data name="addDescriptionLanguageMenu.Text" xml:space="preserve">
-    <value>Добави език на описанията на КТ...</value>
+    <value>Добави език за описанията на КТ...</value>
   </data>
   <data name="addTranslatedTextsMenu.Text" xml:space="preserve">
     <value>Добави преведени текстове...</value>
@@ -436,7 +586,7 @@
     <value>Обедини файла Symbols.xml...</value>
   </data>
   <data name="translateMenu.Text" xml:space="preserve">
-    <value>&amp;Преведи текста на описанията на контролните точки</value>
+    <value>&amp;Преведи текста на описанията на КТ</value>
   </data>
   <data name="helpMenu.Text" xml:space="preserve">
     <value>&amp;Помощ</value>
@@ -469,58 +619,91 @@
     <value>Изтрий (Del)</value>
   </data>
   <data name="addStartToolStripButton.Text" xml:space="preserve">
-    <value>Добави старт</value>
+    <value>Добави Старт</value>
   </data>
   <data name="addControlToolStripButton.Text" xml:space="preserve">
-    <value>Добави контролна точка</value>
+    <value>Добави КТ</value>
   </data>
   <data name="addControlToolStripButton.ToolTipText" xml:space="preserve">
     <value>Добави контролна точка (Ctrl+A)</value>
   </data>
   <data name="addFinishToolStripButton.Text" xml:space="preserve">
-    <value>Добави финал</value>
+    <value>Добави Финал</value>
   </data>
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Добави описания на КТ</value>
   </data>
+  <data name="mapFlipMenuItem.Text" xml:space="preserve">
+    <value>Обръщане на карта при КТ</value>
+  </data>
+  <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
+    <value>Смяна на карта при КТ</value>
+  </data>
+  <data name="mapExchangeSeparateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Маркиран маршрут до смяната на карта</value>
+  </data>
+  <data name="mapExchangeToolStripMenu.Text" xml:space="preserve">
+    <value>Добави обръщане/смяна на карта</value>
+  </data>
+  <data name="addVariationToolStripButton.Text" xml:space="preserve">
+    <value>Добави вариант</value>
+  </data>
+  <data name="mapIssuePointToolStripMenuItem.Text" xml:space="preserve">
+    <value>Стартиране с време</value>
+  </data>
   <data name="mandatoryCrossingPointToolStripMenuItem.Text" xml:space="preserve">
-    <value>Задължително място за преминаване</value>
+    <value>Задължителна точка за преминаване</value>
   </data>
   <data name="optionalCrossingPointToolStripMenuItem.Text" xml:space="preserve">
-    <value>Препоръчително място за преминаване</value>
+    <value>Незадължителна точка за преминаване</value>
   </data>
   <data name="outOfBoundsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Забранен район</value>
+    <value>Забранена зона</value>
   </data>
   <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
     <value>Опасна зона</value>
   </data>
+  <data name="constructionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Временен строеж</value>
+  </data>
   <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Подкрепителен пункт</value>
+    <value>Място за вода</value>
   </data>
   <data name="firstAidLocationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Медицински пункт</value>
+    <value>Място за първа помощ</value>
   </data>
   <data name="forbiddenRouteMarkingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Маркиране на забранен път</value>
+    <value>Маркировка на забранен маршрут</value>
   </data>
   <data name="boundaryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Органичителна линия</value>
+    <value>Непреминаема граница</value>
   </data>
   <data name="registrationMarkToolStripMenuItem.Text" xml:space="preserve">
-    <value>Пасер</value>
+    <value>Маркер за съвпадение на слоеве</value>
   </data>
   <data name="whiteOutToolStripMenuItem.Text" xml:space="preserve">
-    <value>Празно пространство</value>
+    <value>Зона с бял фон</value>
   </data>
   <data name="textToolStripMenuItem.Text" xml:space="preserve">
     <value>Текст</value>
+  </data>
+  <data name="imageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="lineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Линия</value>
+  </data>
+  <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Правоъгълник</value>
+  </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Елипса</value>
   </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Добави специален елемент</value>
   </data>
   <data name="addBendToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Добави извивка (Ctrl+B)</value>
+    <value>Добави пречупване (Ctrl+B)</value>
   </data>
   <data name="addGapToolStripButton.Text" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -529,13 +712,25 @@
     <value>Добави прекъсване (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
-    <value>Увеличи: 100%</value>
+    <value>Мащаб: 100%</value>
   </data>
   <data name="locationDisplay.Text" xml:space="preserve">
     <value>X:-999.99 Y:-999.99</value>
   </data>
+  <data name="saveXmlFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML версия 2.0.3|*.xml|IOF XML версия 3.0|*.xml</value>
+  </data>
   <data name="saveXmlFileDialog.Title" xml:space="preserve">
     <value>Създай XML файл за обмен на данни...</value>
+  </data>
+  <data name="openImageDialog.Filter" xml:space="preserve">
+    <value>Файл с изображение|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="saveGpxFileDialog.Filter" xml:space="preserve">
+    <value>GPX файл|*.gpx</value>
+  </data>
+  <data name="saveGpxFileDialog.Title" xml:space="preserve">
+    <value>Създай GPX файл</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Purple Pen</value>

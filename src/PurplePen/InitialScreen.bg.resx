@@ -118,22 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Да</value>
+    <value>Добре</value>
   </data>
   <data name="openLastRadioButton.Text" xml:space="preserve">
-    <value>Отвори последното видяно състезание</value>
+    <value>Отвори последно преглежданото състезание</value>
   </data>
   <data name="openSampleRadioButton.Text" xml:space="preserve">
-    <value>Отвори модел на състезание</value>
+    <value>Отвори примерното състезание</value>
   </data>
   <data name="createNewRadioButton.Text" xml:space="preserve">
     <value>Създай ново състезание...</value>
   </data>
   <data name="openExistingRadioButton.Text" xml:space="preserve">
-    <value>Отвори вече създадено състезание...</value>
+    <value>Отвори съществуващо състезание...</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Purple Pen е безплатен софтуер и може свободно да се копира и разпространява. Развитието на Purple Pen се поддържа единствено чрез вашите дарения.</value>
+  </data>
+  <data name="donationLink.Text" xml:space="preserve">
+    <value>Направи дарение</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Добре дошли в Purple Pen!</value>
+    <value>Добре дошли в Purple Pen</value>
   </data>
   <data name="quitButton.Text" xml:space="preserve">
     <value>Изход</value>

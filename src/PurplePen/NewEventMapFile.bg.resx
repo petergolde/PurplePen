@@ -117,13 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="newEventMapFileLabel.Text" xml:space="preserve">
+    <value>За да създадете маршрутите, трябва да изберете картния файл, който ще използвате. Обикновено това е файл от тип OCAD или OpenOrienteering Mapper (възможно е да се използват и PDF или графични файлове като JPEG). Натиснете бутона „Избери...“, за да посочите картен файл.</value>
+  </data>
   <data name="chooseMapFileButton.Text" xml:space="preserve">
-    <value>&amp;Избери картов файл...</value>
+    <value>&amp;Избери картен файл...</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Всички картни файлове|.ocd;.omap;.xmap;.pdf;.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif|Файлове OCAD (.ocd)|.ocd|Файлове OpenOrienteering Mapper|.omap;.xmap|PDF файлове (.pdf)|.pdf|Изображения|.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif</value>
   </data>
   <data name="mapFileDisplay.Text" xml:space="preserve">
-    <value>Избраният картов файл</value>
+    <value>Избран картен файл</value>
+  </data>
+  <data name="infoMessage.Text" xml:space="preserve">
+    <value>Картният файл беше успешно зареден. Ако изпратите Purple Pen файла на друг човек, уверете се, че той също разполага с копие от картния файл.</value>
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
-    <value>Картов файл</value>
+    <value>Картен файл</value>
   </data>
 </root>

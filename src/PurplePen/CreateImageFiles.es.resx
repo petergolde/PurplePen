@@ -129,9 +129,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Seleccione una carpeta para los archivos OCAD</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Salida</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Formato de archivo:</value>
   </data>
@@ -185,6 +182,9 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Salida</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Seleccionar carpeta...</value>

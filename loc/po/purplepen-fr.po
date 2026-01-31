@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.3\n"
+"Project-Id-Version: Purple Pen 3.5.4\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
+"POT-Creation-Date: 2026-01-31 12:35-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -721,15 +721,15 @@ msgstr "Supprimer un coin"
 
 #: CommandNameText.resx, AddGap
 msgid "Add Gap"
-msgstr "Insérer un intervalle"
+msgstr "Insérer une découpe"
 
 #: CommandNameText.resx, RemoveGap
 msgid "Remove Gap"
-msgstr "Supprimer un intervalle"
+msgstr "Supprimer une découpe"
 
 #: CommandNameText.resx, MoveGap
 msgid "Move Gap"
-msgstr "Déplacer un intervalle"
+msgstr "Déplacer une découpe"
 
 #: CommandNameText.resx, Rotate
 msgid "Rotate"
@@ -823,7 +823,7 @@ msgstr "Variations équipe de relais"
 
 #: CommandNameText.resx, AddMapIssue
 msgid "Add Map Issue Point"
-msgstr ""
+msgstr "Ajouter un point de prise de carte"
 
 #: CommandNameText.resx, ChangeDescriptionStandard
 msgid "Set Control Description Standard"
@@ -835,21 +835,21 @@ msgstr "Définir la norme de la carte"
 
 #: CommandNameText.resx, Stretch
 msgid "Stretch"
-msgstr ""
+msgstr "Étirer"
 
 #: CommandNameText.resx, SetLiveloxImportableEventId
 msgid "Publish to Livelox"
-msgstr ""
+msgstr "Publier sur Livelox"
 
 #: CommandNameText.resx, MoveAllControls
 #: MoveAllControls.resx, $this.Text
 #: SelectLocationsForMove.resx, $this.Text
 msgid "Move All Controls"
-msgstr ""
+msgstr "Déplacer tous les postes"
 
 #: CommandNameText.resx, AddMapFlip
 msgid "Add Map Flip"
-msgstr ""
+msgstr "Ajouter un retournement de carte"
 
 #: CourseAppearanceDialog.resx, comboBoxScaleItemSizes.Items
 msgid "Do not scale"
@@ -889,11 +889,11 @@ msgstr "Arial Gras"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items2
 msgid "Roboto"
-msgstr ""
+msgstr "Roboto"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items3
 msgid "Roboto Bold"
-msgstr ""
+msgstr "Roboto Bold"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -921,7 +921,7 @@ msgstr "Tailles des objets"
 
 #: CourseAppearanceDialog.resx, labelChooseLayer.Text
 msgid "Above map layer:"
-msgstr ""
+msgstr "Au dessus de la couleur"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
 #: CourseSelector.resx, selectNone.Text
@@ -931,15 +931,15 @@ msgstr "Aucun"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
 msgid "Blend"
-msgstr ""
+msgstr "Fondu"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
 msgid "Layer"
-msgstr ""
+msgstr "Couche dec couleur"
 
 #: CourseAppearanceDialog.resx, labelBlendPurple.Text
 msgid "Blend purple with underlying map colors:"
-msgstr ""
+msgstr "Mélanger la violine avec les couleurs de la carte"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -971,7 +971,7 @@ msgstr "Utiliser l'effet de surimpression pour les couleurs "
 
 #: CourseAppearanceDialog.resx, groupBoxOcadMap.Text
 msgid "Advanced"
-msgstr ""
+msgstr "Options avancées"
 
 #: CourseAppearanceDialog.resx, $this.Text
 msgid "Customize Appearance"
@@ -1091,15 +1091,6 @@ msgstr "Annuler"
 msgid "Select a folder for the OCAD files"
 msgstr "Sélectionner un dossier pour les fichiers OCAD"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Sortie"
-
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -1185,6 +1176,30 @@ msgstr "RVB"
 msgid "CMYK"
 msgstr "CMJN"
 
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items
+msgid "Course and map"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items1
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items1
+msgid "Course only"
+msgstr ""
+
+#: CreateImageFiles.resx, labelPrintBaseMap.Text
+#: CreatePdfCourses.resx, labelPrintBaseMap.Text
+msgid "Include:"
+msgstr ""
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Sortie"
+
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
 #: CreateOcadFiles.resx, selectOtherDirectoryButton.Text
@@ -1246,7 +1261,7 @@ msgstr "Un par circuit"
 
 #: CreateKmlFiles.resx, $this.Text
 msgid "Create KML File"
-msgstr ""
+msgstr "Créer un fichier KML"
 
 #: CreateOcadFiles.resx, $this.Text
 msgid "Create OCAD Files"
@@ -1326,7 +1341,7 @@ msgstr ""
 
 #: CreateRouteGadget.resx, groupBox1.Text
 msgid "IOF XML"
-msgstr ""
+msgstr "IOF XML"
 
 #: CreateRouteGadget.resx, $this.Text
 msgid "Create RouteGadget Files"
@@ -1569,7 +1584,7 @@ msgstr "&Descriptions..."
 
 #: MainFrame.resx, createPunchcardPdfMenu.Text
 msgid "Pu&nch Cards..."
-msgstr ""
+msgstr "Poinçons..."
 
 #: MainFrame.resx, createCoursePdfMenu.Text
 msgid "&Courses..."
@@ -1581,11 +1596,11 @@ msgstr "Créer des P&DF"
 
 #: MainFrame.resx, createRouteGadgetFilesMenu.Text
 msgid "Create RouteGadget Files..."
-msgstr ""
+msgstr "Créer un fichier RouteGadget..."
 
 #: MainFrame.resx, createRouteReviewFilesToolStripMenuItem.Text
 msgid "Create Route Review Files"
-msgstr ""
+msgstr "Créer des fichiers pour l'analyse de course"
 
 #: MainFrame.resx, createXmlMenu.Text
 msgid "Create Data &Interchange File (IOF XML)..."
@@ -1597,7 +1612,7 @@ msgstr "Créer Fichier G&PX..."
 
 #: MainFrame.resx, createKMLFileMenu.Text
 msgid "Create &KML File..."
-msgstr ""
+msgstr "Créer &KML File..."
 
 #: MainFrame.resx, printDescriptionsMenu.Text
 msgid "&Print Descriptions..."
@@ -1782,7 +1797,7 @@ msgstr "&Descriptions"
 
 #: MainFrame.resx, addMapFlipMenuItem.Text
 msgid "Map &Flip at Control Point"
-msgstr ""
+msgstr "Retournement de carte au poste"
 
 #: MainFrame.resx, mapExchangeControlMenuItem.Text
 msgid "Map Exchange at &Control Point"
@@ -1836,7 +1851,7 @@ msgstr "Zone dangereuse"
 #: MainFrame.resx, addConstructionMenu.Text
 #: MainFrame.resx, constructionToolStripMenuItem.Text
 msgid "Temporary Construction"
-msgstr ""
+msgstr "Construction temporaire ou zone fermée"
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -1894,7 +1909,7 @@ msgstr "Rectangle"
 #: MainFrame.resx, addEllipseMenu.Text
 #: MainFrame.resx, ellipseToolStripMenuItem.Text
 msgid "Ellipse"
-msgstr ""
+msgstr "Ovale"
 
 #: MainFrame.resx, addMenu.Text
 msgid "&Add"
@@ -1918,7 +1933,7 @@ msgstr "&Supprimer les Postes Inutilisés..."
 
 #: MainFrame.resx, moveAllControlsMenu.Text
 msgid "Mo&ve All Controls..."
-msgstr ""
+msgstr "Déplacer tous les postes..."
 
 #: MainFrame.resx, punchPatternsMenu.Text
 msgid "&Punch Patterns..."
@@ -2006,11 +2021,11 @@ msgstr "Supprimer un C&oude"
 
 #: MainFrame.resx, addGapMenu.Text
 msgid "Add &Gap"
-msgstr "Insérer &Intervalle"
+msgstr "Insérer &Découpe"
 
 #: MainFrame.resx, removeGapMenu.Text
 msgid "Remove Ga&p"
-msgstr ""
+msgstr "Supprimer une découpe"
 
 #: MainFrame.resx, changeTextMenu.Text
 msgid "Change &Text..."
@@ -2142,7 +2157,7 @@ msgstr "Police"
 
 #: MainFrame.resx, missingTranslationsMenuItem.Text
 msgid "Missing Description Translations"
-msgstr ""
+msgstr "Pas de traduction de la description"
 
 #: MainFrame.resx, crashToolStripMenuItem.Text
 msgid "Crash"
@@ -2221,7 +2236,7 @@ msgstr "Ajouter les Définitions"
 
 #: MainFrame.resx, mapFlipMenuItem.Text
 msgid "Map Flip at Control Point"
-msgstr ""
+msgstr "Retournement de carte au poste"
 
 #: MainFrame.resx, mapExchangeControlToolStripMenuItem.Text
 msgid "Map Exchange at Control Point"
@@ -2249,7 +2264,7 @@ msgstr "toolStripButton1"
 
 #: MainFrame.resx, addGapToolStripButton.ToolTipText
 msgid "Add Gap (Ctrl+G)"
-msgstr "Ajouter un intervalle (Ctrl+G)"
+msgstr "Ajouter une découpe (Ctrl+G)"
 
 #: MainFrame.resx, zoomAmountLabel.Text
 msgid "Zoom: 100%"
@@ -2333,7 +2348,9 @@ msgstr "Ne peut pas créer le dossier '{0}' pour les raisons "
 #: MiscText.resx, CannotReadMap
 msgid "Cannot read map for the following reason: '{0}' Using "
 "Optimize/Repair and re-saving in OCAD may fix problems."
-msgstr ""
+msgstr "La carte ne peut pas être lue pour la raison suivante: "
+"'{0}' Utiliser la fonction Optimiser/Réparer et "
+"sauvegarder dans OCAD peut régler le problème."
 
 #: MiscText.resx, CannotCreateOcadFiles
 msgid "Cannot create OCAD files for the following reason:"
@@ -2730,17 +2747,6 @@ msgstr "Merci de nous dire ce que vous étiez en train de faire "
 msgid "Send Report"
 msgstr "Envoyer le Rapport"
 
-#: MiscText.resx, CannotAddDescriptionsToAllParts
-msgid "Descriptions may not be added to a course with a map "
-"exchange if \"All Parts\" is being displayed. Switch to the "
-"part you wish to add descriptions to, and then choose \"Add "
-"Descriptions\" again."
-msgstr "Les Définitions ne peuvent pas être ajoutées à un circuit "
-"comportant un échange de carte si \"Toutes les Parties\" est "
-"affiché. Basculez sur la partie pour laquelle vous "
-"souhaitez ajoutez les définitions, puis choisissez de "
-"nouveau l'option \"Ajouter Définitions\"."
-
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
 msgstr "PdfConverter.exe non trouvé"
@@ -2983,7 +2989,10 @@ msgstr ""
 msgid "Cannot read map for the following reason: '{0}' Opening "
 "and re-saving the map in the latest version of "
 "OpenOrienteering Mapper may fix problems."
-msgstr ""
+msgstr "La carte ne peut pas être lue pour la raison suivante: "
+"'{0}' Ouvrir et ré-enregistrer la carte dans la dernière "
+"version d'Open Orienteering Mapper peut résoudre le "
+"problème."
 
 #: MiscText.resx, MapIssue_Short
 msgid "TS"
@@ -3023,18 +3032,22 @@ msgstr ""
 #: MiscText.resx, AddEllipseExplanation
 msgid "Set the appearance of the ellipse. After pressing OK, drag "
 "the mouse to place the ellipse in the desired location."
-msgstr ""
+msgstr "Définissez l'apparence de l'ellipse. Après avoir cliqué "
+"sur OK, faites glisser la souris pour placer l'ellipse à "
+"l'emplacement souhaité."
 
 #: MiscText.resx, AddEllipseTitle
 msgid "Add Ellipse"
-msgstr ""
+msgstr "Ajouter une éllipse"
 
 #: MiscText.resx, UninstallNonStoreVersion
 msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
-msgstr ""
+msgstr "Définissez l'apparence de l'ellipse. Après avoir cliqué "
+"sur OK, faites glisser la souris pour placer l'ellipse à "
+"l'emplacement souhaité."
 
 #: MiscText.resx, AskInstallRobotoFonts
 msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
@@ -3045,11 +3058,11 @@ msgstr ""
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
-msgstr ""
+msgstr "L'instalation de la police Roboto a échoué"
 
 #: MiscText.resx, LowerPurple
 msgid "Lower Purple"
-msgstr ""
+msgstr "Violine inférieure"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"
@@ -3080,23 +3093,24 @@ msgstr "Polices manquantes"
 
 #: MoveAllControls.resx, labelDescription.Text
 msgid "Which way would you like to move all controls on the map?"
-msgstr ""
+msgstr "Comment souhaitez-vous déplacer tous les postes sur la "
+"carte ?"
 
 #: MoveAllControls.resx, radioButtonMove.Text
 msgid "Move Only"
-msgstr ""
+msgstr "Translation"
 
 #: MoveAllControls.resx, radioButtonMoveAndScale.Text
 msgid "Move and Scale"
-msgstr ""
+msgstr "Translation et étirement"
 
 #: MoveAllControls.resx, radioButtonMoveAndRotate.Text
 msgid "Move and Rotate"
-msgstr ""
+msgstr "Translation et rotation"
 
 #: MoveAllControls.resx, radioButtonMoveRotateScale.Text
 msgid "Move, Scale, and Rotate"
-msgstr ""
+msgstr "Violine inférieure"
 
 #: NewEventBitmapScale.resx, bitmapScaleLabel.Text
 msgid "When using an image file as a map, you must specify the "
@@ -3256,7 +3270,8 @@ msgstr "(Vous pourrez modifier l'échelle d'impression "
 #: NewEventStandards.resx, changeLaterLabel.Text
 msgid "(These settings can be changed later using Event/IOF "
 "Standards)"
-msgstr ""
+msgstr "(Ces paramètres peuvent être modifiés ultérieurement dans "
+"l'onglet : course / Normes IOF)"
 
 #: NewEventStandards.resx, labelTitle.Text
 msgid "IOF Standards"
@@ -3264,7 +3279,7 @@ msgstr "Normes IOF"
 
 #: NewEventStandards.resx, radioButtonMapSpr2019.Text
 msgid "ISSprOM 2019"
-msgstr ""
+msgstr "ISSprOM 2019"
 
 #: NewEventStandards.resx, radioButtonMap2017.Text
 msgid "ISOM 2017"
@@ -3288,7 +3303,7 @@ msgstr "Descriptions 2004"
 
 #: NewEventStandards.resx, groupBoxDescriptionStandard.Text
 msgid "IOF Description Standard"
-msgstr ""
+msgstr "Standard de descriptions IOF"
 
 #: NewEventStandards.resx, labelStandardsIntro.Text
 msgid "Which versions of IOF standards would you like Purple Pen "
@@ -3679,7 +3694,7 @@ msgstr "Contrôle croisé pour {0}"
 
 #: ReportText.resx, EventAudit_BothDirectionsLegs
 msgid "Legs Run in Both Directions"
-msgstr ""
+msgstr "poste à postes en contresens"
 
 #: ReportText.resx, EventAudit_CloseTogetherControls
 msgid "Close Together Controls"
@@ -3766,7 +3781,7 @@ msgstr "Aucun problème trouvé."
 
 #: ReportText.resx, EventAudit_RepeatControl
 msgid "Course \"{0}\" contains control \"{1}\" twice in a row."
-msgstr ""
+msgstr "Le circuit \"{0}\" contient le poste \"{1}\" deux fois de suite."
 
 #: ReportText.resx, EventAudit_RepeatedControls
 msgid "Repeated Controls"
@@ -3774,7 +3789,7 @@ msgstr "Postes répétés"
 
 #: ReportText.resx, EventAudit_ScoreDuplicateControl
 msgid "Score course \"{0}\" contains control \"{1}\" twice. "
-msgstr ""
+msgstr "La course au score \"{0}\" contient le poste \"{1}\" deux fois. "
 
 #: ReportText.resx, EventAudit_Title
 msgid "Event Audit for {0}"
@@ -4069,15 +4084,15 @@ msgstr "Longueur calculée :"
 
 #: SelectionDescriptionText.resx, MapIssue_Plural
 msgid "map issue points"
-msgstr ""
+msgstr "Points de prise de carte"
 
 #: SelectionDescriptionText.resx, MapIssue_Singular
 msgid "map issue point"
-msgstr ""
+msgstr "Point de prise de carte"
 
 #: SelectionDescriptionText.resx, MapFlipAtControl
 msgid "Map flip at {0}"
-msgstr ""
+msgstr "Retournement de carte au {0}"
 
 #: SelectLocationsForMove.resx, labelArrowFirstControl.Text
 #: SelectLocationsForMove.resx, labelArrowFirstNewLocation.Text
@@ -4097,19 +4112,19 @@ msgstr ""
 
 #: SelectLocationsForMove.resx, labelConfirmLocations.Text
 msgid "Confirm new locations"
-msgstr ""
+msgstr "Confirmer les nouveaux emplacements"
 
 #: SelectLocationsForMove.resx, labelRotation.Text
 msgid "Rotation:"
-msgstr ""
+msgstr "Rotation:"
 
 #: SelectLocationsForMove.resx, labelYOffset.Text
 msgid "Y Offset:"
-msgstr ""
+msgstr "Décalage en Y :"
 
 #: SelectLocationsForMove.resx, labelXOffset.Text
 msgid "X Offset:"
-msgstr ""
+msgstr "Décalage en X :"
 
 #: SelectLocationsForMove.resx, labelSecondControl.Text
 msgid "Select second control or registration mark to move"
@@ -4121,11 +4136,11 @@ msgstr ""
 
 #: SelectLocationsForMove.resx, buttonBack.Text
 msgid "Back"
-msgstr ""
+msgstr "Annuler"
 
 #: SelectLocationsForMove.resx, buttonConfirm.Text
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmer"
 
 #: SelectVariations.resx, comboBoxVariations.Items
 msgid "Each Variation Separately"
@@ -4326,29 +4341,28 @@ msgid "Click left mouse button on the control circle to add a "
 "small gap; hold down left mouse button and drag to create "
 "a large gap"
 msgstr "Cliquer avec le bouton gauche de votre souris sur le "
-"cercle du poste afin d'ajouter un petit intervalle ; "
-"garder le bouton appuyé et déplacer la souris pour créer "
-"un intervalle plus important"
+"cercle du poste afin d'ajouter une petite découpe ; garder "
+"le bouton appuyé et déplacer la souris pour créer une "
+"découpe plus importante."
 
 #: StatusBarText.resx, RemovingControlGap
 msgid "Click left mouse button on a gap in the control circle to "
 "remove it"
-msgstr "Cliquer avec le bouton gauche de votre souris sur "
-"l'intervalle existant dans le cercle du poste pour le "
-"supprimer"
+msgstr "Cliquer avec le bouton gauche de votre souris sur la "
+"découpe existante dans le cercle du poste pour la supprimer"
 
 #: StatusBarText.resx, AddingLegGap
 msgid "Click left mouse button to create small gap; hold down "
 "left mouse button and drag to create a large gap in the leg"
-msgstr "Cliquer sur le bouton gauche de la souris afin de créer un "
-"petit intervalle ; garder le bouton appuyé et déplacer la "
-"souris pour créer un intervalle plus important dans "
-"l'interposte"
+msgstr "Cliquer sur le bouton gauche de la souris afin de créer "
+"une petite découpe ; garder le bouton appuyé et déplacer "
+"la souris pour créer une découpe plus important dans le "
+"trait d'interposte"
 
 #: StatusBarText.resx, RemovingLegGap
 msgid "Click left mouse button on a gap in the leg to remove it"
-msgstr "Cliquer avec le bouton gauche de votre souris sur "
-"l'intervalle d'un interposte pour le supprimer"
+msgstr "Cliquer avec le bouton gauche de votre souris sur la "
+"découpe d'un trait d'interposte pour la supprimer"
 
 #: StatusBarText.resx, SizeRectangle
 msgid "Hold down left mouse button and drag to size the selected "

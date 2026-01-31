@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AwayFromControl" xml:space="preserve">
-    <value>далеч от контролна точка</value>
+    <value>далеч от контролната точка</value>
   </data>
   <data name="Climb" xml:space="preserve">
     <value>Изкачване:</value>
   </data>
   <data name="CompetitorLoad" xml:space="preserve">
-    <value>Брой състезатели на маршрут:</value>
+    <value>Натовареност по състезатели:</value>
   </data>
   <data name="ControlsInUse" xml:space="preserve">
     <value>Използвани контролни точки:</value>
@@ -142,13 +142,13 @@
     <value>Всички маршрути</value>
   </data>
   <data name="CourseList_None" xml:space="preserve">
-    <value>Никой</value>
+    <value>Няма</value>
   </data>
   <data name="CourseName" xml:space="preserve">
-    <value>Маршрут "{0}"</value>
+    <value>Маршрут „{0}“</value>
   </data>
   <data name="CustomizedSymbolDesc" xml:space="preserve">
-    <value>Персонализирано описание на КТ</value>
+    <value>Персонализирано описание на символ</value>
   </data>
   <data name="EntireLeg" xml:space="preserve">
     <value>цяла отсечка</value>
@@ -187,40 +187,43 @@
     <value>задължително място за преминаване</value>
   </data>
   <data name="None" xml:space="preserve">
-    <value>никакъв</value>
+    <value>няма</value>
   </data>
   <data name="SpecialName_Boundary" xml:space="preserve">
-    <value>Органичителна линия</value>
+    <value>Непреминаема граница</value>
   </data>
   <data name="SpecialName_CourseName" xml:space="preserve">
-    <value>Номер (име) на маршрута</value>
+    <value>Име на маршрута</value>
   </data>
   <data name="SpecialName_Dangerous" xml:space="preserve">
     <value>Опасна зона</value>
   </data>
   <data name="SpecialName_Descriptions" xml:space="preserve">
-    <value>Описания на контролните точки</value>
+    <value>Описания на КТ</value>
   </data>
   <data name="SpecialName_FirstAid" xml:space="preserve">
-    <value>Медицински пункт</value>
+    <value>Място за първа помощ</value>
+  </data>
+  <data name="SpecialName_Image" xml:space="preserve">
+    <value>Изображение</value>
   </data>
   <data name="SpecialName_Forbidden" xml:space="preserve">
-    <value>Забранен път</value>
+    <value>Забранен път/коридор</value>
   </data>
   <data name="SpecialName_OOB" xml:space="preserve">
     <value>Забранен район</value>
   </data>
   <data name="SpecialName_OptCrossing" xml:space="preserve">
-    <value>Препоръчително място за преминаване</value>
+    <value>Незадължителна точка за преминаване</value>
   </data>
   <data name="SpecialName_RegMark" xml:space="preserve">
-    <value>Пасер</value>
+    <value>Маркер за съвпадение на слоеве</value>
   </data>
   <data name="SpecialName_Text" xml:space="preserve">
     <value>Текст</value>
   </data>
   <data name="SpecialName_Water" xml:space="preserve">
-    <value>Подкрепителен пункт</value>
+    <value>Място за вода</value>
   </data>
   <data name="Start_Plural" xml:space="preserve">
     <value>стартове</value>
@@ -232,19 +235,19 @@
     <value>Текстово описание:</value>
   </data>
   <data name="TextLine" xml:space="preserve">
-    <value>Ред за текст</value>
+    <value>Ред с текст</value>
   </data>
   <data name="TextLine_AboveAllCourses" xml:space="preserve">
-    <value>Ще се появи най-отгоре на {0} при всички маршрути, съдържащи {0}</value>
+    <value>Ще се появява над {0} във всички маршрути, които съдържат {0}</value>
   </data>
   <data name="TextLine_AboveThisCourse" xml:space="preserve">
-    <value>Ще се появи най-отгоре на {0} само за този маршрут</value>
+    <value>Ще се появява над {0} само в този маршрут</value>
   </data>
   <data name="TextLine_BelowAllCourses" xml:space="preserve">
-    <value>Ще се появи най-отдолу на {0} при всички маршрути, съдържащи {0}</value>
+    <value>Ще се появява под {0} във всички маршрути, които съдържат {0}</value>
   </data>
   <data name="TextLine_BelowThisCourse" xml:space="preserve">
-    <value>Ще се появи най-отдолу на {0} само в този маршрут</value>
+    <value>Ще се появява под {0} само в този маршрут</value>
   </data>
   <data name="TotalControls" xml:space="preserve">
     <value>Общо контролни точки:</value>
@@ -253,9 +256,48 @@
     <value>Общ резултат:</value>
   </data>
   <data name="UsedInCourses" xml:space="preserve">
-    <value>Използван/и в маршрути:</value>
+    <value>Използван в маршрути:</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Име:</value>
   </data>
   <data name="SpecialName_WhiteOut" xml:space="preserve">
-    <value>Празно пространство</value>
+    <value>Зона с бял фон</value>
+  </data>
+  <data name="MapExchange_Plural" xml:space="preserve">
+    <value>смени на карти</value>
+  </data>
+  <data name="MapExchange_Singular" xml:space="preserve">
+    <value>смяна на карта</value>
+  </data>
+  <data name="MapExchangeAtControl" xml:space="preserve">
+    <value>Смяна на карта при {0}</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Натовареност:</value>
+  </data>
+  <data name="UsedIn" xml:space="preserve">
+    <value>Използван в:</value>
+  </data>
+  <data name="CourseNameAndPart" xml:space="preserve">
+    <value>Маршрут „{0}“, част {1}</value>
+  </data>
+  <data name="SpecialName_Line" xml:space="preserve">
+    <value>Линия</value>
+  </data>
+  <data name="SpecialName_Rectangle" xml:space="preserve">
+    <value>Правоъгълник</value>
+  </data>
+  <data name="CalculatedLength" xml:space="preserve">
+    <value>Изчислена дължина:</value>
+  </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>точки за раздаване на карти</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>точка за раздаване на карти</value>
+  </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Обръщане на карта при {0}</value>
   </data>
 </root>

@@ -291,4 +291,13 @@
   <data name="CalculatedLength" xml:space="preserve">
     <value>Longueur calculée :</value>
   </data>
+  <data name="MapIssue_Plural" xml:space="preserve">
+    <value>Points de prise de carte</value>
+  </data>
+  <data name="MapIssue_Singular" xml:space="preserve">
+    <value>Point de prise de carte</value>
+  </data>
+  <data name="MapFlipAtControl" xml:space="preserve">
+    <value>Retournement de carte au {0}</value>
+  </data>
 </root>

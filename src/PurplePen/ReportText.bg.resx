@@ -154,7 +154,7 @@
     <value>Дължина</value>
   </data>
   <data name="ColumnHeader_Load" xml:space="preserve">
-    <value>Зареди</value>
+    <value>Натоварване</value>
   </data>
   <data name="ColumnHeader_Location" xml:space="preserve">
     <value>Местоположение</value>
@@ -166,61 +166,67 @@
     <value>Причина</value>
   </data>
   <data name="ColumnHeader_SameSymbol" xml:space="preserve">
-    <value>Същия символ?</value>
+    <value>Еднакъв символ?</value>
+  </data>
+  <data name="ColumnHeader_Visits" xml:space="preserve">
+    <value>Посещения</value>
   </data>
   <data name="CourseSummary_Title" xml:space="preserve">
     <value>Обобщение за маршрут {0}</value>
   </data>
   <data name="CrossRef_Title" xml:space="preserve">
-    <value>Обобщение на КТ по маршрути за {0}</value>
+    <value>Справка за контролните точки по маршрути – {0}</value>
+  </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>Отсечки, преминавани и в двете посоки</value>
   </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
-    <value>Контролни точки, твърде близки по разстояние</value>
+    <value>Контролни точки, разположени твърде близо</value>
   </data>
   <data name="EventAudit_CloseTogetherExplanation" xml:space="preserve">
-    <value>Следната таблица показва всички двойки контролни точки в границите на {0} метра една от друга. Колоната от описанията, изобразяваща обекта на КТ, показва дали и двете имат един и същи символ (колона D).</value>
+    <value>Следната таблица показва всички двойки контролни точки, които се намират на по-малко от {0} метра една от друга. Колоната „Еднакъв символ“ показва дали двете точки имат един и същи основен символ (колона D).</value>
   </data>
   <data name="EventAudit_MissingBoxes" xml:space="preserve">
     <value>Липсващи клетки в описанията</value>
   </data>
   <data name="EventAudit_MissingClimb" xml:space="preserve">
-    <value>При обикновените маршрути трябва да се посочва сборното изкачване в метри.</value>
+    <value>При стандартните маршрути трябва да е посочено сборното изкачване в метри.</value>
   </data>
   <data name="EventAudit_MissingD" xml:space="preserve">
-    <value>На всички контролни точки трябва да отговаря обект в колона D.</value>
+    <value>Всички контролни точки трябва да имат основен обект, указан в колона D.</value>
   </data>
   <data name="EventAudit_MissingEBetween" xml:space="preserve">
-    <value>Когато символът "между" е в колона G, в колони D и E трябва да се посочат два обекта.</value>
+    <value>Когато в колона G е избрано „между“, в колони D и E трябва да са посочени два обекта.</value>
   </data>
   <data name="EventAudit_MissingEJunction" xml:space="preserve">
-    <value>Когато символът "Пресичане" или "Събиране/сливане" е в колона F, в колони D и E трябва да се посочат два обекта.</value>
+    <value>Когато в колона F е избрано „събиране“ или „пресичане“, в колони D и E трябва да са посочени два обекта.</value>
   </data>
   <data name="EventAudit_MissingFinish" xml:space="preserve">
-    <value>Обикновените маршрути трябва да имат обозначен финал (две концентрични окръжности).</value>
+    <value>Стандартните маршрути трябва да имат обозначен финал (две концентрични окръжности).</value>
   </data>
   <data name="EventAudit_MissingItems" xml:space="preserve">
     <value>Липсващи елементи в маршрутите</value>
   </data>
   <data name="EventAudit_MissingLoad" xml:space="preserve">
-    <value>Маршрутът трябва да има очакван брой състезатели.</value>
+    <value>Маршрутът трябва да има зададен очакван брой състезатели.</value>
   </data>
   <data name="EventAudit_MissingPunch" xml:space="preserve">
-    <value>Не са зададени никакви отпечатъци на перфоратори</value>
+    <value>Няма зададен отпечатък на перфоратор.</value>
   </data>
   <data name="EventAudit_MissingPunchPatterns" xml:space="preserve">
     <value>Липсващи отпечатъци на перфоратори</value>
   </data>
   <data name="EventAudit_MissingScore" xml:space="preserve">
-    <value>Състезанието тип скорелауф трябва да има зададени стойности за всяка контролна точка или въобще да няма зададени такива.</value>
+    <value>Скорелауф маршрутът трябва да има зададени точки за всички КТ или за нито една.</value>
   </data>
   <data name="EventAudit_MissingScores" xml:space="preserve">
-    <value>Липсващи стойности на контролни точки</value>
+    <value>Липсващи точкови стойности</value>
   </data>
   <data name="EventAudit_MissingStart" xml:space="preserve">
-    <value>Обикновените маршрути трябва да имат обозначен старт (триъгълник).</value>
+    <value>Стандартните маршрути трябва да имат обозначен старт (триъгълник).</value>
   </data>
   <data name="EventAudit_MissingStartScore" xml:space="preserve">
-    <value>Състезанията тип скорелауф трябва да имат обозначен старт (триъгълник).</value>
+    <value>Скорелауф маршрутите трябва да имат обозначен старт (триъгълник).</value>
   </data>
   <data name="EventAudit_No" xml:space="preserve">
     <value>Не</value>
@@ -228,14 +234,23 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Не са открити проблеми.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Маршрутът „{0}“ съдържа контролна точка „{1}“ два пъти последователно.</value>
+  </data>
+  <data name="EventAudit_RepeatedControls" xml:space="preserve">
+    <value>Повторени контролни точки</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>Скорелауф маршрутът „{0}“ съдържа контролна точка „{1}“ два пъти. </value>
+  </data>
   <data name="EventAudit_Title" xml:space="preserve">
-    <value>Проверка на състезание {0}</value>
+    <value>Проверка на състезанието {0}</value>
   </data>
   <data name="EventAudit_UnusedControls" xml:space="preserve">
     <value>Неизползвани контролни точки</value>
   </data>
   <data name="EventAudit_UnusedControlsExplanation" xml:space="preserve">
-    <value>Следните контролни точки са налични в сбирката от всички КТ, но не са използвани в никой от маршрутите. За да ги премахнете, използвайте командата "Премахни неизползваните контролни точки" от менюто "Състезание", след което тези КТ повече няма да се появяват в справката.</value>
+    <value>Следните контролни точки съществуват в сбирката „Всички КТ“, но не се използват в нито един маршрут. За да ги премахнете, използвайте командата „Премахни неизползваните контролни точки“ от менюто „Състезание“. Тези КТ няма да бъдат включени по-нататък в справката.</value>
   </data>
   <data name="EventAudit_Yes" xml:space="preserve">
     <value>Да</value>
@@ -243,25 +258,58 @@
   <data name="LegLength_Average" xml:space="preserve">
     <value>Средно</value>
   </data>
+  <data name="LegLength_CourseInfo" xml:space="preserve">
+    <value>{0} ({1} контролни точки, {2}, {3} м изкачване)</value>
+  </data>
+  <data name="LegLength_CourseInfoNoClimb" xml:space="preserve">
+    <value>{0} ({1} контролни точки, {2})</value>
+  </data>
   <data name="LegLength_Title" xml:space="preserve">
-    <value>Справка за дължината на отсечките за {0}</value>
+    <value>Справка за дължината на отсечките – {0}</value>
+  </data>
+  <data name="Load_ButterflyExists" xml:space="preserve">
+    <value>Някои контролни точки се посещават по няколко пъти в рамките на един и същ маршрут. Втората стойност на натовареността отчита всяко отделно преминаване през дадена точка.</value>
   </data>
   <data name="Load_ControlLoadSection" xml:space="preserve">
-    <value>Натовареност на контролна точка</value>
+    <value>Натовареност на контролните точки</value>
   </data>
   <data name="Load_LegLoadSection" xml:space="preserve">
-    <value>Натовареност на отсечка</value>
+    <value>Натовареност на отсечките</value>
   </data>
   <data name="Load_MissingLoads" xml:space="preserve">
-    <value>Някои или всички маршрути нямат зададен брой състезатели. Поради това посочените по-долу цифри може да са неточни или да липсват. За да ги посочите, изберете "Брой състезатели на маршрут" от менюто "Маршрут".</value>
+    <value>Някои или всички маршрути нямат зададен брой състезатели. Поради това показаните по-долу стойности може да са неточни или да липсват. За да ги зададете, изберете „Брой състезатели на маршрут“ от менюто „Маршрут“.</value>
   </data>
   <data name="Load_OnlyLegsMoreThanOnce" xml:space="preserve">
-    <value>(само отсечките, които са използвани в повече от един маршрут, се появяват в следната таблица)</value>
+    <value>(в следната таблица се показват само отсечки, използвани в повече от един маршрут)</value>
   </data>
   <data name="Load_Title" xml:space="preserve">
-    <value>Обобщение за брой състезатели за {0}</value>
+    <value>Обобщение на натовареността по състезатели – {0}</value>
+  </data>
+  <data name="Load_VariationsExist" xml:space="preserve">
+    <value>Един или повече маршрути съдържат разклонения (варианти). Натовареността ще бъде изчислена при допускането, че състезателите са равномерно разпределени между разклоненията.</value>
+  </data>
+  <data name="Load_Visit" xml:space="preserve">
+    <value>({0} посещения)</value>
   </data>
   <data name="Load_Warning" xml:space="preserve">
     <value>ВНИМАНИЕ:</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>ЗАБЕЛЕЖКА: </value>
+  </data>
+  <data name="RelayVariation_BranchWarning" xml:space="preserve">
+    <value>Внимание: поради зададения брой отсечки, разклонението при контролна точка {0} няма да бъде използвано равномерно. {1} отсечка(и) ще използва(т) клон(ове) {2}, докато {3} отсечка(и) ще използва(т) клон(ове) {4}. </value>
+  </data>
+  <data name="RelayVariation_LegHeader" xml:space="preserve">
+    <value>Отсечка {0}</value>
+  </data>
+  <data name="RelayVariation_NoTeams" xml:space="preserve">
+    <value>Все още не са зададени щафетни отбори. Изберете желания брой отбори и отсечки, след което натиснете бутона „Задай варианти“.</value>
+  </data>
+  <data name="RelayVariation_TeamNumber" xml:space="preserve">
+    <value>Отбор {0}</value>
+  </data>
+  <data name="RelayVariation_Title" xml:space="preserve">
+    <value>Щафетни разпределения за {0}</value>
   </data>
 </root>

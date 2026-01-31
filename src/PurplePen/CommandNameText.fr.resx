@@ -217,13 +217,13 @@
     <value>Supprimer un coin</value>
   </data>
   <data name="AddGap" xml:space="preserve">
-    <value>Insérer un intervalle</value>
+    <value>Insérer une découpe</value>
   </data>
   <data name="RemoveGap" xml:space="preserve">
-    <value>Supprimer un intervalle</value>
+    <value>Supprimer une découpe</value>
   </data>
   <data name="MoveGap" xml:space="preserve">
-    <value>Déplacer un intervalle</value>
+    <value>Déplacer une découpe</value>
   </data>
   <data name="Rotate" xml:space="preserve">
     <value>Rotation</value>
@@ -297,7 +297,22 @@
   <data name="RelayTeamVariations" xml:space="preserve">
     <value>Variations équipe de relais</value>
   </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Ajouter un point de prise de carte</value>
+  </data>
   <data name="ChangeMapStandard" xml:space="preserve">
     <value>Définir la norme de la carte</value>
+  </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Étirer</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Publier sur Livelox</value>
+  </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Déplacer tous les postes</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Ajouter un retournement de carte</value>
   </data>
 </root>

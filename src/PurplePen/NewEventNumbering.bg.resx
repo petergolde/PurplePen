@@ -118,12 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="newEventNumberingLabel.Text" xml:space="preserve">
-    <value>На новосъздадените КТ се поставят автоматично сигнатури. Моля, изберете началната сигнатура, която да бъде използвана.</value>
+    <value>На новосъздадените контролни точки се присвояват автоматично сигнатури. Моля, изберете началната сигнатура, която да бъде използвана.</value>
   </data>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Не позволявай сигнатури, които могат да се прочетат обратно (напр. "68"/"89")</value>
+    <value>Забрани сигнатури, които могат да се объркат при обръщане (напр. „68“/„89“).</value>
   </data>
   <data name="startingCodeLabel.Text" xml:space="preserve">
     <value>Начална сигнатура:</value>
+  </data>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Тази настройка може да се промени по-късно от меню Състезание/Автоматично номериране)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Номериране на контролни точки</value>
   </data>
 </root>

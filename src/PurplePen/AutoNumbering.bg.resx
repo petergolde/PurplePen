@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="disallowInvertibleCheckBox.Text" xml:space="preserve">
-    <value>Не позволявай сигнатури, които могат да се прочетат обратно (напр. "68"/"89")</value>
+    <value>Забрани сигнатури, които могат да се объркат при обръщане (напр. „68“/„89“).</value>
   </data>
   <data name="renumberExistingRadioButton.Text" xml:space="preserve">
-    <value>Преподреди също и съществуващите КТ.</value>
+    <value>Преномерирай и съществуващите КТ</value>
   </data>
   <data name="newControlsOnlyRadioButton.Text" xml:space="preserve">
-    <value>Приложи тези настройки само за новосъздадени КТ.</value>
+    <value>Прилагай тези настройки само за новосъздадените КТ</value>
   </data>
   <data name="existingControlsGroupBox.Text" xml:space="preserve">
-    <value>Съществуващи контролни точки</value>
+    <value>Съществуващи КТ</value>
   </data>
   <data name="automaticNumberingLabel.Text" xml:space="preserve">
     <value>Новосъздадените КТ се номерират автоматично според следните настройки.</value>

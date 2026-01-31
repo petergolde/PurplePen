@@ -121,73 +121,73 @@
     <value>Промени символа</value>
   </data>
   <data name="ChangeCode" xml:space="preserve">
-    <value>Промени сигнатура</value>
+    <value>Промени сигнатурата на КТ</value>
   </data>
   <data name="ChangeControl" xml:space="preserve">
-    <value>Промени контролната точка</value>
+    <value>Промени КТ</value>
   </data>
   <data name="ChangeScore" xml:space="preserve">
-    <value>Промени стойностите на КТ</value>
+    <value>Промени КТ</value>
   </data>
   <data name="ChangeTitle" xml:space="preserve">
-    <value>Промени наименованието</value>
+    <value>Промени заглавието</value>
   </data>
   <data name="ChangeClimb" xml:space="preserve">
     <value>Промени сборното изкачване</value>
   </data>
   <data name="ChangeCourseName" xml:space="preserve">
-    <value>Промени номера на маршрута</value>
+    <value>Промени името на маршрута</value>
   </data>
   <data name="ChangeTextLine" xml:space="preserve">
-    <value>Промени реда за текст в описанията</value>
+    <value>Промени текстовия ред</value>
   </data>
   <data name="ChangeScale" xml:space="preserve">
-    <value>Актуализирай мащаба на картата</value>
+    <value>Обнови мащаба на картата</value>
   </data>
   <data name="MoveControl" xml:space="preserve">
-    <value>Премести контролна точка</value>
+    <value>Премести КТ</value>
   </data>
   <data name="MoveControlNumber" xml:space="preserve">
-    <value>Премести номер на КТ</value>
+    <value>Премести номера на КТ</value>
   </data>
   <data name="MoveObject" xml:space="preserve">
     <value>Премести обекта</value>
   </data>
   <data name="DeleteControl" xml:space="preserve">
-    <value>Изтрий контролна точка</value>
+    <value>Изтрий КТ</value>
   </data>
   <data name="DeleteObject" xml:space="preserve">
-    <value>Изтрий обект</value>
+    <value>Изтрий обекта</value>
   </data>
   <data name="DeleteTextLine" xml:space="preserve">
-    <value>Изтрий ред за текст</value>
+    <value>Изтрий текстовия ред</value>
   </data>
   <data name="AddControl" xml:space="preserve">
-    <value>Добави контролна точка</value>
+    <value>Добави КТ</value>
   </data>
   <data name="AddStart" xml:space="preserve">
-    <value>Добави старт</value>
+    <value>Добави Старт</value>
   </data>
   <data name="AddFinish" xml:space="preserve">
-    <value>Добави финал</value>
+    <value>Добави Финал</value>
   </data>
   <data name="AddCrossingPoint" xml:space="preserve">
-    <value>Добави задължително място за преминаване</value>
+    <value>Добави задължителна точка за преминаване</value>
   </data>
   <data name="AddObject" xml:space="preserve">
     <value>Добави обект</value>
   </data>
   <data name="DeleteCourse" xml:space="preserve">
-    <value>Изтрий маршрут</value>
+    <value>Изтрий маршрута</value>
   </data>
   <data name="NewCourse" xml:space="preserve">
     <value>Нов маршрут</value>
   </data>
   <data name="ChangeCourseProperties" xml:space="preserve">
-    <value>Промени данните на маршрута</value>
+    <value>Промени свойствата на маршрута</value>
   </data>
   <data name="ChangeAllControlsProperties" xml:space="preserve">
-    <value>Промени данни за всички КТ</value>
+    <value>Промени свойствата на всички КТ</value>
   </data>
   <data name="NewEvent" xml:space="preserve">
     <value>Създай ново състезание</value>
@@ -199,31 +199,31 @@
     <value>Промени сигнатурите</value>
   </data>
   <data name="ChangeDisplayedCourses" xml:space="preserve">
-    <value>Промени показаните маршрути</value>
+    <value>Промени показваните маршрути</value>
   </data>
   <data name="MoveBend" xml:space="preserve">
-    <value>Премести извивката на отсечка</value>
+    <value>Премести чупката на отсечката</value>
   </data>
   <data name="AddBend" xml:space="preserve">
-    <value>Добави извивка</value>
+    <value>Добави чупка</value>
   </data>
   <data name="AddCorner" xml:space="preserve">
     <value>Добави ъгъл</value>
   </data>
   <data name="DeleteBend" xml:space="preserve">
-    <value>Премахни извивка</value>
+    <value>Премахни чупката</value>
   </data>
   <data name="DeleteCorner" xml:space="preserve">
-    <value>Премахни ъгъл</value>
+    <value>Премахни ъгъла</value>
   </data>
   <data name="AddGap" xml:space="preserve">
     <value>Добави прекъсване</value>
   </data>
   <data name="RemoveGap" xml:space="preserve">
-    <value>Премахни прекъсване</value>
+    <value>Премахни прекъсването</value>
   </data>
   <data name="MoveGap" xml:space="preserve">
-    <value>Премести прекъсване</value>
+    <value>Премести прекъсването</value>
   </data>
   <data name="Rotate" xml:space="preserve">
     <value>Завърти</value>
@@ -232,42 +232,90 @@
     <value>Автоматично номериране</value>
   </data>
   <data name="ChangePunchPatterns" xml:space="preserve">
-    <value>Промени отпечатъците от перфораторите</value>
+    <value>Промени перфорациите</value>
   </data>
   <data name="ChangePunchcardFormat" xml:space="preserve">
-    <value>Промени оформлението на състезателния картон</value>
+    <value>Промени оформлението на контролния картон</value>
   </data>
   <data name="SetPrintArea" xml:space="preserve">
-    <value>Задай зона за отпечатване</value>
+    <value>Задай област за печат</value>
   </data>
   <data name="SetCourseLoad" xml:space="preserve">
-    <value>Промени броя състезатели на маршрут</value>
+    <value>Промени разпределението на състезателите</value>
   </data>
   <data name="SetCustomSymbolText" xml:space="preserve">
     <value>Персонализирай текста на описанията</value>
   </data>
   <data name="ChangeCourseOrder" xml:space="preserve">
-    <value>Промени поредността на маршрутите</value>
+    <value>Промени реда на маршрутите</value>
   </data>
   <data name="ChangeMapFile" xml:space="preserve">
-    <value>Смени файла на картата</value>
+    <value>Смени картния файл</value>
   </data>
   <data name="IgnoreMissingFonts" xml:space="preserve">
-    <value>Подмини съобщението за липсващи шрифтове</value>
+    <value>Игнорирай липсващите шрифтове</value>
   </data>
   <data name="AddTextLine" xml:space="preserve">
-    <value>Добави ред за текст</value>
+    <value>Добави текстов ред</value>
   </data>
   <data name="RemoveUnusedControls" xml:space="preserve">
     <value>Премахни неизползваните КТ</value>
   </data>
   <data name="SetDescriptionLanguage" xml:space="preserve">
-    <value>Промени езика на описанията</value>
+    <value>Смени езика на описанията</value>
   </data>
   <data name="ChangeText" xml:space="preserve">
-    <value>Промени текст</value>
+    <value>Промени текста</value>
   </data>
   <data name="ChangeCourseAppearance" xml:space="preserve">
-    <value>Персонализирай външния изглед на маршрута</value>
+    <value>Персонализирай изгледа на маршрута</value>
+  </data>
+  <data name="AddMapExchange" xml:space="preserve">
+    <value>Добави смяна на карта</value>
+  </data>
+  <data name="DeleteMapExchangeAtControl" xml:space="preserve">
+    <value>Изтрий смяната на картата</value>
+  </data>
+  <data name="ChangePartProperties" xml:space="preserve">
+    <value>Промени свойствата на частта от маршрута</value>
+  </data>
+  <data name="ChangeLineAppearance" xml:space="preserve">
+    <value>Промени изгледа на линията</value>
+  </data>
+  <data name="DuplicateCourse" xml:space="preserve">
+    <value>Дублирай маршрута</value>
+  </data>
+  <data name="CreateMapFiles" xml:space="preserve">
+    <value>Създай {0} &amp;Файлове</value>
+  </data>
+  <data name="AddVariation" xml:space="preserve">
+    <value>Добави вариант</value>
+  </data>
+  <data name="DeleteFork" xml:space="preserve">
+    <value>Изтрий разклонението/обиколката</value>
+  </data>
+  <data name="RelayTeamVariations" xml:space="preserve">
+    <value>Варианти на щафетния отбор</value>
+  </data>
+  <data name="AddMapIssue" xml:space="preserve">
+    <value>Добави точка за раздаване на карти</value>
+  </data>
+  <data name="ChangeDescriptionStandard" xml:space="preserve">
+    <value>Задай стандарта за описанията на КТ</value>
+  </data>
+  <data name="ChangeMapStandard" xml:space="preserve">
+    <value>Задай картния стандарт</value>
+  </data>
+  <data name="Stretch" xml:space="preserve">
+    <value>Разтегни</value>
+  </data>
+  <data name="SetLiveloxImportableEventId" xml:space="preserve">
+    <value>Публикувай в Livelox</value>
+  </data>
+  <data name="MoveAllControls" xml:space="preserve">
+    <value>Премести всички КТ</value>
+  </data>
+  <data name="AddMapFlip" xml:space="preserve">
+    <value>Добави обръщане на карта</value>
   </data>
 </root>

@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>В каква посока искате да преместите всички контролни точки върху картата?</value>
+  </data>
+  <data name="radioButtonMove.Text" xml:space="preserve">
+    <value>Само преместване</value>
+  </data>
+  <data name="radioButtonMoveAndScale.Text" xml:space="preserve">
+    <value>Премести и мащабирай</value>
+  </data>
+  <data name="radioButtonMoveAndRotate.Text" xml:space="preserve">
+    <value>Премести и завърти</value>
+  </data>
+  <data name="radioButtonMoveRotateScale.Text" xml:space="preserve">
+    <value>Премести, мащабирай и завърти</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Премести всички КТ</value>
+  </data>
 </root>

@@ -117,8 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxScaleItemSizes.Items" xml:space="preserve">
+    <value>Без промяна на мащаба</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items1" xml:space="preserve">
+    <value>Относително спрямо мащаба на картата</value>
+  </data>
+  <data name="comboBoxScaleItemSizes.Items2" xml:space="preserve">
+    <value>Относително спрямо 1:15000</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Мащабирай размерите на елементите:</value>
+  </data>
+  <data name="labelAutoGapSize.Text" xml:space="preserve">
+    <value>Автоматичен размер на прекъсването по отсечката:</value>
+  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>мм</value>
+  </data>
+  <data name="labelOutlineWidth.Text" xml:space="preserve">
+    <value>Бял контур около номерата:</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>мм</value>
@@ -126,17 +144,26 @@
   <data name="label8.Text" xml:space="preserve">
     <value>мм</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Диаметър на централната точка:</value>
+  </data>
   <data name="comboBoxControlNumberStyle.Items" xml:space="preserve">
     <value>Arial</value>
   </data>
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
-    <value>Arial Получер</value>
+    <value>Arial удебелен</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items2" xml:space="preserve">
+    <value>Roboto</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items3" xml:space="preserve">
+    <value>Roboto удебелен</value>
   </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
-    <value>Стил на изписване на номера на КТ:</value>
+    <value>Стил на номерата на КТ:</value>
   </data>
   <data name="labelControlNumber.Text" xml:space="preserve">
-    <value>Височина на номера на КТ:</value>
+    <value>Височина на номерата на КТ:</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>мм</value>
@@ -148,19 +175,31 @@
     <value>мм</value>
   </data>
   <data name="labelControlCircle.Text" xml:space="preserve">
-    <value>Диаметър на окръжността на КТ:</value>
+    <value>Диаметър на кръга на КТ:</value>
   </data>
   <data name="labelMM1.Text" xml:space="preserve">
     <value>мм</value>
   </data>
   <data name="checkBoxStandardSizes.Text" xml:space="preserve">
-    <value>Използвай стандартните размери според МФО</value>
+    <value>Използвай стандартните размери на IOF</value>
   </data>
   <data name="groupBoxSizes.Text" xml:space="preserve">
-    <value>Размери на елемента</value>
+    <value>Размери на елементите</value>
+  </data>
+  <data name="labelChooseLayer.Text" xml:space="preserve">
+    <value>Над картния слой:</value>
   </data>
   <data name="comboBoxBlendPurple.Items" xml:space="preserve">
-    <value>Никой</value>
+    <value>Няма</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items1" xml:space="preserve">
+    <value>Сливане</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items2" xml:space="preserve">
+    <value>Слой</value>
+  </data>
+  <data name="labelBlendPurple.Text" xml:space="preserve">
+    <value>Смеси пурпурния цвят с подлежащите цветове на картата:</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Черно:</value>
@@ -169,22 +208,40 @@
     <value>Жълто:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Лилаво (magenta):</value>
+    <value>Пурпурно:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Синьо (циан):</value>
+    <value>Цианово:</value>
   </data>
   <data name="checkBoxDefaultPurple.Text" xml:space="preserve">
-    <value>Използвай лилавия цвят от картата</value>
+    <value>Използвай пурпурния цвят от картата</value>
   </data>
   <data name="groupBoxPurple.Text" xml:space="preserve">
-    <value>Лилав цвят</value>
+    <value>Пурпурен цвят</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
-    <value>Преглед преди печат</value>
+    <value>Преглед</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items" xml:space="preserve">
+    <value>Черен</value>
+  </data>
+  <data name="comboBoxDescriptionColor.Items1" xml:space="preserve">
+    <value>Пурпурен</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Цвят:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Описания на контролните точки</value>
+    <value>Описания на КТ</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Използвай ефекта за препечат при цветовете, отбелязани като „overprint“</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Разширени</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Персонализирай изгледа</value>
   </data>
   <data name="buttonColorChoosers.Text" xml:space="preserve">
     <value>Избор на цвят...</value>

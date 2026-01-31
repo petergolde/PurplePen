@@ -186,8 +186,20 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Item Sizes</value>
   </data>
+  <data name="labelChooseLayer.Text" xml:space="preserve">
+    <value>Above map layer:</value>
+  </data>
   <data name="comboBoxBlendPurple.Items" xml:space="preserve">
     <value>None</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items1" xml:space="preserve">
+    <value>Blend</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items2" xml:space="preserve">
+    <value>Layer</value>
+  </data>
+  <data name="labelBlendPurple.Text" xml:space="preserve">
+    <value>Blend purple with underlying map colours:</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Black:</value>

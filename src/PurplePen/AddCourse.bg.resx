@@ -121,10 +121,10 @@
     <value>Номер на първата контролна точка:</value>
   </data>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Оформление на описанията на КТ:</value>
+    <value>Формат на описанието:</value>
   </data>
   <data name="mapScaleLabel.Text" xml:space="preserve">
-    <value>Мащаб на отпечатване на картата:</value>
+    <value>Мащаб за печат на картата:</value>
   </data>
   <data name="oneToPrefixLabel.Text" xml:space="preserve">
     <value>1: </value>
@@ -139,19 +139,28 @@
     <value>Символи и текст</value>
   </data>
   <data name="labelKindLabel.Text" xml:space="preserve">
-    <value>Вид на номерацията на КТ:</value>
+    <value>Надписи на кръговете на КТ:</value>
   </data>
   <data name="labelKindCombo.Items" xml:space="preserve">
-    <value>Номер по ред (3)</value>
+    <value>Пореден номер (3)</value>
   </data>
   <data name="labelKindCombo.Items1" xml:space="preserve">
     <value>Сигнатура (145)</value>
   </data>
   <data name="labelKindCombo.Items2" xml:space="preserve">
-    <value>Номер по ред и сигнатура (3-145)</value>
+    <value>Пореден номер и сигнатура (3–145)</value>
+  </data>
+  <data name="labelKindCombo.Items3" xml:space="preserve">
+    <value>Пореден номер и точки (3(30))</value>
+  </data>
+  <data name="labelKindCombo.Items4" xml:space="preserve">
+    <value>Сигнатура и точки (145(30))</value>
+  </data>
+  <data name="labelKindCombo.Items5" xml:space="preserve">
+    <value>Точки (30)</value>
   </data>
   <data name="scoreColumnLabel.Text" xml:space="preserve">
-    <value>Покажи стойностите на КТ в:</value>
+    <value>Показвай точките в:</value>
   </data>
   <data name="scoreColumnCombo.Items" xml:space="preserve">
     <value>Колона A</value>
@@ -163,16 +172,16 @@
     <value>Колона H</value>
   </data>
   <data name="scoreColumnCombo.Items3" xml:space="preserve">
-    <value>(не показвай)</value>
+    <value>(не се показва)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Оформление</value>
+    <value>Външен вид</value>
   </data>
   <data name="secondaryTitleDescription.Text" xml:space="preserve">
-    <value>Следният (незадължителен) текст ще се изобрази на втория ред от описанието на КТ.</value>
+    <value>Следният (незадължителен) текст ще се появи на втория ред на описанието на КТ:</value>
   </data>
   <data name="secondaryTitleGroup.Text" xml:space="preserve">
-    <value>Списък на класовете / Подзаглавие</value>
+    <value>Списък на категориите / Втори ред (заглавие)</value>
   </data>
   <data name="lengthLabel.Text" xml:space="preserve">
     <value>Дължина:</value>
@@ -181,19 +190,25 @@
     <value>Изкачване:</value>
   </data>
   <data name="courseTypeLabel.Text" xml:space="preserve">
-    <value>Вид на маршрута:</value>
+    <value>Тип на маршрута:</value>
   </data>
   <data name="courseNameLabel.Text" xml:space="preserve">
-    <value>Номер (име) на маршрута:</value>
+    <value>Име на маршрута:</value>
   </data>
   <data name="courseKindCombo.Items" xml:space="preserve">
-    <value>Обикновен маршрут</value>
+    <value>Стандартен маршрут</value>
   </data>
   <data name="courseKindCombo.Items1" xml:space="preserve">
     <value>Скорелауф</value>
   </data>
   <data name="metersSuffix.Text" xml:space="preserve">
-    <value>метри</value>
+    <value>метра</value>
+  </data>
+  <data name="kmSuffix.Text" xml:space="preserve">
+    <value>км</value>
+  </data>
+  <data name="hideFromReportsCheckBox.Text" xml:space="preserve">
+    <value>Да не се включва в отчетите</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Нов маршрут</value>

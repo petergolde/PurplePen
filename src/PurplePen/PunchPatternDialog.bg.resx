@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="formatButton.Text" xml:space="preserve">
-    <value>Оформление на състезателния картон...</value>
+    <value>Оформление на контролния картон...</value>
   </data>
   <data name="punchPatternsLabel.Text" xml:space="preserve">
-    <value>Кликнете върху някоя от сигнатурите в списъка отляво, а отдясно изобразете съответстващия отпечатък на перфоратор. Сигнатурите в червено посочват КТ, за които не е определен отпечатък от перфоратор.</value>
+    <value>Кликнете върху сигнатура на контролна точка в списъка отляво и изобразете отпечатъка на перфоратора вдясно. Сигнатурите, показани в червено, означават контролни точки без определен отпечатък от перфоратор.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Отпечатъци на перфораторите</value>
+    <value>Отпечатъци от перфоратори</value>
   </data>
 </root>

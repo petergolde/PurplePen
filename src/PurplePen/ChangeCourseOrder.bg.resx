@@ -121,12 +121,12 @@
     <value>Премести надолу</value>
   </data>
   <data name="courseOrderLabel.Text" xml:space="preserve">
-    <value>Използвай бутоните "Премести нагоре" и "Премести надолу" за смяна на поредността, в която маршрутите се появяват в потребителския интерфейс, справките и за печат.</value>
+    <value>Използвай бутоните „Премести нагоре“ и „Премести надолу“, за да промениш реда, в който маршрутите се показват в интерфейса, отчетите и при печат.</value>
   </data>
   <data name="moveUpButton.Text" xml:space="preserve">
     <value>Премести нагоре</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Поредност на маршрутите</value>
+    <value>Ред на маршрутите</value>
   </data>
 </root>

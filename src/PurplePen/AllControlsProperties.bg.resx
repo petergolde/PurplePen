@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="descriptionAppearanceLabel.Text" xml:space="preserve">
-    <value>Оформление на описанията на КТ:</value>
+    <value>Формат на описанието:</value>
   </data>
   <data name="printingScaleLabel.Text" xml:space="preserve">
-    <value>Мащаб на отпечатване на картата:</value>
+    <value>Мащаб за печат на картата:</value>
   </data>
   <data name="oneToPrefix.Text" xml:space="preserve">
     <value>1: </value>
@@ -136,12 +136,12 @@
     <value>Символи и текст</value>
   </data>
   <data name="appearanceGroupBox.Text" xml:space="preserve">
-    <value>Оформление</value>
+    <value>Външен вид</value>
   </data>
   <data name="allControlsPropertiesLabel.Text" xml:space="preserve">
-    <value>Тези настройки контролират отпечатването на картата и описанията на всички контролни точки.</value>
+    <value>Тези настройки определят как ще се отпечатват картата и описанията за всички КТ.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Данни за всички КТ</value>
+    <value>Настройки на всички КТ</value>
   </data>
 </root>

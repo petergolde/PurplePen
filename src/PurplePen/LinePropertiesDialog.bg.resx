@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Цвят:</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value> Промени цвета...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Стил:</value>
+  </data>
+  <data name="comboBoxStyle.Items" xml:space="preserve">
+    <value>Единичен</value>
+  </data>
+  <data name="comboBoxStyle.Items1" xml:space="preserve">
+    <value>Двоен</value>
+  </data>
+  <data name="comboBoxStyle.Items2" xml:space="preserve">
+    <value>Прекъснат</value>
+  </data>
+  <data name="labelWidth.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="labelGapSize.Text" xml:space="preserve">
+    <value>Размер на прекъсването:</value>
+  </data>
+  <data name="labelDashSize.Text" xml:space="preserve">
+    <value>Размер на тирето:</value>
+  </data>
   <data name="labelWidthMm.Text" xml:space="preserve">
     <value>мм</value>
   </data>
@@ -126,10 +153,16 @@
   <data name="labelDashSizeMm.Text" xml:space="preserve">
     <value>мм</value>
   </data>
+  <data name="labelCornerRadius.Text" xml:space="preserve">
+    <value>Радиус на ъгъла:</value>
+  </data>
   <data name="labelRadiusMm.Text" xml:space="preserve">
     <value>мм</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Пример</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Оформление</value>
+    <value>Външен вид</value>
   </data>
 </root>

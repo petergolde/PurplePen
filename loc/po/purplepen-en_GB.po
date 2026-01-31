@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.3\n"
+"Project-Id-Version: Purple Pen 3.5.4\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
+"POT-Creation-Date: 2026-01-31 12:35-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -918,7 +918,7 @@ msgstr "Item Sizes"
 
 #: CourseAppearanceDialog.resx, labelChooseLayer.Text
 msgid "Above map layer:"
-msgstr ""
+msgstr "Above map layer:"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
 #: CourseSelector.resx, selectNone.Text
@@ -928,15 +928,15 @@ msgstr "None"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
 msgid "Blend"
-msgstr ""
+msgstr "Blend"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
 msgid "Layer"
-msgstr ""
+msgstr "Layer"
 
 #: CourseAppearanceDialog.resx, labelBlendPurple.Text
 msgid "Blend purple with underlying map colors:"
-msgstr ""
+msgstr "Blend purple with underlying map colours:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -1087,15 +1087,6 @@ msgstr "Cancel"
 msgid "Select a folder for the OCAD files"
 msgstr "Select a folder for the OCAD files"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Output"
-
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -1180,6 +1171,30 @@ msgstr "RGB"
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
 msgstr "CMYK"
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items
+msgid "Course and map"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items1
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items1
+msgid "Course only"
+msgstr ""
+
+#: CreateImageFiles.resx, labelPrintBaseMap.Text
+#: CreatePdfCourses.resx, labelPrintBaseMap.Text
+msgid "Include:"
+msgstr ""
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Output"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
@@ -1833,7 +1848,7 @@ msgstr "Dangerous Area"
 #: MainFrame.resx, addConstructionMenu.Text
 #: MainFrame.resx, constructionToolStripMenuItem.Text
 msgid "Temporary Construction"
-msgstr ""
+msgstr "Temporary Construction"
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -2712,16 +2727,6 @@ msgstr "Please tell us what you were doing in the program, to help "
 msgid "Send Report"
 msgstr "Send Report"
 
-#: MiscText.resx, CannotAddDescriptionsToAllParts
-msgid "Descriptions may not be added to a course with a map "
-"exchange if \"All Parts\" is being displayed. Switch to the "
-"part you wish to add descriptions to, and then choose \"Add "
-"Descriptions\" again."
-msgstr "Descriptions may not be added to a course with a map "
-"exchange if \"All Parts\" is being displayed. Switch to the "
-"part you wish to add descriptions to, and then choose \"Add "
-"Descriptions\" again."
-
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
 msgstr "PdfConverter.exe not found"
@@ -3032,7 +3037,7 @@ msgstr "Installing Roboto Fonts failed."
 
 #: MiscText.resx, LowerPurple
 msgid "Lower Purple"
-msgstr ""
+msgstr "Lower Purple"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

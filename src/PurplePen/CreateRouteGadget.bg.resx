@@ -121,7 +121,7 @@
     <value>Създай</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Избери папка за OCAD файловете</value>
@@ -130,10 +130,10 @@
     <value>Избери папка...</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла Purple Pen</value>
+    <value>Същата папка като файла на Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла с картата</value>
+    <value>Същата папка като картния файл</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Друга папка</value>
@@ -142,7 +142,7 @@
     <value>Папка</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Въведи име (без .xml или .gif) за двата файла за RouteGadget:</value>
+    <value>Въведи името (без .xml или .gif) за двата файла на RouteGadget:</value>
   </data>
   <data name="nameGroupBox.Text" xml:space="preserve">
     <value>Име на файла</value>
@@ -151,9 +151,21 @@
     <value>Научи повече за RouteGadget</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>RouteGadget изисква едновременно графичен файл (.gif) и IOF XML файл (.xml). Изберете името и папката на тези два файла.</value>
+    <value>RouteGadget изисква както файл с изображение (.gif), така и IOF XML файл (.xml). Избери име и папка за двата файла.</value>
+  </data>
+  <data name="comboBoxIofXml.Items" xml:space="preserve">
+    <value>2.0.3</value>
+  </data>
+  <data name="comboBoxIofXml.Items1" xml:space="preserve">
+    <value>3.0</value>
+  </data>
+  <data name="labelIofXml.Text" xml:space="preserve">
+    <value>Версия на IOF XML:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>IOF XML</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Създай файлове за RouteGadget</value>
+    <value>Създай RouteGadget файлове</value>
   </data>
 </root>

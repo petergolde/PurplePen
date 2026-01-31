@@ -616,4 +616,16 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="AddEllipseTitle" xml:space="preserve">
     <value>Elips Ekle</value>
   </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>Purple Pen'in eski bir sürümü hala yüklü. Purple Pen'in iki sürümünün yüklü olmasının yol açabileceği karışıklığı önlemek için, eski sürümün kaldırılması şiddetle tavsiye edilir. Şimdi kaldırmak ister misiniz?</value>
+  </data>
+  <data name="AskInstallRobotoFonts" xml:space="preserve">
+    <value>OCAD veya OpenOrienteering Mapper'ın kontrol açıklamalarını doğru şekilde görüntüleyebilmesi için sisteminizde "Roboto" ve "Roboto Condensed" yazı tiplerinin yüklü olması gerekir. Bu yazı tiplerini şimdi yüklemek ister misiniz (şiddetle tavsiye edilir)?</value>
+  </data>
+  <data name="RobotoFontsInstallFailed" xml:space="preserve">
+    <value>Roboto Fonts kurulumu başarısız oldu.</value>
+  </data>
+  <data name="LowerPurple" xml:space="preserve">
+    <value>Açık mor</value>
+  </data>
 </root>

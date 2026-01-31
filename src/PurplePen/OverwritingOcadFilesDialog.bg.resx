@@ -124,7 +124,7 @@
     <value>Замени</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Потвърди заменянето на файлове</value>

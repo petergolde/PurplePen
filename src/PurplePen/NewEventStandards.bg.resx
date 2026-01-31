@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="changeLaterLabel.Text" xml:space="preserve">
+    <value>(Тези настройки могат да се променят по-късно от меню Състезание/IOF стандарти)</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>IOF стандарти</value>
+  </data>
+  <data name="radioButtonMapSpr2019.Text" xml:space="preserve">
+    <value>ISSprOM 2019 (спринт)</value>
+  </data>
+  <data name="radioButtonMap2017.Text" xml:space="preserve">
+    <value>ISOM 2017 (стандартен терен)</value>
+  </data>
+  <data name="radioButtonMap2000.Text" xml:space="preserve">
+    <value>ISOM 2000 / ISSOM 2007 (по-стари версии)</value>
+  </data>
+  <data name="groupBoxMapStandard.Text" xml:space="preserve">
+    <value>Картен стандарт на IOF</value>
+  </data>
+  <data name="radioButtonDescriptions2018.Text" xml:space="preserve">
+    <value>Описания 2018 или 2024</value>
+  </data>
+  <data name="radioButtonDescriptions2004.Text" xml:space="preserve">
+    <value>Описания 2004</value>
+  </data>
+  <data name="groupBoxDescriptionStandard.Text" xml:space="preserve">
+    <value>Стандарт за описания на IOF</value>
+  </data>
+  <data name="labelStandardsIntro.Text" xml:space="preserve">
+    <value>Кои версии на IOF стандартите желаете Purple Pen да използва?</value>
+  </data>
 </root>

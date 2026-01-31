@@ -118,27 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="numberColumn.HeaderText" xml:space="preserve">
-    <value>Число</value>
+    <value>Номер</value>
   </data>
   <data name="genderColumn.HeaderText" xml:space="preserve">
-    <value>Род</value>
+    <value>Пол</value>
+  </data>
+  <data name="caseColumn.HeaderText" xml:space="preserve">
+    <value>Главни/малки букви</value>
   </data>
   <data name="textColumn.HeaderText" xml:space="preserve">
     <value>Текст</value>
   </data>
   <data name="checkBoxPlural.Text" xml:space="preserve">
-    <value>Покажи форма в множествено число</value>
+    <value>Показвай множествени форми</value>
   </data>
   <data name="checkBoxGender.Text" xml:space="preserve">
-    <value>Покажи формите по род</value>
+    <value>Показвай формите по пол</value>
   </data>
   <data name="labelDescription.Text" xml:space="preserve">
-    <value>Въведи съответния текст към символа в колоната "Текст".</value>
+    <value>Въведи персонализирания текст за символа в колоната „Текст“.</value>
   </data>
   <data name="labelGenderChooser.Text" xml:space="preserve">
-    <value>Род:</value>
+    <value>Пол:</value>
+  </data>
+  <data name="labelCaseChooser.Text" xml:space="preserve">
+    <value>Регистър на променения символ:</value>
+  </data>
+  <data name="checkBoxCases.Text" xml:space="preserve">
+    <value>Показвай формите по регистър</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Персонализиран текст към символ</value>
+    <value>Персонализиран текст на символа</value>
   </data>
 </root>

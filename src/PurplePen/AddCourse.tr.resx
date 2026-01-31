@@ -207,6 +207,9 @@
   <data name="kmSuffix.Text" xml:space="preserve">
     <value>km</value>
   </data>
+  <data name="hideFromReportsCheckBox.Text" xml:space="preserve">
+    <value>Raporlara dahil etmeyin</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Yeni Parkur</value>
   </data>

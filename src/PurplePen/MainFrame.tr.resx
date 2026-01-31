@@ -345,6 +345,9 @@
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Tehlikeli Alan</value>
   </data>
+  <data name="addConstructionMenu.Text" xml:space="preserve">
+    <value>Geçici İnşaat</value>
+  </data>
   <data name="addWaterMenu.Text" xml:space="preserve">
     <value>Su Noktası</value>
   </data>
@@ -659,6 +662,9 @@
   </data>
   <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
     <value>Tehlikeli Alan</value>
+  </data>
+  <data name="constructionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Geçici İnşaat</value>
   </data>
   <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Su Noktası</value>

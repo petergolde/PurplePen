@@ -117,10 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelPaper.Text" xml:space="preserve">
+    <value>Размер:</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Височина:</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Размер на хартията ({0})</value>
+  </data>
   <data name="radioButtonLandscape.Text" xml:space="preserve">
     <value>Хоризонтално</value>
   </data>
   <data name="radioButtonPortrait.Text" xml:space="preserve">
     <value>Вертикално</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ориентация</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Ляво:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Горе:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Дясно:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Долу:</value>
+  </data>
+  <data name="groupBoxMargins.Text" xml:space="preserve">
+    <value>Полета ({0})</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Настройки на страницата</value>
   </data>
 </root>

@@ -124,19 +124,52 @@
     <value>Създай</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Избери папка за OCAD файловете</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Извеждане към</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Формат на файла:</value>
   </data>
+  <data name="fileFormatCombo.Items" xml:space="preserve">
+    <value>PNG</value>
+  </data>
+  <data name="fileFormatCombo.Items1" xml:space="preserve">
+    <value>JPEG</value>
+  </data>
+  <data name="fileFormatCombo.Items2" xml:space="preserve">
+    <value>GIF</value>
+  </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>Представка за име на файл:</value>
+    <value>Начален текст на името на файла:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>World файл:</value>
+  </data>
+  <data name="comboBoxDpi.Items" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="comboBoxDpi.Items1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="comboBoxDpi.Items2" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="comboBoxDpi.Items3" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="comboBoxDpi.Items4" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="comboBoxDpi.Items5" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="comboBoxDpi.Items6" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="dpiLabel.Text" xml:space="preserve">
+    <value>Dpi:</value>
   </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>Не</value>
@@ -144,20 +177,35 @@
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Да</value>
   </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Цветови модел:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Изход</value>
+  </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Избери папка...</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла Purple Pen</value>
+    <value>Същата папка като файла на Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла с картата</value>
+    <value>Същата папка като картния файл</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Друга папка</value>
   </data>
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Папка</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Създай файлове с изображения</value>
   </data>
   <data name="fileFormatCombo.Items3" xml:space="preserve">
     <value>OCAD 9</value>

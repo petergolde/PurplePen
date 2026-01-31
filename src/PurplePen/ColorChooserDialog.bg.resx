@@ -124,12 +124,15 @@
     <value>Жълто:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Лилаво (magenta):</value>
+    <value>Пурпурно:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Синьо (циан):</value>
+    <value>Цианово:</value>
   </data>
   <data name="groupBoxPreview.Text" xml:space="preserve">
-    <value>Преглед преди печат</value>
+    <value>Преглед</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Избери цвят</value>
   </data>
 </root>

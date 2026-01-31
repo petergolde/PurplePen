@@ -153,6 +153,12 @@
   <data name="comboBoxControlNumberStyle.Items1" xml:space="preserve">
     <value>Arial Gras</value>
   </data>
+  <data name="comboBoxControlNumberStyle.Items2" xml:space="preserve">
+    <value>Roboto</value>
+  </data>
+  <data name="comboBoxControlNumberStyle.Items3" xml:space="preserve">
+    <value>Roboto Bold</value>
+  </data>
   <data name="labelControlNumberStyle.Text" xml:space="preserve">
     <value>Style du numéro de poste :</value>
   </data>
@@ -180,8 +186,20 @@
   <data name="groupBoxSizes.Text" xml:space="preserve">
     <value>Tailles des objets</value>
   </data>
+  <data name="labelChooseLayer.Text" xml:space="preserve">
+    <value>Au dessus de la couleur</value>
+  </data>
   <data name="comboBoxBlendPurple.Items" xml:space="preserve">
     <value>Aucun</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items1" xml:space="preserve">
+    <value>Fondu</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items2" xml:space="preserve">
+    <value>Couche dec couleur</value>
+  </data>
+  <data name="labelBlendPurple.Text" xml:space="preserve">
+    <value>Mélanger la violine avec les couleurs de la carte</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Noir :</value>
@@ -218,6 +236,9 @@
   </data>
   <data name="checkBoxOverprint.Text" xml:space="preserve">
     <value>Utiliser l'effet de surimpression pour les couleurs marquées « surimpression »</value>
+  </data>
+  <data name="groupBoxOcadMap.Text" xml:space="preserve">
+    <value>Options avancées</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Personnaliser l'apparence</value>

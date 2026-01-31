@@ -120,10 +120,37 @@
   <data name="buttonClose.Text" xml:space="preserve">
     <value>Затвори</value>
   </data>
+  <data name="buttonExport.Text" xml:space="preserve">
+    <value>Експортирай...</value>
+  </data>
   <data name="buttonPrint.Text" xml:space="preserve">
     <value>Печат...</value>
   </data>
   <data name="buttonPrintPreview.Text" xml:space="preserve">
     <value>Преглед преди печат...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Брой отсечки:</value>
+  </data>
+  <data name="buttonCalculate.Text" xml:space="preserve">
+    <value>Задай варианти</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Брой отбори:</value>
+  </data>
+  <data name="fixedLegsLink.Text" xml:space="preserve">
+    <value>Задай фиксирани отсечки към разклоненията...</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Номерата на отборите започват от: </value>
+  </data>
+  <data name="checkBoxHideVariationsFromMap.Text" xml:space="preserve">
+    <value>Скрий кодовете на вариантите върху картата</value>
+  </data>
+  <data name="saveFileDialog.Filter" xml:space="preserve">
+    <value>IOF XML 3.0|*.xml|Електронна таблица (CSV)|*.csv</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Варианти на щафетния отбор</value>
   </data>
 </root>

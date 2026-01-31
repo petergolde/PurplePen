@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="okButton.Text" xml:space="preserve">
-    <value>Да</value>
+    <value>Добре</value>
   </data>
   <data name="bsdLicenseLinkLabel.Text" xml:space="preserve">
-    <value>Purple Pen е програма, разпространявана под BSD лиценз.</value>
+    <value>Purple Pen се предоставя под лиценз от типа „BSD“.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Лиценз на Purple Pen</value>

@@ -118,24 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="mapFileDisplay.Text" xml:space="preserve">
-    <value>Текущ картов файл</value>
+    <value>Текущ картен файл</value>
   </data>
   <data name="buttonChooseFile.Text" xml:space="preserve">
-    <value>&amp;Избери картов файл...</value>
+    <value>&amp;Избери картен файл...</value>
+  </data>
+  <data name="openFileDialog.Filter" xml:space="preserve">
+    <value>Всички картни файлове|.ocd;.omap;.xmap;.pdf;.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif|Файлове OCAD (.ocd)|.ocd|Файлове OpenOrienteering Mapper|.omap;.xmap|PDF файлове (.pdf)|.pdf|Изображения|.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif</value>
   </data>
   <data name="labelDpi.Text" xml:space="preserve">
-    <value>Резолюция:</value>
+    <value>Разделителна способност:</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Мащаб:</value>
   </data>
   <data name="labelOneTo.Text" xml:space="preserve">
-    <value>1:</value>
+    <value>1 :</value>
   </data>
   <data name="labelDpi2.Text" xml:space="preserve">
     <value>точки на инч</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Картов файл</value>
+    <value>Картен файл</value>
   </data>
 </root>

@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BranchColumn.HeaderText" xml:space="preserve">
+    <value>Разклонение</value>
+  </data>
+  <data name="LegsColumn.HeaderText" xml:space="preserve">
+    <value>Отсечки</value>
+  </data>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>За да зададеш конкретна отсечка към определено разклонение, въведи номера на отсечката(ите) по-долу. Отсечки, които не са зададени към разклонение, ще бъдат разпределени на случаен принцип между останалите разклонения.</value>
+  </data>
+  <data name="linkLabel.Text" xml:space="preserve">
+    <value>Повече информация...</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Разпределение на отсечките</value>
+  </data>
 </root>

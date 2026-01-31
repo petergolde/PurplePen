@@ -121,7 +121,7 @@
     <value>Промени полетата...</value>
   </data>
   <data name="paperSize.Text" xml:space="preserve">
-    <value>Tabloid (11"x17")</value>
+    <value>Таблоид (11"x17")</value>
   </data>
   <data name="paperSizeLabel.Text" xml:space="preserve">
     <value>Размер на хартията:</value>
@@ -136,7 +136,7 @@
     <value>Хоризонтално</value>
   </data>
   <data name="orientationLabel.Text" xml:space="preserve">
-    <value>Позиция:</value>
+    <value>Ориентация:</value>
   </data>
   <data name="printerName.Text" xml:space="preserve">
     <value>Име на принтера</value>
@@ -148,28 +148,28 @@
     <value>Принтер:</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
-    <value>Извеждане към</value>
+    <value>Изход</value>
   </data>
   <data name="punchCardLayoutButton.Text" xml:space="preserve">
-    <value>Оформление на състезателния картон...</value>
+    <value>Оформление на контролния картон...</value>
   </data>
   <data name="mmSuffixLabel.Text" xml:space="preserve">
     <value>мм</value>
   </data>
   <data name="punchBoxSizeLabel.Text" xml:space="preserve">
-    <value>Размер на квадратчето за перфоратора:</value>
+    <value>Размер на квадратчето за перфорация:</value>
   </data>
   <data name="layoutGroup.Text" xml:space="preserve">
-    <value>Оформление</value>
+    <value>Външен вид</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="printButton.Text" xml:space="preserve">
     <value>Отпечатай</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
-    <value>Преглед:</value>
+    <value>Преглед...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Маршрути</value>
@@ -181,6 +181,6 @@
     <value>Разпечатки</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Печат на отпечатъците на перфораторите</value>
+    <value>Печат на контролните картони</value>
   </data>
 </root>

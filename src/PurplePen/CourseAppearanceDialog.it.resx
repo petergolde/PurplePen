@@ -189,6 +189,12 @@
   <data name="comboBoxBlendPurple.Items" xml:space="preserve">
     <value>Nessuno</value>
   </data>
+  <data name="comboBoxBlendPurple.Items1" xml:space="preserve">
+    <value>Sfumatura</value>
+  </data>
+  <data name="comboBoxBlendPurple.Items2" xml:space="preserve">
+    <value>Livello</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Nero:</value>
   </data>

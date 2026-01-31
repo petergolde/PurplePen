@@ -121,12 +121,21 @@
     <value>Готово</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="setPrintAreaLabel.Text" xml:space="preserve">
-    <value>Изберете зоната за печат чрез плъзгане на мишката.</value>
+    <value>Определете желаната зона за печат чрез плъзгане с мишката.</value>
+  </data>
+  <data name="groupBoxPaperSize.Text" xml:space="preserve">
+    <value>Размер на хартията</value>
+  </data>
+  <data name="checkBoxAutomatic.Text" xml:space="preserve">
+    <value>Задай автоматично зоната за печат</value>
+  </data>
+  <data name="checkBoxFixSizeToPaper.Text" xml:space="preserve">
+    <value>Напасни размера на зоната за печат към размера на хартията</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Задай зона за отпечатване</value>
+    <value>Задай област за печат</value>
   </data>
 </root>

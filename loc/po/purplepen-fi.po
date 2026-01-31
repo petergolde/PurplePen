@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.3\n"
+"Project-Id-Version: Purple Pen 3.5.4\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
+"POT-Creation-Date: 2026-01-31 12:35-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1088,15 +1088,6 @@ msgstr "Peruuta"
 msgid "Select a folder for the OCAD files"
 msgstr "Valitse kansio OCAD-tiedostoille"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Tuotos"
-
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -1181,6 +1172,30 @@ msgstr "RGB"
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
 msgstr "CMYK"
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items
+msgid "Course and map"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items1
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items1
+msgid "Course only"
+msgstr ""
+
+#: CreateImageFiles.resx, labelPrintBaseMap.Text
+#: CreatePdfCourses.resx, labelPrintBaseMap.Text
+msgid "Include:"
+msgstr ""
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Tuotos"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
@@ -2712,16 +2727,6 @@ msgstr "Auta korjaamaan ongelma kertomalla meille, mitä olit "
 #: MiscText.resx, CrashSend
 msgid "Send Report"
 msgstr "Lähetä raportti"
-
-#: MiscText.resx, CannotAddDescriptionsToAllParts
-msgid "Descriptions may not be added to a course with a map "
-"exchange if \"All Parts\" is being displayed. Switch to the "
-"part you wish to add descriptions to, and then choose \"Add "
-"Descriptions\" again."
-msgstr "Rastinmääritteitä ei voi lisätä kartanvaihtoradalle, jos "
-"radan \"Kaikki osat\" on näkyvissä. Vaihda näkyviin radan "
-"osa, jolle haluat lisätä rastinmääritteet ja valitse "
-"\"Lisää rastinmääritteet\" uudelleen."
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"

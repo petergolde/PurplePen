@@ -118,9 +118,57 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
+  </data>
+  <data name="labelArrowFirstControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowFirstNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondControl.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowSecondNewLocation.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelArrowConfirmLocations.Text" xml:space="preserve">
+    <value>è</value>
+  </data>
+  <data name="labelFirstControl.Text" xml:space="preserve">
+    <value>Изберете първата контролна точка или ориентир за преместване</value>
+  </data>
+  <data name="labelSecondNewLocation.Text" xml:space="preserve">
+    <value>Изберете ново местоположение за втората контролна точка/ориентир</value>
+  </data>
+  <data name="labelConfirmLocations.Text" xml:space="preserve">
+    <value>Потвърдете новите местоположения</value>
+  </data>
+  <data name="labelRotation.Text" xml:space="preserve">
+    <value>Завъртане:</value>
   </data>
   <data name="labelScale.Text" xml:space="preserve">
     <value>Мащаб:</value>
+  </data>
+  <data name="labelYOffset.Text" xml:space="preserve">
+    <value>Отместване по Y:</value>
+  </data>
+  <data name="labelXOffset.Text" xml:space="preserve">
+    <value>Отместване по X:</value>
+  </data>
+  <data name="labelSecondControl.Text" xml:space="preserve">
+    <value>Изберете втората контролна точка или ориентир за преместване</value>
+  </data>
+  <data name="labelFirstNewLocation.Text" xml:space="preserve">
+    <value>Изберете ново местоположение за първата контролна точка/ориентир</value>
+  </data>
+  <data name="buttonBack.Text" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="buttonConfirm.Text" xml:space="preserve">
+    <value>Потвърди</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Премести всички КТ</value>
   </data>
 </root>

@@ -129,9 +129,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCAD dosyaları için bir klasör seçin</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Çıktı</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Dosya formatı:</value>
   </data>
@@ -188,6 +185,9 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Çıktı</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Dosya Seç...</value>

@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.3\n"
+"Project-Id-Version: Purple Pen 3.5.4\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
+"POT-Creation-Date: 2026-01-31 12:35-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1086,15 +1086,6 @@ msgstr "Zrušit"
 msgid "Select a folder for the OCAD files"
 msgstr "Vyberte složku pro soubory OCADu"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Výstup"
-
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -1179,6 +1170,30 @@ msgstr "RGB"
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
 msgstr "CMYK"
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items
+msgid "Course and map"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items1
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items1
+msgid "Course only"
+msgstr ""
+
+#: CreateImageFiles.resx, labelPrintBaseMap.Text
+#: CreatePdfCourses.resx, labelPrintBaseMap.Text
+msgid "Include:"
+msgstr ""
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Výstup"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
@@ -2703,15 +2718,6 @@ msgstr "Popište co jste dělal v programu, aby jsme mohli případnou "
 #: MiscText.resx, CrashSend
 msgid "Send Report"
 msgstr "Odeslat hlášení"
-
-#: MiscText.resx, CannotAddDescriptionsToAllParts
-msgid "Descriptions may not be added to a course with a map "
-"exchange if \"All Parts\" is being displayed. Switch to the "
-"part you wish to add descriptions to, and then choose \"Add "
-"Descriptions\" again."
-msgstr "Popisy nemohou být přidány do tratě se změnou mapy, pokud "
-"jsou zobrazeny \"Všechny části\". Zvolte část, které chcete "
-"přidat popisy, a poté znovu zvolte \"Přidat popisy\""
 
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"

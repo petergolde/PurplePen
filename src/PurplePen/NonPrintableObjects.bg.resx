@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelWarning.Text" xml:space="preserve">
-    <value>Картовият файл "{0}" съдържа обекти или символи, които не се поддържат от Purple Pen и могат да не се отпечатат правилно. Тези обекти са изброени по-долу.
+    <value>Картният файл „{0}“ съдържа обекти или символи, които не се поддържат напълно от Purple Pen и може да не се отпечатат правилно. Обектите, които могат да предизвикат проблем, са изброени по-долу.
 
-За отпечатване на карти за състезания се препоръчва маршрутите да се експортират във файлове за OCAD (чрез меню Файл/Създай файлове за OCAD...) и да принтирате картите от OCAD.
+За отпечатване на състезателни карти се препоръчва маршрутите да бъдат експортирани във файлове за OCAD (чрез меню Файл → Създай файлове за OCAD...) и картите да се отпечатат от OCAD.
 </value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>Продължи</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Картовият файл не може да бъде отпечатан правилно.</value>
+    <value>Картният файл не може да бъде отпечатан точно.</value>
   </data>
 </root>

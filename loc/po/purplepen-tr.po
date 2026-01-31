@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Purple Pen 3.5.3\n"
+"Project-Id-Version: Purple Pen 3.5.4\n"
 "Report-Msgid-Bugs-To: peter@golde.org\n"
-"POT-Creation-Date: 2025-03-13 22:01-07:00\n"
+"POT-Creation-Date: 2026-01-31 12:36-08:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator:  FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -204,7 +204,7 @@ msgstr "km"
 
 #: AddCourse.resx, hideFromReportsCheckBox.Text
 msgid "Do not include in reports"
-msgstr ""
+msgstr "Raporlara dahil etmeyin"
 
 #: AddCourse.resx, $this.Text
 #: CommandNameText.resx, NewCourse
@@ -888,11 +888,11 @@ msgstr "Arial Kalın"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items2
 msgid "Roboto"
-msgstr ""
+msgstr "Roboto"
 
 #: CourseAppearanceDialog.resx, comboBoxControlNumberStyle.Items3
 msgid "Roboto Bold"
-msgstr ""
+msgstr "Roboto Bold"
 
 #: CourseAppearanceDialog.resx, labelControlNumberStyle.Text
 msgid "Control number style:"
@@ -920,7 +920,7 @@ msgstr "Nesne Boyutu"
 
 #: CourseAppearanceDialog.resx, labelChooseLayer.Text
 msgid "Above map layer:"
-msgstr ""
+msgstr "Harita katmanının üzerinde:"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items
 #: CourseSelector.resx, selectNone.Text
@@ -930,15 +930,15 @@ msgstr "Yok"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items1
 msgid "Blend"
-msgstr ""
+msgstr "Harmanlamak"
 
 #: CourseAppearanceDialog.resx, comboBoxBlendPurple.Items2
 msgid "Layer"
-msgstr ""
+msgstr "Katman"
 
 #: CourseAppearanceDialog.resx, labelBlendPurple.Text
 msgid "Blend purple with underlying map colors:"
-msgstr ""
+msgstr "Mor rengi alttaki harita renkleriyle harmanlayın:"
 
 #: CourseAppearanceDialog.resx, checkBoxDefaultPurple.Text
 msgid "Use purple color from map"
@@ -1090,15 +1090,6 @@ msgstr "Vazgeç"
 msgid "Select a folder for the OCAD files"
 msgstr "OCAD dosyaları için bir klasör seçin"
 
-#: CreateImageFiles.resx, outputGroupBox.Text
-#: CreateKmlFiles.resx, outputGroupBox.Text
-#: CreateOcadFiles.resx, outputGroupBox.Text
-#: PrintCourses.resx, printerGroup.Text
-#: PrintDescriptions.resx, printerGroup.Text
-#: PrintPunches.resx, printerGroup.Text
-msgid "Output"
-msgstr "Çıktı"
-
 #: CreateImageFiles.resx, fileFormatLabel.Text
 #: CreateOcadFiles.resx, fileFormatLabel.Text
 msgid "File format:"
@@ -1183,6 +1174,30 @@ msgstr "RGB"
 #: PrintCourses.resx, comboBoxColorModel.Items2
 msgid "CMYK"
 msgstr "CMYK"
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items
+msgid "Course and map"
+msgstr ""
+
+#: CreateImageFiles.resx, comboBoxPrintBaseMap.Items1
+#: CreatePdfCourses.resx, comboBoxPrintBaseMap.Items1
+msgid "Course only"
+msgstr ""
+
+#: CreateImageFiles.resx, labelPrintBaseMap.Text
+#: CreatePdfCourses.resx, labelPrintBaseMap.Text
+msgid "Include:"
+msgstr ""
+
+#: CreateImageFiles.resx, outputGroupBox.Text
+#: CreateKmlFiles.resx, outputGroupBox.Text
+#: CreateOcadFiles.resx, outputGroupBox.Text
+#: PrintCourses.resx, printerGroup.Text
+#: PrintDescriptions.resx, printerGroup.Text
+#: PrintPunches.resx, printerGroup.Text
+msgid "Output"
+msgstr "Çıktı"
 
 #: CreateImageFiles.resx, selectOtherDirectoryButton.Text
 #: CreateKmlFiles.resx, selectOtherDirectoryButton.Text
@@ -1835,7 +1850,7 @@ msgstr "Tehlikeli Alan"
 #: MainFrame.resx, addConstructionMenu.Text
 #: MainFrame.resx, constructionToolStripMenuItem.Text
 msgid "Temporary Construction"
-msgstr ""
+msgstr "Geçici İnşaat"
 
 #: MainFrame.resx, addWaterMenu.Text
 #: MainFrame.resx, waterLocationToolStripMenuItem.Text
@@ -2720,15 +2735,6 @@ msgstr "Sorunu çözmemize yardımcı olmak için lütfen programda ne "
 msgid "Send Report"
 msgstr "Rapor Gönder"
 
-#: MiscText.resx, CannotAddDescriptionsToAllParts
-msgid "Descriptions may not be added to a course with a map "
-"exchange if \"All Parts\" is being displayed. Switch to the "
-"part you wish to add descriptions to, and then choose \"Add "
-"Descriptions\" again."
-msgstr "\"Tüm Parçalar\" görüntüleniyorsa, harita değişimi olan bir "
-"rotaya açıklamalar eklenemez. Açıklama eklemek istediğiniz "
-"bölüme geçin ve ardından tekrar \"Açıklama Ekle\"yi seçin."
-
 #: MiscText.resx, PdfConverterNotFound
 msgid "PdfConverter.exe not found"
 msgstr "PdfConverter.exe bulunamadı"
@@ -3025,22 +3031,29 @@ msgid "An older version of Purple Pen is still installed. To "
 "prevent confusion caused by having two versions of Purple "
 "Pen installed, it is strongly recommended that the older "
 "version be removed. Remove it now?"
-msgstr ""
+msgstr "Purple Pen'in eski bir sürümü hala yüklü. Purple Pen'in "
+"iki sürümünün yüklü olmasının yol açabileceği karışıklığı "
+"önlemek için, eski sürümün kaldırılması şiddetle tavsiye "
+"edilir. Şimdi kaldırmak ister misiniz?"
 
 #: MiscText.resx, AskInstallRobotoFonts
 msgid "In order for OCAD or OpenOrienteering Mapper to correctly "
 "display the control descriptions, the \"Roboto\" and \"Roboto "
 "Condensed\" fonts must be installed on your system. Would "
 "you like to install those fonts now (strongly recommended)?"
-msgstr ""
+msgstr "OCAD veya OpenOrienteering Mapper'ın kontrol "
+"açıklamalarını doğru şekilde görüntüleyebilmesi için "
+"sisteminizde \"Roboto\" ve \"Roboto Condensed\" yazı "
+"tiplerinin yüklü olması gerekir. Bu yazı tiplerini şimdi "
+"yüklemek ister misiniz (şiddetle tavsiye edilir)?"
 
 #: MiscText.resx, RobotoFontsInstallFailed
 msgid "Installing Roboto Fonts failed."
-msgstr ""
+msgstr "Roboto Fonts kurulumu başarısız oldu."
 
 #: MiscText.resx, LowerPurple
 msgid "Lower Purple"
-msgstr ""
+msgstr "Açık mor"
 
 #: MissingFonts.resx, checkBoxDontWarnAgain.Text
 msgid "Don't warn about missing fonts for this event again"

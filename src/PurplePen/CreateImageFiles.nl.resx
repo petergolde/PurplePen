@@ -120,9 +120,6 @@
   <data name="createButton.Text" xml:space="preserve">
     <value>Creëren</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Uitvoer</value>
-  </data>
   <data name="comboBoxWorldFile.Items" xml:space="preserve">
     <value>Nee</value>
   </data>
@@ -134,6 +131,9 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Uitvoer</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Kies folder...</value>

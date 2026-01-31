@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="comboBoxVariations.Items" xml:space="preserve">
+    <value>Всеки вариант поотделно</value>
+  </data>
+  <data name="comboBoxVariations.Items1" xml:space="preserve">
+    <value>Всяка щафетна отсечка поотделно</value>
+  </data>
+  <data name="comboBoxVariations.Items2" xml:space="preserve">
+    <value>Всички варианти комбинирани</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Варианти:</value>
+  </data>
+  <data name="labelAllVariations.Text" xml:space="preserve">
+    <value>Покажи всички разклонения заедно върху една карта.</value>
+  </data>
+  <data name="labelSeparateVariations.Text" xml:space="preserve">
+    <value>Една карта за всеки възможен вариант на маршрута.</value>
+  </data>
+  <data name="labelByLeg.Text" xml:space="preserve">
+    <value>Една карта за всяка отсечка на избраните щафетни отбори.</value>
+  </data>
+  <data name="labelByLegNotAvailable.Text" xml:space="preserve">
+    <value>Първо трябва да определите щафетните отбори, като изберете „Щафетни варианти...“ от менюто „Маршрут“.</value>
+  </data>
+  <data name="checkBoxSelectIndividualVariations.Text" xml:space="preserve">
+    <value>Избери отделни варианти</value>
+  </data>
+  <data name="labelNumberOfTeams.Text" xml:space="preserve">
+    <value>Този маршрут има зададени {0} щафетни отбора. Използвайте „Щафетни варианти...“ от менюто „Маршрут“, за да промените броя на отборите.</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>до</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Изберете кои отбори да бъдат отпечатани/експортирани:</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Избор на варианти</value>
+  </data>
 </root>

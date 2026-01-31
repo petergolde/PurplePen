@@ -124,25 +124,34 @@
     <value>Създай</value>
   </data>
   <data name="cancelButton.Text" xml:space="preserve">
-    <value>Откажи</value>
+    <value>Отказ</value>
   </data>
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Избери папка за OCAD файловете</value>
   </data>
   <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Извеждане към</value>
+    <value>Изход</value>
   </data>
   <data name="fileNamePrefixLabel.Text" xml:space="preserve">
-    <value>Представка за име на файл:</value>
+    <value>Начален текст на името на файла:</value>
+  </data>
+  <data name="filesLabel.Text" xml:space="preserve">
+    <value>Файлове:</value>
+  </data>
+  <data name="filesCombo.Items" xml:space="preserve">
+    <value>Един за всички маршрути</value>
+  </data>
+  <data name="filesCombo.Items1" xml:space="preserve">
+    <value>По един за всеки маршрут</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Избери папка...</value>
   </data>
   <data name="coursesDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла Purple Pen</value>
+    <value>Същата папка като файла на Purple Pen</value>
   </data>
   <data name="mapDirectory.Text" xml:space="preserve">
-    <value>Същата папка като на файла с картата</value>
+    <value>Същата папка като картния файл</value>
   </data>
   <data name="otherDirectory.Text" xml:space="preserve">
     <value>Друга папка</value>
@@ -151,7 +160,7 @@
     <value>Папка</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Създай файлове за OCAD</value>
+    <value>Създай KML файл</value>
   </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Формат на файла:</value>

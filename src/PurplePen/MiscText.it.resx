@@ -420,9 +420,6 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
   <data name="CrashSend" xml:space="preserve">
     <value>Invia Rapporto</value>
   </data>
-  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
-    <value>Non è possibile aggiungere descrizioni a un percorso con cambio mappa se viene visualizzato "Tutte le parti". Passa alla parte a cui desideri aggiungere descrizioni, quindi seleziona nuovamente "Aggiungi descrizioni".</value>
-  </data>
   <data name="PdfConverterNotFound" xml:space="preserve">
     <value>PdfConverter.exe non trovato</value>
   </data>
@@ -626,5 +623,8 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
   </data>
   <data name="RobotoFontsInstallFailed" xml:space="preserve">
     <value>Installazione di Roboto Fonts fallita</value>
+  </data>
+  <data name="CannotAddDescriptionsToAllParts" xml:space="preserve">
+    <value>Non è possibile aggiungere descrizioni a un percorso con cambio mappa se viene visualizzato "Tutte le parti". Passa alla parte a cui desideri aggiungere descrizioni, quindi seleziona nuovamente "Aggiungi descrizioni".</value>
   </data>
 </root>

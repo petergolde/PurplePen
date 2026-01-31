@@ -156,17 +156,29 @@
   <data name="createDescriptionPdfMenu.Text" xml:space="preserve">
     <value>&amp;Descriptions...</value>
   </data>
+  <data name="createPunchcardPdfMenu.Text" xml:space="preserve">
+    <value>Poinçons...</value>
+  </data>
   <data name="createCoursePdfMenu.Text" xml:space="preserve">
     <value>&amp;Courses...</value>
   </data>
   <data name="createPDFsMenu.Text" xml:space="preserve">
     <value>Créer des P&amp;DF</value>
   </data>
+  <data name="createRouteGadgetFilesMenu.Text" xml:space="preserve">
+    <value>Créer un fichier RouteGadget...</value>
+  </data>
+  <data name="createRouteReviewFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Créer des fichiers pour l'analyse de course</value>
+  </data>
   <data name="createXmlMenu.Text" xml:space="preserve">
     <value>Créer Fichier &amp;Interchange XML...</value>
   </data>
   <data name="createGPXFileMenu.Text" xml:space="preserve">
     <value>Créer Fichier G&amp;PX...</value>
+  </data>
+  <data name="createKMLFileMenu.Text" xml:space="preserve">
+    <value>Créer &amp;KML File...</value>
   </data>
   <data name="printDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Imprimer les Définitions...</value>
@@ -300,6 +312,9 @@
   <data name="addDescriptionsMenu.Text" xml:space="preserve">
     <value>&amp;Descriptions</value>
   </data>
+  <data name="addMapFlipMenuItem.Text" xml:space="preserve">
+    <value>Retournement de carte au poste</value>
+  </data>
   <data name="mapExchangeControlMenuItem.Text" xml:space="preserve">
     <value>Echange de Carte au &amp;Poste</value>
   </data>
@@ -329,6 +344,9 @@
   </data>
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Zone dangereuse</value>
+  </data>
+  <data name="addConstructionMenu.Text" xml:space="preserve">
+    <value>Construction temporaire ou zone fermée</value>
   </data>
   <data name="addWaterMenu.Text" xml:space="preserve">
     <value>Ravitaillement</value>
@@ -360,6 +378,9 @@
   <data name="addRectangleMenu.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
+  <data name="addEllipseMenu.Text" xml:space="preserve">
+    <value>Ovale</value>
+  </data>
   <data name="addMenu.Text" xml:space="preserve">
     <value>&amp;Ajouter</value>
   </data>
@@ -374,6 +395,9 @@
   </data>
   <data name="removeUnusedControlsMenu.Text" xml:space="preserve">
     <value>&amp;Supprimer les Postes Inutilisés...</value>
+  </data>
+  <data name="moveAllControlsMenu.Text" xml:space="preserve">
+    <value>Déplacer tous les postes...</value>
   </data>
   <data name="punchPatternsMenu.Text" xml:space="preserve">
     <value>&amp;Poinçons...</value>
@@ -433,7 +457,10 @@
     <value>Supprimer un C&amp;oude</value>
   </data>
   <data name="addGapMenu.Text" xml:space="preserve">
-    <value>Insérer &amp;Intervalle</value>
+    <value>Insérer &amp;Découpe</value>
+  </data>
+  <data name="removeGapMenu.Text" xml:space="preserve">
+    <value>Supprimer une découpe</value>
   </data>
   <data name="changeTextMenu.Text" xml:space="preserve">
     <value>Modifier &amp;Texte...</value>
@@ -528,6 +555,9 @@
   <data name="fontMetricsToolStripMenuItem.Text" xml:space="preserve">
     <value>Police</value>
   </data>
+  <data name="missingTranslationsMenuItem.Text" xml:space="preserve">
+    <value>Pas de traduction de la description</value>
+  </data>
   <data name="crashToolStripMenuItem.Text" xml:space="preserve">
     <value>Erreur bloquante (plantage)</value>
   </data>
@@ -591,6 +621,9 @@
   <data name="descriptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ajouter les Définitions</value>
   </data>
+  <data name="mapFlipMenuItem.Text" xml:space="preserve">
+    <value>Retournement de carte au poste</value>
+  </data>
   <data name="mapExchangeControlToolStripMenuItem.Text" xml:space="preserve">
     <value>Echange de Carte au Poste</value>
   </data>
@@ -617,6 +650,9 @@
   </data>
   <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
     <value>Zone dangereuse</value>
+  </data>
+  <data name="constructionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Construction temporaire ou zone fermée</value>
   </data>
   <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Ravitaillement</value>
@@ -648,6 +684,9 @@
   <data name="rectangleToolStripMenuItem.Text" xml:space="preserve">
     <value>Rectangle</value>
   </data>
+  <data name="ellipseToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ovale</value>
+  </data>
   <data name="specialItemToolStripMenu.Text" xml:space="preserve">
     <value>Ajouter un Symbole Spécial</value>
   </data>
@@ -658,7 +697,7 @@
     <value>toolStripButton1</value>
   </data>
   <data name="addGapToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Ajouter un intervalle (Ctrl+G)</value>
+    <value>Ajouter une découpe (Ctrl+G)</value>
   </data>
   <data name="zoomAmountLabel.Text" xml:space="preserve">
     <value>Zoom : 100%</value>

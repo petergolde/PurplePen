@@ -135,4 +135,7 @@
   <data name="directoryDisplay.Text" xml:space="preserve">
     <value>Избрана папка</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Местоположение на файла със състезанието</value>
+  </data>
 </root>

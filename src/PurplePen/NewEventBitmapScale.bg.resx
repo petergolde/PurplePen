@@ -137,4 +137,13 @@
   <data name="mapScaleLabel.Text" xml:space="preserve">
     <value>Мащаб на картата:</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Резолюция на растерна карта</value>
+  </data>
+  <data name="pdfScaleLabel.Text" xml:space="preserve">
+    <value>Когато използвате PDF файл като карта, трябва да зададете мащаба на картата. 
+
+Мащабът показва съотношението между картата върху хартия и реалния терен.
+</value>
+  </data>
 </root>

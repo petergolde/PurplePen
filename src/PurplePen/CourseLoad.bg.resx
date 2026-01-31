@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CourseName.HeaderText" xml:space="preserve">
-    <value>Номер (име) на маршрута</value>
+    <value>Име на маршрута</value>
   </data>
   <data name="Load.HeaderText" xml:space="preserve">
-    <value>Брой състезатели на маршрут</value>
+    <value>Разпределение на състезателите</value>
   </data>
   <data name="courseLoadLabel.Text" xml:space="preserve">
-    <value>Задай броя състезатели за всеки маршрут чрез кликване във втората колона и нанасяне на бройка.</value>
+    <value>Задай броя на състезателите за всеки маршрут, като щракнеш във втората колона и въведеш число.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Натовареност на маршрут</value>
+    <value>Натоварване на маршрутите</value>
   </data>
 </root>

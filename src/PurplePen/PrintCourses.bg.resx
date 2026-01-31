@@ -130,10 +130,10 @@
     <value>Принтер:</value>
   </data>
   <data name="printerGroup.Text" xml:space="preserve">
-    <value>Извеждане към</value>
+    <value>Изход</value>
   </data>
   <data name="previewButton.Text" xml:space="preserve">
-    <value>Преглед:</value>
+    <value>Преглед...</value>
   </data>
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Маршрути</value>
@@ -141,20 +141,38 @@
   <data name="copiesLabel.Text" xml:space="preserve">
     <value>Разпечатки за всеки маршрут:</value>
   </data>
+  <data name="checkBoxPausePrinting.Text" xml:space="preserve">
+    <value>Пауза след отпечатване на всеки маршрут или част</value>
+  </data>
   <data name="copiesGroupBox.Text" xml:space="preserve">
     <value>Разпечатки</value>
   </data>
+  <data name="checkBoxMergeParts.Text" xml:space="preserve">
+    <value>Печатай смените на карта върху същата карта </value>
+  </data>
+  <data name="labelColorModel.Text" xml:space="preserve">
+    <value>Цветови модел:</value>
+  </data>
+  <data name="comboBoxColorModel.Items" xml:space="preserve">
+    <value>Съвместим с OCAD</value>
+  </data>
+  <data name="comboBoxColorModel.Items1" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="comboBoxColorModel.Items2" xml:space="preserve">
+    <value>CMYK</value>
+  </data>
   <data name="comboBoxMultiPage.Items" xml:space="preserve">
-    <value>Подрежи до единична страница</value>
+    <value>Ограничи до една страница</value>
   </data>
   <data name="comboBoxMultiPage.Items1" xml:space="preserve">
-    <value>Отпечатай на много страници</value>
+    <value>Печатай на няколко страници</value>
   </data>
   <data name="labelAppearanceInfo.Text" xml:space="preserve">
-    <value>Ако зоната за печат е твърде широка за побиране в една страница:</value>
+    <value>Ако областта за печат е твърде голяма, за да се побере на една страница:</value>
   </data>
   <data name="groupBoxAppearance.Text" xml:space="preserve">
-    <value>Оформление</value>
+    <value>Външен вид</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Отпечатай маршрутите</value>

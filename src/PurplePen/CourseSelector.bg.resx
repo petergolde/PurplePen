@@ -118,9 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="selectAll.Text" xml:space="preserve">
-    <value>всички</value>
+    <value>Всички</value>
   </data>
   <data name="selectNone.Text" xml:space="preserve">
-    <value>Никой</value>
+    <value>Няма</value>
+  </data>
+  <data name="buttonChooseVariations.Text" xml:space="preserve">
+    <value>Избери варианти...</value>
   </data>
 </root>

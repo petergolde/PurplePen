@@ -129,9 +129,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>OCADファイルを保存するフォルダを選択してください</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>出力</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>ファイル形式:</value>
   </data>
@@ -149,6 +146,9 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>出力</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>フォルダを選択...</value>

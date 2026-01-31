@@ -177,6 +177,9 @@
   <data name="CrossRef_Title" xml:space="preserve">
     <value>Contrôle croisé pour {0}</value>
   </data>
+  <data name="EventAudit_BothDirectionsLegs" xml:space="preserve">
+    <value>poste à postes en contresens</value>
+  </data>
   <data name="EventAudit_CloseTogetherControls" xml:space="preserve">
     <value>Postes proches</value>
   </data>
@@ -231,8 +234,14 @@
   <data name="EventAudit_NoProblems" xml:space="preserve">
     <value>Aucun problème trouvé.</value>
   </data>
+  <data name="EventAudit_RepeatControl" xml:space="preserve">
+    <value>Le circuit "{0}" contient le poste "{1}" deux fois de suite.</value>
+  </data>
   <data name="EventAudit_RepeatedControls" xml:space="preserve">
     <value>Postes répétés</value>
+  </data>
+  <data name="EventAudit_ScoreDuplicateControl" xml:space="preserve">
+    <value>La course au score "{0}" contient le poste "{1}" deux fois. </value>
   </data>
   <data name="EventAudit_Title" xml:space="preserve">
     <value>Audit de la course pour {0}</value>

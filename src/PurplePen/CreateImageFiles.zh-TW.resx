@@ -129,9 +129,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>為OCAD檔案選擇一個資料夾</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>輸出</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>檔案格式：</value>
   </data>
@@ -188,6 +185,9 @@
   </data>
   <data name="comboBoxColorModel.Items1" xml:space="preserve">
     <value>CMYK 色彩模式</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>輸出</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>選擇資料夾...</value>

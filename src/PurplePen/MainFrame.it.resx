@@ -345,6 +345,9 @@
   <data name="addDangerousMenu.Text" xml:space="preserve">
     <value>Area Pericolosa</value>
   </data>
+  <data name="addConstructionMenu.Text" xml:space="preserve">
+    <value>Costruzione temporanea</value>
+  </data>
   <data name="addWaterMenu.Text" xml:space="preserve">
     <value>Posizione Dell'Acqua</value>
   </data>
@@ -659,6 +662,9 @@
   </data>
   <data name="dangerousToolStripMenuItem.Text" xml:space="preserve">
     <value>Area Pericolosa</value>
+  </data>
+  <data name="constructionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Costruzione temporanea</value>
   </data>
   <data name="waterLocationToolStripMenuItem.Text" xml:space="preserve">
     <value>Posizione Dell'Acqua</value>

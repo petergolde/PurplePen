@@ -129,9 +129,6 @@
   <data name="folderBrowserDialog.Description" xml:space="preserve">
     <value>Velg en mappe for OCAD filer</value>
   </data>
-  <data name="outputGroupBox.Text" xml:space="preserve">
-    <value>Utdata</value>
-  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Filformat:</value>
   </data>
@@ -143,6 +140,9 @@
   </data>
   <data name="comboBoxWorldFile.Items1" xml:space="preserve">
     <value>Ja</value>
+  </data>
+  <data name="outputGroupBox.Text" xml:space="preserve">
+    <value>Utdata</value>
   </data>
   <data name="selectOtherDirectoryButton.Text" xml:space="preserve">
     <value>Vel mappe...</value>

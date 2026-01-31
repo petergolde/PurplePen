@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelChooseLanguage.Text" xml:space="preserve">
-    <value>Избери езика за текстово описание на КТ:</value>
+    <value>Избери езика, използван за текстовите описания на КТ:</value>
   </data>
   <data name="labelSymbolName.Text" xml:space="preserve">
-    <value>Наименование на символа:</value>
+    <value>Име на символа:</value>
   </data>
   <data name="labelCustomizedText.Text" xml:space="preserve">
     <value>Персонализиран текст:</value>
@@ -136,10 +136,13 @@
     <value>Стандартен текст:</value>
   </data>
   <data name="checkBoxShowKey.Text" xml:space="preserve">
-    <value>Покажи значението под символа за описание</value>
+    <value>Показвай значението под символните описания</value>
   </data>
   <data name="labelCustomizeText.Text" xml:space="preserve">
-    <value>Кликни върху даден символ за персонализиране на текстовото описание на КТ.</value>
+    <value>Щракни върху символ от описанието, за да персонализираш текста, който се използва в текстовите описания на КТ.</value>
+  </data>
+  <data name="checkBoxDefaultLanguage.Text" xml:space="preserve">
+    <value>Задай това като език по подразбиране за нови състезания</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Персонализирай текста на описанията</value>

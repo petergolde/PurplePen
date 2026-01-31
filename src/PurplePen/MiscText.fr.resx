@@ -156,6 +156,9 @@
   <data name="CannotCreateDirectory" xml:space="preserve">
     <value>Ne peut pas créer le dossier '{0}' pour les raisons suivantes :</value>
   </data>
+  <data name="CannotReadMap" xml:space="preserve">
+    <value>La carte ne peut pas être lue pour la raison suivante: '{0}' Utiliser la fonction Optimiser/Réparer et sauvegarder dans OCAD peut régler le problème.</value>
+  </data>
   <data name="CannotCreateOcadFiles" xml:space="preserve">
     <value>Ne peut pas créer les fichiers OCAD pour les raisons suivantes :</value>
   </data>
@@ -568,6 +571,9 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="VariationNotLastControl" xml:space="preserve">
     <value>Une variation ne peut pas être ajoutée au dernier poste. Ajouter un poste Arrivée d'abord.</value>
   </data>
+  <data name="CannotReadMapOOM" xml:space="preserve">
+    <value>La carte ne peut pas être lue pour la raison suivante: '{0}' Ouvrir et ré-enregistrer la carte dans la dernière version d'Open Orienteering Mapper peut résoudre le problème.</value>
+  </data>
   <data name="MapIssue_Long" xml:space="preserve">
     <value>Départ chronométré</value>
   </data>
@@ -582,6 +588,21 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="PdfFilter" xml:space="preserve">
     <value>Fichier PDF|*.pdf</value>
+  </data>
+  <data name="AddEllipseExplanation" xml:space="preserve">
+    <value>Définissez l'apparence de l'ellipse. Après avoir cliqué sur OK, faites glisser la souris pour placer l'ellipse à l'emplacement souhaité.</value>
+  </data>
+  <data name="AddEllipseTitle" xml:space="preserve">
+    <value>Ajouter une éllipse</value>
+  </data>
+  <data name="UninstallNonStoreVersion" xml:space="preserve">
+    <value>Définissez l'apparence de l'ellipse. Après avoir cliqué sur OK, faites glisser la souris pour placer l'ellipse à l'emplacement souhaité.</value>
+  </data>
+  <data name="RobotoFontsInstallFailed" xml:space="preserve">
+    <value>L'instalation de la police Roboto a échoué</value>
+  </data>
+  <data name="LowerPurple" xml:space="preserve">
+    <value>Violine inférieure</value>
   </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>

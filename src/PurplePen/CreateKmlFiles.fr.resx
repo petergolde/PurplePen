@@ -159,6 +159,9 @@
   <data name="folderGroupBox.Text" xml:space="preserve">
     <value>Dossier</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Créer un fichier KML</value>
+  </data>
   <data name="fileFormatLabel.Text" xml:space="preserve">
     <value>Format de fichier :</value>
   </data>

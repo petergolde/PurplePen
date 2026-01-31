@@ -123,4 +123,7 @@
   <data name="afterEventCreatedLabel.Text" xml:space="preserve">
     <value>След като състезанието е създадено, избери "Нов маршрут..." от менюто Маршрут за създаване на един или повече маршрути.</value>
   </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Създай състезание</value>
+  </data>
 </root>

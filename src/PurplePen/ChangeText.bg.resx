@@ -118,10 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="eventTitleMenuItem.Text" xml:space="preserve">
-    <value>Наименование на състезанието</value>
+    <value>Заглавие на състезанието</value>
   </data>
   <data name="courseNameMenuItem.Text" xml:space="preserve">
-    <value>Номер (име) на маршрута</value>
+    <value>Име на маршрута</value>
+  </data>
+  <data name="coursePartMenuItem.Text" xml:space="preserve">
+    <value>Част от маршрута</value>
+  </data>
+  <data name="variationMenuItem.Text" xml:space="preserve">
+    <value>Вариант на маршрута</value>
   </data>
   <data name="courseLengthMenuItem.Text" xml:space="preserve">
     <value>Дължина на маршрута</value>
@@ -130,19 +136,52 @@
     <value>Сборно изкачване</value>
   </data>
   <data name="classListMenuItem.Text" xml:space="preserve">
-    <value>Списък на класовете</value>
+    <value>Списък на категориите</value>
+  </data>
+  <data name="printScaleMenuItem.Text" xml:space="preserve">
+    <value>Мащаб за печат</value>
+  </data>
+  <data name="relayTeamMenuItem.Text" xml:space="preserve">
+    <value>Щафетен отбор</value>
+  </data>
+  <data name="relayLegMenuItem.Text" xml:space="preserve">
+    <value>Щафетен пост</value>
   </data>
   <data name="fileNameMenuItem.Text" xml:space="preserve">
     <value>Име на файла</value>
   </data>
+  <data name="mapFileNameMenuItem.Text" xml:space="preserve">
+    <value>Име на картния файл</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Оформление</value>
+    <value>Външен вид</value>
+  </data>
+  <data name="buttonChangeColor.Text" xml:space="preserve">
+    <value>Промени цвета...</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Цвят:</value>
+  </data>
+  <data name="checkBoxItalic.Text" xml:space="preserve">
+    <value>Курсив</value>
   </data>
   <data name="checkBoxBold.Text" xml:space="preserve">
-    <value>Получер</value>
+    <value>Удебелен</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Шрифт:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Размер:</value>
   </data>
   <data name="labelFontSizeMm.Text" xml:space="preserve">
     <value>мм</value>
+  </data>
+  <data name="checkBoxAutoFontSize.Text" xml:space="preserve">
+    <value>Автоматично</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Пример</value>
   </data>
   <data name="insertSpecialButton.Text" xml:space="preserve">
     <value>Вмъкни специален текст</value>

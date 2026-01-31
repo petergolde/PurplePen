@@ -120,4 +120,16 @@
   <data name="coursesGroupBox.Text" xml:space="preserve">
     <value>Маршрути</value>
   </data>
+  <data name="namePrefixLabel.Text" xml:space="preserve">
+    <value>Префикс на името:</value>
+  </data>
+  <data name="waypointGroupBox.Text" xml:space="preserve">
+    <value>Опорни точки</value>
+  </data>
+  <data name="headerLabel.Text" xml:space="preserve">
+    <value>GPX файлът съдържа GPS координати на КТ и може да бъде зареден в GPS устройство или смартфон, за да се провери правилното им разположение.</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Създай GPX файл</value>
+  </data>
 </root>
