@@ -56,8 +56,8 @@
     <Project Path="MapModel/Graphics2D/Graphics2D.csproj" Id="ef01e0b6-d7e7-4a4c-970a-29d677d59233" />
     <Project Path="MapModel/Graphics2DStd/Graphics2DStd.csproj" />
     <Project Path="MapModel/HtmlGraphicsTarget/HtmlGraphicsTarget.csproj" />
-    <Project Path="MapModel/InteractiveTestApp/InteractiveTestApp.csproj" Id="9eb3be0b-b203-4117-9115-071c4e01b8e3">
-      <Platform Project="x86" />
+    <Project Path="MapModel/InteractiveTestApp/InteractiveTestApp.csproj">
+      <Configuration Solution="*|Any CPU" Project="*|AnyCPU" />
     </Project>
     <Project Path="MapModel/MapModel-Shared/MapModel-Shared.shproj" />
     <Project Path="MapModel/MapModel/MapModel.csproj" Id="d3ac7c61-0b90-42f3-9438-05f53531c9a3">

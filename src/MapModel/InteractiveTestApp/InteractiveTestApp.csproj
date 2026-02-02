@@ -1,188 +1,94 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9EB3BE0B-B203-4117-9115-071C4E01B8E3}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InteractiveTestApp</RootNamespace>
-    <AssemblyName>InteractiveTestApp</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Configurations>Debug;Release;StorePkg</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WINDOWS</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CodeAnalysisRuleSet>..\Analysis.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StorePkg|AnyCPU'">
     <OutputPath>bin\StorePkg\</OutputPath>
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MapDisplayer\MapDisplay.cs" />
-    <Compile Include="MapView\BitmapUtil.cs" />
-    <Compile Include="MapView\Highlight.cs" />
-    <Compile Include="MapTester.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MapTester.designer.cs">
-      <DependentUpon>MapTester.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MapView\Highlights.cs" />
-    <Compile Include="MapView\MapViewer.cs">
+    <Compile Update="MapView\MapViewer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MapView\Util.cs" />
-    <Compile Include="MapView\ViewCache.cs" />
-    <EmbeddedResource Include="MapTester.resx">
-      <DependentUpon>MapTester.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MapView\MapViewer.resx">
-      <DependentUpon>MapViewer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="app.config" />
-    <None Include="fonts\Roboto-Black.ttf">
+    <None Update="fonts\Roboto-Black.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-BlackItalic.ttf">
+    <None Update="fonts\Roboto-BlackItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Bold.ttf">
+    <None Update="fonts\Roboto-Bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-BoldItalic.ttf">
+    <None Update="fonts\Roboto-BoldItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Italic.ttf">
+    <None Update="fonts\Roboto-Italic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Light.ttf">
+    <None Update="fonts\Roboto-Light.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-LightItalic.ttf">
+    <None Update="fonts\Roboto-LightItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Medium.ttf">
+    <None Update="fonts\Roboto-Medium.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-MediumItalic.ttf">
+    <None Update="fonts\Roboto-MediumItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Regular.ttf">
+    <None Update="fonts\Roboto-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Thin.ttf">
+    <None Update="fonts\Roboto-Thin.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-ThinItalic.ttf">
+    <None Update="fonts\Roboto-ThinItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Bold.ttf">
+    <None Update="fonts\RobotoCondensed-Bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-BoldItalic.ttf">
+    <None Update="fonts\RobotoCondensed-BoldItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Italic.ttf">
+    <None Update="fonts\RobotoCondensed-Italic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Light.ttf">
+    <None Update="fonts\RobotoCondensed-Light.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-LightItalic.ttf">
+    <None Update="fonts\RobotoCondensed-LightItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Regular.ttf">
+    <None Update="fonts\RobotoCondensed-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj">
-      <Project>{d50b6e2b-5e20-410d-b033-debb6b695e77}</Project>
-      <Name>TestUtil</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Graphics2D\Graphics2D.csproj">
-      <Project>{EF01E0B6-D7E7-4A4C-970A-29D677D59233}</Project>
-      <Name>Graphics2D</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MapModel\MapModel.csproj">
-      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
-      <Name>MapModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
-      <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
-      <Name>Map_GDIPlus</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
+    <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
+    <ProjectReference Include="..\MapModel\MapModel.csproj" />
+    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MapView\DragCursor.cur" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
