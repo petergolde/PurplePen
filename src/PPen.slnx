@@ -1,0 +1,114 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <BuildType Name="StorePkg" />
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/DotSpatialProjectionsLite/">
+    <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections.CoordinateSystems/DotSpatial.Projections.CoordinateSystems.csproj" />
+    <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections.Tests/DotSpatial.Projections.Tests.csproj">
+      <Platform Solution="*|x86" Project="x86" />
+    </Project>
+    <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections/DotSpatial.Projections.csproj" />
+  </Folder>
+  <Folder Name="/Installer/">
+    <Project Path="FontInstaller/FontInstaller.csproj" Id="699739ca-2c69-4b80-b69f-3e351da2ba1f">
+      <BuildType Project="Debug" />
+      <Platform Project="x86" />
+    </Project>
+    <Project Path="Innosetup/Innosetup.vcxproj" Id="2f2d9619-742b-4a2b-ad2d-6c00509e20ea">
+      <BuildDependency Project="CrashReporter.NET/CrashReporter.NET.csproj" />
+      <BuildDependency Project="PdfConverter/PdfConverter.csproj" />
+      <BuildDependency Project="PurplePen/PurplePen.csproj" />
+      <Platform Solution="*|ARM" Project="x64" />
+      <Platform Solution="*|ARM64" Project="x64" />
+      <Platform Solution="Debug|Any CPU" Project="Win32" />
+      <Platform Solution="Release|Any CPU" Project="Win32" />
+      <Build Solution="Debug|Any CPU" Project="false" />
+      <Build Solution="Debug|x64" Project="false" />
+      <Build Solution="Release|Any CPU" Project="false" />
+      <Build Solution="StorePkg|x64" Project="false" />
+    </Project>
+    <Project Path="MsftStoreInstaller/MsftStoreInstaller.wapproj" Type="c7167f0d-bc9f-4e6e-afe1-012c56b48db5">
+      <BuildType Solution="StorePkg|Any CPU" Project="Release" />
+      <BuildType Solution="StorePkg|ARM" Project="Debug" />
+      <BuildType Solution="StorePkg|ARM64" Project="Debug" />
+      <BuildType Solution="StorePkg|x64" Project="Debug" />
+      <BuildType Solution="StorePkg|x86" Project="Debug" />
+      <Deploy />
+    </Project>
+  </Folder>
+  <Folder Name="/MapModel/">
+    <Project Path="MapModel/GDIPlusNative/GDIPlusNative.vcxproj" Id="b87c8b00-a062-4eed-a359-437b5fbd382f">
+      <Platform Project="Win32" />
+    </Project>
+    <Project Path="MapModel/GDIPlusNative64/GDIPlusNative64.vcxproj" Id="9363abb8-2a6d-42c0-aed6-021d691ccb66">
+      <Platform Solution="*|ARM" Project="x64" />
+      <Platform Solution="*|ARM64" Project="x64" />
+    </Project>
+    <Project Path="MapModel/Graphics2D-Shared/Graphics2D-Shared.shproj" />
+    <Project Path="MapModel/Graphics2D.Tests/Graphics2D.Tests.csproj" Id="56e11e5d-18d0-4143-b5df-ec19add9c937" />
+    <Project Path="MapModel/Graphics2D/Graphics2D.csproj" Id="ef01e0b6-d7e7-4a4c-970a-29d677d59233" />
+    <Project Path="MapModel/Graphics2DStd/Graphics2DStd.csproj" />
+    <Project Path="MapModel/HtmlGraphicsTarget/HtmlGraphicsTarget.csproj" />
+    <Project Path="MapModel/InteractiveTestApp/InteractiveTestApp.csproj" Id="9eb3be0b-b203-4117-9115-071c4e01b8e3">
+      <Platform Project="x86" />
+    </Project>
+    <Project Path="MapModel/MapModel-Shared/MapModel-Shared.shproj" />
+    <Project Path="MapModel/MapModel/MapModel.csproj" Id="d3ac7c61-0b90-42f3-9438-05f53531c9a3">
+      <BuildDependency Project="MapModel/GDIPlusNative/GDIPlusNative.vcxproj" />
+      <BuildDependency Project="MapModel/GDIPlusNative64/GDIPlusNative64.vcxproj" />
+    </Project>
+    <Project Path="MapModel/MapModelStd/MapModelStd.csproj" />
+    <Project Path="MapModel/Map_GDIPlus/Map_GDIPlus.csproj" Id="3d75be05-1f36-4a11-99a2-7a8e27884948" />
+    <Project Path="MapModel/Map_PDF.Tests/Map_PDF.Tests.csproj" Id="03f7f8da-39dc-43ca-b735-42d870b94c24" />
+    <Project Path="MapModel/Map_PDF/Map_PDF.csproj" Id="da25af08-f97c-4760-b206-99c0fa2422d2" />
+    <Project Path="MapModel/Map_Skia.Tests/Map_Skia.Tests.csproj" Id="dc3b7cda-9d02-4362-aa56-8ac9419b7352" />
+    <Project Path="MapModel/Map_SkiaStd/Map_SkiaStd.csproj" />
+    <Project Path="MapModel/Map_WPF/Map_WPF.csproj" Id="6d375500-20e2-428a-bbcd-73bbe0f5f503" />
+    <Project Path="MapModel/PdfSharp/PdfSharp.csproj" Id="5384ce57-1f94-4d22-860d-2e9c1ac12ddf" />
+    <Project Path="MapModel/ProjectionDump/ProjectionDump.csproj" Id="4dd4c72d-39bf-4e52-aef9-128adcf67218" />
+    <Project Path="MapModel/Test_MapModel/Test_MapModel.csproj" Id="56183ac4-766d-4190-8641-4a3ad26456f8" />
+    <Project Path="MapModel/Test_MapWPF/Test_MapWPF.csproj" Id="bbd89855-c12f-4823-aa6f-27482478e7f8" />
+    <Project Path="MapModel/WpfMap/WpfMap.csproj" Id="3d9ab499-d11f-4c43-b3f0-f598091985ea" />
+  </Folder>
+  <Folder Name="/PdfiumViewer/">
+    <Project Path="PdfiumViewer/PdfiumViewer.Test/PdfiumViewer.Test.csproj" Id="61083268-3f14-47b7-8753-af69bb3d0891" />
+    <Project Path="PdfiumViewer/PdfiumViewer/PdfiumViewer.csproj" Id="438914b6-5d1c-482c-b942-5c0e057eef6f" />
+  </Folder>
+  <Folder Name="/Purple Pen/">
+    <Project Path="CrashReporter.NET/CrashReporter.NET.csproj" Id="67912bda-1572-46b0-8623-5872d9dadbc8">
+      <Build Solution="Debug|x86" Project="false" />
+    </Project>
+    <Project Path="Help/Help.csproj" Id="d405472a-56e1-4153-acb7-677b8e6d5171">
+      <BuildType Project="Debug" />
+      <Platform Project="x86" />
+    </Project>
+    <Project Path="PdfConverter/PdfConverter.csproj" Id="89318625-2f71-4c44-bfb1-8984f4d06152" />
+    <Project Path="PurplePen/PurplePen.csproj" Id="c1715d94-3beb-4d86-8402-80a57c9d11c5">
+      <BuildDependency Project="FontInstaller/FontInstaller.csproj" />
+      <BuildDependency Project="Help/Help.csproj" />
+      <Build Solution="Debug|x86" Project="false" />
+    </Project>
+    <Project Path="PurplePen_Tests/PurplePen_Tests.csproj" Id="0690d25c-7696-4b7a-9aab-fbbcafd0eef5">
+      <Build Solution="Debug|x86" Project="false" />
+    </Project>
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="LocalTestRun.testrunconfig" />
+    <File Path="PPen1.vsmdi" />
+    <File Path="ShowUi.runsettings" />
+  </Folder>
+  <Project Path="TestUtil/TestUtil.csproj" Id="d50b6e2b-5e20-410d-b033-debb6b695e77">
+    <Build Solution="Debug|x86" Project="false" />
+    <Build Solution="Release|x86" Project="false" />
+  </Project>
+  <Properties Name="TestCaseManagementSettings" Scope="PostLoad">
+    <Property Name="CategoryFile" Value="PPen1.vsmdi" />
+  </Properties>
+</Solution>
