@@ -5,9 +5,6 @@ using System.Text;
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
-using FillMode = System.Drawing.Drawing2D.FillMode;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using LineCap = System.Drawing.Drawing2D.LineCap;
 
 namespace PurplePen.Graphics2D
 {
@@ -77,7 +74,7 @@ namespace PurplePen.Graphics2D
         void PushClip(object pathKey);
         void PushClip(RectangleF rectangle);
         void PushClip(RectangleF[] rectangles);
-        void PushClip(List<GraphicsPathPart> parts, FillMode windingMode);
+        void PushClip(List<GraphicsPathPart> parts, AreaFillMode windingMode);
         void PopClip();
 
         // Set aliasing mode
@@ -90,14 +87,14 @@ namespace PurplePen.Graphics2D
         void PopBlending();
 
         // Create paths.
-        void CreatePath(object key, List<GraphicsPathPart> parts, FillMode windingMode);
+        void CreatePath(object key, List<GraphicsPathPart> parts, AreaFillMode windingMode);
 
         // Create brushes and pens
         void CreateSolidBrush(object key, CmykColor color);
         bool SupportsPatternBrushes { get; }
         IBrushTarget CreatePatternBrush(SizeF size, float angle, int bitmapWidth, int bitmapHeight);
-        void CreatePen(object key, object brushKey, float width, LineCap caps, LineJoin join, float miterLimit);
-        void CreatePen(object key, CmykColor color, float width, LineCap caps, LineJoin join, float miterLimit);
+        void CreatePen(object key, object brushKey, float width, LineCapMode caps, LineJoinMode join, float miterLimit);
+        void CreatePen(object key, CmykColor color, float width, LineCapMode caps, LineJoinMode join, float miterLimit);
 
         // Create font
         void CreateFont(object key, string familyName, float emHeight, TextEffects effects);
@@ -133,7 +130,7 @@ namespace PurplePen.Graphics2D
         void DrawPolyline(object penKey, PointF[] pts);
 
         // Fill a polygon with a brush
-        void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode);
+        void FillPolygon(object brushKey, PointF[] pts, AreaFillMode windingMode);
 
         // Draw a path with a pen.
         void DrawPath(object penKey, object pathKey);
@@ -141,7 +138,7 @@ namespace PurplePen.Graphics2D
 
         // Fill a path with a brush.
         void FillPath(object brushKey, object pathKey);
-        void FillPath(object brushKey, List<GraphicsPathPart> parts, FillMode windingMode);
+        void FillPath(object brushKey, List<GraphicsPathPart> parts, AreaFillMode windingMode);
 
         // Draw text with upper-left corner of text at the given locations.
         void DrawText(string text, object fontKey, object brushKey, PointF upperLeft);

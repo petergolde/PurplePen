@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-namespace System.Drawing.Drawing2D
+namespace PurplePen.Graphics2D
 {
-    public enum FillMode
+    public enum AreaFillMode
     {
         Alternate = 0,
         Winding = 1

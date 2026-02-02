@@ -27,7 +27,10 @@
 //	Chris Toshok (toshok@ximian.com)
 //
 
-namespace System.Drawing.Drawing2D
+using System;
+using PointF = System.Drawing.PointF;
+
+namespace PurplePen.Graphics2D
 {
     public sealed class Matrix : IDisposable
     {

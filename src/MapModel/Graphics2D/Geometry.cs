@@ -131,7 +131,7 @@ namespace PurplePen.Graphics2D
         public static Matrix Multiply(Matrix m1, Matrix m2)
         {
             Matrix result = m1.Clone();
-            result.Multiply(m2, System.Drawing.Drawing2D.MatrixOrder.Append);
+            result.Multiply(m2, MatrixOrder.Append);
             return result;
         }
 
@@ -227,8 +227,8 @@ namespace PurplePen.Graphics2D
 
             Matrix m = new Matrix();
             m.Translate(-source.Left, -source.Top);
-            m.Scale(destSize.Width / sourceSize.Width, destSize.Height / sourceSize.Height, System.Drawing.Drawing2D.MatrixOrder.Append);
-            m.Translate(dest.Left, dest.Top, System.Drawing.Drawing2D.MatrixOrder.Append);
+            m.Scale(destSize.Width / sourceSize.Width, destSize.Height / sourceSize.Height, MatrixOrder.Append);
+            m.Translate(dest.Left, dest.Top, MatrixOrder.Append);
             return m;
         }
         
@@ -240,8 +240,8 @@ namespace PurplePen.Graphics2D
 
             Matrix m = new Matrix();
             m.Translate(-source.Left, -source.Top);
-            m.Scale(destSize.Width / sourceSize.Width, -destSize.Height / sourceSize.Height, System.Drawing.Drawing2D.MatrixOrder.Append);
-            m.Translate(dest.Left, dest.Bottom, System.Drawing.Drawing2D.MatrixOrder.Append);
+            m.Scale(destSize.Width / sourceSize.Width, -destSize.Height / sourceSize.Height, MatrixOrder.Append);
+            m.Translate(dest.Left, dest.Bottom, MatrixOrder.Append);
             return m;
         }
 
