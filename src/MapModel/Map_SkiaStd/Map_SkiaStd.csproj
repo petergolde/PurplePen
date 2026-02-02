@@ -9,7 +9,6 @@
     <PackageReference Include="SkiaSharp.HarfBuzz" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Graphics2DStd\Graphics2DStd.csproj" />
     <ProjectReference Include="..\MapModelStd\MapModelStd.csproj" />
   </ItemGroup>
 </Project>

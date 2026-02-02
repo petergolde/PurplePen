@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
     <OutputType>Library</OutputType>
     <RootNamespace>PurplePen.Graphics2D</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DisableImplicitFrameworkReferences Condition="'$(TargetFramework)' == 'net48'">true</DisableImplicitFrameworkReferences>
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -13,5 +14,14 @@
     <OutputPath>bin\StorePkg\</OutputPath>
     <Optimize>true</Optimize>
   </PropertyGroup>
-  <Import Project="..\Graphics2D-Shared\Graphics2D-Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Primitives" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
 </Project>

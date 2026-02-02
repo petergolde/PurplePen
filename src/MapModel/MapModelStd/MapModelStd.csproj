@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\DotSpatialProjectionsLite\DotSpatial.Projections\DotSpatial.Projections.csproj" />
-    <ProjectReference Include="..\Graphics2DStd\Graphics2DStd.csproj" />
   </ItemGroup>
 
   <Import Project="..\MapModel-Shared\MapModel-Shared.projitems" Label="Shared" />
