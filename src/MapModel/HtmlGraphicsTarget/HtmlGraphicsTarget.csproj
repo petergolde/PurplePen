@@ -5,6 +5,7 @@
     <DebugType>full</DebugType>
     <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
     <Configurations>Debug;Release;StorePkg</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
