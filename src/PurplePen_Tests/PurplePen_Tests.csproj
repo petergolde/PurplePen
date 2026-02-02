@@ -247,9 +247,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter">
-      <Version>4.0.2</Version>
-    </PackageReference>
+    <PackageReference Include="MSTest.TestAdapter" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
