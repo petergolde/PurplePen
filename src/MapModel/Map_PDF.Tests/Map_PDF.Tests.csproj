@@ -1,58 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{03F7F8DA-39DC-43CA-B735-42D870B94C24}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Map_PDF.Tests</RootNamespace>
-    <AssemblyName>Map_PDF.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\Analysis.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StorePkg|AnyCPU'">
     <OutputPath>bin\StorePkg\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
+    <Reference Update="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -60,94 +23,66 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyAttributes.cs" />
-    <Compile Include="PdfCreation.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PdfRenderingTests.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SimpleDrawingTests.cs" />
+    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
+    <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
+    <ProjectReference Include="..\MapModel\MapModel.csproj" />
+    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj" />
+    <ProjectReference Include="..\Map_PDF\Map_PDF.csproj" />
+    <ProjectReference Include="..\PdfSharp\PdfSharp.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj">
-      <Project>{d50b6e2b-5e20-410d-b033-debb6b695e77}</Project>
-      <Name>TestUtil</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Graphics2D\Graphics2D.csproj">
-      <Project>{EF01E0B6-D7E7-4A4C-970A-29D677D59233}</Project>
-      <Name>Graphics2D</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MapModel\MapModel.csproj">
-      <Project>{D3AC7C61-0B90-42F3-9438-05F53531C9A3}</Project>
-      <Name>MapModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
-      <Project>{3D75BE05-1F36-4A11-99A2-7A8E27884948}</Project>
-      <Name>Map_GDIPlus</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Map_PDF\Map_PDF.csproj">
-      <Project>{DA25AF08-F97C-4760-B206-99C0FA2422D2}</Project>
-      <Name>Map_PDF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PdfSharp\PdfSharp.csproj">
-      <Project>{5384ce57-1f94-4d22-860d-2e9c1ac12ddf}</Project>
-      <Name>PdfSharp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="fonts\Roboto-Black.ttf">
+    <None Update="fonts\Roboto-Black.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-BlackItalic.ttf">
+    <None Update="fonts\Roboto-BlackItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Bold.ttf">
+    <None Update="fonts\Roboto-Bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-BoldItalic.ttf">
+    <None Update="fonts\Roboto-BoldItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Italic.ttf">
+    <None Update="fonts\Roboto-Italic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Light.ttf">
+    <None Update="fonts\Roboto-Light.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-LightItalic.ttf">
+    <None Update="fonts\Roboto-LightItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Medium.ttf">
+    <None Update="fonts\Roboto-Medium.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-MediumItalic.ttf">
+    <None Update="fonts\Roboto-MediumItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Regular.ttf">
+    <None Update="fonts\Roboto-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Thin.ttf">
+    <None Update="fonts\Roboto-Thin.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-ThinItalic.ttf">
+    <None Update="fonts\Roboto-ThinItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Bold.ttf">
+    <None Update="fonts\RobotoCondensed-Bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-BoldItalic.ttf">
+    <None Update="fonts\RobotoCondensed-BoldItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Italic.ttf">
+    <None Update="fonts\RobotoCondensed-Italic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Light.ttf">
+    <None Update="fonts\RobotoCondensed-Light.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-LightItalic.ttf">
+    <None Update="fonts\RobotoCondensed-LightItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Regular.ttf">
+    <None Update="fonts\RobotoCondensed-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -158,12 +93,4 @@
     <PackageReference Include="NUnit" />
     <PackageReference Include="NUnit3TestAdapter" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
