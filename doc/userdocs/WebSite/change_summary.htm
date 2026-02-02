@@ -16,6 +16,60 @@
 
     <h1>Purple Pen Change Summary</h1>
 
+    <h2>Changes in 3.5.4</h2>
+    <h3>New/Changed Features</h3>
+    <ul>
+        <li>
+            Previously, when using a PDF file as the base map, and creating a PDF output,
+            Purple Pen would only create a PDF with the same paper size on the base map PDF. This
+            restriction is now removed, and you can use the Set Print Area command to set the paper
+            size and print area to anything desired.
+        </li>
+        <li>
+            You can now add control descriptions to "All Parts" of of a course with a map
+            exchange, and it shows up on both parts of the course in the same place. You can
+            still problem descriptions in different places for each part if desired, but this
+            is faster for the common case where the description is the same on both parts. It also 
+            helps when some variations of a course have a map exchanges and others do not.
+        </li>
+        <li>
+            When creating a PDF file or an image file, you now have the option of creating just
+            the course, without the background map. This was requested for improving LiveLox
+            setup, among other uses.
+        </li>
+        <li>
+            The visual look of the mouse pointer when adding and removing bends is significantly improved.
+        </li>
+        <li>
+            New keyboard shortcut for removing a bend: Ctrl+Shift+B, and removing a gap: Ctrl+Shift+G.
+        </li>
+        <li>
+            Slovak is added to the available languages for textual control descriptions. Thank you
+            to Viktor Tomkovic for providing the translation.
+        </li>
+    </ul>
+    <h3>Bug Fixes</h3>
+    <ul>
+        <li>
+            There was a bug with the new "Layer" option for layering the purple color with
+            the underlying map when that map itself used another OCAD or OpenOrienteering Mapper
+            map as a template. This is fixed.
+        </li>
+        <li>
+            When removing a bend, the leg remains selected.
+        </li>
+        <li>
+            Changing the printer on Windows 11 now uses an older style dialog box,
+            which looks worse, but works correctly.
+        </li>
+        <li>
+            Purple Pen now correctly detects when a template or linked bitmap in the base
+            map changes, and reloads the base map.
+        </li>
+    </ul>
+
+
+
     <h2>Changes in 3.5.3</h2>
     <h3>New/Changed Features</h3>
     <ul>

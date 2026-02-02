@@ -1,6 +1,6 @@
-MainPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.53.0.0_x64_Debug.msix
-SymbolPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\obj\x64\Debug\Symbols\MsftStoreInstaller_3.53.0.0_x64_Debug.appxsym
-ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.53.0.0_scale-100.msix
-ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.53.0.0_scale-125.msix
-ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.53.0.0_scale-150.msix
-ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.53.0.0_scale-400.msix
+MainPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.54.1.0_x64_Debug.msix
+SymbolPackage=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\obj\x64\Debug\Symbols\MsftStoreInstaller_3.54.1.0_x64_Debug.appxsym
+ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.54.1.0_scale-100.msix
+ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.54.1.0_scale-125.msix
+ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.54.1.0_scale-150.msix
+ResourcePack=D:\Repos\Main\PurplePen\src\MsftStoreInstaller\bin\x64\Debug\MsftStoreInstaller_3.54.1.0_scale-400.msix

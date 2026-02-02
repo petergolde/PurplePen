@@ -12,7 +12,7 @@
   <Identity
     Name="45613PurplePen.PurplePenforOrienteering"
     Publisher="CN=C61EB180-1ECA-4AAF-AEF7-BFE0F2F06B3C"
-    Version="3.53.0.0" />
+    Version="3.54.1.0" />
 
   <Properties>
     <DisplayName>Purple Pen for Orienteering</DisplayName>
