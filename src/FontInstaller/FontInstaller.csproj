@@ -1,34 +1,49 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
-  <PropertyGroup>
-    <ProjectGuid>{699739ca-2c69-4b80-b69f-3e351da2ba1f}</ProjectGuid>
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <!-- Define the output file -->
-    <OutputFile>.\output\Roboto Font Installer.exe</OutputFile>
-    <!-- Define the help compiler executable -->
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <Configurations>Debug;Release;StorePkg</Configurations>
+    <Platforms>AnyCPU</Platforms>
+
+    <GenerateDefaultTargetRuntimeIntermediateAsm>false</GenerateDefaultTargetRuntimeIntermediateAsm>
+    <CopyBuildOutputToPublishDirectory>false</CopyBuildOutputToPublishDirectory>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <SkipCopyBuildProduct>true</SkipCopyBuildProduct>
+
+    <CopyOutputsToOutputDirectory>false</CopyOutputsToOutputDirectory>
+
     <InnoCompiler>C:\Program Files (x86)\Inno Setup 6\iscc.exe</InnoCompiler>
-    <!-- Define the help project file -->
     <InnoProjectFile>FontInstaller.iss</InnoProjectFile>
+    <OutputFile>output\Roboto Font Installer.exe</OutputFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- 
-      Define the input files for the compilation. If any of these change, the setup
-      file will be rebuilt. Otherwise it will not be rebuilt.
-    -->
-    <InputFile Include="$(InnoProjectFile)" />
-    <InputFile Include="..\RobotoFont\*.ttf" />
+    <None Include="$(InnoProjectFile)" />
+    <None Include="..\RobotoFont\*.ttf" Link="Fonts\%(Filename)%(Extension)" />
+    <UpToDateCheckInput Include="$(InnoProjectFile);..\RobotoFont\*.ttf" />
+    <UpToDateCheckOutput Include="$(OutputFile)" />
+
+    <InnoInputs Include="$(InnoProjectFile);..\RobotoFont\*.ttf" />
   </ItemGroup>
 
-  <Target Name="Build" Inputs="@(InputFile)" Outputs="$(OutputFile)">
-    <Message Text="Building font installer file -- output file is $(OutputFile)" />
+  <Target Name="RunInnoSetup"
+          AfterTargets="Build"
+          DependsOnTargets="PrepareOutputDirectory"
+          Inputs="@(InnoInputs)"
+          Outputs="$(OutputFile)">
+
+    <Message Importance="high" Text="MSBUILD IS NOW RUNNING INNO SETUP" />
     <Exec Command="&quot;$(InnoCompiler)&quot; &quot;$(InnoProjectFile)&quot;" />
   </Target>
 
-  <Target Name="Clean">
-    <Message Text="Cleaning font setup file" />
-    <Delete Files="$(OutputFile)" />
+  <Target Name="PrepareOutputDirectory">
+    <MakeDir Directories="output" />
   </Target>
 
-  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
+  <Target Name="CleanInno" AfterTargets="Clean">
+    <Delete Files="$(OutputFile)" />
+    <RemoveDir Directories="output;bin;obj" />
   </Target>
+
 </Project>

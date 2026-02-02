@@ -17,10 +17,7 @@
     <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections/DotSpatial.Projections.csproj" />
   </Folder>
   <Folder Name="/Installer/">
-    <Project Path="FontInstaller/FontInstaller.csproj" Id="699739ca-2c69-4b80-b69f-3e351da2ba1f">
-      <BuildType Project="Debug" />
-      <Platform Project="x86" />
-    </Project>
+    <Project Path="FontInstaller/FontInstaller.csproj" Id="699739ca-2c69-4b80-b69f-3e351da2ba1f" />
     <Project Path="Innosetup/Innosetup.vcxproj" Id="2f2d9619-742b-4a2b-ad2d-6c00509e20ea">
       <BuildDependency Project="CrashReporter.NET/CrashReporter.NET.csproj" />
       <BuildDependency Project="PdfConverter/PdfConverter.csproj" />

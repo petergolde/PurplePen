@@ -49,20 +49,31 @@ namespace TestingUtils
     // Utilities that are useful for test programs.
     public static class TestUtil
     {
-        // Get the test file direction
-        public static string GetTestFileDirectory()
+        // Get the parent directory of the project directory. This is obtained by
+        // going up from the assembly location to we reach the "bin" directory, then
+        // going two more levels.
+        public static string GetProjectParentDirectory()
         {
             Uri uri = new Uri(typeof(TestUtil).Assembly.CodeBase);
             string callingPath = Path.GetDirectoryName(uri.LocalPath);
-            return Path.GetFullPath(Path.Combine(callingPath, @"..\..\..\TestFiles"));
+            while (Path.GetFileName(callingPath).ToLower() != "bin") {
+                callingPath = Path.GetDirectoryName(callingPath);
+            }
+            return Path.GetFullPath(Path.Combine(callingPath, @"..\.."));
+        }
+
+        // Get the test file direction
+        public static string GetTestFileDirectory()
+        {
+            string projectParent = GetProjectParentDirectory(); 
+            return Path.GetFullPath(Path.Combine(projectParent, @"TestFiles"));
         }
 
         // Get the tool file direction
         public static string GetToolsFileDirectory()
         {
-            Uri uri = new Uri(typeof(TestUtil).Assembly.CodeBase);
-            string callingPath = Path.GetDirectoryName(uri.LocalPath);
-            return Path.GetFullPath(Path.Combine(callingPath, @"..\..\..\tools"));
+            string projectParent = GetProjectParentDirectory();
+            return Path.GetFullPath(Path.Combine(projectParent, @"tools"));
         }
 
 
