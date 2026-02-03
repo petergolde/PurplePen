@@ -19,6 +19,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>TestingUtils</RootNamespace>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
