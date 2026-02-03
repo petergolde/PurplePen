@@ -36,12 +36,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace InteractiveTestApp.MapView
 {
@@ -218,7 +218,7 @@ namespace InteractiveTestApp.MapView
 
         Graphics GetWorldGraphics() {
             Graphics g = CreateGraphics();
-            g.Transform = xformWorldToPixel;
+            g.Transform = xformWorldToPixel.ToSysDrawMatrix();
             return g;
         }
 
@@ -331,7 +331,7 @@ namespace InteractiveTestApp.MapView
             if (regionChanged != null) {
                 // Transform the changed region into pixel coordinates and invalidate it.
                 Region copy = regionChanged.Clone();
-                copy.Transform(xformWorldToPixel);
+                copy.Transform(xformWorldToPixel.ToSysDrawMatrix());
                 Invalidate(copy); 
             }
             else {
@@ -364,7 +364,7 @@ namespace InteractiveTestApp.MapView
             g.RenderingOrigin = Util.PointFromPointF(origin);
 
             foreach (IMapViewerHighlight h in highlights) {
-                h.DrawHighlight(g, xformWorldToPixel);
+                h.DrawHighlight(g, xformWorldToPixel.ToSysDrawMatrix());
             }
         }
 
@@ -376,7 +376,7 @@ namespace InteractiveTestApp.MapView
             Brush eraseBrush = viewcache.GetCacheBrush(ClientSize, viewport, xformWorldToPixel);
 
             foreach (IMapViewerHighlight h in highlights) {
-                h.EraseHighlight(g, xformWorldToPixel, eraseBrush);
+                h.EraseHighlight(g, xformWorldToPixel.ToSysDrawMatrix(), eraseBrush);
             }
         }
 
@@ -614,7 +614,7 @@ namespace InteractiveTestApp.MapView
             DrawCachedMap(g, clip);
             DrawHighlights(g, clip, currentHighlights);
 
-            g.MultiplyTransform(xformWorldToPixel);
+            g.MultiplyTransform(xformWorldToPixel.ToSysDrawMatrix());
 
             // Get the clip rectangle in world coordinates.
             clip.Inflate(1, 1); // prevent round-off errors....

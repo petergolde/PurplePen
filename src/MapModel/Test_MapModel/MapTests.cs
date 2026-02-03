@@ -41,6 +41,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using NUnit.Framework;
 using TestingUtils;
+using PurplePen.Graphics2D;
 
 namespace PurplePen.MapModel.Tests
 {
@@ -386,7 +387,7 @@ namespace PurplePen.MapModel.Tests
             // Add a symdef, --should still be empty
             using (map.Write()) {
                 black = map.AddColor("black", 1, 0, 0, 0, 1.0F, false);
-                lineSymDef = new LineSymDef("line", "100.0", black, 0.5F, LineJoin.Round, LineCap.Round);
+                lineSymDef = new LineSymDef("line", "100.0", black, 0.5F, LineJoinMode.Round, LineCapMode.Round);
                 map.AddSymdef(lineSymDef);
             }
 
@@ -431,7 +432,7 @@ namespace PurplePen.MapModel.Tests
             // Add hidden symdef.
             LineSymDef hiddenSymDef;
             using (map.Write()) {
-                hiddenSymDef = new LineSymDef("line", "100.0", black, 1.0F, LineJoin.Round, LineCap.Round);
+                hiddenSymDef = new LineSymDef("line", "100.0", black, 1.0F, LineJoinMode.Round, LineCapMode.Round);
                 map.AddSymdef(hiddenSymDef);
                 map.SetSymdefVisible(hiddenSymDef, false);
             }

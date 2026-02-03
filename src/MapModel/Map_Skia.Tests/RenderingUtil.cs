@@ -1,6 +1,4 @@
-﻿extern alias Graphics2DStd;
-
-using System;
+﻿using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +12,13 @@ using SkiaSharp;
 
 namespace Map_Skia.Tests
 {
-    using Graphics2DStd::PurplePen.Graphics2D;
+    using PurplePen.Graphics2D;
     using PurplePen.MapModel;
     using TestingUtils;
     using Map_Skia;
-    using Graphics2DStd::System.Drawing.Drawing2D;
     using System.Diagnostics;
+
+
     public static class RenderingUtil
     {
 

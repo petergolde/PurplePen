@@ -1,6 +1,4 @@
-﻿extern alias Graphics2DStd;
-extern alias Graphics2DGdi;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +9,7 @@ namespace Map_Skia.Tests
 {
     using System.Diagnostics;
     using System.Drawing;
-    using Graphics2DStd::PurplePen.Graphics2D;
+    using PurplePen.Graphics2D;
     using PurplePen.MapModel;
 
     [TestFixture]
@@ -23,7 +21,7 @@ namespace Map_Skia.Tests
 			GDIPlus_TextMetrics gdiMetrics = new GDIPlus_TextMetrics();
 			Skia_TextMetrics skiaMetrics = new Skia_TextMetrics();
 
-            Graphics2DGdi::PurplePen.Graphics2D.ITextFaceMetrics gdiFontMetrics = gdiMetrics.GetTextFaceMetrics("Times New Roman", 24, Graphics2DGdi::PurplePen.Graphics2D.TextEffects.None);
+            ITextFaceMetrics gdiFontMetrics = gdiMetrics.GetTextFaceMetrics("Times New Roman", 24, TextEffects.None);
             ITextFaceMetrics skiaFontMetrics = skiaMetrics.GetTextFaceMetrics("Times New Roman", 24, TextEffects.None);
 
             Assert.AreEqual(gdiFontMetrics.Ascent, skiaFontMetrics.Ascent);

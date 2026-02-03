@@ -79,7 +79,10 @@
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj">
       <Project>{ef01e0b6-d7e7-4a4c-970a-29d677d59233}</Project>
       <Name>Graphics2D</Name>
-      <Aliases>Graphics2DGdi</Aliases>
+    </ProjectReference>
+    <ProjectReference Include="..\MapModel\MapModel.csproj">
+      <Project>{d3ac7c61-0b90-42f3-9438-05f53531c9a3}</Project>
+      <Name>MapModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj">
       <Project>{3d75be05-1f36-4a11-99a2-7a8e27884948}</Project>

@@ -8,7 +8,6 @@ using CanvasTest2.Models;
 using CanvasTest2.Drawing;
 using PurplePen.Graphics2D;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using PurplePen.MapModel;
 using System.IO;
 
@@ -103,22 +102,22 @@ namespace CanvasTest2.Controllers
                 grTarget.PushTransform(mat);
 
                 object penKey1 = new object(), pathKey1 = new Object();
-                grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.Red), 7.0F, LineCap.Flat, LineJoin.Miter, 5F);
+                grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.Red), 7.0F, LineCapMode.Flat, LineJoinMode.Miter, 5F);
                 grTarget.CreatePath(pathKey1, new List<GraphicsPathPart> {
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) })},
-                    FillMode.Alternate);
+                    AreaFillMode.Alternate);
                 grTarget.DrawPath(penKey1, pathKey1);
 
                 object penKey2 = new object(), pathKey2 = new Object();
-                grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.Green), 3.0F, LineCap.Round, LineJoin.Round, 5F);
+                grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.Green), 3.0F, LineCapMode.Round, LineJoinMode.Round, 5F);
                 grTarget.CreatePath(pathKey2, new List<GraphicsPathPart> {
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Beziers,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) }),
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(0, 0)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-50, 50), new PointF(50, 50) }),
                             new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0] )},
-                    FillMode.Alternate);
+                    AreaFillMode.Alternate);
                 grTarget.DrawPath(penKey2, pathKey2);
 
                 mat = new Matrix();
@@ -131,7 +130,7 @@ namespace CanvasTest2.Controllers
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Beziers,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) }),
                             new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0] )},
-                    FillMode.Alternate);
+                    AreaFillMode.Alternate);
                 grTarget.FillPath(brushKey3, pathKey3);
             });
         }

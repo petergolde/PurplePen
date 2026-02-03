@@ -45,6 +45,7 @@ using NUnit.Framework;
 
 namespace PurplePen.MapModel.Tests
 {
+    using PurplePen.Graphics2D;
     using TestingUtils;
 
     [TestFixture]
@@ -594,7 +595,7 @@ namespace PurplePen.MapModel.Tests
             SymDef s;
 
             using (map.Read()) {
-                s = new LineSymDef("Fizzle", "415.223", map.AllColors.ElementAt(5), 0.4F, LineJoin.Bevel, LineCap.Flat);
+                s = new LineSymDef("Fizzle", "415.223", map.AllColors.ElementAt(5), 0.4F, LineJoinMode.Bevel, LineCapMode.Flat);
                 Assert.False(map.AllSymdefs.Contains(s));
                 Assert.Null(s.ContainingMap);
             }

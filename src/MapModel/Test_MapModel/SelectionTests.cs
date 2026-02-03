@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -279,7 +278,7 @@ namespace PurplePen.MapModel.Tests
             Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
             using (Graphics g = Graphics.FromImage(bitmapNew)) {
                 g.Clear(Color.White);
-                g.Transform = matrix;
+                g.Transform = matrix.ToSysDrawMatrix();
 
                 float pixelSize = mapArea.Width / (float)bitmapSize.Width;
 
@@ -311,7 +310,7 @@ namespace PurplePen.MapModel.Tests
             highlightOpts.style = fidelity;
 
             object bluePen = new object();
-            grTarget.CreatePen(bluePen, CmykColor.FromRgb(0, 0, 1), pixelSize, LineCap.Flat, LineJoin.Miter, 5);
+            grTarget.CreatePen(bluePen, CmykColor.FromRgb(0, 0, 1), pixelSize, LineCapMode.Flat, LineJoinMode.Miter, 5);
 
             using (map.Read()) {
                 map.Draw(grTarget, rect, renderOpts, null);

@@ -36,7 +36,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -232,7 +231,7 @@ namespace InteractiveTestApp.MapView
 								invalidRegion.MakeEmpty();
 							}
 							else {
-								invalidRegion.Transform(transformOldToNew);
+								invalidRegion.Transform(transformOldToNew.ToSysDrawMatrix());
 							}
 							Region exposed = new Region(newBitmapRect);
 							exposed.Exclude(copy);
@@ -266,7 +265,7 @@ namespace InteractiveTestApp.MapView
 
 			// Determine pixel size in world coordinates.
 			PointF[] pts = new PointF[] {new PointF(0,0), new PointF(1, 0)};
-			gr.TransformPoints(CoordinateSpace.World, CoordinateSpace.Device, pts);
+			gr.TransformPoints(System.Drawing.Drawing2D.CoordinateSpace.World, System.Drawing.Drawing2D.CoordinateSpace.Device, pts);
 			return Geometry.DistanceF(pts[0], pts[1]);
 		}
 
@@ -290,7 +289,7 @@ namespace InteractiveTestApp.MapView
 
 			// Copy the region and transform to bitmap coords.
 			Region copy = regionChanged.Clone();
-			copy.Transform(matTransform);
+			copy.Transform(matTransform.ToSysDrawMatrix());
 
 			// Union with the invalid region.
 			if (allValid) {

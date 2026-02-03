@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PurplePen.MapModel
 {
-    static class Conversions
+    public static class SysDrawConversions
     {
         public static System.Drawing.Drawing2D.Matrix ToSysDrawMatrix(this PurplePen.Graphics2D.Matrix matrix)
         {

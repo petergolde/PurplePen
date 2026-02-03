@@ -35,7 +35,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using PurplePen.MapModel;
@@ -374,7 +373,7 @@ namespace InteractiveTestApp.MapDisplayer
                 Bitmap dimmed = new Bitmap(bitmap.PixelWidth, bitmap.PixelHeight);
                 Graphics g = Graphics.FromImage(dimmed);
                 ImageAttributes imageAttributes = new ImageAttributes();
-                imageAttributes.SetColorMatrix(ComputeColorMatrix());
+                imageAttributes.SetColorMatrix(ComputeColorMatrix().ToSysDrawColorMatrix());
                 g.DrawImage(bitmap.Bitmap, new Rectangle(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), 0, 0, bitmap.PixelWidth, bitmap.PixelHeight, GraphicsUnit.Pixel, imageAttributes);
                 g.Dispose();
 
@@ -400,7 +399,7 @@ namespace InteractiveTestApp.MapDisplayer
         private void DrawOcadMapInsertionPoints(IGraphicsTarget grTarget, RectangleF visRect, RenderOptions renderOptions)
         {
             object pen = new object();
-            grTarget.CreatePen(pen, CmykColor.FromRgb(1, 0, 0), renderOptions.minResolution * 2, LineCap.Flat, LineJoin.Round, 5);
+            grTarget.CreatePen(pen, CmykColor.FromRgb(1, 0, 0), renderOptions.minResolution * 2, LineCapMode.Flat, LineJoinMode.Round, 5);
 
             foreach (Symbol sym in map.AllSymbols) {
                 if (sym is TextSymbol) {

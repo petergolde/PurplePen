@@ -104,11 +104,11 @@ namespace PurplePen.MapModel.Tests
                     CmykColor purple = CmykColor.FromCmyk(0.1F, 0.9F, 0, 0.1F);
 
                     object penBlue = new object(), penGreen = new object(), penYellow = new object(), penBlack = new object(), penPurple = new object();
-                    grTarget.CreatePen(penBlue, blue, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penGreen, green, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penBlack, black, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penPurple, purple, penWidth, LineCap.Round, LineJoin.Miter, 5);
+                    grTarget.CreatePen(penBlue, blue, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penGreen, green, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penBlack, black, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penPurple, purple, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
 
                     grTarget.DrawLine(penBlue, new PointF(-80, 60), new PointF(80, 60));
                     grTarget.DrawLine(penGreen, new PointF(-80, 30), new PointF(80, 30));
@@ -134,11 +134,11 @@ namespace PurplePen.MapModel.Tests
                     CmykColor purple = CmykColor.FromCmyk(0.1F, 0.9F, 0, 0.1F);
 
                     object penBlue = new object(), penGreen = new object(), penYellow = new object(), penBlack = new object(), penPurple = new object();
-                    grTarget.CreatePen(penBlue, blue, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penGreen, green, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penBlack, black, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penPurple, purple, penWidth * 2, LineCap.Round, LineJoin.Miter, 5);
+                    grTarget.CreatePen(penBlue, blue, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penGreen, green, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penBlack, black, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penPurple, purple, penWidth * 2, LineCapMode.Round, LineJoinMode.Miter, 5);
 
                     grTarget.DrawLine(penBlue, new PointF(-180, 60), new PointF(180, 60));
                     grTarget.DrawLine(penGreen, new PointF(-180, 30), new PointF(180, 30));
@@ -158,23 +158,23 @@ namespace PurplePen.MapModel.Tests
                     IBrushTarget brushTarget = grTarget.CreatePatternBrush(new SizeF(30, 20), 0, 60, 60);
 
                     object pen = new object();
-                    brushTarget.CreatePen(pen, CmykColor.FromRgb(1, 0, 0), 1.5F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.CreatePen(pen, CmykColor.FromRgb(1, 0, 0), 1.5F, LineCapMode.Round, LineJoinMode.Round, 5F);
                     brushTarget.DrawLine(pen, new PointF(-15, -10), new PointF(3, 10));
                     pen = new object();
-                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 1, 0), 3.0F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 1, 0), 3.0F, LineCapMode.Round, LineJoinMode.Round, 5F);
                     brushTarget.DrawLine(pen, new PointF(3, 10), new PointF(15, -10));
 
                     pen = new object();
-                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 1), 3F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 1), 3F, LineCapMode.Round, LineJoinMode.Round, 5F);
                     brushTarget.DrawEllipse(pen, new PointF(1, -2), 5, 4);
 
                     object brush = new object();
                     brushTarget.FinishBrush(brush);
 
-                    grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -60), new PointF(0, 30), new PointF(50, -60), new PointF(-50, 20), new PointF(50, 20) }, FillMode.Winding);
+                    grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -60), new PointF(0, 30), new PointF(50, -60), new PointF(-50, 20), new PointF(50, 20) }, AreaFillMode.Winding);
 
                     pen = new object();
-                    grTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 0), 0.5F, LineCap.Flat, LineJoin.Round, 5F);
+                    grTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 0), 0.5F, LineCapMode.Flat, LineJoinMode.Round, 5F);
                     grTarget.DrawLine(pen, new PointF(-30, -30), new PointF(30, 30));
                     grTarget.DrawLine(pen, new PointF(30, -30), new PointF(-30, 30));
                 });
@@ -188,23 +188,23 @@ namespace PurplePen.MapModel.Tests
                     IBrushTarget brushTarget = grTarget.CreatePatternBrush(new SizeF(30, 20), 147, 60, 60);
 
                     object pen = new object();
-                    brushTarget.CreatePen(pen, CmykColor.FromRgb(1, 0, 0), 1.5F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.CreatePen(pen, CmykColor.FromRgb(1, 0, 0), 1.5F, LineCapMode.Round, LineJoinMode.Round, 5F);
                     brushTarget.DrawLine(pen, new PointF(-15, -10), new PointF(3, 10));
                     pen = new object();
-                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 1, 0), 3.0F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 1, 0), 3.0F, LineCapMode.Round, LineJoinMode.Round, 5F);
                     brushTarget.DrawLine(pen, new PointF(3, 10), new PointF(15, -10));
 
                     pen = new object();
-                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 1), 3F, LineCap.Round, LineJoin.Round, 5F);
+                    brushTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 1), 3F, LineCapMode.Round, LineJoinMode.Round, 5F);
                     brushTarget.DrawEllipse(pen, new PointF(1, -2), 5, 4);
 
                     object brush = new object();
                     brushTarget.FinishBrush(brush);
 
-                    grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -60), new PointF(0, 30), new PointF(50, -60), new PointF(-50, 20), new PointF(50, 20) }, FillMode.Winding);
+                    grTarget.FillPolygon(brush, new PointF[] { new PointF(-50, -60), new PointF(0, 30), new PointF(50, -60), new PointF(-50, 20), new PointF(50, 20) }, AreaFillMode.Winding);
 
                     pen = new object();
-                    grTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 0), 0.5F, LineCap.Flat, LineJoin.Round, 5F);
+                    grTarget.CreatePen(pen, CmykColor.FromRgb(0, 0, 0), 0.5F, LineCapMode.Flat, LineJoinMode.Round, 5F);
                     grTarget.DrawLine(pen, new PointF(-30, -30), new PointF(30, 30));
                     grTarget.DrawLine(pen, new PointF(30, -30), new PointF(-30, 30));
                 });

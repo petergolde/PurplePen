@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -36,8 +35,8 @@ namespace CanvasTest2.Drawing
         private class PathInfo
         {
             public readonly List<GraphicsPathPart> parts;
-            public readonly FillMode windingMode;
-            public PathInfo(List<GraphicsPathPart> parts, FillMode windingMode)
+            public readonly AreaFillMode windingMode;
+            public PathInfo(List<GraphicsPathPart> parts, AreaFillMode windingMode)
             {
                 this.parts = new List<GraphicsPathPart>(parts.Count);
                 this.parts.AddRange(parts);
@@ -53,10 +52,10 @@ namespace CanvasTest2.Drawing
         {
             public readonly CmykColor color;
             public readonly float width;
-            public readonly LineCap caps;
-            public readonly LineJoin join;
+            public readonly LineCapMode caps;
+            public readonly LineJoinMode join;
             public readonly float miterLimit;
-            public PenInfo(CmykColor color, float width, LineCap caps, LineJoin join, float miterLimit)
+            public PenInfo(CmykColor color, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
             {
                 this.color = color;
                 this.width = width;
@@ -100,7 +99,7 @@ namespace CanvasTest2.Drawing
             // NOT YET IMPLEMENTED
         }
 
-        public void CreatePath(object key, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void CreatePath(object key, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             if (pathDict.ContainsKey(key)) {
                 throw new ArgumentException("key is already assigned to a path");
@@ -114,7 +113,7 @@ namespace CanvasTest2.Drawing
             throw new NotImplementedException();
         }
 
-        public void CreatePen(object key, object brushKey, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object key, object brushKey, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penDict.ContainsKey(key)) {
                 throw new ArgumentException("key is already assigned to a pen");
@@ -124,7 +123,7 @@ namespace CanvasTest2.Drawing
             penDict[key] = new PenInfo(color, width, caps, join, miterLimit);
         }
 
-        public void CreatePen(object key, CmykColor color, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object key, CmykColor color, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penDict.ContainsKey(key)) {
                 throw new ArgumentException("key is already assigned to a pen");
@@ -282,20 +281,20 @@ namespace CanvasTest2.Drawing
             UseBrush(brushKey);
             UsePath(pathKey);
             BeginCommand('f');
-            IntArgument((pathDict[pathKey].windingMode == FillMode.Alternate) ? 0 : 1);
+            IntArgument((pathDict[pathKey].windingMode == AreaFillMode.Alternate) ? 0 : 1);
             EndCommand();
         }
 
-        public void FillPath(object brushKey, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void FillPath(object brushKey, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             UseBrush(brushKey);
             UsePath(parts);
             BeginCommand('f');
-            IntArgument((windingMode == FillMode.Alternate) ? 0 : 1);
+            IntArgument((windingMode == AreaFillMode.Alternate) ? 0 : 1);
             EndCommand();
         }
 
-        public void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode)
+        public void FillPolygon(object brushKey, PointF[] pts, AreaFillMode windingMode)
         {
             if (pts.Length == 0)
                 return;
@@ -314,7 +313,7 @@ namespace CanvasTest2.Drawing
             }
 
             BeginCommand('f'); // fillPath
-            IntArgument((windingMode == FillMode.Alternate) ? 0 : 1);
+            IntArgument((windingMode == AreaFillMode.Alternate) ? 0 : 1);
             EndCommand(); 
         }
 
@@ -386,7 +385,7 @@ namespace CanvasTest2.Drawing
             BeginCommand('z'); EndCommand(); // save
             UsePath(pathKey);
             BeginCommand('C');
-            IntArgument((pathDict[pathKey].windingMode == FillMode.Alternate) ? 0 : 1);
+            IntArgument((pathDict[pathKey].windingMode == AreaFillMode.Alternate) ? 0 : 1);
             EndCommand(); // clipPath
         }
 
@@ -406,16 +405,16 @@ namespace CanvasTest2.Drawing
                 parts.Add(new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0]));
             }
 
-            PushClip(parts, FillMode.Winding);
+            PushClip(parts, AreaFillMode.Winding);
         }
 
-        public void PushClip(List<GraphicsPathPart> parts, FillMode windingMode)
+        public void PushClip(List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             BeginCommand('z'); EndCommand(); // save
 
             UsePath(parts);
             BeginCommand('C');
-            IntArgument((windingMode == FillMode.Alternate) ? 0 : 1);
+            IntArgument((windingMode == AreaFillMode.Alternate) ? 0 : 1);
             EndCommand(); // clipPath
         }
 
@@ -486,23 +485,23 @@ namespace CanvasTest2.Drawing
             ColorArgument(penInfo.color);
 
             switch (penInfo.join) {
-                case LineJoin.Miter:
-                case LineJoin.MiterClipped:
+                case LineJoinMode.Miter:
+                case LineJoinMode.MiterClipped:
                     StringArgument("miter"); break;
-                case LineJoin.Bevel:
+                case LineJoinMode.Bevel:
                     StringArgument("bevel"); break;
-                case LineJoin.Round:
+                case LineJoinMode.Round:
                     StringArgument("round"); break;
                 default:
                     throw new ApplicationException("Unexpected linejoin");
             }
 
             switch (penInfo.caps) {
-                case LineCap.Flat:
+                case LineCapMode.Flat:
                     StringArgument("butt"); break;
-                case LineCap.Square:
+                case LineCapMode.Square:
                     StringArgument("square"); break;
-                case LineCap.Round:
+                case LineCapMode.Round:
                     StringArgument("round"); break;
                 default:
                     throw new ApplicationException("Unexpected linecap");
