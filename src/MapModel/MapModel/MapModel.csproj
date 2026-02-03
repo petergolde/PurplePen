@@ -60,8 +60,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Projections\AuthorityCodeToProj4.ds" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\DotSpatialProjectionsLite\DotSpatial.Projections\DotSpatial.Projections.csproj" />
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
   </ItemGroup>
-  <Import Project="..\MapModel-Shared\MapModel-Shared.projitems" Label="Shared" />
 </Project>
