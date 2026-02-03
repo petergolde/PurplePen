@@ -409,7 +409,7 @@ String of type 1026
   code=a, value=8000
   code=r, value=1
   code=L, value=-54.61002
-  code=B, value=-73.66006
+  code=B, value=-73.66003
   code=R, value=270.51
   code=T, value=353.06
 
