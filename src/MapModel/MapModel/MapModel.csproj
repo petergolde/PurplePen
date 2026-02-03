@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
     <OutputType>Library</OutputType>
     <RootNamespace>PurplePen.MapModel</RootNamespace>
     <PublishUrl>publish\</PublishUrl>
@@ -22,19 +22,19 @@
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DefineConstants>TRACE;DEBUG;TEST,WINDOWS</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;TEST</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <CodeAnalysisRuleSet>..\Analysis.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DefineConstants>TRACE;TEST,WINDOWS</DefineConstants>
+    <DefineConstants>TRACE;TEST</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>AllRules.ruset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StorePkg|AnyCPU'">
     <OutputPath>bin\StorePkg\</OutputPath>
-    <DefineConstants>TRACE;TEST,WINDOWS</DefineConstants>
+    <DefineConstants>TRACE;TEST</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>

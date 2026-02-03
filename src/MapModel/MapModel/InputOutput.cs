@@ -257,7 +257,7 @@ namespace PurplePen.MapModel
         // Create a cryptographically random key and return it, encoded as Base64.
         public static string CreateKey()
         {
-            using (AesManaged aesAlg = new AesManaged()) {
+            using (Aes aesAlg = Aes.Create()) {
                 aesAlg.GenerateKey();
                 return Convert.ToBase64String(aesAlg.Key);
             }
@@ -281,7 +281,7 @@ namespace PurplePen.MapModel
         {
             byte[] key = Convert.FromBase64String(keyBase64);
 
-            using (AesManaged aesAlg = new AesManaged()) {
+            using (Aes aesAlg = Aes.Create()) {
                 aesAlg.Key = key;
 
                 // Set the IV.

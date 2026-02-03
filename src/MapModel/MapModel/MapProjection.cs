@@ -2,8 +2,8 @@
 using PurplePen.MapModel.Projections;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
 using System.Globalization;
+using PurplePen.Graphics2D;
 
 namespace PurplePen.MapModel
 {

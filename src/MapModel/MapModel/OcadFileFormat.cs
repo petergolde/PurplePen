@@ -36,11 +36,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using Color = System.Drawing.Color;
+using System.Drawing;
 
 // Several fields in the below structures are not used.
 #pragma warning disable 649

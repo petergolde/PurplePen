@@ -43,7 +43,6 @@ using System.Drawing;
 
 namespace PurplePen.MapModel
 {
-    using System.Drawing.Drawing2D;
     using System.Xml;
     using PurplePen.Graphics2D;
 
@@ -188,24 +187,24 @@ namespace PurplePen.MapModel
             return PointFromCoord(coord.x, coord.y);
         }
 
-        LineJoin ImportLineJoin(int value)
+        LineJoinMode ImportLineJoin(int value)
         {
             if (value == 0)
-                return LineJoin.Bevel;
+                return LineJoinMode.Bevel;
             else if (value == 1)
-                return LineJoin.Miter;
+                return LineJoinMode.Miter;
             else
-                return LineJoin.Round;
+                return LineJoinMode.Round;
         }
 
-        LineCap ImportLineCap(int value)
+        LineCapMode ImportLineCap(int value)
         {
             if (value == 1)
-                return LineCap.Round;
+                return LineCapMode.Round;
             else if (value == 2)
-                return LineCap.Square;
+                return LineCapMode.Square;
             else
-                return LineCap.Flat;
+                return LineCapMode.Flat;
         }
 
         TextSymDefHorizAlignment ImportHorizAlignment(int value)

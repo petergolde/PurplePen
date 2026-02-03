@@ -52,12 +52,10 @@
     <Project Path="MapModel/Graphics2D/Graphics2D.csproj" Id="ef01e0b6-d7e7-4a4c-970a-29d677d59233" />
     <Project Path="MapModel/HtmlGraphicsTarget/HtmlGraphicsTarget.csproj" />
     <Project Path="MapModel/InteractiveTestApp/InteractiveTestApp.csproj" />
-    <Project Path="MapModel/MapModel-Shared/MapModel-Shared.shproj" />
     <Project Path="MapModel/MapModel/MapModel.csproj" Id="d3ac7c61-0b90-42f3-9438-05f53531c9a3">
       <BuildDependency Project="MapModel/GDIPlusNative/GDIPlusNative.vcxproj" />
       <BuildDependency Project="MapModel/GDIPlusNative64/GDIPlusNative64.vcxproj" />
     </Project>
-    <Project Path="MapModel/MapModelStd/MapModelStd.csproj" />
     <Project Path="MapModel/Map_GDIPlus/Map_GDIPlus.csproj" Id="3d75be05-1f36-4a11-99a2-7a8e27884948" />
     <Project Path="MapModel/Map_PDF.Tests/Map_PDF.Tests.csproj" Id="03f7f8da-39dc-43ca-b735-42d870b94c24" />
     <Project Path="MapModel/Map_PDF/Map_PDF.csproj" Id="da25af08-f97c-4760-b206-99c0fa2422d2" />

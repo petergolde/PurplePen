@@ -35,18 +35,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using Color = System.Drawing.Color;
 using System.Globalization;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
     using PurplePen.Graphics2D;
     using System.Linq;
-    using System.Drawing.Drawing2D;
     public abstract class Symbol
     {
         public abstract SymDef Definition {get;}
@@ -486,7 +481,7 @@ namespace PurplePen.MapModel
         // Highlight the symbol.
         public override void DrawHighlight(IGraphicsTarget g, HighlightOptions options)
         {
-            SymbolHelpers.DrawLineHighlight(g, map, path, (float)(options.logicalPixelSize * 3), LineJoin.Miter, LineCap.Flat, options);
+            SymbolHelpers.DrawLineHighlight(g, map, path, (float)(options.logicalPixelSize * 3), LineJoinMode.Miter, LineCapMode.Flat, options);
         }
 
         public override RectangleF HighlightBounds(HighlightOptions options)
@@ -1024,13 +1019,13 @@ namespace PurplePen.MapModel
         float thickness;
         public float Thickness { get { return thickness; } }
 
-        LineJoin lineJoin;
-        public LineJoin LineJoin { get { return lineJoin; } }
+        LineJoinMode lineJoin;
+        public LineJoinMode LineJoinMode { get { return lineJoin; } }
 
-        LineCap lineCap;
-        public LineCap LineCap { get { return lineCap; } }
+        LineCapMode lineCap;
+        public LineCapMode LineCapMode { get { return lineCap; } }
 
-        public GraphicsLineSymbol(GraphicsSymDef def, SymPath path, SymColor lineColor, float thickness, LineJoin lineJoin, LineCap lineCap)
+        public GraphicsLineSymbol(GraphicsSymDef def, SymPath path, SymColor lineColor, float thickness, LineJoinMode lineJoin, LineCapMode lineCap)
         {
             this.def = def; this.path = path;
             this.lineColor = lineColor; this.thickness = thickness; this.lineJoin = lineJoin; this.lineCap = lineCap;
@@ -1124,13 +1119,13 @@ namespace PurplePen.MapModel
         float thickness;
         public float Thickness { get { return thickness; } }
 
-        LineJoin lineJoin;
-        public LineJoin LineJoin { get { return lineJoin; } }
+        LineJoinMode lineJoin;
+        public LineJoinMode LineJoinMode { get { return lineJoin; } }
 
-        LineCap lineCap;
-        public LineCap LineCap { get { return lineCap; } }
+        LineCapMode lineCap;
+        public LineCapMode LineCapMode { get { return lineCap; } }
 
-        public ImageLineSymbol(ImageSymDef def, SymPath path, CmykColor lineColor, float thickness, LineJoin lineJoin, LineCap lineCap, bool isVisible, int sortOrder)
+        public ImageLineSymbol(ImageSymDef def, SymPath path, CmykColor lineColor, float thickness, LineJoinMode lineJoin, LineCapMode lineCap, bool isVisible, int sortOrder)
         {
             this.def = def; this.path = path;
             this.lineColor = lineColor; this.thickness = thickness; this.lineJoin = lineJoin; this.lineCap = lineCap;
@@ -1904,7 +1899,7 @@ namespace PurplePen.MapModel
         // Highlight the symbol.
         public override void DrawHighlight(IGraphicsTarget g, HighlightOptions options)
         {
-            SymbolHelpers.DrawLineHighlight(g, map, path, def.LineThickness, LineJoin.Miter, LineCap.Flat, options);
+            SymbolHelpers.DrawLineHighlight(g, map, path, def.LineThickness, LineJoinMode.Miter, LineCapMode.Flat, options);
         }
 
         public override RectangleF HighlightBounds(HighlightOptions options)
@@ -2088,7 +2083,7 @@ namespace PurplePen.MapModel
             return Math.Max(lineWidth, MinimumLineWidth(options)); 
         }
 
-        public static void DrawLineHighlight(IGraphicsTarget g, Map map, SymPath path, float lineWidth, LineJoin lineJoin, LineCap lineCap, HighlightOptions options)
+        public static void DrawLineHighlight(IGraphicsTarget g, Map map, SymPath path, float lineWidth, LineJoinMode lineJoin, LineCapMode lineCap, HighlightOptions options)
         {
             float width = HighlightWidth(lineWidth, options);
             object pen = map.GetHighlightPen(g, width, lineJoin, lineCap);
@@ -2105,7 +2100,7 @@ namespace PurplePen.MapModel
 
         public static void DrawAreaHighlight(IGraphicsTarget g, Map map, SymPathWithHoles path, HighlightOptions options)
         {
-            object boundaryPen = map.GetHighlightPen(g, (float) (options.logicalPixelSize * 1.5F), LineJoin.Miter, LineCap.Flat);
+            object boundaryPen = map.GetHighlightPen(g, (float) (options.logicalPixelSize * 1.5F), LineJoinMode.Miter, LineCapMode.Flat);
             object fillBrush = map.GetDimHighlightBrush(g);
             path.Fill(g, fillBrush);
             path.Draw(g, boundaryPen);

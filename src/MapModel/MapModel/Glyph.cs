@@ -35,12 +35,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using LineCap = System.Drawing.Drawing2D.LineCap;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
@@ -58,8 +53,8 @@ namespace PurplePen.MapModel
             public SymColor color;
             public float lineWidth;
             public float circleDiam;
-            public LineCap lineCap; // for kind==Line
-            public LineJoin lineJoin; // for kind == Line
+            public LineCapMode lineCap; // for kind==Line
+            public LineJoinMode lineJoin; // for kind == Line
             public SymPath path;      // for kind==Line
             public SymPathWithHoles areaPath;  // for kind==Area
             public PointF point;      // for kind==Circle or FilledCircle
@@ -226,7 +221,7 @@ namespace PurplePen.MapModel
                     switch (kind) {
                     case GlyphPartKind.Line: {
                         float width = lineWidth;
-                        if (lineJoin == LineJoin.Miter)
+                        if (lineJoin == LineJoinMode.Miter)
                             width *= path.MaxMiter;
 
                         return path.FindMaxDistance(new PointF(0, 0)) + width / 2;
@@ -252,7 +247,7 @@ namespace PurplePen.MapModel
                             if (lineWidth > 0 && !path.IsZeroLength) {
 
                                 float width = lineWidth;
-                                if (lineJoin == LineJoin.Miter)
+                                if (lineJoin == LineJoinMode.Miter)
                                     width *= path.MaxMiter;
                                 RectangleF bounding = path.BoundingBox;
                                 bounding.Inflate(new SizeF(width / 2, width / 2));
@@ -495,7 +490,7 @@ namespace PurplePen.MapModel
             }
         }
 
-        public void AddLine(SymColor color, SymPath path, float width, LineJoin lineJoin, LineCap lineCap) {
+        public void AddLine(SymColor color, SymPath path, float width, LineJoinMode lineJoin, LineCapMode lineCap) {
             path.CheckConstructed();
             GlyphPart part = new GlyphPart();
             part.kind = GlyphPartKind.Line;

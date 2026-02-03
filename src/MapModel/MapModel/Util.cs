@@ -38,11 +38,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Text;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using Color = System.Drawing.Color;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {

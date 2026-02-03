@@ -41,18 +41,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Linq;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using LineCap = System.Drawing.Drawing2D.LineCap;
-using Color = System.Drawing.Color;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
     using PurplePen.Graphics2D;
-    using System.Drawing.Drawing2D;
 
     // A color matrix
     public class ColorMatrix: ICloneable
@@ -256,10 +249,10 @@ namespace PurplePen.MapModel
             shear.Shear((float)Math.Sin(theta), 0);
 
             Matrix result = new Matrix();
-            result.Multiply(translate, System.Drawing.Drawing2D.MatrixOrder.Prepend);
-            result.Multiply(rotate, System.Drawing.Drawing2D.MatrixOrder.Prepend);
-            result.Multiply(shear, System.Drawing.Drawing2D.MatrixOrder.Prepend);
-            result.Multiply(scale, System.Drawing.Drawing2D.MatrixOrder.Prepend);
+            result.Multiply(translate, MatrixOrder.Prepend);
+            result.Multiply(rotate, MatrixOrder.Prepend);
+            result.Multiply(shear, MatrixOrder.Prepend);
+            result.Multiply(scale, MatrixOrder.Prepend);
             return result;
         }
 
@@ -902,7 +895,7 @@ namespace PurplePen.MapModel
         ImageSymDef layoutSymDef, imageSymDef; // special symdefs for image/layout objects.
 
         // Cache objects for highlighting.
-        readonly Dictionary<Pair<float, Pair<LineJoin, LineCap>>, object> highlightPens = new Dictionary<Pair<float, Pair<LineJoin, LineCap>>, object>();
+        readonly Dictionary<Pair<float, Pair<LineJoinMode, LineCapMode>>, object> highlightPens = new Dictionary<Pair<float, Pair<LineJoinMode, LineCapMode>>, object>();
         readonly Dictionary<float, object> holeHighlightPens = new Dictionary<float,object>();
         readonly object highlightBrush = new object();
         readonly object highlightDimBrush = new object();
@@ -2114,9 +2107,9 @@ namespace PurplePen.MapModel
         internal CmykColor HoleHighlightDimColor = CmykColor.FromRgba(1, 0.3333F, 0, 0.33F);
 
         // Get a cached reference to a pen for highlighting of the given width.
-        internal object GetHighlightPen(IGraphicsTarget g, float width, LineJoin lineJoin, LineCap lineCap)
+        internal object GetHighlightPen(IGraphicsTarget g, float width, LineJoinMode lineJoin, LineCapMode lineCap)
         {
-            var key = new Pair<float, Pair<LineJoin, LineCap>>(width, new Pair<LineJoin, LineCap>(lineJoin, lineCap));
+            var key = new Pair<float, Pair<LineJoinMode, LineCapMode>>(width, new Pair<LineJoinMode, LineCapMode>(lineJoin, lineCap));
 
             if (!highlightPens.ContainsKey(key)) {
                 lock (highlightPens) {

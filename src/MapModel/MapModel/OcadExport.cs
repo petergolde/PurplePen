@@ -38,11 +38,7 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Globalization;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using Color = System.Drawing.Color;
+using System.Drawing;
 
 namespace PurplePen.MapModel {
     using System.Drawing.Drawing2D;
@@ -503,13 +499,13 @@ namespace PurplePen.MapModel {
             }
         }
 
-        short OcadLineStyle(LineJoin lineJoin, LineCap lineCap)
+        short OcadLineStyle(LineJoinMode lineJoin, LineCapMode lineCap)
         {
-            if (lineCap == LineCap.Round) {
+            if (lineCap == LineCapMode.Round) {
                 return 1;
             }
             else {
-                if (lineJoin == LineJoin.Bevel || lineJoin == LineJoin.Round) {
+                if (lineJoin == LineJoinMode.Bevel || lineJoin == LineJoinMode.Round) {
                     return 0;
                 }
                 else {
@@ -1578,7 +1574,7 @@ namespace PurplePen.MapModel {
                 obj.coords = CoordsFromSymPath(glsym.Path);
                 obj.Col = (uint) NumberOfColor(glsym.LineColor);
                 obj.LineWidth = (short) ToOcadDimensions(glsym.Thickness);
-                obj.DiamFlags = OcadLineStyle(glsym.LineJoin, glsym.LineCap);
+                obj.DiamFlags = OcadLineStyle(glsym.LineJoinMode, glsym.LineCapMode);
             }
             else if (sym is ImageLineSymbol) {
                 ImageLineSymbol ilsym = sym as ImageLineSymbol;
@@ -1590,7 +1586,7 @@ namespace PurplePen.MapModel {
                 obj.coords = CoordsFromSymPath(ilsym.Path);
                 obj.Col = CompressedCMYKFromColor(ilsym.LineColor);
                 obj.LineWidth = (short) ToOcadDimensions(ilsym.Thickness);
-                obj.DiamFlags = OcadLineStyle(ilsym.LineJoin, ilsym.LineCap);
+                obj.DiamFlags = OcadLineStyle(ilsym.LineJoinMode, ilsym.LineCapMode);
             }
             else if (sym is GraphicsAreaSymbol) {
                 GraphicsAreaSymbol gasym = sym as GraphicsAreaSymbol;

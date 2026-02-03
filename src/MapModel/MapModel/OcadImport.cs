@@ -38,11 +38,7 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Globalization;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using Color = System.Drawing.Color;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
@@ -761,24 +757,24 @@ namespace PurplePen.MapModel
                 return LineStyle.Beveled;
         }
 
-        LineJoin ImportLineJoin(short lineEnds)
+        LineJoinMode ImportLineJoin(short lineEnds)
         {
             if ((lineEnds & 1) == 1)
-                return LineJoin.Round;
+                return LineJoinMode.Round;
             else if ((lineEnds & 4) == 4)
-                return LineJoin.Miter;
+                return LineJoinMode.Miter;
             else
-                return LineJoin.Bevel;
+                return LineJoinMode.Bevel;
         }
 
-        LineCap ImportLineCap(short lineEnds)
+        LineCapMode ImportLineCap(short lineEnds)
         {
             if ((lineEnds & 1) == 1)
-                return LineCap.Round;
+                return LineCapMode.Round;
             else if ((lineEnds & 4) == 4)
-                return LineCap.Flat;
+                return LineCapMode.Flat;
             else
-                return LineCap.Flat;
+                return LineCapMode.Flat;
         }
 
         SymDef CreateLineSymdef(string name, string symbolId, OcadLineSymbol ocadSym) {
@@ -789,8 +785,8 @@ namespace PurplePen.MapModel
                 color = GetColor(ocadSym.LineColor);
             }
 
-            LineJoin lineJoin = ImportLineJoin((short) ocadSym.LineEnds);
-            LineCap lineCap = ImportLineCap((short)ocadSym.LineEnds);
+            LineJoinMode lineJoin = ImportLineJoin((short) ocadSym.LineEnds);
+            LineCapMode lineCap = ImportLineCap((short)ocadSym.LineEnds);
 
             LineSymDef symdef = new LineSymDef(name, symbolId, color, width, lineJoin, lineCap);
 
@@ -806,8 +802,8 @@ namespace PurplePen.MapModel
             if (ocadSym.FrWidth > 0) {
                 SymColor secondColor = GetColor(ocadSym.FrColor);
                 float secondWidth = ToWorldDimensions(ocadSym.FrWidth);
-                LineJoin secondLineJoin = ImportLineJoin(ocadSym.FrStyle);
-                LineCap secondLineCap = ImportLineCap(ocadSym.FrStyle);
+                LineJoinMode secondLineJoin = ImportLineJoin(ocadSym.FrStyle);
+                LineCapMode secondLineCap = ImportLineCap(ocadSym.FrStyle);
 
                 symdef.SetSecondLine(secondColor, secondWidth, secondLineJoin, secondLineCap);
             }
@@ -1542,8 +1538,8 @@ namespace PurplePen.MapModel
             if (path == null)
                 return null;
 
-            LineJoin lineJoin = ImportLineJoin(obj.DiamFlags);
-            LineCap lineCap = ImportLineCap(obj.DiamFlags);
+            LineJoinMode lineJoin = ImportLineJoin(obj.DiamFlags);
+            LineCapMode lineCap = ImportLineCap(obj.DiamFlags);
 
             return new GraphicsLineSymbol(symdef, path, GetColor((int) obj.Col), ToWorldDimensions(obj.LineWidth), lineJoin, lineCap);
         }
@@ -1576,8 +1572,8 @@ namespace PurplePen.MapModel
             if (path == null)
                 return null;
 
-            LineJoin lineJoin = ImportLineJoin(obj.DiamFlags);
-            LineCap lineCap = ImportLineCap(obj.DiamFlags);
+            LineJoinMode lineJoin = ImportLineJoin(obj.DiamFlags);
+            LineCapMode lineCap = ImportLineCap(obj.DiamFlags);
 
             return new ImageLineSymbol(symdef, path, ColorFromCompressedCMYK(obj.Col), ToWorldDimensions(obj.LineWidth), lineJoin, lineCap, isVisible, sortOrder);
         }

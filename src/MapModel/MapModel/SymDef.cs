@@ -37,14 +37,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
-using System.IO;
-using SysDraw = System.Drawing;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using LineCap = System.Drawing.Drawing2D.LineCap;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
@@ -497,13 +490,13 @@ namespace PurplePen.MapModel
 
         SymColor lineColor;
         float thickness;
-        LineCap lineCap;
-        LineJoin lineJoin;
+        LineCapMode lineCap;
+        LineJoinMode lineJoin;
 
         SymColor secondLineColor;
         float secondThickness;
-        LineJoin secondLineJoin;
-        LineCap secondLineCap;
+        LineJoinMode secondLineJoin;
+        LineCapMode secondLineCap;
 
         DashInfo dashInfo;
         bool isDashed;
@@ -522,13 +515,13 @@ namespace PurplePen.MapModel
 
         public SymColor LineColor { get { return lineColor; } }
         public float LineThickness { get { return thickness; } }
-        public LineCap MainLineCap { get { return lineCap; } }
-        public LineJoin MainLineJoin { get { return lineJoin; } }
+        public LineCapMode MainLineCap { get { return lineCap; } }
+        public LineJoinMode MainLineJoin { get { return lineJoin; } }
         public bool HasSecondLine { get { return secondLineColor != null && secondThickness > 0; } }
         public SymColor SecondLineColor { get { return secondLineColor; } }
         public float SecondThickness { get { return secondThickness; } }
-        public LineJoin SecondLineJoin { get { return secondLineJoin; } }
-        public LineCap SecondLineCap { get { return secondLineCap; } }
+        public LineJoinMode SecondLineJoin { get { return secondLineJoin; } }
+        public LineCapMode SecondLineCap { get { return secondLineCap; } }
         public bool IsDashed { get { return isDashed; } }
         public DashInfo Dashes { get { return dashInfo; } }
         public bool IsDoubleLine { get { return isDoubleLine; } }
@@ -554,12 +547,12 @@ namespace PurplePen.MapModel
                 maxThickness = 0.0F;
                 if (lineColor != null && thickness > maxThickness)
                     maxThickness = thickness;
-                if (lineColor != null && lineJoin == LineJoin.Miter && thickness > maxMiteredThickness)
+                if (lineColor != null && lineJoin == LineJoinMode.Miter && thickness > maxMiteredThickness)
                     maxMiteredThickness = thickness;
 
                 if (secondLineColor != null && secondThickness > maxThickness)
                     maxThickness = secondThickness;
-                if (secondLineColor != null && secondLineJoin == LineJoin.Miter && secondThickness > maxMiteredThickness)
+                if (secondLineColor != null && secondLineJoin == LineJoinMode.Miter && secondThickness > maxMiteredThickness)
                     maxMiteredThickness = secondThickness;
 
                 if (isDoubleLine) {
@@ -591,7 +584,7 @@ namespace PurplePen.MapModel
             }
         }
 
-        public LineSymDef(string name, string symbolId, SymColor color, float thick, LineJoin lineJoin, LineCap lineCap)
+        public LineSymDef(string name, string symbolId, SymColor color, float thick, LineJoinMode lineJoin, LineCapMode lineCap)
             : base(name, symbolId)
         {
             lineColor = color;
@@ -600,7 +593,7 @@ namespace PurplePen.MapModel
             this.lineCap = lineCap;
         }
 
-        public void SetSecondLine(SymColor secondLineColor, float secondThickness, LineJoin lineJoin, LineCap lineCap)
+        public void SetSecondLine(SymColor secondLineColor, float secondThickness, LineJoinMode lineJoin, LineCapMode lineCap)
         {
             CheckModifiable();
             this.secondLineColor = secondLineColor;
@@ -685,7 +678,7 @@ namespace PurplePen.MapModel
                 if (!g.HasPen(pens.mainPen)) {
                     if (shortenInfo.shortenBeginning > 0 && shortenInfo.pointyEnds) {
                         // Always use round line cap with pointy ends.
-                        g.CreatePen(pens.mainPen, mainColorValue, thickness, LineCap.Round, lineJoin, GraphicsUtil.MITER_LIMIT);
+                        g.CreatePen(pens.mainPen, mainColorValue, thickness, LineCapMode.Round, lineJoin, GraphicsUtil.MITER_LIMIT);
                     }
                     else {
                         g.CreatePen(pens.mainPen, mainColorValue, thickness, lineCap, lineJoin, GraphicsUtil.MITER_LIMIT);
@@ -1704,7 +1697,7 @@ namespace PurplePen.MapModel
                 tipCorners[4] = Geometry.MoveDistance(pointsAlongPath[1], midpointWidth / 2, angles[1] + 90.0F);
                 tipCorners[2] = Geometry.MoveDistance(pointsAlongPath[2], lineWidth / 2, angles[2] - 90.0F);
                 tipCorners[3] = Geometry.MoveDistance(pointsAlongPath[2], lineWidth / 2, angles[2] + 90.0F);
-                g.FillPolygon(brush, tipCorners, SysDraw.Drawing2D.FillMode.Winding);
+                g.FillPolygon(brush, tipCorners, AreaFillMode.Winding);
             }
 
             if (pointyLengthEnd > 0) {
@@ -1714,7 +1707,7 @@ namespace PurplePen.MapModel
                 tipCorners[4] = Geometry.MoveDistance(pointsAlongPath[4], midpointWidth / 2, angles[4] + 90.0F);
                 tipCorners[2] = Geometry.MoveDistance(pointsAlongPath[3], lineWidth / 2, angles[3] - 90.0F);
                 tipCorners[3] = Geometry.MoveDistance(pointsAlongPath[3], lineWidth / 2, angles[3] + 90.0F);
-                g.FillPolygon(brush, tipCorners, SysDraw.Drawing2D.FillMode.Winding);
+                g.FillPolygon(brush, tipCorners, AreaFillMode.Winding);
             }
         }
 
@@ -2070,7 +2063,7 @@ namespace PurplePen.MapModel
                         hatchPens[i] = new object();
                     }
                     if (!g.HasPen(hatchPens[i])) {
-                        g.CreatePen(hatchPens[i], hatchings[i].hatchColor.GetBrushKey(g), hatchings[i].hatchWidth, LineCap.Flat, LineJoin.Miter, GraphicsUtil.MITER_LIMIT);
+                        g.CreatePen(hatchPens[i], hatchings[i].hatchColor.GetBrushKey(g), hatchings[i].hatchWidth, LineCapMode.Flat, LineJoinMode.Miter, GraphicsUtil.MITER_LIMIT);
                     }
                 }
             }

@@ -38,15 +38,10 @@ using System.IO;
 using System.Text;
 using System.Diagnostics;
 using System.Globalization;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using Color = System.Drawing.Color;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
-    using System.Drawing.Drawing2D;
     using System.Linq;
     using System.Xml;
     using PurplePen.Graphics2D;
@@ -433,8 +428,8 @@ namespace PurplePen.MapModel
             OpenMapperLineSymbol lineSymbol = new OpenMapperLineSymbol();
             lineSymbol.color = IdFromSymColor(glyphPart.color);
             lineSymbol.lineWidth = IntDistance(glyphPart.lineWidth);
-            lineSymbol.joinStyle = ExportJoinStyle(LineJoin.Round);
-            lineSymbol.capStyle = ExportCapStyle(LineCap.Flat);
+            lineSymbol.joinStyle = ExportJoinStyle(LineJoinMode.Round);
+            lineSymbol.capStyle = ExportCapStyle(LineCapMode.Flat);
             lineSymbol.dashed = false;
 
             // We have accumulated all the OpenMapper data structures. Now write them to the XML.
@@ -1379,21 +1374,21 @@ namespace PurplePen.MapModel
         }
 
 
-        private int ExportJoinStyle(LineJoin lineJoin)
+        private int ExportJoinStyle(LineJoinMode lineJoin)
         {
-            if (lineJoin == LineJoin.Bevel)
+            if (lineJoin == LineJoinMode.Bevel)
                 return 0;
-            else if (lineJoin == LineJoin.Round)
+            else if (lineJoin == LineJoinMode.Round)
                 return 2;
             else
                 return 1;
         }
 
-        private int ExportCapStyle(LineCap lineCap)
+        private int ExportCapStyle(LineCapMode lineCap)
         {
-            if (lineCap == LineCap.Round)
+            if (lineCap == LineCapMode.Round)
                 return 1;
-            else if (lineCap == LineCap.Square)
+            else if (lineCap == LineCapMode.Square)
                 return 2;
             else
                 return 0;

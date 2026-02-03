@@ -36,11 +36,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using FillMode = System.Drawing.Drawing2D.FillMode;
+using System.Drawing;
 
 namespace PurplePen.MapModel
 {
@@ -334,12 +330,12 @@ namespace PurplePen.MapModel
             {
                 // Use a path.
                 var pathPartList = GetPathPartListCore(g, points, holes, holePoints);
-                g.FillPath(brushKey, pathPartList, FillMode.Alternate);
+                g.FillPath(brushKey, pathPartList, AreaFillMode.Alternate);
             }
             else 
             {
                 // One simple line. Fill it in directly.
-                g.FillPolygon(brushKey, points, FillMode.Alternate);
+                g.FillPolygon(brushKey, points, AreaFillMode.Alternate);
             }
         }
 
@@ -423,7 +419,7 @@ namespace PurplePen.MapModel
 
             List<GraphicsPathPart> partList = GetPathPartListCore(g, points, holes, holePoints);
 
-            g.CreatePath(pathKey, partList, FillMode.Alternate);
+            g.CreatePath(pathKey, partList, AreaFillMode.Alternate);
             return pathKey;
         }
 
