@@ -38,11 +38,10 @@ using System.Text;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 
 using PurplePen.MapModel;
-using PurplePen.Graphics2D;
 using System.Globalization;
+using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
@@ -529,8 +528,8 @@ namespace PurplePen
             matrixNew.Scale(cellSize / 100.0F, cellSize / 100.0F);
             renderer.PushTransform(matrixNew);
 
-            thickPen = renderer.CreatePen(DescriptionAppearance.thickDescriptionLine, LineJoin.Miter, LineCap.Flat);
-            thinPen = renderer.CreatePen(DescriptionAppearance.thinDescriptionLine, LineJoin.Miter, LineCap.Flat);
+            thickPen = renderer.CreatePen(DescriptionAppearance.thickDescriptionLine, LineJoinMode.Miter, LineCapMode.Flat);
+            thinPen = renderer.CreatePen(DescriptionAppearance.thinDescriptionLine, LineJoinMode.Miter, LineCapMode.Flat);
 
             fontDescs[TITLE_FONT] = DescriptionAppearance.titleFont;                                        fontAlignments[TITLE_FONT] = StringAlignment.Center;
             fontDescs[COLUMNA_FONT] = DescriptionAppearance.columnAFont;                          fontAlignments[COLUMNA_FONT] = StringAlignment.Center;
@@ -849,7 +848,7 @@ namespace PurplePen
         void PopTransform();
 
         // Create a pen used for drawing lines.
-        object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap);
+        object CreatePen(float thickness, LineJoinMode lineJoin, LineCapMode lineCap);
 
         // Draw a line with a pen.
         void DrawLine(object pen, float x1, float y1, float x2, float y2);
@@ -901,7 +900,7 @@ namespace PurplePen
             grTarget.PopTransform();
         }
 
-        public object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap)
+        public object CreatePen(float thickness, LineJoinMode lineJoin, LineCapMode lineCap)
         {
             object pen = new object();
             grTarget.CreatePen(pen, color, thickness, lineCap, lineJoin, 5);
@@ -1188,7 +1187,7 @@ namespace PurplePen
             return map.GetFreeSymbolId(810);
         }
 
-        public object CreatePen(float thickness, LineJoin lineJoin, LineCap lineCap)
+        public object CreatePen(float thickness, LineJoinMode lineJoin, LineCapMode lineCap)
         {
             LineSymDef symdef = new LineSymDef("Description: line", GetOcadId(), color, Geometry.TransformDistance(thickness, currentTransform), lineJoin, lineCap);
             symdef.ToolboxImage = MapUtil.CreateToolboxIcon(Properties.Resources.DescLine_OcadToolbox);

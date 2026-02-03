@@ -36,8 +36,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using Draw2D = System.Drawing.Drawing2D;
 using System.Diagnostics;
 using System.Xml;
 using System.IO;
@@ -540,7 +540,7 @@ namespace PurplePen
             g.Transform = matSave;
             */
 
-            GraphicsState state = g.Save();
+            Draw2D.GraphicsState state = g.Save();
             try {
                 using (GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g)) {
                     Draw(grTarget, CmykColor.FromColor(color), rect);
@@ -599,7 +599,7 @@ namespace PurplePen
             Bitmap bm = new Bitmap(24, 24);
             using (Graphics g = Graphics.FromImage(bm)) {
                 g.Clear(Color.White);
-                g.SmoothingMode = SmoothingMode.AntiAlias;
+                g.SmoothingMode = Draw2D.SmoothingMode.AntiAlias;
                 if (kind >= 'T') {
                     g.SetClip(new RectangleF(0, 0, bm.Width / 2, bm.Height));
                     Draw(g, Color.Black, new RectangleF(0, bm.Height / 3F, bm.Width * 8F / 3F, bm.Height / 3F));
@@ -639,32 +639,32 @@ namespace PurplePen
         /// <summary>
         /// Convert attribute of line cap from a string.
         /// </summary>
-        LineCap ToLineCap(string s, XmlInput xmlinput)
+        LineCapMode ToLineCap(string s, XmlInput xmlinput)
         {
             switch (s) {
                 case "round":
-                    return LineCap.Round;
+                    return LineCapMode.Round;
                 case "flat":
-                    return LineCap.Flat;
+                    return LineCapMode.Flat;
                 default:
                     xmlinput.BadXml("Invalid line end value '{0}'", s);
-                    return LineCap.Round;
+                    return LineCapMode.Round;
             }
         }
 
         /// <summary>
         /// Convert attribute of line join from a string.
         /// </summary>
-        LineJoin ToLineJoin(string s, XmlInput xmlinput)
+        LineJoinMode ToLineJoin(string s, XmlInput xmlinput)
         {
             switch (s) {
                 case "round":
-                    return LineJoin.Round;
+                    return LineJoinMode.Round;
                 case "sharp":
-                    return LineJoin.Miter;
+                    return LineJoinMode.Miter;
                 default:
                     xmlinput.BadXml("Invalid line end value '{0}'", s);
-                    return LineJoin.Round;
+                    return LineJoinMode.Round;
             }
         }
 
@@ -793,8 +793,8 @@ namespace PurplePen
             public SymbolStrokes kind;
             public float thickness;
             public float radius;
-            public LineCap ends;
-            public LineJoin corners;
+            public LineCapMode ends;
+            public LineJoinMode corners;
             public PointF[] points;
 
             public void Draw(IGraphicsTarget g, CmykColor color)
@@ -828,7 +828,7 @@ namespace PurplePen
                         break;
 
                     case SymbolStrokes.FilledPolygon:
-                        g.FillPolygon(brush, points, FillMode.Alternate);
+                        g.FillPolygon(brush, points, AreaFillMode.Alternate);
                         break;
 
                     case SymbolStrokes.PolyBezier:
@@ -836,7 +836,7 @@ namespace PurplePen
                         break;
 
                     case SymbolStrokes.FilledPolyBezier:
-                        g.FillPath(brush, CreateBezierPath(points), FillMode.Alternate);
+                        g.FillPath(brush, CreateBezierPath(points), AreaFillMode.Alternate);
                         break;
 
                     default:
@@ -897,7 +897,7 @@ namespace PurplePen
                         pathPoints[points.Length] = pathPoints[0];
                         SymPath path = new SymPath(pathPoints, pathKinds);
 
-                        glyph.AddLine(color, path, thickness * scaleFactor, corners, corners == LineJoin.Round ? LineCap.Round : LineCap.Flat);
+                        glyph.AddLine(color, path, thickness * scaleFactor, corners, corners == LineJoinMode.Round ? LineCapMode.Round : LineCapMode.Flat);
                         break;
                     }
 

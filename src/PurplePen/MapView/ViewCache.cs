@@ -36,10 +36,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using Draw2D = System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
+
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace PurplePen.MapView {
     public delegate void MapDisplayChanged(Region changedRegion);
@@ -234,7 +237,7 @@ namespace PurplePen.MapView {
 								invalidRegion.MakeEmpty();
 							}
 							else {
-								invalidRegion.Transform(transformOldToNew);
+								invalidRegion.Transform(transformOldToNew.ToSysDrawMatrix());
 							}
 							Region exposed = new Region(newBitmapRect);
 							exposed.Exclude(copy);
@@ -266,7 +269,7 @@ namespace PurplePen.MapView {
 		float GetMinResolution(Graphics g) {
 			// Determine pixel size in world coordinates.
 			PointF[] pts = {new PointF(0,0), new PointF(1, 0)};
-			g.TransformPoints(CoordinateSpace.World, CoordinateSpace.Device, pts);
+			g.TransformPoints(Draw2D.CoordinateSpace.World, Draw2D.CoordinateSpace.Device, pts);
 			return Util.DistanceF(pts[0], pts[1]);
 		}
 
@@ -283,7 +286,7 @@ namespace PurplePen.MapView {
 
 			// Copy the region and transform to bitmap coords.
 			Region copy = regionChanged.Clone();
-			copy.Transform(matTransform);
+			copy.Transform(matTransform.ToSysDrawMatrix());
 
 			// Union with the invalid region.
 			if (allValid) {

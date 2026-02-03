@@ -35,7 +35,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using PurplePen.MapModel;
@@ -535,7 +534,7 @@ namespace PurplePen
 
                 Graphics g = Graphics.FromImage(dimmed);
                 ImageAttributes imageAttributes = new ImageAttributes();
-                imageAttributes.SetColorMatrix(ComputeColorMatrix());
+                imageAttributes.SetColorMatrix(ComputeColorMatrix().ToSysDrawColorMatrix());
                 g.DrawImage(((GDIPlus_Bitmap)bitmap).Bitmap, new Rectangle(0, 0, bitmap.PixelWidth, bitmap.PixelHeight), 0, 0, bitmap.PixelWidth, bitmap.PixelHeight, GraphicsUnit.Pixel, imageAttributes);
                 g.Dispose();
 

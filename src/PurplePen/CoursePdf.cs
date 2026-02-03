@@ -340,7 +340,7 @@ namespace PurplePen
                 new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[] { rect.Location }),
                 new GraphicsPathPart(GraphicsPathPartKind.Lines, new PointF[] { new PointF(rect.Right, rect.Top), new PointF(rect.Right, rect.Bottom), new PointF(rect.Left, rect.Bottom), new PointF(rect.Left, rect.Top)}),
                 new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0])
-            }, FillMode.Winding);
+            }, AreaFillMode.Winding);
             graphicsTarget.PushClip(rectanglePath);
         }
     }

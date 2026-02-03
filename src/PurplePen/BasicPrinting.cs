@@ -37,8 +37,8 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using Draw2D = System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using PurplePen.Graphics2D;
 using PurplePen.MapModel;
@@ -202,9 +202,9 @@ namespace PurplePen
 
                 using (Graphics g = Graphics.FromImage(bm)) {
                     g.Clear(Color.White);
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.SmoothingMode = Draw2D.SmoothingMode.AntiAlias;
                     g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    g.InterpolationMode = Draw2D.InterpolationMode.HighQualityBicubic;
                     g.ScaleTransform(2, 2);
                     Rectangle pageBounds = pageSettings.Bounds;
                     Rectangle marginBounds = Rectangle.FromLTRB(pageBounds.Left + pageSettings.Margins.Left, pageBounds.Top + pageSettings.Margins.Top, pageBounds.Right - pageSettings.Margins.Right, pageBounds.Bottom - pageSettings.Margins.Bottom);

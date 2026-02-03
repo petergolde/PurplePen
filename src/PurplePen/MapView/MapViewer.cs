@@ -36,12 +36,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using Draw2D = System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace PurplePen.MapView
 {
@@ -308,7 +309,7 @@ namespace PurplePen.MapView
 
         Graphics GetWorldGraphics() {
             Graphics g = CreateGraphics();
-            g.Transform = xformWorldToPixel;
+            g.Transform = xformWorldToPixel.ToSysDrawMatrix();
             return g;
         }
 
@@ -565,7 +566,7 @@ namespace PurplePen.MapView
             if (regionChanged != null) {
                 // Transform the changed region into pixel coordinates and invalidate it.
                 Region copy = regionChanged.Clone();
-                copy.Transform(xformWorldToPixel);
+                copy.Transform(xformWorldToPixel.ToSysDrawMatrix());
                 Invalidate(copy); 
             }
             else {
@@ -602,7 +603,7 @@ namespace PurplePen.MapView
             // Set the rendering origin so the hatch brushes draw correctly and don't scroll weirdly.
             PointF origin = WorldToPixel(new PointF(0, 0));
             g.RenderingOrigin = Util.PointFromPointF(origin);
-            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            g.PixelOffsetMode = Draw2D.PixelOffsetMode.HighQuality;
 
             foreach (IMapViewerHighlight h in highlights) {
                 h.DrawHighlight(g, xformWorldToPixel);
@@ -616,7 +617,7 @@ namespace PurplePen.MapView
             // Get brush that erases.
             Brush eraseBrush = viewcache.GetCacheBrush(ClientSize, viewport, xformWorldToPixel);
 
-            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            g.PixelOffsetMode = Draw2D.PixelOffsetMode.HighQuality;
 
             foreach (IMapViewerHighlight h in highlights) {
                 h.EraseHighlight(g, xformWorldToPixel, eraseBrush);

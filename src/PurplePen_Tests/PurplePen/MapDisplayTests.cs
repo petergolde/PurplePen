@@ -37,10 +37,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using TestingUtils;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 
 namespace PurplePen.Tests
 {
@@ -64,7 +66,7 @@ namespace PurplePen.Tests
             Matrix inverse = transform.Clone();
             inverse.Invert();
             using (Region clipRegion = new Region(clip)) {
-                clipRegion.Transform(inverse);
+                clipRegion.Transform(inverse.ToSysDrawMatrix());
                 mapdisplay.Draw(bitmap, transform, clipRegion);
             }
         }

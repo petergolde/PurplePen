@@ -37,8 +37,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 
+using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;

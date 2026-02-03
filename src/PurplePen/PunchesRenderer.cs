@@ -35,7 +35,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 
@@ -122,9 +121,9 @@ namespace PurplePen
             blackBrush = new object();
             g.CreateSolidBrush(blackBrush, black);
             thinPen = new object();
-            g.CreatePen(thinPen, black, PunchcardAppearance.thinLine, LineCap.Flat, LineJoin.Miter, 5F);
+            g.CreatePen(thinPen, black, PunchcardAppearance.thinLine, LineCapMode.Flat, LineJoinMode.Miter, 5F);
             thickPen = new object();
-            g.CreatePen(thickPen, black, PunchcardAppearance.thickLine, LineCap.Flat, LineJoin.Miter, 5F);
+            g.CreatePen(thickPen, black, PunchcardAppearance.thickLine, LineCapMode.Flat, LineJoinMode.Miter, 5F);
 
             textMetrics = new GDIPlus_TextMetrics();        }
 

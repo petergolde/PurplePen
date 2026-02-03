@@ -11,7 +11,6 @@ using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 
 using ColorConverter = PurplePen.Graphics2D.ColorConverter;
-using System.Drawing.Drawing2D;
 
 namespace PurplePen
 {
@@ -268,7 +267,7 @@ namespace PurplePen
         {
             // Draw road
             object roadPen = new object();
-            grTarget.CreatePen(roadPen, CmykColor.FromCmyk(0, 0, 0, 1), 0.35F, LineCap.Flat, LineJoin.Round, 5F);
+            grTarget.CreatePen(roadPen, CmykColor.FromCmyk(0, 0, 0, 1), 0.35F, LineCapMode.Flat, LineJoinMode   .Round, 5F);
             PointF[] roadPts = { new PointF(28.3F, 8.7F), new PointF(28.7F, 6.7F), new PointF(30.8F, 6.3F), new PointF(33.1F, 5.9F),
                                        new PointF(34.4F, 6.3F), new PointF(36.5F, 5.4F), new PointF(38.9F, 4.3F), new PointF(38.4F, 1.1F), new PointF(37.6F, -0.5F)};
             GraphicsPathPart roadPathStart = new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] { new PointF(27.8F, 10.5F) });
@@ -282,7 +281,7 @@ namespace PurplePen
             Matrix xformBoulder = new Matrix();
             xformBoulder.Translate(18, 5.1F);
             grTarget.PushTransform(xformBoulder);
-            grTarget.FillPolygon(boulderBrush, boulderPts, FillMode.Alternate);
+            grTarget.FillPolygon(boulderBrush, boulderPts, AreaFillMode.Alternate);
             grTarget.PopTransform();
 
         }
@@ -328,7 +327,7 @@ namespace PurplePen
                 object brush = new object(), pen = new object(), lightGreenBrush = new object();
 
                 grTarget.CreateSolidBrush(brush, purple);
-                grTarget.CreatePen(pen, purple, lineWidth, LineCap.Round, LineJoin.Round, 5F);
+                grTarget.CreatePen(pen, purple, lineWidth, LineCapMode.Round, LineJoinMode.Round, 5F);
                 grTarget.CreateSolidBrush(lightGreenBrush, CmykColor.FromCmyk(0.455F, 0, 0.545F, 0));
 
                 // Draw light green background.
@@ -361,7 +360,7 @@ namespace PurplePen
                 if (upDownOutlineWidth.Value > 0) {
                     object whitePen = new object();
                     object whiteBrush = new object();
-                    grTarget.CreatePen(whitePen, CmykColor.FromCmyk(0, 0, 0, 0), (float)upDownOutlineWidth.Value * 2, LineCap.Round, LineJoin.Round, 5F);
+                    grTarget.CreatePen(whitePen, CmykColor.FromCmyk(0, 0, 0, 0), (float)upDownOutlineWidth.Value * 2, LineCapMode.Round, LineJoinMode.Round, 5F);
                     grTarget.CreateSolidBrush(whiteBrush, CmykColor.FromCmyk(0, 0, 0, 0));
                     grTarget.DrawText(controlNumberText, font, whiteBrush, controlNumberLocation);
                     grTarget.DrawTextOutline(controlNumberText, font, whitePen, controlNumberLocation);

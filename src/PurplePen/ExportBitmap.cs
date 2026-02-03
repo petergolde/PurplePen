@@ -39,7 +39,6 @@ using System.Xml;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 
 using PurplePen.MapModel;

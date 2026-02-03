@@ -38,7 +38,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Xml;
@@ -46,6 +45,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
 
+using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 
 namespace PurplePen.Tests
@@ -134,8 +134,8 @@ namespace PurplePen.Tests
             Assert.AreEqual(1, symbols[1].strokes.Length);
             Assert.AreEqual(Symbol.SymbolStrokes.Polyline, symbols[1].strokes[0].kind);
             Assert.AreEqual(5F, symbols[1].strokes[0].thickness);
-            Assert.AreEqual(LineCap.Round, symbols[1].strokes[0].ends);
-            Assert.AreEqual(LineJoin.Miter, symbols[1].strokes[0].corners);
+            Assert.AreEqual(LineCapMode.Round, symbols[1].strokes[0].ends);
+            Assert.AreEqual(LineJoinMode.Miter, symbols[1].strokes[0].corners);
             Assert.AreEqual(3, symbols[1].strokes[0].points.Length);
             Assert.AreEqual(-40F, symbols[1].strokes[0].points[0].X);
             Assert.AreEqual(50F, symbols[1].strokes[0].points[0].Y);
@@ -179,7 +179,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(1, symbols[3].strokes.Length);
             Assert.AreEqual(Symbol.SymbolStrokes.Polygon, symbols[3].strokes[0].kind);
             Assert.AreEqual(5F, symbols[3].strokes[0].thickness);
-            Assert.AreEqual(LineJoin.Miter, symbols[3].strokes[0].corners);
+            Assert.AreEqual(LineJoinMode.Miter, symbols[3].strokes[0].corners);
             Assert.AreEqual(4, symbols[3].strokes[0].points.Length);
             Assert.AreEqual(0.0, symbols[3].strokes[0].points[0].X);
             Assert.AreEqual(50F, symbols[3].strokes[0].points[0].Y);
@@ -215,7 +215,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(1, symbols[5].strokes.Length);
             Assert.AreEqual(Symbol.SymbolStrokes.PolyBezier, symbols[5].strokes[0].kind);
             Assert.AreEqual(12.5F, symbols[5].strokes[0].thickness);
-            Assert.AreEqual(LineCap.Flat, symbols[5].strokes[0].ends);
+            Assert.AreEqual(LineCapMode.Flat, symbols[5].strokes[0].ends);
             Assert.AreEqual(13, symbols[5].strokes[0].points.Length);
             Assert.AreEqual(-80F, symbols[5].strokes[0].points[0].X);
             Assert.AreEqual(-80F, symbols[5].strokes[0].points[0].Y);
@@ -401,9 +401,9 @@ namespace PurplePen.Tests
                 options.minResolution = (float) (8.0 / bm.Width);
                 options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                Matrix saveTransform = g.Transform;
+                Matrix saveTransform = g.Transform.ToGraphics2DMatrix();
 
-                g.MultiplyTransform(GetTransform(bm.Size));
+                g.MultiplyTransform(GetTransform(bm.Size).ToSysDrawMatrix());
 
                 g.Clear(Color.White);
 
@@ -413,7 +413,7 @@ namespace PurplePen.Tests
                     map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(-100F, -100F, 200F, 200F), options, null);
 
                 // Now use normal drawing to super-impose.
-                g.Transform = saveTransform;
+                g.Transform = saveTransform.ToSysDrawMatrix();
                 RectangleF rect = new RectangleF(0.0F, 0.0F, bm.Width, bm.Height);
                 sym.Draw(g, Color.FromArgb(50, Color.Black), rect);
             }

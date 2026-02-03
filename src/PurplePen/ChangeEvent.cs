@@ -41,7 +41,6 @@ using System.Linq;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
-using System.Drawing.Drawing2D;
 using PurplePen.Livelox.ApiContracts;
 
 namespace PurplePen

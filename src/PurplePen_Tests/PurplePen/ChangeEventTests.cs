@@ -49,8 +49,6 @@ using PurplePen.Graphics2D;
 namespace PurplePen.Tests
 {
     using PurplePen.MapModel;
-    using System.Drawing.Drawing2D;
-    using System.Windows.Media;
     using Geometry = PurplePen.Graphics2D.Geometry;
 
     [TestClass]
@@ -3574,7 +3572,7 @@ namespace PurplePen.Tests
             }
         }
 
-        private void CheckChangedControlPointLocation(ControlPoint newControlPoint, ControlPoint oldControlPoint, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        private void CheckChangedControlPointLocation(ControlPoint newControlPoint, ControlPoint oldControlPoint, Matrix matrix, float rotation, float scale)
         {
             PointF expectedLocation = Geometry.TransformPoint(oldControlPoint.location, matrix);
             Assert.AreEqual(expectedLocation.X, newControlPoint.location.X, 0.0001);
@@ -3595,7 +3593,7 @@ namespace PurplePen.Tests
             }
         }
 
-        private void CheckChangesCourseControlLocation(CourseControl newCourseControl, CourseControl oldCourseControl, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        private void CheckChangesCourseControlLocation(CourseControl newCourseControl, CourseControl oldCourseControl, Matrix matrix, float rotation, float scale)
         {
             double rotRadians = rotation * Math.PI / 180.0;
             if (oldCourseControl.customNumberPlacement) {
@@ -3604,7 +3602,7 @@ namespace PurplePen.Tests
             }
         }
 
-        private void CheckChangesSpecialLocation(Special newSpecial, Special oldSpecial, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        private void CheckChangesSpecialLocation(Special newSpecial, Special oldSpecial, Matrix matrix, float rotation, float scale)
         {
             switch (oldSpecial.kind) {
                 case SpecialKind.Text:
@@ -3636,7 +3634,7 @@ namespace PurplePen.Tests
             }
         }
 
-        private void CheckChangesLegLocation(Leg newLeg, Leg oldLeg, System.Drawing.Drawing2D.Matrix matrix, float rotation, float scale)
+        private void CheckChangesLegLocation(Leg newLeg, Leg oldLeg, Matrix matrix, float rotation, float scale)
         {
             if (oldLeg.bends != null) {
                 PointF[] expectedBends = Geometry.TransformPoints(oldLeg.bends, matrix);
@@ -3660,7 +3658,7 @@ namespace PurplePen.Tests
             }
         }
 
-        private void CheckChangesPrintArea(PrintArea newPrintArea, PrintArea oldPrintArea, System.Drawing.Drawing2D.Matrix matrix, float scale)
+        private void CheckChangesPrintArea(PrintArea newPrintArea, PrintArea oldPrintArea, Matrix matrix, float scale)
         {
             if (oldPrintArea.autoPrintArea) {
                 Assert.IsTrue(newPrintArea.autoPrintArea);
@@ -3680,7 +3678,7 @@ namespace PurplePen.Tests
 
         private void TestChangeAllObjectLocations(EventDB eventDB, PointF location, float rotation, float scale)
         {
-            System.Drawing.Drawing2D.Matrix matrix = new System.Drawing.Drawing2D.Matrix();
+            Matrix matrix = new Matrix();
             matrix.Scale(scale, scale);
             matrix.RotateAt(rotation, location);
 

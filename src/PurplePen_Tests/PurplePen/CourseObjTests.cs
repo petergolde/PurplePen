@@ -36,7 +36,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
@@ -174,7 +173,7 @@ namespace PurplePen.Tests
                 options.minResolution = (float) (8.0 / bm.Width);
                 options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                g.MultiplyTransform(GetTransform(bm.Size));
+                g.MultiplyTransform(GetTransform(bm.Size).ToSysDrawMatrix());
 
                 g.Clear(backColor);
                 using (map.Read())
