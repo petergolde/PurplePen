@@ -42,16 +42,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.IO;
 
-using SysDraw = System.Drawing;
-using SysDraw2D = System.Drawing.Drawing2D;
-using PointF = System.Drawing.PointF;
-using RectangleF = System.Drawing.RectangleF;
-using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
-using FillMode = System.Drawing.Drawing2D.FillMode;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using LineCap = System.Drawing.Drawing2D.LineCap;
-
 
 
 namespace PurplePen.MapModel
@@ -115,7 +105,7 @@ namespace PurplePen.MapModel
             brushMap.Add(brushKey, paint);
         }
 
-        private void CreatePenCore(object penKey, SKPaint basePaint, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        private void CreatePenCore(object penKey, SKPaint basePaint, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penMap.ContainsKey(penKey))
                 throw new InvalidOperationException("Key already has a pen created for it");
@@ -125,13 +115,13 @@ namespace PurplePen.MapModel
             paint.StrokeWidth = width;
 
             switch (caps) {
-                case System.Drawing.Drawing2D.LineCap.Flat:
+                case LineCapMode.Flat:
                     paint.StrokeCap = SKStrokeCap.Butt;
                     break;
-                case System.Drawing.Drawing2D.LineCap.Round:
+                case LineCapMode.Round:
                     paint.StrokeCap = SKStrokeCap.Round;
                     break;
-                case System.Drawing.Drawing2D.LineCap.Square:
+                case LineCapMode.Square:
                     paint.StrokeCap = SKStrokeCap.Square;
                     break;
                 default:
@@ -139,14 +129,14 @@ namespace PurplePen.MapModel
             }
 
             switch (join) {
-                case System.Drawing.Drawing2D.LineJoin.Bevel:
+                case LineJoinMode.Bevel:
                     paint.StrokeJoin = SKStrokeJoin.Bevel;
                     break;
-                case System.Drawing.Drawing2D.LineJoin.Miter:
+                case LineJoinMode.Miter:
                     paint.StrokeJoin = SKStrokeJoin.Miter;
                     paint.StrokeMiter = miterLimit;
                     break;
-                case System.Drawing.Drawing2D.LineJoin.Round:
+                case LineJoinMode.Round:
                     paint.StrokeJoin = SKStrokeJoin.Round;
                     break;
                 default:
@@ -156,14 +146,14 @@ namespace PurplePen.MapModel
             penMap.Add(penKey, paint);
         }
 
-        public void CreatePen(object penKey, CmykColor color, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, CmykColor color, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             SKPaint paint = new SKPaint();
             paint.Color = ConvertColor(color);
             CreatePenCore(penKey, paint, width, caps, join, miterLimit);
         }
 
-        public void CreatePen(object penKey, object brushKey, float width, SysDraw2D.LineCap caps, SysDraw2D.LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, object brushKey, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             SKPaint brushPaint = GetBrushPaint(brushKey);
             CreatePenCore(penKey, brushPaint, width, caps, join, miterLimit);
@@ -199,7 +189,7 @@ namespace PurplePen.MapModel
             fontMap.Add(fontKey, font);
         }
 
-        public void CreatePath(object pathKey, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void CreatePath(object pathKey, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             if (pathMap.ContainsKey(pathKey))
                 throw new InvalidOperationException("Key already has a path created for it");
@@ -208,11 +198,11 @@ namespace PurplePen.MapModel
             pathMap.Add(pathKey, path);
         }
 
-        private SKPath GetPath(List<GraphicsPathPart> parts, FillMode windingMode)
+        private SKPath GetPath(List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             SKPath path = new SKPath();
             
-            path.FillType = (windingMode == FillMode.Alternate) ? SKPathFillType.EvenOdd : SKPathFillType.Winding;
+            path.FillType = (windingMode == AreaFillMode.Alternate) ? SKPathFillType.EvenOdd : SKPathFillType.Winding;
 
             int count = parts.Count;
             for (int partIndex = 0; partIndex < count; ++partIndex) {
@@ -277,7 +267,7 @@ namespace PurplePen.MapModel
             PushClip(GetSkPath(pathKey));
         }
 
-        public void PushClip(List<GraphicsPathPart> parts, FillMode windingMode)
+        public void PushClip(List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             using (SKPath path = GetPath(parts, windingMode)) {
                 PushClip(path);
@@ -404,10 +394,10 @@ namespace PurplePen.MapModel
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(object brushKey, PointF[] pts, SysDraw2D.FillMode windingMode)
+        public void FillPolygon(object brushKey, PointF[] pts, AreaFillMode windingMode)
         {
             using (SKPath path = new SKPath()) {
-		        path.FillType = (windingMode == FillMode.Alternate) ? SKPathFillType.EvenOdd : SKPathFillType.Winding;
+		        path.FillType = (windingMode == AreaFillMode.Alternate) ? SKPathFillType.EvenOdd : SKPathFillType.Winding;
 
                 path.MoveTo(pts[0].X, pts[0].Y);
                 for (int i = 1; i < pts.Length; ++i)
@@ -430,7 +420,7 @@ namespace PurplePen.MapModel
 
         public void DrawPath(object penKey, List<GraphicsPathPart> parts)
         {
-            DrawSKPath(penKey, GetPath(parts, FillMode.Winding));
+            DrawSKPath(penKey, GetPath(parts, AreaFillMode.Winding));
         }
 
         private void FillSKPath(object brushKey, SKPath path)
@@ -444,7 +434,7 @@ namespace PurplePen.MapModel
             FillSKPath(brushKey, GetSkPath(pathKey));
         }
 
-        public void FillPath(object brushKey, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void FillPath(object brushKey, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             FillSKPath(brushKey, GetPath(parts, windingMode));
         }
@@ -1099,7 +1089,7 @@ namespace PurplePen.MapModel
     {
         public virtual SKColor ToColor(CmykColor cmykColor)
         {
-            SysDraw.Color sysColor = ColorConverter.ToColor(cmykColor);
+            Color sysColor = ColorConverter.ToColor(cmykColor);
             return new SKColor(sysColor.R, sysColor.G, sysColor.B, sysColor.A);
         }
     }

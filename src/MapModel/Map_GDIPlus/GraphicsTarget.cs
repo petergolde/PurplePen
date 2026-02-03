@@ -38,6 +38,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using Gr2DMatrix = PurplePen.Graphics2D.Matrix;
+using SysDrawMatrix = System.Drawing.Drawing2D.Matrix;
 
 namespace PurplePen.MapModel
 {
@@ -73,7 +75,7 @@ using System.Runtime.InteropServices;
             this.intensity = intensity;
             if (intensity < 1.0F) {
                 imageAttributes = new ImageAttributes();
-                imageAttributes.SetColorMatrix(ComputeColorMatrix(intensity));
+                imageAttributes.SetColorMatrix(ComputeColorMatrix(intensity).ToSysDrawColorMatrix());
             }
 
             g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
@@ -160,28 +162,28 @@ using System.Runtime.InteropServices;
             return new GDIPlus_BrushTarget(this, g, bitmap, size, angle);
         }
 
-        public void CreatePen(object penKey, object brushKey, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, object brushKey, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penMap.ContainsKey(penKey))
                 throw new InvalidOperationException("Key already has a pen created for it");
 
             Brush brush = GetBrush(brushKey);
             Pen pen = new Pen(brush, width);
-            pen.StartCap = pen.EndCap = caps;
-            pen.LineJoin = join;
+            pen.StartCap = pen.EndCap = caps.ToSysDrawLineCap();
+            pen.LineJoin = join.ToSysDrawLineJoin();
             pen.MiterLimit = miterLimit;
 
             penMap.Add(penKey, pen);
         }
 
-        public void CreatePen(object penKey, CmykColor color, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, CmykColor color, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penMap.ContainsKey(penKey))
                 throw new InvalidOperationException("Key already has a pen created for it");
 
             Pen pen = new Pen(ConvertColor(color), width);
-            pen.StartCap = pen.EndCap = caps;
-            pen.LineJoin = join;
+            pen.StartCap = pen.EndCap = caps.ToSysDrawLineCap();
+            pen.LineJoin = join.ToSysDrawLineJoin();
             pen.MiterLimit = miterLimit;
 
             penMap.Add(penKey, pen);
@@ -210,7 +212,7 @@ using System.Runtime.InteropServices;
             fontMap.Add(fontKey, font);
         }
 
-        public void CreatePath(object pathKey, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void CreatePath(object pathKey, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             if (pathMap.ContainsKey(pathKey))
                 throw new InvalidOperationException("Key already has a path created for it");
@@ -220,9 +222,9 @@ using System.Runtime.InteropServices;
             pathMap.Add(pathKey, path);
         }
 
-        private GraphicsPath GetGraphicsPath(List<GraphicsPathPart> parts, FillMode windingMode)
+        private GraphicsPath GetGraphicsPath(List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
-            GraphicsPath path = new GraphicsPath(windingMode);
+            GraphicsPath path = new GraphicsPath(windingMode.ToSysDrawFillMode());
             PointF startPoint = default(PointF);
 
             foreach (GraphicsPathPart part in parts) {
@@ -264,7 +266,7 @@ using System.Runtime.InteropServices;
         public void PushTransform(Matrix matrix)
         {
             stateStack.Push(Graphics.Save());
-            Graphics.MultiplyTransform(matrix, MatrixOrder.Prepend);
+            Graphics.MultiplyTransform(matrix.ToSysDrawMatrix(), System.Drawing.Drawing2D.MatrixOrder.Prepend);
         }
 
         // Pop the transform
@@ -281,7 +283,7 @@ using System.Runtime.InteropServices;
                 Graphics.IntersectClip(region);
         }
 
-        public void PushClip(List<GraphicsPathPart> parts, FillMode fillMode)
+        public void PushClip(List<GraphicsPathPart> parts, AreaFillMode fillMode)
         {
             stateStack.Push(Graphics.Save());
 
@@ -441,10 +443,10 @@ using System.Runtime.InteropServices;
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode)
+        public void FillPolygon(object brushKey, PointF[] pts, AreaFillMode windingMode)
         {
             try {
-                Graphics.FillPolygon(GetBrush(brushKey), pts, windingMode);
+                Graphics.FillPolygon(GetBrush(brushKey), pts, windingMode.ToSysDrawFillMode());
             }
             catch (Exception) {
                 // Do nothing. Very occasionally, GDI+ given an overflow exception or ExternalException or OutOfMemory exception. 
@@ -468,7 +470,7 @@ using System.Runtime.InteropServices;
         public void DrawPath(object penKey, List<GraphicsPathPart> parts)
         {
             try {
-                using (GraphicsPath grPath = GetGraphicsPath(parts, FillMode.Alternate)) {
+                using (GraphicsPath grPath = GetGraphicsPath(parts, AreaFillMode.Alternate)) {
                     Graphics.DrawPath(GetPen(penKey), grPath);
                 }
             }
@@ -490,7 +492,7 @@ using System.Runtime.InteropServices;
             }
         }
 
-        public void FillPath(object brushKey, List<GraphicsPathPart> parts, FillMode fillMode)
+        public void FillPath(object brushKey, List<GraphicsPathPart> parts, AreaFillMode fillMode)
         {
             try {
                 using (GraphicsPath grPath = GetGraphicsPath(parts, fillMode)) {
@@ -538,7 +540,7 @@ using System.Runtime.InteropServices;
         public void DrawBitmap(IGraphicsBitmap bm, RectangleF rectangle, BitmapScaling scalingMode, float minResolution)
         {
             // If the transformed rectangle is too large, we can run out of memory.
-            RectangleF transformedBounds = Geometry.BoundsOfTransformedRectangle(rectangle, Graphics.Transform);
+            RectangleF transformedBounds = Geometry.BoundsOfTransformedRectangle(rectangle, Graphics.Transform.ToGraphics2DMatrix());
             if (Math.Abs(transformedBounds.Width * transformedBounds.Height) > 35000000)
                 scalingMode = BitmapScaling.NearestNeighbor;
 
@@ -575,7 +577,7 @@ using System.Runtime.InteropServices;
         public void DrawBitmapPart(IGraphicsBitmap bm, int x, int y, int width, int height, RectangleF rectangle, BitmapScaling scalingMode, float minResolution)
         {
             // If the transformed rectangle is too large, we can run out of memory.
-            RectangleF transformedBounds = Geometry.BoundsOfTransformedRectangle(rectangle, Graphics.Transform);
+            RectangleF transformedBounds = Geometry.BoundsOfTransformedRectangle(rectangle, Graphics.Transform.ToGraphics2DMatrix());
             if (Math.Abs(transformedBounds.Width * transformedBounds.Height) > 35000000)
                 scalingMode = BitmapScaling.NearestNeighbor;
 
@@ -798,7 +800,7 @@ using System.Runtime.InteropServices;
             if (clipRegion != null)
                 graphics.IntersectClip(clipRegion);
 
-            graphics.Transform = transform;
+            graphics.Transform = transform.ToSysDrawMatrix();
 
             if (initialColor != null) {
                 colorConverter = colorConverter ?? new GDIPlus_ColorConverter();

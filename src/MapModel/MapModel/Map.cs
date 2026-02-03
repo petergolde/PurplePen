@@ -64,6 +64,12 @@ namespace PurplePen.MapModel
             this.entries = entries;
         }
 
+        public float[][] Elements {
+            get {
+                return (float[][])(entries.Clone());
+            }
+        }
+
         public float this[int i, int j]
         {
             get
