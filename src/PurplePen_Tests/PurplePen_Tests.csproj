@@ -1,59 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0690D25C-7696-4B7A-9AAB-FBBCAFD0EEF5}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PurplePen_Tests</RootNamespace>
-    <AssemblyName>PurplePen_Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <IsTestProject>true</IsTestProject>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;TEST</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>..\Tools\PurplePenRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;TEST</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StorePkg|AnyCPU'">
     <OutputPath>bin\StorePkg\</OutputPath>
     <DefineConstants>TRACE;TEST</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -61,128 +30,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libraries\Newtonsoft.Json\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />
-    <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="CreateBitmapTests.cs" />
-    <Compile Include="MapViewer\BitmapTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PurplePen\AddControlModeTests.cs" />
-    <Compile Include="PurplePen\AddCornerModeTests.cs" />
-    <Compile Include="PurplePen\AddRemoveGapModeTests.cs" />
-    <Compile Include="PurplePen\ChangeEventTests.cs" />
-    <Compile Include="PurplePen\CircleGapTests.cs" />
-    <Compile Include="PurplePen\CompatibilityTests.cs" />
-    <Compile Include="PurplePen\ControllerTests.cs" />
-    <Compile Include="PurplePen\CourseFormatterTests.cs" />
-    <Compile Include="PurplePen\CourseLayoutTests.cs" />
-    <Compile Include="PurplePen\CourseObjTests.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="PurplePen\CoursePrintingTests.cs" />
-    <Compile Include="PurplePen\CourseRendererTests.cs" />
-    <Compile Include="PurplePen\CourseSelectorTestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurplePen\CourseSelectorTestForm.Designer.cs">
-      <DependentUpon>CourseSelectorTestForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurplePen\CourseViewTests.cs" />
-    <Compile Include="PurplePen\DefaultModeTests.cs" />
-    <Compile Include="PurplePen\DescriptionFormatterTests.cs" />
-    <Compile Include="PurplePen\DescriptionLocalizeTests.cs" />
-    <Compile Include="PurplePen\DescriptionPrintingTests.cs" />
-    <Compile Include="PurplePen\DescriptionRendererTests.cs" />
-    <Compile Include="PurplePen\DotGridTester.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurplePen\DotGridTester.Designer.cs">
-      <DependentUpon>DotGridTester.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurplePen\EventDBTests.cs" />
-    <Compile Include="PurplePen\ExportXmlTests.cs" />
-    <Compile Include="PurplePen\FindPurpleTests.cs" />
-    <Compile Include="PurplePen\GpxTests.cs" />
-    <Compile Include="PurplePen\LegGapTests.cs" />
-    <Compile Include="PurplePen\MainFrameTests.cs" />
-    <Compile Include="PurplePen\MapDisplayTests.cs" />
-    <Compile Include="PurplePen\MapUtilTests.cs" />
-    <Compile Include="PurplePen\MoveAllComputationsTests.cs" />
-    <Compile Include="PurplePen\MoveAllControlsModeTests.cs" />
-    <Compile Include="PurplePen\ObjectStoreTests.cs" />
-    <Compile Include="PurplePen\PairTests.cs" />
-    <Compile Include="PurplePen\PdfCourseTests.cs" />
-    <Compile Include="PurplePen\PdfMapFileTests.cs" />
-    <Compile Include="PurplePen\PunchcardPrintingTests.cs" />
-    <Compile Include="PurplePen\PunchesRendererTests.cs" />
-    <Compile Include="PurplePen\QueryEventTests.cs" />
-    <Compile Include="PurplePen\RelayVariationsTests.cs" />
-    <Compile Include="PurplePen\ReportTests.cs" />
-    <Compile Include="PurplePen\RotateModeTests.cs" />
-    <Compile Include="PurplePen\LiveloxTests.cs" />
-    <Compile Include="PurplePen\RouteGadgetTests.cs" />
-    <Compile Include="PurplePen\SelectionDescriberTests.cs" />
-    <Compile Include="PurplePen\SelectionMgrTests.cs" />
-    <Compile Include="PurplePen\SetPrintAreaTests.cs" />
-    <Compile Include="PurplePen\SymbolDBTests.cs" />
-    <Compile Include="PurplePen\TestFixtureBase.cs" />
-    <Compile Include="PurplePen\TestUI.cs" />
-    <Compile Include="PurplePen\TextifierTests.cs" />
-    <Compile Include="PurplePen\TopologyFormatterTests.cs" />
-    <Compile Include="PurplePen\UtilTests.cs" />
-    <Compile Include="PurplePen\XmlInputTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AuthoringTests.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MapModel\Graphics2D\Graphics2D.csproj">
-      <Project>{ef01e0b6-d7e7-4a4c-970a-29d677d59233}</Project>
-      <Name>Graphics2D</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj">
-      <Project>{d3ac7c61-0b90-42f3-9438-05f53531c9a3}</Project>
-      <Name>MapModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MapModel\Map_GDIPlus\Map_GDIPlus.csproj">
-      <Project>{3d75be05-1f36-4a11-99a2-7a8e27884948}</Project>
-      <Name>Map_GDIPlus</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj">
-      <Project>{89318625-2f71-4c44-bfb1-8984f4d06152}</Project>
-      <Name>PdfConverter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PurplePen\PurplePen.csproj">
-      <Project>{C1715D94-3BEB-4D86-8402-80A57C9D11C5}</Project>
-      <Name>PurplePen</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TestUtil\TestUtil.csproj">
-      <Project>{D50B6E2B-5E20-410D-B033-DEBB6B695E77}</Project>
-      <Name>TestUtil</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="PurplePen\CourseSelectorTestForm.resx">
-      <DependentUpon>CourseSelectorTestForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurplePen\DotGridTester.resx">
-      <DependentUpon>DotGridTester.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\MapModel\Graphics2D\Graphics2D.csproj" />
+    <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
+    <ProjectReference Include="..\MapModel\Map_GDIPlus\Map_GDIPlus.csproj" />
+    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
+    <ProjectReference Include="..\PurplePen\PurplePen.csproj" />
+    <ProjectReference Include="..\TestUtil\TestUtil.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Map\" />
@@ -190,71 +52,62 @@
     <Folder Include="TestUtil\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="fonts\Roboto-Black.ttf">
+    <None Update="fonts\Roboto-Black.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-BlackItalic.ttf">
+    <None Update="fonts\Roboto-BlackItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Bold.ttf">
+    <None Update="fonts\Roboto-Bold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-BoldItalic.ttf">
+    <None Update="fonts\Roboto-BoldItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Italic.ttf">
+    <None Update="fonts\Roboto-Italic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Light.ttf">
+    <None Update="fonts\Roboto-Light.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-LightItalic.ttf">
+    <None Update="fonts\Roboto-LightItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Medium.ttf">
+    <None Update="fonts\Roboto-Medium.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-MediumItalic.ttf">
+    <None Update="fonts\Roboto-MediumItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Regular.ttf">
+    <None Update="fonts\Roboto-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-Thin.ttf">
+    <None Update="fonts\Roboto-Thin.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\Roboto-ThinItalic.ttf">
+    <None Update="fonts\Roboto-ThinItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Bold.ttf">
+    <None Update="fonts\RobotoCondensed-Bold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-BoldItalic.ttf">
+    <None Update="fonts\RobotoCondensed-BoldItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Italic.ttf">
+    <None Update="fonts\RobotoCondensed-Italic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Light.ttf">
+    <None Update="fonts\RobotoCondensed-Light.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-LightItalic.ttf">
+    <None Update="fonts\RobotoCondensed-LightItalic.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="fonts\RobotoCondensed-Regular.ttf">
+    <None Update="fonts\RobotoCondensed-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
