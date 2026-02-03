@@ -16,6 +16,8 @@ using TestingUtils;
 using RenderOptions = PurplePen.MapModel.RenderOptions;
 using RectangleF = System.Drawing.RectangleF;
 using PointF = System.Drawing.PointF;
+using Matrix = System.Windows.Media.Matrix;
+using Graphics2DMatrix = PurplePen.Graphics2D.Matrix;   
 
 namespace TestWpfMap
 {

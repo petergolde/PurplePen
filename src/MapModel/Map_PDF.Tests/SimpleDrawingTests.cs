@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
@@ -85,15 +84,15 @@ namespace Map_PDF.Tests
             CreatePdf("simplelines", false,
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Flat, LineJoinMode.Bevel, 1);
                     grTarget.DrawLine(penKey1, new PointF(100, 100), new PointF(600, 150));
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawLine(penKey2, new PointF(100, 200), new PointF(600, 250));
 
                     object penKey3 = new object();
-                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCap.Square, LineJoin.Miter, 2);
+                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCapMode.Square, LineJoinMode.Miter, 2);
                     grTarget.DrawLine(penKey3, new PointF(100, 300), new PointF(600, 350));
 
                     grTarget.DrawPolyline(penKey1, new PointF[] 
@@ -126,14 +125,14 @@ namespace Map_PDF.Tests
                 grTarget =>
                 {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Round, LineJoinMode.Round, 1);
 
                     grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
                     grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
                     grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 800, 600, 1000));
                 }
             );
@@ -156,11 +155,11 @@ namespace Map_PDF.Tests
                     grTarget.CreateSolidBrush(brushKey2, CmykColor.FromRgb(0.5F, 0, 0));
                     grTarget.FillPolygon(brushKey2, new PointF[] 
                         { new PointF(100,1000), new PointF(200, 800), new PointF(300, 1000), new PointF(100, 850), new PointF(300,850) },
-                        FillMode.Alternate);
+                        AreaFillMode.Alternate);
 
                     grTarget.FillPolygon(brushKey2, new PointF[] 
                     { new PointF(500, 1000), new PointF(600, 800), new PointF(700, 1000), new PointF(500, 850), new PointF(700, 850) },
-                        FillMode.Winding);
+                        AreaFillMode.Winding);
                 
                 }
             );
@@ -177,22 +176,22 @@ namespace Map_PDF.Tests
                    grTarget.PushTransform(mat);
 
                    object penKey1 = new object(), pathKey1 = new Object();
-                   grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.Red), 7.0F, LineCap.Flat, LineJoin.Miter, 5F);
+                   grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.Red), 7.0F, LineCapMode.Flat, LineJoinMode.Miter, 5F);
                    grTarget.CreatePath(pathKey1, new List<GraphicsPathPart> {
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) })},
-                       FillMode.Alternate);
+                       AreaFillMode.Alternate);
                    grTarget.DrawPath(penKey1, pathKey1);
 
                    object penKey2 = new object(), pathKey2 = new Object();
-                   grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.Green), 3.0F, LineCap.Round, LineJoin.Round, 5F);
+                   grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.Green), 3.0F, LineCapMode.Round, LineJoinMode.Round, 5F);
                    grTarget.CreatePath(pathKey2, new List<GraphicsPathPart> {
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Beziers,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) }),
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(0, 0)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] { new PointF(-50, 50), new PointF(50, 50) }),
                             new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0] )},
-                       FillMode.Alternate);
+                       AreaFillMode.Alternate);
                    grTarget.DrawPath(penKey2, pathKey2);
 
                    mat = new Matrix();
@@ -205,7 +204,7 @@ namespace Map_PDF.Tests
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-70, -70)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Beziers,  new PointF[] { new PointF(-10, 50), new PointF(20, 50), new PointF(70, -90) }),
                             new GraphicsPathPart(GraphicsPathPartKind.Close, new PointF[0] )},
-                       FillMode.Alternate);
+                       AreaFillMode.Alternate);
                    grTarget.FillPath(brushKey3, pathKey3);
                
                }
@@ -229,14 +228,14 @@ namespace Map_PDF.Tests
                     grTarget.CreatePath(pathKey, new List<GraphicsPathPart> {
                             new GraphicsPathPart(GraphicsPathPartKind.Start, new PointF[1] {new PointF(-50, -30)}),
                             new GraphicsPathPart(GraphicsPathPartKind.Lines,  new PointF[] {new PointF(0, 80), new PointF(50, -30), new PointF(-50, 50), new PointF(50, 50)})},
-                            FillMode.Alternate);
+                            AreaFillMode.Alternate);
 
                     grTarget.PushClip(pathKey);
 
                     grTarget.CreateSolidBrush(brushKey, CmykColor.FromColor(Color.Red));
                     grTarget.FillRectangle(brushKey, new RectangleF(-100, -100, 200, 200));
 
-                    grTarget.CreatePen(penKey, CmykColor.FromColor(Color.Green), 15.0F, LineCap.Flat, LineJoin.Bevel, 5F);
+                    grTarget.CreatePen(penKey, CmykColor.FromColor(Color.Green), 15.0F, LineCapMode.Flat, LineJoinMode.Bevel, 5F);
                     grTarget.DrawEllipse(penKey, new PointF(0, 0), 40, 50);
 
                     grTarget.PopClip();
@@ -266,7 +265,7 @@ namespace Map_PDF.Tests
 
                     object fontKey2 = new object(), penKey2 = new object();
                     grTarget.CreateFont(fontKey2, "Times New Roman", 170, TextEffects.Bold | TextEffects.Italic);
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.Crimson), 7, LineCap.Round, LineJoin.Round, 2);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.Crimson), 7, LineCapMode.Round, LineJoinMode.Round, 2);
                     grTarget.DrawTextOutline("Hi There", fontKey2, penKey2, new PointF(100, 500));
 
                 }
@@ -317,11 +316,11 @@ namespace Map_PDF.Tests
                     grTarget.PushTransform(transform);
 
                     object penBlue = new object(), penGreen = new object(), penYellow = new object(), penBlack = new object(), penPurple = new object();
-                    grTarget.CreatePen(penBlue, blue, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penGreen, green, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penBlack, black, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penPurple, purple, penWidth, LineCap.Round, LineJoin.Miter, 5);
+                    grTarget.CreatePen(penBlue, blue, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penGreen, green, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penBlack, black, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penPurple, purple, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
 
                     grTarget.DrawLine(penBlue, new PointF(-80, 60), new PointF(80, 60));
                     grTarget.DrawLine(penGreen, new PointF(-80, 30), new PointF(80, 30));
@@ -356,11 +355,11 @@ namespace Map_PDF.Tests
                     grTarget.PushTransform(transform);
 
                     object penBlue = new object(), penGreen = new object(), penYellow = new object(), penBlack = new object(), penPurple = new object();
-                    grTarget.CreatePen(penBlue, blue, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penGreen, green, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penBlack, black, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penPurple, purple, penWidth, LineCap.Round, LineJoin.Miter, 5);
+                    grTarget.CreatePen(penBlue, blue, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penGreen, green, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penBlack, black, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penPurple, purple, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
 
                     grTarget.DrawLine(penBlue, new PointF(-80, 60), new PointF(80, 60));
                     grTarget.DrawLine(penGreen, new PointF(-80, 30), new PointF(80, 30));
@@ -395,11 +394,11 @@ namespace Map_PDF.Tests
                     grTarget.PushTransform(transform);
 
                     object penBlue = new object(), penGreen = new object(), penYellow = new object(), penBlack = new object(), penPurple = new object();
-                    grTarget.CreatePen(penBlue, blue, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penGreen, green, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penBlack, black, penWidth, LineCap.Round, LineJoin.Miter, 5);
-                    grTarget.CreatePen(penPurple, purple, penWidth, LineCap.Round, LineJoin.Miter, 5);
+                    grTarget.CreatePen(penBlue, blue, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penGreen, green, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penYellow, yellow, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penBlack, black, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
+                    grTarget.CreatePen(penPurple, purple, penWidth, LineCapMode.Round, LineJoinMode.Miter, 5);
 
                     grTarget.DrawLine(penBlue, new PointF(-80, 60), new PointF(80, 60));
                     grTarget.DrawLine(penGreen, new PointF(-80, 30), new PointF(80, 30));
@@ -420,15 +419,15 @@ namespace Map_PDF.Tests
                 TestUtil.GetTestFile("pdfrender\\Lincoln-RGB.pdf"), 0,
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Flat, LineJoinMode.Bevel, 1);
                     grTarget.DrawLine(penKey1, new PointF(100, 100), new PointF(600, 150));
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawLine(penKey2, new PointF(100, 200), new PointF(600, 250));
 
                     object penKey3 = new object();
-                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCap.Square, LineJoin.Miter, 2);
+                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCapMode.Square, LineJoinMode.Miter, 2);
                     grTarget.DrawLine(penKey3, new PointF(100, 300), new PointF(600, 350));
 
                     grTarget.DrawPolyline(penKey1, new PointF[] { new PointF(150, 400), new PointF(150, 450), new PointF(400, 400), new PointF(300, 500) });
@@ -455,14 +454,14 @@ namespace Map_PDF.Tests
                 TestUtil.GetTestFile("pdfrender\\Lincoln-CMYK.pdf"), 0,
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Round, LineJoinMode.Round, 1);
 
                     grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
                     grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
                     grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 800, 600, 1000));
                 }
             );
@@ -475,14 +474,14 @@ namespace Map_PDF.Tests
                 TestUtil.GetTestFile("pdfrender\\tengesdalslia.pdf"), 0,
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Round, LineJoinMode.Round, 1);
 
                     grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
                     grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
                     grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 800, 600, 1000));
                 }
             );
@@ -500,15 +499,15 @@ namespace Map_PDF.Tests
                 new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Flat, LineJoinMode.Bevel, 1);
                     grTarget.DrawLine(penKey1, new PointF(100, 100), new PointF(600, 150));
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawLine(penKey2, new PointF(100, 200), new PointF(600, 250));
 
                     object penKey3 = new object();
-                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCap.Square, LineJoin.Miter, 2);
+                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCapMode.Square, LineJoinMode.Miter, 2);
                     grTarget.DrawLine(penKey3, new PointF(100, 300), new PointF(600, 350));
 
                     grTarget.DrawPolyline(penKey1, new PointF[] { new PointF(150, 400), new PointF(150, 450), new PointF(400, 400), new PointF(300, 500) });
@@ -539,14 +538,14 @@ namespace Map_PDF.Tests
                 new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Round, LineJoinMode.Round, 1);
 
                     grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
                     grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
                     grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 800, 600, 1000));
                 }
             );
@@ -562,15 +561,15 @@ namespace Map_PDF.Tests
                 new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Flat, LineJoinMode.Bevel, 1);
                     grTarget.DrawLine(penKey1, new PointF(100, 100), new PointF(600, 150));
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawLine(penKey2, new PointF(100, 200), new PointF(600, 250));
 
                     object penKey3 = new object();
-                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCap.Square, LineJoin.Miter, 2);
+                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCapMode.Square, LineJoinMode.Miter, 2);
                     grTarget.DrawLine(penKey3, new PointF(100, 300), new PointF(600, 350));
 
                     grTarget.DrawPolyline(penKey1, new PointF[] { new PointF(150, 400), new PointF(150, 450), new PointF(400, 400), new PointF(300, 500) });
@@ -600,15 +599,15 @@ namespace Map_PDF.Tests
                 new RectangleF(new PointF(1, 2), new SizeF(5, 4.5F)),
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Flat, LineJoin.Bevel, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Flat, LineJoinMode.Bevel, 1);
                     grTarget.DrawLine(penKey1, new PointF(100, 100), new PointF(600, 150));
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.LightBlue), 40, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawLine(penKey2, new PointF(100, 200), new PointF(600, 250));
 
                     object penKey3 = new object();
-                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCap.Square, LineJoin.Miter, 2);
+                    grTarget.CreatePen(penKey3, CmykColor.FromColor(Color.IndianRed), 80, LineCapMode.Square, LineJoinMode.Miter, 2);
                     grTarget.DrawLine(penKey3, new PointF(100, 300), new PointF(600, 350));
 
                     grTarget.DrawPolyline(penKey1, new PointF[] { new PointF(150, 400), new PointF(150, 450), new PointF(400, 400), new PointF(300, 500) });
@@ -640,14 +639,14 @@ namespace Map_PDF.Tests
                 new RectangleF(new PointF(0, 0), letterSize),
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Round, LineJoinMode.Round, 1);
 
                     grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
                     grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
                     grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 800, 600, 1000));
                 }
             );
@@ -663,14 +662,14 @@ namespace Map_PDF.Tests
                 new RectangleF(new PointF(1, 1.5F), new SizeF(7, 8)),
                 grTarget => {
                     object penKey1 = new object();
-                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey1, CmykColor.FromColor(Color.DarkBlue), 20, LineCapMode.Round, LineJoinMode.Round, 1);
 
                     grTarget.DrawRectangle(penKey1, RectangleF.FromLTRB(100, 200, 600, 400));
                     grTarget.DrawEllipse(penKey1, new PointF(350, 550), 250, 70);
                     grTarget.DrawArc(penKey1, new PointF(500, 850), 150, 30, 200);
 
                     object penKey2 = new object();
-                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCap.Round, LineJoin.Round, 1);
+                    grTarget.CreatePen(penKey2, CmykColor.FromColor(Color.IndianRed), 3, LineCapMode.Round, LineJoinMode.Round, 1);
                     grTarget.DrawRectangle(penKey2, RectangleF.FromLTRB(100, 150, 100 + 700, 150 + 800));
                 }
             );

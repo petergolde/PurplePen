@@ -41,10 +41,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using Bitmap = System.Drawing.Bitmap;
-using FillMode = System.Drawing.Drawing2D.FillMode;
-using LineCap = System.Drawing.Drawing2D.LineCap;
-using LineJoin = System.Drawing.Drawing2D.LineJoin;
-using Matrix = System.Drawing.Drawing2D.Matrix;
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
@@ -109,7 +105,7 @@ namespace PurplePen.MapModel
             throw new NotSupportedException();
         }
 
-        public void CreatePen(object penKey, object brushKey, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, object brushKey, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penMap.ContainsKey(penKey))
                 throw new InvalidOperationException("Key already has a pen created for it");
@@ -122,7 +118,7 @@ namespace PurplePen.MapModel
             penMap.Add(penKey, pen);
         }
 
-        public void CreatePen(object penKey, CmykColor color, float width, LineCap caps, LineJoin join, float miterLimit)
+        public void CreatePen(object penKey, CmykColor color, float width, LineCapMode caps, LineJoinMode join, float miterLimit)
         {
             if (penMap.ContainsKey(penKey))
                 throw new InvalidOperationException("Key already has a pen created for it");
@@ -135,17 +131,17 @@ namespace PurplePen.MapModel
             penMap.Add(penKey, pen);
         }
 
-        private XLineJoin ToXLineJoin(LineJoin linejoin)
+        private XLineJoin ToXLineJoin(LineJoinMode linejoin)
         {
             switch (linejoin)
             {
-                case LineJoin.Bevel:
+                case LineJoinMode.Bevel:
                     return XLineJoin.Bevel;
-                case LineJoin.Miter:
+                case LineJoinMode.Miter:
                     return XLineJoin.Miter;
-                case LineJoin.MiterClipped:
+                case LineJoinMode.MiterClipped:
                     return XLineJoin.Miter;
-                case LineJoin.Round:
+                case LineJoinMode.Round:
                     return XLineJoin.Round;
                 default:
                     Debug.Fail("unexpected join");
@@ -153,15 +149,15 @@ namespace PurplePen.MapModel
             }
         }
 
-        private XLineCap ToXLineCap(LineCap linecap)
+        private XLineCap ToXLineCap(LineCapMode linecap)
         {
             switch (linecap)
             {
-                case LineCap.Flat:
+                case LineCapMode.Flat:
                     return XLineCap.Flat;
-                case LineCap.Round:
+                case LineCapMode.Round:
                     return XLineCap.Round;
-                case LineCap.Square:
+                case LineCapMode.Square:
                     return XLineCap.Square;
                 default:
                     Debug.Fail("unexpected line cap");
@@ -202,7 +198,7 @@ namespace PurplePen.MapModel
             fontMap.Add(fontKey, font);
         }
 
-        public void CreatePath(object pathKey, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void CreatePath(object pathKey, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             if (pathMap.ContainsKey(pathKey))
                 throw new InvalidOperationException("Key already has a path created for it");
@@ -211,7 +207,7 @@ namespace PurplePen.MapModel
             pathMap.Add(pathKey, path);
         }
 
-        XGraphicsPath GetXGraphicsPath(List<GraphicsPathPart> parts, FillMode windingMode)
+        XGraphicsPath GetXGraphicsPath(List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             XGraphicsPath path = new XGraphicsPath();
             path.FillMode = ToXFillMode(windingMode);
@@ -256,7 +252,7 @@ namespace PurplePen.MapModel
         public void PushTransform(Matrix matrix)
         {
             stateStack.Push(gfx.Save());
-            gfx.MultiplyTransform(matrix, XMatrixOrder.Prepend);
+            gfx.MultiplyTransform(matrix.ToSysDrawMatrix(), XMatrixOrder.Prepend);
         }
 
         // Pop the transform
@@ -272,7 +268,7 @@ namespace PurplePen.MapModel
             gfx.IntersectClip(GetGraphicsPath(pathKey));
         }
 
-        public void PushClip(List<GraphicsPathPart> parts, FillMode windingMode)
+        public void PushClip(List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             stateStack.Push(gfx.Save());
             gfx.IntersectClip(GetXGraphicsPath(parts, windingMode));
@@ -385,18 +381,18 @@ namespace PurplePen.MapModel
         }
 
         // Fill a polygon with a brush
-        public void FillPolygon(object brushKey, PointF[] pts, FillMode windingMode)
+        public void FillPolygon(object brushKey, PointF[] pts, AreaFillMode windingMode)
         {
             gfx.DrawPolygon(GetBrush(brushKey), pts, ToXFillMode(windingMode));
         }
 
-        private XFillMode ToXFillMode(FillMode windingMode)
+        private XFillMode ToXFillMode(AreaFillMode windingMode)
         {
             switch (windingMode)
             {
-                case FillMode.Alternate:
+                case AreaFillMode.Alternate:
                     return XFillMode.Alternate;
-                case FillMode.Winding:
+                case AreaFillMode.Winding:
                     return XFillMode.Winding;
                 default:
                     return XFillMode.Alternate;
@@ -411,7 +407,7 @@ namespace PurplePen.MapModel
 
         public void DrawPath(object penKey, List<GraphicsPathPart> parts)
         {
-            XGraphicsPath path = GetXGraphicsPath(parts, FillMode.Alternate);
+            XGraphicsPath path = GetXGraphicsPath(parts, AreaFillMode.Alternate);
             gfx.DrawPath(GetPen(penKey), path);
         }
 
@@ -421,7 +417,7 @@ namespace PurplePen.MapModel
             gfx.DrawPath(GetBrush(brushKey), GetGraphicsPath(pathKey));
         }
 
-        public void FillPath(object brushKey, List<GraphicsPathPart> parts, FillMode windingMode)
+        public void FillPath(object brushKey, List<GraphicsPathPart> parts, AreaFillMode windingMode)
         {
             XGraphicsPath path = GetXGraphicsPath(parts, windingMode);
             gfx.DrawPath(GetBrush(brushKey), path);

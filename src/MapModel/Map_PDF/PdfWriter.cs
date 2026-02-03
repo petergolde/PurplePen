@@ -40,7 +40,6 @@ using SysDraw = System.Drawing;
 using PointF = System.Drawing.PointF;
 using RectangleF = System.Drawing.RectangleF;
 using SizeF = System.Drawing.SizeF;
-using Matrix = System.Drawing.Drawing2D.Matrix;
 using FillMode = System.Drawing.Drawing2D.FillMode;
 using LineJoin = System.Drawing.Drawing2D.LineJoin;
 using LineCap = System.Drawing.Drawing2D.LineCap;

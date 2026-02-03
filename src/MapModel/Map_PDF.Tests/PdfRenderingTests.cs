@@ -36,14 +36,12 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Diagnostics;
 using NUnit.Framework;
 using TestingUtils;
+using PurplePen.Graphics2D;
 using PurplePen.MapModel;
-using System.Net;
 
 namespace Map_PDF.Tests
 {
