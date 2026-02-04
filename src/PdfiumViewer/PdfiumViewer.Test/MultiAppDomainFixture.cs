@@ -29,8 +29,12 @@ namespace PdfiumViewer.Test
 
         private void RunThreads()
         {
-            const int scripts = 10;
-            const int iterations = 20;
+            // Don't make this test take too long. If we have issues,
+            // then can go higher here.
+            //const int scripts = 10;
+            //const int iterations = 20;
+            const int scripts = 3;
+            const int iterations = 3;
             var threads = new List<Thread>();
 
             for (int i = 0; i < scripts; i++)

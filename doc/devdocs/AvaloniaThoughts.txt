@@ -58,3 +58,4 @@ Pain points:
 
    Reading PDFs. Needing PdiumSharp. There are a bunch of versions on GitHub. Need to look
    them over to see which is best. Probably still package as an EXE. Use similar caching strategy as before.
+   Look at PDFiumCore.
