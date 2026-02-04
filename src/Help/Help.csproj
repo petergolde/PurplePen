@@ -1,6 +1,19 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{D405472A-56E1-4153-ACB7-677B8E6D5171}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
+    <Configurations>Debug;Release;StorePkg</Configurations>
+    <Platforms>AnyCPU</Platforms>
+
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <GenerateDefaultTargetRuntimeIntermediateAsm>false</GenerateDefaultTargetRuntimeIntermediateAsm>
+    <CopyBuildOutputToPublishDirectory>false</CopyBuildOutputToPublishDirectory>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <SkipCopyBuildProduct>true</SkipCopyBuildProduct>
+
+    <CopyOutputsToOutputDirectory>false</CopyOutputsToOutputDirectory>
+
     <!-- Define the output file -->
     <OutputFile>.\output\Purple Pen Help.chm</OutputFile>
     <!-- Define the log file -->
@@ -10,11 +23,9 @@
     <!-- Define the help project file -->
     <HelpProjectFile>..\..\doc\userdocs\help\Purple Pen Help.hhp</HelpProjectFile>
   </PropertyGroup>
+
   <ItemGroup>
-    <!-- 
-      Define the input files for the compilation. If any of these change, the help
-      file will be rebuilt. Otherwise it will not be rebuilt.
-    -->
+    <!-- Input files: if any of these change, the help file will be rebuilt -->
     <InputFile Include="$(HelpProjectFile)" />
     <InputFile Include="..\..\doc\userdocs\help\*.htm" />
     <InputFile Include="..\..\doc\userdocs\help\*.css" />
@@ -23,17 +34,28 @@
     <InputFile Include="..\..\doc\userdocs\help\*.dwt" />
     <InputFile Include="..\..\doc\userdocs\help\*.hhc" />
   </ItemGroup>
-  <Target Name="Build" Inputs="@(InputFile)" Outputs="$(OutputFile)">
+
+  <Target Name="RunHelpCompiler"
+          AfterTargets="Build"
+          DependsOnTargets="PrepareOutputDirectory"
+          Inputs="@(InputFile)" 
+          Outputs="$(OutputFile)">
+    
     <Message Importance="high" Text="Building help file -- output file is $(OutputFile); log file is $(LogFile)" />
     <Exec Command="&quot;$(HelpCompiler)&quot; &quot;$(HelpProjectFile)&quot; &gt; &quot;$(LogFile)&quot;" IgnoreExitCode="true">
       <Output TaskParameter="ExitCode" PropertyName="HHCExitCode" />
     </Exec>
     <Error Condition="'$(HHCExitCode)' != '0' and '$(HHCExitCode)' != '1'" Text="HHC failed with exit code $(HHCExitCode)" />
   </Target>
-  <Target Name="Clean">
-    <Message Text="Cleaning help file" />
+
+  <Target Name="PrepareOutputDirectory">
+    <MakeDir Directories="output" />
+  </Target>
+
+  <Target Name="CleanHelp" AfterTargets="Clean">
+    <Message Importance="high" Text="Cleaning help file" />
     <Delete Files="$(OutputFile)" />
+    <Delete Files="$(LogFile)" />
   </Target>
-  <Target Name="Rebuild" DependsOnTargets="Clean;Build">
-  </Target>
+
 </Project>
