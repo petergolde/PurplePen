@@ -3,6 +3,8 @@
     <ProjectGuid>{D405472A-56E1-4153-ACB7-677B8E6D5171}</ProjectGuid>
     <!-- Define the output file -->
     <OutputFile>.\output\Purple Pen Help.chm</OutputFile>
+    <!-- Define the log file -->
+    <LogFile>.\output\Purple Pen Help.log</LogFile>
     <!-- Define the help compiler executable -->
     <HelpCompiler>c:\program files (x86)\html help workshop\hhc.exe</HelpCompiler>
     <!-- Define the help project file -->
@@ -22,8 +24,11 @@
     <InputFile Include="..\..\doc\userdocs\help\*.hhc" />
   </ItemGroup>
   <Target Name="Build" Inputs="@(InputFile)" Outputs="$(OutputFile)">
-    <Message Text="Building help file -- output file is $(OutputFile)" />
-    <Exec Command="&quot;$(HelpCompiler)&quot; &quot;$(HelpProjectFile)&quot;" IgnoreExitCode="true" />
+    <Message Importance="high" Text="Building help file -- output file is $(OutputFile); log file is $(LogFile)" />
+    <Exec Command="&quot;$(HelpCompiler)&quot; &quot;$(HelpProjectFile)&quot; &gt; &quot;$(LogFile)&quot;" IgnoreExitCode="true">
+      <Output TaskParameter="ExitCode" PropertyName="HHCExitCode" />
+    </Exec>
+    <Error Condition="'$(HHCExitCode)' != '0' and '$(HHCExitCode)' != '1'" Text="HHC failed with exit code $(HHCExitCode)" />
   </Target>
   <Target Name="Clean">
     <Message Text="Cleaning help file" />

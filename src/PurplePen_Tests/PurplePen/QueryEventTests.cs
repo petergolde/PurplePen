@@ -1253,15 +1253,15 @@ namespace PurplePen.Tests
             FlaggingKind flagging;
 
             flagging = QueryEvent.GetLegFlagging(eventDB, ControlId(1), ControlId(2));
-            Assert.AreEqual(flagging, FlaggingKind.None);
+            Assert.AreEqual(FlaggingKind.None, flagging);
             flagging = QueryEvent.GetLegFlagging(eventDB, ControlId(2), ControlId(3));
-            Assert.AreEqual(flagging, FlaggingKind.All);
+            Assert.AreEqual(FlaggingKind.All, flagging);
             flagging = QueryEvent.GetLegFlagging(eventDB, ControlId(3), ControlId(4));
-            Assert.AreEqual(flagging, FlaggingKind.Begin);
+            Assert.AreEqual(FlaggingKind.Begin, flagging);
             flagging = QueryEvent.GetLegFlagging(eventDB, ControlId(4), ControlId(5));
-            Assert.AreEqual(flagging, FlaggingKind.None);
+            Assert.AreEqual(FlaggingKind.None, flagging);
             flagging = QueryEvent.GetLegFlagging(eventDB, ControlId(5), ControlId(6));
-            Assert.AreEqual(flagging, FlaggingKind.All);
+            Assert.AreEqual(FlaggingKind.All, flagging);
         }
 
         [TestMethod]
@@ -1274,7 +1274,7 @@ namespace PurplePen.Tests
             gaps = QueryEvent.GetLegGaps(eventDB, ControlId(1), ControlId(2));
             TestUtil.TestEnumerableAnyOrder(gaps, new LegGap[] { new LegGap(7, 3.5F), new LegGap(25, 9) });
             gaps = QueryEvent.GetLegGaps(eventDB, ControlId(5), ControlId(6));
-            Assert.AreEqual(gaps, null);
+            Assert.IsNull(gaps);
         }
 
         [TestMethod]

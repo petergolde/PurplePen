@@ -91,6 +91,7 @@
     </Project>
   </Folder>
   <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
     <File Path="LocalTestRun.testrunconfig" />
     <File Path="PPen1.vsmdi" />
     <File Path="ShowUi.runsettings" />

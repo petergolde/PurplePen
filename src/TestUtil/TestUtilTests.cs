@@ -50,12 +50,12 @@ namespace TestingUtils.Tests
         public void GetTestFile()
         {
             string pathname = TestUtil.GetTestFile(@"testutil\gettestfile.txt");
-            Assert.AreEqual(Path.GetFileName(pathname), @"gettestfile.txt");
+            Assert.AreEqual(@"gettestfile.txt", Path.GetFileName(pathname));
             Assert.IsTrue(File.Exists(pathname));
             Assert.IsFalse(pathname.Contains(".."));
 
             pathname = TestUtil.GetTestFile(@"testutil\notexist.txt");
-            Assert.AreEqual(Path.GetFileName(pathname), @"notexist.txt");
+            Assert.AreEqual(@"notexist.txt", Path.GetFileName(pathname));
             Assert.IsFalse(File.Exists(pathname));
             Assert.IsFalse(pathname.Contains(".."));
 

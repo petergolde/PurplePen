@@ -960,7 +960,7 @@ namespace PurplePen.Tests
 
             // Make sure the special is now moved.
             Special newSpecial = eventDB.GetSpecial(SpecialId(7));
-            Assert.AreEqual(newSpecial.kind, SpecialKind.Text);
+            Assert.AreEqual(SpecialKind.Text, newSpecial.kind);
             Assert.AreEqual("$(CourseName)", newSpecial.text);
             Assert.AreEqual("Times New Roman", newSpecial.fontName);
             Assert.IsTrue(newSpecial.fontBold);
@@ -1024,7 +1024,7 @@ namespace PurplePen.Tests
 
             // Make sure the special is now moved.
             Special newSpecial = eventDB.GetSpecial(SpecialId(7));
-            Assert.AreEqual(newSpecial.kind, SpecialKind.Text);
+            Assert.AreEqual(SpecialKind.Text, newSpecial.kind);
             Assert.AreEqual("$(CourseName)", newSpecial.text);
             Assert.AreEqual("Times New Roman", newSpecial.fontName);
             Assert.IsTrue(newSpecial.fontBold);
@@ -1085,7 +1085,7 @@ namespace PurplePen.Tests
 
             // Make sure the special is now moved.
             Special newSpecial = eventDB.GetSpecial(SpecialId(7));
-            Assert.AreEqual(newSpecial.kind, SpecialKind.Image);
+            Assert.AreEqual(SpecialKind.Image, newSpecial.kind);
             Assert.AreEqual("testimage.jpg", newSpecial.text);
             Assert.IsNotNull(newSpecial.imageBitmap);
             Assert.AreEqual(new PointF(87, 52), newSpecial.locations[0]);
@@ -1144,7 +1144,7 @@ namespace PurplePen.Tests
 
             // Make sure the special is now moved.
             Special newSpecial = eventDB.GetSpecial(SpecialId(7));
-            Assert.AreEqual(newSpecial.kind, SpecialKind.Image);
+            Assert.AreEqual(SpecialKind.Image, newSpecial.kind);
             Assert.AreEqual("testimage.jpg", newSpecial.text);
             Assert.IsNotNull(newSpecial.imageBitmap);
             Assert.AreEqual(new PointF(45, 40), newSpecial.locations[0]);

@@ -5,10 +5,12 @@
     <Configurations>Debug;Release;StorePkg</Configurations>
     <Platforms>AnyCPU</Platforms>
 
+    <EnableDefaultItems>false</EnableDefaultItems>
     <GenerateDefaultTargetRuntimeIntermediateAsm>false</GenerateDefaultTargetRuntimeIntermediateAsm>
     <CopyBuildOutputToPublishDirectory>false</CopyBuildOutputToPublishDirectory>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <SkipCopyBuildProduct>true</SkipCopyBuildProduct>
 
     <CopyOutputsToOutputDirectory>false</CopyOutputsToOutputDirectory>
@@ -16,6 +18,7 @@
     <InnoCompiler>C:\Program Files (x86)\Inno Setup 6\iscc.exe</InnoCompiler>
     <InnoProjectFile>FontInstaller.iss</InnoProjectFile>
     <OutputFile>output\Roboto Font Installer.exe</OutputFile>
+    <LogFile>output\InnoBuild.log</LogFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,8 +36,8 @@
           Inputs="@(InnoInputs)"
           Outputs="$(OutputFile)">
 
-    <Message Importance="high" Text="MSBUILD IS NOW RUNNING INNO SETUP" />
-    <Exec Command="&quot;$(InnoCompiler)&quot; &quot;$(InnoProjectFile)&quot;" />
+    <Message Importance="high" Text="Running Inno Setup; log in $(LogFile)" />
+    <Exec Command="&quot;$(InnoCompiler)&quot; &quot;$(InnoProjectFile)&quot; &gt; &quot;$(LogFile)&quot;" />
   </Target>
 
   <Target Name="PrepareOutputDirectory">
