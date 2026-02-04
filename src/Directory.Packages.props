@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CsvHelper" Version="2.7.1" />
-    <PackageVersion Include="ICSharpCode.SharpZipLib.dll" Version="0.85.4.369" />
+    <PackageVersion Include="SharpZipLib" Version="1.4.2" />
     <PackageVersion Include="Microsoft.AspNetCore" Version="2.1.6" />
     <PackageVersion Include="Microsoft.AspNetCore.CookiePolicy" Version="2.1.2" />
     <PackageVersion Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.1.1" />

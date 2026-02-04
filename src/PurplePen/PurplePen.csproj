@@ -256,7 +256,7 @@
     <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ICSharpCode.SharpZipLib.dll" />
+    <PackageReference Include="SharpZipLib" />
     <PackageReference Include="Microsoft.Windows.SDK.Contracts" />
     <PackageReference Include="Newtonsoft.Json" />
   </ItemGroup>
