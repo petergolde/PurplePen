@@ -1089,7 +1089,7 @@ namespace PurplePen.MapModel
     {
         public virtual SKColor ToColor(CmykColor cmykColor)
         {
-            Color sysColor = ColorConverter.ToColor(cmykColor);
+            Color sysColor = PurplePen.Graphics2D.ColorConverter.ToColor(cmykColor);
             return new SKColor(sysColor.R, sysColor.G, sysColor.B, sysColor.A);
         }
     }
