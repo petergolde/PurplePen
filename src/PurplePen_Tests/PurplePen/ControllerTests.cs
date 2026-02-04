@@ -1879,6 +1879,10 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
                     TestUtil.CompareBitmapBaseline(bitmapFileNames[i], bitmapFileBaselines[i]);
                 }
             }
+
+            for (int i = 0; i < expectedFiles.Length; ++i) {
+                File.Delete(expectedFiles[i]);
+            }
         }
 
         [TestMethod]
@@ -1948,7 +1952,6 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             CreateOcadFiles(TestUtil.GetTestFile("controller\\ocad_create3\\marymoor4.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create3\\Course 3.ocd")},
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create3\\Course 3_expected.txt")});
-            Assert.IsTrue(File.Exists(outputFile));
         }
 
         [TestMethod]
@@ -1974,7 +1977,6 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             CreateOcadFiles(TestUtil.GetTestFile("controller\\ocad_create3\\marymoor4.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\Course 3.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create4\\Course 3_expected.txt") });
-            Assert.IsTrue(File.Exists(outputFile));
             File.Delete(outputFile);
         }
 

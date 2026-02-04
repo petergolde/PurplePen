@@ -1,7 +1,7 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>Sample Event</title>
-    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">..\..\PurplePen\bin\Debug\Samples\SampleMap.ocd</map>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">..\..\PurplePen\bin\Debug\net48\Samples\SampleMap.ocd</map>
     <all-controls print-scale="15000" description-kind="symbols" />
     <numbering start="31" disallow-invertible="true" />
     <punch-card rows="3" columns="8" left-to-right="true" top-to-bottom="false" />

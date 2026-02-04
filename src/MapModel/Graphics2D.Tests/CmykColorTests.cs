@@ -15,7 +15,7 @@ namespace Graphics2D.Tests
         {
             CmykColor c = CmykColor.FromRgb(red, green, blue);
             CmykColor c2 = CmykColor.FromCmyk(c.Cyan, c.Magenta, c.Yellow, c.Black);
-            Console.WriteLine("r={0}, g={1}, b={2}      c={3}, m={4}, y={5}, k={6}", c2.Red, c2.Green, c2.Blue, c2.Cyan, c2.Magenta, c2.Yellow, c2.Black);
+            //Console.WriteLine("r={0}, g={1}, b={2}      c={3}, m={4}, y={5}, k={6}", c2.Red, c2.Green, c2.Blue, c2.Cyan, c2.Magenta, c2.Yellow, c2.Black);
             Assert.AreEqual(c2.Red, red, 0.001F);
             Assert.AreEqual(c2.Green, green, 0.001F);
             Assert.AreEqual(c2.Blue, blue, 0.001F);
