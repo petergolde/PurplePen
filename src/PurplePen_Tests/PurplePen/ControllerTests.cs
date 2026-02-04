@@ -49,7 +49,7 @@ namespace PurplePen.Tests
     using System.Linq;
     using PurplePen.MapModel;
 
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public class ControllerTests: TestFixtureBase
     {
 

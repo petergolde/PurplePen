@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace PurplePen.Tests
 {
-    [TestClass]
+    [TestClass, DoNotParallelize]
 
     public class RelayVariationsTests: TestFixtureBase
     {

@@ -154,8 +154,6 @@ namespace TestingUtils
                     }
                 }
 
-            Console.WriteLine("Max color difference: " + maxColorDiff);
-
             if (different)
                 return diff;
             else {

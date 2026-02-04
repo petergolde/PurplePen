@@ -49,7 +49,7 @@ using System.Linq;
 
 namespace PurplePen.Tests
 {
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public class DescriptionRendererTests: TestFixtureBase
     {
         // Render the given course id (0 = all controls) and kind to a bitmap, and compare it to the saved version.

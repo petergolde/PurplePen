@@ -43,7 +43,7 @@ using TestingUtils;
 
 namespace PurplePen.Tests
 {
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public class DescriptionLocalizeTests
     {
         [TestMethod]

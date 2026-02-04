@@ -321,7 +321,7 @@ namespace PurplePen.MapModel.Tests
             Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, 1.0F);
 
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
+            //Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
 
             TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
@@ -367,7 +367,7 @@ namespace PurplePen.MapModel.Tests
             Bitmap bitmapNew = RenderAntiAliasBitmap(map, size, mapArea, renderOpts, 1.0F);
 
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
+            //Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
         }
 
 

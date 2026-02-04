@@ -38,4 +38,4 @@ using ExecutionScope = Microsoft.VisualStudio.TestTools.UnitTesting.ExecutionSco
 
 
 // Parallel test execution
-[assembly: Parallelize(Scope = ExecutionScope.ClassLevel)]
+[assembly: Parallelize(Scope = ExecutionScope.MethodLevel)]

@@ -13,15 +13,15 @@
     <PackageVersion Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />
     <PackageVersion Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" />
-    <PackageVersion Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.3233" />
-    <PackageVersion Include="MSTest.TestAdapter" Version="4.0.2" />
-    <PackageVersion Include="MSTest.TestFramework" Version="4.0.2" />
-    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageVersion Include="Microsoft.Windows.SDK.Contracts" Version="10.0.26100.7463" />
+    <PackageVersion Include="MSTest.TestAdapter" Version="4.1.0" />
+    <PackageVersion Include="MSTest.TestFramework" Version="4.1.0" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="NUnit" Version="3.14.0" />
-    <PackageVersion Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="4.6.0" />
     <PackageVersion Include="SkiaSharp" Version="2.88.8" />
     <PackageVersion Include="SkiaSharp.HarfBuzz" Version="2.88.8" />
-    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7463" />
     <PackageVersion Include="System.Drawing.Primitives" Version="4.3.0" />
   </ItemGroup>
 </Project>

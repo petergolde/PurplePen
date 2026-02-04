@@ -296,13 +296,13 @@ namespace PurplePen.Tests
                                                                                RectangleF.FromLTRB(-250F, -110F, -170F, -10F)});
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void ExportPrintAreaToOcad6()
         {
             ExportPrintAreaToOcad(6);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void ExportPrintAreaToOcad9()
         {
             ExportPrintAreaToOcad(9);

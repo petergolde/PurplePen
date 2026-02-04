@@ -46,7 +46,7 @@ using PurplePen.Graphics2D;
 
 namespace PurplePen.Tests
 {
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public class CourseObjTests: TestFixtureBase
     {
         CourseAppearance specialAppearance;

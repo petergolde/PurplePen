@@ -51,7 +51,7 @@ namespace PurplePen.Tests
     using PurplePen.Graphics2D;
     using PurplePen.MapModel;
 
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public class EventDBTests: TestFixtureBase
     {
         [TestMethod]

@@ -140,7 +140,7 @@ namespace Map_Skia.Tests
             // Draw into a new bitmap.
             Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, usePatternBitmaps, useOverprinting, antiAlias, 1.0F);
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
+            //Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
 
             CompareBitmapBaseline(bitmapNew, pngFileName, maxPixelDiff);
 
@@ -183,7 +183,7 @@ namespace Map_Skia.Tests
             Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, true, false, true, 1.0F);
 
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
+            //Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
         }
 
         static Matrix GetTransform(Bitmap bitmap, RectangleF rectangle, bool inverted)

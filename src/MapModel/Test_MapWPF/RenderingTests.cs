@@ -210,7 +210,7 @@ namespace TestWpfMap
             BitmapSource bitmapNew = RenderBitmap(map, bmWidth, bmHeight, mapArea);
 
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' rect={1} size=({2},{3}) in {4} ms", mapFileName, mapArea, bmWidth, bmHeight, sw.ElapsedMilliseconds);
+            //Console.WriteLine("Rendered bitmap '{0}' rect={1} size=({2},{3}) in {4} ms", mapFileName, mapArea, bmWidth, bmHeight, sw.ElapsedMilliseconds);
 
 
             WritePng(bitmapNew, newBitmapName);
@@ -266,7 +266,7 @@ namespace TestWpfMap
             BitmapSource bitmapNew = RenderBitmap(map, width, height, mapArea);
 
             sw.Stop();
-            Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
+            //Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
         }
 
         public void TimeTeanWest() {
@@ -354,37 +354,37 @@ namespace TestWpfMap
             CheckTest("isomarea9.txt", true, true, 6, 9);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void OffsetAreaPattern()
         {
             CheckTest("offsetpattern.txt", false, true, 6, 11);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void OffsetAreaPatternNoBitmap()
         {
             CheckTestNoPatternBitmaps("offsetpattern_nopatbm.txt", false, true, 6, 11);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void OffsetAreaPatternRotated()
         {
             CheckTest("offsetpatternrot.txt", false, true, 6, 11);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void OffsetAreaPatternRotated2()
         {
             CheckTest("offsetpatternrot2.txt", false, true, 6, 11);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void OffsetAreaPatternRotatedNoBitmap()
         {
             CheckTestNoPatternBitmaps("offsetpatternrot_nopatbm.txt", false, true, 6, 11);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void OffsetAreaPatternRotated2NoBitmap()
         {
             CheckTestNoPatternBitmaps("offsetpatternrot2_nopatbm.txt", false, true, 6, 11);
@@ -446,7 +446,7 @@ namespace TestWpfMap
             CheckTest("punchbox9.txt", false, false, 6, 9);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void LakeSammMap()
         {
             CheckTest("lksamm1.txt", false, true, 6, 9);
@@ -455,7 +455,7 @@ namespace TestWpfMap
             CheckTest("lksamm4.txt", false, true, 6, 9);
         }
 
-        [TestMethod]
+        [TestMethod, DoNotParallelize]
         public void LakeSammMap9()
         {
             CheckTest("lksamm9_1.txt", false, false, 6, 9);
