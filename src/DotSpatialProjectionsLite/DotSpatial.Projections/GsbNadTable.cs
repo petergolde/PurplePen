@@ -78,7 +78,9 @@ namespace DotSpatial.Projections
             using (Stream str = GetStream())
             {
                 if (str == null) return;
-                str.Read(overviewHeader, 0, 176);
+                int countRead = str.Read(overviewHeader, 0, 176);
+                if (countRead != 176)
+                    throw new IOException("Unable to read the full GSB header.");
             }
             byte[] bCount = new byte[4];
             Array.Copy(overviewHeader, 8 + 32, bCount, 0, 4);

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net48</TargetFrameworks>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
     <OutputType>Library</OutputType>
     <AssemblyOriginatorKeyFile>DotSpatial.Projections.4.0.snk</AssemblyOriginatorKeyFile>
     <StartupObject></StartupObject>
@@ -133,5 +133,4 @@
   <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
     <Compile Remove="DeflateStreamUtility.cs" />
   </ItemGroup>
-  <PropertyGroup />
 </Project>

@@ -46,7 +46,7 @@ namespace DotSpatial.Projections.Tests
 
         static Proj4()
         {
-            Uri uri = new Uri(typeof(Proj4).Assembly.CodeBase);
+            Uri uri = new Uri(typeof(Proj4).Assembly.Location);
             string callingPath = Path.GetDirectoryName(uri.LocalPath);
 
             // init proj delegates
