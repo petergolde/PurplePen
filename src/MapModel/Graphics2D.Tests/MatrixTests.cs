@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using NUnit.Framework;
+
+using PurplePen.Graphics2D;
 
 namespace Graphics2D.Tests
 {
