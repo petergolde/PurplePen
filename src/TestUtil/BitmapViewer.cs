@@ -72,6 +72,7 @@ namespace TestingUtils
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Bitmap Bitmap
         {
             get { return bitmap; }
@@ -159,6 +160,8 @@ namespace TestingUtils
         #endregion
 
         #region Property accessors
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float ZoomFactor
         {
             get { return zoom; }
@@ -177,6 +180,7 @@ namespace TestingUtils
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PointF CenterPoint
         {
             get { return centerPoint; }
@@ -202,6 +206,7 @@ namespace TestingUtils
             get { return mouseInView; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public RectangleF Viewport
         {
             get
@@ -299,8 +304,6 @@ namespace TestingUtils
         }
 
 
-        [DllImport("user32.dll")]
-        private static extern bool ScrollWindow(IntPtr hwnd, int dx, int dy, IntPtr lpRect, IntPtr lpClipRect);
 
         // Scroll the view by a certain number of PIXELs.
         public void ScrollView(int dxPixels, int dyPixels)
@@ -311,7 +314,7 @@ namespace TestingUtils
             PointF newCenter = PixelToWorld(centerPixels);
 
             bool success;
-            success = ScrollWindow(canvas.Handle, dxPixels, dyPixels, IntPtr.Zero, IntPtr.Zero);
+            success = NativeMethods.ScrollWindow(canvas.Handle, dxPixels, dyPixels, IntPtr.Zero, IntPtr.Zero);
 
             if (success) {
                 // Clear the "uncovered area" (looks better).

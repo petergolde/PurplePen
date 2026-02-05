@@ -61,92 +61,90 @@ namespace TestingUtils
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonShowDiff = new System.Windows.Forms.Button();
-            this.buttonAcceptBaseline = new System.Windows.Forms.Button();
-            this.buttonFail = new System.Windows.Forms.Button();
-            this.labelInformation = new System.Windows.Forms.Label();
-            this.buttonFixBitness = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            buttonShowDiff = new System.Windows.Forms.Button();
+            buttonAcceptBaseline = new System.Windows.Forms.Button();
+            buttonFail = new System.Windows.Forms.Button();
+            labelInformation = new System.Windows.Forms.Label();
+            buttonFixBitness = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // buttonShowDiff
             // 
-            this.buttonShowDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonShowDiff.Location = new System.Drawing.Point(139, 260);
-            this.buttonShowDiff.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-            this.buttonShowDiff.Name = "buttonShowDiff";
-            this.buttonShowDiff.Size = new System.Drawing.Size(113, 28);
-            this.buttonShowDiff.TabIndex = 0;
-            this.buttonShowDiff.Text = "Show Differences";
-            this.buttonShowDiff.UseVisualStyleBackColor = true;
-            this.buttonShowDiff.Click += new System.EventHandler(this.buttonShowDiff_Click);
+            buttonShowDiff.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            buttonShowDiff.Location = new System.Drawing.Point(139, 260);
+            buttonShowDiff.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            buttonShowDiff.Name = "buttonShowDiff";
+            buttonShowDiff.Size = new System.Drawing.Size(113, 28);
+            buttonShowDiff.TabIndex = 0;
+            buttonShowDiff.Text = "Show Differences";
+            buttonShowDiff.UseVisualStyleBackColor = true;
+            buttonShowDiff.Click += buttonShowDiff_Click;
             // 
             // buttonAcceptBaseline
             // 
-            this.buttonAcceptBaseline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonAcceptBaseline.Location = new System.Drawing.Point(14, 260);
-            this.buttonAcceptBaseline.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-            this.buttonAcceptBaseline.Name = "buttonAcceptBaseline";
-            this.buttonAcceptBaseline.Size = new System.Drawing.Size(113, 28);
-            this.buttonAcceptBaseline.TabIndex = 1;
-            this.buttonAcceptBaseline.Text = "Accept As Baseline";
-            this.buttonAcceptBaseline.UseVisualStyleBackColor = true;
-            this.buttonAcceptBaseline.Click += new System.EventHandler(this.buttonAcceptBaseline_Click);
+            buttonAcceptBaseline.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            buttonAcceptBaseline.Location = new System.Drawing.Point(14, 260);
+            buttonAcceptBaseline.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            buttonAcceptBaseline.Name = "buttonAcceptBaseline";
+            buttonAcceptBaseline.Size = new System.Drawing.Size(113, 28);
+            buttonAcceptBaseline.TabIndex = 1;
+            buttonAcceptBaseline.Text = "Accept As Baseline";
+            buttonAcceptBaseline.UseVisualStyleBackColor = true;
+            buttonAcceptBaseline.Click += buttonAcceptBaseline_Click;
             // 
             // buttonFail
             // 
-            this.buttonFail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonFail.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonFail.Location = new System.Drawing.Point(263, 260);
-            this.buttonFail.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-            this.buttonFail.Name = "buttonFail";
-            this.buttonFail.Size = new System.Drawing.Size(113, 28);
-            this.buttonFail.TabIndex = 2;
-            this.buttonFail.Text = "Fail";
-            this.buttonFail.UseVisualStyleBackColor = true;
+            buttonFail.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            buttonFail.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            buttonFail.Location = new System.Drawing.Point(263, 260);
+            buttonFail.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            buttonFail.Name = "buttonFail";
+            buttonFail.Size = new System.Drawing.Size(113, 28);
+            buttonFail.TabIndex = 2;
+            buttonFail.Text = "Fail";
+            buttonFail.UseVisualStyleBackColor = true;
             // 
             // labelInformation
             // 
-            this.labelInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelInformation.Location = new System.Drawing.Point(10, 7);
-            this.labelInformation.Margin = new System.Windows.Forms.Padding(48, 0, 48, 0);
-            this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(363, 239);
-            this.labelInformation.TabIndex = 3;
-            this.labelInformation.Text = "labelInformation";
+            labelInformation.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            labelInformation.Location = new System.Drawing.Point(10, 7);
+            labelInformation.Margin = new System.Windows.Forms.Padding(48, 0, 48, 0);
+            labelInformation.Name = "labelInformation";
+            labelInformation.Size = new System.Drawing.Size(364, 239);
+            labelInformation.TabIndex = 3;
+            labelInformation.Text = "labelInformation";
             // 
             // buttonFixBitness
             // 
-            this.buttonFixBitness.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonFixBitness.Location = new System.Drawing.Point(139, 289);
-            this.buttonFixBitness.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-            this.buttonFixBitness.Name = "buttonFixBitness";
-            this.buttonFixBitness.Size = new System.Drawing.Size(113, 28);
-            this.buttonFixBitness.TabIndex = 4;
-            this.buttonFixBitness.Text = "Fix Bitness";
-            this.buttonFixBitness.UseVisualStyleBackColor = true;
-            this.buttonFixBitness.Click += new System.EventHandler(this.buttonFixBitness_Click);
+            buttonFixBitness.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            buttonFixBitness.Location = new System.Drawing.Point(139, 289);
+            buttonFixBitness.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            buttonFixBitness.Name = "buttonFixBitness";
+            buttonFixBitness.Size = new System.Drawing.Size(113, 28);
+            buttonFixBitness.TabIndex = 4;
+            buttonFixBitness.Text = "Fix Bitness";
+            buttonFixBitness.UseVisualStyleBackColor = true;
+            buttonFixBitness.Click += buttonFixBitness_Click;
             // 
             // TextFileCompareDialog
             // 
-            this.AcceptButton = this.buttonFail;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.CancelButton = this.buttonFail;
-            this.ClientSize = new System.Drawing.Size(394, 318);
-            this.Controls.Add(this.buttonFixBitness);
-            this.Controls.Add(this.labelInformation);
-            this.Controls.Add(this.buttonFail);
-            this.Controls.Add(this.buttonAcceptBaseline);
-            this.Controls.Add(this.buttonShowDiff);
-            this.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-            this.Name = "TextFileCompareDialog";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Test File Mismatch";
-            this.Shown += new System.EventHandler(this.TextFileCompareDialog_Shown);
-            this.ResumeLayout(false);
+            AcceptButton = buttonFail;
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            CancelButton = buttonFail;
+            ClientSize = new System.Drawing.Size(395, 318);
+            Controls.Add(buttonFixBitness);
+            Controls.Add(labelInformation);
+            Controls.Add(buttonFail);
+            Controls.Add(buttonAcceptBaseline);
+            Controls.Add(buttonShowDiff);
+            Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            Name = "TextFileCompareDialog";
+            ShowIcon = false;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Test File Mismatch";
+            Shown += TextFileCompareDialog_Shown;
+            ResumeLayout(false);
 
         }
 

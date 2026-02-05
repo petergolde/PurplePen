@@ -54,7 +54,7 @@ namespace TestingUtils
         // going two more levels.
         public static string GetProjectParentDirectory()
         {
-            Uri uri = new Uri(typeof(TestUtil).Assembly.CodeBase);
+            Uri uri = new Uri(typeof(TestUtil).Assembly.Location);
             string callingPath = Path.GetDirectoryName(uri.LocalPath);
             while (Path.GetFileName(callingPath).ToLower() != "bin") {
                 callingPath = Path.GetDirectoryName(callingPath);

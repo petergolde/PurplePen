@@ -48,11 +48,5 @@ namespace TestingUtils
             InitializeComponent();
         }
 
-        public static void Main()
-        {
-            BitmapViewerTest bmViewer = new BitmapViewerTest();
-            bmViewer.bitmapViewer1.Bitmap = (Bitmap) Image.FromFile(@"C:\Documents and Settings\Peter\My Documents\CourseScribe\TestFiles\rendering\lksamm1.png");
-            Application.Run(bmViewer);
-        }
     }
 }

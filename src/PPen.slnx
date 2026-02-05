@@ -76,7 +76,9 @@
     <Project Path="CrashReporter.NET/CrashReporter.NET.csproj" Id="67912bda-1572-46b0-8623-5872d9dadbc8">
       <Build Solution="Debug|x86" Project="false" />
     </Project>
-    <Project Path="Help/Help.csproj" Id="d405472a-56e1-4153-acb7-677b8e6d5171">
+    <Project Path="Help/Help.csproj" Id="d405472a-56e1-4153-acb7-677b8e6d5171" />
+    <Project Path="PdfConverter.Tests/PdfConverter.Tests.csproj">
+      <BuildType Solution="StorePkg|*" Project="Release" />
     </Project>
     <Project Path="PdfConverter/PdfConverter.csproj" Id="89318625-2f71-4c44-bfb1-8984f4d06152" />
     <Project Path="PurplePen/PurplePen.csproj" Id="c1715d94-3beb-4d86-8402-80a57c9d11c5">

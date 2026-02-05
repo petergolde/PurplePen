@@ -53,6 +53,17 @@ namespace TestingUtils
             if (disposing && (components != null)) {
                 components.Dispose();
             }
+
+            if (disposing && (xformPixelToWorld != null)) {
+                xformPixelToWorld.Dispose();
+                xformPixelToWorld = null;
+            }
+
+            if (disposing && (xformWorldToPixel != null)) {
+                xformWorldToPixel.Dispose();
+                xformWorldToPixel = null;
+            }
+
             base.Dispose(disposing);
         }
 
@@ -64,64 +75,64 @@ namespace TestingUtils
         /// </summary>
         private void InitializeComponent()
         {
-            this.hScrollBar = new System.Windows.Forms.HScrollBar();
-            this.vScrollBar = new System.Windows.Forms.VScrollBar();
-            this.canvas = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize) (this.canvas)).BeginInit();
-            this.SuspendLayout();
+            hScrollBar = new System.Windows.Forms.HScrollBar();
+            vScrollBar = new System.Windows.Forms.VScrollBar();
+            canvas = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)canvas).BeginInit();
+            SuspendLayout();
             // 
             // hScrollBar
             // 
-            this.hScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.hScrollBar.Location = new System.Drawing.Point(0, 418);
-            this.hScrollBar.Minimum = 20;
-            this.hScrollBar.Name = "hScrollBar";
-            this.hScrollBar.Size = new System.Drawing.Size(446, 17);
-            this.hScrollBar.TabIndex = 0;
-            this.hScrollBar.Value = 50;
-            this.hScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar_Scroll);
+            hScrollBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            hScrollBar.Location = new System.Drawing.Point(0, 331);
+            hScrollBar.Minimum = 20;
+            hScrollBar.Name = "hScrollBar";
+            hScrollBar.Size = new System.Drawing.Size(363, 17);
+            hScrollBar.TabIndex = 0;
+            hScrollBar.Value = 50;
+            hScrollBar.Scroll += hScrollBar_Scroll;
             // 
             // vScrollBar
             // 
-            this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar.Location = new System.Drawing.Point(429, 0);
-            this.vScrollBar.Name = "vScrollBar";
-            this.vScrollBar.Size = new System.Drawing.Size(17, 418);
-            this.vScrollBar.TabIndex = 1;
-            this.vScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar_Scroll);
+            vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            vScrollBar.Location = new System.Drawing.Point(346, 0);
+            vScrollBar.Name = "vScrollBar";
+            vScrollBar.Size = new System.Drawing.Size(17, 331);
+            vScrollBar.TabIndex = 1;
+            vScrollBar.Scroll += vScrollBar_Scroll;
             // 
             // canvas
             // 
-            this.canvas.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.canvas.Location = new System.Drawing.Point(0, 0);
-            this.canvas.Margin = new System.Windows.Forms.Padding(60, 28, 60, 28);
-            this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(429, 418);
-            this.canvas.TabIndex = 2;
-            this.canvas.TabStop = false;
-            this.canvas.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseWheel);
-            this.canvas.MouseLeave += new System.EventHandler(this.canvas_MouseLeave);
-            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
-            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
-            this.canvas.MouseCaptureChanged += new System.EventHandler(this.canvas_MouseCaptureChanged);
-            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
-            this.canvas.Resize += new System.EventHandler(this.canvas_Resize);
-            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
-            this.canvas.MouseEnter += new System.EventHandler(this.canvas_MouseEnter);
+            canvas.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            canvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            canvas.Location = new System.Drawing.Point(0, 0);
+            canvas.Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            canvas.Name = "canvas";
+            canvas.Size = new System.Drawing.Size(346, 331);
+            canvas.TabIndex = 2;
+            canvas.TabStop = false;
+            canvas.Paint += canvas_Paint;
+            canvas.MouseCaptureChanged += canvas_MouseCaptureChanged;
+            canvas.MouseDown += canvas_MouseDown;
+            canvas.MouseEnter += canvas_MouseEnter;
+            canvas.MouseLeave += canvas_MouseLeave;
+            canvas.MouseMove += canvas_MouseMove;
+            canvas.MouseUp += canvas_MouseUp;
+            canvas.MouseWheel += canvas_MouseWheel;
+            canvas.Resize += canvas_Resize;
             // 
             // BitmapViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.canvas);
-            this.Controls.Add(this.vScrollBar);
-            this.Controls.Add(this.hScrollBar);
-            this.Margin = new System.Windows.Forms.Padding(60, 28, 60, 28);
-            this.Name = "BitmapViewer";
-            this.Size = new System.Drawing.Size(446, 435);
-            ((System.ComponentModel.ISupportInitialize) (this.canvas)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            Controls.Add(canvas);
+            Controls.Add(vScrollBar);
+            Controls.Add(hScrollBar);
+            Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
+            Name = "BitmapViewer";
+            Size = new System.Drawing.Size(363, 348);
+            ((System.ComponentModel.ISupportInitialize)canvas).EndInit();
+            ResumeLayout(false);
 
         }
 

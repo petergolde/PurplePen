@@ -64,12 +64,22 @@ namespace TestingUtils
 
         private void BitmapCompareDialog2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (bmNew != null)
+            if (bmNew != null) {
                 bmNew.Dispose();
-            if (bmBaseline != null)
+                bmNew = null;
+            }
+            if (bmBaseline != null) {
                 bmBaseline.Dispose();
-            if (bmDiff != null)
+                bmBaseline = null;
+            }
+            if (bmDiff != null) {
                 bmDiff.Dispose();
+                bmDiff = null;
+            }
+            if (bmWhite != null) {
+                bmWhite.Dispose();
+                bmWhite = null;
+            }
         }
 
         private void UpdateViewer()
