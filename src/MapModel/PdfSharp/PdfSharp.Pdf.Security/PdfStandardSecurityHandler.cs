@@ -633,7 +633,7 @@ namespace PdfSharp.Pdf.Security
     /// <summary>
     /// The message digest algorithm MD5.
     /// </summary>
-    MD5 md5 = new MD5CryptoServiceProvider();
+    MD5 md5 = MD5.Create();
 #endif
 
     /// <summary>

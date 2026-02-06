@@ -33,6 +33,7 @@ using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using PdfSharp.Drawing;
+using System.ComponentModel;
 
 namespace PdfSharp.Forms
 {
@@ -56,6 +57,7 @@ namespace PdfSharp.Forms
     /// <summary>
     /// Gets or sets the custom color.
     /// </summary>
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public XColor Color
     {
       get { return this.color; }

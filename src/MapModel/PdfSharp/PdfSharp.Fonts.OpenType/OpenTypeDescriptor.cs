@@ -339,9 +339,9 @@ namespace PdfSharp.Fonts.OpenType
           return width;
         return width * 1000 / unitsPerEm; // normalize
       }
-      catch (Exception ex)
+      catch (Exception)
       {
-        throw ex;
+        throw;
       }
     }
 

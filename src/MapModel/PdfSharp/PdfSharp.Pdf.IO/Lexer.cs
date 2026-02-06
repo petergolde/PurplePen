@@ -202,7 +202,9 @@ namespace PdfSharp.Pdf.IO
     {
       this.pdf.Position = position;
       byte[] bytes = new byte[length];
-      this.pdf.Read(bytes, 0, length);
+      int read = this.pdf.Read(bytes, 0, length);
+      if (read < length)
+        throw new IOException("Did not read all of the stream");    
       return PdfEncoders.RawEncoding.GetString(bytes, 0, bytes.Length);
     }
 

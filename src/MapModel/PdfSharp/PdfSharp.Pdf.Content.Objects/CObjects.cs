@@ -318,8 +318,10 @@ namespace PdfSharp.Pdf.Content.Objects  // TODO: split into single files
       stream.Position = 0;
       int count = (int)stream.Length;
       byte[] bytes = new byte[count];
-      stream.Read(bytes, 0, count);
+      int read = stream.Read(bytes, 0, count);
       stream.Close();
+      if (read < count)
+        throw new IOException("Did not read all of the stream");
       return bytes;
     }
 

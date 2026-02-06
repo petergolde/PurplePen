@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net10.0-windows</TargetFrameworks>
     <ProjectType>Local</ProjectType>
     <AssemblyKeyContainerName></AssemblyKeyContainerName>
     <AssemblyOriginatorKeyFile>StrongnameKey.snk</AssemblyOriginatorKeyFile>
@@ -136,5 +136,4 @@
     <Compile Remove="AgInternals\AgExtensions.cs" />
     <Compile Remove="!internal\TargetContext.cs" />
   </ItemGroup>
-  <PropertyGroup />
 </Project>

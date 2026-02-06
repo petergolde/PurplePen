@@ -210,6 +210,7 @@ namespace PdfSharp.Forms
     /// Gets or sets an arbitrary zoom factor. The range is from 10 to 800.
     /// </summary>
     //[DefaultValue((int)Zoom.FullPage), Description("Determines the zoom of the page."), Category("Preview Properties")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public int ZoomPercent
     {
       get { return this.zoomPercent; }
@@ -235,6 +236,7 @@ namespace PdfSharp.Forms
     /// Gets or sets the color of the page.
     /// </summary>
     [Description("The background color of the page."), Category("Preview Properties")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public Color PageColor
     {
       get { return this.pageColor; }
@@ -253,6 +255,7 @@ namespace PdfSharp.Forms
     /// Gets or sets the color of the desktop.
     /// </summary>
     [Description("The color of the desktop."), Category("Preview Properties")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public Color DesktopColor
     {
       get { return this.desktopColor; }
@@ -309,6 +312,7 @@ namespace PdfSharp.Forms
     /// Gets or sets the page size in point.
     /// </summary>
     [Description("Determines the size (in points) of the page."), Category("Preview Properties")]
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public XSize PageSize
     {
       get { return new XSize((int)this.pageSize.Width, (int)this.pageSize.Height); }
@@ -324,6 +328,7 @@ namespace PdfSharp.Forms
     /// This is a hack for Visual Studio 2008. The designer uses reflection for setting the PageSize property.
     /// This fails, even an implicit operator that converts Size to XSize exits.
     /// </summary>
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public Size PageSizeF
     {
       get { return new Size(Convert.ToInt32(this.pageSize.Width), Convert.ToInt32(this.pageSize.Height)); }

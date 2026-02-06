@@ -84,7 +84,7 @@ namespace PdfSharp.Pdf.IO
         {
           stream = new FileStream(realPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
           byte[] bytes = new byte[1024];
-          stream.Read(bytes, 0, 1024);
+          int read = stream.Read(bytes, 0, 1024);
           return GetPdfFileVersion(bytes);
         }
       }
@@ -114,7 +114,7 @@ namespace PdfSharp.Pdf.IO
       {
         pos = stream.Position;
         byte[] bytes = new byte[1024];
-        stream.Read(bytes, 0, 1024);
+        int read = stream.Read(bytes, 0, 1024);
         return GetPdfFileVersion(bytes);
       }
       catch { }
@@ -273,7 +273,7 @@ namespace PdfSharp.Pdf.IO
         // Get file version
         byte[] header = new byte[1024];
         stream.Position = 0;
-        stream.Read(header, 0, 1024);
+        int read = stream.Read(header, 0, 1024);
         document.version = GetPdfFileVersion(header);
         if (document.version == 0)
           throw new InvalidOperationException(PSSR.InvalidPdf);

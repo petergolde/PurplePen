@@ -30,6 +30,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 //[assembly:AllowPartiallyTrustedCallers]
 //[assembly:SecurityPermission(SecurityAction.RequestMinimum)]
@@ -64,3 +65,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyVersion(PurplePen.MapModel.VersionNumber.Current)]
 [assembly: AssemblyFileVersion(PurplePen.MapModel.VersionNumber.Current)]
+
+#if NET5_0_OR_GREATER
+[assembly: SupportedOSPlatform("windows")]
+#endif

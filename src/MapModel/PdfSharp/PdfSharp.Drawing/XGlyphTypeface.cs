@@ -67,7 +67,9 @@ namespace PdfSharp.Drawing
         stream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read);
         int length = (int)stream.Length;
         byte[] data = new byte[length];
-        stream.Read(data, 0, length);
+        int read = stream.Read(data, 0, length);
+        if (read < length)
+          throw new IOException("Did not read all of the stream");
         Initialize(data);
       }
       finally

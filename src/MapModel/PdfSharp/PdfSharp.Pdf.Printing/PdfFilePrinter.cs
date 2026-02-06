@@ -179,9 +179,9 @@ namespace PdfSharp.Pdf.Printing
           process.Kill();
         }
       }
-      catch (Exception ex)
+      catch (Exception)
       {
-        throw ex;
+        throw;
       }
     }
 
