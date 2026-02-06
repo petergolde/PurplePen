@@ -1,4 +1,4 @@
 ﻿Lake Sammamish9.ocd
-lksamm9-4.png
+lksamm9_4.png
 -8.747843,89.37538,116.1649,-7.03439426
 1398,1079

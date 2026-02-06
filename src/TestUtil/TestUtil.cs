@@ -49,6 +49,11 @@ namespace TestingUtils
     // Utilities that are useful for test programs.
     public static class TestUtil
     {
+        public const string BIT32 = "32bit";
+        public const string BIT64 = "64bit";
+        public const string NETCORE = "netcore";
+        public const string NETFRAMEWORK = "netfr";
+
         // Get the parent directory of the project directory. This is obtained by
         // going up from the assembly location to we reach the "bin" directory, then
         // going two more levels.
@@ -89,31 +94,212 @@ namespace TestingUtils
             return Path.GetFullPath(Path.Combine(GetToolsFileDirectory(), toolName));
         }
 
+        // Get the specific file name for the current bitness and framework. For example,
+        // if path is "foo.dll", this looks for "foo-64bit-netcore.dll" or "foo-32bit-netfr.dll"
+        // depending on the current process bitness and framework. If such a file exists, it is returned;
+        // otherwise the original path is returned. Can also get just -64bit, just -netcore, etc.
+        public static string GetSpecificFileName(string path, bool throwOnNotFound = true)
+        {
+            string[] suffixes = {
+                Environment.Is64BitProcess ? BIT64 : BIT32,
+#if NETFRAMEWORK
+                NETFRAMEWORK,
+#else
+               NETCORE,
+#endif  
+            };
 
-        public static string GetBitnessSpecificFileName(string path, bool is64, bool checkExistance)
+            string result = GetSpecificFileName(path, suffixes);
+
+            if (result == null && throwOnNotFound)
+            {
+                throw new FileNotFoundException($"No matching file found for '{path}'");
+            }
+
+            return result;
+        }
+
+        // Check to see if we already have a bitness suffix on the file name.
+        // This is used to avoid adding multiple bitness suffixes.
+        public static bool HasBitnessSuffix(string path)
+        {
+            return HasAnySuffix(path, new[] { BIT32, BIT64 });
+        }
+
+        // Add the bitness suffixes to the file name, returning both variations.
+        // For example, if path is "foo.dll", this returns "foo-64bit.dll" and "foo-32bit.dll".
+        // The first variation is the one for the current bitness, and the second is the other bitness.
+        public static (string, string) AddBitnessSuffix(string path)
+        {
+            if (Environment.Is64BitProcess)
+                return AddSuffixes(path, BIT64, BIT32);
+            else
+                return AddSuffixes(path, BIT32, BIT64);
+        }
+
+        // Check to see if we already have a framework suffix on the file name.
+        // This is used to avoid adding multiple framework suffixes.
+        public static bool HasFrameworkSuffix(string path)
+        {
+            return HasAnySuffix(path, new[] { NETCORE, NETFRAMEWORK });
+        }
+
+        // Add the framework suffixes to the file name, returning both variations.
+        // For example, if path is "foo.dll", this returns "foo-netcore.dll" and "foo-netfr.dll".
+        // The first variation is the one for the current framework, and the second is the other framework.
+        public static (string, string) AddFrameworkSuffix(string path)
+        {
+#if NETFRAMEWORK
+            return AddSuffixes(path, NETFRAMEWORK, NETCORE);
+#else                
+            return AddSuffixes(path, NETCORE, NETFRAMEWORK);
+#endif
+        }
+
+
+
+        // Get a specific file name by searching for files with possible suffixes.
+        // path: a path with a file name and extension (file name must not contain '-')
+        // possibleSuffixes: array of possible suffixes (e.g. {"32bit", "netcore"})
+        // Searches for the original file or files with any combination of suffixes.
+        // Returns the single matching file, null if no match, or throws if multiple files match.
+        public static string GetSpecificFileName(string path, string[] possibleSuffixes)
         {
             string dir = Path.GetDirectoryName(path);
             string file = Path.GetFileNameWithoutExtension(path);
             string ext = Path.GetExtension(path);
-            string specificPath;
 
-            if (is64) {
-                specificPath = Path.Combine(dir, file + "-64bit" + ext);
-            }
-            else {
-                specificPath = Path.Combine(dir, file + "-32bit" + ext);
+            if (file.Contains("-")) {
+                throw new ArgumentException("File name cannot contain '-': " + path, nameof(path));
             }
 
-            if (!checkExistance || File.Exists(specificPath))
-                return specificPath;
-            else
-                return path;
+            // Search for all files that start with the base name and have the correct extension
+            string searchPattern = file + "*" + ext;
+            string[] candidateFiles = Directory.GetFiles(dir, searchPattern);
+
+            List<string> matchingFiles = new List<string>();
+
+            foreach (string candidatePath in candidateFiles) {
+                string candidateFile = Path.GetFileNameWithoutExtension(candidatePath);
+
+                // Check if this file matches the pattern
+                if (IsValidSuffixMatch(candidateFile, file, possibleSuffixes)) {
+                    matchingFiles.Add(candidatePath);
+                }
+            }
+
+            if (matchingFiles.Count == 0) {
+                return null;
+            }
+            else if (matchingFiles.Count > 1) {
+                throw new InvalidOperationException($"Multiple matching files found for '{path}': {string.Join(", ", matchingFiles)}");
+            }
+
+            return matchingFiles[0];
         }
 
-        public static string GetBitnessSpecificFileName(string path, bool checkExistance)
+        // Checks if a candidate file name matches the base name with valid suffixes.
+        // Returns true if the candidate is either an exact match (no suffix) or has
+        // suffixes that are all in the allowed list with no duplicates.
+        private static bool IsValidSuffixMatch(string candidateFileName, string baseName, string[] possibleSuffixes)
         {
-            return GetBitnessSpecificFileName(path, Environment.Is64BitProcess, checkExistance);
+            // Exact match (no suffix)
+            if (string.Equals(candidateFileName, baseName, StringComparison.OrdinalIgnoreCase)) {
+                return true;
+            }
+
+            // Must start with baseName followed by "-"
+            if (!candidateFileName.StartsWith(baseName + "-", StringComparison.OrdinalIgnoreCase)) {
+                return false;
+            }
+
+            // Get the suffix part (after baseName-)
+            string suffixPart = candidateFileName.Substring(baseName.Length + 1);
+
+            // Split by "-" to get individual suffixes
+            string[] fileSuffixes = suffixPart.Split('-');
+
+            // Check that all suffixes are in the allowed list and no duplicates
+            HashSet<string> usedSuffixes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (string suffix in fileSuffixes) {
+                // Check if this suffix is in the allowed list
+                bool found = false;
+                foreach (string allowed in possibleSuffixes) {
+                    if (string.Equals(suffix, allowed, StringComparison.OrdinalIgnoreCase)) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    return false; // Suffix not in allowed list
+                }
+
+                // Check for duplicates
+                if (!usedSuffixes.Add(suffix)) {
+                    return false; // Duplicate suffix
+                }
+            }
+
+            return true;
         }
+
+        // Checks if a filename (as returned from GetSpecificFileName) contains any of the specified suffixes.
+        // filename: a filename that may contain suffixes separated by "-"
+        // suffixesToCheck: array of suffixes to look for
+        // Returns true if any of the suffixes are present in the filename, false otherwise.
+        public static bool HasAnySuffix(string filename, string[] suffixesToCheck)
+        {
+            string file = Path.GetFileNameWithoutExtension(filename);
+
+            // Find the first "-" to separate base name from suffixes
+            int dashIndex = file.IndexOf('-');
+            if (dashIndex < 0) {
+                return false; // No suffixes in the filename
+            }
+
+            // Get the suffix part (after the first "-")
+            string suffixPart = file.Substring(dashIndex + 1);
+
+            // Split by "-" to get individual suffixes
+            string[] fileSuffixes = suffixPart.Split('-');
+
+            // Check if any of the suffixes to check are in the file's suffixes
+            foreach (string suffixToCheck in suffixesToCheck) {
+                foreach (string fileSuffix in fileSuffixes) {
+                    if (string.Equals(suffixToCheck, fileSuffix, StringComparison.OrdinalIgnoreCase)) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        // Adds two suffixes to a filename, returning both variations.
+        // filename: a filename (may already have suffixes separated by "-")
+        // suffix1: the first suffix to add
+        // suffix2: the second suffix to add
+        // Throws an exception if either suffix is already present in the filename.
+        // Returns a tuple where Item1 is the filename with suffix1 added, and Item2 is the filename with suffix2 added.
+        public static (string, string) AddSuffixes(string filename, string suffix1, string suffix2)
+        {
+            // Check if either suffix is already present
+            if (HasAnySuffix(filename, new[] { suffix1, suffix2 })) {
+                throw new ArgumentException($"Filename '{filename}' already contains one of the suffixes '{suffix1}' or '{suffix2}'");
+            }
+
+            string dir = Path.GetDirectoryName(filename);
+            string file = Path.GetFileNameWithoutExtension(filename);
+            string ext = Path.GetExtension(filename);
+
+            string fileWithSuffix1 = Path.Combine(dir, file + "-" + suffix1 + ext);
+            string fileWithSuffix2 = Path.Combine(dir, file + "-" + suffix2 + ext);
+
+            return (fileWithSuffix1, fileWithSuffix2);
+        }
+
 
         // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
         // The difference bitmap has "colorSame" background, and the bits from the second bitmap where differences are.
@@ -325,7 +511,7 @@ namespace TestingUtils
             // Is the file different than the baseline?
             bool different = false, fail = false;
 
-            baselineFile = GetBitnessSpecificFileName(baselineFile, true);
+            baselineFile = GetSpecificFileName(baselineFile);
 
             if (! File.Exists(baselineFile))
                 different = true;
@@ -451,7 +637,7 @@ namespace TestingUtils
         // Compare text file against a baseline, showing a dialog if they don't compare.
         public static void CompareTextFileBaseline(string newFile, string baseline, Dictionary<string, string> exceptionMap)
         {
-            baseline = GetBitnessSpecificFileName(baseline, true);
+            baseline = GetSpecificFileName(baseline);
 
             if (!File.Exists(baseline) || !CompareTextFiles(newFile, baseline, exceptionMap)) 
             {

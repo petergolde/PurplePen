@@ -145,9 +145,9 @@ namespace PurplePen.Tests
                 new string[] { TestUtil.GetTestFile("bitmapcreate\\create2\\BM-All Controls.pgw"),
                                TestUtil.GetTestFile("bitmapcreate\\create2\\BM-Course 1.pgw"),
                                TestUtil.GetTestFile("bitmapcreate\\create2\\BM-Course 2.pgw")},
-                new string[] { TestUtil.GetTestFile("bitmapcreate\\create2\\BM-All Controls_baseline.pgw"),
-                               TestUtil.GetTestFile("bitmapcreate\\create2\\BM-Course 1_baseline.pgw"),
-                               TestUtil.GetTestFile("bitmapcreate\\create2\\BM-Course 2_baseline.pgw")}
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\create2\\BM_All Controls_baseline.pgw"),
+                               TestUtil.GetTestFile("bitmapcreate\\create2\\BM_Course 1_baseline.pgw"),
+                               TestUtil.GetTestFile("bitmapcreate\\create2\\BM_Course 2_baseline.pgw")}
                 );
         }
 
@@ -177,9 +177,9 @@ namespace PurplePen.Tests
                 new string[] { TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM-All Controls.pgw"),
                                TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM-Course 1.pgw"),
                                TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM-Course 2.pgw")},
-                new string[] { TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM-All Controls_baseline.pgw"),
-                               TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM-Course 1_baseline.pgw"),
-                               TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM-Course 2_baseline.pgw")}
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM_All Controls_baseline.pgw"),
+                               TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM_Course 1_baseline.pgw"),
+                               TestUtil.GetTestFile("bitmapcreate\\create2_nobasemap\\BM_Course 2_baseline.pgw")}
                 );
         }
 
@@ -205,8 +205,8 @@ namespace PurplePen.Tests
                                TestUtil.GetTestFile("bitmapcreate\\create3\\Relay BC.gif"),
                                TestUtil.GetTestFile("bitmapcreate\\create3\\Relay BD.gif"),
                 },
-                new string[] { TestUtil.GetTestFile("bitmapcreate\\create3\\Exchg-1_baseline.png"),
-                               TestUtil.GetTestFile("bitmapcreate\\create3\\Exchg-2_baseline.png"),
+                new string[] { TestUtil.GetTestFile("bitmapcreate\\create3\\Exchg_1_baseline.png"),
+                               TestUtil.GetTestFile("bitmapcreate\\create3\\Exchg_2_baseline.png"),
                                TestUtil.GetTestFile("bitmapcreate\\create3\\Relay AC_baseline.png"),
                                TestUtil.GetTestFile("bitmapcreate\\create3\\Relay AD_baseline.png"),
                                TestUtil.GetTestFile("bitmapcreate\\create3\\Relay BC_baseline.png"),

@@ -54,7 +54,7 @@ namespace PurplePen.MapModel.Tests
 
         static Rendering()
         {
-            Uri uri = new Uri(typeof(Rendering).Assembly.CodeBase);
+            Uri uri = new Uri(typeof(Rendering).Assembly.Location);
             string executablePath = Path.GetDirectoryName(uri.LocalPath);
             string fontPath = Path.Combine(executablePath, "fonts");
 
@@ -151,6 +151,7 @@ namespace PurplePen.MapModel.Tests
                 });
         }
 
+#if NETFRAMEWORK
         [Test]
         public void PatternBrush() {
             GDIPlus_RenderingTest(800, new RectangleF(-103, -117, 200, 200), TestUtil.GetTestFile("rendering\\patternbrush_baseline.png"),
@@ -209,6 +210,7 @@ namespace PurplePen.MapModel.Tests
                     grTarget.DrawLine(pen, new PointF(30, -30), new PointF(-30, 30));
                 });
         }
+#endif
 
         [Test]
         public void TextMetrics()
@@ -413,6 +415,7 @@ namespace PurplePen.MapModel.Tests
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
+#if NETFRAMEWORK
 
         [Test]
         public void TimeTeanWest()
@@ -1237,7 +1240,7 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTestLayers("marymoor11_upperlayers.txt", 7, null, false, false, 11, 12);
         }
-
+#endif
 
     }
 

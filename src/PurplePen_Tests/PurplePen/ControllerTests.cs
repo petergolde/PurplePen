@@ -1999,7 +1999,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
 
             CreateOcadFiles(TestUtil.GetTestFile("controller\\create_ocad5.ppen"), settings, new CourseAppearance(),
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create5\\MyEvent_Coolthing-A&B_C&D_E_F.ocd") },
-                new string[1] { TestUtil.GetTestFile("controller\\ocad_create5\\MyEvent_Coolthing-A&B_C&D_E_F_expected.txt") });
+                new string[1] { TestUtil.GetTestFile("controller\\ocad_create5\\MyEvent_Coolthing_A&B_C&D_E_F_expected.txt") });
         }
 
         [TestMethod]
@@ -2095,7 +2095,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
 
             CreateOcadFiles(TestUtil.GetTestFile("controller\\mapexchange2.ppen"), settings, new CourseAppearance(),
                 new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3.ocd"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4.ocd") },
-                new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-1-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-2-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-3-expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5-4-expected.txt") });
+                new string[5] { TestUtil.GetTestFile("controller\\ocad_create9\\Course 4G_expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5_1_expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5_2_expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5_3_expected.txt"), TestUtil.GetTestFile("controller\\ocad_create9\\Course 5_4_expected.txt") });
         }
 
         [TestMethod]
@@ -2123,8 +2123,8 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
                                TestUtil.GetTestFile("controller\\ocad_create10\\SmallScale_expected.txt"),
                                TestUtil.GetTestFile("controller\\ocad_create10\\LargeScale_expected.txt"),
                                TestUtil.GetTestFile("controller\\ocad_create10\\MediumScale_expected.txt")},
-                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln-CMYK.gif")},
-                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln-CMYK-baseline.png")});
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln_CMYK.gif")},
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create10\\Lincoln_CMYK_baseline.png")});
         }
 
         [TestMethod]

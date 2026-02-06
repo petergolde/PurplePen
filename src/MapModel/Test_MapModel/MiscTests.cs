@@ -48,6 +48,12 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class MiscTests
     {
+        static MiscTests()
+        {
+            // Make sure that the code page providers are loaded.
+            Encoding encoding = Util.GetDefaultOcadEncoding();
+        }
+
         [Test]
         public void TestCompression()
         {

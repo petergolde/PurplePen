@@ -15,6 +15,7 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class SelectionTests
     {
+#if NETFRAMEWORK
         private const int MAX_PIXEL_DIFF = 30;
 
         Map ReadMap(string basename)
@@ -623,6 +624,6 @@ namespace PurplePen.MapModel.Tests
             CheckTest("hittestpunchbox.txt", HitTestMap);
         }
 
-
+#endif
     }
 }

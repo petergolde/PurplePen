@@ -700,7 +700,7 @@ namespace PurplePen.MapModel.DebugCode
         public void DumpFile(string ocadFileName, TextWriter writer)
         {
             this.writer = writer;
-            reader = new FastBinaryReader(ocadFileName, System.Text.Encoding.Default);
+            reader = new FastBinaryReader(ocadFileName, Util.GetDefaultOcadEncoding());
             DumpOcadFile();
 
             this.writer = null;
@@ -709,7 +709,7 @@ namespace PurplePen.MapModel.DebugCode
         public void DumpProjection(string ocadFileName, TextWriter writer)
         {
             this.writer = writer;
-            reader = new FastBinaryReader(ocadFileName, System.Text.Encoding.Default);
+            reader = new FastBinaryReader(ocadFileName, Util.GetDefaultOcadEncoding());
             DumpProjection();
             this.writer = null;
         }

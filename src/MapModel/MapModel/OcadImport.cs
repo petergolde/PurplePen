@@ -177,7 +177,7 @@ namespace PurplePen.MapModel
             this.filename = filename;
 
             // Open the file and read the contents.
-            reader = new FastBinaryReader(bytes, Encoding.Default);
+            reader = new FastBinaryReader(bytes, Util.GetDefaultOcadEncoding());
 
             // Get the total size of the stream.
             totalFileSize = reader.Length;
@@ -1913,7 +1913,7 @@ namespace PurplePen.MapModel
         // CONDIER: we should somehow log these errors and show them to the user.
 #if TEST
         internal
-#endif 
+#endif
         static OcadCoord[] FixOcadCoords(OcadCoord[] coords, bool allowHoles, out int numHoles, out bool anyCutouts)
         {
             bool foundProblem = false;

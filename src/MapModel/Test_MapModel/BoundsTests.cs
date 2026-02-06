@@ -151,6 +151,7 @@ namespace PurplePen.MapModel.Tests
             CheckTest("points.txt");
         }
 
+#if NETFRAMEWORK
         [Test]
         public void LineText()
         {
@@ -167,16 +168,17 @@ namespace PurplePen.MapModel.Tests
         public void TopText() {
             CheckTest("toptext.txt");
         }
-
-        [Test]
-        public void MidText() {
-            CheckTest("midtext.txt");
-        }
-
+        
         [Test]
         public void TextUnderline()
         {
             CheckTest("textunderline.txt");
+        }
+#endif
+
+        [Test]
+        public void MidText() {
+            CheckTest("midtext.txt");
         }
 
         [Test]
@@ -185,12 +187,13 @@ namespace PurplePen.MapModel.Tests
             CheckTest("textframing.txt");
         }
 
+#if NETFRAMEWORK
         [Test]
         public void LayoutObjects()
         {
             CheckTest("layout_objects11.txt");
         }
-
+#endif
     }
 
 }

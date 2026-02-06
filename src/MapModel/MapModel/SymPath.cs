@@ -1841,6 +1841,15 @@ namespace PurplePen.MapModel
             throw new NotSupportedException("GetHashCode not supported.");
         }
 
+        // Change negative zero to positive zero for output in ToString.
+        static float SanitizeZero(float f)
+        {
+            if (f >= -1E-5 && f <= 0.0F)
+                return 0.0F;
+            else
+                return f;
+        }
+
         // Create a string representation with the kinds and points of the path, with kinds represented by single letters.
         public override string ToString()
         {
@@ -1859,7 +1868,8 @@ namespace PurplePen.MapModel
                     Debug.Fail("bad point kind"); break;
                 }
 
-                builder.AppendFormat("({0:0.##},{1:0.##})", points[i].X, points[i].Y);
+                // sanitize zeros so we don't get negative zeros.
+                builder.AppendFormat("({0:0.##},{1:0.##})", SanitizeZero(points[i].X), SanitizeZero(points[i].Y));
 
                 if (startStopFlags != null && i < startStopFlags.Length && startStopFlags[i] != 0)
                     builder.AppendFormat("/{0:X}", startStopFlags[i]);

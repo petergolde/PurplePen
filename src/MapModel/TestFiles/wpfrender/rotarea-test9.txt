@@ -1,4 +1,4 @@
 ﻿rotarea9.ocd
-rotarea-test9.png
+rotarea_test9.png
 -25.0850353,26.2867928,33.65236,-32.9586143
 925,933

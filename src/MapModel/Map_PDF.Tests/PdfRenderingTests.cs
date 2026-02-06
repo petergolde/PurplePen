@@ -246,8 +246,8 @@ namespace Map_PDF.Tests
         [Test]
         public void FramingLines()
         {
-            CheckTest("framingline-test.txt", false, true, 6, 10);
-            CheckTest("framingline-test9.txt", false, true, 6, 10);
+            CheckTest("framinglinetest.txt", false, true, 6, 10);
+            CheckTest("framinglinetest9.txt", false, true, 6, 10);
         }
 
         [Test]

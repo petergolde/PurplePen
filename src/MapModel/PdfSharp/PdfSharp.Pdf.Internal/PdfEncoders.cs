@@ -52,6 +52,15 @@ namespace PdfSharp.Pdf.Internal
     //  stream.Write(PdfEncoders.WinAnsiEncoding.GetBytes(text), 0, text.Length);
     //}
 
+#if NET5_0_OR_GREATER
+    static PdfEncoders()
+    {
+        // Initialize the codepage information that we need.
+        // This runs once per process.
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+    }
+#endif
+
     /// <summary>
     /// Gets the raw encoding.
     /// </summary>

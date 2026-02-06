@@ -110,7 +110,7 @@ namespace PurplePen.MapModel {
 
                 OcadFileHeader fileHeader = new OcadFileHeader();
 
-                writer = new BinaryWriter(stream, Encoding.Default);
+                writer = new BinaryWriter(stream, Util.GetDefaultOcadEncoding());
 
                 fileHeader.OCADMark = 3245;
 

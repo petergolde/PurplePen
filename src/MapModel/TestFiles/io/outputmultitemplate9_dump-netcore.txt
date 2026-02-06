@@ -1,0 +1,64 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x0
+  Version=9
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+String of type 1039
+  ObjIndex=0
+  firstField=
+  code=m, value=15000
+  code=g, value=10
+  code=r, value=0
+  code=x, value=0
+  code=y, value=0
+  code=a, value=0
+  code=d, value=100
+
+String of type 1026
+  ObjIndex=0
+  firstField=
+  code=a, value=0
+  code=r, value=0
+
+String of type 1030
+  ObjIndex=0
+  firstField=
+  code=d, value=0
+  code=l, value=0
+
+String of type 8
+  ObjIndex=0
+  firstField=[[TESTDIR]]\io\subdir\k.ocd
+  code=r, value=1
+  code=s, value=1
+  code=x, value=4
+  code=y, value=5
+  code=a, value=7.4
+  code=u, value=0.0769697
+  code=v, value=0.026169697
+  code=b, value=-18.4
+
+String of type 8
+  ObjIndex=0
+  firstField=[[TESTDIR]]\io\subdir\l.jpg
+  code=r, value=0
+  code=s, value=0
+  code=x, value=7
+  code=y, value=-5
+  code=a, value=-12.5
+  code=u, value=0.0254
+  code=v, value=0.050545998
+  code=b, value=1.4
+
+String of type 8
+  ObjIndex=0
+  firstField=[[TESTDIR]]\io\subdir\m.bmp
+  code=r, value=1
+  code=s, value=1
+  code=x, value=12
+  code=y, value=-5.673
+  code=a, value=7.4
+  code=u, value=1.6933333
+  code=v, value=1.6933333
+  code=b, value=45.4
+

@@ -46,162 +46,175 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            panel1 = new System.Windows.Forms.Panel();
-            buttonFixBitness = new System.Windows.Forms.Button();
-            labelNowShowing = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            checkBoxRed = new System.Windows.Forms.CheckBox();
-            checkBoxBlink = new System.Windows.Forms.CheckBox();
-            infoText = new System.Windows.Forms.Label();
-            buttonAccept = new System.Windows.Forms.Button();
-            buttonFail = new System.Windows.Forms.Button();
-            timer = new System.Windows.Forms.Timer(components);
-            bitmapViewer = new BitmapViewer();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonFixFramework = new System.Windows.Forms.Button();
+            this.buttonFixBitness = new System.Windows.Forms.Button();
+            this.labelNowShowing = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxRed = new System.Windows.Forms.CheckBox();
+            this.checkBoxBlink = new System.Windows.Forms.CheckBox();
+            this.infoText = new System.Windows.Forms.Label();
+            this.buttonAccept = new System.Windows.Forms.Button();
+            this.buttonFail = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.bitmapViewer = new TestingUtils.BitmapViewer();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(buttonFixBitness);
-            panel1.Controls.Add(labelNowShowing);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(checkBoxRed);
-            panel1.Controls.Add(checkBoxBlink);
-            panel1.Controls.Add(infoText);
-            panel1.Controls.Add(buttonAccept);
-            panel1.Controls.Add(buttonFail);
-            panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            panel1.Location = new System.Drawing.Point(0, 0);
-            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(915, 66);
-            panel1.TabIndex = 1;
+            this.panel1.Controls.Add(this.buttonFixFramework);
+            this.panel1.Controls.Add(this.buttonFixBitness);
+            this.panel1.Controls.Add(this.labelNowShowing);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.checkBoxRed);
+            this.panel1.Controls.Add(this.checkBoxBlink);
+            this.panel1.Controls.Add(this.infoText);
+            this.panel1.Controls.Add(this.buttonAccept);
+            this.panel1.Controls.Add(this.buttonFail);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1046, 70);
+            this.panel1.TabIndex = 1;
+            // 
+            // buttonFixFramework
+            // 
+            this.buttonFixFramework.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFixFramework.Location = new System.Drawing.Point(844, 38);
+            this.buttonFixFramework.Name = "buttonFixFramework";
+            this.buttonFixFramework.Size = new System.Drawing.Size(186, 29);
+            this.buttonFixFramework.TabIndex = 8;
+            this.buttonFixFramework.Text = "Make Framework Specific";
+            this.buttonFixFramework.UseVisualStyleBackColor = true;
+            this.buttonFixFramework.Click += new System.EventHandler(this.buttonFixFramework_Click);
             // 
             // buttonFixBitness
             // 
-            buttonFixBitness.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttonFixBitness.Location = new System.Drawing.Point(648, 36);
-            buttonFixBitness.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            buttonFixBitness.Name = "buttonFixBitness";
-            buttonFixBitness.Size = new System.Drawing.Size(159, 27);
-            buttonFixBitness.TabIndex = 7;
-            buttonFixBitness.Text = "Make Bitness Specific";
-            buttonFixBitness.UseVisualStyleBackColor = true;
-            buttonFixBitness.Click += buttonFixBitness_Click;
+            this.buttonFixBitness.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFixBitness.Location = new System.Drawing.Point(663, 38);
+            this.buttonFixBitness.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.buttonFixBitness.Name = "buttonFixBitness";
+            this.buttonFixBitness.Size = new System.Drawing.Size(182, 29);
+            this.buttonFixBitness.TabIndex = 7;
+            this.buttonFixBitness.Text = "Make Bitness Specific";
+            this.buttonFixBitness.UseVisualStyleBackColor = true;
+            this.buttonFixBitness.Click += new System.EventHandler(this.buttonFixBitness_Click);
             // 
             // labelNowShowing
             // 
-            labelNowShowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            labelNowShowing.Location = new System.Drawing.Point(460, 42);
-            labelNowShowing.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            labelNowShowing.Name = "labelNowShowing";
-            labelNowShowing.Size = new System.Drawing.Size(229, 20);
-            labelNowShowing.TabIndex = 6;
-            labelNowShowing.Text = "now showing";
+            this.labelNowShowing.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNowShowing.Location = new System.Drawing.Point(517, 45);
+            this.labelNowShowing.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labelNowShowing.Name = "labelNowShowing";
+            this.labelNowShowing.Size = new System.Drawing.Size(262, 21);
+            this.labelNowShowing.TabIndex = 6;
+            this.labelNowShowing.Text = "now showing";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(366, 42);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(83, 15);
-            label1.TabIndex = 5;
-            label1.Text = "Now showing:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(418, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Now showing:";
             // 
             // checkBoxRed
             // 
-            checkBoxRed.AutoSize = true;
-            checkBoxRed.Location = new System.Drawing.Point(504, 9);
-            checkBoxRed.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            checkBoxRed.Name = "checkBoxRed";
-            checkBoxRed.Size = new System.Drawing.Size(144, 19);
-            checkBoxRed.TabIndex = 4;
-            checkBoxRed.Text = "Show difference in red";
-            checkBoxRed.UseVisualStyleBackColor = true;
-            checkBoxRed.CheckedChanged += checkBoxRed_CheckedChanged;
+            this.checkBoxRed.AutoSize = true;
+            this.checkBoxRed.Location = new System.Drawing.Point(576, 10);
+            this.checkBoxRed.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.checkBoxRed.Name = "checkBoxRed";
+            this.checkBoxRed.Size = new System.Drawing.Size(160, 20);
+            this.checkBoxRed.TabIndex = 4;
+            this.checkBoxRed.Text = "Show difference in red";
+            this.checkBoxRed.UseVisualStyleBackColor = true;
+            this.checkBoxRed.CheckedChanged += new System.EventHandler(this.checkBoxRed_CheckedChanged);
             // 
             // checkBoxBlink
             // 
-            checkBoxBlink.AutoSize = true;
-            checkBoxBlink.Location = new System.Drawing.Point(370, 9);
-            checkBoxBlink.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            checkBoxBlink.Name = "checkBoxBlink";
-            checkBoxBlink.Size = new System.Drawing.Size(117, 19);
-            checkBoxBlink.TabIndex = 3;
-            checkBoxBlink.Text = "Continuous blink";
-            checkBoxBlink.UseVisualStyleBackColor = true;
+            this.checkBoxBlink.AutoSize = true;
+            this.checkBoxBlink.Location = new System.Drawing.Point(423, 10);
+            this.checkBoxBlink.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.checkBoxBlink.Name = "checkBoxBlink";
+            this.checkBoxBlink.Size = new System.Drawing.Size(126, 20);
+            this.checkBoxBlink.TabIndex = 3;
+            this.checkBoxBlink.Text = "Continuous blink";
+            this.checkBoxBlink.UseVisualStyleBackColor = true;
             // 
             // infoText
             // 
-            infoText.Location = new System.Drawing.Point(12, 10);
-            infoText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            infoText.Name = "infoText";
-            infoText.Size = new System.Drawing.Size(340, 46);
-            infoText.TabIndex = 2;
-            infoText.Text = "label1";
+            this.infoText.Location = new System.Drawing.Point(14, 11);
+            this.infoText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.infoText.Name = "infoText";
+            this.infoText.Size = new System.Drawing.Size(367, 49);
+            this.infoText.TabIndex = 2;
+            this.infoText.Text = "label1";
             // 
             // buttonAccept
             // 
-            buttonAccept.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttonAccept.Location = new System.Drawing.Point(692, 8);
-            buttonAccept.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            buttonAccept.Name = "buttonAccept";
-            buttonAccept.Size = new System.Drawing.Size(114, 27);
-            buttonAccept.TabIndex = 1;
-            buttonAccept.Text = "Accept Baseline";
-            buttonAccept.UseVisualStyleBackColor = true;
-            buttonAccept.Click += buttonAccept_Click;
+            this.buttonAccept.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAccept.Location = new System.Drawing.Point(791, 9);
+            this.buttonAccept.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.buttonAccept.Name = "buttonAccept";
+            this.buttonAccept.Size = new System.Drawing.Size(130, 29);
+            this.buttonAccept.TabIndex = 1;
+            this.buttonAccept.Text = "Accept Baseline";
+            this.buttonAccept.UseVisualStyleBackColor = true;
+            this.buttonAccept.Click += new System.EventHandler(this.buttonAccept_Click);
             // 
             // buttonFail
             // 
-            buttonFail.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            buttonFail.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            buttonFail.Location = new System.Drawing.Point(813, 8);
-            buttonFail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            buttonFail.Name = "buttonFail";
-            buttonFail.Size = new System.Drawing.Size(88, 27);
-            buttonFail.TabIndex = 0;
-            buttonFail.Text = "Fail";
-            buttonFail.UseVisualStyleBackColor = true;
-            buttonFail.Click += buttonFail_Click;
+            this.buttonFail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFail.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonFail.Location = new System.Drawing.Point(929, 9);
+            this.buttonFail.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.buttonFail.Name = "buttonFail";
+            this.buttonFail.Size = new System.Drawing.Size(101, 29);
+            this.buttonFail.TabIndex = 0;
+            this.buttonFail.Text = "Fail";
+            this.buttonFail.UseVisualStyleBackColor = true;
+            this.buttonFail.Click += new System.EventHandler(this.buttonFail_Click);
             // 
             // timer
             // 
-            timer.Enabled = true;
-            timer.Interval = 350;
-            timer.Tick += timer_Tick;
+            this.timer.Enabled = true;
+            this.timer.Interval = 350;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // bitmapViewer
             // 
-            bitmapViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            bitmapViewer.Location = new System.Drawing.Point(0, 66);
-            bitmapViewer.Margin = new System.Windows.Forms.Padding(56, 25, 56, 25);
-            bitmapViewer.Name = "bitmapViewer";
-            bitmapViewer.Size = new System.Drawing.Size(915, 816);
-            bitmapViewer.TabIndex = 0;
-            bitmapViewer.MouseDown += bitmapViewer_MouseDown;
+            this.bitmapViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bitmapViewer.Location = new System.Drawing.Point(0, 70);
+            this.bitmapViewer.Margin = new System.Windows.Forms.Padding(64, 27, 64, 27);
+            this.bitmapViewer.Name = "bitmapViewer";
+            this.bitmapViewer.Size = new System.Drawing.Size(1046, 871);
+            this.bitmapViewer.TabIndex = 0;
+            this.bitmapViewer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bitmapViewer_MouseDown);
             // 
             // BitmapCompareDialog2
             // 
-            AcceptButton = buttonFail;
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            CancelButton = buttonFail;
-            ClientSize = new System.Drawing.Size(915, 882);
-            Controls.Add(bitmapViewer);
-            Controls.Add(panel1);
-            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            Name = "BitmapCompareDialog2";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Bitmaps do not match";
-            WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            FormClosed += BitmapCompareDialog2_FormClosed;
-            Shown += BitmapCompareDialog2_Shown;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
+            this.AcceptButton = this.buttonFail;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonFail;
+            this.ClientSize = new System.Drawing.Size(1046, 941);
+            this.Controls.Add(this.bitmapViewer);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.Name = "BitmapCompareDialog2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bitmaps do not match";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BitmapCompareDialog2_FormClosed);
+            this.Shown += new System.EventHandler(this.BitmapCompareDialog2_Shown);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 
@@ -218,5 +231,6 @@
         private System.Windows.Forms.CheckBox checkBoxBlink;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button buttonFixBitness;
+        private System.Windows.Forms.Button buttonFixFramework;
     }
 }
