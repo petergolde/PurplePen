@@ -234,6 +234,7 @@ namespace InteractiveTestApp.MapView
         #endregion
 
         #region Property accessors
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public float ZoomFactor {
             get { return zoom; }
             set { 
@@ -250,6 +251,7 @@ namespace InteractiveTestApp.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PointF CenterPoint {
             get { return centerPoint; }
             set {
@@ -266,10 +268,12 @@ namespace InteractiveTestApp.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool PointerInView {
             get { return mouseInView; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public RectangleF Viewport {
             get {
                 return viewport;
@@ -288,6 +292,7 @@ namespace InteractiveTestApp.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ShowGrid {
             get { 
                 return gridOn;
@@ -309,6 +314,7 @@ namespace InteractiveTestApp.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ShowSymbolBounds
         {
             get

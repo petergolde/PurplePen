@@ -176,7 +176,7 @@ namespace InteractiveTestApp.MapView
 			// Set newBitmap to the new bitmap's size.
 			if (bitmap == null || bitmapSize != sizeView) {
 				// Need a new bitmap.
-				newBitmap = new Bitmap(sizeView.Width, sizeView.Height, PixelFormat.Format24bppRgb);
+				newBitmap = new Bitmap(sizeView.Width, sizeView.Height, PixelFormat.Format32bppArgb);
 				MarkAllInvalid();  // CONSIDER: it seems like it should be possible to preserve parts of the bitmap
 				// it this case, but I can't get it to work properly without some drawing glitches
 				// from rounding errors. The rest of the code is written to try to handle the case
