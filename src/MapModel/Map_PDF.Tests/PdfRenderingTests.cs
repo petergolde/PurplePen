@@ -52,7 +52,7 @@ namespace Map_PDF.Tests
 
         static Rendering()
         {
-            Uri uri = new Uri(typeof(Rendering).Assembly.CodeBase);
+            Uri uri = new Uri(typeof(Rendering).Assembly.Location);
             string executablePath = Path.GetDirectoryName(uri.LocalPath);
             string fontPath = Path.Combine(executablePath, "fonts");
 

@@ -46,7 +46,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
-//using System.Drawing.Imaging;
+using System.Drawing.Imaging;
 using System.Threading;
 
 namespace PurplePen
