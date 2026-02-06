@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
+using System.Runtime.Versioning;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ExecutionScope = Microsoft.VisualStudio.TestTools.UnitTesting.ExecutionScope;
 
@@ -40,3 +40,7 @@ using ExecutionScope = Microsoft.VisualStudio.TestTools.UnitTesting.ExecutionSco
 
 // Enable parallelism at class level for MSTest (not current used in this project, but eliminate the warning message).
 [assembly: Parallelize(Scope = ExecutionScope.ClassLevel)]
+
+#if NET5_0_OR_GREATER
+[assembly: SupportedOSPlatform("windows")]
+#endif
