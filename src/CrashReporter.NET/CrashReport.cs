@@ -31,6 +31,7 @@ namespace CrashReporterDotNET
             }
         }
 
+
         public override sealed string Text
         {
             get { return base.Text; }

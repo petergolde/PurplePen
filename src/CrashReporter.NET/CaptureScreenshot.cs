@@ -9,36 +9,36 @@ namespace CrashReporterDotNET
     {
         public Image CaptureScreen()
         {
-            return CaptureWindow(User32.GetDesktopWindow());
+            return CaptureWindow(NativeMethods.GetDesktopWindow());
         }
 
         public Image CaptureWindow(IntPtr handle)
         {
             // get te hDC of the target window
-            IntPtr hdcSrc = User32.GetWindowDC(handle);
+            IntPtr hdcSrc = NativeMethods.GetWindowDC(handle);
             // get the size
-            var windowRect = new User32.Rect();
-            User32.GetWindowRect(handle, ref windowRect);
+            var windowRect = new NativeMethods.Rect();
+            NativeMethods.GetWindowRect(handle, ref windowRect);
             int width = windowRect.right - windowRect.left;
             int height = windowRect.bottom - windowRect.top;
             // create a device context we can copy to
-            IntPtr hdcDest = Gdi32.CreateCompatibleDC(hdcSrc);
+            IntPtr hdcDest = NativeMethods.CreateCompatibleDC(hdcSrc);
             // create a bitmap we can copy it to,
             // using GetDeviceCaps to get the width/height
-            IntPtr hBitmap = Gdi32.CreateCompatibleBitmap(hdcSrc, width, height);
+            IntPtr hBitmap = NativeMethods.CreateCompatibleBitmap(hdcSrc, width, height);
             // select the bitmap object
-            IntPtr hOld = Gdi32.SelectObject(hdcDest, hBitmap);
+            IntPtr hOld = NativeMethods.SelectObject(hdcDest, hBitmap);
             // bitblt over
-            Gdi32.BitBlt(hdcDest, 0, 0, width, height, hdcSrc, 0, 0, Gdi32.Srccopy);
+            NativeMethods.BitBlt(hdcDest, 0, 0, width, height, hdcSrc, 0, 0, NativeMethods.Srccopy);
             // restore selection
-            Gdi32.SelectObject(hdcDest, hOld);
+            NativeMethods.SelectObject(hdcDest, hOld);
             // clean up
-            Gdi32.DeleteDC(hdcDest);
-            User32.ReleaseDC(handle, hdcSrc);
+            NativeMethods.DeleteDC(hdcDest);
+            NativeMethods.ReleaseDC(handle, hdcSrc);
             // get a .NET image object for it
             Image img = Image.FromHbitmap(hBitmap);
             // free up the Bitmap object
-            Gdi32.DeleteObject(hBitmap);
+            NativeMethods.DeleteObject(hBitmap);
             return img;
         }
 
@@ -56,44 +56,41 @@ namespace CrashReporterDotNET
             img.Save(filename, format);
         }
 
-        private static class Gdi32
+        private static class NativeMethods
         {
             public const int Srccopy = 0x00CC0020; // BitBlt dwRop parameter
 
-            [DllImport("gdi32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern bool BitBlt(IntPtr hObject, int nXDest, int nYDest,
                                              int nWidth, int nHeight, IntPtr hObjectSource,
                                              int nXSrc, int nYSrc, int dwRop);
 
-            [DllImport("gdi32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr CreateCompatibleBitmap(IntPtr hDc, int nWidth,
                                                                int nHeight);
 
-            [DllImport("gdi32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr CreateCompatibleDC(IntPtr hDc);
 
-            [DllImport("gdi32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern bool DeleteDC(IntPtr hDc);
 
-            [DllImport("gdi32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern bool DeleteObject(IntPtr hObject);
 
-            [DllImport("gdi32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr SelectObject(IntPtr hDc, IntPtr hObject);
-        }
 
-        private static class User32
-        {
-            [DllImport("user32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr GetDesktopWindow();
 
-            [DllImport("user32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr GetWindowDC(IntPtr hWnd);
 
-            [DllImport("user32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDc);
 
-            [DllImport("user32.dll")]
+            [DllImport("NativeMethods.dll")]
             public static extern IntPtr GetWindowRect(IntPtr hWnd, ref Rect rect);
 
             [StructLayout(LayoutKind.Sequential)]
