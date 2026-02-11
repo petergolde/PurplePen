@@ -109,7 +109,7 @@ namespace PurplePen.DebugUI
             matrix.Translate(-centerPoint.X, -centerPoint.Y);
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
+            Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, GDIPlus_GraphicsTarget.NonAlphaPixelFormat);
             float minResolution = mapArea.Width / (float) bitmapSize.Width;
 
             if (mapDisplay != null) {

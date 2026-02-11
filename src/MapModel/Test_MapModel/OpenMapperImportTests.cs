@@ -290,7 +290,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void IsomArea()
         {
@@ -298,7 +297,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, RectangleF.FromLTRB(-218, 103, -197.3F, 115), "isomarea_baseline.png");
             }
         }
-#endif
 
         [Test]
         public void IsomAreaNoBitmap()
@@ -308,7 +306,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void SpecialAreas()
         {
@@ -317,7 +314,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, rect, "specialareas_baseline.png");
             }
         }
-#endif
 
         [Test]
         public void SpecialAreasNoBitmap()
@@ -328,7 +324,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void RotatedAreas()
         {
@@ -337,7 +332,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, rect, "rotarea.png");
             }
         }
-#endif
 
         [Test]
         public void RotatedAreasNoBitmap()
@@ -348,7 +342,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void Text1()
         {
@@ -439,7 +432,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, rect, "text9_baseline.png");
             }
         }
-#endif
 
         [Test]
         public void DashLengths()
@@ -506,7 +498,6 @@ namespace PurplePen.MapModel.Tests
         }
 
 
-#if NETFRAMEWORK
         [Test]
         public void SPUMap()
         {
@@ -524,7 +515,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, rect, "NSeattleCollege.png");
             }
         }
-#endif
 
         [Test]
         public void DotSpacing()
@@ -775,7 +765,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void Templates()
         {
@@ -793,7 +782,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, rect, "massysprint.png");
             }
         }
-#endif
         [Test]
         public void MissingFonts()
         {
@@ -822,7 +810,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void TextBlankLines()
         {
@@ -831,7 +818,6 @@ namespace PurplePen.MapModel.Tests
                 VerifyRenderingAndRoundtrip(baseName, rect, "text_blank_lines.png");
             }
         }
-#endif
 
         [Test]
         public void CornerScaling()
@@ -887,7 +873,6 @@ namespace PurplePen.MapModel.Tests
             }
         }
 
-#if NETFRAMEWORK
         [Test]
         public void MultiLineBelow()
         {
@@ -941,7 +926,6 @@ namespace PurplePen.MapModel.Tests
             VerifyRenderingOcadAndRoundtrip("borderedarea9.ocd", rect, "borderedarea9.png", 9);
         }
 
-#endif
 
         [Test]
         public void Overprinting()

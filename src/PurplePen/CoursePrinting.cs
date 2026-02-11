@@ -175,7 +175,7 @@ namespace PurplePen
                 // Create the bitmap. Can do this once because each band is the same size.
                 int bitmapWidth = (int) Math.Round(bands[0].printRectangle.Width * dpi / 100F);
                 int bitmapHeight = (int) Math.Round(bands[0].printRectangle.Height * dpi / 100F);
-                Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                Bitmap bitmap = new Bitmap(bitmapWidth, bitmapHeight, GDIPlus_GraphicsTarget.NonAlphaPixelFormat);
 
                 foreach (CoursePage band in bands) {
                     // Set the transform

@@ -75,7 +75,7 @@ namespace PurplePen
             pixelWidth = (int)Math.Ceiling(bitmapWidth);
             pixelHeight = (int)Math.Ceiling(bitmapHeight);
 
-            Bitmap bitmap = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format24bppRgb);
+            Bitmap bitmap = new Bitmap(pixelWidth, pixelHeight, GDIPlus_GraphicsTarget.NonAlphaPixelFormat);
             bitmap.SetResolution(dpi, dpi);
 
             // Set the transform

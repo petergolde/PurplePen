@@ -78,7 +78,7 @@ namespace PurplePen.MapModel.Tests
             int height = (int)Math.Ceiling(width * drawingRectangle.Height / drawingRectangle.Width);
 
             Bitmap bitmapNew;
-            using (GDIPlus_BitmapGraphicsTarget grTarget = new GDIPlus_BitmapGraphicsTarget(width, height, false, CmykColor.FromCmyk(0, 0, 0, 0), drawingRectangle, true)) {
+            using (GDIPlus_BitmapGraphicsTarget grTarget = new GDIPlus_BitmapGraphicsTarget(width, height, true, CmykColor.FromCmyk(0, 0, 0, 0), drawingRectangle, true)) {
                 draw(grTarget);
                 bitmapNew = grTarget.Bitmap;
             }
@@ -151,7 +151,7 @@ namespace PurplePen.MapModel.Tests
                 });
         }
 
-#if NETFRAMEWORK
+#if true
         [Test]
         public void PatternBrush() {
             GDIPlus_RenderingTest(800, new RectangleF(-103, -117, 200, 200), TestUtil.GetTestFile("rendering\\patternbrush_baseline.png"),
@@ -245,7 +245,7 @@ namespace PurplePen.MapModel.Tests
 
         public static Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOpts, float intensity)
         {
-            var grTarget = new GDIPlus_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, false, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
+            var grTarget = new GDIPlus_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, true, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
             using (grTarget) {
                 renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
                 renderOpts.minResolution = mapArea.Width / (float)bitmapSize.Width;
@@ -260,7 +260,7 @@ namespace PurplePen.MapModel.Tests
 
         public static Bitmap RenderAntiAliasBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOpts, float intensity)
         {
-            var grTarget = new GDIPlus_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, false, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
+            var grTarget = new GDIPlus_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, true, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
             grTarget.PushAntiAliasing(true);
             using (grTarget) {
                 renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
@@ -415,7 +415,6 @@ namespace PurplePen.MapModel.Tests
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
-#if NETFRAMEWORK
 
         [Test]
         public void TimeTeanWest()
@@ -1240,7 +1239,6 @@ namespace PurplePen.MapModel.Tests
         {
             CheckTestLayers("marymoor11_upperlayers.txt", 7, null, false, false, 11, 12);
         }
-#endif
 
     }
 

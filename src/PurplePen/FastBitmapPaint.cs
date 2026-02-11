@@ -47,15 +47,7 @@ namespace PurplePen
                 return;
             }
 
-            if (pixelFormat == PixelFormat.Format32bppArgb) {
-                bytesPerPixel = 4;
-            }
-            else if (pixelFormat == PixelFormat.Format24bppRgb) {
-                bytesPerPixel = 3;
-            }
-            else {
-                throw new ApplicationException("Unsupported pixel format");
-            }
+            bytesPerPixel = Image.GetPixelFormatSize(pixelFormat) / 8;
 
             BitmapData BD = bitmap.LockBits(new Rectangle(0, 0, bmWidth, bitmap.Height),
                                             ImageLockMode.ReadOnly,

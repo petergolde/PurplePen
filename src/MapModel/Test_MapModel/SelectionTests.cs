@@ -15,7 +15,6 @@ namespace PurplePen.MapModel.Tests
     [TestFixture]
     public class SelectionTests
     {
-#if NETFRAMEWORK
         private const int MAX_PIXEL_DIFF = 30;
 
         Map ReadMap(string basename)
@@ -276,7 +275,7 @@ namespace PurplePen.MapModel.Tests
             matrix.Translate(-centerPoint.X, -centerPoint.Y, MatrixOrder.Prepend);
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, PixelFormat.Format24bppRgb);
+            Bitmap bitmapNew = new Bitmap(bitmapSize.Width, bitmapSize.Height, GDIPlus_GraphicsTarget.NonAlphaPixelFormat);
             using (Graphics g = Graphics.FromImage(bitmapNew)) {
                 g.Clear(Color.White);
                 g.Transform = matrix.ToSysDrawMatrix();
@@ -624,6 +623,5 @@ namespace PurplePen.MapModel.Tests
             CheckTest("hittestpunchbox.txt", HitTestMap);
         }
 
-#endif
     }
 }

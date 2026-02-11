@@ -46,7 +46,7 @@ namespace PurplePen.MapModel
     using PurplePen.Graphics2D;
     using System.Drawing.Imaging;
     using System.IO;
-using System.Runtime.InteropServices;
+    using System.Runtime.InteropServices;
     using System.Threading;
 
     // A GraphicsTarget encapsulates either a Graphics (for WinForms) or a DrawingContext (for WPF)
@@ -67,6 +67,17 @@ using System.Runtime.InteropServices;
 
         // Bitmaps above this size are split when drawing.
         private const int BITMAP_DRAW_LIMIT = 10000000;
+
+#if NETFRAMEWORK
+        // These are the pixel modes we always used with .NET Framework.
+        public const PixelFormat AlphaPixelFormat = PixelFormat.Format32bppArgb;
+        public const PixelFormat NonAlphaPixelFormat = PixelFormat.Format24bppRgb;
+#else
+        // The System.Drawing in .net code doesn't work well with 24 bpp modes, so use
+        // 32 bpp modes for both alpha and non-alpha. 
+        public const PixelFormat AlphaPixelFormat = PixelFormat.Format32bppPArgb;
+        public const PixelFormat NonAlphaPixelFormat = PixelFormat.Format32bppPArgb;
+#endif
 
         public GDIPlus_GraphicsTarget(Graphics g, GDIPlus_ColorConverter colorConverter, float intensity)
         {
@@ -826,7 +837,7 @@ using System.Runtime.InteropServices;
 
         static Bitmap GetBitmap(int pixelWidth, int pixelHeight, bool alpha)
         {
-            PixelFormat format = alpha ? PixelFormat.Format32bppPArgb : PixelFormat.Format24bppRgb;
+            PixelFormat format = alpha ? AlphaPixelFormat : NonAlphaPixelFormat;
             return new Bitmap(pixelWidth, pixelHeight, format);
         }
 

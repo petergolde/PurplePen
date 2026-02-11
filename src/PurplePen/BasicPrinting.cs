@@ -197,7 +197,7 @@ namespace PurplePen
 
                 Size pageSize = pageSettings.Bounds.Size;
 
-                Bitmap bm = new Bitmap(pageSize.Width * 2, pageSize.Height * 2, PixelFormat.Format24bppRgb);
+                Bitmap bm = new Bitmap(pageSize.Width * 2, pageSize.Height * 2, GDIPlus_GraphicsTarget.NonAlphaPixelFormat);
                 bm.SetResolution(200, 200);           // using 200 dpi.
 
                 using (Graphics g = Graphics.FromImage(bm)) {

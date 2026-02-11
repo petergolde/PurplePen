@@ -634,7 +634,7 @@ namespace InteractiveTestApp.MapView
         // view would be. The size of the bitmap will be exactly the client size of the view.
         public Bitmap CreateSnapshotView() {
             Rectangle rect = new Rectangle(new Point(0,0), ClientSize);
-            Bitmap bitmap = new Bitmap(rect.Width, rect.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            Bitmap bitmap = new Bitmap(rect.Width, rect.Height, GDIPlus_GraphicsTarget.NonAlphaPixelFormat);
 
             using (Graphics g = Graphics.FromImage(bitmap)) {
                 Draw(g, rect);
