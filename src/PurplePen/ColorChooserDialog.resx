@@ -414,6 +414,33 @@
   <data name="&gt;&gt;groupBoxPreview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="checkBoxOverprint.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxOverprint.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 189</value>
+  </data>
+  <data name="checkBoxOverprint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="checkBoxOverprint.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="checkBoxOverprint.Text" xml:space="preserve">
+    <value>Overprint</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOverprint.Name" xml:space="preserve">
+    <value>checkBoxOverprint</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOverprint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOverprint.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxOverprint.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
