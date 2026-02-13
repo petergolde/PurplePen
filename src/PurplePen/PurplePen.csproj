@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net10.0-windows</TargetFrameworks>
     <OutputType>WinExe</OutputType>
     <ApplicationIcon>Images\PurplePen.ico</ApplicationIcon>
     <StartupObject></StartupObject>
@@ -24,6 +24,7 @@
     <UseWPF>true</UseWPF>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <Configurations>Debug;Release;StorePkg</Configurations>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineConstants>TRACE;DEBUG;TEST</DefineConstants>
@@ -35,9 +36,6 @@
     <DefineConstants>TRACE;TEST</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'StorePkg|AnyCPU'">
     <OutputPath>bin\StorePkg\</OutputPath>
     <DefineConstants>TRACE;TEST,MSSTORE</DefineConstants>
@@ -45,11 +43,9 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="ReachFramework" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Printing" />
-    <Reference Include="System.Web.Extensions" />
+    <PackageReference Include="SharpZipLib" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="CoursePartBanner.cs">
@@ -251,14 +247,8 @@
     <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
     <ProjectReference Include="..\MapModel\Map_GDIPlus\Map_GDIPlus.csproj" />
     <ProjectReference Include="..\MapModel\Map_PDF\Map_PDF.csproj" />
-    <ProjectReference Include="..\MapModel\Map_WPF\Map_WPF.csproj" />
     <ProjectReference Include="..\MapModel\PdfSharp\PdfSharp.csproj" />
     <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="SharpZipLib" />
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" />
-    <PackageReference Include="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
     <Compile Remove="MapView\Properties\AssemblyInfo.cs" />
@@ -1007,5 +997,8 @@
     <EmbeddedResource Remove="AboutForm.he.resx" />
     <EmbeddedResource Remove="AboutForm.en-GB.resx" />
     <EmbeddedResource Remove="AboutForm.ca.resx" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+    <Reference Include="Microsoft.VisualBasic" />
   </ItemGroup>
 </Project>

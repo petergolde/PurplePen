@@ -39,7 +39,6 @@ using System.Drawing;
 
 using PurplePen.MapModel;
 using PurplePen.Graphics2D;
-using Windows.ApplicationModel.Contacts;
 
 namespace PurplePen
 {

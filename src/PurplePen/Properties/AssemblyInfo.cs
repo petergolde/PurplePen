@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -27,11 +28,7 @@ using System.Runtime.InteropServices;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("PurplePen_Tests")]
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
+#if NET5_0_OR_GREATER
+[assembly: SupportedOSPlatform("windows")]
+#endif
 

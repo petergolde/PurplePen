@@ -42,11 +42,7 @@ using Draw2D = System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using PurplePen.Graphics2D;
 using PurplePen.MapModel;
-using System.Printing;
-using System.Printing.Interop;
 using System.Runtime.InteropServices;
-using System.Windows.Xps;
-using System.Windows.Documents;
 using System.Diagnostics;
 using System.IO;
 

@@ -66,22 +66,4 @@ namespace PurplePen
             }
         }
     }
-
-    class WPFSwopColorConverter : WPF_ColorConverter
-    {
-        private Dictionary<CmykColor, SWM.Color> cmykToColor = new Dictionary<CmykColor, SWM.Color>();
-
-        public override SWM.Color ToColor(CmykColor cmykColor)
-        {
-            SWM.Color result;
-
-            if (!cmykToColor.TryGetValue(cmykColor, out result)) {
-                float[] colorValues = { cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black };
-                result = SWM.Color.FromValues(colorValues, SwopColorConverter.SwopUri);
-                cmykToColor[cmykColor] = result;
-            }
-
-            return result;
-        }
-    }
 }

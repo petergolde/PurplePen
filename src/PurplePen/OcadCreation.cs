@@ -41,7 +41,6 @@ using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using System.Drawing.Imaging;
 using System.Diagnostics;
-using Windows.UI.Xaml.Controls;
 
 namespace PurplePen
 {
