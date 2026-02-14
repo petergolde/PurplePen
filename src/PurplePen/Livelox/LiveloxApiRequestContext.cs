@@ -1,18 +1,18 @@
 using System;
-using System.Net;
+using System.Net.Http;
 
 namespace PurplePen.Livelox
 {
     class LiveloxApiRequestContext
     {
-        public HttpWebRequest CreateRequest()
+        public HttpRequestMessage CreateRequest()
         {
             Request = RequestCreator();
             return Request;
         }
 
-        public Func<HttpWebRequest> RequestCreator { get; set; }
-        public HttpWebRequest Request { get; set; }
+        public Func<HttpRequestMessage> RequestCreator { get; set; }
+        public HttpRequestMessage Request { get; set; }
         public int RetryCount { get; set; }
     }
 }

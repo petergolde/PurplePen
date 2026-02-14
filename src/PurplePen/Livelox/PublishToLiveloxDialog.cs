@@ -56,6 +56,7 @@ namespace PurplePen.Livelox
         private readonly List<IAbortable> ongoingCalls = new List<IAbortable>();
         private Control dialogParent;
         private bool aborted = false;
+        private LiveloxApiClient currentApiClient;
 
         public LiveloxPublishSettings PublishSettings { get; }
 
@@ -431,7 +432,9 @@ namespace PurplePen.Livelox
 
         private LiveloxApiClient CreateLiveloxApiClient(OAuth2TokenInformation tokenInformation)
         {
-            return new LiveloxApiClient(tokenInformation, OnApiClientRequestCreated, OnApiClientRequestCompleted);
+            currentApiClient?.Dispose();
+            currentApiClient = new LiveloxApiClient(tokenInformation, OnApiClientRequestCreated, OnApiClientRequestCompleted);
+            return currentApiClient;
         }
 
         private static byte[] CreateZipFileBytes(string directory, ImportableEvent importableEvent)

@@ -1,21 +1,21 @@
 /* Copyright (c) 2006-2008, Peter Golde
  * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without 
- * modification, are permitted provided that the following conditions are 
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
  * met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright
  * notice, this list of conditions and the following disclaimer.
- * 
+ *
  * 2. Redistributions in binary form must reproduce the above copyright
  * notice, this list of conditions and the following disclaimer in the
  * documentation and/or other materials provided with the distribution.
- * 
+ *
  * 3. Neither the name of Peter Golde, nor "Purple Pen", nor the names
  * of its contributors may be used to endorse or promote products
  * derived from this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
  * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
@@ -37,16 +37,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using PurplePen.Livelox.ApiContracts;
 
 namespace PurplePen.Livelox
 {
-    class LiveloxApiClient
+    class LiveloxApiClient : IDisposable
     {
         public OAuth2TokenInformation TokenInformation { get; private set; }
         public bool Aborted { get; private set; }
@@ -54,6 +57,7 @@ namespace PurplePen.Livelox
         private readonly Action<IAbortable> requestCreatedCallback;
         private readonly Action<IAbortable> requestCompletedCallback;
         private readonly TimeSpan timeout;
+        private readonly HttpClient httpClient;
 
         private const string baseUrl = "https://api.livelox.com";
         private const string applicationJson = "application/json";
@@ -66,11 +70,18 @@ namespace PurplePen.Livelox
             this.requestCreatedCallback = requestCreatedCallback;
             this.requestCompletedCallback = requestCompletedCallback;
             this.timeout = timeout ?? TimeSpan.FromMinutes(1);
+            httpClient = new HttpClient();
         }
 
         public void Abort()
         {
             Aborted = true;
+        }
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            httpClient?.Dispose();
         }
 
         public void AskForUserConsent(Form form, TimeSpan? refreshTokenLifeLength, Action<LiveloxApiCall<User>> callback, Action<string> progressReportCallback)
@@ -88,7 +99,7 @@ namespace PurplePen.Livelox
             var httpListener = new HttpListener();
             httpListener.Prefixes.Add(redirectUri);
             httpListener.Start();
-            
+
             progressReportCallback(LiveloxResources.RedirectingToLivelox);
 
             // Creates the OAuth 2.0 authorization request.
@@ -105,7 +116,7 @@ namespace PurplePen.Livelox
 
             // Opens request in the browser.
             System.Diagnostics.Process.Start(authorizationRequest);
-            
+
             progressReportCallback(LiveloxResources.WaitingForLiveloxConsentResponse);
 
             // Waits for the OAuth authorization response.
@@ -114,7 +125,7 @@ namespace PurplePen.Livelox
                 HttpListener = httpListener
             };
             var asyncCallback = new AsyncCallback(HttpListenerGetContextCallback);
-            
+
             httpListenerWrapper.Callback = context =>
             {
                 try
@@ -132,7 +143,7 @@ namespace PurplePen.Livelox
                     responseOutput.Write(buffer, 0, buffer.Length);
                     responseOutput.Close();
                     httpListener.Stop();
-                    
+
                     progressReportCallback(LiveloxResources.ProcessingLiveloxConsentResponse);
 
                     // Checks for errors.
@@ -168,10 +179,10 @@ namespace PurplePen.Livelox
                         { "scope", "" },
                         { "grant_type", "authorization_code" }
                     };
-                   
+
                     // sends the request
-                    var tokenRequest = CreatePostFormUrlencodedRequest($"{baseUrl}/oauth2/token", parameters); 
-                    
+                    var tokenRequest = CreatePostFormUrlencodedRequest($"{baseUrl}/oauth2/token", parameters);
+
                     progressReportCallback(LiveloxResources.CreatingTokens);
 
                     ReadTokenResponse(tokenRequest, tokenCall =>
@@ -185,7 +196,7 @@ namespace PurplePen.Livelox
                             });
                         }
 
-                        
+
                         progressReportCallback(LiveloxResources.LoadingUserInfo);
                         TokenInformation = tokenCall.Result;
 
@@ -274,7 +285,7 @@ namespace PurplePen.Livelox
             return CallApi(() => CreatePostFormUrlencodedRequest($"{baseUrl}/oauth2/revoke", parameters), callback);
         }
 
-        private LiveloxApiCall<T> CallApi<T>(Func<HttpWebRequest> requestCreator, Action<LiveloxApiCall<T>> callback) where T : new()
+        private LiveloxApiCall<T> CallApi<T>(Func<HttpRequestMessage> requestCreator, Action<LiveloxApiCall<T>> callback) where T : new()
         {
             // calls API with access token expiration awareness
 
@@ -346,56 +357,78 @@ namespace PurplePen.Livelox
 
             // now, we're creating the request, when all tokens are fresh
             var request = call.RequestContext.CreateRequest();
-            var asyncCallback = new AsyncCallback(ResponseCallback<T>);
-            call.ResponseHandle = request.BeginGetResponse(asyncCallback, call);
+            httpClient.SendAsync(request, call.CancellationSource.Token).ContinueWith(task =>
+            {
+                ResponseCallback(task, call);
+            });
             requestCreatedCallback?.Invoke(call);
         }
 
-        private void ResponseCallback<T>(IAsyncResult asyncResult) where T : new()
+        private void ResponseCallback<T>(Task<HttpResponseMessage> task, LiveloxApiCall<T> call) where T : new()
         {
-            var call = (LiveloxApiCall<T>) asyncResult.AsyncState;
             try
             {
-                call.Response = (HttpWebResponse) call.RequestContext.Request.EndGetResponse(asyncResult);
-                call.Result = ReadResponsePayload<T>(call.Response);
-                call.Response.Close();
-                call.Callback(call);
-            }
-            catch (WebException ex)
-            {
-                Exception transformedException = null;
-                // is the access token expired? (shouldn't happen thanks to expiration check earlier, but better safe than sorry)
-                var response = (HttpWebResponse) ex.Response;
-                if (response != null)
+                if (task.IsCanceled)
                 {
-                    if (response.StatusCode == HttpStatusCode.Unauthorized &&
-                        (response.Headers["WWW-Authenticate"]?.Contains("The access token expired") ?? false))
+                    if (call.CancellationSource?.IsCancellationRequested == true)
                     {
-                        if (call.RequestContext.RetryCount > 0) // safety mechanism to prevent infinite loop
+                        call.MarkTimedOut();
+                        call.Exception = new TimeoutException(LiveloxResources.Timeout);
+                    }
+                    else
+                    {
+                        call.Exception = new OperationCanceledException();
+                    }
+                    call.Callback(call);
+                    return;
+                }
+
+                if (task.IsFaulted)
+                {
+                    call.Exception = task.Exception?.InnerException ?? task.Exception;
+                    call.Callback(call);
+                    return;
+                }
+
+                call.Response = task.Result;
+
+                if (!call.Response.IsSuccessStatusCode)
+                {
+                    // is the access token expired?
+                    if (call.Response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        IEnumerable<string> wwwAuthValues;
+                        bool hasWwwAuth = call.Response.Headers.TryGetValues("WWW-Authenticate", out wwwAuthValues);
+                        if (hasWwwAuth && string.Join(" ", wwwAuthValues).Contains("The access token expired"))
                         {
-                            transformedException = new OAuth2Exception("The access token could not be refreshed.");
+                            if (call.RequestContext.RetryCount > 0) // safety mechanism to prevent infinite loop
+                            {
+                                call.Exception = new OAuth2Exception("The access token could not be refreshed.");
+                            }
+                            else
+                            {
+                                call.Response.Dispose();
+                                RequestNewAccessToken(call, call.Callback);
+                                return;
+                            }
                         }
                         else
                         {
-                            RequestNewAccessToken(call, call.Callback);
-                            response.Close();
-                            return;
+                            call.Exception = new StatusCodeException(call.Response.StatusCode);
                         }
                     }
                     else
                     {
-                        transformedException = new StatusCodeException(response.StatusCode);
+                        call.Exception = new StatusCodeException(call.Response.StatusCode);
                     }
-                    response.Close();
+
+                    call.Response.Dispose();
+                    call.Callback(call);
+                    return;
                 }
 
-                if (ex.Status == WebExceptionStatus.RequestCanceled && call.TimedOut)
-                {
-                    // make a nicer timeout message
-                    transformedException = new TimeoutException(LiveloxResources.Timeout);
-                }
-
-                call.Exception = transformedException ?? ex;
+                call.Result = ReadResponsePayload<T>(call.Response);
+                call.Response.Dispose();
                 call.Callback(call);
             }
             catch (Exception ex)
@@ -416,15 +449,15 @@ namespace PurplePen.Livelox
             wrapper.Callback(context);
         }
 
-        private void AddAuthorizationHeader(HttpWebRequest request)
+        private void AddAuthorizationHeader(HttpRequestMessage request)
         {
             if(TokenInformation != null)
             {
-                request.Headers.Add($"Authorization: Bearer {TokenInformation.AccessToken}");
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", TokenInformation.AccessToken);
             }
         }
 
-        private static T ReadResponsePayload<T>(WebResponse response) where T : new()
+        private static T ReadResponsePayload<T>(HttpResponseMessage response) where T : new()
         {
             // kind of a hack to handle void returns
             if (typeof(T) == typeof(LiveloxApiNullResponse))
@@ -432,7 +465,7 @@ namespace PurplePen.Livelox
                 return new T();
             }
 
-            using (var responseStream = response.GetResponseStream())
+            using (var responseStream = response.Content.ReadAsStreamAsync().Result)
             {
                 using (var responseReader = new StreamReader(responseStream))
                 {
@@ -446,78 +479,78 @@ namespace PurplePen.Livelox
             }
         }
 
-        private HttpWebRequest CreateGetRequest(string url)
+        private HttpRequestMessage CreateGetRequest(string url)
         {
-            return CreateRequestWithHeaders(url, "GET", contentType: null);
+            return CreateRequestWithHeaders(url, HttpMethod.Get, contentType: null);
         }
 
-        private HttpWebRequest CreatePostJsonRequest<T>(string url, T payload)
+        private HttpRequestMessage CreatePostJsonRequest<T>(string url, T payload)
         {
-            var request = CreateRequestWithHeaders(url, "POST");
-            var binaryPayload = payload == null
-                ? null
-                : Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(payload));
-            AddPayloadToRequest(request, binaryPayload);
-            return request;
-        }
-
-        private HttpWebRequest CreatePostFileRequest(string url, byte[] payload)
-        {
-            var request = CreateRequestWithHeaders(url, "POST", contentType: null, accept: null);
-            AddPayloadToRequest(request, payload);
-            return request;
-        }
-
-        private HttpWebRequest CreatePutJsonRequest<T>(string url, T payload)
-        {
-            var request = CreateRequestWithHeaders(url, "PUT", contentType: payload == null ? null : applicationJson);
-            var binaryPayload = payload == null 
-                ? null
-                : Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(payload));
-            AddPayloadToRequest(request, binaryPayload);
-            return request;
-        }
-
-        private HttpWebRequest CreateDeleteRequest(string url)
-        {
-            return CreateRequestWithHeaders(url, "DELETE", contentType: null, accept: null);
-        }
-
-        private HttpWebRequest CreatePostFormUrlencodedRequest(string url, IEnumerable<KeyValuePair<string, string>> parameters)
-        {
-            var request = CreateRequestWithHeaders(url, "POST", contentType: "application/x-www-form-urlencoded");
-            var payload = string.Join("&", parameters.Select(p => $"{p.Key}={Uri.EscapeDataString(p.Value)}"));
-            var binaryPayload = Encoding.UTF8.GetBytes(payload);
-            AddPayloadToRequest(request, binaryPayload);
-            return request;
-        }
-
-        private static void AddPayloadToRequest(HttpWebRequest request, byte[] payload)
-        {
-            request.ContentLength = payload?.Length ?? 0;
+            var request = CreateRequestWithHeaders(url, HttpMethod.Post);
             if (payload != null)
             {
-                using (var requestStream = request.GetRequestStream())
-                {
-                    requestStream.Write(payload, 0, payload.Length);
-                }
+                var json = JsonConvert.SerializeObject(payload);
+                request.Content = new StringContent(json, Encoding.UTF8, applicationJson);
             }
+            else
+            {
+                request.Content = new ByteArrayContent(Array.Empty<byte>());
+            }
+            return request;
         }
 
-        private HttpWebRequest CreateRequestWithHeaders(string url, string httpMethod, string contentType = applicationJson, string accept = applicationJson)
+        private HttpRequestMessage CreatePostFileRequest(string url, byte[] payload)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = httpMethod;
+            var request = CreateRequestWithHeaders(url, HttpMethod.Post, contentType: null, accept: null);
+            if (payload != null)
+            {
+                request.Content = new ByteArrayContent(payload);
+            }
+            else
+            {
+                request.Content = new ByteArrayContent(Array.Empty<byte>());
+            }
+            return request;
+        }
+
+        private HttpRequestMessage CreatePutJsonRequest<T>(string url, T payload)
+        {
+            var request = CreateRequestWithHeaders(url, HttpMethod.Put, contentType: payload == null ? null : applicationJson);
+            if (payload != null)
+            {
+                var json = JsonConvert.SerializeObject(payload);
+                request.Content = new StringContent(json, Encoding.UTF8, applicationJson);
+            }
+            else
+            {
+                request.Content = new ByteArrayContent(Array.Empty<byte>());
+            }
+            return request;
+        }
+
+        private HttpRequestMessage CreateDeleteRequest(string url)
+        {
+            return CreateRequestWithHeaders(url, HttpMethod.Delete, contentType: null, accept: null);
+        }
+
+        private HttpRequestMessage CreatePostFormUrlencodedRequest(string url, IEnumerable<KeyValuePair<string, string>> parameters)
+        {
+            var request = CreateRequestWithHeaders(url, HttpMethod.Post, contentType: null);
+            request.Content = new FormUrlEncodedContent(parameters);
+            return request;
+        }
+
+        private HttpRequestMessage CreateRequestWithHeaders(string url, HttpMethod httpMethod, string contentType = applicationJson, string accept = applicationJson)
+        {
+            var request = new HttpRequestMessage(httpMethod, url);
             AddAuthorizationHeader(request);
             request.Headers.Add("Culture", "en-US");
-            if (contentType != null)
-            {
-                request.ContentType = contentType;
-            }
             if (accept != null)
             {
-                request.Accept = accept;
+                request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(accept));
             }
+            // Note: Content-Type is set on HttpContent, not on the request headers.
+            // It will be set when Content is assigned in the calling methods.
             return request;
         }
 
@@ -536,7 +569,7 @@ namespace PurplePen.Livelox
             ReadTokenResponse(tokenRequest, callback);
         }
 
-        private void ReadTokenResponse(HttpWebRequest tokenRequest, Action<LiveloxApiCall<OAuth2TokenInformation>> callback)
+        private void ReadTokenResponse(HttpRequestMessage tokenRequest, Action<LiveloxApiCall<OAuth2TokenInformation>> callback)
         {
             // gets the response
             var call = new LiveloxApiCall<OAuth2TokenInformation>()
@@ -548,18 +581,48 @@ namespace PurplePen.Livelox
                 },
                 Client = this
             };
-            var asyncCallback = new AsyncCallback(ReadTokenResponseCallback);
-            call.ResponseHandle = tokenRequest.BeginGetResponse(asyncCallback, call);
+            httpClient.SendAsync(tokenRequest, call.CancellationSource.Token).ContinueWith(task =>
+            {
+                ReadTokenResponseCallback(task, call);
+            });
             requestCreatedCallback?.Invoke(call);
         }
 
-        private void ReadTokenResponseCallback(IAsyncResult asyncResult)
+        private void ReadTokenResponseCallback(Task<HttpResponseMessage> task, LiveloxApiCall<OAuth2TokenInformation> call)
         {
-            var call = (LiveloxApiCall<OAuth2TokenInformation>)asyncResult.AsyncState;
             try
             {
-                call.Response = (HttpWebResponse) call.RequestContext.Request.EndGetResponse(asyncResult);
-                using (var reader = new StreamReader(call.Response.GetResponseStream()))
+                if (task.IsCanceled)
+                {
+                    call.Exception = new OperationCanceledException();
+                    call.Callback(call);
+                    return;
+                }
+
+                if (task.IsFaulted)
+                {
+                    call.Exception = task.Exception?.InnerException ?? task.Exception;
+                    call.Callback(call);
+                    return;
+                }
+
+                call.Response = task.Result;
+
+                if (!call.Response.IsSuccessStatusCode)
+                {
+                    OAuth2Exception oauth2Exception;
+                    using (var reader = new StreamReader(call.Response.Content.ReadAsStreamAsync().Result))
+                    {
+                        var responseText = reader.ReadToEnd();
+                        oauth2Exception = new OAuth2Exception(call.Response.StatusCode, responseText, new HttpRequestException($"Response status code does not indicate success: {(int)call.Response.StatusCode} ({call.Response.ReasonPhrase})."));
+                    }
+                    call.Response.Dispose();
+                    call.Exception = oauth2Exception;
+                    call.Callback(call);
+                    return;
+                }
+
+                using (var reader = new StreamReader(call.Response.Content.ReadAsStreamAsync().Result))
                 {
                     var responseText = reader.ReadToEnd();
 
@@ -577,26 +640,7 @@ namespace PurplePen.Livelox
                     };
                     call.Callback(call);
                 }
-            }
-            catch (WebException ex)
-            {
-                OAuth2Exception oauth2Exception = null;
-                if (ex.Status == WebExceptionStatus.ProtocolError)
-                {
-                    if (ex.Response is HttpWebResponse response)
-                    {
-                        using (var reader = new StreamReader(response.GetResponseStream()))
-                        {
-                            // reads response body
-                            var responseText = reader.ReadToEnd();
-                            oauth2Exception = new OAuth2Exception(response.StatusCode, responseText, ex);
-                        }
-                    }
-                }
-
-                oauth2Exception = oauth2Exception ?? new OAuth2Exception(ex);
-                call.Exception = oauth2Exception;
-                call.Callback(call);
+                call.Response.Dispose();
             }
             catch (Exception ex)
             {
