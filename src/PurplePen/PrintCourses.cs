@@ -49,6 +49,7 @@ namespace PurplePen
         CoursePrintSettings settings;
         internal Controller controller;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CoursePrintSettings PrintSettings
         {
             get {

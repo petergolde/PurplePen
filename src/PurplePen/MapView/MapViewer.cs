@@ -344,6 +344,8 @@ namespace PurplePen.MapView
         #endregion
 
         #region Property accessors
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+
         public float ZoomFactor {
             get { return zoom; }
             set { 
@@ -361,6 +363,7 @@ namespace PurplePen.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public PointF CenterPoint {
             get { return centerPoint; }
             set {
@@ -381,6 +384,7 @@ namespace PurplePen.MapView
             get { return mouseInView; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public RectangleF Viewport {
             get {
                 return viewport;
@@ -408,6 +412,7 @@ namespace PurplePen.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ShowGrid {
             get { 
                 return gridOn;
@@ -430,6 +435,7 @@ namespace PurplePen.MapView
         }
 
         [DefaultValue(10F)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public float MaxZoomFactor
         {
             get { return maxZoom; }
@@ -441,6 +447,7 @@ namespace PurplePen.MapView
         }
 
         [DefaultValue(0.1F)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public float MinZoomFactor
         {
             get { return minZoom; }
@@ -451,6 +458,7 @@ namespace PurplePen.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool ShowSymbolBounds
         {
             get
@@ -526,6 +534,7 @@ namespace PurplePen.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int VScrollValue
         {
             get
@@ -547,16 +556,21 @@ namespace PurplePen.MapView
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int HoverDelay { get; set; }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool MiddleButtonAutoDrag { get; set; } = true;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public WheelAction MouseWheelAction { get; set; } = MapViewer.WheelAction.Zoom;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Size MouseWheelScrollAmount { get; set; } = new Size(0, 20);
 
         public enum ConstrainedScrollingMode { None, KeepSome, KeepAll, PinTop, PinCenter}
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public ConstrainedScrollingMode ConstrainedScrolling { get; set; } = ConstrainedScrollingMode.None;
 
         #endregion Property Accessors

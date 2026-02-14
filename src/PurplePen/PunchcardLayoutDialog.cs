@@ -50,6 +50,7 @@ namespace PurplePen
         }
 
         // Get or set the punch card format.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PunchcardFormat PunchcardFormat
         {
             get

@@ -27,6 +27,7 @@ namespace PurplePen
             InitUnits();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PaperSize PaperSize
         {
             get
@@ -42,6 +43,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int MarginSize
         {
             get
@@ -57,6 +59,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool Landscape
         {
             get

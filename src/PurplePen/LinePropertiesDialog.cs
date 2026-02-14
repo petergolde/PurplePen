@@ -36,12 +36,14 @@ namespace PurplePen
             usageLabel.Text = usageText;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public SpecialColor Color
         {
             get { return colorChooser.Color; }
             set { colorChooser.Color = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public LineKind LineKind
         {
             get { return (LineKind)comboBoxStyle.SelectedIndex; }
@@ -78,6 +80,7 @@ namespace PurplePen
             UpdatePreview();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowRadius
         {
             get { return showRadius; }
@@ -99,6 +102,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowLineKind
         {
             get { return showLineKind; }
@@ -120,6 +124,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float LineWidth
         {
             get { return (float) upDownWidth.Value; }
@@ -129,6 +134,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float CornerRadius
         {
             get { return (float)upDownRadius.Value; }
@@ -139,6 +145,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float GapSize
         {
             get { return (float)upDownGapSize.Value; }
@@ -149,6 +156,7 @@ namespace PurplePen
 
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float DashSize
         {
             get { return (float)upDownDashSize.Value; }

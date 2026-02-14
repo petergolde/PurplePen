@@ -174,6 +174,7 @@ namespace PurplePen
             descriptionControl.SymbolDB = symbolDB;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool HidePrintArea
         {
             get { return hidePrintArea; }

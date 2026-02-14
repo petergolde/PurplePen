@@ -25,6 +25,7 @@ namespace PurplePen
             borderColor = Color.FromArgb(112, 192, 231);
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string TitleText
         {
             get { return titleLabel.Text; }
@@ -32,12 +33,14 @@ namespace PurplePen
         }
 
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string DetailText
         {
             get { return detailLabel.Text; }
             set { detailLabel.Text = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public Image Icon
         {
             get { return pictureBox.Image; }

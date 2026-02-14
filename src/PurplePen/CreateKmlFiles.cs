@@ -57,6 +57,7 @@ namespace PurplePen
         }
 
         // Get the settings for creating OCAD files.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ExportKmlSettings ExportKmlSettings
         {
             get

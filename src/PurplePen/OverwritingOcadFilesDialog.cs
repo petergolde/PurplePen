@@ -15,6 +15,7 @@ namespace PurplePen
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<string> Filenames
         {
             set

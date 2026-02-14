@@ -101,6 +101,7 @@ namespace PurplePen
         }
 
         // Get the language id of the selected language.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string LangId
         {
             get
@@ -115,6 +116,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool UseAsDefaultLanguage
         {
             get { return checkBoxDefaultLanguage.Checked; }

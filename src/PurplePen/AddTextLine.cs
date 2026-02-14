@@ -63,6 +63,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string TextLine
         {
             get {
@@ -80,6 +81,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DescriptionLine.TextLineKind TextLineKind
         {
             get

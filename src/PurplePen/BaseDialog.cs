@@ -18,7 +18,7 @@ namespace PurplePen
         }
 
         // The HelpTopic to display when the question mark icon in the title bar is clicked.
-        [Localizable(false)]
+        [Localizable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public string HelpTopic { get; set; }
 
         private void BaseDialog_HelpButtonClicked(object sender, CancelEventArgs e)

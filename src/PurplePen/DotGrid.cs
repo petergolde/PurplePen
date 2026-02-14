@@ -58,6 +58,7 @@ namespace PurplePen
         }
 
         // Number of dots across.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int DotsAcross {
             get { return dotsAcross; }
             set {
@@ -70,6 +71,7 @@ namespace PurplePen
         }
 
         // Number of dots down.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int DotsDown {
             get { return dotsDown; }
             set {

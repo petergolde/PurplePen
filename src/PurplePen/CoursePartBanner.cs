@@ -29,6 +29,7 @@ namespace PurplePen
         public event EventHandler SelectedPartChanged;
         public event EventHandler PropertiesClicked;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int NumberOfParts
         {
             get { return numberOfParts; }
@@ -42,6 +43,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public object[] AvailableVariations
         {
             get
@@ -69,6 +71,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public object CurrentVariation
         {
             get
@@ -81,6 +84,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool EnableParts
         {
             get
@@ -94,6 +98,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool EnableProperties
         {
             get {
@@ -105,6 +110,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool EnableVariations
         {
             get
@@ -124,6 +130,7 @@ namespace PurplePen
         }
 
         // Return selected part, or -1 for all parts.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedPart
         {
             get { return partComboBox.SelectedIndex - 1; }

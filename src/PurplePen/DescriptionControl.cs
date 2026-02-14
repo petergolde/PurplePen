@@ -107,6 +107,7 @@ namespace PurplePen
 
 
         // The SymbolDB should be set immediately after creation.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public SymbolDB SymbolDB
         {
             get
@@ -134,6 +135,7 @@ namespace PurplePen
         }
 
         // Dictionary to map custom symbol names (never changes)
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Dictionary<string, string> CustomSymbolText
         {
             get
@@ -233,6 +235,7 @@ namespace PurplePen
         }
 
         // Set the description to display.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DescriptionLine[] Description
         {
             get
@@ -301,6 +304,7 @@ namespace PurplePen
         // Set the course kind being displayed. This affects the popups to some
         // extent (e.g., score courses have a popup to set the score in column A, but
         // other courses don't.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public CourseView.CourseViewKind CourseKind
         {
             get
@@ -317,6 +321,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool IsCoursePart {
             get
             {
@@ -332,6 +337,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public bool HasCustomLength
         {
             get { return hasCustomLength; }

@@ -26,6 +26,7 @@ namespace PurplePen
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool UsesOcadMap 
         {
             get { return groupBoxOcadMap.Enabled;}
@@ -56,6 +57,7 @@ namespace PurplePen
         }
 
         // Set/Get the CourseAppearance this dialog sets.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CourseAppearance CourseAppearance
         {
             get

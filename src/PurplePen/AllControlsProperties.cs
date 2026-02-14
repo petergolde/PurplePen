@@ -20,6 +20,7 @@ namespace PurplePen
             descKindCombo.SelectedIndex = 0;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float PrintScale
         {
             get { return printScale; }
@@ -30,6 +31,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DescriptionKind DescKind
         {
             get

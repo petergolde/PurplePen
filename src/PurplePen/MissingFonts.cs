@@ -18,6 +18,7 @@ namespace PurplePen
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string MapName
         {
             get { return mapName; }
@@ -28,6 +29,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string[] MissingFontList
         {
             get { return missingFontList; }
@@ -43,6 +45,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IgnoreMissingFonts
         {
             get

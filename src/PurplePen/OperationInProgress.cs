@@ -23,6 +23,7 @@ namespace PurplePen
             get { return cancelPressed; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string StatusText
         {
             get
@@ -35,6 +36,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IndefiniteDuration {
             get { 
                 return progressBar.Style != ProgressBarStyle.Blocks; 

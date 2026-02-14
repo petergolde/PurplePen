@@ -60,6 +60,7 @@ namespace PurplePen
         }
 
         // Get or set the codes.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public KeyValuePair<object, string>[] Codes
         {
             get

@@ -14,6 +14,7 @@ namespace PurplePen
         GpxCreationSettings settings;
         internal Controller controller;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public GpxCreationSettings CreationSettings
         {
             get {

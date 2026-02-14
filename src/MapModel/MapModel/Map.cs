@@ -82,11 +82,6 @@ namespace PurplePen.MapModel
             }
         }
 
-#if WINDOWS
-        public static implicit operator System.Drawing.Imaging.ColorMatrix(ColorMatrix matrix) {
-            return new System.Drawing.Imaging.ColorMatrix(matrix.entries);
-        }
-#endif
 
         public object Clone()
         {

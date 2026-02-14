@@ -51,6 +51,7 @@ namespace PurplePen
         internal Controller controller;
         readonly bool isPdfCreation = false;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DescriptionPrintSettings PrintSettings
         {
             get {

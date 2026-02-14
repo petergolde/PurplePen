@@ -45,6 +45,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FixedBranchAssignments FixedBranchAssignments
         {
             get {

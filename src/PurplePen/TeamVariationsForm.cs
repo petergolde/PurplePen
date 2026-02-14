@@ -54,6 +54,7 @@ namespace PurplePen
             FixedBranchAssignments = new FixedBranchAssignments();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string DefaultExportFileName
         {
             get
@@ -65,6 +66,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int FirstTeamNumber {
             get {
                 return (int)upDownFirstTeamNumber.Value;
@@ -74,6 +76,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int NumberOfTeams { 
             get
             {
@@ -85,6 +88,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int NumberOfLegs
         {
             get
@@ -97,6 +101,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool HideVariationsOnMap {
             get {
                 return checkBoxHideVariationsFromMap.Checked;
@@ -106,6 +111,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public RelaySettings RelaySettings
         {
             get {
@@ -119,6 +125,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public FixedBranchAssignments FixedBranchAssignments { get; set; }
         
         // Send the body of the report.

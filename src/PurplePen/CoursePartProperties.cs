@@ -15,12 +15,14 @@ namespace PurplePen
             InitializeComponent();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PartOptions PartOptions
         {
             get { return new PartOptions() { ShowFinish = checkBoxDisplayFinish.Checked }; }
             set { checkBoxDisplayFinish.Checked = value.ShowFinish; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowFinishCircleEnabled
         {
             get { return checkBoxDisplayFinish.Enabled; }

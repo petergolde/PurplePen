@@ -50,6 +50,7 @@ namespace PurplePen
             textBoxMain_TextChanged(this, EventArgs.Empty);
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string UserText
         {
             set
@@ -62,6 +63,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string FontName
         {
             set
@@ -82,6 +84,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool FontBold
         {
             set
@@ -95,6 +98,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool FontItalic
         {
             set
@@ -116,17 +120,20 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public SpecialColor FontColor
         {
             get { return colorChooser.Color;  }
             set { colorChooser.Color = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool FontSizeAutomatic {
             get { return checkBoxAutoFontSize.Checked; }
             set { checkBoxAutoFontSize.Checked = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float FontSize {
             get { return (float) upDownFontSize.Value; }
             set { upDownFontSize.Value = (decimal) value; }

@@ -59,6 +59,7 @@ namespace PurplePen
         }
 
         // Get or set a dictionary containing all the punch patterns.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Dictionary<string, PunchPattern> AllPunchPatterns
         {
             get
@@ -76,6 +77,7 @@ namespace PurplePen
         }
 
         // Get or set the punch card format
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PunchcardFormat PunchcardFormat
         {
             get

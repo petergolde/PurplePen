@@ -22,6 +22,7 @@ namespace PurplePen
             UpdateMapFile();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string MapFile
         {
             get
@@ -44,6 +45,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float MapScale
         {
             get
@@ -60,6 +62,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float Dpi
         {
             get

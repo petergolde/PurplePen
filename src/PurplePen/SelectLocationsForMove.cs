@@ -32,7 +32,8 @@ namespace PurplePen
             this.stage = DialogStage.Begin;
         }
 
-        
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DialogStage Stage
         {
             get { return stage; }
@@ -45,6 +46,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public MoveAllControlsAction Action
         {
             get { return action; }

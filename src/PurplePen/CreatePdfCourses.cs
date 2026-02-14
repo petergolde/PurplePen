@@ -50,6 +50,7 @@ namespace PurplePen
         CoursePdfSettings settings;
         internal Controller controller;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CoursePdfSettings PdfSettings
         {
             get {
@@ -72,6 +73,7 @@ namespace PurplePen
             checkBoxMergeParts.Visible = enableMultipart;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool EnableChangeCropping
         {
             get { return comboBoxMultiPage.Enabled; }

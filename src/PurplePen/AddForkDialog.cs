@@ -18,6 +18,7 @@ namespace PurplePen
             comboBoxNumberBranches.SelectedItem = "2";
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool Loop
         {
             get
@@ -32,6 +33,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int NumberOfBranches
         {
             get

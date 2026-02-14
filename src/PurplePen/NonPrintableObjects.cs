@@ -22,6 +22,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string MapName
         {
             get { return mapName; }
@@ -32,6 +33,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string[] BadObjectList
         {
             get { return badObjectList; }

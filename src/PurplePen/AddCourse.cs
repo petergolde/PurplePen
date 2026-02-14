@@ -73,12 +73,14 @@ namespace PurplePen
             this.Text = titleText;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool CanChangeCourseKind
         {
             get { return courseKindCombo.Enabled; }
             set { courseKindCombo.Enabled = value; }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float PrintScale
         {
             get { return printScale; }
@@ -89,6 +91,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float Climb
         {
             get { return climb; }
@@ -101,6 +104,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float? Length
         {
             get { return length; }
@@ -113,6 +117,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string CourseName
         {
             get { return nameTextBox.Text; }
@@ -123,6 +128,7 @@ namespace PurplePen
         }
 
         // Secondary title uses vertical bar for new line.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string SecondaryTitle
         {
             get {
@@ -140,6 +146,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CourseKind CourseKind
         {
             get
@@ -169,6 +176,7 @@ namespace PurplePen
         }
 
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public ControlLabelKind ControlLabelKind
         {
             get
@@ -213,6 +221,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DescriptionKind DescKind
         {
             get
@@ -243,6 +252,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int FirstControlOrdinal
         {
             get
@@ -255,6 +265,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int ScoreColumn 
         {
             get {
@@ -282,6 +293,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool HideFromReports {
             get {
                 return hideFromReportsCheckBox.Checked;

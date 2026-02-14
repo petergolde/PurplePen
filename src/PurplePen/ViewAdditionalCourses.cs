@@ -19,6 +19,7 @@ namespace PurplePen
         }
 
         // Get/set the event database.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public EventDB EventDB {
             get { return courseSelector.EventDB; }
             set {
@@ -27,6 +28,7 @@ namespace PurplePen
         }
 
         // Get or set the courses checked in the dialog.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public List<Id<Course>> DisplayedCourses {
             get {
                 return (from cs in courseSelector.SelectedCourseDesignators select cs.CourseId).ToList();

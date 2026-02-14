@@ -20,6 +20,7 @@ namespace PurplePen
             InitLanguages();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public CultureInfo Culture
         {
             set

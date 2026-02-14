@@ -57,6 +57,7 @@ namespace PurplePen
         }
 
         // Get the settings for creating OCAD files.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public BitmapCreationSettings BitmapCreationSettings {
             get
             {
@@ -70,6 +71,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool WorldFileEnabled {
             get {
                 return comboBoxWorldFile.Enabled;

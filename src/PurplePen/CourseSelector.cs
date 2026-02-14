@@ -54,6 +54,7 @@ namespace PurplePen
 
         private Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Func<CourseDesignator, bool> Filter { get; set; }
 
         public CourseSelector()
@@ -63,6 +64,7 @@ namespace PurplePen
             buttonChooseVariations.Enabled = false;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowAllControls
         {
             get
@@ -75,6 +77,7 @@ namespace PurplePen
             }
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowCourseParts
         {
             get
@@ -88,8 +91,10 @@ namespace PurplePen
         }
 
         // Show the button to choose variations if any courses have variations.
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ShowVariationChooser { get; set; }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         internal EventDB EventDB
         {
             get

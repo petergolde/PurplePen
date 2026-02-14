@@ -45,6 +45,7 @@ namespace PurplePen
             UpdateControls();
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public VariationChoices VariationChoices
         {
             get

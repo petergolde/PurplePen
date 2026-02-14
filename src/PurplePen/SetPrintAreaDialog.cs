@@ -59,6 +59,7 @@ namespace PurplePen
             this.printArea = PrintArea.DefaultPrintArea;
         }
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public PrintArea PrintArea
         {
             get {

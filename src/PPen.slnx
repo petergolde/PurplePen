@@ -37,7 +37,13 @@
       <BuildType Solution="StorePkg|ARM64" Project="Debug" />
       <BuildType Solution="StorePkg|x64" Project="Debug" />
       <BuildType Solution="StorePkg|x86" Project="Debug" />
-      <Deploy />
+      <Build Solution="Debug|Any CPU" Project="false" />
+      <Build Solution="Release|Any CPU" Project="false" />
+      <Deploy Solution="*|ARM" />
+      <Deploy Solution="*|ARM64" />
+      <Deploy Solution="*|x64" />
+      <Deploy Solution="*|x86" />
+      <Deploy Solution="StorePkg|Any CPU" />
     </Project>
   </Folder>
   <Folder Name="/MapModel/">
