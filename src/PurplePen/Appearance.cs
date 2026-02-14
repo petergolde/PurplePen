@@ -180,7 +180,7 @@ namespace PurplePen
         // fonts. Done on startup.
         public static void InitializeFonts()
         {
-            Uri uri = new Uri(typeof(FontDesc).Assembly.CodeBase);
+            Uri uri = new Uri(typeof(FontDesc).Assembly.Location);
             string executablePath = Path.GetDirectoryName(uri.LocalPath);
             string fontPath = Path.Combine(executablePath, "fonts");
 

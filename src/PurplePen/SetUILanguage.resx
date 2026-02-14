@@ -228,18 +228,6 @@
   <data name="languageListBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;languageListBox.Name" xml:space="preserve">
-    <value>languageListBox</value>
-  </data>
-  <data name="&gt;&gt;languageListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;languageListBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;languageListBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="introLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -260,18 +248,6 @@
   </data>
   <data name="introLabel.Text" xml:space="preserve">
     <value>Select the language that you would like to use for the user interface of Purple Pen (menus, windows, etc.)</value>
-  </data>
-  <data name="&gt;&gt;introLabel.Name" xml:space="preserve">
-    <value>introLabel</value>
-  </data>
-  <data name="&gt;&gt;introLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;introLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;introLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

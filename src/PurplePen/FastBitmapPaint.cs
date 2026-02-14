@@ -12,30 +12,32 @@ namespace PurplePen
     // Does not handle transparency!
     static class FastBitmapPaint
     {
-        [DllImport("gdi32")]
-        private extern static int SetDIBitsToDevice(IntPtr hDC, int xDest, int yDest, int dwWidth, int dwHeight, int XSrc, int YSrc, int uStartScan, int cScanLines, IntPtr lpvBits, ref BITMAPINFO lpbmi, uint fuColorUse);
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct BITMAPINFOHEADER
+        static class NativeMethods
         {
-            public int bihSize;
-            public int bihWidth;
-            public int bihHeight;
-            public short bihPlanes;
-            public short bihBitCount;
-            public int bihCompression;
-            public int bihSizeImage;
-            public double bihXPelsPerMeter;
-            public double bihClrUsed;
-        }
+            [DllImport("gdi32")]
+            public extern static int SetDIBitsToDevice(IntPtr hDC, int xDest, int yDest, int dwWidth, int dwHeight, int XSrc, int YSrc, int uStartScan, int cScanLines, IntPtr lpvBits, ref BITMAPINFO lpbmi, uint fuColorUse);
 
-        [StructLayout(LayoutKind.Sequential)]
-        private struct BITMAPINFO
-        {
-            public BITMAPINFOHEADER biHeader;
-            public int biColors;
-        }
+            [StructLayout(LayoutKind.Sequential)]
+            public struct BITMAPINFOHEADER
+            {
+                public int bihSize;
+                public int bihWidth;
+                public int bihHeight;
+                public short bihPlanes;
+                public short bihBitCount;
+                public int bihCompression;
+                public int bihSizeImage;
+                public double bihXPelsPerMeter;
+                public double bihClrUsed;
+            }
 
+            [StructLayout(LayoutKind.Sequential)]
+            public struct BITMAPINFO
+            {
+                public BITMAPINFOHEADER biHeader;
+                public int biColors;
+            }
+        }
 
         public static void PaintBitmap(Graphics graphics, Bitmap bitmap, Rectangle src, Point dest)
         {
@@ -55,7 +57,7 @@ namespace PurplePen
             IntPtr hdc = graphics.GetHdc();
             try {
 
-                BITMAPINFO bmInfo = new BITMAPINFO {
+                NativeMethods.BITMAPINFO bmInfo = new NativeMethods.BITMAPINFO {
                     biHeader =
                 {
                     bihBitCount = (short) (bytesPerPixel * 8),
@@ -67,7 +69,7 @@ namespace PurplePen
                 }
                 };
 
-                SetDIBitsToDevice(hdc, dest.X, dest.Y, src.Width, src.Height, src.X, bmHeight - src.Bottom, 0, bmHeight, BD.Scan0, ref bmInfo, 0);
+                NativeMethods.SetDIBitsToDevice(hdc, dest.X, dest.Y, src.Width, src.Height, src.X, bmHeight - src.Bottom, 0, bmHeight, BD.Scan0, ref bmInfo, 0);
             }
             finally {
                 bitmap.UnlockBits(BD);

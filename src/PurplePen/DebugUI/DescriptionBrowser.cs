@@ -175,7 +175,7 @@ namespace PurplePen.DebugUI
         // Get the test file direction
         static string GetTestFileDirectory()
         {
-            Uri uri = new Uri(Assembly.GetCallingAssembly().CodeBase);
+            Uri uri = new Uri(Assembly.GetCallingAssembly().Location);
             string callingPath = Path.GetDirectoryName(uri.LocalPath);
             return Path.GetFullPath(Path.Combine(callingPath, @"..\..\..\TestFiles"));
         }

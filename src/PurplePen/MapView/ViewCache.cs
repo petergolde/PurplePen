@@ -60,7 +60,7 @@ namespace PurplePen.MapView {
 
 	// The ViewCache class caches a bitmap of a particular view of the map, so that
 	// it can be quickly redrawn.
-	class ViewCache {
+	class ViewCache: IDisposable {
 		Bitmap bitmap;			// stores the cached view
 		Size bitmapSize;		// size of the bitmap and the cached view.
 		RectangleF mapView;		// The part of the map that is being cached in the bitmap
@@ -74,6 +74,8 @@ namespace PurplePen.MapView {
 		//  both false -- some bits are valid, as specified in invalidRegion.
 		Region invalidRegion;	   // The invalid region of the bitmap, in bitmap coordinates.
         long changeNumber;         // incremented every time re-validated.
+
+		bool disposed = false;
 
 		void MarkAllValid() {
             if (!allValid)
@@ -100,6 +102,48 @@ namespace PurplePen.MapView {
 			this.mapDisplay = mapDisplay;
 			mapDisplay.Changed += MapChanged;
 		}
+
+        // Dispose pattern - release managed resources and unsubscribe from events.
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing) {
+                // Unsubscribe from map display events
+                if (mapDisplay != null)
+                    mapDisplay.Changed -= MapChanged;
+
+                // Dispose managed disposable resources
+                if (bitmap != null) {
+                    bitmap.Dispose();
+                    bitmap = null;
+                }
+
+                if (invalidRegion != null) {
+                    invalidRegion.Dispose();
+                    invalidRegion = null;
+                }
+
+                if (bitmapBrush != null) {
+                    bitmapBrush.Dispose();
+                    bitmapBrush = null;
+                }
+
+                if (matTransform != null) {
+                    matTransform.Dispose();
+                    matTransform = null;
+                }
+            }
+
+            disposed = true;
+        }
 
 
         // This is the main entry point to the ViewCache. It asks to draw the part of the map into the graphics

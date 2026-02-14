@@ -51,7 +51,7 @@ namespace PurplePen
     // on the map. It includes the map proper, as well as the courses and so forth drawn on top.
     // The IMapDisplay interface is the communication channel with the ViewCache and the MapViewer
     // controls -- it simply has to be able to draw itself, and notify when parts change.
-    class MapDisplay: IMapDisplay
+    class MapDisplay: IMapDisplay, IDisposable
     {
         MapType mapType;    // Map type. Note that OpenMapper and OCAD files both called MapType.OCAD. See MapVersion property to distinguish.
         string filename;
@@ -78,6 +78,7 @@ namespace PurplePen
         int? lowerPurpleMapLayer;      // If non-null, place the lower purple of the map just above this OCAD ID color.
 
         RectangleF? printArea;          // print area to display, or null for none.
+        private bool disposed = false;
 
         // Clones this map display.
         public MapDisplay Clone()
@@ -88,6 +89,47 @@ namespace PurplePen
             newMapDisplay.UpdateDimmedBitmap();
 
             return newMapDisplay;
+        }
+
+        // Dispose managed resources used by the MapDisplay.
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing) {
+                try {
+                    if (bitmap != null) {
+                        bitmap.Dispose();
+                        bitmap = null;
+                    }
+
+                    if (dimmedBitmap != null) {
+                        dimmedBitmap.Dispose();
+                        dimmedBitmap = null;
+                    }
+
+                    if (map != null) {
+                        map.Dispose();
+                        map = null;
+                    }
+
+                    if (pdfMapFile != null) {
+                        pdfMapFile.Dispose();
+                        pdfMapFile = null;
+                    }
+                }
+                catch {
+                    // Swallow exceptions during dispose to avoid throwing from Dispose.
+                }
+            }
+
+            disposed = true;
         }
 
         // Clones this map display, and set the clone to full intensity

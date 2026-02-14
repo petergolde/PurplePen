@@ -870,9 +870,11 @@ namespace PurplePen.MapView
             ScrollView(dxPixels, dyPixels);
         }
 
-
-        [DllImport("user32.dll")]
-        private static extern bool ScrollWindow(IntPtr hwnd, int dx, int dy, IntPtr lpRect, IntPtr lpClipRect);
+        static class NativeMethods
+        {
+            [DllImport("user32.dll")]
+            public static extern bool ScrollWindow(IntPtr hwnd, int dx, int dy, IntPtr lpRect, IntPtr lpClipRect);
+        }
 
         // Scroll the view by a certain number of PIXELs.
         public void ScrollView(int dxPixels, int dyPixels) {
@@ -890,7 +892,7 @@ namespace PurplePen.MapView
             }
 
             bool success;
-            success = ScrollWindow(this.Handle, dxPixels, dyPixels, IntPtr.Zero, IntPtr.Zero);
+            success = NativeMethods.ScrollWindow(this.Handle, dxPixels, dyPixels, IntPtr.Zero, IntPtr.Zero);
 
             if (success) {
                 // Clear the "uncovered area" (looks better).

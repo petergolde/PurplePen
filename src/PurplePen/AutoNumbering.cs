@@ -211,11 +211,6 @@ namespace PurplePen
             this.PerformLayout();
 
         }
-        private CheckBox disallowInvertibleCheckBox;
-        private GroupBox existingControlsGroupBox;
-        private RadioButton renumberExistingRadioButton;
-        private RadioButton newControlsOnlyRadioButton;
-        private Label automaticNumberingLabel;       
 
         #endregion
     }

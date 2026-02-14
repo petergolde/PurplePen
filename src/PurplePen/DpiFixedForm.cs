@@ -14,6 +14,8 @@ namespace PurplePen
     // have different DPIs. It should not be necessary on .NET 7.
     public class DpiFixedForm: Form
     {
+#if !NET7_0_OR_GREATER
+
         internal const uint WM_DPICHANGED = 0x02E0;
 
         [DllImport("user32.dll")]
@@ -61,5 +63,6 @@ namespace PurplePen
             }
 
         }
+#endif
     }
 }

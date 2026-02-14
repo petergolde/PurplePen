@@ -360,18 +360,6 @@
   <data name="coursesLabel.Text" xml:space="preserve">
     <value>Courses:</value>
   </data>
-  <data name="&gt;&gt;coursesLabel.Name" xml:space="preserve">
-    <value>coursesLabel</value>
-  </data>
-  <data name="&gt;&gt;coursesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;coursesLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;coursesLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="positionLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -396,18 +384,6 @@
   <data name="positionLabel.Text" xml:space="preserve">
     <value>Position:</value>
   </data>
-  <data name="&gt;&gt;positionLabel.Name" xml:space="preserve">
-    <value>positionLabel</value>
-  </data>
-  <data name="&gt;&gt;positionLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;positionLabel.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;positionLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="comboBoxPosition.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -426,18 +402,6 @@
   <data name="comboBoxPosition.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;comboBoxPosition.Name" xml:space="preserve">
-    <value>comboBoxPosition</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPosition.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPosition.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxPosition.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="comboBoxCourses.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -454,18 +418,6 @@
     <value>235, 23</value>
   </data>
   <data name="comboBoxCourses.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCourses.Name" xml:space="preserve">
-    <value>comboBoxCourses</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCourses.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCourses.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;comboBoxCourses.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -1137,13 +1137,14 @@ namespace PurplePen
     
     // The MapRenderer handles rendering to a map, creating symbols as needed.
     // The SymColor to use must be already created a passed in.
-    class MapRenderer : IRenderer
+    class MapRenderer : IRenderer, IDisposable
     {
         private Map map;
         private SymColor color;
         private Matrix currentTransform, inverseTransform;
         private Stack<Matrix> transformStack = new Stack<Matrix>();
         private Dictionary<object, SymDef> dict;
+        private bool disposed = false;
 
         public MapRenderer(Map map, SymColor color, Dictionary<object, SymDef> dict)
         {
@@ -1179,6 +1180,42 @@ namespace PurplePen
         public void PopTransform()
         {
             Transform = transformStack.Pop();
+        }
+
+        // Dispose managed resources used by the renderer (matrices).
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing) {
+                try {
+                    if (currentTransform != null) {
+                        currentTransform.Dispose();
+                        currentTransform = null;
+                    }
+                    if (inverseTransform != null) {
+                        inverseTransform.Dispose();
+                        inverseTransform = null;
+                    }
+
+                    while (transformStack.Count > 0) {
+                        var m = transformStack.Pop();
+                        if (m != null)
+                            m.Dispose();
+                    }
+                }
+                catch {
+                    // Swallow exceptions during dispose to avoid throwing from Dispose.
+                }
+            }
+
+            disposed = true;
         }
 
         // Get a free OCAD id number

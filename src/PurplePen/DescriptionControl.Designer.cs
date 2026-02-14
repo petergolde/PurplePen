@@ -50,6 +50,14 @@ namespace PurplePen
             if (disposing && (components != null)) {
                 components.Dispose();
             }
+            
+            if (disposing) {
+                if (selectionBrush != null) {
+                    selectionBrush.Dispose();
+                    selectionBrush = null;
+                }
+            }
+
             base.Dispose(disposing);
         }
 

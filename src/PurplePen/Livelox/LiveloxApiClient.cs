@@ -624,10 +624,10 @@ namespace PurplePen.Livelox
         /// </summary>
         /// <param name="length">Input length (nb. output will be longer)</param>
         /// <returns></returns>
-        private static string RandomDataBase64Url(uint length)
+        private static string RandomDataBase64Url(int length)
         {
-            var rng = new RNGCryptoServiceProvider();
-            var bytes = new byte[length];
+            RandomNumberGenerator rng = RandomNumberGenerator.Create();
+            byte[] bytes = new byte[length];
             rng.GetBytes(bytes);
             return Base64UrlEncodeNoPadding(bytes);
         }
@@ -639,8 +639,8 @@ namespace PurplePen.Livelox
         /// <returns></returns>
         private static byte[] Sha256(string inputString)
         {
-            var bytes = Encoding.ASCII.GetBytes(inputString);
-            var sha256 = new SHA256Managed();
+            byte[] bytes = Encoding.ASCII.GetBytes(inputString);
+            SHA256 sha256 = SHA256.Create();
             return sha256.ComputeHash(bytes);
         }
 

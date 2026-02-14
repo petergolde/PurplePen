@@ -440,7 +440,7 @@ namespace PurplePen
             string status = string.Format("{{\"Version\":\"{0}\", \"Locale\":\"{1}\", \"TimeZone\":\"{2}\", \"UILang\":\"{3}\", \"ClientId\":\"{4}\", \"OSVersion\":\"{5}\"}}",
                 JsonEncode(versionString),
                 JsonEncode(CultureInfo.CurrentCulture.Name),
-                JsonEncode(TimeZone.CurrentTimeZone.StandardName),
+                JsonEncode(TimeZoneInfo.Local.StandardName),
                 JsonEncode(uiLanguage),
                 JsonEncode(Settings.Default.ClientId.ToString()),
                 JsonEncode(CrashReporterDotNET.HelperMethods.GetWindowsVersion()));

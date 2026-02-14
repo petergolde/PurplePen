@@ -42,7 +42,7 @@ namespace PurplePen
 {
     // Renders a course view into the punch card with all the punches. Also allows checking to see if
     // the punches are missing.
-    class PunchesRenderer: IPrintableRectangle
+    class PunchesRenderer: IPrintableRectangle, IDisposable
     {
         private float margin = 3;           
         private float cellSize = 30;
@@ -53,6 +53,8 @@ namespace PurplePen
         object blackBrush;
         object thinPen, thickPen;
         ITextMetrics textMetrics;
+
+        bool disposed;
 
         public PunchesRenderer(EventDB eventDB)
         {
@@ -133,8 +135,10 @@ namespace PurplePen
             blackBrush = null;
             thinPen = null;
             thickPen = null;
-            textMetrics.Dispose();
-            textMetrics = null;
+            if (textMetrics != null) {
+                textMetrics.Dispose();
+                textMetrics = null;
+            }
         }
 
         // Get all the boxes we are going to fill into an array.
@@ -333,6 +337,27 @@ namespace PurplePen
             grTarget.PushTransform(transform);
             Render(grTarget, startLine, countLines);
             grTarget.PopTransform();
+        }
+
+
+        // Dispose pattern - release any managed resources we may still be holding.
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing) {
+                // Dispose managed resources
+                DisposeObjects();
+            }
+
+            disposed = true;
         }
     }
 

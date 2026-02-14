@@ -64,6 +64,11 @@ namespace PurplePen
         private FlowLayoutPanel flowLayoutPanel1;
         private Label startingCodeLabel;
         private NumericUpDown startingCodeNumericUpDown;
+        private CheckBox disallowInvertibleCheckBox;
+        private GroupBox existingControlsGroupBox;
+        private RadioButton renumberExistingRadioButton;
+        private RadioButton newControlsOnlyRadioButton;
+        private Label automaticNumberingLabel;
 
     }
 }

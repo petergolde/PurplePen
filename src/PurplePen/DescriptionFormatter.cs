@@ -117,7 +117,8 @@ namespace PurplePen
 
         public override int GetHashCode()
         {
-            throw new NotSupportedException("The method or operation is not implemented.");
+            // We don't support hashing, so just return a constant.
+            return 1;
         }
     }
 

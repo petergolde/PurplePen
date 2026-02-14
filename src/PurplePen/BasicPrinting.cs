@@ -635,18 +635,18 @@ namespace PurplePen
             IntPtr BLOB = IntPtr.Zero;
 
             try {
-                hDC = CreateDC(null, printername, null, IntPtr.Zero);
+                hDC = NativeMethods.CreateDC(null, printername, null, IntPtr.Zero);
 
                 int isz = 4;
                 BLOB = Marshal.AllocCoTaskMem(isz);
                 Marshal.WriteInt32(BLOB, GETTECHNOLOGY);
 
-                int test = ExtEscape(hDC, QUERYESCSUPPORT, 4, BLOB, 0, IntPtr.Zero);
+                int test = NativeMethods.ExtEscape(hDC, QUERYESCSUPPORT, 4, BLOB, 0, IntPtr.Zero);
                 if (test == 0) return false; // printer driver does not support GETTECHNOLOGY Checks.
 
                 foreach (Int32 val in PSChecks) {
                     Marshal.WriteInt32(BLOB, val);
-                    test = ExtEscape(hDC, QUERYESCSUPPORT, isz, BLOB, 0, IntPtr.Zero);
+                    test = NativeMethods.ExtEscape(hDC, QUERYESCSUPPORT, isz, BLOB, 0, IntPtr.Zero);
                     if (test != 0) return true; // if any of the checks pass, return true
                 }
             }
@@ -654,7 +654,7 @@ namespace PurplePen
                 return false;
             }
             finally {
-                if (hDC != IntPtr.Zero) DeleteDC(hDC);
+                if (hDC != IntPtr.Zero) NativeMethods.DeleteDC(hDC);
                 if (BLOB != IntPtr.Zero) Marshal.FreeCoTaskMem(BLOB);
             }
 
@@ -684,27 +684,30 @@ namespace PurplePen
             return false;
         }
 
-        [DllImport("kernel32.dll")]
-        static extern IntPtr GlobalLock(IntPtr hMem);
+        static class NativeMethods
+        {
+            [DllImport("kernel32.dll")]
+            public static extern IntPtr GlobalLock(IntPtr hMem);
 
-        [DllImport("kernel32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool GlobalUnlock(IntPtr hMem);
+            [DllImport("kernel32.dll")]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            public static extern bool GlobalUnlock(IntPtr hMem);
 
-        [DllImport("kernel32.dll")]
-        static extern IntPtr GlobalFree(IntPtr hMem);
+            [DllImport("kernel32.dll")]
+            public static extern IntPtr GlobalFree(IntPtr hMem);
 
-        [DllImport("kernel32.dll")]
-        static extern UIntPtr GlobalSize(IntPtr hMem);
+            [DllImport("kernel32.dll")]
+            public static extern UIntPtr GlobalSize(IntPtr hMem);
 
-        [DllImport("gdi32.dll")]
-        static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
+            [DllImport("gdi32.dll")]
+            public static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
 
-        [DllImport("gdi32.dll")]
-        static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
+            [DllImport("gdi32.dll")]
+            public static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
 
-        [DllImport("gdi32.dll")]
-        static extern bool DeleteDC(IntPtr hdc);
+            [DllImport("gdi32.dll")]
+            public static extern bool DeleteDC(IntPtr hdc);
+        }
     }
 }
 

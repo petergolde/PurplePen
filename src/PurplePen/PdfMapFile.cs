@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace PurplePen
 {
     // Manages a PDF map file and converting it to a bitmap.
-    class PdfMapFile
+    class PdfMapFile : IDisposable
     {
         private string pdfFileName;
         private string pngFileName;
@@ -17,6 +17,7 @@ namespace PurplePen
         private string conversionOutput;
         private StringBuilder stderrOutput;
         private Process process;
+        private bool disposed = false;
 
         private const int Resolution = 600; // Resolution in DPI
         
@@ -169,7 +170,7 @@ namespace PurplePen
 
         internal string FindPdfConverterExe()
         {
-            Uri uri = new Uri(typeof(PdfMapFile).Assembly.CodeBase);
+            Uri uri = new Uri(typeof(PdfMapFile).Assembly.Location);
             string applicationDirectory = Path.GetDirectoryName(uri.LocalPath);
             return Path.Combine(applicationDirectory, "PdfConverter.exe");
         }
@@ -224,6 +225,35 @@ namespace PurplePen
                 builder.Append(b.ToString("X2"));
             }
             return builder.ToString();
+        }
+
+        // Implement IDisposable to ensure the process field is disposed.
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+                return;
+
+            if (disposing)
+            {
+                // Dispose managed resources.
+                try {
+                    if (process != null)
+                    {
+                        process.Dispose();
+                        process = null;
+                    }
+                }
+                catch {
+                    // Swallow exceptions during dispose.
+                }
+            }
+
+            disposed = true;
         }
 
         public enum ConversionStatus

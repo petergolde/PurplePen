@@ -664,14 +664,14 @@ namespace PurplePen
 
             // Add it to the CourseLayout.
             courseLayout.SetLayerColor(layer, (short) (NormalCourseAppearance.extraCourseOcadId + extraCourseIndex), 
-                                              string.Format(NormalCourseAppearance.allControlsColorName, extraCourseIndex + 1),
+                                              string.Format(NormalCourseAppearance.extraCourseColorName, extraCourseIndex + 1),
                                               NormalCourseAppearance.extraCourseC[extraCourseIndex],
                                               NormalCourseAppearance.extraCourseM[extraCourseIndex],
                                               NormalCourseAppearance.extraCourseY[extraCourseIndex],
                                               NormalCourseAppearance.extraCourseK[extraCourseIndex],
                                               false);
             courseLayout.SetLowerLayerColor(layer, (short)(NormalCourseAppearance.extraCourseOcadId + extraCourseIndex + CourseLayout.EXTRACOURSECOUNT),
-                                              string.Format(NormalCourseAppearance.allControlsColorName, extraCourseIndex + 1),
+                                              string.Format(NormalCourseAppearance.extraCourseColorName, extraCourseIndex + 1),
                                               NormalCourseAppearance.extraCourseC[extraCourseIndex],
                                               NormalCourseAppearance.extraCourseM[extraCourseIndex],
                                               NormalCourseAppearance.extraCourseY[extraCourseIndex],
