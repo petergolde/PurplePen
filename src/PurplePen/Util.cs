@@ -63,7 +63,7 @@ namespace PurplePen
     {
         static class NativeMethods
         {
-            [DllImport("shlwapi.dll", CharSet = CharSet.Auto)]
+            [DllImport("shlwapi.dll", CharSet = CharSet.Auto, BestFitMapping = false, ThrowOnUnmappableChar = true)]
             public static extern bool PathRelativePathTo(
                  [Out] StringBuilder pszPath,
                  [In] string pszFrom,
@@ -77,7 +77,7 @@ namespace PurplePen
 
             // Windows API for loading a cursor from file. The Cursor constructor does not work
             // correctly with .cur files that have 32-bit color with alpha transparency.
-            [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+            [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto, BestFitMapping = false, ThrowOnUnmappableChar = true)]
             public static extern IntPtr LoadCursorFromFile(string path);
         }
 

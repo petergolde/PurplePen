@@ -48,7 +48,7 @@ namespace PurplePen
 {
     // The controller cooperates with the UI and the selection manager to run the application. It primarily
     // handles all the different commands in the application.
-    class Controller
+    class Controller : IDisposable
     {
         IUserInterface ui;      // interface to the UI.
         EventDB eventDB;        // event database
@@ -79,6 +79,13 @@ namespace PurplePen
         int changeNum;          // Maintains a change number for state held in the controller (e.g., FileName).
 
         const int maxTotalVariationsAllowed = 3000;  // Total number of variations allowed.
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            mapDisplay?.Dispose();
+            mapDisplay = null;
+        }
 
         public Controller(IUserInterface ui)
         {

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PurplePen
 {
-    class PdfLoadingUI: IPdfLoadingStatus
+    class PdfLoadingUI: IPdfLoadingStatus, IDisposable
     {
         private PdfConversionInProgress dialog;
         private bool complete;
@@ -56,6 +56,13 @@ namespace PurplePen
                     Thread.Sleep(50);
                 }
             }
+        }
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            dialog?.Dispose();
+            dialog = null;
         }
 
         private void CloseDialog()

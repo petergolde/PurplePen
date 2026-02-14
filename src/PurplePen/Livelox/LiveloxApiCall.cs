@@ -5,7 +5,7 @@ using System.Timers;
 
 namespace PurplePen.Livelox
 {
-    class LiveloxApiCall<T> : IAbortable
+    class LiveloxApiCall<T> : IAbortable, IDisposable
     {
         public LiveloxApiRequestContext RequestContext { get; set; }
         public HttpWebResponse Response { get; set; }
@@ -25,6 +25,13 @@ namespace PurplePen.Livelox
         {
             Client?.Abort();
             timeoutTimer?.Dispose();
+        }
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            timeoutTimer?.Dispose();
+            timeoutTimer = null;
         }
 
         public void RegisterTimeout(TimeSpan timeout)

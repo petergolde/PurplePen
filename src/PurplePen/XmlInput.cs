@@ -69,7 +69,7 @@ namespace PurplePen
     /// <summary>
     /// A class to help with XML input.
     /// </summary>
-    public class XmlInput: IDisposable
+    public sealed class XmlInput: IDisposable
     {
         private string filename;
         public readonly XmlTextReader Reader;

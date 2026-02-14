@@ -44,7 +44,7 @@ namespace PurplePen
     /// Handles the popup menu that can display symbols and/or text boxes for
     /// changing the boxes in a description.
     /// </summary>
-    class SymbolPopup
+    class SymbolPopup : IDisposable
     {
         SymbolDB symbolDB;
         int boxSize;            // Size of each image box.
@@ -76,6 +76,19 @@ namespace PurplePen
         {
             this.symbolDB = symbolDB;
             this.boxSize = boxSize;
+        }
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            dropdown?.Dispose();
+            dropdown = null;
+            infoLabel?.Dispose();
+            infoLabel = null;
+            separator?.Dispose();
+            separator = null;
+            textbox?.Dispose();
+            textbox = null;
         }
 
         // Language for the symbol names.

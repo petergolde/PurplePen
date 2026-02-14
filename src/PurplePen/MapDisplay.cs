@@ -123,6 +123,11 @@ namespace PurplePen
                         pdfMapFile.Dispose();
                         pdfMapFile = null;
                     }
+
+                    if (courseMap != null) {
+                        courseMap.Dispose();
+                        courseMap = null;
+                    }
                 }
                 catch {
                     // Swallow exceptions during dispose to avoid throwing from Dispose.

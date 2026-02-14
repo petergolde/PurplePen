@@ -1071,6 +1071,25 @@ namespace PurplePen.MapView
         }
         #endregion
 
+        // Dispose managed resources owned by this control.
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing) {
+                viewcache?.Dispose();
+                viewcache = null;
+                compositedBitmap?.Dispose();
+                compositedBitmap = null;
+                xformWorldToPixel?.Dispose();
+                xformWorldToPixel = null;
+                xformPixelToWorld?.Dispose();
+                xformPixelToWorld = null;
+                DragCursor?.Dispose();
+                hoverTimer?.Dispose();
+                hoverTimer = null;
+            }
+            base.Dispose(disposing);
+        }
+
         #region Event handlers
 
         private void MapViewer_Paint(object sender, System.Windows.Forms.PaintEventArgs e) {

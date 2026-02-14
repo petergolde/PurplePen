@@ -702,7 +702,7 @@ namespace PurplePen
             [DllImport("gdi32.dll")]
             public static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
 
-            [DllImport("gdi32.dll")]
+            [DllImport("gdi32.dll", BestFitMapping = false, ThrowOnUnmappableChar = true)]
             public static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
 
             [DllImport("gdi32.dll")]

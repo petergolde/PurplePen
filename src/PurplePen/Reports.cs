@@ -43,10 +43,19 @@ using System.Linq;
 
 namespace PurplePen
 {
-    class Reports
+    class Reports : IDisposable
     {
         StringWriter stringWriter;
         XmlTextWriter xmlTextWriter;
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            xmlTextWriter?.Dispose();
+            xmlTextWriter = null;
+            stringWriter?.Dispose();
+            stringWriter = null;
+        }
 
         // Initialize the xml text writer for creating a new report.
         void InitReport()

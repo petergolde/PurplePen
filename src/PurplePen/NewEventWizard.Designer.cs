@@ -47,8 +47,26 @@ namespace PurplePen
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null)) {
-                components.Dispose();
+            if (disposing) {
+                components?.Dispose();
+                eventTitlePage?.Dispose();
+                eventTitlePage = null;
+                mapFilePage?.Dispose();
+                mapFilePage = null;
+                bitmapScalePage?.Dispose();
+                bitmapScalePage = null;
+                printScalePage?.Dispose();
+                printScalePage = null;
+                paperSizePage?.Dispose();
+                paperSizePage = null;
+                directoryPage?.Dispose();
+                directoryPage = null;
+                numberingPage?.Dispose();
+                numberingPage = null;
+                standardsPage?.Dispose();
+                standardsPage = null;
+                finalPage?.Dispose();
+                finalPage = null;
             }
             base.Dispose(disposing);
         }

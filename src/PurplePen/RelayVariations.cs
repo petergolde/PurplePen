@@ -860,10 +860,17 @@ namespace PurplePen
 
     }
 
-    class CsvWriter
+    class CsvWriter : IDisposable
     {
         RelayVariations relayVariations;
         TextWriter writer;
+
+        // Dispose managed resources.
+        public void Dispose()
+        {
+            writer?.Dispose();
+            writer = null;
+        }
 
         public void WriteCsv(string fileName, RelayVariations relayVariations)
         {
