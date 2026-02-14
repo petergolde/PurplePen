@@ -1000,5 +1000,6 @@
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 </Project>

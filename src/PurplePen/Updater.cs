@@ -40,7 +40,9 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Text;
 using System.Windows.Forms;
 
@@ -177,7 +179,7 @@ namespace PurplePen
 
         public static bool DownloadAndInstall(Uri downloadFrom, string fileName, bool exitToInstall)
         {
-            WebClient client = new WebClient();
+            HttpClient client = new HttpClient();
             string downloadedFile = Path.Combine(GetDownloadDirectory(), fileName);
             bool completed = false;
             bool success = false;
@@ -185,14 +187,45 @@ namespace PurplePen
             downloadedFile = FindNonexistantFile(downloadedFile);
 
             DownloadProgressDialog downloadProgressDialog = new DownloadProgressDialog();
-            client.DownloadProgressChanged += (sender, e) => { downloadProgressDialog.SetProgress(e.ProgressPercentage); };
-            client.DownloadFileCompleted += (sender, e) => {
-                completed = true;
-                downloadProgressDialog.DialogResult = DialogResult.OK;
-            };
 
-            client.DownloadFileAsync(downloadFrom, downloadedFile);
-            var result = downloadProgressDialog.ShowDialog();
+            // Start the download on a background thread, reporting progress to the dialog.
+            // BeginInvoke is used to marshal UI updates back to the UI thread, since WinForms
+            // controls can only be accessed from the thread that created them. BeginInvoke
+            // queues the action onto the UI thread's message loop and returns immediately,
+            // letting the download continue without blocking on the UI update.
+            Task.Run(async () => {
+                try {
+                    using (HttpResponseMessage response = await client.GetAsync(downloadFrom, HttpCompletionOption.ResponseHeadersRead)) {
+                        response.EnsureSuccessStatusCode();
+                        long? totalBytes = response.Content.Headers.ContentLength;
+
+                        using (Stream contentStream = await response.Content.ReadAsStreamAsync())
+                        using (FileStream fileStream = new FileStream(downloadedFile, FileMode.Create, FileAccess.Write, FileShare.None, 8192, true)) {
+                            byte[] buffer = new byte[8192];
+                            long totalRead = 0;
+                            int bytesRead;
+
+                            while ((bytesRead = await contentStream.ReadAsync(buffer, 0, buffer.Length)) > 0) {
+                                await fileStream.WriteAsync(buffer, 0, bytesRead);
+                                totalRead += bytesRead;
+
+                                if (totalBytes.HasValue && totalBytes.Value > 0) {
+                                    int progressPercentage = (int)(totalRead * 100 / totalBytes.Value);
+                                    downloadProgressDialog.BeginInvoke((Action)(() => downloadProgressDialog.SetProgress(progressPercentage)));
+                                }
+                            }
+                        }
+                    }
+
+                    completed = true;
+                    downloadProgressDialog.BeginInvoke((Action)(() => downloadProgressDialog.DialogResult = DialogResult.OK));
+                }
+                catch {
+                    downloadProgressDialog.BeginInvoke((Action)(() => downloadProgressDialog.DialogResult = DialogResult.Abort));
+                }
+            });
+
+            DialogResult result = downloadProgressDialog.ShowDialog();
 
             if (result == DialogResult.OK && completed) {
                 success = Install(downloadedFile, exitToInstall);
@@ -331,7 +364,7 @@ namespace PurplePen
 
         static void versionCheckWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            WebClient client = new WebClient();
+            HttpClient client = new HttpClient();
 
 #if MSSTORE
             // For the store version, we don't check a file for updates. 
@@ -381,21 +414,25 @@ namespace PurplePen
             CheckResults results = new CheckResults();
 
             // Download latest version.
+            // GetAwaiter().GetResult() is safe here because this runs on a BackgroundWorker
+            // thread with no SynchronizationContext, so there is no deadlock risk.
+            // We use GetAwaiter().GetResult() instead of .Result because .Result wraps
+            // exceptions in AggregateException, which would bypass our HttpRequestException catch.
             string latestVersion = null;
             string latestPrerelease = null;
             try {
-                latestVersion = client.DownloadString(downloadLocation + latestVersionName);
+                latestVersion = client.GetStringAsync(downloadLocation + latestVersionName).GetAwaiter().GetResult();
             }
-            catch (WebException) {
+            catch (HttpRequestException) {
                 latestVersion = null;
             }
 
             // Only check latest prerelease if this is a pre-release.
             if (Util.IsPrerelease(VersionNumber.Current)) {
                 try {
-                    latestPrerelease = client.DownloadString(downloadLocation + latestPreleaseName);
+                    latestPrerelease = client.GetStringAsync(downloadLocation + latestPreleaseName).GetAwaiter().GetResult();
                 }
-                catch (WebException) {
+                catch (HttpRequestException) {
                     latestPrerelease = null;
                 }
             }
@@ -444,13 +481,11 @@ namespace PurplePen
                 JsonEncode(uiLanguage),
                 JsonEncode(Settings.Default.ClientId.ToString()),
                 JsonEncode(CrashReporterDotNET.HelperMethods.GetWindowsVersion()));
-            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-            client.Encoding = Encoding.UTF8;
-
             try {
-                client.UploadStringAsync(new Uri("http://monitor.purple-pen.org/api/Invocation"), status);
+                StringContent content = new StringContent(status, Encoding.UTF8, "application/json");
+                client.PostAsync("http://monitor.purple-pen.org/api/Invocation", content);
             }
-            catch (WebException ex) {
+            catch (HttpRequestException ex) {
                 // Ignore problems.
                 Debug.WriteLine(ex.ToString());
             }
