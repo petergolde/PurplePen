@@ -49,7 +49,7 @@ namespace PurplePen.Tests
     // Everything goes through the output member, which is usuall a StringWriter but 
     // change be changed to Console.Out or a file. A few public data members can be used for setting
     // the results to queries.
-    class TestUI: IUserInterface
+    sealed class TestUI: IUserInterface, IDisposable
     {
         public Controller controller;
         public SymbolDB symbolDB;
@@ -69,6 +69,22 @@ namespace PurplePen.Tests
             Controller controller = new Controller(ui);
             return ui;
         }
+
+        private void Dispose(bool disposing)
+        {
+            if (disposing) {
+                output?.Dispose();
+                output = null;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+        }
+
+
 
         public void Initialize(Controller controller, SymbolDB symbolDB)
         {

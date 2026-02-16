@@ -510,11 +510,20 @@ namespace PurplePen
             }
         }
 
+        // Determine if the current culture uses metric. This is based on the CultureInfo.CurrentCulture, 
+        // NOT the RegionInfo.CurrentRegion, for compatibility for what we always did (and I think it's the 
+        // right thing).
+        public static bool IsCurrentCultureMetric()
+        {
+            RegionInfo regionInfo = new RegionInfo(Thread.CurrentThread.CurrentCulture.Name);
+            return regionInfo.IsMetric;
+        }
+
         // Get text describing a distance. The input is in hundreths of an inch.
         public static string GetDistanceText(int distance, bool addUnits = true)
         {
             string result;
-            if (RegionInfo.CurrentRegion.IsMetric) {
+            if (Util.IsCurrentCultureMetric()) {
                 result = (distance * 25.4 / 100.0).ToString("0");
                 if (addUnits)
                     result += "mm";
@@ -531,7 +540,7 @@ namespace PurplePen
         // Get decimal for a distance.
         public static decimal GetDistanceValue(int distance)
         {
-            if (RegionInfo.CurrentRegion.IsMetric) {
+            if (Util.IsCurrentCultureMetric()) {
                 return ((decimal) distance * 25.4M / 100.0M);
             }
             else {
@@ -542,7 +551,7 @@ namespace PurplePen
         // Get distance in hundredth of an inch from a decimal.
         public static int GetDistanceFromValue(decimal value)
         {
-            if (RegionInfo.CurrentRegion.IsMetric) {
+            if (Util.IsCurrentCultureMetric()) {
                 return (int) Math.Round(value * 100.0M / 25.4M);
             }
             else {

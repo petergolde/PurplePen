@@ -1,0 +1,2534 @@
+﻿OCAD File Header
+  OCADMark=0xCAD  SectionMark=0x0
+  Version=9
+  Reserved2=0x0 Reserved3=0x0 Reserved4=0x0
+
+Symbol definition for '890.0'
+ White out': 
+  Size=604, Otp=3, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=44 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 
+    7C 7C  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  Flags=0, FillOn=True, FillColor=44
+  HatchMode=0
+  HatchAngle1=0, HatchAngle2=0, HatchRes=0
+  StructMode=0, StructWidth=0, StructHeight=0, StructAngle=0
+
+Symbol definition for '810.0'
+ Description: line': 
+  Size=648, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  LineColor=0, LineWidth=21, LineEnds=4
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+UseSymbolFlags:0  Reserved:0
+
+Symbol definition for '810.1'
+ Description: line': 
+  Size=648, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C  0 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  LineColor=0, LineWidth=11, LineEnds=4
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+UseSymbolFlags:0  Reserved:0
+
+Symbol definition for '810.2'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto Condensed, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.3'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.4'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto Condensed, FontColor=0, FontSize=76
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.5'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto, FontColor=0, FontSize=60
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.6'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto Condensed, FontColor=0, FontSize=54
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.7'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto Condensed, FontColor=0, FontSize=76
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=1, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.8'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto Condensed, FontColor=0, FontSize=52
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '810.9'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto, FontColor=0, FontSize=63
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '811.0'
+ Description: text': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 1F  0 5D 7C 7C 7C 7C 7C 5D  0 1F 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 3E  0 3E 7C 7C 7C 7C 7C 3E  0 3E 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 5D  0 1F 7C 7C 7C 7C 7C 1F  0 5D 7C  0  0 1F 5D 7C 1F  0 3E 7C 
+    7C 7C  0  0 5D 7C 7C 7C 5D  0  0 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 3E  0  0  0  0  0  0  0 3E 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 5D  0  0  0  0  0  0  0 5D 7C 7C  0  0 7C 7C 7C 7C  0  0 7C 
+    7C 7C 7C  0  0 7C 7C 7C  0  0 7C 7C 7C  0  0 5D 7C 7C 5D  0  0 7C 
+    7C 7C 7C 1F  0 3E 7C 3E  0 1F 7C 7C 7C  0  0 1F 7C 7C 1F  0 1F 7C 
+    7C 7C 7C 5D  0 1F 7C 1F  0 5D 7C 7C 7C  0  0  0  0  0  0  0 5D 7C 
+    7C 7C 7C 7C  0  0 5D  0  0 7C 7C 7C 7C  0  0 5D 1F  0 1F 5D 7C 7C 
+    7C 7C 7C 7C 1F  0 1F  0 1F 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E  0  0  0 3E 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C  0  0  0 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 1F  0 1F 7C 7C 7C 7C 7C  0  0 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto Condensed, FontColor=0, FontSize=67
+  Weight=700, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=110, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Symbol definition for '800.0'
+ Description: Start': 
+  Size=624, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=0 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 3E 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 1F  0 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 3E 1F 5D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 5D 1F 1F 5D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 5D 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 7C 3E 1F 3E 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 3E 1F 5D 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 5D 1F 1F 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 1F 1F 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 3E 1F 3E 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 7C 7C 5D 1F 3E 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 7C 5D 1F 1F 5D 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 7C 7C 3E 1F 5D 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 7C 7C 3E 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F 3E 5D 1F 3E 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 1F  0 1F 5D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 5D 5D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 1 -- line
+    stFlags=4  stColor=0  stLineWidth=27  
+    (-1.19,1.38) (-1.19,-1.38) (1.21,0.00) (-1.19,1.38) 
+
+Symbol definition for '701.0'
+ Start': 
+  Size=624, Otp=1, SymTp=0, Flags=1
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=12 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 77 7C 7C 7C 
+    7C 7C 7C 77 68 68 68 68 68 68 68 68 68 68 68 68 68 68 77 7C 7C 7C 
+    7C 7C 7C 7C 72 68 68 6D 6D 6D 6D 6D 6D 6D 6D 68 68 72 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 68 68 77 7C 7C 7C 7C 7C 7C 77 68 68 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 7C 68 68 77 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 77 68 68 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 6D 68 6D 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 77 68 68 77 77 68 68 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 72 68 6D 6D 68 72 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 72 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 6D 6D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 77 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 1 -- line
+    stFlags=4  stColor=12  stLineWidth=38  
+    (0.00,4.45) (3.85,-2.22) (-3.85,-2.22) (0.00,4.45) 
+
+Symbol definition for '704.0'
+ Line': 
+  Size=648, Otp=2, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=12 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 77 72 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 6D 68 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 6D 68 6D 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 6D 6D 77 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  LineColor=12, LineWidth=38, LineEnds=0
+  DistFromStart=0, DistToEnd=0, MainLength=0, EndLength=0
+  MainGap=0, SecGap=0, EndGap=0
+  MinSym=0, nPrimSym=0, PrimSymDist=0
+  DblMode=0, DblFlags=0
+  DblFillColor=0, DblLeftColor=0, DblRightColor=0
+  DblWidth=0, DblLeftWidth=0, DblRightWidth=0
+  DblLength=0, DblGap=0
+  DecMode=0, DecLast=0
+  FrWidth = 0
+  DblRes=[0,0,0]
+  DecRes=0
+UseSymbolFlags:0  Reserved:0
+
+Symbol definition for '702.0'
+ Control point': 
+  Size=600, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=12 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 77 72 68 68 68 68 72 77 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 72 68 68 68 68 68 68 68 68 72 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 72 68 68 6D 77 7C 7C 77 6D 68 68 72 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 77 68 68 72 7C 7C 7C 7C 7C 7C 72 68 68 77 7C 7C 7C 7C 
+    7C 7C 7C 7C 6D 68 6D 7C 7C 7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 
+    7C 7C 7C 7C 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 7C 7C 7C 7C 
+    7C 7C 7C 7C 68 68 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 68 68 7C 7C 7C 7C 
+    7C 7C 7C 77 68 68 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 68 68 7C 7C 7C 7C 
+    7C 7C 7C 7C 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 7C 7C 7C 7C 
+    7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 7C 7C 7C 7C 6D 68 72 7C 7C 7C 7C 
+    7C 7C 7C 7C 77 68 68 77 7C 7C 7C 7C 7C 7C 72 68 68 77 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 72 68 68 72 77 7C 7C 77 6D 68 68 72 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 72 68 68 68 68 68 68 68 68 72 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 77 6D 68 68 68 68 6D 77 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  DataSize=3
+  Reserved=0
+  SymbolElement of type 3 -- circle
+    stColor=12  stLineWidth=38  stDiameter=622
+    (0.00,0.00) 
+
+Symbol definition for '706.0'
+ Finish': 
+  Size=624, Otp=1, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=12 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 77 72 72 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 72 68 68 68 68 68 68 72 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 77 6D 68 68 72 77 77 72 68 68 6D 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 68 68 72 7C 7C 7C 77 7C 7C 72 68 6D 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 6D 68 72 7C 77 6D 68 68 6D 77 7C 72 68 72 7C 7C 7C 7C 
+    7C 7C 7C 7C 68 6D 7C 77 68 68 6D 6D 68 68 77 7C 68 68 7C 7C 7C 7C 
+    7C 7C 7C 77 68 72 7C 6D 68 72 7C 7C 77 68 6D 7C 72 68 77 7C 7C 7C 
+    7C 7C 7C 72 68 77 7C 68 6D 7C 7C 7C 7C 6D 68 77 77 68 72 7C 7C 7C 
+    7C 7C 7C 72 68 77 7C 68 68 7C 7C 7C 7C 6D 68 77 77 68 72 7C 7C 7C 
+    7C 7C 7C 77 68 72 7C 72 68 72 7C 7C 72 68 6D 7C 72 68 77 7C 7C 7C 
+    7C 7C 7C 77 68 6D 7C 7C 6D 68 68 6D 68 68 77 7C 68 68 7C 7C 7C 7C 
+    7C 7C 7C 7C 6D 68 72 7C 7C 72 68 68 6D 77 7C 72 68 72 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 68 68 72 7C 7C 7C 7C 7C 7C 72 68 6D 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 77 68 68 6D 72 77 77 72 6D 68 68 77 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 6D 68 68 68 68 68 68 6D 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 77 77 72 72 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  DataSize=6
+  Reserved=0
+  SymbolElement of type 3 -- circle
+    stColor=12  stLineWidth=38  stDiameter=511
+    (0.00,0.00) 
+  SymbolElement of type 3 -- circle
+    stColor=12  stLineWidth=38  stDiameter=732
+    (0.00,0.00) 
+
+Symbol definition for '703.0'
+ Control number': 
+  Size=812, Otp=4, SymTp=0, Flags=0
+    Status=0, Tool=0
+  CsMode=0, CsObjType=0, CsCdFlags=0
+  ColorsUsed=12 
+  Icon=
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 77 6D 68 68 68 72 77 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 77 68 68 68 68 68 68 68 77 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 72 68 68 68 77 7C 77 68 68 68 72 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 6D 68 68 72 7C 7C 7C 77 68 68 6D 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 6D 6D 68 7C 7C 7C 7C 7C 68 68 68 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 77 68 68 68 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 6D 6D 68 72 7C 7C 77 6D 68 68 6D 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 6D 68 68 68 68 68 68 68 68 68 77 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 72 68 68 68 68 68 68 68 68 72 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 77 68 68 68 6D 68 68 6D 77 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 68 68 68 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 6D 68 68 77 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 72 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 77 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 68 68 68 68 68 68 68 68 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+    7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 7C 
+  FontName=Roboto, FontColor=12, FontSize=174
+  Weight=400, Italic=False, CharSpace=0, WordSpace=100
+  Alignment=0, LineSpace=100, ParaSpace=0
+  IndentFirst=0, IndentOther=0
+  nTabs=0: 
+  LBOn=False, LBColor=0, LBWidth=0, LBDist=0
+  FrMode=0, FrName=, FrColor=0, FrSize=0
+  FrWeight=400, FrItalic=False, FrOfX=0, FrOfY=0
+
+Index entry Sym=89000.0
+  ObjType=3  Rex=0  Status=1
+  ViewType=0  Color=44  ImpLayer=0
+Object Sym=89000 Otp=3
+  nItem=5, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.62,55.26) (183.03,55.26) (183.03,-17.39) (148.62,-17.39) 
+    (148.62,55.26) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,55.05) (182.82,55.05) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,55.16) (148.83,50.69) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,55.16) (182.82,50.69) 
+
+Index entry Sym=81000.2
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.2 Otp=5
+  nItem=4, nText=4
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=Marymoor WIOL 2
+    (148.83,51.72) (182.82,51.72) (182.82,55.07) (148.83,55.07) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,50.80) (182.82,50.80) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,50.91) (148.83,46.45) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,50.91) (182.82,46.45) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (161.57,50.91) (161.57,46.45) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (174.32,50.91) (174.32,46.45) 
+
+Index entry Sym=81000.2
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.2 Otp=5
+  nItem=4, nText=3
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=Course 3
+    (148.83,47.47) (161.57,47.47) (161.57,50.82) (148.83,50.82) 
+
+Index entry Sym=81000.2
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.2 Otp=5
+  nItem=4, nText=2
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=2.9 km
+    (161.57,47.47) (174.32,47.47) (174.32,50.82) (161.57,50.82) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,46.55) (182.82,46.55) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,46.66) (148.83,42.20) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,46.66) (182.82,42.20) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,46.66) (153.08,42.20) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,46.66) (157.33,42.20) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=4
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=Start: clearing
+    (157.96,43.61) (182.18,43.61) (182.18,45.89) (157.96,45.89) 
+
+Index entry Sym=80000.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=80000 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (150.95,44.43) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,42.30) (182.82,42.30) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,42.41) (148.83,37.95) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,42.41) (182.82,37.95) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,42.41) (153.08,37.95) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,42.41) (157.33,37.95) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=N side of thicket
+    (157.96,39.36) (182.18,39.36) (182.18,41.64) (157.96,41.64) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=1
+    (148.83,38.98) (153.08,38.98) (153.08,42.32) (148.83,42.32) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=59
+    (153.08,38.98) (157.33,38.98) (157.33,42.32) (153.08,42.32) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,38.05) (182.82,38.05) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,38.16) (148.83,33.70) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,38.16) (182.82,33.70) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,38.16) (153.08,33.70) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,38.16) (157.33,33.70) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=6
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=SW side of lone tree
+    (157.96,35.11) (182.18,35.11) (182.18,37.39) (157.96,37.39) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=2
+    (148.83,34.73) (153.08,34.73) (153.08,38.07) (148.83,38.07) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=53
+    (153.08,34.73) (157.33,34.73) (157.33,38.07) (153.08,38.07) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,33.81) (182.82,33.81) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,33.91) (148.83,29.45) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,33.91) (182.82,29.45) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,33.91) (153.08,29.45) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,33.91) (157.33,29.45) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=NW edge of thicket
+    (157.96,30.86) (182.18,30.86) (182.18,33.14) (157.96,33.14) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=3
+    (148.83,30.48) (153.08,30.48) (153.08,33.82) (148.83,33.82) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=41
+    (153.08,30.48) (157.33,30.48) (157.33,33.82) (153.08,33.82) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,29.56) (182.82,29.56) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,29.66) (148.83,25.20) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,29.66) (182.82,25.20) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,29.66) (153.08,25.20) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,29.66) (157.33,25.20) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=7
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=NW outside corner of fence
+    (157.96,26.61) (182.18,26.61) (182.18,28.89) (157.96,28.89) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=4
+    (148.83,26.23) (153.08,26.23) (153.08,29.57) (148.83,29.57) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=72
+    (153.08,26.23) (157.33,26.23) (157.33,29.57) (153.08,29.57) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,25.31) (182.82,25.31) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,25.41) (148.83,20.95) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,25.41) (182.82,20.95) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,25.41) (153.08,20.95) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,25.41) (157.33,20.95) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=NW side of thicket
+    (157.96,22.36) (182.18,22.36) (182.18,24.65) (157.96,24.65) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=5
+    (148.83,21.98) (153.08,21.98) (153.08,25.33) (148.83,25.33) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=47
+    (153.08,21.98) (157.33,21.98) (157.33,25.33) (153.08,25.33) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,21.06) (182.82,21.06) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,21.17) (148.83,16.71) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,21.17) (182.82,16.71) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,21.17) (153.08,16.71) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,21.17) (157.33,16.71) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=S side of lone tree
+    (157.96,18.11) (182.18,18.11) (182.18,20.40) (157.96,20.40) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=6
+    (148.83,17.73) (153.08,17.73) (153.08,21.08) (148.83,21.08) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=71
+    (153.08,17.73) (157.33,17.73) (157.33,21.08) (153.08,21.08) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,16.81) (182.82,16.81) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,16.92) (148.83,12.46) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,16.92) (182.82,12.46) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,16.92) (153.08,12.46) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,16.92) (157.33,12.46) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=4
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=Ditch junction
+    (157.96,13.87) (182.18,13.87) (182.18,16.15) (157.96,16.15) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=7
+    (148.83,13.48) (153.08,13.48) (153.08,16.83) (148.83,16.83) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=77
+    (153.08,13.48) (157.33,13.48) (157.33,16.83) (153.08,16.83) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,12.56) (182.82,12.56) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,12.67) (148.83,8.21) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,12.67) (182.82,8.21) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,12.67) (153.08,8.21) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,12.67) (157.33,8.21) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=8
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=SW outside corner of building
+    (157.96,9.62) (182.18,9.62) (182.18,11.90) (157.96,11.90) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=8
+    (148.83,9.23) (153.08,9.23) (153.08,12.58) (148.83,12.58) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=78
+    (153.08,9.23) (157.33,9.23) (157.33,12.58) (153.08,12.58) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,8.31) (182.82,8.31) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,8.42) (148.83,3.96) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,8.42) (182.82,3.96) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,8.42) (153.08,3.96) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,8.42) (157.33,3.96) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=8
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=E ditch and thicket crossing
+    (157.96,5.37) (182.18,5.37) (182.18,7.65) (157.96,7.65) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=9
+    (148.83,4.99) (153.08,4.99) (153.08,8.33) (148.83,8.33) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=43
+    (153.08,4.99) (157.33,4.99) (157.33,8.33) (153.08,8.33) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,4.07) (182.82,4.07) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,4.17) (148.83,-0.29) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,4.17) (182.82,-0.29) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,4.17) (153.08,-0.29) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,4.17) (157.33,-0.29) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=6
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=Path and ditch crossing
+    (157.96,1.12) (182.18,1.12) (182.18,3.40) (157.96,3.40) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=10
+    (148.83,0.74) (153.08,0.74) (153.08,4.08) (148.83,4.08) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=75
+    (153.08,0.74) (157.33,0.74) (157.33,4.08) (153.08,4.08) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-0.18) (182.82,-0.18) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-0.08) (148.83,-4.54) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,-0.08) (182.82,-4.54) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,-0.08) (153.08,-4.54) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,-0.08) (157.33,-4.54) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=5
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=SW tip of thicket
+    (157.96,-3.13) (182.18,-3.13) (182.18,-0.85) (157.96,-0.85) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=11
+    (148.83,-3.51) (153.08,-3.51) (153.08,-0.17) (148.83,-0.17) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=45
+    (153.08,-3.51) (157.33,-3.51) (157.33,-0.17) (153.08,-0.17) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-4.43) (182.82,-4.43) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-4.33) (148.83,-8.79) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,-4.33) (182.82,-8.79) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,-4.33) (153.08,-8.79) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,-4.33) (157.33,-8.79) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=9
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=S inside corner of forest corner
+    (157.96,-7.38) (182.18,-7.38) (182.18,-5.09) (157.96,-5.09) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=12
+    (148.83,-7.76) (153.08,-7.76) (153.08,-4.41) (148.83,-4.41) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=80
+    (153.08,-7.76) (157.33,-7.76) (157.33,-4.41) (153.08,-4.41) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-8.68) (182.82,-8.68) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-8.57) (148.83,-13.04) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,-8.57) (182.82,-13.04) 
+
+Index entry Sym=81000.1
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.1 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (153.08,-8.57) (153.08,-13.04) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (157.33,-8.57) (157.33,-13.04) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=9
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=E outside corner of forest corner
+    (157.96,-11.63) (182.18,-11.63) (182.18,-9.34) (157.96,-9.34) 
+
+Index entry Sym=81000.3
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.3 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=13
+    (148.83,-12.01) (153.08,-12.01) (153.08,-8.66) (148.83,-8.66) 
+
+Index entry Sym=81000.4
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.4 Otp=5
+  nItem=4, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=38
+    (153.08,-12.01) (157.33,-12.01) (157.33,-8.66) (153.08,-8.66) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-12.93) (182.82,-12.93) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-17.18) (182.82,-17.18) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (148.83,-12.82) (148.83,-17.28) 
+
+Index entry Sym=81000.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (182.82,-12.82) (182.82,-17.28) 
+
+Index entry Sym=81000.8
+  ObjType=5  Rex=0  Status=1
+  ViewType=0  Color=0  ImpLayer=0
+Object Sym=81000.8 Otp=5
+  nItem=4, nText=6
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=Navigate 60 m to finish
+    (149.47,-15.87) (182.18,-15.87) (182.18,-13.59) (149.47,-13.59) 
+
+Index entry Sym=70100.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70100 Otp=1
+  nItem=1, nText=0
+  Ang=1630
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (56.80,-8.70) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (55.50,-12.95) (52.11,-24.03) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (51.20,-27.00) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (48.59,-25.31) (28.41,-12.19) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (25.80,-10.50) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (26.21,-7.42) (27.59,3.12) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (28.00,6.20) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (24.92,6.64) (2.38,9.86) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (-0.70,10.30) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (-0.23,13.37) (2.04,28.25) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (2.51,31.32) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (5.42,30.24) (37.19,18.48) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (40.10,17.40) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (43.20,17.56) (71.60,19.04) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (74.70,19.20) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (77.52,20.51) (91.08,26.79) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (93.90,28.10) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (91.29,29.79) (86.61,32.81) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (84.00,34.50) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (81.36,32.85) (74.64,28.65) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (72.00,27.00) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (68.90,26.73) (59.00,25.87) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (55.90,25.60) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (54.04,23.11) (51.33,19.47) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (49.03,16.38) (43.76,9.29) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (41.90,6.80) 
+
+Index entry Sym=70400.0
+  ObjType=2  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70400 Otp=2
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (44.72,5.49) (47.48,4.21) 
+
+Index entry Sym=70200.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70200 Otp=1
+  nItem=1, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (50.30,2.90) 
+
+Index entry Sym=70600.0
+  ObjType=1  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70600 Otp=1
+  nItem=2, nText=0
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+    (53.20,-2.80) (0.10,0.13, Curve2, Gap, Hole) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=1
+    (51.99,-36.54) (51.99,-38.07) (55.43,-38.07) (55.43,-30.41) 
+    (51.99,-30.41) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=2
+    (17.35,-16.53) (17.35,-18.06) (20.79,-18.06) (20.79,-10.41) 
+    (17.35,-10.41) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=3
+    (26.77,11.51) (26.77,9.98) (30.21,9.98) (30.21,17.63) (26.77,17.63) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=4
+    (-8.43,2.88) (-8.43,1.35) (-4.99,1.35) (-4.99,9.01) (-8.43,9.01) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=5
+    (-3.21,36.11) (-3.21,34.58) (0.23,34.58) (0.23,42.24) (-3.21,42.24) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=6
+    (40.37,22.70) (40.37,21.17) (43.82,21.17) (43.82,28.83) 
+    (40.37,28.83) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=7
+    (75.49,9.66) (75.49,8.13) (78.93,8.13) (78.93,15.79) (75.49,15.79) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=8
+    (99.06,22.56) (99.06,21.03) (102.50,21.03) (102.50,28.69) 
+    (99.06,28.69) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=9
+    (82.77,39.81) (82.77,38.28) (86.21,38.28) (86.21,45.93) 
+    (82.77,45.93) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=10
+    (66.03,32.31) (66.03,30.78) (72.91,30.78) (72.91,38.43) 
+    (66.03,38.43) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=11
+    (48.19,30.84) (48.19,29.31) (55.07,29.31) (55.07,36.97) 
+    (48.19,36.97) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=12
+    (34.79,-2.79) (34.79,-4.32) (41.67,-4.32) (41.67,3.33) (34.79,3.33) 
+
+Index entry Sym=70300.0
+  ObjType=4  Rex=0  Status=1
+  ViewType=0  Color=12  ImpLayer=0
+Object Sym=70300 Otp=4
+  nItem=5, nText=1
+  Ang=0
+  Col=0 (0x0)
+  LineWidth=0  DiamFlags=0
+  Text=13
+    (53.83,6.87) (53.83,5.33) (60.71,5.33) (60.71,12.99) (53.83,12.99) 
+
+String of type 9
+  ObjIndex=0
+  firstField=Purple
+  code=n, value=11
+  code=c, value=15
+  code=m, value=90
+  code=y, value=0
+  code=k, value=25
+  code=o, value=0
+
+String of type 9
+  ObjIndex=0
+  firstField=Lower purple
+  code=n, value=12
+  code=c, value=15
+  code=m, value=90
+  code=y, value=0
+  code=k, value=25
+  code=o, value=0
+
+String of type 9
+  ObjIndex=0
+  firstField=Black
+  code=n, value=0
+  code=c, value=0
+  code=m, value=0
+  code=y, value=0
+  code=k, value=100
+  code=o, value=0
+
+String of type 9
+  ObjIndex=0
+  firstField=White
+  code=n, value=44
+  code=c, value=0
+  code=m, value=0
+  code=y, value=0
+  code=k, value=0
+  code=o, value=0
+
+String of type 1039
+  ObjIndex=0
+  firstField=
+  code=m, value=10000
+  code=g, value=10
+  code=r, value=0
+  code=x, value=0
+  code=y, value=0
+  code=a, value=0
+  code=d, value=500
+
+String of type 1026
+  ObjIndex=0
+  firstField=
+  code=a, value=11000
+  code=r, value=1
+  code=L, value=-44.69501
+  code=B, value=-125.165
+  code=R, value=248.675
+  code=T, value=98.35501
+
+String of type 1030
+  ObjIndex=0
+  firstField=
+  code=d, value=0
+  code=l, value=0
+
+String of type 8
+  ObjIndex=0
+  firstField=[[TESTDIR]]\controller\Marymoor.ocd
+  code=r, value=1
+  code=s, value=1
+  code=x, value=0
+  code=y, value=0
+  code=a, value=0
+  code=u, value=0
+  code=v, value=0
+

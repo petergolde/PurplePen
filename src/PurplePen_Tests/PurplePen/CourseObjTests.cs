@@ -1419,14 +1419,14 @@ namespace PurplePen.Tests
         public void DescriptionDump2()
         {
             CourseObj courseobj = CreateDescriptionCourseObj(defaultCourseAppearance, 2);
-            AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=2.155,Width=7.515,Height=1.845} columns:2");
+            AssertDump(courseobj, @"Description:    scale:1  rect:{X=-4,Y=2.16,Width=7.52,Height=1.85} columns:2");
         }
 
         [TestMethod]
         public void ImageBitmapDump()
         {
             CourseObj courseobj = CreateImageCourseObj();
-            AssertDump(courseobj, @"Image:          scale:1  rect:{X=-0.5,Y=-1.859,Width=2.5,Height=3.859}");
+            AssertDump(courseobj, @"Image:          scale:1  rect:{X=-0.5,Y=-1.86,Width=2.5,Height=3.86}");
         }
 	
 

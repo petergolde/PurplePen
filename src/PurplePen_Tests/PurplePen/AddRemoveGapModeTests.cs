@@ -94,7 +94,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:",
+            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.15,41)  gaps:",
                                         highlights[0].ToString());
 
             // Click to add a gap.
@@ -111,7 +111,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:260.707031:290.707031",
+            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.15,41)  gaps:260.71:290.71",
                                         highlights[0].ToString());
             Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.31,51.06)
                 font-name:Roboto  font-style:Regular  font-height:5.57",
@@ -151,7 +151,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:",
+            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.15,41)  gaps:",
                                         highlights[0].ToString());
 
             // Click to add a gap.
@@ -168,7 +168,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.1508,40.99792)  gaps:252.6131:316.040161",
+            Assert.AreEqual(@"Control:        control:4  course-control:4  scale:1  location:(25.15,41)  gaps:252.61:316.04",
                                         highlights[0].ToString());
             Assert.AreEqual(@"ControlNumber:  control:4  course-control:4  scale:1  text:3  top-left:(21.31,51.06)
                 font-name:Roboto  font-style:Regular  font-height:5.57",
@@ -208,7 +208,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:112.5:146.25,258.75:303.75",
+            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72,-22.42)  gaps:112.5:146.25,258.75:303.75",
                                         highlights[0].ToString());
 
             // Click to add a gap.
@@ -225,7 +225,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(2, highlights.Length);
-            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72384,-22.41992)  gaps:112.5:146.25",
+            Assert.AreEqual(@"Control:        control:2  course-control:2  scale:1  location:(37.72,-22.42)  gaps:112.5:146.25",
                                         highlights[0].ToString());
             Assert.AreEqual(@"ControlNumber:  control:2  course-control:2  scale:1  text:1  top-left:(35.72,-25.85)
                 font-name:Roboto  font-style:Regular  font-height:5.57",

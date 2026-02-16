@@ -93,7 +93,7 @@ namespace PurplePen.Tests
 FirstAid:       special:1  scale:1  location:(14.5,31.2)
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:SingleControl  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:4.32542  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:4.3254  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=34.5,Width=40.5,Height=15.5}
 Control:        control:36  course-control:701  scale:1  location:(128.4,6.1)  gaps:
 ControlNumber:  control:36  course-control:701  scale:1  text:36  top-left:(132.64,13.7)
@@ -109,7 +109,7 @@ ControlNumber:  control:36  course-control:701  scale:1  text:36  top-left:(132.
 FirstAid:       layer:12  special:1  scale:1  location:(14.5,31.2)
 OOB:            layer:12  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      layer:12  special:7  scale:1  text:StartAngle  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=29.5,Width=40.5,Height=20.5}
 Start:          layer:12  control:1  course-control:801  scale:1  location:(56.8,-8.7)  orientation:82.66
 Leg:            layer:12  control:1  course-control:801  scale:1  course-control2:802  path:N(52.79,-8.18)--N(23.1,-4.36)
@@ -128,7 +128,7 @@ Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 Boundary:       special:3  scale:1  path:N(11,2)--N(0,-7)--N(-12,-3)
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-35.5,Width=40.5,Height=85.5}
 Start:          control:1  course-control:301  scale:1  location:(56.8,-8.7)  orientation:162.99
 Leg:            control:1  course-control:301  scale:1  course-control2:302  path:N(55.62,-12.56)--N(52.03,-24.3)
@@ -197,7 +197,7 @@ Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 Boundary:       special:3  scale:1  path:N(11,2)--N(0,-7)--N(-12,-3)
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-35.5,Width=40.5,Height=85.5}
 Start:          control:1  course-control:301  scale:1  location:(56.8,-8.7)  orientation:162.99
 Leg:            control:1  course-control:301  scale:1  course-control2:302  path:N(55.62,-12.56)--N(52.03,-24.3)
@@ -267,10 +267,10 @@ FirstAid:       special:1  scale:1  location:(14.5,31.2)
 Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Course 1  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-20.5,Width=65.5,Height=70.5}
 Start:          control:1  course-control:101  scale:1  location:(56.8,-8.7)  orientation:186.71
-Control:        control:73  course-control:102  scale:1  location:(57.4,-13.8)  gaps:48.7056961:144.71402
+Control:        control:73  course-control:102  scale:1  location:(57.4,-13.8)  gaps:48.71:144.71
 Leg:            control:73  course-control:102  scale:1  course-control2:103  path:N(54.83,-14.97)--N(40.17,-21.63)
 Control:        control:44  course-control:103  scale:1  location:(37.6,-22.8)  gaps:
 Leg:            control:44  course-control:103  scale:1  course-control2:104  path:N(34.8,-22.44)--N(24.8,-21.16)
@@ -318,7 +318,7 @@ ControlNumber:  control:38  course-control:111  scale:1  text:10  top-left:(39.2
 FirstAid:       special:1  scale:0.5  location:(14.5,31.2)
 OOB:            special:4  scale:0.5  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:5K  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=9.5,Width=40.5,Height=40.5}
 Start:          control:1  course-control:916  scale:0.5  location:(56.8,-8.7)  orientation:126.29
 Leg:            control:1  course-control:916  scale:0.5  course-control2:920  path:N(55.17,-9.9)--N(38.74,-21.96)
@@ -350,7 +350,7 @@ FirstAid:       special:1  scale:1  location:(14.5,31.2)
 Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
 Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  gaps:
@@ -359,12 +359,12 @@ Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  
 ControlNumber:  control:44  course-control:912  scale:1  text:44  top-left:(40.47,-27.46)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.35:190.43
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65:10.43
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.7056961:144.71402
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.71:144.71
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
@@ -403,7 +403,7 @@ FirstAid:       special:1  scale:1  location:(14.5,31.2)
 Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
 Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  gaps:
@@ -412,12 +412,12 @@ Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  
 ControlNumber:  control:44  course-control:912  scale:1  text:3  top-left:(42.04,-27.46)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.35:190.43
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65:10.43
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.7056961:144.71402
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.71:144.71
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
@@ -456,7 +456,7 @@ FirstAid:       special:1  scale:1  location:(14.5,31.2)
 Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
 Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  gaps:
@@ -465,12 +465,12 @@ Control:        control:44  course-control:912  scale:1  location:(37.6,-22.8)  
 ControlNumber:  control:44  course-control:912  scale:1  text:3-44  top-left:(38.14,-27.46)
                 font-name:Roboto  font-style:Regular  font-height:5.57
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.35:190.43
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65:10.43
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.7056961:144.71402
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.71:144.71
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
@@ -510,7 +510,7 @@ FirstAid:       special:1  scale:1  location:(14.5,31.2)
 Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
 Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        control:41  course-control:914  scale:1  location:(28,6.2)  gaps:
@@ -521,11 +521,11 @@ Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  ga
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.7056961:144.71402
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.71:144.71
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.35:190.43
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65:10.43
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
@@ -565,7 +565,7 @@ FirstAid:       special:1  scale:1  location:(14.5,31.2)
 Crossing:       special:2  scale:1  location:(-4.2,21.7)  orientation:45
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:7  scale:1  text:Score  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-30.5,Width=40.5,Height=80.5}
 Start:          control:1  course-control:901  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        control:41  course-control:914  scale:1  location:(28,6.2)  gaps:
@@ -576,11 +576,11 @@ Control:        control:38  course-control:908  scale:1  location:(50.3,2.9)  ga
 Control:        control:78  course-control:904  scale:1  location:(93.9,28.1)  gaps:
 Control:        control:75  course-control:902  scale:1  location:(72,27)  gaps:
 Control:        control:77  course-control:905  scale:1  location:(74.7,19.2)  gaps:
-Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.7056961:144.71402
+Control:        control:73  course-control:911  scale:1  location:(57.4,-13.8)  gaps:48.71:144.71
 Control:        control:70  course-control:913  scale:1  location:(21.3,11.8)  gaps:
 Control:        control:71  course-control:909  scale:1  location:(40.1,17.4)  gaps:
-Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.34535:190.426529
-Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65466:10.4265289
+Control:        control:54  course-control:907  scale:1  location:(53.7,8.2)  gaps:84.35:190.43
+Control:        control:55  course-control:906  scale:1  location:(51.2,10.5)  gaps:-95.65:10.43
 Control:        control:56  course-control:903  scale:1  location:(81.3,24)  gaps:
 Control:        control:52  course-control:910  scale:1  location:(43,-11.1)  gaps:
 Finish:         control:2  course-control:915  scale:1  location:(53.2,-2.8)  gaps:
@@ -620,7 +620,7 @@ ControlNumber:  control:52  course-control:910  scale:1  text:52(30)  top-left:(
 FirstAid:       layer:12  special:1  scale:1  location:(14.5,31.2)
 OOB:            layer:12  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      layer:12  special:7  scale:1  text:All controls  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.201138  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.2011  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-150.5,Width=40.5,Height=200.5}
 Start:          layer:12  control:1  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        layer:12  control:35  scale:1  location:(115.6,-11.8)  gaps:
@@ -742,7 +742,7 @@ Code:           layer:12  control:80  scale:1  text:80  top-left:(34.35,10.77)
 FirstAid:       layer:12  special:1  scale:1  location:(14.5,31.2)
 OOB:            layer:12  special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      layer:12  special:7  scale:1  text:All controls  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.201138  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.2011  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-150.5,Width=40.5,Height=200.5}
 Start:          layer:12  control:1  scale:1  location:(56.8,-8.7)  orientation:0
 Control:        layer:12  control:35  scale:1  location:(115.6,-11.8)  gaps:
@@ -866,11 +866,11 @@ Code:           layer:12  control:80  scale:1  text:80  top-left:(34.35,10.77)
 FirstAid:       special:1  scale:1  location:(14.5,31.2)
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:5  scale:1  text:Banana Apple  top-left:(13,17)
-                font-name:Times New Roman  font-style:Bold  font-height:9.530931  rect:(13,17)-(71,1)
+                font-name:Times New Roman  font-style:Bold  font-height:9.5309  rect:(13,17)-(71,1)
 BasicText:      special:6  scale:1  text:Frank Zappa  top-left:(13,-14)
-                font-name:Arial  font-style:Bold  font-height:2.685315  rect:(13,-14)-(71,-17)
+                font-name:Arial  font-style:Bold  font-height:2.6853  rect:(13,-14)-(71,-17)
 BasicText:      special:7  scale:1  text:Xavier  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)
 Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=39.5,Width=40.5,Height=10.5}
 ");
         }

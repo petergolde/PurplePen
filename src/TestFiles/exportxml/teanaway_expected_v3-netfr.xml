@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CourseData xmlns="http://www.orienteering.org/datastandard/3.0" iofVersion="3.0" createTime="2016-05-16T15:45:00.325426-07:00" creator="Purple Pen version 2.6.1">
+  <Event>
+    <Name>TeanawayXML</Name>
+  </Event>
+  <RaceCourseData>
+    <Map>
+      <Scale>15000</Scale>
+      <MapPositionTopLeft x="-22" y="-54" />
+      <MapPositionBottomRight x="257" y="-270" />
+    </Map>
+    <Control type="Start">
+      <Id>STA1</Id>
+      <Position lng="-120.90981376502772" lat="47.268870403289831" />
+      <MapPosition x="172.86" y="-165.02" />
+    </Control>
+    <Control type="Control">
+      <Id>31</Id>
+      <Position lng="-120.93102710406032" lat="47.273281068986321" />
+      <MapPosition x="61.07" y="-160.31" />
+    </Control>
+    <Control type="Control">
+      <Id>32</Id>
+      <Position lng="-120.92024152216501" lat="47.263692024027222" />
+      <MapPosition x="131.61" y="-215.4" />
+    </Control>
+    <Control type="Finish">
+      <Id>FIN1</Id>
+      <Position lng="-120.91884423853615" lat="47.26569258660718" />
+      <MapPosition x="134.7" y="-199.28" />
+    </Control>
+    <Course>
+      <Name>Course 1</Name>
+      <Length>3300</Length>
+      <CourseControl type="Start">
+        <Control>STA1</Control>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>31</Control>
+        <MapText>1</MapText>
+        <LegLength>1678</LegLength>
+      </CourseControl>
+      <CourseControl type="Control">
+        <Control>32</Control>
+        <MapText>2</MapText>
+        <LegLength>1343</LegLength>
+      </CourseControl>
+      <CourseControl type="Finish">
+        <Control>FIN1</Control>
+        <LegLength>246</LegLength>
+      </CourseControl>
+    </Course>
+  </RaceCourseData>
+</CourseData>

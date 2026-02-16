@@ -46,7 +46,7 @@ using TestingUtils;
 namespace PurplePen.Tests
 {
     [TestClass]
-    public class MainFrameTests
+    public sealed class MainFrameTests: IDisposable
     {
         MainFrame mainFrame;
         Controller controller;
@@ -62,6 +62,23 @@ namespace PurplePen.Tests
             // Start the UI
             mainFrame.Show();
         }
+
+        private void Dispose(bool disposing)
+        {
+            if (disposing) {
+                mainFrame?.Dispose();
+                mainFrame = null;
+                controller?.Dispose();
+                controller = null;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+        }
+
 
         void CloseMainFrame()
         {

@@ -200,7 +200,7 @@ namespace PurplePen
                     UpdateSettings();
                     Margins originalMargins = settings.PageSettings.Margins;
 
-                    if (RegionInfo.CurrentRegion.IsMetric)     // work around bug
+                    if (Util.IsCurrentCultureMetric())     // work around bug
                         settings.PageSettings.Margins = PrinterUnitConvert.Convert(settings.PageSettings.Margins, PrinterUnit.Display, PrinterUnit.TenthsOfAMillimeter);
 
                     pageSetupDialog.PrinterSettings = settings.PageSettings.PrinterSettings;

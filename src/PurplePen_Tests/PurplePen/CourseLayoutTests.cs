@@ -77,7 +77,7 @@ namespace PurplePen.Tests
             course = new CourseLayout();
             CourseFormatter.FormatCourseToLayout(symbolDB, courseView, defaultCourseAppearance, course, 0);
 
-            CheckHitTest(course, new PointF(9.0F, 12.4F), 0, null, "Water:          special:1  scale:1  location:(7.996275,12.34392)");
+            CheckHitTest(course, new PointF(9.0F, 12.4F), 0, null, "Water:          special:1  scale:1  location:(8,12.34)");
             CheckHitTest(course, new PointF(54.7F, 12.2F), 0, null, null);
             CheckHitTest(course, new PointF(0.5F, 9.0F), 0, null, "Control:        control:72  scale:1  location:(-0.7,10.3)  gaps:");
             CheckHitTest(course, new PointF(58.5F, -9.2F), 0, null, "Start:          control:1  scale:1  location:(56.8,-8.7)  orientation:0");

@@ -613,7 +613,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-51.54444,Width=48.1,Height=101.5444}",
+            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-51.54,Width=48.1,Height=101.54}",
                                         highlights[0].ToString());
             // Check the status text
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
@@ -630,7 +630,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-76.90884,Width=60.11472,Height=126.9088}",
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-50,Y=-76.91,Width=60.11,Height=126.91}",
                                         highlights[0].ToString());
             Assert.AreEqual(8, highlights[0].specialId.id);
 
@@ -681,7 +681,7 @@ namespace PurplePen.Tests
             // Check the highlights
             CourseObj[] highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-143.5,Y=-35.5,Width=93.5,Height=22.54348} columns:3",
+            Assert.AreEqual(@"Description:    layer:1  special:8  scale:1  rect:{X=-143.5,Y=-35.5,Width=93.5,Height=22.54} columns:3",
                                         highlights[0].ToString());
             // Check the status text
             Assert.AreEqual(StatusBarText.SizingRectangle, controller.StatusText);
@@ -697,7 +697,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-48.47353,Width=53.80825,Height=12.97353} columns:3",
+            Assert.AreEqual("Description:    layer:1  special:8  scale:1  rect:{X=-105,Y=-48.47,Width=53.81,Height=12.97} columns:3",
                                         highlights[0].ToString());
             Assert.AreEqual(8, highlights[0].specialId.id);
 
@@ -925,7 +925,7 @@ namespace PurplePen.Tests
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)",
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)",
                                         highlights[0].ToString());
             
             // Drag the special
@@ -939,7 +939,7 @@ namespace PurplePen.Tests
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(86,53)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(86,53)-(111,47)",
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(86,53)-(111,47)",
                                         highlights[0].ToString());
 
             // Check the status text
@@ -955,7 +955,7 @@ namespace PurplePen.Tests
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(87,52)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(87,52)-(112,46)",
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(87,52)-(112,46)",
                                         highlights[0].ToString());
 
             // Make sure the special is now moved.
@@ -988,7 +988,7 @@ namespace PurplePen.Tests
             CourseObj[] highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.417989  rect:(45,40)-(70,34)",
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:5.418  rect:(45,40)-(70,34)",
                                         highlights[0].ToString());
 
             // Drag the handle
@@ -1004,7 +1004,7 @@ namespace PurplePen.Tests
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:6.765328  rect:(45,40)-(70,29)",
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:6.7653  rect:(45,40)-(70,29)",
                                         highlights[0].ToString());
 
             // Check the status text
@@ -1018,7 +1018,7 @@ namespace PurplePen.Tests
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
             Assert.AreEqual(@"BasicText:      special:7  scale:1  text:Course 3  top-left:(45,40)
-                font-name:Times New Roman  font-style:Bold, Italic  font-height:6.765328  rect:(45,40)-(70,22)",
+                font-name:Times New Roman  font-style:Bold, Italic  font-height:6.7653  rect:(45,40)-(70,22)",
                                         highlights[0].ToString());
 
 
@@ -1125,7 +1125,7 @@ namespace PurplePen.Tests
             // Check the highlights
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
             Assert.AreEqual(1, highlights.Length);
-            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=45,Y=29,Width=45.83333,Height=11}",
+            Assert.AreEqual(@"Image:          special:7  scale:1  rect:{X=45,Y=29,Width=45.83,Height=11}",
                                         highlights[0].ToString());
 
             // Check the status text

@@ -47,7 +47,7 @@ using PurplePen.MapModel;
 namespace PurplePen.Tests
 {
     [TestClass]
-    public class MapDisplayTests: TestFixtureBase
+    public sealed class MapDisplayTests: TestFixtureBase, IDisposable
     {
         Matrix transform;
         Bitmap bitmap;
@@ -60,6 +60,24 @@ namespace PurplePen.Tests
             transform.Scale(8F, -8F);
             transform.Translate(-50F, -170F);
         }
+
+        void Dispose(bool disposing)
+        {
+            if (disposing) {
+                bitmap?.Dispose();
+                bitmap = null;
+                transform?.Dispose();
+                transform = null;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+        }
+
+
 
         void DrawToBitmap(MapDisplay mapdisplay, RectangleF clip)
         {

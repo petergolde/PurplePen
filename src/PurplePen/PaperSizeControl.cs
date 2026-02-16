@@ -83,7 +83,7 @@ namespace PurplePen
             decimal increment;
             decimal maximum;
 
-            if (RegionInfo.CurrentRegion.IsMetric)
+            if (Util.IsCurrentCultureMetric())
             {
                 units = "mm";
                 decimalPlaces = 1;

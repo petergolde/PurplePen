@@ -230,7 +230,7 @@ namespace PurplePen
         // metric or english paper sizes. If the rectangle is empty, return default page.
         public static void GetDefaultPageSize(RectangleF printAreaRectangle, float printScaleRatio, out int pageWidth, out int pageHeight, out int pageMargin, out bool landscape)
         {
-            bool metric = RegionInfo.CurrentRegion.IsMetric;
+            bool metric = Util.IsCurrentCultureMetric();
 
             if (printAreaRectangle.IsEmpty) {
                 PaperSize paperSize = StandardPaperSizes[metric ? DefaultMetricPaperSizeindex : DefaultEnglighPaperSizeIndex];

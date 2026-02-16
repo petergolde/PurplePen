@@ -32,18 +32,20 @@
  * OF SUCH DAMAGE.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Diagnostics;
-using System.Windows.Forms;
+using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 using PurplePen.MapView;
-using PurplePen.Graphics2D;
-using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Drawing.Text;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 using GraphicsPath = System.Drawing.Drawing2D.GraphicsPath;
 
 namespace PurplePen
@@ -344,7 +346,7 @@ namespace PurplePen
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("location:({0},{1})", location.X, location.Y);
+            result += string.Format("location:({0:0.##},{1:0.##})", location.X, location.Y);
             return result;
         }
 
@@ -823,7 +825,7 @@ namespace PurplePen
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("rect:{0}", rect);
+            result += string.Format("rect:{{X={0:0.##},Y={1:0.##},Width={2:0.##},Height={3:0.##}}}", rect.X, rect.Y, rect.Width, rect.Height);
             return result;
         }
 
@@ -1196,7 +1198,7 @@ namespace PurplePen
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("text:{0}  top-left:({1:0.##},{2:0.##})\r\n                font-name:{3}  font-style:{4}  font-height:{5}", text, topLeft.X, topLeft.Y, fontName, fontStyle, emHeight);
+            result += string.Format("text:{0}  top-left:({1:0.##},{2:0.##})\r\n                font-name:{3}  font-style:{4}  font-height:{5:0.####}", text, topLeft.X, topLeft.Y, fontName, fontStyle, emHeight);
             return result;
         }
 
@@ -1352,10 +1354,25 @@ namespace PurplePen
             return symdef;
         }
 
+        // Format a gap array as text. Format is 45:180,181:185,...
+        private string FormatGaps(CircleGap[] gaps)
+        {
+            if (gaps == null || gaps.Length == 0)
+                return "";
+
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < gaps.Length; ++i) {
+                if (i != 0)
+                    builder.Append(",");
+                builder.AppendFormat(CultureInfo.InvariantCulture, "{0:0.##}:{1:0.##}", gaps[i].startAngle, gaps[i].stopAngle);
+            }
+            return builder.ToString();
+        }
+
         public override string ToString()
         {
             string result = base.ToString();
-            result += string.Format("  gaps:{0}", CircleGap.EncodeGaps(gaps));
+            result += string.Format("  gaps:{0}", FormatGaps(gaps));
             return result;
         }
 
@@ -3064,7 +3081,7 @@ namespace PurplePen
 
         public override string ToString()
         {
-            return base.ToString() + string.Format("  rect:({0},{1})-({2},{3})", rectBounding.Left, rectBounding.Bottom, rectBounding.Right, rectBounding.Top);
+            return base.ToString() + string.Format("  rect:({0:0.##},{1:0.##})-({2:0.##},{3:0.##})", rectBounding.Left, rectBounding.Bottom, rectBounding.Right, rectBounding.Top);
         }
     }
 

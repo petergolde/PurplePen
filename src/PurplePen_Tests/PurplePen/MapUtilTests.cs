@@ -150,7 +150,7 @@ namespace PurplePen.Tests
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de-DE");
 
-                Assert.IsTrue(RegionInfo.CurrentRegion.IsMetric);
+                Assert.IsTrue(Util.IsCurrentCultureMetric());
 
                 MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 350, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
                 Assert.AreEqual(1169, pageWidth);
@@ -202,7 +202,7 @@ namespace PurplePen.Tests
             try {
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
-                Assert.IsFalse(RegionInfo.CurrentRegion.IsMetric);
+                Assert.IsFalse(Util.IsCurrentCultureMetric());
 
                 MapUtil.GetDefaultPageSize(new RectangleF(30, 50, 350, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
                 Assert.AreEqual(850, pageWidth);

@@ -492,7 +492,7 @@ namespace PurplePen.Tests
             CourseObj[] selectedObjects = selectionMgr.SelectedCourseObjects;
             Assert.AreEqual(1, selectedObjects.Length);
             Assert.AreEqual(@"BasicText:      special:5  scale:1  text:Banana Apple  top-left:(13,17)
-                font-name:Times New Roman  font-style:Bold  font-height:9.530931  rect:(13,17)-(71,1)", selectedObjects[0].ToString());
+                font-name:Times New Roman  font-style:Bold  font-height:9.5309  rect:(13,17)-(71,1)", selectedObjects[0].ToString());
         }
 
         [TestMethod]
