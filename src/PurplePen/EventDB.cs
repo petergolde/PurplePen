@@ -1576,27 +1576,31 @@ namespace PurplePen
 
         public readonly ColorKind Kind;
         public readonly CmykColor CustomColor;
+        public readonly bool Overprint;
 
         public readonly static SpecialColor Black = new SpecialColor(ColorKind.Black);
         public readonly static SpecialColor UpperPurple = new SpecialColor(ColorKind.UpperPurple);
         public readonly static SpecialColor LowerPurple = new SpecialColor(ColorKind.LowerPurple);
 
-        public SpecialColor(ColorKind colorKind)
+        public SpecialColor(ColorKind colorKind, bool overprint = false)
         {
             Debug.Assert(colorKind != ColorKind.Custom);
             this.Kind = colorKind;
+            this.Overprint = overprint;
         }
 
-        public SpecialColor(float cyan, float magenta, float yellow, float black)
+        public SpecialColor(float cyan, float magenta, float yellow, float black, bool overprint = false)
         {
             this.Kind = ColorKind.Custom;
             this.CustomColor = CmykColor.FromCmyk(cyan, magenta, yellow, black);
+            this.Overprint = overprint;
         }
 
-        public SpecialColor(CmykColor color)
+        public SpecialColor(CmykColor color, bool overprint = false)
         {
             this.Kind = ColorKind.Custom;
             this.CustomColor = color;
+            this.Overprint = overprint;
         }
 
         public override string ToString()
@@ -1610,7 +1614,7 @@ namespace PurplePen
             }
         }
 
-        public static SpecialColor Parse(string s)
+        public static SpecialColor Parse(string s, bool overprint)
         {
             if (s == "black")
                 return SpecialColor.Black;
@@ -1627,7 +1631,7 @@ namespace PurplePen
                 m = float.Parse(colors[1], CultureInfo.InvariantCulture);
                 y = float.Parse(colors[2], CultureInfo.InvariantCulture);
                 k = float.Parse(colors[3], CultureInfo.InvariantCulture);
-                return new SpecialColor(c, m, y, k);
+                return new SpecialColor(c, m, y, k, overprint);
             }
         }
 
@@ -1640,7 +1644,7 @@ namespace PurplePen
             if (Kind != ColorKind.Custom)
                 return Kind == other.Kind;
             else
-                return (Kind == other.Kind && CustomColor.Equals(other.CustomColor));
+                return (Kind == other.Kind && CustomColor.Equals(other.CustomColor) && Overprint == other.Overprint);
         }
 
         public override int GetHashCode()
@@ -1951,7 +1955,8 @@ namespace PurplePen
                     numColumns = xmlinput.GetAttributeInt("columns", 1);
 
                     if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse) {
-                        color = xmlinput.GetAttributeColor("color", SpecialColor.UpperPurple);
+                        bool overprint = xmlinput.GetAttributeBool("overprint", false);
+                        color = xmlinput.GetAttributeColor("color", SpecialColor.UpperPurple, overprint);
                     }
 
                     string lineKindValue = xmlinput.GetAttributeString("line-kind", "");
@@ -2087,6 +2092,7 @@ namespace PurplePen
                     case LineKind.Dashed: xmloutput.WriteAttributeString("line-kind", "dashed"); break;
                 }
                 xmloutput.WriteAttributeString("color", color.ToString());
+                xmloutput.WriteAttributeString("overprint", color.Overprint.ToString().ToLower());
                 xmloutput.WriteAttributeString("line-width", XmlConvert.ToString(lineWidth));
                 if (lineKind == LineKind.Double || lineKind == LineKind.Dashed)
                     xmloutput.WriteAttributeString("gap-size", XmlConvert.ToString(gapSize));
