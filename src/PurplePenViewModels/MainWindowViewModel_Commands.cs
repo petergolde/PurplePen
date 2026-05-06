@@ -18,8 +18,70 @@ namespace PurplePen.ViewModels
         {
             if (controller == null) { return; }
 
-            // Update enabled status.
+#if PORTING
+            // Still need to port more logic from MainFrame.UpdateMenusToolbarButtons.
+            // - Undo/Redo text
+            // - Cancel mode vs Clear selection text
+            // - showPopupsMenu 
+            // - showPrintAreaMenu
+            // - createOcadFilesMenu.Text
+            // - outOfBoundsToolStripMenuItem.Image,  addOutOfBoundsMenu.Image
+#endif
+
+            // Update enabled status for commands.
+            CanDeleteSelection = controller.CanDeleteSelection();
+            CanDeleteCourse = controller.CanDeleteCurrentCourse();
+            CanDuplicateCourse = controller.CanDuplicateCurrentCourse();
             CanAddBend = (controller.CanAddBend() == CommandStatus.Enabled);
+            CanRemoveBend = (controller.CanRemoveBend() == CommandStatus.Enabled);
+            CanAddGap = (controller.CanAddGap() == CommandStatus.Enabled);
+            CanRemoveGap = (controller.CanRemoveGap() == CommandStatus.Enabled);
+            CanRotate = (controller.CanRotate() == CommandStatus.Enabled);
+            CanStretch = (controller.CanStretch() == CommandStatus.Enabled);
+            CanChangeText = (controller.CanChangeText() == CommandStatus.Enabled);
+            CanChangeLineAppearance = (controller.CanChangeLineAppearance() == CommandStatus.Enabled);
+            CanAddTextLine = (controller.CanAddTextLine() == CommandStatus.Enabled);
+            CanAddMapFlip = (controller.CanAddMapFlipControl() == CommandStatus.Enabled);
+            CanAddMapExchangeSeparate = (controller.CanAddMapExchangeSeparate() == CommandStatus.Enabled);
+            CanAddMapExchangeControl = (controller.CanAddMapExchangeControl() == CommandStatus.Enabled);
+            CanAddMapExchangeAny = (controller.CanAddMapExchangeControl() == CommandStatus.Enabled) || (controller.CanAddMapExchangeSeparate() == CommandStatus.Enabled) || (controller.CanAddMapFlipControl() == CommandStatus.Enabled);
+            CanDeleteFork = (controller.CanDeleteFork() == CommandStatus.Enabled);
+            CanShowCourseVariationReport = (controller.CanGetVariationReport() == CommandStatus.Enabled);
+            CanShowOtherCourses = (controller.CanChangeExtraCourseDisplay() == CommandStatus.Enabled);
+            CanClearOtherCourses = (controller.CanClearExtraCourseDisplay() == CommandStatus.Enabled);
+            CanChangeDisplayedCourses = (controller.CanChangeDisplayedCourses(out _, out _) == CommandStatus.Enabled);
+            IsVisibleClearOtherCourses = (controller.CanClearExtraCourseDisplay() != CommandStatus.Hidden);
+
+            // Update checked status of standards, and make dangerous area visible/hidden.
+            string descriptionStandard = controller.GetDescriptionStandard();
+            DescriptionStd2004Checked = (descriptionStandard == "2004");
+            DescriptionStd2018Checked = (descriptionStandard == "2018");
+            string mapStandard = controller.GetMapStandard();
+            MapStd2000Checked = (mapStandard == "2000");
+            MapStd2017Checked = (mapStandard == "2017");
+            MapStdSpr2019Checked = (mapStandard == "Spr2019");
+            IsVisibleDangerousArea = (mapStandard == "2000");
+
+            // Update checked status of leg flagging options
+            FlaggingKind currentFlagging;
+            CommandStatus flaggingStatus = controller.CanSetLegFlagging(out currentFlagging);
+            CanSetLegFlagging = (flaggingStatus == CommandStatus.Enabled);
+            if (flaggingStatus == CommandStatus.Enabled) {
+                switch (currentFlagging) {
+                case FlaggingKind.None:
+                    EntireFlaggingChecked = BeginFlaggingChecked = EndFlaggingChecked = false;
+                    NoFlaggingChecked = true; break;
+                case FlaggingKind.All:
+                    NoFlaggingChecked = BeginFlaggingChecked = EndFlaggingChecked = false;
+                    EntireFlaggingChecked = true; break;
+                case FlaggingKind.Begin:
+                    NoFlaggingChecked = EntireFlaggingChecked = EndFlaggingChecked = false;
+                    BeginFlaggingChecked = true; break;
+                case FlaggingKind.End:
+                    NoFlaggingChecked = EntireFlaggingChecked = BeginFlaggingChecked = false;
+                    EndFlaggingChecked = true; break;
+                }
+            }
 
             // Update checked status of Zoom.
             Zoom50Checked = UpdateZoomChecked(0.5F);
@@ -42,7 +104,6 @@ namespace PurplePen.ViewModels
 
             // Update checked status of Show All Controls.
             ViewAllControlsChecked = controller.ShowAllControls;
-
         }
 
         // Determine if the give zoom label (e.g. "100%") should be checked based on the current zoom factor.
@@ -200,24 +261,30 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Executes the Edit/Delete command. Deletes the current selection.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanDeleteSelection))]
         private async Task DeleteSelection()
         {
-#if !PORTING
+            if (controller == null) { return; }
             await controller.DeleteSelection();
-#endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(DeleteSelectionCommand))]
+        private bool canDeleteSelection;
+
 
         /// <summary>
         /// Executes the Edit/Delete Fork command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanDeleteFork))]
         private async Task DeleteFork()
         {
-#if !PORTING
+            if (controller == null) { return; }
             await controller.DeleteFork();
-#endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(DeleteForkCommand))]
+        private bool canDeleteFork;
+
 
         #endregion // Edit commands
 
@@ -364,7 +431,7 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Shows the View Additional Courses dialog.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanShowOtherCourses))]
         private void ShowOtherCourses()
         {
 #if !PORTING
@@ -377,16 +444,25 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ShowOtherCoursesCommand))]
+        private bool canShowOtherCourses;
+
+
         /// <summary>
         /// Clears the extra course display.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanClearOtherCourses))]
         private void ClearOtherCourses()
         {
-#if !PORTING
+            if (controller == null) { return; }
             controller.ClearExtraCourseDisplay();
-#endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ClearOtherCoursesCommand))]
+        private bool canClearOtherCourses;
+        [ObservableProperty]
+        private bool isVisibleClearOtherCourses;
+
 
         #endregion // View commands
 
@@ -425,10 +501,14 @@ namespace PurplePen.ViewModels
             controller.BeginAddControlMode(ControlPointKind.Finish, MapExchangeType.None);
         }
 
+        // Combines whether any of the three map exchange control types can be added, for enabling the Add/Map Exchange drop-down menu.
+        [ObservableProperty]
+        private bool canAddMapExchangeAny;
+
         /// <summary>
         /// Executes the Add/Map Exchange at Control command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanAddMapExchangeControl))]
         private void AddMapExchangeControl()
         {
             if (controller == null) { return; }
@@ -436,10 +516,14 @@ namespace PurplePen.ViewModels
             controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.Exchange);
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(AddMapExchangeControlCommand))]
+        private bool canAddMapExchangeControl;
+
+
         /// <summary>
         /// Executes the Add/Map Flip at Control command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanAddMapFlip))]
         private void AddMapFlipControl()
         {
             if (controller == null) { return; }
@@ -447,16 +531,23 @@ namespace PurplePen.ViewModels
             controller.BeginAddControlMode(ControlPointKind.Normal, MapExchangeType.MapFlip);
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(AddMapFlipControlCommand))]
+        private bool canAddMapFlip;
+
+
         /// <summary>
         /// Executes the Add/Map Exchange (Separate) command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanAddMapExchangeSeparate))]
         private void AddMapExchangeSeparate()
         {
             if (controller == null) { return; }
 
             controller.BeginAddControlMode(ControlPointKind.MapExchange, MapExchangeType.None);
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(AddMapExchangeSeparateCommand))]
+        private bool canAddMapExchangeSeparate;
 
         /// <summary>
         /// Executes the Add/Descriptions command. Begins adding a description block.
@@ -497,7 +588,7 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Executes the Add/Text Line command. Shows the Add Text Line dialog.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanAddTextLine))]
         private void AddTextLine()
         {
 #if !PORTING
@@ -524,6 +615,10 @@ namespace PurplePen.ViewModels
             }
 #endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(AddTextLineCommand))]
+        private bool canAddTextLine;
+
 
         #endregion // Add control commands
 
@@ -866,7 +961,7 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Executes the Item/Remove Bend command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanRemoveBend))]
         private void RemoveBend()
         {
             if (controller == null) { return; }
@@ -874,10 +969,14 @@ namespace PurplePen.ViewModels
             controller.BeginRemoveBend();
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(RemoveBendCommand))]
+        private bool canRemoveBend;
+
+
         /// <summary>
         /// Executes the Item/Add Gap command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanAddGap))]
         private void AddGap()
         {
             if (controller == null) { return; }
@@ -885,10 +984,14 @@ namespace PurplePen.ViewModels
             controller.BeginAddGap();
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(AddGapCommand))]
+        private bool canAddGap;
+
+
         /// <summary>
         /// Executes the Item/Remove Gap command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanRemoveGap))]
         private void RemoveGap()
         {
             if (controller == null) { return; }
@@ -896,10 +999,13 @@ namespace PurplePen.ViewModels
             controller.BeginRemoveGap();
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(RemoveGapCommand))]
+        private bool canRemoveGap;
+
         /// <summary>
         /// Executes the Item/Rotate command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanRotate))]
         private void Rotate()
         {
             if (controller == null) { return; }
@@ -907,10 +1013,13 @@ namespace PurplePen.ViewModels
             controller.BeginRotate();
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(RotateCommand))]
+        private bool canRotate;
+
         /// <summary>
         /// Executes the Item/Stretch command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanStretch))]
         private void Stretch()
         {
             if (controller == null) { return; }
@@ -918,10 +1027,14 @@ namespace PurplePen.ViewModels
             controller.BeginStretch();
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(StretchCommand))]
+        private bool canStretch;
+
+
         /// <summary>
         /// Executes the Item/Change Text command. Shows the Change Text dialog.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanChangeText))]
         private void ChangeText()
         {
 #if !PORTING
@@ -957,10 +1070,13 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ChangeTextCommand))]
+        private bool canChangeText;
+
         /// <summary>
         /// Executes the Item/Change Line Appearance command. Shows the Line Properties dialog.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanChangeLineAppearance))]
         private void ChangeLineAppearance()
         {
 #if !PORTING
@@ -1000,10 +1116,13 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ChangeLineAppearanceCommand))]
+        private bool canChangeLineAppearance;
+
         /// <summary>
         /// Executes the Item/Change Displayed Courses command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanChangeDisplayedCourses))]
         private void ChangeDisplayedCourses()
         {
 #if !PORTING
@@ -1024,9 +1143,15 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ChangeDisplayedCoursesCommand))]
+        private bool canChangeDisplayedCourses;
+
         #endregion // Item modification commands
 
         #region Leg flagging commands
+
+        [ObservableProperty]
+        private bool canSetLegFlagging;
 
         /// <summary>
         /// Executes the Leg/No Flagging command.
@@ -1039,6 +1164,9 @@ namespace PurplePen.ViewModels
             controller.SetLegFlagging(FlaggingKind.None);
         }
 
+        [ObservableProperty]
+        private bool noFlaggingChecked;
+
         /// <summary>
         /// Executes the Leg/Entire Leg Flagging command.
         /// </summary>
@@ -1049,6 +1177,9 @@ namespace PurplePen.ViewModels
 
             controller.SetLegFlagging(FlaggingKind.All);
         }
+
+        [ObservableProperty]
+        private bool entireFlaggingChecked;
 
         /// <summary>
         /// Executes the Leg/Begin Flagging command.
@@ -1061,6 +1192,9 @@ namespace PurplePen.ViewModels
             controller.SetLegFlagging(FlaggingKind.Begin);
         }
 
+        [ObservableProperty]
+        private bool beginFlaggingChecked;
+
         /// <summary>
         /// Executes the Leg/End Flagging command.
         /// </summary>
@@ -1071,6 +1205,10 @@ namespace PurplePen.ViewModels
 
             controller.SetLegFlagging(FlaggingKind.End);
         }
+
+        [ObservableProperty]
+        private bool endFlaggingChecked;
+
 
         #endregion // Leg flagging commands
 
@@ -1096,7 +1234,7 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Executes the Course/Delete Course command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanDeleteCourse))]
         private async Task DeleteCourse()
         {
             if (controller == null) return;
@@ -1104,11 +1242,15 @@ namespace PurplePen.ViewModels
             await controller.DeleteCurrentCourse();
         }
 
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(DeleteCourseCommand))]
+        private bool canDeleteCourse;
+
+
         /// <summary>
         /// Executes the Course/Duplicate Course command. Shows the Add Course dialog
         /// pre-populated with current course properties.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanDuplicateCourse))]
         private void DuplicateCourse()
         {
 #if !PORTING
@@ -1133,6 +1275,11 @@ namespace PurplePen.ViewModels
             }
 #endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(DuplicateCourseCommand))]
+        private bool canDuplicateCourse;
+
+
 
         /// <summary>
         /// Executes the Course/Properties command. Shows the course properties dialog.
@@ -1228,7 +1375,7 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Executes the Course/Course Variation Report command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanShowCourseVariationReport))]
         private void ShowCourseVariationReport()
         {
 #if !PORTING
@@ -1270,6 +1417,11 @@ namespace PurplePen.ViewModels
             reportForm.Dispose();
 #endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ShowCourseVariationReportCommand))]
+        private bool canShowCourseVariationReport;
+
+
 
         #endregion // Course commands
 
@@ -1538,6 +1690,11 @@ namespace PurplePen.ViewModels
             controller.ChangeDescriptionStandard("2018");
         }
 
+        // Bindable properties to indicate if a description menu item should be checked.
+        [ObservableProperty] private bool descriptionStd2004Checked;
+        [ObservableProperty] private bool descriptionStd2018Checked;
+
+
         /// <summary>
         /// Sets the map standard to 2000.
         /// </summary>
@@ -1570,6 +1727,13 @@ namespace PurplePen.ViewModels
 
             controller.ChangeMapStandard("Spr2019");
         }
+
+        // Bindable properties to indicate if a map standard menu item should be checked.
+        [ObservableProperty] private bool mapStd2000Checked;
+        [ObservableProperty] private bool mapStd2017Checked;
+        [ObservableProperty] private bool mapStdSpr2019Checked;
+        [ObservableProperty] private bool isVisibleDangerousArea;
+
 
         #endregion // IOF Standards commands
 

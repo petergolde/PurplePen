@@ -170,8 +170,13 @@
                 <MenuItem x:Name="allControlsMenu" Header="{resx:Localize MainFrame_allControlsMenu_Text}" InputGesture="F4" 
                           Command="{Binding ToggleAllControlsCommand}"
                           ToggleType="CheckBox" IsChecked="{Binding ViewAllControlsChecked}"/>
-                <MenuItem x:Name="otherCoursesMenu" Header="{resx:Localize MainFrame_otherCoursesMenu_Text}" InputGesture="F5" Command="{Binding ShowOtherCoursesCommand}"/>
-                <MenuItem x:Name="clearOtherCoursesMenu" Header="{resx:Localize MainFrame_clearOtherCoursesMenu_Text}" InputGesture="Shift+F5" Command="{Binding ClearOtherCoursesCommand}"/>
+                <MenuItem x:Name="otherCoursesMenu" Header="{resx:Localize MainFrame_otherCoursesMenu_Text}" 
+                          InputGesture="F5" 
+                          Command="{Binding ShowOtherCoursesCommand}"/>
+                <MenuItem x:Name="clearOtherCoursesMenu" Header="{resx:Localize MainFrame_clearOtherCoursesMenu_Text}" 
+                          IsVisible="{Binding IsVisibleClearOtherCourses}"
+                          InputGesture="Shift+F5" 
+                          Command="{Binding ClearOtherCoursesCommand}"/>
             </MenuItem>
 
             <!-- === Add Menu === -->
@@ -217,7 +222,9 @@
                 <MenuItem x:Name="addOutOfBoundsMenu" Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}" Command="{Binding AddOutOfBoundsCommand}">
                     <MenuItem.Icon><Image Source="/Assets/Toolbar/outOfBoundsItem.png" Width="16" Height="16"/></MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="addDangerousMenu" Header="{resx:Localize MainFrame_addDangerousMenu_Text}" Command="{Binding AddDangerousCommand}">
+                <MenuItem x:Name="addDangerousMenu" Header="{resx:Localize MainFrame_addDangerousMenu_Text}" 
+                          IsVisible="{Binding IsVisibleDangerousArea}"
+                          Command="{Binding AddDangerousCommand}">
                     <MenuItem.Icon><Image Source="/Assets/Toolbar/dangerousItem.png" Width="16" Height="16"/></MenuItem.Icon>
                 </MenuItem>
                 <MenuItem x:Name="addConstructionMenu" Header="{resx:Localize MainFrame_addConstructionMenu_Text}" Command="{Binding AddConstructionCommand}">
@@ -271,12 +278,22 @@
                 <MenuItem x:Name="punchPatternsMenu" Header="{resx:Localize MainFrame_punchPatternsMenu_Text}" Command="{Binding PunchPatternsCommand}"/>
                 <Separator/>
                 <MenuItem x:Name="iOFStandardsToolStripMenuItem" Header="{resx:Localize MainFrame_iOFStandardsToolStripMenuItem_Text}">
-                    <MenuItem x:Name="descriptionStd2004Menu" Header="{resx:Localize MainFrame_descriptionStd2004Menu_Text}" Command="{Binding SetDescriptionStd2004Command}"/>
-                    <MenuItem x:Name="descriptionStd2018Menu" Header="{resx:Localize MainFrame_descriptionStd2018Menu_Text}" Command="{Binding SetDescriptionStd2018Command}"/>
+                    <MenuItem x:Name="descriptionStd2004Menu" Header="{resx:Localize MainFrame_descriptionStd2004Menu_Text}" 
+                              ToggleType="CheckBox" IsChecked="{Binding DescriptionStd2004Checked}"
+                              Command="{Binding SetDescriptionStd2004Command}"/>
+                    <MenuItem x:Name="descriptionStd2018Menu" Header="{resx:Localize MainFrame_descriptionStd2018Menu_Text}" 
+                              ToggleType="CheckBox" IsChecked="{Binding DescriptionStd2018Checked}"
+                              Command="{Binding SetDescriptionStd2018Command}"/>
                     <Separator/>
-                    <MenuItem x:Name="mapStd2000Menu" Header="{resx:Localize MainFrame_mapStd2000Menu_Text}" Command="{Binding SetMapStd2000Command}"/>
-                    <MenuItem x:Name="mapStd2017Menu" Header="{resx:Localize MainFrame_mapStd2017Menu_Text}" Command="{Binding SetMapStd2017Command}"/>
-                    <MenuItem x:Name="mapStdSpr2019Menu" Header="{resx:Localize MainFrame_mapStdSpr2019Menu_Text}" Command="{Binding SetMapStdSpr2019Command}"/>
+                    <MenuItem x:Name="mapStd2000Menu" Header="{resx:Localize MainFrame_mapStd2000Menu_Text}" 
+                              ToggleType="CheckBox" IsChecked="{Binding MapStd2000Checked}"
+                              Command="{Binding SetMapStd2000Command}"/>
+                    <MenuItem x:Name="mapStd2017Menu" Header="{resx:Localize MainFrame_mapStd2017Menu_Text}" 
+                              ToggleType="CheckBox" IsChecked="{Binding MapStd2017Checked}"
+                              Command="{Binding SetMapStd2017Command}"/>
+                    <MenuItem x:Name="mapStdSpr2019Menu" Header="{resx:Localize MainFrame_mapStdSpr2019Menu_Text}" 
+                              ToggleType="CheckBox" IsChecked="{Binding MapStdSpr2019Checked}"
+                              Command="{Binding SetMapStdSpr2019Command}"/>
                 </MenuItem>
                 <MenuItem x:Name="customizeDescriptionsMenu" Header="{resx:Localize MainFrame_customizeDescriptionsMenu_Text}" Command="{Binding CustomizeDescriptionsCommand}"/>
                 <MenuItem x:Name="customizeCourseAppearanceMenu" Header="{resx:Localize MainFrame_customizeCourseAppearanceMenu_Text}" Command="{Binding CustomizeCourseAppearanceCommand}"/>
@@ -329,14 +346,19 @@
                           Command="{Binding RotateCommand}"/>
                 <MenuItem x:Name="stretchMenu" Header="{resx:Localize MainFrame_stretchMenu_Text}"
                           Command="{Binding StretchCommand}"/>
-                <MenuItem x:Name="legFlaggingMenu" Header="{resx:Localize MainFrame_legFlaggingMenu_Text}">
+                <MenuItem x:Name="legFlaggingMenu" Header="{resx:Localize MainFrame_legFlaggingMenu_Text}"
+                          IsEnabled="{Binding CanSetLegFlagging}">
                     <MenuItem x:Name="noFlaggingMenu" Header="{resx:Localize MainFrame_noFlaggingMenu_Text}"
+                              ToggleType="CheckBox" IsChecked="{Binding NoFlaggingChecked}"
                               Command="{Binding SetNoFlaggingCommand}"/>
                     <MenuItem x:Name="entireFlaggingMenu" Header="{resx:Localize MainFrame_entireFlaggingMenu_Text}"
+                              ToggleType="CheckBox" IsChecked="{Binding EntireFlaggingChecked}"
                               Command="{Binding SetEntireFlaggingCommand}"/>
                     <MenuItem x:Name="beginFlaggingMenu" Header="{resx:Localize MainFrame_beginFlaggingMenu_Text}"
+                              ToggleType="CheckBox" IsChecked="{Binding BeginFlaggingChecked}"
                               Command="{Binding SetBeginFlaggingCommand}"/>
                     <MenuItem x:Name="endFlaggingMenu" Header="{resx:Localize MainFrame_endFlaggingMenu_Text}"
+                              ToggleType="CheckBox" IsChecked="{Binding EndFlaggingChecked}"
                               Command="{Binding SetEndFlaggingCommand}"/>
                 </MenuItem>
                 <Separator/>
@@ -512,7 +534,8 @@
             </Button>
 
             <!-- Map Exchange dropdown (image + text, click opens flyout menu) -->
-            <Button x:Name="mapExchangeToolStripMenu" Padding="2,2">
+            <Button x:Name="mapExchangeToolStripMenu" Padding="2,2"
+                    IsEnabled="{Binding CanAddMapExchangeAny}">
                 <StackPanel Orientation="Horizontal" Spacing="4">
                     <Image Source="/Assets/Toolbar/mapExchange.png" Width="16" Height="16"/>
                     <TextBlock Text="{resx:Localize MainFrame_mapExchangeToolStripMenu_Text}"
@@ -590,6 +613,7 @@
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem x:Name="dangerousToolStripMenuItem" Header="{resx:Localize MainFrame_dangerousToolStripMenuItem_Text}"
+                                  IsVisible="{Binding IsVisibleDangerousArea}"
                                   Command="{Binding AddDangerousCommand}">
                             <MenuItem.Icon>
                                 <Image Source="/Assets/Toolbar/dangerousItem.png" Width="16" Height="16"/>
