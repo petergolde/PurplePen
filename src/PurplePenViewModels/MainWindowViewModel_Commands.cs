@@ -1129,6 +1129,8 @@ namespace PurplePen.ViewModels
             CourseDesignator[] displayedCourses;
             bool showAllControls;
 
+            if (controller == null) { return; }
+
             if (controller.CanChangeDisplayedCourses(out displayedCourses, out showAllControls) == CommandStatus.Enabled) {
                 ChangeSpecialCoursesDialogViewModel vm = new ChangeSpecialCoursesDialogViewModel {
                     EventDB = controller.GetEventDB(),

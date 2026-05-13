@@ -34,6 +34,9 @@ namespace AvPurplePen
         {
             AvaloniaXamlLoader.Load(this);
 
+#if DEBUG
+            this.AttachDeveloperTools();
+#endif
             // Register our custom color scheme with the SemiTheme so its
             // ThemeDictionaries resolve our variant.
             //SemiTheme semiTheme = (SemiTheme)Styles[0];

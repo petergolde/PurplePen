@@ -509,6 +509,102 @@ App.axaml overrides the default `DataValidationErrors` template to suppress inli
 5. Preserve `x:Name` on controls that will need code-behind or test access.
 6. Add a button/menu item in the parent window to launch the dialog, creating and assigning the ViewModel.
 
+### Semi.Avalonia Theme Customization
+
+PurplePen uses the **Semi.Avalonia** theme (HighContrast variant). When customizing control appearance, understanding how the theme's control templates work is essential.
+
+**Finding theme templates:** The Semi.Avalonia source is at `https://github.com/irihitech/Semi.Avalonia`. Control templates are in `src/Semi.Avalonia/Controls/`. For example, `TreeView.axaml` contains both the `TreeView` and `TreeViewItem` control themes. Fetch the raw file from GitHub to read the template XAML and identify template part names, resource keys, and property bindings.
+
+**Style setters vs. resource overrides:** Theme templates often set properties via `{DynamicResource SomeKey}` directly on template elements. These are **local values** in Avalonia's property precedence system and **cannot be overridden by style setters** (styles have lower priority than local values). To override such properties:
+- **Override the resource** at a local scope instead of using a style setter:
+  ```xml
+  <TreeView.Resources>
+      <Thickness x:Key="TreeViewItemPadding">0</Thickness>
+  </TreeView.Resources>
+  ```
+- Only use style setters for properties that are NOT set directly in the template.
+
+**Useful Semi.Avalonia template parts:**
+- `Button`: `PART_ContentPresenter` (ContentPresenter) — controls border and padding
+- `TreeViewItem`: `PART_HeaderPresenter` (ContentPresenter), `PART_ExpandCollapseChevron` (ToggleButton)
+- Use `Classes="Small"` on `Button` to get a compact button height (the theme defines size variants this way)
+
+### TreeView with Checkboxes
+
+Avalonia's `TreeView` does not have a built-in `CheckBoxes` property like WinForms. To create a checkbox tree:
+
+1. Create a data model class implementing `INotifyPropertyChanged` with `IsChecked`, `Name`, `Children`, and `Parent` properties.
+2. Handle parent↔child checkbox propagation in the model (use a reentrancy guard flag).
+3. Use `TreeDataTemplate` with a `CheckBox`:
+   ```xml
+   <TreeView.ItemTemplate>
+       <TreeDataTemplate x:DataType="local:MyNode" ItemsSource="{Binding Children}">
+           <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+       </TreeDataTemplate>
+   </TreeView.ItemTemplate>
+   ```
+
+**Always-expanded tree (no collapse):** Use a declarative style, not imperative code. Avalonia virtualizes `TreeViewItem` containers — setting `IsExpanded = true` in code only works once; recycled containers revert to collapsed. Use:
+```xml
+<TreeView.Styles>
+    <Style Selector="TreeViewItem">
+        <Setter Property="IsExpanded" Value="True"/>
+    </Style>
+    <Style Selector="TreeViewItem /template/ ToggleButton#PART_ExpandCollapseChevron">
+        <Setter Property="IsVisible" Value="False"/>
+    </Style>
+</TreeView.Styles>
+```
+
+### Rounded Corners on ItemsControls (TreeView, ListBox)
+
+Setting `CornerRadius` directly on a `TreeView` or `ListBox` often fails because the control's internal content (ScrollViewer, ItemsPresenter) paints its background over the rounded corners. Fix by wrapping in a `Border`:
+
+```xml
+<Border Background="{DynamicResource InputBackground}"
+        BorderBrush="{DynamicResource DarkGreyBorder}"
+        BorderThickness="1"
+        CornerRadius="3"
+        ClipToBounds="True">
+    <TreeView Background="Transparent" BorderThickness="0">
+        ...
+    </TreeView>
+</Border>
+```
+
+The `Border` owns the visual frame and `ClipToBounds="True"` clips the inner content to the rounded rectangle. The `TreeView` itself must have `Background="Transparent"` and `BorderThickness="0"`.
+
+### Showing Dialogs from ViewModels (DialogService)
+
+Dialogs are shown via `Services.DialogService.ShowDialogAsync(viewModel)`, which resolves the View from the ViewModel type using a naming convention:
+
+- ViewModel: `PurplePen.ViewModels.FooDialogViewModel` (in PurplePenViewModels/)
+- View: `AvPurplePen.Views.FooDialog` (in AvPurplePen/Views/Dialogs/)
+- Resolution: replaces namespace `PurplePen.ViewModels` → `AvPurplePen.Views`, strips `ViewModel` suffix
+
+**Pattern for command methods:**
+```csharp
+[RelayCommand(CanExecute = nameof(CanDoSomething))]
+private async Task DoSomething()
+{
+    MyDialogViewModel vm = new MyDialogViewModel { /* set properties */ };
+    bool result = await Services.DialogService.ShowDialogAsync(vm);
+    if (result) {
+        // read results from vm
+    }
+}
+```
+
+**Note on `#if PORTING` / `#if !PORTING`:** The `PORTING` symbol is always defined in AvPurplePen. Use `#if PORTING` for TODO stubs containing only comments (code that will be written later). The `#if !PORTING` blocks in existing code contain old WinForms code to be replaced — when porting a command, replace the entire `#if !PORTING` block with working Avalonia code.
+
+### Porting Custom Controls (UserControls)
+
+When porting WinForms custom controls (not dialogs):
+- Create the control as a `UserControl` in `AvPurplePen/Views/` (not in the Dialogs subfolder).
+- Custom controls typically use code-behind with direct properties (not a separate ViewModel), similar to `SelectionPanel`.
+- Set `ItemsSource` in the constructor code-behind rather than using XAML bindings to the parent control's properties (avoids compiled binding issues with `#root` references).
+- If the control needs a data model class (e.g., tree nodes), make it a non-nested public class in the `AvPurplePen` namespace so it can be referenced in AXAML via `x:DataType`.
+
 ## Current Development Focus
 
 - **Avalonia port** - AvPurplePen is the new cross-platform application, gradually replacing the WinForms PurplePen project. Code is being moved from PurplePen/ and PurplePenCore/ into AvPurplePen/ (Views) and PurplePenViewModels/ (ViewModels).
