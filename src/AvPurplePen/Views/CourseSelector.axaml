@@ -1,0 +1,99 @@
+<!--
+    CourseSelector.axaml
+    Custom control that displays a tree of courses with checkboxes for
+    selecting which courses (and optionally course parts) to include.
+    Includes All/None buttons and an optional Choose Variations button.
+    Migrated from WinForms PurplePen/CourseSelector.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:AvPurplePen"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="192" d:DesignHeight="126"
+             Classes="dialog"
+             x:Class="AvPurplePen.Views.CourseSelector">
+
+    <DockPanel>
+        <!-- Bottom panel with All/None buttons and Choose Variations button.
+             Mirrors the WinForms TableLayoutPanel docked to Bottom. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="*,*"
+              RowDefinitions="Auto,Auto">
+
+            <!-- All button -->
+            <Button x:Name="selectAll"
+                    Grid.Row="0" Grid.Column="0"
+                    Classes="Small"
+                    Content="{resx:Localize CourseSelector_selectAll_Text}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Margin="2,2,2,2"
+                    Click="SelectAll_Click"/>
+
+            <!-- None button -->
+            <Button x:Name="selectNone"
+                    Grid.Row="0" Grid.Column="1"
+                    Classes="Small"
+                    Content="{resx:Localize CourseSelector_selectNone_Text}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Margin="2,2,2,2"
+                    Click="SelectNone_Click"/>
+
+            <!-- Choose Variations button (spans both columns, hidden by default) -->
+            <Button x:Name="buttonChooseVariations"
+                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Classes="Small"
+                    Content="{resx:Localize CourseSelector_buttonChooseVariations_Text}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    IsVisible="False"
+                    IsEnabled="False"
+                    Margin="0,0,0,2"
+                    Click="ButtonChooseVariations_Click"/>
+        </Grid>
+
+        <!-- Outer border provides the rounded-corner frame and clips the
+             TreeView's content so its background doesn't overpaint the corners. -->
+        <Border Background="{DynamicResource InputBackground}"
+                BorderBrush="{DynamicResource DarkGreyBorder}"
+                BorderThickness="1"
+                CornerRadius="3"
+                ClipToBounds="True">
+        <TreeView x:Name="courseTreeView"
+                  SelectionChanged="CourseTreeView_SelectionChanged"
+                  Background="Transparent"
+                  BorderThickness="0">
+            <!-- Override the theme resource that controls TreeViewItem content
+                 padding (the template sets it via DynamicResource, so a style
+                 setter can't override it — we must replace the resource). -->
+            <TreeView.Resources>
+                <Thickness x:Key="TreeViewItemPadding">0</Thickness>
+            </TreeView.Resources>
+            <TreeView.Styles>
+                <!-- Keep all nodes expanded at all times (prevents child nodes
+                     from disappearing when containers are recycled). -->
+                <Style Selector="TreeViewItem">
+                    <Setter Property="IsExpanded" Value="True"/>
+                    <Setter Property="MinHeight" Value="0"/>
+                </Style>
+                <!-- Hide the expand/collapse toggle since nodes are always expanded -->
+                <Style Selector="TreeViewItem /template/ ToggleButton#PART_ExpandCollapseChevron">
+                    <Setter Property="IsVisible" Value="False"/>
+                </Style>
+            </TreeView.Styles>
+            <TreeView.ItemTemplate>
+                <TreeDataTemplate x:DataType="local:CourseSelectorNode"
+                                  ItemsSource="{Binding Children}">
+                    <CheckBox Content="{Binding Name}"
+                              IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                              Margin="0" Padding="4,0,0,0"/>
+                </TreeDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+        </Border>
+    </DockPanel>
+</UserControl>

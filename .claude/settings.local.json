@@ -40,7 +40,13 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:api.github.com)",
       "Bash(msbuild PPen.slnx /p:Configuration=Release /v:minimal)",
-      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/MSBuild.exe\" PPen.slnx /p:Configuration=Release /v:minimal)"
+      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/MSBuild.exe\" PPen.slnx /p:Configuration=Release /v:minimal)",
+      "Bash(grep -n \"class VariationChoices\\\\|struct VariationChoices\" \"D:\\\\Repos\\\\Main\\\\PurplePen/src/PurplePenCore\"/*.cs)",
+      "Bash(ls D:\\\\Repos\\\\Main\\\\PurplePen\\\\src\\\\AvPurplePen/Views/*.cs)",
+      "Read(//c/Users/peter/.nuget/**)",
+      "Bash(dotnet nuget:*)",
+      "Bash(gh search:*)",
+      "Bash(gh api:*)"
     ]
   }
 }

@@ -1121,26 +1121,26 @@ namespace PurplePen.ViewModels
 
         /// <summary>
         /// Executes the Item/Change Displayed Courses command.
+        /// Shows the ChangeSpecialCourses dialog and applies the result via the controller.
         /// </summary>
         [RelayCommand(CanExecute = nameof(CanChangeDisplayedCourses))]
-        private void ChangeDisplayedCourses()
+        private async Task ChangeDisplayedCourses()
         {
-#if !PORTING
             CourseDesignator[] displayedCourses;
             bool showAllControls;
 
             if (controller.CanChangeDisplayedCourses(out displayedCourses, out showAllControls) == CommandStatus.Enabled) {
-                ChangeSpecialCourses changeCoursesDialog = new ChangeSpecialCourses();
-                changeCoursesDialog.EventDB = controller.GetEventDB();
-                changeCoursesDialog.ShowAllControls = showAllControls;
-                changeCoursesDialog.DisplayedCourses = displayedCourses;
+                ChangeSpecialCoursesDialogViewModel vm = new ChangeSpecialCoursesDialogViewModel {
+                    EventDB = controller.GetEventDB(),
+                    ShowAllControls = showAllControls,
+                    DisplayedCourses = displayedCourses
+                };
 
-                DialogResult result = changeCoursesDialog.ShowDialog(this);
-                if (result == DialogResult.OK) {
-                    controller.ChangeDisplayedCourses(changeCoursesDialog.DisplayedCourses);
+                bool result = await Services.DialogService.ShowDialogAsync(vm);
+                if (result) {
+                    controller.ChangeDisplayedCourses(vm.DisplayedCourses);
                 }
             }
-#endif
         }
 
         [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ChangeDisplayedCoursesCommand))]
