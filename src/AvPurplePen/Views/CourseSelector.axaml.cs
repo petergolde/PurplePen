@@ -20,10 +20,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using PurplePen;
+using PurplePen.ViewModels;
 
 namespace AvPurplePen.Views
 {
@@ -373,7 +375,7 @@ namespace AvPurplePen.Views
         /// DataContext is the <see cref="CourseSelectorNode"/> for that row,
         /// which tells us which course to show the variations dialog for.
         /// </summary>
-        private void ChooseVariationsButton_Click(object? sender, RoutedEventArgs e)
+        private async void ChooseVariationsButton_Click(object? sender, RoutedEventArgs e)
         {
             if (sender is not Button button || button.DataContext is not CourseSelectorNode node)
                 return;
@@ -382,15 +384,22 @@ namespace AvPurplePen.Views
             if (!courseDesignator.IsNotAllControls || EventDB == null)
                 return;
 
-#if PORTING
-            // TODO: Port SelectVariations dialog to Avalonia and show it here.
-            // Original code:
-            //   SelectVariations variationsDialog = new SelectVariations(EventDB, courseDesignator.CourseId);
-            //   if (variationChoicesPerCourse.TryGetValue(courseDesignator.CourseId, out VariationChoices variationChoices))
-            //       variationsDialog.VariationChoices = variationChoices;
-            //   if (variationsDialog.ShowDialog(this) == DialogResult.OK)
-            //       variationChoicesPerCourse[courseDesignator.CourseId] = variationsDialog.VariationChoices;
-#endif
+            Id<Course> courseId = courseDesignator.CourseId;
+
+            // Seed the dialog with the current variation choices for this
+            // course (if any); otherwise the dialog defaults to AllVariations.
+            SelectVariationsDialogViewModel vm = new SelectVariationsDialogViewModel {
+                EventDB = EventDB,
+                CourseId = courseId,
+            };
+            if (variationChoicesPerCourse.TryGetValue(courseId, out VariationChoices? existing)) {
+                vm.VariationChoices = existing;
+            }
+
+            bool ok = await Services.DialogService.ShowDialogAsync(vm);
+            if (ok) {
+                variationChoicesPerCourse[courseId] = vm.VariationChoices;
+            }
         }
     }
 }

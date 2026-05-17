@@ -597,6 +597,8 @@ private async Task DoSomething()
 
 **Note on `#if PORTING` / `#if !PORTING`:** The `PORTING` symbol is always defined in AvPurplePen. Use `#if PORTING` for TODO stubs containing only comments (code that will be written later). The `#if !PORTING` blocks in existing code contain old WinForms code to be replaced — when porting a command, replace the entire `#if !PORTING` block with working Avalonia code.
 
+**Nested dialogs (dialog opens another dialog):** `DialogService` is registered as a singleton with the MainWindow as its owner, but each call to `ShowDialogAsync` re-derives the actual owner by walking the chain of currently-open windows (`desktop.Windows.First(w => w.Owner == current)` repeated to the deepest). The new dialog opens parented to whichever dialog is on top right now, so it's modal relative to its caller — not always relative to MainWindow. If you write a different code path that opens dialogs, prefer `Services.DialogService.ShowDialogAsync(vm)` over rolling your own `dialog.ShowDialog(MainWindow)` so you get this behavior automatically.
+
 ### Porting Custom Controls (UserControls)
 
 When porting WinForms custom controls (not dialogs):

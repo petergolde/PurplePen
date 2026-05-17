@@ -1,0 +1,174 @@
+<!--
+    SelectVariationsDialog.axaml
+
+    Dialog for choosing which variations of a course (with forks or relay
+    legs) should be printed/exported. Three modes selectable from a combo:
+      * Each Variation Separately  — optional individual-variations subset
+      * Each Relay Leg Separately  — first/last team selectors (or a notice
+                                      if no relay teams are configured)
+      * All Variations Combined    — single map with all forks
+
+    Migrated from WinForms PurplePen/SelectVariations.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.SelectVariationsDialog"
+        Classes="dialog"
+        x:DataType="vm:SelectVariationsDialogViewModel"
+        Title="{resx:Localize SelectVariations_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="340" d:DesignHeight="460"
+        Width="340" Height="460"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:SelectVariationsDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Top row: "Variations:" label + mode combo box -->
+        <Grid DockPanel.Dock="Top"
+              ColumnDefinitions="Auto,8,*"
+              Margin="0,0,0,8">
+            <TextBlock Grid.Column="0"
+                       Text="{resx:Localize SelectVariations_label1_Text}"
+                       VerticalAlignment="Center"/>
+            <ComboBox x:Name="comboBoxVariations"
+                      Grid.Column="2"
+                      HorizontalAlignment="Stretch"
+                      SelectedIndex="{Binding SelectedModeIndex, Mode=TwoWay}">
+                <ComboBoxItem Content="{resx:Localize SelectVariations_comboBoxVariations_Items}"/>
+                <ComboBoxItem Content="{resx:Localize SelectVariations_comboBoxVariations_Items1}"/>
+                <ComboBoxItem Content="{resx:Localize SelectVariations_comboBoxVariations_Items2}"/>
+            </ComboBox>
+        </Grid>
+
+        <!-- One of four explanatory labels under the combo, depending on
+             the selected mode and whether the course has relay teams. -->
+        <Grid DockPanel.Dock="Top"
+              Margin="0,0,0,8"
+              MinHeight="50">
+            <TextBlock x:Name="labelSeparateVariations"
+                       Text="{resx:Localize SelectVariations_labelSeparateVariations_Text}"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding ShowSeparateVariationsLabel}"/>
+            <TextBlock x:Name="labelByLeg"
+                       Text="{resx:Localize SelectVariations_labelByLeg_Text}"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding ShowByLegLabel}"/>
+            <TextBlock x:Name="labelByLegNotAvailable"
+                       Text="{resx:Localize SelectVariations_labelByLegNotAvailable_Text}"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding ShowByLegNotAvailableLabel}"/>
+            <TextBlock x:Name="labelAllVariations"
+                       Text="{resx:Localize SelectVariations_labelAllVariations_Text}"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding ShowAllVariationsLabel}"/>
+        </Grid>
+
+        <!-- Mode-specific content area (fills the remaining space). Each
+             panel binds its own IsVisible so they overlap cleanly in the
+             Grid; only one is visible at a time. -->
+        <Grid>
+
+            <!-- Mode 0: pick individual variations -->
+            <DockPanel x:Name="panelByVariation"
+                       IsVisible="{Binding ShowVariationPanel}">
+                <CheckBox x:Name="checkBoxSelectIndividualVariations"
+                          DockPanel.Dock="Top"
+                          Content="{resx:Localize SelectVariations_checkBoxSelectIndividualVariations_Text}"
+                          IsChecked="{Binding UseIndividualVariations, Mode=TwoWay}"
+                          Margin="0,0,0,4"/>
+                <ListBox x:Name="checkedListBoxVariations"
+                         IsVisible="{Binding ShowIndividualVariationList}"
+                         ItemsSource="{Binding AvailableVariations}">
+                    <!-- Override the theme resource that controls ListBoxItem
+                         content padding (the template sets it via
+                         DynamicResource, so a style setter can't override it
+                         — we must replace the resource). Keep a little
+                         horizontal padding, zero on top/bottom. -->
+                    <ListBox.Resources>
+                        <Thickness x:Key="ListBoxItemDefaultPadding">8 0</Thickness>
+                    </ListBox.Resources>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="vm:VariationItem">
+                            <CheckBox Content="{Binding CodeString}"
+                                      IsChecked="{Binding IsChecked, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+
+            <!-- Mode 1 (with teams defined): pick first/last team -->
+            <StackPanel x:Name="panelByTeam"
+                        IsVisible="{Binding ShowTeamPanel}"
+                        Spacing="8">
+                <!-- "This course has {N} relay teams …" — VM exposes N as int,
+                     the format string lives in UIText so the View handles
+                     localization. -->
+                <TextBlock x:Name="labelNumberOfTeams"
+                           TextWrapping="Wrap">
+                    <TextBlock.Text>
+                        <Binding Path="NumberOfTeams"
+                                 StringFormat="{x:Static resx:UIText.SelectVariations_labelNumberOfTeams_Text}"/>
+                    </TextBlock.Text>
+                </TextBlock>
+
+                <TextBlock x:Name="label2"
+                           Text="{resx:Localize SelectVariations_label2_Text}"
+                           TextWrapping="Wrap"/>
+
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <NumericUpDown x:Name="upDownFirstTeam"
+                                   Width="80"
+                                   Value="{Binding FirstTeam, Mode=TwoWay}"
+                                   Minimum="{Binding FirstTeamNumber}"
+                                   Maximum="{Binding LastTeam}"
+                                   FormatString="0"/>
+                    <TextBlock x:Name="label3"
+                               Text="{resx:Localize SelectVariations_label3_Text}"
+                               VerticalAlignment="Center"/>
+                    <NumericUpDown x:Name="upDownLastTeam"
+                                   Width="80"
+                                   Value="{Binding LastTeam, Mode=TwoWay}"
+                                   Minimum="{Binding FirstTeam}"
+                                   Maximum="{Binding LastTeamNumber}"
+                                   FormatString="0"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+
+    </DockPanel>
+</Window>

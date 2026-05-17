@@ -76,13 +76,17 @@
             <TreeView.ItemTemplate>
                 <TreeDataTemplate x:DataType="local:CourseSelectorNode"
                                   ItemsSource="{Binding Children}">
-                    <!-- Row layout: checkbox fills the row, with an optional
-                         "Choose Variations" button on the right for courses
-                         that have variations (only when ShowVariationChooser
-                         is true on the parent control). -->
-                    <DockPanel>
-                        <Button DockPanel.Dock="Right"
-                                Theme="{DynamicResource BorderlessButton}"
+                    <!-- Row layout: checkbox sized to its content, with an
+                         optional "Choose Variations" button immediately to
+                         its right for courses that have variations (only
+                         when ShowVariationChooser is true on the parent
+                         control). -->
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="{Binding Name}"
+                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                  VerticalAlignment="Center"
+                                  Margin="0" Padding="4,0,0,0"/>
+                        <Button Theme="{DynamicResource BorderlessButton}"
                                 Classes="Small borderless"
                                 Content="{resx:Localize CourseSelector_buttonChooseVariations_Text}"
                                 FontWeight="Normal"
@@ -90,14 +94,11 @@
                                 Height="20"
                                 MinHeight="0"
                                 Padding="6,0"
+                                VerticalAlignment="Center"
                                 IsVisible="{Binding IsVariationsButtonVisible}"
                                 Margin="4,0,0,0"
                                 Click="ChooseVariationsButton_Click"/>
-                        <CheckBox Content="{Binding Name}"
-                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"
-                                  VerticalAlignment="Center"
-                                  Margin="0" Padding="4,0,0,0"/>
-                    </DockPanel>
+                    </StackPanel>
                 </TreeDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>

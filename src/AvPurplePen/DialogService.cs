@@ -10,7 +10,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
 using PurplePen;
 using PurplePen.ViewModels;
@@ -67,8 +69,39 @@ namespace AvPurplePen
             }
 
             dialog.DataContext = viewModel;
-            bool? result = await dialog.ShowDialog<bool?>(ownerWindow);
+            bool? result = await dialog.ShowDialog<bool?>(GetActiveOwner());
             return result == true;
+        }
+
+        /// <summary>
+        /// Finds the topmost currently-open dialog so a newly-shown dialog is
+        /// parented to it (and is therefore modal relative to it), instead of
+        /// always being parented to MainWindow. Walks the chain of owned
+        /// windows starting from <see cref="ownerWindow"/>.
+        /// </summary>
+        private Window GetActiveOwner()
+        {
+            if (Application.Current?.ApplicationLifetime is not IClassicDesktopStyleApplicationLifetime desktop) {
+                return ownerWindow;
+            }
+
+            Window current = ownerWindow;
+            while (true) {
+                // Find a visible window whose Owner is `current`. Each Avalonia
+                // dialog opened with ShowDialog(owner) records that owner on
+                // the new window, so this chain walks down to whichever dialog
+                // is on top right now.
+                Window? owned = null;
+                foreach (Window w in desktop.Windows) {
+                    if (w != current && w.IsVisible && ReferenceEquals(w.Owner, current)) {
+                        owned = w;
+                        break;
+                    }
+                }
+                if (owned == null)
+                    return current;
+                current = owned;
+            }
         }
 
         /// <summary>

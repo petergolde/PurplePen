@@ -49,7 +49,9 @@
       "Bash(gh api:*)",
       "Bash(taskkill //F //PID 11328)",
       "Bash(taskkill //F //IM AvPurplePen.exe)",
-      "Bash(taskkill //F //PID 49400)"
+      "Bash(taskkill //F //PID 49400)",
+      "Bash(taskkill //F //PID 40776)",
+      "Bash(taskkill //F //PID 21876)"
     ]
   }
 }
