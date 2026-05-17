@@ -605,6 +605,130 @@ When porting WinForms custom controls (not dialogs):
 - Set `ItemsSource` in the constructor code-behind rather than using XAML bindings to the parent control's properties (avoids compiled binding issues with `#root` references).
 - If the control needs a data model class (e.g., tree nodes), make it a non-nested public class in the `AvPurplePen` namespace so it can be referenced in AXAML via `x:DataType`.
 
+**Making control properties bindable from XAML** (so consuming dialogs can use `{Binding ...}` instead of code-behind assignment): expose them as `StyledProperty<T>` rather than plain CLR properties.
+
+```csharp
+public static readonly StyledProperty<EventDB?> EventDBProperty =
+    AvaloniaProperty.Register<CourseSelector, EventDB?>(nameof(EventDB));
+
+public EventDB? EventDB
+{
+    get => GetValue(EventDBProperty);
+    set => SetValue(EventDBProperty, value);
+}
+```
+
+If the control needs to react when a bound property changes (e.g. reload its internal state), override `OnPropertyChanged`:
+
+```csharp
+protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+{
+    base.OnPropertyChanged(change);
+    if (change.Property == EventDBProperty) {
+        // reload internal state
+    }
+}
+```
+
+**The property type must be public** for XAML binding to work — change `internal` accessors to `public`. The control still accesses the value via the property (`EventDB`) internally, not via a separate backing field.
+
+**When to make collection / selection state bindable vs. read-on-OK:** for *config inputs* that the consumer sets once (e.g. `ShowAllControls`, `EventDB`), `StyledProperty` is always the right choice. For *user-edited collection state* (e.g. tree checkbox selection), two-way binding requires fighting initial-state behavior and adding feedback-loop guards for each item's change notification — usually not worth it. Leave those as plain CLR properties and read them in the dialog's OK click handler. The CourseSelector follows this split: config is bindable, selection is code-behind on Open/OK.
+
+### Settings-Class ViewModel Pattern
+
+Many PurplePen dialogs wrap an existing "settings" data class (e.g. `OcadCreationSettings`, `BitmapCreationSettings`, `CoursePdfSettings`). Rather than storing that object on the ViewModel and shuffling its fields back and forth with the dialog (the WinForms-style `UpdateDialog`/`UpdateSettings` pattern), expose each field as an `[ObservableProperty]` and make the settings object a **computed property** whose getter assembles a fresh one and whose setter decomposes the incoming value.
+
+This keeps the dialog code-behind tiny, lets every dialog control bind directly to a real VM property, and means there is exactly one source of truth for each field.
+
+```csharp
+public partial class CreateOcadFilesDialogViewModel : ViewModelBase
+{
+    // === Inputs (set by caller before showing) ===
+    [ObservableProperty]
+    private EventDB? eventDB;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(AvailableFileFormats))]
+    private MapFileFormatKind restrictToFormat;
+
+    // === UI state — bound to controls in the dialog ===
+    [ObservableProperty]
+    private FileFormatOption? selectedFileFormat;
+
+    [ObservableProperty]
+    private string filePrefix = "";
+
+    // ... one ObservableProperty per dialog field ...
+
+    // === Pass-through fields (set by caller, not UI-bound, round-tripped) ===
+    public short ColorOcadId { get; set; }
+    public float Cyan { get; set; }
+    // ...
+
+    // === Settings: assembles / decomposes the underlying settings object ===
+    public OcadCreationSettings Settings
+    {
+        get => new OcadCreationSettings {
+            fileFormat = SelectedFileFormat?.Format ?? default,
+            filePrefix = FilePrefix,
+            colorOcadId = ColorOcadId,
+            // ... copy from every VM property ...
+        };
+        set
+        {
+            SelectedFileFormat = AvailableFileFormats.FirstOrDefault(f => f.Format.Equals(value.fileFormat))
+                                 ?? AvailableFileFormats.FirstOrDefault();
+            FilePrefix = value.filePrefix ?? "";
+            ColorOcadId = value.colorOcadId;
+            // ... copy into every VM property ...
+        }
+    }
+}
+```
+
+**Caller pattern:**
+```csharp
+MyDialogViewModel vm = new MyDialogViewModel {
+    EventDB = ...,           // inputs first
+    RestrictToFormat = ...,  // (object initializer assigns in order)
+    Settings = settings,     // then seed from existing settings
+};
+bool ok = await Services.DialogService.ShowDialogAsync(vm);
+if (ok) {
+    MySettings chosen = vm.Settings;   // read result
+}
+```
+
+**Order matters in the object initializer**: the `Settings` setter often needs other VM properties already set (e.g. `EventDB` to expand `AllCourses` into a CourseDesignator list, `RestrictToFormat` so the right `AvailableFileFormats` exist when picking the matching item). Put `Settings` last in the initializer.
+
+**Three categories of VM property:**
+1. **Inputs** — set by caller before showing (`EventDB`, `RestrictToFormat`, `DialogTitle`). Usually `[ObservableProperty]` so bindable computed properties can depend on them.
+2. **UI state** — bound to dialog controls (`FilePrefix`, `OutputDirectory`, `UseFileDirectory`, etc.). Always `[ObservableProperty]`.
+3. **Pass-through** — set by the caller, not edited in the UI, copied through to the result (e.g. `ColorOcadId`, `Cyan`, etc. set via `FindPurple.GetPurpleColor`). Plain CLR auto-properties — they don't need change notification because nothing binds to them.
+
+**Wrapping data types for ComboBox binding:** when the underlying settings stores something like a `MapFileFormat` (a struct), expose a small wrapper class with a `DisplayName` and the underlying value, and override `Equals`/`ToString` so ComboBox `SelectedItem` round-trips correctly:
+
+```csharp
+public class FileFormatOption
+{
+    public string DisplayName { get; }
+    public MapFileFormat Format { get; }
+
+    public FileFormatOption(string name, MapFileFormat format) { ... }
+
+    public override string ToString() => DisplayName;   // what ComboBox shows
+    public override bool Equals(object? obj) =>
+        obj is FileFormatOption o && Format.Equals(o.Format);
+    public override int GetHashCode() => Format.GetHashCode();
+}
+```
+
+Then XAML simply: `<ComboBox ItemsSource="{Binding AvailableFileFormats}" SelectedItem="{Binding SelectedFileFormat, Mode=TwoWay}"/>` — no `ItemTemplate` and no value converter needed.
+
+**Localized item lists must be instance-level, not static.** PurplePen supports live language switching (`MainWindow_LanguageMenu` changes `CurrentUICulture` without restart). A `private static readonly FileFormatOption[]` initialized from `MiscText.OCAD + " 6"` etc. would capture whatever language was current at first reference and stay frozen. Use a non-static `private readonly` field instead — the VM rebuilds it per instance, so each newly-opened dialog picks up the current language. (The language can't change while a dialog is open, so once-per-instance is enough.)
+
+**Result**: the dialog code-behind ends up doing only the few things that *can't* be bound — selection state on controls that don't expose bindable selection, and platform pickers (`StorageProvider.OpenFolderPickerAsync`). The OK handler is two lines: pull non-bindable state into the VM, then `Close(true)`.
+
 ## Current Development Focus
 
 - **Avalonia port** - AvPurplePen is the new cross-platform application, gradually replacing the WinForms PurplePen project. Code is being moved from PurplePen/ and PurplePenCore/ into AvPurplePen/ (Views) and PurplePenViewModels/ (ViewModels).

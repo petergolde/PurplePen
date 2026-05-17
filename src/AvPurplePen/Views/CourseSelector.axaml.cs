@@ -5,6 +5,15 @@
 // variations also get a per-row "Choose Variations" button (only when
 // ShowVariationChooser is true). Used by dialogs that need the user to pick
 // which courses to print, export, or otherwise process.
+//
+// The "config" properties (EventDB, ShowAllControls, ShowCourseParts,
+// ShowVariationChooser, Filter) are Avalonia StyledProperties so consumers
+// can bind them in XAML. The selection / variation state remains as plain
+// CLR properties for callers to read/write from code-behind on dialog
+// open / OK — making them two-way bindable would require fighting the
+// "default everything checked" behavior in LoadList and adding feedback-loop
+// guards for each node's IsChecked change, which isn't worth the complexity
+// when a couple of code-behind lines do the same job.
 
 using System;
 using System.Collections.Generic;
@@ -25,10 +34,13 @@ namespace AvPurplePen.Views
     /// </summary>
     public partial class CourseSelector : UserControl
     {
-        private bool showAllControls;
-        private bool showCourseParts;
-        private EventDB? eventDB;
+        // Tracks whether LoadList has populated Nodes for the current EventDB.
+        // Reset when EventDB changes.
         private bool loaded;
+
+        // Per-course variation choices selected by the user. Populated from
+        // <see cref="VariationChoicesPerCourse"/> setter and updated by the
+        // per-row Choose Variations button (once SelectVariations is ported).
         private Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse =
             new Dictionary<Id<Course>, VariationChoices>();
 
@@ -36,24 +48,33 @@ namespace AvPurplePen.Views
         public ObservableCollection<CourseSelectorNode> Nodes { get; } =
             new ObservableCollection<CourseSelectorNode>();
 
-        /// <summary>
-        /// Optional filter predicate. When set, only courses/parts for which
-        /// the filter returns true are shown.
-        /// </summary>
-        public Func<CourseDesignator, bool>? Filter { get; set; }
+        // ===== Bindable (StyledProperty) configuration =====
 
-        public CourseSelector()
+        /// <summary>Avalonia property backing <see cref="EventDB"/>.</summary>
+        public static readonly StyledProperty<EventDB?> EventDBProperty =
+            AvaloniaProperty.Register<CourseSelector, EventDB?>(nameof(EventDB));
+
+        /// <summary>The event database to read courses from. Bindable.</summary>
+        public EventDB? EventDB
         {
-            InitializeComponent();
-            courseTreeView.ItemsSource = Nodes;
+            get => GetValue(EventDBProperty);
+            set => SetValue(EventDBProperty, value);
         }
+
+        /// <summary>Avalonia property backing <see cref="ShowAllControls"/>.</summary>
+        public static readonly StyledProperty<bool> ShowAllControlsProperty =
+            AvaloniaProperty.Register<CourseSelector, bool>(nameof(ShowAllControls));
 
         /// <summary>Whether to show the "All controls" node at the top of the tree.</summary>
         public bool ShowAllControls
         {
-            get => showAllControls;
-            set => showAllControls = value;
+            get => GetValue(ShowAllControlsProperty);
+            set => SetValue(ShowAllControlsProperty, value);
         }
+
+        /// <summary>Avalonia property backing <see cref="ShowCourseParts"/>.</summary>
+        public static readonly StyledProperty<bool> ShowCoursePartsProperty =
+            AvaloniaProperty.Register<CourseSelector, bool>(nameof(ShowCourseParts));
 
         /// <summary>
         /// Whether to show individual course parts as child nodes when a
@@ -61,22 +82,60 @@ namespace AvPurplePen.Views
         /// </summary>
         public bool ShowCourseParts
         {
-            get => showCourseParts;
-            set => showCourseParts = value;
+            get => GetValue(ShowCoursePartsProperty);
+            set => SetValue(ShowCoursePartsProperty, value);
         }
+
+        /// <summary>Avalonia property backing <see cref="ShowVariationChooser"/>.</summary>
+        public static readonly StyledProperty<bool> ShowVariationChooserProperty =
+            AvaloniaProperty.Register<CourseSelector, bool>(nameof(ShowVariationChooser));
 
         /// <summary>
         /// When true, courses with variations get a per-row "Choose Variations"
         /// button next to their checkbox.
         /// </summary>
-        public bool ShowVariationChooser { get; set; }
-
-        /// <summary>The event database to read courses from.</summary>
-        internal EventDB? EventDB
+        public bool ShowVariationChooser
         {
-            get => eventDB;
-            set => eventDB = value;
+            get => GetValue(ShowVariationChooserProperty);
+            set => SetValue(ShowVariationChooserProperty, value);
         }
+
+        /// <summary>Avalonia property backing <see cref="Filter"/>.</summary>
+        public static readonly StyledProperty<Func<CourseDesignator, bool>?> FilterProperty =
+            AvaloniaProperty.Register<CourseSelector, Func<CourseDesignator, bool>?>(nameof(Filter));
+
+        /// <summary>
+        /// Optional filter predicate. When set, only courses/parts for which
+        /// the filter returns true are shown.
+        /// </summary>
+        public Func<CourseDesignator, bool>? Filter
+        {
+            get => GetValue(FilterProperty);
+            set => SetValue(FilterProperty, value);
+        }
+
+        public CourseSelector()
+        {
+            InitializeComponent();
+            courseTreeView.ItemsSource = Nodes;
+        }
+
+        /// <inheritdoc/>
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+        {
+            base.OnPropertyChanged(change);
+
+            // When EventDB changes, throw away the existing tree and rebuild.
+            // The other config properties only take effect on first load, so
+            // they don't need to trigger a rebuild here.
+            if (change.Property == EventDBProperty) {
+                Nodes.Clear();
+                loaded = false;
+                LoadList();
+            }
+        }
+
+        // ===== Non-bindable (CLR) selection / variation state =====
 
         /// <summary>
         /// Get or set the selected courses. Only use when ShowCourseParts is false.
@@ -113,7 +172,7 @@ namespace AvPurplePen.Views
                 Debug.Assert(!ShowCourseParts);
                 List<Id<Course>> selectedCourseIds = SelectedCourses.ToList();
                 selectedCourseIds.Remove(Id<Course>.None);
-                return eventDB != null && selectedCourseIds.Count == eventDB.AllCourseIds.Count;
+                return EventDB != null && selectedCourseIds.Count == EventDB.AllCourseIds.Count;
             }
             set
             {
@@ -125,8 +184,8 @@ namespace AvPurplePen.Views
                 if (allControls)
                     selectedCourseIds.Add(Id<Course>.None);
 
-                if (value && eventDB != null) {
-                    selectedCourseIds.AddRange(eventDB.AllCourseIds);
+                if (value && EventDB != null) {
+                    selectedCourseIds.AddRange(EventDB.AllCourseIds);
                 }
 
                 SelectedCourses = selectedCourseIds.ToArray();
@@ -195,8 +254,8 @@ namespace AvPurplePen.Views
             get
             {
                 Dictionary<Id<Course>, VariationChoices> result = new Dictionary<Id<Course>, VariationChoices>();
-                if (eventDB != null) {
-                    foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
+                if (EventDB != null) {
+                    foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(EventDB, true)) {
                         if (variationChoicesPerCourse.TryGetValue(courseId, out VariationChoices? variationChoices)) {
                             result[courseId] = variationChoices;
                         }
@@ -226,13 +285,15 @@ namespace AvPurplePen.Views
         /// <summary>
         /// Populates the tree from the EventDB. Called once on first load or
         /// when SelectedCourseDesignators is accessed before the control is loaded.
+        /// Re-runs if EventDB changes (see <see cref="OnPropertyChanged"/>).
         /// </summary>
         private void LoadList()
         {
+            EventDB? eventDB = EventDB;
             if (eventDB == null || loaded)
                 return;
 
-            if (showAllControls) {
+            if (ShowAllControls) {
                 Nodes.Add(new CourseSelectorNode(MiscText.AllControls, CourseDesignator.AllControls) {
                     IsChecked = true
                 });
@@ -243,7 +304,7 @@ namespace AvPurplePen.Views
 
                 // If the course has parts, create child nodes for each part.
                 int numberParts = QueryEvent.CountCourseParts(eventDB, new CourseDesignator(courseId), true);
-                if (showCourseParts && numberParts > 1) {
+                if (ShowCourseParts && numberParts > 1) {
                     parts = new List<CourseSelectorNode>();
                     for (int part = 0; part < numberParts; ++part) {
                         CourseDesignator partDesignator = new CourseDesignator(courseId, part);
@@ -287,9 +348,10 @@ namespace AvPurplePen.Views
         /// <summary>Returns true if the designator passes the filter (or no filter is set).</summary>
         private bool CheckFilter(CourseDesignator designator)
         {
-            if (Filter == null)
+            Func<CourseDesignator, bool>? filter = Filter;
+            if (filter == null)
                 return true;
-            return Filter(designator);
+            return filter(designator);
         }
 
         /// <summary>Checks all top-level nodes.</summary>
@@ -317,13 +379,13 @@ namespace AvPurplePen.Views
                 return;
 
             CourseDesignator courseDesignator = node.Tag;
-            if (!courseDesignator.IsNotAllControls || eventDB == null)
+            if (!courseDesignator.IsNotAllControls || EventDB == null)
                 return;
 
 #if PORTING
             // TODO: Port SelectVariations dialog to Avalonia and show it here.
             // Original code:
-            //   SelectVariations variationsDialog = new SelectVariations(eventDB, courseDesignator.CourseId);
+            //   SelectVariations variationsDialog = new SelectVariations(EventDB, courseDesignator.CourseId);
             //   if (variationChoicesPerCourse.TryGetValue(courseDesignator.CourseId, out VariationChoices variationChoices))
             //       variationsDialog.VariationChoices = variationChoices;
             //   if (variationsDialog.ShowDialog(this) == DialogResult.OK)

@@ -65,7 +65,11 @@
             <HeaderedContentControl Grid.Column="0"
                                     Header="{resx:Localize CreateOcadFiles_coursesGroupBox_Text}"
                                     Padding="8,10,8,8">
-                <views:CourseSelector x:Name="courseSelector"/>
+                <views:CourseSelector x:Name="courseSelector"
+                                      EventDB="{Binding EventDB}"
+                                      ShowAllControls="True"
+                                      ShowCourseParts="False"
+                                      ShowVariationChooser="True"/>
             </HeaderedContentControl>
 
             <!-- === Right column: Output (top) + Folder (bottom) === -->
@@ -85,7 +89,9 @@
                                    VerticalAlignment="Center"/>
                         <ComboBox x:Name="fileFormatCombo"
                                   Grid.Row="0" Grid.Column="2"
-                                  HorizontalAlignment="Stretch"/>
+                                  HorizontalAlignment="Stretch"
+                                  ItemsSource="{Binding AvailableFileFormats}"
+                                  SelectedItem="{Binding SelectedFileFormat, Mode=TwoWay}"/>
 
                         <!-- Row 2: File name prefix -->
                         <TextBlock Grid.Row="2" Grid.Column="0"
