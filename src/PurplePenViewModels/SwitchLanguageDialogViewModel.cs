@@ -84,10 +84,21 @@ namespace PurplePen.ViewModels
             AvailableLanguages = availableLanguages;
 
             // Select the item matching the current language code.
+            // First try exact match, then fall back to matching first two characters.
             foreach (LanguageItem item in AvailableLanguages) {
                 if (string.Equals(item.Code, currentLanguageCode, System.StringComparison.OrdinalIgnoreCase)) {
                     SelectedLanguage = item;
                     break;
+                }
+            }
+
+            if (SelectedLanguage == null && currentLanguageCode.Length > 2) {
+                string prefix = currentLanguageCode.Substring(0, 2);
+                foreach (LanguageItem item in AvailableLanguages) {
+                    if (item.Code.Length >= 2 && string.Equals(item.Code.Substring(0, 2), prefix, System.StringComparison.OrdinalIgnoreCase)) {
+                        SelectedLanguage = item;
+                        break;
+                    }
                 }
             }
         }

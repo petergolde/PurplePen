@@ -51,7 +51,8 @@
       "Bash(taskkill //F //IM AvPurplePen.exe)",
       "Bash(taskkill //F //PID 49400)",
       "Bash(taskkill //F //PID 40776)",
-      "Bash(taskkill //F //PID 21876)"
+      "Bash(taskkill //F //PID 21876)",
+      "PowerShell(dotnet build D:\\\\Repos\\\\Main\\\\PurplePen\\\\src\\\\PurplePenViewModels\\\\PurplePenViewModels.csproj --no-restore -q)"
     ]
   }
 }
