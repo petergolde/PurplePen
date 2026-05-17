@@ -2199,7 +2199,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Create Image Files command.
         /// </summary>
         [RelayCommand]
-        private void CreateImageFiles()
+        private async Task CreateImageFiles()
         {
 #if !PORTING
             BitmapCreationSettings settings;
@@ -2246,6 +2246,61 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             createImageFilesDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Seed from previous settings or build defaults.
+            BitmapCreationSettings settings;
+            if (bitmapCreationSettingsPrevious != null) {
+                settings = bitmapCreationSettingsPrevious.Clone();
+            }
+            else {
+                settings = new BitmapCreationSettings {
+                    fileDirectory = true,
+                    mapDirectory = false,
+                    outputDirectory = System.IO.Path.GetDirectoryName(controller.FileName) ?? "",
+                    Dpi = 200,
+                    ColorModel = ColorModel.CMYK,
+                    ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png,
+                };
+            }
+
+            // World file is only meaningful if the current map has real-world
+            // coordinates; otherwise disable the combo and force the setting off.
+            bool worldFileEnabled = controller.BitmapFilesCanCreateWorldFile();
+            if (!worldFileEnabled) {
+                settings.WorldFile = false;
+            }
+
+            CreateImageFilesDialogViewModel vm = new CreateImageFilesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                WorldFileEnabled = worldFileEnabled,
+                Settings = settings,
+            };
+
+            // Show the dialog; on OK, create the files. The loop lets the user
+            // bail out of the "overwrite?" prompt and tweak the dialog again.
+            while (await Services.DialogService.ShowDialogAsync(vm)) {
+                BitmapCreationSettings chosen = vm.Settings;
+
+                // Warn about files that will be overwritten.
+                List<string> overwritingFiles = controller.OverwritingBitmapFiles(chosen);
+                if (overwritingFiles.Count > 0) {
+                    // TODO: Port WinForms OverwritingOcadFilesDialog to Avalonia.
+                    // Same fallback as CreateOcadFiles: simple yes/no with the count.
+                    string question = string.Format(
+                        "{0} file(s) will be overwritten. Continue?",
+                        overwritingFiles.Count);
+                    if (!await YesNoQuestion(question, false))
+                        continue;
+                }
+
+                // Save settings persisted between invocations of this dialog.
+                bitmapCreationSettingsPrevious = chosen;
+                controller.CreateBitmapFiles(chosen);
+
+                break;
+            }
 #endif
         }
 

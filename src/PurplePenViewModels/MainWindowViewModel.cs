@@ -39,6 +39,9 @@ namespace PurplePen.ViewModels
         // Reset to null when a new map file is loaded.
         private OcadCreationSettings? ocadCreationSettingsPrevious;
 
+        // Same idea for the Create Image Files dialog.
+        private BitmapCreationSettings? bitmapCreationSettingsPrevious;
+
         [ObservableProperty]
         private MapDisplay? mapDisplay;
 
@@ -203,11 +206,10 @@ namespace PurplePen.ViewModels
 #if !PORTING
                 mapViewer.ZoomFactor = 1.0F;   // used if the map bounds are empty, then this zoom factor is preserved.
                 ShowRectangle(mapDisplay.MapBounds);
-
-                bitmapCreationSettingsPrevious = null;
 #endif
-                // Reset the OCAD file creating settings dialog to default settings.
+                // Reset the per-dialog settings caches.
                 ocadCreationSettingsPrevious = null;
+                bitmapCreationSettingsPrevious = null;
             }
 
 #if PORTING
