@@ -3,6 +3,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using PurplePen.MapModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -2093,8 +2094,106 @@ namespace PurplePen.ViewModels
                     }
                 }
             }
+#else
+            if (controller == null || MapDisplay == null) { return; }
+
+            bool success = false;
+
+            // Restrict the format dropdown to matching kinds if the current map already
+            // has a kind (so an OCAD map only lists OCAD output formats, etc.).
+            MapFileFormatKind restrictToKind;
+            if (MapDisplay.MapType == MapType.OCAD) {
+                restrictToKind = MapDisplay.MapVersion.kind;
+            }
+            else {
+                restrictToKind = MapFileFormatKind.None;
+            }
+
+            // Start from the previously-used settings, or build a default set.
+            OcadCreationSettings settings;
+            if (ocadCreationSettingsPrevious != null) {
+                settings = ocadCreationSettingsPrevious.Clone();
+                if (restrictToKind != MapFileFormatKind.None && restrictToKind != ocadCreationSettingsPrevious.fileFormat.kind) {
+                    settings.fileFormat = MapDisplay.MapVersion;
+                }
+            }
+            else {
+                // Default settings: creating in file directory, use format of the current map file.
+                settings = new OcadCreationSettings();
+
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = System.IO.Path.GetDirectoryName(controller.FileName) ?? "";
+                if (MapDisplay.MapType == MapType.OCAD) {
+                    settings.fileFormat = MapDisplay.MapVersion;
+                }
+                else {
+                    settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
+                }
+            }
+
+            // Get the correct purple color to use.
+            FindPurple.GetPurpleColor(MapDisplay, controller.GetCourseAppearance(), out settings.colorOcadId, out settings.cyan, out settings.magenta, out settings.yellow, out settings.black, out settings.purpleOverprint);
+
+            // Initialize the dialog ViewModel.
+            CreateOcadFilesDialogViewModel vm = new CreateOcadFilesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                RestrictToFormat = restrictToKind,
+                DialogTitle = controller.CreateOcadFilesText(false),
+                Settings = settings,
+            };
+
+            // Show the dialog; on OK, create the files. The loop allows the user to
+            // cancel out of the "overwrite files?" prompt and tweak the dialog again,
+            // although currently the WinForms behavior is a single pass via break.
+            while (await Services.DialogService.ShowDialogAsync(vm)) {
+                OcadCreationSettings chosen = vm.Settings;
+
+                // Warn about files that will be overwritten.
+                List<string> overwritingFiles = controller.OverwritingOcadFiles(chosen);
+                if (overwritingFiles.Count > 0) {
+                    // TODO: Port WinForms OverwritingOcadFilesDialog to Avalonia. For now,
+                    // fall back to a simple yes/no prompt listing how many files would be
+                    // replaced. The dedicated dialog showed the file list.
+                    string question = string.Format(
+                        "{0} file(s) will be overwritten. Continue?",
+                        overwritingFiles.Count);
+                    if (!await YesNoQuestion(question, false))
+                        continue;
+                }
+
+                // Give any other warning messages.
+                List<string> warnings = controller.OcadFilesWarnings(chosen);
+                foreach (string warning in warnings) {
+                    await WarningMessage(warning);
+                }
+
+                // Save settings persisted between invocations of this dialog.
+                ocadCreationSettingsPrevious = chosen;
+                success = controller.CreateOcadFiles(chosen);
+
+                // PP keeps bitmaps in memory and locks them. Tell the user to close PP.
+                if (MapDisplay.MapType == MapType.Bitmap)
+                    await InfoMessage(MiscText.ClosePPBeforeLoadingOCAD);
+
+                break;
+            }
+
+            // The Windows Store version doesn't install Roboto fonts into the system.
+            // So we may need to tell the user to install them.
+            if (success) {
+#if !PORTING  // ShouldInstallRobotoFonts NYI.
+                if (controller.ShouldInstallRobotoFonts()) {
+                    if (await YesNoQuestion(MiscText.AskInstallRobotoFonts, true)) {
+                        bool installSucceeded = controller.InstallRobotoFonts();
+                        if (!installSucceeded)
+                            await ErrorMessage(MiscText.RobotoFontsInstallFailed);
+                    }
+                }
 #endif
-        }
+            }
+#endif
+            }
 
         /// <summary>
         /// Executes the File/Create Image Files command.

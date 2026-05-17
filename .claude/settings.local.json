@@ -46,7 +46,10 @@
       "Read(//c/Users/peter/.nuget/**)",
       "Bash(dotnet nuget:*)",
       "Bash(gh search:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(taskkill //F //PID 11328)",
+      "Bash(taskkill //F //IM AvPurplePen.exe)",
+      "Bash(taskkill //F //PID 49400)"
     ]
   }
 }

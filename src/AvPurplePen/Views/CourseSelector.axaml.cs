@@ -1,9 +1,10 @@
 // CourseSelector.axaml.cs
 //
 // Avalonia port of the WinForms CourseSelector custom control. Displays a tree
-// of courses with checkboxes, plus All/None selection buttons and an optional
-// Choose Variations button. Used by dialogs that need the user to pick which
-// courses to print, export, or otherwise process.
+// of courses with checkboxes, plus All/None selection buttons. Courses with
+// variations also get a per-row "Choose Variations" button (only when
+// ShowVariationChooser is true). Used by dialogs that need the user to pick
+// which courses to print, export, or otherwise process.
 
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,6 @@ namespace AvPurplePen.Views
         private bool showAllControls;
         private bool showCourseParts;
         private EventDB? eventDB;
-        private bool eventHasVariations;
         private bool loaded;
         private Dictionary<Id<Course>, VariationChoices> variationChoicesPerCourse =
             new Dictionary<Id<Course>, VariationChoices>();
@@ -66,31 +66,16 @@ namespace AvPurplePen.Views
         }
 
         /// <summary>
-        /// When true and the event has courses with variations, the
-        /// Choose Variations button is shown.
+        /// When true, courses with variations get a per-row "Choose Variations"
+        /// button next to their checkbox.
         /// </summary>
         public bool ShowVariationChooser { get; set; }
 
-        /// <summary>
-        /// The event database to read courses from. Setting this also detects
-        /// whether any course has variations.
-        /// </summary>
+        /// <summary>The event database to read courses from.</summary>
         internal EventDB? EventDB
         {
             get => eventDB;
-            set
-            {
-                eventDB = value;
-
-                // Check to see if any course has variations.
-                eventHasVariations = false;
-                if (eventDB != null) {
-                    foreach (Id<Course> courseId in QueryEvent.SortedCourseIds(eventDB, true)) {
-                        if (QueryEvent.HasVariations(eventDB, courseId))
-                            eventHasVariations = true;
-                    }
-                }
-            }
+            set => eventDB = value;
         }
 
         /// <summary>
@@ -278,7 +263,11 @@ namespace AvPurplePen.Views
                     CourseSelectorNode node = new CourseSelectorNode(
                         eventDB.GetCourse(courseId).name,
                         designator) {
-                        IsChecked = true
+                        IsChecked = true,
+                        // Show a per-row "Choose Variations" button only when the
+                        // consumer asked for it AND this specific course has variations.
+                        ShowVariationsButton = ShowVariationChooser
+                                               && QueryEvent.HasVariations(eventDB, courseId)
                     };
 
                     if (parts != null) {
@@ -292,7 +281,6 @@ namespace AvPurplePen.Views
                 }
             }
 
-            buttonChooseVariations.IsVisible = ShowVariationChooser && eventHasVariations;
             loaded = true;
         }
 
@@ -319,31 +307,22 @@ namespace AvPurplePen.Views
         }
 
         /// <summary>
-        /// When a tree node is selected, enables the Choose Variations button
-        /// if the selected course has variations.
+        /// Per-row "Choose Variations" button click handler. The button's
+        /// DataContext is the <see cref="CourseSelectorNode"/> for that row,
+        /// which tells us which course to show the variations dialog for.
         /// </summary>
-        private void CourseTreeView_SelectionChanged(object? sender, SelectionChangedEventArgs e)
+        private void ChooseVariationsButton_Click(object? sender, RoutedEventArgs e)
         {
-            bool courseHasVariations = false;
-            if (courseTreeView.SelectedItem is CourseSelectorNode selectedNode) {
-                CourseDesignator courseDesignator = selectedNode.Tag;
-                if (courseDesignator.IsNotAllControls && eventDB != null) {
-                    courseHasVariations = QueryEvent.HasVariations(eventDB, courseDesignator.CourseId);
-                }
-            }
+            if (sender is not Button button || button.DataContext is not CourseSelectorNode node)
+                return;
 
-            buttonChooseVariations.IsEnabled = courseHasVariations;
-        }
+            CourseDesignator courseDesignator = node.Tag;
+            if (!courseDesignator.IsNotAllControls || eventDB == null)
+                return;
 
-        /// <summary>
-        /// Opens the SelectVariations dialog for the currently selected course.
-        /// </summary>
-        private void ButtonChooseVariations_Click(object? sender, RoutedEventArgs e)
-        {
 #if PORTING
             // TODO: Port SelectVariations dialog to Avalonia and show it here.
             // Original code:
-            //   CourseDesignator courseDesignator = selectedNode.Tag;
             //   SelectVariations variationsDialog = new SelectVariations(eventDB, courseDesignator.CourseId);
             //   if (variationChoicesPerCourse.TryGetValue(courseDesignator.CourseId, out VariationChoices variationChoices))
             //       variationsDialog.VariationChoices = variationChoices;

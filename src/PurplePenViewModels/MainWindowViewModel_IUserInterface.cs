@@ -67,17 +67,43 @@ namespace PurplePen.ViewModels
 
         public async Task<bool> OKCancelMessage(string message, bool okDefault)
         {
-            throw new NotImplementedException();
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = message,
+                Buttons = MessageBoxButtons.OkCancel,
+                DefaultButton = okDefault ? MessageBoxButton.Ok : MessageBoxButton.Cancel,
+                Icon = MessageBoxIcon.Question
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
+            return vm.ChosenButton == MessageBoxButton.Ok;
         }
 
         public async Task<YesNoCancel> YesNoCancelQuestion(string message, bool yesDefault)
         {
-            throw new NotImplementedException();
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = message,
+                Buttons = MessageBoxButtons.YesNoCancel,
+                DefaultButton = yesDefault ? MessageBoxButton.Yes : MessageBoxButton.No,
+                Icon = MessageBoxIcon.Question
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
+            if (vm.ChosenButton == MessageBoxButton.Yes)
+                return YesNoCancel.Yes;
+            else if (vm.ChosenButton == MessageBoxButton.No)
+                return YesNoCancel.No;
+            else
+                return YesNoCancel.Cancel;
         }
 
         public async Task<bool> YesNoQuestion(string message, bool yesDefault)
         {
-            throw new NotImplementedException();
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = message,
+                Buttons = MessageBoxButtons.YesNo,
+                DefaultButton = yesDefault ? MessageBoxButton.Yes : MessageBoxButton.No,
+                Icon = MessageBoxIcon.Question
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
+            return vm.ChosenButton == MessageBoxButton.Yes;
         }
 
         public async Task<YesNoCancel> MovingSharedControl(string controlCode, string otherCourses)

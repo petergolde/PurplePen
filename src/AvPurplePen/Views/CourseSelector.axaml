@@ -2,7 +2,8 @@
     CourseSelector.axaml
     Custom control that displays a tree of courses with checkboxes for
     selecting which courses (and optionally course parts) to include.
-    Includes All/None buttons and an optional Choose Variations button.
+    Includes All/None buttons. Courses with variations also get a per-row
+    "Choose Variations" button (only shown when ShowVariationChooser is true).
     Migrated from WinForms PurplePen/CourseSelector.cs.
 -->
 <UserControl xmlns="https://github.com/avaloniaui"
@@ -17,11 +18,11 @@
              x:Class="AvPurplePen.Views.CourseSelector">
 
     <DockPanel>
-        <!-- Bottom panel with All/None buttons and Choose Variations button.
+        <!-- Bottom panel with All/None buttons.
              Mirrors the WinForms TableLayoutPanel docked to Bottom. -->
         <Grid DockPanel.Dock="Bottom"
               ColumnDefinitions="*,*"
-              RowDefinitions="Auto,Auto">
+              RowDefinitions="Auto">
 
             <!-- All button -->
             <Button x:Name="selectAll"
@@ -42,18 +43,6 @@
                     HorizontalContentAlignment="Center"
                     Margin="2,2,2,2"
                     Click="SelectNone_Click"/>
-
-            <!-- Choose Variations button (spans both columns, hidden by default) -->
-            <Button x:Name="buttonChooseVariations"
-                    Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                    Classes="Small"
-                    Content="{resx:Localize CourseSelector_buttonChooseVariations_Text}"
-                    HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center"
-                    IsVisible="False"
-                    IsEnabled="False"
-                    Margin="0,0,0,2"
-                    Click="ButtonChooseVariations_Click"/>
         </Grid>
 
         <!-- Outer border provides the rounded-corner frame and clips the
@@ -64,7 +53,6 @@
                 CornerRadius="3"
                 ClipToBounds="True">
         <TreeView x:Name="courseTreeView"
-                  SelectionChanged="CourseTreeView_SelectionChanged"
                   Background="Transparent"
                   BorderThickness="0">
             <!-- Override the theme resource that controls TreeViewItem content
@@ -88,9 +76,28 @@
             <TreeView.ItemTemplate>
                 <TreeDataTemplate x:DataType="local:CourseSelectorNode"
                                   ItemsSource="{Binding Children}">
-                    <CheckBox Content="{Binding Name}"
-                              IsChecked="{Binding IsChecked, Mode=TwoWay}"
-                              Margin="0" Padding="4,0,0,0"/>
+                    <!-- Row layout: checkbox fills the row, with an optional
+                         "Choose Variations" button on the right for courses
+                         that have variations (only when ShowVariationChooser
+                         is true on the parent control). -->
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right"
+                                Theme="{DynamicResource BorderlessButton}"
+                                Classes="Small borderless"
+                                Content="{resx:Localize CourseSelector_buttonChooseVariations_Text}"
+                                FontWeight="Normal"
+                                FontSize="13"
+                                Height="20"
+                                MinHeight="0"
+                                Padding="6,0"
+                                IsVisible="{Binding IsVariationsButtonVisible}"
+                                Margin="4,0,0,0"
+                                Click="ChooseVariationsButton_Click"/>
+                        <CheckBox Content="{Binding Name}"
+                                  IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                  VerticalAlignment="Center"
+                                  Margin="0" Padding="4,0,0,0"/>
+                    </DockPanel>
                 </TreeDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>

@@ -43,6 +43,23 @@ namespace AvPurplePen
         public CourseSelectorNode? Parent { get; set; }
 
         /// <summary>
+        /// Whether this node has variations available. Set by the parent
+        /// control during <c>LoadList</c> based on <c>ShowVariationChooser</c>
+        /// and <c>QueryEvent.HasVariations</c>. Combined with
+        /// <see cref="IsChecked"/> via <see cref="IsVariationsButtonVisible"/>
+        /// to control the per-row button's visibility.
+        /// </summary>
+        public bool ShowVariationsButton { get; set; }
+
+        /// <summary>
+        /// Whether the per-row "Choose Variations" button is visible.
+        /// True only when this course supports variations AND its checkbox
+        /// is currently checked. Bound to the button's IsVisible in the
+        /// tree data template.
+        /// </summary>
+        public bool IsVariationsButtonVisible => ShowVariationsButton && IsChecked;
+
+        /// <summary>
         /// Whether this node's checkbox is checked. Setting this on a parent
         /// propagates to all children; setting on a child updates the parent.
         /// </summary>
@@ -56,6 +73,7 @@ namespace AvPurplePen
 
                 isChecked = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsChecked)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsVariationsButtonVisible)));
 
                 if (inUpdate)
                     return;

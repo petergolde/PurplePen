@@ -34,6 +34,11 @@ namespace PurplePen.ViewModels
         long changeNum = 0;         // When this changes, state information needs to be updated in the UI.
         bool updatingTabs = false;  // Guard to prevent re-entrant controller calls during UpdateTabs.
 
+        // Settings remembered across invocations of the Create OCAD Files dialog,
+        // so the user's last choices (folder, format, prefix, etc.) are preserved.
+        // Reset to null when a new map file is loaded.
+        private OcadCreationSettings? ocadCreationSettingsPrevious;
+
         [ObservableProperty]
         private MapDisplay? mapDisplay;
 
@@ -199,10 +204,10 @@ namespace PurplePen.ViewModels
                 mapViewer.ZoomFactor = 1.0F;   // used if the map bounds are empty, then this zoom factor is preserved.
                 ShowRectangle(mapDisplay.MapBounds);
 
-                // Reset the OCAD file creating settings dialog to default settings.
-                ocadCreationSettingsPrevious = null;
                 bitmapCreationSettingsPrevious = null;
 #endif
+                // Reset the OCAD file creating settings dialog to default settings.
+                ocadCreationSettingsPrevious = null;
             }
 
 #if PORTING

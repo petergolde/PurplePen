@@ -198,21 +198,23 @@
         </Style>
 
         <!-- Dialog button border (must target template part — Semi doesn't
-             use TemplateBinding for BorderBrush on the ContentPresenter) -->
-        <Style Selector="Window.dialog Button /template/ ContentPresenter#PART_ContentPresenter">
+             use TemplateBinding for BorderBrush on the ContentPresenter).
+             :not(.borderless) lets a Button opt out via Classes="borderless"
+             so the BorderlessButton ControlTheme can take effect. -->
+        <Style Selector="Window.dialog Button:not(.borderless) /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="BorderBrush" Value="{DynamicResource SemiGrey4}"/>
         </Style>
-        <Style Selector="Window.dialog Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Style Selector="Window.dialog Button:not(.borderless):pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="BorderBrush" Value="{DynamicResource SemiGrey5}"/>
         </Style>
-        <Style Selector="Window.dialog Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Style Selector="Window.dialog Button:not(.borderless):pressed /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="BorderBrush" Value="{DynamicResource SemiGrey5}"/>
         </Style>
-        <Style Selector="Window.dialog Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Style Selector="Window.dialog Button:not(.borderless):disabled /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="BorderBrush" Value="{DynamicResource SemiGrey2}"/>
         </Style>
         <!-- Default (Enter) button gets accent border, but not when disabled -->
-        <Style Selector="Window.dialog Button[IsDefault=True]:not(:disabled) /template/ ContentPresenter#PART_ContentPresenter">
+        <Style Selector="Window.dialog Button[IsDefault=True]:not(.borderless):not(:disabled) /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="BorderBrush" Value="{DynamicResource SemiColorFocusBorder}"/>
         </Style>
 
