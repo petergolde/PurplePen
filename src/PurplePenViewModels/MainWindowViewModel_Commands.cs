@@ -2046,13 +2046,10 @@ namespace PurplePen.ViewModels
 
                 List<string> overwritingFiles = controller.OverwritingPdfFiles(chosen);
                 if (overwritingFiles.Count > 0) {
-                    // TODO: Port WinForms OverwritingOcadFilesDialog. Same
-                    // fallback as the other Create… commands: a yes/no prompt
-                    // with the count.
-                    string question = string.Format(
-                        "{0} file(s) will be overwritten. Continue?",
-                        overwritingFiles.Count);
-                    if (!await YesNoQuestion(question, false))
+                    OverwritingFilesDialogViewModel overwriteVm = new OverwritingFilesDialogViewModel {
+                        Filenames = overwritingFiles,
+                    };
+                    if (!await Services.DialogService.ShowDialogAsync(overwriteVm))
                         continue;
                 }
 
@@ -2211,13 +2208,10 @@ namespace PurplePen.ViewModels
                 // Warn about files that will be overwritten.
                 List<string> overwritingFiles = controller.OverwritingOcadFiles(chosen);
                 if (overwritingFiles.Count > 0) {
-                    // TODO: Port WinForms OverwritingOcadFilesDialog to Avalonia. For now,
-                    // fall back to a simple yes/no prompt listing how many files would be
-                    // replaced. The dedicated dialog showed the file list.
-                    string question = string.Format(
-                        "{0} file(s) will be overwritten. Continue?",
-                        overwritingFiles.Count);
-                    if (!await YesNoQuestion(question, false))
+                    OverwritingFilesDialogViewModel overwriteVm = new OverwritingFilesDialogViewModel {
+                        Filenames = overwritingFiles,
+                    };
+                    if (!await Services.DialogService.ShowDialogAsync(overwriteVm))
                         continue;
                 }
 
@@ -2345,12 +2339,10 @@ namespace PurplePen.ViewModels
                 // Warn about files that will be overwritten.
                 List<string> overwritingFiles = controller.OverwritingBitmapFiles(chosen);
                 if (overwritingFiles.Count > 0) {
-                    // TODO: Port WinForms OverwritingOcadFilesDialog to Avalonia.
-                    // Same fallback as CreateOcadFiles: simple yes/no with the count.
-                    string question = string.Format(
-                        "{0} file(s) will be overwritten. Continue?",
-                        overwritingFiles.Count);
-                    if (!await YesNoQuestion(question, false))
+                    OverwritingFilesDialogViewModel overwriteVm = new OverwritingFilesDialogViewModel {
+                        Filenames = overwritingFiles,
+                    };
+                    if (!await Services.DialogService.ShowDialogAsync(overwriteVm))
                         continue;
                 }
 

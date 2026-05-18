@@ -1,0 +1,73 @@
+<!--
+    OverwritingFilesDialog.axaml
+
+    "Confirm Replace Files" dialog. Shown by the various Create… commands
+    (OCAD, Image, PDF, …) when one or more output files already exist:
+    displays the full list of paths and lets the user pick Replace or Cancel.
+
+    Migrated from WinForms PurplePen/OverwritingOcadFilesDialog.cs (renamed
+    here because it's used for many file kinds, not just OCAD). The shared
+    UIText keys still carry the "OverwritingOcadFilesDialog_" prefix.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.OverwritingFilesDialog"
+        Classes="dialog"
+        x:DataType="vm:OverwritingFilesDialogViewModel"
+        Title="{resx:Localize OverwritingOcadFilesDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="460" d:DesignHeight="320"
+        Width="460" Height="320"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:OverwritingFilesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Confirm / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="buttonOK"
+                    Content="{resx:Localize OverwritingOcadFilesDialog_buttonOK_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="buttonCancel"
+                    Content="{resx:Localize OverwritingOcadFilesDialog_buttonCancel_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- "The following files already exist…" -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="confirmReplaceLabel"
+                   Text="{resx:Localize OverwritingOcadFilesDialog_confirmReplaceLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Read-only list of files that would be overwritten. -->
+        <ListBox x:Name="listBoxFiles"
+                 ItemsSource="{Binding Filenames}">
+
+
+        </ListBox>
+
+    </DockPanel>
+</Window>

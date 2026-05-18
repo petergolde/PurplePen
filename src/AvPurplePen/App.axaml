@@ -34,6 +34,9 @@
         <!-- ComboBox dropdown item padding: default is "12 8" (horiz vert). -->
         <Thickness x:Key="ComboBoxItemDefaultPadding">12 4</Thickness>
 
+        <!-- ListBox item padding: default is "12 8" (horiz vert). -->
+        <Thickness x:Key="ListBoxItemDefaultPadding">8 2</Thickness> 
+
         <!-- Menu item text: full black -->
         <SolidColorBrush x:Key="MenuItemForeground" Color="Black"/>
         <!-- Menu and ComboBox item hover background: Blue5 at 25% opacity -->
@@ -72,6 +75,7 @@
         <x:Double x:Key="TabItemCardDefaultHeight">24</x:Double>
 
     </Application.Resources>
+
 
     <Application.Styles>
         <semi:SemiTheme Locale="en-US" />
