@@ -42,6 +42,9 @@ namespace PurplePen.ViewModels
         // Same idea for the Create Image Files dialog.
         private BitmapCreationSettings? bitmapCreationSettingsPrevious;
 
+        // Same idea for the Create PDF Files dialog.
+        private CoursePdfSettings? coursePdfSettings;
+
         [ObservableProperty]
         private MapDisplay? mapDisplay;
 

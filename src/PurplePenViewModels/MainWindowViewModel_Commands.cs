@@ -1950,7 +1950,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Create Course PDF command.
         /// </summary>
         [RelayCommand]
-        private void CreateCoursePdf()
+        private async Task CreateCoursePdf()
         {
 #if !PORTING
             if (! CheckForNonRenderableObjects(false, true))
@@ -2003,6 +2003,65 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             createPdfDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // TODO: Port the non-renderable-objects warning dialog. The WinForms
+            // version called CheckForNonRenderableObjects(false, true) which
+            // showed a NonPrintableObjects dialog letting the user cancel or
+            // continue.
+
+            bool isPdfMap = controller.MapType == MapType.PDF;
+
+            // Seed from previous settings or build defaults.
+            CoursePdfSettings settings;
+            if (coursePdfSettings != null) {
+                settings = coursePdfSettings.Clone();
+            }
+            else {
+                settings = new CoursePdfSettings {
+                    fileDirectory = true,
+                    mapDirectory = false,
+                    outputDirectory = System.IO.Path.GetDirectoryName(controller.FileName) ?? "",
+                };
+            }
+
+            if (isPdfMap) {
+                // PDF-backed maps must use that paper size with zero margins and
+                // crop courses to it; the dialog disables the multi-page combo.
+                settings.CropLargePrintArea = true;
+            }
+
+            CreatePdfCoursesDialogViewModel vm = new CreatePdfCoursesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                ShowMergeParts = controller.AnyMultipart(),
+                EnableChangeCropping = !isPdfMap,
+                Settings = settings,
+            };
+
+            // Show the dialog; on OK, create the PDFs. Loop lets the user bail
+            // out of the "overwrite?" prompt and tweak the dialog again.
+            while (await Services.DialogService.ShowDialogAsync(vm)) {
+                CoursePdfSettings chosen = vm.Settings;
+
+                List<string> overwritingFiles = controller.OverwritingPdfFiles(chosen);
+                if (overwritingFiles.Count > 0) {
+                    // TODO: Port WinForms OverwritingOcadFilesDialog. Same
+                    // fallback as the other Create… commands: a yes/no prompt
+                    // with the count.
+                    string question = string.Format(
+                        "{0} file(s) will be overwritten. Continue?",
+                        overwritingFiles.Count);
+                    if (!await YesNoQuestion(question, false))
+                        continue;
+                }
+
+                // Save the settings for the next invocation of the dialog.
+                coursePdfSettings = chosen;
+                controller.CreateCoursePdfs(chosen);
+
+                break;
+            }
 #endif
         }
 

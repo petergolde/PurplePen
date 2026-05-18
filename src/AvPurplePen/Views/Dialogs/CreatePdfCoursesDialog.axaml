@@ -1,0 +1,200 @@
+<!--
+    CreatePdfCoursesDialog.axaml
+
+    Dialog for exporting courses as PDF files. Layout is similar to the
+    CreateOcadFiles / CreateImageFiles dialogs: CourseSelector on the left,
+    an Appearance group (page handling, include base map, color model,
+    optional merge-parts checkbox), a Files group (file format combo +
+    filename prefix), and a Folder group (3 radio buttons + folder picker),
+    Create/Cancel buttons at the bottom.
+
+    Migrated from WinForms PurplePen/CreatePdfCourses.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CreatePdfCoursesDialog"
+        Classes="dialog"
+        x:DataType="vm:CreatePdfCoursesDialogViewModel"
+        Title="{resx:Localize CreatePdfCourses_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="640" d:DesignHeight="460"
+        Width="640" Height="460"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:CreatePdfCoursesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Create / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize CreatePdfCourses_okButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Two columns. Left = courses, right = appearance + files + folder. -->
+        <Grid ColumnDefinitions="*,12,*">
+
+            <!-- === Left column: Courses group === -->
+            <HeaderedContentControl Grid.Column="0"
+                                    Header="{resx:Localize CreatePdfCourses_coursesGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <views:CourseSelector x:Name="courseSelector"
+                                      EventDB="{Binding EventDB}"
+                                      ShowAllControls="True"
+                                      ShowCourseParts="False"
+                                      ShowVariationChooser="True"/>
+            </HeaderedContentControl>
+
+            <!-- === Right column: Appearance, Files, Folder === -->
+            <DockPanel Grid.Column="2">
+
+                <!-- Appearance group -->
+                <HeaderedContentControl DockPanel.Dock="Top"
+                                        Header="{resx:Localize CreatePdfCourses_groupBoxAppearance_Text}"
+                                        Padding="8"
+                                        Margin="0,0,0,8">
+                    <StackPanel Spacing="4">
+                        <!-- "If the print area is too large to fit on one page:" -->
+                        <TextBlock Text="{resx:Localize CreatePdfCourses_labelAppearanceInfo_Text}"
+                                   TextWrapping="Wrap"/>
+                        <ComboBox x:Name="comboBoxMultiPage"
+                                  HorizontalAlignment="Stretch"
+                                  IsEnabled="{Binding EnableChangeCropping}"
+                                  SelectedIndex="{Binding MultiPageIndex, Mode=TwoWay}">
+                            <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxMultiPage_Items}"/>
+                            <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxMultiPage_Items1}"/>
+                        </ComboBox>
+
+                        <!-- Include (base map or just course) / Color model. -->
+                        <Grid ColumnDefinitions="Auto,8,*"
+                              RowDefinitions="Auto,4,Auto"
+                              Margin="0,4,0,0">
+                            <TextBlock Grid.Row="0" Grid.Column="0"
+                                       Text="{resx:Localize CreatePdfCourses_labelPrintBaseMap_Text}"
+                                       VerticalAlignment="Center"/>
+                            <ComboBox x:Name="comboBoxPrintBaseMap"
+                                      Grid.Row="0" Grid.Column="2"
+                                      HorizontalAlignment="Stretch"
+                                      SelectedIndex="{Binding PrintBaseMapIndex, Mode=TwoWay}">
+                                <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxPrintBaseMap_Items}"/>
+                                <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxPrintBaseMap_Items1}"/>
+                            </ComboBox>
+
+                            <TextBlock Grid.Row="2" Grid.Column="0"
+                                       Text="{resx:Localize CreatePdfCourses_labelColorModel_Text}"
+                                       VerticalAlignment="Center"/>
+                            <ComboBox x:Name="comboBoxColorModel"
+                                      Grid.Row="2" Grid.Column="2"
+                                      HorizontalAlignment="Stretch"
+                                      SelectedIndex="{Binding ColorModelIndex, Mode=TwoWay}">
+                                <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxColorModel_Items}"/>
+                                <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxColorModel_Items1}"/>
+                            </ComboBox>
+                        </Grid>
+
+                        <!-- "Print Map Exchanges on Same Map" — only shown when
+                             the event has at least one multi-part course. -->
+                        <CheckBox x:Name="checkBoxMergeParts"
+                                  Content="{resx:Localize CreatePdfCourses_checkBoxMergeParts_Text}"
+                                  IsChecked="{Binding MergeParts, Mode=TwoWay}"
+                                  IsVisible="{Binding ShowMergeParts}"
+                                  Margin="0,4,0,0"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+
+                <!-- Files group (docked at top, content-height only) -->
+                <HeaderedContentControl DockPanel.Dock="Top"
+                                        Header="{resx:Localize CreatePdfCourses_outputGroupBox_Text}"
+                                        Padding="8"
+                                        Margin="0,0,0,8">
+                    <Grid ColumnDefinitions="Auto,8,*"
+                          RowDefinitions="Auto,4,Auto">
+
+                        <!-- "Files:" -->
+                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                   Text="{resx:Localize CreatePdfCourses_filesLabel_Text}"
+                                   VerticalAlignment="Center"/>
+                        <ComboBox x:Name="comboBoxFileFormat"
+                                  Grid.Row="0" Grid.Column="2"
+                                  HorizontalAlignment="Stretch"
+                                  SelectedIndex="{Binding FileFormatIndex, Mode=TwoWay}">
+                            <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxFileFormat_Items}"/>
+                            <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxFileFormat_Items1}"/>
+                            <ComboBoxItem Content="{resx:Localize CreatePdfCourses_comboBoxFileFormat_Items2}"/>
+                        </ComboBox>
+
+                        <!-- "File name prefix:" -->
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="{resx:Localize CreatePdfCourses_fileNamePrefixLabel_Text}"
+                                   VerticalAlignment="Center"/>
+                        <TextBox x:Name="filenamePrefixTextBox"
+                                 Grid.Row="2" Grid.Column="2"
+                                 Text="{Binding FilePrefix, Mode=TwoWay}"/>
+                    </Grid>
+                </HeaderedContentControl>
+
+                <!-- Folder group (last child — fills the remaining vertical
+                     space in this DockPanel, since DockPanel.LastChildFill
+                     is true by default). -->
+                <HeaderedContentControl Header="{resx:Localize CreatePdfCourses_folderGroupBox_Text}"
+                                        Padding="8">
+                    <StackPanel Spacing="4">
+                        <RadioButton x:Name="coursesDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreatePdfCourses_coursesDirectory_Text}"
+                                     IsChecked="{Binding UseFileDirectory, Mode=TwoWay}"/>
+                        <RadioButton x:Name="mapDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreatePdfCourses_mapDirectory_Text}"
+                                     IsChecked="{Binding UseMapDirectory, Mode=TwoWay}"/>
+                        <RadioButton x:Name="otherDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreatePdfCourses_otherDirectory_Text}"
+                                     IsChecked="{Binding UseOtherDirectory, Mode=TwoWay}"/>
+
+                        <!-- Other folder text box + Select folder button.
+                             Only visible when the "Other folder" radio is selected. -->
+                        <TextBox x:Name="otherDirectoryTextBox"
+                                 Text="{Binding OutputDirectory, Mode=TwoWay}"
+                                 IsVisible="{Binding IsOtherDirectoryVisible}"
+                                 Margin="20,4,0,0"/>
+                        <Button x:Name="selectOtherDirectoryButton"
+                                Classes="Small"
+                                Content="{resx:Localize CreatePdfCourses_selectOtherDirectoryButton_Text}"
+                                IsVisible="{Binding IsOtherDirectoryVisible}"
+                                HorizontalAlignment="Right"
+                                Click="SelectOtherDirectoryButton_Click"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+            </DockPanel>
+
+        </Grid>
+
+    </DockPanel>
+</Window>
