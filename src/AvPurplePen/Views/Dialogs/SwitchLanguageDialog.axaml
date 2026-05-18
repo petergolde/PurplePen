@@ -24,7 +24,7 @@
         CanResize="False"
         WindowStartupLocation="CenterOwner"
         ShowInTaskbar="False"
-        SystemDecorations="Full">
+        WindowDecorations="Full">
 
     <!-- Design-time preview data -->
     <Design.DataContext>

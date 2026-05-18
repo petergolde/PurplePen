@@ -296,7 +296,7 @@ namespace AvUtil
 
                         RectangleF destRect = new RectangleF(0, 0, pixelSize.Width, pixelSize.Height);
                         SKMatrix transformation = GeometryUtil.CreateRectangleTransform(Conv.ToSKRect(rectToDraw), Conv.ToSKRect(destRect));
-                        canvas.Concat(ref transformation);
+                        canvas.Concat(transformation);
 
                         drawing.ThreadsafeDraw(canvas,
                                                new SKRect((float)rectToDraw.Left, (float)rectToDraw.Top, (float)rectToDraw.Right, (float)rectToDraw.Bottom),

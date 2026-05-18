@@ -61,7 +61,7 @@
 
         <DataTemplate x:Key="TextBoxTemplate" x:DataType="vm:TextBoxGridItemViewModel">
             <TextBox Classes="popupTextBox" Text="{Binding InputText}"
-                     Watermark="{Binding PlaceholderText}"/>
+                     PlaceholderText="{Binding PlaceholderText}"/>
         </DataTemplate>
     </UserControl.Resources>
 

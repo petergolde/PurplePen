@@ -263,7 +263,7 @@ namespace PurplePen.MapModel
             ++pushLevel;
 
             SKMatrix mat = GetSkMatrix(matrix);
-            canvas.Concat(ref mat);
+            canvas.Concat(mat);
         }
 
         public void PopTransform()
@@ -468,11 +468,7 @@ namespace PurplePen.MapModel
             using (SKPaint paint = new SKPaint()) {
                 paint.Color = brushPaint.Color;
                 paint.Shader = brushPaint.Shader;
-                paint.TextSize = font.EmHeight;
-                paint.TextAlign = SKTextAlign.Left;
                 paint.IsAntialias = antiAlias;
-                paint.LcdRenderText = false;
-                paint.SubpixelText = false;
 
                 // paint.UnderlineText = font.Underline;  // TODO: Underline not yet supported.
                 font.EnhancedTypeface.DrawText(canvas, text, new SKPoint(upperLeft.X, upperLeft.Y), font.EmHeight, paint);
@@ -486,8 +482,6 @@ namespace PurplePen.MapModel
             SKPaint penPaint = GetPenPaint(penKey);
             
             using (SKPaint paint = new SKPaint()) {
-                paint.TextSize = font.EmHeight;
-                paint.TextAlign = SKTextAlign.Left;
                 paint.IsAntialias = antiAlias;
                 paint.IsStroke = true;
                 paint.Color = penPaint.Color;
@@ -511,15 +505,15 @@ namespace PurplePen.MapModel
         public void DrawBitmapPart(IGraphicsBitmap bm, int x, int y, int width, int height, RectangleF rectangle, BitmapScaling scalingMode)
         {
             using (SKPaint paint = new SKPaint()) {
-                SKFilterQuality filterQuality;
+                SKSamplingOptions samplingOptions;
                 switch (scalingMode) {
                     default:
-                    case BitmapScaling.NearestNeighbor: filterQuality = SKFilterQuality.None; break;
-                    case BitmapScaling.MediumQuality: filterQuality = SKFilterQuality.Medium; break;
-                    case BitmapScaling.HighQuality: filterQuality = SKFilterQuality.High; break;
+                    case BitmapScaling.NearestNeighbor: samplingOptions = new SKSamplingOptions(SKFilterMode.Nearest); break;
+                    case BitmapScaling.MediumQuality: samplingOptions = new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Nearest); break;
+                    case BitmapScaling.HighQuality: samplingOptions = new SKSamplingOptions(new SKCubicResampler(1 / 3.0f, 1 / 3.0f)); break;
                 }
-                paint.FilterQuality = filterQuality;
                 paint.IsAntialias = true;
+
 
                 if (intensity < 1.0F) {
                     paint.ColorFilter = SKColorFilter.CreateLighting((SKColor) new SKColorF(intensity, intensity, intensity), (SKColor) new SKColorF(1.0F - intensity, 1.0F - intensity, 1.0F - intensity));
@@ -527,15 +521,18 @@ namespace PurplePen.MapModel
 
                 if (bm is Skia_Image) {
                     SKImage image = ((Skia_Image)bm).Image;
-                    canvas.DrawImage(image, GetSKRect(new RectangleF(x, y, width, height)), GetSKRect(rectangle), paint);
+                    canvas.DrawImage(image, GetSKRect(new RectangleF(x, y, width, height)), GetSKRect(rectangle), samplingOptions, paint);
                 }
                 else if (bm is Skia_Bitmap) {
+                    // Canvas.DrawBitmap doesn't support sampling options, so we have to create an SKImage to draw with sampling options.
                     SKBitmap bitmap = ((Skia_Bitmap)bm).Bitmap;
-                    canvas.DrawBitmap(bitmap, GetSKRect(new RectangleF(x, y, width, height)), GetSKRect(rectangle), paint);
+                    using (SKImage image = SKImage.FromBitmap(bitmap)) {
+                        canvas.DrawImage(image, GetSKRect(new RectangleF(x, y, width, height)), GetSKRect(rectangle), samplingOptions, paint);
+                    }
                 }
                 else if (bm is Skia_Pixmap) {
                     using (SKImage image = SKImage.FromPixels(((Skia_Pixmap)bm).Pixmap)) {
-                        canvas.DrawImage(image, GetSKRect(new RectangleF(x, y, width, height)), GetSKRect(rectangle), paint);
+                        canvas.DrawImage(image, GetSKRect(new RectangleF(x, y, width, height)), GetSKRect(rectangle), samplingOptions, paint);
                     }
                 }
                 else {
@@ -695,16 +692,16 @@ namespace PurplePen.MapModel
                 transform.Scale(size.Width / (float)bitmap.Width, size.Height / (float)bitmap.Height);
                 transform.Translate(-bitmap.Width / 2F, -bitmap.Height / 2F);
 
-                // Create an SKShader around this texture.
-                using (SKShader shader = SKShader.CreateBitmap(bitmap, SKShaderTileMode.Repeat, SKShaderTileMode.Repeat, GetSkMatrix(transform))) {
-                    // Create an SKPaint with that shader.
-                    SKPaint paint = new SKPaint();
-                    paint.Shader = shader;
-                    paint.IsAntialias = true;
-                    paint.FilterQuality = SKFilterQuality.High;
+                // Create an SKShader around this texture, using high quality sampling.
+                SKImage image = SKImage.FromBitmap(bitmap);
+                SKShader shader = SKShader.CreateImage(image, SKShaderTileMode.Repeat, SKShaderTileMode.Repeat, new SKSamplingOptions(new SKCubicResampler(1 / 3.0f, 1 / 3.0f)), GetSkMatrix(transform));
 
-                    owningTarget.brushMap.Add(brushKey, paint);
-                }
+                // Create an SKPaint with that shader.
+                SKPaint paint = new SKPaint();
+                paint.Shader = shader;
+                paint.IsAntialias = true;
+
+                owningTarget.brushMap.Add(brushKey, paint);
             }
         }
 
@@ -818,14 +815,10 @@ namespace PurplePen.MapModel
             get
             {
                 if (capHeight < 0) {
-                    using (SKPaint paint = new SKPaint()) {
-                        paint.IsAntialias = true;
-                        paint.Typeface = shapedTypeface.Typeface;
-                        paint.TextSize = emHeight * 100;
-                        using (SKPath path = paint.GetTextPath("W", 0, 0)) {
-                            SKRect rect = path.TightBounds;
-                            capHeight = rect.Height / 100F;
-                        }
+                    using (SKFont font = new SKFont(shapedTypeface.Typeface, emHeight * 100))
+                    using (SKPath path = font.GetTextPath("W")) {
+                        SKRect rect = path.TightBounds;
+                        capHeight = rect.Height / 100F;
                     }
                 }
 
@@ -904,11 +897,8 @@ namespace PurplePen.MapModel
         void LoadFontMetrics()
         {
             if (!fontMetricsObtained) {
-                using (SKPaint paint = new SKPaint()) {
-                    paint.IsAntialias = true;
-                    paint.Typeface = shapedTypeface.Typeface;
-                    paint.TextSize = emHeight;
-                    fontMetrics = paint.FontMetrics;
+                using (SKFont font = new SKFont(shapedTypeface.Typeface, emHeight)) {
+                    fontMetrics = font.Metrics;
                 }
 
                 fontMetricsObtained = true;
@@ -999,7 +989,7 @@ namespace PurplePen.MapModel
                 canvas.ClipPath(clipPath);
 
             SKMatrix matrix = Skia_GraphicsTarget.GetSkMatrix(transform);
-            canvas.Concat(ref matrix);
+            canvas.Concat(matrix);
 
             if (initialColor != null) {
                 colorConverter = colorConverter ?? new SkiaColorConverter();

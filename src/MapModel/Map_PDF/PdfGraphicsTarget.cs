@@ -512,12 +512,7 @@ namespace PurplePen.MapModel
         {
             // 1. Iterate of the path of the text.
             using (SKFont font = new SKFont(typeFace, fontSize))
-            using (SKPaint paint = new SKPaint {
-                        Typeface = typeFace,
-                        TextSize = fontSize,
-                        IsAntialias = true
-                    })
-            using (SKPath skPath = paint.GetTextPath(text, x, y))
+            using (SKPath skPath = font.GetTextPath(text, new SKPoint(x, y)))
             using (SKPath.Iterator iterator = skPath.CreateIterator(false)) {
 
                 // 3. Map each SKPath verb to the corresponding PDF path command.

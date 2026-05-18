@@ -24,8 +24,8 @@
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageVersion Include="NUnit" Version="3.14.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.6.0" />
-    <PackageVersion Include="SkiaSharp" Version="2.88.9" />
-    <PackageVersion Include="SkiaSharp.HarfBuzz" Version="2.88.9" />
+    <PackageVersion Include="SkiaSharp" Version="3.119.4-preview.1.1" />
+    <PackageVersion Include="SkiaSharp.HarfBuzz" Version="3.119.2" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7463" />
     <PackageVersion Include="System.Drawing.Primitives" Version="4.3.0" />
     <PackageVersion Include="System.Drawing.Common" Version="10.0.2" />
@@ -33,18 +33,13 @@
     <PackageVersion Include="System.Text.Encoding.CodePages" Version="10.0.2" />
     <PackageVersion Include="PDFiumCore" Version="134.0.6982" />
     <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.3" />
-    
-    <PackageVersion Include="Avalonia" Version="11.3.11" />
-    <PackageVersion Include="Avalonia.Desktop" Version="11.3.11" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.3.11" />
-    <PackageVersion Include="Avalonia.Fonts.Inter" Version="11.3.11" />
-    <PackageVersion Include="Avalonia.Diagnostics" Version="11.3.11" />
+    <PackageVersion Include="Avalonia" Version="12.0.3" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.0.3" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.0.3" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.0.3" />
     <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.1" />
-    
-    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-
-    <PackageVersion Include="Semi.Avalonia" Version="11.3.7" />
-
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageVersion Include="Semi.Avalonia" Version="12.0.1" />
     <!-- 
     Do not upgrade ImageSharp past 2.1.3! Later versions have a stricter license. We want the Apache 2.0 license. 
     There are security vulnerabilities in ImageSharp, but only if you are decoding untrusted images. We assuming people 
