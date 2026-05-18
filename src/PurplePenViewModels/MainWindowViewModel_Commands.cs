@@ -13,6 +13,7 @@ namespace PurplePen.ViewModels
 {
     public partial class MainWindowViewModel
     {
+        #region Update Status of Menu/Toolbar items
         // Update the state of menu items and toolbar buttons, which are
         // typically observable properties.
         private void UpdateMenusToolbarButtons()
@@ -120,6 +121,51 @@ namespace PurplePen.ViewModels
 
             return Math.Abs(MapDisplay.MapIntensity / intensityLabel - 1.0F) < 0.01F;
         }
+        #endregion Update status of menu/toolbar items
+
+        #region Command helpers
+
+        // Warn user about non-renderable objects. Return false if shouldn't continue
+        private async Task<bool> CheckForNonRenderableObjects(bool onlyOnce, bool showCancelAndContinue)
+        {
+#if !PORTING
+            // Check for objects that aren't renderable, and warn. If user choses cancel, then cancel.
+            string[] nonRenderableObjects = controller.NonrenderableObjects(onlyOnce);
+
+            if (nonRenderableObjects != null && nonRenderableObjects.Length > 0) {
+                NonPrintableObjects dialog = new NonPrintableObjects(showCancelAndContinue);
+                dialog.MapName = Path.GetFileName(controller.MapFileName);
+                dialog.BadObjectList = nonRenderableObjects;
+
+                DialogResult result = dialog.ShowDialog();
+
+                if (result == DialogResult.Cancel)
+                    return false;
+            }
+
+            return true;
+#else
+            if (controller == null) { return true; }
+
+            string[]? nonRenderableObjects = controller.NonrenderableObjects(onlyOnce);
+            if (nonRenderableObjects == null || nonRenderableObjects.Length == 0)
+                return true;
+
+            NonPrintableObjectsDialogViewModel vm = new NonPrintableObjectsDialogViewModel {
+                MapName = System.IO.Path.GetFileName(controller.MapFileName) ?? "",
+                BadObjects = nonRenderableObjects,
+                ShowCancelButton = showCancelAndContinue,
+            };
+
+            // Returns true (Continue) or false (Cancel). In notification mode
+            // (showCancelAndContinue=false) only Continue is shown, so the
+            // result is always true, but we still respect it for symmetry.
+            return await Services.DialogService.ShowDialogAsync(vm);
+#endif
+        }
+
+
+        #endregion
 
         #region File commands
 
@@ -2006,10 +2052,8 @@ namespace PurplePen.ViewModels
 #else
             if (controller == null) { return; }
 
-            // TODO: Port the non-renderable-objects warning dialog. The WinForms
-            // version called CheckForNonRenderableObjects(false, true) which
-            // showed a NonPrintableObjects dialog letting the user cancel or
-            // continue.
+            if (! await CheckForNonRenderableObjects(false, true))
+                return;
 
             bool isPdfMap = controller.MapType == MapType.PDF;
 

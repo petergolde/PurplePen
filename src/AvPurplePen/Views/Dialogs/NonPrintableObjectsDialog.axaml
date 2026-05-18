@@ -1,0 +1,87 @@
+<!--
+    NonPrintableObjectsDialog.axaml
+
+    Warning dialog shown when the current map contains objects or symbols
+    Purple Pen can't fully render. Top: warning glyph + explanatory text
+    with the map filename. Middle: sorted list of the offending objects.
+    Bottom: Continue / Cancel buttons (Cancel is hidden in notification mode).
+
+    Migrated from WinForms PurplePen/NonPrintableObjects.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.NonPrintableObjectsDialog"
+        Classes="dialog"
+        x:DataType="vm:NonPrintableObjectsDialogViewModel"
+        Title="{resx:Localize NonPrintableObjects_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="500" d:DesignHeight="380"
+        Width="500" Height="380"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:NonPrintableObjectsDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Continue / Cancel buttons at the bottom. Cancel is hidden when
+             the dialog is shown as a notification (no choice to bail). -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize NonPrintableObjects_okButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize NonPrintableObjects_cancelButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    IsVisible="{Binding ShowCancelButton}"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Top: warning glyph + explanatory text with the map name -->
+        <Grid DockPanel.Dock="Top"
+              ColumnDefinitions="Auto,12,*"
+              Margin="0,0,0,8">
+            <!-- Unicode warning sign in amber, larger than body text. -->
+            <TextBlock Grid.Column="0"
+                       Text="&#x26A0;"
+                       FontSize="32"
+                       Foreground="#E0A030"
+                       VerticalAlignment="Top"/>
+            <!-- "Map file "{0}" contains objects or symbols ..." — the format
+                 string lives in UIText so the View handles localization. -->
+            <TextBlock Grid.Column="2"
+                       x:Name="labelWarning"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top">
+                <TextBlock.Text>
+                    <Binding Path="MapName"
+                             StringFormat="{x:Static resx:UIText.NonPrintableObjects_labelWarning_Text}"/>
+                </TextBlock.Text>
+            </TextBlock>
+        </Grid>
+
+        <!-- Sorted, read-only list of the offending objects (fills middle). -->
+        <ListBox x:Name="listBoxBadObjects"
+                 ItemsSource="{Binding BadObjects}"/>
+
+    </DockPanel>
+</Window>
