@@ -218,7 +218,9 @@ namespace PurplePen
         public const int DefaultEnglighPaperSizeIndex = 10;
         public const int DefaultMetricPaperSizeindex = 2;
 
-        public const int DefaultEnglishMarginInHundreths = 25;  // 1/4 of a inch.
-        public const int DefaultMetricMarginInHundreths = 28; // 7mm
+        public const int DefaultMapEnglishMarginInHundreths = 25;  // 1/4 of a inch.
+        public const int DefaultMapMetricMarginInHundreths = 28; // 7mm
+        public const int DefaultDescriptionsEnglishMarginInHundreths = 50;  // 1/2 of a inch.
+        public const int DefaultDescriptionsMetricMarginInHundreths = 47; // 12mm
     }
 }

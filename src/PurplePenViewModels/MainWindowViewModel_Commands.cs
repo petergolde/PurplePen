@@ -1856,7 +1856,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Create Description PDF command.
         /// </summary>
         [RelayCommand]
-        private void CreateDescriptionPdf()
+        private async Task CreateDescriptionPdf()
         {
 #if !PORTING
             // Initialize dialog
@@ -1885,8 +1885,71 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             printDescDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Seed from previous settings or build defaults. The printer
+            // isn't shown in PDF mode but we still pass one through (empty)
+            // so the dialog's ViewModel has a non-null Printer; only the
+            // paper-size-with-margins is meaningful here.
+            DescriptionPrintSettings settings = descPrintSettings ?? new DescriptionPrintSettings();
+            PrinterNameAndSettings printer = descPrinter ?? new PrinterNameAndSettings();
+            PrintingPaperSizeWithMargins paperSizeWithMargins =
+                descPaperSizeWithMargins ?? BuildDefaultPaperSizeWithMargins();
+
+            PrintDescriptionsDialogViewModel vm = new PrintDescriptionsDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                IsPdfCreation = true,
+                Printer = printer,
+                PaperSizeWithMargins = paperSizeWithMargins,
+                Settings = settings,
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(vm))
+                return;
+
+            // Ask where to save. The file-save picker is hosted by
+            // DialogService via FileSaveViewModel's special case.
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                FileFilters = MiscText.PdfFilter,
+                FileFilterIndex = 1,
+                DefaultExtension = "pdf",
+                ShowOverwritePrompt = true,
+                InitialDirectory = System.IO.Path.GetDirectoryName(controller.FileName),
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(saveVm))
+                return;
+            if (saveVm.SelectedFile == null)
+                return;
+
+            // Persist the user's choices for next time, then create the PDF.
+            descPrintSettings = vm.Settings;
+            descPrinter = vm.Printer;
+            descPaperSizeWithMargins = vm.PaperSizeWithMargins;
+
+            controller.CreateDescriptionsPdf(descPrintSettings,
+                                             descPaperSizeWithMargins,
+                                             saveVm.SelectedFile);
 #endif
         }
+
+#if PORTING
+        // Builds a default PrintingPaperSizeWithMargins (Letter + 0.25" margins
+        // on US English, A4 + 7mm margins on metric). Used to seed the PDF
+        // description dialog the first time it's opened, before the user has
+        // picked anything via Change Margins.
+        private static PrintingPaperSizeWithMargins BuildDefaultPaperSizeWithMargins()
+        {
+            bool metric = Util.IsCurrentCultureMetric();
+            PrintingPaperSize paperSize = PrintingStandards.StandardPaperSizes[
+                metric ? PrintingStandards.DefaultMetricPaperSizeindex
+                       : PrintingStandards.DefaultEnglighPaperSizeIndex];
+            int margin = metric ? PrintingStandards.DefaultDescriptionsMetricMarginInHundreths
+                                : PrintingStandards.DefaultDescriptionsEnglishMarginInHundreths;
+            return new PrintingPaperSizeWithMargins(paperSize, new PrintingMarginSize(margin));
+        }
+#endif
 
         /// <summary>
         /// Executes the File/Print Punch Cards command.

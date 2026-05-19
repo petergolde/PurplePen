@@ -69,7 +69,7 @@ namespace PurplePen
                 pageHeight = (int) Math.Round(PrintingStandards.StandardPaperSizes[bestIndex].SizeInHundreths.Height);
 
                 // Use the default margin if it can fit, otherwise 0 margin.
-                int defaultMargin = metric ? PrintingStandards.DefaultMetricMarginInHundreths : PrintingStandards.DefaultEnglishMarginInHundreths;
+                int defaultMargin = metric ? PrintingStandards.DefaultMapMetricMarginInHundreths : PrintingStandards.DefaultMapEnglishMarginInHundreths;
                 if (pageWidth - printAreaWidth > defaultMargin * 2 &&
                     pageHeight - printAreaHeight > defaultMargin * 2) {
                     pageMargin = defaultMargin;

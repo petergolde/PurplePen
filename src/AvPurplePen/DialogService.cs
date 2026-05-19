@@ -53,6 +53,11 @@ namespace AvPurplePen
                 return await ShowFileOpenSingleAsync(fileOpenVm);
             }
 
+            // Same pattern for file-save: use the platform save picker.
+            if (viewModel is FileSaveViewModel fileSaveVm) {
+                return await ShowFileSaveAsync(fileSaveVm);
+            }
+
             // ShowDialog<bool?> picks up whatever the View passes to
             // Window.Close(object dialogResult). ShowOwnedDialog can't deliver
             // that bool (its Task is non-generic) so we use ShowDialog directly
@@ -230,6 +235,65 @@ namespace AvPurplePen
 
             viewModel.SelectedFile = null;
             return false;
+        }
+
+        /// <summary>
+        /// Shows the platform file-save dialog. Translates
+        /// <see cref="FileSaveViewModel"/> options into Avalonia's
+        /// <see cref="FilePickerSaveOptions"/>, then uses
+        /// <see cref="IStorageProvider.SaveFilePickerWithResultAsync"/> so we
+        /// can report back which filter the user committed under (the
+        /// regular <c>SaveFilePickerAsync</c> doesn't expose that).
+        /// </summary>
+        private async Task<bool> ShowFileSaveAsync(FileSaveViewModel viewModel)
+        {
+            IStorageProvider storage = ownerWindow.StorageProvider;
+
+            // Accept either ".ppen" or "ppen" from the caller — Avalonia
+            // expects the bare extension without a leading dot.
+            string defaultExtension = viewModel.DefaultExtension ?? "";
+            if (defaultExtension.StartsWith('.'))
+                defaultExtension = defaultExtension.Substring(1);
+
+            List<FilePickerFileType> fileTypes = ParseFileFilters(viewModel.FileFilters);
+
+            FilePickerSaveOptions options = new FilePickerSaveOptions {
+                Title = viewModel.Title,
+                FileTypeChoices = fileTypes,
+                DefaultExtension = defaultExtension,
+                ShowOverwritePrompt = viewModel.ShowOverwritePrompt,
+            };
+
+            // Note: Avalonia's FilePickerSaveOptions doesn't have an
+            // "initially active filter" property — the platform picks the
+            // initial filter based on DefaultExtension. We respect the
+            // user's chosen filter on the way out and write the new index
+            // back to FileFilterIndex below.
+
+            if (viewModel.InitialDirectory != null) {
+                options.SuggestedStartLocation = await storage.TryGetFolderFromPathAsync(viewModel.InitialDirectory);
+            }
+
+            SaveFilePickerResult result = await storage.SaveFilePickerWithResultAsync(options);
+
+            if (result.File == null) {
+                viewModel.SelectedFile = null;
+                return false;
+            }
+
+            viewModel.SelectedFile = result.File.Path.LocalPath;
+
+            // Write back which filter the user committed under. Match by
+            // reference — the same FilePickerFileType instances we passed in
+            // are what come back. Fall back to leaving FileFilterIndex
+            // unchanged if Avalonia returned a different instance.
+            if (result.SelectedFileType != null) {
+                int chosenIndex = fileTypes.IndexOf(result.SelectedFileType);
+                if (chosenIndex >= 0)
+                    viewModel.FileFilterIndex = chosenIndex + 1;
+            }
+
+            return true;
         }
 
         /// <summary>

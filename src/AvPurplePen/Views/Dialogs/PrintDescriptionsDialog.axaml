@@ -5,10 +5,11 @@
     when IsPdfCreation is true — the Printer row is hidden, the OK button
     reads "Create PDF", and the window title changes).
 
-    Layout follows the WinForms dialog: Courses on the left, then a Printer
-    row (printer name + Change Printer button), Output panel (paper size,
-    orientation, margins, Change Margins button), Copies group, Appearance
-    group, and Preview / Print / Cancel buttons at the bottom.
+    Layout:
+      * Output group (printer + paper + margins) at the top, full width.
+      * Below it, two columns: Courses on the left, Copies + Appearance
+        stacked on the right.
+      * Preview / Print / Cancel buttons at the bottom.
 
     The Change Printer / Change Margins / Preview buttons are wired but not
     yet implemented — clicking them is a no-op for now.
@@ -87,7 +88,67 @@
                     Click="CancelButton_Click"/>
         </Grid>
 
-        <!-- Two columns: Courses on the left, settings on the right. -->
+        <!-- Output group at the top, full width: printer (conditional) +
+             paper size + orientation + margins + Change Margins button. -->
+        <HeaderedContentControl DockPanel.Dock="Top"
+                                Header="{resx:Localize PrintDescriptions_printerGroup_Text}"
+                                Padding="8"
+                                Margin="0,0,0,8">
+            <Grid ColumnDefinitions="Auto,8,*,8,Auto"
+                  RowDefinitions="Auto,4,Auto,4,Auto,4,Auto">
+
+                <!-- Row 0: Printer (hidden in PDF mode) -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize PrintDescriptions_printerLabel_Text}"
+                           VerticalAlignment="Center"
+                           IsVisible="{Binding IsPrinterVisible}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                           Text="{Binding PrinterNameDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"
+                           IsVisible="{Binding IsPrinterVisible}"/>
+                <Button x:Name="printerChange"
+                        Grid.Row="0" Grid.Column="4"
+                        Classes="Small"
+                        Content="{resx:Localize PrintDescriptions_printerChange_Text}"
+                        IsVisible="{Binding IsPrinterVisible}"
+                        Click="PrinterChange_Click"/>
+
+                <!-- Row 2: Paper size -->
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="{resx:Localize PrintDescriptions_paperSizeLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="2"
+                           Text="{Binding PaperSizeDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"/>
+
+                <!-- Row 4: Orientation -->
+                <TextBlock Grid.Row="4" Grid.Column="0"
+                           Text="{resx:Localize PrintDescriptions_orientationLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="4" Grid.Column="2"
+                           Text="{Binding OrientationDisplay}"
+                           VerticalAlignment="Center"/>
+
+                <!-- Row 6: Margins + Change Margins button -->
+                <TextBlock Grid.Row="6" Grid.Column="0"
+                           Text="{resx:Localize PrintDescriptions_marginsLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="6" Grid.Column="2"
+                           Text="{Binding MarginsDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"/>
+                <Button x:Name="marginChange"
+                        Grid.Row="6" Grid.Column="4"
+                        Classes="Small"
+                        Content="{resx:Localize PrintDescriptions_marginChange_Text}"
+                        Click="MarginChange_Click"/>
+            </Grid>
+        </HeaderedContentControl>
+
+        <!-- Two columns below the Output group: Courses on the left,
+             Copies + Appearance stacked on the right. -->
         <Grid ColumnDefinitions="*,12,*">
 
             <!-- === Left: Courses === -->
@@ -101,70 +162,14 @@
                                       ShowVariationChooser="True"/>
             </HeaderedContentControl>
 
-            <!-- === Right: Printer (top), Output (middle), Copies + Appearance (bottom) === -->
+            <!-- === Right: Copies + Appearance === -->
             <StackPanel Grid.Column="2" Spacing="8">
 
-                <!-- Printer + Output group (uses the "printerGroup" label as
-                     header). Holds the printer row (conditionally visible)
-                     plus paper/orientation/margins display + Change Margins. -->
-                <HeaderedContentControl Header="{resx:Localize PrintDescriptions_printerGroup_Text}"
-                                        Padding="8">
-                    <Grid ColumnDefinitions="Auto,8,*,8,Auto"
-                          RowDefinitions="Auto,4,Auto,4,Auto,4,Auto,4,Auto">
-
-                        <!-- Row 0: Printer (hidden in PDF mode) -->
-                        <TextBlock Grid.Row="0" Grid.Column="0"
-                                   Text="{resx:Localize PrintDescriptions_printerLabel_Text}"
-                                   VerticalAlignment="Center"
-                                   IsVisible="{Binding IsPrinterVisible}"/>
-                        <TextBlock Grid.Row="0" Grid.Column="2"
-                                   Text="{Binding PrinterNameDisplay}"
-                                   VerticalAlignment="Center"
-                                   TextTrimming="CharacterEllipsis"
-                                   IsVisible="{Binding IsPrinterVisible}"/>
-                        <Button x:Name="printerChange"
-                                Grid.Row="0" Grid.Column="4"
-                                Classes="Small"
-                                Content="{resx:Localize PrintDescriptions_printerChange_Text}"
-                                IsVisible="{Binding IsPrinterVisible}"
-                                Click="PrinterChange_Click"/>
-
-                        <!-- Row 2: Paper size -->
-                        <TextBlock Grid.Row="2" Grid.Column="0"
-                                   Text="{resx:Localize PrintDescriptions_paperSizeLabel_Text}"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="2" Grid.Column="2"
-                                   Text="{Binding PaperSizeDisplay}"
-                                   VerticalAlignment="Center"
-                                   TextTrimming="CharacterEllipsis"/>
-
-                        <!-- Row 4: Orientation -->
-                        <TextBlock Grid.Row="4" Grid.Column="0"
-                                   Text="{resx:Localize PrintDescriptions_orientationLabel_Text}"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="4" Grid.Column="2"
-                                   Text="{Binding OrientationDisplay}"
-                                   VerticalAlignment="Center"/>
-
-                        <!-- Row 6: Margins -->
-                        <TextBlock Grid.Row="6" Grid.Column="0"
-                                   Text="{resx:Localize PrintDescriptions_marginsLabel_Text}"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="6" Grid.Column="2"
-                                   Text="{Binding MarginsDisplay}"
-                                   VerticalAlignment="Center"
-                                   TextTrimming="CharacterEllipsis"/>
-                        <Button x:Name="marginChange"
-                                Grid.Row="6" Grid.Column="4"
-                                Classes="Small"
-                                Content="{resx:Localize PrintDescriptions_marginChange_Text}"
-                                Click="MarginChange_Click"/>
-                    </Grid>
-                </HeaderedContentControl>
-
-                <!-- Copies group -->
+                <!-- Copies group: "Print:" + combo, then below it (still in
+                     this right column) the per-course description count
+                     NumericUpDown + label. -->
                 <HeaderedContentControl Header="{resx:Localize PrintDescriptions_copiesGroupBox_Text}"
-                                        Padding="8">
+                                        Padding="8,10,8,8">
                     <Grid ColumnDefinitions="Auto,8,*"
                           RowDefinitions="Auto,4,Auto">
 
@@ -181,27 +186,32 @@
                             <ComboBoxItem Content="{resx:Localize PrintDescriptions_copiesCombo_Items2}"/>
                         </ComboBox>
 
-                        <!-- description count NumericUpDown + "descriptions per course" -->
-                        <NumericUpDown x:Name="descriptionsUpDown"
-                                       Grid.Row="2" Grid.Column="0"
-                                       Width="100"
-                                       Minimum="1"
-                                       Maximum="999"
-                                       FormatString="0"
-                                       Value="{Binding DescriptionCount, Mode=TwoWay}"
+                        <!-- Below the combo, a compact NumericUpDown sitting
+                             flush against the "descriptions per course"
+                             label. Spans the row so the StackPanel can
+                             shrink-wrap its content. -->
+                        <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1"
+                                    Orientation="Horizontal"
+                                    Spacing="6">
+                            <NumericUpDown x:Name="descriptionsUpDown"
+                                           Width="70"
+                                           Minimum="1"
+                                           Maximum="999"
+                                           FormatString="0"
+                                           Value="{Binding DescriptionCount, Mode=TwoWay}"
+                                           IsEnabled="{Binding IsDescriptionCountEnabled}"/>
+                            <TextBlock x:Name="descriptionsLabel"
+                                       Text="{resx:Localize PrintDescriptions_descriptionsLabel_Text}"
+                                       VerticalAlignment="Center"
                                        IsEnabled="{Binding IsDescriptionCountEnabled}"/>
-                        <TextBlock x:Name="descriptionsLabel"
-                                   Grid.Row="2" Grid.Column="2"
-                                   Text="{resx:Localize PrintDescriptions_descriptionsLabel_Text}"
-                                   VerticalAlignment="Center"
-                                   IsEnabled="{Binding IsDescriptionCountEnabled}"/>
+                        </StackPanel>
                     </Grid>
                 </HeaderedContentControl>
 
                 <!-- Appearance group (described as "layoutGroup" in WinForms) -->
                 <HeaderedContentControl Header="{resx:Localize PrintDescriptions_layoutGroup_Text}"
-                                        Padding="8">
-                    <Grid ColumnDefinitions="Auto,8,*,4,Auto"
+                                        Padding="8,10,8,8">
+                    <Grid ColumnDefinitions="Auto,8,*"
                           RowDefinitions="Auto,4,Auto">
 
                         <!-- Description type + combo -->
@@ -209,7 +219,7 @@
                                    Text="{resx:Localize PrintDescriptions_descriptionTypeLabel_Text}"
                                    VerticalAlignment="Center"/>
                         <ComboBox x:Name="descriptionKindCombo"
-                                  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3"
+                                  Grid.Row="0" Grid.Column="2"
                                   HorizontalAlignment="Stretch"
                                   SelectedIndex="{Binding DescriptionKindIndex, Mode=TwoWay}">
                             <ComboBoxItem Content="{resx:Localize PrintDescriptions_descriptionKindCombo_Items}"/>
@@ -218,22 +228,26 @@
                             <ComboBoxItem Content="{resx:Localize PrintDescriptions_descriptionKindCombo_Items3}"/>
                         </ComboBox>
 
-                        <!-- Line size NumericUpDown + "mm" -->
+                        <!-- Line size: label + NumericUpDown + "mm", all
+                             flush together. The StackPanel shrink-wraps so
+                             "mm" sits right after the NumericUpDown rather
+                             than at the right edge of the group. -->
                         <TextBlock Grid.Row="2" Grid.Column="0"
                                    Text="{resx:Localize PrintDescriptions_lineSizeLabel_Text}"
                                    VerticalAlignment="Center"/>
-                        <NumericUpDown x:Name="boxSizeUpDown"
-                                       Grid.Row="2" Grid.Column="2"
-                                       Width="100"
-                                       Minimum="1"
-                                       Maximum="50"
-                                       Increment="0.5"
-                                       FormatString="0.#"
-                                       Value="{Binding BoxSize, Mode=TwoWay}"
-                                       HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Row="2" Grid.Column="4"
-                                   Text="{resx:Localize PrintDescriptions_mmSuffixLabel_Text}"
-                                   VerticalAlignment="Center"/>
+                        <StackPanel Grid.Row="2" Grid.Column="2"
+                                    Orientation="Horizontal"
+                                    Spacing="4">
+                            <NumericUpDown x:Name="boxSizeUpDown"
+                                           Width="70"
+                                           Minimum="1"
+                                           Maximum="50"
+                                           Increment="0.1"
+                                           FormatString="0.0"
+                                           Value="{Binding BoxSize, Mode=TwoWay}"/>
+                            <TextBlock Text="{resx:Localize PrintDescriptions_mmSuffixLabel_Text}"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
                     </Grid>
                 </HeaderedContentControl>
 
