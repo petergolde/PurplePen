@@ -42,55 +42,62 @@ namespace AvPurplePen
 
         /// <summary>
         /// Shows a modal dialog for the given ViewModel. The owner is disabled
-        /// until the dialog closes. Special-cases <see cref="FileOpenSingleViewModel"/>
-        /// to use the platform file-open picker; everything else is delegated
-        /// to <see cref="ShowOwnedDialog{TViewModel}"/>.
+        /// until the dialog closes. Returns true if the dialog was accepted
+        /// (the View called <c>Close(true)</c>), false otherwise.
         /// </summary>
         public async Task<bool> ShowDialogAsync<TViewModel>(TViewModel viewModel) where TViewModel : class
         {
             // Special case: FileOpenSingleViewModel uses the platform file-open
-            // dialog rather than a custom View — ShowOwnedDialog wouldn't know
-            // how to handle it, so we intercept before delegating.
+            // picker rather than a custom View.
             if (viewModel is FileOpenSingleViewModel fileOpenVm) {
                 return await ShowFileOpenSingleAsync(fileOpenVm);
             }
 
-            (_, Task<bool> task) = ShowOwnedDialog(viewModel, disableOwner: true);
-            return await task;
+            // ShowDialog<bool?> picks up whatever the View passes to
+            // Window.Close(object dialogResult). ShowOwnedDialog can't deliver
+            // that bool (its Task is non-generic) so we use ShowDialog directly
+            // here, sharing only the View resolution.
+            Window dialog = CreateDialogWindow(viewModel);
+            bool? result = await dialog.ShowDialog<bool?>(GetActiveOwner());
+            return result == true;
         }
 
         /// <summary>
         /// Shows an owned dialog for the given ViewModel and returns
-        /// immediately with both an <see cref="ICloseableDialog"/> handle and a
-        /// Task that completes when the dialog closes. See
-        /// <see cref="IDialogService.ShowOwnedDialog{TViewModel}"/> for the
-        /// contract.
+        /// immediately with an <see cref="INonModalDialog{TViewModel}"/> handle
+        /// the caller can use to dismiss the dialog and observe when it closes.
+        /// See <see cref="IDialogService.ShowOwnedDialog{TViewModel}"/> for the
+        /// full contract.
         /// </summary>
-        public (ICloseableDialog Dialog, Task<bool> Result) ShowOwnedDialog<TViewModel>(
+        public INonModalDialog<TViewModel> ShowOwnedDialog<TViewModel>(
             TViewModel viewModel, bool disableOwner) where TViewModel : class
         {
             Window dialog = CreateDialogWindow(viewModel);
             Window owner = GetActiveOwner();
 
+            Task task;
             if (disableOwner) {
                 // Classic modal: Avalonia's ShowDialog disables the owner and
-                // returns a Task that resolves with whatever was passed to
-                // Window.Close(object). The wrapper just forwards Close calls.
-                Task<bool?> showDialogTask = dialog.ShowDialog<bool?>(owner);
-                Task<bool> resultTask = showDialogTask.ContinueWith(
-                    t => t.Result == true,
-                    TaskScheduler.Default);
-                return (new ModalCloseableDialog(dialog), resultTask);
+                // returns a Task that completes when the dialog closes.
+                // Task<bool?> derives from Task so we can hand it back directly.
+                task = dialog.ShowDialog<bool?>(owner);
             }
             else {
-                // Owned but non-modal: the owner stays enabled. Avalonia's
-                // Show(owner) doesn't return a result Task, so the wrapper
-                // records the result via Close(bool) and we resolve a
-                // TaskCompletionSource when the window's Closed event fires.
-                NonModalCloseableDialog wrapper = new NonModalCloseableDialog(dialog);
+                // Owned but non-modal: Show(owner) doesn't return a Task at all,
+                // so we wire one up ourselves via the Closed event. Subscribe
+                // before Show so we never miss a same-tick close.
+                TaskCompletionSource tcs = new TaskCompletionSource();
+                void OnClosed(object? s, EventArgs e)
+                {
+                    dialog.Closed -= OnClosed;
+                    tcs.TrySetResult();
+                }
+                dialog.Closed += OnClosed;
                 dialog.Show(owner);
-                return (wrapper, wrapper.ResultTask);
+                task = tcs.Task;
             }
+
+            return new DialogHandle<TViewModel>(dialog, viewModel, task);
         }
 
         /// <summary>
@@ -121,51 +128,40 @@ namespace AvPurplePen
         }
 
         /// <summary>
-        /// ICloseableDialog wrapper for modal dialogs shown with
-        /// <see cref="Window.ShowDialog{TResult}(Window)"/>: the Close result
-        /// is delivered through Avalonia's own ShowDialog Task, so all we have
-        /// to do is forward Close calls to the Window.
+        /// Single <see cref="INonModalDialog{TViewModel}"/> implementation that
+        /// works for both modal and non-modal dialogs — the difference between
+        /// the two is encapsulated in how the <see cref="ClosedTask"/> was
+        /// built by <see cref="ShowOwnedDialog{TViewModel}"/>, not here.
         /// </summary>
-        private sealed class ModalCloseableDialog : ICloseableDialog
+        private sealed class DialogHandle<TViewModel> : INonModalDialog<TViewModel>
+            where TViewModel : class
         {
             private readonly Window window;
-            public ModalCloseableDialog(Window w) { window = w; }
-            public void Close(bool dialogResult) => window.Close(dialogResult);
-        }
+            public TViewModel ViewModel { get; }
+            public Task ClosedTask { get; }
 
-        /// <summary>
-        /// ICloseableDialog wrapper for non-modal owned dialogs shown with
-        /// <see cref="Window.Show(Window)"/>. Avalonia doesn't expose the
-        /// dialog result from a non-modal Show, so this wrapper records the
-        /// bool passed to <see cref="Close"/> and surfaces it via a
-        /// TaskCompletionSource that's completed by the Window.Closed event.
-        /// If the window is closed without going through this wrapper (e.g.
-        /// the user clicks the title-bar X), the Task completes with false.
-        /// </summary>
-        private sealed class NonModalCloseableDialog : ICloseableDialog
-        {
-            private readonly Window window;
-            private readonly TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
-            private bool pendingResult;
+            // Set to true inside Close(). Stays false when the dialog closes
+            // for any other reason (Cancel button, title-bar X), so the
+            // caller can distinguish those cases after ClosedTask completes.
+            public bool ClosedProgrammatically { get; private set; }
 
-            public NonModalCloseableDialog(Window w)
+            public DialogHandle(Window window, TViewModel viewModel, Task closedTask)
             {
-                window = w;
-                window.Closed += OnClosed;
+                this.window = window;
+                ViewModel = viewModel;
+                ClosedTask = closedTask;
             }
 
-            public Task<bool> ResultTask => tcs.Task;
-
-            public void Close(bool dialogResult)
+            public void Close()
             {
-                pendingResult = dialogResult;
-                window.Close();
-            }
-
-            private void OnClosed(object? sender, EventArgs e)
-            {
-                window.Closed -= OnClosed;
-                tcs.TrySetResult(pendingResult);
+                // Window.Close() on an already-closed window is harmless, but
+                // skipping the call keeps ClosedProgrammatically from getting
+                // flipped on after a user-initiated close — which would lie to
+                // the caller.
+                if (!ClosedTask.IsCompleted) {
+                    ClosedProgrammatically = true;
+                    window.Close();
+                }
             }
         }
 

@@ -52,7 +52,7 @@ namespace AvPurplePen
             // The factory defers construction until first use, by which time App.MainWindow is set.
             services.AddSingleton<IDialogService>(sp => new DialogService(App.MainWindow!));
             services.AddSingleton<IUILanguage, UILanguageService>();
-            services.AddSingleton<IPostMessage, PostMessageService>();
+            services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
             serviceProvider = services.BuildServiceProvider();
             Services.RegisterServiceProvider(serviceProvider);

@@ -43,28 +43,44 @@ namespace PurplePen
         /// the owner remains interactive — useful for tool/progress windows.
         /// </param>
         /// <returns>
-        /// A tuple of:
-        ///   <c>Dialog</c> — an <see cref="ICloseableDialog"/> handle so the
-        ///     caller can dismiss the dialog programmatically; and
-        ///   <c>Result</c> — a Task that completes with true (OK) or false
-        ///     (cancelled / dismissed) when the dialog actually closes.
+        /// An <see cref="INonModalDialog"/>  so the
+        /// caller can dismiss the dialog programmatically, 
         /// </returns>
         /// <remarks>
         /// For non-modal (disableOwner=false) dialogs, the dialog's result is
-        /// determined by what gets passed to <see cref="ICloseableDialog.Close"/>.
+        /// determined by what gets passed to <see cref="INonModalDialog.Close"/>.
         /// If the user closes the window directly (e.g. clicks the title-bar
         /// "X") the Task completes with false.
         /// </remarks>
-        (ICloseableDialog Dialog, Task<bool> Result) ShowOwnedDialog<TViewModel>(
-            TViewModel viewModel, bool disableOwner) where TViewModel : class;
+        INonModalDialog<TViewModel> ShowOwnedDialog<TViewModel>(TViewModel viewModel, bool disableOwner) 
+            where TViewModel : class;
     }
 
-    // Represents a dialog that can be closed, giving a boolean result.
+    // Represents a non-modal (typically) dialog that can be closed, optionally giving result.
     // This allows code to close the dialog without being bound to a specific
     // UI framework implementation.
-    public interface ICloseableDialog
+    public interface INonModalDialog<TViewModel>
+        where TViewModel : class
     {
-        void Close(bool dialogResult);
+        // The ViewModel instance backing the dialog.
+        TViewModel ViewModel { get; }
+
+        // A Task that completes when the dialog closes. Use
+        // ClosedTask.IsCompleted to check if it's already closed, or await
+        // it to wait for closure.
+        Task ClosedTask { get; }
+
+        // True iff the dialog was closed via a call to Close() (i.e. the
+        // caller dismissed it). False while the dialog is still open and
+        // false when it was closed by the user (e.g. clicking a button on
+        // the dialog itself or the title-bar X). Use this after ClosedTask
+        // completes to distinguish caller-initiated close from user close.
+        bool ClosedProgrammatically { get; }
+
+        // Close the dialog. If the dialog is already closed, this does
+        // nothing — in particular it does NOT flip ClosedProgrammatically
+        // to true after a user-initiated close.
+        void Close();
     }
 
 }

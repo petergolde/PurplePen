@@ -1,0 +1,69 @@
+<!--
+    OperationInProgressDialog.axaml
+
+    Modal "Operation In Progress" dialog. The caller shows this via
+    IDialogService.ShowOwnedDialog(vm, disableOwner: true) so the owner is
+    disabled while work runs, then updates the VM's InformationLabel and
+    ProgressAmount as the operation progresses, and finally dismisses the
+    dialog via the returned ICloseableDialog. Cancel closes with false so
+    the awaiting Task<bool> tells the caller to abort.
+
+    Migrated from WinForms PurplePen/OperationInProgress.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.OperationInProgressDialog"
+        Classes="dialog"
+        x:DataType="vm:OperationInProgressDialogViewModel"
+        Title="{resx:Localize OperationInProgress_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="400" d:DesignHeight="160"
+        Width="400"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:OperationInProgressDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="16">
+
+        <!-- Cancel button at the bottom-right -->
+        <Button DockPanel.Dock="Bottom"
+                x:Name="cancelButton"
+                Content="{resx:Localize OperationInProgress_cancelButton_Text}"
+                Width="100"
+                HorizontalAlignment="Right"
+                HorizontalContentAlignment="Center"
+                IsCancel="True"
+                Margin="0,16,0,0"
+                Click="CancelButton_Click"/>
+
+        <!-- Status text -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="informationLabel"
+                   Text="{Binding InformationLabel}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"/>
+
+        <!-- Progress bar. Min/Max are 0..1 so ProgressValue (also 0..1)
+             binds directly. IsIndeterminate switches the bar to a marquee
+             animation when ProgressAmount is null. -->
+        <ProgressBar x:Name="progressBar"
+                     Minimum="0"
+                     Maximum="1"
+                     Value="{Binding ProgressValue}"
+                     Height="16"
+                     IsIndeterminate="{Binding IsIndeterminate}"/>
+
+    </DockPanel>
+</Window>

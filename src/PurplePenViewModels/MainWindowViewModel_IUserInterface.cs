@@ -29,7 +29,7 @@ namespace PurplePen.ViewModels
 
         public void PostDelayedAction(Action action)
         {
-            Services.ServiceProvider.GetRequiredService<IPostMessage>().PostMessage(action);
+            Services.ServiceProvider.GetRequiredService<IEventDispatcherService>().PostMessage(action);
         }
 
         public async Task InfoMessage(string message)
@@ -111,19 +111,87 @@ namespace PurplePen.ViewModels
             throw new NotImplementedException();
         }
 
+        // ===== Operation-in-progress dialog plumbing =====
+        //
+        // The WinForms IUserInterface contract is three plain (synchronous)
+        // calls: Show / Update / End. We surface the same shape on top of
+        // IDialogService.ShowOwnedDialog. All state lives on the handle:
+        //   * progressDialog.ViewModel.IsIndeterminate
+        //   * "Did we close it ourselves?" → progressDialog.ClosedProgrammatically
+
+        private INonModalDialog<OperationInProgressDialogViewModel>? progressDialog = null;
+
+        /// <summary>
+        /// Shows the "Operation in Progress" dialog as a modal owned dialog.
+        /// The owner is disabled (classic modal) while the operation runs,
+        /// but this call returns immediately so the caller can keep working
+        /// and poll <see cref="UpdateProgressDialog"/>.
+        /// </summary>
         public void ShowProgressDialog(bool knownDuration, Action onCancelPressed)
         {
-            throw new NotImplementedException();
+            // Defensive: tear down a previous dialog that wasn't ended.
+            if (progressDialog != null) {
+                EndProgressDialog();
+            }
+
+            OperationInProgressDialogViewModel vm = new OperationInProgressDialogViewModel {
+                InformationLabel = "",
+                ProgressAmount = knownDuration ? 0.0 : (double?)null,
+            };
+
+            // `dialog` is a local (not progressDialog directly) so the
+            // closure below captures THIS dialog rather than whatever the
+            // field happens to point at when the continuation eventually
+            // fires — important if ShowProgressDialog is called again
+            // before the previous dialog's close-continuation runs.
+            INonModalDialog<OperationInProgressDialogViewModel> dialog =
+                Services.DialogService.ShowOwnedDialog(vm, disableOwner: true);
+            progressDialog = dialog;
+
+            // When the dialog closes, fire onCancelPressed iff the close
+            // was user-initiated (handle.ClosedProgrammatically stays
+            // false in that case).
+            if (onCancelPressed != null) {
+                _ = dialog.ClosedTask.ContinueWith(
+                    _ => {
+                        if (!dialog.ClosedProgrammatically)
+                            onCancelPressed();
+                    },
+                    TaskScheduler.FromCurrentSynchronizationContext());
+            }
+
+            Services.ServiceProvider.GetRequiredService<IEventDispatcherService>().ProcessPendingMessages();
         }
 
+        /// <summary>
+        /// Updates the status text and (for determinate mode) the progress
+        /// fraction. Returns true once the user has clicked Cancel so the
+        /// caller can abort.
+        /// </summary>
         public bool UpdateProgressDialog(string info, double fractionDone)
         {
-            throw new NotImplementedException();
+            if (progressDialog == null)
+                return true;   // No dialog open — treat as cancelled (matches WinForms).
+
+            progressDialog.ViewModel.InformationLabel = info;
+            if (!progressDialog.ViewModel.IsIndeterminate)
+                progressDialog.ViewModel.ProgressAmount = fractionDone;
+
+            Services.ServiceProvider.GetRequiredService<IEventDispatcherService>().ProcessPendingMessages();
+
+            // User cancelled iff the dialog closed and we didn't close it.
+            return progressDialog.ClosedTask.IsCompleted && !progressDialog.ClosedProgrammatically;
         }
 
+        /// <summary>
+        /// Tears down the progress dialog. Safe to call when the user has
+        /// already cancelled (the window is already closed — Close() is a
+        /// no-op) or when nothing was shown.
+        /// </summary>
         public void EndProgressDialog()
         {
-            throw new NotImplementedException();
+            progressDialog?.Close();
+            progressDialog = null;
         }
 
         public string GetOpenFileName()
