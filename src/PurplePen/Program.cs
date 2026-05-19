@@ -54,7 +54,7 @@ namespace PurplePen
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
             ServiceProvider serviceProvider;
 
@@ -112,7 +112,9 @@ namespace PurplePen
             InitClientId();
             FontDesc.InitializeFonts();
 
-            if (args.Length > 0 && await LoadCommandLineFile(args[0])) {
+            if (args.Length > 0) {
+                Task<bool> commandLineFileTask = LoadCommandLineFile(args[0]);
+                commandLineFileTask.Wait(1000);
                 // We successfully loaded a file from the command line.
                 // Nothing more to do here.
             }
