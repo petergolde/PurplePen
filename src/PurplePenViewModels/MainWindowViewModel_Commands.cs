@@ -1983,7 +1983,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Create Punchcard PDF command.
         /// </summary>
         [RelayCommand]
-        private void CreatePunchcardPdf()
+        private async Task CreatePunchcardPdf()
         {
 #if !PORTING
             PrintPunches printPunchesDialog = new PrintPunches(controller.GetEventDB(), true);
@@ -2012,6 +2012,53 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             printPunchesDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Seed from previous settings or build defaults. The printer
+            // isn't shown in PDF mode but we still pass one through (empty)
+            // so the dialog's ViewModel has a non-null Printer; only the
+            // paper-size-with-margins is meaningful here.
+            CorePunchPrintSettings settings = punchPrintSettings ?? new CorePunchPrintSettings();
+            settings.Count = 1;
+            PrinterNameAndSettings printer = punchPrinter ?? new PrinterNameAndSettings();
+            PrintingPaperSizeWithMargins paperSizeWithMargins =
+                punchPaperSizeWithMargins ?? BuildDefaultPaperSizeWithMargins();
+
+            PrintPunchesDialogViewModel vm = new PrintPunchesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                IsPdfCreation = true,
+                Printer = printer,
+                PaperSizeWithMargins = paperSizeWithMargins,
+                Settings = settings,
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(vm))
+                return;
+
+            // Ask where to save. The file-save picker is hosted by
+            // DialogService via FileSaveViewModel's special case.
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                FileFilters = MiscText.PdfFilter,
+                FileFilterIndex = 1,
+                DefaultExtension = "pdf",
+                ShowOverwritePrompt = true,
+                InitialDirectory = System.IO.Path.GetDirectoryName(controller.FileName),
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(saveVm))
+                return;
+            if (saveVm.SelectedFile == null)
+                return;
+
+            // Persist the user's choices for next time, then create the PDF.
+            punchPrintSettings = vm.Settings;
+            punchPrinter = vm.Printer;
+            punchPaperSizeWithMargins = vm.PaperSizeWithMargins;
+
+            controller.CreatePunchesPdf(punchPrintSettings,
+                                        punchPaperSizeWithMargins,
+                                        saveVm.SelectedFile);
 #endif
         }
 

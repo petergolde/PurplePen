@@ -52,6 +52,11 @@ namespace PurplePen.ViewModels
         private PrinterNameAndSettings? descPrinter;
         private PrintingPaperSizeWithMargins? descPaperSizeWithMargins;
 
+        // Same idea for the Print Punch Cards / Create Punchcard PDF dialog.
+        private CorePunchPrintSettings? punchPrintSettings;
+        private PrinterNameAndSettings? punchPrinter;
+        private PrintingPaperSizeWithMargins? punchPaperSizeWithMargins;
+
         [ObservableProperty]
         private MapDisplay? mapDisplay;
 

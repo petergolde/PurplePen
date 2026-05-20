@@ -1,0 +1,217 @@
+<!--
+    PrintPunchesDialog.axaml
+
+    Print Punch Cards dialog (also serves as "Create PDF of Punch Cards"
+    when IsPdfCreation is true — the Printer row is hidden, the OK button
+    reads "Create PDF", and the window title changes).
+
+    Layout (mirrors PrintDescriptionsDialog):
+      * Output group (printer + paper + margins) at the top, full width.
+      * Below it, two columns: Courses on the left, Copies + Appearance
+        stacked on the right.
+      * Preview / Print / Cancel buttons at the bottom.
+
+    The Change Printer / Change Margins / Preview / Punch Card Layout buttons
+    are wired but not yet implemented — clicking them is a no-op for now.
+
+    Migrated from WinForms PurplePen/PrintPunches.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.PrintPunchesDialog"
+        Classes="dialog"
+        x:DataType="vm:PrintPunchesDialogViewModel"
+        Title="{resx:Localize PrintPunches_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="660" d:DesignHeight="500"
+        Width="660" Height="500"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PrintPunchesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Bottom row: Preview / Print / Cancel. Print button label swaps
+             between "Print" and "Create PDF" via two overlapping buttons
+             whose visibility tracks IsPdfCreation. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,*,Auto,Auto"
+              Margin="0,12,0,0">
+            <Button x:Name="previewButton"
+                    Grid.Column="0"
+                    Content="{resx:Localize PrintPunches_previewButton_Text}"
+                    Width="120"
+                    HorizontalContentAlignment="Center"
+                    Click="PreviewButton_Click"/>
+
+            <!-- Print (only when !IsPdfCreation) -->
+            <Button x:Name="printButton"
+                    Grid.Column="2"
+                    Content="{resx:Localize PrintPunches_printButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsVisible="{Binding !IsPdfCreation}"
+                    Margin="0,0,8,0"
+                    Click="PrintButton_Click"/>
+
+            <!-- Create PDF (only when IsPdfCreation) — same Grid.Column so
+                 it overlays the Print button. -->
+            <Button x:Name="createPdfButton"
+                    Grid.Column="2"
+                    Content="{x:Static resx:UIText.MiscText_CreatePdf}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsVisible="{Binding IsPdfCreation}"
+                    Margin="0,0,8,0"
+                    Click="PrintButton_Click"/>
+
+            <Button x:Name="cancelButton"
+                    Grid.Column="3"
+                    Content="{resx:Localize PrintPunches_cancelButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </Grid>
+
+        <!-- Output group at the top, full width: printer (conditional) +
+             paper size + orientation + margins + Change Margins button. -->
+        <HeaderedContentControl DockPanel.Dock="Top"
+                                Header="{resx:Localize PrintPunches_printerGroup_Text}"
+                                Padding="8"
+                                Margin="0,0,0,8">
+            <Grid ColumnDefinitions="Auto,8,*,8,Auto"
+                  RowDefinitions="Auto,4,Auto,4,Auto,4,Auto">
+
+                <!-- Row 0: Printer (hidden in PDF mode) -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize PrintPunches_printerLabel_Text}"
+                           VerticalAlignment="Center"
+                           IsVisible="{Binding IsPrinterVisible}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                           Text="{Binding PrinterNameDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"
+                           IsVisible="{Binding IsPrinterVisible}"/>
+                <Button x:Name="printerChange"
+                        Grid.Row="0" Grid.Column="4"
+                        Classes="Small"
+                        Content="{resx:Localize PrintPunches_printerChange_Text}"
+                        IsVisible="{Binding IsPrinterVisible}"
+                        Click="PrinterChange_Click"/>
+
+                <!-- Row 2: Paper size -->
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="{resx:Localize PrintPunches_paperSizeLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="2"
+                           Text="{Binding PaperSizeDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"/>
+
+                <!-- Row 4: Orientation -->
+                <TextBlock Grid.Row="4" Grid.Column="0"
+                           Text="{resx:Localize PrintPunches_orientationLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="4" Grid.Column="2"
+                           Text="{Binding OrientationDisplay}"
+                           VerticalAlignment="Center"/>
+
+                <!-- Row 6: Margins + Change Margins button -->
+                <TextBlock Grid.Row="6" Grid.Column="0"
+                           Text="{resx:Localize PrintPunches_marginsLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="6" Grid.Column="2"
+                           Text="{Binding MarginsDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"/>
+                <Button x:Name="marginChange"
+                        Grid.Row="6" Grid.Column="4"
+                        Classes="Small"
+                        Content="{resx:Localize PrintPunches_marginChange_Text}"
+                        Click="MarginChange_Click"/>
+            </Grid>
+        </HeaderedContentControl>
+
+        <!-- Two columns below the Output group: Courses on the left,
+             Copies + Appearance stacked on the right. -->
+        <Grid ColumnDefinitions="*,12,*">
+
+            <!-- === Left: Courses === -->
+            <HeaderedContentControl Grid.Column="0"
+                                    Header="{resx:Localize PrintPunches_coursesGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <views:CourseSelector x:Name="courseSelector"
+                                      EventDB="{Binding EventDB}"
+                                      ShowAllControls="True"
+                                      ShowCourseParts="False"
+                                      ShowVariationChooser="True"/>
+            </HeaderedContentControl>
+
+            <!-- === Right: Copies + Appearance === -->
+            <StackPanel Grid.Column="2" Spacing="8">
+
+                <!-- Copies group: "Copies:" label + count NumericUpDown. -->
+                <HeaderedContentControl Header="{resx:Localize PrintPunches_copiesGroupBox_Text}"
+                                        Padding="8">
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <TextBlock Text="{resx:Localize PrintPunches_descriptionsLabel_Text}"
+                                   VerticalAlignment="Center"/>
+                        <NumericUpDown x:Name="copiesUpDown"
+                                       Width="80"
+                                       Minimum="1"
+                                       Maximum="999"
+                                       FormatString="0"
+                                       Value="{Binding Count, Mode=TwoWay}"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+
+                <!-- Appearance group: punch box size + "mm", and the
+                     Punch Card Layout button. -->
+                <HeaderedContentControl Header="{resx:Localize PrintPunches_layoutGroup_Text}"
+                                        Padding="8">
+                    <StackPanel Spacing="8">
+
+                        <!-- Punch box size: label + NumericUpDown + "mm",
+                             flush together (StackPanel shrink-wraps). -->
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <TextBlock Text="{resx:Localize PrintPunches_punchBoxSizeLabel_Text}"
+                                       VerticalAlignment="Center"/>
+                            <NumericUpDown x:Name="boxSizeUpDown"
+                                           Width="100"
+                                           Minimum="1"
+                                           Maximum="100"
+                                           Increment="0.5"
+                                           FormatString="0.#"
+                                           Value="{Binding BoxSize, Mode=TwoWay}"/>
+                            <TextBlock Text="{resx:Localize PrintPunches_mmSuffixLabel_Text}"
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <Button x:Name="punchCardLayoutButton"
+                                Classes="Small"
+                                Content="{resx:Localize PrintPunches_punchCardLayoutButton_Text}"
+                                HorizontalAlignment="Left"
+                                Click="PunchCardLayoutButton_Click"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+
+            </StackPanel>
+        </Grid>
+
+    </DockPanel>
+</Window>
