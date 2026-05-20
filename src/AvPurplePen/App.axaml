@@ -79,6 +79,7 @@
 
     <Application.Styles>
         <semi:SemiTheme Locale="en-US" />
+        <semi:DataGridSemiTheme />
 
         <!-- Use embedded Source Sans 3 as the default font for all controls -->
         <Style Selector=":is(TemplatedControl)">

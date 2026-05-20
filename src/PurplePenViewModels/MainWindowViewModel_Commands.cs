@@ -1508,7 +1508,7 @@ namespace PurplePen.ViewModels
         /// Executes the Event/Change Codes command. Shows the Change All Codes dialog.
         /// </summary>
         [RelayCommand]
-        private void ChangeCodes()
+        private async Task ChangeCodes()
         {
 #if !PORTING
             // Initialize the dialog with the current codes.
@@ -1525,6 +1525,19 @@ namespace PurplePen.ViewModels
             }
 
             changeCodesDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Initialize the dialog with the current codes.
+            ChangeAllCodesDialogViewModel vm = new ChangeAllCodesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                Codes = controller.GetAllControlCodes(),
+            };
+
+            // Show the dialog; on OK, apply the edited codes.
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.SetAllControlCodes(vm.Codes);
+            }
 #endif
         }
 

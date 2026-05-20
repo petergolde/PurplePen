@@ -55,7 +55,9 @@
       "PowerShell(dotnet build D:\\\\Repos\\\\Main\\\\PurplePen\\\\src\\\\PurplePenViewModels\\\\PurplePenViewModels.csproj --no-restore -q)",
       "Bash(taskkill //F //PID 52140)",
       "Bash(taskkill //F //PID 46480)",
-      "Bash(taskkill //F //PID 40252)"
+      "Bash(taskkill //F //PID 40252)",
+      "Bash(taskkill //F //PID 20208)",
+      "Bash(taskkill //F //PID 52596)"
     ]
   }
 }
