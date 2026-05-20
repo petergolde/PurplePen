@@ -1380,7 +1380,7 @@ namespace PurplePen.ViewModels
         /// Executes the Course/Course Load command. Shows the Course Load dialog.
         /// </summary>
         [RelayCommand]
-        private void ShowCourseLoad()
+        private async Task ShowCourseLoad()
         {
 #if !PORTING
             // Initialize the dialog with the current load values.
@@ -1396,6 +1396,18 @@ namespace PurplePen.ViewModels
             }
 
             courseLoadDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Initialize the dialog with the current load values.
+            CourseLoadDialogViewModel vm = new CourseLoadDialogViewModel {
+                CourseLoads = controller.GetAllCourseLoads(),
+            };
+
+            // Show the dialog; on OK, apply the edited loads.
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.SetAllCourseLoads(vm.CourseLoads);
+            }
 #endif
         }
 

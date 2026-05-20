@@ -1,0 +1,150 @@
+<!--
+    CourseLoadDialog.axaml
+
+    Course Load dialog. Shows a two-column grid: each course's name
+    (read-only, twice as wide) and its editable competitor load. A blank load
+    cell means "no load set". On OK each load is validated (blank or an
+    integer) — invalid input keeps the dialog open with an error message.
+
+    The DataGrid styling (compact rows, grey header matching the rows, the
+    always-visible non-overlapping scrollbar) is the same as
+    ChangeAllCodesDialog — see the comments there for the why.
+
+    Migrated from WinForms PurplePen/CourseLoad.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CourseLoadDialog"
+        Classes="dialog"
+        x:DataType="vm:CourseLoadDialogViewModel"
+        Title="{resx:Localize CourseLoad_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="400" d:DesignHeight="460"
+        Width="400" Height="460"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:CourseLoadDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Plain in-cell text boxes: no border / background so they blend
+             into the grid cell. -->
+        <Style Selector="DataGrid TextBox.loadCell">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="12,2"/>
+        </Style>
+
+        <Style Selector="DataGrid /template/ DataGridRowsPresenter#PART_RowsPresenter">
+            <!-- The data area's light background lives on the rows presenter
+                 (a Panel), not the DataGrid itself. The DataGrid's own
+                 background is SemiGrey1 so the little corner above the
+                 scrollbar (which the margined header presenter doesn't cover)
+                 matches the header. -->
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+
+        <Style Selector="DataGrid /template/ DataGridColumnHeadersPresenter#PART_ColumnHeadersPresenter">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+        </Style>
+
+        <!-- Recolor the vertical scrollbar gutter back to the light
+             InputBackground. The gutter is painted by a Border inside the
+             ScrollBar template whose Background is a TemplateBinding (a style
+             setter can't override it), so we target the Grid *inside* that
+             Border, which has no such local value. -->
+        <Style Selector="DataGrid /template/ ScrollBar#PART_VerticalScrollbar /template/ Border Grid">
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+
+        <!-- Column headers: same height (24) and text colour as the rows,
+             with a SemiGrey1 background. -->
+        <Style Selector="DataGrid DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
+            <Setter Property="MinHeight" Value="24"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Instruction label at the top -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="courseLoadLabel"
+                   Text="{resx:Localize CourseLoad_courseLoadLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Two-column grid: course name (twice as wide) + editable load. -->
+        <DataGrid x:Name="grid"
+                  ItemsSource="{Binding Rows}"
+                  AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="All"
+                  SelectionMode="Single"
+                  BorderBrush="{DynamicResource DarkGreyBorder}"
+                  BorderThickness="1"
+                  Background="{DynamicResource SemiGrey1}"
+                  RowHeight="24"
+                  ColumnHeaderHeight="24"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.AllowAutoHide="False">
+            <DataGrid.Columns>
+                <!-- Course Name: read-only, wider than the load column. -->
+                <DataGridTextColumn Header="{x:Static resx:UIText.CourseLoad_CourseName_HeaderText}"
+                                    Binding="{Binding CourseName}"
+                                    IsReadOnly="True"
+                                    Width="5*"/>
+
+                <!-- Competitor Load: an always-editable TextBox so a single
+                     click starts editing (mirrors the WinForms EditOnKeystroke
+                     grid). -->
+                <DataGridTemplateColumn Header="{x:Static resx:UIText.CourseLoad_Load_HeaderText}"
+                                        Width="3*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:LoadRow">
+                            <TextBox Classes="loadCell"
+                                     Text="{Binding LoadText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>
