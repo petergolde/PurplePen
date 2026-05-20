@@ -1618,25 +1618,24 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task RemoveUnusedControls()
         {
-#if !PORTING
-            List<KeyValuePair<Id<ControlPoint>,string>> unusedControls = controller.GetUnusedControls();
+            if (controller == null) { return; }
+
+            List<KeyValuePair<Id<ControlPoint>, string>> unusedControls = controller.GetUnusedControls();
 
             if (unusedControls.Count == 0) {
                 // No controls to delete. Tell the user.
                 await InfoMessage(MiscText.NoUnusedControls);
             }
             else {
-                // Put up the dialog and do it.
-                UnusedControls dialog = new UnusedControls();
-                dialog.SetControlsToDelete(controller.GetUnusedControls());
+                // Put up a dialog showing the unused controls.
+                UnusedControlsDialogViewModel vm = new UnusedControlsDialogViewModel();
+                vm.SetControlsToDelete(unusedControls);
 
-                if (dialog.ShowDialog() == DialogResult.OK) {
-                    controller.RemoveControls(dialog.GetControlsToDelete());
+                if (await Services.DialogService.ShowDialogAsync(vm)) {
+                    // If the user didn't hit cancel, delete the chosen controls.
+                    controller.RemoveControls(vm.ControlsToDelete);
                 }
-
-                dialog.Dispose();
             }
-#endif
         }
 
         /// <summary>
