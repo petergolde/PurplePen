@@ -1,0 +1,102 @@
+<!--
+    AutoNumberingDialog.axaml
+
+    Automatic Numbering dialog. Sets the starting control code, whether to
+    disallow upside-down-readable codes, and whether to renumber existing
+    controls or apply only to newly created ones.
+
+    Migrated from WinForms PurplePen/AutoNumbering.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.AutoNumberingDialog"
+        Classes="dialog"
+        x:DataType="vm:AutoNumberingDialogViewModel"
+        Title="{resx:Localize AutoNumbering_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="440" d:DesignHeight="280"
+        Width="440"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:AutoNumberingDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="12">
+
+            <!-- Explanatory label -->
+            <TextBlock x:Name="automaticNumberingLabel"
+                       Text="{resx:Localize AutoNumbering_automaticNumberingLabel_Text}"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,6"/>
+
+            <!-- Starting code: label + spinner -->
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <TextBlock x:Name="startingCodeLabel"
+                           Text="{resx:Localize AutoNumbering_startingCodeLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <NumericUpDown x:Name="startingCodeNumericUpDown"
+                               Width="90"
+                               Minimum="31"
+                               Maximum="999"
+                               Increment="1"
+                               FormatString="0"
+                               Value="{Binding FirstCode, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <!-- Disallow invertible codes -->
+            <CheckBox x:Name="disallowInvertibleCheckBox"
+                      Content="{resx:Localize AutoNumbering_disallowInvertibleCheckBox_Text}"
+                      IsChecked="{Binding DisallowInvertibleCodes, Mode=TwoWay}"/>
+
+            <!-- Existing Controls group: new only vs. renumber existing -->
+            <HeaderedContentControl Header="{resx:Localize AutoNumbering_existingControlsGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <StackPanel Spacing="4">
+                    <RadioButton x:Name="newControlsOnlyRadioButton"
+                                 GroupName="ExistingControls"
+                                 Content="{resx:Localize AutoNumbering_newControlsOnlyRadioButton_Text}"
+                                 IsChecked="{Binding !RenumberExisting, Mode=TwoWay}"/>
+                    <RadioButton x:Name="renumberExistingRadioButton"
+                                 GroupName="ExistingControls"
+                                 Content="{resx:Localize AutoNumbering_renumberExistingRadioButton_Text}"
+                                 IsChecked="{Binding RenumberExisting, Mode=TwoWay}"/>
+                </StackPanel>
+            </HeaderedContentControl>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>

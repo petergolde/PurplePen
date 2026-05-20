@@ -1569,7 +1569,7 @@ namespace PurplePen.ViewModels
         /// Executes the Event/Auto Numbering command. Shows the Auto Numbering dialog.
         /// </summary>
         [RelayCommand]
-        private void AutoNumbering()
+        private async Task AutoNumbering()
         {
 #if !PORTING
             // Get initial values.
@@ -1593,6 +1593,22 @@ namespace PurplePen.ViewModels
             }
 
             autoNumberingDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Get the current auto-numbering settings to seed the dialog.
+            controller.GetAutoNumbering(out int firstCode, out bool disallowInvertibleCodes);
+
+            AutoNumberingDialogViewModel vm = new AutoNumberingDialogViewModel {
+                FirstCode = firstCode,
+                DisallowInvertibleCodes = disallowInvertibleCodes,
+                RenumberExisting = false,
+            };
+
+            // Show the dialog; on OK, apply the chosen settings.
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.AutoNumbering(vm.FirstCode, vm.DisallowInvertibleCodes, vm.RenumberExisting);
+            }
 #endif
         }
 

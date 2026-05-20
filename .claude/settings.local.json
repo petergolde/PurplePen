@@ -57,7 +57,8 @@
       "Bash(taskkill //F //PID 46480)",
       "Bash(taskkill //F //PID 40252)",
       "Bash(taskkill //F //PID 20208)",
-      "Bash(taskkill //F //PID 52596)"
+      "Bash(taskkill //F //PID 52596)",
+      "Bash(taskkill //F //PID 74256)"
     ]
   }
 }
