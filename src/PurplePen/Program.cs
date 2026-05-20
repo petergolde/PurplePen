@@ -114,7 +114,10 @@ namespace PurplePen
 
             if (args.Length > 0) {
                 Task<bool> commandLineFileTask = LoadCommandLineFile(args[0]);
-                commandLineFileTask.Wait(1000);
+#pragma warning disable VSTHRD002
+                // I think this task is never actually not completed, but wait for it to complete anyway
+                commandLineFileTask.Wait(10000);
+#pragma warning restore VSTHRD002
                 // We successfully loaded a file from the command line.
                 // Nothing more to do here.
             }

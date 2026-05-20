@@ -224,15 +224,13 @@ namespace Map_Skia.Tests
 
                     SKCanvas canvas = ((Skia_GraphicsTarget)grTarget).Canvas;
                     SKPaint paint = new SKPaint();
+                    SKFont font = new SKFont(SKTypeface.FromFamilyName("Cambria", SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Italic), 200);
                     paint.Color = SKColors.Chartreuse;
-                    paint.TextEncoding = SKTextEncoding.Utf8;
-                    paint.Typeface = SKTypeface.FromFamilyName("Cambria", SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Italic);
-                    paint.TextSize = 200;
                     byte[] bytes = Encoding.UTF8.GetBytes("Hell\u00F6");
                     SKPath path;
                     fixed(byte *p = bytes)
                     {
-                        path = paint.GetTextPath((IntPtr)p, (IntPtr) bytes.Length, 100, 100 - paint.FontMetrics.Ascent);
+                        path = font.GetTextPath((IntPtr)p, bytes.Length, SKTextEncoding.Utf8, new SKPoint(100, 100 - font.Metrics.Ascent));
                     }
                     paint.StrokeWidth = 3;
                     paint.IsStroke = true;
@@ -250,17 +248,14 @@ namespace Map_Skia.Tests
                 grTarget => {
                     SKCanvas canvas = ((Skia_GraphicsTarget)grTarget).Canvas;
                     SKPaint paint = new SKPaint();
+                    SKFont font = new SKFont(SKTypeface.FromFamilyName("Cambria", SKFontStyleWeight.Bold, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright), 300);
                     SKPoint[] points = { new SKPoint(125, 600), new SKPoint(189, 214), new SKPoint(278, 303), new SKPoint(397, 245), new SKPoint(545, 299) };
                     paint.Color = SKColors.Red;
-                    paint.TextEncoding = SKTextEncoding.Utf8;
-                    paint.Typeface = SKTypeface.FromFamilyName("Cambria", SKFontStyleWeight.Bold, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright);
-                    paint.TextSize = 300;
-                    paint.IsStroke = false;
                     for (int i = 0; i < points.Length; ++i) {
-                        canvas.DrawText("Hell\u00F6".Substring(i, 1), points[i], paint);
+                        canvas.DrawText("Hell\u00F6".Substring(i, 1), points[i], font, paint);
                     }
 
-                    SKPath path = paint.GetTextPath("Hell\u00F6", points);
+                    SKPath path = font.GetTextPath("Hell\u00F6", points);
                     paint.IsStroke = true;
                     paint.Color = SKColors.DarkBlue;
                     paint.StrokeWidth = 15;
@@ -269,7 +264,7 @@ namespace Map_Skia.Tests
                     byte[] bytes = Encoding.UTF8.GetBytes("Hell\u00F6");
                     fixed (byte* p = bytes)
                     {
-                        path = paint.GetTextPath((IntPtr)p, (IntPtr)bytes.Length, points);
+                        path = font.GetTextPath((IntPtr)p, bytes.Length, SKTextEncoding.Utf8, points);
                     }
                     paint.IsStroke = true;
                     paint.Color = SKColors.Yellow;
