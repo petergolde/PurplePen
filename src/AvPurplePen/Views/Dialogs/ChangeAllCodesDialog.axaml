@@ -1,0 +1,167 @@
+<!--
+    ChangeAllCodesDialog.axaml
+
+    Change Control Codes dialog. Shows a two-column grid: each control's
+    original code (read-only) and an editable new code. Codes that have been
+    changed are shown in red. On OK the codes are validated (each must be a
+    legal control code, and no duplicates are allowed) — invalid input keeps
+    the dialog open with an error message.
+
+    Migrated from WinForms PurplePen/ChangeAllCodes.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.ChangeAllCodesDialog"
+        Classes="dialog"
+        x:DataType="vm:ChangeAllCodesDialogViewModel"
+        Title="{resx:Localize ChangeAllCodes_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="360" d:DesignHeight="460"
+        Width="360" Height="460"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:ChangeAllCodesDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Changed codes are shown in red. Classes.changed is bound to the
+             row's IsChanged, so this toggles automatically as the user edits. -->
+        <Style Selector="TextBox.changed">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+        <!-- Plain in-cell text boxes: no border / background so they blend
+             into the grid cell. -->
+        <Style Selector="DataGrid TextBox.codeCell">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="12,2"/>
+        </Style>
+        <!-- The Semi DataGrid template lays both the rows presenter and the
+             column-headers presenter across the vertical scrollbar's column,
+             so they'd draw *under* the always-visible scrollbar. Their
+             ColumnSpan is a local value in the template (a style setter can't
+             override it), so instead we give each an 8px right margin (the
+             Semi scrollbar width) to pull their content out from under the
+             scrollbar. Margin isn't set locally in the template, so these
+             setters take effect — and using the same value on both keeps the
+             headers aligned with the rows. -->
+        <Style Selector="DataGrid /template/ DataGridRowsPresenter#PART_RowsPresenter">
+            <Setter Property="Margin" Value="0,0,8,0"/>
+            <!-- The data area's light background lives on the rows presenter
+                 (a Panel), not the DataGrid itself. The DataGrid's own
+                 background is SemiGrey1 so the little corner above the
+                 scrollbar (which the margined header presenter doesn't cover)
+                 matches the header. -->
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+        <Style Selector="DataGrid /template/ DataGridColumnHeadersPresenter#PART_ColumnHeadersPresenter">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+            <Setter Property="Margin" Value="0,0,8,0"/>
+        </Style>
+
+        <!-- The DataGrid root background is SemiGrey1 so the empty top-right
+             corner above the scrollbar matches the header. That same root
+             also sits behind the vertical scrollbar gutter, which would make
+             the scrollbar look grey. We have to cross into the ScrollBar's
+             own template (second /template/) to recolor the gutter, but the
+             Border there has its Background set via a TemplateBinding (a
+             template/local-priority value a style setter can't override), so
+             we target the Grid *inside* that Border instead — it has no such
+             local value, so the InputBackground takes effect there. -->
+        <Style Selector="DataGrid /template/ ScrollBar#PART_VerticalScrollbar /template/ Border Grid">
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+
+        <!-- Column headers: same height (24) and text colour as the rows,
+             with a SemiGrey1 background. These are ControlTheme-priority
+             defaults in Semi, so plain style setters override them. -->
+        <Style Selector="DataGrid DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
+            <Setter Property="MinHeight" Value="24"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Instruction label at the top -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="changeControlCodesLabel"
+                   Text="{resx:Localize ChangeAllCodes_changeControlCodesLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Two-column grid of original / new codes (fills remaining space) -->
+        <DataGrid x:Name="grid"
+                  ItemsSource="{Binding Rows}"
+                  AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="All"
+                  SelectionMode="Single"
+                  BorderBrush="{DynamicResource DarkGreyBorder}"
+                  BorderThickness="1"
+                  Background="{DynamicResource SemiGrey1}"
+                  RowHeight="24"
+                  ColumnHeaderHeight="24"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.AllowAutoHide="False">
+            <DataGrid.Columns>
+                <!-- Original Code: read-only. -->
+                <DataGridTextColumn Header="{x:Static resx:UIText.ChangeAllCodes_OldCode_HeaderText}"
+                                    Binding="{Binding OldCode}"
+                                    IsReadOnly="True"
+                                    Width="*"/>
+
+                <!-- New Code: an always-editable TextBox so a single click
+                     starts editing (mirrors the WinForms EditOnKeystroke
+                     grid). Changed codes turn red via Classes.changed. -->
+                <DataGridTemplateColumn Header="{x:Static resx:UIText.ChangeAllCodes_NewCode_HeaderText}"
+                                        Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:CodeRow">
+                            <TextBox Classes="codeCell"
+                                     Classes.changed="{Binding IsChanged}"
+                                     Text="{Binding NewCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>
