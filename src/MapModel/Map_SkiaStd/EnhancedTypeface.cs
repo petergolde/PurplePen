@@ -826,8 +826,17 @@ namespace Map_SkiaStd
                 if (privateFontPath != null) {
                     typeface = SKTypeface.FromFile(privateFontPath);
                     Debug.Assert(typeface != null, "Failed to load typeface from private font file; check that you registered your font with a valid font file");
-                    if (typeface != null)
+                    if (typeface != null) {
+                        // If the family name wasn't what is in the font, re-record using information from the typeface. This allows us to re-get the font from the typeface; e.g., in
+                        // PdfGraphicsTarget.XFontFromTypeface.
+                        if (!string.Equals(typeface.FamilyName, familyName, StringComparison.OrdinalIgnoreCase)) {
+                            FontKey perfectKey = new FontKey(typeface.FamilyName, (SKFontStyleWeight) typeface.FontWeight, (SKFontStyleWidth) typeface.FontWidth, typeface.FontSlant);
+                            if (!privateTypeFace.ContainsKey(perfectKey)) {
+                                privateTypeFace.Add(perfectKey, privateFontPath);
+                            }
+                        }
                         return typeface;
+                    }
                 }
 
                 // No private font matched this family name. Try system fonts with suffix parsing.
