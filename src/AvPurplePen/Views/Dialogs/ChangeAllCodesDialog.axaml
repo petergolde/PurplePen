@@ -47,17 +47,8 @@
             <Setter Property="MinHeight" Value="0"/>
             <Setter Property="Padding" Value="12,2"/>
         </Style>
-        <!-- The Semi DataGrid template lays both the rows presenter and the
-             column-headers presenter across the vertical scrollbar's column,
-             so they'd draw *under* the always-visible scrollbar. Their
-             ColumnSpan is a local value in the template (a style setter can't
-             override it), so instead we give each an 8px right margin (the
-             Semi scrollbar width) to pull their content out from under the
-             scrollbar. Margin isn't set locally in the template, so these
-             setters take effect — and using the same value on both keeps the
-             headers aligned with the rows. -->
+        
         <Style Selector="DataGrid /template/ DataGridRowsPresenter#PART_RowsPresenter">
-            <Setter Property="Margin" Value="0,0,8,0"/>
             <!-- The data area's light background lives on the rows presenter
                  (a Panel), not the DataGrid itself. The DataGrid's own
                  background is SemiGrey1 so the little corner above the
@@ -65,9 +56,9 @@
                  matches the header. -->
             <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
         </Style>
+
         <Style Selector="DataGrid /template/ DataGridColumnHeadersPresenter#PART_ColumnHeadersPresenter">
             <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
-            <Setter Property="Margin" Value="0,0,8,0"/>
         </Style>
 
         <!-- The DataGrid root background is SemiGrey1 so the empty top-right
@@ -137,7 +128,7 @@
                   Background="{DynamicResource SemiGrey1}"
                   RowHeight="24"
                   ColumnHeaderHeight="24"
-                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.AllowAutoHide="False">
             <DataGrid.Columns>
                 <!-- Original Code: read-only. -->

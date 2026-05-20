@@ -121,7 +121,7 @@
                   Background="{DynamicResource SemiGrey1}"
                   RowHeight="24"
                   ColumnHeaderHeight="24"
-                  ScrollViewer.VerticalScrollBarVisibility="Visible"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.AllowAutoHide="False">
             <DataGrid.Columns>
                 <!-- Course Name: read-only, wider than the load column. -->
