@@ -97,7 +97,9 @@ namespace PurplePen.ViewModels
         {
             if (controller == null) { return; }
 
-            controller.CurrentVariation = CurrentVariation;
+            if (CurrentVariation != null) {
+                controller.CurrentVariation = CurrentVariation;
+            }
         }
 
         partial void OnBannerVisibleChanged(bool oldValue, bool newValue)

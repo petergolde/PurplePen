@@ -1415,7 +1415,7 @@ namespace PurplePen.ViewModels
         /// Executes the Course/Course Order command. Shows the Change Course Order dialog.
         /// </summary>
         [RelayCommand]
-        private void ShowCourseOrder()
+        private async Task ShowCourseOrder()
         {
 #if !PORTING
             // Initialize dialog.
@@ -1430,6 +1430,18 @@ namespace PurplePen.ViewModels
             }
 
             courseOrderDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Initialize the dialog with the current course order.
+            ChangeCourseOrderDialogViewModel vm = new ChangeCourseOrderDialogViewModel {
+                CourseOrders = controller.GetAllCourseOrders(),
+            };
+
+            // Show the dialog; on OK, apply the new order.
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.SetAllCourseOrders(vm.CourseOrders);
+            }
 #endif
         }
 

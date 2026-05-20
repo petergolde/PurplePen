@@ -1,0 +1,110 @@
+<!--
+    ChangeCourseOrderDialog.axaml
+
+    Change Course Order dialog. Shows the courses in a list box; the user
+    reorders them with the Move Up / Move Down buttons. On OK each course's
+    sort order is taken from its final position in the list.
+
+    The reordering is driven entirely by the ViewModel's MoveUp/MoveDown
+    commands (the buttons enable/disable via CanExecute), so there's no
+    move logic in code-behind.
+
+    Migrated from WinForms PurplePen/ChangeCourseOrder.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.ChangeCourseOrderDialog"
+        Classes="dialog"
+        x:DataType="vm:ChangeCourseOrderDialogViewModel"
+        Title="{resx:Localize ChangeCourseOrder_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="380" d:DesignHeight="420"
+        Width="380" Height="420"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:ChangeCourseOrderDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Instruction label at the top -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="courseOrderLabel"
+                   Text="{resx:Localize ChangeCourseOrder_courseOrderLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Middle: course list on the left, Move Up/Down buttons on the right. -->
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        Spacing="40"
+                        Margin="8,0,0,0">
+                <Button x:Name="moveUpButton"
+                        Width="110"
+                        HorizontalContentAlignment="Center"
+                        Command="{Binding MoveUpCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <!-- Up-pointing triangle to the left of the label. -->
+                        <TextBlock Text="&#x2191;" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                        <TextBlock Text="{resx:Localize ChangeCourseOrder_moveUpButton_Text}"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="moveDownButton"
+                        Width="110"
+                        HorizontalContentAlignment="Center"
+                        Command="{Binding MoveDownCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <!-- Down-pointing triangle to the left of the label. -->
+                        <TextBlock Text="&#x2193;" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"  Margin="0,0,0,4"/>
+                        <TextBlock Text="{resx:Localize ChangeCourseOrder_moveDownButton_Text}"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <ListBox x:Name="listBoxCourses"
+                     ItemsSource="{Binding Rows}"
+                     SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="vm:CourseOrderRow">
+                        <TextBlock Text="{Binding CourseName}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+
+    </DockPanel>
+</Window>
