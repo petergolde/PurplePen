@@ -731,6 +731,125 @@ Then XAML simply: `<ComboBox ItemsSource="{Binding AvailableFileFormats}" Select
 
 **Result**: the dialog code-behind ends up doing only the few things that *can't* be bound — selection state on controls that don't expose bindable selection, and platform pickers (`StorageProvider.OpenFolderPickerAsync`). The OK handler is two lines: pull non-bindable state into the VM, then `Close(true)`.
 
+### ViewModels Without a Settings Class
+
+Not every dialog wraps a settings class. Several dialogs just carry a few values the caller sets and reads back (`OverwritingFilesDialogViewModel`, `NonPrintableObjectsDialogViewModel`, `AutoNumberingDialogViewModel`, `OperationInProgressDialogViewModel`). For these, skip the computed-`Settings` bridge entirely — just expose plain `[ObservableProperty]` fields (or plain CLR auto-properties for non-bound inputs). The caller sets them in an object initializer, shows the dialog, and reads them back after OK. The Controller method often takes the values individually (e.g. `controller.AutoNumbering(vm.FirstCode, vm.DisallowInvertibleCodes, vm.RenumberExisting)`), so no aggregate object is needed.
+
+### Wrapping a Row Struct to Preserve Hidden Fields (grids/lists)
+
+When a dialog edits a list of records that have fields the UI doesn't show — especially `internal` ones the ViewModel layer can't even read — wrap the *whole* record in the row object and reconstruct it on the way out, rather than copying field-by-field. Example: `Controller.CourseLoadInfo` / `CourseOrderInfo` have an `internal Id<Course> courseId` plus public `courseName`/`load`/`sortOrder`. The row holds the whole struct:
+
+```csharp
+public class CourseOrderRow {
+    private readonly Controller.CourseOrderInfo info;   // carries courseId for free
+    public string CourseName => info.courseName;
+    public CourseOrderRow(Controller.CourseOrderInfo info) { this.info = info; }
+    public Controller.CourseOrderInfo ToCourseOrderInfo(int sortOrder) {
+        Controller.CourseOrderInfo result = info;   // struct copy preserves courseId
+        result.sortOrder = sortOrder;
+        return result;
+    }
+}
+```
+
+Because it's a value type, the struct copy preserves the internal id without the VM ever touching it. The VM's getter is then `Rows.Select(r => r.ToXxx(...)).ToArray()`. No parallel "originals" array, no `InternalsVisibleTo` needed.
+
+### Editable Grids with DataGrid
+
+`DataGridView` → Avalonia `DataGrid` (packages `Avalonia.Controls.DataGrid` + `Semi.Avalonia.DataGrid`; `<semi:DataGridSemiTheme/>` is in App.axaml's `Application.Styles`). Pattern used by `ChangeAllCodesDialog` and `CourseLoadDialog`:
+
+- **Read-only column**: `DataGridTextColumn` with `IsReadOnly="True"`.
+- **Editable column**: `DataGridTemplateColumn` whose `CellTemplate` is an *always-editable* `TextBox` (so a single click edits, mirroring the WinForms `EditOnKeystroke` grid) — don't bother with `CellEditingTemplate`. Style the in-cell TextBox `BorderThickness=0`, `Background=Transparent`, `MinHeight=0`, small `Padding` so it blends into the cell.
+- **Column headers can't use `{resx:Localize}`** — DataGrid columns aren't in the visual tree, so a DataContext/Localize binding won't resolve. Use `Header="{x:Static resx:UIText.SomeKey}"` (static, set once; fine since headers don't need live language switching).
+- **Per-row conditional formatting** (e.g. changed codes shown red) via a conditional class on the cell control: `Classes.changed="{Binding IsChanged}"` + a `Style Selector="TextBox.changed"`. No value converter needed.
+- **Column widths**: `Width="*"`, `Width="2*"`, etc. on the columns.
+- **`RowHeight` / `ColumnHeaderHeight`** are direct DataGrid properties (use them like `RowHeight="24"`); the theme's larger row min-height won't floor them.
+
+**The always-visible, non-overlapping scrollbar** is fiddly (see `ChangeAllCodesDialog`'s `Window.Styles` for the worked example). The Semi DataGrid template:
+- lays `PART_RowsPresenter` and `PART_ColumnHeadersPresenter` with `Grid.ColumnSpan` spanning the vertical scrollbar's column — so rows/headers draw *under* the scrollbar. That `ColumnSpan` is a **local value** you can't override with a style; instead give both presenters `Margin="0,0,8,0"` (8 = the Semi scrollbar width) to pull their content out from under the scrollbar. Same value on both keeps headers aligned with rows.
+- has **no top-right corner element** above the scrollbar — that spot shows the DataGrid's root `Background`. To make the corner match the header while keeping the data area light: set the DataGrid `Background` to the header colour and put the light `InputBackground` on `PART_RowsPresenter` (a `Panel`, so it paints its own background).
+- paints the scrollbar **gutter** with a `Border` *inside the ScrollBar's own template* whose `Background` is a `TemplateBinding` (unbeatable by a style). To recolor the gutter, cross two template boundaries and target the `Grid` *inside* that Border: `Selector="DataGrid /template/ ScrollBar#PART_VerticalScrollbar /template/ Border Grid"`.
+- Force the scrollbar always present with `ScrollViewer.VerticalScrollBarVisibility="Visible"` + `ScrollViewer.AllowAutoHide="False"` (the latter makes it reserve layout space instead of floating — but does NOT stop the rows-presenter overlap above; the margin does).
+
+This whole block is copy-pasted between the two DataGrid dialogs — if a third appears, consider extracting it to a shared `Style` resource.
+
+### Validation on OK with a Nested Message Box
+
+For dialogs that validate edited data (e.g. legal control codes, no duplicates, parseable loads), put the *logic* in the VM as helpers that return the offending row (`FindIllegalCode(out reason)`, `FindDuplicateCode()`, `FindInvalidLoad()`), and orchestrate in an `async` OK handler in the code-behind:
+
+```csharp
+private async void OkButton_Click(object? sender, RoutedEventArgs e) {
+    if (DataContext is not FooViewModel vm) { Close(false); return; }
+    SomeRow? bad = vm.FindInvalid(out string? reason);
+    if (bad != null) {
+        grid.SelectedItem = bad;                 // point the user at it
+        await ShowErrorAsync(reason ?? "");      // nested modal message box
+        return;                                  // keep dialog open
+    }
+    Close(true);
+}
+```
+
+`ShowErrorAsync` shows a `MessageBoxDialogViewModel` via `Services.DialogService.ShowDialogAsync(...)`; it's modal relative to *this* dialog automatically (DialogService walks the owner chain). The OK handler is one of the few legitimate reasons for real logic in a dialog's code-behind.
+
+### Owned / Non-Modal Dialogs and the Progress Dialog
+
+`IDialogService` has a second method beyond `ShowDialogAsync`:
+
+```csharp
+INonModalDialog<TViewModel> ShowOwnedDialog<TViewModel>(TViewModel viewModel, bool disableOwner);
+```
+
+It returns immediately with a handle exposing `ViewModel`, a `ClosedTask` (completes when the dialog closes), `ClosedProgrammatically` (true iff `Close()` was called by code rather than the user), and a `Close()` method. `disableOwner: true` is classic modal; `false` keeps the owner interactive (tool/progress windows). Use this when the caller needs to dismiss the dialog itself or keep working while it's open. `ShowDialogAsync` is for the normal "show, await a bool result" case and isn't built on top of it (its `bool` result needs `Window.Close(object)` which the non-generic `ClosedTask` doesn't carry).
+
+`MainWindowViewModel`'s `ShowProgressDialog`/`UpdateProgressDialog`/`EndProgressDialog` (the `IUserInterface` progress API) are implemented on `ShowOwnedDialog(vm, disableOwner: true)`. Cancellation is detected via `ClosedTask.IsCompleted && !ClosedProgrammatically`.
+
+**DoEvents equivalent / why a long synchronous loop freezes the dialog**: code like `CoursePdf.CreatePdfs` runs a tight synchronous loop on the UI thread calling `UpdateProgressDialog`. `Dispatcher.UIThread.RunJobs()` only drains the dispatcher's *own* queue — it does NOT pump the OS message queue, so the dialog paints but Cancel clicks never arrive. The real DoEvents equivalent is a nested dispatcher frame (`EventDispatcherService.ProcessPendingMessages`):
+
+```csharp
+DispatcherFrame frame = new DispatcherFrame();
+Dispatcher.UIThread.Post(() => frame.Continue = false, DispatcherPriority.Background);
+Dispatcher.UIThread.PushFrame(frame);
+```
+
+This runs the dispatcher (pumping OS input + render) until the low-priority "stop" post fires. Same reentrancy caveats as WinForms `Application.DoEvents()`.
+
+### File Save / Open Dialogs (no custom View)
+
+`FileOpenSingleViewModel` and `FileSaveViewModel` are special-cased inside `DialogService.ShowDialogAsync` — instead of resolving a View, they invoke the platform pickers (`OpenFilePickerAsync` / `SaveFilePickerWithResultAsync`). Just construct the VM (filters as a Windows-style `"Name|*.ext|..."` string, `DefaultExtension` accepts `".pdf"` or `"pdf"`), await `ShowDialogAsync`, and read `SelectedFile`. Folder picking is done directly in a dialog's code-behind via `StorageProvider.OpenFolderPickerAsync` (it needs the window).
+
+### Wiring the Command (the `#else` pattern)
+
+Command methods in `MainWindowViewModel_Commands.cs` keep the old WinForms body under `#if !PORTING` and the new Avalonia body under `#else`. Convert the method to `async Task` (the `[RelayCommand]` generator handles async). Typical body:
+
+```csharp
+[RelayCommand]
+private async Task FooCommand() {
+#if !PORTING
+    ... old WinForms code ...
+#else
+    if (controller == null) { return; }
+    FooDialogViewModel vm = new FooDialogViewModel { /* seed from controller */ };
+    if (await Services.DialogService.ShowDialogAsync(vm)) {
+        ... apply vm results via controller ...
+    }
+#endif
+}
+```
+
+**Settings remembered across invocations**: dialogs whose last choices should persist (Create OCAD/Image/PDF, Print Descriptions/Punch Cards) store their settings in private fields on `MainWindowViewModel` (`ocadCreationSettingsPrevious`, `descPrintSettings`, etc.), reset to null when a new map file loads. The printer/paper/margins for print dialogs are stored as separate `PrinterNameAndSettings` + `PrintingPaperSizeWithMargins` fields (`BuildDefaultPaperSizeWithMargins()` seeds the default — Letter+0.25" / A4+7mm by locale).
+
+The convention has been: porting the dialog + ViewModel is one step; wiring its command is a separate follow-up. Don't assume — the dialog can be reviewed before the command is hooked up.
+
+### Small Avalonia Binding/Control Notes
+
+- **Negate a bool in a binding** with `!`: `IsChecked="{Binding !RenumberExisting, Mode=TwoWay}"` works two-way (used for the inverse member of a radio-button pair, so the VM needs only one bool). Also `IsVisible="{Binding !IsPdfCreation}"`.
+- **Mutually-exclusive radios**: give them the same `GroupName`; bind one to the bool and the other to its negation.
+- **Enable/disable buttons via commands**: `[RelayCommand(CanExecute = nameof(CanMoveUp))]` + `[NotifyCanExecuteChangedFor(nameof(MoveUpCommand))]` on the property the CanExecute reads (e.g. `SelectedIndex`). The bound button auto-enables/disables; no code-behind. Reorder list items with `ObservableCollection.Move`.
+- **NumericUpDown** binds an `int` property to `Value` fine (no need for `decimal`); set `Minimum`/`Maximum`/`Increment`/`FormatString="0"`.
+- **Icons without assets**: use Unicode glyphs in a `TextBlock` — arrows `↑`/`↓` (or triangles `▲`/`▼`), warning `⚠` — rather than importing image resources.
+- **App-wide compact control padding** is set via resource overrides in `App.axaml` (`ListBoxItemDefaultPadding`, `ComboBoxItemDefaultPadding`, `MenuItemPadding`, etc.) — prefer adding to those over per-dialog overrides when the change should be global.
+
 ## Current Development Focus
 
 - **Avalonia port** - AvPurplePen is the new cross-platform application, gradually replacing the WinForms PurplePen project. Code is being moved from PurplePen/ and PurplePenCore/ into AvPurplePen/ (Views) and PurplePenViewModels/ (ViewModels).
