@@ -1,0 +1,101 @@
+<!--
+    PunchPatternDialog.axaml
+
+    Punch Patterns dialog. Shows a list of control codes on the left and a
+    dot grid editor on the right. The user selects a code and toggles dots
+    to define its punch pattern. Codes without a pattern are shown in red.
+
+    Migrated from WinForms PurplePen/PunchPatternDialog.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.PunchPatternDialog"
+        Classes="dialog"
+        x:DataType="vm:PunchPatternDialogViewModel"
+        Title="{resx:Localize PunchPatternDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="468" d:DesignHeight="430"
+        Width="468" Height="430"
+        MinWidth="350" MinHeight="300"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PunchPatternDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Codes without a punch pattern are shown in red -->
+        <Style Selector="ListBoxItem TextBlock.noPattern">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- Bottom: format button on left, OK/Cancel on right -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,*,Auto,Auto"
+              Margin="0,12,0,0">
+            <Button x:Name="formatButton"
+                    Grid.Column="0"
+                    Content="{resx:Localize PunchPatternDialog_formatButton_Text}"
+                    Click="FormatButton_Click"/>
+            <Button x:Name="okButton"
+                    Grid.Column="2"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Grid.Column="3"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"
+                    Margin="8,0,0,0"/>
+        </Grid>
+
+        <!-- Top: instruction label -->
+        <TextBlock x:Name="punchPatternsLabel"
+                   DockPanel.Dock="Top"
+                   Text="{resx:Localize PunchPatternDialog_punchPatternsLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Center: code list on left, dot grid on right -->
+        <Grid ColumnDefinitions="140,12,*">
+
+            <!-- Code list -->
+            <ListBox x:Name="codeList"
+                     Grid.Column="0"
+                     ItemsSource="{Binding CodeItems}"
+                     SelectedItem="{Binding SelectedCodeItem, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="vm:PunchCodeItem">
+                        <TextBlock Text="{Binding Code}"
+                                   Classes.noPattern="{Binding !HasPattern}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!-- Dot grid editor -->
+            <views:DotGrid x:Name="dotGrid"
+                           Grid.Column="2"
+                           Dots="{Binding Dots, Mode=TwoWay}"/>
+
+        </Grid>
+
+    </DockPanel>
+</Window>
