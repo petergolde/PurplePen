@@ -206,7 +206,7 @@
                                 Classes="Small"
                                 Content="{resx:Localize PrintPunches_punchCardLayoutButton_Text}"
                                 HorizontalAlignment="Left"
-                                Click="PunchCardLayoutButton_Click"/>
+                                Command="{Binding ShowPunchCardLayoutCommand}"/>
                     </StackPanel>
                 </HeaderedContentControl>
 

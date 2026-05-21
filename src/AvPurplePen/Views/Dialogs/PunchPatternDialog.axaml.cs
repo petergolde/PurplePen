@@ -34,13 +34,5 @@ namespace AvPurplePen.Views
         {
             Close(false);
         }
-
-        /// <summary>Opens the Punch Card Layout sub-dialog.</summary>
-        private void FormatButton_Click(object? sender, RoutedEventArgs e)
-        {
-#if PORTING
-            // TODO: Open PunchcardLayoutDialog and update PunchcardFormat on the ViewModel.
-#endif
-        }
     }
 }

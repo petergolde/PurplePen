@@ -1,0 +1,146 @@
+<!--
+    PunchCardLayoutDialog.axaml
+
+    Punch Card Layout dialog. Configures the number of rows and columns
+    on the punch card, and the order in which boxes are filled.
+
+    Migrated from WinForms PurplePen/PunchcardLayoutDialog.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.PunchCardLayoutDialog"
+        Classes="dialog"
+        x:DataType="vm:PunchCardLayoutDialogViewModel"
+        Title="{resx:Localize PunchcardLayoutDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="330" d:DesignHeight="330"
+        Width="330"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PunchCardLayoutDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="12">
+
+            <!-- Size group -->
+            <HeaderedContentControl Header="{resx:Localize PunchcardLayoutDialog_sizeGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto">
+                    <TextBlock x:Name="rowsLabel"
+                               Grid.Row="0" Grid.Column="0"
+                               Text="{resx:Localize PunchcardLayoutDialog_rowsLabel_Text}"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,4"/>
+                    <NumericUpDown x:Name="rowsUpDown"
+                                   Grid.Row="0" Grid.Column="1"
+                                   Width="90"
+                                   HorizontalAlignment="Left"
+                                   Minimum="1" Maximum="20"
+                                   Increment="1"
+                                   FormatString="0"
+                                   Value="{Binding BoxesDown, Mode=TwoWay}"
+                                   Margin="0,0,0,4"/>
+
+                    <TextBlock x:Name="columnsLabel"
+                               Grid.Row="1" Grid.Column="0"
+                               Text="{resx:Localize PunchcardLayoutDialog_columnsLabel_Text}"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0"/>
+                    <NumericUpDown x:Name="colsUpDown"
+                                   Grid.Row="1" Grid.Column="1"
+                                   Width="90"
+                                   HorizontalAlignment="Left"
+                                   Minimum="3" Maximum="20"
+                                   Increment="1"
+                                   FormatString="0"
+                                   Value="{Binding BoxesAcross, Mode=TwoWay}"/>
+                </Grid>
+            </HeaderedContentControl>
+
+            <!-- Box Order group -->
+            <HeaderedContentControl Header="{resx:Localize PunchcardLayoutDialog_boxOrderGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto"
+                      HorizontalAlignment="Center">
+                    <!-- Top-left: Left-to-Right, Bottom-to-Top -->
+                    <RadioButton x:Name="orderLRBT"
+                                 Grid.Row="0" Grid.Column="0"
+                                 GroupName="BoxOrder"
+                                 IsChecked="{Binding IsOrderLRBT, Mode=TwoWay}"
+                                 Margin="0,0,12,8">
+                        <Image Source="/Assets/Images/PunchLRBT.png"
+                               Width="90" Height="54"
+                               Stretch="Uniform"/>
+                    </RadioButton>
+
+                    <!-- Top-right: Right-to-Left, Bottom-to-Top -->
+                    <RadioButton x:Name="orderRLBT"
+                                 Grid.Row="0" Grid.Column="1"
+                                 GroupName="BoxOrder"
+                                 IsChecked="{Binding IsOrderRLBT, Mode=TwoWay}"
+                                 Margin="0,0,0,8">
+                        <Image Source="/Assets/Images/PunchRLBT.png"
+                               Width="90" Height="54"
+                               Stretch="Uniform"/>
+                    </RadioButton>
+
+                    <!-- Bottom-left: Left-to-Right, Top-to-Bottom -->
+                    <RadioButton x:Name="orderLRTB"
+                                 Grid.Row="1" Grid.Column="0"
+                                 GroupName="BoxOrder"
+                                 IsChecked="{Binding IsOrderLRTB, Mode=TwoWay}"
+                                 Margin="0,0,12,0">
+                        <Image Source="/Assets/Images/PunchLRTB.png"
+                               Width="90" Height="54"
+                               Stretch="Uniform"/>
+                    </RadioButton>
+
+                    <!-- Bottom-right: Right-to-Left, Top-to-Bottom -->
+                    <RadioButton x:Name="orderRLTB"
+                                 Grid.Row="1" Grid.Column="1"
+                                 GroupName="BoxOrder"
+                                 IsChecked="{Binding IsOrderRLTB, Mode=TwoWay}">
+                        <Image Source="/Assets/Images/PunchRLTB.png"
+                               Width="90" Height="54"
+                               Stretch="Uniform"/>
+                    </RadioButton>
+                </Grid>
+            </HeaderedContentControl>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>

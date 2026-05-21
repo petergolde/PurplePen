@@ -2094,16 +2094,24 @@ namespace PurplePen.ViewModels
             PrintingPaperSizeWithMargins paperSizeWithMargins =
                 punchPaperSizeWithMargins ?? BuildDefaultPaperSizeWithMargins();
 
+            PunchcardFormat punchcardFormat = controller.GetPunchcardFormat();
+
             PrintPunchesDialogViewModel vm = new PrintPunchesDialogViewModel {
                 EventDB = controller.GetEventDB(),
                 IsPdfCreation = true,
                 Printer = printer,
                 PaperSizeWithMargins = paperSizeWithMargins,
+                PunchcardFormat = punchcardFormat,
                 Settings = settings,
             };
 
             if (!await Services.DialogService.ShowDialogAsync(vm))
                 return;
+
+            // The Punch Card Layout… button edits an event-wide setting; apply
+            // it through the controller if the user changed it.
+            if (vm.PunchcardFormat != null && !vm.PunchcardFormat.Equals(punchcardFormat))
+                controller.SetPunchcardFormat(vm.PunchcardFormat);
 
             // Ask where to save. The file-save picker is hosted by
             // DialogService via FileSaveViewModel's special case.

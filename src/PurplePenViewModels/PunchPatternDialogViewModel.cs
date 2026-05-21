@@ -10,7 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace PurplePen.ViewModels
 {
@@ -68,6 +70,24 @@ namespace PurplePen.ViewModels
         {
             get => punchcardFormat;
             set => punchcardFormat = value != null ? (PunchcardFormat)value.Clone() : null;
+        }
+
+        /// <summary>
+        /// Opens the Punch Card Layout sub-dialog to edit the punch card format,
+        /// and stores the result back into <see cref="PunchcardFormat"/> if the
+        /// user accepts.
+        /// </summary>
+        [RelayCommand]
+        private async Task ShowFormat()
+        {
+            PunchCardLayoutDialogViewModel layoutVm = new PunchCardLayoutDialogViewModel();
+            if (PunchcardFormat != null)
+                layoutVm.PunchcardFormat = PunchcardFormat;
+
+            if (await Services.DialogService.ShowDialogAsync(layoutVm))
+            {
+                PunchcardFormat = layoutVm.PunchcardFormat;
+            }
         }
 
         /// <summary>

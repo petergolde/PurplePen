@@ -15,9 +15,11 @@
 // the ViewModel surfaces display strings for them.
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PurplePen.ViewModels
 {
@@ -67,6 +69,22 @@ namespace PurplePen.ViewModels
         [NotifyPropertyChangedFor(nameof(OrientationDisplay))]
         [NotifyPropertyChangedFor(nameof(MarginsDisplay))]
         private PrintingPaperSizeWithMargins? paperSizeWithMargins;
+
+        // Defensive clone on set; the Punch Card Layout sub-dialog edits this.
+        private PunchcardFormat? punchcardFormat;
+
+        /// <summary>
+        /// The event-wide punch card layout (rows, columns, box order). Seeded
+        /// by the caller from <c>controller.GetPunchcardFormat()</c> and edited
+        /// via the Punch Card Layout… button (<see cref="ShowPunchCardLayoutCommand"/>).
+        /// The caller applies it back via <c>controller.SetPunchcardFormat()</c>
+        /// if it changed.
+        /// </summary>
+        public PunchcardFormat? PunchcardFormat
+        {
+            get => punchcardFormat;
+            set => punchcardFormat = value != null ? (PunchcardFormat)value.Clone() : null;
+        }
 
         // ===== UI state — bound directly to dialog controls =====
 
@@ -196,6 +214,24 @@ namespace PurplePen.ViewModels
 
                 Count = value.Count;
                 BoxSize = (decimal)value.BoxSize;
+            }
+        }
+
+        /// <summary>
+        /// Opens the Punch Card Layout sub-dialog to edit the punch card format,
+        /// and stores the result back into <see cref="PunchcardFormat"/> if the
+        /// user accepts.
+        /// </summary>
+        [RelayCommand]
+        private async Task ShowPunchCardLayout()
+        {
+            PunchCardLayoutDialogViewModel layoutVm = new PunchCardLayoutDialogViewModel();
+            if (PunchcardFormat != null)
+                layoutVm.PunchcardFormat = PunchcardFormat;
+
+            if (await Services.DialogService.ShowDialogAsync(layoutVm))
+            {
+                PunchcardFormat = layoutVm.PunchcardFormat;
             }
         }
     }

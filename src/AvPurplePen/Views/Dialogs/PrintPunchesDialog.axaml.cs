@@ -9,10 +9,10 @@
 //      IsPdfCreation. The Title is a single property, so we can't overlap
 //      two AXAML elements like we do for the OK button; setting it in
 //      Opened from the View layer keeps localized strings out of the VM.
-//   3. The Change Printer… / Change Margins… / Preview / Punch Card Layout…
-//      buttons, which aren't ported yet — their click handlers are
-//      intentionally no-ops (with a TODO inside #if PORTING for the future
-//      port).
+//   3. The Change Printer… / Change Margins… / Preview buttons, which aren't
+//      ported yet — their click handlers are intentionally no-ops (with a
+//      TODO inside #if PORTING for the future port). (The Punch Card Layout…
+//      button is bound to a command on the ViewModel instead.)
 //
 // Migrated from WinForms PurplePen/PrintPunches.cs.
 
@@ -115,19 +115,6 @@ namespace AvPurplePen.Views
             // TODO: Hook this up once the Avalonia print pipeline / preview
             // surface is in place. The WinForms version called
             // controller.PrintPunches with a WinForms preview target.
-#endif
-        }
-
-        /// <summary>
-        /// Punch Card Layout… — not yet implemented. The PunchcardLayoutDialog
-        /// isn't ported.
-        /// </summary>
-        private void PunchCardLayoutButton_Click(object? sender, RoutedEventArgs e)
-        {
-#if PORTING
-            // TODO: Port the PunchcardLayoutDialog. It edits the event's
-            // PunchcardFormat via controller.GetPunchcardFormat /
-            // SetPunchcardFormat.
 #endif
         }
     }

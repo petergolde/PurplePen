@@ -49,7 +49,7 @@
             <Button x:Name="formatButton"
                     Grid.Column="0"
                     Content="{resx:Localize PunchPatternDialog_formatButton_Text}"
-                    Click="FormatButton_Click"/>
+                    Command="{Binding ShowFormatCommand}"/>
             <Button x:Name="okButton"
                     Grid.Column="2"
                     Content="{resx:Localize OKButton}"
