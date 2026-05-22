@@ -462,9 +462,6 @@
   <data name="NewEventMapFile_chooseMapFileButton_Text" xml:space="preserve">
     <value>_Vali kaardi fail...</value>
   </data>
-  <data name="ChangeMapFile_openFileDialog_Filter" xml:space="preserve">
-    <value>Kõik kaardi failid|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|Open Orienteering Mapper Failid|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="NewEventMapFile_openFileDialog_Filter" xml:space="preserve">
     <value>Kõik kaardi failid|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|Open Orienteering Mapper Failid|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>

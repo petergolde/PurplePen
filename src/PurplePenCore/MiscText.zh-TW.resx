@@ -619,4 +619,7 @@
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen 檔案|*.ppen|All files|*.*</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>所有的地圖檔案|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD 檔案 (*.ocd)|*.ocd|OOM檔案|*.omap;*.xmap|PDF 檔案 (*.pdf)|*.pdf|圖片檔案|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
 </root>

@@ -508,13 +508,13 @@ Użyj | aby rozdzielić linie
   <data name="Version_RC" xml:space="preserve">
     <value>RC {0}</value>
   </data>
+  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Pliki Purple Pen|*.ppen|Wszystkie|*.*</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript nie jest zainstalowany</value>
-  </data>
-  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
-    <value>Pliki Purple Pen|*.ppen|Wszystkie|*.*</value>
   </data>
 </root>

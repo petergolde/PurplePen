@@ -462,9 +462,6 @@
   <data name="NewEventMapFile_chooseMapFileButton_Text" xml:space="preserve">
     <value>選擇地圖檔案(_C)...</value>
   </data>
-  <data name="ChangeMapFile_openFileDialog_Filter" xml:space="preserve">
-    <value>所有的地圖檔案|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD 檔案 (*.ocd)|*.ocd|OOM檔案|*.omap;*.xmap|PDF 檔案 (*.pdf)|*.pdf|圖片檔案|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="NewEventMapFile_openFileDialog_Filter" xml:space="preserve">
     <value>所有的地圖檔案|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD 檔案 (*.ocd)|*.ocd|OOM檔案|*.omap;*.xmap|PDF 檔案 (*.pdf)|*.pdf|圖片檔案|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>

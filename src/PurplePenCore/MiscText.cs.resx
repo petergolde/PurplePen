@@ -616,10 +616,13 @@ OK - zkus soubor s mapou najít.</value>
   <data name="Version_RC" xml:space="preserve">
     <value>RC {0}</value>
   </data>
+  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Soubory Purple Pen|*.ppen|Všechny soubory|*.*</value>
+  </data>
   <data name="CodeUnder31" xml:space="preserve">
     <value>Kód kontroly by měl být 31 nebo vyšší.</value>
   </data>
-  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
-    <value>Soubory Purple Pen|*.ppen|Všechny soubory|*.*</value>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Všechny mapové soubory|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
 </root>

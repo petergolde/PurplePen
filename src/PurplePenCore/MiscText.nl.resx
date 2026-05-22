@@ -210,4 +210,7 @@
   <data name="CannotPrint" xml:space="preserve">
     <value>'{0}' kan niet worden afgedrukt vanwege:</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Alle kaart bestanden|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD bestanden (*.ocd)|*.ocd|Open Orienteering Mapper bestanden|*.omap;*.xmap|PDF bestanden (*.pdf)|*.pdf|Afbeeldingen|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
 </root>

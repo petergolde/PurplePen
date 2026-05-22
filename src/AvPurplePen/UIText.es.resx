@@ -459,9 +459,6 @@
   <data name="NewEventMapFile_chooseMapFileButton_Text" xml:space="preserve">
     <value>_Seleccionar otro archivo de mapa...</value>
   </data>
-  <data name="ChangeMapFile_openFileDialog_Filter" xml:space="preserve">
-    <value>Todos los archivos de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Ficheros de OCAD (*.ocd)|*.ocd|Archivos de Open Orienteering Mapper|*.omap;*.xmap|Archivos PDF (*.pdf)|*.pdf|Archivos de imágenes|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
-  </data>
   <data name="NewEventMapFile_openFileDialog_Filter" xml:space="preserve">
     <value>Todos los archivos de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Ficheros de OCAD (*.ocd)|*.ocd|Archivos de Open Orienteering Mapper|*.omap;*.xmap|Archivos PDF (*.pdf)|*.pdf|Archivos de imágenes|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>

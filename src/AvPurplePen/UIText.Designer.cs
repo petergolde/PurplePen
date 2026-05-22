@@ -853,7 +853,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Choose map file....
+        ///   Looks up a localized string similar to _Choose map file....
         /// </summary>
         public static string ChangeMapFile_buttonChooseFile_Text {
             get {
@@ -903,15 +903,6 @@ namespace AvPurplePen {
         public static string ChangeMapFile_mapFileDisplay_Text {
             get {
                 return ResourceManager.GetString("ChangeMapFile_mapFileDisplay_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to All map files|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif.
-        /// </summary>
-        public static string ChangeMapFile_openFileDialog_Filter {
-            get {
-                return ResourceManager.GetString("ChangeMapFile_openFileDialog_Filter", resourceCulture);
             }
         }
         
@@ -1546,7 +1537,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create {0} &amp;Files.
+        ///   Looks up a localized string similar to Create {0} _Files.
         /// </summary>
         public static string CommandNameText_CreateMapFiles {
             get {
@@ -3805,7 +3796,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;About Purple Pen.
+        ///   Looks up a localized string similar to _About Purple Pen.
         /// </summary>
         public static string MainFrame_aboutMenu_Text {
             get {
@@ -3814,7 +3805,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add &amp;Bend.
+        ///   Looks up a localized string similar to Add _Bend.
         /// </summary>
         public static string MainFrame_addBendMenu_Text {
             get {
@@ -3850,7 +3841,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Control.
+        ///   Looks up a localized string similar to _Control.
         /// </summary>
         public static string MainFrame_addControlMenu_Text {
             get {
@@ -3877,7 +3868,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Add Course....
+        ///   Looks up a localized string similar to _Add Course....
         /// </summary>
         public static string MainFrame_addCourseMenu_Text {
             get {
@@ -3904,7 +3895,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Descriptions.
+        ///   Looks up a localized string similar to _Descriptions.
         /// </summary>
         public static string MainFrame_addDescriptionsMenu_Text {
             get {
@@ -3922,7 +3913,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Finish.
+        ///   Looks up a localized string similar to _Finish.
         /// </summary>
         public static string MainFrame_addFinishMenu_Text {
             get {
@@ -3958,7 +3949,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add &amp;Gap.
+        ///   Looks up a localized string similar to Add _Gap.
         /// </summary>
         public static string MainFrame_addGapMenu_Text {
             get {
@@ -4012,7 +4003,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map Flip/E&amp;xchange.
+        ///   Looks up a localized string similar to Map Flip/E_xchange.
         /// </summary>
         public static string MainFrame_addMapExchangeMenu_Text {
             get {
@@ -4021,7 +4012,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map &amp;Flip at Control Point.
+        ///   Looks up a localized string similar to Map _Flip at Control Point.
         /// </summary>
         public static string MainFrame_addMapFlipMenuItem_Text {
             get {
@@ -4039,7 +4030,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Add.
+        ///   Looks up a localized string similar to _Add.
         /// </summary>
         public static string MainFrame_addMenu_Text {
             get {
@@ -4084,7 +4075,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Start.
+        ///   Looks up a localized string similar to _Start.
         /// </summary>
         public static string MainFrame_addStartMenu_Text {
             get {
@@ -4102,7 +4093,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Text &amp;Line....
+        ///   Looks up a localized string similar to Text _Line....
         /// </summary>
         public static string MainFrame_addTextLineMenu_Text {
             get {
@@ -4129,7 +4120,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Variation....
+        ///   Looks up a localized string similar to _Variation....
         /// </summary>
         public static string MainFrame_addVariationMenu_Text {
             get {
@@ -4156,7 +4147,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;All Controls.
+        ///   Looks up a localized string similar to _All Controls.
         /// </summary>
         public static string MainFrame_allControlsMenu_Text {
             get {
@@ -4165,7 +4156,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic &amp;Numbering....
+        ///   Looks up a localized string similar to Automatic _Numbering....
         /// </summary>
         public static string MainFrame_autoNumberingMenu_Text {
             get {
@@ -4192,7 +4183,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Clear Selection.
+        ///   Looks up a localized string similar to _Clear Selection.
         /// </summary>
         public static string MainFrame_cancelMenu_Text {
             get {
@@ -4201,7 +4192,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Control &amp;Codes....
+        ///   Looks up a localized string similar to Change Control _Codes....
         /// </summary>
         public static string MainFrame_changeCodesMenu_Text {
             get {
@@ -4210,7 +4201,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Displa&amp;yed Courses....
+        ///   Looks up a localized string similar to Change Displa_yed Courses....
         /// </summary>
         public static string MainFrame_changeDisplayedCoursesMenu_Text {
             get {
@@ -4219,7 +4210,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Line &amp;Appearance....
+        ///   Looks up a localized string similar to Change Line _Appearance....
         /// </summary>
         public static string MainFrame_changeLineAppearanceMenu_Text {
             get {
@@ -4228,7 +4219,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Map File....
+        ///   Looks up a localized string similar to _Map File....
         /// </summary>
         public static string MainFrame_changeMapFileMenu_Text {
             get {
@@ -4237,7 +4228,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change &amp;Text....
+        ///   Looks up a localized string similar to Change _Text....
         /// </summary>
         public static string MainFrame_changeTextMenu_Text {
             get {
@@ -4264,7 +4255,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Control and Leg Loa&amp;d.
+        ///   Looks up a localized string similar to Control and Leg Loa_d.
         /// </summary>
         public static string MainFrame_controlAndLegLoadMenu_Text {
             get {
@@ -4273,7 +4264,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Control &amp;Cross-reference.
+        ///   Looks up a localized string similar to Control _Cross-reference.
         /// </summary>
         public static string MainFrame_controlCrossrefMenu_Text {
             get {
@@ -4291,7 +4282,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Competitor &amp;Load....
+        ///   Looks up a localized string similar to Competitor _Load....
         /// </summary>
         public static string MainFrame_courseLoadMenu_Text {
             get {
@@ -4300,7 +4291,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Course.
+        ///   Looks up a localized string similar to _Course.
         /// </summary>
         public static string MainFrame_courseMenu_Text {
             get {
@@ -4309,7 +4300,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Course &amp;Order....
+        ///   Looks up a localized string similar to Course _Order....
         /// </summary>
         public static string MainFrame_courseOrderMenu_Text {
             get {
@@ -4327,7 +4318,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Course &amp;Summary.
+        ///   Looks up a localized string similar to Course _Summary.
         /// </summary>
         public static string MainFrame_courseSummaryMenu_Text {
             get {
@@ -4336,7 +4327,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Relay Team &amp;Variations....
+        ///   Looks up a localized string similar to Relay Team _Variations....
         /// </summary>
         public static string MainFrame_courseVariationReportMenu_Text {
             get {
@@ -4354,7 +4345,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Courses....
+        ///   Looks up a localized string similar to _Courses....
         /// </summary>
         public static string MainFrame_createCoursePdfMenu_Text {
             get {
@@ -4363,7 +4354,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Descriptions....
+        ///   Looks up a localized string similar to _Descriptions....
         /// </summary>
         public static string MainFrame_createDescriptionPdfMenu_Text {
             get {
@@ -4372,7 +4363,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create G&amp;PX File....
+        ///   Looks up a localized string similar to Create G_PX File....
         /// </summary>
         public static string MainFrame_createGPXFileMenu_Text {
             get {
@@ -4381,7 +4372,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Ima&amp;ge Files....
+        ///   Looks up a localized string similar to Create Ima_ge Files....
         /// </summary>
         public static string MainFrame_createImageFilesMenu_Text {
             get {
@@ -4390,7 +4381,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create &amp;KML File....
+        ///   Looks up a localized string similar to Create _KML File....
         /// </summary>
         public static string MainFrame_createKMLFileMenu_Text {
             get {
@@ -4399,7 +4390,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create OCAD &amp;Files....
+        ///   Looks up a localized string similar to Create OCAD _Files....
         /// </summary>
         public static string MainFrame_createOcadFilesMenu_Text {
             get {
@@ -4408,7 +4399,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create P&amp;DFs.
+        ///   Looks up a localized string similar to Create P_DFs.
         /// </summary>
         public static string MainFrame_createPDFsMenu_Text {
             get {
@@ -4417,7 +4408,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pu&amp;nch Cards....
+        ///   Looks up a localized string similar to Pu_nch Cards....
         /// </summary>
         public static string MainFrame_createPunchcardPdfMenu_Text {
             get {
@@ -4444,7 +4435,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Data &amp;Interchange File (IOF XML)....
+        ///   Looks up a localized string similar to Create Data _Interchange File (IOF XML)....
         /// </summary>
         public static string MainFrame_createXmlMenu_Text {
             get {
@@ -4453,7 +4444,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customize &amp;Appearance....
+        ///   Looks up a localized string similar to Customize _Appearance....
         /// </summary>
         public static string MainFrame_customizeCourseAppearanceMenu_Text {
             get {
@@ -4462,7 +4453,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Customize &amp;Description Text....
+        ///   Looks up a localized string similar to Customize _Description Text....
         /// </summary>
         public static string MainFrame_customizeDescriptionsMenu_Text {
             get {
@@ -4489,7 +4480,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Delete Course.
+        ///   Looks up a localized string similar to _Delete Course.
         /// </summary>
         public static string MainFrame_deleteCourseMenu_Text {
             get {
@@ -4498,7 +4489,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete For&amp;k/Loop.
+        ///   Looks up a localized string similar to Delete For_k/Loop.
         /// </summary>
         public static string MainFrame_deleteForkMenu_Text {
             get {
@@ -4507,7 +4498,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Delete.
+        ///   Looks up a localized string similar to _Delete.
         /// </summary>
         public static string MainFrame_deleteItemMenu_Text {
             get {
@@ -4516,7 +4507,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Delete.
+        ///   Looks up a localized string similar to _Delete.
         /// </summary>
         public static string MainFrame_deleteMenu_Text {
             get {
@@ -4570,7 +4561,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Make a &amp;Donation.
+        ///   Looks up a localized string similar to Make a _Donation.
         /// </summary>
         public static string MainFrame_donateWebSiteMenu_Text {
             get {
@@ -4597,7 +4588,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D&amp;uplicate Course....
+        ///   Looks up a localized string similar to D_uplicate Course....
         /// </summary>
         public static string MainFrame_duplicateCourseMenu_Text {
             get {
@@ -4606,7 +4597,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Edit.
+        ///   Looks up a localized string similar to _Edit.
         /// </summary>
         public static string MainFrame_editMenu_Text {
             get {
@@ -4633,7 +4624,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entire &amp;Course.
+        ///   Looks up a localized string similar to Entire _Course.
         /// </summary>
         public static string MainFrame_entireCourseMenu_Text {
             get {
@@ -4651,7 +4642,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entire &amp;Map.
+        ///   Looks up a localized string similar to Entire _Map.
         /// </summary>
         public static string MainFrame_entireMapMenu_Text {
             get {
@@ -4660,7 +4651,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Event &amp;Audit.
+        ///   Looks up a localized string similar to Event _Audit.
         /// </summary>
         public static string MainFrame_eventAuditMenu_Text {
             get {
@@ -4669,7 +4660,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Eve&amp;nt.
+        ///   Looks up a localized string similar to Eve_nt.
         /// </summary>
         public static string MainFrame_eventMenu_Text {
             get {
@@ -4678,7 +4669,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E&amp;xit.
+        ///   Looks up a localized string similar to E_xit.
         /// </summary>
         public static string MainFrame_exitMenu_Text {
             get {
@@ -4687,7 +4678,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;File.
+        ///   Looks up a localized string similar to _File.
         /// </summary>
         public static string MainFrame_fileMenu_Text {
             get {
@@ -4723,7 +4714,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Full.
+        ///   Looks up a localized string similar to _Full.
         /// </summary>
         public static string MainFrame_fullIntensityMenu_Text {
             get {
@@ -4732,7 +4723,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Purple Pen &amp;Help.
+        ///   Looks up a localized string similar to Purple Pen _Help.
         /// </summary>
         public static string MainFrame_helpContentsMenu_Text {
             get {
@@ -4741,7 +4732,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Help.
+        ///   Looks up a localized string similar to _Help.
         /// </summary>
         public static string MainFrame_helpMenu_Text {
             get {
@@ -4759,7 +4750,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;High.
+        ///   Looks up a localized string similar to _High.
         /// </summary>
         public static string MainFrame_highIntensityMenu_Text {
             get {
@@ -4786,7 +4777,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IOF &amp;Standards.
+        ///   Looks up a localized string similar to IOF _Standards.
         /// </summary>
         public static string MainFrame_iOFStandardsToolStripMenuItem_Text {
             get {
@@ -4795,7 +4786,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Item.
+        ///   Looks up a localized string similar to _Item.
         /// </summary>
         public static string MainFrame_itemMenu_Text {
             get {
@@ -4804,7 +4795,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Leg Flagging.
+        ///   Looks up a localized string similar to _Leg Flagging.
         /// </summary>
         public static string MainFrame_legFlaggingMenu_Text {
             get {
@@ -4813,7 +4804,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Leg Lengths.
+        ///   Looks up a localized string similar to _Leg Lengths.
         /// </summary>
         public static string MainFrame_legLengthsMenu_Text {
             get {
@@ -4840,7 +4831,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Low.
+        ///   Looks up a localized string similar to _Low.
         /// </summary>
         public static string MainFrame_lowIntensityMenu_Text {
             get {
@@ -4849,7 +4840,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Purple Pen &amp;Web Site.
+        ///   Looks up a localized string similar to Purple Pen _Web Site.
         /// </summary>
         public static string MainFrame_mainWebSiteToolMenu_Text {
             get {
@@ -4867,7 +4858,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map Exchange at &amp;Control Point.
+        ///   Looks up a localized string similar to Map Exchange at _Control Point.
         /// </summary>
         public static string MainFrame_mapExchangeControlMenuItem_Text {
             get {
@@ -4885,7 +4876,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Flagged &amp;Route to Map Exchange.
+        ///   Looks up a localized string similar to Flagged _Route to Map Exchange.
         /// </summary>
         public static string MainFrame_mapExchangeSeparateMenuItem_Text {
             get {
@@ -4921,7 +4912,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map &amp;Intensity.
+        ///   Looks up a localized string similar to Map _Intensity.
         /// </summary>
         public static string MainFrame_mapIntensityMenu_Text {
             get {
@@ -4939,7 +4930,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Map &amp;Quality.
+        ///   Looks up a localized string similar to Map _Quality.
         /// </summary>
         public static string MainFrame_mapQualityMenu_Text {
             get {
@@ -4993,7 +4984,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Medium.
+        ///   Looks up a localized string similar to _Medium.
         /// </summary>
         public static string MainFrame_mediumIntensityMenu_Text {
             get {
@@ -5020,7 +5011,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mo&amp;ve All Controls....
+        ///   Looks up a localized string similar to Mo_ve All Controls....
         /// </summary>
         public static string MainFrame_moveAllControlsMenu_Text {
             get {
@@ -5029,7 +5020,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;New Event....
+        ///   Looks up a localized string similar to _New Event....
         /// </summary>
         public static string MainFrame_newEventMenu_Text {
             get {
@@ -5074,7 +5065,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Open....
+        ///   Looks up a localized string similar to _Open....
         /// </summary>
         public static string MainFrame_openMenu_Text {
             get {
@@ -5128,7 +5119,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;All Courses.
+        ///   Looks up a localized string similar to _All Courses.
         /// </summary>
         public static string MainFrame_printAreaAllCoursesMenu_Text {
             get {
@@ -5137,7 +5128,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;This Course.
+        ///   Looks up a localized string similar to _This Course.
         /// </summary>
         public static string MainFrame_printAreaThisCourseMenu_Text {
             get {
@@ -5146,7 +5137,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This &amp;Part Only.
+        ///   Looks up a localized string similar to This _Part Only.
         /// </summary>
         public static string MainFrame_printAreaThisPartMenu_Text {
             get {
@@ -5155,7 +5146,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Print &amp;Courses....
+        ///   Looks up a localized string similar to Print _Courses....
         /// </summary>
         public static string MainFrame_printCoursesMenu_Text {
             get {
@@ -5164,7 +5155,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Print Descriptions....
+        ///   Looks up a localized string similar to _Print Descriptions....
         /// </summary>
         public static string MainFrame_printDescriptionsMenu_Text {
             get {
@@ -5173,7 +5164,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Print Pu&amp;nch Cards....
+        ///   Looks up a localized string similar to Print Pu_nch Cards....
         /// </summary>
         public static string MainFrame_printPunchCardsMenu_Text {
             get {
@@ -5182,7 +5173,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Program &amp;Language....
+        ///   Looks up a localized string similar to Program _Language....
         /// </summary>
         public static string MainFrame_programLanguageMenu_Text {
             get {
@@ -5191,7 +5182,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Properties....
+        ///   Looks up a localized string similar to _Properties....
         /// </summary>
         public static string MainFrame_propertiesMenu_Text {
             get {
@@ -5200,7 +5191,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Punch Patterns....
+        ///   Looks up a localized string similar to _Punch Patterns....
         /// </summary>
         public static string MainFrame_punchPatternsMenu_Text {
             get {
@@ -5236,7 +5227,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Redo.
+        ///   Looks up a localized string similar to _Redo.
         /// </summary>
         public static string MainFrame_redoMenu_Text {
             get {
@@ -5272,7 +5263,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove B&amp;end.
+        ///   Looks up a localized string similar to Remove B_end.
         /// </summary>
         public static string MainFrame_removeBendMenu_Text {
             get {
@@ -5281,7 +5272,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove Ga&amp;p.
+        ///   Looks up a localized string similar to Remove Ga_p.
         /// </summary>
         public static string MainFrame_removeGapMenu_Text {
             get {
@@ -5290,7 +5281,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remove &amp;Unused Controls....
+        ///   Looks up a localized string similar to Remove _Unused Controls....
         /// </summary>
         public static string MainFrame_removeUnusedControlsMenu_Text {
             get {
@@ -5299,7 +5290,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Reports.
+        ///   Looks up a localized string similar to _Reports.
         /// </summary>
         public static string MainFrame_reportMenu_Text {
             get {
@@ -5317,7 +5308,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to R&amp;otate.
+        ///   Looks up a localized string similar to R_otate.
         /// </summary>
         public static string MainFrame_rotateMenu_Text {
             get {
@@ -5326,7 +5317,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save &amp;As....
+        ///   Looks up a localized string similar to Save _As....
         /// </summary>
         public static string MainFrame_saveAsMenu_Text {
             get {
@@ -5362,7 +5353,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Save.
+        ///   Looks up a localized string similar to _Save.
         /// </summary>
         public static string MainFrame_saveMenu_Text {
             get {
@@ -5407,7 +5398,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set Print A&amp;rea.
+        ///   Looks up a localized string similar to Set Print A_rea.
         /// </summary>
         public static string MainFrame_setPrintAreaMenu_Text {
             get {
@@ -5416,7 +5407,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show &amp;Popup Information.
+        ///   Looks up a localized string similar to Show _Popup Information.
         /// </summary>
         public static string MainFrame_showPopupsMenu_Text {
             get {
@@ -5425,7 +5416,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show P&amp;rint Area.
+        ///   Looks up a localized string similar to Show P_rint Area.
         /// </summary>
         public static string MainFrame_showPrintAreaMenu_Text {
             get {
@@ -5443,7 +5434,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Stretch.
+        ///   Looks up a localized string similar to _Stretch.
         /// </summary>
         public static string MainFrame_stretchMenu_Text {
             get {
@@ -5452,7 +5443,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Support/Bug Reporting.
+        ///   Looks up a localized string similar to _Support/Bug Reporting.
         /// </summary>
         public static string MainFrame_supportWebSiteMenu_Text {
             get {
@@ -5497,7 +5488,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Translate Description Text.
+        ///   Looks up a localized string similar to _Translate Description Text.
         /// </summary>
         public static string MainFrame_translateMenu_Text {
             get {
@@ -5506,7 +5497,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Undo.
+        ///   Looks up a localized string similar to _Undo.
         /// </summary>
         public static string MainFrame_undoMenu_Text {
             get {
@@ -5533,7 +5524,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Very Low.
+        ///   Looks up a localized string similar to _Very Low.
         /// </summary>
         public static string MainFrame_veryLowIntensityMenu_Text {
             get {
@@ -5542,7 +5533,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;View.
+        ///   Looks up a localized string similar to _View.
         /// </summary>
         public static string MainFrame_viewMenu_Text {
             get {
@@ -5650,7 +5641,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Zoom.
+        ///   Looks up a localized string similar to _Zoom.
         /// </summary>
         public static string MainFrame_zoomMenu_Text {
             get {
@@ -5893,7 +5884,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ca&amp;ncel Operation.
+        ///   Looks up a localized string similar to Ca_ncel Operation.
         /// </summary>
         public static string MiscText_CancelOperationWithShortcut {
             get {
@@ -6082,7 +6073,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Clear Selection.
+        ///   Looks up a localized string similar to _Clear Selection.
         /// </summary>
         public static string MiscText_ClearSelectionWithShortcut {
             get {
@@ -6449,7 +6440,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Finish.
+        ///   Looks up a localized string similar to _Finish.
         /// </summary>
         public static string MiscText_FinishButtonText {
             get {
@@ -6743,7 +6734,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Next &gt;.
+        ///   Looks up a localized string similar to _Next &gt;.
         /// </summary>
         public static string MiscText_NextButtonText {
             get {
@@ -6941,7 +6932,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Redo.
+        ///   Looks up a localized string similar to _Redo.
         /// </summary>
         public static string MiscText_RedoWithShortcut {
             get {
@@ -7031,7 +7022,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Undo.
+        ///   Looks up a localized string similar to _Undo.
         /// </summary>
         public static string MiscText_UndoWithShortcut {
             get {
@@ -7420,7 +7411,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Choose map file....
+        ///   Looks up a localized string similar to _Choose map file....
         /// </summary>
         public static string NewEventMapFile_chooseMapFileButton_Text {
             get {
@@ -7528,7 +7519,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Default &amp;printing scale:.
+        ///   Looks up a localized string similar to Default _printing scale:.
         /// </summary>
         public static string NewEventPrintScale_defaultPrintScaleLabel_Text {
             get {
@@ -7703,7 +7694,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt; &amp;Back.
+        ///   Looks up a localized string similar to &lt; _Back.
         /// </summary>
         public static string NewEventWizard_backButton_Text {
             get {
@@ -7721,7 +7712,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Next &gt;.
+        ///   Looks up a localized string similar to _Next &gt;.
         /// </summary>
         public static string NewEventWizard_nextButton_Text {
             get {
@@ -7735,6 +7726,15 @@ namespace AvPurplePen {
         public static string NewEventWizard_Text {
             get {
                 return ResourceManager.GetString("NewEventWizard_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string NoButton {
+            get {
+                return ResourceManager.GetString("NoButton", resourceCulture);
             }
         }
         
@@ -10771,6 +10771,15 @@ namespace AvPurplePen {
         public static string ViewAdditionalCourses_Text {
             get {
                 return ResourceManager.GetString("ViewAdditionalCourses_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string YesButton {
+            get {
+                return ResourceManager.GetString("YesButton", resourceCulture);
             }
         }
     }

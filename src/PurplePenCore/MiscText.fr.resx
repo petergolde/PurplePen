@@ -604,13 +604,16 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="Version_RC" xml:space="preserve">
     <value>RC {0}</value>
   </data>
+  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Fichiers Purple Pen|*.ppen|Tous les fichiers|*.*</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript n'est pas installé</value>
   </data>
-  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
-    <value>Fichiers Purple Pen|*.ppen|Tous les fichiers|*.*</value>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Tous les fichiers cartes|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|fichiers OCAD (*.ocd)|*.ocd|fichiers Open Orienteering Mapper|*.omap;*.xmap|fichiers PDF (*.pdf)|*.pdf|fichiers Image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
 </root>

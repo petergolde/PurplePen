@@ -1504,7 +1504,7 @@ namespace PurplePen.ViewModels
         /// Executes the Event/Change Map File command. Shows the Change Map File dialog.
         /// </summary>
         [RelayCommand]
-        private void ChangeMapFile()
+        private async Task ChangeMapFile()
         {
 #if !PORTING
             // Initialize dialog.
@@ -1524,6 +1524,24 @@ namespace PurplePen.ViewModels
             // Apply new map file.
             if (result == DialogResult.OK) {
                 controller.ChangeMapFile(dialog.MapType, dialog.MapFile, dialog.MapScale, dialog.Dpi);
+            }
+#else
+            if (controller == null) return;
+
+            // Initialize dialog.
+            EventFileDialogViewModel vm = new EventFileDialogViewModel();
+            vm.SetInitialMapFile(controller.MapFileName);
+            if (controller.MapType == MapType.Bitmap) {
+                vm.MapScale = controller.MapScale;   // Note: these must be set AFTER SetInitialMapFile
+                vm.Dpi = controller.MapDpi;
+            }
+            else if (controller.MapType == MapType.PDF) {
+                vm.MapScale = controller.MapScale;
+            }
+
+            // Show the dialog.
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.ChangeMapFile(vm.MapType, vm.MapFile, vm.MapScale, vm.Dpi);
             }
 #endif
         }

@@ -631,4 +631,7 @@ Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapp
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Arquivos Purple Pen |*.ppen|All files|*.*</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Todos os formatos de mapa|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|arquivos OCAD(*.ocd)|*.ocd|arquivos Open Orienteering Mapper|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
 </root>

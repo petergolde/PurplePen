@@ -465,9 +465,6 @@
   <data name="NewEventMapFile_chooseMapFileButton_Text" xml:space="preserve">
     <value>&amp;Избери картен файл...</value>
   </data>
-  <data name="ChangeMapFile_openFileDialog_Filter" xml:space="preserve">
-    <value>Всички картни файлове|.ocd;.omap;.xmap;.pdf;.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif|Файлове OCAD (.ocd)|.ocd|Файлове OpenOrienteering Mapper|.omap;.xmap|PDF файлове (.pdf)|.pdf|Изображения|.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif</value>
-  </data>
   <data name="NewEventMapFile_openFileDialog_Filter" xml:space="preserve">
     <value>Всички картни файлове|.ocd;.omap;.xmap;.pdf;.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif|Файлове OCAD (.ocd)|.ocd|Файлове OpenOrienteering Mapper|.omap;.xmap|PDF файлове (.pdf)|.pdf|Изображения|.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif</value>
   </data>

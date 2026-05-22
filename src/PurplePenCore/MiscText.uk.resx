@@ -616,4 +616,7 @@
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Файли Purple Pen|*.ppen|Всі файли|*.*</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Всі файли карт|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Файли OCAD (*.ocd)|*.ocd|Файли Open Orienteering Mapper|*.omap;*.xmap|Файли PDF (*.pdf)|*.pdf|Файли зображень|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
 </root>

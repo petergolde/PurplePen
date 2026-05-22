@@ -652,4 +652,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen files|*.ppen|All files|*.*</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>All map files|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
 </root>

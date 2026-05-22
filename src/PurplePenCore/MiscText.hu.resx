@@ -610,13 +610,16 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="Version_RC" xml:space="preserve">
     <value>{0} RC</value>
   </data>
+  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen fájlok|*.ppen|Minden fájl|*.*</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>A GPL Ghostscript nincs telepítve.</value>
   </data>
-  <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
-    <value>Purple Pen fájlok|*.ppen|Minden fájl|*.*</value>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Minden térkép fájl|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD fájlok (*.ocd)|*.ocd|Open Orienteering Mapper fájlok|*.omap;*.xmap|PDF fájlok (*.pdf)|*.pdf|Kép fájlok|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
 </root>

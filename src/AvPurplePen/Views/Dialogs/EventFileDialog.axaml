@@ -1,0 +1,137 @@
+<!--
+    EventFileDialog.axaml
+
+    Change Map File dialog. Lets the user choose a map file and,
+    for bitmap or PDF maps, enter scale and DPI values.
+
+    Migrated from WinForms PurplePen/ChangeMapFile.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.EventFileDialog"
+        Classes="dialog"
+        x:DataType="vm:EventFileDialogViewModel"
+        Title="{resx:Localize ChangeMapFile_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="600" d:DesignHeight="260"
+        Width="600"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:EventFileDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsEnabled="{Binding IsOkEnabled}"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="8">
+
+            <!-- Current Map File group box -->
+            <HeaderedContentControl Header="{resx:Localize ChangeMapFile_mapFileDisplay_Text}"
+                                    Padding="8,10,8,8">
+                <TextBox x:Name="mapFileNameTextBox"
+                         Text="{Binding MapFile}"
+                         IsReadOnly="True"/>
+            </HeaderedContentControl>
+
+            <!-- Choose File button -->
+            <Button x:Name="buttonChooseFile"
+                    HorizontalAlignment="Left"
+                    Content="{resx:Localize ChangeMapFile_buttonChooseFile_Text}"
+                    Command="{Binding ChooseMapFileCommand}"/>
+
+            <!-- Error display panel (only visible when there is an error) -->
+            <StackPanel x:Name="errorDisplayPanel"
+                        Orientation="Horizontal"
+                        Spacing="8"
+                        IsVisible="{Binding HasError}">
+                <TextBlock Text="⚠"
+                           FontSize="24"
+                           Foreground="Orange"
+                           VerticalAlignment="Top"/>
+                <TextBlock x:Name="errorMessage"
+                           Text="{Binding ErrorMessageText}"
+                           Foreground="Red"
+                           FontWeight="Bold"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <!-- Scale / DPI panel (visible for Bitmap and PDF map types) -->
+            <Grid x:Name="panelScaleDpi"
+                  IsVisible="{Binding ShowScaleDpiPanel}"
+                  ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto"
+                  Margin="0,4,0,0">
+
+                <!-- Scale row -->
+                <TextBlock x:Name="labelScale"
+                           Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize ChangeMapFile_labelScale_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,4"/>
+                <StackPanel Grid.Row="0" Grid.Column="1"
+                            Orientation="Horizontal"
+                            Spacing="4"
+                            Margin="0,0,0,4">
+                    <TextBlock x:Name="labelOneTo"
+                               Text="{resx:Localize ChangeMapFile_labelOneTo_Text}"
+                               VerticalAlignment="Center"/>
+                    <TextBox x:Name="textBoxScale"
+                             Width="80"
+                             Text="{Binding ScaleText, Mode=TwoWay}"/>
+                </StackPanel>
+
+                <!-- DPI row (only visible for Bitmap maps) -->
+                <TextBlock x:Name="labelDpi"
+                           Grid.Row="1" Grid.Column="0"
+                           Text="{resx:Localize ChangeMapFile_labelDpi_Text}"
+                           VerticalAlignment="Center"
+                           IsVisible="{Binding ShowDpiRow}"
+                           Margin="0,0,8,0"/>
+                <StackPanel Grid.Row="1" Grid.Column="1"
+                            Orientation="Horizontal"
+                            Spacing="4"
+                            IsVisible="{Binding ShowDpiRow}">
+                    <TextBox x:Name="textBoxDpi"
+                             Width="80"
+                             Text="{Binding DpiText, Mode=TwoWay}"/>
+                    <TextBlock x:Name="labelDpi2"
+                               Text="{resx:Localize ChangeMapFile_labelDpi2_Text}"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>
