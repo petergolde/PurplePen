@@ -45,6 +45,9 @@ namespace PurplePen.ViewModels
         // Same idea for the Create GPX File dialog.
         private GpxCreationSettings? gpxCreationSettingsPrevious;
 
+        // Same idea for the Create KML Files dialog.
+        private ExportKmlSettings? exportKmlSettingsPrevious;
+
         // Same idea for the Create PDF Files dialog.
         private CoursePdfSettings? coursePdfSettings;
 
@@ -229,6 +232,7 @@ namespace PurplePen.ViewModels
                 ocadCreationSettingsPrevious = null;
                 bitmapCreationSettingsPrevious = null;
                 gpxCreationSettingsPrevious = null;
+                exportKmlSettingsPrevious = null;
             }
 
 #if PORTING

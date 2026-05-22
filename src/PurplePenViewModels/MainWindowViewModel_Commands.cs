@@ -2813,6 +2813,48 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             createKmlFilesDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            string message;
+            if (!controller.CanExportGpxOrKml(out message)) {
+                await ErrorMessage(message);
+                return;
+            }
+
+            ExportKmlSettings settings;
+            if (exportKmlSettingsPrevious != null) {
+                settings = exportKmlSettingsPrevious.Clone();
+            }
+            else {
+                settings = new ExportKmlSettings();
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = System.IO.Path.GetDirectoryName(controller.FileName) ?? "";
+            }
+
+            CreateKmlFilesDialogViewModel vm = new CreateKmlFilesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                Settings = settings,
+            };
+
+            while (await Services.DialogService.ShowDialogAsync(vm)) {
+                ExportKmlSettings chosen = vm.Settings;
+
+                List<string> overwritingFiles = controller.OverwritingKmlFiles(chosen);
+                if (overwritingFiles.Count > 0) {
+                    OverwritingFilesDialogViewModel overwriteVm = new OverwritingFilesDialogViewModel {
+                        Filenames = overwritingFiles,
+                    };
+                    if (!await Services.DialogService.ShowDialogAsync(overwriteVm))
+                        continue;
+                }
+
+                exportKmlSettingsPrevious = chosen;
+                controller.CreateKmlFiles(chosen);
+
+                break;
+            }
 #endif
         }
 

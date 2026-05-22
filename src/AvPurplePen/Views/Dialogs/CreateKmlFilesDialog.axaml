@@ -1,0 +1,140 @@
+<!--
+    CreateKmlFilesDialog.axaml
+
+    Dialog for creating KML files for one or more courses. Contains a
+    CourseSelector on the left (with optional variation chooser), a
+    Files / file-name prefix section, and a folder choice section
+    (Same folder as PP file / Same folder as map file / Other folder)
+    with a text box and "Select folder..." button shown only when
+    "Other folder" is selected.
+
+    Migrated from WinForms PurplePen/CreateKmlFiles.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CreateKmlFilesDialog"
+        Classes="dialog"
+        x:DataType="vm:CreateKmlFilesDialogViewModel"
+        Title="{resx:Localize CreateKmlFiles_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="560" d:DesignHeight="340"
+        Width="560" Height="340"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:CreateKmlFilesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Create / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="createButton"
+                    Content="{resx:Localize CreateKmlFiles_createButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="CreateButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CreateKmlFiles_cancelButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Main content: two columns. Left = courses, right = output + folder. -->
+        <Grid ColumnDefinitions="*,12,*">
+
+            <!-- === Left column: Courses group === -->
+            <HeaderedContentControl Grid.Column="0"
+                                    Header="{resx:Localize CreateKmlFiles_coursesGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <views:CourseSelector x:Name="courseSelector"
+                                      EventDB="{Binding EventDB}"
+                                      ShowAllControls="True"
+                                      ShowCourseParts="False"
+                                      ShowVariationChooser="True"/>
+            </HeaderedContentControl>
+
+            <!-- === Right column: Output (top) + Folder (bottom) === -->
+            <DockPanel Grid.Column="2">
+
+                <!-- Output group: files combo and filename prefix -->
+                <HeaderedContentControl DockPanel.Dock="Top"
+                                        Header="{resx:Localize CreateKmlFiles_outputGroupBox_Text}"
+                                        Padding="8"
+                                        Margin="0,0,0,8">
+                    <Grid ColumnDefinitions="Auto,8,*"
+                          RowDefinitions="Auto,4,Auto">
+
+                        <!-- Row 0: Files (single file vs. one per course) -->
+                        <TextBlock Grid.Row="0" Grid.Column="0"
+                                   Text="{resx:Localize CreateKmlFiles_filesLabel_Text}"
+                                   VerticalAlignment="Center"/>
+                        <ComboBox x:Name="filesCombo"
+                                  Grid.Row="0" Grid.Column="2"
+                                  HorizontalAlignment="Stretch"/>
+
+                        <!-- Row 2: File name prefix -->
+                        <TextBlock Grid.Row="2" Grid.Column="0"
+                                   Text="{resx:Localize CreateKmlFiles_fileNamePrefixLabel_Text}"
+                                   VerticalAlignment="Center"/>
+                        <TextBox x:Name="filenamePrefixTextBox"
+                                 Grid.Row="2" Grid.Column="2"
+                                 Text="{Binding FilePrefix, Mode=TwoWay}"/>
+                    </Grid>
+                </HeaderedContentControl>
+
+                <!-- Folder group: three radio buttons + folder picker -->
+                <HeaderedContentControl Header="{resx:Localize CreateKmlFiles_folderGroupBox_Text}"
+                                        Padding="8">
+                    <StackPanel Spacing="4">
+                        <RadioButton x:Name="coursesDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreateKmlFiles_coursesDirectory_Text}"
+                                     IsChecked="{Binding UseFileDirectory, Mode=TwoWay}"/>
+                        <RadioButton x:Name="mapDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreateKmlFiles_mapDirectory_Text}"
+                                     IsChecked="{Binding UseMapDirectory, Mode=TwoWay}"/>
+                        <RadioButton x:Name="otherDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreateKmlFiles_otherDirectory_Text}"
+                                     IsChecked="{Binding UseOtherDirectory, Mode=TwoWay}"/>
+
+                        <!-- Other folder text box + Select folder button.
+                             Only visible when the "Other folder" radio is selected. -->
+                        <TextBox x:Name="otherDirectoryTextBox"
+                                 Text="{Binding OutputDirectory, Mode=TwoWay}"
+                                 IsVisible="{Binding IsOtherDirectoryVisible}"
+                                 Margin="20,4,0,0"/>
+                        <Button x:Name="selectOtherDirectoryButton"
+                                Classes="Small"
+                                Content="{resx:Localize CreateKmlFiles_selectOtherDirectoryButton_Text}"
+                                IsVisible="{Binding IsOtherDirectoryVisible}"
+                                HorizontalAlignment="Right"
+                                Click="SelectOtherDirectoryButton_Click"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+            </DockPanel>
+
+        </Grid>
+
+    </DockPanel>
+</Window>
