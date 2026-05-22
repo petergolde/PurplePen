@@ -618,13 +618,16 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen filer|*.ppen|Alle filer|*.*</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>Alle kart filer|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD filer (*.ocd)|*.ocd|Open Orienteering Mapper Filer|*.omap;*.xmap|PDF filer (*.pdf)|*.pdf|Bilde filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript er ikke installert</value>
   </data>
-  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
-    <value>Alle kart filer|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD filer (*.ocd)|*.ocd|Open Orienteering Mapper Filer|*.omap;*.xmap|PDF filer (*.pdf)|*.pdf|Bilde filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX fil|*.gpx</value>
   </data>
 </root>

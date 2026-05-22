@@ -887,6 +887,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GPX file|*.gpx.
+        /// </summary>
+        public static string GpxFilter {
+            get {
+                return ResourceManager.GetString("GpxFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The map file must be an OCAD file to use GPX files..
         /// </summary>
         public static string GpxMustBeOcadMap {

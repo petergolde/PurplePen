@@ -634,4 +634,7 @@
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Всички картни файлове|.ocd;.omap;.xmap;.pdf;.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif|Файлове OCAD (.ocd)|.ocd|Файлове OpenOrienteering Mapper|.omap;.xmap|PDF файлове (.pdf)|.pdf|Изображения|.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX файл|*.gpx</value>
+  </data>
 </root>

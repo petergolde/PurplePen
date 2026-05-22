@@ -621,4 +621,7 @@
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>所有的地图文件|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD文件 (*.ocd)|*.ocd|OOM文件|*.omap;*.xmap|PDF文件 (*.pdf)|*.pdf|图像文件|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX文件| GPX *。</value>
+  </data>
 </root>

@@ -42,6 +42,9 @@ namespace PurplePen.ViewModels
         // Same idea for the Create Image Files dialog.
         private BitmapCreationSettings? bitmapCreationSettingsPrevious;
 
+        // Same idea for the Create GPX File dialog.
+        private GpxCreationSettings? gpxCreationSettingsPrevious;
+
         // Same idea for the Create PDF Files dialog.
         private CoursePdfSettings? coursePdfSettings;
 
@@ -225,6 +228,7 @@ namespace PurplePen.ViewModels
                 // Reset the per-dialog settings caches.
                 ocadCreationSettingsPrevious = null;
                 bitmapCreationSettingsPrevious = null;
+                gpxCreationSettingsPrevious = null;
             }
 
 #if PORTING

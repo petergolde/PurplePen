@@ -517,4 +517,7 @@ Użyj | aby rozdzielić linie
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript nie jest zainstalowany</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>Plik GPX|*.gpx</value>
+  </data>
 </root>

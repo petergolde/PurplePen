@@ -1,0 +1,102 @@
+<!--
+    CreateGpxDialog.axaml
+
+    Create GPX File dialog. Lets the user choose which courses to include
+    and an optional waypoint name prefix, then exports a GPX file with GPS
+    coordinates for controls.
+
+    Layout:
+      * Header label at the top explaining what a GPX file is.
+      * Two columns: Courses (CourseSelector) on the left, Waypoints
+        (name prefix text field) on the right.
+      * OK / Cancel buttons at the bottom.
+
+    Migrated from WinForms PurplePen/CreateGpx.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CreateGpxDialog"
+        Classes="dialog"
+        x:DataType="vm:CreateGpxDialogViewModel"
+        Title="{resx:Localize CreateGpx_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="530" d:DesignHeight="340"
+        Width="530" Height="340"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:CreateGpxDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Bottom row: OK / Cancel -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="*,Auto,Auto"
+              Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Grid.Column="1"
+                    Content="{resx:Localize OKButton}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Margin="0,0,8,0"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Grid.Column="2"
+                    Content="{resx:Localize CancelButton}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </Grid>
+
+        <!-- Header label explaining GPX files -->
+        <TextBlock DockPanel.Dock="Top"
+                   Text="{resx:Localize CreateGpx_headerLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Two columns: Courses on the left, Waypoints on the right -->
+        <Grid ColumnDefinitions="*,12,*">
+
+            <!-- === Left: Courses === -->
+            <HeaderedContentControl Grid.Column="0"
+                                    Header="{resx:Localize CreateGpx_coursesGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <views:CourseSelector x:Name="courseSelector"
+                                      EventDB="{Binding EventDB}"
+                                      ShowAllControls="True"
+                                      ShowCourseParts="False"/>
+            </HeaderedContentControl>
+
+            <!-- === Right: Waypoints === -->
+            <HeaderedContentControl Grid.Column="2"
+                                    Header="{resx:Localize CreateGpx_waypointGroupBox_Text}"
+                                    Padding="8,16,8,14"
+                                    VerticalAlignment="Top">
+                <Grid ColumnDefinitions="Auto,8,*"
+                      RowDefinitions="Auto">
+                    <TextBlock Grid.Row="0" Grid.Column="0"
+                               Text="{resx:Localize CreateGpx_namePrefixLabel_Text}"
+                               VerticalAlignment="Center"/>
+                    <TextBox x:Name="namePrefixTextBox"
+                             Grid.Row="0" Grid.Column="2"
+                             Text="{Binding CodePrefix, Mode=TwoWay}"/>
+                </Grid>
+            </HeaderedContentControl>
+
+        </Grid>
+
+    </DockPanel>
+</Window>

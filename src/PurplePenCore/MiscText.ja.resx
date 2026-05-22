@@ -571,13 +571,16 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen ファイル|*.ppen|すべてのファイル|*.*</value>
   </data>
+  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
+    <value>すべての地図ファイル|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|Open Orienteering Mapperファイル|*.omap;*.xmap|PDFファイル (*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript がインストールされていません</value>
   </data>
-  <data name="ChangeMapFile_FileFilter" xml:space="preserve">
-    <value>すべての地図ファイル|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|Open Orienteering Mapperファイル|*.omap;*.xmap|PDFファイル (*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPXファイル|*.gpx</value>
   </data>
 </root>

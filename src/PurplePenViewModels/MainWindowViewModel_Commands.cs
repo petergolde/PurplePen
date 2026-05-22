@@ -2717,6 +2717,48 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             createGpxDialog.Dispose();
+#else
+            if (controller == null)
+                return;
+
+            // First check and give immediate message if we can't do coordinate mapping.
+            string message;
+            if (!controller.CanExportGpxOrKml(out message)) {
+                await ErrorMessage(message);
+                return;
+            }
+
+            GpxCreationSettings settings;
+            if (gpxCreationSettingsPrevious != null)
+                settings = gpxCreationSettingsPrevious.Clone();
+            else
+                settings = new GpxCreationSettings();
+
+            CreateGpxDialogViewModel vm = new CreateGpxDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                Settings = settings,
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(vm))
+                return;
+
+            // Show save dialog to choose output file name.
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                FileFilters = MiscText.GpxFilter,
+                FileFilterIndex = 1,
+                DefaultExtension = "gpx",
+                ShowOverwritePrompt = true,
+                InitialDirectory = System.IO.Path.GetDirectoryName(controller.FileName),
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(saveVm))
+                return;
+            if (saveVm.SelectedFile == null)
+                return;
+
+            // Persist the user's choices for next time, then export.
+            gpxCreationSettingsPrevious = vm.Settings;
+            controller.ExportGpx(saveVm.SelectedFile, vm.Settings);
 #endif
         }
 

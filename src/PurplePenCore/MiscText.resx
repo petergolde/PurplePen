@@ -655,4 +655,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>All map files|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX file|*.gpx</value>
+  </data>
 </root>
