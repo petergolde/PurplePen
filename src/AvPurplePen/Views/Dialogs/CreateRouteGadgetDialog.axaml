@@ -1,0 +1,141 @@
+<!--
+    CreateRouteGadgetDialog.axaml
+
+    Dialog for creating RouteGadget files (.gif image and IOF XML).
+    Contains a description, a "learn more" link, a File Name group,
+    a Folder choice group (Same folder as PP file / Same folder as
+    map file / Other folder) with a text box and "Select folder..."
+    button shown only when "Other folder" is selected, and an IOF
+    XML version group with a combo box.
+
+    Migrated from WinForms PurplePen/CreateRouteGadget.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CreateRouteGadgetDialog"
+        Classes="dialog"
+        x:DataType="vm:CreateRouteGadgetDialogViewModel"
+        Title="{resx:Localize CreateRouteGadget_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="540" d:DesignHeight="350"
+        Width="540"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:CreateRouteGadgetDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Create / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="createButton"
+                    Content="{resx:Localize CreateRouteGadget_createButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="CreateButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CreateRouteGadget_cancelButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Main content -->
+        <StackPanel Spacing="8">
+
+            <!-- Description text -->
+            <TextBlock Text="{resx:Localize CreateRouteGadget_label2_Text}"
+                       TextWrapping="Wrap"/>
+
+            <!-- Learn more link -->
+            <HyperlinkButton x:Name="learnMoreLink"
+                             Content="{resx:Localize CreateRouteGadget_learnMoreLink_Text}"
+                             Padding="0"
+                             Click="LearnMoreLink_Click"/>
+
+            <!-- Two-column layout: File Name + IOF XML on left, Folder on right -->
+            <Grid ColumnDefinitions="*,12,*">
+
+                <!-- === Left column: File Name group + IOF XML group === -->
+                <StackPanel Grid.Column="0" Spacing="8">
+
+                    <!-- File Name group -->
+                    <HeaderedContentControl Header="{resx:Localize CreateRouteGadget_nameGroupBox_Text}"
+                                            Padding="8">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="{resx:Localize CreateRouteGadget_label1_Text}"
+                                       TextWrapping="Wrap"/>
+                            <TextBox x:Name="fileNameTextBox"
+                                     Text="{Binding FileBaseName, Mode=TwoWay}"/>
+                        </StackPanel>
+                    </HeaderedContentControl>
+
+                    <!-- IOF XML group -->
+                    <HeaderedContentControl Header="{resx:Localize CreateRouteGadget_groupBox1_Text}"
+                                            Padding="8">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Text="{resx:Localize CreateRouteGadget_labelIofXml_Text}"
+                                       VerticalAlignment="Center"/>
+                            <ComboBox x:Name="comboBoxIofXml"
+                                      MinWidth="80"/>
+                        </StackPanel>
+                    </HeaderedContentControl>
+                </StackPanel>
+
+                <!-- === Right column: Folder group === -->
+                <HeaderedContentControl Grid.Column="2"
+                                        Header="{resx:Localize CreateRouteGadget_folderGroupBox_Text}"
+                                        Padding="8">
+                    <StackPanel Spacing="4">
+                        <RadioButton x:Name="coursesDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreateRouteGadget_coursesDirectory_Text}"
+                                     IsChecked="{Binding UseFileDirectory, Mode=TwoWay}"/>
+                        <RadioButton x:Name="mapDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreateRouteGadget_mapDirectory_Text}"
+                                     IsChecked="{Binding UseMapDirectory, Mode=TwoWay}"/>
+                        <RadioButton x:Name="otherDirectory"
+                                     GroupName="OutputFolder"
+                                     Content="{resx:Localize CreateRouteGadget_otherDirectory_Text}"
+                                     IsChecked="{Binding UseOtherDirectory, Mode=TwoWay}"/>
+
+                        <!-- Other folder text box + Select folder button.
+                             Only visible when the "Other folder" radio is selected. -->
+                        <TextBox x:Name="otherDirectoryTextBox"
+                                 Text="{Binding OutputDirectory, Mode=TwoWay}"
+                                 IsVisible="{Binding IsOtherDirectoryVisible}"
+                                 Margin="20,4,0,0"/>
+                        <Button x:Name="selectOtherDirectoryButton"
+                                Classes="Small"
+                                Content="{resx:Localize CreateRouteGadget_selectOtherDirectoryButton_Text}"
+                                IsVisible="{Binding IsOtherDirectoryVisible}"
+                                HorizontalAlignment="Right"
+                                Click="SelectOtherDirectoryButton_Click"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+
+            </Grid>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>

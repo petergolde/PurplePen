@@ -48,6 +48,9 @@ namespace PurplePen.ViewModels
         // Same idea for the Create KML Files dialog.
         private ExportKmlSettings? exportKmlSettingsPrevious;
 
+        // Same idea for the Create RouteGadget Files dialog.
+        private RouteGadgetCreationSettings? routeGadgetCreationSettingsPrevious;
+
         // Same idea for the Create PDF Files dialog.
         private CoursePdfSettings? coursePdfSettings;
 
@@ -233,6 +236,7 @@ namespace PurplePen.ViewModels
                 bitmapCreationSettingsPrevious = null;
                 gpxCreationSettingsPrevious = null;
                 exportKmlSettingsPrevious = null;
+                routeGadgetCreationSettingsPrevious = null;
             }
 
 #if PORTING

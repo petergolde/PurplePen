@@ -2608,7 +2608,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Create Route Gadget Files command.
         /// </summary>
         [RelayCommand]
-        private void CreateRouteGadgetFiles()
+        private async Task CreateRouteGadgetFiles()
         {
 #if !PORTING
             RouteGadgetCreationSettings settings;
@@ -2647,6 +2647,42 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             createRouteGadgetFilesDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            RouteGadgetCreationSettings settings;
+            if (routeGadgetCreationSettingsPrevious != null) {
+                settings = routeGadgetCreationSettingsPrevious.Clone();
+            }
+            else {
+                settings = new RouteGadgetCreationSettings();
+                settings.fileDirectory = true;
+                settings.mapDirectory = false;
+                settings.outputDirectory = System.IO.Path.GetDirectoryName(controller.FileName) ?? "";
+                settings.fileBaseName = System.IO.Path.GetFileNameWithoutExtension(controller.FileName) ?? "";
+            }
+
+            CreateRouteGadgetDialogViewModel vm = new CreateRouteGadgetDialogViewModel {
+                Settings = settings,
+            };
+
+            while (await Services.DialogService.ShowDialogAsync(vm)) {
+                RouteGadgetCreationSettings chosen = vm.Settings;
+
+                List<string> overwritingFiles = controller.OverwritingRouteGadgetFiles(chosen);
+                if (overwritingFiles.Count > 0) {
+                    OverwritingFilesDialogViewModel overwriteVm = new OverwritingFilesDialogViewModel {
+                        Filenames = overwritingFiles,
+                    };
+                    if (!await Services.DialogService.ShowDialogAsync(overwriteVm))
+                        continue;
+                }
+
+                routeGadgetCreationSettingsPrevious = chosen;
+                controller.CreateRouteGadgetFiles(chosen);
+
+                break;
+            }
 #endif
         }
 
