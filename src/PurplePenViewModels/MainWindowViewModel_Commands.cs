@@ -1768,7 +1768,7 @@ namespace PurplePen.ViewModels
         /// Executes the Event/Customize Course Appearance command.
         /// </summary>
         [RelayCommand]
-        private void CustomizeCourseAppearance()
+        private async Task CustomizeCourseAppearance()
         {
 #if !PORTING
             // Initialize the dialog
@@ -1797,6 +1797,36 @@ namespace PurplePen.ViewModels
             }
 
             dialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Get the correct default purple color to use.
+            float c, m, y, k;
+            bool purpleOverprint;
+            short ocadId;
+            FindPurple.GetPurpleColor(MapDisplay, null, out ocadId, out c, out m, out y, out k, out purpleOverprint);
+
+            bool usesOcadMap = (MapDisplay!.MapType == MapType.OCAD);
+
+            // Get the current course appearance and seed the default lower purple layer.
+            CourseAppearance appearance = controller.GetCourseAppearance();
+            if (usesOcadMap && appearance.purpleColorBlend != PurpleColorBlend.UpperLowerPurple) {
+                appearance.mapLayerForLowerPurple = controller.GetDefaultLowerPurpleLayer();
+            }
+
+            CourseAppearanceDialogViewModel vm = new CourseAppearanceDialogViewModel {
+                DefaultPurpleC = c,
+                DefaultPurpleM = m,
+                DefaultPurpleY = y,
+                DefaultPurpleK = k,
+                UsesOcadMap = usesOcadMap,
+            };
+            vm.SetMapLayers(controller.GetUnderlyingMapColors());
+            vm.Settings = appearance;
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.SetCourseAppearance(vm.Settings);
+            }
 #endif
         }
 

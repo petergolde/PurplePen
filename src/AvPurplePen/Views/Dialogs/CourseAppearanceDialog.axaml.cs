@@ -48,6 +48,15 @@ namespace AvPurplePen.Views
         {
             InitializeComponent();
             DataContextChanged += OnDataContextChanged;
+
+            // Lock the height after layout so the dialog is resizable only horizontally.
+            // SizeToContent must be turned off; otherwise it re-measures on every
+            // layout pass during a resize and overrides the height constraints.
+            Opened += (s, e) => {
+                MinHeight = Height;
+                //MaxHeight = Height;
+                //SizeToContent = SizeToContent.Manual;
+            };
         }
 
         /// <summary>
