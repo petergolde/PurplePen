@@ -1,0 +1,195 @@
+<!--
+    TextPropertiesDialog.axaml
+
+    Dialog for editing text properties: text content, font, bold/italic,
+    color, font size (manual or automatic). A live preview shows the
+    rendered text. An "Insert Special Text" flyout lets the user insert
+    macro placeholders (event title, course name, etc.).
+
+    Migrated from WinForms PurplePen/ChangeText.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.TextPropertiesDialog"
+        Classes="dialog"
+        x:DataType="vm:TextPropertiesDialogViewModel"
+        Title="{Binding DialogTitle}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="410" d:DesignHeight="560"
+        Width="410"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:TextPropertiesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsEnabled="{Binding IsOkEnabled}"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Sample preview group -->
+        <HeaderedContentControl DockPanel.Dock="Bottom"
+                                Header="{resx:Localize ChangeText_groupBox2_Text}"
+                                Margin="0,8,0,0"
+                                Padding="3,10,3,3">
+            <Border Background="White"
+                    CornerRadius="2"
+                    ClipToBounds="True"
+                    Height="60">
+                <avutil:SkiaDrawingView x:Name="previewView"
+                                        Paint="PreviewView_Paint"/>
+            </Border>
+        </HeaderedContentControl>
+
+        <!-- Usage/explanation text at the top -->
+        <TextBlock DockPanel.Dock="Top"
+                   Text="{Binding UsageText}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,8"/>
+
+        <!-- Text group -->
+        <HeaderedContentControl DockPanel.Dock="Top"
+                                Header="{resx:Localize ChangeText_groupBox3_Text}"
+                                Padding="10,12,10,8"
+                                Margin="0,0,0,8">
+            <StackPanel Spacing="6">
+                <TextBox x:Name="textBoxMain"
+                         Text="{Binding UserText, Mode=TwoWay}"/>
+                <Button x:Name="insertSpecialButton"
+                        Content="{resx:Localize ChangeText_insertSpecialButton_Text}"
+                        IsVisible="{Binding AllowSpecialTextInsert}"
+                        HorizontalAlignment="Left"
+                        Classes="Small">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="BottomEdgeAlignedLeft">
+                            <MenuItem Header="{resx:Localize ChangeText_eventTitleMenuItem_Text}"
+                                      Click="EventTitleMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_courseNameMenuItem_Text}"
+                                      Click="CourseNameMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_coursePartMenuItem_Text}"
+                                      Click="CoursePartMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_variationMenuItem_Text}"
+                                      Click="VariationMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_courseLengthMenuItem_Text}"
+                                      Click="CourseLengthMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_courseClimbMenuItem_Text}"
+                                      Click="CourseClimbMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_classListMenuItem_Text}"
+                                      Click="ClassListMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_printScaleMenuItem_Text}"
+                                      Click="PrintScaleMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_relayTeamMenuItem_Text}"
+                                      Click="RelayTeamMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_relayLegMenuItem_Text}"
+                                      Click="RelayLegMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_fileNameMenuItem_Text}"
+                                      Click="FileNameMenuItem_Click"/>
+                            <MenuItem Header="{resx:Localize ChangeText_mapFileNameMenuItem_Text}"
+                                      Click="MapFileNameMenuItem_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
+        </HeaderedContentControl>
+
+        <!-- Appearance group -->
+        <HeaderedContentControl Header="{resx:Localize ChangeText_groupBox1_Text}"
+                                Padding="10,12,10,8">
+            <Grid ColumnDefinitions="Auto,*,Auto,Auto"
+                  RowDefinitions="Auto,*,Auto,Auto">
+
+                <!-- Row 0-1: Font label + ListBox, with Bold/Italic checkboxes -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize ChangeText_label1_Text}"
+                           VerticalAlignment="Top"
+                           Margin="0,4,8,0"/>
+                <ListBox x:Name="listBoxFonts"
+                         Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                         Grid.ColumnSpan="2"
+                         Height="110"
+                         ItemsSource="{Binding FontNames}"
+                         SelectedItem="{Binding FontName, Mode=TwoWay}"
+                         Margin="0,0,8,8"/>
+                <CheckBox x:Name="checkBoxBold"
+                          Grid.Row="0" Grid.Column="3"
+                          Content="{resx:Localize ChangeText_checkBoxBold_Text}"
+                          IsChecked="{Binding FontBold, Mode=TwoWay}"
+                          VerticalAlignment="Top"
+                          Margin="0,4,0,4"/>
+                <CheckBox x:Name="checkBoxItalic"
+                          Grid.Row="1" Grid.Column="3"
+                          Content="{resx:Localize ChangeText_checkBoxItalic_Text}"
+                          IsChecked="{Binding FontItalic, Mode=TwoWay}"
+                          VerticalAlignment="Top"
+                          Margin="0,0,0,8"/>
+
+                <!-- Row 2: Color -->
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="{resx:Localize ChangeText_label2_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,8"/>
+                <views:SpecialColorChooser Grid.Row="2" Grid.Column="1"
+                                           Grid.ColumnSpan="3"
+                                           Color="{Binding Color, Mode=TwoWay}"
+                                           PurpleColor="{Binding PurpleColor}"
+                                           Margin="0,0,0,8"/>
+
+                <!-- Row 3: Size -->
+                <TextBlock Grid.Row="3" Grid.Column="0"
+                           Text="{resx:Localize ChangeText_label3_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,0"/>
+                <StackPanel Grid.Row="3" Grid.Column="1"
+                            Orientation="Horizontal"
+                            Spacing="4">
+                    <NumericUpDown x:Name="upDownFontSize"
+                                   Width="80"
+                                   Value="{Binding FontSize, Mode=TwoWay}"
+                                   IsEnabled="{Binding IsFontSizeEnabled}"
+                                   Minimum="0.1" Maximum="1000"
+                                   Increment="0.1"
+                                   FormatString="0.0"/>
+                    <TextBlock Text="{resx:Localize ChangeText_labelFontSizeMm_Text}"
+                               VerticalAlignment="Center"
+                               IsEnabled="{Binding IsFontSizeEnabled}"/>
+                </StackPanel>
+                <CheckBox x:Name="checkBoxAutoFontSize"
+                          Grid.Row="3" Grid.Column="3"
+                          Content="{resx:Localize ChangeText_checkBoxAutoFontSize_Text}"
+                          IsChecked="{Binding FontSizeAutomatic, Mode=TwoWay}"
+                          VerticalAlignment="Center"/>
+            </Grid>
+        </HeaderedContentControl>
+    </DockPanel>
+</Window>
