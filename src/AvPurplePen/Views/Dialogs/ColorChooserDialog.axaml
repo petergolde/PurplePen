@@ -1,0 +1,128 @@
+<!--
+    ColorChooserDialog.axaml
+
+    CMYK color chooser dialog. Four NumericUpDown controls for Cyan, Magenta,
+    Yellow, and Black percentages (0–100), plus a preview rectangle showing the
+    selected color.
+
+    Migrated from WinForms PurplePen/ColorChooserDialog.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.ColorChooserDialog"
+        Classes="dialog"
+        x:DataType="vm:ColorChooserDialogViewModel"
+        Title="{resx:Localize ColorChooserDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="370" d:DesignHeight="240"
+        Width="370"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:ColorChooserDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="12">
+
+            <!-- CMYK spin boxes in a 2x2 grid -->
+            <Grid ColumnDefinitions="Auto,Auto,36,Auto,Auto" RowDefinitions="Auto,Auto"
+                  VerticalAlignment="Top">
+
+                <!-- Cyan -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize ColorChooserDialog_label1_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,8"/>
+                <NumericUpDown x:Name="upDownCyan" Grid.Row="0" Grid.Column="1"
+                               Width="80"
+                               Minimum="0" Maximum="100"
+                               Increment="0.1"
+                               FormatString="0.0"
+                               Value="{Binding Cyan, Mode=TwoWay}"
+                               Margin="0,0,0,8"/>
+
+                <!-- Magenta -->
+                <TextBlock Grid.Row="0" Grid.Column="3"
+                           Text="{resx:Localize ColorChooserDialog_label3_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,8"/>
+                <NumericUpDown x:Name="upDownMagenta" Grid.Row="0" Grid.Column="4"
+                               Width="80"
+                               Minimum="0" Maximum="100"
+                               Increment="0.1"
+                               FormatString="0.0"
+                               Value="{Binding Magenta, Mode=TwoWay}"
+                               Margin="0,0,0,8"/>
+
+                <!-- Yellow -->
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="{resx:Localize ColorChooserDialog_label6_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,0"/>
+                <NumericUpDown x:Name="upDownYellow" Grid.Row="1" Grid.Column="1"
+                               Width="80"
+                               Minimum="0" Maximum="100"
+                               Increment="0.1"
+                               FormatString="0.0"
+                               Value="{Binding Yellow, Mode=TwoWay}"/>
+
+                <!-- Black -->
+                <TextBlock Grid.Row="1" Grid.Column="3"
+                           Text="{resx:Localize ColorChooserDialog_label5_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,0"/>
+                <NumericUpDown x:Name="upDownBlack" Grid.Row="1" Grid.Column="4"
+                               Width="80"
+                               Minimum="0" Maximum="100"
+                               Increment="0.1"
+                               FormatString="0.0"
+                               Value="{Binding Black, Mode=TwoWay}"/>
+            </Grid>
+
+            <!-- Preview -->
+            <HeaderedContentControl Header="{resx:Localize ColorChooserDialog_groupBoxPreview_Text}"
+                                    Padding="8,10,8,8">
+                <Border x:Name="previewBorder"
+                        Height="50"
+                        CornerRadius="3"
+                        BorderBrush="{DynamicResource DarkGreyBorder}"
+                        BorderThickness="1"
+                        Background="White"/>
+            </HeaderedContentControl>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>
