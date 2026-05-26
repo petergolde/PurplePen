@@ -14,6 +14,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
         xmlns:avutil="using:AvUtil"
+        xmlns:views="using:AvPurplePen.Views"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -80,7 +81,7 @@
         <!-- Appearance group -->
         <HeaderedContentControl Header="{resx:Localize LinePropertiesDialog_groupBox2_Text}"
                                 Padding="10,12,10,8">
-            <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto"
+            <Grid ColumnDefinitions="Auto,Auto,Auto,*"
                   RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
 
                 <!-- Row 0: Color -->
@@ -88,27 +89,10 @@
                            Text="{resx:Localize LinePropertiesDialog_label1_Text}"
                            VerticalAlignment="Center"
                            Margin="0,0,8,8"/>
-                <ComboBox x:Name="comboBoxColor"
-                          Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
-                          HorizontalAlignment="Stretch"
-                          SelectedIndex="{Binding SelectedColorIndex, Mode=TwoWay}"
-                          Margin="0,0,8,8">
-                    <ComboBoxItem Content="{resx:Localize MiscText_Black}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_Purple}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_LowerPurple}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_Red}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_Yellow}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_Green}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_LightBlue}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_DarkBlue}"/>
-                    <ComboBoxItem Content="{resx:Localize MiscText_CustomColor}"/>
-                </ComboBox>
-                <Button x:Name="buttonChangeColor"
-                        Grid.Row="0" Grid.Column="4"
-                        Content="{resx:Localize LinePropertiesDialog_buttonChangeColor_Text}"
-                        Classes="Small"
-                        Click="ChangeColor_Click"
-                        Margin="0,0,0,8"/>
+                <views:SpecialColorChooser Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3"
+                                           Color="{Binding Color, Mode=TwoWay}"
+                                           PurpleColor="{Binding PurpleColor}"
+                                           Margin="0,0,0,8"/>
 
                 <!-- Row 1: Style (line kind) -->
                 <TextBlock Grid.Row="1" Grid.Column="0"
@@ -117,11 +101,11 @@
                            IsVisible="{Binding LineKindRowVisible}"
                            Margin="0,0,8,8"/>
                 <ComboBox x:Name="comboBoxStyle"
-                          Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"
+                          Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                           HorizontalAlignment="Stretch"
                           SelectedIndex="{Binding SelectedLineKindIndex, Mode=TwoWay}"
                           IsVisible="{Binding LineKindRowVisible}"
-                          Margin="0,0,8,8">
+                          Margin="0,0,0,8">
                     <ComboBoxItem Content="{resx:Localize LinePropertiesDialog_comboBoxStyle_Items}"/>
                     <ComboBoxItem Content="{resx:Localize LinePropertiesDialog_comboBoxStyle_Items1}"/>
                     <ComboBoxItem Content="{resx:Localize LinePropertiesDialog_comboBoxStyle_Items2}"/>

@@ -5,11 +5,9 @@
 // radius settings. The dialog is reused for lines, rectangles, and ellipses
 // with different features shown/hidden via ShowRadius and ShowLineKind.
 //
-// The color chooser uses a SelectedColorIndex to pick from a fixed list of
-// predefined colors (Black, Purple, Lower Purple, Red, Yellow, Green, Light
-// Blue, Dark Blue, Custom). The View owns the localized display names; the
-// ViewModel only tracks the index and provides the SpecialColor/CmykColor
-// translation.
+// The color is stored as a SpecialColor property. The View uses a
+// SpecialColorChooser control which handles the drop-down and custom color
+// dialog internally.
 //
 // Preview drawing is produced by DrawSample, which takes an IGraphicsTarget
 // so the View can supply any rendering backend. No localized strings live
@@ -31,19 +29,13 @@ namespace PurplePen.ViewModels
     /// </summary>
     public partial class LinePropertiesDialogViewModel : ViewModelBase
     {
-        // === Predefined color table ===
-        // Order must match the ComboBox items in the View.
-        // Index: 0=Black, 1=Purple, 2=LowerPurple, 3=Red, 4=Yellow,
-        //        5=Green, 6=LightBlue, 7=DarkBlue, 8=Custom
-
-        /// <summary>Index of the Custom color entry in the color combo.</summary>
-        private const int CustomColorIndex = 8;
-
         /// <summary>The purple color used for rendering (from map or default).</summary>
+        [ObservableProperty]
         private CmykColor purpleColor;
 
-        /// <summary>The custom CMYK color chosen via the color picker.</summary>
-        private CmykColor customCmykColor;
+        /// <summary>The currently selected special color.</summary>
+        [ObservableProperty]
+        private SpecialColor color = SpecialColor.Black;
 
         // === Inputs set by the caller ===
 
@@ -69,10 +61,6 @@ namespace PurplePen.ViewModels
         private bool showLineKind = true;
 
         // === Line properties ===
-
-        /// <summary>Selected color index in the color combo box.</summary>
-        [ObservableProperty]
-        private int selectedColorIndex;
 
         /// <summary>Selected line kind: 0=Single, 1=Double, 2=Dashed.</summary>
         [ObservableProperty]
@@ -119,68 +107,21 @@ namespace PurplePen.ViewModels
         /// </summary>
         public LinePropertiesDialogViewModel()
         {
-            purpleColor = CmykColor.FromCmyk(
+            PurpleColor = CmykColor.FromCmyk(
                 NormalCourseAppearance.courseColorC,
                 NormalCourseAppearance.courseColorM,
                 NormalCourseAppearance.courseColorY,
                 NormalCourseAppearance.courseColorK);
-            customCmykColor = CmykColor.FromCmyk(0, 0, 0, 0);
         }
 
         /// <summary>
-        /// Sets the purple color used for "Purple" and "Lower Purple" entries.
-        /// Call before setting Color.
+        /// Sets the purple color. Convenience method for callers that
+        /// prefer a method call over setting the PurpleColor property.
         /// </summary>
         /// <param name="purple">The CMYK purple color from the map.</param>
         public void SetPurpleColor(CmykColor purple)
         {
-            purpleColor = purple;
-        }
-
-        /// <summary>
-        /// Gets or sets the SpecialColor for the dialog, translating between
-        /// the SpecialColor domain type and the ViewModel's index-based representation.
-        /// </summary>
-        public SpecialColor Color
-        {
-            get {
-                switch (SelectedColorIndex) {
-                    case 0: return SpecialColor.Black;
-                    case 1: return SpecialColor.UpperPurple;
-                    case 2: return SpecialColor.LowerPurple;
-                    case 3: return new SpecialColor(CmykColor.FromCmyk(0, 1, 1, 0));
-                    case 4: return new SpecialColor(CmykColor.FromCmyk(0, 0, 1, 0));
-                    case 5: return new SpecialColor(CmykColor.FromCmyk(1, 0, 1, 0));
-                    case 6: return new SpecialColor(CmykColor.FromCmyk(1, 0, 0, 0));
-                    case 7: return new SpecialColor(CmykColor.FromCmyk(1, 1, 0, 0));
-                    case CustomColorIndex: return new SpecialColor(customCmykColor);
-                    default: return SpecialColor.Black;
-                }
-            }
-            set {
-                if (value.Kind == SpecialColor.ColorKind.Black) {
-                    SelectedColorIndex = 0;
-                }
-                else if (value.Kind == SpecialColor.ColorKind.UpperPurple) {
-                    SelectedColorIndex = 1;
-                }
-                else if (value.Kind == SpecialColor.ColorKind.LowerPurple) {
-                    SelectedColorIndex = 2;
-                }
-                else {
-                    // Custom color: check if it matches a predefined color.
-                    CmykColor c = value.CustomColor;
-                    if (c.Equals(CmykColor.FromCmyk(0, 1, 1, 0))) { SelectedColorIndex = 3; }
-                    else if (c.Equals(CmykColor.FromCmyk(0, 0, 1, 0))) { SelectedColorIndex = 4; }
-                    else if (c.Equals(CmykColor.FromCmyk(1, 0, 1, 0))) { SelectedColorIndex = 5; }
-                    else if (c.Equals(CmykColor.FromCmyk(1, 0, 0, 0))) { SelectedColorIndex = 6; }
-                    else if (c.Equals(CmykColor.FromCmyk(1, 1, 0, 0))) { SelectedColorIndex = 7; }
-                    else {
-                        customCmykColor = c;
-                        SelectedColorIndex = CustomColorIndex;
-                    }
-                }
-            }
+            PurpleColor = purple;
         }
 
         /// <summary>
@@ -193,61 +134,18 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Sets the custom color (called from the View after a color picker dialog).
-        /// </summary>
-        /// <param name="color">The chosen custom CMYK color.</param>
-        public void SetCustomColor(CmykColor color)
-        {
-            customCmykColor = color;
-            SelectedColorIndex = CustomColorIndex;
-        }
-
-        /// <summary>
-        /// Returns the current custom CMYK color for the color picker to seed.
-        /// </summary>
-        public CmykColor GetCustomColor()
-        {
-            return customCmykColor;
-        }
-
-        /// <summary>
-        /// Returns the CMYK color currently in effect for the selected color index.
-        /// Used for drawing the preview and for color swatch display.
+        /// Returns the CMYK color currently in effect for the selected color.
+        /// Used for drawing the preview.
         /// </summary>
         public CmykColor GetCurrentCmykColor()
         {
-            switch (SelectedColorIndex) {
-                case 0: return CmykColor.FromCmyk(0, 0, 0, 1);   // Black
-                case 1:                                            // Purple
-                case 2: return purpleColor;                        // Lower Purple
-                case 3: return CmykColor.FromCmyk(0, 1, 1, 0);   // Red
-                case 4: return CmykColor.FromCmyk(0, 0, 1, 0);   // Yellow
-                case 5: return CmykColor.FromCmyk(1, 0, 1, 0);   // Green
-                case 6: return CmykColor.FromCmyk(1, 0, 0, 0);   // Light Blue
-                case 7: return CmykColor.FromCmyk(1, 1, 0, 0);   // Dark Blue
-                case CustomColorIndex: return customCmykColor;
+            SpecialColor c = Color;
+            switch (c.Kind) {
+                case SpecialColor.ColorKind.Black: return CmykColor.FromCmyk(0, 0, 0, 1);
+                case SpecialColor.ColorKind.UpperPurple:
+                case SpecialColor.ColorKind.LowerPurple: return PurpleColor;
+                case SpecialColor.ColorKind.Custom: return c.CustomColor;
                 default: return CmykColor.FromCmyk(0, 0, 0, 1);
-            }
-        }
-
-        /// <summary>
-        /// Returns the CMYK color for a given combo index. Used by the View to
-        /// display color swatches in the combo box items.
-        /// </summary>
-        /// <param name="index">The combo box item index.</param>
-        public CmykColor GetCmykColorForIndex(int index)
-        {
-            switch (index) {
-                case 0: return CmykColor.FromCmyk(0, 0, 0, 1);
-                case 1:
-                case 2: return purpleColor;
-                case 3: return CmykColor.FromCmyk(0, 1, 1, 0);
-                case 4: return CmykColor.FromCmyk(0, 0, 1, 0);
-                case 5: return CmykColor.FromCmyk(1, 0, 1, 0);
-                case 6: return CmykColor.FromCmyk(1, 0, 0, 0);
-                case 7: return CmykColor.FromCmyk(1, 1, 0, 0);
-                case CustomColorIndex: return customCmykColor;
-                default: return CmykColor.FromCmyk(0, 0, 0, 0);
             }
         }
 
@@ -272,8 +170,8 @@ namespace PurplePen.ViewModels
 
             object purpleBrush = new object();
             object purplePen = new object();
-            grTarget.CreateSolidBrush(purpleBrush, purpleColor);
-            grTarget.CreatePen(purplePen, purpleColor, controlLineWidth, LineCapMode.Flat, LineJoinMode.Round, 5F);
+            grTarget.CreateSolidBrush(purpleBrush, PurpleColor);
+            grTarget.CreatePen(purplePen, PurpleColor, controlLineWidth, LineCapMode.Flat, LineJoinMode.Round, 5F);
 
             // Draw control circle.
             PointF centerCircle = new PointF(5, 5);

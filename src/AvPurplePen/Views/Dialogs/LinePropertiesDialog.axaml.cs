@@ -105,16 +105,6 @@ namespace AvPurplePen.Views
         }
 
         /// <summary>
-        /// Opens the color chooser dialog to pick a custom color.
-        /// </summary>
-        private void ChangeColor_Click(object? sender, RoutedEventArgs e)
-        {
-#if PORTING
-            // TODO: Wire up ColorChooserDialog when ported to Avalonia.
-#endif
-        }
-
-        /// <summary>
         /// Accepts the dialog.
         /// </summary>
         private void OkButton_Click(object? sender, RoutedEventArgs e)

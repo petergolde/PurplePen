@@ -1,0 +1,48 @@
+<!--
+    SpecialColorChooser.axaml
+    Custom control for choosing a SpecialColor (Black, Purple, Lower Purple,
+    preset colors, or Custom). Displays a drop-down with color swatches and
+    names on the left, and a "Change Color..." button on the right that opens
+    the ColorChooserDialog.
+    Ported from the WinForms SpecialColorChooser helper class in
+    PurplePen/ColorChooserDialog.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:AvPurplePen"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="300" d:DesignHeight="30"
+             x:Class="AvPurplePen.Views.SpecialColorChooser">
+
+    <Grid ColumnDefinitions="*,Auto">
+        <ComboBox x:Name="comboBoxColor"
+                  Grid.Column="0"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Center"
+                  SelectionChanged="ComboBox_SelectionChanged"
+                  Margin="0,0,8,0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="local:SpecialColorItem">
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <Border Width="20" Height="14"
+                                Background="{Binding SwatchBrush}"
+                                BorderBrush="Gray" BorderThickness="1"
+                                VerticalAlignment="Center"
+                                IsVisible="{Binding HasSwatch}"/>
+                        <TextBlock Text="{Binding Name}"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button x:Name="buttonChangeColor"
+                Grid.Column="1"
+                Content="{resx:Localize LinePropertiesDialog_buttonChangeColor_Text}"
+                Classes="Small"
+                Click="ChangeColor_Click"/>
+    </Grid>
+</UserControl>

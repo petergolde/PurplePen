@@ -68,7 +68,7 @@
                 <NumericUpDown x:Name="upDownCyan" Grid.Row="0" Grid.Column="1"
                                Width="80"
                                Minimum="0" Maximum="100"
-                               Increment="0.1"
+                               Increment="1.0"
                                FormatString="0.0"
                                Value="{Binding Cyan, Mode=TwoWay}"
                                Margin="0,0,0,8"/>
@@ -81,7 +81,7 @@
                 <NumericUpDown x:Name="upDownMagenta" Grid.Row="0" Grid.Column="4"
                                Width="80"
                                Minimum="0" Maximum="100"
-                               Increment="0.1"
+                               Increment="1.0"
                                FormatString="0.0"
                                Value="{Binding Magenta, Mode=TwoWay}"
                                Margin="0,0,0,8"/>
@@ -94,7 +94,7 @@
                 <NumericUpDown x:Name="upDownYellow" Grid.Row="1" Grid.Column="1"
                                Width="80"
                                Minimum="0" Maximum="100"
-                               Increment="0.1"
+                               Increment="1.0"
                                FormatString="0.0"
                                Value="{Binding Yellow, Mode=TwoWay}"/>
 
@@ -106,7 +106,7 @@
                 <NumericUpDown x:Name="upDownBlack" Grid.Row="1" Grid.Column="4"
                                Width="80"
                                Minimum="0" Maximum="100"
-                               Increment="0.1"
+                               Increment="1.0"
                                FormatString="0.0"
                                Value="{Binding Black, Mode=TwoWay}"/>
             </Grid>
