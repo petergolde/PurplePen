@@ -103,6 +103,31 @@ namespace PurplePen.MapModel
             }
         }
 
+        // Returns an array of all available font family names, combining both
+        // private registered fonts and system fonts from InstalledFontCollection.
+        // Duplicates are removed using case-insensitive comparison, and the
+        // result is sorted alphabetically (case-insensitive).
+        public string[] GetFontFamilies()
+        {
+            HashSet<string> familyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            lock (lockObj) {
+                foreach (FontKey key in fontCollections.Keys) {
+                    familyNames.Add(key.familyName);
+                }
+            }
+
+            using (InstalledFontCollection installedFonts = new InstalledFontCollection()) {
+                foreach (FontFamily family in installedFonts.Families) {
+                    familyNames.Add(family.Name);
+                }
+            }
+
+            string[] result = familyNames.ToArray();
+            Array.Sort(result, StringComparer.OrdinalIgnoreCase);
+            return result;
+        }
+
         public static FontStyle FontStyleFromTextEffects(TextEffects textEffects)
         {
             FontStyle fontStyle = FontStyle.Regular;

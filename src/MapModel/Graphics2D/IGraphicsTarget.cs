@@ -235,7 +235,9 @@ namespace PurplePen.Graphics2D
     {
         bool FontFamilyIsInstalled(string familyName);
         void AddFontFile(string familyName, TextEffects textEffects, string fontFilePath);
+
+        // Returns an array of all available font family names, combining both
+        // private registered fonts and system fonts. 
+        string[] GetFontFamilies();
     }
-
-
 }

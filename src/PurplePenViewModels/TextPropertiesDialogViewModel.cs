@@ -5,8 +5,9 @@
 // "Insert Special Text" feature. Provides a DrawSample method that renders
 // a live text preview using the current settings via IGraphicsTarget.
 //
-// The font list is populated by the caller via the FontNames property.
-// No localized strings live here — all UI text is in the View layer.
+// The font list is populated automatically from Services.FontLoader.GetFontFamilies()
+// and sorted alphabetically. No localized strings live here — all UI text
+// is in the View layer.
 //
 // Migrated from WinForms PurplePen/ChangeText.cs.
 
@@ -55,10 +56,22 @@ namespace PurplePen.ViewModels
         // === Font list ===
 
         /// <summary>
-        /// Available font family names. Set by the caller before showing.
+        /// Available font family names, sorted alphabetically. Populated
+        /// automatically from Services.FontLoader.GetFontFamilies().
         /// </summary>
-        [ObservableProperty]
-        private List<string> fontNames = new List<string>();
+        public List<string> FontNames { get; } = BuildSortedFontList();
+
+        /// <summary>
+        /// Retrieves installed font families from the font loader and returns
+        /// them sorted alphabetically (case-insensitive).
+        /// </summary>
+        private static List<string> BuildSortedFontList()
+        {
+            string[] families = Services.FontLoader.GetFontFamilies();
+            List<string> sorted = new List<string>(families);
+            sorted.Sort(StringComparer.CurrentCultureIgnoreCase);
+            return sorted;
+        }
 
         // === User-editable properties ===
 

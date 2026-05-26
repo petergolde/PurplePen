@@ -809,10 +809,10 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Executes the Add/Text command. Shows the Change Text dialog for adding text.
+        /// Executes the Add/Text command. Shows the Text Properties dialog for adding text.
         /// </summary>
         [RelayCommand]
-        private void AddText()
+        private async Task AddText()
         {
 #if !PORTING
             short colorOcadId;
@@ -843,6 +843,38 @@ namespace PurplePen.ViewModels
             }
 
             dialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            float c, m, y, k;
+            bool purpleOverprint;
+            short colorOcadId;
+            FindPurple.GetPurpleColor(MapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
+
+            string fontName;
+            bool fontBold, fontItalic;
+            float fontHeight;
+            bool fontAutoSize;
+            SpecialColor fontColor;
+            controller.GetAddTextDefaultProperties(out fontName, out fontBold, out fontItalic, out fontColor, out fontHeight, out fontAutoSize);
+
+            TextPropertiesDialogViewModel vm = new TextPropertiesDialogViewModel {
+                DialogTitle = MiscText.AddTextSpecialTitle,
+                UsageText = MiscText.AddTextSpecialExplanation,
+                AllowSpecialTextInsert = true,
+                TextExpander = controller.ExpandText,
+                FontName = fontName,
+                FontBold = fontBold,
+                FontItalic = fontItalic,
+                Color = fontColor,
+                FontSize = (decimal)fontHeight,
+                FontSizeAutomatic = fontAutoSize,
+            };
+            vm.PurpleColor = CmykColor.FromCmyk(c, m, y, k);
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.BeginAddTextSpecialMode(vm.UserText, vm.FontName, vm.FontBold, vm.FontItalic, vm.Color, vm.FontSizeAutomatic ? -1 : (float)vm.FontSize);
+            }
 #endif
         }
 
@@ -1177,10 +1209,10 @@ namespace PurplePen.ViewModels
 
 
         /// <summary>
-        /// Executes the Item/Change Text command. Shows the Change Text dialog.
+        /// Executes the Item/Change Text command. Shows the Text Properties dialog.
         /// </summary>
         [RelayCommand(CanExecute = nameof(CanChangeText))]
-        private void ChangeText()
+        private async Task ChangeText()
         {
 #if !PORTING
             if (controller.CanChangeText() == CommandStatus.Enabled) {
@@ -1211,6 +1243,39 @@ namespace PurplePen.ViewModels
                 }
 
                 dialog.Dispose();
+            }
+#else
+            if (controller == null) { return; }
+
+            float c, m, y, k;
+            bool purpleOverprint;
+            short colorOcadId;
+            FindPurple.GetPurpleColor(MapDisplay, controller.GetCourseAppearance(), out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
+
+            string oldText = controller.GetChangableText();
+            string fontName;
+            bool fontBold, fontItalic;
+            float fontHeight;
+            SpecialColor fontColor;
+            controller.GetChangableTextProperties(out fontName, out fontBold, out fontItalic, out fontColor, out fontHeight);
+
+            TextPropertiesDialogViewModel vm = new TextPropertiesDialogViewModel {
+                DialogTitle = MiscText.ChangeTextTitle,
+                UsageText = MiscText.ChangeTextSpecialExplanation,
+                AllowSpecialTextInsert = true,
+                TextExpander = controller.ExpandText,
+                UserText = oldText,
+                FontName = fontName,
+                FontBold = fontBold,
+                FontItalic = fontItalic,
+                Color = fontColor,
+                FontSize = (fontHeight < 0) ? 5m : (decimal)fontHeight,
+                FontSizeAutomatic = (fontHeight < 0),
+            };
+            vm.PurpleColor = CmykColor.FromCmyk(c, m, y, k);
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.ChangeText(vm.UserText, vm.FontName, vm.FontBold, vm.FontItalic, vm.Color, vm.FontSizeAutomatic ? -1 : (float)vm.FontSize);
             }
 #endif
         }

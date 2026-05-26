@@ -23,9 +23,9 @@
         Title="{Binding DialogTitle}"
         Icon="/Assets/transparent.ico"
         d:DesignWidth="410" d:DesignHeight="560"
-        Width="410"
-        SizeToContent="Height"
-        CanResize="False"
+        Width="410" Height="560"
+        MinWidth="360" MinHeight="520"
+        CanResize="True"
         CanMinimize="False"
         CanMaximize="False"
         WindowStartupLocation="CenterOwner"
@@ -87,10 +87,15 @@
                 <TextBox x:Name="textBoxMain"
                          Text="{Binding UserText, Mode=TwoWay}"/>
                 <Button x:Name="insertSpecialButton"
-                        Content="{resx:Localize ChangeText_insertSpecialButton_Text}"
                         IsVisible="{Binding AllowSpecialTextInsert}"
                         HorizontalAlignment="Left"
                         Classes="Small">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <TextBlock Text="{resx:Localize ChangeText_insertSpecialButton_Text}"
+                                   VerticalAlignment="Center"/>
+                        <PathIcon Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z"
+                                  Width="10" Height="10" VerticalAlignment="Center" Margin="2,0,0,0"/>
+                    </StackPanel>
                     <Button.Flyout>
                         <MenuFlyout Placement="BottomEdgeAlignedLeft">
                             <MenuItem Header="{resx:Localize ChangeText_eventTitleMenuItem_Text}"
@@ -137,7 +142,7 @@
                 <ListBox x:Name="listBoxFonts"
                          Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
                          Grid.ColumnSpan="2"
-                         Height="110"
+                         MinHeight="80"
                          ItemsSource="{Binding FontNames}"
                          SelectedItem="{Binding FontName, Mode=TwoWay}"
                          Margin="0,0,8,8"/>

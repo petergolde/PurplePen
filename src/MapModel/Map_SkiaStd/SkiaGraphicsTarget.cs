@@ -940,6 +940,13 @@ namespace PurplePen.MapModel
         {
             return SkiaFontManager.FontFamilyIsInstalled(familyName);
         }
+
+        // Returns an array of all available font family names, combining both
+        // private registered fonts and system fonts. Delegates to SkiaFontManager.
+        public string[] GetFontFamilies()
+        {
+            return SkiaFontManager.GetFontFamilies();
+        }
     }
 
     // A graphics target that draw onto a bitmap. Also adds support for blending mode Darken.

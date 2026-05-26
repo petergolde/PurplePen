@@ -890,54 +890,56 @@ namespace Map_SkiaStd
 
             // Weight suffixes
             entries.Add(new SuffixEntry("Extra Black", SuffixKind.Weight, 950));
+            entries.Add(new SuffixEntry("ExtraBlack", SuffixKind.Weight, 950, true));
             entries.Add(new SuffixEntry("Ultra Black", SuffixKind.Weight, 950));
-            entries.Add(new SuffixEntry("Black", SuffixKind.Weight, 900));
+            entries.Add(new SuffixEntry("UltraBlack", SuffixKind.Weight, 950));
+            entries.Add(new SuffixEntry("Black", SuffixKind.Weight, 900, true));
             entries.Add(new SuffixEntry("Heavy", SuffixKind.Weight, 900));
             entries.Add(new SuffixEntry("Extra Bold", SuffixKind.Weight, 800));
-            entries.Add(new SuffixEntry("ExtraBold", SuffixKind.Weight, 800));
+            entries.Add(new SuffixEntry("ExtraBold", SuffixKind.Weight, 800, true));
             entries.Add(new SuffixEntry("Ultra Bold", SuffixKind.Weight, 800));
             entries.Add(new SuffixEntry("UltraBold", SuffixKind.Weight, 800));
+            entries.Add(new SuffixEntry("Bold", SuffixKind.Weight, 700, true));
             entries.Add(new SuffixEntry("Semi Bold", SuffixKind.Weight, 600));
-            entries.Add(new SuffixEntry("SemiBold", SuffixKind.Weight, 600));
+            entries.Add(new SuffixEntry("SemiBold", SuffixKind.Weight, 600, true));
             entries.Add(new SuffixEntry("Semibold", SuffixKind.Weight, 600));
             entries.Add(new SuffixEntry("Demi Bold", SuffixKind.Weight, 600));
             entries.Add(new SuffixEntry("DemiBold", SuffixKind.Weight, 600));
             entries.Add(new SuffixEntry("Demibold", SuffixKind.Weight, 600));
-            entries.Add(new SuffixEntry("Bold", SuffixKind.Weight, 700));
-            entries.Add(new SuffixEntry("Medium", SuffixKind.Weight, 500));
+            entries.Add(new SuffixEntry("Medium", SuffixKind.Weight, 500, true));
+            entries.Add(new SuffixEntry("Light", SuffixKind.Weight, 300, true));
             entries.Add(new SuffixEntry("Semi Light", SuffixKind.Weight, 350));
-            entries.Add(new SuffixEntry("SemiLight", SuffixKind.Weight, 350));
+            entries.Add(new SuffixEntry("SemiLight", SuffixKind.Weight, 350, true));
             entries.Add(new SuffixEntry("Semilight", SuffixKind.Weight, 350));
             entries.Add(new SuffixEntry("Extra Light", SuffixKind.Weight, 200));
-            entries.Add(new SuffixEntry("ExtraLight", SuffixKind.Weight, 200));
+            entries.Add(new SuffixEntry("ExtraLight", SuffixKind.Weight, 200, true));
             entries.Add(new SuffixEntry("Ultra Light", SuffixKind.Weight, 200));
             entries.Add(new SuffixEntry("UltraLight", SuffixKind.Weight, 200));
-            entries.Add(new SuffixEntry("Light", SuffixKind.Weight, 300));
-            entries.Add(new SuffixEntry("Thin", SuffixKind.Weight, 100));
+            entries.Add(new SuffixEntry("Thin", SuffixKind.Weight, 100, true));
             entries.Add(new SuffixEntry("Hairline", SuffixKind.Weight, 100));
 
             // Width suffixes (values match SKFontStyleWidth enum)
             entries.Add(new SuffixEntry("Ultra Condensed", SuffixKind.Width, 1));
-            entries.Add(new SuffixEntry("UltraCondensed", SuffixKind.Width, 1));
+            entries.Add(new SuffixEntry("UltraCondensed", SuffixKind.Width, 1, true));
             entries.Add(new SuffixEntry("Extra Condensed", SuffixKind.Width, 2));
-            entries.Add(new SuffixEntry("ExtraCondensed", SuffixKind.Width, 2));
-            entries.Add(new SuffixEntry("Semi Condensed", SuffixKind.Width, 4));
-            entries.Add(new SuffixEntry("SemiCondensed", SuffixKind.Width, 4));
-            entries.Add(new SuffixEntry("Condensed", SuffixKind.Width, 3));
+            entries.Add(new SuffixEntry("ExtraCondensed", SuffixKind.Width, 2, true));
+            entries.Add(new SuffixEntry("Condensed", SuffixKind.Width, 3, true));
             entries.Add(new SuffixEntry("Narrow", SuffixKind.Width, 3));
             entries.Add(new SuffixEntry("Compressed", SuffixKind.Width, 3));
+            entries.Add(new SuffixEntry("Semi Condensed", SuffixKind.Width, 4));
+            entries.Add(new SuffixEntry("SemiCondensed", SuffixKind.Width, 4, true));
             entries.Add(new SuffixEntry("Semi Expanded", SuffixKind.Width, 6));
-            entries.Add(new SuffixEntry("SemiExpanded", SuffixKind.Width, 6));
-            entries.Add(new SuffixEntry("Extra Expanded", SuffixKind.Width, 8));
-            entries.Add(new SuffixEntry("ExtraExpanded", SuffixKind.Width, 8));
-            entries.Add(new SuffixEntry("Ultra Expanded", SuffixKind.Width, 9));
-            entries.Add(new SuffixEntry("UltraExpanded", SuffixKind.Width, 9));
+            entries.Add(new SuffixEntry("SemiExpanded", SuffixKind.Width, 6, true));
             entries.Add(new SuffixEntry("Expanded", SuffixKind.Width, 7));
-            entries.Add(new SuffixEntry("Wide", SuffixKind.Width, 7));
+            entries.Add(new SuffixEntry("Wide", SuffixKind.Width, 7, true));
+            entries.Add(new SuffixEntry("Extra Expanded", SuffixKind.Width, 8));
+            entries.Add(new SuffixEntry("ExtraExpanded", SuffixKind.Width, 8, true));
+            entries.Add(new SuffixEntry("Ultra Expanded", SuffixKind.Width, 9));
+            entries.Add(new SuffixEntry("UltraExpanded", SuffixKind.Width, 9, true));
 
             // Slant suffixes (values match SKFontStyleSlant enum)
-            entries.Add(new SuffixEntry("Italic", SuffixKind.Slant, (int)SKFontStyleSlant.Italic));
-            entries.Add(new SuffixEntry("Oblique", SuffixKind.Slant, (int)SKFontStyleSlant.Oblique));
+            entries.Add(new SuffixEntry("Italic", SuffixKind.Slant, (int)SKFontStyleSlant.Italic, true));
+            entries.Add(new SuffixEntry("Oblique", SuffixKind.Slant, (int)SKFontStyleSlant.Oblique, true));
 
             // Sort longest first so "Extra Bold" is tried before "Bold"
             return entries.OrderByDescending(e => e.Suffix.Length).ToArray();
@@ -1065,6 +1067,84 @@ namespace Map_SkiaStd
         }
 
 
+
+        // Returns the default suffix string for a given SuffixKind and value,
+        // or null if no default suffix exists.
+        private static string GetDefaultSuffix(SuffixKind kind, int value)
+        {
+            foreach (SuffixEntry entry in allSuffixes) {
+                if (entry.Kind == kind && entry.Value == value && entry.DefaultSuffix) {
+                    return entry.Suffix;
+                }
+            }
+            return null;
+        }
+
+        // Returns an array of all available font family names, combining both
+        // private registered fonts and system fonts from SKFontManager.Default.
+        // For system fonts, each font style in a family generates a suffixed name
+        // based on its weight,\ and width (e.g., "Bahnschrift Light",
+        // "Bahnschrift SemiBold Condensed").
+        // Weight 400/700, width 5 are considered standard and produce no suffix.
+        // Duplicates are removed using case-insensitive comparison, and the
+        // result is sorted alphabetically (case-insensitive).
+        public static string[] GetFontFamilies()
+        {
+            HashSet<string> familyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            lock (lockObj) {
+                foreach (FontKey key in privateTypeFace.Keys) {
+                    familyNames.Add(key.familyName);
+                }
+            }
+
+            SKFontManager systemFontManager = SKFontManager.Default;
+            foreach (string family in systemFontManager.FontFamilies) {
+                using (SKFontStyleSet styleSet = systemFontManager.GetFontStyles(family)) {
+                    // Check if all styles in this family share the same weight or width.
+                    // If so, suppress that suffix even if the value isn't Normal/Bold.
+                    bool allSameWeight = true;
+                    bool allSameWidth = true;
+                    if (styleSet.Count > 0) {
+                        int firstWeight = styleSet[0].Weight;
+                        int firstWidth = (int)styleSet[0].Width;
+                        for (int i = 1; i < styleSet.Count; i++) {
+                            if (styleSet[i].Weight != firstWeight)
+                                allSameWeight = false;
+                            if ((int)styleSet[i].Width != firstWidth)
+                                allSameWidth = false;
+                        }
+                    }
+
+                    for (int i = 0; i < styleSet.Count; i++) {
+                        SKFontStyle style = styleSet[i];
+                        string name = family;
+
+                        int weight = style.Weight;
+                        if (!allSameWeight && weight != (int)SKFontStyleWeight.Normal && weight != (int)SKFontStyleWeight.Bold) {
+                            string weightSuffix = GetDefaultSuffix(SuffixKind.Weight, weight);
+                            if (weightSuffix != null) {
+                                name += " " + weightSuffix;
+                            }
+                        }
+
+                        int width = (int)style.Width;
+                        if (!allSameWidth && width != (int)SKFontStyleWidth.Normal) {
+                            string widthSuffix = GetDefaultSuffix(SuffixKind.Width, width);
+                            if (widthSuffix != null) {
+                                name += " " + widthSuffix;
+                            }
+                        }
+
+                        familyNames.Add(name);
+                    }
+                }
+            }
+
+            string[] result = familyNames.ToArray();
+            Array.Sort(result, StringComparer.OrdinalIgnoreCase);
+            return result;
+        }
 
         // Clears all registered private font files. Primarily for test isolation.
         public static void ClearPrivateFonts()
@@ -1316,12 +1396,14 @@ namespace Map_SkiaStd
             public string Suffix { get; }
             public SuffixKind Kind { get; }
             public int Value { get; }
+            public bool DefaultSuffix { get; }
 
-            public SuffixEntry(string suffix, SuffixKind kind, int value)
+            public SuffixEntry(string suffix, SuffixKind kind, int value, bool defaultSuffix = false)
             {
                 Suffix = suffix;
                 Kind = kind;
                 Value = value;
+                DefaultSuffix = defaultSuffix;
             }
         }
 
