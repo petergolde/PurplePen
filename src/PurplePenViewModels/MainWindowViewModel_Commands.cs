@@ -643,6 +643,20 @@ namespace PurplePen.ViewModels
             }
 
             addForkDialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            string reason;
+            if (controller.CanAddVariation(out reason) != CommandStatus.Enabled) {
+                await ErrorMessage(reason);
+                return;
+            }
+
+            AddVariationDialogViewModel vm = new AddVariationDialogViewModel();
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                await controller.AddVariation(vm.IsLoop, vm.NumberOfBranches);
+            }
 #endif
         }
 

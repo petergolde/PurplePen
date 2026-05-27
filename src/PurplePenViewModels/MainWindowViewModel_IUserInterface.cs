@@ -246,7 +246,10 @@ namespace PurplePen.ViewModels
 
         public void ShowTopologyView()
         {
-            throw new NotImplementedException();
+#if PORTING
+            // Not yet implemented.
+            return;
+#endif
         }
 
     }

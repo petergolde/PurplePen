@@ -92,3 +92,27 @@ Fira Sans
 Source Sans 3
 Lato
 
+Dialogs remaining to port:
+AddForkDialog
+AllControlsProperties
+CoursePartProperties
+CustomSymbolText
+DownloadProgressDialog
+EnterSymbolText
+InitialScreen
+LegAssignmentsDialog
+LicenseForm
+MapIssueChoiceDialog
+MissingsFonts
+MoveAllControls
+NewEventWizard and sub-forms
+PdfConversionInProgress
+PrintCourses
+PrinterMargins
+ReportForm
+SelectLocationsForMove
+SetPrintAreaDialog
+TeamVariationsForm
+
+
+

@@ -1,0 +1,129 @@
+<!--
+    AddVariationDialog.axaml
+
+    Add Variation dialog. The user picks a fork or a loop, then the number of
+    branches (fork) or loops (loop) from a combo box. A summary at the bottom
+    describes the consequence of the choice and updates live.
+
+    The two summary format strings live in UIText (MiscText_ForkSummary /
+    MiscText_LoopSummary) so the View owns all localization; the numeric and
+    list values come from AddVariationDialogViewModel and are inserted via
+    Binding / MultiBinding StringFormat.
+
+    Migrated from WinForms PurplePen/AddForkDialog.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.AddVariationDialog"
+        Classes="dialog"
+        x:DataType="vm:AddVariationDialogViewModel"
+        Title="{resx:Localize AddForkDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="420" d:DesignHeight="260"
+        Width="420"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:AddVariationDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="30">
+
+            <!-- Row 1: "what type of variation?" + the Fork / Loop radios -->
+            <Grid ColumnDefinitions="*,Auto,40">
+                <TextBlock x:Name="labelWhichType"
+                           Grid.Column="0"
+                           Text="{resx:Localize AddForkDialog_labelWhichType_Text}"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" Spacing="4" VerticalAlignment="Center">
+                    <RadioButton x:Name="radioButtonFork"
+                                 GroupName="VariationType"
+                                 Content="{resx:Localize AddForkDialog_radioButtonFork_Text}"
+                                 IsChecked="{Binding !IsLoop, Mode=TwoWay}"/>
+                    <RadioButton x:Name="radioButtonLoop"
+                                 GroupName="VariationType"
+                                 Content="{resx:Localize AddForkDialog_radioButtonLoop_Text}"
+                                 IsChecked="{Binding IsLoop, Mode=TwoWay}"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Row 2: "number of branches/loops" label + the count combo box.
+                 The two labels share a cell and toggle by visibility so the
+                 row stays put as the variation type changes. -->
+            <Grid ColumnDefinitions="*,Auto,40">
+                <Panel Grid.Column="0" VerticalAlignment="Center" Margin="0,0,12,0">
+                    <TextBlock x:Name="labelNumberBranches"
+                               Text="{resx:Localize AddForkDialog_labelNumberBranches_Text}"
+                               IsVisible="{Binding !IsLoop}"/>
+                    <TextBlock x:Name="labelNumberLoops"
+                               Text="{resx:Localize AddForkDialog_labelNumberLoops_Text}"
+                               IsVisible="{Binding IsLoop}"/>
+                </Panel>
+                <ComboBox x:Name="comboBoxNumberBranches"
+                          Grid.Column="1"
+                          Width="79"
+                          ItemsSource="{Binding BranchCounts}"
+                          SelectedItem="{Binding NumberOfBranches, Mode=TwoWay}"/>
+            </Grid>
+
+            <!-- Row 3: the live summary. One TextBlock per variation type; only
+                 the matching one is shown. -->
+            <Panel MinHeight="56">
+                <TextBlock x:Name="labelForkSummary"
+                           TextWrapping="Wrap"
+                           IsVisible="{Binding !IsLoop}">
+                    <TextBlock.Text>
+                        <Binding Path="RelayParticipants"
+                                 StringFormat="{x:Static resx:UIText.MiscText_ForkSummary}"/>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock x:Name="labelLoopSummary"
+                           TextWrapping="Wrap"
+                           IsVisible="{Binding IsLoop}">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{x:Static resx:UIText.MiscText_LoopSummary}">
+                            <Binding Path="LoopVisits"/>
+                            <Binding Path="LoopPaths"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </Panel>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>
