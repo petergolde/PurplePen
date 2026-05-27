@@ -1,0 +1,135 @@
+<!--
+    AddTextLineDialog.axaml
+
+    Dialog for entering a line of text to place on a separate line of the
+    control descriptions. A multiline text box at the top, then two combo boxes
+    choosing where the text goes (above/below the item) and whether it applies to
+    this course only or to all courses containing the item.
+
+    The two "position" captions and the "all courses" caption embed the object
+    name (control code etc.); the View formats them from UIText via Binding
+    StringFormat so localization stays in the View.
+
+    Migrated from WinForms PurplePen/AddTextLine.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.AddTextLineDialog"
+        Classes="dialog"
+        x:DataType="vm:AddTextLineDialogViewModel"
+        Title="{resx:Localize AddTextLine_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="438" d:DesignHeight="224"
+        Width="438" Height="224"
+        MinWidth="438" MinHeight="224"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:AddTextLineDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,20,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Prompt, docked at the top. -->
+        <TextBlock x:Name="textLineLabel"
+                   DockPanel.Dock="Top"
+                   Text="{resx:Localize AddTextLine_textLineLabel_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,10"/>
+
+        <!-- Position / Courses selection (tableLayoutPanel2), docked above the
+             buttons. Indented to match the WinForms layout. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,*"
+              RowDefinitions="Auto,Auto"
+              Margin="40,10,0,0">
+
+                <!-- Row 0: Position -->
+                <TextBlock x:Name="positionLabel"
+                           Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize AddTextLine_positionLabel_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,6"/>
+                <ComboBox x:Name="comboBoxPosition"
+                          Grid.Row="0" Grid.Column="1"
+                          SelectedIndex="{Binding PositionIndex, Mode=TwoWay}"
+                          HorizontalAlignment="Stretch"
+                          Margin="0,0,0,6">
+                    <ComboBoxItem>
+                        <ComboBoxItem.Content>
+                            <Binding Path="ObjectName"
+                                     StringFormat="{x:Static resx:UIText.AddTextLine_comboBoxPosition_Items}"/>
+                        </ComboBoxItem.Content>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <ComboBoxItem.Content>
+                            <Binding Path="ObjectName"
+                                     StringFormat="{x:Static resx:UIText.AddTextLine_comboBoxPosition_Items1}"/>
+                        </ComboBoxItem.Content>
+                    </ComboBoxItem>
+                </ComboBox>
+
+                <!-- Row 1: Courses -->
+                <TextBlock x:Name="coursesLabel"
+                           Grid.Row="1" Grid.Column="0"
+                           Text="{resx:Localize AddTextLine_coursesLabel_Text}"
+                           VerticalAlignment="Center"
+                           Margin="0,0,8,0"/>
+                <ComboBox x:Name="comboBoxCourses"
+                          Grid.Row="1" Grid.Column="1"
+                          SelectedIndex="{Binding CoursesIndex, Mode=TwoWay}"
+                          IsEnabled="{Binding IsCoursesEnabled}"
+                          HorizontalAlignment="Stretch">
+                    <ComboBoxItem Content="{resx:Localize AddTextLine_comboBoxCourses_Items}"/>
+                    <ComboBoxItem>
+                        <ComboBoxItem.Content>
+                            <Binding Path="ObjectName"
+                                     StringFormat="{x:Static resx:UIText.AddTextLine_comboBoxCourses_Items1}"/>
+                        </ComboBoxItem.Content>
+                    </ComboBoxItem>
+                </ComboBox>
+        </Grid>
+
+        <!-- Multiline text entry (tableLayoutPanel1). The DockPanel's fill
+             child, so it absorbs all vertical growth when the dialog is made
+             taller, instead of opening a gap above the buttons. -->
+        <TextBox x:Name="textBoxText"
+                 Text="{Binding Text, Mode=TwoWay}"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 MinHeight="60"
+                 VerticalAlignment="Stretch"
+                 VerticalContentAlignment="Top"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+    </DockPanel>
+
+</Window>

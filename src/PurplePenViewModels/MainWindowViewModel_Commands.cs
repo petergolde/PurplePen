@@ -650,7 +650,7 @@ namespace PurplePen.ViewModels
         /// Executes the Add/Text Line command. Shows the Add Text Line dialog.
         /// </summary>
         [RelayCommand(CanExecute = nameof(CanAddTextLine))]
-        private void AddTextLine()
+        private async Task AddTextLine()
         {
 #if !PORTING
             string defaultText;
@@ -673,6 +673,27 @@ namespace PurplePen.ViewModels
                 }
 
                 dialog.Dispose();
+            }
+#else
+            if (controller == null) { return; }
+
+            string defaultText;
+            DescriptionLine.TextLineKind defaultLineKind;
+            bool enableThisCourse;
+            string objectName;
+
+            if (controller.CanAddTextLine(out defaultText, out defaultLineKind, out objectName, out enableThisCourse)) {
+                AddTextLineDialogViewModel vm = new AddTextLineDialogViewModel {
+                    ObjectName = objectName,
+                    EnableThisCourse = enableThisCourse,
+                    TextLine = defaultText,
+                    TextLineKind = defaultLineKind
+                };
+
+                if (await Services.DialogService.ShowDialogAsync(vm)) {
+                    // The controller treats an empty string the same as null.
+                    controller.AddTextLine(vm.TextLine ?? "", vm.TextLineKind);
+                }
             }
 #endif
         }
