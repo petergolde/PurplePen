@@ -480,7 +480,7 @@ namespace PurplePen.ViewModels
         /// Shows the View Additional Courses dialog.
         /// </summary>
         [RelayCommand(CanExecute = nameof(CanShowOtherCourses))]
-        private void ShowOtherCourses()
+        private async Task ShowOtherCourses()
         {
 #if !PORTING
             ViewAdditionalCourses dialog = new ViewAdditionalCourses(controller.CurrentTabName, controller.CurrentCourseId);
@@ -488,6 +488,19 @@ namespace PurplePen.ViewModels
             dialog.DisplayedCourses = controller.ExtraCourseDisplay;
             if (dialog.ShowDialog() == DialogResult.OK) {
                 controller.ExtraCourseDisplay = dialog.DisplayedCourses;
+            }
+#else
+            if (controller == null) { return; }
+
+            ViewAdditionalCoursesDialogViewModel vm = new ViewAdditionalCoursesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                CourseName = controller.CurrentTabName,
+                CurrentCourse = controller.CurrentCourseId,
+                DisplayedCourses = controller.ExtraCourseDisplay
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.ExtraCourseDisplay = vm.DisplayedCourses;
             }
 #endif
         }
