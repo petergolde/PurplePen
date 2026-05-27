@@ -108,7 +108,19 @@ namespace PurplePen.ViewModels
 
         public async Task<YesNoCancel> MovingSharedControl(string controlCode, string otherCourses)
         {
-            throw new NotImplementedException();
+            MoveControlChoiceDialogViewModel vm = new MoveControlChoiceDialogViewModel {
+                Code = controlCode,
+                CourseList = otherCourses
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
+            switch (vm.Choice) {
+                case MoveControlChoice.Move:
+                    return YesNoCancel.Yes;
+                case MoveControlChoice.Duplicate:
+                    return YesNoCancel.No;
+                default:
+                    return YesNoCancel.Cancel;
+            }
         }
 
         // ===== Operation-in-progress dialog plumbing =====

@@ -1,0 +1,152 @@
+<!--
+    MoveControlChoiceDialog.axaml
+
+    Shown when the user moves a control that is shared by several courses.
+    Top: an explanation naming the control, then the list of other courses
+    that share it. Below: three large "title + detail" choice buttons —
+    move the control everywhere, create a new control only in this course,
+    or do nothing.
+
+    Migrated from WinForms PurplePen/MoveControlChoiceDialog.cs (the three
+    buttons were TitleDetailButton custom controls).
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.MoveControlChoiceDialog"
+        Classes="dialog"
+        x:DataType="vm:MoveControlChoiceDialogViewModel"
+        Title="{resx:Localize MoveControlChoiceDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="440" d:DesignHeight="430"
+        Width="440"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:MoveControlChoiceDialogViewModel/>
+    </Design.DataContext>
+
+    <!-- Shared styling for the three "title + detail" choice buttons:
+         full width, left-aligned content, a hover highlight, and the
+         title rendered in an accent (hot-track) blue like the WinForms
+         TitleDetailButton. -->
+    <Window.Styles>
+        <Style Selector="Button.choice">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        <Style Selector="Button.choice TextBlock.title">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Foreground" Value="#0066CC"/>
+        </Style>
+        <Style Selector="Button.choice TextBlock.detail">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <!-- Match the plain top labels' colour rather than inheriting the
+                 button's content foreground. -->
+            <Setter Property="Foreground" Value="{Binding #labelExplanation.Foreground}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,2,0,0"/>
+        </Style>
+    </Window.Styles>
+
+    <StackPanel Margin="12" Spacing="10">
+
+        <!-- Explanation. The localized format string lives in UIText so the
+             View owns localization; the control code comes from the VM and is
+             inserted via Binding StringFormat. -->
+        <TextBlock x:Name="labelExplanation"
+                   TextWrapping="Wrap">
+            <TextBlock.Text>
+                <Binding Path="Code"
+                         StringFormat="{x:Static resx:UIText.MoveControlChoiceDialog_labelExplanation_Text}"/>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <!-- The list of other courses sharing this control (verbatim). -->
+        <TextBlock x:Name="labelOtherCourses"
+                   Text="{Binding CourseList}"
+                   TextWrapping="Wrap"
+                   Margin="16,0,0,0"/>
+
+        <!-- Choice 1: move the control in every course. The 12px top margin
+             adds extra space below the list of other courses. -->
+        <Button x:Name="moveButton"
+                Classes="choice"
+                Margin="0,12,0,0"
+                Click="MoveButton_Click">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="/Assets/Images/MoveControl.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"
+                       Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Classes="title"
+                               Text="{resx:Localize MoveControlChoiceDialog_moveButton_TitleText}"/>
+                    <TextBlock Classes="detail"
+                               Text="{resx:Localize MoveControlChoiceDialog_moveButton_DetailText}"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Choice 2: create a new control in this course only. -->
+        <Button x:Name="duplicateButton"
+                Classes="choice"
+                Click="DuplicateButton_Click">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="/Assets/Images/DuplicateControl.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"
+                       Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Classes="title"
+                               Text="{resx:Localize MoveControlChoiceDialog_duplicateButton_TitleText}"/>
+                    <!-- Detail names the control code, so it uses StringFormat
+                         on the VM's Code like the explanation above. -->
+                    <TextBlock x:Name="duplicateDetail" Classes="detail">
+                        <TextBlock.Text>
+                            <Binding Path="Code"
+                                     StringFormat="{x:Static resx:UIText.MoveControlChoiceDialog_duplicateButton_DetailText}"/>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Choice 3: do nothing (also the Escape/cancel action). -->
+        <Button x:Name="cancelButton"
+                Classes="choice"
+                IsCancel="True"
+                Click="CancelButton_Click">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="/Assets/Images/CancelMove.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"
+                       Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Classes="title"
+                               Text="{resx:Localize MoveControlChoiceDialog_cancelButton_TitleText}"/>
+                    <TextBlock Classes="detail"
+                               Text="{resx:Localize MoveControlChoiceDialog_cancelButton_DetailText}"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+    </StackPanel>
+</Window>
