@@ -316,6 +316,35 @@
             <Setter Property="Background" Value="#A0A0A0"/>
         </Style>
 
+        <!-- Toolbar dropdown menus: a single-item top-level Menu styled to look like a toolbar
+             button. Unlike Button+Flyout, a Menu uses the native menu interaction handler, which
+             gives press-to-open / drag-over / release-to-select in one gesture. -->
+        <Style Selector="StackPanel.toolbar > Menu">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="StackPanel.toolbar > Menu > MenuItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <!-- Highlight on hover and while the submenu is open (:selected), matching the buttons. -->
+        <Style Selector="StackPanel.toolbar > Menu > MenuItem:pointerover /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="#30000000"/>
+            <Setter Property="BorderBrush" Value="#50000000"/>
+        </Style>
+        <Style Selector="StackPanel.toolbar > Menu > MenuItem:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="#30000000"/>
+            <Setter Property="BorderBrush" Value="#50000000"/>
+        </Style>
+
         <!-- Status bar zoom slider: smaller thumb and track to fit in 26px status bar -->
         <Style Selector="Slider.statusBarSlider /template/ Thumb">
             <Setter Property="Width" Value="12"/>

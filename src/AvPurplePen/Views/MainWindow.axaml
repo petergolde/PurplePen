@@ -443,7 +443,8 @@
         <!-- Toolbar buttons arranged in a horizontal StackPanel.
              Image-only buttons show just an icon with a tooltip.
              Image+text buttons show icon and label side by side.
-             Dropdown buttons use SplitButton with MenuFlyout. -->
+             Dropdown buttons are a single-item Menu (see App.axaml toolbar Menu styles) so the
+             native menu gesture works: press to open, drag over items, release to select. -->
         <StackPanel x:Name="toolbar" Classes="toolbar" DockPanel.Dock="Top" Orientation="Horizontal"
                     Spacing="2" Height="28">
 
@@ -533,39 +534,39 @@
                 </StackPanel>
             </Button>
 
-            <!-- Map Exchange dropdown (image + text, click opens flyout menu) -->
-            <Button x:Name="mapExchangeToolStripMenu" Padding="2,2"
-                    IsEnabled="{Binding CanAddMapExchangeAny}">
-                <StackPanel Orientation="Horizontal" Spacing="4">
-                    <Image Source="/Assets/Toolbar/mapExchange.png" Width="16" Height="16"/>
-                    <TextBlock Text="{resx:Localize MainFrame_mapExchangeToolStripMenu_Text}"
-                               VerticalAlignment="Center"/>
-                    <PathIcon Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z"
-                             Width="8" Height="8" VerticalAlignment="Center"/>
-                </StackPanel>
-                <Button.Flyout>
-                    <MenuFlyout  Placement="BottomEdgeAlignedLeft">
-                        <MenuItem x:Name="mapFlipMenuItem" Header="{resx:Localize MainFrame_mapFlipMenuItem_Text}"
-                                  Command="{Binding AddMapFlipControlCommand}">
-                            <MenuItem.Icon>
-                                <Image Source="/Assets/Toolbar/mapFlipMenuItem.png" Width="16" Height="16"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem x:Name="mapExchangeControlToolStripMenuItem" Header="{resx:Localize MainFrame_mapExchangeControlToolStripMenuItem_Text}"
-                                  Command="{Binding AddMapExchangeControlCommand}">
-                            <MenuItem.Icon>
-                                <Image Source="/Assets/Toolbar/mapExchangeControlItem.png" Width="16" Height="16"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem x:Name="mapExchangeSeparateToolStripMenuItem" Header="{resx:Localize MainFrame_mapExchangeSeparateToolStripMenuItem_Text}"
-                                  Command="{Binding AddMapExchangeSeparateCommand}">
-                            <MenuItem.Icon>
-                                <Image Source="/Assets/Toolbar/mapExchangeSeparateItem.png" Width="16" Height="16"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                    </MenuFlyout>
-                </Button.Flyout>
-            </Button>
+            <!-- Map Exchange dropdown. A single-item Menu (not Button + Flyout) so the native menu
+                 interaction handler provides press-to-open, drag-over, release-to-select. -->
+            <Menu x:Name="mapExchangeToolStripMenu" IsEnabled="{Binding CanAddMapExchangeAny}">
+                <MenuItem>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" Spacing="4">
+                            <Image Source="/Assets/Toolbar/mapExchange.png" Width="16" Height="16"/>
+                            <TextBlock Text="{resx:Localize MainFrame_mapExchangeToolStripMenu_Text}"
+                                       VerticalAlignment="Center"/>
+                            <PathIcon Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z"
+                                     Width="8" Height="8" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </MenuItem.Header>
+                    <MenuItem x:Name="mapFlipMenuItem" Header="{resx:Localize MainFrame_mapFlipMenuItem_Text}"
+                              Command="{Binding AddMapFlipControlCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="/Assets/Toolbar/mapFlipMenuItem.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="mapExchangeControlToolStripMenuItem" Header="{resx:Localize MainFrame_mapExchangeControlToolStripMenuItem_Text}"
+                              Command="{Binding AddMapExchangeControlCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="/Assets/Toolbar/mapExchangeControlItem.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="mapExchangeSeparateToolStripMenuItem" Header="{resx:Localize MainFrame_mapExchangeSeparateToolStripMenuItem_Text}"
+                              Command="{Binding AddMapExchangeSeparateCommand}">
+                        <MenuItem.Icon>
+                            <Image Source="/Assets/Toolbar/mapExchangeSeparateItem.png" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
 
             <!-- Add Variation (image + text) -->
             <Button x:Name="addVariationToolStripButton" Padding="2,2"
@@ -578,16 +579,17 @@
             </Button>
 
             <!-- Special Items dropdown (image + text, click opens flyout menu) -->
-            <Button x:Name="specialItemToolStripMenu" Padding="2,2">
-                <StackPanel Orientation="Horizontal" Spacing="4">
-                    <Image Source="/Assets/Toolbar/specialItem.png" Width="16" Height="16"/>
-                    <TextBlock Text="{resx:Localize MainFrame_specialItemToolStripMenu_Text}"
-                               VerticalAlignment="Center"/>
-                    <PathIcon Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z"
-                             Width="8" Height="8" VerticalAlignment="Center"/>
-                </StackPanel>
-                <Button.Flyout>
-                    <MenuFlyout  Placement="BottomEdgeAlignedLeft">
+            <Menu x:Name="specialItemToolStripMenu">
+                <MenuItem>
+                    <MenuItem.Header>
+                        <StackPanel Orientation="Horizontal" Spacing="4">
+                            <Image Source="/Assets/Toolbar/specialItem.png" Width="16" Height="16"/>
+                            <TextBlock Text="{resx:Localize MainFrame_specialItemToolStripMenu_Text}"
+                                       VerticalAlignment="Center"/>
+                            <PathIcon Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z"
+                                     Width="8" Height="8" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </MenuItem.Header>
                         <MenuItem x:Name="mapIssuePointToolStripMenuItem" Header="{resx:Localize MainFrame_mapIssuePointToolStripMenuItem_Text}"
                                   Command="{Binding AddMapIssueCommand}">
                             <MenuItem.Icon>
@@ -692,9 +694,8 @@
                                 <Image Source="/Assets/Toolbar/ellipseItem.png" Width="16" Height="16"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                    </MenuFlyout>
-                </Button.Flyout>
-            </Button>
+                </MenuItem>
+            </Menu>
             <Separator Width="1" Margin="2,2"/>
 
             <!-- Add Bend (image only) -->
