@@ -26,6 +26,14 @@ namespace PurplePen.ViewModels
     public partial class AddCourseDialogViewModel : ViewModelBase
     {
         /// <summary>
+        /// Title text for the dialog window. Set by the caller (e.g. "Add Course",
+        /// "Course Properties", "Duplicate Course"). When empty, the View falls
+        /// back to its default localized title.
+        /// </summary>
+        [ObservableProperty]
+        private string dialogTitle = "";
+
+        /// <summary>
         /// The course name entered by the user.
         /// </summary>
         [ObservableProperty]

@@ -1545,7 +1545,7 @@ namespace PurplePen.ViewModels
         /// pre-populated with current course properties.
         /// </summary>
         [RelayCommand(CanExecute = nameof(CanDuplicateCourse))]
-        private void DuplicateCourse()
+        private async Task DuplicateCourse()
         {
 #if !PORTING
             if (controller.CanDuplicateCurrentCourse()) {
@@ -1567,6 +1567,45 @@ namespace PurplePen.ViewModels
                 }
 
             }
+#else
+            if (controller == null) { return; }
+
+            if (controller.CanDuplicateCurrentCourse()) {
+                // Seed the dialog from the current course, but with a blank name
+                // and a locked course kind (a duplicate keeps the same kind).
+                CourseKind courseKind;
+                string courseName, secondaryTitle;
+                float printScale, climb;
+                float? length;
+                DescriptionKind descKind;
+                int firstControlOrdinal;
+                ControlLabelKind labelKind;
+                int scoreColumn;
+                bool hideFromReports;
+                controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal, out hideFromReports);
+
+                AddCourseDialogViewModel vm = new AddCourseDialogViewModel {
+                    DialogTitle = MiscText.DuplicateCourseTitle,
+                    CourseKind = courseKind,
+                    CourseName = "",
+                    CanChangeCourseKind = false,
+                    ControlLabelKind = labelKind,
+                    DescKind = descKind,
+                    FirstControlOrdinal = firstControlOrdinal,
+                    HideFromReports = hideFromReports,
+                    SecondaryTitlePipeDelimited = secondaryTitle,
+                };
+                vm.InitializePrintScales(controller.MapScale);
+                vm.PrintScale = printScale;
+                vm.Climb = climb;
+                vm.Length = length;
+                vm.ScoreColumn = scoreColumn;
+
+                if (await Services.DialogService.ShowDialogAsync(vm)) {
+                    controller.DuplicateCurrentCourse(vm.CourseName, vm.ControlLabelKind, vm.ScoreColumn, vm.SecondaryTitlePipeDelimited,
+                        vm.PrintScale, vm.Climb, vm.Length, vm.DescKind, vm.FirstControlOrdinal, vm.HideFromReports);
+                }
+            }
 #endif
         }
 
@@ -1576,10 +1615,12 @@ namespace PurplePen.ViewModels
 
 
         /// <summary>
-        /// Executes the Course/Properties command. Shows the course properties dialog.
+        /// Executes the Course/Properties command. Shows the course properties dialog
+        /// for the current course, or the All Controls properties dialog when the
+        /// All Controls view is active.
         /// </summary>
         [RelayCommand]
-        private void ShowCourseProperties()
+        private async Task ShowCourseProperties()
         {
 #if !PORTING
             if (controller.CanChangeCourseProperties()) {
@@ -1616,6 +1657,59 @@ namespace PurplePen.ViewModels
                 // If the dialog completed successfully, then change the course.
                 if (result == DialogResult.OK) {
                     controller.ChangeAllControlsProperties(allControlsDialog.PrintScale, allControlsDialog.DescKind);
+                }
+            }
+#else
+            if (controller == null) { return; }
+
+            if (controller.CanChangeCourseProperties()) {
+                // Editing the properties of the current course.
+                CourseKind courseKind;
+                string courseName, secondaryTitle;
+                float printScale, climb;
+                float? length;
+                DescriptionKind descKind;
+                int firstControlOrdinal;
+                ControlLabelKind labelKind;
+                int scoreColumn;
+                bool hideFromReports;
+                controller.GetCurrentCourseProperties(out courseKind, out courseName, out labelKind, out scoreColumn, out secondaryTitle, out printScale, out climb, out length, out descKind, out firstControlOrdinal, out hideFromReports);
+
+                AddCourseDialogViewModel vm = new AddCourseDialogViewModel {
+                    DialogTitle = MiscText.CoursePropertiesTitle,
+                    CourseKind = courseKind,
+                    CourseName = courseName,
+                    ControlLabelKind = labelKind,
+                    DescKind = descKind,
+                    FirstControlOrdinal = firstControlOrdinal,
+                    HideFromReports = hideFromReports,
+                    SecondaryTitlePipeDelimited = secondaryTitle,
+                };
+                vm.InitializePrintScales(controller.MapScale);
+                vm.PrintScale = printScale;
+                vm.Climb = climb;
+                vm.Length = length;
+                vm.ScoreColumn = scoreColumn;
+
+                if (await Services.DialogService.ShowDialogAsync(vm)) {
+                    controller.ChangeCurrentCourseProperties(vm.CourseKind, vm.CourseName, vm.ControlLabelKind, vm.ScoreColumn, vm.SecondaryTitlePipeDelimited,
+                        vm.PrintScale, vm.Climb, vm.Length, vm.DescKind, vm.FirstControlOrdinal, vm.HideFromReports);
+                }
+            }
+            else {
+                // Changing the properties of the All Controls view.
+                float printScale;
+                DescriptionKind descKind;
+                controller.GetAllControlsProperties(out printScale, out descKind);
+
+                AllControlsPropertiesDialogViewModel vm = new AllControlsPropertiesDialogViewModel {
+                    DescKind = descKind,
+                };
+                vm.InitializePrintScales(controller.MapScale);
+                vm.PrintScale = printScale;
+
+                if (await Services.DialogService.ShowDialogAsync(vm)) {
+                    controller.ChangeAllControlsProperties(vm.PrintScale, vm.DescKind);
                 }
             }
 #endif

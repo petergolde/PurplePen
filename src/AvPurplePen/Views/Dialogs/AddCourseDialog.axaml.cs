@@ -26,7 +26,13 @@ namespace AvPurplePen.Views
         public AddCourseDialog()
         {
             InitializeComponent();
-            Opened += (s, e) => nameTextBox.Focus();
+            Opened += (s, e) => {
+                // Caller may supply a title (Course Properties / Duplicate Course);
+                // otherwise the XAML default localized "Add Course" title stands.
+                if (DataContext is AddCourseDialogViewModel vm && !string.IsNullOrEmpty(vm.DialogTitle))
+                    Title = vm.DialogTitle;
+                nameTextBox.Focus();
+            };
         }
 
         /// <summary>

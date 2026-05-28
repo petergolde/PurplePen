@@ -58,7 +58,8 @@
       "Bash(taskkill //F //PID 40252)",
       "Bash(taskkill //F //PID 20208)",
       "Bash(taskkill //F //PID 52596)",
-      "Bash(taskkill //F //PID 74256)"
+      "Bash(taskkill //F //PID 74256)",
+      "PowerShell(dotnet build src\\\\AvPurplePen\\\\AvPurplePen.csproj -clp:ErrorsOnly)"
     ]
   }
 }

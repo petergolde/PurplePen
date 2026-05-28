@@ -1,0 +1,107 @@
+<!--
+    AllControlsPropertiesDialog.axaml
+
+    Dialog for editing the printing scale and description appearance used
+    when printing the "All Controls" view.
+
+    Migrated from WinForms PurplePen/AllControlsProperties.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.AllControlsPropertiesDialog"
+        Classes="dialog"
+        x:DataType="vm:AllControlsPropertiesDialogViewModel"
+        Title="{resx:Localize AllControlsProperties_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="380" d:DesignHeight="240"
+        Width="380"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:AllControlsPropertiesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,20,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="12">
+
+            <!-- Descriptive text -->
+            <TextBlock x:Name="allControlsPropertiesLabel"
+                       Text="{resx:Localize AllControlsProperties_allControlsPropertiesLabel_Text}"
+                       TextWrapping="Wrap"/>
+
+            <!-- Appearance group -->
+            <HeaderedContentControl Header="{resx:Localize AllControlsProperties_appearanceGroupBox_Text}"
+                                    Padding="8">
+                <Grid ColumnDefinitions="Auto,*"
+                      RowDefinitions="Auto,Auto">
+
+                    <!-- Row 0: Map printing scale -->
+                    <TextBlock Grid.Row="0" Grid.Column="0"
+                               Text="{resx:Localize AllControlsProperties_printingScaleLabel_Text}"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,6"/>
+                    <DockPanel Grid.Row="0" Grid.Column="1" Margin="0,0,0,6">
+                        <TextBlock x:Name="oneToPrefixLabel"
+                                   DockPanel.Dock="Left"
+                                   Text="{resx:Localize AllControlsProperties_oneToPrefix_Text}"
+                                   VerticalAlignment="Center"/>
+                        <ComboBox x:Name="scaleCombo"
+                                  IsEditable="True"
+                                  ItemsSource="{Binding AvailablePrintScales}"
+                                  Text="{Binding PrintScaleText, Mode=TwoWay}"
+                                  HorizontalAlignment="Stretch"/>
+                    </DockPanel>
+
+                    <!-- Row 1: Description appearance -->
+                    <TextBlock Grid.Row="1" Grid.Column="0"
+                               Text="{resx:Localize AllControlsProperties_descriptionAppearanceLabel_Text}"
+                               VerticalAlignment="Center"
+                               Margin="0,0,8,0"/>
+                    <ComboBox x:Name="descKindCombo"
+                              Grid.Row="1" Grid.Column="1"
+                              SelectedIndex="{Binding DescKind, Converter={x:Static avutil:EnumToIndexConverter.Instance}}"
+                              HorizontalAlignment="Stretch">
+                        <ComboBoxItem Content="{resx:Localize AllControlsProperties_descKindCombo_Items}"/>
+                        <ComboBoxItem Content="{resx:Localize AllControlsProperties_descKindCombo_Items1}"/>
+                        <ComboBoxItem Content="{resx:Localize AllControlsProperties_descKindCombo_Items2}"/>
+                    </ComboBox>
+                </Grid>
+            </HeaderedContentControl>
+
+        </StackPanel>
+    </DockPanel>
+
+</Window>
