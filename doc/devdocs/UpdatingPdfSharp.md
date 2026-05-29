@@ -45,7 +45,8 @@ result.** (You *can* also push fixes the other direction — see the last sectio
 Do this in your **separate clone of the fork**, not in Purple Pen.
 
 ```bash
-cd /path/to/your/PDFsharp-fork
+d:
+cd d:\Repos\Main\PDFsharp-fork
 
 git fetch upstream                 # get the latest public PdfSharp
 git checkout master
@@ -69,7 +70,8 @@ Once the fork has been updated and pushed (section 1), bring those changes into 
 Do this in the **Purple Pen** repository, with a clean working tree:
 
 ```bash
-cd /path/to/PurplePen
+d:
+cd d:\Repos\Main\PurplePen
 
 git fetch pdfsharp-fork
 git subtree pull --prefix=src/MapModel/PDFsharp pdfsharp-fork master --squash
@@ -103,7 +105,8 @@ in the fork so they survive future upstream merges, push them back.
 2. Push just the subtree's contents to a branch on the fork:
 
    ```bash
-   cd /path/to/PurplePen
+   d:
+   cd d:\Repos\Main\PurplePen
    git subtree push --prefix=src/MapModel/PDFsharp pdfsharp-fork pp-fix-branch
    ```
 
@@ -113,7 +116,8 @@ in the fork so they survive future upstream merges, push them back.
 3. In the **fork** repo, merge that branch into `master` and push:
 
    ```bash
-   cd /path/to/your/PDFsharp-fork
+   d:
+   cd d:\Repos\Main\PDFsharp-fork
    git fetch origin
    git checkout master
    git merge origin/pp-fix-branch
