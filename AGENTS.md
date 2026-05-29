@@ -389,6 +389,8 @@ In Avalonia, `IsVisible="False"` collapses the element entirely — a Grid row w
 
 WinForms forms use `resources.ApplyResources(this.controlName, "controlName")` which loads properties from `.resx`. In Avalonia, all localizable strings go into `AvPurplePen/UIText.resx` (English) and satellite files (UIText.fr.resx, etc.), referenced via `{resx:Localize}`.
 
+**ALWAYS check whether a key already exists in UIText.resx before adding it.** Most WinForms `.resx` strings were already bulk-imported into `UIText.resx` (English) and the translated satellites (UIText.de.resx, etc.) using the `FormName_controlName_Text` convention — *including translations*. Grep first (e.g. `grep 'name="SelectLocationsForMove' UIText.resx`). Adding a key that already exists creates a **duplicate** that silently wins/loses at build time and bypasses the existing translations in the satellite files. This mistake has been made several times. Only add a key if grep confirms it is genuinely missing.
+
 **Mapping resource keys from WinForms .resx to Avalonia UIText.resx:**
 - `controlName.Text` in FormName.resx → key `FormName_controlName_Text` in UIText.resx → `{resx:Localize FormName_controlName_Text}` in AXAML
 - `$this.Text` in FormName.resx → key `FormName_Text` in UIText.resx → `{resx:Localize FormName_Text}` for window Title

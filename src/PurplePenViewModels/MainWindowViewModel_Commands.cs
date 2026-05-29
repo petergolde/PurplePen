@@ -1999,7 +1999,7 @@ namespace PurplePen.ViewModels
         /// Executes the Event/Move All Controls command.
         /// </summary>
         [RelayCommand]
-        private void MoveAllControls()
+        private async Task MoveAllControls()
         {
 #if !PORTING
             // Part 1: Determine which action we are doing.
@@ -2022,6 +2022,28 @@ namespace PurplePen.ViewModels
             selectLocationsForMoveDialog.Show(this);
 
             // Dialog dismisses/disposes itself and invokes controller.
+#else
+            if (controller == null) { return; }
+
+            // Part 1: Determine which kind of move (move / scale / rotate).
+            MoveAllControlsDialogViewModel moveVm = new MoveAllControlsDialogViewModel();
+            if (!await Services.DialogService.ShowDialogAsync(moveVm))
+                return;
+
+            MoveAllControlsAction action = moveVm.Action;
+
+            // Part 2: Interactively select control points and new locations.
+            controller.BeginMoveAllControls();
+
+            SelectLocationsForMoveDialogViewModel locationsVm = new SelectLocationsForMoveDialogViewModel {
+                Controller = controller,
+                Action = action,
+            };
+
+            // Owned but non-modal so the map stays interactive while the user
+            // clicks controls and locations. The dialog drives the controller
+            // and finishes the command itself when confirmed or cancelled.
+            Services.DialogService.ShowOwnedDialog(locationsVm, disableOwner: false);
 #endif
         }
 

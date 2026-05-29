@@ -1,0 +1,178 @@
+<!--
+    SelectLocationsForMoveDialog.axaml
+
+    Second, interactive phase of the Move All Controls command. A list of steps
+    (select first control, move it, optionally select/move a second control,
+    confirm) with an arrow marking the active step in red, plus the computed
+    X/Y offset, scale and rotation. The dialog stays open (owned, non-modal)
+    while the user clicks control points and new locations on the map; the
+    ViewModel drives the map command modes through the Controller.
+
+    Migrated from WinForms PurplePen/SelectLocationsForMove.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.SelectLocationsForMoveDialog"
+        Classes="dialog"
+        x:DataType="vm:SelectLocationsForMoveDialogViewModel"
+        Title="{resx:Localize SelectLocationsForMove_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="400" d:DesignHeight="420"
+        Width="400"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="Manual"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:SelectLocationsForMoveDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Step labels are gray when inactive, red on the active step. -->
+        <Style Selector="TextBlock.step">
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.step.active">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+        <!-- The arrow marking the active step. -->
+        <Style Selector="TextBlock.arrow">
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Width" Value="24"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- Back / Confirm / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="buttonConfirm"
+                    Content="{resx:Localize SelectLocationsForMove_buttonConfirm_Text}"
+                    Width="75"
+                    HorizontalContentAlignment="Center"
+                    IsVisible="{Binding ShowConfirmButton}"
+                    IsDefault="{Binding ConfirmIsDefault}"
+                    Click="ConfirmButton_Click"/>
+            <Button x:Name="buttonBack"
+                    Content="{resx:Localize SelectLocationsForMove_buttonBack_Text}"
+                    Width="75"
+                    HorizontalContentAlignment="Center"
+                    IsVisible="{Binding ShowBackButton}"
+                    IsDefault="{Binding BackIsDefault}"
+                    Command="{Binding BackCommand}"/>
+            <Button x:Name="buttonCancel"
+                    Content="{resx:Localize CancelButton}"
+                    Width="75"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="14">
+
+            <!-- The step list. Each step has an arrow (visible only when active)
+                 and a description (red when active, gray otherwise). -->
+            <StackPanel Spacing="10">
+
+                <Grid ColumnDefinitions="Auto,*">
+                    <TextBlock Grid.Column="0" Classes="arrow" Text="&#x2794;"
+                               IsVisible="{Binding IsSelectFirstControlStage}"/>
+                    <TextBlock Grid.Column="1" Classes="step"
+                               Classes.active="{Binding IsSelectFirstControlStage}"
+                               TextWrapping="Wrap"
+                               Text="{resx:Localize SelectLocationsForMove_labelFirstControl_Text}"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*">
+                    <TextBlock Grid.Column="0" Classes="arrow" Text="&#x2794;"
+                               IsVisible="{Binding IsMoveFirstControlStage}"/>
+                    <TextBlock Grid.Column="1" Classes="step"
+                               Classes.active="{Binding IsMoveFirstControlStage}"
+                               TextWrapping="Wrap"
+                               Text="{resx:Localize SelectLocationsForMove_labelFirstNewLocation_Text}"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*" IsVisible="{Binding ShowSecondControlRows}">
+                    <TextBlock Grid.Column="0" Classes="arrow" Text="&#x2794;"
+                               IsVisible="{Binding IsSelectSecondControlStage}"/>
+                    <TextBlock Grid.Column="1" Classes="step"
+                               Classes.active="{Binding IsSelectSecondControlStage}"
+                               TextWrapping="Wrap"
+                               Text="{resx:Localize SelectLocationsForMove_labelSecondControl_Text}"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*" IsVisible="{Binding ShowSecondControlRows}">
+                    <TextBlock Grid.Column="0" Classes="arrow" Text="&#x2794;"
+                               IsVisible="{Binding IsMoveSecondControlStage}"/>
+                    <TextBlock Grid.Column="1" Classes="step"
+                               Classes.active="{Binding IsMoveSecondControlStage}"
+                               TextWrapping="Wrap"
+                               Text="{resx:Localize SelectLocationsForMove_labelSecondNewLocation_Text}"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*">
+                    <TextBlock Grid.Column="0" Classes="arrow" Text="&#x2794;"
+                               IsVisible="{Binding IsConfirmStage}"/>
+                    <TextBlock Grid.Column="1" Classes="step"
+                               Classes.active="{Binding IsConfirmStage}"
+                               TextWrapping="Wrap"
+                               Text="{resx:Localize SelectLocationsForMove_labelConfirmLocations_Text}"/>
+                </Grid>
+
+            </StackPanel>
+
+            <!-- Computed move values: X/Y offset always once moving has begun;
+                 scale and rotation only for the relevant actions. -->
+            <Grid ColumnDefinitions="Auto,Auto"
+                  RowDefinitions="Auto,Auto,Auto,Auto"
+                  HorizontalAlignment="Center"
+                  IsVisible="{Binding ShowOffsets}">
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           HorizontalAlignment="Right" Margin="0,2,8,2"
+                           Text="{resx:Localize SelectLocationsForMove_labelXOffset_Text}"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,2"
+                           Text="{Binding XOffsetText}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           HorizontalAlignment="Right" Margin="0,2,8,2"
+                           Text="{resx:Localize SelectLocationsForMove_labelYOffset_Text}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,2"
+                           Text="{Binding YOffsetText}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           HorizontalAlignment="Right" Margin="0,2,8,2"
+                           IsVisible="{Binding ShowScale}"
+                           Text="{resx:Localize SelectLocationsForMove_labelScale_Text}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="0,2"
+                           IsVisible="{Binding ShowScale}"
+                           Text="{Binding ScaleText}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0"
+                           HorizontalAlignment="Right" Margin="0,2,8,2"
+                           IsVisible="{Binding ShowRotation}"
+                           Text="{resx:Localize SelectLocationsForMove_labelRotation_Text}"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,2"
+                           IsVisible="{Binding ShowRotation}"
+                           Text="{Binding RotationText}"/>
+            </Grid>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>
