@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-windows;net462</TargetFrameworks>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!--<NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>-->
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\..\StrongnameKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <!--<NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>-->
+    <Id>Dummy-PDFsharp-WPF</Id>
+    <Description Condition=" '$(Configuration)'=='Debug' ">$(DebugBuildMessage)%0D$(Description)</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp-wpf\PdfSharp-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.Charting-wpf\PdfSharp.Charting-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.Quality-wpf\PdfSharp.Quality-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.Snippets-wpf\PdfSharp.Snippets-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.System\PdfSharp.System.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.WPFonts\PdfSharp.WPFonts.csproj" />
+  </ItemGroup>
+
+</Project>

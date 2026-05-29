@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-windows;net9.0-windows;net10.0-windows;net462</TargetFrameworks>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <!--<NoBuild>true</NoBuild>-->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\..\StrongnameKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>
+    <NuGetId>PDFsharp-WPF</NuGetId>
+    <NuGetTitle>PDFsharp for Windows WPF apps</NuGetTitle>
+    <NuGetDescription Condition=" '$(Configuration)'=='Debug' ">$(DebugBuildMessage)%0D$(NuGetDescription)</NuGetDescription>
+    <NuGetSummary>A .NET library for processing PDF.</NuGetSummary>
+    <NuGetTags>$(NuGetTags_PdfSharp)</NuGetTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp-wpf\PdfSharp-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.BarCodes-wpf\PdfSharp.BarCodes-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.Charting-wpf\PdfSharp.Charting-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\PDFsharp\src\PdfSharp.Cryptography\PdfSharp.Cryptography.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.Quality-wpf\PdfSharp.Quality-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.Snippets-wpf\PdfSharp.Snippets-wpf.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.System\PdfSharp.System.csproj" />
+    <ProjectReference Include="..\..\..\src\shared\src\PdfSharp.WPFonts\PdfSharp.WPFonts.csproj" />
+  </ItemGroup>
+
+</Project>
