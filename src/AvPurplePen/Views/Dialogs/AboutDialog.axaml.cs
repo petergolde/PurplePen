@@ -14,6 +14,7 @@ using Avalonia.Interactivity;
 using AvUtil;
 using PurplePen;
 using PurplePen.MapModel;
+using PurplePen.ViewModels;
 using SkiaSharp;
 
 namespace AvPurplePen.Views
@@ -35,12 +36,9 @@ namespace AvPurplePen.Views
         /// <summary>
         /// Opens the license dialog.
         /// </summary>
-        private void LicenseButton_Click(object? sender, RoutedEventArgs e)
+        private async void LicenseButton_Click(object? sender, RoutedEventArgs e)
         {
-#if PORTING
-            // TODO: Create Avalonia LicenseDialog and show it here.
-            // Original: new LicenseForm().ShowDialog();
-#endif
+            await PurplePen.Services.DialogService.ShowDialogAsync(new LicenseDialogViewModel());
         }
 
         /// <summary>

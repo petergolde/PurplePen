@@ -1,0 +1,74 @@
+<!--
+    LicenseDialog.axaml
+
+    Shows the Purple Pen (BSD-style) license: a link to the BSD license
+    description at the top, the full license text in a read-only scrolling
+    text box, and an OK button.
+
+    Migrated from WinForms PurplePen/LicenseForm.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="502" d:DesignHeight="354"
+        x:Class="AvPurplePen.Views.LicenseDialog"
+        Classes="dialog"
+        x:DataType="vm:LicenseDialogViewModel"
+        Title="{resx:Localize LicenseForm_Text}"
+        Width="502" Height="354"
+        MinWidth="502" MinHeight="354"
+        CanResize="True"
+        CanMaximize="True"
+        CanMinimize="False"
+        Icon="/Assets/transparent.ico"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        WindowDecorations="Full">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:LicenseDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Top row: license-type link on the left, OK button on the right -->
+        <Grid DockPanel.Dock="Top"
+              Margin="0,0,0,8"
+              ColumnDefinitions="*,Auto">
+
+            <HyperlinkButton x:Name="bsdLicenseLinkLabel"
+                             Grid.Column="0"
+                             Padding="0"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Click="BsdLicenseLink_Click">
+                <TextBlock Text="{resx:Localize LicenseForm_bsdLicenseLinkLabel_Text}"
+                           TextDecorations="Underline"/>
+            </HyperlinkButton>
+
+            <Button x:Name="okButton"
+                    Grid.Column="1"
+                    Content="{resx:Localize LicenseForm_okButton_Text}"
+                    MinWidth="80"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+        </Grid>
+
+        <!-- License body: read-only, scrollable, fills remaining space -->
+        <TextBox x:Name="licenseTextBox"
+                 Text="{Binding LicenseText}"
+                 IsReadOnly="True"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalContentAlignment="Top"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+    </DockPanel>
+
+</Window>
