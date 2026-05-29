@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0;netstandard2.0</TargetFrameworks>
+    <RootNamespace>MigraDoc</RootNamespace>
+    <AssemblyOriginatorKeyFile>..\..\..\..\..\StrongnameKey.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>True</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Rendering.Forms\**" />
+    <Compile Remove="Rendering.Printing\**" />
+    <Compile Remove="Rendering.Windows\**" />
+    <EmbeddedResource Remove="Rendering.Forms\**" />
+    <EmbeddedResource Remove="Rendering.Printing\**" />
+    <EmbeddedResource Remove="Rendering.Windows\**" />
+    <None Remove="Rendering.Forms\**" />
+    <None Remove="Rendering.Printing\**" />
+    <None Remove="Rendering.Windows\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\shared\src\PdfSharp.Shared\PdfSharp.Shared.csproj" />
+    <ProjectReference Include="..\..\..\shared\src\PdfSharp.System\PdfSharp.System.csproj" />
+    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp.Charting\PdfSharp.Charting.csproj" />
+    <ProjectReference Include="..\..\..\PDFsharp\src\PdfSharp\PdfSharp.csproj" />
+    <ProjectReference Include="..\MigraDoc.DocumentObjectModel\MigraDoc.DocumentObjectModel.csproj" />
+  </ItemGroup>
+
+</Project>

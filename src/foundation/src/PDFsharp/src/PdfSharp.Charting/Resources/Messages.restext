@@ -1,0 +1,13 @@
+﻿; ==========================
+; === NOT IN USE ANYMORE ===
+; ==========================
+
+-- create a syntax error if accidentally compiled --
+
+; PDFsharp string resources (English)
+;
+;
+
+CultureID = Neutral
+
+; ----- Charting Messages -------------------------------------------------------------------------

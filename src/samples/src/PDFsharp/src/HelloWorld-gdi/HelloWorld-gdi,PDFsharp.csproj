@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0-windows;net462</TargetFrameworks>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);TRACE;GDI</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);TRACE;GDI</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\HelloWorld\Program.cs" Link="Program.cs" />
+    <!--<Compile Include="..\..\..\..\..\foundation\src\shared\src\PdfSharp.System\System\CompilerServices.cs" Link="CompilerServices.cs" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\foundation\src\PDFsharp\src\PdfSharp-gdi\PdfSharp-gdi.csproj" />
+    <ProjectReference Include="..\..\..\..\..\foundation\src\shared\src\PdfSharp.Quality-gdi\PdfSharp.Quality-gdi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+  </ItemGroup>
+
+</Project>
