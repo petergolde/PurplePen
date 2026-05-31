@@ -1,0 +1,78 @@
+<!--
+    ReportDialog.axaml
+
+    Generic report dialog. Displays an HTML report (course summary, control
+    cross-reference, control and leg load, leg lengths, event audit, etc.) in a
+    native web view, with Print and Close buttons. The report title, extra CSS
+    styles and HTML body are data-bound to ReportDialogViewModel; this dialog owns
+    the Close / Print handlers and the web-view rendering in code-behind.
+
+    The report is rendered by the Avalonia NativeWebView (Avalonia.Controls.WebView
+    package), matching the WinForms WebBrowser. Print uses NativeWebView.ShowPrintUI
+    (whose dialog already includes a preview, so there is no separate Print
+    Preview button, unlike the original WinForms form).
+
+    Migrated from WinForms PurplePen/ReportForm.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.ReportDialog"
+        Classes="dialog"
+        x:DataType="vm:ReportDialogViewModel"
+        Title="{Binding ReportTitle}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="800" d:DesignHeight="600"
+        Width="800" Height="600"
+        MinWidth="500" MinHeight="380"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="True"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:ReportDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Bottom button bar: Print on the left, Close on the right. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,*,Auto"
+              Margin="0,8,0,0">
+            <Button Grid.Column="0"
+                    x:Name="buttonPrint"
+                    Content="{resx:Localize ReportForm_printButton_Text}"
+                    Click="PrintButton_Click"
+                    Width="110"
+                    HorizontalContentAlignment="Center"/>
+            <Button Grid.Column="2"
+                    x:Name="buttonClose"
+                    Content="{resx:Localize ReportForm_okButton_Text}"
+                    Click="CloseButton_Click"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsCancel="True"/>
+        </Grid>
+
+        <!-- Report area (fills the remaining space). The report is HTML, rendered
+             by the native web view. The View wraps the ViewModel's ReportBody and
+             Styles in a full HTML document (see code-behind) and pushes it via
+             NavigateToString whenever it changes; there is no bindable HTML-string
+             property. -->
+        <!-- No CornerRadius: the native web view renders a rectangular surface and
+             would not clip to rounded corners. -->
+        <Border BorderBrush="{DynamicResource SemiGrey2}"
+                BorderThickness="1"
+                Background="White">
+            <NativeWebView x:Name="reportWebView" Background="White"/>
+        </Border>
+
+    </DockPanel>
+</Window>

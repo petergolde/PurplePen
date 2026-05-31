@@ -3360,11 +3360,44 @@ namespace PurplePen.ViewModels
 
         #region Report commands
 
+#if PORTING
+        /// <summary>
+        /// Shows an HTML report in the generic report dialog. The localized strings
+        /// (the report title) come from the View: each report menu item passes its
+        /// caption as the command parameter, mirroring the WinForms code that passed
+        /// the menu text and stripped the access-key prefix in the handler.
+        /// </summary>
+        /// <param name="menuCaption">The originating menu caption (may contain an
+        /// access-key marker), used as the dialog window title.</param>
+        /// <param name="reportBody">The HTML body of the report.</param>
+        /// <param name="helpPage">The help page associated with the report.</param>
+        private async Task ShowReport(string? menuCaption, string reportBody, string helpPage)
+        {
+            ReportDialogViewModel vm = new ReportDialogViewModel {
+                ReportTitle = RemoveAccessKeyMarker(menuCaption),
+                ReportBody = reportBody,
+                HelpPage = helpPage,
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
+        }
+
+        /// <summary>
+        /// Removes the Avalonia access-key marker ('_') from a menu caption so it can
+        /// be shown as a plain window title (mirrors the WinForms RemoveHotkeyPrefix).
+        /// A doubled "__" collapses to a single literal underscore.
+        /// </summary>
+        /// <param name="caption">The menu caption to clean.</param>
+        private static string RemoveAccessKeyMarker(string? caption)
+        {
+            return System.Text.RegularExpressions.Regex.Replace(caption ?? "", "_(.)", "$1");
+        }
+#endif
+
         /// <summary>
         /// Shows the Course Summary report.
         /// </summary>
         [RelayCommand]
-        private void ShowCourseSummary()
+        private async Task ShowCourseSummary(string? menuCaption)
         {
 #if !PORTING
             Reports reportGenerator = new Reports();
@@ -3374,6 +3407,12 @@ namespace PurplePen.ViewModels
             ReportForm reportForm = new ReportForm(WindowsUtil.RemoveHotkeyPrefix(courseSummaryMenu.Text), "", testReport, "ReportsCourseSummary.htm");
             reportForm.ShowDialog(this);
             reportForm.Dispose();
+#else
+            if (controller == null)
+                return;
+
+            string reportBody = new Reports().CreateCourseSummaryReport(controller.GetEventDB());
+            await ShowReport(menuCaption, reportBody, "ReportsCourseSummary.htm");
 #endif
         }
 
@@ -3381,7 +3420,7 @@ namespace PurplePen.ViewModels
         /// Shows the Control Cross-Reference report.
         /// </summary>
         [RelayCommand]
-        private void ShowControlCrossref()
+        private async Task ShowControlCrossref(string? menuCaption)
         {
 #if !PORTING
             Reports reportGenerator = new Reports();
@@ -3391,6 +3430,12 @@ namespace PurplePen.ViewModels
             ReportForm reportForm = new ReportForm(WindowsUtil.RemoveHotkeyPrefix(controlCrossrefMenu.Text), "", testReport, "ReportsControlCrossReference.htm");
             reportForm.ShowDialog(this);
             reportForm.Dispose();
+#else
+            if (controller == null)
+                return;
+
+            string reportBody = new Reports().CreateCrossReferenceReport(controller.GetEventDB());
+            await ShowReport(menuCaption, reportBody, "ReportsControlCrossReference.htm");
 #endif
         }
 
@@ -3398,7 +3443,7 @@ namespace PurplePen.ViewModels
         /// Shows the Control and Leg Load report.
         /// </summary>
         [RelayCommand]
-        private void ShowControlAndLegLoad()
+        private async Task ShowControlAndLegLoad(string? menuCaption)
         {
 #if !PORTING
             Reports reportGenerator = new Reports();
@@ -3408,6 +3453,12 @@ namespace PurplePen.ViewModels
             ReportForm reportForm = new ReportForm(WindowsUtil.RemoveHotkeyPrefix(controlAndLegLoadMenu.Text), "", testReport, "ReportsControlAndLegLoad.htm");
             reportForm.ShowDialog(this);
             reportForm.Dispose();
+#else
+            if (controller == null)
+                return;
+
+            string reportBody = new Reports().CreateLoadReport(controller.GetEventDB());
+            await ShowReport(menuCaption, reportBody, "ReportsControlAndLegLoad.htm");
 #endif
         }
 
@@ -3415,7 +3466,7 @@ namespace PurplePen.ViewModels
         /// Shows the Leg Lengths report.
         /// </summary>
         [RelayCommand]
-        private void ShowLegLengths()
+        private async Task ShowLegLengths(string? menuCaption)
         {
 #if !PORTING
             Reports reportGenerator = new Reports();
@@ -3425,6 +3476,12 @@ namespace PurplePen.ViewModels
             ReportForm reportForm = new ReportForm(WindowsUtil.RemoveHotkeyPrefix(legLengthsMenu.Text), "", testReport, "ReportsLegLengths.htm");
             reportForm.ShowDialog(this);
             reportForm.Dispose();
+#else
+            if (controller == null)
+                return;
+
+            string reportBody = new Reports().CreateLegLengthReport(controller.GetEventDB());
+            await ShowReport(menuCaption, reportBody, "ReportsLegLengths.htm");
 #endif
         }
 
@@ -3432,7 +3489,7 @@ namespace PurplePen.ViewModels
         /// Shows the Event Audit report.
         /// </summary>
         [RelayCommand]
-        private void ShowEventAudit()
+        private async Task ShowEventAudit(string? menuCaption)
         {
 #if !PORTING
             Reports reportGenerator = new Reports();
@@ -3442,6 +3499,12 @@ namespace PurplePen.ViewModels
             ReportForm reportForm = new ReportForm(WindowsUtil.RemoveHotkeyPrefix(eventAuditMenu.Text), "", testReport, "ReportsEventAudit.htm");
             reportForm.ShowDialog(this);
             reportForm.Dispose();
+#else
+            if (controller == null)
+                return;
+
+            string reportBody = new Reports().CreateEventAuditReport(controller.GetEventDB());
+            await ShowReport(menuCaption, reportBody, "ReportsEventAudit.htm");
 #endif
         }
 

@@ -153,8 +153,9 @@
         <!-- No CornerRadius: the native web view renders a rectangular surface and
              would not clip to rounded corners. -->
         <Border BorderBrush="{DynamicResource SemiGrey2}"
-                BorderThickness="1">
-            <NativeWebView x:Name="reportWebView"/>
+                BorderThickness="1"
+                Background="White">
+            <NativeWebView x:Name="reportWebView" Background="White"/>
         </Border>
 
     </DockPanel>

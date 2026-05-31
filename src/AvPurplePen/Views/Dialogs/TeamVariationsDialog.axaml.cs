@@ -70,7 +70,7 @@ namespace AvPurplePen.Views
                 return;
 
             string body = viewModel.ReportBody ?? "";
-            string html = htmlTemplate.Replace("<!--@@BODY@@-->", body);
+            string html = ReportDialog.HtmlTemplate.Replace("<!--@@BODY@@-->", body);
             reportWebView.NavigateToString(html);
         }
 
@@ -100,45 +100,5 @@ namespace AvPurplePen.Views
                 reportWebView.ShowPrintUI();
             }
         }
-
-        // HTML document wrapper for the report body. Duplicated from the WinForms
-        // ReportForm.htmlTemplate; extract to a shared resource once more report
-        // dialogs are ported to Avalonia.
-        private const string htmlTemplate = @"
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
-<style type=""text/css"">
-body {
-    font-family: Calibri, Arial, Helvetica, sans-serif;
-    font-size: 12pt;
-}
-@media print {
-    thead { display: table-header-group; }
-}
-th {
-    font-weight: bold;
-    border-style: none none solid none;
-    border-width: thin thin 1px thin;
-    border-bottom-color: #000000;
-}
-h1 { font-size: 19pt; font-variant: normal; font-weight: bold; }
-h2 { font-size: 15pt; }
-table { border-collapse: collapse; }
-col.leftcol { padding-right: 7pt; }
-col.rightcol { padding-left: 7pt; }
-col.middlecol { padding-left: 7pt; padding-right: 7pt; }
-.leftalign { text-align: left; }
-.rightalign { text-align: right; }
-td.tablerule { border-bottom: 1px solid #A0A0A0; }
-tr.summaryrow td { font-style: italic; padding-top: 5pt; }
-</style>
-</head>
-<body>
-<!--@@BODY@@-->
-</body>
-</html>
-";
     }
 }

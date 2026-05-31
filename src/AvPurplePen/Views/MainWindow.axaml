@@ -369,15 +369,20 @@
             <!-- === Reports Menu === -->
             <MenuItem x:Name="reportMenu" Header="{resx:Localize MainFrame_reportMenu_Text}">
                 <MenuItem x:Name="courseSummaryMenu" Header="{resx:Localize MainFrame_courseSummaryMenu_Text}"
-                          Command="{Binding ShowCourseSummaryCommand}"/>
+                          Command="{Binding ShowCourseSummaryCommand}"
+                          CommandParameter="{resx:Localize MainFrame_courseSummaryMenu_Text}"/>
                 <MenuItem x:Name="eventAuditMenu" Header="{resx:Localize MainFrame_eventAuditMenu_Text}"
-                          Command="{Binding ShowEventAuditCommand}"/>
+                          Command="{Binding ShowEventAuditCommand}"
+                          CommandParameter="{resx:Localize MainFrame_eventAuditMenu_Text}"/>
                 <MenuItem x:Name="legLengthsMenu" Header="{resx:Localize MainFrame_legLengthsMenu_Text}"
-                          Command="{Binding ShowLegLengthsCommand}"/>
+                          Command="{Binding ShowLegLengthsCommand}"
+                          CommandParameter="{resx:Localize MainFrame_legLengthsMenu_Text}"/>
                 <MenuItem x:Name="controlCrossrefMenu" Header="{resx:Localize MainFrame_controlCrossrefMenu_Text}"
-                          Command="{Binding ShowControlCrossrefCommand}"/>
+                          Command="{Binding ShowControlCrossrefCommand}"
+                          CommandParameter="{resx:Localize MainFrame_controlCrossrefMenu_Text}"/>
                 <MenuItem x:Name="controlAndLegLoadMenu" Header="{resx:Localize MainFrame_controlAndLegLoadMenu_Text}"
-                          Command="{Binding ShowControlAndLegLoadCommand}"/>
+                          Command="{Binding ShowControlAndLegLoadCommand}"
+                          CommandParameter="{resx:Localize MainFrame_controlAndLegLoadMenu_Text}"/>
             </MenuItem>
 
             <!-- === Help Menu === -->

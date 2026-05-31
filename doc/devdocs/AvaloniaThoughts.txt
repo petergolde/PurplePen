@@ -104,7 +104,6 @@ NewEventWizard and sub-forms
 PdfConversionInProgress
 PrintCourses
 PrinterMargins
-ReportForm
 SetPrintAreaDialog
 
 
