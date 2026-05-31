@@ -1,0 +1,161 @@
+<!--
+    TeamVariationsDialog.axaml
+
+    Relay Team Variations dialog. The user sets the number of teams, the number
+    of legs and the first team number, optionally assigns fixed legs to branches
+    and hides the variation codes on the map, then presses "Assign Variations" to
+    recalculate the variation report shown in the centre. The report can be
+    exported (IOF XML or CSV) or printed.
+
+    All relay state and the report body are data-bound to
+    TeamVariationsDialogViewModel; this dialog owns the Close / Print handlers and
+    the web-view rendering in code-behind.
+
+    The report is rendered by the Avalonia NativeWebView (Avalonia.Controls.WebView
+    package), matching the WinForms WebBrowser. Print uses NativeWebView.ShowPrintUI
+    (whose dialog already includes a preview, so there is no separate Print Preview).
+
+    Migrated from WinForms PurplePen/TeamVariationsForm.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.TeamVariationsDialog"
+        Classes="dialog"
+        x:DataType="vm:TeamVariationsDialogViewModel"
+        Title="{resx:Localize TeamVariationsForm_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="720" d:DesignHeight="560"
+        Width="720" Height="560"
+        MinWidth="720" MinHeight="560"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="True"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:TeamVariationsDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Relay parameters across the top. -->
+        <Grid DockPanel.Dock="Top"
+              ColumnDefinitions="Auto,Auto,20,Auto,Auto,*,Auto"
+              RowDefinitions="Auto,Auto,Auto"
+              Margin="0,0,0,8">
+
+            <!-- Row 0: number of teams / number of legs / Assign Variations -->
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="{resx:Localize TeamVariationsForm_label1_Text}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="0,0,6,0"/>
+            <NumericUpDown Grid.Row="0" Grid.Column="1"
+                           x:Name="upDownNumberOfTeams"
+                           Width="75"
+                           Minimum="0"
+                           Maximum="9999"
+                           Increment="1"
+                           FormatString="0"
+                           Value="{Binding NumberOfTeams, Mode=TwoWay}"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="3"
+                       Text="{resx:Localize TeamVariationsForm_label2_Text}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="0,0,6,0"/>
+            <NumericUpDown Grid.Row="0" Grid.Column="4"
+                           x:Name="upDownNumberOfLegs"
+                           Width="75"
+                           Minimum="1"
+                           Maximum="20"
+                           Increment="1"
+                           FormatString="0"
+                           Value="{Binding NumberOfLegs, Mode=TwoWay}"/>
+
+            <Button Grid.Row="0" Grid.Column="6"
+                    x:Name="buttonCalculate"
+                    Content="{resx:Localize TeamVariationsForm_buttonCalculate_Text}"
+                    Command="{Binding CalculateCommand}"
+                    IsDefault="True"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"/>
+
+            <!-- Row 1: first team number -->
+            <TextBlock Grid.Row="1" Grid.Column="0"
+                       Text="{resx:Localize TeamVariationsForm_label3_Text}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="0,8,6,0"/>
+            <NumericUpDown Grid.Row="1" Grid.Column="1"
+                           x:Name="upDownFirstTeamNumber"
+                           Width="75"
+                           Minimum="1"
+                           Maximum="99999"
+                           Increment="1"
+                           FormatString="0"
+                           Margin="0,8,0,0"
+                           Value="{Binding FirstTeamNumber, Mode=TwoWay}"/>
+
+            <!-- Row 2: assign-legs link + hide-on-map checkbox -->
+            <HyperlinkButton Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                             x:Name="fixedLegsLink"
+                             Command="{Binding AssignLegsCommand}"
+                             Padding="0"
+                             HorizontalAlignment="Left"
+                             Margin="0,8,0,0">
+                <TextBlock Text="{resx:Localize TeamVariationsForm_fixedLegsLink_Text}"
+                           TextDecorations="Underline"/>
+            </HyperlinkButton>
+            <CheckBox Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"
+                      x:Name="checkBoxHideVariationsFromMap"
+                      Content="{resx:Localize TeamVariationsForm_checkBoxHideVariationsFromMap_Text}"
+                      IsChecked="{Binding HideVariationsOnMap, Mode=TwoWay}"
+                      Margin="0,8,0,0"/>
+        </Grid>
+
+        <!-- Bottom button bar: Export / Print on the left, Close on the right. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,Auto,*,Auto"
+              Margin="0,8,0,0">
+            <Button Grid.Column="0"
+                    x:Name="buttonExport"
+                    Content="{resx:Localize TeamVariationsForm_buttonExport_Text}"
+                    Command="{Binding ExportCommand}"
+                    Width="110"
+                    HorizontalContentAlignment="Center"/>
+            <Button Grid.Column="1"
+                    x:Name="buttonPrint"
+                    Content="{resx:Localize TeamVariationsForm_buttonPrint_Text}"
+                    Click="PrintButton_Click"
+                    Width="110"
+                    HorizontalContentAlignment="Center"
+                    Margin="8,0,0,0"/>
+            <Button Grid.Column="3"
+                    x:Name="buttonClose"
+                    Content="{resx:Localize TeamVariationsForm_buttonClose_Text}"
+                    Click="CloseButton_Click"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"/>
+        </Grid>
+
+        <!-- Report area (fills the remaining space). The report is HTML, rendered
+             by the native web view. The View wraps the ViewModel's ReportBody in a
+             full HTML document (see code-behind) and pushes it via NavigateToString
+             whenever it changes; there is no bindable HTML-string property. -->
+        <!-- No CornerRadius: the native web view renders a rectangular surface and
+             would not clip to rounded corners. -->
+        <Border BorderBrush="{DynamicResource SemiGrey2}"
+                BorderThickness="1">
+            <NativeWebView x:Name="reportWebView"/>
+        </Border>
+
+    </DockPanel>
+</Window>

@@ -894,7 +894,16 @@ namespace PurplePen {
                 return ResourceManager.GetString("GpxFilter", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv.
+        /// </summary>
+        public static string RelayVariationExportFilter {
+            get {
+                return ResourceManager.GetString("RelayVariationExportFilter", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to The map file must be an OCAD file to use GPX files..
         /// </summary>
