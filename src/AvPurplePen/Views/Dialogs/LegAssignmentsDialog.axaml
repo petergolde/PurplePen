@@ -1,0 +1,161 @@
+<!--
+    LegAssignmentsDialog.axaml
+
+    Leg Assignments dialog. Shows a two-column grid: each available branch code
+    (read-only) and an editable list of the leg numbers the user wants pinned to
+    that branch. Branches belonging to the same fork share a tinted row
+    background (alternating per fork) so the groups are visible. On OK the
+    assignments are validated by a caller-supplied validator (via the
+    ViewModel); a non-null error message keeps the dialog open and shows the
+    error in a message box.
+
+    The DataGrid styling (compact rows, grey header matching the rows, the
+    always-visible non-overlapping scrollbar) is the same as
+    ChangeAllCodesDialog / CourseLoadDialog — see the comments there for the why.
+
+    Migrated from WinForms PurplePen/LegAssignmentsDialog.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.LegAssignmentsDialog"
+        Classes="dialog"
+        x:DataType="vm:LegAssignmentsDialogViewModel"
+        Title="{resx:Localize LegAssignmentsDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="380" d:DesignHeight="420"
+        Width="380" Height="420"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:LegAssignmentsDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Plain in-cell text boxes: no border / background so they blend
+             into the grid cell (and let the row's group tint show through). -->
+        <Style Selector="DataGrid TextBox.legsCell">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="12,2"/>
+        </Style>
+
+        <!-- Each row's background is its fork-group tint. The DataGridRow's
+             DataContext is the LegAssignmentRow, so this binds to the row's
+             RowBackgroundColor (a colour string, converted to a brush). The
+             read-only branch cell and the transparent legs TextBox both let
+             this colour show through. -->
+        <Style Selector="DataGridRow" x:DataType="vm:LegAssignmentRow">
+            <Setter Property="Background" Value="{Binding RowBackgroundColor}"/>
+        </Style>
+
+        <Style Selector="DataGrid /template/ DataGridColumnHeadersPresenter#PART_ColumnHeadersPresenter">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+        </Style>
+
+        <!-- Recolor the vertical scrollbar gutter to the light InputBackground.
+             The gutter is painted by a Border inside the ScrollBar template
+             whose Background is a TemplateBinding (a style setter can't override
+             it), so we target the Grid *inside* that Border instead. -->
+        <Style Selector="DataGrid /template/ ScrollBar#PART_VerticalScrollbar /template/ Border Grid">
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+
+        <!-- Column headers: same height (24) and text colour as the rows, with
+             a SemiGrey1 background. -->
+        <Style Selector="DataGrid DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
+            <Setter Property="MinHeight" Value="24"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Instruction label at the top -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="labelDescription"
+                   Text="{resx:Localize LegAssignmentsDialog_labelDescription_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,4"/>
+
+        <!-- "More information..." help link -->
+        <HyperlinkButton DockPanel.Dock="Top"
+                         x:Name="linkLabel"
+                         Content="{resx:Localize LegAssignmentsDialog_linkLabel_Text}"
+                         Padding="0"
+                         Margin="0,0,0,8"
+                         HorizontalAlignment="Left"
+                         Click="LinkLabel_Click"/>
+
+        <!-- Two-column grid: branch code (read-only) + editable leg numbers. -->
+        <DataGrid x:Name="grid"
+                  ItemsSource="{Binding Rows}"
+                  AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="All"
+                  SelectionMode="Single"
+                  BorderBrush="{DynamicResource DarkGreyBorder}"
+                  BorderThickness="1"
+                  Background="{DynamicResource SemiGrey1}"
+                  RowHeight="24"
+                  ColumnHeaderHeight="24"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.AllowAutoHide="False">
+            <DataGrid.Columns>
+                <!-- Branch: read-only, narrow. -->
+                <DataGridTextColumn Header="{x:Static resx:UIText.LegAssignmentsDialog_BranchColumn_HeaderText}"
+                                    Binding="{Binding Branch}"
+                                    IsReadOnly="True"
+                                    Width="Auto"
+                                    MinWidth="60"/>
+
+                <!-- Legs: an always-editable TextBox so a single click starts
+                     editing (mirrors the WinForms EditOnKeystroke grid). -->
+                <DataGridTemplateColumn Header="{x:Static resx:UIText.LegAssignmentsDialog_LegsColumn_HeaderText}"
+                                        Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:LegAssignmentRow">
+                            <TextBox Classes="legsCell"
+                                     Text="{Binding LegsText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>
