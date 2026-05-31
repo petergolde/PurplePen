@@ -25,6 +25,12 @@ namespace PurplePen.ViewModels
         public string? InitialDirectory { get; set; }
 
         /// <summary>
+        /// The file name initially suggested in the dialog (without a directory),
+        /// or null to leave it blank.
+        /// </summary>
+        public string? SuggestedFileName { get; set; }
+
+        /// <summary>
         /// Whether to show an overwrite confirmation prompt if the user selects an existing file.
         /// </summary>
         public bool ShowOverwritePrompt { get; set; } = true;

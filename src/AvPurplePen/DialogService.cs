@@ -262,6 +262,7 @@ namespace AvPurplePen
                 FileTypeChoices = fileTypes,
                 DefaultExtension = defaultExtension,
                 ShowOverwritePrompt = viewModel.ShowOverwritePrompt,
+                SuggestedFileName = viewModel.SuggestedFileName,
             };
 
             // Note: Avalonia's FilePickerSaveOptions doesn't have an
