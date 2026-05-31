@@ -48,6 +48,8 @@ namespace PurplePen
     {
         StringWriter stringWriter;
         XmlTextWriter xmlTextWriter;
+        string[] tableColumnClasses;  // classes to apply to each column in the table; set by BeginTable.
+        int currentColumn; // current column in the current row, used to apply column classes to cells.
 
         // Dispose managed resources.
         public void Dispose()
@@ -84,7 +86,7 @@ namespace PurplePen
         void WriteClassAttribute(string kind)
         {
             if (! string.IsNullOrEmpty(kind))
-                xmlTextWriter.WriteAttributeString("class", kind);
+                xmlTextWriter.WriteAttributeString("class", kind.Trim());
         }
 
         void WriteH1(string content)
@@ -171,8 +173,13 @@ namespace PurplePen
             xmlTextWriter.WriteStartElement("table");
             WriteClassAttribute(kind);
 
+            // We used to use "col" elements to set classes for table columns, but that was only
+            // supported by Internet Explorer. For modern browsers, we set the column classes on each cell instead,
+            // and save them here in tableColumnClasses to apply to each cell in the column.
+
+            tableColumnClasses = new string[cols];
+
             for (int col = 0; col < cols; ++col) {
-                xmlTextWriter.WriteStartElement("col");
                 string colClass;
 
                 // The leftcol/rightcol/middlecol class is set automatically from the column position in the table.
@@ -185,9 +192,11 @@ namespace PurplePen
 
                 if (col < colKinds.Length)
                     colClass += " " + colKinds[col];
-                WriteClassAttribute(colClass);
-                xmlTextWriter.WriteEndElement();
+                
+                tableColumnClasses[col] = colClass;
             }
+
+            currentColumn = 0;
         }
 
         void BeginTable(int cols)
@@ -228,6 +237,7 @@ namespace PurplePen
         {
             xmlTextWriter.WriteStartElement("tr");
             WriteClassAttribute(kind);
+            currentColumn = 0;
         }
 
         void BeginTableRow()
@@ -238,41 +248,56 @@ namespace PurplePen
         void EndTableRow()
         {
             xmlTextWriter.WriteEndElement();
+            currentColumn = 0;
         }
 
         void WriteTableHeaderCell(string cellContent)
         {
-            xmlTextWriter.WriteElementString("th", cellContent);
+            WriteTableHeaderCell("", cellContent);
         }
 
         void WriteTableHeaderCell(string kind, string cellContent)
         {
+            Debug.Assert(currentColumn < tableColumnClasses.Length, "Wrote more columns than indicated in BeginTable");
+
+            string cellClass = kind + " " + ((currentColumn < tableColumnClasses.Length) ? tableColumnClasses[currentColumn] : "");
+
             xmlTextWriter.WriteStartElement("th");
-            WriteClassAttribute(kind);
+            WriteClassAttribute(cellClass);
             xmlTextWriter.WriteString(cellContent);
             xmlTextWriter.WriteEndElement();
+
+            ++currentColumn;
         }
 
         void WriteTableCell(string cellContent)
         {
-            xmlTextWriter.WriteElementString("td", cellContent);
+            WriteTableCell("", cellContent);
         }
 
         void WriteTableCell(string kind, string cellContent)
         {
+            string cellClass = kind + " " + tableColumnClasses[currentColumn];
+
             xmlTextWriter.WriteStartElement("td");
-            WriteClassAttribute(kind);
+            WriteClassAttribute(cellClass);
             xmlTextWriter.WriteString(cellContent);
             xmlTextWriter.WriteEndElement();
+
+            ++currentColumn;
         }
 
         void WriteSpannedTableCell(string kind, int cellsAcross, string cellContent)
         {
+            string cellClass = kind + " " + tableColumnClasses[currentColumn];
+
             xmlTextWriter.WriteStartElement("td");
-            WriteClassAttribute(kind);
+            WriteClassAttribute(cellClass);
             xmlTextWriter.WriteAttributeString("colspan", XmlConvert.ToString(cellsAcross));
             xmlTextWriter.WriteString(cellContent);
             xmlTextWriter.WriteEndElement();
+
+            currentColumn += cellsAcross;
         }
 
         void WriteSpannedTableCell(int cellsAcross, string cellContent)
@@ -1496,7 +1521,7 @@ namespace PurplePen
             EndTableBody();
             EndTable();
 
-            BeginTable("tableClass", 4, "col1Class", "col2Class");
+            BeginTable("tableClass", 5, "col1Class", "col2Class");
             BeginTableHead();
             BeginTableRow();
             WriteTableHeaderCell(null);

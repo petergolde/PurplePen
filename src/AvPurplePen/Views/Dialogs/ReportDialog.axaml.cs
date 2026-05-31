@@ -149,13 +149,13 @@ h2 {
 table {
 	border-collapse: collapse;
 }
-col.leftcol {
+.leftcol {
 	padding-right: 7pt;
 }
-col.rightcol {
+.rightcol {
 	padding-left: 7pt;
 }
-col.middlecol {
+.middlecol {
 	padding-left: 7pt;
 	padding-right: 7pt;
 }
