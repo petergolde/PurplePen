@@ -5,19 +5,18 @@
 // the fixed branch assignments) and the body of the variation report that the
 // dialog displays.
 //
-// The report body, the leg-assignment sub-dialog and the export are all produced
-// by the Controller, which the ViewModel layer cannot reach directly; the caller
-// supplies them as delegates (GenerateReportBody / AssignLegsRequestedAsync /
-// ExportRequestedAsync). Calculating the report, assigning fixed legs and
-// exporting flow through commands here so the dialog logic lives in the
-// ViewModel rather than the View.
+// The report body, the leg-assignment sub-dialog and the export all run off the
+// Controller. Like SelectLocationsForMoveDialogViewModel, this dialog has live
+// behavior while it is open (recalculating, opening the leg-assignment
+// sub-dialog, exporting), so it holds the Controller directly rather than being
+// driven through caller-supplied delegates. The caller sets Controller before
+// showing.
 //
 // All localized strings live in the View (UIText.resx); this ViewModel holds no
 // UI text.
 //
 // Migrated from WinForms PurplePen/TeamVariationsForm.cs.
 
-using System;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -25,16 +24,23 @@ using CommunityToolkit.Mvvm.Input;
 namespace PurplePen.ViewModels
 {
     /// <summary>
-    /// ViewModel for the Relay Team Variations dialog. The caller seeds the relay
-    /// parameters (via <see cref="RelaySettings"/> and <see cref="HideVariationsOnMap"/>),
-    /// wires the <see cref="GenerateReportBody"/>, <see cref="AssignLegsRequestedAsync"/>
-    /// and <see cref="ExportRequestedAsync"/> delegates, then calls
-    /// <see cref="RefreshReport"/> before showing the dialog. After the dialog
-    /// closes the caller reads <see cref="RelaySettings"/> and
-    /// <see cref="HideVariationsOnMap"/> back and applies any change.
+    /// ViewModel for the Relay Team Variations dialog. The caller sets
+    /// <see cref="Controller"/>, seeds the relay parameters (via
+    /// <see cref="RelaySettings"/> and <see cref="HideVariationsOnMap"/> and
+    /// <see cref="DefaultExportFileName"/>), then calls <see cref="RefreshReport"/>
+    /// before showing the dialog. After the dialog closes the caller reads
+    /// <see cref="RelaySettings"/> and <see cref="HideVariationsOnMap"/> back and
+    /// applies any change.
     /// </summary>
     public partial class TeamVariationsDialogViewModel : ViewModelBase
     {
+        /// <summary>
+        /// The Controller that owns the active event; set by the caller before
+        /// showing. The report generation, leg-assignment sub-dialog and export
+        /// all go through it.
+        /// </summary>
+        public Controller? Controller { get; set; }
+
         // === Relay parameters (bound to the dialog controls) ===
 
         /// <summary>The team number assigned to the first team.</summary>
@@ -61,7 +67,7 @@ namespace PurplePen.ViewModels
 
         /// <summary>
         /// The default file name offered by the export save dialog. A pass-through
-        /// value set by the caller and read by the export delegate.
+        /// value set by the caller and read by the export command.
         /// </summary>
         public string DefaultExportFileName { get; set; } = "";
 
@@ -73,25 +79,6 @@ namespace PurplePen.ViewModels
         /// </summary>
         [ObservableProperty]
         private string reportBody = "";
-
-        // === Caller-supplied operations (these reach the Controller) ===
-
-        /// <summary>
-        /// Produces the report body for the given relay settings. Supplied by the
-        /// caller because the report comes from the Controller.
-        /// </summary>
-        public Func<RelaySettings, string>? GenerateReportBody { get; set; }
-
-        /// <summary>
-        /// Shows the "assign fixed legs to branches" sub-dialog and updates
-        /// <see cref="FixedBranchAssignments"/>. Supplied by the caller.
-        /// </summary>
-        public Func<Task>? AssignLegsRequestedAsync { get; set; }
-
-        /// <summary>
-        /// Prompts for an export file and writes the report. Supplied by the caller.
-        /// </summary>
-        public Func<Task>? ExportRequestedAsync { get; set; }
 
         /// <summary>
         /// Assembles or decomposes the relay parameters as a single
@@ -111,11 +98,23 @@ namespace PurplePen.ViewModels
 
         /// <summary>
         /// Regenerates <see cref="ReportBody"/> from the current relay settings
-        /// using the <see cref="GenerateReportBody"/> delegate.
+        /// using the Controller.
         /// </summary>
         public void RefreshReport()
         {
-            ReportBody = GenerateReportBody?.Invoke(RelaySettings) ?? "";
+            if (Controller == null) {
+                ReportBody = "";
+                return;
+            }
+
+            RelaySettings settings = RelaySettings;
+            if (settings.relayTeams == 0) {
+                ReportBody = new Reports().CreateRelayVariationNotCreated();
+            }
+            else {
+                VariationReportData reportData = Controller.GetVariationReportData(settings);
+                ReportBody = new Reports().CreateRelayVariationReport(reportData);
+            }
         }
 
         /// <summary>
@@ -128,26 +127,60 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Shows the leg-assignment sub-dialog, then recalculates the report so the
-        /// new fixed-leg assignments are reflected.
+        /// Shows the leg-assignment sub-dialog, seeded with the available branch
+        /// codes and the current assignments, and validated against the relay
+        /// structure. On OK, copies the chosen assignments back and recalculates
+        /// the report so the new fixed-leg assignments are reflected.
         /// </summary>
         [RelayCommand]
         private async Task AssignLegs()
         {
-            if (AssignLegsRequestedAsync != null) {
-                await AssignLegsRequestedAsync();
+            if (Controller == null)
+                return;
+
+            LegAssignmentsDialogViewModel legVm = new LegAssignmentsDialogViewModel {
+                BranchCodes = Controller.GetLegAssignmentCodes(),
+                FixedBranchAssignments = FixedBranchAssignments,
+            };
+            legVm.ValidateAssignments = (FixedBranchAssignments assignments) =>
+                Controller.ValidateFixedBranchAssignments(NumberOfLegs, assignments);
+
+            if (await Services.DialogService.ShowDialogAsync(legVm)) {
+                FixedBranchAssignments = legVm.FixedBranchAssignments;
                 RefreshReport();
             }
         }
 
         /// <summary>
-        /// Exports the variation report to a file chosen by the user.
+        /// Prompts for an export file (IOF XML or CSV) and writes the variation
+        /// report through the Controller.
         /// </summary>
         [RelayCommand]
         private async Task Export()
         {
-            if (ExportRequestedAsync != null)
-                await ExportRequestedAsync();
+            if (Controller == null)
+                return;
+
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                FileFilters = MiscText.RelayVariationExportFilter,
+                FileFilterIndex = 1,
+                DefaultExtension = "xml",
+                ShowOverwritePrompt = true,
+                SuggestedFileName = System.IO.Path.GetFileName(DefaultExportFileName),
+                InitialDirectory = System.IO.Path.GetDirectoryName(DefaultExportFileName),
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(saveVm))
+                return;
+            if (saveVm.SelectedFile == null)
+                return;
+
+            // The second filter (index 2) is the CSV format; otherwise IOF XML.
+            VariationExportFileType exportFileType = (saveVm.FileFilterIndex == 2)
+                ? VariationExportFileType.Csv
+                : VariationExportFileType.Xml;
+
+            Controller.ExportRelayVariationsReport(RelaySettings, exportFileType, saveVm.SelectedFile);
         }
     }
 }
