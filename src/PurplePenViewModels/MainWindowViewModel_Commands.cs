@@ -1836,22 +1836,14 @@ namespace PurplePen.ViewModels
                 return;
             bool hideVariationsOnMap = controller.GetHideVariationsOnMap();
 
+            // The dialog holds the Controller directly; report generation, the
+            // leg-assignment sub-dialog and the export all run off it.
             TeamVariationsDialogViewModel vm = new TeamVariationsDialogViewModel {
+                Controller = controller,
                 RelaySettings = relaySettings,
                 HideVariationsOnMap = hideVariationsOnMap,
                 DefaultExportFileName = controller.GetDefaultVariationExportFileName(),
             };
-
-            // The report, the leg-assignment sub-dialog and the export all reach the
-            // Controller, which the ViewModel layer cannot, so supply them as delegates.
-            vm.GenerateReportBody = (RelaySettings settings) => {
-                if (settings.relayTeams == 0)
-                    return new Reports().CreateRelayVariationNotCreated();
-                VariationReportData reportData = controller.GetVariationReportData(settings);
-                return new Reports().CreateRelayVariationReport(reportData);
-            };
-            vm.AssignLegsRequestedAsync = () => AssignVariationLegs(vm);
-            vm.ExportRequestedAsync = () => ExportVariationReportFile(vm);
 
             // Seed the initial report before showing the dialog.
             vm.RefreshReport();
@@ -1870,54 +1862,6 @@ namespace PurplePen.ViewModels
             }
 #endif
         }
-
-#if PORTING
-        /// <summary>
-        /// Shows the "assign fixed legs to branches" sub-dialog and updates the
-        /// ViewModel's fixed branch assignments.
-        /// </summary>
-        /// <param name="vm">The team-variations dialog ViewModel to update.</param>
-        private async Task AssignVariationLegs(TeamVariationsDialogViewModel vm)
-        {
-            // TODO: port LegAssignmentsDialog (WinForms PurplePen/LegAssignmentsDialog.cs)
-            // and show it here, seeded with controller.GetLegAssignmentCodes() and
-            // vm.FixedBranchAssignments, validating each change via
-            // controller.ValidateFixedBranchAssignments(vm.NumberOfLegs, ...).
-            // On OK, copy the chosen assignments back into vm.FixedBranchAssignments.
-            await Task.CompletedTask;
-        }
-
-        /// <summary>
-        /// Prompts for an export file (IOF XML or CSV) and writes the variation report.
-        /// </summary>
-        /// <param name="vm">The team-variations dialog ViewModel holding the relay settings.</param>
-        private async Task ExportVariationReportFile(TeamVariationsDialogViewModel vm)
-        {
-            if (controller == null)
-                return;
-
-            FileSaveViewModel saveVm = new FileSaveViewModel {
-                FileFilters = MiscText.RelayVariationExportFilter,
-                FileFilterIndex = 1,
-                DefaultExtension = "xml",
-                ShowOverwritePrompt = true,
-                SuggestedFileName = System.IO.Path.GetFileName(vm.DefaultExportFileName),
-                InitialDirectory = System.IO.Path.GetDirectoryName(vm.DefaultExportFileName),
-            };
-
-            if (!await Services.DialogService.ShowDialogAsync(saveVm))
-                return;
-            if (saveVm.SelectedFile == null)
-                return;
-
-            // The second filter (index 2) is the CSV format; otherwise IOF XML.
-            VariationExportFileType exportFileType = (saveVm.FileFilterIndex == 2)
-                ? VariationExportFileType.Csv
-                : VariationExportFileType.Xml;
-
-            controller.ExportRelayVariationsReport(vm.RelaySettings, exportFileType, saveVm.SelectedFile);
-        }
-#endif
 
         [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ShowCourseVariationReportCommand))]
         private bool canShowCourseVariationReport;
