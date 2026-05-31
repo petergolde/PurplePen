@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PurplePen.ViewModels
 {
@@ -110,12 +111,27 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        // Show the Course Part Properties dialog for the currently-selected part
+        // and apply the chosen options if the user clicks OK. Mirrors the WinForms
+        // MainFrame.coursePartBanner_PropertiesClicked handler.
         [RelayCommand]
-        public void PropertiesButtonClicked()
+        public async Task PropertiesButtonClicked()
         {
-#if PORTING
-            // TODO. The properties button was clicked.
-#endif
+            if (controller == null) { return; }
+
+            int currentPart = controller.CurrentPart;
+            int numberOfParts = controller.NumberOfParts;
+
+            if (currentPart >= 0 && numberOfParts >= 0) {
+                CoursePartPropertiesDialogViewModel vm = new CoursePartPropertiesDialogViewModel {
+                    PartOptions = controller.ActivePartOptions,
+                    ShowFinishCircleEnabled = (currentPart != numberOfParts - 1),
+                };
+
+                if (await Services.DialogService.ShowDialogAsync(vm)) {
+                    controller.ChangeActivePartOptions(vm.PartOptions);
+                }
+            }
         }
 
         // Update the UI from the controller.

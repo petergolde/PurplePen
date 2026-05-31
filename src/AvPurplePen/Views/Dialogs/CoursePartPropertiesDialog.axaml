@@ -1,0 +1,72 @@
+<!--
+    CoursePartPropertiesDialog.axaml
+
+    Edits the properties of a single part of a multi-part course. Top: an
+    explanatory label. Middle: a check box controlling whether the finish
+    circle is displayed on this part (disabled on the last part, where the
+    finish is always shown). Bottom: OK / Cancel buttons.
+
+    Migrated from WinForms PurplePen/CoursePartProperties.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CoursePartPropertiesDialog"
+        Classes="dialog"
+        x:DataType="vm:CoursePartPropertiesDialogViewModel"
+        Title="{resx:Localize CoursePartProperties_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="380" d:DesignHeight="160"
+        Width="380" Height="160"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:CoursePartPropertiesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom. -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Explanatory text at the top. -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="label1"
+                   Text="{resx:Localize CoursePartProperties_label1_Text}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"/>
+
+        <!-- The single editable option for the part. -->
+        <CheckBox x:Name="checkBoxDisplayFinish"
+                  VerticalAlignment="Top"
+                  Content="{resx:Localize CoursePartProperties_checkBoxDisplayFinish_Text}"
+                  IsChecked="{Binding ShowFinish, Mode=TwoWay}"
+                  IsEnabled="{Binding ShowFinishCircleEnabled}"/>
+
+    </DockPanel>
+</Window>

@@ -93,7 +93,6 @@ Source Sans 3
 Lato
 
 Dialogs remaining to port:
-CoursePartProperties
 CustomSymbolText
 DownloadProgressDialog
 EnterSymbolText
