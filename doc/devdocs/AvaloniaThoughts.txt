@@ -98,7 +98,6 @@ CustomSymbolText
 DownloadProgressDialog
 EnterSymbolText
 InitialScreen
-LegAssignmentsDialog
 MapIssueChoiceDialog
 MissingsFonts
 NewEventWizard and sub-forms
