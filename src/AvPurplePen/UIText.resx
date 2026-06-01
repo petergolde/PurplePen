@@ -936,6 +936,30 @@
   <data name="MoveControlChoiceDialog_cancelButton_DetailText" xml:space="preserve">
     <value>Do not move this control.</value>
   </data>
+  <data name="MapIssueChoiceDialog_Text" xml:space="preserve">
+    <value>Select Map Issue Point</value>
+  </data>
+  <data name="MapIssueChoiceDialog_labelExplanation_Text" xml:space="preserve">
+    <value>The point at which is the map is issued should be marked on the map. Where is the map given to competitors?</value>
+  </data>
+  <data name="MapIssueChoiceDialog_startButton_TitleText" xml:space="preserve">
+    <value>Map Issue at Beginning</value>
+  </data>
+  <data name="MapIssueChoiceDialog_startButton_DetailText" xml:space="preserve">
+    <value>The map is given out at the beginning of the marked route to the start. Navigation begins at the start triangle.</value>
+  </data>
+  <data name="MapIssueChoiceDialog_middleButton_TitleText" xml:space="preserve">
+    <value>Map Issue along Marked Route</value>
+  </data>
+  <data name="MapIssueChoiceDialog_middleButton_DetailText" xml:space="preserve">
+    <value>The map is given out partially along the marked route to the start. Navigation begins at the start triangle.</value>
+  </data>
+  <data name="MapIssueChoiceDialog_startTriangleButton_TitleText" xml:space="preserve">
+    <value>Map Issue at the Start Triangle</value>
+  </data>
+  <data name="MapIssueChoiceDialog_startTriangleButton_DetailText" xml:space="preserve">
+    <value>The map is issued at the start triangle (where navigation begins).</value>
+  </data>
   <data name="SelectLocationsForMove_Text" xml:space="preserve">
     <value>Move All Controls</value>
   </data>

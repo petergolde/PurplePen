@@ -1,0 +1,140 @@
+<!--
+    MapIssueChoiceDialog.axaml
+
+    Shown when the user adds a map issue point. Asks where the map is given to
+    competitors: at the beginning of the marked route to the start, partway
+    along the marked route, or at the start triangle. Each choice is a large
+    "title + detail" button with an illustrative icon. A plain Cancel button at
+    the bottom dismisses the dialog without a choice.
+
+    Migrated from WinForms PurplePen/MapIssueChoiceDialog.cs (the three choice
+    buttons were TitleDetailButton custom controls).
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.MapIssueChoiceDialog"
+        Classes="dialog"
+        x:DataType="vm:MapIssueChoiceDialogViewModel"
+        Title="{resx:Localize MapIssueChoiceDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="440" d:DesignHeight="470"
+        Width="440"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:MapIssueChoiceDialogViewModel/>
+    </Design.DataContext>
+
+    <!-- Shared styling for the three "title + detail" choice buttons:
+         full width, left-aligned content, with the title rendered in an accent
+         (hot-track) blue like the WinForms TitleDetailButton. -->
+    <Window.Styles>
+        <Style Selector="Button.choice">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+        <Style Selector="Button.choice TextBlock.title">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Foreground" Value="#0066CC"/>
+        </Style>
+        <Style Selector="Button.choice TextBlock.detail">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <!-- Match the plain top label's colour rather than inheriting the
+                 button's content foreground. -->
+            <Setter Property="Foreground" Value="{Binding #labelExplanation.Foreground}"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,2,0,0"/>
+        </Style>
+    </Window.Styles>
+
+    <StackPanel Margin="12" Spacing="10">
+
+        <!-- Explanation of what a map issue point is. -->
+        <TextBlock x:Name="labelExplanation"
+                   Text="{resx:Localize MapIssueChoiceDialog_labelExplanation_Text}"
+                   TextWrapping="Wrap"/>
+
+        <!-- Choice 1: map issued at the beginning of the marked route. -->
+        <Button x:Name="startButton"
+                Classes="choice"
+                Click="StartButton_Click">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="/Assets/Images/MapIssueBeginning.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"
+                       Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Classes="title"
+                               Text="{resx:Localize MapIssueChoiceDialog_startButton_TitleText}"/>
+                    <TextBlock Classes="detail"
+                               Text="{resx:Localize MapIssueChoiceDialog_startButton_DetailText}"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Choice 2: map issued partway along the marked route. -->
+        <Button x:Name="middleButton"
+                Classes="choice"
+                Click="MiddleButton_Click">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="/Assets/Images/MapIssueMiddle.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"
+                       Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Classes="title"
+                               Text="{resx:Localize MapIssueChoiceDialog_middleButton_TitleText}"/>
+                    <TextBlock Classes="detail"
+                               Text="{resx:Localize MapIssueChoiceDialog_middleButton_DetailText}"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Choice 3: map issued at the start triangle. -->
+        <Button x:Name="startTriangleButton"
+                Classes="choice"
+                Click="StartTriangleButton_Click">
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="/Assets/Images/MapIssueEnd.png"
+                       Width="64" Height="64"
+                       Stretch="Uniform"
+                       VerticalAlignment="Top"
+                       Margin="0,0,12,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Classes="title"
+                               Text="{resx:Localize MapIssueChoiceDialog_startTriangleButton_TitleText}"/>
+                    <TextBlock Classes="detail"
+                               Text="{resx:Localize MapIssueChoiceDialog_startTriangleButton_DetailText}"/>
+                </StackPanel>
+            </Grid>
+        </Button>
+
+        <!-- Plain Cancel button, bottom-right (a standard button in WinForms,
+             not one of the choice buttons). IsCancel routes Escape here. -->
+        <Button x:Name="cancelButton"
+                Content="{resx:Localize CancelButton}"
+                HorizontalAlignment="Right"
+                MinWidth="75"
+                HorizontalContentAlignment="Center"
+                IsCancel="True"
+                Click="CancelButton_Click"/>
+
+    </StackPanel>
+</Window>

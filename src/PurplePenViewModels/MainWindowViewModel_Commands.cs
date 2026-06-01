@@ -724,7 +724,7 @@ namespace PurplePen.ViewModels
         /// Executes the Add/Map Issue command. Shows the Map Issue Choice dialog.
         /// </summary>
         [RelayCommand]
-        private void AddMapIssue()
+        private async Task AddMapIssue()
         {
 #if !PORTING
             MapIssueChoiceDialog dialog = new MapIssueChoiceDialog();
@@ -732,6 +732,13 @@ namespace PurplePen.ViewModels
                 controller.BeginAddMapIssuePointMode(dialog.MapIssueKind);
             }
             dialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            MapIssueChoiceDialogViewModel vm = new MapIssueChoiceDialogViewModel();
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.BeginAddMapIssuePointMode(vm.MapIssueKind);
+            }
 #endif
         }
 
