@@ -165,6 +165,43 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        // Check for missing fonts in the map file and warn about them. The
+        // controller only reports the list once per map file, so this is safe
+        // to call from the idle handler — subsequent calls return nothing.
+        private async Task CheckForMissingFonts()
+        {
+#if !PORTING
+            string[] missingFonts = controller.MissingFontList();      // This only returns missing fonts once!
+
+            if (missingFonts != null && missingFonts.Length > 0) {
+                // We have some missing fonts. Show the dialog.
+                MissingFonts dialog = new MissingFonts();
+                dialog.MapName = Path.GetFileName(controller.MapFileName);
+                dialog.MissingFontList = missingFonts;
+
+                dialog.ShowDialog();
+
+                controller.IgnoreMissingFontsForever(dialog.IgnoreMissingFonts);
+            }
+#else
+            if (controller == null) { return; }
+
+            string[]? missingFonts = controller.MissingFontList();   // This only returns missing fonts once!
+            if (missingFonts == null || missingFonts.Length == 0)
+                return;
+
+            MissingFontsDialogViewModel vm = new MissingFontsDialogViewModel {
+                MapName = System.IO.Path.GetFileName(controller.MapFileName) ?? "",
+                MissingFontList = missingFonts,
+            };
+
+            await Services.DialogService.ShowDialogAsync(vm);
+
+            // Remember the "don't warn again for this event" choice.
+            controller.IgnoreMissingFontsForever(vm.IgnoreMissingFonts);
+#endif
+        }
+
 
         #endregion
 

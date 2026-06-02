@@ -183,9 +183,12 @@ namespace PurplePen.ViewModels
                 UpdatePrintArea();
                 UpdateTopologyHighlight();
                 UpdateCustomSymbolText();
-                CheckForMissingFonts();
                 CheckForNonRenderableObjects(true, false);
 #endif
+                // Warn about missing fonts (fire-and-forget — the controller
+                // reports the list only once per map file, so re-entry from a
+                // later idle tick while the dialog is open is harmless).
+                _ = CheckForMissingFonts();
             }
 
 #if !PORTING

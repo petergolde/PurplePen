@@ -97,7 +97,6 @@ CustomSymbolText
 DownloadProgressDialog
 EnterSymbolText
 InitialScreen
-MissingsFonts
 NewEventWizard and sub-forms
 PdfConversionInProgress
 PrintCourses

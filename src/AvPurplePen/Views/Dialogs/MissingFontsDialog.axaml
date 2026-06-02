@@ -1,0 +1,83 @@
+<!--
+    MissingFontsDialog.axaml
+
+    Warning dialog shown when the map file references fonts that aren't
+    installed on the computer. Top: warning glyph + explanatory text with the
+    map filename. Middle: sorted list of the missing fonts. Bottom: a
+    "don't warn again for this event" checkbox and an OK button.
+
+    Migrated from WinForms PurplePen/MissingFonts.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.MissingFontsDialog"
+        Classes="dialog"
+        x:DataType="vm:MissingFontsDialogViewModel"
+        Title="{resx:Localize MissingFonts_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="480" d:DesignHeight="360"
+        Width="480" Height="360"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:MissingFontsDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- "Don't warn again" checkbox + OK button at the bottom. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="*,Auto"
+              Margin="0,12,0,0">
+            <CheckBox Grid.Column="0"
+                      x:Name="checkBoxDontWarnAgain"
+                      Content="{resx:Localize MissingFonts_checkBoxDontWarnAgain_Text}"
+                      VerticalAlignment="Center"
+                      IsChecked="{Binding IgnoreMissingFonts, Mode=TwoWay}"/>
+            <Button Grid.Column="1"
+                    x:Name="okButton"
+                    Content="{resx:Localize MissingFonts_okButton_Text}"
+                    Width="100"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+        </Grid>
+
+        <!-- Top: warning glyph + explanatory text with the map name. -->
+        <Grid DockPanel.Dock="Top"
+              ColumnDefinitions="Auto,12,*"
+              Margin="0,0,0,8">
+            <!-- Unicode warning sign in amber, larger than body text. -->
+            <TextBlock Grid.Column="0"
+                       Text="&#x26A0;"
+                       FontSize="32"
+                       Foreground="#E0A030"
+                       VerticalAlignment="Top"/>
+            <!-- "Map file "{0}" uses fonts that are not installed ..." — the
+                 format string lives in UIText so the View handles localization. -->
+            <TextBlock Grid.Column="2"
+                       x:Name="labelWarning"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Top">
+                <TextBlock.Text>
+                    <Binding Path="MapName"
+                             StringFormat="{x:Static resx:UIText.MissingFonts_labelWarning_Text}"/>
+                </TextBlock.Text>
+            </TextBlock>
+        </Grid>
+
+        <!-- Sorted, read-only list of the missing fonts (fills the middle). -->
+        <ListBox x:Name="listBoxFonts"
+                 ItemsSource="{Binding MissingFontList}"/>
+
+    </DockPanel>
+</Window>
