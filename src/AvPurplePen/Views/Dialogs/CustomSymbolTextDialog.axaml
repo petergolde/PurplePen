@@ -1,0 +1,176 @@
+<!--
+    CustomSymbolTextDialog.axaml
+
+    "Customize Description Text" dialog. The user picks a description symbol from
+    the list on the left and overrides the textual description used for it, in a
+    chosen language. In localization-tool mode the symbol-name editor is shown
+    and the customize-only controls (reset, show-key, default-language) hidden.
+
+    All of the logic lives in CustomSymbolTextDialogViewModel; the code-behind
+    only commits edits on OK and sets initial focus.
+
+    Migrated from WinForms PurplePen/CustomSymbolText.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.CustomSymbolTextDialog"
+        Classes="dialog"
+        x:DataType="vm:CustomSymbolTextDialogViewModel"
+        Title="{resx:Localize CustomSymbolText_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="580" d:DesignHeight="456"
+        Width="580" Height="456"
+        MinWidth="520" MinHeight="400"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:CustomSymbolTextDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Customized symbols are shown in red in the list. -->
+        <Style Selector="TextBlock.customized">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- Top: choose language, optional default-language checkbox, instruction. -->
+        <StackPanel DockPanel.Dock="Top" Spacing="6" Margin="0,0,0,8">
+            <TextBlock x:Name="labelChooseLanguage"
+                       Text="{resx:Localize CustomSymbolText_labelChooseLanguage_Text}"/>
+            <ComboBox x:Name="comboBoxLanguage"
+                      Width="222"
+                      HorizontalAlignment="Left"
+                      Margin="28,0,0,0"
+                      ItemsSource="{Binding Languages}"
+                      SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}"/>
+            <CheckBox x:Name="checkBoxDefaultLanguage"
+                      Margin="28,0,0,0"
+                      Content="{resx:Localize CustomSymbolText_checkBoxDefaultLanguage_Text}"
+                      IsVisible="{Binding ShowCustomizeControls}"
+                      IsChecked="{Binding UseAsDefaultLanguage, Mode=TwoWay}"/>
+            <TextBlock x:Name="labelCustomizeText"
+                       Margin="0,4,0,0"
+                       TextWrapping="Wrap"
+                       Text="{resx:Localize CustomSymbolText_labelCustomizeText_Text}"/>
+        </StackPanel>
+
+        <!-- Lower part: two equal-width columns that share the remaining space
+             50/50 and resize together when the dialog is widened. Left: the
+             symbol list (full height to the bottom). Right: the detail pane
+             with the OK / Cancel buttons docked at its bottom. -->
+        <Grid ColumnDefinitions="*,12,*">
+
+            <!-- Symbol list. Each row: rendered symbol image + name (red if customized). -->
+            <ListBox x:Name="listBoxSymbols"
+                     Grid.Column="0"
+                     ItemsSource="{Binding Symbols}"
+                     SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="vm:CustomSymbolItemViewModel">
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <controls:GraphicsBitmapControl Source="{Binding SymbolImage}"
+                                                            Width="22" Height="22"
+                                                            VerticalAlignment="Center"/>
+                            <TextBlock Text="{Binding Name}"
+                                       VerticalAlignment="Center"
+                                       Classes.customized="{Binding IsCustomized}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!-- Detail pane, with OK / Cancel docked at the bottom of the column. -->
+            <DockPanel Grid.Column="2">
+
+                <!-- OK / Cancel buttons at the bottom of the right column. -->
+                <StackPanel DockPanel.Dock="Bottom"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Spacing="8"
+                            Margin="0,12,0,0">
+                    <Button x:Name="okButton"
+                            Content="{resx:Localize OKButton}"
+                            Width="85"
+                            HorizontalContentAlignment="Center"
+                            IsDefault="True"
+                            Click="OkButton_Click"/>
+                    <Button x:Name="cancelButton"
+                            Content="{resx:Localize CancelButton}"
+                            Width="85"
+                            HorizontalContentAlignment="Center"
+                            IsCancel="True"
+                            Click="CancelButton_Click"/>
+                </StackPanel>
+
+                <!-- Detail controls, stacked at the top of the right column. -->
+                <StackPanel DockPanel.Dock="Top" Spacing="6">
+
+                    <!-- "Standard text:" / "Customized text:" (toggled, customized shown red). -->
+                    <Grid>
+                        <TextBlock x:Name="labelStandardText"
+                                   Text="{resx:Localize CustomSymbolText_labelStandardText_Text}"
+                                   IsVisible="{Binding !IsTextCustomizedForSelected}"/>
+                        <TextBlock x:Name="labelCustomizedText"
+                                   Foreground="Red"
+                                   Text="{resx:Localize CustomSymbolText_labelCustomizedText_Text}"
+                                   IsVisible="{Binding IsTextCustomizedForSelected}"/>
+                    </Grid>
+
+                    <TextBox x:Name="textBoxCurrent"
+                             IsReadOnly="True"
+                             Text="{Binding CurrentText}"/>
+
+                    <!-- Reset / Change text buttons. -->
+                    <Grid ColumnDefinitions="*,8,*">
+                        <Button x:Name="buttonDefault"
+                                Grid.Column="0"
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Center"
+                                Content="{resx:Localize CustomSymbolText_buttonDefault_Text}"
+                                IsVisible="{Binding ShowCustomizeControls}"
+                                IsEnabled="{Binding ResetEnabled}"
+                                Command="{Binding ResetToStandardCommand}"/>
+                        <Button x:Name="buttonChangeText"
+                                Grid.Column="2"
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Center"
+                                Content="{resx:Localize CustomSymbolText_buttonChangeText_Text}"
+                                Command="{Binding ChangeTextCommand}"/>
+                    </Grid>
+
+                    <!-- "Show meaning below symbolic descriptions" (customize mode only). -->
+                    <CheckBox x:Name="checkBoxShowKey"
+                              Content="{resx:Localize CustomSymbolText_checkBoxShowKey_Text}"
+                              IsVisible="{Binding ShowCustomizeControls}"
+                              IsEnabled="{Binding ShowKeyEnabled}"
+                              IsChecked="{Binding ShowKeyChecked, Mode=TwoWay}"/>
+
+                    <!-- Symbol name editor (localization-tool mode only). -->
+                    <StackPanel Spacing="4"
+                                Margin="0,8,0,0"
+                                IsVisible="{Binding ShowSymbolNameEditor}">
+                        <TextBlock x:Name="labelSymbolName"
+                                   Text="{resx:Localize CustomSymbolText_labelSymbolName_Text}"/>
+                        <TextBox x:Name="textBoxSymbolName"
+                                 Text="{Binding SymbolNameText, Mode=TwoWay}"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+
+    </DockPanel>
+</Window>

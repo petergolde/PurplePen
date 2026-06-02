@@ -2175,7 +2175,7 @@ namespace PurplePen.ViewModels
         /// Executes the Event/Customize Descriptions command. Shows the Custom Symbol Text dialog.
         /// </summary>
         [RelayCommand]
-        private void CustomizeDescriptions()
+        private async Task CustomizeDescriptions()
         {
 #if !PORTING
             Dictionary<string, List<SymbolText>> customSymbolText;
@@ -2199,6 +2199,25 @@ namespace PurplePen.ViewModels
             }
 
             dialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            controller.GetCustomSymbolText(out Dictionary<string, List<SymbolText>> customSymbolText, out Dictionary<string, bool> customSymbolKey);
+
+            CustomSymbolTextDialogViewModel vm = new CustomSymbolTextDialogViewModel {
+                UseAsLocalizeTool = false,
+                SymbolDB = symbolDB,
+                CustomSymbolTexts = customSymbolText,
+                CustomSymbolKey = customSymbolKey,
+                LangId = controller.GetDescriptionLanguage(),
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                // The dialog edits the dictionaries in place, so read them back from the VM.
+                controller.SetCustomSymbolText(vm.CustomSymbolTexts, vm.CustomSymbolKey, vm.LangId);
+                if (vm.UseAsDefaultLanguage)
+                    controller.DefaultDescriptionLanguage = vm.LangId;
+            }
 #endif
         }
 
@@ -3665,7 +3684,7 @@ namespace PurplePen.ViewModels
         /// Executes the Translate/Add Translated Texts command.
         /// </summary>
         [RelayCommand]
-        private void AddTranslatedTexts()
+        private async Task AddTranslatedTexts()
         {
 #if !PORTING
             // Initialize the dialog
@@ -3682,6 +3701,19 @@ namespace PurplePen.ViewModels
             }
 
             dialog.Dispose();
+#else
+            if (controller == null) { return; }
+
+            CustomSymbolTextDialogViewModel vm = new CustomSymbolTextDialogViewModel {
+                UseAsLocalizeTool = true,
+                SymbolDB = symbolDB,
+                LangId = controller.GetDescriptionLanguage(),
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.AddDescriptionTexts(vm.CustomSymbolTexts, vm.SymbolNames);
+                controller.SetDescriptionLanguage(vm.LangId);
+            }
 #endif
         }
 
