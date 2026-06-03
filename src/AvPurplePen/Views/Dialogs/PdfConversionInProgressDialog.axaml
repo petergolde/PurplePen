@@ -1,0 +1,94 @@
+<!--
+    PdfConversionInProgressDialog.axaml
+
+    "Reading PDF" dialog shown while the PDFium converter reads a PDF map file.
+    While the conversion runs a marquee progress bar is shown and the user can
+    Cancel. If the conversion fails, the caller calls the ViewModel's
+    ShowErrorMessage(...) which sets HasError — revealing the red failure label
+    and the read-only error text box, and filling the progress bar.
+
+    Migrated from WinForms PurplePen/PdfConversionInProgress.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.PdfConversionInProgressDialog"
+        Classes="dialog"
+        x:DataType="vm:PdfConversionInProgressDialogViewModel"
+        Title="{resx:Localize PdfConversionInProgress_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="353" d:DesignHeight="286"
+        Width="353" Height="286"
+        MinWidth="300" MinHeight="200"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PdfConversionInProgressDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="13">
+
+        <!-- Cancel button at the bottom-right. This is the only way to dismiss
+             the dialog; the OK button from the original is never shown. -->
+        <Button DockPanel.Dock="Bottom"
+                x:Name="cancelButton"
+                Content="{resx:Localize CancelButton}"
+                Width="90"
+                HorizontalAlignment="Right"
+                HorizontalContentAlignment="Center"
+                IsCancel="True"
+                Margin="0,13,0,0"
+                Click="CancelButton_Click"/>
+
+        <!-- Content laid out top-to-bottom. The error text box takes the
+             remaining space; the failure label and text box are hidden until
+             the conversion fails. -->
+        <Grid RowDefinitions="Auto,Auto,Auto,*">
+
+            <!-- Status text -->
+            <TextBlock Grid.Row="0"
+                       x:Name="labelReadingPDF"
+                       Text="{resx:Localize PdfConversionInProgress_labelReadingPDF_Text}"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,12"/>
+
+            <!-- Progress bar: marquee while working, full once failed. -->
+            <ProgressBar Grid.Row="1"
+                         x:Name="progressBar"
+                         Minimum="0"
+                         Maximum="1"
+                         Value="{Binding ProgressValue}"
+                         Height="16"
+                         IsIndeterminate="{Binding IsIndeterminate}"/>
+
+            <!-- Failure label (red), revealed on error. -->
+            <TextBlock Grid.Row="2"
+                       x:Name="labelFailure"
+                       Text="{resx:Localize PdfConversionInProgress_labelFailure_Text}"
+                       Foreground="Red"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding HasError}"
+                       Margin="0,12,0,6"/>
+
+            <!-- Read-only, scrollable error output, revealed on error. -->
+            <TextBox Grid.Row="3"
+                     x:Name="textBoxErrorMessage"
+                     Text="{Binding ErrorMessage}"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     TextWrapping="NoWrap"
+                     IsVisible="{Binding HasError}"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+        </Grid>
+    </DockPanel>
+</Window>

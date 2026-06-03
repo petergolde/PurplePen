@@ -46,7 +46,11 @@ namespace AvPurplePen
             services.AddSingleton<IFileLoaderProvider, SkiaFileLoaderProvider>();
             services.AddSingleton<IPdfWriter, PdfWriter>();
             services.AddSingleton<IApplicationIdleService, ApplicationIdleServiceAdapter>();
-            //services.AddSingleton<IPdfLoadingStatus, PdfLoadingUI>();
+
+            // Transient (not singleton): PdfLoadingUI holds per-conversion state
+            // (completion flag, dialog handle), so each PDF validation must get a
+            // fresh instance. CoreMapUtil.ValidatePdf resolves it once per call.
+            services.AddTransient<IPdfLoadingStatus, PdfLoadingUI>();
 
             // IDialogService depends on the MainWindow, which is created later by App.
             // The factory defers construction until first use, by which time App.MainWindow is set.
