@@ -20,6 +20,13 @@ namespace PurplePen.ViewModels
     /// </summary>
     public partial class EventFileDialogViewModel : ViewModelBase
     {
+        // Allowable ranges for the scale and DPI fields (only enforced when the
+        // corresponding field is visible).
+        private const float MinScale = 100;
+        private const float MaxScale = 1000000;
+        private const float MinDpi = 10;
+        private const float MaxDpi = 10000;
+
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(HasError))]
         [NotifyPropertyChangedFor(nameof(HasMapFile))]
@@ -76,12 +83,30 @@ namespace PurplePen.ViewModels
                 if (MapType == MapType.OCAD)
                     return true;
                 else if (MapType == MapType.Bitmap)
-                    return float.TryParse(ScaleText, out _) && float.TryParse(DpiText, out _);
+                    return IsScaleValid(ScaleText) && IsDpiValid(DpiText);
                 else if (MapType == MapType.PDF)
-                    return float.TryParse(ScaleText, out _);
+                    return IsScaleValid(ScaleText);
                 else
                     return false;
             }
+        }
+
+        /// <summary>
+        /// Returns true if the given text parses to a scale value within the
+        /// allowable range (<see cref="MinScale"/> to <see cref="MaxScale"/>).
+        /// </summary>
+        private static bool IsScaleValid(string text)
+        {
+            return float.TryParse(text, out float scale) && scale >= MinScale && scale <= MaxScale;
+        }
+
+        /// <summary>
+        /// Returns true if the given text parses to a DPI value within the
+        /// allowable range (<see cref="MinDpi"/> to <see cref="MaxDpi"/>).
+        /// </summary>
+        private static bool IsDpiValid(string text)
+        {
+            return float.TryParse(text, out float dpi) && dpi >= MinDpi && dpi <= MaxDpi;
         }
 
         /// <summary>
@@ -156,7 +181,9 @@ namespace PurplePen.ViewModels
                     DpiText = dpi.ToString();
                 }
                 else if (detectedType == MapType.PDF) {
-                    ScaleText = scale.ToString();
+                    // A PDF has no intrinsic scale, so leave ScaleText unchanged.
+                    // This preserves the scale from a previously-selected OCAD map
+                    // (matching the WinForms ChangeMapFile behavior).
                 }
             }
             else {
