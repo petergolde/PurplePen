@@ -1,0 +1,226 @@
+<!--
+    EnterSymbolTextDialog.axaml
+
+    "Customized Symbol Text" dialog. Lets the user enter the customized
+    description text for one symbol, in one language, across every grammatical
+    form the language supports. Each form combination (singular/plural, gender,
+    case) is one grid row; the user edits the "Text" column. Three check boxes
+    toggle which form dimensions are expanded into rows, and optional gender /
+    case-of-modified choosers appear below the grid.
+
+    All of the logic lives in EnterSymbolTextDialogViewModel; the code-behind
+    keeps the grid columns' visibility in sync with the check boxes, validates
+    the fill-in "*" on OK, and sets initial focus.
+
+    Migrated from WinForms PurplePen/EnterSymbolText.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:misc="using:PurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.EnterSymbolTextDialog"
+        Classes="dialog"
+        x:DataType="vm:EnterSymbolTextDialogViewModel"
+        Title="{resx:Localize EnterSymbolText_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="490" d:DesignHeight="410"
+        Width="490" Height="410"
+        MinWidth="450" MinHeight="360"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:EnterSymbolTextDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.Styles>
+        <!-- Plain in-cell text box: no border / background so it blends into
+             the grid cell (mirrors the WinForms edit-on-keystroke grid). -->
+        <Style Selector="DataGrid TextBox.textCell">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="MinHeight" Value="0"/>
+            <Setter Property="Padding" Value="6,2"/>
+        </Style>
+
+        <!-- The data area's light background lives on the rows presenter (a
+             Panel), not the DataGrid itself, whose own background is SemiGrey1
+             so the corner above the scrollbar matches the header. -->
+        <Style Selector="DataGrid /template/ DataGridRowsPresenter#PART_RowsPresenter">
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+        <Style Selector="DataGrid /template/ DataGridColumnHeadersPresenter#PART_ColumnHeadersPresenter">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+        </Style>
+        <!-- Recolor the vertical scrollbar gutter (see ChangeAllCodesDialog for
+             the worked explanation of why this crosses two template boundaries). -->
+        <Style Selector="DataGrid /template/ ScrollBar#PART_VerticalScrollbar /template/ Border Grid">
+            <Setter Property="Background" Value="{DynamicResource InputBackground}"/>
+        </Style>
+        <Style Selector="DataGrid DataGridColumnHeader">
+            <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
+            <Setter Property="MinHeight" Value="24"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- Instruction + form check boxes at the top. -->
+        <StackPanel DockPanel.Dock="Top" Spacing="8" Margin="0,0,0,8">
+            <TextBlock x:Name="labelDescription"
+                       TextWrapping="Wrap"
+                       Text="{resx:Localize EnterSymbolText_labelDescription_Text}"/>
+            <StackPanel Orientation="Horizontal" Spacing="16">
+                <CheckBox x:Name="checkBoxPlural"
+                          Content="{resx:Localize EnterSymbolText_checkBoxPlural_Text}"
+                          IsVisible="{Binding AllowPluralForms}"
+                          IsChecked="{Binding ShowPluralForms, Mode=TwoWay}"/>
+                <CheckBox x:Name="checkBoxGender"
+                          Content="{resx:Localize EnterSymbolText_checkBoxGender_Text}"
+                          IsVisible="{Binding AllowGenderForms}"
+                          IsChecked="{Binding ShowGenderForms, Mode=TwoWay}"/>
+                <CheckBox x:Name="checkBoxCases"
+                          Content="{resx:Localize EnterSymbolText_checkBoxCases_Text}"
+                          IsVisible="{Binding AllowCaseForms}"
+                          IsChecked="{Binding ShowCaseForms, Mode=TwoWay}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- OK / Cancel buttons at the very bottom. -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <!-- Gender / case choosers, docked above the buttons. Each row is shown
+             only when the corresponding chooser is enabled. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,12,Auto"
+              RowDefinitions="Auto,Auto"
+              Margin="0,8,0,0">
+            <TextBlock x:Name="labelGenderChooser"
+                       Grid.Row="0" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Margin="0,0,0,4"
+                       IsVisible="{Binding ShowGenderList}"
+                       Text="{resx:Localize EnterSymbolText_labelGenderChooser_Text}"/>
+            <ComboBox x:Name="comboBoxGenderChooser"
+                      Grid.Row="0" Grid.Column="2"
+                      Width="150"
+                      Margin="0,0,0,4"
+                      IsVisible="{Binding ShowGenderList}"
+                      ItemsSource="{Binding GenderChoices}"
+                      SelectedItem="{Binding SelectedGender, Mode=TwoWay}"/>
+
+            <TextBlock x:Name="labelCaseChooser"
+                       Grid.Row="1" Grid.Column="0"
+                       VerticalAlignment="Center"
+                       IsVisible="{Binding ShowCaseList}"
+                       Text="{resx:Localize EnterSymbolText_labelCaseChooser_Text}"/>
+            <ComboBox x:Name="comboBoxCaseChooser"
+                      Grid.Row="1" Grid.Column="2"
+                      Width="150"
+                      IsVisible="{Binding ShowCaseList}"
+                      ItemsSource="{Binding CaseChoices}"
+                      SelectedItem="{Binding SelectedCaseChoice, Mode=TwoWay}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="vm:CaseChoiceItem">
+                        <Panel>
+                            <!-- The "(unchanged)" sentinel takes its text from
+                                 the View; the rest show the case name (data). -->
+                            <TextBlock Text="{resx:Localize EnterSymbolText_defaultCaseText}"
+                                       IsVisible="{Binding IsUnchanged}"/>
+                            <TextBlock Text="{Binding Value}"
+                                       IsVisible="{Binding !IsUnchanged}"/>
+                        </Panel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+
+        <!-- The per-form grid fills the remaining space. Columns are shown /
+             hidden in code-behind to follow the form check boxes. -->
+        <DataGrid x:Name="dataGridView"
+                  ItemsSource="{Binding Rows}"
+                  AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  HeadersVisibility="Column"
+                  GridLinesVisibility="All"
+                  SelectionMode="Single"
+                  BorderBrush="{DynamicResource DarkGreyBorder}"
+                  BorderThickness="1"
+                  Background="{DynamicResource SemiGrey1}"
+                  RowHeight="24"
+                  ColumnHeaderHeight="24"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.AllowAutoHide="False">
+            <DataGrid.Columns>
+                <!-- Number: singular / plural (read-only). -->
+                <DataGridTemplateColumn Header="{x:Static resx:UIText.EnterSymbolText_numberColumn_HeaderText}"
+                                        Width="Auto"
+                                        IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:SymbolTextRow">
+                            <Panel VerticalAlignment="Center" Margin="6,0">
+                                <TextBlock Text="{x:Static misc:MiscText.Plural}"
+                                           IsVisible="{Binding Plural}"/>
+                                <TextBlock Text="{x:Static misc:MiscText.Singular}"
+                                           IsVisible="{Binding !Plural}"/>
+                            </Panel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Gender: language data (read-only). -->
+                <DataGridTextColumn Header="{x:Static resx:UIText.EnterSymbolText_genderColumn_HeaderText}"
+                                    Binding="{Binding Gender}"
+                                    IsReadOnly="True"
+                                    Width="Auto"/>
+
+                <!-- Case: language data (read-only). -->
+                <DataGridTextColumn Header="{x:Static resx:UIText.EnterSymbolText_caseColumn_HeaderText}"
+                                    Binding="{Binding NounCase}"
+                                    IsReadOnly="True"
+                                    Width="Auto"/>
+
+                <!-- Text: editable. An always-editable text box so a single
+                     click starts editing (mirrors the WinForms grid). -->
+                <DataGridTemplateColumn Header="{x:Static resx:UIText.EnterSymbolText_textColumn_HeaderText}"
+                                        Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="vm:SymbolTextRow">
+                            <TextBox Classes="textCell"
+                                     Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>

@@ -93,9 +93,7 @@ Source Sans 3
 Lato
 
 Dialogs remaining to port:
-CustomSymbolText
 DownloadProgressDialog
-EnterSymbolText
 InitialScreen
 NewEventWizard and sub-forms
 PdfConversionInProgress

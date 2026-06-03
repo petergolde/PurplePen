@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PurplePen.ViewModels
 {
@@ -391,26 +392,77 @@ namespace PurplePen.ViewModels
             RefreshSymbolList();
         }
 
-        // Change text: opens the EnterSymbolText sub-dialog.
+        // Change text: opens the EnterSymbolText sub-dialog for the selected
+        // symbol's current language, seeded with the current texts. Mirrors the
+        // WinForms CustomSymbolText.buttonChangeText_Click.
         [RelayCommand(CanExecute = nameof(CanChangeText))]
-        private void ChangeText()
+        private async Task ChangeText()
         {
             // Commit current edits before opening the sub-dialog.
             CommitCurrentEdits();
 
-#if PORTING
-            // TODO: Port the EnterSymbolText dialog and wire it up here.
-            //
-            // The WinForms implementation (CustomSymbolText.buttonChangeText_Click)
-            // opens EnterSymbolText configured for the selected symbol's current
-            // language, seeded with the current SymbolTexts (custom if any, else
-            // the standard ones, filtered to the current language). It computes
-            // the allowable grammatical forms (plural/gender/case for nouns vs.
-            // modifiers) from the symbol Kind and the SymbolLanguage flags, then
-            // on OK writes the returned texts back into customSymbolText[id]
-            // (retaining other languages), sets customSymbolKey[id], and calls
-            // UpdateControlsFromId(id) / RefreshSymbolList().
-#endif
+            if (SymbolDB == null || SelectedSymbol == null)
+                return;
+
+            string id = SelectedSymbol.Id;
+            char kind = SymbolDB[id].Kind;
+            SymbolLanguage language = SymbolDB.GetLanguage(LangId);
+
+            // Seed with the custom texts if any, else the standard ones, and
+            // keep only the entries for the current language.
+            List<SymbolText> symTexts = IsTextCustomized(id) ? customSymbolText[id] : SymbolDB[id].SymbolTexts;
+            symTexts = symTexts.FindAll(symtext => symtext.Lang == language.LangId);
+
+            bool hasPlural = false, hasGender = false, hasCase = false;
+            foreach (SymbolText symtext in symTexts) {
+                if (symtext.Plural)
+                    hasPlural = true;
+                if (!string.IsNullOrEmpty(symtext.Gender))
+                    hasGender = true;
+                if (!string.IsNullOrEmpty(symtext.Case))
+                    hasCase = true;
+            }
+
+            // Which grammatical dimensions this symbol can take. Columns C, E,
+            // F, G are modifiers (but not crossing/junction/between); column D
+            // and crossing/junction/between are nouns.
+            bool isModifier = (kind == 'E' || kind == 'C' || kind == 'G' || kind == 'F') &&
+                              id != "11.15" && !id.StartsWith("10.", StringComparison.InvariantCulture);
+            bool isNoun = (kind == 'D' || id == "11.15" || id.StartsWith("10.", StringComparison.InvariantCulture));
+            bool canHaveCase = isNoun;
+            bool canModifyCase = (kind == 'F' || kind == 'E' || kind == 'C' || kind == 'G');
+
+            bool allowPlural = (isNoun && language.PluralNouns) || (kind == 'E' && language.PluralModifiers);
+            bool allowGender = isModifier && language.GenderModifiers;
+            bool allowCase = canHaveCase && language.CaseModifiers;
+
+            EnterSymbolTextDialogViewModel vm = new EnterSymbolTextDialogViewModel {
+                SymbolDB = SymbolDB,
+                Language = language,
+                AllowPluralForms = allowPlural,
+                ShowPluralForms = allowPlural && hasPlural,
+                AllowGenderForms = allowGender,
+                ShowGenderForms = allowGender && hasGender,
+                AllowCaseForms = allowCase,
+                ShowCaseForms = allowCase && hasCase,
+                ShowGenderList = isNoun && language.GenderModifiers,
+                ShowCaseList = canModifyCase && language.CaseModifiers,
+                TranslateFillIn = !UseAsLocalizeTool && isModifier,
+                SymbolTexts = symTexts,     // must be last: seeds the grid + choosers.
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                List<SymbolText> result = vm.SymbolTexts;
+
+                // Retain custom texts from other languages, if any.
+                if (customSymbolText.ContainsKey(id))
+                    result.AddRange(customSymbolText[id].FindAll(symtext => symtext.Lang != language.LangId));
+
+                customSymbolText[id] = result;
+                customSymbolKey[id] = ShowKeyChecked;
+                UpdateControlsFromId(id);
+                RefreshSymbolList();
+            }
         }
 
         private bool CanChangeText() => SelectedSymbol != null;

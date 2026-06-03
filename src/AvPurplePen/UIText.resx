@@ -1566,6 +1566,9 @@
   <data name="EnterSymbolText_Text" xml:space="preserve">
     <value>Customized Symbol Text</value>
   </data>
+  <data name="EnterSymbolText_defaultCaseText" xml:space="preserve">
+    <value>(unchanged)</value>
+  </data>
   <data name="InitialScreen_openLastRadioButton_Text" xml:space="preserve">
     <value>Open last viewed event</value>
   </data>
