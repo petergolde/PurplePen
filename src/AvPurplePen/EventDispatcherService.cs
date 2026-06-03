@@ -13,6 +13,9 @@ namespace AvPurplePen
             Dispatcher.UIThread.Post(action);
         }
 
+        // TODO: This is highly problematic, and could lead to some severe issues
+        // on non-Windowes platforms. We should try to refactor to using async and potentially
+        // Task.Yield or Task.Delay(1) to allow the UI thread to process messages without using a nested message loop.
         public void ProcessPendingMessages()
         {
             // WinForms Application.DoEvents() equivalent.
