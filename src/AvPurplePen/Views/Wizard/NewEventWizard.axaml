@@ -1,0 +1,124 @@
+<!--
+    NewEventWizard.axaml
+
+    The "New Event" wizard window. A white title strip at the top shows the
+    current page's title (separated from the page area by a dark rule, matching
+    the rule above the button bar). The center hosts all nine wizard pages (each
+    a separate UserControl bound to the shared NewEventWizardViewModel), showing
+    one at a time via the Is<Page>Page bool properties. Navigation is driven by
+    the Back / Next / Finish / Cancel buttons at the bottom.
+
+    Migrated from WinForms PurplePen/NewEventWizard.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:wiz="using:AvPurplePen.Views.Wizard"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:misc="using:PurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.NewEventWizard"
+        Classes="dialog"
+        x:DataType="vm:NewEventWizardViewModel"
+        Title="{resx:Localize NewEventWizard_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="560" d:DesignHeight="380"
+        Width="560" Height="380"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+
+        <!-- Title panel: white strip with the current page's title, separated
+             from the page area by a dark rule (matching the button panel rule).
+             One title per page; only the current page's title is visible. -->
+        <Border DockPanel.Dock="Top"
+                Background="{DynamicResource InputActiveBackground}"
+                BorderBrush="{DynamicResource DarkGreyBorder}"
+                BorderThickness="0,0,0,1"
+                Padding="16,12">
+            <Panel>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsTitlePage}"
+                           Text="{resx:Localize NewEventTitle_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsMapFilePage}"
+                           Text="{resx:Localize NewEventMapFile_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsBitmapScalePage}"
+                           Text="{resx:Localize NewEventBitmapScale_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsPrintScalePage}"
+                           Text="{resx:Localize NewEventPrintScale_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsPaperSizePage}"
+                           Text="{resx:Localize NewEventPaperSize_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsDirectoryPage}"
+                           Text="{resx:Localize NewEventDirectory_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsStandardsPage}"
+                           Text="{resx:Localize NewEventStandards_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsNumberingPage}"
+                           Text="{resx:Localize NewEventNumbering_labelTitle_Text}"/>
+                <TextBlock Classes="wizardHeader" IsVisible="{Binding IsFinalPage}"
+                           Text="{resx:Localize NewEventFinal_labelTitle_Text}"/>
+            </Panel>
+        </Border>
+
+        <!-- Navigation buttons -->
+        <Border DockPanel.Dock="Bottom"
+                BorderBrush="{DynamicResource DarkGreyBorder}"
+                BorderThickness="0,1,0,0"
+                Padding="12">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="8">
+                <Button x:Name="backButton"
+                        Content="{resx:Localize NewEventWizard_backButton_Text}"
+                        Width="100"
+                        HorizontalContentAlignment="Center"
+                        Command="{Binding BackCommand}"
+                        IsEnabled="{Binding CanGoBack}"/>
+                <Button x:Name="nextButton"
+                        Content="{resx:Localize NewEventWizard_nextButton_Text}"
+                        Width="100"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        Command="{Binding NextCommand}"
+                        IsEnabled="{Binding CanProceed}"
+                        IsVisible="{Binding !IsLastPage}"/>
+                <Button x:Name="finishButton"
+                        Content="{x:Static misc:MiscText.FinishButtonText}"
+                        Width="100"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        Command="{Binding NextCommand}"
+                        IsEnabled="{Binding CanProceed}"
+                        IsVisible="{Binding IsLastPage}"/>
+                <Button x:Name="cancelButton"
+                        Content="{resx:Localize NewEventWizard_cancelButton_Text}"
+                        Width="100"
+                        HorizontalContentAlignment="Center"
+                        IsCancel="True"
+                        Command="{Binding CancelCommand}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Page host: all pages stacked, only the current one is visible. -->
+        <Panel Margin="16">
+            <wiz:NewEventTitlePage IsVisible="{Binding IsTitlePage}"/>
+            <wiz:NewEventMapFilePage IsVisible="{Binding IsMapFilePage}"/>
+            <wiz:NewEventBitmapScalePage IsVisible="{Binding IsBitmapScalePage}"/>
+            <wiz:NewEventPrintScalePage IsVisible="{Binding IsPrintScalePage}"/>
+            <wiz:NewEventPaperSizePage IsVisible="{Binding IsPaperSizePage}"/>
+            <wiz:NewEventDirectoryPage IsVisible="{Binding IsDirectoryPage}"/>
+            <wiz:NewEventStandardsPage IsVisible="{Binding IsStandardsPage}"/>
+            <wiz:NewEventNumberingPage IsVisible="{Binding IsNumberingPage}"/>
+            <wiz:NewEventFinalPage IsVisible="{Binding IsFinalPage}"/>
+        </Panel>
+
+    </DockPanel>
+</Window>

@@ -1,0 +1,36 @@
+<!--
+    NewEventPaperSizePage.axaml
+    Wizard page 5: the paper size, margin, and orientation (hosts PaperSizeControl).
+    Migrated from WinForms PurplePen/NewEventPaperSize.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:views="using:AvPurplePen.Views"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventPaperSizePage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventPaperSize_newEventPaperSizeLabel_Text}"/>
+
+        <views:PaperSizeControl x:Name="paperSizeControl"
+                                HorizontalAlignment="Left"
+                                PaperWidth="{Binding PaperWidth, Mode=TwoWay}"
+                                PaperHeight="{Binding PaperHeight, Mode=TwoWay}"
+                                PaperMargin="{Binding PaperMargin, Mode=TwoWay}"
+                                Landscape="{Binding PaperLandscape, Mode=TwoWay}"/>
+
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventPaperSize_changeLaterLabel_Text}"/>
+    </StackPanel>
+</UserControl>

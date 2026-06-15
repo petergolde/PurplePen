@@ -1,0 +1,49 @@
+<!--
+    NewEventDirectoryPage.axaml
+    Wizard page 6: where to save the event file.
+    Migrated from WinForms PurplePen/NewEventDirectory.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventDirectoryPage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventDirectory_newEventDirectoryLabel_Text}"/>
+
+        <RadioButton GroupName="Directory"
+                     Content="{resx:Localize NewEventDirectory_useMapDirectory_Text}"
+                     IsChecked="{Binding UseMapDirectory, Mode=TwoWay}"/>
+        <RadioButton GroupName="Directory"
+                     Content="{resx:Localize NewEventDirectory_useOtherFolder_Text}"
+                     IsChecked="{Binding UseOtherFolder, Mode=TwoWay}"/>
+
+        <Button x:Name="chooseFolderButton"
+                Margin="20,0,0,0"
+                HorizontalAlignment="Left"
+                Content="{resx:Localize NewEventDirectory_chooseFolder_Text}"
+                IsEnabled="{Binding UseOtherFolder}"
+                Click="ChooseFolderButton_Click"/>
+
+        <!-- "Selected Folder" group box around a read-only, scrollable,
+             selectable single-line edit control showing the directory path. -->
+        <HeaderedContentControl Margin="20,4,0,0"
+                                Header="{resx:Localize NewEventDirectory_directoryDisplay_Text}"
+                                Padding="8,10,8,8"
+                                IsVisible="{Binding ShowDirectoryName}">
+            <TextBox Text="{Binding DirectoryName}"
+                     IsReadOnly="True"/>
+        </HeaderedContentControl>
+    </StackPanel>
+</UserControl>

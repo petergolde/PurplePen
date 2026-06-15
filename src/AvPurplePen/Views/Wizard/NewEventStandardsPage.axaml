@@ -1,0 +1,61 @@
+<!--
+    NewEventStandardsPage.axaml
+    Wizard page 7: the IOF map and description standards.
+    Migrated from WinForms PurplePen/NewEventStandards.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventStandardsPage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="10">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventStandards_labelStandardsIntro_Text}"/>
+
+        <Grid ColumnDefinitions="*,12,*">
+            <!-- Map standard -->
+            <HeaderedContentControl Grid.Column="0"
+                                    Header="{resx:Localize NewEventStandards_groupBoxMapStandard_Text}"
+                                    Padding="8,12,8,8">
+                <StackPanel Spacing="4">
+                    <RadioButton GroupName="MapStandard"
+                                 Content="{resx:Localize NewEventStandards_radioButtonMap2000_Text}"
+                                 IsChecked="{Binding IsMap2000, Mode=TwoWay}"/>
+                    <RadioButton GroupName="MapStandard"
+                                 Content="{resx:Localize NewEventStandards_radioButtonMap2017_Text}"
+                                 IsChecked="{Binding IsMap2017, Mode=TwoWay}"/>
+                    <RadioButton GroupName="MapStandard"
+                                 Content="{resx:Localize NewEventStandards_radioButtonMapSpr2019_Text}"
+                                 IsChecked="{Binding IsMapSpr2019, Mode=TwoWay}"/>
+                </StackPanel>
+            </HeaderedContentControl>
+
+            <!-- Description standard -->
+            <HeaderedContentControl Grid.Column="2"
+                                    Header="{resx:Localize NewEventStandards_groupBoxDescriptionStandard_Text}"
+                                    Padding="8,12,8,8">
+                <StackPanel Spacing="4">
+                    <RadioButton GroupName="DescriptionStandard"
+                                 Content="{resx:Localize NewEventStandards_radioButtonDescriptions2004_Text}"
+                                 IsChecked="{Binding IsDescriptions2004, Mode=TwoWay}"/>
+                    <RadioButton GroupName="DescriptionStandard"
+                                 Content="{resx:Localize NewEventStandards_radioButtonDescriptions2018_Text}"
+                                 IsChecked="{Binding IsDescriptions2018, Mode=TwoWay}"/>
+                </StackPanel>
+            </HeaderedContentControl>
+        </Grid>
+
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventStandards_changeLaterLabel_Text}"/>
+    </StackPanel>
+</UserControl>

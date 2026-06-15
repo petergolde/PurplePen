@@ -1,0 +1,40 @@
+<!--
+    NewEventNumberingPage.axaml
+    Wizard page 8: starting control code and invertible-code option.
+    Migrated from WinForms PurplePen/NewEventNumbering.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventNumberingPage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventNumbering_newEventNumberingLabel_Text}"/>
+
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventNumbering_startingCodeLabel_Text}"/>
+            <NumericUpDown Width="80"
+                           Minimum="31" Maximum="999" Increment="1"
+                           FormatString="0"
+                           Value="{Binding FirstCode, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <CheckBox Content="{resx:Localize NewEventNumbering_disallowInvertibleCheckBox_Text}"
+                  IsChecked="{Binding DisallowInvertibleCodes, Mode=TwoWay}"/>
+
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventNumbering_changeLaterLabel_Text}"/>
+    </StackPanel>
+</UserControl>

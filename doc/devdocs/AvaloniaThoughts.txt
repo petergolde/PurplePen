@@ -84,6 +84,9 @@ Pain points:
 	   - Handling count in printing courses.
 	   - Crash reporter. Needs a full rewrite to be cross platform and use web requests instead of email.
 
+There are some string resources with extra & or _ prefixes that shouldn't be there. See the event wizard,
+for example, but this needs a more detailed review of all UI strings.
+
 Possible fonts to use for UI:
 Inter Tight
 Didact Gothic
@@ -95,7 +98,6 @@ Lato
 Dialogs remaining to port:
 DownloadProgressDialog
 InitialScreen
-NewEventWizard and sub-forms
 PrintCourses
 PrinterMargins
 SetPrintAreaDialog

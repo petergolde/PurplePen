@@ -1,0 +1,31 @@
+<!--
+    NewEventTitlePage.axaml
+    Wizard page 1: the event title. Migrated from WinForms PurplePen/NewEventTitle.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventTitlePage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventTitle_newEventTitleLabel_Text}"/>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventTitle_eventTitleLabel_Text}"/>
+            <TextBox x:Name="titleText"
+                     Width="320"
+                     Text="{Binding TitleText, Mode=TwoWay}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

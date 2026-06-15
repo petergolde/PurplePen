@@ -1,0 +1,51 @@
+<!--
+    NewEventBitmapScalePage.axaml
+    Wizard page 3 (shown only for bitmap / PDF maps): resolution + map scale.
+    Migrated from WinForms PurplePen/NewEventBitmapScale.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventBitmapScalePage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+
+        <!-- Bitmap intro (shown for bitmaps) -->
+        <TextBlock TextWrapping="Wrap"
+                   IsVisible="{Binding ShowDpiRow}"
+                   Text="{resx:Localize NewEventBitmapScale_bitmapScaleLabel_Text}"/>
+        <!-- PDF intro (shown for PDFs) -->
+        <TextBlock TextWrapping="Wrap"
+                   IsVisible="{Binding !ShowDpiRow}"
+                   Text="{resx:Localize NewEventBitmapScale_pdfScaleLabel_Text}"/>
+
+        <!-- Resolution (DPI) row — bitmaps only -->
+        <StackPanel Orientation="Horizontal" Spacing="6"
+                    IsVisible="{Binding ShowDpiRow}">
+            <TextBlock VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventBitmapScale_resolutionLabel_Text}"/>
+            <TextBox Width="80" Text="{Binding DpiText, Mode=TwoWay}"/>
+            <TextBlock VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventBitmapScale_dpiLabel_Text}"/>
+        </StackPanel>
+
+        <!-- Map scale row -->
+        <StackPanel Orientation="Horizontal" Spacing="6">
+            <TextBlock VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventBitmapScale_mapScaleLabel_Text}"/>
+            <TextBlock VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventBitmapScale_oneToPrefixLabel_Text}"/>
+            <TextBox Width="100" Text="{Binding ScaleText, Mode=TwoWay}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -230,6 +230,26 @@ namespace PurplePen.ViewModels
                     }
                 }
             }
+#else
+            if (controller == null)
+                return;
+
+            // Try to close the current file. If that succeeds, show the New Event wizard
+            // and create the new event from its result.
+            bool closeSuccess = await controller.TryCloseFile();
+            if (!closeSuccess)
+                return;
+
+            NewEventWizardViewModel vm = new NewEventWizardViewModel();
+            bool result = await Services.DialogService.ShowDialogAsync(vm);
+            if (result) {
+                bool success = await controller.NewEvent(vm.CreateEventInfo);
+                if (!success) {
+                    // The old file has been closed and creating the new event failed, so there
+                    // is no open file. The WinForms path returned to the InitialScreen here (see
+                    // the #if !PORTING block above); that recovery flow is not yet ported.
+                }
+            }
 #endif
         }
 

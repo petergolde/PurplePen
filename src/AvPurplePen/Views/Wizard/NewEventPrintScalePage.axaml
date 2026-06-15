@@ -1,0 +1,55 @@
+<!--
+    NewEventPrintScalePage.axaml
+    Wizard page 4: the default print scale.
+    Migrated from WinForms PurplePen/NewEventPrintScale.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventPrintScalePage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventPrintScale_newEventPrintScaleLabel_Text}"/>
+
+        <!-- Map scale (read-only) and default print scale (editable combo),
+             aligned in a 3-column grid: label / "1:" / value. -->
+        <Grid ColumnDefinitions="Auto,80,Auto" RowDefinitions="Auto,Auto"
+              ColumnSpacing="6" RowSpacing="12">
+            <!-- Row 0: map scale -->
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventPrintScale_mapScaleLabel_Text}"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Text="{resx:Localize NewEventPrintScale_oneToPrefixLabel1_Text}"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"
+                       Margin="12,0,0,0"
+                       Text="{Binding MapScaleDisplay}"/>
+
+            <!-- Row 1: default print scale -->
+            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
+                       Text="{resx:Localize NewEventPrintScale_defaultPrintScaleLabel_Text}"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Text="{resx:Localize NewEventPrintScale_oneToPrefixLabel2_Text}"/>
+            <ComboBox Grid.Row="1" Grid.Column="2" x:Name="printScaleCombo"
+                      IsEditable="True"
+                      Width="100"
+                      ItemsSource="{Binding PrintScales}"
+                      Text="{Binding PrintScaleText, Mode=TwoWay}"/>
+        </Grid>
+
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventPrintScale_changeLaterLabel_Text}"/>
+    </StackPanel>
+</UserControl>

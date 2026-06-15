@@ -1,0 +1,42 @@
+<!--
+    NewEventFinalPage.axaml
+    Wizard page 9: review the file path and finish (with any creation error).
+    Migrated from WinForms PurplePen/NewEventFinal.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventFinalPage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventFinal_newEventFinalLabel_Text}"/>
+
+        <TextBox IsReadOnly="True" Text="{Binding FinalEventPath}"/>
+
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventFinal_afterEventCreatedLabel_Text}"/>
+
+        <!-- Error panel (shown if event creation fails on Finish) -->
+        <Border IsVisible="{Binding HasFinalError}"
+                Background="#FFF3F3"
+                BorderBrush="#E0A0A0"
+                BorderThickness="1"
+                CornerRadius="3"
+                Padding="8">
+            <TextBlock TextWrapping="Wrap"
+                       Foreground="#B00000"
+                       Text="{Binding FinalErrorMessage}"/>
+        </Border>
+    </StackPanel>
+</UserControl>

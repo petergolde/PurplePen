@@ -1,0 +1,82 @@
+<!--
+    PaperSizeControl.axaml
+
+    Reusable control for choosing a paper size (standard or user-defined),
+    margin, and orientation. The width/height/margin are exposed in hundredths
+    of an inch via the PaperWidth / PaperHeight / PaperMargin styled properties;
+    Landscape is a bool. Values are displayed in mm or inches according to the
+    current culture.
+
+    Migrated from WinForms PurplePen/PaperSizeControl.cs. Reused by the New
+    Event wizard's paper-size page (and, in future, SetPrintAreaDialog).
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="280" d:DesignHeight="150"
+             x:Class="AvPurplePen.Views.PaperSizeControl">
+
+    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+          RowDefinitions="Auto,Auto,Auto,Auto"
+          HorizontalAlignment="Left">
+
+        <Grid.Styles>
+            <Style Selector="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0,0,6,0"/>
+            </Style>
+            <Style Selector="NumericUpDown">
+                <Setter Property="Width" Value="90"/>
+                <Setter Property="Margin" Value="0,3,4,3"/>
+            </Style>
+        </Grid.Styles>
+
+        <!-- Row 0: paper size combo -->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Text="{resx:Localize PaperSizeControl_labelPaper_Text}"/>
+        <ComboBox x:Name="comboBoxPaperSize"
+                  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5"
+                  Margin="0,3,0,3"
+                  HorizontalAlignment="Stretch"
+                  SelectionChanged="ComboBoxPaperSize_SelectionChanged"/>
+
+        <!-- Row 1: width and height -->
+        <TextBlock Grid.Row="1" Grid.Column="0"
+                   Text="{resx:Localize PaperSizeControl_labelWidth_Text}"/>
+        <NumericUpDown x:Name="upDownWidth"
+                       Grid.Row="1" Grid.Column="1"
+                       ValueChanged="UpDown_ValueChanged"/>
+        <TextBlock x:Name="labelUnitsWidth" Grid.Row="1" Grid.Column="2"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="3"
+                   Text="{resx:Localize PaperSizeControl_labelHeight_Text}"/>
+        <NumericUpDown x:Name="upDownHeight"
+                       Grid.Row="1" Grid.Column="4"
+                       ValueChanged="UpDown_ValueChanged"/>
+        <TextBlock x:Name="labelUnitsHeight" Grid.Row="1" Grid.Column="5"/>
+
+        <!-- Row 2: margin -->
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
+                   Text="{resx:Localize PaperSizeControl_labelMargin_Text}"/>
+        <NumericUpDown x:Name="upDownMargin"
+                       Grid.Row="2" Grid.Column="4"
+                       ValueChanged="UpDown_ValueChanged"/>
+        <TextBlock x:Name="labelUnitsMargin" Grid.Row="2" Grid.Column="5"/>
+
+        <!-- Row 3: orientation -->
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6"
+                    Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+            <RadioButton x:Name="radioPortrait"
+                         GroupName="Orientation"
+                         Content="{resx:Localize PaperSizeControl_checkBoxPortrait_Text}"
+                         IsCheckedChanged="Orientation_Changed"/>
+            <RadioButton x:Name="radioLandscape"
+                         GroupName="Orientation"
+                         Content="{resx:Localize PaperSizeControl_checkBoxLandscape_Text}"
+                         IsCheckedChanged="Orientation_Changed"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

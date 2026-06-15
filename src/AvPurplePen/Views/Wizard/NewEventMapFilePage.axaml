@@ -1,0 +1,78 @@
+<!--
+    NewEventMapFilePage.axaml
+    Wizard page 2: choose and validate the map file.
+    Migrated from WinForms PurplePen/NewEventMapFile.cs.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:PurplePen.ViewModels"
+             xmlns:resx="using:AvPurplePen"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignWidth="520" d:DesignHeight="360"
+             x:Class="AvPurplePen.Views.Wizard.NewEventMapFilePage"
+             x:DataType="vm:NewEventWizardViewModel">
+
+    <Design.DataContext>
+        <vm:NewEventWizardViewModel/>
+    </Design.DataContext>
+
+    <StackPanel Spacing="12">
+        <TextBlock TextWrapping="Wrap"
+                   Text="{resx:Localize NewEventMapFile_newEventMapFileLabel_Text}"/>
+
+        <Button x:Name="chooseMapFileButton"
+                Content="{resx:Localize NewEventMapFile_chooseMapFileButton_Text}"
+                HorizontalAlignment="Left"
+                Command="{Binding ChooseMapFileCommand}"/>
+
+        <!-- Success / info panel -->
+        <StackPanel Spacing="10" IsVisible="{Binding ShowMapInfo}">
+            <!-- "Selected Map File" group box around a read-only, scrollable,
+                 selectable single-line edit control showing the file path. -->
+            <HeaderedContentControl Header="{resx:Localize NewEventMapFile_mapFileDisplay_Text}"
+                                    Padding="8,10,8,8">
+                <TextBox Text="{Binding MapFileName}"
+                         IsReadOnly="True"/>
+            </HeaderedContentControl>
+
+            <!-- Information icon + success message (icon matches MessageBoxDialog). -->
+            <Grid ColumnDefinitions="Auto,*">
+                <Viewbox Grid.Column="0" Width="36" Height="36"
+                         VerticalAlignment="Top" Margin="0,0,8,0">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="DodgerBlue"
+                              Data="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M13,17V11H11V17H13M13,9V7H11V9H13Z"/>
+                    </Canvas>
+                </Viewbox>
+                <TextBlock Grid.Column="1"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Top"
+                           Text="{resx:Localize NewEventMapFile_infoMessage_Text}"/>
+            </Grid>
+        </StackPanel>
+
+        <!-- Error panel: warning icon + error message (icon matches MessageBoxDialog). -->
+        <Border IsVisible="{Binding HasMapError}"
+                Background="#FFF3F3"
+                BorderBrush="#E0A0A0"
+                BorderThickness="1"
+                CornerRadius="3"
+                Padding="8">
+            <Grid ColumnDefinitions="Auto,*">
+                <Viewbox Grid.Column="0" Width="36" Height="36"
+                         VerticalAlignment="Top" Margin="0,0,8,0">
+                    <Canvas Width="24" Height="24">
+                        <Path Fill="Orange"
+                              Data="M1,21H23L12,2L1,21M13,18H11V16H13V18M13,14H11V10H13V14Z"/>
+                    </Canvas>
+                </Viewbox>
+                <TextBlock Grid.Column="1"
+                           TextWrapping="Wrap"
+                           Foreground="#B00000"
+                           Text="{Binding MapErrorMessage}"/>
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>
