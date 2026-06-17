@@ -44,6 +44,7 @@ Pain points:
    or maybe Chrome (if installed) or AppleScript for Mac. cups can also print HTML but may not handle
    the pagination well. I think PuppeteerSharp is probably the best bet, and we can use it on Windows too. 
    Here's a Gemini conversation that covers these options: https://gemini.google.com/share/8fdeb8d0cfa5
+   Looks like Avalonia 12 has covered this now with the NativeWebView control. It has support for triggering printing.
    
    Or maybe just do our own rendering implementation for reports. HTML does have some nice styling and word-wrapping features in 
    tables that would take some work, but it would be more self-contained and not require a browser. We could use SkiaSharp to do 
@@ -97,11 +98,10 @@ Lato
 
 Dialogs remaining to port:
 DownloadProgressDialog
-InitialScreen
 PrintCourses
 PrinterMargins
 SetPrintAreaDialog
-
++ PaperSizeControl - needs prettying up.
 
 
 

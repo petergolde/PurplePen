@@ -52,9 +52,9 @@ namespace AvPurplePen
             // fresh instance. CoreMapUtil.ValidatePdf resolves it once per call.
             services.AddTransient<IPdfLoadingStatus, PdfLoadingUI>();
 
-            // IDialogService depends on the MainWindow, which is created later by App.
-            // The factory defers construction until first use, by which time App.MainWindow is set.
-            services.AddSingleton<IDialogService>(sp => new DialogService(App.MainWindow!));
+            // DialogService resolves the current main window from the desktop
+            // lifetime each time it shows a dialog, so it needs no constructor state.
+            services.AddSingleton<IDialogService, DialogService>();
             services.AddSingleton<IUILanguage, UILanguageService>();
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 

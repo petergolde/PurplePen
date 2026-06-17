@@ -29,15 +29,21 @@ namespace AvPurplePen
     {
         private static readonly Assembly ViewAssembly = typeof(DialogService).Assembly;
 
-        private readonly Window ownerWindow;
-
         /// <summary>
-        /// Creates a new DialogService that shows dialogs owned by the given window.
+        /// The window that currently acts as the application's main window, used
+        /// as the root owner for modal dialogs. Resolved dynamically from the
+        /// desktop lifetime (rather than captured once) because the main window
+        /// changes when the welcome screen hands off to the real main window.
         /// </summary>
-        /// <param name="ownerWindow">The parent window for modal dialogs.</param>
-        public DialogService(Window ownerWindow)
+        private static Window RootOwner
         {
-            this.ownerWindow = ownerWindow;
+            get {
+                if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop
+                        && desktop.MainWindow != null) {
+                    return desktop.MainWindow;
+                }
+                throw new InvalidOperationException("DialogService requires a desktop main window to own dialogs.");
+            }
         }
 
         /// <summary>
@@ -173,16 +179,15 @@ namespace AvPurplePen
         /// <summary>
         /// Finds the topmost currently-open dialog so a newly-shown dialog is
         /// parented to it (and is therefore modal relative to it), instead of
-        /// always being parented to MainWindow. Walks the chain of owned
-        /// windows starting from <see cref="ownerWindow"/>.
+        /// always being parented to the main window. Walks the chain of owned
+        /// windows starting from <see cref="RootOwner"/>.
         /// </summary>
-        private Window GetActiveOwner()
+        private static Window GetActiveOwner()
         {
-            if (Application.Current?.ApplicationLifetime is not IClassicDesktopStyleApplicationLifetime desktop) {
-                return ownerWindow;
-            }
+            // RootOwner guarantees the desktop lifetime exists, so this cast holds.
+            IClassicDesktopStyleApplicationLifetime desktop = (IClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!;
 
-            Window current = ownerWindow;
+            Window current = RootOwner;
             while (true) {
                 // Find a visible window whose Owner is `current`. Each Avalonia
                 // dialog opened with ShowDialog(owner) records that owner on
@@ -208,7 +213,7 @@ namespace AvPurplePen
         /// </summary>
         private async Task<bool> ShowFileOpenSingleAsync(FileOpenSingleViewModel viewModel)
         {
-            IStorageProvider storage = ownerWindow.StorageProvider;
+            IStorageProvider storage = RootOwner.StorageProvider;
 
             FilePickerOpenOptions options = new FilePickerOpenOptions {
                 AllowMultiple = false,
@@ -247,7 +252,7 @@ namespace AvPurplePen
         /// </summary>
         private async Task<bool> ShowFileSaveAsync(FileSaveViewModel viewModel)
         {
-            IStorageProvider storage = ownerWindow.StorageProvider;
+            IStorageProvider storage = RootOwner.StorageProvider;
 
             // Accept either ".ppen" or "ppen" from the caller — Avalonia
             // expects the bare extension without a leading dot.

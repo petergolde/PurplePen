@@ -18,12 +18,6 @@ namespace AvPurplePen
     public partial class App : Application
     {
         /// <summary>
-        /// The main application window. Set during initialization and used by
-        /// the IDialogService factory to create modal dialogs.
-        /// </summary>
-        public static Window? MainWindow { get; private set; }
-
-        /// <summary>
         /// Custom theme variant for PurplePen, based on Semi.Avalonia's Desert (Light) scheme.
         /// Colors are defined in Themes/PurplePenColors.axaml.
         /// </summary>
@@ -51,14 +45,13 @@ namespace AvPurplePen
         public override void OnFrameworkInitializationCompleted()
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
-                MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
-                Controller controller = new Controller(mainWindowViewModel);
-
-                MainWindow mainWindow = new MainWindow {
-                    DataContext = mainWindowViewModel,
+                // Show the welcome screen first. It creates and shows the real
+                // main window itself (possibly after the New Event wizard) once
+                // an event has been created or loaded.
+                InitialScreenWindow initialScreen = new InitialScreenWindow {
+                    DataContext = new InitialScreenViewModel(),
                 };
-                desktop.MainWindow = mainWindow;
-                App.MainWindow = mainWindow;
+                desktop.MainWindow = initialScreen;
             }
 
             base.OnFrameworkInitializationCompleted();

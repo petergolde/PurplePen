@@ -1,0 +1,127 @@
+<!--
+    InitialScreenWindow.axaml
+    The "Welcome to Purple Pen" screen shown when the application starts.
+    Lets the user create a new event, open an existing event, re-open the last
+    viewed event, or open the bundled sample event. The Purple Pen logo at the
+    top is drawn with Skia in the code-behind; the donation panel is docked at
+    the bottom.
+
+    Migrated from WinForms PurplePen/InitialScreen.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="335" d:DesignHeight="427"
+        x:Class="AvPurplePen.Views.InitialScreenWindow"
+        Classes="dialog"
+        x:DataType="vm:InitialScreenViewModel"
+        Title="{resx:Localize InitialScreen_Text}"
+        Icon="/Assets/PurplePenIcon.png"
+        Width="335" Height="427"
+        CanResize="False"
+        CanMinimize="False"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="True">
+
+    <Design.DataContext>
+        <vm:InitialScreenViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+
+        <!-- Logo panel at the top: white background, draws the Purple Pen logo.
+             The custom drawing is done in the code-behind Paint handler. -->
+        <avutil:SkiaDrawingView x:Name="logoPanel"
+                                DockPanel.Dock="Top"
+                                Height="117"
+                                Paint="LogoPanel_Paint"/>
+
+        <!-- Thin separator line under the logo. -->
+        <Border DockPanel.Dock="Top"
+                Height="1"
+                Background="#404040"/>
+
+        <!-- Donation panel at the bottom: pale-yellow background, with a note
+             about Purple Pen being free software and a donation link. -->
+        <Border DockPanel.Dock="Bottom"
+                Background="#FFFFD2">
+            <StackPanel Margin="12,12,12,12" Spacing="8">
+                <TextBlock Text="{resx:Localize InitialScreen_label1_Text}"
+                           Foreground="Black"
+                           TextWrapping="Wrap"/>
+                <HyperlinkButton x:Name="donationLink"
+                                 HorizontalAlignment="Center"
+                                 Padding="0"
+                                 Click="DonationLink_Click">
+                    <TextBlock Text="{resx:Localize InitialScreen_donationLink_Text}"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               TextDecorations="Underline"/>
+                </HyperlinkButton>
+            </StackPanel>
+        </Border>
+
+        <!-- Middle area: the four choices at the top, OK button at bottom-right. -->
+        <Grid Margin="20,16,16,12">
+
+            <StackPanel VerticalAlignment="Top" Spacing="6">
+
+                <RadioButton x:Name="createNewRadioButton"
+                             GroupName="initialChoice"
+                             FontSize="15"
+                             Content="{resx:Localize InitialScreen_createNewRadioButton_Text}"
+                             IsChecked="{Binding CreateNewSelected, Mode=TwoWay}"/>
+
+                <RadioButton x:Name="openExistingRadioButton"
+                             GroupName="initialChoice"
+                             FontSize="15"
+                             Content="{resx:Localize InitialScreen_openExistingRadioButton_Text}"
+                             IsChecked="{Binding OpenExistingSelected, Mode=TwoWay}"/>
+
+                <!-- The "open last" text shows the file name when one is available
+                     ("Open \"name\""), otherwise the plain default caption. -->
+                <RadioButton x:Name="openLastRadioButton"
+                             GroupName="initialChoice"
+                             FontSize="15"
+                             IsEnabled="{Binding IsLastEventAvailable}"
+                             IsChecked="{Binding OpenLastSelected, Mode=TwoWay}">
+                    <Panel>
+                        <TextBlock IsVisible="{Binding !IsLastEventAvailable}"
+                                   Text="{resx:Localize InitialScreen_openLastRadioButton_Text}"/>
+                        <TextBlock IsVisible="{Binding IsLastEventAvailable}">
+                            <TextBlock.Text>
+                                <Binding Path="LastLoadedFileBaseName"
+                                         StringFormat="{x:Static resx:UIText.MiscText_OpenLastEvent}"/>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Panel>
+                </RadioButton>
+
+                <RadioButton x:Name="openSampleRadioButton"
+                             GroupName="initialChoice"
+                             FontSize="15"
+                             Content="{resx:Localize InitialScreen_openSampleRadioButton_Text}"
+                             IsEnabled="{Binding IsSampleEventAvailable}"
+                             IsChecked="{Binding OpenSampleSelected, Mode=TwoWay}"/>
+
+            </StackPanel>
+
+            <Button x:Name="okButton"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    MinWidth="80"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Content="{resx:Localize InitialScreen_okButton_Text}"
+                    Command="{Binding OkCommand}"/>
+
+        </Grid>
+
+    </DockPanel>
+
+</Window>

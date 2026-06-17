@@ -16,6 +16,16 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <Folder Include="Samples\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\doc\userdocs\Sample\Sample Event.ppen" Link="Samples\Sample Event.ppen">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\doc\userdocs\Sample\SampleMap.ocd" Link="Samples\SampleMap.ocd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <!-- Exclude ImageSharp from ReadyToRun — it grows from 1.7 MB to 30 MB
