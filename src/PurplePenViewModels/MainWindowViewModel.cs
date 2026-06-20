@@ -67,6 +67,9 @@ namespace PurplePen.ViewModels
         private PrintingPaperSizeWithMargins? punchPaperSizeWithMargins;
 
         [ObservableProperty]
+        private string windowTitle = MiscText.AppTitle;
+
+        [ObservableProperty]
         private MapDisplay? mapDisplay;
 
         [ObservableProperty]
@@ -210,8 +213,8 @@ namespace PurplePen.ViewModels
         // Update the window title with the current file name.
         private void UpdateWindowTitle()
         {
-#if !PORTING
-#endif
+            if (controller == null) { return; }
+            WindowTitle = string.Format("{0} - {1}", Path.GetFileNameWithoutExtension(controller.FileName), MiscText.AppTitle);
         }
 
         // Update the map file on Display.

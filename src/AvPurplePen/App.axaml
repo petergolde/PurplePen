@@ -41,6 +41,8 @@
         <SolidColorBrush x:Key="MenuItemForeground" Color="Black"/>
         <!-- Menu and ComboBox item hover background: Blue5 at 25% opacity -->
         <SolidColorBrush x:Key="MenuItemPointeroverBackground" Color="{StaticResource SemiBlue5Color}" Opacity="0.25"/>
+        <!-- Text selection highlight: same Blue5 at 25% opacity used for menu/dropdown highlighting -->
+        <SolidColorBrush x:Key="TextSelectionHighlightBackground" Color="{StaticResource SemiBlue5Color}" Opacity="0.25"/>
         <SolidColorBrush x:Key="ComboBoxItemPointeroverBackground" Color="{StaticResource SemiBlue5Color}" Opacity="0.25"/>
         <SolidColorBrush x:Key="ComboBoxItemSelectedBackground" Color="Transparent"/>
         <SolidColorBrush x:Key="ComboBoxItemSelectedPointeroverBackground" Color="{StaticResource SemiBlue5Color}" Opacity="0.25"/>
@@ -123,6 +125,15 @@
             <Setter Property="Height" Value="0.8"/>
         </Style>
 
+
+        <!-- Selected text in every TextBox (including the inner ones in ComboBox,
+             AutoCompleteBox, NumericUpDown): black text on a light blue background,
+             matching the highlight color used in menus and drop-down lists. The Semi
+             HighContrast theme otherwise selects with a dark blue background. -->
+        <Style Selector="TextBox">
+            <Setter Property="SelectionBrush" Value="{DynamicResource TextSelectionHighlightBackground}"/>
+            <Setter Property="SelectionForegroundBrush" Value="Black"/>
+        </Style>
 
         <!-- Global input control overrides (Small size + border + background styling)
              :not(#PART_EditableTextBox) excludes the inner TextBox inside editable ComboBox. -->

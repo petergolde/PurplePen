@@ -30,7 +30,7 @@
         x:Class="AvPurplePen.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/PurplePenIcon.png"
-        Title="{resx:Localize MainFrame_Text}"
+        Title="{Binding WindowTitle}"
         MapMousePointerShape="{Binding MapMousePointerShape}"
         >
 
