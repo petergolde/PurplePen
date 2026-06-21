@@ -108,6 +108,19 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         MousePointerShape mapMousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
 
+        [ObservableProperty]
+        private string undoCommandName = MiscText.UndoWithShortcut;
+
+        [ObservableProperty]
+        private string undoToolTip = MiscText.Undo;
+
+        [ObservableProperty]
+        private string redoCommandName = MiscText.RedoWithShortcut;
+
+        [ObservableProperty]
+        private string redoToolTip = MiscText.Redo;
+
+
         // The slider view of the zoom, which is a log-based based of the true zoom, clamped to 0-100.
         private const float zoomSliderMin = 0.25F; //25%
         private const float zoomSliderMax = 10.0F; //1000%

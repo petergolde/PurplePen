@@ -172,13 +172,13 @@
     <value>Die Läuferzahl für eine Bahn muss zwischen 1-999999 liegen oder leer bleiben.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Rückgängig:</value>
+    <value>_Rückgängig:</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Rückgängig:</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Wiederholen:</value>
+    <value>_Wiederholen:</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Wiederherstellen:</value>
@@ -631,13 +631,13 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Alle Kartendateien|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX-Datei|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Um PDF-Dateien laden zu können, muss eine Kopie von GPL Ghostscript installiert sein. Möchten Sie es automatisch herunterladen und installieren lassen?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript ist nicht installiert</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPX-Datei|*.gpx</value>
   </data>
 </root>

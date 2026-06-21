@@ -172,13 +172,13 @@
     <value>Obciążenie musi być liczbą całkowitą z zakresu 0-999999 lub pozostawione puste.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Cofnij</value>
+    <value>_Cofnij</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Cofnij</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Ponów</value>
+    <value>_Ponów</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Ponów</value>
@@ -511,13 +511,13 @@ Użyj | aby rozdzielić linie
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Pliki Purple Pen|*.ppen|Wszystkie|*.*</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>Plik GPX|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript nie jest zainstalowany</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>Plik GPX|*.gpx</value>
   </data>
 </root>

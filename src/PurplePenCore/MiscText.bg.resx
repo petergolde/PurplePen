@@ -172,13 +172,13 @@
     <value>Натоварването на маршрута трябва да е цяло число от 0 до 999999 или празно поле.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Undo</value>
+    <value>_Undo</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Отмени</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Повтори</value>
+    <value>_Повтори</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Възстанови</value>

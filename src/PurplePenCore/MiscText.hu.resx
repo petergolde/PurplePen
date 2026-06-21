@@ -172,13 +172,13 @@
     <value>A versenyzőszám egész szám 0-999999, vagy üres lehet.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Visszavonás</value>
+    <value>_Visszavonás</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Visszavonás</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>Ú&amp;jra</value>
+    <value>Ú_jra</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Újra</value>
@@ -616,13 +616,13 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Minden térkép fájl|*.ocd;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD fájlok (*.ocd)|*.ocd|Open Orienteering Mapper fájlok|*.omap;*.xmap|PDF fájlok (*.pdf)|*.pdf|Kép fájlok|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX fájl|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>A GPL Ghostscript nincs telepítve.</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPX fájl|*.gpx</value>
   </data>
 </root>

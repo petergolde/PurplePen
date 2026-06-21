@@ -172,13 +172,13 @@
     <value>コースの走行人数は、空白にするか、0から999999までの数字を入力してください。</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>元に戻す(&amp;U)</value>
+    <value>元に戻す(_U)</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>元に戻す</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>やり直す(&amp;R)</value>
+    <value>やり直す(_R)</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>やり直す</value>
@@ -574,13 +574,13 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>すべての地図ファイル|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCADファイル (*.ocd)|*.ocd|Open Orienteering Mapperファイル|*.omap;*.xmap|PDFファイル (*.pdf)|*.pdf|画像ファイル|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPXファイル|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript がインストールされていません</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPXファイル|*.gpx</value>
   </data>
 </root>

@@ -172,13 +172,13 @@
     <value>Antall deltakere i en løype må være et heltall mellom 0 og 999999 eller være blank.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Angre</value>
+    <value>_Angre</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Angre</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Gjør om</value>
+    <value>_Gjør om</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Gjør om</value>
@@ -621,13 +621,13 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Alle kart filer|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD filer (*.ocd)|*.ocd|Open Orienteering Mapper Filer|*.omap;*.xmap|PDF filer (*.pdf)|*.pdf|Bilde filer|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX fil|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript er ikke installert</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPX fil|*.gpx</value>
   </data>
 </root>

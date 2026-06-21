@@ -172,13 +172,13 @@
     <value>Indlæsningen af et kursus skal være et heltal 0-999999, eller blank.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Fortryd</value>
+    <value>_Fortryd</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Fortryd</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Gendan</value>
+    <value>_Gendan</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Gentag</value>

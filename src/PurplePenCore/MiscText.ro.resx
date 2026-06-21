@@ -172,13 +172,13 @@
     <value>Încărcarea unui traseu trebuie să fie un întreg de la 0 până la 999999, sau câmp gol.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>An&amp;ulare</value>
+    <value>An_ulare</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Anulare</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Refacere</value>
+    <value>_Refacere</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Refacere</value>

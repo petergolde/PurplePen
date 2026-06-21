@@ -172,13 +172,13 @@
     <value>Raja osalejate arv peab olema numbrites vahemikus 0-999999, või tühi.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Võta tagasi</value>
+    <value>_Võta tagasi</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Võta tagasi</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Tee uuesti</value>
+    <value>_Tee uuesti</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Uuesti</value>
@@ -620,13 +620,13 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Kõik kaardi failid|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD failid (*.ocd)|*.ocd|Open Orienteering Mapper Failid|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX fail|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript on installeeritud</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPX fail|*.gpx</value>
   </data>
 </root>

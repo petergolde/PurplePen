@@ -172,13 +172,13 @@
     <value>La densidad de corredores para un recorrido debe ser un entero de 0-999999, o blanco.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Deshacer</value>
+    <value>_Deshacer</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Deshacer</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Rehacer</value>
+    <value>_Rehacer</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Rehacer</value>

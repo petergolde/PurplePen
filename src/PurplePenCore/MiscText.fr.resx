@@ -172,13 +172,13 @@
     <value>Le nombre de concurrents sur un circuit doit être vide ou un nombre entier compris entre 0 et 999999.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Annuler</value>
+    <value>_Annuler</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Annuler</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Refaire</value>
+    <value>_Refaire</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Refaire</value>
@@ -610,13 +610,13 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Tous les fichiers cartes|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|fichiers OCAD (*.ocd)|*.ocd|fichiers Open Orienteering Mapper|*.omap;*.xmap|fichiers PDF (*.pdf)|*.pdf|fichiers Image|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>Fichier GPX|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript n'est pas installé</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>Fichier GPX|*.gpx</value>
   </data>
 </root>

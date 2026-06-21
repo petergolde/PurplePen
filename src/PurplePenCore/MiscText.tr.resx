@@ -172,13 +172,13 @@
     <value>Bir parkurun boyutu 0-999999 arasında bir tamsayı veya boş olmalıdır.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Geri al</value>
+    <value>_Geri al</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Geri Al</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Yinele</value>
+    <value>_Yinele</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Yinele</value>

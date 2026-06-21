@@ -172,13 +172,13 @@
     <value>Počet závodníků na trati musí být celé číslo 0-999999, nebo prázdné</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Zpět</value>
+    <value>_Zpět</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Zpět</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>Z&amp;novu</value>
+    <value>Z_novu</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Znovu</value>
@@ -622,10 +622,10 @@ OK - zkus soubor s mapou najít.</value>
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Všechny mapové soubory|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD files (*.ocd)|*.ocd|Open Orienteering Mapper Files|*.omap;*.xmap|PDF files (*.pdf)|*.pdf|Image files|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
-  <data name="CodeUnder31" xml:space="preserve">
-    <value>Kód kontroly by měl být 31 nebo vyšší.</value>
-  </data>
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX soubor|*.gpx</value>
+  </data>
+  <data name="CodeUnder31" xml:space="preserve">
+    <value>Kód kontroly by měl být 31 nebo vyšší.</value>
   </data>
 </root>

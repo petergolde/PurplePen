@@ -93,11 +93,23 @@
             <MenuItem x:Name="editMenu" Header="{resx:Localize MainFrame_editMenu_Text}">
                 <MenuItem x:Name="cancelMenu" Header="{resx:Localize MainFrame_cancelMenu_Text}" Command="{Binding CancelCommand}"/>
                 <Separator/>
-                <MenuItem x:Name="undoMenu" Header="{resx:Localize MainFrame_undoMenu_Text}" InputGesture="Ctrl+Z" Command="{Binding UndoCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/undo.png" Width="16" Height="16"/></MenuItem.Icon>
+                <MenuItem x:Name="undoMenu" Header="{Binding UndoCommandName}" InputGesture="Ctrl+Z" Command="{Binding UndoCommand}">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16"
+                               Source="{Binding IsEffectivelyEnabled,
+                                        RelativeSource={RelativeSource Self},
+                                        Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                        ConverterParameter=/Assets/Toolbar/undo.png}"/>
+                    </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="redoMenu" Header="{resx:Localize MainFrame_redoMenu_Text}" InputGesture="Ctrl+Y" Command="{Binding RedoCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/redo.png" Width="16" Height="16"/></MenuItem.Icon>
+                <MenuItem x:Name="redoMenu" Header="{Binding RedoCommandName}" InputGesture="Ctrl+Y" Command="{Binding RedoCommand}">
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16"
+                               Source="{Binding IsEffectivelyEnabled,
+                                        RelativeSource={RelativeSource Self},
+                                        Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                        ConverterParameter=/Assets/Toolbar/redo.png}"/>
+                    </MenuItem.Icon>
                 </MenuItem>
                 <Separator/>
                 <MenuItem x:Name="deleteMenu" Header="{resx:Localize MainFrame_deleteMenu_Text}" InputGesture="Delete" Command="{Binding DeleteSelectionCommand}">
@@ -333,7 +345,13 @@
                           Command="{Binding RemoveBendCommand}"/>
                 <MenuItem x:Name="addGapMenu" Header="{resx:Localize MainFrame_addGapMenu_Text}" InputGesture="Ctrl+G"
                           Command="{Binding AddGapCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/addGap.png" Width="16" Height="16"/></MenuItem.Icon>
+                    <MenuItem.Icon>
+                        <Image Width="16" Height="16"
+                               Source="{Binding IsEffectivelyEnabled,
+                                        RelativeSource={RelativeSource Self},
+                                        Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                        ConverterParameter=/Assets/Toolbar/addGap.png}"/>
+                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem x:Name="removeGapMenu" Header="{resx:Localize MainFrame_removeGapMenu_Text}" InputGesture="Ctrl+Shift+G"
                           Command="{Binding RemoveGapCommand}"/>
@@ -472,18 +490,26 @@
 
             <!-- Undo (image only) -->
             <Button x:Name="undoToolStripButton"
-                    ToolTip.Tip="{resx:Localize MainFrame_undoToolStripButton_ToolTipText}"
+                    ToolTip.Tip="{Binding UndoToolTip}"
                     Command="{Binding UndoCommand}"
                     Padding="2,2">
-                <Image Source="/Assets/Toolbar/undo.png" Width="16" Height="16"/>
+                <Image Width="16" Height="16"
+                       Source="{Binding IsEffectivelyEnabled,
+                                RelativeSource={RelativeSource Self},
+                                Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                ConverterParameter=/Assets/Toolbar/undo.png}"/>
             </Button>
 
             <!-- Redo (image only) -->
             <Button x:Name="redoToolStripButton"
-                    ToolTip.Tip="{resx:Localize MainFrame_redoToolStripButton_ToolTipText}"
+                    ToolTip.Tip="{Binding RedoToolTip}"
                     Command="{Binding RedoCommand}"
                     Padding="2,2">
-                <Image Source="/Assets/Toolbar/redo.png" Width="16" Height="16"/>
+                <Image Width="16" Height="16"
+                       Source="{Binding IsEffectivelyEnabled,
+                                RelativeSource={RelativeSource Self},
+                                Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                ConverterParameter=/Assets/Toolbar/redo.png}"/>
             </Button>
             <Separator Width="1" Margin="4,2"/>
 
@@ -720,7 +746,11 @@
                     ToolTip.Tip="{resx:Localize MainFrame_addGapToolStripButton_ToolTipText}"
                     Command="{Binding AddGapCommand}"
                     Padding="2,2">
-                <Image Source="/Assets/Toolbar/addGap.png" Width="16" Height="16"/>
+                <Image Width="16" Height="16"
+                       Source="{Binding IsEffectivelyEnabled,
+                                RelativeSource={RelativeSource Self},
+                                Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                ConverterParameter=/Assets/Toolbar/addGap.png}"/>
             </Button>
         </StackPanel>
 

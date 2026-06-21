@@ -894,16 +894,7 @@ namespace PurplePen {
                 return ResourceManager.GetString("GpxFilter", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv.
-        /// </summary>
-        public static string RelayVariationExportFilter {
-            get {
-                return ResourceManager.GetString("RelayVariationExportFilter", resourceCulture);
-            }
-        }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to The map file must be an OCAD file to use GPX files..
         /// </summary>
@@ -1388,11 +1379,20 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Redo.
+        ///   Looks up a localized string similar to _Redo.
         /// </summary>
         public static string RedoWithShortcut {
             get {
                 return ResourceManager.GetString("RedoWithShortcut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv.
+        /// </summary>
+        public static string RelayVariationExportFilter {
+            get {
+                return ResourceManager.GetString("RelayVariationExportFilter", resourceCulture);
             }
         }
         
@@ -1505,7 +1505,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Undo.
+        ///   Looks up a localized string similar to _Undo.
         /// </summary>
         public static string UndoWithShortcut {
             get {

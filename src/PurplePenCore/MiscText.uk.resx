@@ -172,13 +172,13 @@
     <value>Навантаження дстанції учасниками має бути цілим числом від 0 до 999999, або не заповнюється.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Вернути</value>
+    <value>_Вернути</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Відмінити</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Повторити</value>
+    <value>_Повторити</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Повернути</value>

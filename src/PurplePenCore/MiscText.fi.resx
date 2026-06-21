@@ -172,13 +172,13 @@
     <value>Suunnistajien lukumäärän pitää olla kokonaisluku väliltä 0-999999 (tai tyhjä).</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Kumoa</value>
+    <value>_Kumoa</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Kumoa</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Tee uudelleen</value>
+    <value>_Tee uudelleen</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Tee uudelleen</value>
@@ -625,13 +625,13 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Kaikki karttatiedostot|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD-tiedostot (*.ocd)|*.ocd|Open Orienteering Mapper -tiedostot|*.omap;*.xmap|PDF-tiedostot (*.pdf)|*.pdf|Kuvatiedostot|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX-tiedosto|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscriptiä ei ole asennettu</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPX-tiedosto|*.gpx</value>
   </data>
 </root>

@@ -172,13 +172,13 @@
     <value>賽程的承載量必須是 0-999999之間的整數, 或是空白.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>復原(&amp;U)</value>
+    <value>復原(_U)</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>復原</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>取消復原(&amp;R)</value>
+    <value>取消復原(_R)</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>重複</value>

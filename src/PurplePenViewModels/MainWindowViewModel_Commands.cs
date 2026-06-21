@@ -8,6 +8,7 @@ using PurplePen.MapModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net.NetworkInformation;
 using System.Text;
 
 namespace PurplePen.ViewModels
@@ -23,7 +24,6 @@ namespace PurplePen.ViewModels
 
 #if PORTING
             // Still need to port more logic from MainFrame.UpdateMenusToolbarButtons.
-            // - Undo/Redo text
             // - Cancel mode vs Clear selection text
             // - showPopupsMenu 
             // - showPrintAreaMenu
@@ -32,6 +32,9 @@ namespace PurplePen.ViewModels
 #endif
 
             // Update enabled status for commands.
+            UndoStatus undoStatus = controller.GetUndoStatus();
+            CanUndo = undoStatus.CanUndo;
+            CanRedo = undoStatus.CanRedo;
             CanDeleteSelection = controller.CanDeleteSelection();
             CanDeleteCourse = controller.CanDeleteCurrentCourse();
             CanDuplicateCourse = controller.CanDuplicateCurrentCourse();
@@ -64,6 +67,25 @@ namespace PurplePen.ViewModels
             MapStd2017Checked = (mapStandard == "2017");
             MapStdSpr2019Checked = (mapStandard == "Spr2019");
             IsVisibleDangerousArea = (mapStandard == "2000");
+
+            // Update names of certain menu items.
+            if (undoStatus.CanUndo) {
+                UndoCommandName = MiscText.UndoWithShortcut + " " + undoStatus.UndoName;
+                UndoToolTip = MiscText.Undo + " " + undoStatus.UndoName; 
+            }
+            else {
+                UndoCommandName = MiscText.UndoWithShortcut;
+                UndoToolTip = MiscText.Undo;
+            }
+
+            if (undoStatus.CanRedo) {
+                RedoCommandName = MiscText.RedoWithShortcut + " " + undoStatus.RedoName;
+                RedoToolTip = MiscText.Redo + " " + undoStatus.RedoName;
+            }
+            else {
+                RedoCommandName = MiscText.RedoWithShortcut;
+                RedoToolTip = MiscText.Redo;
+            }
 
             // Update checked status of leg flagging options
             FlaggingKind currentFlagging;
@@ -213,24 +235,6 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task NewEvent()
         {
-#if !PORTING
-            // Try to close the current file. If that succeeds, then ask for a new file and try to open it.
-            bool closeSuccess = await controller.TryCloseFile();
-            if (closeSuccess) {
-                NewEventWizard wizard = new NewEventWizard();
-                DialogResult result = wizard.ShowDialog();
-                if (result == DialogResult.OK) {
-                    bool success = await controller.NewEvent(wizard.CreateEventInfo);
-                    if (!success) {
-                        // This is bad news. The old file is gone, and we don't have a new file. Go back to initial screen is the best solution,
-                        // I guess.
-                        Application.Idle -= new EventHandler(Application_Idle);
-                        this.Dispose();
-                        new InitialScreen().Show();
-                    }
-                }
-            }
-#else
             if (controller == null)
                 return;
 
@@ -245,12 +249,13 @@ namespace PurplePen.ViewModels
             if (result) {
                 bool success = await controller.NewEvent(vm.CreateEventInfo);
                 if (!success) {
+#if !PORTING
                     // The old file has been closed and creating the new event failed, so there
                     // is no open file. The WinForms path returned to the InitialScreen here (see
                     // the #if !PORTING block above); that recovery flow is not yet ported.
+#endif
                 }
             }
-#endif
         }
 
         /// <summary>
@@ -284,9 +289,8 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void Save()
         {
-#if !PORTING
+            if (controller == null) return;
             controller.Save();
-#endif
         }
 
         /// <summary>
@@ -338,30 +342,36 @@ namespace PurplePen.ViewModels
         /// <summary>
         /// Executes the Edit/Undo command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanUndo))]
         private void Undo()
         {
-#if !PORTING
-            UndoStatus status = controller.GetUndoStatus();
+            if (controller == null) { return; }
 
+            UndoStatus status = controller.GetUndoStatus();
+        
             if (status.CanUndo)
                 controller.Undo();
-#endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(UndoCommand))]
+        private bool canUndo;
 
         /// <summary>
         /// Executes the Edit/Redo command.
         /// </summary>
-        [RelayCommand]
+        [RelayCommand(CanExecute = nameof(CanRedo))]
         private void Redo()
         {
-#if !PORTING
+            if (controller == null) { return; }
+
             UndoStatus status = controller.GetUndoStatus();
 
             if (status.CanRedo)
                 controller.Redo();
-#endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(RedoCommand))]
+        private bool canRedo;
 
         /// <summary>
         /// Executes the Edit/Delete command. Deletes the current selection.
@@ -1053,7 +1063,7 @@ namespace PurplePen.ViewModels
             float c, m, y, k;
             bool purpleOverprint;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
+            FindPurple.GetPurpleColor(MapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
 
             SpecialColor color;
             LineKind lineKind;
@@ -1127,7 +1137,7 @@ namespace PurplePen.ViewModels
             float c, m, y, k;
             bool purpleOverprint;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
+            FindPurple.GetPurpleColor(MapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
 
             SpecialColor color;
             LineKind lineKind;
@@ -1202,7 +1212,7 @@ namespace PurplePen.ViewModels
             float c, m, y, k;
             bool purpleOverprint;
             short ocadId;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
+            FindPurple.GetPurpleColor(MapDisplay, appearance, out ocadId, out c, out m, out y, out k, out purpleOverprint);
 
             SpecialColor color;
             LineKind lineKind;
@@ -1443,7 +1453,7 @@ namespace PurplePen.ViewModels
             short colorOcadId;
             float c, m, y, k;
             bool purpleOverprint;
-            FindPurple.GetPurpleColor(mapDisplay, appearance, out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
+            FindPurple.GetPurpleColor(MapDisplay, appearance, out colorOcadId, out c, out m, out y, out k, out purpleOverprint);
 
             SpecialColor color;
             LineKind lineKind;

@@ -172,13 +172,13 @@
     <value>Antall deltakere i ei løype må være eit heltal mellom 0 og 999999 eller være blank.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Angra</value>
+    <value>_Angra</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Gjer om</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Gjer om</value>
+    <value>_Gjer om</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Gjer om</value>

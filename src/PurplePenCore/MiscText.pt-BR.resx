@@ -172,13 +172,13 @@
     <value>A carga para um percurso deve ser um número inteiro 0-999999 ou deixar o campo em branco.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Desfazer</value>
+    <value>_Desfazer</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Desfazer</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Refazer</value>
+    <value>_Refazer</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Refazer</value>

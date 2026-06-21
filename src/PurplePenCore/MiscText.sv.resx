@@ -172,13 +172,13 @@
     <value>Antal löpare på en bana måste vara ett heltal 0-999999 eller lämnas tomt.</value>
   </data>
   <data name="UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Ångra</value>
+    <value>_Ångra</value>
   </data>
   <data name="Undo" xml:space="preserve">
     <value>Ångra</value>
   </data>
   <data name="RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Gör om</value>
+    <value>_Gör om</value>
   </data>
   <data name="Redo" xml:space="preserve">
     <value>Gör om</value>
@@ -631,13 +631,13 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="ChangeMapFile_FileFilter" xml:space="preserve">
     <value>Alla kartfiler|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|OCAD-filer (*.ocd)|*.ocd|Open Orienteering Mapper-filer|*.omap;*.xmap|PDF-filer (*.pdf)|*.pdf|Bildfiler|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
   </data>
+  <data name="GpxFilter" xml:space="preserve">
+    <value>GPX-fil|*.gpx</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript är inte installerat</value>
-  </data>
-  <data name="GpxFilter" xml:space="preserve">
-    <value>GPX-fil|*.gpx</value>
   </data>
 </root>
