@@ -404,7 +404,8 @@
             </MenuItem>
 
             <!-- === Help Menu === -->
-            <MenuItem x:Name="helpMenu" Header="{resx:Localize MainFrame_helpMenu_Text}">
+            <MenuItem x:Name="helpMenu" Header="{resx:Localize MainFrame_helpMenu_Text}"
+                      SubmenuOpened="HelpMenu_SubmenuOpened">
                 <MenuItem x:Name="helpContentsMenu" Header="{resx:Localize MainFrame_helpContentsMenu_Text}" InputGesture="F1"
                           Command="{Binding HelpContentsCommand}"/>
                 <MenuItem x:Name="helpTranslatedMenu" Header="{resx:Localize MainFrame_helpTranslatedMenu_Text}"
@@ -419,26 +420,13 @@
                 <Separator/>
                 <MenuItem x:Name="aboutMenu" Header="{resx:Localize MainFrame_aboutMenu_Text}"
                           Command="{Binding ShowAboutDialogCommand}"/>
-                <!-- Debug submenu — only visible in debug builds -->
-                <MenuItem x:Name="debugMenu" Header="{resx:Localize MainFrame_debugMenu_Text}">
-                    <MenuItem x:Name="symbolBrowserMenu" Header="{resx:Localize MainFrame_symbolBrowserMenu_Text}"
-                              Command="{Binding ShowSymbolBrowserCommand}"/>
-                    <MenuItem x:Name="descriptionBrowserMenu" Header="{resx:Localize MainFrame_descriptionBrowserMenu_Text}"
-                              Command="{Binding ShowDescriptionBrowserCommand}"/>
-                    <MenuItem x:Name="controlTesterMenu" Header="{resx:Localize MainFrame_controlTesterMenu_Text}"
-                              Command="{Binding ShowControlTesterCommand}"/>
+
+                <!-- Debug submenu (shown only with Ctrl+Shift or Ctrl+Alt held; see HelpMenu_SubmenuOpened) -->
+                <MenuItem x:Name="debugMenu" Header="{resx:Localize MainFrame_debugMenu_Text}" IsVisible="False">
                     <MenuItem x:Name="mapTesterMenu" Header="{resx:Localize MainFrame_mapTesterMenu_Text}"
                               Command="{Binding ShowMapTesterCommand}"/>
-                    <MenuItem x:Name="courseSelectorTesterMenu" Header="{resx:Localize MainFrame_courseSelectorTesterMenu_Text}"
-                              Command="{Binding ShowCourseSelectorTesterCommand}"/>
-                    <MenuItem x:Name="dotGridTesterToolStripMenuItem" Header="{resx:Localize MainFrame_dotGridTesterToolStripMenuItem_Text}"
-                              Command="{Binding ShowDotGridTesterCommand}"/>
                     <MenuItem x:Name="dumpOCADFileMenu" Header="{resx:Localize MainFrame_dumpOCADFileMenu_Text}"
                               Command="{Binding DumpOcadFileCommand}"/>
-                    <MenuItem x:Name="reportTesterToolStripMenuItem" Header="{resx:Localize MainFrame_reportTesterToolStripMenuItem_Text}"
-                              Command="{Binding ShowReportTesterCommand}"/>
-                    <MenuItem x:Name="fontMetricsToolStripMenuItem" Header="{resx:Localize MainFrame_fontMetricsToolStripMenuItem_Text}"
-                              Command="{Binding ShowFontMetricsCommand}"/>
                     <MenuItem x:Name="missingTranslationsMenuItem" Header="{resx:Localize MainFrame_missingTranslationsMenuItem_Text}"
                               Command="{Binding ShowMissingTranslationsCommand}"/>
                     <MenuItem x:Name="crashToolStripMenuItem" Header="{resx:Localize MainFrame_crashToolStripMenuItem_Text}"
@@ -450,8 +438,9 @@
                         <MenuItem Header="Yes / No / Cancel" Command="{Binding TestMessageBoxYesNoCancelCommand}"/>
                     </MenuItem>
                 </MenuItem>
-                <!-- Translate submenu -->
-                <MenuItem x:Name="translateMenu" Header="{resx:Localize MainFrame_translateMenu_Text}">
+
+                <!-- Translate submenu (shown only with Ctrl+Shift or Ctrl+Alt held; see HelpMenu_SubmenuOpened) -->
+                <MenuItem x:Name="translateMenu" Header="{resx:Localize MainFrame_translateMenu_Text}" IsVisible="False">
                     <MenuItem x:Name="addDescriptionLanguageMenu" Header="{resx:Localize MainFrame_addDescriptionLanguageMenu_Text}"
                               Command="{Binding AddDescriptionLanguageCommand}"/>
                     <MenuItem x:Name="addTranslatedTextsMenu" Header="{resx:Localize MainFrame_addTranslatedTextsMenu_Text}"

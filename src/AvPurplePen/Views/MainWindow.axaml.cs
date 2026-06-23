@@ -26,6 +26,11 @@ namespace AvPurplePen.Views
     {
         private MousePointerShape _mousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
 
+        // Tracks the currently-held keyboard modifiers. Updated from window-level key events because
+        // Avalonia has no static equivalent of WinForms' Control.ModifierKeys. Used to decide whether
+        // the hidden Debug/Translate submenus should be revealed when the Help menu opens.
+        private KeyModifiers _currentModifiers = KeyModifiers.None;
+
         // Has the MousePointerShape that should be used in the map viewer.
         public static readonly DirectProperty<MainWindow, MousePointerShape> MapMousePointerShapeProperty =
                 AvaloniaProperty.RegisterDirect<MainWindow, MousePointerShape>(
@@ -40,6 +45,27 @@ namespace AvPurplePen.Views
         {
             InitializeComponent();
             ApplicationIdleService.ApplicationIdle += ApplicationIdle;
+
+            // Track modifier-key state at the window level (tunneling, including handled events) so it is
+            // current regardless of which child control has focus when the Help menu is opened.
+            AddHandler(KeyDownEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
+            AddHandler(KeyUpEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
+        }
+
+        // Records the current keyboard modifiers from any key event.
+        private void TrackModifiers(object? sender, KeyEventArgs e)
+        {
+            _currentModifiers = e.KeyModifiers;
+        }
+
+        // Called when the Help menu's submenu opens. The Debug and Translate submenus are revealed only
+        // when Ctrl+Shift or Ctrl+Alt is held down (matching the WinForms helpMenu_DropDownOpening behavior).
+        private void HelpMenu_SubmenuOpened(object? sender, RoutedEventArgs e)
+        {
+            bool show = (_currentModifiers & (KeyModifiers.Control | KeyModifiers.Shift)) == (KeyModifiers.Control | KeyModifiers.Shift) ||
+                        (_currentModifiers & (KeyModifiers.Control | KeyModifiers.Alt)) == (KeyModifiers.Control | KeyModifiers.Alt);
+            debugMenu.IsVisible = show;
+            translateMenu.IsVisible = show;
         }
 
         public MousePointerShape MapMousePointerShape {
