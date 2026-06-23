@@ -60,7 +60,7 @@
                 </MenuItem>
                 <MenuItem x:Name="saveAsMenu" Header="{resx:Localize MainFrame_saveAsMenu_Text}" Command="{Binding SaveAsCommand}"/>
                 <Separator/>
-                <MenuItem x:Name="createOcadFilesMenu" Header="{resx:Localize MainFrame_createOcadFilesMenu_Text}" Command="{Binding CreateOcadFilesCommand}"/>
+                <MenuItem x:Name="createOcadFilesMenu" Header="{Binding CreateOcadFilesCommandName}" Command="{Binding CreateOcadFilesCommand}"/>
                 <MenuItem x:Name="createImageFilesMenu" Header="{resx:Localize MainFrame_createImageFilesMenu_Text}" Command="{Binding CreateImageFilesCommand}"/>
                 <MenuItem x:Name="createPDFsMenu" Header="{resx:Localize MainFrame_createPDFsMenu_Text}">
                     <MenuItem x:Name="createDescriptionPdfMenu" Header="{resx:Localize MainFrame_createDescriptionPdfMenu_Text}" Command="{Binding CreateDescriptionPdfCommand}"/>
@@ -174,8 +174,14 @@
                               ToggleType="CheckBox" IsChecked="{Binding HighQualityMapDisplay}"/>
                 </MenuItem>
 
-                <MenuItem x:Name="showPrintAreaMenu" Header="{resx:Localize MainFrame_showPrintAreaMenu_Text}" Command="{Binding ToggleShowPrintAreaCommand}"/>
-                <MenuItem x:Name="showPopupsMenu" Header="{resx:Localize MainFrame_showPopupsMenu_Text}" Command="{Binding ToggleShowPopupsCommand}"/>
+                <MenuItem x:Name="showPrintAreaMenu" 
+                          Header="{resx:Localize MainFrame_showPrintAreaMenu_Text}"     
+                          ToggleType="CheckBox" IsChecked="{Binding ShowPrintArea}"
+                          Command="{Binding ToggleShowPrintAreaCommand}"/>
+                <MenuItem x:Name="showPopupsMenu"   
+                          Header="{resx:Localize MainFrame_showPopupsMenu_Text}" 
+                          ToggleType="CheckBox" IsChecked="{Binding ShowToolTips}"
+                          Command="{Binding ToggleShowPopupsCommand}"/>
 
                 <Separator/>
 

@@ -120,6 +120,9 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         private string redoToolTip = MiscText.Redo;
 
+        [ObservableProperty]
+        private string createOcadFilesCommandName = "";
+
 
         // The slider view of the zoom, which is a log-based based of the true zoom, clamped to 0-100.
         private const float zoomSliderMin = 0.25F; //25%

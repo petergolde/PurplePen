@@ -26,9 +26,6 @@ namespace PurplePen.ViewModels
 #if PORTING
             // Still need to port more logic from MainFrame.UpdateMenusToolbarButtons.
             // - Cancel mode vs Clear selection text
-            // - showPopupsMenu 
-            // - showPrintAreaMenu
-            // - createOcadFilesMenu.Text
             // - outOfBoundsToolStripMenuItem.Image,  addOutOfBoundsMenu.Image
 #endif
 
@@ -87,6 +84,9 @@ namespace PurplePen.ViewModels
                 RedoCommandName = MiscText.RedoWithShortcut;
                 RedoToolTip = MiscText.Redo;
             }
+
+            CreateOcadFilesCommandName = controller.CreateOcadFilesText(true).Replace("&", "_") + "...";
+
 
             // Update checked status of leg flagging options
             FlaggingKind currentFlagging;
@@ -477,12 +477,12 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void ToggleShowPopups()
         {
-#if !PORTING
-            showToolTips = !showToolTips;
-            UserSettings.Current.ShowPopupInfo = showToolTips;
+            ShowToolTips = !ShowToolTips;
+            UserSettings.Current.ShowPopupInfo = ShowToolTips;
             UserSettings.Current.Save();
-#endif
         }
+
+        [ObservableProperty] private bool showToolTips = UserSettings.Current.ShowPopupInfo;
 
         /// <summary>
         /// Toggles display of the print area.
@@ -490,12 +490,13 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void ToggleShowPrintArea()
         {
-#if !PORTING
-            UserSettings.Current.ShowPrintArea = !UserSettings.Current.ShowPrintArea;
+            ShowPrintArea = !ShowPrintArea;
+            UserSettings.Current.ShowPrintArea = ShowPrintArea;
             UserSettings.Current.Save();
-            controller.ForceChangeUpdate(true);
-#endif
+            controller?.ForceChangeUpdate(true);
         }
+
+        [ObservableProperty] private bool showPrintArea = UserSettings.Current.ShowPrintArea;
 
         /// <summary>
         /// Sets map rendering to high quality (anti-aliased).
