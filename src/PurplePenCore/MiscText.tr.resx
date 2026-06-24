@@ -641,7 +641,7 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
     <value>Purple Pen dosyası|*.ppen</value>
   </data>
   <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
-    <value>IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml</value>
+    <value>IOF XML version 3.0|*.xml|IOF XML version 2.0.3|*.xml</value>
   </data>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>XML Interchange Dosyası Yarat</value>

@@ -665,7 +665,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
     <value>Purple Pen file|*.ppen</value>
   </data>
   <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
-    <value>IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml</value>
+    <value>IOF XML version 3.0|*.xml|IOF XML version 2.0.3|*.xml</value>
   </data>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Create XML Interchange File</value>

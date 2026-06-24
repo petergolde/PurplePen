@@ -629,7 +629,7 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
     <value>Purple Pen fájl|*.ppen</value>
   </data>
   <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
-    <value>IOF XML 2.0.3 verzió|*.xml|IOF XML 3.0 verzió|*.xml</value>
+    <value>IOF XML 3.0 verzió|*.xml|IOF XML 2.0.3 verzió|*.xml</value>
   </data>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>XML fájl létrehozása</value>

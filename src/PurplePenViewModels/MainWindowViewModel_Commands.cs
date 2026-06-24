@@ -2392,8 +2392,8 @@ namespace PurplePen.ViewModels
             if (saveVm.SelectedFile == null)
                 return;
 
-            // The second filter selects IOF XML version 3; the first (default) selects version 2.
-            int version = (saveVm.FileFilterIndex == 2) ? 3 : 2;
+            // The first filter (default) selects IOF XML version 3; the second selects version 2.
+            int version = (saveVm.FileFilterIndex == 2) ? 2 : 3;
             controller.ExportXml(saveVm.SelectedFile, MapDisplay.MapBounds, version);
         }
 

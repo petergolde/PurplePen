@@ -227,15 +227,15 @@ Usar | para separar linhas</value>
 Usar | para separar linhas</value>
   </data>
   <data name="DeleteMultipleControlsFromControlsCollection" xml:space="preserve">
-    <value>Os controles {0} não são mais usados por nenhum percurso. 
+    <value>Os controles {0} não são mais usados por nenhum percurso. 
 Deseja excluir esses controles da coleção de controles?</value>
   </data>
   <data name="DeleteControlFromControlsCollection" xml:space="preserve">
-    <value>O controle {0} não é mais usado por nenhum percurso. 
+    <value>O controle {0} não é mais usado por nenhum percurso. 
 Deseja excluir este controle da coleção de controles?</value>
   </data>
   <data name="DeleteControlFromAllControls" xml:space="preserve">
-    <value>O controle {0} é usado atualmente pelos seguintes percursos: {1}.
+    <value>O controle {0} é usado atualmente pelos seguintes percursos: {1}.
 Deseja excluir este controle mesmo assim?</value>
   </data>
   <data name="DuplicateCode" xml:space="preserve">
@@ -339,7 +339,7 @@ Após pressionar OK, tente encontrar uma cópia do arquivo de mapa em seu comput
     <value>Alterar Texto</value>
   </data>
   <data name="MapFileChanged" xml:space="preserve">
-    <value>Outro programa alterou o arquivo de mapa "{0}".
+    <value>Outro programa alterou o arquivo de mapa "{0}".
 O Purple Pen agora recarregará o mapa.</value>
   </data>
   <data name="ChangeDescriptionLanguage" xml:space="preserve">
@@ -409,11 +409,11 @@ O Purple Pen agora recarregará o mapa.</value>
     <value>Imprimindo página {0} (de {1})</value>
   </data>
   <data name="MapFileDeleted" xml:space="preserve">
-    <value>O arquivo de mapa "{0}" foi excluído.
+    <value>O arquivo de mapa "{0}" foi excluído.
 Por favor, tente restaurar o arquivo de mapa e pressione "Ok".</value>
   </data>
   <data name="BadDotNetFramework" xml:space="preserve">
-    <value>O framework .NET em seu computador não parece estar instalado corretamente.
+    <value>O framework .NET em seu computador não parece estar instalado corretamente.
 Visite http://microsoft.com/net e instale a versão mais recente do framework .NET para seu sistema operacional Windows.</value>
   </data>
   <data name="Black" xml:space="preserve">
@@ -483,7 +483,7 @@ Visite http://microsoft.com/net e instale a versão mais recente do framework .N
     <value>Insira o comprimento em km ou deixe em branco para calcular automaticamente</value>
   </data>
   <data name="PausePrinting" xml:space="preserve">
-    <value>Impressão de "{0}" concluída.
+    <value>Impressão de "{0}" concluída.
 Pressione OK para começar a imprimir "{1}".</value>
   </data>
   <data name="OCAD" xml:space="preserve">
@@ -499,14 +499,14 @@ Pressione OK para começar a imprimir "{1}".</value>
     <value>Adequado para uso em revezamentos com {0} participantes por equipe.</value>
   </data>
   <data name="LoopSummary" xml:space="preserve">
-    <value>O controle central na volta será visitado {0} vezes.
+    <value>O controle central na volta será visitado {0} vezes.
 Existem {1} caminhos possíveis pelas voltas.</value>
   </data>
   <data name="CantRearrangeSplitControl" xml:space="preserve">
     <value>Um controle que inicia uma dispersão ou volta não pode ser arrastado para um novo local no percurso.</value>
   </data>
   <data name="TooManyVariations" xml:space="preserve">
-    <value>Muitas variações totais neste curso.
+    <value>Muitas variações totais neste curso.
 O número de variações distintas é limitado a {0}.</value>
   </data>
   <data name="CannotAddVariation" xml:space="preserve">
@@ -528,7 +528,7 @@ O número de variações distintas é limitado a {0}.</value>
     <value>Uma variação não pode ser adicionada a um percurso de pontuação (fazenda).</value>
   </data>
   <data name="VariationNotLastControl" xml:space="preserve">
-    <value>Uma variação não pode ser adicionada ao último controle.
+    <value>Uma variação não pode ser adicionada ao último controle.
 Adicione um controle de chegada primeiro.</value>
   </data>
   <data name="MapIssue_Long" xml:space="preserve">
@@ -580,7 +580,7 @@ Adicione um controle de chegada primeiro.</value>
     <value>Não é possível ler o mapa pelo seguinte motivo: '{0}' Usar Otimizar/Reparar e salvar novamente no OCAD pode corrigir problemas.</value>
   </data>
   <data name="CannotReadMapOOM" xml:space="preserve">
-    <value>Não é possível ler o mapa pelo seguinte motivo: '{0}' 
+    <value>Não é possível ler o mapa pelo seguinte motivo: '{0}' 
 Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapper pode corrigir problemas.</value>
   </data>
   <data name="CodeBadLength" xml:space="preserve">
@@ -641,7 +641,7 @@ Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapp
     <value>Arquivo Purple Pen |*.ppen</value>
   </data>
   <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
-    <value>IOF XML versão 2.0.3|*.xml|IOF XML versão 3.0|*.xml</value>
+    <value>IOF XML versão 3.0|*.xml|IOF XML versão 2.0.3|*.xml</value>
   </data>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Criar Arquivo de Intercâmbio XML</value>
