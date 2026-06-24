@@ -1882,7 +1882,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Print Descriptions command.
         /// </summary>
         [RelayCommand]
-        private void PrintDescriptions()
+        private async Task PrintDescriptions()
         {
 #if !PORTING
             // Initialize dialog
@@ -1902,6 +1902,14 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             printDescDialog.Dispose();
+#else
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = "Direct printing is not yet implemented in this beta release. For now, please use the PDF creation feature.",
+                Buttons = MessageBoxButtons.Ok,
+                DefaultButton = MessageBoxButton.Ok,
+                Icon = MessageBoxIcon.Warning
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
 #endif
         }
 
@@ -1977,7 +1985,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Print Punch Cards command.
         /// </summary>
         [RelayCommand]
-        private void PrintPunchCards()
+        private async Task PrintPunchCards()
         {
 #if !PORTING
             PrintPunches printPunchesDialog = new PrintPunches(controller.GetEventDB(), false);
@@ -1998,6 +2006,14 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             printPunchesDialog.Dispose();
+#else
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = "Direct printing is not yet implemented in this beta release. For now, please use the PDF creation feature.",
+                Buttons = MessageBoxButtons.Ok,
+                DefaultButton = MessageBoxButton.Ok,
+                Icon = MessageBoxIcon.Warning
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
 #endif
         }
 
@@ -2067,7 +2083,7 @@ namespace PurplePen.ViewModels
         /// Executes the File/Print Courses command.
         /// </summary>
         [RelayCommand]
-        private void PrintCourses()
+        private async Task PrintCourses()
         {
 #if !PORTING
             if (!CheckForNonRenderableObjects(false, true))
@@ -2100,6 +2116,14 @@ namespace PurplePen.ViewModels
 
             // And the dialog is done.
             printCoursesDialog.Dispose();
+#else
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = "Direct printing is not yet implemented in this beta release. For now, please use the PDF creation feature.",
+                Buttons = MessageBoxButtons.Ok,
+                DefaultButton = MessageBoxButton.Ok,
+                Icon = MessageBoxIcon.Warning
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
 #endif
         }
 
