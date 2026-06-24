@@ -202,8 +202,12 @@ namespace PurplePen.ViewModels
                 UpdatePrintArea();
                 UpdateTopologyHighlight();
                 UpdateCustomSymbolText();
-                CheckForNonRenderableObjects(true, false);
 #endif
+                // Warn about non-renderable objects (fire-and-forget — the controller
+                // reports the list only once per map file, so re-entry from a
+                // later idle tick while the dialog is open is harmless).
+                _ = CheckForNonRenderableObjects(true, false);
+
                 // Warn about missing fonts (fire-and-forget — the controller
                 // reports the list only once per map file, so re-entry from a
                 // later idle tick while the dialog is open is harmless).

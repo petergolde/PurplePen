@@ -152,23 +152,6 @@ namespace PurplePen.ViewModels
         // Warn user about non-renderable objects. Return false if shouldn't continue
         private async Task<bool> CheckForNonRenderableObjects(bool onlyOnce, bool showCancelAndContinue)
         {
-#if !PORTING
-            // Check for objects that aren't renderable, and warn. If user choses cancel, then cancel.
-            string[] nonRenderableObjects = controller.NonrenderableObjects(onlyOnce);
-
-            if (nonRenderableObjects != null && nonRenderableObjects.Length > 0) {
-                NonPrintableObjects dialog = new NonPrintableObjects(showCancelAndContinue);
-                dialog.MapName = Path.GetFileName(controller.MapFileName);
-                dialog.BadObjectList = nonRenderableObjects;
-
-                DialogResult result = dialog.ShowDialog();
-
-                if (result == DialogResult.Cancel)
-                    return false;
-            }
-
-            return true;
-#else
             if (controller == null) { return true; }
 
             string[]? nonRenderableObjects = controller.NonrenderableObjects(onlyOnce);
@@ -185,7 +168,6 @@ namespace PurplePen.ViewModels
             // (showCancelAndContinue=false) only Continue is shown, so the
             // result is always true, but we still respect it for symmetry.
             return await Services.DialogService.ShowDialogAsync(vm);
-#endif
         }
 
         // Check for missing fonts in the map file and warn about them. The
@@ -193,20 +175,6 @@ namespace PurplePen.ViewModels
         // to call from the idle handler — subsequent calls return nothing.
         private async Task CheckForMissingFonts()
         {
-#if !PORTING
-            string[] missingFonts = controller.MissingFontList();      // This only returns missing fonts once!
-
-            if (missingFonts != null && missingFonts.Length > 0) {
-                // We have some missing fonts. Show the dialog.
-                MissingFonts dialog = new MissingFonts();
-                dialog.MapName = Path.GetFileName(controller.MapFileName);
-                dialog.MissingFontList = missingFonts;
-
-                dialog.ShowDialog();
-
-                controller.IgnoreMissingFontsForever(dialog.IgnoreMissingFonts);
-            }
-#else
             if (controller == null) { return; }
 
             string[]? missingFonts = controller.MissingFontList();   // This only returns missing fonts once!
@@ -222,7 +190,6 @@ namespace PurplePen.ViewModels
 
             // Remember the "don't warn again for this event" choice.
             controller.IgnoreMissingFontsForever(vm.IgnoreMissingFonts);
-#endif
         }
 
 
@@ -268,19 +235,21 @@ namespace PurplePen.ViewModels
         {
             if (controller == null) return;
 
-#if PORTING
-            // Not all functionality ported from MainFrame.openMenu_Click.
-#endif
-            FileOpenSingleViewModel fileOpenVM = new FileOpenSingleViewModel {
-                FileFilters = MiscText.OpenFileDialog_PurplePenFilter,
-                InitialFileFilterIndex = 1
-            };
+            // Try to close the current file. If that succeeds, then ask for a new file and try to open it.
+            bool closeSuccess = await controller.TryCloseFile();
 
-            bool result = await Services.DialogService.ShowDialogAsync(fileOpenVM);
+            if (closeSuccess) {
+                FileOpenSingleViewModel fileOpenVM = new FileOpenSingleViewModel {
+                    FileFilters = MiscText.OpenFileDialog_PurplePenFilter,
+                    InitialFileFilterIndex = 1
+                };
 
-            if (result && fileOpenVM.SelectedFile != null) {
-                string newFilename = fileOpenVM.SelectedFile;
-                bool success = await controller.LoadNewFile(newFilename);
+                bool result = await Services.DialogService.ShowDialogAsync(fileOpenVM);
+
+                if (result && fileOpenVM.SelectedFile != null) {
+                    string newFilename = fileOpenVM.SelectedFile;
+                    bool success = await controller.LoadNewFile(newFilename);
+                }
             }
         }
 
@@ -309,13 +278,30 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Executes the File/Exit command. Closes the application.
+        /// Raised when the application should exit after the current file has
+        /// been closed successfully. The View handles this by shutting down the
+        /// application. The ViewModel cannot reference Avalonia, so the actual
+        /// shutdown is performed by the View.
+        /// </summary>
+        public event Action? ExitRequested;
+
+        /// <summary>
+        /// Executes the File/Exit command. Tries to close the current file
+        /// (prompting to save if dirty); if the user does not cancel, requests
+        /// that the application exit.
         /// </summary>
         [RelayCommand]
-        private void Exit()
+        private async Task Exit()
         {
 #if !PORTING
             Close();
+#else
+            if (controller == null)
+                return;
+
+            if (await controller.TryCloseFile()) {
+                ExitRequested?.Invoke();
+            }
 #endif
         }
 

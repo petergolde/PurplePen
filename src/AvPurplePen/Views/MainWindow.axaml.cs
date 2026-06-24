@@ -6,6 +6,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using AvUtil;
@@ -26,10 +27,19 @@ namespace AvPurplePen.Views
     {
         private MousePointerShape _mousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
 
+        // Set to true once the user has confirmed exit (the current file was closed
+        // successfully). While false, the window's close button (the X) is intercepted
+        // and routed through the Exit command so the user is prompted to save first.
+        private bool exitConfirmed = false;
+
+        // The ViewModel whose ExitRequested event we are currently subscribed to.
+        // Tracked so we can unsubscribe when the DataContext changes.
+        private MainWindowViewModel? subscribedViewModel;
+
         // Tracks the currently-held keyboard modifiers. Updated from window-level key events because
         // Avalonia has no static equivalent of WinForms' Control.ModifierKeys. Used to decide whether
         // the hidden Debug/Translate submenus should be revealed when the Help menu opens.
-        private KeyModifiers _currentModifiers = KeyModifiers.None;
+        private KeyModifiers currentModifiers = KeyModifiers.None;
 
         // Has the MousePointerShape that should be used in the map viewer.
         public static readonly DirectProperty<MainWindow, MousePointerShape> MapMousePointerShapeProperty =
@@ -50,20 +60,66 @@ namespace AvPurplePen.Views
             // current regardless of which child control has focus when the Help menu is opened.
             AddHandler(KeyDownEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
             AddHandler(KeyUpEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
+
+            // The window's close button (the X) and the File/Exit menu both route through
+            // the ViewModel's Exit command, which prompts to save before allowing the exit.
+            DataContextChanged += MainWindow_DataContextChanged;
+            Closing += MainWindow_Closing;
+        }
+
+        // Keep our subscription to the ViewModel's ExitRequested event in sync with the
+        // current DataContext.
+        private void MainWindow_DataContextChanged(object? sender, EventArgs e)
+        {
+            if (subscribedViewModel != null) {
+                subscribedViewModel.ExitRequested -= ViewModel_ExitRequested;
+                subscribedViewModel = null;
+            }
+
+            if (DataContext is MainWindowViewModel viewModel) {
+                viewModel.ExitRequested += ViewModel_ExitRequested;
+                subscribedViewModel = viewModel;
+            }
+        }
+
+        // Raised by the ViewModel once the current file has been closed successfully and
+        // the application should exit. Allow the window to actually close now.
+        private void ViewModel_ExitRequested()
+        {
+            exitConfirmed = true;
+            if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+                desktop.Shutdown();
+            }
+            else {
+                Close();
+            }
+        }
+
+        // Intercept the window's close button. Until the user has confirmed the exit (via
+        // the Exit command, which prompts to save), cancel the close and run that command.
+        private void MainWindow_Closing(object? sender, WindowClosingEventArgs e)
+        {
+            if (exitConfirmed)
+                return;   // exit already confirmed; let the window close.
+
+            e.Cancel = true;
+            if (DataContext is MainWindowViewModel viewModel && viewModel.ExitCommand.CanExecute(null)) {
+                viewModel.ExitCommand.Execute(null);
+            }
         }
 
         // Records the current keyboard modifiers from any key event.
         private void TrackModifiers(object? sender, KeyEventArgs e)
         {
-            _currentModifiers = e.KeyModifiers;
+            currentModifiers = e.KeyModifiers;
         }
 
         // Called when the Help menu's submenu opens. The Debug and Translate submenus are revealed only
         // when Ctrl+Shift or Ctrl+Alt is held down (matching the WinForms helpMenu_DropDownOpening behavior).
         private void HelpMenu_SubmenuOpened(object? sender, RoutedEventArgs e)
         {
-            bool show = (_currentModifiers & (KeyModifiers.Control | KeyModifiers.Shift)) == (KeyModifiers.Control | KeyModifiers.Shift) ||
-                        (_currentModifiers & (KeyModifiers.Control | KeyModifiers.Alt)) == (KeyModifiers.Control | KeyModifiers.Alt);
+            bool show = (currentModifiers & (KeyModifiers.Control | KeyModifiers.Shift)) == (KeyModifiers.Control | KeyModifiers.Shift) ||
+                        (currentModifiers & (KeyModifiers.Control | KeyModifiers.Alt)) == (KeyModifiers.Control | KeyModifiers.Alt);
             debugMenu.IsVisible = show;
             translateMenu.IsVisible = show;
         }
