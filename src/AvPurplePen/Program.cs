@@ -56,6 +56,7 @@ namespace AvPurplePen
             // lifetime each time it shows a dialog, so it needs no constructor state.
             services.AddSingleton<IDialogService, DialogService>();
             services.AddSingleton<IUILanguage, UILanguageService>();
+            services.AddSingleton<IWebsiteLauncher, WebsiteLauncherService>();
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
 
             serviceProvider = services.BuildServiceProvider();

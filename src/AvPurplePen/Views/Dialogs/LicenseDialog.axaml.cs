@@ -10,6 +10,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using PurplePen;
 using PurplePen.ViewModels;
 
 namespace AvPurplePen.Views
@@ -35,13 +36,8 @@ namespace AvPurplePen.Views
         {
             if (DataContext is not LicenseDialogViewModel vm)
                 return;
-#if PORTING
-            // TODO: Use common link launcher service?
-            TopLevel? topLevel = GetTopLevel(this);
-            if (topLevel != null) {
-                await topLevel.Launcher.LaunchUriAsync(new Uri(vm.BsdLicenseUrl));
-            }
-#endif
+
+            await Services.WebsiteLauncher.ShowWebsite(vm.BsdLicenseUrl);
         }
 
         /// <summary>

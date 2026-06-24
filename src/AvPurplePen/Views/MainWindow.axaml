@@ -415,6 +415,7 @@
                 <MenuItem x:Name="helpContentsMenu" Header="{resx:Localize MainFrame_helpContentsMenu_Text}" InputGesture="F1"
                           Command="{Binding HelpContentsCommand}"/>
                 <MenuItem x:Name="helpTranslatedMenu" Header="{resx:Localize MainFrame_helpTranslatedMenu_Text}"
+                          IsVisible="{Binding IsVisibleTranslatedWebSite}"
                           Command="{Binding HelpTranslatedCommand}"/>
                 <Separator/>
                 <MenuItem x:Name="mainWebSiteToolMenu" Header="{resx:Localize MainFrame_mainWebSiteToolMenu_Text}"

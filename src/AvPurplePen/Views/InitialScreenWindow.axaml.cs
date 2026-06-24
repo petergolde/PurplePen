@@ -89,10 +89,7 @@ namespace AvPurplePen.Views
             if (DataContext is not InitialScreenViewModel vm)
                 return;
 
-            TopLevel? topLevel = GetTopLevel(this);
-            if (topLevel != null) {
-                await topLevel.Launcher.LaunchUriAsync(new Uri(vm.DonationUrl));
-            }
+            await Services.WebsiteLauncher.ShowWebsite(vm.DonationUrl);
         }
 
         /// <summary>

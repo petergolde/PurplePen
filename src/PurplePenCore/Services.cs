@@ -31,6 +31,7 @@ namespace PurplePen
         public static IPdfWriter PdfWriter => serviceProvider.GetRequiredService<IPdfWriter>();
         public static IDialogService DialogService => serviceProvider.GetRequiredService<IDialogService>();
         public static IUILanguage UILanguage => serviceProvider.GetRequiredService<IUILanguage>();
+        public static IWebsiteLauncher WebsiteLauncher => serviceProvider.GetRequiredService<IWebsiteLauncher>();
     }
 
 }

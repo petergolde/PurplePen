@@ -55,6 +55,7 @@ namespace PurplePen.ViewModels
             CanClearOtherCourses = (controller.CanClearExtraCourseDisplay() == CommandStatus.Enabled);
             CanChangeDisplayedCourses = (controller.CanChangeDisplayedCourses(out _, out _) == CommandStatus.Enabled);
             IsVisibleClearOtherCourses = (controller.CanClearExtraCourseDisplay() != CommandStatus.Hidden);
+            IsVisibleTranslatedWebSite = TranslatedWebSiteExists();
 
             // Update checked status of standards, and make dangerous area visible/hidden.
             string descriptionStandard = controller.GetDescriptionStandard();
@@ -569,6 +570,8 @@ namespace PurplePen.ViewModels
         private bool canClearOtherCourses;
         [ObservableProperty]
         private bool isVisibleClearOtherCourses;
+        [ObservableProperty]
+        private bool isVisibleTranslatedWebSite;
 
 
         #endregion // View commands
@@ -2772,48 +2775,50 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        private bool TranslatedWebSiteExists()
+        {
+            string url = MiscText.TranslatedHelpWebSite;
+            return (url.Length > 0 && url[0] == 'h');
+        }
+
+
+
         /// <summary>
         /// Opens the translated help web site.
         /// </summary>
         [RelayCommand]
-        private void HelpTranslated()
+        private async Task HelpTranslated()
         {
-#if !PORTING
-            WindowsUtil.GoToWebPage(MiscText.TranslatedHelpWebSite);
-#endif
+            if (TranslatedWebSiteExists()) {
+                await Services.WebsiteLauncher.ShowWebsite(MiscText.TranslatedHelpWebSite);
+            }
         }
 
         /// <summary>
         /// Opens the main Purple Pen web site.
         /// </summary>
         [RelayCommand]
-        private void OpenMainWebSite()
+        private async Task OpenMainWebSite()
         {
-#if !PORTING
-            WindowsUtil.GoToWebPage("http://purple-pen.org");
-#endif
+            await Services.WebsiteLauncher.ShowWebsite("http://purple-pen.org");
         }
 
         /// <summary>
         /// Opens the Purple Pen support web site.
         /// </summary>
         [RelayCommand]
-        private void OpenSupportWebSite()
+        private async Task OpenSupportWebSite()
         {
-#if !PORTING
-            WindowsUtil.GoToWebPage("http://purple-pen.org#support");
-#endif
+            await Services.WebsiteLauncher.ShowWebsite("http://purple-pen.org#support");
         }
 
         /// <summary>
         /// Opens the Purple Pen donate web site.
         /// </summary>
         [RelayCommand]
-        private void OpenDonateWebSite()
+        private async Task OpenDonateWebSite()
         {
-#if !PORTING
-            WindowsUtil.GoToWebPage("http://purple-pen.org#donate");
-#endif
+            await Services.WebsiteLauncher.ShowWebsite("http://purple-pen.org#donate");
         }
 
         /// <summary>
