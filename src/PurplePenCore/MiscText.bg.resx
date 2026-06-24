@@ -640,4 +640,10 @@
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Файл на Purple Pen|*.ppen</value>
   </data>
+  <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
+    <value>IOF XML версия 2.0.3|*.xml|IOF XML версия 3.0|*.xml</value>
+  </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>Създай XML файл за обмен на данни...</value>
+  </data>
 </root>

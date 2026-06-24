@@ -523,4 +523,7 @@ Użyj | aby rozdzielić linie
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Plik Purple Pen|*.ppen</value>
   </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>Utwórz plik XML</value>
+  </data>
 </root>

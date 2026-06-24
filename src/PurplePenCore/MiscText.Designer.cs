@@ -1433,6 +1433,24 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml.
+        /// </summary>
+        public static string SaveXmlFileDialog_Filter {
+            get {
+                return ResourceManager.GetString("SaveXmlFileDialog_Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create XML Interchange File.
+        /// </summary>
+        public static string SaveXmlFileDialog_Title {
+            get {
+                return ResourceManager.GetString("SaveXmlFileDialog_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to singular.
         /// </summary>
         public static string Singular {

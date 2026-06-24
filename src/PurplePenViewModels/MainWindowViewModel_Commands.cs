@@ -308,16 +308,12 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task Exit()
         {
-#if !PORTING
-            Close();
-#else
             if (controller == null)
                 return;
 
             if (await controller.TryCloseFile()) {
                 ExitRequested?.Invoke();
             }
-#endif
         }
 
         #endregion // File commands
@@ -690,23 +686,6 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task AddVariation()
         {
-#if !PORTING
-            string reason;
-            if (controller.CanAddVariation(out reason) != CommandStatus.Enabled) {
-                await ErrorMessage(reason);
-                return;
-            }
-
-            AddForkDialog addForkDialog = new AddForkDialog();
-
-            DialogResult result = addForkDialog.ShowDialog(this);
-
-            if (result == DialogResult.OK) {
-                await controller.AddVariation(addForkDialog.Loop, addForkDialog.NumberOfBranches);
-            }
-
-            addForkDialog.Dispose();
-#else
             if (controller == null) { return; }
 
             string reason;
@@ -720,7 +699,6 @@ namespace PurplePen.ViewModels
             if (await Services.DialogService.ShowDialogAsync(vm)) {
                 await controller.AddVariation(vm.IsLoop, vm.NumberOfBranches);
             }
-#endif
         }
 
         /// <summary>
@@ -2386,25 +2364,37 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Executes the File/Export XML command.
+        /// Executes the File/Export XML command. Shows a Save File dialog and,
+        /// if the user picks a file, exports the event as an IOF XML interchange file.
         /// </summary>
         [RelayCommand]
-        private void CreateXml()
+        private async Task CreateXml()
         {
-#if !PORTING
+            if (controller == null || MapDisplay == null) { return; }
+
             // The default output for the XML is the same as the event file name, with xml extension.
             string xmlFileName = Path.ChangeExtension(controller.FileName, ".xml");
 
-            saveXmlFileDialog.FileName = xmlFileName;
-            DialogResult result = saveXmlFileDialog.ShowDialog();
+            // Ask where to save. The file-save picker is hosted by
+            // DialogService via FileSaveViewModel's special case.
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                Title = MiscText.SaveXmlFileDialog_Title,
+                FileFilters = MiscText.SaveXmlFileDialog_Filter,
+                FileFilterIndex = 2,
+                DefaultExtension = "xml",
+                ShowOverwritePrompt = true,
+                InitialDirectory = Path.GetDirectoryName(xmlFileName),
+                SuggestedFileName = Path.GetFileName(xmlFileName),
+            };
 
-            if (result == DialogResult.OK) {
-                int version = 2;
-                if (saveXmlFileDialog.FilterIndex == 2)
-                    version = 3;
-                controller.ExportXml(saveXmlFileDialog.FileName, mapDisplay.MapBounds, version);
-            }
-#endif
+            if (!await Services.DialogService.ShowDialogAsync(saveVm))
+                return;
+            if (saveVm.SelectedFile == null)
+                return;
+
+            // The second filter selects IOF XML version 3; the first (default) selects version 2.
+            int version = (saveVm.FileFilterIndex == 2) ? 3 : 2;
+            controller.ExportXml(saveVm.SelectedFile, MapDisplay.MapBounds, version);
         }
 
         /// <summary>

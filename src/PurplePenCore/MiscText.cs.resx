@@ -631,4 +631,10 @@ OK - zkus soubor s mapou najít.</value>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Soubor Purple Pen|*.ppen</value>
   </data>
+  <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
+    <value>IOF XML verze 2.0.3|*.xml|IOF XML verze 3.0|*.xml</value>
+  </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>Vytvořit soubor IOF XML</value>
+  </data>
 </root>

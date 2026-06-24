@@ -622,4 +622,10 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Fichier Purple Pen|*.ppen</value>
   </data>
+  <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
+    <value>XML IOF version 2.0.3|*.xml|XML IOF version 3.0|*.xml</value>
+  </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>Créer un fichier d'interchange XML</value>
+  </data>
 </root>

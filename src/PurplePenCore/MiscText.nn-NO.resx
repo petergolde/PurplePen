@@ -385,4 +385,7 @@ Trykk OK og forsøk å finne kartfila på datamaskina di.</value>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen fil|*.ppen</value>
   </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>Lag en XML-fil for eksport</value>
+  </data>
 </root>

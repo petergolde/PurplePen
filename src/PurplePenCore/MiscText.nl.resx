@@ -216,4 +216,10 @@
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX file|*.gpx</value>
   </data>
+  <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
+    <value>IOF XML versie 2.0.3|*.xml|IOF XML versie 3.0|*.xml</value>
+  </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>Creëer XML uitwisselings bestand</value>
+  </data>
 </root>

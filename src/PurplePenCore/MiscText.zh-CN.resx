@@ -627,4 +627,10 @@
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>紫笔文件|*.ppen</value>
   </data>
+  <data name="SaveXmlFileDialog_Filter" xml:space="preserve">
+    <value>国际定联XML版本 2.0.3|*.xml|国际定联XML版本 3.0|*.xml</value>
+  </data>
+  <data name="SaveXmlFileDialog_Title" xml:space="preserve">
+    <value>创建XML文件交换</value>
+  </data>
 </root>
