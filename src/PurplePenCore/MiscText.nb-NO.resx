@@ -639,4 +639,7 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Lag en XML-fil for eksport</value>
   </data>
+  <data name="OpenImageDialog_Filter" xml:space="preserve">
+    <value>Bilde fil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
 </root>

@@ -912,20 +912,22 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Executes the Add/Image command. Shows an Open File dialog for image selection.
+        /// Executes the Add/Image command. Shows an Open File dialog for image selection,
+        /// then begins the add-image special mode with the selected file.
         /// </summary>
         [RelayCommand]
-        private void AddImage()
+        private async Task AddImage()
         {
-#if !PORTING
-            openImageDialog.FileName = null;
-            DialogResult result = openImageDialog.ShowDialog();
+            if (controller == null) { return; }
 
-            if (result == DialogResult.OK) {
-                string fileName = openImageDialog.FileName;
-                controller.BeginAddImageSpecialMode(fileName);
+            FileOpenSingleViewModel fileOpenVM = new FileOpenSingleViewModel {
+                FileFilters = MiscText.OpenImageDialog_Filter,
+                InitialFileFilterIndex = 1,
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(fileOpenVM) && fileOpenVM.SelectedFile != null) {
+                controller.BeginAddImageSpecialMode(fileOpenVM.SelectedFile);
             }
-#endif
         }
 
         /// <summary>

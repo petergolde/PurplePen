@@ -637,4 +637,7 @@ OK - zkus soubor s mapou najít.</value>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Vytvořit soubor IOF XML</value>
   </data>
+  <data name="OpenImageDialog_Filter" xml:space="preserve">
+    <value>Obrázkový soubor|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
 </root>

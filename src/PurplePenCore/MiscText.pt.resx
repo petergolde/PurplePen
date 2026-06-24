@@ -648,4 +648,7 @@ Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapp
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Gerar XML Interchange File</value>
   </data>
+  <data name="OpenImageDialog_Filter" xml:space="preserve">
+    <value>Ficheiro Imagem|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
 </root>

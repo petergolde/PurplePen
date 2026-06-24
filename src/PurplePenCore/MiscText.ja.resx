@@ -592,4 +592,7 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>データ交換ファイル(IOF XML)を作成</value>
   </data>
+  <data name="OpenImageDialog_Filter" xml:space="preserve">
+    <value>画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
 </root>

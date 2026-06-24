@@ -646,4 +646,7 @@
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Създай XML файл за обмен на данни...</value>
   </data>
+  <data name="OpenImageDialog_Filter" xml:space="preserve">
+    <value>Файл с изображение|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
 </root>

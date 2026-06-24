@@ -1226,6 +1226,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff.
+        /// </summary>
+        public static string OpenImageDialog_Filter {
+            get {
+                return ResourceManager.GetString("OpenImageDialog_Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open &quot;{0}&quot;.
         /// </summary>
         public static string OpenLastEvent {
@@ -1433,7 +1442,7 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IOF XML version 2.0.3|*.xml|IOF XML version 3.0|*.xml.
+        ///   Looks up a localized string similar to IOF XML version 3.0|*.xml|IOF XML version 2.0.3|*.xml.
         /// </summary>
         public static string SaveXmlFileDialog_Filter {
             get {

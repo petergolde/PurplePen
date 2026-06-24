@@ -638,4 +638,7 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="SaveXmlFileDialog_Title" xml:space="preserve">
     <value>Tee rajakirjelduse XML fail</value>
   </data>
+  <data name="OpenImageDialog_Filter" xml:space="preserve">
+    <value>Graafika fail|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
 </root>
