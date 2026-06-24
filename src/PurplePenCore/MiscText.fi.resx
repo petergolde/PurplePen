@@ -634,4 +634,7 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscriptiä ei ole asennettu</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen tiedosto|*.ppen</value>
+  </data>
 </root>

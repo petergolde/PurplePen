@@ -661,4 +661,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="RelayVariationExportFilter" xml:space="preserve">
     <value>IOF XML 3.0|*.xml|Spreadsheet (CSV)|*.csv</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen file|*.ppen</value>
+  </data>
 </root>

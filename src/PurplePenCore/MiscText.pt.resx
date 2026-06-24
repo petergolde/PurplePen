@@ -639,4 +639,7 @@ Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapp
   <data name="GpxFilter" xml:space="preserve">
     <value>Ficheiro GPX|*.gpx</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Ficheiro Purple Pen|*.ppen</value>
+  </data>
 </root>

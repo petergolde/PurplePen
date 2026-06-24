@@ -637,4 +637,7 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX file|*.gpx</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen dosyası|*.ppen</value>
+  </data>
 </root>

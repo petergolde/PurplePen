@@ -1424,6 +1424,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Purple Pen file|*.ppen.
+        /// </summary>
+        public static string SaveFileDialog_PurplePenFilter {
+            get {
+                return ResourceManager.GetString("SaveFileDialog_PurplePenFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to singular.
         /// </summary>
         public static string Singular {

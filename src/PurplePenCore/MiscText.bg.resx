@@ -637,4 +637,7 @@
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX файл|*.gpx</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Файл на Purple Pen|*.ppen</value>
+  </data>
 </root>

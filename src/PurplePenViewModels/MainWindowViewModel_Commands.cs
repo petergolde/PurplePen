@@ -265,17 +265,31 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Executes the File/Save As command. Shows a Save File dialog.
+        /// Executes the File/Save As command. Shows a Save File dialog and,
+        /// if the user picks a file, saves the event under the new name.
         /// </summary>
         [RelayCommand]
-        private void SaveAs()
+        private async Task SaveAs()
         {
-#if !PORTING
-            string newFileName = GetSaveFileName(controller.FileName);
-            if (newFileName != null) {
-                controller.SaveAs(newFileName);
-            }
-#endif
+            if (controller == null) return;
+
+            // Ask where to save. The file-save picker is hosted by
+            // DialogService via FileSaveViewModel's special case.
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                FileFilters = MiscText.SaveFileDialog_PurplePenFilter,
+                FileFilterIndex = 1,
+                DefaultExtension = "ppen",
+                ShowOverwritePrompt = true,
+                InitialDirectory = System.IO.Path.GetDirectoryName(controller.FileName),
+                SuggestedFileName = System.IO.Path.GetFileName(controller.FileName),
+            };
+
+            if (!await Services.DialogService.ShowDialogAsync(saveVm))
+                return;
+            if (saveVm.SelectedFile == null)
+                return;
+
+            controller.SaveAs(saveVm.SelectedFile);
         }
 
         /// <summary>

@@ -630,4 +630,7 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript er ikke installert</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen fil|*.ppen</value>
+  </data>
 </root>

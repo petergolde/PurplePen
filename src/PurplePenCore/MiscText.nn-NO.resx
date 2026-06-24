@@ -382,4 +382,7 @@ Trykk OK og forsøk å finne kartfila på datamaskina di.</value>
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen filer|*.ppen|Alle filer|*.*</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen fil|*.ppen</value>
+  </data>
 </root>

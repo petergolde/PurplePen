@@ -613,4 +613,7 @@ Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX fil|*.gpx</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Purple Pen file|*.ppen</value>
+  </data>
 </root>

@@ -520,4 +520,7 @@ Użyj | aby rozdzielić linie
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript nie jest zainstalowany</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Plik Purple Pen|*.ppen</value>
+  </data>
 </root>

@@ -382,4 +382,7 @@ După ce apăsați OK, încercați să localizați o copie a fișierului hartă 
   <data name="OpenFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Fișiere Purple Pen|*.ppen|Toate fișierele|*.*</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Fișier Purple Pen|*.ppen</value>
+  </data>
 </root>

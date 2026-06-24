@@ -616,4 +616,7 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="GpxFilter" xml:space="preserve">
     <value>Archivo GPX|*.gpx</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>Archivo Purple Pen|*.ppen</value>
+  </data>
 </root>

@@ -624,4 +624,7 @@
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX文件| GPX *。</value>
   </data>
+  <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
+    <value>紫笔文件|*.ppen</value>
+  </data>
 </root>
