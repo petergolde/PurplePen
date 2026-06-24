@@ -715,29 +715,6 @@ namespace PurplePen.ViewModels
         [RelayCommand(CanExecute = nameof(CanAddTextLine))]
         private async Task AddTextLine()
         {
-#if !PORTING
-            string defaultText;
-            DescriptionLine.TextLineKind defaultLineKind;
-            bool enableThisCourse;
-            string objectName;
-
-            if (controller.CanAddTextLine(out defaultText, out defaultLineKind, out objectName, out enableThisCourse)) {
-                // Initialize dialog.
-                AddTextLine dialog = new AddTextLine(objectName, enableThisCourse);
-                dialog.TextLine = defaultText;
-                dialog.TextLineKind = defaultLineKind;
-
-                // Show the dialog.
-                DialogResult result = dialog.ShowDialog(this);
-
-                // Apply changes.
-                if (result == DialogResult.OK) {
-                    controller.AddTextLine(dialog.TextLine, dialog.TextLineKind);
-                }
-
-                dialog.Dispose();
-            }
-#else
             if (controller == null) { return; }
 
             string defaultText;
@@ -758,7 +735,6 @@ namespace PurplePen.ViewModels
                     controller.AddTextLine(vm.TextLine ?? "", vm.TextLineKind);
                 }
             }
-#endif
         }
 
         [ObservableProperty, NotifyCanExecuteChangedFor(nameof(AddTextLineCommand))]
@@ -1686,28 +1662,6 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task MoveAllControls()
         {
-#if !PORTING
-            // Part 1: Determine which action we are doing.
-            MoveAllControls moveAllControlsDialog = new MoveAllControls();
-            if (moveAllControlsDialog.ShowDialog() == DialogResult.Cancel) {
-                moveAllControlsDialog.Dispose();
-                return;
-            }
-
-            MoveAllControlsAction action = moveAllControlsDialog.Action;
-            moveAllControlsDialog.Dispose();
-
-            // Part 2: Prompt use to move controls
-            controller.BeginMoveAllControls();
-
-            SelectLocationsForMove selectLocationsForMoveDialog = new SelectLocationsForMove(controller, action);
-            Point location = this.Location;
-            location.Offset(10, 130);
-            selectLocationsForMoveDialog.Location = location;
-            selectLocationsForMoveDialog.Show(this);
-
-            // Dialog dismisses/disposes itself and invokes controller.
-#else
             if (controller == null) { return; }
 
             // Part 1: Determine which kind of move (move / scale / rotate).
@@ -1729,7 +1683,6 @@ namespace PurplePen.ViewModels
             // clicks controls and locations. The dialog drives the controller
             // and finishes the command itself when confirmed or cancelled.
             Services.DialogService.ShowOwnedDialog(locationsVm, disableOwner: false);
-#endif
         }
 
         /// <summary>
@@ -2223,89 +2176,6 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task CreateOcadFiles()
         {
-#if !PORTING
-            bool success = false;
-
-            MapFileFormatKind restrictToKind;  // restrict to outputting this kind of map.
-            if (mapDisplay.MapType == MapType.OCAD) {
-                restrictToKind = mapDisplay.MapVersion.kind;
-            }
-            else {
-                restrictToKind = MapFileFormatKind.None;
-            }
-
-            OcadCreationSettings settings;
-            if (ocadCreationSettingsPrevious != null)
-            {
-                settings = ocadCreationSettingsPrevious.Clone();
-                if (restrictToKind != MapFileFormatKind.None & restrictToKind != ocadCreationSettingsPrevious.fileFormat.kind) {
-                    settings.fileFormat = mapDisplay.MapVersion;
-                }
-            }
-            else {
-                // Default settings: creating in file directory, use format of the current map file.
-                settings = new OcadCreationSettings();
-
-                settings.fileDirectory = true;
-                settings.mapDirectory = false;
-                settings.outputDirectory = Path.GetDirectoryName(controller.FileName);
-                if (mapDisplay.MapType == MapType.OCAD) {
-                    settings.fileFormat = mapDisplay.MapVersion;
-                }
-                else {
-                    settings.fileFormat = new MapFileFormat(MapFileFormatKind.OCAD, 8);
-                }
-            }
-
-            // Get the correct purple color to use.
-            FindPurple.GetPurpleColor(mapDisplay, controller.GetCourseAppearance(), out settings.colorOcadId, out settings.cyan, out settings.magenta, out settings.yellow, out settings.black, out settings.purpleOverprint);
-
-            // Initialize the dialog.
-            CreateOcadFiles createOcadFilesDialog = new CreateOcadFiles(controller.GetEventDB(), restrictToKind, controller.CreateOcadFilesText(false));
-            createOcadFilesDialog.OcadCreationSettings = settings;
-
-            // show the dialog; on success, create the files.
-            while (createOcadFilesDialog.ShowDialog(this) == DialogResult.OK) {
-                // Warn about files that will be overwritten.
-                List<string> overwritingFiles = controller.OverwritingOcadFiles(createOcadFilesDialog.OcadCreationSettings);
-                if (overwritingFiles.Count > 0) {
-                    OverwritingOcadFilesDialog overwriteDialog = new OverwritingOcadFilesDialog();
-                    overwriteDialog.Filenames = overwritingFiles;
-                    if (overwriteDialog.ShowDialog(this) == DialogResult.Cancel)
-                        continue;
-                }
-
-                // Give any other warning messages.
-                List<string> warnings = controller.OcadFilesWarnings(createOcadFilesDialog.OcadCreationSettings);
-                foreach (string warning in warnings) {
-                    await WarningMessage(warning);
-                }
-
-                // Save settings persisted between invocations of this dialog.
-                ocadCreationSettingsPrevious = createOcadFilesDialog.OcadCreationSettings;
-                success = controller.CreateOcadFiles(createOcadFilesDialog.OcadCreationSettings);
-
-                // PP keeps bitmaps in memory and locks them. Tell the user to close PP.
-                if (mapDisplay.MapType == MapType.Bitmap)
-                    await InfoMessage(MiscText.ClosePPBeforeLoadingOCAD);
-
-                break;
-            }
-
-            // And the dialog is done.
-            createOcadFilesDialog.Dispose();
-
-            // The Windows Store version doesn't install Roboto fonts into the system. So we may need to tell the user to install them.
-            if (success) {
-                if (controller.ShouldInstallRobotoFonts()) {
-                    if (await YesNoQuestion(MiscText.AskInstallRobotoFonts, true)) {
-                        bool installSucceeded = controller.InstallRobotoFonts();
-                        if (!installSucceeded)
-                            await ErrorMessage(MiscText.RobotoFontsInstallFailed);
-                    }
-                }
-            }
-#else
             if (controller == null || MapDisplay == null) { return; }
 
             bool success = false;
@@ -2396,8 +2266,7 @@ namespace PurplePen.ViewModels
                 }
 #endif
             }
-#endif
-            }
+        }
 
         /// <summary>
         /// Executes the File/Create Image Files command.
