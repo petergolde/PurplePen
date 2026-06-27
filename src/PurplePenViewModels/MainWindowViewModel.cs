@@ -33,6 +33,7 @@ namespace PurplePen.ViewModels
         SymbolDB symbolDB = null!;
         long changeNum = 0;         // When this changes, state information needs to be updated in the UI.
         bool updatingTabs = false;  // Guard to prevent re-entrant controller calls during UpdateTabs.
+        bool hidePrintArea = false; // Guard to allow disabling print area display at times.
 
         // Settings remembered across invocations of the Create OCAD Files dialog,
         // so the user's last choices (folder, format, prefix, etc.) are preserved.
@@ -200,9 +201,9 @@ namespace PurplePen.ViewModels
                 UpdateSelectionPanel();
                 UpdateHighlight();
                 CoursePartBannerViewModel.UpdatePartBanner();
+                UpdatePrintArea();
 #if !PORTING
                 UpdateTopology();
-                UpdatePrintArea();
                 UpdateTopologyHighlight();
                 UpdateCustomSymbolText();
 #endif
@@ -381,6 +382,18 @@ namespace PurplePen.ViewModels
 
             this.MapHighlights = controller.GetHighlights(Pane.Map);
         }
+
+        // Update the print area in the map pane.
+        void UpdatePrintArea()
+        {
+            if (controller == null || MapDisplay == null) { return; }
+
+            if (hidePrintArea || !UserSettings.Current.ShowPrintArea)
+                MapDisplay.SetPrintArea(null);
+            else
+                MapDisplay.SetPrintArea(controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OnePart));
+        }
+
 
         #endregion // State updating on idle.
 
