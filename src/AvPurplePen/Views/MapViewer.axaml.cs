@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
 using Avalonia.Threading;
 using AvPurplePen.Views;
 using AvUtil;
@@ -25,6 +26,10 @@ public partial class MapViewer : UserControl
     // Has the map highlights that this map viewer should display.
     public static readonly StyledProperty<IMapViewerHighlight[]?> MapHighlightsProperty =
             AvaloniaProperty.Register<MainWindow, IMapViewerHighlight[]?>(nameof(MapHighlights));
+
+    // The tooltip to display when the mouse hovers over the map. Null indicates no tooltip.
+    public static readonly StyledProperty<ToolTipDescription?> ToolTipProperty =
+            AvaloniaProperty.Register<MapViewer, ToolTipDescription?>(nameof(ToolTip));
 
     // The location of the mouse in world coordinates, or null if the mouse is not currently in the viewport.
     public static readonly DirectProperty<MapViewer, PointF?> MouseLocationProperty = 
@@ -60,7 +65,7 @@ public partial class MapViewer : UserControl
     private const float MinDragDistance = 2.8f;   // Minimum pixel distance to start a drag.
     private const float MaxClickDistance = 1.7f;   // Maximum pixel distance to still count as a click.
     private const int MaxClickTime = 300;          // Maximum milliseconds for a press-release to be a click.
-    private const int HoverDelayMs = 400;          // Milliseconds of stillness before a hover event fires.
+    private const int HoverDelayMs = 350;          // Milliseconds of stillness before a hover event fires.
 
     private const int LeftButton = 0;
     private const int RightButton = 1;
@@ -70,8 +75,17 @@ public partial class MapViewer : UserControl
     private DispatcherTimer? hoverTimer;
     private Point lastHoverLocation = new Point(double.NaN, double.NaN);
     private Point lastMouseWorldLocation;
+    private Point lastMouseLogicalPixelLocation;
 
     private HighlightDrawing highlightDrawing = new HighlightDrawing();
+
+    // Used to show a tooltip when the mouse hovers over a feature. The tooltip is shown after a delay, and fades in/out.
+    private FadingPopup tooltipPopup = new FadingPopup() {
+        XOffset = 0,
+        YOffset = 20,  // Place 20 pixels below the mouse cursor.
+        HideDelay = TimeSpan.FromSeconds(8),
+        Background = new Avalonia.Media.SolidColorBrush(Avalonia.Media.Color.FromArgb(0xFF, 0xFF, 0xFF, 0xEB)),
+    };
 
     public MapViewer()
     {
@@ -89,6 +103,11 @@ public partial class MapViewer : UserControl
     public IMapViewerHighlight[]? MapHighlights {
         get => GetValue(MapHighlightsProperty);
         set => SetValue(MapHighlightsProperty, value);
+    }
+
+    public ToolTipDescription? ToolTip {
+        get => GetValue(ToolTipProperty);
+        set => SetValue(ToolTipProperty, value);
     }
 
     public event EventHandler<FancyMouseEventArgs> FancyMouseActivity {
@@ -218,6 +237,7 @@ public partial class MapViewer : UserControl
             hoverTimer.Stop();
         }
         lastHoverLocation = new Point(double.NaN, double.NaN);
+        tooltipPopup.Hide();
     }
 
     // Restarts the hover timer if the mouse has moved to a new location.
@@ -230,6 +250,7 @@ public partial class MapViewer : UserControl
                 hoverTimer.Start();
             }
             lastHoverLocation = worldLocation;
+            tooltipPopup.Hide();
         }
     }
 
@@ -240,6 +261,38 @@ public partial class MapViewer : UserControl
             hoverTimer.Stop();
         }
         RaiseFancyMouseEvent(MouseButton.None, FancyMouseAction.Hover, lastMouseWorldLocation);
+
+        ToolTipDescription? toolTip = ToolTip;
+        if (toolTip != null) {
+            tooltipPopup.Show(this, lastMouseLogicalPixelLocation, CreateTooltipContent(toolTip));
+        }
+    }
+
+    // Creates the content control for a tooltip: a vertical stack of two TextBlocks,
+    // a bold 14-point header above a non-bold 13-point body. The whole thing is
+    // constrained to a maximum width of 400 pixels, wrapping text as needed.
+    private Control CreateTooltipContent(ToolTipDescription description)
+    {
+        TextBlock headerBlock = new TextBlock();
+        headerBlock.Text = description.header;
+        headerBlock.FontWeight = FontWeight.Bold;
+        headerBlock.FontSize = 14;
+        headerBlock.TextWrapping = TextWrapping.Wrap;
+
+        TextBlock bodyBlock = new TextBlock();
+        bodyBlock.Text = description.body;
+        bodyBlock.FontWeight = FontWeight.Normal;
+        bodyBlock.FontSize = 13;
+        bodyBlock.TextWrapping = TextWrapping.Wrap;
+
+        StackPanel panel = new StackPanel();
+        panel.Orientation = Avalonia.Layout.Orientation.Vertical;
+        panel.MaxWidth = 400;
+        panel.Margin = new Thickness(2, 0, 2, 0);
+        panel.Children.Add(headerBlock);
+        panel.Children.Add(bodyBlock);
+
+        return panel;
     }
 
     // Receives basic mouse events from the PanAndZoom control and converts them
@@ -323,6 +376,7 @@ public partial class MapViewer : UserControl
     private void HandleMouseMove(BasicMouseEventArgs e)
     {
         lastMouseWorldLocation = e.WorldLocation;
+        lastMouseLogicalPixelLocation = e.LogicalPixelLocation;
         MouseLocation = Conv.ToPointF(e.WorldLocation);
 
         RaiseFancyMouseEvent(e.Button, FancyMouseAction.Move, e.WorldLocation);
@@ -476,5 +530,4 @@ public partial class MapViewer : UserControl
         public Point WorldDragStart;            // For a drag event, where the dragging began
         public MouseDownResult MouseDownResult; // For a mouse down, how the mouse down is handled.
     }
-
 }

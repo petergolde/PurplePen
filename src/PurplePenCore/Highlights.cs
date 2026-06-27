@@ -40,6 +40,7 @@ using PurplePen.Graphics2D;
 
 namespace PurplePen
 {
+
     // A highlight is as object overlayed on the current map that shows the current selection.
     // It is designed to draw/erase quickly, so it must be able to erase itself given a brush with the
     // bitmap to erase with. The highlight draws in pixel coords, but it is passed a transform it can
@@ -112,4 +113,9 @@ namespace PurplePen
             return (int)Math.Ceiling(penWidth / 2);
         }
     }
+
+    // Describes the content of a tooltip shown in the map viewer: a bold header and a body.
+    public record ToolTipDescription(string header, string body);
+
+
 }

@@ -914,6 +914,7 @@
                     Grid.Row="1" Grid.Column="0"
                     MapDisplay="{Binding MapDisplay}"
                     MapHighlights="{Binding MapHighlights}"
+                    ToolTip="{Binding MapViewerToolTip}"
                     FancyMouseActivity="MapViewer_MouseActivity"
                     MouseLocation="{Binding MouseLocationInMap, Mode=OneWayToSource}"
                     ZoomFactor="{Binding MapZoomFactor, Mode=TwoWay}"

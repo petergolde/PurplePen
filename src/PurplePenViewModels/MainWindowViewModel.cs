@@ -76,6 +76,9 @@ namespace PurplePen.ViewModels
         private IMapViewerHighlight[]? mapHighlights;
 
         [ObservableProperty]
+        private ToolTipDescription? mapViewerToolTip;
+
+        [ObservableProperty]
         private DescriptionViewerViewModel descriptionViewerViewModel = new DescriptionViewerViewModel();
 
         [ObservableProperty]
@@ -386,14 +389,17 @@ namespace PurplePen.ViewModels
 
         public void MapViewerMouseMove(PointF? location, float pixelSize)
         {
+            MapViewerToolTip = null;
+
             if (location.HasValue && controller != null) {
-                // Inside the viewpoint
+                // Inside the viewport
                 controller.MouseMoved(Pane.Map, location.Value, pixelSize);
                 MapMousePointerShape = controller.GetMouseCursor(Pane.Map, location.Value, pixelSize);
+
+                if (ShowToolTips && controller.GetToolTip(Pane.Map, location.Value, pixelSize, out string tipText, out string titleText)) {
+                    MapViewerToolTip = new ToolTipDescription(titleText, tipText);
+                }
             }
-#if PORTING
-            // TODO: Deal with tool tips.
-#endif
         }
 
         public DragAction MapViewerLeftButtonDown(PointF location, float pixelSize)
