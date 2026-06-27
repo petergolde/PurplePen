@@ -4255,11 +4255,6 @@ namespace PurplePen
                 ForceChangeUpdate();
         }
 
-        public void InitiateMapDragging(PointF initialPos, PointerButton buttonEnd)
-        {
-            ui.InitiateMapDragging(initialPos, buttonEnd);
-        }
-
         // Get the shape that the mouse cursor should be in.
         public MousePointerShape GetMouseCursor(Pane pane, PointF location, float pixelSize)
         {
@@ -4492,9 +4487,6 @@ namespace PurplePen
         // Find a missing map file.
         Task<bool> FindMissingMapFile(string missingMapFile);
 
-        // Initiate map dragging.
-        void InitiateMapDragging(PointF initialPos, PointerButton buttonEnd);
-
         // Switch to topology display
         void ShowTopologyView();
 
@@ -4514,7 +4506,7 @@ namespace PurplePen
         Enabled               // Show the command as enabled.
     }
 
-    public enum DragAction { None, SuppressClick, MapDrag, ImmediateDrag, DelayedDrag };
+    public enum DragAction { None, SuppressClick, MapPan, ImmediateDrag, DelayedDrag, DelayedMapPan };
 
     public enum PointerButton { Left, Right, Middle }
 

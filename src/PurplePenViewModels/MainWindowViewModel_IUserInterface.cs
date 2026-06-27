@@ -233,11 +233,6 @@ namespace PurplePen.ViewModels
 #endif
         }
 
-        public void InitiateMapDragging(PointF initialPos, PointerButton buttonEnd)
-        {
-            //throw new NotImplementedException();
-        }
-
         public int LogicalToDeviceUnits(int value)
         {
             throw new NotImplementedException();

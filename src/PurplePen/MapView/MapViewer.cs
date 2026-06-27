@@ -63,6 +63,7 @@ namespace PurplePen.MapView
         public const int CountMouseButtons = 2;
         bool[] mouseDown = new bool[CountMouseButtons];			// state of mouse buttons
         bool[] canDrag = new bool[CountMouseButtons];			// is a drag allowed with this button?
+        bool[] canDragPan = new bool[CountMouseButtons];	    // is a drag pan allowed with this button?
         bool[] mouseDrag = new bool[CountMouseButtons];			// is a drag in progress with this button?
         bool[] suppressClick = new bool[CountMouseButtons];     // if true, suppress a click event on mouse up.
         PointF[] downPos = new PointF[CountMouseButtons];		// position mouse button went down, in world coordinates
@@ -730,6 +731,12 @@ namespace PurplePen.MapView
                         DisableHoverTimer();
                     }
 
+                    // Is a drag pan being started?
+                    if (mouseDown[buttonNumber] && !mouseDrag[buttonNumber] && canDragPan[buttonNumber] && !dragScrollingInProgress &&
+                        WorldToPixelDistance(Util.DistanceF(mouseLocation, downPos[buttonNumber])) >= MinDragDistance) {
+                        BeginMapDragging(Geometry.PointFromPointF(WorldToPixel(downPos[buttonNumber])), buttonNumber == LeftMouseButton ? MouseButtons.Left : MouseButtons.Right);
+                    }
+
                     // is a drag in progress?
                     if (OnMouseEvent != null && mouseDown[buttonNumber] && mouseDrag[buttonNumber]) {
                         OnMouseEvent(this, MouseAction.Drag, buttonNumber, mouseDown, mouseLocation, downPos[buttonNumber]);
@@ -752,6 +759,7 @@ namespace PurplePen.MapView
             mouseDown[buttonNumber] = true;
             mouseDrag[buttonNumber] = false;
             canDrag[buttonNumber] = false;
+            canDragPan[buttonNumber] = false;
             suppressClick[buttonNumber] = false;
             downPos[buttonNumber] = worldMouse;
             downTime[buttonNumber] = Environment.TickCount;
@@ -759,12 +767,17 @@ namespace PurplePen.MapView
             if (OnMouseEvent != null) {
                 DragAction dragAction = OnMouseEvent(this, MouseAction.Down, buttonNumber, mouseDown, worldMouse, worldMouse);
                 canDrag[buttonNumber] = (dragAction == DragAction.ImmediateDrag || dragAction == DragAction.DelayedDrag);
+
                 if (dragAction == DragAction.ImmediateDrag) {
                     mouseDrag[buttonNumber] = true;
                     DisableHoverTimer();
                 }
 
-                if (dragAction == DragAction.MapDrag) {
+                if (dragAction == DragAction.DelayedMapPan) {
+                    canDragPan[buttonNumber] = true;
+                }
+
+                if (dragAction == DragAction.MapPan) {
                     // Map dragging has been requested.
                     BeginMapDragging(new Point(xViewport, yViewport), (buttonNumber == LeftMouseButton) ? MouseButtons.Left : MouseButtons.Right);
                 }

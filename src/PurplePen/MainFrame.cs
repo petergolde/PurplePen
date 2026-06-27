@@ -220,12 +220,6 @@ namespace PurplePen
             }
         }
 
-        public void InitiateMapDragging(PointF initialPos, PointerButton buttonEnd)
-        {
-            MouseButtons mouseButtonEnd = MouseButtonFromPointerButton(buttonEnd);
-            mapViewer.BeginMapDragging(Geometry.PointFromPointF(mapViewer.WorldToPixel(initialPos)), mouseButtonEnd);
-        }
-
         private MouseButtons MouseButtonFromPointerButton(PointerButton buttonEnd)
         {
             switch (buttonEnd) {

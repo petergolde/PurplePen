@@ -248,20 +248,12 @@ namespace PurplePen
         public override DragAction LeftButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             if (pane == Pane.Map) {
-                // Delay to see if click or drag.
-                return DragAction.DelayedDrag;
+                // Delay to see if click or pan map.
+                return DragAction.DelayedMapPan;
             }
             else {
                 return DragAction.None;
             }
-        }
-
-        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
-        {
-            Debug.Assert(pane == Pane.Map);
-
-            // Drag is move map.
-            controller.InitiateMapDragging(locationStart, PointerButton.Left);
         }
 
         public override async Task<bool> LeftButtonClick(Pane pane, PointF location, float pixelSize)
@@ -562,19 +554,11 @@ namespace PurplePen
         {
             if (pane == Pane.Map) {
                 // Delay to see if click or drag.
-                return DragAction.DelayedDrag;
+                return DragAction.DelayedMapPan;
             }
             else {
                 return DragAction.None;
             }
-        }
-
-        public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
-        {
-            Debug.Assert(pane == Pane.Map);
-
-            // Drag is move map.
-            controller.InitiateMapDragging(locationStart, PointerButton.Left);
         }
 
         public override async Task<bool> LeftButtonClick(Pane pane, PointF location, float pixelSize)

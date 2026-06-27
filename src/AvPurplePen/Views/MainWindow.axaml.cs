@@ -214,12 +214,14 @@ namespace AvPurplePen.Views
                 e.MouseDownResult = MapViewer.MouseDownResult.None; break;
             case DragAction.SuppressClick:
                 e.MouseDownResult = MapViewer.MouseDownResult.SuppressClick; break;
-            case DragAction.MapDrag:
+            case DragAction.MapPan:
                 e.MouseDownResult = MapViewer.MouseDownResult.ImmediatePan;  break;
             case DragAction.ImmediateDrag:
                 e.MouseDownResult = MapViewer.MouseDownResult.ImmediateDrag; break;
             case DragAction.DelayedDrag:
                 e.MouseDownResult = MapViewer.MouseDownResult.DelayedDrag; break;
+            case DragAction.DelayedMapPan:
+                e.MouseDownResult = MapViewer.MouseDownResult.DelayedPan; break;
             default:
                 break;
             }

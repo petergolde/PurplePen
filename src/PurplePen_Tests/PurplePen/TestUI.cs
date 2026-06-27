@@ -229,12 +229,6 @@ namespace PurplePen.Tests
             return Task.FromResult(true);
         }
 
-        public void InitiateMapDragging(PointF initialPos, PointerButton buttonEnd)
-        {
-            throw new NotSupportedException();
-        }
-
-
         public void ShowProgressDialog(bool knownDuration, Action onCancelPressed = null)
         {
         }

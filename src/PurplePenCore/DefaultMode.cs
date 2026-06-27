@@ -88,7 +88,7 @@ namespace PurplePen
         public virtual DragAction RightButtonDown(Pane pane, PointF location, float pixelSize, ref bool displayUpdateNeeded)
         {
             if (pane == Pane.Map) {
-                return DragAction.MapDrag;
+                return DragAction.MapPan;
             }
             else {
                 return DragAction.None;
@@ -352,12 +352,7 @@ namespace PurplePen
 
         public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
-            if (pane == Pane.Map) {
-                // If we dragged an object or corner, we would have entered a new mode. So this must be a delayed drag that should
-                // become map dragging.
-                controller.InitiateMapDragging(locationStart, PointerButton.Left);
-            }
-            else if (pane == Pane.Topology) {
+             if (pane == Pane.Topology) {
                 CourseObj clickedObject = HitTest(pane, locationStart, pixelSize,
                 co => !(co.layer == CourseLayer.AllVariations && !(co is TopologyDropTargetCourseObj)) &&
                       !((co is MapIssueCourseObj) && co.controlId.IsNone));
@@ -395,7 +390,7 @@ namespace PurplePen
                     return DragAction.ImmediateDrag;
                 }
 
-                return DragAction.DelayedDrag;
+                return DragAction.DelayedMapPan;
             }
             else if (pane == Pane.Topology) {
                 CourseObj clickedObject = HitTest(pane, location, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));

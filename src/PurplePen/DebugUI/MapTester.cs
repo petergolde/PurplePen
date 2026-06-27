@@ -190,7 +190,7 @@ namespace PurplePen.DebugUI
 
             // Allow the left mouse button to drag.
             if (action == MouseAction.Down && buttonNumber == MapViewer.LeftMouseButton)
-                return DragAction.MapDrag;
+                return DragAction.MapPan;
             else
                 return DragAction.None;
         }
