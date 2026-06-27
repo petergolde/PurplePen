@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PurplePen
@@ -42,8 +43,26 @@ namespace PurplePen
             Debug.Assert(SettingsPath != null, "Initialize hasn't been called yet.");
 
             Directory.CreateDirectory(Path.GetDirectoryName(SettingsPath));
-            var json = JsonSerializer.Serialize(this, jsonOptions);
-            File.WriteAllText(SettingsPath, json);
+            string json = JsonSerializer.Serialize(this, jsonOptions);
+            
+            // Call File.WriteAllText up to 10 times with variable retries. Otherwise
+            // this tends to file while running tests.
+            Random random = new Random();
+            int retryCount = 0;
+
+            while (true) {
+                try {
+                    File.WriteAllText(SettingsPath, json);
+                    return;
+                }
+                catch (IOException) {
+                    if (retryCount == 10)
+                        throw;
+
+                    ++retryCount;
+                    Thread.Sleep(random.Next(30, 300));
+                }
+            }
         }
 
         // Initialize the user settings, setting them into "UserSettings.Current". If the

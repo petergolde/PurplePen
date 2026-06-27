@@ -103,7 +103,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(12, highlights[0].controlId.id);
 
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(9.7F, -18.2F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(9.7F, -18.2F), 0.1F);
             Assert.IsTrue(firstControlSelected);
             Assert.AreEqual(new PointF(9.182623F, -17.8336163F), points[0]);

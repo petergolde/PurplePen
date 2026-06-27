@@ -78,7 +78,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
 
             // Begin the add bend mode.
@@ -136,7 +136,7 @@ namespace PurplePen.Tests
 
             // Click on area objects.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(1,-2), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(1, -2), 0.3F);
 
             // Begin the add corner mode.
@@ -196,7 +196,7 @@ namespace PurplePen.Tests
 
             // Click on area objects.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(1, -2), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(1, -2), 0.3F);
 
             // Begin the remove corner mode.
@@ -246,7 +246,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
 
             // Begin the remove bend mode.

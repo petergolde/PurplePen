@@ -81,7 +81,7 @@ namespace PurplePen.Tests
 
             // Click on control 5 (#47).
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             // Check correct description line highlighted.
@@ -100,7 +100,7 @@ namespace PurplePen.Tests
 
             // Click on number for control #54.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(59.3F, 5.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(59.3F, 5.5F), 0.3F);
 
             // Check correct description line highlighted.
@@ -118,7 +118,7 @@ namespace PurplePen.Tests
 
             // Click outside anything to de-select.
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(30, 20), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(30, 20), 0.3F);
             Assert.IsTrue(controller.GetSelectionMgr().Selection.SelectionKind == SelectionKind.None);
         }
@@ -138,7 +138,7 @@ namespace PurplePen.Tests
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(15.3F, -42F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(15.4F, -42F), 0.3F);
 
             // Check no description line highlighted.
@@ -155,7 +155,7 @@ namespace PurplePen.Tests
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(13.3F, -41F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(13.3F, -41F), 0.3F);
 
             // Check no description line highlighted.
@@ -185,7 +185,7 @@ namespace PurplePen.Tests
 
             // Click on first aid point
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(158.0F, -7.0F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(158.0F, -7.0F), 0.3F);
 
             // Check no description line highlighted.
@@ -202,7 +202,7 @@ namespace PurplePen.Tests
 
             // Click on white-out
             dragAction = controller.LeftButtonDown(Pane.Map, new PointF(158.0F, -18.0F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(158.0F, -18.0F), 0.3F);
 
             // Check no description line highlighted.
@@ -447,7 +447,7 @@ namespace PurplePen.Tests
 
             // Click on first aid point to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(15.3F, -42F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(15.3F, -42F), 0.3F);
 
             // Should have moving mouse cursor
@@ -515,7 +515,7 @@ namespace PurplePen.Tests
 
             // Click on area to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(-0.3F, 0.2F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(-0.3F, 0.2F), 0.3F);
 
             // Should have moving mouse cursor
@@ -587,7 +587,7 @@ namespace PurplePen.Tests
 
             // Click on area to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(-24, 12), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(-24, 12), 0.3F);
 
             // Should have moving mouse cursor
@@ -655,7 +655,7 @@ namespace PurplePen.Tests
 
             // Click on area to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(-24, 12), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(-24, 12), 0.3F);
 
             // Should have moving mouse cursor
@@ -724,7 +724,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(18.4F, 30.1F), 0.3F);
 
             // Over corner should have move corner cursor
@@ -789,7 +789,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(71, 0), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(71, 0), 0.3F);
 
             // Over leg gap should have move corner cursor
@@ -855,7 +855,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(64, 3.3F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(64, 3.3F), 0.3F);
 
             // Over leg gap should have move corner cursor
@@ -919,7 +919,7 @@ namespace PurplePen.Tests
 
             // Click on text special
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(62F, 36F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(62F, 36F), 0.3F);
 
             // text special should be selected.
@@ -982,7 +982,7 @@ namespace PurplePen.Tests
 
             // Click on text special
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(62F, 36F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(62F, 36F), 0.3F);
 
             // text special should be selected.
@@ -1047,7 +1047,7 @@ namespace PurplePen.Tests
 
             // Click on image special
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(62F, 36F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(62F, 36F), 0.3F);
 
             // text special should be selected.
@@ -1105,7 +1105,7 @@ namespace PurplePen.Tests
 
             // Click on text special
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(62F, 36F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(62F, 36F), 0.3F);
 
             // text special should be selected.

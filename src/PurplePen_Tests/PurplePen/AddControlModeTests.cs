@@ -85,7 +85,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -124,7 +124,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(27, -18), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(27, -18), 0.1F);
 
             // There should be a new control #60, with the given location.
@@ -157,7 +157,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -221,7 +221,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(29, 30), 0.1F);
 
             // There should be a new control #60, with the given location.
@@ -259,7 +259,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -275,7 +275,7 @@ namespace PurplePen.Tests
 
             // Mouse down on control #48.
             DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(21, 40), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(21, 40), 0.1F);
 
             // There should not be a new control #60.
@@ -309,7 +309,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -349,7 +349,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = ui.LeftButtonDown(28, 8, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(28, 8), 0.1F);
 
             // There should not be a new control #60.
@@ -380,7 +380,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = ui.LeftButtonDown(0.9F, 30.5F, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
             
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -425,7 +425,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -454,7 +454,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(27, -18), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(27, -18), 0.1F);
 
             // There should be a new start control, with the given location.
@@ -484,7 +484,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -526,7 +526,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan    , action);
             await controller.LeftButtonClick(Pane.Map, new PointF(29, 30), 0.1F);
 
             // There should be a new start control, with the given location.
@@ -562,7 +562,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -578,7 +578,7 @@ namespace PurplePen.Tests
 
             // Mouse down on new start.
             DragAction action = ui.LeftButtonDown(69.8F, 5, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(69.8F, 5), 0.1F);
 
             CheckHighlightedLines(controller, 2, 2);
@@ -606,7 +606,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[])controller.GetHighlights(Pane.Map);
@@ -635,7 +635,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(27, -18), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(27, -18), 0.1F);
 
             // There should be a new finish control, with the given location.
@@ -666,7 +666,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -708,7 +708,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(29, 30), 0.1F);
 
             // There should be a new finish control, with the given location.
@@ -745,7 +745,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -761,7 +761,7 @@ namespace PurplePen.Tests
 
             // Mouse down on new finish.
             DragAction action = ui.LeftButtonDown(69.8F, 5, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(69.8F, 5), 0.1F);
 
             CheckHighlightedLines(controller, 16, 16);
@@ -790,7 +790,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -817,7 +817,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = controller.LeftButtonDown(Pane.Map, new PointF(27, -18), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(27, -18), 0.1F);
 
             // There should be a water special, with the given location.
@@ -970,7 +970,7 @@ namespace PurplePen.Tests
 
             // Select control #47
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(0.9F, 30.5F), 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(0.9F, 30.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -1007,7 +1007,7 @@ namespace PurplePen.Tests
 
             // Mouse down somewhere.
             DragAction action = ui.LeftButtonDown(29, 30, 0.1F);
-            Assert.AreEqual(DragAction.DelayedDrag, action);
+            Assert.AreEqual(DragAction.DelayedMapPan, action);
             await controller.LeftButtonClick(Pane.Map, new PointF(29, 30), 0.1F);
 
             // There should be a new mandatory, with the given location.

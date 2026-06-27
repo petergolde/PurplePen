@@ -11,6 +11,7 @@
         <Property Name="Project" Value="Test_MapModel (net10.0)" />
         <Property Name="Project" Value="TestUtil (net10.0)" />
         <Property Name="Project" Value="DotSpatial.Projections.Tests (net10.0)" />
+        <Property Name="Project" Value="PurplePenViewModels.Tests" />
       </Rule>
     </Rule>
   </Rule>

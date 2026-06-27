@@ -78,7 +78,7 @@ namespace PurplePen.Tests
 
             // Click on control to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(27F, 41F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(27F, 41F), 0.3F);
 
             // Begin the add bend mode.
@@ -135,7 +135,7 @@ namespace PurplePen.Tests
 
             // Click on control to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(27F, 41F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(27F, 41F), 0.3F);
 
             // Begin the add bend mode.
@@ -192,7 +192,7 @@ namespace PurplePen.Tests
 
             // Click on control 1 to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(38.6F, -21F), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(38.6F, -21F), 0.3F);
 
             // Begin the remove gap mode.
@@ -249,7 +249,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(71, 0), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(71, 0), 0.3F);
 
             // Begin the remove gap mode.
@@ -304,7 +304,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(20, -5), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(20, -5), 0.3F);
 
             // Begin the add gap mode.
@@ -361,7 +361,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(71, 0), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(71, 0), 0.3F);
 
             // Begin the add gap mode.
@@ -418,7 +418,7 @@ namespace PurplePen.Tests
 
             // Click on leg to select it.
             DragAction dragAction = controller.LeftButtonDown(Pane.Map, new PointF(20, -5), 0.3F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(20, -5), 0.3F);
 
             // Begin the add gap mode.

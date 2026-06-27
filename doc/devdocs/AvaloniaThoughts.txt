@@ -103,5 +103,6 @@ PrinterMargins
 SetPrintAreaDialog
 + PaperSizeControl - needs prettying up.
 
+Hand cursor isn't show when dragging map.
 
 

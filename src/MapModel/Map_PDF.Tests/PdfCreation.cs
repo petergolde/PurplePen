@@ -10,6 +10,7 @@ using PurplePen.MapModel;
 using PurplePen.Graphics2D;
 using TestingUtils;
 using System.IO;
+using System.Threading;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 
@@ -19,8 +20,7 @@ namespace Map_PDF.Tests
     {
         public static void CreatePdfAndPng(string pdfFileName, string pngFileName, int pixelWidth, int pixelHeight, bool useCmyk, Action<IGraphicsTarget> draw)
         {
-            File.Delete(pdfFileName);
-            File.Delete(pngFileName);
+            DeletePdfAndPng(pdfFileName, pngFileName);
 
             // Create PDF at 100 pixel per inch.
             IPdfWriter pdfWriter = new PdfWriter();
@@ -40,8 +40,7 @@ namespace Map_PDF.Tests
 
         public static void CreatePdfAndPngUsingCopiedPage(string pdfFileName, string pngFileName, string pdfImport, int pageImport, Action<IGraphicsTarget> draw)
         {
-            File.Delete(pdfFileName);
-            File.Delete(pngFileName);
+            DeletePdfAndPng(pdfFileName, pngFileName);
 
             // Create PDF at 100 pixel per inch.
             IPdfWriter pdfWriter = new PdfWriter();
@@ -62,8 +61,7 @@ namespace Map_PDF.Tests
         public static void CreatePdfAndPngUsingCopiedPartialPage(string pdfFileName, string pngFileName, string pdfImport, int pageImport, 
                                                                  SizeF sizeInInches, RectangleF partialPageInInches, RectangleF destRectangleInInches, Action<IGraphicsTarget> draw)
         {
-            File.Delete(pdfFileName);
-            File.Delete(pngFileName);
+            DeletePdfAndPng(pdfFileName, pngFileName);
 
             // Create PDF at 100 pixel per inch.
             IPdfWriter pdfWriter = new PdfWriter();
@@ -79,6 +77,28 @@ namespace Map_PDF.Tests
             // Copy to PNG
             ConvertPdfToPng(pdfFileName, pngFileName);
 
+        }
+
+        // Delete the PDF and PNG files, retrying if either file is temporarily unavailable.
+        private static void DeletePdfAndPng(string pdfFileName, string pngFileName)
+        {
+            Random random = new Random();
+            int retryCount = 0;
+
+            while (true) {
+                try {
+                    File.Delete(pdfFileName);
+                    File.Delete(pngFileName);
+                    return;
+                }
+                catch (IOException) {
+                    if (retryCount == 10)
+                        throw;
+
+                    ++retryCount;
+                    Thread.Sleep(random.Next(30, 301));
+                }
+            }
         }
 
         public static void ConvertPdfToPng(string pdfFileName, string pngFileName)

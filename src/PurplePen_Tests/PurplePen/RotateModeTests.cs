@@ -77,7 +77,7 @@ namespace PurplePen.Tests
 
             // Select mandatory crossing point.
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(25.4F, 25.5F), 0.2F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(25.4F, 25.5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
@@ -131,7 +131,7 @@ namespace PurplePen.Tests
 
             // Select mandatory crossing point.
             var dragAction = controller.LeftButtonDown(Pane.Map, new PointF(76, -5F), 0.2F);
-            Assert.AreEqual(DragAction.DelayedDrag, dragAction);
+            Assert.AreEqual(DragAction.DelayedMapPan, dragAction);
             await controller.LeftButtonClick(Pane.Map, new PointF(76, -5F), 0.3F);
 
             highlights = (CourseObj[]) controller.GetHighlights(Pane.Map);
