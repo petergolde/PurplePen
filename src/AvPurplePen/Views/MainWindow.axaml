@@ -78,7 +78,7 @@
                 <MenuItem x:Name="printPunchCardsMenu" Header="{resx:Localize MainFrame_printPunchCardsMenu_Text}" Command="{Binding PrintPunchCardsCommand}"/>
                 <MenuItem x:Name="printCoursesMenu" Header="{resx:Localize MainFrame_printCoursesMenu_Text}" Command="{Binding PrintCoursesCommand}"/>
                 <MenuItem x:Name="setPrintAreaMenu" Header="{resx:Localize MainFrame_setPrintAreaMenu_Text}">
-                    <MenuItem x:Name="printAreaThisPartMenu" Header="{resx:Localize MainFrame_printAreaThisPartMenu_Text}" Command="{Binding SetPrintAreaThisPartCommand}"/>
+                    <MenuItem x:Name="printAreaThisPartMenu" Header="{resx:Localize MainFrame_printAreaThisPartMenu_Text}" IsVisible="{Binding IsVisibleSetPrintAreaThisPart}" Command="{Binding SetPrintAreaThisPartCommand}"/>
                     <MenuItem x:Name="printAreaThisCourseMenu" Header="{resx:Localize MainFrame_printAreaThisCourseMenu_Text}" Command="{Binding SetPrintAreaThisCourseCommand}"/>
                     <MenuItem x:Name="printAreaAllCoursesMenu" Header="{resx:Localize MainFrame_printAreaAllCoursesMenu_Text}" Command="{Binding SetPrintAreaAllCoursesCommand}"/>
                 </MenuItem>

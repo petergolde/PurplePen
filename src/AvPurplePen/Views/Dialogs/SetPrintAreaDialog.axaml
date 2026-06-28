@@ -1,0 +1,88 @@
+<!--
+    SetPrintAreaDialog.axaml
+
+    Interactive tool window for choosing a course's printing area. The user drags
+    a rectangle on the map (which stays interactive — this is an owned, non-modal
+    window) while this dialog offers paper size, an "automatic" toggle, and a
+    "fix size to paper" toggle. The ViewModel mirrors every change into the
+    Controller's rectangle-select mode so the live preview tracks the dialog.
+
+    Reuses the shared PaperSizeControl. Migrated from WinForms
+    PurplePen/SetPrintAreaDialog.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.SetPrintAreaDialog"
+        Classes="dialog"
+        x:DataType="vm:SetPrintAreaDialogViewModel"
+        Title="{resx:Localize SetPrintAreaDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="360" d:DesignHeight="380"
+        SizeToContent="WidthAndHeight"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="Manual"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:SetPrintAreaDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Done / Cancel buttons at the bottom right. -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize SetPrintAreaDialog_cancelButton_Text}"
+                    Width="82"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+            <Button x:Name="okButton"
+                    Content="{resx:Localize SetPrintAreaDialog_okButton_Text}"
+                    Width="82"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Spacing="10">
+
+            <!-- Paper size group: hosts the shared PaperSizeControl. -->
+            <HeaderedContentControl Header="{resx:Localize SetPrintAreaDialog_groupBoxPaperSize_Text}"
+                                    Padding="8,8,8,8">
+                <views:PaperSizeControl x:Name="paperSizeControl"
+                                        HorizontalAlignment="Left"
+                                        PaperWidth="{Binding PaperWidth, Mode=TwoWay}"
+                                        PaperHeight="{Binding PaperHeight, Mode=TwoWay}"
+                                        PaperMargin="{Binding PaperMargin, Mode=TwoWay}"
+                                        Landscape="{Binding Landscape, Mode=TwoWay}"/>
+            </HeaderedContentControl>
+
+            <CheckBox x:Name="checkBoxAutomatic"
+                      Content="{resx:Localize SetPrintAreaDialog_checkBoxAutomatic_Text}"
+                      IsChecked="{Binding Automatic, Mode=TwoWay}"/>
+
+            <CheckBox x:Name="checkBoxFixSizeToPaper"
+                      Content="{resx:Localize SetPrintAreaDialog_checkBoxFixSizeToPaper_Text}"
+                      IsChecked="{Binding FixSizeToPaper, Mode=TwoWay}"/>
+
+            <TextBlock x:Name="setPrintAreaLabel"
+                       TextWrapping="Wrap"
+                       Text="{resx:Localize SetPrintAreaDialog_setPrintAreaLabel_Text}"/>
+
+        </StackPanel>
+
+    </DockPanel>
+</Window>

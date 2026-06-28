@@ -8,6 +8,7 @@ using PurplePen.MapModel;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -56,6 +57,7 @@ namespace PurplePen.ViewModels
             CanChangeDisplayedCourses = (controller.CanChangeDisplayedCourses(out _, out _) == CommandStatus.Enabled);
             IsVisibleClearOtherCourses = (controller.CanClearExtraCourseDisplay() != CommandStatus.Hidden);
             IsVisibleTranslatedWebSite = TranslatedWebSiteExists();
+            IsVisibleSetPrintAreaThisPart = (controller.NumberOfParts > 1);
 
             // Update checked status of standards, and make dangerous area visible/hidden.
             string descriptionStandard = controller.GetDescriptionStandard();
@@ -1841,40 +1843,99 @@ namespace PurplePen.ViewModels
 
         #region Print area commands
 
+        // True while any Set Print Area dialog is open. Disables all three Set
+        // Print Area commands (not just the one in effect) so a second print-area
+        // dialog can't be opened on top of the first.
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(SetPrintAreaThisPartCommand))]
+        [NotifyCanExecuteChangedFor(nameof(SetPrintAreaThisCourseCommand))]
+        [NotifyCanExecuteChangedFor(nameof(SetPrintAreaAllCoursesCommand))]
+        private bool settingPrintArea;
+
+        // The Set Print Area commands are available as long as no print-area
+        // dialog is already open. (The command bodies no-op when there's no
+        // loaded event; `controller` isn't observable so it can't gate
+        // CanExecute without risking a stuck-disabled menu at startup.)
+        private bool CanSetPrintArea() => !SettingPrintArea;
+
+        [ObservableProperty]
+        private bool isVisibleSetPrintAreaThisPart = true;  // Is the SetPrintArea/This Part command visible?
+
+        // Opens the interactive Set Print Area tool window for the given kind of
+        // print area. The dialog is owned but non-modal so the map stays usable
+        // while the user drags the print rectangle. The normal print-area display
+        // is hidden while the dialog is up (the dialog shows its own draggable
+        // rectangle instead) and restored when it closes.
+        private async Task SetPrintArea(PrintAreaKind printAreaKind)
+        {
+            if (controller == null) { return; }
+
+            SettingPrintArea = true;
+
+#if PORTING
+            // TODO: ensure the existing print area is fully visible before hiding
+            // the gray display. The WinForms version did:
+            //     RectangleF r = controller.GetCurrentPrintAreaRectangle(printAreaKind);
+            //     if (!mapViewer.Viewport.Contains(r)) { r.Inflate(...); ShowRectangle(r); }
+            // This depends on map-viewer viewport/ShowRectangle support that is
+            // not yet ported to the Avalonia main window.
+#endif
+
+            HidePrintArea = true;
+
+            SetPrintAreaDialogViewModel vm = new SetPrintAreaDialogViewModel {
+                Controller = controller,
+                PrintAreaKind = printAreaKind,
+            };
+
+            INonModalDialog<SetPrintAreaDialogViewModel> dialog =
+                Services.DialogService.ShowOwnedDialog(vm, disableOwner: false);
+
+            // The ViewModel closes its own window when the Controller ends the
+            // rectangle-select mode (Done, Cancel, or another command taking over).
+            vm.RequestClose = dialog.Close;
+
+            // Begin the mode, passing the ViewModel as the IDisposable to dispose
+            // when the mode ends; then seed the dialog with the current print area.
+            controller.BeginSetPrintArea(printAreaKind, vm);
+            vm.PrintArea = controller.GetCurrentPrintArea(printAreaKind);
+
+            // Restore the normal print-area display once the dialog closes,
+            // however it closed.
+            await dialog.ClosedTask;
+            HidePrintArea = false;
+            SettingPrintArea = false;
+        }
+
+
         /// <summary>
         /// Sets the print area for this part only.
         /// </summary>
-        [RelayCommand]
-        private void SetPrintAreaThisPart()
+        [RelayCommand(CanExecute = nameof(CanSetPrintArea))]
+        private async Task SetPrintAreaThisPart()
         {
-#if !PORTING
-            SetPrintArea(PrintAreaKind.OnePart);
-#endif
+            await SetPrintArea(PrintAreaKind.OnePart);
         }
 
         /// <summary>
         /// Sets the print area for this course only.
         /// </summary>
-        [RelayCommand]
-        private void SetPrintAreaThisCourse()
+        [RelayCommand(CanExecute = nameof(CanSetPrintArea))]
+        private async Task SetPrintAreaThisCourse()
         {
-#if !PORTING
-            SetPrintArea(PrintAreaKind.OneCourse);
-#endif
+            await SetPrintArea(PrintAreaKind.OneCourse);
         }
 
         /// <summary>
         /// Sets the print area for all courses.
         /// </summary>
-        [RelayCommand]
-        private void SetPrintAreaAllCourses()
+        [RelayCommand(CanExecute = nameof(CanSetPrintArea))]
+        private async Task SetPrintAreaAllCourses()
         {
-#if !PORTING
-            SetPrintArea(PrintAreaKind.AllCourses);
-#endif
+            await SetPrintArea(PrintAreaKind.AllCourses);
         }
 
-        #endregion // Print area commands
+#endregion // Print area commands
 
         #region Print and export commands
 

@@ -383,6 +383,20 @@ namespace PurplePen.ViewModels
             this.MapHighlights = controller.GetHighlights(Pane.Map);
         }
 
+        // When true, the normal print-area display is suppressed. Used while the
+        // Set Print Area dialog is open, since that dialog shows its own
+        // interactive (draggable) print rectangle instead. Setting it forces a
+        // redraw so the change takes effect immediately. Centralizes what the
+        // WinForms version split between MainFrame and the dialog's Dispose.
+        public bool HidePrintArea
+        {
+            get => hidePrintArea;
+            set {
+                hidePrintArea = value;
+                controller?.ForceChangeUpdate(true);
+            }
+        }
+
         // Update the print area in the map pane.
         void UpdatePrintArea()
         {
