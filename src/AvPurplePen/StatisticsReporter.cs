@@ -18,15 +18,26 @@ namespace AvPurplePen
     /// <summary>
     /// Reports anonymous information about a Purple Pen application invocation.
     /// </summary>
-    public static class StatisticsReporter
+    public class StatisticsReporter
     {
         private const string statisticsEndpoint = "http://monitor.purple-pen.org/api/Invocation";
+        private readonly IHttpClientFactory httpClientFactory;
+
+        /// <summary>
+        /// Initializes a statistics reporter that obtains HTTP clients from the
+        /// application's shared client factory.
+        /// </summary>
+        /// <param name="httpClientFactory">The factory used to create HTTP clients for reporting.</param>
+        public StatisticsReporter(IHttpClientFactory httpClientFactory)
+        {
+            this.httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
+        }
 
         /// <summary>
         /// Starts a background task that collects and reports invocation statistics.
         /// This method returns immediately and never displays an error to the user.
         /// </summary>
-        public static void ReportStatistics()
+        public void ReportStatistics()
         {
             // Collection is intentionally performed inside Task.Run as some system
             // properties can involve operating-system calls. The HTTP request is also
@@ -39,7 +50,7 @@ namespace AvPurplePen
         /// This method is run on a background thread by <see cref="ReportStatistics"/>.
         /// </summary>
         /// <returns>A task that completes after the report attempt finishes.</returns>
-        private static async Task CollectAndReportStatisticsAsync()
+        private async Task CollectAndReportStatisticsAsync()
         {
             // Use the configured UI language when available. An empty setting
             // means the application is following the operating-system culture.
@@ -77,13 +88,13 @@ namespace AvPurplePen
             try {
                 // PostAsJsonAsync handles JSON escaping, UTF-8 encoding, and the
                 // application/json content type.
-                using HttpClient client = new HttpClient();
+                using HttpClient client = httpClientFactory.CreateClient();
                 await client.PostAsJsonAsync(statisticsEndpoint, payload).ConfigureAwait(false);
             }
-            catch (HttpRequestException ex) {
-                // Statistics are nonessential; record network problems for
-                // diagnostics without interrupting or notifying the user.
-                Debug.WriteLine(ex.ToString());
+            catch (Exception) {
+                // Statistics are nonessential, so ignore exceptions. We are using resiliance on 
+                // our HttpClient already, which is the best we can do. If the statistics aren't recorded,
+                // no big deal. For example, the user might have no internet connection.
             }
         }
 
