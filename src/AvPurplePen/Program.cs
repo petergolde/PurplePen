@@ -26,6 +26,9 @@ namespace AvPurplePen
             InitUILanguage();
             FontDesc.InitializeFonts();
 
+            // Report statistics about the invocation of Purple Pen. This is done asynchronously, so it doesn't block the startup of the application.
+            StatisticsReporter.ReportStatistics();
+
             // Initialization code. Don't use any Avalonia APIs or any
             // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
             // yet and stuff might break.
