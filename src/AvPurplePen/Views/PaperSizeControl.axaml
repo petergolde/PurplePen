@@ -19,6 +19,42 @@
              d:DesignWidth="280" d:DesignHeight="150"
              x:Class="AvPurplePen.Views.PaperSizeControl">
 
+    <!-- Orientation is chosen with two side-by-side, mutually-exclusive
+         "buttons" (still RadioButtons under the hood, so GroupName handles the
+         exclusion and the existing code-behind wiring is unchanged). Each shows
+         an image with the Portrait/Landscape label below it; the selected one
+         gets an accent border and a light highlight. -->
+    <UserControl.Styles>
+        <Style Selector="RadioButton.orientation">
+            <Setter Property="Padding" Value="0"/>
+            <!-- Fixed width so the Portrait and Landscape buttons are identical
+                 in size despite differing image shapes and label lengths. -->
+            <Setter Property="Width" Value="86"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Name="PART_Border"
+                            Background="{DynamicResource InputBackground}"
+                            BorderBrush="{DynamicResource DarkGreyBorder}"
+                            BorderThickness="2"
+                            CornerRadius="4"
+                            Padding="4,2">
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="RadioButton.orientation:pointerover /template/ Border#PART_Border">
+            <Setter Property="BorderBrush" Value="#3399FF"/>
+        </Style>
+        <Style Selector="RadioButton.orientation:checked /template/ Border#PART_Border">
+            <Setter Property="BorderBrush" Value="#0066CC"/>
+            <Setter Property="Background" Value="#E6F0FA"/>
+        </Style>
+    </UserControl.Styles>
+
     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
           RowDefinitions="Auto,Auto,Auto,Auto"
           HorizontalAlignment="Left">
@@ -66,17 +102,40 @@
                        ValueChanged="UpDown_ValueChanged"/>
         <TextBlock x:Name="labelUnitsMargin" Grid.Row="2" Grid.Column="5"/>
 
-        <!-- Row 3: orientation -->
+        <!-- Row 3: orientation (two image buttons, see UserControl.Styles) -->
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6"
-                    Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+                    Orientation="Horizontal" Spacing="10" Margin="0,8,0,0"
+                    HorizontalAlignment="Center">
             <RadioButton x:Name="radioPortrait"
+                         Classes="orientation"
                          GroupName="Orientation"
-                         Content="{resx:Localize PaperSizeControl_checkBoxPortrait_Text}"
-                         IsCheckedChanged="Orientation_Changed"/>
+                         IsCheckedChanged="Orientation_Changed">
+                <StackPanel Orientation="Vertical" Spacing="0">
+                    <Image Source="/Assets/Images/Portrait.png"
+                           Width="34" Height="34"
+                           Stretch="Uniform"
+                           HorizontalAlignment="Center"/>
+                    <TextBlock Text="{resx:Localize PaperSizeControl_checkBoxPortrait_Text}"
+                               FontSize="12"
+                               HorizontalAlignment="Center"
+                               Margin="0"/>
+                </StackPanel>
+            </RadioButton>
             <RadioButton x:Name="radioLandscape"
+                         Classes="orientation"
                          GroupName="Orientation"
-                         Content="{resx:Localize PaperSizeControl_checkBoxLandscape_Text}"
-                         IsCheckedChanged="Orientation_Changed"/>
+                         IsCheckedChanged="Orientation_Changed">
+                <StackPanel Orientation="Vertical" Spacing="0">
+                    <Image Source="/Assets/Images/Landscape.png"
+                           Width="34" Height="34"
+                           Stretch="Uniform"
+                           HorizontalAlignment="Center"/>
+                    <TextBlock Text="{resx:Localize PaperSizeControl_checkBoxLandscape_Text}"
+                               FontSize="12"
+                               HorizontalAlignment="Center"
+                               Margin="0"/>
+                </StackPanel>
+            </RadioButton>
         </StackPanel>
     </Grid>
 </UserControl>
