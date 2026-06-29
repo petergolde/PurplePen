@@ -55,56 +55,107 @@
         </Style>
     </UserControl.Styles>
 
-    <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
-          RowDefinitions="Auto,Auto,Auto,Auto"
-          HorizontalAlignment="Left">
+    <!-- A vertical StackPanel root (rather than one big column-spanning grid)
+         so each section is measured at its full natural width. This matters for
+         the separate-margins group box: when it lived in a cell spanning the
+         outer grid's Auto columns, Avalonia under-measured its width and a
+         SizeToContent window clipped its right edge. As a top-level StackPanel
+         child it contributes its full desired width. -->
+    <StackPanel HorizontalAlignment="Left">
 
-        <Grid.Styles>
+        <StackPanel.Styles>
             <Style Selector="TextBlock">
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="Margin" Value="0,0,6,0"/>
             </Style>
             <Style Selector="NumericUpDown">
-                <Setter Property="Width" Value="90"/>
+                <Setter Property="Width" Value="80"/>
                 <Setter Property="Margin" Value="0,3,4,3"/>
             </Style>
-        </Grid.Styles>
+        </StackPanel.Styles>
 
-        <!-- Row 0: paper size combo -->
-        <TextBlock Grid.Row="0" Grid.Column="0"
-                   Text="{resx:Localize PaperSizeControl_labelPaper_Text}"/>
-        <ComboBox x:Name="comboBoxPaperSize"
-                  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5"
-                  Margin="0,3,0,3"
-                  HorizontalAlignment="Stretch"
-                  SelectionChanged="ComboBoxPaperSize_SelectionChanged"/>
+        <!-- Size section: paper-size combo, then width and height. -->
+        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+              RowDefinitions="Auto,Auto,Auto">
 
-        <!-- Row 1: width and height -->
-        <TextBlock Grid.Row="1" Grid.Column="0"
-                   Text="{resx:Localize PaperSizeControl_labelWidth_Text}"/>
-        <NumericUpDown x:Name="upDownWidth"
-                       Grid.Row="1" Grid.Column="1"
-                       ValueChanged="UpDown_ValueChanged"/>
-        <TextBlock x:Name="labelUnitsWidth" Grid.Row="1" Grid.Column="2"/>
+            <!-- Row 0: paper size combo -->
+            <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="{resx:Localize PaperSizeControl_labelPaper_Text}"/>
+            <ComboBox x:Name="comboBoxPaperSize"
+                      Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5"
+                      Margin="0,3,0,3"
+                      HorizontalAlignment="Stretch"
+                      SelectionChanged="ComboBoxPaperSize_SelectionChanged"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="3"
-                   Text="{resx:Localize PaperSizeControl_labelHeight_Text}"/>
-        <NumericUpDown x:Name="upDownHeight"
-                       Grid.Row="1" Grid.Column="4"
-                       ValueChanged="UpDown_ValueChanged"/>
-        <TextBlock x:Name="labelUnitsHeight" Grid.Row="1" Grid.Column="5"/>
+            <!-- Row 1: width and height -->
+            <TextBlock Grid.Row="1" Grid.Column="0" 
+                       Text="{resx:Localize PaperSizeControl_labelWidth_Text}"/>
+            <NumericUpDown x:Name="upDownWidth"
+                           Grid.Row="1" Grid.Column="1"
+                           ValueChanged="UpDown_ValueChanged"/>
+            <TextBlock x:Name="labelUnitsWidth" Grid.Row="1" Grid.Column="2"/>
 
-        <!-- Row 2: margin -->
-        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
-                   Text="{resx:Localize PaperSizeControl_labelMargin_Text}"/>
-        <NumericUpDown x:Name="upDownMargin"
-                       Grid.Row="2" Grid.Column="4"
-                       ValueChanged="UpDown_ValueChanged"/>
-        <TextBlock x:Name="labelUnitsMargin" Grid.Row="2" Grid.Column="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" Margin="16,0,6,0"
+                       Text="{resx:Localize PaperSizeControl_labelHeight_Text}"/>
+            <NumericUpDown x:Name="upDownHeight"
+                           Grid.Row="1" Grid.Column="4"
+                           ValueChanged="UpDown_ValueChanged"/>
+            <TextBlock x:Name="labelUnitsHeight" Grid.Row="1" Grid.Column="5"/>
 
-        <!-- Row 3: orientation (two image buttons, see UserControl.Styles) -->
-        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6"
-                    Orientation="Horizontal" Spacing="10" Margin="0,8,0,0"
+            <!-- Row 2 (single-margin mode): one margin applied to all sides.
+                 Shown when SeparateMargins is false. -->
+            <TextBlock x:Name="labelMargin"
+                       Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"
+                       Text="{resx:Localize PaperSizeControl_labelMargin_Text}"/>
+            <NumericUpDown x:Name="upDownMargin"
+                           Grid.Row="2" Grid.Column="4"
+                           ValueChanged="UpDown_ValueChanged"/>
+            <TextBlock x:Name="labelUnitsMargin" Grid.Row="2" Grid.Column="5"/>
+        </Grid>
+
+        <!-- Separate-margins mode: a "Margins" group box holding the four
+             margins in a two-by-two grid (top/bottom on the first row,
+             left/right on the second). Shown when SeparateMargins is true. -->
+        <HeaderedContentControl x:Name="groupSeparateMargins"
+                                Margin="0,3,0,3"
+                                Padding="8,8,8,4"
+                                HorizontalAlignment="Left"
+                                Header="{resx:Localize PaperSizeControl_groupBoxMargins_Text}">
+            <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                  RowDefinitions="Auto,Auto">
+                <!-- Top -->
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="{resx:Localize PaperSizeControl_labelTop_Text}"/>
+                <NumericUpDown x:Name="upDownMarginTop"
+                               Grid.Row="0" Grid.Column="1"
+                               ValueChanged="UpDown_ValueChanged"/>
+                <TextBlock x:Name="labelUnitsMarginTop" Grid.Row="0" Grid.Column="2"/>
+                <!-- Bottom -->
+                <TextBlock Grid.Row="0" Grid.Column="3" Margin="16,0,6,0"
+                           Text="{resx:Localize PaperSizeControl_labelBottom_Text}"/>
+                <NumericUpDown x:Name="upDownMarginBottom"
+                               Grid.Row="0" Grid.Column="4"
+                               ValueChanged="UpDown_ValueChanged"/>
+                <TextBlock x:Name="labelUnitsMarginBottom" Grid.Row="0" Grid.Column="5"/>
+                <!-- Left -->
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="{resx:Localize PaperSizeControl_labelLeft_Text}"/>
+                <NumericUpDown x:Name="upDownMarginLeft"
+                               Grid.Row="1" Grid.Column="1"
+                               ValueChanged="UpDown_ValueChanged"/>
+                <TextBlock x:Name="labelUnitsMarginLeft" Grid.Row="1" Grid.Column="2"/>
+                <!-- Right -->
+                <TextBlock Grid.Row="1" Grid.Column="3" Margin="16,0,6,0"
+                           Text="{resx:Localize PaperSizeControl_labelRight_Text}"/>
+                <NumericUpDown x:Name="upDownMarginRight"
+                               Grid.Row="1" Grid.Column="4"
+                               ValueChanged="UpDown_ValueChanged"/>
+                <TextBlock x:Name="labelUnitsMarginRight" Grid.Row="1" Grid.Column="5"/>
+            </Grid>
+        </HeaderedContentControl>
+
+        <!-- Orientation (two image buttons, see UserControl.Styles) -->
+        <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,8,0,0"
                     HorizontalAlignment="Center">
             <RadioButton x:Name="radioPortrait"
                          Classes="orientation"
@@ -137,5 +188,5 @@
                 </StackPanel>
             </RadioButton>
         </StackPanel>
-    </Grid>
+    </StackPanel>
 </UserControl>

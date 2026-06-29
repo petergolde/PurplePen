@@ -14,9 +14,11 @@
 // dialog; the ViewModel surfaces display strings for them.
 
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PurplePen.ViewModels
 {
@@ -43,6 +45,7 @@ namespace PurplePen.ViewModels
         /// </summary>
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsPrinterVisible))]
+        [NotifyPropertyChangedFor(nameof(IsPreviewVisible))]
         private bool isPdfCreation;
 
         /// <summary>
@@ -56,10 +59,10 @@ namespace PurplePen.ViewModels
         private PrinterNameAndSettings printer = new PrinterNameAndSettings();
 
         /// <summary>
-        /// Paper size + margins. Displayed read-only via
-        /// <see cref="PaperSizeDisplay"/>, <see cref="OrientationDisplay"/>,
-        /// and <see cref="MarginsDisplay"/>; not yet editable from this
-        /// dialog (Change Margins… is unimplemented). Round-trips unchanged.
+        /// Paper size + margins. Displayed via <see cref="PaperSizeDisplay"/>,
+        /// <see cref="OrientationDisplay"/>, and <see cref="MarginsDisplay"/>;
+        /// edited via the Change Margins… button (<see cref="ChangeMarginsCommand"/>),
+        /// which opens the Page Setup dialog. Round-trips unchanged if not edited.
         /// </summary>
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(PaperSizeDisplay))]
@@ -112,22 +115,28 @@ namespace PurplePen.ViewModels
         /// <summary>True when the printer row is visible (i.e. not PDF creation).</summary>
         public bool IsPrinterVisible => !IsPdfCreation;
 
+        /// <summary>True when the Preview button is visible (i.e. not PDF creation).</summary>
+        public bool IsPreviewVisible => !IsPdfCreation;
+
         /// <summary>True when the per-course description count NumericUpDown is enabled.</summary>
         public bool IsDescriptionCountEnabled => CopiesIndex == 2;
 
         /// <summary>The printer name shown next to the "Printer:" label.</summary>
         public string PrinterNameDisplay => Printer?.PrinterName ?? "";
 
-        /// <summary>"Letter (8.5" × 11")"-style paper size description.</summary>
+        /// <summary>
+        /// "Letter (8.5" x 11")"-style paper size description. The dimensions are
+        /// always shown as (smaller x larger), independent of orientation.
+        /// </summary>
         public string PaperSizeDisplay
         {
             get {
                 if (PaperSizeWithMargins == null)
                     return "";
                 PrintingPaperSize ps = PaperSizeWithMargins.PaperSize;
-                string width = Util.GetDistanceText((int)Math.Round(ps.SizeInHundreths.Width));
-                string height = Util.GetDistanceText((int)Math.Round(ps.SizeInHundreths.Height));
-                return string.Format("{0} ({1} x {2})", ps.Name, width, height);
+                string smaller = Util.GetDistanceText((int)Math.Round(ps.SmallerDimensionInHundreths));
+                string larger = Util.GetDistanceText((int)Math.Round(ps.LargerDimensionInHundreths));
+                return string.Format("{0} ({1} x {2})", ps.Name, smaller, larger);
             }
         }
 
@@ -254,6 +263,28 @@ namespace PurplePen.ViewModels
                         _ => 1,   // Symbols
                     };
                 }
+            }
+        }
+
+        /// <summary>
+        /// Opens the Page Setup sub-dialog to edit the paper size and margins,
+        /// seeded with the current <see cref="PaperSizeWithMargins"/>, and stores
+        /// the result back if the user accepts. The display strings update
+        /// automatically (PaperSizeWithMargins raises change notifications).
+        /// </summary>
+        [RelayCommand]
+        private async Task ChangeMargins()
+        {
+            if (PaperSizeWithMargins == null)
+                return;
+
+            PageSetupDialogViewModel pageSetupVm = new PageSetupDialogViewModel {
+                PaperSizeWithMargins = PaperSizeWithMargins,
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(pageSetupVm))
+            {
+                PaperSizeWithMargins = pageSetupVm.PaperSizeWithMargins;
             }
         }
     }

@@ -64,6 +64,7 @@
                                     Padding="8,8,8,8">
                 <views:PaperSizeControl x:Name="paperSizeControl"
                                         HorizontalAlignment="Left"
+                                        SeparateMargins="False"
                                         PaperWidth="{Binding PaperWidth, Mode=TwoWay}"
                                         PaperHeight="{Binding PaperHeight, Mode=TwoWay}"
                                         PaperMargin="{Binding PaperMargin, Mode=TwoWay}"

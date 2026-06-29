@@ -81,11 +81,73 @@ namespace AvPurplePen.Views
             set => SetValue(LandscapeProperty, value);
         }
 
+        /// <summary>Avalonia property backing <see cref="SeparateMargins"/>.</summary>
+        public static readonly StyledProperty<bool> SeparateMarginsProperty =
+            AvaloniaProperty.Register<PaperSizeControl, bool>(nameof(SeparateMargins), defaultBindingMode: BindingMode.TwoWay);
+
+        /// <summary>
+        /// Whether the four sides have separate, individually-editable margins
+        /// (shown in a "Margins" group box) instead of a single margin applied to
+        /// all sides. When true, the per-side margin properties
+        /// (<see cref="PaperMarginTop"/>, etc.) are used; when false, the single
+        /// <see cref="PaperMargin"/> is used.
+        /// </summary>
+        public bool SeparateMargins
+        {
+            get => GetValue(SeparateMarginsProperty);
+            set => SetValue(SeparateMarginsProperty, value);
+        }
+
+        /// <summary>Avalonia property backing <see cref="PaperMarginTop"/> (hundredths of an inch).</summary>
+        public static readonly StyledProperty<int> PaperMarginTopProperty =
+            AvaloniaProperty.Register<PaperSizeControl, int>(nameof(PaperMarginTop), defaultBindingMode: BindingMode.TwoWay);
+
+        /// <summary>The top margin, in hundredths of an inch. Used when <see cref="SeparateMargins"/> is true.</summary>
+        public int PaperMarginTop
+        {
+            get => GetValue(PaperMarginTopProperty);
+            set => SetValue(PaperMarginTopProperty, value);
+        }
+
+        /// <summary>Avalonia property backing <see cref="PaperMarginBottom"/> (hundredths of an inch).</summary>
+        public static readonly StyledProperty<int> PaperMarginBottomProperty =
+            AvaloniaProperty.Register<PaperSizeControl, int>(nameof(PaperMarginBottom), defaultBindingMode: BindingMode.TwoWay);
+
+        /// <summary>The bottom margin, in hundredths of an inch. Used when <see cref="SeparateMargins"/> is true.</summary>
+        public int PaperMarginBottom
+        {
+            get => GetValue(PaperMarginBottomProperty);
+            set => SetValue(PaperMarginBottomProperty, value);
+        }
+
+        /// <summary>Avalonia property backing <see cref="PaperMarginLeft"/> (hundredths of an inch).</summary>
+        public static readonly StyledProperty<int> PaperMarginLeftProperty =
+            AvaloniaProperty.Register<PaperSizeControl, int>(nameof(PaperMarginLeft), defaultBindingMode: BindingMode.TwoWay);
+
+        /// <summary>The left margin, in hundredths of an inch. Used when <see cref="SeparateMargins"/> is true.</summary>
+        public int PaperMarginLeft
+        {
+            get => GetValue(PaperMarginLeftProperty);
+            set => SetValue(PaperMarginLeftProperty, value);
+        }
+
+        /// <summary>Avalonia property backing <see cref="PaperMarginRight"/> (hundredths of an inch).</summary>
+        public static readonly StyledProperty<int> PaperMarginRightProperty =
+            AvaloniaProperty.Register<PaperSizeControl, int>(nameof(PaperMarginRight), defaultBindingMode: BindingMode.TwoWay);
+
+        /// <summary>The right margin, in hundredths of an inch. Used when <see cref="SeparateMargins"/> is true.</summary>
+        public int PaperMarginRight
+        {
+            get => GetValue(PaperMarginRightProperty);
+            set => SetValue(PaperMarginRightProperty, value);
+        }
+
         public PaperSizeControl()
         {
             InitializeComponent();
             InitUnits();
             InitPaperSizes();
+            UpdateMarginVisibility();
             UpdateUIFromProperties();
         }
 
@@ -114,7 +176,9 @@ namespace AvPurplePen.Views
             }
 
             string format = "0." + new string('0', decimalPlaces);
-            foreach (NumericUpDown upDown in new[] { upDownWidth, upDownHeight, upDownMargin }) {
+            foreach (NumericUpDown upDown in new[] { upDownWidth, upDownHeight, upDownMargin,
+                                                     upDownMarginTop, upDownMarginBottom,
+                                                     upDownMarginLeft, upDownMarginRight }) {
                 upDown.FormatString = format;
                 upDown.Increment = increment;
                 upDown.Maximum = maximum;
@@ -122,6 +186,8 @@ namespace AvPurplePen.Views
             }
 
             labelUnitsWidth.Text = labelUnitsHeight.Text = labelUnitsMargin.Text = units;
+            labelUnitsMarginTop.Text = labelUnitsMarginBottom.Text =
+                labelUnitsMarginLeft.Text = labelUnitsMarginRight.Text = units;
         }
 
         /// <summary>Populates the paper-size combo with the standard sizes plus "User defined".</summary>
@@ -141,9 +207,25 @@ namespace AvPurplePen.Views
             base.OnPropertyChanged(change);
 
             if (change.Property == PaperWidthProperty || change.Property == PaperHeightProperty ||
-                change.Property == PaperMarginProperty || change.Property == LandscapeProperty) {
+                change.Property == PaperMarginProperty || change.Property == LandscapeProperty ||
+                change.Property == PaperMarginTopProperty || change.Property == PaperMarginBottomProperty ||
+                change.Property == PaperMarginLeftProperty || change.Property == PaperMarginRightProperty) {
                 UpdateUIFromProperties();
             }
+            else if (change.Property == SeparateMarginsProperty) {
+                UpdateMarginVisibility();
+            }
+        }
+
+        /// <summary>
+        /// Shows either the single-margin row or the separate-margins group box
+        /// according to <see cref="SeparateMargins"/>.
+        /// </summary>
+        private void UpdateMarginVisibility()
+        {
+            bool separate = SeparateMargins;
+            labelMargin.IsVisible = upDownMargin.IsVisible = labelUnitsMargin.IsVisible = !separate;
+            groupSeparateMargins.IsVisible = separate;
         }
 
         /// <summary>
@@ -180,6 +262,10 @@ namespace AvPurplePen.Views
                 upDownWidth.Value = Util.GetDistanceValue(PaperWidth);
                 upDownHeight.Value = Util.GetDistanceValue(PaperHeight);
                 upDownMargin.Value = Util.GetDistanceValue(PaperMargin);
+                upDownMarginTop.Value = Util.GetDistanceValue(PaperMarginTop);
+                upDownMarginBottom.Value = Util.GetDistanceValue(PaperMarginBottom);
+                upDownMarginLeft.Value = Util.GetDistanceValue(PaperMarginLeft);
+                upDownMarginRight.Value = Util.GetDistanceValue(PaperMarginRight);
 
                 radioPortrait.IsChecked = !Landscape;
                 radioLandscape.IsChecked = Landscape;
@@ -199,6 +285,10 @@ namespace AvPurplePen.Views
                 PaperWidth = Util.GetDistanceFromValue(upDownWidth.Value ?? 0);
                 PaperHeight = Util.GetDistanceFromValue(upDownHeight.Value ?? 0);
                 PaperMargin = Util.GetDistanceFromValue(upDownMargin.Value ?? 0);
+                PaperMarginTop = Util.GetDistanceFromValue(upDownMarginTop.Value ?? 0);
+                PaperMarginBottom = Util.GetDistanceFromValue(upDownMarginBottom.Value ?? 0);
+                PaperMarginLeft = Util.GetDistanceFromValue(upDownMarginLeft.Value ?? 0);
+                PaperMarginRight = Util.GetDistanceFromValue(upDownMarginRight.Value ?? 0);
                 Landscape = radioLandscape.IsChecked == true;
             }
             finally {

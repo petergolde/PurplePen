@@ -1,0 +1,68 @@
+<!--
+    PageSetupDialog.axaml
+
+    Page Setup dialog. Hosts a single PaperSizeControl (in separate-margins
+    mode, so all four margins are individually editable) and OK / Cancel
+    buttons. The caller seeds and reads back the result through the
+    ViewModel's PaperSizeWithMargins property.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.PageSetupDialog"
+        Classes="dialog"
+        x:DataType="vm:PageSetupDialogViewModel"
+        Title="{resx:Localize PageSetup_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="400" d:DesignHeight="300"
+        SizeToContent="WidthAndHeight"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PageSetupDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons at the bottom -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    Width="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+
+        <views:PaperSizeControl x:Name="paperSizeControl"
+                                HorizontalAlignment="Left"
+                                SeparateMargins="True"
+                                PaperWidth="{Binding PaperWidth, Mode=TwoWay}"
+                                PaperHeight="{Binding PaperHeight, Mode=TwoWay}"
+                                PaperMarginTop="{Binding PaperMarginTop, Mode=TwoWay}"
+                                PaperMarginBottom="{Binding PaperMarginBottom, Mode=TwoWay}"
+                                PaperMarginLeft="{Binding PaperMarginLeft, Mode=TwoWay}"
+                                PaperMarginRight="{Binding PaperMarginRight, Mode=TwoWay}"
+                                Landscape="{Binding Landscape, Mode=TwoWay}"/>
+
+    </DockPanel>
+</Window>

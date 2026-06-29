@@ -3772,6 +3772,9 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="NewEventPaperSize_changeLaterLabel_Text" xml:space="preserve">
     <value>You can change this later with File/Set Print Area.</value>
   </data>
+  <data name="PageSetup_Text" xml:space="preserve">
+    <value>Page Setup</value>
+  </data>
   <data name="PaperSizeControl_labelPaper_Text" xml:space="preserve">
     <value>Size:</value>
   </data>
@@ -3783,6 +3786,21 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   </data>
   <data name="PaperSizeControl_labelMargin_Text" xml:space="preserve">
     <value>Margin (all sides):</value>
+  </data>
+  <data name="PaperSizeControl_groupBoxMargins_Text" xml:space="preserve">
+    <value>Margins</value>
+  </data>
+  <data name="PaperSizeControl_labelTop_Text" xml:space="preserve">
+    <value>Top:</value>
+  </data>
+  <data name="PaperSizeControl_labelBottom_Text" xml:space="preserve">
+    <value>Bottom:</value>
+  </data>
+  <data name="PaperSizeControl_labelLeft_Text" xml:space="preserve">
+    <value>Left:</value>
+  </data>
+  <data name="PaperSizeControl_labelRight_Text" xml:space="preserve">
+    <value>Right:</value>
   </data>
   <data name="PaperSizeControl_checkBoxPortrait_Text" xml:space="preserve">
     <value>Portrait</value>

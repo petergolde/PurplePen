@@ -9,10 +9,10 @@
 //      IsPdfCreation. The Title is a single property, so we can't overlap
 //      two AXAML elements like we do for the OK button; setting it in
 //      Opened from the View layer keeps localized strings out of the VM.
-//   3. The Change Printer… / Change Margins… / Preview buttons, which aren't
-//      ported yet — their click handlers are intentionally no-ops (with a
-//      TODO inside #if PORTING for the future port). (The Punch Card Layout…
-//      button is bound to a command on the ViewModel instead.)
+//   3. The Change Printer… / Preview buttons, which aren't ported yet — their
+//      click handlers are intentionally no-ops (with a TODO inside #if PORTING
+//      for the future port). (The Change Margins… and Punch Card Layout…
+//      buttons are bound to commands on the ViewModel instead.)
 //
 // Migrated from WinForms PurplePen/PrintPunches.cs.
 
@@ -89,19 +89,6 @@ namespace AvPurplePen.Views
             // TODO: Port the platform printer-picker. Original WinForms code
             // used a PrintDialog to let the user choose the printer and pick
             // up its default paper size + margins + DEVMODE.
-#endif
-        }
-
-        /// <summary>
-        /// Change Margins… — not yet implemented. The PrinterMargins sub-dialog
-        /// isn't ported.
-        /// </summary>
-        private void MarginChange_Click(object? sender, RoutedEventArgs e)
-        {
-#if PORTING
-            // TODO: Port the PrinterMargins dialog. It lets the user pick
-            // paper size, orientation, and margins; the new values get
-            // written back into vm.PaperSizeWithMargins.
 #endif
         }
 

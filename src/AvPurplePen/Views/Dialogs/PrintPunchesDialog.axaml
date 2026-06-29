@@ -11,8 +11,10 @@
         stacked on the right.
       * Preview / Print / Cancel buttons at the bottom.
 
-    The Change Printer / Change Margins / Preview / Punch Card Layout buttons
-    are wired but not yet implemented — clicking them is a no-op for now.
+    The Change Margins button opens the Page Setup dialog (bound to a command);
+    the Punch Card Layout button opens its own dialog. The Change Printer and
+    Preview buttons are wired but not yet implemented — clicking them is a no-op
+    for now.
 
     Migrated from WinForms PurplePen/PrintPunches.cs.
 -->
@@ -54,6 +56,7 @@
                     Content="{resx:Localize PrintPunches_previewButton_Text}"
                     Width="120"
                     HorizontalContentAlignment="Center"
+                    IsVisible="{Binding IsPreviewVisible}"
                     Click="PreviewButton_Click"/>
 
             <!-- Print (only when !IsPdfCreation) -->
@@ -143,7 +146,7 @@
                         Grid.Row="6" Grid.Column="4"
                         Classes="Small"
                         Content="{resx:Localize PrintPunches_marginChange_Text}"
-                        Click="MarginChange_Click"/>
+                        Command="{Binding ChangeMarginsCommand}"/>
             </Grid>
         </HeaderedContentControl>
 

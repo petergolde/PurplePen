@@ -49,6 +49,26 @@ namespace PurplePen
             }
         }
 
+        // The smaller of the two paper dimensions, in inches (independent of orientation).
+        public float SmallerDimensionInInches {
+            get { return Math.Min(SizeInInches.Width, SizeInInches.Height); }
+        }
+
+        // The larger of the two paper dimensions, in inches (independent of orientation).
+        public float LargerDimensionInInches {
+            get { return Math.Max(SizeInInches.Width, SizeInInches.Height); }
+        }
+
+        // The smaller of the two paper dimensions, in hundredths of an inch (independent of orientation).
+        public float SmallerDimensionInHundreths {
+            get { return SmallerDimensionInInches * 100F; }
+        }
+
+        // The larger of the two paper dimensions, in hundredths of an inch (independent of orientation).
+        public float LargerDimensionInHundreths {
+            get { return LargerDimensionInInches * 100F; }
+        }
+
         public PrintingPaperSize(string name, float widthInHundreths, float heightInHundreths)
         {
             Name = name;
@@ -209,8 +229,8 @@ namespace PurplePen
         };
 
         public const int FirstMetricPaperSizeIndex = 0;
-        public const int FirstEnglishPaperSizeIndex = 6;
-        public const int DefaultEnglighPaperSizeIndex = 6;
+        public const int FirstEnglishPaperSizeIndex = 5;
+        public const int DefaultEnglighPaperSizeIndex = 5;
         public const int DefaultMetricPaperSizeindex = 2;
 
         public const int DefaultMapEnglishMarginInHundreths = 25;  // 1/4 of a inch.

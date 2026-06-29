@@ -97,9 +97,8 @@ Source Sans 3  <-- this is what I currently chose.
 Lato
 
 Dialogs remaining to port:
-DownloadProgressDialog
+DownloadProgressDialog (Should be able to use OperationInProgressDialog instead).
 PrintCourses
-PrinterMargins
 
 
 Hand cursor isn't show when dragging map.
