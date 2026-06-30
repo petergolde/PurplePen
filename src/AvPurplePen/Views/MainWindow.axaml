@@ -817,13 +817,20 @@
                              This is a custom control that renders the description grid,
                              supports selection, and fires Change/SelectedIndexChange events.
                         -->
-                        <views:DescriptionViewer 
-                            x:Name="descriptionViewer"
-                            DataContext="{Binding DescriptionViewerViewModel}"
-                        />
+                        <!-- Wrapped in a Panel (which inherits the MainWindowViewModel
+                             DataContext) so the IsVisible binding resolves against the
+                             MainWindowViewModel. DescriptionViewer itself overrides its
+                             DataContext to DescriptionViewerViewModel, so a !ShowTopology
+                             binding placed directly on it would not resolve. -->
+                        <Panel IsVisible="{Binding !ShowTopology}">
+                            <views:DescriptionViewer
+                                x:Name="descriptionViewer"
+                                DataContext="{Binding DescriptionViewerViewModel}"
+                            />
+                        </Panel>
 
                         <!-- Topology view panel (hidden by default, shown when radio button selected) -->
-                        <Grid x:Name="panelTopology" IsVisible="False"
+                        <Grid x:Name="panelTopology" IsVisible="{Binding ShowTopology}"
                               ColumnDefinitions="*,Auto">
 
                             <!-- PLACEHOLDER: mapViewerTopology
@@ -867,13 +874,14 @@
                                      HorizontalAlignment="Stretch"
                                      HorizontalContentAlignment="Center"
                                      Content="{resx:Localize MainFrame_radioButtonDescriptions_Text}"
-                                     IsChecked="True"/>
+                                     IsChecked="{Binding !ShowTopology, Mode=TwoWay}"/>
                         <RadioButton x:Name="radioButtonTopology" Grid.Column="1"
                                      Theme="{DynamicResource ButtonRadioButton}"
                                      Classes="Small"
                                      HorizontalAlignment="Stretch"
                                      HorizontalContentAlignment="Center"
-                                     Content="{resx:Localize MainFrame_radioButtonTopology_Text}"/>
+                                     Content="{resx:Localize MainFrame_radioButtonTopology_Text}"
+                                     IsChecked="{Binding ShowTopology, Mode=TwoWay}"/>
                     </Grid>
                 </Grid>
 

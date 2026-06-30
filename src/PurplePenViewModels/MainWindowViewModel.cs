@@ -85,6 +85,13 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         private CoursePartBannerViewModel coursePartBannerViewModel = new CoursePartBannerViewModel();
 
+        // Controls which view is shown in the left column: the topology/ordering view
+        // (when true) or the control descriptions view (when false). The two radio
+        // buttons (Descriptions / Topology) bind to this, and it can also be set
+        // programmatically to switch the displayed view from the ViewModel.
+        [ObservableProperty]
+        private bool showTopology = false;
+
         /// <summary>
         /// The names of the course tabs displayed in the tab strip.
         /// </summary>

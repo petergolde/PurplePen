@@ -241,10 +241,8 @@ namespace PurplePen.ViewModels
 
         public void ShowTopologyView()
         {
-#if PORTING
-            // Not yet implemented.
-            return;
-#endif
+            // The viewing of the Topology pane is bound to this property.
+            ShowTopology = true;
         }
 
     }
