@@ -9,6 +9,8 @@
 >
         <avutil:PanAndZoom  
             Name="panAndZoom"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible"
             BasicMouseActivity="panAndZoom_MouseActivity"
             PropertyChanged="panAndZoom_PropertyChanged"
          />    

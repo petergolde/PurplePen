@@ -28,9 +28,15 @@ namespace AvUtil
         private const double LargeScrollFraction = 0.8;
 
         // The scroll bars shown on the right (vertical) and bottom (horizontal) edges.
-        // They are added to / removed from the visual tree as their Show... properties change.
+        // They are added to / removed from the visual tree as their effective visibility changes.
         private readonly ScrollBar verticalScrollBar;
         private readonly ScrollBar horizontalScrollBar;
+
+        // The effective shown state of each scroll bar, resolved from the *Visibility properties and (for
+        // Auto) whether the viewport is smaller than the drawing in that dimension. These drive the layout
+        // (which space is reserved) and which scroll bars are present in the visual tree.
+        private bool verticalScrollBarShown = false;
+        private bool horizontalScrollBarShown = false;
 
         // The size of the drawing area (control minus any visible scroll bars), as of the last arrange.
         // Set from the arranged size (Bounds isn't updated until after ArrangeOverride returns), and used
@@ -72,13 +78,28 @@ namespace AvUtil
             getter: o => o.ZoomFactor,
             setter: (o, value) => o.ZoomFactor = value);
 
-        // Whether the vertical scroll bar (on the right edge) is shown.
-        public static readonly StyledProperty<bool> ShowVerticalScrollBarProperty =
-            AvaloniaProperty.Register<PanAndZoom, bool>(nameof(ShowVerticalScrollBar), defaultValue: true);
+        // Controls the vertical scroll bar (on the right edge). Visible = always shown, Hidden = never shown,
+        // Auto = shown only when the viewport is shorter than the drawing. Disabled is not allowed.
+        public static readonly StyledProperty<ScrollBarVisibility> VerticalScrollBarVisibilityProperty =
+            AvaloniaProperty.Register<PanAndZoom, ScrollBarVisibility>(
+                nameof(VerticalScrollBarVisibility),
+                defaultValue: ScrollBarVisibility.Auto,
+                validate: ValidateScrollBarVisibility);
 
-        // Whether the horizontal scroll bar (on the bottom edge) is shown.
-        public static readonly StyledProperty<bool> ShowHorizontalScrollBarProperty =
-            AvaloniaProperty.Register<PanAndZoom, bool>(nameof(ShowHorizontalScrollBar), defaultValue: true);
+        // Controls the horizontal scroll bar (on the bottom edge). Visible = always shown, Hidden = never shown,
+        // Auto = shown only when the viewport is narrower than the drawing. Disabled is not allowed.
+        public static readonly StyledProperty<ScrollBarVisibility> HorizontalScrollBarVisibilityProperty =
+            AvaloniaProperty.Register<PanAndZoom, ScrollBarVisibility>(
+                nameof(HorizontalScrollBarVisibility),
+                defaultValue: ScrollBarVisibility.Auto,
+                validate: ValidateScrollBarVisibility);
+
+        // Validates a scroll bar visibility value. ScrollBarVisibility.Disabled is not supported by this
+        // control; attempting to set it (via property, binding, or SetValue) throws.
+        private static bool ValidateScrollBarVisibility(ScrollBarVisibility value)
+        {
+            return value != ScrollBarVisibility.Disabled;
+        }
 
         public PanAndZoom()
         {
@@ -106,16 +127,16 @@ namespace AvUtil
             this.IsHitTestVisible = true;
         }
 
-        // Whether the vertical scroll bar (on the right edge) is shown.
-        public bool ShowVerticalScrollBar {
-            get { return GetValue(ShowVerticalScrollBarProperty); }
-            set { SetValue(ShowVerticalScrollBarProperty, value); }
+        // Controls the vertical scroll bar (on the right edge). Disabled is not allowed (throws).
+        public ScrollBarVisibility VerticalScrollBarVisibility {
+            get { return GetValue(VerticalScrollBarVisibilityProperty); }
+            set { SetValue(VerticalScrollBarVisibilityProperty, value); }
         }
 
-        // Whether the horizontal scroll bar (on the bottom edge) is shown.
-        public bool ShowHorizontalScrollBar {
-            get { return GetValue(ShowHorizontalScrollBarProperty); }
-            set { SetValue(ShowHorizontalScrollBarProperty, value); }
+        // Controls the horizontal scroll bar (on the bottom edge). Disabled is not allowed (throws).
+        public ScrollBarVisibility HorizontalScrollBarVisibility {
+            get { return GetValue(HorizontalScrollBarVisibilityProperty); }
+            set { SetValue(HorizontalScrollBarVisibilityProperty, value); }
         }
 
         // The drawing that we are drawing and panning/zooming over.
@@ -233,19 +254,18 @@ namespace AvUtil
         {
             base.OnPropertyChanged(change);
 
-            if (change.Property == ShowVerticalScrollBarProperty || change.Property == ShowHorizontalScrollBarProperty) {
-                // Showing/hiding a scroll bar changes the children and the available drawing area.
-                SyncScrollBarChildren();
-                InvalidateMeasure();
+            if (change.Property == VerticalScrollBarVisibilityProperty || change.Property == HorizontalScrollBarVisibilityProperty) {
+                // The visibility mode changed; re-resolve which scroll bars are shown.
+                UpdateScrollBarVisibility();
             }
         }
 
         // Measure the scroll bar children so their desired thickness is known for arranging.
         protected override Size MeasureOverride(Size availableSize)
         {
-            if (ShowVerticalScrollBar)
+            if (verticalScrollBarShown)
                 verticalScrollBar.Measure(availableSize);
-            if (ShowHorizontalScrollBar)
+            if (horizontalScrollBarShown)
                 horizontalScrollBar.Measure(availableSize);
 
             return base.MeasureOverride(availableSize);
@@ -255,14 +275,14 @@ namespace AvUtil
         // area for the drawing. Recalculates the world transform when the drawing area changes.
         protected override Size ArrangeOverride(Size finalSize)
         {
-            double vScrollWidth = ShowVerticalScrollBar ? verticalScrollBar.DesiredSize.Width : 0;
-            double hScrollHeight = ShowHorizontalScrollBar ? horizontalScrollBar.DesiredSize.Height : 0;
+            double vScrollWidth = verticalScrollBarShown ? verticalScrollBar.DesiredSize.Width : 0;
+            double hScrollHeight = horizontalScrollBarShown ? horizontalScrollBar.DesiredSize.Height : 0;
             double drawWidth = Math.Max(0, finalSize.Width - vScrollWidth);
             double drawHeight = Math.Max(0, finalSize.Height - hScrollHeight);
 
-            if (ShowVerticalScrollBar)
+            if (verticalScrollBarShown)
                 verticalScrollBar.Arrange(new Rect(drawWidth, 0, vScrollWidth, drawHeight));
-            if (ShowHorizontalScrollBar)
+            if (horizontalScrollBarShown)
                 horizontalScrollBar.Arrange(new Rect(0, drawHeight, drawWidth, hScrollHeight));
 
             Size newDrawingAreaSize = new Size(drawWidth, drawHeight);
@@ -280,11 +300,45 @@ namespace AvUtil
             return drawingAreaSize;
         }
 
-        // Add or remove the scroll bar controls from the visual tree to match the Show... properties.
+        // Add or remove the scroll bar controls from the visual tree to match the resolved shown state.
         private void SyncScrollBarChildren()
         {
-            SyncScrollBarChild(verticalScrollBar, ShowVerticalScrollBar);
-            SyncScrollBarChild(horizontalScrollBar, ShowHorizontalScrollBar);
+            SyncScrollBarChild(verticalScrollBar, verticalScrollBarShown);
+            SyncScrollBarChild(horizontalScrollBar, horizontalScrollBarShown);
+        }
+
+        // Resolve, from the *Visibility properties and the current viewport, whether each scroll bar should
+        // be shown. If the result changes, update the children and request a new layout pass. For Auto, the
+        // scroll bar is shown only when the viewport is smaller than the drawing in that dimension.
+        private void UpdateScrollBarVisibility()
+        {
+            bool vShow = ResolveScrollBarShown(VerticalScrollBarVisibility, horizontal: false);
+            bool hShow = ResolveScrollBarShown(HorizontalScrollBarVisibility, horizontal: true);
+
+            if (vShow != verticalScrollBarShown || hShow != horizontalScrollBarShown) {
+                verticalScrollBarShown = vShow;
+                horizontalScrollBarShown = hShow;
+                SyncScrollBarChildren();
+                InvalidateMeasure();
+            }
+        }
+
+        // Determine whether a scroll bar with the given visibility mode should currently be shown.
+        private bool ResolveScrollBarShown(ScrollBarVisibility visibility, bool horizontal)
+        {
+            switch (visibility) {
+                case ScrollBarVisibility.Visible:
+                    return true;
+                case ScrollBarVisibility.Hidden:
+                    return false;
+                case ScrollBarVisibility.Auto:
+                    if (drawing == null)
+                        return false;
+                    return horizontal ? viewport.Width < drawing.Bounds.Width
+                                      : viewport.Height < drawing.Bounds.Height;
+                default:
+                    return false;
+            }
         }
 
         // Add the given scroll bar to (or remove it from) the visual and logical children to match 'show'.
@@ -565,6 +619,7 @@ namespace AvUtil
         void ViewportHasChanged()
         {
             CalculateWorldTransform();
+            UpdateScrollBarVisibility();
             UpdateScrollBars();
             this.InvalidateVisual();
 
