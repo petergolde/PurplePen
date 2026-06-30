@@ -1,10 +1,12 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Rendering;
+using Avalonia.VisualTree;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,9 +15,27 @@ using System.Text;
 namespace AvUtil
 {
     // Pans and zooms a drawing. This displays an IAvaloniaDrawing that applies a pan and zoom transform to it.
+    // Optionally displays vertical and/or horizontal scroll bars (on the right and bottom edges respectively)
+    // that relate the visible viewport to the Bounds of the drawing.
     public class PanAndZoom : Control, ICustomHitTest
     {
         IAvaloniaDrawing? drawing;
+
+        // The fraction of the viewport that a "small" scroll (line/arrow click) moves. 
+        private const double SmallScrollFraction = 0.05;
+
+        // The fraction of the viewport that a "large" scroll (page/track click) moves. 
+        private const double LargeScrollFraction = 0.8;
+
+        // The scroll bars shown on the right (vertical) and bottom (horizontal) edges.
+        // They are added to / removed from the visual tree as their Show... properties change.
+        private readonly ScrollBar verticalScrollBar;
+        private readonly ScrollBar horizontalScrollBar;
+
+        // The size of the drawing area (control minus any visible scroll bars), as of the last arrange.
+        // Set from the arranged size (Bounds isn't updated until after ArrangeOverride returns), and used
+        // everywhere the available drawing space is needed (transform, render, hit testing).
+        private Size drawingAreaSize = new Size(0, 0);
 
         // Defines what part of the map we are viewing.
         private Point centerPoint = new Point(0, 0);			// center point in world coordinates.
@@ -52,14 +72,50 @@ namespace AvUtil
             getter: o => o.ZoomFactor,
             setter: (o, value) => o.ZoomFactor = value);
 
+        // Whether the vertical scroll bar (on the right edge) is shown.
+        public static readonly StyledProperty<bool> ShowVerticalScrollBarProperty =
+            AvaloniaProperty.Register<PanAndZoom, bool>(nameof(ShowVerticalScrollBar), defaultValue: true);
+
+        // Whether the horizontal scroll bar (on the bottom edge) is shown.
+        public static readonly StyledProperty<bool> ShowHorizontalScrollBarProperty =
+            AvaloniaProperty.Register<PanAndZoom, bool>(nameof(ShowHorizontalScrollBar), defaultValue: true);
+
         public PanAndZoom()
         {
             pixelPerMm = 96 / 25.4F;  // 96 pixels is the standard DPI, which is what is used everywhere in Avalonia.
             xformLogPixelToWorld = new Matrix();
             xformWorldToLogPixel = new Matrix();
 
+            // Create the scroll bars. They always stay visible (no auto-hide/fade) while shown; we control
+            // whether they appear at all by adding/removing them from the visual tree (see SyncScrollBarChildren).
+            verticalScrollBar = new ScrollBar {
+                Orientation = Orientation.Vertical,
+                Visibility = ScrollBarVisibility.Visible,
+                AllowAutoHide = false,
+            };
+            horizontalScrollBar = new ScrollBar {
+                Orientation = Orientation.Horizontal,
+                Visibility = ScrollBarVisibility.Visible,
+                AllowAutoHide = false,
+            };
+            verticalScrollBar.Scroll += VerticalScrollBar_Scroll;
+            horizontalScrollBar.Scroll += HorizontalScrollBar_Scroll;
+
+            SyncScrollBarChildren();
 
             this.IsHitTestVisible = true;
+        }
+
+        // Whether the vertical scroll bar (on the right edge) is shown.
+        public bool ShowVerticalScrollBar {
+            get { return GetValue(ShowVerticalScrollBarProperty); }
+            set { SetValue(ShowVerticalScrollBarProperty, value); }
+        }
+
+        // Whether the horizontal scroll bar (on the bottom edge) is shown.
+        public bool ShowHorizontalScrollBar {
+            get { return GetValue(ShowHorizontalScrollBarProperty); }
+            set { SetValue(ShowHorizontalScrollBarProperty, value); }
         }
 
         // The drawing that we are drawing and panning/zooming over.
@@ -135,7 +191,8 @@ namespace AvUtil
 
         public override void Render(DrawingContext context)
         {
-            Rect bounds = new Rect(Bounds.Size);  // Bounds in my coordinates, starting at 0,0
+            // The drawing area excludes any space taken by the scroll bars on the right/bottom edges.
+            Rect drawingArea = new Rect(GetDrawingAreaSize());  // in my coordinates, starting at 0,0
 
             if (drawing != null) {
                 ++renderNumber;
@@ -145,12 +202,15 @@ namespace AvUtil
                 watch.Start();
 
                 double scale = LayoutHelper.GetLayoutScale(this);
-                int pixelWidth = (int)Math.Ceiling(bounds.Width * scale);
-                int pixelHeight = (int)Math.Ceiling(bounds.Height * scale);
+                int pixelWidth = (int)Math.Ceiling(drawingArea.Width * scale);
+                int pixelHeight = (int)Math.Ceiling(drawingArea.Height * scale);
                 PixelSize pixelSize = new PixelSize(pixelWidth, pixelHeight);
 
-                context.PushTransform(xformWorldToLogPixel);
-                drawing.Draw(context, viewport, pixelSize, xformWorldToPhysPixel);
+                // Clip to the drawing area so the map doesn't draw underneath the scroll bars.
+                using (context.PushClip(drawingArea))
+                using (context.PushTransform(xformWorldToLogPixel)) {
+                    drawing.Draw(context, viewport, pixelSize, xformWorldToPhysPixel);
+                }
 
                 watch.Stop();
 
@@ -158,7 +218,7 @@ namespace AvUtil
 
             }
             else {
-                context.FillRectangle(Brushes.White, bounds);
+                context.FillRectangle(Brushes.White, drawingArea);
             }
         }
 
@@ -169,15 +229,95 @@ namespace AvUtil
         }
 
 
-        protected override void OnSizeChanged(SizeChangedEventArgs e)
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
         {
-            base.OnSizeChanged(e);
-            ViewportHasChanged();
+            base.OnPropertyChanged(change);
+
+            if (change.Property == ShowVerticalScrollBarProperty || change.Property == ShowHorizontalScrollBarProperty) {
+                // Showing/hiding a scroll bar changes the children and the available drawing area.
+                SyncScrollBarChildren();
+                InvalidateMeasure();
+            }
+        }
+
+        // Measure the scroll bar children so their desired thickness is known for arranging.
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            if (ShowVerticalScrollBar)
+                verticalScrollBar.Measure(availableSize);
+            if (ShowHorizontalScrollBar)
+                horizontalScrollBar.Measure(availableSize);
+
+            return base.MeasureOverride(availableSize);
+        }
+
+        // Arrange the scroll bars along the right and bottom edges, leaving the remaining
+        // area for the drawing. Recalculates the world transform when the drawing area changes.
+        protected override Size ArrangeOverride(Size finalSize)
+        {
+            double vScrollWidth = ShowVerticalScrollBar ? verticalScrollBar.DesiredSize.Width : 0;
+            double hScrollHeight = ShowHorizontalScrollBar ? horizontalScrollBar.DesiredSize.Height : 0;
+            double drawWidth = Math.Max(0, finalSize.Width - vScrollWidth);
+            double drawHeight = Math.Max(0, finalSize.Height - hScrollHeight);
+
+            if (ShowVerticalScrollBar)
+                verticalScrollBar.Arrange(new Rect(drawWidth, 0, vScrollWidth, drawHeight));
+            if (ShowHorizontalScrollBar)
+                horizontalScrollBar.Arrange(new Rect(0, drawHeight, drawWidth, hScrollHeight));
+
+            Size newDrawingAreaSize = new Size(drawWidth, drawHeight);
+            if (newDrawingAreaSize != drawingAreaSize) {
+                drawingAreaSize = newDrawingAreaSize;
+                ViewportHasChanged();
+            }
+
+            return finalSize;
+        }
+
+        // The size of the area available for drawing: the control size minus any visible scroll bars.
+        private Size GetDrawingAreaSize()
+        {
+            return drawingAreaSize;
+        }
+
+        // Add or remove the scroll bar controls from the visual tree to match the Show... properties.
+        private void SyncScrollBarChildren()
+        {
+            SyncScrollBarChild(verticalScrollBar, ShowVerticalScrollBar);
+            SyncScrollBarChild(horizontalScrollBar, ShowHorizontalScrollBar);
+        }
+
+        // Add the given scroll bar to (or remove it from) the visual and logical children to match 'show'.
+        private void SyncScrollBarChild(ScrollBar scrollBar, bool show)
+        {
+            bool present = VisualChildren.Contains(scrollBar);
+            if (show && !present) {
+                VisualChildren.Add(scrollBar);
+                LogicalChildren.Add(scrollBar);
+            }
+            else if (!show && present) {
+                VisualChildren.Remove(scrollBar);
+                LogicalChildren.Remove(scrollBar);
+            }
+        }
+
+        // Returns true if the given event originated from one of the scroll bars (rather than the drawing
+        // area). Such events bubble up to this control from the scroll bar children; for example, clicking
+        // an empty scroll bar track (when there is nothing to scroll) is not handled by the scroll bar and
+        // would otherwise be treated as a click/pan on the drawing.
+        private bool IsFromScrollBar(RoutedEventArgs e)
+        {
+            return e.Source is Visual source &&
+                ((verticalScrollBar == source || verticalScrollBar.IsVisualAncestorOf(source)) ||
+                 (horizontalScrollBar == source || horizontalScrollBar.IsVisualAncestorOf(source)));
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
+
+            if (IsFromScrollBar(e))
+                return;
 
             PointerPoint pointer = e.GetCurrentPoint(this);
             PointerPointProperties props = pointer.Properties;
@@ -194,6 +334,11 @@ namespace AvUtil
         protected override void OnPointerReleased(PointerReleasedEventArgs e)
         {
             base.OnPointerReleased(e);
+
+            // Ignore events bubbling up from the scroll bars, unless we're mid-pan (in which case the
+            // release ends the pan regardless of where the pointer currently is).
+            if (!panningInProgress && IsFromScrollBar(e))
+                return;
 
             PointerPoint pointer = e.GetCurrentPoint(this);
             PointerPointProperties props = pointer.Properties;
@@ -216,6 +361,9 @@ namespace AvUtil
         {
             base.OnPointerEntered(e);
 
+            if (IsFromScrollBar(e))
+                return;
+
             PointerPoint pointer = e.GetCurrentPoint(this);
             Point worldPos = PixelToWorld(pointer.Position);
             BasicMouseEventArgs eventArgs = new BasicMouseEventArgs(BasicMouseActivityEvent, this, MouseButton.None, BasicMouseAction.Enter, pointer.Position, worldPos, e.Timestamp);
@@ -226,6 +374,9 @@ namespace AvUtil
         {
             base.OnPointerExited(e);
 
+            if (IsFromScrollBar(e))
+                return;
+
             PointerPoint pointer = e.GetCurrentPoint(this);
             BasicMouseEventArgs eventArgs = new BasicMouseEventArgs(BasicMouseActivityEvent, this, MouseButton.None, BasicMouseAction.Leave, new Point(), new Point(), e.Timestamp);
             RaiseEvent(eventArgs);
@@ -234,6 +385,11 @@ namespace AvUtil
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
+
+            // Ignore events bubbling up from the scroll bars, unless we're mid-pan (so panning continues
+            // even if the pointer passes over a scroll bar).
+            if (!panningInProgress && IsFromScrollBar(e))
+                return;
 
             PointerPoint pointer = e.GetCurrentPoint(this);
             PointerPointProperties props = pointer.Properties;
@@ -258,7 +414,7 @@ namespace AvUtil
             double delta = e.Delta.Y;
 
             // Determine the point to zoom around.
-            Avalonia.Rect rect = new Rect(this.Bounds.Size);  // local coordinates.
+            Avalonia.Rect rect = new Rect(GetDrawingAreaSize());  // local coordinates (excluding scroll bars).
             Point zoomPtPixel, zoomPtWorld;
 
             Point pt = e.GetPosition(this);
@@ -293,8 +449,8 @@ namespace AvUtil
         {
             double layoutScale = LayoutHelper.GetLayoutScale(this);  // ratio between logical and physical pixels.
 
-            // Get size, midpoint of the window .
-            Size sizeInPixels = this.Bounds.Size;  
+            // Get size, midpoint of the drawing area (the window minus any scroll bars).
+            Size sizeInPixels = GetDrawingAreaSize();
             Point midpoint = new Point(sizeInPixels.Width / 2.0F, sizeInPixels.Height / 2.0F);
 
             // Calculate the world->window transform.
@@ -409,18 +565,131 @@ namespace AvUtil
         void ViewportHasChanged()
         {
             CalculateWorldTransform();
+            UpdateScrollBars();
             this.InvalidateVisual();
 
             ViewportChangedEventArgs eventArgs = new ViewportChangedEventArgs(ViewportChangedEvent, this, Viewport, ZoomFactor, PixelSize);
+        }
+
+        // Update the scroll bars' range, thumb size (ViewportSize) and position (Value) to reflect the
+        // relationship between the current viewport and the bounds of the drawing. The scrollable content
+        // is the union of the drawing's bounds and the current viewport, so the thumb always fits and
+        // panning beyond the drawing is still represented.
+        void UpdateScrollBars()
+        {
+            Rect vp = viewport;
+
+            if (drawing == null) {
+                // No drawing: nothing meaningful to scroll. Show a full, centered thumb.
+                SetScrollBar(horizontalScrollBar, minimum: 0, maximum: 0, viewportSize: 1, value: 0, lineSize: 1, pageSize: 1);
+                SetScrollBar(verticalScrollBar, minimum: 0, maximum: 0, viewportSize: 1, value: 0, lineSize: 1, pageSize: 1);
+                return;
+            }
+
+            Rect bounds = drawing.Bounds;
+
+            // Horizontal: world X increases to the right, matching the scroll bar direction.
+            double contentLeft = Math.Min(bounds.Left, vp.Left);
+            double contentRight = Math.Max(bounds.Right, vp.Right);
+            SetScrollBar(horizontalScrollBar,
+                minimum: contentLeft,
+                maximum: Math.Max(contentLeft, contentRight - vp.Width),
+                viewportSize: vp.Width,
+                value: vp.Left,
+                lineSize: vp.Width * SmallScrollFraction,
+                pageSize: vp.Width * LargeScrollFraction);
+
+            // Vertical: world Y increases upward, but the scroll bar value increases downward. So the value
+            // measures how far the top of the viewport (vp.Bottom in world-Y terms, since the Rect has a
+            // positive height) is below the top of the content.
+            double contentBottomY = Math.Min(bounds.Top, vp.Top);     // smallest world Y (bottom of content)
+            double contentTopY = Math.Max(bounds.Bottom, vp.Bottom);  // largest world Y (top of content)
+            SetScrollBar(verticalScrollBar,
+                minimum: 0,
+                maximum: Math.Max(0, (contentTopY - contentBottomY) - vp.Height),
+                viewportSize: vp.Height,
+                value: contentTopY - vp.Bottom,
+                lineSize: vp.Height * SmallScrollFraction,
+                pageSize: vp.Height * LargeScrollFraction);
+        }
+
+        // Set all range properties of a scroll bar at once, ordered so the value isn't clamped prematurely.
+        private static void SetScrollBar(ScrollBar scrollBar, double minimum, double maximum, double viewportSize, double value, double lineSize, double pageSize)
+        {
+            // Make sure maximum is >= minimum, and if it's just a tiny bit more, it's probably a rounding issue so
+            // make them the same, otherwise you get some weird looking behavior.
+            if (maximum - minimum < 1E-6) {
+                maximum = minimum;
+            }
+
+            scrollBar.Minimum = minimum;
+            scrollBar.Maximum = maximum;
+            scrollBar.ViewportSize = viewportSize;
+            scrollBar.Value = Math.Clamp(value, minimum, maximum);
+            scrollBar.SmallChange = lineSize;
+            scrollBar.LargeChange = pageSize;
+        }
+
+        // The user moved the horizontal scroll bar: pan the view horizontally so the viewport's left edge
+        // matches the new value. (The Scroll event only fires on user interaction, not on our own updates.)
+        private void HorizontalScrollBar_Scroll(object? sender, ScrollEventArgs e)
+        {
+            if (drawing == null)
+                return;
+
+            double newCenterX;
+            if (e.ScrollEventType == ScrollEventType.SmallIncrement || e.ScrollEventType == ScrollEventType.SmallDecrement) {
+                // Always step by a small increment, even when the scroll bar value is pinned at an extreme
+                // (or there is no thumb because the viewport is larger than the drawing). SmallIncrement
+                // scrolls right (increasing world X).
+                double delta = viewport.Width * SmallScrollFraction;
+                if (e.ScrollEventType == ScrollEventType.SmallDecrement)
+                    delta = -delta;
+                newCenterX = centerPoint.X + delta;
+            }
+            else {
+                newCenterX = e.NewValue + viewport.Width / 2.0;
+            }
+
+            CenterPoint = new Point(newCenterX, centerPoint.Y);
+        }
+
+        // The user moved the vertical scroll bar: pan the view vertically. The scroll bar value increases
+        // downward, so it maps to a decreasing world Y at the top of the viewport.
+        private void VerticalScrollBar_Scroll(object? sender, ScrollEventArgs e)
+        {
+            if (drawing == null)
+                return;
+
+            Rect vp = viewport;
+            double newCenterY;
+            if (e.ScrollEventType == ScrollEventType.SmallIncrement || e.ScrollEventType == ScrollEventType.SmallDecrement) {
+                // Always step by a small increment, even when the scroll bar value is pinned at an extreme
+                // (or there is no thumb because the viewport is larger than the drawing). SmallIncrement
+                // scrolls down (decreasing world Y, since world Y increases upward).
+                double delta = vp.Height * SmallScrollFraction;
+                if (e.ScrollEventType == ScrollEventType.SmallIncrement)
+                    delta = -delta;
+                newCenterY = centerPoint.Y + delta;
+            }
+            else {
+                Rect bounds = drawing.Bounds;
+                double contentTopY = Math.Max(bounds.Bottom, vp.Bottom);  // largest world Y (top of content)
+                double newTopY = contentTopY - e.NewValue;                // world Y at the top of the viewport
+                newCenterY = newTopY - vp.Height / 2.0;
+            }
+
+            CenterPoint = new Point(centerPoint.X, newCenterY);
         }
 
         // Always be hittable, even if we don't draw anything. This is needed to get
         // mouse events on this control.
         bool ICustomHitTest.HitTest(Avalonia.Point point)
         {
-            // You have to check bounds, or else you get hit testing outside the control bounds.
-            Rect controlBounds = new Rect(Bounds.Size);
-            return controlBounds.Contains(point);
+            // Only hit-test the drawing area, not the scroll bars; the scroll bar children handle
+            // their own region. You have to check bounds, or else you get hit testing outside the control bounds.
+            Rect drawingArea = new Rect(GetDrawingAreaSize());
+            return drawingArea.Contains(point);
         }
 
 

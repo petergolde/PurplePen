@@ -102,5 +102,8 @@ PrintCourses
 
 
 Hand cursor isn't show when dragging map.
+Topology view isn't implemented yet.
+Scroll bars on the map view aren't doing anything.
+
 
 

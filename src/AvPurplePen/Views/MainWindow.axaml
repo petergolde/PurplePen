@@ -894,11 +894,11 @@
             <GridSplitter Grid.Column="1" Width="4" ResizeDirection="Columns" Padding="2 0"/>
 
             <!-- === RIGHT PANEL (map viewer area) === -->
-            <Grid Grid.Column="2" RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,Auto">
+            <Grid Grid.Column="2" RowDefinitions="Auto,*">
 
                 <!-- Course part banner (top of map area) — shows course parts, variations, properties -->
-                <resx:CoursePartBanner x:Name="coursePartBanner" 
-                                       Grid.Row="0" Grid.ColumnSpan="2"
+                <resx:CoursePartBanner x:Name="coursePartBanner"
+                                       Grid.Row="0"
                                        DataContext="{Binding CoursePartBannerViewModel}"/>
 
                 <!-- MapViewer
@@ -908,10 +908,10 @@
                      MouseWheel=Zoom, MiddleButtonAutoDrag=true, HoverDelay=400ms.
                      Renders the orienteering map with course overlays using MapDisplay.
                      Handles mouse events for course editing (adding controls, moving items, etc.).
-                     Scroll bars are external (horizScroll, vertScroll below). -->
+                     Scroll bars are provided internally by the PanAndZoom control. -->
                 <resx:MapViewer
                     x:Name="mapViewer"
-                    Grid.Row="1" Grid.Column="0"
+                    Grid.Row="1"
                     MapDisplay="{Binding MapDisplay}"
                     MapHighlights="{Binding MapHighlights}"
                     ToolTip="{Binding MapViewerToolTip}"
@@ -919,18 +919,6 @@
                     MouseLocation="{Binding MouseLocationInMap, Mode=OneWayToSource}"
                     ZoomFactor="{Binding MapZoomFactor, Mode=TwoWay}"
                 />
-
-                <!-- Vertical scroll bar for map viewer -->
-                <ScrollBar x:Name="vertScroll" Grid.Row="1" Grid.Column="1"
-                           Orientation="Vertical"
-                           AllowAutoHide="False"
-                           Minimum="0" Maximum="100" ViewportSize="20"/>
-
-                <!-- Horizontal scroll bar for map viewer -->
-                <ScrollBar x:Name="horizScroll" Grid.Row="2" Grid.Column="0"
-                           Orientation="Horizontal"
-                           AllowAutoHide="False"
-                           Minimum="0" Maximum="100" ViewportSize="20"/>
             </Grid>
         </Grid>
     </DockPanel>
