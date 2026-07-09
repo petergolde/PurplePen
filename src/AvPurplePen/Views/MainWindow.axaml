@@ -796,12 +796,25 @@
         <!-- ==================== MAIN CONTENT AREA ==================== -->
         <!-- Horizontal split: left panel (descriptions/selection) | right panel (map viewer).
              Replaces WinForms splitContainer. Left panel is fixed width. -->
-        <Grid x:Name="splitContainer" ColumnDefinitions="250,Auto,*">
+        <Grid x:Name="splitContainer" >
+            <Grid.ColumnDefinitions>
+                <!-- Have minimum widths for left and right panels so they don't collapse too much when gridsplitter is dragged. -->
+				<ColumnDefinition Width="250" MinWidth="166"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*" MinWidth="200"/>
+            </Grid.ColumnDefinitions>
 
             <!-- === LEFT PANEL (splitDescription equivalent) === -->
             <!-- Vertical split: top (description/topology) | bottom (selection panel).
                  Replaces WinForms splitDescription. Bottom panel is fixed height. -->
-            <Grid Grid.Column="0" RowDefinitions="*,Auto,200" >
+            <Grid Grid.Column="0"  >
+                <Grid.RowDefinitions>
+                    <!-- Have minimum widths for left and right panels so they don't collapse too much when gridsplitter is dragged. -->
+				    <RowDefinition Height="*" MinHeight="150"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="200" MinHeight="50"/>
+                </Grid.RowDefinitions>
+
 
                 <!-- Description/Topology area with radio button toggle -->
                 <Grid x:Name="leftColumnPanel" Grid.Row="0" Background="White" ClipToBounds="True"
@@ -902,7 +915,7 @@
             <GridSplitter Grid.Column="1" Width="4" ResizeDirection="Columns" Padding="2 0"/>
 
             <!-- === RIGHT PANEL (map viewer area) === -->
-            <Grid Grid.Column="2" RowDefinitions="Auto,*">
+            <Grid Grid.Column="2" RowDefinitions="Auto,*" MinWidth="100">
 
                 <!-- Course part banner (top of map area) — shows course parts, variations, properties -->
                 <resx:CoursePartBanner x:Name="coursePartBanner"
