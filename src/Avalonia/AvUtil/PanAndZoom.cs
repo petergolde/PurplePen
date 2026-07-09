@@ -163,7 +163,6 @@ namespace AvUtil
             get { return centerPoint; }
             set {
                 if (centerPoint != value) {
-                    //centerPoint = ConstrainCenterPoint(value, viewport.Size, GetScrollBounds());
                     centerPoint = value;
                     ViewportHasChanged();
                 }

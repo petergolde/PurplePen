@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -41,6 +42,14 @@ public partial class MapViewer : UserControl
         nameof(ZoomFactor),
         getter: o => o.ZoomFactor,
         setter: (o, value) => o.ZoomFactor = value);
+
+    // Controls the horizontal scroll bar of the inner PanAndZoom. Forwarded to that control.
+    public static readonly StyledProperty<ScrollBarVisibility> HorizontalScrollBarVisibilityProperty =
+        PanAndZoom.HorizontalScrollBarVisibilityProperty.AddOwner<MapViewer>();
+
+    // Controls the vertical scroll bar of the inner PanAndZoom. Forwarded to that control.
+    public static readonly StyledProperty<ScrollBarVisibility> VerticalScrollBarVisibilityProperty =
+        PanAndZoom.VerticalScrollBarVisibilityProperty.AddOwner<MapViewer>();
 
     public static readonly RoutedEvent<FancyMouseEventArgs> FancyMouseActivityEvent =
         RoutedEvent.Register<MapViewer, FancyMouseEventArgs>(
@@ -130,6 +139,20 @@ public partial class MapViewer : UserControl
         set => panAndZoom.ZoomFactor = value;
     }
 
+    // Controls the horizontal scroll bar of the inner PanAndZoom (on the bottom edge).
+    // Disabled is not allowed (the inner control's validator throws).
+    public ScrollBarVisibility HorizontalScrollBarVisibility {
+        get => GetValue(HorizontalScrollBarVisibilityProperty);
+        set => SetValue(HorizontalScrollBarVisibilityProperty, value);
+    }
+
+    // Controls the vertical scroll bar of the inner PanAndZoom (on the right edge).
+    // Disabled is not allowed (the inner control's validator throws).
+    public ScrollBarVisibility VerticalScrollBarVisibility {
+        get => GetValue(VerticalScrollBarVisibilityProperty);
+        set => SetValue(VerticalScrollBarVisibilityProperty, value);
+    }
+
     PointF? _mouseLocation;  // Backing field for MouseLocation property. Only change via property setting to ensure change notifications.
 
     // Location of the mouse in world coordinates, updated on mouse move. 
@@ -181,6 +204,12 @@ public partial class MapViewer : UserControl
         else if (change.Property == MapHighlightsProperty) {
             IMapViewerHighlight[]? newMapHighlights = change.GetNewValue<IMapViewerHighlight[]?>();
             HighlightsChanged(newMapHighlights);
+        }
+        else if (change.Property == HorizontalScrollBarVisibilityProperty) {
+            panAndZoom.HorizontalScrollBarVisibility = change.GetNewValue<ScrollBarVisibility>();
+        }
+        else if (change.Property == VerticalScrollBarVisibilityProperty) {
+            panAndZoom.VerticalScrollBarVisibility = change.GetNewValue<ScrollBarVisibility>();
         }
     }
 
