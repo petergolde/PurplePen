@@ -25,7 +25,8 @@ namespace AvPurplePen.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MousePointerShape _mousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
+        private MousePointerShape _mapMousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
+        private MousePointerShape _topologyMousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
 
         // Set to true once the user has confirmed exit (the current file was closed
         // successfully). While false, the window's close button (the X) is intercepted
@@ -47,6 +48,13 @@ namespace AvPurplePen.Views
                     nameof(MapMousePointerShape),
                     getter: o => o.MapMousePointerShape,
                     setter: (o, value) => o.MapMousePointerShape = value);
+
+        // Has the MousePointerShape that should be used in the topology view.
+        public static readonly DirectProperty<MainWindow, MousePointerShape> TopologyMousePointerShapeProperty =
+                AvaloniaProperty.RegisterDirect<MainWindow, MousePointerShape>(
+                    nameof(TopologyMousePointerShape),
+                    getter: o => o.TopologyMousePointerShape,
+                    setter: (o, value) => o.TopologyMousePointerShape = value);
 
         /// <summary>
         /// Initializes the main window and its components.
@@ -125,10 +133,18 @@ namespace AvPurplePen.Views
         }
 
         public MousePointerShape MapMousePointerShape {
-            get => _mousePointerShape;
+            get => _mapMousePointerShape;
             set {
-                _mousePointerShape = value;
+                _mapMousePointerShape = value;
                 mapViewer.Cursor = Cursors.CursorFromMousePointerShape(value);
+            }
+        }
+
+        public MousePointerShape TopologyMousePointerShape {
+            get => _topologyMousePointerShape;
+            set {
+                _topologyMousePointerShape = value;
+                mapViewerTopology.Cursor = Cursors.CursorFromMousePointerShape(value);
             }
         }
 
@@ -227,6 +243,100 @@ namespace AvPurplePen.Views
             }
         }
 
+        // Mouse activity in the topology viewer.
+        private async void TopologyViewer_MouseActivity(object? sender, MapViewer.FancyMouseEventArgs e)
+        {
+            MainWindowViewModel? vm = this.DataContext as MainWindowViewModel;
+            if (vm == null)
+                return;
+
+            // Only left and right buttons have meaning (except for move)
+            if (e.Button != MouseButton.Left && e.Button != MouseButton.Right && e.FancyAction != MapViewer.FancyMouseAction.Move)
+                return;
+
+            bool isRightButton = (e.Button == MouseButton.Right);
+            PointF location = Conv.ToPointF(e.WorldLocation);
+            PointF locationStart = Conv.ToPointF(e.WorldDragStart);
+            float pixelSize = mapViewer.PixelSize;
+            DragAction dragAction = DragAction.None;
+
+            switch (e.FancyAction) {
+            case MapViewer.FancyMouseAction.Move:
+#if PORTING
+                // Do we need to deal with leave here to report outside the viewport?
+#endif
+                vm.TopologyViewerMouseMove(location, pixelSize);
+                break;
+
+            case MapViewer.FancyMouseAction.Down:
+                if (isRightButton)
+                    dragAction = vm.TopologyViewerRightButtonDown(location, pixelSize);
+                else
+                    dragAction = vm.TopologyViewerLeftButtonDown(location, pixelSize);
+                break;
+
+            case MapViewer.FancyMouseAction.Drag:
+                if (isRightButton)
+                    vm.TopologyViewerRightButtonDrag(location, locationStart, pixelSize);
+                else
+                    vm.TopologyViewerLeftButtonDrag(location, locationStart, pixelSize);
+                break;
+
+            case MapViewer.FancyMouseAction.Up:
+                if (isRightButton)
+                    vm.TopologyViewerRightButtonUp(location, pixelSize);
+                else
+                    vm.TopologyViewerLeftButtonUp(location, pixelSize);
+                break;
+
+            case MapViewer.FancyMouseAction.DragEnd:
+                if (isRightButton)
+                    await vm.TopologyViewerRightButtonEndDrag(location, locationStart, pixelSize);
+                else
+                    await vm.TopologyViewerLeftButtonEndDrag(location, locationStart, pixelSize);
+                break;
+
+            case MapViewer.FancyMouseAction.Click:
+                if (isRightButton)
+                    await vm.TopologyViewerRightButtonClick(location, pixelSize);
+                else
+                    await vm.TopologyViewerLeftButtonClick(location, pixelSize);
+                break;
+
+            case MapViewer.FancyMouseAction.DragCancel:
+                if (isRightButton)
+                    vm.TopologyViewerRightButtonCancelDrag();
+                else
+                    vm.TopologyViewerLeftButtonCancelDrag();
+                break;
+
+            case MapViewer.FancyMouseAction.Hover:
+#if !PORTING
+                // handle hover
+#endif
+                break;
+
+            default:
+                break;
+            }
+
+            switch (dragAction) {
+            case DragAction.None:
+                e.MouseDownResult = MapViewer.MouseDownResult.None; break;
+            case DragAction.SuppressClick:
+                e.MouseDownResult = MapViewer.MouseDownResult.SuppressClick; break;
+            case DragAction.MapPan:
+                e.MouseDownResult = MapViewer.MouseDownResult.ImmediatePan; break;
+            case DragAction.ImmediateDrag:
+                e.MouseDownResult = MapViewer.MouseDownResult.ImmediateDrag; break;
+            case DragAction.DelayedDrag:
+                e.MouseDownResult = MapViewer.MouseDownResult.DelayedDrag; break;
+            case DragAction.DelayedMapPan:
+                e.MouseDownResult = MapViewer.MouseDownResult.DelayedPan; break;
+            default:
+                break;
+            }
+        }
 
         // This is called when the application becomes idle after processing input. We can use this to update
         // the UI in response to changes that may have occurred.

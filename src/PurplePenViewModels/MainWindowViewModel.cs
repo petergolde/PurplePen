@@ -80,6 +80,16 @@ namespace PurplePen.ViewModels
         private ToolTipDescription? mapViewerToolTip;
 
         [ObservableProperty]
+        private MapDisplay? topologyMapDisplay;
+
+        [ObservableProperty]
+        private IMapViewerHighlight[]? topologyHighlights;
+
+        [ObservableProperty]
+        private ToolTipDescription? topologyToolTip;
+
+
+        [ObservableProperty]
         private DescriptionViewerViewModel descriptionViewerViewModel = new DescriptionViewerViewModel();
 
         [ObservableProperty]
@@ -118,6 +128,9 @@ namespace PurplePen.ViewModels
 
         [ObservableProperty]
         MousePointerShape mapMousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
+
+        [ObservableProperty]
+        MousePointerShape topologyMousePointerShape = new MousePointerShape(PredefinedMousePointerShape.Arrow);
 
         [ObservableProperty]
         private string undoCommandName = MiscText.UndoWithShortcut;
@@ -209,9 +222,9 @@ namespace PurplePen.ViewModels
                 UpdateHighlight();
                 CoursePartBannerViewModel.UpdatePartBanner();
                 UpdatePrintArea();
-#if !PORTING
                 UpdateTopology();
                 UpdateTopologyHighlight();
+#if !PORTING
                 UpdateCustomSymbolText();
 #endif
                 // Warn about non-renderable objects (fire-and-forget — the controller
@@ -415,6 +428,43 @@ namespace PurplePen.ViewModels
                 MapDisplay.SetPrintArea(controller.GetCurrentPrintAreaRectangle(PrintAreaKind.OnePart));
         }
 
+        // Update the topology pane display.
+        void UpdateTopology()
+        {
+            if (controller == null) return;
+
+            if (TopologyMapDisplay == null) {
+                TopologyMapDisplay = new MapDisplay();
+                TopologyMapDisplay.SetMapFile(MapType.None, null);
+                TopologyMapDisplay.AntiAlias = false;
+                TopologyMapDisplay.Printing = true;
+            }
+
+            CourseLayout topologyCourseLayout = controller.GetTopologyLayout();
+            TopologyMapDisplay.SetCourse(topologyCourseLayout);
+
+            /*
+            if (topologyCourseLayout == null)
+                radioButtonDescriptions.Checked = true;
+            radioButtonTopology.Enabled = (topologyCourseLayout != null);
+
+            // Get zoom factor for the width, but constrained by min/max on the mapViewerTopology
+            float desiredZoomFactor = mapViewerTopology.ZoomFactorForWorldWidth(panelTopology.Width - vScrollbarWidth, topologyMapDisplay.Bounds.Width);
+            mapViewerTopology.ZoomFactor = desiredZoomFactor;
+            mapViewerTopology.Recenter();
+
+            UpdateTopologyScrollBars();
+            */
+        }
+
+        // Update the highlights in the topology pane.
+        void UpdateTopologyHighlight()
+        {
+            if (controller == null)
+                return;   // happens in design mode, for example.
+
+            TopologyHighlights = controller.GetHighlights(Pane.Topology);
+        }
 
         #endregion // State updating on idle.
 
@@ -470,6 +520,60 @@ namespace PurplePen.ViewModels
 
         public void MapViewerRightButtonCancelDrag()
         { controller?.RightButtonCancelDrag(Pane.Map); }
+
+        #endregion
+
+        #region Topology View Mouse events
+
+        public void TopologyViewerMouseMove(PointF? location, float pixelSize)
+        {
+            TopologyToolTip = null;
+
+            if (location.HasValue && controller != null) {
+                // Inside the viewport
+                controller.MouseMoved(Pane.Topology, location.Value, pixelSize);
+                TopologyMousePointerShape = controller.GetMouseCursor(Pane.Topology, location.Value, pixelSize);
+
+                if (ShowToolTips && controller.GetToolTip(Pane.Topology, location.Value, pixelSize, out string tipText, out string titleText)) {
+                    TopologyToolTip = new ToolTipDescription(titleText, tipText);
+                }
+            }
+        }
+
+        public DragAction TopologyViewerLeftButtonDown(PointF location, float pixelSize)
+        { return controller?.LeftButtonDown(Pane.Topology, location, pixelSize) ?? DragAction.None; }
+
+        public DragAction TopologyViewerRightButtonDown(PointF location, float pixelSize)
+        { return controller?.RightButtonDown(Pane.Topology, location, pixelSize) ?? DragAction.None; }
+
+        public void TopologyViewerLeftButtonUp(PointF location, float pixelSize)
+        { controller?.LeftButtonUp(Pane.Topology, location, pixelSize); }
+
+        public void TopologyViewerRightButtonUp(PointF location, float pixelSize)
+        { controller?.RightButtonUp(Pane.Topology, location, pixelSize); }
+
+        public async Task TopologyViewerLeftButtonClick(PointF location, float pixelSize)
+        { await controller?.LeftButtonClick(Pane.Topology, location, pixelSize)!; }
+
+        public async Task TopologyViewerRightButtonClick(PointF location, float pixelSize)
+        { await controller?.RightButtonClick(Pane.Topology, location, pixelSize)!; }
+
+        public void TopologyViewerLeftButtonDrag(PointF location, PointF locationStart, float pixelSize)
+        { controller?.LeftButtonDrag(Pane.Topology, location, locationStart, pixelSize); }
+
+        public void TopologyViewerRightButtonDrag(PointF location, PointF locationStart, float pixelSize)
+        { controller?.RightButtonDrag(Pane.Topology, location, locationStart, pixelSize); }
+
+        public async Task TopologyViewerLeftButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
+        { await controller?.LeftButtonEndDrag(Pane.Topology, location, locationStart, pixelSize)!; }
+
+        public async Task TopologyViewerRightButtonEndDrag(PointF location, PointF locationStart, float pixelSize)
+        { await controller?.RightButtonEndDrag(Pane.Topology, location, locationStart, pixelSize)!; }
+        public void TopologyViewerLeftButtonCancelDrag()
+        { controller?.LeftButtonCancelDrag(Pane.Topology); }
+
+        public void TopologyViewerRightButtonCancelDrag()
+        { controller?.RightButtonCancelDrag(Pane.Topology); }
 
         #endregion
 
