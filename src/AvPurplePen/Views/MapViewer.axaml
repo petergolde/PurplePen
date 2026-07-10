@@ -11,6 +11,7 @@
             Name="panAndZoom"
             BasicMouseActivity="panAndZoom_MouseActivity"
             PropertyChanged="panAndZoom_PropertyChanged"
+            ViewportChanging="panAndZoom_ViewportChanging"
          />
 
 </UserControl>

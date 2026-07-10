@@ -102,6 +102,10 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         private bool showTopology = false;
 
+        // Controls whether the topology view is enabled (when true) or disabled (when false).
+        [ObservableProperty]
+        private bool enableTopology = false;
+
         /// <summary>
         /// The names of the course tabs displayed in the tab strip.
         /// </summary>
@@ -436,23 +440,28 @@ namespace PurplePen.ViewModels
             if (TopologyMapDisplay == null) {
                 TopologyMapDisplay = new MapDisplay();
                 TopologyMapDisplay.SetMapFile(MapType.None, null);
-                TopologyMapDisplay.AntiAlias = false;
-                TopologyMapDisplay.Printing = true;
+                TopologyMapDisplay.AntiAlias = true;
+                TopologyMapDisplay.Printing = false;
             }
 
             CourseLayout topologyCourseLayout = controller.GetTopologyLayout();
             TopologyMapDisplay.SetCourse(topologyCourseLayout);
 
+            if (topologyCourseLayout == null) {
+                ShowTopology = false;
+                EnableTopology = false;
+            }
+            else {
+                EnableTopology = true;
+            }
+            
             /*
-            if (topologyCourseLayout == null)
-                radioButtonDescriptions.Checked = true;
-            radioButtonTopology.Enabled = (topologyCourseLayout != null);
-
             // Get zoom factor for the width, but constrained by min/max on the mapViewerTopology
             float desiredZoomFactor = mapViewerTopology.ZoomFactorForWorldWidth(panelTopology.Width - vScrollbarWidth, topologyMapDisplay.Bounds.Width);
             mapViewerTopology.ZoomFactor = desiredZoomFactor;
             mapViewerTopology.Recenter();
-
+            */
+            /*
             UpdateTopologyScrollBars();
             */
         }

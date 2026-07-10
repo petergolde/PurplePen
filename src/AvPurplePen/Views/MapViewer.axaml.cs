@@ -19,6 +19,8 @@ namespace AvPurplePen;
 
 public partial class MapViewer : UserControl
 {
+    public enum ConstrainedScrollingMode { None, KeepSome, KeepAll, PinTop, PinCenter }
+
     // Set the IMapDisplay that this map viewer should display. The map will be drawn
     // in a background thread and cached for better performance. Setting to null will clear the map.
     public static readonly StyledProperty<IMapDisplay?> MapDisplayProperty =
@@ -50,6 +52,24 @@ public partial class MapViewer : UserControl
     // Controls the vertical scroll bar of the inner PanAndZoom. Forwarded to that control.
     public static readonly StyledProperty<ScrollBarVisibility> VerticalScrollBarVisibilityProperty =
         PanAndZoom.VerticalScrollBarVisibilityProperty.AddOwner<MapViewer>();
+
+    // Controls what the mouse wheel does in the inner PanAndZoom. Forwarded to that control.
+    public static readonly StyledProperty<WheelAction> MouseWheelActionProperty =
+        PanAndZoom.MouseWheelActionProperty.AddOwner<MapViewer>();
+
+    // The minimum allowed zoom factor of the inner PanAndZoom. Forwarded to that control.
+    public static readonly StyledProperty<float> MinZoomProperty =
+        PanAndZoom.MinZoomProperty.AddOwner<MapViewer>();
+
+    // The maximum allowed zoom factor of the inner PanAndZoom. Forwarded to that control.
+    public static readonly StyledProperty<float> MaxZoomProperty =
+        PanAndZoom.MaxZoomProperty.AddOwner<MapViewer>();
+
+    // Controls how scrolling is constrained relative to the drawing. Defaults to None (unconstrained).
+    public static readonly StyledProperty<ConstrainedScrollingMode> ConstrainedScrollingProperty =
+        AvaloniaProperty.Register<MapViewer, ConstrainedScrollingMode>(
+            nameof(ConstrainedScrolling),
+            defaultValue: ConstrainedScrollingMode.None);
 
     public static readonly RoutedEvent<FancyMouseEventArgs> FancyMouseActivityEvent =
         RoutedEvent.Register<MapViewer, FancyMouseEventArgs>(
@@ -153,6 +173,31 @@ public partial class MapViewer : UserControl
         set => SetValue(VerticalScrollBarVisibilityProperty, value);
     }
 
+    // Controls what the mouse wheel does over the map: None (nothing), Zoom (zoom around the pointer),
+    // or Scroll (scroll vertically).
+    public WheelAction MouseWheelAction {
+        get => GetValue(MouseWheelActionProperty);
+        set => SetValue(MouseWheelActionProperty, value);
+    }
+
+    // The minimum allowed zoom factor of the map view.
+    public float MinZoom {
+        get => GetValue(MinZoomProperty);
+        set => SetValue(MinZoomProperty, value);
+    }
+
+    // The maximum allowed zoom factor of the map view.
+    public float MaxZoom {
+        get => GetValue(MaxZoomProperty);
+        set => SetValue(MaxZoomProperty, value);
+    }
+
+    // Controls how scrolling is constrained relative to the drawing.
+    public ConstrainedScrollingMode ConstrainedScrolling {
+        get => GetValue(ConstrainedScrollingProperty);
+        set => SetValue(ConstrainedScrollingProperty, value);
+    }
+
     PointF? _mouseLocation;  // Backing field for MouseLocation property. Only change via property setting to ensure change notifications.
 
     // Location of the mouse in world coordinates, updated on mouse move. 
@@ -211,6 +256,15 @@ public partial class MapViewer : UserControl
         else if (change.Property == VerticalScrollBarVisibilityProperty) {
             panAndZoom.VerticalScrollBarVisibility = change.GetNewValue<ScrollBarVisibility>();
         }
+        else if (change.Property == MouseWheelActionProperty) {
+            panAndZoom.MouseWheelAction = change.GetNewValue<WheelAction>();
+        }
+        else if (change.Property == MinZoomProperty) {
+            panAndZoom.MinZoom = change.GetNewValue<float>();
+        }
+        else if (change.Property == MaxZoomProperty) {
+            panAndZoom.MaxZoom = change.GetNewValue<float>();
+        }
     }
 
     private void panAndZoom_PropertyChanged(object? sender, AvaloniaPropertyChangedEventArgs e)
@@ -219,6 +273,76 @@ public partial class MapViewer : UserControl
         if (e.Property == PanAndZoom.ZoomFactorProperty) {
             RaisePropertyChanged(ZoomFactorProperty, (float)e.OldValue!, (float)e.NewValue!);
         }
+    }
+
+    private void panAndZoom_ViewportChanging(object? sender, ViewportChangedEventArgs e)
+    {
+        // The viewport is changing. Adjust the center point to handle constrained scrolling if desired.
+        Point newCenter = e.CenterPoint;
+        Rect scrollBounds = e.DrawingBounds;
+        Avalonia.Size viewportSize = e.Viewport.Size;
+
+        if (ConstrainedScrolling == ConstrainedScrollingMode.None || (scrollBounds.Width == 0 && scrollBounds.Height == 0) || 
+                                    (viewportSize.Width == 0 && viewportSize.Height == 0))
+            return;
+
+        if (scrollBounds.Width < viewportSize.Width) {
+            // map is narrower than viewport. Constrain to be fully within bounds.
+            if (ConstrainedScrolling == ConstrainedScrollingMode.PinCenter || ConstrainedScrolling == ConstrainedScrollingMode.PinTop) {
+                newCenter = newCenter.WithX((scrollBounds.Left + scrollBounds.Right) / 2.0F);
+            }
+            else if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                newCenter = newCenter.WithX(Math.Min(newCenter.X, scrollBounds.Right + viewportSize.Width / 2.0F - viewportSize.Width / 10.0F));
+                newCenter = newCenter.WithX(Math.Max(newCenter.X, scrollBounds.Left - viewportSize.Width / 2.0F + viewportSize.Width / 10.0F));
+            }
+            else {
+                newCenter = newCenter.WithX(Math.Min(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F));
+                newCenter = newCenter.WithX(Math.Max(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F));
+            }
+        }
+        else {
+            // map is wider than viewport. Constrain to have nothing outside map visibiel
+            if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                newCenter = newCenter.WithX(Math.Min(newCenter.X, scrollBounds.Right + viewportSize.Width / 2.0F - viewportSize.Width / 10.0F));
+                newCenter = newCenter.WithX(Math.Max(newCenter.X, scrollBounds.Left - viewportSize.Width / 2.0F + viewportSize.Width / 10.0F));
+            }
+            else {
+                newCenter = newCenter.WithX(Math.Max(newCenter.X, scrollBounds.Left + viewportSize.Width / 2.0F));
+                newCenter = newCenter.WithX(Math.Min(newCenter.X, scrollBounds.Right - viewportSize.Width / 2.0F));
+            }
+        }
+
+        if (scrollBounds.Height < viewportSize.Height) {
+            // map is narrower than viewport. Constrain to be fully within bounds.
+            if (ConstrainedScrolling == ConstrainedScrollingMode.PinCenter) {
+                newCenter = newCenter.WithY((scrollBounds.Top + scrollBounds.Bottom) / 2.0F);
+            }
+            else if (ConstrainedScrolling == ConstrainedScrollingMode.PinTop) {
+                newCenter = newCenter.WithY(scrollBounds.Bottom - viewportSize.Height / 2.0F);
+
+            }
+            else if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                newCenter = newCenter.WithY(Math.Min(newCenter.Y, scrollBounds.Bottom + viewportSize.Height / 2.0F - viewportSize.Height / 10.0F));
+                newCenter = newCenter.WithY(Math.Max(newCenter.Y, scrollBounds.Top - viewportSize.Height / 2.0F + viewportSize.Height / 10.0F));
+            }
+            else {
+                newCenter = newCenter.WithY(Math.Min(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F));
+                newCenter = newCenter.WithY(Math.Max(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F));
+            }
+        }
+        else {
+            // map is wider than viewport. Constrain to have nothing outside map visibiel
+            if (ConstrainedScrolling == ConstrainedScrollingMode.KeepSome) {
+                newCenter = newCenter.WithY(Math.Min(newCenter.Y, scrollBounds.Bottom + viewportSize.Height / 2.0F - viewportSize.Height / 10.0F));
+                newCenter = newCenter.WithY(Math.Max(newCenter.Y, scrollBounds.Top - viewportSize.Height / 2.0F + viewportSize.Height / 10.0F));
+            }
+            else {
+                newCenter = newCenter.WithY(Math.Max(newCenter.Y, scrollBounds.Top + viewportSize.Height / 2.0F));
+                newCenter = newCenter.WithY(Math.Min(newCenter.Y, scrollBounds.Bottom - viewportSize.Height / 2.0F));
+            }
+        }
+
+        e.CenterPoint = newCenter;
     }
 
     #region Fancy mouse event conversion

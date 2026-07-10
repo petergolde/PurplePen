@@ -22,7 +22,7 @@ namespace AvUtil
         IAvaloniaDrawing? drawing;
 
         // The fraction of the viewport that a "small" scroll (line/arrow click) moves. 
-        private const double SmallScrollFraction = 0.05;
+        private const double SmallScrollFraction = 0.1;
 
         // The fraction of the viewport that a "large" scroll (page/track click) moves. 
         private const double LargeScrollFraction = 0.8;
@@ -53,7 +53,6 @@ namespace AvUtil
         private Matrix xformWorldToPhysPixel;					// transformation world->physical pixel coord
         private Matrix xformPhysPixelToWorld;				    // transformation physical pixel->world coord
 
-        private float minZoom = 0.1F, maxZoom = 100F;           // limits of zoom.
 
         bool panningInProgress = false;					        // Are we panning the map around by holding a button down?
         MouseButton endPanningButton;                           // Which mouse button ends panning.
@@ -63,6 +62,13 @@ namespace AvUtil
         public static readonly RoutedEvent<BasicMouseEventArgs> BasicMouseActivityEvent =
             RoutedEvent.Register<PanAndZoom, BasicMouseEventArgs>(
                 name: nameof(BasicMouseActivity),
+                routingStrategy: RoutingStrategies.Direct);
+
+        // This event reports when the viewport is changing -- zooming, resizing, etc. 
+        // The event handler can update CenterPoint and ZoomFactor to influence how the control pans and zooms.
+        public static readonly RoutedEvent<ViewportChangedEventArgs> ViewportChangingEvent =
+            RoutedEvent.Register<PanAndZoom, ViewportChangedEventArgs>(
+                name: nameof(ViewportChanging),
                 routingStrategy: RoutingStrategies.Direct);
 
         // This event reports when the viewport changes -- zooming, resizing, etc. 
@@ -93,6 +99,24 @@ namespace AvUtil
                 nameof(HorizontalScrollBarVisibility),
                 defaultValue: ScrollBarVisibility.Auto,
                 validate: ValidateScrollBarVisibility);
+
+        // Controls what the mouse wheel does: nothing, zoom, or scroll vertically. Defaults to Zoom.
+        public static readonly StyledProperty<WheelAction> MouseWheelActionProperty =
+            AvaloniaProperty.Register<PanAndZoom, WheelAction>(
+                nameof(MouseWheelAction),
+                defaultValue: WheelAction.Zoom);
+
+        // The minimum allowed zoom factor. ZoomFactor is clamped to be no smaller than this.
+        public static readonly StyledProperty<float> MinZoomProperty =
+            AvaloniaProperty.Register<PanAndZoom, float>(
+                nameof(MinZoom),
+                defaultValue: 0.1F);
+
+        // The maximum allowed zoom factor. ZoomFactor is clamped to be no larger than this.
+        public static readonly StyledProperty<float> MaxZoomProperty =
+            AvaloniaProperty.Register<PanAndZoom, float>(
+                nameof(MaxZoom),
+                defaultValue: 100F);
 
         // Validates a scroll bar visibility value. ScrollBarVisibility.Disabled is not supported by this
         // control; attempting to set it (via property, binding, or SetValue) throws.
@@ -137,6 +161,12 @@ namespace AvUtil
         public ScrollBarVisibility HorizontalScrollBarVisibility {
             get { return GetValue(HorizontalScrollBarVisibilityProperty); }
             set { SetValue(HorizontalScrollBarVisibilityProperty, value); }
+        }
+
+        // Controls what the mouse wheel does: None (nothing), Zoom (zoom around the pointer), or Scroll (scroll vertically).
+        public WheelAction MouseWheelAction {
+            get { return GetValue(MouseWheelActionProperty); }
+            set { SetValue(MouseWheelActionProperty, value); }
         }
 
         // The drawing that we are drawing and panning/zooming over.
@@ -184,10 +214,10 @@ namespace AvUtil
             get { return zoom; }
             set {
                 // clamp zoom to a reasonable value.
-                if (value < minZoom)
-                    value = minZoom;
-                if (value > maxZoom)
-                    value = maxZoom;
+                if (value < MinZoom)
+                    value = MinZoom;
+                if (value > MaxZoom)
+                    value = MaxZoom;
 
                 if (zoom != value) {
                     SetAndRaise(ZoomFactorProperty, ref zoom, value);
@@ -196,9 +226,26 @@ namespace AvUtil
             }
         }
 
+        // The minimum allowed zoom factor. Changing this re-clamps the current ZoomFactor.
+        public float MinZoom {
+            get { return GetValue(MinZoomProperty); }
+            set { SetValue(MinZoomProperty, value); }
+        }
+
+        // The maximum allowed zoom factor. Changing this re-clamps the current ZoomFactor.
+        public float MaxZoom {
+            get { return GetValue(MaxZoomProperty); }
+            set { SetValue(MaxZoomProperty, value); }
+        }
+
         public event EventHandler<BasicMouseEventArgs> BasicMouseActivity {
             add => AddHandler(BasicMouseActivityEvent, value);
             remove => RemoveHandler(BasicMouseActivityEvent, value);
+        }
+
+        public event EventHandler<ViewportChangedEventArgs> ViewportChanging {
+            add => AddHandler(ViewportChangingEvent, value);
+            remove => RemoveHandler(ViewportChangingEvent, value);
         }
 
         public event EventHandler<ViewportChangedEventArgs> ViewportChanged {
@@ -256,6 +303,10 @@ namespace AvUtil
             if (change.Property == VerticalScrollBarVisibilityProperty || change.Property == HorizontalScrollBarVisibilityProperty) {
                 // The visibility mode changed; re-resolve which scroll bars are shown.
                 UpdateScrollBarVisibility();
+            }
+            else if (change.Property == MinZoomProperty || change.Property == MaxZoomProperty) {
+                // The zoom limits changed; re-clamp the current zoom factor to the new range.
+                ZoomFactor = ZoomFactor;
             }
         }
 
@@ -459,24 +510,36 @@ namespace AvUtil
 
         protected override void OnPointerWheelChanged(PointerWheelEventArgs e)
         {
-            const double zoomChange = 1.1892;  // The four root of 2. So four scrolls zooms by 2x.
-
             base.OnPointerWheelChanged(e);
+
+            // If the mouse wheel is configured to do nothing, ignore it.
+            if (MouseWheelAction == WheelAction.None)
+                return;
+
+            // Only act when the pointer is over the drawing area (not the scroll bars).
+            Avalonia.Rect rect = new Rect(GetDrawingAreaSize());  // local coordinates (excluding scroll bars).
+            Point pt = e.GetPosition(this);
+            if (!rect.Contains(pt))
+                return;
 
             // Retrieve the delta of the wheel. 1 is a single wheel notch (not 120 like WinForms)
             double delta = e.Delta.Y;
 
-            // Determine the point to zoom around.
-            Avalonia.Rect rect = new Rect(GetDrawingAreaSize());  // local coordinates (excluding scroll bars).
-            Point zoomPtPixel, zoomPtWorld;
+            if (MouseWheelAction == WheelAction.Zoom)
+                ZoomWithWheel(pt, delta);
+            else if (MouseWheelAction == WheelAction.Scroll)
+                ScrollWithWheel(delta);
 
-            Point pt = e.GetPosition(this);
-            if (rect.Contains(pt))
-                zoomPtPixel = pt;
-            else
-                return;
+            // Mark the event as handled
+            e.Handled = true;
+        }
 
-            zoomPtWorld = PixelToWorld(zoomPtPixel);
+        // Zoom the drawing around the given pointer position (in logical pixels) by the given wheel delta.
+        private void ZoomWithWheel(Point zoomPtPixel, double delta)
+        {
+            const double zoomChange = 1.1892;  // The four root of 2. So four scrolls zooms by 2x.
+
+            Point zoomPtWorld = PixelToWorld(zoomPtPixel);
 
             // Determine the new zoom factor.
             double zoomAmount = Math.Pow(zoomChange, Math.Abs(delta));
@@ -489,9 +552,14 @@ namespace AvUtil
             }
 
             ZoomAroundPoint(zoomPtWorld, newZoom);
+        }
 
-            // Mark the event as handled
-            e.Handled = true;
+        // Scroll the viewport vertically by the given wheel delta, the same amount as a small change of the
+        // scroll bar per wheel notch. A positive delta (wheel up) scrolls up (increasing world Y).
+        private void ScrollWithWheel(double delta)
+        {
+            double newCenterY = centerPoint.Y + viewport.Height * SmallScrollFraction * delta;
+            CenterPoint = new Point(centerPoint.X, newCenterY);
         }
 
         float ScaleFactor {
@@ -618,11 +686,45 @@ namespace AvUtil
         void ViewportHasChanged()
         {
             CalculateWorldTransform();
+
+            // Fire the ViewportChanging event. The CenterPoint or ZoomFactor can be changed by this handler,
+            // but we don't refire it again if so.
+            Rect drawingBounds = drawing?.Bounds ?? new Rect();
+            Point oldCenterPoint = CenterPoint;
+            float oldZoomFactor = ZoomFactor;
+            ViewportChangedEventArgs changingEventArgs = new ViewportChangedEventArgs(ViewportChangingEvent, this, Viewport, drawingBounds, ZoomFactor, CenterPoint, PixelSize);
+            RaiseEvent(changingEventArgs);
+            bool recalcTransform = false;
+
+            if (changingEventArgs.CenterPoint != oldCenterPoint) {
+                // Change the backing field directly, so we don't raise this event again.
+                centerPoint = changingEventArgs.CenterPoint;
+                recalcTransform = true;
+            }
+            if (changingEventArgs.ZoomFactor != oldZoomFactor) {
+                // Change the backing field directly, so we don't raise this event again.
+                float newZoom = changingEventArgs.ZoomFactor;
+                if (newZoom < MinZoom)
+                    newZoom = MinZoom;
+                if (newZoom > MaxZoom)
+                    newZoom = MaxZoom;
+                if (newZoom != oldZoomFactor) {
+                    SetAndRaise(ZoomFactorProperty, ref zoom, newZoom);
+                }
+                recalcTransform = true;
+            }
+
+            // Recalculate the world transform if the ViewportChanging event changed the center point or zoom.
+            if (recalcTransform) {
+                CalculateWorldTransform();
+            }
+
             UpdateScrollBarVisibility();
             UpdateScrollBars();
             this.InvalidateVisual();
 
-            ViewportChangedEventArgs eventArgs = new ViewportChangedEventArgs(ViewportChangedEvent, this, Viewport, ZoomFactor, PixelSize);
+            ViewportChangedEventArgs changedEventArgs = new ViewportChangedEventArgs(ViewportChangedEvent, this, Viewport, drawingBounds, ZoomFactor, CenterPoint, PixelSize);
+            RaiseEvent(changedEventArgs);
         }
 
         // Update the scroll bars' range, thumb size (ViewportSize) and position (Value) to reflect the
@@ -747,6 +849,12 @@ namespace AvUtil
         }
 
 
+        // Determines what the mouse wheel does in the PanAndZoom control.
+        //   None   - the mouse wheel does nothing.
+        //   Zoom   - the mouse wheel zooms the drawing around the pointer.
+        //   Scroll - the mouse wheel scrolls the viewport vertically, the same as a small change of the scroll bar.
+        public enum WheelAction { None, Zoom, Scroll }
+
         // Types of mouse actions.
         public enum BasicMouseAction
         {
@@ -778,19 +886,24 @@ namespace AvUtil
             public ulong TimeStamp;                 // When the event occured, in milliseconds
         }
 
-        // Information sent with a ViewportChanged event.
+        // Information sent with a ViewportChanging or ViewportChanged event.
+        // For the ViewportChanging event, the handler can update ZoomFactor or CenterPoint to constrain the panning/zooming.
         public class ViewportChangedEventArgs : RoutedEventArgs
         {
-            public ViewportChangedEventArgs(RoutedEvent? routedEvent, object? source, Rect viewport, float zoomFactor, double pixelSize)
+            public ViewportChangedEventArgs(RoutedEvent? routedEvent, object? source, Rect viewport, Rect drawingBounds, float zoomFactor, Point centerPoint, double pixelSize)
                 : base(routedEvent, source)
             {
                 this.Viewport = viewport;
+                this.DrawingBounds = drawingBounds;
                 this.ZoomFactor = zoomFactor;
+                this.CenterPoint = centerPoint;
                 this.PixelSize = pixelSize;
             }
 
             public Rect Viewport;     // The new viewport in world coordinates.
+            public Rect DrawingBounds;// The bounds of the drawing, in world coordinates.
             public float ZoomFactor;  // The new zoom factor.
+            public Point CenterPoint; // The centerpoint
             public double PixelSize;  // The size of a physical pixel in world coordinates.
         }
     }

@@ -855,7 +855,13 @@
                                 MapDisplay="{Binding TopologyMapDisplay}"
                                 MapHighlights="{Binding TopologyHighlights}"
                                 ToolTip="{Binding TopologyToolTip}"
-                                FancyMouseActivity="TopologyViewer_MouseActivity" >
+                                FancyMouseActivity="TopologyViewer_MouseActivity"
+                                HorizontalScrollBarVisibility="Auto"
+                                VerticalScrollBarVisibility="Auto"
+                                MouseWheelAction="Scroll"
+                                ConstrainedScrolling="PinTop"
+                                MinZoom="0.4"
+                                MaxZoom="10">
                             </resx:MapViewer>
 
                         </Panel>
@@ -887,6 +893,7 @@
                                      HorizontalAlignment="Stretch"
                                      HorizontalContentAlignment="Center"
                                      Content="{resx:Localize MainFrame_radioButtonTopology_Text}"
+                                     IsEnabled="{Binding EnableTopology}"
                                      IsChecked="{Binding ShowTopology, Mode=TwoWay}"/>
                     </Grid>
                 </Grid>
@@ -932,6 +939,12 @@
                     FancyMouseActivity="MapViewer_MouseActivity"
                     MouseLocation="{Binding MouseLocationInMap, Mode=OneWayToSource}"
                     ZoomFactor="{Binding MapZoomFactor, Mode=TwoWay}"
+                    HorizontalScrollBarVisibility="Visible"
+                    VerticalScrollBarVisibility="Visible"
+                    ConstrainedScrolling="KeepSome"
+                    MouseWheelAction="Zoom"
+                    MinZoom="0.1"
+                    MaxZoom="100"
                 />
             </Grid>
         </Grid>
