@@ -261,46 +261,4 @@ namespace PurplePen
         }
 
     }
-
-#if !PORTING
-    // All the information needed to print courses.
-    class CoursePrintSettings
-    {
-        private PageSettings pageSettings;
-
-        public PageSettings PageSettings
-        {
-            get
-            {
-                if (pageSettings == null) {
-                    pageSettings = new PageSettings();
-                }
-
-                pageSettings.Landscape = false;                                // Set to not landscape. We change this on a page by page basis later.
-                pageSettings.Margins = new Margins(0, 0, 0, 0);        // use no margins. We check the hard margins of the printer during layout.
-                return pageSettings;
-            }
-            set
-            {
-                pageSettings = value;
-            }
-        }
-
-        public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
-        public bool AllCourses = true;          // If true, overrides the course ids in CourseIds except for "all controls".
-        
-        // variation choices for courses with variations.
-        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();  
-
-        public int Count = 1;                         // count of copies to print
-        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
-        public bool PrintMapExchangesOnOneMap = false;
-#if XPS_PRINTING
-        public bool UseXpsPrinting = false;          // If true, use XPS printing; default to not.
-#endif // XPS_PRINTING
-        public bool PauseAfterCourseOrPart = false;  // If true, printing pauses after each course or part of course printed.
-        public ColorModel PrintingColorModel = ColorModel.CMYK;
-
-    }
-#endif
 }

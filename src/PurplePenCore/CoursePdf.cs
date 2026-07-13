@@ -315,36 +315,4 @@ namespace PurplePen
             graphicsTarget.PushClip(rectanglePath);
         }
     }
-
-#if !PORTING
-    // All the information needed to print courses.
-    class CoursePdfSettings
-    {
-        public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
-        public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
-
-        public bool DontPrintBaseMap = false;    // If true, the base map is not rendered, just the course.
-        public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
-        public bool PrintMapExchangesOnOneMap = false;
-        public PdfFileCreation FileCreation = PdfFileCreation.FilePerCourse; 
-        public ColorModel ColorModel = ColorModel.CMYK;
-        public bool RenderControlDescriptions = true;
-        public bool ShowProgressDialog = true;
-
-        public bool mapDirectory, fileDirectory;     // directory to place output files in
-        public string outputDirectory;               // the output directory if mapDirectory and fileDirectoy are false.
-        public string filePrefix;                    // if non-null, non-empty, prefix this an "-" onto the front of files.
-
-        // variation choices for courses with variations.
-        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
-
-        public enum PdfFileCreation { SingleFile, FilePerCourse, FilePerCoursePart };
-
-        public CoursePdfSettings Clone()
-        {
-            CoursePdfSettings n = (CoursePdfSettings) base.MemberwiseClone();
-            return n;
-        }
-    }
-#endif
 }

@@ -188,35 +188,4 @@ namespace PurplePen
             exportBitmap.CreateBitmap(fileName, mapRectangle, GetImageFormat(), bitmapCreationSettings.Dpi, coordinateMapper);
         }
     }
-
-#if !PORTING
-    // All the information needed to create bitmaps.
-    class BitmapCreationSettings
-    {
-        public Id<Course>[] CourseIds;          // Courses to print, None is all controls.
-        public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
-
-        public bool DontPrintBaseMap = false;    // If true, the base map is not rendered, just the course.
-        public bool PrintMapExchangesOnOneMap = false;
-        public BitmapKind ExportedBitmapKind = BitmapCreationSettings.BitmapKind.Png;
-        public float Dpi;
-        public bool WorldFile;                      // Create a world file?
-        public ColorModel ColorModel = ColorModel.CMYK;
-
-        public bool mapDirectory, fileDirectory;     // directory to place output files in
-        public string outputDirectory;               // the output directory if mapDirectory and fileDirectoy are false.
-        public string filePrefix;                    // if non-null, non-empty, prefix this an "-" onto the front of files.
-
-        // variation choices for courses with variations.
-        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
-
-        public enum BitmapKind { Gif, Png, Jpeg };
-
-        public BitmapCreationSettings Clone()
-        {
-            BitmapCreationSettings n = (BitmapCreationSettings)base.MemberwiseClone();
-            return n;
-        }
-    }
-#endif
 }

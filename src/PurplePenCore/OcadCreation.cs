@@ -365,28 +365,4 @@ namespace PurplePen
             }
         }
     }
-
-#if !PORTING
-    // Has all the settings for creating OCAD files.
-    class OcadCreationSettings
-    {
-        public Id<Course>[] CourseIds;          // Courses to print. Course.None means all controls.
-        public bool AllCourses = true;          // If true, overrides CourseIds except for all controls.
-        public MapFileFormat fileFormat;         // OCAD version to use/OpenMapper format
-        public bool mapDirectory, fileDirectory;   // directory to place output files in
-        public string outputDirectory;              // the output directory if mapDirectory and fileDirectoy are false.
-        public string filePrefix;                      // if non-null, non-empty, prefix this an "-" onto the front of files.
-        public short colorOcadId;                         // ocadID for the purple stuff.
-        public float cyan, magenta, yellow, black;   // color to use for the "Purple" stuff.
-        public bool purpleOverprint;
-
-        // variation choices for courses with variations.
-        public Dictionary<Id<Course>, VariationChoices> VariationChoicesPerCourse = new Dictionary<Id<Course>, VariationChoices>();
-
-        public OcadCreationSettings Clone()
-        {
-            return (OcadCreationSettings) base.MemberwiseClone();
-        }
-    }
-#endif
 }

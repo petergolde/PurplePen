@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace PurplePen
 {
-#if PORTING
-
     // Has all the settings for creating OCAD files.
     public class RouteGadgetCreationSettings
     {
@@ -120,6 +118,4 @@ namespace PurplePen
             return n;
         }
     }
-
-#endif
 }

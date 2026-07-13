@@ -139,20 +139,4 @@ namespace PurplePen
             WindowsUtil.ShowHelpTopic(this, HelpTopic);
         }
     }
-
-#if !PORTING
-    // Has all the settings for creating OCAD files.
-    class RouteGadgetCreationSettings
-    {
-        public bool mapDirectory, fileDirectory;   // directory to place output files in
-        public string outputDirectory;              // the output directory if mapDirectory and fileDirectoy are false.
-        public string fileBaseName;                      // base name for file names which are .xml,.gif
-        public int xmlVersion = 3;                      // version of IOF XML to use (2 or 3).
-
-        public RouteGadgetCreationSettings Clone()
-        {
-            return (RouteGadgetCreationSettings)base.MemberwiseClone();
-        }
-    }
-#endif
 }
