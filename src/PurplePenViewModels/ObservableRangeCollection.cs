@@ -34,6 +34,10 @@ namespace PurplePen.ViewModels
         {
             if (collection == null) throw new ArgumentNullException(nameof(collection));
 
+            // If the new items are equal, don't do anything.
+            if (Items.SequenceEqual(collection))
+                return;
+
             CheckReentrancy();
 
             // 1. Clear the underlying list without notifying the UI

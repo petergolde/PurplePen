@@ -144,7 +144,8 @@ namespace PurplePen.ViewModels
             }
             else {
                 if (controller.HasVariations) {
-                    AvailableVariations.ReplaceAll(controller.GetVariations());
+                    object[] newVariations = controller.GetVariations();
+                    AvailableVariations.ReplaceAll(newVariations);
                     CurrentVariation = controller.CurrentVariation;
                     EnableVariations = true;
                 }
