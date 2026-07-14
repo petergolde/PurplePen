@@ -35,8 +35,12 @@ public partial class MapViewer : UserControl
             AvaloniaProperty.Register<MapViewer, ToolTipDescription?>(nameof(ToolTip));
 
     // The location of the mouse in world coordinates, or null if the mouse is not currently in the viewport.
-    public static readonly DirectProperty<MapViewer, PointF?> MouseLocationProperty = 
+    public static readonly DirectProperty<MapViewer, PointF?> MouseLocationProperty =
             AvaloniaProperty.RegisterDirect<MapViewer, PointF?>(nameof(MouseLocation), map => map.MouseLocation);
+
+    // The size of a physical pixel in world units. Read-only from outside; designed to be data-bound one-way to source.
+    public static readonly DirectProperty<MapViewer, float> PixelSizeProperty =
+            AvaloniaProperty.RegisterDirect<MapViewer, float>(nameof(PixelSize), map => map.PixelSize);
 
     // The zoom factor.
     public static readonly DirectProperty<MapViewer, float> ZoomFactorProperty =
@@ -144,10 +148,16 @@ public partial class MapViewer : UserControl
         remove => RemoveHandler(FancyMouseActivityEvent, value);
     }
 
-    // Size of a pixel in world units.
+    float _pixelSize = 1;  // Backing field for PixelSize property. Only change via property setting to ensure change notifications.
+
+    // Size of a pixel in world units. Read-only from outside; updated internally in response to the
+    // inner PanAndZoom's ViewportChanged event.
     public float PixelSize {
         get {
-            return panAndZoom.PixelToWorldDistance(1);
+            return _pixelSize;
+        }
+        private set {
+            SetAndRaise(PixelSizeProperty, ref _pixelSize, value);
         }
     }
 
@@ -343,6 +353,12 @@ public partial class MapViewer : UserControl
         }
 
         e.CenterPoint = newCenter;
+    }
+
+    private void panAndZoom_ViewportChanged(object? sender, ViewportChangedEventArgs e)
+    {
+        // The viewport has changed (settled). Update the PixelSize property to reflect the new pixel size.
+        PixelSize = (float)e.PixelSize;
     }
 
     #region Fancy mouse event conversion

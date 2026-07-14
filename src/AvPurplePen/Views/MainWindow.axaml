@@ -938,6 +938,7 @@
                     ToolTip="{Binding MapViewerToolTip}"
                     FancyMouseActivity="MapViewer_MouseActivity"
                     MouseLocation="{Binding MouseLocationInMap, Mode=OneWayToSource}"
+                    PixelSize="{Binding MapViewerPixelSize, Mode=OneWayToSource}"
                     ZoomFactor="{Binding MapZoomFactor, Mode=TwoWay}"
                     HorizontalScrollBarVisibility="Visible"
                     VerticalScrollBarVisibility="Visible"

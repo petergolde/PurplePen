@@ -127,6 +127,10 @@ namespace PurplePen.ViewModels
         [ObservableProperty, NotifyPropertyChangedFor(nameof(StatusBarLocationDisplay))]
         private PointF? mouseLocationInMap;
 
+        // The size of a physical pixel in world (map) units. Bound one-way from the MapViewer's PixelSize.
+        [ObservableProperty]
+        private float mapViewerPixelSize;
+
         [ObservableProperty]
         string statusBarText = "";
 
