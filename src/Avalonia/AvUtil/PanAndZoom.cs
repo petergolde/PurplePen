@@ -654,6 +654,64 @@ namespace AvUtil
             CenterPoint = centerPtWorld;
         }
 
+        // Adjust the zoom and center point so that the given world-coordinate rectangle fills the drawing
+        // area as fully as possible while remaining entirely visible, then centers on it. An empty (zero
+        // width or height) rectangle just recenters without changing the zoom. The resulting zoom is clamped
+        // to [MinZoom, MaxZoom], and any ConstrainedScrolling handler on ViewportChanging still applies.
+        public void FitRectangle(Rect worldRect)
+        {
+            Point center = worldRect.Center;
+
+            if (worldRect.Width > 0 && worldRect.Height > 0) {
+                Size area = GetDrawingAreaSize();
+                if (area.Width > 0 && area.Height > 0) {
+                    // Logical pixels per world unit needed to fit each dimension; take the smaller so the
+                    // whole rectangle fits. ScaleFactor == pixelPerMm * zoom, so back out the zoom factor.
+                    double scale = Math.Min(area.Width / worldRect.Width, area.Height / worldRect.Height);
+                    ZoomFactor = (float)(scale / pixelPerMm);   // ZoomFactor setter clamps to [MinZoom, MaxZoom].
+                }
+            }
+
+            CenterPoint = center;
+        }
+
+        // Pan the view (without changing the zoom) the minimum amount needed to bring the given
+        // world-coordinate rectangle into the viewport. If the rectangle is already fully visible, nothing
+        // happens. If the rectangle is larger than the viewport in a dimension, the view is moved only as
+        // far as needed to keep the viewport within the rectangle in that dimension. Any ConstrainedScrolling
+        // handler on ViewportChanging still applies.
+        public void ScrollRectangleIntoView(Rect worldRect)
+        {
+            Rect vp = viewport;
+            if (vp.Width <= 0 || vp.Height <= 0)
+                return;
+
+            double dx = MoveToShow(worldRect.Left, worldRect.Right, vp.Left, vp.Right);
+            double dy = MoveToShow(worldRect.Top, worldRect.Bottom, vp.Top, vp.Bottom);
+
+            if (dx != 0 || dy != 0)
+                CenterPoint = new Point(centerPoint.X + dx, centerPoint.Y + dy);
+        }
+
+        // For one axis, compute how far the viewport must move to bring the target interval [rMin, rMax]
+        // into the viewport interval [vMin, vMax] with minimal movement. Returns the delta to add to the
+        // viewport's center coordinate on that axis (0 if no movement is needed).
+        private static double MoveToShow(double rMin, double rMax, double vMin, double vMax)
+        {
+            if (rMax - rMin <= vMax - vMin) {
+                // Target fits within the viewport: move only if an edge sticks out, aligning that edge.
+                if (rMin < vMin) return rMin - vMin;
+                if (rMax > vMax) return rMax - vMax;
+                return 0;
+            }
+            else {
+                // Target is larger than the viewport: keep the viewport inside the target, moving minimally.
+                if (rMin > vMin) return rMin - vMin;
+                if (rMax < vMax) return rMax - vMax;
+                return 0;
+            }
+        }
+
         // Begin panning, which continues until the given mouse button is released.
         // Basic mouse actions (including the move and the up) are not reported until panning ends.
         public void BeginPanning(Point logicalPosition, MouseButton endingButton)

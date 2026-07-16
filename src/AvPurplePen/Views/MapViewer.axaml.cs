@@ -75,6 +75,12 @@ public partial class MapViewer : UserControl
             nameof(ConstrainedScrolling),
             defaultValue: ConstrainedScrollingMode.None);
 
+    // A channel through which a ViewModel can ask this viewer to show a particular area of the map
+    // (fit a rectangle, or scroll a rectangle into view) without referencing the view directly. While a
+    // controller is bound here, the viewer subscribes to its ShowAreaRequested event.
+    public static readonly StyledProperty<MapViewportController?> ViewportControllerProperty =
+        AvaloniaProperty.Register<MapViewer, MapViewportController?>(nameof(ViewportController));
+
     public static readonly RoutedEvent<FancyMouseEventArgs> FancyMouseActivityEvent =
         RoutedEvent.Register<MapViewer, FancyMouseEventArgs>(
             name: nameof(FancyMouseActivity),
@@ -208,6 +214,12 @@ public partial class MapViewer : UserControl
         set => SetValue(ConstrainedScrollingProperty, value);
     }
 
+    // The controller through which a ViewModel can ask this viewer to show a particular area of the map.
+    public MapViewportController? ViewportController {
+        get => GetValue(ViewportControllerProperty);
+        set => SetValue(ViewportControllerProperty, value);
+    }
+
     PointF? _mouseLocation;  // Backing field for MouseLocation property. Only change via property setting to ensure change notifications.
 
     // Location of the mouse in world coordinates, updated on mouse move. 
@@ -274,6 +286,32 @@ public partial class MapViewer : UserControl
         }
         else if (change.Property == MaxZoomProperty) {
             panAndZoom.MaxZoom = change.GetNewValue<float>();
+        }
+        else if (change.Property == ViewportControllerProperty) {
+            // Subscribe/unsubscribe from the controller's ShowAreaRequested event so that requests from the
+            // ViewModel are applied to this viewer only while the controller is bound.
+            MapViewportController? oldController = change.GetOldValue<MapViewportController?>();
+            MapViewportController? newController = change.GetNewValue<MapViewportController?>();
+            if (oldController != null)
+                oldController.ShowAreaRequested -= ViewportController_ShowAreaRequested;
+            if (newController != null)
+                newController.ShowAreaRequested += ViewportController_ShowAreaRequested;
+        }
+    }
+
+    // Handles a request (from the bound ViewportController) to show a particular area of the map. Converts
+    // the world-coordinate rectangle and applies it to the inner PanAndZoom, which respects the zoom limits
+    // and the ConstrainedScrolling setting.
+    private void ViewportController_ShowAreaRequested(MapAreaShowMode mode, RectangleF area)
+    {
+        Rect worldRect = new Rect(area.Left, area.Top, area.Width, area.Height);
+        switch (mode) {
+        case MapAreaShowMode.FitRectangle:
+            panAndZoom.FitRectangle(worldRect);
+            break;
+        case MapAreaShowMode.ScrollIntoView:
+            panAndZoom.ScrollRectangleIntoView(worldRect);
+            break;
         }
     }
 

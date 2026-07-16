@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -200,6 +199,11 @@ namespace PurplePen.ViewModels
 
         #region File commands
 
+        private void ReloadInitialScreen()
+        {
+            // Not sure how to implement this?
+        }
+
         /// <summary>
         /// Executes the File/New Event command. Shows the New Event wizard.
         /// </summary>
@@ -225,6 +229,7 @@ namespace PurplePen.ViewModels
                     // is no open file. The WinForms path returned to the InitialScreen here (see
                     // the #if !PORTING block above); that recovery flow is not yet ported.
 #endif
+                    ReloadInitialScreen();
                 }
             }
         }
@@ -252,6 +257,17 @@ namespace PurplePen.ViewModels
                 if (result && fileOpenVM.SelectedFile != null) {
                     string newFilename = fileOpenVM.SelectedFile;
                     bool success = await controller.LoadNewFile(newFilename);
+                    if (!success) {
+                        // This is bad news. The old file is gone, and we don't have a new file. Go back to initial screen is the best solution, 
+                        // I guess.
+                        ReloadInitialScreen();
+                    }
+                    else {
+                        // Display the default view on the map.
+                        if (MapDisplay != null) {
+                            ShowMapRectangle(MapDisplay.MapBounds);
+                        }
+                    }
                 }
             }
         }
@@ -411,11 +427,11 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void ViewEntireCourse()
         {
-#if !PORTING
+            if (controller == null) { return; }
+
             // Show the entire course.
             RectangleF courseBounds = controller.GetCourseBounds();
-            ShowRectangle(courseBounds);
-#endif
+            ShowMapRectangle(courseBounds);
         }
 
         /// <summary>
@@ -424,11 +440,11 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void ViewEntireMap()
         {
-#if !PORTING
+            if (MapDisplay == null) { return; }
+
             // Show the entire map.
-            RectangleF mapBounds = mapDisplay.MapBounds;
-            ShowRectangle(mapBounds);
-#endif
+            RectangleF mapBounds = MapDisplay.MapBounds;
+            ShowMapRectangle(mapBounds);
         }
 
         /// <summary>
@@ -1872,14 +1888,10 @@ namespace PurplePen.ViewModels
 
             SettingPrintArea = true;
 
-#if PORTING
-            // TODO: ensure the existing print area is fully visible before hiding
-            // the gray display. The WinForms version did:
-            //     RectangleF r = controller.GetCurrentPrintAreaRectangle(printAreaKind);
-            //     if (!mapViewer.Viewport.Contains(r)) { r.Inflate(...); ShowRectangle(r); }
-            // This depends on map-viewer viewport/ShowRectangle support that is
-            // not yet ported to the Avalonia main window.
-#endif
+            // Ensure the existing print area is visible before hiding the gray display and showing the
+            // draggable rectangle. ScrollMapRectangleIntoView pans the minimum amount to bring it into view
+            // (and does nothing if it is already visible), without disturbing the user's zoom.
+            ScrollMapRectangleIntoView(controller.GetCurrentPrintAreaRectangle(printAreaKind));
 
             HidePrintArea = true;
 

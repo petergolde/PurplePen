@@ -88,6 +88,27 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         private ToolTipDescription? topologyToolTip;
 
+        // Channels for asking the map viewers to change what area they display (fit a rectangle, or scroll a
+        // rectangle into view) without the ViewModel referencing the views. The MapViewers bind their
+        // ViewportController to these; fire a request via the ShowMapRectangle / ScrollMapRectangleIntoView
+        // helpers below.
+        public MapViewportController MapViewport { get; } = new MapViewportController();
+        public MapViewportController TopologyViewport { get; } = new MapViewportController();
+
+        // Adjust the main map view to show the given world-coordinate rectangle as fully as possible, zooming
+        // and panning to fit it. An empty rectangle just recenters the view without changing the zoom.
+        private void ShowMapRectangle(RectangleF rectangle)
+        {
+            MapViewport.ShowArea(MapAreaShowMode.FitRectangle, rectangle);
+        }
+
+        // Pan the main map view the minimum amount needed to bring the given world-coordinate rectangle into
+        // view, without changing the zoom. Does nothing if the rectangle is already fully visible.
+        private void ScrollMapRectangleIntoView(RectangleF rectangle)
+        {
+            MapViewport.ShowArea(MapAreaShowMode.ScrollIntoView, rectangle);
+        }
+
 
         [ObservableProperty]
         private DescriptionViewerViewModel descriptionViewerViewModel = new DescriptionViewerViewModel();
@@ -276,19 +297,19 @@ namespace PurplePen.ViewModels
                 return;   // happens in design mode, for example.
 
             if (MapDisplay != controller.MapDisplay) {
-                // The mapDisplay object is new. This currently o`nly happens on startup.
+                // The mapDisplay object is new. This currently only happens on startup.
                 MapDisplay = controller.MapDisplay;
                 controller.MapDisplay.MapIntensity = UserSettings.Current.MapIntensity;
                 controller.MapDisplay.AntiAlias = UserSettings.Current.MapHighQuality;
                 controller.ShowAllControls = UserSettings.Current.ViewAllControls;
+                ShowMapRectangle(MapDisplay.MapBounds);
             }
 
-            if (controller.MapDisplay.MapType != controller.MapType || controller.MapDisplay.FileName != controller.MapFileName || (controller.MapType == MapType.Bitmap && controller.MapDisplay.Dpi != controller.MapDpi)) {
+            if (MapDisplay.MapType != controller.MapType || MapDisplay.FileName != controller.MapFileName || (controller.MapType == MapType.Bitmap && controller.MapDisplay.Dpi != controller.MapDpi)) {
                 // A new map file has been loaded, or the DPI has changed.
-#if !PORTING
-                mapViewer.ZoomFactor = 1.0F;   // used if the map bounds are empty, then this zoom factor is preserved.
-                ShowRectangle(mapDisplay.MapBounds);
-#endif
+                MapZoomFactor = 1.0F;   // used if the map bounds are empty, then this zoom factor is preserved.
+                ShowMapRectangle(MapDisplay.MapBounds);
+
                 // Reset the per-dialog settings caches.
                 ocadCreationSettingsPrevious = null;
                 bitmapCreationSettingsPrevious = null;
@@ -409,6 +430,15 @@ namespace PurplePen.ViewModels
                 return;   // happens in design mode, for example.
 
             this.MapHighlights = controller.GetHighlights(Pane.Map);
+
+            // Scroll the highlights into view if needed.
+            if (controller.ScrollHighlightIntoView && MapHighlights != null && MapHighlights.Length > 0) {
+                RectangleF highlightBounds = MapHighlights[0].GetHighlightBounds();
+                for (int i = 1; i < MapHighlights.Length; ++i) {
+                    highlightBounds = RectangleF.Union(highlightBounds, MapHighlights[i].GetHighlightBounds());
+                }
+                ScrollMapRectangleIntoView(highlightBounds);
+            }
         }
 
         // When true, the normal print-area display is suppressed. Used while the
