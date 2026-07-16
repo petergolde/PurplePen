@@ -88,11 +88,9 @@ namespace PurplePen
             // JPEG and GIF have special code paths because the default Save method isn't
             // really good enough.
             using (Stream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write)) {
-#if !PORTING
-                // Should there be a way to set the JPEG image quality. Was 80 before.
-                // We need to check the GIF saved and see if we need to tweak the quantizer.
-#endif
-                bitmap.WriteToStream(imageFormat, stream);
+                // Currently we just use a quality of 80 for JPEG. This is a good compromise between quality and file size.
+                // Maybe we should allow the user to set this in the future.
+                bitmap.WriteToStream(imageFormat, stream, 80);
             }
 
             bitmap.Dispose();

@@ -47,6 +47,7 @@ using SixLabors.ImageSharp.Formats.Tiff;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Metadata;
 using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing.Processors.Quantization;
 
 namespace PurplePen.MapModel
 {
@@ -350,7 +351,12 @@ namespace PurplePen.MapModel
             case GraphicsBitmapFormat.JPEG:
                 return new JpegEncoder { Quality = quality };
             case GraphicsBitmapFormat.GIF:
-                return new GifEncoder();
+                // Use an Octree quantizer with no dithering. Our bitmaps typically have few
+                // distinct colors (map/line art), so a ≤256-entry palette reproduces them
+                // exactly; disabling dithering avoids error diffusion and keeps colors crisp.
+                return new GifEncoder {
+                    Quantizer = new OctreeQuantizer(new QuantizerOptions { Dither = null })
+                };
             case GraphicsBitmapFormat.TIFF:
                 return new TiffEncoder();
             case GraphicsBitmapFormat.BMP:

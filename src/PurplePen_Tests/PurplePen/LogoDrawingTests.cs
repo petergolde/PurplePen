@@ -26,7 +26,7 @@ namespace PurplePen.Tests
             LogoDrawing.DrawPurplePenLogo(bmTarget, new System.Drawing.RectangleF(0, 0, 559, 182));
             IGraphicsBitmap bitmap = bmTarget.FinishBitmap();
             using (Stream stream = new FileStream(testfile, FileMode.Create, FileAccess.Write)) {
-                bitmap.WriteToStream(GraphicsBitmapFormat.PNG, stream);
+                bitmap.WriteToStream(GraphicsBitmapFormat.PNG, stream, 100);
             }
 
             System.Drawing.Bitmap testBitmap = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(testfile);

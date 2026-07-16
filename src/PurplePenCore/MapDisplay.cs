@@ -653,7 +653,7 @@ namespace PurplePen
             dpi = this.bitmapDpi;
 
             using (Stream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write)) {
-                bitmap.WriteToStream(format, stream);
+                bitmap.WriteToStream(format, stream, 100);
             }
         }
 

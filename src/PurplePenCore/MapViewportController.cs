@@ -62,7 +62,7 @@ namespace PurplePen
     {
         // Raised when the associated map viewer should show the given area using the given mode.
         // The map viewer subscribes to this while a controller is bound to it.
-        public event Action<MapAreaShowMode, RectangleF>? ShowAreaRequested;
+        public event Action<MapAreaShowMode, RectangleF> ShowAreaRequested;
 
         // Ask the associated map viewer to show the given world-coordinate rectangle using the given mode.
         // Has no effect if no map viewer is currently bound to this controller.

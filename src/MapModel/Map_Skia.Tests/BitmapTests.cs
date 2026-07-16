@@ -119,7 +119,7 @@ namespace Map_Skia.Tests
             IGraphicsBitmap skiaBitmap = new Skia_Bitmap(skBitmap);
 
             MemoryStream memStream = new MemoryStream();
-            skiaBitmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream);
+            skiaBitmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100);
             memStream.Seek(0, SeekOrigin.Begin);
 
             SDBitmap loadedBitmap = (SDBitmap) SDImage.FromStream(memStream);
@@ -220,7 +220,7 @@ namespace Map_Skia.Tests
             IGraphicsBitmap skiaImage = new Skia_Image(skImage);
 
             MemoryStream memStream = new MemoryStream();
-            skiaImage.WriteToStream(GraphicsBitmapFormat.PNG, memStream);
+            skiaImage.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100);
             memStream.Seek(0, SeekOrigin.Begin);
 
             SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(memStream);
@@ -320,7 +320,7 @@ namespace Map_Skia.Tests
             IGraphicsBitmap skiaPixmap = new Skia_Pixmap(skPixmap);
 
             MemoryStream memStream = new MemoryStream();
-            skiaPixmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream);
+            skiaPixmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100);
             memStream.Seek(0, SeekOrigin.Begin);
 
             SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(memStream);
@@ -449,7 +449,7 @@ namespace Map_Skia.Tests
 
             // Write as PNG and read back to verify resolution is embedded.
             MemoryStream ms = new MemoryStream();
-            loaded.WriteToStream(GraphicsBitmapFormat.PNG, ms);
+            loaded.WriteToStream(GraphicsBitmapFormat.PNG, ms, 100);
             ms.Position = 0;
 
             BitmapWithResolution readBack = BitmapIO.ReadBitmapFromStream(ms);
@@ -518,7 +518,7 @@ namespace Map_Skia.Tests
             Skia_Image skiaImage = new Skia_Image(skImage, 350, 275);
 
             MemoryStream ms = new MemoryStream();
-            skiaImage.WriteToStream(GraphicsBitmapFormat.PNG, ms);
+            skiaImage.WriteToStream(GraphicsBitmapFormat.PNG, ms, 100);
             ms.Position = 0;
 
             BitmapWithResolution readBack = BitmapIO.ReadBitmapFromStream(ms);
@@ -591,7 +591,7 @@ namespace Map_Skia.Tests
             Skia_Pixmap skiaPixmap = new Skia_Pixmap(skPixmap, 500, 400);
 
             MemoryStream ms = new MemoryStream();
-            skiaPixmap.WriteToStream(GraphicsBitmapFormat.PNG, ms);
+            skiaPixmap.WriteToStream(GraphicsBitmapFormat.PNG, ms, 100);
             ms.Position = 0;
 
             BitmapWithResolution readBack = BitmapIO.ReadBitmapFromStream(ms);
@@ -617,7 +617,7 @@ namespace Map_Skia.Tests
             IGraphicsBitmap cropped = loaded.Crop(5, 5, 30, 30);
 
             MemoryStream ms = new MemoryStream();
-            cropped.WriteToStream(GraphicsBitmapFormat.PNG, ms);
+            cropped.WriteToStream(GraphicsBitmapFormat.PNG, ms, 100);
             ms.Position = 0;
 
             BitmapWithResolution readBack = BitmapIO.ReadBitmapFromStream(ms);

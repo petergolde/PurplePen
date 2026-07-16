@@ -66,15 +66,15 @@ namespace PurplePen.MapModel
             bitmap.Save(stream, tiffEncoder, encoderParameters);
         }
 
-        public static void SaveBitmap(Bitmap bitmap, string fileName, ImageFormat imageFormat)
+        public static void SaveBitmap(Bitmap bitmap, string fileName, ImageFormat imageFormat, int quality)
         {
             using (Stream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write)) {
-                SaveBitmap(bitmap, stream, imageFormat);
+                SaveBitmap(bitmap, stream, imageFormat, quality);
             }
         }
 
 
-        public static void SaveBitmap(Bitmap bitmap, Stream stream, ImageFormat imageFormat)
+        public static void SaveBitmap(Bitmap bitmap, Stream stream, ImageFormat imageFormat, int quality)
         {
             if (imageFormat.Equals(ImageFormat.Gif)) {
                 SaveGif(bitmap, stream);
@@ -83,17 +83,17 @@ namespace PurplePen.MapModel
                 SaveTIFF(bitmap, stream);
             }
             else if (imageFormat.Equals(ImageFormat.Jpeg)) {
-                SaveJpeg(bitmap, stream, 80);
+                SaveJpeg(bitmap, stream, quality);
             }
             else {
                 bitmap.Save(stream, imageFormat);
             }
         }
 
-        public static void SaveBitmap(IGraphicsBitmap bitmap, string fileName, GraphicsBitmapFormat imageFormat)
+        public static void SaveBitmap(IGraphicsBitmap bitmap, string fileName, GraphicsBitmapFormat imageFormat, int quality)
         {
             using (Stream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write)) {
-                bitmap.WriteToStream(imageFormat, stream);
+                bitmap.WriteToStream(imageFormat, stream, quality);
             }
         }
 

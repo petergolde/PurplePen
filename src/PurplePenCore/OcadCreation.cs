@@ -352,7 +352,7 @@ namespace PurplePen
 
                 foreach (BitmapToWrite bitmapToWrite in BitmapsToWrite()) {
                     using (Stream stream = new FileStream(bitmapToWrite.FullPath, FileMode.Create, FileAccess.Write)) {
-                        bitmapToWrite.Bitmap.WriteToStream(bitmapToWrite.Format, stream);
+                        bitmapToWrite.Bitmap.WriteToStream(bitmapToWrite.Format, stream, 100);
                     }
 
                     for (int i = 0; i < templates.Count; ++i) {

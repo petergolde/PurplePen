@@ -104,7 +104,7 @@ namespace PurplePen.Graphics2D
         System.Drawing.Color GetPixel(int x, int y);
 
         IGraphicsBitmap Crop(int x, int y, int width, int height);
-        bool WriteToStream(GraphicsBitmapFormat format, Stream stream);
+        bool WriteToStream(GraphicsBitmapFormat format, Stream stream, int quality);
 
         // If copyBits is false, the graphics target will draw directly to the existing bitmap. If copyBits is true,
         // the existing bitmap will be copied and the graphics target will draw to the copy. The existing bitmap will

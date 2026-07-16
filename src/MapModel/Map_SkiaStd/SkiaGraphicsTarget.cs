@@ -1226,13 +1226,13 @@ namespace PurplePen.MapModel
             }
         }
 
-        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream)
+        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream, int quality)
         {
             SKPixmap pixmap = image.PeekPixels();
             if (pixmap != null) {
                 // PeekPixels available: write directly from the pixmap.
                 PixmapWithResolution pwr = new PixmapWithResolution(pixmap, format, horizontalResolution, verticalResolution);
-                BitmapIO.WritePixmapToStream(pwr, stream, 100);
+                BitmapIO.WritePixmapToStream(pwr, stream, quality);
                 pixmap.Dispose();
                 return true;
             }
@@ -1240,7 +1240,7 @@ namespace PurplePen.MapModel
                 // PeekPixels not available (e.g. GPU-backed image): convert to bitmap first.
                 using (SKBitmap bmp = SKBitmap.FromImage(image)) {
                     BitmapWithResolution bwr = new BitmapWithResolution(bmp, format, horizontalResolution, verticalResolution);
-                    BitmapIO.WriteBitmapToStream(bwr, stream, 100);
+                    BitmapIO.WriteBitmapToStream(bwr, stream, quality);
                     return true;
                 }
             }
@@ -1346,10 +1346,10 @@ namespace PurplePen.MapModel
         }
 
 
-        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream)
+        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream, int quality)
         {
             BitmapWithResolution bwr = new BitmapWithResolution(bitmap, format, horizontalResolution, verticalResolution);
-            BitmapIO.WriteBitmapToStream(bwr, stream, 100);
+            BitmapIO.WriteBitmapToStream(bwr, stream, quality);
             return true;
         }
 
@@ -1497,10 +1497,10 @@ namespace PurplePen.MapModel
         }
 
 
-        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream)
+        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream, int quality)
         {
             PixmapWithResolution pwr = new PixmapWithResolution(pixmap, format, horizontalResolution, verticalResolution);
-            BitmapIO.WritePixmapToStream(pwr, stream, 100);
+            BitmapIO.WritePixmapToStream(pwr, stream, quality);
             return true;
         }
 

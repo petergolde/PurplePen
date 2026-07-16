@@ -1206,14 +1206,14 @@ namespace PurplePen.MapModel
             return new GDIPlus_Bitmap(croppedBitmap);
         }
 
-        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream)
+        public bool WriteToStream(GraphicsBitmapFormat format, Stream stream, int quality)
         {
             ImageFormat targetFormat = ImageFormatFromGraphicsBitmapFormat(format);
             if (bitmap == null || targetFormat == null)
                 return false;
 
             try {
-                BitmapUtil.SaveBitmap(bitmap, stream, targetFormat);
+                BitmapUtil.SaveBitmap(bitmap, stream, targetFormat, quality);
             }
             catch (Exception) {
                 return false;
