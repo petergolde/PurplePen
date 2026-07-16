@@ -199,9 +199,25 @@ namespace PurplePen.ViewModels
 
         #region File commands
 
+        /// <summary>
+        /// Raised when the current event could not be created or loaded and the
+        /// application should return to the initial "Welcome to Purple Pen"
+        /// screen, closing this main window. The View handles this by creating
+        /// and showing a fresh initial screen, then closing this window. The
+        /// ViewModel cannot reference Avalonia, so the actual window management
+        /// is performed by the View.
+        /// </summary>
+        public event Action? ReloadInitialScreenRequested;
+
+        /// <summary>
+        /// Requests that the application return to the initial welcome screen,
+        /// closing the current main window. Called from the file commands when
+        /// the old file has already been closed but a new event could not be
+        /// created or loaded, leaving no open file.
+        /// </summary>
         private void ReloadInitialScreen()
         {
-            // Not sure how to implement this?
+            ReloadInitialScreenRequested?.Invoke();
         }
 
         /// <summary>
@@ -224,11 +240,8 @@ namespace PurplePen.ViewModels
             if (result) {
                 bool success = await controller.NewEvent(vm.CreateEventInfo);
                 if (!success) {
-#if !PORTING
                     // The old file has been closed and creating the new event failed, so there
-                    // is no open file. The WinForms path returned to the InitialScreen here (see
-                    // the #if !PORTING block above); that recovery flow is not yet ported.
-#endif
+                    // is no open file. Return to the initial screen.
                     ReloadInitialScreen();
                 }
             }

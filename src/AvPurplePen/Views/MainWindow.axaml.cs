@@ -81,13 +81,39 @@ namespace AvPurplePen.Views
         {
             if (subscribedViewModel != null) {
                 subscribedViewModel.ExitRequested -= ViewModel_ExitRequested;
+                subscribedViewModel.ReloadInitialScreenRequested -= ViewModel_ReloadInitialScreenRequested;
                 subscribedViewModel = null;
             }
 
             if (DataContext is MainWindowViewModel viewModel) {
                 viewModel.ExitRequested += ViewModel_ExitRequested;
+                viewModel.ReloadInitialScreenRequested += ViewModel_ReloadInitialScreenRequested;
                 subscribedViewModel = viewModel;
             }
+        }
+
+        // Raised by the ViewModel when the current file has been closed but a new event could not be
+        // created or loaded, so there is no open file. Return to the initial welcome screen: create and
+        // show a fresh initial screen, make it the application's main window, then close this window.
+        private void ViewModel_ReloadInitialScreenRequested()
+        {
+            InitialScreenWindow initialScreen = new InitialScreenWindow {
+                DataContext = new InitialScreenViewModel(),
+            };
+
+            // Make the welcome screen the application's main window. This keeps the app alive when this
+            // window closes and makes the dialog service parent modal dialogs to the welcome screen.
+            if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+                desktop.MainWindow = initialScreen;
+            }
+
+            initialScreen.Show();
+            initialScreen.Activate();
+
+            // The current file is already closed, so bypass the save prompt in the close handler and
+            // close this main window.
+            exitConfirmed = true;
+            Close();
         }
 
         // Raised by the ViewModel once the current file has been closed successfully and
