@@ -193,9 +193,6 @@ namespace AvPurplePen.Views
             
             switch (e.FancyAction) {
             case MapViewer.FancyMouseAction.Move:
-#if PORTING
-                // Do we need to deal with leave here to report outside the viewport?
-#endif
                 vm.MapViewerMouseMove(location, pixelSize);
                 break;
 
@@ -242,9 +239,6 @@ namespace AvPurplePen.Views
                 break;
 
             case MapViewer.FancyMouseAction.Hover:
-#if !PORTING
-                // handle hover
-#endif
                 break;
 
             default:
@@ -288,9 +282,6 @@ namespace AvPurplePen.Views
 
             switch (e.FancyAction) {
             case MapViewer.FancyMouseAction.Move:
-#if PORTING
-                // Do we need to deal with leave here to report outside the viewport?
-#endif
                 vm.TopologyViewerMouseMove(location, pixelSize);
                 break;
 
@@ -337,9 +328,6 @@ namespace AvPurplePen.Views
                 break;
 
             case MapViewer.FancyMouseAction.Hover:
-#if !PORTING
-                // handle hover
-#endif
                 break;
 
             default:
