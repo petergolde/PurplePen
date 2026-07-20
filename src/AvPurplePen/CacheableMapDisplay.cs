@@ -17,12 +17,14 @@ namespace AvPurplePen
     class CacheableMapDisplay : IThreadsafeSkiaDrawing
     {
         IMapDisplay mapDisplay;
+        IColorConverter colorConverter;
         RectangleF bounds;
 
-        public CacheableMapDisplay(IMapDisplay mapDisplay)
+        public CacheableMapDisplay(IMapDisplay mapDisplay, IColorConverter colorConverter)
         {
             this.mapDisplay = mapDisplay;
             mapDisplay.Changed += MapDisplay_Changed;
+            this.colorConverter = colorConverter;
             bounds = mapDisplay.Bounds;
         }
 
@@ -38,7 +40,7 @@ namespace AvPurplePen
             canvas.Clear(SKColors.White);
 
             if (mapDisplay != null) {
-                using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, colorConverter)) {
                     mapDisplay.Draw(grTarget, Conv.ToRectangleF(rectToDraw), minResolution, () => cancelToken.ThrowIfCancellationRequested());
                 }
             }

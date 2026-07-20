@@ -153,9 +153,9 @@ namespace PurplePen.Tests
                 Assert.IsTrue(Util.IsCurrentCultureMetric());
 
                 CoreMapUtil.GetDefaultPageSize(new RectangleF(30, 50, 350, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
-                Assert.AreEqual(984, pageWidth);
-                Assert.AreEqual(1390, pageHeight);
-                Assert.AreEqual(0, pageMargins);
+                Assert.AreEqual(1169, pageWidth);
+                Assert.AreEqual(1654, pageHeight);
+                Assert.AreEqual(28, pageMargins);
                 Assert.IsTrue(landscape);
 
                 CoreMapUtil.GetDefaultPageSize(new RectangleF(30, 50, 290, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);

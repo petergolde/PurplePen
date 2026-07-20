@@ -242,7 +242,7 @@ public partial class MapViewer : UserControl
 
         if (newMapDisplay != null) {
             // The PanAndZoom control should display the merging of the map and the highlights.
-            IThreadsafeSkiaDrawing skiaDrawing = new CacheableMapDisplay(newMapDisplay);
+            IThreadsafeSkiaDrawing skiaDrawing = new CacheableMapDisplay(newMapDisplay, SwopColorConverter.Instance);
             IAvaloniaDrawing mapDrawing = new CachedDrawing(skiaDrawing);
             IAvaloniaDrawing mergedDrawing = new AvaloniaDrawingMerge(mapDrawing, highlightDrawing);
 

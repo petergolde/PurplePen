@@ -33,15 +33,17 @@
  */
 
 
+using Map_SkiaStd;
+using NUnit.Framework;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using NUnit.Framework;
 using TestingUtils;
-using PurplePen.Graphics2D;
-using PurplePen.MapModel;
 
 
 namespace Map_PDF.Tests
@@ -56,6 +58,15 @@ namespace Map_PDF.Tests
             Uri uri = new Uri(typeof(Rendering).Assembly.Location);
             string executablePath = Path.GetDirectoryName(uri.LocalPath);
             string fontPath = Path.Combine(executablePath, "fonts");
+
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright, Path.Combine(fontPath, "Roboto-Regular.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Bold, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright, Path.Combine(fontPath, "Roboto-Bold.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Italic, Path.Combine(fontPath, "Roboto-Italic.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Bold, SKFontStyleWidth.Normal, SKFontStyleSlant.Italic, Path.Combine(fontPath, "Roboto-BoldItalic.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Normal, SKFontStyleWidth.Condensed, SKFontStyleSlant.Upright, Path.Combine(fontPath, "RobotoCondensed-Regular.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Bold, SKFontStyleWidth.Condensed, SKFontStyleSlant.Upright, Path.Combine(fontPath, "RobotoCondensed-Bold.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Normal, SKFontStyleWidth.Condensed, SKFontStyleSlant.Italic, Path.Combine(fontPath, "RobotoCondensed-Italic.ttf"));
+            SkiaFontManager.AddFontFile("Roboto", SKFontStyleWeight.Bold, SKFontStyleWidth.Condensed, SKFontStyleSlant.Italic, Path.Combine(fontPath, "RobotoCondensed-BoldItalic.ttf"));
         }
 
 
@@ -140,7 +151,7 @@ namespace Map_PDF.Tests
             File.Delete(ocadFileName);
 
             // Create and open the map file.
-            Map map = new Map(new GDIPlus_TextMetrics(), new GDIPlus_FileLoader(directoryName));
+            Map map = new Map(new Skia_TextMetrics(), new Skia_FileLoader(directoryName));
             InputOutput.ReadFile(mapFileName, map);
 
             // Draw into a new bitmap.
@@ -175,7 +186,7 @@ namespace Map_PDF.Tests
                     InputOutput.WriteFile(ocadFileName, map, new MapFileFormat(MapFileFormatKind.OCAD, version));
 
                     // Create and open the map file.
-                    map = new Map(new GDIPlus_TextMetrics(), new GDIPlus_FileLoader(TestUtil.GetTestFile("pdfrender")));
+                    map = new Map(new Skia_TextMetrics(), new Skia_FileLoader(TestUtil.GetTestFile("pdfrender")));
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
