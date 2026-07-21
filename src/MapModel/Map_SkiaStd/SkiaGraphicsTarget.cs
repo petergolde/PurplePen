@@ -884,7 +884,7 @@ namespace PurplePen.MapModel
             float width = enhancedTypeface.MeasureTextAdvanceWidth(text, emHeight * 100);
             SKRect bounds = enhancedTypeface.MeasureTextBounds(text, emHeight * 100);
 
-            return new SizeF(width / 100, Math.Max((bounds.Bottom - bounds.Top) / 100, Ascent + Descent));
+            return new SizeF(width / 100, Ascent + Descent);
         }
 
         public RectangleF GetTightBoundingBox(PointF startpoint, string text)

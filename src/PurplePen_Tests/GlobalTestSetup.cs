@@ -19,11 +19,19 @@ public class GlobalTestSetup
         // Register the service provider for PurplePenCore.
         // Register all the services that PurplePenCore requires.
         ServiceCollection services = new ServiceCollection();
+#if true
+        services.AddSingleton<IGraphicsBitmapLoader, SkiaBitmapGraphicsLoader>();
+        services.AddSingleton<IBitmapGraphicsTargetProvider, SkiaBitmapGraphicsTargetProvider>();
+        services.AddSingleton<IFontLoader>(SkiaFontLoader.Instance);
+        services.AddSingleton<ITextMetrics, Skia_TextMetrics>();
+        services.AddSingleton<IFileLoaderProvider, SkiaFileLoaderProvider>();
+#else
         services.AddSingleton<IGraphicsBitmapLoader, GDIPlus_GraphicsBitmapLoader>();
         services.AddSingleton<IBitmapGraphicsTargetProvider, GDIPlus_BitmapGraphicsTargetProvider>();
         services.AddSingleton<IFontLoader>(GdiplusFontLoader.Instance);
         services.AddSingleton<ITextMetrics, GDIPlus_TextMetrics>();
         services.AddSingleton<IFileLoaderProvider, GdiPlus_FileLoaderProvider>();
+#endif        
         services.AddSingleton<IPdfWriter, PdfWriter>();
         services.AddSingleton<IPdfLoadingStatus, PdfLoadingUI>();
 

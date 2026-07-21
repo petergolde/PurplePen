@@ -36,6 +36,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
+using SkiaSharp;
 using TestingUtils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -83,20 +85,32 @@ namespace PurplePen.Tests
             }
 
             // Render map to the graphics.
-            Bitmap bm = new Bitmap((int)(1000 * rect.Width / rect.Height), 1000);
-            using (Graphics g = Graphics.FromImage(bm)) {
+            int width = (int)(1000 * rect.Width / rect.Height);
+            int height = 1000;
+            Bitmap bm = new Bitmap(width, height, PixelFormat.Format32bppPArgb);
+            BitmapData bitmapData = bm.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, bm.PixelFormat);
+            try {
                 RenderOptions options = new RenderOptions();
 
                 options.usePatternBitmaps = true;
                 options.minResolution = (float)(rect.Width / bm.Width);
                 options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                g.ScaleTransform((float)(bm.Width / rect.Width), -(float)(bm.Height / rect.Height));
-                g.TranslateTransform(-rect.Left, -rect.Top - rect.Height);
+                SKImageInfo imageInfo = new SKImageInfo(width, height, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
+                using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
+                    SKCanvas canvas = surface.Canvas;
+                    canvas.Clear(SKColors.White);
+                    canvas.Scale((float)(bm.Width / rect.Width), -(float)(bm.Height / rect.Height));
+                    canvas.Translate(-rect.Left, -rect.Top - rect.Height);
 
-                g.Clear(Color.White);
-                using (map.Read())
-                    map.Draw(new GDIPlus_GraphicsTarget(g), rect, options, null);
+                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                        using (map.Read())
+                            map.Draw(grTarget, rect, options, null);
+                    }
+                }
+            }
+            finally {
+                bm.UnlockBits(bitmapData);
             }
 
             TestUtil.CheckBitmapsBase(bm, "topologyformatter\\" + testName);

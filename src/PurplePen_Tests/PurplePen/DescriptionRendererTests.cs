@@ -33,19 +33,22 @@
  */
 
 #if TEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
+using SkiaSharp;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
-using System.Text;
 using System.Diagnostics;
-using System.IO;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TestingUtils;
-using PurplePen.DebugUI;
-
-using PurplePen.MapModel;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
+using System.Text;
+using System.Windows.Media.Media3D;
+using TestingUtils;
 
 namespace PurplePen.Tests
 {
@@ -68,11 +71,11 @@ namespace PurplePen.Tests
             DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
             DescriptionLine[] description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
-            Bitmap bmNew = DescriptionBrowser.RenderToBitmap(symbolDB, description, kind, numColumns);
+            Bitmap bmNew = RenderToBitmap(symbolDB, description, kind, numColumns);
             if (numColumns > 1)
-                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_" + numColumns + "col", kind));
+                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_" + numColumns + "col", kind));
             else
-                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "", kind));
+                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "", kind));
         }
 
         // Render a description to a bitmap for testing purposes. Does one pixel at a time to test clip rectangle.
@@ -110,6 +113,62 @@ namespace PurplePen.Tests
             return bm;
         }
 
+        // Render a description to a bitmap for testing purposes. Hardcoded 40 pixel box size.
+        public static Bitmap RenderToBitmap(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
+        {
+            DescriptionRenderer descriptionRenderer = new DescriptionRenderer(symbolDB);
+            descriptionRenderer.Description = description;
+            descriptionRenderer.DescriptionKind = kind;
+            descriptionRenderer.CellSize = 40;
+            descriptionRenderer.Margin = 4;
+            descriptionRenderer.NumberOfColumns = numColumns;
+
+            SizeF size = descriptionRenderer.Measure();
+
+            int bmWidth = (int)size.Width;
+            int bmHeight = (int)size.Height;
+            Bitmap bm = new Bitmap(bmWidth, bmHeight);
+            BitmapData bitmapData = bm.LockBits(new Rectangle(0, 0, bmWidth, bmHeight), ImageLockMode.ReadWrite, bm.PixelFormat);
+            try {
+                SKImageInfo imageInfo = new SKImageInfo(bmWidth, bmHeight, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
+                using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
+                    SKCanvas canvas = surface.Canvas;
+                    canvas.Clear(SKColors.White);
+
+                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                        grTarget.PushAntiAliasing(true);
+                        descriptionRenderer.RenderToGraphics(grTarget, new RectangleF(0, 0, bmWidth, bmHeight));
+                    }
+                }
+            }
+            finally {
+                bm.UnlockBits(bitmapData);
+            }
+
+            return bm;
+        }
+
+        // Get the file name for a bitmap description for testing purposes. CourseID == 0 means all controls. Extra
+        // is an extra string to suffix to the base name. Does not end in .png unless specified in extra.
+        public static string GetBitmapFileName(EventDB eventDB, Id<Course> courseId, string extra, DescriptionKind kind)
+        {
+            Course course = null;
+            string name;
+
+            if (courseId.IsNotNone)
+                course = eventDB.GetCourse(courseId);
+
+
+            if (course != null)
+                name = course.name;
+            else
+                name = "Allcontrols";
+
+            name = "descriptions\\" + name + "_" + kind.ToString() + extra;
+
+            return name;
+        }
+
         // Render the given course id (0 = all controls) and kind to a bitmap, and compare it to the saved version.
         internal void CheckRenderBitmapPixelAtATime(Id<Course> id, DescriptionKind kind)
         {
@@ -127,7 +186,7 @@ namespace PurplePen.Tests
             DescriptionLine[] description = descFormatter.CreateDescription(false);
 
             Bitmap bmNew = RenderToBitmapPixelAtATime(symbolDB, description, kind);
-            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "", kind));
+            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "", kind));
         }
 
         public CourseDesignator DesignatorFromCourseId(EventDB eventDB, Id<Course> courseId)
@@ -303,14 +362,10 @@ namespace PurplePen.Tests
 
             SizeF size = descriptionRenderer.Measure();
 
-            Bitmap bm = new Bitmap((int) size.Width * 8, (int) size.Height * 8);
-            Graphics g = Graphics.FromImage(bm);
-            g.ScaleTransform(bm.Width / size.Width, -bm.Height / size.Height);
-            g.TranslateTransform(-location.X, -location.Y);
+            int bmWidth = (int)size.Width * 8, bmHeight = (int)size.Height * 8;
+            Bitmap bm = new Bitmap(bmWidth, bmHeight, PixelFormat.Format32bppPArgb);
 
-            g.Clear(Color.White);
-
-            Map map = new Map(new GDIPlus_TextMetrics(), null);
+            Map map = new Map(new Skia_TextMetrics(), null);
             using (map.Write()) {
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
 
@@ -327,15 +382,30 @@ namespace PurplePen.Tests
 
             InputOutput.WriteFile(TestUtil.GetTestFile("descriptions\\desc_temp.ocd"), map, new MapFileFormat(MapFileFormatKind.OCAD, 8));
 
-            using (map.Read()) {
+            BitmapData bitmapData = bm.LockBits(new Rectangle(0, 0, bmWidth, bmHeight), ImageLockMode.ReadWrite, bm.PixelFormat);
+            try {
                 RenderOptions renderOpts = new RenderOptions();
                 renderOpts.usePatternBitmaps = true;
                 renderOpts.minResolution = 0.1F;
                 renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
-                map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height), renderOpts, null);
-            }
 
-            g.Dispose();
+                SKImageInfo imageInfo = new SKImageInfo(bmWidth, bmHeight, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
+                using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
+                    SKCanvas canvas = surface.Canvas;
+                    canvas.Clear(SKColors.White);
+                    canvas.Scale(bm.Width / size.Width, -bm.Height / size.Height);
+                    canvas.Translate(-location.X, -location.Y);
+
+                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                        grTarget.PushAntiAliasing(true);
+                        using (map.Read())
+                            map.Draw(grTarget, new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height), renderOpts, null);
+                    }
+                }
+            }
+            finally {
+                bm.UnlockBits(bitmapData);
+            }
 
             return bm;
         }
@@ -359,9 +429,9 @@ namespace PurplePen.Tests
 
             Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, numColumns);
             if (numColumns > 1)
-                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_ocad_" + numColumns + "col", kind));
+                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_ocad_" + numColumns + "col", kind));
             else
-                TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_ocad", kind));
+                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_ocad", kind));
         }
 
         // Render the given course id (0 = all controls) and kind to a map, and compare it to the saved version.
@@ -382,7 +452,7 @@ namespace PurplePen.Tests
             DescriptionLine[] description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
             Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, 1);
-            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_std_default", kind));
+            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_std_default", kind));
 
             undomgr.BeginCommand(71231, "change standard");
             symbolDB.Standard = newDescStandard;
@@ -391,7 +461,7 @@ namespace PurplePen.Tests
             description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
             bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, 1);
-            TestUtil.CheckBitmapsBase(bmNew, DescriptionBrowser.GetBitmapFileName(eventDB, id, "_std_" + newDescStandard, kind));
+            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_std_" + newDescStandard, kind));
         }
 
         [TestMethod]

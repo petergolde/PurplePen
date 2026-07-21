@@ -39,8 +39,9 @@ using System.Text;
 using System.Diagnostics;
 using System.IO;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SkiaSharp;
 using TestingUtils;
 
 using PurplePen.MapModel;
@@ -61,16 +62,25 @@ namespace PurplePen.Tests
 
             SizeF size = punchesRenderer.Measure();
 
-            Bitmap bm = new Bitmap((int) size.Width, (int) size.Height);
-            Graphics g = Graphics.FromImage(bm);
+            int width = (int) size.Width;
+            int height = (int) size.Height;
+            Bitmap bm = new Bitmap(width, height, PixelFormat.Format32bppPArgb);
+            BitmapData bitmapData = bm.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, bm.PixelFormat);
+            try {
+                SKImageInfo imageInfo = new SKImageInfo(width, height, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
+                using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
+                    SKCanvas canvas = surface.Canvas;
+                    canvas.Clear(SKColors.White);
 
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-
-            g.Clear(Color.White);
-            punchesRenderer.Draw(new GDIPlus_GraphicsTarget(g), 0, 0, 0, punchesRenderer.Boxes.Height);
-
-            g.Dispose();
+                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                        grTarget.PushAntiAliasing(true);
+                        punchesRenderer.Draw(grTarget, 0, 0, 0, punchesRenderer.Boxes.Height);
+                    }
+                }
+            }
+            finally {
+                bm.UnlockBits(bitmapData);
+            }
 
             return bm;
         }
