@@ -363,7 +363,6 @@ namespace PurplePen.Tests
             SizeF size = descriptionRenderer.Measure();
 
             int bmWidth = (int)size.Width * 8, bmHeight = (int)size.Height * 8;
-            Bitmap bm = new Bitmap(bmWidth, bmHeight, PixelFormat.Format32bppPArgb);
 
             Map map = new Map(new Skia_TextMetrics(), null);
             using (map.Write()) {
@@ -382,32 +381,17 @@ namespace PurplePen.Tests
 
             InputOutput.WriteFile(TestUtil.GetTestFile("descriptions\\desc_temp.ocd"), map, new MapFileFormat(MapFileFormatKind.OCAD, 8));
 
-            BitmapData bitmapData = bm.LockBits(new Rectangle(0, 0, bmWidth, bmHeight), ImageLockMode.ReadWrite, bm.PixelFormat);
-            try {
-                RenderOptions renderOpts = new RenderOptions();
-                renderOpts.usePatternBitmaps = true;
-                renderOpts.minResolution = 0.1F;
-                renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
+            RenderOptions renderOpts = new RenderOptions();
+            renderOpts.usePatternBitmaps = true;
+            renderOpts.minResolution = 0.1F;
+            renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                SKImageInfo imageInfo = new SKImageInfo(bmWidth, bmHeight, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
-                using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
-                    SKCanvas canvas = surface.Canvas;
-                    canvas.Clear(SKColors.White);
-                    canvas.Scale(bm.Width / size.Width, -bm.Height / size.Height);
-                    canvas.Translate(-location.X, -location.Y);
-
-                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
-                        grTarget.PushAntiAliasing(true);
-                        using (map.Read())
-                            map.Draw(grTarget, new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height), renderOpts, null);
-                    }
-                }
-            }
-            finally {
-                bm.UnlockBits(bitmapData);
-            }
-
-            return bm;
+            RectangleF mapRectangle = new RectangleF(location.X, location.Y - size.Height, size.Width, size.Height);
+            return TestRenderingUtils.RenderToBitmap(bmWidth, bmHeight, mapRectangle, true, graphicsTarget => {
+                graphicsTarget.PushAntiAliasing(true);
+                using (map.Read())
+                    map.Draw(graphicsTarget, mapRectangle, renderOpts, null);
+            });
         }
 
         // Render the given course id (0 = all controls) and kind to a map, and compare it to the saved version.

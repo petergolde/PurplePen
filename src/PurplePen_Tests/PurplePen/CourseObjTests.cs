@@ -81,26 +81,28 @@ namespace PurplePen.Tests
         }
 
         // Draw a grid on the graphics
-        void DrawGrid(Graphics g, RectangleF rect, float spacing)
+        void DrawGrid(IGraphicsTarget g, RectangleF rect, float spacing)
         {
-            Pen pen = new Pen(Color.FromArgb(100, Color.MidnightBlue), 0.0F);
+            g.PushAntiAliasing(false);
+            object pen = new object();
+            CmykColor color = CmykColor.FromColor(Color.MidnightBlue);
+            color = CmykColor.FromCmyka(color.Cyan, color.Magenta, color.Yellow, color.Black, 0.4F);
+            g.CreatePen(pen, color, 0.032F, LineCapMode.Flat, LineJoinMode.Miter, 10);
 
             // Draw the grid.
             for (float x = (int) ((rect.Left) / spacing) * spacing; x <= rect.Right; x += spacing) {
-                g.DrawLine(pen, x, rect.Top, x, rect.Bottom);
+                g.DrawLine(pen, new PointF(x, rect.Top), new PointF(x, rect.Bottom));
             }
             for (float y = (int) ((rect.Top) / spacing) * spacing; y <= rect.Bottom; y += spacing) {
-                g.DrawLine(pen, rect.Left, y, rect.Right, y);
+                g.DrawLine(pen, new PointF(rect.Left, y), new PointF(rect.Right, y));
             }
-
-            pen.Dispose();
         }
 
         // Render one course object to a map.
         internal Map RenderCourseObjToMap(CourseObj courseobj)
         {
             CourseLayout.MapRenderOptions mapRenderOptions = new CourseLayout.MapRenderOptions();
-            Map map = new Map(new GDIPlus_TextMetrics(), null);
+            Map map = new Map(new Skia_TextMetrics(), null);
 
             using (map.Write()) {
                 Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
@@ -155,7 +157,7 @@ namespace PurplePen.Tests
         {
             Matrix m = new Matrix();
 
-            m.Translate(sizeBitmap.Width / 2, sizeBitmap.Height / 2);
+            m.Translate((sizeBitmap.Width / 2) + 0.5F, (sizeBitmap.Height / 2) + 0.5F);
             m.Scale((float) (sizeBitmap.Width / 8.0), -(float) (sizeBitmap.Height / 8.0));
             return m;
         }
@@ -166,24 +168,24 @@ namespace PurplePen.Tests
         {
             Map map = RenderCourseObjToMap(courseobj);
 
-            Bitmap bm = new Bitmap(250, 250);
-            using (Graphics g = Graphics.FromImage(bm)) {
+            Bitmap bm = TestRenderingUtils.RenderToBitmap(250, 250, new RectangleF(0, 0, 250F, 250F), false, g => {
                 RenderOptions options = new RenderOptions();
-
                 options.usePatternBitmaps = true;
-                options.minResolution = (float) (8.0 / bm.Width);
+                options.minResolution = (float)(8.0 / 250);
                 options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                g.MultiplyTransform(GetTransform(bm.Size).ToSysDrawMatrix());
+                object backColorBrush = new object();
+                g.CreateSolidBrush(backColorBrush, CmykColor.FromColor(backColor));
+                g.FillRectangle(backColorBrush, new RectangleF(-1, -1, 252, 252));
 
-                g.Clear(backColor);
+                g.PushTransform(GetTransform(new Size(250, 250)));
                 using (map.Read())
-                    map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(-100F, -100F, 200F, 200F), options, null);
+                    map.Draw(g, new RectangleF(-100F, -100F, 200F, 200F), options, null);
+
                 DrawGrid(g, new RectangleF(-4.0F, -4.0F, 8.0F, 8.0F), 1.0F);
-            }
+            });
 
             return bm;
-
         }
 
         // Render to a bitmap and check against the saved version.
@@ -1439,11 +1441,10 @@ namespace PurplePen.Tests
             Bitmap bmHighlighted = (Bitmap) bmNew.Clone();
             Matrix matrix = GetTransform(bmNew.Size);
 
-            using (Graphics g = Graphics.FromImage(bmHighlighted)) {
-                using (GDIPlus_GraphicsTarget graphicsTarget = new GDIPlus_GraphicsTarget(g)) {
-                    courseobj.DrawHighlight(graphicsTarget, matrix);
-                }
-            }
+            TestRenderingUtils.RenderToExistingBitmap(bmHighlighted, grTarget => {
+                courseobj.DrawHighlight(grTarget, matrix);
+            });
+
             TestUtil.CheckBitmapsBase(bmHighlighted, "coursesymbols\\" + basename);
         }
 
@@ -2100,11 +2101,10 @@ namespace PurplePen.Tests
             Bitmap bmNew = RenderToBitmap(courseobj, backColor);
             Matrix matrix = GetTransform(bmNew.Size);
 
-            using (Graphics g = Graphics.FromImage(bmNew)) {
-                using (GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g)) {
-                    offset.DrawHighlight(grTarget, matrix);
-                }
-            }
+            TestRenderingUtils.RenderToExistingBitmap(bmNew, grTarget => {
+                offset.DrawHighlight(grTarget, matrix);
+            });
+
             TestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename);
         }
 

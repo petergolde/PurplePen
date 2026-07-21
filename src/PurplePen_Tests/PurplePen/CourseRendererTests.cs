@@ -39,6 +39,7 @@ using System.Drawing;
 using TestingUtils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 using System.Linq;
 
@@ -81,21 +82,19 @@ namespace PurplePen.Tests
             Map map = course.RenderToMap(new CourseLayout.MapRenderOptions());
 
             // Render map to the graphics.
-            Bitmap bm = new Bitmap(1000,1000);
-            using (Graphics g = Graphics.FromImage(bm)) {
-                RenderOptions options = new RenderOptions();
+            int width = 1000;
+            int height = 1000;
+            RenderOptions options = new RenderOptions();
 
-                options.usePatternBitmaps = true;
-                options.minResolution = (float) (rect.Width / bm.Width);
-                options.renderTemplates = RenderTemplateOption.MapAndTemplates;
+            options.usePatternBitmaps = true;
+            options.minResolution = rect.Width / width;
+            options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                g.ScaleTransform((float) (bm.Width / rect.Width), - (float) (bm.Height / rect.Height));
-                g.TranslateTransform(-rect.Left, -rect.Top-rect.Height);
-
-                g.Clear(Color.White);
+            Bitmap bm = TestRenderingUtils.RenderToBitmap(width, height, rect, true, (IGraphicsTarget graphicsTarget) => {
+                graphicsTarget.PushAntiAliasing(true);
                 using (map.Read())
-                    map.Draw(new GDIPlus_GraphicsTarget(g), rect, options, null);
-            }
+                    map.Draw(graphicsTarget, rect, options, null);
+            });
 
             TestUtil.CheckBitmapsBase(bm, "courserenderer\\" + testName, MAX_PIXEL_DIFF);
         }

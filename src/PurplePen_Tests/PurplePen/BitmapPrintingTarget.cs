@@ -2,16 +2,15 @@
 using PurplePen;
 using PurplePen.Graphics2D;
 using PurplePen.MapModel;
+using PurplePen.Tests;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SkiaSharp;
 
 namespace PurplePen_Tests.PurplePen
 {
@@ -45,26 +44,12 @@ namespace PurplePen_Tests.PurplePen
 
             int width = (int) Math.Round(paperSize.SizeInHundreths.Width * 2);
             int height = (int) Math.Round(paperSize.SizeInHundreths.Height * 2);
-            Bitmap bm = new Bitmap(width, height, PixelFormat.Format32bppPArgb);
+            RectangleF drawingRectangle = new RectangleF(0, 0, width / 2F, height / 2F);  // Drawing coordinates are 1/100 of an inch.
+            Bitmap bm = TestRenderingUtils.RenderToBitmap(width, height, drawingRectangle, false, graphicsTarget => {
+                graphicsTarget.PushAntiAliasing(true);
+                drawPage(graphicsTarget);
+            });
             bm.SetResolution(Dpi, Dpi);
-
-            BitmapData bitmapData = bm.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, bm.PixelFormat);
-            try {
-                SKImageInfo imageInfo = new SKImageInfo(width, height, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
-                using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
-                    SKCanvas canvas = surface.Canvas;
-                    canvas.Clear(SKColors.White);
-                    canvas.Scale(2, 2);  // Scaling must be set in 1/100 of an inch.
-
-                    using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
-                        grTarget.PushAntiAliasing(true);
-                        drawPage(grTarget);
-                    }
-                }
-            }
-            finally {
-                bm.UnlockBits(bitmapData);
-            }
 
             bitmaps.Add(bm);
 
