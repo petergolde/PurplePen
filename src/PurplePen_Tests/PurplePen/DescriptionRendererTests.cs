@@ -78,41 +78,6 @@ namespace PurplePen.Tests
                 TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "", kind));
         }
 
-        // Render a description to a bitmap for testing purposes. Does one pixel at a time to test clip rectangle.
-        internal static Bitmap RenderToBitmapPixelAtATime(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind)
-        {
-            DescriptionRenderer descriptionRenderer = new DescriptionRenderer(symbolDB);
-            descriptionRenderer.Description = description;
-            descriptionRenderer.DescriptionKind = kind;
-            descriptionRenderer.CellSize = 40;
-            descriptionRenderer.Margin = 4;
-
-            SizeF size = descriptionRenderer.Measure();
-
-            Bitmap bm = new Bitmap((int)size.Width, (int)size.Height);
-            Graphics g = Graphics.FromImage(bm);
-
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-
-            g.Clear(Color.White);
-
-            using (GDIPlus_GraphicsTarget graphicsTarget = new GDIPlus_GraphicsTarget(g)) {
-                for (int x = 0; x < size.Width; ++x) {
-                    for (int y = 0; y < size.Height; ++y) {
-                        Rectangle clip = new Rectangle(x, y, 1, 1);
-                        graphicsTarget.PushClip(clip);
-                        descriptionRenderer.RenderToGraphics(graphicsTarget, clip);
-                        graphicsTarget.PopClip();   
-                    }
-                }
-            }
-
-            g.Dispose();
-
-            return bm;
-        }
-
         // Render a description to a bitmap for testing purposes. Hardcoded 40 pixel box size.
         public static Bitmap RenderToBitmap(SymbolDB symbolDB, DescriptionLine[] description, DescriptionKind kind, int numColumns)
         {
@@ -167,26 +132,6 @@ namespace PurplePen.Tests
             name = "descriptions\\" + name + "_" + kind.ToString() + extra;
 
             return name;
-        }
-
-        // Render the given course id (0 = all controls) and kind to a bitmap, and compare it to the saved version.
-        internal void CheckRenderBitmapPixelAtATime(Id<Course> id, DescriptionKind kind)
-        {
-            SymbolDB symbolDB = new SymbolDB(Util.GetFileInAppDirectory("symbols.xml"));
-            UndoMgr undomgr = new UndoMgr(5);
-            EventDB eventDB = new EventDB(undomgr);
-            CourseView courseView;
-
-            eventDB.Load(TestUtil.GetTestFile("descriptions\\sampleevent1.coursescribe"));
-            eventDB.Validate();
-
-            courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(id));
-
-            DescriptionFormatter descFormatter = new DescriptionFormatter(courseView, symbolDB, DescriptionFormatter.Purpose.ForPrinting);
-            DescriptionLine[] description = descFormatter.CreateDescription(false);
-
-            Bitmap bmNew = RenderToBitmapPixelAtATime(symbolDB, description, kind);
-            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "", kind));
         }
 
         public CourseDesignator DesignatorFromCourseId(EventDB eventDB, Id<Course> courseId)
@@ -654,77 +599,6 @@ namespace PurplePen.Tests
             CheckRenderMapStandardChange(TestUtil.GetTestFile("descriptions\\standards2.ppen"), CourseId(1), DescriptionKind.SymbolsAndText, "2004");
         }
 
-
-
-#if false  // These tests are too slow to run normally.
-
-        [TestMethod]
-        public void AllControlsSymbolsPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(0), DescriptionKind.Symbols);
-        }
-
-        [TestMethod]
-        public void AllControlsTextPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(0), DescriptionKind.Text);
-        }
-
-        [TestMethod]
-        public void AllControlsSymbolsAndTextPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(0), DescriptionKind.SymbolsAndText);
-        }
-
-        [TestMethod]
-        public void RegularSymbolsPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(4), DescriptionKind.Symbols);
-        }
-
-        [TestMethod]
-        public void RegularTextPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(4), DescriptionKind.Text);
-        }
-
-        [TestMethod]
-        public void RegularSymbolsAndTextPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(4), DescriptionKind.SymbolsAndText);
-        }
-
-        [TestMethod]
-        public void ScoreSymbolsPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(5), DescriptionKind.Symbols);
-        }
-
-        [TestMethod]
-        public void ScoreTextPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(3), DescriptionKind.Text);
-        }
-
-        [TestMethod]
-        public void ScoreSymbolsAndTextPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(5), DescriptionKind.SymbolsAndText);
-        }
-
-        [TestMethod]
-        public void RegularSymbols2PixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(6), DescriptionKind.Symbols);
-        }
-
-        [TestMethod]
-        public void EmptySymbolsPixelAtATime()
-        {
-            CheckRenderBitmapPixelAtATime(CourseId(2), DescriptionKind.Symbols);
-        }
-
-#endif
 
         void CheckHitTest(DescriptionRenderer renderer, Point pt, HitTestKind expectedKind, int expectedFirstLine, int expectedLastLine, int expectedBox, RectangleF expectedRect)
         {

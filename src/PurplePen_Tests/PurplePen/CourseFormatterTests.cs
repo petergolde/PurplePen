@@ -248,7 +248,7 @@ ControlNumber:  control:43  course-control:310  scale:1  text:9  top-left:(82.89
                 font-name:Arial  font-style:Regular  font-height:5.57
 ControlNumber:  control:75  course-control:311  scale:1  text:10  top-left:(68.01,36.87)
                 font-name:Arial  font-style:Regular  font-height:5.57
-ControlNumber:  control:45  course-control:312  scale:1  text:11  top-left:(45.23,32.45)
+ControlNumber:  control:45  course-control:312  scale:1  text:11  top-left:(45.61,32.36)
                 font-name:Arial  font-style:Regular  font-height:5.57
 ControlNumber:  control:80  course-control:313  scale:1  text:12  top-left:(35.47,3.16)
                 font-name:Arial  font-style:Regular  font-height:5.57
@@ -866,7 +866,7 @@ Code:           layer:12  control:80  scale:1  text:80  top-left:(34.35,10.77)
 FirstAid:       special:1  scale:1  location:(14.5,31.2)
 OOB:            special:4  scale:1  path:N(3,7)--N(11,2)--N(0,-7)--N(-12,-3)--N(3,7)
 BasicText:      special:5  scale:1  text:Banana Apple  top-left:(13,17)
-                font-name:Times New Roman  font-style:Bold  font-height:9.5309  rect:(13,17)-(71,1)
+                font-name:Times New Roman  font-style:Bold  font-height:9.6181  rect:(13,17)-(71,1)
 BasicText:      special:6  scale:1  text:Frank Zappa  top-left:(13,-14)
                 font-name:Arial  font-style:Bold  font-height:2.6853  rect:(13,-14)-(71,-17)
 BasicText:      special:7  scale:1  text:Xavier  top-left:(45,40)
@@ -936,25 +936,30 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
             Assert.AreEqual(11.12, size.Width, 0.01); 
             Assert.AreEqual(3.46, size.Height, 0.01);
 
-            Bitmap bm = new Bitmap(250, 250);
-            using (Graphics g = Graphics.FromImage(bm))
-            using (Font font = GdiplusFontLoader.Instance.CreateFont(myFont.Name, myFont.EmHeight, myFont.TextEffects)) {
-                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                g.TranslateTransform(bm.Width / 2, bm.Height / 2);
-                g.ScaleTransform((float) (bm.Width / 20.0), (float) (bm.Height / 20.0));
+            /*
+             * Old code to draw the text and rectangle for visual inspection. Needs updating to Skia if
+             * we want to reenable.
+             */
 
-                StringFormat format = new StringFormat(StringFormat.GenericTypographic);
-                format.Alignment = StringAlignment.Center;
-                format.LineAlignment = StringAlignment.Center;
-                format.FormatFlags |= StringFormatFlags.NoClip;
+            //Bitmap bm = new Bitmap(250, 250);
+            //using (Graphics g = Graphics.FromImage(bm))
+            //using (Font font = GdiplusFontLoader.Instance.CreateFont(myFont.Name, myFont.EmHeight, myFont.TextEffects)) {
+            //    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            //    g.TranslateTransform(bm.Width / 2, bm.Height / 2);
+            //    g.ScaleTransform((float) (bm.Width / 20.0), (float) (bm.Height / 20.0));
 
-                RectangleF rect = new RectangleF(new PointF(-6, -6), size);
-                g.Clear(Color.White);
-                g.DrawString("1234", font, Brushes.Black, rect, format);
-                g.DrawRectangle(new Pen(Color.Red, 0.05F), rect.Left, rect.Top, rect.Width, rect.Height);
-            }
+            //    StringFormat format = new StringFormat(StringFormat.GenericTypographic);
+            //    format.Alignment = StringAlignment.Center;
+            //    format.LineAlignment = StringAlignment.Center;
+            //    format.FormatFlags |= StringFormatFlags.NoClip;
 
-            TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize", MAX_PIXEL_DIFF);
+            //    RectangleF rect = new RectangleF(new PointF(-6, -6), size);
+            //    g.Clear(Color.White);
+            //    g.DrawString("1234", font, Brushes.Black, rect, format);
+            //    g.DrawRectangle(new Pen(Color.Red, 0.05F), rect.Left, rect.Top, rect.Width, rect.Height);
+            //}
+
+            //TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize", MAX_PIXEL_DIFF);
         }
 
         [TestMethod]
@@ -965,25 +970,30 @@ ControlNumber:  control:5  course-control:5  scale:1  text:4  top-left:(66.58,57
             Assert.AreEqual(13, size.Width, 0.01);
             Assert.AreEqual(4.38, size.Height, 0.01);
 
-            Bitmap bm = new Bitmap(250, 250);
-            using (Graphics g = Graphics.FromImage(bm))
-            using (Font font = GdiplusFontLoader.Instance.CreateFont(myFont.Name, myFont.EmHeight * 1.3F, myFont.TextEffects)) {
-                g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                g.TranslateTransform(bm.Width / 2, bm.Height / 2);
-                g.ScaleTransform((float) (bm.Width / 20.0), (float) (bm.Height / 20.0));
+            /*
+             * Old code to draw the text and rectangle for visual inspection. Needs updating to Skia if
+             * we want to reenable.
+             */
 
-                StringFormat format = new StringFormat(StringFormat.GenericTypographic);
-                format.Alignment = StringAlignment.Center;
-                format.LineAlignment = StringAlignment.Center;
-                format.FormatFlags |= StringFormatFlags.NoClip;
+            //Bitmap bm = new Bitmap(250, 250);
+            //using (Graphics g = Graphics.FromImage(bm))
+            //using (Font font = GdiplusFontLoader.Instance.CreateFont(myFont.Name, myFont.EmHeight * 1.3F, myFont.TextEffects)) {
+            //    g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            //    g.TranslateTransform(bm.Width / 2, bm.Height / 2);
+            //    g.ScaleTransform((float) (bm.Width / 20.0), (float) (bm.Height / 20.0));
 
-                RectangleF rect = new RectangleF(new PointF(-6, -6), size);
-                g.Clear(Color.White);
-                g.DrawString("1234", font, Brushes.Black, rect, format);
-                g.DrawRectangle(new Pen(Color.Red, 0.05F), rect.Left, rect.Top, rect.Width, rect.Height);
-            }
+            //    StringFormat format = new StringFormat(StringFormat.GenericTypographic);
+            //    format.Alignment = StringAlignment.Center;
+            //    format.LineAlignment = StringAlignment.Center;
+            //    format.FormatFlags |= StringFormatFlags.NoClip;
 
-            TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize2", MAX_PIXEL_DIFF);
+            //    RectangleF rect = new RectangleF(new PointF(-6, -6), size);
+            //    g.Clear(Color.White);
+            //    g.DrawString("1234", font, Brushes.Black, rect, format);
+            //    g.DrawRectangle(new Pen(Color.Red, 0.05F), rect.Left, rect.Top, rect.Width, rect.Height);
+            //}
+
+            //TestUtil.CheckBitmapsBase(bm, "courseformat\\textsize2", MAX_PIXEL_DIFF);
         }
 
         // Check a rectangle with its center at a particular angle.

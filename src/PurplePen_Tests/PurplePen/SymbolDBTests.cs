@@ -36,12 +36,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.Diagnostics;
-using System.Xml;
-using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
 
@@ -54,19 +50,24 @@ namespace PurplePen.Tests
     public class SymbolDBTests
     {
         // Draw a grid on the graphics
-        void DrawGrid(Graphics g, RectangleF rect, float spacing)
+        void DrawGrid(IGraphicsTarget g, RectangleF rect, float spacing)
         {
-            Pen pen = new Pen(Color.FromArgb(100, Color.MidnightBlue), 0.0F);
+            g.PushAntiAliasing(false);
+
+            object pen = new object();
+            CmykColor color = CmykColor.FromColor(Color.MidnightBlue);
+            color = CmykColor.FromCmyka(color.Cyan, color.Magenta, color.Yellow, color.Black, 0.4F);
+            g.CreatePen(pen, color, 0.032F, LineCapMode.Flat, LineJoinMode.Miter, 10);
 
             // Draw the grid.
-            for (float x = (int) ((rect.Left) / spacing) * spacing; x <= rect.Right; x += spacing) {
-                g.DrawLine(pen, x, rect.Top, x, rect.Bottom);
+            for (float x = (int)((rect.Left) / spacing) * spacing; x <= rect.Right; x += spacing) {
+                g.DrawLine(pen, new PointF(x, rect.Top), new PointF(x, rect.Bottom));
             }
-            for (float y = (int) ((rect.Top) / spacing) * spacing; y <= rect.Bottom; y += spacing) {
-                g.DrawLine(pen, rect.Left, y, rect.Right, y);
+            for (float y = (int)((rect.Top) / spacing) * spacing; y <= rect.Bottom; y += spacing) {
+                g.DrawLine(pen, new PointF(rect.Left, y), new PointF(rect.Right, y));
             }
 
-            pen.Dispose();
+            g.PopAntiAliasing();
         }
 
         static Bitmap RenderToBitmap(Symbol sym)
@@ -78,15 +79,13 @@ namespace PurplePen.Tests
                 width *= 8;  // directive symbol.
             }
 
-            Bitmap bm = new Bitmap(width, height);
-            Graphics g = Graphics.FromImage(bm);
-            g.Clear(Color.White);
             RectangleF rect = new RectangleF(0.0F, 0.0F, width, height);
 
-            using (GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g)) {
+            // The "-0.5F" in the coordinates is for compatibility with the old GDI+ based tests, which offset the drawing by 0.5 pixels,
+            // compared to Skia.
+            Bitmap bm = TestRenderingUtils.RenderToBitmap(width, height, new RectangleF(-0.5F, -0.5F, width, height), false, grTarget => {
                 sym.Draw(grTarget, CmykColor.FromColor(Color.Black), rect);
-            }
-            g.Dispose();
+            });
 
             return bm;
         }
@@ -358,7 +357,7 @@ namespace PurplePen.Tests
         // Render one course object to a map.
         internal Map RenderSymbolToMap(Symbol sym, float boxSize)
         {
-            Map map = new Map(new GDIPlus_TextMetrics(), null);
+            Map map = new Map(new Skia_TextMetrics(), null);
 
             using (map.Write()) {
                 //Dictionary<object, SymDef> dict = new Dictionary<object, SymDef>();
@@ -394,35 +393,28 @@ namespace PurplePen.Tests
 
             Map map = RenderSymbolToMap(sym, 8.0F);
 
-            Bitmap bm = new Bitmap(width, height);
-            using (Graphics g = Graphics.FromImage(bm)) {
+            Bitmap bm = TestRenderingUtils.RenderToBitmap(width, height, new RectangleF(-0.5F, -0.5F, width, height), false, grTarget => {
                 RenderOptions options = new RenderOptions();
 
                 options.usePatternBitmaps = true;
-                options.minResolution = (float) (8.0 / bm.Width);
+                options.minResolution = (float)(8.0 / width);
                 options.renderTemplates = RenderTemplateOption.MapAndTemplates;
 
-                Matrix saveTransform = g.Transform.ToGraphics2DMatrix();
+                grTarget.PushTransform(GetTransform(new Size(width, height)));
 
-                g.MultiplyTransform(GetTransform(bm.Size).ToSysDrawMatrix());
-
-                g.Clear(Color.White);
-
-                DrawGrid(g, new RectangleF(-4.0F, -4.0F, 8.0F, 8.0F), 1.0F);
+                DrawGrid(grTarget, new RectangleF(-4.0F, -4.0F, 8.0F, 8.0F), 1.0F);
 
                 using (map.Read())
-                    map.Draw(new GDIPlus_GraphicsTarget(g), new RectangleF(-100F, -100F, 200F, 200F), options, null);
+                    map.Draw(grTarget, new RectangleF(-100F, -100F, 200F, 200F), options, null);
+
+                grTarget.PopTransform();
 
                 // Now use normal drawing to super-impose.
-                g.Transform = saveTransform.ToSysDrawMatrix();
-                RectangleF rect = new RectangleF(0.0F, 0.0F, bm.Width, bm.Height);
-                using (GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g)) {
-                    sym.Draw(grTarget, CmykColor.FromColor(Color.FromArgb(50, Color.Black)), rect);
-                }
-            }
+                RectangleF rect = new RectangleF(0.0F, 0.0F, width, height);
+                sym.Draw(grTarget, CmykColor.FromColor(Color.FromArgb(50, Color.Black)), rect);
+            });
 
             return bm;
-
         }
 
         [TestMethod]
