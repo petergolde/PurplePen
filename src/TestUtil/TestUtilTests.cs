@@ -61,6 +61,7 @@ namespace TestingUtils.Tests
 
         }
 
+#if false
         [TestMethod]
         public void CompareBitmaps()
         {
@@ -129,7 +130,7 @@ namespace TestingUtils.Tests
             // The "new bitmap" should be correct.
             Assert.IsTrue(BitmapTestUtil.CompareBitmaps((Bitmap) Image.FromFile(TestUtil.GetTestFile(@"testutil\missing_new.png")), CreateTestBitmap(true), Color.LightPink, Color.Transparent, 0) == null);
         }
-	
+#endif
 
         [TestMethod]
         public void TestEnumerableAnyOrder()

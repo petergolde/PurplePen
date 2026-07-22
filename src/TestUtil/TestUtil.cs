@@ -33,11 +33,12 @@
  */
 
 #if TEST
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text.RegularExpressions;
 
 namespace TestingUtils
 {
@@ -419,6 +420,44 @@ namespace TestingUtils
             Console.WriteLine(s1.Substring(i));
             Console.WriteLine("Difference2:");
             Console.WriteLine(s2.Substring(i));
+        }
+
+        // Compare two text files line by line. Return true if the same, false if different.
+        public static bool CompareTextFiles(string filename1, string filename2)
+        {
+            return CompareTextFiles(filename1, filename2, new Dictionary<string, string>());
+        }
+
+        // Compare two text files line by line. Return true if the same, false if different.
+        // An exception map maps strings to regular expressions that can match.
+        public static bool CompareTextFiles(string newFile, string baseline, Dictionary<string, string> exceptionMap)
+        {
+            bool equal = true;
+            string line1, line2;
+
+            using (TextReader reader1 = new StreamReader(baseline))
+            using (TextReader reader2 = new StreamReader(newFile)) {
+                do {
+                    line1 = reader1.ReadLine();
+                    line2 = reader2.ReadLine();
+                    if (line1 != line2) {
+                        bool matched = false;
+                        foreach (KeyValuePair<string, string> pair in exceptionMap) {
+                            if (line1 != null && Regex.Match(line1, pair.Key).Success) {
+                                matched = true;
+                                if (line2 == null || !Regex.Match(line2, pair.Value).Success)
+                                    equal = false;
+                                break;
+                            }
+                        }
+
+                        if (!matched)
+                            equal = false;
+                    }
+                } while (line1 != null && line2 != null);
+            }
+
+            return equal;
         }
 
 

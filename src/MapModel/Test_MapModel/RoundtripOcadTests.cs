@@ -81,7 +81,7 @@ namespace PurplePen.MapModel.Tests
                 dump.DumpFile(mapNewFileName, writer);
             }
 
-            return TextFileTestUtil.CompareTextFiles(dumpOrigFileName, dumpNewFileName);
+            return TestUtil.CompareTextFiles(dumpOrigFileName, dumpNewFileName);
         }
 
         void CheckTest(string filename)

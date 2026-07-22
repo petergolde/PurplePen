@@ -25,6 +25,7 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Testing\TestUtil.GdiPlus\TestUtil.GdiPlus.csproj" />
     <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
     <ProjectReference Include="..\MapModel\MapModel.csproj" />

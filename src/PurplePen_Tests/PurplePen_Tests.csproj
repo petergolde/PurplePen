@@ -66,6 +66,7 @@
     <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
     <ProjectReference Include="..\PurplePenCore\PurplePenCore.csproj" />
     <ProjectReference Include="..\PurplePen\PurplePen.csproj" />
+    <ProjectReference Include="..\Testing\TestUtil.GdiPlus\TestUtil.GdiPlus.csproj" />
     <ProjectReference Include="..\TestUtil\TestUtil.csproj" />
   </ItemGroup>
   <ItemGroup>

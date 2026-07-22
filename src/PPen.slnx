@@ -121,6 +121,9 @@
     </Project>
   </Folder>
   <Folder Name="/Testing/">
+    <Project Path="Testing/TestUtil.GdiPlus/TestUtil.GdiPlus.csproj" Id="ee6855fe-064e-4f2b-898c-93f1258b48f5">
+      <BuildType Solution="StorePkg|*" Project="Release" />
+    </Project>
     <Project Path="TestUtil/TestUtil.csproj" Id="d50b6e2b-5e20-410d-b033-debb6b695e77">
       <Build Solution="Debug|x86" Project="false" />
       <Build Solution="Release|x86" Project="false" />

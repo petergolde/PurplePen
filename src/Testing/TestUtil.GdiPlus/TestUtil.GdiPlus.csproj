@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net10.0-windows</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <RootNamespace>TestingUtils</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="BitmapCompareDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BitmapCompareDialog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BitmapViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BitmapViewerTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TextFileCompareDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestFramework" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
+  </ItemGroup>
+
+</Project>
