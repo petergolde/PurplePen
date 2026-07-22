@@ -75,7 +75,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -95,7 +95,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -116,7 +116,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -137,7 +137,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -157,7 +157,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -177,7 +177,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -197,7 +197,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -217,7 +217,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -237,7 +237,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -258,7 +258,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -279,7 +279,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -300,7 +300,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -320,7 +320,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);
@@ -339,7 +339,7 @@ namespace PurplePen.Tests
 
             File.WriteAllText(actualFile, result);
             try {
-                TestUtil.CompareTextFileBaseline(actualFile, expectedFile);
+                TextFileTestUtil.CompareTextFileBaseline(actualFile, expectedFile);
             }
             finally {
                 File.Delete(actualFile);

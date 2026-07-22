@@ -41,7 +41,7 @@ using System.Drawing.Drawing2D;
 namespace InteractiveTestApp.MapView
 {
 	/// <summary>
-	/// Summary description for BitmapUtil.
+	/// Summary description for BitmapTestUtil.
 	/// </summary>
 	public static class BitmapUtil
 	{

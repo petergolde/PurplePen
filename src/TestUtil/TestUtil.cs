@@ -34,15 +34,10 @@
 
 #if TEST
 using System;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Diagnostics;
 
 namespace TestingUtils
 {
@@ -301,53 +296,6 @@ namespace TestingUtils
         }
 
 
-        // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
-        // The difference bitmap has "colorSame" background, and the bits from the second bitmap where differences are.
-        // Used as helper from CompareBitmaps if a difference is detected.
-        public static Bitmap DifferenceBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent, int maxPixelDifference = 0)
-        {
-            int width = bm1.Width, height = bm1.Height;
-
-            Bitmap diff = new Bitmap(width, height, PixelFormat.Format24bppRgb);
-            using (Graphics g = Graphics.FromImage(diff)) {
-                if (colorSame != Color.Transparent)
-                    g.Clear(colorSame);
-                else if (colorDifferent != Color.Transparent)
-                    g.Clear(colorDifferent);
-            }
-
-            bool different = false;
-            double maxColorDiff = 0.0;
-            for (int x = 0; x < width; ++x)
-                for (int y = 0; y < height; ++y) {
-                    Color color1 = bm1.GetPixel(x, y);
-                    Color color2 = bm2.GetPixel(x, y);
-                    
-                    if (color1 != color2 && (maxPixelDifference == 0 || !SimilarColors(color1, color2, maxPixelDifference))) {
-                        if (colorDifferent == Color.Transparent)
-                            diff.SetPixel(x, y, color2);
-                        else if (colorSame != Color.Transparent)
-                            diff.SetPixel(x, y, colorDifferent);
-                        different = true;
-                    }
-                    else {
-                        if (colorSame == Color.Transparent)
-                            diff.SetPixel(x, y, color2);
-                    }
-
-                    if (color1 != color2) {
-                        maxColorDiff = Math.Max(maxColorDiff, ColorDifference(color1, color2));
-                    }
-                }
-
-            if (different)
-                return diff;
-            else {
-                diff.Dispose();
-                return null;
-            }
-        }
-
         public static string EnvVar(string variableName)
         {
             return Environment.GetEnvironmentVariable(variableName);
@@ -359,7 +307,7 @@ namespace TestingUtils
             }
         }
 
-        private static bool SimilarColors(Color color1, Color color2, int maxPixelDifference)
+        public static bool SimilarColors(Color color1, Color color2, int maxPixelDifference)
         {
             return (Math.Abs(color1.R - color2.R) <= maxPixelDifference &&
                 Math.Abs(color1.G - color2.G) <= maxPixelDifference &&
@@ -398,165 +346,6 @@ namespace TestingUtils
             return difference;
         }
 
-        // Compare two bitmaps. If they are different, return a difference bitmap, else return NULL.
-        // The difference bitmap has light gray background, and the bits from the second bitmap where differences are.
-        // If the bitmaps are different sizes, bm2 is returned.
-        public static Bitmap CompareBitmaps(Bitmap bm1, Bitmap bm2, Color colorSame, Color colorDifferent, int maxPixelDifference)
-        {
-
-            if (bm1.Width != bm2.Width || bm1.Height != bm2.Height)
-                return (Bitmap) bm2.Clone();
-            int width = bm1.Width, height = bm1.Height;
-            Rectangle rect = new Rectangle(0, 0, width, height);
-            bool different = false;
-
-            // This is a lot faster that using a zillion GetPixel calls.
-            unsafe {
-                BitmapData bmdata1 = bm1.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-                BitmapData bmdata2 = bm2.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-
-                for (int scan = 0; scan < bmdata1.Height; ++scan) {
-                    byte* pixel1 = ((byte*)bmdata1.Scan0) + scan * bmdata1.Stride;
-                    byte* pixel2 = ((byte*)bmdata2.Scan0) + scan * bmdata2.Stride;
-                    for (int i = 0; i < width * 3; ++i) {
-                        if (*pixel1++ != *pixel2++)
-                            different = true;
-                    }
-                }
-
-                bm1.UnlockBits(bmdata1);
-                bm2.UnlockBits(bmdata2);
-            }
-
-            if (!different)
-                return null;
-            else
-                return DifferenceBitmaps(bm1, bm2, colorSame, colorDifferent, maxPixelDifference);
-        }
-
-        // Check a bitmap against a baseline file, named with "_baseline.png" in the normal test files place.
-        // If the compare succeeds, true is returned.
-        // If the compare fails, false is returned and _new.png and _diff.png files are created.
-        // If the baseline is missing, an _baseline_new is created.
-        //
-        // If the file "updatebaselines" is in that directory; automatically updates baselines (and fails).
-        public static bool CheckBaseline(Bitmap bmNew, string basefilename, int maxPixelDifference)
-        {
-            string baselineFile = GetTestFile(basefilename + "_baseline.png");
-            string baselineDir = Path.GetDirectoryName(baselineFile);
-            bool updateBaselines = File.Exists(Path.Combine(baselineDir, "updatebaselines"));
-            if (!File.Exists(baselineFile)) {
-                // no baseline -- create a new baseline file.
-                string newBaselineFile;
-                if (updateBaselines) 
-                    newBaselineFile = GetTestFile(basefilename + "_baseline.png");
-                else
-                    newBaselineFile = GetTestFile(basefilename + "_baseline_new.png");
-                bmNew.Save(newBaselineFile, ImageFormat.Png);
-                bmNew.Dispose();
-                return false;
-            }
-            else {
-                Bitmap bmBaseline = (Bitmap) Image.FromFile(baselineFile);
-                Bitmap bmDiff = CompareBitmaps(bmBaseline, bmNew, Color.LightPink, Color.Transparent, maxPixelDifference);
-                bmBaseline.Dispose();
-
-                if (bmDiff == null) {
-                    // Bitmap compare correctly.
-                    bmNew.Dispose();
-                    if (updateBaselines)
-                        return false;         // so that you don't forget to remove the updatebaselines file!
-                    else
-                        return true;
-                }
-                else {
-                    // Bitmap didn't compare. Output the new and the diff.
-                    string newFile;
-                    if (updateBaselines)
-                        newFile = GetTestFile(basefilename + "_baseline.png");
-                    else
-                        newFile = GetTestFile(basefilename + "_new.png");
-                    string diffFile = GetTestFile(basefilename + "_diff.png");
-                    bmNew.Save(newFile, ImageFormat.Png);
-                    bmDiff.Save(diffFile, ImageFormat.Png);
-                    bmNew.Dispose();
-                    bmDiff.Dispose();
-                    return false;
-                }
-            }                
-        }
-
-        // Same as CheckBaseline, but asserts on failure.
-        public static void AssertBaseline(Bitmap bmNew, string basefilename)
-        {
-            Assert.IsTrue(CheckBaseline(bmNew, basefilename, 0), string.Format("Bitmap '{0}' does not compare correctly against baseline", basefilename));
-        }
-
-        // Check a bitmap against a baseline file (which could not exist). If the baseline doesn't exist or doesn't compare the
-        // same, launch a interactive dialog which displays the baselines.
-        // (Unlike AssertBaseline/CheckBaseline, the file name is a the full file name, including extension).
-        // bmNew is always disposed.
-        public static void CompareBitmapBaseline(string bitmapNew, string baselineFile, int maxPixelDifference = 0)
-        {
-            Assert.IsTrue(File.Exists(bitmapNew));
-
-            using (Bitmap bmNew = (Bitmap) Image.FromFile(bitmapNew))
-            {
-                CompareBitmapBaseline(bmNew, baselineFile, maxPixelDifference);
-            }
-        }
-
-        public static void CompareBitmapBaseline(Bitmap bmNew, string baselineFile, int maxPixelDifference = 0)
-        {
-            // Is the file different than the baseline?
-            bool different = false, fail = false;
-
-            baselineFile = GetSpecificFileName(baselineFile);
-
-            if (! File.Exists(baselineFile))
-                different = true;
-            else {
-                using (Bitmap bmBaseline = (Bitmap) Image.FromFile(baselineFile)) {
-                    Bitmap diff = CompareBitmaps(bmNew, bmBaseline, Color.LightPink, Color.Transparent, maxPixelDifference);
-                    different = (diff != null);
-                    if (diff != null)
-                        diff.Dispose();
-                }
-            }
-
-            // Show the dialog.
-            if (different) {
-                if (SilentRun) {
-                    fail = true;
-                }
-                else {
-                    string tempNewFile = Path.Combine(Path.GetDirectoryName(baselineFile), Path.GetFileNameWithoutExtension(baselineFile) + "_tempnew.png");
-                    bmNew.Save(tempNewFile, ImageFormat.Png);
-
-                    BitmapCompareDialog2 dialog = new BitmapCompareDialog2();
-                    dialog.MaxPixelDifference = maxPixelDifference;
-                    dialog.BaselineFilename = baselineFile;
-                    dialog.NewFilename = tempNewFile;
-                    if (dialog.ShowDialog() == DialogResult.Cancel)
-                        fail = true;        // Should fail the test.
-
-                    File.Delete(tempNewFile);
-                }
-            }
-            else
-                bmNew.Dispose();
-
-            // Clean up and fail the test if desired.
-            if (fail) 
-                Assert.Fail(string.Format("Bitmap compare against baseline file '{0}' failed", Path.GetFileName(baselineFile)));
-        }
-
-        // Same, but uses a "base file name".
-        public static void CheckBitmapsBase(Bitmap bmNew, string baselineFileBaseName, int maxPixelDifference = 0)
-        {
-            CompareBitmapBaseline(bmNew, GetTestFile(baselineFileBaseName + "_baseline.png"), maxPixelDifference);
-        }
-
         public static void TestEnumerableAnyOrder<T>(IEnumerable<T> e, T[] expected)
         {
             bool[] found = new bool[expected.Length];
@@ -591,70 +380,6 @@ namespace TestingUtils
                 ++i;
             }
             Assert.AreEqual(expected.Length, i);
-        }
-
-        // Compare two text files line by line. Return true if the same, false if different.
-        public static bool CompareTextFiles(string filename1, string filename2) {
-            return CompareTextFiles(filename1, filename2, new Dictionary<string, string>());
-        }
-
-        // Compare two text files line by line. Return true if the same, false if different.
-        // An exception map maps strings to regular expressions that can match.
-        public static bool CompareTextFiles(string newFile, string baseline, Dictionary<string, string> exceptionMap)
-        {
-            bool equal = true;
-            string line1, line2;
-
-            using (TextReader reader1 = new StreamReader(baseline))
-            using (TextReader reader2 = new StreamReader(newFile)) {
-                do {
-                    line1 = reader1.ReadLine();
-                    line2 = reader2.ReadLine();
-                    if (line1 != line2) {
-                        bool matched = false;
-                        foreach (KeyValuePair<string, string> pair in exceptionMap) {
-                            if (line1 != null && Regex.Match(line1, pair.Key).Success) {
-                                matched = true;
-                                if (line2 == null || !Regex.Match(line2, pair.Value).Success)
-                                    equal = false;
-                                break;
-                            }
-                        }
-
-                        if (!matched)
-                            equal = false;
-                    }
-                } while (line1 != null && line2 != null);
-            }
-
-            return equal;
-        }
-
-        public static void CompareTextFileBaseline(string newFile, string baseline) {
-            CompareTextFileBaseline(newFile, baseline, new Dictionary<string, string>());
-        }
-
-        // Compare text file against a baseline, showing a dialog if they don't compare.
-        public static void CompareTextFileBaseline(string newFile, string baseline, Dictionary<string, string> exceptionMap)
-        {
-            baseline = GetSpecificFileName(baseline);
-
-            if (!File.Exists(baseline) || !CompareTextFiles(newFile, baseline, exceptionMap)) 
-            {
-                if (SilentRun) {
-                    Assert.Fail(string.Format("{0} and {1} do not compare", newFile, baseline));
-                }
-                else {
-                    TextFileCompareDialog dialog = new TextFileCompareDialog();
-                    dialog.BaselineFilename = baseline;
-                    dialog.NewFilename = newFile;
-                    DialogResult result = dialog.ShowDialog();
-                    dialog.Dispose();
-
-                    if (result == DialogResult.Cancel)
-                        Assert.Fail(string.Format("{0} and {1} do not compare", newFile, baseline));
-                }
-            }
         }
 
         public static void AssertEqualRect(RectangleF expected, RectangleF actual, double delta, string s)

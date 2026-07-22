@@ -244,7 +244,7 @@ namespace PurplePen.Tests
             string dumpNewFileName = directory + @"\" + basename + @"_newdump.txt";
 
             DumpMapFile(ocadFile, dumpNewFileName);
-            TestUtil.CompareTextFileBaseline(dumpNewFileName, expectedDumpFile);
+            TextFileTestUtil.CompareTextFileBaseline(dumpNewFileName, expectedDumpFile);
             File.Delete(dumpNewFileName);
         }
 

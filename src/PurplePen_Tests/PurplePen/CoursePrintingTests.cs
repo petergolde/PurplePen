@@ -170,7 +170,7 @@ namespace PurplePen.Tests
             for (int page = 0; page < bitmaps.Length; ++page) {
                 Bitmap bm = bitmaps[page];
                 string baseFileName = basename + "_page" + (page + 1).ToString();
-                TestUtil.CheckBitmapsBase(bm, baseFileName, 15);
+                BitmapTestUtil.CheckBitmapsBase(bm, baseFileName, 15);
                 bm.Dispose();
             }
 
@@ -189,7 +189,7 @@ namespace PurplePen.Tests
                     Bitmap newBitmap = (Bitmap)Image.FromFile(newFileName);
 
                     // For some reason, the XPS anti-aliasing varies slightly. Allow pixel difference to account.
-                    TestUtil.CheckBitmapsBase(newBitmap, baseFileName, 25);
+                    BitmapTestUtil.CheckBitmapsBase(newBitmap, baseFileName, 25);
                 }
             }
 #endif // XPS_PRINTING

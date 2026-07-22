@@ -101,7 +101,7 @@ namespace PurplePen.MapModel.Tests
             else
                 result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
+            BitmapTestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         void VerifyRendering(Map map, RectangleF area, string baseline)
@@ -122,7 +122,7 @@ namespace PurplePen.MapModel.Tests
 
             Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
+            BitmapTestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         void VerifyRenderingOverprint(Map map, RectangleF area, string baseline)
@@ -143,7 +143,7 @@ namespace PurplePen.MapModel.Tests
 
             Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
+            BitmapTestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         private void RoundTrip(string basename, RectangleF area, string baseline, int version, Map map)
@@ -221,7 +221,7 @@ namespace PurplePen.MapModel.Tests
 
             Bitmap result = Rendering.RenderBitmap(map, size, area, renderOpts, 1.0F);
 
-            TestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
+            BitmapTestUtil.CompareBitmapBaseline(result, TestUtil.GetTestFile("openmapper\\" + baseline), MAX_PIXEL_DIFF);
         }
 
         [Test]

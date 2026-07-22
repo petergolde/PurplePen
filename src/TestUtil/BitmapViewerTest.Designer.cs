@@ -61,28 +61,28 @@ namespace TestingUtils
         /// </summary>
         private void InitializeComponent()
         {
-            bitmapViewer1 = new BitmapViewer();
-            SuspendLayout();
+            this.bitmapViewer1 = new TestingUtils.BitmapViewer();
+            this.SuspendLayout();
             // 
             // bitmapViewer1
             // 
-            bitmapViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            bitmapViewer1.Location = new System.Drawing.Point(0, 0);
-            bitmapViewer1.Margin = new System.Windows.Forms.Padding(960, 206, 960, 206);
-            bitmapViewer1.Name = "bitmapViewer1";
-            bitmapViewer1.Size = new System.Drawing.Size(378, 304);
-            bitmapViewer1.TabIndex = 0;
+            this.bitmapViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bitmapViewer1.Location = new System.Drawing.Point(0, 0);
+            this.bitmapViewer1.Margin = new System.Windows.Forms.Padding(1200, 258, 1200, 258);
+            this.bitmapViewer1.Name = "bitmapViewer1";
+            this.bitmapViewer1.Size = new System.Drawing.Size(1330, 1045);
+            this.bitmapViewer1.TabIndex = 0;
             // 
             // BitmapViewerTest
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            ClientSize = new System.Drawing.Size(378, 304);
-            Controls.Add(bitmapViewer1);
-            Margin = new System.Windows.Forms.Padding(48, 22, 48, 22);
-            Name = "BitmapViewerTest";
-            Text = "BitmapViewerTest";
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1330, 1045);
+            this.Controls.Add(this.bitmapViewer1);
+            this.Margin = new System.Windows.Forms.Padding(60, 28, 60, 28);
+            this.Name = "BitmapViewerTest";
+            this.Text = "BitmapViewerTest";
+            this.ResumeLayout(false);
 
         }
 

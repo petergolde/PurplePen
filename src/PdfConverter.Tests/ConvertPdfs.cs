@@ -42,7 +42,7 @@ namespace PdfConverter.Tests
                 Assert.AreEqual(0, returnValue);
                 Assert.IsTrue(File.Exists(tempOutputFile));
 
-                TestUtil.CompareBitmapBaseline(tempOutputFile, TestUtil.GetTestFile(baselineImage));
+                BitmapTestUtil.CompareBitmapBaseline(tempOutputFile, TestUtil.GetTestFile(baselineImage));
             }
             finally {
                 if (File.Exists(tempOutputFile))

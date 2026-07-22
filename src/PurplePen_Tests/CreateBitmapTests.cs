@@ -66,12 +66,12 @@ namespace PurplePen.Tests
             Assert.IsTrue(success);
 
             for (int i = 0; i < expectedBitmapNames.Length; ++i) {
-                TestUtil.CompareBitmapBaseline(expectedBitmapNames[i], expectedBitmapBaselines[i], MAX_PIXEL_DIFF);
+                BitmapTestUtil.CompareBitmapBaseline(expectedBitmapNames[i], expectedBitmapBaselines[i], MAX_PIXEL_DIFF);
             }
 
             if (expectedTextNames != null) {
                 for (int i = 0; i < expectedTextNames.Length; ++i) {
-                    TestUtil.CompareTextFileBaseline(expectedTextNames[i], expectedTextBaselines[i]);
+                    TextFileTestUtil.CompareTextFileBaseline(expectedTextNames[i], expectedTextBaselines[i]);
                 }
             }
 

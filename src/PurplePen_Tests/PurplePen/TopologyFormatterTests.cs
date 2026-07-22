@@ -97,7 +97,7 @@ namespace PurplePen.Tests
                     map.Draw(graphicsTarget, rect, options, null);
             });
 
-            TestUtil.CheckBitmapsBase(bm, "topologyformatter\\" + testName);
+            BitmapTestUtil.CheckBitmapsBase(bm, "topologyformatter\\" + testName);
         }
 
         [TestMethod]

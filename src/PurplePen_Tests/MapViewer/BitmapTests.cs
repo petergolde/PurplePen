@@ -61,7 +61,7 @@ namespace PurplePen.MapView.Tests
             Rectangle destRect = new Rectangle(50, 30, 160, 180);
             BitmapUtil.MergeBitmap(dest, destRect, src, srcRect);
 
-            TestUtil.CheckBitmapsBase(dest, "bitmap\\combineout");
+            BitmapTestUtil.CheckBitmapsBase(dest, "bitmap\\combineout");
         }
 
         [TestMethod]
@@ -69,15 +69,15 @@ namespace PurplePen.MapView.Tests
         {
             Bitmap src = (Bitmap) Image.FromFile(TestUtil.GetTestFile("bitmap\\lighten_src.png"));
             BitmapUtil.LightenBitmap(src, 0.5);
-            TestUtil.CheckBitmapsBase(src, "bitmap\\lighten1");
+            BitmapTestUtil.CheckBitmapsBase(src, "bitmap\\lighten1");
 
             src = (Bitmap) Image.FromFile(TestUtil.GetTestFile("bitmap\\lighten_src.png"));
             BitmapUtil.LightenBitmap(src, 0.2);
-            TestUtil.CheckBitmapsBase(src, "bitmap\\lighten2");
+            BitmapTestUtil.CheckBitmapsBase(src, "bitmap\\lighten2");
 
             src = (Bitmap) Image.FromFile(TestUtil.GetTestFile("bitmap\\lighten_src.png"));
             BitmapUtil.LightenBitmap(src, 0.8);
-            TestUtil.CheckBitmapsBase(src, "bitmap\\lighten3");
+            BitmapTestUtil.CheckBitmapsBase(src, "bitmap\\lighten3");
         }
 	
     }

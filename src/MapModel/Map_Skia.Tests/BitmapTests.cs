@@ -124,7 +124,7 @@ namespace Map_Skia.Tests
 
             SDBitmap loadedBitmap = (SDBitmap) SDImage.FromStream(memStream);
 
-            TestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
+            BitmapTestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
         }
 
 
@@ -225,7 +225,7 @@ namespace Map_Skia.Tests
 
             SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(memStream);
 
-            TestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
+            BitmapTestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
         }
 
 
@@ -325,7 +325,7 @@ namespace Map_Skia.Tests
 
             SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(memStream);
 
-            TestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
+            BitmapTestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
         }
 
         [Test]

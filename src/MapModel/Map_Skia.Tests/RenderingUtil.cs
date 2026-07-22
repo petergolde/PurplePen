@@ -52,7 +52,7 @@ namespace Map_Skia.Tests
                                         Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
             File.Delete(newBitmapName);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
+            BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
         }
 
         static Skia_Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool antiAlias, float intensity)
@@ -86,7 +86,7 @@ namespace Map_Skia.Tests
         {
             SKBitmap skBitmap = skiaBitmapNew.Bitmap;
             Bitmap bitmapNew = BitmapFromLockedSkiaBitmap(skBitmap);
-            TestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName, maxPixelDiff);
+            BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName, maxPixelDiff);
             bitmapNew.Dispose();
         }
 

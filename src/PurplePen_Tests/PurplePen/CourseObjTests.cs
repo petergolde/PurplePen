@@ -192,7 +192,7 @@ namespace PurplePen.Tests
         internal void CheckRenderBitmap(CourseObj courseobj, string basename, Color backColor)
         {
             Bitmap bmNew = RenderToBitmap(courseobj, backColor);
-            TestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename, MAX_PIXEL_DIFF);
+            BitmapTestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename, MAX_PIXEL_DIFF);
         }
 
         // Render to a bitmap and check against the saved version.
@@ -1445,7 +1445,7 @@ namespace PurplePen.Tests
                 courseobj.DrawHighlight(grTarget, matrix);
             });
 
-            TestUtil.CheckBitmapsBase(bmHighlighted, "coursesymbols\\" + basename);
+            BitmapTestUtil.CheckBitmapsBase(bmHighlighted, "coursesymbols\\" + basename);
         }
 
         // Reduce the scale by 50% and check also.
@@ -2105,7 +2105,7 @@ namespace PurplePen.Tests
                 offset.DrawHighlight(grTarget, matrix);
             });
 
-            TestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename);
+            BitmapTestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename);
         }
 
         internal void CheckOffsetBitmap(CourseObj courseobj, string basename)

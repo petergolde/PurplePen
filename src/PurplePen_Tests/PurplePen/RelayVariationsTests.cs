@@ -52,7 +52,7 @@ namespace PurplePen.Tests
             string baselineFileName = TestUtil.GetTestFile(baselineName + ".txt");
             string tempFileName = TestUtil.GetTestFile(baselineName + "_temp.txt");
             DumpAssignment(relayAsignment, tempFileName);
-            TestUtil.CompareTextFileBaseline(tempFileName, baselineFileName);
+            TextFileTestUtil.CompareTextFileBaseline(tempFileName, baselineFileName);
             File.Delete(tempFileName);
         }
 
@@ -491,7 +491,7 @@ namespace PurplePen.Tests
             var csvWriter = new CsvWriter();
             csvWriter.WriteCsv(tempOutputFile, teamAssignment);
 
-            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
+            TextFileTestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
 
             File.Delete(tempOutputFile);
         }
@@ -507,7 +507,7 @@ namespace PurplePen.Tests
             var csvWriter = new CsvWriter();
             csvWriter.WriteCsv(tempOutputFile, teamAssignment);
 
-            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
+            TextFileTestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile);
 
             File.Delete(tempOutputFile);
         }
@@ -525,7 +525,7 @@ namespace PurplePen.Tests
             var xmlExporter = new ExportRelayVariations3();
             xmlExporter.WriteFullXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
 
-            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile, exceptions);
+            TextFileTestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile, exceptions);
 
             File.Delete(tempOutputFile);
         }
@@ -543,7 +543,7 @@ namespace PurplePen.Tests
             var xmlExporter = new ExportRelayVariations3();
             xmlExporter.WriteFullXml(tempOutputFile, teamAssignment, eventDB, CourseId(4));
 
-            TestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile, exceptions);
+            TextFileTestUtil.CompareTextFileBaseline(tempOutputFile, baselineFile, exceptions);
 
             File.Delete(tempOutputFile);
         }

@@ -77,7 +77,7 @@ namespace PurplePen.Tests
                 Assert.AreEqual(expectedPageExists, actualPageExists);
                 if (expectedPageExists) {
                     using (Bitmap bmNew = (Bitmap)Image.FromFile(pngActualPage)) {
-                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage, MAX_PIXEL_DIFF);
+                        BitmapTestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage, MAX_PIXEL_DIFF);
                     }
                 }
                 else {

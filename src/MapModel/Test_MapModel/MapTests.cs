@@ -150,7 +150,7 @@ namespace PurplePen.MapModel.Tests
 
             DumpMap(map, version, mapNewFileName, dumpNewFileName);
 
-            TestUtil.CompareTextFileBaseline(dumpNewFileName, expectedDumpFile);
+            TextFileTestUtil.CompareTextFileBaseline(dumpNewFileName, expectedDumpFile);
             File.Delete(dumpNewFileName);
         }
 

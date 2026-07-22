@@ -1851,7 +1851,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             string dumpNewFileName = directory + @"\" + basename + @"_newdump.txt";
 
             DumpMapFile(ocadFile, dumpNewFileName);
-            TestUtil.CompareTextFileBaseline(dumpNewFileName, expectedDumpFile);
+            TextFileTestUtil.CompareTextFileBaseline(dumpNewFileName, expectedDumpFile);
             File.Delete(dumpNewFileName);
         }
 
@@ -1878,7 +1878,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
 
             if (bitmapFileNames != null) {
                 for (int i = 0; i < bitmapFileNames.Length; ++i) {
-                    TestUtil.CompareBitmapBaseline(bitmapFileNames[i], bitmapFileBaselines[i]);
+                    BitmapTestUtil.CompareBitmapBaseline(bitmapFileNames[i], bitmapFileBaselines[i]);
                 }
             }
 

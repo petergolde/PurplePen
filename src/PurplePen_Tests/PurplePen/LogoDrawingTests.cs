@@ -30,7 +30,7 @@ namespace PurplePen.Tests
             }
 
             System.Drawing.Bitmap testBitmap = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(testfile);
-            TestUtil.CompareBitmapBaseline(testBitmap, baseline);
+            BitmapTestUtil.CompareBitmapBaseline(testBitmap, baseline);
             testBitmap.Dispose();
             File.Delete(testfile);
         }

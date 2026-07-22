@@ -157,7 +157,7 @@ namespace Map_PDF.Tests
             // Draw into a new bitmap.
             Bitmap bitmapNew = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
+            BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
             bitmapNew.Dispose();
             bitmapNew = null;
 
@@ -175,7 +175,7 @@ namespace Map_PDF.Tests
 
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
                 Bitmap bitmapLight = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
-                TestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName, MAX_PIXEL_DIFF);
+                BitmapTestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName, MAX_PIXEL_DIFF);
                 bitmapLight.Dispose();
                 bitmapLight = null;
             }
@@ -192,7 +192,7 @@ namespace Map_PDF.Tests
                     // Draw into a new bitmap.
                     bitmapNew = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
 
-                    TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
+                    BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
                     File.Delete(ocadFileName);
                 }

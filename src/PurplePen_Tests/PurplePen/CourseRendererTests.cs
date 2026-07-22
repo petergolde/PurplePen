@@ -96,7 +96,7 @@ namespace PurplePen.Tests
                     map.Draw(graphicsTarget, rect, options, null);
             });
 
-            TestUtil.CheckBitmapsBase(bm, "courserenderer\\" + testName, MAX_PIXEL_DIFF);
+            BitmapTestUtil.CheckBitmapsBase(bm, "courserenderer\\" + testName, MAX_PIXEL_DIFF);
         }
 
         // Do CheckCourse for normal and special appearances.

@@ -78,7 +78,7 @@ namespace PurplePen.Tests
             for (int page = 0; page < bitmaps.Length; ++page) {
                 Bitmap bm = bitmaps[page];
                 string baseFileName = basename + "_page" + (page + 1).ToString();
-                TestUtil.CheckBitmapsBase(bm, baseFileName);
+                BitmapTestUtil.CheckBitmapsBase(bm, baseFileName);
             }
         }
 
@@ -117,7 +117,7 @@ namespace PurplePen.Tests
                 Assert.AreEqual(expectedPageExists, actualPageExists);
                 if (expectedPageExists) {
                     using (Bitmap bmNew = (Bitmap)Image.FromFile(pngActualPage)) {
-                        TestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage);
+                        BitmapTestUtil.CompareBitmapBaseline(bmNew, pngExpectedPage);
                     }
                 }
                 else {

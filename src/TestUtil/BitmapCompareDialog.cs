@@ -83,8 +83,8 @@ namespace TestingUtils
                 else
                     text = string.Format("Baseline file '{0}' is different", Path.GetFileName(BaselineFilename));
 #if TEST
-                bmDiff1 = TestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.LightPink, Color.Transparent, MaxPixelDifference);
-                bmDiff2 = TestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.DarkBlue, Color.Transparent, MaxPixelDifference);
+                bmDiff1 = BitmapTestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.LightPink, Color.Transparent, MaxPixelDifference);
+                bmDiff2 = BitmapTestUtil.CompareBitmaps(bmBaseline, NewBitmap, Color.DarkBlue, Color.Transparent, MaxPixelDifference);
 #endif //TEST
             }
 

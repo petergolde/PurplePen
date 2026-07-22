@@ -98,7 +98,7 @@ namespace PurplePen.Tests
 
             foreach (Symbol symbol in symbolDB.AllSymbols) {
                 Bitmap bmNew = RenderToBitmap(symbol);
-                TestUtil.CheckBitmapsBase(bmNew, "symbols\\" + symbol.Id);
+                BitmapTestUtil.CheckBitmapsBase(bmNew, "symbols\\" + symbol.Id);
             }
         }
 
@@ -424,7 +424,7 @@ namespace PurplePen.Tests
 
             foreach (Symbol symbol in symbolDB.AllSymbols) {
                 Bitmap bmNew = RenderSymbolMapToBitmap(symbol);
-                TestUtil.CheckBitmapsBase(bmNew, "symbols\\" + symbol.Id + "_ocad");
+                BitmapTestUtil.CheckBitmapsBase(bmNew, "symbols\\" + symbol.Id + "_ocad");
             }
         }
 

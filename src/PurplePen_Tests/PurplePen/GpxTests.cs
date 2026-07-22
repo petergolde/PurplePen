@@ -79,7 +79,7 @@ namespace PurplePen.Tests
                 CodePrefix = "PR"
             });
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            TextFileTestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
             Assert.AreEqual("", ui.output.ToString());
         }
 
@@ -96,7 +96,7 @@ namespace PurplePen.Tests
                 CodePrefix = "S"
             });
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            TextFileTestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
             Assert.AreEqual("", ui.output.ToString());
         }
 
@@ -113,7 +113,7 @@ namespace PurplePen.Tests
                 CodePrefix = ""
             });
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            TextFileTestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
             Assert.AreEqual("", ui.output.ToString());
         }
 
@@ -131,7 +131,7 @@ namespace PurplePen.Tests
                 CodePrefix = ""
             });
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            TextFileTestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
             Assert.AreEqual("", ui.output.ToString());
         }
 
@@ -148,7 +148,7 @@ namespace PurplePen.Tests
                 CodePrefix = ""
             });
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            TextFileTestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
             Assert.AreEqual("", ui.output.ToString());
         }
 
@@ -165,7 +165,7 @@ namespace PurplePen.Tests
                 CodePrefix = ""
             });
 
-            TestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
+            TextFileTestUtil.CompareTextFileBaseline(outputFile, expectedFile, GpxFile.TestFileExceptionMap());
             Assert.AreEqual("", ui.output.ToString());
         }
 

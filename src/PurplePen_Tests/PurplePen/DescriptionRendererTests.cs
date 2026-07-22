@@ -73,9 +73,9 @@ namespace PurplePen.Tests
 
             Bitmap bmNew = RenderToBitmap(symbolDB, description, kind, numColumns);
             if (numColumns > 1)
-                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_" + numColumns + "col", kind));
+                BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_" + numColumns + "col", kind));
             else
-                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "", kind));
+                BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "", kind));
         }
 
         // Render a description to a bitmap for testing purposes. Hardcoded 40 pixel box size.
@@ -358,9 +358,9 @@ namespace PurplePen.Tests
 
             Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, numColumns);
             if (numColumns > 1)
-                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_ocad_" + numColumns + "col", kind));
+                BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_ocad_" + numColumns + "col", kind));
             else
-                TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_ocad", kind));
+                BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_ocad", kind));
         }
 
         // Render the given course id (0 = all controls) and kind to a map, and compare it to the saved version.
@@ -381,7 +381,7 @@ namespace PurplePen.Tests
             DescriptionLine[] description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
             Bitmap bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, 1);
-            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_std_default", kind));
+            BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_std_default", kind));
 
             undomgr.BeginCommand(71231, "change standard");
             symbolDB.Standard = newDescStandard;
@@ -390,7 +390,7 @@ namespace PurplePen.Tests
             description = descFormatter.CreateDescription(kind == DescriptionKind.Symbols);
 
             bmNew = RenderToMapThenToBitmap(symbolDB, description, kind, 1);
-            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_std_" + newDescStandard, kind));
+            BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, "_std_" + newDescStandard, kind));
         }
 
         [TestMethod]

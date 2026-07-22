@@ -120,7 +120,7 @@ namespace PurplePen.MapModel.Tests
             // Draw into a new bitmap.
             Bitmap bitmapNew = RenderBitmap(map, size, mapArea);
 
-            TestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
+            BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
 
             return true;
         }

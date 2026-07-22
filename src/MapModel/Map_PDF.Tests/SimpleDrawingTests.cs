@@ -27,7 +27,7 @@ namespace Map_PDF.Tests
             // Load PNG
             using (Bitmap bitmapNew = (Bitmap)(Image.FromFile(pngFileName)))
             {
-                TestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
+                BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
             }
 
             File.Delete(pngFileName);
@@ -43,7 +43,7 @@ namespace Map_PDF.Tests
 
             // Load PNG
             using (Bitmap bitmapNew = (Bitmap)(Image.FromFile(pngFileName))) {
-                TestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
+                BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
             }
 
             File.Delete(pngFileName);
@@ -60,7 +60,7 @@ namespace Map_PDF.Tests
 
             // Load PNG
             using (Bitmap bitmapNew = (Bitmap)(Image.FromFile(pngFileName))) {
-                TestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
+                BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
             }
 
             File.Delete(pngFileName);

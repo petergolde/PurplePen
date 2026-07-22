@@ -93,7 +93,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(200F, bmLoaded.VerticalResolution);
             Assert.AreEqual(200F, bmLoaded.HorizontalResolution);
 
-            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
         }
@@ -119,7 +119,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(140F, bmLoaded.VerticalResolution);
             Assert.AreEqual(140F, bmLoaded.HorizontalResolution);
 
-            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
         }
@@ -145,7 +145,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(200F, bmLoaded.VerticalResolution);
             Assert.AreEqual(200F, bmLoaded.HorizontalResolution);
 
-            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
         }
@@ -172,7 +172,7 @@ namespace PurplePen.Tests
             Assert.AreEqual(100F, bmLoaded.VerticalResolution, MAX_PIXEL_DIFF);
             Assert.AreEqual(100F, bmLoaded.HorizontalResolution);
 
-            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
         }
@@ -197,7 +197,7 @@ namespace PurplePen.Tests
 
             Bitmap bmLoaded = (Bitmap) Image.FromFile(filename);
 
-            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
         }
@@ -223,10 +223,10 @@ namespace PurplePen.Tests
 
             Bitmap bmLoaded = (Bitmap)Image.FromFile(filename);
 
-            TestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
+            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
 
-            TestUtil.CompareTextFileBaseline(worldfile, worldfileBaseline);
+            TextFileTestUtil.CompareTextFileBaseline(worldfile, worldfileBaseline);
 
             File.Delete(filename);
             File.Delete(worldfile);
@@ -252,8 +252,8 @@ namespace PurplePen.Tests
 
             Dictionary<string, string> exceptions = ExportXmlVersion2.TestFileExceptionMap();
 
-            TestUtil.CompareBitmapBaseline((Bitmap) Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\Sample Event GIF.baseline.png"));
-            TestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\Sample Event XML.baseline.xml"), exceptions);
+            BitmapTestUtil.CompareBitmapBaseline((Bitmap) Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\Sample Event GIF.baseline.png"));
+            TextFileTestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\Sample Event XML.baseline.xml"), exceptions);
 
             File.Delete(xmlFileName);
             File.Delete(gifFileName);
@@ -280,9 +280,9 @@ namespace PurplePen.Tests
 
             Dictionary<string, string> exceptions = ExportXmlVersion3.TestFileExceptionMap();
 
-            TestUtil.CompareBitmapBaseline((Bitmap)Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\GRC GIF.baseline.png"));
-            TestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\GRC XML.baseline.xml"), exceptions);
-            TestUtil.CompareTextFileBaseline(worldFileName, TestUtil.GetTestFile(@"routegadget\GRC World File.baseline.gfw"), exceptions);
+            BitmapTestUtil.CompareBitmapBaseline((Bitmap)Image.FromFile(gifFileName), TestUtil.GetTestFile(@"routegadget\GRC GIF.baseline.png"));
+            TextFileTestUtil.CompareTextFileBaseline(xmlFileName, TestUtil.GetTestFile(@"routegadget\GRC XML.baseline.xml"), exceptions);
+            TextFileTestUtil.CompareTextFileBaseline(worldFileName, TestUtil.GetTestFile(@"routegadget\GRC World File.baseline.gfw"), exceptions);
 
             File.Delete(xmlFileName);
             File.Delete(gifFileName);

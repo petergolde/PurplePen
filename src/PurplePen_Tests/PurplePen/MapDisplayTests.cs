@@ -126,7 +126,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\BasicOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\BasicOcadMap.png"));
             }
         }
 
@@ -145,7 +145,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\BasicBitmapMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\BasicBitmapMap.png"));
             }
         }
 
@@ -164,7 +164,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\AntialiasOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\AntialiasOcadMap.png"));
             }
         }
 
@@ -184,7 +184,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\AntialiasBitmapMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\AntialiasBitmapMap.png"));
             }
         }
 
@@ -203,7 +203,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\IntensityOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\IntensityOcadMap.png"));
             }
         }
 
@@ -223,7 +223,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\IntensityBitmapMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\IntensityBitmapMap.png"));
             }
         }
 
@@ -246,14 +246,14 @@ namespace PurplePen.Tests
             DrawToBitmap(cloned, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\ClonedOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\ClonedOcadMap.png"));
             }
 
             SetupBitmap();
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\NonclonedOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\NonclonedOcadMap.png"));
             }
         }
 
@@ -277,14 +277,14 @@ namespace PurplePen.Tests
             DrawToBitmap(cloned, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\ClonedBitmapMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\ClonedBitmapMap.png"));
             }
 
             SetupBitmap();
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\NonclonedBitmapMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\NonclonedBitmapMap.png"));
             }
         }
 
@@ -304,7 +304,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\OverprintOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\OverprintOcadMap.png"));
             }
         }
 
@@ -325,7 +325,7 @@ namespace PurplePen.Tests
             DrawToBitmap(mapDisplay, drawRect);
 
             using (Bitmap bm = GetBitmap()) {
-                TestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\NoOverprintOcadMap.png"));
+                BitmapTestUtil.CompareBitmapBaseline(bm, TestUtil.GetTestFile(@"mapdisplay\NoOverprintOcadMap.png"));
             }
         }
 

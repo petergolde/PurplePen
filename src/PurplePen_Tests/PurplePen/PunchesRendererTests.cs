@@ -104,7 +104,7 @@ namespace PurplePen.Tests
             courseView = CourseView.CreateViewingCourseView(eventDB, new CourseDesignator(id));
 
             Bitmap bmNew = RenderToBitmap(eventDB, courseView, format);
-            TestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, ""));
+            BitmapTestUtil.CheckBitmapsBase(bmNew, GetBitmapFileName(eventDB, id, ""));
         }
 
         [TestMethod]
