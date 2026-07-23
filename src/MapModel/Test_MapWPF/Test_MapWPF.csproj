@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>TestProject1</RootNamespace>
     <AssemblyName>TestProject1</AssemblyName>
@@ -41,15 +41,6 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Configuration" />
-    <Reference Update="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Runtime" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Testing\TestUtil.GdiPlus\TestUtil.GdiPlus.csproj" />
     <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
@@ -81,5 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
 </Project>

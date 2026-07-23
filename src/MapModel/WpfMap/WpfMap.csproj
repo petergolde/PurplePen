@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
-    <ProjectReference Include="..\HtmlGraphicsTarget\HtmlGraphicsTarget.csproj" />
     <ProjectReference Include="..\MapModel\MapModel.csproj" />
     <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj" />
     <ProjectReference Include="..\Map_WPF\Map_WPF.csproj" />
