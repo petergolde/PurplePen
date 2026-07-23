@@ -70,18 +70,12 @@ namespace Map_PDF.Tests
         }
 
 
-        // Write a bitmap to a PNG.
-        void WriteBitmap(Bitmap bmp, string filename) {
-           bmp.Save(filename, ImageFormat.Png);
-        }
-
-
         [SetUp]
         public void Init()
         {
         }
 
-        static Bitmap RenderBitmap(string pdfFileName, Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps)
+        static SKBitmap RenderBitmap(string pdfFileName, Map map, Size bitmapSize, RectangleF mapArea, bool usePatternBitmaps)
         {
             // Get PNG file name
             string directoryName = Path.GetDirectoryName(pdfFileName);
@@ -110,7 +104,7 @@ namespace Map_PDF.Tests
                         map.Draw(grTarget, mapArea, renderOpts, null);
                 });
 
-            return (Bitmap) Image.FromFile(pngFileName);
+            return SKBitmap.Decode(pngFileName);
         }
 
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
@@ -155,7 +149,7 @@ namespace Map_PDF.Tests
             InputOutput.ReadFile(mapFileName, map);
 
             // Draw into a new bitmap.
-            Bitmap bitmapNew = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
+            SKBitmap bitmapNew = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
 
             BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName, MAX_PIXEL_DIFF);
             bitmapNew.Dispose();
@@ -174,7 +168,7 @@ namespace Map_PDF.Tests
                 }
 
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Bitmap bitmapLight = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
+                SKBitmap bitmapLight = RenderBitmap(tempPdfFileName, map, size, mapArea, usePatternBitmaps);
                 BitmapTestUtil.CompareBitmapBaseline(bitmapLight, lightenedPngFileName, MAX_PIXEL_DIFF);
                 bitmapLight.Dispose();
                 bitmapLight = null;
