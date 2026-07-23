@@ -51,15 +51,23 @@ namespace TestingUtils
         public const string NETFRAMEWORK = "netfr";
 
         // Returns the absolute path of the directory containing the project directory by walking
-        // upward from this assembly to the "bin" directory and then going up two more levels.
+        // upward from this assembly's directory until a directory containing a "TestFiles"
+        // sub-directory is found. Throws if no such directory exists.
         public static string GetProjectParentDirectory()
         {
             Uri uri = new Uri(typeof(TestUtil).Assembly.Location);
             string callingPath = Path.GetDirectoryName(uri.LocalPath);
-            while (Path.GetFileName(callingPath).ToLower() != "bin") {
+            while (callingPath != null && !Directory.Exists(Path.Combine(callingPath, "TestFiles"))) {
                 callingPath = Path.GetDirectoryName(callingPath);
             }
-            return Path.GetFullPath(Path.Combine(callingPath, "..", ".."));
+
+            if (callingPath == null) {
+                throw new DirectoryNotFoundException(
+                    string.Format("Could not find a directory containing a \"TestFiles\" sub-directory above \"{0}\".",
+                                  Path.GetDirectoryName(uri.LocalPath)));
+            }
+
+            return Path.GetFullPath(callingPath);
         }
 
         // Returns the absolute path of the TestFiles directory beneath the project parent directory.

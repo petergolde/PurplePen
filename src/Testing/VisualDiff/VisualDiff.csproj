@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Avalonia\AvUtil\AvUtil.csproj" />
-    <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
+    <ProjectReference Include="..\TestUtil\TestUtil.csproj" />
     <ProjectReference Include="..\TestUtil.Skia\TestUtil.Skia.csproj" />
   </ItemGroup>
 </Project>
