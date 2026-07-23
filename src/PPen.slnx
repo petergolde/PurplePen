@@ -124,6 +124,12 @@
     <Project Path="Testing/TestUtil.GdiPlus/TestUtil.GdiPlus.csproj" Id="ee6855fe-064e-4f2b-898c-93f1258b48f5">
       <BuildType Solution="StorePkg|*" Project="Release" />
     </Project>
+    <Project Path="Testing/TestUtil.Skia/TestUtil.Skia.csproj" Id="baa349e6-b6ff-4dde-82c7-cb79e7feb435">
+      <BuildType Solution="StorePkg|*" Project="Release" />
+    </Project>
+    <Project Path="Testing/VisualDiff/VisualDiff.csproj" Id="b8f2bb63-c67c-4fb8-8fcb-76aaa1742760">
+      <BuildType Solution="StorePkg|*" Project="Release" />
+    </Project>
     <Project Path="TestUtil/TestUtil.csproj" Id="d50b6e2b-5e20-410d-b033-debb6b695e77">
       <Build Solution="Debug|x86" Project="false" />
       <Build Solution="Release|x86" Project="false" />

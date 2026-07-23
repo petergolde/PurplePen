@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "VisualDiff": {
+      "commandName": "Project",
+      "commandLineArgs": "bitmap \"D:\\paths_tempnew.png\" \"d:\\paths.png\""
+    }
+  }
+}

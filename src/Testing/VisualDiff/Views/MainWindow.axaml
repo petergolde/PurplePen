@@ -1,0 +1,98 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avutil="using:AvUtil"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="VisualDiff.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Bitmaps do not match"
+        MinWidth="760"
+        MinHeight="480"
+        WindowState="Maximized">
+
+    <Grid RowDefinitions="Auto,*">
+        <Border Grid.Row="0"
+                Padding="12,10"
+                BorderBrush="#C8C8C8"
+                BorderThickness="0,0,0,1"
+                Background="#F5F5F5">
+            <Grid ColumnDefinitions="*,Auto,Auto"
+                  RowDefinitions="Auto,Auto"
+                  ColumnSpacing="22"
+                  RowSpacing="8">
+                <TextBlock x:Name="infoText"
+                           Grid.RowSpan="2"
+                           MinWidth="260"
+                           MaxWidth="620"
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           Text="Bitmap comparison information"/>
+
+                <StackPanel Grid.Column="1"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            Spacing="18"
+                            VerticalAlignment="Center">
+                    <CheckBox x:Name="checkBoxBlink"
+                              Content="Continuous blink"/>
+                    <CheckBox x:Name="checkBoxRed"
+                              Content="Show difference in red"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                            Grid.Row="1"
+                            Orientation="Horizontal"
+                            Spacing="6"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Now showing:"/>
+                    <TextBlock x:Name="labelNowShowing"
+                               FontWeight="Bold"
+                               Text="new bitmap"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            Spacing="8"
+                            HorizontalAlignment="Right">
+                    <Button Content="Accept Baseline"
+                            MinWidth="130"
+                            HorizontalContentAlignment="Center"
+                            Click="ButtonAccept_Click"/>
+                    <Button Content="Fail"
+                            MinWidth="90"
+                            HorizontalContentAlignment="Center"
+                            Click="ButtonFail_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2"
+                            Grid.Row="1"
+                            Orientation="Horizontal"
+                            Spacing="8"
+                            HorizontalAlignment="Right">
+                    <Button Content="Make Bitness Specific"
+                            MinWidth="172"
+                            HorizontalContentAlignment="Center"
+                            Click="ButtonFixBitness_Click"/>
+                    <Button Content="Make Framework Specific"
+                            MinWidth="190"
+                            HorizontalContentAlignment="Center"
+                            Click="ButtonFixFramework_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Background="White">
+            <avutil:PanAndZoom x:Name="bitmapViewer"
+                               MinZoom="0.001"
+                               MaxZoom="100"
+                               RenderOptions.BitmapInterpolationMode="None"
+                               HorizontalScrollBarVisibility="Auto"
+                               VerticalScrollBarVisibility="Auto"
+                               MouseWheelAction="Zoom"
+                               BasicMouseActivity="BitmapViewer_BasicMouseActivity"/>
+        </Border>
+    </Grid>
+
+</Window>

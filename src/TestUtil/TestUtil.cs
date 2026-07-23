@@ -50,9 +50,8 @@ namespace TestingUtils
         public const string NETCORE = "netcore";
         public const string NETFRAMEWORK = "netfr";
 
-        // Get the parent directory of the project directory. This is obtained by
-        // going up from the assembly location to we reach the "bin" directory, then
-        // going two more levels.
+        // Returns the absolute path of the directory containing the project directory by walking
+        // upward from this assembly to the "bin" directory and then going up two more levels.
         public static string GetProjectParentDirectory()
         {
             Uri uri = new Uri(typeof(TestUtil).Assembly.Location);
@@ -60,40 +59,41 @@ namespace TestingUtils
             while (Path.GetFileName(callingPath).ToLower() != "bin") {
                 callingPath = Path.GetDirectoryName(callingPath);
             }
-            return Path.GetFullPath(Path.Combine(callingPath, @"..\.."));
+            return Path.GetFullPath(Path.Combine(callingPath, "..", ".."));
         }
 
-        // Get the test file direction
+        // Returns the absolute path of the TestFiles directory beneath the project parent directory.
         public static string GetTestFileDirectory()
         {
-            string projectParent = GetProjectParentDirectory(); 
+            string projectParent = GetProjectParentDirectory();
             return Path.GetFullPath(Path.Combine(projectParent, @"TestFiles"));
         }
 
-        // Get the tool file direction
+        // Returns the absolute path of the Tools directory beneath the project parent directory.
         public static string GetToolsFileDirectory()
         {
             string projectParent = GetProjectParentDirectory();
-            return Path.GetFullPath(Path.Combine(projectParent, @"tools"));
+            return Path.GetFullPath(Path.Combine(projectParent, "Tools"));
         }
 
 
-        // Get a file from the test file directory.
+        // Returns the absolute path obtained by combining the TestFiles directory with basename;
+        // the returned file is not required to exist.
         public static string GetTestFile(string basename)
         {
             return Path.GetFullPath(Path.Combine(GetTestFileDirectory(), basename));
         }
 
-        // Get a exe name from the Tools.
+        // Returns the absolute path obtained by combining the Tools directory with toolName;
+        // the returned executable or file is not required to exist.
         public static string GetToolFullPath(string toolName)
         {
             return Path.GetFullPath(Path.Combine(GetToolsFileDirectory(), toolName));
         }
 
-        // Get the specific file name for the current bitness and framework. For example,
-        // if path is "foo.dll", this looks for "foo-64bit-netcore.dll" or "foo-32bit-netfr.dll"
-        // depending on the current process bitness and framework. If such a file exists, it is returned;
-        // otherwise the original path is returned. Can also get just -64bit, just -netcore, etc.
+        // Searches for one existing variation of path whose optional suffixes match the current
+        // process bitness and framework. Returns the single match, throws for multiple matches,
+        // and either throws or returns null when no match exists according to throwOnNotFound.
         public static string GetSpecificFileName(string path, bool throwOnNotFound = true)
         {
             string[] suffixes = {
@@ -107,24 +107,22 @@ namespace TestingUtils
 
             string result = GetSpecificFileName(path, suffixes);
 
-            if (result == null && throwOnNotFound)
-            {
+            if (result == null && throwOnNotFound) {
                 throw new FileNotFoundException($"No matching file found for '{path}'");
             }
 
             return result;
         }
 
-        // Check to see if we already have a bitness suffix on the file name.
-        // This is used to avoid adding multiple bitness suffixes.
+        // Returns true when the filename portion of path contains a case-insensitive "32bit" or
+        // "64bit" suffix token after its first hyphen; otherwise returns false.
         public static bool HasBitnessSuffix(string path)
         {
             return HasAnySuffix(path, new[] { BIT32, BIT64 });
         }
 
-        // Add the bitness suffixes to the file name, returning both variations.
-        // For example, if path is "foo.dll", this returns "foo-64bit.dll" and "foo-32bit.dll".
-        // The first variation is the one for the current bitness, and the second is the other bitness.
+        // Inserts bitness suffixes before the extension of path and returns the current-process
+        // variation first and the other-bitness variation second. Throws if path already has either suffix.
         public static (string, string) AddBitnessSuffix(string path)
         {
             if (Environment.Is64BitProcess)
@@ -133,16 +131,15 @@ namespace TestingUtils
                 return AddSuffixes(path, BIT32, BIT64);
         }
 
-        // Check to see if we already have a framework suffix on the file name.
-        // This is used to avoid adding multiple framework suffixes.
+        // Returns true when the filename portion of path contains a case-insensitive "netcore" or
+        // "netfr" suffix token after its first hyphen; otherwise returns false.
         public static bool HasFrameworkSuffix(string path)
         {
             return HasAnySuffix(path, new[] { NETCORE, NETFRAMEWORK });
         }
 
-        // Add the framework suffixes to the file name, returning both variations.
-        // For example, if path is "foo.dll", this returns "foo-netcore.dll" and "foo-netfr.dll".
-        // The first variation is the one for the current framework, and the second is the other framework.
+        // Inserts framework suffixes before the extension of path and returns the current-framework
+        // variation first and the other-framework variation second. Throws if path already has either suffix.
         public static (string, string) AddFrameworkSuffix(string path)
         {
 #if NETFRAMEWORK
@@ -154,11 +151,9 @@ namespace TestingUtils
 
 
 
-        // Get a specific file name by searching for files with possible suffixes.
-        // path: a path with a file name and extension (file name must not contain '-')
-        // possibleSuffixes: array of possible suffixes (e.g. {"32bit", "netcore"})
-        // Searches for the original file or files with any combination of suffixes.
-        // Returns the single matching file, null if no match, or throws if multiple files match.
+        // Searches path's directory for the unsuffixed filename or a variation composed only of
+        // possibleSuffixes, matched case-insensitively with no duplicate suffix. The base filename
+        // must not contain a hyphen. Returns one match, null for no match, and throws for multiple matches.
         public static string GetSpecificFileName(string path, string[] possibleSuffixes)
         {
             string dir = Path.GetDirectoryName(path);
@@ -194,9 +189,8 @@ namespace TestingUtils
             return matchingFiles[0];
         }
 
-        // Checks if a candidate file name matches the base name with valid suffixes.
-        // Returns true if the candidate is either an exact match (no suffix) or has
-        // suffixes that are all in the allowed list with no duplicates.
+        // Returns true when candidateFileName is exactly baseName or is baseName followed by one or
+        // more case-insensitive possibleSuffixes separated by hyphens, with no duplicate suffixes.
         private static bool IsValidSuffixMatch(string candidateFileName, string baseName, string[] possibleSuffixes)
         {
             // Exact match (no suffix)
@@ -241,10 +235,8 @@ namespace TestingUtils
             return true;
         }
 
-        // Checks if a filename (as returned from GetSpecificFileName) contains any of the specified suffixes.
-        // filename: a filename that may contain suffixes separated by "-"
-        // suffixesToCheck: array of suffixes to look for
-        // Returns true if any of the suffixes are present in the filename, false otherwise.
+        // Treats every hyphen-separated token after the first hyphen in filename as a suffix and
+        // returns true if any token case-insensitively matches an entry in suffixesToCheck.
         public static bool HasAnySuffix(string filename, string[] suffixesToCheck)
         {
             string file = Path.GetFileNameWithoutExtension(filename);
@@ -273,12 +265,8 @@ namespace TestingUtils
             return false;
         }
 
-        // Adds two suffixes to a filename, returning both variations.
-        // filename: a filename (may already have suffixes separated by "-")
-        // suffix1: the first suffix to add
-        // suffix2: the second suffix to add
-        // Throws an exception if either suffix is already present in the filename.
-        // Returns a tuple where Item1 is the filename with suffix1 added, and Item2 is the filename with suffix2 added.
+        // Inserts suffix1 and suffix2 separately before filename's extension and returns those two
+        // path variations in the same order. Throws if filename already contains either suffix token.
         public static (string, string) AddSuffixes(string filename, string suffix1, string suffix2)
         {
             // Check if either suffix is already present
@@ -297,17 +285,22 @@ namespace TestingUtils
         }
 
 
+        // Returns the current process environment variable named variableName, or null when it is not defined.
         public static string EnvVar(string variableName)
         {
             return Environment.GetEnvironmentVariable(variableName);
         }
 
+        // Returns the TEST_SILENTRUN environment variable parsed as a Boolean, defaulting to false
+        // when the variable is not defined; an invalid Boolean value causes bool.Parse to throw.
         public static bool SilentRun {
             get {
                 return bool.Parse(EnvVar("TEST_SILENTRUN") ?? "False");
             }
         }
 
+        // Returns true when the absolute difference between every RGBA channel in color1 and color2
+        // is no greater than maxPixelDifference; otherwise returns false.
         public static bool SimilarColors(Color color1, Color color2, int maxPixelDifference)
         {
             return (Math.Abs(color1.R - color2.R) <= maxPixelDifference &&
@@ -318,7 +311,8 @@ namespace TestingUtils
             //return ColorDifference(color1, color2) < maxPixelDifference;
         }
 
-        // Returns a perceptual color difference value. 0 is the same, around 750 is the max difference.
+        // Returns a weighted Euclidean RGB color difference, where identical colors produce zero and
+        // maximally different colors produce a value of approximately 750; alpha is not considered.
         public static double ColorDifference(Color color1, Color color2)
         {
             if (color1 == color2)
@@ -347,6 +341,8 @@ namespace TestingUtils
             return difference;
         }
 
+        // Asserts that generic enumerable e contains exactly the values in expected, including duplicate
+        // counts but regardless of order, using object.Equals to match each value.
         public static void TestEnumerableAnyOrder<T>(IEnumerable<T> e, T[] expected)
         {
             bool[] found = new bool[expected.Length];
@@ -365,6 +361,8 @@ namespace TestingUtils
             Assert.AreEqual(expected.Length, i);
         }
 
+        // Asserts that non-generic enumerable e contains exactly the T values in expected, including
+        // duplicate counts but regardless of order, using object.Equals to match each value.
         public static void TestEnumerableAnyOrder<T>(System.Collections.IEnumerable e, T[] expected)
         {
             bool[] found = new bool[expected.Length];
@@ -383,18 +381,20 @@ namespace TestingUtils
             Assert.AreEqual(expected.Length, i);
         }
 
+        // Asserts that expected and actual are equal when any corresponding rectangle edge differs
+        // by more than delta; performs no assertion when all four edge differences are within delta.
         public static void AssertEqualRect(RectangleF expected, RectangleF actual, double delta, string s)
         {
             if (Math.Abs(expected.Left - actual.Left) > delta ||
                 Math.Abs(expected.Right - actual.Right) > delta ||
                 Math.Abs(expected.Top - actual.Top) > delta ||
-                Math.Abs(expected.Bottom - actual.Bottom) > delta) 
-            {
+                Math.Abs(expected.Bottom - actual.Bottom) > delta) {
                 Assert.AreEqual(expected, actual, s);
             }
         }
 
-        // Append some text to the filename part of a path, before the extension.
+        // Inserts append at the end of path's filename portion, immediately before its extension,
+        // and returns the resulting path without checking whether it exists.
         public static string AppendToPathName(string path, string append)
         {
             string extension = Path.GetExtension(path);
@@ -404,6 +404,8 @@ namespace TestingUtils
 
 
 
+        // Writes the common character prefix of s1 and s2 followed by each string's remaining
+        // unmatched suffix, using labeled sections on the standard output stream.
         public static void WriteStringDifference(string s1, string s2)
         {
             int len = Math.Min(s1.Length, s2.Length);
@@ -422,14 +424,16 @@ namespace TestingUtils
             Console.WriteLine(s2.Substring(i));
         }
 
-        // Compare two text files line by line. Return true if the same, false if different.
+        // Returns true when filename1 and filename2 contain exactly the same sequence of text lines;
+        // otherwise returns false.
         public static bool CompareTextFiles(string filename1, string filename2)
         {
             return CompareTextFiles(filename1, filename2, new Dictionary<string, string>());
         }
 
-        // Compare two text files line by line. Return true if the same, false if different.
-        // An exception map maps strings to regular expressions that can match.
+        // Compares baseline and newFile line by line and returns true when every line matches exactly
+        // or a differing baseline line matches an exceptionMap key regex whose value regex matches the
+        // corresponding new line. Returns false for any other difference, including unequal line counts.
         public static bool CompareTextFiles(string newFile, string baseline, Dictionary<string, string> exceptionMap)
         {
             bool equal = true;

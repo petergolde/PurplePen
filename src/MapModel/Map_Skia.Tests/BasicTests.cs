@@ -21,8 +21,12 @@ namespace Map_Skia.Tests
 		[Test]
 		public void SkiaFontMetrics()
 		{
-			GDIPlus_TextMetrics gdiMetrics = new GDIPlus_TextMetrics();
-			Skia_TextMetrics skiaMetrics = new Skia_TextMetrics();
+            Skia_TextMetrics skiaMetrics = new Skia_TextMetrics();
+
+            // This used to test that the GDIPlus and Skia font metrics were the same.
+            // However, I don't really want to reference GDIPlus in this project, so I'm just going to test that the Skia font metrics are reasonable.
+#if false
+            GDIPlus_TextMetrics gdiMetrics = new GDIPlus_TextMetrics();
 
             ITextFaceMetrics gdiFontMetrics = gdiMetrics.GetTextFaceMetrics("Times New Roman", 24, TextEffects.Regular);
             ITextFaceMetrics skiaFontMetrics = skiaMetrics.GetTextFaceMetrics("Times New Roman", 24, TextEffects.Regular);
@@ -39,7 +43,7 @@ namespace Map_Skia.Tests
             SizeF skiaSize = skiaFontMetrics.GetTextSize("BananaPhone is great");
             Assert.AreEqual(gdiSize.Width, skiaSize.Width, 0.5F);
             Assert.AreEqual(gdiSize.Height, skiaSize.Height, 0.05F);
-
+#endif
             ITextFaceMetrics tnrMetrics = skiaMetrics.GetTextFaceMetrics("Trebuchet MS", 50, TextEffects.Regular);
             Assert.AreEqual(50.0F, tnrMetrics.EmHeight, 0.1F);
             Assert.AreEqual(46.95F, tnrMetrics.Ascent, 0.1F);

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.Interfaces;
+using NUnit.Framework;
 using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 using SkiaSharp;
@@ -6,8 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using TestingUtils;
-using SDBitmap = System.Drawing.Bitmap;
-using SDImage = System.Drawing.Image;
 using SDSize = System.Drawing.Size;
 
 namespace Map_Skia.Tests
@@ -39,19 +38,16 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap) SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             IGraphicsBitmap skiaBitmap = new Skia_Bitmap(skBitmap);
 
-            Assert.AreEqual(size.Width, skiaBitmap.PixelWidth);
-            Assert.AreEqual(size.Height, skiaBitmap.PixelHeight);
+            int width = skiaBitmap.PixelWidth;
+            int height = skiaBitmap.PixelHeight;
 
-
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
-                    grTarget.DrawBitmap(skiaBitmap, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), BitmapScaling.HighQuality);
+                    grTarget.DrawBitmap(skiaBitmap, new System.Drawing.RectangleF(0, 0, width, height), BitmapScaling.HighQuality);
                 }
             );
         }
@@ -63,13 +59,14 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             IGraphicsBitmap skiaBitmap = new Skia_Bitmap(skBitmap);
 
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            int width = skiaBitmap.PixelWidth;
+            int height = skiaBitmap.PixelHeight;
+
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
                     grTarget.DrawBitmapPart(skiaBitmap, 
                                             100, 130, 400, 200,
@@ -86,8 +83,6 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             IGraphicsBitmap skiaBitmap = new Skia_Bitmap(skBitmap);
@@ -112,8 +107,6 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             IGraphicsBitmap skiaBitmap = new Skia_Bitmap(skBitmap);
@@ -122,7 +115,7 @@ namespace Map_Skia.Tests
             skiaBitmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            SDBitmap loadedBitmap = (SDBitmap) SDImage.FromStream(memStream);
+            SKBitmap loadedBitmap = SKBitmap.Decode(memStream);
 
             BitmapTestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
         }
@@ -135,20 +128,21 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKImage skImage = SKImage.FromBitmap(skBitmap);
             IGraphicsBitmap skiaImage = new Skia_Image(skImage);
 
-            Assert.AreEqual(size.Width, skiaImage.PixelWidth);
-            Assert.AreEqual(size.Height, skiaImage.PixelHeight);
+            int width = skiaImage.PixelWidth;
+            int height = skiaImage.PixelHeight;
+
+            Assert.AreEqual(width, skiaImage.PixelWidth);
+            Assert.AreEqual(height, skiaImage.PixelHeight);
 
 
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
-                    grTarget.DrawBitmap(skiaImage, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), BitmapScaling.HighQuality);
+                    grTarget.DrawBitmap(skiaImage, new System.Drawing.RectangleF(0, 0, width, height), BitmapScaling.HighQuality);
                 }
             );
         }
@@ -160,15 +154,15 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKImage skImage = SKImage.FromBitmap(skBitmap);
             IGraphicsBitmap skiaImage = new Skia_Image(skImage);
 
+            int width = skiaImage.PixelWidth;
+            int height = skiaImage.PixelHeight;
 
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
                     grTarget.DrawBitmapPart(skiaImage,
                                             100, 130, 400, 200,
@@ -185,8 +179,6 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKImage skImage = SKImage.FromBitmap(skBitmap);
@@ -212,8 +204,6 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKImage skImage = SKImage.FromBitmap(skBitmap);
@@ -223,7 +213,7 @@ namespace Map_Skia.Tests
             skiaImage.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(memStream);
+            SKBitmap loadedBitmap = SKBitmap.Decode(memStream);
 
             BitmapTestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
         }
@@ -236,19 +226,17 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKPixmap skPixmap = skBitmap.PeekPixels();
             IGraphicsBitmap skiaPixmap = new Skia_Pixmap(skPixmap);
 
-            Assert.AreEqual(size.Width, skiaPixmap.PixelWidth);
-            Assert.AreEqual(size.Height, skiaPixmap.PixelHeight);
+            int width = skPixmap.Width;
+            int height = skPixmap.Height;
 
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
-                    grTarget.DrawBitmap(skiaPixmap, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), BitmapScaling.HighQuality);
+                    grTarget.DrawBitmap(skiaPixmap, new System.Drawing.RectangleF(0, 0, width, height), BitmapScaling.HighQuality);
                 }
             );
         }
@@ -260,15 +248,15 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKPixmap skPixmap = skBitmap.PeekPixels();
             IGraphicsBitmap skiaPixmap = new Skia_Pixmap(skPixmap);
 
+            int width = skPixmap.Width;
+            int height = skPixmap.Height;
 
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
                     grTarget.DrawBitmapPart(skiaPixmap,
                                             100, 130, 400, 200,
@@ -285,8 +273,6 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKPixmap skPixmap = skBitmap.PeekPixels();
@@ -312,8 +298,6 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
 
             SKBitmap skBitmap = SKBitmap.Decode(baseBitmapPath);
             SKPixmap skPixmap = skBitmap.PeekPixels();
@@ -323,7 +307,7 @@ namespace Map_Skia.Tests
             skiaPixmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(memStream);
+            SKBitmap loadedBitmap = SKBitmap.Decode(memStream);
 
             BitmapTestUtil.CompareBitmapBaseline(loadedBitmap, expectedResult);
         }
@@ -335,19 +319,20 @@ namespace Map_Skia.Tests
 
             const string baseBitmapName = "Water lilies.jpg";
             string baseBitmapPath = TestUtil.GetTestFile("bitmaps\\" + baseBitmapName);
-            SDBitmap baseBitmap = (SDBitmap)SDImage.FromFile(baseBitmapPath);
-            SDSize size = baseBitmap.Size;
+            int width, height;
 
             IGraphicsBitmap skiaBitmap;
             using (Stream stream = new FileStream(baseBitmapPath, FileMode.Open, FileAccess.Read)) {
                 skiaBitmap = new SkiaBitmapGraphicsLoader().ReadBitmapFromStream(stream);
+                width = skiaBitmap.PixelWidth;
+                height = skiaBitmap.PixelHeight;
             }
 
             Assert.AreEqual(GraphicsBitmapFormat.JPEG, skiaBitmap.GetOriginalFormat());
 
-            RenderingUtil.RenderingTest(size.Width, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), false, expectedResult,
+            RenderingUtil.RenderingTest(width, new System.Drawing.RectangleF(0, 0, width, height), false, expectedResult,
                 grTarget => {
-                    grTarget.DrawBitmap(skiaBitmap, new System.Drawing.RectangleF(0, 0, size.Width, size.Height), BitmapScaling.HighQuality);
+                    grTarget.DrawBitmap(skiaBitmap, new System.Drawing.RectangleF(0, 0, width, height), BitmapScaling.HighQuality);
                 }
             );
         }
@@ -705,7 +690,7 @@ namespace Map_Skia.Tests
             BitmapIO.WriteBitmapToStream(bwr, ms, 100);
             ms.Position = 0;
 
-            SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(ms);
+            SKBitmap loadedBitmap = SKBitmap.Decode(ms);
             Assert.AreEqual(120, loadedBitmap.Width);
             Assert.AreEqual(90, loadedBitmap.Height);
 
@@ -724,7 +709,7 @@ namespace Map_Skia.Tests
             BitmapIO.WriteBitmapToStream(bwr, ms, 85);
             ms.Position = 0;
 
-            SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(ms);
+            SKBitmap loadedBitmap = SKBitmap.Decode(ms);
             Assert.AreEqual(120, loadedBitmap.Width);
             Assert.AreEqual(90, loadedBitmap.Height);
 
@@ -744,7 +729,12 @@ namespace Map_Skia.Tests
             ms.Position = 0;
 
             // Verify the stream contains a valid GIF by reading it back.
-            SDBitmap loadedBitmap = (SDBitmap)SDImage.FromStream(ms);
+            SKBitmap loadedBitmap;
+
+            using (SKManagedStream skStream = new SKManagedStream(ms, disposeManagedStream: false))
+            {
+                loadedBitmap = SKBitmap.Decode(skStream);
+            }
             Assert.AreEqual(120, loadedBitmap.Width);
             Assert.AreEqual(90, loadedBitmap.Height);
 

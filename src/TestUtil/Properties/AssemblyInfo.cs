@@ -37,8 +37,4 @@ using System.Runtime.Versioning;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-#if NET5_0_OR_GREATER
-[assembly: SupportedOSPlatform("windows")]
-#endif
-
 [assembly: Parallelize(Scope = ExecutionScope.ClassLevel)]

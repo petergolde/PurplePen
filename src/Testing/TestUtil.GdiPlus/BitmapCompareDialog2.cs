@@ -46,13 +46,13 @@ namespace TestingUtils
                     text = string.Format("Baseline file '{0}' of different size from new bitmap '{1}'", Path.GetFileName(BaselineFilename), Path.GetFileName(NewFilename));
                 else
                     text = string.Format("Baseline file '{0}' is different from new bitmap '{1}'", Path.GetFileName(BaselineFilename), Path.GetFileName(NewFilename));
-#if TEST
+
                 bmDiff = BitmapTestUtil.CompareBitmaps(bmBaseline, bmNew, Color.White, Color.Red, MaxPixelDifference);
                 bmWhite = new Bitmap(bmDiff.Width, bmDiff.Height);
                 Graphics g = Graphics.FromImage(bmWhite);
                 g.Clear(Color.White);
                 g.Dispose();
-#endif //TEST
+
             }
 
             if (bmNew != null) 

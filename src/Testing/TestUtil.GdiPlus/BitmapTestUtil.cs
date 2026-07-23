@@ -96,64 +96,6 @@ namespace TestingUtils
                 return DifferenceBitmaps(bm1, bm2, colorSame, colorDifferent, maxPixelDifference);
         }
 
-        // Check a bitmap against a baseline file, named with "_baseline.png" in the normal test files place.
-        // If the compare succeeds, true is returned.
-        // If the compare fails, false is returned and _new.png and _diff.png files are created.
-        // If the baseline is missing, an _baseline_new is created.
-        //
-        // If the file "updatebaselines" is in that directory; automatically updates baselines (and fails).
-        public static bool CheckBaseline(Bitmap bmNew, string basefilename, int maxPixelDifference)
-        {
-            string baselineFile = TestUtil.GetTestFile(basefilename + "_baseline.png");
-            string baselineDir = Path.GetDirectoryName(baselineFile);
-            bool updateBaselines = File.Exists(Path.Combine(baselineDir, "updatebaselines"));
-            if (!File.Exists(baselineFile)) {
-                // no baseline -- create a new baseline file.
-                string newBaselineFile;
-                if (updateBaselines)
-                    newBaselineFile = TestUtil.GetTestFile(basefilename + "_baseline.png");
-                else
-                    newBaselineFile = TestUtil.GetTestFile(basefilename + "_baseline_new.png");
-                bmNew.Save(newBaselineFile, ImageFormat.Png);
-                bmNew.Dispose();
-                return false;
-            }
-            else {
-                Bitmap bmBaseline = (Bitmap)Image.FromFile(baselineFile);
-                Bitmap bmDiff = CompareBitmaps(bmBaseline, bmNew, Color.LightPink, Color.Transparent, maxPixelDifference);
-                bmBaseline.Dispose();
-
-                if (bmDiff == null) {
-                    // Bitmap compare correctly.
-                    bmNew.Dispose();
-                    if (updateBaselines)
-                        return false;         // so that you don't forget to remove the updatebaselines file!
-                    else
-                        return true;
-                }
-                else {
-                    // Bitmap didn't compare. Output the new and the diff.
-                    string newFile;
-                    if (updateBaselines)
-                        newFile = TestUtil.GetTestFile(basefilename + "_baseline.png");
-                    else
-                        newFile = TestUtil.GetTestFile(basefilename + "_new.png");
-                    string diffFile = TestUtil.GetTestFile(basefilename + "_diff.png");
-                    bmNew.Save(newFile, ImageFormat.Png);
-                    bmDiff.Save(diffFile, ImageFormat.Png);
-                    bmNew.Dispose();
-                    bmDiff.Dispose();
-                    return false;
-                }
-            }
-        }
-
-        // Same as CheckBaseline, but asserts on failure.
-        public static void AssertBaseline(Bitmap bmNew, string basefilename)
-        {
-            Assert.IsTrue(CheckBaseline(bmNew, basefilename, 0), string.Format("Bitmap '{0}' does not compare correctly against baseline", basefilename));
-        }
-
         // Check a bitmap against a baseline file (which could not exist). If the baseline doesn't exist or doesn't compare the
         // same, launch a interactive dialog which displays the baselines.
         // (Unlike AssertBaseline/CheckBaseline, the file name is a the full file name, including extension).

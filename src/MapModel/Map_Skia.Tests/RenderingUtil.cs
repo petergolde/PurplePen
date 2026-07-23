@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 
 using System.Drawing;
-using System.Drawing.Imaging;
 
 using SkiaSharp;
 
@@ -21,38 +20,26 @@ namespace Map_Skia.Tests
     public static class RenderingUtil
     {
 
-        // Write a bitmap to a PNG.
-        public static void WriteBitmap(Bitmap bmp, string filename)
-        {
-            bmp.Save(filename, ImageFormat.Png);
-        }
-
-
-
         public static void RenderingTest(int width, RectangleF drawingRectangle, bool inverted, string pngFileName, Action<IGraphicsTarget> draw)
         {
             int height = (int)Math.Ceiling(width * drawingRectangle.Height / drawingRectangle.Width);
 
-            Bitmap bitmapNew = new Bitmap(width, height, PixelFormat.Format32bppPArgb);
-            BitmapData data = bitmapNew.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadWrite, bitmapNew.PixelFormat);
-
-            using (var surface = SKSurface.Create(new SKImageInfo(width, height, SKImageInfo.PlatformColorType, SKAlphaType.Premul), data.Scan0, data.Stride)) {
-                var skcanvas = surface.Canvas;
+            using (SKBitmap bitmapNew = new SKBitmap(width, height))
+            using (SKCanvas skcanvas = new SKCanvas(bitmapNew)) {
                 skcanvas.Clear(SKColors.White);
 
                 using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(skcanvas)) {
-                    grTarget.PushTransform(GetTransform(bitmapNew, drawingRectangle, inverted));
+                    grTarget.PushTransform(GetTransform(width, height, drawingRectangle, inverted));
                     draw(grTarget);
                 }
+
+                string directoryName = Path.GetDirectoryName(pngFileName);
+                string newBitmapName = Path.Combine(directoryName,
+                                            Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
+                File.Delete(newBitmapName);
+
+                BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
             }
-            bitmapNew.UnlockBits(data);
-
-            string directoryName = Path.GetDirectoryName(pngFileName);
-            string newBitmapName = Path.Combine(directoryName,
-                                        Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
-            File.Delete(newBitmapName);
-
-            BitmapTestUtil.CompareBitmapBaseline(bitmapNew, pngFileName);
         }
 
         static Skia_Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool antiAlias, float intensity)
@@ -75,19 +62,10 @@ namespace Map_Skia.Tests
 
         }
 
-        static Bitmap BitmapFromLockedSkiaBitmap(SKBitmap bitmap)
-        {
-            IntPtr length;
-            IntPtr pixels = bitmap.GetPixels(out length);
-            return new Bitmap(bitmap.Width, bitmap.Height, bitmap.RowBytes, bitmap.AlphaType == SKAlphaType.Opaque ? PixelFormat.Format32bppRgb : PixelFormat.Format32bppPArgb, pixels);
-        }
-
         static void CompareBitmapBaseline(Skia_Bitmap skiaBitmapNew, string baselineFileName, int maxPixelDiff)
         {
             SKBitmap skBitmap = skiaBitmapNew.Bitmap;
-            Bitmap bitmapNew = BitmapFromLockedSkiaBitmap(skBitmap);
-            BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName, maxPixelDiff);
-            bitmapNew.Dispose();
+            BitmapTestUtil.CompareBitmapBaseline(skBitmap, baselineFileName, maxPixelDiff);
         }
 
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
@@ -185,11 +163,10 @@ namespace Map_Skia.Tests
             //Console.WriteLine("Rendered bitmap '{0}' in {1} ms", name, sw.ElapsedMilliseconds);
         }
 
-        static Matrix GetTransform(Bitmap bitmap, RectangleF rectangle, bool inverted)
+        static Matrix GetTransform(int bitmapWidth, int bitmapHeight, RectangleF rectangle, bool inverted)
         {
-            Size bitmapSize = bitmap.Size;
-            PointF midpoint = new PointF(bitmapSize.Width / 2.0F, bitmapSize.Height / 2.0F);
-            float scaleFactor = (float)bitmapSize.Width / rectangle.Width;
+            PointF midpoint = new PointF(bitmapWidth / 2.0F, bitmapHeight / 2.0F);
+            float scaleFactor = (float)bitmapWidth / rectangle.Width;
             PointF centerPoint = new PointF((rectangle.Left + rectangle.Right) / 2, (rectangle.Top + rectangle.Bottom) / 2);
             Matrix matrix = new Matrix();
             matrix.Translate(midpoint.X, midpoint.Y);

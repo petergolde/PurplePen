@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net48;net10.0-windows</TargetFrameworks>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Configurations>Debug;Release;StorePkg</Configurations>
@@ -20,20 +20,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Testing\TestUtil.GdiPlus\TestUtil.GdiPlus.csproj" />
+    <ProjectReference Include="..\..\Testing\TestUtil.Skia\TestUtil.Skia.csproj" />
+    <ProjectReference Include="..\..\Testing\VisualDiff\VisualDiff.csproj" />
     <ProjectReference Include="..\..\TestUtil\TestUtil.csproj" />
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
     <ProjectReference Include="..\MapModel\MapModel.csproj" />
-    <ProjectReference Include="..\Map_GDIPlus\Map_GDIPlus.csproj" />
     <ProjectReference Include="..\Map_SkiaStd\Map_SkiaStd.csproj" />
     <PackageReference Include="NUnit" />
     <PackageReference Include="NUnit3TestAdapter" />
     <PackageReference Include="SkiaSharp.HarfBuzz" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
+
 
   <ItemGroup>
     <None Update="fonts\Roboto-Black.ttf">
