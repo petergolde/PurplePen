@@ -5,7 +5,7 @@ namespace LCMSLookup;
 internal static class Program
 {
     private const int NUMTESTS = 500000;
-    private const string ProfileFileName = "GRACoL2013UNC_CRPC3.icc";
+    private const string ProfileFileName = "USWebCoatedSWOP.icc";
 
 
     private static int Main()
