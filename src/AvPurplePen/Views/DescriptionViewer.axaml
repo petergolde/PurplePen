@@ -14,7 +14,8 @@
              DescriptionChangeCommand="{Binding DescriptionChangeCommand}">
 
     <ScrollViewer HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Auto">
+                  VerticalScrollBarVisibility="Auto"
+                  AllowAutoHide="false">
         <avutil:SkiaScrollableDrawingView x:Name="drawingView"
                                           LogicalExtent="1000,1000" />
     </ScrollViewer>
