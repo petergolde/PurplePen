@@ -95,13 +95,13 @@ namespace AvPurplePen.Views
             RectangleF rect = new RectangleF(0, 0, regionWidth, regionHeight);
             IGraphicsBitmap sampleBitmap;
             using (Skia_BitmapGraphicsTarget bitmapTarget = new Skia_BitmapGraphicsTarget(
-                    bitmapWidth, bitmapHeight, false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, new SwopColorConverter())) {
+                    bitmapWidth, bitmapHeight, false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, SwopColorConverter.Instance)) {
                 viewModel.DrawSample(bitmapTarget, regionWidth, regionHeight);
                 sampleBitmap = bitmapTarget.FinishBitmap();
             }
 
             using (sampleBitmap) {
-                Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, new SwopColorConverter());
+                Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, SwopColorConverter.Instance);
                 canvasTarget.DrawBitmap(sampleBitmap, new RectangleF(0, 0, (float)e.LogicalSize.Width, (float)e.LogicalSize.Height), BitmapScaling.HighQuality);
             }
         }

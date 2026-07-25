@@ -1,6 +1,7 @@
 ﻿using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -12,15 +13,17 @@ namespace PurplePen
 {
     // Converts CMYK to RGB using the SWOP color profile. This is a singleton class, and the instance is available via SwopColorConverter.Instance.
     // It uses a dictionary to make it fast with repeated colors, because that happens many times.
+    // This class is thread-safe: the cache is a ConcurrentDictionary, and everything else it touches is immutable
+    // after construction.
     public class SwopColorConverter: IColorConverter
     {
         public static SwopColorConverter Instance { get { return instance; } }
-        private static SwopColorConverter instance = new SwopColorConverter();
+        private static readonly SwopColorConverter instance = new SwopColorConverter();
 
-        private Dictionary<CmykColor, Color> cmykToColor = new Dictionary<CmykColor, Color>();
-        private LookupTableColorConverter lookupConverter;
+        private readonly ConcurrentDictionary<CmykColor, Color> cmykToColor = new ConcurrentDictionary<CmykColor, Color>();
+        private readonly LookupTableColorConverter lookupConverter;
 
-        public SwopColorConverter()
+        private SwopColorConverter()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
             using (Stream stream = assembly.GetManifestResourceStream("PurplePen.Resources.swopsamples.dat")) {
@@ -57,9 +60,9 @@ namespace PurplePen
                 Color rgb = lookupConverter.Convert(cmykColor.Cyan, cmykColor.Magenta, cmykColor.Yellow, cmykColor.Black);
                 result = Color.FromArgb((byte) Math.Round(cmykColor.Alpha * 255), rgb.R, rgb.G, rgb.B);
 
-                lock (cmykToColor) {
-                    cmykToColor[cmykColor] = result;
-                }
+                // Two threads converting the same color at the same time compute the same result,
+                // so it doesn't matter which one wins the race to store it.
+                cmykToColor[cmykColor] = result;
             }
 
             return result;

@@ -163,7 +163,7 @@ namespace PurplePen
             if (options.ColorModel == ColorModel.RGB)
                 graphicsTarget = new GDIPlus_GraphicsTarget(g);
             else if (options.ColorModel == ColorModel.CMYK)
-                graphicsTarget = new GDIPlus_GraphicsTarget(g, new SwopColorConverter());
+                graphicsTarget = new GDIPlus_GraphicsTarget(g, SwopColorConverter.Instance);
             else
                 throw new NotImplementedException();
 

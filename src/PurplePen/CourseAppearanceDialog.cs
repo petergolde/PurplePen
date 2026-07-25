@@ -294,7 +294,7 @@ namespace PurplePen
             const int bitmapScaleFactor = 4;  // Scale bitmap by 4x for better accuracy.
             RectangleF rect = new RectangleF(0, 0, 10F * pictureBoxPreview.ClientSize.Width / pictureBoxPreview.ClientSize.Height, 10F);
             var grTarget = new GDIPlus_BitmapGraphicsTarget(pictureBoxPreview.ClientSize.Width * bitmapScaleFactor, pictureBoxPreview.ClientSize.Height * bitmapScaleFactor, 
-                false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, new SwopColorConverter());
+                false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, SwopColorConverter.Instance);
             Bitmap bitmap;
 
             using (grTarget) {

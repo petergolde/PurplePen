@@ -107,7 +107,7 @@ namespace AvPurplePen.Views
             RectangleF rect = new RectangleF(0, 0, 10F * bitmapWidth / bitmapHeight, 10F);
             IGraphicsBitmap sampleBitmap;
             using (Skia_BitmapGraphicsTarget bitmapTarget = new Skia_BitmapGraphicsTarget(
-                    bitmapWidth, bitmapHeight, false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, new SwopColorConverter())) {
+                    bitmapWidth, bitmapHeight, false, CmykColor.FromCmyk(0, 0, 0, 0), rect, false, SwopColorConverter.Instance)) {
                 viewModel.DrawSample(bitmapTarget);
                 sampleBitmap = bitmapTarget.FinishBitmap();
             }
@@ -116,7 +116,7 @@ namespace AvPurplePen.Views
                 // Draw the rendered sample onto the (already device-scaled) view canvas,
                 // filling the logical bounds. Do not dispose this target: it would
                 // dispose the view canvas, which is shared across paints.
-                Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, new SwopColorConverter());
+                Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, SwopColorConverter.Instance);
                 canvasTarget.DrawBitmap(sampleBitmap, new RectangleF(0, 0, (float)e.LogicalSize.Width, (float)e.LogicalSize.Height), BitmapScaling.HighQuality);
             }
         }
