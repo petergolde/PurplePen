@@ -1355,20 +1355,28 @@ namespace PurplePen.ViewModels
         #region Course commands
 
         /// <summary>
-        /// Shows the Add Course dialog.
+        /// Executes the Course/Add Course command. Shows the Add Course dialog,
+        /// defaulting the print scale to the All Controls print scale, and adds
+        /// the new course if the dialog is accepted.
         /// </summary>
         [RelayCommand]
         private async Task ShowAddCourseDialog()
         {
-            if (controller == null) return;
+            if (controller == null) { return; }
 
-#if PORTING
-            // TODO: Initialize ViewModel from current event data (map scale, etc.)
-            // and process the result to actually add the course.
-#endif
+            // Initialize the dialog, use all controls print scale as the default print scale.
+            DescriptionKind allControlsDescKind;
+            float allControlsPrintScale;
+            controller.GetAllControlsProperties(out allControlsPrintScale, out allControlsDescKind);
+
             AddCourseDialogViewModel vm = new AddCourseDialogViewModel();
-            bool result = await Services.DialogService.ShowDialogAsync(vm);
-            Debug.WriteLine("Dialog returned: " + result);
+            vm.InitializePrintScales(controller.MapScale);
+            vm.PrintScale = allControlsPrintScale;
+
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.NewCourse(vm.CourseKind, vm.CourseName, vm.ControlLabelKind, vm.ScoreColumn, vm.SecondaryTitlePipeDelimited,
+                    vm.PrintScale, vm.Climb, vm.Length, vm.DescKind, vm.FirstControlOrdinal, vm.HideFromReports);
+            }
         }
 
         /// <summary>
