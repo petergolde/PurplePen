@@ -880,7 +880,7 @@ namespace PurplePen.MapModel
                 Bitmap newBitmap = new Bitmap(currentBitmap.Width, currentBitmap.Height, currentBitmap.PixelFormat);
                 Graphics newGraphics = Graphics.FromImage(newBitmap);
                 newGraphics.PixelOffsetMode = this.Graphics.PixelOffsetMode;
-                newGraphics.Clear(Color.White);
+                newGraphics.Clear(Color.White);   // TODO: !!! I'm pretty sure this should be Transparent instead of White to get the blending correct. Since I'm moving everything to Skia I'm not going to fix this now.
                 this.ChangeGraphics(newGraphics);
 
                 bitmapStack.Push(newBitmap);
