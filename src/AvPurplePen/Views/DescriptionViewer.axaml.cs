@@ -73,11 +73,6 @@ public partial class DescriptionViewer : UserControl
         set => SetValue(DescriptionChangeCommandProperty, value);
     }
 
-#if !PORTING
-    // TODO: CustomSymbolText.
-#endif
-
-
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);

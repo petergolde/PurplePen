@@ -20,5 +20,8 @@ namespace PurplePen
         /// <param name="url">The URL to navigate to.</param>
         /// <returns>A task that completes when the launch has been attempted.</returns>
         Task ShowWebsite(string url);
+
+        // Launch Helptopic in the user's web browser, navigating to the given topic.
+        Task ShowHelpTopic(string topicName);
     }
 }

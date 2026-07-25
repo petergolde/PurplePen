@@ -4,12 +4,13 @@
 // Uses the current top-level window's Launcher to open the URL in the
 // user's default web browser.
 
-using System;
-using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using PurplePen;
+using PurplePen.ViewModels;
+using System;
+using System.Threading.Tasks;
 
 namespace AvPurplePen
 {
@@ -44,6 +45,18 @@ namespace AvPurplePen
         public async Task ShowWebsite(string url)
         {
             await RootTopLevel.Launcher.LaunchUriAsync(new Uri(url));
+        }
+
+        // Navigate to a particular help topic.
+        public async Task ShowHelpTopic(string topicName)
+        {
+            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
+                Message = "Help is not yet implemented in this beta release. This will be implemented in later beta releases.",
+                Buttons = MessageBoxButtons.Ok,
+                DefaultButton = MessageBoxButton.Ok,
+                Icon = MessageBoxIcon.Warning
+            };
+            await Services.DialogService.ShowDialogAsync(vm);
         }
     }
 }

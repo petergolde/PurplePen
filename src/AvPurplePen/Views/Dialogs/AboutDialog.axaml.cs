@@ -9,6 +9,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using AvUtil;
@@ -44,12 +45,9 @@ namespace AvPurplePen.Views
         /// <summary>
         /// Opens the Credits help topic.
         /// </summary>
-        private void CreditsButton_Click(object? sender, RoutedEventArgs e)
+        private async void CreditsButton_Click(object? sender, RoutedEventArgs e)
         {
-#if PORTING
-            // TODO: Wire up help system for Avalonia.
-            // Original: WindowsUtil.ShowHelpTopic(this, "Credits.htm");
-#endif
+            await Services.WebsiteLauncher.ShowHelpTopic("Credits.htm");
         }
 
         /// <summary>

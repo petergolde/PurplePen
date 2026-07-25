@@ -2761,11 +2761,9 @@ namespace PurplePen.ViewModels
         /// Shows the help table of contents.
         /// </summary>
         [RelayCommand]
-        private void HelpContents()
+        private async Task HelpContents()
         {
-#if !PORTING
-            ShowHelp(HelpNavigator.TableOfContents, null);
-#endif
+            await Services.WebsiteLauncher.ShowHelpTopic("TableOfContents.htm");
         }
 
         private bool TranslatedWebSiteExists()

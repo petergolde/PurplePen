@@ -11,12 +11,13 @@
 //
 // Migrated from WinForms PurplePen/CreateRouteGadget.cs.
 
-using System;
-using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
+using PurplePen;
 using PurplePen.ViewModels;
+using System;
+using System.Collections.Generic;
 
 namespace AvPurplePen.Views
 {
@@ -125,11 +126,9 @@ namespace AvPurplePen.Views
         }
 
         /// <summary>Opens the help topic for RouteGadget.</summary>
-        private void LearnMoreLink_Click(object? sender, RoutedEventArgs e)
+        private async void LearnMoreLink_Click(object? sender, RoutedEventArgs e)
         {
-#if PORTING
-            // TODO: Wire up help system (WindowsUtil.ShowHelpTopic equivalent).
-#endif
+            await Services.WebsiteLauncher.ShowHelpTopic("FileCreateRouteGadget.htm");
         }
     }
 }

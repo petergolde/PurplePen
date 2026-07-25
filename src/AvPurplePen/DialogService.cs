@@ -213,7 +213,9 @@ namespace AvPurplePen
         /// </summary>
         private async Task<bool> ShowFileOpenSingleAsync(FileOpenSingleViewModel viewModel)
         {
-            IStorageProvider storage = RootOwner.StorageProvider;
+            // Use the topmost open dialog as the owner, so the picker is modal
+            // relative to whatever dialog asked for it, not just the main window.
+            IStorageProvider storage = GetActiveOwner().StorageProvider;
 
             FilePickerOpenOptions options = new FilePickerOpenOptions {
                 AllowMultiple = false,
@@ -252,7 +254,9 @@ namespace AvPurplePen
         /// </summary>
         private async Task<bool> ShowFileSaveAsync(FileSaveViewModel viewModel)
         {
-            IStorageProvider storage = RootOwner.StorageProvider;
+            // Use the topmost open dialog as the owner, so the picker is modal
+            // relative to whatever dialog asked for it, not just the main window.
+            IStorageProvider storage = GetActiveOwner().StorageProvider;
 
             // Accept either ".ppen" or "ppen" from the caller — Avalonia
             // expects the bare extension without a leading dot.

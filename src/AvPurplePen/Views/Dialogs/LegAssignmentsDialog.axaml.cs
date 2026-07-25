@@ -58,12 +58,9 @@ namespace AvPurplePen.Views
         }
 
         /// <summary>Opens the help topic for fixed branch assignments.</summary>
-        private void LinkLabel_Click(object? sender, RoutedEventArgs e)
+        private async void LinkLabel_Click(object? sender, RoutedEventArgs e)
         {
-#if PORTING
-            // TODO: Wire up help system (WindowsUtil.ShowHelpTopic equivalent,
-            // help topic "VariationFixedBranches.htm").
-#endif
+            await Services.WebsiteLauncher.ShowHelpTopic("VariationFixedBranches.htm");
         }
 
         /// <summary>
