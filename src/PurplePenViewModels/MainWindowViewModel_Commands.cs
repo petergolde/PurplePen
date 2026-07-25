@@ -2925,54 +2925,6 @@ namespace PurplePen.ViewModels
         #region Debug commands
 
 
-        /// <summary>
-        /// Shows the Map Tester debug dialog.
-        /// </summary>
-        [RelayCommand]
-        private void ShowMapTester()
-        {
-#if !PORTING
-            MapTester mapTester = new MapTester();
-            mapTester.ShowDialog();
-            mapTester.Dispose();
-#endif
-        }
-
-
-        /// <summary>
-        /// Shows the Dump OCAD File debug dialog.
-        /// </summary>
-        [RelayCommand]
-        private void DumpOcadFile()
-        {
-#if !PORTING
-            OpenFileDialog openOcadFileDialog = new OpenFileDialog();
-            openOcadFileDialog.Filter = "OCAD files|*.ocd|All files|*.*";
-            openOcadFileDialog.FilterIndex = 1;
-            openOcadFileDialog.DefaultExt = "ocd";
-
-            DialogResult result = openOcadFileDialog.ShowDialog(this);
-            if (result != DialogResult.OK)
-                return;
-            string ocadFile = openOcadFileDialog.FileName;
-
-            SaveFileDialog saveDumpFileDialog = new SaveFileDialog();
-            saveDumpFileDialog.Filter = "Test file|*.txt";
-            saveDumpFileDialog.FilterIndex = 1;
-            saveDumpFileDialog.DefaultExt = "txt";
-
-            result = saveDumpFileDialog.ShowDialog(this);
-            if (result != DialogResult.OK)
-                return;
-            string dumpFile = saveDumpFileDialog.FileName;
-
-            using (TextWriter writer = new StreamWriter(dumpFile)) {
-                PurplePen.MapModel.DebugCode.OcadDump dumper = new PurplePen.MapModel.DebugCode.OcadDump();
-                dumper.DumpFile(ocadFile, writer);
-            }
-#endif
-        }
-
 
         /// <summary>
         /// Shows the Missing Translations debug dialog.
@@ -3008,65 +2960,6 @@ namespace PurplePen.ViewModels
             int y = GetCrashValue(); // will throw DivideByZeroException
         }
 
-        /// <summary>
-        /// Test: shows a message box with OK button and Information icon.
-        /// </summary>
-        [RelayCommand]
-        private async Task TestMessageBoxOk()
-        {
-            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
-                Message = "This is an informational message with an OK button.",
-                Buttons = MessageBoxButtons.Ok,
-                DefaultButton = MessageBoxButton.Ok,
-                Icon = MessageBoxIcon.Information
-            };
-            await Services.DialogService.ShowDialogAsync(vm);
-        }
-
-        /// <summary>
-        /// Test: shows a message box with OK/Cancel buttons and Warning icon.
-        /// </summary>
-        [RelayCommand]
-        private async Task TestMessageBoxOkCancel()
-        {
-            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
-                Message = "This is a warning message with OK and Cancel buttons.",
-                Buttons = MessageBoxButtons.OkCancel,
-                DefaultButton = MessageBoxButton.Ok,
-                Icon = MessageBoxIcon.Warning
-            };
-            await Services.DialogService.ShowDialogAsync(vm);
-        }
-
-        /// <summary>
-        /// Test: shows a message box with Yes/No buttons and Question icon.
-        /// </summary>
-        [RelayCommand]
-        private async Task TestMessageBoxYesNo()
-        {
-            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
-                Message = "This is a question message with Yes and No buttons. Do you want to proceed?",
-                Buttons = MessageBoxButtons.YesNo,
-                DefaultButton = MessageBoxButton.Yes,
-                Icon = MessageBoxIcon.Question
-            };
-            await Services.DialogService.ShowDialogAsync(vm);
-        }
-
-        /// <summary>
-        /// Test: shows a message box with Yes/No/Cancel buttons and Error icon.
-        /// </summary>
-        [RelayCommand]
-        private async Task TestMessageBoxYesNoCancel()
-        {
-            MessageBoxDialogViewModel vm = new MessageBoxDialogViewModel {
-                Message = "This is an error message with Yes, No, and Cancel buttons.",
-                Buttons = MessageBoxButtons.YesNoCancel,
-                DefaultButton = MessageBoxButton.Yes,
-                Icon = MessageBoxIcon.Error
-            };
-            await Services.DialogService.ShowDialogAsync(vm);
-        }
 
         #endregion // Debug commands
 
