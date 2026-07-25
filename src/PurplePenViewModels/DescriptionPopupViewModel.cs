@@ -25,6 +25,7 @@ namespace PurplePen.ViewModels
 
         private SymbolDB symbolDB;
         private string langId;
+        private Dictionary<string, string> customSymbolText;
 
         // The ID used for the "no symbol" item.
         public const string NoSymbolId = "none";
@@ -34,10 +35,11 @@ namespace PurplePen.ViewModels
         // Items to display in the grid, each with row/column placement.
         public ObservableCollection<PopupGridItemViewModel> MenuItems { get; } = new();
 
-        public DescriptionPopupViewModel(SymbolDB symbolDB, string langId, int cellContentPixelSize, DescriptionChangeData descriptionChangeData, PopupConfigurationData popupConfigurationData)
+        public DescriptionPopupViewModel(SymbolDB symbolDB, string langId, Dictionary<string, string> customSymbolText, int cellContentPixelSize, DescriptionChangeData descriptionChangeData, PopupConfigurationData popupConfigurationData)
         {
             this.symbolDB = symbolDB;
             this.langId = langId;
+            this.customSymbolText = customSymbolText;
             this.DescriptionChangeData = descriptionChangeData;
             this.Columns = 8;
 
@@ -100,14 +102,13 @@ namespace PurplePen.ViewModels
                 if (symbol.Kind == kind && symbol.HasVisualImage) {
                     IGraphicsBitmap image = SymbolImageCache.Instance.GetSymbolImage(symbol.Id);
                     string text = symbol.GetName(langId);
-#if !PORTING
+
                     // Handle custom symbol text.
                     if (customSymbolText.ContainsKey(symbol.Id)) {
                         string customText = customSymbolText[symbol.Id];
                         customText = customText.Replace("{0}", "").Trim();  // Remove {0} fillin.
                         text += string.Format(" ({0})", customText);         // add custom symbol text after the regular name for the symbol.
                     }
-#endif
 
                     ButtonGridItemViewModel button = new ButtonGridItemViewModel(image, symbol, text);
 

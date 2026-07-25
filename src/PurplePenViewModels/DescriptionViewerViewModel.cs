@@ -48,6 +48,9 @@ namespace PurplePen.ViewModels
             }
         }
 
+        // Custom symbol text, keyed by symbol ID. This is used to override the default symbol name in the popup.
+        public Dictionary<string, string> CustomSymbolText { get; set; } = new Dictionary<string, string>();
+
         // The user has clicked on a new line in the description viewer. 
         partial void OnSelectionChanged(SelectedLines? value)
         {
@@ -198,7 +201,7 @@ namespace PurplePen.ViewModels
             if (popupData == null || popupKind == DescriptionChangeKind.None)
                 return null;
             else
-                return new DescriptionPopupViewModel(symbolDB, DescriptionData.LangId, cellContentPixelSize, new DescriptionChangeData(popupKind, hitTest.firstLine, hitTest.box), popupData);
+                return new DescriptionPopupViewModel(symbolDB, DescriptionData.LangId, CustomSymbolText, cellContentPixelSize, new DescriptionChangeData(popupKind, hitTest.firstLine, hitTest.box), popupData);
 
         }
 

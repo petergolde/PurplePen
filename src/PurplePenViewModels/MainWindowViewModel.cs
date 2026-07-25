@@ -253,9 +253,8 @@ namespace PurplePen.ViewModels
                 UpdatePrintArea();
                 UpdateTopology();
                 UpdateTopologyHighlight();
-#if !PORTING
                 UpdateCustomSymbolText();
-#endif
+
                 // Warn about non-renderable objects (fire-and-forget — the controller
                 // reports the list only once per map file, so re-entry from a
                 // later idle tick while the dialog is open is harmless).
@@ -507,6 +506,27 @@ namespace PurplePen.ViewModels
                 return;   // happens in design mode, for example.
 
             TopologyHighlights = controller.GetHighlights(Pane.Topology);
+        }
+
+        // Get the dictionary mapping each symbol to the singular custom text for it, and give it to the description control for the popups.
+        void UpdateCustomSymbolText()
+        {
+            if (controller == null) return;
+
+            Dictionary<string, List<SymbolText>> customSymbolText;
+            Dictionary<string, bool> customSymbolKey;
+
+            controller.GetCustomSymbolText(out customSymbolText, out customSymbolKey);
+
+            string langId = controller.GetDescriptionLanguage();
+            Dictionary<string, string> symbolTextDict = new Dictionary<string, string>();
+
+            foreach (var pair in customSymbolText) {
+                if (Symbol.ContainsLanguage(pair.Value, langId))
+                    symbolTextDict.Add(pair.Key, Symbol.GetBestSymbolText(symbolDB, pair.Value, langId, false, "", ""));
+            }
+
+            this.DescriptionViewerViewModel.CustomSymbolText = symbolTextDict;
         }
 
         #endregion // State updating on idle.
