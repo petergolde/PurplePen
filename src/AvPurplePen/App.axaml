@@ -15,6 +15,14 @@
         <!-- Override Semi.Avalonia's default font (Inter) with our embedded font -->
         <FontFamily x:Key="SemiFontFamilyRegular">avares://AvPurplePen/Assets/UIFonts#Source Sans 3</FontFamily>
 
+        <!-- Fixed-pitch font, used where column alignment matters (currently the error
+             details dialog's stack traces). No monospace font is embedded, so this names
+             the usual platform faces; Avalonia falls through the list to the first one
+             that resolves, and to the platform default if none do.
+             NOTE: ErrorDetailsDialog.axaml repeats this list in a local resource override.
+             Keep the two in step; see the comment there for why the override is needed. -->
+        <FontFamily x:Key="MonospaceFontFamily">Consolas,Menlo,DejaVu Sans Mono,Courier New</FontFamily>
+
         <!-- Override Semi.Avalonia's menu popup max height (default 400) to prevent scrolling -->
         <x:Double x:Key="MenuFlyoutMaxHeight">10000</x:Double>
 

@@ -31,6 +31,14 @@ namespace PurplePen.ViewModels
     {
         Controller? controller = null;
         SymbolDB symbolDB = null!;
+
+        /// <summary>
+        /// The controller driving this window, or null before Initialize has been called
+        /// (for example in design mode). Exposed so that the crash handler can query the
+        /// loaded file name and dirty state, and snapshot the event database for recovery,
+        /// without having to reach through an unrelated child ViewModel.
+        /// </summary>
+        public Controller? Controller => controller;
         long changeNum = 0;         // When this changes, state information needs to be updated in the UI.
         bool updatingTabs = false;  // Guard to prevent re-entrant controller calls during UpdateTabs.
         bool hidePrintArea = false; // Guard to allow disabling print area display at times.

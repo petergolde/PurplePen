@@ -557,6 +557,50 @@ Executing non-persistent action 'bar'
         }
 
         [Test]
+        public void MarkDirty()
+        {
+            // Test that marking dirty works. This is the inverse of MarkClean, and is used
+            // by crash recovery to say "these in-memory contents differ from the file".
+            UndoMgr undomgr = new UndoMgr(5);
+            StringWriter writer = new StringWriter();
+
+            // A freshly created undo manager is clean.
+            Assert.IsFalse(undomgr.IsDirty);
+
+            // Marking dirty with no commands recorded still makes it dirty.
+            undomgr.MarkDirty();
+            Assert.IsTrue(undomgr.IsDirty);
+
+            // And MarkClean puts it back.
+            undomgr.MarkClean();
+            Assert.IsFalse(undomgr.IsDirty);
+
+            // Record some commands, then mark clean, then dirty again.
+            undomgr.BeginCommand(99, "command #1");
+            undomgr.RecordAction(new SimpleAction(writer, "action1"));
+            undomgr.EndCommand(99);
+
+            Assert.IsTrue(undomgr.IsDirty);
+            undomgr.MarkClean();
+            Assert.IsFalse(undomgr.IsDirty);
+            undomgr.MarkDirty();
+            Assert.IsTrue(undomgr.IsDirty);
+
+            // Marking dirty doesn't disturb the undo/redo state.
+            Assert.IsTrue(undomgr.CanUndo);
+            Assert.IsFalse(undomgr.CanRedo);
+
+            // Marking dirty twice is harmless.
+            undomgr.MarkDirty();
+            Assert.IsTrue(undomgr.IsDirty);
+
+            // Cannot mark dirty in the middle of a command.
+            undomgr.BeginCommand(98, "command #2");
+            Assert.Throws<ApplicationException>(() => undomgr.MarkDirty());
+            undomgr.EndCommand(98);
+        }
+
+        [Test]
         public void EmptyCommand()
         {
             // Check clearing the undo mgr.

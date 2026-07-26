@@ -99,6 +99,25 @@ namespace PurplePen.MapModel
                 commands[lastExecuted].isDirty = false;
         }
 
+        /// <summary>
+        /// Marks the state of the document as dirty, without any change having been
+        /// made. IsDirty will return true. This is the exact inverse of MarkClean, and
+        /// is used when the in-memory contents of a document are known to differ from
+        /// the file it is associated with -- for example after crash recovery, where the
+        /// contents were read from a recovery snapshot but the document is presented
+        /// under the original file name.
+        /// </summary>
+        public void MarkDirty()
+        {
+            if (CommandInProgress)
+                throw new ApplicationException("Cannot mark as dirty when inside a command.");
+
+            // Every command already defaults to making the document dirty (see the
+            // Command constructor), so only the current one can possibly be clean.
+            if (commands.Count > 0 && lastExecuted < commands.Count)
+                commands[lastExecuted].isDirty = true;
+        }
+
 
         /// <summary>
         /// Clear the state of the undo manager. Typically used when a new document

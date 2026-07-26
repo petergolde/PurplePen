@@ -545,6 +545,37 @@ namespace PurplePen
             return await LoadInitialFile(fileName, true);
         }
 
+        // Load an event from a crash-recovery snapshot, but present it as the original file that the
+        // snapshot was taken from. The event data comes from recoveryFileName, but the loaded file
+        // name is originalFileName, so saving overwrites the user's real file rather than the
+        // snapshot. The document starts out dirty, because its in-memory contents came from the
+        // snapshot and therefore differ from what is on disk at originalFileName; this makes the
+        // user's recovered changes behave exactly like unsaved changes they had just made.
+        // Should only be called before any file has been loaded.
+        // Returns true if the recovery file was loaded successfully.
+        public async Task<bool> LoadRecoveryFile(string recoveryFileName, string originalFileName)
+        {
+            // Load the snapshot in the normal way. setAsLastLoadedFile is false so the snapshot's
+            // path in the recovery folder is never recorded as the last loaded file.
+            if (!await LoadInitialFile(recoveryFileName, false))
+                return false;
+
+            // Re-point the controller at the original file. LoadInitialFile set fileName to the
+            // snapshot; from here on the user is editing the original document.
+            this.fileName = Path.GetFullPath(originalFileName);
+            if (UserSettings.Current.LastLoadedFile != this.fileName) {
+                UserSettings.Current.LastLoadedFile = this.fileName;
+                UserSettings.Current.Save();
+            }
+
+            // LoadInitialFile marked the document clean (it matched the snapshot it was read from).
+            // Relative to the original file, though, it is dirty.
+            undoMgr.MarkDirty();
+            ForceChangeUpdate();
+
+            return true;
+        }
+
         // Info needed to create a new event.
         public struct CreateEventInfo
         {

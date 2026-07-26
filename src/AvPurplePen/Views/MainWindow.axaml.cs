@@ -93,9 +93,19 @@ namespace AvPurplePen.Views
         }
 
         // Raised by the ViewModel when the current file has been closed but a new event could not be
-        // created or loaded, so there is no open file. Return to the initial welcome screen: create and
-        // show a fresh initial screen, make it the application's main window, then close this window.
+        // created or loaded, so there is no open file.
         private void ViewModel_ReloadInitialScreenRequested()
+        {
+            ShowInitialScreenInstead();
+        }
+
+        /// <summary>
+        /// Replaces this main window with the welcome screen. Used both when the ViewModel closes
+        /// the current file without opening another, and when a file named on the command line
+        /// fails to load. Bypasses the save prompt in MainWindow_Closing, because in both cases
+        /// there is nothing left to save.
+        /// </summary>
+        public void ShowInitialScreenInstead()
         {
             InitialScreenWindow initialScreen = new InitialScreenWindow {
                 DataContext = new InitialScreenViewModel(),

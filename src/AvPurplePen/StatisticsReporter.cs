@@ -1,7 +1,8 @@
 // StatisticsReporter.cs
 //
-// Reports anonymous application-invocation statistics to the Purple Pen
-// monitoring service without delaying application startup.
+// Reports anonymous application-invocation statistics, and unhandled-exception
+// reports, to the Purple Pen monitoring service without delaying application
+// startup.
 
 using PurplePen;
 using System;
@@ -11,17 +12,34 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AvPurplePen
 {
     /// <summary>
-    /// Reports anonymous information about a Purple Pen application invocation.
+    /// Reports anonymous information about a Purple Pen application invocation,
+    /// and about unhandled exceptions when the crash handler asks it to.
     /// </summary>
     public class StatisticsReporter
     {
         private const string statisticsEndpoint = "http://monitor.purple-pen.org/api/Invocation";
+        private const string exceptionEndpoint = "http://monitor.purple-pen.org/api/Exception";
+
+        /// <summary>
+        /// The most exception reports to send in one run of the application. This bounds how
+        /// much traffic a badly misbehaving session can generate: a fault that repeats on every
+        /// frame could otherwise produce reports indefinitely.
+        /// </summary>
+        private const int maxExceptionReportsPerSession = 10;
+
         private readonly IHttpClientFactory httpClientFactory;
+
+        // How many exception reports have been sent this run. This class is registered as a
+        // singleton, so the instance field is effectively per-process. Updated with Interlocked
+        // because reports can be requested from the UI thread, a background thread, and the
+        // finalizer thread (unobserved task exceptions).
+        private int exceptionReportsSent;
 
         /// <summary>
         /// Initializes a statistics reporter that obtains HTTP clients from the
@@ -65,6 +83,84 @@ namespace AvPurplePen
                 // our HttpClient already, which is the best we can do. If the statistics aren't recorded,
                 // no big deal. For example, the user might have no internet connection.
             }
+        }
+
+        /// <summary>
+        /// Reports an unhandled exception to the monitoring service, completing when the
+        /// attempt has finished. Unlike <see cref="ReportStatistics"/>, which is fire and
+        /// forget, this returns a task, because the crash handler has to be able to wait
+        /// for the report to be sent before terminating the process on the Restart path.
+        /// This method never throws: reporting a crash must not be able to cause one.
+        /// </summary>
+        /// <param name="exception">The unhandled exception being reported.</param>
+        /// <param name="userDescription">
+        /// What the user typed about what they were doing when the error occurred. May be
+        /// null or empty if the user chose not to say anything. This is the only part of the
+        /// report that isn't derivable from the exception itself, and so it is the most
+        /// valuable part of it.
+        /// </param>
+        /// <param name="cancellationToken">Cancels the outstanding HTTP request.</param>
+        /// <returns>
+        /// True if the monitoring service accepted the report; false on any failure, and false
+        /// once this run has already sent <see cref="maxExceptionReportsPerSession"/> reports.
+        /// </returns>
+        public async Task<bool> ReportExceptionAsync(Exception exception,
+                                                    string userDescription,
+                                                    CancellationToken cancellationToken = default)
+        {
+            if (exception == null)
+                return false;
+
+            // The per-session limit is enforced here rather than in the callers, so that it
+            // covers every path that can send a report, including any added later. Attempts are
+            // counted rather than successes: a failed send still costs the service a request
+            // (several, given the client's retry policy), which is what the limit exists to bound.
+            if (Interlocked.Increment(ref exceptionReportsSent) > maxExceptionReportsPerSession)
+                return false;
+
+            try {
+                ExceptionReport payload = BuildExceptionReport(exception, userDescription);
+
+                // PostAsJsonAsync handles JSON escaping, UTF-8 encoding, and the
+                // application/json content type.
+                using HttpClient client = httpClientFactory.CreateClient();
+                HttpResponseMessage response =
+                    await client.PostAsJsonAsync(exceptionEndpoint, payload, cancellationToken).ConfigureAwait(false);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception) {
+                // No internet connection, no service, a cancellation, or a serialization
+                // problem. A lost crash report is unfortunate but is never worth throwing
+                // a second exception out of the crash handler over.
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Builds the payload sent to the exception-reporting endpoint.
+        /// </summary>
+        /// <param name="exception">The unhandled exception being reported.</param>
+        /// <param name="userDescription">What the user typed; may be null or empty.</param>
+        /// <returns>The report to serialize as JSON.</returns>
+        private static ExceptionReport BuildExceptionReport(Exception exception, string userDescription)
+        {
+            return new ExceptionReport {
+                // GetType().FullName rather than Name, so that two same-named exception
+                // types from different namespaces can be told apart on the server.
+                ExceptionType = exception.GetType().FullName ?? exception.GetType().Name,
+                Message = exception.Message ?? "",
+
+                // ToString() includes the message, the stack trace, and the full chain of
+                // inner exceptions -- everything needed to diagnose the problem by hand.
+                ExceptionText = exception.ToString(),
+
+                // Sent separately as well, so the server can index and group on it without
+                // having to parse it back out of ExceptionText.
+                StackTrace = exception.StackTrace ?? "",
+                HResult = exception.HResult,
+                UserDescription = userDescription ?? "",
+                MachineInformation = GetMachineInformation()
+            };
         }
 
         private static MachineInformation GetMachineInformation()
@@ -251,6 +347,40 @@ namespace AvPurplePen
 
             [JsonPropertyName("Architecture")]
             public string Architecture { get; init; } = "";
+        }
+
+        /// <summary>
+        /// Defines the JSON payload accepted by the exception-reporting endpoint. The
+        /// MachineInformation sub-object is exactly the payload that the invocation
+        /// endpoint already receives, so the monitoring service can share its parsing
+        /// between the two kinds of report.
+        /// </summary>
+        private sealed class ExceptionReport
+        {
+            [JsonPropertyName("ExceptionType")]
+            public string ExceptionType { get; init; } = "";
+
+            [JsonPropertyName("Message")]
+            public string Message { get; init; } = "";
+
+            [JsonPropertyName("ExceptionText")]
+            public string ExceptionText { get; init; } = "";
+
+            [JsonPropertyName("StackTrace")]
+            public string StackTrace { get; init; } = "";
+
+            [JsonPropertyName("HResult")]
+            public int HResult { get; init; }
+
+            /// <summary>
+            /// What the user typed into the crash dialog describing what they were doing.
+            /// Empty if the user chose not to say anything.
+            /// </summary>
+            [JsonPropertyName("UserDescription")]
+            public string UserDescription { get; init; } = "";
+
+            [JsonPropertyName("MachineInformation")]
+            public MachineInformation MachineInformation { get; init; } = new MachineInformation();
         }
     }
 }

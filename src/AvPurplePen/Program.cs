@@ -16,23 +16,42 @@ namespace AvPurplePen
         [STAThread]
         public static void Main(string[] args)
         {
-            // Initialize things needed for PurplePenCore.
-            RegisterServices();
+            // Install the process-wide exception handlers before anything at all can fail.
+            // The Avalonia dispatcher does not exist yet, so its handlers are installed later,
+            // from App.Initialize.
+            CrashHandler.InstallProcessHandlers();
 
-            // Set up user settings.
-            string userSettingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PurplePen", "PurplePenSettings.json");
-            UserSettings.Initialize(userSettingsPath);
+            try {
+                // Initialize things needed for PurplePenCore.
+                RegisterServices();
 
-            InitUILanguage();
-            FontDesc.InitializeFonts();
+                // Set up user settings.
+                string userSettingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PurplePen", "PurplePenSettings.json");
+                UserSettings.Initialize(userSettingsPath);
 
-            // Report statistics about the invocation of Purple Pen. This is done asynchronously, so it doesn't block the startup of the application.
-            Services.ServiceProvider.GetRequiredService<StatisticsReporter>().ReportStatistics();
+                InitUILanguage();
+                FontDesc.InitializeFonts();
 
-            // Initialization code. Don't use any Avalonia APIs or any
-            // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
-            // yet and stuff might break.
-            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+                // Report statistics about the invocation of Purple Pen. This is done asynchronously, so it doesn't block the startup of the application.
+                Services.ServiceProvider.GetRequiredService<StatisticsReporter>().ReportStatistics();
+
+                // Initialization code. Don't use any Avalonia APIs or any
+                // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
+                // yet and stuff might break.
+                BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+            }
+            // The "when" filter matters as much as the catch body. Under a debugger (without
+            // PPEN_DEBUGEXCEPTIONHANDLING) the filter returns false, so the exception keeps
+            // propagating and the debugger still breaks on it as unhandled. A plain catch with
+            // a rethrow would not do: the stack would already have unwound to here by the time
+            // we decided, losing exactly the state the developer wants to look at.
+            catch (Exception e) when (!CrashHandler.SkipInstallation) {
+                // Anything reaching here either happened before Avalonia was running -- in which
+                // case there is no way to show a window -- or escaped the dispatcher loop
+                // entirely. Either way the application is over; report what we can and get out.
+                CrashHandler.HandleFatalStartupException(e);
+                Environment.Exit(1);
+            }
         }
 
         // Initialize all the services that PurplePenCore (and the application as a whole) uses.

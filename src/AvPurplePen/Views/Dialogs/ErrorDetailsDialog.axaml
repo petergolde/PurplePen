@@ -1,0 +1,90 @@
+<!--
+    ErrorDetailsDialog.axaml
+
+    Shows the raw text of an unhandled exception (Exception.ToString(): the message, the
+    stack trace, and the chain of inner exceptions) in a read-only monospace text box.
+    Opened modally from the crash dialog's "View Error Details..." button.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvPurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="700" d:DesignHeight="500"
+        x:Class="AvPurplePen.Views.ErrorDetailsDialog"
+        Classes="dialog"
+        x:DataType="vm:ErrorDetailsDialogViewModel"
+        Title="{resx:Localize ErrorDetailsDialog_Text}"
+        Width="700" Height="500"
+        MinWidth="400" MinHeight="250"
+        CanResize="True"
+        CanMaximize="True"
+        CanMinimize="False"
+        Icon="/Assets/transparent.ico"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        WindowDecorations="Full">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:ErrorDetailsDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Buttons, docked at the bottom right. Copy is offered because a user who declines
+             to send a report will often want to paste these details somewhere else (an email,
+             or the Purple Pen forum) instead, and selecting a long stack trace by hand is
+             tedious. -->
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Spacing="8"
+                    Margin="0,12,0,0">
+            <Button x:Name="copyButton"
+                    Content="{resx:Localize ErrorDetailsDialog_copyButton_Text}"
+                    MinWidth="140"
+                    HorizontalContentAlignment="Center"
+                    Click="CopyButton_Click"/>
+
+            <Button x:Name="closeButton"
+                    Content="{resx:Localize ErrorDetailsDialog_closeButton_Text}"
+                    MinWidth="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsCancel="True"
+                    Click="CloseButton_Click"/>
+        </StackPanel>
+
+        <!-- The exception text. Not wrapped, because stack frames are much easier to scan
+             one per line; a horizontal scrollbar handles the long ones. -->
+        <TextBox x:Name="exceptionTextBox"
+                 Text="{Binding ExceptionText}"
+                 IsReadOnly="True"
+                 AcceptsReturn="True"
+                 TextWrapping="NoWrap"
+                 FontFamily="{StaticResource MonospaceFontFamily}"
+                 FontWeight="Normal"
+                 VerticalAlignment="Stretch"
+                 VerticalContentAlignment="Top"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+            <!-- Setting FontFamily on the TextBox above is not enough on its own. The font
+                 actually reaches the text through DynamicResource lookups (App.axaml's
+                 global ":is(TemplatedControl)" style, and Semi.Avalonia's own template),
+                 which resolve against the nearest enclosing resource scope rather than the
+                 control's FontFamily property. Redefining the two keys here, on the TextBox
+                 itself, makes those lookups find the fixed-pitch font while leaving the rest
+                 of the dialog in the normal UI font. -->
+            <TextBox.Resources>
+                <FontFamily x:Key="DefaultFontFamily">Consolas,Menlo,DejaVu Sans Mono,Courier New</FontFamily>
+                <FontFamily x:Key="SemiFontFamilyRegular">Consolas,Menlo,DejaVu Sans Mono,Courier New</FontFamily>
+            </TextBox.Resources>
+        </TextBox>
+
+    </DockPanel>
+
+</Window>

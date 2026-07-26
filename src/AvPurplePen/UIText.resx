@@ -3808,4 +3808,49 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="PaperSizeControl_checkBoxLandscape_Text" xml:space="preserve">
     <value>Landscape</value>
   </data>
+  <data name="CrashDialog_Text" xml:space="preserve">
+    <value>Purple Pen has crashed</value>
+  </data>
+  <data name="CrashDialog_introLabel_Text" xml:space="preserve">
+    <value>An error has occurred. In order to help us fix the problem, please give us any additional information about what caused the error, and send us an error report.</value>
+  </data>
+  <data name="CrashDialog_sendReportCheckBox_Text" xml:space="preserve">
+    <value>Send error report</value>
+  </data>
+  <data name="CrashDialog_viewDetailsButton_Text" xml:space="preserve">
+    <value>View Error Details...</value>
+  </data>
+  <data name="CrashDialog_descriptionLabel_Text" xml:space="preserve">
+    <value>Please tell us what you did immediately before this error occurred:</value>
+  </data>
+  <data name="CrashDialog_descriptionTextBox_Watermark" xml:space="preserve">
+    <value>Give as much detail as possible as to what you were doing and what might have triggered the error.</value>
+  </data>
+  <data name="CrashDialog_explanationLabel_Text" xml:space="preserve">
+    <value>In many cases, you can continue working without problem. You can also restart Purple Pen. If you restart, Purple Pen will attempt to save and restore your current work in progress.</value>
+  </data>
+  <data name="CrashDialog_fatalExplanationLabel_Text" xml:space="preserve">
+    <value>Purple Pen cannot continue running and must be restarted. If you restart, Purple Pen will attempt to save and restore your current work in progress.</value>
+  </data>
+  <data name="CrashDialog_recoveryLabel_Text" xml:space="preserve">
+    <value>Your unsaved changes have been saved, and will be restored if you restart.</value>
+  </data>
+  <data name="CrashDialog_continueButton_Text" xml:space="preserve">
+    <value>Continue Working</value>
+  </data>
+  <data name="CrashDialog_restartButton_Text" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="CrashDialog_sendingLabel_Text" xml:space="preserve">
+    <value>Sending error report...</value>
+  </data>
+  <data name="ErrorDetailsDialog_Text" xml:space="preserve">
+    <value>Error Details</value>
+  </data>
+  <data name="ErrorDetailsDialog_closeButton_Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ErrorDetailsDialog_copyButton_Text" xml:space="preserve">
+    <value>Copy to Clipboard</value>
+  </data>
 </root>

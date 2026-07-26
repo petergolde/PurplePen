@@ -1,0 +1,158 @@
+<!--
+    CrashDialog.axaml
+
+    Shown when an unhandled exception occurs. Asks the user what they were doing, offers to
+    send an error report, and lets them either keep working or restart with their unsaved
+    work restored.
+
+    Layout follows the legacy WinForms crash dialog: bold intro, a "send error report"
+    checkbox paired with a "View Error Details..." button, a large free-text box, an
+    explanatory paragraph, and the two action buttons at the bottom right.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvPurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="580" d:DesignHeight="460"
+        x:Class="AvPurplePen.Views.CrashDialog"
+        Classes="dialog"
+        x:DataType="vm:CrashDialogViewModel"
+        Title="{resx:Localize CrashDialog_Text}"
+        Width="580" Height="460"
+        MinWidth="460" MinHeight="380"
+        CanResize="True"
+        CanMaximize="False"
+        CanMinimize="False"
+        Icon="/Assets/transparent.ico"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        WindowDecorations="Full">
+
+    <!-- Design-time preview data -->
+    <Design.DataContext>
+        <vm:CrashDialogViewModel/>
+    </Design.DataContext>
+
+    <Grid Margin="16" RowDefinitions="Auto,Auto,Auto,*,Auto,Auto">
+
+        <!-- Row 0: what happened, in bold so it reads as the headline -->
+        <TextBlock Grid.Row="0"
+                   x:Name="introLabel"
+                   Text="{resx:Localize CrashDialog_introLabel_Text}"
+                   FontWeight="Bold"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,14"/>
+
+        <!-- Row 1: the send-report checkbox, and the button that shows the raw exception -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,0,0,14">
+            <CheckBox Grid.Column="0"
+                      x:Name="sendReportCheckBox"
+                      Content="{resx:Localize CrashDialog_sendReportCheckBox_Text}"
+                      IsChecked="{Binding SendErrorReport, Mode=TwoWay}"
+                      VerticalAlignment="Center"/>
+
+            <Button Grid.Column="1"
+                    x:Name="viewDetailsButton"
+                    Classes="Small"
+                    Content="{resx:Localize CrashDialog_viewDetailsButton_Text}"
+                    Width="150"
+                    HorizontalContentAlignment="Center"
+                    Click="ViewDetailsButton_Click"/>
+        </Grid>
+
+        <!-- Rows 2 and 3: the prompt and the free-text box the user describes the problem in.
+
+             These fade out rather than collapse when the checkbox is cleared. Setting
+             IsVisible="False" would collapse the star-sized row 3 to nothing and make the
+             whole dialog jump; Opacity keeps the layout stable. IsHitTestVisible stops the
+             invisible text box from still swallowing clicks and keyboard focus. -->
+        <TextBlock Grid.Row="2"
+                   x:Name="descriptionLabel"
+                   Text="{resx:Localize CrashDialog_descriptionLabel_Text}"
+                   TextWrapping="Wrap"
+                   Opacity="{Binding DescriptionOpacity}"
+                   Margin="0,0,0,6"/>
+
+        <TextBox Grid.Row="3"
+                 x:Name="descriptionTextBox"
+                 Text="{Binding UserDescription, Mode=TwoWay}"
+                 PlaceholderText="{resx:Localize CrashDialog_descriptionTextBox_Watermark}"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Stretch"
+                 VerticalContentAlignment="Top"
+                 Opacity="{Binding DescriptionOpacity}"
+                 IsHitTestVisible="{Binding SendErrorReport}"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+        <!-- Row 4: what happens next. Which paragraph applies depends on whether the
+             application is able to keep running at all. -->
+        <StackPanel Grid.Row="4" Margin="0,14,0,0">
+            <TextBlock x:Name="explanationLabel"
+                       Text="{resx:Localize CrashDialog_explanationLabel_Text}"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding CanContinue}"/>
+
+            <TextBlock x:Name="fatalExplanationLabel"
+                       Text="{resx:Localize CrashDialog_fatalExplanationLabel_Text}"
+                       TextWrapping="Wrap"
+                       IsVisible="{Binding !CanContinue}"/>
+
+            <!-- Only shown when a recovery snapshot was actually written, so we never
+                 promise to restore work that we failed to save. -->
+            <TextBlock x:Name="recoveryLabel"
+                       Text="{resx:Localize CrashDialog_recoveryLabel_Text}"
+                       TextWrapping="Wrap"
+                       Margin="0,6,0,0"
+                       IsVisible="{Binding HasRecoverableChanges}"/>
+        </StackPanel>
+
+        <!-- Row 5: progress on the left (only while a report is in flight), actions on the right -->
+        <Grid Grid.Row="5" ColumnDefinitions="Auto,*,Auto,Auto" Margin="0,16,0,0">
+
+            <StackPanel Grid.Column="0"
+                        Orientation="Vertical"
+                        Spacing="2"
+                        VerticalAlignment="Center"
+                        IsVisible="{Binding IsSending}">
+                <ProgressBar IsIndeterminate="True"
+                             VerticalAlignment="Center"/>
+                <TextBlock Text="{resx:Localize CrashDialog_sendingLabel_Text}"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <!-- Wider than the standard 85, because "Continue Working" doesn't fit in it,
+                 and wider still in translation. Hidden entirely when the application cannot
+                 actually continue.
+
+                 This is the default (Enter) button, since carrying on is the less disruptive
+                 choice and the one that is right most of the time. When the application cannot
+                 continue this button is hidden, so the default moves to Restart instead -
+                 otherwise Enter would be bound to a button that isn't on screen. -->
+            <Button Grid.Column="2"
+                    x:Name="continueButton"
+                    Content="{resx:Localize CrashDialog_continueButton_Text}"
+                    MinWidth="130"
+                    Margin="0,0,8,0"
+                    HorizontalContentAlignment="Center"
+                    IsVisible="{Binding CanContinue}"
+                    IsDefault="{Binding CanContinue}"
+                    IsEnabled="{Binding !IsSending}"
+                    Click="ContinueButton_Click"/>
+
+            <Button Grid.Column="3"
+                    x:Name="restartButton"
+                    Content="{resx:Localize CrashDialog_restartButton_Text}"
+                    MinWidth="130"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="{Binding !CanContinue}"
+                    IsEnabled="{Binding !IsSending}"
+                    Click="RestartButton_Click"/>
+        </Grid>
+
+    </Grid>
+
+</Window>
