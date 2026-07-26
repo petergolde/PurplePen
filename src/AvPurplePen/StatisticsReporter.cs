@@ -52,6 +52,23 @@ namespace AvPurplePen
         /// <returns>A task that completes after the report attempt finishes.</returns>
         private async Task CollectAndReportStatisticsAsync()
         {
+            MachineInformation payload = GetMachineInformation();
+
+            try {
+                // PostAsJsonAsync handles JSON escaping, UTF-8 encoding, and the
+                // application/json content type.
+                using HttpClient client = httpClientFactory.CreateClient();
+                await client.PostAsJsonAsync(statisticsEndpoint, payload).ConfigureAwait(false);
+            }
+            catch (Exception) {
+                // Statistics are nonessential, so ignore exceptions. We are using resiliance on 
+                // our HttpClient already, which is the best we can do. If the statistics aren't recorded,
+                // no big deal. For example, the user might have no internet connection.
+            }
+        }
+
+        private static MachineInformation GetMachineInformation()
+        {
             // Use the configured UI language when available. An empty setting
             // means the application is following the operating-system culture.
             string uiLanguage = UserSettings.Current.UILanguage;
@@ -71,9 +88,9 @@ namespace AvPurplePen
             else
                 architecture = RuntimeInformation.ProcessArchitecture + " on " + RuntimeInformation.OSArchitecture;
 
-            // Preserve the payload used by the legacy updater so the monitoring
+            // Preserve the machineInformation used by the legacy updater so the monitoring
             // service receives exactly the fields and values it already expects.
-            StatisticsPayload payload = new StatisticsPayload {
+            MachineInformation machineInformation = new MachineInformation {
                 Version = versionString,
                 Locale = CultureInfo.CurrentCulture.Name,
                 TimeZone = TimeZoneInfo.Local.StandardName,
@@ -85,17 +102,7 @@ namespace AvPurplePen
                 Architecture = architecture
             };
 
-            try {
-                // PostAsJsonAsync handles JSON escaping, UTF-8 encoding, and the
-                // application/json content type.
-                using HttpClient client = httpClientFactory.CreateClient();
-                await client.PostAsJsonAsync(statisticsEndpoint, payload).ConfigureAwait(false);
-            }
-            catch (Exception) {
-                // Statistics are nonessential, so ignore exceptions. We are using resiliance on 
-                // our HttpClient already, which is the best we can do. If the statistics aren't recorded,
-                // no big deal. For example, the user might have no internet connection.
-            }
+            return machineInformation;
         }
 
         /// <summary>
@@ -214,9 +221,9 @@ namespace AvPurplePen
         }
 
         /// <summary>
-        /// Defines the JSON payload accepted by the invocation-statistics endpoint.
+        /// Defines the JSON machineInformation accepted by the invocation-statistics endpoint.
         /// </summary>
-        private sealed class StatisticsPayload
+        private sealed class MachineInformation
         {
             [JsonPropertyName("Version")]
             public string Version { get; init; } = "";

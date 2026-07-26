@@ -105,3 +105,20 @@ Hand cursor isn't show when dragging map.
 
 Consider turning on Aliasing for printing, when we do explicit printing on Windows.
 
+List of stuff:
+  - Checking for updated map file.
+  - Cancel mode.
+  - Out of bounds image.
+  - Arial/Times New Roman/Courier New fonts for linux and mac. Use CrossCore fonts for these.
+  - CrashReporter - need to redo this to be cross platform and use web request to a web server instead of email.
+  - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
+    we should update the checking mechanism to be more robust and have a better format.
+  - Fix & and _ prefixes in resources.
+
+  After Beta 1:
+  - Direct printing. Different for Windows/Mac/Linux.
+  - Help file.
+  - Hand cursor isn't show when dragging map.
+  - Checking for and installing Roboto fonts.
+  - Dialogs for localizing descriptions text.
+  - Update PdfSharp to latest version.
