@@ -237,8 +237,16 @@
                 <MenuItem x:Name="addOptCrossingMenu" Header="{resx:Localize MainFrame_addOptCrossingMenu_Text}" Command="{Binding AddOptCrossingCommand}">
                     <MenuItem.Icon><Image Source="/Assets/Toolbar/optionalCrossingPointItem.png" Width="16" Height="16"/></MenuItem.Icon>
                 </MenuItem>
-                <MenuItem x:Name="addOutOfBoundsMenu" Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}" Command="{Binding AddOutOfBoundsCommand}">
+                <!-- We want the out of bounds menu item to have potentially two different icons, based on the AddOutOfBoundsUsesDangerousIcon view-model property -->
+                <MenuItem x:Name="addOutOfBoundsMenu" Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}" 
+                          IsVisible="{Binding !AddOutOfBoundsUsesDangerousIcon}"
+                          Command="{Binding AddOutOfBoundsCommand}">
                     <MenuItem.Icon><Image Source="/Assets/Toolbar/outOfBoundsItem.png" Width="16" Height="16"/></MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="addOutOfBoundsMenuWithDangerousIcon" Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}" 
+                          IsVisible="{Binding AddOutOfBoundsUsesDangerousIcon}"
+                          Command="{Binding AddOutOfBoundsCommand}">
+                    <MenuItem.Icon><Image Source="/Assets/Toolbar/dangerousItem.png" Width="16" Height="16"/></MenuItem.Icon>
                 </MenuItem>
                 <MenuItem x:Name="addDangerousMenu" Header="{resx:Localize MainFrame_addDangerousMenu_Text}" 
                           IsVisible="{Binding IsVisibleDangerousArea}"
@@ -626,9 +634,17 @@
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem x:Name="outOfBoundsToolStripMenuItem" Header="{resx:Localize MainFrame_outOfBoundsToolStripMenuItem_Text}"
+                                  IsVisible="{Binding !AddOutOfBoundsUsesDangerousIcon}"
                                   Command="{Binding AddOutOfBoundsCommand}">
                             <MenuItem.Icon>
                                 <Image Source="/Assets/Toolbar/outOfBoundsItem.png" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="outOfBoundsToolStripMenuItemWithDangerousIcon" Header="{resx:Localize MainFrame_outOfBoundsToolStripMenuItem_Text}"
+                                  IsVisible="{Binding AddOutOfBoundsUsesDangerousIcon}"
+                                  Command="{Binding AddOutOfBoundsCommand}">
+                            <MenuItem.Icon>
+                                <Image Source="/Assets/Toolbar/dangerousItem.png" Width="16" Height="16"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <MenuItem x:Name="dangerousToolStripMenuItem" Header="{resx:Localize MainFrame_dangerousToolStripMenuItem_Text}"

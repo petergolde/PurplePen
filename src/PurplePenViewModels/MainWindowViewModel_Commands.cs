@@ -26,7 +26,6 @@ namespace PurplePen.ViewModels
 #if PORTING
             // Still need to port more logic from MainFrame.UpdateMenusToolbarButtons.
             // - Cancel mode vs Clear selection text
-            // - outOfBoundsToolStripMenuItem.Image,  addOutOfBoundsMenu.Image
 #endif
 
             // Update enabled status for commands.
@@ -67,6 +66,7 @@ namespace PurplePen.ViewModels
             MapStd2017Checked = (mapStandard == "2017");
             MapStdSpr2019Checked = (mapStandard == "Spr2019");
             IsVisibleDangerousArea = (mapStandard == "2000");
+            AddOutOfBoundsUsesDangerousIcon = (mapStandard != "2000");
 
             // Update names of certain menu items.
             if (undoStatus.CanUndo) {
@@ -1873,8 +1873,12 @@ namespace PurplePen.ViewModels
         [ObservableProperty] private bool mapStd2000Checked;
         [ObservableProperty] private bool mapStd2017Checked;
         [ObservableProperty] private bool mapStdSpr2019Checked;
+
+        // Should the add dangerous area item be visible
         [ObservableProperty] private bool isVisibleDangerousArea;
 
+        // Should the add out-of-bound item have the dangerous item icon?
+        [ObservableProperty] private bool addOutOfBoundsUsesDangerousIcon;
 
         #endregion // IOF Standards commands
 

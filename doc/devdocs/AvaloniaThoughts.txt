@@ -108,7 +108,6 @@ Consider turning on Aliasing for printing, when we do explicit printing on Windo
 List of stuff:
   - Checking for updated map file.
   - Cancel mode.
-  - Out of bounds image.
   - Arial/Times New Roman/Courier New fonts for linux and mac. Use CrossCore fonts for these.
   - CrashReporter - done, but need to update the crash reporter service itself to record exceptions.
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
@@ -122,3 +121,5 @@ List of stuff:
   - Checking for and installing Roboto fonts.
   - Dialogs for localizing descriptions text.
   - Update PdfSharp to latest version.
+  - Move to a new localization platform.
+  - Move PurplePen tests to a PurplePenCore test project. Leave maybe a few behind that are Windows specific.
