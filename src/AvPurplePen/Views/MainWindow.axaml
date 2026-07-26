@@ -91,7 +91,14 @@
 
             <!-- === Edit Menu === -->
             <MenuItem x:Name="editMenu" Header="{resx:Localize MainFrame_editMenu_Text}">
-                <MenuItem x:Name="cancelMenu" Header="{resx:Localize MainFrame_cancelMenu_Text}" Command="{Binding CancelCommand}"/>
+                <MenuItem x:Name="cancelMenu" Header="{resx:Localize MiscText_CancelOperationWithShortcut}" 
+                          InputGesture="Escape"
+                          IsVisible="{Binding CanCancelMode}" 
+                          Command="{Binding CancelCommand}"/>
+                <MenuItem x:Name="clearSelectionMenu" Header="{resx:Localize MiscText_ClearSelectionWithShortcut}" 
+                          InputGesture="Escape"
+                          IsVisible="{Binding CanClearSelection}" 
+                          Command="{Binding ClearSelectionCommand}"/>
                 <Separator/>
                 <MenuItem x:Name="undoMenu" Header="{Binding UndoCommandName}" InputGesture="Ctrl+Z" Command="{Binding UndoCommand}">
                     <MenuItem.Icon>

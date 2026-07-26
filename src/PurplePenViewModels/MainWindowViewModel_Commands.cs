@@ -29,6 +29,10 @@ namespace PurplePen.ViewModels
 #endif
 
             // Update enabled status for commands.
+            bool canCancelMode = controller.CanCancelMode();
+            Debug.WriteLine($"CanCancelMode = {canCancelMode}");
+            CanCancelMode = canCancelMode;
+            CanClearSelection = !canCancelMode;
             UndoStatus undoStatus = controller.GetUndoStatus();
             CanUndo = undoStatus.CanUndo;
             CanRedo = undoStatus.CanRedo;
@@ -351,22 +355,36 @@ namespace PurplePen.ViewModels
 
         #region Edit commands
 
+
         /// <summary>
         /// Executes the Edit/Cancel command. Cancels the current mode or clears selection.
         /// </summary>
         [RelayCommand]
         private void Cancel()
         {
-#if !PORTING
-            // Clear selection and cancel current mode use the same menu item.
+            if (controller == null) { return; }
+
             if (controller.CanCancelMode()) {
                 controller.CancelMode();
             }
-            else {
-                controller.ClearSelection();
-            }
-#endif
         }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(CancelCommand))]
+        private bool canCancelMode;
+
+        /// <summary>
+        /// Executes the Edit/Cancel command. Cancels the current mode or clears selection.
+        /// </summary>
+        [RelayCommand]
+        private void ClearSelection()
+        {
+            if (controller == null) { return; }
+
+            controller.ClearSelection();
+        }
+
+        [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ClearSelectionCommand))]
+        private bool canClearSelection;
 
         /// <summary>
         /// Executes the Edit/Undo command.
