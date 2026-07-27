@@ -386,6 +386,20 @@ namespace PurplePen.ViewModels
         [ObservableProperty, NotifyCanExecuteChangedFor(nameof(ClearSelectionCommand))]
         private bool canClearSelection;
 
+        // Command for the Escape key, which does either Cancel or Clear Selection.
+        [RelayCommand]
+        private void EscapeKey()
+        {
+            if (controller == null) { return; }
+
+            if (controller.CanCancelMode()) {
+                controller.CancelMode();
+            }
+            else {
+                controller.ClearSelection();
+            }
+        }
+
         /// <summary>
         /// Executes the Edit/Undo command.
         /// </summary>

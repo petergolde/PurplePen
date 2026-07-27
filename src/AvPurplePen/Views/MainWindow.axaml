@@ -40,7 +40,23 @@
 
     <Window.KeyBindings>
         <KeyBinding Gesture="Ctrl+O" Command="{Binding FileOpenPurplePenFileCommand}"/>
+        <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveCommand}"/>
+        <KeyBinding Gesture="Ctrl+P" Command="{Binding PrintDescriptionsCommand}"/>
+        <KeyBinding Gesture="Escape" Command="{Binding EscapeKeyCommand}"/>
+        <KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
+        <KeyBinding Gesture="Ctrl+Y" Command="{Binding RedoCommand}"/>
+        <KeyBinding Gesture="Delete" Command="{Binding DeleteSelectionCommand}"/>
+        <KeyBinding Gesture="F2" Command="{Binding ViewEntireCourseCommand}"/>
+        <KeyBinding Gesture="F3" Command="{Binding ViewEntireMapCommand}"/>
         <KeyBinding Gesture="F4" Command="{Binding ToggleAllControlsCommand}"/>
+        <KeyBinding Gesture="F5" Command="{Binding ShowOtherCoursesCommand}"/>
+        <KeyBinding Gesture="Shift+F5" Command="{Binding ClearOtherCoursesCommand}"/>
+        <KeyBinding Gesture="Ctrl+A" Command="{Binding AddControlCommand}"/>
+        <KeyBinding Gesture="Ctrl+B" Command="{Binding AddBendCommand}"/>
+        <KeyBinding Gesture="Ctrl+Shift+B" Command="{Binding RemoveBendCommand}"/>
+        <KeyBinding Gesture="Ctrl+G" Command="{Binding AddGapCommand}"/>
+        <KeyBinding Gesture="Ctrl+Shift+G" Command="{Binding RemoveGapCommand}"/>
+        <KeyBinding Gesture="F1" Command="{Binding HelpContentsCommand}"/>
     </Window.KeyBindings>
 
     <DockPanel LastChildFill="True">

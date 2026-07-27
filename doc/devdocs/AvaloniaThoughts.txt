@@ -54,6 +54,9 @@ Pain points:
    Generally printing is hard. On mac and linux print by creating a PDF and that launching a command
    line app that prints a pdf. The lp can be used. Need to figure out a way to determine which printers
    can be used. This can all be done: lpstat to get list of printers, and lpoptions to get options for each printer.
+   Look at xdg-desktop-portal for Linux -- may be better way to do this. 
+   Another thought for printing: just use the NativeWebView control to do printing. Just initialize it with a 
+   PDF?
 
    Localization is somewhat tricky in Avalonia. There are resources for this.
 
@@ -107,12 +110,12 @@ Consider turning on Aliasing for printing, when we do explicit printing on Windo
 
 List of stuff:
   - Checking for updated map file.
-  - Make sure all the shortcut keys work, include Escape for cancel mode/clear selection. I think a lot of them are display only right now. Using Window.KeyBindings.
   - Arial/Times New Roman/Courier New fonts for linux and mac. Use CrossCore fonts for these.
   - CrashReporter - done, but need to update the crash reporter service itself to record exceptions.
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
-    we should update the checking mechanism to be more robust and have a better format.
+    we should update the checking mechanism to be more robust and have a better format. Probably use NetSparkle.
   - Fix & and _ prefixes in resources.
+  - Mac menu bar using Native Menu.
 
   After Beta 1:
   - Direct printing. Different for Windows/Mac/Linux.
@@ -123,3 +126,4 @@ List of stuff:
   - Update PdfSharp to latest version.
   - Move to a new localization platform.
   - Move PurplePen tests to a PurplePenCore test project. Leave maybe a few behind that are Windows specific.
+  - Make SampleEvent not saveable at all.
