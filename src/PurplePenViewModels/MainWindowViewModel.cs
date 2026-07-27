@@ -42,6 +42,7 @@ namespace PurplePen.ViewModels
         long changeNum = 0;         // When this changes, state information needs to be updated in the UI.
         bool updatingTabs = false;  // Guard to prevent re-entrant controller calls during UpdateTabs.
         bool hidePrintArea = false; // Guard to allow disabling print area display at times.
+        bool checkForUpdatedMapFile = false; // When set to true, check for new map file at next idle.
 
         // Settings remembered across invocations of the Create OCAD Files dialog,
         // so the user's last choices (folder, format, prefix, etc.) are preserved.
@@ -238,6 +239,20 @@ namespace PurplePen.ViewModels
 
         #region State updating on idle
 
+        /// <summary>
+        /// Called when the main window becomes the active window. This happens when the user
+        /// switches back to Purple Pen from another application, so it is a good time to notice
+        /// anything that may have changed outside the application while it was inactive.
+        /// </summary>
+        public void WindowActivated()
+        {
+            if (controller == null)
+                return;   // happens in design mode, for example.
+
+            // Check whether the map file has changed on disk; the check itself happens on the next idle.
+            checkForUpdatedMapFile = true;
+        }
+
         // This is called when the application becomes idle after processing input.
         // We can use this to update the UI in response to changes that may have occurred.
         public void UpdateStateOnIdle()
@@ -274,12 +289,10 @@ namespace PurplePen.ViewModels
                 _ = CheckForMissingFonts();
             }
 
-#if !PORTING
-            if (checkForUpdatedMapFile) {
+            if (checkForUpdatedMapFile && controller != null) {
                 checkForUpdatedMapFile = false;
-                controller.CheckForChangedMapFile();
+                _ = controller.CheckForChangedMapFile();  // can't await here, but the controller will call back to UpdateStateOnIdle when it is done checking.
             }
-#endif
         }
 
         // Update the status text.

@@ -23,11 +23,6 @@ namespace PurplePen.ViewModels
         {
             if (controller == null) { return; }
 
-#if PORTING
-            // Still need to port more logic from MainFrame.UpdateMenusToolbarButtons.
-            // - Cancel mode vs Clear selection text
-#endif
-
             // Update enabled status for commands.
             bool canCancelMode = controller.CanCancelMode();
             Debug.WriteLine($"CanCancelMode = {canCancelMode}");

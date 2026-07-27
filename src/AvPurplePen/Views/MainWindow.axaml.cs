@@ -73,6 +73,7 @@ namespace AvPurplePen.Views
             // the ViewModel's Exit command, which prompts to save before allowing the exit.
             DataContextChanged += MainWindow_DataContextChanged;
             Closing += MainWindow_Closing;
+            Activated += MainWindow_Activated;
         }
 
         // Keep our subscription to the ViewModel's ExitRequested event in sync with the
@@ -359,6 +360,17 @@ namespace AvPurplePen.Views
                 e.MouseDownResult = MapViewer.MouseDownResult.DelayedPan; break;
             default:
                 break;
+            }
+        }
+
+        // Called when this window becomes the active window. Lets the ViewModel react to the user
+        // returning to the application (for example, to notice that the map file changed on disk).
+        private void MainWindow_Activated(object? sender, EventArgs e)
+        {
+            if (this.IsVisible) {
+                if (this.DataContext is MainWindowViewModel viewModel) {
+                    viewModel.WindowActivated();
+                }
             }
         }
 
