@@ -3,9 +3,14 @@
     Main application window for Purple Pen.
     Migrated from WinForms PurplePen/MainFrame.cs.
 
+    The main menu is declared as a NativeMenu (see NativeMenu.Menu below) rather than as an
+    ordinary Menu. On macOS the menu is exported to the system menu bar at the top of the screen;
+    on Windows and Linux the NativeMenuBar in the layout below renders exactly the same items as
+    an in-window Menu.
+
     Layout structure:
       DockPanel (root)
-        ├── Menu (mainMenu) — docked Top
+        ├── NativeMenuBar — docked Top (renders the main menu on Windows/Linux; empty on macOS)
         ├── Toolbar panel — docked Top
         ├── TabControl (courseTabs) — docked Top
         ├── Status bar Grid — docked Bottom
@@ -59,425 +64,443 @@
         <KeyBinding Gesture="F1" Command="{Binding HelpContentsCommand}"/>
     </Window.KeyBindings>
 
-    <DockPanel LastChildFill="True">
+    <Window.Styles>
+        <!-- NativeMenuBar builds each item's icon as an <Image> with no explicit size, so the
+             bitmap would otherwise render at its natural size. Every menu icon is meant to be
+             16x16, but a couple of the source bitmaps are larger. -->
+        <Style Selector="NativeMenuBar Image">
+            <Setter Property="Width" Value="16"/>
+            <Setter Property="Height" Value="16"/>
+        </Style>
+    </Window.Styles>
 
-        <!-- ==================== MAIN MENU ==================== -->
-        <Menu x:Name="mainMenu" DockPanel.Dock="Top">
+    <!-- ==================== MAIN MENU ==================== -->
+    <!-- Declared as a NativeMenu so that macOS puts it in the system menu bar. On Windows and
+         Linux the NativeMenuBar in the layout below renders these same items as an in-window
+         menu. NativeMenuItem is not a Control, so it supports no x:Name and no styling; the
+         properties it does support (Header, Icon, Gesture, Command, CommandParameter, IsEnabled,
+         IsVisible, ToggleType, IsChecked) are mapped one-for-one onto MenuItem by NativeMenuBar. -->
+    <NativeMenu.Menu>
+        <NativeMenu>
 
             <!-- === File Menu === -->
-            <MenuItem x:Name="fileMenu" Header="{resx:Localize MainFrame_fileMenu_Text}">
-                <MenuItem x:Name="newEventMenu" Header="{resx:Localize MainFrame_newEventMenu_Text}" Command="{Binding NewEventCommand}"/>
-                <MenuItem x:Name="openMenu" Header="{resx:Localize MainFrame_openMenu_Text}" InputGesture="Ctrl+O" Command="{Binding FileOpenPurplePenFileCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/open.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <Separator/>
-                <MenuItem x:Name="saveMenu" Header="{resx:Localize MainFrame_saveMenu_Text}" InputGesture="Ctrl+S" Command="{Binding SaveCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/save.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="saveAsMenu" Header="{resx:Localize MainFrame_saveAsMenu_Text}" Command="{Binding SaveAsCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="createOcadFilesMenu" Header="{Binding CreateOcadFilesCommandName}" Command="{Binding CreateOcadFilesCommand}"/>
-                <MenuItem x:Name="createImageFilesMenu" Header="{resx:Localize MainFrame_createImageFilesMenu_Text}" Command="{Binding CreateImageFilesCommand}"/>
-                <MenuItem x:Name="createPDFsMenu" Header="{resx:Localize MainFrame_createPDFsMenu_Text}">
-                    <MenuItem x:Name="createDescriptionPdfMenu" Header="{resx:Localize MainFrame_createDescriptionPdfMenu_Text}" Command="{Binding CreateDescriptionPdfCommand}"/>
-                    <MenuItem x:Name="createPunchcardPdfMenu" Header="{resx:Localize MainFrame_createPunchcardPdfMenu_Text}" Command="{Binding CreatePunchcardPdfCommand}"/>
-                    <MenuItem x:Name="createCoursePdfMenu" Header="{resx:Localize MainFrame_createCoursePdfMenu_Text}" Command="{Binding CreateCoursePdfCommand}"/>
-                </MenuItem>
-                <MenuItem x:Name="createRouteReviewFilesToolStripMenuItem" Header="{resx:Localize MainFrame_createRouteReviewFilesToolStripMenuItem_Text}">
-                    <MenuItem x:Name="createRouteGadgetFilesMenu" Header="{resx:Localize MainFrame_createRouteGadgetFilesMenu_Text}" Command="{Binding CreateRouteGadgetFilesCommand}"/>
-                </MenuItem>
-                <MenuItem x:Name="createXmlMenu" Header="{resx:Localize MainFrame_createXmlMenu_Text}" Command="{Binding CreateXmlCommand}"/>
-                <MenuItem x:Name="createGPXFileMenu" Header="{resx:Localize MainFrame_createGPXFileMenu_Text}" Command="{Binding CreateGpxCommand}"/>
-                <MenuItem x:Name="createKMLFileMenu" Header="{resx:Localize MainFrame_createKMLFileMenu_Text}" Command="{Binding CreateKmlFilesCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="printDescriptionsMenu" Header="{resx:Localize MainFrame_printDescriptionsMenu_Text}" InputGesture="Ctrl+P" Command="{Binding PrintDescriptionsCommand}"/>
-                <MenuItem x:Name="printPunchCardsMenu" Header="{resx:Localize MainFrame_printPunchCardsMenu_Text}" Command="{Binding PrintPunchCardsCommand}"/>
-                <MenuItem x:Name="printCoursesMenu" Header="{resx:Localize MainFrame_printCoursesMenu_Text}" Command="{Binding PrintCoursesCommand}"/>
-                <MenuItem x:Name="setPrintAreaMenu" Header="{resx:Localize MainFrame_setPrintAreaMenu_Text}">
-                    <MenuItem x:Name="printAreaThisPartMenu" Header="{resx:Localize MainFrame_printAreaThisPartMenu_Text}" IsVisible="{Binding IsVisibleSetPrintAreaThisPart}" Command="{Binding SetPrintAreaThisPartCommand}"/>
-                    <MenuItem x:Name="printAreaThisCourseMenu" Header="{resx:Localize MainFrame_printAreaThisCourseMenu_Text}" Command="{Binding SetPrintAreaThisCourseCommand}"/>
-                    <MenuItem x:Name="printAreaAllCoursesMenu" Header="{resx:Localize MainFrame_printAreaAllCoursesMenu_Text}" Command="{Binding SetPrintAreaAllCoursesCommand}"/>
-                </MenuItem>
-                <Separator/>
-                <MenuItem x:Name="programLanguageMenu" Header="{resx:Localize MainFrame_programLanguageMenu_Text}"
-                          Command="{Binding ShowSwitchLanguageDialogCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="exitMenu" Header="{resx:Localize MainFrame_exitMenu_Text}" Command="{Binding ExitCommand}"/>
-            </MenuItem>
+            <NativeMenuItem Header="{resx:Localize MainFrame_fileMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_newEventMenu_Text}" Command="{Binding NewEventCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_openMenu_Text}" Gesture="Ctrl+O" Command="{Binding FileOpenPurplePenFileCommand}"
+                                    Icon="/Assets/Toolbar/open.png"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_saveMenu_Text}" Gesture="Ctrl+S" Command="{Binding SaveCommand}"
+                                    Icon="/Assets/Toolbar/save.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_saveAsMenu_Text}" Command="{Binding SaveAsCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{Binding CreateOcadFilesCommandName}" Command="{Binding CreateOcadFilesCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_createImageFilesMenu_Text}" Command="{Binding CreateImageFilesCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_createPDFsMenu_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_createDescriptionPdfMenu_Text}" Command="{Binding CreateDescriptionPdfCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_createPunchcardPdfMenu_Text}" Command="{Binding CreatePunchcardPdfCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_createCoursePdfMenu_Text}" Command="{Binding CreateCoursePdfCommand}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_createRouteReviewFilesToolStripMenuItem_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_createRouteGadgetFilesMenu_Text}" Command="{Binding CreateRouteGadgetFilesCommand}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_createXmlMenu_Text}" Command="{Binding CreateXmlCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_createGPXFileMenu_Text}" Command="{Binding CreateGpxCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_createKMLFileMenu_Text}" Command="{Binding CreateKmlFilesCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_printDescriptionsMenu_Text}" Gesture="Ctrl+P" Command="{Binding PrintDescriptionsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_printPunchCardsMenu_Text}" Command="{Binding PrintPunchCardsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_printCoursesMenu_Text}" Command="{Binding PrintCoursesCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_setPrintAreaMenu_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_printAreaThisPartMenu_Text}" IsVisible="{Binding IsVisibleSetPrintAreaThisPart}" Command="{Binding SetPrintAreaThisPartCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_printAreaThisCourseMenu_Text}" Command="{Binding SetPrintAreaThisCourseCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_printAreaAllCoursesMenu_Text}" Command="{Binding SetPrintAreaAllCoursesCommand}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_programLanguageMenu_Text}"
+                                    Command="{Binding ShowSwitchLanguageDialogCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_exitMenu_Text}" Command="{Binding ExitCommand}"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Edit Menu === -->
-            <MenuItem x:Name="editMenu" Header="{resx:Localize MainFrame_editMenu_Text}">
-                <MenuItem x:Name="cancelMenu" Header="{resx:Localize MiscText_CancelOperationWithShortcut}" 
-                          InputGesture="Escape"
-                          IsVisible="{Binding CanCancelMode}" 
-                          Command="{Binding CancelCommand}"/>
-                <MenuItem x:Name="clearSelectionMenu" Header="{resx:Localize MiscText_ClearSelectionWithShortcut}" 
-                          InputGesture="Escape"
-                          IsVisible="{Binding CanClearSelection}" 
-                          Command="{Binding ClearSelectionCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="undoMenu" Header="{Binding UndoCommandName}" InputGesture="Ctrl+Z" Command="{Binding UndoCommand}">
-                    <MenuItem.Icon>
-                        <Image Width="16" Height="16"
-                               Source="{Binding IsEffectivelyEnabled,
-                                        RelativeSource={RelativeSource Self},
-                                        Converter={x:Static avutil:DisabledImageConverter.Instance},
-                                        ConverterParameter=/Assets/Toolbar/undo.png}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="redoMenu" Header="{Binding RedoCommandName}" InputGesture="Ctrl+Y" Command="{Binding RedoCommand}">
-                    <MenuItem.Icon>
-                        <Image Width="16" Height="16"
-                               Source="{Binding IsEffectivelyEnabled,
-                                        RelativeSource={RelativeSource Self},
-                                        Converter={x:Static avutil:DisabledImageConverter.Instance},
-                                        ConverterParameter=/Assets/Toolbar/redo.png}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <Separator/>
-                <MenuItem x:Name="deleteMenu" Header="{resx:Localize MainFrame_deleteMenu_Text}" InputGesture="Delete" Command="{Binding DeleteSelectionCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/delete.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
+            <!-- The Undo/Redo icons gray out when the command is unavailable. A NativeMenuItem
+                 cannot bind to its own enabled state the way an Image inside a MenuItem could,
+                 so the icon binds to the same ViewModel flag that drives the command instead. -->
+            <NativeMenuItem Header="{resx:Localize MainFrame_editMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MiscText_CancelOperationWithShortcut}"
+                                    Gesture="Escape"
+                                    IsVisible="{Binding CanCancelMode}"
+                                    Command="{Binding CancelCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MiscText_ClearSelectionWithShortcut}"
+                                    Gesture="Escape"
+                                    IsVisible="{Binding CanClearSelection}"
+                                    Command="{Binding ClearSelectionCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{Binding UndoCommandName}" Gesture="Ctrl+Z" Command="{Binding UndoCommand}"
+                                    Icon="{Binding CanUndo,
+                                           Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                           ConverterParameter=/Assets/Toolbar/undo.png}"/>
+                    <NativeMenuItem Header="{Binding RedoCommandName}" Gesture="Ctrl+Y" Command="{Binding RedoCommand}"
+                                    Icon="{Binding CanRedo,
+                                           Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                           ConverterParameter=/Assets/Toolbar/redo.png}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteMenu_Text}" Gesture="Delete" Command="{Binding DeleteSelectionCommand}"
+                                    Icon="/Assets/Toolbar/delete.png"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === View Menu === -->
-            <MenuItem x:Name="viewMenu" Header="{resx:Localize MainFrame_viewMenu_Text}">
-                <MenuItem x:Name="entireCourseMenu" Header="{resx:Localize MainFrame_entireCourseMenu_Text}" InputGesture="F2" Command="{Binding ViewEntireCourseCommand}"/>
-                <MenuItem x:Name="entireMapMenu" Header="{resx:Localize MainFrame_entireMapMenu_Text}" InputGesture="F3" Command="{Binding ViewEntireMapCommand}"/>
-                <MenuItem x:Name="zoomMenu" Header="{resx:Localize MainFrame_zoomMenu_Text}">
-                    <MenuItem x:Name="zoom50Menu" Header="{resx:Localize MainFrame_zoom50Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=0.5, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom50Checked}"/>
-                    <MenuItem x:Name="zoom100Menu" Header="{resx:Localize MainFrame_zoom100Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=1, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom100Checked}"/>
-                    <MenuItem x:Name="zoom150Menu" Header="{resx:Localize MainFrame_zoom150Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=1.5, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom150Checked}"/>
-                    <MenuItem x:Name="zoom200Menu" Header="{resx:Localize MainFrame_zoom200Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=2, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom200Checked}"/>
-                    <MenuItem x:Name="zoom300Menu" Header="{resx:Localize MainFrame_zoom300Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=3, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom300Checked}"/>
-                    <MenuItem x:Name="zoom500Menu" Header="{resx:Localize MainFrame_zoom500Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=5, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom500Checked}"/>
-                    <MenuItem x:Name="zoom1000Menu" Header="{resx:Localize MainFrame_zoom1000Menu_Text}" Command="{Binding SetZoomCommand}"
-                              CommandParameter="{Binding Source=10, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding Zoom1000Checked}"/>
-                </MenuItem>
+            <!-- The IsChecked bindings are explicitly TwoWay. Clicking a checkable item toggles its
+                 check mark locally; the write-back lets the ViewModel restore the correct state on
+                 the next idle update even when the underlying value did not actually change. -->
+            <NativeMenuItem Header="{resx:Localize MainFrame_viewMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_entireCourseMenu_Text}" Gesture="F2" Command="{Binding ViewEntireCourseCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_entireMapMenu_Text}" Gesture="F3" Command="{Binding ViewEntireMapCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_zoomMenu_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom50Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=0.5, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom50Checked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom100Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=1, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom100Checked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom150Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=1.5, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom150Checked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom200Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=2, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom200Checked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom300Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=3, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom300Checked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom500Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=5, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom500Checked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_zoom1000Menu_Text}" Command="{Binding SetZoomCommand}"
+                                            CommandParameter="{Binding Source=10, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding Zoom1000Checked, Mode=TwoWay}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
 
-                <Separator/>
+                    <NativeMenuItemSeparator/>
 
-                <MenuItem x:Name="mapIntensityMenu" Header="{resx:Localize MainFrame_mapIntensityMenu_Text}">
-                    <MenuItem x:Name="veryLowIntensityMenu" Header="{resx:Localize MainFrame_veryLowIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                              CommandParameter="{Binding Source=0.2, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding IntensityVeryLowChecked}"/>
-                    <MenuItem x:Name="lowIntensityMenu" Header="{resx:Localize MainFrame_lowIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                              CommandParameter="{Binding Source=0.4, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding IntensityLowChecked}"/>
-                    <MenuItem x:Name="mediumIntensityMenu" Header="{resx:Localize MainFrame_mediumIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                              CommandParameter="{Binding Source=0.6, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding IntensityMediumChecked}"/>
-                    <MenuItem x:Name="highIntensityMenu" Header="{resx:Localize MainFrame_highIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                              CommandParameter="{Binding Source=0.8, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding IntensityHighChecked}"/>
-                    <MenuItem x:Name="fullIntensityMenu" Header="{resx:Localize MainFrame_fullIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                              CommandParameter="{Binding Source=1, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
-                              ToggleType="CheckBox" IsChecked="{Binding IntensityFullChecked}"/>
-                </MenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_mapIntensityMenu_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_veryLowIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
+                                            CommandParameter="{Binding Source=0.2, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding IntensityVeryLowChecked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_lowIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
+                                            CommandParameter="{Binding Source=0.4, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding IntensityLowChecked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mediumIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
+                                            CommandParameter="{Binding Source=0.6, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding IntensityMediumChecked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_highIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
+                                            CommandParameter="{Binding Source=0.8, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding IntensityHighChecked, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_fullIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
+                                            CommandParameter="{Binding Source=1, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            ToggleType="CheckBox" IsChecked="{Binding IntensityFullChecked, Mode=TwoWay}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
 
-                <MenuItem x:Name="mapQualityMenu" Header="{resx:Localize MainFrame_mapQualityMenu_Text}">
-                    <MenuItem x:Name="normalQualityMenu" Header="{resx:Localize MainFrame_normalQualityMenu_Text}" 
-                              Command="{Binding SetNormalQualityCommand}"
-                              ToggleType="CheckBox" IsChecked="{Binding !HighQualityMapDisplay}"/>
-                    <MenuItem x:Name="highQualityMenu" Header="{resx:Localize MainFrame_highQualityMenu_Text}" 
-                              Command="{Binding SetHighQualityCommand}"
-                              ToggleType="CheckBox" IsChecked="{Binding HighQualityMapDisplay}"/>
-                </MenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_mapQualityMenu_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_normalQualityMenu_Text}"
+                                            Command="{Binding SetNormalQualityCommand}"
+                                            ToggleType="CheckBox" IsChecked="{Binding !HighQualityMapDisplay, Mode=TwoWay}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_highQualityMenu_Text}"
+                                            Command="{Binding SetHighQualityCommand}"
+                                            ToggleType="CheckBox" IsChecked="{Binding HighQualityMapDisplay, Mode=TwoWay}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
 
-                <MenuItem x:Name="showPrintAreaMenu" 
-                          Header="{resx:Localize MainFrame_showPrintAreaMenu_Text}"     
-                          ToggleType="CheckBox" IsChecked="{Binding ShowPrintArea}"
-                          Command="{Binding ToggleShowPrintAreaCommand}"/>
-                <MenuItem x:Name="showPopupsMenu"   
-                          Header="{resx:Localize MainFrame_showPopupsMenu_Text}" 
-                          ToggleType="CheckBox" IsChecked="{Binding ShowToolTips}"
-                          Command="{Binding ToggleShowPopupsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_showPrintAreaMenu_Text}"
+                                    ToggleType="CheckBox" IsChecked="{Binding ShowPrintArea, Mode=TwoWay}"
+                                    Command="{Binding ToggleShowPrintAreaCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_showPopupsMenu_Text}"
+                                    ToggleType="CheckBox" IsChecked="{Binding ShowToolTips, Mode=TwoWay}"
+                                    Command="{Binding ToggleShowPopupsCommand}"/>
 
-                <Separator/>
+                    <NativeMenuItemSeparator/>
 
-                <MenuItem x:Name="allControlsMenu" Header="{resx:Localize MainFrame_allControlsMenu_Text}" InputGesture="F4" 
-                          Command="{Binding ToggleAllControlsCommand}"
-                          ToggleType="CheckBox" IsChecked="{Binding ViewAllControlsChecked}"/>
-                <MenuItem x:Name="otherCoursesMenu" Header="{resx:Localize MainFrame_otherCoursesMenu_Text}" 
-                          InputGesture="F5" 
-                          Command="{Binding ShowOtherCoursesCommand}"/>
-                <MenuItem x:Name="clearOtherCoursesMenu" Header="{resx:Localize MainFrame_clearOtherCoursesMenu_Text}" 
-                          IsVisible="{Binding IsVisibleClearOtherCourses}"
-                          InputGesture="Shift+F5" 
-                          Command="{Binding ClearOtherCoursesCommand}"/>
-            </MenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_allControlsMenu_Text}" Gesture="F4"
+                                    Command="{Binding ToggleAllControlsCommand}"
+                                    ToggleType="CheckBox" IsChecked="{Binding ViewAllControlsChecked, Mode=TwoWay}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_otherCoursesMenu_Text}"
+                                    Gesture="F5"
+                                    Command="{Binding ShowOtherCoursesCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_clearOtherCoursesMenu_Text}"
+                                    IsVisible="{Binding IsVisibleClearOtherCourses}"
+                                    Gesture="Shift+F5"
+                                    Command="{Binding ClearOtherCoursesCommand}"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Add Menu === -->
-            <MenuItem x:Name="addMenu" Header="{resx:Localize MainFrame_addMenu_Text}">
-                <MenuItem x:Name="addStartMenu" Header="{resx:Localize MainFrame_addStartMenu_Text}" Command="{Binding AddStartCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/addStart.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addControlMenu" Header="{resx:Localize MainFrame_addControlMenu_Text}" InputGesture="Ctrl+A" Command="{Binding AddControlCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/addControl.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addFinishMenu" Header="{resx:Localize MainFrame_addFinishMenu_Text}" Command="{Binding AddFinishCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/addFinish.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addDescriptionsMenu" Header="{resx:Localize MainFrame_addDescriptionsMenu_Text}" Command="{Binding AddDescriptionsCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/descriptionsItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addMapExchangeMenu" Header="{resx:Localize MainFrame_addMapExchangeMenu_Text}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/mapExchange.png" Width="16" Height="16"/></MenuItem.Icon>
-                    <MenuItem x:Name="addMapFlipMenuItem" Header="{resx:Localize MainFrame_addMapFlipMenuItem_Text}" Command="{Binding AddMapFlipControlCommand}">
-                        <MenuItem.Icon><Image Source="/Assets/Toolbar/mapFlipMenuItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem x:Name="mapExchangeControlMenuItem" Header="{resx:Localize MainFrame_mapExchangeControlMenuItem_Text}" Command="{Binding AddMapExchangeControlCommand}">
-                        <MenuItem.Icon><Image Source="/Assets/Toolbar/mapExchangeControlItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem x:Name="mapExchangeSeparateMenuItem" Header="{resx:Localize MainFrame_mapExchangeSeparateMenuItem_Text}" Command="{Binding AddMapExchangeSeparateCommand}">
-                        <MenuItem.Icon><Image Source="/Assets/Toolbar/mapExchangeSeparateItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem x:Name="addVariationMenu" Header="{resx:Localize MainFrame_addVariationMenu_Text}" Command="{Binding AddVariationCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/addVariation.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addTextLineMenu" Header="{resx:Localize MainFrame_addTextLineMenu_Text}" Command="{Binding AddTextLineCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="addMapIssueMenu" Header="{resx:Localize MainFrame_addMapIssueMenu_Text}" Command="{Binding AddMapIssueCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/mapIssuePointItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addMandatoryCrossingMenu" Header="{resx:Localize MainFrame_addMandatoryCrossingMenu_Text}" Command="{Binding AddMandatoryCrossingCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/mandatoryCrossingPointItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addOptCrossingMenu" Header="{resx:Localize MainFrame_addOptCrossingMenu_Text}" Command="{Binding AddOptCrossingCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/optionalCrossingPointItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <!-- We want the out of bounds menu item to have potentially two different icons, based on the AddOutOfBoundsUsesDangerousIcon view-model property -->
-                <MenuItem x:Name="addOutOfBoundsMenu" Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}" 
-                          IsVisible="{Binding !AddOutOfBoundsUsesDangerousIcon}"
-                          Command="{Binding AddOutOfBoundsCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/outOfBoundsItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addOutOfBoundsMenuWithDangerousIcon" Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}" 
-                          IsVisible="{Binding AddOutOfBoundsUsesDangerousIcon}"
-                          Command="{Binding AddOutOfBoundsCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/dangerousItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addDangerousMenu" Header="{resx:Localize MainFrame_addDangerousMenu_Text}" 
-                          IsVisible="{Binding IsVisibleDangerousArea}"
-                          Command="{Binding AddDangerousCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/dangerousItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addConstructionMenu" Header="{resx:Localize MainFrame_addConstructionMenu_Text}" Command="{Binding AddConstructionCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/constructionItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addWaterMenu" Header="{resx:Localize MainFrame_addWaterMenu_Text}" Command="{Binding AddWaterCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/waterLocationItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addFirstAidMenu" Header="{resx:Localize MainFrame_addFirstAidMenu_Text}" Command="{Binding AddFirstAidCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/firstAidLocationItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addForbiddenMenu" Header="{resx:Localize MainFrame_addForbiddenMenu_Text}" Command="{Binding AddForbiddenCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/forbiddenRouteMarkingItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addBoundaryMenu" Header="{resx:Localize MainFrame_addBoundaryMenu_Text}" Command="{Binding AddBoundaryCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/boundaryItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addRegMarkMenu" Header="{resx:Localize MainFrame_addRegMarkMenu_Text}" Command="{Binding AddRegMarkCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/registrationMarkItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <Separator/>
-                <MenuItem x:Name="whiteOutMenu" Header="{resx:Localize MainFrame_whiteOutMenu_Text}" Command="{Binding AddWhiteOutCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/whiteOutItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addTextMenu" Header="{resx:Localize MainFrame_addTextMenu_Text}" Command="{Binding AddTextCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/textItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addImageMenu" Header="{resx:Localize MainFrame_addImageMenu_Text}" Command="{Binding AddImageCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/imageItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addLineMenu" Header="{resx:Localize MainFrame_addLineMenu_Text}" Command="{Binding AddLineCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/lineItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addRectangleMenu" Header="{resx:Localize MainFrame_addRectangleMenu_Text}" Command="{Binding AddRectangleCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/rectangleItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="addEllipseMenu" Header="{resx:Localize MainFrame_addEllipseMenu_Text}" Command="{Binding AddEllipseCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/ellipseItem.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
+            <NativeMenuItem Header="{resx:Localize MainFrame_addMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addStartMenu_Text}" Command="{Binding AddStartCommand}"
+                                    Icon="/Assets/Toolbar/addStart.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addControlMenu_Text}" Gesture="Ctrl+A" Command="{Binding AddControlCommand}"
+                                    Icon="/Assets/Toolbar/addControl.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addFinishMenu_Text}" Command="{Binding AddFinishCommand}"
+                                    Icon="/Assets/Toolbar/addFinish.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addDescriptionsMenu_Text}" Command="{Binding AddDescriptionsCommand}"
+                                    Icon="/Assets/Toolbar/descriptionsItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addMapExchangeMenu_Text}"
+                                    Icon="/Assets/Toolbar/mapExchange.png">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_addMapFlipMenuItem_Text}" Command="{Binding AddMapFlipControlCommand}"
+                                            Icon="/Assets/Toolbar/mapFlipMenuItem.png"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mapExchangeControlMenuItem_Text}" Command="{Binding AddMapExchangeControlCommand}"
+                                            Icon="/Assets/Toolbar/mapExchangeControlItem.png"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mapExchangeSeparateMenuItem_Text}" Command="{Binding AddMapExchangeSeparateCommand}"
+                                            Icon="/Assets/Toolbar/mapExchangeSeparateItem.png"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addVariationMenu_Text}" Command="{Binding AddVariationCommand}"
+                                    Icon="/Assets/Toolbar/addVariation.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addTextLineMenu_Text}" Command="{Binding AddTextLineCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addMapIssueMenu_Text}" Command="{Binding AddMapIssueCommand}"
+                                    Icon="/Assets/Toolbar/mapIssuePointItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addMandatoryCrossingMenu_Text}" Command="{Binding AddMandatoryCrossingCommand}"
+                                    Icon="/Assets/Toolbar/mandatoryCrossingPointItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addOptCrossingMenu_Text}" Command="{Binding AddOptCrossingCommand}"
+                                    Icon="/Assets/Toolbar/optionalCrossingPointItem.png"/>
+                    <!-- We want the out of bounds menu item to have potentially two different icons, based on the AddOutOfBoundsUsesDangerousIcon view-model property -->
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}"
+                                    IsVisible="{Binding !AddOutOfBoundsUsesDangerousIcon}"
+                                    Command="{Binding AddOutOfBoundsCommand}"
+                                    Icon="/Assets/Toolbar/outOfBoundsItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addOutOfBoundsMenu_Text}"
+                                    IsVisible="{Binding AddOutOfBoundsUsesDangerousIcon}"
+                                    Command="{Binding AddOutOfBoundsCommand}"
+                                    Icon="/Assets/Toolbar/dangerousItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addDangerousMenu_Text}"
+                                    IsVisible="{Binding IsVisibleDangerousArea}"
+                                    Command="{Binding AddDangerousCommand}"
+                                    Icon="/Assets/Toolbar/dangerousItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addConstructionMenu_Text}" Command="{Binding AddConstructionCommand}"
+                                    Icon="/Assets/Toolbar/constructionItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addWaterMenu_Text}" Command="{Binding AddWaterCommand}"
+                                    Icon="/Assets/Toolbar/waterLocationItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addFirstAidMenu_Text}" Command="{Binding AddFirstAidCommand}"
+                                    Icon="/Assets/Toolbar/firstAidLocationItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addForbiddenMenu_Text}" Command="{Binding AddForbiddenCommand}"
+                                    Icon="/Assets/Toolbar/forbiddenRouteMarkingItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addBoundaryMenu_Text}" Command="{Binding AddBoundaryCommand}"
+                                    Icon="/Assets/Toolbar/boundaryItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addRegMarkMenu_Text}" Command="{Binding AddRegMarkCommand}"
+                                    Icon="/Assets/Toolbar/registrationMarkItem.png"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_whiteOutMenu_Text}" Command="{Binding AddWhiteOutCommand}"
+                                    Icon="/Assets/Toolbar/whiteOutItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addTextMenu_Text}" Command="{Binding AddTextCommand}"
+                                    Icon="/Assets/Toolbar/textItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addImageMenu_Text}" Command="{Binding AddImageCommand}"
+                                    Icon="/Assets/Toolbar/imageItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addLineMenu_Text}" Command="{Binding AddLineCommand}"
+                                    Icon="/Assets/Toolbar/lineItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addRectangleMenu_Text}" Command="{Binding AddRectangleCommand}"
+                                    Icon="/Assets/Toolbar/rectangleItem.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addEllipseMenu_Text}" Command="{Binding AddEllipseCommand}"
+                                    Icon="/Assets/Toolbar/ellipseItem.png"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Event Menu === -->
-            <MenuItem x:Name="eventMenu" Header="{resx:Localize MainFrame_eventMenu_Text}">
-                <MenuItem x:Name="changeMapFileMenu" Header="{resx:Localize MainFrame_changeMapFileMenu_Text}" Command="{Binding ChangeMapFileCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="changeCodesMenu" Header="{resx:Localize MainFrame_changeCodesMenu_Text}" Command="{Binding ChangeCodesCommand}"/>
-                <MenuItem x:Name="autoNumberingMenu" Header="{resx:Localize MainFrame_autoNumberingMenu_Text}" Command="{Binding AutoNumberingCommand}"/>
-                <MenuItem x:Name="removeUnusedControlsMenu" Header="{resx:Localize MainFrame_removeUnusedControlsMenu_Text}" Command="{Binding RemoveUnusedControlsCommand}"/>
-                <MenuItem x:Name="moveAllControlsMenu" Header="{resx:Localize MainFrame_moveAllControlsMenu_Text}" Command="{Binding MoveAllControlsCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="punchPatternsMenu" Header="{resx:Localize MainFrame_punchPatternsMenu_Text}" Command="{Binding PunchPatternsCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="iOFStandardsToolStripMenuItem" Header="{resx:Localize MainFrame_iOFStandardsToolStripMenuItem_Text}">
-                    <MenuItem x:Name="descriptionStd2004Menu" Header="{resx:Localize MainFrame_descriptionStd2004Menu_Text}" 
-                              ToggleType="CheckBox" IsChecked="{Binding DescriptionStd2004Checked}"
-                              Command="{Binding SetDescriptionStd2004Command}"/>
-                    <MenuItem x:Name="descriptionStd2018Menu" Header="{resx:Localize MainFrame_descriptionStd2018Menu_Text}" 
-                              ToggleType="CheckBox" IsChecked="{Binding DescriptionStd2018Checked}"
-                              Command="{Binding SetDescriptionStd2018Command}"/>
-                    <Separator/>
-                    <MenuItem x:Name="mapStd2000Menu" Header="{resx:Localize MainFrame_mapStd2000Menu_Text}" 
-                              ToggleType="CheckBox" IsChecked="{Binding MapStd2000Checked}"
-                              Command="{Binding SetMapStd2000Command}"/>
-                    <MenuItem x:Name="mapStd2017Menu" Header="{resx:Localize MainFrame_mapStd2017Menu_Text}" 
-                              ToggleType="CheckBox" IsChecked="{Binding MapStd2017Checked}"
-                              Command="{Binding SetMapStd2017Command}"/>
-                    <MenuItem x:Name="mapStdSpr2019Menu" Header="{resx:Localize MainFrame_mapStdSpr2019Menu_Text}" 
-                              ToggleType="CheckBox" IsChecked="{Binding MapStdSpr2019Checked}"
-                              Command="{Binding SetMapStdSpr2019Command}"/>
-                </MenuItem>
-                <MenuItem x:Name="customizeDescriptionsMenu" Header="{resx:Localize MainFrame_customizeDescriptionsMenu_Text}" Command="{Binding CustomizeDescriptionsCommand}"/>
-                <MenuItem x:Name="customizeCourseAppearanceMenu" Header="{resx:Localize MainFrame_customizeCourseAppearanceMenu_Text}" Command="{Binding CustomizeCourseAppearanceCommand}"/>
-            </MenuItem>
+            <NativeMenuItem Header="{resx:Localize MainFrame_eventMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_changeMapFileMenu_Text}" Command="{Binding ChangeMapFileCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_changeCodesMenu_Text}" Command="{Binding ChangeCodesCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_autoNumberingMenu_Text}" Command="{Binding AutoNumberingCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_removeUnusedControlsMenu_Text}" Command="{Binding RemoveUnusedControlsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_moveAllControlsMenu_Text}" Command="{Binding MoveAllControlsCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_punchPatternsMenu_Text}" Command="{Binding PunchPatternsCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_iOFStandardsToolStripMenuItem_Text}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_descriptionStd2004Menu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding DescriptionStd2004Checked, Mode=TwoWay}"
+                                            Command="{Binding SetDescriptionStd2004Command}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_descriptionStd2018Menu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding DescriptionStd2018Checked, Mode=TwoWay}"
+                                            Command="{Binding SetDescriptionStd2018Command}"/>
+                            <NativeMenuItemSeparator/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mapStd2000Menu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding MapStd2000Checked, Mode=TwoWay}"
+                                            Command="{Binding SetMapStd2000Command}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mapStd2017Menu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding MapStd2017Checked, Mode=TwoWay}"
+                                            Command="{Binding SetMapStd2017Command}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mapStdSpr2019Menu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding MapStdSpr2019Checked, Mode=TwoWay}"
+                                            Command="{Binding SetMapStdSpr2019Command}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_customizeDescriptionsMenu_Text}" Command="{Binding CustomizeDescriptionsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_customizeCourseAppearanceMenu_Text}" Command="{Binding CustomizeCourseAppearanceCommand}"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Course Menu === -->
-            <MenuItem x:Name="courseMenu" Header="{resx:Localize MainFrame_courseMenu_Text}">
-                <MenuItem x:Name="addCourseMenu" Header="{resx:Localize MainFrame_addCourseMenu_Text}" Command="{Binding ShowAddCourseDialogCommand}"/>
-                <MenuItem x:Name="deleteCourseMenu" Header="{resx:Localize MainFrame_deleteCourseMenu_Text}" Command="{Binding DeleteCourseCommand}"/>
-                <MenuItem x:Name="duplicateCourseMenu" Header="{resx:Localize MainFrame_duplicateCourseMenu_Text}" Command="{Binding DuplicateCourseCommand}"/>
-                <MenuItem x:Name="propertiesMenu" Header="{resx:Localize MainFrame_propertiesMenu_Text}" Command="{Binding ShowCoursePropertiesCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="courseOrderMenu" Header="{resx:Localize MainFrame_courseOrderMenu_Text}" Command="{Binding ShowCourseOrderCommand}"/>
-                <MenuItem x:Name="courseLoadMenu" Header="{resx:Localize MainFrame_courseLoadMenu_Text}" Command="{Binding ShowCourseLoadCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="courseVariationReportMenu" Header="{resx:Localize MainFrame_courseVariationReportMenu_Text}" Command="{Binding ShowCourseVariationReportCommand}"/>
-            </MenuItem>
+            <NativeMenuItem Header="{resx:Localize MainFrame_courseMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addCourseMenu_Text}" Command="{Binding ShowAddCourseDialogCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteCourseMenu_Text}" Command="{Binding DeleteCourseCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_duplicateCourseMenu_Text}" Command="{Binding DuplicateCourseCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_propertiesMenu_Text}" Command="{Binding ShowCoursePropertiesCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_courseOrderMenu_Text}" Command="{Binding ShowCourseOrderCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_courseLoadMenu_Text}" Command="{Binding ShowCourseLoadCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_courseVariationReportMenu_Text}" Command="{Binding ShowCourseVariationReportCommand}"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Item Menu === -->
-            <MenuItem x:Name="itemMenu" Header="{resx:Localize MainFrame_itemMenu_Text}">
-                <MenuItem x:Name="deleteItemMenu" Header="{resx:Localize MainFrame_deleteItemMenu_Text}" InputGesture="Delete"
-                          Command="{Binding DeleteSelectionCommand}">
-                    <MenuItem.Icon><Image Source="/Assets/Toolbar/delete.png" Width="16" Height="16"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="deleteForkMenu" Header="{resx:Localize MainFrame_deleteForkMenu_Text}"
-                          Command="{Binding DeleteForkCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="addBendMenu" Header="{resx:Localize MainFrame_addBendMenu_Text}" 
-                          InputGesture="Ctrl+B" Command="{Binding AddBendCommand}">
-                    <MenuItem.Icon><Image Width="16" Height="16"
-                       Source="{Binding IsEffectivelyEnabled,
-                                RelativeSource={RelativeSource Self},
-                                Converter={x:Static avutil:DisabledImageConverter.Instance},
-                                ConverterParameter=/Assets/Toolbar/addBend.png}"/></MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="removeBendMenu" Header="{resx:Localize MainFrame_removeBendMenu_Text}" InputGesture="Ctrl+Shift+B"
-                          Command="{Binding RemoveBendCommand}"/>
-                <MenuItem x:Name="addGapMenu" Header="{resx:Localize MainFrame_addGapMenu_Text}" InputGesture="Ctrl+G"
-                          Command="{Binding AddGapCommand}">
-                    <MenuItem.Icon>
-                        <Image Width="16" Height="16"
-                               Source="{Binding IsEffectivelyEnabled,
-                                        RelativeSource={RelativeSource Self},
-                                        Converter={x:Static avutil:DisabledImageConverter.Instance},
-                                        ConverterParameter=/Assets/Toolbar/addGap.png}"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem x:Name="removeGapMenu" Header="{resx:Localize MainFrame_removeGapMenu_Text}" InputGesture="Ctrl+Shift+G"
-                          Command="{Binding RemoveGapCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="changeTextMenu" Header="{resx:Localize MainFrame_changeTextMenu_Text}"
-                          Command="{Binding ChangeTextCommand}"/>
-                <MenuItem x:Name="changeLineAppearanceMenu" Header="{resx:Localize MainFrame_changeLineAppearanceMenu_Text}"
-                          Command="{Binding ChangeLineAppearanceCommand}"/>
-                <MenuItem x:Name="rotateMenu" Header="{resx:Localize MainFrame_rotateMenu_Text}"
-                          Command="{Binding RotateCommand}"/>
-                <MenuItem x:Name="stretchMenu" Header="{resx:Localize MainFrame_stretchMenu_Text}"
-                          Command="{Binding StretchCommand}"/>
-                <MenuItem x:Name="legFlaggingMenu" Header="{resx:Localize MainFrame_legFlaggingMenu_Text}"
-                          IsEnabled="{Binding CanSetLegFlagging}">
-                    <MenuItem x:Name="noFlaggingMenu" Header="{resx:Localize MainFrame_noFlaggingMenu_Text}"
-                              ToggleType="CheckBox" IsChecked="{Binding NoFlaggingChecked}"
-                              Command="{Binding SetNoFlaggingCommand}"/>
-                    <MenuItem x:Name="entireFlaggingMenu" Header="{resx:Localize MainFrame_entireFlaggingMenu_Text}"
-                              ToggleType="CheckBox" IsChecked="{Binding EntireFlaggingChecked}"
-                              Command="{Binding SetEntireFlaggingCommand}"/>
-                    <MenuItem x:Name="beginFlaggingMenu" Header="{resx:Localize MainFrame_beginFlaggingMenu_Text}"
-                              ToggleType="CheckBox" IsChecked="{Binding BeginFlaggingChecked}"
-                              Command="{Binding SetBeginFlaggingCommand}"/>
-                    <MenuItem x:Name="endFlaggingMenu" Header="{resx:Localize MainFrame_endFlaggingMenu_Text}"
-                              ToggleType="CheckBox" IsChecked="{Binding EndFlaggingChecked}"
-                              Command="{Binding SetEndFlaggingCommand}"/>
-                </MenuItem>
-                <Separator/>
-                <MenuItem x:Name="changeDisplayedCoursesMenu" Header="{resx:Localize MainFrame_changeDisplayedCoursesMenu_Text}"
-                          Command="{Binding ChangeDisplayedCoursesCommand}"/>
-            </MenuItem>
+            <!-- As in the Edit menu, the Add Bend/Add Gap icons gray out via the ViewModel flag that
+                 drives the corresponding command, since a NativeMenuItem has no self-reference. -->
+            <NativeMenuItem Header="{resx:Localize MainFrame_itemMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteItemMenu_Text}" Gesture="Delete"
+                                    Command="{Binding DeleteSelectionCommand}"
+                                    Icon="/Assets/Toolbar/delete.png"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteForkMenu_Text}"
+                                    Command="{Binding DeleteForkCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addBendMenu_Text}"
+                                    Gesture="Ctrl+B" Command="{Binding AddBendCommand}"
+                                    Icon="{Binding CanAddBend,
+                                           Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                           ConverterParameter=/Assets/Toolbar/addBend.png}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_removeBendMenu_Text}" Gesture="Ctrl+Shift+B"
+                                    Command="{Binding RemoveBendCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addGapMenu_Text}" Gesture="Ctrl+G"
+                                    Command="{Binding AddGapCommand}"
+                                    Icon="{Binding CanAddGap,
+                                           Converter={x:Static avutil:DisabledImageConverter.Instance},
+                                           ConverterParameter=/Assets/Toolbar/addGap.png}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_removeGapMenu_Text}" Gesture="Ctrl+Shift+G"
+                                    Command="{Binding RemoveGapCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_changeTextMenu_Text}"
+                                    Command="{Binding ChangeTextCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_changeLineAppearanceMenu_Text}"
+                                    Command="{Binding ChangeLineAppearanceCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_rotateMenu_Text}"
+                                    Command="{Binding RotateCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_stretchMenu_Text}"
+                                    Command="{Binding StretchCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_legFlaggingMenu_Text}"
+                                    IsEnabled="{Binding CanSetLegFlagging}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_noFlaggingMenu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding NoFlaggingChecked, Mode=TwoWay}"
+                                            Command="{Binding SetNoFlaggingCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_entireFlaggingMenu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding EntireFlaggingChecked, Mode=TwoWay}"
+                                            Command="{Binding SetEntireFlaggingCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_beginFlaggingMenu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding BeginFlaggingChecked, Mode=TwoWay}"
+                                            Command="{Binding SetBeginFlaggingCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_endFlaggingMenu_Text}"
+                                            ToggleType="CheckBox" IsChecked="{Binding EndFlaggingChecked, Mode=TwoWay}"
+                                            Command="{Binding SetEndFlaggingCommand}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_changeDisplayedCoursesMenu_Text}"
+                                    Command="{Binding ChangeDisplayedCoursesCommand}"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Reports Menu === -->
-            <MenuItem x:Name="reportMenu" Header="{resx:Localize MainFrame_reportMenu_Text}">
-                <MenuItem x:Name="courseSummaryMenu" Header="{resx:Localize MainFrame_courseSummaryMenu_Text}"
-                          Command="{Binding ShowCourseSummaryCommand}"
-                          CommandParameter="{resx:Localize MainFrame_courseSummaryMenu_Text}"/>
-                <MenuItem x:Name="eventAuditMenu" Header="{resx:Localize MainFrame_eventAuditMenu_Text}"
-                          Command="{Binding ShowEventAuditCommand}"
-                          CommandParameter="{resx:Localize MainFrame_eventAuditMenu_Text}"/>
-                <MenuItem x:Name="legLengthsMenu" Header="{resx:Localize MainFrame_legLengthsMenu_Text}"
-                          Command="{Binding ShowLegLengthsCommand}"
-                          CommandParameter="{resx:Localize MainFrame_legLengthsMenu_Text}"/>
-                <MenuItem x:Name="controlCrossrefMenu" Header="{resx:Localize MainFrame_controlCrossrefMenu_Text}"
-                          Command="{Binding ShowControlCrossrefCommand}"
-                          CommandParameter="{resx:Localize MainFrame_controlCrossrefMenu_Text}"/>
-                <MenuItem x:Name="controlAndLegLoadMenu" Header="{resx:Localize MainFrame_controlAndLegLoadMenu_Text}"
-                          Command="{Binding ShowControlAndLegLoadCommand}"
-                          CommandParameter="{resx:Localize MainFrame_controlAndLegLoadMenu_Text}"/>
-            </MenuItem>
+            <NativeMenuItem Header="{resx:Localize MainFrame_reportMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_courseSummaryMenu_Text}"
+                                    Command="{Binding ShowCourseSummaryCommand}"
+                                    CommandParameter="{resx:Localize MainFrame_courseSummaryMenu_Text}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_eventAuditMenu_Text}"
+                                    Command="{Binding ShowEventAuditCommand}"
+                                    CommandParameter="{resx:Localize MainFrame_eventAuditMenu_Text}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_legLengthsMenu_Text}"
+                                    Command="{Binding ShowLegLengthsCommand}"
+                                    CommandParameter="{resx:Localize MainFrame_legLengthsMenu_Text}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_controlCrossrefMenu_Text}"
+                                    Command="{Binding ShowControlCrossrefCommand}"
+                                    CommandParameter="{resx:Localize MainFrame_controlCrossrefMenu_Text}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_controlAndLegLoadMenu_Text}"
+                                    Command="{Binding ShowControlAndLegLoadCommand}"
+                                    CommandParameter="{resx:Localize MainFrame_controlAndLegLoadMenu_Text}"/>
+                </NativeMenu>
+            </NativeMenuItem>
 
             <!-- === Help Menu === -->
-            <MenuItem x:Name="helpMenu" Header="{resx:Localize MainFrame_helpMenu_Text}"
-                      SubmenuOpened="HelpMenu_SubmenuOpened">
-                <MenuItem x:Name="helpContentsMenu" Header="{resx:Localize MainFrame_helpContentsMenu_Text}" InputGesture="F1"
-                          Command="{Binding HelpContentsCommand}"/>
-                <MenuItem x:Name="helpTranslatedMenu" Header="{resx:Localize MainFrame_helpTranslatedMenu_Text}"
-                          IsVisible="{Binding IsVisibleTranslatedWebSite}"
-                          Command="{Binding HelpTranslatedCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="mainWebSiteToolMenu" Header="{resx:Localize MainFrame_mainWebSiteToolMenu_Text}"
-                          Command="{Binding OpenMainWebSiteCommand}"/>
-                <MenuItem x:Name="supportWebSiteMenu" Header="{resx:Localize MainFrame_supportWebSiteMenu_Text}"
-                          Command="{Binding OpenSupportWebSiteCommand}"/>
-                <MenuItem x:Name="donateWebSiteMenu" Header="{resx:Localize MainFrame_donateWebSiteMenu_Text}"
-                          Command="{Binding OpenDonateWebSiteCommand}"/>
-                <Separator/>
-                <MenuItem x:Name="aboutMenu" Header="{resx:Localize MainFrame_aboutMenu_Text}"
-                          Command="{Binding ShowAboutDialogCommand}"/>
+            <NativeMenuItem Header="{resx:Localize MainFrame_helpMenu_Text}">
+                <NativeMenu>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_helpContentsMenu_Text}" Gesture="F1"
+                                    Command="{Binding HelpContentsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_helpTranslatedMenu_Text}"
+                                    IsVisible="{Binding IsVisibleTranslatedWebSite}"
+                                    Command="{Binding HelpTranslatedCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_mainWebSiteToolMenu_Text}"
+                                    Command="{Binding OpenMainWebSiteCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_supportWebSiteMenu_Text}"
+                                    Command="{Binding OpenSupportWebSiteCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_donateWebSiteMenu_Text}"
+                                    Command="{Binding OpenDonateWebSiteCommand}"/>
+                    <NativeMenuItemSeparator/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_aboutMenu_Text}"
+                                    Command="{Binding ShowAboutDialogCommand}"/>
 
-                <!-- Debug submenu (shown only with Ctrl+Shift or Ctrl+Alt held; see HelpMenu_SubmenuOpened) -->
-                <MenuItem x:Name="debugMenu" Header="{resx:Localize MainFrame_debugMenu_Text}" IsVisible="False">
-                    <MenuItem x:Name="missingTranslationsMenuItem" Header="{resx:Localize MainFrame_missingTranslationsMenuItem_Text}"
-                              Command="{Binding ShowMissingTranslationsCommand}"/>
-                    <MenuItem x:Name="crashToolStripMenuItem" Header="{resx:Localize MainFrame_crashToolStripMenuItem_Text}"
-                              Command="{Binding TriggerCrashCommand}"/>
-                </MenuItem>
+                    <!-- Debug submenu (shown only while Ctrl+Shift or Ctrl+Alt is held; see MainWindow.TrackModifiers) -->
+                    <NativeMenuItem Header="{resx:Localize MainFrame_debugMenu_Text}" IsVisible="{Binding ShowHiddenHelpMenus}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_missingTranslationsMenuItem_Text}"
+                                            Command="{Binding ShowMissingTranslationsCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_crashToolStripMenuItem_Text}"
+                                            Command="{Binding TriggerCrashCommand}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
 
-                <!-- Translate submenu (shown only with Ctrl+Shift or Ctrl+Alt held; see HelpMenu_SubmenuOpened) -->
-                <MenuItem x:Name="translateMenu" Header="{resx:Localize MainFrame_translateMenu_Text}" IsVisible="False">
-                    <MenuItem x:Name="addDescriptionLanguageMenu" Header="{resx:Localize MainFrame_addDescriptionLanguageMenu_Text}"
-                              Command="{Binding AddDescriptionLanguageCommand}"/>
-                    <MenuItem x:Name="addTranslatedTextsMenu" Header="{resx:Localize MainFrame_addTranslatedTextsMenu_Text}"
-                              Command="{Binding AddTranslatedTextsCommand}"/>
-                    <MenuItem x:Name="mergeSymbolsMenu" Header="{resx:Localize MainFrame_mergeSymbolsMenu_Text}"
-                              Command="{Binding MergeSymbolsCommand}"/>
-                </MenuItem>
-            </MenuItem>
-        </Menu>
+                    <!-- Translate submenu (shown only while Ctrl+Shift or Ctrl+Alt is held; see MainWindow.TrackModifiers) -->
+                    <NativeMenuItem Header="{resx:Localize MainFrame_translateMenu_Text}" IsVisible="{Binding ShowHiddenHelpMenus}">
+                        <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_addDescriptionLanguageMenu_Text}"
+                                            Command="{Binding AddDescriptionLanguageCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_addTranslatedTextsMenu_Text}"
+                                            Command="{Binding AddTranslatedTextsCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mergeSymbolsMenu_Text}"
+                                            Command="{Binding MergeSymbolsCommand}"/>
+                        </NativeMenu>
+                    </NativeMenuItem>
+                </NativeMenu>
+            </NativeMenuItem>
+        </NativeMenu>
+    </NativeMenu.Menu>
+
+    <DockPanel LastChildFill="True">
+
+        <!-- Renders the NativeMenu above as an ordinary in-window Menu on Windows and Linux.
+             On macOS the menu is exported to the system menu bar and this control is hidden. -->
+        <NativeMenuBar DockPanel.Dock="Top"/>
 
         <!-- ==================== TOOLBAR ==================== -->
         <!-- Toolbar buttons arranged in a horizontal StackPanel.

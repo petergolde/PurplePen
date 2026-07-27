@@ -2953,7 +2953,11 @@ namespace PurplePen.ViewModels
 
         #region Debug commands
 
-
+        // True when the hidden Debug and Translate submenus at the bottom of the Help menu should be
+        // shown. The View sets this while Ctrl+Shift or Ctrl+Alt is held down; it is not derived from
+        // any application state.
+        [ObservableProperty]
+        private bool showHiddenHelpMenus;
 
         /// <summary>
         /// Shows the Missing Translations debug dialog.

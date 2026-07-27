@@ -37,11 +37,6 @@ namespace AvPurplePen.Views
         // Tracked so we can unsubscribe when the DataContext changes.
         private MainWindowViewModel? subscribedViewModel;
 
-        // Tracks the currently-held keyboard modifiers. Updated from window-level key events because
-        // Avalonia has no static equivalent of WinForms' Control.ModifierKeys. Used to decide whether
-        // the hidden Debug/Translate submenus should be revealed when the Help menu opens.
-        private KeyModifiers currentModifiers = KeyModifiers.None;
-
         // Has the MousePointerShape that should be used in the map viewer.
         public static readonly DirectProperty<MainWindow, MousePointerShape> MapMousePointerShapeProperty =
                 AvaloniaProperty.RegisterDirect<MainWindow, MousePointerShape>(
@@ -153,20 +148,19 @@ namespace AvPurplePen.Views
             }
         }
 
-        // Records the current keyboard modifiers from any key event.
+        // Records the currently-held keyboard modifiers from any key event and updates whether the
+        // hidden Debug and Translate submenus in the Help menu are shown. They are revealed only while
+        // Ctrl+Shift or Ctrl+Alt is held down (matching the WinForms helpMenu_DropDownOpening behavior).
+        // The main menu is a NativeMenu, whose items are not controls and so can neither be named nor
+        // have their submenu-opening event handled; the visibility is therefore driven from the
+        // ViewModel as the modifiers change, rather than being evaluated when the Help menu opens.
         private void TrackModifiers(object? sender, KeyEventArgs e)
         {
-            currentModifiers = e.KeyModifiers;
-        }
-
-        // Called when the Help menu's submenu opens. The Debug and Translate submenus are revealed only
-        // when Ctrl+Shift or Ctrl+Alt is held down (matching the WinForms helpMenu_DropDownOpening behavior).
-        private void HelpMenu_SubmenuOpened(object? sender, RoutedEventArgs e)
-        {
-            bool show = (currentModifiers & (KeyModifiers.Control | KeyModifiers.Shift)) == (KeyModifiers.Control | KeyModifiers.Shift) ||
-                        (currentModifiers & (KeyModifiers.Control | KeyModifiers.Alt)) == (KeyModifiers.Control | KeyModifiers.Alt);
-            debugMenu.IsVisible = show;
-            translateMenu.IsVisible = show;
+            bool show = (e.KeyModifiers & (KeyModifiers.Control | KeyModifiers.Shift)) == (KeyModifiers.Control | KeyModifiers.Shift) ||
+                        (e.KeyModifiers & (KeyModifiers.Control | KeyModifiers.Alt)) == (KeyModifiers.Control | KeyModifiers.Alt);
+            if (DataContext is MainWindowViewModel viewModel) {
+                viewModel.ShowHiddenHelpMenus = show;
+            }
         }
 
         public MousePointerShape MapMousePointerShape {
