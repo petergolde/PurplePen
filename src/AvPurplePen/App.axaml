@@ -2,9 +2,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="AvPurplePen.App"
              xmlns:local="using:AvPurplePen"
+             xmlns:resx="using:AvPurplePen"
              xmlns:semi="https://irihi.tech/semi"
              >
              <!-- Theme variant is set in App.axaml.cs -->
+
+    <!-- ============ macOS APPLICATION MENU ============ -->
+    <!-- The menu named after the program, at the left end of the macOS menu bar. About and
+         Program Language belong here rather than in Help and File, so the copies in those menus
+         hide themselves on macOS (see the IsNotMacOS bindings in MainWindow.axaml). Avalonia
+         appends the standard Services/Hide/Quit block to this menu, so those items are not
+         declared here. On Windows and Linux there is no application menu and this is ignored.
+
+         The items use Click handlers rather than {Binding SomeCommand}: this menu is built once at
+         startup and outlives any one MainWindowViewModel, and it is also on screen while the
+         welcome screen is up, when no MainWindowViewModel exists at all. -->
+    <NativeMenu.Menu>
+        <NativeMenu>
+            <NativeMenuItem Header="{resx:Localize MainFrame_aboutMenu_Text}"
+                            Click="AboutMenuItem_Click"/>
+            <NativeMenuItemSeparator/>
+            <NativeMenuItem Header="{resx:Localize MainFrame_programLanguageMenu_Text}"
+                            Click="ProgramLanguageMenuItem_Click"/>
+        </NativeMenu>
+    </NativeMenu.Menu>
 
     <Application.DataTemplates>
         <local:ViewLocator/>

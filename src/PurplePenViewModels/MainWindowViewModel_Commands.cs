@@ -2844,6 +2844,13 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
+        /// False on macOS, where the About and Program Language items belong in the application
+        /// menu rather than in Help and File. The two menu items bind their visibility to this so
+        /// they leave those menus on a Mac; the View puts them in the application menu instead.
+        /// </summary>
+        public bool IsNotMacOS => !OperatingSystem.IsMacOS();
+
+        /// <summary>
         /// Shows the About dialog.
         /// </summary>
         [RelayCommand]

@@ -43,26 +43,35 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
+    <!-- These duplicate the main menu's shortcut keys. On macOS the native menu handles its own
+         key equivalents, so these are redundant there, but they are kept in step with the menu
+         (Command instead of Ctrl) so the window still answers the right keys on its own. Escape
+         and Delete are carried only here: the menu deliberately declares no gesture for them on
+         macOS, since a menu key equivalent would intercept those keys program-wide. -->
     <Window.KeyBindings>
-        <KeyBinding Gesture="Ctrl+O" Command="{Binding FileOpenPurplePenFileCommand}"/>
-        <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveCommand}"/>
-        <KeyBinding Gesture="Ctrl+P" Command="{Binding PrintDescriptionsCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+O', macOS='Cmd+O'}" Command="{Binding FileOpenPurplePenFileCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+S', macOS='Cmd+S'}" Command="{Binding SaveCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+P', macOS='Cmd+P'}" Command="{Binding PrintDescriptionsCommand}"/>
         <KeyBinding Gesture="Escape" Command="{Binding EscapeKeyCommand}"/>
-        <KeyBinding Gesture="Ctrl+Z" Command="{Binding UndoCommand}"/>
-        <KeyBinding Gesture="Ctrl+Y" Command="{Binding RedoCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+Z', macOS='Cmd+Z'}" Command="{Binding UndoCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+Y', macOS='Cmd+Y'}" Command="{Binding RedoCommand}"/>
         <KeyBinding Gesture="Delete" Command="{Binding DeleteSelectionCommand}"/>
+        <!-- The key labelled "delete" on a Mac keyboard is Backspace; Key.Delete is forward delete,
+             which a MacBook only has as fn+delete. Bind Backspace as well there so the obvious key
+             works. A null gesture never matches, so this binding is inert off macOS. -->
+        <KeyBinding Gesture="{OnPlatform Default={x:Null}, macOS='Back'}" Command="{Binding DeleteSelectionCommand}"/>
         <KeyBinding Gesture="F2" Command="{Binding ViewEntireCourseCommand}"/>
         <KeyBinding Gesture="F3" Command="{Binding ViewEntireMapCommand}"/>
         <KeyBinding Gesture="F4" Command="{Binding ToggleAllControlsCommand}"/>
         <KeyBinding Gesture="F5" Command="{Binding ShowOtherCoursesCommand}"/>
         <KeyBinding Gesture="Shift+F5" Command="{Binding ClearOtherCoursesCommand}"/>
-        <KeyBinding Gesture="Ctrl+A" Command="{Binding AddControlCommand}"/>
-        <KeyBinding Gesture="Ctrl+B" Command="{Binding AddBendCommand}"/>
-        <KeyBinding Gesture="Ctrl+Shift+B" Command="{Binding RemoveBendCommand}"/>
-        <KeyBinding Gesture="Ctrl+G" Command="{Binding AddGapCommand}"/>
-        <KeyBinding Gesture="Ctrl+Shift+G" Command="{Binding RemoveGapCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+A', macOS='Cmd+A'}" Command="{Binding AddControlCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+B', macOS='Cmd+B'}" Command="{Binding AddBendCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+Shift+B', macOS='Cmd+Shift+B'}" Command="{Binding RemoveBendCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+G', macOS='Cmd+G'}" Command="{Binding AddGapCommand}"/>
+        <KeyBinding Gesture="{OnPlatform Default='Ctrl+Shift+G', macOS='Cmd+Shift+G'}" Command="{Binding RemoveGapCommand}"/>
         <KeyBinding Gesture="F1" Command="{Binding HelpContentsCommand}"/>
-    </Window.KeyBindings>
+     </Window.KeyBindings>
 
     <Window.Styles>
         <!-- NativeMenuBar builds each item's icon as an <Image> with no explicit size, so the
@@ -79,7 +88,15 @@
          Linux the NativeMenuBar in the layout below renders these same items as an in-window
          menu. NativeMenuItem is not a Control, so it supports no x:Name and no styling; the
          properties it does support (Header, Icon, Gesture, Command, CommandParameter, IsEnabled,
-         IsVisible, ToggleType, IsChecked) are mapped one-for-one onto MenuItem by NativeMenuBar. -->
+         IsVisible, ToggleType, IsChecked) are mapped one-for-one onto MenuItem by NativeMenuBar.
+
+         Shortcut keys use OnPlatform, because Avalonia does no Ctrl-to-Command mapping of its own:
+         KeyGesture.Matches compares modifiers exactly, and the macOS backend reports Command as
+         Meta, so a gesture written as Ctrl+O really does mean Control+O there. On macOS the Escape
+         and Delete gestures are dropped entirely (macOS={x:Null}), because AppKit matches a menu
+         key equivalent before the keystroke reaches the focused control, so those two would
+         stop working in text fields and everywhere else. Both keys still work through
+         Window.KeyBindings above, which is deliberately left alone on every platform. -->
     <NativeMenu.Menu>
         <NativeMenu>
 
@@ -87,10 +104,10 @@
             <NativeMenuItem Header="{resx:Localize MainFrame_fileMenu_Text}">
                 <NativeMenu>
                     <NativeMenuItem Header="{resx:Localize MainFrame_newEventMenu_Text}" Command="{Binding NewEventCommand}"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_openMenu_Text}" Gesture="Ctrl+O" Command="{Binding FileOpenPurplePenFileCommand}"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_openMenu_Text}" Gesture="{OnPlatform Default='Ctrl+O', macOS='Cmd+O'}" Command="{Binding FileOpenPurplePenFileCommand}"
                                     Icon="/Assets/Toolbar/open.png"/>
                     <NativeMenuItemSeparator/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_saveMenu_Text}" Gesture="Ctrl+S" Command="{Binding SaveCommand}"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_saveMenu_Text}" Gesture="{OnPlatform Default='Ctrl+S', macOS='Cmd+S'}" Command="{Binding SaveCommand}"
                                     Icon="/Assets/Toolbar/save.png"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_saveAsMenu_Text}" Command="{Binding SaveAsCommand}"/>
                     <NativeMenuItemSeparator/>
@@ -112,7 +129,7 @@
                     <NativeMenuItem Header="{resx:Localize MainFrame_createGPXFileMenu_Text}" Command="{Binding CreateGpxCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_createKMLFileMenu_Text}" Command="{Binding CreateKmlFilesCommand}"/>
                     <NativeMenuItemSeparator/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_printDescriptionsMenu_Text}" Gesture="Ctrl+P" Command="{Binding PrintDescriptionsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_printDescriptionsMenu_Text}" Gesture="{OnPlatform Default='Ctrl+P', macOS='Cmd+P'}" Command="{Binding PrintDescriptionsCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_printPunchCardsMenu_Text}" Command="{Binding PrintPunchCardsCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_printCoursesMenu_Text}" Command="{Binding PrintCoursesCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_setPrintAreaMenu_Text}">
@@ -122,11 +139,16 @@
                             <NativeMenuItem Header="{resx:Localize MainFrame_printAreaAllCoursesMenu_Text}" Command="{Binding SetPrintAreaAllCoursesCommand}"/>
                         </NativeMenu>
                     </NativeMenuItem>
-                    <NativeMenuItemSeparator/>
+                    <!-- Program Language moves to the application menu on macOS; see MacMainMenu.cs. -->
+                    <NativeMenuItemSeparator IsVisible="{Binding IsNotMacOS}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_programLanguageMenu_Text}"
+                                    IsVisible="{Binding IsNotMacOS}"
                                     Command="{Binding ShowSwitchLanguageDialogCommand}"/>
-                    <NativeMenuItemSeparator/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_exitMenu_Text}" Command="{Binding ExitCommand}"/>
+                    <!-- Exit is Quit on macOS, which Avalonia puts in the application menu. -->
+                    <NativeMenuItemSeparator IsVisible="{Binding IsNotMacOS}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_exitMenu_Text}"
+                                    IsVisible="{Binding IsNotMacOS}"
+                                    Command="{Binding ExitCommand}"/>
                 </NativeMenu>
             </NativeMenuItem>
 
@@ -137,24 +159,24 @@
             <NativeMenuItem Header="{resx:Localize MainFrame_editMenu_Text}">
                 <NativeMenu>
                     <NativeMenuItem Header="{resx:Localize MiscText_CancelOperationWithShortcut}"
-                                    Gesture="Escape"
+                                    Gesture="{OnPlatform Default='Escape', macOS={x:Null}}"
                                     IsVisible="{Binding CanCancelMode}"
                                     Command="{Binding CancelCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MiscText_ClearSelectionWithShortcut}"
-                                    Gesture="Escape"
+                                    Gesture="{OnPlatform Default='Escape', macOS={x:Null}}"
                                     IsVisible="{Binding CanClearSelection}"
                                     Command="{Binding ClearSelectionCommand}"/>
                     <NativeMenuItemSeparator/>
-                    <NativeMenuItem Header="{Binding UndoCommandName}" Gesture="Ctrl+Z" Command="{Binding UndoCommand}"
+                    <NativeMenuItem Header="{Binding UndoCommandName}" Gesture="{OnPlatform Default='Ctrl+Z', macOS='Cmd+Z'}" Command="{Binding UndoCommand}"
                                     Icon="{Binding CanUndo,
                                            Converter={x:Static avutil:DisabledImageConverter.Instance},
                                            ConverterParameter=/Assets/Toolbar/undo.png}"/>
-                    <NativeMenuItem Header="{Binding RedoCommandName}" Gesture="Ctrl+Y" Command="{Binding RedoCommand}"
+                    <NativeMenuItem Header="{Binding RedoCommandName}" Gesture="{OnPlatform Default='Ctrl+Y', macOS='Cmd+Y'}" Command="{Binding RedoCommand}"
                                     Icon="{Binding CanRedo,
                                            Converter={x:Static avutil:DisabledImageConverter.Instance},
                                            ConverterParameter=/Assets/Toolbar/redo.png}"/>
                     <NativeMenuItemSeparator/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteMenu_Text}" Gesture="Delete" Command="{Binding DeleteSelectionCommand}"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteMenu_Text}" Gesture="{OnPlatform Default='Delete', macOS={x:Null}}" Command="{Binding DeleteSelectionCommand}"
                                     Icon="/Assets/Toolbar/delete.png"/>
                 </NativeMenu>
             </NativeMenuItem>
@@ -253,7 +275,7 @@
                 <NativeMenu>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addStartMenu_Text}" Command="{Binding AddStartCommand}"
                                     Icon="/Assets/Toolbar/addStart.png"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_addControlMenu_Text}" Gesture="Ctrl+A" Command="{Binding AddControlCommand}"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addControlMenu_Text}" Gesture="{OnPlatform Default='Ctrl+A', macOS='Cmd+A'}" Command="{Binding AddControlCommand}"
                                     Icon="/Assets/Toolbar/addControl.png"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addFinishMenu_Text}" Command="{Binding AddFinishCommand}"
                                     Icon="/Assets/Toolbar/addFinish.png"/>
@@ -378,25 +400,25 @@
                  drives the corresponding command, since a NativeMenuItem has no self-reference. -->
             <NativeMenuItem Header="{resx:Localize MainFrame_itemMenu_Text}">
                 <NativeMenu>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteItemMenu_Text}" Gesture="Delete"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_deleteItemMenu_Text}" Gesture="{OnPlatform Default='Delete', macOS={x:Null}}"
                                     Command="{Binding DeleteSelectionCommand}"
                                     Icon="/Assets/Toolbar/delete.png"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_deleteForkMenu_Text}"
                                     Command="{Binding DeleteForkCommand}"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addBendMenu_Text}"
-                                    Gesture="Ctrl+B" Command="{Binding AddBendCommand}"
+                                    Gesture="{OnPlatform Default='Ctrl+B', macOS='Cmd+B'}" Command="{Binding AddBendCommand}"
                                     Icon="{Binding CanAddBend,
                                            Converter={x:Static avutil:DisabledImageConverter.Instance},
                                            ConverterParameter=/Assets/Toolbar/addBend.png}"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_removeBendMenu_Text}" Gesture="Ctrl+Shift+B"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_removeBendMenu_Text}" Gesture="{OnPlatform Default='Ctrl+Shift+B', macOS='Cmd+Shift+B'}"
                                     Command="{Binding RemoveBendCommand}"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_addGapMenu_Text}" Gesture="Ctrl+G"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addGapMenu_Text}" Gesture="{OnPlatform Default='Ctrl+G', macOS='Cmd+G'}"
                                     Command="{Binding AddGapCommand}"
                                     Icon="{Binding CanAddGap,
                                            Converter={x:Static avutil:DisabledImageConverter.Instance},
                                            ConverterParameter=/Assets/Toolbar/addGap.png}"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_removeGapMenu_Text}" Gesture="Ctrl+Shift+G"
+                    <NativeMenuItem Header="{resx:Localize MainFrame_removeGapMenu_Text}" Gesture="{OnPlatform Default='Ctrl+Shift+G', macOS='Cmd+Shift+G'}"
                                     Command="{Binding RemoveGapCommand}"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_changeTextMenu_Text}"
@@ -466,8 +488,10 @@
                                     Command="{Binding OpenSupportWebSiteCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_donateWebSiteMenu_Text}"
                                     Command="{Binding OpenDonateWebSiteCommand}"/>
-                    <NativeMenuItemSeparator/>
+                    <!-- About moves to the application menu on macOS; see MacMainMenu.cs. -->
+                    <NativeMenuItemSeparator IsVisible="{Binding IsNotMacOS}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_aboutMenu_Text}"
+                                    IsVisible="{Binding IsNotMacOS}"
                                     Command="{Binding ShowAboutDialogCommand}"/>
 
                     <!-- Debug submenu (shown only while Ctrl+Shift or Ctrl+Alt is held; see MainWindow.TrackModifiers) -->
