@@ -54,7 +54,7 @@ namespace AvPurplePen
             Name = UIText.MainFrame_Text;
 
             // Keeps the macOS menu bar from emptying out whenever a dialog is showing.
-            MacDialogMenu.Install();
+            MacMenuUtilities.InstallDialogMenus();
         }
 
         /// <summary>
