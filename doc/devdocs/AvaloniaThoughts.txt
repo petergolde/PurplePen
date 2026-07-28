@@ -110,7 +110,6 @@ Consider turning on Aliasing for printing, when we do explicit printing on Windo
 
 List of stuff:
   - Arial/Times New Roman/Courier New fonts for linux and mac. Use CrossCore fonts for these.
-  - CrashReporter - done, but need to update the crash reporter service itself to record exceptions.
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
     we should update the checking mechanism to be more robust and have a better format. Probably use NetSparkle.
   - Fix & and _ prefixes in resources.
