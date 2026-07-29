@@ -785,7 +785,7 @@ namespace PurplePen
 
             DrawCourseMap(grTarget, visRect, renderOptions);
 
-            if (LowerPurpleMapLayer != null) {
+            if (mapType == MapType.OCAD && LowerPurpleMapLayer != null) {
                 // Draw the part of the map above the lower purple.
                 saveIntensity = grTarget.Intensity;
                 grTarget.Intensity = mapIntensity;

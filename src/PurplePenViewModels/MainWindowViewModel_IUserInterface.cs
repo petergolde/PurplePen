@@ -20,8 +20,6 @@ namespace PurplePen.ViewModels
             CoursePartBannerViewModel.Controller = controller;
         }
 
-        public Size Size => throw new NotImplementedException();
-
         public void QueueIdleEvent()
         {
             Services.ServiceProvider.GetRequiredService<IApplicationIdleService>().QueueIdleEvent();
@@ -206,14 +204,43 @@ namespace PurplePen.ViewModels
             progressDialog = null;
         }
 
-        public string GetOpenFileName()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> FindMissingMapFile(string missingMapFile)
         {
-            throw new NotImplementedException();
+            if (controller == null) return false;
+
+            // Initialize dialog.
+            EventFileDialogViewModel vm = new EventFileDialogViewModel();
+            vm.SetInitialMapFile(missingMapFile);
+            if (controller.MapType == MapType.Bitmap) {
+                vm.MapScale = controller.MapScale;   // Note: these must be set AFTER SetInitialMapFile
+                vm.Dpi = controller.MapDpi;
+            }
+            else if (controller.MapType == MapType.PDF) {
+                vm.MapScale = controller.MapScale;
+            }
+
+            // First, just show the open file dialog. If we select an OCAD file,
+            // we can return immediately. Otherwise, we show the full Event Map File dialog.
+            FileOpenSingleViewModel fileVm = new FileOpenSingleViewModel {
+                FileFilters = MiscText.ChangeMapFile_FileFilter,
+            };
+
+            bool ok = await Services.DialogService.ShowDialogAsync(fileVm);
+            if (ok && fileVm.SelectedFile != null) {
+                vm.SetInitialMapFile(fileVm.SelectedFile);
+                if (vm.MapType == MapType.OCAD) {
+                    controller.ChangeMapFile(vm.MapType, vm.MapFile, vm.MapScale, vm.Dpi);
+                    return true;
+                }
+            }
+
+            // Show the dialog.
+            if (await Services.DialogService.ShowDialogAsync(vm)) {
+                controller.ChangeMapFile(vm.MapType, vm.MapFile, vm.MapScale, vm.Dpi);
+                return true;
+            }
+
+            return false;
         }
 
         public bool GetCurrentLocation(out PointF location, out float pixelSize)
@@ -229,12 +256,6 @@ namespace PurplePen.ViewModels
                 return false;
             }
        }
-
-        public int LogicalToDeviceUnits(int value)
-        {
-            throw new NotImplementedException();
-        }
-
 
         public void ShowTopologyView()
         {

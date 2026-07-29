@@ -1,7 +1,7 @@
 ﻿<course-scribe-event>
   <event id="1">
     <title>Sample Event</title>
-    <map kind="OCAD" scale="15000" ignore-missing-fonts="false" absolute-path="C:\Users\peter\Documents\Programs\PurplePen\src\PurplePen\bin\Debug\Samples\SampleMap.ocd">..\..\..\src\PurplePen\bin\Debug\Samples\SampleMap.ocd</map>
+    <map kind="OCAD" scale="15000" ignore-missing-fonts="false">SampleMap.ocd</map>
     <standards map="2017" description="2018" />
     <all-controls print-scale="15000" description-kind="symbols" />
     <print-area automatic="true" restrict-to-page-size="true" left="-73.13501" top="223.60498" right="142.765" bottom="-55.7950134" page-width="850" page-height="1100" page-margins="0" page-landscape="false" />

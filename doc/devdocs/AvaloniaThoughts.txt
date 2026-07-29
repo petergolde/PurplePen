@@ -86,7 +86,7 @@ Pain points:
 	   - JPEG quality setting; should be 80 like it was before, or maybe settable.
 	   - Check GIF quantization settings. Should maybe disable dithering?
 	   - Handling count in printing courses.
-	   - Crash reporter. Needs a full rewrite to be cross platform and use web requests instead of email.
+
 
 There are some string resources with extra & or _ prefixes that shouldn't be there. See the event wizard,
 for example, but this needs a more detailed review of all UI strings.
@@ -109,12 +109,14 @@ Hand cursor isn't show when dragging map.
 Consider turning on Aliasing for printing, when we do explicit printing on Windows.
 
 List of stuff:
-  - Arial/Times New Roman/Courier New fonts for linux and mac. Use CrossCore fonts for these.
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
     we should update the checking mechanism to be more robust and have a better format. Probably use NetSparkle.
   - Fix & and _ prefixes in resources. Fix OK/Cancel localization.
+  - Convert relative paths in the Purple Pen files converting \ and / to the correct path separator for the OS. 
 
   After Beta 1:
+  - Arial/Times New Roman fonts for linux. Use CrossCore fonts for these. Not really that important because most Linux
+    includes them already, but be good for at least Arial and Times New Roman, I think.
   - Update localization from our old localizations. Figure out how to remove duplicates.
   - Direct printing. Different for Windows/Mac/Linux.
   - Help file.

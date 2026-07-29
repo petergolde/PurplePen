@@ -1,3 +1,5 @@
+using PurplePen.Graphics2D;
+using PurplePen.MapModel;
 using SkiaSharp;
 using SkiaSharp.HarfBuzz;
 using System;
@@ -840,7 +842,7 @@ namespace Map_SkiaStd
                 }
 
                 // No private font matched this family name. Try system fonts with suffix parsing.
-                typeface = TryGetTypefaceFromNameAndStyle(familyName, weight, width, slant);
+                typeface = TryGetTypefaceFromNameAndStyle(familyName, weight, width, slant, false);
 
                 if (typeface == null && familyName != defaultFontFamilyName) {
                     // Still no font found in either the private collection or system fonts.
@@ -871,13 +873,49 @@ namespace Map_SkiaStd
                         return true;
                     }
                     else {
-                        using (SKTypeface typeface = TryGetTypefaceFromNameAndStyle(familyName, SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright)) {
+                        using (SKTypeface typeface = TryGetTypefaceFromNameAndStyle(familyName, SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright, false)) {
                             return typeface != null;
                         }
                     }
                 }
                 catch {
                     return false;
+                }
+            }
+        }
+
+        // Returns true if the requested font variant (family name + style) is installed, either in the private font collection or in system fonts.
+        // If ignorePrivateFonts is true, only system fonts are checked. 
+        public static bool FontVariantIsInstalled(string familyName, TextEffects textEffects, bool ignorePrivateFonts)
+        {
+            lock (lockObj) {
+                SKFontStyleWeight weight = SkiaFont.GetSKFontStyleWeight(textEffects);
+                SKFontStyleSlant slant = SkiaFont.GetSKFontStyleSlant(textEffects);
+                SKFontStyleWidth width = SKFontStyleWidth.Normal;
+
+                using (SKTypeface typeface = TryGetTypefaceFromNameAndStyle(familyName, weight, width, slant, ignorePrivateFonts)) {
+                    if (typeface == null) {
+                        return false;
+                    }
+
+                    bool boldOk, italicOk;
+
+                    // Make sure the correct variant is available.
+                    if (textEffects.HasFlag(TextEffects.Bold)) {
+                        boldOk = typeface.FontWeight >= (int)SKFontStyleWeight.Bold;
+                    }
+                    else {
+                        boldOk = typeface.FontWeight <= (int)SKFontStyleWeight.Medium && typeface.FontWeight >= (int)SKFontStyleWeight.Light;
+                    }
+
+                    if (textEffects.HasFlag(TextEffects.Italic)) {
+                        italicOk = typeface.FontSlant != SKFontStyleSlant.Upright;
+                    }
+                    else {
+                        italicOk = typeface.FontSlant == SKFontStyleSlant.Upright;
+                    }
+
+                    return boldOk && italicOk;
                 }
             }
         }
@@ -953,15 +991,17 @@ namespace Map_SkiaStd
         /// 2) Returns null if the font cannot be resolved, instead of a platform default
         /// like "Segoe UI".
         /// 3) Uses any typefaces registered with AddFontFile, which SKTypeface.FromFamilyName doesn't know about.
+        ///    If IgnorePrivateFonts is true, then private fonts are ignored and only system-installed fonts are used.
         /// </summary>
         public static SKTypeface TryGetTypefaceFromNameAndStyle(
             string familyName,
             SKFontStyleWeight weightModifier,
             SKFontStyleWidth widthModifier,
-            SKFontStyleSlant slantModifier)
+            SKFontStyleSlant slantModifier,
+            bool ignorePrivateFonts)
         {
             // Try the full name as-is first — maybe SkiaSharp or our registry handles it directly
-            SKTypeface typeface = CreateTypefaceFromSystemOrPrivate(familyName, weightModifier, widthModifier, slantModifier);
+            SKTypeface typeface = CreateTypefaceFromSystemOrPrivate(familyName, weightModifier, widthModifier, slantModifier, ignorePrivateFonts);
             if (typeface != null)
                 return typeface;
 
@@ -1013,7 +1053,8 @@ namespace Map_SkiaStd
             typeface = CreateTypefaceFromSystemOrPrivate(baseName, 
                 parsedWeight.HasValue ? (SKFontStyleWeight)parsedWeight.Value : weightModifier,
                 parsedWidth.HasValue ? (SKFontStyleWidth)parsedWidth.Value : widthModifier,
-                parsedSlant.HasValue ? (SKFontStyleSlant)parsedSlant.Value : slantModifier);
+                parsedSlant.HasValue ? (SKFontStyleSlant)parsedSlant.Value : slantModifier,
+                ignorePrivateFonts);
 
             return typeface;
         }
@@ -1022,14 +1063,16 @@ namespace Map_SkiaStd
         // done at this layer (even for private font files), because that is done at the ShapedTypeface layer instead. This function
         // always creates a new SKTypeface, and ownership and responsibility for Disposing it is passed to the caller. Returns null
         // (not a default typeface) if no matching typeface in the system or private registry.
-        private static SKTypeface CreateTypefaceFromSystemOrPrivate(string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant)
+        private static SKTypeface CreateTypefaceFromSystemOrPrivate(string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant, bool ignorePrivateFonts)
         {
             lock (lockObj) {
-                // Try the private font collection first, using CSS Fonts Level 3 Section 5.2
-                // matching rules to find the best available variant for the requested style.
-                string privateFontPath = FindBestPrivateFontMatch(familyName, weight, width, slant);
-                if (privateFontPath != null) {
-                    return SKTypeface.FromFile(privateFontPath);
+                if (!ignorePrivateFonts) {
+                    // Try the private font collection first, using CSS Fonts Level 3 Section 5.2
+                    // matching rules to find the best available variant for the requested style.
+                    string privateFontPath = FindBestPrivateFontMatch(familyName, weight, width, slant);
+                    if (privateFontPath != null) {
+                        return SKTypeface.FromFile(privateFontPath);
+                    }
                 }
 
                 // SKTypeface.FromFamilyName always returns something. We want to return null if it can't find a reasonable match,

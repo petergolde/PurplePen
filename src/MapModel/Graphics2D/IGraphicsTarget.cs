@@ -234,6 +234,10 @@ namespace PurplePen.Graphics2D
     public interface IFontLoader
     {
         bool FontFamilyIsInstalled(string familyName);
+
+        // Determine if a font variant is installed. If ignorePrivateFonts is true, then only system fonts are considered.
+        // If ignorePrivateFonts is false, then fonts registered with AddFontFile are also considered.
+        bool FontVariantIsInstalled(string familyName, TextEffects textEffects, bool ignorePrivateFonts);
         void AddFontFile(string familyName, TextEffects textEffects, string fontFilePath);
 
         // Returns an array of all available font family names, combining both

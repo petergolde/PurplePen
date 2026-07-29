@@ -968,6 +968,11 @@ namespace PurplePen.MapModel
             return SkiaFontManager.FontFamilyIsInstalled(familyName);
         }
 
+        public bool FontVariantIsInstalled(string familyName, TextEffects textEffects, bool ignorePrivateFonts)
+        {
+            return SkiaFontManager.FontVariantIsInstalled(familyName, textEffects, ignorePrivateFonts);
+        }
+
         // Returns an array of all available font family names, combining both
         // private registered fonts and system fonts. Delegates to SkiaFontManager.
         public string[] GetFontFamilies()

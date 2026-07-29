@@ -4498,12 +4498,6 @@ namespace PurplePen
         // Get the pointer location (return false if mouse not over the map)
         bool GetCurrentLocation(out PointF location, out float pixelSize);
 
-        // Prompt the user for a file name to open.
-        string GetOpenFileName();
-
-        Size Size { get; }             // Get the size of the main UI
-        int LogicalToDeviceUnits(int value);
-
         // Different kinds of message box like messages
         Task ErrorMessage(string message);
         Task WarningMessage(string message);

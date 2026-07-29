@@ -103,6 +103,35 @@ namespace PurplePen.MapModel
             }
         }
 
+        public bool FontVariantIsInstalled(string familyName, TextEffects textEffects, bool ignorePrivateFonts)
+        {
+            lock (lockObj) {
+                try {
+                    FontKey fontKey = new FontKey(familyName, textEffects);
+
+                    // First try our private font collection.
+                    if (!ignorePrivateFonts && fontCollections.ContainsKey(fontKey)) {
+                        return true;
+                    }
+                    else {
+                        using (FontFamily family = new FontFamily(familyName)) {
+                            if (string.Equals(family.Name, familyName, StringComparison.InvariantCultureIgnoreCase) && 
+                                family.IsStyleAvailable(FontStyleFromTextEffects(textEffects))) 
+                            {
+                                return true;
+                            }
+                        }
+                    }
+
+                    return false;
+                }
+                catch {
+                    return false;
+                }
+            }
+
+        }
+
         // Returns an array of all available font family names, combining both
         // private registered fonts and system fonts from InstalledFontCollection.
         // Duplicates are removed using case-insensitive comparison, and the
