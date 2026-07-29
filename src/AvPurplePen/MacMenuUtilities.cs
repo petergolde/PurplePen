@@ -51,6 +51,23 @@
 // The items declared in MainWindow.axaml are kept aside as the source of the headers -- they are no
 // longer in the menu, but their {resx:Localize} bindings live on and keep their Header current, so
 // each language change can build a new set of items from them.
+//
+//
+// 3. RESTORING THE MENU BAR AFTER THE WELCOME SCREEN HANDS OVER
+//
+// Which of the two callbacks above runs last decides what the menu bar ends up showing, and neither
+// guards against the other: showAppMenuOnly does not check whether the window resigning key is
+// still key, or whether another window has become key since. When the welcome screen hands over to
+// the main window, both fire within a tick or two of each other -- the main window becomes key, the
+// welcome screen resigns and closes -- and if the resign lands last the menu bar is left showing
+// only the application menu. It is a race, so it only bites sometimes.
+//
+// Reordering the handoff cannot settle it. Once the main window is key, AppKit will not call
+// becomeKeyWindow on it again, so no later Show or Activate re-installs the menu; that is why
+// switching to another application and back is what brings it round. Instead ReassertMenuBar()
+// re-exports the menu once the dispatcher has gone quiet: the export calls SetMainMenu, which
+// re-runs showWindowMenuWithAppMenu when the window is key. Harmless when the menu bar is already
+// right, restorative when it is not.
 
 using System;
 using System.Collections.Generic;
@@ -60,6 +77,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Interactivity;
+using Avalonia.Threading;
 
 namespace AvPurplePen
 {
@@ -199,6 +217,31 @@ namespace AvPurplePen
                 if (menu != null)
                     RebuildTopLevelItems(menu);
             }
+        }
+
+        /// <summary>
+        /// Re-exports a window's menu once the dispatcher is quiet, so that a menu bar left empty
+        /// by a key-window race is put back. Call after showing a window that takes over from
+        /// another one; on any normal startup this changes nothing that is visible.
+        /// </summary>
+        /// <param name="window">The window whose menu should be re-exported.</param>
+        public static void ReassertMenuBar(Window window)
+        {
+            if (!OperatingSystem.IsMacOS())
+                return;
+
+            // Background priority, so this runs after the windows have finished swapping over and
+            // AppKit has delivered the key-window callbacks that cause the trouble. Re-exporting
+            // before then would just be overwritten by the late one.
+            Dispatcher.UIThread.Post(() => {
+                NativeMenu? menu = NativeMenu.GetMenu(window);
+                if (menu != null) {
+                    // The same rebuild the language change uses. Its purpose there is to re-title
+                    // the menus, which is wasted here, but what matters is the re-export it
+                    // triggers, and reusing it avoids a second way of provoking one.
+                    RebuildTopLevelItems(menu);
+                }
+            }, DispatcherPriority.Background);
         }
 
         /// <summary>

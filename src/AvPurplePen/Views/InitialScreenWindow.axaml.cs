@@ -79,6 +79,11 @@ namespace AvPurplePen.Views
 
             // The initial screen is over and out.
             Close();
+
+            // On macOS the two windows changing key status in quick succession sometimes leaves the
+            // menu bar showing only the application menu. Re-exporting the menu afterwards puts it
+            // back; no-op on the other platforms. See MacMenuUtilities.cs.
+            MacMenuUtilities.ReassertMenuBar(mainWindow);
         }
 
         /// <summary>
