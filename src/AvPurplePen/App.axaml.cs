@@ -45,6 +45,48 @@ namespace AvPurplePen
             // The Avalonia dispatcher exists by the time Initialize runs, so this is the
             // earliest point at which the UI-thread exception handlers can be attached.
             CrashHandler.InstallDispatcherHandlers();
+
+            // The name macOS shows for the application menu, at the left end of the menu bar.
+            // Without it the menu is named after the process, which is the assembly name.
+            // Read once here: Avalonia passes it to the platform during startup, so a later
+            // language change does not reach it. Every translation of MainFrame_Text is the
+            // untranslated product name, so there is nothing to re-read.
+            Name = UIText.MainFrame_Text;
+
+            // Keeps the macOS menu bar from emptying out whenever a dialog is showing.
+            MacMenuUtilities.InstallDialogMenus();
+        }
+
+        /// <summary>
+        /// Shows the About dialog, for the macOS application menu declared in App.axaml.
+        /// Mirrors MainWindowViewModel's ShowAboutDialog command, which still serves the Help menu
+        /// on Windows and Linux. It is repeated rather than delegated to because the application
+        /// menu is also on screen while the welcome screen is showing, and there is no
+        /// MainWindowViewModel then.
+        /// </summary>
+        /// <param name="sender">The menu item that was picked.</param>
+        /// <param name="e">Event arguments (unused).</param>
+        private async void AboutMenuItem_Click(object? sender, EventArgs e)
+        {
+            await Services.DialogService.ShowDialogAsync(new AboutDialogViewModel());
+        }
+
+        /// <summary>
+        /// Shows the Switch Language dialog and applies the choice, for the macOS application menu
+        /// declared in App.axaml. Mirrors MainWindowViewModel's ShowSwitchLanguageDialog command,
+        /// for the same reason as <see cref="AboutMenuItem_Click"/>.
+        /// </summary>
+        /// <param name="sender">The menu item that was picked.</param>
+        /// <param name="e">Event arguments (unused).</param>
+        private async void ProgramLanguageMenuItem_Click(object? sender, EventArgs e)
+        {
+            string currentCode = Services.UILanguage.LanguageCode;
+            SwitchLanguageDialogViewModel viewModel = new SwitchLanguageDialogViewModel(
+                currentCode, SwitchLanguageDialogViewModel.CreateDefaultLanguages());
+
+            if (await Services.DialogService.ShowDialogAsync(viewModel) && viewModel.SelectedLanguage != null) {
+                Services.UILanguage.LanguageCode = viewModel.SelectedLanguage.Code;
+            }
         }
 
         public override void OnFrameworkInitializationCompleted()

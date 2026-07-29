@@ -38,6 +38,10 @@ namespace AvPurplePen
                 }
 
                 LocalizedStringManager.Instance.NotifyLanguageChanged();
+
+                // Refreshing the bindings is not enough for the macOS menu bar: its top-level
+                // titles are only re-read when the menu is re-exported. No-op elsewhere.
+                MacMenuUtilities.RefreshMenuBar();
             }
         }
     }
