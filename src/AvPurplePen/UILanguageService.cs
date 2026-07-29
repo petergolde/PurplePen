@@ -29,6 +29,14 @@ namespace AvPurplePen
                 CultureInfo newCulture = new CultureInfo(value);
                 Thread.CurrentThread.CurrentUICulture = newCulture;
                 CultureInfo.DefaultThreadCurrentUICulture = newCulture;
+
+                // Save the new language code to user settings if it has changed.
+                string oldSettingsLanguage = UserSettings.Current.UILanguage;
+                if (oldSettingsLanguage != newCulture.Name) {
+                    UserSettings.Current.UILanguage = newCulture.Name;
+                    UserSettings.Current.Save();
+                }
+
                 LocalizedStringManager.Instance.NotifyLanguageChanged();
             }
         }

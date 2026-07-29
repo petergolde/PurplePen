@@ -8,6 +8,7 @@ using PurplePen.ViewModels;
 using System;
 using System.Globalization;
 using System.IO;
+using System.Threading;
 
 namespace AvPurplePen
 {
@@ -96,7 +97,9 @@ namespace AvPurplePen
 
             if (!string.IsNullOrEmpty(uiLanguage)) {
                 try {
-                    System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(uiLanguage);
+                    CultureInfo cultureInfo = CultureInfo.GetCultureInfo(uiLanguage);
+                    Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                    CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
                 }
                 catch (Exception) { }        // Ignore problem -- e.g. this culture name isn't supported.
             }
