@@ -148,6 +148,11 @@ namespace AvUtil
 
             SyncScrollBarChildren();
 
+            // Trackpad pinch (magnify) gestures on macOS arrive as their own routed event rather than as
+            // wheel events, and there is no virtual method to override, so the handler is added explicitly.
+            AddHandler(InputElement.PointerTouchPadGestureMagnifyEvent, OnTouchPadMagnify,
+                       RoutingStrategies.Tunnel | RoutingStrategies.Bubble);
+
             this.IsHitTestVisible = true;
         }
 
@@ -529,6 +534,35 @@ namespace AvUtil
                 ZoomWithWheel(pt, delta);
             else if (MouseWheelAction == WheelAction.Scroll)
                 ScrollWithWheel(delta);
+
+            // Mark the event as handled
+            e.Handled = true;
+        }
+
+        // Handle a trackpad pinch (magnify) gesture, zooming around the location of the gesture. On macOS
+        // this is a separate event from the mouse wheel; two-finger scrolling and real mouse wheels come
+        // through OnPointerWheelChanged instead. Other platforms do not currently raise this event.
+        //   sender: the sender of the event (this control).
+        //   e: the gesture arguments; Delta holds the incremental relative magnification.
+        private void OnTouchPadMagnify(object? sender, PointerDeltaEventArgs e)
+        {
+            // A pinch always zooms, so it does nothing unless the wheel is configured to zoom.
+            if (MouseWheelAction != WheelAction.Zoom)
+                return;
+
+            // Only act when the pointer is over the drawing area (not the scroll bars).
+            Avalonia.Rect rect = new Rect(GetDrawingAreaSize());  // local coordinates (excluding scroll bars).
+            Point pt = e.GetPosition(this);
+            if (!rect.Contains(pt))
+                return;
+
+            // Delta is an incremental relative change in scale (typically a few hundredths per event, and
+            // negative when pinching inward), not a count of wheel notches, so it is applied multiplicatively.
+            double magnification = e.Delta.Y;
+            if (magnification == 0)
+                return;
+
+            ZoomAroundPoint(PixelToWorld(pt), ZoomFactor * (float)(1.0 + magnification));
 
             // Mark the event as handled
             e.Handled = true;
