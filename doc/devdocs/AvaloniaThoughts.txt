@@ -112,10 +112,10 @@ List of stuff:
   - Arial/Times New Roman/Courier New fonts for linux and mac. Use CrossCore fonts for these.
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
     we should update the checking mechanism to be more robust and have a better format. Probably use NetSparkle.
-  - Fix & and _ prefixes in resources.
-  - Mac menu bar using Native Menu.
+  - Fix & and _ prefixes in resources. Fix OK/Cancel localization.
 
   After Beta 1:
+  - Update localization from our old localizations. Figure out how to remove duplicates.
   - Direct printing. Different for Windows/Mac/Linux.
   - Help file.
   - Hand cursor isn't show when dragging map.
