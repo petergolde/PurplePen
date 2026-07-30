@@ -102,6 +102,8 @@
        fails when PublishReadyToRun adds a RID-specific output path). -->
   <PropertyGroup>
     <PdfConverterOutputDir>..\PdfConverter\bin\$(Configuration)\net10.0\</PdfConverterOutputDir>
+    <AssemblyName>PurplePen</AssemblyName>
+    <RootNamespace>AvPurplePen</RootNamespace>
   </PropertyGroup>
 
   <Target Name="BuildPdfConverter" BeforeTargets="Build;Publish">

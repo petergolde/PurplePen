@@ -36,7 +36,7 @@ namespace AvPurplePen
             // ThemeDictionaries resolve our variant.
             //SemiTheme semiTheme = (SemiTheme)Styles[0];
             //semiTheme.Resources!.ThemeDictionaries[PurplePenTheme] =
-            //    new ResourceInclude(new Uri("avares://AvPurplePen/")) { Source = new Uri("/Themes/PurplePenScheme.axaml", UriKind.Relative) };
+            //    new ResourceInclude(new Uri("avares://PurplePen/")) { Source = new Uri("/Themes/PurplePenScheme.axaml", UriKind.Relative) };
 
             //RequestedThemeVariant = PurplePenTheme;
 

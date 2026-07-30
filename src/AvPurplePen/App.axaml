@@ -32,9 +32,9 @@
     </Application.DataTemplates>
 
     <Application.Resources>
-        <FontFamily x:Key="DefaultFontFamily">avares://AvPurplePen/Assets/UIFonts#Source Sans 3</FontFamily>
+        <FontFamily x:Key="DefaultFontFamily">avares://PurplePen/Assets/UIFonts#Source Sans 3</FontFamily>
         <!-- Override Semi.Avalonia's default font (Inter) with our embedded font -->
-        <FontFamily x:Key="SemiFontFamilyRegular">avares://AvPurplePen/Assets/UIFonts#Source Sans 3</FontFamily>
+        <FontFamily x:Key="SemiFontFamilyRegular">avares://PurplePen/Assets/UIFonts#Source Sans 3</FontFamily>
 
         <!-- Fixed-pitch font, used where column alignment matters (currently the error
              details dialog's stack traces). No monospace font is embedded, so this names
