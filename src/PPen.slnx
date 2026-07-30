@@ -39,6 +39,9 @@
       <Build Solution="Debug|Any CPU" Project="false" />
       <Build Solution="StorePkg|Any CPU" Project="false" />
     </Project>
+    <Project Path="Installer/MacInstaller/MacInstaller.csproj" Id="2036fb10-0687-4d64-9fd0-4662d53ae2a9">
+      <BuildType Solution="StorePkg|*" Project="Release" />
+    </Project>
     <Project Path="MsftStoreInstaller/MsftStoreInstaller.wapproj" Type="c7167f0d-bc9f-4e6e-afe1-012c56b48db5">
       <BuildType Solution="StorePkg|Any CPU" Project="Release" />
       <BuildType Solution="StorePkg|ARM" Project="Debug" />
