@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    PurplePen.entitlements
+
+    Hardened Runtime entitlements for Developer ID (outside the Mac App Store)
+    distribution. Notarization requires the Hardened Runtime, which blocks
+    several things the .NET runtime needs by default; the exceptions below
+    re-enable exactly those.
+
+    There is deliberately no com.apple.security.app-sandbox key here. The
+    sandbox is only required for the Mac App Store, and enabling it would
+    restrict Purple Pen's access to map and course files chosen by the user.
+-->
+<plist version="1.0">
+<dict>
+    <!-- The .NET JIT compiles IL to machine code at runtime. -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+
+    <!-- The JIT writes to memory pages it then executes. -->
+    <key>com.apple.security.cs.allow-unsigned-executable-memory</key>
+    <true/>
+
+    <!-- Allows loading the bundled native libraries (SkiaSharp, HarfBuzz,
+         libAvaloniaNative) which are signed with our Developer ID rather than
+         with the app's own team-scoped signature. -->
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+
+    <!-- The .NET host reads DYLD_* variables to locate the runtime. -->
+    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
+    <true/>
+
+    <!-- Required by Avalonia for some AppKit interactions, and for any use of
+         Apple Events (e.g. asking Finder to reveal an exported file). -->
+    <key>com.apple.security.automation.apple-events</key>
+    <true/>
+</dict>
+</plist>

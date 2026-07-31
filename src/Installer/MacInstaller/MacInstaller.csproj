@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <None Include="**/*"
-          Exclude="bin/**;obj/**" />
+          Exclude="bin/**;obj/**;build/**;output/**" />
   </ItemGroup>
 
 </Project>

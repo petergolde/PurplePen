@@ -1,0 +1,87 @@
+# publish-exclude.txt
+#
+# Files and directories to leave OUT of the macOS app bundle.
+#
+# This is passed to rsync as --exclude-from when copying the dotnet publish
+# output into the bundle staging directory, so it uses rsync's filter syntax:
+#
+#   Foo.dll             matches Foo.dll at any depth
+#   /Foo.dll            matches Foo.dll only at the top level of the publish dir
+#   *.pdb               glob, matches at any depth
+#   sv/                 trailing slash matches directories only
+#   **/Bar              ** crosses directory boundaries
+#
+# Blank lines and lines starting with # are ignored.
+#
+# Anything excluded here is simply absent from the .app -- there is no error if
+# the app later tries to load it, so re-test the built app after each change.
+#
+# ---------------------------------------------------------------------------
+# Candidates worth trying (uncomment to enable).
+#
+# Measured against the 4.0.0.110 build: the bundle is 533 MB, of which 399 MB
+# is the runtimes/ tree described below.
+#
+# --- runtimes/ for other platforms: ~399 MB -------------------------------
+#
+#   AvPurplePen.csproj's CopyPdfConverterToPublishOutput target copies
+#   PdfConverter's entire build output into the publish directory, including
+#   its RID-agnostic runtimes/ folder. That folder carries native pdfium and
+#   libSkiaSharp binaries for every platform PDFiumCore and SkiaSharp ship:
+#
+#       win-x86  99 MB   win-x64  98 MB   win-arm64  97 MB
+#       linux-musl-x64/-arm64/-x86  50 MB combined
+#       linux-x64/-x86/-arm/-arm64  28 MB combined
+#       osx  15 MB       osx-x64  7.2 MB  osx-arm64  6.8 MB
+#
+#   None of it is loaded on macOS: the self-contained osx-arm64 publish
+#   already flattens the native libraries it actually needs (libSkiaSharp.dylib
+#   and friends) into the top level of the bundle. Excluding the whole tree
+#   takes the bundle from 533 MB to roughly 134 MB.
+#
+#   The whole tree, including runtimes/osx and runtimes/osx-arm64, is orphaned:
+#   neither PurplePen.deps.json nor PdfConverter.deps.json (after the overlay)
+#   contains a single runtimeTargets entry, so nothing ever probes runtimes/.
+#   A RID-specific publish resolves native assets at build time and copies them
+#   to the top level instead. Specifically:
+#
+#     runtimes/osx/native/libSkiaSharp.dylib   byte-identical to the root copy
+#     runtimes/osx-arm64/native/libpdfium.dylib  superseded by the root copy
+#                                                the PdfConverter overlay adds
+#
+#   Verified with this line active: the main app launches and renders (Avalonia
+#   draws through Skia, so a live window proves libSkiaSharp loaded), and the
+#   helper converts a PDF with no system .NET present.
+#
+runtimes/
+#
+# --- PdfConverter: do NOT exclude -----------------------------------------
+#
+#   Note this list is applied to the PdfConverter overlay as well, so excluding
+#   these would remove the working helper the build script installs:
+#
+#       PdfConverter  PdfConverter.dll  PdfConverter.runtimeconfig.json
+#       PdfConverter.deps.json  libpdfium.dylib
+#
+#   The framework-dependent copy that lands here from the main publish is
+#   overwritten by a self-contained republish (see INCLUDE_PDF_CONVERTER in
+#   config.sh), which is what makes the helper runnable inside the bundle. The
+#   helper costs about 7 MB, nearly all of it libpdfium.dylib.
+#
+#   To leave the helper out entirely, set INCLUDE_PDF_CONVERTER=false rather
+#   than excluding files here -- that way the build does not spend time
+#   publishing something it then discards.
+#
+# --- Debug symbols --------------------------------------------------------
+#
+#   Safe to drop; only affects the quality of crash stack traces.
+#
+# *.pdb
+#
+# --- Satellite resource assemblies ----------------------------------------
+#
+#   One directory per translated language (de/, fr/, ja/, ...). Only exclude
+#   languages you do not intend to ship, and remember Purple Pen supports live
+#   language switching, so an excluded language silently falls back to English.
+#
+# ---------------------------------------------------------------------------
