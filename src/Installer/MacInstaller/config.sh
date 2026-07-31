@@ -1,0 +1,118 @@
+#!/bin/bash
+#
+# config.sh
+#
+# Settings for build-mac-app.sh. Every value here can be overridden by setting
+# the same name as an environment variable before running the build script,
+# e.g.:
+#
+#     SKIP_NOTARIZE=1 ./build-mac-app.sh
+#     SIGNING_IDENTITY="Developer ID Application: Someone Else (ABCDE12345)" ./build-mac-app.sh
+#
+# No secrets belong in this file. The app-specific password used for
+# notarization lives in the macOS keychain (see NOTARY_KEYCHAIN_PROFILE below).
+#
+
+# ---------------------------------------------------------------------------
+# Application identity
+# ---------------------------------------------------------------------------
+
+# Reverse-DNS bundle identifier. Must stay stable across releases; changing it
+# makes macOS treat the app as a different application.
+: "${BUNDLE_ID:=org.purple-pen.PurplePen}"
+
+# Name of the .app bundle and the executable inside it. The executable name
+# must match AvPurplePen's <AssemblyName>, which is "PurplePen".
+: "${APP_NAME:=PurplePen}"
+
+# CFBundleName is shown in the macOS menu bar and is limited to 15 characters.
+: "${BUNDLE_NAME:=Purple Pen}"
+
+# CFBundleDisplayName is shown in Finder and the Dock.
+: "${DISPLAY_NAME:=Purple Pen}"
+
+# Copyright string shown in Finder's Get Info panel.
+: "${COPYRIGHT:=Copyright © 2006-2026 Peter Golde. All rights reserved.}"
+
+# Minimum macOS version the app declares support for. This should track the
+# minimum macOS version supported by the .NET runtime being bundled -- if it is
+# set too low, the app will launch on an unsupported system and then crash.
+: "${MIN_MACOS_VERSION:=13.0}"
+
+# ---------------------------------------------------------------------------
+# Build settings
+# ---------------------------------------------------------------------------
+
+# Runtime identifier to publish for. Apple Silicon only.
+: "${RUNTIME_IDENTIFIER:=osx-arm64}"
+
+# Build configuration and target framework. Note this is net10.0, NOT
+# net10.0-macos -- AvPurplePen is a plain Avalonia desktop app and does not use
+# the .NET macOS workload.
+: "${CONFIGURATION:=Release}"
+: "${TARGET_FRAMEWORK:=net10.0}"
+
+# Self-contained means the .NET runtime is bundled into the .app, so users do
+# not need to install .NET separately.
+: "${SELF_CONTAINED:=true}"
+
+# ReadyToRun ahead-of-time compilation improves startup time at the cost of a
+# larger bundle. Off by default; set to true once you have confirmed the basic
+# pipeline works end to end.
+: "${PUBLISH_READYTORUN:=false}"
+
+# Republish PdfConverter as a self-contained helper and overlay it onto the
+# bundle payload.
+#
+# AvPurplePen.csproj copies PdfConverter's plain *build* output into the
+# publish directory, which is framework-dependent: its apphost looks for a
+# machine-wide .NET install, finds the self-contained app's own hostfxr next to
+# it instead, and refuses to start. Republishing it self-contained for this RID
+# makes it share the runtime files already in the bundle, so the helper costs
+# only about 7 MB (essentially just libpdfium.dylib).
+#
+# Set to false to leave whatever the main publish produced untouched.
+: "${INCLUDE_PDF_CONVERTER:=true}"
+
+# ---------------------------------------------------------------------------
+# Code signing
+# ---------------------------------------------------------------------------
+
+# Full name of the "Developer ID Application" certificate to sign with, e.g.
+#     Developer ID Application: Peter Golde (ABCDE12345)
+# Leave empty to have the script auto-detect it from the keychain. Auto-detect
+# fails if zero, or more than one, such certificate is installed.
+#
+# List what you have with:
+#     security find-identity -v -p codesigning
+: "${SIGNING_IDENTITY:=}"
+
+# ---------------------------------------------------------------------------
+# Notarization
+# ---------------------------------------------------------------------------
+
+# Name of the notarytool keychain profile holding your Apple ID credentials.
+# Create it once with:
+#
+#     xcrun notarytool store-credentials "PurplePen-Notary" \
+#         --apple-id "peter@golde.org" \
+#         --team-id "YOURTEAMID" \
+#         --password "abcd-efgh-ijkl-mnop"
+#
+# The password is an app-specific password generated at appleid.apple.com,
+# NOT your Apple ID password.
+: "${NOTARY_KEYCHAIN_PROFILE:=PurplePen-Notary}"
+
+# Alternative to the keychain profile: set all three of these in the
+# environment (useful on a build server). If NOTARY_APPLE_ID is set, these are
+# used instead of the keychain profile.
+: "${NOTARY_APPLE_ID:=}"
+: "${NOTARY_TEAM_ID:=}"
+: "${NOTARY_PASSWORD:=}"
+
+# ---------------------------------------------------------------------------
+# Output
+# ---------------------------------------------------------------------------
+
+# Volume name shown when the DMG is mounted.
+: "${DMG_VOLUME_NAME:=Purple Pen}"

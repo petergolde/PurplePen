@@ -1,0 +1,5 @@
+# Intermediate bundle staging and the assembled .app.
+build/
+
+# Finished .dmg and .zip.
+output/

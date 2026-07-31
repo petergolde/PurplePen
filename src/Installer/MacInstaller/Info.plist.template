@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+    Info.plist.template
+
+    Template for the app bundle's Info.plist. build-mac-app.sh substitutes the
+    at-sign-delimited tokens below and writes the result to
+    PurplePen.app/Contents/Info.plist.
+-->
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>@EXECUTABLE@</string>
+
+    <!-- Shown in the macOS menu bar. Limited to 15 characters. -->
+    <key>CFBundleName</key>
+    <string>@BUNDLE_NAME@</string>
+
+    <!-- Shown in Finder and the Dock. May be longer than 15 characters. -->
+    <key>CFBundleDisplayName</key>
+    <string>@DISPLAY_NAME@</string>
+
+    <key>CFBundleIdentifier</key>
+    <string>@BUNDLE_ID@</string>
+
+    <key>CFBundleIconFile</key>
+    <string>@ICON_NAME@</string>
+
+    <!-- User-visible version, e.g. 4.0.0 -->
+    <key>CFBundleShortVersionString</key>
+    <string>@SHORT_VERSION@</string>
+
+    <!-- Build version, must increase with every release submitted. -->
+    <key>CFBundleVersion</key>
+    <string>@BUILD_VERSION@</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+
+    <key>NSHumanReadableCopyright</key>
+    <string>@COPYRIGHT@</string>
+
+    <key>LSMinimumSystemVersion</key>
+    <string>@MIN_MACOS_VERSION@</string>
+
+    <!-- Required for crisp rendering on Retina displays. -->
+    <key>NSHighResolutionCapable</key>
+    <true/>
+
+    <!-- Regular app: shows in the Dock and has a menu bar. -->
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.sports</string>
+
+    <!--
+        File type association for .ppen course files.
+
+        Disabled for now: enabling this makes Finder route double-clicked
+        .ppen files to Purple Pen, but AvPurplePen does not yet handle the
+        macOS "open document" event, so the app would launch without opening
+        the file. Uncomment once that is wired up.
+
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>Purple Pen Course File</string>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>ppen</string>
+            </array>
+            <key>CFBundleTypeIconFile</key>
+            <string>@ICON_NAME@</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Owner</string>
+        </dict>
+    </array>
+    -->
+</dict>
+</plist>
