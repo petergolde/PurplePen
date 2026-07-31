@@ -34,7 +34,7 @@
         mc:Ignorable="d" d:DesignWidth="958" d:DesignHeight="600"
         x:Class="AvPurplePen.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/PurplePenIcon.png"
+        Icon="/Assets/AppIcon/PurplePenBeta.32x32.png"
         Title="{Binding WindowTitle}"
         MapMousePointerShape="{Binding MapMousePointerShape}"
         >

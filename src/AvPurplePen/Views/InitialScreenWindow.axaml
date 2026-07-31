@@ -21,7 +21,7 @@
         Classes="dialog"
         x:DataType="vm:InitialScreenViewModel"
         Title="{resx:Localize InitialScreen_Text}"
-        Icon="/Assets/PurplePenIcon.png"
+        Icon="/Assets/AppIcon/PurplePenBeta.32x32.png"
         Width="335" Height="427"
         CanResize="False"
         CanMinimize="False"
