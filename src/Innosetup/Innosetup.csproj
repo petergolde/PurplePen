@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0-windows</TargetFramework>
     <Configurations>Debug;Release;StorePkg</Configurations>
@@ -41,6 +41,7 @@
     <None Include="$(InnoProjectFile)" />
     <None Include="CodeDependencies.iss" />
     <None Include="compile-setup.bat" />
+    <None Include="create-setup.bat" />
     <None Include="scripts\**\*.iss" Link="scripts\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 

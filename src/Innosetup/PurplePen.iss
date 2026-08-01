@@ -607,7 +607,7 @@ end;
 ;#define UseDotNet45
 ;#define UseDotNet46
 ;#define UseDotNet47
-#define UseDotNet48
+;#define UseDotNet48
 
 ; requires netcorecheck.exe and netcorecheck_x64.exe (see download link below)
 ;#define UseNetCoreCheck
@@ -644,16 +644,20 @@ end;
 
 #define MyAppSetupName 'Purple Pen'
 #define MyAppName "Purple Pen"
-#define MyAppVersion "3.5.5.500"
+#define MyAppVersion "4.0.0.210"
 #define MyAppPublisher "Purple Pen Software"
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
-#define BuildDir "..\PurplePen\bin\Release\net48"
+#define BuildDir "publish\Main"
 
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{347D1E62-7134-4827-9679-4952BEC91C95}
+;
+;This is the Main PurplePen App ID.
+;AppId={{347D1E62-7134-4827-9679-4952BEC91C95}
+;This is the Beta App ID:
+AppId={{E0070449-77A7-447C-A377-4A891577DD1E}
 
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
@@ -721,27 +725,13 @@ Source: "dxwebsetup.exe"; Flags: dontcopy noencryption
 #endif
 
 Source: "{#BuildDir}\PurplePen.exe"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\CrashReporter.NET.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\DotSpatial.Projections.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\GDIPlusNative.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\GDIPlusNative64.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\Graphics2D.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\ICSharpCode.SharpZipLib.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Map_GDIPlus.dll"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\Map_PDF.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\MapModel.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfConverter.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfConverter.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfiumViewer.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PdfSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\Purple Pen Help.chm"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\PurplePen.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#BuildDir}\PdfConverter.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "{#BuildDir}\createdump.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "{#BuildDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "{#BuildDir}\*.config"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "{#BuildDir}\*.json"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\symbols.xml"; DestDir: "{app}"; Flags: ignoreversion
-Source: "{#BuildDir}\USWebCoatedSWOP.icc"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BuildDir}\Samples\*"; DestDir: "{app}\Samples"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\x64\*"; DestDir: "{app}\x64"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "{#BuildDir}\x86\*"; DestDir: "{app}\x86"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\bg\*"; DestDir: "{app}\bg"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\cs\*"; DestDir: "{app}\cs"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\da\*"; DestDir: "{app}\da"; Flags: ignoreversion recursesubdirs createallsubdirs
@@ -765,33 +755,33 @@ Source: "{#BuildDir}\uk\*"; DestDir: "{app}\uk"; Flags: ignoreversion recursesub
 Source: "{#BuildDir}\zh-CN\*"; DestDir: "{app}\zh-CN"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\zh-TW\*"; DestDir: "{app}\zh-TW"; Flags: ignoreversion recursesubdirs createallsubdirs
 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\Roboto-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\Roboto-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\Roboto-Italic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\Roboto-BoldItalic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Regular.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Bold.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Italic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#BuildDir}\fonts\RobotoCondensed-BoldItalic.ttf"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs 
 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Regular.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Bold.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Italic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-BoldItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Black.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Black"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-BlackItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Black Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Light.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Light"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-LightItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Medium.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Medium"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-MediumItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Medium Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-Thin.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Thin"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\Roboto-ThinItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Thin Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Regular.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Bold.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Italic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-BoldItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-Light.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Light"; Flags: onlyifdoesntexist uninsneveruninstall 
-Source: "{#BuildDir}\..\..\..\..\RobotoFont\RobotoCondensed-LightItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Regular.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Bold.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Italic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-BoldItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Black.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Black"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-BlackItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Black Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Light.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Light"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-LightItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Medium.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Medium"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-MediumItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Medium Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-Thin.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Thin"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\Roboto-ThinItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Thin Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Regular.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Bold.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Bold"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Italic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\RobotoCondensed-BoldItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Bold Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\RobotoCondensed-Light.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Light"; Flags: onlyifdoesntexist uninsneveruninstall 
+Source: "{#BuildDir}\fonts\RobotoCondensed-LightItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

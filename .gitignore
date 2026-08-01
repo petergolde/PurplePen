@@ -46,6 +46,7 @@ Thumbs.db
 *.opendb
 *.db
 src/Innosetup/output/
+src/Innosetup/publish/
 
 
 # Visual C++ cache files
