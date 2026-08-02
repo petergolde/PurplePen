@@ -1079,6 +1079,13 @@ namespace Map_SkiaStd
                 // so we have to apply some heuristics (encapsulated in IsGoodFamilyNameMatch) to the result to determine
                 // if it's a good match or just a fallback.
                 SKTypeface typeface = SKTypeface.FromFamilyName(familyName, weight, width, slant);
+                if (typeface == null) {
+                    // On Linux, Skia's fontconfig backend does return null here when the
+                    // requested family is unavailable and the installed font set is small.
+                    // Returning null is what this method documents for "no match", and the
+                    // callers already handle it by falling back to the default font family.
+                    return null;
+                }
                 if (!IsGoodFamilyNameMatch(familyName, typeface)) {
                     typeface.Dispose();
                     return null;
@@ -1106,7 +1113,8 @@ namespace Map_SkiaStd
 
             // If its the default fallback family, it's not a good match.
             // This is a heuristic to detect when Skia fails to find any reasonable match and just returns the default font.
-            return (result.FamilyName != skiaDefaultFont.FamilyName);
+            // skiaDefaultFont can itself be null when few fonts are installed.
+            return (skiaDefaultFont == null || result.FamilyName != skiaDefaultFont.FamilyName);
         }
 
 
