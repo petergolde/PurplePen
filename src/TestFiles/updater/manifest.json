@@ -1,0 +1,101 @@
+{
+  "updates": [
+    {
+      "title": "Purple Pen 1.0",
+      "version": "1.0.0.0",
+      "platform": "win-x64",
+      "channel": "main",
+      "url": "https://example.com/downloads/PurplePen_1.0.exe",
+      "sha256": "efc41eab1f9f266b4c634e0665b089c8458fa88d067422149d6ca8ee9af07d78",
+      "message": "Initial release with basic features."
+    },
+    {
+      "title": "Purple Pen 1.1",
+      "version": "1.1.0.0",
+      "platform": "win-x64",
+      "channel": "main",
+      "url": "https://example.com/downloads/PurplePen_1.1.exe",
+      "sha256": "efc41eab1f9f266b4c634e0665b089c8458fa88d067422149d6ca8ee9af07d78",
+      "message": "Stable release with bug fixes."
+    },
+    {
+      "title": "Purple Pen 1.2 beta 1",
+      "version": "1.2.0.0",
+      "platform": "win-x64",
+      "channel": "beta",
+      "url": "https://example.com/downloads/PurplePen_1.2_beta1.exe",
+      "sha256": "ec6f48b9b31b0d110f9f1e78758f77076337ea77eaad8374e10d0e47c36b450e",
+      "message": "Beta release with new features."
+    },
+    {
+      "title": "Purple Pen 1.2",
+      "version": "1.2.0.0",
+      "platform": "WIN-X64",
+      "channel": "MAIN",
+      "url": "https://example.com/downloads/PurplePen_1.2.exe",
+      "sha256": "EFC41EAB1F9F266B4C634E0665B089C8458FA88D067422149D6CA8EE9AF07D78",
+      "message": "Stable release with the 1.2 features."
+    },
+    {
+      "title": "Purple Pen 1.2 (duplicate entry)",
+      "version": "1.2.0.0",
+      "platform": "win-x64",
+      "channel": "main",
+      "url": "https://example.com/downloads/PurplePen_1.2_duplicate.exe",
+      "sha256": "efc41eab1f9f266b4c634e0665b089c8458fa88d067422149d6ca8ee9af07d78",
+      "message": "Same version and channel as the entry above; the earlier one must win."
+    },
+    {
+      "title": "Purple Pen 1.3 beta 1",
+      "version": "1.3.0.0",
+      "platform": "osx-arm64",
+      "channel": "beta",
+      "url": "https://example.com/downloads/PurplePen_1.3_beta1.dmg",
+      "sha256": "ec6f48b9b31b0d110f9f1e78758f77076337ea77eaad8374e10d0e47c36b450e",
+      "message": "Beta release for Apple Silicon."
+    },
+    {
+      "title": "Purple Pen 1.2 for Linux",
+      "version": "1.2.0.0",
+      "platform": "linux-x64",
+      "channel": "main",
+      "message": "Install by doing apt-get update purple-pen."
+    },
+    {
+      "title": "Broken: version does not parse",
+      "version": "the-latest-one",
+      "platform": "win-x64",
+      "channel": "main",
+      "url": "https://example.com/downloads/PurplePen_broken_version.exe",
+      "sha256": "efc41eab1f9f266b4c634e0665b089c8458fa88d067422149d6ca8ee9af07d78",
+      "message": "Must be skipped."
+    },
+    {
+      "title": "Broken: download with no hash",
+      "version": "1.9.0.0",
+      "platform": "win-x64",
+      "channel": "main",
+      "url": "https://example.com/downloads/PurplePen_no_hash.exe",
+      "message": "Must be skipped, even though it is the highest version here."
+    },
+    {
+      "title": "Broken: no platform",
+      "version": "1.7.0.0",
+      "channel": "main",
+      "url": "https://example.com/downloads/PurplePen_no_platform.exe",
+      "sha256": "efc41eab1f9f266b4c634e0665b089c8458fa88d067422149d6ca8ee9af07d78",
+      "message": "Must be skipped."
+    },
+    {
+      "title": "Purple Pen 1.4 dev build",
+      "version": "1.4.0.0",
+      "platform": "win-x64",
+      "channel": "dev",
+      "url": "https://example.com/downloads/PurplePen_1.4_dev.exe?token=abc123",
+      "sha256": "ec6f48b9b31b0d110f9f1e78758f77076337ea77eaad8374e10d0e47c36b450e",
+      "message": "Development build.",
+      "buildNumber": 4711,
+      "unknownMember": { "ignored": true }
+    }
+  ]
+}
