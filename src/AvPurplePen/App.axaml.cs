@@ -119,6 +119,13 @@ namespace AvPurplePen
             base.OnFrameworkInitializationCompleted();
 
             ApplicationIdleService.Initialize();
+
+            // Check for a newer version of Purple Pen, once per run. Posted at Background priority
+            // for the same reason StartWithCommandLineFile is: the desktop lifetime shows the main
+            // window before background-priority work runs, so by the time this executes there is a
+            // window on screen for the update dialog to be owned by. (UpdateManager checks that
+            // anyway -- Avalonia refuses to show a dialog owned by an unshown window.)
+            Dispatcher.UIThread.Post(UpdateManager.CheckForUpdatesAtStartup, DispatcherPriority.Background);
         }
 
         /// <summary>

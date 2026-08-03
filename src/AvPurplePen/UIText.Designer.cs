@@ -11205,5 +11205,59 @@ namespace AvPurplePen {
                 return ResourceManager.GetString("YesButton", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Update Available.
+        /// </summary>
+        public static string UpdateAvailable_Text {
+            get {
+                return ResourceManager.GetString("UpdateAvailable_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Remind Me Later.
+        /// </summary>
+        public static string UpdateAvailable_remindLaterButton_Text {
+            get {
+                return ResourceManager.GetString("UpdateAvailable_remindLaterButton_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Download and Install.
+        /// </summary>
+        public static string UpdateAvailable_downloadButton_Text {
+            get {
+                return ResourceManager.GetString("UpdateAvailable_downloadButton_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Version {0} of Purple Pen is now available. (You are currently running version {1}.).
+        /// </summary>
+        public static string UpdateAvailable_newVersionAvailable_Text {
+            get {
+                return ResourceManager.GetString("UpdateAvailable_newVersionAvailable_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The update could not be downloaded.
+        /// </summary>
+        public static string UpdateAvailable_downloadFailed_Text {
+            get {
+                return ResourceManager.GetString("UpdateAvailable_downloadFailed_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to The update has been downloaded to: {0}.
+        /// </summary>
+        public static string UpdateAvailable_downloadedManually_Text {
+            get {
+                return ResourceManager.GetString("UpdateAvailable_downloadedManually_Text", resourceCulture);
+            }
+        }
     }
 }

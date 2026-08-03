@@ -1,0 +1,133 @@
+<!--
+    UpdateAvailableDialog.axaml
+
+    Shown at startup when a newer version of Purple Pen is available. Presents the version and its
+    release notes, and offers to download and install it.
+
+    The dialog has two phases and switches between them in place rather than handing off to a second
+    window: while IsNotDownloading the buttons are shown, and once a download starts they are
+    replaced by a progress bar and a Cancel button. An update with nothing to download (the manifest
+    can carry release notes alone, telling the user to update through a package manager) shows a
+    single Close button instead.
+
+    UpdateManager owns the ViewModel and does the downloading; this window only reports which button
+    was pressed.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.UpdateAvailableDialog"
+        Classes="dialog"
+        x:DataType="vm:UpdateAvailableDialogViewModel"
+        Title="{resx:Localize UpdateAvailable_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="480" d:DesignHeight="320"
+        Width="480"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:UpdateAvailableDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="16">
+
+        <!-- Bottom row. Which of the three groups is showing depends on the phase; only one is ever
+             visible at a time. -->
+        <Panel DockPanel.Dock="Bottom" Margin="0,16,0,0">
+
+            <!-- Asking phase, for an update that can be installed. -->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="8"
+                        IsVisible="{Binding IsAskingToDownload}">
+                <Button x:Name="remindLaterButton"
+                        Content="{resx:Localize UpdateAvailable_remindLaterButton_Text}"
+                        MinWidth="130"
+                        HorizontalContentAlignment="Center"
+                        IsCancel="True"
+                        Click="RemindLaterButton_Click"/>
+                <Button x:Name="downloadButton"
+                        Content="{resx:Localize UpdateAvailable_downloadButton_Text}"
+                        MinWidth="150"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        Command="{Binding DownloadCommand}"/>
+            </StackPanel>
+
+            <!-- Asking phase, for a release-notes-only update: nothing to download, so the only
+                 thing to do is close. -->
+            <Button x:Name="closeButton"
+                    Content="{resx:Localize OKButton}"
+                    MinWidth="100"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsCancel="True"
+                    IsVisible="{Binding IsMessageOnly}"
+                    Click="RemindLaterButton_Click"/>
+
+            <!-- Downloading phase. -->
+            <Grid ColumnDefinitions="*,12,Auto"
+                  IsVisible="{Binding IsDownloading}">
+                <!-- Min/Max of 0..1 so ProgressValue binds straight in; IsIndeterminate turns the
+                     bar into a marquee when the server didn't report a content length. -->
+                <ProgressBar Grid.Column="0"
+                             x:Name="progressBar"
+                             Minimum="0"
+                             Maximum="1"
+                             Height="16"
+                             VerticalAlignment="Center"
+                             Value="{Binding ProgressValue}"
+                             IsIndeterminate="{Binding IsIndeterminate}"/>
+                <Button Grid.Column="2"
+                        x:Name="cancelButton"
+                        Content="{resx:Localize CancelButton}"
+                        MinWidth="100"
+                        HorizontalContentAlignment="Center"
+                        IsCancel="True"
+                        Click="CancelButton_Click"/>
+            </Grid>
+        </Panel>
+
+        <!-- Status text, shown above the progress bar during the download. -->
+        <TextBlock DockPanel.Dock="Bottom"
+                   x:Name="statusLabel"
+                   Text="{Binding StatusText}"
+                   TextWrapping="Wrap"
+                   Margin="0,12,0,0"
+                   IsVisible="{Binding IsDownloading}"/>
+
+        <!-- The prompt: which version is available, which one is running, and (when there is
+             something to download) the question. Formatted by UpdateManager. -->
+        <TextBlock DockPanel.Dock="Top"
+                   x:Name="messageLabel"
+                   Text="{Binding Message}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"/>
+
+        <!-- Release notes, in a scrolling box so a long list of changes can't stretch the dialog off
+             the screen. Selectable so the user can copy a URL out of it. -->
+        <Border BorderBrush="{DynamicResource SemiGrey2}"
+                BorderThickness="1"
+                CornerRadius="3"
+                Padding="8"
+                MinHeight="80"
+                MaxHeight="220">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <SelectableTextBlock x:Name="releaseMessageLabel"
+                                     Text="{Binding ReleaseMessage}"
+                                     TextWrapping="Wrap"/>
+            </ScrollViewer>
+        </Border>
+
+    </DockPanel>
+</Window>

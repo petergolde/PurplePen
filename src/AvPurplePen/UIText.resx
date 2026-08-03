@@ -3853,4 +3853,28 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="ErrorDetailsDialog_copyButton_Text" xml:space="preserve">
     <value>Copy to Clipboard</value>
   </data>
+  <data name="UpdateAvailable_Text" xml:space="preserve">
+    <value>Update Available</value>
+  </data>
+  <data name="UpdateAvailable_remindLaterButton_Text" xml:space="preserve">
+    <value>Remind Me Later</value>
+  </data>
+  <data name="UpdateAvailable_downloadButton_Text" xml:space="preserve">
+    <value>Download and Install</value>
+  </data>
+  <data name="UpdateAvailable_newVersionAvailable_Text" xml:space="preserve">
+    <value>Version {0} of Purple Pen is now available. (You are currently running version {1}.)</value>
+  </data>
+  <data name="UpdateAvailable_downloadFailed_Text" xml:space="preserve">
+    <value>The update could not be downloaded.
+
+{0}</value>
+  </data>
+  <data name="UpdateAvailable_downloadedManually_Text" xml:space="preserve">
+    <value>The update has been downloaded to:
+
+{0}
+
+Purple Pen cannot install this kind of file for you. Open it yourself to install the update.</value>
+  </data>
 </root>
