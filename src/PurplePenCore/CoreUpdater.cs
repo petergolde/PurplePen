@@ -455,6 +455,19 @@ namespace PurplePen
             }
         }
 
+        // IMPORTANT: the manifest format is defined in two places. These two classes are the reading
+        // side; the writing side is ManifestFile.cs in the UpdateManifest tool (src\Tools\
+        // UpdateManifest), which has its own copy of them. The copy exists because that tool is
+        // standalone -- it isn't in PPen.slnx and doesn't reference PurplePenCore.
+        //
+        // Adding a field to the manifest therefore means three changes, not one:
+        //   1. Add the property here, and use it wherever the entry is turned into an
+        //      AvailableUpdate (see MakeAvailableUpdate) or checked (see IsWellFormed).
+        //   2. Add the matching property to UpdateManifestEntry in the tool's ManifestFile.cs.
+        //   3. Add a command-line option to the tool so the field can actually be set.
+        // Skipping (2) and (3) leaves a field nothing can write; skipping (1) leaves one Purple Pen
+        // silently ignores.
+
         // The manifest document, as deserialized from JSON. Unknown members in the JSON are ignored.
         private class UpdateManifest
         {

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>UpdateManifestTool</RootNamespace>
+    <AssemblyName>UpdateManifest</AssemblyName>
+
+    <!-- src\Directory.Packages.props sits above this directory and turns on central package
+         management for everything beneath it. This tool is deliberately standalone (it is not in
+         PPen.slnx and has no package references at all), so it opts out, and builds from a clean
+         clone with nothing but the .NET SDK. -->
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+</Project>

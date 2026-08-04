@@ -57,6 +57,9 @@ namespace AvPurplePen
         {
             using HttpClient client = httpClientFactory.CreateClient();
 
+            if (progress != null)
+                progress.Report(0);
+
             // ResponseHeadersRead so the body is streamed rather than buffered in memory first --
             // an installer can be a hundred megabytes, and progress would otherwise jump from
             // nothing to everything.
@@ -72,6 +75,9 @@ namespace AvPurplePen
             bool lengthKnown = contentLength.HasValue && contentLength.Value > 0;
             long totalBytes = lengthKnown ? contentLength!.Value : 0;
 
+            if (progress != null)
+                progress.Report(lengthKnown ? 0 : (double?)null);
+
             using Stream contentStream = await response.Content.ReadAsStreamAsync(cancellationToken);
 
             byte[] buffer = new byte[bufferSize];
@@ -83,7 +89,7 @@ namespace AvPurplePen
                 totalRead += bytesRead;
 
                 if (progress != null)
-                    progress.Report(lengthKnown ? (double)totalRead / totalBytes : (double?)null);
+                    progress.Report(lengthKnown ? ((double)totalRead / totalBytes) : (double?)null);
             }
 
             // A server that reported a length but sent less than that has given us a truncated file.
@@ -93,6 +99,9 @@ namespace AvPurplePen
                 throw new IOException(
                     string.Format("The download ended early: expected {0} bytes but received {1}.", totalBytes, totalRead));
             }
+
+            if (progress != null)
+                progress.Report(1);
         }
     }
 }

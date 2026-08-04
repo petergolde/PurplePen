@@ -38,7 +38,7 @@ namespace AvPurplePen
         /// <summary>
         /// The manifest listing every available update, for every platform and channel.
         /// </summary>
-        private const string manifestUrl = "https://purple-pen.org/downloads/manifest.json";
+        private const string manifestUrl = "https://downloads.purple-pen.org/manifest.json";
 
         /// <summary>
         /// Path, relative to the per-user local application data directory, that downloaded updates
