@@ -171,9 +171,11 @@ namespace PurplePen
 
         internal string FindPdfConverterExe()
         {
+            // Windows executables end in ".exe", but Mac/Linux do not.
+            string executableFileName = OperatingSystem.IsWindows() ? "PdfConverter.exe" : "PdfConverter";
             Uri uri = new Uri(typeof(PdfMapFile).Assembly.Location);
             string applicationDirectory = Path.GetDirectoryName(uri.LocalPath);
-            return Path.Combine(applicationDirectory, "PdfConverter.exe");
+            return Path.Combine(applicationDirectory, executableFileName);
         }
 
         internal string GetCacheFileName(string path)
