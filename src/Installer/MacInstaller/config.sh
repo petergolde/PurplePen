@@ -34,6 +34,15 @@
 # Copyright string shown in Finder's Get Info panel.
 : "${COPYRIGHT:=Copyright © 2006-2026 Peter Golde. All rights reserved.}"
 
+# Which icon family in AvPurplePen/Assets/AppIcon to build the .icns from.
+#
+# That directory holds pre-rendered PNGs named <family>.<N>x<N>.png. Set this
+# to "PurplePen" for release builds and "PurplePenBeta" for beta builds.
+#
+# The PNGs are used at their native sizes rather than being resampled from a
+# single source, so any hand-tuning of the small sizes is preserved.
+: "${ICON_FAMILY:=PurplePenBeta}"
+
 # Minimum macOS version the app declares support for. This should track the
 # minimum macOS version supported by the .NET runtime being bundled -- if it is
 # set too low, the app will launch on an unsupported system and then crash.
@@ -116,3 +125,52 @@
 
 # Volume name shown when the DMG is mounted.
 : "${DMG_VOLUME_NAME:=Purple Pen}"
+
+# ---------------------------------------------------------------------------
+# Disk image appearance
+# ---------------------------------------------------------------------------
+
+# Style the .dmg window: icon view, a background picture, and the app and
+# Applications icons positioned side by side for drag-to-install.
+#
+# Styling drives Finder through AppleScript, so it needs a logged-in desktop
+# session and one-time Automation consent (System Settings > Privacy &
+# Security > Automation > your terminal > Finder). Set to 0 -- or pass
+# --skip-style -- for a plain disk image on a headless build machine. The
+# result is functional but looks unfinished, so do not ship it.
+: "${DMG_STYLE:=1}"
+
+# Content size of the .dmg window, in points, excluding the title bar.
+#
+# dmg-background.svg is rasterized to exactly these pixel dimensions at 1x and
+# twice them at 2x, so its aspect ratio has to match. The build reads the
+# rasterized sizes back and fails loudly if they disagree.
+: "${DMG_WINDOW_WIDTH:=640}"
+: "${DMG_WINDOW_HEIGHT:=400}"
+
+# Where the window opens, in points from the top-left of the main display.
+# If the window does not fit on the build machine's screen Finder silently
+# shrinks it and the background stops lining up; the build detects that.
+: "${DMG_WINDOW_X:=200}"
+: "${DMG_WINDOW_Y:=140}"
+
+# Icon and label sizes in the .dmg window.
+: "${DMG_ICON_SIZE:=128}"
+: "${DMG_TEXT_SIZE:=13}"
+
+# Centres of the two icons, in points from the top-left of the window content
+# area -- the same coordinate system dmg-background.svg is drawn in.
+: "${DMG_APP_ICON_X:=170}"
+: "${DMG_APP_ICON_Y:=200}"
+: "${DMG_APPS_ICON_X:=470}"
+: "${DMG_APPS_ICON_Y:=200}"
+
+# Free space, in megabytes, left in the scratch read/write image beyond the
+# app itself. Finder needs room for .DS_Store and the background picture, and
+# HFS+ needs room for its catalog and journal. This costs almost nothing in
+# the finished image because empty space compresses away.
+: "${DMG_FREE_SPACE_MB:=64}"
+
+# How long to wait, in seconds, for Finder to flush the window layout to
+# .DS_Store before giving up.
+: "${DMG_STYLE_TIMEOUT:=60}"

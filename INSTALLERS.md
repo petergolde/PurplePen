@@ -252,12 +252,32 @@ package (§6.4), which is a much weaker and more optional mechanism.
 | `LSMinimumSystemVersion` | package `Depends:` / `Requires:` on glibc etc. |
 | `.app` bundle | `/opt/purplepen` + a launcher symlink |
 | Notarization | (none) — GPG repo signing is the closest thing |
+| Styled `.dmg` window (background, icon positions, drag arrow) | (none) — a `.deb`/`.rpm` has no presentation layer; the desktop entry and icon are what the user sees |
 
-**The icon problem transfers.** The only icon in the repo is
-`src/AvPurplePen/Assets/PurplePenIcon.png` at **64×64**, plus
-`src/PurplePen/Images/PurplePen.ico`. That is too small for both macOS
-(`.icns` wants 1024×1024) and the freedesktop hicolor sizes (up to 512×512).
-Getting a high-resolution source icon would fix this for every platform at once.
+**Icons are already available at every size Linux needs.**
+`src/AvPurplePen/Assets/AppIcon` holds two families — `PurplePen.*` (release)
+and `PurplePenBeta.*` (beta) — as PNGs at **16, 24, 32, 48, 64, 96, 128, 256,
+512 and 1024**, plus a `.svg` of each. Alpha channels are intact.
+
+That maps directly onto freedesktop hicolor: install
+`<family>.<N>x<N>.png` as `/usr/share/icons/hicolor/<N>x<N>/apps/purplepen.png`
+for each size, and the `.svg` as
+`/usr/share/icons/hicolor/scalable/apps/purplepen.svg`. Every hicolor size is
+covered; 1024 has no hicolor slot and is macOS-only.
+
+Whatever packaging script gets written should select the family the same way
+the macOS one does (`ICON_FAMILY`, defaulting to `PurplePenBeta`) so beta and
+release builds are visually distinguishable.
+
+**Rasterizing the SVG is possible but unnecessary.** `sips` (built into macOS)
+reads SVG and genuinely vector-rasterizes at the requested size — **verified**
+by rendering a 16px-declared SVG to 1024px and getting a crisp result, against
+a deliberately upscaled control that was a blurry mess. It needs `-s format
+png` for SVG input; a bare `sips -z` fails. `iconutil` accepts PNG only.
+Since pre-rendered PNGs now exist at every needed size, none of this is
+required — use the PNGs, which preserve hand-tuning of the small sizes.
+On Linux, `rsvg-convert` or `inkscape` would be the equivalent tools if you
+ever do need to rasterize.
 
 ---
 
@@ -342,11 +362,14 @@ name fonts that are present.
 
 1. **`PdfConverter.exe` lookup** (§2.5) — blocks PDF templates on macOS *and*
    Linux. Fix in `PurplePenCore/PdfMapFile.cs`.
-2. **No high-resolution app icon** (§5) — affects every platform.
-3. **The `CopyPdfConverterToPublishOutput` target** in `AvPurplePen.csproj` is
+2. **The `CopyPdfConverterToPublishOutput` target** in `AvPurplePen.csproj` is
    the root cause of §2.2, §2.3 and §2.4. Making it publish RID-specific on
-   non-Windows platforms would fix both at source and remove the need for the
-   overlay in each installer. It was left alone because it also affects the
+   non-Windows platforms would fix all three at source and remove the need for
+   the overlay in each installer. It was left alone because it also affects the
    Windows build.
-4. **macOS signing and notarization are still unexercised** — no Developer ID
-   certificate installed yet.
+3. **Notarization is still unexercised on macOS.** Code signing now works and is
+   verified (full Developer ID chain, secure timestamp, `--verify --deep
+   --strict` passes, `spctl` reports the expected `Unnotarized Developer ID`).
+   Submitting to Apple has not yet been run. Linux has no equivalent step.
+
+Resolved since first writing: the app icon, which was 64×64 only — see §5.

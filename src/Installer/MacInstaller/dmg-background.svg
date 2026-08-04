@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+    dmg-background.svg
+
+    Background artwork for the Purple Pen disk image window.
+
+    Authored at 2x (width/height 1280x800) over a 1x coordinate system
+    (viewBox 0 0 640 400), so the coordinates below are the same numbers as the
+    icon positions in config.sh (DMG_APP_ICON_X and friends) and the window
+    size (DMG_WINDOW_WIDTH/HEIGHT). build-mac-app.sh rasterizes this to both
+    640x400 and 1280x800 and combines them into a multi-resolution TIFF.
+
+    IMPORTANT: the aspect ratio here must match DMG_WINDOW_WIDTH/HEIGHT. The
+    build reads the rasterized dimensions back and fails if they disagree.
+
+    Layout reserved for Finder (do not draw over these):
+        app icon        centred (170, 200), 128pt  -> spans x 106-234, y 136-264
+        Applications    centred (470, 200), 128pt  -> spans x 406-534, y 136-264
+        icon labels     run to roughly y 285
+    The arrow lives in the clear channel between them, x 252-394.
+
+    The top ~50 and bottom ~60 are kept plain so that a small vertical
+    registration error between the window and this art is not visible.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1280" height="800" viewBox="0 0 640 400">
+
+  <defs>
+    <!-- Soft lavender wash, lightest at the top. -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#FCFAFD"/>
+      <stop offset="0.55" stop-color="#F5EDF8"/>
+      <stop offset="1"    stop-color="#EDE1F3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="400" fill="url(#bg)"/>
+
+  <!-- Heading -->
+  <text x="320" y="62" text-anchor="middle"
+        font-family="Helvetica" font-size="27" font-weight="bold"
+        fill="#4A2050">Install Purple Pen</text>
+
+  <!-- Drag arrow, in the clear channel between the two icons.
+       The head is a plain rotated triangle rather than an SVG marker, because
+       markers are the sort of thing minimal rasterizers quietly drop. The
+       rotation matches the curve's end tangent: the curve ends at (374, 199)
+       with control point (314, 173), giving a tangent of (60, 26) ~= 23.4deg. -->
+  <path d="M 252 207 Q 314 173 374 199"
+        fill="none" stroke="#B02BAD" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 0 -10 L 20 0 L 0 10 z"
+        fill="#B02BAD" transform="translate(374,199) rotate(23.4)"/>
+
+  <!-- Instruction, below the icon labels -->
+  <text x="320" y="332" text-anchor="middle"
+        font-family="Helvetica" font-size="16"
+        fill="#6B4A73">To install, drag Purple Pen onto the Applications folder.</text>
+
+</svg>

@@ -86,8 +86,8 @@ stored once; the script never handles it again.
    RID and overlays it onto the payload, after checking that both resolve the
    same `Microsoft.NETCore.App` version. See the notes below for why this is
    necessary.
-4. **Icon** — generates `PurplePen.icns` at all required sizes from
-   `AvPurplePen/Assets/PurplePenIcon.png`.
+4. **Icon** — assembles `PurplePen.icns` from the pre-rendered PNGs in
+   `AvPurplePen/Assets/AppIcon`, using the family named by `ICON_FAMILY`.
 5. **Assemble** — builds `build/PurplePen.app` with `Contents/MacOS` (the
    staged payload), `Contents/Resources` (the icon) and a generated
    `Contents/Info.plist`, then strips extended attributes.
@@ -96,9 +96,9 @@ stored once; the script never handles it again.
    entitlements; dynamic libraries get the Hardened Runtime alone.
 7. **Notarize** — zips the bundle with `ditto`, submits it, waits for the
    result, staples the ticket into the `.app`, and confirms with `spctl`.
-8. **Package** — builds the `.zip` and a `.dmg` (containing the app and an
-   `/Applications` symlink) from the stapled app, then signs, notarizes and
-   staples the `.dmg` as well.
+8. **Package** — builds the `.zip`, then the `.dmg`: a scratch read/write image
+   is filled, its window laid out through Finder, detached, and compressed. The
+   result is signed, notarized, stapled and then re-attached to verify.
 
 Both the `.app` and the `.dmg` are stapled, so the app validates even when
 extracted from the `.zip` on a machine with no network connection.
@@ -119,6 +119,15 @@ experimenting with `publish-exclude.txt`, skip it:
 | `--skip-notarize` | Sign, but do not submit to Apple. |
 | `--skip-dmg` | Do not build the `.dmg`. |
 | `--skip-zip` | Do not build the `.zip`. |
+| `--skip-style` | Build a plain, unstyled `.dmg` (no background, no icon layout). |
+| `--dmg-only` | Rebuild only the `.dmg` from the existing `build/PurplePen.app`. |
+
+`--dmg-only` is the one to use when adjusting the window layout — it takes
+seconds instead of minutes:
+
+```bash
+./build-mac-app.sh --dmg-only --skip-sign
+```
 
 To run an unsigned build locally, clear its quarantine flag first:
 
@@ -126,13 +135,88 @@ To run an unsigned build locally, clear its quarantine flag first:
 xattr -dr com.apple.quarantine build/PurplePen.app
 ```
 
+## The disk image window
+
+The `.dmg` opens as a 640×400 window with the Purple Pen icon on the left, the
+Applications folder on the right, and an arrow between them — the drag-to-install
+idiom Mac users expect.
+
+The artwork is [`dmg-background.svg`](dmg-background.svg), authored at 2× over a
+`0 0 640 400` viewBox so its coordinates are the same numbers as the icon
+positions in `config.sh`. The build rasterizes it with `sips` to 640×400 and
+1280×800 and combines them with `tiffutil -cathidpicheck` into a
+multi-resolution TIFF. That last step matters: Finder draws a background
+picture unscaled at its natural point size, so a plain 640×400 PNG is soft on
+Retina and a plain 1280×800 PNG would show only its top-left quarter.
+
+Geometry lives in `config.sh` (`DMG_WINDOW_WIDTH`/`HEIGHT`, `DMG_ICON_SIZE`,
+`DMG_APP_ICON_X`/`Y`, `DMG_APPS_ICON_X`/`Y`). The SVG's aspect ratio must match
+the window size; the build reads the rasterized dimensions back and fails if
+they disagree.
+
+To edit the layout, change both the config numbers and the SVG together, then
+`./build-mac-app.sh --dmg-only --skip-sign` and open the result.
+
+### Finder Automation permission
+
+Styling works by telling Finder how to lay out the window, so the first run
+shows a **"Terminal wants to control Finder"** dialog. Approve it once and it
+never asks again. The build probes this during preflight rather than at the
+end, so it fails in the first few seconds rather than after notarization has
+already spent minutes at Apple.
+
+A build machine with no logged-in desktop session cannot script Finder at all.
+Use `--skip-style` there — the disk image still works, it just looks
+unfinished, and the build prints a warning saying so.
+
+### Two things that would otherwise waste an afternoon
+
+**Finder writes `.DS_Store` when the volume is ejected, not when the window is
+closed.** Before the first detach the file is a 6 KB skeleton containing no
+view settings at all, so there is nothing to verify while the image is still
+mounted. The build therefore styles, detaches, and only then re-attaches to
+confirm the layout landed.
+
+**A volume of the same name already being mounted silently breaks styling.**
+macOS would mount ours as `Purple Pen 1`, and the AppleScript — which addresses
+the disk by name — would style the *other* volume and report success, shipping
+an unstyled image. Preflight refuses to start if `/Volumes/Purple Pen` exists;
+eject it with `hdiutil detach "/Volumes/Purple Pen"`. This is easy to trigger
+by opening a previously built `.dmg` to compare.
+
+### Verification
+
+`read-dmg-layout.py` decodes the `.DS_Store` in the finished image and the
+build fails if the background picture or icon positions are missing — an
+unstyled disk image can never ship silently. Every build logs what it found:
+
+```
+Layout: background set, 128.0pt icons, window {{200, 703}, {640, 400}}, icons at (470,200) (170,200)
+```
+
+Checking that the file merely exists would prove nothing, which is why it is
+decoded: macOS creates empty skeleton `.DS_Store` files routinely.
+
 ## Things to be aware of
 
-**The icon is low resolution.** The only icon in the repository is
-`AvPurplePen/Assets/PurplePenIcon.png` at 64×64, so every larger size in the
-`.icns` is upscaled and will look soft. Replacing that PNG with a 1024×1024
-version is the only change needed — the script picks it up automatically and
-warns until you do.
+**Switch between the beta and release icon with `ICON_FAMILY`.**
+`AvPurplePen/Assets/AppIcon` holds two families of pre-rendered PNGs,
+`PurplePen.<N>x<N>.png` and `PurplePenBeta.<N>x<N>.png`. `ICON_FAMILY` in
+`config.sh` selects one; it defaults to **`PurplePenBeta`**. Set it to
+`PurplePen` for a release build:
+
+```bash
+ICON_FAMILY=PurplePen ./build-mac-app.sh
+```
+
+The `.icns` is assembled from those PNGs at their **native** pixel sizes rather
+than resampled from one large source, so any hand-tuning of the small sizes is
+preserved. The script verifies each file's actual pixel width against its name
+and aborts if they disagree.
+
+macOS needs 16, 32, 64, 128, 256, 512 and 1024. The 24, 48 and 96 files in that
+directory are unused here but map onto the freedesktop hicolor sizes Linux
+packaging wants.
 
 **The bundle is 533 MB, and 399 MB of that is waste.** The
 `CopyPdfConverterToPublishOutput` target in `AvPurplePen.csproj` copies
