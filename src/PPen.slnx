@@ -39,6 +39,9 @@
       <Build Solution="Debug|Any CPU" Project="false" />
       <Build Solution="StorePkg|Any CPU" Project="false" />
     </Project>
+    <Project Path="Installer/LinuxInstaller/LinuxInstaller.csproj" Id="f449c4cf-397b-4557-8fb6-a5f900aa39fb">
+      <BuildType Solution="StorePkg|*" Project="Release" />
+    </Project>
     <Project Path="Installer/MacInstaller/MacInstaller.csproj" Id="2036fb10-0687-4d64-9fd0-4662d53ae2a9">
       <BuildType Solution="StorePkg|*" Project="Release" />
     </Project>
