@@ -1,0 +1,31 @@
+[Desktop Entry]
+# Desktop entry for Purple Pen, installed as
+# /usr/share/applications/@PACKAGE_NAME@.desktop.
+#
+# The at-sign-delimited tokens below are filled in by build-linux-packages.sh,
+# which fails the build if any are left over. Validated with
+# desktop-file-validate during the build when that tool is available.
+Type=Application
+Version=1.0
+Name=@DISPLAY_NAME@
+GenericName=Orienteering Course Setter
+Comment=@PACKAGE_SUMMARY@
+
+# %f, not %F: Purple Pen edits one event at a time, so the desktop environment
+# should launch a separate instance per file rather than passing a list.
+Exec=@PACKAGE_NAME@ %f
+
+# Bare icon name, not a path. The icon theme resolves it against the PNGs
+# installed under /usr/share/icons/hicolor/<N>x<N>/apps/, picking the size that
+# fits, and the SVG when it wants to scale freely.
+Icon=@PACKAGE_NAME@
+
+Terminal=false
+Categories=@DESKTOP_CATEGORIES@
+Keywords=@DESKTOP_KEYWORDS@
+StartupNotify=true
+
+# Matches the WM_CLASS Avalonia sets from the entry assembly name, so the
+# window is associated with this launcher in docks and task switchers.
+StartupWMClass=@APP_NAME@
+@MIME_TYPE_LINE@

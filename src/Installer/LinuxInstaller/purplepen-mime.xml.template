@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    shared-mime-info definition for Purple Pen course files, installed as
+    /usr/share/mime/packages/@PACKAGE_NAME@.xml.
+
+    The at-sign-delimited tokens below are filled in by
+    build-linux-packages.sh, which fails the build if any are left over.
+
+    A .ppen file is Purple Pen's own XML format. Both a glob and a root-XML
+    match are declared: the glob is what makes a file named *.ppen resolve
+    instantly, while the root-XML rule lets the type still be recognised when
+    the extension is missing or wrong. The glob is given a weight above the
+    default 50 so it wins against the generic application/xml match that the
+    XML sniffing rules would otherwise produce.
+
+    namespaceURI is required on root-XML even when there is no namespace;
+    omitting it makes update-mime-database reject the whole type with
+    "Missing 'namespaceURI' attribute". A .ppen file's root element is in no
+    namespace, so the correct value is the empty string.
+-->
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="@MIME_TYPE@">
+    <comment>@DISPLAY_NAME@ course file</comment>
+    <generic-icon name="@PACKAGE_NAME@"/>
+    <glob pattern="*.ppen" weight="60"/>
+    <sub-class-of type="application/xml"/>
+    <root-XML namespaceURI="" localName="course-scribe-event"/>
+  </mime-type>
+</mime-info>

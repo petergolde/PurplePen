@@ -1,0 +1,100 @@
+# publish-exclude.txt
+#
+# Files and directories to leave OUT of the Linux packages.
+#
+# This is passed to rsync as --exclude-from when copying the dotnet publish
+# output into the payload staging directory, so it uses rsync's filter syntax:
+#
+#   Foo.dll             matches Foo.dll at any depth
+#   /Foo.dll            matches Foo.dll only at the top level of the publish dir
+#   *.pdb               glob, matches at any depth
+#   sv/                 trailing slash matches directories only
+#   **/Bar              ** crosses directory boundaries
+#
+# Blank lines and lines starting with # are ignored.
+#
+# Anything excluded here is simply absent from the package -- there is no error
+# if the app later tries to load it, so re-test the built package after each
+# change.
+#
+# ---------------------------------------------------------------------------
+# --- runtimes/ for other platforms: ~399 MB --------------------------------
+#
+#   AvPurplePen.csproj's CopyPdfConverterToPublishOutput target copies
+#   PdfConverter's entire build output into the publish directory, including
+#   its RID-agnostic runtimes/ folder. That folder carries native pdfium and
+#   libSkiaSharp binaries for every platform PDFiumCore and SkiaSharp ship:
+#
+#       win-x86  99 MB   win-x64  98 MB   win-arm64  97 MB
+#       linux-musl-x64/-arm64/-x86  50 MB combined
+#       linux-x64/-x86/-arm/-arm64  28 MB combined
+#       osx  15 MB       osx-x64  7.2 MB  osx-arm64  6.8 MB
+#
+#   None of it is loaded: a self-contained RID-specific publish already
+#   flattens the native libraries it actually needs (libSkiaSharp.so and
+#   friends) into the top level of the payload. Neither PurplePen.deps.json nor
+#   PdfConverter.deps.json contains a single runtimeTargets entry, and
+#   runtimeTargets is the only mechanism by which the host probes
+#   runtimes/<rid>/native/ -- so the tree is orphaned, not merely redundant.
+#
+#   Excluding it takes the payload from roughly 721 MB to 145 MB.
+#
+#   NOTE this is only safe together with the PdfConverter overlay:
+#   libpdfium.so has no copy at the publish root and exists ONLY inside
+#   runtimes/. The overlay (INCLUDE_PDF_CONVERTER in config.sh, on by default)
+#   is what puts it at the top level. Excluding runtimes/ with the overlay
+#   turned off silently removes PDF map template support.
+#
+runtimes/
+#
+# --- Other platforms' build output: handled automatically, do not list -----
+#
+#   The same recursive glob also sweeps in every RID-specific subdirectory
+#   anyone has ever built under PdfConverter/bin/Release/net10.0/ -- including
+#   from a different operating system. A checkout that has been published for
+#   Windows leaves a win-x64/ directory holding a complete self-contained
+#   Windows .NET runtime (98 MB), which then lands inside the Linux package.
+#
+#   These are NOT listed here. build-linux-packages.sh detects them by name at
+#   staging time and excludes them, so a RID nobody has thought of yet is
+#   caught without this file needing an edit. It logs each one it skips.
+#
+# --- Windows-only native libraries ----------------------------------------
+#
+#   Nothing here loads a .dll. These arrive from PdfConverter's RID-agnostic
+#   build output landing at the payload root.
+#
+*.dll.config
+#
+# --- PdfConverter: do NOT exclude -----------------------------------------
+#
+#   This list is applied to the PdfConverter overlay as well, so excluding
+#   these would remove the working helper the build script installs:
+#
+#       PdfConverter  PdfConverter.dll  PdfConverter.runtimeconfig.json
+#       PdfConverter.deps.json  libpdfium.so
+#
+#   The framework-dependent copy that lands here from the main publish is
+#   overwritten by a self-contained republish (see INCLUDE_PDF_CONVERTER in
+#   config.sh), which is what makes the helper runnable. It costs about 7 MB,
+#   nearly all of it libpdfium.so.
+#
+#   To leave the helper out entirely, set INCLUDE_PDF_CONVERTER=false rather
+#   than excluding files here -- that way the build does not spend time
+#   publishing something it then discards.
+#
+# --- Debug symbols --------------------------------------------------------
+#
+#   Safe to drop; only affects the quality of crash stack traces. DebugType is
+#   already set to none for the main publish, so this catches only stragglers
+#   copied in from PdfConverter's build output.
+#
+*.pdb
+#
+# --- Satellite resource assemblies ----------------------------------------
+#
+#   One directory per translated language (de/, fr/, ja/, ...). Only exclude
+#   languages you do not intend to ship, and remember Purple Pen supports live
+#   language switching, so an excluded language silently falls back to English.
+#
+# ---------------------------------------------------------------------------

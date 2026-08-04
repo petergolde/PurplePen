@@ -1,0 +1,5 @@
+# Publish staging, the assembled install tree and the RPM build root.
+build/
+
+# Finished .deb and .rpm packages.
+output/

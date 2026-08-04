@@ -1,13 +1,22 @@
 # Building Purple Pen Installers
 
 Reference notes for building distributable installers of the Avalonia version of
-Purple Pen (`AvPurplePen`). Written while building the macOS installer; the
-cross-platform sections apply directly to Linux `.deb` / `.rpm` packaging, which
-has not been built yet.
+Purple Pen (`AvPurplePen`). Written while building the macOS installer, then
+extended when the Linux `.deb` / `.rpm` packaging was built on top of it.
 
 Everything marked **verified** was actually run and observed. Everything marked
 **unverified** is reasoning that has not been tested — treat it as a starting
 point, not as fact.
+
+Both installers now exist and have their own detailed documentation:
+
+| Platform | Directory | Status |
+|---|---|---|
+| macOS | `src/Installer/MacInstaller/` | Builds a signed `.dmg` + `.zip`. Notarization unexercised. |
+| Linux | `src/Installer/LinuxInstaller/` | Builds `.deb` + `.rpm`. Installed and run on Ubuntu 22.04. |
+
+This file is the shared background; the per-platform READMEs are the operating
+instructions.
 
 ---
 
@@ -156,24 +165,27 @@ dotnet publish ... -p:BaseOutputPath="<your build dir>/pdfconverter-bin/" -o <tm
 payload counts. Any Linux packaging script doing the same republish needs the
 same redirect.
 
-### 2.5 `PdfConverter.exe` is hard-coded on every platform
+### 2.5 `PdfConverter.exe` was hard-coded on every platform — now fixed
+
+This used to read `Path.Combine(applicationDirectory, "PdfConverter.exe")`, so
+the helper could never be found off Windows and PDF map templates silently
+failed. Fixed in commit `1caa2efa`:
 
 ```csharp
-// PurplePenCore/PdfMapFile.cs:176
-return Path.Combine(applicationDirectory, "PdfConverter.exe");
+// PurplePenCore/PdfMapFile.cs:175
+string executableFileName = OperatingSystem.IsWindows() ? "PdfConverter.exe" : "PdfConverter";
 ```
 
-The helper can never be found off Windows, so PDF map templates silently fail
-with "PdfConverter.exe not found." **This is an unfixed bug in the app**, listed
-in `doc/devdocs/AvaloniaThoughts.txt` as "Fix running PdfConverter with the .exe
-extension. Need to test this on Mac and Linux."
+**Verified end to end on Linux**: with the packaging described in §6, running
+the installed helper against the test PDF in the repo produces the expected
+1240×1754 PNG, and it does so with `DOTNET_ROOT=/nonexistent`, which proves it
+is genuinely self-contained rather than quietly using a system .NET.
 
-Also in that method: `Assembly.Location` returns an empty string under
-single-file publishing. `AppContext.BaseDirectory` is more robust.
-
-Until this is fixed, shipping the helper accomplishes nothing at runtime — but
-the packaging work should still include it so it works the moment the lookup is
-fixed.
+One caveat remains in that method: it locates itself through
+`Assembly.Location`, which returns an empty string under **single-file**
+publishing. Neither installer publishes single-file, so this is latent rather
+than live. `AppContext.BaseDirectory` is the robust replacement if that ever
+changes.
 
 ---
 
@@ -281,72 +293,119 @@ ever do need to rasterize.
 
 ---
 
-## 6. Linux packaging notes (UNVERIFIED — no Linux machine was available)
+## 6. Linux packaging (BUILT — see `src/Installer/LinuxInstaller/README.md`)
 
-The publish itself is verified; everything below it is not.
+`build-linux-packages.sh` produces both a `.deb` and an `.rpm` from one staged
+tree. This section is the background; that README is the operating manual.
 
 ### 6.1 What was verified
 
-- `dotnet publish AvPurplePen -c Release -f net10.0 -r linux-x64 --self-contained true`
-  **succeeds**, producing an ELF `PurplePen` apphost and 16 native `.so` files
-  at the output root (`libSkiaSharp.so`, `libHarfBuzzSharp.so`,
-  `libSystem.Native.so`, `libclrjit.so`, …).
-- Output is **721 MB**, of which 399 MB is the `runtimes/` tree from §2.2.
-- `PurplePen.deps.json` has **0** `runtimeTargets` entries, so `runtimes/` is
-  orphaned exactly as on macOS.
-- `PdfConverter.runtimeconfig.json` in that output is **framework-dependent**,
-  i.e. the §2.3 bug is present.
-- The §2.3 fix works: `-r linux-x64 --self-contained` gives an ELF apphost and a
-  flattened `libpdfium.so`.
+Built in WSL2 (Ubuntu 22.04, .NET SDK 10.0.105) and installed there:
 
-Nothing has ever been *run* on Linux. Assume the app has never been launched
-there and budget time for first-run problems.
+- The publish produces an ELF `PurplePen` apphost and the native `.so` files at
+  the output root, and `runtimes/` is orphaned exactly as on macOS.
+- **The application launches and runs.** Under WSLg it starts and stays up;
+  with `DISPLAY` and `WAYLAND_DISPLAY` unset it exits 1 immediately, which is
+  what makes the first result mean something.
+- **PDF map templates work** — see §2.5.
+- Passing a `.ppen` path as `argv[1]` opens it (`CommandLineOptions.cs`), so
+  the file association is real rather than decorative. `gio info` on a sample
+  file reports `application/x-purplepen` after install.
+- Hard dependencies resolve on Ubuntu 22.04 with nothing else to install.
+- The `.deb` and the `.rpm` contain an identical set of paths; the only
+  difference is the 32 shared parent directories the RPM correctly does not
+  claim.
+
+Sizes, after the exclusions in §6.6: payload **132 MB**, `.deb` 43 MB,
+`.rpm` 39 MB.
+
+**Still unverified:** `linux-arm64` and the other RIDs (nothing has been run on
+them), and any distribution other than Ubuntu — in particular the RPM
+dependency names, which target Fedora/RHEL and were never resolved against a
+real dnf.
 
 ### 6.2 RIDs
 
 `linux-x64`, `linux-arm64`, and `linux-musl-x64` for Alpine. glibc and musl are
 not interchangeable — a musl target needs its own build and its own package.
 
-### 6.3 Runtime dependencies — determine these on the target, do not guess
+### 6.3 Runtime dependencies
 
-Run `ldd` on the apphost and on every `.so` at the publish root, on the oldest
-distro you intend to support, and derive `Depends:` / `Requires:` from that.
+The lists now in `LinuxInstaller/config.sh` were derived from `ldd` over the
+payload plus the two libraries .NET opens with `dlopen`. Rerun the survey with
+`./build-linux-packages.sh --show-deps`.
 
-Likely needed, but **each must be confirmed**:
+The trap here is that **`ldd` cannot see the two dependencies most likely to
+break a machine**: .NET loads ICU (globalization) and OpenSSL (TLS) lazily, so
+neither appears in any `ldd` output and both have to be added by hand. Neither
+is bundled by a self-contained publish. `InvariantGlobalization=true` would
+remove the ICU requirement but break culture-aware behaviour, which is not
+acceptable in an application this heavily localized.
 
-- **ICU** (`libicu`) — no `InvariantGlobalization` property is set anywhere in
-  the repo, so .NET will expect ICU at runtime. Self-contained publishing does
-  **not** bundle it. Either add a dependency, or set
-  `InvariantGlobalization=true` (which would break culture-aware behaviour —
-  Purple Pen is heavily localized, so this is probably not acceptable), or
-  bundle `Microsoft.ICU.ICU4C.Runtime`.
-- **OpenSSL** for `libSystem.Security.Cryptography.Native.OpenSsl.so`
-- **fontconfig / freetype** for Skia text rendering
-- **X11 / libICE / libSM** for Avalonia's X11 backend
-- **zlib**
+Debian's ICU and OpenSSL packages carry the soname in the package name, so it
+differs on every distribution release and the dependency has to be spelled as
+an alternation (`libicu76 | libicu74 | …`). RPM's `libicu` and `openssl-libs`
+are stable by comparison. **Verified on Ubuntu 22.04:** the alternation
+resolves against `libicu70` / `libssl3` with nothing left to install.
 
-Also decide about Wayland vs X11 and whether to depend on `xdg-utils` —
-`doc/devdocs/AvaloniaThoughts.txt` notes that printing on Linux is expected to
-work by generating a PDF and launching a viewer, and suggests looking at
-`xdg-desktop-portal`.
+`xdg-utils` is a Recommends, not a Depends: printing works by generating a PDF
+and handing it to the system viewer, so it matters on a desktop but should not
+block installation elsewhere.
 
 ### 6.4 Packaging mechanics
 
-- `dotnet-packaging` (the old `dotnet deb` / `dotnet rpm` tooling) is
-  effectively unmaintained. Prefer driving `dpkg-deb` / `rpmbuild` directly, or
-  use `fpm` to generate both from one staged tree — which fits the staging-
-  directory design in §4 well.
-- Install to `/opt/purplepen`, symlink the launcher into `/usr/bin`.
-- **Preserve the executable bit** on `PurplePen` and `PdfConverter`. `rsync -a`
-  and `cp -a` preserve it; some archive round-trips do not.
-- Ship a `.desktop` file in `/usr/share/applications` with `Categories=`,
-  `Icon=purplepen`, and `MimeType=` once a `.ppen` MIME type is registered.
-- Debian versions don't accept a bare four-part version cleanly in all
-  contexts; map `4.0.0.110` to something like `4.0.0.110-1`. RPM wants separate
-  `Version:` and `Release:` fields.
-- Package signing: `dpkg-sig` / `debsign` for `.deb`, `rpm --addsign` for
-  `.rpm`, both GPG-based. Unlike notarization this is optional and mainly
-  matters if you publish an apt/yum repository.
+Settled choices, all now implemented:
+
+- **`dpkg-deb` and `rpmbuild` driven directly**, from one staged tree.
+  `dotnet-packaging` is unmaintained; `fpm` needs a Ruby toolchain to save very
+  little. `rpmbuild` runs perfectly well on Debian/Ubuntu (`apt install rpm`),
+  so no Fedora machine is needed.
+- Install to `/opt/purplepen`, with `/usr/bin/purplepen` a **symlink**. A
+  wrapper script is unnecessary: the apphost resolves `/proc/self/exe`, which
+  follows symlinks, so the application directory comes out right.
+- **Set the executable bit deliberately, do not preserve it.** `rsync -a`
+  preserving the source mode is not enough when the source is a Windows drive
+  under WSL, where every file reads as `0777` and packaging it as-is ships
+  world-writable binaries. Deriving the mode from each file's ELF magic makes
+  the output identical wherever it was staged.
+- **Fold the prerelease stage into the version.** `4.0.0.210` shipped verbatim
+  sorts *after* the eventual stable `4.0.0` in both dpkg and rpm, so beta users
+  would never be offered the release. Both systems sort `~` before everything,
+  so `4.0.0.210` becomes `4.0.0~beta1`. Check with
+  `dpkg --compare-versions '4.0.0~beta1' lt '4.0.0'`.
+- **Turn off rpm's automatic dependency generation** (`AutoReqProv: no`).
+  Left on, it scans the ~90 bundled `.so` files and advertises them in
+  `Provides`, so the package can be pulled in to satisfy an unrelated
+  dependency on `libSkiaSharp.so`.
+- Package signing (`debsign`, `rpm --addsign`) is **not** implemented. Both are
+  GPG-based and mainly matter when publishing an apt/yum repository; there is
+  no Linux equivalent of notarization.
+
+### 6.6 Two ways a Windows checkout corrupts a Linux build
+
+Both were hit in WSL, both fail confusingly, and both are handled by the script.
+
+**Another platform's runtime gets packaged.** §2.4 describes
+`CopyPdfConverterToPublishOutput`'s recursive glob poisoning the *next* build.
+It also works in the other direction: a checkout that has been published for
+Windows leaves `PdfConverter/bin/Release/net10.0/win-x64/`, and the glob sweeps
+that entire self-contained Windows .NET runtime — **178 MB** — into the Linux
+publish, where nothing can ever load it. It is invisible in testing, because
+nothing loads it and so nothing breaks; the only symptom is an inexplicably
+large package. The script excludes any top-level directory whose name is a RID
+and fails if one survives.
+
+**`obj/` is shared across operating systems.** `AvPurplePen.csproj` builds
+PdfConverter through an MSBuild task with `Targets="Build"`, which performs no
+restore, so it uses whatever `obj/project.assets.json` is present. If Visual
+Studio wrote it, the Linux publish dies well into the build with
+
+```
+error MSB4018: Unable to find fallback package folder
+'C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages'
+```
+
+The fix is an explicit `dotnet restore` of both projects before publishing.
 
 ### 6.5 Fonts
 
@@ -360,16 +419,27 @@ name fonts that are present.
 
 ## 7. Open items across all platforms
 
-1. **`PdfConverter.exe` lookup** (§2.5) — blocks PDF templates on macOS *and*
-   Linux. Fix in `PurplePenCore/PdfMapFile.cs`.
-2. **The `CopyPdfConverterToPublishOutput` target** in `AvPurplePen.csproj` is
-   the root cause of §2.2, §2.3 and §2.4. Making it publish RID-specific on
-   non-Windows platforms would fix all three at source and remove the need for
-   the overlay in each installer. It was left alone because it also affects the
-   Windows build.
-3. **Notarization is still unexercised on macOS.** Code signing now works and is
+1. **The `CopyPdfConverterToPublishOutput` target** in `AvPurplePen.csproj` is
+   the root cause of §2.2, §2.3, §2.4 and both halves of §6.6 — five separate
+   workarounds across two installers. Making it publish RID-specific, and
+   globbing a single output directory rather than recursing, would fix all of
+   them at source and remove the overlay from both installers. It has been left
+   alone because it also affects the Windows build. **This is the highest-value
+   cleanup available in the packaging work.**
+2. **Notarization is still unexercised on macOS.** Code signing now works and is
    verified (full Developer ID chain, secure timestamp, `--verify --deep
    --strict` passes, `spctl` reports the expected `Unnotarized Developer ID`).
    Submitting to Apple has not yet been run. Linux has no equivalent step.
+3. **The Linux packages have only been tested on Ubuntu 22.04.** The RPM
+   dependency names target Fedora/RHEL and have never been resolved by a real
+   dnf; openSUSE and Mageia name several of them differently. Only `linux-x64`
+   has been built.
+4. **`Assembly.Location` in `PdfMapFile.FindPdfConverterExe`** returns an empty
+   string under single-file publishing. Latent today — no installer publishes
+   single-file — but `AppContext.BaseDirectory` is the robust form.
 
-Resolved since first writing: the app icon, which was 64×64 only — see §5.
+Resolved since first writing:
+
+- The app icon, which was 64×64 only — see §5.
+- The `PdfConverter.exe` lookup — see §2.5, fixed in `1caa2efa` and now
+  verified working on Linux.
