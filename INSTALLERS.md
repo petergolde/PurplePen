@@ -13,7 +13,7 @@ Both installers now exist and have their own detailed documentation:
 | Platform | Directory | Status |
 |---|---|---|
 | macOS | `src/Installer/MacInstaller/` | Builds a signed `.dmg` + `.zip`. Notarization unexercised. |
-| Linux | `src/Installer/LinuxInstaller/` | Builds `.deb` + `.rpm`. Installed and run on Ubuntu 22.04. |
+| Linux | `src/Installer/LinuxInstaller/` | Builds `.deb` + `.rpm` + AppImage. All three installed/run on Ubuntu 22.04. |
 
 This file is the shared background; the per-platform READMEs are the operating
 instructions.
@@ -295,8 +295,9 @@ ever do need to rasterize.
 
 ## 6. Linux packaging (BUILT — see `src/Installer/LinuxInstaller/README.md`)
 
-`build-linux-packages.sh` produces both a `.deb` and an `.rpm` from one staged
-tree. This section is the background; that README is the operating manual.
+`build-linux-packages.sh` produces a `.deb`, an `.rpm` and an AppImage from one
+staged tree. This section is the background; that README is the operating
+manual.
 
 ### 6.1 What was verified
 
@@ -316,8 +317,10 @@ Built in WSL2 (Ubuntu 22.04, .NET SDK 10.0.105) and installed there:
   difference is the 32 shared parent directories the RPM correctly does not
   claim.
 
+- **The AppImage runs, including on a host with no ICU at all** — see §6.7.
+
 Sizes, after the exclusions in §6.6: payload **132 MB**, `.deb` 43 MB,
-`.rpm` 39 MB.
+`.rpm` 39 MB, AppImage 63 MB (the extra ~20 MB is bundled ICU).
 
 **Still unverified:** `linux-arm64` and the other RIDs (nothing has been run on
 them), and any distribution other than Ubuntu — in particular the RPM
@@ -381,6 +384,14 @@ Settled choices, all now implemented:
   GPG-based and mainly matter when publishing an apt/yum repository; there is
   no Linux equivalent of notarization.
 
+### 6.5 Fonts
+
+19 Roboto TTFs ship in `fonts/`. `AvaloniaThoughts.txt` notes Arial and Times
+New Roman substitutes may be needed on Linux ("Use CrossCore fonts for these"),
+and that fonts are believed to be fine on macOS but not on Linux. Expect font
+fallback work; it is listed there as low priority because course files usually
+name fonts that are present.
+
 ### 6.6 Two ways a Windows checkout corrupts a Linux build
 
 Both were hit in WSL, both fail confusingly, and both are handled by the script.
@@ -407,13 +418,52 @@ error MSB4018: Unable to find fallback package folder
 
 The fix is an explicit `dotnet restore` of both projects before publishing.
 
-### 6.5 Fonts
+### 6.7 The AppImage, and the one dependency that must be bundled
 
-19 Roboto TTFs ship in `fonts/`. `AvaloniaThoughts.txt` notes Arial and Times
-New Roman substitutes may be needed on Linux ("Use CrossCore fonts for these"),
-and that fonts are believed to be fine on macOS but not on Linux. Expect font
-fallback work; it is listed there as low priority because course files usually
-name fonts that are present.
+A `.deb` or `.rpm` declares dependencies and lets the package manager satisfy
+them. **An AppImage has no dependency resolution at all**, so the bundling
+question has to be answered rather than deferred — and the answer is mostly
+"bundle nothing".
+
+The AppImage project's
+[excludelist](https://github.com/AppImage/pkg2appimage/blob/master/excludelist)
+names the libraries that must come from the host because they are tied to its
+kernel, display server or font configuration. It covers nearly everything
+Purple Pen touches: glibc, libstdc++, libgcc\_s, libX11, libICE, libSM,
+fontconfig, freetype, expat, uuid, zlib. Bundling them causes the failures the
+list exists to prevent — fontconfig is specifically documented as making
+applications hang at startup.
+
+**ICU is the exception.** It is not on the excludelist, and it is the only
+dependency whose absence is *fatal rather than degrading*: .NET aborts with
+"Couldn't find a valid ICU package installed on the system", and
+`InvariantGlobalization` is not acceptable in an application this localized.
+`AppRun` prepends a bundled copy to `LD_LIBRARY_PATH`.
+
+**Verified, not assumed.** With the host's ICU masked inside a private mount
+namespace, running the payload directly aborts with that error; running the
+same host through `AppRun` starts normally. Necessary and sufficient. Cost is
+~33 MB uncompressed, ~20 MB in the finished image.
+
+OpenSSL is deliberately not bundled: its absence only breaks the update check,
+while a bundled crypto library never gets security updates.
+
+**The host floor does not depend on the build machine.** Purple Pen compiles no
+native code — every `.so` comes prebuilt from Microsoft or SkiaSharp — so the
+requirement is fixed by those binaries at **glibc 2.27** and **GLIBCXX_3.4.22**
+(Ubuntu 18.04 / Debian 10 / RHEL 8 era). The standard AppImage practice of
+building inside an ancient distro buys nothing here. Re-measure after a .NET
+major upgrade:
+
+```bash
+objdump -T payload/*.so | grep -o 'GLIBC_[0-9.]*' | sort -uV | tail -1
+```
+
+Two operational notes. appimagetool is pinned by version *and* SHA-256, because
+a tag can be moved and a release asset replaced — the hash is the only real
+pin. And appimagetool downloads its type-2 runtime on every run, so the
+AppImage build needs network access even when the tool itself is cached;
+`APPIMAGE_RUNTIME_FILE` makes it offline-capable.
 
 ---
 
@@ -433,10 +483,14 @@ name fonts that are present.
 3. **The Linux packages have only been tested on Ubuntu 22.04.** The RPM
    dependency names target Fedora/RHEL and have never been resolved by a real
    dnf; openSUSE and Mageia name several of them differently. Only `linux-x64`
-   has been built.
+   has been built. The AppImage's claim to run down to glibc 2.27 is derived
+   from symbol versions, not from having run it on such a host.
 4. **`Assembly.Location` in `PdfMapFile.FindPdfConverterExe`** returns an empty
    string under single-file publishing. Latent today — no installer publishes
    single-file — but `AppContext.BaseDirectory` is the robust form.
+5. **AppStream metadata is AppImage-only.** `usr/share/metainfo` is assembled
+   for the AppDir but not added to the `.deb`/`.rpm`, where it would also let
+   software centres describe the application. Small, self-contained addition.
 
 Resolved since first writing:
 

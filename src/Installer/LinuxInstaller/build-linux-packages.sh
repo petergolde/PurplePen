@@ -38,6 +38,8 @@ VERSION_FILE="$SRC_DIR/PurplePenCore/VersionNumber.cs"
 EXCLUDE_FILE="$SCRIPT_DIR/publish-exclude.txt"
 DESKTOP_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME.desktop.template"
 MIME_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME-mime.xml.template"
+APPRUN_TEMPLATE="$SCRIPT_DIR/AppRun.template"
+APPDATA_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME.appdata.xml.template"
 ICON_DIR="$SRC_DIR/AvPurplePen/Assets/AppIcon"
 
 OUTPUT_DIR="$SCRIPT_DIR/$OUTPUT_SUBDIR"
@@ -94,13 +96,16 @@ usage() {
     cat <<'EOF'
 Usage: build-linux-packages.sh [options]
 
-Builds .deb and .rpm packages of Purple Pen for Linux into output/.
+Builds .deb, .rpm and AppImage packages of Purple Pen for Linux into output/.
 
 Options:
   --skip-publish    Reuse the existing dotnet publish output instead of
                     rebuilding. Useful when iterating on packaging.
   --deb-only        Build only the .deb.
   --rpm-only        Build only the .rpm.
+  --appimage-only   Build only the AppImage.
+  --skip-appimage   Build the .deb and .rpm but not the AppImage. Useful when
+                    offline, since the AppImage needs appimagetool.
   --skip-verify     Do not inspect the finished packages. Not recommended.
   --show-deps       Report the shared libraries the payload links against and
                     which installed package provides each, then exit. Use this
@@ -117,10 +122,12 @@ EOF
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --skip-publish) SKIP_PUBLISH=1 ;;
-        --deb-only)     BUILD_DEB=true;  BUILD_RPM=false ;;
-        --rpm-only)     BUILD_DEB=false; BUILD_RPM=true ;;
-        --skip-verify)  SKIP_VERIFY=1 ;;
+        --skip-publish)  SKIP_PUBLISH=1 ;;
+        --deb-only)      BUILD_DEB=true;  BUILD_RPM=false; BUILD_APPIMAGE=false ;;
+        --rpm-only)      BUILD_DEB=false; BUILD_RPM=true;  BUILD_APPIMAGE=false ;;
+        --appimage-only) BUILD_DEB=false; BUILD_RPM=false; BUILD_APPIMAGE=true ;;
+        --skip-appimage) BUILD_APPIMAGE=false ;;
+        --skip-verify)   SKIP_VERIFY=1 ;;
         --show-deps)    SHOW_DEPS_ONLY=1 ;;
         -h|--help)      usage; exit 0 ;;
         *)              usage >&2; die "Unknown option: $1" ;;
@@ -228,8 +235,18 @@ Install it with one of:
 or build only the .deb with --deb-only."
     fi
 
-    [[ "$BUILD_DEB" == "true" || "$BUILD_RPM" == "true" ]] \
-        || die "Both BUILD_DEB and BUILD_RPM are false; there is nothing to build."
+    if [[ "$BUILD_APPIMAGE" == "true" ]]; then
+        for tool in curl sha256sum ldconfig; do
+            command -v "$tool" >/dev/null 2>&1 \
+                || die "$tool not found, which is needed to build the AppImage.
+Use --skip-appimage to build only the .deb and .rpm."
+        done
+        [[ -f "$APPRUN_TEMPLATE" ]] || die "Cannot find the AppRun template at $APPRUN_TEMPLATE"
+        [[ -f "$APPDATA_TEMPLATE" ]] || die "Cannot find the AppStream template at $APPDATA_TEMPLATE"
+    fi
+
+    [[ "$BUILD_DEB" == "true" || "$BUILD_RPM" == "true" || "$BUILD_APPIMAGE" == "true" ]] \
+        || die "BUILD_DEB, BUILD_RPM and BUILD_APPIMAGE are all false; there is nothing to build."
 
     [[ -f "$PROJECT_FILE" ]] || die "Cannot find AvPurplePen project at $PROJECT_FILE"
     [[ -f "$DESKTOP_TEMPLATE" ]] || die "Cannot find the desktop entry template at $DESKTOP_TEMPLATE"
@@ -314,11 +331,14 @@ read_version() {
 # resolve_architecture: map the .NET runtime identifier onto the architecture
 # names Debian and RPM use, which agree with each other on none of them.
 resolve_architecture() {
+    # AppImage agrees with RPM on x86_64/aarch64/i686 but not on 32-bit ARM,
+    # where RPM says armv7hl and AppImage says armhf, so it needs its own name
+    # rather than reusing either.
     case "$RUNTIME_IDENTIFIER" in
-        linux-x64)   DEB_ARCH="amd64"; RPM_ARCH="x86_64"  ;;
-        linux-arm64) DEB_ARCH="arm64"; RPM_ARCH="aarch64" ;;
-        linux-arm)   DEB_ARCH="armhf"; RPM_ARCH="armv7hl" ;;
-        linux-x86)   DEB_ARCH="i386";  RPM_ARCH="i686"    ;;
+        linux-x64)   DEB_ARCH="amd64"; RPM_ARCH="x86_64";  APPIMAGE_ARCH="x86_64"  ;;
+        linux-arm64) DEB_ARCH="arm64"; RPM_ARCH="aarch64"; APPIMAGE_ARCH="aarch64" ;;
+        linux-arm)   DEB_ARCH="armhf"; RPM_ARCH="armv7hl"; APPIMAGE_ARCH="armhf"   ;;
+        linux-x86)   DEB_ARCH="i386";  RPM_ARCH="i686";    APPIMAGE_ARCH="i686"    ;;
         linux-musl-*)
             die "RUNTIME_IDENTIFIER is $RUNTIME_IDENTIFIER, which targets musl (Alpine).
 Alpine uses apk packages, not .deb or .rpm. Use a glibc RID such as linux-x64." ;;
@@ -657,6 +677,12 @@ render_template() {
         -e "s|@DESKTOP_KEYWORDS@|$DESKTOP_KEYWORDS|g" \
         -e "s|@MIME_TYPE@|$MIME_TYPE|g" \
         -e "s|@MIME_TYPE_LINE@|$MIME_TYPE_LINE|g" \
+        -e "s|@EXTRA_DESKTOP_KEYS@|${EXTRA_DESKTOP_KEYS:-}|g" \
+        -e "s|@INSTALL_PREFIX@|$INSTALL_PREFIX|g" \
+        -e "s|@APPSTREAM_ID@|$APPSTREAM_ID|g" \
+        -e "s|@PACKAGE_LICENSE@|$PACKAGE_LICENSE|g" \
+        -e "s|@PACKAGE_URL@|$PACKAGE_URL|g" \
+        -e "s|@RELEASE_DATE@|$RELEASE_DATE|g" \
         -e "s|@VERSION@|$UPSTREAM_VERSION|g" \
         "$src" > "$dest"
 
@@ -1111,6 +1137,317 @@ build_rpm() {
 }
 
 # ---------------------------------------------------------------------------
+# Step 5c: the AppImage
+# ---------------------------------------------------------------------------
+
+# ensure_appimagetool: settle on the appimagetool binary to use, downloading and
+# verifying it if necessary. Sets APPIMAGETOOL to an executable path.
+#
+# Preference order is an explicitly configured path, then one already on PATH,
+# then a pinned download cached under APPIMAGE_CACHE_DIR. The download is
+# checked against a SHA-256 recorded in config.sh rather than merely fetched
+# over TLS: a git tag can be moved and a release asset can be replaced, so the
+# hash is the only thing that actually pins what gets executed.
+ensure_appimagetool() {
+    if [[ -n "$APPIMAGETOOL" ]]; then
+        [[ -x "$APPIMAGETOOL" ]] \
+            || die "APPIMAGETOOL is set to '$APPIMAGETOOL', which is not an executable file."
+        info "Using appimagetool from APPIMAGETOOL: $APPIMAGETOOL"
+        return
+    fi
+
+    if command -v appimagetool >/dev/null 2>&1; then
+        APPIMAGETOOL="$(command -v appimagetool)"
+        info "Using appimagetool from PATH: $APPIMAGETOOL"
+        return
+    fi
+
+    # Indirect lookup: the hash is recorded per architecture because each
+    # asset is a different binary.
+    local hash_var="APPIMAGETOOL_SHA256_${APPIMAGE_ARCH}"
+    local expected="${!hash_var:-}"
+
+    [[ -n "$expected" ]] || die "No appimagetool SHA-256 is recorded for $APPIMAGE_ARCH.
+
+Rather than download and execute an unverified binary, the build stops here.
+Fetch the asset, check it, and record its hash in config.sh as
+${hash_var}:
+
+    curl -sSL $APPIMAGETOOL_URL_BASE/$APPIMAGETOOL_VERSION/appimagetool-$APPIMAGE_ARCH.AppImage | sha256sum
+
+Or install appimagetool yourself and point APPIMAGETOOL at it."
+
+    local cached="$APPIMAGE_CACHE_DIR/appimagetool-$APPIMAGETOOL_VERSION-$APPIMAGE_ARCH.AppImage"
+
+    if [[ -f "$cached" ]] && sha256_matches "$cached" "$expected"; then
+        APPIMAGETOOL="$cached"
+        info "Using cached appimagetool $APPIMAGETOOL_VERSION"
+        return
+    fi
+
+    local url="$APPIMAGETOOL_URL_BASE/$APPIMAGETOOL_VERSION/appimagetool-$APPIMAGE_ARCH.AppImage"
+    local tmp="$cached.partial"
+
+    mkdir -p "$APPIMAGE_CACHE_DIR"
+    rm -f "$tmp"
+
+    info "Downloading appimagetool $APPIMAGETOOL_VERSION for $APPIMAGE_ARCH"
+    curl -fsSL --retry 3 --retry-delay 2 -o "$tmp" "$url" \
+        || { rm -f "$tmp"; die "Failed to download appimagetool from $url"; }
+
+    # Downloaded to a .partial name and only renamed after the hash checks out,
+    # so an interrupted or tampered download can never be picked up as a valid
+    # cache entry by a later run.
+    if ! sha256_matches "$tmp" "$expected"; then
+        local actual
+        actual="$(sha256sum "$tmp" | awk '{print $1}')"
+        rm -f "$tmp"
+        die "appimagetool failed its checksum, so it has NOT been run.
+
+    expected  $expected
+    actual    $actual
+    from      $url
+
+Either the release asset was replaced upstream, or the download was tampered
+with. Verify the asset by hand before updating ${hash_var} in config.sh."
+    fi
+
+    chmod +x "$tmp"
+    mv "$tmp" "$cached"
+    APPIMAGETOOL="$cached"
+    info "Verified and cached appimagetool $APPIMAGETOOL_VERSION"
+}
+
+# sha256_matches: succeed if file $1 has SHA-256 $2.
+sha256_matches() {
+    local actual
+    actual="$(sha256sum "$1" 2>/dev/null | awk '{print $1}')" || return 1
+    [[ "$actual" == "$2" ]]
+}
+
+# appimagetool_runner: work out how appimagetool has to be invoked, and set
+# APPIMAGETOOL_ENV to any environment it needs.
+#
+# appimagetool is itself an AppImage, so it normally mounts itself with FUSE.
+# That fails on machines with no /dev/fuse or no libfuse -- containers, CI
+# runners and some WSL setups -- with an error about libfuse.so.2 that looks
+# like a problem with the build rather than with the tool. Setting
+# APPIMAGE_EXTRACT_AND_RUN makes the runtime unpack itself to a temporary
+# directory instead, which always works and costs a second.
+#
+# Probed with --version rather than guessed from whether /dev/fuse exists,
+# because the device node being present says nothing about whether the
+# right libfuse is installed.
+appimagetool_runner() {
+    APPIMAGETOOL_ENV=()
+
+    if "$APPIMAGETOOL" --version >/dev/null 2>&1; then
+        return
+    fi
+
+    if APPIMAGE_EXTRACT_AND_RUN=1 "$APPIMAGETOOL" --version >/dev/null 2>&1; then
+        APPIMAGETOOL_ENV=(APPIMAGE_EXTRACT_AND_RUN=1)
+        info "FUSE is unavailable; running appimagetool in extract-and-run mode"
+        return
+    fi
+
+    die "appimagetool cannot run on this machine, with or without FUSE.
+
+    $APPIMAGETOOL --version
+
+failed both directly and with APPIMAGE_EXTRACT_AND_RUN=1. Run that by hand to
+see the underlying error."
+}
+
+# library_soname_and_path: print "<soname> <path>" for the highest-versioned
+# installed library whose name starts with $1, or nothing if there is none.
+#
+# ldconfig's cache is used rather than globbing a guessed directory, because
+# the multiarch layout differs between distributions (/usr/lib/x86_64-linux-gnu
+# on Debian, /usr/lib64 on Fedora) and the cache is authoritative on all of
+# them.
+library_soname_and_path() {
+    ldconfig -p 2>/dev/null \
+        | awk -v n="$1" '$1 ~ "^"n"\\.so\\.[0-9]+$" { print $1, $NF }' \
+        | sort -V | tail -1
+}
+
+# bundle_libraries: copy the libraries named in $2 into the AppDir's usr/lib at
+# the version $1 resolves to. $1 is the library whose version governs the set,
+# $2 the space-separated list to copy. $3 is a label for messages.
+#
+# Copying is done with cp -L and the file is named after its SONAME, not after
+# whatever the file on disk is called. Distributions ship the real library as
+# libicuuc.so.70.1 with libicuuc.so.70 a symlink to it, and .NET dlopens the
+# SONAME -- so a naive copy of the resolved file would land as a name nothing
+# ever looks for.
+bundle_libraries() {
+    local governing="$1" libraries="$2" label="$3"
+    local libdir="$APPDIR_PATH/usr/lib"
+    local entry soname path version lib copied=0
+
+    entry="$(library_soname_and_path "$governing")"
+    if [[ -z "$entry" ]]; then
+        warn "$governing is not installed on this machine, so no $label was bundled."
+        warn "The AppImage will then depend on the host providing it."
+        return
+    fi
+
+    soname="${entry%% *}"
+    version="${soname##*.so.}"
+
+    mkdir -p "$libdir"
+
+    for lib in $libraries; do
+        soname="$lib.so.$version"
+        path="$(ldconfig -p 2>/dev/null | awk -v s="$soname" '$1 == s { print $NF; exit }')"
+
+        if [[ -z "$path" || ! -f "$path" ]]; then
+            die "Cannot bundle $label: $soname is missing from this machine.
+
+$governing resolved to version $version, so every library in the set is
+expected at that same version. Install the matching development or runtime
+package, or set the corresponding BUNDLE_* option to false."
+        fi
+
+        cp -L "$path" "$libdir/$soname"
+        chmod 0644 "$libdir/$soname"
+        copied=$((copied + 1))
+    done
+
+    info "Bundled $copied $label libraries (version $version, $(dir_size "$libdir") total)"
+}
+
+# build_appdir: assemble the AppDir that appimagetool turns into the AppImage.
+#
+# It starts as a copy of the very same install tree the .deb and .rpm are built
+# from, so all three ship byte-identical application content and a bug cannot
+# appear in one format but not the others. Everything below is what an AppImage
+# needs on top of that.
+build_appdir() {
+    APPDIR_PATH="$BUILD_DIR/$APP_NAME.AppDir"
+
+    rm -rf "$APPDIR_PATH"
+    cp -a "$TREE_DIR" "$APPDIR_PATH"
+
+    # /usr/bin/purplepen is an ABSOLUTE symlink into /opt, which is right for a
+    # package that really installs there and meaningless inside an AppImage --
+    # it would resolve against the host's filesystem, not the mounted image.
+    # AppRun invokes the executable by its real path instead.
+    rm -f "$APPDIR_PATH/usr/bin/$PACKAGE_NAME"
+    rmdir "$APPDIR_PATH/usr/bin" 2>/dev/null || true
+
+    # AppRun is the entry point the runtime executes.
+    render_template "$APPRUN_TEMPLATE" "$APPDIR_PATH/AppRun"
+    chmod 0755 "$APPDIR_PATH/AppRun"
+
+    # The desktop entry is re-rendered rather than reused, to add the
+    # X-AppImage-* keys that integration tools read. It is written to BOTH the
+    # AppDir root, where the AppImage specification requires it and where
+    # appimagetool looks, and usr/share/applications, which is where a daemon
+    # like appimaged copies it from when integrating.
+    local desktop="$APPDIR_PATH/usr/share/applications/$PACKAGE_NAME.desktop"
+    EXTRA_DESKTOP_KEYS="X-AppImage-Version=$UPSTREAM_VERSION"
+    render_template "$DESKTOP_TEMPLATE" "$desktop"
+    EXTRA_DESKTOP_KEYS=""
+    cp "$desktop" "$APPDIR_PATH/$PACKAGE_NAME.desktop"
+
+    if command -v desktop-file-validate >/dev/null 2>&1; then
+        desktop-file-validate "$APPDIR_PATH/$PACKAGE_NAME.desktop" \
+            || die "The AppImage desktop entry is not valid."
+    fi
+
+    # The icon has to exist at the AppDir root under exactly the name the
+    # desktop entry's Icon= key gives, in addition to the hicolor copies
+    # already present from the install tree.
+    cp "$ICON_DIR/$ICON_FAMILY.256x256.png" "$APPDIR_PATH/$PACKAGE_NAME.png"
+
+    # .DirIcon is what file managers show for the AppImage itself. A relative
+    # symlink, never absolute: the AppDir is mounted at an unpredictable path.
+    ln -sf "$PACKAGE_NAME.png" "$APPDIR_PATH/.DirIcon"
+
+    # AppStream metadata, which is what software centres and integration
+    # daemons read to describe the application.
+    #
+    # Named after the desktop entry rather than after the component id, which
+    # is what appimagetool looks for -- it warns that metadata is missing
+    # otherwise, however correct the file inside is. The component id stays
+    # reverse-DNS, matching the macOS bundle identifier, and <launchable> ties
+    # it back to the desktop entry.
+    mkdir -p "$APPDIR_PATH/usr/share/metainfo"
+    render_template "$APPDATA_TEMPLATE" \
+        "$APPDIR_PATH/usr/share/metainfo/$PACKAGE_NAME.appdata.xml"
+
+    if [[ "$BUNDLE_ICU" == "true" ]]; then
+        bundle_libraries libicuuc "$ICU_LIBRARIES" "ICU"
+    else
+        warn "ICU is not bundled. The AppImage will fail to start on a host with"
+        warn "no ICU installed -- .NET treats that as fatal, not as degraded."
+    fi
+
+    if [[ "$BUNDLE_OPENSSL" == "true" ]]; then
+        bundle_libraries libssl "$OPENSSL_LIBRARIES" "OpenSSL"
+    fi
+
+    info "AppDir is $(count_files "$APPDIR_PATH") files ($(dir_size "$APPDIR_PATH"))"
+}
+
+# build_appimage: produce the .AppImage from the AppDir.
+build_appimage() {
+    step "Building the AppImage"
+
+    if [[ "$BUILD_APPIMAGE" != "true" ]]; then
+        info "Skipped."
+        return
+    fi
+
+    ensure_appimagetool
+    appimagetool_runner
+    build_appdir
+
+    # Built inside BUILD_DIR and copied out, for the same reason the .rpm is:
+    # the output directory may be a Windows drive that cannot store the
+    # executable bit, and an AppImage that is not executable is useless.
+    local staged="$BUILD_DIR/$APPIMAGE_BASENAME"
+    rm -f "$staged"
+
+    # ARCH is how appimagetool decides which runtime to embed; it refuses to
+    # guess when the AppDir contains binaries for more than one architecture,
+    # which ours does not, but setting it explicitly also makes cross-building
+    # work.
+    local tool_args=("$APPDIR_PATH" "$staged")
+
+    # Without this, appimagetool downloads the runtime from the type2-runtime
+    # "continuous" release on every build -- so a cached appimagetool is still
+    # not enough to build offline, and the embedded runtime is whatever was
+    # published that day.
+    if [[ -n "$APPIMAGE_RUNTIME_FILE" ]]; then
+        [[ -f "$APPIMAGE_RUNTIME_FILE" ]] \
+            || die "APPIMAGE_RUNTIME_FILE is set to '$APPIMAGE_RUNTIME_FILE', which does not exist."
+        tool_args=(--runtime-file "$APPIMAGE_RUNTIME_FILE" "${tool_args[@]}")
+        info "Embedding the runtime from $APPIMAGE_RUNTIME_FILE"
+    fi
+
+    env "${APPIMAGETOOL_ENV[@]}" ARCH="$APPIMAGE_ARCH" \
+        "$APPIMAGETOOL" "${tool_args[@]}" \
+        || die "appimagetool failed to build the AppImage.
+
+If it failed downloading the runtime, this build needs network access even
+though appimagetool itself is cached. Set APPIMAGE_RUNTIME_FILE to a
+pre-fetched runtime to build offline (see config.sh)."
+
+    [[ -f "$staged" ]] || die "appimagetool reported success but produced no AppImage."
+    chmod 0755 "$staged"
+
+    APPIMAGE_FILE="$OUTPUT_DIR/$APPIMAGE_BASENAME"
+    rm -f "$APPIMAGE_FILE"
+    cp -a "$staged" "$APPIMAGE_FILE"
+    APPIMAGE_STAGED="$staged"
+
+    info "Wrote $APPIMAGE_BASENAME ($(du -h "$staged" | cut -f1 | tr -d ' '))"
+}
+
+# ---------------------------------------------------------------------------
 # Step 6: verify the finished packages
 # ---------------------------------------------------------------------------
 
@@ -1235,6 +1572,96 @@ AutoReqProv must be off; check write_spec."
     info "$(basename "$RPM_FILE"): $(printf '%s\n' "$files" | wc -l | tr -d ' ') files, apphost 0755, no bundled Provides"
 }
 
+# verify_appimage: unpack the finished AppImage and confirm it contains a
+# working application rather than merely being a well-formed archive.
+#
+# The staged copy in BUILD_DIR is inspected rather than the one in output/,
+# because output/ may be on a filesystem that cannot store the executable bit
+# and would report every file as 0777.
+verify_appimage() {
+    [[ "$BUILD_APPIMAGE" == "true" ]] || return 0
+
+    [[ -x "$APPIMAGE_STAGED" ]] || die "The AppImage is not executable."
+
+    # An AppImage is an ELF runtime with a filesystem image appended. Bytes 8
+    # to 10 are the "AI" magic plus the type; type 2 is the squashfs format
+    # every current AppImage uses. Checking this proves the file really is an
+    # AppImage and not, say, a truncated download or an error page.
+    local magic
+    magic="$(od -An -j8 -N3 -tx1 "$APPIMAGE_STAGED" | tr -d ' \n')"
+    [[ "$magic" == "414902" ]] \
+        || die "The AppImage does not carry the expected type-2 magic (got '$magic', wanted '414902')."
+
+    # Unpack it. --appimage-extract is handled by the embedded runtime and
+    # needs no FUSE, so this works everywhere the build does.
+    local extract_root="$BUILD_DIR/appimage-verify"
+    rm -rf "$extract_root"
+    mkdir -p "$extract_root"
+
+    ( cd "$extract_root" && "$APPIMAGE_STAGED" --appimage-extract >/dev/null 2>&1 ) \
+        || die "The finished AppImage could not extract itself."
+
+    local root="$extract_root/squashfs-root"
+    [[ -d "$root" ]] || die "Extracting the AppImage produced no squashfs-root directory."
+
+    # Entry point and application.
+    [[ -x "$root/AppRun" ]] || die "AppRun is missing or not executable inside the AppImage."
+    [[ -x "$root$INSTALL_PREFIX/$APP_NAME" ]] \
+        || die "$INSTALL_PREFIX/$APP_NAME is missing or not executable inside the AppImage."
+
+    # Desktop integration payload. These are what an AppImage manager reads to
+    # install a menu entry, an icon and the .ppen file association, so a
+    # missing one silently costs the integration the user asked for.
+    [[ -f "$root/$PACKAGE_NAME.desktop" ]] \
+        || die "The AppDir root desktop entry is missing from the AppImage."
+    [[ -f "$root/usr/share/applications/$PACKAGE_NAME.desktop" ]] \
+        || die "usr/share/applications/$PACKAGE_NAME.desktop is missing from the AppImage."
+    [[ -f "$root/$PACKAGE_NAME.png" ]] \
+        || die "The AppDir root icon is missing from the AppImage."
+    [[ -e "$root/.DirIcon" ]] \
+        || die ".DirIcon is missing from the AppImage."
+    [[ -f "$root/usr/share/metainfo/$PACKAGE_NAME.appdata.xml" ]] \
+        || die "The AppStream metainfo is missing from the AppImage."
+    grep -q "<id>$APPSTREAM_ID</id>" "$root/usr/share/metainfo/$PACKAGE_NAME.appdata.xml" \
+        || die "The AppStream metainfo does not declare the expected component id $APPSTREAM_ID."
+
+    local icon_count
+    icon_count="$(find "$root/usr/share/icons/hicolor" -name "$PACKAGE_NAME.*" -type f 2>/dev/null | wc -l | tr -d ' ')"
+    [[ "$icon_count" -ge "${#ICON_SIZES[@]}" ]] \
+        || die "Only $icon_count hicolor icons are inside the AppImage; expected at least ${#ICON_SIZES[@]}."
+
+    if [[ "$REGISTER_MIME_TYPE" == "true" ]]; then
+        [[ -f "$root/usr/share/mime/packages/$PACKAGE_NAME.xml" ]] \
+            || die "The MIME definition is missing from the AppImage, so .ppen files would not associate."
+        grep -q "^MimeType=$MIME_TYPE;" "$root/$PACKAGE_NAME.desktop" \
+            || die "The AppImage desktop entry does not declare MimeType=$MIME_TYPE."
+    fi
+
+    # Bundled libraries. Checked by asking the dynamic loader what the payload
+    # resolves against with AppRun's environment applied, rather than by
+    # listing the directory -- that proves the bundle is actually reachable,
+    # which is the part that silently fails.
+    if [[ "$BUNDLE_ICU" == "true" ]]; then
+        local icu_lib
+        icu_lib="$(find "$root/usr/lib" -name 'libicuuc.so.*' -type f 2>/dev/null | head -1)"
+        [[ -n "$icu_lib" ]] || die "ICU was meant to be bundled but no libicuuc is inside the AppImage.
+
+Without it the AppImage will not start on a host that has no ICU, which is the
+whole reason for bundling it."
+
+        LD_LIBRARY_PATH="$root/usr/lib" ldd "$icu_lib" 2>/dev/null | grep -q 'not found' \
+            && die "The bundled ICU has unresolved dependencies of its own."
+
+        info "Bundled ICU: $(basename "$icu_lib")"
+    fi
+
+    local file_count
+    file_count="$(count_files "$root")"
+    info "$APPIMAGE_BASENAME: $file_count files, AppRun + desktop + icons + MIME present"
+
+    rm -rf "$extract_root"
+}
+
 # ---------------------------------------------------------------------------
 # --show-deps
 # ---------------------------------------------------------------------------
@@ -1296,11 +1723,6 @@ show_deps() {
     while IFS= read -r lib; do
         [[ -n "$lib" ]] || continue
         # Skip anything the payload ships itself.
-        #
-        # Written as a full if rather than "grep -q ... && continue": under
-        # set -e that && list returns non-zero for every library that is NOT
-        # bundled -- which is the common case -- and aborts the script on the
-        # first one, so the report came out empty.
         if printf '%s\n' "$bundled" | grep -qx "$lib"; then
             continue
         fi
@@ -1354,6 +1776,23 @@ TREE_DIR="$BUILD_DIR/tree"
 DEB_VERSION="$UPSTREAM_VERSION-$PACKAGE_RELEASE"
 RPM_VERSION="$UPSTREAM_VERSION"
 
+# An AppImage is a single file with no package manager behind it, so its name
+# is the only place the version and architecture are visible to a user.
+APPIMAGE_BASENAME="$APP_NAME-$UPSTREAM_VERSION-$APPIMAGE_ARCH.AppImage"
+
+# Release date for the AppStream metadata, which wants ISO 8601. Honours
+# SOURCE_DATE_EPOCH so a reproducible build can pin it.
+if [[ -n "${SOURCE_DATE_EPOCH:-}" ]]; then
+    RELEASE_DATE="$(date -u -d "@$SOURCE_DATE_EPOCH" +%F 2>/dev/null || date +%F)"
+else
+    RELEASE_DATE="$(date +%F)"
+fi
+
+# Extra desktop-entry keys. Empty for the .deb and .rpm, whose desktop entry
+# must not claim to be an AppImage; build_appdir sets it while it re-renders
+# its own copy.
+EXTRA_DESKTOP_KEYS=""
+
 # The desktop entry's MimeType line is either present or absent entirely; an
 # empty MimeType= would make some validators complain.
 if [[ "$REGISTER_MIME_TYPE" == "true" ]]; then
@@ -1386,11 +1825,13 @@ normalize_payload_permissions
 build_install_tree
 build_deb
 build_rpm
+build_appimage
 
 if [[ "$SKIP_VERIFY" == "0" ]]; then
     step "Verifying the packages"
     verify_deb
     verify_rpm
+    verify_appimage
 else
     warn "Package verification skipped."
 fi

@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+# AppRun -- the entry point of the Purple Pen AppImage.
+#
+# The at-sign-delimited tokens below are filled in by build-linux-packages.sh,
+# which fails the build if any are left over.
+#
+# An AppImage mounts itself at a different path on every run, so nothing here
+# may assume a fixed location. $HERE is the mount point, and every path is
+# built from it.
+
+set -e
+
+HERE="$(dirname "$(readlink -f "${0}")")"
+
+# Bundled libraries, currently ICU.
+#
+# ICU is the one dependency whose absence is fatal rather than degrading: with
+# no usable ICU on the host, .NET throws "Couldn't find a valid ICU package
+# installed on the system" and the application never starts. Prepending our
+# copy means the AppImage works on a host that has none.
+#
+# Deliberately prepended rather than exported alone: .NET finds ICU by
+# dlopen-ing a versioned soname, and dlopen searches LD_LIBRARY_PATH first. If
+# the host has its own ICU, .NET's version probing may well pick that one
+# instead, which is fine -- either copy works, and this is purely a floor.
+if [ -d "$HERE/usr/lib" ]; then
+    export LD_LIBRARY_PATH="$HERE/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+fi
+
+# Make the bundled icons and MIME definition visible to the application itself
+# while it runs, so its own windows and file dialogs resolve them even when the
+# AppImage has never been integrated into the desktop.
+export XDG_DATA_DIRS="$HERE/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+
+# APPIMAGE / APPDIR are set by the AppImage runtime and are how the application
+# (or a future updater) can find the .AppImage file it is running from. Passed
+# through untouched; noted here so it is clear they are not accidental.
+
+exec "$HERE@INSTALL_PREFIX@/@APP_NAME@" "$@"

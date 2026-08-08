@@ -1,6 +1,6 @@
 # Purple Pen Linux Installer
 
-Builds `.deb` and `.rpm` packages of Purple Pen for Linux.
+Builds `.deb`, `.rpm` and AppImage distributions of Purple Pen for Linux.
 
 ```bash
 ./build-linux-packages.sh
@@ -11,20 +11,28 @@ Output lands in `output/`:
 ```
 output/purplepen_4.0.0~beta1-1_amd64.deb
 output/purplepen-4.0.0~beta1-1.x86_64.rpm
+output/PurplePen-4.0.0~beta1-x86_64.AppImage
 ```
 
-Both packages install a **self-contained** build, so the target machine does
-not need .NET installed.
+All three install a **self-contained** build, so the target machine does not
+need .NET installed. All three are built from one staged tree, so they ship
+byte-identical application content and a bug cannot appear in one format but
+not the others.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `build-linux-packages.sh` | The build script. Run this. |
-| `config.sh` | Settings — package identity, dependencies, architecture, versioning. Every value can be overridden by an environment variable of the same name. |
-| `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the package. |
-| `purplepen.desktop.template` | Desktop menu entry, with `@PLACEHOLDER@` tokens filled in by the script. |
+| `config.sh` | Settings — package identity, dependencies, architecture, versioning, AppImage options. Every value can be overridden by an environment variable of the same name. |
+| `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the packages. |
+| `purplepen.desktop.template` | Desktop menu entry. |
 | `purplepen-mime.xml.template` | shared-mime-info definition registering `.ppen` files. |
+| `AppRun.template` | The AppImage entry point, which sets up the bundled-library path. |
+| `purplepen.appdata.xml.template` | AppStream metadata, so software centres and AppImage managers can describe the application. |
+
+Templates use at-sign-delimited tokens that the script substitutes; it fails
+the build if any are left over.
 
 `build/` (staging) and `output/` are generated and git-ignored.
 
@@ -35,11 +43,24 @@ not need .NET installed.
 | .NET 10 SDK | always | [dotnet install docs](https://learn.microsoft.com/dotnet/core/install/linux) |
 | `rsync`, `dpkg-deb` | the `.deb` | base system on Debian/Ubuntu; `dpkg` package elsewhere |
 | `rpmbuild` | the `.rpm` | `sudo apt install rpm` / `sudo dnf install rpm-build` |
-| `desktop-file-validate` | optional | `desktop-file-utils` — the build validates the menu entry when present |
+| `curl`, `ldconfig` | the AppImage | base system |
+| `desktop-file-validate` | recommended | `desktop-file-utils` — the build validates both menu entries when present |
 | `lintian` | optional | reports Debian policy notes, informational only |
 
 You do **not** need a Fedora machine to build the `.rpm`; `rpmbuild` runs fine
 on Debian and Ubuntu.
+
+`appimagetool` is fetched automatically on first use and cached in
+`~/.cache/purplepen-linuxinstaller`. The version and a per-architecture SHA-256
+are pinned in `config.sh`, and the download is refused if the hash does not
+match — a git tag can be moved and a release asset can be replaced, so the hash
+is the only thing that actually pins what gets executed. Set `APPIMAGETOOL` to
+use a copy you already have, or `--skip-appimage` to build without it.
+
+**The AppImage build needs network access even when appimagetool is cached.**
+appimagetool downloads its type-2 runtime from the AppImage project on every
+run. Pre-fetch it and set `APPIMAGE_RUNTIME_FILE` to build offline — see that
+setting in `config.sh`.
 
 ## Building from Windows via WSL
 
@@ -98,11 +119,14 @@ one re-restore; that is a few seconds, not a failure.
 5. **Assemble** — builds `build/tree` as the exact filesystem to be installed:
    the payload at `/opt/purplepen`, a `/usr/bin/purplepen` symlink, icons,
    the desktop entry, the MIME definition and a copyright file.
-6. **Package** — `dpkg-deb --root-owner-group --build` for the `.deb`, and
-   `rpmbuild` against a generated spec for the `.rpm`, both from that one tree.
-7. **Verify** — reads both finished packages back and fails on a non-executable
-   apphost, a writable file, a non-root owner, a missing symlink or desktop
-   entry, a version mismatch, or bundled libraries leaking into RPM `Provides`.
+6. **Package** — `dpkg-deb --root-owner-group --build` for the `.deb`,
+   `rpmbuild` against a generated spec for the `.rpm`, and `appimagetool` over
+   an AppDir for the AppImage, all from that one tree.
+7. **Verify** — reads all three finished artifacts back and fails on a
+   non-executable apphost, a writable file, a non-root owner, a missing symlink
+   or desktop entry, a version mismatch, bundled libraries leaking into RPM
+   `Provides`, a bad AppImage magic number, or missing AppImage desktop
+   integration.
 
 ## Iterating
 
@@ -115,8 +139,10 @@ one re-restore; that is a few seconds, not a failure.
 | `--skip-publish` | Reuse the existing publish output. |
 | `--deb-only` | Build only the `.deb`. |
 | `--rpm-only` | Build only the `.rpm`. |
-| `--skip-verify` | Do not inspect the finished packages. Not recommended. |
-| `--show-deps` | List every external shared library the payload needs and which package provides it, then exit. |
+| `--appimage-only` | Build only the AppImage. |
+| `--skip-appimage` | Build the `.deb` and `.rpm` only. Useful when offline. |
+| `--skip-verify` | Do not inspect the finished artifacts. Not recommended. |
+| `--show-deps` | List the shared libraries the payload links against and which package provides each, then exit. |
 
 ## Installing and removing
 
@@ -135,6 +161,127 @@ sudo dnf remove purplepen
 
 After installing, `purplepen` is on `PATH`, Purple Pen appears in the
 applications menu, and double-clicking a `.ppen` file opens it.
+
+## The AppImage
+
+A single executable file. No installation, no root, no package manager:
+
+```bash
+chmod +x PurplePen-4.0.0~beta1-x86_64.AppImage
+./PurplePen-4.0.0~beta1-x86_64.AppImage
+./PurplePen-4.0.0~beta1-x86_64.AppImage ~/events/national.ppen
+```
+
+### What it carries for desktop integration
+
+An AppImage does not install anything by itself. But if the user runs an
+AppImage manager — [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher),
+`appimaged`, Gearlever — that tool extracts this metadata and installs it, and
+then Purple Pen appears in the menu with its icon and `.ppen` files open in it.
+All of it is inside the image:
+
+| Path in the AppImage | What it gives you |
+|---|---|
+| `purplepen.desktop` (root) | The entry the AppImage spec requires and managers read |
+| `usr/share/applications/purplepen.desktop` | Where a manager copies it from |
+| `purplepen.png` (root) + `.DirIcon` | The icon managers install, and what a file manager shows for the file itself |
+| `usr/share/icons/hicolor/<N>x<N>/apps/` | All 9 sizes plus the scalable SVG |
+| `usr/share/mime/packages/purplepen.xml` | The `.ppen` MIME type, which is what makes the file association possible |
+| `usr/share/metainfo/purplepen.appdata.xml` | AppStream data — name, summary, description, categories, homepage |
+
+The desktop entry also carries `X-AppImage-Version`, which managers display.
+This key is added *only* to the AppImage's copy; the `.deb` and `.rpm` entries
+must not claim to be AppImages, and the build keeps them separate.
+
+Note the AppStream file is named after the *desktop entry*, not after the
+component id, because that is what appimagetool looks for — it reports metadata
+as missing otherwise, however correct the file inside is. The id stays
+reverse-DNS (`org.purple-pen.PurplePen`, the same identity as the macOS bundle)
+and `<launchable>` ties it back to the desktop entry.
+
+### What is bundled, and why that is the whole design problem
+
+This is the one place the AppImage genuinely differs from the `.deb`/`.rpm`.
+Those declare dependencies and let the package manager satisfy them. **An
+AppImage has no dependency resolution at all** — anything not inside it must
+already exist on the host.
+
+The AppImage project publishes an
+[excludelist](https://github.com/AppImage/pkg2appimage/blob/master/excludelist)
+of libraries that must *not* be bundled because they are tied to the host's
+kernel, display server or font configuration. It covers nearly everything
+Purple Pen touches — glibc, libstdc++, libgcc\_s, libX11, libICE, libSM,
+fontconfig, freetype, expat, uuid, zlib. Bundling those causes the failures it
+is meant to prevent; fontconfig in particular is documented as making
+applications hang at startup.
+
+**ICU is the exception, and it is bundled.** It is not on the excludelist, and
+it is the one dependency whose absence is *fatal rather than degrading*:
+
+```
+Couldn't find a valid ICU package installed on the system.
+```
+
+.NET aborts at startup. Purple Pen is heavily localized, so
+`InvariantGlobalization` is not an acceptable escape. `AppRun` prepends the
+bundled copy to `LD_LIBRARY_PATH`, which is a floor rather than an override —
+if the host has its own ICU, .NET's version probing may use that instead, and
+either works.
+
+This was verified rather than assumed. Masking the host's ICU inside a private
+mount namespace and running both ways:
+
+| | Result |
+|---|---|
+| Payload run directly, bundled ICU not on the path | aborts with the error above |
+| Same host, run through `AppRun` | starts and runs normally |
+
+So the bundle is both necessary and sufficient. It costs ~33 MB uncompressed
+(28 MB of that is `libicudata`'s tables), which squashfs compresses to about
+20 MB of the finished file.
+
+**OpenSSL is deliberately *not* bundled** (`BUNDLE_OPENSSL=true` to change
+that). Missing OpenSSL only degrades TLS — the application still starts and
+every offline feature works; what breaks is the update check. Against that, a
+bundled crypto library never receives security updates and can conflict with a
+host's crypto policy, and every mainstream distribution ships OpenSSL.
+
+### Which hosts it runs on
+
+Because Purple Pen compiles **no native code** — every `.so` in the payload
+comes prebuilt from Microsoft or SkiaSharp — the host requirement is fixed by
+those binaries and **does not depend on the machine that built the AppImage**.
+The usual AppImage advice to build inside an ancient distro does not apply.
+
+Measured from the payload's own symbol versions:
+
+| Requirement | Floor | First met by |
+|---|---|---|
+| glibc | 2.27 | Ubuntu 18.04, Debian 10, RHEL 8 |
+| libstdc++ | GLIBCXX\_3.4.22 | GCC 6.1, comfortably older |
+
+Re-measure after a .NET major upgrade with:
+
+```bash
+objdump -T build/payload/*.so | grep -o 'GLIBC_[0-9.]*' | sort -uV | tail -1
+```
+
+An AppImage mounts itself with FUSE to run. The widely repeated advice that
+this needs `libfuse2` applies to the *old* AppImageKit runtime, not the type-2
+runtime embedded here — **verified**: this AppImage self-mounts and runs on a
+system with only `libfuse3` installed and no `libfuse.so.2` present at all.
+
+Where FUSE genuinely is unavailable — many containers and CI runners — either
+of these works without it:
+
+```bash
+./PurplePen-4.0.0~beta1-x86_64.AppImage --appimage-extract-and-run
+APPIMAGE_EXTRACT_AND_RUN=1 ./PurplePen-4.0.0~beta1-x86_64.AppImage
+```
+
+The build handles the same problem for itself: appimagetool is an AppImage too,
+so the script probes whether it can run and falls back to extract-and-run mode
+automatically rather than failing with a confusing libfuse error.
 
 ## Install layout
 
@@ -261,8 +408,11 @@ libraries ever start leaking into `Provides` again.
 
 **Only `linux-x64` has been built and tested.** `RUNTIME_IDENTIFIER` also
 understands `linux-arm64`, `linux-arm` and `linux-x86`, and the architecture
-names map through to both package formats, but nothing has been run on those.
-musl targets are rejected outright — Alpine uses apk, not deb or rpm.
+names map through to all three formats, but nothing has been run on those. For
+the AppImage they additionally need an appimagetool SHA-256 recorded for that
+architecture in `config.sh`; the build refuses to download an unverified
+binary rather than proceeding. musl targets are rejected outright — Alpine uses
+apk, not deb or rpm.
 
 **Package signing is not implemented.** `dpkg-sig`/`debsign` and
 `rpm --addsign` are both GPG-based and mainly matter if you publish an apt or

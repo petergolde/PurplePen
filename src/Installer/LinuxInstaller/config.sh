@@ -62,12 +62,26 @@ and export the results for printing and race management.}"
 : "${RPM_GROUP:=Applications/Productivity}"
 
 # Freedesktop menu categories for the .desktop entry. Must end with a
-# semicolon. "Graphics" gives the main menu placement; the others are
-# additional categories that some menu editors show.
-: "${DESKTOP_CATEGORIES:=Graphics;Education;Sports;}"
+# semicolon.
+#
+# Exactly ONE main category, followed by additional ones that refine it.
+#
+# This combination is the one desktop-file-validate accepts silently, and
+# getting there is less obvious than it looks. Graphics, Education and Sports
+# are all MAIN categories, so listing them together makes the application
+# appear several times in the menu. But "Sports" is only valid alongside
+# Education or Science, and "VectorGraphics" is only valid alongside
+# 2DGraphics -- so the sport association cannot be expressed without either a
+# duplicate menu entry or filing a drawing program under Education.
+#
+# Graphics is the right menu for a program that draws courses over a map;
+# the sport is covered by DESKTOP_KEYWORDS below, which is what desktop search
+# actually matches on.
+: "${DESKTOP_CATEGORIES:=Graphics;2DGraphics;VectorGraphics;}"
 
-# Keywords for desktop search. Must end with a semicolon.
-: "${DESKTOP_KEYWORDS:=orienteering;course;map;control;o-map;}"
+# Keywords for desktop search. Must end with a semicolon. These carry the
+# terms that DESKTOP_CATEGORIES cannot express.
+: "${DESKTOP_KEYWORDS:=orienteering;course;map;control;o-map;sport;race;coursesetting;}"
 
 # Which icon family in AvPurplePen/Assets/AppIcon to install.
 #
@@ -138,6 +152,102 @@ and export the results for printing and race management.}"
 
 : "${BUILD_DEB:=true}"
 : "${BUILD_RPM:=true}"
+: "${BUILD_APPIMAGE:=true}"
+
+# ---------------------------------------------------------------------------
+# AppImage
+# ---------------------------------------------------------------------------
+
+# AppStream component id. Must stay stable across releases -- it is the
+# identity software centres recognise the application by. Matches the macOS
+# bundle identifier so the application has one id everywhere.
+: "${APPSTREAM_ID:=org.purple-pen.PurplePen}"
+
+# appimagetool release to build with, and the SHA-256 of each architecture's
+# asset.
+#
+# The build downloads appimagetool on first use and caches it. Pinning both the
+# version and the hash means the download is verified rather than trusted: a
+# tag can be re-pointed and a release asset can be replaced, so the hash is the
+# thing that actually guarantees you get what was reviewed.
+#
+# The hashes are per-architecture because each asset is a different binary.
+# Only x86_64 is filled in, because that is the only one that has been
+# downloaded and checked. Building for another architecture stops with
+# instructions rather than running an unverified binary.
+#
+# To move to a newer appimagetool, change the version and re-record the hash:
+#     curl -sSL https://github.com/AppImage/appimagetool/releases/download/<ver>/appimagetool-<arch>.AppImage | sha256sum
+: "${APPIMAGETOOL_VERSION:=1.9.1}"
+: "${APPIMAGETOOL_SHA256_x86_64:=ed4ce84f0d9caff66f50bcca6ff6f35aae54ce8135408b3fa33abfc3cb384eb0}"
+: "${APPIMAGETOOL_SHA256_aarch64:=}"
+: "${APPIMAGETOOL_SHA256_armhf:=}"
+: "${APPIMAGETOOL_SHA256_i686:=}"
+
+# Where appimagetool is downloaded from. Overridable so a build behind a proxy,
+# or one that mirrors its dependencies, can point somewhere else.
+: "${APPIMAGETOOL_URL_BASE:=https://github.com/AppImage/appimagetool/releases/download}"
+
+# Where to cache the downloaded appimagetool. Deliberately outside BUILD_DIR,
+# which is wiped between builds and may live in /tmp.
+: "${APPIMAGE_CACHE_DIR:=${XDG_CACHE_HOME:-$HOME/.cache}/purplepen-linuxinstaller}"
+
+# Path to an existing appimagetool. Set this to use one you already have --
+# nothing is downloaded when it is set, and it takes priority over anything on
+# PATH.
+: "${APPIMAGETOOL:=}"
+
+# Bundle ICU into the AppImage.
+#
+# This is the single most important difference between the AppImage and the
+# .deb/.rpm. Those declare a dependency and let the package manager install
+# ICU; an AppImage has no dependency resolution at all, so anything not
+# bundled must already be on the host.
+#
+# ICU is the one dependency whose absence is FATAL rather than degrading: with
+# no usable ICU, .NET throws "Couldn't find a valid ICU package installed on
+# the system" and the application never starts. Purple Pen is heavily
+# localized, so InvariantGlobalization is not an acceptable alternative.
+#
+# Costs about 33 MB uncompressed, 28 MB of which is libicudata's tables. They
+# compress well, so the effect on the finished AppImage is far smaller.
+#
+# Everything else stays unbundled on purpose -- see DEB_DEPENDS above for why
+# libstdc++, libX11, fontconfig and friends must come from the host. Those are
+# all on the AppImage project's excludelist for exactly that reason.
+: "${BUNDLE_ICU:=true}"
+
+# The ICU libraries .NET uses. Order does not matter; the build resolves each
+# one's real path and version through ldconfig.
+: "${ICU_LIBRARIES:=libicuuc libicui18n libicudata}"
+
+# Bundle OpenSSL into the AppImage.
+#
+# Off by default, and the reasoning is different from ICU's. Missing OpenSSL
+# only degrades TLS -- the application still starts and every offline feature
+# works; what breaks is the update check. Against that, a bundled copy of a
+# crypto library never receives security updates and can conflict with a host's
+# crypto policy, and every mainstream distribution ships OpenSSL anyway.
+: "${BUNDLE_OPENSSL:=false}"
+
+: "${OPENSSL_LIBRARIES:=libssl libcrypto}"
+
+# Path to an AppImage type-2 runtime to embed, or empty to let appimagetool
+# fetch one.
+#
+# This matters more than it looks. Even with appimagetool cached locally, it
+# downloads the runtime binary from github.com/AppImage/type2-runtime on every
+# build, so a build with no network fails at the very last step -- and that
+# download is from a "continuous" tag, so it is not pinned the way
+# appimagetool itself is.
+#
+# Set this to a runtime you have fetched and checked to make the build both
+# offline-capable and reproducible:
+#
+#     curl -sSLo runtime-x86_64 \
+#       https://github.com/AppImage/type2-runtime/releases/download/continuous/runtime-x86_64
+#     APPIMAGE_RUNTIME_FILE=$PWD/runtime-x86_64 ./build-linux-packages.sh
+: "${APPIMAGE_RUNTIME_FILE:=}"
 
 # ---------------------------------------------------------------------------
 # Versioning

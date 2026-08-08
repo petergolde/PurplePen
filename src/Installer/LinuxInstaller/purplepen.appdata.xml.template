@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    AppStream metainfo for Purple Pen, installed as
+    /usr/share/metainfo/@APPSTREAM_ID@.appdata.xml.
+
+    The at-sign-delimited tokens below are filled in by
+    build-linux-packages.sh, which fails the build if any are left over.
+
+    This is what software centres and AppImage desktop-integration daemons read
+    to present the application: its name, summary, screenshots and categories.
+    appimagetool warns when it is missing.
+
+    The component id must stay stable across releases -- it is the identity by
+    which the application is recognised, so changing it makes every store treat
+    this as a new and unrelated program.
+-->
+<component type="desktop-application">
+  <id>@APPSTREAM_ID@</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>@PACKAGE_LICENSE@</project_license>
+
+  <name>@DISPLAY_NAME@</name>
+  <summary>@PACKAGE_SUMMARY@</summary>
+
+  <description>
+    <p>
+      Purple Pen is a course setting program for orienteering races. It lets
+      you design courses on top of an orienteering map, manage control points,
+      produce course descriptions using IOF control description symbols, and
+      export the results for printing and race management.
+    </p>
+    <p>Purple Pen can:</p>
+    <ul>
+      <li>Design courses directly on OCAD and OpenMapper maps</li>
+      <li>Generate IOF-standard control descriptions automatically</li>
+      <li>Produce relay and map-exchange course variations</li>
+      <li>Export courses as PDF, OCAD or image files for printing</li>
+      <li>Create punch cards and course description sheets</li>
+    </ul>
+  </description>
+
+  <!-- Ties this component to the desktop entry of the same name, which is how
+       a store knows what to launch. -->
+  <launchable type="desktop-id">@PACKAGE_NAME@.desktop</launchable>
+
+  <!-- Kept in step with DESKTOP_CATEGORIES in config.sh. One main category
+       (Graphics) plus refinements; listing several main categories makes the
+       application appear more than once in a menu. -->
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+    <category>VectorGraphics</category>
+  </categories>
+
+  <keywords>
+    <keyword>orienteering</keyword>
+    <keyword>course</keyword>
+    <keyword>map</keyword>
+    <keyword>control</keyword>
+    <keyword>sport</keyword>
+    <keyword>race</keyword>
+  </keywords>
+
+  <url type="homepage">@PACKAGE_URL@</url>
+
+  <!-- No <screenshots> element yet. AppStream screenshots must be absolute
+       URLs to hosted images, not files inside the package, so adding them
+       needs somewhere stable to host them first. Software centres show the
+       description without them; they just look better with. -->
+
+
+  <provides>
+    <binary>@PACKAGE_NAME@</binary>
+  </provides>
+
+  <releases>
+    <release version="@VERSION@" date="@RELEASE_DATE@"/>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+</component>

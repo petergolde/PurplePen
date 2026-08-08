@@ -29,3 +29,4 @@ StartupNotify=true
 # window is associated with this launcher in docks and task switchers.
 StartupWMClass=@APP_NAME@
 @MIME_TYPE_LINE@
+@EXTRA_DESKTOP_KEYS@
