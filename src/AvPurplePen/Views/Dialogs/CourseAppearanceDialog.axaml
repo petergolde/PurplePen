@@ -29,7 +29,7 @@
         Icon="/Assets/transparent.ico"
         d:DesignWidth="770" d:DesignHeight="560"
         Width="770"
-        MinWidth="700"
+        MinWidth="770"
         SizeToContent="Height"
         CanResize="True"
         CanMinimize="False"

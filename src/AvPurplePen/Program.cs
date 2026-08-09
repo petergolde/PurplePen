@@ -98,7 +98,10 @@ namespace AvPurplePen
             if (!string.IsNullOrEmpty(uiLanguage)) {
                 try {
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo(uiLanguage);
-                    Thread.CurrentThread.CurrentUICulture = cultureInfo;
+
+                    // Only the app-domain default is set, never Thread.CurrentThread.CurrentUICulture:
+                    // a thread-level culture would shadow DefaultThreadCurrentUICulture forever and
+                    // prevent UILanguageService from changing the language later. See the comment there.
                     CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
                 }
                 catch (Exception) { }        // Ignore problem -- e.g. this culture name isn't supported.

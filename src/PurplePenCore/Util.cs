@@ -463,6 +463,51 @@ namespace PurplePen
                 return false;
         }
 
+        public static string PrereleaseModifier(string verString, bool stripNumber = false)
+        {
+            Version v;
+
+            if (Version.TryParse(verString, out v)) {
+                string modifier;
+                string formatString;
+                int number;
+
+                if (v.Revision >= VersionNumber.Stable) {
+                    formatString = "";
+                    number = 0;
+                }
+                else if (v.Revision >= VersionNumber.RC) {
+                    formatString = MiscText.Version_RC;
+                    number = (int)((v.Revision - VersionNumber.RC) / 10.0);
+                }
+                else if (v.Revision >= VersionNumber.Beta) {
+                    formatString = MiscText.Version_Beta;
+                    number = (int)((v.Revision - VersionNumber.Beta) / 10.0);
+                }
+                else if (v.Revision >= VersionNumber.Alpha) {
+                    formatString = MiscText.Version_Alpha;
+                    number = (int)((v.Revision - VersionNumber.Alpha) / 10.0);
+                }
+                else {
+                    formatString = " ({0})";
+                    number = v.Revision;
+                }
+
+                if (stripNumber) {
+                    modifier = formatString.Replace("{0}", "");
+                    modifier = modifier.Trim();
+                    modifier = modifier.Replace("  ", " ");
+                }
+                else {
+                    modifier = string.Format(formatString, number);
+                }
+
+                return modifier;
+            }
+            else {
+                return "";
+            }
+        }
 
         // Pretty-ize the version string. 
         public static string PrettyVersionString(string verString)
@@ -470,18 +515,7 @@ namespace PurplePen
             Version v;
 
             if (Version.TryParse(verString, out v)) {
-                string modifier;
-
-                if (v.Revision >= VersionNumber.Stable)
-                    modifier = "";
-                else if (v.Revision >= VersionNumber.RC)
-                    modifier = " " + string.Format(MiscText.Version_RC, (v.Revision - VersionNumber.RC) / 10.0);
-                else if (v.Revision >= VersionNumber.Beta)
-                    modifier = " " + string.Format(MiscText.Version_Beta, (v.Revision - VersionNumber.Beta) / 10.0);
-                else if (v.Revision >= VersionNumber.Alpha)
-                    modifier = " " + string.Format(MiscText.Version_Alpha, (v.Revision - VersionNumber.Alpha) / 10.0);
-                else
-                    modifier = string.Format(" ({0})", v.Revision);
+                string modifier = PrereleaseModifier(verString);
 
                 return string.Format("{0}.{1}.{2}{3}", v.Major, v.Minor, v.Build, modifier);
             }
@@ -489,8 +523,6 @@ namespace PurplePen
                 return verString;
             }
         }
-
-
 
         // Get the text name for a control. THe Name Style controls how the control points appear:
         // Long:  "Control 32", "Start", "Finish", "Mandatory crossing point".

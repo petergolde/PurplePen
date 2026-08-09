@@ -307,7 +307,11 @@ namespace PurplePen.ViewModels
         private void UpdateWindowTitle()
         {
             if (controller == null) { return; }
-            WindowTitle = string.Format("{0} - {1}", Path.GetFileNameWithoutExtension(controller.FileName), MiscText.AppTitle);
+            string appName = MiscText.AppTitle;
+            if (Util.IsPrerelease(VersionNumber.Current)) {
+                appName += " " + Util.PrereleaseModifier(VersionNumber.Current, stripNumber: true);
+            }
+            WindowTitle = string.Format("{0} - {1}", Path.GetFileNameWithoutExtension(controller.FileName), appName);
         }
 
         // Update the map file on Display.

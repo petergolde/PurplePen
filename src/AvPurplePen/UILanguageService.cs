@@ -6,7 +6,6 @@
 using PurplePen;
 using System;
 using System.Globalization;
-using System.Threading;
 
 namespace AvPurplePen
 {
@@ -27,7 +26,20 @@ namespace AvPurplePen
             set
             {
                 CultureInfo newCulture = new CultureInfo(value);
-                Thread.CurrentThread.CurrentUICulture = newCulture;
+
+                // Only DefaultThreadCurrentUICulture is set here, deliberately. Do NOT add
+                // "CultureInfo.CurrentUICulture = ..." or "Thread.CurrentThread.CurrentUICulture = ..."
+                // (the latter just forwards to the former): that value lives in an AsyncLocal, i.e. in
+                // the ExecutionContext. This setter is normally reached from an async continuation
+                // (ShowSwitchLanguageDialog assigns LanguageCode after awaiting the dialog), and an
+                // AsyncLocal written inside a continuation is restored -- thrown away -- as soon as that
+                // continuation returns. The language would appear to change (bindings refreshed below
+                // still see it) and then silently revert.
+                //
+                // DefaultThreadCurrentUICulture is a plain static consulted by the CurrentUICulture
+                // getter whenever no thread-level override exists, so it sticks, and it applies to
+                // background threads too. That is why Program.InitUILanguage must not set a
+                // thread-level culture either: doing so would shadow this permanently.
                 CultureInfo.DefaultThreadCurrentUICulture = newCulture;
 
                 // Save the new language code to user settings if it has changed.
