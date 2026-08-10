@@ -15,12 +15,20 @@
     package), matching the WinForms WebBrowser. Print uses NativeWebView.ShowPrintUI
     (whose dialog already includes a preview, so there is no separate Print Preview).
 
+    On Linux, NativeWebView does not render content, so the dialog instead
+    displays the report with HtmlPanel (Avalonia.HtmlRenderer package), a
+    managed HTML renderer. Both controls are declared here; the code-behind
+    shows/hides them based on OS. NativeWebView is still kept loaded off-screen
+    on Linux for Print, which works there (with the WebKitGTK backend requested
+    in code-behind) even though display does not.
+
     Migrated from WinForms PurplePen/TeamVariationsForm.cs.
 -->
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:html="clr-namespace:TheArtOfDev.HtmlRenderer.Avalonia;assembly=Avalonia.HtmlRenderer"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -146,16 +154,21 @@
                     IsCancel="True"/>
         </Grid>
 
-        <!-- Report area (fills the remaining space). The report is HTML, rendered
-             by the native web view. The View wraps the ViewModel's ReportBody in a
-             full HTML document (see code-behind) and pushes it via NavigateToString
-             whenever it changes; there is no bindable HTML-string property. -->
+        <!-- Report area (fills the remaining space). The report is HTML, displayed
+             by the native web view (or, on Linux, by HtmlPanel - see code-behind;
+             the native web view is still kept loaded off-screen there for Print).
+             The View wraps the ViewModel's ReportBody in a full HTML document (see
+             code-behind) and pushes it to the relevant control(s) whenever it
+             changes; there is no bindable HTML-string property. -->
         <!-- No CornerRadius: the native web view renders a rectangular surface and
              would not clip to rounded corners. -->
         <Border BorderBrush="{DynamicResource SemiGrey2}"
                 BorderThickness="1"
                 Background="White">
-            <NativeWebView x:Name="reportWebView" Background="White"/>
+            <Panel>
+                <NativeWebView x:Name="reportWebView" Background="White"/>
+                <html:HtmlPanel x:Name="reportHtmlPanel" Background="White"/>
+            </Panel>
         </Border>
 
     </DockPanel>
