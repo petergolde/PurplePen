@@ -3213,8 +3213,9 @@ namespace PurplePen
 
                         if (mapType != MapType.None) {
                             String absolutePath = xmlinput.GetAttributeString("absolute-path", null);
+                            absolutePath = FixDirectorySeparators(absolutePath);
 
-                            mapFileName = xmlinput.GetContentString();
+                            mapFileName = FixDirectorySeparators(xmlinput.GetContentString());
                             mapFileName = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(xmlinput.FileName), mapFileName)); // file name is relative to the XML file
 
                             // Fall back to absolute path if relative path doesn't exist.
@@ -3371,6 +3372,14 @@ namespace PurplePen
             }
         }
 
+        // Change all directory separators "/" or "\" to the platform's directory separator.
+        private string FixDirectorySeparators(string absolutePath)
+        {
+            if (absolutePath == null)
+                return null;
+
+            return absolutePath.Replace('/', Path.DirectorySeparatorChar).Replace('\\', Path.DirectorySeparatorChar);
+        }
 
         public override string ElementName
         {

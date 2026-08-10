@@ -112,10 +112,8 @@ List of stuff:
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
     we should update the checking mechanism to be more robust and have a better format. Probably use NetSparkle.
   - Fix & and _ prefixes in resources. Fix OK/Cancel localization.
-  - Convert relative paths in the Purple Pen files converting \ and / to the correct path separator for the OS. 
   - Fix running PdfConverter with the .exe extension. Need to test this on Mac and Linux.
-  - Beta in title bar.
-  - Change language is not working correctly any more.
+
 
   After Beta 1:
   - Arial/Times New Roman fonts for linux. Use CrossCore fonts for these. Not really that important because most Linux
