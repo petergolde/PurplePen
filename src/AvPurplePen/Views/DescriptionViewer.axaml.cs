@@ -204,6 +204,10 @@ public partial class DescriptionViewer : UserControl
         descriptionPopup.PopupItemSelected += DescriptionPopup_PopupItemSelected;
         flyout.Closed += Flyout_Closed;
         flyout.ShowAt(drawingView);
+
+        if (PopupDiagnostics.Enabled) {
+            PopupDiagnostics.LogPlacement("DescriptionViewer flyout", drawingView, popupMenuLocation, descriptionPopup);
+        }
     }
 
     // The flyout closed. Don't track it anymore.
