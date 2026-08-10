@@ -134,12 +134,10 @@ namespace AvUtil
                     await Task.Delay(ShowDelay, token);
                     SetOpacityInstant(0);
                     popup.IsOpen = true;
-                    LogPlacement(relativeTo);
                     AnimateOpacity(1, FadeInDuration);
                     await Task.Delay(FadeInDuration, token);
                 }
                 else {
-                    LogPlacement(relativeTo);
                     // Already visible: make sure we are back at full opacity (in case Show() arrived
                     // while fading out), then fall through to restart the hide timer.
                     AnimateOpacity(1, FadeInDuration);
@@ -172,16 +170,6 @@ namespace AvUtil
             }
             catch (OperationCanceledException) {
                 // Superseded by a later Show()/Hide().
-            }
-        }
-
-        // Reports where the popup landed relative to where it was asked to go. Does nothing unless
-        // the PPEN_POPUPDIAG environment variable is set. See PopupDiagnostics.
-        private void LogPlacement(Control relativeTo)
-        {
-            if (PopupDiagnostics.Enabled) {
-                PopupDiagnostics.LogPlacement("FadingPopup", relativeTo,
-                    new Point(popup.HorizontalOffset, popup.VerticalOffset), border);
             }
         }
 
