@@ -6,12 +6,20 @@
 // (which has no bindable HTML-string property, so the body is pushed
 // imperatively via NavigateToString whenever it changes).
 //
+// On Linux, NativeWebView does not render content, so this file instead renders
+// into HtmlPanel (Avalonia.HtmlRenderer) for display. NativeWebView is kept
+// around off-screen on Linux and still loaded with the same HTML, since its
+// print UI works fine there (once asked for the WebKitGTK backend - see
+// https://docs.avaloniaui.net/controls/web/webview-environment) even though its
+// display does not; Print keeps using it on all platforms.
+//
 // Migrated from WinForms PurplePen/ReportForm.cs.
 
 using System;
 using System.ComponentModel;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform;
 using Avalonia.Threading;
 using AvUtil;
 using PurplePen.ViewModels;
@@ -27,9 +35,26 @@ namespace AvPurplePen.Views
     {
         private ReportDialogViewModel? viewModel;
 
+        // NativeWebView does not render content on Linux, so HtmlPanel is shown there
+        // instead. NativeWebView is still kept loaded off-screen on Linux (its print UI
+        // works even though its display does not), so Print keeps using it everywhere.
+        private readonly bool useHtmlPanel = OperatingSystem.IsLinux();
+
         public ReportDialog()
         {
             InitializeComponent();
+
+            // On Linux, NativeWebView's default WPE WebKit backend does not render
+            // content; ask for WebKitGTK instead, which Print relies on there.
+            reportWebView.EnvironmentRequested += (sender, args) =>
+            {
+                if (args is LinuxWpeWebViewEnvironmentRequestedEventArgs wpe)
+                    wpe.PreferWebKitGtkInstead = true;
+            };
+
+            reportWebView.IsVisible = !useHtmlPanel;
+            reportHtmlPanel.IsVisible = useHtmlPanel;
+
             DataContextChanged += OnDataContextChanged;
         }
 
@@ -61,9 +86,10 @@ namespace AvPurplePen.Views
 
         /// <summary>
         /// Wraps the current report title, styles and body in a full HTML document
-        /// and shows it in the web view. NativeWebView queues the navigation if its
-        /// native adapter is not ready yet, so this is safe to call before the
-        /// dialog is shown.
+        /// and loads it into NativeWebView (for Print, and for display when it works)
+        /// and, on Linux, also into HtmlPanel for display. NativeWebView queues the
+        /// navigation if its native adapter is not ready yet, so this is safe to call
+        /// before the dialog is shown.
         /// </summary>
         private void RenderReport()
         {
@@ -74,7 +100,10 @@ namespace AvPurplePen.Views
                 .Replace("<!--@@TITLE@@-->", viewModel.ReportTitle ?? "")
                 .Replace("<!--@@STYLES@@-->", viewModel.Styles ?? "")
                 .Replace("<!--@@BODY@@-->", viewModel.ReportBody ?? "");
+
             reportWebView.NavigateToString(html);
+            if (useHtmlPanel)
+                reportHtmlPanel.Text = html;
         }
 
         /// <summary>Closes the dialog. The report dialog returns no result.</summary>
@@ -87,7 +116,11 @@ namespace AvPurplePen.Views
         private const double printUiMinWidth = 1000;
         private const double printUiMinHeight = 860;
 
-        /// <summary>Opens the web view's print UI to print the report.</summary>
+        /// <summary>
+        /// Opens the web view's print UI to print the report. Uses NativeWebView even
+        /// on Linux, where it is loaded off-screen behind HtmlPanel: its display does
+        /// not work there, but its print UI does.
+        /// </summary>
         private void PrintButton_Click(object? sender, RoutedEventArgs e)
         {
             // On Windows, WebView2's print preview is rendered inside the web view, so a
