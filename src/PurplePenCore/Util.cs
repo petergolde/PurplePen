@@ -516,6 +516,8 @@ namespace PurplePen
 
             if (Version.TryParse(verString, out v)) {
                 string modifier = PrereleaseModifier(verString);
+                if (modifier != "")
+                    modifier = " " + modifier;
 
                 return string.Format("{0}.{1}.{2}{3}", v.Major, v.Minor, v.Build, modifier);
             }
