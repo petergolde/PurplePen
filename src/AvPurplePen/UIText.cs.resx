@@ -1631,7 +1631,7 @@
     <value>_Smazat</value>
   </data>
   <data name="MainFrame_editMenu_Text" xml:space="preserve">
-    <value>&amp;Úpravy</value>
+    <value>_Úpravy</value>
   </data>
   <data name="MainFrame_entireCourseMenu_Text" xml:space="preserve">
     <value>_Celá trať</value>

@@ -458,10 +458,10 @@
     <value>Файл карти</value>
   </data>
   <data name="ChangeMapFile_buttonChooseFile_Text" xml:space="preserve">
-    <value>&amp;Виберіть файл карти...</value>
+    <value>_Виберіть файл карти...</value>
   </data>
   <data name="NewEventMapFile_chooseMapFileButton_Text" xml:space="preserve">
-    <value>&amp;Виберіть файл карти...</value>
+    <value>_Виберіть файл карти...</value>
   </data>
   <data name="NewEventMapFile_openFileDialog_Filter" xml:space="preserve">
     <value>Всі файли карт|*.ocd;*.omap;*.xmap;*.pdf;*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif|Файли OCAD (*.ocd)|*.ocd|Файли Open Orienteering Mapper|*.omap;*.xmap|Файли PDF (*.pdf)|*.pdf|Файли зображень|*.jpeg;*.jpg;*.tiff;*.tif;*.bmp;*.png;*.gif</value>
@@ -845,7 +845,7 @@
     <value>Дублювати дистанцію</value>
   </data>
   <data name="CommandNameText_CreateMapFiles" xml:space="preserve">
-    <value>Створити {0} &amp;Файли</value>
+    <value>Створити {0} _Файли</value>
   </data>
   <data name="CommandNameText_DeleteFork" xml:space="preserve">
     <value>Видалити Вилку/Петлю</value>
@@ -1490,31 +1490,31 @@
     <value>Файли Purple Pen|*.ppen</value>
   </data>
   <data name="MainFrame_newEventMenu_Text" xml:space="preserve">
-    <value>&amp;Нова подія...</value>
+    <value>_Нова подія...</value>
   </data>
   <data name="MainFrame_openMenu_Text" xml:space="preserve">
-    <value>&amp;Відкрити...</value>
+    <value>_Відкрити...</value>
   </data>
   <data name="MainFrame_saveMenu_Text" xml:space="preserve">
-    <value>&amp;Зберегти</value>
+    <value>_Зберегти</value>
   </data>
   <data name="MainFrame_saveAsMenu_Text" xml:space="preserve">
-    <value>Зберегти &amp;як...</value>
+    <value>Зберегти _як...</value>
   </data>
   <data name="MainFrame_createOcadFilesMenu_Text" xml:space="preserve">
-    <value>Створити &amp;файли OCAD...</value>
+    <value>Створити _файли OCAD...</value>
   </data>
   <data name="MainFrame_createImageFilesMenu_Text" xml:space="preserve">
-    <value>Створити файли зобра&amp;жень...</value>
+    <value>Створити файли зобра_жень...</value>
   </data>
   <data name="MainFrame_createDescriptionPdfMenu_Text" xml:space="preserve">
-    <value>&amp;Легенди КП...</value>
+    <value>_Легенди КП...</value>
   </data>
   <data name="MainFrame_createPunchcardPdfMenu_Text" xml:space="preserve">
-    <value>Кар&amp;точки для відмітки...</value>
+    <value>Кар_точки для відмітки...</value>
   </data>
   <data name="MainFrame_createCoursePdfMenu_Text" xml:space="preserve">
-    <value>&amp;Дистанції...</value>
+    <value>_Дистанції...</value>
   </data>
   <data name="MainFrame_createPDFsMenu_Text" xml:space="preserve">
     <value>Створити P_DF</value>
@@ -1526,7 +1526,7 @@
     <value>Створити файли Route Review</value>
   </data>
   <data name="MainFrame_createXmlMenu_Text" xml:space="preserve">
-    <value>Створити файл для &amp;обміну даними (IOF XML)...</value>
+    <value>Створити файл для _обміну даними (IOF XML)...</value>
   </data>
   <data name="MainFrame_createGPXFileMenu_Text" xml:space="preserve">
     <value>Створити файл G_PX...</value>
@@ -1535,67 +1535,67 @@
     <value>Сворити файл _KML...</value>
   </data>
   <data name="MainFrame_printDescriptionsMenu_Text" xml:space="preserve">
-    <value>&amp;Друкувати легенди...</value>
+    <value>_Друкувати легенди...</value>
   </data>
   <data name="MainFrame_printPunchCardsMenu_Text" xml:space="preserve">
-    <value>Друкувати кар&amp;тки для відмітки...</value>
+    <value>Друкувати кар_тки для відмітки...</value>
   </data>
   <data name="MainFrame_printCoursesMenu_Text" xml:space="preserve">
-    <value>Друкувати &amp;дистанції...</value>
+    <value>Друкувати _дистанції...</value>
   </data>
   <data name="MainFrame_printAreaThisPartMenu_Text" xml:space="preserve">
-    <value>Тільки ця &amp;частина</value>
+    <value>Тільки ця _частина</value>
   </data>
   <data name="MainFrame_printAreaThisCourseMenu_Text" xml:space="preserve">
-    <value>&amp;Ця дистанція</value>
+    <value>_Ця дистанція</value>
   </data>
   <data name="MainFrame_printAreaAllCoursesMenu_Text" xml:space="preserve">
-    <value>&amp;Всі дистанції</value>
+    <value>_Всі дистанції</value>
   </data>
   <data name="MainFrame_setPrintAreaMenu_Text" xml:space="preserve">
-    <value>Вказати область дру&amp;ку</value>
+    <value>Вказати область дру_ку</value>
   </data>
   <data name="MainFrame_programLanguageMenu_Text" xml:space="preserve">
-    <value>Мова &amp;програми...</value>
+    <value>Мова _програми...</value>
   </data>
   <data name="MainFrame_exitMenu_Text" xml:space="preserve">
-    <value>&amp;Вихід</value>
+    <value>_Вихід</value>
   </data>
   <data name="MainFrame_fileMenu_Text" xml:space="preserve">
-    <value>&amp;Файл</value>
+    <value>_Файл</value>
   </data>
   <data name="MainFrame_cancelMenu_Text" xml:space="preserve">
-    <value>&amp;Очистити вибір</value>
+    <value>_Очистити вибір</value>
   </data>
   <data name="MiscText_ClearSelectionWithShortcut" xml:space="preserve">
-    <value>&amp;Очистити вибір</value>
+    <value>_Очистити вибір</value>
   </data>
   <data name="MainFrame_undoMenu_Text" xml:space="preserve">
-    <value>&amp;Вернути</value>
+    <value>_Вернути</value>
   </data>
   <data name="MiscText_UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Вернути</value>
+    <value>_Вернути</value>
   </data>
   <data name="MainFrame_redoMenu_Text" xml:space="preserve">
-    <value>&amp;Повторити</value>
+    <value>_Повторити</value>
   </data>
   <data name="MiscText_RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Повторити</value>
+    <value>_Повторити</value>
   </data>
   <data name="MainFrame_deleteMenu_Text" xml:space="preserve">
-    <value>&amp;Видалити</value>
+    <value>_Видалити</value>
   </data>
   <data name="MainFrame_deleteItemMenu_Text" xml:space="preserve">
-    <value>&amp;Видалити</value>
+    <value>_Видалити</value>
   </data>
   <data name="MainFrame_editMenu_Text" xml:space="preserve">
-    <value>&amp;Редагувати</value>
+    <value>_Редагувати</value>
   </data>
   <data name="MainFrame_entireCourseMenu_Text" xml:space="preserve">
-    <value>Ціла &amp;дистанція</value>
+    <value>Ціла _дистанція</value>
   </data>
   <data name="MainFrame_entireMapMenu_Text" xml:space="preserve">
-    <value>&amp;Ціла карта</value>
+    <value>_Ціла карта</value>
   </data>
   <data name="MainFrame_zoom50Menu_Text" xml:space="preserve">
     <value>50%</value>
@@ -1619,25 +1619,25 @@
     <value>1000%</value>
   </data>
   <data name="MainFrame_zoomMenu_Text" xml:space="preserve">
-    <value>&amp;Збільшення</value>
+    <value>_Збільшення</value>
   </data>
   <data name="MainFrame_veryLowIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Дуже низьке</value>
+    <value>_Дуже низьке</value>
   </data>
   <data name="MainFrame_lowIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Низьке</value>
+    <value>_Низьке</value>
   </data>
   <data name="MainFrame_mediumIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Середнія</value>
+    <value>_Середнія</value>
   </data>
   <data name="MainFrame_highIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Висока</value>
+    <value>_Висока</value>
   </data>
   <data name="MainFrame_fullIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Повна</value>
+    <value>_Повна</value>
   </data>
   <data name="MainFrame_mapIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Інтенсивність карти</value>
+    <value>_Інтенсивність карти</value>
   </data>
   <data name="MainFrame_normalQualityMenu_Text" xml:space="preserve">
     <value>Низька</value>
@@ -1646,16 +1646,16 @@
     <value>Висока</value>
   </data>
   <data name="MainFrame_mapQualityMenu_Text" xml:space="preserve">
-    <value>&amp;Якість карти</value>
+    <value>_Якість карти</value>
   </data>
   <data name="MainFrame_showPrintAreaMenu_Text" xml:space="preserve">
-    <value>По&amp;казувати область дуку</value>
+    <value>По_казувати область дуку</value>
   </data>
   <data name="MainFrame_showPopupsMenu_Text" xml:space="preserve">
-    <value>Пока&amp;зувати вспливаючу інформацію</value>
+    <value>Пока_зувати вспливаючу інформацію</value>
   </data>
   <data name="MainFrame_allControlsMenu_Text" xml:space="preserve">
-    <value>&amp;Всі КП</value>
+    <value>_Всі КП</value>
   </data>
   <data name="MainFrame_otherCoursesMenu_Text" xml:space="preserve">
     <value>Інші дистанції...</value>
@@ -1664,37 +1664,37 @@
     <value>Прибрати інші дистанції</value>
   </data>
   <data name="MainFrame_viewMenu_Text" xml:space="preserve">
-    <value>&amp;Вигляд</value>
+    <value>_Вигляд</value>
   </data>
   <data name="MainFrame_addStartMenu_Text" xml:space="preserve">
-    <value>&amp;Старт</value>
+    <value>_Старт</value>
   </data>
   <data name="MainFrame_addControlMenu_Text" xml:space="preserve">
-    <value>&amp;КП</value>
+    <value>_КП</value>
   </data>
   <data name="MainFrame_addFinishMenu_Text" xml:space="preserve">
-    <value>&amp;Фініш</value>
+    <value>_Фініш</value>
   </data>
   <data name="MiscText_FinishButtonText" xml:space="preserve">
-    <value>&amp;Фініш</value>
+    <value>_Фініш</value>
   </data>
   <data name="MainFrame_addDescriptionsMenu_Text" xml:space="preserve">
-    <value>&amp;Легенди</value>
+    <value>_Легенди</value>
   </data>
   <data name="MainFrame_mapExchangeControlMenuItem_Text" xml:space="preserve">
-    <value>Пункт зміни карти на &amp;КП</value>
+    <value>Пункт зміни карти на _КП</value>
   </data>
   <data name="MainFrame_mapExchangeSeparateMenuItem_Text" xml:space="preserve">
-    <value>М&amp;аркування до пункту зміни карти</value>
+    <value>М_аркування до пункту зміни карти</value>
   </data>
   <data name="MainFrame_addMapExchangeMenu_Text" xml:space="preserve">
     <value>Зміна карти</value>
   </data>
   <data name="MainFrame_addVariationMenu_Text" xml:space="preserve">
-    <value>&amp;Розсіювання</value>
+    <value>_Розсіювання</value>
   </data>
   <data name="MainFrame_addTextLineMenu_Text" xml:space="preserve">
-    <value>Строка &amp;тексту</value>
+    <value>Строка _тексту</value>
   </data>
   <data name="MainFrame_addMapIssueMenu_Text" xml:space="preserve">
     <value>Виносний старт</value>
@@ -1823,22 +1823,22 @@
     <value>Еліпс</value>
   </data>
   <data name="MainFrame_addMenu_Text" xml:space="preserve">
-    <value>&amp;Додати</value>
+    <value>_Додати</value>
   </data>
   <data name="MainFrame_changeMapFileMenu_Text" xml:space="preserve">
-    <value>&amp;Файл карти...</value>
+    <value>_Файл карти...</value>
   </data>
   <data name="MainFrame_changeCodesMenu_Text" xml:space="preserve">
-    <value>Змінити &amp;коди КП...</value>
+    <value>Змінити _коди КП...</value>
   </data>
   <data name="MainFrame_autoNumberingMenu_Text" xml:space="preserve">
-    <value>Автоматична &amp;нумерація...</value>
+    <value>Автоматична _нумерація...</value>
   </data>
   <data name="MainFrame_removeUnusedControlsMenu_Text" xml:space="preserve">
-    <value>Видалити &amp;незадіяні КП...</value>
+    <value>Видалити _незадіяні КП...</value>
   </data>
   <data name="MainFrame_punchPatternsMenu_Text" xml:space="preserve">
-    <value>&amp;Форма компостерів...</value>
+    <value>_Форма компостерів...</value>
   </data>
   <data name="MainFrame_descriptionStd2004Menu_Text" xml:space="preserve">
     <value>2004 стандарт легенд КП</value>
@@ -1856,10 +1856,10 @@
     <value>ISSprOM 2019 стандарт карти</value>
   </data>
   <data name="MainFrame_iOFStandardsToolStripMenuItem_Text" xml:space="preserve">
-    <value>&amp;Стандарти IOF</value>
+    <value>_Стандарти IOF</value>
   </data>
   <data name="MainFrame_customizeDescriptionsMenu_Text" xml:space="preserve">
-    <value>Налашту&amp;вати текст легенд КП...</value>
+    <value>Налашту_вати текст легенд КП...</value>
   </data>
   <data name="MainFrame_customizeCourseAppearanceMenu_Text" xml:space="preserve">
     <value>Налаштувати зовнішній вигляд...</value>
@@ -1871,7 +1871,7 @@
     <value>Додати дистанцію...</value>
   </data>
   <data name="MainFrame_deleteCourseMenu_Text" xml:space="preserve">
-    <value>&amp;Видалити дистанцію</value>
+    <value>_Видалити дистанцію</value>
   </data>
   <data name="MainFrame_duplicateCourseMenu_Text" xml:space="preserve">
     <value>Дублювати дистанцію...</value>
@@ -1886,16 +1886,16 @@
     <value>Навантаження учасниками...</value>
   </data>
   <data name="MainFrame_courseVariationReportMenu_Text" xml:space="preserve">
-    <value>Розсіювання ко&amp;манд на естафеті...</value>
+    <value>Розсіювання ко_манд на естафеті...</value>
   </data>
   <data name="MainFrame_courseMenu_Text" xml:space="preserve">
-    <value>Ди&amp;станція</value>
+    <value>Ди_станція</value>
   </data>
   <data name="MainFrame_deleteForkMenu_Text" xml:space="preserve">
-    <value>Вида&amp;лити вилку/петлю</value>
+    <value>Вида_лити вилку/петлю</value>
   </data>
   <data name="MainFrame_addBendMenu_Text" xml:space="preserve">
-    <value>Додати в&amp;игин</value>
+    <value>Додати в_игин</value>
   </data>
   <data name="MainFrame_removeBendMenu_Text" xml:space="preserve">
     <value>Видалити вигин</value>
@@ -1904,10 +1904,10 @@
     <value>Додати розрив</value>
   </data>
   <data name="MainFrame_removeGapMenu_Text" xml:space="preserve">
-    <value>Видалити ро&amp;зрив</value>
+    <value>Видалити ро_зрив</value>
   </data>
   <data name="MainFrame_changeTextMenu_Text" xml:space="preserve">
-    <value>Змінити т&amp;екст...</value>
+    <value>Змінити т_екст...</value>
   </data>
   <data name="MainFrame_changeLineAppearanceMenu_Text" xml:space="preserve">
     <value>Змінити вигляд лінії...</value>
@@ -1934,25 +1934,25 @@
     <value>Маркування перегону</value>
   </data>
   <data name="MainFrame_changeDisplayedCoursesMenu_Text" xml:space="preserve">
-    <value>Відобразити &amp;на дистанціях...</value>
+    <value>Відобразити _на дистанціях...</value>
   </data>
   <data name="MainFrame_itemMenu_Text" xml:space="preserve">
     <value>Об'єкт</value>
   </data>
   <data name="MainFrame_courseSummaryMenu_Text" xml:space="preserve">
-    <value>Параметри дистанц&amp;ій</value>
+    <value>Параметри дистанц_ій</value>
   </data>
   <data name="MainFrame_eventAuditMenu_Text" xml:space="preserve">
     <value>Аудит змагань</value>
   </data>
   <data name="MainFrame_legLengthsMenu_Text" xml:space="preserve">
-    <value>&amp;Довжити перегонів</value>
+    <value>_Довжити перегонів</value>
   </data>
   <data name="MainFrame_controlCrossrefMenu_Text" xml:space="preserve">
-    <value>Перехре&amp;сність КП</value>
+    <value>Перехре_сність КП</value>
   </data>
   <data name="MainFrame_controlAndLegLoadMenu_Text" xml:space="preserve">
-    <value>На&amp;вантаженість КП та перегонів</value>
+    <value>На_вантаженість КП та перегонів</value>
   </data>
   <data name="MainFrame_reportMenu_Text" xml:space="preserve">
     <value>Звіти</value>
@@ -1967,10 +1967,10 @@
     <value>Purple Pen _Web сайт</value>
   </data>
   <data name="MainFrame_supportWebSiteMenu_Text" xml:space="preserve">
-    <value>П&amp;ідтримка/Звітувати про помилку</value>
+    <value>П_ідтримка/Звітувати про помилку</value>
   </data>
   <data name="MainFrame_donateWebSiteMenu_Text" xml:space="preserve">
-    <value>Зробити пожерт&amp;ву</value>
+    <value>Зробити пожерт_ву</value>
   </data>
   <data name="MainFrame_aboutMenu_Text" xml:space="preserve">
     <value>Про Purple Pen</value>
@@ -1997,10 +1997,10 @@
     <value>Об'єднати знаки.xml...</value>
   </data>
   <data name="MainFrame_translateMenu_Text" xml:space="preserve">
-    <value>П&amp;ерекласти текст легенд</value>
+    <value>П_ерекласти текст легенд</value>
   </data>
   <data name="MainFrame_helpMenu_Text" xml:space="preserve">
-    <value>&amp;Довідка</value>
+    <value>_Довідка</value>
   </data>
   <data name="MainFrame_openToolStripButton_Text" xml:space="preserve">
     <value>Відкрити</value>
@@ -2147,7 +2147,7 @@
     <value>Навантаження дстанції учасниками має бути цілим числом від 0 до 999999, або не заповнюється.</value>
   </data>
   <data name="MiscText_CancelOperationWithShortcut" xml:space="preserve">
-    <value>Скасува&amp;ти операцію</value>
+    <value>Скасува_ти операцію</value>
   </data>
   <data name="MiscText_CancelOperation" xml:space="preserve">
     <value>Скасувати операцію</value>
@@ -2262,10 +2262,10 @@
     <value>Всі КП використовуються у дистанції.</value>
   </data>
   <data name="MiscText_NextButtonText" xml:space="preserve">
-    <value>&amp;Далі &gt;</value>
+    <value>_Далі &gt;</value>
   </data>
   <data name="NewEventWizard_nextButton_Text" xml:space="preserve">
-    <value>&amp;Далі &gt;</value>
+    <value>_Далі &gt;</value>
   </data>
   <data name="MiscText_Control_Code" xml:space="preserve">
     <value>КП {0}</value>
@@ -2647,7 +2647,7 @@
 </value>
   </data>
   <data name="NewEventPrintScale_defaultPrintScaleLabel_Text" xml:space="preserve">
-    <value>Масштаб друку за &amp;замовченням:</value>
+    <value>Масштаб друку за _замовченням:</value>
   </data>
   <data name="NewEventPrintScale_changeLaterLabel_Text" xml:space="preserve">
     <value>(Ви можете змінити масштаб друку пізніше для кожної дистанції окремо, використовуючи меню Дистанція/Властивості.)</value>

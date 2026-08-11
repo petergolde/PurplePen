@@ -1276,7 +1276,7 @@
     <value>Spremeni kontrolno točko _kodne številke...</value>
   </data>
   <data name="MainFrame_autoNumberingMenu_Text" xml:space="preserve">
-    <value>Avtomatsko &amp;Številčenje</value>
+    <value>Avtomatsko _Številčenje</value>
   </data>
   <data name="MainFrame_removeUnusedControlsMenu_Text" xml:space="preserve">
     <value>Odstrani _Neuporabljene kontrolne točke...</value>

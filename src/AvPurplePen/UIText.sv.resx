@@ -1556,7 +1556,7 @@
     <value>_Ny tävling...</value>
   </data>
   <data name="MainFrame_openMenu_Text" xml:space="preserve">
-    <value>&amp;Öppna...</value>
+    <value>_Öppna...</value>
   </data>
   <data name="MainFrame_saveMenu_Text" xml:space="preserve">
     <value>_Spara</value>
@@ -1634,10 +1634,10 @@
     <value>_Töm val</value>
   </data>
   <data name="MainFrame_undoMenu_Text" xml:space="preserve">
-    <value>&amp;Ångra</value>
+    <value>_Ångra</value>
   </data>
   <data name="MiscText_UndoWithShortcut" xml:space="preserve">
-    <value>&amp;Ångra</value>
+    <value>_Ångra</value>
   </data>
   <data name="MainFrame_redoMenu_Text" xml:space="preserve">
     <value>_Gör om</value>
@@ -2090,7 +2090,7 @@
     <value>Sammanfoga Symbols.xml...</value>
   </data>
   <data name="MainFrame_translateMenu_Text" xml:space="preserve">
-    <value>&amp;Översätt kontrollbeskrivning</value>
+    <value>_Översätt kontrollbeskrivning</value>
   </data>
   <data name="MainFrame_helpMenu_Text" xml:space="preserve">
     <value>_Hjälp</value>

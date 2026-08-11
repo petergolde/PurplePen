@@ -1601,7 +1601,7 @@
     <value>Programm _Keel</value>
   </data>
   <data name="MainFrame_exitMenu_Text" xml:space="preserve">
-    <value>V&amp;älju</value>
+    <value>V_älju</value>
   </data>
   <data name="MainFrame_fileMenu_Text" xml:space="preserve">
     <value>_Fail</value>

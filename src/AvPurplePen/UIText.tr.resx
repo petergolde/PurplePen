@@ -1618,7 +1618,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>Delme Kartları Yazdır...</value>
   </data>
   <data name="MainFrame_printCoursesMenu_Text" xml:space="preserve">
-    <value>Yazdır &amp; Parkurları...</value>
+    <value>Yazdır _Parkurları...</value>
   </data>
   <data name="MainFrame_printAreaThisPartMenu_Text" xml:space="preserve">
     <value>_Yalnızca bu bölümü</value>
@@ -1630,7 +1630,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Tüm Parkurlar</value>
   </data>
   <data name="MainFrame_setPrintAreaMenu_Text" xml:space="preserve">
-    <value>Yazdırma Alanını&amp; Ayarla</value>
+    <value>Yazdırma Alanını _Ayarla</value>
   </data>
   <data name="MainFrame_programLanguageMenu_Text" xml:space="preserve">
     <value>Program _Dili...</value>
@@ -1699,7 +1699,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Yaklaştır</value>
   </data>
   <data name="MainFrame_veryLowIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Çok düşük</value>
+    <value>_Çok düşük</value>
   </data>
   <data name="MainFrame_lowIntensityMenu_Text" xml:space="preserve">
     <value>_Düşük</value>
@@ -1708,7 +1708,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Orta</value>
   </data>
   <data name="MainFrame_highIntensityMenu_Text" xml:space="preserve">
-    <value>&amp; Yüksek</value>
+    <value>_Yüksek</value>
   </data>
   <data name="MainFrame_fullIntensityMenu_Text" xml:space="preserve">
     <value>_Tam</value>
@@ -1747,7 +1747,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Başlama</value>
   </data>
   <data name="MainFrame_addControlMenu_Text" xml:space="preserve">
-    <value>&amp; Kontrol</value>
+    <value>_Kontrol</value>
   </data>
   <data name="MainFrame_addFinishMenu_Text" xml:space="preserve">
     <value>_Bitiş</value>
@@ -1756,7 +1756,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Bitiş</value>
   </data>
   <data name="MainFrame_addDescriptionsMenu_Text" xml:space="preserve">
-    <value>&amp; Açıklamalar</value>
+    <value>_Açıklamalar</value>
   </data>
   <data name="MainFrame_addMapFlipMenuItem_Text" xml:space="preserve">
     <value>Harita _Kontrol Noktasında Çevir</value>
@@ -1774,7 +1774,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Varyasyon...</value>
   </data>
   <data name="MainFrame_addTextLineMenu_Text" xml:space="preserve">
-    <value>Metin &amp;Çizgi...</value>
+    <value>Metin _Çizgi...</value>
   </data>
   <data name="MainFrame_addMapIssueMenu_Text" xml:space="preserve">
     <value>Zamanlayıcı Başlatma</value>
@@ -1912,7 +1912,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Ekle</value>
   </data>
   <data name="MainFrame_changeMapFileMenu_Text" xml:space="preserve">
-    <value>&amp; Harita Dosyası ...</value>
+    <value>_Harita Dosyası ...</value>
   </data>
   <data name="MainFrame_changeCodesMenu_Text" xml:space="preserve">
     <value>Kontrol _Kodlarını Değiştir...</value>
@@ -1924,7 +1924,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>Kullanılmayan Kontrolleri Kaldır...</value>
   </data>
   <data name="MainFrame_moveAllControlsMenu_Text" xml:space="preserve">
-    <value>Tüm Noktaları Ta&amp;şı...</value>
+    <value>Tüm Noktaları Ta_şı...</value>
   </data>
   <data name="MainFrame_punchPatternsMenu_Text" xml:space="preserve">
     <value>Zımba Desenleri...</value>
@@ -1975,7 +1975,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>Rakip _Yükle...</value>
   </data>
   <data name="MainFrame_courseVariationReportMenu_Text" xml:space="preserve">
-    <value>Röle Takımı &amp; Varyasyonlar...</value>
+    <value>Röle Takımı _Varyasyonlar...</value>
   </data>
   <data name="MainFrame_courseMenu_Text" xml:space="preserve">
     <value>_Parkur</value>
@@ -2029,16 +2029,16 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>_Nesne</value>
   </data>
   <data name="MainFrame_courseSummaryMenu_Text" xml:space="preserve">
-    <value>Parkur &amp; Özet</value>
+    <value>Parkur _Özet</value>
   </data>
   <data name="MainFrame_eventAuditMenu_Text" xml:space="preserve">
-    <value>Etkinlik &amp; Denetim</value>
+    <value>Etkinlik _Denetim</value>
   </data>
   <data name="MainFrame_legLengthsMenu_Text" xml:space="preserve">
     <value>_Bacak Uzunlukları</value>
   </data>
   <data name="MainFrame_controlCrossrefMenu_Text" xml:space="preserve">
-    <value>Kontrol &amp;Çapraz referans</value>
+    <value>Kontrol _Çapraz referans</value>
   </data>
   <data name="MainFrame_controlAndLegLoadMenu_Text" xml:space="preserve">
     <value>Kontrol ve Bacak Yükleme</value>

@@ -1898,7 +1898,7 @@
     <value>移动所有检查点（_v）</value>
   </data>
   <data name="MainFrame_punchPatternsMenu_Text" xml:space="preserve">
-    <value>&amp;机械打卡器针脚排列...</value>
+    <value>_机械打卡器针脚排列...</value>
   </data>
   <data name="MainFrame_descriptionStd2004Menu_Text" xml:space="preserve">
     <value>2004 检查点说明规范</value>

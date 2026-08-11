@@ -1511,7 +1511,7 @@
     <value>_Ny hændelse...</value>
   </data>
   <data name="MainFrame_openMenu_Text" xml:space="preserve">
-    <value>&amp;Åbn...</value>
+    <value>_Åbn...</value>
   </data>
   <data name="MainFrame_saveMenu_Text" xml:space="preserve">
     <value>_Gem</value>

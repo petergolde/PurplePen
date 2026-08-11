@@ -1669,7 +1669,7 @@
     <value>_Supprimer</value>
   </data>
   <data name="MainFrame_editMenu_Text" xml:space="preserve">
-    <value>&amp;Édition</value>
+    <value>_Édition</value>
   </data>
   <data name="MainFrame_entireCourseMenu_Text" xml:space="preserve">
     <value>_Circuit Complet</value>
@@ -2053,7 +2053,7 @@
     <value>Faire un _Don</value>
   </data>
   <data name="MainFrame_aboutMenu_Text" xml:space="preserve">
-    <value>&amp;À Propos de Purple Pen</value>
+    <value>_À Propos de Purple Pen</value>
   </data>
   <data name="MainFrame_symbolBrowserMenu_Text" xml:space="preserve">
     <value>Navigateur de symbole</value>

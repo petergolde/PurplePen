@@ -1547,7 +1547,7 @@
     <value>_Nytt arrangement...</value>
   </data>
   <data name="MainFrame_openMenu_Text" xml:space="preserve">
-    <value>&amp;Åpne...</value>
+    <value>_Åpne...</value>
   </data>
   <data name="MainFrame_saveMenu_Text" xml:space="preserve">
     <value>_Lagre</value>

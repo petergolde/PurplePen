@@ -464,10 +464,10 @@
     <value>Текущ картен файл</value>
   </data>
   <data name="ChangeMapFile_buttonChooseFile_Text" xml:space="preserve">
-    <value>&amp;Избери картен файл...</value>
+    <value>_Избери картен файл...</value>
   </data>
   <data name="NewEventMapFile_chooseMapFileButton_Text" xml:space="preserve">
-    <value>&amp;Избери картен файл...</value>
+    <value>_Избери картен файл...</value>
   </data>
   <data name="NewEventMapFile_openFileDialog_Filter" xml:space="preserve">
     <value>Всички картни файлове|.ocd;.omap;.xmap;.pdf;.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif|Файлове OCAD (.ocd)|.ocd|Файлове OpenOrienteering Mapper|.omap;.xmap|PDF файлове (.pdf)|.pdf|Изображения|.jpeg;.jpg;.tiff;.tif;.bmp;.png;.gif</value>
@@ -854,7 +854,7 @@
     <value>Дублирай маршрута</value>
   </data>
   <data name="CommandNameText_CreateMapFiles" xml:space="preserve">
-    <value>Създай {0} &amp;Файлове</value>
+    <value>Създай {0} _Файлове</value>
   </data>
   <data name="CommandNameText_DeleteFork" xml:space="preserve">
     <value>Изтрий разклонението/обиколката</value>
@@ -1565,31 +1565,31 @@
     <value>Файл на Purple Pen|*.ppen</value>
   </data>
   <data name="MainFrame_newEventMenu_Text" xml:space="preserve">
-    <value>&amp;Ново състезание...</value>
+    <value>_Ново състезание...</value>
   </data>
   <data name="MainFrame_openMenu_Text" xml:space="preserve">
-    <value>&amp;Отвори...</value>
+    <value>_Отвори...</value>
   </data>
   <data name="MainFrame_saveMenu_Text" xml:space="preserve">
-    <value>&amp;Запиши</value>
+    <value>_Запиши</value>
   </data>
   <data name="MainFrame_saveAsMenu_Text" xml:space="preserve">
-    <value>Запиши &amp;като...</value>
+    <value>Запиши _като...</value>
   </data>
   <data name="MainFrame_createOcadFilesMenu_Text" xml:space="preserve">
-    <value>Създай OCAD &amp;файлове...</value>
+    <value>Създай OCAD _файлове...</value>
   </data>
   <data name="MainFrame_createImageFilesMenu_Text" xml:space="preserve">
-    <value>Създай &amp;файлове с изображения...</value>
+    <value>Създай _файлове с изображения...</value>
   </data>
   <data name="MainFrame_createDescriptionPdfMenu_Text" xml:space="preserve">
-    <value>&amp;Описания...</value>
+    <value>_Описания...</value>
   </data>
   <data name="MainFrame_createPunchcardPdfMenu_Text" xml:space="preserve">
-    <value>Ко&amp;нтролни картони...</value>
+    <value>Ко_нтролни картони...</value>
   </data>
   <data name="MainFrame_createCoursePdfMenu_Text" xml:space="preserve">
-    <value>&amp;Маршрути...</value>
+    <value>_Маршрути...</value>
   </data>
   <data name="MainFrame_createPDFsMenu_Text" xml:space="preserve">
     <value>Create P_DFs</value>
@@ -1601,7 +1601,7 @@
     <value>Създай файлове за Route Review</value>
   </data>
   <data name="MainFrame_createXmlMenu_Text" xml:space="preserve">
-    <value>Създай &amp;файл за обмен на данни (IOF XML)...</value>
+    <value>Създай _файл за обмен на данни (IOF XML)...</value>
   </data>
   <data name="MainFrame_createGPXFileMenu_Text" xml:space="preserve">
     <value>Създай G_PX файл...</value>
@@ -1610,40 +1610,40 @@
     <value>Създай _KML файл...</value>
   </data>
   <data name="MainFrame_printDescriptionsMenu_Text" xml:space="preserve">
-    <value>&amp;Отпечатай описания...</value>
+    <value>_Отпечатай описания...</value>
   </data>
   <data name="MainFrame_printPunchCardsMenu_Text" xml:space="preserve">
-    <value>Отпечатай ко&amp;нтролни картони...</value>
+    <value>Отпечатай ко_нтролни картони...</value>
   </data>
   <data name="MainFrame_printCoursesMenu_Text" xml:space="preserve">
-    <value>Отпечатай &amp;маршрути...</value>
+    <value>Отпечатай _маршрути...</value>
   </data>
   <data name="MainFrame_printAreaThisPartMenu_Text" xml:space="preserve">
-    <value>Само тази &amp;част</value>
+    <value>Само тази _част</value>
   </data>
   <data name="MainFrame_printAreaThisCourseMenu_Text" xml:space="preserve">
-    <value>&amp;Този маршрут</value>
+    <value>_Този маршрут</value>
   </data>
   <data name="MainFrame_printAreaAllCoursesMenu_Text" xml:space="preserve">
-    <value>&amp;Всички маршрути</value>
+    <value>_Всички маршрути</value>
   </data>
   <data name="MainFrame_setPrintAreaMenu_Text" xml:space="preserve">
-    <value>Задай област за пе&amp;чат</value>
+    <value>Задай област за пе_чат</value>
   </data>
   <data name="MainFrame_programLanguageMenu_Text" xml:space="preserve">
-    <value>Език на &amp;програмата...</value>
+    <value>Език на _програмата...</value>
   </data>
   <data name="MainFrame_exitMenu_Text" xml:space="preserve">
-    <value>&amp;Изход</value>
+    <value>_Изход</value>
   </data>
   <data name="MainFrame_fileMenu_Text" xml:space="preserve">
-    <value>&amp;Файл</value>
+    <value>_Файл</value>
   </data>
   <data name="MainFrame_cancelMenu_Text" xml:space="preserve">
-    <value>&amp;Изчисти избора</value>
+    <value>_Изчисти избора</value>
   </data>
   <data name="MiscText_ClearSelectionWithShortcut" xml:space="preserve">
-    <value>&amp;Изчисти избора</value>
+    <value>_Изчисти избора</value>
   </data>
   <data name="MainFrame_undoMenu_Text" xml:space="preserve">
     <value>_Undo</value>
@@ -1652,25 +1652,25 @@
     <value>_Undo</value>
   </data>
   <data name="MainFrame_redoMenu_Text" xml:space="preserve">
-    <value>&amp;Повтори</value>
+    <value>_Повтори</value>
   </data>
   <data name="MiscText_RedoWithShortcut" xml:space="preserve">
-    <value>&amp;Повтори</value>
+    <value>_Повтори</value>
   </data>
   <data name="MainFrame_deleteMenu_Text" xml:space="preserve">
-    <value>&amp;Изтрий</value>
+    <value>_Изтрий</value>
   </data>
   <data name="MainFrame_deleteItemMenu_Text" xml:space="preserve">
-    <value>&amp;Изтрий</value>
+    <value>_Изтрий</value>
   </data>
   <data name="MainFrame_editMenu_Text" xml:space="preserve">
-    <value>&amp;Редакция</value>
+    <value>_Редакция</value>
   </data>
   <data name="MainFrame_entireCourseMenu_Text" xml:space="preserve">
-    <value>Целия &amp;маршрут</value>
+    <value>Целия _маршрут</value>
   </data>
   <data name="MainFrame_entireMapMenu_Text" xml:space="preserve">
-    <value>Цялата &amp;карта</value>
+    <value>Цялата _карта</value>
   </data>
   <data name="MainFrame_zoom50Menu_Text" xml:space="preserve">
     <value>50%</value>
@@ -1694,25 +1694,25 @@
     <value>1000%</value>
   </data>
   <data name="MainFrame_zoomMenu_Text" xml:space="preserve">
-    <value>&amp;Мащаб</value>
+    <value>_Мащаб</value>
   </data>
   <data name="MainFrame_veryLowIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Много нисък</value>
+    <value>_Много нисък</value>
   </data>
   <data name="MainFrame_lowIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Нисък</value>
+    <value>_Нисък</value>
   </data>
   <data name="MainFrame_mediumIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Среден</value>
+    <value>_Среден</value>
   </data>
   <data name="MainFrame_highIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Висок</value>
+    <value>_Висок</value>
   </data>
   <data name="MainFrame_fullIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Пълен</value>
+    <value>_Пълен</value>
   </data>
   <data name="MainFrame_mapIntensityMenu_Text" xml:space="preserve">
-    <value>&amp;Интензитет на картата</value>
+    <value>_Интензитет на картата</value>
   </data>
   <data name="MainFrame_normalQualityMenu_Text" xml:space="preserve">
     <value>Нисък</value>
@@ -1721,16 +1721,16 @@
     <value>Висок</value>
   </data>
   <data name="MainFrame_mapQualityMenu_Text" xml:space="preserve">
-    <value>&amp;Качество на картата</value>
+    <value>_Качество на картата</value>
   </data>
   <data name="MainFrame_showPrintAreaMenu_Text" xml:space="preserve">
-    <value>Показвай областта за пе&amp;чат</value>
+    <value>Показвай областта за пе_чат</value>
   </data>
   <data name="MainFrame_showPopupsMenu_Text" xml:space="preserve">
-    <value>Показвай изскачаща &amp;информация</value>
+    <value>Показвай изскачаща _информация</value>
   </data>
   <data name="MainFrame_allControlsMenu_Text" xml:space="preserve">
-    <value>&amp;Всички КТ</value>
+    <value>_Всички КТ</value>
   </data>
   <data name="MainFrame_otherCoursesMenu_Text" xml:space="preserve">
     <value>Други маршрути...</value>
@@ -1739,40 +1739,40 @@
     <value>Изчисти другите маршрути</value>
   </data>
   <data name="MainFrame_viewMenu_Text" xml:space="preserve">
-    <value>&amp;Изглед</value>
+    <value>_Изглед</value>
   </data>
   <data name="MainFrame_addStartMenu_Text" xml:space="preserve">
-    <value>&amp;Старт</value>
+    <value>_Старт</value>
   </data>
   <data name="MainFrame_addControlMenu_Text" xml:space="preserve">
-    <value>&amp;КТ</value>
+    <value>_КТ</value>
   </data>
   <data name="MainFrame_addFinishMenu_Text" xml:space="preserve">
-    <value>&amp;Финал</value>
+    <value>_Финал</value>
   </data>
   <data name="MiscText_FinishButtonText" xml:space="preserve">
-    <value>&amp;Финал</value>
+    <value>_Финал</value>
   </data>
   <data name="MainFrame_addDescriptionsMenu_Text" xml:space="preserve">
-    <value>&amp;Описания</value>
+    <value>_Описания</value>
   </data>
   <data name="MainFrame_addMapFlipMenuItem_Text" xml:space="preserve">
-    <value>Обръщане на &amp;картата при КТ</value>
+    <value>Обръщане на _картата при КТ</value>
   </data>
   <data name="MainFrame_mapExchangeControlMenuItem_Text" xml:space="preserve">
-    <value>Смяна на &amp;карта при КТ</value>
+    <value>Смяна на _карта при КТ</value>
   </data>
   <data name="MainFrame_mapExchangeSeparateMenuItem_Text" xml:space="preserve">
-    <value>Маркиран &amp;маршрут до смяната на карта</value>
+    <value>Маркиран _маршрут до смяната на карта</value>
   </data>
   <data name="MainFrame_addMapExchangeMenu_Text" xml:space="preserve">
-    <value>Обръщане/с&amp;мяна на карта</value>
+    <value>Обръщане/с_мяна на карта</value>
   </data>
   <data name="MainFrame_addVariationMenu_Text" xml:space="preserve">
-    <value>&amp;Вариант...</value>
+    <value>_Вариант...</value>
   </data>
   <data name="MainFrame_addTextLineMenu_Text" xml:space="preserve">
-    <value>Текстов &amp;ред...</value>
+    <value>Текстов _ред...</value>
   </data>
   <data name="MainFrame_addMapIssueMenu_Text" xml:space="preserve">
     <value>Стартиране с време</value>
@@ -1907,25 +1907,25 @@
     <value>Елипса</value>
   </data>
   <data name="MainFrame_addMenu_Text" xml:space="preserve">
-    <value>&amp;Добави</value>
+    <value>_Добави</value>
   </data>
   <data name="MainFrame_changeMapFileMenu_Text" xml:space="preserve">
-    <value>&amp;Картен файл...</value>
+    <value>_Картен файл...</value>
   </data>
   <data name="MainFrame_changeCodesMenu_Text" xml:space="preserve">
-    <value>Промени &amp;сигнатурите на КТ...</value>
+    <value>Промени _сигнатурите на КТ...</value>
   </data>
   <data name="MainFrame_autoNumberingMenu_Text" xml:space="preserve">
-    <value>Автоматично &amp;номериране...</value>
+    <value>Автоматично _номериране...</value>
   </data>
   <data name="MainFrame_removeUnusedControlsMenu_Text" xml:space="preserve">
-    <value>Премахни &amp;неизползваните КТ...</value>
+    <value>Премахни _неизползваните КТ...</value>
   </data>
   <data name="MainFrame_moveAllControlsMenu_Text" xml:space="preserve">
-    <value>&amp;Премести всички КТ...</value>
+    <value>_Премести всички КТ...</value>
   </data>
   <data name="MainFrame_punchPatternsMenu_Text" xml:space="preserve">
-    <value>&amp;Перфорации...</value>
+    <value>_Перфорации...</value>
   </data>
   <data name="MainFrame_descriptionStd2004Menu_Text" xml:space="preserve">
     <value>Стандарт за описания от 2004</value>
@@ -1943,67 +1943,67 @@
     <value>Картен стандарт ISSprOM 2019</value>
   </data>
   <data name="MainFrame_iOFStandardsToolStripMenuItem_Text" xml:space="preserve">
-    <value>IOF &amp;стандарти</value>
+    <value>IOF _стандарти</value>
   </data>
   <data name="MainFrame_customizeDescriptionsMenu_Text" xml:space="preserve">
-    <value>Персонализирай &amp;текста на описанията...</value>
+    <value>Персонализирай _текста на описанията...</value>
   </data>
   <data name="MainFrame_customizeCourseAppearanceMenu_Text" xml:space="preserve">
-    <value>Персонализирай &amp;изгледа...</value>
+    <value>Персонализирай _изгледа...</value>
   </data>
   <data name="MainFrame_eventMenu_Text" xml:space="preserve">
-    <value>Състе&amp;зание</value>
+    <value>Състе_зание</value>
   </data>
   <data name="MainFrame_addCourseMenu_Text" xml:space="preserve">
-    <value>&amp;Добави маршрут...</value>
+    <value>_Добави маршрут...</value>
   </data>
   <data name="MainFrame_deleteCourseMenu_Text" xml:space="preserve">
-    <value>&amp;Изтрий маршрута</value>
+    <value>_Изтрий маршрута</value>
   </data>
   <data name="MainFrame_duplicateCourseMenu_Text" xml:space="preserve">
-    <value>Д&amp;ублирай маршрута...</value>
+    <value>Д_ублирай маршрута...</value>
   </data>
   <data name="MainFrame_propertiesMenu_Text" xml:space="preserve">
-    <value>&amp;Свойства...</value>
+    <value>_Свойства...</value>
   </data>
   <data name="MainFrame_courseOrderMenu_Text" xml:space="preserve">
-    <value>Ред на &amp;маршрутите...</value>
+    <value>Ред на _маршрутите...</value>
   </data>
   <data name="MainFrame_courseLoadMenu_Text" xml:space="preserve">
-    <value>Разпределение на &amp;състезателите...</value>
+    <value>Разпределение на _състезателите...</value>
   </data>
   <data name="MainFrame_courseVariationReportMenu_Text" xml:space="preserve">
-    <value>Варианти на щафетния &amp;отбор...</value>
+    <value>Варианти на щафетния _отбор...</value>
   </data>
   <data name="MainFrame_courseMenu_Text" xml:space="preserve">
-    <value>&amp;Маршрут</value>
+    <value>_Маршрут</value>
   </data>
   <data name="MainFrame_deleteForkMenu_Text" xml:space="preserve">
-    <value>Изтрий раз&amp;клонението/обиколката</value>
+    <value>Изтрий раз_клонението/обиколката</value>
   </data>
   <data name="MainFrame_addBendMenu_Text" xml:space="preserve">
-    <value>Добави &amp;пречупване</value>
+    <value>Добави _пречупване</value>
   </data>
   <data name="MainFrame_removeBendMenu_Text" xml:space="preserve">
-    <value>Премахни пр&amp;ечупването</value>
+    <value>Премахни пр_ечупването</value>
   </data>
   <data name="MainFrame_addGapMenu_Text" xml:space="preserve">
-    <value>Добави &amp;прекъсване</value>
+    <value>Добави _прекъсване</value>
   </data>
   <data name="MainFrame_removeGapMenu_Text" xml:space="preserve">
-    <value>Премахни пр&amp;екъсването</value>
+    <value>Премахни пр_екъсването</value>
   </data>
   <data name="MainFrame_changeTextMenu_Text" xml:space="preserve">
-    <value>Промени &amp;текста...</value>
+    <value>Промени _текста...</value>
   </data>
   <data name="MainFrame_changeLineAppearanceMenu_Text" xml:space="preserve">
-    <value>Промени &amp;изгледа на линията...</value>
+    <value>Промени _изгледа на линията...</value>
   </data>
   <data name="MainFrame_rotateMenu_Text" xml:space="preserve">
-    <value>&amp;Завърти</value>
+    <value>_Завърти</value>
   </data>
   <data name="MainFrame_stretchMenu_Text" xml:space="preserve">
-    <value>&amp;Разтегни</value>
+    <value>_Разтегни</value>
   </data>
   <data name="MainFrame_noFlaggingMenu_Text" xml:space="preserve">
     <value>Без маркировка</value>
@@ -2018,49 +2018,49 @@
     <value>Краят на отсечката е маркиран</value>
   </data>
   <data name="MainFrame_legFlaggingMenu_Text" xml:space="preserve">
-    <value>Маркировка на &amp;отсечката</value>
+    <value>Маркировка на _отсечката</value>
   </data>
   <data name="MainFrame_changeDisplayedCoursesMenu_Text" xml:space="preserve">
-    <value>Промени по&amp;казваните маршрути...</value>
+    <value>Промени по_казваните маршрути...</value>
   </data>
   <data name="MainFrame_itemMenu_Text" xml:space="preserve">
-    <value>&amp;Елемент</value>
+    <value>_Елемент</value>
   </data>
   <data name="MainFrame_courseSummaryMenu_Text" xml:space="preserve">
-    <value>&amp;Обобщение на маршрута</value>
+    <value>_Обобщение на маршрута</value>
   </data>
   <data name="MainFrame_eventAuditMenu_Text" xml:space="preserve">
-    <value>&amp;Одит на състезанието</value>
+    <value>_Одит на състезанието</value>
   </data>
   <data name="MainFrame_legLengthsMenu_Text" xml:space="preserve">
-    <value>Дължини на &amp;отсечките</value>
+    <value>Дължини на _отсечките</value>
   </data>
   <data name="MainFrame_controlCrossrefMenu_Text" xml:space="preserve">
-    <value>&amp;Обобщение на КТ по маршрути</value>
+    <value>_Обобщение на КТ по маршрути</value>
   </data>
   <data name="MainFrame_controlAndLegLoadMenu_Text" xml:space="preserve">
-    <value>&amp;Натовареност на КТ и отсечките</value>
+    <value>_Натовареност на КТ и отсечките</value>
   </data>
   <data name="MainFrame_reportMenu_Text" xml:space="preserve">
-    <value>&amp;Справки</value>
+    <value>_Справки</value>
   </data>
   <data name="MainFrame_helpContentsMenu_Text" xml:space="preserve">
-    <value>Purple Pen &amp;Помощ</value>
+    <value>Purple Pen _Помощ</value>
   </data>
   <data name="MainFrame_helpTranslatedMenu_Text" xml:space="preserve">
     <value>Помощ за Purple Pen (преведена)</value>
   </data>
   <data name="MainFrame_mainWebSiteToolMenu_Text" xml:space="preserve">
-    <value>Purple Pen &amp;уебсайт</value>
+    <value>Purple Pen _уебсайт</value>
   </data>
   <data name="MainFrame_supportWebSiteMenu_Text" xml:space="preserve">
-    <value>&amp;Поддръжка/Докладване за грешки</value>
+    <value>_Поддръжка/Докладване за грешки</value>
   </data>
   <data name="MainFrame_donateWebSiteMenu_Text" xml:space="preserve">
-    <value>Направи &amp;дарение</value>
+    <value>Направи _дарение</value>
   </data>
   <data name="MainFrame_aboutMenu_Text" xml:space="preserve">
-    <value>&amp;За програмата Purple Pen</value>
+    <value>_За програмата Purple Pen</value>
   </data>
   <data name="MainFrame_symbolBrowserMenu_Text" xml:space="preserve">
     <value>Търсачка на символи</value>
@@ -2108,10 +2108,10 @@
     <value>Обедини файла Symbols.xml...</value>
   </data>
   <data name="MainFrame_translateMenu_Text" xml:space="preserve">
-    <value>&amp;Преведи текста на описанията на КТ</value>
+    <value>_Преведи текста на описанията на КТ</value>
   </data>
   <data name="MainFrame_helpMenu_Text" xml:space="preserve">
-    <value>&amp;Помощ</value>
+    <value>_Помощ</value>
   </data>
   <data name="MainFrame_openToolStripButton_Text" xml:space="preserve">
     <value>Отвори</value>
@@ -2264,7 +2264,7 @@
     <value>Натоварването на маршрута трябва да е цяло число от 0 до 999999 или празно поле.</value>
   </data>
   <data name="MiscText_CancelOperationWithShortcut" xml:space="preserve">
-    <value>&amp;Прекрати действието</value>
+    <value>_Прекрати действието</value>
   </data>
   <data name="MiscText_CancelOperation" xml:space="preserve">
     <value>Прекрати действието</value>
@@ -2379,10 +2379,10 @@
     <value>Всички контролни точки се използват в маршрут.</value>
   </data>
   <data name="MiscText_NextButtonText" xml:space="preserve">
-    <value>&amp;Напред &gt;</value>
+    <value>_Напред &gt;</value>
   </data>
   <data name="NewEventWizard_nextButton_Text" xml:space="preserve">
-    <value>&amp;Напред &gt;</value>
+    <value>_Напред &gt;</value>
   </data>
   <data name="MiscText_Control_Code" xml:space="preserve">
     <value>Контролна точка {0}</value>
@@ -2794,7 +2794,7 @@
 </value>
   </data>
   <data name="NewEventPrintScale_defaultPrintScaleLabel_Text" xml:space="preserve">
-    <value>&amp;Мащаб на печата по подразбиране:</value>
+    <value>_Мащаб на печата по подразбиране:</value>
   </data>
   <data name="NewEventPrintScale_changeLaterLabel_Text" xml:space="preserve">
     <value>(По-късно можете да променяте мащаба на печат за който и да е маршрут, като изберете Маршрут/Свойства.)</value>
@@ -2838,7 +2838,7 @@
     <value>Наименование на състезанието:</value>
   </data>
   <data name="NewEventWizard_backButton_Text" xml:space="preserve">
-    <value>&lt; &amp;Назад</value>
+    <value>&lt; _Назад</value>
   </data>
   <data name="NonPrintableObjects_labelWarning_Text" xml:space="preserve">
     <value>Картният файл „{0}“ съдържа обекти или символи, които не се поддържат напълно от Purple Pen и може да не се отпечатат правилно. Обектите, които могат да предизвикат проблем, са изброени по-долу.

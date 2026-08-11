@@ -1540,7 +1540,7 @@
     <value>另存新檔(_A)...</value>
   </data>
   <data name="MainFrame_createOcadFilesMenu_Text" xml:space="preserve">
-    <value>建立OCAD &amp;檔案(_F)...</value>
+    <value>建立OCAD _檔案(_F)...</value>
   </data>
   <data name="MainFrame_createImageFilesMenu_Text" xml:space="preserve">
     <value>建立圖片檔案...</value>

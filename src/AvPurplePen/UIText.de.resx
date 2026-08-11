@@ -1556,7 +1556,7 @@
     <value>_Neuer Wettkampf...</value>
   </data>
   <data name="MainFrame_openMenu_Text" xml:space="preserve">
-    <value>&amp;Öffnen …</value>
+    <value>_Öffnen …</value>
   </data>
   <data name="MainFrame_saveMenu_Text" xml:space="preserve">
     <value>_Speichern</value>
@@ -1976,10 +1976,10 @@
     <value>Lücke _entfernen</value>
   </data>
   <data name="MainFrame_changeTextMenu_Text" xml:space="preserve">
-    <value>Text &amp;ändern</value>
+    <value>Text _ändern</value>
   </data>
   <data name="MainFrame_changeLineAppearanceMenu_Text" xml:space="preserve">
-    <value>Linie &amp; Aussehen ändern</value>
+    <value>Linie _Aussehen ändern</value>
   </data>
   <data name="MainFrame_rotateMenu_Text" xml:space="preserve">
     <value>_Drehen</value>
@@ -2042,7 +2042,7 @@
     <value>_Spenden Sie</value>
   </data>
   <data name="MainFrame_aboutMenu_Text" xml:space="preserve">
-    <value>&amp;Über Purple Pen</value>
+    <value>_Über Purple Pen</value>
   </data>
   <data name="MainFrame_symbolBrowserMenu_Text" xml:space="preserve">
     <value>Symbolbrowser</value>
