@@ -3563,4 +3563,7 @@ Afin d'imprimer des cartes de compétition, nous vous suggérons d'exporter les 
   <data name="ViewAdditionalCourses_Text" xml:space="preserve">
     <value>Afficher les courses supplémentaires</value>
   </data>
+  <data name="NewEventWizard_finishButton_Text" xml:space="preserve">
+    <value>_Terminer</value>
+  </data>
 </root>

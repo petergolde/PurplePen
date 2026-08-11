@@ -3877,4 +3877,7 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
 
 Purple Pen cannot install this kind of file for you. Open it yourself to install the update.</value>
   </data>
+  <data name="NewEventWizard_finishButton_Text" xml:space="preserve">
+    <value>_Finish</value>
+  </data>
 </root>

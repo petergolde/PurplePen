@@ -281,9 +281,6 @@ Após pressionar OK, tente encontrar uma cópia do ficheiro de mapa em seu compu
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Todos os pontos de controlo são usados em um percurso.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>Meta (&amp;F)</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>Segui&amp;nte &gt;</value>
   </data>

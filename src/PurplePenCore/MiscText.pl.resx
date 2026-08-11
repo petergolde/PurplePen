@@ -268,9 +268,6 @@ Użyj | aby rozdzielić linie
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Wszystkie PK są użyte na trasie.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Zakończ</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Dalej &gt;</value>
   </data>
@@ -514,12 +511,6 @@ Użyj | aby rozdzielić linie
   <data name="GpxFilter" xml:space="preserve">
     <value>Plik GPX|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript nie jest zainstalowany</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Plik Purple Pen|*.ppen</value>
   </data>
@@ -528,5 +519,11 @@ Użyj | aby rozdzielić linie
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Obraz|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript nie jest zainstalowany</value>
   </data>
 </root>

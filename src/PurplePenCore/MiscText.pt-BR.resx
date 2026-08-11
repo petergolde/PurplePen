@@ -281,9 +281,6 @@ Após pressionar OK, tente encontrar uma cópia do arquivo de mapa em seu comput
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Todos os controles são usados em um percurso.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Finalizar</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>Próxi&amp;mo &gt;</value>
   </data>

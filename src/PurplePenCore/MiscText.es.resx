@@ -277,9 +277,6 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Todos los controles se usan en algún recorrido.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Meta</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Siguiente &gt;</value>
   </data>

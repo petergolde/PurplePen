@@ -112,19 +112,25 @@ List of stuff:
   - check for new versions; download and install. Different for Windows/Mac/Linux, although the checking for new versions can be shared.
     we should update the checking mechanism to be more robust and have a better format. Probably use NetSparkle.
   - Fix & and _ prefixes in resources. Fix OK/Cancel localization.
-  - Fix running PdfConverter with the .exe extension. Need to test this on Mac and Linux.
 
 
   After Beta 1:
   - Arial/Times New Roman fonts for linux. Use CrossCore fonts for these. Not really that important because most Linux
     includes them already, but be good for at least Arial and Times New Roman, I think.
   - Update localization from our old localizations. Figure out how to remove duplicates.
+  - New localization platform.
   - Direct printing. Different for Windows/Mac/Linux.
   - Help file.
   - Hand cursor isn't show when dragging map.
   - Checking for and installing Roboto fonts.
   - Dialogs for localizing descriptions text.
-  - Update PdfSharp to latest version.
   - Move to a new localization platform.
   - Move PurplePen tests to a PurplePenCore test project. Leave maybe a few behind that are Windows specific.
   - Make SampleEvent not saveable at all.
+  - Pause after each page when printing.
+  - JPEG quality setting; should be 80 like it was before, or maybe settable. 
+  - Check GIF quantization settings. Should maybe disable dithering?
+  - Handling count in printing courses.
+
+Later:
+  - Update PdfSharp to latest version.

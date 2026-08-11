@@ -276,9 +276,6 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Alle poster benyttes i en løype.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Fullfør</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Neste &gt;</value>
   </data>
@@ -624,12 +621,6 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX fil|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript er ikke installert</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen fil|*.ppen</value>
   </data>
@@ -641,5 +632,11 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Bilde fil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript er ikke installert</value>
   </data>
 </root>

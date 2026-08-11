@@ -275,9 +275,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Kõik KPd on radadel kasutuses.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Finiš</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Edasi &gt;</value>
   </data>
@@ -623,12 +620,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX fail|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript on installeeritud</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen fail|*.ppen</value>
   </data>
@@ -640,5 +631,11 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Graafika fail|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>PDF failide laadimiseks on vajalik, et GPL Ghostscript oleks installeeritud. Kas soovid selle laadida ja installeerida nüüd?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript on installeeritud</value>
   </data>
 </root>

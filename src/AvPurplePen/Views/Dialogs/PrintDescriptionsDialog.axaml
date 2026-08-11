@@ -73,7 +73,7 @@
                  it overlays the Print button. -->
             <Button x:Name="createPdfButton"
                     Grid.Column="2"
-                    Content="{x:Static resx:UIText.MiscText_CreatePdf}"
+                    Content="{resx:Localize MiscText_CreatePdf}"
                     Width="100"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"

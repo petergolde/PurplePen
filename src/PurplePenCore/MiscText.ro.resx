@@ -268,9 +268,6 @@ După ce apăsați OK, încercați să localizați o copie a fișierului hartă 
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Toate posturile sunt folosite într-un traseu.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Finalizare</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Următor &gt;</value>
   </data>

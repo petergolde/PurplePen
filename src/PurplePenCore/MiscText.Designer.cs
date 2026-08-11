@@ -869,15 +869,6 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Finish.
-        /// </summary>
-        public static string FinishButtonText {
-            get {
-                return ResourceManager.GetString("FinishButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Suitable for use in relays with {0} participants per team..
         /// </summary>
         public static string ForkSummary {

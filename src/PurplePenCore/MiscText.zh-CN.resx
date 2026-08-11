@@ -276,9 +276,6 @@
   <data name="NoUnusedControls" xml:space="preserve">
     <value>所有检查点都在一个线路中使用。</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>完成(&amp;F)</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>下一步(&amp;N) &gt;</value>
   </data>

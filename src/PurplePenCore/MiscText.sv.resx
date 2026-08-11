@@ -277,9 +277,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Alla kontroller används i någon bana.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>Slut&amp;för</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Nästa &gt;</value>
   </data>
@@ -634,12 +631,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX-fil|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript är inte installerat</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen-fil|*.ppen</value>
   </data>
@@ -651,5 +642,11 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Bildfil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript är inte installerat</value>
   </data>
 </root>

@@ -277,9 +277,6 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Tüm kontroller bir kursta kullanılır.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Bitiş</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Sonraki &gt;</value>
   </data>

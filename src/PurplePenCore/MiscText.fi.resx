@@ -277,9 +277,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Kaikki rastit ovat käytössä radalla.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Maali</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Seuraava &gt;</value>
   </data>
@@ -628,12 +625,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX-tiedosto|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscriptiä ei ole asennettu</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen tiedosto|*.ppen</value>
   </data>
@@ -645,5 +636,11 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Kuvatiedosto|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Jotta PDF-tiedostoja voidaan ladata, pitää GPL Ghostscript olla asennettuna. Haluatko, että se automaattisesti ladataan ja asennetaan nyt?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscriptiä ei ole asennettu</value>
   </data>
 </root>

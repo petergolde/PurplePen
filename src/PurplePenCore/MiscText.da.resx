@@ -277,9 +277,6 @@ Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Alle kontroller er brugt på et kursus.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Færdig</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Next &gt;</value>
   </data>

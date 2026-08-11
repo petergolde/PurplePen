@@ -277,9 +277,6 @@
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Всички контролни точки се използват в маршрут.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Финал</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Напред &gt;</value>
   </data>

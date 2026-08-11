@@ -91,7 +91,7 @@
                         IsEnabled="{Binding CanProceed}"
                         IsVisible="{Binding !IsLastPage}"/>
                 <Button x:Name="finishButton"
-                        Content="{x:Static misc:MiscText.FinishButtonText}"
+                        Content="{resx:Localize NewEventWizard_finishButton_Text}"
                         Width="100"
                         HorizontalContentAlignment="Center"
                         IsDefault="True"

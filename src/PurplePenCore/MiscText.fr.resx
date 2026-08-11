@@ -277,9 +277,6 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Tous les numéros de poste sont utilisés sur un circuit.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Terminer</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Suivant &gt;</value>
   </data>
@@ -613,12 +610,6 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="GpxFilter" xml:space="preserve">
     <value>Fichier GPX|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript n'est pas installé</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Fichier Purple Pen|*.ppen</value>
   </data>
@@ -630,5 +621,11 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Fichier image|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>Le chargement des fichiers PDF requiert qu'une copie de GPL Ghostscript soit installée. Souhaitez-vous qu'elle soit automatiquement téléchargée et installée maintenant ?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript n'est pas installé</value>
   </data>
 </root>

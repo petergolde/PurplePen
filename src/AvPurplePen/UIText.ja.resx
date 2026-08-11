@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IncrementButton" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="AboutForm_copyrightLabel_Text" xml:space="preserve">
     <value>Copyright © by Peter Golde</value>
   </data>
@@ -3228,5 +3232,8 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="UnusedControls_unusedControlsLabel_Text" xml:space="preserve">
     <value>以下のコントロールは「全コントロール」コレクションに含まれていますが、どのコースでも使われていません。「削除」をクリックすると、チェックの付いたコントロールすべてを削除します。</value>
+  </data>
+  <data name="NewEventWizard_finishButton_Text" xml:space="preserve">
+    <value>フィニッシュ(_F)</value>
   </data>
 </root>

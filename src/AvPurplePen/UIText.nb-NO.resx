@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IncrementButton" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="AboutForm_copyrightLabel_Text" xml:space="preserve">
     <value>Opphavsrett © Peter Golde</value>
   </data>
@@ -3621,5 +3625,8 @@ Til å skrive ut konkuranskekart anbefales at løypene eksporteres til OCAD file
   </data>
   <data name="ViewAdditionalCourses_Text" xml:space="preserve">
     <value>Vis flere løyper</value>
+  </data>
+  <data name="NewEventWizard_finishButton_Text" xml:space="preserve">
+    <value>_Fullfør</value>
   </data>
 </root>

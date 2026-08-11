@@ -277,9 +277,6 @@
   <data name="NoUnusedControls" xml:space="preserve">
     <value>使用在此賽程的所有檢查點</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>終點</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>下一步 &gt;</value>
   </data>

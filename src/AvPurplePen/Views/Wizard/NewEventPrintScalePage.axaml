@@ -37,8 +37,9 @@
                        Text="{Binding MapScaleDisplay}"/>
 
             <!-- Row 1: default print scale -->
-            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
-                       Text="{resx:Localize NewEventPrintScale_defaultPrintScaleLabel_Text}"/>
+            <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
+                       Content="{resx:Localize NewEventPrintScale_defaultPrintScaleLabel_Text}"
+                       Target="printScaleCombo"/>
             <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
                        HorizontalAlignment="Right"
                        Text="{resx:Localize NewEventPrintScale_oneToPrefixLabel2_Text}"/>

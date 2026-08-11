@@ -277,9 +277,6 @@
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Всі КП використовуються у дистанції.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Фініш</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Далі &gt;</value>
   </data>

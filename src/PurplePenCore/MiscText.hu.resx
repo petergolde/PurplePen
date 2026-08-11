@@ -277,9 +277,6 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="NoUnusedControls" xml:space="preserve">
     <value>Minden ellenőrzőpont használt a pályában.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>Be&amp;fejezés</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Tovább &gt;</value>
   </data>
@@ -619,12 +616,6 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="GpxFilter" xml:space="preserve">
     <value>GPX fájl|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>A GPL Ghostscript nincs telepítve.</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen fájl|*.ppen</value>
   </data>
@@ -636,5 +627,11 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Kép fájl|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>A PDF fájlok betöltéséhez szükséges a GPL Ghostscript. Kívánja automatikusan letölteni és telepíteni?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>A GPL Ghostscript nincs telepítve.</value>
   </data>
 </root>

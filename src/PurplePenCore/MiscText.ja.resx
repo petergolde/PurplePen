@@ -277,9 +277,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="NoUnusedControls" xml:space="preserve">
     <value>すべてのコントロールがコースで使用されています。</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>フィニッシュ(&amp;F)</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>次へ(&amp;N) &gt;</value>
   </data>
@@ -577,12 +574,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="GpxFilter" xml:space="preserve">
     <value>GPXファイル|*.gpx</value>
   </data>
-  <data name="DownloadGhostscript" xml:space="preserve">
-    <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
-  </data>
-  <data name="GhostscriptNotInstalled" xml:space="preserve">
-    <value>GPL Ghostscript がインストールされていません</value>
-  </data>
   <data name="SaveFileDialog_PurplePenFilter" xml:space="preserve">
     <value>Purple Pen ファイル|*.ppen</value>
   </data>
@@ -594,5 +585,11 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
+  </data>
+  <data name="DownloadGhostscript" xml:space="preserve">
+    <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
+  </data>
+  <data name="GhostscriptNotInstalled" xml:space="preserve">
+    <value>GPL Ghostscript がインストールされていません</value>
   </data>
 </root>

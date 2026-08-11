@@ -3532,4 +3532,7 @@
   <data name="ViewAdditionalCourses_Text" xml:space="preserve">
     <value>檢視其他賽程</value>
   </data>
+  <data name="NewEventWizard_finishButton_Text" xml:space="preserve">
+    <value>終點</value>
+  </data>
 </root>

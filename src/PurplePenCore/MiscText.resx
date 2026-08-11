@@ -280,9 +280,6 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="NoUnusedControls" xml:space="preserve">
     <value>All controls are used in a course.</value>
   </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Finish</value>
-  </data>
   <data name="NextButtonText" xml:space="preserve">
     <value>&amp;Next &gt;</value>
   </data>
