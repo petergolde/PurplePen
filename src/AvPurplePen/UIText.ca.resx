@@ -129,7 +129,7 @@
   <data name="MissingFonts_okButton_Text" xml:space="preserve">
     <value>Acceptar</value>
   </data>
-  <data name="OkCancelDialog_okButton_Text" xml:space="preserve">
+  <data name="OKButton" xml:space="preserve">
     <value>Acceptar</value>
   </data>
   <data name="StatusBarText_DefaultStatus" xml:space="preserve">

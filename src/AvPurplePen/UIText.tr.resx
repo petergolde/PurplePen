@@ -144,7 +144,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
   <data name="MissingFonts_okButton_Text" xml:space="preserve">
     <value>Tamam</value>
   </data>
-  <data name="OkCancelDialog_okButton_Text" xml:space="preserve">
+  <data name="OKButton" xml:space="preserve">
     <value>Tamam</value>
   </data>
   <data name="AboutForm_creditsButton_Text" xml:space="preserve">
@@ -856,7 +856,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
     <value>Parkur Çoğalt</value>
   </data>
   <data name="CommandNameText_CreateMapFiles" xml:space="preserve">
-    <value>Dosya &amp;{0} Oluştur</value>
+    <value>Dosya {0} _Oluştur</value>
   </data>
   <data name="CommandNameText_DeleteFork" xml:space="preserve">
     <value>Ayrım/Döngü Sil</value>
@@ -1113,10 +1113,7 @@ ANCAK BUNLARLA SINIRLI OLMAKSIZIN, YAZILIMIN BELİRLİ BİR AMACA UYGUN SATILAB�
   <data name="NonPrintableObjects_cancelButton_Text" xml:space="preserve">
     <value>Vazgeç</value>
   </data>
-  <data name="OkCancelDialog_cancelButton_Text" xml:space="preserve">
-    <value>Vazgeç</value>
-  </data>
-  <data name="OperationInProgress_cancelButton_Text" xml:space="preserve">
+  <data name="CancelButton" xml:space="preserve">
     <value>Vazgeç</value>
   </data>
   <data name="OverwritingOcadFilesDialog_buttonCancel_Text" xml:space="preserve">

@@ -132,7 +132,7 @@
   <data name="MissingFonts_okButton_Text" xml:space="preserve">
     <value>BAŞ E</value>
   </data>
-  <data name="OkCancelDialog_okButton_Text" xml:space="preserve">
+  <data name="OKButton" xml:space="preserve">
     <value>BAŞ E</value>
   </data>
   <data name="AboutForm_creditsButton_Text" xml:space="preserve">

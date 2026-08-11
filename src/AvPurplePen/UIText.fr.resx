@@ -126,12 +126,6 @@
   <data name="CounterLabel" xml:space="preserve">
     <value>Compteur : {0}</value>
   </data>
-  <data name="OKButton" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="CancelButton" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
   <data name="SwitchLanguageButton" xml:space="preserve">
     <value>Changer de langue...</value>
   </data>
@@ -162,7 +156,7 @@
   <data name="MissingFonts_okButton_Text" xml:space="preserve">
     <value>Valider</value>
   </data>
-  <data name="OkCancelDialog_okButton_Text" xml:space="preserve">
+  <data name="OKButton" xml:space="preserve">
     <value>Valider</value>
   </data>
   <data name="AboutForm_creditsButton_Text" xml:space="preserve">
@@ -1122,10 +1116,7 @@
   <data name="NonPrintableObjects_cancelButton_Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="OkCancelDialog_cancelButton_Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="OperationInProgress_cancelButton_Text" xml:space="preserve">
+  <data name="CancelButton" xml:space="preserve">
     <value>Annuler</value>
   </data>
   <data name="OverwritingOcadFilesDialog_buttonCancel_Text" xml:space="preserve">
@@ -2104,7 +2095,7 @@
     <value>_Traduire le texte des définitions</value>
   </data>
   <data name="MainFrame_helpMenu_Text" xml:space="preserve">
-    <value>&amp;?</value>
+    <value>_?</value>
   </data>
   <data name="MainFrame_openToolStripButton_Text" xml:space="preserve">
     <value>Ouvrir</value>

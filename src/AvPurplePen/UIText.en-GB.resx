@@ -138,7 +138,7 @@
   <data name="MissingFonts_okButton_Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="OkCancelDialog_okButton_Text" xml:space="preserve">
+  <data name="OKButton" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="AboutForm_creditsButton_Text" xml:space="preserve">
@@ -1107,10 +1107,7 @@
   <data name="NonPrintableObjects_cancelButton_Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="OkCancelDialog_cancelButton_Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="OperationInProgress_cancelButton_Text" xml:space="preserve">
+  <data name="CancelButton" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="OverwritingOcadFilesDialog_buttonCancel_Text" xml:space="preserve">

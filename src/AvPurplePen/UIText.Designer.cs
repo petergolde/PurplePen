@@ -8029,9 +8029,9 @@ namespace AvPurplePen {
         /// <summary>
         ///   Looks up a localized string similar to _Finish.
         /// </summary>
-        public static string NewEventWizard_FinishButton_Text {
+        public static string NewEventWizard_finishButton_Text {
             get {
-                return ResourceManager.GetString("NewEventWizard_FinishButton_Text", resourceCulture);
+                return ResourceManager.GetString("NewEventWizard_finishButton_Text", resourceCulture);
             }
         }
         
@@ -8107,33 +8107,6 @@ namespace AvPurplePen {
         public static string OKButton {
             get {
                 return ResourceManager.GetString("OKButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string OkCancelDialog_cancelButton_Text {
-            get {
-                return ResourceManager.GetString("OkCancelDialog_cancelButton_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OK.
-        /// </summary>
-        public static string OkCancelDialog_okButton_Text {
-            get {
-                return ResourceManager.GetString("OkCancelDialog_okButton_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string OperationInProgress_cancelButton_Text {
-            get {
-                return ResourceManager.GetString("OperationInProgress_cancelButton_Text", resourceCulture);
             }
         }
         
