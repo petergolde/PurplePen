@@ -359,3 +359,104 @@ libicu, openssl-libs}"
 # directory, so the packages end up beside the script that built them even when
 # BUILD_DIR was redirected elsewhere.
 : "${OUTPUT_SUBDIR:=output}"
+
+# ---------------------------------------------------------------------------
+# Repository publishing
+# ---------------------------------------------------------------------------
+#
+# Everything below is used by publish-linux-repos.sh, which takes the packages
+# in output/ and files them into an apt repository and a dnf repository. The
+# build script ignores all of it.
+
+# Where the published repositories will be reachable from.
+#
+# This is the URL that the root/ directory of the publishing tree maps to once
+# it has been uploaded. It is baked into the generated .repo file and into the
+# generated install instructions, so it has to match reality or users get a
+# repository they cannot reach.
+: "${PUBLISH_BASE_URL:=https://downloads.purple-pen.org}"
+
+# Subdirectories of the publishing directory given on the command line.
+#
+# Everything under PUBLISH_ROOT_SUBDIR goes on the public web site. Everything
+# under PUBLISH_DATA_SUBDIR is state that has to survive between runs but must
+# NOT be published -- see the generated README in that directory.
+: "${PUBLISH_ROOT_SUBDIR:=root}"
+: "${PUBLISH_DATA_SUBDIR:=data}"
+
+# Where each repository lives inside the published root, and therefore what
+# follows PUBLISH_BASE_URL in the address users subscribe to.
+: "${PUBLISH_LINUX_SUBDIR:=linux}"
+: "${DEB_REPO_SUBDIR:=$PUBLISH_LINUX_SUBDIR/deb}"
+: "${RPM_REPO_SUBDIR:=$PUBLISH_LINUX_SUBDIR/rpm}"
+
+# Release channels.
+#
+# A package goes to "beta" if its version carries a prerelease marker (the
+# tilde that read_version puts in "4.0.0~beta1") and to "stable" otherwise, so
+# the channel follows from VersionNumber.cs without anyone having to remember.
+# --channel overrides it.
+#
+# The two channels are independent and additive rather than nested: the beta
+# suite indexes only beta packages, and someone who wants betas subscribes to
+# both channels. That is how Debian's own backports and Fedora's
+# updates-testing work, and it means each channel can be regenerated on its own.
+: "${STABLE_CHANNEL:=stable}"
+: "${BETA_CHANNEL:=beta}"
+
+# Repository metadata, shown by "apt policy" and in dnf's repository list.
+#
+# Origin and Label are also what an apt pinning rule in
+# /etc/apt/preferences.d/ would match on, so changing them after release can
+# break a user's pin.
+: "${REPO_ORIGIN:=Purple Pen}"
+: "${REPO_LABEL:=Purple Pen}"
+: "${REPO_DESCRIPTION:=Purple Pen course setting software}"
+
+# Debian component. A single-vendor repository has no use for the main /
+# contrib / non-free split, but the field is mandatory, and "main" is what
+# every tool defaults to expecting.
+: "${DEB_COMPONENT:=main}"
+
+# Compress the Packages index with xz in addition to gzip.
+#
+# apt prefers xz when it is offered and falls back to gzip, and the index is
+# small either way; this exists mostly so a slow connection transfers less on
+# every apt update.
+: "${DEB_INDEX_XZ:=true}"
+
+# ---------------------------------------------------------------------------
+# Signing
+# ---------------------------------------------------------------------------
+#
+# The signing key is NOT in this repository and NOT in this file. It lives on
+# removable media whose directory is given as the second argument to
+# publish-linux-repos.sh.
+
+# File names expected inside that directory.
+#
+# The secret file is a signing subkey exported with "gpg
+# --export-secret-subkeys", so it carries the signing subkey and only a stub of
+# the primary key. That is deliberate: a repository signature needs the subkey,
+# and the primary key -- the one that can certify other keys and extend
+# expiry -- never has to leave offline storage.
+: "${SIGNING_SUBKEY_FILE:=PurplePen-signing-subkey.asc}"
+: "${SIGNING_PUBKEY_FILE:=PurplePen-public-key.asc}"
+
+# Fingerprint of the primary key, checked against what actually imports.
+#
+# This is the one thing that makes the key directory argument safe to get
+# wrong: pointing at the wrong drive, or at a key someone else generated, fails
+# immediately instead of producing a repository that every subscriber rejects.
+# It is public information -- it is printed in the install instructions so users
+# can confirm the key they are trusting.
+: "${SIGNING_KEY_FINGERPRINT:=D81754596CF4B29FFC7857CCC31F595BE2DCC2DA}"
+
+# Base name of the public key as published. Users fetch <name>.asc for apt's
+# signed-by= and for dnf's gpgkey=; <name>.gpg is the same key dearmored, for
+# apt older than 2.4, which cannot read the armored form.
+: "${KEYRING_BASENAME:=purplepen-archive-keyring}"
+
+# Digest algorithm for the RPM header signature. SHA-1 is rejected outright by
+# current Fedora and RHEL crypto policy, so this must stay at sha256 or better.
+: "${RPM_DIGEST_ALGO:=sha256}"

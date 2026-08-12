@@ -24,7 +24,8 @@ not the others.
 | File | Purpose |
 |---|---|
 | `build-linux-packages.sh` | The build script. Run this. |
-| `config.sh` | Settings — package identity, dependencies, architecture, versioning, AppImage options. Every value can be overridden by an environment variable of the same name. |
+| `publish-linux-repos.sh` | Files the built packages into signed apt and dnf repositories. Run this after the build, when releasing. |
+| `config.sh` | Settings — package identity, dependencies, architecture, versioning, AppImage options, and repository publishing. Every value can be overridden by an environment variable of the same name. |
 | `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the packages. |
 | `purplepen.desktop.template` | Desktop menu entry. |
 | `purplepen-mime.xml.template` | shared-mime-info definition registering `.ppen` files. |
@@ -46,6 +47,7 @@ the build if any are left over.
 | `curl`, `ldconfig` | the AppImage | base system |
 | `desktop-file-validate` | recommended | `desktop-file-utils` — the build validates both menu entries when present |
 | `lintian` | optional | reports Debian policy notes, informational only |
+| `apt-ftparchive`, `createrepo_c`, `rpmsign`, `gpg` | publishing repositories | `sudo apt install apt-utils gnupg createrepo-c rpm xz-utils` — only needed by `publish-linux-repos.sh`, not by the build |
 
 You do **not** need a Fedora machine to build the `.rpm`; `rpmbuild` runs fine
 on Debian and Ubuntu.
@@ -161,6 +163,97 @@ sudo dnf remove purplepen
 
 After installing, `purplepen` is on `PATH`, Purple Pen appears in the
 applications menu, and double-clicking a `.ppen` file opens it.
+
+## Publishing to the apt and dnf repositories
+
+Downloading a file by hand gets a user one version and no upgrade path.
+`publish-linux-repos.sh` takes the packages in `output/` and files them into a
+signed apt repository and a signed dnf repository, so that `apt install
+purplepen` works and updates arrive with the rest of the system.
+
+```bash
+sudo apt install apt-utils gnupg createrepo-c rpm xz-utils
+./publish-linux-repos.sh ~/ppdownload /mnt/e/PurplePenSigning
+```
+
+The first argument is the publishing directory, the second the directory holding
+the GPG signing key — normally the USB drive. Nothing is ever written to the key
+directory, and the secret key is never copied into the publishing directory: it
+is imported into a throwaway keyring under `$TMPDIR` that is shredded when the
+script exits.
+
+`--dry-run` reports what would be published and where without writing anything
+or asking for the passphrase. Run it first.
+
+### What comes out
+
+```
+~/ppdownload/
+├── root/          upload this to the web site
+│   └── linux/
+│       ├── purplepen-archive-keyring.asc   the public key users install
+│       ├── README.md                       generated install instructions
+│       ├── deb/    pool/<channel>/… and dists/<channel>/…
+│       └── rpm/    purplepen.repo and <channel>/<arch>/…
+└── data/          do NOT upload this
+```
+
+`data/` holds the index cache and a log of what was published. Nothing in it is
+secret and nothing is irreplaceable — the repositories can be rebuilt from the
+packages in `root/` alone — but it does not belong on a web server.
+
+The generated `root/linux/README.md` carries the copy-paste setup commands for
+both package managers. It is generated from `config.sh` on every run, so its
+URLs and key fingerprint cannot drift from what the repository actually holds.
+
+### Channels
+
+Packages go to the `beta` channel if their version carries a prerelease marker
+(the tilde in `4.0.0~beta1`) and to `stable` otherwise, so the channel follows
+from `VersionNumber.cs` with nothing to remember. `--channel` overrides it.
+
+The two channels are independent and additive rather than nested: someone who
+wants betas subscribes to both, exactly as Debian's backports and Fedora's
+`updates-testing` work. The `.repo` file ships the beta section disabled, so a
+single file can be given to everyone.
+
+### How the two repositories differ
+
+Worth knowing before debugging one of them, because the trust models are
+mirror images.
+
+In an **apt repository** the `.deb` files are *not* signed. `dists/<channel>/`
+holds an index of every package with its SHA256, and one GPG signature over the
+`Release` file covers that index — signature → `Release` → `Packages` checksums
+→ package checksums. Breaking any link breaks the chain.
+
+In a **dnf repository** each `.rpm` carries its own signature inside the package
+header, put there by `rpmsign`, and the generated `repodata/` gets a separate
+detached signature over `repomd.xml`. dnf checks both, which is why the `.repo`
+file sets `gpgcheck=1` and `repo_gpgcheck=1`.
+
+So an RPM is signed in the repository, not in `output/` — signing rewrites the
+file, and the build output is left untouched.
+
+### Things that bite
+
+**The passphrase is asked for exactly once**, then handed to gpg through a
+loopback pinentry. That is not a shortcut: `rpmsign` runs gpg without any way to
+prompt, so a protected key otherwise fails outright. Set
+`SIGNING_PASSPHRASE_FILE` to run unattended.
+
+**`rpmsign` is broken out of the box on Ubuntu.** Ubuntu's `rpm` package
+hardcodes the gpg path to `/usr/bin/gpg2`, and Ubuntu's `gnupg` package installs
+only `/usr/bin/gpg`, so signing fails with `Could not exec gpg: No such file or
+directory`. The script overrides the path, so this is handled — but it is worth
+knowing if you ever sign an RPM by hand.
+
+**Old versions are kept.** Nothing is pruned, so the direct download URL of
+every package ever published keeps working. That is deliberate: the pool is also
+the download site.
+
+**The script only prepares the directory.** Getting `root/` onto the web site is
+a separate step.
 
 ## The AppImage
 
