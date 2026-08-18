@@ -36,7 +36,6 @@ doc/userdocs/Help/_vti_cnf
 doc/userdocs/Help/_vti_pvt
 doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
-src/PPenDXCore.Solution
 src/SetupIS/SetupIS
 .bzr/
 **/.vs
@@ -61,7 +60,6 @@ ipch/
 src/TestFiles/modes/ocad_print_area/*.ocd
 *.VC.opendb
 *.VC.db
-src/packages/
 src/.vs/
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x86
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
@@ -85,11 +83,6 @@ src/.vs/
 /src/TestFiles/printdesc/relay_pdf_desc3.pdf
 /src/TestFiles/punchcards/descpdf1.pdf
 /src/TestFiles/punchcards/descpdf2.pdf
-/src/PurplePenMsixInstaller/AppPackages
-/src/PurplePenMsixInstaller/BundleArtifacts/x64.txt
-/src/PurplePenMsixInstaller/BundleArtifacts/x86.txt
-/src/PurplePenMsixInstaller/BundleArtifacts/Upload/x64.txt
-/src/PurplePenMsixInstaller/BundleArtifacts/Upload/x86.txt
 src/MsixInstaller/AppPackages/
 src/MsftStoreInstaller/AppPackages/
 /src/FontInstaller/output/
