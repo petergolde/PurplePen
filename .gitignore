@@ -37,7 +37,7 @@ doc/userdocs/Help/desktop.ini
 src/SetupIS/SetupIS
 .bzr/
 **/.vs
-.claude
+.claude/
 Thumbs.db
 *.opendb
 *.db
