@@ -40,7 +40,7 @@ src/PPenDXCore.Solution
 src/SetupIS/SetupIS
 .bzr/
 **/.vs
-src/.claude/
+.claude
 Thumbs.db
 *.opendb
 *.db
