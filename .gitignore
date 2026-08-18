@@ -17,8 +17,6 @@ build/
 *.sdf
 *.opensdf
 *.DS_Store
-!src/Libraries/**/Debug
-!src/Libraries/**/Release
 src/TestResults
 src/Tools/TranslateTool/TestResults
 src/Tools/TranslateTool/TestFiles
@@ -57,7 +55,6 @@ ipch/
 *.crunchproject.local.xml
 /src/TestFiles/controller/ocad_create12/mrsneeze.jpg
 /src/TestFiles/controller/ocad_create13/mrsneeze.jpg
-src/TestFiles/modes/ocad_print_area/*.ocd
 *.VC.opendb
 *.VC.db
 src/.vs/
