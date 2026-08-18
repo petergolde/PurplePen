@@ -39,7 +39,6 @@ doc/userdocs/Help/desktop.ini
 src/PPenDXCore.Solution
 src/SetupIS/SetupIS
 .bzr/
-
 **/.vs
 src/.claude/
 Thumbs.db
@@ -48,7 +47,6 @@ Thumbs.db
 src/Innosetup/output/
 src/Innosetup/publish/
 
-
 # Visual C++ cache files
 ipch/
 *.aps
@@ -56,41 +54,19 @@ ipch/
 *.cachefile
 
 # Specific to this project.
-
-*_temp.*
-*_diff.png
-*_new.png
 *_tempnew.png
 *.crunchproject.local.xml
-src/TestResults
-src/tools/TranslateTool/TestResults
-src/tools/TranslateTool/TestFiles
-src/PurplePen_Tests/Test References
-src/TestFiles/controller/ocad_create1/*.ocd
-src/TestFiles/controller/ocad_create2/*.ocd
-src/TestFiles/controller/ocad_create3/*.ocd
-src/TestFiles/controller/ocad_create4/*.ocd
-src/TestFiles/controller/ocad_create5/*.ocd
-src/TestFiles/controller/ocad_create6/*.ocd
 /src/TestFiles/controller/ocad_create12/mrsneeze.jpg
 /src/TestFiles/controller/ocad_create13/mrsneeze.jpg
 src/TestFiles/modes/ocad_print_area/*.ocd
-doc/userdocs/Help/_vti_cnf
-doc/userdocs/Help/_vti_pvt
-doc/userdocs/Help/*.log
-doc/userdocs/Help/desktop.ini
-src/PPenDXCore.Solution
-*.DS_Store
 *.VC.opendb
 *.VC.db
 src/packages/
 src/.vs/
-
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x86
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
 !src/PdfiumViewer/Libraries/**/x86
 !src/PdfiumViewer/Libraries/**/x64
-
 /src/InternalTrace.*.log
 /src/Tools/LinearColorConverter/.vs/
 *.vsidx
