@@ -26,6 +26,7 @@ not the others.
 | `build-linux-packages.sh` | The build script. Run this. |
 | `publish-linux-repos.sh` | Files the built packages into signed apt and dnf repositories. Run this after the build, when releasing. |
 | `config.sh` | Settings — package identity, dependencies, architecture, versioning, AppImage options, and repository publishing. Every value can be overridden by an environment variable of the same name. |
+| `purplepen-archive-keyring.asc` | The **public** half of the repository signing key, shipped inside the packages so they can configure the repository. Safe in version control; the build fails if it does not match `SIGNING_KEY_FINGERPRINT`. |
 | `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the packages. |
 | `purplepen.desktop.template` | Desktop menu entry. |
 | `purplepen-mime.xml.template` | shared-mime-info definition registering `.ppen` files. |
@@ -163,6 +164,61 @@ sudo dnf remove purplepen
 
 After installing, `purplepen` is on `PATH`, Purple Pen appears in the
 applications menu, and double-clicking a `.ppen` file opens it.
+
+## The packages configure the repository themselves
+
+A user's first install is a `.deb` or `.rpm` downloaded from the web site.
+Installing it configures the matching repository, so every update after that
+arrives through their own package manager. Chrome, VS Code and Docker all ship
+this way. Set `SETUP_REPO=false` to build a package that installs the
+application and nothing else.
+
+**A prerelease package subscribes to both channels; a release package subscribes
+to `stable` only.** That asymmetry is deliberate. The beta pool holds only
+prereleases, so a package pointed at `beta` alone would leave a tester sitting on
+`4.0.0~rc1` forever — `4.0.0` lands in the stable pool, which they are not
+watching. Subscribed to both, they are offered the release, and installing it
+rewrites their configuration to `stable` only, so they graduate off the beta
+channel by the ordinary act of taking the update. The channel follows from the
+tilde in the version, the same test `publish-linux-repos.sh` uses to decide which
+pool a package goes into; `REPO_CHANNEL` overrides it.
+
+### What ships, and what is written at install time
+
+The packages carry the public key in both forms under `/usr/share/keyrings/` —
+dearmored for apt's `Signed-By:`, armored for `rpm --import` and dnf's
+`gpgkey=`. Under `/usr` rather than `/etc`, so neither package has to treat it as
+a config file.
+
+The repository configuration itself is **not** shipped. It is written by the
+`postinst` / `%post`. Shipping it would make it a dpkg conffile that prompts the
+user mid-upgrade if they had edited it, and would put it inside the AppImage,
+which is built from the same install tree and must configure nothing. (The
+AppImage also has the keyring stripped out, and the build fails if it does not.)
+
+### Who owns the file afterwards
+
+The generated file carries a marker comment on its first line. While that line is
+there the package owns the file and rewrites it on every install — which is what
+makes switching channels work, since installing the other package rewrites it.
+Delete the line and the package never touches the file again.
+
+The file is removed on `remove`, not only on `purge`. The keyring is an ordinary
+package file and disappears on `remove`, so a sources file left pointing at it
+would make every later `apt update` fail with "the following signatures couldn't
+be verified" — a broken system from having once installed Purple Pen. That bug is
+live in VS Code's packaging today.
+
+### Testing the maintainer scripts without root
+
+The generated scripts honour `DPKG_ROOT`, which dpkg sets when installing into a
+directory other than `/`. That makes the whole state machine drivable against a
+temporary directory:
+
+```bash
+dpkg-deb -e output/purplepen_*.deb /tmp/ctrl
+DPKG_ROOT=/tmp/root sh /tmp/ctrl/postinst configure
+```
 
 ## Publishing to the apt and dnf repositories
 

@@ -1127,66 +1127,83 @@ write_instructions() {
     step "Writing install instructions"
 
     local path="$LINUX_DIR/README.md"
-    local list_file="/etc/apt/sources.list.d/$PACKAGE_NAME.list"
-    local keyring_path="/etc/apt/keyrings/$KEYRING_BASENAME.asc"
+    local sources_file="/etc/apt/sources.list.d/$PACKAGE_NAME.sources"
+    local keyring_path="/etc/apt/keyrings/$KEYRING_BASENAME.gpg"
 
     cat > "$path" <<EOF
 # Installing $DISPLAY_NAME on Linux
 
-These are the $DISPLAY_NAME package repositories. Installing from one means
-$DISPLAY_NAME is kept up to date along with the rest of the system, instead of
-having to download a new file by hand each time.
+## The short version
+
+Download the \`.deb\` or \`.rpm\` from <$PACKAGE_URL> and install it. That is all
+there is to it — the package sets up this repository on its own, so from then on
+$DISPLAY_NAME updates along with the rest of your system.
+
+A package built from a prerelease subscribes you to prereleases *and* releases,
+so you are offered the stable version as soon as it appears. A package built
+from a release subscribes you to releases only.
+
+The file the package writes is
+\`$sources_file\` (apt) or
+\`/etc/yum.repos.d/$PACKAGE_NAME.repo\` (dnf). Its first line says it is managed
+by the package. Delete that line and the package will never touch the file
+again, leaving it yours to edit. To keep the file but stop following the
+repository, set \`Enabled: no\` or \`enabled=0\` instead.
 
 Everything here is signed with this key:
 
     $SIGNING_KEY_FINGERPRINT
 
-## Debian, Ubuntu, Mint and other apt systems
+The rest of this page is for setting the repository up by hand.
+
+## By hand: Debian, Ubuntu, Mint and other apt systems
 
 \`\`\`bash
 sudo install -d -m 0755 /etc/apt/keyrings
-sudo curl -fsSL $KEYRING_URL \\
+sudo curl -fsSL $LINUX_URL/$KEYRING_BASENAME.gpg \\
     -o $keyring_path
-echo "deb [signed-by=$keyring_path] $DEB_URL $STABLE_CHANNEL $DEB_COMPONENT" \\
-    | sudo tee $list_file
+sudo tee $sources_file <<'SOURCES'
+Types: deb
+URIs: $DEB_URL
+Suites: $STABLE_CHANNEL
+Components: $DEB_COMPONENT
+Enabled: yes
+Signed-By: $keyring_path
+SOURCES
 sudo apt update
 sudo apt install $PACKAGE_NAME
 \`\`\`
 
 If \`curl\` is not installed, use \`wget -qO\` in its place.
 
-On apt older than 2.4 -- Debian 11, Ubuntu 20.04 and earlier -- the armored key
-is not accepted. Use the dearmored copy instead, changing both the file you
-download and the path \`signed-by\` points at:
+This is the same path and the same format the package writes, so installing a
+$DISPLAY_NAME package later will not leave you with two entries for one
+repository. It will not overwrite this file either: what you write here has no
+"managed by the package" marker on its first line, so the package treats it as
+yours and leaves it alone. The trade-off is that it also will not follow you
+onto the beta channel or off it — that stays your job.
 
-\`\`\`bash
-sudo curl -fsSL $LINUX_URL/$KEYRING_BASENAME.gpg \\
-    -o /etc/apt/keyrings/$KEYRING_BASENAME.gpg
-echo "deb [signed-by=/etc/apt/keyrings/$KEYRING_BASENAME.gpg] $DEB_URL $STABLE_CHANNEL $DEB_COMPONENT" \\
-    | sudo tee $list_file
-sudo apt update
+The dearmored \`.gpg\` key is used rather than the armored \`.asc\` because apt
+older than 2.4 — Debian 11, Ubuntu 20.04 and earlier — cannot read the armored
+form. Newer apt accepts either.
+
+### Prereleases
+
+Add \`$BETA_CHANNEL\` to the \`Suites:\` line rather than replacing
+\`$STABLE_CHANNEL\`, so the stable release is still offered when it appears:
+
+\`\`\`
+Suites: $BETA_CHANNEL $STABLE_CHANNEL
 \`\`\`
 
-### Prerelease builds
-
-Betas and release candidates are in a separate channel. To get them, add a
-second line rather than replacing the first -- that way the stable release is
-still offered when it appears:
-
-\`\`\`bash
-echo "deb [signed-by=$keyring_path] $DEB_URL $BETA_CHANNEL $DEB_COMPONENT" \\
-    | sudo tee -a $list_file
-sudo apt update
-\`\`\`
-
-## Fedora, RHEL, openSUSE and other dnf systems
+## By hand: Fedora, RHEL, openSUSE and other dnf systems
 
 \`\`\`bash
 sudo dnf config-manager --add-repo $RPM_URL/$PACKAGE_NAME.repo
 sudo dnf install $PACKAGE_NAME
 \`\`\`
 
-On dnf5 -- Fedora 41 and later -- the first command is spelled:
+On dnf5 — Fedora 41 and later — the first command is spelled:
 
 \`\`\`bash
 sudo dnf config-manager addrepo --from-repofile=$RPM_URL/$PACKAGE_NAME.repo
@@ -1195,7 +1212,7 @@ sudo dnf config-manager addrepo --from-repofile=$RPM_URL/$PACKAGE_NAME.repo
 The first install asks you to confirm the signing key; check that the
 fingerprint it shows matches the one above.
 
-### Prerelease builds
+### Prereleases
 
 The beta repository is installed but disabled. Enable it with:
 
@@ -1205,16 +1222,20 @@ sudo dnf config-manager --set-enabled $PACKAGE_NAME-$BETA_CHANNEL
 
 ## Removing the repository
 
+Uninstalling $DISPLAY_NAME takes the repository configuration with it. To remove
+it while keeping the application:
+
 \`\`\`bash
-sudo rm $list_file $keyring_path                     # apt
-sudo rm /etc/yum.repos.d/$PACKAGE_NAME.repo          # dnf
+sudo rm $sources_file $keyring_path      # apt
+sudo rm /etc/yum.repos.d/$PACKAGE_NAME.repo               # dnf
 \`\`\`
 
 ## Other formats
 
 $DISPLAY_NAME is also distributed as an AppImage, which needs no repository and
-no installation -- download it, make it executable and run it. It is not
-published here; see <$PACKAGE_URL>.
+no installation — download it, make it executable and run it. It configures
+nothing and updates itself through neither of these repositories; see
+<$PACKAGE_URL>.
 EOF
     chmod 0644 "$path"
 

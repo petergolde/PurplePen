@@ -361,12 +361,69 @@ libicu, openssl-libs}"
 : "${OUTPUT_SUBDIR:=output}"
 
 # ---------------------------------------------------------------------------
+# Repository setup by the installed package
+# ---------------------------------------------------------------------------
+#
+# A user's first install is a file downloaded from the web site. Rather than ask
+# them to paste four shell commands to subscribe to the repository, the package
+# configures it for them, so every later update arrives through apt or dnf along
+# with the rest of their software. Chrome, VS Code and Docker all ship this way.
+
+# Have the .deb and .rpm configure the repository when they are installed.
+#
+# Turn this off to build a package that installs the application and nothing
+# else -- for a distribution's own repository, say, where the packaging is the
+# distribution's business and a third-party source list would be unwelcome.
+: "${SETUP_REPO:=true}"
+
+# Which channel the installed package subscribes the user to.
+#
+#   auto     follow the version -- a prerelease subscribes to beta AND stable,
+#            a release subscribes to stable only
+#   stable   stable only
+#   beta     beta and stable
+#
+# A beta package deliberately subscribes to BOTH channels. The beta pool holds
+# only prereleases, so a package pointed at beta alone would leave a tester
+# sitting on 4.0.0~rc1 forever: 4.0.0 lands in the stable pool, which they are
+# not watching. Subscribed to both, they are offered the release, and installing
+# it rewrites their configuration to stable only -- so they graduate off the
+# beta channel by the ordinary act of taking the update.
+: "${REPO_CHANNEL:=auto}"
+
+# The public key, as committed beside this file.
+#
+# This is the public half of the signing key, so it belongs in version control:
+# it is already published on the download site, and having it here is what lets
+# a package be built without the signing key's removable drive being present.
+# The build checks its fingerprint against SIGNING_KEY_FINGERPRINT below, so a
+# stale copy fails the build rather than shipping a package whose repository
+# nobody can verify.
+: "${KEYRING_SOURCE:=purplepen-archive-keyring.asc}"
+
+# Where the key is installed. Under /usr rather than /etc so that neither
+# package has to treat it as a configuration file. This is a Debian convention
+# and not a Fedora one, but nothing on either side objects to it.
+: "${KEYRING_INSTALL_DIR:=/usr/share/keyrings}"
+
+# First line of the generated repository configuration, and the thing that
+# decides who owns that file.
+#
+# While this line is present the package owns the file and rewrites it on every
+# install -- which is what makes switching channels work, since installing the
+# other package rewrites the file. Delete the line and the package never touches
+# it again. To keep the configuration but stop using the repository, set
+# "Enabled: no" (apt) or "enabled=0" (dnf) instead of deleting anything.
+: "${REPO_MARKER:=# Managed by the $PACKAGE_NAME package -- delete this line to manage this file yourself.}"
+
+# ---------------------------------------------------------------------------
 # Repository publishing
 # ---------------------------------------------------------------------------
 #
 # Everything below is used by publish-linux-repos.sh, which takes the packages
 # in output/ and files them into an apt repository and a dnf repository. The
-# build script ignores all of it.
+# build script also reads the URLs, channel names and key settings, because the
+# repository it configures on a user's machine has to be the one being published.
 
 # Where the published repositories will be reachable from.
 #
