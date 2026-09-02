@@ -670,4 +670,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Finish</value>
+  </data>
 </root>

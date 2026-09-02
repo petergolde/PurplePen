@@ -646,4 +646,7 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Image file|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Bitiş</value>
+  </data>
 </root>

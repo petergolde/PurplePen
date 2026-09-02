@@ -634,4 +634,7 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>A GPL Ghostscript nincs telepítve.</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>Be&amp;fejezés</value>
+  </data>
 </root>

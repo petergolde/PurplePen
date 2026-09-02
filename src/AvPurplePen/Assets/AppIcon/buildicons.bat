@@ -1,0 +1,2 @@
+magick PurplePenBeta.16x16.png PurplePenBeta.24x24.png PurplePenBeta.32x32.png PurplePenBeta.48x48.png PurplePenBeta.64x64.png PurplePenBeta.128x128.png -type TrueColorAlpha PurplePenBeta.ico
+magick PurplePen.16x16.png PurplePen.24x24.png PurplePen.32x32.png PurplePen.48x48.png PurplePen.64x64.png PurplePen.128x128.png -type TrueColorAlpha PurplePen.ico

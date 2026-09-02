@@ -1,3 +1,5 @@
+@echo off
+
 set INNOSETUP_EXECUTABLE="C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
 set INNOSETUP_FILE=PurplePen.iss
 set PROJECT_FILE=..\AvPurplePen\AvPurplePen.csproj
@@ -7,6 +9,7 @@ set CONFIGURATION=Release
 set TARGET_FRAMEWORK=net10.0
 set SELF_CONTAINED=true
 set PUBLISH_READYTORUN=false
+set BETA=1
 
 rmdir /s /q publish 2>nul
 
@@ -33,7 +36,7 @@ if errorlevel 1 (
 copy publish\PdfConverter\PdfConverter*.* publish\Main
 copy publish\PdfConverter\Pdfium*.* publish\Main
 
-%INNOSETUP_EXECUTABLE% "%INNOSETUP_FILE%"
+%INNOSETUP_EXECUTABLE% "%INNOSETUP_FILE%" /DBeta=%BETA%
 
 if errorlevel 1 (
     echo.

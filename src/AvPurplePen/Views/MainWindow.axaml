@@ -220,16 +220,16 @@
                     <NativeMenuItem Header="{resx:Localize MainFrame_mapIntensityMenu_Text}">
                         <NativeMenu>
                             <NativeMenuItem Header="{resx:Localize MainFrame_veryLowIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                                            CommandParameter="{Binding Source=0.2, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            CommandParameter="{Binding Source=0.4, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
                                             ToggleType="CheckBox" IsChecked="{Binding IntensityVeryLowChecked, Mode=TwoWay}"/>
                             <NativeMenuItem Header="{resx:Localize MainFrame_lowIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                                            CommandParameter="{Binding Source=0.4, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            CommandParameter="{Binding Source=0.55, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
                                             ToggleType="CheckBox" IsChecked="{Binding IntensityLowChecked, Mode=TwoWay}"/>
                             <NativeMenuItem Header="{resx:Localize MainFrame_mediumIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                                            CommandParameter="{Binding Source=0.6, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            CommandParameter="{Binding Source=0.7, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
                                             ToggleType="CheckBox" IsChecked="{Binding IntensityMediumChecked, Mode=TwoWay}"/>
                             <NativeMenuItem Header="{resx:Localize MainFrame_highIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
-                                            CommandParameter="{Binding Source=0.8, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
+                                            CommandParameter="{Binding Source=0.85, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"
                                             ToggleType="CheckBox" IsChecked="{Binding IntensityHighChecked, Mode=TwoWay}"/>
                             <NativeMenuItem Header="{resx:Localize MainFrame_fullIntensityMenu_Text}" Command="{Binding SetMapIntensityCommand}"
                                             CommandParameter="{Binding Source=1, Converter={x:Static avutil:StringToDoubleConverter.Instance}}"

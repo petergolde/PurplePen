@@ -646,4 +646,7 @@
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Файл с изображение|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Финал</value>
+  </data>
 </root>

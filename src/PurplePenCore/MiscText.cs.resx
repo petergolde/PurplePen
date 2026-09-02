@@ -637,4 +637,7 @@ OK - zkus soubor s mapou najít.</value>
   <data name="CodeUnder31" xml:space="preserve">
     <value>Kód kontroly by měl být 31 nebo vyšší.</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Cíl</value>
+  </data>
 </root>

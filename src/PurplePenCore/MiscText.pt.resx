@@ -648,4 +648,7 @@ Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapp
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Ficheiro Imagem|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>Meta (&amp;F)</value>
+  </data>
 </root>

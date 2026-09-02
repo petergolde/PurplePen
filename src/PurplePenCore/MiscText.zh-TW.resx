@@ -634,4 +634,7 @@
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>圖片圖檔|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>終點</value>
+  </data>
 </root>

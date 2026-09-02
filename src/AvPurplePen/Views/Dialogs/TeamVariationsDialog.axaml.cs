@@ -20,7 +20,6 @@ using System;
 using System.ComponentModel;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Avalonia.Platform;
 using Avalonia.Threading;
 using AvUtil;
 using PurplePen.ViewModels;
@@ -46,13 +45,9 @@ namespace AvPurplePen.Views
         {
             InitializeComponent();
 
-            // On Linux, NativeWebView's default WPE WebKit backend does not render
-            // content; ask for WebKitGTK instead, which Print relies on there.
-            reportWebView.EnvironmentRequested += (sender, args) =>
-            {
-                if (args is LinuxWpeWebViewEnvironmentRequestedEventArgs wpe)
-                    wpe.PreferWebKitGtkInstead = true;
-            };
+            // Sets the WebView2 user data folder on Windows (the default is not writable
+            // when installed to Program Files) and selects the WebKitGTK backend on Linux.
+            WebViewEnvironment.Configure(reportWebView);
 
             reportWebView.IsVisible = !useHtmlPanel;
             reportHtmlPanel.IsVisible = useHtmlPanel;

@@ -649,4 +649,7 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript ist nicht installiert</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Ziel</value>
+  </data>
 </root>
