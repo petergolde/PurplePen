@@ -660,19 +660,32 @@ end;
 ; We need WebView2 for the NativeWebView control, used in Reports.
 #define UseWebView2
 
+; Beta, MyOutputBase and MyAppVersion are normally supplied on the ISCC command
+; line by create-setup.bat, which derives all three from the version number
+; compiled into the application (see Installer\GetVersion.cs). The definitions
+; below are the fallbacks used when this script is compiled directly from the
+; Inno Setup IDE, where there is no command line to supply them.
+;
+; NOTE: a value that arrives via /D is a string, and ISPP considers the string
+; "0" to be true. So Beta has to be tested with Int(), not as a bare #if, or a
+; stable build would be packaged as a beta.
 #ifndef Beta
   #define Beta 0
 #endif
-#if Beta
+#if Int(Beta) != 0
   #define MyAppName "Purple Pen Beta"
   #define MyAppId "{{E0070449-77A7-447C-A377-4A891577DD1E}"
   #define MyProgId "PurplePen.PurplePenEventBeta"
-  #define MyOutputBase "purplepen-beta-setup"
+  #ifndef MyOutputBase
+    #define MyOutputBase "purplepen-beta-setup"
+  #endif
 #else
   #define MyAppName "Purple Pen"
   #define MyAppId "{{347D1E62-7134-4827-9679-4952BEC91C95}"
   #define MyProgId "PurplePen.PurplePenEvent"
-  #define MyOutputBase "purplepen-setup"
+  #ifndef MyOutputBase
+    #define MyOutputBase "purplepen-setup"
+  #endif
 #endif
 
 
@@ -680,7 +693,9 @@ end;
 #define MyAppURL "http://purple-pen.org"
 #define MyAppExeName "PurplePen.exe"
 #define BuildDir "publish\Main"
-#define MyAppVersion GetVersionNumbersString(BuildDir + "\PurplePen.exe")
+#ifndef MyAppVersion
+  #define MyAppVersion GetVersionNumbersString(BuildDir + "\PurplePen.exe")
+#endif
 
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.

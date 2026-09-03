@@ -9,7 +9,16 @@ set CONFIGURATION=Release
 set TARGET_FRAMEWORK=net10.0
 set SELF_CONTAINED=true
 set PUBLISH_READYTORUN=false
-set BETA=1
+
+rem GetVersion.cs reads the version number out of a compiled assembly and writes
+rem a batch file that sets VERSION_MAJOR/MINOR/BUILD/REV, VERSION_STRING,
+rem VERSION_PRERELEASE and SETUP_BASENAME. Those drive the Beta, MyAppVersion and
+rem MyOutputBase defines that PurplePen.iss compiles with, so the installer's
+rem name, version and beta-vs-stable identity all follow from the one version
+rem number in VersionNumber.cs.
+set GETVERSION_SOURCE=..\Installer\GetVersion.cs
+set VERSION_DLL=publish\Main\PurplePenCore.dll
+set VERSION_SCRIPT=publish\setversion.cmd
 
 rmdir /s /q publish 2>nul
 
@@ -36,7 +45,25 @@ if errorlevel 1 (
 copy publish\PdfConverter\PdfConverter*.* publish\Main
 copy publish\PdfConverter\Pdfium*.* publish\Main
 
-%INNOSETUP_EXECUTABLE% "%INNOSETUP_FILE%" /DBeta=%BETA%
+dotnet run --file "%GETVERSION_SOURCE%" -- batch "%VERSION_DLL%" > "%VERSION_SCRIPT%"
+
+if errorlevel 1 (
+    echo.
+    echo ERROR: Could not read the version number from "%VERSION_DLL%". Setup was not created.
+    exit /b 1
+)
+
+call "%VERSION_SCRIPT%"
+
+if not defined SETUP_BASENAME (
+    echo.
+    echo ERROR: "%VERSION_SCRIPT%" did not set the version variables. Setup was not created.
+    exit /b 1
+)
+
+echo Creating setup for version %VERSION_STRING% as %SETUP_BASENAME%.exe
+
+%INNOSETUP_EXECUTABLE% "%INNOSETUP_FILE%" /DBeta=%VERSION_PRERELEASE% /DMyAppVersion=%VERSION_STRING% /DMyOutputBase=%SETUP_BASENAME%
 
 if errorlevel 1 (
     echo.
