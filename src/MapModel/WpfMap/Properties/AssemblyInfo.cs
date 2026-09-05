@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyTitle("WpfMap")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Golde Software")]
 [assembly: AssemblyProduct("WpfMap")]
 [assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
