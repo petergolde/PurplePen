@@ -12,7 +12,7 @@ using System.Runtime.Versioning;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Golde Software")]
-[assembly: AssemblyProduct("Test_MapModel")]
+[assembly: AssemblyProduct("TestUtil")]
 [assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

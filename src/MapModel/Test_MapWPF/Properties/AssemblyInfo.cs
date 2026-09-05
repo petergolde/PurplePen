@@ -6,11 +6,11 @@ using System.Runtime.Versioning;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TestProject1")]
+[assembly: AssemblyTitle("Test_MapWPF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Golde Software")]
-[assembly: AssemblyProduct("TestProject1")]
+[assembly: AssemblyProduct("Test_MapWPF")]
 [assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
