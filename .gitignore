@@ -88,6 +88,7 @@ src/MsixInstaller/AppPackages/
 src/MsftStoreInstaller/AppPackages/
 /src/FontInstaller/output/
 loc/po/tar/
+loc/po/*Log.txt
 /src/Help/output/Purple Pen Help.log
 /src/TestFiles/controller/ocad_create10/Lincoln-CMYK.gif
 
