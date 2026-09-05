@@ -13,7 +13,7 @@ using ExecutionScope = Microsoft.VisualStudio.TestTools.UnitTesting.ExecutionSco
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Map_Skia.Tests")]
-[assembly: AssemblyCopyright("Copyright © 2006-2026 Peter Golde")]
+[assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

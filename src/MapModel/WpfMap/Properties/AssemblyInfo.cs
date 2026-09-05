@@ -13,7 +13,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WpfMap")]
-[assembly: AssemblyCopyright("Copyright © 2006-2026 Peter Golde")]
+[assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

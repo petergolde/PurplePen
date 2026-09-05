@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Windows User")]
 [assembly: AssemblyProduct("Geometry")]
-[assembly: AssemblyCopyright("Copyright © 2006-2026 Peter Golde")]
+[assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

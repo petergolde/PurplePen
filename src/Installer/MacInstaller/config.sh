@@ -32,7 +32,7 @@
 : "${DISPLAY_NAME:=Purple Pen}"
 
 # Copyright string shown in Finder's Get Info panel.
-: "${COPYRIGHT:=Copyright © 2006-2026 Peter Golde. All rights reserved.}"
+: "${COPYRIGHT:=Copyright 2006-2026 Peter Golde}"
 
 # Which icon family in AvPurplePen/Assets/AppIcon to build the .icns from.
 #

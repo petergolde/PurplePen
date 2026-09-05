@@ -24,7 +24,7 @@ namespace PurplePen.ViewModels
         /// This is a fixed legal text and is not localized.
         /// </summary>
         public string LicenseText { get; } =
-            "Copyright \u00A9 2006-2026 Peter Golde\n" +
+            "Copyright 2006-2026 Peter Golde\n" +
             "\n" +
             "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n" +
             "\n" +
