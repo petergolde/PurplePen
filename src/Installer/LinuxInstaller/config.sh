@@ -447,6 +447,40 @@ libicu, openssl-libs}"
 : "${DEB_REPO_SUBDIR:=$PUBLISH_LINUX_SUBDIR/deb}"
 : "${RPM_REPO_SUBDIR:=$PUBLISH_LINUX_SUBDIR/rpm}"
 
+# Where the AppImage is published, with the architecture appended -- so an
+# x86-64 AppImage lands in linux/appimage/x64, the same shape as the windows/x64
+# and mac/arm64 directories the other platforms' downloads live in.
+#
+# Unlike the two above this is not a repository: nothing indexes it and nobody
+# subscribes to it. An AppImage belongs to whoever downloaded it rather than to
+# a package manager, and it is updated by Purple Pen downloading a replacement
+# and moving it over the running file, so all it needs is a settled address to
+# download from.
+: "${APPIMAGE_PUBLISH_SUBDIR:=$PUBLISH_LINUX_SUBDIR/appimage}"
+
+# ---------------------------------------------------------------------------
+# Update manifest
+# ---------------------------------------------------------------------------
+#
+# manifest.json sits at the top of the published root, and is what a running
+# copy of Purple Pen reads to find out whether a newer version exists (see
+# PurplePenCore/CoreUpdater.cs). The Windows and macOS publish scripts write
+# their own entries into the same file; publish-linux-repos.sh writes the two
+# Linux ones.
+
+# Release notes for the "linux-<arch>" entry, which is the entry seen by someone
+# who installed the .deb or the .rpm.
+#
+# That entry deliberately offers no download. Those files belong to the package
+# manager that installed them, and replacing them from inside the application
+# would leave apt or dnf describing a version that is no longer on disk. So the
+# entry says only that a new version exists, and this file is the text telling
+# the user how to get it.
+#
+# A relative name is taken as relative to the script, so the default finds
+# default_message.txt beside it.
+: "${MANIFEST_MESSAGE_FILE:=default_message.txt}"
+
 # Release channels.
 #
 # A package goes to "beta" if its version carries a prerelease marker (the

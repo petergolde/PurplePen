@@ -2,10 +2,13 @@
 #
 # publish-linux-repos.sh
 #
-# Takes the .deb and .rpm packages built by build-linux-packages.sh and files
-# them into a signed apt repository and a signed dnf/yum repository, so that
-# Linux users can "apt install purplepen" or "dnf install purplepen" and get
-# updates automatically.
+# Takes the packages built by build-linux-packages.sh and publishes them. The
+# .deb and .rpm are filed into a signed apt repository and a signed dnf/yum
+# repository, so that Linux users can "apt install purplepen" or "dnf install
+# purplepen" and get updates automatically. The AppImage, which belongs to no
+# package manager, is copied into the download tree beside them. All of them are
+# then recorded in the update manifest that Purple Pen reads to find out whether
+# there is a newer version.
 #
 #     ./publish-linux-repos.sh ~/ppdownload /mnt/e/PurplePenSigning
 #
@@ -15,6 +18,8 @@
 #
 #     <repository-dir>/
 #     |-- root/
+#     |   |-- manifest.json                       update manifest, shared with
+#     |   |                                       the Windows and macOS builds
 #     |   `-- linux/
 #     |       |-- purplepen-archive-keyring.asc   public key, for apt and dnf
 #     |       |-- purplepen-archive-keyring.gpg   same key, dearmored
@@ -22,9 +27,10 @@
 #     |       |-- deb/
 #     |       |   |-- pool/<channel>/main/p/purplepen/*.deb
 #     |       |   `-- dists/<channel>/...         indexes and signatures
-#     |       `-- rpm/
-#     |           |-- purplepen.repo              generated dnf configuration
-#     |           `-- <channel>/<arch>/*.rpm + repodata/
+#     |       |-- rpm/
+#     |       |   |-- purplepen.repo              generated dnf configuration
+#     |       |   `-- <channel>/<arch>/*.rpm + repodata/
+#     |       `-- appimage/<arch>/*.AppImage      what the updater downloads
 #     `-- data/
 #         |-- README.md
 #         |-- apt-ftparchive-<channel>.db         index cache
@@ -37,12 +43,15 @@
 # The pipeline is:
 #
 #   1. Work out which packages exist and which channel each belongs to
-#   2. Import the signing key into a throwaway keyring and take the passphrase
-#   3. Publish the public key users need in order to verify any of this
-#   4. File the .debs into the pool, rebuild the indexes, sign them
-#   5. File the .rpms, sign each one, rebuild the metadata, sign that
-#   6. Regenerate the install instructions from the live configuration
-#   7. Verify every signature and checksum, and fail on anything wrong
+#   2. Read the version number out of the binary inside one of them
+#   3. Import the signing key into a throwaway keyring and take the passphrase
+#   4. Publish the public key users need in order to verify any of this
+#   5. File the .debs into the pool, rebuild the indexes, sign them
+#   6. File the .rpms, sign each one, rebuild the metadata, sign that
+#   7. Copy the AppImage in, where Purple Pen's own updater downloads it from
+#   8. Regenerate the install instructions from the live configuration
+#   9. Record both Linux entries in manifest.json
+#  10. Verify every signature and checksum, and fail on anything wrong
 #
 # Uploading is deliberately not in scope. This script only prepares the
 # directory; getting root/ onto the web site is a separate step.
@@ -70,8 +79,16 @@
 #                                   a directory of .rpms a dnf repository.
 #     rpmsign          rpm          Signs each .rpm in place. Unlike Debian,
 #                                   RPM signatures live inside the package.
-#     dpkg-deb         dpkg         Reads the control fields back out of a .deb.
+#     dpkg-deb         dpkg         Reads the control fields back out of a .deb,
+#                                   and extracts the binary whose version number
+#                                   goes into the manifest.
 #     gzip, xz         base, xz-utils  Compress the Packages index.
+#
+# The .NET SDK is needed too, for the two programs that write the manifest --
+# GetVersion.cs and the UpdateManifest tool. It is not in the list above because
+# it is not a distribution package everywhere; if these packages were built on
+# this machine then it is already installed. See
+# https://learn.microsoft.com/dotnet/core/install/linux
 #
 # No pinentry program is required. The passphrase is read by this script and
 # handed to gpg through a loopback pinentry, which matters because WSL often
@@ -143,7 +160,10 @@ usage() {
 Usage: publish-linux-repos.sh [options] <repository-dir> <signing-key-dir>
 
 Publishes the packages in output/ into an apt repository and a dnf repository
-under <repository-dir>, signing both with the GPG key in <signing-key-dir>.
+under <repository-dir>, signing both with the GPG key in <signing-key-dir>. The
+AppImage is copied into the same tree, and an entry for it and one for the
+packages are written into the tree's manifest.json, so that running copies of
+Purple Pen are offered the update.
 
 Arguments:
   <repository-dir>    Publishing directory, e.g. ~/ppdownload. Created if it
@@ -160,8 +180,10 @@ Options:
                       per package. Normally the channel follows from the
                       version: a prerelease such as 4.0.0~beta1 goes to beta,
                       anything else to stable.
-  --deb-only          Publish only the apt repository.
-  --rpm-only          Publish only the dnf repository.
+  --deb-only          Publish only the apt repository. The AppImage and the
+                      manifest are published either way.
+  --rpm-only          Publish only the dnf repository. The AppImage and the
+                      manifest are published either way.
   --no-sign           Do not sign anything. For testing the layout only -- apt
                       and dnf both refuse an unsigned repository by default, so
                       what this produces is not usable.
@@ -218,6 +240,26 @@ PUBLISH_DATA="$REPO_DIR/$PUBLISH_DATA_SUBDIR"
 LINUX_DIR="$PUBLISH_ROOT/$PUBLISH_LINUX_SUBDIR"
 DEB_ROOT="$PUBLISH_ROOT/$DEB_REPO_SUBDIR"
 RPM_ROOT="$PUBLISH_ROOT/$RPM_REPO_SUBDIR"
+APPIMAGE_ROOT="$PUBLISH_ROOT/$APPIMAGE_PUBLISH_SUBDIR"
+
+# The manifest sits at the top of the published root, which is where Purple Pen
+# looks for it. It is shared with the other two platforms -- see
+# Innosetup/publish-setup.bat and Installer/MacInstaller/publish-mac-app.sh,
+# which write their entries into this same file.
+MANIFEST_FILE="$PUBLISH_ROOT/manifest.json"
+
+# The two programs that fill it in, both of them elsewhere in this source tree.
+SRC_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+GETVERSION_SOURCE="$SRC_DIR/Installer/GetVersion.cs"
+UPDATEMANIFEST_PROJECT="$SRC_DIR/Tools/UpdateManifest/UpdateManifest.csproj"
+
+# Release notes for the entry that carries no download. A relative setting is
+# taken as relative to this script, so the default finds default_message.txt
+# beside it however the script was invoked.
+case "$MANIFEST_MESSAGE_FILE" in
+    /*) MESSAGE_FILE="$MANIFEST_MESSAGE_FILE" ;;
+    *)  MESSAGE_FILE="$SCRIPT_DIR/$MANIFEST_MESSAGE_FILE" ;;
+esac
 
 KEYRING_ASC="$LINUX_DIR/$KEYRING_BASENAME.asc"
 KEYRING_GPG="$LINUX_DIR/$KEYRING_BASENAME.gpg"
@@ -228,6 +270,7 @@ LINUX_URL="$PUBLISH_BASE_URL/$PUBLISH_LINUX_SUBDIR"
 DEB_URL="$PUBLISH_BASE_URL/$DEB_REPO_SUBDIR"
 RPM_URL="$PUBLISH_BASE_URL/$RPM_REPO_SUBDIR"
 KEYRING_URL="$LINUX_URL/$KEYRING_BASENAME.asc"
+APPIMAGE_URL_BASE="$PUBLISH_BASE_URL/$APPIMAGE_PUBLISH_SUBDIR"
 
 # ---------------------------------------------------------------------------
 # Preflight checks
@@ -278,6 +321,31 @@ check_prerequisites() {
 
     [[ "$DO_SIGN" == "0" ]] || require_tool gpg gnupg gnupg2
 
+    # Every run writes the manifest, and both halves of that need the .NET SDK:
+    # GetVersion.cs reads the version out of the built binary, and the
+    # UpdateManifest tool writes the entries. Both are run with "dotnet run",
+    # exactly as the Windows and macOS publish scripts run them.
+    command -v dotnet >/dev/null 2>&1 \
+        || die "Required tool not found: dotnet
+
+The .NET SDK writes the update manifest. If these packages were built here it is
+installed already; otherwise see
+https://learn.microsoft.com/dotnet/core/install/linux"
+
+    [[ -f "$GETVERSION_SOURCE" ]] \
+        || die "Cannot find $GETVERSION_SOURCE, which reads the version number out
+of the built binary."
+
+    [[ -f "$UPDATEMANIFEST_PROJECT" ]] \
+        || die "Cannot find $UPDATEMANIFEST_PROJECT, which writes the manifest."
+
+    [[ -f "$MESSAGE_FILE" ]] \
+        || die "Cannot find the release notes file $MESSAGE_FILE
+
+This is the text shown to someone running a packaged build, who has to update
+through their package manager rather than from inside Purple Pen. Point
+MANIFEST_MESSAGE_FILE at a different file to use another one."
+
     [[ -d "$PACKAGES_DIR" ]] \
         || die "No package directory at $PACKAGES_DIR
 
@@ -326,6 +394,14 @@ Expected the signing key directory to contain:
 DEB_FILES=(); DEB_NAMES=(); DEB_VERSIONS=(); DEB_ARCHES=(); DEB_CHANNELS=()
 RPM_FILES=(); RPM_NAMES=(); RPM_VERSIONS=(); RPM_ARCHES=(); RPM_CHANNELS=()
 
+# The same for the AppImages, one array shorter: an AppImage has no package name
+# and no packaging revision.
+APPIMAGE_FILES=(); APPIMAGE_VERSIONS=(); APPIMAGE_ARCHES=(); APPIMAGE_CHANNELS=()
+
+# The upstream version every artifact in this run shares, e.g. "4.0.0~beta1".
+# Set by check_versions_agree.
+UPSTREAM_VERSION=""
+
 # channel_for_version: print the channel a package with version $1 belongs to.
 #
 # read_version in build-linux-packages.sh folds the release stage into the
@@ -343,11 +419,109 @@ channel_for_version() {
     fi
 }
 
+# manifest_arch: print the architecture name the manifest uses for the package
+# architecture $1.
+#
+# The manifest spells architectures the way .NET does -- x64, arm64 -- because
+# UpdateManager.GetPlatformName builds the platform name out of
+# RuntimeInformation.OSArchitecture. dpkg, rpm and appimagetool each spell the
+# same architecture differently, so every one of their names has to land on one
+# of these; an entry filed under any other name is one no copy of Purple Pen
+# will ever match itself against.
+manifest_arch() {
+    case "$1" in
+        amd64|x86_64)      printf 'x64'   ;;
+        arm64|aarch64)     printf 'arm64' ;;
+        armhf|armv7hl|arm) printf 'arm'   ;;
+        i386|i686|x86)     printf 'x86'   ;;
+        *) die "No manifest architecture is known for \"$1\".
+
+Purple Pen names architectures x64, arm64, arm and x86 (see
+UpdateManager.GetPlatformName). Add the mapping to manifest_arch if a new
+architecture is being built." ;;
+    esac
+}
+
+# manifest_channel: print the manifest channel name for repository channel $1.
+#
+# The repositories and the manifest use different words for the same two
+# channels. An apt suite is called "$STABLE_CHANNEL" because that is what a
+# Debian user expects to read in sources.list, while the manifest says "main"
+# because that is what UpdateManager.GetChannels asks for.
+manifest_channel() {
+    case "$1" in
+        "$STABLE_CHANNEL") printf 'main' ;;
+        "$BETA_CHANNEL")   printf 'beta' ;;
+        *) die "No manifest channel is known for the repository channel \"$1\"." ;;
+    esac
+}
+
+# require_same_version: record $1, the version of file $2, as the version this
+# run is publishing -- or fail if a different one has already been recorded.
+require_same_version() {
+    if [[ -z "$UPSTREAM_VERSION" ]]; then
+        UPSTREAM_VERSION="$1"
+        return 0
+    fi
+
+    [[ "$1" == "$UPSTREAM_VERSION" ]] || die "$2 is version $1, but this run is
+publishing $UPSTREAM_VERSION.
+
+The manifest records one version for Linux, so everything published together has
+to be one release -- otherwise half the files in the tree are a version the
+manifest does not mention. Move the other build out of $PACKAGES_DIR and run
+again."
+}
+
+# check_versions_agree: fail unless every artifact describes the same release,
+# and leave UPSTREAM_VERSION set to it.
+#
+# The repositories themselves cope perfectly well with a directory holding
+# several versions -- each is simply indexed, and apt picks the newest. The
+# manifest does not: it names ONE version per platform. Different architectures
+# of the same version are fine; that is what the platform name distinguishes.
+check_versions_agree() {
+    local i
+
+    for ((i = 0; i < ${#DEB_FILES[@]}; i++)); do
+        # Strip the packaging revision Debian appends: "4.0.0~beta1-1" and
+        # "4.0.0~beta1" are the same release, differing only in how it was
+        # packaged.
+        require_same_version "${DEB_VERSIONS[i]%-*}" "$(basename "${DEB_FILES[i]}")"
+    done
+    for ((i = 0; i < ${#RPM_FILES[@]}; i++)); do
+        require_same_version "${RPM_VERSIONS[i]%-*}" "$(basename "${RPM_FILES[i]}")"
+    done
+    for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+        require_same_version "${APPIMAGE_VERSIONS[i]}" "$(basename "${APPIMAGE_FILES[i]}")"
+    done
+}
+
+# check_architectures_known: fail now if any artifact is for an architecture the
+# manifest has no name for.
+#
+# manifest_arch is called from inside command substitutions later on, where a
+# failure would be swallowed rather than stopping the run. Calling it here, once
+# per artifact, moves that failure to before anything has been written.
+check_architectures_known() {
+    local i unused
+
+    for ((i = 0; i < ${#DEB_ARCHES[@]}; i++)); do
+        unused="$(manifest_arch "${DEB_ARCHES[i]}")"
+    done
+    for ((i = 0; i < ${#RPM_ARCHES[@]}; i++)); do
+        unused="$(manifest_arch "${RPM_ARCHES[i]}")"
+    done
+    for ((i = 0; i < ${#APPIMAGE_ARCHES[@]}; i++)); do
+        unused="$(manifest_arch "${APPIMAGE_ARCHES[i]}")"
+    done
+}
+
 # discover_packages: fill the arrays above from PACKAGES_DIR.
 discover_packages() {
     step "Finding packages in $PACKAGES_DIR"
 
-    local file name version arch release
+    local file name version arch release base stem
 
     if [[ "$PUBLISH_DEB" == "true" ]]; then
         while IFS= read -r file; do
@@ -386,11 +560,52 @@ discover_packages() {
         done < <(find "$PACKAGES_DIR" -maxdepth 1 -type f -name '*.rpm' | sort)
     fi
 
+    # The AppImage is collected whichever repository was asked for. It is part
+    # of neither, and its manifest entry has to be written in the same run as the
+    # packages' entry: written in two runs, from two builds, the two halves of
+    # the manifest would end up describing different versions.
+    #
+    # An AppImage carries no metadata to interrogate the way dpkg-deb and rpm
+    # interrogate a package, so the version and architecture come from the name
+    # build-linux-packages.sh gave it, "$APP_NAME-<version>-<arch>.AppImage".
+    # check_versions_agree then holds that name against what the packages say,
+    # which is what catches a file that was renamed or left over.
+    while IFS= read -r file; do
+        [[ -n "$file" ]] || continue
+        base="$(basename "$file")"
+
+        stem="${base%.AppImage}"
+        arch="${stem##*-}"
+        stem="${stem%-*}"
+        version="${stem#"$APP_NAME"-}"
+
+        [[ -n "$arch" && -n "$version" && "$version" != "$stem" ]] \
+            || die "Cannot read a version and architecture out of $base.
+
+Expected a name of the form $APP_NAME-<version>-<arch>.AppImage, which is what
+build-linux-packages.sh produces."
+
+        APPIMAGE_FILES+=("$file"); APPIMAGE_VERSIONS+=("$version")
+        APPIMAGE_ARCHES+=("$arch")
+        APPIMAGE_CHANNELS+=("$(channel_for_version "$version")")
+    done < <(find "$PACKAGES_DIR" -maxdepth 1 -type f -name '*.AppImage' | sort)
+
     local total=$(( ${#DEB_FILES[@]} + ${#RPM_FILES[@]} ))
     [[ "$total" -gt 0 ]] \
         || die "No .deb or .rpm files found in $PACKAGES_DIR
 
 Run ./build-linux-packages.sh first, or point --packages-dir somewhere else."
+
+    # An AppImage is required even for a --deb-only or --rpm-only run, because
+    # the manifest is written on every run and one of its two entries names the
+    # AppImage. Writing that entry with no file to go with it would offer every
+    # AppImage user a download that 404s.
+    [[ "${#APPIMAGE_FILES[@]}" -gt 0 ]] \
+        || die "No .AppImage file found in $PACKAGES_DIR
+
+Every run records both Linux manifest entries, and the AppImage entry has to
+name a file that exists. Build one with ./build-linux-packages.sh, or point
+--packages-dir at a directory that has one."
 
     local i
     for ((i = 0; i < ${#DEB_FILES[@]}; i++)); do
@@ -401,10 +616,137 @@ Run ./build-linux-packages.sh first, or point --packages-dir somewhere else."
         info "$(printf '%-6s %-10s %-18s %-8s -> %s' \
             rpm "${RPM_NAMES[i]}" "${RPM_VERSIONS[i]}" "${RPM_ARCHES[i]}" "${RPM_CHANNELS[i]}")"
     done
+    for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+        info "$(printf '%-6s %-10s %-18s %-8s -> %s' \
+            image "$PACKAGE_NAME" "${APPIMAGE_VERSIONS[i]}" "${APPIMAGE_ARCHES[i]}" "${APPIMAGE_CHANNELS[i]}")"
+    done
 
     if [[ -n "$FORCE_CHANNEL" ]]; then
         warn "--channel $FORCE_CHANNEL overrides the channel each version would normally go to."
     fi
+
+    check_versions_agree
+    check_architectures_known
+}
+
+# ---------------------------------------------------------------------------
+# The version, as the manifest records it
+# ---------------------------------------------------------------------------
+#
+# The repositories deal in package versions -- "4.0.0~beta1", with the release
+# stage folded in with a tilde so that dpkg and rpm sort a prerelease before the
+# release it leads to. The manifest deals in the four-part version the
+# application reports for itself, "4.0.0.210", because that is what CoreUpdater
+# compares against VersionNumber.Current.
+#
+# Rather than convert between the two here -- a third place that would have to
+# know that 210 spells Beta 1 -- the version is read out of the binary being
+# published, with the same GetVersion.cs the Windows and macOS publish scripts
+# use. That settles PROGRAM_TITLE at the same time, so "Purple Pen 4.0.0 Beta 1"
+# reads identically in all three platforms' entries.
+
+# Scratch directory: the extracted assembly, the generated version script, and
+# each .rpm while it is being signed. Removed by cleanup on every exit path.
+WORK_TMP=""
+
+# ensure_work_tmp: create the scratch directory, if it does not exist yet.
+#
+# Its path must contain no whitespace. rpmsign passes file names to gpg through
+# a macro that does not quote them (see stage_and_sign_rpms), and packages are
+# signed in here precisely so that those names are safe to pass; a TMPDIR with a
+# space in it would quietly put the problem back.
+ensure_work_tmp() {
+    [[ -z "$WORK_TMP" ]] || return 0
+
+    WORK_TMP="$(mktemp -d)" || die "Could not create a temporary directory."
+
+    [[ "$WORK_TMP" != *[[:space:]]* ]] \
+        || die "The temporary directory \"$WORK_TMP\" has a space in its path.
+
+Packages are signed in there because rpmsign cannot be given a file name
+containing a space. Set TMPDIR to a path without one and run again."
+}
+
+# Set by read_program_version, from GetVersion.cs.
+VERSION_STRING=""
+VERSION_PRERELEASE=""
+PROGRAM_TITLE=""
+
+# extract_core_assembly: write PurplePenCore.dll, taken out of one of the
+# packages being published, to $1.
+#
+# Taken out of a package rather than read from the build tree, for the same
+# reason the versions above are read out of the packages: output/ may hold a
+# build made before the source last changed, and a manifest offering a version
+# that the download does not contain is worse than no manifest at all. Whichever
+# package is used, they have all just been checked to carry the same version.
+extract_core_assembly() {
+    local target="$1"
+
+    # Where the payload is installed, as it appears inside the archive: an
+    # absolute install prefix becomes a path relative to the archive root.
+    local member="./${INSTALL_PREFIX#/}/${APP_NAME}Core.dll"
+
+    if [[ "${#DEB_FILES[@]}" -gt 0 ]]; then
+        command -v tar >/dev/null 2>&1 || die "Required tool not found: tar"
+
+        dpkg-deb --fsys-tarfile "${DEB_FILES[0]}" | tar -xOf - "$member" > "$target" \
+            || die "Could not read $member out of $(basename "${DEB_FILES[0]}")."
+    else
+        require_tool cpio cpio cpio
+
+        rpm2cpio "${RPM_FILES[0]}" | cpio --quiet -i --to-stdout "$member" > "$target" \
+            || die "Could not read $member out of $(basename "${RPM_FILES[0]}")."
+    fi
+
+    [[ -s "$target" ]] \
+        || die "$member is empty or missing in the package it was read from.
+
+The version number of the release being published is read from it, so there is
+nothing to write into the manifest."
+}
+
+# read_program_version: set VERSION_STRING, VERSION_PRERELEASE and PROGRAM_TITLE
+# from the binary inside one of the packages.
+read_program_version() {
+    step "Reading the version number"
+
+    ensure_work_tmp
+
+    local assembly="$WORK_TMP/${APP_NAME}Core.dll"
+    extract_core_assembly "$assembly"
+
+    # GetVersion.cs writes a shell script setting the version variables; the
+    # Windows and macOS publish scripts consume the same output, which is what
+    # keeps the title in every manifest entry worded the same way.
+    local version_script="$WORK_TMP/setversion.sh"
+    dotnet run --file "$GETVERSION_SOURCE" -- bash "$assembly" > "$version_script" \
+        || die "Could not read the version number from $assembly."
+
+    # shellcheck source=/dev/null
+    source "$version_script"
+
+    [[ -n "${VERSION_STRING:-}" && -n "${PROGRAM_TITLE:-}" ]] \
+        || die "$(basename "$GETVERSION_SOURCE") did not set the version variables."
+
+    # The two ways of naming this release have to agree. They will not if the
+    # packages were assembled around a payload built from a different revision --
+    # in which case the manifest would announce a version that the file it points
+    # at does not contain.
+    local base="${UPSTREAM_VERSION%%\~*}"
+    [[ "$VERSION_STRING" == "$base."* ]] \
+        || die "The packages are version $UPSTREAM_VERSION but the binary inside them
+reports $VERSION_STRING. Rebuild them; nothing has been published."
+
+    local prerelease_by_package=0
+    [[ "$UPSTREAM_VERSION" != *"~"* ]] || prerelease_by_package=1
+
+    [[ "$VERSION_PRERELEASE" == "$prerelease_by_package" ]] \
+        || die "The packages are version $UPSTREAM_VERSION but the binary inside them
+reports $VERSION_STRING, which is a $([[ "$VERSION_PRERELEASE" == "1" ]] && echo prerelease || echo release).
+Rebuild them; nothing has been published."
+
+    info "$PROGRAM_TITLE -- version $VERSION_STRING"
 }
 
 # ---------------------------------------------------------------------------
@@ -424,9 +766,13 @@ PASSPHRASE_FILE=""
 # per line. See collect_signing_key_ids.
 SIGNING_KEY_IDS=""
 
-# cleanup: destroy the throwaway keyring. Runs on every exit path, including
-# die.
+# cleanup: destroy the throwaway keyring and the scratch directory. Runs on
+# every exit path, including die.
 cleanup() {
+    # Nothing secret in here -- an assembly copied out of a package and the
+    # version script generated from it -- but no reason to leave it in /tmp.
+    [[ -z "$WORK_TMP" || ! -d "$WORK_TMP" ]] || rm -rf "$WORK_TMP"
+
     [[ -n "$GNUPG_TMP" && -d "$GNUPG_TMP" ]] || return 0
 
     # The agent holds the passphrase in its own memory, so it has to go first --
@@ -625,9 +971,15 @@ detect_rpm_sign_defines() {
     # executes the first as the program and passes the rest as the argument
     # vector -- so the path comes first and the bare "gpg" that follows becomes
     # argv[0]. Dropping either one breaks signing in a thoroughly confusing way.
+    #
+    # The file names are quoted, which rpm's own macro does not do for anything
+    # but the key name. That splitting is worked around by signing where the
+    # path has no spaces (see stage_and_sign_rpms), so this is belt and braces --
+    # but rpm parses the expansion with popt, which strips these quotes and
+    # keeps the name in one piece, so there is no reason to leave them off.
     warn "This rpm does not support _gpg_sign_cmd_extra_args; overriding its signing command."
     RPM_SIGN_DEFINES+=(
-        --define "__gpg_sign_cmd %{__gpg} gpg --batch --no-verbose --no-armor --no-secmem-warning --pinentry-mode loopback --passphrase-file $PASSPHRASE_FILE --digest-algo $RPM_DIGEST_ALGO -u %{_gpg_name} -sbo %{__signature_filename} %{__plaintext_filename}"
+        --define "__gpg_sign_cmd %{__gpg} gpg --batch --no-verbose --no-armor --no-secmem-warning --pinentry-mode loopback --passphrase-file \"$PASSPHRASE_FILE\" --digest-algo $RPM_DIGEST_ALGO -u \"%{_gpg_name}\" -sbo \"%{__signature_filename}\" \"%{__plaintext_filename}\""
     )
 }
 
@@ -667,6 +1019,10 @@ ensure_layout() {
     mkdir -p "$LINUX_DIR" "$PUBLISH_DATA"
     [[ "$PUBLISH_DEB" != "true" ]] || mkdir -p "$DEB_ROOT"
     [[ "$PUBLISH_RPM" != "true" ]] || mkdir -p "$RPM_ROOT"
+
+    # No flag guards this one: the AppImage is published on every run, because
+    # the manifest entry naming it is written on every run.
+    mkdir -p "$APPIMAGE_ROOT"
 
     cat > "$PUBLISH_DATA/README.md" <<EOF
 # Do not publish this directory
@@ -985,7 +1341,7 @@ rpm_same_build() {
 # stage_and_sign_rpms: copy each .rpm into its channel and architecture
 # directory, then sign it there.
 stage_and_sign_rpms() {
-    local i dest dir
+    local i dest dir scratch
 
     for ((i = 0; i < ${#RPM_FILES[@]}; i++)); do
         dir="$RPM_ROOT/${RPM_CHANNELS[i]}/${RPM_ARCHES[i]}"
@@ -1003,12 +1359,37 @@ stage_and_sign_rpms() {
             continue
         fi
 
-        install -m 0644 "${RPM_FILES[i]}" "$dest"
-        info "$(basename "$dest") -> ${RPM_CHANNELS[i]}/${RPM_ARCHES[i]}/"
+        info "$(basename "${RPM_FILES[i]}") -> ${RPM_CHANNELS[i]}/${RPM_ARCHES[i]}/"
 
-        # Signed here, on the copy. Signing rewrites the file, and output/ is
-        # build product that this script has no business modifying.
-        sign_rpm "$dest"
+        if [[ "$DO_SIGN" == "1" ]]; then
+            # Signed on a copy in the scratch directory, and filed afterwards,
+            # rather than filed and then signed in place.
+            #
+            # rpmsign signs nothing itself: it expands the %__gpg_sign_cmd macro
+            # and runs the result. That macro does not quote the file names it
+            # hands to gpg -- rpm 4.17's ends "-sbo %{__signature_filename}
+            # %{__plaintext_filename}", quoting only the key name -- so a
+            # publishing directory whose path contains a space, such as
+            # "OneDrive/Purple Pen/Downloads", reaches gpg as two truncated
+            # paths and fails with "No such file or directory". Signing where
+            # the path is known to have no spaces settles that regardless of
+            # what quoting the local rpm's macro happens to use.
+            #
+            # It also means a failure partway through leaves no unsigned package
+            # in the published tree.
+            ensure_work_tmp
+            scratch="$WORK_TMP/$(basename "${RPM_FILES[i]}")"
+
+            install -m 0644 "${RPM_FILES[i]}" "$scratch"
+            sign_rpm "$scratch"
+
+            install -m 0644 "$scratch" "$dest"
+            rm -f "$scratch"
+        else
+            # Signing rewrites the file, so output/ is never signed in place: it
+            # is build product that this script has no business modifying.
+            install -m 0644 "${RPM_FILES[i]}" "$dest"
+        fi
     done
 }
 
@@ -1116,6 +1497,62 @@ publish_rpm_repo() {
 }
 
 # ---------------------------------------------------------------------------
+# The AppImage download
+# ---------------------------------------------------------------------------
+#
+# The AppImage is not a repository and is not in one. It is a single file that a
+# user downloads and runs, and the way it is updated is that Purple Pen fetches
+# a newer one and moves it over the running file (see
+# PurplePenCore/UpdateInstallerScript.cs). All that needs from this script is a
+# settled address to fetch from, and an entry in the manifest pointing there.
+
+# Where each AppImage was published, in APPIMAGE_FILES order.
+APPIMAGE_PUBLISHED=()
+
+# appimage_published_name: print the name an AppImage of version $1 for manifest
+# architecture $2 is published under.
+#
+# Renamed from what appimagetool produced, for two reasons: the tilde in a
+# package version has no business in a URL, and the architecture is spelled the
+# way the manifest and the rest of the download tree spell it. The result
+# matches the macOS disk image beside it in the tree --
+# PurplePen-4.0.0-beta1-osx-arm64.dmg -- so the download page reads as one set
+# of files rather than three conventions.
+appimage_published_name() {
+    printf '%s-%s-linux-%s.AppImage' "$APP_NAME" "${1//\~/-}" "$2"
+}
+
+# appimage_url: print the address the file published at $1 will be served from.
+appimage_url() {
+    printf '%s/%s' "$PUBLISH_BASE_URL" "${1#"$PUBLISH_ROOT"/}"
+}
+
+# publish_appimages: copy each AppImage into the tree under its published name.
+publish_appimages() {
+    step "Publishing the AppImage"
+
+    local i arch name dir
+
+    for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+        arch="$(manifest_arch "${APPIMAGE_ARCHES[i]}")"
+        name="$(appimage_published_name "${APPIMAGE_VERSIONS[i]}" "$arch")"
+        dir="$APPIMAGE_ROOT/$arch"
+
+        mkdir -p "$dir"
+
+        # install rather than cp, for the mode, exactly as the packages are
+        # staged: read from a Windows drive under WSL every file reports as
+        # 0777. 0755 rather than 0644 because this is the one published file
+        # that has to be executable to be any use.
+        install -m 0755 "${APPIMAGE_FILES[i]}" "$dir/$name"
+
+        APPIMAGE_PUBLISHED+=("$dir/$name")
+
+        info "$(basename "${APPIMAGE_FILES[i]}") -> $APPIMAGE_PUBLISH_SUBDIR/$arch/$name"
+    done
+}
+
+# ---------------------------------------------------------------------------
 # Install instructions
 # ---------------------------------------------------------------------------
 
@@ -1129,6 +1566,14 @@ write_instructions() {
     local path="$LINUX_DIR/README.md"
     local sources_file="/etc/apt/sources.list.d/$PACKAGE_NAME.sources"
     local keyring_path="/etc/apt/keyrings/$KEYRING_BASENAME.gpg"
+
+    # Every AppImage that was published, as a list of download links. Built from
+    # what was actually copied in, so the page cannot offer a file that is not
+    # there.
+    local appimage_links="" published
+    for published in "${APPIMAGE_PUBLISHED[@]}"; do
+        appimage_links="$appimage_links- <$(appimage_url "$published")>"$'\n'
+    done
 
     cat > "$path" <<EOF
 # Installing $DISPLAY_NAME on Linux
@@ -1233,13 +1678,113 @@ sudo rm /etc/yum.repos.d/$PACKAGE_NAME.repo               # dnf
 ## Other formats
 
 $DISPLAY_NAME is also distributed as an AppImage, which needs no repository and
-no installation — download it, make it executable and run it. It configures
-nothing and updates itself through neither of these repositories; see
-<$PACKAGE_URL>.
+no installation — download it, make it executable and run it:
+
+$appimage_links
+It configures nothing, and neither apt nor dnf knows anything about it. It stays
+up to date on its own instead: $DISPLAY_NAME notices that a newer AppImage has
+been published and replaces its own file with it.
 EOF
     chmod 0644 "$path"
 
     info "$path"
+}
+
+# ---------------------------------------------------------------------------
+# The update manifest
+# ---------------------------------------------------------------------------
+#
+# manifest.json is what a running copy of Purple Pen reads to find out whether
+# there is a newer version (see PurplePenCore/CoreUpdater.cs). The Windows and
+# macOS publish scripts write their entries into the same file, and the
+# UpdateManifest tool adds or replaces one entry at a time, so the three scripts
+# never have to be run together or in any particular order.
+#
+# Linux gets TWO entries per architecture, because a Linux installation is one
+# of two quite different things:
+#
+#   linux-x64           installed from the .deb or the .rpm, and therefore owned
+#                       by apt or dnf. Replacing those files from inside the
+#                       application would leave the package manager describing a
+#                       version that is no longer on disk, so this entry carries
+#                       release notes and NO download: it says a new version
+#                       exists and leaves the installing to the package manager.
+#
+#   linux-appimage-x64  running from an AppImage, which belongs to nobody but
+#                       whoever downloaded it. That entry points at the AppImage
+#                       published above, which Purple Pen downloads and moves
+#                       over the running file.
+#
+# Those two names are what UpdateManager.GetPlatformName composes at run time,
+# and an AppImage build deliberately reports the second, so neither kind of
+# installation is ever offered the update the other one wants.
+
+# package_platform_pairs: print "<manifest arch> <repository channel>" for each
+# distinct combination the .deb and .rpm files cover.
+#
+# The .deb and the .rpm of one build are two files but one entry: the entry says
+# only that a new version exists, which is equally true of both. A second
+# architecture is a second entry, because that is what the platform name is for.
+package_platform_pairs() {
+    local i
+
+    {
+        for ((i = 0; i < ${#DEB_ARCHES[@]}; i++)); do
+            printf '%s %s\n' "$(manifest_arch "${DEB_ARCHES[i]}")" "${DEB_CHANNELS[i]}"
+        done
+        for ((i = 0; i < ${#RPM_ARCHES[@]}; i++)); do
+            printf '%s %s\n' "$(manifest_arch "${RPM_ARCHES[i]}")" "${RPM_CHANNELS[i]}"
+        done
+    } | sort -u
+}
+
+# write_manifest_entry: add or replace one entry. $1 is the platform name and $2
+# the manifest channel; anything after them is passed through to UpdateManifest,
+# which is where the download or the release notes are named.
+write_manifest_entry() {
+    local platform="$1" channel="$2"
+    shift 2
+
+    dotnet run --project "$UPDATEMANIFEST_PROJECT" --configuration Release -- \
+        --manifest "$MANIFEST_FILE" \
+        --title "$PROGRAM_TITLE" \
+        --version "$VERSION_STRING" \
+        --platform "$platform" \
+        --channel "$channel" \
+        "$@" \
+        || die "UpdateManifest failed writing the $platform entry.
+
+Everything else was published, but \"$MANIFEST_FILE\" does not describe it, so
+nobody will be offered it."
+}
+
+# update_manifest: record everything published in this run.
+update_manifest() {
+    step "Updating the manifest"
+
+    local i arch channel
+
+    while read -r arch channel; do
+        [[ -n "$arch" ]] || continue
+
+        channel="$(manifest_channel "$channel")"
+
+        # No --file, so no url and no sha256: the entry exists to say that a new
+        # version is out and that the package manager is the way to get it.
+        write_manifest_entry "linux-$arch" "$channel" --message-file "$MESSAGE_FILE"
+    done < <(package_platform_pairs)
+
+    for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+        arch="$(manifest_arch "${APPIMAGE_ARCHES[i]}")"
+        channel="$(manifest_channel "${APPIMAGE_CHANNELS[i]}")"
+
+        # --file is the copy in the publishing tree rather than the one in
+        # output/, so the hash recorded is the hash of the file that will
+        # actually be served.
+        write_manifest_entry "linux-appimage-$arch" "$channel" \
+            --file "${APPIMAGE_PUBLISHED[i]}" \
+            --url-base "$APPIMAGE_URL_BASE/$arch"
+    done
 }
 
 # ---------------------------------------------------------------------------
@@ -1414,6 +1959,15 @@ write_log() {
                 "$stamp" rpm "${RPM_CHANNELS[i]}" "${RPM_NAMES[i]}" \
                 "${RPM_VERSIONS[i]}" "${RPM_ARCHES[i]}" "$sha"
         done
+        for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+            # This is the hash that also went into the manifest, so the log
+            # answers "is the AppImage on the web site still the one that was
+            # published?" without having to read the manifest back.
+            sha="$(sha256sum "${APPIMAGE_FILES[i]}" | cut -d' ' -f1)"
+            printf '%s  %-6s %-6s %-10s %-20s %-8s %s\n' \
+                "$stamp" image "${APPIMAGE_CHANNELS[i]}" "$PACKAGE_NAME" \
+                "${APPIMAGE_VERSIONS[i]}" "${APPIMAGE_ARCHES[i]}" "$sha"
+        done
     } >> "$log"
 }
 
@@ -1425,10 +1979,14 @@ write_log() {
 show_summary() {
     step "Done"
 
+    local published
+
     printf '%s' "$C_OK"
+    printf '    Published             %s (%s)\n' "$PROGRAM_TITLE" "$VERSION_STRING"
     printf '    Publishing directory  %s\n' "$REPO_DIR"
     printf '    Upload                %s/  ->  %s/\n' "$PUBLISH_ROOT" "$PUBLISH_BASE_URL"
     printf '    Do NOT upload         %s/\n' "$PUBLISH_DATA"
+    printf '    Manifest              %s\n' "$MANIFEST_FILE"
     printf '%s\n' "$C_OFF"
 
     printf '    Users on apt:\n\n'
@@ -1443,6 +2001,12 @@ show_summary() {
     printf '        sudo dnf config-manager --add-repo %s/%s.repo\n' "$RPM_URL" "$PACKAGE_NAME"
     printf '        sudo dnf install %s\n\n' "$PACKAGE_NAME"
 
+    printf '    Users who want the AppImage:\n\n'
+    for published in "${APPIMAGE_PUBLISHED[@]}"; do
+        printf '        %s\n' "$(appimage_url "$published")"
+    done
+    printf '\n'
+
     printf '    The full instructions were written to %s\n\n' "$LINUX_DIR/README.md"
 
     if [[ "$DO_SIGN" == "0" ]]; then
@@ -1454,7 +2018,7 @@ show_summary() {
 show_dry_run() {
     step "Dry run -- nothing has been written"
 
-    local i channel
+    local i arch channel
     printf '%s' "$C_INFO"
     for ((i = 0; i < ${#DEB_FILES[@]}; i++)); do
         channel="${DEB_CHANNELS[i]}"
@@ -1465,11 +2029,35 @@ show_dry_run() {
         printf '    %s\n        -> %s/%s/%s/  (signed in place)\n' \
             "${RPM_FILES[i]}" "$RPM_ROOT" "${RPM_CHANNELS[i]}" "${RPM_ARCHES[i]}"
     done
+    for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+        arch="$(manifest_arch "${APPIMAGE_ARCHES[i]}")"
+        printf '    %s\n        -> %s/%s/%s\n' \
+            "${APPIMAGE_FILES[i]}" "$APPIMAGE_ROOT" "$arch" \
+            "$(appimage_published_name "${APPIMAGE_VERSIONS[i]}" "$arch")"
+    done
     printf '%s\n' "$C_OFF"
 
     printf '    Indexes would be rebuilt for every channel that has packages,\n'
     printf '    signed with %s,\n' "$SIGNING_KEY_FINGERPRINT"
     printf '    and published under %s\n\n' "$PUBLISH_BASE_URL"
+
+    printf '    These entries would be written to %s\n' "$MANIFEST_FILE"
+    printf '    as %s:\n\n' "$PROGRAM_TITLE"
+    printf '%s' "$C_INFO"
+    while read -r arch channel; do
+        [[ -n "$arch" ]] || continue
+        printf '        %-22s %-6s %-8s %s\n' \
+            "linux-$arch" "$VERSION_STRING" "$(manifest_channel "$channel")" \
+            "release notes from $(basename "$MESSAGE_FILE")"
+    done < <(package_platform_pairs)
+    for ((i = 0; i < ${#APPIMAGE_FILES[@]}; i++)); do
+        arch="$(manifest_arch "${APPIMAGE_ARCHES[i]}")"
+        printf '        %-22s %-6s %-8s %s\n' \
+            "linux-appimage-$arch" "$VERSION_STRING" \
+            "$(manifest_channel "${APPIMAGE_CHANNELS[i]}")" \
+            "$APPIMAGE_URL_BASE/$arch/$(appimage_published_name "${APPIMAGE_VERSIONS[i]}" "$arch")"
+    done
+    printf '%s\n' "$C_OFF"
 }
 
 # ---------------------------------------------------------------------------
@@ -1478,6 +2066,11 @@ show_dry_run() {
 
 check_prerequisites
 discover_packages
+
+# Before the dry run rather than after it, so that a dry run reports the version
+# and title the manifest entries would carry -- which is most of what there is to
+# check before committing to a publish. It writes nothing.
+read_program_version
 
 if [[ "$DRY_RUN" == "1" ]]; then
     show_dry_run
@@ -1489,7 +2082,9 @@ ensure_layout
 publish_public_key
 publish_deb_repo
 publish_rpm_repo
+publish_appimages
 write_instructions
+update_manifest
 
 step "Verifying the repositories"
 verify_deb_repo
