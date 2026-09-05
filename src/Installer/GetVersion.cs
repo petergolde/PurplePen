@@ -124,7 +124,13 @@ public static class GetVersion
     {
         // Stage name in title case ("Alpha", "Beta", "RC", "Dev"), or null for a
         // stable release, which has no stage name at all.
-        public string Name;
+        //
+        // Declared nullable because a file-based app compiles with nullable
+        // reference types enabled, and a warning here is not merely untidy: the
+        // SDK writes build diagnostics to standard output, ahead of this
+        // program's own output, and that output is a shell script the installer
+        // scripts source.
+        public string? Name;
 
         // Sequence number within the stage. Zero means the stage carries no
         // number, so it reads "Beta" rather than "Beta 0".

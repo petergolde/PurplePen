@@ -719,15 +719,30 @@ read_program_version() {
     # GetVersion.cs writes a shell script setting the version variables; the
     # Windows and macOS publish scripts consume the same output, which is what
     # keeps the title in every manifest entry worded the same way.
-    local version_script="$WORK_TMP/setversion.sh"
-    dotnet run --file "$GETVERSION_SOURCE" -- bash "$assembly" > "$version_script" \
+    local raw="$WORK_TMP/getversion.out"
+    dotnet run --file "$GETVERSION_SOURCE" -- bash "$assembly" > "$raw" \
         || die "Could not read the version number from $assembly."
+
+    # Only the assignments are kept, rather than sourcing the output whole.
+    #
+    # "dotnet run --file" writes build diagnostics to STDOUT, ahead of the
+    # program's own output -- a compiler warning, or the SDK's first-run banner.
+    # It does so only when the file actually compiles rather than coming from
+    # its artifact cache, so this does not fail consistently: it fails on the
+    # run after something invalidated that cache, having worked a dozen times
+    # before, and it fails as a shell syntax error inside a generated file,
+    # which points nowhere near the cause.
+    local version_script="$WORK_TMP/setversion.sh"
+    grep -E "^export [A-Za-z_][A-Za-z0-9_]*=" "$raw" > "$version_script" || true
 
     # shellcheck source=/dev/null
     source "$version_script"
 
     [[ -n "${VERSION_STRING:-}" && -n "${PROGRAM_TITLE:-}" ]] \
-        || die "$(basename "$GETVERSION_SOURCE") did not set the version variables."
+        || die "$(basename "$GETVERSION_SOURCE") did not set the version variables.
+
+It printed:
+$(cat "$raw")"
 
     # The two ways of naming this release have to agree. They will not if the
     # packages were assembled around a payload built from a different revision --
