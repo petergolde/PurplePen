@@ -77,15 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </Compile>
-    <Compile Update="CommandNameText.*.Designer.cs">
-      <DependentUpon>CommandNameText.resx</DependentUpon>
-    </Compile>
     <Compile Update="MiscText.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>MiscText.resx</DependentUpon>
-    </Compile>
-    <Compile Update="MiscText.*.Designer.cs">
       <DependentUpon>MiscText.resx</DependentUpon>
     </Compile>
     <Compile Update="ReportText.Designer.cs">
@@ -93,23 +87,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ReportText.resx</DependentUpon>
     </Compile>
-    <Compile Update="ReportText.*.Designer.cs">
-      <DependentUpon>ReportText.resx</DependentUpon>
-    </Compile>
     <Compile Update="SelectionDescriptionText.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
     </Compile>
-    <Compile Update="SelectionDescriptionText.*.Designer.cs">
-      <DependentUpon>SelectionDescriptionText.resx</DependentUpon>
-    </Compile>
     <Compile Update="StatusBarText.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>StatusBarText.resx</DependentUpon>
-    </Compile>
-    <Compile Update="StatusBarText.*.Designer.cs">
       <DependentUpon>StatusBarText.resx</DependentUpon>
     </Compile>
   </ItemGroup>

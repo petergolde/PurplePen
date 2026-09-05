@@ -28,6 +28,7 @@ src/TestFiles/controller/ocad_create4/*.ocd
 src/TestFiles/controller/ocad_create5/*.ocd
 src/TestFiles/controller/ocad_create6/*.ocd
 src/TestFiles/controller/ocad_create9/*.ocd
+src/TestFiles/modes/ocad_print_area/*.ocd
 src/TestFiles/exportxml/*_actual.xml
 src/TestFiles/gpx/*_actual.gpx
 doc/userdocs/Help/_vti_cnf
