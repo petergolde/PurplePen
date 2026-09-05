@@ -526,4 +526,7 @@ Użyj | aby rozdzielić linie
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript nie jest zainstalowany</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Zakończ</value>
+  </data>
 </root>

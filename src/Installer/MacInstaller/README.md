@@ -10,22 +10,33 @@ normal installation and a `.zip` for automated deployment.
 Output lands in `output/`:
 
 ```
-output/PurplePen-4.0.0-osx-arm64.dmg
-output/PurplePen-4.0.0-osx-arm64.zip
+output/PurplePen-4.0.0-beta1-osx-arm64.dmg
+output/PurplePen-4.0.0-beta1-osx-arm64.zip
 ```
+
+The name carries the release stage taken from the fourth component of the
+version in `PurplePenCore/VersionNumber.cs` — `-beta1` here, `-rc2` for a
+release candidate, nothing at all for a stable release. Without it a beta and
+the eventual release of the same version would share a file name, and would
+collide in the publishing tree.
+
+To build and publish in one step, see [Publishing](#publishing) below.
 
 ## Files
 
 | File | Purpose |
 |---|---|
 | `build-mac-app.sh` | The build script. Run this. |
-| `config.sh` | Settings — bundle id, versions, signing identity, notarization profile. Every value can be overridden by an environment variable of the same name. |
+| `publish-mac-app.sh` | Builds, then files the result into the download tree and records it in the update manifest. |
+| `config.sh` | Settings — bundle id, versions, signing identity, notarization profile, publishing tree. Every value can be overridden by an environment variable of the same name. |
 | `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the app bundle. Currently empty; customize as you experiment. |
 | `Info.plist.template` | Bundle metadata, with `@PLACEHOLDER@` tokens filled in by the script. |
 | `PurplePen.entitlements` | Hardened Runtime entitlements required to run .NET under notarization. |
 
 `build/` (staging area, assembled `.app`) and `output/` are generated and
-git-ignored.
+git-ignored. `output/build-info.sh` is written by a successful build to say what
+it produced — version, file names, whether it was signed and notarized — and is
+what `publish-mac-app.sh` reads.
 
 ## One-time setup
 
@@ -134,6 +145,53 @@ To run an unsigned build locally, clear its quarantine flag first:
 ```bash
 xattr -dr com.apple.quarantine build/PurplePen.app
 ```
+
+## Publishing
+
+```bash
+./publish-mac-app.sh
+```
+
+Builds, then files the result into the publishing tree — the directory whose
+contents are uploaded to the download site — and records it in that tree's
+`manifest.json`, which is what running copies of Purple Pen read to find out
+that an update exists.
+
+Three settings in `config.sh` control where it all goes:
+
+| Setting | Default |
+|---|---|
+| `PUBLISH_TREE` | `~/Library/CloudStorage/OneDrive-Personal/Purple Pen/Downloads/root` |
+| `PUBLISH_URL_ROOT` | `https://downloads.purple-pen.org` |
+| `PUBLISH_SUBDIR` | `mac/arm64` |
+
+`PUBLISH_TREE` is the same `root` the Windows and Linux builds publish into
+(`Innosetup/publish-setup.bat` and `Installer/LinuxInstaller/config.sh`), and it
+maps onto `PUBLISH_URL_ROOT` once uploaded. Both the directory copied into and
+the URL recorded are derived from `PUBLISH_SUBDIR`, so they cannot drift apart.
+
+To try it without touching the real tree:
+
+```bash
+PUBLISH_TREE=/tmp/testtree ./publish-mac-app.sh
+```
+
+Any other argument is passed straight through to `build-mac-app.sh`. A build
+made with `--skip-sign` or `--skip-notarize` is refused: it would be offered to
+users as an update that Gatekeeper then blocks. The check reads what the build
+recorded about itself, so it catches `SKIP_NOTARIZE=1` left in the environment
+just as well as the command-line flag.
+
+The manifest entry's channel follows the version: a prerelease is published to
+`beta`, a stable release to `main`. Its title comes from `Installer/GetVersion.cs`
+reading the assembly inside the bundle that was just built — the same program the
+Windows publish uses, so both platforms' entries are titled the same way.
+
+Only the `.dmg` is published. The `.zip` is left in `output/`; the comment above
+the manifest step in `publish-mac-app.sh` says what to change to publish it too,
+and why you might want the update to download the `.zip` instead — a `.zip` is
+expanded over the installed bundle and the application relaunches itself, while
+a `.dmg` is only opened in Finder for the user to drag across by hand.
 
 ## The disk image window
 

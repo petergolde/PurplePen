@@ -633,4 +633,7 @@
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>图像文件|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>完成(&amp;F)</value>
+  </data>
 </root>

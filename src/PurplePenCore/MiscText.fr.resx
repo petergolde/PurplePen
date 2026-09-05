@@ -628,4 +628,7 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript n'est pas installé</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Terminer</value>
+  </data>
 </root>

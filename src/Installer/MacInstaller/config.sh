@@ -174,3 +174,27 @@
 # How long to wait, in seconds, for Finder to flush the window layout to
 # .DS_Store before giving up.
 : "${DMG_STYLE_TIMEOUT:=60}"
+
+# ---------------------------------------------------------------------------
+# Publishing
+# ---------------------------------------------------------------------------
+#
+# Used by publish-mac-app.sh only; build-mac-app.sh ignores these.
+
+# Root of the publishing tree: the directory whose contents are uploaded to the
+# download site, and whose layout therefore has to match the URLs recorded in
+# the update manifest.
+#
+# The Windows and Linux builds publish into this same tree -- their halves of it
+# are configured in Innosetup/publish-setup.bat and LinuxInstaller/config.sh.
+: "${PUBLISH_TREE:=$HOME/Library/CloudStorage/OneDrive-Personal/Purple Pen/Downloads/root}"
+
+# What PUBLISH_TREE maps onto once uploaded. Purple Pen looks for manifest.json
+# directly under this address; see AvPurplePen/UpdateManager.cs.
+: "${PUBLISH_URL_ROOT:=https://downloads.purple-pen.org}"
+
+# Where the macOS disk images live inside the tree. The directory to copy into
+# and the URL to record are both derived from this one setting -- if they
+# disagree, the manifest points at a file that isn't there and every update
+# fails its download, so there is deliberately only one place to change it.
+: "${PUBLISH_SUBDIR:=mac/arm64}"

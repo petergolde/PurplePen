@@ -592,4 +592,7 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript がインストールされていません</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>フィニッシュ(&amp;F)</value>
+  </data>
 </root>

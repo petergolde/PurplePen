@@ -45,6 +45,7 @@ STAGING_DIR="$BUILD_DIR/staging"
 APP_BUNDLE="$BUILD_DIR/$APP_NAME.app"
 DMG_STAGE_DIR="$BUILD_DIR/dmg"
 OUTPUT_DIR="$SCRIPT_DIR/output"
+BUILD_INFO_FILE="$OUTPUT_DIR/build-info.sh"
 
 PUBLISH_DIR="$SRC_DIR/AvPurplePen/bin/$CONFIGURATION/$TARGET_FRAMEWORK/$RUNTIME_IDENTIFIER/publish"
 
@@ -286,12 +287,24 @@ info "dotnet SDK $(dotnet --version)"
 # ---------------------------------------------------------------------------
 
 # read_version: extract the current version from PurplePenCore/VersionNumber.cs
-# and derive the two version strings the Info.plist needs.
+# and derive the version strings the Info.plist and the file names need.
 #
 # VersionNumber.cs holds a four-part version such as "4.0.0.110". Apple expects
 # CFBundleShortVersionString to be at most three integer components, so the
 # fourth (the Purple Pen build/prerelease number) is dropped from the
 # user-visible version but retained in CFBundleVersion.
+#
+# That fourth component encodes the release stage rather than a build number:
+# 100s alpha, 200s beta, 300s release candidate, 500 stable, with the tens digit
+# the sequence number within the stage. It has to reach the distribution file
+# names, because dropping it would give a beta and the eventual release of the
+# same version the same name -- and they meet in the publishing tree, where the
+# release would overwrite the file the beta's manifest entry records a SHA-256
+# for, so that every beta user's update then fails verification.
+#
+# PurplePenCore/VersionNumber.cs is the authority on this encoding.
+# LinuxInstaller/build-linux-packages.sh and Installer/GetVersion.cs decode it
+# the same way, into the forms their own naming conventions call for.
 read_version() {
     [[ -f "$VERSION_FILE" ]] || die "Cannot find $VERSION_FILE"
 
@@ -300,13 +313,43 @@ read_version() {
 
     SHORT_VERSION="$(echo "$FULL_VERSION" | cut -d. -f1-3)"
     BUILD_VERSION="$FULL_VERSION"
+
+    local stage seq stage_name
+    stage="$(echo "$FULL_VERSION" | cut -d. -f4)"
+
+    # A missing fourth component is a plain release, with nothing to add.
+    if [[ -z "$stage" ]]; then
+        STAGE_SUFFIX=""
+        VERSION_LABEL="release"
+        return
+    fi
+
+    seq=$(( (stage % 100) / 10 ))
+    # A stage of exactly 200 means "beta" with no sequence number, so leave the
+    # digit off rather than writing "beta0".
+    [[ "$seq" -eq 0 ]] && seq=""
+
+    if   [[ "$stage" -ge 500 ]]; then stage_name=""
+    elif [[ "$stage" -ge 300 ]]; then stage_name="rc"
+    elif [[ "$stage" -ge 200 ]]; then stage_name="beta"
+    elif [[ "$stage" -ge 100 ]]; then stage_name="alpha"
+    else                              stage_name="dev"
+    fi
+
+    if [[ -z "$stage_name" ]]; then
+        STAGE_SUFFIX=""
+        VERSION_LABEL="stable release"
+    else
+        STAGE_SUFFIX="-$stage_name$seq"
+        VERSION_LABEL="$stage_name${seq:+ $seq}"
+    fi
 }
 
 read_version
-info "Purple Pen version $FULL_VERSION (short version $SHORT_VERSION)"
+info "Purple Pen version $FULL_VERSION ($VERSION_LABEL)"
 
 # Base name used for the .dmg and .zip files.
-DIST_BASENAME="$APP_NAME-$SHORT_VERSION-$RUNTIME_IDENTIFIER"
+DIST_BASENAME="$APP_NAME-$SHORT_VERSION$STAGE_SUFFIX-$RUNTIME_IDENTIFIER"
 
 # ---------------------------------------------------------------------------
 # Resolve the signing identity
@@ -1378,11 +1421,51 @@ or add --skip-sign here to build an unsigned disk image deliberately."
     info "Wrote $dmg_path ($(du -h "$dmg_path" | cut -f1 | tr -d ' '))"
 }
 
+# write_build_info: record what this run produced, for publish-mac-app.sh to read.
+#
+# This is the counterpart of the setversion.cmd that create-setup.bat leaves for
+# publish-setup.bat on Windows. There, the two scripts share a shell and so share
+# their variables; here the publisher runs the build as a separate process, and
+# without this would have to re-derive the output names from the version number
+# and could not tell whether the build was actually signed and notarized.
+#
+# It is written only on success, and deleted at the start of every run, so its
+# presence means "there is a complete build here" and never describes a build
+# that failed halfway.
+#
+# Values are quoted with printf %q, which produces text that is safe to source.
+write_build_info() {
+    local dmg_path="" zip_path=""
+    [[ "$SKIP_DMG" == "0" ]] && dmg_path="$OUTPUT_DIR/$DIST_BASENAME.dmg"
+    [[ "$SKIP_ZIP" == "0" && "$DMG_ONLY" == "0" ]] && zip_path="$OUTPUT_DIR/$DIST_BASENAME.zip"
+
+    {
+        echo "# build-info.sh -- what build-mac-app.sh last produced."
+        echo "#"
+        echo "# Generated; safe to delete. Read by publish-mac-app.sh."
+        echo
+        printf 'export FULL_VERSION=%q\n'        "$FULL_VERSION"
+        printf 'export SHORT_VERSION=%q\n'       "$SHORT_VERSION"
+        printf 'export STAGE_SUFFIX=%q\n'        "$STAGE_SUFFIX"
+        printf 'export RUNTIME_IDENTIFIER=%q\n'  "$RUNTIME_IDENTIFIER"
+        printf 'export APP_BUNDLE=%q\n'          "$APP_BUNDLE"
+        printf 'export DIST_BASENAME=%q\n'       "$DIST_BASENAME"
+        printf 'export DMG_PATH=%q\n'            "$dmg_path"
+        printf 'export ZIP_PATH=%q\n'            "$zip_path"
+        printf 'export BUILD_SIGNED=%q\n'        "$([[ "$SKIP_SIGN" == "0" ]] && echo 1 || echo 0)"
+        printf 'export BUILD_NOTARIZED=%q\n'     "$([[ "$SKIP_NOTARIZE" == "0" ]] && echo 1 || echo 0)"
+    } > "$BUILD_INFO_FILE"
+}
+
 # ---------------------------------------------------------------------------
 # Run
 # ---------------------------------------------------------------------------
 
 mkdir -p "$BUILD_DIR" "$OUTPUT_DIR"
+
+# Any build-info.sh still here describes an earlier run. Remove it now so that a
+# build that fails cannot leave one behind for publish-mac-app.sh to believe.
+rm -f "$BUILD_INFO_FILE"
 
 if [[ "$DMG_ONLY" == "1" ]]; then
     # Layout iteration: reuse the app bundle from a previous run and go
@@ -1408,6 +1491,9 @@ step "Done"
 printf '%s' "$C_OK"
 ls -1 "$OUTPUT_DIR" 2>/dev/null | sed "s|^|    $(basename "$OUTPUT_DIR")/|"
 printf '%s\n' "$C_OFF"
+
+# After the listing, so that the listing shows distribution files only.
+write_build_info
 
 if [[ "$SKIP_SIGN" == "1" ]]; then
     warn "This build is UNSIGNED and is not fit for distribution."

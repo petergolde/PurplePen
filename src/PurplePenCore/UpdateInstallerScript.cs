@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -13,7 +13,15 @@ namespace PurplePen
     {
         Windows,
         MacOS,
-        Linux
+        Linux,
+
+        // Linux, but running from an AppImage: a single executable file that carries the whole
+        // application, run from wherever the user happened to put it. It is a separate platform
+        // rather than a flavour of Linux because nothing about installing an update is the same --
+        // the manifest lists it separately ("linux-appimage-x64"), the download is another AppImage,
+        // and installing it means replacing the file we are running from rather than unpacking
+        // anything into an installation directory.
+        LinuxAppImage
     }
 
     // Everything the platform layer needs in order to install a downloaded update: the text of a
@@ -44,6 +52,9 @@ namespace PurplePen
     // Linux packages are handed to the desktop's own installer via xdg-open instead, which prompts
     // for authentication properly. And the macOS in-place replacement moves the old application
     // aside rather than deleting it, so that a failure part-way through leaves a working copy behind.
+    // The AppImage replacement does the same with the AppImage file, and goes one further by
+    // restarting whatever ends up at the original path, so that an update which fails half way --
+    // or does not get started at all -- still leaves the user with Purple Pen running.
     public static class UpdateInstallerScript
     {
         // How many seconds the script waits for Purple Pen to exit before giving up and installing
@@ -53,8 +64,15 @@ namespace PurplePen
 
         // Recognized file extensions, longest first so that ".tar.gz" is matched before ".gz" would
         // be. Path.GetExtension is no use for these: for "purplepen.tar.gz" it returns ".gz".
+        //
+        // Each is spelled the way the files themselves are -- hence ".AppImage", which is how
+        // appimagetool names its output and how essentially every AppImage in the world is named.
+        // Matching against a file name is case-insensitive (see GetKnownExtension), so the spelling
+        // here is only about being recognizable to a reader. It does have to agree exactly with
+        // supportedExtensions below, though, which is compared against the entry returned from this
+        // table rather than against the file name.
         private static readonly string[] knownExtensions = {
-            ".tar.gz", ".exe", ".msi", ".dmg", ".zip", ".deb", ".rpm"
+            ".tar.gz", ".AppImage", ".exe", ".msi", ".dmg", ".zip", ".deb", ".rpm"
         };
 
         // Which of the recognized extensions each platform can install.
@@ -63,6 +81,12 @@ namespace PurplePen
                 { UpdatePlatform.Windows, new string[] { ".exe", ".msi" } },
                 { UpdatePlatform.MacOS, new string[] { ".dmg", ".zip" } },
                 { UpdatePlatform.Linux, new string[] { ".deb", ".rpm", ".tar.gz" } },
+
+                // An AppImage build updates by replacing its own file, and by nothing else. A .deb
+                // or .rpm would install a second, packaged copy alongside it rather than updating
+                // this one, and a .tar.gz would be unpacked into the read-only mount the AppImage
+                // runs from, so neither is offered here even though both are good Linux updates.
+                { UpdatePlatform.LinuxAppImage, new string[] { ".AppImage" } },
             };
 
         // Returns true if this platform knows how to install a file with this name's extension, so
@@ -87,12 +111,14 @@ namespace PurplePen
         //   downloadedFilePath: full path of the downloaded, hash-verified update file.
         //   processIdToWaitFor: process id of the running Purple Pen, which the script waits to exit.
         //   applicationPath: what is being replaced -- on macOS the ".app" bundle of the running
-        //     application, on Linux the directory the application is installed in. Not used on
-        //     Windows, where the installer knows where to put things, and may be null there.
+        //     application, on Linux the directory the application is installed in, and for an
+        //     AppImage the ".AppImage" file the application is running from. Not used on Windows,
+        //     where the installer knows where to put things, and may be null there.
         //   executableName: file name (not path) of the Purple Pen executable within applicationPath,
         //     used to start the new version once it is installed. Only meaningful for a Linux
         //     tarball, which is a plain drop-in replacement; every other kind of update either
-        //     relaunches itself or leaves an installer in charge. Null when the caller could not
+        //     relaunches itself or leaves an installer in charge. Not used for an AppImage either,
+        //     which restarts the file named by applicationPath. Null when the caller could not
         //     determine the name, in which case the script installs the update but does not restart
         //     Purple Pen -- better than guessing a name and running the wrong program.
         // Throws NotSupportedException if this platform can't install this kind of file; use
@@ -169,11 +195,12 @@ namespace PurplePen
         }
 
         // Build the macOS or Linux shell script: wait for the process to go away, then install.
-        //   platform: MacOS or Linux.
+        //   platform: MacOS, Linux or LinuxAppImage.
         //   downloadedFilePath: full path of the downloaded update file.
         //   extension: its extension, already known to be supported on this platform.
         //   processIdToWaitFor: process id of the running Purple Pen.
-        //   applicationPath: the ".app" bundle (macOS) or install directory (Linux) being replaced.
+        //   applicationPath: the ".app" bundle (macOS), install directory (Linux) or ".AppImage"
+        //     file (AppImage) being replaced.
         //   executableName: name of the executable to restart afterwards, or null not to restart.
         private static InstallScript BuildUnixScript(UpdatePlatform platform, string downloadedFilePath, string extension, int processIdToWaitFor, string applicationPath, string executableName)
         {
@@ -194,7 +221,10 @@ namespace PurplePen
             script.AppendLine("done");
             script.AppendLine();
 
-            if (platform == UpdatePlatform.MacOS) {
+            if (platform == UpdatePlatform.LinuxAppImage) {
+                AppendAppImageReplacement(script, downloadedFilePath, applicationPath);
+            }
+            else if (platform == UpdatePlatform.MacOS) {
                 if (extension == ".dmg") {
                     // "open" mounts the disk image and shows it in Finder. The user drags Purple Pen
                     // to Applications from there; there is no reliable unattended way to do it for
@@ -306,6 +336,52 @@ namespace PurplePen
                 script.AppendLine("    \"$EXECUTABLE\" &");
                 script.AppendLine("fi");
             }
+        }
+
+        // Append the AppImage replacement: put the downloaded AppImage where the running one was,
+        // make it executable, and start it.
+        //
+        // An AppImage is one self-contained executable file, so "installing" it is a file copy. The
+        // old file is moved aside rather than overwritten, for the same reason the macOS bundle is:
+        // a failure part-way through must not leave the user with no application. It goes further
+        // than the macOS path and restarts the old AppImage when the swap fails, because here we
+        // know exactly what to restart -- the user asked for an update and watched Purple Pen exit
+        // for it, and should not be left with nothing because the file turned out not to be writable.
+        //
+        // The new file is copied rather than moved, so that the download stays in the download
+        // directory and is swept away on the usual ten-day schedule instead of disappearing into the
+        // installation. A move would be a copy in practice anyway, since the download directory and
+        // the AppImage are rarely on the same file system.
+        //   script: the script being built.
+        //   downloadedFilePath: full path of the downloaded ".AppImage".
+        //   applicationPath: full path of the ".AppImage" file being run, which is replaced.
+        private static void AppendAppImageReplacement(StringBuilder script, string downloadedFilePath, string applicationPath)
+        {
+            script.AppendFormat("NEWIMAGE={0}", Quote(downloadedFilePath)).AppendLine();
+            script.AppendFormat("APPIMAGE={0}", Quote(applicationPath)).AppendLine();
+            script.AppendLine("OLDIMAGE=\"$APPIMAGE.old\"");
+            script.AppendLine();
+
+            // Move the running version aside, keeping it until the new one is safely in place, and
+            // cp the new one into the path it vacated. cp rather than mv, so that the installed
+            // AppImage keeps the ownership and location it had; chmod because an AppImage that is
+            // not executable cannot be started, and a downloaded file's permissions are whatever
+            // the download left behind.
+            script.AppendLine("rm -f \"$OLDIMAGE\"");
+            script.AppendLine("if mv \"$APPIMAGE\" \"$OLDIMAGE\"; then");
+            script.AppendLine("    if cp \"$NEWIMAGE\" \"$APPIMAGE\"; then");
+            script.AppendLine("        chmod +x \"$APPIMAGE\"");
+            script.AppendLine("        rm -f \"$OLDIMAGE\"");
+            script.AppendLine("    else");
+            script.AppendLine("        mv \"$OLDIMAGE\" \"$APPIMAGE\"");
+            script.AppendLine("    fi");
+            script.AppendLine("fi");
+            script.AppendLine();
+
+            // Every path above leaves an AppImage at the original location -- the new one if the
+            // whole swap worked, the old one if either step failed -- so the restart is unconditional
+            // and the user always gets Purple Pen back.
+            script.AppendLine("\"$APPIMAGE\" &");
         }
 
         // Returns the longest recognized extension that path ends with, or null if it ends with none

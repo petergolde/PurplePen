@@ -41,6 +41,7 @@ MIME_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME-mime.xml.template"
 APPRUN_TEMPLATE="$SCRIPT_DIR/AppRun.template"
 APPDATA_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME.appdata.xml.template"
 ICON_DIR="$SRC_DIR/AvPurplePen/Assets/AppIcon"
+KEYRING_FILE="$SCRIPT_DIR/$KEYRING_SOURCE"
 
 OUTPUT_DIR="$SCRIPT_DIR/$OUTPUT_SUBDIR"
 
@@ -258,6 +259,28 @@ Use --skip-appimage to build only the .deb and .rpm."
 (set REGISTER_MIME_TYPE=false to build without file associations)"
     fi
 
+    if [[ "$SETUP_REPO" == "true" ]]; then
+        [[ -f "$KEYRING_FILE" ]] \
+            || die "Cannot find the repository signing key at $KEYRING_FILE
+
+This is the PUBLIC half of the key the repositories are signed with, and it
+belongs in version control beside this script. Copy it from the signing key
+directory, or set SETUP_REPO=false to build a package that does not configure
+the repository."
+
+        # Needed to convert the armored key to the binary form apt wants.
+        command -v gpg >/dev/null 2>&1 \
+            || die "gpg not found, which is needed to prepare the repository key.
+
+Install it with one of:
+
+    sudo apt install gnupg     # Debian / Ubuntu
+    sudo dnf install gnupg2    # Fedora / RHEL
+
+or set SETUP_REPO=false to build a package that does not configure the
+repository."
+    fi
+
     if [[ ! -f "$EXCLUDE_FILE" ]]; then
         warn "No publish-exclude.txt found; nothing will be excluded from the payload."
         EXCLUDE_FILE=""
@@ -326,6 +349,38 @@ read_version() {
         UPSTREAM_VERSION="$base~$stage_name$seq"
         VERSION_LABEL="$stage_name $seq"
     fi
+}
+
+# resolve_package_suites: decide which repository channels the installed package
+# will subscribe the user to, and set PACKAGE_SUITES to that list.
+#
+# read_version deliberately exposes no "is this a prerelease" flag -- but it
+# folds the release stage into the version with a tilde ("4.0.0~beta1"), because
+# that is how both dpkg and rpm spell "sorts before the release". So the presence
+# of a tilde is exactly the question, and publish-linux-repos.sh routes packages
+# to channels by the same test. The two must agree: a package that subscribes to
+# a channel its own build is not published to would leave the user with nothing.
+resolve_package_suites() {
+    if [[ "$SETUP_REPO" != "true" ]]; then
+        PACKAGE_SUITES=""
+        return
+    fi
+
+    local channel="$REPO_CHANNEL"
+    if [[ "$channel" == "auto" ]]; then
+        if [[ "$UPSTREAM_VERSION" == *"~"* ]]; then channel="$BETA_CHANNEL"
+        else                                        channel="$STABLE_CHANNEL"
+        fi
+    fi
+
+    case "$channel" in
+        # Beta subscribes to both, so that a tester is offered the stable release
+        # when it appears rather than being stranded on the last prerelease. See
+        # REPO_CHANNEL in config.sh.
+        "$BETA_CHANNEL")   PACKAGE_SUITES="$BETA_CHANNEL $STABLE_CHANNEL" ;;
+        "$STABLE_CHANNEL") PACKAGE_SUITES="$STABLE_CHANNEL" ;;
+        *) die "REPO_CHANNEL must be auto, $STABLE_CHANNEL or $BETA_CHANNEL, not '$REPO_CHANNEL'." ;;
+    esac
 }
 
 # resolve_architecture: map the .NET runtime identifier onto the architecture
@@ -715,6 +770,7 @@ build_install_tree() {
     install_icons
     install_desktop_entry
     install_mime_type
+    install_keyring
     install_documentation
 
     # Directories the packages create are 0755; the files placed above are
@@ -852,6 +908,49 @@ The .ppen file association would not work. Check $MIME_TEMPLATE."
     fi
 }
 
+# install_keyring: put the repository signing key into the install tree.
+#
+# Two forms of the same key, because the two package managers want different
+# ones: apt's Signed-By needs the dearmored binary form on anything older than
+# apt 2.4, and rpm --import and dnf's gpgkey= want the armored text.
+#
+# Both go under /usr/share/keyrings rather than /etc, so that neither package has
+# to treat the key as a configuration file the user might have edited.
+install_keyring() {
+    if [[ "$SETUP_REPO" != "true" ]]; then
+        info "Repository setup disabled (SETUP_REPO is not true)"
+        return
+    fi
+
+    # Check the committed key is the one the repositories are actually signed
+    # with. Without this, a stale copy would produce a package that installs
+    # cleanly and then fails on the user's first update, with an error naming a
+    # key they have never heard of.
+    local fingerprint
+    fingerprint="$(gpg --show-keys --with-colons "$KEYRING_FILE" 2>/dev/null \
+        | awk -F: '$1 == "fpr" { print $10; exit }')"
+
+    [[ "$fingerprint" == "$SIGNING_KEY_FINGERPRINT" ]] \
+        || die "$KEYRING_SOURCE is not the expected signing key.
+
+    expected  $SIGNING_KEY_FINGERPRINT
+    found     ${fingerprint:-nothing}
+
+Either the committed key is out of date or SIGNING_KEY_FINGERPRINT in config.sh
+is. Both must match the key publish-linux-repos.sh signs the repositories with."
+
+    local dest_dir="$TREE_DIR$KEYRING_INSTALL_DIR"
+    mkdir -p "$dest_dir"
+
+    cp "$KEYRING_FILE" "$dest_dir/$KEYRING_BASENAME.asc"
+
+    rm -f "$dest_dir/$KEYRING_BASENAME.gpg"
+    gpg --batch --yes --dearmor -o "$dest_dir/$KEYRING_BASENAME.gpg" "$KEYRING_FILE" \
+        || die "Could not dearmor $KEYRING_SOURCE."
+
+    info "Repository key $fingerprint installed; subscribing to: $PACKAGE_SUITES"
+}
+
 # install_documentation: write the copyright file both packaging systems expect
 # to find under /usr/share/doc.
 install_documentation() {
@@ -910,29 +1009,69 @@ write_deb_control() {
         deb_description
     } > "$debian_dir/control"
 
-    write_maintainer_script "$debian_dir/postinst" "configure"
-    write_maintainer_script "$debian_dir/postrm"   "remove upgrade purge"
+    write_maintainer_script "$debian_dir/postinst" postinst
+    write_maintainer_script "$debian_dir/postrm"   postrm
 }
 
-# write_maintainer_script: write a Debian maintainer script at $1 that refreshes
-# the desktop database, MIME database and icon cache. $2 is the space-separated
-# list of first arguments the body should run for.
+# deb_sources_content: print the deb822 sources file the .deb configures.
+#
+# Architectures is deliberately absent: apt uses the host architecture, and
+# naming one here would have to be revisited the day an arm64 package appears.
+# Enabled is written out explicitly even though yes is the default, so that
+# someone who wants to keep the configuration but stop following the repository
+# has an obvious line to change.
+deb_sources_content() {
+    cat <<EOF
+$REPO_MARKER
+Types: deb
+URIs: $PUBLISH_BASE_URL/$DEB_REPO_SUBDIR
+Suites: $PACKAGE_SUITES
+Components: $DEB_COMPONENT
+Enabled: yes
+Signed-By: $KEYRING_INSTALL_DIR/$KEYRING_BASENAME.gpg
+EOF
+}
+
+# rpm_repo_content: print the .repo file the .rpm configures.
+#
+# \$basearch is a dnf variable expanded on the user's machine, so a repository
+# that grows an aarch64 directory later needs no change to what is already
+# installed. It has to reach the file literally, hence the escape.
+rpm_repo_content() {
+    local beta_enabled=0
+    [[ "$PACKAGE_SUITES" == *"$BETA_CHANNEL"* ]] && beta_enabled=1
+
+    cat <<EOF
+$REPO_MARKER
+
+[$PACKAGE_NAME]
+name=$REPO_ORIGIN
+baseurl=$PUBLISH_BASE_URL/$RPM_REPO_SUBDIR/$STABLE_CHANNEL/\$basearch/
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=file://$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc
+metadata_expire=6h
+
+[$PACKAGE_NAME-$BETA_CHANNEL]
+name=$REPO_ORIGIN ($BETA_CHANNEL)
+baseurl=$PUBLISH_BASE_URL/$RPM_REPO_SUBDIR/$BETA_CHANNEL/\$basearch/
+enabled=$beta_enabled
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=file://$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc
+metadata_expire=6h
+EOF
+}
+
+# freedesktop_refresh_body: print the cache-refresh commands shared by the .deb
+# maintainer scripts.
 #
 # Every command is guarded by command -v and by "|| true": these caches are a
 # convenience, and a package that fails to install because an optional cache
 # tool is missing on a minimal system would be far worse than a stale menu.
-write_maintainer_script() {
-    local path="$1" actions="$2"
-
-    cat > "$path" <<EOF
-#!/bin/sh
-# Refresh the freedesktop caches so the menu entry, the icon and the .ppen file
-# association appear without the user logging out. Generated by
-# build-linux-packages.sh -- do not edit.
-set -e
-
-case "\$1" in
-$(printf '%s' "$actions" | tr ' ' '|'))
+freedesktop_refresh_body() {
+    cat <<'EOF'
     if command -v update-desktop-database >/dev/null 2>&1; then
         update-desktop-database -q /usr/share/applications || true
     fi
@@ -942,11 +1081,117 @@ $(printf '%s' "$actions" | tr ' ' '|'))
     if command -v gtk-update-icon-cache >/dev/null 2>&1; then
         gtk-update-icon-cache -q -f /usr/share/icons/hicolor >/dev/null 2>&1 || true
     fi
+EOF
+}
+
+# deb_repo_helpers: print the repository helpers for the .deb maintainer script
+# of kind $1. Only the postinst needs to be able to write the file; the postrm
+# only ever has to recognise it.
+#
+# DPKG_ROOT is set by dpkg when it installs into a directory other than /, and a
+# maintainer script is expected to honour it. Respecting it here is also what
+# makes these scripts testable without root: point DPKG_ROOT at a temporary
+# directory and the whole thing can be driven through every case.
+deb_repo_helpers() {
+    cat <<EOF
+
+REPO_FILE="\${DPKG_ROOT:-}/etc/apt/sources.list.d/$PACKAGE_NAME.sources"
+REPO_MARKER='$REPO_MARKER'
+
+# repo_is_managed: true while the marker line is still the first line of the
+# file, which is what says the package still owns it.
+repo_is_managed() {
+    [ -f "\$REPO_FILE" ] && head -n 1 "\$REPO_FILE" | grep -qF "\$REPO_MARKER"
+}
+EOF
+
+    [[ "$1" == "postinst" ]] || return 0
+
+    cat <<EOF
+
+write_repo_file() {
+    mkdir -p "\$(dirname "\$REPO_FILE")"
+    cat > "\$REPO_FILE" <<'PPREPOEOF'
+$(deb_sources_content)
+PPREPOEOF
+    chmod 0644 "\$REPO_FILE"
+}
+EOF
+}
+
+# write_maintainer_script: write the Debian maintainer script of kind $2
+# (postinst or postrm) at path $1.
+#
+# The two scripts share the cache refresh but not the repository handling, which
+# is why this cannot be one body with a different case label.
+write_maintainer_script() {
+    local path="$1" kind="$2" actions
+
+    case "$kind" in
+        postinst) actions="configure" ;;
+        postrm)   actions="remove|upgrade|purge" ;;
+        *)        die "write_maintainer_script: unknown script kind '$kind'" ;;
+    esac
+
+    {
+        cat <<EOF
+#!/bin/sh
+# Refresh the freedesktop caches so the menu entry, the icon and the .ppen file
+# association appear without the user logging out, and keep the Purple Pen
+# repository configured. Generated by build-linux-packages.sh -- do not edit.
+set -e
+EOF
+
+        if [[ "$SETUP_REPO" == "true" ]]; then
+            deb_repo_helpers "$kind"
+        fi
+
+        printf '\ncase "$1" in\n%s)\n' "$actions"
+        freedesktop_refresh_body
+        printf '    ;;\nesac\n'
+
+        if [[ "$SETUP_REPO" == "true" ]]; then
+            if [[ "$kind" == "postinst" ]]; then
+                # Written when there is no file yet, or when the one there is
+                # still ours. That covers a first install, an upgrade, a
+                # reinstall after removal, and switching channels by installing
+                # the other package -- while leaving a file alone the moment
+                # someone has deleted the marker to take it over.
+                cat <<'EOF'
+
+case "$1" in
+configure)
+    if [ ! -f "$REPO_FILE" ] || repo_is_managed; then
+        write_repo_file
+    fi
     ;;
 esac
-
-exit 0
 EOF
+            else
+                # Removed on remove as well as on purge, and never on upgrade.
+                #
+                # The keyring is an ordinary package file, so it goes away on
+                # remove. A sources file left behind would then point at a
+                # missing key and make every later "apt update" fail with "the
+                # following signatures couldn't be verified" -- a broken system
+                # from having once installed Purple Pen. Removing it on upgrade
+                # instead would delete the file between the old postrm and the
+                # new postinst, for no gain.
+                cat <<'EOF'
+
+case "$1" in
+remove|purge)
+    if repo_is_managed; then
+        rm -f "$REPO_FILE"
+    fi
+    ;;
+esac
+EOF
+            fi
+        fi
+
+        printf '\nexit 0\n'
+    } > "$path"
 
     chmod 0755 "$path"
 }
@@ -1009,6 +1254,47 @@ rpm_requires_lines() {
 #                         rewrite shebangs in files that are not scripts.
 #   _build_id_links none  rpm >= 4.13 otherwise wants a build-id link for every
 #                         ELF file, and refuses when two of them collide.
+# rpm_repo_setup_scriptlet: print the %post fragment that configures the
+# repository and trusts the signing key.
+#
+# rpm --import rather than leaving it to dnf's own prompt: the key is already on
+# disk at this point, and a user who downloaded a package from the web site has
+# no reason to be quizzed about a fingerprint before their first update works.
+# Guarded with "|| :" so that a failure can never turn a working install into a
+# failed one -- gpgkey= still names the same file, so dnf can import it itself.
+rpm_repo_setup_scriptlet() {
+    cat <<EOF
+REPO_FILE=/etc/yum.repos.d/$PACKAGE_NAME.repo
+REPO_MARKER='$REPO_MARKER'
+
+if [ ! -f "\$REPO_FILE" ] || head -n 1 "\$REPO_FILE" | grep -qF "\$REPO_MARKER"; then
+    mkdir -p /etc/yum.repos.d
+    cat > "\$REPO_FILE" <<'PPREPOEOF'
+$(rpm_repo_content)
+PPREPOEOF
+    chmod 0644 "\$REPO_FILE"
+fi
+
+rpm --import $KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc >/dev/null 2>&1 || :
+EOF
+}
+
+# rpm_repo_removal_scriptlet: print the %postun fragment that takes the
+# repository configuration away again.
+#
+# Only when the marker line says the file is still ours, and -- because the
+# caller wraps this in the existing "if [ \$1 -eq 0 ]" -- only on a real removal
+# rather than on the removal half of an upgrade.
+rpm_repo_removal_scriptlet() {
+    cat <<EOF
+    REPO_FILE=/etc/yum.repos.d/$PACKAGE_NAME.repo
+    REPO_MARKER='$REPO_MARKER'
+    if [ -f "\$REPO_FILE" ] && head -n 1 "\$REPO_FILE" | grep -qF "\$REPO_MARKER"; then
+        rm -f "\$REPO_FILE"
+    fi
+EOF
+}
+
 write_spec() {
     local spec="$1"
 
@@ -1018,6 +1304,21 @@ write_spec() {
     local mime_files_line=""
     if [[ "$REGISTER_MIME_TYPE" == "true" ]]; then
         mime_files_line="/usr/share/mime/packages/$PACKAGE_NAME.xml"
+    fi
+
+    # Both key forms in one glob, the same way the icons are listed.
+    #
+    # The /usr/share/keyrings directory itself is deliberately NOT claimed with
+    # %dir. Owning a directory another package might also own risks a file
+    # conflict on install; the cost of not owning it is an empty directory left
+    # behind after removal, which nothing minds.
+    local keyring_files_line=""
+    local repo_setup_block=""
+    local repo_removal_block=""
+    if [[ "$SETUP_REPO" == "true" ]]; then
+        keyring_files_line="$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.*"
+        repo_setup_block="$(rpm_repo_setup_scriptlet)"
+        repo_removal_block="$(rpm_repo_removal_scriptlet)"
     fi
 
     cat > "$spec" <<EOF
@@ -1061,6 +1362,7 @@ $INSTALL_PREFIX
 /usr/share/icons/hicolor/*/apps/$PACKAGE_NAME.*
 /usr/share/pixmaps/$PACKAGE_NAME.png
 $mime_files_line
+$keyring_files_line
 %dir /usr/share/doc/$PACKAGE_NAME
 %license /usr/share/doc/$PACKAGE_NAME/copyright
 
@@ -1076,6 +1378,7 @@ fi
 if command -v gtk-update-icon-cache >/dev/null 2>&1; then
     gtk-update-icon-cache -q -f /usr/share/icons/hicolor >/dev/null 2>&1 || :
 fi
+$repo_setup_block
 
 %postun
 if [ \$1 -eq 0 ]; then
@@ -1088,6 +1391,7 @@ if [ \$1 -eq 0 ]; then
     if command -v gtk-update-icon-cache >/dev/null 2>&1; then
         gtk-update-icon-cache -q -f /usr/share/icons/hicolor >/dev/null 2>&1 || :
     fi
+$repo_removal_block
 fi
 
 %changelog
@@ -1337,6 +1641,13 @@ build_appdir() {
     rm -f "$APPDIR_PATH/usr/bin/$PACKAGE_NAME"
     rmdir "$APPDIR_PATH/usr/bin" 2>/dev/null || true
 
+    # The repository signing key goes the same way. An AppImage has no
+    # maintainer script and configures no package manager, so the key inside one
+    # would never be used by anything -- it would only invite the question of
+    # what it is doing there.
+    rm -f "$APPDIR_PATH$KEYRING_INSTALL_DIR/$KEYRING_BASENAME".*
+    rmdir "$APPDIR_PATH$KEYRING_INSTALL_DIR" 2>/dev/null || true
+
     # AppRun is the entry point the runtime executes.
     render_template "$APPRUN_TEMPLATE" "$APPDIR_PATH/AppRun"
     chmod 0755 "$APPDIR_PATH/AppRun"
@@ -1509,6 +1820,39 @@ Unix permissions. Set BUILD_DIR to a native Linux filesystem."
     [[ "$parsed_version" == "$DEB_VERSION" ]] \
         || die "The .deb reports version '$parsed_version', expected '$DEB_VERSION'."
 
+    if [[ "$SETUP_REPO" == "true" ]]; then
+        local form
+        for form in gpg asc; do
+            printf '%s\n' "$contents" | grep -q "$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.$form\$" \
+                || die "The repository key ($KEYRING_BASENAME.$form) is missing from the .deb."
+        done
+
+        # Nothing under /etc: the sources file is written by the postinst, and
+        # shipping it instead would make it a conffile that prompts the user
+        # during an upgrade.
+        if printf '%s\n' "$contents" | grep -qE '\./etc/'; then
+            die "The .deb ships a file under /etc; the repository configuration must be written by the postinst instead."
+        fi
+
+        # The maintainer scripts as dpkg will actually run them. A wrong or
+        # unsubstituted URL here would only show up on a user's machine, on
+        # their first update, weeks later.
+        local postinst postrm
+        postinst="$(dpkg-deb --info "$DEB_FILE" postinst 2>/dev/null)" \
+            || die "The .deb has no postinst."
+        postrm="$(dpkg-deb --info "$DEB_FILE" postrm 2>/dev/null)" \
+            || die "The .deb has no postrm."
+
+        printf '%s' "$postinst" | grep -qF "$PUBLISH_BASE_URL/$DEB_REPO_SUBDIR" \
+            || die "The .deb postinst does not carry the repository URL."
+        printf '%s' "$postinst" | grep -qF "Suites: $PACKAGE_SUITES" \
+            || die "The .deb postinst does not subscribe to '$PACKAGE_SUITES'."
+        printf '%s' "$postrm" | grep -qF 'rm -f "$REPO_FILE"' \
+            || die "The .deb postrm does not remove the sources file."
+
+        info "Repository setup: $PACKAGE_SUITES, key $KEYRING_BASENAME, sources written by postinst"
+    fi
+
     info "$(basename "$DEB_FILE"): $(printf '%s\n' "$contents" | wc -l | tr -d ' ') entries, root-owned, apphost executable"
 
     if command -v lintian >/dev/null 2>&1; then
@@ -1569,6 +1913,36 @@ verify_rpm() {
         || die "The .rpm advertises $provides bundled shared libraries in its Provides.
 AutoReqProv must be off; check write_spec."
 
+    if [[ "$SETUP_REPO" == "true" ]]; then
+        local form
+        for form in gpg asc; do
+            printf '%s\n' "$files" | grep -qx "$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.$form" \
+                || die "The repository key ($KEYRING_BASENAME.$form) is missing from the .rpm.
+Check the %files list in write_spec."
+        done
+
+        # The scriptlets as rpm will run them, for the same reason the .deb's
+        # maintainer scripts are checked: a wrong URL here surfaces only on a
+        # user's machine, on their first update.
+        local scripts
+        scripts="$(rpm -qp --scripts "$RPM_FILE" 2>/dev/null)"
+
+        printf '%s' "$scripts" | grep -qF "$PUBLISH_BASE_URL/$RPM_REPO_SUBDIR" \
+            || die "The .rpm %post does not carry the repository URL."
+        printf '%s' "$scripts" | grep -qF "rpm --import $KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc" \
+            || die "The .rpm %post does not import the signing key."
+
+        # The beta section must be enabled exactly when this build is a
+        # prerelease. Getting this backwards would either strand testers on the
+        # stable channel or push prereleases at everyone.
+        local want_beta=0
+        [[ "$PACKAGE_SUITES" == *"$BETA_CHANNEL"* ]] && want_beta=1
+        printf '%s' "$scripts" | grep -qF "enabled=$want_beta" \
+            || die "The .rpm %post does not set the $BETA_CHANNEL section to enabled=$want_beta."
+
+        info "Repository setup: $PACKAGE_SUITES, key imported by %post, .repo written by %post"
+    fi
+
     info "$(basename "$RPM_FILE"): $(printf '%s\n' "$files" | wc -l | tr -d ' ') files, apphost 0755, no bundled Provides"
 }
 
@@ -1608,6 +1982,14 @@ verify_appimage() {
     [[ -x "$root/AppRun" ]] || die "AppRun is missing or not executable inside the AppImage."
     [[ -x "$root$INSTALL_PREFIX/$APP_NAME" ]] \
         || die "$INSTALL_PREFIX/$APP_NAME is missing or not executable inside the AppImage."
+
+    # An AppImage configures nothing: it has no maintainer scripts and no
+    # package manager behind it, so a repository key inside one would be inert
+    # and confusing. build_appdir strips it; this is the check that it did.
+    [[ ! -e "$root$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.gpg" \
+       && ! -e "$root$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc" ]] \
+        || die "The AppImage carries the repository signing key, which it has no use for.
+build_appdir should have removed it."
 
     # Desktop integration payload. These are what an AppImage manager reads to
     # install a menu entry, an icon and the .ppen file association, so a
@@ -1768,6 +2150,7 @@ show_deps() {
 check_prerequisites
 choose_build_dir
 read_version
+resolve_package_suites
 resolve_architecture
 
 PAYLOAD_DIR="$BUILD_DIR/payload"
@@ -1804,6 +2187,11 @@ fi
 info "Purple Pen $FULL_VERSION ($VERSION_LABEL) -> $UPSTREAM_VERSION"
 info "Target $RUNTIME_IDENTIFIER: Debian $DEB_ARCH, RPM $RPM_ARCH"
 info "Build directory $BUILD_DIR"
+if [[ "$SETUP_REPO" == "true" ]]; then
+    info "Packages will subscribe the user to: $PACKAGE_SUITES"
+else
+    info "Packages will not configure a repository (SETUP_REPO is not true)"
+fi
 
 mkdir -p "$OUTPUT_DIR"
 

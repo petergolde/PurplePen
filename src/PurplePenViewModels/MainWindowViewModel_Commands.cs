@@ -120,10 +120,10 @@ namespace PurplePen.ViewModels
             Zoom1000Checked = UpdateZoomChecked(10.0F);
 
             // Update checked status of Intensity.
-            IntensityVeryLowChecked = UpdateIntensityChecked(0.2F);
-            IntensityLowChecked = UpdateIntensityChecked(0.4F);
-            IntensityMediumChecked = UpdateIntensityChecked(0.6F);
-            IntensityHighChecked = UpdateIntensityChecked(0.8F);
+            IntensityVeryLowChecked = UpdateIntensityChecked(0.4F);
+            IntensityLowChecked = UpdateIntensityChecked(0.55F);
+            IntensityMediumChecked = UpdateIntensityChecked(0.7F);
+            IntensityHighChecked = UpdateIntensityChecked(0.85F);
             IntensityFullChecked = UpdateIntensityChecked(1.0F);
 
             // Update checked status of Quality.

@@ -625,4 +625,7 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Archivo de imagen|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Meta</value>
+  </data>
 </root>

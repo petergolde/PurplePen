@@ -1,4 +1,4 @@
-/* Copyright (c) Peter Golde
+﻿/* Copyright (c) Peter Golde
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -56,6 +56,10 @@ namespace PurplePen.Tests
         private const string macAppPath = "/Applications/Purple Pen.app";
         private const string linuxInstallDirectory = "/opt/purplepen";
 
+        // The AppImage file being run, which an AppImage update replaces. Not a directory, unlike
+        // every other Linux case: an AppImage is one file and that file is the whole application.
+        private const string appImagePath = "/home/me/Applications/PurplePen-4.0-x86_64.AppImage";
+
         // Name of the executable to restart after a Linux tarball update. In the application this
         // comes from the running process rather than being a constant.
         private const string executableName = "AvPurplePen";
@@ -86,6 +90,17 @@ namespace PurplePen.Tests
             Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.Linux, "/tmp/purplepen.deb"));
             Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.Linux, "/tmp/purplepen.rpm"));
             Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.Linux, "/tmp/purplepen.tar.gz"));
+
+            // An AppImage build takes AppImages and nothing else: a package would install a second
+            // copy beside it, and a tarball would unpack into the read-only mount it runs from.
+            Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.LinuxAppImage, "/tmp/PurplePen-4.0-x86_64.AppImage"));
+            Assert.IsFalse(UpdateInstallerScript.IsSupported(UpdatePlatform.LinuxAppImage, "/tmp/purplepen.deb"));
+            Assert.IsFalse(UpdateInstallerScript.IsSupported(UpdatePlatform.LinuxAppImage, "/tmp/purplepen.rpm"));
+            Assert.IsFalse(UpdateInstallerScript.IsSupported(UpdatePlatform.LinuxAppImage, "/tmp/purplepen.tar.gz"));
+
+            // And an ordinary Linux build can't do anything with one, since it has no single file
+            // of its own to replace.
+            Assert.IsFalse(UpdateInstallerScript.IsSupported(UpdatePlatform.Linux, "/tmp/PurplePen-4.0-x86_64.AppImage"));
         }
 
         [TestMethod]
@@ -124,6 +139,12 @@ namespace PurplePen.Tests
             Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.Windows, @"C:\temp\PurplePen.EXE"));
             Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.MacOS, "/tmp/PurplePen.DMG"));
             Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.Linux, "/tmp/purplepen.TAR.GZ"));
+
+            // The AppImage entry in knownExtensions is spelled ".AppImage", the way real files are,
+            // so this is the case that proves the spelling in the table is presentation and not a
+            // requirement. A project that ships a lowercase ".appimage" still updates.
+            Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.LinuxAppImage, "/tmp/purplepen-4.0-x86_64.appimage"));
+            Assert.IsTrue(UpdateInstallerScript.IsSupported(UpdatePlatform.LinuxAppImage, "/tmp/PURPLEPEN.APPIMAGE"));
         }
 
         [TestMethod]
@@ -354,6 +375,82 @@ namespace PurplePen.Tests
             Assert.IsFalse(script.Contains("EXECUTABLE"), "no restart should be attempted without a name to restart");
         }
 
+        // ---------- Linux AppImage ----------
+
+        [TestMethod]
+        public void AppImageReplacesTheFileBeingRunFrom()
+        {
+            string script = BuildScriptText(UpdatePlatform.LinuxAppImage, "/tmp/PurplePen-4.1-x86_64.AppImage", appImagePath);
+
+            StringAssert.Contains(script, "NEWIMAGE=\"/tmp/PurplePen-4.1-x86_64.AppImage\"");
+            StringAssert.Contains(script, "APPIMAGE=\"" + appImagePath + "\"");
+
+            // Copied over the file we were running from, and made executable -- a downloaded file
+            // does not necessarily arrive with the executable bit set, and an AppImage that isn't
+            // executable can't be started.
+            StringAssert.Contains(script, "if cp \"$NEWIMAGE\" \"$APPIMAGE\"; then");
+            StringAssert.Contains(script, "chmod +x \"$APPIMAGE\"");
+
+            // And restarted, so the user gets the new version back without doing anything.
+            StringAssert.Contains(script, "\"$APPIMAGE\" &");
+
+            // Emphatically not run in place: the download is the update, not an installer.
+            Assert.IsFalse(script.Contains("xdg-open"), "an AppImage update must not be handed to the desktop");
+            Assert.IsFalse(script.Contains("\"$NEWIMAGE\" &"), "the downloaded AppImage must not be run from the download directory");
+        }
+
+        [TestMethod]
+        public void AppImageKeepsTheOldFileUntilTheNewOneIsInPlace()
+        {
+            string script = BuildScriptText(UpdatePlatform.LinuxAppImage, "/tmp/PurplePen-4.1-x86_64.AppImage", appImagePath);
+
+            // The old file is moved aside rather than overwritten, so a failure part-way through
+            // can't leave the user with no application at all.
+            StringAssert.Contains(script, "OLDIMAGE=\"$APPIMAGE.old\"");
+            StringAssert.Contains(script, "if mv \"$APPIMAGE\" \"$OLDIMAGE\"; then");
+
+            // It is only discarded on the success branch, and put back on the failure one.
+            int successfulCopy = script.IndexOf("    if cp \"$NEWIMAGE\" \"$APPIMAGE\"; then", StringComparison.Ordinal);
+            int discardOldCopy = script.IndexOf("        rm -f \"$OLDIMAGE\"", StringComparison.Ordinal);
+            int restoreOldCopy = script.IndexOf("        mv \"$OLDIMAGE\" \"$APPIMAGE\"", StringComparison.Ordinal);
+            Assert.IsTrue(successfulCopy >= 0, "expected a guarded copy of the new AppImage");
+            Assert.IsTrue(discardOldCopy > successfulCopy, "the old AppImage should only be deleted after the new one is in place");
+            Assert.IsTrue(restoreOldCopy > discardOldCopy, "the old AppImage should be put back when the copy fails");
+
+            // The restart comes after the whole swap and is not inside either branch, so it starts
+            // whichever AppImage ended up at the original path -- the new one normally, the old one
+            // if the move or the copy failed. The user is never left with nothing running.
+            int restart = script.IndexOf("\n\"$APPIMAGE\" &", StringComparison.Ordinal);
+            Assert.IsTrue(restart > restoreOldCopy, "the restart should follow the whole swap, unindented and unconditional");
+        }
+
+        [TestMethod]
+        public void AppImageScriptWaitsAndNeverUsesSudo()
+        {
+            string script = BuildScriptText(UpdatePlatform.LinuxAppImage, "/tmp/PurplePen-4.1-x86_64.AppImage", appImagePath);
+
+            // The file can't be replaced while it is mounted and running, so the wait matters here
+            // as much as anywhere.
+            StringAssert.Contains(script, "while ps -p 47110 > /dev/null 2>&1; do");
+
+            Assert.IsFalse(script.Contains("sudo"), "the AppImage script must not use sudo");
+            Assert.IsFalse(script.Contains("pkexec"), "the AppImage script must not use pkexec");
+        }
+
+        [TestMethod]
+        public void AppImageIgnoresTheExecutableName()
+        {
+            // An AppImage restarts the file named by applicationPath, so it neither needs nor uses
+            // the name of the executable buried inside it -- and must still work when the caller
+            // could not work that name out.
+            string withName = BuildScriptText(UpdatePlatform.LinuxAppImage, "/tmp/PurplePen-4.1-x86_64.AppImage", appImagePath);
+            string withoutName = UpdateInstallerScript.Build(
+                UpdatePlatform.LinuxAppImage, "/tmp/PurplePen-4.1-x86_64.AppImage", testProcessId, appImagePath, null).ScriptText;
+
+            Assert.AreEqual(withName, withoutName);
+            Assert.IsFalse(withName.Contains(executableName), "the script should not name the executable inside the AppImage");
+        }
+
         // ---------- Paths ----------
 
         [TestMethod]
@@ -369,6 +466,11 @@ namespace PurplePen.Tests
 
             string linuxScript = BuildScriptText(UpdatePlatform.Linux, "/tmp/my downloads/purple pen.deb", linuxInstallDirectory);
             StringAssert.Contains(linuxScript, "xdg-open \"/tmp/my downloads/purple pen.deb\"");
+
+            string appImageScript = BuildScriptText(
+                UpdatePlatform.LinuxAppImage, "/tmp/my downloads/Purple Pen.AppImage", "/home/me/My Programs/Purple Pen.AppImage");
+            StringAssert.Contains(appImageScript, "NEWIMAGE=\"/tmp/my downloads/Purple Pen.AppImage\"");
+            StringAssert.Contains(appImageScript, "APPIMAGE=\"/home/me/My Programs/Purple Pen.AppImage\"");
         }
     }
 }

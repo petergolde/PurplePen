@@ -1,4 +1,4 @@
-// UpdateManager.cs
+﻿// UpdateManager.cs
 //
 // Drives the whole update experience: check the manifest once at startup, tell the user if there is
 // something newer, download it if they want it, prompt them to save any open work, write out an
@@ -291,8 +291,14 @@ namespace AvPurplePen
                     CreateNoWindow = true,
 
                     // The install directory rather than the current one, which may since have been
-                    // deleted or become unavailable and would then fail the launch.
-                    WorkingDirectory = AppContext.BaseDirectory,
+                    // deleted or become unavailable and would then fail the launch. An AppImage is
+                    // the exception: its install directory is the temporary mount it is running
+                    // from, which is unmounted the instant we exit, leaving the script -- and the
+                    // new version it starts -- sitting in a directory that no longer exists. The
+                    // download directory is used instead, since it is somewhere the script is
+                    // working anyway and stays put.
+                    WorkingDirectory = (platform == UpdatePlatform.LinuxAppImage)
+                        ? GetDownloadDirectory() : AppContext.BaseDirectory,
                 };
 
                 // ArgumentList quotes each argument properly; the script's path runs through the
@@ -368,6 +374,13 @@ namespace AvPurplePen
         /// Gets the platform this is running on, as the manifest names it: an operating system and
         /// an architecture, such as "win-x64", "osx-arm64" or "linux-x64".
         ///
+        /// An AppImage build reports "linux-appimage-x64" rather than "linux-x64", because it
+        /// updates in a completely different way. The .deb and .rpm builds are updated by the
+        /// distribution's package manager, so their manifest entries carry release notes and no
+        /// download; an AppImage belongs to nobody but the user who downloaded it, so its entry
+        /// points at another AppImage that we install ourselves. Sharing one platform name between
+        /// the two would mean offering one of them an update it cannot use.
+        ///
         /// Built here rather than read from <see cref="RuntimeInformation.RuntimeIdentifier"/>,
         /// which is not guaranteed to be a portable identifier of this shape — a self-contained
         /// publish can report something more specific, which would then match nothing in the
@@ -382,7 +395,7 @@ namespace AvPurplePen
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                 operatingSystem = "osx";
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                operatingSystem = "linux";
+                operatingSystem = (GetAppImagePath() == null) ? "linux" : "linux-appimage";
             else
                 operatingSystem = "unknown";
 
@@ -407,14 +420,40 @@ namespace AvPurplePen
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                 return UpdatePlatform.MacOS;
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                return UpdatePlatform.Linux;
+                return (GetAppImagePath() == null) ? UpdatePlatform.Linux : UpdatePlatform.LinuxAppImage;
             else
                 return UpdatePlatform.Windows;
         }
 
         /// <summary>
+        /// Gets the path of the AppImage file Purple Pen is running from, when it is running from
+        /// one.
+        ///
+        /// The AppImage runtime sets APPIMAGE to the absolute path of the .AppImage file before
+        /// handing control to the application inside it. That is the only way to find the file:
+        /// everything the running program can see of itself — <see cref="Environment.ProcessPath"/>,
+        /// <see cref="AppContext.BaseDirectory"/> — points into the temporary read-only mount the
+        /// AppImage is unpacked onto, which tells us nothing about where the file itself lives and
+        /// is gone as soon as the process exits.
+        ///
+        /// The file is checked to exist as well, so that a stale APPIMAGE inherited from some other
+        /// process's environment can't make an ordinary Linux build look like an AppImage.
+        /// </summary>
+        /// <returns>The full path of the AppImage being run, or null if this isn't an AppImage.</returns>
+        private static string? GetAppImagePath()
+        {
+            string? appImagePath = Environment.GetEnvironmentVariable("APPIMAGE");
+
+            if (string.IsNullOrEmpty(appImagePath) || !File.Exists(appImagePath))
+                return null;
+
+            return appImagePath;
+        }
+
+        /// <summary>
         /// Gets what the install script will be replacing: on macOS the application bundle, on Linux
-        /// the installation directory. Windows installers work this out for themselves and get null.
+        /// the installation directory, and for an AppImage the .AppImage file itself. Windows
+        /// installers work this out for themselves and get null.
         /// </summary>
         /// <param name="platform">The platform being installed on.</param>
         /// <returns>The path to replace, or null on macOS when the application bundle can't be
@@ -424,6 +463,12 @@ namespace AvPurplePen
             switch (platform) {
                 case UpdatePlatform.MacOS:
                     return GetMacApplicationBundlePath();
+
+                case UpdatePlatform.LinuxAppImage:
+                    // The whole application is this one file, so it is the file that gets replaced.
+                    // Not AppContext.BaseDirectory, which is inside the read-only mount the AppImage
+                    // is running from and would vanish the moment we exited.
+                    return GetAppImagePath();
 
                 case UpdatePlatform.Linux:
                     return AppContext.BaseDirectory;
