@@ -19,6 +19,7 @@ build/
 *.DS_Store
 src/TestResults
 src/Tools/TranslateTool/TestResults
+src/MapModel/TestResults
 src/Tools/TranslateTool/TestFiles
 src/PurplePen_Tests/Test References
 src/TestFiles/controller/ocad_create1/*.ocd
