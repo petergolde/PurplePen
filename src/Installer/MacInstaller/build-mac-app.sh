@@ -34,6 +34,7 @@ source "$SCRIPT_DIR/config.sh"
 PROJECT_FILE="$SRC_DIR/AvPurplePen/AvPurplePen.csproj"
 VERSION_FILE="$SRC_DIR/PurplePenCore/VersionNumber.cs"
 EXCLUDE_FILE="$SCRIPT_DIR/publish-exclude.txt"
+LICENSE_FILE="$SRC_DIR/../LICENSE"
 PLIST_TEMPLATE="$SCRIPT_DIR/Info.plist.template"
 ENTITLEMENTS="$SCRIPT_DIR/PurplePen.entitlements"
 ICON_DIR="$SRC_DIR/AvPurplePen/Assets/AppIcon"
@@ -233,6 +234,7 @@ fi
 [[ -f "$PLIST_TEMPLATE" ]] || die "Cannot find Info.plist template at $PLIST_TEMPLATE"
 [[ -f "$ENTITLEMENTS" ]] || die "Cannot find entitlements at $ENTITLEMENTS"
 [[ -d "$ICON_DIR" ]] || die "Cannot find the icon directory at $ICON_DIR"
+[[ -f "$LICENSE_FILE" ]] || die "Cannot find the license file at $LICENSE_FILE"
 
 if [[ ! -f "$EXCLUDE_FILE" ]]; then
     warn "No publish-exclude.txt found; nothing will be excluded from the bundle."
@@ -681,6 +683,10 @@ assemble_bundle() {
     cp -a "$STAGING_DIR/." "$APP_BUNDLE/Contents/MacOS/"
 
     cp "$ICNS_FILE" "$APP_BUNDLE/Contents/Resources/$APP_NAME.icns"
+
+    # Ship the licence inside the bundle; Contents/Resources is where macOS
+    # apps conventionally keep it.
+    cp "$LICENSE_FILE" "$APP_BUNDLE/Contents/Resources/LICENSE.txt"
 
     write_info_plist
 
