@@ -11,7 +11,7 @@ using System.Runtime.Versioning;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Golde Software")]
 [assembly: AssemblyProduct("Purple Pen")]
-[assembly: AssemblyCopyright("Copyright © 2007-2016")]
+[assembly: AssemblyCopyright("Copyright © 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
