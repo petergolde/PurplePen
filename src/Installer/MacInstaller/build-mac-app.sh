@@ -684,8 +684,6 @@ assemble_bundle() {
 
     cp "$ICNS_FILE" "$APP_BUNDLE/Contents/Resources/$APP_NAME.icns"
 
-    # Ship the licence inside the bundle; Contents/Resources is where macOS
-    # apps conventionally keep it.
     cp "$LICENSE_FILE" "$APP_BUNDLE/Contents/Resources/LICENSE.txt"
 
     write_info_plist

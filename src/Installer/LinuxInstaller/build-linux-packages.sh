@@ -972,8 +972,6 @@ the MIT license, together with its native dependencies (SkiaSharp, HarfBuzz,
 PDFium). Their licenses are those of the respective upstream projects.
 EOF
 
-    # Debian policy and the RPM %license marker both expect the verbatim
-    # licence here, so append the canonical LICENSE from the repository root.
     echo "" >> "$doc_dir/copyright"
     cat "$LICENSE_FILE" >> "$doc_dir/copyright"
 }
