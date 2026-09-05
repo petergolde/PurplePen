@@ -17,11 +17,10 @@ build/
 *.sdf
 *.opensdf
 *.DS_Store
-!src/Libraries/**/Debug
-!src/Libraries/**/Release
 src/TestResults
-src/tools/TranslateTool/TestResults
-src/tools/TranslateTool/TestFiles
+src/Tools/TranslateTool/TestResults
+src/MapModel/TestResults
+src/Tools/TranslateTool/TestFiles
 src/PurplePen_Tests/Test References
 src/TestFiles/controller/ocad_create1/*.ocd
 src/TestFiles/controller/ocad_create2/*.ocd
@@ -30,24 +29,25 @@ src/TestFiles/controller/ocad_create4/*.ocd
 src/TestFiles/controller/ocad_create5/*.ocd
 src/TestFiles/controller/ocad_create6/*.ocd
 src/TestFiles/controller/ocad_create9/*.ocd
+src/TestFiles/modes/ocad_print_area/*.ocd
 src/TestFiles/exportxml/*_actual.xml
 src/TestFiles/gpx/*_actual.gpx
 doc/userdocs/Help/_vti_cnf
 doc/userdocs/Help/_vti_pvt
+doc/userdocs/WebSite/**/_vti_cnf
+doc/userdocs/WebSite/**/_vti_pvt
+doc/userdocs/WebSite/desktop.ini
 doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
-src/PPenDXCore.Solution
 src/SetupIS/SetupIS
 .bzr/
-
 **/.vs
-src/.claude/
+.claude/
 Thumbs.db
 *.opendb
 *.db
 src/Innosetup/output/
 src/Innosetup/publish/
-
 
 # Visual C++ cache files
 ipch/
@@ -56,41 +56,17 @@ ipch/
 *.cachefile
 
 # Specific to this project.
-
-*_temp.*
-*_diff.png
-*_new.png
 *_tempnew.png
 *.crunchproject.local.xml
-src/TestResults
-src/tools/TranslateTool/TestResults
-src/tools/TranslateTool/TestFiles
-src/PurplePen_Tests/Test References
-src/TestFiles/controller/ocad_create1/*.ocd
-src/TestFiles/controller/ocad_create2/*.ocd
-src/TestFiles/controller/ocad_create3/*.ocd
-src/TestFiles/controller/ocad_create4/*.ocd
-src/TestFiles/controller/ocad_create5/*.ocd
-src/TestFiles/controller/ocad_create6/*.ocd
 /src/TestFiles/controller/ocad_create12/mrsneeze.jpg
 /src/TestFiles/controller/ocad_create13/mrsneeze.jpg
-src/TestFiles/modes/ocad_print_area/*.ocd
-doc/userdocs/Help/_vti_cnf
-doc/userdocs/Help/_vti_pvt
-doc/userdocs/Help/*.log
-doc/userdocs/Help/desktop.ini
-src/PPenDXCore.Solution
-*.DS_Store
 *.VC.opendb
 *.VC.db
-src/packages/
 src/.vs/
-
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x86
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
 !src/PdfiumViewer/Libraries/**/x86
 !src/PdfiumViewer/Libraries/**/x64
-
 /src/InternalTrace.*.log
 /src/Tools/LinearColorConverter/.vs/
 *.vsidx
@@ -109,15 +85,11 @@ src/.vs/
 /src/TestFiles/printdesc/relay_pdf_desc3.pdf
 /src/TestFiles/punchcards/descpdf1.pdf
 /src/TestFiles/punchcards/descpdf2.pdf
-/src/PurplePenMsixInstaller/AppPackages
-/src/PurplePenMsixInstaller/BundleArtifacts/x64.txt
-/src/PurplePenMsixInstaller/BundleArtifacts/x86.txt
-/src/PurplePenMsixInstaller/BundleArtifacts/Upload/x64.txt
-/src/PurplePenMsixInstaller/BundleArtifacts/Upload/x86.txt
 src/MsixInstaller/AppPackages/
 src/MsftStoreInstaller/AppPackages/
 /src/FontInstaller/output/
 loc/po/tar/
+loc/po/*Log.txt
 /src/Help/output/Purple Pen Help.log
 /src/TestFiles/controller/ocad_create10/Lincoln-CMYK.gif
 

@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © by Peter Golde"
-msgstr "Copyright © Peter Golde"
+msgid "Copyright 2006-2026 Peter Golde"
+msgstr "Copyright 2006-2026 Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."

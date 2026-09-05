@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: AboutForm.resx, copyrightLabel.Text
-msgid "Copyright © by Peter Golde"
+msgid "Copyright 2006-2026 Peter Golde"
 msgstr "Telif Hakkı   Peter Golde e aittir"
 
 #: AboutForm.resx, freeLabel.Text

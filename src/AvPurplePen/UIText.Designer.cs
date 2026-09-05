@@ -61,7 +61,7 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright © by Peter Golde.
+        ///   Looks up a localized string similar to Copyright 2006-2026 Peter Golde
         /// </summary>
         public static string AboutForm_copyrightLabel_Text {
             get {

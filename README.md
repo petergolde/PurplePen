@@ -1,2 +1,2 @@
 # PurplePen
-Course setting program for orienteering races.
+Course setting program for orienteering.

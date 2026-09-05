@@ -142,7 +142,7 @@
     <value>Select a language:</value>
   </data>
   <data name="AboutForm_copyrightLabel_Text" xml:space="preserve">
-    <value>Copyright © by Peter Golde</value>
+    <value>Copyright 2006-2026 Peter Golde</value>
   </data>
   <data name="AboutForm_freeLabel_Text" xml:space="preserve">
     <value>Purple Pen is free software and may be copied and shared.</value>

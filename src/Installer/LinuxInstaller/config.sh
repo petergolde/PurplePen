@@ -54,7 +54,7 @@ and export the results for printing and race management.}"
 : "${PACKAGE_LICENSE:=BSD-3-Clause}"
 
 # Copyright line for /usr/share/doc/<package>/copyright.
-: "${COPYRIGHT:=Copyright (c) 2006-2026 Peter Golde. All rights reserved.}"
+: "${COPYRIGHT:=Copyright 2006-2026 Peter Golde}"
 
 # Debian section and RPM group. "graphics" is the closest fit for a drawing /
 # map program; "science" would also be defensible.
