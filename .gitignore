@@ -40,7 +40,6 @@ doc/userdocs/WebSite/desktop.ini
 doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
 src/SetupIS/SetupIS
-.bzr/
 **/.vs
 .claude/
 Thumbs.db
@@ -86,9 +85,12 @@ src/.vs/
 /src/TestFiles/punchcards/descpdf1.pdf
 /src/TestFiles/punchcards/descpdf2.pdf
 src/MsixInstaller/AppPackages/
+src/MsixInstaller/BundleArtifacts/
 src/MsftStoreInstaller/AppPackages/
+src/MsftStoreInstaller/BundleArtifacts/
 /src/FontInstaller/output/
 loc/po/tar/
+loc/po/pofiles.tar
 loc/po/*Log.txt
 /src/Help/output/Purple Pen Help.log
 /src/TestFiles/controller/ocad_create10/Lincoln-CMYK.gif

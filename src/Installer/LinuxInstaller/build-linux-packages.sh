@@ -29,6 +29,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+REPO_ROOT="$(cd "$SRC_DIR/.." && pwd)"
 
 # shellcheck source=config.sh
 source "$SCRIPT_DIR/config.sh"
@@ -36,7 +37,7 @@ source "$SCRIPT_DIR/config.sh"
 PROJECT_FILE="$SRC_DIR/AvPurplePen/AvPurplePen.csproj"
 VERSION_FILE="$SRC_DIR/PurplePenCore/VersionNumber.cs"
 EXCLUDE_FILE="$SCRIPT_DIR/publish-exclude.txt"
-LICENSE_FILE="$SRC_DIR/../LICENSE"
+LICENSE_FILE="$REPO_ROOT/LICENSE"
 DESKTOP_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME.desktop.template"
 MIME_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME-mime.xml.template"
 APPRUN_TEMPLATE="$SCRIPT_DIR/AppRun.template"

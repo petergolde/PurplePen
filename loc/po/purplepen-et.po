@@ -17,7 +17,7 @@ msgstr ""
 
 #: AboutForm.resx, copyrightLabel.Text
 msgid "Copyright 2006-2026 Peter Golde"
-msgstr "© Autoriõigused kuuluvad Peter Goldile"
+msgstr "Copyright 2006-2026 Peter Golde"
 
 #: AboutForm.resx, freeLabel.Text
 msgid "Purple Pen is free software and may be copied and shared."
