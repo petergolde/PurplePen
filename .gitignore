@@ -33,6 +33,9 @@ src/TestFiles/exportxml/*_actual.xml
 src/TestFiles/gpx/*_actual.gpx
 doc/userdocs/Help/_vti_cnf
 doc/userdocs/Help/_vti_pvt
+doc/userdocs/WebSite/**/_vti_cnf
+doc/userdocs/WebSite/**/_vti_pvt
+doc/userdocs/WebSite/desktop.ini
 doc/userdocs/Help/*.log
 doc/userdocs/Help/desktop.ini
 src/SetupIS/SetupIS
