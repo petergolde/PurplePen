@@ -85,9 +85,6 @@
     <Compile Update="Views\Dialogs\SwitchLanguageDialog.axaml.cs">
       <DependentUpon>SwitchLanguageDialog.axaml</DependentUpon>
     </Compile>
-    <Compile Update="UIText.*.Designer.cs">
-      <DependentUpon>UIText.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
