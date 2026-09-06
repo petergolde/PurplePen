@@ -99,9 +99,10 @@ namespace AvPurplePen
                 try {
                     CultureInfo cultureInfo = CultureInfo.GetCultureInfo(uiLanguage);
 
-                    // Only the app-domain default is set, never Thread.CurrentThread.CurrentUICulture:
-                    // a thread-level culture would shadow DefaultThreadCurrentUICulture forever and
-                    // prevent UILanguageService from changing the language later. See the comment there.
+                    // The app-domain default is enough here: this runs before Avalonia starts, and
+                    // the first dispatcher operation picks the culture up and carries it on the UI
+                    // thread from then on. UILanguageService writes CurrentUICulture directly when
+                    // the user switches language later; see the comment there.
                     CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
                 }
                 catch (Exception) { }        // Ignore problem -- e.g. this culture name isn't supported.

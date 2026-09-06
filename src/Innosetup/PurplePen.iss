@@ -798,6 +798,7 @@ Source: "{#BuildDir}\et\*"; DestDir: "{app}\et"; Flags: ignoreversion recursesub
 Source: "{#BuildDir}\fi\*"; DestDir: "{app}\fi"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\fr\*"; DestDir: "{app}\fr"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\hu\*"; DestDir: "{app}\hu"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#BuildDir}\it\*"; DestDir: "{app}\it"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\ja\*"; DestDir: "{app}\ja"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\nb-NO\*"; DestDir: "{app}\nb-NO"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "{#BuildDir}\nl\*"; DestDir: "{app}\nl"; Flags: ignoreversion recursesubdirs createallsubdirs
