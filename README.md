@@ -3,4 +3,4 @@ Course setting program for orienteering.
 
 ## License
 
-BSD 3-Clause. See [LICENSE](LICENSE).
+_Purple Pen_ is licensed under the BSD 3-Clause license. See [LICENSE](LICENSE).
