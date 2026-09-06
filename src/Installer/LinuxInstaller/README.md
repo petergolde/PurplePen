@@ -370,6 +370,25 @@ knowing if you ever sign an RPM by hand.
 every package ever published keeps working. That is deliberate: the pool is also
 the download site.
 
+**Republishing one version twice needs `AlwaysStat`, which is why it is set.**
+`apt-ftparchive` will not even stat a package it already holds a `--db` cache
+entry for, so rebuilding `4.0.0~beta1-1` and publishing it again would index the
+*previous* build's size and checksums while the pool holds the new file — and
+every download would then fail its hash check. `APT::FTPArchive::AlwaysStat` is
+passed on every run to stop that; apt defaults it off on the grounds that
+republishing a version is not recommended. The check is on mtime, which is why
+nothing here preserves timestamps when staging.
+
+The dnf side has no equivalent trap: `createrepo_c --update` re-reads a package
+whose size or mtime changed, and `stage_and_sign_rpms` compares `%{PKGID}` so a
+genuine rebuild is re-signed rather than skipped.
+
+Even with all that correct, republishing a version is worth avoiding: apt and
+dnf both compare version strings, so nobody who already installed
+`4.0.0~beta1-1` is *offered* the rebuild, and any CDN or `apt-cacher-ng` in the
+way may go on serving the old bytes from the same URL. Bumping `PACKAGE_RELEASE`
+to 2 — giving `4.0.0~beta1-2` — costs nothing and avoids both.
+
 **The AppImage is renamed on the way in.** `output/` holds
 `PurplePen-4.0.0~beta1-x86_64.AppImage`; the tree gets
 `PurplePen-4.0.0-beta1-linux-x64.AppImage`. A tilde has no business in a URL,
