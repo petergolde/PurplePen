@@ -44,9 +44,9 @@
 #   runtimes/. The overlay (INCLUDE_PDF_CONVERTER in config.sh, on by default)
 #   is what puts it at the top level. Excluding runtimes/ with the overlay
 #   turned off silently removes PDF map template support.
-#
+
 runtimes/
-#
+
 # --- Other platforms' build output: handled automatically, do not list -----
 #
 #   The same recursive glob also sweeps in every RID-specific subdirectory
@@ -63,9 +63,9 @@ runtimes/
 #
 #   Nothing here loads a .dll. These arrive from PdfConverter's RID-agnostic
 #   build output landing at the payload root.
-#
+
 *.dll.config
-#
+
 # --- PdfConverter: do NOT exclude -----------------------------------------
 #
 #   This list is applied to the PdfConverter overlay as well, so excluding
@@ -82,19 +82,36 @@ runtimes/
 #   To leave the helper out entirely, set INCLUDE_PDF_CONVERTER=false rather
 #   than excluding files here -- that way the build does not spend time
 #   publishing something it then discards.
-#
+
 # --- Debug symbols --------------------------------------------------------
 #
 #   Safe to drop; only affects the quality of crash stack traces. DebugType is
 #   already set to none for the main publish, so this catches only stragglers
 #   copied in from PdfConverter's build output.
-#
+
 *.pdb
-#
+
 # --- Satellite resource assemblies ----------------------------------------
 #
 #   One directory per translated language (de/, fr/, ja/, ...). Only exclude
 #   languages you do not intend to ship, and remember Purple Pen supports live
 #   language switching, so an excluded language silently falls back to English.
 #
-# ---------------------------------------------------------------------------
+
+ca/
+en-GB/
+he/
+id/
+ku/
+ru/
+sl/
+zh-HK/
+
+# --- XML documentation for libraries ----------------------------------------
+#
+# The XML doc for some libraries is not needed.
+
+DotSpatial.Projections.xml
+PdfSharp.Shared.xml
+PdfSharp.System.xml
+PdfSharp.xml

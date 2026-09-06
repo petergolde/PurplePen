@@ -52,9 +52,9 @@
 #   Verified with this line active: the main app launches and renders (Avalonia
 #   draws through Skia, so a live window proves libSkiaSharp loaded), and the
 #   helper converts a PDF with no system .NET present.
-#
+
 runtimes/
-#
+
 # --- PdfConverter: do NOT exclude -----------------------------------------
 #
 #   Note this list is applied to the PdfConverter overlay as well, so excluding
@@ -75,9 +75,9 @@ runtimes/
 # --- Debug symbols --------------------------------------------------------
 #
 #   Safe to drop; only affects the quality of crash stack traces.
-#
-# *.pdb
-#
+
+*.pdb
+
 # --- Satellite resource assemblies ----------------------------------------
 #
 #   One directory per translated language (de/, fr/, ja/, ...). Only exclude
@@ -85,3 +85,21 @@ runtimes/
 #   language switching, so an excluded language silently falls back to English.
 #
 # ---------------------------------------------------------------------------
+
+ca/
+en-GB/
+he/
+id/
+ku/
+ru/
+sl/
+zh-HK/
+
+# --- XML documentation for libraries ----------------------------------------
+#
+# The XML doc for some libraries is not needed.
+
+DotSpatial.Projections.xml
+PdfSharp.Shared.xml
+PdfSharp.System.xml
+PdfSharp.xml

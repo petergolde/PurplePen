@@ -25,7 +25,6 @@ namespace PurplePen.ViewModels
 
             // Update enabled status for commands.
             bool canCancelMode = controller.CanCancelMode();
-            Debug.WriteLine($"CanCancelMode = {canCancelMode}");
             CanCancelMode = canCancelMode;
             CanClearSelection = !canCancelMode;
             UndoStatus undoStatus = controller.GetUndoStatus();

@@ -1,0 +1,1 @@
+Please update Purple Pen by using your system package manager (typically "apt" or "dnf").

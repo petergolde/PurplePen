@@ -24,10 +24,11 @@ not the others.
 | File | Purpose |
 |---|---|
 | `build-linux-packages.sh` | The build script. Run this. |
-| `publish-linux-repos.sh` | Files the built packages into signed apt and dnf repositories. Run this after the build, when releasing. |
+| `publish-linux-repos.sh` | Files the built packages into signed apt and dnf repositories, publishes the AppImage, and records everything in the download tree's `manifest.json`. Run this after the build, when releasing. |
 | `config.sh` | Settings — package identity, dependencies, architecture, versioning, AppImage options, and repository publishing. Every value can be overridden by an environment variable of the same name. |
 | `purplepen-archive-keyring.asc` | The **public** half of the repository signing key, shipped inside the packages so they can configure the repository. Safe in version control; the build fails if it does not match `SIGNING_KEY_FINGERPRINT`. |
 | `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the packages. |
+| `default_message.txt` | The release notes recorded for a packaged installation, which has to update through apt or dnf rather than from inside Purple Pen. |
 | `purplepen.desktop.template` | Desktop menu entry. |
 | `purplepen-mime.xml.template` | shared-mime-info definition registering `.ppen` files. |
 | `AppRun.template` | The AppImage entry point, which sets up the bundled-library path. |
@@ -227,6 +228,11 @@ Downloading a file by hand gets a user one version and no upgrade path.
 signed apt repository and a signed dnf repository, so that `apt install
 purplepen` works and updates arrive with the rest of the system.
 
+The same run also publishes the AppImage, which belongs to no package manager,
+and records all of it in the download tree's `manifest.json` — the file Purple
+Pen reads to find out whether a newer version exists. See *The update manifest*
+below.
+
 ```bash
 sudo apt install apt-utils gnupg createrepo-c rpm xz-utils
 ./publish-linux-repos.sh ~/ppdownload /mnt/e/PurplePenSigning
@@ -246,13 +252,21 @@ or asking for the passphrase. Run it first.
 ```
 ~/ppdownload/
 ├── root/          upload this to the web site
+│   ├── manifest.json                          update manifest, shared with the
+│   │                                          Windows and macOS builds
 │   └── linux/
-│       ├── purplepen-archive-keyring.asc   the public key users install
-│       ├── README.md                       generated install instructions
-│       ├── deb/    pool/<channel>/… and dists/<channel>/…
-│       └── rpm/    purplepen.repo and <channel>/<arch>/…
+│       ├── purplepen-archive-keyring.asc      the public key users install
+│       ├── README.md                          generated install instructions
+│       ├── deb/       pool/<channel>/… and dists/<channel>/…
+│       ├── rpm/       purplepen.repo and <channel>/<arch>/…
+│       └── appimage/  <arch>/PurplePen-<version>-linux-<arch>.AppImage
 └── data/          do NOT upload this
 ```
+
+Windows and macOS publish into this same tree — see
+`Innosetup/publish-setup.bat` and `Installer/MacInstaller/publish-mac-app.sh`,
+which put their installers under `windows/` and `mac/` and write their entries
+into the same `manifest.json`.
 
 `data/` holds the index cache and a log of what was published. Nothing in it is
 secret and nothing is irreplaceable — the repositories can be rebuilt from the
@@ -272,6 +286,43 @@ The two channels are independent and additive rather than nested: someone who
 wants betas subscribes to both, exactly as Debian's backports and Fedora's
 `updates-testing` work. The `.repo` file ships the beta section disabled, so a
 single file can be given to everyone.
+
+### The update manifest
+
+`root/manifest.json` is what a running copy of Purple Pen reads to find out
+whether a newer version exists. Each entry is added or replaced on its own, so
+the three platforms' publish scripts never have to be run together or in any
+particular order.
+
+Linux gets **two** entries, because a Linux installation is one of two rather
+different things:
+
+| Platform | What it is | What the entry offers |
+|---|---|---|
+| `linux-x64` | installed from the `.deb` or `.rpm` | release notes and **no download** |
+| `linux-appimage-x64` | running from an AppImage | the AppImage published above |
+
+The split is not cosmetic. A packaged installation belongs to apt or dnf, and
+replacing those files from inside the application would leave the package
+manager describing a version that is no longer on disk — so that entry carries
+nothing but the text in `default_message.txt`, telling the user to update the
+way they installed. An AppImage belongs to nobody but whoever downloaded it, so
+Purple Pen fetches a newer one and moves it over the running file.
+`UpdateManager.GetPlatformName` reports which of the two it is, so neither is
+ever offered the update it cannot use.
+
+The version and title in both entries — `4.0.0.210`, "Purple Pen 4.0.0 Beta 1" —
+are read out of `PurplePenCore.dll`, extracted from one of the packages being
+published, by the same `Installer/GetVersion.cs` that the Windows and macOS
+scripts use. Nothing converts `4.0.0~beta1` back into a four-part version
+number, and nothing composes that title a second time.
+
+Because the manifest names one version per platform, everything in `output/` has
+to be one release: two builds side by side stop the run rather than publishing
+files that the manifest does not mention. An AppImage is required for the same
+reason — its entry has to name a file that exists — so `--deb-only` and
+`--rpm-only` publish it too. Set `MANIFEST_MESSAGE_FILE` for a release that
+needs to say something other than the default.
 
 ### How the two repositories differ
 
@@ -298,6 +349,17 @@ loopback pinentry. That is not a shortcut: `rpmsign` runs gpg without any way to
 prompt, so a protected key otherwise fails outright. Set
 `SIGNING_PASSPHRASE_FILE` to run unattended.
 
+**`rpmsign` cannot be handed a file name containing a space.** It signs nothing
+itself — it expands rpm's `%__gpg_sign_cmd` macro and runs the result — and that
+macro does not quote the file names it passes to gpg. rpm 4.17's ends `-sbo
+%{__signature_filename} %{__plaintext_filename}`, quoting only the key name, so
+a publishing directory such as `OneDrive/Purple Pen/Downloads` reaches gpg as
+two truncated paths and fails with `No such file or directory`. Each `.rpm` is
+therefore signed in the scratch directory and copied into the tree afterwards,
+which also means a failure leaves nothing unsigned in the published tree. The
+one requirement this puts on the machine is that `TMPDIR` must not contain a
+space either; the script checks and says so.
+
 **`rpmsign` is broken out of the box on Ubuntu.** Ubuntu's `rpm` package
 hardcodes the gpg path to `/usr/bin/gpg2`, and Ubuntu's `gnupg` package installs
 only `/usr/bin/gpg`, so signing fails with `Could not exec gpg: No such file or
@@ -307,6 +369,13 @@ knowing if you ever sign an RPM by hand.
 **Old versions are kept.** Nothing is pruned, so the direct download URL of
 every package ever published keeps working. That is deliberate: the pool is also
 the download site.
+
+**The AppImage is renamed on the way in.** `output/` holds
+`PurplePen-4.0.0~beta1-x86_64.AppImage`; the tree gets
+`PurplePen-4.0.0-beta1-linux-x64.AppImage`. A tilde has no business in a URL,
+and the architecture is spelled the way the manifest and the rest of the
+download tree spell it — matching `PurplePen-4.0.0-beta1-osx-arm64.dmg` sitting
+beside it.
 
 **The script only prepares the directory.** Getting `root/` onto the web site is
 a separate step.
@@ -320,6 +389,11 @@ chmod +x PurplePen-4.0.0~beta1-x86_64.AppImage
 ./PurplePen-4.0.0~beta1-x86_64.AppImage
 ./PurplePen-4.0.0~beta1-x86_64.AppImage ~/events/national.ppen
 ```
+
+Unlike the `.deb` and `.rpm`, an AppImage has no package manager watching over
+it, so it keeps itself up to date: Purple Pen finds a newer AppImage in the
+manifest, downloads it, and replaces its own file. See *The update manifest*
+above.
 
 ### What it carries for desktop integration
 
