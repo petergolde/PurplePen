@@ -10,9 +10,15 @@
     to present the application: its name, summary, screenshots and categories.
     appimagetool warns when it is missing.
 
-    The component id must stay stable across releases -- it is the identity by
+    The component id must stay stable across releases: it is the identity by
     which the application is recognised, so changing it makes every store treat
     this as a new and unrelated program.
+
+    Note that a double hyphen cannot appear anywhere inside an XML comment, so
+    the two-hyphen dash written throughout the rest of this project must not be
+    used in this file. It is not a style preference: a double hyphen in a
+    comment makes the whole file malformed, and nothing in the build says so
+    unless appstreamcli happens to be installed.
 -->
 <component type="desktop-application">
   <id>@APPSTREAM_ID@</id>

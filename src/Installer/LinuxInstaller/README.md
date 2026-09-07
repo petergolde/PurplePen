@@ -48,6 +48,7 @@ the build if any are left over.
 | `rpmbuild` | the `.rpm` | `sudo apt install rpm` / `sudo dnf install rpm-build` |
 | `curl`, `ldconfig` | the AppImage | base system |
 | `desktop-file-validate` | recommended | `desktop-file-utils` — the build validates both menu entries when present |
+| `appstreamcli` | recommended | `appstream` — appimagetool validates the AppStream metadata with it, and warns `appstreamcli command is missing` otherwise. Without it nothing checks that file beyond the build's own test that it is well-formed XML (`xmllint` or `python3`, whichever is present) and declares the expected component id |
 | `lintian` | optional | reports Debian policy notes, informational only |
 | `apt-ftparchive`, `createrepo_c`, `rpmsign`, `gpg` | publishing repositories | `sudo apt install apt-utils gnupg createrepo-c rpm xz-utils` — only needed by `publish-linux-repos.sh`, not by the build |
 
@@ -531,6 +532,7 @@ automatically rather than failing with a confusing libfuse error.
 /opt/purplepen/                                    the self-contained payload
 /usr/bin/purplepen                    -> /opt/purplepen/PurplePen
 /usr/share/applications/purplepen.desktop
+/usr/share/metainfo/org.purple-pen.PurplePen.metainfo.xml
 /usr/share/icons/hicolor/<N>x<N>/apps/purplepen.png    9 sizes, 16 to 512
 /usr/share/icons/hicolor/scalable/apps/purplepen.svg
 /usr/share/pixmaps/purplepen.png                       48px legacy fallback
@@ -541,6 +543,21 @@ automatically rather than failing with a confusing libfuse error.
 `/opt` is the conventional home for third-party bundles that ship their own
 runtime; it keeps ~145 MB of .NET out of `/usr/lib`, which is meant for
 distribution-managed libraries.
+
+The `metainfo` file is AppStream data: what GNOME Software, KDE Discover and
+Ubuntu's App Center read to describe an installed application — its name,
+summary, description and category. Without it an application still installs,
+runs and appears in the menu, but shows in those tools as a bare name and icon,
+or not at all. It is the same content the AppImage carries, rendered from the
+same template, but named after the component id rather than after the desktop
+entry: that is the AppStream convention and what distribution tooling expects,
+while appimagetool insists on the other name. Both copies are checked for
+well-formedness as they are written.
+
+Note this describes Purple Pen once it is *installed*. Having it listed in those
+tools before installing, straight from the apt repository, would additionally
+need the repository to publish generated catalogue metadata, which
+`publish-linux-repos.sh` does not do.
 
 `/usr/bin/purplepen` is a **symlink**, not a wrapper script. .NET's apphost
 finds its assemblies by resolving `/proc/self/exe`, which follows symlinks, so
