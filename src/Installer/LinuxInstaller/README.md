@@ -48,7 +48,7 @@ the build if any are left over.
 | `rpmbuild` | the `.rpm` | `sudo apt install rpm` / `sudo dnf install rpm-build` |
 | `curl`, `ldconfig` | the AppImage | base system |
 | `desktop-file-validate` | recommended | `desktop-file-utils` — the build validates both menu entries when present |
-| `appstreamcli` | recommended | `appstream` — appimagetool validates the AppStream metadata with it, and warns `appstreamcli command is missing` otherwise. Without it nothing checks that file beyond the build's own test that it is well-formed XML (`xmllint` or `python3`, whichever is present) and declares the expected component id |
+| `appstreamcli` | recommended | `appstream` — the build validates the AppStream metadata with it. Without it the file is only checked for being well-formed XML (`xmllint` or `python3`, whichever is present) |
 | `lintian` | optional | reports Debian policy notes, informational only |
 | `apt-ftparchive`, `createrepo_c`, `rpmsign`, `gpg` | publishing repositories | `sudo apt install apt-utils gnupg createrepo-c rpm xz-utils` — only needed by `publish-linux-repos.sh`, not by the build |
 
@@ -436,11 +436,32 @@ The desktop entry also carries `X-AppImage-Version`, which managers display.
 This key is added *only* to the AppImage's copy; the `.deb` and `.rpm` entries
 must not claim to be AppImages, and the build keeps them separate.
 
-Note the AppStream file is named after the *desktop entry*, not after the
+Note the AppStream file is named after the *desktop entry* here, not after the
 component id, because that is what appimagetool looks for — it reports metadata
-as missing otherwise, however correct the file inside is. The id stays
-reverse-DNS (`org.purple-pen.PurplePen`, the same identity as the macOS bundle)
-and `<launchable>` ties it back to the desktop entry.
+as missing otherwise, however correct the file inside is (verified against the
+pinned appimagetool 1.9.1). The id stays reverse-DNS
+(`org.purple-pen.PurplePen`, the same identity as the macOS bundle) and
+`<launchable>` ties it back to the desktop entry.
+
+**The `.deb` and `.rpm` name the same file after the component id instead**, as
+AppStream requires. The two conventions cannot both be satisfied in one file
+name, and the disagreement is not academic: appimagetool runs `appstreamcli` on
+the AppDir, appstreamcli reports `metainfo-filename-cid-mismatch` as a
+*warning*, and appimagetool treats any warning as fatal — so once `appstreamcli`
+is installed, the build fails on a file that is perfectly correct.
+
+The build therefore passes `--no-appstream` to appimagetool and validates the
+metadata itself, in `render_appstream_metainfo`, against the copy whose name
+AppStream is happy with. Nothing is lost: it is the same content, and validating
+it once covers both copies.
+
+Two informational findings remain, and neither fails a build, since
+`appstreamcli` fails only on warnings and errors:
+
+| Finding | Why it stays |
+|---|---|
+| `cid-contains-hyphen` | The component id must stay stable across releases and match the macOS bundle identifier. Renaming it would make every store treat Purple Pen as a new and unrelated application |
+| `url-not-secure` | `PACKAGE_URL` is `http://purple-pen.org`. The site also serves https, so this one is fixable whenever you care to change the setting |
 
 ### What is bundled, and why that is the whole design problem
 

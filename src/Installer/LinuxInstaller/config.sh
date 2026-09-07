@@ -47,14 +47,14 @@ and export the results for printing and race management.}"
 : "${PACKAGE_VENDOR:=Purple Pen Software}"
 
 # Project home page.
-: "${PACKAGE_URL:=http://purple-pen.org}"
+: "${PACKAGE_URL:=https://purple-pen.org}"
 
 # License, in the short identifier form each packaging system expects. Purple
 # Pen is BSD 3-clause (see the header of PurplePenCore/VersionNumber.cs).
 : "${PACKAGE_LICENSE:=BSD-3-Clause}"
 
 # Copyright line for /usr/share/doc/<package>/copyright.
-: "${COPYRIGHT:=Copyright (c) 2006-2026 Peter Golde. All rights reserved.}"
+: "${COPYRIGHT:=Copyright (c) 2008 Peter Golde. All rights reserved.}"
 
 # Debian section and RPM group. "graphics" is the closest fit for a drawing /
 # map program; "science" would also be defensible.

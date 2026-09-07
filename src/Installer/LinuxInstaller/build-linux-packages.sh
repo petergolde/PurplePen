@@ -862,20 +862,42 @@ install_desktop_entry() {
 # summary, description and category. Without it an installed application shows
 # in those tools as a bare name and icon, or not at all.
 #
-# The check is here because nothing else performs one. appimagetool validates
-# this file with appstreamcli, but only when appstreamcli happens to be
-# installed; otherwise it prints "appstreamcli command is missing" and carries
-# on, and the packages are never checked at all. That is how an unterminated
-# tag, an unescaped ampersand in a substituted value, or a double hyphen inside
-# a comment (which XML forbids) reaches users -- the file is then silently
-# ignored by everything that reads it. Well-formedness is not everything
-# appstreamcli would check, but it is the part that makes the file worthless
-# rather than merely imperfect, and every Linux has a parser to hand.
+# The checking is done here, rather than left to the one appimagetool performs,
+# for two reasons. appimagetool only checks when appstreamcli happens to be
+# installed -- otherwise it prints "appstreamcli command is missing" and carries
+# on -- and it checks only the AppImage's copy, never the packages'. And the
+# copy it checks is the one that cannot pass: appimagetool insists the file be
+# named after the desktop entry, AppStream insists it be named after the
+# component id, and appstreamcli reports the resulting mismatch as a warning,
+# which appimagetool then treats as fatal. See build_appimage, which turns that
+# check off.
+#
+# So the canonical copy is validated here instead, where its name does match the
+# component id and the mismatch does not arise. Failing that, well-formedness at
+# least: not everything appstreamcli checks, but the part that makes the file
+# worthless rather than merely imperfect -- a file that does not parse is
+# silently ignored by everything that reads it, which is how an unescaped
+# ampersand in a substituted value, or a double hyphen inside a comment (which
+# XML forbids), reaches users.
 render_appstream_metainfo() {
     local dest="$1"
 
     mkdir -p "$(dirname "$dest")"
     render_template "$APPDATA_TEMPLATE" "$dest"
+
+    # appstreamcli fails on errors and warnings but not on informational
+    # findings, so the two this file draws -- a hyphen in the component id,
+    # which has to stay as it is, and an http home page -- do not fail a build.
+    if command -v appstreamcli >/dev/null 2>&1; then
+        local output
+        output="$(appstreamcli validate "$dest" 2>&1)" \
+            || die "The generated AppStream metainfo does not validate. Check $APPDATA_TEMPLATE.
+
+appstreamcli said:
+$output"
+        info "$(basename "$dest") validates"
+        return
+    fi
 
     if command -v xmllint >/dev/null 2>&1; then
         xmllint --noout "$dest" \
@@ -888,7 +910,7 @@ render_appstream_metainfo() {
         return
     fi
 
-    info "$(basename "$dest") is well-formed"
+    info "$(basename "$dest") is well-formed (install appstreamcli for a full check)"
 }
 
 # install_metainfo: put the AppStream metainfo in the install tree, under the
@@ -1780,7 +1802,19 @@ build_appimage() {
     # guess when the AppDir contains binaries for more than one architecture,
     # which ours does not, but setting it explicitly also makes cross-building
     # work.
-    local tool_args=("$APPDIR_PATH" "$staged")
+    # --no-appstream, because appimagetool's copy of this check cannot pass and
+    # is redundant.
+    #
+    # appimagetool looks for the metainfo under the DESKTOP ENTRY's name and
+    # reports the metadata as missing under any other, while AppStream requires
+    # it be named after the COMPONENT ID and reports
+    # "metainfo-filename-cid-mismatch" otherwise. Both cannot hold at once, and
+    # appimagetool treats appstreamcli's warning as fatal, so with appstreamcli
+    # installed the build fails on a file that is perfectly correct. The naming
+    # is settled in appimagetool's favour here, since it is the tool that has to
+    # find the file, and the validation is done in render_appstream_metainfo
+    # instead, on the identical copy whose name AppStream is happy with.
+    local tool_args=(--no-appstream "$APPDIR_PATH" "$staged")
 
     # Without this, appimagetool downloads the runtime from the type2-runtime
     # "continuous" release on every build -- so a cached appimagetool is still
