@@ -1,4 +1,4 @@
-<!--
+﻿<!--
     CourseAppearanceDialog.axaml
 
     "Customize Appearance" dialog for editing how courses are drawn: item sizes
@@ -83,6 +83,7 @@
             <!-- === Item Sizes === -->
             <HeaderedContentControl Grid.Column="0"
                                     Header="{resx:Localize CourseAppearanceDialog_groupBoxSizes_Text}"
+                                    VerticalAlignment="Top"
                                     Padding="10,12,10,8">
                 <Grid ColumnDefinitions="4*,*,8,90,6,26"
                       RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">

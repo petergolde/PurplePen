@@ -167,7 +167,19 @@ namespace AvPurplePen
                         loaded = await controller.LoadInitialFile(options.FileName!, true);
                     }
                 }
-                catch (Exception) {
+                catch (Exception e) {
+                    // Something unanticipated. The ordinary load failures -- a missing, corrupt or
+                    // unreadable file -- report themselves through Controller.HandleExceptions and
+                    // never reach here, so anything that does is a fault worth knowing about, and
+                    // discarding it silently produces the least diagnosable symptom there is:
+                    // Purple Pen starts, the file the user asked for does not open, and nothing
+                    // says why.
+                    //
+                    // Written to standard error rather than shown in a dialog, because the dialog
+                    // machinery is one of the things that can fail here, and a second failure while
+                    // reporting the first would leave the user with even less. Someone running from
+                    // a terminal sees it; the fallback below still keeps the application usable.
+                    ReportFailedInitialLoad(options.FileName!, e);
                     loaded = false;
                 }
 
@@ -183,6 +195,26 @@ namespace AvPurplePen
                     mainWindow.ShowInitialScreenInstead();
                 }
             }, DispatcherPriority.Background);
+        }
+
+        /// <summary>
+        /// Reports an exception that stopped the file named on the command line from opening.
+        ///
+        /// Standard error is the destination on purpose: it is the one channel that cannot itself
+        /// be the thing that is broken, it costs nothing when nobody is watching, and it is where
+        /// someone told to "run it from a terminal" will look.
+        /// </summary>
+        /// <param name="fileName">The file that was being opened.</param>
+        /// <param name="exception">The exception that stopped it.</param>
+        private static void ReportFailedInitialLoad(string fileName, Exception exception)
+        {
+            try {
+                Console.Error.WriteLine("Purple Pen could not open \"{0}\":", fileName);
+                Console.Error.WriteLine(exception.ToString());
+            }
+            catch (Exception) {
+                // Reporting a failure must never become a failure of its own.
+            }
         }
     }
 }
