@@ -130,6 +130,10 @@ namespace PurplePen.ViewModels
 
             // Update checked status of Show All Controls.
             ViewAllControlsChecked = controller.ShowAllControls;
+
+            // Update checked status of Show Print Area and Show Popup Information.
+            ShowPrintArea = UserSettings.Current.ShowPrintArea;
+            ShowToolTips = UserSettings.Current.ShowPopupInfo;
         }
 
         // Determine if the give zoom label (e.g. "100%") should be checked based on the current zoom factor.
@@ -531,8 +535,11 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void ToggleShowPopups()
         {
-            ShowToolTips = !ShowToolTips;
-            UserSettings.Current.ShowPopupInfo = ShowToolTips;
+            // Toggle the setting, which is the real state; ShowToolTips just mirrors it and is
+            // refreshed in UpdateMenusToolbarButtons. Do not toggle ShowToolTips here: the menu
+            // item toggles its own check mark on click and writes that back through the two-way
+            // binding, so toggling here as well would cancel that out.
+            UserSettings.Current.ShowPopupInfo = !UserSettings.Current.ShowPopupInfo;
             UserSettings.Current.Save();
         }
 
@@ -544,8 +551,11 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private void ToggleShowPrintArea()
         {
-            ShowPrintArea = !ShowPrintArea;
-            UserSettings.Current.ShowPrintArea = ShowPrintArea;
+            // Toggle the setting, which is the real state; ShowPrintArea just mirrors it and is
+            // refreshed in UpdateMenusToolbarButtons. Do not toggle ShowPrintArea here: the menu
+            // item toggles its own check mark on click and writes that back through the two-way
+            // binding, so toggling here as well would cancel that out.
+            UserSettings.Current.ShowPrintArea = !UserSettings.Current.ShowPrintArea;
             UserSettings.Current.Save();
             controller?.ForceChangeUpdate(true);
         }

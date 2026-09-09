@@ -1,4 +1,4 @@
-<!--
+﻿<!--
     MainWindow.axaml
     Main application window for Purple Pen.
     Migrated from WinForms PurplePen/MainFrame.cs.
@@ -182,9 +182,17 @@
             </NativeMenuItem>
 
             <!-- === View Menu === -->
-            <!-- The IsChecked bindings are explicitly TwoWay. Clicking a checkable item toggles its
-                 check mark locally; the write-back lets the ViewModel restore the correct state on
-                 the next idle update even when the underlying value did not actually change. -->
+            <!-- The IsChecked bindings are explicitly TwoWay, and the ViewModel properties they
+                 bind to are mirrors, not state. Clicking a checkable item makes the underlying
+                 MenuItem flip its own IsChecked as a local value, which outranks the binding, so
+                 a OneWay binding could never correct the check mark again. TwoWay pushes that flip
+                 back into the mirror property instead; the Command then changes the real state
+                 (controller, MapDisplay, UserSettings), and UpdateMenusToolbarButtons re-derives
+                 every mirror from it on the next idle, which restores the right check mark whether
+                 or not the flip happened to be correct.
+
+                 Consequence: a Command here must never toggle its own mirror property, or it
+                 cancels out the write-back and the item never changes. -->
             <NativeMenuItem Header="{resx:Localize MainFrame_viewMenu_Text}">
                 <NativeMenu>
                     <NativeMenuItem Header="{resx:Localize MainFrame_entireCourseMenu_Text}" Gesture="F2" Command="{Binding ViewEntireCourseCommand}"/>
