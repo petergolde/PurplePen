@@ -1212,7 +1212,23 @@ index_deb_channel() {
         #
         # --db caches each package's size and checksums, so a pool that has
         # accumulated years of releases is not re-hashed on every run.
-        ( cd "$DEB_ROOT" && apt-ftparchive --arch "$arch" --db "$db" packages "pool/$channel" ) \
+        #
+        # AlwaysStat is what makes that cache safe. Without it apt-ftparchive
+        # does not even stat a file it already holds an entry for, so
+        # republishing a rebuilt package under a version already published --
+        # 4.0.0~beta1-1 built twice -- indexes the previous build's size and
+        # checksums while the pool holds the new file. Every download then fails
+        # its hash check, for everyone, and nothing says why. apt's own
+        # documentation defaults the option off on the grounds that republishing
+        # one version twice is not recommended; it is nonetheless a thing that
+        # happens, and one stat per package is a trivial price beside the
+        # failure it prevents.
+        #
+        # The check is on mtime, which is why nothing here ever preserves
+        # timestamps: install gives every restaged package the time it was
+        # staged.
+        ( cd "$DEB_ROOT" && apt-ftparchive -o APT::FTPArchive::AlwaysStat=true \
+              --arch "$arch" --db "$db" packages "pool/$channel" ) \
             > "$bin_dir/Packages" \
             || die "apt-ftparchive could not index pool/$channel for $arch.
 If the cache is corrupt, delete $db and run again."

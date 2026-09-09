@@ -36,10 +36,18 @@ namespace AvPurplePen
         ///     AvPurplePen {file.ppen} -recovery {snapshot}    open the recovered contents,
         ///                                                     presented as {file.ppen}
         ///
-        /// The recovery switch is also accepted as --recovery and /recovery, case
-        /// insensitively. Unrecognized switches are ignored rather than rejected, so that a
+        /// The recovery switch is matched case insensitively, and is the only switch there is.
+        /// Other arguments beginning with a dash are ignored rather than rejected, so that a
         /// switch added in a future version can never turn an older build into a startup
         /// failure.
+        ///
+        /// A leading slash does NOT introduce a switch, on any platform. That convention is a
+        /// Windows one, and honouring it costs far more than it is worth: on Linux and macOS
+        /// every absolute path begins with a slash, so a path passed by a file manager -- the
+        /// desktop entry runs "purplepen %f" -- would be swallowed as an unrecognized switch,
+        /// and Purple Pen would start with no file and say nothing about why. On Windows a
+        /// slash is a legal directory separator anyway, so a path like "/events/spring.ppen"
+        /// is better opened than discarded.
         /// </summary>
         /// <param name="args">The raw command-line arguments, excluding the program name.</param>
         /// <returns>The parsed options; never null.</returns>
@@ -62,11 +70,11 @@ namespace AvPurplePen
                             ++i;
                         }
                     }
-                    else if (arg[0] == '-' || arg[0] == '/') {
+                    else if (arg[0] == '-') {
                         // Some other switch. Ignore it (see the note above about forward
-                        // compatibility). Note that this means a file whose name begins with a
-                        // dash has to be passed as ".\-name.ppen"; that matches how the legacy
-                        // WinForms application behaved.
+                        // compatibility). This does mean that a file whose name begins with a
+                        // dash has to be passed as "./-name.ppen", which is how every other
+                        // command-line program behaves.
                     }
                     else if (fileName == null) {
                         // The first non-switch argument is the file to open. Later ones are
@@ -90,15 +98,18 @@ namespace AvPurplePen
         }
 
         /// <summary>
-        /// Determines whether an argument is the recovery switch, in any of its accepted spellings.
+        /// Determines whether an argument is the recovery switch.
+        ///
+        /// One spelling, because there is one producer: <see cref="RecoveryManager"/> writes
+        /// <see cref="RecoveryManager.RecoverySwitch"/> when it restarts Purple Pen after a
+        /// crash, and nothing else -- no installer, no shortcut, no documented option -- ever
+        /// passes a switch. The comparison ignores case only because that costs nothing.
         /// </summary>
         /// <param name="arg">The argument to test.</param>
         /// <returns>True if the argument introduces a recovery snapshot path.</returns>
         private static bool IsRecoverySwitch(string arg)
         {
-            return string.Equals(arg, RecoveryManager.RecoverySwitch, StringComparison.OrdinalIgnoreCase) ||
-                   string.Equals(arg, "--recovery", StringComparison.OrdinalIgnoreCase) ||
-                   string.Equals(arg, "/recovery", StringComparison.OrdinalIgnoreCase);
+            return string.Equals(arg, RecoveryManager.RecoverySwitch, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

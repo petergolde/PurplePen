@@ -48,6 +48,7 @@ the build if any are left over.
 | `rpmbuild` | the `.rpm` | `sudo apt install rpm` / `sudo dnf install rpm-build` |
 | `curl`, `ldconfig` | the AppImage | base system |
 | `desktop-file-validate` | recommended | `desktop-file-utils` — the build validates both menu entries when present |
+| `appstreamcli` | recommended | `appstream` — the build validates the AppStream metadata with it. Without it the file is only checked for being well-formed XML (`xmllint` or `python3`, whichever is present) |
 | `lintian` | optional | reports Debian policy notes, informational only |
 | `apt-ftparchive`, `createrepo_c`, `rpmsign`, `gpg` | publishing repositories | `sudo apt install apt-utils gnupg createrepo-c rpm xz-utils` — only needed by `publish-linux-repos.sh`, not by the build |
 
@@ -370,6 +371,25 @@ knowing if you ever sign an RPM by hand.
 every package ever published keeps working. That is deliberate: the pool is also
 the download site.
 
+**Republishing one version twice needs `AlwaysStat`, which is why it is set.**
+`apt-ftparchive` will not even stat a package it already holds a `--db` cache
+entry for, so rebuilding `4.0.0~beta1-1` and publishing it again would index the
+*previous* build's size and checksums while the pool holds the new file — and
+every download would then fail its hash check. `APT::FTPArchive::AlwaysStat` is
+passed on every run to stop that; apt defaults it off on the grounds that
+republishing a version is not recommended. The check is on mtime, which is why
+nothing here preserves timestamps when staging.
+
+The dnf side has no equivalent trap: `createrepo_c --update` re-reads a package
+whose size or mtime changed, and `stage_and_sign_rpms` compares `%{PKGID}` so a
+genuine rebuild is re-signed rather than skipped.
+
+Even with all that correct, republishing a version is worth avoiding: apt and
+dnf both compare version strings, so nobody who already installed
+`4.0.0~beta1-1` is *offered* the rebuild, and any CDN or `apt-cacher-ng` in the
+way may go on serving the old bytes from the same URL. Bumping `PACKAGE_RELEASE`
+to 2 — giving `4.0.0~beta1-2` — costs nothing and avoids both.
+
 **The AppImage is renamed on the way in.** `output/` holds
 `PurplePen-4.0.0~beta1-x86_64.AppImage`; the tree gets
 `PurplePen-4.0.0-beta1-linux-x64.AppImage`. A tilde has no business in a URL,
@@ -416,11 +436,32 @@ The desktop entry also carries `X-AppImage-Version`, which managers display.
 This key is added *only* to the AppImage's copy; the `.deb` and `.rpm` entries
 must not claim to be AppImages, and the build keeps them separate.
 
-Note the AppStream file is named after the *desktop entry*, not after the
+Note the AppStream file is named after the *desktop entry* here, not after the
 component id, because that is what appimagetool looks for — it reports metadata
-as missing otherwise, however correct the file inside is. The id stays
-reverse-DNS (`org.purple-pen.PurplePen`, the same identity as the macOS bundle)
-and `<launchable>` ties it back to the desktop entry.
+as missing otherwise, however correct the file inside is (verified against the
+pinned appimagetool 1.9.1). The id stays reverse-DNS
+(`org.purple-pen.PurplePen`, the same identity as the macOS bundle) and
+`<launchable>` ties it back to the desktop entry.
+
+**The `.deb` and `.rpm` name the same file after the component id instead**, as
+AppStream requires. The two conventions cannot both be satisfied in one file
+name, and the disagreement is not academic: appimagetool runs `appstreamcli` on
+the AppDir, appstreamcli reports `metainfo-filename-cid-mismatch` as a
+*warning*, and appimagetool treats any warning as fatal — so once `appstreamcli`
+is installed, the build fails on a file that is perfectly correct.
+
+The build therefore passes `--no-appstream` to appimagetool and validates the
+metadata itself, in `render_appstream_metainfo`, against the copy whose name
+AppStream is happy with. Nothing is lost: it is the same content, and validating
+it once covers both copies.
+
+Two informational findings remain, and neither fails a build, since
+`appstreamcli` fails only on warnings and errors:
+
+| Finding | Why it stays |
+|---|---|
+| `cid-contains-hyphen` | The component id must stay stable across releases and match the macOS bundle identifier. Renaming it would make every store treat Purple Pen as a new and unrelated application |
+| `url-not-secure` | `PACKAGE_URL` is `http://purple-pen.org`. The site also serves https, so this one is fixable whenever you care to change the setting |
 
 ### What is bundled, and why that is the whole design problem
 
@@ -512,6 +553,7 @@ automatically rather than failing with a confusing libfuse error.
 /opt/purplepen/                                    the self-contained payload
 /usr/bin/purplepen                    -> /opt/purplepen/PurplePen
 /usr/share/applications/purplepen.desktop
+/usr/share/metainfo/org.purple-pen.PurplePen.metainfo.xml
 /usr/share/icons/hicolor/<N>x<N>/apps/purplepen.png    9 sizes, 16 to 512
 /usr/share/icons/hicolor/scalable/apps/purplepen.svg
 /usr/share/pixmaps/purplepen.png                       48px legacy fallback
@@ -522,6 +564,21 @@ automatically rather than failing with a confusing libfuse error.
 `/opt` is the conventional home for third-party bundles that ship their own
 runtime; it keeps ~145 MB of .NET out of `/usr/lib`, which is meant for
 distribution-managed libraries.
+
+The `metainfo` file is AppStream data: what GNOME Software, KDE Discover and
+Ubuntu's App Center read to describe an installed application — its name,
+summary, description and category. Without it an application still installs,
+runs and appears in the menu, but shows in those tools as a bare name and icon,
+or not at all. It is the same content the AppImage carries, rendered from the
+same template, but named after the component id rather than after the desktop
+entry: that is the AppStream convention and what distribution tooling expects,
+while appimagetool insists on the other name. Both copies are checked for
+well-formedness as they are written.
+
+Note this describes Purple Pen once it is *installed*. Having it listed in those
+tools before installing, straight from the apt repository, would additionally
+need the repository to publish generated catalogue metadata, which
+`publish-linux-repos.sh` does not do.
 
 `/usr/bin/purplepen` is a **symlink**, not a wrapper script. .NET's apphost
 finds its assemblies by resolving `/proc/self/exe`, which follows symlinks, so

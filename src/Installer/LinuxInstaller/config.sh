@@ -47,7 +47,7 @@ and export the results for printing and race management.}"
 : "${PACKAGE_VENDOR:=Purple Pen Software}"
 
 # Project home page.
-: "${PACKAGE_URL:=http://purple-pen.org}"
+: "${PACKAGE_URL:=https://purple-pen.org}"
 
 # License, in the short identifier form each packaging system expects. Purple
 # Pen is BSD 3-clause (see the header of PurplePenCore/VersionNumber.cs).

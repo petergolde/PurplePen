@@ -773,6 +773,7 @@ build_install_tree() {
     install_icons
     install_desktop_entry
     install_mime_type
+    install_metainfo
     install_keyring
     install_documentation
 
@@ -854,6 +855,78 @@ install_desktop_entry() {
     else
         info "Desktop entry written (desktop-file-validate not installed, so not checked)"
     fi
+}
+
+# render_appstream_metainfo: render the AppStream metainfo to $1 and check that
+# what came out is XML at all.
+#
+# AppStream is what the graphical software managers -- GNOME Software, KDE
+# Discover, Ubuntu's App Center -- read to describe an application: its name,
+# summary, description and category. Without it an installed application shows
+# in those tools as a bare name and icon, or not at all.
+#
+# The checking is done here, rather than left to the one appimagetool performs,
+# for two reasons. appimagetool only checks when appstreamcli happens to be
+# installed -- otherwise it prints "appstreamcli command is missing" and carries
+# on -- and it checks only the AppImage's copy, never the packages'. And the
+# copy it checks is the one that cannot pass: appimagetool insists the file be
+# named after the desktop entry, AppStream insists it be named after the
+# component id, and appstreamcli reports the resulting mismatch as a warning,
+# which appimagetool then treats as fatal. See build_appimage, which turns that
+# check off.
+#
+# So the canonical copy is validated here instead, where its name does match the
+# component id and the mismatch does not arise. Failing that, well-formedness at
+# least: not everything appstreamcli checks, but the part that makes the file
+# worthless rather than merely imperfect -- a file that does not parse is
+# silently ignored by everything that reads it, which is how an unescaped
+# ampersand in a substituted value, or a double hyphen inside a comment (which
+# XML forbids), reaches users.
+render_appstream_metainfo() {
+    local dest="$1"
+
+    mkdir -p "$(dirname "$dest")"
+    render_template "$APPDATA_TEMPLATE" "$dest"
+
+    # appstreamcli fails on errors and warnings but not on informational
+    # findings, so the two this file draws -- a hyphen in the component id,
+    # which has to stay as it is, and an http home page -- do not fail a build.
+    if command -v appstreamcli >/dev/null 2>&1; then
+        local output
+        output="$(appstreamcli validate "$dest" 2>&1)" \
+            || die "The generated AppStream metainfo does not validate. Check $APPDATA_TEMPLATE.
+
+appstreamcli said:
+$output"
+        info "$(basename "$dest") validates"
+        return
+    fi
+
+    if command -v xmllint >/dev/null 2>&1; then
+        xmllint --noout "$dest" \
+            || die "The generated AppStream metainfo is not well-formed XML. Check $APPDATA_TEMPLATE."
+    elif command -v python3 >/dev/null 2>&1; then
+        python3 -c 'import sys, xml.etree.ElementTree as ET; ET.parse(sys.argv[1])' "$dest" \
+            || die "The generated AppStream metainfo is not well-formed XML. Check $APPDATA_TEMPLATE."
+    else
+        info "$(basename "$dest") written (no XML parser installed, so not checked)"
+        return
+    fi
+
+    info "$(basename "$dest") is well-formed (install appstreamcli for a full check)"
+}
+
+# install_metainfo: put the AppStream metainfo in the install tree, under the
+# name the packages want.
+#
+# The .deb and the .rpm name it after the component id, which is the AppStream
+# convention and what distribution tooling expects. The AppImage's copy of the
+# same content is named after the desktop entry instead, because that is what
+# appimagetool looks for -- it reports the metadata as missing otherwise,
+# however correct the file inside is. Same file, two names, for two consumers
+# that disagree about naming.
+install_metainfo() {
+    render_appstream_metainfo "$TREE_DIR/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml"
 }
 
 # install_mime_type: register the .ppen MIME type, unless turned off.
@@ -1364,6 +1437,7 @@ rm -rf %{buildroot}/DEBIAN
 $INSTALL_PREFIX
 /usr/bin/$PACKAGE_NAME
 /usr/share/applications/$PACKAGE_NAME.desktop
+/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml
 /usr/share/icons/hicolor/*/apps/$PACKAGE_NAME.*
 /usr/share/pixmaps/$PACKAGE_NAME.png
 $mime_files_line
@@ -1682,17 +1756,19 @@ build_appdir() {
     # symlink, never absolute: the AppDir is mounted at an unpredictable path.
     ln -sf "$PACKAGE_NAME.png" "$APPDIR_PATH/.DirIcon"
 
-    # AppStream metadata, which is what software centres and integration
-    # daemons read to describe the application.
+    # The AppStream metainfo arrived with the tree, under the name the packages
+    # use. It is renamed rather than rendered again, because the AppDir must
+    # carry exactly ONE of them: two files declaring the same component id is a
+    # duplicate component as far as AppStream is concerned, and the copy that
+    # came from the tree has already been checked.
     #
-    # Named after the desktop entry rather than after the component id, which
-    # is what appimagetool looks for -- it warns that metadata is missing
-    # otherwise, however correct the file inside is. The component id stays
-    # reverse-DNS, matching the macOS bundle identifier, and <launchable> ties
-    # it back to the desktop entry.
-    mkdir -p "$APPDIR_PATH/usr/share/metainfo"
-    render_template "$APPDATA_TEMPLATE" \
-        "$APPDIR_PATH/usr/share/metainfo/$PACKAGE_NAME.appdata.xml"
+    # The name appimagetool looks for is the desktop entry's, not the component
+    # id's -- it reports the metadata as missing otherwise, however correct the
+    # file inside is. The id inside stays reverse-DNS either way, matching the
+    # macOS bundle identifier, and <launchable> ties it back to the desktop
+    # entry.
+    mv "$APPDIR_PATH/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml" \
+       "$APPDIR_PATH/usr/share/metainfo/$PACKAGE_NAME.appdata.xml"
 
     if [[ "$BUNDLE_ICU" == "true" ]]; then
         bundle_libraries libicuuc "$ICU_LIBRARIES" "ICU"
@@ -1731,7 +1807,19 @@ build_appimage() {
     # guess when the AppDir contains binaries for more than one architecture,
     # which ours does not, but setting it explicitly also makes cross-building
     # work.
-    local tool_args=("$APPDIR_PATH" "$staged")
+    # --no-appstream, because appimagetool's copy of this check cannot pass and
+    # is redundant.
+    #
+    # appimagetool looks for the metainfo under the DESKTOP ENTRY's name and
+    # reports the metadata as missing under any other, while AppStream requires
+    # it be named after the COMPONENT ID and reports
+    # "metainfo-filename-cid-mismatch" otherwise. Both cannot hold at once, and
+    # appimagetool treats appstreamcli's warning as fatal, so with appstreamcli
+    # installed the build fails on a file that is perfectly correct. The naming
+    # is settled in appimagetool's favour here, since it is the tool that has to
+    # find the file, and the validation is done in render_appstream_metainfo
+    # instead, on the identical copy whose name AppStream is happy with.
+    local tool_args=(--no-appstream "$APPDIR_PATH" "$staged")
 
     # Without this, appimagetool downloads the runtime from the type2-runtime
     # "continuous" release on every build -- so a cached appimagetool is still
@@ -1805,6 +1893,9 @@ Unix permissions. Set BUILD_DIR to a native Linux filesystem."
 
     printf '%s\n' "$contents" | grep -q "usr/share/applications/$PACKAGE_NAME.desktop\$" \
         || die "The desktop entry is missing from the .deb."
+
+    printf '%s\n' "$contents" | grep -q "usr/share/metainfo/$APPSTREAM_ID.metainfo.xml\$" \
+        || die "The AppStream metainfo is missing from the .deb."
 
     # Every file must be owned by root:root, not by the account that ran the
     # build. --root-owner-group is what ensures this.
@@ -1903,6 +1994,9 @@ verify_rpm() {
     files="$(rpm -qp --list "$RPM_FILE" 2>/dev/null)"
     printf '%s\n' "$files" | grep -qx "/usr/share/applications/$PACKAGE_NAME.desktop" \
         || die "The desktop entry is missing from the .rpm."
+
+    printf '%s\n' "$files" | grep -qx "/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml" \
+        || die "The AppStream metainfo is missing from the .rpm."
 
     local parsed_version
     parsed_version="$(rpm -qp --queryformat '%{VERSION}-%{RELEASE}' "$RPM_FILE" 2>/dev/null)"
@@ -2009,6 +2103,14 @@ build_appdir should have removed it."
         || die ".DirIcon is missing from the AppImage."
     [[ -f "$root/usr/share/metainfo/$PACKAGE_NAME.appdata.xml" ]] \
         || die "The AppStream metainfo is missing from the AppImage."
+
+    # And only one of them. The install tree contributes this file under the
+    # component id's name, which build_appdir renames; both present at once
+    # would declare the same component twice.
+    [[ ! -e "$root/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml" ]] \
+        || die "The AppImage carries the AppStream metainfo under both names, which
+declares the same component id twice. build_appdir should have renamed the copy
+that came from the install tree."
     grep -q "<id>$APPSTREAM_ID</id>" "$root/usr/share/metainfo/$PACKAGE_NAME.appdata.xml" \
         || die "The AppStream metainfo does not declare the expected component id $APPSTREAM_ID."
 
