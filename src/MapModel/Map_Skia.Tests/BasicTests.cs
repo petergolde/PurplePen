@@ -637,9 +637,7 @@ namespace Map_Skia.Tests
         }
 
         // Helper: registers Roboto as "TestFont" and makes it the default family, so that the
-        // test does not depend on which fonts happen to be installed. SkiaFont's constructor
-        // resolves a hardcoded list of Windows fallback families; without a resolvable default
-        // that hits Debug.Fail on a machine with no system fonts (e.g. a bare Linux container).
+        // test does not depend on which fonts happen to be installed.
         private void UseOnlyTestFont()
         {
             ClearFontState();

@@ -683,7 +683,18 @@ namespace PurplePen.MapModel
         public byte[] GetFont(string faceName)
         {
             (string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant) = DecodeFamilyName(faceName);
-            ShapedTypeface shapedTypeface = ShapedTypeface.Get(familyName, weight, width, slant);
+
+            // Prefer the cached face. The name was encoded from a typeface that was already
+            // resolved while the text was being laid out, and every such typeface is in the
+            // ShapedTypeface cache under exactly this family name and style -- including the
+            // ones that came from platform font fallback, which ShapedTypeface.GetOrAdd caches
+            // under their own name for this reason. Resolving the name again would go back
+            // through SKTypeface.FromFamilyName, which does not reliably return the same face
+            // for a fallback family (fontconfig aliases in particular) and silently substitutes
+            // the default font when it finds nothing, embedding the wrong glyphs in the PDF.
+            if (!ShapedTypeface.TryGetCached(familyName, weight, width, slant, out ShapedTypeface shapedTypeface))
+                shapedTypeface = ShapedTypeface.Get(familyName, weight, width, slant);
+
             return shapedTypeface.GetFontData();
         }
 

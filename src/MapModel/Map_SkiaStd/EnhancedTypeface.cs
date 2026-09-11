@@ -48,6 +48,11 @@ namespace Map_SkiaStd
         private int refCount;
         private readonly bool isCached;
 
+        // The OpenType script tags this font declares in its GSUB and GPOS layout tables,
+        // read lazily because only complex scripts need them (see ComplexScripts).
+        private HashSet<uint> declaredScriptTags;
+        private readonly object declaredScriptTagsLock = new object();
+
         // Private constructor that builds the HarfBuzz pipeline from family name and style.
         //
         // Parameters:
@@ -91,8 +96,12 @@ namespace Map_SkiaStd
         }
 
         // Private constructor that builds the HarfBuzz pipeline from an existing SKTypeface.
-        // This constructor is used for the non-cached path. Takes ownership of the typeface.
-        private ShapedTypeface(SKTypeface typeface)
+        // Takes ownership of the typeface.
+        //
+        // Parameters:
+        //   typeface - the typeface to wrap.
+        //   cached - true if this instance is managed by the static cache
+        private ShapedTypeface(SKTypeface typeface, bool cached)
         {
             Typeface = typeface;
             VerticalMetrics = FontVerticalMetrics.FromTypeface(Typeface);
@@ -107,8 +116,10 @@ namespace Map_SkiaStd
 
             HBFont.SetScale(HBFace.UnitsPerEm, HBFace.UnitsPerEm);
 
-            refCount = 1;
-            isCached = false;
+            // Cached entries start at 0 and are incremented by each Get()/GetOrAdd() caller;
+            // a non-cached entry starts at 1 for the caller that created it.
+            refCount = cached ? 0 : 1;
+            isCached = cached;
         }
 
         // Returns a cached ShapedTypeface for the given family name and style. If one already
@@ -138,7 +149,73 @@ namespace Map_SkiaStd
         // normally when the reference count reaches zero.
         public static ShapedTypeface FromTypeface(SKTypeface typeface)
         {
-            return new ShapedTypeface(typeface);
+            return new ShapedTypeface(typeface, cached: false);
+        }
+
+        // Returns a cached ShapedTypeface for a typeface the caller has already resolved --
+        // in practice one handed back by platform font fallback, which returns a typeface
+        // rather than a name. Behaves like Get() otherwise: the reference count is incremented
+        // and repeated calls for the same face return the same instance.
+        //
+        // The entry is cached under the typeface's OWN family name and style, so a later
+        // Get() for that family finds this instance instead of resolving the name through
+        // SKTypeface.FromFamilyName again. PDF export depends on that: it encodes each face it
+        // draws with as "family^weight^width^slant" and asks for the font data back by that
+        // name at save time, and a fallback family does not always survive a name round-trip.
+        //
+        // Takes ownership of the typeface: it is disposed if the cache already holds an
+        // equivalent entry.
+        //
+        // Parameters:
+        //   typeface - the resolved typeface to wrap and cache. Must not be null.
+        public static ShapedTypeface GetOrAdd(SKTypeface typeface)
+        {
+            (string, SKFontStyleWeight, SKFontStyleWidth, SKFontStyleSlant) key =
+                (typeface.FamilyName.ToUpperInvariant(), (SKFontStyleWeight)typeface.FontWeight,
+                 (SKFontStyleWidth)typeface.FontWidth, typeface.FontSlant);
+
+            ShapedTypeface entry;
+
+            if (cache.TryGetValue(key, out entry)) {
+                // An equivalent face is already cached, so the supplied typeface is redundant.
+                typeface.Dispose();
+            }
+            else {
+                // The new instance takes ownership of the typeface.
+                ShapedTypeface candidate = new ShapedTypeface(typeface, cached: true);
+                entry = cache.GetOrAdd(key, candidate);
+
+                if (!ReferenceEquals(entry, candidate)) {
+                    // Another thread cached an equivalent face first; discard ours. This also
+                    // disposes the typeface, which the discarded candidate owned.
+                    candidate.DisposeResources();
+                }
+            }
+
+            Interlocked.Increment(ref entry.refCount);
+            return entry;
+        }
+
+        // Looks up an already-cached ShapedTypeface for the given family name and style,
+        // without resolving the name through the system font manager if it is not there.
+        // Does not affect the reference count.
+        //
+        // This is for callers that hold a family name which came from a typeface Purple Pen
+        // already resolved -- PDF export, which round-trips the faces it drew with through
+        // their names -- and which must not silently get a different font if the name no
+        // longer resolves to the same face.
+        //
+        // Parameters:
+        //   familyName - the font family name to look for.
+        //   weight, width, slant - the font style to look for.
+        //   entry - on success, the cached instance.
+        public static bool TryGetCached(string familyName,
+                                        SKFontStyleWeight weight,
+                                        SKFontStyleWidth width,
+                                        SKFontStyleSlant slant,
+                                        out ShapedTypeface entry)
+        {
+            return cache.TryGetValue((familyName.ToUpperInvariant(), weight, width, slant), out entry);
         }
 
         // Get the data of the font.
@@ -155,6 +232,37 @@ namespace Map_SkiaStd
         public bool HasGlyph(int codepoint)
         {
             return CheckFont.GetGlyph(codepoint) != 0;
+        }
+
+        // Returns true if this font is able to shape the given script. Scripts that OpenType
+        // renders from the character map alone (Latin, CJK, Hangul, Hebrew, Thai, ...) are
+        // always shapeable. The complex scripts listed in ComplexScripts additionally require
+        // the font to declare their script tag in GSUB or GPOS; without those tables the font
+        // has the glyphs but no rules for joining, reordering or positioning them, and shapes
+        // the text into visibly wrong output.
+        //
+        // Parameters:
+        //   script - the script of the text, as reported by HarfBuzz.
+        public bool CanShapeScript(HarfBuzzSharp.Script script)
+        {
+            uint primary, secondary;
+            if (!ComplexScripts.TryGetRequiredTags(script, out primary, out secondary))
+                return true;
+
+            HashSet<uint> tags = GetDeclaredScriptTags();
+            return tags.Contains(primary) || tags.Contains(secondary);
+        }
+
+        // Returns the set of OpenType script tags this font declares, reading the layout
+        // tables on first use.
+        private HashSet<uint> GetDeclaredScriptTags()
+        {
+            lock (declaredScriptTagsLock) {
+                if (declaredScriptTags == null)
+                    declaredScriptTags = ComplexScripts.ReadDeclaredScriptTags(Typeface);
+
+                return declaredScriptTags;
+            }
         }
 
         // Decrements the reference count. For cached entries, resources are not released
@@ -189,6 +297,11 @@ namespace Map_SkiaStd
         // removal, but GetOrAdd handles this by creating a new entry if needed.
         public static void ClearCache()
         {
+            // Fallback entries are reached through the resolver's own cache and hold a
+            // reference each, so that cache has to let go of them before the sweep below can
+            // collect anything they keep alive.
+            FontFallbackResolver.ClearCache();
+
             foreach ((string, SKFontStyleWeight, SKFontStyleWidth, SKFontStyleSlant) key in cache.Keys)
             {
                 if (cache.TryGetValue(key, out ShapedTypeface entry))
@@ -217,7 +330,8 @@ namespace Map_SkiaStd
     //
     // 2. Font fallback: When the primary font doesn't contain a glyph for a character
     //    (e.g., emoji, CJK characters), the text is split into runs and each run is
-    //    rendered with the first available font that supports those characters.
+    //    rendered with a font that does support those characters, found by asking the
+    //    platform's own font fallback engine (see FontFallbackResolver).
     //
     // The overall pipeline is:
     //   Input text
@@ -252,11 +366,22 @@ namespace Map_SkiaStd
         }
 
         private ShapedTypeface mainEntry;
-        private ShapedTypeface[] fallbackEntries;
         private HarfBuzzSharp.Feature[] features;
 
-        // Create an EnhancedTypeface with the main ShapedTypeface, fallback ShapedTypefaces
-        // for missing glyphs, and HarfBuzz properties for shaping.
+        // The style the text asked for. Fallback fonts are matched against this rather than
+        // against the main typeface's own style, because the main typeface may itself be an
+        // approximation of what was requested.
+        private string requestedFamilyName;
+        private SKFontStyleWeight requestedWeight;
+        private SKFontStyleWidth requestedWidth;
+        private SKFontStyleSlant requestedSlant;
+
+        // Create an EnhancedTypeface with the main ShapedTypeface, the style that was
+        // requested for the text, and HarfBuzz properties for shaping.
+        //
+        // Fonts for codepoints the main typeface cannot render are found on demand through
+        // FontFallbackResolver; the requested family and style are passed to the platform so
+        // that the fallback it picks is stylistically close to the text around it.
         //
         // The harfBuzzProperties dictionary maps OpenType feature tags (4-character strings
         // like "kern", "liga", "calt") to integer values (typically 1 to enable, 0 to disable).
@@ -265,12 +390,24 @@ namespace Map_SkiaStd
         // This class does not take ownership of the ShapedTypeface instances; the caller
         // must keep them alive for the lifetime of this EnhancedTypeface and dispose them
         // separately.
+        //
+        // Parameters:
+        //   mainTypeface - the typeface the text is drawn with.
+        //   familyName - the font family name that was requested.
+        //   weight, width, slant - the font style that was requested.
+        //   harfBuzzProperties - OpenType feature tags to apply during shaping.
         public EnhancedTypeface(ShapedTypeface mainTypeface,
-                              ShapedTypeface[] fallbackTypefaces,
+                              string familyName,
+                              SKFontStyleWeight weight,
+                              SKFontStyleWidth width,
+                              SKFontStyleSlant slant,
                               IDictionary<string, int> harfBuzzProperties)
         {
             mainEntry = mainTypeface;
-            fallbackEntries = fallbackTypefaces ?? new ShapedTypeface[0];
+            requestedFamilyName = familyName;
+            requestedWeight = weight;
+            requestedWidth = width;
+            requestedSlant = slant;
 
             // Convert the properties dictionary to HarfBuzz Feature objects.
             List<HarfBuzzSharp.Feature> featureList = new List<HarfBuzzSharp.Feature>();
@@ -290,21 +427,38 @@ namespace Map_SkiaStd
             features = featureList.ToArray();
         }
 
-        // Finds the first typeface (main or fallback) that contains a glyph for the
-        // given Unicode codepoint. Returns the main entry if no typeface has the glyph,
-        // which will result in a .notdef (tofu) glyph being rendered.
+        // Finds the typeface to render the given Unicode codepoint with. That is the main
+        // typeface whenever it can render the codepoint properly, and otherwise whatever the
+        // platform's font fallback offers. Returns the main entry if nothing on the system
+        // has the codepoint, which results in a .notdef (tofu) glyph being rendered.
         private ShapedTypeface FindTypefaceForCodepoint(int codepoint)
         {
-            if (mainEntry.HasGlyph(codepoint))
+            bool mainHasGlyph = mainEntry.HasGlyph(codepoint);
+
+            // The overwhelmingly common case: the text is in the font it asked for, and its
+            // script needs nothing from the font's layout tables. No script lookup needed.
+            if (mainHasGlyph && !ComplexScripts.MayRequireLayoutTables(codepoint))
                 return mainEntry;
 
-            for (int i = 0; i < fallbackEntries.Length; i++)
+            HarfBuzzSharp.Script script = HarfBuzzSharp.UnicodeFunctions.Default.GetScript(codepoint);
+
+            if (mainHasGlyph && mainEntry.CanShapeScript(script))
+                return mainEntry;
+
+            ShapedTypeface fallback = FontFallbackResolver.Resolve(
+                codepoint, requestedFamilyName, requestedWeight, requestedWidth, requestedSlant);
+
+            if (fallback != null)
             {
-                if (fallbackEntries[i].HasGlyph(codepoint))
-                    return fallbackEntries[i];
+                // If the main typeface has the glyph, it is only worth abandoning for a
+                // fallback that can actually shape the script -- the main font is what the
+                // text asked for, and a fallback that shapes no better is no improvement.
+                if (!mainHasGlyph || fallback.CanShapeScript(script))
+                    return fallback;
             }
 
-            // No typeface has this glyph; fall back to main (will render .notdef).
+            // Either the main typeface is the best available, or nothing on the system has
+            // this codepoint and it will render as .notdef.
             return mainEntry;
         }
 
