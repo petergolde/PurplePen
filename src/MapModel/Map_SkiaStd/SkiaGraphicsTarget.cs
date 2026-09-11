@@ -741,8 +741,6 @@ namespace PurplePen.MapModel
         private ShapedTypeface shapedTypeface;
         private EnhancedTypeface enhancedTypeface;
 		private float emHeight;
-        private SKFontMetrics fontMetrics;
-        private bool fontMetricsObtained;
         private bool underline;
         private float spaceWidth = -1, capHeight = -1;  
 
@@ -814,8 +812,8 @@ namespace PurplePen.MapModel
         {
             get
             {
-                LoadFontMetrics();
-                return (-fontMetrics.Ascent + fontMetrics.Descent + fontMetrics.Leading);
+                FontVerticalMetrics metrics = shapedTypeface.VerticalMetrics;
+                return (metrics.Ascent + metrics.Descent + metrics.Leading) * emHeight;
             }
         }
 
@@ -823,8 +821,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                LoadFontMetrics();
-                return - fontMetrics.Ascent;
+                return shapedTypeface.VerticalMetrics.Ascent * emHeight;
             }
         }
 
@@ -832,8 +829,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                LoadFontMetrics();
-                return fontMetrics.Descent;
+                return shapedTypeface.VerticalMetrics.Descent * emHeight;
             }
         }
 
@@ -921,16 +917,6 @@ namespace PurplePen.MapModel
             return new RectangleF(bounds.Left, bounds.Top, bounds.Width, bounds.Height);
         }
 
-        void LoadFontMetrics()
-        {
-            if (!fontMetricsObtained) {
-                using (SKFont font = new SKFont(shapedTypeface.Typeface, emHeight)) {
-                    fontMetrics = font.Metrics;
-                }
-
-                fontMetricsObtained = true;
-            }
-        }
     }
 
     public class Skia_TextMetrics: ITextMetrics

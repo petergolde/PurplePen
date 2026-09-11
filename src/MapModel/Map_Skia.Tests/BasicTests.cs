@@ -465,5 +465,193 @@ namespace Map_Skia.Tests
 
             ClearFontState();
         }
+
+        // Helper: builds a synthetic 'hhea' table containing only the fields we read.
+        private static byte[] MakeHheaTable(short ascender, short descender, short lineGap)
+        {
+            byte[] table = new byte[10];
+            WriteInt16(table, 4, ascender);
+            WriteInt16(table, 6, descender);
+            WriteInt16(table, 8, lineGap);
+            return table;
+        }
+
+        // Helper: builds a synthetic 'OS/2' table containing only the fields we read.
+        private static byte[] MakeOS2Table(ushort version, ushort fsSelection, short sTypoAscender,
+                                           short sTypoDescender, short sTypoLineGap,
+                                           ushort usWinAscent, ushort usWinDescent)
+        {
+            byte[] table = new byte[78];
+            WriteInt16(table, 0, (short)version);
+            WriteInt16(table, 62, (short)fsSelection);
+            WriteInt16(table, 68, sTypoAscender);
+            WriteInt16(table, 70, sTypoDescender);
+            WriteInt16(table, 72, sTypoLineGap);
+            WriteInt16(table, 74, (short)usWinAscent);
+            WriteInt16(table, 76, (short)usWinDescent);
+            return table;
+        }
+
+        // Helper: writes a big-endian 16-bit value into a table.
+        private static void WriteInt16(byte[] table, int offset, short value)
+        {
+            table[offset] = (byte)((value >> 8) & 0xFF);
+            table[offset + 1] = (byte)(value & 0xFF);
+        }
+
+        // Verifies that vertical metrics come from the font's own tables and not from
+        // SKFont.Metrics, which reads usWinAscent on Windows but hhea.ascender on
+        // macOS/Linux for the same file. Roboto is the interesting case: it carries three
+        // different ascents (sTypo 1536, hhea 1900, usWin 1946) at 2048 units/em, so these
+        // values would NOT match SKFont.Metrics on a non-Windows machine.
+        [Test]
+        public void FontVerticalMetrics_ReadsWindowsFieldsFromRealFont()
+        {
+            using (SKTypeface typeface = SKTypeface.FromFile(FontPath("Roboto-Regular.ttf"))) {
+                FontVerticalMetrics metrics = FontVerticalMetrics.FromTypeface(typeface);
+
+                Assert.AreEqual(2048, typeface.UnitsPerEm);
+
+                // usWinAscent 1946 / 2048, usWinDescent 512 / 2048.
+                Assert.AreEqual(1946.0 / 2048.0, metrics.Ascent, 0.000001);
+                Assert.AreEqual(512.0 / 2048.0, metrics.Descent, 0.000001);
+
+                // hhea lineGap is 0, and the win cell height (2458) exceeds the hhea cell
+                // height (2400), so the external leading floors at 0.
+                Assert.AreEqual(0.0, metrics.Leading, 0.000001);
+
+                // At em height 1000 this is the value Windows produces today.
+                Assert.AreEqual(950.1953, metrics.Ascent * 1000, 0.001);
+            }
+        }
+
+        // Verifies that fsSelection bit 7 (USE_TYPO_METRICS) switches to the sTypo* fields,
+        // which is what DirectWrite, GDI+ and FreeType all do.
+        [Test]
+        public void FontVerticalMetrics_UsesTypoMetricsWhenFlagSet()
+        {
+            // Modelled on Source Sans 3: 1000 units/em, typo 1024/-400/0, usWin 934/288.
+            byte[] os2 = MakeOS2Table(4, 0x00C0, 1024, -400, 0, 934, 288);
+            byte[] hhea = MakeHheaTable(1024, -400, 0);
+
+            FontVerticalMetrics metrics = FontVerticalMetrics.FromTables(os2, hhea, 1000);
+
+            Assert.AreEqual(1.024, metrics.Ascent, 0.000001);
+            Assert.AreEqual(0.400, metrics.Descent, 0.000001);
+            Assert.AreEqual(0.000, metrics.Leading, 0.000001);
+        }
+
+        // Verifies the GDI external leading formula: the hhea line gap is reduced by however
+        // much taller the usWin cell is than the hhea cell, floored at zero.
+        [Test]
+        public void FontVerticalMetrics_LeadingAbsorbsWinCellGrowth()
+        {
+            // Calibri: hhea 1536/-512 gap 452, usWin 1950/550. The win cell is 2500 and the
+            // hhea cell is 2048, so the whole 452 unit gap is absorbed.
+            FontVerticalMetrics calibri = FontVerticalMetrics.FromTables(
+                MakeOS2Table(3, 0x0040, 1536, -512, 452, 1950, 550),
+                MakeHheaTable(1536, -512, 452),
+                2048);
+
+            Assert.AreEqual(1950.0 / 2048.0, calibri.Ascent, 0.000001);
+            Assert.AreEqual(0.0, calibri.Leading, 0.000001);
+
+            // Arial: hhea and usWin cells are identical (1854/434), so the 67 unit gap
+            // survives untouched.
+            FontVerticalMetrics arial = FontVerticalMetrics.FromTables(
+                MakeOS2Table(3, 0x0040, 1491, -431, 307, 1854, 434),
+                MakeHheaTable(1854, -434, 67),
+                2048);
+
+            Assert.AreEqual(1854.0 / 2048.0, arial.Ascent, 0.000001);
+            Assert.AreEqual(67.0 / 2048.0, arial.Leading, 0.000001);
+        }
+
+        // Verifies the fallback for fonts with no usable OS/2 table (it is optional in the
+        // spec), and for the 0xFFFF "version not set" sentinel.
+        [Test]
+        public void FontVerticalMetrics_FallsBackToHheaWithoutOS2()
+        {
+            byte[] hhea = MakeHheaTable(800, -200, 100);
+
+            FontVerticalMetrics noTable = FontVerticalMetrics.FromTables(null, hhea, 1000);
+            Assert.AreEqual(0.8, noTable.Ascent, 0.000001);
+            Assert.AreEqual(0.2, noTable.Descent, 0.000001);
+            Assert.AreEqual(0.1, noTable.Leading, 0.000001);
+
+            // A short OS/2 table is also unusable.
+            FontVerticalMetrics shortTable = FontVerticalMetrics.FromTables(new byte[20], hhea, 1000);
+            Assert.AreEqual(0.8, shortTable.Ascent, 0.000001);
+
+            // Version 0xFFFF means the table contents are not meaningful.
+            FontVerticalMetrics badVersion = FontVerticalMetrics.FromTables(
+                MakeOS2Table(0xFFFF, 0, 1, 1, 1, 1, 1), hhea, 1000);
+            Assert.AreEqual(0.8, badVersion.Ascent, 0.000001);
+        }
+
+        // Verifies that SkiaFont.Ascent/Descent/RecommendedLineSpacing are driven by the font
+        // tables, so they are identical on Windows, macOS and Linux.
+        [Test]
+        public void SkiaFont_MetricsComeFromFontTables()
+        {
+            UseOnlyTestFont();
+            try {
+                Skia_TextMetrics textMetrics = new Skia_TextMetrics();
+                using (ITextFaceMetrics metrics = textMetrics.GetTextFaceMetrics("TestFont", 1000, TextEffects.Regular)) {
+                    Assert.AreEqual(950.1953, metrics.Ascent, 0.001);
+                    Assert.AreEqual(250.0, metrics.Descent, 0.001);
+
+                    // ascent + descent + leading, with leading 0 for Roboto.
+                    Assert.AreEqual(1200.1953, metrics.RecommendedLineSpacing, 0.001);
+                }
+            }
+            finally {
+                RestoreFontState();
+            }
+        }
+
+        // The drawn baseline (EnhancedTypeface.GetMainAscent, used to turn a top-left origin
+        // into a baseline) must agree exactly with SkiaFont.Ascent. Course layout in SymDef
+        // and Symbol assumes they are the same quantity, and the PDF backend positions glyphs
+        // using the former while measuring with the latter.
+        [Test]
+        public void SkiaFont_DrawnBaselineMatchesAscent()
+        {
+            UseOnlyTestFont();
+            try {
+                Skia_TextMetrics textMetrics = new Skia_TextMetrics();
+                using (ITextFaceMetrics metrics = textMetrics.GetTextFaceMetrics("TestFont", 1000, TextEffects.Regular)) {
+                    SkiaFont skiaFont = (SkiaFont)metrics;
+                    Map_SkiaStd.GlyphPosition[] glyphs = skiaFont.EnhancedTypeface.GetGlyphPositions("A", new SKPoint(0, 0), skiaFont.EmHeight);
+
+                    Assert.AreEqual(1, glyphs.Length);
+
+                    // The origin passed in is the top-left of the text, so the glyph baseline
+                    // sits exactly one ascent below it.
+                    Assert.AreEqual(skiaFont.Ascent, glyphs[0].Position.Y, 0.001);
+                }
+            }
+            finally {
+                RestoreFontState();
+            }
+        }
+
+        // Helper: registers Roboto as "TestFont" and makes it the default family, so that the
+        // test does not depend on which fonts happen to be installed. SkiaFont's constructor
+        // resolves a hardcoded list of Windows fallback families; without a resolvable default
+        // that hits Debug.Fail on a machine with no system fonts (e.g. a bare Linux container).
+        private void UseOnlyTestFont()
+        {
+            ClearFontState();
+            SkiaFontManager.AddFontFile("TestFont", SKFontStyleWeight.Normal, SKFontStyleWidth.Normal, SKFontStyleSlant.Upright, FontPath("Roboto-Regular.ttf"));
+            SkiaFontManager.SetDefaultFontFamilyName("TestFont");
+        }
+
+        // Helper: undoes UseOnlyTestFont, restoring the documented default family name.
+        private void RestoreFontState()
+        {
+            SkiaFontManager.SetDefaultFontFamilyName("Arial");
+            ClearFontState();
+        }
     }
 }

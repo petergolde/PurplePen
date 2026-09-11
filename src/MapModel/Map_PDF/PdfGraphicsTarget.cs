@@ -73,7 +73,16 @@ namespace PurplePen.MapModel
             stateStack = new Stack<XGraphicsState>();
             stringFormat = new XStringFormat();
             stringFormat.Alignment = XStringAlignment.Near;
-            stringFormat.LineAlignment = XLineAlignment.Near;
+
+            // Position text by its baseline, not its top. The glyph positions we get from
+            // EnhancedTypeface are already baseline-relative, so we can pass them straight
+            // through. With XLineAlignment.Near, PdfSharp would instead add its own
+            // XFont.CellAscent to our Y, which is a different quantity computed from the font
+            // tables by PdfSharp's OpenTypeDescriptor -- notably it folds sTypoLineGap into
+            // the ascender for USE_TYPO_METRICS fonts, which DirectWrite and GDI+ do not.
+            // Using the baseline keeps DrawText and DrawTextOutline consistent and keeps all
+            // vertical positioning decisions in FontVerticalMetrics.
+            stringFormat.LineAlignment = XLineAlignment.BaseLine;
         }
 
         public float Intensity {
@@ -476,7 +485,9 @@ namespace PurplePen.MapModel
 
             foreach (GlyphPosition glyph in glyphs) {
                 XFont xfont = XFontFromTypeface(glyph.Typeface, skiaFont.EmHeight);
-                gfx.DrawString(glyph.GlyphText, xfont, brush, new XPoint(glyph.Position.X, glyph.Position.Y - skiaFont.Ascent), stringFormat);
+                // glyph.Position is already on the baseline, and stringFormat uses
+                // XLineAlignment.BaseLine, so it is passed through unadjusted.
+                gfx.DrawString(glyph.GlyphText, xfont, brush, new XPoint(glyph.Position.X, glyph.Position.Y), stringFormat);
             }
 
         }

@@ -36,6 +36,11 @@ namespace Map_SkiaStd
         public readonly HarfBuzzSharp.Font HBFont;
         private readonly SKStreamAsset fontStream;  // Must stay alive; HBBlob references its memory
 
+        // Vertical metrics in em units, read from the font's own OS/2 and hhea tables.
+        // Do NOT use SKFont.Metrics instead -- see FontVerticalMetrics for why that returns
+        // different values on Windows, macOS and Linux for the same font file.
+        public readonly FontVerticalMetrics VerticalMetrics;
+
         // Cache key: family name (upper-cased for case-insensitive comparison), weight, width, slant.
         private static readonly ConcurrentDictionary<(string, SKFontStyleWeight, SKFontStyleWidth, SKFontStyleSlant), ShapedTypeface> cache
             = new ConcurrentDictionary<(string, SKFontStyleWeight, SKFontStyleWidth, SKFontStyleSlant), ShapedTypeface>();
@@ -58,6 +63,7 @@ namespace Map_SkiaStd
                               bool cached)
         {
             Typeface = SkiaFontManager.CreateTypeface(familyName, weight, width, slant);
+            VerticalMetrics = FontVerticalMetrics.FromTypeface(Typeface);
 
             // SKFont is used solely for checking glyph availability via GetGlyph().
             // The size doesn't matter for glyph existence checks.
@@ -89,6 +95,7 @@ namespace Map_SkiaStd
         private ShapedTypeface(SKTypeface typeface)
         {
             Typeface = typeface;
+            VerticalMetrics = FontVerticalMetrics.FromTypeface(Typeface);
 
             CheckFont = new SKFont(Typeface);
 
@@ -521,11 +528,10 @@ namespace Map_SkiaStd
         // returned as a positive value.
         private float GetMainAscent(float fontSize)
         {
-            using (SKFont skFont = new SKFont(mainEntry.Typeface, fontSize))
-            {
-                skFont.GetFontMetrics(out SKFontMetrics metrics);
-                return -metrics.Ascent; // Skia reports ascent as negative; we return positive.
-            }
+            // Read from the font tables rather than SKFont.Metrics, which returns different
+            // values on Windows, macOS and Linux for the same font. This must stay in exact
+            // agreement with SkiaFont.Ascent, which uses the same source.
+            return mainEntry.VerticalMetrics.Ascent * fontSize;
         }
 
         // Shape the text using HarfBuzz, and then draw it on the canvas
