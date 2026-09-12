@@ -9,9 +9,9 @@ using System.Runtime.Versioning;
 [assembly: AssemblyTitle("Map_PDF")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Golde Software")]
 [assembly: AssemblyProduct("Purple Pen")]
-[assembly: AssemblyCopyright("Copyright ©  2011")]
+[assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

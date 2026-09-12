@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="copyrightLabel.Text" xml:space="preserve">
-    <value>Copyright © di Peter Golde</value>
+    <value>Copyright 2006-2026 Peter Golde</value>
   </data>
 </root>
