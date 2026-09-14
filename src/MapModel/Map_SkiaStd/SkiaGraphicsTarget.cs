@@ -14,7 +14,6 @@ namespace PurplePen.MapModel
     using Map_SkiaStd;
     using PurplePen.Graphics2D;
     using SkiaSharp;
-    using System.Collections.Concurrent;
     using System.Drawing;
     using System.Drawing.Imaging;
 
@@ -707,8 +706,6 @@ namespace PurplePen.MapModel
         private ShapedTypeface shapedTypeface;
         private EnhancedTypeface enhancedTypeface;
 		private float emHeight;
-        private SKFontMetrics fontMetrics;
-        private bool fontMetricsObtained;
         private bool underline;
         private float spaceWidth = -1, capHeight = -1;  
 
@@ -722,43 +719,18 @@ namespace PurplePen.MapModel
             { "calt", 0 },  // disable contextual alternates
         };
 
-        private readonly string[] fallbackFontsWindows = new string[] {
-            "Segoe UI",              // Latin, Cyrillic, Greek, Arabic, Hebrew
-            "Tahoma",                // Broad Latin/Arabic backup
-            "Nirmala UI",            // Indic scripts (Devanagari, Bengali, Tamil, Telugu, etc.)
-            "Leelawadee UI",         // Thai, Lao, Khmer
-            "Yu Gothic UI",          // Japanese
-            "Microsoft YaHei UI",    // Chinese Simplified
-            "Microsoft JhengHei UI", // Chinese Traditional
-            "Malgun Gothic",         // Korean
-            "Ebrima",                // Ethiopic, N'Ko, Tifinagh, Vai, Osmanya
-            "Gadugi",                // Cherokee, Canadian Aboriginal Syllabics
-            "Sylfaen",               // Georgian, Armenian
-            "Myanmar Text",          // Myanmar
-            "Microsoft Himalaya",    // Tibetan
-            "Mongolian Baiti",       // Mongolian
-            "Segoe UI Symbol",       // Miscellaneous symbols, math, Braille
-            "Segoe UI Emoji",        // Emoji
-            "Segoe UI Historic",     // Miscellaneous letters, like runic
-        };
-
-        private ConcurrentDictionary<TextEffects, ShapedTypeface[]> fallbackTypefaceCache = new ConcurrentDictionary<TextEffects, ShapedTypeface[]>();
-
         public SkiaFont(string familyName, float emHeight, TextEffects effects)
         {
-            ShapedTypeface[] fallbackTypefaces = fallbackTypefaceCache.GetOrAdd(effects, (te) => {
-                List<ShapedTypeface> list = new List<ShapedTypeface>();
-                foreach (string fallbackFamily in fallbackFontsWindows) {
-                    ShapedTypeface shapedTypeface = ShapedTypeface.Get(fallbackFamily, GetSKFontStyleWeight(effects), SKFontStyleWidth.Normal, GetSKFontStyleSlant(effects));
-                    if (shapedTypeface != null)
-                        list.Add(shapedTypeface);
-                }
-                return list.ToArray();
-            });
+            SKFontStyleWeight weight = GetSKFontStyleWeight(effects);
+            SKFontStyleWidth width = SKFontStyleWidth.Normal;
+            SKFontStyleSlant slant = GetSKFontStyleSlant(effects);
 
             this.emHeight = emHeight;
-            this.shapedTypeface = ShapedTypeface.Get(familyName, GetSKFontStyleWeight(effects), SKFontStyleWidth.Normal, GetSKFontStyleSlant(effects));
-            this.enhancedTypeface = new EnhancedTypeface(this.shapedTypeface, fallbackTypefaces, harfBuzzProperties);
+            this.shapedTypeface = ShapedTypeface.Get(familyName, weight, width, slant);
+
+            // Codepoints this font cannot render are handled on demand by the platform's own
+            // font fallback, so no list of fallback families is needed here.
+            this.enhancedTypeface = new EnhancedTypeface(this.shapedTypeface, familyName, weight, width, slant, harfBuzzProperties);
             this.underline = ((effects & TextEffects.Underline) != 0);
         }
 
@@ -780,8 +752,8 @@ namespace PurplePen.MapModel
         {
             get
             {
-                LoadFontMetrics();
-                return (-fontMetrics.Ascent + fontMetrics.Descent + fontMetrics.Leading);
+                FontVerticalMetrics metrics = shapedTypeface.VerticalMetrics;
+                return (metrics.Ascent + metrics.Descent + metrics.Leading) * emHeight;
             }
         }
 
@@ -789,8 +761,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                LoadFontMetrics();
-                return - fontMetrics.Ascent;
+                return shapedTypeface.VerticalMetrics.Ascent * emHeight;
             }
         }
 
@@ -798,8 +769,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                LoadFontMetrics();
-                return fontMetrics.Descent;
+                return shapedTypeface.VerticalMetrics.Descent * emHeight;
             }
         }
 
@@ -887,16 +857,6 @@ namespace PurplePen.MapModel
             return new RectangleF(bounds.Left, bounds.Top, bounds.Width, bounds.Height);
         }
 
-        void LoadFontMetrics()
-        {
-            if (!fontMetricsObtained) {
-                using (SKFont font = new SKFont(shapedTypeface.Typeface, emHeight)) {
-                    fontMetrics = font.Metrics;
-                }
-
-                fontMetricsObtained = true;
-            }
-        }
     }
 
     public class Skia_TextMetrics: ITextMetrics

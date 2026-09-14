@@ -96,20 +96,29 @@
          and Delete gestures are dropped entirely (macOS={x:Null}), because AppKit matches a menu
          key equivalent before the keystroke reaches the focused control, so those two would
          stop working in text fields and everywhere else. Both keys still work through
-         Window.KeyBindings above, which is deliberately left alone on every platform. -->
+         Window.KeyBindings above, which is deliberately left alone on every platform.
+
+         Icon="/Assets/Toolbar/noIcon.png" is a fully transparent 16x16 image used purely for
+         indentation on macOS. AppKit indents an NSMenuItem only when it has an image, so an
+         icon-less item sitting among items with icons has its text run out to the left margin
+         instead of lining up with them. Giving it noIcon.png restores the alignment. It has no
+         effect on Windows and Linux, where NativeMenuBar reserves the icon column for every item
+         in the menu regardless. -->
     <NativeMenu.Menu>
         <NativeMenu>
 
             <!-- === File Menu === -->
             <NativeMenuItem Header="{resx:Localize MainFrame_fileMenu_Text}">
                 <NativeMenu>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_newEventMenu_Text}" Command="{Binding NewEventCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_newEventMenu_Text}" Command="{Binding NewEventCommand}"
+                                    Icon="/Assets/Toolbar/noIcon.png"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_openMenu_Text}" Gesture="{OnPlatform Default='Ctrl+O', macOS='Cmd+O'}" Command="{Binding FileOpenPurplePenFileCommand}"
                                     Icon="/Assets/Toolbar/open.png"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_saveMenu_Text}" Gesture="{OnPlatform Default='Ctrl+S', macOS='Cmd+S'}" Command="{Binding SaveCommand}"
                                     Icon="/Assets/Toolbar/save.png"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_saveAsMenu_Text}" Command="{Binding SaveAsCommand}"/>
+                    <NativeMenuItem Header="{resx:Localize MainFrame_saveAsMenu_Text}" Command="{Binding SaveAsCommand}"
+                                    Icon="/Assets/Toolbar/noIcon.png"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{Binding CreateOcadFilesCommandName}" Command="{Binding CreateOcadFilesCommand}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_createImageFilesMenu_Text}" Command="{Binding CreateImageFilesCommand}"/>
@@ -302,7 +311,9 @@
                     </NativeMenuItem>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addVariationMenu_Text}" Command="{Binding AddVariationCommand}"
                                     Icon="/Assets/Toolbar/addVariation.png"/>
-                    <NativeMenuItem Header="{resx:Localize MainFrame_addTextLineMenu_Text}" Command="{Binding AddTextLineCommand}"/>
+                    <!-- Text Line has no icon of its own; noIcon.png just keeps it indented (see above). -->
+                    <NativeMenuItem Header="{resx:Localize MainFrame_addTextLineMenu_Text}" Command="{Binding AddTextLineCommand}"
+                                    Icon="/Assets/Toolbar/noIcon.png"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addMapIssueMenu_Text}" Command="{Binding AddMapIssueCommand}"
                                     Icon="/Assets/Toolbar/mapIssuePointItem.png"/>
@@ -412,7 +423,8 @@
                                     Command="{Binding DeleteSelectionCommand}"
                                     Icon="/Assets/Toolbar/delete.png"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_deleteForkMenu_Text}"
-                                    Command="{Binding DeleteForkCommand}"/>
+                                    Command="{Binding DeleteForkCommand}"
+                                    Icon="/Assets/Toolbar/noIcon.png"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addBendMenu_Text}"
                                     Gesture="{OnPlatform Default='Ctrl+B', macOS='Cmd+B'}" Command="{Binding AddBendCommand}"
@@ -420,14 +432,16 @@
                                            Converter={x:Static avutil:DisabledImageConverter.Instance},
                                            ConverterParameter=/Assets/Toolbar/addBend.png}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_removeBendMenu_Text}" Gesture="{OnPlatform Default='Ctrl+Shift+B', macOS='Cmd+Shift+B'}"
-                                    Command="{Binding RemoveBendCommand}"/>
+                                    Command="{Binding RemoveBendCommand}"
+                                    Icon="/Assets/Toolbar/noIcon.png"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_addGapMenu_Text}" Gesture="{OnPlatform Default='Ctrl+G', macOS='Cmd+G'}"
                                     Command="{Binding AddGapCommand}"
                                     Icon="{Binding CanAddGap,
                                            Converter={x:Static avutil:DisabledImageConverter.Instance},
                                            ConverterParameter=/Assets/Toolbar/addGap.png}"/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_removeGapMenu_Text}" Gesture="{OnPlatform Default='Ctrl+Shift+G', macOS='Cmd+Shift+G'}"
-                                    Command="{Binding RemoveGapCommand}"/>
+                                    Command="{Binding RemoveGapCommand}"
+                                    Icon="/Assets/Toolbar/noIcon.png"/>
                     <NativeMenuItemSeparator/>
                     <NativeMenuItem Header="{resx:Localize MainFrame_changeTextMenu_Text}"
                                     Command="{Binding ChangeTextCommand}"/>

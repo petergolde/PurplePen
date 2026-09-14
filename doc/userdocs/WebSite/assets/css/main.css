@@ -4144,3 +4144,35 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
+
+
+/* Click-to-expand headings. A heading with class "expander" shows and hides the
+   "expandable" block immediately following it; see assets/js/main.js. */
+h2.expander,
+h3.expander,
+h4.expander {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h2.expander:before,
+h3.expander:before,
+h4.expander:before {
+    content: '\25B6';           /* right-pointing triangle: closed */
+    display: inline-block;
+    font-style: normal;
+    margin-right: 0.5em;
+}
+
+h2.expander.open:before,
+h3.expander.open:before,
+h4.expander.open:before {
+    content: '\25BC';           /* down-pointing triangle: open */
+}
+
+.expandable {
+    display: none;
+}

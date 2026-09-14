@@ -20,6 +20,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#download">Download</a></li>
+                    <li><a href="#beta">Version 4 Beta</a></li>
                     <li><a href="#learn">Learn</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#support">Support</a></li>
@@ -45,7 +46,9 @@
                     <li><a href="downloads/purplepen-355.exe" class="button scrolly">Direct Download</a></li>
                     <li><a href="#about" class="button scrolly">Learn more</a></li>
                 </ul>
-                <p style="margin-top:60px; font-size: 0.9em">Purple Pen is a Windows application. <a href="virtualbox.htm">See here</a> for information on using Purple Pen on Mac or Linux.</p>
+                <p style="margin-top:60px; font-size: 0.9em">Purple Pen version 3 is a Windows-only application. Purple Pen 4 runs
+                    on Windows, Mac, or Linux natively, without emulation. <a href="#beta" class="scrolly">See here</a> for more information. 
+                </p>
             </div>
         </section>
         <!-- About -->
@@ -133,10 +136,10 @@
                 <br>
                 <p>Click the button above for a direct download of the latest released version of Purple Pen. Run it to install Purple Pen on your computer.</p>
                 <h4>Requirements:</h2>
-                <p>Purple Pen requires Windows 7 (SP1), or Windows 10 or 11. It requires the .NET Framework to run (2.0 for versions 1.x, 4.0 Client for versions 2.0 and later, 4.8 for versions 3.0 and later). 
+                <p>Purple Pen 3 requires Windows 7 (SP1), or Windows 10 or 11. It requires the .NET Framework to run (2.0 for versions 1.x, 4.0 Client for versions 2.0 and later, 4.8 for versions 3.0 and later). 
                     If you do not have this installed on your machine, the installer will automatically download and install it onto your machine. 
                 </p>
-                <p>On Mac, a Windows emulator such as Parallels or VirtualBox is required. <a href="virtualbox.htm">See here</a> for more information.</p>
+                <p>On Mac or Linux, please try Purple Pen 4 Beta version. <a href="#beta" class="scrolly">See here</a> for more information.</p>
                 <p>For versions 3.5.0 and later, Windows SmartScreen may warn you about downloading or running the installer. <a href="./smartscreen/smartscreen.html">Click here for instructions in this case.</a></p>
                 <a href="#preventScrollyError" id="toggleVersionButton" class="button scrolly">Show all downloads</a>
                 <br>
@@ -485,8 +488,155 @@
             </div>
         </section>
 
+        <!-- Version 4 Beta -->
+        <section id="beta" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2>Version 4 Beta</h2>
+                <p>
+                    Purple Pen 4 is a major re-architecting of the software, designed to run natively on Windows, Mac, and Linux. This required
+                    significant changes to the code, although the core algorithms remain largely the same. The user interface remains almost unchanged, so the program should be
+                    immediately familiar and usable. Because of the major changes required, there is a significant risk of bugs in this new version. We need your help
+                    in testing this version and providing feedback; both on any bugs you may encounter and any user interface issues that can be improved.
+                </p>
+                <p>
+                    I am a life-long Windows user, so I am not that familiar with Mac and Linux software. It is quite likely that there are things that
+                    I have overlooked on Mac and Linux, so feedback from users on those platforms is especially valuable.
+                </p>
+                <p>
+                    The file format used by Purple Pen 4 is completely compatible with Purple Pen 3.5.5, so you can switch back and forth, or share files
+                    with users who are still using Purple Pen 3.5.5. On Windows, Purple Pen 4 installs alongside Purple Pen 3.5.5, so you can have both 
+                    versions available at the same time.
+                </p>
+                <p>
+                    Please use the "Beta Feedback" category on the <a href="https://discuss.purple-pen.org/c/beta-feedback">Purple Pen discussion forum</a> to give feedback.
+                </p>
+                <p>
+                    There are a few features that are not yet implemented in Purple Pen 4. These will be added in Beta 2:
+                    <ul>
+                        <li>Direct printing is not yet implemented. You can create PDFs, and then print those PDFs, so this is not as big
+                            a limitation as it may appear at first.
+                        </li>
+                        <li>The help system is not yet implemented. The old help system used a Windows-only help reader, so the help needs to 
+                            ported to a pure HTML-base help system.
+                        </li>
+                        <li>
+                            On Windows, you cannot yet install from the Windows Store; you must download and run an install program.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    Thank you to everyone for your donations; this money directly helped fund the purchase of new hardware, software, and
+                    services needed for the development of Purple Pen 4.
+                </p>
+                <h2>Installing Purple Pen 4 Beta</h2>
+                <p>
+                    Click on your operating system below for installation instructions.
+                </p>
+                <h3 class="expander">Windows</h3>
+                <div class="expandable">
+                    <p>
+                        Purple Pen for Windows requires Windows 10 (22H2 or later) or Windows 11, and a 64-bit processor. To install, click the
+                        button below to download the installer and run it. Because Purple Pen does not have a code signing certificate, you 
+                        will probably need to bypass Windows security warnings. <a href="./smartscreen/smartscreen.html">Click here for instructions.</a></p>
+                    </p>
+                    <p>
+                        <a href="https://downloads.purple-pen.org/windows/x64/purplepen-400-beta1.exe" class="button">Download Windows Installer</a>
+                    </p>
+                </div>
+                <h3 class="expander">Mac</h3>
+                <div class="expandable">
+                    <p>
+                        Purple Pen for Mac requires Mac OS 14 or later, and a Apple ARM processor. To install, download the DMG file by clicking 
+                        the button below, open it, and drag the Purple Pen application to your Applications folder. Unfortunately, sandboxing restrictions
+                        make it difficult to offer Purple Pen via the Apple App Store, although we continue to investigate this.
+                    </p>
+                    <p>
+                        <a href="https://downloads.purple-pen.org/mac/arm64/PurplePen-4.0.0-beta1-osx-arm64.dmg" class="button">Download Mac Installer</a>
+                    </p>
+                </div>
+                <h3 class="expander">Linux</h3>
+                <div class="expandable">
+                    <p>
+                        Purple Pen for Linux requires a 64-bit Intel/AMD processor. Purple Pen has 3 different installation methods for Linux. 
+                        Please choose the one that best fits your system and preferences.
+                    </p>
+
+                    <h4 class="expander">Ubuntu/Debian/Mint system (.deb)</h4>
+                    <div class="expandable">
+                        <p>
+                            Download the .deb package by clicking the button below, and then install it by running:
+                            <pre><code>sudo apt install ~/Downloads/purplepen_4.0.0~beta1-1_amd64.deb</code></pre>
+                        </p>
+                        <p>
+                            Once installed, you can run Purple Pen from your application menu or by typing <code>purplepen</code> in the terminal.
+                            Note: you may get the warning: Download is performed unsandboxed as root as file 'xxxx' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+                            This warning can be safely ignored.
+                        </p>
+                        <p>
+                            <a href="https://downloads.purple-pen.org/linux/deb/pool/beta/main/p/purplepen/purplepen_4.0.0~beta1-1_amd64.deb" class="button">Download .deb Package</a>
+                        </p>
+                        <p>
+                            The package sets up the Purple Pen  repository on its own, so from then on Purple Pen updates along with the rest of your system.
+                            The file the package writes is <code>/etc/apt/sources.list.d/purplepen.sources</code>. Its first line says it is managed
+                            by the package. Delete that line and the package will never touch the file
+                            again, leaving it yours to edit. To keep the file but stop following the
+                            repository, set `Enabled: no` instead. Everything here is signed with this key:
+                            <code>D81754596CF4B29FFC7857CCC31F595BE2DCC2DA</code>
+                        </p>
+                    </div>  
+
+                    <h4 class="expander">Fedora/Red Hat system (.rpm)</h4>
+                    <div class="expandable">
+                        <p>
+                            Download the .rpm package by clicking the button below, and then install it by running:
+                            <pre><code>sudo dnf install ~/Downloads/purplepen-4.0.0~beta1-1.x86_64.rpm</code></pre>
+                        </p>
+                        <p>
+                            Once installed, you can run Purple Pen from your application menu or by typing <code>purplepen</code> in the terminal.
+                        </p>
+                        <p>
+                            <a href="https://downloads.purple-pen.org/linux/rpm/beta/x86_64/purplepen-4.0.0~beta1-1.x86_64.rpm" class="button">Download .rpm Package</a>
+                        </p>
+                        <p>
+                        The package sets up the Purple Pen  repository on its own, so from then on Purple Pen updates along with the rest of your system.
+                        The file the package writes is <code>/etc/yum.repos.d/purplepen.repo</code>. Its first line says it is managed
+                        by the package. Delete that line and the package will never touch the file
+                        again, leaving it yours to edit. To keep the file but stop following the
+                        repository, set `enabled=0` instead. Everything here is signed with this key:
+                        <code>D81754596CF4B29FFC7857CCC31F595BE2DCC2DA</code>
+                        </p>
+                    </div>
+                    
+                    <h4 class="expander">Generic Linux system (AppImage)</h4>
+                    <div class="expandable">
+                        <p>
+                            Download the .AppImage file by clicking the button below. Once downloaded, move and rename to the location
+                            where you would like it, then make the executable using <code>chmod +x &lt;filename&gt;</code>.
+                            For example, use the following to place it in an "Applications" subdirectory of your home directory:
+                            <pre><code>mkdir ~/Applications
+mv ~/Downloads/PurplePen-4.0.0-beta1-linux-x64.AppImage ~/Applications/purplepen.AppImage
+chmod +x ~/Applications/purplepen.AppImage
+</code></pre>
+                        </p>
+                        <p>
+                            <a href="https://downloads.purple-pen.org/linux/appimage/x64/PurplePen-4.0.0-beta1-linux-x64.AppImage" class="button">Download AppImage</a>
+                        </p>
+
+                        <p>
+                            You can now run Purple Pen by executing the AppImage file:
+                            <pre><code>~/Applications/purplepen.AppImage</code></pre>
+                        </p>
+                        <p>
+                            The AppImage is a self-contained package that includes all the necessary dependencies to run Purple Pen on most Linux distributions. 
+                            It will automatically update itself when a new version is released.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Learn -->
-        <section id="learn" class="wrapper style1 fade-up">
+        <section id="learn" class="wrapper style2 fade-up">
             <div class="inner">
                 <h2>Learn</h2>
         
@@ -566,8 +716,17 @@
             <div class="inner">
                 <h2>Support</h2>
                 <p>
-                    Purple Pen is free software. There is no guaranteed support. However, support is provided via the
-                    <a href="http://groups.io/g/purple-pen">Purple Pen mailing list on groups.io</a>. If you have a question, problem, or suggestions, please
+                    Purple Pen is free software. There is no guaranteed support. If you have questions, please seek help from the community
+                    on the <a href="https://discuss.purple-pen.org/">Purple Pen discussion forum</a>. Please read the forum rules and guidelines.
+                    Use the "Using Purple Pen" category on the forum for guidance. This discussion forum is somewhat new (Sept 2026), so the mailing list (below)
+                    may be a better place to get timely help for urgent issues.
+                    </p>
+                    <p>
+                        <a href="https://discuss.purple-pen.org/" class="button">Join Discussion Forum</a>
+                    </p>
+                    <p>
+                    There is a
+                    <a href="http://groups.io/g/purple-pen">Purple Pen mailing list on groups.io</a>. If you have a question, problem, or suggestions, you can
                     join the mailing list and ask. Most likely, someone will be happy to help you.
                 </p>
 
@@ -639,7 +798,7 @@
 
                 <p>
                     Purple Pen is continuing to evolve. We want to hear your suggestions as to what needs to be fixed or added to make Purple Pen the best and easiest program for course setting. Please
-                    <a href="http://groups.io/g/purple-pen">join the mailing list</a> and let us know how Purple Pen can be improved.
+                    <a href="https://discuss.purple-pen.org/c/ideas-for-the-future">Purple Pen discussion forum</a> and let us know how Purple Pen can be improved using the "Ideas for the Future" category.
                 </p>
             </div>
         </section>
@@ -649,13 +808,13 @@
                 <h2>Contribute</h2>
                 <p>Purple Pen is open source software. As such, we welcome contributions and help from any and all interested people.</p>
                 <h4>Providing Feedback</h4>
-                <p>The easiest and most important way that you can help to improve Purple Pen is by giving feedback. In order to improve it, we need to know what is broken, missing, or could be better. Please join the
-                    <a href="http://groups.io/g/purple-pen">Purple Pen mailing list</a>, and tell us what you think. If you want a change, tell us about it!</p>
+                <p>The easiest and most important way that you can help to improve Purple Pen is by giving feedback. In order to improve it, we need to know what is broken, missing, or could be better.  Please joing the
+                <a href="https://discuss.purple-pen.org/c/ideas-for-the-future">Purple Pen discussion forum</a> and let us know how Purple Pen can be improved using the "Ideas for the Future" category. If you want a change, tell us about it!</p>
                 <h4>Translating</h4>
                 <p>We'd like to make Purple Pen available as many languages as possible. If you are fluent in another language and would like to help translate Purple Pen, <a href="translating/TranslatingPurplePen.htm">see 
 information about translating Purple Pen here</a>.</p>
                 <h4>Writing/Editing Documentation</h4>
-                <p>A computer program is no good if no one knows how to use it. If you like to write or edit, we&#39;d love to have help improving the documentation for Purple Pen. Drop us a line on the mailing list.</p>
+                <p>A computer program is no good if no one knows how to use it. If you like to write or edit, we&#39;d love to have help improving the documentation for Purple Pen. Drop us a line on the discussion forum or mailing list.</p>
                 <p>If web site design or writing is your bent, this web site could undoubtedly use improvement also.</p>
                 <h4>Cash Donations</h4>
                 <p>If you'd like to donate money to cover expenses and support further development, you can <a href="#donate">donate money via PayPal here</a>.</p>
