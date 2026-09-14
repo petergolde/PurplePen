@@ -231,4 +231,11 @@
         }
     });
 
+    // Clicking a heading with class "expander" shows or hides the "expandable"
+    // block right after it. They start closed; see .expandable in main.css.
+    $(".expander").click(function() {
+        $(this).toggleClass("open");
+        $(this).next(".expandable").slideToggle(150);
+    });
+
 })(jQuery);
