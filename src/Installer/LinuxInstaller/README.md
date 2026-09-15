@@ -489,8 +489,11 @@ Couldn't find a valid ICU package installed on the system.
 .NET aborts at startup. Purple Pen is heavily localized, so
 `InvariantGlobalization` is not an acceptable escape. `AppRun` prepends the
 bundled copy to `LD_LIBRARY_PATH`, which is a floor rather than an override —
-if the host has its own ICU, .NET's version probing may use that instead, and
-either works.
+and for a stronger reason than path order. .NET probes for ICU **by version
+number**, trying `libicuuc.so.<N>` downwards, so a host with a newer ICU
+satisfies the probe out of `ld.so.cache` before the loader is ever asked for
+the bundled copy. The host's ICU wins whenever it is newer, regardless of what
+`LD_LIBRARY_PATH` says, and either works.
 
 This was verified rather than assumed. Masking the host's ICU inside a private
 mount namespace and running both ways:
@@ -586,6 +589,13 @@ the application directory comes out correct with nothing in between.
 
 ## Things to be aware of
 
+**The Debian ICU dependency is generated, and deliberately over-wide.** The
+package name tracks the library soname (`libicu78`), so it moves with every ICU
+release; `DEB_ICU_MIN`/`DEB_ICU_MAX` in `config.sh` generate the whole
+alternation instead of anyone maintaining a list. Unsatisfiable alternatives are
+free, so the range extends well past what exists. The `.rpm` is immune — RPM's
+`libicu` is unversioned — and the AppImage is immune because it bundles ICU.
+
 **Switch between the beta and release icon with `ICON_FAMILY`.**
 `AvPurplePen/Assets/AppIcon` holds two families of pre-rendered PNGs. It
 defaults to `PurplePenBeta`; set it to `PurplePen` for a release build:
@@ -669,10 +679,34 @@ deliberately **not** listed: they show up in `ldd` output only because
 lists the dlopen'd libraries separately as a reminder.
 
 The Debian list spells the versioned libraries as alternatives
-(`libicu76 | libicu74 | ...`) because those packages carry their soname in the
-package name, so it differs on every distribution release. Extend the list as
-new releases appear rather than reaching for an unversioned name, which does
-not exist. RPM's `libicu` and `openssl-libs` are stable by comparison.
+(`libicu78 | libicu76 | ...`) because those packages carry their soname in the
+package name, so it differs on every distribution release. There is no
+unversioned name and dpkg has no wildcard syntax, so enumerating them is the
+only encoding available. RPM's `libicu` and `openssl-libs` are stable by
+comparison, which is why only the `.deb` has ever broken this way.
+
+**The ICU enumeration is generated, not curated.** `config.sh` holds a `@ICU@`
+token in `DEB_DEPENDS` and a range in `DEB_ICU_MIN`/`DEB_ICU_MAX` (63–90);
+`deb_icu_alternation()` expands it at build time. An alternative that matches
+no package in any archive costs nothing — dpkg needs only one alternative to
+resolve and apt skips names it has never heard of — so the range is
+deliberately far wider than the set of names that exist. It is not a claim
+about which packages exist; it is headroom, and the point of the headroom is
+that the list cannot go stale on a release cadence.
+
+It was a hand-written list until it did exactly that. `4.0.0~beta1-1` declared
+`libicu76 | libicu74 | … | libicu66`; Ubuntu 26.04 ships only `libicu78`, so
+nothing resolved and apt refused to install. The part worth remembering is
+that **the application was never broken** — .NET loads the highest installed
+system ICU, so Purple Pen runs perfectly well against ICU 78. Only the dpkg
+metadata refused. A comment telling a maintainer to extend a list every time a
+distribution releases is not a mechanism; generating the list is.
+
+`build_deb` also calls `check_icu_alternation()`, which warns if the build
+machine's own ICU falls outside the range. That is the one cheap check there
+is — nothing else in the build can see this dependency at all — and it warns
+rather than fails, since what ICU the build host has says nothing about what
+the package may declare.
 
 **The RPM dependency names target Fedora/RHEL.** openSUSE and Mageia name
 several of these differently (`libX11-6`, `libopenssl3`), so a package built

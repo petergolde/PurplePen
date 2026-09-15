@@ -1055,6 +1055,63 @@ deb_description() {
     printf '%s\n' "$PACKAGE_DESCRIPTION" | fold -s -w 76 | sed -e 's/[[:space:]]*$//' -e 's/^/ /'
 }
 
+# deb_icu_alternation: print the libicu alternation, newest name first.
+#
+# Debian's ICU package name carries the library soname, so it changes with
+# every ICU major release and there is no unversioned name to fall back on.
+# Enumerating the names is the only thing dpkg's syntax can express, so the
+# enumeration is generated from DEB_ICU_MIN..DEB_ICU_MAX rather than
+# hand-maintained -- see the comment on those settings in config.sh for why the
+# range is deliberately much wider than the set of names that exist.
+#
+# Newest first, so that on a machine with no ICU installed at all apt reaches
+# for the newest name its archive actually has.
+deb_icu_alternation() {
+    local v out=""
+
+    for ((v = DEB_ICU_MAX; v >= DEB_ICU_MIN; v--)); do
+        out+="${out:+ | }libicu$v"
+    done
+
+    printf '%s' "$out"
+}
+
+# resolve_deb_depends: print DEB_DEPENDS with the @ICU@ token replaced by the
+# generated alternation.
+#
+# The substitution lives here rather than in config.sh because config.sh is
+# sourced before any function is defined and has to stay pure assignments.
+resolve_deb_depends() {
+    printf '%s' "${DEB_DEPENDS/@ICU@/$(deb_icu_alternation)}"
+}
+
+# check_icu_alternation: warn if this machine's own ICU falls outside the
+# declared range.
+#
+# ICU is dlopen'd, so it appears in no linker metadata, --show-deps can never
+# see it, and nothing else in the build looks at the ICU dependency at all.
+# This is the one cheap check available: the build machine will eventually be
+# upgraded past DEB_ICU_MAX, and that is the last moment the range can be
+# widened by someone other than a user who cannot install the package.
+#
+# It warns and never dies. What ICU this machine happens to have says nothing
+# about what the package is allowed to declare -- a package built on a host
+# with no ICU at all is perfectly valid.
+check_icu_alternation() {
+    local entry version
+
+    entry="$(library_soname_and_path libicuuc)"
+    [[ -z "$entry" ]] && return 0
+
+    version="${entry%% *}"
+    version="${version##*.so.}"
+
+    if (( version < DEB_ICU_MIN || version > DEB_ICU_MAX )); then
+        warn "This machine has ICU $version, which is outside DEB_ICU_MIN..DEB_ICU_MAX ($DEB_ICU_MIN..$DEB_ICU_MAX)."
+        warn "The .deb being built would not install here. Widen the range in config.sh."
+    fi
+}
+
 # write_deb_control: create the DEBIAN control directory inside the install
 # tree -- the control file itself plus the maintainer scripts that refresh the
 # desktop, MIME and icon caches.
@@ -1277,6 +1334,11 @@ build_deb() {
         info "Skipped."
         return
     fi
+
+    # The ICU alternation is generated rather than stored, so expand it before
+    # the control file is written, and sanity-check the range while we are here.
+    DEB_DEPENDS="$(resolve_deb_depends)"
+    check_icu_alternation
 
     write_deb_control
 
@@ -2167,7 +2229,9 @@ whole reason for bundling it."
 #     that covers most of what actually matters here: .NET opens ICU and
 #     OpenSSL that way, and Avalonia opens libX11, libICE and libSM that way.
 #     None of the five will ever appear in this report, and all five must stay
-#     in the dependency lists by hand.
+#     in the dependency lists by hand -- with the single exception of ICU on
+#     the Debian side, whose package name moves too often for a hand-written
+#     entry to survive and which is generated instead. See DEB_ICU_MIN.
 show_deps() {
     step "Shared libraries the payload links against"
 
