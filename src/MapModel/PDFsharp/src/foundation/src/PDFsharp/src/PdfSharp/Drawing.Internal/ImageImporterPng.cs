@@ -5,6 +5,7 @@
 using PdfSharp.Internal.Png.BigGustave;
 #endif
 using PdfSharp.Pdf;
+using PdfSharp.Pdf.Advanced;
 
 namespace PdfSharp.Drawing.Internal
 {
@@ -229,14 +230,22 @@ namespace PdfSharp.Drawing.Internal
                             var lengthMask = png.Width * png.Height;
                             var data = new Byte[length];
                             var mask = hasMask ? new Byte[lengthMask] : null;
+                            // A monochrome stencil is built alongside the alpha mask, as the BMP
+                            // importer does. MonochromeMask fills its lines from the bottom up,
+                            // while the pels below are read from the top down, so the line index
+                            // passed to StartLine is inverted.
+                            var bitmapMask = hasMask ? new MonochromeMask(png.Width, png.Height) : null;
                             ImagePrivateDataPng pngData;
                             ii.Data = pngData = new ImagePrivateDataPng(data, mask);
                             ii.Data.Image = ii;
                             int offset = 0;
                             int maskOffset = 0;
                             bool maskUsed = false;
+                            bool alphaMaskUsed = false;
                             for (int y = 0; y < png.Height; ++y)
                             {
+                                if (hasMask)
+                                    bitmapMask!.StartLine(png.Height - 1 - y);
                                 for (int x = 0; x < png.Width; ++x)
                                 {
                                     // TODO_OLD Add GetRow to PNG library?
@@ -248,7 +257,16 @@ namespace PdfSharp.Drawing.Internal
                                     if (hasMask)
                                     {
                                         mask![maskOffset++] = pel.A;
-                                        maskUsed |= pel.A != 255;
+                                        bitmapMask!.AddPel(pel.A);
+                                        if (pel.A != 255)
+                                        {
+                                            maskUsed = true;
+                                            // A pel that is neither fully opaque nor fully
+                                            // transparent cannot be represented by the stencil,
+                                            // so the 8-bit alpha mask is needed as well.
+                                            if (pel.A != 0)
+                                                alphaMaskUsed = true;
+                                        }
                                     }
                                 }
                             }
@@ -257,6 +275,18 @@ namespace PdfSharp.Drawing.Internal
                             {
                                 // No pixels with transparency found, delete the mask.
                                 pngData.AlphaMask = null;
+                            }
+                            else
+                            {
+                                pngData.BitmapMask = bitmapMask!.MaskData;
+                                if (!alphaMaskUsed)
+                                {
+                                    // Every pel is either fully opaque or fully transparent, so the
+                                    // monochrome stencil expresses the mask exactly. Dropping the
+                                    // alpha mask keeps the image off the transparency path and
+                                    // saves eight times the mask data.
+                                    pngData.AlphaMask = null;
+                                }
                             }
                         }
                         break;
@@ -560,6 +590,12 @@ namespace PdfSharp.Drawing.Internal
             var data = (ImagePrivateDataPng?)Data ?? NRT.ThrowOnNull<ImagePrivateDataPng>();
             ImageDataBitmap imageData = new ImageDataBitmap(data.Bitmap, data.AlphaMask!); // NRT Check in constructor.
 
+            if (data.BitmapMask != null)
+            {
+                imageData.BitmapMask = data.BitmapMask;
+                imageData.BitmapMaskLength = data.BitmapMask.Length;
+            }
+
             if (data.PaletteData != null)
             {
                 imageData.PaletteData = data.PaletteData;
@@ -582,6 +618,13 @@ namespace PdfSharp.Drawing.Internal
 
         internal readonly byte[] Bitmap;
         internal byte[]? AlphaMask;
+
+        /// <summary>
+        /// The 1 bit per pel stencil mask, or null if the image has no transparency. It is set
+        /// whenever any pel is not fully opaque; when no pel has partial alpha it is the only
+        /// mask, and <see cref="AlphaMask"/> is null.
+        /// </summary>
+        internal byte[]? BitmapMask;
 
         internal byte[]? PaletteData { get; set; }
     }
