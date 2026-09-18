@@ -839,6 +839,14 @@ namespace PdfSharp.Fonts.OpenType
         /// </summary>
         public string FullFontName = "";
 
+        /// <summary>
+        /// Get the PostScript name of the font (name ID 6), or an empty string if the font
+        /// does not provide one. This name is guaranteed by the OpenType specification to be a
+        /// valid PostScript name, and PDF 32000-1 requires it to be used as the value of
+        /// BaseFont when the font has one.
+        /// </summary>
+        public string PostscriptName = "";
+
         public ushort format;
         public ushort count;
         public ushort stringOffset;
@@ -868,6 +876,13 @@ namespace PdfSharp.Fonts.OpenType
                 format = _fontData.ReadUShort();
                 count = _fontData.ReadUShort();
                 stringOffset = _fontData.ReadUShort();
+
+                // Names found on the Macintosh platform (platform ID 1). Fonts that ship only
+                // with macOS - Optima and many other Apple system fonts - carry their real names
+                // here and provide Windows platform records for the subfamily name alone. These
+                // are used only to fill in names the Windows/Unicode records did not supply, so
+                // a font that reads correctly today continues to read identically.
+                string macName = "", macStyle = "", macFullFontName = "", macPostscriptName = "";
 
                 for (int idx = 0; idx < count; idx++)
                 {
@@ -908,14 +923,80 @@ namespace PdfSharp.Fonts.OpenType
                             if (String.IsNullOrEmpty(FullFontName))
                                 FullFontName = Encoding.BigEndianUnicode.GetString(value, 0, value.Length);
                         }
+
+                        // PostScript name. Optional, but when present it is by definition a valid
+                        // PostScript name, so PDF can use it verbatim as the value of BaseFont.
+                        if (nrec.nameID == 6 && nrec.languageID == 0x0409)
+                        {
+                            if (String.IsNullOrEmpty(PostscriptName))
+                                PostscriptName = Encoding.BigEndianUnicode.GetString(value, 0, value.Length);
+                        }
+                    }
+                    else if (nrec.platformID == 1 && nrec.languageID == 0)
+                    {
+                        // Macintosh platform, English. These strings are single-byte, not UTF-16,
+                        // so they need a different decoding than the records above.
+                        switch (nrec.nameID)
+                        {
+                            case 1:
+                                if (String.IsNullOrEmpty(macName))
+                                    macName = DecodeMacintoshString(value);
+                                break;
+
+                            case 2:
+                                if (String.IsNullOrEmpty(macStyle))
+                                    macStyle = DecodeMacintoshString(value);
+                                break;
+
+                            case 4:
+                                if (String.IsNullOrEmpty(macFullFontName))
+                                    macFullFontName = DecodeMacintoshString(value);
+                                break;
+
+                            case 6:
+                                if (String.IsNullOrEmpty(macPostscriptName))
+                                    macPostscriptName = DecodeMacintoshString(value);
+                                break;
+                        }
                     }
                 }
+
+                // Fall back to the Macintosh strings for anything the Windows/Unicode records
+                // did not provide.
+                if (String.IsNullOrEmpty(Name))
+                    Name = macName;
+                if (String.IsNullOrEmpty(Style))
+                    Style = macStyle;
+                if (String.IsNullOrEmpty(FullFontName))
+                    FullFontName = macFullFontName;
+                if (String.IsNullOrEmpty(PostscriptName))
+                    PostscriptName = macPostscriptName;
+
                 Debug.Assert(!String.IsNullOrEmpty(Name));
             }
             catch (Exception ex)
             {
                 throw new InvalidOperationException(PsMsgs.ErrorReadingFontData, ex);
             }
+        }
+
+        /// <summary>
+        /// Decodes a string stored under the Macintosh platform (platform ID 1).
+        /// </summary>
+        /// <param name="value">The raw bytes of the name record.</param>
+        /// <remarks>
+        /// Macintosh platform strings are single-byte, nominally Mac OS Roman. The names read
+        /// here - family, subfamily, full name and PostScript name - are printable ASCII for
+        /// every font that matters to PDF, and a PostScript name is ASCII by definition, so the
+        /// bytes are widened directly. That avoids depending on the Mac OS Roman code page,
+        /// which .NET does not provide without an extra encoding provider.
+        /// </remarks>
+        static string DecodeMacintoshString(byte[] value)
+        {
+            var chars = new char[value.Length];
+            for (int idx = 0; idx < value.Length; idx++)
+                chars[idx] = (char)value[idx];
+            return new string(chars);
         }
 
         NameRecord ReadNameRecord()

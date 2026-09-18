@@ -440,18 +440,37 @@ namespace PdfSharp.Drawing
 
         /// <summary>
         /// Gets the suffix of the face name in a PDF font and font descriptor.
-        /// The name based on the effective value of bold and italic from the OS/2 table.
         /// </summary>
+        /// <remarks>
+        /// PDF 32000-1 appends a comma and the style name only when the host operating system
+        /// synthesized a style for which the font provides no data. A font that really is bold or
+        /// italic carries that in its own name and takes no suffix, so the suffix follows
+        /// StyleSimulations rather than the OS/2 bold and italic bits. Keeping it for simulated
+        /// styles also stops a simulated face from sharing a BaseFont name with the real one it
+        /// was simulated from.
+        /// </remarks>
         string GetFaceNameSuffix()
         {
             // Use naming of Microsoft Word.
-            if (IsBold)
-                return IsItalic ? ",BoldItalic" : ",Bold";
-            return IsItalic ? ",Italic" : "";
+            bool boldSimulated = (StyleSimulations & XStyleSimulations.BoldSimulation) != 0;
+            bool italicSimulated = (StyleSimulations & XStyleSimulations.ItalicSimulation) != 0;
+            if (boldSimulated)
+                return italicSimulated ? ",BoldItalic" : ",Bold";
+            return italicSimulated ? ",Italic" : "";
         }
 
-        internal string GetBaseName()  // #NFM 
+        internal string GetBaseName()  // #NFM
         {
+            // PDF 32000-1 determines the value of BaseFont in one of two ways. The first is to use
+            // the PostScript name from the font's 'name' table, which is what nearly every font
+            // provides and is guaranteed to be a valid PostScript name.
+            if (!String.IsNullOrEmpty(FontFace.name.PostscriptName))
+                return FontFace.name.PostscriptName + GetFaceNameSuffix();
+
+            // The second applies only in the absence of such an entry: derive a name from the name
+            // by which the font is known to the host operating system. The specification requires
+            // any spaces in that name to be removed, because a space is a delimiter in PostScript
+            // and cannot appear in a name.
             string name = DisplayName;
             int ich = name.IndexOf("bold", StringComparison.OrdinalIgnoreCase);
             if (ich > 0)
@@ -459,10 +478,39 @@ namespace PdfSharp.Drawing
             ich = name.IndexOf("italic", StringComparison.OrdinalIgnoreCase);
             if (ich > 0)
                 name = name[..ich] + name.Substring(ich + 6, name.Length - ich - 6);
-            //name = name.Replace(" ", "");
+            name = name.Replace(" ", "");
             name = name.Trim();
+
+            // A name synthesized from a family and style that are both empty degenerates to the
+            // punctuation left over from DisplayName, which is not a usable PostScript name.
+            name = RemoveInvalidPostScriptNameCharacters(name);
+            if (name.Length == 0)
+                name = "UnnamedFont";
+
             name += GetFaceNameSuffix();
             return name;
+        }
+
+        /// <summary>
+        /// Removes the characters that may not appear in a PostScript name.
+        /// </summary>
+        /// <param name="name">The name to clean up.</param>
+        /// <remarks>
+        /// A PostScript name may not contain white space or any of the PostScript delimiters, and
+        /// is limited to printable ASCII. Only the derived-name path needs this; a PostScript name
+        /// taken from the font's own 'name' table is already valid.
+        /// </remarks>
+        static string RemoveInvalidPostScriptNameCharacters(string name)
+        {
+            const string delimiters = "()<>[]{}/%";
+            var chars = new char[name.Length];
+            int count = 0;
+            foreach (char ch in name)
+            {
+                if (ch is > ' ' and <= '~' && delimiters.IndexOf(ch) < 0)
+                    chars[count++] = ch;
+            }
+            return new string(chars, 0, count);
         }
 
         /// <summary>
