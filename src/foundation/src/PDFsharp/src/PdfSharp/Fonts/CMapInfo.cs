@@ -31,11 +31,18 @@ namespace PdfSharp.Fonts
                 if (item.GlyphIndex == 0)
                     continue;
 
+                // Every glyph that is drawn must be in the subset, so record it before the
+                // code point check below. One code point can legitimately map to more than one
+                // glyph -- a contextual alternate, or a substitution supplied by a RenderTextEvent
+                // handler -- and CodePointsToGlyphIndices can only remember the first of them.
+                // Recording the glyph afterwards would leave the later ones out of the embedded
+                // font while the content stream still refers to them.
+                GlyphIndices[item.GlyphIndex] = default;
+
                 if (CodePointsToGlyphIndices.ContainsKey(item.CodePoint))
                     continue;
 
                 CodePointsToGlyphIndices.Add(item.CodePoint, item.GlyphIndex);
-                GlyphIndices[item.GlyphIndex] = default;
                 MinCodePoint = Math.Min(MinCodePoint, item.CodePoint);
                 MaxCodePoint = Math.Max(MaxCodePoint, item.CodePoint);
             }
