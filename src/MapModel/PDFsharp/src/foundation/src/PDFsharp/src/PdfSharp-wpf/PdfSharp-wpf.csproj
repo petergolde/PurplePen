@@ -47,6 +47,7 @@
     <Compile Include="..\PdfSharp\Drawing.Pdf\XGraphicsPdfRenderer.cs" Link="Drawing.Pdf\XGraphicsPdfRenderer.cs" />
     <Compile Include="..\PdfSharp\Drawing\CoreGraphicsPath.cs" Link="Drawing\CoreGraphicsPath.cs" />
     <Compile Include="..\PdfSharp\Drawing\enums\PathStart.cs" Link="Drawing\enums\PathStart.cs" />
+    <Compile Include="..\PdfSharp\Drawing\enums\XBlendMode.cs" Link="Drawing\enums\XBlendMode.cs" />
     <Compile Include="..\PdfSharp\Drawing\enums\XColorSpace.cs" Link="Drawing\enums\XColorSpace.cs" />
     <Compile Include="..\PdfSharp\Drawing\enums\XCombineMode.cs" Link="Drawing\enums\XCombineMode.cs" />
     <Compile Include="..\PdfSharp\Drawing\enums\XDashStyle.cs" Link="Drawing\enums\XDashStyle.cs" />
