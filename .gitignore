@@ -123,3 +123,6 @@ loc/po/tar/
 
 # JetBrains files.
 **/.idea
+
+# Random files for local testing.
+/testing
