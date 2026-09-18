@@ -57,6 +57,13 @@ namespace PurplePen.MapModel
     // A GraphicsTarget encapsulates either a Graphics (for WinForms) or a DrawingContext (for WPF)
     public class Pdf_GraphicsTarget: IGraphicsTarget
     {
+        // Bitmaps larger than this many pixels are drawn as a set of smaller tiles rather than
+        // in one piece. A single very large image forces everything downstream -- our own PNG
+        // encoder, PdfSharp's importer, and ultimately the RIP that prints the file -- to hold
+        // the whole decoded image, plus its mask, in memory at once. Splitting keeps each piece
+        // to a size that has always worked.
+        private const int BITMAP_DRAW_LIMIT = 4000000;
+
         private bool cmykMode;   // true=CMYK, false=RGB
         private XGraphics gfx;
         private Stack<XGraphicsState> stateStack;
@@ -577,6 +584,12 @@ namespace PurplePen.MapModel
         // Draw a bitmap
         public void DrawBitmap(IGraphicsBitmap bm, RectangleF rectangle, BitmapScaling scalingMode)
         {
+            if (bm.PixelWidth * (long) bm.PixelHeight > BITMAP_DRAW_LIMIT) {
+                // Very large bitmaps aren't drawn in one piece.
+                DrawBitmapPartSplit(bm, 0, 0, bm.PixelWidth, bm.PixelHeight, rectangle, scalingMode);
+                return;
+            }
+
             using (MemoryStream memStream = new MemoryStream()) {
                 if (bm.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100)) {
                     using (XImage image = XImage.FromStream(memStream)) {
@@ -594,8 +607,14 @@ namespace PurplePen.MapModel
         // Draw part of a bitmap
         public void DrawBitmapPart(IGraphicsBitmap bm, int x, int y, int width, int height, RectangleF rectangle, BitmapScaling scalingMode)
         {
-            using (MemoryStream memStream = new MemoryStream()) {
-                IGraphicsBitmap croppedBitmap = bm.Crop(x, y, width, height);
+            if (width * (long) height > BITMAP_DRAW_LIMIT) {
+                // Very large bitmaps aren't drawn in one piece.
+                DrawBitmapPartSplit(bm, x, y, width, height, rectangle, scalingMode);
+                return;
+            }
+
+            using (MemoryStream memStream = new MemoryStream())
+            using (IGraphicsBitmap croppedBitmap = bm.Crop(x, y, width, height)) {
                 if (croppedBitmap.WriteToStream(GraphicsBitmapFormat.PNG, memStream, 100)) {
                     using (XImage image = XImage.FromStream(memStream)) {
                         if (scalingMode == BitmapScaling.NearestNeighbor)
@@ -607,6 +626,26 @@ namespace PurplePen.MapModel
                     }
                 }
             }
+        }
+
+        // Draw part of a bitmap that is too large to draw in one piece, by splitting it into
+        // quarters and drawing each separately. Each quarter goes back through DrawBitmapPart,
+        // so a bitmap that is still too big after one split is split again.
+        private void DrawBitmapPartSplit(IGraphicsBitmap bm, int x, int y, int width, int height, RectangleF rectangle, BitmapScaling scalingMode)
+        {
+            int xSrcSplit = x + width / 2, ySrcSplit = y + height / 2;
+
+            float xDestSplit = rectangle.X + rectangle.Width * (xSrcSplit - x) / width;
+            float yDestSplit = rectangle.Y + rectangle.Height * (ySrcSplit - y) / height;
+
+            DrawBitmapPart(bm, x, y, xSrcSplit - x, ySrcSplit - y,
+                           RectangleF.FromLTRB(rectangle.X, rectangle.Y, xDestSplit, yDestSplit), scalingMode);
+            DrawBitmapPart(bm, xSrcSplit, y, x + width - xSrcSplit, ySrcSplit - y,
+                           RectangleF.FromLTRB(xDestSplit, rectangle.Y, rectangle.Right, yDestSplit), scalingMode);
+            DrawBitmapPart(bm, x, ySrcSplit, xSrcSplit - x, y + height - ySrcSplit,
+                           RectangleF.FromLTRB(rectangle.X, yDestSplit, xDestSplit, rectangle.Bottom), scalingMode);
+            DrawBitmapPart(bm, xSrcSplit, ySrcSplit, x + width - xSrcSplit, y + height - ySrcSplit,
+                           RectangleF.FromLTRB(xDestSplit, yDestSplit, rectangle.Right, rectangle.Bottom), scalingMode);
         }
 
         public bool HasPath(object pathKey) {
