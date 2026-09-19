@@ -1,4 +1,4 @@
-using PurplePen.Graphics2D;
+﻿using PurplePen.Graphics2D;
 using PurplePen.MapModel;
 using SkiaSharp;
 using SkiaSharp.HarfBuzz;
@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 
 namespace Map_SkiaStd
@@ -607,10 +608,40 @@ namespace Map_SkiaStd
             }
         }
 
+        // Normalizes text to NFC (precomposed) form before it is shaped.
+        //
+        // Decomposed text -- a base letter followed by a combining mark -- shapes correctly, but
+        // the cluster it produces covers several code points for one glyph. Callers that map a
+        // glyph back to the characters it came from then have a multi-character cluster to deal
+        // with, which is what the PDF target has to hand to PDFsharp. Composing first keeps the
+        // common Latin cases, including the Latvian diacritics, at one code point per glyph.
+        //
+        // Parameters:
+        //   text - the text to normalize.
+        private static string NormalizeForShaping(string text)
+        {
+            try {
+                if (!text.IsNormalized(NormalizationForm.FormC))
+                    return text.Normalize(NormalizationForm.FormC);
+            }
+            catch (ArgumentException) {
+                // The string contains invalid Unicode, such as an unpaired surrogate. Shape it
+                // as given rather than failing to draw it at all.
+            }
+
+            return text;
+        }
+
         // Shapes the complete text string, handling font fallback.
         // Returns a list of shaped runs (one per typeface segment) and the total advance width.
-        private (List<ShapedRunResult> runs, float totalWidth) ShapeText(string text, float fontSize)
+        //
+        // The text is passed by reference because it is normalized here. Callers map cluster
+        // indices from the result back into the string, so they must index the same normalized
+        // string that was shaped, not the one they were originally given.
+        private (List<ShapedRunResult> runs, float totalWidth) ShapeText(ref string text, float fontSize)
         {
+            text = NormalizeForShaping(text);
+
             List<TextRun> textRuns = SegmentByTypeface(text);
             List<ShapedRunResult> shapedRuns = new List<ShapedRunResult>();
             float xOffset = 0;
@@ -713,7 +744,7 @@ namespace Map_SkiaStd
                 }
             }
 #else
-            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(text, fontSize);
+            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(ref text, fontSize);
             float ascent = GetMainAscent(fontSize);
 
             using (SKTextBlob blob = BuildTextBlob(runs, fontSize, ascent, paint))
@@ -740,7 +771,7 @@ namespace Map_SkiaStd
             if (string.IsNullOrEmpty(text))
                 return resultPath;
 
-            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(text, fontSize);
+            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(ref text, fontSize);
             float ascent = GetMainAscent(fontSize);
 
             foreach (ShapedRunResult run in runs)
@@ -777,7 +808,7 @@ namespace Map_SkiaStd
             if (string.IsNullOrEmpty(text))
                 return 0;
 
-            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(text, fontSize);
+            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(ref text, fontSize);
             return totalWidth;
         }
 
@@ -791,7 +822,7 @@ namespace Map_SkiaStd
             if (string.IsNullOrEmpty(text))
                 return SKRect.Empty;
 
-            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(text, fontSize);
+            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(ref text, fontSize);
 
             // Compute tight bounds by unioning each glyph's bounding box offset by its position.
             SKRect totalBounds = SKRect.Empty;
@@ -846,7 +877,7 @@ namespace Map_SkiaStd
             if (string.IsNullOrEmpty(text))
                 return new GlyphPosition[0];
 
-            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(text, fontSize);
+            (List<ShapedRunResult> runs, float totalWidth) = ShapeText(ref text, fontSize);
             float ascent = GetMainAscent(fontSize);
 
             List<GlyphPosition> result = new List<GlyphPosition>();

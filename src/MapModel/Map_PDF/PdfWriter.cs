@@ -55,6 +55,7 @@ namespace PurplePen.MapModel
     {
         private string fileName;
         private PdfDocument document;
+        private PdfGlyphSubstituter glyphSubstituter;
 
         static PdfDocumentWriter()
         {
@@ -81,6 +82,13 @@ namespace PurplePen.MapModel
             document.Options.NoCompression = false;
             document.Options.CompressContentStreams = true;
             document.Options.ColorMode = cmykMode ? PdfColorMode.Cmyk : PdfColorMode.Rgb;
+
+            // Hook text rendering so the graphics targets can hand PDFsharp the glyphs that
+            // HarfBuzz shaped, rather than letting PDFsharp map characters to glyphs itself.
+            // The event belongs to the document, so it is hooked once here and the substituter
+            // is shared by every page's graphics target.
+            glyphSubstituter = new PdfGlyphSubstituter();
+            document.RenderEvents.RenderTextEvent += glyphSubstituter.OnRenderText;
         }
 
         // Get a page.
@@ -97,7 +105,7 @@ namespace PurplePen.MapModel
             XGraphics gfx = XGraphics.FromPdfPage(page);
 
             // Get a graphics target
-            IGraphicsTarget target = new Pdf_GraphicsTarget(gfx, document.Options.ColorMode == PdfColorMode.Cmyk);
+            IGraphicsTarget target = new Pdf_GraphicsTarget(gfx, document.Options.ColorMode == PdfColorMode.Cmyk, glyphSubstituter);
 
             // Change units to hundreths of inch from points.
             Matrix matrix = new Matrix();
@@ -130,7 +138,7 @@ namespace PurplePen.MapModel
                 XGraphics gfx = XGraphics.FromPdfPage(page);
 
                 // Get a graphics target
-                IGraphicsTarget target = new Pdf_GraphicsTarget(gfx, document.Options.ColorMode == PdfColorMode.Cmyk);
+                IGraphicsTarget target = new Pdf_GraphicsTarget(gfx, document.Options.ColorMode == PdfColorMode.Cmyk, glyphSubstituter);
 
                 PointF cropBoxOriginInPoints = CropboxOriginInPoints(pageToCopy);
 
