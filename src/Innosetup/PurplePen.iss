@@ -691,6 +691,7 @@ end;
 
 #define MyAppPublisher "Purple Pen Software"
 #define MyAppURL "http://purple-pen.org"
+#define MyAppCopyright "Copyright 2006-2026 Peter Golde"
 #define MyAppExeName "PurplePen.exe"
 #define BuildDir "publish\Main"
 #ifndef MyAppVersion
@@ -713,6 +714,8 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
+AppCopyright={#MyAppCopyright}
+VersionInfoCopyright={#MyAppCopyright}
 UninstallDisplayName={#MyAppName}
 DefaultDirName={commonpf64}\{#MyAppName}
 DefaultGroupName={#MyAppName}
@@ -782,6 +785,7 @@ Source: "dxwebsetup.exe"; Flags: dontcopy noencryption
 #endif
 
 Source: "{#BuildDir}\PurplePen.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "..\..\LICENSE"; DestDir: "{app}"; DestName: "LICENSE.txt"; Flags: ignoreversion
 Source: "{#BuildDir}\PdfConverter.exe"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\createdump.exe"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion 

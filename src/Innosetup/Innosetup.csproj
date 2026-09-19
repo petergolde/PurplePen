@@ -50,6 +50,7 @@
     <InputFile Include="$(InnoProjectFile)" />
     <InputFile Include="CodeDependencies.iss" />
     <InputFile Include="scripts\**\*.iss" />
+    <InputFile Include="..\..\LICENSE" />
   </ItemGroup>
 
   <Target Name="RunInnoSetup" AfterTargets="Build" DependsOnTargets="PrepareOutputDirectory" Inputs="@(InputFile)" Outputs="$(OutputFile)">
