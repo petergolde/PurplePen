@@ -97,3 +97,6 @@ loc/po/*Log.txt
 
 # JetBrains files.
 **/.idea
+
+# Random files for local testing.
+/testing

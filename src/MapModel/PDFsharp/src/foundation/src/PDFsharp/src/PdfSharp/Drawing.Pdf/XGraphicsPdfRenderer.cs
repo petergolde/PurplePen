@@ -581,7 +581,12 @@ namespace PdfSharp.Drawing.Pdf
                 }
             }
 
-            var glyphCount = codePoints.Length;
+            // The two arrays need not be the same length. A RenderTextEvent handler may replace
+            // the pair array with a longer or shorter one, because shaping can turn several code
+            // points into a single glyph or the reverse. Each loop below is therefore bounded by
+            // the length of the array it actually indexes.
+            var codePointsCount = codePoints.Length;
+            var codePointsWithGlyphsCount = codePointsWithGlyphIndices.Length;
             // Check font whether colored glyphs are opt-in.
             bool isDefaultCase = font.PdfOptions.ColoredGlyphs == PdfFontColoredGlyphs.None;
         DefaultCase:
@@ -591,8 +596,8 @@ namespace PdfSharp.Drawing.Pdf
                 if (isAnsi)
                 {
                     // Use ANSI character encoding.
-                    byte[] bytes = new byte[glyphCount];
-                    for (int idx = 0; idx < glyphCount; idx++)
+                    byte[] bytes = new byte[codePointsCount];
+                    for (int idx = 0; idx < codePointsCount; idx++)
                     {
                         ref var item = ref codePoints[idx];
                         var ch = AnsiEncoding.UnicodeToAnsi((char)item);
@@ -603,8 +608,8 @@ namespace PdfSharp.Drawing.Pdf
                 else
                 {
                     // Use Unicode glyph encoding.
-                    var bytes = new byte[2 * glyphCount];
-                    for (int idx = 0; idx < glyphCount; idx++)
+                    var bytes = new byte[2 * codePointsWithGlyphsCount];
+                    for (int idx = 0; idx < codePointsWithGlyphsCount; idx++)
                     {
                         ref var item = ref codePointsWithGlyphIndices[idx];
                         bytes[idx * 2] = (byte)((item.GlyphIndex & 0xFF00) >>> 8);
@@ -632,7 +637,7 @@ namespace PdfSharp.Drawing.Pdf
             List<List<GlyphIndexGlyphColorRecordPair>> textParts = [];
             var partGlyphs = new List<GlyphIndexGlyphColorRecordPair>();
             var isColorized = false;
-            for (int idx = 0; idx < glyphCount; idx++)
+            for (int idx = 0; idx < codePointsWithGlyphsCount; idx++)
             {
                 ref var cp = ref codePointsWithGlyphIndices[idx];
                 ref var cr = ref glyphColorRecords[idx];
@@ -650,7 +655,7 @@ namespace PdfSharp.Drawing.Pdf
             if (partGlyphs.Count > 0)
                 textParts.Add(partGlyphs);
 
-            Debug.Assert(textParts.Sum(p => p.Count) == glyphCount, "Character count mismatch.");
+            Debug.Assert(textParts.Sum(p => p.Count) == codePointsWithGlyphsCount, "Character count mismatch.");
 
             const string format2 = Config.SignificantDecimalPlaces4;
             var layerBytes = new byte[2];

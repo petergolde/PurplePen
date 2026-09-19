@@ -85,7 +85,9 @@ namespace PdfSharp.Pdf.Advanced
 
             Elements.SetInteger(Keys.Ascent, Descriptor.DesignUnitsToPdf(Descriptor.Ascender));
             Elements.SetInteger(Keys.CapHeight, Descriptor.DesignUnitsToPdf(Descriptor.CapHeight));
-            Elements.SetInteger(Keys.Descent, Descriptor.DesignUnitsToPdf(Descriptor.Descender));
+            // In OpenTypeDescriptor.Initialize, we negate descender when reading, so we need to negate it again here to write the correct value.
+            // PDF 32000-1 Table 122 states /Descent shall be a negative number
+            Elements.SetInteger(Keys.Descent, - Descriptor.DesignUnitsToPdf(Descriptor.Descender)); 
             Elements.SetInteger(Keys.Flags, (int)FlagsFromDescriptor(Descriptor));
             Elements.SetRectangle(Keys.FontBBox, new PdfRectangle(
               Descriptor.DesignUnitsToPdf(Descriptor.XMin),

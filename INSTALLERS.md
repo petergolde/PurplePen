@@ -347,9 +347,36 @@ acceptable in an application this heavily localized.
 
 Debian's ICU and OpenSSL packages carry the soname in the package name, so it
 differs on every distribution release and the dependency has to be spelled as
-an alternation (`libicu76 | libicu74 | …`). RPM's `libicu` and `openssl-libs`
-are stable by comparison. **Verified on Ubuntu 22.04:** the alternation
-resolves against `libicu70` / `libssl3` with nothing left to install.
+an alternation (`libicu78 | libicu76 | …`). There is no unversioned name and
+dpkg has no wildcard, so enumeration is the only encoding available. RPM's
+`libicu` and `openssl-libs` are stable by comparison.
+
+**Verified on Ubuntu 22.04** (the `-1` package): the alternation resolves
+against `libicu70` / `libssl3` with nothing left to install — a result whose
+shelf life turned out to be the point.
+
+**This went wrong, and it is worth recording how.** The alternation was
+hand-written and the comment beside it said to extend it as new releases
+appeared. `4.0.0~beta1-1` stopped at `libicu76`; Ubuntu 26.04 ships only
+`libicu78`, so nothing resolved and apt refused the package outright. Two
+things about that failure generalize:
+
+- **The application was never broken.** .NET loads the *highest installed*
+  system ICU, so Purple Pen runs fine against ICU 78. Only the dpkg metadata
+  refused. A dependency that is invisible to `ldd` is also invisible to every
+  check in the build, so nothing caught it and the first signal was a user.
+- **An instruction to a human on a two-year cadence is not a mechanism.** The
+  list is now generated from `DEB_ICU_MIN`/`DEB_ICU_MAX` (63–90) substituted
+  into a `@ICU@` token in `DEB_DEPENDS`. An alternative matching no package in
+  any archive costs nothing — apt skips it — so the range is deliberately far
+  wider than reality, and `build_deb` warns if the build host's own ICU falls
+  outside it.
+
+Bundling ICU into the `.deb`/`.rpm`, as the AppImage does, was considered and
+rejected: bundling is right where there is no dependency resolution (§6.7), and
+these two formats have it. It would add ~20 MB, freeze ICU at whatever the
+build host had, and forgo the distribution's updates, all to fix a
+mis-declaration.
 
 `xdg-utils` is a Recommends, not a Depends: printing works by generating a PDF
 and handing it to the system viewer, so it matters on a desktop but should not

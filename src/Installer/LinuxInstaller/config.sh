@@ -215,6 +215,13 @@ and export the results for printing and race management.}"
 # Everything else stays unbundled on purpose -- see DEB_DEPENDS above for why
 # libstdc++, libX11, fontconfig and friends must come from the host. Those are
 # all on the AppImage project's excludelist for exactly that reason.
+#
+# The .deb and .rpm deliberately do NOT bundle ICU, and that asymmetry was
+# re-examined rather than assumed when the Debian dependency went stale on
+# Ubuntu 26.04. Bundling belongs where dependency resolution does not exist.
+# Those two formats do have dependency resolution, so the answer there is to
+# declare ICU in a way that cannot go stale -- see DEB_ICU_MIN -- not to ship a
+# second copy that costs ~20 MB and never receives the distribution's updates.
 : "${BUNDLE_ICU:=true}"
 
 # The ICU libraries .NET uses. Order does not matter; the build resolves each
@@ -275,7 +282,7 @@ and export the results for printing and race management.}"
 # Packaging revision. Bump this when the packaging changes but the application
 # does not (a corrected dependency, say). Resets to 1 on a new upstream
 # version. Debian appends it as "-N"; RPM uses it as the Release field.
-: "${PACKAGE_RELEASE:=1}"
+: "${PACKAGE_RELEASE:=2}"
 
 # ---------------------------------------------------------------------------
 # Runtime dependencies
@@ -303,14 +310,41 @@ and export the results for printing and race management.}"
 # Debian/Ubuntu package names.
 #
 # Alternatives ("a | b") matter for the versioned libraries: libicu and libssl
-# carry their soname in the package name, so it differs on every release. The
-# list covers Debian 11/12/13 and Ubuntu 20.04 through 25.04; extend it as new
-# releases appear rather than dropping to an unversioned name, which does not
-# exist.
+# carry their soname in the package name, so it differs on every release.
+#
+# The ICU alternation is not written out here. It is generated from
+# DEB_ICU_MIN..DEB_ICU_MAX below and substituted for the @ICU@ token, because a
+# hand-written list goes stale on ICU's release cadence -- which is exactly how
+# the 4.0.0~beta1-1 package came to be uninstallable on Ubuntu 26.04.
+#
+# libssl is a different case and is still spelled out: its package name tracks
+# the OpenSSL major version rather than the distribution release, so
+# libssl3t64 covers everything from Ubuntu 24.04 through 26.04 and Debian 13.
+# The libssl4 entries are free headroom for the day that changes.
 : "${DEB_DEPENDS:=libc6, libgcc-s1, libstdc++6, \
 libx11-6, libice6, libsm6, libfontconfig1, \
-libicu76 | libicu74 | libicu72 | libicu71 | libicu70 | libicu69 | libicu67 | libicu66, \
-libssl3t64 | libssl3 | libssl1.1}"
+@ICU@, \
+libssl4t64 | libssl4 | libssl3t64 | libssl3 | libssl1.1}"
+
+# Bounds of the generated libicu alternation.
+#
+# Debian names the ICU binary package after the library soname -- libicu78 --
+# so the name moves with every ICU major release, roughly twice a year. There
+# is no unversioned libicu package, and dpkg has no wildcard syntax, so
+# enumerating the names is the only encoding available.
+#
+# The enumeration is generated rather than curated. An alternative that matches
+# no package in any archive costs nothing -- dpkg needs only one alternative to
+# resolve, and apt silently skips names it has never heard of -- so the range
+# is deliberately far wider than the set of names that actually exist. It is
+# NOT a claim about which packages exist; it is headroom, and the whole point
+# of the headroom is that the list cannot go stale on a release cadence.
+#
+# 63 is the Debian 10 era, matching the glibc 2.27 floor the payload requires.
+# 90 is roughly a decade of headroom. build_deb warns if this machine's own ICU
+# falls outside the range, which is the realistic way a bad bound gets noticed.
+: "${DEB_ICU_MIN:=63}"
+: "${DEB_ICU_MAX:=90}"
 
 # Packages that improve the experience but are not required to start.
 #
@@ -321,7 +355,8 @@ libssl3t64 | libssl3 | libssl1.1}"
 # RPM package names. These follow Fedora/RHEL conventions; openSUSE and Mageia
 # name several of these differently, so a package built here may need its
 # dependency list adjusted for those. Unlike Debian, the ICU and OpenSSL
-# packages have stable unversioned names.
+# packages have stable unversioned names, which is why the Ubuntu 26.04
+# breakage described under DEB_ICU_MIN was a Debian-only problem.
 : "${RPM_REQUIRES:=glibc, libgcc, libstdc++, \
 libX11, libICE, libSM, fontconfig, \
 libicu, openssl-libs}"
