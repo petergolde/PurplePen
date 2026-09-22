@@ -613,7 +613,7 @@ namespace PurplePen.MapView
 
             using (GDIPlus_GraphicsTarget grTarget = new GDIPlus_GraphicsTarget(g)) {
                 foreach (IMapViewerHighlight h in highlights) {
-                    h.DrawHighlight(grTarget, xformWorldToPixel);
+                    h.DrawHighlight(grTarget, xformWorldToPixel, 1.0);
                 }
             }
         }
@@ -653,7 +653,7 @@ namespace PurplePen.MapView
             RectangleF accum = new RectangleF();
             foreach (IMapViewerHighlight h in highlights) {
                 RectangleF bound = WorldToPixel(h.GetHighlightBounds());
-                int borderPixels = h.GetBorderPixels();
+                int borderPixels = h.GetBorderPixels(1.0);
                 bound.Inflate(borderPixels, borderPixels);
                 if (accum.IsEmpty)
                     accum = bound;

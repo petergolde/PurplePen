@@ -51,11 +51,12 @@ namespace PurplePen
         // Get the bounding rectangle.
         RectangleF GetHighlightBounds();
 
-        // Get extra border, in pixels, around GetHighlightBounds
-        int GetBorderPixels();
+        // Get extra border, in pixels, around GetHighlightBounds. layoutScale is the ratio between physical and logical pixels.
+        int GetBorderPixels(double layoutScale);
 
         // Draw onto the (pixel coordinates) graphics, using the given world-to-pixel transformation.
-        void DrawHighlight(IGraphicsTarget g, Matrix xformWorldToPixel);
+        // layoutScale is the ratio between physical and logical pixels, used to scale UI elements like handles.
+        void DrawHighlight(IGraphicsTarget g, Matrix xformWorldToPixel, double layoutScale);
 
     }
 
@@ -73,7 +74,7 @@ namespace PurplePen
             this.rect = rect;
         }
 
-        public void DrawHighlight(IGraphicsTarget g, Matrix xformWorldToPixel)
+        public void DrawHighlight(IGraphicsTarget g, Matrix xformWorldToPixel, double layoutScale)
         {
             if (! g.HasPen(redPenKey)) {
                 g.CreatePen(redPenKey, CmykColor.FromColor(Color.Red), penWidth, LineCapMode.Flat, LineJoinMode.Miter, 0);
@@ -108,7 +109,7 @@ namespace PurplePen
             return rect;
         }
 
-        public int GetBorderPixels()
+        public int GetBorderPixels(double layoutScale)
         {
             return (int)Math.Ceiling(penWidth / 2);
         }

@@ -64,8 +64,6 @@ namespace PurplePen
 
         static object highlightBrushKey = new object();             // brush used to draw highlights.
 
-        public const int HANDLESIZE = 5;          // side of a square handle (should be odd).
-
         private object blueBrushKey = new object();
 
         protected CourseObj(Id<ControlPoint> controlId, Id<CourseControl> courseControlId, Id<Special> specialId, float courseObjRatio, CourseAppearance appearance)
@@ -171,13 +169,13 @@ namespace PurplePen
         // Get the bounds of the highlight.
         public abstract RectangleF GetHighlightBounds();
 
-        public int GetBorderPixels()
+        public int GetBorderPixels(double layoutScale)
         {
             PointF[] handles = GetHandles();
             if (handles == null || handles.Length == 0)
                 return 0;
             else
-                return HANDLESIZE / 2;
+                return HandleSize(layoutScale) / 2;
         }
 
         // Get the set of handles that should be drawn with the objects.
@@ -192,8 +190,15 @@ namespace PurplePen
             return MousePointerShape.MoveHandle;
         }
 
+        // Get the size of a handle, in pixels, for the given layout scale (ratio of physical to logical pixels).
+        // The size is 5.6 * layoutScale, rounded to the nearest odd integer so the handle centers on a pixel.
+        private static int HandleSize(double layoutScale)
+        {
+            return 2 * (int)Math.Round((5.6 * layoutScale - 1) / 2) + 1;
+        }
+
         // Draw a highlight for this course object.    
-        public void DrawHighlight(IGraphicsTarget g, Matrix xformWorldToPixel)
+        public void DrawHighlight(IGraphicsTarget g, Matrix xformWorldToPixel, double layoutScale)
         {
             if (! g.HasBrush(highlightBrushKey)) {
                 g.CreateSolidBrush(highlightBrushKey, CmykColor.FromColor(NormalCourseAppearance.highlightColor));
@@ -205,12 +210,12 @@ namespace PurplePen
             PointF[] handles = GetHandles();
             if (handles != null) {
                 foreach (PointF handleLocation in handles)
-                    DrawHandle(handleLocation, g, xformWorldToPixel);
+                    DrawHandle(handleLocation, g, xformWorldToPixel, layoutScale);
             }
         }
 
         // Erase a highlight for this course object.
-        public void EraseHighlight(IGraphicsTarget g, Matrix xformWorldToPixel, object eraseBrush)
+        public void EraseHighlight(IGraphicsTarget g, Matrix xformWorldToPixel, object eraseBrush, double layoutScale)
         {
             Highlight(g, xformWorldToPixel, eraseBrush, true);
 
@@ -218,28 +223,29 @@ namespace PurplePen
             PointF[] handles = GetHandles();
             if (handles != null) {
                 foreach (PointF handleLocation in handles)
-                    EraseHandle(handleLocation, g, xformWorldToPixel, eraseBrush);
+                    EraseHandle(handleLocation, g, xformWorldToPixel, eraseBrush, layoutScale);
             }
         }
 
         // Draw a handle at a given location.
-        private void DrawHandle(PointF handleLocation, IGraphicsTarget g, Matrix xformWorldToPixel)
+        private void DrawHandle(PointF handleLocation, IGraphicsTarget g, Matrix xformWorldToPixel, double layoutScale)
         {
-            const int HIGHLIGHTSIZE = 5;
             Point pixelLocation = Point.Round(Geometry.TransformPoint(handleLocation, xformWorldToPixel));
 
-            Rectangle rect = new Rectangle(pixelLocation.X - (HIGHLIGHTSIZE - 1) / 2, pixelLocation.Y - (HIGHLIGHTSIZE - 1) / 2, HIGHLIGHTSIZE, HIGHLIGHTSIZE);
+            int handleSize = HandleSize(layoutScale);
+            Rectangle rect = new Rectangle(pixelLocation.X - (handleSize - 1) / 2, pixelLocation.Y - (handleSize - 1) / 2, handleSize, handleSize);
             if (! g.HasBrush(blueBrushKey))
                 g.CreateSolidBrush(blueBrushKey, CmykColor.FromRgb(0, 0, 1));  
             g.FillRectangle(blueBrushKey, rect);
         }
 
         // Erase a handle at a given location.
-        private void EraseHandle(PointF handleLocation, IGraphicsTarget g, Matrix xformWorldToPixel, object eraseBrush)
+        private void EraseHandle(PointF handleLocation, IGraphicsTarget g, Matrix xformWorldToPixel, object eraseBrush, double layoutScale)
         {
             Point pixelLocation = Point.Round(Geometry.TransformPoint(handleLocation, xformWorldToPixel));
 
-            Rectangle rect = new Rectangle(pixelLocation.X - (HANDLESIZE - 1) / 2, pixelLocation.Y - (HANDLESIZE - 1) / 2, HANDLESIZE, HANDLESIZE);
+            int handleSize = HandleSize(layoutScale);
+            Rectangle rect = new Rectangle(pixelLocation.X - (handleSize - 1) / 2, pixelLocation.Y - (handleSize - 1) / 2, handleSize, handleSize);
             g.FillRectangle(eraseBrush, rect);
         }
 
