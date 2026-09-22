@@ -126,3 +126,4 @@ loc/po/tar/
 
 # Random files for local testing.
 /testing
+/tmp
