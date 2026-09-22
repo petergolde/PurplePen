@@ -36,6 +36,7 @@ namespace Map_SkiaStd
         public readonly HarfBuzzSharp.Face HBFace;
         public readonly HarfBuzzSharp.Font HBFont;
         private readonly SKStreamAsset fontStream;  // Must stay alive; HBBlob references its memory
+        private readonly int ttcIndex;              // Face index within fontStream; 0 unless it is a .ttc
 
         // Vertical metrics in em units, read from the font's own OS/2 and hhea tables.
         // Do NOT use SKFont.Metrics instead -- see FontVerticalMetrics for why that returns
@@ -79,9 +80,14 @@ namespace Map_SkiaStd
             // OpenStream() gives us the raw TrueType/OpenType data as an SKStreamAsset.
             // ToHarfBuzzBlob() wraps the stream's memory (does not copy), so the stream
             // must remain alive for the lifetime of this instance.
-            fontStream = Typeface.OpenStream();
+            // OpenStream also reports which face inside the data this typeface is. When the
+            // typeface comes from a TrueType collection the data is the whole .ttc and the index
+            // picks the face out of it; for an ordinary font file it is 0. Passing it on matters:
+            // face 0 of a collection is a different font, and defaulting to it silently shapes
+            // and embeds the wrong one.
+            fontStream = Typeface.OpenStream(out ttcIndex);
             HBBlob = fontStream.ToHarfBuzzBlob();
-            HBFace = new HarfBuzzSharp.Face(HBBlob, 0);
+            HBFace = new HarfBuzzSharp.Face(HBBlob, ttcIndex);
             HBFace.UnitsPerEm = Typeface.UnitsPerEm;
             HBFont = new HarfBuzzSharp.Font(HBFace);
 
@@ -109,9 +115,10 @@ namespace Map_SkiaStd
 
             CheckFont = new SKFont(Typeface);
 
-            fontStream = Typeface.OpenStream();
+            // See the comment on ttcIndex in the other constructor.
+            fontStream = Typeface.OpenStream(out ttcIndex);
             HBBlob = fontStream.ToHarfBuzzBlob();
-            HBFace = new HarfBuzzSharp.Face(HBBlob, 0);
+            HBFace = new HarfBuzzSharp.Face(HBBlob, ttcIndex);
             HBFace.UnitsPerEm = Typeface.UnitsPerEm;
             HBFont = new HarfBuzzSharp.Font(HBFace);
 
@@ -219,7 +226,17 @@ namespace Map_SkiaStd
             return cache.TryGetValue((familyName.ToUpperInvariant(), weight, width, slant), out entry);
         }
 
-        // Get the data of the font.
+        // The index of this face within the data returned by GetFontData(). It is 0 for an
+        // ordinary font file, and the face's position within the collection when the data is a
+        // TrueType collection (.ttc). Anything that reads the font data must use this to pick
+        // the right face out of it.
+        public int FontDataCollectionIndex
+        {
+            get { return ttcIndex; }
+        }
+
+        // Get the data of the font. For a font that lives in a TrueType collection this is the
+        // whole collection; use FontDataCollectionIndex to select the face.
         public byte[] GetFontData()
         {
             fontStream.Rewind();

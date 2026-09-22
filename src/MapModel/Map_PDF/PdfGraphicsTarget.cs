@@ -753,9 +753,6 @@ namespace PurplePen.MapModel
         }
     }
 
-    // This is the FontResolver that we use. Because isBold and isItalic are not enough, we want to really encode
-    // Skia information of weight, width, and slant. So we encode that information in the family name, and ignore the isBold and isItalic parameters.
-    // The familyName looks like family^weight^width^slant.
     // Supplies PDFsharp with the glyph that HarfBuzz actually chose, in place of the one
     // PDFsharp would look up for itself.
     //
@@ -796,14 +793,33 @@ namespace PurplePen.MapModel
         }
     }
 
+    // This is the FontResolver that we use. Because isBold and isItalic are not enough, we want to really encode
+    // Skia information of weight, width, and slant. So we encode that information in the family name, and ignore the isBold and isItalic parameters.
+    // The familyName looks like family^weight^width^slant.
     class PdfFontResolver : IFontResolver
     {
         public FontResolverInfo ResolveTypeface(string familyName, bool isBold, bool isItalic)
         {
-            return new FontResolverInfo(familyName, false, false);
+            // The collection number tells PDFsharp which face to read out of the data GetFont
+            // returns. It is only non-zero for a font that lives in a TrueType collection, where
+            // the data is the whole .ttc. Without it PDFsharp reads face 0, which is a different
+            // font from the one the text was shaped with -- for instance Nirmala UI Bold would be
+            // embedded as Nirmala UI Regular.
+            return new FontResolverInfo(familyName, false, false, LookupTypeface(familyName).FontDataCollectionIndex);
         }
 
         public byte[] GetFont(string faceName)
+        {
+            return LookupTypeface(faceName).GetFontData();
+        }
+
+        // Find the ShapedTypeface for an encoded face name. Both of the methods above go through
+        // here, so the font data and the collection number that selects a face within it are
+        // always taken from the same typeface.
+        //
+        // Parameters:
+        //   faceName - an encoded name as produced by GetEncodedFamilyName.
+        private static ShapedTypeface LookupTypeface(string faceName)
         {
             (string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant) = DecodeFamilyName(faceName);
 
@@ -818,7 +834,7 @@ namespace PurplePen.MapModel
             if (!ShapedTypeface.TryGetCached(familyName, weight, width, slant, out ShapedTypeface shapedTypeface))
                 shapedTypeface = ShapedTypeface.Get(familyName, weight, width, slant);
 
-            return shapedTypeface.GetFontData();
+            return shapedTypeface;
         }
 
         public static string GetEncodedFamilyName(string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant)
