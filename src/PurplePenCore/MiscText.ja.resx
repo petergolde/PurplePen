@@ -586,13 +586,13 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>画像ファイル|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>フィニッシュ(&amp;F)</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>PDF ファイルのロードにはGPL Ghostscript がインストールされている必要があります。今すぐ自動でダウンロードおよびインストールしますか?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript がインストールされていません</value>
-  </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>フィニッシュ(&amp;F)</value>
   </data>
 </root>

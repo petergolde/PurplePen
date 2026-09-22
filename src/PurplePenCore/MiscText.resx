@@ -673,4 +673,7 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="FinishButtonText" xml:space="preserve">
     <value>&amp;Finish</value>
   </data>
+  <data name="Version_Patch" xml:space="preserve">
+    <value>Patch</value>
+  </data>
 </root>

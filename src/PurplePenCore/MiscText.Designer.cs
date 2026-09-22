@@ -1640,6 +1640,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Patch.
+        /// </summary>
+        public static string Version_Patch {
+            get {
+                return ResourceManager.GetString("Version_Patch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RC {0}.
         /// </summary>
         public static string Version_RC {

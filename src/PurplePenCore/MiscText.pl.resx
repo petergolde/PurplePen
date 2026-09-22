@@ -520,13 +520,13 @@ Użyj | aby rozdzielić linie
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Obraz|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Zakończ</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Załadowanie plików PDF wymaga zainstalowanego GPL Ghostscript. Czy chciałbyś go automatycznie pobrać i zainstalować?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript nie jest zainstalowany</value>
-  </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Zakończ</value>
   </data>
 </root>
