@@ -6,14 +6,14 @@ using System.IO.Compression;
 namespace PdfSharp.Pdf.Filters
 {
     /// <summary>
-    /// Implements the FlateDecode filter by wrapping SharpZipLib.
+    /// Implements the PDF FlateDecode filter using zlib-wrapped DEFLATE streams.
     /// </summary>
     public class FlateDecode : Filter
     {
         // Reference: 3.3.3  LZWDecode and FlateDecode Filters / Page 71
 
         /// <summary>
-        /// Encodes the specified data.
+        /// Encodes the specified data as a complete zlib stream using the default compression mode.
         /// </summary>
         public override byte[] Encode(byte[] data)
         {
@@ -21,11 +21,18 @@ namespace PdfSharp.Pdf.Filters
         }
 
         /// <summary>
-        /// Encodes the specified data.
+        /// Encodes the specified data with the requested compression mode, including the zlib header and Adler-32 trailer.
         /// </summary>
         public byte[] Encode(byte[] data, PdfFlateEncodeMode mode)
         {
-            using var ms = new MemoryStream();
+            byte zlibFlags = mode == PdfFlateEncodeMode.BestSpeed ? (byte)0x01 :
+                             mode == PdfFlateEncodeMode.BestCompression ? (byte)0xDA : (byte)0x9C;
+            // .NET compression streams can emit nothing for a zero-length write.
+            // Match SharpZipLib by emitting a final empty DEFLATE block and Adler-32 = 1.
+            if (data.Length == 0)
+                return new byte[] { 0x78, zlibFlags, 0x03, 0x00, 0x00, 0x00, 0x00, 0x01 };
+
+            using MemoryStream ms = new MemoryStream();
 
             CompressionLevel level;
             switch (mode)
@@ -45,80 +52,57 @@ namespace PdfSharp.Pdf.Filters
                     break;
             }
 
-            // This is the header SharpZipLib produced previously.
-            // See http://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=97064
-            // 
-            // Excerpt from the RFC 1950 specs for first byte:
-            //
-            // CMF (Compression Method and flags)
-            //    This byte is divided into a 4-bit compression method and a 4-
-            //    bit information field depending on the compression method.
-            //
-            //      bits 0 to 3  CM     Compression method
-            //      bits 4 to 7  CINFO  Compression info
-            //
-            // CM (Compression method)
-            //    This identifies the compression method used in the file. CM = 8
-            //    denotes the "deflate" compression method with a window size up
-            //    to 32K.  This is the method used by gzip and PNG (see
-            //    references [1] and [2] in Chapter 3, below, for the reference
-            //    documents).  CM = 15 is reserved.  It might be used in a future
-            //    version of this specification to indicate the presence of an
-            //    extra field before the compressed data.
-            //
-            // CINFO (Compression info)
-            //    For CM = 8, CINFO is the base-2 logarithm of the LZ77 window
-            //    size, minus eight (CINFO=7 indicates a 32K window size). Values
-            //    of CINFO above 7 are not allowed in this version of the
-            //    specification.  CINFO is not defined in this specification for
-            //    CM not equal to 8.
+#if NET462 || NETSTANDARD2_0
+            // These targets have no ZLibStream. Supply both parts of the RFC 1950
+            // wrapper around raw DEFLATE, just as the old SharpZipLib encoder did.
             ms.WriteByte(0x78);
-            // Excerpt from the RFC 1950 specs for second byte:
-            //
-            // FLG (FLaGs)
-            //    This flag byte is divided as follows:
-            //
-            //       bits 0 to 4  FCHECK  (check bits for CMF and FLG)
-            //       bit  5       FDICT   (preset dictionary)
-            //       bits 6 to 7  FLEVEL  (compression level)
-            //
-            //    The FCHECK value must be such that CMF and FLG, when viewed as
-            //    a 16-bit unsigned integer stored in MSB order (CMF*256 + FLG),
-            //    is a multiple of 31.
-            //
-            // FDICT (Preset dictionary)
-            //    If FDICT is set, a DICT dictionary identifier is present
-            //    immediately after the FLG byte. The dictionary is a sequence of
-            //    bytes which are initially fed to the compressor without
-            //    producing any compressed output. DICT is the Adler-32 checksum
-            //    of this sequence of bytes (see the definition of ADLER32
-            //    below).  The decompressor can use this identifier to determine
-            //    which dictionary has been used by the compressor.
-            //
-            // FLEVEL (Compression level)
-            //    These flags are available for use by specific compression
-            //    methods.  The "deflate" method (CM = 8) sets these flags as
-            //    follows:
-            //
-            //       0 - compressor used fastest algorithm
-            //       1 - compressor used fast algorithm
-            //       2 - compressor used default algorithm
-            //       3 - compressor used maximum compression, slowest algorithm
-            //
-            //    The information in FLEVEL is not needed for decompression; it
-            //    is there to indicate if recompression might be worthwhile.
-            ms.WriteByte(0xDA); // FLEVEL may not always be correct here, but that’s okay.
-
-            using var zip = new DeflateStream(ms, level, true);
-            zip.Write(data, 0, data.Length);
-            // Flush has no effect on DeflateStream.
-            // Must call Close to ensure all bytes are written with .NET 4.6.2.
-            // Works with .NET 6 even without Close. But when adding support for .NET 4.6.2, we searched a while until we found that only the Close was needed.
-            zip.Close();
-
-            ms.Capacity = (int)ms.Length;
-            return ms.GetBuffer();
+            ms.WriteByte(zlibFlags);
+            using (DeflateStream zip = new DeflateStream(ms, level, true))
+            {
+                zip.Write(data, 0, data.Length);
+            }
+            uint checksum = CalculateAdler32(data);
+            ms.WriteByte((byte)(checksum >> 24));
+            ms.WriteByte((byte)(checksum >> 16));
+            ms.WriteByte((byte)(checksum >> 8));
+            ms.WriteByte((byte)checksum);
+#else
+            // Purple Pen 3.5.5 used SharpZipLib with its zlib wrapper enabled.
+            // ZLibStream likewise writes both the header and the Adler-32 trailer;
+            // DeflateStream alone omits them. Finish before reading the buffer.
+            using (ZLibStream zip = new ZLibStream(ms, level, true))
+            {
+                zip.Write(data, 0, data.Length);
+            }
+#endif
+            return ms.ToArray();
         }
+
+#if NET462 || NETSTANDARD2_0
+        /// <summary>
+        /// Calculates the RFC 1950 Adler-32 checksum of the uncompressed data for targets without ZLibStream.
+        /// </summary>
+        static uint CalculateAdler32(byte[] data)
+        {
+            const uint modulus = 65521;
+            uint s1 = 1;
+            uint s2 = 0;
+            int offset = 0;
+            while (offset < data.Length)
+            {
+                // At most 5552 bytes can be accumulated without overflowing either sum.
+                int end = offset + Math.Min(5552, data.Length - offset);
+                while (offset < end)
+                {
+                    s1 += data[offset++];
+                    s2 += s1;
+                }
+                s1 %= modulus;
+                s2 %= modulus;
+            }
+            return (s2 << 16) | s1;
+        }
+#endif
 
         /// <summary>
         /// Decodes the specified data.

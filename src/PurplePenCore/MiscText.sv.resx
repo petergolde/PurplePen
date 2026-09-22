@@ -643,13 +643,13 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Bildfil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>Slut&amp;för</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>För att läsa in PDF-filer krävs det att GPL Ghostscript installeras. Vill du automatiskt ladda ner och installera det nu?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript är inte installerat</value>
-  </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>Slut&amp;för</value>
   </data>
 </root>

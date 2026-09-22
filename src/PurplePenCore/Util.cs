@@ -519,7 +519,12 @@ namespace PurplePen
                 if (modifier != "")
                     modifier = " " + modifier;
 
-                return string.Format("{0}.{1}.{2}{3}", v.Major, v.Minor, v.Build, modifier);
+                string prettyVersion = string.Format("{0}.{1}.{2}{3}", v.Major, v.Minor, v.Build, modifier);
+                int patch = (int) (v.Revision % 10);
+                if (patch > 0) {
+                    prettyVersion += $" ({MiscText.Version_Patch} {patch})";
+                }
+                return prettyVersion;
             }
             else {
                 return verString;

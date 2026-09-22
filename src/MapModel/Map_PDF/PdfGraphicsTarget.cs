@@ -1,5 +1,6 @@
 ﻿using Map_SkiaStd;
 using PdfSharp.Drawing;
+using PdfSharp.Events;
 using PdfSharp.Fonts;
 using PdfSharp.Pdf;
 using PurplePen.Graphics2D;
@@ -32,6 +33,7 @@ namespace PurplePen.MapModel
 
         private bool cmykMode;   // true=CMYK, false=RGB
         private XGraphics gfx;
+        private PdfGlyphSubstituter glyphSubstituter;   // supplies shaped glyphs to PDFsharp
         private Stack<XGraphicsState> stateStack;
         private XStringFormat stringFormat;
         private Dictionary<object, XPen> penMap = new Dictionary<object, XPen>(new IdentityComparer<object>());
@@ -39,10 +41,32 @@ namespace PurplePen.MapModel
         private Dictionary<object, SkiaFont> fontMap = new Dictionary<object, SkiaFont>(new IdentityComparer<object>());
         private Dictionary<object, XGraphicsPath> pathMap = new Dictionary<object, XGraphicsPath>(new IdentityComparer<object>());
 
+        // Create a graphics target that draws into the given XGraphics. Text drawn through this
+        // target has its glyphs resolved by PDFsharp from the characters, which loses the shaping
+        // done by HarfBuzz. PdfDocumentWriter uses the overload below instead.
+        //
+        // Parameters:
+        //   gfx - the PDFsharp graphics object to draw into.
+        //   cmykMode - true for CMYK output, false for RGB.
         public Pdf_GraphicsTarget(XGraphics gfx, bool cmykMode)
+            : this(gfx, cmykMode, null)
+        {
+        }
+
+        // Create a graphics target that draws into the given XGraphics, handing PDFsharp the
+        // glyphs that were actually shaped.
+        //
+        // Parameters:
+        //   gfx - the PDFsharp graphics object to draw into.
+        //   cmykMode - true for CMYK output, false for RGB.
+        //   glyphSubstituter - the substituter hooked to the owning document's RenderTextEvent,
+        //     used to hand PDFsharp the shaped glyph for each character drawn. May be null, in
+        //     which case PDFsharp maps characters to glyphs itself.
+        internal Pdf_GraphicsTarget(XGraphics gfx, bool cmykMode, PdfGlyphSubstituter glyphSubstituter)
         {
             this.gfx = gfx;
             this.cmykMode = cmykMode;
+            this.glyphSubstituter = glyphSubstituter;
             stateStack = new Stack<XGraphicsState>();
             stringFormat = new XStringFormat();
             stringFormat.Alignment = XStringAlignment.Near;
@@ -458,9 +482,23 @@ namespace PurplePen.MapModel
 
             foreach (GlyphPosition glyph in glyphs) {
                 XFont xfont = XFontFromTypeface(glyph.Typeface, skiaFont.EmHeight);
-                // glyph.Position is already on the baseline, and stringFormat uses
-                // XLineAlignment.BaseLine, so it is passed through unadjusted.
-                gfx.DrawString(glyph.GlyphText, xfont, brush, new XPoint(glyph.Position.X, glyph.Position.Y), stringFormat);
+
+                // Tell PDFsharp which glyph HarfBuzz picked for this cluster. Without this it
+                // would map glyph.GlyphText through the font's character map itself and lose the
+                // shaping. The value is set for exactly one DrawString call, because PDFsharp
+                // raises the same event when measuring text.
+                if (glyphSubstituter != null)
+                    glyphSubstituter.PendingGlyphId = (ushort) glyph.GlyphId;
+
+                try {
+                    // glyph.Position is already on the baseline, and stringFormat uses
+                    // XLineAlignment.BaseLine, so it is passed through unadjusted.
+                    gfx.DrawString(glyph.GlyphText, xfont, brush, new XPoint(glyph.Position.X, glyph.Position.Y), stringFormat);
+                }
+                finally {
+                    if (glyphSubstituter != null)
+                        glyphSubstituter.PendingGlyphId = null;
+                }
             }
 
         }
@@ -472,13 +510,17 @@ namespace PurplePen.MapModel
         {
             SkiaFont skiaFont = GetFont(fontKey);
 
-            GlyphPosition[] glyphs = skiaFont.EnhancedTypeface.GetGlyphPositions(text, new SKPoint(upperLeft.X, upperLeft.Y), (float)skiaFont.EmHeight);
-
             XGraphicsPath grPath = new XGraphicsPath();
             grPath.FillMode = XFillMode.Winding;
 
-            foreach (GlyphPosition glyph in glyphs) {
-                AddTextOutlineToPath(grPath, glyph.GlyphText, glyph.Typeface, skiaFont.EmHeight, glyph.Position.X, glyph.Position.Y);
+            // EnhancedTypeface.GetTextPath outlines the glyphs that HarfBuzz shaped, looking each
+            // one up by glyph id. Going back to the characters here instead -- as this used to do,
+            // via SKFont.GetTextPath -- would map them through the font's character map again and
+            // throw the shaping away, which is the same mistake DrawText used to make. It also
+            // keeps the outlined text identical to what the Skia target draws on screen, since
+            // that uses this same method.
+            using (SKPath skPath = skiaFont.EnhancedTypeface.GetTextPath(text, new SKPoint(upperLeft.X, upperLeft.Y), (float) skiaFont.EmHeight)) {
+                AddSkiaPathToPdfPath(grPath, skPath);
             }
 
             gfx.DrawPath(GetPen(penKey), grPath);
@@ -492,14 +534,16 @@ namespace PurplePen.MapModel
             return new XFont(encodedFamilyName, height, XFontStyleEx.Regular, new XPdfFontOptions(PdfFontEncoding.Unicode, PdfFontEmbedding.TryComputeSubset));
         }
 
-        private static void AddTextOutlineToPath(XGraphicsPath pdfPath, string text, SKTypeface typeFace, float fontSize, float x, float y)
+        // Convert a Skia path into a PDF path, appending to whatever is already there.
+        //
+        // Parameters:
+        //   pdfPath - the path to append to.
+        //   skPath - the Skia path to convert.
+        private static void AddSkiaPathToPdfPath(XGraphicsPath pdfPath, SKPath skPath)
         {
-            // 1. Iterate of the path of the text.
-            using (SKFont font = new SKFont(typeFace, fontSize))
-            using (SKPath skPath = font.GetTextPath(text, new SKPoint(x, y)))
             using (SKPath.Iterator iterator = skPath.CreateIterator(false)) {
 
-                // 3. Map each SKPath verb to the corresponding PDF path command.
+                // Map each SKPath verb to the corresponding PDF path command.
                 SKPathVerb verb;
                 SKPoint[] pts = new SKPoint[4];
 
@@ -675,6 +719,46 @@ namespace PurplePen.MapModel
         }
     }
 
+    // Supplies PDFsharp with the glyph that HarfBuzz actually chose, in place of the one
+    // PDFsharp would look up for itself.
+    //
+    // Pdf_GraphicsTarget shapes a string with HarfBuzz and then draws it one glyph at a time.
+    // XGraphics.DrawString takes characters rather than glyphs, so on its own PDFsharp would map
+    // each cluster back through the font's character map and discard the shaping: ligatures come
+    // apart, combining marks are placed as separate characters, and any character the font cannot
+    // map becomes .notdef, which prints as a hollow box. PDFsharp raises RenderTextEvent after it
+    // has resolved glyph indices and before it writes them out, which is where the shaped glyph
+    // can be put back.
+    //
+    // One instance belongs to each PdfDocumentWriter and is shared by every graphics target that
+    // draws into that document. It holds the glyph for the draw currently in progress, so it is
+    // no more thread safe than the rest of PDF generation.
+    internal class PdfGlyphSubstituter
+    {
+        // The glyph to write for the DrawString call currently in progress, or null when no
+        // substitution applies. PDFsharp also raises RenderTextEvent while measuring, so a null
+        // here means "leave whatever PDFsharp resolved alone".
+        public ushort? PendingGlyphId { get; set; }
+
+        // Handler for PdfDocument.RenderEvents.RenderTextEvent.
+        public void OnRenderText(object sender, RenderTextEventArgs e)
+        {
+            if (PendingGlyphId == null)
+                return;
+
+            CodePointGlyphIndexPair[] pairs = e.CodePointGlyphIndexPairs;
+
+            // One glyph replaces the whole cluster. Keep the cluster's first code point so the
+            // /ToUnicode map can still say what this glyph stands for; a cluster covering several
+            // code points can only record the first of them.
+            int codePoint = pairs.Length > 0 ? pairs[0].CodePoint : 0;
+
+            e.CodePointGlyphIndexPairs = new CodePointGlyphIndexPair[] {
+                new CodePointGlyphIndexPair(codePoint, PendingGlyphId.Value)
+            };
+        }
+    }
+
     // This is the FontResolver that we use. Because isBold and isItalic are not enough, we want to really encode
     // Skia information of weight, width, and slant. So we encode that information in the family name, and ignore the isBold and isItalic parameters.
     // The familyName looks like family^weight^width^slant.
@@ -682,10 +766,26 @@ namespace PurplePen.MapModel
     {
         public FontResolverInfo ResolveTypeface(string familyName, bool isBold, bool isItalic)
         {
-            return new FontResolverInfo(familyName, false, false);
+            // The collection number tells PDFsharp which face to read out of the data GetFont
+            // returns. It is only non-zero for a font that lives in a TrueType collection, where
+            // the data is the whole .ttc. Without it PDFsharp reads face 0, which is a different
+            // font from the one the text was shaped with -- for instance Nirmala UI Bold would be
+            // embedded as Nirmala UI Regular.
+            return new FontResolverInfo(familyName, false, false, LookupTypeface(familyName).FontDataCollectionIndex);
         }
 
         public byte[] GetFont(string faceName)
+        {
+            return LookupTypeface(faceName).GetFontData();
+        }
+
+        // Find the ShapedTypeface for an encoded face name. Both of the methods above go through
+        // here, so the font data and the collection number that selects a face within it are
+        // always taken from the same typeface.
+        //
+        // Parameters:
+        //   faceName - an encoded name as produced by GetEncodedFamilyName.
+        private static ShapedTypeface LookupTypeface(string faceName)
         {
             (string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant) = DecodeFamilyName(faceName);
 
@@ -700,7 +800,7 @@ namespace PurplePen.MapModel
             if (!ShapedTypeface.TryGetCached(familyName, weight, width, slant, out ShapedTypeface shapedTypeface))
                 shapedTypeface = ShapedTypeface.Get(familyName, weight, width, slant);
 
-            return shapedTypeface.GetFontData();
+            return shapedTypeface;
         }
 
         public static string GetEncodedFamilyName(string familyName, SKFontStyleWeight weight, SKFontStyleWidth width, SKFontStyleSlant slant)

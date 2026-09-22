@@ -100,3 +100,4 @@ loc/po/*Log.txt
 
 # Random files for local testing.
 /testing
+/tmp

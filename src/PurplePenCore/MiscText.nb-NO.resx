@@ -633,13 +633,13 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="OpenImageDialog_Filter" xml:space="preserve">
     <value>Bilde fil|*.jpg;*.jpeg;*.gif;*.png;*.bmp;*.tif;*.tiff</value>
   </data>
+  <data name="FinishButtonText" xml:space="preserve">
+    <value>&amp;Fullfør</value>
+  </data>
   <data name="DownloadGhostscript" xml:space="preserve">
     <value>Lasting av PDF filer krever GPL Ghostscript installert. Vil du laste ned og installere det automatisk?</value>
   </data>
   <data name="GhostscriptNotInstalled" xml:space="preserve">
     <value>GPL Ghostscript er ikke installert</value>
-  </data>
-  <data name="FinishButtonText" xml:space="preserve">
-    <value>&amp;Fullfør</value>
   </data>
 </root>

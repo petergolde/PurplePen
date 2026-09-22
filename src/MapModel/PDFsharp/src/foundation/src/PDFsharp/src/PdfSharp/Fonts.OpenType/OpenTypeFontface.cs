@@ -98,16 +98,18 @@ namespace PdfSharp.Fonts.OpenType
 
         readonly string _fullFaceName;
 
-        public ulong CheckSum
-        {
-            get
-            {
-                if (_checkSum == 0)
-                    _checkSum = FontHelper.CalcChecksum(FontSource.Bytes);
-                return _checkSum;
-            }
-        }
-        ulong _checkSum;
+        /// <summary>
+        /// Gets the value that identifies this font face in the font face cache.
+        /// </summary>
+        /// <remarks>
+        /// This is the key of the font source, which combines the checksum of the font data with
+        /// the collection number. The faces of a TrueType collection share one byte array, so a
+        /// checksum of the bytes alone is the same for every face in the collection and the second
+        /// face to be added collides with the first in OpenTypeFontFaceCache. For a font that is
+        /// not a collection the key is exactly the checksum of the bytes, so nothing changes for
+        /// the ordinary case.
+        /// </remarks>
+        public ulong CheckSum => FontSource.Key;
 
         public void SetFontEmbedding(PdfFontEmbedding fontEmbedding)
         {
