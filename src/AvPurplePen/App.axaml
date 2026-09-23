@@ -248,6 +248,16 @@
         <Style Selector="NumericUpDown:focus-within">
             <Setter Property="Background" Value="{DynamicResource InputActiveBackground}"/>
         </Style>
+        <!-- Keep focus off the NumericUpDown's small up/down arrow buttons, both when tabbing
+             and when clicking them, so it stays in the text box; the arrow keys already change
+             the value from there. The Semi ButtonSpinner template doesn't set IsTabStop on its
+             RepeatButtons (Fluent binds it to the spinner's), so it must be reached through
+             both nested templates. App.axaml.cs moves focus back to the text box after an
+             arrow is clicked. -->
+        <Style Selector="NumericUpDown /template/ ButtonSpinner /template/ RepeatButton">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Focusable" Value="False"/>
+        </Style>
 
         <!-- Dialog button border (must target template part — Semi doesn't
              use TemplateBinding for BorderBrush on the ContentPresenter).

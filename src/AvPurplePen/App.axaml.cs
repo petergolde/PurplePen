@@ -1,12 +1,15 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Controls.Primitives;
 using Avalonia.Data.Core;
+using Avalonia.Interactivity;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
 using Avalonia.Threading;
+using Avalonia.VisualTree;
 using AvPurplePen.Views;
 using Semi.Avalonia;
 using System;
@@ -55,6 +58,30 @@ namespace AvPurplePen
 
             // Keeps the macOS menu bar from emptying out whenever a dialog is showing.
             MacMenuUtilities.InstallDialogMenus();
+
+            // Clicking a NumericUpDown's up/down arrow puts focus back in its text box, text selected.
+            Button.ClickEvent.AddClassHandler<NumericUpDown>(NumericUpDownArrow_Click, handledEventsToo: true);
+        }
+
+        /// <summary>
+        /// Moves focus to a NumericUpDown's text box, with all its text selected, when one of its
+        /// up/down arrows is clicked. The click reaches here after the spinner has already
+        /// changed the value, so the selection covers the new text.
+        /// The arrows are made non-focusable in App.axaml so that Tab skips them, but that alone
+        /// leaves focus somewhere other than the text box after a click, and the Up/Down arrow
+        /// keys then stop changing the value.
+        /// </summary>
+        /// <param name="numericUpDown">The NumericUpDown the click bubbled up to.</param>
+        /// <param name="e">Event arguments; the source is the button that was clicked.</param>
+        private static void NumericUpDownArrow_Click(NumericUpDown numericUpDown, RoutedEventArgs e)
+        {
+            if (e.Source is RepeatButton) {
+                TextBox? textBox = numericUpDown.GetVisualDescendants().OfType<TextBox>().FirstOrDefault();
+                if (textBox != null) {
+                    textBox.Focus();
+                    textBox.SelectAll();
+                }
+            }
         }
 
         /// <summary>
