@@ -39,13 +39,15 @@ namespace AvPurplePen.Views
         private TextPropertiesDialogViewModel? subscribedViewModel;
 
         /// <summary>
-        /// Initializes the dialog and subscribes to ViewModel changes so the
-        /// preview repaints as the user edits settings.
+        /// Initializes the dialog, subscribes to ViewModel changes so the
+        /// preview repaints as the user edits settings, and focuses the main
+        /// text box when the dialog opens.
         /// </summary>
         public TextPropertiesDialog()
         {
             InitializeComponent();
             DataContextChanged += OnDataContextChanged;
+            Opened += (s, e) => textBoxMain.Focus();
         }
 
         /// <summary>
