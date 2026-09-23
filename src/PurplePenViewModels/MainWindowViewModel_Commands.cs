@@ -270,19 +270,50 @@ namespace PurplePen.ViewModels
                 bool result = await Services.DialogService.ShowDialogAsync(fileOpenVM);
 
                 if (result && fileOpenVM.SelectedFile != null) {
-                    string newFilename = fileOpenVM.SelectedFile;
-                    bool success = await controller.LoadNewFile(newFilename);
-                    if (!success) {
-                        // This is bad news. The old file is gone, and we don't have a new file. Go back to initial screen is the best solution, 
-                        // I guess.
-                        ReloadInitialScreen();
-                    }
-                    else {
-                        // Display the default view on the map.
-                        if (MapDisplay != null) {
-                            ShowMapRectangle(MapDisplay.MapBounds);
-                        }
-                    }
+                    await LoadNewFileAfterClose(fileOpenVM.SelectedFile);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Opens the named Purple Pen file in place of the current one, prompting to save the
+        /// current file first. Used when the operating system asks Purple Pen to open a file
+        /// (e.g. a .ppen file double-clicked in the macOS Finder) while an event is open.
+        /// Asking for the file that is already open does nothing, rather than reloading it.
+        /// </summary>
+        /// <param name="fileName">Path of the .ppen file to open.</param>
+        public async Task OpenPurplePenFile(string fileName)
+        {
+            if (controller == null) return;
+
+            if (string.Equals(Path.GetFullPath(fileName), controller.FileName, StringComparison.OrdinalIgnoreCase))
+                return;
+
+            if (await controller.TryCloseFile()) {
+                await LoadNewFileAfterClose(fileName);
+            }
+        }
+
+        /// <summary>
+        /// Loads a new file once the current one has been closed (via Controller.TryCloseFile),
+        /// then shows its default view. If the load fails, returns to the initial screen, since
+        /// the old file is gone and there is no new one.
+        /// </summary>
+        /// <param name="fileName">Path of the .ppen file to load.</param>
+        private async Task LoadNewFileAfterClose(string fileName)
+        {
+            if (controller == null) return;
+
+            bool success = await controller.LoadNewFile(fileName);
+            if (!success) {
+                // This is bad news. The old file is gone, and we don't have a new file. Go back to initial screen is the best solution,
+                // I guess.
+                ReloadInitialScreen();
+            }
+            else {
+                // Display the default view on the map.
+                if (MapDisplay != null) {
+                    ShowMapRectangle(MapDisplay.MapBounds);
                 }
             }
         }

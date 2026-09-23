@@ -57,19 +57,47 @@
     <!--
         File type association for .ppen course files.
 
-        Disabled for now: enabling this makes Finder route double-clicked
-        .ppen files to Purple Pen, but AvPurplePen does not yet handle the
-        macOS "open document" event, so the app would launch without opening
-        the file. Uncomment once that is wired up.
+        Finder does not pass a double-clicked file on the command line; it
+        sends the app an "open documents" event, which AvPurplePen receives
+        through Avalonia's IActivatableLifetime (see App.axaml.cs).
+
+        UTExportedTypeDeclarations defines the .ppen type itself (a .ppen file
+        is XML); CFBundleDocumentTypes then claims it as Purple Pen's own.
+        The identifier is fixed, not derived from the bundle ID, so that it
+        stays the same across beta and release builds.
+    -->
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>org.purple-pen.ppen</string>
+            <key>UTTypeDescription</key>
+            <string>Purple Pen Course File</string>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.xml</string>
+                <string>public.data</string>
+            </array>
+            <key>UTTypeIconFile</key>
+            <string>@ICON_NAME@</string>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array>
+                    <string>ppen</string>
+                </array>
+            </dict>
+        </dict>
+    </array>
 
     <key>CFBundleDocumentTypes</key>
     <array>
         <dict>
             <key>CFBundleTypeName</key>
             <string>Purple Pen Course File</string>
-            <key>CFBundleTypeExtensions</key>
+            <key>LSItemContentTypes</key>
             <array>
-                <string>ppen</string>
+                <string>org.purple-pen.ppen</string>
             </array>
             <key>CFBundleTypeIconFile</key>
             <string>@ICON_NAME@</string>
@@ -79,6 +107,5 @@
             <string>Owner</string>
         </dict>
     </array>
-    -->
 </dict>
 </plist>

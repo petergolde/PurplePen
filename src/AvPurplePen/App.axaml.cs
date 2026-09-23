@@ -7,6 +7,7 @@ using Avalonia.Interactivity;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Avalonia.Markup.Xaml.Styling;
+using Avalonia.Platform.Storage;
 using Avalonia.Styling;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
@@ -21,6 +22,10 @@ namespace AvPurplePen
 {
     public partial class App : Application
     {
+        // True while a file the operating system asked us to open is loading, so that a second
+        // request arriving meanwhile is ignored rather than started on top of it.
+        private bool openingActivatedFile;
+
         /// <summary>
         /// Custom theme variant for PurplePen, based on Semi.Avalonia's Desert (Light) scheme.
         /// Colors are defined in Themes/PurplePenColors.axaml.
@@ -143,6 +148,15 @@ namespace AvPurplePen
                 }
             }
 
+            // On macOS, a .ppen file opened from the Finder arrives as an "open documents" event
+            // rather than on the command line -- both when it launches Purple Pen and when Purple
+            // Pen is already running. On a launch the event is delivered once the native run loop
+            // starts, which is after this method returns, so subscribing here doesn't miss it.
+            // The feature is absent (or never raises File activations) on the other platforms.
+            if (TryGetFeature(typeof(IActivatableLifetime)) is IActivatableLifetime activatableLifetime) {
+                activatableLifetime.Activated += ActivatableLifetime_Activated;
+            }
+
             base.OnFrameworkInitializationCompleted();
 
             ApplicationIdleService.Initialize();
@@ -153,6 +167,54 @@ namespace AvPurplePen
             // window on screen for the update dialog to be owned by. (UpdateManager checks that
             // anyway -- Avalonia refuses to show a dialog owned by an unshown window.)
             Dispatcher.UIThread.Post(UpdateManager.CheckForUpdatesAtStartup, DispatcherPriority.Background);
+        }
+
+        /// <summary>
+        /// Handles the operating system asking Purple Pen to open files -- on macOS, a .ppen file
+        /// double-clicked in the Finder or dropped on the Dock icon. Purple Pen has one event open
+        /// at a time, so only the first file is opened. It replaces the welcome screen if that is
+        /// showing, or the current event (after the usual save prompt) if the main window is.
+        ///
+        /// The request is ignored while a dialog is up, or while an earlier request is still
+        /// loading: swapping the event out from under a dialog that is working on it is not safe.
+        /// </summary>
+        /// <param name="sender">The activatable lifetime (unused).</param>
+        /// <param name="e">Event arguments; only File activations are acted upon.</param>
+        private async void ActivatableLifetime_Activated(object? sender, ActivatedEventArgs e)
+        {
+            if (e is not FileActivatedEventArgs fileArgs || openingActivatedFile)
+                return;
+            if (ApplicationLifetime is not IClassicDesktopStyleApplicationLifetime desktop)
+                return;
+
+            string? fileName = fileArgs.Files.Select(item => item.TryGetLocalPath()).FirstOrDefault(path => path != null);
+            if (fileName == null)
+                return;
+
+            // Any visible window other than the main window is a dialog.
+            Window? mainWindow = desktop.MainWindow;
+            if (mainWindow == null || desktop.Windows.Any(w => w != mainWindow && w.IsVisible))
+                return;
+
+            openingActivatedFile = true;
+            try {
+                mainWindow.Activate();
+
+                if (mainWindow.DataContext is InitialScreenViewModel initialScreenViewModel) {
+                    await initialScreenViewModel.OpenEventFile(fileName);
+                }
+                else if (mainWindow.DataContext is MainWindowViewModel mainWindowViewModel) {
+                    await mainWindowViewModel.OpenPurplePenFile(fileName);
+                }
+            }
+            catch (Exception exception) {
+                // Ordinary load failures are reported to the user by the controller and never
+                // reach here; see StartWithCommandLineFile for why anything else goes to stderr.
+                ReportFailedInitialLoad(fileName, exception);
+            }
+            finally {
+                openingActivatedFile = false;
+            }
         }
 
         /// <summary>

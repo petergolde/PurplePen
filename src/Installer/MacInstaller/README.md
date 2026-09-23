@@ -339,11 +339,15 @@ too low, the app launches on an unsupported system and then crashes; verify it
 against the current .NET 10 support matrix and adjust `MIN_MACOS_VERSION` in
 `config.sh`.
 
-**File associations are not enabled.** `Info.plist.template` contains a
-commented-out `CFBundleDocumentTypes` block for `.ppen` files. Enabling it
-makes Finder route double-clicked course files to Purple Pen, but AvPurplePen
-does not yet handle the macOS "open document" event, so the app would launch
-without opening the file. Uncomment once that is wired up.
+**`.ppen` files are associated with the app.** `Info.plist.template` exports
+the `org.purple-pen.ppen` type and claims it in `CFBundleDocumentTypes`. Finder
+does not pass the file on the command line: it sends an "open documents" event,
+which `App.axaml.cs` handles through Avalonia's `IActivatableLifetime`, both at
+launch and while the app is running. To check a freshly built bundle without
+installing it, register it with Launch Services and `open` a `.ppen` file
+(`lsregister` lives in
+`/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/`;
+`lsregister -f build/PurplePen.app` registers, `-u` unregisters).
 
 **Apple Silicon only.** `RUNTIME_IDENTIFIER` is `osx-arm64`; the result will
 not run on Intel Macs at all. To add Intel support later, either build a second
