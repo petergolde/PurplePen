@@ -52,6 +52,7 @@ namespace AvUtil
         private Matrix xformLogPixelToWorld;				    // transformation logical pixel->world coord
         private Matrix xformWorldToPhysPixel;					// transformation world->physical pixel coord
         private Matrix xformPhysPixelToWorld;				    // transformation physical pixel->world coord
+        private double layoutScale = 1.0;                       // ratio between physical and logical pixels, as of last transform calculation.
 
 
         bool panningInProgress = false;					        // Are we panning the map around by holding a button down?
@@ -273,15 +274,14 @@ namespace AvUtil
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
 
-                double scale = LayoutHelper.GetLayoutScale(this);
-                int pixelWidth = (int)Math.Ceiling(drawingArea.Width * scale);
-                int pixelHeight = (int)Math.Ceiling(drawingArea.Height * scale);
+                int pixelWidth = (int)Math.Ceiling(drawingArea.Width * layoutScale);
+                int pixelHeight = (int)Math.Ceiling(drawingArea.Height * layoutScale);
                 PixelSize pixelSize = new PixelSize(pixelWidth, pixelHeight);
 
                 // Clip to the drawing area so the map doesn't draw underneath the scroll bars.
                 using (context.PushClip(drawingArea))
                 using (context.PushTransform(xformWorldToLogPixel)) {
-                    drawing.Draw(context, viewport, pixelSize, xformWorldToPhysPixel);
+                    drawing.Draw(context, viewport, pixelSize, xformWorldToPhysPixel, layoutScale);
                 }
 
                 watch.Stop();
@@ -602,7 +602,7 @@ namespace AvUtil
 
         void CalculateWorldTransform()
         {
-            double layoutScale = LayoutHelper.GetLayoutScale(this);  // ratio between logical and physical pixels.
+            layoutScale = LayoutHelper.GetLayoutScale(this);  // ratio between logical and physical pixels.
 
             // Get size, midpoint of the drawing area (the window minus any scroll bars).
             Size sizeInPixels = GetDrawingAreaSize();

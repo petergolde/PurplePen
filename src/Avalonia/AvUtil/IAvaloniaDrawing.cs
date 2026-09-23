@@ -15,8 +15,9 @@ namespace AvUtil
 
         // Draw to the drawing context. The transform is already set up, but it is "transformWorldToPhysicalPixel",
         // in case the drawing code wants to know it (it typically will not). The physicalPixelSize shows the size of 
-        // pixels in world coordinates.
-        void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize physicalPixelSize, Matrix transformWorldToPhysicalPixel);
+        // pixels in world coordinates. The layoutScale is the ratio between physical and logical pixels (e.g., 2.0 on
+        // a high-DPI display), which can be used to scale UI elements such as handles.
+        void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize physicalPixelSize, Matrix transformWorldToPhysicalPixel, double layoutScale);
 
         // This event is raised when the drawing changes and needs to be redrawn.
         // It is up to the consumer to call Draw again.

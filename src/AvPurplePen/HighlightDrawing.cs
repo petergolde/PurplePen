@@ -34,7 +34,7 @@ namespace AvPurplePen
         // a writable bitmap and use Skia to draw to that. This is not ideal from a performance perspective, but
         // should be OK. We can optimize later by reducing the size of the bitmap to just one big enough for the 
         // bounds of the highlights.
-        public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize pixelSize, Matrix transformWorldToPixel)
+        public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize pixelSize, Matrix transformWorldToPixel, double layoutScale)
         {
             if (highlights.Length == 0)
                 return;
@@ -63,7 +63,7 @@ namespace AvPurplePen
 
                     // This graphics target is set up with pixel coordinates, which is what we want.
                     foreach (IMapViewerHighlight highlight in highlights) {
-                        highlight.DrawHighlight(grTarget, xformWorldToPixel);
+                        highlight.DrawHighlight(grTarget, xformWorldToPixel, layoutScale);
                     }
                 }
             });

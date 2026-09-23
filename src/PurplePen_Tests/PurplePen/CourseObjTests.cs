@@ -1408,7 +1408,7 @@ namespace PurplePen.Tests
             Matrix matrix = GetTransform(bmNew.Size);
 
             TestRenderingUtils.RenderToExistingBitmap(bmHighlighted, grTarget => {
-                courseobj.DrawHighlight(grTarget, matrix);
+                courseobj.DrawHighlight(grTarget, matrix, 1.0);
             });
 
             BitmapTestUtil.CheckBitmapsBase(bmHighlighted, "coursesymbols\\" + basename);
@@ -2068,7 +2068,7 @@ namespace PurplePen.Tests
             Matrix matrix = GetTransform(bmNew.Size);
 
             TestRenderingUtils.RenderToExistingBitmap(bmNew, grTarget => {
-                offset.DrawHighlight(grTarget, matrix);
+                offset.DrawHighlight(grTarget, matrix, 1.0);
             });
 
             BitmapTestUtil.CheckBitmapsBase(bmNew, "coursesymbols\\" + basename);

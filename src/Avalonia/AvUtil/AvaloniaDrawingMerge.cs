@@ -39,10 +39,10 @@ namespace AvUtil
         }
 
         // Draw each sub-drawing in order.
-        public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize pixelSize, Matrix transformWorldToPixel)
+        public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize pixelSize, Matrix transformWorldToPixel, double layoutScale)
         {
             foreach (IAvaloniaDrawing drawing in drawings) {
-                drawing.Draw(drawingContext, rectToDraw, pixelSize, transformWorldToPixel);
+                drawing.Draw(drawingContext, rectToDraw, pixelSize, transformWorldToPixel, layoutScale);
             }
         }
 

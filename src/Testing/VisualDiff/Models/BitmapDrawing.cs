@@ -36,7 +36,7 @@ namespace VisualDiff.Models
             remove { }
         }
 
-        public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize physicalPixelSize, Matrix transformWorldToPhysicalPixel)
+        public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize physicalPixelSize, Matrix transformWorldToPhysicalPixel, double layoutScale)
         {
             drawingContext.FillRectangle(Brushes.White, rectToDraw);
 
