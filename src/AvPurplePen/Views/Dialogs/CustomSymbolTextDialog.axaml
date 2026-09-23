@@ -15,6 +15,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:controls="using:AvPurplePen.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -75,6 +76,7 @@
 
             <!-- Symbol list. Each row: rendered symbol image + name (red if customized). -->
             <ListBox x:Name="listBoxSymbols"
+                     avutil:InitialFocus.IsEnabled="True"
                      Grid.Column="0"
                      ItemsSource="{Binding Symbols}"
                      SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}">

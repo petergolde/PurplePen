@@ -24,7 +24,6 @@ namespace AvPurplePen.Views
         public CustomSymbolTextDialog()
         {
             InitializeComponent();
-            Opened += (s, e) => listBoxSymbols.Focus();
         }
 
         /// <summary>Commits the current symbol's edits and closes with OK.</summary>

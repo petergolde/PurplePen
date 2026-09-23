@@ -26,7 +26,6 @@ namespace AvPurplePen.Views
         public AllControlsPropertiesDialog()
         {
             InitializeComponent();
-            Opened += (s, e) => scaleCombo.Focus();
         }
 
         /// <summary>

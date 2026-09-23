@@ -10,6 +10,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -60,6 +61,7 @@
             <HeaderedContentControl Header="{resx:Localize ChangeMapFile_mapFileDisplay_Text}"
                                     Padding="8,10,8,8">
                 <TextBox x:Name="mapFileNameTextBox"
+                         avutil:InitialFocus.IsEnabled="True"
                          Text="{Binding MapFile}"
                          IsReadOnly="True"/>
             </HeaderedContentControl>

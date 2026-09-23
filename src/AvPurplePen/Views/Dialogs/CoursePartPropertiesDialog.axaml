@@ -12,6 +12,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -63,6 +64,7 @@
 
         <!-- The single editable option for the part. -->
         <CheckBox x:Name="checkBoxDisplayFinish"
+                  avutil:InitialFocus.IsEnabled="True"
                   VerticalAlignment="Top"
                   Content="{resx:Localize CoursePartProperties_checkBoxDisplayFinish_Text}"
                   IsChecked="{Binding ShowFinish, Mode=TwoWay}"

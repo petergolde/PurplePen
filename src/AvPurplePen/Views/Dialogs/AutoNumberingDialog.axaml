@@ -11,6 +11,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -68,6 +69,7 @@
                            Text="{resx:Localize AutoNumbering_startingCodeLabel_Text}"
                            VerticalAlignment="Center"/>
                 <NumericUpDown x:Name="startingCodeNumericUpDown"
+                               avutil:InitialFocus.IsEnabled="True"
                                Width="90"
                                Minimum="31"
                                Maximum="999"

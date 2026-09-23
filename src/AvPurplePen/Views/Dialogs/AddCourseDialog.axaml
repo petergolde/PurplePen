@@ -75,6 +75,7 @@
                            VerticalAlignment="Center"
                            Margin="0,0,8,6"/>
                 <TextBox x:Name="nameTextBox"
+                         avutil:InitialFocus.IsEnabled="True"
                          Grid.Row="0" Grid.Column="1"
                          Text="{Binding CourseName, Mode=TwoWay}"
                          Margin="0,0,0,6"/>

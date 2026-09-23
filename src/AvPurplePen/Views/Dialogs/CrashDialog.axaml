@@ -13,6 +13,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:AvPurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -76,8 +77,10 @@
                    Opacity="{Binding DescriptionOpacity}"
                    Margin="0,0,0,6"/>
 
+        <!-- Initially focused, because typing what happened is the one thing only the user can do. -->
         <TextBox Grid.Row="3"
                  x:Name="descriptionTextBox"
+                 avutil:InitialFocus.IsEnabled="True"
                  Text="{Binding UserDescription, Mode=TwoWay}"
                  PlaceholderText="{resx:Localize CrashDialog_descriptionTextBox_Watermark}"
                  AcceptsReturn="True"

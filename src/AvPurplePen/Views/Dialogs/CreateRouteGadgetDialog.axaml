@@ -14,6 +14,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -84,6 +85,7 @@
                             <TextBlock Text="{resx:Localize CreateRouteGadget_label1_Text}"
                                        TextWrapping="Wrap"/>
                             <TextBox x:Name="fileNameTextBox"
+                                     avutil:InitialFocus.IsEnabled="True"
                                      Text="{Binding FileBaseName, Mode=TwoWay}"/>
                         </StackPanel>
                     </HeaderedContentControl>

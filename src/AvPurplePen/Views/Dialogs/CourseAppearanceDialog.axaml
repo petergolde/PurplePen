@@ -90,6 +90,7 @@
 
                     <!-- Use IOF standard sizes -->
                     <CheckBox x:Name="checkBoxStandardSizes"
+                              avutil:InitialFocus.IsEnabled="True"
                               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"
                               Content="{resx:Localize CourseAppearanceDialog_checkBoxStandardSizes_Text}"
                               IsChecked="{Binding UseIofStandardSizes, Mode=TwoWay}"

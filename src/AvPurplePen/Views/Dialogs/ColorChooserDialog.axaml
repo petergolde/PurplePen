@@ -11,6 +11,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -66,6 +67,7 @@
                            VerticalAlignment="Center"
                            Margin="0,0,8,8"/>
                 <NumericUpDown x:Name="upDownCyan" Grid.Row="0" Grid.Column="1"
+                               avutil:InitialFocus.IsEnabled="True"
                                Width="80"
                                Minimum="0" Maximum="100"
                                Increment="1.0"

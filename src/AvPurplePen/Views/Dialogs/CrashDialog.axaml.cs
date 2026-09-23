@@ -36,12 +36,6 @@ namespace AvPurplePen.Views
         public CrashDialog()
         {
             InitializeComponent();
-
-            // Focus the description box, because typing what happened is the one thing only
-            // the user can do. Done from Opened rather than the constructor, which runs before
-            // the controls can take focus.
-            Opened += (s, e) => descriptionTextBox.Focus();
-
             Closing += CrashDialog_Closing;
         }
 

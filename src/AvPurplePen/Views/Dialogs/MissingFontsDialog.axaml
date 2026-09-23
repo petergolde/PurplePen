@@ -12,6 +12,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -77,6 +78,7 @@
 
         <!-- Sorted, read-only list of the missing fonts (fills the middle). -->
         <ListBox x:Name="listBoxFonts"
+                 avutil:InitialFocus.IsEnabled="True"
                  ItemsSource="{Binding MissingFontList}"/>
 
     </DockPanel>

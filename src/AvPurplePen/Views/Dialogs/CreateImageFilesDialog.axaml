@@ -14,6 +14,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:views="using:AvPurplePen.Views"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -89,6 +90,7 @@
                         <ComboBox x:Name="fileFormatCombo"
                                   Grid.Row="0" Grid.Column="2"
                                   HorizontalAlignment="Stretch"
+                                  avutil:InitialFocus.IsEnabled="True"
                                   ItemsSource="{Binding AvailableFileFormats}"
                                   SelectedItem="{Binding SelectedFileFormat, Mode=TwoWay}"/>
 

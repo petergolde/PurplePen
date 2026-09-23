@@ -23,6 +23,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:views="using:AvPurplePen.Views"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -159,6 +160,7 @@
                                     Header="{resx:Localize PrintPunches_coursesGroupBox_Text}"
                                     Padding="8,10,8,8">
                 <views:CourseSelector x:Name="courseSelector"
+                                      avutil:InitialFocus.IsEnabled="True"
                                       EventDB="{Binding EventDB}"
                                       ShowAllControls="True"
                                       ShowCourseParts="False"

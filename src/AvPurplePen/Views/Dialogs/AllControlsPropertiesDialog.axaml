@@ -79,6 +79,7 @@
                                    Text="{resx:Localize AllControlsProperties_oneToPrefix_Text}"
                                    VerticalAlignment="Center"/>
                         <ComboBox x:Name="scaleCombo"
+                                  avutil:InitialFocus.IsEnabled="True"
                                   IsEditable="True"
                                   ItemsSource="{Binding AvailablePrintScales}"
                                   Text="{Binding PrintScaleText, Mode=TwoWay}"

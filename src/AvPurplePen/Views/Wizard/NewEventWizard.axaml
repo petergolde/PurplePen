@@ -15,6 +15,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:wiz="using:AvPurplePen.Views.Wizard"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:misc="using:PurplePen"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -107,14 +108,15 @@
             </StackPanel>
         </Border>
 
-        <!-- Page host: all pages stacked, only the current one is visible. -->
+        <!-- Page host: all pages stacked, only the current one is visible.
+             Pages with InitialFocus focus their first control each time they are shown. -->
         <Panel Margin="16">
-            <wiz:NewEventTitlePage IsVisible="{Binding IsTitlePage}"/>
-            <wiz:NewEventMapFilePage IsVisible="{Binding IsMapFilePage}"/>
-            <wiz:NewEventBitmapScalePage IsVisible="{Binding IsBitmapScalePage}"/>
+            <wiz:NewEventTitlePage IsVisible="{Binding IsTitlePage}" avutil:InitialFocus.IsEnabled="True"/>
+            <wiz:NewEventMapFilePage IsVisible="{Binding IsMapFilePage}" avutil:InitialFocus.IsEnabled="True"/>
+            <wiz:NewEventBitmapScalePage IsVisible="{Binding IsBitmapScalePage}" avutil:InitialFocus.IsEnabled="True"/>
             <wiz:NewEventPrintScalePage IsVisible="{Binding IsPrintScalePage}"/>
             <wiz:NewEventPaperSizePage IsVisible="{Binding IsPaperSizePage}"/>
-            <wiz:NewEventDirectoryPage IsVisible="{Binding IsDirectoryPage}"/>
+            <wiz:NewEventDirectoryPage IsVisible="{Binding IsDirectoryPage}" avutil:InitialFocus.IsEnabled="True"/>
             <wiz:NewEventStandardsPage IsVisible="{Binding IsStandardsPage}"/>
             <wiz:NewEventNumberingPage IsVisible="{Binding IsNumberingPage}"/>
             <wiz:NewEventFinalPage IsVisible="{Binding IsFinalPage}"/>
