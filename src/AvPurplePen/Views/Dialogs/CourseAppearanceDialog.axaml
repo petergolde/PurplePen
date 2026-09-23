@@ -271,7 +271,7 @@
                                   IsChecked="{Binding UseDefaultPurple, Mode=TwoWay}"/>
 
                         <!-- CMYK boxes (2 x 2) -->
-                        <Grid ColumnDefinitions="Auto,8,76,30,Auto,8,76"
+                        <Grid ColumnDefinitions="Auto,8,78,30,Auto,8,78"
                               RowDefinitions="Auto,Auto">
                             <TextBlock Grid.Row="0" Grid.Column="0"
                                        Text="{resx:Localize CourseAppearanceDialog_label1_Text}"
