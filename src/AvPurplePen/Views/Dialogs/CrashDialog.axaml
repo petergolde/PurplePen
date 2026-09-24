@@ -59,7 +59,7 @@
                     x:Name="viewDetailsButton"
                     Classes="Small"
                     Content="{resx:Localize CrashDialog_viewDetailsButton_Text}"
-                    Width="150"
+                    MinWidth="150"
                     HorizontalContentAlignment="Center"
                     Click="ViewDetailsButton_Click"/>
         </Grid>

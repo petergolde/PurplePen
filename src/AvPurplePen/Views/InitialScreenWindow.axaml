@@ -22,7 +22,7 @@
         x:DataType="vm:InitialScreenViewModel"
         Title="{resx:Localize InitialScreen_Text}"
         Icon="/Assets/AppIcon/PurplePenBeta.32x32.png"
-        Width="335" Height="427"
+        Width="335" Height="445"
         CanResize="False"
         CanMinimize="False"
         WindowStartupLocation="CenterScreen"

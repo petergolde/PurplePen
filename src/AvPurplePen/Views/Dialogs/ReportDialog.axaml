@@ -57,7 +57,7 @@
                     x:Name="buttonPrint"
                     Content="{resx:Localize ReportForm_printButton_Text}"
                     Click="PrintButton_Click"
-                    Width="110"
+                    MinWidth="110"
                     HorizontalContentAlignment="Center"/>
             <Button Grid.Column="2"
                     x:Name="buttonClose"

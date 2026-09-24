@@ -55,7 +55,7 @@
             <Button x:Name="previewButton"
                     Grid.Column="0"
                     Content="{resx:Localize PrintPunches_previewButton_Text}"
-                    Width="120"
+                    MinWidth="120"
                     HorizontalContentAlignment="Center"
                     IsVisible="{Binding IsPreviewVisible}"
                     Click="PreviewButton_Click"/>
