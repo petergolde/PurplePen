@@ -41,7 +41,7 @@
         <Button DockPanel.Dock="Bottom"
                 x:Name="cancelButton"
                 Content="{resx:Localize OperationInProgress_cancelButton_Text}"
-                Width="100"
+                MinWidth="85"
                 HorizontalAlignment="Right"
                 HorizontalContentAlignment="Center"
                 IsCancel="True"

@@ -54,7 +54,7 @@
             <Button x:Name="okButton"
                     Grid.Column="1"
                     Content="{resx:Localize LicenseForm_okButton_Text}"
-                    MinWidth="80"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"
                     Click="OkButton_Click"/>

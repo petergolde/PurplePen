@@ -151,7 +151,7 @@
                     x:Name="buttonClose"
                     Content="{resx:Localize TeamVariationsForm_buttonClose_Text}"
                     Click="CloseButton_Click"
-                    Width="100"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsCancel="True"/>
         </Grid>

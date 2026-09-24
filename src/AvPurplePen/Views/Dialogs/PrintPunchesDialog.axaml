@@ -47,10 +47,10 @@
     <DockPanel Margin="12">
 
         <!-- Bottom row: Preview / Print / Cancel. Print button label swaps
-             between "Print" and "Create PDF" via two overlapping buttons
-             whose visibility tracks IsPdfCreation. -->
+             between "Print" and "Create PDF" via two buttons whose
+             visibility tracks IsPdfCreation. -->
         <Grid DockPanel.Dock="Bottom"
-              ColumnDefinitions="Auto,*,Auto,Auto"
+              ColumnDefinitions="Auto,*,Auto"
               Margin="0,12,0,0">
             <Button x:Name="previewButton"
                     Grid.Column="0"
@@ -60,36 +60,37 @@
                     IsVisible="{Binding IsPreviewVisible}"
                     Click="PreviewButton_Click"/>
 
-            <!-- Print (only when !IsPdfCreation) -->
-            <Button x:Name="printButton"
-                    Grid.Column="2"
-                    Content="{resx:Localize PrintPunches_printButton_Text}"
-                    Width="100"
-                    HorizontalContentAlignment="Center"
-                    IsDefault="True"
-                    IsVisible="{Binding !IsPdfCreation}"
-                    Margin="0,0,8,0"
-                    Click="PrintButton_Click"/>
+            <!-- Print-or-Create-PDF / Cancel. UniformGrid gives the buttons equal
+                 widths, growing past MinWidth when a translation is longer. -->
+            <UniformGrid Grid.Column="2"
+                         Rows="1"
+                         ColumnSpacing="8">
+                <!-- Print (only when !IsPdfCreation) -->
+                <Button x:Name="printButton"
+                        Content="{resx:Localize PrintPunches_printButton_Text}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        IsVisible="{Binding !IsPdfCreation}"
+                        Click="PrintButton_Click"/>
 
-            <!-- Create PDF (only when IsPdfCreation) — same Grid.Column so
-                 it overlays the Print button. -->
-            <Button x:Name="createPdfButton"
-                    Grid.Column="2"
-                    Content="{resx:Localize MiscText_CreatePdf}"
-                    Width="100"
-                    HorizontalContentAlignment="Center"
-                    IsDefault="True"
-                    IsVisible="{Binding IsPdfCreation}"
-                    Margin="0,0,8,0"
-                    Click="PrintButton_Click"/>
+                <!-- Create PDF (only when IsPdfCreation). UniformGrid ignores
+                     whichever of Print / Create PDF is hidden. -->
+                <Button x:Name="createPdfButton"
+                        Content="{resx:Localize MiscText_CreatePdf}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        IsVisible="{Binding IsPdfCreation}"
+                        Click="PrintButton_Click"/>
 
-            <Button x:Name="cancelButton"
-                    Grid.Column="3"
-                    Content="{resx:Localize PrintPunches_cancelButton_Text}"
-                    Width="100"
-                    HorizontalContentAlignment="Center"
-                    IsCancel="True"
-                    Click="CancelButton_Click"/>
+                <Button x:Name="cancelButton"
+                        Content="{resx:Localize PrintPunches_cancelButton_Text}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsCancel="True"
+                        Click="CancelButton_Click"/>
+            </UniformGrid>
         </Grid>
 
         <!-- Output group at the top, full width: printer (conditional) +

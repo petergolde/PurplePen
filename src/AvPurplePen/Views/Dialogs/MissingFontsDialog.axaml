@@ -47,7 +47,7 @@
             <Button Grid.Column="1"
                     x:Name="okButton"
                     Content="{resx:Localize MissingFonts_okButton_Text}"
-                    Width="100"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"
                     Click="OkButton_Click"/>

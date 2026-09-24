@@ -36,24 +36,24 @@
     <DockPanel Margin="16">
 
         <!-- Button row at the bottom -->
-        <StackPanel DockPanel.Dock="Bottom"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    Spacing="8"
-                    Margin="0,16,0,0">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1"
+                     HorizontalAlignment="Right"
+                     ColumnSpacing="8"
+                     Margin="0,16,0,0">
             <Button x:Name="okButton"
                     Content="{x:Static resx:UIText.OKButton}"
-                    Width="80"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     Click="OkButton_Click"
                     IsDefault="True"/>
             <Button x:Name="cancelButton"
                     Content="{x:Static resx:UIText.CancelButton}"
-                    Width="80"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     Click="CancelButton_Click"
                     IsCancel="True"/>
-        </StackPanel>
+        </UniformGrid>
 
         <!-- Prompt label above the list -->
         <TextBlock DockPanel.Dock="Top"

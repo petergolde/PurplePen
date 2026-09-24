@@ -38,25 +38,25 @@
     <DockPanel Margin="12">
 
         <!-- OK / Cancel buttons at the bottom -->
-        <StackPanel DockPanel.Dock="Bottom"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    Spacing="8"
-                    Margin="0,12,0,0">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1"
+                     HorizontalAlignment="Right"
+                     ColumnSpacing="8"
+                     Margin="0,12,0,0">
             <Button x:Name="okButton"
                     Content="{resx:Localize OKButton}"
-                    Width="85"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"
                     IsEnabled="{Binding IsOkEnabled}"
                     Click="OkButton_Click"/>
             <Button x:Name="cancelButton"
                     Content="{resx:Localize CancelButton}"
-                    Width="85"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsCancel="True"
                     Click="CancelButton_Click"/>
-        </StackPanel>
+        </UniformGrid>
 
         <!-- Sample preview group -->
         <HeaderedContentControl DockPanel.Dock="Bottom"
