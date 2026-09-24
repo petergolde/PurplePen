@@ -502,6 +502,16 @@ public partial class MapViewer : UserControl
         return panel;
     }
 
+    // Hands off to PanAndZoom to pan the map until the given button is released. PanAndZoom reports
+    // no mouse moves while panning, so the hover timer must be stopped here; otherwise a timer started
+    // by the last move before the press fires mid-pan and pops up a tooltip. Also hides any tooltip
+    // already showing.
+    private void BeginPanning(Point logicalPosition, MouseButton endingButton)
+    {
+        DisableHoverTimer();
+        panAndZoom.BeginPanning(logicalPosition, endingButton);
+    }
+
     // Receives basic mouse events from the PanAndZoom control and converts them
     // into fancy mouse events (click, drag, hover, etc.).
     private void panAndZoom_MouseActivity(object? sender, BasicMouseEventArgs e)
@@ -510,7 +520,7 @@ public partial class MapViewer : UserControl
             (e.Button == MouseButton.Right || e.Button == MouseButton.Middle))
         {
             // Middle and right mouse buttons always pan the map.
-            panAndZoom.BeginPanning(e.LogicalPixelLocation, e.Button);
+            BeginPanning(e.LogicalPixelLocation, e.Button);
         }
         else {
             switch (e.BasicAction) {
@@ -564,7 +574,7 @@ public partial class MapViewer : UserControl
 
         case MouseDownResult.ImmediatePan:
             // Hand off to PanAndZoom for panning immediately.
-            panAndZoom.BeginPanning(e.LogicalPixelLocation, e.Button);
+            BeginPanning(e.LogicalPixelLocation, e.Button);
             break;
 
         case MouseDownResult.DelayedPan:
@@ -614,8 +624,7 @@ public partial class MapViewer : UserControl
                 if (pixelDistance >= MinDragDistance) {
                     buttonStates[i].IsDown = false;
                     buttonStates[i].CanPan = false;
-                    panAndZoom.BeginPanning(buttonStates[i].DownPixelPosition, ButtonForIndex(i));
-                    DisableHoverTimer();
+                    BeginPanning(buttonStates[i].DownPixelPosition, ButtonForIndex(i));
                 }
             }
 
