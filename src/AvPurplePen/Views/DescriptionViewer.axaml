@@ -11,6 +11,7 @@
              
              DescriptionData="{Binding DescriptionData}"
              Selection="{Binding Selection}"
+             SelectLineCommand="{Binding SelectLineCommand}"
              DescriptionChangeCommand="{Binding DescriptionChangeCommand}">
 
     <ScrollViewer HorizontalScrollBarVisibility="Auto"

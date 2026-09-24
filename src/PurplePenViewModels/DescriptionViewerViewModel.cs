@@ -51,16 +51,21 @@ namespace PurplePen.ViewModels
         // Custom symbol text, keyed by symbol ID. This is used to override the default symbol name in the popup.
         public Dictionary<string, string> CustomSymbolText { get; set; } = new Dictionary<string, string>();
 
-        // The user has clicked on a new line in the description viewer. 
-        partial void OnSelectionChanged(SelectedLines? value)
+        // The user has clicked on a new line in the description viewer. Forwards the new
+        // selection to the Controller. This is a command, rather than a reaction to Selection
+        // changing, so that updating Selection from the Controller's selection doesn't feed back
+        // into the Controller and clobber the selection.
+        //   lines - the lines the user selected, or null for no selection.
+        [RelayCommand]
+        private void SelectLine(SelectedLines? lines)
         {
             if (controller == null)
                 return;
 
-            if (value == null)
+            if (lines == null)
                 controller.SelectDescriptionLine(-1);
             else
-                controller.SelectDescriptionLine(value.FirstLine);
+                controller.SelectDescriptionLine(lines.FirstLine);
         }
 
         // Handles a description change from the popup menu. Forwards the change
