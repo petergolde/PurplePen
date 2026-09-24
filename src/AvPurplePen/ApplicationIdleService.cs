@@ -54,10 +54,71 @@ namespace AvPurplePen
             // never sees their input events — this catches the return from those dialogs.
             WindowBase.IsActiveProperty.Changed.Subscribe(new IsActiveObserver());
 
+            // Choosing a native menu item (the macOS menu bar, or its key equivalents) runs the
+            // item's Click/Command from a native callback without any Avalonia input event,
+            // so hook the Click event of every NativeMenuItem. NativeMenuItem.Click is a plain
+            // CLR event with no class-level equivalent, so the items must be found individually:
+            // any item added to a menu from now on is caught by its Parent changing; items already
+            // in menus built by XAML before this point are caught by walking the application menu
+            // now and each window's menu when it opens.
+            NativeMenuItemBase.ParentProperty.Changed.AddClassHandler<NativeMenuItem>(OnNativeMenuItemParentChanged);
+            Window.WindowOpenedEvent.AddClassHandler<Window>((window, e) => HookNativeMenu(NativeMenu.GetMenu(window)));
+            if (Application.Current != null)
+                HookNativeMenu(NativeMenu.GetMenu(Application.Current));
+
             // Queue an initial idle event so subscribers get notified at startup,
-            // matching WinForms Application.Idle behavior.
-            QueueIdle();
+            // matching WinForms Application.Idle behavior. (initialized must be set first,
+            // or QueueIdle ignores the call.)
             initialized = true;
+            QueueIdle();
+        }
+
+        /// <summary>
+        /// Hooks the Click event of a native menu item when it is added to a menu.
+        /// </summary>
+        /// <param name="item">The menu item whose Parent changed.</param>
+        /// <param name="e">The property change details.</param>
+        private static void OnNativeMenuItemParentChanged(NativeMenuItem item, AvaloniaPropertyChangedEventArgs e)
+        {
+            if (item.Parent != null)
+                HookNativeMenuItem(item);
+        }
+
+        /// <summary>
+        /// Hooks the Click event of every item in a native menu, including submenus.
+        /// </summary>
+        /// <param name="menu">The menu to hook; may be null.</param>
+        private static void HookNativeMenu(NativeMenu? menu)
+        {
+            if (menu == null)
+                return;
+
+            foreach (NativeMenuItemBase itemBase in menu.Items) {
+                if (itemBase is NativeMenuItem item) {
+                    HookNativeMenuItem(item);
+                    HookNativeMenu(item.Menu);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Hooks the Click event of a single native menu item. Safe to call more than once
+        /// for the same item; the handler is only ever attached once.
+        /// </summary>
+        /// <param name="item">The menu item to hook.</param>
+        private static void HookNativeMenuItem(NativeMenuItem item)
+        {
+            item.Click -= OnNativeMenuItemClick;
+            item.Click += OnNativeMenuItemClick;
+        }
+
+        /// <summary>
+        /// Called when any native menu item is chosen. Click is raised just before the item's
+        /// Command executes, so the idle callback (posted at ApplicationIdle priority) runs after it.
+        /// </summary>
+        private static void OnNativeMenuItemClick(object? sender, EventArgs e)
+        {
+            QueueIdle();
         }
 
         /// <summary>
