@@ -582,6 +582,12 @@ public partial class MapViewer : UserControl
     // start for any button that has CanDrag set, and raises Drag for active drags.
     private void HandleMouseMove(BasicMouseEventArgs e)
     {
+        // If we think a button is down but it actually isn't, we missed its release (for example, a
+        // modal dialog appeared while it was down and received the release). Forget that button so a
+        // stale delayed pan or drag doesn't start with no button held.
+        CancelButtonIfReleased(LeftButton, e.LeftButtonPressed);
+        CancelButtonIfReleased(RightButton, e.RightButtonPressed);
+
         lastMouseWorldLocation = e.WorldLocation;
         lastMouseLogicalPixelLocation = e.LogicalPixelLocation;
         MouseLocation = Conv.ToPointF(e.WorldLocation);
@@ -652,6 +658,27 @@ public partial class MapViewer : UserControl
         }
         else if (wasDown) {
             RaiseFancyMouseEvent(e.Button, FancyMouseAction.Up, e.WorldLocation, downPosition);
+        }
+    }
+
+    // If the button at the given index is recorded as down but is not actually pressed, reset its
+    // state, raising DragCancel if a drag was in progress.
+    //   index - button index (LeftButton or RightButton)
+    //   isPressed - whether the button is actually pressed right now
+    private void CancelButtonIfReleased(int index, bool isPressed)
+    {
+        if (!buttonStates[index].IsDown || isPressed)
+            return;
+
+        bool wasDrag = buttonStates[index].IsDragging;
+        buttonStates[index].IsDown = false;
+        buttonStates[index].IsDragging = false;
+        buttonStates[index].CanDrag = false;
+        buttonStates[index].CanPan = false;
+        buttonStates[index].SuppressClick = false;
+
+        if (wasDrag) {
+            RaiseFancyMouseEvent(ButtonForIndex(index), FancyMouseAction.DragCancel, buttonStates[index].DownPosition, buttonStates[index].DownPosition);
         }
     }
 
