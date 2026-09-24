@@ -2871,7 +2871,7 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task OpenSupportWebSite()
         {
-            await Services.WebsiteLauncher.ShowWebsite("http://purple-pen.org#support");
+            await Services.WebsiteLauncher.ShowWebsite("https://discuss.purple-pen.org");
         }
 
         /// <summary>
