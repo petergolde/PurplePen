@@ -69,6 +69,7 @@
             <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
             <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
             <Setter Property="MinHeight" Value="24"/>
+            <Setter Property="Padding" Value="6,0"/>
         </Style>
     </Window.Styles>
 

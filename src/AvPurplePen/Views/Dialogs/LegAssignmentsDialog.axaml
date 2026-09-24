@@ -76,6 +76,7 @@
             <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
             <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
             <Setter Property="MinHeight" Value="24"/>
+            <Setter Property="Padding" Value="12,0"/>
         </Style>
     </Window.Styles>
 
@@ -134,6 +135,12 @@
                   ColumnHeaderHeight="24"
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.AllowAutoHide="False">
+            <DataGrid.Resources>
+                <!-- Read-only text columns use Semi's DataGridCellTextBlockDefaultMargin
+                     (16,0), which puts their text 4px right of the headers and the
+                     editable TextBox cells (both 12). Match them. -->
+                <Thickness x:Key="DataGridCellTextBlockDefaultMargin">12,0</Thickness>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <!-- Branch: read-only, narrow. -->
                 <DataGridTextColumn Header="{x:Static resx:UIText.LegAssignmentsDialog_BranchColumn_HeaderText}"
