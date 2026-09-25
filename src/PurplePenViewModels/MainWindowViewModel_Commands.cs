@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -2901,7 +2902,9 @@ namespace PurplePen.ViewModels
         }
 
         /// <summary>
-        /// Shows the Switch Language dialog and applies the selected language.
+        /// Shows the Switch Language dialog and applies the selected language. If the current description
+        /// language differs from the new program language, and the event has a description language matching
+        /// it, offers to switch the description language too.
         /// </summary>
         [RelayCommand]
         private async Task ShowSwitchLanguageDialog()
@@ -2911,7 +2914,25 @@ namespace PurplePen.ViewModels
             bool result = await Services.DialogService.ShowDialogAsync(vm);
 
             if (result && vm.SelectedLanguage != null) {
-                Services.UILanguage.LanguageCode = vm.SelectedLanguage.Code;
+                CultureInfo newCulture = new CultureInfo(vm.SelectedLanguage.Code);
+                Services.UILanguage.LanguageCode = newCulture.Name;
+
+                if (controller != null) {
+                    string descriptionLanguage = controller.GetDescriptionLanguage();
+                    if (descriptionLanguage != newCulture.Name && controller.HasDescriptionLanguage(newCulture.Name)) {
+                        // The current description language does not match the new program language. Offer to change it to match.
+                        // Setting LanguageCode applies the new culture on a later dispatcher turn, so CurrentUICulture is still
+                        // the old language here. Fetch the question text explicitly in the new language.
+                        string format = MiscText.ResourceManager.GetString(nameof(MiscText.ChangeDescriptionLanguage), newCulture) ?? MiscText.ChangeDescriptionLanguage;
+                        string question = string.Format(format,
+                                                        CultureInfo.GetCultureInfo(descriptionLanguage).NativeName,
+                                                        CultureInfo.GetCultureInfo(newCulture.Name).NativeName);
+                        if (await YesNoQuestion(question, true)) {
+                            controller.SetDescriptionLanguage(newCulture.Name);
+                            controller.DefaultDescriptionLanguage = newCulture.Name;
+                        }
+                    }
+                }
             }
         }
 
