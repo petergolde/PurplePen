@@ -491,6 +491,19 @@ namespace AvUtil
             RaiseEvent(eventArgs);
         }
 
+        // Returns true if the given mouse button is currently pressed, according to the pointer properties.
+        private static bool IsButtonPressed(PointerPointProperties props, MouseButton button)
+        {
+            switch (button) {
+                case MouseButton.Left: return props.IsLeftButtonPressed;
+                case MouseButton.Right: return props.IsRightButtonPressed;
+                case MouseButton.Middle: return props.IsMiddleButtonPressed;
+                case MouseButton.XButton1: return props.IsXButton1Pressed;
+                case MouseButton.XButton2: return props.IsXButton2Pressed;
+                default: return false;
+            }
+        }
+
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
@@ -504,11 +517,21 @@ namespace AvUtil
             PointerPointProperties props = pointer.Properties;
             Point worldPos = PixelToWorld(pointer.Position);
 
+            // If the button that ends panning is no longer held down, we missed its release (for example,
+            // a modal dialog appeared while it was down and received the release). Stop panning now.
+            if (panningInProgress && !IsButtonPressed(props, endPanningButton)) {
+                EndPanning(pointer.Position);
+                if (IsFromScrollBar(e))
+                    return;
+            }
+
             if (panningInProgress) {
                 PanMove(pointer.Position);
             }
             else {
                 BasicMouseEventArgs eventArgs = new BasicMouseEventArgs(BasicMouseActivityEvent, this, MouseButton.None, BasicMouseAction.Move, pointer.Position, worldPos, e.Timestamp);
+                eventArgs.LeftButtonPressed = props.IsLeftButtonPressed;
+                eventArgs.RightButtonPressed = props.IsRightButtonPressed;
                 RaiseEvent(eventArgs);
             }
         }
@@ -958,7 +981,6 @@ namespace AvUtil
         }
 
         // The information sent with a mouse event. 
-        // Note that PanUntilReleased is an OUT -- it is set by the handler of the event to begin panning.
         public class BasicMouseEventArgs: RoutedEventArgs
         {
             public BasicMouseEventArgs(RoutedEvent? routedEvent, object? source, MouseButton button, BasicMouseAction action, Point logicalPixelLocation, Point worldLocation, ulong timeStamp)
@@ -976,6 +998,8 @@ namespace AvUtil
             public Point LogicalPixelLocation;      // location in logical pixels in the control
             public Point WorldLocation;             // location in world coordinates in the control.
             public ulong TimeStamp;                 // When the event occured, in milliseconds
+            public bool LeftButtonPressed;          // Move only: is the left button actually held down?
+            public bool RightButtonPressed;         // Move only: is the right button actually held down?
         }
 
         // Information sent with a ViewportChanging or ViewportChanged event.

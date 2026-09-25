@@ -21,12 +21,11 @@ namespace AvPurplePen.Views
     public partial class AddTextLineDialog : Window
     {
         /// <summary>
-        /// Initializes the dialog and focuses the text entry when it opens.
+        /// Initializes the dialog and its components.
         /// </summary>
         public AddTextLineDialog()
         {
             InitializeComponent();
-            Opened += (s, e) => textBoxText.Focus();
         }
 
         /// <summary>

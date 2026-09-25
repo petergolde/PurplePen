@@ -15,6 +15,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:views="using:AvPurplePen.Views"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -39,24 +40,24 @@
     <DockPanel Margin="12">
 
         <!-- Create / Cancel buttons at the bottom -->
-        <StackPanel DockPanel.Dock="Bottom"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    Spacing="8"
-                    Margin="0,12,0,0">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1"
+                     HorizontalAlignment="Right"
+                     ColumnSpacing="8"
+                     Margin="0,12,0,0">
             <Button x:Name="createButton"
                     Content="{resx:Localize CreateKmlFiles_createButton_Text}"
-                    Width="100"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"
                     Click="CreateButton_Click"/>
             <Button x:Name="cancelButton"
                     Content="{resx:Localize CreateKmlFiles_cancelButton_Text}"
-                    Width="100"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsCancel="True"
                     Click="CancelButton_Click"/>
-        </StackPanel>
+        </UniformGrid>
 
         <!-- Main content: two columns. Left = courses, right = output + folder. -->
         <Grid ColumnDefinitions="*,12,*">
@@ -89,6 +90,7 @@
                                    VerticalAlignment="Center"/>
                         <ComboBox x:Name="filesCombo"
                                   Grid.Row="0" Grid.Column="2"
+                                  avutil:InitialFocus.IsEnabled="True"
                                   HorizontalAlignment="Stretch"/>
 
                         <!-- Row 2: File name prefix -->

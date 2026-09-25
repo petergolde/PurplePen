@@ -36,7 +36,6 @@ namespace AvPurplePen.Views
         public EnterSymbolTextDialog()
         {
             InitializeComponent();
-            Opened += (s, e) => dataGridView.Focus();
             DataContextChanged += OnDataContextChanged;
         }
 

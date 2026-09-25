@@ -36,24 +36,24 @@
     <DockPanel Margin="12">
 
         <!-- Confirm / Cancel buttons at the bottom -->
-        <StackPanel DockPanel.Dock="Bottom"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    Spacing="8"
-                    Margin="0,12,0,0">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1"
+                     HorizontalAlignment="Right"
+                     ColumnSpacing="8"
+                     Margin="0,12,0,0">
             <Button x:Name="buttonOK"
                     Content="{resx:Localize OverwritingOcadFilesDialog_buttonOK_Text}"
-                    Width="100"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"
                     Click="OkButton_Click"/>
             <Button x:Name="buttonCancel"
                     Content="{resx:Localize OverwritingOcadFilesDialog_buttonCancel_Text}"
-                    Width="100"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsCancel="True"
                     Click="CancelButton_Click"/>
-        </StackPanel>
+        </UniformGrid>
 
         <!-- "The following files already exist…" -->
         <TextBlock DockPanel.Dock="Top"

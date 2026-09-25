@@ -49,24 +49,24 @@
                    Margin="0,0,0,16"/>
 
         <!-- Button row -->
-        <StackPanel x:Name="buttonPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    Spacing="10">
+        <UniformGrid x:Name="buttonPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                     Rows="1"
+                     HorizontalAlignment="Center"
+                     ColumnSpacing="10">
 
             <!-- Buttons are created in code-behind based on ViewModel.Buttons -->
             <Button x:Name="okButton" Content="{resx:Localize OKButton}"
-                    Width="85" HorizontalContentAlignment="Center"
+                    MinWidth="85" HorizontalContentAlignment="Center"
                     Click="OkButton_Click" IsVisible="False"/>
             <Button x:Name="yesButton" Content="{resx:Localize YesButton}"
-                    Width="85" HorizontalContentAlignment="Center"
+                    MinWidth="85" HorizontalContentAlignment="Center"
                     Click="YesButton_Click" IsVisible="False"/>
             <Button x:Name="noButton" Content="{resx:Localize NoButton}"
-                    Width="85" HorizontalContentAlignment="Center"
+                    MinWidth="85" HorizontalContentAlignment="Center"
                     Click="NoButton_Click" IsVisible="False"/>
             <Button x:Name="cancelButton" Content="{resx:Localize CancelButton}"
-                    Width="85" HorizontalContentAlignment="Center"
+                    MinWidth="85" HorizontalContentAlignment="Center"
                     Click="CancelButton_Click" IsVisible="False"/>
-        </StackPanel>
+        </UniformGrid>
     </Grid>
 </Window>

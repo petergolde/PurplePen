@@ -161,10 +161,23 @@ namespace PurplePen.ViewModels
                 return;
             }
 
+            await OpenEventFile(fileOpenVM.SelectedFile);
+        }
+
+        /// <summary>
+        /// Loads the named event file and, on success, requests that the main
+        /// window be shown. On failure the controller has already told the user
+        /// why, and the initial screen stays up. Also used when the operating
+        /// system asks Purple Pen to open a file (e.g. a .ppen file double-clicked
+        /// in the macOS Finder) while the initial screen is showing.
+        /// </summary>
+        /// <param name="fileName">Path of the .ppen file to open.</param>
+        public async Task OpenEventFile(string fileName)
+        {
             MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
             Controller controller = new Controller(mainWindowViewModel);
 
-            if (await controller.LoadInitialFile(fileOpenVM.SelectedFile, true)) {
+            if (await controller.LoadInitialFile(fileName, true)) {
                 ShowMainWindowRequested?.Invoke(mainWindowViewModel);
             }
         }

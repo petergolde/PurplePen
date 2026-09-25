@@ -34,6 +34,11 @@ public partial class DescriptionViewer : UserControl
     public static readonly StyledProperty<ICommand?> DescriptionChangeCommandProperty =
         AvaloniaProperty.Register<DescriptionViewer, ICommand?>(nameof(DescriptionChangeCommand));
 
+    // Command invoked when the user clicks to select a new line.
+    // The command parameter is a SelectedLines instance.
+    public static readonly StyledProperty<ICommand?> SelectLineCommandProperty =
+        AvaloniaProperty.Register<DescriptionViewer, ICommand?>(nameof(SelectLineCommand));
+
     private SymbolDB? symbolDB;
     private DescriptionRenderer? renderer;
 
@@ -71,6 +76,13 @@ public partial class DescriptionViewer : UserControl
     public ICommand? DescriptionChangeCommand {
         get => GetValue(DescriptionChangeCommandProperty);
         set => SetValue(DescriptionChangeCommandProperty, value);
+    }
+
+    // Command invoked when the user clicks to select a new line.
+    // The command parameter is a SelectedLines instance.
+    public ICommand? SelectLineCommand {
+        get => GetValue(SelectLineCommandProperty);
+        set => SetValue(SelectLineCommandProperty, value);
     }
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
@@ -138,6 +150,9 @@ public partial class DescriptionViewer : UserControl
         if (!alreadySelected) {
             // Move the selected line.
             Selection = new SelectedLines(hitTest.firstLine, hitTest.lastLine);
+            if (SelectLineCommand != null && SelectLineCommand.CanExecute(Selection)) {
+                SelectLineCommand.Execute(Selection);
+            }
         }
 
         PointerUpdateKind whichButton = pointerPoint.Properties.PointerUpdateKind;

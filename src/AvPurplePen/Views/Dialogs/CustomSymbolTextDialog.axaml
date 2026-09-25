@@ -15,6 +15,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
         xmlns:controls="using:AvPurplePen.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -75,6 +76,7 @@
 
             <!-- Symbol list. Each row: rendered symbol image + name (red if customized). -->
             <ListBox x:Name="listBoxSymbols"
+                     avutil:InitialFocus.IsEnabled="True"
                      Grid.Column="0"
                      ItemsSource="{Binding Symbols}"
                      SelectedItem="{Binding SelectedSymbol, Mode=TwoWay}">
@@ -96,24 +98,24 @@
             <DockPanel Grid.Column="2">
 
                 <!-- OK / Cancel buttons at the bottom of the right column. -->
-                <StackPanel DockPanel.Dock="Bottom"
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Right"
-                            Spacing="8"
-                            Margin="0,12,0,0">
+                <UniformGrid DockPanel.Dock="Bottom"
+                             Rows="1"
+                             HorizontalAlignment="Right"
+                             ColumnSpacing="8"
+                             Margin="0,12,0,0">
                     <Button x:Name="okButton"
                             Content="{resx:Localize OKButton}"
-                            Width="85"
+                            MinWidth="85"
                             HorizontalContentAlignment="Center"
                             IsDefault="True"
                             Click="OkButton_Click"/>
                     <Button x:Name="cancelButton"
                             Content="{resx:Localize CancelButton}"
-                            Width="85"
+                            MinWidth="85"
                             HorizontalContentAlignment="Center"
                             IsCancel="True"
                             Click="CancelButton_Click"/>
-                </StackPanel>
+                </UniformGrid>
 
                 <!-- Detail controls, stacked at the top of the right column. -->
                 <StackPanel DockPanel.Dock="Top" Spacing="6">

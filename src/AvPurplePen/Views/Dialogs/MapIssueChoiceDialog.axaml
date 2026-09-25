@@ -131,7 +131,7 @@
         <Button x:Name="cancelButton"
                 Content="{resx:Localize CancelButton}"
                 HorizontalAlignment="Right"
-                MinWidth="75"
+                MinWidth="85"
                 HorizontalContentAlignment="Center"
                 IsCancel="True"
                 Click="CancelButton_Click"/>

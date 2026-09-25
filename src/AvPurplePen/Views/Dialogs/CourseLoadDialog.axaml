@@ -74,30 +74,31 @@
             <Setter Property="Background" Value="{DynamicResource SemiGrey1}"/>
             <Setter Property="Foreground" Value="{DynamicResource SemiColorText0}"/>
             <Setter Property="MinHeight" Value="24"/>
+            <Setter Property="Padding" Value="12,0"/>
         </Style>
     </Window.Styles>
 
     <DockPanel Margin="12">
 
         <!-- OK / Cancel buttons at the bottom -->
-        <StackPanel DockPanel.Dock="Bottom"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Right"
-                    Spacing="8"
-                    Margin="0,12,0,0">
+        <UniformGrid DockPanel.Dock="Bottom"
+                     Rows="1"
+                     HorizontalAlignment="Right"
+                     ColumnSpacing="8"
+                     Margin="0,12,0,0">
             <Button x:Name="okButton"
                     Content="{resx:Localize OKButton}"
-                    Width="85"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsDefault="True"
                     Click="OkButton_Click"/>
             <Button x:Name="cancelButton"
                     Content="{resx:Localize CancelButton}"
-                    Width="85"
+                    MinWidth="85"
                     HorizontalContentAlignment="Center"
                     IsCancel="True"
                     Click="CancelButton_Click"/>
-        </StackPanel>
+        </UniformGrid>
 
         <!-- Instruction label at the top -->
         <TextBlock DockPanel.Dock="Top"
@@ -123,6 +124,12 @@
                   ColumnHeaderHeight="24"
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.AllowAutoHide="False">
+            <DataGrid.Resources>
+                <!-- Read-only text columns use Semi's DataGridCellTextBlockDefaultMargin
+                     (16,0), which puts their text 4px right of the headers and the
+                     editable TextBox cells (both 12). Match them. -->
+                <Thickness x:Key="DataGridCellTextBlockDefaultMargin">12,0</Thickness>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <!-- Course Name: read-only, wider than the load column. -->
                 <DataGridTextColumn Header="{x:Static resx:UIText.CourseLoad_CourseName_HeaderText}"
