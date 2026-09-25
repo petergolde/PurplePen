@@ -908,21 +908,15 @@ namespace AvUtil
             if (drawing == null)
                 return;
 
-            double newCenterX;
             if (e.ScrollEventType == ScrollEventType.SmallIncrement || e.ScrollEventType == ScrollEventType.SmallDecrement) {
                 // Always step by a small increment, even when the scroll bar value is pinned at an extreme
                 // (or there is no thumb because the viewport is larger than the drawing). SmallIncrement
                 // scrolls right (increasing world X).
-                double delta = viewport.Width * SmallScrollFraction;
-                if (e.ScrollEventType == ScrollEventType.SmallDecrement)
-                    delta = -delta;
-                newCenterX = centerPoint.X + delta;
+                ScrollBySmallIncrements(e.ScrollEventType == ScrollEventType.SmallIncrement ? 1 : -1, 0);
             }
             else {
-                newCenterX = e.NewValue + viewport.Width / 2.0;
+                CenterPoint = new Point(e.NewValue + viewport.Width / 2.0, centerPoint.Y);
             }
-
-            CenterPoint = new Point(newCenterX, centerPoint.Y);
         }
 
         // The user moved the vertical scroll bar: pan the view vertically. The scroll bar value increases
@@ -932,25 +926,35 @@ namespace AvUtil
             if (drawing == null)
                 return;
 
-            Rect vp = viewport;
-            double newCenterY;
             if (e.ScrollEventType == ScrollEventType.SmallIncrement || e.ScrollEventType == ScrollEventType.SmallDecrement) {
                 // Always step by a small increment, even when the scroll bar value is pinned at an extreme
                 // (or there is no thumb because the viewport is larger than the drawing). SmallIncrement
-                // scrolls down (decreasing world Y, since world Y increases upward).
-                double delta = vp.Height * SmallScrollFraction;
-                if (e.ScrollEventType == ScrollEventType.SmallIncrement)
-                    delta = -delta;
-                newCenterY = centerPoint.Y + delta;
+                // scrolls down.
+                ScrollBySmallIncrements(0, e.ScrollEventType == ScrollEventType.SmallIncrement ? 1 : -1);
             }
             else {
+                Rect vp = viewport;
                 Rect bounds = drawing.Bounds;
                 double contentTopY = Math.Max(bounds.Bottom, vp.Bottom);  // largest world Y (top of content)
                 double newTopY = contentTopY - e.NewValue;                // world Y at the top of the viewport
-                newCenterY = newTopY - vp.Height / 2.0;
+                CenterPoint = new Point(centerPoint.X, newTopY - vp.Height / 2.0);
             }
+        }
 
-            CenterPoint = new Point(centerPoint.X, newCenterY);
+        // Scroll the viewport by a number of small increments in each direction, the same step as clicking a
+        // scroll bar arrow. Does nothing if there is no drawing. Any ConstrainedScrolling handler on
+        // ViewportChanging still applies.
+        //   horizontalSteps: number of steps to scroll right (negative scrolls left).
+        //   verticalSteps: number of steps to scroll down (negative scrolls up). World Y increases upward,
+        //                  so scrolling down decreases the center's world Y.
+        public void ScrollBySmallIncrements(int horizontalSteps, int verticalSteps)
+        {
+            if (drawing == null || (horizontalSteps == 0 && verticalSteps == 0))
+                return;
+
+            double newCenterX = centerPoint.X + horizontalSteps * viewport.Width * SmallScrollFraction;
+            double newCenterY = centerPoint.Y - verticalSteps * viewport.Height * SmallScrollFraction;
+            CenterPoint = new Point(newCenterX, newCenterY);
         }
 
         // Always be hittable, even if we don't draw anything. This is needed to get

@@ -64,6 +64,10 @@ namespace AvPurplePen.Views
             AddHandler(KeyDownEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
             AddHandler(KeyUpEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
 
+            // Keys that no focused control used, such as the arrow keys that scroll the map. Bubbling, and not
+            // for handled events, so the focused control always gets first chance at the key.
+            AddHandler(KeyDownEvent, MainWindow_KeyDown, RoutingStrategies.Bubble);
+
             // The window's close button (the X) and the File/Exit menu both route through
             // the ViewModel's Exit command, which prompts to save before allowing the exit.
             DataContextChanged += MainWindow_DataContextChanged;
@@ -161,6 +165,38 @@ namespace AvPurplePen.Views
             if (DataContext is MainWindowViewModel viewModel) {
                 viewModel.ShowHiddenHelpMenus = show;
             }
+        }
+
+        // Handles key presses that bubbled up to the window without being used by the focused control.
+        // Unmodified arrow keys scroll the main map by the same step as clicking a scroll bar arrow.
+        // Plain keys like these belong here rather than in Window.KeyBindings, because Avalonia runs
+        // KeyBindings before the focused control sees the key, so a binding would take the key away
+        // from any control that uses it.
+        //   sender: the window.
+        //   e: the key event arguments.
+        private void MainWindow_KeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.Handled || e.KeyModifiers != KeyModifiers.None)
+                return;
+
+            switch (e.Key) {
+            case Key.Left:
+                mapViewer.ScrollBySmallIncrements(-1, 0);
+                break;
+            case Key.Right:
+                mapViewer.ScrollBySmallIncrements(1, 0);
+                break;
+            case Key.Up:
+                mapViewer.ScrollBySmallIncrements(0, -1);
+                break;
+            case Key.Down:
+                mapViewer.ScrollBySmallIncrements(0, 1);
+                break;
+            default:
+                return;
+            }
+
+            e.Handled = true;
         }
 
         public MousePointerShape MapMousePointerShape {
