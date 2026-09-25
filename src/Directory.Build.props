@@ -2,5 +2,7 @@
   <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <Company>Golde Software</Company>
+    <Copyright>Copyright 2006-2026 Peter Golde</Copyright>
   </PropertyGroup>
 </Project>
