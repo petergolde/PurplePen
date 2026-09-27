@@ -105,13 +105,21 @@ namespace AvPurplePen
 
         /// <summary>
         /// Shows the Switch Language dialog and applies the choice, for the macOS application menu
-        /// declared in App.axaml. Mirrors MainWindowViewModel's ShowSwitchLanguageDialog command,
-        /// for the same reason as <see cref="AboutMenuItem_Click"/>.
+        /// declared in App.axaml. When a main window is up, this defers to its ViewModel's
+        /// ShowSwitchLanguageDialog command, which also offers to switch the event's description
+        /// language. Otherwise (the welcome screen is showing, and there is no event) it shows the
+        /// dialog itself, for the same reason as <see cref="AboutMenuItem_Click"/>.
         /// </summary>
         /// <param name="sender">The menu item that was picked.</param>
         /// <param name="e">Event arguments (unused).</param>
         private async void ProgramLanguageMenuItem_Click(object? sender, EventArgs e)
         {
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop &&
+                desktop.MainWindow is MainWindow { DataContext: MainWindowViewModel mainViewModel }) {
+                await mainViewModel.ShowSwitchLanguageDialogCommand.ExecuteAsync(null);
+                return;
+            }
+
             string currentCode = Services.UILanguage.LanguageCode;
             SwitchLanguageDialogViewModel viewModel = new SwitchLanguageDialogViewModel(
                 currentCode, SwitchLanguageDialogViewModel.CreateDefaultLanguages());

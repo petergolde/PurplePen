@@ -721,6 +721,16 @@ public partial class MapViewer : UserControl
 
     #endregion
 
+    // Scroll the view by a number of small increments in each direction, the same step as clicking a scroll bar
+    // arrow. Hides any tooltip, since the map moves out from under the mouse.
+    //   horizontalSteps: number of steps to scroll right (negative scrolls left).
+    //   verticalSteps: number of steps to scroll down (negative scrolls up).
+    public void ScrollBySmallIncrements(int horizontalSteps, int verticalSteps)
+    {
+        DisableHoverTimer();
+        panAndZoom.ScrollBySmallIncrements(horizontalSteps, verticalSteps);
+    }
+
     // Types of mouse actions.
     public enum FancyMouseAction
     {
