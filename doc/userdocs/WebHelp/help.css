@@ -21,22 +21,23 @@
 
 /* ---- The overall layout ----
  *
- * <body> is a grid with two rows and two columns:
+ * <body> is a grid with two rows and three columns:
  *
- *     header   header
- *     sidebar  topic
+ *     header   header   header
+ *     sidebar  divider  topic
  *
  * The page itself never scrolls; the sidebar and the topic each scroll on their own, like the
- * panes of the old help window.
+ * panes of the old help window. The sidebar's width is --sidebar-width, which help.js changes
+ * when the divider is dragged.
  */
 
 body {
     display: grid;
-    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-columns: var(--sidebar-width) 5px 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-        "header  header"
-        "sidebar topic";
+        "header  header  header"
+        "sidebar divider topic";
     height: 100vh;
     height: 100dvh;   /* On phones, the height without the browser's address bar. */
     overflow: hidden;
@@ -82,10 +83,27 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 0;   /* Lets the panels below scroll instead of stretching the page. */
-    border-right: 1px solid var(--border);
     background: var(--sidebar-background);
     font-family: system-ui, "Segoe UI", Arial, sans-serif;
     font-size: 14px;
+}
+
+/* The strip between the sidebar and the topic. It shows as a line along the sidebar's edge, and
+   highlights when the mouse is over it or it's being dragged. */
+#divider {
+    grid-area: divider;
+    border-left: 1px solid var(--border);
+    cursor: col-resize;
+    touch-action: none;   /* On touch screens, a drag moves the divider instead of scrolling. */
+}
+
+#divider:hover, body.dragging #divider {
+    background: var(--current-background);
+}
+
+/* Keep the resize cursor while dragging, even when the mouse is ahead of the divider. */
+body.dragging {
+    cursor: col-resize;
 }
 
 #topic {
@@ -242,6 +260,10 @@ body {
         display: block;
     }
 
+    #divider {
+        display: none;
+    }
+
     #sidebar {
         display: none;
         grid-area: topic;   /* The same place as the topic, on top of it. */
@@ -259,7 +281,7 @@ body {
 /* ---- Printing: just the topic ---- */
 
 @media print {
-    #help-header, #sidebar {
+    #help-header, #sidebar, #divider {
         display: none;
     }
 

@@ -16,17 +16,19 @@
  *
  *       +------------------------------------------------------------+
  *       | <header>   [menu button]  Purple Pen Help                  |
- *       +--------------------+---------------------------------------+
- *       | <nav id="sidebar"> | <main id="topic">                     |
- *       |  [Contents|Search] |                                       |
- *       |                    |   the topic, exactly as written       |
- *       |  > Getting Started |   in the .htm file                    |
- *       |  v User Interface  |                                       |
- *       |      Selecting     |                                       |
- *       +--------------------+---------------------------------------+
+ *       +--------------------+-+-------------------------------------+
+ *       | <nav id="sidebar"> | | <main id="topic">                   |
+ *       |  [Contents|Search] | |                                     |
+ *       |                    | |   the topic, exactly as written     |
+ *       |  > Getting Started | |   in the .htm file                  |
+ *       |  v User Interface  | |                                     |
+ *       |      Selecting     | |                                     |
+ *       +--------------------+-+-------------------------------------+
+ *                             ^
+ *                             <div id="divider">: drag it to make the sidebar wider or narrower
  *
- * help.css arranges <header>, <nav> and <main> into that grid. The menu button only appears on
- * narrow screens (phones), where the sidebar is hidden until the button is pressed.
+ * help.css arranges <header>, <nav>, the divider and <main> into that grid. The menu button only
+ * appears on narrow screens (phones), where the sidebar is hidden until the button is pressed.
  *
  * THE CONTENTS TREE
  *
@@ -44,6 +46,13 @@
  * after another works like the old Windows help, the chosen tab and the search words are remembered
  * while moving from page to page (in sessionStorage, which lasts until the browser tab is closed).
  *
+ * THE DIVIDER
+ *
+ * Dragging the divider changes the sidebar's width. Every click on a topic loads a new page, which
+ * would put the sidebar back to its usual width, so the dragged width is remembered (in
+ * localStorage, which lasts until the next visit too) and applied to each page as it loads.
+ * Double-clicking the divider goes back to the usual width.
+ *
  * TO ADD A NEW TOPIC
  *
  *   1. Copy an existing .htm file, keeping its <head>, and replace what is inside <main>.
@@ -58,6 +67,11 @@
     // The names under which the chosen tab and search words are remembered between pages.
     const TAB_SETTING = "purplePenHelp.tab";
     const SEARCH_SETTING = "purplePenHelp.search";
+    const WIDTH_SETTING = "purplePenHelp.sidebarWidth";
+
+    // The narrowest the sidebar can be dragged, in pixels, and the widest, as a fraction of the window.
+    const MIN_SIDEBAR_WIDTH = 180;
+    const MAX_SIDEBAR_FRACTION = 0.6;
 
     // Whether startSearch has already loaded the search box on this page. (It has to be declared
     // up here, before the steps below run, because a "let" can't be used before its line.)
@@ -66,6 +80,7 @@
     // help.js is loaded with "defer", so by the time it runs the whole page has been read and
     // <main> exists. These are the steps, in order; each is a function below.
     buildLayout();
+    setUpDivider();
     showCurrentTopic();
     setUpTabs();
     setUpMenuButton();
@@ -90,7 +105,9 @@
                     <ul class="toc">${renderTree(window.helpToc || [])}</ul>
                 </div>
                 <div id="search-panel" class="panel" hidden></div>
-            </nav>`;
+            </nav>
+            <div id="divider" role="separator" aria-orientation="vertical"
+                 title="Drag to resize. Double-click to reset."></div>`;
 
         document.body.insertAdjacentHTML("afterbegin", layout);
     }
@@ -246,6 +263,68 @@
     }
 
 
+    /*
+     * Makes the divider between the sidebar and the topic draggable, and applies the width the
+     * sidebar was last dragged to.
+     *
+     * help.css sizes the sidebar from the CSS variable --sidebar-width, so changing the width is
+     * just a matter of setting that variable on <body>.
+     */
+    function setUpDivider() {
+        const divider = document.getElementById("divider");
+
+        // Use the width from last time, if it was dragged.
+        const savedWidth = readSetting(WIDTH_SETTING, true);
+        if (savedWidth) {
+            setSidebarWidth(Number(savedWidth));
+        }
+
+        // Pressing the mouse button on the divider starts a drag. "Capturing" the pointer sends all
+        // mouse movements to the divider until the button is released, even when the mouse is over
+        // the topic or the tree. Pointer events work the same for a mouse, a finger or a pen.
+        divider.addEventListener("pointerdown", function (event) {
+            event.preventDefault();   // Don't select text while dragging.
+            divider.setPointerCapture(event.pointerId);
+            document.body.classList.add("dragging");
+        });
+
+        // While dragging, the sidebar's right edge follows the mouse. The sidebar starts at the left
+        // edge of the window, so the mouse's distance from that edge is the new width.
+        divider.addEventListener("pointermove", function (event) {
+            if (divider.hasPointerCapture(event.pointerId)) {
+                setSidebarWidth(event.clientX);
+            }
+        });
+
+        // Releasing the button ends the drag; remember the new width for the next page.
+        divider.addEventListener("pointerup", function (event) {
+            divider.releasePointerCapture(event.pointerId);
+            document.body.classList.remove("dragging");
+            const width = parseInt(document.body.style.getPropertyValue("--sidebar-width"), 10);
+            if (width) {
+                saveSetting(WIDTH_SETTING, String(width), true);
+            }
+        });
+
+        // Double-clicking goes back to the usual width, set in help.css.
+        divider.addEventListener("dblclick", function () {
+            document.body.style.removeProperty("--sidebar-width");
+            saveSetting(WIDTH_SETTING, "", true);
+        });
+    }
+
+
+    /*
+     * Sets the sidebar's width in pixels, kept between MIN_SIDEBAR_WIDTH and MAX_SIDEBAR_FRACTION of
+     * the window so that neither the sidebar nor the topic can be squeezed away entirely.
+     */
+    function setSidebarWidth(width) {
+        const maxWidth = Math.max(MIN_SIDEBAR_WIDTH, window.innerWidth * MAX_SIDEBAR_FRACTION);
+        const clampedWidth = Math.round(Math.min(Math.max(width, MIN_SIDEBAR_WIDTH), maxWidth));
+        document.body.style.setProperty("--sidebar-width", clampedWidth + "px");
+    }
+
+
     // ---- Small helpers ----
 
     /*
@@ -276,13 +355,14 @@
     }
 
     /*
-     * Reads a value remembered with saveSetting, or returns null if there isn't one. Browsers can
-     * refuse access to sessionStorage (in some private-browsing modes, for example); then nothing is
-     * remembered, and the help still works.
+     * Reads a value remembered with saveSetting, or returns null if there isn't one. Pass
+     * lasting = true for a value saved with lasting = true. Browsers can refuse access to storage
+     * (in some private-browsing modes, for example); then nothing is remembered, and the help still
+     * works.
      */
-    function readSetting(name) {
+    function readSetting(name, lasting) {
         try {
-            return sessionStorage.getItem(name);
+            return (lasting ? localStorage : sessionStorage).getItem(name);
         }
         catch (e) {
             return null;
@@ -290,11 +370,12 @@
     }
 
     /*
-     * Remembers a value until the browser tab is closed.
+     * Remembers a value until the browser tab is closed or, with lasting = true, until the next
+     * visit as well (in localStorage, kept by the browser for this website).
      */
-    function saveSetting(name, value) {
+    function saveSetting(name, value, lasting) {
         try {
-            sessionStorage.setItem(name, value);
+            (lasting ? localStorage : sessionStorage).setItem(name, value);
         }
         catch (e) {
             // Not remembered; see readSetting.
