@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File/Print Courses...</title>
+<link rel="stylesheet" href="Stylesheet.css">
+<link rel="stylesheet" href="help.css">
+<script src="toc.js" defer></script>
+<script src="help.js" defer></script>
+</head>
+<body>
+<main id="topic" data-pagefind-body>
+<h1>File/Print Courses...</h1>
+
+<p>Prints the courses and underlying map onto a printer. By default, the 
+entire map will be printed. To chose the area that will be printed, use the
+<a href="FileSetPrintArea.htm">File/Set Print Area</a> command.</p>
+<p>Note: Purple Pen prints almost all OCAD map symbols exactly as OCAD would 
+print them. If Purple Pen encounters a <a href="UnsupportedSymbols.htm">symbol 
+in the OCAD map that it cannot print correctly</a>, then it will display a 
+dialog listing the symbols that will be printed correctly.</p>
+<p>&nbsp;</p>
+<p>
+<img alt="Print Courses Dialog" src="PrintCourses.png" ></p>
+<p>This dialog has several options to customize the result of printing.</p>
+<h2>Output section</h2>
+<p>This section shows which printer will be used. Click <strong>Change Printer</strong> to change which printer to use. The paper size and orientation should be set using the <a href="FileSetPrintArea.htm">File/Set Print Area</a> command.</p>
+<h2>Courses section</h2>
+<p>
+    This section shows which courses will be
+    printed. The default setting is for all courses except &quot;All Controls&quot; to be
+    printed. Click the checkboxes next to the courses you wish to print. Click
+    <strong>All</strong> or <strong>None</strong> to quickly select or unselect all
+    of the checkboxes at once. If you are printing a course with variations, click on the course name (not just the checkbox), select <a href="ChooseVariations.htm">Choose Variations...</a> to select how to print the variations.
+</p>
+<h2>Copies section</h2>
+<p><strong>Copies of each course:</strong> How many copies of each course will be printed. </p>
+    <p><strong>Pause printing after each course or part</strong>: If this is checked, then printing will be paused after each course, or part of a course (for courses with a map exchange). This can be useful, for example, to retrieve paper from the printer, feed special paper for different courses, or to flip paper for two sided printing.</p>
+<h2>Appearance section</h2>
+<p>Several things are set in this area:</p>
+    <p><strong>Print area too large</strong>: This setting determines what happens if the <a href="FileSetPrintArea.htm">
+print area</a> is too large to fit on a single sheet of paper. Crop to a single 
+page (the default) will pick the portion of the map that best covers that 
+course. Print on multiple pages will print multiple pages of maps to cover the 
+entire print area.</p>
+    <p><strong>Color Model</strong>: Determines how the colors on the map are converted into colors on the printer:</p>
+    <ul>
+        <li><strong>OCAD Compatible</strong>: Picks the color model based on how OCAD does: the CMYK color model for PostScript and PDF printers, and the RGB color model for other printers. This setting should match OCAD behavior very closely.</li>
+        <li><strong>RGB</strong>: Translates the Cyan-Magenta-Yellow-Black colors in the map to Red-Green-Blue colors using a simple formula. The colors on the printer will typically not match the intended colors exactly. This is the method used by versions of Purple Pen prior to 2.0.</li>
+        <li><strong>CMYK</strong>: The default. Keeps the Cyan-Magenta-Yellow-Black colors as true as possible, using a standard color profile of CMYK colors. This generally produces the most accurate rendition of the intended colors.</li>
+    </ul>
+    <p>
+        <strong>Print Map Exchanges on Same Map</strong>: This setting only appears if a map exchange is present in the event. If this is checked, all parts of the course are printed together, overlapping. If unchecked, a separate map is printed for each part of the course. Typically this should be left unchecked unless you want to see all parts together for some reason.
+    </p>
+<h2>Other buttons</h2>
+<p><strong>Print</strong>: This button prints the courses on the selected 
+printer. The dialog box closes.</p>
+<p><strong>Preview: </strong>Opens a print preview dialog box that shows what 
+will be printed. </p>
+<p><strong>Cancel</strong>: Closes the dialog box without printing anything.</p>
+<p>&nbsp;</p>
+</main>
+</body>
+</html>

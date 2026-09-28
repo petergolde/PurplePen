@@ -127,3 +127,6 @@ loc/po/tar/
 # Random files for local testing.
 /testing
 /tmp
+
+# Pagefind search index for the web help; rebuilt by doc/userdocs/WebHelp/build-search.cmd.
+/doc/userdocs/WebHelp/pagefind/
