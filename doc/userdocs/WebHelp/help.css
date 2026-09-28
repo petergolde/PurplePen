@@ -162,7 +162,7 @@ body {
 /* A folder's line: replace the browser's own triangle with one we can size and align. */
 .toc summary {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     list-style: none;
     cursor: pointer;
 }
@@ -171,10 +171,14 @@ body {
     display: none;
 }
 
+/* The triangle's size is set by font-size; line-height 1 stops a bigger triangle from making the
+   line taller. */
 .toc summary::before {
     content: "\25B8";   /* ▸  closed */
     flex: none;
     width: 16px;
+    font-size: 24px;
+    line-height: 1;
     color: #6b6475;
 }
 
@@ -207,6 +211,15 @@ body {
     --pagefind-ui-scale: 0.75;
     --pagefind-ui-primary: var(--header-background);
     --pagefind-ui-font: system-ui, "Segoe UI", Arial, sans-serif;
+}
+
+/* The space above and below each search result. These start at Pagefind's own values (30px and
+   40px, times the 0.75 scale above). The "#search-panel" in front is what makes this rule win over
+   Pagefind's own rule for the same thing, in pagefind/pagefind-ui.css. */
+#search-panel .pagefind-ui__result {
+    padding-top: 4px;
+    padding-bottom: 12px;
+    border-top-color:#c7c7c7;
 }
 
 

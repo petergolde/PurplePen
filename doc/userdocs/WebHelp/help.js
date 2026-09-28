@@ -206,6 +206,10 @@
                 excerptLength: 20,
                 autofocus: true,
 
+                // How many results to show at first, and how many more each "Load more results"
+                // click adds.
+                pageSize: 10,
+
                 // Search results link to pages by their path within the help, like "/Home.htm".
                 // Putting this page's directory in front makes the links work wherever the help
                 // is published, such as https://purple-pen.org/help/.
