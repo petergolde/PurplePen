@@ -1,0 +1,262 @@
+/*
+ * help.css
+ *
+ * The layout of Purple Pen Help pages: the header, the sidebar (Contents and Search tabs) and the
+ * topic area. help.js adds the header and sidebar to each page; see the comment at the top of
+ * help.js for the overall picture. How the topic text itself looks is in Stylesheet.css.
+ */
+
+/* ---- Colors used in more than one place ---- */
+
+:root {
+    --header-background: #5b2a86;   /* Purple Pen purple */
+    --header-text: #ffffff;
+    --sidebar-background: #f6f4f9;
+    --border: #c8c2d0;
+    --hover-background: #e6e0ee;
+    --current-background: #d3c3e8;
+    --sidebar-width: 300px;
+}
+
+
+/* ---- The overall layout ----
+ *
+ * <body> is a grid with two rows and two columns:
+ *
+ *     header   header
+ *     sidebar  topic
+ *
+ * The page itself never scrolls; the sidebar and the topic each scroll on their own, like the
+ * panes of the old help window.
+ */
+
+body {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "header  header"
+        "sidebar topic";
+    height: 100vh;
+    height: 100dvh;   /* On phones, the height without the browser's address bar. */
+    overflow: hidden;
+    background: #ffffff;
+    color: #000000;
+}
+
+#help-header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    background: var(--header-background);
+    font-family: system-ui, "Segoe UI", Arial, sans-serif;
+}
+
+#help-title {
+    color: var(--header-text);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#help-title:hover {
+    text-decoration: underline;
+}
+
+/* Only shown on narrow screens; see the end of this file. */
+#menu-button {
+    display: none;
+    padding: 2px 8px;
+    border: 1px solid var(--header-text);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--header-text);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;   /* Lets the panels below scroll instead of stretching the page. */
+    border-right: 1px solid var(--border);
+    background: var(--sidebar-background);
+    font-family: system-ui, "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+}
+
+#topic {
+    grid-area: topic;
+    min-width: 0;
+    overflow: auto;
+    padding-bottom: 24px;
+}
+
+
+/* ---- The Contents and Search tabs ---- */
+
+#tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+}
+
+.tab {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background: var(--hover-background);
+}
+
+.tab.selected {
+    border-bottom-color: var(--header-background);
+    font-weight: 600;
+}
+
+.panel {
+    flex: 1;
+    overflow: auto;
+    padding: 8px;
+}
+
+.search-unavailable {
+    margin: 8px;
+}
+
+
+/* ---- The Contents tree ----
+ *
+ * Stylesheet.css gives every list and list item on the page wide margins suited to topic text,
+ * so the tree first switches those off.
+ */
+
+.toc, .toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc li {
+    margin: 0;
+}
+
+/* Each level of the tree is indented a little more than the one it's in. */
+.toc ul {
+    padding-left: 16px;
+}
+
+/* A topic's text lines up with the text of a folder, which has a triangle in front of it. */
+.toc li.topic {
+    padding-left: 16px;
+}
+
+/* A folder's line: replace the browser's own triangle with one we can size and align. */
+.toc summary {
+    display: flex;
+    align-items: baseline;
+    list-style: none;
+    cursor: pointer;
+}
+
+.toc summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc summary::before {
+    content: "\25B8";   /* ▸  closed */
+    flex: none;
+    width: 16px;
+    color: #6b6475;
+}
+
+.toc details[open] > summary::before {
+    content: "\25BE";   /* ▾  open */
+}
+
+.toc a, .toc span {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.toc a:hover {
+    background: var(--hover-background);
+}
+
+/* The page being shown. */
+.toc a.current {
+    background: var(--current-background);
+    font-weight: 600;
+}
+
+
+/* ---- Search results (Pagefind's search box) ---- */
+
+#search-panel .pagefind-ui {
+    --pagefind-ui-scale: 0.75;
+    --pagefind-ui-primary: var(--header-background);
+    --pagefind-ui-font: system-ui, "Segoe UI", Arial, sans-serif;
+}
+
+
+/* ---- Narrow screens (phones) ----
+ *
+ * The sidebar is hidden to leave the whole width for the topic. The menu button in the header
+ * shows it, laid over the left side of the topic; help.js adds the class "sidebar-open" to <body>
+ * while it's showing.
+ */
+
+@media (max-width: 700px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "topic";
+    }
+
+    #menu-button {
+        display: block;
+    }
+
+    #sidebar {
+        display: none;
+        grid-area: topic;   /* The same place as the topic, on top of it. */
+        z-index: 1;
+        width: min(85vw, var(--sidebar-width));
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25);
+    }
+
+    body.sidebar-open #sidebar {
+        display: flex;
+    }
+}
+
+
+/* ---- Printing: just the topic ---- */
+
+@media print {
+    #help-header, #sidebar {
+        display: none;
+    }
+
+    body {
+        display: block;
+        height: auto;
+        overflow: visible;
+    }
+
+    #topic {
+        overflow: visible;
+    }
+}

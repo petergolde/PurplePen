@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "webhelp",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "http-server", "doc/userdocs", "-p", "8080", "-c-1"],
+      "port": 8080
+    }
+  ]
+}

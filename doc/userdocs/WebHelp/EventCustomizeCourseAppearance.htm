@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Event / Customize Appearance</title>
+<link rel="stylesheet" href="Stylesheet.css">
+<link rel="stylesheet" href="help.css">
+<script src="toc.js" defer></script>
+<script src="help.js" defer></script>
+</head>
+<body>
+<main id="topic" data-pagefind-body>
+<h1>Event / Customize Appearance</h1>
+<p>The Customize Appearance command allows changing the appearance of the 
+drawn course. Changes affect the live display, printed courses, and courses 
+exported to OCAD/OOM.</p>
+<p>
+<img alt="Customize Appearance Dialog" src="CustomizeCourseAppearance.png"></p>
+<p>&nbsp;</p>
+<p>The following items allow you to customize the appearance of the course. The 
+&quot;Preview&quot; section shows a preview of what those changes will look like.</p>
+<p>&nbsp;</p>
+<p><strong>Use IOF standard sizes</strong>: If this is checked, Purple Pen uses 
+the IOF standard sizes for control circles, legs, control numbers, and other 
+items on the course. To change those sizes, uncheck this option.</p>
+<p><strong>Control circle diameter</strong>: Sets the <u>outside diameter</u> of control 
+circles to the given size in mm. This also affects the size of the start 
+triangle, finish circle, crossing points, refreshment marking, and first aid 
+markings, which will be scaled in the same ratio. The IOF standard is 6.0 mm in ISOM2000, and 5.35mm in ISOM2017. 
+(Note that ISOM2017 measures the circle diameter from the center of the line, while Purple Pen uses the outside diameter,
+so 5.35mm outside diameter is equivalent to 5.0mm diameter from the line centers.)</p>
+<p><strong>Line width</strong>: Sets the width of lines for legs, control 
+circles, start triangle, and the finish circle. The IOF standard is 0.35 mm.</p>
+    <p><strong>Center dot diameter</strong>: If set to something higher than 0.00m (the IOF standard), places a dot of the indicated diameter in the center of the control circle. Although not typically used, it is useful for certain types of maps.</p>
+<p><strong>Control number height</strong>: Sets the height of digits used for 
+control numbers. The IOF standard is 4.0 mm.</p>
+    <p><strong>Control number style</strong>: Determines the style of the control number. There are four possible styles:
+       <ul>
+           <li><strong>Arial</strong> &mdash; Unbolded in the Arial font. This is specified in the IOF standard defined in ISOM 2017, so use this option if strict adherance to the ISOF 2017 standard is important to you.</li>
+           <li><strong>Arial Bold</strong> &mdash; Boldface in the Arial font. </li>
+           <li><strong>Roboto</strong> &mdash; Unbolded in the Roboto font. This is the default. Although not the IOF standard, the Roboto font is more modern looking, better distinguishes digits such as 8 and 9, 5 and 6, and 
+               matches the font used in the control descriptions.</li>
+           <li><strong>Roboto Bold</strong> &mdash; Boldface in the Roboto font. </li>
+       </ul>
+    </p>
+    <p><strong>White outline around numbers</strong>: If greater than zero, a white outline of the given width is placed around numbers to make them more visible against colored or complex backgrounds.
+    A value between 0.1mm and 0.4mm usually works best.</p>
+    <p><strong>Automatic leg gap size</strong>: If greater than zero, controls how much of a gap to automatically place when one leg crosses another leg. Set this to zero to disable placing automatic gaps in legs.</p>
+    <p><strong>Scale item sizes</strong>: Determines how the item sizes (circle diameter, line width, etc.) are modified based on the selected print scale of the course. There are three possible options:</p>
+    <ul>
+        <li><strong>Do not scale</strong>. The item sizes will always print at the given size on the paper, no matter the print scale. This option was how Purple Pen always worked prior to version 3.1.</li>
+        <li><strong>Relative to map scale</strong>. The item sizes will scale along with the map if the print scale is different than the map scale. For example, if the map scale is 1:10,000,
+                    and the print scale is 1:7,500, then circles, line width, etc. will be 1.333x of the given size. If the print scale is the same as the scale of the underlying map,
+                    then items will print at the given size.
+        </li>
+        <li><strong>Relative to 1:15,000</strong>. The item sizes will scale based on the printing scale relative to a 1:15,000 base resolution, regardless of the scale of the underlying map.
+            For example, if the map is 1:10,000, and also printed at 1:10,000, then circles, line width, etc. will be at 1.5x of the given size. This is consistent with the ISOM2017 mapping specification.
+        </li>
+    </ul>
+    <p><strong>Blend purple with underlying map colors</strong>: 
+        There are three possible settings for this option:
+    </p>
+    <ul>
+        <li><strong>None</strong>: The course lines and control number overlay the map without blending.</li>
+        <li>
+            <strong>Blend</strong>: The course lines and control numbers are blended with the underlying map. This allows features in the map (especially black features)
+            to show through the purple. To prevent blending of control numbers only, set the &quot;white outline around numbers&quot; setting to a value greater than zero.
+        </li>
+        <li><strong>Layer</strong>: The course lines and control numbers are placed in a map layer intermediate to other features on the map. This allows features in the map
+        (especially some line and point features) to print above the purple. To be precise, purple objects that are designated as "lower purple" are placed in a map layer
+        directly above the one selected in "Above map layer". Purple pen attempts to pick a good map layer automatically, but depending on the color table in your map,
+        you may need to adjust the map layer for best results. This option generally produces the best results. It is not available if the underlying map is a bitmap
+        or PDF.</li>
+    </ul>
+    
+    <p><strong>Use purple color from map</strong>: 
+        If this is checked, the color 
+        used for the course will be the same shade of Purple as used in the underlying 
+        OCAD or OOM map. If an image is used instead of an OCAD map, or the Purple color cannot 
+        be determined, a default purple color is used. Uncheck this to specify the 
+        purple color directly.
+    </p>
+<p><strong>Cyan, Magenta, Yellow, Black</strong>: Specifies the percentages of 
+each pigment used to create the purple color, from 0 to 100.</p>
+    <p><strong>Control Descriptions, Color</strong>: Specifies whether control descriptions on the map are displayed in black or purple. The default is black.</p>
+    <p><strong>Use overprint effect for colors marked "overprint"</strong>: Specifies whether a color "blending" or "overprinting" effect is applied for OCAD or OOM colors
+    that have the "overprint" check mark applied to them. (In Open Orienteering Mapper, the option is called "knockout" and behaves in the reverse way). 
+    Since OCAD does not display this result on screen, and its effect on printing is inconsistent, enabling this option
+    may produce bad results with some maps. Purple Pen uses this option for screen display, printing, and PDF export. Turn this option on only if you are sure that 
+    the color table of your map is correctly created. Note that the IOF no longer recommends overprinting or blending colors when printing.</p>
+<p>&nbsp;</p>
+<p><strong>Note:</strong> the sizes of control circles and other feature are 
+calculated based on the scale the map will be printed at. If the circles appear 
+too large or too small, it is likely that the <a href="EventMapFile.htm">map 
+scale</a> or <a href="CourseProperties.htm">print scale</a> is set incorrectly, 
+or (if an image file is used for the map) the <a href="EventMapFile.htm">dots 
+per inch</a> of the image is set incorrectly. This type of error will likely result in the length of the courses being calculated incorrectly as well, so it is highly recommended to fix the scale or dots per inch instead of adjusting the circle sizes.</p>
+</main>
+</body>
+</html>
