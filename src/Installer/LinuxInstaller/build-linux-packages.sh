@@ -29,6 +29,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+REPO_ROOT="$(cd "$SRC_DIR/.." && pwd)"
 
 # shellcheck source=config.sh
 source "$SCRIPT_DIR/config.sh"
@@ -36,6 +37,7 @@ source "$SCRIPT_DIR/config.sh"
 PROJECT_FILE="$SRC_DIR/AvPurplePen/AvPurplePen.csproj"
 VERSION_FILE="$SRC_DIR/PurplePenCore/VersionNumber.cs"
 EXCLUDE_FILE="$SCRIPT_DIR/publish-exclude.txt"
+LICENSE_FILE="$REPO_ROOT/LICENSE"
 DESKTOP_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME.desktop.template"
 MIME_TEMPLATE="$SCRIPT_DIR/$PACKAGE_NAME-mime.xml.template"
 APPRUN_TEMPLATE="$SCRIPT_DIR/AppRun.template"
@@ -252,6 +254,7 @@ Use --skip-appimage to build only the .deb and .rpm."
     [[ -f "$PROJECT_FILE" ]] || die "Cannot find AvPurplePen project at $PROJECT_FILE"
     [[ -f "$DESKTOP_TEMPLATE" ]] || die "Cannot find the desktop entry template at $DESKTOP_TEMPLATE"
     [[ -d "$ICON_DIR" ]] || die "Cannot find the icon directory at $ICON_DIR"
+    [[ -f "$LICENSE_FILE" ]] || die "Cannot find the license file at $LICENSE_FILE"
 
     if [[ "$REGISTER_MIME_TYPE" == "true" ]]; then
         [[ -f "$MIME_TEMPLATE" ]] \
@@ -1036,13 +1039,15 @@ $PACKAGE_URL
 
 $COPYRIGHT
 
-Licensed under the $PACKAGE_LICENSE license. The full license text is in the
-source distribution.
+Licensed under the $PACKAGE_LICENSE license, reproduced in full below.
 
 This package bundles the .NET runtime, which is distributed by Microsoft under
 the MIT license, together with its native dependencies (SkiaSharp, HarfBuzz,
 PDFium). Their licenses are those of the respective upstream projects.
 EOF
+
+    echo "" >> "$doc_dir/copyright"
+    cat "$LICENSE_FILE" >> "$doc_dir/copyright"
 }
 
 # ---------------------------------------------------------------------------

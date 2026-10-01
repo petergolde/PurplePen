@@ -954,17 +954,6 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="CommandNameText.*.Designer.cs">
-      <DependentUpon>CommandNameText.resx</DependentUpon>
-    </Compile>
-    <Compile Update="MiscText.*.Designer.cs">
-      <DependentUpon>MiscText.resx</DependentUpon>
-    </Compile>
-    <Compile Update="StatusBarText.*.Designer.cs">
-      <DependentUpon>StatusBarText.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Update="CommandNameText.*.resx">
       <DependentUpon>CommandNameText.resx</DependentUpon>
     </EmbeddedResource>
