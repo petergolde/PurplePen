@@ -3871,4 +3871,7 @@ Purple Pen cannot install this kind of file for you. Open it yourself to install
   <data name="NewEventWizard_finishButton_Text" xml:space="preserve">
     <value>_Finish</value>
   </data>
+  <data name="HelpButton_ToolTip" xml:space="preserve">
+    <value>Help</value>
+  </data>
 </root>

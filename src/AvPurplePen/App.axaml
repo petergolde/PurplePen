@@ -3,6 +3,7 @@
              x:Class="AvPurplePen.App"
              xmlns:local="using:AvPurplePen"
              xmlns:resx="using:AvPurplePen"
+             xmlns:controls="using:AvPurplePen.Controls"
              xmlns:semi="https://irihi.tech/semi"
              >
              <!-- Theme variant is set in App.axaml.cs -->
@@ -104,6 +105,58 @@
         <FontWeight x:Key="TabItemSelectedFontWeight">Regular</FontWeight>
         <!-- Tab strip: compact height (default is 32) -->
         <x:Double x:Key="TabItemCardDefaultHeight">24</x:Double>
+
+        <!-- ============ Help button (Controls/HelpButton.cs) ============ -->
+        <!-- Default theme for HelpButton: a blue circle around a blue question mark, like the
+             macOS help button. The "?" is drawn as a path (not text) so it is centered exactly
+             regardless of font metrics. Canvas coordinates are pixels at the default 26px size.
+             Foreground colors the ring and the "?"; Background fills the circle. -->
+        <ControlTheme x:Key="{x:Type controls:HelpButton}" TargetType="controls:HelpButton">
+            <Setter Property="Width" Value="26"/>
+            <Setter Property="Height" Value="26"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="{DynamicResource SemiColorPrimary}"/>
+            <Setter Property="Background" Value="{DynamicResource InputActiveBackground}"/>
+            <Setter Property="ToolTip.Tip" Value="{resx:Localize HelpButton_ToolTip}"/>
+            <Setter Property="AutomationProperties.Name" Value="{resx:Localize HelpButton_ToolTip}"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Viewbox Stretch="Uniform">
+                        <Canvas Width="26" Height="26">
+                            <Ellipse Name="PART_Circle"
+                                     Canvas.Left="0.86" Canvas.Top="0.86"
+                                     Width="24.28" Height="24.28"
+                                     Fill="{TemplateBinding Background}"
+                                     Stroke="{TemplateBinding Foreground}"
+                                     StrokeThickness="1.72"/>
+                            <!-- Hook and stem of the question mark -->
+                            <Path Data="M 9.91,10.39 A 3.09,3.09 0 1 1 13,13.48 L 13,15.61"
+                                  Stroke="{TemplateBinding Foreground}"
+                                  StrokeThickness="2.0"
+                                  StrokeLineCap="Round"
+                                  StrokeJoin="Round"/>
+                            <!-- Dot of the question mark -->
+                            <Ellipse Canvas.Left="12" Canvas.Top="17.4"
+                                     Width="2.0" Height="2.0"
+                                     Fill="{TemplateBinding Foreground}"/>
+                        </Canvas>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter>
+
+            <Style Selector="^:pointerover">
+                <Setter Property="Foreground" Value="{DynamicResource SemiColorPrimaryPointerover}"/>
+                <Setter Property="Background" Value="{DynamicResource MenuItemPointeroverBackground}"/>
+            </Style>
+            <Style Selector="^:pressed">
+                <Setter Property="Foreground" Value="{DynamicResource SemiColorPrimaryActive}"/>
+                <Setter Property="Background" Value="{DynamicResource SemiColorPrimaryLight}"/>
+            </Style>
+            <Style Selector="^:disabled">
+                <Setter Property="Foreground" Value="{DynamicResource SemiColorDisabledText}"/>
+            </Style>
+        </ControlTheme>
 
     </Application.Resources>
 

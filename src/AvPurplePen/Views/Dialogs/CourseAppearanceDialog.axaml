@@ -10,7 +10,7 @@
 
     Layout: Item Sizes group on the left; Purple Color, Control Descriptions and
     Advanced groups stacked on the right; full-width Preview group along the
-    bottom; OK / Cancel buttons bottom-right.
+    bottom; Help button bottom-left; OK / Cancel buttons bottom-right.
 
     Migrated from WinForms PurplePen/CourseAppearanceDialog.cs.
 -->
@@ -19,6 +19,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
         xmlns:avutil="using:AvUtil"
+        xmlns:controls="using:AvPurplePen.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -43,25 +44,30 @@
 
     <DockPanel Margin="12">
 
-        <!-- OK / Cancel buttons at the bottom -->
-        <UniformGrid DockPanel.Dock="Bottom"
-                     Rows="1"
-                     HorizontalAlignment="Right"
-                     ColumnSpacing="8"
-                     Margin="0,12,0,0">
-            <Button x:Name="okButton"
-                    Content="{resx:Localize OKButton}"
-                    MinWidth="85"
-                    HorizontalContentAlignment="Center"
-                    IsDefault="True"
-                    Click="OkButton_Click"/>
-            <Button x:Name="cancelButton"
-                    Content="{resx:Localize CancelButton}"
-                    MinWidth="85"
-                    HorizontalContentAlignment="Center"
-                    IsCancel="True"
-                    Click="CancelButton_Click"/>
-        </UniformGrid>
+        <!-- Help button (lower left) and OK / Cancel buttons (lower right) at the bottom -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,*,Auto"
+              Margin="0,12,0,0">
+            <controls:HelpButton Grid.Column="0"
+                                 VerticalAlignment="Center"
+                                 HelpTopic="EventCustomizeCourseAppearance.htm"/>
+            <UniformGrid Grid.Column="2"
+                         Rows="1"
+                         ColumnSpacing="8">
+                <Button x:Name="okButton"
+                        Content="{resx:Localize OKButton}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        Click="OkButton_Click"/>
+                <Button x:Name="cancelButton"
+                        Content="{resx:Localize CancelButton}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsCancel="True"
+                        Click="CancelButton_Click"/>
+            </UniformGrid>
+        </Grid>
 
         <!-- Preview group: full width, custom-drawn sample -->
         <HeaderedContentControl DockPanel.Dock="Bottom"

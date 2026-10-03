@@ -3643,6 +3643,15 @@ namespace AvPurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help.
+        /// </summary>
+        public static string HelpButton_ToolTip {
+            get {
+                return ResourceManager.GetString("HelpButton_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Increment.
         /// </summary>
         public static string IncrementButton {
