@@ -222,6 +222,7 @@ namespace Map_Skia.Tests
         public void RecordingMapRender()
         {
             // Area symbols use pattern brushes; also tests the lightened (intensity) variant.
+            // Renders both directly and through a RecordingGraphicsTarget.
             string fullname = TestUtil.GetTestFile("skia_render\\isomarea.txt");
             bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), true, false, true, false, false, 6, 12, 0, true);
             Assert.IsTrue(ok);

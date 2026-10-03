@@ -37,28 +37,35 @@ namespace Map_Skia.Tests
         void CheckTest(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), true, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), true, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF, alsoTestRecording: true);
+            Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
+        }
+
+        void CheckTestNoRecording(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
+        {
+            string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), true, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF, alsoTestRecording: false);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
         void CheckTestAntiAlias(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), true, false, testLightenedColor, roundtripToOcad, true, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), true, false, testLightenedColor, roundtripToOcad, true, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF, alsoTestRecording: true);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
         void CheckTestNoPatternBitmaps(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), false, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), false, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF, alsoTestRecording: true);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
         void CheckTestOverprinting(string filename, bool testLightenedColor, bool roundtripToOcad, int minOcadVersion, int maxOcadVersion)
         {
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), false, true, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, new RenderOptions(), false, true, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF, alsoTestRecording: true);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
@@ -71,7 +78,7 @@ namespace Map_Skia.Tests
             renderOpts.colorEndDrawInclusive = stopLayer;
 
             string fullname = TestUtil.GetTestFile("skia_render\\" + filename);
-            bool ok = RenderingUtil.VerifyTestFile(fullname, renderOpts, false, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF);
+            bool ok = RenderingUtil.VerifyTestFile(fullname, renderOpts, false, false, testLightenedColor, roundtripToOcad, false, minOcadVersion, maxOcadVersion, MAX_PIXEL_DIFF, alsoTestRecording: true);
             Assert.IsTrue(ok, string.Format("Rendering test {0} did not compare correctly.", filename), ok);
         }
 
@@ -710,19 +717,19 @@ namespace Map_Skia.Tests
         [Test]
         public void LayoutBitmapObjects()
         {
-            CheckTest("layoutbitmap11.txt", true, true, 11, 12);
+            CheckTestNoRecording("layoutbitmap11.txt", true, true, 11, 12);
         }
 
         [Test]
         public void TemplateRendering()
         {
-            CheckTest("template.txt", true, false, 9, 12);
+            CheckTestNoRecording("template.txt", true, false, 9, 12);
         }
 
         [Test]
         public void TemplateRendering2()
         {
-            CheckTest("template2.txt", true, false, 9, 12);
+            CheckTestNoRecording("template2.txt", true, false, 9, 12);
         }
 
         [Test]
@@ -740,13 +747,13 @@ namespace Map_Skia.Tests
         [Test, NonParallelizable]
         public void TemplateFraction1()
         {
-            CheckTest("template_fraction1.txt", false, true, 9, 12);
+            CheckTestNoRecording("template_fraction1.txt", false, true, 9, 12);
         }
 
         [Test, NonParallelizable]
         public void TemplateFraction2()
         {
-            CheckTest("template_fraction2.txt", false, true, 9, 12);
+            CheckTestNoRecording("template_fraction2.txt", false, true, 9, 12);
         }
 
         [Test]

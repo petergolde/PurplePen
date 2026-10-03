@@ -15,6 +15,7 @@ namespace Map_Skia.Tests
     using TestingUtils;
     using Map_Skia;
     using System.Diagnostics;
+    using NUnit.Framework;
 
 
     public static class RenderingUtil
@@ -93,10 +94,36 @@ namespace Map_Skia.Tests
             BitmapTestUtil.CompareBitmapBaseline(skBitmap, baselineFileName, maxPixelDiff);
         }
 
-        // Verifies a test file. Returns true on success, false on failure. In the failure case, 
+        // Render the map and compare against the baseline. If alsoTestRecording is true, then also render
+        // the map through a RecordingGraphicsTarget (played back onto a bitmap) and compare that against the
+        // same baseline. The non-recording rendering is checked first, so a failure in the recorded rendering
+        // indicates a problem with recording/playback.
+        static void RenderAndCompare(Map map, Size size, RectangleF mapArea, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool antiAlias, float intensity,
+                                     string pngFileName, int maxPixelDiff, bool alsoTestRecording)
+        {
+            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, intensity);
+            CompareBitmapBaseline(bitmapNew, pngFileName, maxPixelDiff);
+            bitmapNew.Dispose();
+
+            if (alsoTestRecording) {
+                Skia_Bitmap bitmapRecorded = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, intensity, true);
+                try {
+                    CompareBitmapBaseline(bitmapRecorded, pngFileName, maxPixelDiff);
+                }
+                catch (AssertionException) {
+                    Assert.Fail($"Rendering through RecordingGraphicsTarget did not match baseline '{Path.GetFileName(pngFileName)}', but direct rendering did.");
+                }
+                finally {
+                    bitmapRecorded.Dispose();
+                }
+            }
+        }
+
+        // Verifies a test file. Returns true on success, false on failure. In the failure case,
         // a difference bitmap is written out.
-        // If useRecording is true, the map is drawn through a RecordingGraphicsTarget and played back.
-        public static bool VerifyTestFile(string filename, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, bool antiAlias, int minOcadVersion, int maxOcadVersion, int maxPixelDiff, bool useRecording = false)
+        // If alsoTestRecording is true, the map is also drawn through a RecordingGraphicsTarget and played back,
+        // and that rendering is also compared against the baseline (except for the OCAD round-trip renderings).
+        public static bool VerifyTestFile(string filename, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, bool antiAlias, int minOcadVersion, int maxOcadVersion, int maxPixelDiff, bool alsoTestRecording = false)
         {
 
             string pngFileName;
@@ -137,21 +164,12 @@ namespace Map_Skia.Tests
             Map map = new Map(new Skia_TextMetrics(), new Skia_FileLoader(directoryName));
             InputOutput.ReadFile(mapFileName, map);
 
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-
-            // Draw into a new bitmap.
-            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 1.0F, useRecording);
-            sw.Stop();
-            //Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
-
-            CompareBitmapBaseline(bitmapNew, pngFileName, maxPixelDiff);
+            // Draw into a new bitmap and compare.
+            RenderAndCompare(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 1.0F, pngFileName, maxPixelDiff, alsoTestRecording);
 
             if (testLightenedColor) {
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Skia_Bitmap bitmapLight = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 0.4F, useRecording);
-                CompareBitmapBaseline(bitmapLight, lightenedPngFileName, maxPixelDiff);
-                bitmapLight.Dispose();
+                RenderAndCompare(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 0.4F, lightenedPngFileName, maxPixelDiff, alsoTestRecording);
             }
 
             if (roundtripToOcadFile) {
@@ -164,15 +182,14 @@ namespace Map_Skia.Tests
                     InputOutput.ReadFile(ocadFileName, map);
 
                     // Draw into a new bitmap.
-                    bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 1.0F);
+                    Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 1.0F);
 
                     CompareBitmapBaseline(bitmapNew, pngFileName, maxPixelDiff);
+                    bitmapNew.Dispose();
 
                     File.Delete(ocadFileName);
                 }
             }
-
-            bitmapNew.Dispose();
 
             return true;
         }
