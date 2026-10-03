@@ -42,20 +42,45 @@ namespace Map_Skia.Tests
             }
         }
 
-        static Skia_Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool antiAlias, float intensity)
+        // Same as RenderingTest, but draws into a RecordingGraphicsTarget, then plays the recording back twice
+        // into two separate bitmaps, each of which is compared against the baseline.
+        public static void RecordingRenderingTest(int width, RectangleF drawingRectangle, bool inverted, string pngFileName, Action<IGraphicsTarget> draw)
+        {
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget()) {
+                draw(recorder);
+                recorder.EndRecording();
+
+                for (int i = 0; i < 2; ++i) {
+                    RenderingTest(width, drawingRectangle, inverted, pngFileName, grTarget => recorder.Playback(grTarget));
+                }
+            }
+        }
+
+        static Skia_Bitmap RenderBitmap(Map map, Size bitmapSize, RectangleF mapArea, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool antiAlias, float intensity, bool useRecording = false)
         {
             var grTarget = new Skia_BitmapGraphicsTarget(bitmapSize.Width, bitmapSize.Height, false, CmykColor.FromCmyk(0, 0, 0, 0), mapArea, true, null, intensity);
             using (grTarget) {
-                grTarget.PushAntiAliasing(antiAlias);
-
                 RenderOptions renderOpts = renderOptions;
                 renderOpts.usePatternBitmaps = usePatternBitmaps;
                 renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;
                 renderOpts.blendOverprintedColors = useOverprinting;
                 renderOpts.minResolution = mapArea.Width / (float)bitmapSize.Width;
 
-                using (map.Read())
-                    map.Draw(grTarget, mapArea, renderOpts, null);
+                if (useRecording) {
+                    // Record the drawing, then play it back onto the bitmap.
+                    using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(intensity)) {
+                        recorder.PushAntiAliasing(antiAlias);
+                        using (map.Read())
+                            map.Draw(recorder, mapArea, renderOpts, null);
+                        recorder.EndRecording();
+                        recorder.Playback(grTarget);
+                    }
+                }
+                else {
+                    grTarget.PushAntiAliasing(antiAlias);
+                    using (map.Read())
+                        map.Draw(grTarget, mapArea, renderOpts, null);
+                }
 
                 return ((Skia_Bitmap)grTarget.FinishBitmap());
             }
@@ -70,7 +95,8 @@ namespace Map_Skia.Tests
 
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
         // a difference bitmap is written out.
-        public static bool VerifyTestFile(string filename, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, bool antiAlias, int minOcadVersion, int maxOcadVersion, int maxPixelDiff)
+        // If useRecording is true, the map is drawn through a RecordingGraphicsTarget and played back.
+        public static bool VerifyTestFile(string filename, RenderOptions renderOptions, bool usePatternBitmaps, bool useOverprinting, bool testLightenedColor, bool roundtripToOcadFile, bool antiAlias, int minOcadVersion, int maxOcadVersion, int maxPixelDiff, bool useRecording = false)
         {
 
             string pngFileName;
@@ -115,7 +141,7 @@ namespace Map_Skia.Tests
             sw.Start();
 
             // Draw into a new bitmap.
-            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 1.0F);
+            Skia_Bitmap bitmapNew = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 1.0F, useRecording);
             sw.Stop();
             //Console.WriteLine("Rendered bitmap '{0}' to output '{4}' rect={1} size={2} in {3} ms", mapFileName, mapArea, size, sw.ElapsedMilliseconds, pngFileName);
 
@@ -123,7 +149,7 @@ namespace Map_Skia.Tests
 
             if (testLightenedColor) {
                 string lightenedPngFileName = Path.Combine(Path.GetDirectoryName(pngFileName), Path.GetFileNameWithoutExtension(pngFileName) + "_light.png");
-                Skia_Bitmap bitmapLight = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 0.4F);
+                Skia_Bitmap bitmapLight = RenderBitmap(map, size, mapArea, renderOptions, usePatternBitmaps, useOverprinting, antiAlias, 0.4F, useRecording);
                 CompareBitmapBaseline(bitmapLight, lightenedPngFileName, maxPixelDiff);
                 bitmapLight.Dispose();
             }

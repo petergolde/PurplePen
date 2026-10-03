@@ -62,6 +62,12 @@ namespace PurplePen.Graphics2D
             return FromRgba(red, green, blue, alpha);
         }
 
+        // Create a copy of this color.
+        public CmykColor Clone()
+        {
+            return new CmykColor(cyan, magenta, yellow, black, alpha);
+        }
+
         public float Cyan
         {
             get { return cyan; }
