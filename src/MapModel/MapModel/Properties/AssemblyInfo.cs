@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Golde Software")]
 [assembly: AssemblyProduct("Purple Pen")]
-[assembly: AssemblyCopyright("Copyright ©  2007-2012")]
+[assembly: AssemblyCopyright("Copyright 2006-2026 Peter Golde")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

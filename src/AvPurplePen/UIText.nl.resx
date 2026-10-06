@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutForm_copyrightLabel_Text" xml:space="preserve">
-    <value>Copyright © by Peter Golde</value>
+    <value>Copyright 2006-2026 Peter Golde</value>
   </data>
   <data name="AboutForm_freeLabel_Text" xml:space="preserve">
     <value>Purple Pen is gratis software en mag worden gekopieerd en gedeeld.</value>
