@@ -33,7 +33,7 @@ public class GlobalTestSetup
         services.AddSingleton<IFileLoaderProvider, GdiPlus_FileLoaderProvider>();
 #endif        
         services.AddSingleton<IPdfWriter, PdfWriter>();
-        services.AddSingleton<IPdfLoadingStatus, PdfLoadingUI>();
+        services.AddSingleton<IPdfLoadingStatus, PurplePen.Tests.HeadlessPdfLoadingStatus>();
 
         serviceProvider = services.BuildServiceProvider();
         Services.RegisterServiceProvider(serviceProvider);
