@@ -13,6 +13,7 @@ namespace PurplePen
     {
         private string pdfFileName;
         private string pngFileName;
+        private string cachePublishDestination;   // cache name a conversion in progress is published under, or null
         private ConversionStatus status;
         private string conversionOutput;
         private StringBuilder stderrOutput;
@@ -92,7 +93,13 @@ namespace PurplePen
                 return status;
             }
 
-            return BeginUncachedConversion(cacheFileName, Resolution);
+            // Convert into a file of this conversion's own and publish it under the
+            // cache name once it is complete. The cache is shared by every map with
+            // the same contents, so writing the image in place would let one
+            // conversion read or delete what another is still writing.
+            cachePublishDestination = cacheFileName;
+            string partialFileName = cacheFileName + "." + Guid.NewGuid().ToString("N") + ".tmp";
+            return BeginUncachedConversion(partialFileName, Resolution);
         }
 
         // Try to begin conversion into bitmap. 
@@ -150,23 +157,81 @@ namespace PurplePen
             }
         }
 
+        // Records the converter's result when it exits, and announces it.
+        //
+        // Runs on a thread pool thread, as the completion callback of the
+        // converter process. Nothing may propagate out of it: an exception there
+        // is unhandled and takes the whole process down. The completion event is
+        // raised whatever happens on the way, because callers wait for it before
+        // they look at the result.
         private void ProcessExited(object sender, EventArgs e)
         {
-            process.WaitForExit();
+            try {
+                process.WaitForExit();
 
-            lock (stderrOutput) {
-                conversionOutput = stderrOutput.ToString();
+                lock (stderrOutput) {
+                    conversionOutput = stderrOutput.ToString();
+                }
+
+                status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
+                process.Dispose();
+                process = null;
+
+                if (status == ConversionStatus.Success && cachePublishDestination != null)
+                    PublishToCache();
+
+                if (status == ConversionStatus.Failure && !string.IsNullOrWhiteSpace(pngFileName)) {
+                    // A half-written image is worth removing, but the converter or
+                    // a virus scanner may still hold it open, and it matters less
+                    // than reporting the conversion's outcome.
+                    try {
+                        File.Delete(pngFileName);
+                    }
+                    catch (IOException) {
+                    }
+                    catch (UnauthorizedAccessException) {
+                    }
+                }
             }
+            catch (Exception ex) {
+                if (status == ConversionStatus.Working)
+                    status = ConversionStatus.Failure;
+                if (string.IsNullOrEmpty(conversionOutput))
+                    conversionOutput = ex.Message;
+            }
+            finally {
+                if (ConversionCompleted != null)
+                    ConversionCompleted(this, EventArgs.Empty);
+            }
+        }
 
-            status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
-            process.Dispose();
-            process = null;
+        // Gives a finished conversion its cache name.
+        //
+        // The move is atomic, so the cache never names a partly written image. A
+        // conversion of the same map that finished first has already produced an
+        // equivalent image, so its result is kept and this one discarded.
+        private void PublishToCache()
+        {
+            string destination = cachePublishDestination;
+            cachePublishDestination = null;
 
-            if (status == ConversionStatus.Failure && !string.IsNullOrWhiteSpace(pngFileName))
-                File.Delete(pngFileName);
+            try {
+                File.Move(pngFileName, destination);
+                pngFileName = destination;
+            }
+            catch (IOException) {
+                if (File.Exists(destination)) {
+                    try {
+                        File.Delete(pngFileName);
+                    }
+                    catch (IOException) {
+                    }
+                    catch (UnauthorizedAccessException) {
+                    }
 
-            if (ConversionCompleted != null)
-                ConversionCompleted(this, EventArgs.Empty);
+                    pngFileName = destination;
+                }
+            }
         }
 
         internal string FindPdfConverterExe()
