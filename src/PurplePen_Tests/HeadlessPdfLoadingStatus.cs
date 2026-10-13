@@ -14,6 +14,10 @@ namespace PurplePen.Tests
     // blocks on the completion signal directly. PdfLoadingUI cannot be used
     // unattended: on a failed conversion it shows an error and then waits for a
     // user to press Cancel, which never happens on a build machine.
+    //
+    // One instance covers one conversion, so it is registered transient, as the
+    // interactive implementation is. Tests convert PDFs in parallel, and a shared
+    // instance's signal does not say which conversion finished.
     class HeadlessPdfLoadingStatus : IPdfLoadingStatus
     {
         // Long enough for a large map to rasterize, short enough that a converter
@@ -32,21 +36,12 @@ namespace PurplePen.Tests
         public bool ShowLoadingStatus(string fileName)
         {
             if (!completed.Wait(conversionTimeout)) {
-                lock (sync) {
-                    completed.Reset();
-                }
-
                 throw new TimeoutException(string.Format(
                     "Converting '{0}' did not report completion within {1}.", fileName, conversionTimeout));
             }
 
             lock (sync) {
-                bool result = succeeded;
-
-                // The service is a singleton, so leave the signal clear for any
-                // later conversion.
-                completed.Reset();
-                return result;
+                return succeeded;
             }
         }
 
