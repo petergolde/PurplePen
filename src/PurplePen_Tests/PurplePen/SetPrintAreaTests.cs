@@ -256,7 +256,7 @@ namespace PurplePen.Tests
             }
 
             bool success = controller.CreateOcadFiles(settings);
-            Assert.IsTrue(success);
+            Assert.IsTrue(success, ui.output.ToString());
 
             for (int i = 0; i < expectedOcadFiles.Length; ++i) {
                 Map newMap = new Map(new Skia_TextMetrics(), null);

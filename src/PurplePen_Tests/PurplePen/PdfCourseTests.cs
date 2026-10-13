@@ -49,7 +49,7 @@ namespace PurplePen.Tests
             }
 
             success = controller.CreateCoursePdfs(settings);
-            Assert.IsTrue(success);
+            Assert.IsTrue(success, ui.output.ToString());
 
             for (int i = 0; i < expectedFiles.Length; ++i) {
                 CheckPdfDump(expectedFiles[i], expectedDumps[i]);
