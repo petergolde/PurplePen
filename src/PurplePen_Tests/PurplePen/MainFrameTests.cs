@@ -46,7 +46,7 @@ using System.Threading.Tasks;
 
 namespace PurplePen.Tests
 {
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public sealed class MainFrameTests: IDisposable
     {
         MainFrame mainFrame;

@@ -47,7 +47,7 @@ using System.Threading.Tasks;
 
 namespace PurplePen.Tests
 {
-    [TestClass]
+    [TestClass, DoNotParallelize]
     public sealed class CompatibilityTests: TestFixtureBase, IDisposable
     {
         MainFrame mainFrame;
