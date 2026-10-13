@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.IO;
@@ -10,16 +11,35 @@ namespace DotSpatial.Projections.Tests
 {
     static class FunctionLoader
     {
-        [DllImport("Kernel32.dll")]
+        [DllImport("Kernel32.dll", SetLastError = true)]
         private static extern IntPtr LoadLibrary(string path);
 
-        [DllImport("Kernel32.dll")]
+        [DllImport("Kernel32.dll", SetLastError = true)]
         private static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
 
+        // Loads one exported function from a native library and returns it as a
+        // delegate of type T. A library that cannot be loaded, or an entry point
+        // that is not present, is reported with the path, the name and the
+        // underlying Win32 error, which is the only thing that identifies a
+        // missing dependency of the library itself.
+        //
+        // Parameters:
+        //   dllPath - full path of the native library to load.
+        //   functionName - name of the exported function to bind.
         public static Delegate LoadFunction<T>(string dllPath, string functionName)
         {
-            var hModule = LoadLibrary(dllPath);
-            var functionAddress = GetProcAddress(hModule, functionName);
+            IntPtr hModule = LoadLibrary(dllPath);
+            if (hModule == IntPtr.Zero) {
+                throw new DllNotFoundException(string.Format("Could not load '{0}': {1}",
+                    dllPath, new Win32Exception(Marshal.GetLastWin32Error()).Message));
+            }
+
+            IntPtr functionAddress = GetProcAddress(hModule, functionName);
+            if (functionAddress == IntPtr.Zero) {
+                throw new EntryPointNotFoundException(string.Format("'{0}' has no entry point '{1}': {2}",
+                    dllPath, functionName, new Win32Exception(Marshal.GetLastWin32Error()).Message));
+            }
+
             return Marshal.GetDelegateForFunctionPointer(functionAddress, typeof(T));
         }
     }
