@@ -61,7 +61,6 @@
     <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
     <ProjectReference Include="..\MapModel\Map_GDIPlus\Map_GDIPlus.csproj" />
     <ProjectReference Include="..\MapModel\Map_SkiaStd\Map_SkiaStd.csproj" />
-    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
     <ProjectReference Include="..\PurplePenCore\PurplePenCore.csproj" />
     <ProjectReference Include="..\PurplePen\PurplePen.csproj" />
     <ProjectReference Include="..\Testing\TestUtil.GdiPlus\TestUtil.GdiPlus.csproj" />
@@ -128,5 +127,25 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <!-- PdfConverter is a standalone exe tool that PdfMapFile launches by name
+       from beside its own assembly, not a compile-time dependency. A
+       ProjectReference would contribute PdfConverter.dll without the apphost,
+       leaving every PDF conversion in the tests unable to find the converter.
+       Mirrors AvPurplePen.csproj. -->
+  <PropertyGroup>
+    <PdfConverterOutputDir>..\PdfConverter\bin\$(Configuration)\net10.0\</PdfConverterOutputDir>
+  </PropertyGroup>
+
+  <Target Name="BuildPdfConverter" BeforeTargets="Build">
+    <MSBuild Projects="..\PdfConverter\PdfConverter.csproj" Targets="Restore;Build" Properties="Configuration=$(Configuration);TargetFramework=net10.0;RuntimeIdentifier=;SelfContained=;PublishDir=;PublishReadyToRun=" />
+  </Target>
+
+  <Target Name="CopyPdfConverterToBuildOutput" AfterTargets="Build" DependsOnTargets="BuildPdfConverter">
+    <ItemGroup>
+      <PdfConverterBuildFiles Include="$(PdfConverterOutputDir)**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PdfConverterBuildFiles)" DestinationFiles="@(PdfConverterBuildFiles->'$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
 
 </Project>

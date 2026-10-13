@@ -110,7 +110,7 @@
   </PropertyGroup>
 
   <Target Name="BuildPdfConverter" BeforeTargets="Build;Publish">
-    <MSBuild Projects="..\PdfConverter\PdfConverter.csproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=net10.0;RuntimeIdentifier=;SelfContained=;PublishDir=;PublishReadyToRun=" />
+    <MSBuild Projects="..\PdfConverter\PdfConverter.csproj" Targets="Restore;Build" Properties="Configuration=$(Configuration);TargetFramework=net10.0;RuntimeIdentifier=;SelfContained=;PublishDir=;PublishReadyToRun=" />
   </Target>
 
   <!-- Copy PdfConverter output to AvPurplePen output directory after build. -->
