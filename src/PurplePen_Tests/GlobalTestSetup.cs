@@ -34,9 +34,7 @@ public class GlobalTestSetup
 #endif        
         services.AddSingleton<IPdfWriter, PdfWriter>();
         services.AddSingleton<IPdfConverter, PdfConverterService>();
-        // Transient, as in the app: PdfLoadingUI holds per-conversion state, and tests run in parallel,
-        // so a shared instance lets one test's conversion close another test's dialog (which then never closes).
-        services.AddTransient<IPdfLoadingStatus, PdfLoadingUI>();
+        services.AddTransient<IPdfLoadingStatus, PurplePen.Tests.HeadlessPdfLoadingStatus>();
 
         serviceProvider = services.BuildServiceProvider();
         Services.RegisterServiceProvider(serviceProvider);
