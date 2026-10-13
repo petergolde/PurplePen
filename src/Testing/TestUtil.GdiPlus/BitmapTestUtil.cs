@@ -116,20 +116,23 @@ namespace TestingUtils
 
             baselineFile = TestUtil.GetSpecificFileName(baselineFile);
 
+            Bitmap difference = null;
+
             if (!File.Exists(baselineFile))
                 different = true;
             else {
                 using (Bitmap bmBaseline = (Bitmap)Image.FromFile(baselineFile)) {
-                    Bitmap diff = CompareBitmaps(bmNew, bmBaseline, Color.LightPink, Color.Transparent, maxPixelDifference);
-                    different = (diff != null);
-                    if (diff != null)
-                        diff.Dispose();
+                    difference = CompareBitmaps(bmNew, bmBaseline, Color.LightPink, Color.Transparent, maxPixelDifference);
+                    different = (difference != null);
                 }
             }
 
             // Show the dialog.
             if (different) {
                 if (TestUtil.SilentRun) {
+                    // Nobody is watching, so leave the evidence on disk instead:
+                    // what was rendered, and where it differs from the baseline.
+                    SaveComparison(bmNew, difference, baselineFile);
                     fail = true;
                 }
                 else {
@@ -149,9 +152,38 @@ namespace TestingUtils
             else
                 bmNew.Dispose();
 
+            if (difference != null)
+                difference.Dispose();
+
             // Clean up and fail the test if desired.
             if (fail)
                 Assert.Fail(string.Format("Bitmap compare against baseline file '{0}' failed", Path.GetFileName(baselineFile)));
+        }
+
+        // Writes what a failed comparison produced next to the baseline, so that an
+        // unattended run leaves something to look at.
+        //
+        // Parameters:
+        //   bmNew - the bitmap that was rendered.
+        //   difference - the differences against the baseline, or null when the
+        //     baseline file was missing altogether.
+        //   baselineFile - full path of the baseline the comparison used.
+        private static void SaveComparison(Bitmap bmNew, Bitmap difference, string baselineFile)
+        {
+            string directory = Path.GetDirectoryName(baselineFile);
+            string stem = Path.GetFileNameWithoutExtension(baselineFile);
+
+            try {
+                bmNew.Save(Path.Combine(directory, stem + "_actual.png"), ImageFormat.Png);
+                if (difference != null)
+                    difference.Save(Path.Combine(directory, stem + "_diff.png"), ImageFormat.Png);
+            }
+            catch (IOException) {
+                // Evidence is a convenience; failing to write it must not replace
+                // the comparison's own result with an unrelated error.
+            }
+            catch (UnauthorizedAccessException) {
+            }
         }
 
         // Same, but uses a "base file name".
