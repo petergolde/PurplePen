@@ -117,6 +117,12 @@ namespace TestingUtils
 
                         using (SKBitmap diff = CompareBitmaps(bmNew, bmBaseline, Color.LightPink, Color.Transparent, maxPixelDifference)) {
                             different = (diff != null);
+
+                            if (different && TestUtil.SilentRun) {
+                                // Nobody is watching, so leave the evidence on disk
+                                // instead: what was rendered, and where it differs.
+                                SaveComparison(bmNew, diff, baselineFile);
+                            }
                         }
                     }
                 }
@@ -136,6 +142,40 @@ namespace TestingUtils
 
             if (fail)
                 Assert.Fail($"Bitmap compare against baseline file '{Path.GetFileName(baselineFile)}' failed");
+        }
+
+        // Writes what a failed comparison produced next to the baseline, so that an
+        // unattended run leaves something to look at.
+        //
+        // Parameters:
+        //   bmNew - the bitmap that was rendered.
+        //   difference - the differences against the baseline.
+        //   baselineFile - full path of the baseline the comparison used.
+        private static void SaveComparison(SKBitmap bmNew, SKBitmap difference, string baselineFile)
+        {
+            string directory = Path.GetDirectoryName(baselineFile);
+            string stem = Path.GetFileNameWithoutExtension(baselineFile);
+
+            try {
+                Write(bmNew, Path.Combine(directory, stem + "_actual.png"));
+                if (difference != null)
+                    Write(difference, Path.Combine(directory, stem + "_diff.png"));
+            }
+            catch (IOException) {
+                // Evidence is a convenience; failing to write it must not replace
+                // the comparison's own result with an unrelated error.
+            }
+            catch (UnauthorizedAccessException) {
+            }
+        }
+
+        // Encodes one bitmap as a PNG at the given path.
+        private static void Write(SKBitmap bitmap, string path)
+        {
+            using (SKData data = bitmap.Encode(SKEncodedImageFormat.Png, 100))
+            using (FileStream stream = new FileStream(path, FileMode.Create, FileAccess.Write)) {
+                data.SaveTo(stream);
+            }
         }
 
         // Save bmNew to a temporary PNG beside baselineFile, synchronously run the platform-specific
