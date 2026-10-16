@@ -26,7 +26,7 @@ namespace Map_PDF.Tests
             PdfCreation.CreatePdfAndPng(pdfFileName, pngFileName, 850, 1100, useCmyk, draw);
 
             // Load PNG
-            using (SKBitmap bitmapNew = SKBitmap.Decode(pngFileName))
+            using (SKBitmap bitmapNew = SKBitmap.Decode(File.ReadAllBytes(pngFileName)))
             {
                 BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
             }
@@ -43,7 +43,7 @@ namespace Map_PDF.Tests
             PdfCreation.CreatePdfAndPngUsingCopiedPage(pdfFileName, pngFileName, importedPdf, importedPage, draw);
 
             // Load PNG
-            using (SKBitmap bitmapNew = SKBitmap.Decode(pngFileName)) {
+            using (SKBitmap bitmapNew = SKBitmap.Decode(File.ReadAllBytes(pngFileName))) {
                 BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
             }
 
@@ -60,7 +60,7 @@ namespace Map_PDF.Tests
                                                               paperSize, sourceRectangleInInches, destRectangleInInches, draw);
 
             // Load PNG
-            using (SKBitmap bitmapNew = SKBitmap.Decode(pngFileName)) {
+            using (SKBitmap bitmapNew = SKBitmap.Decode(File.ReadAllBytes(pngFileName))) {
                 BitmapTestUtil.CompareBitmapBaseline(bitmapNew, baselineFileName);
             }
 
