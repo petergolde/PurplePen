@@ -342,6 +342,13 @@ namespace PurplePen
                     // for is the one it is already in.
                     byte[] data = (imageFormat == special.imageBitmap.GetOriginalFormat()) ? special.imageData : null;
 
+                    // A JPEG, though, can be put together in ways the program reading the map
+                    // need not handle: four colour channels rather than three, a progressive
+                    // arrangement, or an orientation that PurplePen does not itself apply when
+                    // it draws the image. Encoding such a one afresh is what settles it.
+                    if (data != null && imageFormat == GraphicsBitmapFormat.JPEG && !JpegDataProber.IsPlain(data))
+                        data = null;
+
                     if (!bitmapsToWrite.ContainsKey(name))
                         bitmapsToWrite.Add(name, new BitmapToWrite() { Name = name, FullPath = path, Bitmap = special.imageBitmap, Format = imageFormat, Data = data });
                 }
