@@ -104,7 +104,7 @@ namespace Map_PDF.Tests
                         map.Draw(grTarget, mapArea, renderOpts, null);
                 });
 
-            return SKBitmap.Decode(pngFileName);
+            return SKBitmap.Decode(File.ReadAllBytes(pngFileName));
         }
 
         // Verifies a test file. Returns true on success, false on failure. In the failure case, 
