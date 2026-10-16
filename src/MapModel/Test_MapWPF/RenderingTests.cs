@@ -189,11 +189,11 @@ namespace TestWpfMap
             mapFileName = Path.Combine(directoryName, mapFileName);
             pngFileName = Path.Combine(directoryName, pngFileName);
             geodeFileName = Path.Combine(directoryName,
-                                         Path.GetFileNameWithoutExtension(mapFileName) + "_temp.geode");
+                                         Path.GetFileNameWithoutExtension(filename) + "_temp.geode");
             ocadFileName = Path.Combine(directoryName,
-                                         Path.GetFileNameWithoutExtension(mapFileName) + "_temp.ocd");
+                                         Path.GetFileNameWithoutExtension(filename) + "_temp.ocd");
             newBitmapName = Path.Combine(directoryName,
-                                        Path.GetFileNameWithoutExtension(pngFileName) + "_new.png");
+                                        Path.GetFileNameWithoutExtension(filename) + "_new.png");
 
             File.Delete(geodeFileName);
             File.Delete(ocadFileName);
