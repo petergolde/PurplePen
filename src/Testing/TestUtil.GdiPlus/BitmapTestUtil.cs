@@ -114,7 +114,11 @@ namespace TestingUtils
             // Is the file different than the baseline?
             bool different = false, fail = false;
 
-            baselineFile = TestUtil.GetSpecificFileName(baselineFile);
+            // A baseline that does not exist yet is a difference like any other, and
+            // leaves the rendering on disk to be adopted as one.
+            string specificBaselineFile = TestUtil.GetSpecificFileName(baselineFile, throwOnNotFound: false);
+            if (specificBaselineFile != null)
+                baselineFile = specificBaselineFile;
 
             if (!File.Exists(baselineFile))
                 different = true;
