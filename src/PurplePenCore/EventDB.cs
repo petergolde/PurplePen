@@ -2323,10 +2323,17 @@ namespace PurplePen
 
                 xmloutput.WriteStartElement("image-data");
                 xmloutput.WriteAttributeString("format", Util.ImageFormatText(imageFormat));
-                MemoryStream stm = new MemoryStream();
-                imageBitmap.WriteToStream(imageFormat, stm, 100);
-                stm.Flush();
-                byte[] bytes = stm.ToArray();
+
+                byte[] bytes;
+                if (imageData != null && imageFormat == imageBitmap.GetOriginalFormat()) {
+                    bytes = imageData;
+                }
+                else {
+                    MemoryStream stm = new MemoryStream();
+                    imageBitmap.WriteToStream(imageFormat, stm, 100);
+                    stm.Flush();
+                    bytes = stm.ToArray();
+                }
                 xmloutput.WriteBase64(bytes, 0, bytes.Length);
                 xmloutput.WriteEndElement();
             }
