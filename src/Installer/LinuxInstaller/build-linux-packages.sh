@@ -972,7 +972,7 @@ validate_mime_definition() {
     output="$(update-mime-database "$probe" 2>&1 || true)"
     rm -rf "$probe"
 
-    if printf '%s\n' "$output" | grep -q '^Error'; then
+    if grep -q '^Error' <<< "$output"; then
         die "The generated MIME definition was rejected by update-mime-database:
 
 $(printf '%s\n' "$output" | grep '^Error' | sed 's/^/    /')
@@ -1926,7 +1926,7 @@ verify_deb() {
 
     # The executable must be executable, or the package installs and then fails
     # to launch with "Permission denied".
-    printf '%s\n' "$contents" | grep -qE "^-rwxr-xr-x .*\.$INSTALL_PREFIX/$APP_NAME\$" \
+    grep -qE "^-rwxr-xr-x .*\.$INSTALL_PREFIX/$APP_NAME\$" <<< "$contents" \
         || die "$INSTALL_PREFIX/$APP_NAME is missing or not mode 0755 in the .deb."
 
     # A group- or world-writable file in a package installed as root is a local
@@ -1945,13 +1945,13 @@ This usually means the build was staged on a filesystem that does not store
 Unix permissions. Set BUILD_DIR to a native Linux filesystem."
 
     # The launcher must be a symlink pointing into the payload.
-    printf '%s\n' "$contents" | grep -q "usr/bin/$PACKAGE_NAME -> $INSTALL_PREFIX/$APP_NAME\$" \
+    grep -q "usr/bin/$PACKAGE_NAME -> $INSTALL_PREFIX/$APP_NAME\$" <<< "$contents" \
         || die "/usr/bin/$PACKAGE_NAME is not a symlink to $INSTALL_PREFIX/$APP_NAME in the .deb."
 
-    printf '%s\n' "$contents" | grep -q "usr/share/applications/$PACKAGE_NAME.desktop\$" \
+    grep -q "usr/share/applications/$PACKAGE_NAME.desktop\$" <<< "$contents" \
         || die "The desktop entry is missing from the .deb."
 
-    printf '%s\n' "$contents" | grep -q "usr/share/metainfo/$APPSTREAM_ID.metainfo.xml\$" \
+    grep -q "usr/share/metainfo/$APPSTREAM_ID.metainfo.xml\$" <<< "$contents" \
         || die "The AppStream metainfo is missing from the .deb."
 
     # Every file must be owned by root:root, not by the account that ran the
@@ -1964,7 +1964,7 @@ Unix permissions. Set BUILD_DIR to a native Linux filesystem."
     # syntactically valid rather than merely present.
     local field
     for field in Package Version Architecture Depends Description; do
-        dpkg-deb --field "$DEB_FILE" "$field" | grep -q . \
+        [[ -n "$(dpkg-deb --field "$DEB_FILE" "$field")" ]] \
             || die "The .deb control file has no $field field."
     done
 
@@ -1976,14 +1976,14 @@ Unix permissions. Set BUILD_DIR to a native Linux filesystem."
     if [[ "$SETUP_REPO" == "true" ]]; then
         local form
         for form in gpg asc; do
-            printf '%s\n' "$contents" | grep -q "$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.$form\$" \
+            grep -q "$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.$form\$" <<< "$contents" \
                 || die "The repository key ($KEYRING_BASENAME.$form) is missing from the .deb."
         done
 
         # Nothing under /etc: the sources file is written by the postinst, and
         # shipping it instead would make it a conffile that prompts the user
         # during an upgrade.
-        if printf '%s\n' "$contents" | grep -qE '\./etc/'; then
+        if grep -qE '\./etc/' <<< "$contents"; then
             die "The .deb ships a file under /etc; the repository configuration must be written by the postinst instead."
         fi
 
@@ -1996,11 +1996,11 @@ Unix permissions. Set BUILD_DIR to a native Linux filesystem."
         postrm="$(dpkg-deb --info "$DEB_FILE" postrm 2>/dev/null)" \
             || die "The .deb has no postrm."
 
-        printf '%s' "$postinst" | grep -qF "$PUBLISH_BASE_URL/$DEB_REPO_SUBDIR" \
+        grep -qF "$PUBLISH_BASE_URL/$DEB_REPO_SUBDIR" <<< "$postinst" \
             || die "The .deb postinst does not carry the repository URL."
-        printf '%s' "$postinst" | grep -qF "Suites: $PACKAGE_SUITES" \
+        grep -qF "Suites: $PACKAGE_SUITES" <<< "$postinst" \
             || die "The .deb postinst does not subscribe to '$PACKAGE_SUITES'."
-        printf '%s' "$postrm" | grep -qF 'rm -f "$REPO_FILE"' \
+        grep -qF 'rm -f "$REPO_FILE"' <<< "$postrm" \
             || die "The .deb postrm does not remove the sources file."
 
         info "Repository setup: $PACKAGE_SUITES, key $KEYRING_BASENAME, sources written by postinst"
@@ -2031,7 +2031,7 @@ verify_rpm() {
     listing="$(rpm -qpvl "$RPM_FILE" 2>/dev/null)" \
         || die "rpm could not read back the package it just built."
 
-    printf '%s\n' "$listing" | grep -qE "^-rwxr-xr-x .* $INSTALL_PREFIX/$APP_NAME\$" \
+    grep -qE "^-rwxr-xr-x .* $INSTALL_PREFIX/$APP_NAME\$" <<< "$listing" \
         || die "$INSTALL_PREFIX/$APP_NAME is missing or not mode 0755 in the .rpm."
 
     # Group- or world-writable files, same reasoning and same character
@@ -2044,15 +2044,15 @@ verify_rpm() {
     # The launcher must have survived as a symlink; rpm records link targets
     # separately from file contents, and a spec that listed it wrongly would
     # produce a regular file holding the target path as text.
-    printf '%s\n' "$listing" | grep -q "^lrwxrwxrwx .* /usr/bin/$PACKAGE_NAME -> $INSTALL_PREFIX/$APP_NAME\$" \
+    grep -q "^lrwxrwxrwx .* /usr/bin/$PACKAGE_NAME -> $INSTALL_PREFIX/$APP_NAME\$" <<< "$listing" \
         || die "/usr/bin/$PACKAGE_NAME is not a symlink to $INSTALL_PREFIX/$APP_NAME in the .rpm."
 
     local files
     files="$(rpm -qp --list "$RPM_FILE" 2>/dev/null)"
-    printf '%s\n' "$files" | grep -qx "/usr/share/applications/$PACKAGE_NAME.desktop" \
+    grep -qx "/usr/share/applications/$PACKAGE_NAME.desktop" <<< "$files" \
         || die "The desktop entry is missing from the .rpm."
 
-    printf '%s\n' "$files" | grep -qx "/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml" \
+    grep -qx "/usr/share/metainfo/$APPSTREAM_ID.metainfo.xml" <<< "$files" \
         || die "The AppStream metainfo is missing from the .rpm."
 
     local parsed_version
@@ -2072,7 +2072,7 @@ AutoReqProv must be off; check write_spec."
     if [[ "$SETUP_REPO" == "true" ]]; then
         local form
         for form in gpg asc; do
-            printf '%s\n' "$files" | grep -qx "$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.$form" \
+            grep -qx "$KEYRING_INSTALL_DIR/$KEYRING_BASENAME.$form" <<< "$files" \
                 || die "The repository key ($KEYRING_BASENAME.$form) is missing from the .rpm.
 Check the %files list in write_spec."
         done
@@ -2083,9 +2083,9 @@ Check the %files list in write_spec."
         local scripts
         scripts="$(rpm -qp --scripts "$RPM_FILE" 2>/dev/null)"
 
-        printf '%s' "$scripts" | grep -qF "$PUBLISH_BASE_URL/$RPM_REPO_SUBDIR" \
+        grep -qF "$PUBLISH_BASE_URL/$RPM_REPO_SUBDIR" <<< "$scripts" \
             || die "The .rpm %post does not carry the repository URL."
-        printf '%s' "$scripts" | grep -qF "rpm --import $KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc" \
+        grep -qF "rpm --import $KEYRING_INSTALL_DIR/$KEYRING_BASENAME.asc" <<< "$scripts" \
             || die "The .rpm %post does not import the signing key."
 
         # The beta section must be enabled exactly when this build is a
@@ -2093,7 +2093,7 @@ Check the %files list in write_spec."
         # stable channel or push prereleases at everyone.
         local want_beta=0
         [[ "$PACKAGE_SUITES" == *"$BETA_CHANNEL"* ]] && want_beta=1
-        printf '%s' "$scripts" | grep -qF "enabled=$want_beta" \
+        grep -qF "enabled=$want_beta" <<< "$scripts" \
             || die "The .rpm %post does not set the $BETA_CHANNEL section to enabled=$want_beta."
 
         info "Repository setup: $PACKAGE_SUITES, key imported by %post, .repo written by %post"
@@ -2195,7 +2195,7 @@ that came from the install tree."
 Without it the AppImage will not start on a host that has no ICU, which is the
 whole reason for bundling it."
 
-        LD_LIBRARY_PATH="$root/usr/lib" ldd "$icu_lib" 2>/dev/null | grep -q 'not found' \
+        grep -q 'not found' <<< "$(LD_LIBRARY_PATH="$root/usr/lib" ldd "$icu_lib" 2>/dev/null)" \
             && die "The bundled ICU has unresolved dependencies of its own."
 
         info "Bundled ICU: $(basename "$icu_lib")"
@@ -2271,7 +2271,7 @@ show_deps() {
     while IFS= read -r lib; do
         [[ -n "$lib" ]] || continue
         # Skip anything the payload ships itself.
-        if printf '%s\n' "$bundled" | grep -qx "$lib"; then
+        if grep -qx "$lib" <<< "$bundled"; then
             continue
         fi
 
