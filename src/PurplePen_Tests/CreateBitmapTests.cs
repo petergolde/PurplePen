@@ -46,7 +46,7 @@ namespace PurplePen.Tests
             }
 
             bool success = await controller.LoadInitialFile(file, true);
-            Assert.IsTrue(success);
+            Assert.IsTrue(success, ui.output.ToString());
 
             controller.SetCourseAppearance(appearance);
             if (controller.LowerPurpleMapLayer != null)
