@@ -500,7 +500,7 @@ namespace PurplePen.Tests
         public async Task ExportCsv2()
         {
             await Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
-            string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.csv");
+            string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch2_temp.csv");
             string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline2.csv");
 
             var teamAssignment = new RelayVariations(eventDB, CourseId(4), new RelaySettings(101, 143, 6));
@@ -536,7 +536,7 @@ namespace PurplePen.Tests
             Dictionary<string, string> exceptions = ExportXmlVersion3.TestFileExceptionMap();
 
             await Setup(TestUtil.GetTestFile("relay\\relay.ppen"));
-            string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch_temp.xml");
+            string tempOutputFile = TestUtil.GetTestFile("relay\\doublebranch2_temp.xml");
             string baselineFile = TestUtil.GetTestFile("relay\\doublebranch_baseline2.xml");
 
             var teamAssignment = new RelayVariations(eventDB, CourseId(4), new RelaySettings(101, 143, 6));
