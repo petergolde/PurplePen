@@ -29,7 +29,7 @@ namespace PurplePen.Tests
                     canvas.Scale(horizontalScale, yAxisIncreasesUpward ? -verticalScale : verticalScale);
                     canvas.Translate(-rectangle.Left, yAxisIncreasesUpward ? -rectangle.Bottom : -rectangle.Top);
 
-                    using (Skia_GraphicsTarget graphicsTarget = new Skia_GraphicsTarget(canvas))
+                    using (Skia_GraphicsTarget graphicsTarget = new Skia_GraphicsTarget(canvas, false))
                         draw(graphicsTarget);
                 }
             }
@@ -48,7 +48,7 @@ namespace PurplePen.Tests
                 SKImageInfo imageInfo = new SKImageInfo(bitmap.Width, bitmap.Height, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
                 using (SKSurface surface = SKSurface.Create(imageInfo, bitmapData.Scan0, bitmapData.Stride)) {
                     SKCanvas canvas = surface.Canvas;
-                    using (Skia_GraphicsTarget graphicsTarget = new Skia_GraphicsTarget(canvas))
+                    using (Skia_GraphicsTarget graphicsTarget = new Skia_GraphicsTarget(canvas, false))
                         draw(graphicsTarget);
                 }
             }

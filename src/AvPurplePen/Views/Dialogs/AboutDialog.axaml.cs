@@ -65,7 +65,9 @@ namespace AvPurplePen.Views
         {
             // Drawing in design mode causes the designer to crash.
             e.Canvas.Clear(SKColors.White);
-            LogoDrawing.DrawPurplePenLogo(new Skia_GraphicsTarget(e.Canvas), new RectangleF(0, 0, Convert.ToSingle(e.LogicalSize.Width), Convert.ToSingle(e.LogicalSize.Height)));
+            using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(e.Canvas, false)) {
+                LogoDrawing.DrawPurplePenLogo(grTarget, new RectangleF(0, 0, Convert.ToSingle(e.LogicalSize.Width), Convert.ToSingle(e.LogicalSize.Height)));
+            }
         }
     }
 }

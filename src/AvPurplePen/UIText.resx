@@ -3874,4 +3874,31 @@ Purple Pen cannot install this kind of file for you. Open it yourself to install
   <data name="HelpButton_ToolTip" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="PrintPreviewDialog_Text" xml:space="preserve">
+    <value>Print Preview</value>
+  </data>
+  <data name="PrintPreviewDialog_firstPageButton_ToolTip" xml:space="preserve">
+    <value>First page</value>
+  </data>
+  <data name="PrintPreviewDialog_previousPageButton_ToolTip" xml:space="preserve">
+    <value>Previous page</value>
+  </data>
+  <data name="PrintPreviewDialog_pageNumberLabel_Text" xml:space="preserve">
+    <value>Page {0} of {1}</value>
+  </data>
+  <data name="PrintPreviewDialog_nextPageButton_ToolTip" xml:space="preserve">
+    <value>Next page</value>
+  </data>
+  <data name="PrintPreviewDialog_lastPageButton_ToolTip" xml:space="preserve">
+    <value>Last page</value>
+  </data>
+  <data name="PrintPreviewDialog_fitPageButton_Text" xml:space="preserve">
+    <value>Fit Page</value>
+  </data>
+  <data name="PrintPreviewDialog_noPagesLabel_Text" xml:space="preserve">
+    <value>There are no pages to show.</value>
+  </data>
+  <data name="CloseButton" xml:space="preserve">
+    <value>Close</value>
+  </data>
 </root>

@@ -23,7 +23,10 @@ namespace AvUtil
     // resolution requested and raised an event when the full resolution drawing is available.
     //
     // Adapts an IThreadsafeSkiaDrawing to an IAvaloniaDrawing by caching the result of the drawing function in a bitmap.
-    public class CachedDrawing: IAvaloniaDrawing
+    //
+    // The cached bitmaps are only released by Dispose, so the owner must Dispose a CachedDrawing when it
+    // is no longer used (e.g., when replacing it with a new drawing, or when the control showing it goes away).
+    public class CachedDrawing: IAvaloniaDrawing, IDisposable
     {
         private const int FullRenderSize = 1300;  // Size of the full render along the longest dimension.
 
@@ -53,6 +56,9 @@ namespace AvUtil
         // so we don't post it multiple times.
         private volatile bool availableDrawingPosted = false;
 
+        // True once Dispose has been called.
+        private volatile bool disposed = false;
+
         public CachedDrawing(IThreadsafeSkiaDrawing drawing)
         {
             this.underlyingDrawing = drawing;
@@ -80,6 +86,9 @@ namespace AvUtil
         public void Draw(DrawingContext drawingContext, Rect rectToDraw, PixelSize pixelSize, Matrix transformWorldToPixel, double layoutScale)
         {
             DebugPrint($"Draw: Rect:{rectToDraw} PixelSize:{pixelSize}");
+
+            if (disposed)
+                return;
 
             // Prune any completed renders that are no longer needed.
             PruneCompletedRenders(detailedRenders);
@@ -183,14 +192,15 @@ namespace AvUtil
 
         private void NotifyNewDrawingAvailable()
         {
-            if (DrawingChanged != null && !availableDrawingPosted) {
+            if (DrawingChanged != null && !availableDrawingPosted && !disposed) {
                 availableDrawingPosted = true;  // Prevent multiple posts until the event is handled.
 
                 Dispatcher.UIThread.Post(() => {
-                    // NewDrawingAvailable could have become null between the check and the Post,
+                    // NewDrawingAvailable could have become null (or this disposed) between the check and the Post,
                     // so check again.
                     availableDrawingPosted = false;
-                    DrawingChanged?.Invoke(this, EventArgs.Empty);
+                    if (!disposed)
+                        DrawingChanged?.Invoke(this, EventArgs.Empty);
                 }, DispatcherPriority.Render);
             }
         }
@@ -229,6 +239,31 @@ namespace AvUtil
         {
             ++drawingVersion;
             NotifyNewDrawingAvailable();
+        }
+
+        // Release all the cached bitmaps, and cancel any renders in progress (their bitmaps are
+        // released when they finish). Must be called on the UI thread.
+        public void Dispose()
+        {
+            if (disposed)
+                return;
+
+            disposed = true;
+            underlyingDrawing.DrawingChanged -= OnUnderlyingDrawing;
+
+            DisposeAllRenders(detailedRenders);
+            DisposeAllRenders(enclosingRenders);
+            DisposeAllRenders(fullRenders);
+        }
+
+        // Cancel and dispose all renders in the given list, and empty the list.
+        private static void DisposeAllRenders(List<InProgressRender> currentRenders)
+        {
+            foreach (InProgressRender render in currentRenders) {
+                render.CancelDrawing();
+                render.DisposeWhenDone();
+            }
+            currentRenders.Clear();
         }
 
 
@@ -344,6 +379,17 @@ namespace AvUtil
                 }
             }
 
+            // Dispose the render now if it is done, otherwise as soon as the task finishes (a canceled
+            // task can still run to completion if it was past its last cancellation check).
+            public void DisposeWhenDone()
+            {
+                if (task.IsCompleted)
+                    Dispose();
+                else
+                    task.ContinueWith(_ => Dispose(), TaskScheduler.Default);
+            }
+
+            // Dispose the bitmap, if the task is done. Does nothing if the task is still running.
             public void Dispose()
             {
                 if (task != null && task.IsCompleted) {
@@ -352,6 +398,7 @@ namespace AvUtil
                         bitmapTracker?.Dispose();
                     }
                     task.Dispose();
+                    cancelSource.Dispose();
                 }
             }
         }

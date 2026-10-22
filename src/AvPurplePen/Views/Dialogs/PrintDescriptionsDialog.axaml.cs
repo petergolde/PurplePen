@@ -4,15 +4,17 @@
 // Most state is data-bound to PrintDescriptionsDialogViewModel — see the
 // ViewModel for the property layout. This file handles:
 //   1. CourseSelector selection (not bindable). Pulled from VM on Opened,
-//      pushed back on Print.
+//      pushed back on Print and Preview.
 //   2. Window title switch (Print Descriptions ↔ Create PDF) based on
 //      IsPdfCreation. The Title is a single property, so we can't overlap
 //      two AXAML elements like we do for the OK button; setting it in
 //      Opened from the View layer keeps localized strings out of the VM.
-//   3. The Change Printer… / Preview buttons, which aren't ported yet — their
-//      click handlers are intentionally no-ops (with a TODO inside #if PORTING
-//      for the future port). (The Change Margins… button is bound to a command
-//      on the ViewModel instead.)
+//   3. The Change Printer… button, which isn't ported yet — its click handler
+//      is intentionally a no-op (with a TODO inside #if PORTING for the future
+//      port). (The Change Margins… button is bound to a command on the
+//      ViewModel instead.)
+//   4. The Preview… button, which pushes the CourseSelector selection into
+//      the ViewModel and then runs its PreviewCommand.
 //
 // Migrated from WinForms PurplePen/PrintDescriptions.cs.
 
@@ -67,10 +69,19 @@ namespace AvPurplePen.Views
         private void PrintButton_Click(object? sender, RoutedEventArgs e)
         {
             if (DataContext is PrintDescriptionsDialogViewModel vm) {
-                vm.SelectedCourseDesignators = courseSelector.SelectedCourseDesignators;
-                vm.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
+                PushSelectionToViewModel(vm);
             }
             Close(true);
+        }
+
+        /// <summary>
+        /// Copies the CourseSelector's selection state (which isn't bindable)
+        /// into the ViewModel.
+        /// </summary>
+        private void PushSelectionToViewModel(PrintDescriptionsDialogViewModel vm)
+        {
+            vm.SelectedCourseDesignators = courseSelector.SelectedCourseDesignators;
+            vm.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
         }
 
         /// <summary>Cancels and closes the dialog.</summary>
@@ -93,16 +104,18 @@ namespace AvPurplePen.Views
         }
 
         /// <summary>
-        /// Preview… — not yet implemented. The print-preview dialog isn't
-        /// ported.
+        /// Preview… — pushes the current course selection into the ViewModel
+        /// (the CourseSelector isn't bindable), then shows the Print Preview
+        /// dialog via the ViewModel's PreviewCommand.
         /// </summary>
         private void PreviewButton_Click(object? sender, RoutedEventArgs e)
         {
-#if PORTING
-            // TODO: Hook this up once the Avalonia print pipeline / preview
-            // surface is in place. The WinForms version called
-            // controller.PrintDescriptions with a WinForms preview target.
-#endif
+            if (DataContext is not PrintDescriptionsDialogViewModel vm)
+                return;
+
+            PushSelectionToViewModel(vm);
+            if (vm.PreviewCommand.CanExecute(null))
+                vm.PreviewCommand.Execute(null);
         }
     }
 }

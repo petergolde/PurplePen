@@ -1150,6 +1150,15 @@ namespace AvPurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string CloseButton {
+            get {
+                return ResourceManager.GetString("CloseButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preview.
         /// </summary>
         public static string ColorChooserDialog_groupBoxPreview_Text {
@@ -8863,6 +8872,78 @@ namespace AvPurplePen {
         public static string PrinterMargins_Text {
             get {
                 return ResourceManager.GetString("PrinterMargins_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First page.
+        /// </summary>
+        public static string PrintPreviewDialog_firstPageButton_ToolTip {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_firstPageButton_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fit Page.
+        /// </summary>
+        public static string PrintPreviewDialog_fitPageButton_Text {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_fitPageButton_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last page.
+        /// </summary>
+        public static string PrintPreviewDialog_lastPageButton_ToolTip {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_lastPageButton_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next page.
+        /// </summary>
+        public static string PrintPreviewDialog_nextPageButton_ToolTip {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_nextPageButton_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no pages to show..
+        /// </summary>
+        public static string PrintPreviewDialog_noPagesLabel_Text {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_noPagesLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page {0} of {1}.
+        /// </summary>
+        public static string PrintPreviewDialog_pageNumberLabel_Text {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_pageNumberLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous page.
+        /// </summary>
+        public static string PrintPreviewDialog_previousPageButton_ToolTip {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_previousPageButton_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print Preview.
+        /// </summary>
+        public static string PrintPreviewDialog_Text {
+            get {
+                return ResourceManager.GetString("PrintPreviewDialog_Text", resourceCulture);
             }
         }
         

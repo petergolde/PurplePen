@@ -56,7 +56,7 @@ namespace AvPurplePen
             // that is just big enough for "highlightBounds" of the highlights, and draw that, which would be more efficient.
 
             WriteableBitmapTracker skiaBitmap = SkiaWriteableBitmapUtil.DrawToBitmap(pixelSize, canvas => {
-                using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, false)) {
                     // Old Purple Pen was not anti-aliased, but unless it's a performance issue it's nicer to
                     // turn it on. I turn it off specifically for the cross-hair drawing to get that crisp.
                     grTarget.PushAntiAliasing(true); 

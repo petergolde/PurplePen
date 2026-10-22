@@ -55,6 +55,7 @@ namespace PurplePen.MapModel
     public class Skia_GraphicsTarget: IGraphicsTarget
     {
         protected SKCanvas canvas;
+        private bool ownCanvas;     // If true, the canvas is disposed when this target is disposed.
         private IColorConverter colorConverter;
         private float intensity;    // color intensity level, 1.0F is full intensity (no lightening)
         private int pushLevel;      // How many pushes have we done?
@@ -68,16 +69,26 @@ namespace PurplePen.MapModel
         private bool antiAlias;
         private SKBlendMode blendMode = SKBlendMode.SrcOver;  // default blend mode.
 
-        public Skia_GraphicsTarget(SKCanvas canvas, IColorConverter colorConverter, float intensity = 1.0F)
+        // Create a graphics target that draws on a canvas.
+        // canvas: the canvas to draw on.
+        // ownCanvas: if true, the canvas is disposed when this target is disposed. Pass false if the caller
+        //   (or something else, such as a paint event) owns the canvas and it will still be used afterward.
+        // colorConverter: converts CMYK colors to display colors; null uses the default conversion.
+        // intensity: color intensity level; 1.0 is full intensity (no lightening).
+        public Skia_GraphicsTarget(SKCanvas canvas, bool ownCanvas, IColorConverter colorConverter, float intensity = 1.0F)
         {
             this.canvas = canvas;
+            this.ownCanvas = ownCanvas;
             pushLevel = 0;
             this.colorConverter = colorConverter ?? new SkiaColorConverter();
             this.antiAlias = false;
             this.intensity = intensity;
         }
 
-        public Skia_GraphicsTarget(SKCanvas canvas) : this(canvas, null)
+        // Create a graphics target that draws on a canvas, using the default color conversion.
+        // canvas: the canvas to draw on.
+        // ownCanvas: if true, the canvas is disposed when this target is disposed.
+        public Skia_GraphicsTarget(SKCanvas canvas, bool ownCanvas) : this(canvas, ownCanvas, null)
         {
         }
 
@@ -636,7 +647,8 @@ namespace PurplePen.MapModel
 
         public virtual void Dispose() {
             if (canvas != null) {
-                canvas.Dispose();
+                if (ownCanvas)
+                    canvas.Dispose();
                 canvas = null;
             }
 
@@ -687,7 +699,7 @@ namespace PurplePen.MapModel
             private float angle;
 
             public Skia_BrushTarget(Skia_GraphicsTarget owningTarget, SKCanvas canvas, SKSurface surface, SKBitmap bitmap, SizeF size, float angle)
-                : base(canvas)
+                : base(canvas, true)
             {
                 this.owningTarget = owningTarget;
                 this.surface = surface;
@@ -969,7 +981,7 @@ namespace PurplePen.MapModel
         }
 
         private Skia_BitmapGraphicsTarget(SKSurface surface, SKBitmap bitmap, CmykColor initialColor, Matrix transform, IColorConverter colorConverter = null, float intensity = 1.0F, SKPath clipPath = null)
-            : base(GetCanvas(surface, initialColor, transform, colorConverter, clipPath), colorConverter, intensity)
+            : base(GetCanvas(surface, initialColor, transform, colorConverter, clipPath), true, colorConverter, intensity)
         {
             this.surface = surface;
             this.bitmap = bitmap;

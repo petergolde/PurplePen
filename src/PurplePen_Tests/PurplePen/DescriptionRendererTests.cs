@@ -100,7 +100,7 @@ namespace PurplePen.Tests
                     SKCanvas canvas = surface.Canvas;
                     canvas.Clear(SKColors.White);
 
-                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                    using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, false)) {
                         grTarget.PushAntiAliasing(true);
                         descriptionRenderer.RenderToGraphics(grTarget, new RectangleF(0, 0, bmWidth, bmHeight));
                     }

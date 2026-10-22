@@ -103,11 +103,10 @@ namespace AvPurplePen.Views
                 sampleBitmap = bitmapTarget.FinishBitmap();
             }
 
-            using (sampleBitmap) {
-                // Draw the rendered sample onto the (already device-scaled) view canvas,
-                // filling the logical bounds. Do not dispose this target: it would
-                // dispose the view canvas, which is shared across paints.
-                Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, SwopColorConverter.Instance);
+            // Draw the rendered sample onto the (already device-scaled) view canvas,
+            // filling the logical bounds. The target doesn't own the view canvas, which is shared across paints.
+            using (sampleBitmap)
+            using (Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, false, SwopColorConverter.Instance)) {
                 canvasTarget.DrawBitmap(sampleBitmap, new RectangleF(0, 0, (float)e.LogicalSize.Width, (float)e.LogicalSize.Height), BitmapScaling.HighQuality);
             }
         }

@@ -98,8 +98,8 @@ namespace AvPurplePen.Views
                 sampleBitmap = bitmapTarget.FinishBitmap();
             }
 
-            using (sampleBitmap) {
-                Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, SwopColorConverter.Instance);
+            using (sampleBitmap)
+            using (Skia_GraphicsTarget canvasTarget = new Skia_GraphicsTarget(e.Canvas, false, SwopColorConverter.Instance)) {
                 canvasTarget.DrawBitmap(sampleBitmap, new RectangleF(0, 0, (float)e.LogicalSize.Width, (float)e.LogicalSize.Height), BitmapScaling.HighQuality);
             }
         }

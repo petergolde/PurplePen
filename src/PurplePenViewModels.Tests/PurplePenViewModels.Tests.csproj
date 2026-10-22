@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PurplePenViewModels\PurplePenViewModels.csproj" />
+    <!-- Used only for SkiaBitmapGraphicsLoader, to create real page recordings (RecordingGraphicsTarget) for print preview tests. -->
+    <ProjectReference Include="..\MapModel\Map_SkiaStd\Map_SkiaStd.csproj" />
   </ItemGroup>
 
   <ItemGroup>

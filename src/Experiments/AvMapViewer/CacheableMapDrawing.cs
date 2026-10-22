@@ -50,7 +50,7 @@ namespace AvMapViewer
             canvas.Clear(SKColors.White);
 
             if (map != null) {
-                using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, false)) {
                     RenderOptions renderOpts = new RenderOptions();
                     renderOpts.usePatternBitmaps = true;
                     renderOpts.renderTemplates = RenderTemplateOption.MapAndTemplates;

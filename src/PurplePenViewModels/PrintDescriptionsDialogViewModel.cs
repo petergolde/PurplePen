@@ -7,11 +7,14 @@
 // computed property whose getter assembles a fresh settings object and
 // whose setter decomposes an incoming one.
 //
-// The printer / paper / margins selection isn't editable from this dialog
-// yet — the Change Printer… and Change Margins… sub-dialogs aren't ported.
-// The caller supplies a PrinterNameAndSettings and a
-// PrintingPaperSizeWithMargins which round-trip unchanged through the
-// dialog; the ViewModel surfaces display strings for them.
+// The printer selection isn't editable from this dialog yet — the Change
+// Printer… sub-dialog isn't ported. The caller supplies a
+// PrinterNameAndSettings and a PrintingPaperSizeWithMargins which round-trip
+// through the dialog; the ViewModel surfaces display strings for them.
+//
+// When the caller supplies a Controller, the Preview… button records the
+// pages with a RecordingPrintTarget and shows them in the Print Preview
+// dialog.
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -25,7 +28,8 @@ namespace PurplePen.ViewModels
     /// <summary>
     /// ViewModel for the Print Descriptions / Create PDF of Descriptions dialog.
     /// Usage: the caller sets <see cref="EventDB"/>, <see cref="IsPdfCreation"/>,
-    /// <see cref="Printer"/>, <see cref="PaperSizeWithMargins"/>, then assigns
+    /// <see cref="Printer"/>, <see cref="PaperSizeWithMargins"/>, and (to enable
+    /// Preview) <see cref="Controller"/>, then assigns
     /// <see cref="Settings"/> to seed the dialog. After OK, read
     /// <see cref="Settings"/> for the user's choices. <see cref="Printer"/>
     /// and <see cref="PaperSizeWithMargins"/> round-trip unchanged.
@@ -39,13 +43,21 @@ namespace PurplePen.ViewModels
         private EventDB? eventDB;
 
         /// <summary>
+        /// The Controller used to lay out and draw the pages for Preview. When
+        /// null, the Preview button is hidden.
+        /// </summary>
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsPreviewVisible))]
+        [NotifyCanExecuteChangedFor(nameof(PreviewCommand))]
+        private Controller? controller;
+
+        /// <summary>
         /// When true the dialog acts as a "Create PDF" dialog: the Printer
         /// row is hidden, the OK button reads "Create PDF", and the window
         /// title changes accordingly.
         /// </summary>
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsPrinterVisible))]
-        [NotifyPropertyChangedFor(nameof(IsPreviewVisible))]
         private bool isPdfCreation;
 
         /// <summary>
@@ -115,8 +127,8 @@ namespace PurplePen.ViewModels
         /// <summary>True when the printer row is visible (i.e. not PDF creation).</summary>
         public bool IsPrinterVisible => !IsPdfCreation;
 
-        /// <summary>True when the Preview button is visible (i.e. not PDF creation).</summary>
-        public bool IsPreviewVisible => !IsPdfCreation;
+        /// <summary>True when the Preview button is visible (i.e. a Controller was supplied).</summary>
+        public bool IsPreviewVisible => Controller != null;
 
         /// <summary>True when the per-course description count NumericUpDown is enabled.</summary>
         public bool IsDescriptionCountEnabled => CopiesIndex == 2;
@@ -287,5 +299,34 @@ namespace PurplePen.ViewModels
                 PaperSizeWithMargins = pageSetupVm.PaperSizeWithMargins;
             }
         }
+
+        /// <summary>
+        /// Shows the pages that would be printed (or put into the PDF) with the
+        /// current settings in the Print Preview dialog. The view must push the
+        /// CourseSelector's selection into <see cref="SelectedCourseDesignators"/>
+        /// and <see cref="VariationChoicesPerCourse"/> before executing this.
+        /// Errors while laying out the pages are reported by the Controller.
+        /// </summary>
+        [RelayCommand(CanExecute = nameof(CanPreview))]
+        private async Task Preview()
+        {
+            if (Controller == null || PaperSizeWithMargins == null)
+                return;
+
+            // PDF output and printers both render at high resolution; the PDF
+            // resolution is a good stand-in for either.
+            using (RecordingPrintTarget printTarget = new RecordingPrintTarget(PdfPrintTarget.PdfDpi)) {
+                if (!Controller.PrintDescriptions(printTarget, Settings, PaperSizeWithMargins))
+                    return;
+
+                PrintPreviewDialogViewModel previewVm = new PrintPreviewDialogViewModel {
+                    PrintTarget = printTarget,
+                };
+                await Services.DialogService.ShowDialogAsync(previewVm);
+            }
+        }
+
+        // Preview is possible only when a Controller was supplied.
+        private bool CanPreview() => Controller != null;
     }
 }

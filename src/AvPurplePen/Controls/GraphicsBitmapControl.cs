@@ -57,7 +57,7 @@ namespace AvPurplePen.Controls
             }
             else {
                 writeableBitmap = SkiaWriteableBitmapUtil.DrawToBitmap(new PixelSize(graphicsBitmap.PixelWidth, graphicsBitmap.PixelHeight), canvas => {
-                    using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                    using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, false)) {
                         grTarget.PushAntiAliasing(true);
                         grTarget.DrawBitmap(graphicsBitmap, new RectangleF(0, 0, graphicsBitmap.PixelWidth, graphicsBitmap.PixelHeight), BitmapScaling.HighQuality);
                     }
