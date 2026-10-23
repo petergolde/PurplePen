@@ -25,11 +25,11 @@ namespace Map_PDF.Tests
 
             // Expected checksums were independently calculated with Python's zlib.adler32.
             foreach (PdfFlateEncodeMode mode in Enum.GetValues<PdfFlateEncodeMode>()) {
-                yield return new TestCaseData(mode, Array.Empty<byte>(), 0x00000001U).SetName($"ZlibStream_{mode}_Empty");
-                yield return new TestCaseData(mode, Encoding.ASCII.GetBytes("Wikipedia"), 0x11E60398U).SetName($"ZlibStream_{mode}_Text");
-                yield return new TestCaseData(mode, new byte[] { 255 }, 0x01000100U).SetName($"ZlibStream_{mode}_SingleByte");
-                yield return new TestCaseData(mode, patterned, 0xF0281BFDU).SetName($"ZlibStream_{mode}_Binary");
-                yield return new TestCaseData(mode, large, 0x00A29082U).SetName($"ZlibStream_{mode}_Large");
+                yield return new TestCaseData(mode, Array.Empty<byte>(), 0x00000001U).SetArgDisplayNames(mode.ToString(), "Empty");
+                yield return new TestCaseData(mode, Encoding.ASCII.GetBytes("Wikipedia"), 0x11E60398U).SetArgDisplayNames(mode.ToString(), "Text");
+                yield return new TestCaseData(mode, new byte[] { 255 }, 0x01000100U).SetArgDisplayNames(mode.ToString(), "SingleByte");
+                yield return new TestCaseData(mode, patterned, 0xF0281BFDU).SetArgDisplayNames(mode.ToString(), "Binary");
+                yield return new TestCaseData(mode, large, 0x00A29082U).SetArgDisplayNames(mode.ToString(), "Large");
             }
         }
 
