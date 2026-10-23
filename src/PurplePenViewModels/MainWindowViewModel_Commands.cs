@@ -2206,6 +2206,7 @@ namespace PurplePen.ViewModels
 
             PrintPunchesDialogViewModel vm = new PrintPunchesDialogViewModel {
                 EventDB = controller.GetEventDB(),
+                Controller = controller,
                 IsPdfCreation = true,
                 Printer = printer,
                 PaperSizeWithMargins = paperSizeWithMargins,

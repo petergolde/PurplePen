@@ -1329,13 +1329,16 @@ namespace PurplePen
 
 
         // Print or print preview punch cards. Returns success or failure; any errors are already reported to the user.
-        public bool PrintPunches(IPrintingTarget printingTarget, CorePunchPrintSettings punchPrintSettings, PrintingPaperSizeWithMargins paperSizeWithMargins)
+        // punchcardFormat: the punch card layout to use, or null to use the event's. Lets a preview show a layout
+        // that hasn't been applied to the event yet.
+        public bool PrintPunches(IPrintingTarget printingTarget, CorePunchPrintSettings punchPrintSettings, PrintingPaperSizeWithMargins paperSizeWithMargins,
+                                 PunchcardFormat punchcardFormat = null)
         {
             string documentTitle = QueryEvent.GetEventTitle(eventDB, " ");
 
             bool success = HandleExceptions(
                 delegate {
-                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings);
+                    PunchPrinting punchPrinter = new PunchPrinting(eventDB, punchPrintSettings, punchcardFormat);
 
                     PrintManager printManager = new PrintManager(documentTitle, printingTarget, punchPrinter);
                     printManager.SetDefaultPaperSize(paperSizeWithMargins);
