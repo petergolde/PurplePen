@@ -1421,6 +1421,26 @@ namespace PurplePen
             return success;
         }
 
+        // Draw the pages that CreateCoursePdfs would put into the PDF files onto a printing target instead, to preview them.
+        // printing: whether to draw the map as for printing; false for a print preview shown on screen.
+        // Returns success or failure; any errors are already reported to the user.
+        public bool PrintCoursePdfPages(IPrintingTarget printingTarget, CoursePdfSettings coursePdfSettings, bool printing)
+        {
+            SetOutputDirectory(coursePdfSettings);
+
+            bool success = HandleExceptions(
+                delegate {
+                    MapDisplay clonedMapDisplay = mapDisplay.CloneToFullIntensity();
+
+                    CourseAppearance courseAppearance = GetCourseAppearance();
+                    CoursePdf coursePdf = new CoursePdf(eventDB, symbolDB, this, clonedMapDisplay, coursePdfSettings, courseAppearance);
+                    coursePdf.PrintPdfPages(printingTarget, printing);
+                },
+                MiscText.CannotCreatePdfs);
+
+            return success;
+        }
+
         // Get the list of files that will be overwritteing by creating PDF files
         public List<string> OverwritingPdfFiles(CoursePdfSettings coursePdfSettings)
         {

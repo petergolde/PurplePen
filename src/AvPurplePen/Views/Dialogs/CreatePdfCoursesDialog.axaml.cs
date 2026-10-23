@@ -4,9 +4,11 @@
 // to the CreatePdfCoursesDialogViewModel — see the ViewModel for the property
 // layout. This file only handles:
 //   1. Selection state on the CourseSelector (not bindable). Pulled from VM
-//      on Opened, pushed back on OK.
+//      on Opened, pushed back on OK and Preview.
 //   2. The "Select folder..." button, which needs the parent window's
 //      StorageProvider to show the platform folder picker.
+//   3. The Preview… button, which pushes the CourseSelector selection into
+//      the ViewModel and then runs its PreviewCommand.
 //
 // Migrated from WinForms PurplePen/CreatePdfCourses.cs.
 
@@ -80,10 +82,34 @@ namespace AvPurplePen.Views
         private void OkButton_Click(object? sender, RoutedEventArgs e)
         {
             if (DataContext is CreatePdfCoursesDialogViewModel vm) {
-                vm.SelectedCourseDesignators = courseSelector.SelectedCourseDesignators;
-                vm.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
+                PushSelectionToViewModel(vm);
             }
             Close(true);
+        }
+
+        /// <summary>
+        /// Preview… — pushes the current course selection into the ViewModel
+        /// (the CourseSelector isn't bindable), then shows the Print Preview
+        /// dialog via the ViewModel's PreviewCommand.
+        /// </summary>
+        private void PreviewButton_Click(object? sender, RoutedEventArgs e)
+        {
+            if (DataContext is not CreatePdfCoursesDialogViewModel vm)
+                return;
+
+            PushSelectionToViewModel(vm);
+            if (vm.PreviewCommand.CanExecute(null))
+                vm.PreviewCommand.Execute(null);
+        }
+
+        /// <summary>
+        /// Copies the CourseSelector's selection state (which isn't bindable)
+        /// into the ViewModel.
+        /// </summary>
+        private void PushSelectionToViewModel(CreatePdfCoursesDialogViewModel vm)
+        {
+            vm.SelectedCourseDesignators = courseSelector.SelectedCourseDesignators;
+            vm.VariationChoicesPerCourse = courseSelector.VariationChoicesPerCourse;
         }
 
         /// <summary>Cancels and closes the dialog.</summary>

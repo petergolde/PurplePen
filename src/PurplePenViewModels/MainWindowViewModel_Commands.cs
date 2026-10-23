@@ -2329,6 +2329,7 @@ namespace PurplePen.ViewModels
 
             CreatePdfCoursesDialogViewModel vm = new CreatePdfCoursesDialogViewModel {
                 EventDB = controller.GetEventDB(),
+                Controller = controller,
                 ShowMergeParts = controller.AnyMultipart(),
                 EnableChangeCropping = !isPdfMap,
                 Settings = settings,

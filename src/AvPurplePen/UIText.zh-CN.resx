@@ -2859,12 +2859,6 @@
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>预览</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>预览</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>预览</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>每个线路的副本：</value>
   </data>

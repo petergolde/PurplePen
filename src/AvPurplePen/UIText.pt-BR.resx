@@ -2862,12 +2862,6 @@ Para a impressão dos mapas da competição, sugere-se exportar os percursos par
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Visualização...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Visualização...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Visualização...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Cópias de cada percurso:</value>
   </data>

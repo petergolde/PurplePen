@@ -2585,12 +2585,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>プレビュー...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>プレビュー...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>プレビュー...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>コースごとの部数:</value>
   </data>

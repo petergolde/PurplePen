@@ -2792,12 +2792,6 @@ A versenytérképek nyomtatásához javasolt a pályákat OCAD formátumba expor
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Előnézet...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Előnézet...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Előnézet...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Az egyes pályák példányszáma:</value>
   </data>

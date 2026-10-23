@@ -2905,12 +2905,6 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Preview...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Preview...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Preview...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Copies of each course:</value>
   </data>

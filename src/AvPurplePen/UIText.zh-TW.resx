@@ -2827,12 +2827,6 @@
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>預覽...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>預覽...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>預覽...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>每一個賽程的列印數量:</value>
   </data>

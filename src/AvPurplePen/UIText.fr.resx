@@ -2864,12 +2864,6 @@ Afin d'imprimer des cartes de compétition, nous vous suggérons d'exporter les 
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Aperçu...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Aperçu...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Aperçu...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Nombre de copies de chaque circuit :</value>
   </data>

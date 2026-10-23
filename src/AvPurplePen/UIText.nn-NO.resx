@@ -1912,12 +1912,6 @@ Til å skrive ut konkuranskekart anbefales at løypene eksporteres til OCAD file
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Førehandsvising …</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Førehandsvising …</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Førehandsvising …</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Antall kopier av kvar løype:</value>
   </data>

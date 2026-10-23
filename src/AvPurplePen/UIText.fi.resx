@@ -2879,12 +2879,6 @@ Kilpailukarttojen tulostamiseksi on suositeltavaa viedä radat OCAD-tiedostoihin
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Esikatselu...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Esikatselu...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Esikatselu...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Kopioita jokaisesta radasta:</value>
   </data>
