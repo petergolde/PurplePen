@@ -8,7 +8,8 @@
 //
 // The "config" properties (EventDB, ShowAllControls, ShowCourseParts,
 // ShowVariationChooser, Filter) are Avalonia StyledProperties so consumers
-// can bind them in XAML. The selection / variation state remains as plain
+// can bind them in XAML; changing any of them rebuilds the tree, so they can be
+// set in any order. The selection / variation state remains as plain
 // CLR properties for callers to read/write from code-behind on dialog
 // open / OK — making them two-way bindable would require fighting the
 // "default everything checked" behavior in LoadList and adding feedback-loop
@@ -36,8 +37,8 @@ namespace AvPurplePen.Views
     /// </summary>
     public partial class CourseSelector : UserControl
     {
-        // Tracks whether LoadList has populated Nodes for the current EventDB.
-        // Reset when EventDB changes.
+        // Tracks whether LoadList has populated Nodes for the current config.
+        // Reset when any config property changes.
         private bool loaded;
 
         // Per-course variation choices selected by the user. Populated from
@@ -127,13 +128,46 @@ namespace AvPurplePen.Views
         {
             base.OnPropertyChanged(change);
 
-            // When EventDB changes, throw away the existing tree and rebuild.
-            // The other config properties only take effect on first load, so
-            // they don't need to trigger a rebuild here.
+            // Every config property affects the shape of the tree, so any change
+            // rebuilds it. This makes the result independent of the order in which
+            // the properties are set. A new EventDB discards the selection (course
+            // ids from the old event are meaningless); other changes preserve it.
             if (change.Property == EventDBProperty) {
-                Nodes.Clear();
-                loaded = false;
-                LoadList();
+                RebuildList(false);
+            }
+            else if (change.Property == ShowAllControlsProperty ||
+                     change.Property == ShowCoursePartsProperty ||
+                     change.Property == ShowVariationChooserProperty ||
+                     change.Property == FilterProperty) {
+                RebuildList(true);
+            }
+        }
+
+        /// <summary>
+        /// Throws away the existing tree and repopulates it from the current
+        /// config properties.
+        /// </summary>
+        /// <param name="keepSelection">If true and the tree was already loaded,
+        /// re-applies the previous selection to the rebuilt tree. Top-level nodes
+        /// that weren't in the old tree (e.g. All Controls just turned on) keep
+        /// their default checked state.</param>
+        private void RebuildList(bool keepSelection)
+        {
+            CourseDesignator[]? previousSelection = null;
+            HashSet<CourseDesignator> previousTopLevel = new HashSet<CourseDesignator>();
+            if (keepSelection && loaded) {
+                previousSelection = SelectedCourseDesignators;
+                previousTopLevel.UnionWith(Nodes.Select(node => node.Tag));
+            }
+
+            Nodes.Clear();
+            loaded = false;
+            LoadList();
+
+            if (previousSelection != null && loaded) {
+                List<CourseDesignator> selection = new List<CourseDesignator>(previousSelection);
+                selection.AddRange(Nodes.Where(node => !previousTopLevel.Contains(node.Tag)).Select(node => node.Tag));
+                SelectedCourseDesignators = selection.ToArray();
             }
         }
 
@@ -287,7 +321,7 @@ namespace AvPurplePen.Views
         /// <summary>
         /// Populates the tree from the EventDB. Called once on first load or
         /// when SelectedCourseDesignators is accessed before the control is loaded.
-        /// Re-runs if EventDB changes (see <see cref="OnPropertyChanged"/>).
+        /// Re-runs if any config property changes (see <see cref="OnPropertyChanged"/>).
         /// </summary>
         private void LoadList()
         {
