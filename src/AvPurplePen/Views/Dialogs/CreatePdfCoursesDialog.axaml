@@ -16,6 +16,7 @@
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:views="using:AvPurplePen.Views"
         xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
         xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -39,18 +40,23 @@
 
     <DockPanel Margin="12">
 
-        <!-- Bottom row: Preview on the left, Create / Cancel on the right. -->
+        <!-- Bottom row: Help and Preview on the left, Create / Cancel on the right. -->
         <Grid DockPanel.Dock="Bottom"
               ColumnDefinitions="Auto,*,Auto"
               Margin="0,12,0,0">
-            <!-- Preview (visible only when the caller supplied a Controller). -->
-            <Button x:Name="previewButton"
-                    Grid.Column="0"
-                    Content="{resx:Localize PrintCourses_previewButton_Text}"
-                    MinWidth="120"
-                    HorizontalContentAlignment="Center"
-                    IsVisible="{Binding IsPreviewVisible}"
-                    Click="PreviewButton_Click"/>
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="12">
+                <controls:HelpButton VerticalAlignment="Center"
+                                     HelpTopic="FileCreatePdfCourses.htm"/>
+                <!-- Preview (visible only when the caller supplied a Controller). -->
+                <Button x:Name="previewButton"
+                        Content="{resx:Localize PrintCourses_previewButton_Text}"
+                        MinWidth="120"
+                        HorizontalContentAlignment="Center"
+                        IsVisible="{Binding IsPreviewVisible}"
+                        Click="PreviewButton_Click"/>
+            </StackPanel>
 
             <UniformGrid Grid.Column="2"
                          Rows="1"

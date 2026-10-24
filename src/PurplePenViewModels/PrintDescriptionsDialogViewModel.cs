@@ -58,6 +58,7 @@ namespace PurplePen.ViewModels
         /// </summary>
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsPrinterVisible))]
+        [NotifyPropertyChangedFor(nameof(HelpTopic))]
         private bool isPdfCreation;
 
         /// <summary>
@@ -126,6 +127,9 @@ namespace PurplePen.ViewModels
 
         /// <summary>True when the printer row is visible (i.e. not PDF creation).</summary>
         public bool IsPrinterVisible => !IsPdfCreation;
+
+        /// <summary>The help topic shown by the dialog's Help button.</summary>
+        public string HelpTopic => IsPdfCreation ? "FileCreatePdfDescriptions.htm" : "FilePrintDescriptions.htm";
 
         /// <summary>True when the Preview button is visible (i.e. a Controller was supplied).</summary>
         public bool IsPreviewVisible => Controller != null;

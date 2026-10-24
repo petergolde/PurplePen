@@ -39,6 +39,12 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         private string dialogTitle = "";
 
+        /// <summary>
+        /// The help topic shown by the dialog's Help button (depends on whether
+        /// text is being added or changed).
+        /// </summary>
+        public string HelpTopic { get; set; } = "EditAddText.htm";
+
         /// <summary>Usage/explanation text shown at the top of the dialog.</summary>
         [ObservableProperty]
         private string usageText = "";

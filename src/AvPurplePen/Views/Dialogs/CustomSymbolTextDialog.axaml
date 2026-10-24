@@ -97,25 +97,30 @@
             <!-- Detail pane, with OK / Cancel docked at the bottom of the column. -->
             <DockPanel Grid.Column="2">
 
-                <!-- OK / Cancel buttons at the bottom of the right column. -->
-                <UniformGrid DockPanel.Dock="Bottom"
-                             Rows="1"
-                             HorizontalAlignment="Right"
-                             ColumnSpacing="8"
-                             Margin="0,12,0,0">
-                    <Button x:Name="okButton"
-                            Content="{resx:Localize OKButton}"
-                            MinWidth="85"
-                            HorizontalContentAlignment="Center"
-                            IsDefault="True"
-                            Click="OkButton_Click"/>
-                    <Button x:Name="cancelButton"
-                            Content="{resx:Localize CancelButton}"
-                            MinWidth="85"
-                            HorizontalContentAlignment="Center"
-                            IsCancel="True"
-                            Click="CancelButton_Click"/>
-                </UniformGrid>
+                <!-- Help button (left) and OK / Cancel buttons (right) at the bottom of the right column. -->
+                <Grid DockPanel.Dock="Bottom"
+                      ColumnDefinitions="Auto,*,Auto"
+                      Margin="0,12,0,0">
+                    <controls:HelpButton Grid.Column="0"
+                                         VerticalAlignment="Center"
+                                         HelpTopic="ControlsCustomizeDescriptionText.htm"/>
+                    <UniformGrid Grid.Column="2"
+                                 Rows="1"
+                                 ColumnSpacing="8">
+                        <Button x:Name="okButton"
+                                Content="{resx:Localize OKButton}"
+                                MinWidth="85"
+                                HorizontalContentAlignment="Center"
+                                IsDefault="True"
+                                Click="OkButton_Click"/>
+                        <Button x:Name="cancelButton"
+                                Content="{resx:Localize CancelButton}"
+                                MinWidth="85"
+                                HorizontalContentAlignment="Center"
+                                IsCancel="True"
+                                Click="CancelButton_Click"/>
+                    </UniformGrid>
+                </Grid>
 
                 <!-- Detail controls, stacked at the top of the right column. -->
                 <StackPanel DockPanel.Dock="Top" Spacing="6">

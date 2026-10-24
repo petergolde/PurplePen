@@ -28,6 +28,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
         xmlns:avutil="using:AvUtil"
         xmlns:html="clr-namespace:TheArtOfDev.HtmlRenderer.Avalonia;assembly=Avalonia.HtmlRenderer"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -130,25 +131,30 @@
                       Margin="0,8,0,0"/>
         </Grid>
 
-        <!-- Bottom button bar: Export / Print on the left, Close on the right. -->
+        <!-- Bottom button bar: Help / Export / Print on the left, Close on the right. -->
         <Grid DockPanel.Dock="Bottom"
               ColumnDefinitions="Auto,*,Auto"
               Margin="0,8,0,0">
-            <!-- UniformGrid keeps Export and Print the same width as each other. -->
-            <UniformGrid Grid.Column="0"
-                         Rows="1"
-                         ColumnSpacing="8">
-                <Button x:Name="buttonExport"
-                        Content="{resx:Localize TeamVariationsForm_buttonExport_Text}"
-                        Command="{Binding ExportCommand}"
-                        MinWidth="110"
-                        HorizontalContentAlignment="Center"/>
-                <Button x:Name="buttonPrint"
-                        Content="{resx:Localize TeamVariationsForm_buttonPrint_Text}"
-                        Click="PrintButton_Click"
-                        MinWidth="110"
-                        HorizontalContentAlignment="Center"/>
-            </UniformGrid>
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="12">
+                <controls:HelpButton VerticalAlignment="Center"
+                                     HelpTopic="CourseRelayTeamVariations.htm"/>
+                <!-- UniformGrid keeps Export and Print the same width as each other. -->
+                <UniformGrid Rows="1"
+                             ColumnSpacing="8">
+                    <Button x:Name="buttonExport"
+                            Content="{resx:Localize TeamVariationsForm_buttonExport_Text}"
+                            Command="{Binding ExportCommand}"
+                            MinWidth="110"
+                            HorizontalContentAlignment="Center"/>
+                    <Button x:Name="buttonPrint"
+                            Content="{resx:Localize TeamVariationsForm_buttonPrint_Text}"
+                            Click="PrintButton_Click"
+                            MinWidth="110"
+                            HorizontalContentAlignment="Center"/>
+                </UniformGrid>
+            </StackPanel>
             <Button Grid.Column="2"
                     x:Name="buttonClose"
                     Content="{resx:Localize TeamVariationsForm_buttonClose_Text}"

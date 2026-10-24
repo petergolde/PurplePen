@@ -14,6 +14,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
@@ -126,15 +127,21 @@
             </Grid>
         </Button>
 
-        <!-- Plain Cancel button, bottom-right (a standard button in WinForms,
-             not one of the choice buttons). IsCancel routes Escape here. -->
-        <Button x:Name="cancelButton"
-                Content="{resx:Localize CancelButton}"
-                HorizontalAlignment="Right"
-                MinWidth="85"
-                HorizontalContentAlignment="Center"
-                IsCancel="True"
-                Click="CancelButton_Click"/>
+        <!-- Help button, bottom-left, and plain Cancel button, bottom-right (a
+             standard button in WinForms, not one of the choice buttons).
+             IsCancel routes Escape here. -->
+        <Grid ColumnDefinitions="Auto,*,Auto">
+            <controls:HelpButton Grid.Column="0"
+                                 VerticalAlignment="Center"
+                                 HelpTopic="EditAddTimedStart.htm"/>
+            <Button x:Name="cancelButton"
+                    Grid.Column="2"
+                    Content="{resx:Localize CancelButton}"
+                    MinWidth="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </Grid>
 
     </StackPanel>
 </Window>
