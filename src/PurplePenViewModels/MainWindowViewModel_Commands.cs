@@ -2575,7 +2575,7 @@ namespace PurplePen.ViewModels
             FileSaveViewModel saveVm = new FileSaveViewModel {
                 Title = MiscText.SaveXmlFileDialog_Title,
                 FileFilters = MiscText.SaveXmlFileDialog_Filter,
-                FileFilterIndex = 2,
+                FileFilterIndex = 1,
                 DefaultExtension = "xml",
                 ShowOverwritePrompt = true,
                 InitialDirectory = Path.GetDirectoryName(xmlFileName),
