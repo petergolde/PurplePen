@@ -11,6 +11,9 @@ namespace PurplePen
     // A printing target that prints to a PDF file.
     public class PdfPrintTarget : IPrintingTarget
     {
+        // The resolution reported for PDFs. PDFs are inherently high resolution, so a high number is used: 1200 seems good.
+        public const float PdfDpi = 1200F;
+
         private readonly string pathName;
         private readonly bool cmykMode;
 
@@ -27,10 +30,10 @@ namespace PurplePen
             pdfWriter = Services.PdfWriter.CreateDocument(pathName, documentTitle, cmykMode);
         }
 
-        // PDFs are inherently high resolution, so return a high resolution number here: 1200 seems good.
+        // PDFs are inherently high resolution, so return a high resolution number here.
         public float GetPrinterDpi()
         {
-            return 1200F;   
+            return PdfDpi;
         }
 
         public void EndPrinting()

@@ -231,10 +231,10 @@ namespace Map_Skia.Tests
         [Test]
         public void PlaybackBeforeEndRecordingThrows()
         {
-            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget())
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader()))
             using (SKBitmap bitmap = new SKBitmap(10, 10))
             using (SKCanvas canvas = new SKCanvas(bitmap))
-            using (Skia_GraphicsTarget target = new Skia_GraphicsTarget(canvas)) {
+            using (Skia_GraphicsTarget target = new Skia_GraphicsTarget(canvas, false)) {
                 Assert.IsTrue(recorder.IsRecording);
                 Assert.Throws<InvalidOperationException>(() => recorder.Playback(target));
             }
@@ -243,7 +243,7 @@ namespace Map_Skia.Tests
         [Test]
         public void DrawingAfterEndRecordingThrows()
         {
-            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget()) {
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader())) {
                 object penKey = new object();
                 recorder.CreatePen(penKey, CmykColor.FromCmyk(0, 0, 0, 1), 1, LineCapMode.Flat, LineJoinMode.Miter, 1);
                 recorder.EndRecording();
@@ -258,21 +258,44 @@ namespace Map_Skia.Tests
         [Test]
         public void PlaybackAfterDisposeThrows()
         {
-            RecordingGraphicsTarget recorder = new RecordingGraphicsTarget();
+            RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader());
             recorder.EndRecording();
             recorder.Dispose();
 
             using (SKBitmap bitmap = new SKBitmap(10, 10))
             using (SKCanvas canvas = new SKCanvas(bitmap))
-            using (Skia_GraphicsTarget target = new Skia_GraphicsTarget(canvas)) {
+            using (Skia_GraphicsTarget target = new Skia_GraphicsTarget(canvas, false)) {
                 Assert.Throws<ObjectDisposedException>(() => recorder.Playback(target));
+            }
+        }
+
+        [Test]
+        public void PlaybackCanceled()
+        {
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader())) {
+                object brushKey = new object();
+                recorder.CreateSolidBrush(brushKey, CmykColor.FromColor(Color.Red));
+                recorder.FillRectangle(brushKey, new RectangleF(0, 0, 5, 5));
+                recorder.EndRecording();
+
+                using (System.Threading.CancellationTokenSource cancel = new System.Threading.CancellationTokenSource())
+                using (SKBitmap bitmap = new SKBitmap(10, 10))
+                using (SKCanvas canvas = new SKCanvas(bitmap))
+                using (Skia_GraphicsTarget target = new Skia_GraphicsTarget(canvas, false)) {
+                    // Not canceled: plays back normally.
+                    recorder.Playback(target, cancel.Token);
+
+                    // Canceled: throws.
+                    cancel.Cancel();
+                    Assert.Throws<OperationCanceledException>(() => recorder.Playback(target, cancel.Token));
+                }
             }
         }
 
         [Test]
         public void HasObjects()
         {
-            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget()) {
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader())) {
                 object pathKey = new object(), brushKey = new object(), penKey = new object(), fontKey = new object();
 
                 Assert.IsFalse(recorder.HasPath(pathKey));
@@ -311,7 +334,7 @@ namespace Map_Skia.Tests
             SKBitmap expected = DrawToBitmap(grTarget => DrawMutableInputs(grTarget, false));
 
             // Record, then mutate all the inputs before playing back.
-            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget()) {
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader())) {
                 DrawMutableInputs(recorder, true);
                 recorder.EndRecording();
 
@@ -326,7 +349,7 @@ namespace Map_Skia.Tests
         [Test]
         public void KeysNotReferencedAfterEndRecording()
         {
-            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget()) {
+            using (RecordingGraphicsTarget recorder = new RecordingGraphicsTarget(new SkiaBitmapGraphicsLoader())) {
                 WeakReference[] keys = RecordWithKeys(recorder);
                 recorder.EndRecording();
 
@@ -413,7 +436,7 @@ namespace Map_Skia.Tests
             SKBitmap bitmap = new SKBitmap(100, 100);
             using (SKCanvas canvas = new SKCanvas(bitmap)) {
                 canvas.Clear(SKColors.White);
-                using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas)) {
+                using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, false)) {
                     draw(grTarget);
                 }
             }

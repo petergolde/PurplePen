@@ -35,17 +35,16 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
-namespace PurplePen.MapModel
+namespace PurplePen.Graphics2D
 {
-    using PurplePen.Graphics2D;
-    using SkiaSharp;
     using System.Drawing;
 
     // A RecordingGraphicsTarget records a series of calls made to it as an IGraphicsTarget, and
-    // can then play them back onto another IGraphicsTarget (typically a Skia_GraphicsTarget) any
-    // number of times. The intended use is print preview: record a page once, then play it back
-    // whenever the preview image needs to be redrawn.
+    // can then play them back onto another IGraphicsTarget any number of times. The intended use
+    // is print preview: record a page once, then play it back whenever the preview image needs
+    // to be redrawn.
     //
     // Usage: make IGraphicsTarget calls, call EndRecording(), then call Playback() as many times as desired.
     // Dispose() releases everything that was recorded.
@@ -53,9 +52,13 @@ namespace PurplePen.MapModel
     // All data passed in is defensively copied. After EndRecording() is called, no references are
     // held to the key objects passed to CreateBrush/CreatePen/CreateFont/CreatePath; on playback, internal
     // objects created by the recorder are used as keys on the playback target. Bitmaps are stored
-    // as PNG data, and decoded into Skia images on playback.
+    // as PNG data, and decoded on playback by the IGraphicsBitmapLoader passed to the constructor, which
+    // must create bitmaps that the playback target can draw.
     public class RecordingGraphicsTarget : IGraphicsTarget
     {
+        // Loads recorded bitmaps for playback. Not owned by this object.
+        private readonly IGraphicsBitmapLoader bitmapLoader;
+
         // The recorded commands, in the order called.
         private List<Action<PlaybackState>> commands = new List<Action<PlaybackState>>();
 
@@ -66,19 +69,25 @@ namespace PurplePen.MapModel
         private List<RecordingGraphicsTarget> brushTargets = new List<RecordingGraphicsTarget>();
 
         // Maps from caller key objects to recorded resources. Cleared when recording ends.
-        private Dictionary<object, RecordedPath> pathMap = new Dictionary<object, RecordedPath>(new IdentityComparer<object>());
-        private Dictionary<object, RecordedBrush> brushMap = new Dictionary<object, RecordedBrush>(new IdentityComparer<object>());
-        private Dictionary<object, RecordedPen> penMap = new Dictionary<object, RecordedPen>(new IdentityComparer<object>());
-        private Dictionary<object, RecordedFont> fontMap = new Dictionary<object, RecordedFont>(new IdentityComparer<object>());
+        private Dictionary<object, RecordedPath> pathMap = new Dictionary<object, RecordedPath>(ReferenceEqualityComparer.Instance);
+        private Dictionary<object, RecordedBrush> brushMap = new Dictionary<object, RecordedBrush>(ReferenceEqualityComparer.Instance);
+        private Dictionary<object, RecordedPen> penMap = new Dictionary<object, RecordedPen>(ReferenceEqualityComparer.Instance);
+        private Dictionary<object, RecordedFont> fontMap = new Dictionary<object, RecordedFont>(ReferenceEqualityComparer.Instance);
 
         private float intensity;
         private bool isRecording = true;
         private bool disposed = false;
 
         // Create a new RecordingGraphicsTarget, which starts in recording mode.
+        // bitmapLoader: used to load recorded bitmaps when they are played back. Must create bitmaps that
+        //               the playback target can draw. Not disposed by this object.
         // intensity: the initial intensity reported by the Intensity property. Not recorded or played back.
-        public RecordingGraphicsTarget(float intensity = 1.0F)
+        public RecordingGraphicsTarget(IGraphicsBitmapLoader bitmapLoader, float intensity = 1.0F)
         {
+            if (bitmapLoader == null)
+                throw new ArgumentNullException(nameof(bitmapLoader));
+
+            this.bitmapLoader = bitmapLoader;
             this.intensity = intensity;
         }
 
@@ -101,10 +110,13 @@ namespace PurplePen.MapModel
             fontMap.Clear();
         }
 
-        // Play back all the recorded calls onto another graphics target. Can be called multiple times.
+        // Play back all the recorded calls onto another graphics target. Can be called multiple times,
+        // including concurrently from multiple threads onto different targets.
         // EndRecording must have been called first.
         // target: the graphics target to play back onto.
-        public void Playback(IGraphicsTarget target)
+        // cancellationToken: checked periodically during playback; if cancellation is requested,
+        //                    an OperationCanceledException is thrown.
+        public void Playback(IGraphicsTarget target, CancellationToken cancellationToken = default)
         {
             if (disposed)
                 throw new ObjectDisposedException(nameof(RecordingGraphicsTarget));
@@ -113,16 +125,21 @@ namespace PurplePen.MapModel
             if (target == null)
                 throw new ArgumentNullException(nameof(target));
 
-            PlaybackCore(target);
+            PlaybackCore(target, cancellationToken);
         }
 
         // Play back the recorded commands onto the target, with no state checks.
         // target: the graphics target to play back onto.
-        private void PlaybackCore(IGraphicsTarget target)
+        // cancellationToken: checked every CancellationCheckInterval commands.
+        private void PlaybackCore(IGraphicsTarget target, CancellationToken cancellationToken = default)
         {
+            const int CancellationCheckInterval = 64;
+
             PlaybackState state = new PlaybackState(target);
-            foreach (Action<PlaybackState> command in commands) {
-                command(state);
+            for (int i = 0; i < commands.Count; ++i) {
+                if (i % CancellationCheckInterval == 0)
+                    cancellationToken.ThrowIfCancellationRequested();
+                commands[i](state);
             }
         }
 
@@ -520,7 +537,7 @@ namespace PurplePen.MapModel
         public void DrawBitmap(IGraphicsBitmap bm, RectangleF rectangle, BitmapScaling scalingMode)
         {
             CheckRecording();
-            RecordedBitmap bitmap = RecordedBitmap.Create(bm);
+            RecordedBitmap bitmap = RecordedBitmap.Create(bm, bitmapLoader);
             ownedObjects.Add(bitmap);
             RecordBitmapDraw(bitmap, rectangle, scalingMode);
         }
@@ -536,7 +553,7 @@ namespace PurplePen.MapModel
             CheckRecording();
             RecordedBitmap bitmap;
             using (IGraphicsBitmap part = bm.Crop(x, y, width, height)) {
-                bitmap = RecordedBitmap.Create(part);
+                bitmap = RecordedBitmap.Create(part, bitmapLoader);
             }
             ownedObjects.Add(bitmap);
             RecordBitmapDraw(bitmap, rectangle, scalingMode);
@@ -778,45 +795,49 @@ namespace PurplePen.MapModel
             }
         }
 
-        // A recorded bitmap, stored as PNG data. Decoded to a Skia_Image the first time it is played back.
+        // A recorded bitmap, stored as PNG data. Loaded with the bitmap loader the first time it is played back.
         private sealed class RecordedBitmap : IDisposable
         {
             private MemoryStream pngStream;
+            private readonly IGraphicsBitmapLoader bitmapLoader;
             private readonly double horizontalResolution, verticalResolution;
-            private SKBitmap decodedBitmap;
-            private Skia_Image decodedImage;
+            private IGraphicsBitmap decodedImage;
             private readonly object lockObject = new object();
 
             // Create a recorded bitmap from PNG data.
-            private RecordedBitmap(MemoryStream pngStream, double horizontalResolution, double verticalResolution)
+            private RecordedBitmap(MemoryStream pngStream, IGraphicsBitmapLoader bitmapLoader, double horizontalResolution, double verticalResolution)
             {
                 this.pngStream = pngStream;
+                this.bitmapLoader = bitmapLoader;
                 this.horizontalResolution = horizontalResolution;
                 this.verticalResolution = verticalResolution;
             }
 
             // Create a recorded bitmap by saving the given bitmap as PNG data.
             // bm: the bitmap to save. No reference to it is kept.
-            public static RecordedBitmap Create(IGraphicsBitmap bm)
+            // bitmapLoader: used to load the PNG data on playback.
+            public static RecordedBitmap Create(IGraphicsBitmap bm, IGraphicsBitmapLoader bitmapLoader)
             {
                 MemoryStream stream = new MemoryStream();
                 bm.WriteToStream(GraphicsBitmapFormat.PNG, stream, 100);
-                return new RecordedBitmap(stream, bm.HorizontalResolution, bm.VerticalResolution);
+                return new RecordedBitmap(stream, bitmapLoader, bm.HorizontalResolution, bm.VerticalResolution);
             }
 
-            // Get the decoded image, decoding the PNG data if needed.
-            public Skia_Image GetImage()
+            // Get the decoded image, loading the PNG data if needed.
+            public IGraphicsBitmap GetImage()
             {
                 lock (lockObject) {
                     if (pngStream == null)
                         throw new ObjectDisposedException(nameof(RecordedBitmap));
 
                     if (decodedImage == null) {
-                        decodedBitmap = SKBitmap.Decode(new ReadOnlySpan<byte>(pngStream.GetBuffer(), 0, (int)pngStream.Length));
-                        if (decodedBitmap == null)
+                        using (MemoryStream readStream = new MemoryStream(pngStream.GetBuffer(), 0, (int)pngStream.Length, false)) {
+                            decodedImage = bitmapLoader.ReadBitmapFromStream(readStream);
+                        }
+                        if (decodedImage == null)
                             throw new InvalidOperationException("Unable to decode recorded bitmap");
-                        decodedBitmap.SetImmutable();
-                        decodedImage = new Skia_Image(SKImage.FromBitmap(decodedBitmap), horizontalResolution, verticalResolution);
+                        decodedImage.HorizontalResolution = horizontalResolution;
+                        decodedImage.VerticalResolution = verticalResolution;
                     }
 
                     return decodedImage;
@@ -830,10 +851,6 @@ namespace PurplePen.MapModel
                     if (decodedImage != null) {
                         decodedImage.Dispose();
                         decodedImage = null;
-                    }
-                    if (decodedBitmap != null) {
-                        decodedBitmap.Dispose();
-                        decodedBitmap = null;
                     }
                     if (pngStream != null) {
                         pngStream.Dispose();
@@ -856,7 +873,7 @@ namespace PurplePen.MapModel
             // owningTarget: the target that CreatePatternBrush was called on.
             // size, angle, bitmapWidth, bitmapHeight: the pattern brush parameters.
             public RecordingBrushTarget(RecordingGraphicsTarget owningTarget, SizeF size, float angle, int bitmapWidth, int bitmapHeight)
-                : base(owningTarget.intensity)
+                : base(owningTarget.bitmapLoader, owningTarget.intensity)
             {
                 this.owningTarget = owningTarget;
                 this.size = size;

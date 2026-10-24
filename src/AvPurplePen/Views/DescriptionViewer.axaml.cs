@@ -282,7 +282,7 @@ public partial class DescriptionViewer : UserControl
         e.Canvas.Clear(SKColors.White);
 
         if (renderer != null && DescriptionData != null) {
-            using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(e.Canvas)) {
+            using (Skia_GraphicsTarget grTarget = new Skia_GraphicsTarget(e.Canvas, false)) {
                 renderer.Description = DescriptionData.Description;
 
                 grTarget.PushAntiAliasing(true);

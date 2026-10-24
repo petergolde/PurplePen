@@ -844,6 +844,24 @@ private async Task FooCommand() {
 
 The convention has been: porting the dialog + ViewModel is one step; wiring its command is a separate follow-up. Don't assume — the dialog can be reviewed before the command is hooked up.
 
+### Print Preview (reusable for any IPrintingTarget-based output)
+
+Anything that prints via `PrintManager`/`IPrintingTarget` can be previewed:
+
+```csharp
+using (RecordingPrintTarget printTarget = new RecordingPrintTarget(PdfPrintTarget.PdfDpi)) {
+    if (controller.PrintDescriptions(printTarget, settings, paperSizeWithMargins)) {   // or PrintPunches, PrintCourses, ...
+        await Services.DialogService.ShowDialogAsync(new PrintPreviewDialogViewModel { PrintTarget = printTarget });
+    }
+}
+```
+
+- `RecordingPrintTarget` (PurplePenCore) records each page with a `RecordingGraphicsTarget` (Graphics2D, backend-independent). It takes an `IGraphicsBitmapLoader` (default `Services.BitmapLoader`) to load recorded bitmaps on playback; the loader must match the backend the page is played back onto (Skia loader for Skia targets), or bitmaps are dropped. `RecordedPrintPage.Draw(target, token)` plays a page back, thread-safely. Disposal is deferred until in-flight background playbacks finish, so disposing right after the dialog closes is safe.
+- `PrintPreviewDialog` + `PrintPreviewDialogViewModel`: generic dialog (thumbnails, page navigation, zoom). The VM only does navigation; zoom lives in the view.
+- `PrintPageViewer` (UserControl wrapping PanAndZoom) and `RecordedPageThumbnail` (Controls/) can be reused standalone. `RecordedPageDrawing` adapts a page to `IThreadsafeSkiaDrawing`; world units are mm with Y up, so zoom 1.0 = actual size.
+- The dialog that hosts a Preview button needs a `Controller` (see `PrintDescriptionsDialogViewModel.PreviewCommand`), and its code-behind must push non-bindable state (e.g. CourseSelector selection) into the VM before executing the command.
+- **`Skia_GraphicsTarget` canvas ownership:** both constructors take a required `bool ownCanvas`. Pass `true` only if the target should dispose the `SKCanvas` when it is disposed. For a canvas you don't own (a paint event's `e.Canvas`, `surface.Canvas`, or a canvas in your own `using`), pass `false`; the target can then safely go in a `using`.
+
 ### Small Avalonia Binding/Control Notes
 
 - **Negate a bool in a binding** with `!`: `IsChecked="{Binding !RenumberExisting, Mode=TwoWay}"` works two-way (used for the inverse member of a radio-button pair, so the VM needs only one bool). Also `IsVisible="{Binding !IsPdfCreation}"`.

@@ -40,7 +40,7 @@ namespace AvPurplePen
             canvas.Clear(SKColors.White);
 
             if (mapDisplay != null) {
-                using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, colorConverter)) {
+                using (IGraphicsTarget grTarget = new Skia_GraphicsTarget(canvas, false, colorConverter)) {
                     mapDisplay.Draw(grTarget, Conv.ToRectangleF(rectToDraw), minResolution, () => cancelToken.ThrowIfCancellationRequested());
                 }
             }

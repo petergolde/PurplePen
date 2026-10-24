@@ -1,0 +1,30 @@
+<!--
+    PrintPageViewer.axaml
+    Displays one page recorded by a RecordingPrintTarget in a PanAndZoom
+    control, so the user can zoom (mouse wheel / pinch) and pan (drag, or the
+    scroll bars) around the page. Used by the Print Preview dialog; reusable
+    anywhere a recorded page needs to be shown.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:avutil="using:AvUtil"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+             x:Class="AvPurplePen.Views.PrintPageViewer">
+
+    <!-- Scroll bars are always shown: with Auto, fitting the page exactly to
+         the window could make a scroll bar flicker on and off. -->
+    <avutil:PanAndZoom x:Name="panAndZoom"
+                       Cursor="Hand"
+                       HorizontalScrollBarVisibility="Visible"
+                       VerticalScrollBarVisibility="Visible"
+                       MouseWheelAction="Zoom"
+                       MinZoom="0.05"
+                       MaxZoom="20"
+                       BasicMouseActivity="PanAndZoom_MouseActivity"
+                       PropertyChanged="PanAndZoom_PropertyChanged"
+                       ViewportChanging="PanAndZoom_ViewportChanging"
+                       SizeChanged="PanAndZoom_SizeChanged"/>
+
+</UserControl>

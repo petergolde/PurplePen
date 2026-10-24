@@ -12,8 +12,9 @@
       * Preview / Print / Cancel buttons at the bottom.
 
     The Change Margins button opens the Page Setup dialog (bound to a command).
-    The Change Printer and Preview buttons are wired but not yet implemented —
-    clicking them is a no-op for now.
+    The Preview button shows the Print Preview dialog (visible only when the
+    caller supplied a Controller). The Change Printer button is wired but not
+    yet implemented — clicking it is a no-op for now.
 
     Migrated from WinForms PurplePen/PrintDescriptions.cs.
 -->

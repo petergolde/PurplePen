@@ -48,6 +48,41 @@ namespace PurplePen.Tests
             }
         }
 
+        // Record the descriptions with a RecordingPrintTarget (as print preview does), then play back each recorded page
+        // onto a bitmap and check it against the same baselines as printing directly.
+        private void DescriptionRecordingTest(string basename, DescriptionPrintSettings descPrintSettings, PageSettings descPrintPageSettings)
+        {
+            DescriptionPrinting descPrinter = new DescriptionPrinting(controller.GetEventDB(), ui.symbolDB, descPrintSettings);
+            BitmapPrintingTarget bitmapPrintTarget = new BitmapPrintingTarget();
+
+            using (RecordingPrintTarget recordingPrintTarget = new RecordingPrintTarget(bitmapPrintTarget.GetPrinterDpi())) {
+                PrintManager printManager = new PrintManager("Recording Title", recordingPrintTarget, descPrinter);
+                printManager.SetDefaultPaperSize(WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(descPrintPageSettings));
+                printManager.DoPrinting();
+
+                Assert.AreEqual("Recording Title", recordingPrintTarget.DocumentTitle);
+
+                // Play back each page onto a bitmap.
+                bitmapPrintTarget.StartPrinting(recordingPrintTarget.DocumentTitle, recordingPrintTarget.Pages.Count);
+                foreach (RecordedPrintPage page in recordingPrintTarget.Pages) {
+                    bitmapPrintTarget.PrintPage(page.PageNumber, page.PaperSize, grTarget => Assert.IsTrue(page.Draw(grTarget)));
+                }
+                bitmapPrintTarget.EndPrinting();
+            }
+
+            // Check all the pages against the baseline, and that there are no extra pages.
+            Bitmap[] bitmaps = bitmapPrintTarget.Bitmaps;
+
+            for (int page = 0; page < bitmaps.Length; ++page) {
+                Bitmap bm = bitmaps[page];
+                string baseFileName = basename + "_page" + (page + 1).ToString();
+                BitmapTestUtil.CheckBitmapsBase(bm, baseFileName);
+            }
+
+            string nextPageBaseline = TestUtil.GetTestFile(basename + "_page" + (bitmaps.Length + 1).ToString() + "_baseline.png");
+            Assert.IsNull(TestUtil.GetSpecificFileName(nextPageBaseline, throwOnNotFound: false), "Recording has fewer pages than the baseline");
+        }
+
         private void DescriptionPdfTest(string basename, DescriptionPrintSettings descPrintSettings, PageSettings descPrintPageSettings)
         {
             string pdfFileName = TestUtil.GetTestFile(basename + ".pdf");
@@ -126,6 +161,62 @@ namespace PurplePen.Tests
             pageSettings.Margins = new Margins(50, 50, 200, 200);
 
             DescriptionPrintingTest("printdesc\\desc2", descPrintSettings, pageSettings);
+        }
+
+        // Same as PrintDescriptions1, but recorded and played back (as print preview does).
+        [TestMethod]
+        public async Task RecordDescriptions1()
+        {
+            await controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(1), CourseId(2), CourseId(3) };
+
+            PageSettings pageSettings = new PageSettings();
+            pageSettings.Margins = new Margins(50, 50, 50, 50);        // default to 1/2" margins.
+
+            DescriptionRecordingTest("printdesc\\desc1", descPrintSettings, pageSettings);
+        }
+
+        // Same as PrintDescriptions2 (landscape), but recorded and played back (as print preview does).
+        [TestMethod]
+        public async Task RecordDescriptions2()
+        {
+            await controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
+
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(0), CourseId(1), CourseId(2), CourseId(3) };
+
+            PageSettings pageSettings = new PageSettings();
+            pageSettings.Landscape = true;
+            pageSettings.Margins = new Margins(50, 50, 200, 200);
+
+            DescriptionRecordingTest("printdesc\\desc2", descPrintSettings, pageSettings);
+        }
+
+        // After a RecordingPrintTarget is disposed, its pages no longer draw.
+        [TestMethod]
+        public async Task RecordedPagesDoNotDrawAfterDispose()
+        {
+            await controller.LoadInitialFile(TestUtil.GetTestFile("printdesc\\marymoor.ppen"), true);
+            DescriptionPrintSettings descPrintSettings = new DescriptionPrintSettings();
+            descPrintSettings.CourseIds = new Id<Course>[] { CourseId(1) };
+
+            PageSettings pageSettings = new PageSettings();
+            pageSettings.Margins = new Margins(50, 50, 50, 50);
+
+            RecordingPrintTarget recordingPrintTarget = new RecordingPrintTarget();
+            Assert.IsTrue(controller.PrintDescriptions(recordingPrintTarget, descPrintSettings, WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(pageSettings)));
+            Assert.AreEqual(1, recordingPrintTarget.Pages.Count);
+            RecordedPrintPage page = recordingPrintTarget.Pages[0];
+            Assert.AreEqual(1, page.PageNumber);
+
+            recordingPrintTarget.Dispose();
+
+            BitmapPrintingTarget bitmapPrintTarget = new BitmapPrintingTarget();
+            bitmapPrintTarget.StartPrinting("", 1);
+            bitmapPrintTarget.PrintPage(1, page.PaperSize, grTarget => Assert.IsFalse(page.Draw(grTarget)));
+            bitmapPrintTarget.EndPrinting();
         }
 
         // Should be symbols and text for all controls.

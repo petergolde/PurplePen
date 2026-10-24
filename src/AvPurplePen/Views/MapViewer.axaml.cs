@@ -118,6 +118,9 @@ public partial class MapViewer : UserControl
 
     private HighlightDrawing highlightDrawing = new HighlightDrawing();
 
+    // The cached drawing of the current map, or null if none. Disposed when the map changes, to release its bitmaps.
+    private CachedDrawing? mapDrawing;
+
     // Used to show a tooltip when the mouse hovers over a feature. The tooltip is shown after a delay, and fades in/out.
     private FadingPopup tooltipPopup = new FadingPopup() {
         XOffset = 0,
@@ -240,17 +243,22 @@ public partial class MapViewer : UserControl
         // The map to display has changed. Create a new CacheableMapDisplay
         // for the new map and set it as the drawing for the pan and zoom control.
 
+        CachedDrawing? oldMapDrawing = mapDrawing;
+
         if (newMapDisplay != null) {
             // The PanAndZoom control should display the merging of the map and the highlights.
             IThreadsafeSkiaDrawing skiaDrawing = new CacheableMapDisplay(newMapDisplay, SwopColorConverter.Instance);
-            IAvaloniaDrawing mapDrawing = new CachedDrawing(skiaDrawing);
+            mapDrawing = new CachedDrawing(skiaDrawing);
             IAvaloniaDrawing mergedDrawing = new AvaloniaDrawingMerge(mapDrawing, highlightDrawing);
 
             panAndZoom.Drawing = mergedDrawing;
         }
         else {
+            mapDrawing = null;
             panAndZoom.Drawing = null;
         }
+
+        oldMapDrawing?.Dispose();
     }
 
     private void HighlightsChanged(IMapViewerHighlight[]? newMapHighlights)

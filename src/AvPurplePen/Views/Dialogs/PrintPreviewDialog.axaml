@@ -1,0 +1,209 @@
+<!--
+    PrintPreviewDialog.axaml
+    Print Preview dialog: shows the pages recorded in a RecordingPrintTarget.
+    Generic — usable to preview anything that prints through an IPrintingTarget.
+
+    Layout:
+      * Toolbar at the top: page navigation (first / previous / "Page X of Y" /
+        next / last) on the left, zoom controls (fit page / zoom percentage /
+        zoom slider) on the right.
+      * Below it, page thumbnails on the left (click to show a page), then a
+        splitter, then the current page in a pan-and-zoom viewer.
+      * Close button at the bottom.
+
+    PageUp / PageDown also move between pages.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:pp="using:PurplePen"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:controls="using:AvPurplePen.Controls"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="900" d:DesignHeight="700"
+        x:Class="AvPurplePen.Views.PrintPreviewDialog"
+        x:DataType="vm:PrintPreviewDialogViewModel"
+        Classes="dialog"
+        Title="{resx:Localize PrintPreviewDialog_Text}"
+        Icon="/Assets/transparent.ico"
+        Width="900" Height="700"
+        MinWidth="500" MinHeight="400"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="True"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PrintPreviewDialogViewModel/>
+    </Design.DataContext>
+
+    <Window.KeyBindings>
+        <KeyBinding Gesture="PageUp" Command="{Binding PreviousPageCommand}"/>
+        <KeyBinding Gesture="PageDown" Command="{Binding NextPageCommand}"/>
+    </Window.KeyBindings>
+
+    <Window.Styles>
+        <!-- Compact square toolbar buttons holding a vector icon. -->
+        <Style Selector="Button.toolbarIcon">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <!-- Icons take the button's foreground, so they gray out when the button is disabled.
+             Icon geometry is drawn within a 10x10 box. -->
+        <Style Selector="Button.toolbarIcon Path">
+            <Setter Property="Fill" Value="{Binding $parent[Button].Foreground}"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="10"/>
+            <Setter Property="Stretch" Value="None"/>
+        </Style>
+    </Window.Styles>
+
+    <DockPanel Margin="12">
+
+        <!-- === Toolbar === -->
+        <Grid DockPanel.Dock="Top"
+              ColumnDefinitions="Auto,*,Auto"
+              Margin="0,0,0,8">
+
+            <!-- Page navigation -->
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="4">
+                <Button Classes="Small toolbarIcon"
+                        Command="{Binding FirstPageCommand}"
+                        ToolTip.Tip="{resx:Localize PrintPreviewDialog_firstPageButton_ToolTip}"
+                        AutomationProperties.Name="{resx:Localize PrintPreviewDialog_firstPageButton_ToolTip}">
+                    <Path Data="M 0,0 H 2 V 10 H 0 Z M 10,0 L 3,5 L 10,10 Z"/>
+                </Button>
+                <Button Classes="Small toolbarIcon"
+                        Command="{Binding PreviousPageCommand}"
+                        ToolTip.Tip="{resx:Localize PrintPreviewDialog_previousPageButton_ToolTip}"
+                        AutomationProperties.Name="{resx:Localize PrintPreviewDialog_previousPageButton_ToolTip}">
+                    <Path Data="M 9,0 L 1,5 L 9,10 Z"/>
+                </Button>
+
+                <!-- "Page X of Y". MinWidth keeps the next/last buttons from shifting as the page number changes. -->
+                <TextBlock MinWidth="96"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Margin="6,0">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="{x:Static resx:UIText.PrintPreviewDialog_pageNumberLabel_Text}">
+                            <Binding Path="CurrentPageNumber"/>
+                            <Binding Path="PageCount"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+
+                <Button Classes="Small toolbarIcon"
+                        Command="{Binding NextPageCommand}"
+                        ToolTip.Tip="{resx:Localize PrintPreviewDialog_nextPageButton_ToolTip}"
+                        AutomationProperties.Name="{resx:Localize PrintPreviewDialog_nextPageButton_ToolTip}">
+                    <Path Data="M 1,0 L 9,5 L 1,10 Z"/>
+                </Button>
+                <Button Classes="Small toolbarIcon"
+                        Command="{Binding LastPageCommand}"
+                        ToolTip.Tip="{resx:Localize PrintPreviewDialog_lastPageButton_ToolTip}"
+                        AutomationProperties.Name="{resx:Localize PrintPreviewDialog_lastPageButton_ToolTip}">
+                    <Path Data="M 0,0 L 7,5 L 0,10 Z M 8,0 H 10 V 10 H 8 Z"/>
+                </Button>
+            </StackPanel>
+
+            <!-- Zoom -->
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal"
+                        Spacing="4"
+                        IsEnabled="{Binding HasPages}">
+                <Button x:Name="fitPageButton"
+                        Classes="Small"
+                        Content="{resx:Localize PrintPreviewDialog_fitPageButton_Text}"
+                        Click="FitPageButton_Click"/>
+                <TextBlock Text="{Binding #pageViewer.ZoomFactor, StringFormat={}{0:P0}}"
+                           MinWidth="48"
+                           Margin="6,0,0,0"
+                           TextAlignment="Right"
+                           VerticalAlignment="Center"/>
+                <!-- Zoom slider: position is logarithmic in the zoom (see code-behind). -->
+                <Slider x:Name="zoomSlider"
+                        Classes="statusBarSlider"
+                        Width="140" Height="20"
+                        VerticalAlignment="Center"
+                        Minimum="0" Maximum="100"
+                        ValueChanged="ZoomSlider_ValueChanged"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- === Close button === -->
+        <Button x:Name="closeButton"
+                DockPanel.Dock="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,12,0,0"
+                MinWidth="85"
+                HorizontalContentAlignment="Center"
+                Content="{resx:Localize CloseButton}"
+                IsDefault="True"
+                IsCancel="True"
+                Click="CloseButton_Click"/>
+
+        <!-- === Thumbnails | splitter | page viewer === -->
+        <Grid ColumnDefinitions="170,6,*">
+
+            <Border Grid.Column="0"
+                    Background="{DynamicResource InputBackground}"
+                    BorderBrush="{DynamicResource DarkGreyBorder}"
+                    BorderThickness="1"
+                    CornerRadius="3"
+                    ClipToBounds="True">
+                <ListBox x:Name="thumbnailList"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ItemsSource="{Binding Pages}"
+                         SelectedIndex="{Binding CurrentPageIndex, Mode=TwoWay}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="pp:RecordedPrintPage">
+                            <StackPanel HorizontalAlignment="Center"
+                                        Spacing="2"
+                                        Margin="0,6">
+                                <controls:RecordedPageThumbnail Page="{Binding}"
+                                                                ThumbnailSize="110"
+                                                                ColorConverter="{Binding $parent[ListBox].((vm:PrintPreviewDialogViewModel)DataContext).ColorConverter}"/>
+                                <TextBlock Text="{Binding PageNumber}"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Border>
+
+            <GridSplitter Grid.Column="1"
+                          Background="Transparent"
+                          ResizeDirection="Columns"/>
+
+            <Border Grid.Column="2"
+                    BorderBrush="{DynamicResource DarkGreyBorder}"
+                    BorderThickness="1"
+                    CornerRadius="3"
+                    ClipToBounds="True">
+                <Panel>
+                    <views:PrintPageViewer x:Name="pageViewer"
+                                           Page="{Binding CurrentPage}"
+                                           ColorConverter="{Binding ColorConverter}"/>
+
+                    <!-- Shown instead of a page when nothing would be printed. -->
+                    <TextBlock Text="{resx:Localize PrintPreviewDialog_noPagesLabel_Text}"
+                               IsVisible="{Binding !HasPages}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Panel>
+            </Border>
+        </Grid>
+
+    </DockPanel>
+</Window>
