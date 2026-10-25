@@ -73,7 +73,7 @@ PurplePen (UI + Business Logic)
          ├── MapModel: Map data (OCAD/OpenMapper files, symbols, colors)
          └── Graphics2D: Rendering abstraction (IGraphicsTarget interface)
               │
-              └── Multiple rendering backends (GDI+, Skia, WPF, PDF, Direct2D, iOS)
+              └── Multiple rendering backends (GDI+, Skia, WPF, PDF)
 ```
 
 ### Key Architectural Patterns
@@ -81,34 +81,25 @@ PurplePen (UI + Business Logic)
 #### 1. Multi-Backend Rendering (Strategy Pattern)
 The most important architectural feature is the **rendering abstraction through `IGraphicsTarget`**.
 
-**Location**: `MapModel/Graphics2D-Shared/IGraphicsTarget.cs`
+**Location**: `MapModel/Graphics2D/IGraphicsTarget.cs`
 
 **Purpose**: Enables the same map and course data to render to multiple outputs:
 - **Map_GDIPlus**: Windows GDI+ (screen display, printing) - most mature
 - **Map_SkiaStd**: SkiaSharp (cross-platform) - actively being developed
 - **Map_WPF**: WPF rendering and XPS printing
 - **Map_PDF**: PDF export using PdfSharp
-- **Map_D2D**: Direct2D (hardware accelerated)
-- **Map_iOS**: iOS/mobile support
 
 Each backend implements `IGraphicsTarget` to translate abstract drawing commands (lines, paths, fills, text) to platform-specific APIs.
 
-#### 2. Shared Code Projects
-Uses `.projitems` shared projects to enable code reuse:
-- `MapModel/Graphics2D-Shared/`: Shared rendering utilities (Geometry, Bezier, CmykColor, RectSet)
-- `MapModel/MapModel-Shared/`: Shared map model code
-
-This allows the same code to compile for .NET Framework, .NET Standard, and iOS platforms.
-
-#### 3. CMYK Color Model
+#### 2. CMYK Color Model
 **All colors use CMYK** for print accuracy (critical for orienteering maps).
 
-**Location**: `MapModel/Graphics2D-Shared/CmykColor.cs`
+**Location**: `MapModel/Graphics2D/CmykColor.cs`
 
 Each rendering backend converts CMYK → RGB/platform color as needed. Never assume RGB colors in map or symbol code.
 
-#### 4. Controller Command Pattern
-**Location**: `PurplePen/Controller.cs` (very large file ~52K tokens)
+#### 3. Controller Command Pattern
+**Location**: `PurplePenCore/Controller.cs` (very large file ~52K tokens)
 
 **All UI operations flow through the Controller**, which coordinates:
 - EventDB changes (with undo/redo)
@@ -119,13 +110,13 @@ Each rendering backend converts CMYK → RGB/platform color as needed. Never ass
 
 When modifying functionality, look for command methods in Controller.cs first.
 
-#### 5. EventDB with Undo/Redo
-**Location**: `PurplePen/EventDB.cs`
+#### 4. EventDB with Undo/Redo
+**Location**: `PurplePenCore/EventDB.cs`
 
 EventDB wraps all course data (courses, controls, legs, special objects) with automatic undo/redo support through `UndoMgr`. All data modifications must go through EventDB methods to maintain undo history.
 
-#### 6. Immutable Course Views
-**Location**: `PurplePen/CourseView.cs`
+#### 5. Immutable Course Views
+**Location**: `PurplePenCore/CourseView.cs`
 
 CourseView creates static snapshots of courses for rendering. This separates the mutable data model (EventDB) from the immutable rendering view, enabling complex course variations (relay, map exchanges) without affecting the source data.
 
@@ -202,6 +193,9 @@ LocalizedStringManager.Instance.NotifyLanguageChanged();
 
 ### Legacy WinForms Application
 **PurplePen/** - WinForms desktop application (being ported to AvPurplePen)
+
+### Shared Core
+**PurplePenCore/** - Business logic shared by the WinForms and Avalonia applications
 - Controller.cs: Central command coordinator
 - EventDB.cs: Course data model with undo
 - SelectionMgr.cs: Selection state management
@@ -219,7 +213,7 @@ LocalizedStringManager.Instance.NotifyLanguageChanged();
 - OcadImport/Export: OCAD file format I/O (versions 6-12)
 - OpenMapperImport/Export: OpenMapper format I/O
 
-**MapModel/Graphics2D-Shared/** - Rendering abstraction
+**MapModel/Graphics2D/** - Rendering abstraction
 - IGraphicsTarget.cs: Core rendering interface
 - Geometry.cs, Bezier.cs: Geometric utilities
 - CmykColor.cs: CMYK color support
@@ -237,7 +231,7 @@ LocalizedStringManager.Instance.NotifyLanguageChanged();
 - The `SkiaBitmapGraphicsLoader` class (in SkiaGraphicsTarget.cs) uses `BitmapIO` and returns `Skia_Bitmap` instances with resolution
 
 ### IGraphicsBitmap Implementations and Resolution
-The `IGraphicsBitmap` interface (in `Graphics2D/IGraphicsTarget.cs`) defines `HorizontalResolution` and `VerticalResolution` properties (DPI, default 96).
+The `IGraphicsBitmap` interface (in `MapModel/Graphics2D/IGraphicsTarget.cs`) defines `HorizontalResolution` and `VerticalResolution` properties (DPI, default 96).
 
 **Skia backend** (`MapModel/Map_SkiaStd/SkiaGraphicsTarget.cs`):
 - `Skia_Bitmap`: Wraps `SKBitmap`. Stores resolution in fields. Has constructors with and without resolution. `Crop()` returns a `Skia_Pixmap` preserving resolution.

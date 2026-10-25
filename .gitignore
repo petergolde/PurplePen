@@ -1,27 +1,43 @@
-bin
-obj
-Debug
-Release
-StorePkg
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+StorePkg/
 x64/
-build/
+TestResults/
+*.binlog
+
+.vs/
+.idea/
+*.suo
+*.user
+*.rsuser
+*.cache
+*.tmp
+*.db
+*.opendb
+*.sdf
+*.opensdf
+.DS_Store
+.claude/settings.local.json
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.cachefile
+
+# Specific to this project.
+*.chm
 *_temp.*
 *_diff.png
 *_new.png
-*.suo
-*.docstates
-*.cache
-*.tmp
-*.user
-*.chm
-*.sdf
-*.opensdf
-*.DS_Store
-src/TestResults
-src/Tools/TranslateTool/TestResults
-src/MapModel/TestResults
+*_tempnew.png
+*.crunchproject.local.xml
+/src/InternalTrace.*.log
+!src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
+!src/PdfiumViewer/Libraries/**/x64
 src/Tools/TranslateTool/TestFiles
-src/PurplePen_Tests/Test References
 src/TestFiles/controller/ocad_create1/*.ocd
 src/TestFiles/controller/ocad_create2/*.ocd
 src/TestFiles/controller/ocad_create3/*.ocd
@@ -32,35 +48,10 @@ src/TestFiles/controller/ocad_create9/*.ocd
 src/TestFiles/modes/ocad_print_area/*.ocd
 src/TestFiles/exportxml/*_actual.xml
 src/TestFiles/gpx/*_actual.gpx
-doc/userdocs/**/_vti_cnf
-doc/userdocs/**/_vti_pvt
-doc/userdocs/**/desktop.ini
-doc/userdocs/Help/*.log
-**/.vs
-.claude/settings.local.json
-*.opendb
-*.db
-src/Innosetup/output/
-src/Innosetup/publish/
-
-# Visual C++ cache files
-ipch/
-*.aps
-*.ncb
-*.cachefile
-
-# Specific to this project.
-*_tempnew.png
-*.crunchproject.local.xml
+/src/TestFiles/controller/ocad_create10/Lincoln-CMYK.gif
+/src/TestFiles/controller/ocad_create11/LincolnNov12.bmp
 /src/TestFiles/controller/ocad_create12/mrsneeze.jpg
 /src/TestFiles/controller/ocad_create13/mrsneeze.jpg
-!src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x86
-!src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
-!src/PdfiumViewer/Libraries/**/x86
-!src/PdfiumViewer/Libraries/**/x64
-/src/InternalTrace.*.log
-*.vsidx
-/src/TestFiles/controller/ocad_create11/LincolnNov12.bmp
 /src/TestFiles/printdesc/descpdf1.pdf
 /src/TestFiles/printdesc/descpdf2.pdf
 /src/TestFiles/printdesc/descpdf3.pdf
@@ -69,17 +60,19 @@ ipch/
 /src/TestFiles/printdesc/relay_pdf_desc3.pdf
 /src/TestFiles/punchcards/descpdf1.pdf
 /src/TestFiles/punchcards/descpdf2.pdf
-src/MsftStoreInstaller/AppPackages/
-src/MsftStoreInstaller/BundleArtifacts/
+/src/Innosetup/output/
+/src/Innosetup/publish/
+/src/MsftStoreInstaller/AppPackages/
+/src/MsftStoreInstaller/BundleArtifacts/
 /src/FontInstaller/output/
+/src/Help/output/Purple Pen Help.log
+doc/userdocs/**/_vti_cnf
+doc/userdocs/**/_vti_pvt
+doc/userdocs/**/desktop.ini
+doc/userdocs/Help/*.log
 loc/po/tar/
 loc/po/pofiles.tar
 loc/po/*Log.txt
-/src/Help/output/Purple Pen Help.log
-/src/TestFiles/controller/ocad_create10/Lincoln-CMYK.gif
-
-# JetBrains files.
-**/.idea
 
 # Random files for local testing.
 /testing
