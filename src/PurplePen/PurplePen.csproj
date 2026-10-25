@@ -186,13 +186,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MapView\Properties\" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Images\DeleteHandle.cur" />
     <EmbeddedResource Include="Images\MoveHandle.cur" />
     <EmbeddedResource Include="MapView\DragCursor.cur" />
-    <None Include="MapView\MapViewer.csproj" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrashReporter.NET\CrashReporter.NET.csproj" />
@@ -203,9 +199,6 @@
     <ProjectReference Include="..\MapModel\Map_PDF\Map_PDF.csproj" />
     <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
     <ProjectReference Include="..\PurplePenCore\PurplePenCore.csproj" />
-  </ItemGroup>
-  <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
-    <Compile Remove="MapView\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup Label="EmbeddedResource items now included by globbing that were not in the original project file">
     <EmbeddedResource Remove="ViewAdditionalCourses.zh-HK.resx" />

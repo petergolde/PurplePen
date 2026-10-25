@@ -2,7 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AssemblyOriginatorKeyFile>DotSpatial.Projections.4.0.snk</AssemblyOriginatorKeyFile>
     <StartupObject></StartupObject>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -126,9 +125,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DotSpatial.Projections.4.0.snk" />
   </ItemGroup>
   <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
     <Compile Remove="DeflateStreamUtility.cs" />
