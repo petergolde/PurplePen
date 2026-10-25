@@ -118,22 +118,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AGInternals\" />
     <Folder Include="PdfSharp.Drawing.Wpf\" />
-    <Folder Include="Resources\images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Graphics2D\Graphics2D.csproj" />
-  </ItemGroup>
-  <ItemGroup Label="Compile items now included by globbing that were not in the original project file">
-    <Compile Remove="PdfSharp.Windows\enums\Zoom.cs" />
-    <Compile Remove="PdfSharp.Windows\enums\RenderMode.cs" />
-    <Compile Remove="AssemblyInfo-AG.cs" />
-    <Compile Remove="AgInternals\Typeface.cs" />
-    <Compile Remove="AgInternals\DrawingVisual.cs" />
-    <Compile Remove="AgInternals\DrawingContext.cs" />
-    <Compile Remove="AgInternals\AgHacks.cs" />
-    <Compile Remove="AgInternals\AgExtensions.cs" />
-    <Compile Remove="!internal\TargetContext.cs" />
   </ItemGroup>
 </Project>

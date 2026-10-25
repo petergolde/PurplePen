@@ -36,7 +36,6 @@ doc/userdocs/**/_vti_cnf
 doc/userdocs/**/_vti_pvt
 doc/userdocs/**/desktop.ini
 doc/userdocs/Help/*.log
-src/SetupIS/SetupIS
 **/.vs
 .claude/settings.local.json
 *.opendb
@@ -70,8 +69,6 @@ ipch/
 /src/TestFiles/printdesc/relay_pdf_desc3.pdf
 /src/TestFiles/punchcards/descpdf1.pdf
 /src/TestFiles/punchcards/descpdf2.pdf
-src/MsixInstaller/AppPackages/
-src/MsixInstaller/BundleArtifacts/
 src/MsftStoreInstaller/AppPackages/
 src/MsftStoreInstaller/BundleArtifacts/
 /src/FontInstaller/output/
