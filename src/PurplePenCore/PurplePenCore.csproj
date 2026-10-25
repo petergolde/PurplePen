@@ -5,7 +5,10 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>Purple Pen Core</AssemblyTitle>
+    <Product>Purple Pen</Product>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <RootNamespace>PurplePen</RootNamespace>
   </PropertyGroup>
 
@@ -212,4 +215,7 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="PurplePen_Tests" />
+  </ItemGroup>
 </Project>

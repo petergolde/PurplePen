@@ -17,7 +17,6 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
     <RootNamespace>TestingUtils</RootNamespace>
     <Configurations>Debug;Release;StorePkg</Configurations>

@@ -3,7 +3,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>PurplePen.Graphics2D</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <DisableImplicitFrameworkReferences Condition="'$(TargetFramework)' == 'net48'">true</DisableImplicitFrameworkReferences>
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>

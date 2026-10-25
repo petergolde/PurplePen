@@ -5,9 +5,6 @@ using System.Text;
 namespace PurplePen
 {
     // Contains the current version number.
-    // NOTE: WHEN CHANGING THIS, YOU MUST ALSO CHANGE THE VERSION PROPERTY OF THE SETUP PROJECT 
-    // (Go to solution explorer, highligh setup project, choose View/Properties Window.) Also, change the 
-    // product code (you will be prompted for this -- say yes).
     public static class VersionNumber
     {
         public const string Current = "4.0.0.220";

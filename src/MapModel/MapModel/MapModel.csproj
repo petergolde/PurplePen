@@ -18,7 +18,9 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Product>Purple Pen</Product>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <NoWarn>$(NoWarn);NU1510</NoWarn>
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
@@ -69,5 +71,8 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
     <PackageReference Include="System.Text.Encoding.CodePages" Prune="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Test_MapModel" />
   </ItemGroup>
 </Project>

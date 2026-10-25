@@ -3,7 +3,9 @@
     <TargetFramework>net10.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>PurplePen.MapModel</RootNamespace>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Product>Purple Pen</Product>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
