@@ -266,19 +266,33 @@ namespace AvPurplePen
 
             List<FilePickerFileType> fileTypes = ParseFileFilters(viewModel.FileFilters);
 
+            // FileFilterIndex is 1-based; SuggestedFileType selects the
+            // initially active filter. It must be one of the same instances
+            // in FileTypeChoices (platforms match it by reference).
+            FilePickerFileType? suggestedFileType = null;
+            if (viewModel.FileFilterIndex >= 1 && viewModel.FileFilterIndex <= fileTypes.Count)
+                suggestedFileType = fileTypes[viewModel.FileFilterIndex - 1];
+
             FilePickerSaveOptions options = new FilePickerSaveOptions {
                 Title = viewModel.Title,
                 FileTypeChoices = fileTypes,
+                SuggestedFileType = suggestedFileType,
                 DefaultExtension = defaultExtension,
                 ShowOverwritePrompt = viewModel.ShowOverwritePrompt,
                 SuggestedFileName = viewModel.SuggestedFileName,
             };
 
-            // Note: Avalonia's FilePickerSaveOptions doesn't have an
-            // "initially active filter" property — the platform picks the
-            // initial filter based on DefaultExtension. We respect the
-            // user's chosen filter on the way out and write the new index
-            // back to FileFilterIndex below.
+            // On macOS (Avalonia.Native), DefaultExtension is used only to
+            // choose the initial filter: every filter whose extension matches
+            // it is treated as a "default", alongside SuggestedFileType, and the
+            // *last* match wins. With several filters sharing an extension
+            // (e.g. "IOF XML 3.0|*.xml|IOF XML 2.0.3|*.xml") that overrides
+            // SuggestedFileType. The appended extension comes from the selected
+            // filter, so clearing DefaultExtension is safe there. On Windows,
+            // DefaultExtension is still needed (IFileDialog.SetDefaultExtension)
+            // and SuggestedFileType alone controls the initial filter.
+            if (OperatingSystem.IsMacOS() && suggestedFileType != null)
+                options.DefaultExtension = null;
 
             if (viewModel.InitialDirectory != null) {
                 options.SuggestedStartLocation = await storage.TryGetFolderFromPathAsync(viewModel.InitialDirectory);

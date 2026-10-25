@@ -2768,12 +2768,6 @@ Para imprimir mapas para una competición, se sugiere que los recorridos sean ex
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Vista previa...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Vista previa...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Vista previa...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Copias por recorrido:</value>
   </data>

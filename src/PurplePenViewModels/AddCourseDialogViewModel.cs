@@ -34,6 +34,13 @@ namespace PurplePen.ViewModels
         private string dialogTitle = "";
 
         /// <summary>
+        /// The help topic shown by the dialog's Help button. Set by the caller,
+        /// since it depends on how the dialog was invoked (Add Course, Duplicate
+        /// Course, or Course Properties).
+        /// </summary>
+        public string HelpTopic { get; set; } = "CourseAddCourse.htm";
+
+        /// <summary>
         /// The course name entered by the user.
         /// </summary>
         [ObservableProperty]

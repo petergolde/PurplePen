@@ -2824,12 +2824,6 @@ Võisluste jaoks on soovitav eksportida radade failid OCADi formaati (menüüst 
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Eelvaatlus...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Eelvaatlus...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Eelvaatlus...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Koopiate arv iga raja kohta:</value>
   </data>

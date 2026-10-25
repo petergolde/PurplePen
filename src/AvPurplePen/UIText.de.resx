@@ -2888,12 +2888,6 @@ Zum Drucken der Wettkampfdateien wird empfohlen, sie nach OCAD zu exportieren (Ã
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Vorschau...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Vorschau...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Vorschau...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Kopien jeder Bahn:</value>
   </data>

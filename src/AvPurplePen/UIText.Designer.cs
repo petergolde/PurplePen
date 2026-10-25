@@ -8687,15 +8687,6 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Preview....
-        /// </summary>
-        public static string PrintDescriptions_previewButton_Text {
-            get {
-                return ResourceManager.GetString("PrintDescriptions_previewButton_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Print.
         /// </summary>
         public static string PrintDescriptions_printButton_Text {
@@ -9061,15 +9052,6 @@ namespace AvPurplePen {
         public static string PrintPunches_paperSizeLabel_Text {
             get {
                 return ResourceManager.GetString("PrintPunches_paperSizeLabel_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Preview....
-        /// </summary>
-        public static string PrintPunches_previewButton_Text {
-            get {
-                return ResourceManager.GetString("PrintPunches_previewButton_Text", resourceCulture);
             }
         }
         

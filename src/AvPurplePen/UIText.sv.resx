@@ -2888,12 +2888,6 @@ För att skriva ut tävlingskartor är det rekommenderat att banorna exporteras 
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Förhandsgranska...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Förhandsgranska...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Förhandsgranska...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Antal kopior av varje bana:</value>
   </data>

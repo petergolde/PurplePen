@@ -53,6 +53,7 @@ window.helpToc = [
             { title: "Create RouteGadget Files...", page: "FileCreateRouteGadget.htm" },
             { title: "Create Data Interchange File (IOF XML)...", page: "FileCreateXml.htm" },
             { title: "Create GPX File...", page: "GpsCreateGpxFile.htm" },
+            { title: "Create KML File...", page: "FileCreateKmlFiles.htm" },
             { title: "Print Descriptions...", page: "FilePrintDescriptions.htm" },
             { title: "Print Punch Cards...", page: "FilePrintPunchCards.htm" },
             { title: "Print Courses...", page: "FilePrintCourses.htm" },

@@ -993,6 +993,7 @@ namespace PurplePen.ViewModels
 
             TextPropertiesDialogViewModel vm = new TextPropertiesDialogViewModel {
                 DialogTitle = MiscText.AddTextSpecialTitle,
+                HelpTopic = "EditAddText.htm",
                 UsageText = MiscText.AddTextSpecialExplanation,
                 AllowSpecialTextInsert = true,
                 TextExpander = controller.ExpandText,
@@ -1051,6 +1052,7 @@ namespace PurplePen.ViewModels
 
             LinePropertiesDialogViewModel vm = new LinePropertiesDialogViewModel {
                 DialogTitle = MiscText.AddLineTitle,
+                HelpTopic = "EditAddLine.htm",
                 UsageText = MiscText.AddLineExplanation,
                 ShowRadius = false,
                 ShowLineKind = true,
@@ -1090,6 +1092,7 @@ namespace PurplePen.ViewModels
 
             LinePropertiesDialogViewModel vm = new LinePropertiesDialogViewModel {
                 DialogTitle = MiscText.AddRectangleTitle,
+                HelpTopic = "EditAddRectangle.htm",
                 UsageText = MiscText.AddRectangleExplanation,
                 ShowRadius = true,
                 ShowLineKind = false,
@@ -1130,6 +1133,7 @@ namespace PurplePen.ViewModels
 
             LinePropertiesDialogViewModel vm = new LinePropertiesDialogViewModel {
                 DialogTitle = MiscText.AddEllipseTitle,
+                HelpTopic = "EditAddEllipse.htm",
                 UsageText = MiscText.AddEllipseExplanation,
                 ShowRadius = false,
                 ShowLineKind = true,
@@ -1260,6 +1264,7 @@ namespace PurplePen.ViewModels
 
             TextPropertiesDialogViewModel vm = new TextPropertiesDialogViewModel {
                 DialogTitle = MiscText.ChangeTextTitle,
+                HelpTopic = "ItemChangeText.htm",
                 UsageText = MiscText.ChangeTextSpecialExplanation,
                 AllowSpecialTextInsert = true,
                 TextExpander = controller.ExpandText,
@@ -1304,6 +1309,7 @@ namespace PurplePen.ViewModels
 
             LinePropertiesDialogViewModel vm = new LinePropertiesDialogViewModel {
                 DialogTitle = MiscText.ChangeLineAppearanceTitle,
+                HelpTopic = "ItemChangeLineAppearance.htm",
                 UsageText = MiscText.ChangeLineAppearanceExplanation,
                 ShowRadius = showRadius,
                 ShowLineKind = !showRadius,
@@ -1438,6 +1444,7 @@ namespace PurplePen.ViewModels
             controller.GetAllControlsProperties(out allControlsPrintScale, out allControlsDescKind);
 
             AddCourseDialogViewModel vm = new AddCourseDialogViewModel();
+            vm.HelpTopic = "CourseAddCourse.htm";
             vm.InitializePrintScales(controller.MapScale);
             vm.PrintScale = allControlsPrintScale;
 
@@ -1487,6 +1494,7 @@ namespace PurplePen.ViewModels
 
                 AddCourseDialogViewModel vm = new AddCourseDialogViewModel {
                     DialogTitle = MiscText.DuplicateCourseTitle,
+                    HelpTopic = "CourseDuplicate.htm",
                     CourseKind = courseKind,
                     CourseName = "",
                     CanChangeCourseKind = false,
@@ -1539,6 +1547,7 @@ namespace PurplePen.ViewModels
 
                 AddCourseDialogViewModel vm = new AddCourseDialogViewModel {
                     DialogTitle = MiscText.CoursePropertiesTitle,
+                    HelpTopic = "CourseProperties.htm",
                     CourseKind = courseKind,
                     CourseName = courseName,
                     ControlLabelKind = labelKind,
@@ -2206,6 +2215,7 @@ namespace PurplePen.ViewModels
 
             PrintPunchesDialogViewModel vm = new PrintPunchesDialogViewModel {
                 EventDB = controller.GetEventDB(),
+                Controller = controller,
                 IsPdfCreation = true,
                 Printer = printer,
                 PaperSizeWithMargins = paperSizeWithMargins,
@@ -2328,6 +2338,7 @@ namespace PurplePen.ViewModels
 
             CreatePdfCoursesDialogViewModel vm = new CreatePdfCoursesDialogViewModel {
                 EventDB = controller.GetEventDB(),
+                Controller = controller,
                 ShowMergeParts = controller.AnyMultipart(),
                 EnableChangeCropping = !isPdfMap,
                 Settings = settings,
@@ -2573,7 +2584,7 @@ namespace PurplePen.ViewModels
             FileSaveViewModel saveVm = new FileSaveViewModel {
                 Title = MiscText.SaveXmlFileDialog_Title,
                 FileFilters = MiscText.SaveXmlFileDialog_Filter,
-                FileFilterIndex = 2,
+                FileFilterIndex = 1,
                 DefaultExtension = "xml",
                 ShowOverwritePrompt = true,
                 InitialDirectory = Path.GetDirectoryName(xmlFileName),

@@ -12,6 +12,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
         xmlns:avutil="using:AvUtil"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -35,16 +36,20 @@
 
     <DockPanel Margin="12">
 
-        <!-- "Don't warn again" checkbox + OK button at the bottom. -->
+        <!-- Help button + "Don't warn again" checkbox + OK button at the bottom. -->
         <Grid DockPanel.Dock="Bottom"
-              ColumnDefinitions="*,Auto"
+              ColumnDefinitions="Auto,*,Auto"
               Margin="0,12,0,0">
-            <CheckBox Grid.Column="0"
+            <controls:HelpButton Grid.Column="0"
+                                 VerticalAlignment="Center"
+                                 HelpTopic="MissingFontsDialog.htm"/>
+            <CheckBox Grid.Column="1"
                       x:Name="checkBoxDontWarnAgain"
+                      Margin="12,0,0,0"
                       Content="{resx:Localize MissingFonts_checkBoxDontWarnAgain_Text}"
                       VerticalAlignment="Center"
                       IsChecked="{Binding IgnoreMissingFonts, Mode=TwoWay}"/>
-            <Button Grid.Column="1"
+            <Button Grid.Column="2"
                     x:Name="okButton"
                     Content="{resx:Localize MissingFonts_okButton_Text}"
                     MinWidth="85"

@@ -13,6 +13,10 @@
 // The caller supplies a PrinterNameAndSettings and a
 // PrintingPaperSizeWithMargins which round-trip unchanged through the dialog;
 // the ViewModel surfaces display strings for them.
+//
+// When the caller supplies a Controller, the Preview… button records the
+// pages with a RecordingPrintTarget and shows them in the Print Preview
+// dialog, using the punch card layout as currently edited in the dialog.
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -26,7 +30,9 @@ namespace PurplePen.ViewModels
     /// <summary>
     /// ViewModel for the Print Punch Cards / Create PDF of Punch Cards dialog.
     /// Usage: the caller sets <see cref="EventDB"/>, <see cref="IsPdfCreation"/>,
-    /// <see cref="Printer"/>, <see cref="PaperSizeWithMargins"/>, then assigns
+    /// <see cref="Printer"/>, <see cref="PaperSizeWithMargins"/>,
+    /// <see cref="PunchcardFormat"/>, and (to enable Preview)
+    /// <see cref="Controller"/>, then assigns
     /// <see cref="Settings"/> to seed the dialog. After OK, read
     /// <see cref="Settings"/> for the user's choices. <see cref="Printer"/>
     /// and <see cref="PaperSizeWithMargins"/> round-trip unchanged.
@@ -40,13 +46,22 @@ namespace PurplePen.ViewModels
         private EventDB? eventDB;
 
         /// <summary>
+        /// The Controller used to lay out and draw the pages for Preview. When
+        /// null, the Preview button is hidden.
+        /// </summary>
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsPreviewVisible))]
+        [NotifyCanExecuteChangedFor(nameof(PreviewCommand))]
+        private Controller? controller;
+
+        /// <summary>
         /// When true the dialog acts as a "Create PDF" dialog: the Printer
         /// row is hidden, the OK button reads "Create PDF", and the window
         /// title changes accordingly.
         /// </summary>
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsPrinterVisible))]
-        [NotifyPropertyChangedFor(nameof(IsPreviewVisible))]
+        [NotifyPropertyChangedFor(nameof(HelpTopic))]
         private bool isPdfCreation;
 
         /// <summary>
@@ -111,8 +126,11 @@ namespace PurplePen.ViewModels
         /// <summary>True when the printer row is visible (i.e. not PDF creation).</summary>
         public bool IsPrinterVisible => !IsPdfCreation;
 
-        /// <summary>True when the Preview button is visible (i.e. not PDF creation).</summary>
-        public bool IsPreviewVisible => !IsPdfCreation;
+        /// <summary>The help topic shown by the dialog's Help button.</summary>
+        public string HelpTopic => IsPdfCreation ? "FileCreatePdfPunchCards.htm" : "FilePrintPunchCards.htm";
+
+        /// <summary>True when the Preview button is visible (i.e. a Controller was supplied).</summary>
+        public bool IsPreviewVisible => Controller != null;
 
         /// <summary>The printer name shown next to the "Printer:" label.</summary>
         public string PrinterNameDisplay => Printer?.PrinterName ?? "";
@@ -263,5 +281,36 @@ namespace PurplePen.ViewModels
                 PunchcardFormat = layoutVm.PunchcardFormat;
             }
         }
+
+        /// <summary>
+        /// Shows the pages that would be printed (or put into the PDF) with the
+        /// current settings and punch card layout in the Print Preview dialog.
+        /// The view must push the CourseSelector's selection into
+        /// <see cref="SelectedCourseDesignators"/> and
+        /// <see cref="VariationChoicesPerCourse"/> before executing this.
+        /// Errors while laying out the pages are reported by the Controller.
+        /// </summary>
+        [RelayCommand(CanExecute = nameof(CanPreview))]
+        private async Task Preview()
+        {
+            if (Controller == null || PaperSizeWithMargins == null)
+                return;
+
+            // PDF output and printers both render at high resolution; the PDF
+            // resolution is a good stand-in for either.
+            using (RecordingPrintTarget printTarget = new RecordingPrintTarget(PdfPrintTarget.PdfDpi)) {
+                // The punch card layout may have been edited in this dialog but not yet applied to the event.
+                if (!Controller.PrintPunches(printTarget, Settings, PaperSizeWithMargins, PunchcardFormat))
+                    return;
+
+                PrintPreviewDialogViewModel previewVm = new PrintPreviewDialogViewModel {
+                    PrintTarget = printTarget,
+                };
+                await Services.DialogService.ShowDialogAsync(previewVm);
+            }
+        }
+
+        // Preview is possible only when a Controller was supplied.
+        private bool CanPreview() => Controller != null;
     }
 }

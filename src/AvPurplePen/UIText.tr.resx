@@ -2911,12 +2911,6 @@ Yarışma haritalarını yazdırmak için kursların OCAD dosyalarına aktarılm
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Önizleme...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Önizleme...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Önizleme...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Her parkurun kopyaları:</value>
   </data>

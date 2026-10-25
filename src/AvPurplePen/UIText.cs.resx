@@ -2829,12 +2829,6 @@ Pro tisk závodních map se doporučuje exportovat tratě do souborů OCAD (vybe
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Náhled...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Náhled...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Náhled...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Kopie každé trati:</value>
   </data>

@@ -2335,12 +2335,6 @@ Skala mapy określa powiązanie pomiędzy wydrukiem a rzeczywistością.
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Podgląd...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Podgląd...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Podgląd...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Liczba kopii każdej trasy:</value>
   </data>

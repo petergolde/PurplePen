@@ -2895,12 +2895,6 @@ Per la stampa delle mappe di gara, si consiglia di esportare i percorsi su file 
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Anteprima...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Anteprima...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Anteprima...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Copie per ogni percorso:</value>
   </data>

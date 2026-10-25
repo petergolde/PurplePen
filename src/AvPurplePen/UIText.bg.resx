@@ -2909,12 +2909,6 @@
   <data name="PrintCourses_previewButton_Text" xml:space="preserve">
     <value>Преглед...</value>
   </data>
-  <data name="PrintDescriptions_previewButton_Text" xml:space="preserve">
-    <value>Преглед...</value>
-  </data>
-  <data name="PrintPunches_previewButton_Text" xml:space="preserve">
-    <value>Преглед...</value>
-  </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Разпечатки за всеки маршрут:</value>
   </data>

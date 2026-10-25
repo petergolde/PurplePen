@@ -25,6 +25,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:PurplePen.ViewModels"
         xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
         xmlns:html="clr-namespace:TheArtOfDev.HtmlRenderer.Avalonia;assembly=Avalonia.HtmlRenderer"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -53,12 +54,17 @@
         <Grid DockPanel.Dock="Bottom"
               ColumnDefinitions="Auto,*,Auto"
               Margin="0,8,0,0">
-            <Button Grid.Column="0"
-                    x:Name="buttonPrint"
-                    Content="{resx:Localize ReportForm_printButton_Text}"
-                    Click="PrintButton_Click"
-                    MinWidth="110"
-                    HorizontalContentAlignment="Center"/>
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="12">
+                <controls:HelpButton VerticalAlignment="Center"
+                                     HelpTopic="{Binding HelpPage}"/>
+                <Button x:Name="buttonPrint"
+                        Content="{resx:Localize ReportForm_printButton_Text}"
+                        Click="PrintButton_Click"
+                        MinWidth="110"
+                        HorizontalContentAlignment="Center"/>
+            </StackPanel>
             <Button Grid.Column="2"
                     x:Name="buttonClose"
                     Content="{resx:Localize ReportForm_okButton_Text}"
