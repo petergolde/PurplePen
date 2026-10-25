@@ -3916,10 +3916,12 @@ namespace PurplePen
         public void BeginAddImageSpecialMode(string fileName)
         {
             IGraphicsBitmap graphicsBitmap = null;
+            byte[] imageData = null;
 
             bool success = HandleExceptions(
                 delegate {
-                    using (Stream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read)) {
+                    imageData = File.ReadAllBytes(fileName);
+                    using (Stream stream = new MemoryStream(imageData)) {
                         graphicsBitmap = Services.BitmapLoader.ReadBitmapFromStream(stream);
                     }
                 },
@@ -3931,7 +3933,7 @@ namespace PurplePen
                     rect => new ImageCourseObj(Id<Special>.None, 1.0F, GetCourseAppearance(),
                                              new PointF[] { rect.Location, new PointF(rect.Right, rect.Bottom) },
                                              imageName, graphicsBitmap),
-                    rect => ChangeEvent.AddImageSpecial(eventDB, rect, graphicsBitmap, imageName)
+                    rect => ChangeEvent.AddImageSpecial(eventDB, rect, graphicsBitmap, imageName, imageData)
                     ));
             }
         }
