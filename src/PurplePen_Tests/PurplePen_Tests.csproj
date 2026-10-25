@@ -23,15 +23,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net48|AnyCPU'">
-    <WarningLevel>9999</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net48|AnyCPU'">
-    <WarningLevel>9999</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='StorePkg|net48|AnyCPU'">
-    <WarningLevel>9999</WarningLevel>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-windows|AnyCPU'">
     <WarningLevel>9999</WarningLevel>
   </PropertyGroup>
@@ -62,11 +53,6 @@
     <ProjectReference Include="..\PurplePen\PurplePen.csproj" />
     <ProjectReference Include="..\Testing\TestUtil.GdiPlus\TestUtil.GdiPlus.csproj" />
     <ProjectReference Include="..\Testing\TestUtil\TestUtil.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Map\" />
-    <Folder Include="Test References\" />
-    <Folder Include="TestUtil\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="fonts\Roboto-Black.ttf">

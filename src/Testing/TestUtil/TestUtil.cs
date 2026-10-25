@@ -72,11 +72,7 @@ namespace TestingUtils
         {
             string[] suffixes = {
                 Environment.Is64BitProcess ? BIT64 : BIT32,
-#if NETFRAMEWORK
-                NETFRAMEWORK,
-#else
-               NETCORE,
-#endif  
+                NETCORE,
             };
 
             string result = GetSpecificFileName(path, suffixes);
@@ -116,11 +112,7 @@ namespace TestingUtils
         // variation first and the other-framework variation second. Throws if path already has either suffix.
         public static (string, string) AddFrameworkSuffix(string path)
         {
-#if NETFRAMEWORK
-            return AddSuffixes(path, NETFRAMEWORK, NETCORE);
-#else                
             return AddSuffixes(path, NETCORE, NETFRAMEWORK);
-#endif
         }
 
 

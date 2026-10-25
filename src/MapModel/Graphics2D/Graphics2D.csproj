@@ -5,7 +5,6 @@
     <RootNamespace>PurplePen.Graphics2D</RootNamespace>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
-    <DisableImplicitFrameworkReferences Condition="'$(TargetFramework)' == 'net48'">true</DisableImplicitFrameworkReferences>
     <Configurations>Debug;Release;StorePkg</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -15,11 +14,4 @@
     <OutputPath>bin\StorePkg\</OutputPath>
     <Optimize>true</Optimize>
   </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
 </Project>

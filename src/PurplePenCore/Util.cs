@@ -335,7 +335,6 @@ namespace PurplePen
         // Get the relative name, if possible, of one file relative to another.
         public static string GetRelativeFileName(string relativeTo, string file)
         {
-#if NET5_0_OR_GREATER
             // Use the built-in .NET method (available in .NET 5+)
             try {
                 string result = Path.GetRelativePath(Path.GetDirectoryName(relativeTo), file);
@@ -344,18 +343,6 @@ namespace PurplePen
             catch {
                 return file; // Fall back to absolute path if relative path can't be computed
             }
-#else
-            // Use P/Invoke for .NET Framework 4.8
-            StringBuilder result = new StringBuilder(NativeMethods.MAX_PATH);
-            bool ret = NativeMethods.PathRelativePathTo(result, relativeTo, NativeMethods.FILE_ATTRIBUTE_NORMAL, file, NativeMethods.FILE_ATTRIBUTE_NORMAL);
-            if (ret == false)
-                return file;
-            else {
-                if (result.Length > 2 && result[0] == '.' && result[1] == '\\')
-                    result.Remove(0, 2);
-                return result.ToString();
-            }
-#endif
         }
 
         // Filters out invalid path characters in a string, replacing them with underscores.
@@ -594,24 +581,6 @@ namespace PurplePen
         {
             return eventDB.GetCourse(courseId).name;
         }
-
-
-
-        static class NativeMethods
-        {
-            [DllImport("shlwapi.dll", CharSet = CharSet.Auto, BestFitMapping = false, ThrowOnUnmappableChar = true)]
-            public static extern bool PathRelativePathTo(
-                 [Out] StringBuilder pszPath,
-                 [In] string pszFrom,
-                 [In] uint dwAttrFrom,
-                 [In] string pszTo,
-                 [In] uint dwAttrTo
-            );
-            public const uint FILE_ATTRIBUTE_DIRECTORY = 0x10;
-            public const uint FILE_ATTRIBUTE_NORMAL = 0x0;
-            public const int MAX_PATH = 260;
-        }
-
     }
 
     // Name style for ControlPointName()

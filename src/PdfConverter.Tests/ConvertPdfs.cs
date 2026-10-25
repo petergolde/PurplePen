@@ -8,11 +8,7 @@ namespace PdfConverter.Tests
     [TestFixture, NonParallelizable]
     public class ConvertPdfs
     {
-#if NETFRAMEWORK
-        string platform = "net48";
-#else
         string platform = "net10";
-#endif
 
         string GetRandomHex8()
         {

@@ -12,9 +12,6 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Update="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <PackageReference Include="NUnit" />
     <PackageReference Include="NUnit3TestAdapter" />
   </ItemGroup>
@@ -34,7 +31,7 @@
     <ProjectReference Include="..\PDFsharp\src\foundation\src\PDFsharp\src\PdfSharp\PdfSharp.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net48'">
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
   </ItemGroup>
 

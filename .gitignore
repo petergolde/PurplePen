@@ -36,7 +36,6 @@ ipch/
 *.crunchproject.local.xml
 /src/InternalTrace.*.log
 !src/DotSpatialProjectionsLite/DotSpatial.Projections.Tests/x64
-!src/PdfiumViewer/Libraries/**/x64
 src/Tools/TranslateTool/TestFiles
 src/TestFiles/controller/ocad_create1/*.ocd
 src/TestFiles/controller/ocad_create2/*.ocd

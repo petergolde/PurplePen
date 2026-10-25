@@ -35,16 +35,10 @@ namespace PurplePen.MapModel
         // Bitmaps above this size are split when drawing.
         private const int BITMAP_DRAW_LIMIT = 10000000;
 
-#if NETFRAMEWORK
-        // These are the pixel modes we always used with .NET Framework.
-        public const PixelFormat AlphaPixelFormat = PixelFormat.Format32bppArgb;
-        public const PixelFormat NonAlphaPixelFormat = PixelFormat.Format24bppRgb;
-#else
         // The System.Drawing in .net code doesn't work well with 24 bpp modes, so use
         // 32 bpp modes for both alpha and non-alpha. 
         public const PixelFormat AlphaPixelFormat = PixelFormat.Format32bppPArgb;
         public const PixelFormat NonAlphaPixelFormat = PixelFormat.Format32bppPArgb;
-#endif
 
         public GDIPlus_GraphicsTarget(Graphics g, IColorConverter colorConverter, float intensity)
         {

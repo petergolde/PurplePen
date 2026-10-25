@@ -15,21 +15,16 @@ namespace PurplePen.MapModel
     internal static class Util {
         public const float kappa = 0.5522847498F;  // constant used to create near-circle with a bezier.
 
-#if NET5_0_OR_GREATER
         static Util()
         {
             // Initialize the codepage information that we need.
             // This runs once per process.
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
-#endif
 
         // Get the correct encoding for the OCAD file.
         public static Encoding GetDefaultOcadEncoding()
         {
-#if NETFRAMEWORK
-            return Encoding.Default;
-#else
             // Get default system encoding.
             Encoding encoding = Encoding.GetEncoding(0);
 
@@ -40,7 +35,6 @@ namespace PurplePen.MapModel
             }
 
             return encoding;
-#endif
         }
 
 
