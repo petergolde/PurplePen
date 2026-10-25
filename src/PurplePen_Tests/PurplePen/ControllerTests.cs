@@ -1870,7 +1870,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             }
 
             success = controller.CreateOcadFiles(settings);
-            Assert.IsTrue(success);
+            Assert.IsTrue(success, ui.output.ToString());
 
             for (int i = 0; i < expectedFiles.Length; ++i) {
                 CheckDump(expectedFiles[i], expectedDumps[i]);
