@@ -31,10 +31,6 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <None Remove="swopsamples.dat" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <Content Include="symbols.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

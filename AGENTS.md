@@ -291,7 +291,6 @@ Course files are stored in Purple Pen's XML format (.ppen files).
 The solution uses custom ruleset files:
 - `Tools/PurplePenRules.ruleset`: Main application rules
 - `MapModel/Analysis.ruleset`: MapModel subsystem rules
-- `MapModel/ExternalCode.ruleset`: External/third-party code
 
 ## Porting WinForms Dialogs to Avalonia
 
