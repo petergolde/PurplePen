@@ -198,7 +198,6 @@
     <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
     <ProjectReference Include="..\MapModel\Map_GDIPlus\Map_GDIPlus.csproj" />
     <ProjectReference Include="..\MapModel\Map_PDF\Map_PDF.csproj" />
-    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
     <ProjectReference Include="..\PurplePenCore\PurplePenCore.csproj" />
   </ItemGroup>
   <ItemGroup Label="Compile items now included by globbing that were not in the original project file">

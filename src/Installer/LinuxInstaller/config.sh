@@ -133,19 +133,6 @@ and export the results for printing and race management.}"
 # larger package. Off by default; turn on once the basic pipeline is proven.
 : "${PUBLISH_READYTORUN:=false}"
 
-# Republish PdfConverter as a self-contained helper and overlay it onto the
-# payload.
-#
-# AvPurplePen.csproj copies PdfConverter's plain *build* output into the
-# publish directory, which is framework-dependent: its apphost looks for a
-# machine-wide .NET install, finds the self-contained app's own hostfxr next to
-# it instead, and refuses to start. Republishing it self-contained for this RID
-# makes it share the runtime files already present, so the helper costs only
-# about 7 MB (essentially just libpdfium.so).
-#
-# Set to false to leave whatever the main publish produced untouched.
-: "${INCLUDE_PDF_CONVERTER:=true}"
-
 # ---------------------------------------------------------------------------
 # Which packages to build
 # ---------------------------------------------------------------------------

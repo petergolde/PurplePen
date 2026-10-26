@@ -2478,9 +2478,6 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Invia Rapporto</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe non trovato</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Il convertitore Pdfium non è riuscito a leggere correttamente il file PDF</value>
   </data>

@@ -69,6 +69,7 @@
     <ProjectReference Include="..\DotSpatialProjectionsLite\DotSpatial.Projections\DotSpatial.Projections.csproj" />
     <ProjectReference Include="..\MapModel\Graphics2D\Graphics2D.csproj" />
     <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
+    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
   </ItemGroup>
 
   <ItemGroup>

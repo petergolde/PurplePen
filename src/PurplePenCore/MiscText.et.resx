@@ -596,9 +596,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF konverteril ebaõnnestus PDFi lugemisel</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe ei leitud</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Ei saanud konverteerida PDFi failist '{0}'</value>
   </data>

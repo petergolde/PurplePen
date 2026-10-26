@@ -607,9 +607,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF konverterare misslyckades att läsa PDF-filen</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe hittades inte</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunde inte läsa resultatet av PDF-konvertering från fil '{0}</value>
   </data>

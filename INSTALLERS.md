@@ -29,7 +29,7 @@ instructions.
 | Root namespace | `AvPurplePen` |
 | Target framework | `net10.0` — **not** `net10.0-macos`; it's a plain Avalonia desktop app and does not use the .NET macOS workload |
 | Version source | `src/PurplePenCore/VersionNumber.cs` → `public const string Current = "4.0.0.110"` |
-| Helper executable | `src/PdfConverter/PdfConverter.csproj` — rasterizes PDF map templates |
+| PDF rasterizer | `src/PdfConverter/PdfConverter.csproj` — a library (referenced by PurplePenCore) that rasterizes PDF map templates in-process; pdfium loads only when a PDF map is opened |
 | Bundled fonts | 19 Roboto TTFs in `fonts/` in the publish output |
 
 Parse the version out of `VersionNumber.cs` rather than hard-coding it:
@@ -43,10 +43,10 @@ string; Debian and RPM versions have their own rules (see §6).
 
 ---
 
-## 2. The five cross-platform gotchas
+## 2. Cross-platform gotchas
 
 These were all found on macOS and then **verified to reproduce identically on a
-`linux-x64` publish**. Anyone building a Linux package will hit all five.
+`linux-x64` publish**.
 
 ### 2.1 A RID-specific publish flattens native libraries; a RID-agnostic one does not
 
@@ -66,23 +66,34 @@ RID-specific *framework-dependent* publish flattens identically.
 **Consequence:** in a RID-specific publish, `libSkiaSharp.so`, `libpdfium.so`
 etc. live at the top level and the `runtimes/` tree is not consulted at all.
 
-### 2.2 The `runtimes/` tree is ~399 MB of dead weight
+### 2.2 PdfConverter used to be a separate helper executable — resolved
 
-`AvPurplePen.csproj` has a `CopyPdfConverterToPublishOutput` target that copies
-PdfConverter's entire **build** output into the publish directory. That build is
-deliberately RID-agnostic (`RuntimeIdentifier=` is passed blank), so it drags in
-`pdfium` and `libSkiaSharp` for *every* platform:
+PDF map templates used to be rasterized by `PdfConverter` as a child process.
+Shipping that second executable caused a chain of problems, all now gone
+because `PdfConverter` is a plain library that PurplePenCore references and
+calls in-process:
 
-```
-win-x86 99M   win-x64 98M   win-arm64 97M
-linux-musl-x64/-arm64/-x86 50M   linux-x64/-x86/-arm/-arm64 28M
-osx 15M   osx-x64 7.2M   osx-arm64 6.8M
-```
+- `AvPurplePen.csproj` copied PdfConverter's entire RID-agnostic **build**
+  output into the publish directory, dragging in a ~399 MB `runtimes/` tree of
+  native pdfium and libSkiaSharp binaries for every platform (macOS bundle
+  533 MB, Linux publish 721 MB).
+- That copy was framework-dependent, so inside a self-contained app its apphost
+  found the app's own `libhostfxr`, looked for a shared framework in the app
+  directory and refused to start. Both installers had to republish it
+  self-contained and overlay it, guarded by a runtime-version check.
+- The copy target globbed `PdfConverter/bin/.../net10.0/**` recursively, so
+  each RID-specific republish (or a Windows publish in the same checkout)
+  poisoned the next build with a second self-contained runtime.
+- The helper was located by file name next to the assembly, which was wrong on
+  macOS/Linux until `1caa2efa` and fragile under single-file publishing.
 
-**Verified sizes:** macOS publish 533 MB, Linux publish **721 MB**. Excluding
-`runtimes/` on macOS gave a 141 MB bundle that runs correctly.
+Now pdfium arrives like any other native dependency: a RID-specific publish
+flattens `pdfium.dll` / `libpdfium.so` / `libpdfium.dylib` to the root (§2.1),
+and nothing under `runtimes/` is needed. The installers keep their `runtimes/`
+exclusion and RID-directory detection only as safety nets.
 
-**How to prove it is unused** — the definitive check, works on any platform:
+**How to prove `runtimes/` is unused** — the definitive check, works on any
+platform:
 
 ```bash
 python3 -c "
@@ -92,100 +103,7 @@ print(sum(1 for t in d['targets'].values() for i in t.values() if i.get('runtime
 ```
 
 `runtimeTargets` is the *only* mechanism by which the host probes
-`runtimes/<rid>/native/`. Both `PurplePen.deps.json` and (after the fix in §2.3)
-`PdfConverter.deps.json` report **0**, so nothing ever looks in that directory.
-The tree is orphaned, not merely redundant.
-
-**Caveat that bites:** `libpdfium` has **no** copy at the publish root, on either
-platform — it exists *only* inside `runtimes/`. It is only safe to delete
-`runtimes/` if you also apply the fix in §2.3, which puts `libpdfium` at the
-root. Deleting `runtimes/` *without* that fix silently removes PDF support.
-
-### 2.3 PdfConverter is framework-dependent and cannot start
-
-`CopyPdfConverterToPublishOutput` copies a plain **build** output, so
-`PdfConverter.runtimeconfig.json` says `"framework": {...}` while the app's says
-`"includedFrameworks"`. The helper's apphost then finds the self-contained app's
-own `libhostfxr` sitting next to it, resolves ".NET location" to the *app
-directory*, finds no shared framework there, and refuses to start:
-
-```
-You must install or update .NET to run this application.
-Framework: 'Microsoft.NETCore.App', version '10.0.0'
-.NET location: .../publish/
-No frameworks were found.
-```
-
-**Verified:** this fails even on a machine that *does* have .NET 10 installed —
-it never consults the system install. **Verified identical on `linux-x64`.**
-
-**The fix:** republish PdfConverter self-contained *for the target RID* and
-overlay it onto the payload. Because it lands in the same directory as the app,
-it shares every framework assembly already present:
-
-```bash
-dotnet publish src/PdfConverter/PdfConverter.csproj \
-    -c Release -f net10.0 -r <RID> --self-contained true -o <tmp>
-rsync -a <tmp>/ <payload>/          # NO --delete: this is an overlay
-```
-
-This does two things at once: it makes the helper startable, and (per §2.1) it
-flattens `libpdfium` to the root, which is what makes deleting `runtimes/` safe.
-
-**Verified cost: ~7 MB**, almost entirely `libpdfium` itself.
-
-**Verified on Linux:** `-r linux-x64 --self-contained` produces an ELF apphost,
-`libpdfium.so` at the root, and no `runtimes/` directory.
-
-**Guard you must implement:** the overlay overwrites shared framework
-assemblies. If the app and helper ever resolve different
-`Microsoft.NETCore.App` patch versions, this silently swaps the runtime out from
-under the main app. Compare both `runtimeconfig.json` files and abort on
-mismatch. (Both currently report `10.0.8`.)
-
-### 2.4 The PdfConverter republish will poison the *next* build unless redirected
-
-`CopyPdfConverterToPublishOutput` globs
-`PdfConverter/bin/$(Configuration)/net10.0/**/*.*` **recursively**. The §2.3 fix
-runs `dotnet publish PdfConverter -r <RID>`, which by default writes its build
-output to `PdfConverter/bin/Release/net10.0/<RID>/` — *inside* that glob.
-
-So build N creates the directory, and build N+1 sweeps a second copy of the
-helper plus a whole self-contained .NET runtime into the app payload. Observed
-on macOS: the payload jumped from 362 files / 133 MB to **755 files / 329 MB**,
-and it compounds.
-
-Redirect the helper's output out of the source tree:
-
-```bash
-dotnet publish ... -p:BaseOutputPath="<your build dir>/pdfconverter-bin/" -o <tmp>
-```
-
-**Verified:** with this, two consecutive full builds produce byte-identical
-payload counts. Any Linux packaging script doing the same republish needs the
-same redirect.
-
-### 2.5 `PdfConverter.exe` was hard-coded on every platform — now fixed
-
-This used to read `Path.Combine(applicationDirectory, "PdfConverter.exe")`, so
-the helper could never be found off Windows and PDF map templates silently
-failed. Fixed in commit `1caa2efa`:
-
-```csharp
-// PurplePenCore/PdfMapFile.cs:175
-string executableFileName = OperatingSystem.IsWindows() ? "PdfConverter.exe" : "PdfConverter";
-```
-
-**Verified end to end on Linux**: with the packaging described in §6, running
-the installed helper against the test PDF in the repo produces the expected
-1240×1754 PNG, and it does so with `DOTNET_ROOT=/nonexistent`, which proves it
-is genuinely self-contained rather than quietly using a system .NET.
-
-One caveat remains in that method: it locates itself through
-`Assembly.Location`, which returns an empty string under **single-file**
-publishing. Neither installer publishes single-file, so this is latent rather
-than live. `AppContext.BaseDirectory` is the robust replacement if that ever
-changes.
+`runtimes/<rid>/native/`. A RID-specific publish reports **0**.
 
 ---
 
@@ -217,12 +135,10 @@ done
 cmp -s runtimes/osx/native/libSkiaSharp.dylib ./libSkiaSharp.dylib && echo identical
 ```
 
-**Real end-to-end test of the PDF helper** (there is a test PDF in the repo):
-
-```bash
-./PdfConverter 150 "src/TestFiles/pdfcourse/All controls.pdf" /tmp/out.png
-# expect a 1240x1754 PNG of an orienteering map
-```
+**Real end-to-end test of PDF support:** open a PDF map template in the
+installed app (for example `src/TestFiles/pdfmaps/Potholes.pdf`) after clearing
+the cache in the temp directory's `PurplePen` folder. The "Reading PDF" dialog
+should appear briefly and the map should render.
 
 ---
 
@@ -230,8 +146,8 @@ cmp -s runtimes/osx/native/libSkiaSharp.dylib ./libSkiaSharp.dylib && echo ident
 
 Lives in `src/Installer/MacInstaller/` — see its `README.md` for full detail.
 `build-mac-app.sh` does: publish → rsync-stage with an exclusion file →
-self-contained PdfConverter overlay → `.icns` → assemble `.app` → sign
-inside-out → notarize + staple → `.dmg` + `.zip` → notarize + staple the `.dmg`.
+`.icns` → assemble `.app` → sign inside-out → notarize + staple → `.dmg` +
+`.zip` → notarize + staple the `.dmg`.
 
 Structural decisions worth copying to Linux:
 
@@ -243,8 +159,7 @@ Structural decisions worth copying to Linux:
 - **A config file where every value is env-overridable** (`: "${VAR:=default}"`),
   so CI can override without editing files.
 
-**Verified:** publish, staging, exclusions, bundle assembly, the PdfConverter
-overlay, DMG/ZIP creation, and the app launching and running from the built
+**Verified:** publish, staging, exclusions, bundle assembly, DMG/ZIP creation, and the app launching and running from the built
 bundle. **Unverified:** signing and notarization — no Developer ID certificate
 is installed on the dev machine yet.
 
@@ -308,7 +223,7 @@ Built in WSL2 (Ubuntu 22.04, .NET SDK 10.0.105) and installed there:
 - **The application launches and runs.** Under WSLg it starts and stays up;
   with `DISPLAY` and `WAYLAND_DISPLAY` unset it exits 1 immediately, which is
   what makes the first result mean something.
-- **PDF map templates work** — see §2.5.
+- **PDF map templates work** — see §2.2.
 - Passing a `.ppen` path as `argv[1]` opens it (`CommandLineOptions.cs`), so
   the file association is real rather than decorative. `gio info` on a sample
   file reports `application/x-purplepen` after install.
@@ -419,31 +334,28 @@ and that fonts are believed to be fine on macOS but not on Linux. Expect font
 fallback work; it is listed there as low priority because course files usually
 name fonts that are present.
 
-### 6.6 Two ways a Windows checkout corrupts a Linux build
+### 6.6 Two ways a Windows checkout corrupted a Linux build
 
-Both were hit in WSL, both fail confusingly, and both are handled by the script.
+Both were hit in WSL. The first is gone; the second is handled by the script.
 
-**Another platform's runtime gets packaged.** §2.4 describes
-`CopyPdfConverterToPublishOutput`'s recursive glob poisoning the *next* build.
-It also works in the other direction: a checkout that has been published for
-Windows leaves `PdfConverter/bin/Release/net10.0/win-x64/`, and the glob sweeps
-that entire self-contained Windows .NET runtime — **178 MB** — into the Linux
-publish, where nothing can ever load it. It is invisible in testing, because
-nothing loads it and so nothing breaks; the only symptom is an inexplicably
-large package. The script excludes any top-level directory whose name is a RID
-and fails if one survives.
+**Another platform's runtime got packaged.** The old PdfConverter copy target
+(§2.2) globbed recursively, so a checkout published for Windows swept
+`PdfConverter/bin/Release/net10.0/win-x64/` — a whole self-contained Windows
+.NET runtime, **178 MB** — into the Linux publish, where nothing could ever load
+it. That target no longer exists. The script still excludes any top-level
+directory whose name is a RID and fails if one survives, because the only
+symptom of this kind of mistake is an inexplicably large package.
 
-**`obj/` is shared across operating systems.** `AvPurplePen.csproj` builds
-PdfConverter through an MSBuild task with `Targets="Build"`, which performs no
-restore, so it uses whatever `obj/project.assets.json` is present. If Visual
-Studio wrote it, the Linux publish dies well into the build with
+**`obj/` is shared across operating systems.** If Visual Studio wrote
+`obj/project.assets.json`, a Linux build that skips restore dies well into the
+publish with
 
 ```
 error MSB4018: Unable to find fallback package folder
 'C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages'
 ```
 
-The fix is an explicit `dotnet restore` of both projects before publishing.
+The fix is an explicit `dotnet restore` before publishing.
 
 ### 6.7 The AppImage, and the one dependency that must be bundled
 
@@ -496,31 +408,23 @@ AppImage build needs network access even when the tool itself is cached;
 
 ## 7. Open items across all platforms
 
-1. **The `CopyPdfConverterToPublishOutput` target** in `AvPurplePen.csproj` is
-   the root cause of §2.2, §2.3, §2.4 and both halves of §6.6 — five separate
-   workarounds across two installers. Making it publish RID-specific, and
-   globbing a single output directory rather than recursing, would fix all of
-   them at source and remove the overlay from both installers. It has been left
-   alone because it also affects the Windows build. **This is the highest-value
-   cleanup available in the packaging work.**
-2. **Notarization is still unexercised on macOS.** Code signing now works and is
+1. **Notarization is still unexercised on macOS.** Code signing now works and is
    verified (full Developer ID chain, secure timestamp, `--verify --deep
    --strict` passes, `spctl` reports the expected `Unnotarized Developer ID`).
    Submitting to Apple has not yet been run. Linux has no equivalent step.
-3. **The Linux packages have only been tested on Ubuntu 22.04.** The RPM
+2. **The Linux packages have only been tested on Ubuntu 22.04.** The RPM
    dependency names target Fedora/RHEL and have never been resolved by a real
    dnf; openSUSE and Mageia name several of them differently. Only `linux-x64`
    has been built. The AppImage's claim to run down to glibc 2.27 is derived
    from symbol versions, not from having run it on such a host.
-4. **`Assembly.Location` in `PdfMapFile.FindPdfConverterExe`** returns an empty
-   string under single-file publishing. Latent today — no installer publishes
-   single-file — but `AppContext.BaseDirectory` is the robust form.
-5. **AppStream metadata is AppImage-only.** `usr/share/metainfo` is assembled
+3. **AppStream metadata is AppImage-only.** `usr/share/metainfo` is assembled
    for the AppDir but not added to the `.deb`/`.rpm`, where it would also let
    software centres describe the application. Small, self-contained addition.
 
 Resolved since first writing:
 
 - The app icon, which was 64×64 only — see §5.
-- The `PdfConverter.exe` lookup — see §2.5, fixed in `1caa2efa` and now
-  verified working on Linux.
+- The PdfConverter helper executable and every workaround it needed — the
+  copy target, the self-contained overlay in both installers, the recursive
+  glob, the executable lookup and its `Assembly.Location` caveat. PdfConverter
+  is now a library; see §2.2.

@@ -2489,9 +2489,6 @@
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Изпрати доклад</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>Файлът PdfConverter.exe не е открит</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>PDF конверторът (Pdfium) не успя да прочете PDF файла успешно</value>
   </data>

@@ -7076,15 +7076,6 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PdfConverter.exe not found.
-        /// </summary>
-        public static string MiscText_PdfConverterNotFound {
-            get {
-                return ResourceManager.GetString("MiscText_PdfConverterNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to PDF File|*.pdf.
         /// </summary>
         public static string MiscText_PdfFilter {

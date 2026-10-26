@@ -2384,9 +2384,6 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Enviar el informe</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>No se ha encontrado PdfConverter.exe not</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter no ha podido leer el archivo PDF correctamente</value>
   </data>

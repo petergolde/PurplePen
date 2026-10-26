@@ -9,11 +9,10 @@
 #
 #   1. dotnet publish AvPurplePen (Release, net10.0, linux-x64, self-contained)
 #   2. rsync the publish output into build/payload, honouring publish-exclude.txt
-#   3. Republish PdfConverter self-contained and overlay it onto the payload
-#   4. Normalize permissions, which the publish step cannot be trusted to set
-#   5. Assemble build/tree as the filesystem the packages will install
-#   6. Build the .deb with dpkg-deb, and the .rpm with rpmbuild, from that tree
-#   7. Inspect both finished packages and fail on anything wrong
+#   3. Normalize permissions, which the publish step cannot be trusted to set
+#   4. Assemble build/tree as the filesystem the packages will install
+#   5. Build the .deb with dpkg-deb, and the .rpm with rpmbuild, from that tree
+#   6. Inspect both finished packages and fail on anything wrong
 #
 # Both packages install a self-contained build to /opt/purplepen, so no .NET
 # runtime is required on the target machine.
@@ -407,35 +406,24 @@ Add its Debian and RPM architecture names to resolve_architecture." ;;
 # Step 1: publish
 # ---------------------------------------------------------------------------
 
-# restore_projects: run an explicit NuGet restore for both projects.
+# restore_projects: run an explicit NuGet restore of AvPurplePen and every
+# project it references.
 #
-# dotnet publish restores implicitly, but PdfConverter is not a ProjectReference
-# of AvPurplePen -- AvPurplePen.csproj's BuildPdfConverter target invokes it
-# through an MSBuild task with Targets="Build", which does no restore of its
-# own. So PdfConverter uses whatever obj/project.assets.json it finds.
-#
-# That matters because obj/ is shared with builds run on other operating
-# systems. A checkout on a Windows drive that WSL also builds from leaves an
-# assets file naming Visual Studio's package folder:
+# obj/ is shared with builds run on other operating systems. A checkout on a
+# Windows drive that WSL also builds from leaves an assets file naming Visual
+# Studio's package folder:
 #
 #     error MSB4018: Unable to find fallback package folder
 #     'C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages'
 #
 # and the publish fails deep inside ResolvePackageAssets, well after it looked
-# like it was working. Restoring both projects up front makes the build
-# independent of who wrote obj/ last.
+# like it was working. Restoring up front makes the build independent of who
+# wrote obj/ last.
 restore_projects() {
     info "Restoring NuGet packages"
 
     dotnet restore "$PROJECT_FILE" --runtime "$RUNTIME_IDENTIFIER" --nologo \
         || die "Failed to restore $PROJECT_FILE."
-
-    local pdf_project="$SRC_DIR/PdfConverter/PdfConverter.csproj"
-    if [[ -f "$pdf_project" ]]; then
-        # No --runtime here: BuildPdfConverter builds it RID-agnostic.
-        dotnet restore "$pdf_project" --nologo \
-            || die "Failed to restore $pdf_project."
-    fi
 }
 
 # publish_app: run dotnet publish for AvPurplePen into its conventional publish
@@ -499,6 +487,11 @@ stage_payload() {
     [[ -f "$PAYLOAD_DIR/$APP_NAME" ]] \
         || die "The main executable '$APP_NAME' was excluded from the payload. Check publish-exclude.txt."
 
+    # PDF map templates are rasterized in-process by the PdfConverter library,
+    # which needs the native pdfium library next to the app.
+    [[ -f "$PAYLOAD_DIR/libpdfium.so" ]] \
+        || warn "libpdfium.so is not in the payload; PDF map templates will not work."
+
     # Belt and braces. The exclusions above are computed from the same rule, so
     # this should be unreachable -- but shipping another platform's runtime is
     # invisible in testing (nothing loads it, so nothing breaks) and shows up
@@ -518,20 +511,14 @@ foreign_rid_dirs and publish-exclude.txt."
 # name is a .NET runtime identifier -- that is, another platform's build output
 # that has no business in this package.
 #
-# These arrive by a route that is easy to miss. AvPurplePen.csproj's
-# CopyPdfConverterToPublishOutput target globs
-# PdfConverter/bin/$(Configuration)/net10.0/**/*.* recursively, so it sweeps in
-# every RID-specific subdirectory anyone has ever built there -- including from
-# a completely different operating system. A checkout that has been published
-# for Windows leaves PdfConverter/bin/Release/net10.0/win-x64/, and that whole
-# self-contained Windows .NET runtime (98 MB) then lands inside the Linux
-# package, where nothing can ever load it.
-#
-# This is the same recursive-glob hazard INSTALLERS.md 2.4 describes, but
-# pointing the other way: there the installer script poisons its own next
-# build, here another platform's build poisons this one. The helper published
-# by stage_pdf_converter is redirected out of the source tree for exactly that
-# reason, which fixes our direction but not Visual Studio's.
+# These used to arrive through a recursive glob in AvPurplePen.csproj that
+# copied PdfConverter's build output, including every RID-specific
+# subdirectory anyone had ever built there -- so a checkout published for
+# Windows put a whole self-contained Windows .NET runtime (98 MB) inside the
+# Linux package, where nothing could ever load it. PdfConverter is now a plain
+# library and that glob is gone, but this check stays as a safety net: shipping
+# another platform's runtime is invisible in testing and shows up only as an
+# inexplicably large package.
 #
 # Detection is by the OS token a RID always starts with. Satellite resource
 # directories can look similar (pt-BR, zh-Hans, nb-NO), but no culture code
@@ -551,114 +538,6 @@ count_files() { find "$1" -type f | wc -l | tr -d ' '; }
 
 # dir_size: print the human-readable size of directory $1.
 dir_size() { du -sh "$1" | cut -f1 | tr -d ' '; }
-
-# ---------------------------------------------------------------------------
-# Step 2b: the PdfConverter helper
-# ---------------------------------------------------------------------------
-
-# framework_version_of: print the Microsoft.NETCore.App version a
-# runtimeconfig.json resolves to, whether it is framework-dependent
-# ("framework") or self-contained ("includedFrameworks"). $1 is the path to the
-# runtimeconfig.json.
-#
-# Implemented with sed rather than python3 so the script does not depend on a
-# Python interpreter being installed on the build machine.
-framework_version_of() {
-    tr -d ' \n' < "$1" \
-        | sed -n 's/.*"name":"Microsoft.NETCore.App","version":"\([^"]*\)".*/\1/p' \
-        | head -1
-}
-
-# stage_pdf_converter: republish PdfConverter self-contained for this RID and
-# overlay it onto the staged payload.
-#
-# PurplePenCore/PdfMapFile.cs launches this helper as a separate process to
-# rasterize PDF map templates. The copy that AvPurplePen.csproj drops into the
-# publish directory is a plain build output and is framework-dependent, so it
-# cannot start alongside a self-contained application: its apphost finds the
-# app's own libhostfxr.so next to it, resolves ".NET location" to the
-# application directory, finds no shared framework there and refuses to start.
-#
-# A RID-specific self-contained publish fixes that and additionally flattens
-# libpdfium.so to the top level, which is what makes excluding the runtimes/
-# tree safe -- that tree holds the only other copy of libpdfium.
-stage_pdf_converter() {
-    step "Staging the PdfConverter helper"
-
-    if [[ "$INCLUDE_PDF_CONVERTER" != "true" ]]; then
-        info "Skipped (INCLUDE_PDF_CONVERTER is not true)."
-        return
-    fi
-
-    local project="$SRC_DIR/PdfConverter/PdfConverter.csproj"
-    if [[ ! -f "$project" ]]; then
-        warn "PdfConverter project not found at $project; skipping the helper."
-        return
-    fi
-
-    local helper_dir="$BUILD_DIR/pdfconverter"
-    rm -rf "$helper_dir"
-
-    # BaseOutputPath redirects PdfConverter's bin/ into our build directory.
-    #
-    # This is not cosmetic. AvPurplePen.csproj's CopyPdfConverterToPublishOutput
-    # target globs PdfConverter/bin/$(Configuration)/net10.0/**/*.* recursively.
-    # Publishing here with a RID would otherwise create
-    # PdfConverter/bin/Release/net10.0/<rid>/ inside the source tree, and the
-    # NEXT full run of this script would sweep that entire directory -- a second
-    # copy of the helper plus a self-contained .NET runtime -- into the payload.
-    # Left unchecked it roughly doubles the file count on every build.
-    dotnet publish "$project" \
-        --configuration "$CONFIGURATION" \
-        --framework "$TARGET_FRAMEWORK" \
-        --runtime "$RUNTIME_IDENTIFIER" \
-        --self-contained true \
-        -p:PublishReadyToRun="$PUBLISH_READYTORUN" \
-        -p:UseAppHost=true \
-        -p:DebugType=none \
-        -p:BaseOutputPath="$BUILD_DIR/pdfconverter-bin/" \
-        --output "$helper_dir" \
-        --nologo \
-        || die "Failed to publish PdfConverter."
-
-    # The overlay overwrites shared framework assemblies. If the helper and the
-    # app resolved different patch versions of Microsoft.NETCore.App, that would
-    # silently downgrade or upgrade the runtime underneath the main app, so
-    # refuse rather than ship a subtly broken package.
-    local app_fw helper_fw
-    app_fw="$(framework_version_of "$PAYLOAD_DIR/$APP_NAME.runtimeconfig.json")"
-    helper_fw="$(framework_version_of "$helper_dir/PdfConverter.runtimeconfig.json")"
-
-    if [[ -n "$app_fw" && -n "$helper_fw" && "$app_fw" != "$helper_fw" ]]; then
-        die "Runtime version mismatch between the app and the PdfConverter helper.
-
-    $APP_NAME     targets Microsoft.NETCore.App $app_fw
-    PdfConverter targets Microsoft.NETCore.App $helper_fw
-
-Overlaying the helper would replace the app's framework assemblies with a
-different version. Rebuild both with the same SDK, or set
-INCLUDE_PDF_CONVERTER=false to leave the helper out."
-    fi
-    info "Both target Microsoft.NETCore.App $app_fw"
-
-    # No --delete here: this is an overlay onto the existing payload. The same
-    # exclusion list is applied so the helper obeys the same rules.
-    local rsync_args=(--archive)
-    if [[ -n "$EXCLUDE_FILE" ]]; then
-        rsync_args+=(--exclude-from="$EXCLUDE_FILE")
-    fi
-    rsync "${rsync_args[@]}" "$helper_dir/" "$PAYLOAD_DIR/"
-
-    if [[ ! -f "$PAYLOAD_DIR/PdfConverter" ]]; then
-        warn "PdfConverter was excluded by publish-exclude.txt; PDF map templates will not work."
-        return
-    fi
-    if [[ ! -f "$PAYLOAD_DIR/libpdfium.so" ]]; then
-        warn "libpdfium.so is not in the payload; PDF map templates will not work."
-    fi
-
-    info "Payload is now $(dir_size "$PAYLOAD_DIR") with the helper included"
-}
 
 # ---------------------------------------------------------------------------
 # Step 3: normalize permissions
@@ -2365,7 +2244,6 @@ if [[ "$SHOW_DEPS_ONLY" == "1" ]]; then
     if [[ ! -d "$PAYLOAD_DIR" ]]; then
         publish_app
         stage_payload
-        stage_pdf_converter
         normalize_payload_permissions
     fi
     show_deps
@@ -2374,7 +2252,6 @@ fi
 
 publish_app
 stage_payload
-stage_pdf_converter
 normalize_payload_permissions
 build_install_tree
 build_deb

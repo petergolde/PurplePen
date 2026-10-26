@@ -93,21 +93,17 @@ stored once; the script never handles it again.
 2. **Stage** — `rsync --archive --delete --delete-excluded
    --exclude-from=publish-exclude.txt` from the publish directory into
    `build/staging`. This is where you control the bundle's contents.
-3. **PDF helper** — republishes `PdfConverter` self-contained for the target
-   RID and overlays it onto the payload, after checking that both resolve the
-   same `Microsoft.NETCore.App` version. See the notes below for why this is
-   necessary.
-4. **Icon** — assembles `PurplePen.icns` from the pre-rendered PNGs in
+3. **Icon** — assembles `PurplePen.icns` from the pre-rendered PNGs in
    `AvPurplePen/Assets/AppIcon`, using the family named by `ICON_FAMILY`.
-5. **Assemble** — builds `build/PurplePen.app` with `Contents/MacOS` (the
+4. **Assemble** — builds `build/PurplePen.app` with `Contents/MacOS` (the
    staged payload), `Contents/Resources` (the icon) and a generated
    `Contents/Info.plist`, then strips extended attributes.
-6. **Sign** — signs every Mach-O file inside the bundle from the inside out,
+5. **Sign** — signs every Mach-O file inside the bundle from the inside out,
    then seals the bundle. Nested executables get the Hardened Runtime and
    entitlements; dynamic libraries get the Hardened Runtime alone.
-7. **Notarize** — zips the bundle with `ditto`, submits it, waits for the
+6. **Notarize** — zips the bundle with `ditto`, submits it, waits for the
    result, staples the ticket into the `.app`, and confirms with `spctl`.
-8. **Package** — builds the `.zip`, then the `.dmg`: a scratch read/write image
+7. **Package** — builds the `.zip`, then the `.dmg`: a scratch read/write image
    is filled, its window laid out through Finder, detached, and compressed. The
    result is signed, notarized, stapled and then re-attached to verify.
 
@@ -276,44 +272,17 @@ macOS needs 16, 32, 64, 128, 256, 512 and 1024. The 24, 48 and 96 files in that
 directory are unused here but map onto the freedesktop hicolor sizes Linux
 packaging wants.
 
-**The bundle is 533 MB, and 399 MB of that is waste.** The
-`CopyPdfConverterToPublishOutput` target in `AvPurplePen.csproj` copies
-PdfConverter's entire build output into the publish directory, including its
-RID-agnostic `runtimes/` tree — native `pdfium` and `libSkiaSharp` binaries for
-Windows, Linux and musl, none of which macOS ever loads. Adding a single
-`runtimes/` line to `publish-exclude.txt` takes the bundle to **141 MB** with
-the PDF helper still working. The commented block in that file has the measured
-breakdown.
+**PDF map templates are rasterized in-process.** `PdfConverter` is a plain
+library referenced by PurplePenCore, so its native `libpdfium.dylib` arrives
+through the normal publish and is flattened to the top level of the bundle like
+`libSkiaSharp.dylib`. The staging step warns if it is missing. It used to be a
+separate helper executable that needed its own self-contained republish and
+overlay; that is gone.
 
-**The `PdfConverter` helper needs a separate self-contained publish.** The copy
-that arrives from the main publish is a plain *build* output, so it is
-framework-dependent: its apphost looks for a machine-wide .NET install, finds
-the self-contained app's own `libhostfxr.dylib` sitting next to it, resolves
-".NET location" to the app directory, finds no shared framework there and
-refuses to start — even on a machine that does have .NET installed.
-
-The script therefore republishes it self-contained for the target RID and
-overlays it onto the payload (`INCLUDE_PDF_CONVERTER` in `config.sh`). Because
-the helper lands in the same directory as the app, it shares every framework
-assembly already present, so it costs about 7 MB — almost entirely
-`libpdfium.dylib`, which a RID-specific publish flattens to the top level in
-place of the cross-platform `runtimes/` tree.
-
-Two consequences:
-
-- Do **not** add `PdfConverter*` or `libpdfium.dylib` to `publish-exclude.txt`;
-  the list is applied to the overlay too, so that would delete the working
-  helper. Use `INCLUDE_PDF_CONVERTER=false` instead.
-- The script aborts if the app and the helper resolve different
-  `Microsoft.NETCore.App` patch versions, since the overlay would otherwise
-  swap the runtime out from under the main app.
-
-This only becomes useful once the lookup in
-[PdfMapFile.cs:176](../../PurplePenCore/PdfMapFile.cs) stops hard-coding the
-`.exe` extension — it currently returns `PdfConverter.exe` on every platform,
-so the helper is never found on macOS. `AppContext.BaseDirectory` is also a
-more robust way to locate it than `Assembly.Location`, which returns an empty
-string under single-file publishing.
+The `runtimes/` line in `publish-exclude.txt` dates from when AvPurplePen.csproj
+copied PdfConverter's entire RID-agnostic build output into the publish
+directory, which made the bundle 533 MB, 399 MB of it native binaries for other
+platforms. That copy no longer happens; the exclusion stays as a safety net.
 
 **Every file in `Contents/MacOS` must be signed, not just the Mach-O ones.**
 That directory is the bundle's executables directory, so `codesign` treats

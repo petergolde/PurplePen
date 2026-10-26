@@ -601,9 +601,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF-muunnin epäonnistui PDF-tiedoston lukemisessa</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe ei löytynyt</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Ei voitu lukea PDF-muuntamisen tulosta tiedostosta '{0}'</value>
   </data>

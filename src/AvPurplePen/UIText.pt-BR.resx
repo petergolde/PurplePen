@@ -2447,9 +2447,6 @@ O Purple Pen agora recarregará o mapa.</value>
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Enviar Relatório</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe não encontrado</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>O conversor de PDF Pdfium falhou ao ler o arquivo PDF</value>
   </data>

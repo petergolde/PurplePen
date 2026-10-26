@@ -610,9 +610,6 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF dönüştürücü, PDF dosyasını başarıyla okuyamadı</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe bulunamadı</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>'{0}' dosyasından PDF dönüştürmenin sonucu okunamadı</value>
   </data>

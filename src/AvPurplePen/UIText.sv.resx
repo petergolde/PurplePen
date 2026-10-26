@@ -2471,9 +2471,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Skicka rapport</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe hittades inte</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF konverterare misslyckades att läsa PDF-filen</value>
   </data>

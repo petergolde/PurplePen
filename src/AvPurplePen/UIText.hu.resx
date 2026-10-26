@@ -2408,9 +2408,6 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Jelentés küldése</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>A PdfConverter.exe nem található</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>A Pdfium nem tudta sikeresen beolvasni a PDF fájlt.</value>
   </data>

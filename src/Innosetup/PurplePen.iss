@@ -781,8 +781,7 @@ Source: "netcorecheck_x64.exe"; Flags: dontcopy noencryption
 Source: "dxwebsetup.exe"; Flags: dontcopy noencryption
 #endif
 
-Source: "{#BuildDir}\PurplePen.exe"; DestDir: "{app}"; Flags: ignoreversion 
-Source: "{#BuildDir}\PdfConverter.exe"; DestDir: "{app}"; Flags: ignoreversion 
+Source: "{#BuildDir}\PurplePen.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#BuildDir}\createdump.exe"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion 
 Source: "{#BuildDir}\*.config"; DestDir: "{app}"; Flags: ignoreversion 
@@ -843,6 +842,14 @@ Source: "{#BuildDir}\fonts\RobotoCondensed-Light.ttf"; DestDir: "{commonfonts}";
 Source: "{#BuildDir}\fonts\RobotoCondensed-LightItalic.ttf"; DestDir: "{commonfonts}"; FontInstall: "Roboto Condensed Light Italic"; Flags: onlyifdoesntexist uninsneveruninstall 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+
+[InstallDelete]
+; PdfConverter used to be a separate helper executable; it is now a library loaded by PurplePen itself.
+; Remove the helper's leftover files from earlier installs.
+Type: files; Name: "{app}\PdfConverter.exe"
+Type: files; Name: "{app}\PdfConverter.dll.config"
+Type: files; Name: "{app}\PdfConverter.deps.json"
+Type: files; Name: "{app}\PdfConverter.runtimeconfig.json"
 
 [Icons]
 Name: "{commonprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
