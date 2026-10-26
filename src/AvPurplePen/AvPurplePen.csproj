@@ -68,6 +68,7 @@
     <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
     <ProjectReference Include="..\MapModel\Map_PDF\Map_PDF.csproj" />
     <ProjectReference Include="..\MapModel\Map_SkiaStd\Map_SkiaStd.csproj" />
+    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
     <ProjectReference Include="..\PurplePenCore\PurplePenCore.csproj" />
     <ProjectReference Include="..\PurplePenViewModels\PurplePenViewModels.csproj" />
   </ItemGroup>

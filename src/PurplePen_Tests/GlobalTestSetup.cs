@@ -33,6 +33,7 @@ public class GlobalTestSetup
         services.AddSingleton<IFileLoaderProvider, GdiPlus_FileLoaderProvider>();
 #endif        
         services.AddSingleton<IPdfWriter, PdfWriter>();
+        services.AddSingleton<IPdfConverter, PdfConverterService>();
         services.AddSingleton<IPdfLoadingStatus, PdfLoadingUI>();
 
         serviceProvider = services.BuildServiceProvider();

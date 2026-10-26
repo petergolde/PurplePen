@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
-using PurplePen.PdfConverter;
 
 namespace PurplePen
 {
@@ -101,13 +100,12 @@ namespace PurplePen
         }
 
         // Do the conversion, then raise ConversionCompleted. Runs on a background thread.
-        // Kept in its own method so the PdfConverter library is only loaded when a conversion actually happens.
         private void RunConversion(string fileName, int resolution)
         {
             ConversionStatus newStatus;
 
             try {
-                PdfConversion.Convert(resolution, pdfFileName, fileName);
+                Services.PdfConverter.Convert(resolution, pdfFileName, fileName);
                 newStatus = ConversionStatus.Success;
             }
             catch (Exception e) {

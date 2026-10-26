@@ -68,6 +68,7 @@ namespace AvPurplePen
             services.AddSingleton<ITextMetrics, Skia_TextMetrics>();
             services.AddSingleton<IFileLoaderProvider, SkiaFileLoaderProvider>();
             services.AddSingleton<IPdfWriter, PdfWriter>();
+            services.AddSingleton<IPdfConverter, PdfConverterService>();
             services.AddSingleton<IApplicationIdleService, ApplicationIdleServiceAdapter>();
 
             services.AddSingleton<IDialogService, DialogService>();
