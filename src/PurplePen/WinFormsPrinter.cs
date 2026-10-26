@@ -32,13 +32,6 @@ namespace PurplePen
         public WinFormsPrinter(WinFormsPrinter.WinFormsPrinterOptions options)
         {
             this.options = options.Clone();
-
-            if (this.options.ColorModel == ColorModel.OCADCompatible) {
-                // OCAD uses CMYK color mode for PostScript, and RGB for other printers. Do similar
-                // if OCAD compatible mode is used.
-                bool isPostscript = PrinterSupportsPostScript(this.options.PageSettings.PrinterSettings.PrinterName);
-                this.options.ColorModel = isPostscript ? ColorModel.CMYK : ColorModel.RGB;
-            }
         }
 
         // The WinForms printing model uses a PrintDocument that raises events to perform the printing.
@@ -235,86 +228,6 @@ namespace PurplePen
                 return (WinFormsPrinterOptions)MemberwiseClone();
             }
         }
-
-        #region Postscript detection
-        //By Justin Alexander, aka TheLoneCabbage
-
-        static Int32 GETTECHNOLOGY = 20;
-        static Int32 QUERYESCSUPPORT = 8;
-        static Int32 POSTSCRIPT_PASSTHROUGH = 4115;
-        static Int32 ENCAPSULATED_POSTSCRIPT = 4116;
-        static Int32 POSTSCRIPT_IDENTIFY = 4117;
-        static Int32 POSTSCRIPT_INJECTION = 4118;
-        static Int32 POSTSCRIPT_DATA = 37;
-        static Int32 POSTSCRIPT_IGNORE = 38;
-
-        static bool PrinterSupportsPostScript(string printername)
-        {
-            List<Int32> PSChecks = new List<Int32>();
-            PSChecks.Add(POSTSCRIPT_PASSTHROUGH);
-            PSChecks.Add(ENCAPSULATED_POSTSCRIPT);
-            PSChecks.Add(POSTSCRIPT_IDENTIFY);
-            PSChecks.Add(POSTSCRIPT_INJECTION);
-            PSChecks.Add(POSTSCRIPT_DATA);
-            PSChecks.Add(POSTSCRIPT_IGNORE);
-
-            IntPtr hDC = IntPtr.Zero;
-            IntPtr BLOB = IntPtr.Zero;
-
-            try {
-                hDC = NativeMethods.CreateDC(null, printername, null, IntPtr.Zero);
-
-                int isz = 4;
-                BLOB = Marshal.AllocCoTaskMem(isz);
-                Marshal.WriteInt32(BLOB, GETTECHNOLOGY);
-
-                int test = NativeMethods.ExtEscape(hDC, QUERYESCSUPPORT, 4, BLOB, 0, IntPtr.Zero);
-                if (test == 0) return false; // printer driver does not support GETTECHNOLOGY Checks.
-
-                foreach (Int32 val in PSChecks) {
-                    Marshal.WriteInt32(BLOB, val);
-                    test = NativeMethods.ExtEscape(hDC, QUERYESCSUPPORT, isz, BLOB, 0, IntPtr.Zero);
-                    if (test != 0) return true; // if any of the checks pass, return true
-                }
-            }
-            catch (Exception) {
-                return false;
-            }
-            finally {
-                if (hDC != IntPtr.Zero) NativeMethods.DeleteDC(hDC);
-                if (BLOB != IntPtr.Zero) Marshal.FreeCoTaskMem(BLOB);
-            }
-
-            return false;
-
-        }
-
-        static class NativeMethods
-        {
-            [DllImport("kernel32.dll")]
-            public static extern IntPtr GlobalLock(IntPtr hMem);
-
-            [DllImport("kernel32.dll")]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            public static extern bool GlobalUnlock(IntPtr hMem);
-
-            [DllImport("kernel32.dll")]
-            public static extern IntPtr GlobalFree(IntPtr hMem);
-
-            [DllImport("kernel32.dll")]
-            public static extern UIntPtr GlobalSize(IntPtr hMem);
-
-            [DllImport("gdi32.dll")]
-            public static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
-
-            [DllImport("gdi32.dll", BestFitMapping = false, ThrowOnUnmappableChar = true)]
-            public static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
-
-            [DllImport("gdi32.dll")]
-            public static extern bool DeleteDC(IntPtr hdc);
-        }
-
-        #endregion
 
     }
 }

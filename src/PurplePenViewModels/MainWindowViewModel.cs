@@ -65,15 +65,14 @@ namespace PurplePen.ViewModels
         private CoursePdfSettings? coursePdfSettings;
 
         // Persisted settings for the Print Descriptions / Create Description PDF
-        // dialog. The printer / paper / margins live in their own fields because
-        // the new ViewModel takes them as separate inputs.
+        // dialog. The paper / margins live in their own field because the new
+        // ViewModel takes them as a separate input. The printer is kept by the
+        // platform's IDocumentPrinting, shared by all printing.
         private DescriptionPrintSettings? descPrintSettings;
-        private PrinterNameAndSettings? descPrinter;
         private PrintingPaperSizeWithMargins? descPaperSizeWithMargins;
 
         // Same idea for the Print Punch Cards / Create Punchcard PDF dialog.
         private CorePunchPrintSettings? punchPrintSettings;
-        private PrinterNameAndSettings? punchPrinter;
         private PrintingPaperSizeWithMargins? punchPaperSizeWithMargins;
 
         [ObservableProperty]

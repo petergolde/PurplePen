@@ -9,31 +9,6 @@ using System.Threading.Tasks;
 
 namespace PurplePen
 {
-    // Represents a printer name and the custom settings for that printer (not including paper size and margins, which are handled in other structures).
-    public class PrinterNameAndSettings 
-    {
-        public string PrinterName { get; set; } = "";
-
-        // Used for Windows only: DEVMODE structure for the printer settings, as returned by DocumentProperties.
-        // This is used to set the custom printer settings.  It is passed to the Winforms PrintDocument.PrinterSettings.SetHdevmode method.
-        public IntPtr WindowsDevMode { get; set; } = IntPtr.Zero;
-
-        // Used for Linux and Mac only: CUPS printer settings.  This is used to set the custom printer settings for CUPS printers.
-        public List<CupsPrinterSetting> CupsPrinterSettings { get; set; } = new List<CupsPrinterSetting>();
-    }
-
-    // Represents a printer setting for CUPS printers on Linux and Mac.
-    // This is used to set the custom printer settings for CUPS printers.
-    // Gives the name, the friendly name, the possible values, the default value, and the current value for the setting.
-    public class CupsPrinterSetting
-    {
-        public string OptionName { get; set; }
-        public string FriendlyName { get; set; }
-        public string[] AllValues { get; set; }
-        public string DefaultValue { get; set; }
-        public string CurrentValue { get; set; }
-    }
-
     // Represents a paper size for printing.  
     // The Name may be "Custom", for a custom size, or it may be a standard name such as "Letter" or "A4".  
     // Generally you can just look at the SizeInInches or SizeInHundreths to get the size of the paper, and ignore the 
@@ -189,6 +164,32 @@ namespace PurplePen
         // (not the top-left corner of the printable area; not the top-left corner with the margins),
         // and the units are in hundredths of an inch. It should be already cleared to white if needed.
         void PrintPage(int pageNumber, PrintingPaperSize paperSize, Action<IGraphicsTarget> drawPage);
+    }
+
+    // Platform-specific direct printing to a printer. An implementation is registered as a service
+    // on platforms that support direct printing (see Services.DocumentPrinting); if none is registered,
+    // direct printing isn't available.
+    //
+    // The implementation keeps track of the current printer and its settings, shared by all kinds of
+    // printing. Paper size and margins are not part of the printer settings: they are passed to the
+    // printing code separately, and each page tells the IPrintingTarget its paper size.
+    public interface IDocumentPrinting
+    {
+        // True if the printer can be chosen through this interface (CurrentPrinterName and
+        // ChangePrinterDialogAsync). If false, the print dialogs should show no printer name and no way
+        // to change the printer; the implementation lets the user choose the printer and printing options itself.
+        bool CanChangePrinter { get; }
+
+        // The name of the current printer. Only meaningful if CanChangePrinter is true.
+        string CurrentPrinterName { get; }
+
+        // Show the platform dialog to change the current printer and its settings. Only call if CanChangePrinter is true.
+        // Returns true if the user changed the printer settings, false if the dialog was cancelled.
+        Task<bool> ChangePrinterDialogAsync();
+
+        // Get a printing target that prints to the current printer.
+        // colorModel: the color model used to render the pages.
+        IPrintingTarget GetPrintingTarget(ColorModel colorModel);
     }
 
     // Abstract class that is implemented by things that can be printed. For example, the courses, control descriptions,

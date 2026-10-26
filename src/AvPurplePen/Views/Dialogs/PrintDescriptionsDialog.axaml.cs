@@ -9,11 +9,7 @@
 //      IsPdfCreation. The Title is a single property, so we can't overlap
 //      two AXAML elements like we do for the OK button; setting it in
 //      Opened from the View layer keeps localized strings out of the VM.
-//   3. The Change Printer… button, which isn't ported yet — its click handler
-//      is intentionally a no-op (with a TODO inside #if PORTING for the future
-//      port). (The Change Margins… button is bound to a command on the
-//      ViewModel instead.)
-//   4. The Preview… button, which pushes the CourseSelector selection into
+//   3. The Preview… button, which pushes the CourseSelector selection into
 //      the ViewModel and then runs its PreviewCommand.
 //
 // Migrated from WinForms PurplePen/PrintDescriptions.cs.
@@ -88,19 +84,6 @@ namespace AvPurplePen.Views
         private void CancelButton_Click(object? sender, RoutedEventArgs e)
         {
             Close(false);
-        }
-
-        /// <summary>
-        /// Change Printer… — not yet implemented. The Avalonia port doesn't
-        /// have a printer-picker dialog yet.
-        /// </summary>
-        private void PrinterChange_Click(object? sender, RoutedEventArgs e)
-        {
-#if PORTING
-            // TODO: Port the platform printer-picker. Original WinForms code
-            // used a PrintDialog to let the user choose the printer and pick
-            // up its default paper size + margins + DEVMODE.
-#endif
         }
 
         /// <summary>

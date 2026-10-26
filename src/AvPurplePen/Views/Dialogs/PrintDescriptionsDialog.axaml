@@ -13,8 +13,8 @@
 
     The Change Margins button opens the Page Setup dialog (bound to a command).
     The Preview button shows the Print Preview dialog (visible only when the
-    caller supplied a Controller). The Change Printer button is wired but not
-    yet implemented — clicking it is a no-op for now.
+    caller supplied a Controller). The Change Printer button (shown only if the
+    platform can change the printer) is bound to a command.
 
     Migrated from WinForms PurplePen/PrintDescriptions.cs.
 -->
@@ -123,7 +123,7 @@
                         Classes="Small"
                         Content="{resx:Localize PrintDescriptions_printerChange_Text}"
                         IsVisible="{Binding IsPrinterVisible}"
-                        Click="PrinterChange_Click"/>
+                        Command="{Binding ChangePrinterCommand}"/>
 
                 <!-- Row 2: Paper size -->
                 <TextBlock Grid.Row="2" Grid.Column="0"

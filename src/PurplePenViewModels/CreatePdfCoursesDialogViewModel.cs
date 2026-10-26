@@ -87,8 +87,7 @@ namespace PurplePen.ViewModels
 
         /// <summary>
         /// 0 = RGB, 1 = CMYK. Bound to the color-model combo's SelectedIndex.
-        /// Maps to <see cref="PurplePen.ColorModel"/> via +1 (the underlying
-        /// enum starts at OCADCompatible=0, RGB=1, CMYK=2).
+        /// Maps to <see cref="PurplePen.ColorModel"/>.
         /// </summary>
         [ObservableProperty]
         private int colorModelIndex;
@@ -168,8 +167,8 @@ namespace PurplePen.ViewModels
                     CropLargePrintArea = MultiPageIndex == 0,
                     PrintMapExchangesOnOneMap = MergeParts,
                     // The combo lists RGB then CMYK; the underlying enum is
-                    // OCADCompatible=0, RGB=1, CMYK=2. So index + 1.
-                    ColorModel = (ColorModel)(ColorModelIndex + 1),
+                    // RGB=0, CMYK=1. So index is correct.
+                    ColorModel = (ColorModel)(ColorModelIndex),
                     FileCreation = (CoursePdfSettings.PdfFileCreation)FileFormatIndex,
                     RenderControlDescriptions = RenderControlDescriptions,
                     ShowProgressDialog = ShowProgressDialog,

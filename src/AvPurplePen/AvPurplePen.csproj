@@ -23,6 +23,11 @@
   <PropertyGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'windows'">
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+  <!-- Platform\Windows holds the Windows-only implementations of platform services
+       (e.g. printing through Windows Forms). Compile it only for a -windows target framework. -->
+  <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != 'windows'">
+    <Compile Remove="Platform\Windows\**" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);PORTING</DefineConstants>
   </PropertyGroup>

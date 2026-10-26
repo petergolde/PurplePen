@@ -180,9 +180,10 @@ namespace AvPurplePen
         /// Finds the topmost currently-open dialog so a newly-shown dialog is
         /// parented to it (and is therefore modal relative to it), instead of
         /// always being parented to the main window. Walks the chain of owned
-        /// windows starting from <see cref="RootOwner"/>.
+        /// windows starting from <see cref="RootOwner"/>. Also used to parent
+        /// platform-native dialogs (e.g. the Windows print dialog).
         /// </summary>
-        private static Window GetActiveOwner()
+        internal static Window GetActiveOwner()
         {
             // RootOwner guarantees the desktop lifetime exists, so this cast holds.
             IClassicDesktopStyleApplicationLifetime desktop = (IClassicDesktopStyleApplicationLifetime)Application.Current!.ApplicationLifetime!;
