@@ -69,10 +69,7 @@
     <ProjectReference Include="..\MapModel\MapModel\MapModel.csproj" />
     <ProjectReference Include="..\MapModel\Map_PDF\Map_PDF.csproj" />
     <ProjectReference Include="..\MapModel\Map_SkiaStd\Map_SkiaStd.csproj" />
-    <!-- PdfConverter is a standalone exe tool, not a compile-time dependency.
-         Built via custom target below to avoid publish pipeline trying to
-         resolve its outputs (which fails with ReadyToRun/RID-specific paths). -->
-    <!--<ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />-->
+    <ProjectReference Include="..\PdfConverter\PdfConverter.csproj" />
     <ProjectReference Include="..\PurplePenCore\PurplePenCore.csproj" />
     <ProjectReference Include="..\PurplePenViewModels\PurplePenViewModels.csproj" />
   </ItemGroup>
@@ -97,33 +94,8 @@
       <DependentUpon>UIText.resx</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <!-- Build PdfConverter as a standalone exe tool.
-       Uses a direct MSBuild task instead of ProjectReference so the publish
-       pipeline does not try to resolve PdfConverter's output files (which
-       fails when PublishReadyToRun adds a RID-specific output path). -->
   <PropertyGroup>
-    <PdfConverterOutputDir>..\PdfConverter\bin\$(Configuration)\net10.0\</PdfConverterOutputDir>
     <AssemblyName>PurplePen</AssemblyName>
     <RootNamespace>AvPurplePen</RootNamespace>
   </PropertyGroup>
-
-  <Target Name="BuildPdfConverter" BeforeTargets="Build;Publish">
-    <MSBuild Projects="..\PdfConverter\PdfConverter.csproj" Targets="Build" Properties="Configuration=$(Configuration);TargetFramework=net10.0;RuntimeIdentifier=;SelfContained=;PublishDir=;PublishReadyToRun=" />
-  </Target>
-
-  <!-- Copy PdfConverter output to AvPurplePen output directory after build. -->
-  <Target Name="CopyPdfConverterToBuildOutput" AfterTargets="Build" DependsOnTargets="BuildPdfConverter">
-    <ItemGroup>
-      <PdfConverterBuildFiles Include="$(PdfConverterOutputDir)**\*.*" />
-    </ItemGroup>
-    <Copy SourceFiles="@(PdfConverterBuildFiles)" DestinationFiles="@(PdfConverterBuildFiles->'$(OutputPath)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
-  </Target>
-
-  <!-- Copy PdfConverter output to publish directory after publish. -->
-  <Target Name="CopyPdfConverterToPublishOutput" AfterTargets="Publish" DependsOnTargets="BuildPdfConverter">
-    <ItemGroup>
-      <PdfConverterPublishFiles Include="$(PdfConverterOutputDir)**\*.*" />
-    </ItemGroup>
-    <Copy SourceFiles="@(PdfConverterPublishFiles)" DestinationFiles="@(PdfConverterPublishFiles->'$(PublishDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
-  </Target>
 </Project>

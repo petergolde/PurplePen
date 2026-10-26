@@ -598,9 +598,6 @@ OK - zkus soubor s mapou najít.</value>
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter nemůže přečíst PDF soubor.</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe nenalezen</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Nelze přečíst výsledek konverze PDFka ze souboru '{0}'</value>
   </data>

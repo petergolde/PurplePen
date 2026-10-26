@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Microsoft.Win32;
-using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace PurplePen
 {
     // Manages a PDF map file and converting it to a bitmap.
-    public class PdfMapFile : IDisposable
+    public class PdfMapFile
     {
         private string pdfFileName;
         private string pngFileName;
-        private ConversionStatus status;
+        private volatile ConversionStatus status;    // Set last by the background conversion, so the other fields are valid once it changes.
         private string conversionOutput;
-        private StringBuilder stderrOutput;
-        private Process process;
-        private bool disposed = false;
 
         private const int Resolution = 600; // Resolution in DPI
         
@@ -46,14 +42,6 @@ namespace PurplePen
         public bool SourceExists {
             get {
                 return File.Exists(pdfFileName);
-            }
-        }
-
-        public bool PdfConverterExists
-        {
-            get
-            {
-                return FindPdfConverterExe() != null;
             }
         }
 
@@ -95,87 +83,48 @@ namespace PurplePen
             return BeginUncachedConversion(cacheFileName, Resolution);
         }
 
-        // Try to begin conversion into bitmap. 
+        // Begin converting the PDF into a bitmap on a background thread. Returns Working; the
+        // ConversionCompleted event is raised (on the background thread) when the conversion finishes.
+        // Subscribe to ConversionCompleted before calling, since the conversion may finish at any time.
+        //   fileName: the PNG file to create. May contain "%d" to convert every page.
+        //   resolution: the resolution of the bitmap, in DPI.
         public ConversionStatus BeginUncachedConversion(string fileName, int resolution)
         {
+            conversionOutput = "";
+            pngFileName = fileName;
+            status = ConversionStatus.Working;
+
+            // RunConversion catches everything and reports through ConversionCompleted, so the task needn't be observed.
+            _ = Task.Run(() => RunConversion(fileName, resolution));
+            return ConversionStatus.Working;
+        }
+
+        // Do the conversion, then raise ConversionCompleted. Runs on a background thread.
+        private void RunConversion(string fileName, int resolution)
+        {
+            ConversionStatus newStatus;
+
             try {
-                string converterExe = FindPdfConverterExe();
-                if (converterExe == null) {
-                    conversionOutput = MiscText.PdfConverterNotFound;
-                    status = ConversionStatus.Failure;
-                    return status;
-                }
-
-                string arguments = String.Format(
-                    "{2} \"{0}\" \"{1}\"",
-                    pdfFileName, fileName, resolution);
-
-                stderrOutput = new StringBuilder();
-                ProcessStartInfo startInfo = new ProcessStartInfo(converterExe, arguments);
-                startInfo.CreateNoWindow = true;
-                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                startInfo.RedirectStandardError = true;
-                startInfo.RedirectStandardOutput = true;
-                startInfo.UseShellExecute = false;
-                process = new Process();
-                process.StartInfo = startInfo;
-                process.EnableRaisingEvents = true;
-                process.ErrorDataReceived += ProcessDataReceived;
-                process.OutputDataReceived += ProcessDataReceived;
-                process.Exited += ProcessExited;
-                process.Start();
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-
-                status = ConversionStatus.Working;
-                pngFileName = fileName;
-                return status;
+                Services.PdfConverter.Convert(resolution, pdfFileName, fileName);
+                newStatus = ConversionStatus.Success;
             }
             catch (Exception e) {
-                status = ConversionStatus.Failure;
-
-                if (!string.IsNullOrWhiteSpace(pngFileName))
-                    File.Delete(pngFileName);
-
                 conversionOutput = e.Message;
-                return status;
-            }
-        }
+                newStatus = ConversionStatus.Failure;
 
-        private void ProcessDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            lock (stderrOutput) {
-                stderrOutput.Append(e.Data);
-                stderrOutput.Append("\r\n");
-            }
-        }
-
-        private void ProcessExited(object sender, EventArgs e)
-        {
-            process.WaitForExit();
-
-            lock (stderrOutput) {
-                conversionOutput = stderrOutput.ToString();
+                try {
+                    if (!string.IsNullOrWhiteSpace(fileName))
+                        File.Delete(fileName);
+                }
+                catch {
+                    // Not a problem if a partial file can't be deleted.
+                }
             }
 
-            status = process.ExitCode == 0 ? ConversionStatus.Success : ConversionStatus.Failure;
-            process.Dispose();
-            process = null;
-
-            if (status == ConversionStatus.Failure && !string.IsNullOrWhiteSpace(pngFileName))
-                File.Delete(pngFileName);
+            status = newStatus;
 
             if (ConversionCompleted != null)
                 ConversionCompleted(this, EventArgs.Empty);
-        }
-
-        internal string FindPdfConverterExe()
-        {
-            // Windows executables end in ".exe", but Mac/Linux do not.
-            string executableFileName = OperatingSystem.IsWindows() ? "PdfConverter.exe" : "PdfConverter";
-            Uri uri = new Uri(typeof(PdfMapFile).Assembly.Location);
-            string applicationDirectory = Path.GetDirectoryName(uri.LocalPath);
-            return Path.Combine(applicationDirectory, executableFileName);
         }
 
         internal string GetCacheFileName(string path)
@@ -230,35 +179,6 @@ namespace PurplePen
                 builder.Append(b.ToString("X2"));
             }
             return builder.ToString();
-        }
-
-        // Implement IDisposable to ensure the process field is disposed.
-        public void Dispose()
-        {
-            Dispose(true);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposed)
-                return;
-
-            if (disposing)
-            {
-                // Dispose managed resources.
-                try {
-                    if (process != null)
-                    {
-                        process.Dispose();
-                        process = null;
-                    }
-                }
-                catch {
-                    // Swallow exceptions during dispose.
-                }
-            }
-
-            disposed = true;
         }
 
         public enum ConversionStatus

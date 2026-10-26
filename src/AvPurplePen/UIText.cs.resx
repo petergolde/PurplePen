@@ -2438,9 +2438,6 @@ OK - zkus soubor s mapou najít.</value>
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Odeslat hlášení</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe nenalezen</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter nemůže přečíst PDF soubor.</value>
   </data>

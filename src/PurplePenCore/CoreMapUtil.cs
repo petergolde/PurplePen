@@ -181,16 +181,17 @@ namespace PurplePen
 
             PdfMapFile mapFile = new PdfMapFile(pdfFileName);
 
+            // Subscribe before starting: the conversion runs on a background thread and may finish
+            // before BeginConversion even returns. The event is only raised when a conversion was started.
+            mapFile.ConversionCompleted += delegate {
+                loadingStatus.LoadingComplete(mapFile.Status == PdfMapFile.ConversionStatus.Success, mapFile.ConversionOutput);
+            };
+
             bool ok = true;
             PdfMapFile.ConversionStatus status = mapFile.BeginConversion();
             if (status == PdfMapFile.ConversionStatus.Working) {
                 // Put up a modal dialog until loading is complete.
-                mapFile.ConversionCompleted += delegate {
-                    loadingStatus.LoadingComplete(mapFile.Status == PdfMapFile.ConversionStatus.Success, mapFile.ConversionOutput);
-                };
-                if (status == PdfMapFile.ConversionStatus.Working) {
-                    ok = loadingStatus.ShowLoadingStatus(pdfFileName);
-                }
+                ok = loadingStatus.ShowLoadingStatus(pdfFileName);
             }
 
             status = mapFile.Status;

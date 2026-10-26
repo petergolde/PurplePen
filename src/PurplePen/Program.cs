@@ -36,6 +36,7 @@ namespace PurplePen
             services.AddSingleton<ITextMetrics, GDIPlus_TextMetrics>();
             services.AddSingleton<IFileLoaderProvider, GdiPlus_FileLoaderProvider>();
             services.AddSingleton<IPdfWriter, PdfWriter>();
+            services.AddSingleton<IPdfConverter, PdfConverterService>();
             services.AddTransient<IPdfLoadingStatus, PdfLoadingUI>();
 
             serviceProvider = services.BuildServiceProvider();

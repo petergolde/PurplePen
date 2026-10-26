@@ -586,9 +586,6 @@ Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter mislykkedes med at læse PDF fil successfuldt</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe blev ikke fundet</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Kunne ikke læse resultatet af PDF omdannelse fra fil '{0}'</value>
   </data>

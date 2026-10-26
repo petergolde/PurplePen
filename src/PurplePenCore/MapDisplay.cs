@@ -101,10 +101,7 @@ namespace PurplePen
                         map = null;
                     }
 
-                    if (pdfMapFile != null) {
-                        pdfMapFile.Dispose();
-                        pdfMapFile = null;
-                    }
+                    pdfMapFile = null;
 
                     if (courseMap != null) {
                         courseMap.Dispose();

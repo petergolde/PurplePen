@@ -610,9 +610,6 @@ Abrir e salvar novamente o mapa na versão mais recente do OpenOrienteering Mapp
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>O conversor de PDF Pdfium falhou ao ler o arquivo PDF</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe não encontrado</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Não foi possível ler o resultado da conversão de PDF do arquivo '{0}'</value>
   </data>

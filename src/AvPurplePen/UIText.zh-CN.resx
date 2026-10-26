@@ -2458,9 +2458,6 @@
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>发送报告</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>pdfconverter.exe没有发现</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>PDFium PDF转换器无法读取PDF文件成功</value>
   </data>

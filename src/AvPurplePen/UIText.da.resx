@@ -2393,9 +2393,6 @@ Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Send rapport</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe blev ikke fundet</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter mislykkedes med at læse PDF fil successfuldt</value>
   </data>

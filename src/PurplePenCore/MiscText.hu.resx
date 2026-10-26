@@ -592,9 +592,6 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>A Pdfium nem tudta sikeresen beolvasni a PDF fájlt.</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>A PdfConverter.exe nem található</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>Nem olvasható be a PDF fájl átalakítás eredménye a(z) '{0}' fájlból</value>
   </data>

@@ -2468,9 +2468,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Lähetä raportti</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe ei löytynyt</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF-muunnin epäonnistui PDF-tiedoston lukemisessa</value>
   </data>

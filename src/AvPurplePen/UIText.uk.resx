@@ -2369,9 +2369,6 @@
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Надіслати звіт</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe не знайдено</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter не вдалося успішно зчитати PDF файл</value>
   </data>

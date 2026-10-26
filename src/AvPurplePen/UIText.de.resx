@@ -2471,9 +2471,6 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Bericht senden</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe nicht gefunden</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>PDF-Konverter "PDFium" konnte die PDF-Datei nicht lesen</value>
   </data>

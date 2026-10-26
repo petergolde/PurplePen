@@ -93,20 +93,18 @@ rather than its name or current bits: ELF binaries get `0755`, everything else
 staged on, and the finished packages are re-inspected for stray writable files
 before the build is allowed to succeed.
 
-**`obj/` is shared with the Windows build.** `AvPurplePen.csproj` builds
-PdfConverter through an MSBuild task with `Targets="Build"`, which performs no
-NuGet restore, so it uses whatever `obj/project.assets.json` happens to be
-there. If Visual Studio wrote it, the file names a fallback package folder that
-does not exist in WSL and the publish dies well into the build:
+**`obj/` is shared with the Windows build.** If Visual Studio wrote
+`obj/project.assets.json`, the file names a fallback package folder that does
+not exist in WSL, and a build that skips restore dies well into the publish:
 
 ```
 error MSB4018: Unable to find fallback package folder
 'C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages'
 ```
 
-The script restores both projects explicitly up front so this cannot happen.
-The cost is that alternating between a Windows build and a WSL build makes each
-one re-restore; that is a few seconds, not a failure.
+The script restores AvPurplePen and its referenced projects explicitly up front
+so this cannot happen. The cost is that alternating between a Windows build and
+a WSL build makes each one re-restore; that is a few seconds, not a failure.
 
 ## What the script does
 
@@ -116,18 +114,15 @@ one re-restore; that is a few seconds, not a failure.
 2. **Stage** — `rsync --archive --delete --delete-excluded
    --exclude-from=publish-exclude.txt` into `build/payload`. This is where you
    control the package's contents.
-3. **PDF helper** — republishes `PdfConverter` self-contained for the target
-   RID and overlays it, after checking that both resolve the same
-   `Microsoft.NETCore.App` version.
-4. **Normalize permissions** — ELF binaries to `0755`, everything else `0644`,
+3. **Normalize permissions** — ELF binaries to `0755`, everything else `0644`,
    decided by reading each file's magic number.
-5. **Assemble** — builds `build/tree` as the exact filesystem to be installed:
+4. **Assemble** — builds `build/tree` as the exact filesystem to be installed:
    the payload at `/opt/purplepen`, a `/usr/bin/purplepen` symlink, icons,
    the desktop entry, the MIME definition and a copyright file.
-6. **Package** — `dpkg-deb --root-owner-group --build` for the `.deb`,
+5. **Package** — `dpkg-deb --root-owner-group --build` for the `.deb`,
    `rpmbuild` against a generated spec for the `.rpm`, and `appimagetool` over
    an AppDir for the AppImage, all from that one tree.
-7. **Verify** — reads all three finished artifacts back and fails on a
+6. **Verify** — reads all three finished artifacts back and fails on a
    non-executable apphost, a writable file, a non-root owner, a missing symlink
    or desktop entry, a version mismatch, bundled libraries leaking into RPM
    `Provides`, a bad AppImage magic number, or missing AppImage desktop
@@ -630,34 +625,18 @@ dpkg --compare-versions '4.0.0~beta1' lt '4.0.0' && echo correct
 packaging revision, to bump when the packaging changes but the application does
 not.
 
-**The payload is ~145 MB, down from ~721 MB.** `AvPurplePen.csproj`'s
-`CopyPdfConverterToPublishOutput` target copies PdfConverter's entire build
-output into the publish directory, including its RID-agnostic `runtimes/` tree
-— native pdfium and libSkiaSharp binaries for Windows, macOS, musl and every
-Linux architecture, none of which this package loads. `publish-exclude.txt`
-drops the whole tree.
+**PDF map templates are rasterized in-process.** `PdfConverter` is a plain
+library referenced by PurplePenCore, so its native `libpdfium.so` arrives
+through the normal publish and is flattened to the top level of the payload
+like `libSkiaSharp.so`. The staging step warns if it is missing. It used to be a
+separate helper executable that needed its own self-contained republish and
+overlay; that is gone.
 
-That is only safe together with the PdfConverter overlay: `libpdfium.so` has no
-copy at the publish root and exists *only* inside `runtimes/`. The overlay is
-what puts it at the top level. Excluding `runtimes/` with
-`INCLUDE_PDF_CONVERTER=false` silently removes PDF map template support.
-
-**The `PdfConverter` helper needs a separate self-contained publish.** The copy
-that arrives from the main publish is a plain *build* output, so it is
-framework-dependent: its apphost finds the self-contained app's own
-`libhostfxr.so` sitting next to it, resolves ".NET location" to the application
-directory, finds no shared framework there and refuses to start — even on a
-machine that does have .NET installed. The script republishes it self-contained
-for the target RID and overlays it, which costs about 7 MB.
-
-Two consequences:
-
-- Do **not** add `PdfConverter*` or `libpdfium.so` to `publish-exclude.txt`;
-  the list is applied to the overlay too, so that would delete the working
-  helper. Use `INCLUDE_PDF_CONVERTER=false` instead.
-- The script aborts if the app and the helper resolve different
-  `Microsoft.NETCore.App` patch versions, since the overlay would otherwise
-  swap the runtime out from under the main app.
+The `runtimes/` line in `publish-exclude.txt` dates from when AvPurplePen.csproj
+copied PdfConverter's entire RID-agnostic build output into the publish
+directory, which made the payload ~721 MB instead of ~145 MB. That copy no
+longer happens; the exclusion stays as a safety net, as does the detection of
+other platforms' RID directories at staging time.
 
 **Dependencies are hand-maintained, and most of them are invisible to `ldd`.**
 The payload's binaries record only four external `DT_NEEDED` dependencies —

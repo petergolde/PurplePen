@@ -2434,9 +2434,6 @@
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>發送報告</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe 找不到</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF 轉換器無法成功讀取PDF檔案</value>
   </data>

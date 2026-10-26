@@ -550,9 +550,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF converter がPDFファイルの正常な読み込みに失敗しました</value>
   </data>
-  <data name="PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe が見つかりません</value>
-  </data>
   <data name="PdfResultNotReadable" xml:space="preserve">
     <value>ファイル '{0}' からのPDF変換の結果が読み込めませんでした</value>
   </data>

@@ -2436,9 +2436,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="MiscText_CrashSend" xml:space="preserve">
     <value>Saada aruanne</value>
   </data>
-  <data name="MiscText_PdfConverterNotFound" xml:space="preserve">
-    <value>PdfConverter.exe ei leitud</value>
-  </data>
   <data name="MiscText_PdfConversionFailed" xml:space="preserve">
     <value>Pdfium PDF konverteril ebaõnnestus PDFi lugemisel</value>
   </data>

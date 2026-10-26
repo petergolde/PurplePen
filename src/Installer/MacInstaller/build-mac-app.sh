@@ -9,11 +9,10 @@
 #
 #   1. dotnet publish AvPurplePen (Release, net10.0, osx-arm64, self-contained)
 #   2. rsync the publish output into build/staging, honouring publish-exclude.txt
-#   3. Republish PdfConverter self-contained and overlay it onto the payload
-#   4. Assemble build/PurplePen.app from the staging directory
-#   5. Sign every file in Contents/MacOS inside-out, then seal the bundle
-#   6. Notarize the app and staple the ticket to it
-#   7. Build the .dmg and .zip from the stapled app, then notarize and staple
+#   3. Assemble build/PurplePen.app from the staging directory
+#   4. Sign every file in Contents/MacOS inside-out, then seal the bundle
+#   5. Notarize the app and staple the ticket to it
+#   6. Build the .dmg and .zip from the stapled app, then notarize and staple
 #      the .dmg as well
 #
 # Run with --help for options. See README.md for one-time setup.
@@ -494,120 +493,15 @@ stage_payload() {
     [[ -f "$STAGING_DIR/$APP_NAME" ]] \
         || die "The main executable '$APP_NAME' was excluded from the payload. Check publish-exclude.txt."
 
+    # PDF map templates are rasterized in-process by the PdfConverter library,
+    # which needs the native pdfium library next to the app.
+    [[ -f "$STAGING_DIR/libpdfium.dylib" ]] \
+        || warn "libpdfium.dylib is not in the payload; PDF map templates will not work."
+
     local file_count size
     file_count="$(find "$STAGING_DIR" -type f | wc -l | tr -d ' ')"
     size="$(du -sh "$STAGING_DIR" | cut -f1 | tr -d ' ')"
     info "Staged $file_count files ($size) in $STAGING_DIR"
-}
-
-# ---------------------------------------------------------------------------
-# Step 2b: the PdfConverter helper
-# ---------------------------------------------------------------------------
-
-# framework_version_of: print the Microsoft.NETCore.App version a
-# runtimeconfig.json resolves to, whether it is framework-dependent
-# ("framework") or self-contained ("includedFrameworks"). $1 is the path to the
-# runtimeconfig.json.
-framework_version_of() {
-    /usr/bin/python3 - "$1" <<'PY'
-import json, sys
-with open(sys.argv[1]) as f:
-    opts = json.load(f)["runtimeOptions"]
-frameworks = opts.get("includedFrameworks") or ([opts["framework"]] if "framework" in opts else [])
-for fw in frameworks:
-    if fw.get("name") == "Microsoft.NETCore.App":
-        print(fw.get("version", ""))
-        break
-PY
-}
-
-# stage_pdf_converter: republish PdfConverter self-contained for this RID and
-# overlay it onto the staged payload.
-#
-# PurplePenCore/PdfMapFile.cs launches this helper as a separate process to
-# rasterize PDF map templates. The copy that AvPurplePen.csproj drops into the
-# publish directory is a plain build output and is framework-dependent, so it
-# cannot start inside a self-contained bundle. A RID-specific self-contained
-# publish fixes that and additionally flattens libpdfium.dylib to the top
-# level, replacing the cross-platform runtimes/ tree it would otherwise need.
-#
-# Because the helper ends up in the same directory as the app, it shares every
-# framework assembly already present and adds only its own code plus libpdfium.
-stage_pdf_converter() {
-    step "Staging the PdfConverter helper"
-
-    if [[ "$INCLUDE_PDF_CONVERTER" != "true" ]]; then
-        info "Skipped (INCLUDE_PDF_CONVERTER is not true)."
-        return
-    fi
-
-    local project="$SRC_DIR/PdfConverter/PdfConverter.csproj"
-    if [[ ! -f "$project" ]]; then
-        warn "PdfConverter project not found at $project; skipping the helper."
-        return
-    fi
-
-    local helper_dir="$BUILD_DIR/pdfconverter"
-    rm -rf "$helper_dir"
-
-    # BaseOutputPath redirects PdfConverter's bin/ into our build directory.
-    #
-    # This is not cosmetic. AvPurplePen.csproj's CopyPdfConverterToPublishOutput
-    # target globs PdfConverter/bin/$(Configuration)/net10.0/**/*.* recursively.
-    # Publishing here with a RID would otherwise create
-    # PdfConverter/bin/Release/net10.0/<rid>/ inside the source tree, and the
-    # NEXT full run of this script would sweep that entire directory -- a second
-    # copy of the helper plus a self-contained .NET runtime -- into the app
-    # payload. Left unchecked it roughly doubles the file count on every build.
-    dotnet publish "$project" \
-        --configuration "$CONFIGURATION" \
-        --framework "$TARGET_FRAMEWORK" \
-        --runtime "$RUNTIME_IDENTIFIER" \
-        --self-contained true \
-        -p:PublishReadyToRun="$PUBLISH_READYTORUN" \
-        -p:UseAppHost=true \
-        -p:DebugType=none \
-        -p:BaseOutputPath="$BUILD_DIR/pdfconverter-bin/" \
-        --output "$helper_dir" \
-        --nologo \
-        || die "Failed to publish PdfConverter."
-
-    # The overlay overwrites shared framework assemblies. If the helper and the
-    # app resolved different patch versions of Microsoft.NETCore.App, that
-    # would silently downgrade or upgrade the runtime underneath the main app,
-    # so refuse rather than ship a subtly broken bundle.
-    local app_fw helper_fw
-    app_fw="$(framework_version_of "$STAGING_DIR/$APP_NAME.runtimeconfig.json")"
-    helper_fw="$(framework_version_of "$helper_dir/PdfConverter.runtimeconfig.json")"
-
-    if [[ -n "$app_fw" && -n "$helper_fw" && "$app_fw" != "$helper_fw" ]]; then
-        die "Runtime version mismatch between the app and the PdfConverter helper.
-
-    $APP_NAME     targets Microsoft.NETCore.App $app_fw
-    PdfConverter targets Microsoft.NETCore.App $helper_fw
-
-Overlaying the helper would replace the app's framework assemblies with a
-different version. Rebuild both with the same SDK, or set
-INCLUDE_PDF_CONVERTER=false to leave the helper out."
-    fi
-    info "Both target Microsoft.NETCore.App $app_fw"
-
-    # No --delete here: this is an overlay onto the existing payload. The same
-    # exclusion list is applied so the helper obeys the same rules.
-    local rsync_args=(--archive)
-    if [[ -n "$EXCLUDE_FILE" ]]; then
-        rsync_args+=(--exclude-from="$EXCLUDE_FILE")
-    fi
-    rsync "${rsync_args[@]}" "$helper_dir/" "$STAGING_DIR/"
-
-    if [[ ! -f "$STAGING_DIR/PdfConverter" ]]; then
-        warn "PdfConverter was excluded by publish-exclude.txt; PDF map templates will not work."
-        return
-    fi
-
-    local size
-    size="$(du -sh "$STAGING_DIR" | cut -f1 | tr -d ' ')"
-    info "Payload is now $size with the helper included"
 }
 
 # ---------------------------------------------------------------------------
@@ -1482,7 +1376,6 @@ Run the build without --dmg-only first."
 else
     publish_app
     stage_payload
-    stage_pdf_converter
     build_icon
     assemble_bundle
     sign_bundle
