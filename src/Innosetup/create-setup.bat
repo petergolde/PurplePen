@@ -5,7 +5,7 @@ set INNOSETUP_FILE=PurplePen.iss
 set PROJECT_FILE=..\AvPurplePen\AvPurplePen.csproj
 set RUNTIME_IDENTIFIER=win-x64
 set CONFIGURATION=Release
-set TARGET_FRAMEWORK=net10.0
+set TARGET_FRAMEWORK=net10.0-windows
 set SELF_CONTAINED=true
 set PUBLISH_READYTORUN=false
 
