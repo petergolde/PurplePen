@@ -155,9 +155,9 @@ namespace PurplePen.Tests
 
             // Get the pages of the printing.
             PageSettings pageSettings = new PageSettings() { Margins = new Margins(0, 0, 0, 0) };
-            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.CloneToFullIntensity(), coursePrintSettings, WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(pageSettings), appearance);
+            CoursePrinting coursePrinter = new CoursePrinting(controller.GetEventDB(), ui.symbolDB, controller, mapDisplay.CloneToFullIntensity(), coursePrintSettings, appearance);
 
-            BitmapPrintingTarget bitmapPrintTarget = new BitmapPrintingTarget();
+            BitmapPrintingTarget bitmapPrintTarget = new BitmapPrintingTarget(coursePrintSettings.PrintingColorModel, true);
 
             PrintManager printManager = new PrintManager("", bitmapPrintTarget, coursePrinter);
             printManager.SetDefaultPaperSize(WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(pageSettings));
@@ -417,7 +417,7 @@ namespace PurplePen.Tests
             PageSettings pageSettings = new PageSettings() { Margins = new Margins(0, 0, 0, 0) };
             pageSettings.PrinterSettings.PrinterName = "foobar";
 
-            bool success = controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(pageSettings, null, false), coursePrintSettings, WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(pageSettings));
+            bool success = controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(pageSettings, null, false, coursePrintSettings.PrintingColorModel, true), coursePrintSettings);
 
             Assert.IsFalse(success);
             string expected =
@@ -448,22 +448,22 @@ Settings to access printer 'foobar' are not valid.'
         {
             float result;
 
-            result = CoursePrinting.AdjustDpi(300);
+            result = WinFormsPrinter.AdjustDpi(300);
             Assert.AreEqual(600, result);
 
-            result = CoursePrinting.AdjustDpi(600);
+            result = WinFormsPrinter.AdjustDpi(600);
             Assert.AreEqual(600, result);
 
-            result = CoursePrinting.AdjustDpi(720);
+            result = WinFormsPrinter.AdjustDpi(720);
             Assert.AreEqual(720, result);
 
-            result = CoursePrinting.AdjustDpi(1800);
+            result = WinFormsPrinter.AdjustDpi(1800);
             Assert.AreEqual(900, result);
 
-            result = CoursePrinting.AdjustDpi(100);
+            result = WinFormsPrinter.AdjustDpi(100);
             Assert.AreEqual(400, result);
 
-            result = CoursePrinting.AdjustDpi(300);
+            result = WinFormsPrinter.AdjustDpi(300);
             Assert.AreEqual(600, result);
         }
 

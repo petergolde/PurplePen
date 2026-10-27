@@ -2413,9 +2413,8 @@ namespace PurplePen
                 // Save the settings for the next invocation of the dialog.
                 coursePrintSettings = printCoursesDialog.PrintSettings;
                 coursePrintPageSettings = printCoursesDialog.PageSettings;
-                controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(coursePrintPageSettings, this, false),
-                                        coursePrintSettings, 
-                                        WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(coursePrintPageSettings));
+                controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(coursePrintPageSettings, this, false, coursePrintSettings.PrintingColorModel, true),
+                                        coursePrintSettings);
             }
 
             // And the dialog is done.

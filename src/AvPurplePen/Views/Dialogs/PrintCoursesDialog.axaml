@@ -1,0 +1,192 @@
+<!--
+    PrintCoursesDialog.axaml
+
+    Print Courses dialog.
+
+    Layout:
+      * Output group (printer + Change Printer button) at the top, full width.
+        Shown only if the platform can change the printer.
+      * Below it, two columns: Courses on the left, Copies + Appearance
+        stacked on the right.
+      * Help / Preview on the left and Print / Cancel on the right at the bottom.
+
+    The Change Printer button is bound to a command. The Preview button shows
+    the Print Preview dialog (visible only when the caller supplied a Controller).
+    Course pages take their paper size from each course's print area, so there
+    is no paper size or margins setting.
+
+    Migrated from WinForms PurplePen/PrintCourses.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:views="using:AvPurplePen.Views"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:controls="using:AvPurplePen.Controls"
+        xmlns:avutil="using:AvUtil"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.PrintCoursesDialog"
+        Classes="dialog"
+        x:DataType="vm:PrintCoursesDialogViewModel"
+        Title="{resx:Localize PrintCourses_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="640" d:DesignHeight="480"
+        Width="640" Height="480"
+        CanResize="True"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:PrintCoursesDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- Bottom row: Help and Preview on the left, Print / Cancel on the right. -->
+        <Grid DockPanel.Dock="Bottom"
+              ColumnDefinitions="Auto,*,Auto"
+              Margin="0,12,0,0">
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="12">
+                <controls:HelpButton VerticalAlignment="Center"
+                                     HelpTopic="FilePrintCourses.htm"/>
+                <Button x:Name="previewButton"
+                        Content="{resx:Localize PrintCourses_previewButton_Text}"
+                        MinWidth="120"
+                        HorizontalContentAlignment="Center"
+                        IsVisible="{Binding IsPreviewVisible}"
+                        Click="PreviewButton_Click"/>
+            </StackPanel>
+
+            <!-- Print / Cancel. UniformGrid gives the buttons equal widths,
+                 growing past MinWidth when a translation is longer. -->
+            <UniformGrid Grid.Column="2"
+                         Rows="1"
+                         ColumnSpacing="8">
+                <Button x:Name="okButton"
+                        Content="{resx:Localize PrintCourses_okButton_Text}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsDefault="True"
+                        Click="OkButton_Click"/>
+                <Button x:Name="cancelButton"
+                        Content="{resx:Localize CancelButton}"
+                        MinWidth="85"
+                        HorizontalContentAlignment="Center"
+                        IsCancel="True"
+                        Click="CancelButton_Click"/>
+            </UniformGrid>
+        </Grid>
+
+        <!-- Output group at the top, full width: printer + Change Printer button. -->
+        <HeaderedContentControl DockPanel.Dock="Top"
+                                Header="{resx:Localize PrintCourses_printerGroup_Text}"
+                                Padding="8"
+                                Margin="0,0,0,8"
+                                IsVisible="{Binding IsPrinterVisible}">
+            <Grid ColumnDefinitions="Auto,8,*,8,Auto">
+                <TextBlock Grid.Column="0"
+                           Text="{resx:Localize PrintCourses_printerLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2"
+                           Text="{Binding PrinterNameDisplay}"
+                           VerticalAlignment="Center"
+                           TextTrimming="CharacterEllipsis"/>
+                <Button x:Name="printerChange"
+                        Grid.Column="4"
+                        Classes="Small"
+                        Content="{resx:Localize PrintCourses_printerChange_Text}"
+                        Command="{Binding ChangePrinterCommand}"/>
+            </Grid>
+        </HeaderedContentControl>
+
+        <!-- Two columns below the Output group: Courses on the left,
+             Copies + Appearance stacked on the right. -->
+        <Grid ColumnDefinitions="*,12,*">
+
+            <!-- === Left: Courses === -->
+            <HeaderedContentControl Grid.Column="0"
+                                    Header="{resx:Localize PrintCourses_coursesGroupBox_Text}"
+                                    Padding="8,10,8,8">
+                <views:CourseSelector x:Name="courseSelector"
+                                      EventDB="{Binding EventDB}"
+                                      ShowAllControls="True"
+                                      ShowCourseParts="False"
+                                      ShowVariationChooser="True"/>
+            </HeaderedContentControl>
+
+            <!-- === Right: Copies + Appearance === -->
+            <StackPanel Grid.Column="2" Spacing="8">
+
+                <!-- Copies group: copies of each course, and pause after each course. -->
+                <HeaderedContentControl Header="{resx:Localize PrintCourses_copiesGroupBox_Text}"
+                                        Padding="8,10,8,8">
+                    <StackPanel Spacing="6">
+                        <StackPanel Orientation="Horizontal"
+                                    Spacing="6">
+                            <TextBlock x:Name="copiesLabel"
+                                       Text="{resx:Localize PrintCourses_copiesLabel_Text}"
+                                       VerticalAlignment="Center"/>
+                            <NumericUpDown x:Name="copiesUpDown"
+                                           Width="80"
+                                           Minimum="1"
+                                           Maximum="9999"
+                                           FormatString="0"
+                                           avutil:InitialFocus.IsEnabled="True"
+                                           Value="{Binding Copies, Mode=TwoWay}"/>
+                        </StackPanel>
+                        <CheckBox x:Name="checkBoxPausePrinting"
+                                  Content="{resx:Localize PrintCourses_checkBoxPausePrinting_Text}"
+                                  IsChecked="{Binding PausePrinting, Mode=TwoWay}"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+
+                <!-- Appearance group -->
+                <HeaderedContentControl Header="{resx:Localize PrintCourses_groupBoxAppearance_Text}"
+                                        Padding="8,10,8,8">
+                    <StackPanel Spacing="4">
+                        <!-- "If the print area is too large to fit on one page:" -->
+                        <TextBlock Text="{resx:Localize PrintCourses_labelAppearanceInfo_Text}"
+                                   TextWrapping="Wrap"/>
+                        <ComboBox x:Name="comboBoxMultiPage"
+                                  HorizontalAlignment="Stretch"
+                                  SelectedIndex="{Binding MultiPageIndex, Mode=TwoWay}">
+                            <ComboBoxItem Content="{resx:Localize PrintCourses_comboBoxMultiPage_Items}"/>
+                            <ComboBoxItem Content="{resx:Localize PrintCourses_comboBoxMultiPage_Items1}"/>
+                        </ComboBox>
+
+                        <!-- Color model. The items are in ColorModel order (RGB, CMYK). -->
+                        <Grid ColumnDefinitions="Auto,8,*"
+                              Margin="0,4,0,0">
+                            <TextBlock Grid.Column="0"
+                                       Text="{resx:Localize PrintCourses_labelColorModel_Text}"
+                                       VerticalAlignment="Center"/>
+                            <ComboBox x:Name="comboBoxColorModel"
+                                      Grid.Column="2"
+                                      HorizontalAlignment="Stretch"
+                                      SelectedIndex="{Binding ColorModelIndex, Mode=TwoWay}">
+                                <ComboBoxItem Content="{resx:Localize PrintCourses_comboBoxColorModel_Items1}"/>
+                                <ComboBoxItem Content="{resx:Localize PrintCourses_comboBoxColorModel_Items2}"/>
+                            </ComboBox>
+                        </Grid>
+
+                        <!-- "Print Map Exchanges on Same Map" — only shown when
+                             the event has at least one multi-part course. -->
+                        <CheckBox x:Name="checkBoxMergeParts"
+                                  Content="{resx:Localize PrintCourses_checkBoxMergeParts_Text}"
+                                  IsChecked="{Binding MergeParts, Mode=TwoWay}"
+                                  IsVisible="{Binding ShowMergeParts}"
+                                  Margin="0,4,0,0"/>
+                    </StackPanel>
+                </HeaderedContentControl>
+
+            </StackPanel>
+        </Grid>
+
+    </DockPanel>
+</Window>

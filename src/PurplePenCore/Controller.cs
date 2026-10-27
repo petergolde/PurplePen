@@ -1386,16 +1386,19 @@ namespace PurplePen
         }
 
         // Print or print preview the courses. Returns success or failure; any errors are already reported to the user.
-        public bool PrintCourses(IPrintingTarget printingTarget, CoursePrintSettings coursePrintSettings, PrintingPaperSizeWithMargins paperSizeWithMargins)
+        public bool PrintCourses(IPrintingTarget printingTarget, CoursePrintSettings coursePrintSettings)
         {
             string documentTitle = QueryEvent.GetEventTitle(eventDB, " ");
 
             bool success = HandleExceptions(
                 delegate {
-                    CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePrintSettings, paperSizeWithMargins, GetCourseAppearance());
+                    CoursePrinting coursePrinter = new CoursePrinting(eventDB, symbolDB, this, mapDisplay.CloneToFullIntensity(), coursePrintSettings, GetCourseAppearance());
 
                     PrintManager printManager = new PrintManager(documentTitle, printingTarget, coursePrinter);
-                    printManager.SetDefaultPaperSize(paperSizeWithMargins);
+                    // Each course page supplies its own paper size, so the default paper size is never used. The
+                    // margins must be zero, because each page's print area already includes its margins.
+                    printManager.SetDefaultPaperSize(new PrintingPaperSizeWithMargins(
+                        PrintingStandards.StandardPaperSizes[PrintingStandards.DefaultEnglishPaperSizeIndex], new PrintingMarginSize(0)));
                     printManager.DoPrinting();
                 },
                 MiscText.CannotPrint, QueryEvent.GetEventTitle(eventDB, " "));

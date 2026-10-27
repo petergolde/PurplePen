@@ -175,9 +175,9 @@ namespace PurplePen
         private void previewButton_Click(object sender, EventArgs e)
         {
             if (SomeCoursesSelected()) {
-                controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(PageSettings, this.Owner, true),
-                                        PrintSettings,
-                                        WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(PageSettings));
+                CoursePrintSettings previewSettings = PrintSettings;
+                controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(PageSettings, this.Owner, true, previewSettings.PrintingColorModel, true),
+                                        previewSettings);
 
             }
         }

@@ -27,6 +27,23 @@ namespace PurplePen_Tests.PurplePen
 
         public string DocumentTitle => documentTitle;
 
+        readonly ColorModel colorModel;
+        readonly bool rasterizeInBands;
+
+        // Create a printing target that draws each page directly onto its bitmap.
+        public BitmapPrintingTarget() : this(ColorModel.RGB, false)
+        {
+        }
+
+        // Create a printing target. If rasterizeInBands is true, each page is drawn the way
+        // WinFormsPrinter draws course pages: into bitmap bands at a higher resolution, which
+        // are then drawn onto the page bitmap.
+        public BitmapPrintingTarget(ColorModel colorModel, bool rasterizeInBands)
+        {
+            this.colorModel = colorModel;
+            this.rasterizeInBands = rasterizeInBands;
+        }
+
         public void StartPrinting(string documentTitle, int pageCount)
         {
             currentPage = 1;
@@ -47,7 +64,10 @@ namespace PurplePen_Tests.PurplePen
             RectangleF drawingRectangle = new RectangleF(0, 0, width / 2F, height / 2F);  // Drawing coordinates are 1/100 of an inch.
             Bitmap bm = TestRenderingUtils.RenderToBitmap(width, height, drawingRectangle, false, graphicsTarget => {
                 graphicsTarget.PushAntiAliasing(true);
-                drawPage(graphicsTarget);
+                if (rasterizeInBands)
+                    WinFormsPrinter.DrawPageInBands(graphicsTarget, paperSize, drawPage, colorModel, WinFormsPrinter.AdjustDpi(Dpi));
+                else
+                    drawPage(graphicsTarget);
             });
             bm.SetResolution(Dpi, Dpi);
 

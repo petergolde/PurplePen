@@ -75,6 +75,10 @@ namespace PurplePen.ViewModels
         private CorePunchPrintSettings? punchPrintSettings;
         private PrintingPaperSizeWithMargins? punchPaperSizeWithMargins;
 
+        // Same idea for the Print Courses dialog. Course pages take their paper size
+        // from each course's print area, so there is no paper size to remember.
+        private CoursePrintSettings? coursePrintSettings;
+
         [ObservableProperty]
         private string windowTitle = MiscText.AppTitle;
 

@@ -2164,7 +2164,7 @@ namespace PurplePen.ViewModels
             bool metric = Util.IsCurrentCultureMetric();
             PrintingPaperSize paperSize = PrintingStandards.StandardPaperSizes[
                 metric ? PrintingStandards.DefaultMetricPaperSizeindex
-                       : PrintingStandards.DefaultEnglighPaperSizeIndex];
+                       : PrintingStandards.DefaultEnglishPaperSizeIndex];
             int margin = metric ? PrintingStandards.DefaultDescriptionsMetricMarginInHundreths
                                 : PrintingStandards.DefaultDescriptionsEnglishMarginInHundreths;
             return new PrintingPaperSizeWithMargins(paperSize, new PrintingMarginSize(margin));
@@ -2283,46 +2283,37 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task PrintCourses()
         {
-#if !PORTING
-            if (!CheckForNonRenderableObjects(false, true))
+            if (controller == null) { return; }
+
+            IDocumentPrinting? documentPrinting = Services.DocumentPrinting;
+            if (documentPrinting == null) {
+                await ShowDirectPrintingUnavailable();
+                return;
+            }
+
+            if (! await CheckForNonRenderableObjects(false, true))
                 return;
 
-            PrintCourses printCoursesDialog = new PrintCourses(controller.GetEventDB(), controller.AnyMultipart());
-            printCoursesDialog.controller = controller;
-            printCoursesDialog.PrintSettings = coursePrintSettings;
+            // Seed from previous settings or build defaults. Always start with one copy.
+            CoursePrintSettings settings = coursePrintSettings ?? new CoursePrintSettings();
+            settings.Count = 1;
 
-#if XPS_PRINTING
-            if (controller.MustRasterizePrinting) {
-                // Force rasterization.
-                coursePrintSettings.UseXpsPrinting = false;
-                printCoursesDialog.PrintSettings = coursePrintSettings;
-                printCoursesDialog.EnableRasterizeChoice = false;
-            }
-#endif // XPS_PRINTING
+            PrintCoursesDialogViewModel vm = new PrintCoursesDialogViewModel {
+                EventDB = controller.GetEventDB(),
+                Controller = controller,
+                DocumentPrinting = documentPrinting,
+                ShowMergeParts = controller.AnyMultipart(),
+                Settings = settings,
+            };
 
-            printCoursesDialog.PrintSettings.Count = 1;
+            if (!await Services.DialogService.ShowDialogAsync(vm))
+                return;
 
-            // show the dialog, on success, print.
-            if (printCoursesDialog.ShowDialog(this) == DialogResult.OK) {
-                // Save the settings for the next invocation of the dialog.
-                coursePrintSettings = printCoursesDialog.PrintSettings;
-                coursePrintPageSettings = printCoursesDialog.PageSettings;
-                controller.PrintCourses(WindowsUtil.GetWinFormsPrintTarget(coursePrintPageSettings, this, false),
-                                        coursePrintSettings,
-                                        WindowsUtil.PrintingPaperSizeWithMarginsFromPageSettings(coursePrintPageSettings));
-            }
+            // Save the settings for the next invocation of the dialog, then print.
+            coursePrintSettings = vm.Settings;
 
-            // And the dialog is done.
-            printCoursesDialog.Dispose();
-#else
-#if PORTING
-            // TODO: Port the Print Courses dialog (PurplePen/PrintCourses.cs), then when
-            // Services.DocumentPrinting is non-null show it and print with
-            // controller.PrintCourses(documentPrinting.GetPrintingTarget(settings.PrintingColorModel), ...),
-            // as PrintDescriptions does. Until then, direct printing of courses isn't available.
-#endif
-            await ShowDirectPrintingUnavailable();
-#endif
+            controller.PrintCourses(documentPrinting.GetPrintingTarget(coursePrintSettings.PrintingColorModel),
+                                    coursePrintSettings);
         }
 
         /// <summary>

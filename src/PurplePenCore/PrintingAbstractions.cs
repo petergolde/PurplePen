@@ -231,7 +231,7 @@ namespace PurplePen
 
         public const int FirstMetricPaperSizeIndex = 0;
         public const int FirstEnglishPaperSizeIndex = 5;
-        public const int DefaultEnglighPaperSizeIndex = 5;
+        public const int DefaultEnglishPaperSizeIndex = 5;
         public const int DefaultMetricPaperSizeindex = 2;
 
         public const int DefaultMapEnglishMarginInHundreths = 25;  // 1/4 of a inch.

@@ -236,7 +236,7 @@ namespace PurplePen
                 // Prevent exception if the printer settings are not valid. Just return the default paper size for the current culture.
                 // Probably will get an exception later on when we try to print, but we have a try-catch there.
                 bool metric = Util.IsCurrentCultureMetric();
-                return PrintingStandards.StandardPaperSizes[metric ? PrintingStandards.DefaultMetricPaperSizeindex : PrintingStandards.DefaultEnglighPaperSizeIndex];
+                return PrintingStandards.StandardPaperSizes[metric ? PrintingStandards.DefaultMetricPaperSizeindex : PrintingStandards.DefaultEnglishPaperSizeIndex];
             }
         }
 
@@ -254,7 +254,10 @@ namespace PurplePen
 
         // Returns an IPrintingTarget for printing to the Windows Forms printing subsystem, or to print
         // preview.
-        public static IPrintingTarget GetWinFormsPrintTarget(PageSettings pageSettings, Form mainWindow, bool preview) 
+        // colorModel: the color model used to render the pages.
+        // rasterizeInBands: if true, pages are drawn into bitmap bands first (needed for courses, so purple blending is correct).
+        public static IPrintingTarget GetWinFormsPrintTarget(PageSettings pageSettings, Form mainWindow, bool preview,
+                                                             ColorModel colorModel = ColorModel.RGB, bool rasterizeInBands = false)
         {
             Size previewDialogSize = new Size();
 
@@ -268,8 +271,9 @@ namespace PurplePen
 
             WinFormsPrinter winFormsPrintTarget = new WinFormsPrinter(new WinFormsPrinter.WinFormsPrinterOptions() {
                 PageSettings = pageSettings,
-                ColorModel = ColorModel.RGB,
+                ColorModel = colorModel,
                 StopAfterEachPage = false,
+                RasterizeInBands = rasterizeInBands,
                 PrintPreview = preview,
                 PreviewDialogSize = previewDialogSize
             });
