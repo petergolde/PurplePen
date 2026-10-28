@@ -30,4 +30,11 @@ using System.Runtime.InteropServices;
 [assembly: System.Runtime.Versioning.SupportedOSPlatform("windows7.0")]
 #endif
 
+#if MACOS
+// Likewise for the macOS build (net10.0-macos). Keep the version in step with
+// SupportedOSPlatformVersion in AvPurplePen.csproj. Without it, every use of SkiaSharp (whose
+// macOS assembly is annotated as macOS 12+) and of any AppKit API raises CA1416.
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("macos13.0")]
+#endif
+
 
