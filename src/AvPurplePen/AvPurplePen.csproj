@@ -134,7 +134,9 @@
        net10.0 Mac build) do; plain macOS still provides ICU as libicucore. The SDK sets the property
        unconditionally in its own targets, after anything a project or Directory.Build.targets
        can set, so it has to be overridden here, in a target, along with the runtimeconfig item
-       already created from it. -->
+       already created from it. That item is replaced with Remove and Include: inside a target,
+       MSBuild ignores Update, and an item element with only metadata then sets that metadata on
+       every item of the type, which once turned off every runtime feature switch at once. -->
   <Target Name="DisableMacHybridGlobalization"
           BeforeTargets="PrepareForBuild"
           Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
@@ -142,7 +144,8 @@
       <HybridGlobalization>false</HybridGlobalization>
     </PropertyGroup>
     <ItemGroup>
-      <RuntimeHostConfigurationOption Update="System.Globalization.Hybrid" Value="false" />
+      <RuntimeHostConfigurationOption Remove="System.Globalization.Hybrid" />
+      <RuntimeHostConfigurationOption Include="System.Globalization.Hybrid" Value="false" Trim="true" />
     </ItemGroup>
   </Target>
 
