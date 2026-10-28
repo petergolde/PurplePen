@@ -22,21 +22,19 @@ namespace PurplePen
 
         private Controller controller;
         private CoursePrintSettings coursePrintSettings;
-        private PrintingPaperSizeWithMargins paperSizeWithMargins;
         private EventDB eventDB;
         private SymbolDB symbolDB;
         private MapDisplay mapDisplay;
         private CourseAppearance appearance;
 
         // mapDisplay is a MapDisplay that contains the correct map. All other features of the map display need to be customized.
-        public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, PrintingPaperSizeWithMargins paperSizeWithMargins, CourseAppearance appearance)
+        public CoursePrinting(EventDB eventDB, SymbolDB symbolDB, Controller controller, MapDisplay mapDisplay, CoursePrintSettings coursePrintSettings, CourseAppearance appearance)
         {
             this.eventDB = eventDB;
             this.symbolDB = symbolDB;
             this.controller = controller;
             this.mapDisplay = mapDisplay;
             this.coursePrintSettings = coursePrintSettings;
-            this.paperSizeWithMargins = paperSizeWithMargins;
             this.appearance = appearance;
 
             // Set default features for printing.
@@ -47,18 +45,20 @@ namespace PurplePen
         }
 
         // Layout all the pages, return the total number of pages.
-        public int LayoutPages(PrintingPaperSizeWithMargins defaultPaperSizeWithMargins) 
+        public int LayoutPages(PrintingPaperSizeWithMargins defaultPaperSizeWithMargins)
         {
-#if !PORTING
-            // We need to deal with Copies and Collating manually, instead of relying on the Windows print system.
-            pageSettings.PrinterSettings.Copies = (short)coursePrintSettings.Count;
-            pageSettings.PrinterSettings.Collate = false;      // print all of one course, then all of next, etc.
-
-#endif
-
             CoursePageLayout pageLayout = new CoursePageLayout(eventDB, symbolDB, controller, appearance, coursePrintSettings.CropLargePrintArea);
             IEnumerable<CourseDesignator> courseDesignators = QueryEvent.EnumerateCourseDesignators(eventDB, coursePrintSettings.CourseIds, coursePrintSettings.VariationChoicesPerCourse, !coursePrintSettings.PrintMapExchangesOnOneMap);
-            pages = pageLayout.LayoutPages(courseDesignators);
+            List<CoursePage> layoutPages = pageLayout.LayoutPages(courseDesignators);
+
+            // Copies are made here, rather than by the printer, uncollated: all the copies of
+            // one page, then all the copies of the next, etc.
+            int copies = Math.Max(1, coursePrintSettings.Count);
+            pages = new List<CoursePage>();
+            foreach (CoursePage page in layoutPages) {
+                for (int copy = 0; copy < copies; ++copy)
+                    pages.Add(page);
+            }
 
             return pages.Count;            // total number of pages.
         }
@@ -94,8 +94,9 @@ namespace PurplePen
 #endif
 
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
-        // and the printArea in the size to draw into (in hundreths of an inch).
-        //protected override void DrawPage(IGraphicsTarget graphicsTarget, int pageNumber, SizeF printArea, float dpi)
+        // in hundreths of an inch. The page is drawn directly onto grTarget; purple blending is
+        // correct only if grTarget supports blending, so printing targets that don't (e.g., GDI+
+        // printing) should render the page into bitmap bands first.
         public void DrawPage(IGraphicsTarget grTarget, int pageNumber, float dpi)
         {
             CoursePage page = pages[pageNumber - 1];
@@ -124,107 +125,26 @@ namespace PurplePen
             // Collecting garbage should make out of memory less common.
             GC.Collect();
 
-            // We print to intermediate bands of bitmaps. This is the only way to get purple blending correct.
-            // Is also insures that we get the most accurate print.
+            // Set the transform, and the clip.
+            Matrix transform = Geometry.CreateInvertedRectangleTransform(page.mapRectangle, page.printRectangle);
+            grTarget.PushClip(page.printRectangle);
+            grTarget.PushTransform(transform);
 
-            //GDIPlus_GraphicsTarget gdiGraphicsTarget = ((GDIPlus_GraphicsTarget)graphicsTarget);
-            //Graphics g = gdiGraphicsTarget.Graphics;
-            //// Save and restore state so we can mess with stuff.
-            //GraphicsState graphicsState = g.Save();
+            // Determine the resolution in map coordinates: one printer dot.
+            Matrix inverseTransform = transform.Clone();
+            inverseTransform.Invert();
+            float minResolutionPage = 100F / dpi;
+            float minResolutionMap = Geometry.TransformDistance(minResolutionPage, inverseTransform);
 
-            // Adjust the DPI so it isn't too high or too low. So printer drivers are bad.
-            dpi = AdjustDpi(dpi);
+            // And draw.
+            mapDisplay.Draw(grTarget, page.mapRectangle, minResolutionMap, null);
 
-            const long MAX_PIXELS_PER_BAND = 20000000;    // 20M pixels = 60M bytes (3 bytes per pixel).
-            List<CoursePage> bands = BandPageToLimitBitmapSize(page, dpi, MAX_PIXELS_PER_BAND);
-
-            // Create the bitmap. Can do this once because each band is the same size.
-            int bitmapWidth = (int) Math.Round(bands[0].printRectangle.Width * dpi / 100F);
-            int bitmapHeight = (int) Math.Round(bands[0].printRectangle.Height * dpi / 100F);
-            IGraphicsBitmap bitmap = Services.BitmapLoader.CreateEmptyBitmap(bitmapWidth, bitmapHeight, null);
-
-            foreach (CoursePage band in bands) {
-                // Set the transform
-                Matrix transform = Geometry.CreateInvertedRectangleTransform(band.mapRectangle, new RectangleF(0, 0, bitmapWidth, bitmapHeight));
-                mapDisplay.Draw(bitmap, transform);
-
-                // Draw the bitmap on the printer.
-                grTarget.DrawBitmap(bitmap, band.printRectangle, BitmapScaling.HighQuality);
-            }
-
-            // And we are done with the bitmap.
-            bitmap.Dispose();
+            grTarget.PopTransform();
+            grTarget.PopClip();
         }
 
         public void PrintingComplete()
         {
         }
-
-
-        const float MIN_DPI = 400;
-        const float MAX_DPI = 1500;
-
-        // Adjust the DPI in case of drivers that report too high or too low. Keep it a multiple/divisor of the reported DPI.
-#if TEST
-        internal
-#endif
-        static float AdjustDpi(float dpi)
-        {
-            while (dpi < MIN_DPI)
-                dpi *= 2;
-
-            while (dpi > MAX_DPI)
-                dpi /= 2;
-
-            return dpi;
-        }
-
-
-        // Split up a course page into bands, so that each band is
-        //    a) exactly the same size
-        //    b) no more than maxPixels in size
-        //    c) goes top to bottom for portraint, left to right for landscape.
-        List<CoursePage> BandPageToLimitBitmapSize(CoursePage page, float dpi, long maxPixels)
-        {
-            List<CoursePage> list = new List<CoursePage>();
-            bool landscape = page.landscape;
-
-            // Figure out how many bands we need to limit the pixel size of each band.
-            long pixelsOnPage = (long) Math.Round(page.printRectangle.Width * dpi / 100F) * (long) Math.Round(page.printRectangle.Height * dpi / 100F);
-            int numBands = (int) Math.Ceiling((double)pixelsOnPage / (double) maxPixels);
-
-            // Calculate the band size.
-            float mapBandSize, printBandSize;
-            if (landscape) {
-                mapBandSize = page.mapRectangle.Width / numBands;
-                printBandSize = page.printRectangle.Width / numBands;
-            }
-            else {
-                mapBandSize = page.mapRectangle.Height / numBands;
-                printBandSize = page.printRectangle.Height / numBands;
-            }
-
-            // Create the bands.
-            for (int i = 0; i < numBands; ++i) {
-                CoursePage band = new CoursePage();
-                band.landscape = landscape;
-                band.courseDesignator = page.courseDesignator;
-
-                if (landscape) {
-                    band.mapRectangle = new RectangleF(page.mapRectangle.Left + i * mapBandSize, page.mapRectangle.Top, mapBandSize, page.mapRectangle.Height);
-                    band.printRectangle = new RectangleF(page.printRectangle.Left + i * printBandSize, page.printRectangle.Top, printBandSize, page.printRectangle.Height);
-                }
-                else {
-                    band.mapRectangle = new RectangleF(page.mapRectangle.Left, page.mapRectangle.Top + (numBands - 1 - i) * mapBandSize, page.mapRectangle.Width, mapBandSize);
-                    band.printRectangle = new RectangleF(page.printRectangle.Left, page.printRectangle.Top + i * printBandSize, page.printRectangle.Width, printBandSize);
-                }
-
-                list.Add(band);
-            }
-
-            // Return the list of bands.
-            return list;
-        }
-
     }
 }

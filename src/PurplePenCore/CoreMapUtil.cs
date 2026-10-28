@@ -39,7 +39,7 @@ namespace PurplePen
             bool metric = Util.IsCurrentCultureMetric();
 
             if (printAreaRectangle.IsEmpty) {
-                PrintingPaperSize paperSize = PrintingStandards.StandardPaperSizes[metric ? PrintingStandards.DefaultMetricPaperSizeindex : PrintingStandards.DefaultEnglighPaperSizeIndex];
+                PrintingPaperSize paperSize = PrintingStandards.StandardPaperSizes[metric ? PrintingStandards.DefaultMetricPaperSizeindex : PrintingStandards.DefaultEnglishPaperSizeIndex];
                 pageWidth = (int) Math.Round(paperSize.SizeInHundreths.Width);
                 pageHeight = (int) Math.Round(paperSize.SizeInHundreths.Height);
                 pageMargin = 0;
@@ -63,7 +63,7 @@ namespace PurplePen
                         bestIndex = i;
                 }
                 if (bestIndex < 0)
-                    bestIndex = metric ? PrintingStandards.DefaultMetricPaperSizeindex : PrintingStandards.DefaultEnglighPaperSizeIndex;
+                    bestIndex = metric ? PrintingStandards.DefaultMetricPaperSizeindex : PrintingStandards.DefaultEnglishPaperSizeIndex;
 
                 pageWidth = (int) Math.Round(PrintingStandards.StandardPaperSizes[bestIndex].SizeInHundreths.Width);
                 pageHeight = (int) Math.Round(PrintingStandards.StandardPaperSizes[bestIndex].SizeInHundreths.Height);

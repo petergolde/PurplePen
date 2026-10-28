@@ -7,10 +7,10 @@
 // computed property whose getter assembles a fresh settings object and
 // whose setter decomposes an incoming one.
 //
-// The printer selection isn't editable from this dialog yet — the Change
-// Printer… sub-dialog isn't ported. The caller supplies a
-// PrinterNameAndSettings and a PrintingPaperSizeWithMargins which round-trip
-// through the dialog; the ViewModel surfaces display strings for them.
+// The printer comes from the platform's IDocumentPrinting (shared by all
+// printing; the Change Printer… button edits it in place). The caller
+// supplies a PrintingPaperSizeWithMargins which round-trips through the
+// dialog; the ViewModel surfaces display strings for both.
 //
 // When the caller supplies a Controller, the Preview… button records the
 // pages with a RecordingPrintTarget and shows them in the Print Preview
@@ -28,11 +28,11 @@ namespace PurplePen.ViewModels
     /// <summary>
     /// ViewModel for the Print Descriptions / Create PDF of Descriptions dialog.
     /// Usage: the caller sets <see cref="EventDB"/>, <see cref="IsPdfCreation"/>,
-    /// <see cref="Printer"/>, <see cref="PaperSizeWithMargins"/>, and (to enable
+    /// <see cref="DocumentPrinting"/>, <see cref="PaperSizeWithMargins"/>, and (to enable
     /// Preview) <see cref="Controller"/>, then assigns
     /// <see cref="Settings"/> to seed the dialog. After OK, read
-    /// <see cref="Settings"/> for the user's choices. <see cref="Printer"/>
-    /// and <see cref="PaperSizeWithMargins"/> round-trip unchanged.
+    /// <see cref="Settings"/> and <see cref="PaperSizeWithMargins"/> for the
+    /// user's choices.
     /// </summary>
     public partial class PrintDescriptionsDialogViewModel : ViewModelBase
     {
@@ -62,14 +62,17 @@ namespace PurplePen.ViewModels
         private bool isPdfCreation;
 
         /// <summary>
-        /// Printer name + opaque platform-specific printer settings.
-        /// Displayed read-only as <see cref="PrinterNameDisplay"/>; not yet
-        /// editable from this dialog (Change Printer… is unimplemented).
-        /// Round-trips unchanged.
+        /// The platform's direct printing implementation, or null if there
+        /// is none. Supplies the printer name shown as
+        /// <see cref="PrinterNameDisplay"/> and the Change Printer… dialog
+        /// (<see cref="ChangePrinterCommand"/>). The printer row is shown only
+        /// if it is non-null and can change the printer.
         /// </summary>
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsPrinterVisible))]
         [NotifyPropertyChangedFor(nameof(PrinterNameDisplay))]
-        private PrinterNameAndSettings printer = new PrinterNameAndSettings();
+        [NotifyCanExecuteChangedFor(nameof(ChangePrinterCommand))]
+        private IDocumentPrinting? documentPrinting;
 
         /// <summary>
         /// Paper size + margins. Displayed via <see cref="PaperSizeDisplay"/>,
@@ -125,8 +128,11 @@ namespace PurplePen.ViewModels
 
         // ===== Computed properties =====
 
-        /// <summary>True when the printer row is visible (i.e. not PDF creation).</summary>
-        public bool IsPrinterVisible => !IsPdfCreation;
+        /// <summary>
+        /// True when the printer row is visible: not PDF creation, and the
+        /// platform's direct printing lets the printer be changed.
+        /// </summary>
+        public bool IsPrinterVisible => !IsPdfCreation && CanChangePrinter();
 
         /// <summary>The help topic shown by the dialog's Help button.</summary>
         public string HelpTopic => IsPdfCreation ? "FileCreatePdfDescriptions.htm" : "FilePrintDescriptions.htm";
@@ -138,7 +144,7 @@ namespace PurplePen.ViewModels
         public bool IsDescriptionCountEnabled => CopiesIndex == 2;
 
         /// <summary>The printer name shown next to the "Printer:" label.</summary>
-        public string PrinterNameDisplay => Printer?.PrinterName ?? "";
+        public string PrinterNameDisplay => DocumentPrinting?.CurrentPrinterName ?? "";
 
         /// <summary>
         /// "Letter (8.5" x 11")"-style paper size description. The dimensions are
@@ -281,6 +287,24 @@ namespace PurplePen.ViewModels
                 }
             }
         }
+
+        /// <summary>
+        /// Shows the platform dialog to change the printer (through
+        /// <see cref="DocumentPrinting"/>), and refreshes the printer name
+        /// shown if the user changed it.
+        /// </summary>
+        [RelayCommand(CanExecute = nameof(CanChangePrinter))]
+        private async Task ChangePrinter()
+        {
+            if (DocumentPrinting == null)
+                return;
+
+            if (await DocumentPrinting.ChangePrinterDialogAsync())
+                OnPropertyChanged(nameof(PrinterNameDisplay));
+        }
+
+        // The printer can be changed only if the platform's direct printing supports it.
+        private bool CanChangePrinter() => DocumentPrinting != null && DocumentPrinting.CanChangePrinter;
 
         /// <summary>
         /// Opens the Page Setup sub-dialog to edit the paper size and margins,

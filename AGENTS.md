@@ -134,6 +134,7 @@ PurplePen is being ported from WinForms (PurplePen/) to Avalonia (AvPurplePen/) 
 - LocalizeExtension.cs: Custom XAML markup extension for localization with live language switching (see Localization section below).
 - App.axaml.cs: Application startup, creates MainWindow, registers ViewLocator as a DataTemplate.
 - Program.cs: Entry point. DI container is set up before the Avalonia builder line (safe because DI is plain .NET, not Avalonia-dependent).
+- **Target framework depends on the build OS**: `net10.0-windows` (with `UseWindowsForms`) when building on Windows, plain `net10.0` on Mac/Linux. Windows-only code (e.g. WinForms printing) must be inside `#if WINDOWS` (defined automatically by the SDK for `-windows` TFMs) so the Mac/Linux build still compiles. Check the cross-platform build from Windows with `dotnet build AvPurplePen/AvPurplePen.csproj -p:TargetWindowsFramework=false` (`-f net10.0` does not work — restore ignores it). Installer scripts pass the matching `--framework` (`Innosetup/create-setup.bat` uses `net10.0-windows`; the Mac/Linux scripts use `net10.0`). Only AvPurplePen is Windows-targeted; libraries and test projects stay `net10.0`.
 
 **PurplePenViewModels/** - ViewModels (separate project, no UI dependencies)
 - Namespace: `PurplePen.ViewModels`

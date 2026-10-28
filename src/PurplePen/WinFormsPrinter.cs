@@ -32,13 +32,6 @@ namespace PurplePen
         public WinFormsPrinter(WinFormsPrinter.WinFormsPrinterOptions options)
         {
             this.options = options.Clone();
-
-            if (this.options.ColorModel == ColorModel.OCADCompatible) {
-                // OCAD uses CMYK color mode for PostScript, and RGB for other printers. Do similar
-                // if OCAD compatible mode is used.
-                bool isPostscript = PrinterSupportsPostScript(this.options.PageSettings.PrinterSettings.PrinterName);
-                this.options.ColorModel = isPostscript ? ColorModel.CMYK : ColorModel.RGB;
-            }
         }
 
         // The WinForms printing model uses a PrintDocument that raises events to perform the printing.
@@ -157,19 +150,27 @@ namespace PurplePen
             // Get the dpi of the printer.
             float dpi = Math.Max((int)g.DpiX, (int)g.DpiY);
 
+            if (options.RasterizeInBands) {
+                // Draw the page into bitmap bands, then draw the bands onto the printer.
+                DocumentPage page = documentPages[currentPage];
+                using (GDIPlus_GraphicsTarget printerTarget = new GDIPlus_GraphicsTarget(g)) {
+                    DrawPageInBands(printerTarget, page.PaperSize, page.DrawPage, options.ColorModel, AdjustDpi(dpi));
+                }
+            }
+            else {
+                // Set up the graphics target.
+                IGraphicsTarget graphicsTarget;
+                if (options.ColorModel == ColorModel.RGB)
+                    graphicsTarget = new GDIPlus_GraphicsTarget(g);
+                else if (options.ColorModel == ColorModel.CMYK)
+                    graphicsTarget = new GDIPlus_GraphicsTarget(g, SwopColorConverter.Instance);
+                else
+                    throw new NotImplementedException();
 
-            // Wet up the graphics target.
-            IGraphicsTarget graphicsTarget;
-            if (options.ColorModel == ColorModel.RGB)
-                graphicsTarget = new GDIPlus_GraphicsTarget(g);
-            else if (options.ColorModel == ColorModel.CMYK)
-                graphicsTarget = new GDIPlus_GraphicsTarget(g, SwopColorConverter.Instance);
-            else
-                throw new NotImplementedException();
-
-            // Draw the page
-            using (graphicsTarget) {
-                documentPages[currentPage].DrawPage(graphicsTarget);
+                // Draw the page
+                using (graphicsTarget) {
+                    documentPages[currentPage].DrawPage(graphicsTarget);
+                }
             }
 
             // Update page count.
@@ -178,6 +179,81 @@ namespace PurplePen
 #if PORTING
             // Deal with pausing after each page if that option is set. 
 #endif
+        }
+
+        // The maximum number of pixels in a band bitmap. Larger pages are drawn in several bands.
+        private const long MaxPixelsPerBand = 20000000;    // 20M pixels = 80M bytes (4 bytes per pixel).
+
+        // Draw a page into horizontal bands of a bitmap, and draw each band onto the page target. Bitmap
+        // graphics targets support blending, which the printer's graphics target does not, so this is
+        // the only way to get purple blending correct. The page is drawn once for each band. The band
+        // bitmaps are created with Services.BitmapLoader, which must match the page target's backend.
+        // pageTarget: the target to draw the bands onto, with (0,0) the top-left of the paper, in hundredths of an inch.
+        // paperSize: the paper size of the page.
+        // drawPage: draws the page, in hundredths of an inch from the top-left of the paper.
+        // colorModel: the color model used to render the bands.
+        // dpi: the resolution of the band bitmaps.
+        internal static void DrawPageInBands(IGraphicsTarget pageTarget, PrintingPaperSize paperSize, Action<IGraphicsTarget> drawPage, ColorModel colorModel, float dpi)
+        {
+            float pixelsPerHundredth = dpi / 100F;
+            SizeF pageSize = paperSize.SizeInHundreths;
+            int pixelWidth = Math.Max(1, (int)Math.Ceiling(pageSize.Width * pixelsPerHundredth));
+            int pixelHeight = Math.Max(1, (int)Math.Ceiling(pageSize.Height * pixelsPerHundredth));
+            int bandHeight = (int)Math.Max(1, Math.Min(MaxPixelsPerBand / pixelWidth, pixelHeight));
+
+            IColorConverter colorConverter;
+            if (colorModel == ColorModel.RGB)
+                colorConverter = DefaultColorConverter.Instance;
+            else if (colorModel == ColorModel.CMYK)
+                colorConverter = SwopColorConverter.Instance;
+            else
+                throw new NotImplementedException();
+
+            // Create the bitmap once, because each band is the same size.
+            using (IGraphicsBitmap bandBitmap = Services.BitmapLoader.CreateEmptyBitmap(pixelWidth, bandHeight, null)) {
+                for (int bandTop = 0; bandTop < pixelHeight; bandTop += bandHeight) {
+                    float bandTopInHundredths = bandTop / pixelsPerHundredth;
+
+                    using (IBitmapGraphicsTarget bandTarget = bandBitmap.GetGraphicsTarget(false, colorConverter)) {
+                        // Clear the band with white.
+                        object whiteBrush = new object();
+                        bandTarget.CreateSolidBrush(whiteBrush, CmykColor.FromCmyk(0, 0, 0, 0));
+                        bandTarget.FillRectangle(whiteBrush, RectangleF.FromLTRB(-10, -10, pixelWidth + 10, bandHeight + 10));
+
+                        // Draw the page, in hundredths of an inch, with the band's top at the top of the bitmap.
+                        Matrix transform = new Matrix();
+                        transform.Scale(pixelsPerHundredth, pixelsPerHundredth);
+                        transform.Translate(0, -bandTopInHundredths);
+                        bandTarget.PushTransform(transform);
+                        drawPage(bandTarget);
+                        bandTarget.PopTransform();
+
+                        bandTarget.FinishBitmap();
+                    }
+
+                    // Draw the band on the page. The last band may extend past the bottom of the paper.
+                    RectangleF bandRect = new RectangleF(0, bandTopInHundredths, pixelWidth / pixelsPerHundredth, bandHeight / pixelsPerHundredth);
+                    pageTarget.DrawBitmap(bandBitmap, bandRect, BitmapScaling.HighQuality);
+                }
+            }
+        }
+
+        const float MIN_DPI = 400;
+        const float MAX_DPI = 1500;
+
+        // Adjust the DPI in case of drivers that report too high or too low. Keep it a multiple/divisor of the reported DPI.
+#if TEST
+        internal
+#endif
+        static float AdjustDpi(float dpi)
+        {
+            while (dpi < MIN_DPI)
+                dpi *= 2;
+
+            while (dpi > MAX_DPI)
+                dpi /= 2;
+
+            return dpi;
         }
 
         private bool PausePrintingAfterPage(int pageNumber, out string pauseMessage)
@@ -227,6 +303,11 @@ namespace PurplePen
             public PageSettings PageSettings;
             public ColorModel ColorModel;
             public bool StopAfterEachPage;
+
+            // If true, each page is drawn into bitmap bands, which are then drawn onto the printer.
+            // Needed for course printing, so that purple blending is correct; not needed for
+            // descriptions or punch cards.
+            public bool RasterizeInBands;
             public bool PrintPreview { get; set; }
             public Size? PreviewDialogSize { get; set; }
 
@@ -235,86 +316,6 @@ namespace PurplePen
                 return (WinFormsPrinterOptions)MemberwiseClone();
             }
         }
-
-        #region Postscript detection
-        //By Justin Alexander, aka TheLoneCabbage
-
-        static Int32 GETTECHNOLOGY = 20;
-        static Int32 QUERYESCSUPPORT = 8;
-        static Int32 POSTSCRIPT_PASSTHROUGH = 4115;
-        static Int32 ENCAPSULATED_POSTSCRIPT = 4116;
-        static Int32 POSTSCRIPT_IDENTIFY = 4117;
-        static Int32 POSTSCRIPT_INJECTION = 4118;
-        static Int32 POSTSCRIPT_DATA = 37;
-        static Int32 POSTSCRIPT_IGNORE = 38;
-
-        static bool PrinterSupportsPostScript(string printername)
-        {
-            List<Int32> PSChecks = new List<Int32>();
-            PSChecks.Add(POSTSCRIPT_PASSTHROUGH);
-            PSChecks.Add(ENCAPSULATED_POSTSCRIPT);
-            PSChecks.Add(POSTSCRIPT_IDENTIFY);
-            PSChecks.Add(POSTSCRIPT_INJECTION);
-            PSChecks.Add(POSTSCRIPT_DATA);
-            PSChecks.Add(POSTSCRIPT_IGNORE);
-
-            IntPtr hDC = IntPtr.Zero;
-            IntPtr BLOB = IntPtr.Zero;
-
-            try {
-                hDC = NativeMethods.CreateDC(null, printername, null, IntPtr.Zero);
-
-                int isz = 4;
-                BLOB = Marshal.AllocCoTaskMem(isz);
-                Marshal.WriteInt32(BLOB, GETTECHNOLOGY);
-
-                int test = NativeMethods.ExtEscape(hDC, QUERYESCSUPPORT, 4, BLOB, 0, IntPtr.Zero);
-                if (test == 0) return false; // printer driver does not support GETTECHNOLOGY Checks.
-
-                foreach (Int32 val in PSChecks) {
-                    Marshal.WriteInt32(BLOB, val);
-                    test = NativeMethods.ExtEscape(hDC, QUERYESCSUPPORT, isz, BLOB, 0, IntPtr.Zero);
-                    if (test != 0) return true; // if any of the checks pass, return true
-                }
-            }
-            catch (Exception) {
-                return false;
-            }
-            finally {
-                if (hDC != IntPtr.Zero) NativeMethods.DeleteDC(hDC);
-                if (BLOB != IntPtr.Zero) Marshal.FreeCoTaskMem(BLOB);
-            }
-
-            return false;
-
-        }
-
-        static class NativeMethods
-        {
-            [DllImport("kernel32.dll")]
-            public static extern IntPtr GlobalLock(IntPtr hMem);
-
-            [DllImport("kernel32.dll")]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            public static extern bool GlobalUnlock(IntPtr hMem);
-
-            [DllImport("kernel32.dll")]
-            public static extern IntPtr GlobalFree(IntPtr hMem);
-
-            [DllImport("kernel32.dll")]
-            public static extern UIntPtr GlobalSize(IntPtr hMem);
-
-            [DllImport("gdi32.dll")]
-            public static extern int ExtEscape(IntPtr hdc, int nEscape, int cbInput, IntPtr lpszInData, int cbOutput, IntPtr lpszOutData);
-
-            [DllImport("gdi32.dll", BestFitMapping = false, ThrowOnUnmappableChar = true)]
-            public static extern IntPtr CreateDC(string lpszDriver, string lpszDevice, string lpszOutput, IntPtr lpInitData);
-
-            [DllImport("gdi32.dll")]
-            public static extern bool DeleteDC(IntPtr hdc);
-        }
-
-        #endregion
 
     }
 }

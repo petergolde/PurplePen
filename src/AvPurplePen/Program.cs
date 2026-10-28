@@ -77,6 +77,12 @@ namespace AvPurplePen
             services.AddSingleton<IEventDispatcherService, EventDispatcherService>();
             services.AddSingleton<StatisticsReporter>();
 
+            // Direct printing is platform-specific; with no implementation registered,
+            // the print commands tell the user to create a PDF instead.
+#if WINDOWS
+            services.AddSingleton<IDocumentPrinting, AvPurplePen.Platform.Windows.WindowsDocumentPrinting>();
+#endif
+
             // Transient (not singleton): PdfLoadingUI holds per-conversion state
             // (completion flag, dialog handle), so each PDF validation must get a
             // fresh instance. CoreMapUtil.ValidatePdf resolves it once per call.

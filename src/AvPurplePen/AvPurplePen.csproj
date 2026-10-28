@@ -1,7 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
+    <!-- On Windows, target net10.0-windows so the app can call Windows-only APIs
+         (Windows Forms printing). Code using them goes inside #if WINDOWS, which the
+         SDK defines automatically for -windows target frameworks. On Mac and Linux
+         the Windows Desktop SDK isn't available, so target plain net10.0.
+         To check the cross-platform build from Windows, pass
+         -p:TargetWindowsFramework=false. (Overriding TargetFramework directly with
+         -f doesn't work: restore ignores it and still restores net10.0-windows.) -->
+    <TargetWindowsFramework Condition="'$(TargetWindowsFramework)' == ''">$([MSBuild]::IsOSPlatform('Windows'))</TargetWindowsFramework>
+    <TargetFramework Condition="'$(TargetWindowsFramework)' == 'true'">net10.0-windows</TargetFramework>
+    <TargetFramework Condition="'$(TargetWindowsFramework)' != 'true'">net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
@@ -11,6 +20,17 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <ApplicationIcon>Assets\AppIcon\PurplePenBeta.ico</ApplicationIcon>
   </PropertyGroup>
+  <!-- Windows Forms is only usable (and only allowed by the SDK) for a -windows
+       target framework, so key it off the TFM actually being built rather than the
+       host OS. -->
+  <PropertyGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'windows'">
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <!-- Platform\Windows holds the Windows-only implementations of platform services
+       (e.g. printing through Windows Forms). Compile it only for a -windows target framework. -->
+  <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != 'windows'">
+    <Compile Remove="Platform\Windows\**" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);PORTING</DefineConstants>
   </PropertyGroup>
