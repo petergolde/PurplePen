@@ -17,36 +17,33 @@
 # Application identity
 # ---------------------------------------------------------------------------
 
-# Reverse-DNS bundle identifier. Must stay stable across releases; changing it
-# makes macOS treat the app as a different application.
-: "${BUNDLE_ID:=org.purple-pen.PurplePen}"
+# The bundle identifier, the menu-bar and Finder names, the copyright and the
+# minimum macOS version used to be set here and written into a template by the
+# build script. They now live with the project, where the .NET macOS SDK reads
+# them for every build, not just this one:
+#
+#   AvPurplePen/AvPurplePen.csproj   ApplicationId (bundle identifier),
+#                                    SupportedOSPlatformVersion (minimum macOS)
+#   AvPurplePen/Info.plist           CFBundleName, CFBundleDisplayName,
+#                                    copyright, document types
+#
+# The versions come from PurplePenCore/VersionNumber.cs, as before.
 
-# Name of the .app bundle and the executable inside it. The executable name
-# must match AvPurplePen's <AssemblyName>, which is "PurplePen".
+# Name of the .app bundle and the executable inside it. Must match
+# AvPurplePen's <AssemblyName>, which is "PurplePen" -- the SDK names both
+# after it.
 : "${APP_NAME:=PurplePen}"
-
-# CFBundleName is shown in the macOS menu bar and is limited to 15 characters.
-: "${BUNDLE_NAME:=Purple Pen}"
-
-# CFBundleDisplayName is shown in Finder and the Dock.
-: "${DISPLAY_NAME:=Purple Pen}"
-
-# Copyright string shown in Finder's Get Info panel.
-: "${COPYRIGHT:=Copyright 2006-2026 Peter Golde}"
 
 # Which icon family in AvPurplePen/Assets/AppIcon to build the .icns from.
 #
 # That directory holds pre-rendered PNGs named <family>.<N>x<N>.png. Set this
-# to "PurplePen" for release builds and "PurplePenBeta" for beta builds.
+# to "PurplePen" for release builds and "PurplePenBeta" for beta builds. It is
+# passed to the build as MacIconFamily; the BuildMacAppIcon target in
+# AvPurplePen.csproj assembles the .icns.
 #
 # The PNGs are used at their native sizes rather than being resampled from a
 # single source, so any hand-tuning of the small sizes is preserved.
 : "${ICON_FAMILY:=PurplePenBeta}"
-
-# Minimum macOS version the app declares support for. This should track the
-# minimum macOS version supported by the .NET runtime being bundled -- if it is
-# set too low, the app will launch on an unsupported system and then crash.
-: "${MIN_MACOS_VERSION:=13.0}"
 
 # ---------------------------------------------------------------------------
 # Build settings
@@ -55,19 +52,15 @@
 # Runtime identifier to publish for. Apple Silicon only.
 : "${RUNTIME_IDENTIFIER:=osx-arm64}"
 
-# Build configuration and target framework. Note this is net10.0, NOT
-# net10.0-macos -- AvPurplePen is a plain Avalonia desktop app and does not use
-# the .NET macOS workload.
+# Build configuration and target framework. AvPurplePen targets net10.0-macos
+# when built on a Mac, which needs the .NET macOS workload and a matching Xcode
+# (see "Xcode and the .NET macOS workload" in README.md). A net10.0-macos app
+# always bundles the .NET runtime, so there is no self-contained setting.
 : "${CONFIGURATION:=Release}"
-: "${TARGET_FRAMEWORK:=net10.0}"
-
-# Self-contained means the .NET runtime is bundled into the .app, so users do
-# not need to install .NET separately.
-: "${SELF_CONTAINED:=true}"
+: "${TARGET_FRAMEWORK:=net10.0-macos}"
 
 # ReadyToRun ahead-of-time compilation improves startup time at the cost of a
-# larger bundle. Off by default; set to true once you have confirmed the basic
-# pipeline works end to end.
+# larger bundle. Off by default, and not yet tried with net10.0-macos.
 : "${PUBLISH_READYTORUN:=false}"
 
 # ---------------------------------------------------------------------------

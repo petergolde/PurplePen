@@ -14,7 +14,8 @@
 -->
 <plist version="1.0">
 <dict>
-    <!-- The .NET JIT compiles IL to machine code at runtime. -->
+    <!-- The .NET JIT compiles IL to machine code at runtime. This is the one
+         entitlement the .NET macOS SDK itself applies to a CoreCLR app. -->
     <key>com.apple.security.cs.allow-jit</key>
     <true/>
 
@@ -26,10 +27,6 @@
          libAvaloniaNative) which are signed with our Developer ID rather than
          with the app's own team-scoped signature. -->
     <key>com.apple.security.cs.disable-library-validation</key>
-    <true/>
-
-    <!-- The .NET host reads DYLD_* variables to locate the runtime. -->
-    <key>com.apple.security.cs.allow-dyld-environment-variables</key>
     <true/>
 
     <!-- Required by Avalonia for some AppKit interactions, and for any use of

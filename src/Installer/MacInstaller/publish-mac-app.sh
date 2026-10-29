@@ -159,7 +159,10 @@ step "Reading the version number"
 # It is read from the assembly inside the bundle that was just built, not from
 # VersionNumber.cs, so that what goes in the manifest describes the thing being
 # published rather than the source tree as it stands now.
-VERSION_DLL="$APP_BUNDLE/Contents/MacOS/PurplePenCore.dll"
+#
+# The managed assemblies live in Contents/MonoBundle: the .NET macOS SDK keeps
+# Contents/MacOS for the native launcher alone.
+VERSION_DLL="$APP_BUNDLE/Contents/MonoBundle/PurplePenCore.dll"
 
 [[ -f "$VERSION_DLL" ]] || die "Cannot find \"$VERSION_DLL\". Nothing was published."
 

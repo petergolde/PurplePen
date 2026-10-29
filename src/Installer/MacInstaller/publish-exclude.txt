@@ -2,11 +2,14 @@
 #
 # Files and directories to leave OUT of the macOS app bundle.
 #
-# This is passed to rsync as --exclude-from when copying the dotnet publish
-# output into the bundle staging directory, so it uses rsync's filter syntax:
+# This is passed to rsync as --exclude-from when copying the Contents/MonoBundle
+# directory of the SDK-built PurplePen.app into build/PurplePen.app. MonoBundle
+# holds the .NET runtime, the assemblies, the native libraries, the satellite
+# resource directories and the data files, so patterns are relative to it. It
+# uses rsync's filter syntax:
 #
 #   Foo.dll             matches Foo.dll at any depth
-#   /Foo.dll            matches Foo.dll only at the top level of the publish dir
+#   /Foo.dll            matches Foo.dll only at the top level of MonoBundle
 #   *.pdb               glob, matches at any depth
 #   sv/                 trailing slash matches directories only
 #   **/Bar              ** crosses directory boundaries
@@ -35,13 +38,15 @@
 #
 #   Nothing would load it if it did: PurplePen.deps.json contains no
 #   runtimeTargets entry, so nothing ever probes runtimes/. The exclusion stays
-#   as a safety net.
+#   as a safety net. (Since the switch to net10.0-macos, the SDK puts the
+#   native libraries straight into MonoBundle and there is no deps.json at all.)
 
 runtimes/
 
 # --- Debug symbols --------------------------------------------------------
 #
-#   Safe to drop; only affects the quality of crash stack traces.
+#   Safe to drop; only affects the quality of crash stack traces. The macOS SDK
+#   leaves them out of Release bundles anyway.
 
 *.pdb
 
@@ -64,7 +69,8 @@ zh-HK/
 
 # --- XML documentation for libraries ----------------------------------------
 #
-# The XML doc for some libraries is not needed.
+# The XML doc for some libraries is not needed. (The macOS SDK does not put
+# these in the bundle either; kept in case that changes.)
 
 DotSpatial.Projections.xml
 PdfSharp.Shared.xml

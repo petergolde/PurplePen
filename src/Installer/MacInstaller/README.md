@@ -28,12 +28,19 @@ To build and publish in one step, see [Publishing](#publishing) below.
 |---|---|
 | `build-mac-app.sh` | The build script. Run this. |
 | `publish-mac-app.sh` | Builds, then files the result into the download tree and records it in the update manifest. |
-| `config.sh` | Settings — bundle id, versions, signing identity, notarization profile, publishing tree. Every value can be overridden by an environment variable of the same name. |
-| `publish-exclude.txt` | rsync exclusion list controlling exactly which published files go into the app bundle. Currently empty; customize as you experiment. |
-| `Info.plist.template` | Bundle metadata, with `@PLACEHOLDER@` tokens filled in by the script. |
+| `config.sh` | Settings — icon family, signing identity, notarization profile, publishing tree, disk image layout. Every value can be overridden by an environment variable of the same name. |
+| `publish-exclude.txt` | rsync exclusion list controlling which files in the bundle's `Contents/MonoBundle` ship. |
 | `PurplePen.entitlements` | Hardened Runtime entitlements required to run .NET under notarization. |
 
-`build/` (staging area, assembled `.app`) and `output/` are generated and
+The bundle's metadata is not here. Since AvPurplePen targets `net10.0-macos`
+on a Mac, the .NET macOS SDK builds the `.app` itself, for every build:
+
+| File | Purpose |
+|---|---|
+| `AvPurplePen/AvPurplePen.csproj` | Bundle identifier (`ApplicationId`), minimum macOS (`SupportedOSPlatformVersion`), the icon (`BuildMacAppIcon` target), and the overrides described under [macOS SDK behavior](#macos-sdk-behavior). |
+| `AvPurplePen/Info.plist` | Static `Info.plist` keys: menu-bar and Finder names, copyright, the `.ppen` document type. The SDK merges in the executable name, identifier, versions and minimum macOS. |
+
+`build/` (the assembled, signed `.app`) and `output/` are generated and
 git-ignored. `output/build-info.sh` is written by a successful build to say what
 it produced — version, file names, whether it was signed and notarized — and is
 what `publish-mac-app.sh` reads.
@@ -60,9 +67,6 @@ You should see a line containing `Developer ID Application: Your Name (TEAMID)`.
 The script auto-detects this if there is exactly one; otherwise set
 `SIGNING_IDENTITY` in `config.sh`.
 
-> As of this writing, that command reports `0 valid identities found` on this
-> machine, so this step has not been done yet.
-
 ### 2. Create an app-specific password
 
 Notarization authenticates with an app-specific password, not your Apple ID
@@ -85,25 +89,110 @@ Your team ID appears at
 Membership details. The password is the app-specific one from step 2. This is
 stored once; the script never handles it again.
 
+### 4. Install the .NET macOS workload and the matching Xcode
+
+```bash
+sudo dotnet workload install macos
+```
+
+then install the Xcode version that workload needs — see the next section. The
+build checks both before doing anything else.
+
+## Xcode and the .NET macOS workload
+
+AvPurplePen targets `net10.0-macos` on a Mac so that it can call AppKit and
+other macOS APIs directly through the `Microsoft.macOS` bindings (inside
+`#if MACOS`, which the SDK defines for that target framework). That target
+framework comes from the .NET **macOS workload**, and building with it needs
+**Xcode** — not just the command line tools. The SDK uses Xcode's `clang` and
+macOS SDK to link the app's native launcher, its `install_name_tool` on the
+bundled native libraries, and its `codesign`.
+
+**Each workload release is built against exactly one Xcode, and the build
+refuses any other.** Only the major.minor version is compared, but it has to
+match exactly — a *newer* Xcode is rejected just like an older one:
+
+```
+error E0191: This version of .NET for macOS (26.5.10315) requires Xcode 26.6.
+The current version of Xcode is 27.1.
+```
+
+`build-mac-app.sh` checks this in its first few seconds and says what to do.
+To see where you stand by hand:
+
+```bash
+dotnet workload list
+xcodebuild -version
+dotnet msbuild ../../AvPurplePen/AvPurplePen.csproj -getProperty:_RecommendedXcodeVersion
+```
+
+The last command prints the Xcode version the installed workload wants.
+
+**Keep several Xcodes side by side** and choose between them, rather than
+letting the App Store update the one you build with. Download specific
+versions from [developer.apple.com/download/all](https://developer.apple.com/download/all/),
+and rename each as it is unpacked (`Xcode-26.6.app`, ...). Then either make
+one the system default:
+
+```bash
+sudo xcode-select -s /Applications/Xcode-26.6.app
+```
+
+or select one for a single command, leaving the default alone — the SDK and
+`xcodebuild` both honour `DEVELOPER_DIR`:
+
+```bash
+DEVELOPER_DIR=/Applications/Xcode-26.6.app/Contents/Developer ./build-mac-app.sh
+```
+
+**When the two get out of step.** The usual ways:
+
+- *Xcode updated itself* (or a newer one became the default). Switch back to
+  the matching one as above; nothing needs rebuilding.
+- *The .NET SDK or workload was updated.* `dotnet workload update` (and some
+  SDK updates) move to a new workload that may want a newer Xcode. Run the
+  `-getProperty` command above, install that Xcode, and select it.
+- *A brand new macOS.* A new major macOS usually needs a new Xcode, which needs
+  a new workload. Microsoft ships a workload for each Xcode release, generally
+  within days to weeks of Apple; until then, build with the previous Xcode
+  (they run fine on the newer macOS in practice).
+
+As a last resort, `-p:ValidateXcodeVersion=false` skips the check. The build
+may then work or fail in obscure ways; do not ship from it.
+
+Purple Pen's `LSMinimumSystemVersion` (13.0) is independent of all this: it is
+set by `SupportedOSPlatformVersion` in AvPurplePen.csproj, and a build made
+with the newest Xcode still runs on older macOS.
+
+Recorded at the time of the switch: .NET SDK 10.0.300, macOS workload
+26.5.10315, Xcode 26.6, on macOS 27.0.1.
+
 ## What the script does
 
 1. **Publish** — `dotnet publish` of `AvPurplePen.csproj` in Release for
-   `net10.0` / `osx-arm64`, self-contained, into the project's usual publish
-   directory (`AvPurplePen/bin/Release/net10.0/osx-arm64/publish`).
-2. **Stage** — `rsync --archive --delete --delete-excluded
-   --exclude-from=publish-exclude.txt` from the publish directory into
-   `build/staging`. This is where you control the bundle's contents.
-3. **Icon** — assembles `PurplePen.icns` from the pre-rendered PNGs in
-   `AvPurplePen/Assets/AppIcon`, using the family named by `ICON_FAMILY`.
-4. **Assemble** — builds `build/PurplePen.app` with `Contents/MacOS` (the
-   staged payload), `Contents/Resources` (the icon) and a generated
-   `Contents/Info.plist`, then strips extended attributes.
-5. **Sign** — signs every Mach-O file inside the bundle from the inside out,
-   then seals the bundle. Nested executables get the Hardened Runtime and
-   entitlements; dynamic libraries get the Hardened Runtime alone.
-6. **Notarize** — zips the bundle with `ditto`, submits it, waits for the
+   `net10.0-macos` / `osx-arm64`, with `CreatePackage=false` (otherwise
+   publish goes on to make a `.pkg`). The SDK builds the complete bundle at
+   `AvPurplePen/bin/Release/net10.0-macos/osx-arm64/PurplePen.app`:
+
+   | | |
+   |---|---|
+   | `Contents/MacOS/PurplePen` | the native launcher, linked by the SDK |
+   | `Contents/MonoBundle/` | the .NET runtime, all managed assemblies, the native libraries (`libSkiaSharp`, `libpdfium`, ...), satellite resource directories, and the fonts, `symbols.xml` and sample event |
+   | `Contents/Resources/PurplePen.icns` | built from the `ICON_FAMILY` PNGs |
+   | `Contents/Info.plist` | merged from `AvPurplePen/Info.plist` and the project |
+
+2. **Assemble** — copies that bundle to `build/PurplePen.app`, applying
+   `publish-exclude.txt` to `Contents/MonoBundle`, and checks that the
+   `Info.plist` versions match `VersionNumber.cs`. This is where you control
+   the bundle's contents.
+3. **Sign** — signs every Mach-O file inside the bundle from the inside out,
+   then seals the bundle. Nested executables would get the Hardened Runtime and
+   entitlements; dynamic libraries get the Hardened Runtime alone. With
+   `--skip-sign` the bundle is ad-hoc signed instead, since Apple silicon will
+   not run an unsigned executable at all.
+4. **Notarize** — zips the bundle with `ditto`, submits it, waits for the
    result, staples the ticket into the `.app`, and confirms with `spctl`.
-7. **Package** — builds the `.zip`, then the `.dmg`: a scratch read/write image
+5. **Package** — builds the `.zip`, then the `.dmg`: a scratch read/write image
    is filled, its window laid out through Finder, detached, and compressed. The
    result is signed, notarized, stapled and then re-attached to verify.
 
@@ -121,7 +210,7 @@ experimenting with `publish-exclude.txt`, skip it:
 
 | Option | Effect |
 |---|---|
-| `--skip-publish` | Reuse the existing publish output. |
+| `--skip-publish` | Reuse the `.app` the last publish built. |
 | `--skip-sign` | Build an unsigned bundle. Implies `--skip-notarize`. |
 | `--skip-notarize` | Sign, but do not submit to Apple. |
 | `--skip-dmg` | Do not build the `.dmg`. |
@@ -136,7 +225,8 @@ seconds instead of minutes:
 ./build-mac-app.sh --dmg-only --skip-sign
 ```
 
-To run an unsigned build locally, clear its quarantine flag first:
+To run a `--skip-sign` build somewhere other than where it was built, clear its
+quarantine flag first:
 
 ```bash
 xattr -dr com.apple.quarantine build/PurplePen.app
@@ -265,8 +355,10 @@ ICON_FAMILY=PurplePen ./build-mac-app.sh
 
 The `.icns` is assembled from those PNGs at their **native** pixel sizes rather
 than resampled from one large source, so any hand-tuning of the small sizes is
-preserved. The script verifies each file's actual pixel width against its name
-and aborts if they disagree.
+preserved. That happens in the `BuildMacAppIcon` target in AvPurplePen.csproj,
+which the script drives with `-p:MacIconFamily=$ICON_FAMILY`; ordinary
+development builds get the beta icon. `iconutil` refuses an iconset with a
+wrongly sized image, so a mislabelled PNG fails the build.
 
 macOS needs 16, 32, 64, 128, 256, 512 and 1024. The 24, 48 and 96 files in that
 directory are unused here but map onto the freedesktop hicolor sizes Linux
@@ -274,8 +366,8 @@ packaging wants.
 
 **PDF map templates are rasterized in-process.** `PdfConverter` is a plain
 library referenced by PurplePenCore, so its native `libpdfium.dylib` arrives
-through the normal publish and is flattened to the top level of the bundle like
-`libSkiaSharp.dylib`. The staging step warns if it is missing. It used to be a
+through the normal build and lands in `Contents/MonoBundle` like
+`libSkiaSharp.dylib`. The assembly step warns if it is missing. It used to be a
 separate helper executable that needed its own self-contained republish and
 overlay; that is gone.
 
@@ -284,17 +376,15 @@ copied PdfConverter's entire RID-agnostic build output into the publish
 directory, which made the bundle 533 MB, 399 MB of it native binaries for other
 platforms. That copy no longer happens; the exclusion stays as a safety net.
 
-**Every file in `Contents/MacOS` must be signed, not just the Mach-O ones.**
-That directory is the bundle's executables directory, so `codesign` treats
-everything in it as nested code and refuses to seal the bundle while any single
-file lacks a signature. It fails on a `.xml` documentation file just as readily
-as on a `.dll`. Non-Mach-O files get signed as `Format=generic`. Signing only
-the Mach-O binaries produces:
-
-```
-PurplePen.app: code object is not signed at all
-In subcomponent: .../Contents/MacOS/System.Xml.Linq.dll
-```
+**Only the Mach-O files are signed individually.** Everything else — the
+managed `.dll`s, fonts, `symbols.xml` — is in `Contents/MonoBundle`, which is
+not one of the bundle's nested-code locations, so the final bundle seal records
+it in `_CodeSignature/CodeResources` as an ordinary resource. (Under the old
+`net10.0` layout all of it sat in `Contents/MacOS`, where `codesign` treats
+every file as nested code and refused to seal the bundle until each `.xml` and
+`.dll` had a signature of its own.) Every native library *is* signed:
+notarization rejects any Mach-O binary anywhere in the bundle that lacks a
+Developer ID signature with the Hardened Runtime and a secure timestamp.
 
 **Never pass the main executable's path to `codesign` directly.** Given
 `Contents/MacOS/PurplePen`, `codesign` resolves it to the *enclosing bundle*
@@ -305,10 +395,11 @@ bundle seal, which is also where its entitlements are applied.
 **`LSMinimumSystemVersion` is set to 13.0.** This should match the minimum
 macOS version supported by the .NET 10 runtime you are bundling. If it is set
 too low, the app launches on an unsupported system and then crashes; verify it
-against the current .NET 10 support matrix and adjust `MIN_MACOS_VERSION` in
-`config.sh`.
+against the current .NET 10 support matrix and adjust `SupportedOSPlatformVersion`
+in AvPurplePen.csproj. The SDK generates the matching `SupportedOSPlatform`
+assembly attribute from it.
 
-**`.ppen` files are associated with the app.** `Info.plist.template` exports
+**`.ppen` files are associated with the app.** `AvPurplePen/Info.plist` exports
 the `org.purple-pen.ppen` type and claims it in `CFBundleDocumentTypes`. Finder
 does not pass the file on the command line: it sends an "open documents" event,
 which `App.axaml.cs` handles through Avalonia's `IActivatableLifetime`, both at
@@ -325,4 +416,70 @@ not run on Intel Macs at all. To add Intel support later, either build a second
 **Versions come from `PurplePenCore/VersionNumber.cs`.** The four-part version
 (`4.0.0.110`) becomes `CFBundleVersion`; its first three components
 (`4.0.0`) become the user-visible `CFBundleShortVersionString`. Apple requires
-`CFBundleVersion` to increase with every release you submit.
+`CFBundleVersion` to increase with every release you submit. AvPurplePen.csproj
+reads the file to set them, and the script, which parses it independently for
+the file names, fails if the two disagree.
+
+**The bundle is `PurplePen.app`, not `Purple Pen.app`.** In .NET 10 the SDK
+names the bundle after `ApplicationTitle` when one is set, which is why the
+project sets `CFBundleDisplayName` in `Info.plist` instead. Existing installs
+are `PurplePen.app`; renaming would leave users who drag-install from the
+`.dmg` with two copies side by side.
+
+## macOS SDK behavior
+
+Things about the `net10.0-macos` build that are not obvious, all found the hard
+way while switching to it.
+
+**Release builds get phone-app runtime defaults, two of which are overridden.**
+The macOS SDK sets a batch of size-saving feature switches meant for iOS. Most
+are harmless here (no EventSource, no metrics, no startup hooks, ...). Two are
+not, and AvPurplePen.csproj turns them back off:
+
+- `UseSystemResourceKeys` replaces .NET's own exception messages with bare
+  resource keys. Purple Pen shows those messages in error dialogs and crash
+  reports.
+- `HybridGlobalization` takes culture data, casing and sorting from Apple's
+  Foundation APIs instead of ICU, with documented differences and some
+  `CompareOptions` that throw. Off, the Mac build uses the system ICU
+  (`libicucore`) exactly as the earlier `net10.0` build and the Linux build do.
+  The SDK sets it unconditionally after everything a project can set, so it is
+  overridden in a target (`DisableMacHybridGlobalization`).
+
+Check what a build actually got with
+`strings PurplePen.app/Contents/MonoBundle/runtimeconfig.bin`.
+
+Trimming stays off (`TrimMode=copy`); "Optimizing assemblies for size" in the
+build output is the SDK's linker running its own steps, not removing anything.
+The bundle is about 36 MB larger than the `net10.0` one, all of it
+`Microsoft.macOS.dll`, the AppKit bindings.
+
+**Content files need a `PublishFolderType`.** The SDK only knows where
+assemblies, native libraries and bundle resources go; any other
+`CopyToOutputDirectory` file is dropped with a warning that it "does not specify
+a 'PublishFolderType'". The `PlaceMacContentFiles` target sends the fonts,
+`symbols.xml` and the sample event to `Contents/MonoBundle`, beside the
+assemblies, where `Util.GetFileInAppDirectory` looks. A new data file of some
+other type needs adding there. `AppContext.BaseDirectory` and assembly
+locations are `Contents/MonoBundle/`; `Environment.ProcessPath` is the launcher
+in `Contents/MacOS/`.
+
+**Never delete the built `.app` without its `obj/` directory.** The SDK
+rewrites each native library's install name as it copies it into the bundle,
+which invalidates the library's signature, and then re-signs it — unless a stamp
+under `obj/<Config>/net10.0-macos/<RID>/codesign/` says it already did. Delete
+just the `.app` and the next build skips the re-signing, and the kernel kills
+the app on launch (`CODE SIGNING: ... rejecting invalid page`, exit status 137).
+`build-mac-app.sh` deletes both. By hand, delete both too, or do a full
+`dotnet clean`.
+
+**`install_name_tool exited with code 72`** with screens of "Requested but did
+not find extension point" from `xcodebuild` is `xcrun` failing to find the tool,
+typically just after switching Xcode. It is transient: run
+`xcrun --find install_name_tool` once and build again.
+
+**`hdiutil attach` is deprecated as of macOS 27** in favour of
+`diskutil image attach`, and prints a warning on every call. The script still
+uses `hdiutil`, since `diskutil image` does not exist on earlier macOS, but
+keeps its stderr out of the plist it parses — mixed together, they broke the
+`.dmg` step.

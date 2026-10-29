@@ -1,16 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <!-- On Windows, target net10.0-windows so the app can call Windows-only APIs
-         (Windows Forms printing). Code using them goes inside #if WINDOWS, which the
-         SDK defines automatically for -windows target frameworks. On Mac and Linux
-         the Windows Desktop SDK isn't available, so target plain net10.0.
-         To check the cross-platform build from Windows, pass
-         -p:TargetWindowsFramework=false. (Overriding TargetFramework directly with
-         -f doesn't work: restore ignores it and still restores net10.0-windows.) -->
+    <!-- The target framework depends on the OS doing the build:
+           Windows      net10.0-windows  so the app can call Windows-only APIs (Windows
+                                         Forms printing). Code using them goes inside
+                                         #if WINDOWS.
+           macOS        net10.0-macos    so the app can call AppKit and other macOS APIs
+                                         through the Microsoft.macOS bindings. Code using
+                                         them goes inside #if MACOS. Needs the .NET "macos"
+                                         workload and the matching Xcode; see
+                                         Installer/MacInstaller/README.md.
+           Linux        net10.0
+         WINDOWS and MACOS are defined automatically by the SDK for those target
+         frameworks. To check the plain cross-platform build, pass
+         -p:TargetWindowsFramework=false (on Windows) or -p:TargetMacFramework=false (on
+         macOS). Overriding TargetFramework directly with -f doesn't work: restore
+         ignores it and still restores the OS-specific framework. -->
     <TargetWindowsFramework Condition="'$(TargetWindowsFramework)' == ''">$([MSBuild]::IsOSPlatform('Windows'))</TargetWindowsFramework>
+    <TargetMacFramework Condition="'$(TargetMacFramework)' == ''">$([MSBuild]::IsOSPlatform('OSX'))</TargetMacFramework>
     <TargetFramework Condition="'$(TargetWindowsFramework)' == 'true'">net10.0-windows</TargetFramework>
-    <TargetFramework Condition="'$(TargetWindowsFramework)' != 'true'">net10.0</TargetFramework>
+    <TargetFramework Condition="'$(TargetWindowsFramework)' != 'true' And '$(TargetMacFramework)' == 'true'">net10.0-macos</TargetFramework>
+    <TargetFramework Condition="'$(TargetWindowsFramework)' != 'true' And '$(TargetMacFramework)' != 'true'">net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
@@ -26,6 +36,122 @@
   <PropertyGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'windows'">
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+  <!-- macOS: the SDK builds a real PurplePen.app bundle (bin/<Config>/net10.0-macos/<RID>/PurplePen.app),
+       with the managed assemblies in Contents/MonoBundle and a native launcher in Contents/MacOS.
+       Info.plist in this directory supplies the static keys (document types, menu-bar name, ...);
+       the SDK fills in the executable name, identifier, versions and LSMinimumSystemVersion from
+       the properties below. Installer/MacInstaller/build-mac-app.sh signs, notarizes and packages
+       the bundle this produces. -->
+  <PropertyGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
+    <!-- WinExe is not a valid output type for macOS. -->
+    <OutputType>Exe</OutputType>
+    <!-- Becomes LSMinimumSystemVersion. Keep at or above the minimum macOS that the bundled
+         .NET runtime supports; set too low, the app launches on an unsupported system and crashes. -->
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+    <!-- CFBundleIdentifier. Must stay stable across releases: changing it makes macOS treat the
+         app as a different application (losing its settings, permissions and file associations). -->
+    <ApplicationId>org.purple-pen.PurplePen</ApplicationId>
+    <!-- No ApplicationTitle: in .NET 10 it also renames the bundle ("Purple Pen.app"), and existing
+         installs are PurplePen.app, so a drag-install from the .dmg would leave two copies side by
+         side. Without it the bundle is named after AssemblyName; CFBundleDisplayName is set in
+         Info.plist instead. -->
+    <!-- The versions come from PurplePenCore/VersionNumber.cs, so there is one place to change
+         them. Apple wants at most three components in the user-visible CFBundleShortVersionString,
+         so the fourth (the release-stage number) appears only in CFBundleVersion. -->
+    <_PurplePenVersion>$([System.Text.RegularExpressions.Regex]::Match($([System.IO.File]::ReadAllText('$(MSBuildThisFileDirectory)../PurplePenCore/VersionNumber.cs')), 'Current\s*=\s*"([0-9.]+)"').Groups[1].Value)</_PurplePenVersion>
+    <ApplicationVersion>$(_PurplePenVersion)</ApplicationVersion>
+    <ApplicationDisplayVersion>$([System.Text.RegularExpressions.Regex]::Match('$(_PurplePenVersion)', '^\d+(\.\d+){0,2}').Value)</ApplicationDisplayVersion>
+    <!-- Which icon family in Assets/AppIcon the bundle's .icns is built from: PurplePenBeta for
+         beta builds, PurplePen for releases. build-mac-app.sh passes its ICON_FAMILY setting. -->
+    <MacIconFamily Condition="'$(MacIconFamily)' == ''">PurplePenBeta</MacIconFamily>
+    <!-- For Release builds the macOS SDK turns on a set of size-saving runtime feature switches
+         meant for phone apps. This one replaces .NET's own exception messages with bare resource
+         keys ("IO_FileNotFound_FileName" instead of "Could not find file ..."), and Purple Pen
+         shows those messages to users in its error dialogs and crash reports. Keep them. -->
+    <UseSystemResourceKeys>false</UseSystemResourceKeys>
+    <!-- The SDK's documented hook for adding generated bundle resources (see AddMacAppIcon). -->
+    <CollectBundleResourcesDependsOn>AddMacAppIcon;$(CollectBundleResourcesDependsOn)</CollectBundleResourcesDependsOn>
+  </PropertyGroup>
+  <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
+    <!-- The pre-rendered PNGs that make up the .icns, used at their native pixel sizes so any
+         hand-tuning of the small sizes survives. Each logical size in an .iconset needs a 1x and
+         a 2x file, so the 256 and 512 pixel images each appear twice under different names. -->
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).16x16.png" IconsetName="icon_16x16.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).32x32.png" IconsetName="icon_16x16@2x.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).32x32.png" IconsetName="icon_32x32.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).64x64.png" IconsetName="icon_32x32@2x.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).128x128.png" IconsetName="icon_128x128.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).256x256.png" IconsetName="icon_128x128@2x.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).256x256.png" IconsetName="icon_256x256.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).512x512.png" IconsetName="icon_256x256@2x.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).512x512.png" IconsetName="icon_512x512.png" />
+    <_MacIconsetPng Include="Assets\AppIcon\$(MacIconFamily).1024x1024.png" IconsetName="icon_512x512@2x.png" />
+  </ItemGroup>
+
+  <!-- Builds the bundle's PurplePen.icns from the PNGs above with iconutil (part of every macOS
+       install, no Xcode needed), and adds it to Contents/Resources. Info.plist refers to it by
+       name. The output name includes the family so that switching family rebuilds it. -->
+  <Target Name="BuildMacAppIcon"
+          Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'"
+          Inputs="@(_MacIconsetPng)"
+          Outputs="$(IntermediateOutputPath)$(MacIconFamily).icns">
+    <PropertyGroup>
+      <_MacIconsetDir>$(IntermediateOutputPath)$(MacIconFamily).iconset</_MacIconsetDir>
+    </PropertyGroup>
+    <RemoveDir Directories="$(_MacIconsetDir)" />
+    <Copy SourceFiles="@(_MacIconsetPng)" DestinationFiles="@(_MacIconsetPng->'$(_MacIconsetDir)/%(IconsetName)')" />
+    <Exec Command="iconutil --convert icns &quot;$(_MacIconsetDir)&quot; --output &quot;$(IntermediateOutputPath)$(MacIconFamily).icns&quot;" />
+    <RemoveDir Directories="$(_MacIconsetDir)" />
+  </Target>
+  <Target Name="AddMacAppIcon"
+          DependsOnTargets="BuildMacAppIcon"
+          Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
+    <ItemGroup>
+      <BundleResource Include="$(IntermediateOutputPath)$(MacIconFamily).icns" LogicalName="PurplePen.icns" />
+    </ItemGroup>
+  </Target>
+
+  <!-- The macOS SDK only knows where to put assemblies, native libraries and resources in the
+       bundle; for any other CopyToOutputDirectory file it warns "does not specify a
+       'PublishFolderType'" and leaves the file out. Ours (the fonts and symbols.xml from
+       PurplePenCore, and the sample event) are looked up next to the assemblies (see
+       Util.GetFileInAppDirectory), so send them to Contents/MonoBundle along with the assemblies,
+       keeping their subdirectories. -->
+  <Target Name="PlaceMacContentFiles"
+          BeforeTargets="_ComputePublishLocation"
+          Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
+    <ItemGroup>
+      <ResolvedFileToPublish Update="@(ResolvedFileToPublish)"
+                             PublishFolderType="Assembly"
+                             Condition="'%(ResolvedFileToPublish.PublishFolderType)' == '' And
+                                        ('%(Extension)' == '.ttf' Or '%(Extension)' == '.otf' Or
+                                         '%(Extension)' == '.ppen' Or '%(Extension)' == '.ocd' Or
+                                         '%(Filename)%(Extension)' == 'symbols.xml')" />
+    </ItemGroup>
+  </Target>
+
+  <!-- The macOS SDK also forces "hybrid" globalization on, which takes culture data, sorting and
+       casing from Apple's Foundation APIs instead of ICU, with documented differences in behavior
+       and some CompareOptions that throw PlatformNotSupportedException. Turn it back off so the Mac
+       build formats, sorts and compares exactly as the Windows and Linux builds (and the earlier
+       net10.0 Mac build) do; plain macOS still provides ICU as libicucore. The SDK sets the property
+       unconditionally in its own targets, after anything a project or Directory.Build.targets
+       can set, so it has to be overridden here, in a target, along with the runtimeconfig item
+       already created from it. That item is replaced with Remove and Include: inside a target,
+       MSBuild ignores Update, and an item element with only metadata then sets that metadata on
+       every item of the type, which once turned off every runtime feature switch at once. -->
+  <Target Name="DisableMacHybridGlobalization"
+          BeforeTargets="PrepareForBuild"
+          Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
+    <PropertyGroup>
+      <HybridGlobalization>false</HybridGlobalization>
+    </PropertyGroup>
+    <ItemGroup>
+      <RuntimeHostConfigurationOption Remove="System.Globalization.Hybrid" />
+      <RuntimeHostConfigurationOption Include="System.Globalization.Hybrid" Value="false" Trim="true" />
+    </ItemGroup>
+  </Target>
+
   <!-- Platform\Windows holds the Windows-only implementations of platform services
        (e.g. printing through Windows Forms). Compile it only for a -windows target framework. -->
   <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != 'windows'">

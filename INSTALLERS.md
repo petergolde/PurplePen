@@ -27,7 +27,7 @@ instructions.
 | App project | `src/AvPurplePen/AvPurplePen.csproj` |
 | Assembly / executable name | `PurplePen` (`<AssemblyName>`, not `AvPurplePen`) |
 | Root namespace | `AvPurplePen` |
-| Target framework | `net10.0` — **not** `net10.0-macos`; it's a plain Avalonia desktop app and does not use the .NET macOS workload |
+| Target framework | Depends on the build OS: `net10.0-macos` on a Mac (needs the .NET macOS workload and the exact Xcode it was built against — see `src/Installer/MacInstaller/README.md`), `net10.0` on Linux, `net10.0-windows` on Windows. On a Mac the SDK builds the `.app` bundle itself, so most of §2 below (flattened native libraries, `runtimes/`, `deps.json`) now applies to Linux only. |
 | Version source | `src/PurplePenCore/VersionNumber.cs` → `public const string Current = "4.0.0.110"` |
 | PDF rasterizer | `src/PdfConverter/PdfConverter.csproj` — a library (referenced by PurplePenCore) that rasterizes PDF map templates in-process; pdfium loads only when a PDF map is opened |
 | Bundled fonts | 19 Roboto TTFs in `fonts/` in the publish output |
