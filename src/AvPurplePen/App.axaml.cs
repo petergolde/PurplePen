@@ -137,6 +137,10 @@ namespace AvPurplePen
             // AppKitThreadAccessException, even on the UI thread. Must run on the main thread, after Avalonia's
             // native platform is set up.
             AppKit.NSApplication.Init();
+
+            // Logs menu bar and menu tracking activity, to diagnose a rare hang in which the
+            // application is stuck tracking a menu that is not on screen. See MacMenuDiagnostics.cs.
+            AvPurplePen.Platform.Mac.MacMenuDiagnostics.Install();
 #endif
 
             // Keeps the macOS menu bar from being left showing only the application menu after

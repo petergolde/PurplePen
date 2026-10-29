@@ -142,6 +142,10 @@ namespace AvPurplePen
                 return;         // Only the welcome screen is up; there is no menu to copy.
 
             NativeMenu.SetMenu(window, CloneDisabled(mainMenu, menuBar: true));
+
+#if MACOS
+            Platform.Mac.MacMenuDiagnostics.Log($"Attached a disabled menu copy to {window.GetType().Name}");
+#endif
         }
 
         /// <summary>
@@ -228,8 +232,12 @@ namespace AvPurplePen
 
             foreach (Window window in desktop.Windows) {
                 NativeMenu? menu = NativeMenu.GetMenu(window);
-                if (menu != null)
+                if (menu != null) {
+#if MACOS
+                    Platform.Mac.MacMenuDiagnostics.Log($"Rebuilding the menu bar of {window.GetType().Name} for a language change");
+#endif
                     RebuildTopLevelItems(menu);
+                }
             }
         }
 
@@ -299,13 +307,19 @@ namespace AvPurplePen
         private static void ReassertMenuBar(Window window)
         {
 #if MACOS
-            if (menuTracking)
+            if (menuTracking) {
+                Platform.Mac.MacMenuDiagnostics.Log($"Menu bar reassert for {window.GetType().Name} skipped: a menu is open");
                 return;
+            }
 #endif
 
             NativeMenu? menu = NativeMenu.GetMenu(window);
-            if (window.IsActive && menu != null)
+            if (window.IsActive && menu != null) {
+#if MACOS
+                Platform.Mac.MacMenuDiagnostics.Log($"Menu bar reassert: rebuilding the menu bar of {window.GetType().Name}");
+#endif
                 RebuildTopLevelItems(menu);
+            }
         }
 
         /// <summary>
