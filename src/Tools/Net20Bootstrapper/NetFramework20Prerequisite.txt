@@ -1,3 +1,0 @@
-Place the DotNetFx folder inside 
-
-c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages

@@ -30,6 +30,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
+REPO_ROOT="$(cd "$SRC_DIR/.." && pwd)"
 
 # shellcheck source=config.sh
 source "$SCRIPT_DIR/config.sh"
@@ -37,6 +38,7 @@ source "$SCRIPT_DIR/config.sh"
 PROJECT_FILE="$SRC_DIR/AvPurplePen/AvPurplePen.csproj"
 VERSION_FILE="$SRC_DIR/PurplePenCore/VersionNumber.cs"
 EXCLUDE_FILE="$SCRIPT_DIR/publish-exclude.txt"
+LICENSE_FILE="$REPO_ROOT/LICENSE"
 ENTITLEMENTS="$SCRIPT_DIR/PurplePen.entitlements"
 DMG_BACKGROUND_SVG="$SCRIPT_DIR/dmg-background.svg"
 LAYOUT_READER="$SCRIPT_DIR/read-dmg-layout.py"
@@ -234,6 +236,7 @@ fi
 
 [[ -f "$PROJECT_FILE" ]] || die "Cannot find AvPurplePen project at $PROJECT_FILE"
 [[ -f "$ENTITLEMENTS" ]] || die "Cannot find entitlements at $ENTITLEMENTS"
+[[ -f "$LICENSE_FILE" ]] || die "Cannot find the license file at $LICENSE_FILE"
 
 if [[ ! -f "$EXCLUDE_FILE" ]]; then
     warn "No publish-exclude.txt found; nothing will be excluded from the bundle."
@@ -618,6 +621,8 @@ assemble_bundle() {
         rsync_args+=(--exclude-from="$EXCLUDE_FILE")
     fi
     rsync "${rsync_args[@]}" "$SDK_APP_BUNDLE/Contents/MonoBundle/" "$APP_BUNDLE/Contents/MonoBundle/"
+
+    cp "$LICENSE_FILE" "$APP_BUNDLE/Contents/Resources/LICENSE.txt"
 
     [[ -f "$APP_BUNDLE/Contents/MonoBundle/$APP_NAME.dll" ]] \
         || die "The main assembly '$APP_NAME.dll' was excluded from the bundle. Check publish-exclude.txt."

@@ -24,7 +24,10 @@
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>Purple Pen</AssemblyTitle>
+    <Product>Purple Pen</Product>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <ApplicationIcon>Assets\AppIcon\PurplePenBeta.ico</ApplicationIcon>
   </PropertyGroup>
   <!-- Windows Forms is only usable (and only allowed by the SDK) for a -windows
@@ -162,9 +165,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
-    <Folder Include="Samples\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -227,9 +228,6 @@
     </Compile>
     <Compile Update="Views\Dialogs\SwitchLanguageDialog.axaml.cs">
       <DependentUpon>SwitchLanguageDialog.axaml</DependentUpon>
-    </Compile>
-    <Compile Update="UIText.*.Designer.cs">
-      <DependentUpon>UIText.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 

@@ -167,10 +167,8 @@ namespace PurplePen
             var hashAlgorithm = System.Security.Cryptography.SHA1.Create();
             byte[] hash = hashAlgorithm.ComputeHash(File.ReadAllBytes(path));
             hash[0] ^= 0xd9;   // Change hash so different from previous (GhostScript)
-#if !NETFRAMEWORK
             // NET CORE use different hash from NET Framework, because the converters are different.
             hash[1] ^= 0x7b;   
-#endif
             return Hexify(hash);
         }
 

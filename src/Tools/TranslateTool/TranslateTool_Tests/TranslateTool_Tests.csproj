@@ -67,9 +67,6 @@
     <Compile Include="Tests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AuthoringTests.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TranslateTool.csproj">
       <Project>{A0834B28-C6E7-40F4-B615-BFB076D934FA}</Project>
       <Name>TranslateTool</Name>

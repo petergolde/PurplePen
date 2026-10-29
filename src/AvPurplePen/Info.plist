@@ -32,7 +32,7 @@
     <string>PurplePen.icns</string>
 
     <key>NSHumanReadableCopyright</key>
-    <string>Copyright © 2006-2026 Peter Golde. All rights reserved.</string>
+    <string>Copyright 2006-2026 Peter Golde</string>
 
     <!-- Required for crisp rendering on Retina displays. -->
     <key>NSHighResolutionCapable</key>

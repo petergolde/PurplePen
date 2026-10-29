@@ -1,2 +1,0 @@
-MainPackage=D:\Repos\Main\PurplePen_Worktrees\355Development\src\MsftStoreInstaller\bin\x86\Debug\MsftStoreInstaller_3.55.1.0_x86_Debug.msix
-SymbolPackage=D:\Repos\Main\PurplePen_Worktrees\355Development\src\MsftStoreInstaller\obj\x86\Debug\Symbols\MsftStoreInstaller_3.55.1.0_x86_Debug.appxsym

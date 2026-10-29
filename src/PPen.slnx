@@ -16,9 +16,7 @@
   </Folder>
   <Folder Name="/DotSpatialProjectionsLite/">
     <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections.CoordinateSystems/DotSpatial.Projections.CoordinateSystems.csproj" />
-    <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections.Tests/DotSpatial.Projections.Tests.csproj">
-      <Platform Solution="*|x86" Project="x86" />
-    </Project>
+    <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections.Tests/DotSpatial.Projections.Tests.csproj" />
     <Project Path="DotSpatialProjectionsLite/DotSpatial.Projections/DotSpatial.Projections.csproj" />
   </Folder>
   <Folder Name="/Experiments/">
@@ -94,10 +92,6 @@
     <Project Path="MapModel/Test_MapModel/Test_MapModel.csproj" Id="56183ac4-766d-4190-8641-4a3ad26456f8" />
     <Project Path="MapModel/Test_MapWPF/Test_MapWPF.csproj" Id="bbd89855-c12f-4823-aa6f-27482478e7f8" />
   </Folder>
-  <Folder Name="/PdfiumViewer/">
-    <Project Path="PdfiumViewer/PdfiumViewer.Test/PdfiumViewer.Test.csproj" Id="61083268-3f14-47b7-8753-af69bb3d0891" />
-    <Project Path="PdfiumViewer/PdfiumViewer/PdfiumViewer.csproj" Id="438914b6-5d1c-482c-b942-5c0e057eef6f" />
-  </Folder>
   <Folder Name="/Purple Pen/">
     <Project Path="AvPurplePen/AvPurplePen.csproj" Id="e36ee026-b338-4927-8e6b-8cfca9007148">
       <BuildType Solution="StorePkg|*" Project="Release" />
@@ -146,11 +140,6 @@
     <File Path=".editorconfig" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
-    <File Path="LocalTestRun.testrunconfig" />
-    <File Path="PPen1.vsmdi" />
     <File Path="ShowUi.runsettings" />
   </Folder>
-  <Properties Name="TestCaseManagementSettings" Scope="PostLoad">
-    <Property Name="CategoryFile" Value="PPen1.vsmdi" />
-  </Properties>
 </Solution>

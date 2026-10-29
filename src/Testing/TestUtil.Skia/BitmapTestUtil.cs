@@ -163,13 +163,9 @@ namespace TestingUtils
                     FileName = visualDiffExecutable,
                     UseShellExecute = false,
                 };
-#if NETFRAMEWORK
-                startInfo.Arguments = $"bitmap \"{tempNewFile}\" \"{baselineFile}\"";
-#else
                 startInfo.ArgumentList.Add("bitmap");
                 startInfo.ArgumentList.Add(tempNewFile);
                 startInfo.ArgumentList.Add(baselineFile);
-#endif
 
                 using (Process process = Process.Start(startInfo)) {
                     process.WaitForExit();

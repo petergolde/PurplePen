@@ -21,7 +21,5 @@
     <ProjectReference Include="..\Testing\TestUtil\TestUtil.csproj" />
   </ItemGroup>
   
-  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-windows'">
-  </ItemGroup>
 
   </Project>

@@ -396,8 +396,8 @@ bundle seal, which is also where its entitlements are applied.
 macOS version supported by the .NET 10 runtime you are bundling. If it is set
 too low, the app launches on an unsupported system and then crashes; verify it
 against the current .NET 10 support matrix and adjust `SupportedOSPlatformVersion`
-in AvPurplePen.csproj — and the matching `SupportedOSPlatform("macos13.0")` in
-`AvPurplePen/Properties/AssemblyInfo.cs`.
+in AvPurplePen.csproj. The SDK generates the matching `SupportedOSPlatform`
+assembly attribute from it.
 
 **`.ppen` files are associated with the app.** `AvPurplePen/Info.plist` exports
 the `org.purple-pen.ppen` type and claims it in `CFBundleDocumentTypes`. Finder
