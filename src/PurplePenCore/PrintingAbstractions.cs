@@ -187,9 +187,20 @@ namespace PurplePen
         // Returns true if the user changed the printer settings, false if the dialog was cancelled.
         Task<bool> ChangePrinterDialogAsync();
 
-        // Get a printing target that prints to the current printer.
+        // True if printing is done by creating a PDF and printing it with PrintPdfAsync, instead of
+        // drawing onto the IPrintingTarget from GetPrintingTarget. Controller.PrintToPrinterAsync
+        // handles both kinds of printing.
+        bool PrintUsingPdf { get; }
+
+        // Get a printing target that prints to the current printer. Only used if PrintUsingPdf is false.
         // colorModel: the color model used to render the pages.
         IPrintingTarget GetPrintingTarget(ColorModel colorModel);
+
+        // Print a PDF file, letting the user choose the printer and printing options. Only used if
+        // PrintUsingPdf is true. Completes once the user has cancelled, or the job has been handed to
+        // the system's printing system; the file can be deleted then. Throws an exception if printing fails.
+        // pathName: the PDF file to print.
+        Task PrintPdfAsync(string pathName);
     }
 
     // Abstract class that is implemented by things that can be printed. For example, the courses, control descriptions,

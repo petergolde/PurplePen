@@ -2088,9 +2088,10 @@ namespace PurplePen.ViewModels
             descPrintSettings = vm.Settings;
             descPaperSizeWithMargins = vm.PaperSizeWithMargins;
 
-            controller.PrintDescriptions(documentPrinting.GetPrintingTarget(ColorModel.RGB),
-                                         descPrintSettings,
-                                         descPaperSizeWithMargins);
+            DescriptionPrintSettings printSettings = descPrintSettings;
+            PrintingPaperSizeWithMargins printPaperSize = descPaperSizeWithMargins;
+            await controller.PrintToPrinterAsync(documentPrinting, ColorModel.RGB,
+                target => controller.PrintDescriptions(target, printSettings, printPaperSize));
         }
 
         // Tells the user that direct printing isn't available on this platform, and to
@@ -2214,9 +2215,10 @@ namespace PurplePen.ViewModels
             punchPrintSettings = vm.Settings;
             punchPaperSizeWithMargins = vm.PaperSizeWithMargins;
 
-            controller.PrintPunches(documentPrinting.GetPrintingTarget(ColorModel.RGB),
-                                    punchPrintSettings,
-                                    punchPaperSizeWithMargins);
+            CorePunchPrintSettings printSettings = punchPrintSettings;
+            PrintingPaperSizeWithMargins printPaperSize = punchPaperSizeWithMargins;
+            await controller.PrintToPrinterAsync(documentPrinting, ColorModel.RGB,
+                target => controller.PrintPunches(target, printSettings, printPaperSize));
         }
 
         /// <summary>
@@ -2312,8 +2314,9 @@ namespace PurplePen.ViewModels
             // Save the settings for the next invocation of the dialog, then print.
             coursePrintSettings = vm.Settings;
 
-            controller.PrintCourses(documentPrinting.GetPrintingTarget(coursePrintSettings.PrintingColorModel),
-                                    coursePrintSettings);
+            CoursePrintSettings printSettings = coursePrintSettings;
+            await controller.PrintToPrinterAsync(documentPrinting, printSettings.PrintingColorModel,
+                target => controller.PrintCourses(target, printSettings));
         }
 
         /// <summary>

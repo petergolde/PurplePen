@@ -80,6 +80,21 @@ namespace AvPurplePen.Platform.Windows
             return new WindowsPrinter((PrinterSettings)printerSettings.Clone(), colorModel);
         }
 
+        /// <summary>
+        /// Windows prints directly through <see cref="GetPrintingTarget"/>. Printing using a PDF
+        /// isn't supported yet, so this is always false.
+        /// </summary>
+        public bool PrintUsingPdf => false;
+
+        /// <summary>
+        /// Not supported on Windows; see <see cref="PrintUsingPdf"/>.
+        /// </summary>
+        /// <param name="pathName">The PDF file to print.</param>
+        public Task PrintPdfAsync(string pathName)
+        {
+            throw new NotSupportedException("Printing a PDF is not supported on Windows.");
+        }
+
         // Get the topmost Avalonia window, as a Windows Forms owner for a dialog. Returns null
         // if the window has no native handle, in which case Windows Forms uses the active window.
         private static IWin32Window? GetOwnerWindow()

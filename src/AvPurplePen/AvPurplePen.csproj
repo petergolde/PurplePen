@@ -154,6 +154,11 @@
   <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != 'windows'">
     <Compile Remove="Platform\Windows\**" />
   </ItemGroup>
+  <!-- Platform\Mac holds the macOS-only implementations of platform services (e.g. printing
+       through PDFKit). Compile it only for a -macos target framework. -->
+  <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != 'macos'">
+    <Compile Remove="Platform\Mac\**" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);PORTING</DefineConstants>
   </PropertyGroup>

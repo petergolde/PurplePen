@@ -1289,6 +1289,58 @@ namespace PurplePen
         }
 
 
+        // Print to a printer, through the platform's printing support. The print function draws the document onto the
+        // IPrintingTarget passed to it and returns success or failure, e.g.
+        //     target => controller.PrintDescriptions(target, settings, paperSizeWithMargins)
+        // If documentPrinting.PrintUsingPdf is true, the document is drawn into a temporary PDF file, which is then
+        // printed with documentPrinting.PrintPdfAsync and deleted. Otherwise, it is drawn onto documentPrinting.GetPrintingTarget.
+        // colorModel: the color model used to render the pages.
+        // Returns success or failure; any errors are already reported to the user. Cancelling the print isn't a failure.
+        public async Task<bool> PrintToPrinterAsync(IDocumentPrinting documentPrinting, ColorModel colorModel, Func<IPrintingTarget, bool> print)
+        {
+            if (!documentPrinting.PrintUsingPdf) {
+                return print(documentPrinting.GetPrintingTarget(colorModel));
+            }
+
+            string documentTitle = QueryEvent.GetEventTitle(eventDB, " ");
+
+            // The PDF goes into its own temporary directory, so it can be named after the document; the
+            // name of the file may be shown as the name of the print job.
+            string tempDirectory = Path.Combine(Path.GetTempPath(), "PurplePen-" + Guid.NewGuid().ToString("N"));
+            string fileName = Util.FilterInvalidPathChars(documentTitle).Trim();
+            if (fileName == "")
+                fileName = "PurplePen";
+            string pdfPath = Path.Combine(tempDirectory, fileName + ".pdf");
+
+            try {
+                if (!HandleExceptions(() => Directory.CreateDirectory(tempDirectory), MiscText.CannotPrint, documentTitle))
+                    return false;
+
+                if (!print(new PdfPrintTarget(pdfPath, cmykMode: colorModel == ColorModel.CMYK)))
+                    return false;
+
+                try {
+                    await documentPrinting.PrintPdfAsync(pdfPath);
+                    return true;
+                }
+                catch (Exception e) {
+                    await ui.ErrorMessage(string.Format(MiscText.CannotPrint, documentTitle) + "\r\n\r\n" + e.Message);
+                    return false;
+                }
+            }
+            finally {
+                try {
+                    if (Directory.Exists(tempDirectory))
+                        Directory.Delete(tempDirectory, true);
+                }
+                catch (IOException) {
+                    // Leaving a temporary file behind is harmless.
+                }
+                catch (UnauthorizedAccessException) {
+                }
+            }
+        }
+
         // Print or print preview the descriptions. Returns success or failure; any errors are already reported to the user.
         public bool PrintDescriptions(IPrintingTarget printingTarget, DescriptionPrintSettings descriptionPrintSettings, PrintingPaperSizeWithMargins paperSizeWithMargins)
         {

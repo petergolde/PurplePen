@@ -81,6 +81,8 @@ namespace AvPurplePen
             // the print commands tell the user to create a PDF instead.
 #if WINDOWS
             services.AddSingleton<IDocumentPrinting, AvPurplePen.Platform.Windows.WindowsDocumentPrinting>();
+#elif MACOS
+            services.AddSingleton<IDocumentPrinting, AvPurplePen.Platform.Mac.MacDocumentPrinting>();
 #endif
 
             // Transient (not singleton): PdfLoadingUI holds per-conversion state
