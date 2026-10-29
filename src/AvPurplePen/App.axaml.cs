@@ -139,6 +139,10 @@ namespace AvPurplePen
             AppKit.NSApplication.Init();
 #endif
 
+            // Keeps the macOS menu bar from being left showing only the application menu after
+            // the key window changes. Comes after NSApplication.Init(), as it uses AppKit.
+            MacMenuUtilities.InstallMenuBarReassert();
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
                 // Clean up crash-recovery snapshots left behind by earlier sessions that were
                 // never recovered -- a restart that failed to launch, or a second crash during

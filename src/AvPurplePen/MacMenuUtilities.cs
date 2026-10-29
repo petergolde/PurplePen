@@ -1,8 +1,8 @@
 // MacMenuUtilities.cs
 //
 // Fixes for the macOS menu bar. Everything here is a no-op on Windows and Linux, where the same
-// NativeMenu is drawn inside the main window by NativeMenuBar and neither problem arises. Two
-// unrelated shortcomings are handled, described in turn below.
+// NativeMenu is drawn inside the main window by NativeMenuBar and none of these problems arise.
+// Several unrelated shortcomings are handled, described in turn below.
 //
 //
 // 1. KEEPING THE MENU BAR POPULATED WHILE A DIALOG IS OPEN
@@ -53,21 +53,34 @@
 // each language change can build a new set of items from them.
 //
 //
-// 3. RESTORING THE MENU BAR AFTER THE WELCOME SCREEN HANDS OVER
+// 3. RESTORING THE MENU BAR AFTER THE KEY WINDOW CHANGES
 //
-// Which of the two callbacks above runs last decides what the menu bar ends up showing, and neither
-// guards against the other: showAppMenuOnly does not check whether the window resigning key is
-// still key, or whether another window has become key since. When the welcome screen hands over to
-// the main window, both fire within a tick or two of each other -- the main window becomes key, the
-// welcome screen resigns and closes -- and if the resign lands last the menu bar is left showing
-// only the application menu. It is a race, so it only bites sometimes.
+// Avalonia swaps NSApp.mainMenu on every key-window change: windowDidResignKey installs a menu
+// holding only the application menu (AvnWindow.showAppMenuOnly), and becomeKeyWindow installs the
+// new key window's own menu (showWindowMenuWithAppMenu), moving the application menu item from one
+// to the other. Native apps keep one main menu for their whole life and never do this.
 //
-// Reordering the handoff cannot settle it. Once the main window is key, AppKit will not call
-// becomeKeyWindow on it again, so no later Show or Activate re-installs the menu; that is why
-// switching to another application and back is what brings it round. Instead ReassertMenuBar()
-// re-exports the menu once the dispatcher has gone quiet: the export calls SetMainMenu, which
-// re-runs showWindowMenuWithAppMenu when the window is key. Harmless when the menu bar is already
-// right, restorative when it is not.
+// The menu bar, which macOS draws outside the application, does not always keep up. Sometimes,
+// after a dialog closes or the welcome screen hands over to the main window, it goes on showing
+// only the application menu indefinitely, until the mouse goes into the menu bar. Logging showed
+// that the application's own state is right when this happens: Purple Pen is active, the main
+// window is key, and NSApp.mainMenu is the full menu. The menu bar simply has not redrawn it.
+// Nothing Purple Pen does to the windows can fix that: once a window is key, AppKit will not call
+// becomeKeyWindow on it again, so no later Show or Activate re-installs the menu.
+//
+// What does make the menu bar re-read the menu is changing the main menu's items. So whenever a
+// window with a menu becomes active, the top-level items of its menu are rebuilt shortly
+// afterwards, once AppKit has finished swapping menus. That is the same rebuild the language
+// change uses: the re-titling it does is not needed here, but the adding and removing of items is.
+// Harmless when the menu bar is already right, restorative when it is not.
+//
+// The rebuild must not come too soon. The menu bar takes changes to the menu asynchronously and
+// combines changes made close together, so a rebuild made too soon after the swap is lost along
+// with it. On a fast Mac a 20 ms delay still failed about one time in five, and 35 ms was
+// reliable. Slower Macs may take longer to finish the swap, so the rebuild is done twice: at
+// 35 ms, so that a stuck menu bar is put right before anyone notices, and again at 250 ms in case
+// that was not enough. A rebuild is skipped while a menu is open, since replacing the menu bar's
+// items under an open menu would disrupt it.
 
 using System;
 using System.Collections.Generic;
@@ -82,9 +95,10 @@ using Avalonia.Threading;
 namespace AvPurplePen
 {
     /// <summary>
-    /// macOS menu bar fixes: a disabled copy of the main menu for dialog windows, and a rebuild of
-    /// the menu bar when the UI language changes. No-op on Windows and Linux, where the main menu is
-    /// rendered inside the main window by NativeMenuBar instead.
+    /// macOS menu bar fixes: a disabled copy of the main menu for dialog windows, a rebuild of
+    /// the menu bar when the UI language changes, and a re-assertion of the menu bar whenever the
+    /// key window changes. No-op on Windows and Linux, where
+    /// the main menu is rendered inside the main window by NativeMenuBar instead.
     /// </summary>
     internal static class MacMenuUtilities
     {
@@ -219,29 +233,79 @@ namespace AvPurplePen
             }
         }
 
+        // ==================== Menu bar after a key window change ====================
+
         /// <summary>
-        /// Re-exports a window's menu once the dispatcher is quiet, so that a menu bar left empty
-        /// by a key-window race is put back. Call after showing a window that takes over from
-        /// another one; on any normal startup this changes nothing that is visible.
+        /// How long after a window becomes active its menu is rebuilt. The rebuild is done once
+        /// for each delay; see the comment at the top of this file for how they were chosen.
         /// </summary>
-        /// <param name="window">The window whose menu should be re-exported.</param>
-        public static void ReassertMenuBar(Window window)
+        private static readonly TimeSpan[] reassertDelays = {
+            TimeSpan.FromMilliseconds(35),
+            TimeSpan.FromMilliseconds(250),
+        };
+
+#if MACOS
+        /// <summary>
+        /// True while the user has a menu open, from the menu bar or anywhere else.
+        /// </summary>
+        private static bool menuTracking;
+
+        /// <summary>
+        /// The observers for the menu tracking notifications, kept so they stay registered.
+        /// </summary>
+        private static Foundation.NSObject? beginTrackingObserver, endTrackingObserver;
+#endif
+
+        /// <summary>
+        /// Registers the class handler that re-asserts the menu bar whenever a window becomes
+        /// active. Call once during application startup, after NSApplication.Init().
+        /// </summary>
+        public static void InstallMenuBarReassert()
         {
             if (!OperatingSystem.IsMacOS())
                 return;
 
-            // Background priority, so this runs after the windows have finished swapping over and
-            // AppKit has delivered the key-window callbacks that cause the trouble. Re-exporting
-            // before then would just be overwritten by the late one.
-            Dispatcher.UIThread.Post(() => {
-                NativeMenu? menu = NativeMenu.GetMenu(window);
-                if (menu != null) {
-                    // The same rebuild the language change uses. Its purpose there is to re-title
-                    // the menus, which is wasted here, but what matters is the re-export it
-                    // triggers, and reusing it avoids a second way of provoking one.
-                    RebuildTopLevelItems(menu);
-                }
-            }, DispatcherPriority.Background);
+            WindowBase.IsActiveProperty.Changed.AddClassHandler<Window>(OnWindowIsActiveChanged);
+
+#if MACOS
+            beginTrackingObserver = AppKit.NSMenu.Notifications.ObserveDidBeginTracking((sender, e) => menuTracking = true);
+            endTrackingObserver = AppKit.NSMenu.Notifications.ObserveDidEndTracking((sender, e) => menuTracking = false);
+#endif
+        }
+
+        /// <summary>
+        /// Called when any window's IsActive changes. When a window becomes active, its menu is
+        /// rebuilt a little later, so that the menu bar re-reads it.
+        /// </summary>
+        /// <param name="window">The window whose IsActive changed.</param>
+        /// <param name="e">The property change details.</param>
+        private static void OnWindowIsActiveChanged(Window window, AvaloniaPropertyChangedEventArgs e)
+        {
+            if (e.NewValue is not true)
+                return;
+
+            foreach (TimeSpan delay in reassertDelays) {
+                DispatcherTimer.RunOnce(() => ReassertMenuBar(window), delay);
+            }
+        }
+
+        /// <summary>
+        /// Rebuilds the top-level items of a window's menu, so that the menu bar re-reads it.
+        /// Does nothing if the window is no longer the active one -- rebuilding the menu of a
+        /// window that is not key would not touch what the menu bar shows -- or while a menu
+        /// is open.
+        /// </summary>
+        /// <param name="window">The window that became active.</param>
+        private static void ReassertMenuBar(Window window)
+        {
+#if MACOS
+            if (menuTracking)
+                return;
+#endif
+
+            NativeMenu? menu = NativeMenu.GetMenu(window);
+            if (window.IsActive && menu != null)
+                RebuildTopLevelItems(menu);
         }
 
         /// <summary>
