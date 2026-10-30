@@ -2862,7 +2862,7 @@ namespace PurplePen.ViewModels
         [RelayCommand]
         private async Task HelpContents()
         {
-            await Services.WebsiteLauncher.ShowHelpTopic("TableOfContents.htm");
+            await Services.WebsiteLauncher.ShowHelpTopic("index.html");
         }
 
         private bool TranslatedWebSiteExists()
