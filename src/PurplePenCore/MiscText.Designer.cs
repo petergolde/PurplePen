@@ -385,6 +385,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The print job could not be sent to the printer..
+        /// </summary>
+        public static string CannotSendPrintJob {
+            get {
+                return ResourceManager.GetString("CannotSendPrintJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot read image file &apos;{0}&apos;..
         /// </summary>
         public static string CannotReadImageFile {

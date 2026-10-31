@@ -131,6 +131,22 @@ namespace AvPurplePen
 
         public override void OnFrameworkInitializationCompleted()
         {
+#if MACOS
+            // Avalonia creates and runs the native NSApplication itself, so the .NET macOS bindings are never
+            // told which thread is the UI thread. Without this, AppKit calls (e.g. printing) throw
+            // AppKitThreadAccessException, even on the UI thread. Must run on the main thread, after Avalonia's
+            // native platform is set up.
+            AppKit.NSApplication.Init();
+
+            // Logs menu bar and menu tracking activity, to diagnose a rare hang in which the
+            // application is stuck tracking a menu that is not on screen. See MacMenuDiagnostics.cs.
+            AvPurplePen.Platform.Mac.MacMenuDiagnostics.Install();
+#endif
+
+            // Keeps the macOS menu bar from being left showing only the application menu after
+            // the key window changes. Comes after NSApplication.Init(), as it uses AppKit.
+            MacMenuUtilities.InstallMenuBarReassert();
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
                 // Clean up crash-recovery snapshots left behind by earlier sessions that were
                 // never recovered -- a restart that failed to launch, or a second crash during

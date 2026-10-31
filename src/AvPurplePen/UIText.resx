@@ -3892,4 +3892,20 @@ Purple Pen cannot install this kind of file for you. Open it yourself to install
   <data name="CloseButton" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="LinuxPrinting_NoDefaultViewer" xml:space="preserve">
+    <value>The PDF file could not be opened, because no default application for viewing PDF files is set up.</value>
+  </data>
+  <data name="LinuxPrinting_PortalUnavailable" xml:space="preserve">
+    <value>Purple Pen cannot print directly on this system, because the desktop printing service (the Print interface of the XDG desktop portal) is not available.
+
+Would you like to open the document as a PDF file in your default PDF viewer, so that you can print it from there?
+
+IMPORTANT: When printing from the PDF viewer, turn off any page scaling (such as "Fit to page" or "Shrink to printable area"), so that the document prints at the correct size.</value>
+  </data>
+  <data name="LinuxPrinting_ViewerFailed" xml:space="preserve">
+    <value>The PDF file could not be opened in the default PDF viewer: {0}</value>
+  </data>
+  <data name="LinuxPrinting_XdgUtilsMissing" xml:space="preserve">
+    <value>The PDF file could not be opened, because xdg-utils (which opens files in their default applications) is not installed.</value>
+  </data>
 </root>

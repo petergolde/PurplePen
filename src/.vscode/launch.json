@@ -1,15 +1,16 @@
 {
     // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
+    // Hover to view descriptions of editing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // The original configuration. Popups will not appear under this one while VS Code is
+        // installed as a snap.
         {
             "name": "C#: AvPurplePen Debug",
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/AvPurplePen/AvPurplePen.csproj"
         }
-
     ]
 }
